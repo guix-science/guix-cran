@@ -840,13 +840,13 @@ available at the following URL:
 (define-public r-jsmodule
   (package
     (name "r-jsmodule")
-    (version "1.4.1")
+    (version "1.4.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jsmodule" version))
               (sha256
                (base32
-                "14ldip7v0jdxbcaakg9gl10r6pc7jzr2570ic46h8l32g0c10mir"))))
+                "13hc2ppmbn0l9iyj9si639j8f6ayrjkvr2dymiy0i8ys3510h8jx"))))
     (properties `((upstream-name . "jsmodule")))
     (build-system r-build-system)
     (propagated-inputs (list r-timeroc
@@ -943,13 +943,13 @@ and longitudinal data.  Refer to the Journal of Statistical Software article:
 (define-public r-jskm
   (package
     (name "r-jskm")
-    (version "0.5")
+    (version "0.5.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jskm" version))
               (sha256
                (base32
-                "1g0was3713f7hzbkj4v0g7pply036r07v1jrzlvxpk3bsg37257c"))))
+                "059hyagi20saqwdwhpaz8ra8yf5y4ihz974285sr15skgr7y1kv2"))))
     (properties `((upstream-name . "jskm")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-survey r-scales r-ggpubr r-ggplot2))

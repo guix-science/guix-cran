@@ -471,13 +471,13 @@ the output probabilities.")
 (define-public r-fuzzysimres
   (package
     (name "r-fuzzysimres")
-    (version "0.2.1")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FuzzySimRes" version))
               (sha256
                (base32
-                "0lmarll69jk6hqjcmshyjh6ixzigqgxskx1866d2qz5jjwkr3wxl"))))
+                "0cwx5zfbbji5jy2hrrj5k6m0p8nr8ljficj5fjrzhjd9cj2smqwy"))))
     (properties `((upstream-name . "FuzzySimRes")))
     (build-system r-build-system)
     (propagated-inputs (list r-palasso r-fuzzynumbers))
@@ -533,13 +533,13 @@ dealing with multicollinearity.  Initially described in Barbosa (2015)
 (define-public r-fuzzyresampling
   (package
     (name "r-fuzzyresampling")
-    (version "0.6.0")
+    (version "0.6.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FuzzyResampling" version))
               (sha256
                (base32
-                "1jnsxyiadyp26xlam913wvynb3sh18hrrxc5wkv70fpy1iqjlxcq"))))
+                "1jsbnyd3449ms3vzqmd82xaznyzvvmxj5k665ph6sb8k05dcbr6c"))))
     (properties `((upstream-name . "FuzzyResampling")))
     (build-system r-build-system)
     (home-page "https://github.com/mroman-ibs/FuzzyResampling")
@@ -1727,6 +1727,38 @@ which allows assigning multiple palettes or geometries or grouping rows and
 columns together in categories.  Saelens et al. (2019)
 <doi:10.1038/s41587-019-0071-9>.")
     (license license:expat)))
+
+(define-public r-funkycells
+  (package
+    (name "r-funkycells")
+    (version "1.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "funkycells" version))
+              (sha256
+               (base32
+                "1pk0m25z4d9h7qqxj87scflbcs2sw4xngj7c0dvxd0y11zb4hs7h"))))
+    (properties `((upstream-name . "funkycells")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-spatstat-geom
+                             r-spatstat-explore
+                             r-rpart
+                             r-ggplot2
+                             r-fda))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jrvanderdoes/funkycells")
+    (synopsis "Functional Data Analysis for Multiplexed Cell Images")
+    (description
+     "Compare variables of interest between (potentially large numbers of) spatial
+interactions and meta-variables.  Spatial variables are summarized using K, or
+other, functions, and projected for use in a modified random forest model.  The
+model allows comparison of functional and non-functional variables to each other
+and to noise, giving statistical significance to the results.  Included are
+preparation, modeling, and interpreting tools along with example datasets, as
+described in @code{VanderDoes} et al., (2023) <doi:10.1101/2023.07.18.549619>.")
+    (license license:gpl3+)))
 
 (define-public r-funitroots
   (package
@@ -4744,6 +4776,33 @@ selection of columns via tidyselect'.")
 response analysis.")
     (license license:gpl2)))
 
+(define-public r-frailtysurv
+  (package
+    (name "r-frailtysurv")
+    (version "1.3.8")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "frailtySurv" version))
+              (sha256
+               (base32
+                "1k1pxn47gglkcjzix3h1vn9z631ms6icgv5df6pb90008qmilck7"))))
+    (properties `((upstream-name . "frailtySurv")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival
+                             r-reshape2
+                             r-rcpp
+                             r-numderiv
+                             r-nleqslv
+                             r-ggplot2))
+    (home-page "https://github.com/vmonaco/frailtySurv/")
+    (synopsis "General Semiparametric Shared Frailty Model")
+    (description
+     "Simulates and fits semiparametric shared frailty models under a wide range of
+frailty distributions using a consistent and asymptotically-normal estimator.
+Currently supports: gamma, power variance function, log-normal, and inverse
+Gaussian frailty models.")
+    (license license:lgpl2.0)))
+
 (define-public r-frailtypack
   (package
     (name "r-frailtypack")
@@ -4813,13 +4872,13 @@ local mode or by following the link below.")
 (define-public r-frailtymmpen
   (package
     (name "r-frailtymmpen")
-    (version "1.1.2")
+    (version "1.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "frailtyMMpen" version))
               (sha256
                (base32
-                "01s4xa1w84bx56qy6629ag3632z53wrk7k61cagdp87lkkckb6xh"))))
+                "03d3mlbwvpqjgxgw4cqy2502lx4gh8fvf7sbcq06w8yjljffn0a0"))))
     (properties `((upstream-name . "frailtyMMpen")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rcppgsl r-rcpp r-numderiv r-mgcv))
@@ -6191,13 +6250,13 @@ FORTLS is described in Molina-Valero et al. (2022,
 (define-public r-forstringr
   (package
     (name "r-forstringr")
-    (version "0.1.1")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "forstringr" version))
               (sha256
                (base32
-                "1qbmkszznn537cqvq30r4lxyl2f9kannfd00zlb1kq3lyb8bc823"))))
+                "0x3nrvazzapvx8nfjyp7a0d1n2qs3mpbnfqj07rv4kxyw47p93iy"))))
     (properties `((upstream-name . "forstringr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect r-stringr r-rlang r-glue r-dplyr))
@@ -6215,17 +6274,18 @@ packages such as dplyr and tidyr'.")
 (define-public r-forsearch
   (package
     (name "r-forsearch")
-    (version "3.3.0")
+    (version "4.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "forsearch" version))
               (sha256
                (base32
-                "1k509s3mbq7fv9in2fj5amab6qb16r79ssq20h6vy489clkn1898"))))
+                "1wng22h9zifcri0488kx859b0z7mmd44zlq6d9w0a01ysl7iz6i2"))))
     (properties `((upstream-name . "forsearch")))
     (build-system r-build-system)
     (inputs (list gmp))
     (propagated-inputs (list r-tibble
+                             r-survival
                              r-nlme
                              r-hmisc
                              r-ggplot2
@@ -6239,8 +6299,9 @@ packages such as dplyr and tidyr'.")
      "Identifies potential data outliers and their impact on estimates and analyses.
 Uses the forward search approach of Atkinson and Riani, \"Robust Diagnostic
 Regression Analysis\", 2000,<ISBN: o-387-95017-6> to prepare descriptive
-statistics of a dataset that is to be analyzed by stats::lm(), stats::glm(), or
-nlme::lme().  Includes graphics functions to display the descriptive statistics.")
+statistics of a dataset that is to be analyzed by stats::lm(), stats::glm(),
+nlme::lme() or survival::coxph().  Includes graphics functions to display the
+descriptive statistics.")
     (license license:gpl3+)))
 
 (define-public r-forrel
@@ -6524,6 +6585,33 @@ geometric adaptations based on Hillebrand et al. (1999)
 Latent Class Discrete Weibull Models.This package is based on Fader and Hardie
 (2007) <doi:10.1002/dir.20074> and Fader and Hardie et al. (2018)
 <doi:10.1016/j.intmar.2018.01.002>.")
+    (license license:gpl3)))
+
+(define-public r-foresttools
+  (package
+    (name "r-foresttools")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ForestTools" version))
+              (sha256
+               (base32
+                "1az5rw91xakn4ja1lljizgdkfkbdps4zh2l00jp4i09gl9bkx50s"))))
+    (properties `((upstream-name . "ForestTools")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra
+                             r-sf
+                             r-rcpp
+                             r-plyr
+                             r-matrix
+                             r-imager))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/andrew-plowright/ForestTools")
+    (synopsis "Tools for Analyzing Remote Sensing Forest Data")
+    (description
+     "This package provides tools for analyzing remote sensing forest data, including
+functions for detecting treetops from canopy models, outlining tree crowns, and
+calculating textural metrics.")
     (license license:gpl3)))
 
 (define-public r-forestry
@@ -8505,6 +8593,47 @@ common conventions or those defined by International Swap Dealer Association
 (ISDA, <https://www.isda.org>) legal documentation.")
     (license license:gpl2)))
 
+(define-public r-fmat
+  (package
+    (name "r-fmat")
+    (version "2023.8")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "FMAT" version))
+              (sha256
+               (base32
+                "04076118yvl7mrsjjpffwzrqk2vlq2c0s7v2chyz7fpf3qhgkqby"))))
+    (properties `((upstream-name . "FMAT")))
+    (build-system r-build-system)
+    (inputs (list python))
+    (propagated-inputs (list r-tidyr
+                             r-text
+                             r-stringr
+                             r-reticulate
+                             r-purrr
+                             r-psychwordvec
+                             r-psych
+                             r-plyr
+                             r-glue
+                             r-forcats
+                             r-dplyr
+                             r-data-table
+                             r-cli))
+    (home-page "https://psychbruce.github.io/FMAT/")
+    (synopsis "The Fill-Mask Association Test")
+    (description
+     "The Fill-Mask Association Test ('FMAT') is an integrative, versatile, and
+probability-based method that uses Masked Language Models to measure conceptual
+associations or relations (e.g., attitudes, biases, stereotypes, social norms,
+cultural values) as propositional representations in natural language.  The
+supported language models include BERT (Devlin et al., 2018)
+@code{<arXiv:1810.04805>} and its model variants available at Hugging Face
+<https://huggingface.co/models?pipeline_tag=fill-mask>.  Python ('conda')
+environment and the transformers module can be installed automatically using the
+FMAT_load() function.  Methodological references and technical details are
+provided at <https://psychbruce.github.io/FMAT/>.")
+    (license license:gpl3)))
+
 (define-public r-fmadist
   (package
     (name "r-fmadist")
@@ -8776,13 +8905,13 @@ algorithms for solving optimization problems less relevant to Subset Sum.")
 (define-public r-flsa
   (package
     (name "r-flsa")
-    (version "1.5.2")
+    (version "1.5.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "flsa" version))
               (sha256
                (base32
-                "0c6cdf3hkl3s5yqwbn1qhqhyaw5pgd83a5bc30wbzq03hk7rh9ks"))))
+                "0m0zx0nizg4mrs2gg2sbxjlixx1rcmrj7xg869ia3gg36x1a28d9"))))
     (properties `((upstream-name . "flsa")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=flsa")
@@ -9965,18 +10094,18 @@ dataframes to XML.")
 (define-public r-flattabler
   (package
     (name "r-flattabler")
-    (version "1.2.0")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "flattabler" version))
               (sha256
                (base32
-                "156q3af7bmqcaxvl35634ph8dzs6gdjxqqkgwi214kj2pywpqg2a"))))
+                "0yqxm1d4n2g98101xa79qg1i8mfkrc5d81wlv80mpxwdq4xsqfkz"))))
     (properties `((upstream-name . "flattabler")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr r-tibble r-stringr r-readxl r-dplyr))
+    (propagated-inputs (list r-tibble r-stringr r-readxl r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=flattabler")
+    (home-page "https://josesamos.github.io/flattabler/")
     (synopsis "Obtaining a Flat Table from Pivot Tables")
     (description
      "Transformations that allow obtaining a flat table from reports in text or Excel
@@ -11706,41 +11835,46 @@ EDGAR in an automated and scalable manner.  See
 (define-public r-finnts
   (package
     (name "r-finnts")
-    (version "0.2.4")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "finnts" version))
               (sha256
                (base32
-                "0h1adlwbx3a4ldhw2s13v3ai3kij0da7bh502g045khc39dgg2iw"))))
+                "01h027inzl56n8h6mqbmnkpy5hia70wdsh0agp7d1k0rkzwh3cia"))))
     (properties `((upstream-name . "finnts")))
     (build-system r-build-system)
-    (propagated-inputs (list r-workflows
+    (propagated-inputs (list r-yardstick
+                             r-workflows
+                             r-vroom
                              r-tune
                              r-timetk
                              r-tidyselect
                              r-tidyr
                              r-tibble
                              r-stringr
+                             r-snakecase
                              r-rules
                              r-rsample
                              r-recipes
                              r-purrr
                              r-plyr
                              r-parsnip
-                             r-modeltime-resample
                              r-modeltime
                              r-magrittr
                              r-lubridate
                              r-kernlab
                              r-hts
                              r-gtools
+                             r-glue
                              r-glmnet
                              r-generics
+                             r-fs
                              r-foreach
                              r-earth
                              r-dplyr
                              r-doparallel
+                             r-digest
                              r-dials
                              r-cubist
                              r-cli))
@@ -11783,13 +11917,13 @@ time-series data.  API calls require free user account registration.")
 (define-public r-finnet
   (package
     (name "r-finnet")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FinNet" version))
               (sha256
                (base32
-                "05d1qnzq4x8k5dynxywqhla2x26fg5yr4lij5l3n4irrkqnx4vjn"))))
+                "1pfzdxprjh7nz2p7gvlss9hbkxb50l9v9z37hmf6xx4983a62z9z"))))
     (properties `((upstream-name . "FinNet")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix))
@@ -14705,6 +14839,30 @@ representing subjective dissimilarities, and other related information.  See
 package?fechner for an overview.")
     (license license:gpl2+)))
 
+(define-public r-fec16
+  (package
+    (name "r-fec16")
+    (version "0.1.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "fec16" version))
+              (sha256
+               (base32
+                "1lyqq4vx30bypl5b2yvv9k4zk1li6h43r2xf4dz5m11ycqw0ysja"))))
+    (properties `((upstream-name . "fec16")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vroom r-usethis r-readr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/baumer-lab/fec16")
+    (synopsis "Data Package for the 2016 United States Federal Elections")
+    (description
+     "Easily analyze relational data from the United States 2016 federal election
+cycle as reported by the Federal Election Commission.  This package contains
+data about candidates, committees, and a variety of different financial
+expenditures.  Data is from
+<https://www.fec.gov/data/browse-data/?tab=bulk-data>.")
+    (license license:cc0)))
+
 (define-public r-featurizer
   (package
     (name "r-featurizer")
@@ -15287,13 +15445,13 @@ existing packages.")
 (define-public r-fdboost
   (package
     (name "r-fdboost")
-    (version "1.1-1")
+    (version "1.1-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FDboost" version))
               (sha256
                (base32
-                "1hrz6ms5qvhn8sa8y39d8r7vz0q07pcsg72fh07gph6m6mrpx4yh"))))
+                "0fmcwjrcj4axdajavlyg7d200yb6wkxkd7fidmcsxpvpnbbb7wgj"))))
     (properties `((upstream-name . "FDboost")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -16555,13 +16713,13 @@ poll of over 30,000 people by Alex Bellos
 (define-public r-faviconplease
   (package
     (name "r-faviconplease")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "faviconPlease" version))
               (sha256
                (base32
-                "0vc2c7mj8igq4nbs9ass8s33rjc4bkly0y9c2x7vh82hajbzrvwn"))))
+                "1q9519y4c5jj0w98yxv51dc7zskxnyjc4fmmi6l47j724cp67gmq"))))
     (properties `((upstream-name . "faviconPlease")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2))
@@ -17517,13 +17675,13 @@ power.")
 (define-public r-fastlogisticregressionwrap
   (package
     (name "r-fastlogisticregressionwrap")
-    (version "1.1")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fastLogisticRegressionWrap" version))
               (sha256
                (base32
-                "1z70h0ryz0hx6zm7dr5ca570bfhbkfq0hy79ishay2zygm8fl85v"))))
+                "0vyb43632xhm9g52025ic8b8fmznpidsdwnaraj9vzysrim2v1r6"))))
     (properties `((upstream-name . "fastLogisticRegressionWrap")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppnumerical r-rcppeigen r-rcpp r-mass
@@ -17534,10 +17692,10 @@ power.")
      "This package provides very fast logistic regression with coefficient inferences
 plus other useful methods such as a forward stepwise model generator (see the
 benchmarks by visiting the github page at the URL below).  The inputs are
-flexible enough to accomodate GPU computations.  The coefficient estimation is
-the @code{fastLR()} method in the @code{RcppNumerical} package by Yixuan Qiu et
-al.  This package allows their work to be more useful to a wider community that
-demands inference.")
+flexible enough to accomodate GPU computations.  The coefficient estimation
+employs the @code{fastLR()} method in the @code{RcppNumerical} package by Yixuan
+Qiu et al.  This package allows their work to be more useful to a wider
+community that consumes inference.")
     (license license:gpl3)))
 
 (define-public r-fastlink
@@ -19335,13 +19493,13 @@ extension of the methodology proposed by \"Santos & Heras (2020)
 (define-public r-fairmaterials
   (package
     (name "r-fairmaterials")
-    (version "0.3.0")
+    (version "0.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FAIRmaterials" version))
               (sha256
                (base32
-                "001bk2zwri5hpxldv71bp6a3ni7x5adw48nkpn9dbmfglrgm3gnf"))))
+                "0434spa644g44qy7k0kapxxj34ch5vns8j27slx6j8i14ffxmzqq"))))
     (properties `((upstream-name . "FAIRmaterials")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyjson

@@ -385,13 +385,13 @@ powder diffraction, spectroscopy and other experimental methods.")
 (define-public r-rxshrink
   (package
     (name "r-rxshrink")
-    (version "2.2")
+    (version "2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RXshrink" version))
               (sha256
                (base32
-                "176hs9msxq7wh27f92lk4ghi6nljjym702wqzb070b60djwy513c"))))
+                "0w4x850a8pklb3ih22h0cfkajxjpd3drvjmjk37k51vfgpdfyqvd"))))
     (properties `((upstream-name . "RXshrink")))
     (build-system r-build-system)
     (propagated-inputs (list r-lars r-ellipse))
@@ -3001,16 +3001,21 @@ processing of raster time series data (e.g. a time series of satellite images)."
 (define-public r-rtry
   (package
     (name "r-rtry")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rtry" version))
               (sha256
                (base32
-                "1sac82z2jk5cp7cr3m6l07b6rk0ims0bsm3pvmk870v014brkim4"))))
+                "00a9sm08il7g0hq62jxsfib8952wdlkrhlrljnxahmaixghn7hww"))))
     (properties `((upstream-name . "rtry")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr r-jsonlite r-dplyr r-data-table r-curl))
+    (propagated-inputs (list r-tidyr
+                             r-magrittr
+                             r-jsonlite
+                             r-dplyr
+                             r-data-table
+                             r-curl))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/MPI-BGC-Functional-Biogeography/rtry")
     (synopsis "Preprocessing Plant Trait Data")
@@ -3273,32 +3278,34 @@ the theory part of the vignette.")
 (define-public r-rtrack
   (package
     (name "r-rtrack")
-    (version "1.0.7")
+    (version "2.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Rtrack" version))
               (sha256
                (base32
-                "0iq97x3z0n33wyqdgj8i5kib3dwk4lsard7nk3asgh0x0m866nk2"))))
+                "0npshk2ajmzyp11rgjqy1jr3pw3lm2n384zhsimphldvwhi98v6c"))))
     (properties `((upstream-name . "Rtrack")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp
+    (propagated-inputs (list r-zip
+                             r-terra
+                             r-stringi
+                             r-scales
                              r-rjson
-                             r-rgeos
                              r-readxl
-                             r-raster
+                             r-rcurl
                              r-randomforest
                              r-pbapply
                              r-openxlsx
                              r-kernsmooth
+                             r-hmisc
                              r-crayon))
     (home-page "https://rupertoverall.net/Rtrack/")
     (synopsis "Spatial Navigation Strategy Analysis")
     (description
      "This package provides a toolkit for the analysis of paths from spatial tracking
-experiments (such as the Morris water maze) and calculation of goal-finding
-strategies.  This package is centered on an approach using machine learning for
-path classification.")
+experiments and calculation of goal-finding strategies.  This package is
+centered on an approach using machine learning for path classification.")
     (license license:gpl3)))
 
 (define-public r-rtorch
@@ -3502,6 +3509,33 @@ sampled using a Metropolis-Gibbs sampler like the one described in the Klauer
 and Kellen (2018), but with some modifications.  Other than in the original C++
 program we use the free and open source GNU Scientific Library (GSL).  There is
 also the possibility to suppress single process completion times.")
+    (license license:gpl2+)))
+
+(define-public r-rtmb
+  (package
+    (name "r-rtmb")
+    (version "1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "RTMB" version))
+              (sha256
+               (base32
+                "10j5v7ydgl4c1kpysrwszajrjnj0wk86dbdmh8bf54ga2qvxl80r"))))
+    (properties `((upstream-name . "RTMB")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tmb r-rcppeigen r-rcpp r-matrix r-mass))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/kaskr/RTMB")
+    (synopsis "'R' Bindings for 'TMB'")
+    (description
+     "Native R interface to TMB (Template Model Builder) so models can be written
+entirely in R rather than C++'.  Automatic differentiation, to any order, is
+available for a rich subset of R features, including linear algebra for dense
+and sparse matrices, complex arithmetic, Fast Fourier Transform, probability
+distributions and special functions.  RTMB provides easy access to model fitting
+and validation following the principles of Kristensen, K., Nielsen, A., Berg, C.
+W., Skaug, H., & Bell, B. M. (2016) <DOI:10.18637/jss.v070.i05> and Thygesen,
+U.H., Albertsen, C.M., Berg, C.W. et al. (2017) <DOI:10.1007/s10651-017-0372-4>.")
     (license license:gpl2+)))
 
 (define-public r-rtlsdeep
@@ -4648,13 +4682,13 @@ summarizing model outputs.  rsyncrosim requires @code{SyncroSim} 2.3.5 or higher
 (define-public r-rswipl
   (package
     (name "r-rswipl")
-    (version "9.1.11")
+    (version "9.1.12")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rswipl" version))
               (sha256
                (base32
-                "1ah4yplbgqhb1vcnjwsxjhrbybfhqlzcnzraf9l1k8xvbgnr8f6b"))))
+                "0f3w6gwjklmb1wcjylslzwrplkp7yg0s7x54id8q1053142kkg29"))))
     (properties `((upstream-name . "rswipl")))
     (build-system r-build-system)
     (inputs (list zstd
@@ -5400,39 +5434,6 @@ input preprocessing and plotting tools.")
 statements.")
     (license license:gpl2)))
 
-(define-public r-rsqliteadmin
-  (package
-    (name "r-rsqliteadmin")
-    (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "rsqliteadmin" version))
-              (sha256
-               (base32
-                "1d9szm3nsr1q3hqrmapxdlymmgb3655n8v6x2vpcpahg54ajqrp5"))))
-    (properties `((upstream-name . "rsqliteadmin")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-shinyjqui
-                             r-shinyfiles
-                             r-shinydashboard
-                             r-shinyace
-                             r-shiny
-                             r-rsqlite
-                             r-magrittr
-                             r-golem
-                             r-fs
-                             r-dt
-                             r-disk-frame
-                             r-data-table
-                             r-config))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/rsqliteadmin/rsqliteadmin")
-    (synopsis "GUI to Manage SQLite Databases")
-    (description
-     "This package provides a comprehensive tool written in R Shiny to explore, manage
-and update SQLite Databases.")
-    (license license:gpl3)))
-
 (define-public r-rsql
   (package
     (name "r-rsql")
@@ -5556,26 +5557,27 @@ Linux 2), @code{openSUSE} / SLES 15.3-4, and Ubuntu 18.04, 20.04 and 22.04.")
 (define-public r-rspiro
   (package
     (name "r-rspiro")
-    (version "0.2")
+    (version "0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rspiro" version))
               (sha256
                (base32
-                "1gjil39ib9p86a7r3i03h01x2dsc9y283rnp65xvavrzmmgz87b4"))))
+                "1k91zdph8inkdyafz73lacbgq8x7rp55407rkpnr7nf0sbshxrr2"))))
     (properties `((upstream-name . "rspiro")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=rspiro")
     (synopsis "Implementation of Spirometry Equations")
     (description
      "Implementation of various spirometry equations in R, currently the GLI-2012
-(Global Lung Initiative; Quanjer et al.  2012 <doi:10.1183/09031936.00080312>)
-and the NHANES3 (National Health and Nutrition Examination Survey; Hankinson et
-al.  1999 <doi:10.1164/ajrccm.159.1.9712108>) equations.  Contains user-friendly
-functions to calculate predicted and LLN (Lower Limit of Normal) values for
-different spirometric parameters such as FEV1 (Forced Expiratory Volume in 1
-second), FVC (Forced Vital Capacity), etc, and to convert absolute spirometry
-measurements to percent (%) predicted and z-scores.")
+(Global Lung Initiative; Quanjer et al.  2012 <doi:10.1183/09031936.00080312>),
+the race-neutral GLI global 2022 (Global Lung Initiative; Bowerman et al.  2023
+<doi:10.1164/rccm.202205-0963OC>) and the NHANES3 (National Health and Nutrition
+Examination Survey; Hankinson et al.  1999 <doi:10.1164/ajrccm.159.1.9712108>)
+equations.  Contains user-friendly functions to calculate predicted and LLN
+(Lower Limit of Normal) values for different spirometric parameters such as FEV1
+(Forced Expiratory Volume in 1 second), FVC (Forced Vital Capacity), etc, and to
+convert absolute spirometry measurements to percent (%) predicted and z-scores.")
     (license license:gpl2+)))
 
 (define-public r-rspincalc
@@ -6114,13 +6116,13 @@ version of the package is documented in Journal of Statistical Software
 (define-public r-rsleep
   (package
     (name "r-rsleep")
-    (version "1.0.7")
+    (version "1.0.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rsleep" version))
               (sha256
                (base32
-                "135ldps39nbamcdhq8i3gybm4yx3x7550zy4037z8kp42jbccs0w"))))
+                "0ygga49kbmmlhbvbjn41abx00fi9zhsnri3j0w2hsk2yjcm3hr68"))))
     (properties `((upstream-name . "rsleep")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -6666,13 +6668,13 @@ then to estimate a structural equation model.")
 (define-public r-rseis
   (package
     (name "r-rseis")
-    (version "4.1-4")
+    (version "4.1-5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RSEIS" version))
               (sha256
                (base32
-                "0xpzvcw2blh3zzp7lacrq3zh7hx44d06ksi71nl1z1yk1krwmmbn"))))
+                "02vlwxrsnd37hwag263nmcimhsy6vbfp6pv07bc2rpy33ra0ai29"))))
     (properties `((upstream-name . "RSEIS")))
     (build-system r-build-system)
     (propagated-inputs (list r-rwave r-rpmg))
@@ -8608,13 +8610,13 @@ a recent evaluation and improvements.")
 (define-public r-rquantlib
   (package
     (name "r-rquantlib")
-    (version "0.4.18")
+    (version "0.4.19")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RQuantLib" version))
               (sha256
                (base32
-                "0ninb84isvv10dxh1ga5vs0q2hny37b4a9snzdijn63hl3rgw97i"))))
+                "1wbrfv061pbfkf0wv4aicwparj7ych4bpnf4gd32aj8s32jz63d4"))))
     (properties `((upstream-name . "RQuantLib")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-rcpp))
@@ -9006,6 +9008,27 @@ library is required; currently version 3.3.0 from 2017 is the stated minimum.")
      "Use JSON templates to create folders and files structure for data science
 projects.  Includes customized templates and accepts your own as JSON files.")
     (license license:gpl3+)))
+
+(define-public r-rprofile
+  (package
+    (name "r-rprofile")
+    (version "0.2.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rprofile" version))
+              (sha256
+               (base32
+                "0j8xyi01095x9vmk98x97qzsm5zgkpp1if0p4k80qp6cvh1ycy1g"))))
+    (properties `((upstream-name . "rprofile")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=rprofile")
+    (synopsis
+     "Load Both User-Global and Project-Specific R Profile Configurations")
+    (description
+     "Use rprofile::init() inside a project .Rprofile file to ensure that the
+user-global .Rprofile is loaded correctly regardless of its location, and other
+common resources (in particular renv') are also set up correctly.")
+    (license license:expat)))
 
 (define-public r-rprofet
   (package
@@ -9664,13 +9687,13 @@ atmospheric pressure).")
 (define-public r-rpmg
   (package
     (name "r-rpmg")
-    (version "2.2-3")
+    (version "2.2-6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RPMG" version))
               (sha256
                (base32
-                "1di2bcf58z6gc3xknzx35znsjsy1714swvxkdhlq1ljidbdbmmbl"))))
+                "06f399skc7cm2q11x2j021p9vls6njzr25xi4c08wfvc1fly6l0n"))))
     (properties `((upstream-name . "RPMG")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=RPMG")
@@ -10117,28 +10140,6 @@ September 2018.  Superseded by rsoi package which includes the historical and
 most recent monthly PDO index values together with related climate indices.")
     (license license:cc0)))
 
-(define-public r-rpcop
-  (package
-    (name "r-rpcop")
-    (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Rpcop" version))
-              (sha256
-               (base32
-                "0lcvcmlamwa9cddjnr7v5lcniilgvvh9h53iz1kddi5919qizi42"))))
-    (properties `((upstream-name . "Rpcop")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-princurve))
-    (home-page "https://cran.r-project.org/package=Rpcop")
-    (synopsis "Principal Curves of Oriented Points")
-    (description
-     "Principal curves generalize the notion of a first principal component to the
-case in which it is a non linear smooth curve.  This package provides a function
-pcop(X) to compute principal curves with the algorithm defined in Delicado
-(2001) <doi:10.1006/jmva.2000.1917> from a data matrix X.")
-    (license license:gpl2+)))
-
 (define-public r-rpca
   (package
     (name "r-rpca")
@@ -10373,13 +10374,13 @@ Perez-Lamarque & Morlon (2022) <DOI:10.1111/mec.16478> and Perez-Lamarque et al.
 (define-public r-rpaleoclim
   (package
     (name "r-rpaleoclim")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rpaleoclim" version))
               (sha256
                (base32
-                "0dl6f77sdrzjhbmrdgbrpn2a9g9a0bcx9nc228r0mawxvd1h18kq"))))
+                "1fqlqs8l18dy5l24hzyj19hdk6yaxmd25g56hg1c6cm677z1xcli"))))
     (properties `((upstream-name . "rpaleoclim")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-rlang r-fs r-curl))
@@ -12146,6 +12147,39 @@ detection of events or structural breaks.")
      "Fast and efficient computation of rolling and expanding statistics for
 time-series data.")
     (license license:gpl2+)))
+
+(define-public r-rolap
+  (package
+    (name "r-rolap")
+    (version "2.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rolap" version))
+              (sha256
+               (base32
+                "06fzw94qwd77csi4zfkw38sxxgsr3b9mpm4j8av5dwhkf3d6l2nn"))))
+    (properties `((upstream-name . "rolap")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-snakecase
+                             r-rlang
+                             r-purrr
+                             r-dplyr
+                             r-dm))
+    (native-inputs (list r-knitr))
+    (home-page "https://josesamos.github.io/rolap/")
+    (synopsis "Obtaining Star Databases from Flat Tables")
+    (description
+     "Data in multidimensional systems is obtained from operational systems and is
+transformed to adapt it to the new structure.  Frequently, the operations to be
+performed aim to transform a flat table into a ROLAP (Relational On-Line
+Analytical Processing) star database.  The main objective of the package is to
+allow the definition of these transformations easily.  The implementation of the
+multidimensional database obtained can be exported to work with multidimensional
+analysis tools on spreadsheets or relational databases.")
+    (license license:expat)))
 
 (define-public r-roistats
   (package
@@ -16479,13 +16513,13 @@ regularization parameter.  The method is fully described in
 (define-public r-rmzqc
   (package
     (name "r-rmzqc")
-    (version "0.5.1")
+    (version "0.5.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rmzqc" version))
               (sha256
                (base32
-                "0bcx3c3qccid91bkbkyfkl7xpmcfr2iwgk25mdzxcgsqjsfrgkzs"))))
+                "1v1xcwj170cgi0qzphvmcmb7abwv9n20gjizbsjqvx0hacj6wfxm"))))
     (properties `((upstream-name . "rmzqc")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat
@@ -18055,13 +18089,13 @@ cross-validation is also provided.")
 (define-public r-rmcorr
   (package
     (name "r-rmcorr")
-    (version "0.5.4")
+    (version "0.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rmcorr" version))
               (sha256
                (base32
-                "09s2c7cv15lss0f388dkppgdcvpa6vy43a8yx19kmsi8zaqdvdbr"))))
+                "0p3vqhqyh4lrnlj05bdqxza2dl08nmfadsl0dg67vbr3rjzfh62k"))))
     (properties `((upstream-name . "rmcorr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcolorbrewer r-psych))
@@ -18400,25 +18434,21 @@ the contour(s) at a given level.")
 (define-public r-rmapzen
   (package
     (name "r-rmapzen")
-    (version "0.4.4")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rmapzen" version))
               (sha256
                (base32
-                "0bxwhpikkny1r3qr03k10isdf5wclalpfaljd5qngazr1rxflmsl"))))
+                "00dv9q5yzw82hm89dzy96zj50zzhz79ps1wg7b9pz9gr6xix7xi9"))))
     (properties `((upstream-name . "rmapzen")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-tibble
-                             r-sp
                              r-sf
-                             r-rgeos
-                             r-rgdal
                              r-purrr
-                             r-maptools
-                             r-maps
                              r-jsonlite
+                             r-isocodes
                              r-httr
                              r-geojsonio
                              r-dplyr
@@ -19453,13 +19483,13 @@ Theil-Sen's slope estimator.")
 (define-public r-rkorapclient
   (package
     (name "r-rkorapclient")
-    (version "0.7.6")
+    (version "0.7.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RKorAPClient" version))
               (sha256
                (base32
-                "1xvrgq07nrdi3jls6nf47af7cvln46vrhc234yn3clkzjn6nh6f5"))))
+                "1y43bf9skc33lj1krad5p72pa5fbqlr49rv6agg6zb0yy3gjf9rd"))))
     (properties `((upstream-name . "RKorAPClient")))
     (build-system r-build-system)
     (propagated-inputs (list r-urltools
@@ -19479,7 +19509,6 @@ Theil-Sen's slope estimator.")
                              r-dplyr
                              r-curl
                              r-broom))
-    (native-inputs (list esbuild))
     (home-page "https://github.com/KorAP/RKorAPClient/")
     (synopsis "'KorAP' Web Service Client Package")
     (description
@@ -20186,28 +20215,6 @@ algorithm, type \"help('RJclust')\".  To cite this package, type
 citation(\"RJcluster\")'.")
     (license license:gpl2+)))
 
-(define-public r-rjazz
-  (package
-    (name "r-rjazz")
-    (version "0.1.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "rjazz" version))
-              (sha256
-               (base32
-                "0wmqlpgcr98dvapfmdcph5mdv202rzzsvb06iy5sqvpizpg7pbsz"))))
-    (properties `((upstream-name . "rjazz")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcurl))
-    (home-page "https://cran.r-project.org/package=rjazz")
-    (synopsis "Official Client for 'Jazz'")
-    (description
-     "This is the official Jazz client.  Jazz is a lightweight modular data processing
-framework, including a web server.  It provides data persistence and computation
-capabilities accessible from R and Python and also through a REST API.
-<https://github.com/bbvadata/Jazz> See ?rjazz::rjazz to get a Jazz server.")
-    (license license:asl2.0)))
-
 (define-public r-rjafroc
   (package
     (name "r-rjafroc")
@@ -20429,16 +20436,16 @@ network and associated properties.")
 (define-public r-riverdist
   (package
     (name "r-riverdist")
-    (version "0.15.5")
+    (version "0.16.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "riverdist" version))
               (sha256
                (base32
-                "00bli01zczai8czg5p031nc83yqr3vff9n3sc999xmd3p6li4mwr"))))
+                "1r7ya9z8bf0cdn9j1x5k6da11fil3213rxnfwddqfn9ad8gbb341"))))
     (properties `((upstream-name . "riverdist")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp r-rgdal))
+    (propagated-inputs (list r-sf))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=riverdist")
     (synopsis "River Network Distance Computation and Applications")
@@ -21292,13 +21299,13 @@ Algorithms and Applications, for a reference.")
 (define-public r-rintcal
   (package
     (name "r-rintcal")
-    (version "0.6.2")
+    (version "0.6.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rintcal" version))
               (sha256
                (base32
-                "003ylbhi71m67w9hiq3yibm1ldw4vz2v9fpaw3lid5l7iw4amvlm"))))
+                "1skmsxvf15rclpcgyr9iwa66y3h6r8vwzp0c86sdm2yy66p6gdqz"))))
     (properties `((upstream-name . "rintcal")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-data-table))
@@ -22277,13 +22284,13 @@ Reference Interval Estimation\".  Clinical Chemistry (2022)
 (define-public r-ribd
   (package
     (name "r-ribd")
-    (version "1.5.0")
+    (version "1.6.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ribd" version))
               (sha256
                (base32
-                "11plql3fbvfw7ldrz3hs1x27j2l7pm2nd3alanr78yvilv0z16rf"))))
+                "1pzkbazm5mcr05ib2x0cs8aa7jk96k9nhkish96awjd2ihq6c019"))))
     (properties `((upstream-name . "ribd")))
     (build-system r-build-system)
     (propagated-inputs (list r-slam r-pedtools r-kinship2 r-glue))
@@ -22297,12 +22304,10 @@ construction of any given kappa coefficients, as described in Vigeland (2020)
 <doi:10.1007/s00285-020-01505-x>.  In addition to the standard coefficients,
 ribd also computes a range of lesser-known coefficients, including generalised
 kinship coefficients (Karigl (1981) <doi:10.1111/j.1469-1809.1981.tb00341.x>;
-Weeks and Lange (1988) <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1715269>),
-two-locus coefficients (Thompson (1988) <doi:10.1093/imammb/5.4.261>) and
-multi-person coefficients.  This package is part of the ped suite', a collection
-of packages for pedigree analysis in R. Several methods of ribd are featured in
-the online app @code{QuickPed} available at
-<https://magnusdv.shinyapps.io/quickped>.  See Vigeland (2022)
+Weeks and Lange (1988) <https://pubmed.ncbi.nlm.nih.gov/3422543/>), two-locus
+coefficients (Thompson (1988) <doi:10.1093/imammb/5.4.261>) and multi-person
+coefficients.  Many features of ribd are available through the online app
+@code{QuickPed} at <https://magnusdv.shinyapps.io/quickped>; see Vigeland (2022)
 <doi:10.1186/s12859-022-04759-y>.")
     (license license:gpl3)))
 
@@ -23285,13 +23290,13 @@ formats and methods are described in @code{McKay,} B.D. and Piperno, A (2014)
 (define-public r-rgplates
   (package
     (name "r-rgplates")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rgplates" version))
               (sha256
                (base32
-                "0aj2n58l5wzlfvqipwjml7ng9j1mfsrwbv2x5sa27rxn18v5njjz"))))
+                "1j3yyg3ayzd5n6bvfwqcylih3qcwl1c22xgq56z0fjix3acs1z74"))))
     (properties `((upstream-name . "rgplates")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf))
@@ -23362,13 +23367,13 @@ a lot of changes between each environment, it just becomes quite cumbersome.")
 (define-public r-rgoogleclassroom
   (package
     (name "r-rgoogleclassroom")
-    (version "0.9")
+    (version "0.9.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rgoogleclassroom" version))
               (sha256
                (base32
-                "07dnnjvyg07vjz7swldk20wxw6ywkc3a5biaiac3jkirxrc65rqw"))))
+                "0s4s5ipvnbwrf76ihzcjqkf3l1j008gn0ncl2a4znp9ka432gk49"))))
     (properties `((upstream-name . "rgoogleclassroom")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -23637,6 +23642,37 @@ provides read and write functions to work with it.")
      "This package provides some functions to create quizzes in the GIFT format.  This
 format is used by several Virtual Learning Environments such as Moodle.")
     (license license:gpl2+)))
+
+(define-public r-rgho
+  (package
+    (name "r-rgho")
+    (version "3.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rgho" version))
+              (sha256
+               (base32
+                "19am8xhflib4062rkidn1501hq5wlj3mjx2hm4vf3jpzgqiqdj59"))))
+    (properties `((upstream-name . "rgho")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-odataquery
+                             r-magrittr
+                             r-lifecycle
+                             r-httr
+                             r-dplyr
+                             r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=rgho")
+    (synopsis "Access WHO Global Health Observatory Data from R")
+    (description
+     "Access WHO Global Health Observatory (<https://www.who.int/data/gho/>) data from
+R via the `OData` API (<https://www.who.int/data/gho/info/gho-odata-api>), an
+application program interface providing a simple query interface to the World
+Health Organization's data and statistics content.")
+    (license license:gpl3+)))
 
 (define-public r-rghanacensus
   (package
@@ -25305,13 +25341,13 @@ proposed splitting rule.")
 (define-public r-rfast2
   (package
     (name "r-rfast2")
-    (version "0.1.5")
+    (version "0.1.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Rfast2" version))
               (sha256
                (base32
-                "0bl0iy1x3b6mzvyrz5l0syzx6z6bg1j50m3gaazsxrdb8gfll8xx"))))
+                "1cj0ggb49l2srycl8k832kvfx5y43yvhknn0glkkgcac838y2417"))))
     (properties `((upstream-name . "Rfast2")))
     (build-system r-build-system)
     (propagated-inputs (list r-rfast r-rcppparallel r-rcpparmadillo r-rcpp
@@ -26458,13 +26494,13 @@ large datasets.")
 (define-public r-restatapi
   (package
     (name "r-restatapi")
-    (version "0.20.6")
+    (version "0.21.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "restatapi" version))
               (sha256
                (base32
-                "06cbahj5as0bal625y2z3mhqw46h6p5mi29g2qfyv0fcg7fnij6l"))))
+                "0358vmr9zb5q35wrxvr2022vl6w3i4dvi9nkj4lmzymwvib63w2s"))))
     (properties `((upstream-name . "restatapi")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-rjson r-data-table))
@@ -26899,13 +26935,13 @@ rotation and pesticide application regimes.")
 (define-public r-reset
   (package
     (name "r-reset")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RESET" version))
               (sha256
                (base32
-                "1sgmdimxx7d5y43yc296rik5l6274z2wxhx4pca1dhmpk9s2i27m"))))
+                "16p48xhcvqv2f1zqbca7p1hnqrngk7pchj6xaw7265pixaybvlbp"))))
     (properties `((upstream-name . "RESET")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix))
@@ -27551,13 +27587,13 @@ PROJ library is available at <https://proj.org/>.")
 (define-public r-reproducible
   (package
     (name "r-reproducible")
-    (version "2.0.5")
+    (version "2.0.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "reproducible" version))
               (sha256
                (base32
-                "19m2392s5ylzajjigx4x3i2x09hd1cx9qjx8xaa20g2qhqnnicrs"))))
+                "0hxxjninf9a4bc1djbrwidziwp6q5dbx7y1i7jpwdfm8q105vs4q"))))
     (properties `((upstream-name . "reproducible")))
     (build-system r-build-system)
     (propagated-inputs (list r-lobstr r-fpcompare r-filelock r-digest
@@ -28360,13 +28396,13 @@ analysis, gene-set tests, and binary random data generation.")
 (define-public r-repeated
   (package
     (name "r-repeated")
-    (version "1.1.6")
+    (version "1.1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "repeated" version))
               (sha256
                (base32
-                "0h3dfl157bx39racg9vfsrlfyjx60vn29pyff944fnr3wj7nk1pa"))))
+                "15d4igg4s87rj22kxi1sc1chfd1z7v08q6cvglabysaymbz1nbmw"))))
     (properties `((upstream-name . "repeated")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmutil))
@@ -28387,8 +28423,8 @@ for Counts with Frailty or Serial Dependence, Repeated Measurements Models for
 Continuous Variables with Frailty or Serial Dependence, Ordinal Random Effects
 Models with Dropouts, marginal homogeneity models for square contingency tables,
 correlated negative binomial models with Kalman update.  References include
-Lindsey's text books, JK Lindsey (2001) <isbn-10:0198508123> and JK Lindsey
-(1999) <isbn-10:0198505590>.")
+Lindsey's text books, JK Lindsey (2001) <isbn:10-0198508123> and JK Lindsey
+(1999) <isbn:10-0198505590>.")
     (license license:gpl2+)))
 
 (define-public r-repaymentplan
@@ -29925,6 +29961,39 @@ expansion framework is of conceptual value by offering new opportunities to
 generate novel regression problems.")
     (license license:gpl2+)))
 
+(define-public r-regressinator
+  (package
+    (name "r-regressinator")
+    (version "0.1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "regressinator" version))
+              (sha256
+               (base32
+                "0rdnaidbfs2s3qidfcilqrav84xs4v6g3xzwn27bn53s3nayw0r4"))))
+    (properties `((upstream-name . "regressinator")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-purrr
+                             r-nullabor
+                             r-insight
+                             r-ggplot2
+                             r-dplyr
+                             r-cli
+                             r-broom))
+    (native-inputs (list r-knitr))
+    (home-page "https://www.refsmmat.com/regressinator/")
+    (synopsis "Simulate and Diagnose (Generalized) Linear Models")
+    (description
+     "Simulate samples from populations with known covariate distributions, generate
+response variables according to common linear and generalized linear model
+families, draw from sampling distributions of regression estimates, and perform
+visual inference on diagnostics from model fits.")
+    (license license:expat)))
+
 (define-public r-regress
   (package
     (name "r-regress")
@@ -30050,13 +30119,13 @@ and to enable outcome calculation.")
 (define-public r-rego
   (package
     (name "r-rego")
-    (version "1.5.2")
+    (version "1.6.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rego" version))
               (sha256
                (base32
-                "11c8hanfm8n9n8h7a2g3j9x2zy5njfwf19w7d0xydi9pklppy6gc"))))
+                "1givsz2myip3q7q0y8gmmv1n28f6d3haky5l43s1rz0v24x1s1hz"))))
     (properties `((upstream-name . "rego")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -31912,13 +31981,13 @@ parallel computing is supported in this package.")
 (define-public r-recordtest
   (package
     (name "r-recordtest")
-    (version "2.1.2")
+    (version "2.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RecordTest" version))
               (sha256
                (base32
-                "0250yv8h6i34n9wsz9a2bgkdnajmn1qxmaqblkkn5ckd2cagfh5m"))))
+                "11d1cf3xczi8p76lmjb469nixi0mxg6vafiqrv82vg06csz6g7ra"))))
     (properties `((upstream-name . "RecordTest")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))
@@ -31931,7 +32000,8 @@ in a sequence of independent and identically distributed continuous random
 variables.  In particular, tools to prepare a time series as well as
 distribution-free trend and change-point tests and graphical tools to study the
 record occurrence.  Details about the implemented tools can be found in
-Castillo-Mateo et al. (2023) <doi:10.18637/jss.v106.i05>.")
+Castillo-Mateo et al. (2023a) <doi:10.18637/jss.v106.i05> and Castillo-Mateo et
+al. (2023b) <doi:10.1016/j.atmosres.2023.106934>.")
     (license license:gpl3)))
 
 (define-public r-records
@@ -32435,35 +32505,6 @@ estimating m- and u-probabilities (I. Fellegi & A. Sunter (1969)
 forcing one-to-one matching.  Can also be used for pre- and post-processing for
 machine learning methods for record linkage.  Focus is on memory, CPU
 performance and flexibility.")
-    (license license:gpl3)))
-
-(define-public r-reclin
-  (package
-    (name "r-reclin")
-    (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "reclin" version))
-              (sha256
-               (base32
-                "0bskmlysc12g5invscr0vvshy8bp1gxjx4wihwbbfzmnk2951qrc"))))
-    (properties `((upstream-name . "reclin")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringdist
-                             r-rcpp
-                             r-lvec
-                             r-lpsolve
-                             r-ldat
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/djvanderlaan/reclin")
-    (synopsis "Record Linkage Toolkit")
-    (description
-     "This package provides functions to assist in performing probabilistic record
-linkage and deduplication: generating pairs, comparing records, em-algorithm for
-estimating m- and u-probabilities, forcing one-to-one matching.  Can also be
-used for pre- and post-processing for machine learning methods for record
-linkage.")
     (license license:gpl3)))
 
 (define-public r-rechonest
@@ -33255,13 +33296,13 @@ datasets from providers like the Roper Center <https://ropercenter.cornell.edu>.
 (define-public r-readrba
   (package
     (name "r-readrba")
-    (version "0.1.4")
+    (version "0.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "readrba" version))
               (sha256
                (base32
-                "1vwsnh0r4ahx2dr3z9hmmjirhnh2wwqqqj20ii8mjsky8xnw8sqy"))))
+                "0nb185mmbcc796l9xy5v9p1y9hssd00wypxsm3s2212mczcbpail"))))
     (properties `((upstream-name . "readrba")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -33616,13 +33657,13 @@ desorption/ionization-time-of-flight mass spectrometer of the *flex series.")
 (define-public r-readabs
   (package
     (name "r-readabs")
-    (version "0.4.13")
+    (version "0.4.14")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "readabs" version))
               (sha256
                (base32
-                "14jb04dsaxjwp3p35xwsfhp7b1arq65y4qvjpf11jixw1ndx3qxb"))))
+                "1m6n8w2hi2r0rrnmy9cnb5a0c37wlq23j6w49lx1zspsfqk6iqiv"))))
     (properties `((upstream-name . "readabs")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -33632,6 +33673,7 @@ desorption/ionization-time-of-flight mass spectrometer of the *flex series.")
                              r-rlang
                              r-readxl
                              r-purrr
+                             r-labelled
                              r-hutils
                              r-httr
                              r-glue
@@ -35684,13 +35726,13 @@ unknown.")
 (define-public r-rctrep
   (package
     (name "r-rctrep")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RCTrep" version))
               (sha256
                (base32
-                "0xjklda4z5gk44blxcyc97rlkq842b5lywz1k6ly24vw3fmv4hhs"))))
+                "0wg2rn2965yljfzqyjfdap8wkhz7f55yqan8krpw4ybf5v5acfas"))))
     (properties `((upstream-name . "RCTrep")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -35698,11 +35740,9 @@ unknown.")
                              r-shiny
                              r-r6
                              r-psweight
-                             r-optmatch
                              r-numderiv
                              r-mvtnorm
                              r-matchit
-                             r-mass
                              r-glue
                              r-ggpubr
                              r-ggplot2
@@ -37514,13 +37554,13 @@ R code as input, and returns R code as output.")
 (define-public r-rcnv
   (package
     (name "r-rcnv")
-    (version "1.1.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rCNV" version))
               (sha256
                (base32
-                "1cqimz470aag6c0jp5m3vqki4lj2qslvr040rxk63pm1jrvq31ga"))))
+                "07c47qz5ma0g9nr0qdsmwhiw1fq3a7r40siavgkhd2in9rb5fzrw"))))
     (properties `((upstream-name . "rCNV")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-r-utils r-qgraph r-data-table
@@ -40465,19 +40505,20 @@ distribution and random vectors from the Dirichlet distribution.")
 (define-public r-rbest
   (package
     (name "r-rbest")
-    (version "1.7-0")
+    (version "1.7-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RBesT" version))
               (sha256
                (base32
-                "0yi55xasgvdx5yp5ggc7831kq8l358fa2i4rjrsk81s6s9fbz9pg"))))
+                "0785a5q2m5371arwvybdc72nly87az5qqbp5sgvfdy9rz9xgldnl"))))
     (properties `((upstream-name . "RBesT")))
     (build-system r-build-system)
     (inputs (list pandoc pandoc))
     (propagated-inputs (list r-stanheaders
                              r-rstantools
                              r-rstan
+                             r-rlang
                              r-rcppparallel
                              r-rcppeigen
                              r-rcpp
@@ -42961,6 +43002,30 @@ with slight modifications by this package.")
 rankings.  See Rising (2021) @code{<arXiv:2107.03459>} for background.")
     (license license:expat)))
 
+(define-public r-ranktreeensemble
+  (package
+    (name "r-ranktreeensemble")
+    (version "0.21")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ranktreeEnsemble" version))
+              (sha256
+               (base32
+                "1hzzsrzwsrpxdq5dss291myz6irrfgmhkw2idxng5g9p26dykwzq"))))
+    (properties `((upstream-name . "ranktreeEnsemble")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp r-randomforestsrc r-gbm r-data-tree))
+    (home-page "https://github.com/TransBioInfoLab/ranktreeEnsemble/")
+    (synopsis
+     "Ensemble Models of Rank-Based Trees with Extracted Decision Rules")
+    (description
+     "Fast computing an ensemble of rank-based trees via boosting or random forest on
+binary and multi-class problems.  It converts continuous gene expression
+profiles into ranked gene pairs, for which the variable importance indices are
+computed and adopted for dimension reduction.  Decision rules can be extracted
+from trees.")
+    (license license:gpl2+)))
+
 (define-public r-ranks
   (package
     (name "r-ranks")
@@ -43452,13 +43517,13 @@ alpha-hull-derived range polygons and mapping species distributions.")
 (define-public r-rang
   (package
     (name "r-rang")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rang" version))
               (sha256
                (base32
-                "1nh9c8rm00xrdqy6k65flkxakmmkbaz4nrmw51mk0mhnsx76piia"))))
+                "1aws5hvzm67qj3h1ng3v5m0l1v9v7kbwczgjd900ag8x2vffs69f"))))
     (properties `((upstream-name . "rang")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -44796,13 +44861,13 @@ Ranking with Incomplete Information, Technical Report.")
 (define-public r-rainbowr
   (package
     (name "r-rainbowr")
-    (version "0.1.29")
+    (version "0.1.32")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RAINBOWR" version))
               (sha256
                (base32
-                "0g82wi0bffkkb86axsa814dbqhscs9mlgk43j3j375v9kbd4136c"))))
+                "1x87an97405l7mlwzby8fhxxc7f6bnc9xyzjpn23nrbyvkpmyis8"))))
     (properties `((upstream-name . "RAINBOWR")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -44810,6 +44875,7 @@ Ranking with Incomplete Information, Technical Report.")
                              r-rfast
                              r-rcppeigen
                              r-rcpp
+                             r-r-utils
                              r-pegas
                              r-pbmcapply
                              r-optimx
@@ -45742,13 +45808,13 @@ of landscapeâ used in the domain of landscape ecology.")
 (define-public r-raceid
   (package
     (name "r-raceid")
-    (version "0.3.1")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RaceID" version))
               (sha256
                (base32
-                "1ql48sy64j0x0y4yjfrciwnj24h0h933k4n3l5nljjz5ldz2izpy"))))
+                "0vs94h7xcpy8rpqiwq7q2yl8yvvnmzsc4fm3s0kbbyjxccywy293"))))
     (properties `((upstream-name . "RaceID")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -45782,8 +45848,8 @@ of landscapeâ used in the domain of landscape ecology.")
      "Identification of Cell Types, Inference of Lineage Trees, and Prediction of Noise Dynamics from Single-Cell RNA-Seq Data")
     (description
      "Application of @code{RaceID} allows inference of cell types and prediction of
-lineage trees by the @code{StemID2} algorithm (Herman, J.S., Sagar, @code{GrÃ¼n}
-D. (2018) <DOI:10.1038/nmeth.4662>). @code{VarID2} is part of this package and
+lineage trees by the @code{StemID2} algorithm (Herman, J.S., Sagar, Grun D.
+(2018) <DOI:10.1038/nmeth.4662>). @code{VarID2} is part of this package and
 allows quantification of biological gene expression noise at single-cell
 resolution (Rosales-Alvarez, R.E., Rettkowski, J., Herman, J.S., Dumbovic, G.,
 Cabezas-Wallscheid, N., Grun, D. (2023) <DOI:10.1186/s13059-023-02974-1>).")
@@ -46145,13 +46211,13 @@ S3/S4 generics and methods for dispatch.  Also allows piping for R6 objects.")
 (define-public r-r5r
   (package
     (name "r-r5r")
-    (version "1.0.1")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "r5r" version))
               (sha256
                (base32
-                "03hw4wlbc1zhnk8xllq9rjl0psjz1as960vf0iy57fc7mbb5ipqz"))))
+                "07w7riqh7vkq4zqvi5hqcbk1nr8y2lq2kbg9738wpc7fsr4m5amg"))))
     (properties `((upstream-name . "r5r")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -46162,6 +46228,7 @@ S3/S4 generics and methods for dispatch.  Also allows piping for R6 objects.")
                              r-httr
                              r-data-table
                              r-curl
+                             r-concaveman
                              r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ipeaGIT/r5r")
@@ -46708,13 +46775,13 @@ include resize functionality in Markdown', Rmarkdown and Quarto documents.")
 (define-public r-r2redux
   (package
     (name "r-r2redux")
-    (version "1.0.13")
+    (version "1.0.14")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "r2redux" version))
               (sha256
                (base32
-                "0pbly0r5jjil1rkr3fy8484ybls1hkwq7i38nvf3q5dshwims8jd"))))
+                "16pjn77b8vjxcdr3mcc8sj6jlm0a3njrigfi8wp2finvl4x0ld2b"))))
     (properties `((upstream-name . "r2redux")))
     (build-system r-build-system)
     (home-page "https://github.com/mommy003/r2redux")

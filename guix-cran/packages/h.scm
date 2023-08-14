@@ -682,18 +682,17 @@ intrinsic scatter in the generative model orthogonal to the hyperplane.")
 (define-public r-hyfo
   (package
     (name "r-hyfo")
-    (version "1.4.3")
+    (version "1.4.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hyfo" version))
               (sha256
                (base32
-                "012akh96qwafhgjba1gjwy0r14a6shcsk5b7n1hvw230s07zxd8r"))))
+                "0jyzqd5snby3im4r8jz4m2lxvarr0ydnsajfww2am1h611yw2gy8"))))
     (properties `((upstream-name . "hyfo")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
-                             r-rgeos
-                             r-rgdal
+                             r-sf
                              r-reshape2
                              r-plyr
                              r-ncdf4
@@ -2551,13 +2550,13 @@ and Yao (2018), Journal of Statistical Computation and Simulation, 88:14,
 (define-public r-htetree
   (package
     (name "r-htetree")
-    (version "0.1.16")
+    (version "0.1.17")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "htetree" version))
               (sha256
                (base32
-                "1q9fkmnr9nn68jdg87ls67rfncn12m46ck6svq0q17krf0ins9bc"))))
+                "0z7gbpzvj4w5vz8b3zs4mvr70qf8sz295cbypm5x6np0ac2gcdzm"))))
     (properties `((upstream-name . "htetree")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -4411,6 +4410,31 @@ dioxide and temperature data:
 <https://cdiac.ess-dive.lbl.gov/trends/co2/vostok.html>.")
     (license license:expat)))
 
+(define-public r-hoasso
+  (package
+    (name "r-hoasso")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "HOasso" version))
+              (sha256
+               (base32
+                "161sdrz0l07mzjsdhdqvdhayq4jbxiqpal0hn5q9k8lkl81aqcak"))))
+    (properties `((upstream-name . "HOasso")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rdpack r-igraph))
+    (home-page "https://cran.r-project.org/package=HOasso")
+    (synopsis "Higher Order Assortativity for Complex Networks")
+    (description
+     "Allows to evaluate Higher Order Assortativity of complex networks defined
+through objects of class igraph from the package of the same name.  The package
+returns a result also for directed and weighted graphs.  References, Arcagni,
+A., Grassi, R., Stefani, S., & Torriero, A. (2017)
+<doi:10.1016/j.ejor.2017.04.028> Arcagni, A., Grassi, R., Stefani, S., &
+Torriero, A. (2021) <doi:10.1016/j.jbusres.2019.10.008> Arcagni, A., Cerqueti,
+R., & Grassi, R. (2023) @code{<doi:10.48550/arXiv.2304.01737>.}")
+    (license license:gpl2+)))
+
 (define-public r-hoardr
   (package
     (name "r-hoardr")
@@ -5795,17 +5819,17 @@ series.  An introducing paper is Irpino A. Verde R. (2015) <doi:
 (define-public r-histdata
   (package
     (name "r-histdata")
-    (version "0.8-7")
+    (version "0.9-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "HistData" version))
               (sha256
                (base32
-                "0cs231w4x8sw2dwy04xwiw01rr2brfz9smwmplw5g1jv1d7afnlj"))))
+                "1c005rmzbxcc4m7rxnbxna4dlg3vrn5fhkj4vrkak3xrxbcfkafw"))))
     (properties `((upstream-name . "HistData")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=HistData")
+    (home-page "https://friendly.github.io/HistData/")
     (synopsis
      "Data Sets from the History of Statistics and Data Visualization")
     (description
@@ -6889,47 +6913,6 @@ describe comparable comparable entities as it relies on the sets to have a
 meaningful relational structure.")
     (license license:expat)))
 
-(define-public r-hierarchicalds
-  (package
-    (name "r-hierarchicalds")
-    (version "3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hierarchicalDS" version))
-              (sha256
-               (base32
-                "16d6l3y21nhynfjk4swp3pnjr6vhcxq369djgxz907zsjby35gkz"))))
-    (properties `((upstream-name . "hierarchicalDS")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xtable
-                             r-truncnorm
-                             r-rgeos
-                             r-mvtnorm
-                             r-mcmcpack
-                             r-mc2d
-                             r-matrix
-                             r-ggplot2
-                             r-coda))
-    (home-page "https://cran.r-project.org/package=hierarchicalDS")
-    (synopsis
-     "Functions to Perform Hierarchical Analysis of Distance Sampling Data")
-    (description
-     "This package provides functions for performing hierarchical analysis of distance
-sampling data, with ability to use an areal spatial ICAR model on top of user
-supplied covariates to get at variation in abundance intensity.  The detection
-model can be specified as a function of observer and individual covariates,
-where a parametric model is supposed for the population level distribution of
-covariate values.  The model uses data augmentation and a reversible jump MCMC
-algorithm to sample animals that were never observed.  Also included is the
-ability to include point independence (increasing correlation multiple
-observer's observations as a function of distance, with independence assumed for
-distance=0 or first distance bin), as well as the ability to model species
-misclassification rates using a multinomial logit formulation on data from
-double observers.  There is also the the ability to include zero inflation, but
-this is only recommended for cases where sample sizes and spatial coverage of
-the survey are high.")
-    (license (license:fsdg-compatible "Unlimited"))))
-
 (define-public r-hidimda
   (package
     (name "r-hidimda")
@@ -7131,13 +7114,13 @@ spectrum.")
 (define-public r-hhsmm
   (package
     (name "r-hhsmm")
-    (version "0.3.5")
+    (version "0.3.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hhsmm" version))
               (sha256
                (base32
-                "0kn6zn46fs5rl3n3hqi623hn996fbg2ikrzks4jkkh0a6jj8h6md"))))
+                "0b7bjvhyva3858dv01s6r891jkk14gm01hjqsab32m9w1b4r477p"))))
     (properties `((upstream-name . "hhsmm")))
     (build-system r-build-system)
     (propagated-inputs (list r-splines2
@@ -8607,13 +8590,13 @@ geographic location.")
 (define-public r-hellorust
   (package
     (name "r-hellorust")
-    (version "1.0.2")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hellorust" version))
               (sha256
                (base32
-                "08wblwbh5ldbs8p77w9321lpsdcsrvi541b075pq87p7pva3ah1w"))))
+                "075wb9yhkmmcgrwp65795whwl55s939gy2j4sdilgyxp853x9175"))))
     (properties `((upstream-name . "hellorust")))
     (build-system r-build-system)
     (inputs (list))
@@ -8622,11 +8605,12 @@ geographic location.")
     (description
      "Template R package with minimal setup to use Rust code in R without hacks or
 frameworks.  Includes basic examples of importing cargo dependencies, spawning
-threads and passing numbers or strings from Rust to R. The @code{GitHub}
-repository for this package has more details and also explains how to set up CI.
-This project was first presented at Erum2018 to showcase R-Rust integration
-<https://jeroen.github.io/erum2018/>; for a real world use-case, see the gifski
-package on CRAN'.")
+threads and passing numbers or strings from Rust to R. Cargo crates are
+automatically vendored in the R source package to support offline installation.
+The @code{GitHub} repository for this package has more details and also explains
+how to set up CI. This project was first presented at Erum2018 to showcase
+R-Rust integration <https://jeroen.github.io/erum2018/>; for a real world
+use-case, see the gifski package on CRAN'.")
     (license license:expat)))
 
 (define-public r-hellojavaworld
@@ -9234,6 +9218,25 @@ semiparametric estimation technique described in Raval, Rosenbaum, and Tenn
 (2017) \"A Semiparametric Discrete Choice Model: An Application to Hospital
 Mergers\" <doi:10.1111/ecin.12454>.")
     (license license:cc0)))
+
+(define-public r-healthcal
+  (package
+    (name "r-healthcal")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "HealthCal" version))
+              (sha256
+               (base32
+                "15zwjjg7kyq68y05gpdap8nhw32cbvgrdzr4063a8vfmrmc41w1n"))))
+    (properties `((upstream-name . "HealthCal")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=HealthCal")
+    (synopsis "Health Calculator")
+    (description
+     "Health Calculator helps to find different parameters like basal metabolic rate,
+body mass index etc.  related to fitness and health of a person.")
+    (license license:gpl3)))
 
 (define-public r-headliner
   (package
@@ -9914,16 +9917,17 @@ objects, and functions.")
 (define-public r-hdimpute
   (package
     (name "r-hdimpute")
-    (version "0.1.1")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hdImpute" version))
               (sha256
                (base32
-                "16p5mkapgsnb8mr74388hzrvbmn2njql3v3lk9902mdp565pk9ya"))))
+                "1gs3205z3v7zvr2xqi4jv8xpmngpw41nk0kbz7wx3g4a5152hagq"))))
     (properties `((upstream-name . "hdImpute")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
+                             r-tidyr
                              r-tibble
                              r-purrr
                              r-plyr
@@ -9932,14 +9936,16 @@ objects, and functions.")
                              r-dplyr
                              r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=hdImpute")
+    (home-page "https://github.com/pdwaggoner/hdImpute")
     (synopsis "Batch Process for High Dimensional Imputation")
     (description
-     "This package provides a correlation-based batch process for fast imputation for
-high dimensional missing data problems via chained random forests.  See
-Stekhoven and BÃ¼hlmann (2012) <doi:10.1093/bioinformatics/btr597> for more on
-@code{missForest,} and Mayer (2022)
-@code{<https://github.com/mayer79/missRanger>} for more on @code{missRanger.}")
+     "This package provides a correlation-based batch process for fast, accurate
+imputation for high dimensional missing data problems via chained random
+forests.  See Waggoner (2023) <doi:10.1007/s00180-023-01325-9> for more on
+@code{hdImpute',} Stekhoven and BÃ¼hlmann (2012)
+<doi:10.1093/bioinformatics/btr597> for more on @code{missForest',} and Mayer
+(2022) @code{<https://github.com/mayer79/missRanger>} for more on
+@code{missRanger'.}")
     (license license:expat)))
 
 (define-public r-hdi
@@ -10562,13 +10568,13 @@ the proportional hazards model fitted by partial likelihood.")
 (define-public r-hclust1d
   (package
     (name "r-hclust1d")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hclust1d" version))
               (sha256
                (base32
-                "1a9ylp3nwwq1rp6hwvmry3h439r56h9p6ykl53ia681c9iwvmaza"))))
+                "1cari4ms1j5x2i5m9yd50j7alf18k7z053yhqbck0hs2mck9jx86"))))
     (properties `((upstream-name . "hclust1d")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -11393,21 +11399,21 @@ including most of the delicious Cantonese cuisine.")
 (define-public r-happign
   (package
     (name "r-happign")
-    (version "0.1.9")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "happign" version))
               (sha256
                (base32
-                "14y4z797kzcm98i4ck8ps21kchlkm9lqs98w72188rw80yxr6dfw"))))
+                "1incrlf6frhrb2sb6w0x6fcgdy4vvr9qkcsq3r40pgpkkczdidl4"))))
     (properties `((upstream-name . "happign")))
     (build-system r-build-system)
     (inputs (list sqlite proj geos gdal))
     (propagated-inputs (list r-xml2
                              r-terra
                              r-sf
+                             r-jsonlite
                              r-httr2
-                             r-geojsonsf
                              r-dplyr
                              r-archive))
     (native-inputs (list r-knitr))
@@ -11824,6 +11830,26 @@ Codemeta', RDF XML', RIS', Schema.org', and Citation File Format'.  A low level
 R6 class is provided, as well as stand-alone functions for each citation format
 for both read and write.")
     (license license:expat)))
+
+(define-public r-handcoder
+  (package
+    (name "r-handcoder")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "handcodeR" version))
+              (sha256
+               (base32
+                "01cc088i9dw4xy7iqy551mmprrm3s0pvkzr4xr78406pkbbzijfa"))))
+    (properties `((upstream-name . "handcodeR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shinywidgets r-shiny))
+    (home-page "https://github.com/liserman/handcodeR/")
+    (synopsis "Text Annotation App")
+    (description
+     "Shiny-App that allows to annotate vectors of texts to predefined categories by
+hand.")
+    (license license:asl2.0)))
 
 (define-public r-hamlet
   (package
@@ -12419,13 +12445,13 @@ solvers for machine learning algorithms.")
 (define-public r-h2o
   (package
     (name "r-h2o")
-    (version "3.40.0.4")
+    (version "3.42.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "h2o" version))
               (sha256
                (base32
-                "0yxb2vs5qfvs5qlxrraa3012xr84gx9pn842kbqmim344qvgd09w"))))
+                "16wjcaskwkjw5bn4mj73qsywd9qcp8q906p3sfsr1vdk9qgm7bls"))))
     (properties `((upstream-name . "h2o")))
     (build-system r-build-system)
     (inputs (list openjdk))

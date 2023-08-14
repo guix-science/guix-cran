@@ -1464,13 +1464,13 @@ estimation.")
 (define-public r-upg
   (package
     (name "r-upg")
-    (version "0.3.2")
+    (version "0.3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "UPG" version))
               (sha256
                (base32
-                "09lalflqsl8rg1pfsg5v05wcqp77y29dcjiwxvcd0pgchx5d3x79"))))
+                "0j27135akpkn9qsllfr871fcz7hynmxzjac35b8zm65pr6ygjcap"))))
     (properties `((upstream-name . "UPG")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm
@@ -1489,8 +1489,8 @@ estimation.")
 binomial logit models.  Functions for plotting and tabulating the estimation
 output are available as well.  Estimation is based on Gibbs sampling where the
 Markov chain Monte Carlo algorithms are based on the latent variable
-representations and marginal data augmentation algorithms outlined in
-Frühwirth-Schnatter S., Zens G., Wagner H. (2020) @code{<arXiv:2011.06898>.}")
+representations and marginal data augmentation algorithms outlined in Zens G.,
+Fr<fc>hwirth-Schnatter S., Wagner H. (2020) @code{<arXiv:2011.06898>.}")
     (license license:gpl3)))
 
 (define-public r-updown
@@ -2365,13 +2365,13 @@ nouns and adjectives.  The stemming procedure for French is described in (Savoy,
 (define-public r-unikn
   (package
     (name "r-unikn")
-    (version "0.8.0")
+    (version "0.9.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "unikn" version))
               (sha256
                (base32
-                "03v23j65pxbl3ddvaj71v2fc90kzv7pysa2xrmyfaxalrwc495bp"))))
+                "040wqf8hnbvij8b044q7akzhd9dkb6k4fcv1dfn9cahqpmlgb02l"))))
     (properties `((upstream-name . "unikn")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2 r-cli))

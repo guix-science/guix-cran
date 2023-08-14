@@ -103,6 +103,29 @@ maintenance and the addition of minor functionality.")
 curve allowed to vary along the length of the curve.")
     (license license:gpl2+)))
 
+(define-public r-vvtermtime
+  (package
+    (name "r-vvtermtime")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "vvtermtime" version))
+              (sha256
+               (base32
+                "0c7cry87wgk86wydrw0l8icc25lx5fcxzm1wyfs2ls8ppmpkz3l7"))))
+    (properties `((upstream-name . "vvtermtime")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-magrittr r-jsonlite r-httr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/vusaverse/vvtermtime")
+    (synopsis "Interface for 'Semestry TermTime' Services")
+    (description
+     "This package provides an R interface for interacting with the Semestry
+@code{TermTime} services.  It allows users to retrieve scheduling data from the
+API. see <https://github.com/vusaverse/vvtermtime/blob/main/openapi_7.7.0.pdf>
+for details.")
+    (license license:expat)))
+
 (define-public r-vvtableau
   (package
     (name "r-vvtableau")
@@ -2721,6 +2744,45 @@ made.  A reference for generating social media-based visitor counts can be found
 at Wood, Guerry, Silver, and Lacayo (2013) <doi:10.1038/srep02976>.")
     (license license:gpl3)))
 
+(define-public r-visit
+  (package
+    (name "r-visit")
+    (version "2.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "visit" version))
+              (sha256
+               (base32
+                "0mrwah122w9dyivyzs8xlv6vq9w8bpr468zjjw5q974wk7h31mk4"))))
+    (properties `((upstream-name . "visit")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stanheaders
+                             r-sqldf
+                             r-rstantools
+                             r-rstan
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=visit")
+    (synopsis
+     "Vaccine Phase I Design with Simultaneous Evaluation of Immunogenicity and Toxicity")
+    (description
+     "Phase I clinical trials are the first step in drug development to test a new
+drug or drug combination on humans.  Typical designs of Phase I trials use
+toxicity as the primary endpoint and aim to find the maximum tolerable dosage.
+However, these designs are poorly applicable for the development of cancer
+therapeutic vaccines because the expected safety concerns for these vaccines are
+not as much as cytotoxic agents.  The primary objectives of a cancer therapeutic
+vaccine phase I trial thus often include determining whether the vaccine shows
+biologic activity and the minimum dose necessary to achieve a full immune or
+even clinical response.  This package implements a Bayesian Phase I cancer
+vaccine trial design that allows simultaneous evaluation of safety and
+immunogenicity outcomes.  See Wang et al. (2019) <DOI:10.1002/sim.8021> for
+further details.")
+    (license license:gpl3+)))
+
 (define-public r-visielse
   (package
     (name "r-visielse")
@@ -4867,33 +4929,6 @@ Naemi, R., & Chockalingam, N. (2014) <doi:10.1016/j.jbiomech.2013.12.032>.
 Needham, R., Naemi, R., & Chockalingam, N. (2015)
 <doi:10.1016/j.jbiomech.2015.07.023>.  Tepavac, D., & Field-Fote, E. C. (2001)
 <doi:10.1123/jab.17.3.259>.")
-    (license license:gpl3)))
-
-(define-public r-vecstatgraphs2d
-  (package
-    (name "r-vecstatgraphs2d")
-    (version "1.8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VecStatGraphs2D" version))
-              (sha256
-               (base32
-                "0jjxdwcj0n6kk5l7hw4zibpikqxhkkik5819qv75z4gqdgg0fgch"))))
-    (properties `((upstream-name . "VecStatGraphs2D")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-mass))
-    (home-page "http://gim.unex.es/VecStatGraphs2D/")
-    (synopsis "Vector Analysis using Graphical and Analytical Methods in 2D")
-    (description
-     "This package provides a 2D statistical analysis is performed, both numerical and
-graphical, of a set of vectors.  Since a vector has two components (module and
-azimuth) vector analysis is performed in three stages: modules are analyzed by
-means of linear statistics, azimuths are analyzed by circular statistics, and
-the joint analysis of modules and azimuths is done using density maps that allow
-detecting another distribution properties (i.e.  anisotropy) and outliers.
-Tests and circular statistic parameters have associated a full range of
-graphing: histograms, maps of distributions, point maps, vector maps, density
-maps, distribution modules and azimuths.")
     (license license:gpl3)))
 
 (define-public r-vecsets

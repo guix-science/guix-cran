@@ -1017,13 +1017,13 @@ those values that are true.")
 (define-public r-extrafrail
   (package
     (name "r-extrafrail")
-    (version "1.6")
+    (version "1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "extrafrail" version))
               (sha256
                (base32
-                "02phbgkl7r3v382dq194pcnxbc24323dls99x6j0510fnhl92i2g"))))
+                "0ddismyamy4lkf42l6m088h6pvzq6619ybv4938ri5vk72p009sp"))))
     (properties `((upstream-name . "extrafrail")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-pracma r-msm r-expint))
@@ -1032,11 +1032,11 @@ those values that are true.")
      "Estimation and Additional Tools for Alternative Shared Frailty Models")
     (description
      "Provide estimation and data generation tools for some new multivariate frailty
-models.  This version includes the gamma, inverse Gaussian, weighted Lindley and
-Birnbaum-Saunders as the distribution for the frailty terms.  For the basal
-model, it is considered a parametric approach based on the exponential, Weibull
-and the piecewise exponential distributions as well as a semiparametric
-approach.  For details, see Gallardo and Bourguignon (2022)
+models.  This version includes the gamma, inverse Gaussian, weighted Lindley,
+Birnbaum-Saunders and truncated normal as the distribution for the frailty
+terms.  For the basal model, it is considered a parametric approach based on the
+exponential, Weibull and the piecewise exponential distributions as well as a
+semiparametric approach.  For details, see Gallardo and Bourguignon (2022)
 @code{<arXiv:2206.12973>.}")
     (license license:gpl2+)))
 
@@ -3544,13 +3544,13 @@ is provided.")
 (define-public r-evolqg
   (package
     (name "r-evolqg")
-    (version "0.3-2")
+    (version "0.3-3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "evolqg" version))
               (sha256
                (base32
-                "107qazw0nhnnkkyjz9fsknjf72fr7ya2jq2aswf1nvzasa8kjkck"))))
+                "0d0rjpyhwk81r5imbk6836a1qk2q333d0s73zjj6k6cfx31zh7l9"))))
     (properties `((upstream-name . "evolqg")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -3948,13 +3948,13 @@ moderately sized data sets.")
 (define-public r-eventtrack
   (package
     (name "r-eventtrack")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eventTrack" version))
               (sha256
                (base32
-                "0rndd86yz8xhb35pi7j1zrcapb3ny51v2y4cvld94avpwbvg5m0r"))))
+                "095xmsb0q32bk52q2130766irbcggbrvcliklaar3qg8v7p3dl4g"))))
     (properties `((upstream-name . "eventTrack")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-muhaz))
@@ -4914,20 +4914,23 @@ covariates.  Can be used all purposes.")
 (define-public r-eudract
   (package
     (name "r-eudract")
-    (version "0.10.1")
+    (version "0.10.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eudract" version))
               (sha256
                (base32
-                "0qznnfflmxgx6ic5lfw0vcv1jm6hs7g3srly90vj70adjcb49sbd"))))
+                "1y5n22wbqpq1wrdhlf35mjlxcqq4nwrmivps81d6p0nnca84fhyc"))))
     (properties `((upstream-name . "eudract")))
     (build-system r-build-system)
     (propagated-inputs (list r-xslt
                              r-xml2
                              r-tidyr
+                             r-scales
                              r-magrittr
                              r-httr
+                             r-gridextra
+                             r-ggplot2
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://eudract-tool.medschl.cam.ac.uk/")
@@ -6278,13 +6281,13 @@ and Koenig, F. (2022). @code{<doi:10.48550/arXiv.2206.09639>.}")
 (define-public r-eseis
   (package
     (name "r-eseis")
-    (version "0.7.2")
+    (version "0.7.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eseis" version))
               (sha256
                (base32
-                "1x14nca5pwiv0rfm4x7471hp70xvbhsr2rnmdpfr4cndlhp83r83"))))
+                "0fn55mb6yklwjh0ihczjchxrxvnblzbifq59158zfmz407rrfk5g"))))
     (properties `((upstream-name . "eseis")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
@@ -6294,7 +6297,6 @@ and Koenig, F. (2022). @code{<doi:10.48550/arXiv.2206.09639>.}")
                              r-rmarkdown
                              r-reticulate
                              r-rcpp
-                             r-multitaper
                              r-minpack-lm
                              r-matrixstats
                              r-irisseismic
@@ -8376,33 +8378,6 @@ choice c(i) which is optimal, there is one type that expresses common belief in
 rationality.")
     (license license:gpl3)))
 
-(define-public r-epistasis
-  (package
-    (name "r-epistasis")
-    (version "0.0.1-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "epistasis" version))
-              (sha256
-               (base32
-                "0dfh26bs72i01hpxpgpgyiwpmg9mjpib8zynhc5ssxa0skm518wz"))))
-    (properties `((upstream-name . "epistasis")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tmvtnorm r-matrix r-igraph r-glasso))
-    (home-page "https://cran.r-project.org/package=epistasis")
-    (synopsis
-     "Detecting Epistatic Selection with Partially Observed Genotype Data")
-    (description
-     "An efficient multi-core package to reconstruct an underlying network of genomic
-signatures of high-dimensional epistatic selection from partially observed
-genotype data.  The phenotype that we consider is viability.  The network
-captures the conditional dependent short- and long-range linkage disequilibrium
-structure of genomes and thus reveals aberrant marker-marker associations that
-are due to epistatic selection.  We target on high-dimensional genotype data
-where number of variables (markers) is larger than number of sample sizes (p >>
-n).  The computations is memory-optimized using the sparse matrix output.")
-    (license license:gpl3)))
-
 (define-public r-episignaldetection
   (package
     (name "r-episignaldetection")
@@ -10184,13 +10159,13 @@ call.")
 (define-public r-envalysis
   (package
     (name "r-envalysis")
-    (version "0.5.4")
+    (version "0.5.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "envalysis" version))
               (sha256
                (base32
-                "0xn98ffcr3106yzr6c1bkwyzc506n9d01bjm77x76a405k36x0az"))))
+                "0r3pzdk6sm7g937g37xmvc6a37yv2sfh71l5cvwli1kglqdd5ph8"))))
     (properties `((upstream-name . "envalysis")))
     (build-system r-build-system)
     (propagated-inputs (list r-lmtest r-ggplot2 r-drc))
@@ -10760,47 +10735,6 @@ model applicability domain evaluation, and ensemble predictive modeling with
 (sparse) partial least squares regressions.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
-
-(define-public r-enmtools
-  (package
-    (name "r-enmtools")
-    (version "1.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ENMTools" version))
-              (sha256
-               (base32
-                "04dvrdw7xnxxa9s1iyxjaf090mmm5kqn5minpz0znjfc9k92cfzs"))))
-    (properties `((upstream-name . "ENMTools")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-terra
-                             r-spatstat-random
-                             r-spatstat-geom
-                             r-sp
-                             r-raster
-                             r-magrittr
-                             r-lhs
-                             r-knitr
-                             r-gridextra
-                             r-ggpubr
-                             r-ggplot2
-                             r-forcats
-                             r-enmeval
-                             r-dismo))
-    (home-page "https://cran.r-project.org/package=ENMTools")
-    (synopsis
-     "Analysis of Niche Evolution using Niche and Distribution Models")
-    (description
-     "Constructing niche models and analyzing patterns of niche evolution.  Acts as an
-interface for many popular modeling algorithms, and allows users to conduct
-Monte Carlo tests to address basic questions in evolutionary ecology and
-biogeography.  Warren, D.L., R.E. Glor, and M. Turelli (2008)
-<doi:10.1111/j.1558-5646.2008.00482.x> Glor, R.E., and D.L. Warren (2011)
-<doi:10.1111/j.1558-5646.2010.01177.x> Warren, D.L., R.E. Glor, and M. Turelli
-(2010) <doi:10.1111/j.1600-0587.2009.06142.x> Cardillo, M., and D.L. Warren
-(2016) <doi:10.1111/geb.12455> D.L. Warren, L.J. Beaumont, R. Dinnage, and J.B.
-Baumgartner (2019) <doi:10.1111/ecog.03900>.")
-    (license license:gpl2)))
 
 (define-public r-enmsdmx
   (package
@@ -11966,32 +11900,6 @@ corresponding scientific paper is yet to be published, therefore the relevant
 reference will be provided later.")
     (license license:gpl2)))
 
-(define-public r-emleloglin
-  (package
-    (name "r-emleloglin")
-    (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "eMLEloglin" version))
-              (sha256
-               (base32
-                "087zw48lykls2jcsmpqd5jkrlpr0j423snp00liszjhdpdh59saq"))))
-    (properties `((upstream-name . "eMLEloglin")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-lpsolveapi))
-    (home-page "https://cran.r-project.org/package=eMLEloglin")
-    (synopsis "Fitting log-Linear Models in Sparse Contingency Tables")
-    (description
-     "Log-linear modeling is a popular method for the analysis of contingency table
-data.  When the table is sparse, the data can fall on the boundary of the convex
-support, and we say that \"the MLE does not exist\" in the sense that some
-parameters cannot be estimated.  However, an extended MLE always exists, and a
-subset of the original parameters will be estimable.  The @code{eMLEloglin}
-package determines which sampling zeros contribute to the non-existence of the
-MLE. These problematic zero cells can be removed from the contingency table and
-the model can then be fit (as far as is possible) using the glm() function.")
-    (license license:gpl2+)))
-
 (define-public r-emld
   (package
     (name "r-emld")
@@ -12443,13 +12351,13 @@ eventually with solar position covariate as a daytime indicator,
 (define-public r-embayes
   (package
     (name "r-embayes")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "emBayes" version))
               (sha256
                (base32
-                "1nrmlsxa7fd01n86zhs7ycl2l5ng94hsa4bs2ay2qj9zs056cx9p"))))
+                "1yn21275ry9qz25dip6sii464lhk8q4i06gqqaqqqzlnp964hn6k"))))
     (properties `((upstream-name . "emBayes")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-glmnet))
@@ -14262,13 +14170,13 @@ and EI-RÃC Methods\" <doi:10.1177/0049124119852394>.")
 (define-public r-eicompare
   (package
     (name "r-eicompare")
-    (version "3.0.2")
+    (version "3.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eiCompare" version))
               (sha256
                (base32
-                "1kasz12g9jm0qc7bsxk3azpmkdcywykj2zak4i09q3mdkk79hq5q"))))
+                "1570qz3ikif39gww06phr73vqcm11s07awadiv846ki98s8ma7d8"))))
     (properties `((upstream-name . "eiCompare")))
     (build-system r-build-system)
     (propagated-inputs (list r-wru
@@ -14343,16 +14251,16 @@ topology.")
 (define-public r-eiaapi
   (package
     (name "r-eiaapi")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EIAapi" version))
               (sha256
                (base32
-                "021mbyxx9swr2wn85mifqg8pwdvrx0hnds6l209zl8f79ndyhlz4"))))
+                "1vyl7zm8vwqcs57b8sw9vkwc1p123kcz2d2xldg6p2vfkgi91jw1"))))
     (properties `((upstream-name . "EIAapi")))
     (build-system r-build-system)
-    (propagated-inputs (list r-jsonlite r-data-table))
+    (propagated-inputs (list r-lubridate r-jsonlite r-dplyr r-data-table))
     (home-page "https://github.com/RamiKrispin/EIAapi")
     (synopsis "Query Data from the 'EIA' API")
     (description
@@ -14825,13 +14733,13 @@ Graphs (Lerner 2008 <DOI:10.1109/PACIFICVIS.2008.4475458>).")
 (define-public r-egocor
   (package
     (name "r-egocor")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EgoCor" version))
               (sha256
                (base32
-                "0d76bnx604vbwi858ihyvddn5awj1f8x5kiz0xp4incwlv7djza4"))))
+                "0i33knfyhwcw8rasv3h2rp90vifrba08zmwqz4825bdx6f8zaa52"))))
     (properties `((upstream-name . "EgoCor")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatialtools r-sp r-shiny r-rdpack r-gstat))
@@ -16674,13 +16582,13 @@ associated metadata.")
 (define-public r-edgar
   (package
     (name "r-edgar")
-    (version "2.0.5")
+    (version "2.0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "edgar" version))
               (sha256
                (base32
-                "1rm6ba4rncfsq7ndqdlkwrqqsak1n7ywsrcnxyr6ysnzgqx65y9n"))))
+                "0b4lqbm2i6756qcz63pjk6l3n7bs8554fdwap0hcp0lrm6832n45"))))
     (properties `((upstream-name . "edgar")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
@@ -17592,13 +17500,13 @@ models, for running these models, and for visualizing their results.")
 (define-public r-ecos
   (package
     (name "r-ecos")
-    (version "0.1.4")
+    (version "0.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ecos" version))
               (sha256
                (base32
-                "02609xf1pp02x6mmpya9mirhzm0np3wj42mgpz5s97ky765arlf6"))))
+                "1vnlbylbi70rw3rxrbld35z3g9mfdqrdgsil35ghimx6d2y1ch3c"))))
     (properties `((upstream-name . "ecos")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml r-stringr r-jsonlite r-httr))
@@ -17606,7 +17514,7 @@ models, for running these models, and for visualizing their results.")
     (synopsis "Economic Statistics System of the Bank of Korea")
     (description
      "API wrapper to download statistical information from the Economic Statistics
-System (ECOS) of the Bank of Korea <https://ecos.bok.or.kr/>.")
+System (ECOS) of the Bank of Korea <https://ecos.bok.or.kr/api/#/>.")
     (license license:expat)))
 
 (define-public r-ecorest
@@ -17636,6 +17544,39 @@ decision support tools for conducting cost-effectiveness and incremental cost
 analyses (Robinson et al.  1995)
 <https://www.iwr.usace.army.mil/Portals/70/docs/iwrreports/95-R-1.pdf>.")
     (license license:cc0)))
+
+(define-public r-ecoregime
+  (package
+    (name "r-ecoregime")
+    (version "0.1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ecoregime" version))
+              (sha256
+               (base32
+                "0yh1439di84s3iq0rxkkr9k6fjbysmvkbrw4hmn4fw275ivhq3z7"))))
+    (properties `((upstream-name . "ecoregime")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-smacof
+                             r-shape
+                             r-gdatools
+                             r-ecotraj
+                             r-data-table
+                             r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://mspinillos.github.io/ecoregime/")
+    (synopsis "Analysis of Ecological Dynamic Regimes")
+    (description
+     "This package provides a toolbox for implementing the Ecological Dynamic Regime
+framework (SÃ¡nchez-Pinillos et al., 2023 <doi:10.1002/ecm.1589>) to
+characterize and compare groups of ecological trajectories in multidimensional
+spaces defined by state variables.  The package includes the RETRA-EDR algorithm
+to identify representative trajectories, functions to generate, summarize, and
+visualize representative trajectories, and several metrics to quantify the
+distribution and heterogeneity of trajectories in an ecological dynamic regime
+and quantify the dissimilarity between two or more ecological dynamic regimes.")
+    (license license:gpl3+)))
 
 (define-public r-ecoreg
   (package
@@ -17714,13 +17655,13 @@ Evolution, <doi:10.1111/2041-210X.12907>.")
 (define-public r-economiccomplexity
   (package
     (name "r-economiccomplexity")
-    (version "1.4.0")
+    (version "1.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "economiccomplexity" version))
               (sha256
                (base32
-                "0z3g0d843glpgqx63ci8cykb1vs04nr4cjfz4525yl0pa7mk9lmg"))))
+                "1xx4fpf2rjizwhicb6sfrgl5xjfin9b9zi0q4kq47gjp8kzahkg3"))))
     (properties `((upstream-name . "economiccomplexity")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-matrix r-igraph))
@@ -18896,6 +18837,33 @@ routines.")
      "Draw sample paths for endpoint-conditioned continuous time Markov chains via
 modified rejection sampling or uniformization.")
     (license license:gpl3)))
+
+(define-public r-ecce
+  (package
+    (name "r-ecce")
+    (version "2.0.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ecce" version))
+              (sha256
+               (base32
+                "0xffkrvmrhgssh27hfpqxkkbd6l4qb745nlv7jvjp0r3q08jwk8r"))))
+    (properties `((upstream-name . "ecce")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-uuid r-jsonlite r-httr r-digest r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://cxy.rbind.io/ecce/")
+    (synopsis
+     "Translate English Words into Chinese, or Translate Chinese Words into English")
+    (description
+     "If translate English words into Chinese, there is a faster way for R user.
+@code{RYoudaoTranslate} package provides interface to Youdao
+<http://youdao.com/> translation open API for R user.  entcn package also
+provides similar features.  But it does not support Chinese words translation
+into English, I have made some improvements on the basis of this software.  You
+can pass in an English or Chinese word, ecce package support both English and
+Chinese translation.  It also support browse translation results in website.")
+    (license license:expat)))
 
 (define-public r-ecb
   (package

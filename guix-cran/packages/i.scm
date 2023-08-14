@@ -1305,19 +1305,20 @@ and similarity calculations.")
 (define-public r-istats
   (package
     (name "r-istats")
-    (version "1.5")
+    (version "1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "iSTATS" version))
               (sha256
                (base32
-                "14pd3k8w8hh7gl2iskax2pck6z96hdfrws5l69zdw02867bny404"))))
+                "0fdicyycwh1d1yzrf9241d3cf03vzqyhchwsy191hiwa5fa6bm7w"))))
     (properties `((upstream-name . "iSTATS")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinywidgets
                              r-shinybs
                              r-shiny
                              r-rstudioapi
+                             r-readr
                              r-plotly
                              r-gtools
                              r-ggplot2
@@ -1332,7 +1333,7 @@ analyses in a full interactive approach.  The theoretical background and
 applications of STOCSY method could be found at Cloarec, O., Dumas, M. E.,
 Craig, A., Barton, R. H., Trygg, J., Hudson, J., Blancher, C., Gauguier, D.,
 Lindon, J. C., Holmes, E. & Nicholson, J. (2005) <doi:10.1021/ac048630x>.")
-    (license license:gpl3)))
+    (license license:gpl3+)))
 
 (define-public r-istacr
   (package
@@ -1377,6 +1378,43 @@ Gaussian errors and quantile regression.  See the documentation of ISS().
 Details can be found in the paper by MÃ¼ller, Reeve, Cannings and Samworth
 (2023) @code{<arXiv:2305.04852v2>.}")
     (license license:gpl3+)))
+
+(define-public r-israd
+  (package
+    (name "r-israd")
+    (version "2.5.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ISRaD" version))
+              (sha256
+               (base32
+                "0qp0rbqvbfhj4jhc0335wy5370a66c7mxd4sp7bczkk9cvykv6x3"))))
+    (properties `((upstream-name . "ISRaD")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-writexl
+                             r-tidyr
+                             r-terra
+                             r-sf
+                             r-rnaturalearth
+                             r-rio
+                             r-readxl
+                             r-rcurl
+                             r-maps
+                             r-httr
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=ISRaD")
+    (synopsis "Tools and Data for the International Soil Radiocarbon Database")
+    (description
+     "This is the central location for data and tools for the development,
+maintenance, analysis, and deployment of the International Soil Radiocarbon
+Database @code{(ISRaD).} @code{ISRaD} was developed as a collaboration between
+the U.S. Geological Survey Powell Center and the Max Planck Institute for
+Biogeochemistry.  This R package provides tools for accessing and manipulating
+@code{ISRaD} data, compiling local data using the @code{ISRaD} data structure,
+and simple query and reporting functions for @code{ISRaD.} For more detailed
+information visit the @code{ISRaD} website at: <https://soilradiocarbon.org/>.")
+    (license license:gpl2)))
 
 (define-public r-isr
   (package
@@ -1511,13 +1549,13 @@ adapted from Bowen et al. (2018, <doi:10.1007/s00442-018-4192-5>).")
 (define-public r-isotree
   (package
     (name "r-isotree")
-    (version "0.5.20")
+    (version "0.5.22")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "isotree" version))
               (sha256
                (base32
-                "1xp6innz9rry21bhq8ask3pq20hn2nsqdkbqz0f9lckbhk2knl4z"))))
+                "1y274hjhxf0jhhmycjd0p4vwlxsqbwnminqdh3qb61jxlz0r74vr"))))
     (properties `((upstream-name . "isotree")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -2767,13 +2805,13 @@ to the requested degree Occupational Hierarchical level.")
 (define-public r-isco08conversions
   (package
     (name "r-isco08conversions")
-    (version "0.1.1")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ISCO08ConveRsions" version))
               (sha256
                (base32
-                "1vqg28alpjb1m33hzh4ixfd6f3gzc6l9989gpszvl3ishki05xqf"))))
+                "0vr41ckgr51iakkc900wq2fvra9l2w8l70vz0n40lqzp0nwj9ivn"))))
     (properties `((upstream-name . "ISCO08ConveRsions")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=ISCO08ConveRsions")
@@ -3554,13 +3592,13 @@ the spatial autocorrelation Moran's I is calculated as proposed in Chen(2013)
 (define-public r-irepro
   (package
     (name "r-irepro")
-    (version "1.1")
+    (version "1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "iRepro" version))
               (sha256
                (base32
-                "1sqg1n83m1308v6bk8ilra8w01frqyd8vpvmv63rllxz38r3vyhz"))))
+                "0752bxa4gb875236cjifr6zgkxv18304781qrjl1sf7r7rzmb1cl"))))
     (properties `((upstream-name . "iRepro")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=iRepro")
@@ -5447,6 +5485,35 @@ model allows covariates to influence starting values of the Wiener process
 and/or average drift towards a barrier, with a user-defined choice of link
 functions.")
     (license license:gpl2+)))
+
+(define-public r-invgamstochvol
+  (package
+    (name "r-invgamstochvol")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "invgamstochvol" version))
+              (sha256
+               (base32
+                "17zz744smp42s6jmh6001dpc7hnmk3pza3l2xhpshikgcdczcmia"))))
+    (properties `((upstream-name . "invgamstochvol")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://cran.r-project.org/package=invgamstochvol")
+    (synopsis
+     "Obtains the Log Likelihood for an Inverse Gamma Stochastic Volatility Model")
+    (description
+     "Computes the log likelihood for an inverse gamma stochastic volatility model
+using a closed form expression of the likelihood.  The details of the
+computation of this closed form expression are given in Gonzalez and Majoni
+(2023) @code{<http://rcea.org/RePEc/pdf/wp23-11.pdf>} .  The closed form
+expression is obtained for a stationary inverse gamma stochastic volatility
+model by marginalising out the volatility.  This allows the user to obtain the
+maximum likelihood estimator for this non linear non Gaussian state space model.
+ In addition, the user can obtain the estimates of the smoothed volatility using
+the exact smoothing distributions.")
+    (license license:expat)))
 
 (define-public r-investr
   (package
@@ -7479,6 +7546,35 @@ developer/>, which allows R users to download public pictures filtered by
 hashtag, popularity, user or location, and to access public users profile data.")
     (license license:gpl2)))
 
+(define-public r-instantiate
+  (package
+    (name "r-instantiate")
+    (version "0.0.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "instantiate" version))
+              (sha256
+               (base32
+                "1qnf2sjmkqrc8hcsmvf7c2yds7mixb4ypcqhilawv03iljy26qqz"))))
+    (properties `((upstream-name . "instantiate")))
+    (build-system r-build-system)
+    (inputs (list))
+    (propagated-inputs (list r-rlang r-pkglite r-fs))
+    (home-page "https://wlandau.github.io/instantiate/")
+    (synopsis "Pre-Compiled 'CmdStan' Models in R Packages")
+    (description
+     "Similar to rstantools for rstan', the instantiate package builds pre-compiled
+@code{CmdStan} models into CRAN-ready statistical modeling R packages.  The
+models compile once during installation, the executables live inside the file
+systems of their respective packages, and users have the full power and
+convenience of cmdstanr without any additional compilation.  This approach saves
+time, allows R package developers to migrate from rstan to the more modern
+cmdstanr', and fits well with centrally maintained R installations where users
+have trouble installing their own packages, diagnosing compilation errors, and
+setting environment variables.  Packages rstantools', cmdstanr', stannis', and
+stanapi are similar Stan clients with different objectives.")
+    (license license:expat)))
+
 (define-public r-installr
   (package
     (name "r-installr")
@@ -8970,6 +9066,38 @@ the same time.  Decomposition of the Theil index is based on Giammatteo, M.
 squared coefficient of variation is based on Garcia-Penalosa, C., & Orgiazzi, E.
 (2013) <doi:10.1111/roiw.12054>.")
     (license license:gpl3+)))
+
+(define-public r-ineptr
+  (package
+    (name "r-ineptr")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ineptR" version))
+              (sha256
+               (base32
+                "03v460gqw7x3biyxa7dyckrj9jd0zradfr58p1lfnv3mkvawp58v"))))
+    (properties `((upstream-name . "ineptR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-magrittr
+                             r-lifecycle
+                             r-jsonlite
+                             r-httr2
+                             r-httr
+                             r-dplyr))
+    (home-page "https://c-matos.github.io/ineptR/")
+    (synopsis "Wrapper for Statistics Portugal API")
+    (description
+     "Set of wrapper and helper functions to facilitate interaction with the
+Statistics Portugal (Instituto Nacional de Estatistica - INE) API
+(<https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_api&INST=322751522&xlang=en>).")
+    (license license:expat)))
 
 (define-public r-inegir
   (package
@@ -12541,21 +12669,21 @@ information on the technology.")
 (define-public r-igasso
   (package
     (name "r-igasso")
-    (version "1.4")
+    (version "1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "iGasso" version))
               (sha256
                (base32
-                "17xxqncl5xcphdqclghcazygcgibf8ijdf4kkl3ga11xf70sahj2"))))
+                "066g27lv9i4yc6ksz2y14q8xn4k547mfvjwpjjzxm35mjywxbsqg"))))
     (properties `((upstream-name . "iGasso")))
     (build-system r-build-system)
-    (propagated-inputs (list r-lattice r-compquadform))
+    (propagated-inputs (list r-mbess r-mass r-lattice r-compquadform))
     (home-page "https://cran.r-project.org/package=iGasso")
     (synopsis "Statistical Tests and Utilities for Genetic Association")
     (description
      "This package provides a collection of statistical tests for genetic association
-studies.")
+studies and summary data based Mendelian randomization.")
     (license license:gpl2+)))
 
 (define-public r-igascores
@@ -13651,6 +13779,45 @@ This is a backport of Qt-based idendro (<https://github.com/tsieger/idendro>) to
 base R graphics and Tcl/Tk GUI.")
     (license license:gpl2)))
 
+(define-public r-idem
+  (package
+    (name "r-idem")
+    (version "5.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "idem" version))
+              (sha256
+               (base32
+                "0vgxrw7rdhnxrrsg46x6nd2zx938j1z41fr4gp9pjmh2q6rnnaxl"))))
+    (properties `((upstream-name . "idem")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival
+                             r-stanheaders
+                             r-sqldf
+                             r-rstantools
+                             r-rstan
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-mice
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/olssol/idem/")
+    (synopsis
+     "Inference in Randomized Controlled Trials with Death and Missingness")
+    (description
+     "In randomized studies involving severely ill patients, functional outcomes are
+often unobserved due to missed clinic visits, premature withdrawal or death.  It
+is well known that if these unobserved functional outcomes are not handled
+properly, biased treatment comparisons can be produced.  In this package, we
+implement a procedure for comparing treatments that is based on the composite
+endpoint of both the functional outcome and survival.  The procedure was
+proposed in Wang et al. (2016) <DOI:10.1111/biom.12594> and Wang et al. (2020)
+<DOI:10.18637/jss.v093.i12>.  It considers missing data imputation with
+different sensitivity analysis strategies to handle the unobserved functional
+outcomes not due to death.")
+    (license license:gpl3+)))
+
 (define-public r-idefix
   (package
     (name "r-idefix")
@@ -13685,13 +13852,13 @@ Vandebroek M (2020) <doi:10.18637/jss.v096.i03>.")
 (define-public r-ideatools
   (package
     (name "r-ideatools")
-    (version "3.4.2")
+    (version "3.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IDEATools" version))
               (sha256
                (base32
-                "1xg7483srnvrzhm3s4amaac1fx3x0jw4x0nnlc96jnvhpp8l7l1z"))))
+                "12z3rhjgi68gs5qgm7133qn5mqk8d47rsx4gj6zcpri8mvzw3ci1"))))
     (properties `((upstream-name . "IDEATools")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -14520,13 +14687,13 @@ financial-economic time series data.")
 (define-public r-ichimoku
   (package
     (name "r-ichimoku")
-    (version "1.4.6")
+    (version "1.4.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ichimoku" version))
               (sha256
                (base32
-                "0xjiz0r0h57l2zvknpp8nf2zfp2xpwpg5gshcwa122ykn8l988q0"))))
+                "0rlxr121ysmc7h81xlgrifmp91mcj5n9avr29db663l6r701zwsy"))))
     (properties `((upstream-name . "ichimoku")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

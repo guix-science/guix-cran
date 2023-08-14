@@ -1120,6 +1120,26 @@ autoregressive errors through minimum distant method of two stages.  The new
 version is written in Rcpp and dramatically reduces computational time.")
     (license license:gpl2)))
 
+(define-public r-kosis
+  (package
+    (name "r-kosis")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "kosis" version))
+              (sha256
+               (base32
+                "0nxrv1a48smgp36zcny38yfcz5dkx1dic4zicqkpvm93vf7jqn5i"))))
+    (properties `((upstream-name . "kosis")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble r-jsonlite r-httr r-data-table))
+    (home-page "https://cran.r-project.org/package=kosis")
+    (synopsis "Korean Statistical Information Service (KOSIS)")
+    (description
+     "API wrapper to download statistical information from the Korean Statistical
+Information Service (KOSIS) <https://kosis.kr/openapi/index/index.jsp>.")
+    (license license:expat)))
+
 (define-public r-kosel
   (package
     (name "r-kosel")
@@ -2449,13 +2469,13 @@ earth tides.")
 (define-public r-kit
   (package
     (name "r-kit")
-    (version "0.0.13")
+    (version "0.0.14")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "kit" version))
               (sha256
                (base32
-                "0xrd2l3fxr2ipbi7l6vwxcxjbp898xqd9s4i2ndg0jawkw1ypnb5"))))
+                "0vv5n1dqyibvmram6vagkgmk8wlfysi59bn88iwc51s9awkh2gba"))))
     (properties `((upstream-name . "kit")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=kit")

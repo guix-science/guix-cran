@@ -238,13 +238,13 @@ published in 2006 by Chapman Hall / CRC Press.")
 (define-public r-wvplots
   (package
     (name "r-wvplots")
-    (version "1.3.3")
+    (version "1.3.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "WVPlots" version))
               (sha256
                (base32
-                "1bkyy0b8p6l84zr6y292mwjccqmxy6qzchvkx1610r3vj4mn5np1"))))
+                "05fai10xb2ph3brfwy38mbp3qm41ci7vg5hv99yqahzi2z18r9mm"))))
     (properties `((upstream-name . "WVPlots")))
     (build-system r-build-system)
     (propagated-inputs (list r-wrapr
@@ -835,13 +835,13 @@ heterologous spike-in proteins.")
 (define-public r-wrmisc
   (package
     (name "r-wrmisc")
-    (version "1.12.0")
+    (version "1.13.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wrMisc" version))
               (sha256
                (base32
-                "15xarfqjlvlqkxsm9cgs2q50lkxmmxpmiyjs3hl7yqwzr13f1vk0"))))
+                "19plk0yw2djnb08vsia9xh1vhssqbkcgs9m9bn1lsns08nn6cimz"))))
     (properties `((upstream-name . "wrMisc")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -964,13 +964,13 @@ Wasserstein autoregressive models.")
 (define-public r-wrgraph
   (package
     (name "r-wrgraph")
-    (version "1.3.3")
+    (version "1.3.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wrGraph" version))
               (sha256
                (base32
-                "1kj30qm1qqdss6rhnc4fkxr0759jqvgswvy3dydhfxksb2zl75rw"))))
+                "0v1p0akfmq0r68n28fblmh5gzgpakkd4vbjjlg3gmb51cqcs0hi2"))))
     (properties `((upstream-name . "wrGraph")))
     (build-system r-build-system)
     (propagated-inputs (list r-wrmisc r-rcolorbrewer r-lattice))
@@ -2056,17 +2056,17 @@ For writing R extensions we referred to \"R Packages\",
 (define-public r-wordpools
   (package
     (name "r-wordpools")
-    (version "1.1-1")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "WordPools" version))
               (sha256
                (base32
-                "081qnsq7wn1vczgf6ipz8wjmyg4vwhj1s5nrzh0dw4p9yz28dxv2"))))
+                "0g3ws2ndl34f8z4nxqij8ifwqs5n3nwn9fjgjqgg1sn5apkc2zcf"))))
     (properties `((upstream-name . "WordPools")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=WordPools")
-    (synopsis "Classical Word Pools Used in Studies of Learning and Memory")
+    (synopsis "Word Pools Used in Studies of Learning and Memory")
     (description
      "Collects several classical word pools used most often to provide lists of words
 in psychological studies of learning and memory.  It provides a simple function,
@@ -2659,13 +2659,13 @@ Macmillian et al (2000)
 (define-public r-wlreg
   (package
     (name "r-wlreg")
-    (version "1.0.0")
+    (version "1.0.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "WLreg" version))
               (sha256
                (base32
-                "0paghjcshhrr6y1gm98d6gr78zvgzhl678g9f96hppfa4q3lfpr7"))))
+                "1j9ffilg61a4pxk26rwmpwrigm63lnnd4h0k8ivqk6flxal41jqb"))))
     (properties `((upstream-name . "WLreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-inline))
@@ -3002,6 +3002,34 @@ additional statistics.")
      "Collect multichannel marketing data from sources such as Google analytics,
 Facebook Ads, and many others using the Windsor.ai API
 <https://www.windsor.ai/api-fields/>.")
+    (license license:expat)))
+
+(define-public r-windows-pls
+  (package
+    (name "r-windows-pls")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "windows.pls" version))
+              (sha256
+               (base32
+                "1n8az7zsbj2xlgkws7rfnk4ihnj1lchsjvglm7qnkrmjchj8asmn"))))
+    (properties `((upstream-name . "windows.pls")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyverse
+                             r-tidyr
+                             r-stringr
+                             r-readr
+                             r-mdatools
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://github.com/egonzato/windows.pls")
+    (synopsis "Segmentation Approaches in Chemometrics")
+    (description
+     "Evaluation of prediction performance of smaller regions of spectra for
+Chemometrics.  Segmentation of spectra, evolving dimensions regions and sliding
+windows as selection methods.  Election of the best model among those computed
+based on error metrics.  Chen et al.(2017) <doi:10.1007/s00216-017-0218-9>.")
     (license license:expat)))
 
 (define-public r-windex
@@ -5117,25 +5145,26 @@ ISBN: 9780471094586), William Q. Meeker and Lois A. Escobar (1998, ISBN:
 (define-public r-weibullness
   (package
     (name "r-weibullness")
-    (version "1.22.12")
+    (version "1.23.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "weibullness" version))
               (sha256
                (base32
-                "1xksidplbdx7p5phi66dpyca4n701zhxmp6zp78d9z9lh8k67zwx"))))
+                "07iq9kmzj8410pzhp5rq875r67019r3a0kk39rgmf3mc96h0p454"))))
     (properties `((upstream-name . "weibullness")))
     (build-system r-build-system)
     (home-page "https://AppliedStat.GitHub.io/R/")
     (synopsis "Goodness-of-Fit Test for Weibull Distribution (Weibullness)")
     (description
-     "This package performs a goodness-of-fit test of Weibull distribution
-(weibullness test) and provides the maximum likelihood estimates of the
-three-parameter Weibull distribution.  Note that the threshold parameter is
+     "This package performs a goodness-of-fit test for Weibull distribution
+(weibullness test) and provides the parameter estimates of the two- and
+three-parameter Weibull distributions.  Note that the threshold parameter is
 estimated based on the correlation from the Weibull plot.  For more details, see
-Park (2018) <doi:10.1155/2018/6056975>.  This work was supported by the National
-Research Foundation of Korea (NRF) grant funded by the Korea government (MSIT)
-(No.  2022R1A2C1091319).")
+<doi:10.23055/ijietap.2017.24.4.2848>, <doi:10.1155/2018/6056975>, and
+<doi:10.3390/math11143156>.  This work was supported by the National Research
+Foundation of Korea (NRF) grant funded by the Korea government (MSIT) (No.
+2022R1A2C1091319, RS-2023-00242528).")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-weibullfit
@@ -5365,17 +5394,17 @@ described in Mangold & Scharkow (2022) <doi:10.1080/19312458.2022.2085249>.")
 (define-public r-webshot2
   (package
     (name "r-webshot2")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "webshot2" version))
               (sha256
                (base32
-                "12y5ilky4h1wif9rbbmn7d37a6mvxjyy0rbgk2jvr7wy41n72xmw"))))
+                "1i4432ifw6nxid9cjgly5qpirj245pvh1vfvhm695z3grkk5nvlv"))))
     (properties `((upstream-name . "webshot2")))
     (build-system r-build-system)
     (propagated-inputs (list r-promises r-magrittr r-later r-chromote r-callr))
-    (home-page "https://github.com/rstudio/webshot2")
+    (home-page "https://rstudio.github.io/webshot2/")
     (synopsis "Take Screenshots of Web Pages")
     (description
      "Takes screenshots of web pages, including Shiny applications and R Markdown
@@ -5949,20 +5978,19 @@ calculate extreme climate index.")
 (define-public r-wdpar
   (package
     (name "r-wdpar")
-    (version "1.3.4")
+    (version "1.3.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wdpar" version))
               (sha256
                (base32
-                "1nb8gazwmv55gcwjn8djwhv5b9dm1yligyqcj1czs5frxfhqja92"))))
+                "1nvfzi3z7cpa9q4w2j9vixgg9n0zsc0g2fpcybrzdlwn8981zl5l"))))
     (properties `((upstream-name . "wdpar")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
                              r-withr
                              r-webdriver
                              r-tibble
-                             r-sp
                              r-sf
                              r-rappdirs
                              r-progress
@@ -6053,13 +6081,13 @@ generation.")
 (define-public r-wdm
   (package
     (name "r-wdm")
-    (version "0.2.3")
+    (version "0.2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wdm" version))
               (sha256
                (base32
-                "0fsr5kskg71bwhc5zzhalm29cc7z9p9y8wdmgz2bisgry3v880az"))))
+                "1lrmscy29ir292vxrgr5b1nprbi1zp3rj65nq963kf9gx829rlg2"))))
     (properties `((upstream-name . "wdm")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -7326,23 +7354,16 @@ network analysis.")
 (define-public r-waterquality
   (package
     (name "r-waterquality")
-    (version "0.3.0")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "waterquality" version))
               (sha256
                (base32
-                "0aikgz4x2ny2q7mnxsyk5pl87yb9gq6pcvvnj1s32383683j5ys9"))))
+                "06dj21zi3g7m93iq588w1c5cpvakd1mjra79y3p4ibwrkizdqzhl"))))
     (properties `((upstream-name . "waterquality")))
     (build-system r-build-system)
-    (propagated-inputs (list r-vctrs
-                             r-rgdal
-                             r-raster
-                             r-purrr
-                             r-pingr
-                             r-magrittr
-                             r-dplyr
-                             r-caret))
+    (propagated-inputs (list r-terra r-purrr r-magrittr r-dplyr r-caret))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/RAJohansen/waterquality")
     (synopsis "Satellite Derived Water Quality Detection Algorithms")
@@ -7998,13 +8019,13 @@ proprietary API that assigns locations a walkability score between 0 and 100.")
 (define-public r-walker
   (package
     (name "r-walker")
-    (version "1.0.6-1")
+    (version "1.0.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "walker" version))
               (sha256
                (base32
-                "0kmk8lxg3m3436bdghqizjgzln4lqrs3ks1mgfza63n59z5d20h8"))))
+                "1kgrka1pkk0fb1gx31dx7g3alq9jb4gfxbsadcdj0j5n2hx6ba8d"))))
     (properties `((upstream-name . "walker")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders

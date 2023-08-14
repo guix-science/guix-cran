@@ -295,30 +295,6 @@ Quantitative Factors\" by Yichi Zhang, Siyu Tao, Wei Chen, and Daniel W. Apley
 Northwestern University.")
     (license license:gpl2)))
 
-(define-public r-lvec
-  (package
-    (name "r-lvec")
-    (version "0.2.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "lvec" version))
-              (sha256
-               (base32
-                "12q486xvnfyga15yx8av56sflahcni2wm09rx8abj8yzkjgfdiva"))))
-    (properties `((upstream-name . "lvec")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-bh))
-    (home-page "https://github.com/djvanderlaan/lvec")
-    (synopsis "Out of Memory Vectors")
-    (description
-     "Core functionality for working with vectors (numeric, integer, logical and
-character) that are too large to keep in memory.  The vectors are kept
-(partially) on disk using memory mapping.  This package contains the basic
-functionality for working with these memory mapped vectors (e.g. creating,
-indexing, ordering and sorting) and provides C++ headers which can be used by
-other packages to extend the functionality provided in this package.")
-    (license license:gpl3)))
-
 (define-public r-luzlogr
   (package
     (name "r-luzlogr")
@@ -436,13 +412,13 @@ environmental covariates.")
 (define-public r-luminescence
   (package
     (name "r-luminescence")
-    (version "0.9.21")
+    (version "0.9.22")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Luminescence" version))
               (sha256
                (base32
-                "02j3hgm4z4spl5d6251sm4vygb9dr54hxdwbfcx5kq7hwgikdnl3"))))
+                "1j7wj6mm38dfdjrqsha9qrar2jclcxa6d7mrs7kx495g1pkbgn1y"))))
     (properties `((upstream-name . "Luminescence")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -2754,6 +2730,28 @@ sequence.")
 Niederreiter-Xing sequence <DOI:10.1007/978-3-642-56046-0_30>.")
     (license license:bsd-3)))
 
+(define-public r-lowrankqp
+  (package
+    (name "r-lowrankqp")
+    (version "1.0.6")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "LowRankQP" version))
+              (sha256
+               (base32
+                "0ki7b2y4vcm0cqflf76nqfnfyvljgawnng4ffxqavfj21l8p62kg"))))
+    (properties `((upstream-name . "LowRankQP")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=LowRankQP")
+    (synopsis "Low Rank Quadratic Programming")
+    (description
+     "Solves quadratic programming problems where the Hessian is represented as the
+product of two matrices.  Thanks to Greg Hunt for helping getting this version
+back on CRAN. The methods in this package are described in: Ormerod, Wand and
+Koch (2008) \"Penalised spline support vector classifiers: computational issues\"
+<doi:10.1007/s00180-007-0102-8>.")
+    (license license:gpl2+)))
+
 (define-public r-lowpassfilter
   (package
     (name "r-lowpassfilter")
@@ -4362,13 +4360,13 @@ scatterplots of data when plotting fitted logistic regressions.")
 (define-public r-logicreg
   (package
     (name "r-logicreg")
-    (version "1.6.5")
+    (version "1.6.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "LogicReg" version))
               (sha256
                (base32
-                "052rrjr3d01c3k1ifw639jhifc4qqy3bnmysckb5mfylwfqn00yy"))))
+                "18xzszw2g4sx08imjwglab0midrchg8z5lr91w0my7ld7vwaxmll"))))
     (properties `((upstream-name . "LogicReg")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival))
@@ -6027,36 +6025,6 @@ Cancers.  Cancer informatics, 13, CIN-S14021.")
 methods of J. R. M. Hosking and J. R. Wallis (1997), \"Regional frequency
 analysis: an approach based on L-moments\".")
     (license (license:fsdg-compatible "Common Public License Version 1.0"))))
-
-(define-public r-lmompi
-  (package
-    (name "r-lmompi")
-    (version "0.6.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "lmomPi" version))
-              (sha256
-               (base32
-                "0k1clrl3pbbnjaz1yp5syzdvy64zz1q1nd3xsbacwrl0q865xs3n"))))
-    (properties `((upstream-name . "lmomPi")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr r-lmom))
-    (home-page "https://cran.r-project.org/package=lmomPi")
-    (synopsis
-     "(Precipitation) Frequency Analysis and Variability with L-Moments from 'lmom'")
-    (description
-     "It is an extension of lmom R package: pel...()','cdf...()',qua...() function
-families are lumped and called from one function per each family respectively in
-order to create robust automatic tools to fit data with different probability
-distributions and then to estimate probability values and return periods.  The
-implemented functions are able to manage time series with constant and/or
-missing values without stopping the execution with error messages.  The package
-also contains tools to calculate several indices based on variability (e.g. SPI
-, Standardized Precipitation Index, see
-<https://climatedataguide.ucar.edu/climate-data/standardized-precipitation-index-spi>
-and <http://spei.csic.es/>) for multiple time series or spatially gridded
-values.")
-    (license license:gpl3+)))
 
 (define-public r-lmomco
   (package
@@ -8440,13 +8408,13 @@ Lindley Power Series distributions, see Nadarajah and Si (2018)
 (define-public r-lindia
   (package
     (name "r-lindia")
-    (version "0.9")
+    (version "0.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lindia" version))
               (sha256
                (base32
-                "1qma8wr0fkwx03x971crkh8cfc8z4374py1r1wvszj9wzi4vfp5r"))))
+                "0i4mi19pcbpiqbwzj5ga9jhzi0z1qsf779kndyz9sdd9wgxdz8zg"))))
     (properties `((upstream-name . "lindia")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-gridextra r-ggplot2))
@@ -8806,13 +8774,13 @@ dimensions, where N is the number of possible values of the response variable.")
 (define-public r-lillies
   (package
     (name "r-lillies")
-    (version "0.2.10")
+    (version "0.2.12")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lillies" version))
               (sha256
                (base32
-                "0czcgmx0v5ryw6xd2a3nkxb4qgpza35v9laqv491dxhjh7i8di2k"))))
+                "1ys1fzi9azj0nxvf8byy30zbcf7p90p18842kwy98m6my8iwqqj2"))))
     (properties `((upstream-name . "lillies")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -8821,8 +8789,7 @@ dimensions, where N is the number of possible values of the response variable.")
                              r-progress
                              r-pracma
                              r-knitr
-                             r-dplyr
-                             r-ddpcr))
+                             r-dplyr))
     (home-page "https://cran.r-project.org/package=lillies")
     (synopsis "Estimation of Life Years Lost")
     (description
@@ -10512,36 +10479,6 @@ matching substring, ordered token matching and set-based token matching.  A
 range of edit distance measures are available thanks to the stringdist package.")
     (license license:gpl3)))
 
-(define-public r-letsr
-  (package
-    (name "r-letsr")
-    (version "4.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "letsR" version))
-              (sha256
-               (base32
-                "07l1wgwnkqnvh47ssg62vj88vgml52n0934w00pjxdk90kk3c5zs"))))
-    (properties `((upstream-name . "letsR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml
-                             r-sp
-                             r-rgeos
-                             r-rgdal
-                             r-raster
-                             r-maptools
-                             r-maps
-                             r-geosphere
-                             r-fields))
-    (home-page
-     "https://besjournals.onlinelibrary.wiley.com/doi/abs/10.1111/2041-210X.12401")
-    (synopsis "Data Handling and Analysis in Macroecology")
-    (description
-     "Handling, processing, and analyzing geographic data on species distributions and
-environmental variables.  Read Vilela & Villalobos (2015) <doi:
-10.1111/2041-210X.12401> for details.")
-    (license license:gpl2)))
-
 (define-public r-lestat
   (package
     (name "r-lestat")
@@ -10912,37 +10849,6 @@ environment.")
 calculating a posterior density that is invariant to interchange and scaling of
 the coordinates.")
     (license license:gpl2+)))
-
-(define-public r-lehdr
-  (package
-    (name "r-lehdr")
-    (version "1.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "lehdr" version))
-              (sha256
-               (base32
-                "0sal2qh2rcl4mkdh9a9zy6ixxb99gax04ldawrp091kzwscng9yz"))))
-    (properties `((upstream-name . "lehdr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr
-                             r-rlang
-                             r-readr
-                             r-rappdirs
-                             r-httr
-                             r-glue
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/jamgreen/lehdr/")
-    (synopsis
-     "Grab Longitudinal Employer-Household Dynamics (LEHD) Flat Files")
-    (description
-     "Designed to query Longitudinal Employer-Household Dynamics (LEHD)
-workplace/residential association and origin-destination flat files and
-optionally aggregate Census block-level data to block group, tract, county, or
-state.  Data comes from the LODES FTP server
-<https://lehd.ces.census.gov/data/lodes/LODES7/>.")
-    (license license:expat)))
 
 (define-public r-legocolors
   (package
@@ -12057,31 +11963,26 @@ general (not R specific) information on the algorithm Leabra see
 (define-public r-ldt
   (package
     (name "r-ldt")
-    (version "0.3.1.0")
+    (version "0.3.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ldt" version))
               (sha256
                (base32
-                "0q5b9mapcdhbrdpy4lbfqh8clfl69z3q50pmghzlqzp5fivqc638"))))
+                "1mp68m72r3158nx4x39h9d2zszv5jkq0kgdzr5gnwmpwqm3jvd0d"))))
     (properties `((upstream-name . "ldt")))
     (build-system r-build-system)
     (propagated-inputs (list r-tdata r-rcpp r-bh))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/rmojab63/LDT")
-    (synopsis "Automated Model Sensitivity Analysis")
+    (synopsis "Automated Uncertainty Analysis")
     (description
-     "This package provides methods and tools for creating a model set and estimating
-and evaluating the explanation or prediction power of its members.  SUR
-modelling (for parameter estimation), logit'/'probit modelling (for binary
-classification), and VARMA modelling (for time-series forecasting) are
-implemented.  Evaluations are both in-sample and out-of-sample.  It tries to be
-both CPU and memory efficient.  This package can be applied to perform
-sensitivity analysis in studies involving regression analysis.  It can also be
-utilized for automatic model selection, multi-model inference, and model
-averaging within a frequentist framework (Claeskens and Hjort (2008,
-ISBN:1139471805, 9781139471800)), calculating benchmarks, and extreme bound
-analysis (Leamer (1983) <https://www.jstor.org/stable/1803924>).")
+     "This package provides methods and tools for model selection and multi-model
+inference (Burnham and Anderson (2002) <doi:10.1007/b97636>, among others).  SUR
+(for parameter estimation), logit'/'probit (for binary classification), and
+VARMA (for time-series forecasting) are implemented.  Evaluations are both
+in-sample and out-of-sample.  It is designed to be efficient in terms of CPU
+usage and memory consumption.")
     (license license:gpl3+)))
 
 (define-public r-ldsr
@@ -12482,29 +12383,6 @@ Western and Kleykamp (2004) <doi:10.1093/pan/mph023>, Venables and Ripley (2002,
 ISBN-13:978-0387954578), and Christensen et al. (2018) <doi:10.1002/ecy.2373>.")
     (license license:expat)))
 
-(define-public r-ldat
-  (package
-    (name "r-ldat")
-    (version "0.3.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ldat" version))
-              (sha256
-               (base32
-                "1n8v4nzfv3ayr46ahrz60vasam8mx1phb4vss05d9xh7sxlkx7gv"))))
-    (properties `((upstream-name . "ldat")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-lvec r-bh))
-    (home-page "https://github.com/djvanderlaan/ldat")
-    (synopsis "Large Data Sets")
-    (description
-     "This package provides tools for working with vectors and data sets that are too
-large to keep in memory.  Extends the basic functionality provided in the lvec
-package.  Provides basis statistical functionality of lvec objects, such as
-arithmetic operations and calculating means and sums.  Also implements
-data.frame'-like objects storing its data in lvec objects.")
-    (license license:gpl3)))
-
 (define-public r-ldashiny
   (package
     (name "r-ldashiny")
@@ -12897,22 +12775,20 @@ Monkkonen, M. (2011) <doi:10.1007/s10980-011-9620-4>.")
 (define-public r-lcmsqa
   (package
     (name "r-lcmsqa")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "LCMSQA" version))
               (sha256
                (base32
-                "14i2wvwghkwsbil70y2nil859ch41yri6hvdb3j1vcs5larmpfwx"))))
+                "12h9gnw64q5y0b6a9n3184dj5rdmqv2qsskpazgj9pgb5v3kagsp"))))
     (properties `((upstream-name . "LCMSQA")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xcms
-                             r-shinywidgets
+    (propagated-inputs (list r-shinywidgets
                              r-shinyjs
                              r-shinycssloaders
                              r-shiny
                              r-plotly
-                             r-msnbase
                              r-ggplot2
                              r-dt
                              r-data-table
@@ -14279,6 +14155,32 @@ approximation method of computation, see Yoon G., MÃ¼ller C.L. and Gaynanova I
 interpolation originally implemented in the R package
 <https://cran.r-project.org/package=chebpol>.")
     (license license:gpl3)))
+
+(define-public r-latenetwork
+  (package
+    (name "r-latenetwork")
+    (version "1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "latenetwork" version))
+              (sha256
+               (base32
+                "0isqjsivywv51h1lf4fwvscib8sfgnpvvdq6gj9zzz7nrjpgf7k1"))))
+    (properties `((upstream-name . "latenetwork")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-statip r-igraph))
+    (native-inputs (list r-knitr))
+    (home-page "https://tkhdyanagi.github.io/latenetwork/")
+    (synopsis "Inference on LATEs under Network Interference of Unknown Form")
+    (description
+     "Estimating causal parameters in the presence of treatment spillover is of great
+interest in statistics.  This package provides tools for instrumental variables
+estimation of average causal effects under network interference of unknown form.
+ The target parameters are the local average direct effect, the local average
+indirect effect, the local average overall effect, and the local average
+spillover effect.  The methods are developed by Hoshino and Yanagi (2023)
+@code{<doi:10.48550/arXiv.2108.07455>.}")
+    (license license:expat)))
 
 (define-public r-latdiag
   (package

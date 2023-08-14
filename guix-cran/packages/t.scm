@@ -840,13 +840,13 @@ or special tags (e.g. mentions or hashtags) which may be present.")
 (define-public r-twdtw
   (package
     (name "r-twdtw")
-    (version "1.0-0")
+    (version "1.0-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "twdtw" version))
               (sha256
                (base32
-                "0nlf56i5bfpc7q3bjvd7jyssp3abvwcv84cz31wcdm1vxi3zic2j"))))
+                "1w90942yf5xy1h0pf8x9zmq9wvm3n30flvi88bi0inv63ld17lyf"))))
     (properties `((upstream-name . "twdtw")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-proxy))
@@ -1198,13 +1198,13 @@ Maximisation by parts leads to consistent and asymptotically normal estimates.")
 (define-public r-tvem
   (package
     (name "r-tvem")
-    (version "1.3.1")
+    (version "1.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tvem" version))
               (sha256
                (base32
-                "1hrjl5kbp0wx7a4aa8bbvf5sdrxcvxsf3318ckgl85w923i8a44k"))))
+                "09kcz30nh2yaj1cvldvksx6sjhh1ny2ba0n16k34np8ar4ppcb91"))))
     (properties `((upstream-name . "tvem")))
     (build-system r-build-system)
     (propagated-inputs (list r-mgcv))
@@ -1216,17 +1216,17 @@ Maximisation by parts leads to consistent and asymptotically normal estimates.")
 varying-coefficient models in the context of longitudinal data, allowing the
 strength of linear, logistic, or Poisson regression relationships to change over
 time.  These models are described further in Tan, Shiyko, Li, Li & Dierker
-(2012) <doi:10.1037/a0025814>.  We thank Kaylee Litson, Patricia Berglund, and
-Yajnaseni Chakraborti for their valuable help with testing the package and
-documentation.  The development of this package was part of a research project
-supported by National Institutes of Health grants P50 DA039838 from the National
-Institute of Drug Abuse and 1R01 CA229542-01 from the National Cancer Institute
-and the NIH Office of Behavioral and Social Science Research.  Content is solely
-the responsibility of the authors and does not necessarily represent the
-official views of the funding institutions mentioned above.  This software is
-distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
-PURPOSE. See the GNU General Public License for more details.")
+(2012) <doi:10.1037/a0025814>.  We thank Kaylee Litson, Patricia Berglund,
+Yajnaseni Chakraborti, and Hanjoo Kim for their valuable help with testing the
+package and the documentation.  The development of this package was part of a
+research project supported by National Institutes of Health grants P50 DA039838
+from the National Institute of Drug Abuse and 1R01 CA229542-01 from the National
+Cancer Institute and the NIH Office of Behavioral and Social Science Research.
+Content is solely the responsibility of the authors and does not necessarily
+represent the official views of the funding institutions mentioned above.  This
+software is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+PARTICULAR PURPOSE. See the GNU General Public License for more details.")
     (license license:gpl2+)))
 
 (define-public r-tuwmodel
@@ -2344,13 +2344,13 @@ see Kim, K. (2003) <doi:10.1016/S0925-2312(03)00372-2>.")
 (define-public r-tsstudio
   (package
     (name "r-tsstudio")
-    (version "0.1.6")
+    (version "0.1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TSstudio" version))
               (sha256
                (base32
-                "1r45s4xgc9a2rdh225xzmwr7g6qahmjj7v1a6g7haghnhaq6hv4s"))))
+                "1r901773xpnly9rrzzvz41w9jzdjwcj8ssf37n8qsnpy40kz4wc0"))))
     (properties `((upstream-name . "TSstudio")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -2365,8 +2365,6 @@ see Kim, K. (2003) <doi:10.1016/S0925-2312(03)00372-2>.")
                              r-plotly
                              r-magrittr
                              r-lubridate
-                             r-future-apply
-                             r-future
                              r-forecasthybrid
                              r-forecast
                              r-dplyr
@@ -3362,13 +3360,13 @@ scaling exponent) on the multifractal parameter q and the scale of observation s
 (define-public r-tseriesentropy
   (package
     (name "r-tseriesentropy")
-    (version "0.6-0")
+    (version "0.7-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tseriesEntropy" version))
               (sha256
                (base32
-                "04clfkpkiy5p5nxcq59c7f4v1llj1d95lvck23h1px50lvb993fv"))))
+                "0zlyzda09q7r5iwfsyrv0qr6xpm1rcwjril85hm3mgb2c55c6v9r"))))
     (properties `((upstream-name . "tseriesEntropy")))
     (build-system r-build-system)
     (propagated-inputs (list r-ks r-cubature))
@@ -3379,9 +3377,9 @@ scaling exponent) on the multifractal parameter q and the scale of observation s
      "This package implements an Entropy measure of dependence based on the
 Bhattacharya-Hellinger-Matusita distance.  Can be used as a (nonlinear)
 autocorrelation/crosscorrelation function for continuous and categorical time
-series.  The package includes tests for serial dependence and nonlinearity based
-on it.  Some routines have a parallel version that can be used in a
-multicore/cluster environment.  The package makes use of S4 classes.")
+series.  The package includes tests for serial and cross dependence and
+nonlinearity based on it.  Some routines have a parallel version that can be
+used in a multicore/cluster environment.  The package makes use of S4 classes.")
     (license license:gpl2+)))
 
 (define-public r-tserieschaos
@@ -4158,30 +4156,6 @@ methods implemented in this package can be found in Mitchell (2006)
 analysis via dump files).")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
-
-(define-public r-trustvdj
-  (package
-    (name "r-trustvdj")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "TrustVDJ" version))
-              (sha256
-               (base32
-                "154fawx32v2gdvfdyssj04h1y0q2zc2wn4ww4nzaf0nlwbvc2z6v"))))
-    (properties `((upstream-name . "TrustVDJ")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rvest r-data-table r-biostrings))
-    (home-page "https://cran.r-project.org/package=TrustVDJ")
-    (synopsis "Tools for Immune Repertoire Analysis")
-    (description
-     "This package provides a toolkit for read and prepare immune repertoire data.
-@code{TrustVDJ} package focuses on the reading and processing of TRUST4 and 10x
-cellranger software output results by using @code{ReadTrust} and Read10x
-functions, respectively, and also provides a convenience function
-build_IMGT_reference to download the IMGT database reference and split its
-sequences by species.")
-    (license license:gpl3+)))
 
 (define-public r-trustoptim
   (package
@@ -5404,6 +5378,41 @@ of proxies for the level of physical activity of the cow.  Reference: Simmler
 M., Brouwers S. P. (2023)
 @code{<https://gitlab.com/AgroSimi/triact_manuscript>.}")
     (license license:gpl3+)))
+
+(define-public r-tri-hierarchical-ibds
+  (package
+    (name "r-tri-hierarchical-ibds")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "Tri.Hierarchical.IBDs" version))
+              (sha256
+               (base32
+                "1wmpls4kwkgrra1pss6ddp2295ngk1ri026zf408kmfmd17vmwmj"))))
+    (properties `((upstream-name . "Tri.Hierarchical.IBDs")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=Tri.Hierarchical.IBDs")
+    (synopsis
+     "Tri-Hierarchical IBDs (Tri- Hierarchical Incomplete Block Designs)")
+    (description
+     "Tri-hierarchical incomplete block design is defined as an arrangement of v
+treatments each replicated r times in a three system of blocks if, each block of
+the first system contains m_1 blocks of second system and each block of the
+second system contains m_2 blocks of the third system.  Ignoring the first and
+second system of blocks, it leaves an incomplete block design with b_3 blocks of
+size k_3i units; ignoring first and third system of blocks, it leaves an
+incomplete block design with b_2 blocks each of size k_2i units and ignoring the
+second and third system of blocks, it leaves an incomplete block design with b_1
+blocks each of size k_1 units.  For dealing with experimental circumstances
+where there are three nested sources of variation, a tri-hierarchical incomplete
+block design can be adopted.  Tri - hierarchical incomplete block designs can
+find application potential in obtaining mating-environmental designs for
+breeding trials.  To know more about nested block designs one can refer Preece
+(1967) <doi:10.1093/biomet/54.3-4.479>.  This package includes series1(),
+series2(), series3() and series4() functions.  This package generates
+tri-hierarchical designs with six component designs under certain parameter
+restrictions.")
+    (license license:gpl2+)))
 
 (define-public r-trexselector
   (package
@@ -8604,13 +8613,13 @@ of the main object of the package and is extremely short to type.")
 (define-public r-tpn
   (package
     (name "r-tpn")
-    (version "1.5")
+    (version "1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tpn" version))
               (sha256
                (base32
-                "1srk74ilam6d6dj4v9hvvglb1wpic0q2qycxrnsmwwhrxpmvd231"))))
+                "0hcq0x95sqhghpd9j6b37nw06rfc2dcs8cfyv980xx8vh31qspbd"))))
     (properties `((upstream-name . "tpn")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam r-skewmlrm r-pracma r-moments))
@@ -9169,6 +9178,37 @@ power analysis for t-tests and correlations.  Allows you to specify equivalence
 bounds in raw scale units or in terms of effect sizes.  See: Lakens (2017)
 <doi:10.1177/1948550617697177>.")
     (license license:gpl3)))
+
+(define-public r-tosr
+  (package
+    (name "r-tosr")
+    (version "0.1.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "tosr" version))
+              (sha256
+               (base32
+                "0fy2y7rr80q7vapyxnhlqshskir5dmfkr1sm5r4rqilnlf0cqi21"))))
+    (properties `((upstream-name . "tosr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-rebus
+                             r-magrittr
+                             r-igraph
+                             r-dplyr
+                             r-bibliometrix))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/coreofscience/tosr")
+    (synopsis "Create the Tree of Science from WoS and Scopus")
+    (description
+     "The goal of tosr is to create the Tree of Science from Web of Science
+@code{(WoS)} and Scopus data.  It can read files from both sources at the same
+time.  More information can be found in @code{Valencia-HernÃ¡ndez} (2020)
+<https://revistas.unal.edu.co/index.php/ingeinv/article/view/77718>.")
+    (license license:expat)))
 
 (define-public r-tosi
   (package
@@ -11667,25 +11707,31 @@ unmeasured confounder may tip our result to insignificance.")
 (define-public r-tipmap
   (package
     (name "r-tipmap")
-    (version "0.4.2")
+    (version "0.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tipmap" version))
               (sha256
                (base32
-                "13m9v6bf0c57791rbf0g5ln0k9yrddvqgmahmmiaajpz6pr0m3k0"))))
+                "0lgv2ys5idixd2x27l4cc50lqjjb59m6y6nvzscw6ra6afjbjqbv"))))
     (properties `((upstream-name . "tipmap")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rbest r-purrr r-ggplot2 r-dplyr))
+    (propagated-inputs (list r-rbest
+                             r-purrr
+                             r-magrittr
+                             r-ggplot2
+                             r-future
+                             r-furrr
+                             r-dplyr
+                             r-assertthat))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Boehringer-Ingelheim/tipmap")
     (synopsis "Tipping Point Analysis for Bayesian Dynamic Borrowing")
     (description
      "Tipping point analysis for clinical trials that employ Bayesian dynamic
-borrowing via robust meta-analytic predictive (MAP) priors.  Mainly an
-implementation of an approach proposed by Best and colleagues (2021) is provided
-<doi:10.1002/pst.2093>.  Further functions facilitate the specification of the
-robust MAP prior via expert elicitation (using the roulette method).  Intended
+borrowing via robust meta-analytic predictive (MAP) priors.  Further functions
+facilitate expert elicitation of a primary weight of the informative component
+of the robust MAP prior and computation of operating characteristics.  Intended
 use is the planning, analysis and interpretation of extrapolation studies in
 pediatric drug development, but applicability is generally wider.")
     (license license:asl2.0)))
@@ -12744,17 +12790,17 @@ correlations among the variables in a data-driven way.")
 (define-public r-tiler
   (package
     (name "r-tiler")
-    (version "0.2.5")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tiler" version))
               (sha256
                (base32
-                "02sxc70s8v5b5lf1fpv1ig1hmpkamsmzbgpk6zds504gh9kz7qxy"))))
+                "0rfwl4djqhs55faan7fyq7q0pm93va6xvs2z2sarkmqaqixrg31c"))))
     (properties `((upstream-name . "tiler")))
     (build-system r-build-system)
     (inputs (list python))
-    (propagated-inputs (list r-sp r-rgdal r-raster r-png))
+    (propagated-inputs (list r-sp r-raster r-png))
     (native-inputs (list r-knitr))
     (home-page "https://docs.ropensci.org/tiler/")
     (synopsis "Create Geographic and Non-Geographic Map Tiles")
@@ -12827,13 +12873,13 @@ is proportional to the certain characteristics of the dataset.")
 (define-public r-tiledb
   (package
     (name "r-tiledb")
-    (version "0.20.1")
+    (version "0.20.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tiledb" version))
               (sha256
                (base32
-                "0rkkz2x0wpn44jm9vxdqjfhc0bmq6gw4jrzaxpmxq2bs0rjn0sim"))))
+                "1sxq6cpyicxyszryqzhwq2w6iyzmgjn8qifxp3nj4v3f7hdcid0l"))))
     (properties `((upstream-name . "tiledb")))
     (build-system r-build-system)
     (inputs (list zlib pcre2))
@@ -15088,13 +15134,13 @@ knitr'/'markdown'.")
 (define-public r-tidycensus
   (package
     (name "r-tidycensus")
-    (version "1.4.1")
+    (version "1.4.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tidycensus" version))
               (sha256
                (base32
-                "0pvp6q3m5ikhkgp7lxxxw7l480jlm155h6fyd9f145p4b1pf4msv"))))
+                "08vg9ayzb07ajaycf6qvjqzxjks3a16xlgd2hvx2ar0q2df4sgbw"))))
     (properties `((upstream-name . "tidycensus")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -15305,13 +15351,13 @@ Banco de @code{EspaÃ±a'.}")
 (define-public r-tidybayes
   (package
     (name "r-tidybayes")
-    (version "3.0.4")
+    (version "3.0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tidybayes" version))
               (sha256
                (base32
-                "1gfpjcf8n3rh5g5ii3kd1msbqkq4ncixwydhmxqmaf2q7j8pfz1z"))))
+                "146vmb3sf3ld6n20bbd8lj972g6xcclmisqsmnjq99jmg3hl8q3h"))))
     (properties `((upstream-name . "tidybayes")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -15326,6 +15372,7 @@ Banco de @code{EspaÃ±a'.}")
                              r-ggdist
                              r-dplyr
                              r-coda
+                             r-cli
                              r-arrayhelpers))
     (native-inputs (list r-knitr))
     (home-page "https://mjskay.github.io/tidybayes/")
@@ -16113,13 +16160,13 @@ University and Thomas Jefferson University Hospital, Philadelphia, PA.")
 (define-public r-this-path
   (package
     (name "r-this-path")
-    (version "1.4.0")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "this.path" version))
               (sha256
                (base32
-                "11aamg38q7xc3q3gfziscq7qabvz5b9wl6slv1nbh1xqa5arx2bk"))))
+                "19rcrnfr59gaxlrqbakn8d1qcsx7k6zd7vadw0579sbmbmzwm2k0"))))
     (properties `((upstream-name . "this.path")))
     (build-system r-build-system)
     (home-page "https://github.com/ArcadeAntics/this.path")
@@ -16478,13 +16525,13 @@ majority cases using @code{NearMiss} 2003
 (define-public r-thematic
   (package
     (name "r-thematic")
-    (version "0.1.2.1")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "thematic" version))
               (sha256
                (base32
-                "1hr9373256n1rya3l2z2sqwfifypsh6wrs2s27aqchh9sm0blkmy"))))
+                "01i3qxqil7a1r0cim5whs0glmpkhwgzxn2jc5m0acgrfk9z9rwpf"))))
     (properties `((upstream-name . "thematic")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -16530,13 +16577,13 @@ website.")
 (define-public r-theft
   (package
     (name "r-theft")
-    (version "0.5.1")
+    (version "0.5.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "theft" version))
               (sha256
                (base32
-                "032k8h4zp1hdi6hg1bf964q4i7zyd1k5ijdkifd82dcfrbhz376a"))))
+                "16imqrjhrp55y4z99xv7dzl2nfdjrj9y53wj7bkxqwykrdnydkvs"))))
     (properties `((upstream-name . "theft")))
     (build-system r-build-system)
     (propagated-inputs (list r-tsibble
@@ -18078,13 +18125,13 @@ molecular sequences.")
 (define-public r-text
   (package
     (name "r-text")
-    (version "0.9.99.2")
+    (version "1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "text" version))
               (sha256
                (base32
-                "1sld9y5sz4zfxbjz3r50jk564mf661y3gz7agjp02ppmn634w0g7"))))
+                "1dhq3i9q3frmjl6p7c29g7xvkbb7bpm3sv1hy9r7glymqjqgf718"))))
     (properties `((upstream-name . "text")))
     (build-system r-build-system)
     (inputs (list python))
@@ -20000,13 +20047,13 @@ Passfield,Antonio Gavalas-Olea,Philipp Siegel, Richard J. Geider (2017)
 (define-public r-tempdisagg
   (package
     (name "r-tempdisagg")
-    (version "1.1")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tempdisagg" version))
               (sha256
                (base32
-                "1v5wl1kkfjpngai31d9g6x2pgri7x5vx9qxlpa9zhxbixpprv7mz"))))
+                "11dr5z1s9d8d2xsl4gm9x15v7jyi88f5c5gk05layh5nl2c1bxni"))))
     (properties `((upstream-name . "tempdisagg")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

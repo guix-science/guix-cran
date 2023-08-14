@@ -253,44 +253,6 @@ supplies tools to tidy up fetched data (for fast and simple access) and to show
 it on leaflet maps.")
     (license license:expat)))
 
-(define-public r-owidr
-  (package
-    (name "r-owidr")
-    (version "1.4.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "owidR" version))
-              (sha256
-               (base32
-                "0m0nzm3582p996hjs951vmssvhc35dwiw8520b61qs05bxfiiwkj"))))
-    (properties `((upstream-name . "owidR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-stringr
-                             r-sf
-                             r-scales
-                             r-rvest
-                             r-rlang
-                             r-readr
-                             r-purrr
-                             r-magrittr
-                             r-lifecycle
-                             r-leaflet
-                             r-jsonlite
-                             r-httr
-                             r-htmltools
-                             r-ggrepel
-                             r-ggplot2
-                             r-forcats
-                             r-dplyr
-                             r-curl))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/piersyork/owidR")
-    (synopsis "Import Data from Our World in Data")
-    (description
-     "Search and download the data used in over 3,000 Our World in Data charts.")
-    (license license:expat)))
-
 (define-public r-owenq
   (package
     (name "r-owenq")
@@ -1465,13 +1427,13 @@ map projection.")
 (define-public r-osmextract
   (package
     (name "r-osmextract")
-    (version "0.4.1")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "osmextract" version))
               (sha256
                (base32
-                "03bxdkykp081q3d9n14y0qp31vnllc4rzp2ldzs4s572xfcjd1hb"))))
+                "0fapfydxgm9wliqqapjdrpcj7w4f1s9k8ff8nw6hki8hh5hyrk4x"))))
     (properties `((upstream-name . "osmextract")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-jsonlite r-httr))
@@ -1481,38 +1443,6 @@ map projection.")
     (description
      "Match, download, convert and import Open Street Map data extracts obtained from
 several providers.")
-    (license license:gpl3)))
-
-(define-public r-osmdata
-  (package
-    (name "r-osmdata")
-    (version "0.2.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "osmdata" version))
-              (sha256
-               (base32
-                "0ca8r35m77h7cjrbj4vhwdrn53i3p0qq4m907jl915zrw3gvvsrj"))))
-    (properties `((upstream-name . "osmdata")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-tibble
-                             r-rvest
-                             r-reproj
-                             r-rcpp
-                             r-magrittr
-                             r-lubridate
-                             r-httr2
-                             r-curl))
-    (native-inputs (list r-knitr))
-    (home-page
-     "https://docs.ropensci.org/osmdata/https://github.com/ropensci/osmdata/")
-    (synopsis
-     "Import 'OpenStreetMap' Data as Simple Features or Spatial Objects")
-    (description
-     "Download and import of @code{OpenStreetMap} ('OSM') data as sf or sp objects.
-OSM data are extracted from the Overpass web server (<https://overpass-api.de/>)
-and processed with very fast C++ routines for return to R'.")
     (license license:gpl3)))
 
 (define-public r-osldecomposition
@@ -1766,13 +1696,13 @@ code was developed in the Biological Information Processing Group at the
 (define-public r-oscar
   (package
     (name "r-oscar")
-    (version "1.1.4")
+    (version "1.1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "oscar" version))
               (sha256
                (base32
-                "00dfx56slizzqw37hh8ib2f4s7nxwqkz86qg57iaz2zbzxhgmqxi"))))
+                "0w2qcv82gw58fhhdlb9pjl3d8k2ivhlfw2cnbh9bz1vz5ycgsd9z"))))
     (properties `((upstream-name . "oscar")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-proc r-matrix r-hamlet))
@@ -2727,6 +2657,31 @@ of this work.  The demo of this package reproduces results from the
 Technometrics paper.")
     (license license:gpl2)))
 
+(define-public r-ordinalpattern
+  (package
+    (name "r-ordinalpattern")
+    (version "0.2.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ordinalpattern" version))
+              (sha256
+               (base32
+                "1xxii1lxbkip778wj92kicj4xlpriqa47b258bvmng2s4djkmg0y"))))
+    (properties `((upstream-name . "ordinalpattern")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mvtnorm r-gtools))
+    (home-page "https://cran.r-project.org/package=ordinalpattern")
+    (synopsis "Tests Based on Ordinal Patterns")
+    (description
+     "Ordinal patterns describe the dynamics of a time series by looking at the ranks
+of subsequent observations.  By comparing ordinal patterns of two times series,
+Schnurr (2014) <doi:10.1007/s00362-013-0536-8> defines a robust and
+non-parametric dependence measure: the ordinal pattern coefficient.  Functions
+to calculate this and a method to detect a change in the pattern coefficient
+proposed in Schnurr and Dehling (2017) <doi:10.1080/01621459.2016.1164706> are
+provided.")
+    (license (list license:gpl2 license:gpl3))))
+
 (define-public r-ordinalnet
   (package
     (name "r-ordinalnet")
@@ -3163,6 +3118,36 @@ exhaustive search.  See Ni, Y., & Mallick, B. (2022)
 <https://proceedings.mlr.press/v180/ni22a/ni22a.pdf> \"Ordinal Causal Discovery.
 Proceedings of the 38th Conference on Uncertainty in Artificial Intelligence,
 (UAI 2022), PMLR 180:1530â1540\".")
+    (license license:expat)))
+
+(define-public r-ordbetareg
+  (package
+    (name "r-ordbetareg")
+    (version "0.7.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ordbetareg" version))
+              (sha256
+               (base32
+                "12z5ig4m62fy6j76anidj6gpy0g2xcr35yv0xv0avgi57wf4rpwv"))))
+    (properties `((upstream-name . "ordbetareg")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-transformr
+                             r-tidyr
+                             r-ggplot2
+                             r-gganimate
+                             r-dplyr
+                             r-brms))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ordbetareg")
+    (synopsis "Ordered Beta Regression Models with 'brms'")
+    (description
+     "This package implements ordered beta regression models, which are for modeling
+continuous variables with upper and lower bounds, such as survey sliders,
+dose-response relationships and indexes.  For more information, see Kubinec
+(2022) <doi:10.31235/osf.io/2sx6y>.  The package is a front-end to the R package
+brms', which facilitates a range of regression specifications, including
+hierarchical, dynamic and multivariate modeling.")
     (license license:expat)))
 
 (define-public r-orcutt
@@ -3863,13 +3848,13 @@ options.")
 (define-public r-options
   (package
     (name "r-options")
-    (version "0.0.1")
+    (version "0.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "options" version))
               (sha256
                (base32
-                "1s1mm4ir5q1wh8xjv4z5wyzkz7c1jpx7nlf0lmpv2lq9zgsjl9ps"))))
+                "11x18vicg7g3hpjiyhn4hb20g7zccn1bj74q39sh5il3v0wpkbg9"))))
     (properties `((upstream-name . "options")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -4640,13 +4625,13 @@ approach.  This work was supported by the Swedish Research Council
 (define-public r-optic
   (package
     (name "r-optic")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "optic" version))
               (sha256
                (base32
-                "0qd3h8cf5nzzp066ik9mnls2k7jpfwcf236blz7i666wbj9cpibx"))))
+                "166ngas1zp1ln951n26kmyfj9jcpi2fm2g2yxs9vs4as6fl1yf2n"))))
     (properties `((upstream-name . "optic")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -5193,18 +5178,18 @@ Lugosi (2006) <doi:10.1017/CBO9780511546921> for an overview.")
 (define-public r-openxlsx2
   (package
     (name "r-openxlsx2")
-    (version "0.7.1")
+    (version "0.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "openxlsx2" version))
               (sha256
                (base32
-                "04sa5pcqk1p02316vjs7d7sx5l9wnzcdhlwn4bmrvpwmzwgzmhs2"))))
+                "01hv3jwmzprcq6w4bwzkzyn6b2mq3w4vn1xfjlwvy3bywggx5zdx"))))
     (properties `((upstream-name . "openxlsx2")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip r-stringi r-rcpp r-r6 r-magrittr))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/JanMarvin/openxlsx2")
+    (home-page "https://janmarvin.github.io/openxlsx2/")
     (synopsis "Read, Write and Edit 'xlsx' Files")
     (description
      "Simplifies the creation of xlsx files by providing a high level interface to
@@ -5679,13 +5664,13 @@ metrics of their own.")
 (define-public r-openmeteo
   (package
     (name "r-openmeteo")
-    (version "0.1.1")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "openmeteo" version))
               (sha256
                (base32
-                "0lb5mfsm4fhi6hz4yyfxwh73naqzrr5x14wk17ar8v69gp9lsivn"))))
+                "0fnqy3l3s5119vw8abmp1ldn44047m3p40js5r41yf03i56lxd29"))))
     (properties `((upstream-name . "openmeteo")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -5693,7 +5678,6 @@ metrics of their own.")
                              r-tibblify
                              r-tibble
                              r-testthat
-                             r-lutz
                              r-httr
                              r-dplyr))
     (home-page "https://cran.r-project.org/package=openmeteo")
@@ -6077,13 +6061,13 @@ API.")
 (define-public r-openalexr
   (package
     (name "r-openalexr")
-    (version "1.1.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "openalexR" version))
               (sha256
                (base32
-                "091q82vxp9yacc40ma7fjnraachgl7ricdc605ypiybg5aydd0s1"))))
+                "01i33yxs708xcm993v1kzpyrxgcnmjzjjis5k1147dsajp2fas8k"))))
     (properties `((upstream-name . "openalexR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-progress r-jsonlite r-httr))
@@ -8349,13 +8333,13 @@ different authors in the recent years.  See Alizadeh (2019)
 (define-public r-olinkanalyze
   (package
     (name "r-olinkanalyze")
-    (version "3.4.1")
+    (version "3.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "OlinkAnalyze" version))
               (sha256
                (base32
-                "122rj8ly79cn1l9011agxak560c4rjf1lm7ijj9m8n8k7fxqi8m8"))))
+                "0zykprc6z8z8j08yk3jxr2i4bf5zkl0aab7y0dg0g1m3cnzf40vf"))))
     (properties `((upstream-name . "OlinkAnalyze")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -9258,13 +9242,13 @@ of Breiman (1984) <DOI:10.1201/9781315139470> and Random Forest of Breiman
 (define-public r-odr
   (package
     (name "r-odr")
-    (version "1.4.2")
+    (version "1.4.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "odr" version))
               (sha256
                (base32
-                "1kv4258galnl5za6pywdgbcbjcm1qmqhvhjz1dvz1p5s1lnwv28h"))))
+                "037v6523kbl0izfzyg6lp6h4r5p8w23dp8r1fpx07wyr34q2w8vn"))))
     (properties `((upstream-name . "odr")))
     (build-system r-build-system)
     (native-inputs (list r-rmarkdown r-markdown r-knitr))
@@ -11137,27 +11121,6 @@ orbit-aware counts are computed respective each of the edges and nodes.")
     (synopsis "OpenAnalytics Plots Package")
     (description "Offers a suite of functions for enhancing R plots.")
     (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
-
-(define-public r-oaii
-  (package
-    (name "r-oaii")
-    (version "0.1.8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "oaii" version))
-              (sha256
-               (base32
-                "09gjl9x7i1y92frf12bbw7xk3jxvldmnk84shi3h8haabldh5n9w"))))
-    (properties `((upstream-name . "oaii")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-magrittr r-httr r-checkmate))
-    (home-page "https://github.com/cezarykuran/oaii")
-    (synopsis "'OpenAI' API R Interface")
-    (description
-     "This package provides a comprehensive set of helpers that streamline data
-transmission and processing, making it effortless to interact with the
-@code{OpenAI} API <https://platform.openai.com/docs/api-reference/>.")
-    (license license:expat)))
 
 (define-public r-oaiharvester
   (package

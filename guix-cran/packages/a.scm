@@ -1162,13 +1162,13 @@ Checks for unintended meanings by querying Wiktionary and Wikipedia.")
 (define-public r-av
   (package
     (name "r-av")
-    (version "0.8.3")
+    (version "0.8.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "av" version))
               (sha256
                (base32
-                "1h04vr5r5h1jhqq542kzyf8bjiqp7iam8bvaxmmvbh7kq619issa"))))
+                "050hs0ifaaghbr0ys1jisjjbp5dfas1ghi928yk2vjv1c2lgs3lz"))))
     (properties `((upstream-name . "av")))
     (build-system r-build-system)
     (inputs (list zlib))
@@ -2996,6 +2996,38 @@ such as identify, estimate and forecast, which are the same statements in PROC
 ARIMA in SAS.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-atrisk
+  (package
+    (name "r-atrisk")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "atRisk" version))
+              (sha256
+               (base32
+                "17rs5jjk4av4b6qv14yl5qcnrjxms0va6alhdjxyln4hwrrd97km"))))
+    (properties `((upstream-name . "atRisk")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sn r-quantreg r-ggridges r-ggplot2 r-dfoptim))
+    (home-page "https://cran.r-project.org/package=atRisk")
+    (synopsis "At-Risk")
+    (description
+     "The at-Risk @code{(aR)} approach is based on a two-step parametric estimation
+procedure that allows to forecast the full conditional distribution of an
+economic variable at a given horizon, as a function of a set of factors.  These
+density forecasts are then be used to produce coherent forecasts for any
+downside risk measure, e.g., value-at-risk, expected shortfall, downside
+entropy.  Initially introduced by Adrian et al. (2019)
+<doi:10.1257/aer.20161923> to reveal the vulnerability of economic growth to
+financial conditions, the @code{aR} approach is currently extensively used by
+international financial institutions to provide Value-at-Risk @code{(VaR)} type
+forecasts for GDP growth (Growth-at-Risk) or inflation (Inflation-at-Risk).
+This package provides methods for estimating these models.  Datasets for the US
+and the Eurozone are available to allow testing of the Adrian et al. (2019)
+model.  This package constitutes a useful toolbox (data and functions) for
+private practitioners, scholars as well as policymakers.")
+    (license license:gpl3)))
+
 (define-public r-atr
   (package
     (name "r-atr")
@@ -4327,15 +4359,16 @@ Galli, and Murray (2022)
 (define-public r-asremlplus
   (package
     (name "r-asremlplus")
-    (version "4.3.55")
+    (version "4.4.12")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "asremlPlus" version))
               (sha256
                (base32
-                "1axq36zb4v94094nsj0hi21gnc7zkgv1rj510n02q0f0d6j5g62f"))))
+                "1fglfj0zzmygi9zi8dyd4glr1v2kdrq6h7jpijy9kmci080ld4gm"))))
     (properties `((upstream-name . "asremlPlus")))
     (build-system r-build-system)
+    (inputs (list))
     (propagated-inputs (list r-stringr
                              r-sticky
                              r-rlang
@@ -4346,6 +4379,7 @@ Galli, and Murray (2022)
                              r-foreach
                              r-dplyr
                              r-doparallel
+                             r-devtools
                              r-dae))
     (native-inputs (list r-r-rsp))
     (home-page "http://chris.brien.name")
@@ -4364,13 +4398,13 @@ functions, and (viii) Miscellaneous functions (for further details see
 models is kept in a data frame.  Procedures are available for choosing models
 that conform to the hierarchy or marginality principle and for displaying
 predictions for significant terms in tables and graphs.  The asreml package
-provides a computationally efficient algorithm for fitting mixed models using
-Residual Maximum Likelihood.  It is a commercial package that can be purchased
-from VSNi <https://vsni.co.uk/> as asreml-R', who will supply a zip file for
-local installation/updating (see <https://asreml.kb.vsni.co.uk/>).  It is not
-needed for functions that are methods for alldiffs and data.frame objects.  The
-package @code{asremPlus} can also be installed from
-<http://chris.brien.name/rpackages/>.")
+provides a computationally efficient algorithm for fitting a wide range of
+linear mixed models using Residual Maximum Likelihood.  It is a commercial
+package that can be purchased from VSNi <https://vsni.co.uk/> as asreml-R', who
+will supply a zip file for local installation/updating (see
+<https://asreml.kb.vsni.co.uk/>).  It is not needed for functions that are
+methods for alldiffs and data.frame objects.  The package @code{asremPlus} can
+also be installed from <http://chris.brien.name/rpackages/>.")
     (license license:expat)))
 
 (define-public r-aspu
@@ -7714,13 +7748,13 @@ process, originally proposed by Kennedy and O'Hagan (2000), Biometrika 87(1):1."
 (define-public r-appriori
   (package
     (name "r-appriori")
-    (version "0.0.2")
+    (version "0.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "appRiori" version))
               (sha256
                (base32
-                "0qi840a3nlacbkiw3q6ikf2nddw5b1cq1v1llyhpbkmvd807bh8p"))))
+                "18hvrn5zdcp7q64pcbg3jgssiyi4m4cy7bkm4al1f8m4p46j7qbq"))))
     (properties `((upstream-name . "appRiori")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -7944,17 +7978,18 @@ to analysis ready earth observation data in R.")
 (define-public r-apollo
   (package
     (name "r-apollo")
-    (version "0.2.9")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "apollo" version))
               (sha256
                (base32
-                "076i64l1n84ljdnklkj63n4q7ssg692h21dfbw8c0nxv4wsgzrm3"))))
+                "0k561m2ypywiw0lzk5yy1z48d8x0rs99grz20hh28lp5b7zzip9a"))))
     (properties `((upstream-name . "apollo")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
                              r-stringr
+                             r-rsolnp
                              r-rsghb
                              r-rcppeigen
                              r-rcpparmadillo
@@ -8657,38 +8692,6 @@ tables for several types of analyses.  Using this package minimizes
 transcription errors and reduces the number commands needed by the user.")
     (license (license:fsdg-compatible "MIT License + file LICENSE"))))
 
-(define-public r-apackoftheclones
-  (package
-    (name "r-apackoftheclones")
-    (version "0.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "APackOfTheClones" version))
-              (sha256
-               (base32
-                "0am6344qmlxq7ww9bqa1f33s1li0rwns1dqb6rc5kplf76b2nkkq"))))
-    (properties `((upstream-name . "APackOfTheClones")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-testthat
-                             r-seurat
-                             r-rlang
-                             r-rcpp
-                             r-hash
-                             r-ggplot2
-                             r-ggforce
-                             r-dplyr
-                             r-data-table))
-    (home-page "https://qile0317.github.io/APackOfTheClones/")
-    (synopsis "Visualization of T-Cell Clonal Expansion")
-    (description
-     "Visualize T-cell clonal expansion via circle-packing. @code{APackOfTheClones}
-can integrate single-cell RNA sequencing and T-cell receptor libraries from the
-10X genomics Single Cell Immune Profiling and Cell Ranger pipeline, to produce a
-simple, publication-ready visualization of the clonal expansion.  The method was
-originally implemented by Murray Christian and Ben Murrell in the following
-immunology study: Ma et al. (2021) <doi:10.1126/sciimmunol.abg6356>.")
-    (license license:expat)))
-
 (define-public r-apachelogprocessor
   (package
     (name "r-apachelogprocessor")
@@ -9346,19 +9349,25 @@ pair of sampling points.")
 (define-public r-anthropmmd
   (package
     (name "r-anthropmmd")
-    (version "3.1.0")
+    (version "4.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "AnthropMMD" version))
               (sha256
                (base32
-                "10ms5akc2r9dmcm8dd8bn7qn0bq71c270yhs61981n4mxsvgjmnr"))))
+                "1k8f8xrlgl4l3kpspdpznplydq8ppynkjwij571sb4lkac5fbz55"))))
     (properties `((upstream-name . "AnthropMMD")))
     (build-system r-build-system)
-    (propagated-inputs (list r-smacof r-shiny r-scatterplot3d r-plotrix))
+    (propagated-inputs (list r-smacof
+                             r-shiny
+                             r-scatterplot3d
+                             r-rlang
+                             r-plotrix
+                             r-mass
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://gitlab.com/f-santos/anthropmmd/")
-    (synopsis "An R Package for Smith's Mean Measure of Divergence (MMD)")
+    (synopsis "An R Package for the Mean Measure of Divergence (MMD)")
     (description
      "Offers a graphical user interface for the calculation of the mean measure of
 divergence, with facilities for trait selection and graphical representations
@@ -9717,6 +9726,40 @@ package function as well as at <https://kartikeyab.shinyapps.io/ANOVAShiny/>.")
 using rmarkdown and shiny packages.  Runtime examples are provided in the
 package function as well as at @code{<https://tinyurl.com/ANOVAStatsTool>.}")
     (license license:gpl2)))
+
+(define-public r-anomaly
+  (package
+    (name "r-anomaly")
+    (version "4.3.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "anomaly" version))
+              (sha256
+               (base32
+                "1dlq82nxrvg6ydcgk74axssg71zhfilb54h244abwrzj782286cf"))))
+    (properties `((upstream-name . "anomaly")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-xts
+                             r-tidyr
+                             r-rdpack
+                             r-rcpp
+                             r-ggplot2
+                             r-dplyr
+                             r-bh
+                             r-assertive))
+    (home-page "https://cran.r-project.org/package=anomaly")
+    (synopsis "Detecting Anomalies in Data")
+    (description
+     "This package implements Collective And Point Anomaly (CAPA) Fisch, Eckley, and
+Fearnhead (2022) <doi:10.1002/sam.11586>, Multi-Variate Collective And Point
+Anomaly (MVCAPA) Fisch, Eckley, and Fearnhead (2021)
+<doi:10.1080/10618600.2021.1987257>, Proportion Adaptive Segment Selection
+(PASS) Jeng, Cai, and Li (2012) <doi:10.1093/biomet/ass059>, and Bayesian
+Abnormal Region Detector (BARD) Bardwell and Fearnhead (2015)
+@code{<arXiv:1412.5565>.} These methods are for the detection of anomalies in
+time series data.")
+    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-anom
   (package
@@ -13643,21 +13686,23 @@ meteorological diagnostics.")
 (define-public r-airt
   (package
     (name "r-airt")
-    (version "0.2.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "airt" version))
               (sha256
                (base32
-                "1az5fd9zr6lgmcim4v6rzckl9yyw9myvhmzs76n71864gnzkbna4"))))
+                "1x2p172k7lffcn3cfs7pgdi3iq2fpys8rsrx1spq7gy14xcq9w63"))))
     (properties `((upstream-name . "airt")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-rlang
+                             r-rcolorbrewer
                              r-pracma
                              r-mirt
                              r-magrittr
+                             r-ggplot2
                              r-estcrm
                              r-dplyr))
     (native-inputs (list r-knitr))
@@ -14149,19 +14194,19 @@ to illustrate methods, not to draw substantive conclusions.")
 (define-public r-aides
   (package
     (name "r-aides")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "aides" version))
               (sha256
                (base32
-                "1b9pggvkpsid7wb4a4c8iwis1wvp13h833npbmfpz9267w7qrla4"))))
+                "0yqn15ddwq3mvssfkl0sac2scj3j9ghr47r1q3afvmas00p095qg"))))
     (properties `((upstream-name . "aides")))
     (build-system r-build-system)
-    (propagated-inputs (list r-meta))
+    (propagated-inputs (list r-meta r-boot))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=aides")
-    (synopsis "Aides for Pooled Analysis of Aggregate Data")
+    (synopsis "Additive Information & Details of Evidence Synthesis")
     (description
      "This package provides a supportive collection of functions for pooled analysis
 of aggregate data.  The current version supports users to test assumptions
@@ -14458,27 +14503,26 @@ Solution - with two normalizations).  This method is described in Souza et al.
 (define-public r-ahptools
   (package
     (name "r-ahptools")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "AHPtools" version))
               (sha256
                (base32
-                "07gh7xs1f3yg6x23h00llqmhy1zx7vwsrk0l3n2s8gd3hvqjm14x"))))
+                "0fdmihxd04bsan0kpplggqh1f409n59k5lx26ld2qcbxplq0lp9w"))))
     (properties `((upstream-name . "AHPtools")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
-    (home-page "<https://CRAN.R-project.org/package=AHPtools>")
+    (home-page "https://CRAN.R-project.org/package=AHPtools")
     (synopsis "Consistency in the Analytic Hierarchy Process")
     (description
-     "This package provides a set of three functions for AHP users, namely CR() which
-evaluates the Consistency Ratio for a given PCM', @code{improveCR()} for any
-input PCM suggests a matrix with preferences similar to the original
-preferences, having greater consistency than the input matrix and sensitivity()
-for an input PCM returns the average rank correlation of the principal
-eigenvector of the input PCM and of 500 sample matrices generated by random
-perturbations of elements of the input matrix to within the five nearest
-elements in the Fundamental Scale.")
+     "This package provides a Swiss Army knife of utility functions for AHP users
+which will help you assess the consistency of a PCM as well as improve the
+consistency ratio, compute the sensitivity of a PCM, create a logical, not a
+random PCM, from the preferences you provide for the alternatives, and a
+function that helps evaluate the actual consistency of a PCM based on objective,
+fair bench marking.  The toolkit additionally allows a user to specify only the
+upper triangular comparison ratios of the PCM and performs its assigned task.")
     (license license:gpl3)))
 
 (define-public r-ahpsurvey
@@ -14958,13 +15002,13 @@ mean square error, AIC, BIC, as well as graphs with the equations automatically.
 (define-public r-agror
   (package
     (name "r-agror")
-    (version "1.3.3")
+    (version "1.3.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "AgroR" version))
               (sha256
                (base32
-                "06vnqf98yhgq43xycp62bpz2rpz77wp02hf37pd25483969bk9q9"))))
+                "1701n85db3id2li67qjnz4rxhcqpaqdk3098ia1vf3x5jgsfqjn3"))))
     (properties `((upstream-name . "AgroR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcolorbrewer
@@ -15407,13 +15451,13 @@ are implemented considering additive and non-additive models.")
 (define-public r-aggtrees
   (package
     (name "r-aggtrees")
-    (version "2.0.0")
+    (version "2.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "aggTrees" version))
               (sha256
                (base32
-                "1cc7k23cb1cav2q4hs9i3ra4gs96vm08192p4nq1lsji28v6h7f6"))))
+                "02yk1w8j12s5v4zb6js9n45p1vfanm3ham6f8b3h4qcj7rvf94h5"))))
     (properties `((upstream-name . "aggTrees")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -15422,8 +15466,11 @@ are implemented considering additive and non-additive models.")
                              r-grf
                              r-estimatr
                              r-caret
-                             r-car))
-    (home-page "https://cran.r-project.org/package=aggTrees")
+                             r-car
+                             r-broom
+                             r-boot))
+    (native-inputs (list r-knitr))
+    (home-page "https://riccardo-df.github.io/aggTrees/")
     (synopsis "Aggregation Trees")
     (description
      "Nonparametric data-driven approach to discovering heterogeneous subgroups in a
@@ -18627,13 +18674,13 @@ component, and push it to an Acumos platform.")
 (define-public r-actxps
   (package
     (name "r-actxps")
-    (version "1.1.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "actxps" version))
               (sha256
                (base32
-                "1a02fmi6g0n125g0lszrg83hmlqnlpl3bw8n50c25q1ya4q7dngk"))))
+                "1yy1yhpvk8ycyasdngwy9sg189cwli3n6k60iwvb1acpqy0rhhdd"))))
     (properties `((upstream-name . "actxps")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs

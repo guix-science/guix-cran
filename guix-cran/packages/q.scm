@@ -651,13 +651,13 @@ dependencies beyond a C compiler.")
 (define-public r-quickcode
   (package
     (name "r-quickcode")
-    (version "0.1")
+    (version "0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "quickcode" version))
               (sha256
                (base32
-                "0nfpzdfnh7974cx4lc1vbdm40amlzy0c135ynm1fvkw0wczdppc1"))))
+                "0db2p0ls4cff26v9akl6nzq4d0w3a0v4f334i0fhz8vdf806z8l0"))))
     (properties `((upstream-name . "quickcode")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstudioapi))
@@ -1496,13 +1496,13 @@ balance approach and the conditional expectations method.")
 (define-public r-quanteda-textstats
   (package
     (name "r-quanteda-textstats")
-    (version "0.96.2")
+    (version "0.96.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "quanteda.textstats" version))
               (sha256
                (base32
-                "0jgavpywwg852x0qpqr4bajv2jskysp0dn1pk1larn6xz7za70sk"))))
+                "1nx716fvdpwac67m8ld0nhqvv34a2hfk2c7kf1b2l1n60x285cr2"))))
     (properties `((upstream-name . "quanteda.textstats")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi
@@ -2148,13 +2148,13 @@ model of a dynamic treatment experiment proposed in literature.")
 (define-public r-qtlrel
   (package
     (name "r-qtlrel")
-    (version "1.12")
+    (version "1.14")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "QTLRel" version))
               (sha256
                (base32
-                "1cc89z8yzvxcyx85q0bdn8c4y73db7i81pzqjhw8yssmkhxjwgww"))))
+                "1brxlvqlcax0f5l0bnc9cirn2v6xwhb851cvzkwrgsxi4m7xn839"))))
     (properties `((upstream-name . "QTLRel")))
     (build-system r-build-system)
     (propagated-inputs (list r-lattice r-gdata))
@@ -2282,13 +2282,13 @@ causality for pairs of phenotypes in system genetics.  Genetics 193 : 1003-1013.
 (define-public r-qtlemm
   (package
     (name "r-qtlemm")
-    (version "1.2.0")
+    (version "1.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "QTLEMM" version))
               (sha256
                (base32
-                "1cs4x5v85ad8lmi9alycz0kqnz07qh18ic3r4j3ww53l5p9wwj4g"))))
+                "18hfpb7wydaqfwk7kah65294xck62a3kal3fjlzgmmis0ylr6q71"))))
     (properties `((upstream-name . "QTLEMM")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm))
@@ -2703,17 +2703,18 @@ functions provided by similar packages.")
 (define-public r-qspray
   (package
     (name "r-qspray")
-    (version "2.0.0")
+    (version "2.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "qspray" version))
               (sha256
                (base32
-                "0pg7d36d2s08bpsb7kq6k0h3mq869gx1ak3vn2bkfxnmfnn6099m"))))
+                "0j8n64i2hsyiw37r7hf47g4dlndhgjn8s0jfyc6w7bznyjwadz7w"))))
     (properties `((upstream-name . "qspray")))
     (build-system r-build-system)
     (inputs (list mpfr gmp))
     (propagated-inputs (list r-ryacas
+                             r-rcpparmadillo
                              r-rcpp
                              r-rationalmatrix
                              r-purrr
@@ -4276,18 +4277,19 @@ the effects of exposure mixtures; <doi:10.1289/EHP5838>.")
 (define-public r-qgcomp
   (package
     (name "r-qgcomp")
-    (version "2.10.1")
+    (version "2.15.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "qgcomp" version))
               (sha256
                (base32
-                "0cdrb794j9wkfs80r98jbi21g21l3fm754cy364a00zzqd1f5jq3"))))
+                "0qllrh5zmmd63kwjn7j3f5z56zr27q7czf6shdzcrf6ajy99risp"))))
     (properties `((upstream-name . "qgcomp")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
                              r-survival
                              r-pscl
+                             r-nnet
                              r-gridextra
                              r-ggplot2
                              r-generics

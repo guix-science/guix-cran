@@ -1812,6 +1812,28 @@ the high-level user interface of dplyr'.")
 <https://api.duckduckgo.com/api>.")
     (license license:expat)))
 
+(define-public r-duckdbfs
+  (package
+    (name "r-duckdbfs")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "duckdbfs" version))
+              (sha256
+               (base32
+                "0c31yr18j2dqbxhy10qh47a5ynjjb1hjdy5p0r7pfklc3xg5c6n1"))))
+    (properties `((upstream-name . "duckdbfs")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-duckdb r-dplyr r-dbplyr r-dbi))
+    (home-page "https://github.com/cboettig/duckdbfs")
+    (synopsis "High Performance Remote File System Access Using 'duckdb'")
+    (description
+     "This package provides friendly wrappers for creating duckdb'-backed connections
+to tabular datasets ('csv', parquet, etc) on local or remote file systems.  This
+mimics the behaviour of \"open_dataset\" in the arrow package, but in addition to
+S3 file system also generalizes to any list of http URLs.")
+    (license license:expat)))
+
 (define-public r-duckdb
   (package
     (name "r-duckdb")
@@ -2132,13 +2154,13 @@ and reference).")
 (define-public r-dtts
   (package
     (name "r-dtts")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dtts" version))
               (sha256
                (base32
-                "0jha4fpx7fi9xrw0677i07ip7ydrvyq8g2lfy8g80jkfy6d6pbdd"))))
+                "0h1jb37zsvqz8ij4y70d5if02hpxn6r3d5dvkq3pvxhqz2l2swij"))))
     (properties `((upstream-name . "dtts")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppdate
@@ -3762,13 +3784,13 @@ drum patterns.")
 (define-public r-drugutilisation
   (package
     (name "r-drugutilisation")
-    (version "0.2.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DrugUtilisation" version))
               (sha256
                (base32
-                "0hs9dbcmkr6csicb40s384mcg04gc4c767nhig2mv17kszjzrm98"))))
+                "16czxyqx815ri9132qz684h93v4kl7sl6033gdk40n4viy22rw8n"))))
     (properties `((upstream-name . "DrugUtilisation")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -3798,13 +3820,13 @@ indication and drug use summarised.")
 (define-public r-drugsim2dr
   (package
     (name "r-drugsim2dr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DrugSim2DR" version))
               (sha256
                (base32
-                "16m1gqs5m7pi8nlr6n8wh7dk3wjjiwhiqm96h8jxavfizv0bkj6n"))))
+                "1sphg3imdyr71amwqzmzzp6h1ai2m6rm87l08mv70i6jlznwf9kr"))))
     (properties `((upstream-name . "DrugSim2DR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -3813,6 +3835,7 @@ indication and drug use summarised.")
                              r-reshape2
                              r-pheatmap
                              r-igraph
+                             r-fastmatch
                              r-chemminer))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=DrugSim2DR")
@@ -3913,6 +3936,27 @@ targeted pathways.  Clustering of the drugs in the feature space can be done
 using K-Means, PAM or K-Seeds (a novel clustering algorithm proposed by the
 author).")
     (license license:gpl2)))
+
+(define-public r-drquality
+  (package
+    (name "r-drquality")
+    (version "0.2.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "DRquality" version))
+              (sha256
+               (base32
+                "098y3s7xraix95mi2qydmn8j0rx3y23a5pp9xkn6d6m4krkpkdfp"))))
+    (properties `((upstream-name . "DRquality")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-databionicswarm))
+    (home-page "https://cran.r-project.org/package=DRquality")
+    (synopsis "Quality Measurements for Dimensionality Reduction")
+    (description
+     "Several quality measurements for investigating the performance of dimensionality
+reduction methods are provided here.  In addition a new quality measurement
+called Gabriel classification error is made accessible.")
+    (license license:gpl3)))
 
 (define-public r-drpop
   (package
@@ -5105,13 +5149,13 @@ Gerhard, D. (2015) <doi:10.1371/journal.pone.0146021>.")
 (define-public r-dr-sc
   (package
     (name "r-dr-sc")
-    (version "3.2")
+    (version "3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DR.SC" version))
               (sha256
                (base32
-                "0glf17ddq2h4wvzbwcdaw3a0whf7j4r5srmda05lx3bqrgaarwkr"))))
+                "1457r1mc5cccr2frbnh0ply72wpjglin9qna9xaxgn5q0gmqf57v"))))
     (properties `((upstream-name . "DR.SC")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-geom
@@ -5650,13 +5694,13 @@ dataset has been analyzed.")
 (define-public r-dpcp
   (package
     (name "r-dpcp")
-    (version "2.0.0")
+    (version "2.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dPCP" version))
               (sha256
                (base32
-                "120m0b3r8bfw4whv2maw8a086rmgwspx0mvdzkk14nkffr8acng5"))))
+                "023m9qzn64m7f992f12y4vf67jpj4zpajvwqyw4qlf4grsr9qfv5"))))
     (properties `((upstream-name . "dPCP")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -7004,7 +7048,6 @@ by other packages for designed experiments.")
     (propagated-inputs (list r-rcppthread
                              r-rcppparallel
                              r-rcpp
-                             r-osmdata
                              r-magrittr
                              r-fs
                              r-digest
@@ -7723,13 +7766,13 @@ parallel computing.")
 (define-public r-dndr
   (package
     (name "r-dndr")
-    (version "1.3.0")
+    (version "1.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dndR" version))
               (sha256
                (base32
-                "1h91xzf388cwmf9iv1ygx4qc8ianznjpy22vda0qd5x6v2jpddmq"))))
+                "1lyynil93s2kmsxgjw7dqz8p56v10v93y9zmkbvpphfbh38z7kda"))))
     (properties `((upstream-name . "dndR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -7973,16 +8016,16 @@ submitted.")
 (define-public r-dmrnet
   (package
     (name "r-dmrnet")
-    (version "0.3.4")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DMRnet" version))
               (sha256
                (base32
-                "030ya23r9cg9adlh03qi8ychcwbvnxr42dvkvrzw6wz85dsc0vrv"))))
+                "11niqsnkyrcwsirrsjp7gkdcjgdlddah92i5mndw4idadjg0cnrc"))))
     (properties `((upstream-name . "DMRnet")))
     (build-system r-build-system)
-    (propagated-inputs (list r-grpreg r-glmnet))
+    (propagated-inputs (list r-hclust1d r-grpreg r-glmnet))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/SzymonNowakowski/DMRnet")
     (synopsis
@@ -7991,7 +8034,11 @@ submitted.")
      "Model selection algorithms for regression and classification, where the
 predictors can be continuous or categorical and the number of regressors may
 exceed the number of observations.  The selected model consists of a subset of
-numerical regressors and partitions of levels of factors.  Aleksandra
+numerical regressors and partitions of levels of factors.  Szymon Nowakowski,
+Piotr Pokarowski, Wojciech Rejchel and Agnieszka @code{SoÅtys,} 2023.
+Improving Group Lasso for High-Dimensional Categorical Data.  In: Computational
+Science â ICCS 2023.  Lecture Notes in Computer Science, vol 14074, p.
+455-470.  Springer, Cham. <doi:10.1007/978-3-031-36021-3_47>.  Aleksandra
 @code{Maj-KaÅska,} Piotr Pokarowski and Agnieszka Prochenka, 2015.  Delete or
 merge regressors for linear model selection.  Electronic Journal of Statistics
 9(2): 1749-1778. <doi:10.1214/15-EJS1050>.  Piotr Pokarowski and Jan Mielniczuk,
@@ -8695,13 +8742,13 @@ parameter by AIC, BIC, GIC and GIC.")
 (define-public r-dlagm
   (package
     (name "r-dlagm")
-    (version "1.1.8")
+    (version "1.1.12")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dLagM" version))
               (sha256
                (base32
-                "05pm72rpj5d4kvr8fybsw109p59wfy7kc2x3m810c94qni9apw18"))))
+                "0j0jllwhbx4kjb10y3lxxf37108alnydndxf54hqlwp67q9vy5pm"))))
     (properties `((upstream-name . "dLagM")))
     (build-system r-build-system)
     (propagated-inputs (list r-wavethresh
@@ -8991,6 +9038,34 @@ number and frequency of different types in population) and similarity (a number
 and frequency of shared types in two populations) in biological or ecological
 systems.")
     (license license:gpl3+)))
+
+(define-public r-divinsight
+  (package
+    (name "r-divinsight")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "DivInsight" version))
+              (sha256
+               (base32
+                "0chhr94id5n9zmkif49haqa2fjfhdhddp3ikwyfxp2cwmq223v88"))))
+    (properties `((upstream-name . "DivInsight")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vegan
+                             r-rgbif
+                             r-leaflet
+                             r-ggplot2
+                             r-geosphere
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=DivInsight")
+    (synopsis
+     "Diversity Index Calculation & Visualisation for Taxa and Location")
+    (description
+     "Repurpose occurrence data for calculating diversity index values, creating
+visuals, and generating species composition matrices for a chosen taxon and
+location.")
+    (license license:gpl3)))
 
 (define-public r-divest
   (package
@@ -9319,13 +9394,13 @@ Brouwer (2020) <doi:10.1002/9781119632757>.")
 (define-public r-dittodb
   (package
     (name "r-dittodb")
-    (version "0.1.6")
+    (version "0.1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dittodb" version))
               (sha256
                (base32
-                "0v2pn7cv1myqc2kx300fmknpkljfvkv6306x1nq5cyg4xwjpgm38"))))
+                "1z7xw1cl1drjwq58iz6c6xqz6dpr38g0mdck2yimyjagwpjb43kq"))))
     (properties `((upstream-name . "dittodb")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-lifecycle r-glue r-digest r-dbi))
@@ -10583,46 +10658,6 @@ addition to drug resistance) as the fraction of the subpopulation that is able
 to grow above the resistance point @code{(\"FoG\"),} and drug sensitivity as the
 rate of change from no growth to full growth (\"slope\").")
     (license license:gpl3)))
-
-(define-public r-disk-frame
-  (package
-    (name "r-disk-frame")
-    (version "0.8.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "disk.frame" version))
-              (sha256
-               (base32
-                "1mx3lqgasxmqxwrwslmrfcjh7gmd2f6ypz23k1x05bgrhckwhlws"))))
-    (properties `((upstream-name . "disk.frame")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr
-                             r-rlang
-                             r-rcpp
-                             r-purrr
-                             r-pryr
-                             r-jsonlite
-                             r-glue
-                             r-globals
-                             r-future-apply
-                             r-future
-                             r-fst
-                             r-fs
-                             r-dplyr
-                             r-data-table
-                             r-crayon
-                             r-bit64
-                             r-bigreadr
-                             r-benchmarkme
-                             r-arrow))
-    (home-page "https://diskframe.com")
-    (synopsis "Larger-than-RAM Disk-Based Data Manipulation Framework")
-    (description
-     "This package provides a disk-based data manipulation tool for working with
-large-than-RAM datasets.  Aims to lower the barrier-to-entry for manipulating
-large datasets by adhering closely to popular and familiar data manipulation
-paradigms like dplyr verbs and data.table syntax.")
-    (license license:expat)))
 
 (define-public r-disimpact
   (package
@@ -14970,21 +15005,21 @@ optimization problems.")
 (define-public r-dfoliatr
   (package
     (name "r-dfoliatr")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dfoliatR" version))
               (sha256
                (base32
-                "0z78nbb2m6qn2xj09j4wgpmid5va1jppdkknhl2l7v3yx8fmmk9i"))))
+                "0gl1acd5z67c2wkb806myr0ccm87waxdrnnjdq2wi8zndbc30j74"))))
     (properties `((upstream-name . "dfoliatR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
+                             r-tibble
                              r-rlang
                              r-purrr
-                             r-plyr
-                             r-mass
                              r-magrittr
+                             r-glue
                              r-ggpubr
                              r-ggplot2
                              r-forcats
@@ -18294,6 +18329,33 @@ the squared Mahalanobis distance.  The package also contains functions for data
 handling and building of new classifiers as well as some test data set.")
     (license license:gpl3)))
 
+(define-public r-defm
+  (package
+    (name "r-defm")
+    (version "0.1-0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "defm" version))
+              (sha256
+               (base32
+                "09556clb6xj724ls223pnkxbiz94bi5gdscgksp0k6qyay5qcy18"))))
+    (properties `((upstream-name . "defm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://cran.r-project.org/package=defm")
+    (synopsis "Estimation and Simulation of Multi-Binary Response Models")
+    (description
+     "Multi-binary response models are a class of models that allow for the estimation
+of multiple binary outcomes simultaneously.  This package provides functions to
+estimate and simulate these models using the Discrete Exponential-Family Models
+[DEFM] framework.  In it, we implement the models described in Vega Yon,
+Valente, and Pugh (2023) @code{<doi:10.48550/arXiv.2211.00627>.} DEFMs include
+Exponential-Family Random Graph Models [ERGMs], which characterize graphs using
+sufficient statistics, which is also the core of DEFMs. Using sufficient
+statistics, we can describe the data through meaningful motifs, for example,
+transitions between different states, joint distribution of the outcomes, etc.")
+    (license license:expat)))
+
 (define-public r-deflist
   (package
     (name "r-deflist")
@@ -18722,13 +18784,13 @@ the service (see <https://www.deepl.com/pro#developer).")
 (define-public r-deepgp
   (package
     (name "r-deepgp")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "deepgp" version))
               (sha256
                (base32
-                "0kad8vfw5c6d5qggvdb8n80pqlz4j15yrgvh75xgsyphz9vp2r4f"))))
+                "0w08mdr9cszmkm1382md0lklhnna95ah0kv6kzniv3ly3fvwin2f"))))
     (properties `((upstream-name . "deepgp")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
@@ -18741,21 +18803,23 @@ the service (see <https://www.deepl.com/pro#developer).")
                              r-doparallel))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=deepgp")
-    (synopsis "Deep Gaussian Processes using MCMC")
+    (synopsis "Bayesian Deep Gaussian Processes using MCMC")
     (description
-     "This package performs posterior inference for deep Gaussian processes following
-Sauer, Gramacy, and Higdon (2020) @code{<arXiv:2012.08015>.} Models are trained
-through MCMC including elliptical slice sampling of latent Gaussian layers and
-Metropolis-Hastings sampling of kernel hyperparameters.  Vecchia-approximation
-for faster computation is implemented following Sauer, Cooper, and Gramacy
-(2022) @code{<arXiv:2204.02904>.} Downstream tasks include sequential design
-through active learning Cohn/integrated mean squared error (ALC/IMSE; Sauer,
-Gramacy, and Higdon, 2020) and optimization through expected improvement (EI;
-Gramacy, Sauer, and Wycoff, 2021 @code{<arXiv:2112.07457>).} Models extend up to
-three layers deep; a one layer model is equivalent to typical Gaussian process
-regression.  Covariance kernel options are matern (default) and squared
-exponential.  Incorporates @code{OpenMP} and SNOW parallelization and utilizes
-C/C++ under the hood.")
+     "This package performs Bayesian posterior inference for deep Gaussian processes
+following Sauer, Gramacy, and Higdon (2023, @code{<arXiv:2012.08015>).} See
+Sauer (2023, <http://hdl.handle.net/10919/114845>) for comprehensive
+methodological details and <https://bitbucket.org/gramacylab/deepgp-ex/> for a
+variety of coding examples.  Models are trained through MCMC including
+elliptical slice sampling of latent Gaussian layers and Metropolis-Hastings
+sampling of kernel hyperparameters.  Vecchia-approximation for faster
+computation is implemented following Sauer, Cooper, and Gramacy (2022,
+@code{<arXiv:2204.02904>).} Downstream tasks include sequential design through
+active learning Cohn/integrated mean squared error (ALC/IMSE; Sauer, Gramacy,
+and Higdon, 2023), optimization through expected improvement (EI; Gramacy,
+Sauer, and Wycoff, 2021 @code{<arXiv:2112.07457>),} and contour location through
+entropy (Sauer, 2023).  Models extend up to three layers deep; a one layer model
+is equivalent to typical Gaussian process regression.  Incorporates
+@code{OpenMP} and SNOW parallelization and utilizes C/C++ under the hood.")
     (license license:lgpl2.0+)))
 
 (define-public r-deepgmm
@@ -19216,13 +19280,13 @@ CO-expression and Differential Expression) algorithm.")
 (define-public r-declaredesign
   (package
     (name "r-declaredesign")
-    (version "1.0.2")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DeclareDesign" version))
               (sha256
                (base32
-                "0js3v2v9df8i2ay44bk6qql14a3v621r11pi0fmi352wlzyg5s9v"))))
+                "1pk9xin8fqjrwknpvd1b3ff5slahs1003l985pd6ynz5cpzbfi4d"))))
     (properties `((upstream-name . "DeclareDesign")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-randomizr r-generics r-fabricatr
@@ -22888,13 +22952,13 @@ manipulation.  The package uses libsailr (C/C++ library) for its
 (define-public r-datarobot
   (package
     (name "r-datarobot")
-    (version "2.18.2")
+    (version "2.18.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "datarobot" version))
               (sha256
                (base32
-                "1k6nqkcxjnhv4j11lm204nl85dibljfx3w2214mz0g9d7zjqrwbi"))))
+                "015hb7srndwgl0wxw5601hjqyy2hy9dm5nzlwx2hdbpc4cmcgvrm"))))
     (properties `((upstream-name . "datarobot")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml r-jsonlite r-httr))
@@ -23867,13 +23931,13 @@ resulting paper of that study will be published soon.")
 (define-public r-dataclass
   (package
     (name "r-dataclass")
-    (version "0.2.1")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dataclass" version))
               (sha256
                (base32
-                "1l5ricsfsqji3nn7vq12k62bxadgc7bfmf9v0xqqray89aqi2ikz"))))
+                "1byjxwk3jlm3jaa8q2ppr5i0y98hriky7rrff9gb8nk6yvv9jgmq"))))
     (properties `((upstream-name . "dataclass")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -24234,6 +24298,55 @@ data in @code{dartR.data} is needed to run the examples provided in the
 @code{dartR} functions.  All available data sets are either based on actual data
 (but reduced in size) and/or simulated data sets to allow the fast execution of
 examples and demonstration of the functions.")
+    (license license:gpl3+)))
+
+(define-public r-dartr-base
+  (package
+    (name "r-dartr-base")
+    (version "0.49")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "dartR.base" version))
+              (sha256
+               (base32
+                "1jyfwxrr4vcpac277wii11md7rpv5nxcz7g1g6ardj29a690r2vh"))))
+    (properties `((upstream-name . "dartR.base")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-stampp
+                             r-snprelate
+                             r-reshape2
+                             r-plyr
+                             r-patchwork
+                             r-gridextra
+                             r-ggplot2
+                             r-foreach
+                             r-dplyr
+                             r-data-table
+                             r-dartr-data
+                             r-crayon
+                             r-ape
+                             r-adegenet))
+    (home-page "https://green-striped-gecko.github.io/dartR/")
+    (synopsis "Analysing 'SNP' and 'Silicodart' Data - Basic Functions")
+    (description
+     "Facilitates the import and analysis of SNP (single nucleotide polymorphism') and
+silicodart (presence/absence) data.  The main focus is on data generated by
+@code{DarT} (Diversity Arrays Technology), however, data from other sequencing
+platforms can be used once SNP or related fragment presence/absence data from
+any source is imported.  Genetic datasets are stored in a derived genlight
+format (package adegenet'), that allows for a very compact storage of data and
+metadata.  Functions are available for importing and exporting of SNP and
+silicodart data, for reporting on and filtering on various criteria (e.g.
+callrate', heterozygosity', reproducibility', maximum allele frequency).
+Additional functions are available for visualization (e.g. Principle Coordinate
+Analysis) and creating a spatial representation using maps. @code{dartR.base} is
+the base package of the @code{dartRverse} suits of packages.  To install the
+other packages, we recommend to install the @code{dartRverse} package, that
+supports the installation of all packages in the @code{dartRverse'.} If you want
+to cite @code{dartR',} you find the information by typing
+@code{citation('dartR.base')} in the console.")
     (license license:gpl3+)))
 
 (define-public r-dartr
@@ -25707,13 +25820,13 @@ partition chart, ...")
 (define-public r-d3mirt
   (package
     (name "r-d3mirt")
-    (version "1.0.5")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "D3mirt" version))
               (sha256
                (base32
-                "0gcjiggzvkk48sm6i8p82x63cfrxb64k7sg6y4fhignng0l2ngvp"))))
+                "1a7c2q1rm8yhdsszh4lg6nca8sfyyvba3v4gchdjll7660grpyr7"))))
     (properties `((upstream-name . "D3mirt")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgl r-mirt))

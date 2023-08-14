@@ -791,13 +791,13 @@ autocorrelation-based periodograms.")
 (define-public r-zebu
   (package
     (name "r-zebu")
-    (version "0.2.0.0")
+    (version "0.2.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "zebu" version))
               (sha256
                (base32
-                "0nd44j2zxsagg9sav3lm8gzbyq8cdk1kfgbn503hb3a58kcqyg0d"))))
+                "0mghj8a7z3is7iqr7vgwlwk4jpnn9rqd2fbjdamd0pdyr8spigz9"))))
     (properties `((upstream-name . "zebu")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2 r-rcpp r-ggplot2 r-data-table))

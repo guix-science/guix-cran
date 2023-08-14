@@ -972,28 +972,6 @@ al. (2002) <doi:10.1109/4235.996017>.")
 values (promises), \"...\" lists, and active calls.")
     (license license:gpl2+)))
 
-(define-public r-nse2r
-  (package
-    (name "r-nse2r")
-    (version "0.1.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nse2r" version))
-              (sha256
-               (base32
-                "0b7ll490xf8r4787qkaz01z3djc7dzgzqg3w4nmmrnrfv36mkybf"))))
-    (properties `((upstream-name . "nse2r")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-yahoofinancer r-magrittr r-jsonlite))
-    (home-page "https://github.com/rsquaredacademy/nse2r")
-    (synopsis "Fetch Data from 'National Stock Exchange (India)'")
-    (description
-     "Fetch data related to stocks, index, futures & options from the NSE (National
-Stock Exchange, India)'.  This package is community maintained and is not
-officially supported by NSE'.  The accuracy of data is only as correct as
-provided on <https://www.nseindia.com>.")
-    (license license:expat)))
-
 (define-public r-nse
   (package
     (name "r-nse")
@@ -2444,6 +2422,39 @@ smoothing.  The package also seamlessly allows for Monte Carlo comparisons among
 these different estimation methods.  Its use is illustrated via a number of
 empirical applications and simulated examples.")
     (license license:gpl2+)))
+
+(define-public r-npboottprm
+  (package
+    (name "r-npboottprm")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "npboottprm" version))
+              (sha256
+               (base32
+                "0a2c846vhvpz8nc4f1ar91px275y9fs570v7k9pdny4dw0kq1zqh"))))
+    (properties `((upstream-name . "npboottprm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shinythemes r-shiny r-ggplot2))
+    (home-page "https://github.com/mightymetrika/npboottprm")
+    (synopsis "Nonparametric Bootstrap Test with Pooled Resampling")
+    (description
+     "Addressing crucial research questions often necessitates a small sample size due
+to factors such as distinctive target populations, rarity of the event under
+study, time and cost constraints, ethical concerns, or group-level unit of
+analysis.  Many readily available analytic methods, however, do not accommodate
+small sample sizes, and the choice of the best method can be unclear.  The
+npboottprm package enables the execution of nonparametric bootstrap tests with
+pooled resampling to help fill this gap.  Grounded in the statistical methods
+for small sample size studies detailed in Dwivedi, Mallawaarachchi, and Alvarado
+(2017) <doi:10.1002/sim.7263>, the package facilitates a range of statistical
+tests, encompassing independent t-tests, paired t-tests, and one-way Analysis of
+Variance (ANOVA) F-tests.  The nonparboot() function undertakes essential
+computations, yielding detailed outputs which include test statistics, effect
+sizes, confidence intervals, and bootstrap distributions.  Further, npboottprm
+incorporates an interactive shiny web application, nonparboot_app(), offering
+intuitive, user-friendly data exploration.")
+    (license license:expat)))
 
 (define-public r-npbayesimputecat
   (package
@@ -4243,13 +4254,13 @@ Leskovec(2016),available at @code{<arXiv:1607.00653>.}")
 (define-public r-noctua
   (package
     (name "r-noctua")
-    (version "2.6.1")
+    (version "2.6.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "noctua" version))
               (sha256
                (base32
-                "18wyf69f2j78sarjmzmsdwjfbm79r44s2lf0cslbr8gprnwc6kq8"))))
+                "1j7ikcviapdddyi71zwybcjyj6f1kyszb44vmbcq7jmvm7iazvmx"))))
     (properties `((upstream-name . "noctua")))
     (build-system r-build-system)
     (propagated-inputs (list r-uuid r-paws r-dbi r-data-table))
@@ -5348,13 +5359,13 @@ University of Bern.")
 (define-public r-nma
   (package
     (name "r-nma")
-    (version "1.2-1")
+    (version "1.3-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "NMA" version))
               (sha256
                (base32
-                "0zjc50rxg3iql2xzjiirxgzigxw1zpq33b2dfbk7b0sp2kj44y4f"))))
+                "0vydwa3sh7si90gsmfxjaiqphqfj7dwjldmbj797b1c3ai6y2zfi"))))
     (properties `((upstream-name . "NMA")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-metafor r-mass r-ggplot2 r-forestplot))
@@ -5368,12 +5379,13 @@ multivariate meta-analysis and meta-regression models (Noma et al. (2023)
 meta-regression (e.g., synthesis analysis, ranking analysis, and creating league
 table) are available by simple commands.  For inconsistency analyses, the local
 and global inconsistency tests based on the Higgins design-by-treatment
-interaction model and the side-splitting can be applied.  Also, standard
-graphical tools for network meta-analysis (e.g., network plot, ranked forest
-plot, and transitivity analysis) are available.  For the synthesis analyses, the
-Noma-Hamura's improved REML (restricted maximum likelihood)-based methods (Noma
-et al. (2023) <doi:10.1002/jrsm.1652> <doi:10.1002/jrsm.1651>) are adopted as
-the default methods.")
+interaction model can be applied.  Also, the side-splitting and the Jackson's
+random inconsistency model are available.  Standard graphical tools for network
+meta-analysis (e.g., network plot, ranked forest plot, and transitivity
+analysis) can also be utilized.  For the synthesis analyses, the Noma-Hamura's
+improved REML (restricted maximum likelihood)-based methods (Noma et al. (2023)
+<doi:10.1002/jrsm.1652> <doi:10.1002/jrsm.1651>) are adopted as the default
+methods.")
     (license license:gpl3)))
 
 (define-public r-nlwaldtest
@@ -7806,13 +7818,13 @@ directly is also provided.")
 (define-public r-nhdr
   (package
     (name "r-nhdr")
-    (version "0.6.0")
+    (version "0.6.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nhdR" version))
               (sha256
                (base32
-                "1rfvmla727l0x4vjqp2sjnbx9wy3996n6x7z8lrcz82lcq9hdbzl"))))
+                "1cf3lfkflwbvswdqnp74zrb7ndc2vbm9jj8dny1gqq3x9ciiy8gw"))))
     (properties `((upstream-name . "nhdR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -8333,13 +8345,13 @@ play-by-play data from <https://www.nfl.com/>.")
 (define-public r-nfl4th
   (package
     (name "r-nfl4th")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nfl4th" version))
               (sha256
                (base32
-                "0dx5ipnfnsii0imnxsi3vyfvihfdg0sim5vhpchi0ggcnjpqm3k4"))))
+                "0kjrfr382nkf1ihr82v6y4vqhlbgfrk0xp3mj6zmrbmcivbd42w6"))))
     (properties `((upstream-name . "nfl4th")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -8347,6 +8359,8 @@ play-by-play data from <https://www.nfl.com/>.")
                              r-tidyr
                              r-tibble
                              r-stringr
+                             r-rlang
+                             r-rappdirs
                              r-purrr
                              r-nflreadr
                              r-nflfastr
@@ -8356,7 +8370,8 @@ play-by-play data from <https://www.nfl.com/>.")
                              r-janitor
                              r-httr
                              r-glue
-                             r-dplyr))
+                             r-dplyr
+                             r-curl))
     (home-page "https://www.nfl4th.com/")
     (synopsis
      "Functions to Calculate Optimal Fourth Down Decisions in the National Football League")
@@ -9423,6 +9438,37 @@ measures for networks.  See Jurman et al (2011)
 inter-graph distance measures.")
     (license license:expat)))
 
+(define-public r-networkcomparr
+  (package
+    (name "r-networkcomparr")
+    (version "0.0.0.9")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "NetworkComparr" version))
+              (sha256
+               (base32
+                "11vzcm80dvrk0cadiwg1zy7iml6q43777rzq2phg7dc3s0p1fian"))))
+    (properties `((upstream-name . "NetworkComparr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-reshape2
+                             r-qgraph
+                             r-networktools
+                             r-igraph
+                             r-gdata
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=NetworkComparr")
+    (synopsis "Statistical Comparison of Networks")
+    (description
+     "This package provides a permutation-based hypothesis test for statistical
+comparison of two networks based on the invariance measures of the R package
+@code{NetworkComparisonTest} by van Borkulo et al. (2022),
+<doi:10.1037/met0000476>: network structure invariance, global strength
+invariance, edge invariance, and various centrality measures.  Edgelists from
+dependent or independent samples are used as input.  These edgelists are
+generated from concept maps and summed into two comparable group networks.  The
+networks can be directed or undirected.")
+    (license license:gpl2)))
+
 (define-public r-networkcomparisontest
   (package
     (name "r-networkcomparisontest")
@@ -10289,13 +10335,13 @@ clones.The model is based on the estimation result from Andrew Roth (2014)
 (define-public r-netgwas
   (package
     (name "r-netgwas")
-    (version "1.14.1")
+    (version "1.14.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "netgwas" version))
               (sha256
                (base32
-                "07nq2pb031grq7g4ysk9pk05dvn3x7cq2l9vdsggi1jvyv5fr4vv"))))
+                "0xa3nc7by7v360n6s8fym65fpaz0am4yym3m653nkcr545s0rc5n"))))
     (properties `((upstream-name . "netgwas")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmvtnorm
@@ -11362,13 +11408,13 @@ and joining tables.")
 (define-public r-neoniso
   (package
     (name "r-neoniso")
-    (version "0.6.1")
+    (version "0.6.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "NEONiso" version))
               (sha256
                (base32
-                "1cywpnb2ny52sd4im8b7w165iz9d4xbynzmlsb9lw5kpbfwd2c1f"))))
+                "1kl8y5z7cm7y04cqvwdkzf27mrrmvmwyix79d6wm03cmav2p6q54"))))
     (properties `((upstream-name . "NEONiso")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -11404,13 +11450,13 @@ considered very experimental currently.")
 (define-public r-neojags
   (package
     (name "r-neojags")
-    (version "0.1.3")
+    (version "0.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "neojags" version))
               (sha256
                (base32
-                "1sn3rzm46vw0m6g9yafm2nanf8qs5spbwcx7k29mibwamyjvvz28"))))
+                "10z5x78a3mjy5jbxlzfzsixp6w8y0v0mkxnwf5bq3rk5dgnga0g0"))))
     (properties `((upstream-name . "neojags")))
     (build-system r-build-system)
     (propagated-inputs (list r-runjags r-rjags r-coda))
@@ -13968,13 +14014,13 @@ form of Reporter Code Count (RCC) files.")
 (define-public r-nanonext
   (package
     (name "r-nanonext")
-    (version "0.9.1")
+    (version "0.9.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nanonext" version))
               (sha256
                (base32
-                "1n3v7d5srd893skpvi5fn9mcgyy9c4wsplpsqks4xxlirxxfq7s3"))))
+                "1hdbksdskyfiw5y5rk81jbsqiavv6c5lswv2a8v4ksa2p33sc3sq"))))
     (properties `((upstream-name . "nanonext")))
     (build-system r-build-system)
     (home-page "https://shikokuchuo.net/nanonext/")
@@ -14355,18 +14401,18 @@ summarizing the most relevant patterns in time sequences.")
 (define-public r-naijr
   (package
     (name "r-naijr")
-    (version "0.5.2")
+    (version "0.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "naijR" version))
               (sha256
                (base32
-                "1g1pwpqjy0x3rmjiiw7406782q2zgsxwbkd3zvnixci11cx5b9ab"))))
+                "1108fz4rhckmb2d9s63rjb44dpfazhvhsqprgx82akbssr7xf9br"))))
     (properties `((upstream-name . "naijR")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi
+                             r-sf
                              r-rlang
-                             r-rgdal
                              r-rcolorbrewer
                              r-maps
                              r-mapdata
@@ -14558,13 +14604,13 @@ videos at <https://practicalstats.com>.  This package adds new functions to the
 (define-public r-nacho
   (package
     (name "r-nacho")
-    (version "2.0.4")
+    (version "2.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "NACHO" version))
               (sha256
                (base32
-                "1hldzw6z1qscb5hdmqjg3q02q7x1x8ixfgjl8s09lii5gpzymldw"))))
+                "1w32gnpi9hna2icrv5ig1qkpdrz6n3x79hkjz5fqschicg7fx4z4"))))
     (properties `((upstream-name . "NACHO")))
     (build-system r-build-system)
     (inputs (list pandoc pandoc))

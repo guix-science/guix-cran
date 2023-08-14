@@ -356,6 +356,37 @@ equations ('DAE').  The functions provide an interface to the FORTRAN functions
  Mazzia, F., J.R. Cash and K. Soetaert, 2014.")
     (license license:gpl2+)))
 
+(define-public r-bvpa
+  (package
+    (name "r-bvpa")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "bvpa" version))
+              (sha256
+               (base32
+                "01ymikjbk29vfqh31pd6b0rnh12l26b1mia1l34kh7v81z1b04ai"))))
+    (properties `((upstream-name . "bvpa")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-numderiv))
+    (home-page "https://cran.r-project.org/package=bvpa")
+    (synopsis "Bivariate Pareto Distribution")
+    (description
+     "This package implements the EM algorithm with one-step Gradient Descent method
+to estimate the parameters of the Block-Basu bivariate Pareto distribution with
+location and scale.  We also found parametric bootstrap and asymptotic
+confidence intervals based on the observed Fisher information of scale and shape
+parameters, and exact confidence intervals for location parameters.  Details are
+in Biplab Paul and Arabin Kumar Dey (2023)
+@code{<doi:10.48550/arXiv.1608.02199>} \"An EM algorithm for absolutely
+continuous Marshall-Olkin bivariate Pareto distribution with location and
+scale\"; E L Lehmann and George Casella (1998) <doi:10.1007/b98854> \"Theory of
+Point Estimation\"; Bradley Efron and R J Tibshirani (1994)
+<doi:10.1201/9780429246593> \"An Introduction to the Bootstrap\"; A P Dempster, N
+M Laird and D B Rubin (1977) <www.jstor.org/stable/2984875> \"Maximum Likelihood
+from Incomplete Data via the EM Algorithm\".")
+    (license license:gpl2+)))
+
 (define-public r-bvls
   (package
     (name "r-bvls")
@@ -1994,13 +2025,13 @@ semiparametric Bayesian models for random effects meta-analysis.")
 (define-public r-bspm
   (package
     (name "r-bspm")
-    (version "0.5.3")
+    (version "0.5.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bspm" version))
               (sha256
                (base32
-                "1y87g8lvr9l4k1ga9q4zq29v6jlgzdl5fzh4fzbxg3j77n7fd5dq"))))
+                "0cqgk0740cfpwpx8y0bilnrm0gjqn417yiha2cdgz3hx3i55s88n"))))
     (properties `((upstream-name . "bspm")))
     (build-system r-build-system)
     (inputs (list))
@@ -2307,16 +2338,16 @@ based on Matsuoka et al. (2012) <doi:10.1525/auk.2012.11190>, Solymos et al.
 (define-public r-bsicons
   (package
     (name "r-bsicons")
-    (version "0.1")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bsicons" version))
               (sha256
                (base32
-                "1506p4sskwgszam1vk5slw9nznki6gdf1s95s8cpfa3dih3lbjby"))))
+                "138rwpklmkfgzhnj42wrjai6mykg5ncxzwk5jwvgwvpwhg4cfy19"))))
     (properties `((upstream-name . "bsicons")))
     (build-system r-build-system)
-    (propagated-inputs (list r-htmltools))
+    (propagated-inputs (list r-rlang r-htmltools r-cli))
     (home-page "https://github.com/rstudio/bsicons")
     (synopsis "Easily Work with 'Bootstrap' Icons")
     (description
@@ -2767,13 +2798,13 @@ Windows.  Versions running on x86Linux and on 64-bit R under Windows are in
 (define-public r-brucer
   (package
     (name "r-brucer")
-    (version "0.8.10")
+    (version "2023.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bruceR" version))
               (sha256
                (base32
-                "0qi8d542l8vj6mbk4kkv3r8wlrhlx2pqyaq7k7pi35cvivwqgaq0"))))
+                "1p5wky0b6ak119nq1k2b87adypqcpv8pcrhfwai4c5daxyyxph95"))))
     (properties `((upstream-name . "bruceR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -2985,13 +3016,13 @@ provides a one-row summary of model-level statistics.")
 (define-public r-broom-helpers
   (package
     (name "r-broom-helpers")
-    (version "1.13.0")
+    (version "1.14.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "broom.helpers" version))
               (sha256
                (base32
-                "0k3bd9f42dzp7xjqn43yfwajxzzm2h6f66npp9wjyx750jkaf1q1"))))
+                "14vaqxv12yrvqllp8552nx68wk2qfjcy1iy7bajkspgdpwsjzhfd"))))
     (properties `((upstream-name . "broom.helpers")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -6339,6 +6370,31 @@ template, clarify the book title and author name, and then focus on writing the
 text.  No need to struggle in YAML and @code{LaTeX'.}")
     (license license:expat)))
 
+(define-public r-boodist
+  (package
+    (name "r-boodist")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "boodist" version))
+              (sha256
+               (base32
+                "1haplr64f5kai1y6kdxhxiayidy1mivh85dx140fya5r6fdk0shm"))))
+    (properties `((upstream-name . "boodist")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppnumerical r-rcppeigen r-rcpp r-r6 r-bh))
+    (home-page "https://github.com/stla/boodist")
+    (synopsis "Some Distributions from the 'Boost' Library and More")
+    (description
+     "Make some distributions from the C++ library Boost available in R'.  In
+addition, the normal-inverse Gaussian distribution and the generalized inverse
+Gaussian distribution are provided.  The distributions are represented by R6
+classes.  The method to sample from the generalized inverse Gaussian
+distribution is the one given in \"Random variate generation for the generalized
+inverse Gaussian distribution\" Luc Devroye (2012)
+<doi:10.1007/s11222-012-9367-z>.")
+    (license license:gpl3)))
+
 (define-public r-bonsai
   (package
     (name "r-bonsai")
@@ -6552,29 +6608,6 @@ Wood (2016b) <doi:10.1109/TNNLS.2015.2425898>.")
 Introduction to Bayesian Statistics, Bolstad, W.M. (2017), John Wiley & Sons
 ISBN 978-1-118-09156-2.")
     (license license:gpl2+)))
-
-(define-public r-bolsec
-  (package
-    (name "r-bolsec")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "bolsec" version))
-              (sha256
-               (base32
-                "0wrfw8h7s59ln2b0m9g0jgvwqvr4icv2wjxqjx6rcj366a0nx3sk"))))
-    (properties `((upstream-name . "bolsec")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rvest r-formattable r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=bolsec")
-    (synopsis "Bolivian Securities")
-    (description
-     "This package provides data import and offers 3 daily snapshot functions from
-securities of varying prices traded on the Bolivian Securities Exchange, website
-<https://www.bbv.com.bo/>.  The snapshots include a detailed list, scatter plot
-correlation, and descriptive statistics table for the securities.")
-    (license license:gpl3)))
 
 (define-public r-bold
   (package
@@ -8840,13 +8873,13 @@ vignette.  LICENSE: GPL-3 + file license.")
 (define-public r-blindreview
   (package
     (name "r-blindreview")
-    (version "1.1.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "blindreview" version))
               (sha256
                (base32
-                "05bqvp4yby5cij2j6ddpv98abn4gqijqza8r6yl56xl99n9aqvb1"))))
+                "1wanah2vrpm35al31gnsq0j6frp92f0h41x6jxpckq24vswb9vx5"))))
     (properties `((upstream-name . "blindreview")))
     (build-system r-build-system)
     (inputs (list gmp))
@@ -9767,13 +9800,13 @@ monobit'.")
 (define-public r-bitmexr
   (package
     (name "r-bitmexr")
-    (version "0.3.2")
+    (version "0.3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bitmexr" version))
               (sha256
                (base32
-                "19nvrq75j2b2w6frz73rq3hx8bgwwrxjqfjgj10kdvc7gw8vx7mx"))))
+                "0zxym4cyxk2p9cgm8lmqfxmgb01jcyww0mm3zmhqprgpk5r0faks"))))
     (properties `((upstream-name . "bitmexr")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -9933,36 +9966,6 @@ resulting approximations are computationally efficient for many hierarchical
 Bayesian models.  The bisque package allows approximate posterior inference for
 custom models; users only need to specify the conditional densities required for
 the approximation.")
-    (license license:gpl3)))
-
-(define-public r-bisg
-  (package
-    (name "r-bisg")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "bisg" version))
-              (sha256
-               (base32
-                "08imhy6vsx5axwxz93cbzxs8wf28vdp8avny47v5mw4ihm0kbprn"))))
-    (properties `((upstream-name . "bisg")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-wru
-                             r-tigris
-                             r-tidycensus
-                             r-stringr
-                             r-rlang
-                             r-dplyr))
-    (home-page "https://github.com/RPVote/bisg")
-    (synopsis "Performs Bayesian Improved Surname Geocoding")
-    (description
-     "This package performs Bayesian Improved Surname Geocoding (BISG) analysis to
-obtain probabilistic estimates of race based on surname and geolocation.  This
-package can be used in tandem with the @code{eiCompare} package.  Methods
-implemented in this package are described in Decter-Frain, A., Sachdeva, P.,
-Collingwood, L., Burke, J., Murayama, H., Barreto, M., â¦ Zingher, J. (2022).
-\"Comparing Methods for Estimating Demographics in Racially Polarized Voting
-Analyses\" <doi:10.31235/osf.io/e854z>.")
     (license license:gpl3)))
 
 (define-public r-bisep
@@ -11306,13 +11309,13 @@ n-gram data.")
 (define-public r-biogeom
   (package
     (name "r-biogeom")
-    (version "1.3.5")
+    (version "1.3.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "biogeom" version))
               (sha256
                (base32
-                "11x4bnnvszmd47iviy8w9nz9wx3ba3d0hwxv9sl51fxmfgqln53d"))))
+                "1biwv0nnph8xrxx46g08gdgdi99k79nq7bf2iqidji826spz0xbv"))))
     (properties `((upstream-name . "biogeom")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-geom))
@@ -12114,6 +12117,30 @@ subsets using binomial distributional assumptions (Rachid Zaim, S., et al.
 set of exchangeable correlated Bernoulli trials, @code{binomialRF} then tests
 whether a feature is selected more often than by random chance.")
     (license license:gpl2)))
+
+(define-public r-binomci
+  (package
+    (name "r-binomci")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "binomCI" version))
+              (sha256
+               (base32
+                "187pbc94carpgwlz419rlbn6y332xxypgjzx43zz2z36gkryzymz"))))
+    (properties `((upstream-name . "binomCI")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=binomCI")
+    (synopsis "Confidence Intervals for a Binomial Proportion")
+    (description
+     "12 confidence intervals for one binomial proportion or a vector of binomial
+proportions are computed.  The confidence intervals are: Jeffreys, Wald, Wald
+corrected, Wald, Blyth and Still, Agresti and Coull, Wilson, Score, Score
+corrected, Wald logit, Wald logit corrected, Arcsine and Exact binomial.
+References include, among others: Vollset, S. E. (1993).  Confidence intervals
+for a binomial proportion.  Statistics in Medicine, 12(9): 809-824.
+<doi:10.1002/sim.4780120902>.")
+    (license license:gpl2+)))
 
 (define-public r-binnor
   (package
@@ -15252,13 +15279,13 @@ the bfsl solution.")
 (define-public r-bfs
   (package
     (name "r-bfs")
-    (version "0.5.1")
+    (version "0.5.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BFS" version))
               (sha256
                (base32
-                "1bms6wj0nwmdgpvi6yhka9405ch67dwkhvvywb1b4h8mq1snw124"))))
+                "1g7xz1hwq9vvids3b63n008454nym8vqj01fq4giqcf437vgcd6l"))))
     (properties `((upstream-name . "BFS")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -15271,9 +15298,10 @@ the bfsl solution.")
                              r-magrittr
                              r-janitor
                              r-httr2
-                             r-dplyr))
+                             r-dplyr
+                             r-curl))
     (home-page "https://felixluginbuhl.com/BFS/")
-    (synopsis "Get Data from the Swiss Statistical Office")
+    (synopsis "Get Data from the Swiss Federal Statistical Office")
     (description
      "Search and download data from the Swiss Federal Statistical Office (BFS)
 <https://www.bfs.admin.ch/>.")
@@ -17156,6 +17184,43 @@ Institute (\"Chartered Financial Analyst Program Curriculum 2020 Level I Volumes
 9780136939979).")
     (license license:gpl3)))
 
+(define-public r-beanz
+  (package
+    (name "r-beanz")
+    (version "3.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "beanz" version))
+              (sha256
+               (base32
+                "1rv4pil8hfykp35impw980riijwgrqxv9v528w1mmq1gyy25wjhl"))))
+    (properties `((upstream-name . "beanz")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival
+                             r-stanheaders
+                             r-rstantools
+                             r-rstan
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-loo
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=beanz")
+    (synopsis "Bayesian Analysis of Heterogeneous Treatment Effect")
+    (description
+     "It is vital to assess the heterogeneity of treatment effects (HTE) when making
+health care decisions for an individual patient or a group of patients.
+Nevertheless, it remains challenging to evaluate HTE based on information
+collected from clinical studies that are often designed and conducted to
+evaluate the efficacy of a treatment for the overall population.  The Bayesian
+framework offers a principled and flexible approach to estimate and compare
+treatment effects across subgroups of patients defined by their characteristics.
+ This package allows users to explore a wide range of Bayesian HTE analysis
+models, and produce posterior inferences about HTE. See Wang et al. (2018)
+<DOI:10.18637/jss.v085.i07> for further details.")
+    (license license:gpl3+)))
+
 (define-public r-beans
   (package
     (name "r-beans")
@@ -18632,13 +18697,13 @@ bias-corrected maximum likelihood estimator.")
 (define-public r-bcclong
   (package
     (name "r-bcclong")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BCClong" version))
               (sha256
                (base32
-                "02vfmqbwildlpqp44s3ff70aalqyjlv3vx80hk8j87fqjbd976g7"))))
+                "1dsiwrz1r0wab0pif33b7ds5d6v89fapb0w9safz45qmxkafs2z6"))))
     (properties `((upstream-name . "BCClong")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncdist
@@ -20105,13 +20170,13 @@ factors (Pawel and Held, 2022) <doi:10.1111/rssb.12491>.")
 (define-public r-bayesrel
   (package
     (name "r-bayesrel")
-    (version "0.7.5")
+    (version "0.7.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Bayesrel" version))
               (sha256
                (base32
-                "06y3f69hccpf92mrdw03alcmnn5r4rg9svcqyvz44x1hjn02l2ah"))))
+                "0c6vpkljhisdznxw1g204gyfvpy2zs8yqymdbp35zxddygfdchgd"))))
     (properties `((upstream-name . "Bayesrel")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack
@@ -20121,7 +20186,7 @@ factors (Pawel and Held, 2022) <doi:10.1111/rssb.12491>.")
                              r-lavaan
                              r-laplacesdemon
                              r-coda))
-    (home-page "https://github.com/juliuspf/Bayesrel")
+    (home-page "https://github.com/juliuspfadt/Bayesrel")
     (synopsis "Bayesian Reliability Estimation")
     (description
      "Functionality for reliability estimates.  For unidimensional tests: Coefficient
@@ -20135,9 +20200,9 @@ except for omega_u, is sampling from the posterior inverse Wishart for the
 covariance matrix based measures (see Murphy', 2007,
 <https://groups.seas.harvard.edu/courses/cs281/papers/murphy-2007.pdf>.  The
 Bayesian omegas (u, t, and h) are obtained by Gibbs sampling from the
-conditional posterior distributions of (1) the single factor model and (2) the
-second-order factor model ('Lee', 2007,
-<https://onlinelibrary.wiley.com/doi/book/10.1002/9780470024737>).")
+conditional posterior distributions of (1) the single factor model, (2) the
+second-order factor model, (3) the bi-factor model, (4) the correlated factor
+model ('Lee', 2007, <doi:10.1002/9780470024737>).")
     (license license:gpl3)))
 
 (define-public r-bayesreg
@@ -20321,13 +20386,13 @@ tool including JAGS', BUGS', MCMCpack', and Stan'.")
 (define-public r-bayespop
   (package
     (name "r-bayespop")
-    (version "9.0-1")
+    (version "10.0-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bayesPop" version))
               (sha256
                (base32
-                "15lisc0wvijmdjgw7n5fadbz4g702v9rp748h5xp5r6qk32g3njx"))))
+                "0jzxsqnrzvhz85wravjxbjwf6panwmylqgz99b0zknvgbf0vx6zh"))))
     (properties `((upstream-name . "bayesPop")))
     (build-system r-build-system)
     (propagated-inputs (list r-wpp2019
@@ -20652,13 +20717,13 @@ rank normalization, which are proposed in Vehtari et al. (2021)
 (define-public r-bayesmultimode
   (package
     (name "r-bayesmultimode")
-    (version "0.5.1")
+    (version "0.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BayesMultiMode" version))
               (sha256
                (base32
-                "1krjgij4drm9sc8rhcpb8vc94bmls40xyrjk329n2w4k5qq68za4"))))
+                "1sa843sypgqrlcc9f3clzab52i0hvmdjiqai6g408np80n78al56"))))
     (properties `((upstream-name . "BayesMultiMode")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -23144,17 +23209,17 @@ that will install Github starred R packages whether available on CRAN or not.")
 (define-public r-bat
   (package
     (name "r-bat")
-    (version "2.9.2")
+    (version "2.9.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BAT" version))
               (sha256
                (base32
-                "1h90fqcnd6w4w0bjccz5zghqb05gddbiz3imfpbw14p23h11w3wq"))))
+                "1dhz8n3n79jdvnhyrzzqvnyd0d1lyhy71wjncxv0q2b3l00164xm"))))
     (properties `((upstream-name . "BAT")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
-                             r-raster
+                             r-terra
                              r-nls2
                              r-mass
                              r-hypervolume
@@ -23658,15 +23723,16 @@ surrounding the central dogma of molecular biology.")
 (define-public r-basemodels
   (package
     (name "r-basemodels")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "basemodels" version))
               (sha256
                (base32
-                "15aab9va02lp238ykz4ji62dij8xmzn8kv2ykmbrhf0c7hjmm6nc"))))
+                "07r61bzrpnwwfsxg9szfw6cf5aqsqa5fxz9j448rqlkqlg84r68h"))))
     (properties `((upstream-name . "basemodels")))
     (build-system r-build-system)
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/Ying-Ju/basemodels")
     (synopsis "Baseline Models for Classification and Regression")
     (description
@@ -25191,27 +25257,29 @@ from Wikipedia <https://en.wikipedia.org/wiki/The_Great_British_Bake_Off>.")
 (define-public r-baizer
   (package
     (name "r-baizer")
-    (version "0.6.0")
+    (version "0.7.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "baizer" version))
               (sha256
                (base32
-                "1qxsyc4cpyz5p5a8fk0am11glwk5gk2pasqv4x9v3fjg6j8mfcax"))))
+                "0rwhhkbgmcwj6lnsw5jd0nqydw0a1kbh31hyw6gmzadqcr0m55vn"))))
     (properties `((upstream-name . "baizer")))
     (build-system r-build-system)
-    (propagated-inputs (list r-waldo
+    (propagated-inputs (list r-vctrs
                              r-tidyr
                              r-tibble
                              r-stringr
                              r-seriation
                              r-rlang
+                             r-rematch2
                              r-purrr
                              r-openxlsx
                              r-magrittr
                              r-dplyr
+                             r-diffobj
                              r-curl))
-    (home-page "https://github.com/william-swl/baizer")
+    (home-page "https://william-swl.github.io/baizer/")
     (synopsis "Useful Functions for Data Processing")
     (description
      "In ancient Chinese mythology, Bai Ze is a divine creature that knows the needs
