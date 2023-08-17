@@ -857,6 +857,25 @@ Research) photographs based on user criteria.  Also facilitates extraction of
 palettes from users photos directly.")
     (license license:bsd-3)))
 
+(define-public r-lterdatasampler
+  (package
+    (name "r-lterdatasampler")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "lterdatasampler" version))
+              (sha256
+               (base32
+                "1bfhsd5crhmpxbxwb5lg2gak2myxb2y8lywg8dmyyzlrlnjw93y3"))))
+    (properties `((upstream-name . "lterdatasampler")))
+    (build-system r-build-system)
+    (home-page "https://github.com/lter/lterdatasampler")
+    (synopsis
+     "Educational Dataset Examples from the Long Term Ecological Research Program")
+    (description
+     "Curated datasets from US Long Term Ecological Research sites.")
+    (license license:cc0)))
+
 (define-public r-ltasr
   (package
     (name "r-ltasr")
@@ -893,13 +912,13 @@ rate file.")
 (define-public r-ltable
   (package
     (name "r-ltable")
-    (version "2.0.2")
+    (version "2.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ltable" version))
               (sha256
                (base32
-                "05sjyzq3s1bldndpwbknl9md3vzf664wvpkckwxnrswl9i9av6fn"))))
+                "09njp8xmfm1ci94ma8vm89994kkz7p7ka6z3gjc9va8jgpl0r5r3"))))
     (properties `((upstream-name . "ltable")))
     (build-system r-build-system)
     (propagated-inputs (list r-clipr))
@@ -6026,6 +6045,36 @@ methods of J. R. M. Hosking and J. R. Wallis (1997), \"Regional frequency
 analysis: an approach based on L-moments\".")
     (license (license:fsdg-compatible "Common Public License Version 1.0"))))
 
+(define-public r-lmompi
+  (package
+    (name "r-lmompi")
+    (version "0.6.6")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "lmomPi" version))
+              (sha256
+               (base32
+                "0a9ddfaa3micj3q7wcpkcsxhbd6dv3gn19rdy7ll3f76g63pknf1"))))
+    (properties `((upstream-name . "lmomPi")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr r-lmom))
+    (home-page "https://cran.r-project.org/package=lmomPi")
+    (synopsis
+     "(Precipitation) Frequency Analysis and Variability with L-Moments from 'lmom'")
+    (description
+     "It is an extension of lmom R package: pel...()','cdf...()',qua...() function
+families are lumped and called from one function per each family respectively in
+order to create robust automatic tools to fit data with different probability
+distributions and then to estimate probability values and return periods.  The
+implemented functions are able to manage time series with constant and/or
+missing values without stopping the execution with error messages.  The package
+also contains tools to calculate several indices based on variability (e.g. SPI
+, Standardized Precipitation Index, see
+<https://climatedataguide.ucar.edu/climate-data/standardized-precipitation-index-spi>
+and <http://spei.csic.es/>) for multiple time series or spatially gridded
+values.")
+    (license license:gpl3+)))
+
 (define-public r-lmomco
   (package
     (name "r-lmomco")
@@ -7206,6 +7255,32 @@ K-gaps model of Suveges and Davison (2010) <doi:10.1214/09-AOAS292>.  These
 log-likelihoods are combined to make inferences about extreme values.  Both
 maximum likelihood and Bayesian approaches are available.")
     (license license:gpl2+)))
+
+(define-public r-lit
+  (package
+    (name "r-lit")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "lit" version))
+              (sha256
+               (base32
+                "1n5avz33d041bl8b9khqbiyprjdrd5nj1n19134sfpqs7h0wcjzp"))))
+    (properties `((upstream-name . "lit")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppeigen r-rcpparmadillo r-rcpp r-genio
+                             r-compquadform))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ajbass/lit")
+    (synopsis "Latent Interaction Testing for Genome-Wide Studies")
+    (description
+     "Identifying latent genetic interactions in genome-wide association studies using
+the Latent Interaction Testing (LIT) framework.  LIT is a flexible kernel-based
+approach that leverages information across multiple traits to detect latent
+genetic interactions without specifying or observing the interacting variable
+(e.g., environment).  LIT accepts standard PLINK files as inputs to analyze
+large genome-wide association studies.")
+    (license license:lgpl2.0+)))
 
 (define-public r-listwithdefaults
   (package
@@ -9469,6 +9544,29 @@ philosophy of the package is described in Guo G. (2022)
 <doi:10.1080/02664763.2022.2053949>.")
     (license license:expat)))
 
+(define-public r-libstable4u
+  (package
+    (name "r-libstable4u")
+    (version "1.0.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "libstable4u" version))
+              (sha256
+               (base32
+                "1kvy9hfla2f2jvkrb6jv3hbmzjv05q9xk8yw9dhjalrgmy0c59j8"))))
+    (properties `((upstream-name . "libstable4u")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppgsl r-rcpp))
+    (home-page "https://cran.r-project.org/package=libstable4u")
+    (synopsis "Stable Distribution Functions...For You")
+    (description
+     "This package provides tools for fast and accurate evaluation of skew stable
+distributions (CDF, PDF and quantile functions), random number generation, and
+parameter estimation.  This is @code{libstableR} as per Royuela del Val,
+Simmross-Wattenberg, and Alberola LÃ³pez (2017) <doi:10.18637/jss.v078.i01>
+under a new maintainer.")
+    (license license:gpl3)))
+
 (define-public r-librarysnapshot
   (package
     (name "r-librarysnapshot")
@@ -10478,6 +10576,27 @@ fuzzywuzzy package.  Compare strings by edit distance, similarity ratio, best
 matching substring, ordered token matching and set-based token matching.  A
 range of edit distance measures are available thanks to the stringdist package.")
     (license license:gpl3)))
+
+(define-public r-lettervalue
+  (package
+    (name "r-lettervalue")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "lettervalue" version))
+              (sha256
+               (base32
+                "1wq80kbmm5db8bhh7bvzgz92ddwl27la9wpzjw13pxv6cbmy388f"))))
+    (properties `((upstream-name . "lettervalue")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble r-purrr r-glue))
+    (home-page "https://cran.r-project.org/package=lettervalue")
+    (synopsis "Computing Letter Values")
+    (description
+     "Letter Values for the course Exploratory Data Analysis at Federal University of
+Bahia (Brazil).  The approach implemented in the package is presented in the
+textbook of Tukey (1977) <ISBN: 978-0201076165>.")
+    (license license:expat)))
 
 (define-public r-lestat
   (package

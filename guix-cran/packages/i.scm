@@ -9070,13 +9070,13 @@ squared coefficient of variation is based on Garcia-Penalosa, C., & Orgiazzi, E.
 (define-public r-ineptr
   (package
     (name "r-ineptr")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ineptR" version))
               (sha256
                (base32
-                "03v460gqw7x3biyxa7dyckrj9jd0zradfr58p1lfnv3mkvawp58v"))))
+                "04dvcg0zyb35lmvi2g0vhs8mr8a4i1rxinz0pjsrl4j0g1yrlk11"))))
     (properties `((upstream-name . "ineptR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -9087,7 +9087,6 @@ squared coefficient of variation is based on Garcia-Penalosa, C., & Orgiazzi, E.
                              r-purrr
                              r-magrittr
                              r-lifecycle
-                             r-jsonlite
                              r-httr2
                              r-httr
                              r-dplyr))
@@ -16032,13 +16031,13 @@ B-spline function with a given set of knots and order and set of de Boor points
 (define-public r-ibrtools
   (package
     (name "r-ibrtools")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IBRtools" version))
               (sha256
                (base32
-                "19i0dh8gnw8fkd4khaggljfmr6rn1r82vz5i9zvjxarqh0pfcqv7"))))
+                "0ah4fg93ihr4m8af19r2gnfibmalvmrc3pmac1afkw6jc0bnir4p"))))
     (properties `((upstream-name . "IBRtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

@@ -6775,6 +6775,42 @@ H, Brown MD, Huang Y, et al. (2014) <doi:10.1515/ijb-2012-0052> for further
 details.")
     (license license:gpl3)))
 
+(define-public r-treatmentpatterns
+  (package
+    (name "r-treatmentpatterns")
+    (version "2.5.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "TreatmentPatterns" version))
+              (sha256
+               (base32
+                "1z6si4n1yd7b2kb91mrcv746rvgjkagk1hsahz275126fhsz6x39"))))
+    (properties `((upstream-name . "TreatmentPatterns")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-stringi
+                             r-sqlrender
+                             r-rjson
+                             r-r6
+                             r-googlevis
+                             r-glue
+                             r-fs
+                             r-dplyr
+                             r-databaseconnector
+                             r-data-table
+                             r-checkmate
+                             r-andromeda))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/darwin-eu-dev/TreatmentPatterns")
+    (synopsis
+     "Analyzes Real-World Treatment Patterns of a Study Population of Interest")
+    (description
+     "Computes treatment patterns within a given cohort using the Observational
+Medical Outcomes Partnership (OMOP) common data model (CDM).  As described in
+Markus, Verhamme, Kors, and Rijnbeek (2022) <doi:10.1016/j.cmpb.2022.107081>.")
+    (license license:asl2.0)))
+
 (define-public r-trd
   (package
     (name "r-trd")
@@ -11707,13 +11743,13 @@ unmeasured confounder may tip our result to insignificance.")
 (define-public r-tipmap
   (package
     (name "r-tipmap")
-    (version "0.5.1")
+    (version "0.5.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tipmap" version))
               (sha256
                (base32
-                "0lgv2ys5idixd2x27l4cc50lqjjb59m6y6nvzscw6ra6afjbjqbv"))))
+                "11wznnhv1jf0g72ahdcxvxm4n3kpdbx6ivdx9cb0c5gdyjh482ss"))))
     (properties `((upstream-name . "tipmap")))
     (build-system r-build-system)
     (propagated-inputs (list r-rbest
@@ -14355,6 +14391,41 @@ tidy data principles.")
     (license (list license:asl2.0
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-tidyhte
+  (package
+    (name "r-tidyhte")
+    (version "1.0.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "tidyhte" version))
+              (sha256
+               (base32
+                "0c19b7yh09gixgicrr7x65a9vzyvzapr4pv130ysx4jksjcqvdfp"))))
+    (properties `((upstream-name . "tidyhte")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-superlearner
+                             r-rlang
+                             r-r6
+                             r-purrr
+                             r-progress
+                             r-magrittr
+                             r-lifecycle
+                             r-dplyr
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=tidyhte")
+    (synopsis "Tidy Estimation of Heterogeneous Treatment Effects")
+    (description
+     "Estimates heterogeneous treatment effects using tidy semantics on experimental
+or observational data.  Methods are based on the doubly-robust learner of
+Kennedy (n.d.) @code{<arXiv:2004.14497>.} You provide a simple recipe for what
+machine learning algorithms to use in estimating the nuisance functions and
+tidyhte will take care of cross-validation, estimation, model selection,
+diagnostics and construction of relevant quantities of interest about the
+variability of treatment effects.")
+    (license license:expat)))
+
 (define-public r-tidyheatmap
   (package
     (name "r-tidyheatmap")
@@ -16486,16 +16557,17 @@ generation.")
 (define-public r-themis
   (package
     (name "r-themis")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "themis" version))
               (sha256
                (base32
-                "0mnhqcaxlidakfm9y8vyqscx0w9fk6j9mwcdb9l3bi5c1pqy5g81"))))
+                "1qg1kxax866s84rgjlp2c153793j45lrvay8bqfjnc2cj04h2dgi"))))
     (properties `((upstream-name . "themis")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
+                             r-vctrs
                              r-tibble
                              r-rose
                              r-rlang
@@ -22597,13 +22669,13 @@ uncertainty information is given.")
 (define-public r-taper
   (package
     (name "r-taper")
-    (version "0.5.2")
+    (version "0.5.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TapeR" version))
               (sha256
                (base32
-                "00j3d77qziazkk6xwx4zygxa7ak33wpgr3x52ki6d64s8w8713ag"))))
+                "0sllhxcfa2zcbgmcl7wmz62grdmjz3ynbhnqmq4bb6y5ssq6bf9j"))))
     (properties `((upstream-name . "TapeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-pracma r-nlme))

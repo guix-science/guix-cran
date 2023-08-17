@@ -3670,17 +3670,17 @@ may depend on packages with priority base').")
 (define-public r-fritools
   (package
     (name "r-fritools")
-    (version "4.1.0")
+    (version "4.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fritools" version))
               (sha256
                (base32
-                "0yany14z2m6r1fxfbhkn3bcxgklbi15x2klfipihk9cg9dy0523b"))))
+                "1cbh3m0v8vganmsdi2q6ggrfs3rw4wpi4zzsn1vhjkq1dcrb7bsz"))))
     (properties `((upstream-name . "fritools")))
     (build-system r-build-system)
     (native-inputs (list))
-    (home-page "https://gitlab.com/fvafrcu/fritools2")
+    (home-page "https://gitlab.com/fvafrcu/fritools")
     (synopsis
      "Utilities for the Forest Research Institute of the State Baden-Wuerttemberg")
     (description
@@ -3790,13 +3790,13 @@ downloaded from the authors website.")
 (define-public r-frf2
   (package
     (name "r-frf2")
-    (version "2.3-1")
+    (version "2.3-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FrF2" version))
               (sha256
                (base32
-                "1ny1vkx5ylkrd4sqmflbcxk0vzikqqppfv86as2y099xhsvjdsds"))))
+                "161c6bvwd7gip3pwx0mk09k3q703zkw0320qx64w7pb1v2i6is0g"))))
     (properties `((upstream-name . "FrF2")))
     (build-system r-build-system)
     (propagated-inputs (list r-sfsmisc r-scatterplot3d r-igraph r-doe-base))
@@ -3857,13 +3857,13 @@ efficient implementation of the generic magging estimator.")
 (define-public r-fresa-cad
   (package
     (name "r-fresa-cad")
-    (version "3.4.4")
+    (version "3.4.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FRESA.CAD" version))
               (sha256
                (base32
-                "0fr98nfzsdb38saancmibkqayfv4gzks2by78dvqxsadw481zf33"))))
+                "1w0h3rz2fid39bipdvgv0sw75x9gvlvwzhj21984w87rym0pfnlb"))))
     (properties `((upstream-name . "FRESA.CAD")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -5246,37 +5246,38 @@ M. Ã.  Nielsen (2014) <doi:10.1002/jae.2295>.")
 (define-public r-frab
   (package
     (name "r-frab")
-    (version "0.0-1")
+    (version "0.0-3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "frab" version))
               (sha256
                (base32
-                "1cfssnjbr07s19m8ib5nvaip53g2gdnlrj6w54ga9wn3r23z8bpk"))))
+                "08nlhshg3bz8b830vl877xyyjgngxk7sf5vp5d0np3bfhrylh0wv"))))
     (properties `((upstream-name . "frab")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-mathjaxr r-disordr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/RobinHankin/frab")
-    (synopsis "An Alternative Interpretation of Named Vectors")
+    (synopsis "How to Add Two Tables")
     (description
-     "An alternative interpretation of named vectors as generalized tables, so that
-c(a=1,b=2,c=3) + c(b=3,a=-1) will return c(b=5,c=3).  Uses @code{disordR}
-discipline (Hankin, 2022, <doi:10.48550/ARXIV.2210.03856>).  Extraction and
-replacement methods are provided.  The underlying mathematical structure is the
-Free Abelian group, hence the name.")
+     "This package provides methods to \"add\" two tables; also an alternative
+interpretation of named vectors as generalized tables, so that c(a=1,b=2,c=3) +
+c(b=3,a=-1) will return c(b=5,c=3).  Uses @code{disordR} discipline (Hankin,
+2022, <arxiv:2210.03856>).  Extraction and replacement methods are provided.
+The underlying mathematical structure is the Free Abelian group, hence the name.
+ To cite in publications please use Hankin (2023) <arxiv:2307:13184>.")
     (license license:gpl2+)))
 
 (define-public r-fqar
   (package
     (name "r-fqar")
-    (version "0.3.0")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fqar" version))
               (sha256
                (base32
-                "178blb0qn6cs2ykpr17i0qyqc8jxa1hmy6pqxh6vcrw5y6b9qip5"))))
+                "08z7wh2shsp6xnhgpxvba3mi8jgxsrv090y0klpbiiybwjzn239h"))))
     (properties `((upstream-name . "fqar")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -7783,6 +7784,31 @@ color code the text naming the packages and the functions.  This color coding is
 extended to the entries of value \"1\" within the matrix, indicating the pattern
 of ancestor and descendent functions.")
     (license license:gpl2+)))
+
+(define-public r-foodquotient
+  (package
+    (name "r-foodquotient")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "foodquotient" version))
+              (sha256
+               (base32
+                "16r19gzllwfjz1424yi19cvff7v33d1v5fjgv040lafq5ix7s2xx"))))
+    (properties `((upstream-name . "foodquotient")))
+    (build-system r-build-system)
+    (home-page "<https://naldc.nal.usda.gov/catalog/32818>")
+    (synopsis "Food Quotient and Nutrient Analysis for HSFFQ")
+    (description
+     "Aids in analysing data from a food frequency questionnaire known as the Harvard
+Service Food Frequency Questionnaire (HSFFQ).  Functions from this package use
+answers from the HSFFQ to generate estimates of daily consumed micronutrients,
+calories, macronutrients on an individual level.  The package also calculates
+food quotients on individual and group levels.  Foodquotient calculation is an
+often tedious step in the calculation of total human energy expenditure (TEE)
+using the doubly labeled water method, which is the gold standard for measuring
+TEE.")
+    (license license:expat)))
 
 (define-public r-foodingraph
   (package
@@ -19302,13 +19328,13 @@ visualization.")
 (define-public r-fakemake
   (package
     (name "r-fakemake")
-    (version "1.11.0")
+    (version "1.11.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fakemake" version))
               (sha256
                (base32
-                "1y8njj26qmr4v4gw63dsh5dzlc703pa1xxby8h6ivbwvg1nmcbnv"))))
+                "1ykav6z3pm54zrp7afkxlfidx9bgdjslzsnjzbx6vl7r479z6ql7"))))
     (properties `((upstream-name . "fakemake")))
     (build-system r-build-system)
     (propagated-inputs (list r-makefiler r-igraph r-fritools))

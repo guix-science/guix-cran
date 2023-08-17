@@ -11283,13 +11283,13 @@ relevant paper is available on @code{arXiv:} @code{<arXiv:2105.14328>.}")
 (define-public r-glmtoolbox
   (package
     (name "r-glmtoolbox")
-    (version "0.1.7")
+    (version "0.1.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "glmtoolbox" version))
               (sha256
                (base32
-                "130mb2ylm8jy3212jbli4w87mx141jq2x223mysavrarjmmibxk1"))))
+                "1vp4xwyw9xz674r1w1b5prid1kr1fk3yx0h374r12n574sp8izws"))))
     (properties `((upstream-name . "glmtoolbox")))
     (build-system r-build-system)
     (propagated-inputs (list r-statmod r-rfast r-numderiv r-mass r-formula))
@@ -11679,13 +11679,13 @@ this package can be found in Watson and Pan (2022) @code{<arXiv:2207.09183>.}")
 (define-public r-glmmrbase
   (package
     (name "r-glmmrbase")
-    (version "0.4.4")
+    (version "0.4.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "glmmrBase" version))
               (sha256
                (base32
-                "1531lzdqh4ryf6k845ygw134m9jsldm89y7v13042lm7my6n3had"))))
+                "1kzl3ra81cxyaj8i0sr3s5xwbrz3s8ydznzz1vnlq8x8q64ii1pr"))))
     (properties `((upstream-name . "glmmrBase")))
     (build-system r-build-system)
     (propagated-inputs (list r-sparsechol
@@ -16087,6 +16087,30 @@ patterns on a geographical map.  This is useful for landscape genomics studies
 to discover individuals with unusual geography and genetics associations from a
 large biological sample.")
     (license license:expat)))
+
+(define-public r-ggordiplots
+  (package
+    (name "r-ggordiplots")
+    (version "0.4.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ggordiplots" version))
+              (sha256
+               (base32
+                "0nnb1cfjyjhdrd9ahymfv64a6f5kr5ahg0x8l20gyxs0qmychng6"))))
+    (properties `((upstream-name . "ggordiplots")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vegan r-glue r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jfq3/ggordiplots")
+    (synopsis "Make 'ggplot2' Versions of Vegan's Ordiplots")
+    (description
+     "The vegan package includes several functions for adding features to ordination
+plots: ordiarrows(), ordiellipse(), ordihull(), ordispider() and ordisurf().
+This package adds these same features to ordination plots made with ggplot2'.
+In addition, gg_ordibubble() sizes points relative to the value of an
+environmental variable.")
+    (license license:gpl2+)))
 
 (define-public r-ggokabeito
   (package
@@ -20597,13 +20621,13 @@ classes and functions.")
 (define-public r-geomodels
   (package
     (name "r-geomodels")
-    (version "1.0.9")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GeoModels" version))
               (sha256
                (base32
-                "1pd0varrdryid8dyfzv3m1qqrngr6zy6bbcdl5453p2963wkhvwd"))))
+                "0vx9980zard9ynrpwzb6hki13zil5i5g1b613frj659ldczbh4ih"))))
     (properties `((upstream-name . "GeoModels")))
     (build-system r-build-system)
     (propagated-inputs (list r-zipfr
@@ -22897,6 +22921,33 @@ estimating bird and bat mortality at wind and solar power facilities, following
 Dalthorp, et al. (2018) <doi:10.3133/tm7A2>.")
     (license license:cc0)))
 
+(define-public r-geneslope
+  (package
+    (name "r-geneslope")
+    (version "0.38.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "geneSLOPE" version))
+              (sha256
+               (base32
+                "08fbrssj03ak6xqm9fmb9v6ir7229qds891088wznvg58k81yslv"))))
+    (properties `((upstream-name . "geneSLOPE")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-slope r-ggplot2 r-bigmemory))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/psobczyk/geneSLOPE")
+    (synopsis "Genome-Wide Association Study with SLOPE")
+    (description
+     "Genome-wide association study (GWAS) performed with SLOPE, short for Sorted
+L-One Penalized Estimation, a method for estimating the vector of coefficients
+in a linear model.  In the first step of GWAS, single nucleotide polymorphisms
+(SNPs) are clumped according to their correlations and distances.  Then, SLOPE
+is performed on the data where each clump has one representative.  Malgorzata
+Bogdan, Ewout van den Berg, Chiara Sabatti, Weijie Su and Emmanuel Candes (2014)
+\"SLOPE - Adaptive Variable Selection via Convex Optimization\"
+@code{<arXiv:1407.3824>.}")
+    (license license:gpl3)))
+
 (define-public r-geneset
   (package
     (name "r-geneset")
@@ -23198,13 +23249,13 @@ multinomial and ordinal logistic models.  Included are the Hosmer-Lemeshow tests
 (define-public r-generalcorr
   (package
     (name "r-generalcorr")
-    (version "1.2.3")
+    (version "1.2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "generalCorr" version))
               (sha256
                (base32
-                "13p1z9bshbim4gm3ckmf5vf9alvbi97zwc5zb95c8gzyc52nf1n7"))))
+                "08h7bl21clpxf489vp2a7wj68vhsm1495sws604nfjl0vra1kv7d"))))
     (properties `((upstream-name . "generalCorr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable r-psych r-np r-meboot r-lattice))
@@ -23234,8 +23285,8 @@ rank several stocks.  Several functions whose names begin with boot provide
 bootstrap statistical inference including a new @code{bootGcRsq()} test for
 \"Granger-causality\" allowing nonlinear relations.  A new tool for evaluation of
 out-of-sample portfolio performance is @code{outOFsamp().} Panel data
-implementation is now included.  See six vignettes of the package for theory and
-usage tips.  See Vinod (2019) \\doi{10.1080/03610918.2015.1122048}.")
+implementation is now included.  See seven vignettes of the package for theory
+and usage tips.  See Vinod (2019) \\doi{10.1080/03610918.2015.1122048}.")
     (license license:gpl2+)))
 
 (define-public r-genepop

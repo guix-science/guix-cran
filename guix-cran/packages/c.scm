@@ -528,13 +528,13 @@ be visualised with any appropriate graphics function in R.")
 (define-public r-cyclestreets
   (package
     (name "r-cyclestreets")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cyclestreets" version))
               (sha256
                (base32
-                "14ww6dqswahpr113kdg5yxvhry9bwp90xad0wx29m62i7aah7h0f"))))
+                "0xrgwhlq670m109j27ln93zzq0wm8cfbkivd45v2rldxgvd50348"))))
     (properties `((upstream-name . "cyclestreets")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -1743,6 +1743,27 @@ registration of an API key.  Basic features are free, some require a paid
 subscription.  You can find the full API documentation at
 <https://currencyapi.com/docs> .")
     (license license:expat)))
+
+(define-public r-cureplots
+  (package
+    (name "r-cureplots")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "cureplots" version))
+              (sha256
+               (base32
+                "0qm0b508ywv65c52jwh7w6v57dv2pc3r2gh4ycwmmw73zkfglndp"))))
+    (properties `((upstream-name . "cureplots")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-glue r-ggplot2 r-dplyr))
+    (home-page "https://github.com/gbasulto/cureplots")
+    (synopsis "CURE (Cumulative Residual) Plots")
+    (description
+     "This package creates ggplot2 Cumulative Residual (CURE) plots to check the
+goodness-of-fit of a count model; or the tables to create a customized version.
+A dataset of crashes in Washington state is available for illustrative purposes.")
+    (license license:agpl3+)))
 
 (define-public r-curephem
   (package
@@ -8786,6 +8807,46 @@ data, typically updated daily and at the county level.  All data sources are
 documented at <https://cmu-delphi.github.io/delphi-epidata/api/covidcast.html>.")
     (license license:expat)))
 
+(define-public r-covid19wastewater
+  (package
+    (name "r-covid19wastewater")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "Covid19Wastewater" version))
+              (sha256
+               (base32
+                "1l8yj7w97ryg7844bw4r5dlgx00i7vcl4yhlzqy7xyyjz8j7dyrg"))))
+    (properties `((upstream-name . "Covid19Wastewater")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-tidyselect
+                             r-tidyr
+                             r-signal
+                             r-scales
+                             r-rsample
+                             r-rlang
+                             r-reshape2
+                             r-rcpproll
+                             r-randomforest
+                             r-plyr
+                             r-plotly
+                             r-patchwork
+                             r-partykit
+                             r-gridextra
+                             r-ggplot2
+                             r-forecast
+                             r-dplyr
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=Covid19Wastewater")
+    (synopsis "Prepare, Analyze, and Visualize Covid-19 Wastewater Data")
+    (description
+     "Intended to make the process of analyzing epidemiological wastewater data easier
+and more insightful.  Includes tools for preparing, analyzing, and visualizing
+data.  It additionally includes Wisconsin's Covid19 data.")
+    (license license:expat)))
+
 (define-public r-covid19us
   (package
     (name "r-covid19us")
@@ -13321,13 +13382,13 @@ Cools (2019) <doi:10.1111/biom.12845>.")
 (define-public r-contsurvplot
   (package
     (name "r-contsurvplot")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "contsurvplot" version))
               (sha256
                (base32
-                "194j1jvxbagwy6in7dym9r9zc6inx65mpwd7xqs9avngy9sh5p6g"))))
+                "0z0s1ym9np9l8pmgbja46w25zr415laa1w68mjz04hq9wrzjjaca"))))
     (properties `((upstream-name . "contsurvplot")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-riskregression r-ggplot2 r-foreach
@@ -13342,7 +13403,8 @@ time-to-event outcome using multiple different types of plots based on
 g-computation.  Those functions include, among others, survival area plots,
 survival contour plots, survival quantile plots and 3D surface plots.  Due to
 the use of g-computation, all plot allow confounder-adjustment naturally.  For
-details, see Robin Denz, Nina Timmesfeld (2022) @code{<arXiv:2208.04644v1>.}")
+details, see Robin Denz, Nina Timmesfeld (2023)
+<doi:10.1097/EDE.0000000000001630>.")
     (license license:gpl3+)))
 
 (define-public r-controltest
@@ -13582,13 +13644,13 @@ non-regular canvas.")
 (define-public r-contingencytables
   (package
     (name "r-contingencytables")
-    (version "2.0.0")
+    (version "2.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "contingencytables" version))
               (sha256
                (base32
-                "0dswmxdw4dg0915f2bjm80awhn1pphkz8b62kvr71rpvwlvnf99y"))))
+                "14c41lr4fpp22kld559bkcdnylwnqzva4wvmf6h5bd42j3xc91d5"))))
     (properties `((upstream-name . "contingencytables")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-boot))
@@ -20020,13 +20082,13 @@ utilities to generate this metadata with a minimum of dependencies.")
 (define-public r-codelistgenerator
   (package
     (name "r-codelistgenerator")
-    (version "1.6.0")
+    (version "1.7.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CodelistGenerator" version))
               (sha256
                (base32
-                "09xq83qgc2y8bpxa0xmlj794cwhn5szqw4hgicqssb12qx3vnivs"))))
+                "0ajndqc0y89l1vv9k8gz4fdlx83hnw9jgg1yis6r442d27d3mcq0"))))
     (properties `((upstream-name . "CodelistGenerator")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -20052,6 +20114,37 @@ utilities to generate this metadata with a minimum of dependencies.")
 Partnership (OMOP) common data model based on string matching.  For a given
 search strategy, a candidate code list will be returned.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
+(define-public r-codecountr
+  (package
+    (name "r-codecountr")
+    (version "0.0.2.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "codecountR" version))
+              (sha256
+               (base32
+                "1ric123dmfwg7znx18wkskshnhygi86madmgmxvmq0iy16n3lwab"))))
+    (properties `((upstream-name . "codecountR")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=codecountR")
+    (synopsis "Counting Codes in a Text and Preparing Data for Analysis")
+    (description
+     "Data analysis frequently requires coding, in particular when data are collected
+by interviews, by observations or even by questionnaires.  Therefore, code
+counting and data preparation are necessary phases to carry out the analysis.
+Thus, the analysts will wish to count the codes inserted in a text (tokenization
+and counting of a list of pre-established codes) and to carry out the
+preparation of the data (feature scaling min-max normalization, Zscore, Box and
+Cox transformation, Yeo and Johnson transformation, median absolute deviation).
+For Box and Cox (1964) <https://www.jstor.org/stable/2984418> transformation,
+optimal Lambda is calculated by correlation coefficient test inspired of Lye
+(1993) <doi:10.1139/l93-101>.  The same method is used for the calculation of
+the optimal lambda for Yeo and Johnson (2000) <doi:10.1093/biomet/87.4.954>
+transformation.  Median absolute deviation is calculated on the basis of Leys et
+al (1993) <doi:10.1016/j.jesp.2013.03.013>.  Package for educational purposes.")
+    (license license:gpl3)))
 
 (define-public r-codecollection
   (package
@@ -23550,30 +23643,6 @@ segment, the position, orientation and length of which guide where the
 respective points are placed.  This package is described in Fachada & de Andrade
 (2023) <doi:10.1016/j.knosys.2023.110836>.")
     (license license:expat)))
-
-(define-public r-cluer
-  (package
-    (name "r-cluer")
-    (version "1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ClueR" version))
-              (sha256
-               (base32
-                "0awl3ag48idg0396hcgqrh5f16mbgximr5xbxjiimib5zysdc558"))))
-    (properties `((upstream-name . "ClueR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-e1071))
-    (home-page "https://cran.r-project.org/package=ClueR")
-    (synopsis "Cluster Evaluation")
-    (description
-     "CLUster Evaluation (CLUE) is a computational method for identifying optimal
-number of clusters in a given time-course dataset clustered by cmeans or kmeans
-algorithms and subsequently identify key kinases or pathways from each cluster.
-Its implementation in R is called @code{ClueR.} See README on
-@code{<https://github.com/PengyiYang/ClueR>} for more details.  P Yang et al.
-(2015) <doi:10.1371/journal.pcbi.1004403>.")
-    (license license:gpl3)))
 
 (define-public r-clttools
   (package
@@ -27324,13 +27393,13 @@ technical details.")
 (define-public r-ciftitools
   (package
     (name "r-ciftitools")
-    (version "0.11.0")
+    (version "0.12.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ciftiTools" version))
               (sha256
                (base32
-                "054w4kza7nzv5gb5l75r96g11a3nj2r8vzryjbil4bzn8v9l0dq1"))))
+                "0cmfw9wzv85xzdr1pa4y1n3hyp90dfyiwprksi2vvxmkrf0yjhw3"))))
     (properties `((upstream-name . "ciftiTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -27382,13 +27451,13 @@ medical imaging data in the form of CIFTI files
 (define-public r-cifinder
   (package
     (name "r-cifinder")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CIfinder" version))
               (sha256
                (base32
-                "07xicjpcs7pqp2p5lr3d363cvwv960mgf73n49h10d4j3wx75gdh"))))
+                "0h3f78rfrsqwgcfhpn1sbwjawnna55i05gdfbrgawxhzp8gxv4fm"))))
     (properties `((upstream-name . "CIfinder")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-ratesci r-kableextra))
@@ -27734,13 +27803,13 @@ nonparametric smoothers and clustering.")
 (define-public r-chronosphere
   (package
     (name "r-chronosphere")
-    (version "0.5.0")
+    (version "0.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "chronosphere" version))
               (sha256
                (base32
-                "1qh2yx5r27vkpwh24i3fmjvjjwaaiskx3fy11d36xq4p5wszcp9c"))))
+                "1hvf2f9l9fykknskv7alpqi9j1ym155pd7a48993hif2p2m8ad02"))))
     (properties `((upstream-name . "chronosphere")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=chronosphere")
@@ -30691,42 +30760,6 @@ more.  Polygons with holes are supported.  The algorithms are performed by the
 C++ library CGAL (<https://www.cgal.org/>).")
     (license license:gpl3)))
 
-(define-public r-cgalmeshes
-  (package
-    (name "r-cgalmeshes")
-    (version "2.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "cgalMeshes" version))
-              (sha256
-               (base32
-                "09iq6v5xizf0y3qzr7lkbwck8yh8rhbvr8c3m5gw95rs056njmj8"))))
-    (properties `((upstream-name . "cgalMeshes")))
-    (build-system r-build-system)
-    (inputs (list mpfr gmp))
-    (propagated-inputs (list r-rgl
-                             r-rcppeigen
-                             r-rcppcolors
-                             r-rcppcgal
-                             r-rcpp
-                             r-r6
-                             r-onion
-                             r-data-table
-                             r-bh))
-    (native-inputs (list pkg-config))
-    (home-page "https://github.com/stla/cgalMeshes")
-    (synopsis "R6 Based Utilities for 3D Meshes using 'CGAL'")
-    (description
-     "This package provides some utilities for 3D meshes: clipping of a mesh to the
-volume bounded by another mesh, decomposition into convex parts, distance
-between a mesh and a point, Hausdorff distance between two meshes,
-triangulation, geodesic distance, Boolean operations (intersection, union,
-difference), Minkowski sum, subdivision algorithms, random sampling on a mesh,
-volume, area, and centroid.  Also provides two algorithms for surface
-reconstruction from a cloud of points.  Meshes are represented by R6 classes.
-All algorithms are performed by the C++ library CGAL (<https://www.cgal.org/>).")
-    (license license:gpl3)))
-
 (define-public r-cgal4h
   (package
     (name "r-cgal4h")
@@ -30862,6 +30895,7 @@ is formally defined in the CF Metadata Conventions document available at
                              r-rlang
                              r-plyr
                              r-piper
+                             r-osmdata
                              r-magrittr
                              r-future
                              r-furrr
@@ -35760,13 +35794,13 @@ views).")
 (define-public r-cata
   (package
     (name "r-cata")
-    (version "0.0.10.9")
+    (version "0.0.10.12")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cata" version))
               (sha256
                (base32
-                "1226la2gm0r5wayharpmgm6lm7nr681xnzc0rpk8p39wwdyixmmr"))))
+                "09sir9j942arrv9vhf8fd22h9sdf6hn6n26nj4wnx5xdm1b51yy2"))))
     (properties `((upstream-name . "cata")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=cata")
@@ -35779,7 +35813,9 @@ Meyners, Castura & Carr (2013) <doi:10.1016/j.foodqual.2013.06.010>.  Cluster
 analysis can be performed using b-cluster analysis.  The quality of cluster
 analysis solutions can be evaluated using various measures.  The methods related
 to b-cluster analysis are described in a manuscript by Castura, Meyners, Varela
-& Naes (2022) <doi:10.1016/j.foodqual.2022.104564>.")
+& NÃ¦s (2022) <doi:10.1016/j.foodqual.2022.104564>.  Methods are adapted to
+product-related hedonic responses by Castura, Meyners, Pohjanheimo, Varela &
+NÃ¦s (2023) <doi:10.1111/joss.12860>.")
     (license license:gpl2+)))
 
 (define-public r-cat2cat
@@ -36483,13 +36519,13 @@ High-Dimensional Variable Selection, @code{<arXiv:1802.08178>.}")
 (define-public r-carrot
   (package
     (name "r-carrot")
-    (version "3.0.0")
+    (version "3.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CARRoT" version))
               (sha256
                (base32
-                "0ijp8dc2c3jp8sk443jfgyy4q7yxlcd0jk6hrzm57jbnpwbmjxpv"))))
+                "1i8g0q4b27ak58chpp2vzi3ffrvzzdy2gml92jja7a8lx0bsi6fn"))))
     (properties `((upstream-name . "CARRoT")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-nnet r-foreach r-doparallel))

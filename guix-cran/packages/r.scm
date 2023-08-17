@@ -6357,13 +6357,13 @@ extensive manual, scripts, and much further information is at the Siena website
 (define-public r-rshift
   (package
     (name "r-rshift")
-    (version "2.2.0")
+    (version "2.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rshift" version))
               (sha256
                (base32
-                "1la9qbpm64w34ngp1kn0diq519yjqxwxlpw92cnz070ms42v33va"))))
+                "06hk1qz3fkzh8rgg5k7x8qhbsrpbrvphdclyfi0kvbl0lsg91f7f"))))
     (properties `((upstream-name . "rshift")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-magrittr r-ggplot2 r-dplyr))
@@ -7104,13 +7104,13 @@ dichotomous items based on the three-parameter logistic (3PL) model.")
 (define-public r-rscala
   (package
     (name "r-rscala")
-    (version "3.2.21")
+    (version "3.2.25")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rscala" version))
               (sha256
                (base32
-                "1607nsfyvksv5ylxc5ma2cz8z0njysfyvyw085fkjb28ybfg6zjg"))))
+                "0nybhx8pblnniinvg74kbgg5bvw7y80ql8frij0178yglpbgrka9"))))
     (properties `((upstream-name . "rscala")))
     (build-system r-build-system)
     (inputs (list openjdk))
@@ -7736,13 +7736,13 @@ Research Methods, 49, 724â732, <doi:10.3758/s13428-016-0729-x>).")
 (define-public r-rrpp
   (package
     (name "r-rrpp")
-    (version "1.3.1")
+    (version "1.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RRPP" version))
               (sha256
                (base32
-                "1mdwxhphpqr8r8fmia6xv6q3bjvb2knmabqc8jq8hh5q1yrd9ish"))))
+                "1h305zmks2403g76y5r5g31mgck6vmjcm0ziz7k958qbmck0jqg6"))))
     (properties `((upstream-name . "RRPP")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-ggplot2 r-ape))
@@ -8708,13 +8708,13 @@ L. Knight (1995) <doi:10.1119/1.17904> for more details.")
 (define-public r-rqdatatable
   (package
     (name "r-rqdatatable")
-    (version "1.3.1")
+    (version "1.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rqdatatable" version))
               (sha256
                (base32
-                "1ml83gw9m9945qws2pi0x3bzm1jn4rh8n7zwivbir685hfprbhvn"))))
+                "1rpccibnhpvzf7ysh3h58sxvgbwsv28cpd1w2qw3vwc51rhlsbyp"))))
     (properties `((upstream-name . "rqdatatable")))
     (build-system r-build-system)
     (propagated-inputs (list r-wrapr r-rquery r-data-table))
@@ -22930,27 +22930,27 @@ their regulatory significant features.  Please see Hasan, Badsha and Mollah
 (define-public r-rhclust
   (package
     (name "r-rhclust")
-    (version "1.1.0")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RHclust" version))
               (sha256
                (base32
-                "1i28bxkgdxlc216vsgambzc027wjnw0iaibry6m1vz9as2yy1fry"))))
+                "0hfi1p1y3kfi7kmmwvpzf7j2rlkamfl2s6sb26h2qz07fp5ha3p5"))))
     (properties `((upstream-name . "RHclust")))
     (build-system r-build-system)
     (propagated-inputs (list r-runuran))
     (home-page "https://cran.r-project.org/package=RHclust")
-    (synopsis "Vectors in Partitioning")
+    (synopsis "Vector in Partition")
     (description
      "Non-parametric clustering of joint pattern multi-genetic/epigenetic factors.
-The goal of this package is to cluster subjects based on gene features including
-single nucleotide polymorphisms (SNPs), DNA methylation (CPG), and gene
-expression (GE).  The novel concept follows the general K-means (Hartigan and
-Wong (1979) <doi:10.2307/2346830> framework but uses weighted Euclidean
-distances across the gene features to cluster subjects.  This approach is unique
-in that it attempts to capture all pairwise interactions in an effort to cluster
-based on their complex biological interactions.")
+This package contains functions designed to cluster subjects based on gene
+features including single nucleotide polymorphisms (SNPs), DNA methylation
+(CPG), gene expression (GE), and covariate data.  The novel concept follows the
+general K-means (Hartigan and Wong (1979) <doi:10.2307/2346830> framework but
+uses weighted Euclidean distances across the gene features to cluster subjects.
+This approach is unique in that it attempts to capture all pairwise interactions
+in an effort to cluster based on their complex biological interactions.")
     (license license:artistic2.0)))
 
 (define-public r-rhawkes
@@ -23090,6 +23090,29 @@ objects using the @code{geocodePL_get()} function.")
 GTmetrix'.  It provides a convenient wrapper to start tests, get reports, and
 access all kinds of meta data.  For more information about using the API please
 visit <https://gtmetrix.com/api/docs/2.0/>.")
+    (license license:expat)))
+
+(define-public r-rgtest
+  (package
+    (name "r-rgtest")
+    (version "0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rgTest" version))
+              (sha256
+               (base32
+                "02cdi05izgl7xkhp9zl01jm762x3dqjmzxjl3akjrid825x6c220"))))
+    (properties `((upstream-name . "rgTest")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ade4))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=rgTest")
+    (synopsis "Robust Graph-Based Two-Sample Test")
+    (description
+     "Useful tools for determining whether two samples are from the same distribution.
+ Utilizes a robust method to address the problematic structure of the similarity
+graph constructed from high-dimensional data.  The method is provided in Yichuan
+Bai and Lynna Chu (2023) @code{<arXiv:2307.12325>.}")
     (license license:expat)))
 
 (define-public r-rgsp
@@ -26581,13 +26604,13 @@ Harianto et al.  2019 <doi:10.1111/2041-210X.13162>.")
 (define-public r-responsepatterns
   (package
     (name "r-responsepatterns")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "responsePatterns" version))
               (sha256
                (base32
-                "0iyx35kq82w18v8c7lfz7x31c2cgywn4xh8hg0ad3gsdygadq8hq"))))
+                "0ym6jbacsi4lv9rcw3k80wiil94ymivm55c4hz6hwbv54ybkzlcj"))))
     (properties `((upstream-name . "responsePatterns")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=responsePatterns")
@@ -26595,7 +26618,8 @@ Harianto et al.  2019 <doi:10.1111/2041-210X.13162>.")
     (description
      "Some survey participants tend to respond carelessly which complicates data
 analysis.  This package provides functions that make it easier to explore
-responses and identify those that may be problematic.")
+responses and identify those that may be problematic.  See Gottfried et al.
+(2022) <doi:10.7275/vyxb-gt24> for more information.")
     (license license:expat)))
 
 (define-public r-respirometry
@@ -26779,6 +26803,32 @@ and result summarisation.  Notably, it accommodates the inherent measurement
 errors found in relative sea-level data across multiple dimensions, allowing for
 their inclusion in the statistical models.")
     (license license:expat)))
+
+(define-public r-reslife
+  (package
+    (name "r-reslife")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "reslife" version))
+              (sha256
+               (base32
+                "144kc6pz7ls0glq5bvjiimyajgfpvswvfyk2hl7p7ccj5zfsm2qv"))))
+    (properties `((upstream-name . "reslife")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-pracma r-gsl r-flexsurv))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/an-crawford/reslife")
+    (synopsis "Calculate Residual Life Values for Different Distributions")
+    (description
+     "This package provides a pair of functions for calculating mean, median, and/or
+percentile residual life using the outputs of either the flexsurv package or
+parameters provided by the user.  Input information about the distribution, the
+given life value, the percentile, and the type of residual life, and the
+function will return your desired values.  For the flexsurv option, the function
+allows the user to input their own data for making predictions.  This function
+is based on Jackson (2016) <doi:10.18637/jss.v070.i08>.")
+    (license license:gpl3+)))
 
 (define-public r-resistorarray
   (package
@@ -30641,17 +30691,17 @@ Some of the functions are applicable to image data.")
 (define-public r-refugees
   (package
     (name "r-refugees")
-    (version "2022.12.0")
+    (version "2022.12.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "refugees" version))
               (sha256
                (base32
-                "16jn2qqf43xrr1vr55cvas66i1iw3lddpgvsm46ryiszgvwq5k0a"))))
+                "1fkdrm2ryjsdwsn0x0j3kly2yn5v3gq4g3hn4wdvps1kwrl31vng"))))
     (properties `((upstream-name . "refugees")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble))
-    (home-page "https://cran.r-project.org/package=refugees")
+    (home-page "https://populationstatistics.github.io/refugees/")
     (synopsis "UNHCR Refugee Population Statistics Database")
     (description
      "The Refugee Population Statistics Database published by The Office of The United
@@ -31586,13 +31636,13 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
 (define-public r-redcaptidier
   (package
     (name "r-redcaptidier")
-    (version "0.4.0")
+    (version "0.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "REDCapTidieR" version))
               (sha256
                (base32
-                "0ssbx2snqjlkx17l6rb1n19ww3rqvahc85clmsrrisql01w10vx1"))))
+                "0c2b8ihjjzwl1g6jnrbp3c5blyqjrxpn0dkfnkk1v4vg8swrwh75"))))
     (properties `((upstream-name . "REDCapTidieR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -34158,13 +34208,13 @@ high variability of the RDS process.")
 (define-public r-rdssamplesize
   (package
     (name "r-rdssamplesize")
-    (version "0.4.0")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RDSsamplesize" version))
               (sha256
                (base32
-                "15jm2gkgbnvay415w5nsh9ahfk23hyc8q12y0fgrh1airx3bdij1"))))
+                "1k6yjxjv6s9c44lpm5yimca61jp3h4hbji75vfsji7dy7q908csl"))))
     (properties `((upstream-name . "RDSsamplesize")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -37074,17 +37124,17 @@ package.  See <https://github.com/google/cctz> for more details.")
 (define-public r-rcppbigintalgos
   (package
     (name "r-rcppbigintalgos")
-    (version "1.0.1")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RcppBigIntAlgos" version))
               (sha256
                (base32
-                "157a14kqcf0q3z01mn4w1194k2l39dd4qmqs0i115p8bvkjc6ncd"))))
+                "0b83c5s6zpvf545yvpa3fa0nhgvrryg7n11l9200azi897zmlwv3"))))
     (properties `((upstream-name . "RcppBigIntAlgos")))
     (build-system r-build-system)
     (inputs (list gmp))
-    (propagated-inputs (list r-rcppthread r-rcpp r-gmp))
+    (propagated-inputs (list r-gmp r-cpp11))
     (home-page "https://github.com/jwood000/RcppBigIntAlgos")
     (synopsis "Factor Big Integers with the Parallel Quadratic Sieve")
     (description
@@ -37094,11 +37144,10 @@ factorization of an integer.  The MPQS is based off of the seminal work of Carl
 Pomerance (1984) <doi:10.1007/3-540-39757-4_17> along with the modification of
 multiple polynomials introduced by Peter Montgomery and J. Davis as outlined by
 Robert D. Silverman (1987) <doi:10.1090/S0025-5718-1987-0866119-8>.  Utilizes
-the C library GMP (GNU Multiple Precision Arithmetic) and @code{RcppThread} for
-factoring integers in parallel.  For smaller integers, a simple Elliptic Curve
-algorithm is attempted followed by a constrained version of Pollard's rho
-algorithm.  The Pollard's rho algorithm is the same algorithm used by the
-factorize function in the gmp package.")
+the C library GMP (GNU Multiple Precision Arithmetic).  For smaller integers, a
+simple Elliptic Curve algorithm is attempted followed by a constrained version
+of Pollard's rho algorithm.  The Pollard's rho algorithm is the same algorithm
+used by the factorize function in the gmp package.")
     (license license:gpl2+)))
 
 (define-public r-rcppbdt
@@ -37916,13 +37965,13 @@ plug-in.  The package deals with continuos planar location problems.")
 (define-public r-rcmdrplugin-nmbu
   (package
     (name "r-rcmdrplugin-nmbu")
-    (version "1.8.13")
+    (version "1.8.14")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RcmdrPlugin.NMBU" version))
               (sha256
                (base32
-                "0y58bh8c5c1msmxvw9kl5ia7p19jrb4bf77hb8dwk7kqs97g7wy8"))))
+                "0bsz98za8hb0gxxawi5sfg0s8i5nrk72f4h91glklw29w9dvnpf4"))))
     (properties `((upstream-name . "RcmdrPlugin.NMBU")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -40403,27 +40452,27 @@ between times in @code{LibBi} results and R time/dates.")
 (define-public r-rbi
   (package
     (name "r-rbi")
-    (version "0.10.4")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rbi" version))
               (sha256
                (base32
-                "0p0cvdzhb81drk5b9fb9jcnw5c02i7qfy7vwyyhk2b1vm9rkw681"))))
+                "19gmxwblj1lvdspxiwmyxcl6mp7b1xpabwgy69n9vndfzkwq2bmc"))))
     (properties `((upstream-name . "rbi")))
     (build-system r-build-system)
     (inputs (list))
     (propagated-inputs (list r-reshape2 r-processx r-ncdf4 r-data-table))
-    (native-inputs (list r-r-rsp))
-    (home-page "https://github.com/sbfnk/RBi")
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/sbfnk/rbi")
     (synopsis "Interface to 'LibBi'")
     (description
      "This package provides a complete interface to @code{LibBi',} a library for
-Bayesian inference (see <http://libbi.org> and <doi:10.18637/jss.v067.i10> for
-more information).  This includes functions for manipulating @code{LibBi}
-models, for reading and writing @code{LibBi} input/output files, for converting
-@code{LibBi} output to provide traces for use with the coda package, and for
-running @code{LibBi} to conduct inference.")
+Bayesian inference (see <https://libbi.org> and Murray, 2015
+<doi:10.18637/jss.v067.i10> for more information).  This includes functions for
+manipulating @code{LibBi} models, for reading and writing @code{LibBi}
+input/output files, for converting @code{LibBi} output to provide traces for use
+with the coda package, and for running @code{LibBi} to conduct inference.")
     (license license:gpl3)))
 
 (define-public r-rbgm
@@ -42311,13 +42360,13 @@ coefficient.  An option for in-sample verification is available.")
 (define-public r-rasciidoc
   (package
     (name "r-rasciidoc")
-    (version "4.1.0")
+    (version "4.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rasciidoc" version))
               (sha256
                (base32
-                "1lza10pi62rhx0q8jx11hyl5jybm1gy2a0rgw6q0amfgaqdczir6"))))
+                "09s4km4v603mzc6i1n27c10na6swdzlvclbsar267zk3410acsww"))))
     (properties `((upstream-name . "rasciidoc")))
     (build-system r-build-system)
     (propagated-inputs (list r-reticulate
@@ -45349,98 +45398,6 @@ they should be named in a data frame.  See
 <https://github.com/dnychka/Radiosonde> for the package home page.")
     (license license:gpl2+)))
 
-(define-public r-radiant-multivariate
-  (package
-    (name "r-radiant-multivariate")
-    (version "1.5.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "radiant.multivariate" version))
-              (sha256
-               (base32
-                "158a7ihs4mlkl4vc0lbgi6xcx8w4l57d1d9qj576c4s8718bjy84"))))
-    (properties `((upstream-name . "radiant.multivariate")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-shiny
-                             r-scales
-                             r-rlang
-                             r-radiant-model
-                             r-radiant-data
-                             r-psych
-                             r-polycor
-                             r-patchwork
-                             r-mass
-                             r-magrittr
-                             r-lubridate
-                             r-import
-                             r-gparotation
-                             r-gower
-                             r-ggrepel
-                             r-ggplot2
-                             r-dplyr
-                             r-clustmixtype
-                             r-car))
-    (home-page "https://github.com/radiant-rstats/radiant.multivariate/")
-    (synopsis
-     "Multivariate Menu for Radiant: Business Analytics using R and Shiny")
-    (description
-     "The Radiant Multivariate menu includes interfaces for perceptual mapping, factor
-analysis, cluster analysis, and conjoint analysis.  The application extends the
-functionality in radiant.data'.")
-    (license (list license:agpl3
-                   (license:fsdg-compatible "file://LICENSE")))))
-
-(define-public r-radiant-model
-  (package
-    (name "r-radiant-model")
-    (version "1.5.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "radiant.model" version))
-              (sha256
-               (base32
-                "1sawrlazjmgzsd9j2l6va6f62khxfmxi9kdkjjy8xbp87s8ka6wj"))))
-    (properties `((upstream-name . "radiant.model")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-yaml
-                             r-xgboost
-                             r-vip
-                             r-tidyr
-                             r-stringr
-                             r-stringi
-                             r-shiny
-                             r-sandwich
-                             r-rpart
-                             r-rlang
-                             r-ranger
-                             r-radiant-data
-                             r-radiant-basics
-                             r-psych
-                             r-pdp
-                             r-patchwork
-                             r-nnet
-                             r-neuralnettools
-                             r-magrittr
-                             r-lubridate
-                             r-import
-                             r-ggrepel
-                             r-ggplot2
-                             r-e1071
-                             r-dplyr
-                             r-diagrammer
-                             r-data-tree
-                             r-car
-                             r-broom))
-    (home-page "https://github.com/radiant-rstats/radiant.model/")
-    (synopsis "Model Menu for Radiant: Business Analytics using R and Shiny")
-    (description
-     "The Radiant Model menu includes interfaces for linear and logistic regression,
-naive Bayes, neural networks, classification and regression trees, model
-evaluation, collaborative filtering, decision analysis, and simulation.  The
-application extends the functionality in radiant.data'.")
-    (license (list license:agpl3
-                   (license:fsdg-compatible "file://LICENSE")))))
-
 (define-public r-radiant-design
   (package
     (name "r-radiant-design")
@@ -45504,36 +45461,6 @@ radiant.data'.")
 limit theorem simulation, comparing means and proportions, goodness-of-fit
 testing, cross-tabs, and correlation.  The application extends the functionality
 in radiant.data'.")
-    (license (list license:agpl3
-                   (license:fsdg-compatible "file://LICENSE")))))
-
-(define-public r-radiant
-  (package
-    (name "r-radiant")
-    (version "1.5.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "radiant" version))
-              (sha256
-               (base32
-                "1kzbslf6bqi9h7znfp0hj1i7ljagb38sfri016m1xsywmc1s7cl5"))))
-    (properties `((upstream-name . "radiant")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-shiny
-                             r-radiant-multivariate
-                             r-radiant-model
-                             r-radiant-design
-                             r-radiant-data
-                             r-radiant-basics
-                             r-import))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/radiant-rstats/radiant")
-    (synopsis "Business Analytics using R and Shiny")
-    (description
-     "This package provides a platform-independent browser-based interface for
-business analytics in R, based on the shiny package.  The application combines
-the functionality of radiant.data', radiant.design', radiant.basics',
-radiant.model', and radiant.multivariate'.")
     (license (list license:agpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -47431,13 +47358,13 @@ from Dow Jones Factiva', @code{LexisNexis',} Europresse and Alceste files.")
 (define-public r-r-proxy
   (package
     (name "r-r-proxy")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "r.proxy" version))
               (sha256
                (base32
-                "0r3xivqnczmyrf2lnimarmzp0wjxr7dgnf8vaw8faniskydxg0fb"))))
+                "1v7x23lk5zzzilv6lpmajh2wa1ana330v2607rm816kir8k6ywa0"))))
     (properties `((upstream-name . "r.proxy")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-httr r-curl))

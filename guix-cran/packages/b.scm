@@ -598,6 +598,31 @@ Guy Cohen (âThe Bible of Options Strategies (2nd ed.)â, 2015, ISBN:
 Derivatives (11th ed.)â, 2022, ISBN: 9780136939979).")
     (license license:gpl3)))
 
+(define-public r-businessplanr
+  (package
+    (name "r-businessplanr")
+    (version "0.1-0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "businessPlanR" version))
+              (sha256
+               (base32
+                "19fbyycydivkldj845jsg5xidysiddnxqd4by14v2yyripy8d44j"))))
+    (properties `((upstream-name . "businessPlanR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-knitr r-kableextra))
+    (native-inputs (list r-knitr))
+    (home-page "https://www.c3s.cc")
+    (synopsis "Simple Modelling Tools for Business Plans")
+    (description
+     "This package provides a collection of S4 classes, methods and functions to
+create and visualize business plans.  Different types of cash flows can be
+defined, which can then be used and tabulated to create profit and loss
+statements, cash flow plans, investment and depreciation schedules, loan
+amortization schedules, etc.  The methods are designed to produce handsome
+tables in both PDF and HTML using RMarkdown or Shiny'.")
+    (license license:gpl3+)))
+
 (define-public r-businessduration
   (package
     (name "r-businessduration")
@@ -1062,6 +1087,44 @@ based on those in Stephens (1994) <doi:10.2307/2986119>.  Bayesian changepoint
 detection will simply be an option in the function from the package bulletxtrctr
 which identifies the groove locations.")
     (license license:gpl3)))
+
+(define-public r-bulkreadr
+  (package
+    (name "r-bulkreadr")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "bulkreadr" version))
+              (sha256
+               (base32
+                "0fy3c2dvikfzly97blr5mhbrc14h7g4acjkn41qgcwzffzn04g9v"))))
+    (properties `((upstream-name . "bulkreadr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-readxl
+                             r-readr
+                             r-purrr
+                             r-openxlsx
+                             r-magrittr
+                             r-lubridate
+                             r-inspectdf
+                             r-googlesheets4
+                             r-fs
+                             r-dplyr
+                             r-curl))
+    (home-page "https://github.com/gbganalyst/bulkreadr")
+    (synopsis "The Ultimate Tool for Reading Data in Bulk")
+    (description
+     "Designed to simplify and streamline the process of reading and processing large
+volumes of data in R. With a collection of functions tailored for bulk data
+operations, the package allows users to efficiently read multiple sheets from
+Microsoft Excel'/'Google Sheets workbooks and multiple CSV files from a
+directory.  It returns the data as organized data frames, making it convenient
+for further analysis and manipulation.  Whether dealing with extensive data sets
+or batch processing tasks, bulkreadr empowers users to effortlessly handle data
+in bulk, saving time and effort in data preparation workflows.")
+    (license license:expat)))
 
 (define-public r-bulkanalyser
   (package
@@ -7270,13 +7333,13 @@ H. Chan, A. Darwiche (2002) <doi:10.1613/jair.967>; C. Goergen, M. Leonelli
 (define-public r-bnma
   (package
     (name "r-bnma")
-    (version "1.5.0")
+    (version "1.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bnma" version))
               (sha256
                (base32
-                "0h7nk28ny4capnji1j5m2kzsc7l8a1z7icx0iak87pk4abzqlzmm"))))
+                "178gnbpcram9b4fsim6qgvypvzp5wsg9jzvg8nf004jkm4abb37l"))))
     (properties `((upstream-name . "bnma")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjags r-igraph r-ggplot2 r-coda))
@@ -23447,13 +23510,13 @@ value.  See Ana B. Marin-Arroyo, David Ocio
 (define-public r-basinetentropy
   (package
     (name "r-basinetentropy")
-    (version "0.99.5")
+    (version "0.99.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BASiNETEntropy" version))
               (sha256
                (base32
-                "06nshxxcj9nqdvdhr9lb55p2hsnbcdcqhnp0r9hs8yp3d1h7cv08"))))
+                "00lid7crjjcrfkfqdnkk7i5zlp17wvnirbgb3xb5s8wlc5cyhxyq"))))
     (properties `((upstream-name . "BASiNETEntropy")))
     (build-system r-build-system)
     (propagated-inputs (list r-randomforest r-igraph r-biostrings))
@@ -24012,28 +24075,6 @@ Sciences grant 1106891.  Any opinions, findings, and conclusions or
 recommendations expressed in this material are those of the author(s) and do not
 necessarily reflect the views of the National Science Foundation.")
     (license license:gpl3+)))
-
-(define-public r-barycenter
-  (package
-    (name "r-barycenter")
-    (version "1.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Barycenter" version))
-              (sha256
-               (base32
-                "0yhc0wwjqms569gnm8z2l9hgcbw8lyy437ynkij47pa4c1a1qvjy"))))
-    (properties `((upstream-name . "Barycenter")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp))
-    (home-page "https://cran.r-project.org/package=Barycenter")
-    (synopsis "Regularized Wasserstein Distances and Barycenters")
-    (description
-     "Computations of entropy regularized Wasserstein Distances, a.k.a.  dual-Sinkhorn
-divergences, and entropy regularized Wasserstein Barycenters.  Relevant papers
-are Marco Cuturi (2013) @code{<arXiv:1306.0895>,} Marco Cuturi (2014)
-@code{<arXiv:1310.4375>} and Jason Altschuler et al. @code{<arXiv:1705.09634>.}")
-    (license license:gpl2)))
 
 (define-public r-barulho
   (package

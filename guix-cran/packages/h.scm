@@ -298,13 +298,13 @@ Hediger & Michel & Naef (2020) @code{<arXiv:1903.06287>.}")
 (define-public r-hypetools
   (package
     (name "r-hypetools")
-    (version "1.4.1")
+    (version "1.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "HYPEtools" version))
               (sha256
                (base32
-                "0mzacc39av9zjm5amvkjflpykjd4bjgw2kp2xdx5n1y5dan8kihj"))))
+                "0qybixz2225g4c1rzsk2if6lbjhj21b6rpg55jq58cwq5sxqyw0a"))))
     (properties `((upstream-name . "HYPEtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -317,7 +317,6 @@ Hediger & Michel & Naef (2020) @code{<arXiv:1903.06287>.}")
                              r-patchwork
                              r-ncdf4
                              r-hydrogof
-                             r-ggspatial
                              r-ggrepel
                              r-ggpubr
                              r-ggplot2
@@ -682,23 +681,23 @@ intrinsic scatter in the generative model orthogonal to the hyperplane.")
 (define-public r-hyfo
   (package
     (name "r-hyfo")
-    (version "1.4.5")
+    (version "1.4.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hyfo" version))
               (sha256
                (base32
-                "0jyzqd5snby3im4r8jz4m2lxvarr0ydnsajfww2am1h611yw2gy8"))))
+                "03z36ddq6vpld1v876adp5xrz0hjy46vhs5sn8sgaa57fhmya6cm"))))
     (properties `((upstream-name . "hyfo")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
+                             r-sp
                              r-sf
                              r-reshape2
                              r-plyr
                              r-ncdf4
                              r-moments
                              r-mass
-                             r-maptools
                              r-maps
                              r-lmom
                              r-ggplot2

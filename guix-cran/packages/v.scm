@@ -2133,13 +2133,13 @@ Functions in vivaldi primarily operate on vcf files.")
 (define-public r-vivainsights
   (package
     (name "r-vivainsights")
-    (version "0.3.1")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "vivainsights" version))
               (sha256
                (base32
-                "0zr8l54sgcxsiqqiq3bvq6zp0i6j8f3p41p3g4fhma1n4dgk65ns"))))
+                "08n44njwhyzll67b20vsb6zd3d2065i7f167v939595fcj7vpisi"))))
     (properties `((upstream-name . "vivainsights")))
     (build-system r-build-system)
     (propagated-inputs (list r-wpa
@@ -2153,6 +2153,7 @@ Functions in vivaldi primarily operate on vcf files.")
                              r-networkd3
                              r-markdown
                              r-magrittr
+                             r-lifecycle
                              r-igraph
                              r-htmltools
                              r-ggwordcloud
@@ -2166,9 +2167,9 @@ Functions in vivaldi primarily operate on vcf files.")
     (synopsis "Analyze and Visualize Data from 'Microsoft Viva Insights'")
     (description
      "This package provides a versatile range of functions, including exploratory data
-analysis, time-series analysis, and data validation, whilst at the same time
-implements a set of best practices in analyzing and visualizing data specific to
-Microsoft Viva Insights'.")
+analysis, time-series analysis, organizational network analysis, and data
+validation, whilst at the same time implements a set of best practices in
+analyzing and visualizing data specific to Microsoft Viva Insights'.")
     (license license:expat)))
 
 (define-public r-vitality
@@ -3176,35 +3177,6 @@ accumulation rates and given depth intervals between consecutive samples.")
 model using algorithm by Jin, Lin and Tamvakis (2012)
 <doi.org/10.1016/j.eneco.2012.03.003>.")
     (license (list license:gpl2+ license:gpl3+))))
-
-(define-public r-vip
-  (package
-    (name "r-vip")
-    (version "0.4.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vip" version))
-              (sha256
-               (base32
-                "1x48hj6vq07vmvskcif9cjqbyhpbijn4s1kjy7z8ra1gbwxw4zyi"))))
-    (properties `((upstream-name . "vip")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-yardstick r-tibble r-ggplot2 r-foreach))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/koalaverse/vip/")
-    (synopsis "Variable Importance Plots")
-    (description
-     "This package provides a general framework for constructing variable importance
-plots from various types of machine learning models in R. Aside from some
-standard model- specific variable importance measures, this package also
-provides model- agnostic approaches that can be applied to any supervised
-learning algorithm.  These include 1) an efficient permutation-based variable
-importance measure, 2) variable importance based on Shapley values (Strumbelj
-and Kononenko, 2014) <doi:10.1007/s10115-013-0679-x>, and 3) the variance-based
-approach described in Greenwell et al. (2018) @code{<arXiv:1805.04755>.} A
-variance-based method for quantifying the relative strength of interaction
-effects is also included (see the previous reference for details).")
-    (license license:gpl2+)))
 
 (define-public r-violinplotter
   (package
@@ -4232,13 +4204,13 @@ requirements, and auto-composing error messages when they do not.")
 (define-public r-vetiver
   (package
     (name "r-vetiver")
-    (version "0.2.2")
+    (version "0.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "vetiver" version))
               (sha256
                (base32
-                "1ah7mcyzdc7cnhza8zhs8g7vwvffwxqnrhx24rfn6jrlng1yk6is"))))
+                "0fgs32lv90jbn2g82yz8nz8aralrn1nlx5395g92bhvd8s6dcrpj"))))
     (properties `((upstream-name . "vetiver")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr

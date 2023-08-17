@@ -1705,43 +1705,6 @@ available.  We're also providing the download function to retrieve the
 calculated distance matrices from figshare <https://figshare.com>.")
     (license license:expat)))
 
-(define-public r-worldriskpollr
-  (package
-    (name "r-worldriskpollr")
-    (version "0.7.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "worldriskpollr" version))
-              (sha256
-               (base32
-                "1m3apmdf0ksih7yq9bp5nkyyyxkp6hdw3jjx071df83c4iv8abm9"))))
-    (properties `((upstream-name . "worldriskpollr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-sjlabelled
-                             r-rlang
-                             r-magrittr
-                             r-labelled
-                             r-janitor
-                             r-httr
-                             r-dplyr
-                             r-curl))
-    (native-inputs (list r-knitr))
-    (home-page "<https://wrp.lrfoundation.org.uk/data-resources/>")
-    (synopsis "Aggregated Survey Data from the World Risk Poll")
-    (description
-     "This package provides users with programmatic access to aggregated survey data
-from the World Risk Poll, conveniently packaged for consumption by R users.  It
-downloads formatted data from the Lloyd's Register Foundation World Risk Poll
-individual survey responses.  It then processes this data and provides weighting
-functions for users to select questions of interest and aggregate to national
-levels, by gender, age, income, education urban/rural and household composition.
- The method of aggregation can be found at
-<https://www.gallup.com/178667/gallup-world-poll-work.aspx/>.  More information
-about the World Risk Poll Survey can be found here
-<https://wrp.lrfoundation.org.uk/>.")
-    (license license:expat)))
-
 (define-public r-worldmet
   (package
     (name "r-worldmet")
@@ -1920,42 +1883,6 @@ or tidyverse functions.  This package has been peer-reviewed by @code{rOpenSci}
 literate programming ('knitr and rmarkdown') and version control ('Git', via
 git2r') to generate a website containing time-stamped, versioned, and documented
 results.")
-    (license license:expat)))
-
-(define-public r-workboots
-  (package
-    (name "r-workboots")
-    (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "workboots" version))
-              (sha256
-               (base32
-                "0n55iypiw59n1f09fbynsdznv5mz885rbz4gaqi48ig0hwz896b7"))))
-    (properties `((upstream-name . "workboots")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-workflows
-                             r-vip
-                             r-tidyr
-                             r-tibble
-                             r-rsample
-                             r-rlang
-                             r-purrr
-                             r-metrics
-                             r-lifecycle
-                             r-generics
-                             r-dplyr
-                             r-assertthat))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/markjrieke/workboots")
-    (synopsis
-     "Generate Bootstrap Prediction Intervals from a 'tidymodels' Workflow")
-    (description
-     "This package provides functions for generating bootstrap prediction intervals
-from a tidymodels workflow.  tidymodels <https://www.tidymodels.org/> is a
-collection of packages for modeling and machine learning using tidyverse
-<https://www.tidyverse.org/> principles.  This package is not affiliated with or
-maintained by RStudio or the tidymodels maintainers.")
     (license license:expat)))
 
 (define-public r-wordsalad

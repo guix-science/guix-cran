@@ -117,6 +117,28 @@ functionality).")
      "Simulation and Inference for SDEs and Other Stochastic Processes.")
     (license license:gpl2)))
 
+(define-public r-ytanalytics
+  (package
+    (name "r-ytanalytics")
+    (version "0.0.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "YTAnalytics" version))
+              (sha256
+               (base32
+                "1l7mir36c5mjddm7dgk7xairxls8h7jbkmnfw404dycks4bp2dx2"))))
+    (properties `((upstream-name . "YTAnalytics")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-jsonlite r-httr r-dplyr))
+    (home-page "https://cran.r-project.org/package=YTAnalytics")
+    (synopsis "Wrapper for 'YouTube Analytics' API")
+    (description
+     "Simplify working with the @code{YouTube} Analytics API
+<https://developers.google.com/youtube/analytics>.  Collect traffic, time
+period, location, and other data quickly and efficiently.  For working with the
+@code{YouTube} Data API, use the tuber R Package.")
+    (license license:expat)))
+
 (define-public r-yrmisc
   (package
     (name "r-yrmisc")

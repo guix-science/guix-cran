@@ -21,7 +21,6 @@
   #:use-module (gnu packages java)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages tls)
-  #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages sqlite)
   #:use-module (gnu packages haskell-xyz)
@@ -3576,6 +3575,34 @@ distribution is not needed.  Posterior summaries are compared with those by
 <http://hdl.handle.net/1993/21352>.")
     (license license:gpl3)))
 
+(define-public r-dsam
+  (package
+    (name "r-dsam")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "DSAM" version))
+              (sha256
+               (base32
+                "1ba8bf7azhf12wag3m87jarwrgcikcxpgn3jdk4y58rzlj7czsm1"))))
+    (properties `((upstream-name . "DSAM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xgboost r-proc r-matrix r-kohonen r-caret))
+    (home-page "https://github.com/lark-max/DSAM")
+    (synopsis "Data Splitting Algorithms for Model Developments")
+    (description
+     "Providing six different algorithms that can be used to split the available data
+into training, test and validation subsets with similar distribution for
+hydrological model developments.  The @code{dataSplit()} function will help you
+divide the data according to specific requirements, and you can refer to the
+par.default() function to set the parameters for data splitting.  The
+@code{getAUC()} function will help you measure the similarity of distribution
+features between the data subsets.  For more information about the data
+splitting algorithms, please refer to: Chen et al. (2022)
+<doi:10.1016/j.jhydrol.2022.128340>, Zheng et al. (2022)
+<doi:10.1029/2021WR031818>.")
+    (license license:expat)))
+
 (define-public r-dsairm
   (package
     (name "r-dsairm")
@@ -3882,13 +3909,13 @@ prescriptions.  Based on Pye et al (2018) <doi:10.1002/pds.4440>.")
 (define-public r-drugexposurediagnostics
   (package
     (name "r-drugexposurediagnostics")
-    (version "0.4.4")
+    (version "0.4.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DrugExposureDiagnostics" version))
               (sha256
                (base32
-                "1593f5jjy1fyz95qp7n26jpgj7p6lckhkf47k2zkq5x8dm1sldcg"))))
+                "18ny4aa8m6hi2dc5k508jpymxbalp9w36vz2h57wmwlz1a5bc9k5"))))
     (properties `((upstream-name . "DrugExposureDiagnostics")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -7048,6 +7075,7 @@ by other packages for designed experiments.")
     (propagated-inputs (list r-rcppthread
                              r-rcppparallel
                              r-rcpp
+                             r-osmdata
                              r-magrittr
                              r-fs
                              r-digest
@@ -11674,13 +11702,13 @@ Semiparametric Mode Regression for Time-to-Event Data\"
 (define-public r-dirstats
   (package
     (name "r-dirstats")
-    (version "0.1.8")
+    (version "0.1.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DirStats" version))
               (sha256
                (base32
-                "0drk6b7nncsydvikxy2jh7kmsjvkwx32csh0r8ygn9hdqliw4pfk"))))
+                "0cj3ba2dzy7nvvs98mzj0c37hdn4lhxhrir27bhqfrjnmz13z08w"))))
     (properties `((upstream-name . "DirStats")))
     (build-system r-build-system)
     (propagated-inputs (list r-rotasym r-movmf))
@@ -18112,38 +18140,6 @@ described in Xu, Z., Zhen, B., Park, Y., & Zhu, B. (2017)
 resources available.  It provides access to \"delayed\" computations, which may be
 parallelized using futures.  It is, to an extent, a facsimile of the Dask
 library (<https://www.dask.org/>), for the Python language.")
-    (license license:gpl3)))
-
-(define-public r-delaunay
-  (package
-    (name "r-delaunay")
-    (version "2.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "delaunay" version))
-              (sha256
-               (base32
-                "0rnbi17fsgh1k7sr2blnf7sgppxv1fqm0l85z16bryx5z7ab602p"))))
-    (properties `((upstream-name . "delaunay")))
-    (build-system r-build-system)
-    (inputs (list mpfr gmp))
-    (propagated-inputs (list r-sets
-                             r-scales
-                             r-rvcg
-                             r-rgl
-                             r-rcppeigen
-                             r-rcppcgal
-                             r-rcpp
-                             r-randomcolor
-                             r-gplots
-                             r-bh))
-    (native-inputs (list pkg-config))
-    (home-page "https://github.com/stla/delaunay")
-    (synopsis "2d, 2.5d, and 3d Delaunay Tessellations")
-    (description
-     "Construction and visualization of 2d Delaunay triangulations, possibly
-constrained, 2.5d (i.e.  elevated) Delaunay triangulations, 3d Delaunay
-triangulations, and 2D @code{VoronoÃ¯} tessellations.")
     (license license:gpl3)))
 
 (define-public r-dejavu

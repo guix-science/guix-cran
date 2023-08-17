@@ -579,13 +579,13 @@ R Markdown documents.")
 (define-public r-jstor
   (package
     (name "r-jstor")
-    (version "0.3.10")
+    (version "0.3.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jstor" version))
               (sha256
                (base32
-                "0k2y3h01yra8yns97j4yyxa1jmclrd6z5xxiv4m8da5q5cgkc970"))))
+                "1n5l6wz93bjhhhpikmvmjd5famxbrsk3d6z61bb7sp6xvslychlj"))))
     (properties `((upstream-name . "jstor")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -1264,6 +1264,30 @@ of each partition, and the value function under the estimated I2DR as well as
 the Wald-type confidence interval of value function constructed through the
 Bootstrap.")
     (license license:lgpl3)))
+
+(define-public r-jqbr
+  (package
+    (name "r-jqbr")
+    (version "1.0.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "jqbr" version))
+              (sha256
+               (base32
+                "1afraa18zwv3lbgxpqj4zkvlhzmv5ziajww1iccpkr7ca1rn4zk3"))))
+    (properties `((upstream-name . "jqbr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shiny r-jsonlite r-htmltools))
+    (native-inputs (list esbuild))
+    (home-page "https://github.com/hfshr/jqbr")
+    (synopsis "'jQuery QueryBuilder' Input for 'Shiny'")
+    (description
+     "This package provides a highly configurable @code{jQuery} plugin offering a
+simple interface to create complex queries/filters in Shiny'.  The outputted
+rules can easily be parsed into a set of R and/or SQL queries and used to filter
+data.  Custom parsing of the rules is also supported.  For more information
+about @code{jQuery} @code{QueryBuilder} see <https://querybuilder.js.org/>.")
+    (license license:expat)))
 
 (define-public r-jpstat
   (package
@@ -2095,13 +2119,13 @@ RStudio Addins can be used to run selected code as a job.")
 (define-public r-jmvreadwrite
   (package
     (name "r-jmvreadwrite")
-    (version "0.3.8")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jmvReadWrite" version))
               (sha256
                (base32
-                "0s12llrw2c8xij9spd5xkg51x55h9663g1nw5kn4s16pfbgzccjw"))))
+                "08039hh1nc1586kad2fx6nnghayklfrfyy5na5hsjqqn9db37h9w"))))
     (properties `((upstream-name . "jmvReadWrite")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip r-jsonlite))
@@ -2119,13 +2143,13 @@ easy transfer of data and analyses between jamovi and R.")
 (define-public r-jmvcore
   (package
     (name "r-jmvcore")
-    (version "2.3.19")
+    (version "2.4.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jmvcore" version))
               (sha256
                (base32
-                "0cwchz7n50sxin65nc1k5bygci2yxp68yypmvq2a0fyf56r53gdg"))))
+                "1pzcv5rkkhff73cf9kfp56d5frk5vjjj6ls1cd4bskyrm0754p3a"))))
     (properties `((upstream-name . "jmvcore")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi r-rlang r-r6 r-jsonlite r-base64enc))

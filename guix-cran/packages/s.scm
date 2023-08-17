@@ -8456,6 +8456,32 @@ and temporally stamped point data, the package provides an alternative source of
 data for a wide range of research in social and life sciences.")
     (license license:gpl3)))
 
+(define-public r-stpphawkes
+  (package
+    (name "r-stpphawkes")
+    (version "0.2.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "stpphawkes" version))
+              (sha256
+               (base32
+                "1mfhvfjlshhigyl5bfagjiv3q8dizqf89ikyifkchylni5szblbs"))))
+    (properties `((upstream-name . "stpphawkes")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppprogress
+                             r-rcppgsl
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-interp
+                             r-extradistr))
+    (home-page "https://cran.r-project.org/package=stpphawkes")
+    (synopsis "Missing Data for Marked Hawkes Process")
+    (description
+     "Estimation of model parameters for marked Hawkes process.  Accounts for missing
+data in the estimation of the parameters.  Technical details found in (Tucker et
+al., 2019 <DOI:10.1016/j.spasta.2018.12.004>).")
+    (license license:expat)))
+
 (define-public r-stpp
   (package
     (name "r-stpp")
@@ -12053,39 +12079,6 @@ version of the code lists made available in this package is
 <https://sdmx.org/?page_id=3215/>.")
     (license license:cc0)))
 
-(define-public r-statcanr
-  (package
-    (name "r-statcanr")
-    (version "0.2.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "statcanR" version))
-              (sha256
-               (base32
-                "13qy563dhcxfdd2dgiz0qwh5fik11qh22ddzcf4xnzvvl5mim39g"))))
-    (properties `((upstream-name . "statcanR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble
-                             r-reshape2
-                             r-readr
-                             r-qs
-                             r-qpdf
-                             r-httr
-                             r-ggplot2
-                             r-dt
-                             r-dplyr
-                             r-data-table
-                             r-curl))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/warint/statcanR/")
-    (synopsis "Client for Statistics Canada's Open Economic Data")
-    (description
-     "An easy connection with R to Statistics Canada's Web Data Service.  Open
-economic data (formerly known as CANSIM tables, now identified by Product IDs
-(PID)) are accessible as a data frame, directly in the user's R environment.
-Warin, Le Duc (2019) <doi:10.6084/m9.figshare.10544735>.")
-    (license license:expat)))
-
 (define-public r-statbasics
   (package
     (name "r-statbasics")
@@ -12732,13 +12725,13 @@ side-by-side, as well as summary statistics.")
 (define-public r-stareg
   (package
     (name "r-stareg")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "STAREG" version))
               (sha256
                (base32
-                "11dqvj94fczpzdy4wv9nhfz7ix02jx8bf5bfpdda2jq65klsd092"))))
+                "1skxwk817p4r7svnfrgv8bmkaz06ndqfxnypp9wdmndrgivrmg54"))))
     (properties `((upstream-name . "STAREG")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-qvalue))
@@ -17567,17 +17560,16 @@ completely show them when clicking on them.")
 (define-public r-spoccupancy
   (package
     (name "r-spoccupancy")
-    (version "0.6.1")
+    (version "0.7.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spOccupancy" version))
               (sha256
                (base32
-                "1ffgkqilh21dblks7q1iclgwimd70ks6xikmrprk010z4n9l2x67"))))
+                "0c1jhd38r2rh93h26zzy98z040lwiz5sxavijr4mbhfrr5z7595z"))))
     (properties `((upstream-name . "spOccupancy")))
     (build-system r-build-system)
     (propagated-inputs (list r-rann
-                             r-mass
                              r-lme4
                              r-foreach
                              r-doparallel
@@ -17714,47 +17706,6 @@ communities, supervised NMF(Yun Cai, Hong Gu and Tobby Kenney
 retaining all the advantages of NMF -- such as interpretability, and being based
 on a simple biological intuition.")
     (license license:gpl3)))
-
-(define-public r-spnetwork
-  (package
-    (name "r-spnetwork")
-    (version "0.4.3.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "spNetwork" version))
-              (sha256
-               (base32
-                "0qhy0dh4cgnxlbkcadnjzwpnbjq0navikr3gsczg562h4jq0ds8w"))))
-    (properties `((upstream-name . "spNetwork")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-spdep
-                             r-sf
-                             r-rdpack
-                             r-rcppprogress
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-progressr
-                             r-igraph
-                             r-ggplot2
-                             r-future-apply
-                             r-dplyr
-                             r-dbscan
-                             r-data-table
-                             r-cubature
-                             r-bh
-                             r-abind))
-    (native-inputs (list r-knitr))
-    (home-page "https://jeremygelb.github.io/spNetwork/")
-    (synopsis "Spatial Analysis on Network")
-    (description
-     "Perform spatial analysis on network.  Implement several methods for spatial
-analysis on network: Network Kernel Density estimation, building of spatial
-matrices based on network distance ('listw objects from spdep package), K
-functions estimation for point pattern analysis on network, k nearest neighbours
-on network, reachable area calculation, and graph generation References: Okabe
-et al (2019) <doi:10.1080/13658810802475491>; Okabe et al (2012,
-ISBN:978-0470770818);Baddeley et al (2015, ISBN:9781482210200).")
-    (license license:gpl2)))
 
 (define-public r-spnet
   (package
@@ -18591,13 +18542,13 @@ analysis of spatial point pattern data; it has been ported to R and is in
 (define-public r-spiro
   (package
     (name "r-spiro")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spiro" version))
               (sha256
                (base32
-                "1nd61m6x4nj9fjqbsipl9y7b4bqc2zayg0ni2ap83jfdwwiqj7zn"))))
+                "08v290c62x915624hydzns6qdbfxh08zsbgffkgd89inn2bwj55g"))))
     (properties `((upstream-name . "spiro")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -38466,13 +38417,13 @@ hoc structure of the shiny App.")
 (define-public r-shinytest2
   (package
     (name "r-shinytest2")
-    (version "0.2.1")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "shinytest2" version))
               (sha256
                (base32
-                "1mg0drgwrn9r8mhziwy9fvpmc2szy407418qk4p95wlk3myh878r"))))
+                "14lmrhmgylvypcpvsmbaghm5x55a9d9gz71zj4jc58rjn463d4db"))))
     (properties `((upstream-name . "shinytest2")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -40139,16 +40090,16 @@ code.")
 (define-public r-shinychatr
   (package
     (name "r-shinychatr")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "shinyChatR" version))
               (sha256
                (base32
-                "1vd8rznqspk3gr8al2qqbkahyk7gf04qgnpd6a3g2gzijrzfdrkx"))))
+                "08370x2yc8v32h2qgvwd26c2yrx2n89k85sz5dinv110lkrwr6f2"))))
     (properties `((upstream-name . "shinyChatR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-shiny r-r6 r-purrr r-dbi))
+    (propagated-inputs (list r-shiny r-r6 r-purrr r-dbi r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/julianschmocker/shinyChatR")
     (synopsis "R Shiny Chat Module")
@@ -44189,13 +44140,13 @@ models.\" American Journal of Political Science 55.4 (2011): 991-1002.")
 (define-public r-separate
   (package
     (name "r-separate")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sEparaTe" version))
               (sha256
                (base32
-                "0wfwipvv1mirsmnwwa521rd1xrrj7pidw2gjan7xwa52sgfsbdg9"))))
+                "07pcpx1snik7hvhmbq9nlnq8dd0ijn0i9vnq5f3q2f1ik3gx4rh9"))))
     (properties `((upstream-name . "sEparaTe")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=sEparaTe")
@@ -44205,7 +44156,10 @@ models.\" American Journal of Political Science 55.4 (2011): 991-1002.")
      "Maximum likelihood estimation of the parameters of matrix and 3rd-order tensor
 normal distributions with unstructured factor variance covariance matrices, two
 procedures, and for unbiased modified likelihood ratio testing of simple and
-double separability for variance-covariance structures, two procedures.")
+double separability for variance-covariance structures, two procedures.
+References: Dutilleul P. (1999) <doi:10.1080/00949659908811970>, Manceur AM,
+Dutilleul P. (2013) <doi:10.1016/j.cam.2012.09.017>, and Manceur AM, Dutilleul
+P. (2013) <doi:10.1016/j.spl.2012.10.020>.")
     (license license:expat)))
 
 (define-public r-seofm
@@ -50058,6 +50012,31 @@ Zappia et al. (2017)
 use with Rscript'.")
     (license license:expat)))
 
+(define-public r-screenshot
+  (package
+    (name "r-screenshot")
+    (version "0.9.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "screenshot" version))
+              (sha256
+               (base32
+                "14mkm5nsnyxvfzlq2gs9m88xgsvqwjra2j9ax1fx6wya970a1skd"))))
+    (properties `((upstream-name . "screenshot")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-imager
+                             r-fs
+                             r-dplyr))
+    (home-page "https://github.com/matutosi/screenshot")
+    (synopsis "Take Screenshots (Screen Capture) from R Command")
+    (description
+     "Take screenshots from R command and locate an image position.")
+    (license license:expat)))
+
 (define-public r-screenot
   (package
     (name "r-screenot")
@@ -55044,6 +55023,29 @@ valid under the assumption of marginal normality for the distribution of the
 linear predictor.")
     (license license:expat)))
 
+(define-public r-samprior
+  (package
+    (name "r-samprior")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "SAMprior" version))
+              (sha256
+               (base32
+                "1hr1q3a5787aak2r1cyqfk5w4h0yizrnhcz40cahyz5gl4zbpl1h"))))
+    (properties `((upstream-name . "SAMprior")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rbest r-metrics r-ggplot2 r-checkmate
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=SAMprior")
+    (synopsis "Self-Adapting Mixture (SAM) Priors")
+    (description
+     "Implementation of the SAM prior and generation of its operating characteristics
+for dynamically borrowing information from historical data.  For details, please
+refer to Yang et al. (2023) @code{<arXiv:2305.12279>.}")
+    (license license:gpl3+)))
+
 (define-public r-samplingvarest
   (package
     (name "r-samplingvarest")
@@ -55952,6 +55954,31 @@ for GLM will be added in future.")
 approximation following the methods of Nguyen and Jones (2018)
 <doi:10.1201/9780429446177>.  It also provides some test data generation and
 plotting functionality to assist with this process.")
+    (license license:gpl3)))
+
+(define-public r-sagm
+  (package
+    (name "r-sagm")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "SAGM" version))
+              (sha256
+               (base32
+                "0a46b9k1zgvyr9j8dl7m5r25xdh0yxnz3bhqavcn5s6rd3bbzsbr"))))
+    (properties `((upstream-name . "SAGM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mvtnorm r-gigrvg r-fastmatrix))
+    (home-page "https://cran.r-project.org/package=SAGM")
+    (synopsis "Spatial Autoregressive Graphical Model")
+    (description
+     "This package implements the methodological developments found in Hermes, van
+Heerwaarden, and Behrouzi (2023) @code{<doi:10.48550/arXiv.2308.04325>,} and
+allows for the statistical modeling of asymmetric between-location effects, as
+well as within-location effects using spatial autoregressive graphical models.
+The package allows for the generation of spatial weight matrices to capture
+asymmetric effects for strip-type intercropping designs, although it can handle
+any type of spatial data commonly found in other sciences.")
     (license license:gpl3)))
 
 (define-public r-sager

@@ -3124,21 +3124,20 @@ normal model.")
 (define-public r-norgeo
   (package
     (name "r-norgeo")
-    (version "2.1.6")
+    (version "2.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "norgeo" version))
               (sha256
                (base32
-                "072mx0kmfn01gpdy48l7889i10kjr675bvwk3d87jldzls6y1pwb"))))
+                "1437b49ig7j5c3ympb8mjn0qz43szpmwqd3s8rlqmlfhycnh9maw"))))
     (properties `((upstream-name . "norgeo")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
                              r-rsqlite
                              r-odbc
                              r-magrittr
-                             r-jsonlite
-                             r-httr
+                             r-httr2
                              r-dbi
                              r-data-table))
     (native-inputs (list r-knitr))
@@ -3898,13 +3897,13 @@ API documentation.")
 (define-public r-nominatimlite
   (package
     (name "r-nominatimlite")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nominatimlite" version))
               (sha256
                (base32
-                "1p5pl3jgshyhvx5cxi9rf2qr8kd2l9ll7gxfhbj6vxbs9hh1mrcw"))))
+                "1lz4bnml9vs8rc7p71kiwwr0g38lvawbhsfj62a5cy8g1fxpghjw"))))
     (properties `((upstream-name . "nominatimlite")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-jsonlite r-dplyr))
@@ -5724,13 +5723,13 @@ nonnormal distributions.")
 (define-public r-nls-multstart
   (package
     (name "r-nls-multstart")
-    (version "1.2.0")
+    (version "1.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nls.multstart" version))
               (sha256
                (base32
-                "1aichzwg54jhw1y3csv2bx40cszbgzfa60hr17jb5133nxb99gwh"))))
+                "1fv6zw87n6fkblfn8q5mj957j9gx0qgjnkpypjdlircafb849gkf"))))
     (properties `((upstream-name . "nls.multstart")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-tibble r-purrr r-minpack-lm r-dplyr))
@@ -5921,13 +5920,13 @@ examples.")
 (define-public r-nlpsem
   (package
     (name "r-nlpsem")
-    (version "0.1.1")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nlpsem" version))
               (sha256
                (base32
-                "0qckmhkvfmc589pcd9zrsd903gwvyj5waq9wx4rlk35mjvsrsy1k"))))
+                "0yjqqbb7hy1qjq84bzsnq0cqbbxi2vkdv4bzj7h0q10rmlmbwnpz"))))
     (properties `((upstream-name . "nlpsem")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -5952,8 +5951,7 @@ correlation or causation between multiple longitudinal variables; (3)
 multiple-group models for scenarios (1) and (2) to evaluate differences among
 manifested groups, and (4) longitudinal mixture models for scenarios (1) and
 (2), with an assumption that trajectories are from multiple latent classes.  The
-methods implemented are introduced in Jin Liu (2023)
-@code{<arXiv:2302.03237v2>.}")
+methods implemented are introduced in Jin Liu (2023) @code{<arXiv:2302.03237>.}")
     (license license:gpl3+)))
 
 (define-public r-nlpred
@@ -7046,13 +7044,13 @@ occupancy, hidden Markov, dynamic hidden Markov, and N-mixture models. (Jolly
 (define-public r-nimblecarbon
   (package
     (name "r-nimblecarbon")
-    (version "0.2.1")
+    (version "0.2.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nimbleCarbon" version))
               (sha256
                (base32
-                "1dzkc0ay617a1l6m919sqxfcnx0z9kwfykn11f9hz6ddf4wgkysm"))))
+                "0gqzdiid3x5k8286j3wy31pha76diniyj7si0mzrmq13kw77lsls"))))
     (properties `((upstream-name . "nimbleCarbon")))
     (build-system r-build-system)
     (propagated-inputs (list r-snow
@@ -8160,13 +8158,13 @@ complete description of the model at <doi:10.1111/biom.13857>.")
 (define-public r-nflverse
   (package
     (name "r-nflverse")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nflverse" version))
               (sha256
                (base32
-                "00mjclyf0ph2wi3jbbxyhgckj9kppm8xhy10z5n6kskyw4wnvab0"))))
+                "1pamkg80b83gb5ab3zshh36xsr31ihv6qbh1aa42m6k4g1wk5g3r"))))
     (properties `((upstream-name . "nflverse")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstudioapi
@@ -13978,22 +13976,18 @@ nanosecond-resolution timestamps.")
 (define-public r-nanostringr
   (package
     (name "r-nanostringr")
-    (version "0.4.0")
+    (version "0.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nanostringr" version))
               (sha256
                (base32
-                "0df46pq93696xgdjky5qf5lk8caz48mb3a3fbrlda8z1rpv2i8bb"))))
+                "1sivaycgg1j3q9iapy2nq7mp8cak316rgn475sv7pa57ig6g9b7b"))))
     (properties `((upstream-name . "nanostringr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
-                             r-tibble
                              r-rlang
                              r-purrr
-                             r-magrittr
-                             r-forcats
-                             r-epir
                              r-dplyr
                              r-ccapp
                              r-assertthat))

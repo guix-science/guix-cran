@@ -1340,6 +1340,30 @@ the methodology described by R. Rastelli and M. Fop (2019)
 @code{<arXiv:1901.09828>.}")
     (license license:gpl3)))
 
+(define-public r-exprnet
+  (package
+    (name "r-exprnet")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ExprNet" version))
+              (sha256
+               (base32
+                "1cskr8mihnjihgddc44j24wkbiswm6ra1qj5nxva7klc744q5vk7"))))
+    (properties `((upstream-name . "ExprNet")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-igraph r-here r-foreach r-doparallel))
+    (home-page "https://github.com/WenbinWu2001/ExprNet")
+    (synopsis
+     "Characterizing Differential Expression of Selected Edges on a Network")
+    (description
+     "This package provides a toy model studying expressions of selected edges (namely
+a sub-network) on a network.  We aim to characterize how the lengths of selected
+edges vary between two phenotypes based on t tests results.  Two statistics, AT1
+and AT2, are computed to summarize the t tests results and distinguish the
+differentially expressed patterns of the sub-network.")
+    (license license:gpl3+)))
+
 (define-public r-exprep
   (package
     (name "r-exprep")
@@ -1787,13 +1811,13 @@ expression analysis of RNA-seq data, it is only applicable to hybrid offspring
 (define-public r-expertsurv
   (package
     (name "r-expertsurv")
-    (version "1.1.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "expertsurv" version))
               (sha256
                (base32
-                "0y0j55vrkhp6d46cr4fsh5gqzxhqr6sq8dgn6nagvd8l8c30246c"))))
+                "0yr461vrdmci418jhq6xacgy0cfrkp25nd7p5cd8fn3rqbfl97i4"))))
     (properties `((upstream-name . "expertsurv")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -1806,6 +1830,7 @@ expression analysis of RNA-seq data, it is only applicable to hybrid offspring
                              r-rstantools
                              r-rstan
                              r-rms
+                             r-rlang
                              r-rdpack
                              r-rcppparallel
                              r-rcppeigen
@@ -4337,13 +4362,13 @@ Neural-Network-based Evidential Clustering.")
 (define-public r-evclass
   (package
     (name "r-evclass")
-    (version "2.0.0")
+    (version "2.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "evclass" version))
               (sha256
                (base32
-                "1pa1vb5lzglq0sdiwy2xgy5b76h43vfdajs346jbmrzm7xvximpj"))))
+                "1v5qnv5nah633s4ibpsigqbd6ydxpr6l8mqwprwjr7khrnckrli4"))))
     (properties `((upstream-name . "evclass")))
     (build-system r-build-system)
     (propagated-inputs (list r-r-utils r-ibelief r-fnn))
@@ -8555,13 +8580,13 @@ vignette.")
 (define-public r-epir
   (package
     (name "r-epir")
-    (version "2.0.62")
+    (version "2.0.63")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "epiR" version))
               (sha256
                (base32
-                "0j5c7y7fhlni9zzm87fgwcgbgs94v7xwsdimxvw37achf5jbcgp9"))))
+                "08mj7kizfwnh80jhpac8mp78ydb4g9zx6ppmsgx0hc8qli16j0qs"))))
     (properties `((upstream-name . "epiR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -14825,59 +14850,48 @@ root tests are supported, and an improved unit root test is included.")
 (define-public r-eganet
   (package
     (name "r-eganet")
-    (version "1.2.3")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EGAnet" version))
               (sha256
                (base32
-                "10vfv8fkk8kfcspp4p8avz16ipj58231q43rzrmwmcfx362q3g48"))))
+                "1sa558dnzqnisj0xd4yzxa715lacahb9m0nsz8h784jc2b9xpilq"))))
     (properties `((upstream-name . "EGAnet")))
     (build-system r-build-system)
-    (propagated-inputs (list r-semplot
+    (propagated-inputs (list r-sna
+                             r-semplot
                              r-qgraph
-                             r-pbapply
-                             r-openmx
+                             r-progressr
                              r-network
-                             r-matrixcalc
                              r-matrix
                              r-lavaan
                              r-igraph
+                             r-gparotation
                              r-glasso
                              r-ggpubr
                              r-ggplot2
                              r-ggdendro
-                             r-ggally))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=EGAnet")
+                             r-ggally
+                             r-future-apply
+                             r-future
+                             r-bggm))
+    (home-page "https://github.com/hfgolino/EGAnet")
     (synopsis
      "Exploratory Graph Analysis â a Framework for Estimating the Number of Dimensions in Multivariate Data using Network Psychometrics")
     (description
      "This package implements the Exploratory Graph Analysis (EGA) framework for
-dimensionality and psychometric assessment.  EGA is part of a new area called
-network psychometrics that uses undirected network models for the assessment of
-psychometric properties.  EGA estimates the number of dimensions (or factors)
-using graphical lasso or Triangulated Maximally Filtered Graph (TMFG) and a
-weighted network community detection algorithm.  A bootstrap method for
-verifying the stability of the dimensions and items in those dimensions is
-available.  The fit of the structure suggested by EGA can be verified using
-Entropy Fit Indices.  A novel approach called Unique Variable Analysis (UVA) can
-be used to identify and reduce redundant variables in multivariate data.
-Network loadings, which are roughly equivalent to factor loadings when the data
-generating model is a factor model, are available.  Network scores can also be
-computed using the network loadings.  Dynamic EGA @code{(dynEGA)} will estimate
-dimensions from time series data for individual, group, and sample levels.
-Golino, H., & Epskamp, S. (2017) <doi:10.1371/journal.pone.0174035>.  Golino,
-H., Shi, D., Christensen, A. P., Garrido, L. E., Nieto, M. D., Sadana, R., &
-Thiyagarajan, J. A. (2020) <doi:10.31234/osf.io/gzcre>.  Christensen, A. P., &
-Golino, H. (under review) <doi:10.31234/osf.io/hz89e>.  Golino, H., Moulder, R.
-G., Shi, D., Christensen, A. P., Garrido, L. E., Nieto, M. D., Nesselroade, J.,
-Sadana, R., Thiyagarajan, J. A., & Boker, S. M. (2020)
-<doi:10.31234/osf.io/mtka2>.  Christensen, A. P. & Golino, H. (2021)
-<doi:10.3390/psych3030032>.  Christensen, A. P., Garrido, L. E., & Golino, H.
-(under review) <doi:10.31234/osf.io/4kra2>.  Golino, H., Christensen, A. P.,
-Moulder, R. G., Kim, S., & Boker, S. M. (under review)
-<doi:10.31234/osf.io/tfs7c>.")
+dimensionality and psychometric assessment.  EGA estimates the number of
+dimensions in psychological data using network estimation methods and community
+detection algorithms.  A bootstrap method is provided to assess the stability of
+dimensions and items.  Fit is evaluated using the Entropy Fit family of indices.
+ Unique Variable Analysis evaluates the extent to which items are locally
+dependent (or redundant).  Network loadings provide similar information to
+factor loadings and can be used to compute network scores.  A bootstrap and
+permutation approach are available to assess configural and metric invariance.
+Hierarchical structures can be detected using Hierarchical EGA. Time series and
+intensive longitudinal data can be analyzed using Dynamic EGA, supporting
+individual, group, and population level assessments.")
     (license license:gpl3+)))
 
 (define-public r-ega
@@ -19669,18 +19683,18 @@ estimating technical efficiency is also included.  More details in:
 (define-public r-easyverification
   (package
     (name "r-easyverification")
-    (version "0.4.4")
+    (version "0.4.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "easyVerification" version))
               (sha256
                (base32
-                "08mih1arx01vj7cs1jsln644pcvslpyw1rgr6jmv2czr6xd8qb7d"))))
+                "1k62dfhnc0g07jf82gm1m3747z8zchmj4mi5qap4dgc7pxdp2ikc"))))
     (properties `((upstream-name . "easyVerification")))
     (build-system r-build-system)
     (propagated-inputs (list r-specsverification r-rcpp r-pbapply))
     (native-inputs (list r-rmarkdown r-r-rsp))
-    (home-page "http://www.meteoswiss.ch")
+    (home-page "https://www.meteoswiss.admin.ch")
     (synopsis "Ensemble Forecast Verification for Large Data Sets")
     (description
      "Set of tools to simplify application of atomic forecast verification metrics for
@@ -20384,6 +20398,32 @@ and to retrieve the simulation outputs in an appropriate format for
 post-processing treatments.  Five sequential sampling schemes and three
 coupled-to-MCMC schemes are implemented.")
     (license license:gpl3)))
+
+(define-public r-easy-utils
+  (package
+    (name "r-easy-utils")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "easy.utils" version))
+              (sha256
+               (base32
+                "1gw2nfvjvrq0wsnpp39sjbd329q3ja0s20dki41nw5hw6xlaqqvj"))))
+    (properties `((upstream-name . "easy.utils")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scales
+                             r-rlang
+                             r-randomcolor
+                             r-polychrome
+                             r-fastmatch
+                             r-dplyr))
+    (home-page "https://github.com/ycli1995/easy.utils")
+    (synopsis "Frequently Used Functions for Easy R Programming")
+    (description
+     "Some utility functions for validation, data manipulation or color palettes.
+These functions can be helpful to reduce internal codes everywhere in package
+development.")
+    (license license:expat)))
 
 (define-public r-ease
   (package

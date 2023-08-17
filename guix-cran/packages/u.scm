@@ -2537,6 +2537,29 @@ then to a composition of integers as suggested by Kuipers, J. and Moffa, G.
 (2015) <doi:10.1007/s11222-013-9428-y>.")
     (license license:gpl2+)))
 
+(define-public r-unicol
+  (package
+    (name "r-unicol")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "unicol" version))
+              (sha256
+               (base32
+                "1pffrjk1wzkjw7s0dj9bmxzzrs4vyp2a1bp5cyb83alkqgg057lb"))))
+    (properties `((upstream-name . "unicol")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-unikn))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/hneth/unicol/")
+    (synopsis "The Colors of your University")
+    (description
+     "Most universities use specific color combinations to express their unique brand
+identity.  The unicol package provides the colors and color palettes of various
+universities for easy plotting and printing in R. We collect and provide a
+diverse range of color palettes for creating scientific visualizations.")
+    (license license:cc-by-sa4.0)))
+
 (define-public r-unicode
   (package
     (name "r-unicode")

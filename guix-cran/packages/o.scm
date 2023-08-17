@@ -570,28 +570,6 @@ al (2012).")
 survreg', and ivreg outputs.")
     (license license:expat)))
 
-(define-public r-outrankingtools
-  (package
-    (name "r-outrankingtools")
-    (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OutrankingTools" version))
-              (sha256
-               (base32
-                "0z7pslkkinn7flc4xwjg0bsfswf8ad4jv9rmglaj3fmjcx9b6wgj"))))
-    (properties `((upstream-name . "OutrankingTools")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-igraph))
-    (home-page "https://cran.r-project.org/package=OutrankingTools")
-    (synopsis
-     "Functions for Solving Multiple-criteria Decision-making Problems")
-    (description
-     "This package provides functions to process outranking ELECTRE methods existing
-in the literature.  See, e.g., <http://en.wikipedia.org/wiki/ELECTRE> about the
-outranking approach and the foundations of ELECTRE methods.")
-    (license license:gpl2+)))
-
 (define-public r-outliertree
   (package
     (name "r-outliertree")
@@ -1443,6 +1421,38 @@ map projection.")
     (description
      "Match, download, convert and import Open Street Map data extracts obtained from
 several providers.")
+    (license license:gpl3)))
+
+(define-public r-osmdata
+  (package
+    (name "r-osmdata")
+    (version "0.2.5")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "osmdata" version))
+              (sha256
+               (base32
+                "0073dnnznq479ffnizrv8wqmfiv3gmdmmlkmkh1hxgr7p32v1i4z"))))
+    (properties `((upstream-name . "osmdata")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-tibble
+                             r-rvest
+                             r-reproj
+                             r-rcpp
+                             r-magrittr
+                             r-lubridate
+                             r-httr2
+                             r-curl))
+    (native-inputs (list r-knitr))
+    (home-page
+     "https://docs.ropensci.org/osmdata/https://github.com/ropensci/osmdata/")
+    (synopsis
+     "Import 'OpenStreetMap' Data as Simple Features or Spatial Objects")
+    (description
+     "Download and import of @code{OpenStreetMap} ('OSM') data as sf or sp objects.
+OSM data are extracted from the Overpass web server (<https://overpass-api.de/>)
+and processed with very fast C++ routines for return to R'.")
     (license license:gpl3)))
 
 (define-public r-osldecomposition

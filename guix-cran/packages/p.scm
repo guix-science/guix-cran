@@ -1124,13 +1124,13 @@ Philip D. (2018) <doi:10.1177/1532673X18759644>.")
 (define-public r-purger
   (package
     (name "r-purger")
-    (version "1.7")
+    (version "1.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "purgeR" version))
               (sha256
                (base32
-                "0jcvfrgm7b85xf1lqjnidxrp0dmnqk8pjg2sj581jmkimrpf6cad"))))
+                "00dg6hxv5ld13daph77whzarfwm0ryrwnrs7yc0hqd77k36v336d"))))
     (properties `((upstream-name . "purgeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppprogress r-rcpp r-progress r-foreach
@@ -3455,16 +3455,17 @@ Durban, M. (2020) <doi:10.1007/s10260-019-00492-8>.")
 (define-public r-psp
   (package
     (name "r-psp")
-    (version "0.1")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "psp" version))
               (sha256
                (base32
-                "0ls8nqfddl9yqsz6binjf5smg3vbs5r65dqv92zn6hmb51akf7q5"))))
+                "0fjpjzf0m1f5xw1jrxn78m4r8ghwkcs2fsfhivbvws31gc11h7k0"))))
     (properties `((upstream-name . "psp")))
     (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=psp")
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-data-table))
+    (home-page "https://github.com/lenarddome/psp")
     (synopsis "Parameter Space Partitioning MCMC for Global Model Evaluation")
     (description
      "This package implements an n-dimensional parameter space partitioning algorithm
@@ -10910,13 +10911,13 @@ classification.")
 (define-public r-ppendemic
   (package
     (name "r-ppendemic")
-    (version "0.1.6")
+    (version "0.1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ppendemic" version))
               (sha256
                (base32
-                "099789jnrisiscny3d9sacd24hi2s594w23d4znawx99pgqidjsc"))))
+                "0f9gqhkgg1vd3di1xfx0ix4is30v3abcyldpkbnj81kv60zmzcfr"))))
     (properties `((upstream-name . "ppendemic")))
     (build-system r-build-system)
     (home-page "https://github.com/PaulESantos/ppendemic/")
@@ -12430,6 +12431,32 @@ procedure.")
      "Risk Attribution of a portfolio with Volatility Risk Analysis.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-portn
+  (package
+    (name "r-portn")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "portn" version))
+              (sha256
+               (base32
+                "1n759fwk2lwz8nqrc04r3720pffyhinmz2x83g5553ywxs0ds4da"))))
+    (properties `((upstream-name . "portn")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rsolnp))
+    (home-page "https://github.com/ysd2004/portn")
+    (synopsis "Portfolio Analysis for Nature")
+    (description
+     "The functions are designed to find the efficient mean-variance frontier or
+portfolio weights for static portfolio (called Markowitz portfolio) analysis in
+resource economics or nature conservation.  Using the nonlinear programming
+solver ('Rsolnp'), this package deals with the quadratic minimization of the
+variance-covariances without shorting (i.e., non-negative portfolio weights)
+studied in Ando and Mallory (2012) <doi:10.1073/pnas.1114653109>.  See the
+examples, testing versions, and more details from:
+<https://github.com/ysd2004/portn>.")
+    (license license:gpl2+)))
+
 (define-public r-portfoliooptim
   (package
     (name "r-portfoliooptim")
@@ -12760,6 +12787,7 @@ included for reference and examples.")
                              r-units
                              r-sf
                              r-rlang
+                             r-osmdata
                              r-metrics
                              r-dplyr))
     (native-inputs (list r-knitr))
@@ -13134,6 +13162,45 @@ to the comprehensive tutorials or visit <http://www.popgenreport.org/>.")
 \"Population Genetics with R: An Introduction for Life Scientists\" (2021,
 ISBN:9780198829546).")
     (license license:cc0)))
+
+(define-public r-popgenhelpr
+  (package
+    (name "r-popgenhelpr")
+    (version "1.2.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "PopGenHelpR" version))
+              (sha256
+               (base32
+                "09j5ih4ggxzpfhr7ch2d2rpfkpwrgppqrm164yj68daa94cq8ga9"))))
+    (properties `((upstream-name . "PopGenHelpR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vcfr
+                             r-stampp
+                             r-spdep
+                             r-spdata
+                             r-sp
+                             r-scatterpie
+                             r-rlang
+                             r-reshape2
+                             r-raster
+                             r-poppr
+                             r-magrittr
+                             r-hierfstat
+                             r-gstat
+                             r-ggplot2
+                             r-dplyr
+                             r-dartr
+                             r-adegenet))
+    (native-inputs (list r-knitr))
+    (home-page "https://kfarleigh.github.io/PopGenHelpR/")
+    (synopsis "Streamline Population Genomic and Genetic Analyses")
+    (description
+     "Estimate commonly used population genomic statistics and generate publication
+quality figures.  The current version of @code{PopGenHelpR} uses vcf and csv
+files to generate output, however, future implementations will expand the input
+file type options.")
+    (license license:gpl3+)))
 
 (define-public r-popepi
   (package
@@ -20554,6 +20621,36 @@ Biostatistics (First published online: July 27, 2016,
 <doi:10.1093/biostatistics/kxw035>).")
     (license license:expat)))
 
+(define-public r-piqp
+  (package
+    (name "r-piqp")
+    (version "0.2.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "piqp" version))
+              (sha256
+               (base32
+                "0cipmcbxfyply01kccv0bycip4lcg46s15g97fms8qijhpwi2n3c"))))
+    (properties `((upstream-name . "piqp")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppeigen r-rcpp r-r6 r-matrix))
+    (native-inputs (list r-knitr))
+    (home-page "https://predict-epfl.github.io/piqp-r/")
+    (synopsis
+     "R Interface to Proximal Interior Point Quadratic Programming Solver")
+    (description
+     "An embedded proximal interior point quadratic programming solver, which can
+solve dense and sparse quadratic programs, described in Schwan, Jiang, Kuhn, and
+Jones (2023) @code{<doi:10.48550/arXiv.2304.00290>.} Combining an infeasible
+interior point method with the proximal method of multipliers, the algorithm can
+handle ill-conditioned convex quadratic programming problems without the need
+for linear independence of the constraints.  The solver is written in header
+only C++ 14 leveraging the Eigen library for vectorized linear algebra.  For
+small dense problems, vectorized instructions and cache locality can be
+exploited more efficiently.  Allocation free problem updates and re-solves are
+also provided.")
+    (license license:bsd-2)))
+
 (define-public r-piper
   (package
     (name "r-piper")
@@ -20815,13 +20912,13 @@ et al. (2019) <DOI: 10.1093/bioinformatics/bty1049>, Nguyen et al. (2017)<DOI:
 (define-public r-pins
   (package
     (name "r-pins")
-    (version "1.2.0")
+    (version "1.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pins" version))
               (sha256
                (base32
-                "1ziqg9q9gqjv7m2rgqpki9khsl31am7ylb3jrc2n1ayzlvg8zam9"))))
+                "001qw73p9mgc21s6mp40awqm12fjr0whpry72hin533yj5s1w9va"))))
     (properties `((upstream-name . "pins")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -21080,6 +21177,51 @@ Pijavski method, which was published in Pijavski (1972)
      "Fits models of gene expression evolution to expression data from coregulated
 groups of genes, assuming inverse gamma distributed rate variation.")
     (license license:gpl3)))
+
+(define-public r-piglet
+  (package
+    (name "r-piglet")
+    (version "1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "piglet" version))
+              (sha256
+               (base32
+                "09l2qj8naalk8ywkmx0wmk82jllyd60g373jvy619kz7ad9dc1xp"))))
+    (properties `((upstream-name . "piglet")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zen4r
+                             r-tigger
+                             r-splitstackshape
+                             r-rlang
+                             r-rcolorbrewer
+                             r-r6
+                             r-magrittr
+                             r-jsonlite
+                             r-ggplot2
+                             r-dplyr
+                             r-dendextend
+                             r-decipher
+                             r-data-table
+                             r-complexheatmap
+                             r-circlize
+                             r-biostrings
+                             r-alakazam))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=piglet")
+    (synopsis
+     "Program for Inferring Ig Allele Similarity Clusters and Genotypes")
+    (description
+     "Improves genotype inference and downstream AIRR-seq data analysis.  Inference of
+allele similarity clusters, an alternative naming scheme and genotype inference
+for IGH repertoires.  The main tools are allele similarity clusters (ASC), and
+allele based genotype.  The first tool is designed to reduce the ambiguity
+within the IGHV alleles.  The ambiguity is caused by duplicated or similar
+alleles which are shared among different genes.  The second tool is an allele
+based genotype, that determined the presence of an allele based on a threshold
+derived from a naive population.  Citation: Peres, et al (2022)
+<doi:10.1101/2022.12.26.521922>.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-piggyback
   (package
@@ -21754,25 +21896,23 @@ and Lessler (2023).")
 (define-public r-phyloregion
   (package
     (name "r-phyloregion")
-    (version "1.0.6")
+    (version "1.0.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "phyloregion" version))
               (sha256
                (base32
-                "161pjy66vhpjwc4h9q4jiqpyzn0v4nawx8ahspjpc7a376rk5552"))))
+                "10i5s3dv71nr0m3wmph2rynzg9zj8xqzb6a25r5kj66r8v91jz3d"))))
     (properties `((upstream-name . "phyloregion")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
-                             r-sp
-                             r-rgeos
-                             r-rgdal
-                             r-raster
-                             r-randomforest
+                             r-terra
+                             r-smoothr
+                             r-predicts
                              r-phangorn
                              r-matrix
+                             r-maptpx
                              r-igraph
-                             r-dismo
                              r-colorspace
                              r-clustmixtype
                              r-betapart
@@ -22157,13 +22297,13 @@ reactive-transport, and inverse geochemical calculations.")
 (define-public r-photosynthesis
   (package
     (name "r-photosynthesis")
-    (version "2.1.3")
+    (version "2.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "photosynthesis" version))
               (sha256
                (base32
-                "0ahbfcbdrvh9x09x8fl4gh4lz2qk58kn8068ivsgnjmv6ais3ipd"))))
+                "1bilhqzhwxanlxvn98piysv45bpw7zh7f5w56rvllxgrpmra68pq"))))
     (properties `((upstream-name . "photosynthesis")))
     (build-system r-build-system)
     (propagated-inputs (list r-units
@@ -24549,6 +24689,32 @@ for the Polya Gamma Distribution using either C++ headers for Rcpp or
 @code{RcppArmadillo} and R'.")
     (license license:gpl3+)))
 
+(define-public r-pfr
+  (package
+    (name "r-pfr")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "pfr" version))
+              (sha256
+               (base32
+                "00fq3d2np5vvvyj6m2zc4hyjaz79j2fdhyxg7rqg71ibaq02r9cn"))))
+    (properties `((upstream-name . "pfr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rstudioapi r-inline))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://cran.r-project.org/package=pfr")
+    (synopsis "Interface to the 'C++' Library 'Pf'")
+    (description
+     "Builds and runs c++ code for classes that encapsulate state space model,
+particle filtering algorithm pairs.  Algorithms include the Bootstrap Filter
+from Gordon et al. (1993) <doi:10.1049/ip-f-2.1993.0015>, the generic SISR
+filter, the Auxiliary Particle Filter from Pitt et al (1999)
+<doi:10.2307/2670179>, and a variety of Rao-Blackwellized particle filters
+inspired by Andrieu et al. (2002) <doi:10.1111/1467-9868.00363>.  For more
+details on the c++ library pf', see Brown (2020) <doi:10.21105/joss.02599>.")
+    (license license:gpl3+)))
+
 (define-public r-pfim
   (package
     (name "r-pfim")
@@ -25207,21 +25373,22 @@ parsing as described in Rudolph and Cox 2018 <doi:10.1101/447268>.")
 (define-public r-persdx
   (package
     (name "r-persdx")
-    (version "0.4.0")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "persDx" version))
               (sha256
                (base32
-                "0c6rj1ydljghr3lm11s0p7b48wifhq1cnwn6nrlm01pg18z0mzdd"))))
+                "14lafg5xhpp7m2shhf7ymfikl83ldqzssji61vwgqhvk78kaw3dc"))))
     (properties `((upstream-name . "persDx")))
     (build-system r-build-system)
     (propagated-inputs (list r-survivalroc r-proc))
     (home-page "https://cran.r-project.org/package=persDx")
-    (synopsis "Estimating Personalized Diagnostics Rules")
+    (synopsis
+     "Personalized Diagnostics Rules for Subgroup Identification and Personalized Biomarker Discovery")
     (description
-     "Recommend the optimal biomarker for disease screening or diagnosis based on
-patients individual characteristics.")
+     "Tailoring the optimal biomarker(s) for disease screening or diagnosis based on
+subjects individual characteristics.")
     (license license:gpl2+)))
 
 (define-public r-perryexamples
@@ -27086,6 +27253,30 @@ approximate the derivatives.  The minimax tilting method suggested by
 provided that can be used to simplify pedigrees.")
     (license license:gpl3)))
 
+(define-public r-pedigreetools
+  (package
+    (name "r-pedigreetools")
+    (version "0.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "pedigreeTools" version))
+              (sha256
+               (base32
+                "048lpzg0mmbzdc5cd52ssvzlji5293xz7bpqy3cjjszwcfjppc6c"))))
+    (properties `((upstream-name . "pedigreeTools")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-matrix))
+    (home-page "https://github.com/Rpedigree/pedigreeTools/")
+    (synopsis "Versatile Functions for Working with Pedigrees")
+    (description
+     "This package provides tools to sort, edit and prune pedigrees and to extract the
+inbreeding coefficients and the relationship matrix (includes code for pedigrees
+from self-pollinated species).  The use of pedigree data is central to genetics
+research within the animal and plant breeding communities to predict breeding
+values.  The relationship matrix between the individuals can be derived from
+pedigree structure ('Vazquez et al., 2010') <doi:10.2527/jas.2009-1952>.")
+    (license license:gpl3)))
+
 (define-public r-pedigreemm
   (package
     (name "r-pedigreemm")
@@ -27652,13 +27843,13 @@ neighborhoods.")
 (define-public r-pdtoolkit
   (package
     (name "r-pdtoolkit")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PDtoolkit" version))
               (sha256
                (base32
-                "1k0xj8sq3jh96cp3rlgvhfba0nyl6ssiin04jdk7fhbsnq7437qx"))))
+                "0q0cd0azdf71m6w67in9sjqm5lvb6ksvpin9p5iwr3shbzvq888w"))))
     (properties `((upstream-name . "PDtoolkit")))
     (build-system r-build-system)
     (propagated-inputs (list r-rpart r-monobin r-dplyr))
@@ -30399,19 +30590,19 @@ charts, bar charts and box plots with colors, patterns, and images.")
 (define-public r-patternize
   (package
     (name "r-patternize")
-    (version "0.0.3")
+    (version "0.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "patternize" version))
               (sha256
                (base32
-                "072wjjinbkvrijqb90hk6h964m1h2gznj69jq3pidbzcr1xl93g1"))))
+                "08iaaky7rgqd46ln0k5np26y8rkgv07i1n5a05w18066p90pk9h7"))))
     (properties `((upstream-name . "patternize")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
                              r-sp
+                             r-sf
                              r-rniftyreg
-                             r-rgdal
                              r-raster
                              r-purrr
                              r-morpho
@@ -32937,13 +33128,13 @@ error variance decompositions.")
 (define-public r-panelsummary
   (package
     (name "r-panelsummary")
-    (version "0.1.2")
+    (version "0.1.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "panelsummary" version))
               (sha256
                (base32
-                "005r7mbm9hff0nbia0bih88jrwh0r5lz33n1ikvqa57rg61waihm"))))
+                "00rscxkblqkhyx2kdnl78hy82y9bjwdzhiia7bdx9qbjf0g2qjkl"))))
     (properties `((upstream-name . "panelsummary")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -33346,13 +33537,13 @@ visualization.")
 (define-public r-pammisc
   (package
     (name "r-pammisc")
-    (version "1.11.4")
+    (version "1.11.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PAMmisc" version))
               (sha256
                (base32
-                "19qnipkis231fd3ys00hp98lja5l06fnqxyj6vj5pxzhqbrw2ql4"))))
+                "0x0pirzcxjkx5p3mqf3xn3a7ng5dah3z9pcrlkaj7d44y08kygj3"))))
     (properties `((upstream-name . "PAMmisc")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -34331,6 +34522,27 @@ Indicator Cluster Survey (MICS) 2014 Child questionnaire data for Punjab,
 Pakistan (<http://www.mics.unicef.org/surveys>).")
     (license license:gpl2)))
 
+(define-public r-pakpc2023
+  (package
+    (name "r-pakpc2023")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "PakPC2023" version))
+              (sha256
+               (base32
+                "1vih3bkz6sy7bkw18c1d7a85xj112zagg65i7sfhy8dgwx7m78f1"))))
+    (properties `((upstream-name . "PakPC2023")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-htmltools r-dt))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=PakPC2023")
+    (synopsis "Pakistan Population Census 2023")
+    (description
+     "This package provides data sets and functions for exploration of Pakistan
+Population Census 2023 (<https://www.pbs.gov.pk/>).")
+    (license license:gpl2)))
+
 (define-public r-pakpc2017
   (package
     (name "r-pakpc2017")
@@ -35204,13 +35416,13 @@ percentile of package downloads from RStudio's CRAN mirror.")
 (define-public r-packager
   (package
     (name "r-packager")
-    (version "1.15.1")
+    (version "1.15.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "packager" version))
               (sha256
                (base32
-                "1ah9yynp4f500y5hbb7kgsdcgbniggg0r3bfs4fkzq4b9zahgnn6"))))
+                "0kvlc0cn3v1wpffh4hn29q8jgfxxg4pcxnfnnhykbx13wilrvrph"))))
     (properties `((upstream-name . "packager")))
     (build-system r-build-system)
     (propagated-inputs (list r-whoami
@@ -35242,6 +35454,30 @@ work with a build system such as GNU make or package fakemake to help you to
 conditionally work through the stages of package development (such as spell
 checking, linting, testing, before building and checking a package).")
     (license license:bsd-2)))
+
+(define-public r-packagepal
+  (package
+    (name "r-packagepal")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "packagepal" version))
+              (sha256
+               (base32
+                "0l49qfxdf54m07dpbj3gb3safh4nbc5hz1vgh4dyqxnkrvmh49xl"))))
+    (properties `((upstream-name . "packagepal")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-usethis r-cli r-available))
+    (home-page "https://github.com/lddurbin/packagepal")
+    (synopsis "Guidelines and Checklists for Building CRAN-Worthy Packages")
+    (description
+     "This package provides essential checklists for R package developers, whether
+you're creating your first package or beginning a new project.  This tool guides
+you through each step of the development process, including specific
+considerations for submitting your package to the Comprehensive R Archive
+Network (CRAN).  Simplify your workflow and ensure adherence to best practices
+with packagepal'.")
+    (license license:expat)))
 
 (define-public r-packagefinder
   (package

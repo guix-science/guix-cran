@@ -758,6 +758,29 @@ Pienaar, P. Mostad, S. Andersson, T. F. Hansen (2012)
 multivariate normality proposed by Villasenor-Alva and Gonzalez-Estrada (2009).")
     (license license:gpl3+)))
 
+(define-public r-mvs
+  (package
+    (name "r-mvs")
+    (version "1.0.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "mvs" version))
+              (sha256
+               (base32
+                "1p0782c940chysr4sk746gl9gjxzx7rx8xyxbkdp3y6z0904ib5w"))))
+    (properties `((upstream-name . "mvs")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-glmnet r-foreach))
+    (home-page "https://cran.r-project.org/package=mvs")
+    (synopsis "Methods for High-Dimensional Multi-View Learning")
+    (description
+     "This package provides methods for high-dimensional multi-view learning based on
+the multi-view stacking (MVS) framework.  For technical details on the MVS and
+stacked penalized logistic regression @code{(StaPLR)} methods see Van Loon,
+Fokkema, Szabo, & De Rooij (2020) <doi:10.1016/j.inffus.2020.03.007> and Van
+Loon et al. (2022) <doi:10.3389/fnins.2022.830630>.")
+    (license license:gpl2)))
+
 (define-public r-mvrsquared
   (package
     (name "r-mvrsquared")
@@ -5064,13 +5087,13 @@ likelihood estimation and Bayesian inference.")
 (define-public r-multiatsm
   (package
     (name "r-multiatsm")
-    (version "0.3.2")
+    (version "0.3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MultiATSM" version))
               (sha256
                (base32
-                "1ysi5h325rbxxpw4s4r8gc03zznjfk1ccg2xcjmg7mswn2b9r9gi"))))
+                "0hkayrchibk9nkv4cxx3a4310wh63bx4q0q5knp4p13jfyv4slwn"))))
     (properties `((upstream-name . "MultiATSM")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-wrapr r-pracma r-hablar r-ggplot2))
@@ -5082,9 +5105,9 @@ likelihood estimation and Bayesian inference.")
 rates models.  All the models are based on the single-country unspanned
 macroeconomic risk framework from Joslin, Priebsch, and Singleton (2014)
 <doi:10.1111/jofi.12131>.  Multicountry extensions such as the ones of
-Jotikasthira, Le, and Lundblad (2015) <doi:10.1016/j.jfineco.2014.09.004> and
-Candelon and Moura (2021) <http://hdl.handle.net/2078.1/249985> are also
-available.")
+Jotikasthira, Le, and Lundblad (2015) <doi:10.1016/j.jfineco.2014.09.004>,
+Candelon and Moura (2021) <http://hdl.handle.net/2078.1/249985>, and Candelon
+and Moura (2023) <doi:10.1016/j.econmod.2023.106453> are also available.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-multiassetoptions
@@ -5793,6 +5816,37 @@ cubic spline or generalized additive models with exogenous covariates.  This
 algorithm is specially tailored for climate data with missing measurements from
 several monitors along a given region.")
     (license license:gpl2+)))
+
+(define-public r-mtscr
+  (package
+    (name "r-mtscr")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "mtscr" version))
+              (sha256
+               (base32
+                "17iy815kbz3d9mgscalijc4y0nlywqg5wdq62i3amci1jyirddkm"))))
+    (properties `((upstream-name . "mtscr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-lifecycle
+                             r-glue
+                             r-glmmtmb
+                             r-dplyr
+                             r-cli
+                             r-broom-mixed))
+    (home-page "https://cran.r-project.org/package=mtscr")
+    (synopsis "Multidimensional Top Scoring for Creativity Research")
+    (description
+     "Implementation of Multidimensional Top Scoring method for creativity assessment
+proposed in Boris Forthmann, Maciej Karwowski, Roger E. Beaty (2023)
+<doi:10.1037/aca0000571>.")
+    (license license:expat)))
 
 (define-public r-mts
   (package
@@ -7901,6 +7955,35 @@ models were developed by Roberto Benavent and Domingo Morales (2015)
 global MSSS (multiple sclerosis severity score).")
     (license license:gpl2)))
 
+(define-public r-mrzero
+  (package
+    (name "r-mrzero")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "MRZero" version))
+              (sha256
+               (base32
+                "1ksmhpycslkilm1ixhdi0asa5la5mrql48ycbf1camk556mcl3wa"))))
+    (properties `((upstream-name . "MRZero")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-robustbase
+                             r-rmarkdown
+                             r-quantreg
+                             r-plotly
+                             r-knitr
+                             r-glmnet
+                             r-ggplot2))
+    (home-page "https://cran.r-project.org/package=MRZero")
+    (synopsis "Diet Mendelian Randomization")
+    (description
+     "Encodes several methods for performing Mendelian randomization analyses with
+summarized data.  Similar to the @code{MendelianRandomization} package, but with
+fewer bells and whistles, and less frequent updates.  As described in Yavorska
+(2017) <doi:10.1093/ije/dyx034> and Broadbent (2020)
+<doi:10.12688/wellcomeopenres.16374.2>.")
+    (license (list license:gpl2 license:gpl3))))
+
 (define-public r-mrtsamplesizebinary
   (package
     (name "r-mrtsamplesizebinary")
@@ -8380,13 +8463,13 @@ Stindl and Chen (2018) <doi:10.1016/j.csda.2018.01.021>.")
 (define-public r-mrgsolve
   (package
     (name "r-mrgsolve")
-    (version "1.0.9")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mrgsolve" version))
               (sha256
                (base32
-                "0qfgwcbn89310rdlh1yraxs6npnavla090pnbf22rx3r3bb2df60"))))
+                "1dhvrhvprra2q583ibiz3akicb5dz2f7l2aarr9z9m82261pfcz3"))))
     (properties `((upstream-name . "mrgsolve")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -10924,49 +11007,6 @@ repository; the Natural Language Toolkit for python'; the Snowball stop-word
 list; the R package quanteda'; the marimo repository; the Perseus project; and
 A. Berra's list of stop words for Ancient Greek and Latin.")
     (license license:expat)))
-
-(define-public r-moreparty
-  (package
-    (name "r-moreparty")
-    (version "0.3.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "moreparty" version))
-              (sha256
-               (base32
-                "05vf4536kf5q3h1mmhrphyqckag0v4jg11hfb1h30gvimk19va89"))))
-    (properties `((upstream-name . "moreparty")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vip
-                             r-varimp
-                             r-shinywidgets
-                             r-shiny
-                             r-rlang
-                             r-rclipboard
-                             r-plyr
-                             r-phosphoricons
-                             r-pdp
-                             r-partykit
-                             r-party
-                             r-measures
-                             r-mass
-                             r-iml
-                             r-ggplot2
-                             r-foreach
-                             r-dt
-                             r-datamods))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=moreparty")
-    (synopsis "Toolbox for Conditional Inference Trees and Random Forests")
-    (description
-     "Additions to party and partykit packages : tools for the interpretation of
-forests (surrogate trees, prototypes, etc.), feature selection (see Gregorutti
-et al (2017) @code{<arXiv:1310.5726>,} Hapfelmeier and Ulm (2013)
-<doi:10.1016/j.csda.2012.09.020>, Altmann et al (2010)
-<doi:10.1093/bioinformatics/btq134>) and parallelized versions of conditional
-forest and variable importance functions.  Also modules and a shiny app for
-conditional inference trees.")
-    (license license:gpl2+)))
 
 (define-public r-moranajp
   (package
@@ -13668,26 +13708,6 @@ University of Technology, Faculty of Mathematics and Information Science.")
 currently supports KMeans and linear regression models.")
     (license license:expat)))
 
-(define-public r-modeldatatoo
-  (package
-    (name "r-modeldatatoo")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "modeldatatoo" version))
-              (sha256
-               (base32
-                "0aa6920a0izaggs1a0dsnkn24vnx48xry2x4906scaifd7vgk7fv"))))
-    (properties `((upstream-name . "modeldatatoo")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-pins))
-    (home-page "https://github.com/tidymodels/modeldatatoo")
-    (synopsis "More Data Sets Useful for Modeling Examples")
-    (description
-     "More data sets used for demonstrating or testing model-related packages are
-contained in this package.")
-    (license license:expat)))
-
 (define-public r-modelcharts
   (package
     (name "r-modelcharts")
@@ -15538,13 +15558,13 @@ Scutari (2010) <doi:10.18637/jss.v035.i03>.")
 (define-public r-mmarch-ac
   (package
     (name "r-mmarch-ac")
-    (version "2.4.0.1")
+    (version "2.9.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mMARCH.AC" version))
               (sha256
                (base32
-                "124wh0vd9jh84l4pn6snv595sxqi9acrndpnhkgxabw5p11jk6gr"))))
+                "0lp32m6cfplbm72g0j1cm1c7rcpmy5jrsd3p577p9a4bwqf5ynxc"))))
     (properties `((upstream-name . "mMARCH.AC")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -15606,7 +15626,7 @@ plots and multiple commonly used features extracted from minute level actigraphy
 data.  Reference: Guo W, Leroux A, Shou S, Cui L, Kang S, Strippoli MP, Preisig
 M, Zipunnikov V, Merikangas K (2022) Processing of accelerometry data with GGIR
 in Motor Activity Research Consortium for Health @code{(mMARCH)} Journal for the
-Measurement of Physical Behaviour.")
+Measurement of Physical Behaviour, 6(1): 37-44.")
     (license license:gpl3)))
 
 (define-public r-mmaqshiny
@@ -23068,6 +23088,39 @@ functions that allows performing full pipeline of analysis including data
 normalization, summarisation, binary classification, FDR (False Discovery Rate)
 multiple comparison and the definition of potential biological markers.")
     (license license:gpl3)))
+
+(define-public r-micss
+  (package
+    (name "r-micss")
+    (version "0.1.5")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "micss" version))
+              (sha256
+               (base32
+                "1npamxj7jc6qkkswwm7gb0x7naii93m53dnwqlnv6a8v3q4whm6n"))))
+    (properties `((upstream-name . "micss")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-dplyr))
+    (home-page "https://cran.r-project.org/package=micss")
+    (synopsis "Modified Iterative Cumulative Sum of Squares Algorithm")
+    (description
+     "Companion package of Carrion-i-Silvestre & @code{SansÃ³} (2023): \"Generalized
+Extreme Value Approximation to the CUMSUMQ Test for Constant Unconditional
+Variance in Heavy-Tailed Time Series\".  It implements the Modified Iterative
+Cumulative Sum of Squares Algorithm, which is an extension of the Iterative
+Cumulative Sum of Squares (ICSS) Algorithm of Inclan and Tiao (1994), and it
+checks for changes in the unconditional variance of a time series controlling
+for the tail index of the underlying distribution.  The fourth order moment is
+estimated non-parametrically to avoid the size problems when the innovations are
+non-Gaussian (see, @code{SansÃ³} et al., 2004).  Critical values and p-values
+are generated using a Generalized Extreme Value distribution approach.
+References Carrion-i-Silvestre J.J & @code{SansÃ³} A (2023)
+<https://www.ub.edu/irea/working_papers/2023/202309.pdf>.  Inclan C & Tiao G.C
+(1994) <doi:10.1080/01621459.1994.10476824>, @code{SansÃ³} A & @code{AragÃ³} V &
+Carrion-i-Silvestre J.L (2004)
+<https://dspace.uib.es/xmlui/bitstream/handle/11201/152078/524035.pdf>.")
+    (license license:gpl2)))
 
 (define-public r-micsplines
   (package
@@ -32632,13 +32685,13 @@ collection of test functions.")
 (define-public r-mcmsupply
   (package
     (name "r-mcmsupply")
-    (version "0.1.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mcmsupply" version))
               (sha256
                (base32
-                "07hjync6virrrc622kcqq154rm8q9d88qivjv6kqlzfyyyfjc617"))))
+                "0mzph8grgcz62rz2z4y4dgmp9xapf2b29lck960lhqp7h2m9awg4"))))
     (properties `((upstream-name . "mcmsupply")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyverse
@@ -37611,13 +37664,13 @@ a conditional risk model.")
 (define-public r-marginaleffects
   (package
     (name "r-marginaleffects")
-    (version "0.13.0")
+    (version "0.14.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "marginaleffects" version))
               (sha256
                (base32
-                "0cz7vjmqgkd5cmaw6zp669gzpngc31dbcn5larnyhf0bisk5c0mf"))))
+                "035lls0xk8va1bjiwgvzqd9zshv3rp9gdrhgfhr72d5b77sfh2wi"))))
     (properties `((upstream-name . "marginaleffects")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -38062,13 +38115,13 @@ format by use of point location data.")
 (define-public r-mapsperu
   (package
     (name "r-mapsperu")
-    (version "1.0.2")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mapsPERU" version))
               (sha256
                (base32
-                "0ld6dyqrppmc1pna2h8szvr61d3bhljx9pv616wsp5j74na3ynbg"))))
+                "09z9hjpms039m8sjpb91q1f5knnncbyzciw7g5mhw11f9xsijj4k"))))
     (properties `((upstream-name . "mapsPERU")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble))
@@ -41700,6 +41753,34 @@ tiny_m5'.  For detailed information about the challenges, see: Makridakis, S. &
 Spiliotis, E. & Assimakopoulos, V. (2020).
 <doi:10.1016/j.ijforecast.2021.10.009>.")
     (license license:expat)))
+
+(define-public r-m3jf
+  (package
+    (name "r-m3jf")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "M3JF" version))
+              (sha256
+               (base32
+                "0sz02cis8xh11fyng44j6al2fkz6ybcabdgg25bbwb3vidf1y197"))))
+    (properties `((upstream-name . "M3JF")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-snftool r-mass r-intersim r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=M3JF")
+    (synopsis
+     "Multi-Modal Matrix Joint Factorization for Integrative Multi-Omics Data Analysis")
+    (description
+     "Multi modality data matrices are factorized conjointly into the multiplication
+of a shared sub-matrix and multiple modality specific sub-matrices, group sparse
+constraint is applied to the shared sub-matrix to capture the homogeneous and
+heterogeneous information, respectively.  Then the samples are classified by
+clustering the shared sub-matrix with kmeanspp(), a new version of kmeans()
+developed here to obtain concordant results.  The package also provides the
+cluster number estimation by rotation cost.  Moreover, cluster specific features
+could be retrieved using hypergeometric tests.")
+    (license license:gpl3)))
 
 (define-public r-m2smjf
   (package

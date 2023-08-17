@@ -3998,6 +3998,27 @@ solving the entire solution path of a flexible nonparametric expectile
 regression estimator constructed in a reproducing kernel Hilbert space.")
     (license license:gpl2)))
 
+(define-public r-kerdaa
+  (package
+    (name "r-kerdaa")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "kerDAA" version))
+              (sha256
+               (base32
+                "0fq8yc80rb04zidg7lrcvg8qhbbf10c835dsr8249ldpknk9sk6p"))))
+    (properties `((upstream-name . "kerDAA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mvtnorm))
+    (home-page "https://cran.r-project.org/package=kerDAA")
+    (synopsis "New Kernel-Based Test for Differential Association Analysis")
+    (description
+     "This package provides a new practical method to evaluate whether relationships
+between two sets of high-dimensional variables are different or not across two
+conditions.  Song, H. and Wu, M.C. (2023) @code{<arXiv:2307.15268>.}")
+    (license license:gpl2+)))
+
 (define-public r-kerastuner
   (package
     (name "r-kerastuner")

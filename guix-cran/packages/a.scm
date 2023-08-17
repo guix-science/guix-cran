@@ -7975,6 +7975,38 @@ Analysis Ready Samples services @code{(AppEEARS;}
 to analysis ready earth observation data in R.")
     (license license:agpl3)))
 
+(define-public r-apollonius
+  (package
+    (name "r-apollonius")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "Apollonius" version))
+              (sha256
+               (base32
+                "0dnw42bnzl8qk0f6ylmfp0479d68sy89pbpz23z1cq0ndyrddnmx"))))
+    (properties `((upstream-name . "Apollonius")))
+    (build-system r-build-system)
+    (inputs (list mpfr gmp))
+    (propagated-inputs (list r-rcppeigen
+                             r-rcppcgal
+                             r-rcpp
+                             r-randomcolor
+                             r-plotrix
+                             r-gyro
+                             r-bh
+                             r-abind))
+    (native-inputs (list pkg-config))
+    (home-page "https://github.com/stla/Apollonius")
+    (synopsis "2D Apollonius Graphs")
+    (description
+     "Computation of the Apollonius diagram of given 2D points and its dual the
+Apollonius graph, also known as the additively weighted @code{VoronoÃ¯} diagram,
+and which is a generalization of the classical @code{VoronoÃ¯} diagram.  For
+references, see the bibliography in the CGAL documentation at
+<https://doc.cgal.org/latest/Apollonius_graph_2/citelist.html>.")
+    (license license:gpl3)))
+
 (define-public r-apollo
   (package
     (name "r-apollo")
@@ -8216,40 +8248,6 @@ launch_APIShiny(), which perform parentage assignment.")
 inference.  Additionally, supports \"A Progressive Introduction to Linear Models\"
 by Joshua French @code{(<https://jfrench.github.io/LinearRegression/>).}")
     (license license:gpl3)))
-
-(define-public r-aphylo
-  (package
-    (name "r-aphylo")
-    (version "0.3-2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "aphylo" version))
-              (sha256
-               (base32
-                "0w1bg3vb347gimz5v316d44jv30amjxc8lhjz8bl8cxyh5b1rhyl"))))
-    (properties `((upstream-name . "aphylo")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-rcpp
-                             r-matrix
-                             r-mass
-                             r-fmcmc
-                             r-coda
-                             r-ape))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/USCbiostats/aphylo")
-    (synopsis
-     "Statistical Inference and Prediction of Annotations in Phylogenetic Trees")
-    (description
-     "This package implements a parsimonious evolutionary model to analyze and predict
-gene-functional annotations in phylogenetic trees as described in Vega Yon et
-al. (2021) <doi:10.1371/journal.pcbi.1007948>.  With a focus on computational
-efficiency, aphylo makes it possible to estimate pooled phylogenetic models,
-including thousands (hundreds) of annotations (trees) in the same run.  The
-package also provides the tools for visualization of annotated phylogenies,
-calculation of posterior probabilities (prediction,) and goodness-of-fit
-assessment featured in Vega Yon et al. (2021).")
-    (license license:expat)))
 
 (define-public r-aphid
   (package
@@ -12390,37 +12388,6 @@ value you must lower alpha to avoid Lindley's Paradox.  For details, see Wulff
 and Taylor (2023) <doi:10.31234/osf.io/3cbh7>.")
     (license license:expat)))
 
-(define-public r-alphahull3d
-  (package
-    (name "r-alphahull3d")
-    (version "2.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "AlphaHull3D" version))
-              (sha256
-               (base32
-                "1jp4m2yd9z8m4gz5hfa08qm02kalrzy6pbjf3rfcb0xjglk1lngr"))))
-    (properties `((upstream-name . "AlphaHull3D")))
-    (build-system r-build-system)
-    (inputs (list mpfr gmp))
-    (propagated-inputs (list r-rvcg
-                             r-rgl
-                             r-rcppeigen
-                             r-rcppcgal
-                             r-rcpp
-                             r-bh))
-    (native-inputs (list pkg-config))
-    (home-page "https://github.com/stla/AlphaHull3D")
-    (synopsis "Alpha Hull Computation")
-    (description
-     "Computation of the alpha hull of a set of points in the 3D space, that is to say
-\"something like the shape formed by these points\".  The alpha hull depends on a
-positive parameter alpha.  When alpha goes to zero, the alpha hull degenerates
-to the set of points, while it is the convex hull of the set of points when
-alpha goes to infinity.  Computations are performed by the CGAL C++ library
-<https://www.cgal.org/>.")
-    (license license:gpl3)))
-
 (define-public r-alphahull
   (package
     (name "r-alphahull")
@@ -14191,6 +14158,62 @@ those observations) only half of the study follow-up period.  We use them only
 to illustrate methods, not to draw substantive conclusions.")
     (license license:gpl2+)))
 
+(define-public r-aifeducation
+  (package
+    (name "r-aifeducation")
+    (version "0.2.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "aifeducation" version))
+              (sha256
+               (base32
+                "1v2z0mzfag9pfa13dbfcxvkh098vgvz3wji8cws2q9c3dz1xjxqn"))))
+    (properties `((upstream-name . "aifeducation")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-udpipe
+                             r-topicmodels
+                             r-tidytext
+                             r-text2vec
+                             r-stringr
+                             r-smotefamily
+                             r-reticulate
+                             r-reshape2
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-quanteda
+                             r-irrcac
+                             r-irr
+                             r-iotarelr
+                             r-foreach
+                             r-doparallel
+                             r-abind))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=aifeducation")
+    (synopsis "Artificial Intelligence for Education")
+    (description
+     "In social and educational settings, the use of Artificial Intelligence (AI) is a
+challenging task.  Relevant data is often only available in handwritten forms or
+the use of data is restricted by privacy policies, often leading to small data
+sets.  Furthermore, data in the educational and social sciences is often
+unbalanced in terms of frequencies.  To support educators as well as educational
+and social researchers in using the potentials of AI for their work, this
+package provides a unified interface for neural nets in keras and tensorflow to
+deal with natural language problems.  The tools integrate existing mathematical
+and statistical methods for dealing with small data sets via pseudo-labeling
+(e.g. Lee (2013)
+<https://www.researchgate.net/publication/280581078_Pseudo-Label_The_Simple_and_Efficient_Semi-Supervised_Learning_Method_for_Deep_Neural_Networks>,
+Cascante-Bonilla et al. (2020) @code{<doi:10.48550/arXiv.2001.06001>)} and
+imbalanced data via the creation of synthetic cases (e.g. Bunkhumpornpat et al.
+(2012) <doi:10.1007/s10489-011-0287-y>).  Performance evaluation of AI is
+connected to measures from content analysis which educational and social
+researchers are generally more familiar with (e.g. Berding & Pargmann (2022)
+<doi:10.30819/5581>, Gwet (2014) <ISBN:978-0-9708062-8-4>, Krippendorff (2019)
+<doi:10.4135/9781071878781>).  Estimation of energy consumption and CO2
+emissions during training models is done with the python library codecarbon'.
+Finally, all objects created with this package allow to share trained AI with
+other people.")
+    (license license:gpl3)))
+
 (define-public r-aides
   (package
     (name "r-aides")
@@ -15429,13 +15452,13 @@ Bayesian Inference: the aghq Package\" @code{<arXiv:2101.04468>.}")
 (define-public r-aghmatrix
   (package
     (name "r-aghmatrix")
-    (version "2.1.0")
+    (version "2.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "AGHmatrix" version))
               (sha256
                (base32
-                "1cmx1k6lp05prjb50aqhr3gaxg375llcspn97mfskpa8jmbcz321"))))
+                "07939b25y421r1djhazxgmkaib4rh60q8wsvhmhbnhixl5byvdql"))))
     (properties `((upstream-name . "AGHmatrix")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-matrix))

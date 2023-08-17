@@ -2282,13 +2282,13 @@ causality for pairs of phenotypes in system genetics.  Genetics 193 : 1003-1013.
 (define-public r-qtlemm
   (package
     (name "r-qtlemm")
-    (version "1.3.0")
+    (version "1.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "QTLEMM" version))
               (sha256
                (base32
-                "18hfpb7wydaqfwk7kah65294xck62a3kal3fjlzgmmis0ylr6q71"))))
+                "1s0rk0lsn9ci0i8b9lm19v7fs0n9n6zg6hkmacdgdhhkfak0g5bm"))))
     (properties `((upstream-name . "QTLEMM")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm))
@@ -2305,8 +2305,8 @@ mixture model.  The Gaussian stochastic process is implemented to compute the
 significance thresholds for QTL detection onto a genetic linkage map in the
 experimental populations.  Two types of data, the complete genotyping or
 selective genotyping data, from various experimental populations, including
-backcross, F2, recombinant inbred (RI) populations, advanced intercrossed (AI)
-populations, are considered in the QTL mapping analysis.  For QTL hotpot
+backcross, F2, recombinant inbred (RI) populations, and advanced intercrossed
+(AI) populations, are considered in the QTL mapping analysis.  For QTL hotspot
 detection, the statistical methods can be developed based on either using the
 individual-level data or using the summarized data.  We have proposed a
 statistical framework that can handle both the individual-level data and
@@ -2315,7 +2315,7 @@ overcome the underestimation of threshold arising from ignoring the correlation
 structure among traits, and also identify the different types of hotspots with
 very low computational cost during the detection process.  Here, we attempt to
 provide the R codes of our QTL mapping and hotspot detection methods for general
-use in genes, genomics and genetics studies.  The QTL mapping methods for the
+use in genes, genomics, and genetics studies.  The QTL mapping methods for the
 complete and selective genotyping designs are based on the multiple interval
 mapping (MIM) model proposed by Kao, C.-H. , Z.-B. Zeng and R. D. Teasdale
 (1999) <doi: 10.1534/genetics.103.021642> and H.-I Lee, H.-A. Ho and C.-H. Kao
@@ -5234,32 +5234,6 @@ longitudinal data (QBLD) developed in Rahman and Vossmeyer (2019)
 effects and implements both a blocked and an unblocked Gibbs sampler for
 posterior inference.")
     (license license:gpl3)))
-
-(define-public r-qat
-  (package
-    (name "r-qat")
-    (version "0.74")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qat" version))
-              (sha256
-               (base32
-                "04n1jnbkf9dzafjh1n5d4q9p7hvyhnr63nmgl51jqxcf3nan5rlx"))))
-    (properties `((upstream-name . "qat")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml
-                             r-ncdf4
-                             r-moments
-                             r-gplots
-                             r-gdata
-                             r-fields
-                             r-boot))
-    (home-page "http://www.aduesterhus.net/qat")
-    (synopsis "Quality Assurance Toolkit")
-    (description
-     "This package provides functions for a scientific quality assurance of
-meteorological data.")
-    (license license:gpl2)))
 
 (define-public r-qardl
   (package
