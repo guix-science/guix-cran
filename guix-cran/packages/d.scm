@@ -6798,6 +6798,33 @@ Conklin, M. (2001) <doi:10.1002/asmb.446>) based on the values returned from
 other functions.")
     (license license:gpl3+)))
 
+(define-public r-dominodatar
+  (package
+    (name "r-dominodatar")
+    (version "0.2.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "DominoDataR" version))
+              (sha256
+               (base32
+                "1awiy32sm0n2v1z48v4agqm89jnkgqazbjh9zixmj7yd0db78a9v"))))
+    (properties `((upstream-name . "DominoDataR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-reticulate r-httr r-configparser r-arrow))
+    (home-page "https://github.com/dominodatalab/DominoDataR")
+    (synopsis "'Domino Data R SDK'")
+    (description
+     "This package provides a wrapper on top of the Domino Data Python SDK library.
+It lets you query and access Domino Data Sources directly from your R
+environment.  Under the hood, Domino Data R SDK leverages the API provided by
+the Domino Data Python SDK', which must be installed as a prerequisite.  Domino
+is a platform that makes it easy to run your code on scalable hardware, with
+integrated version control and collaboration features designed for analytical
+workflows.  See
+<https://docs.dominodatalab.com/en/latest/api_guide/140b48/domino-data-api> for
+more information.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-domino
   (package
     (name "r-domino")
@@ -18495,13 +18522,13 @@ and Khan and Akbar (2021) <doi:10.4236/ojs.2021.112018 >.")
 (define-public r-deet
   (package
     (name "r-deet")
-    (version "1.0.10")
+    (version "1.0.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DEET" version))
               (sha256
                (base32
-                "06i8grq4zkh8qcw6q4vvnxnlvm4ya6rclyaaw5xn1h833p5218xs"))))
+                "1jb7mp84h6s26abn3ra0pjqra5ha1m4j4yvfvdi074wvd2zzkns5"))))
     (properties `((upstream-name . "DEET")))
     (build-system r-build-system)
     (propagated-inputs (list r-pbapply
@@ -18532,8 +18559,8 @@ recomputed DEG lists share similar genes, pathways, and TF targets to their own
 gene lists.  DEET identifies relevant studies based on shared results with the
 userâs gene lists, aiding in hypothesis generation and data-driven literature
 review.  Sokolowski, Dustin J., et al. \"Differential Expression Enrichment Tool
-(DEET): an interactive atlas of human differential gene expression.\"
-@code{bioRxiv} (2022).")
+(DEET): an interactive atlas of human differential gene expression.\" Nucleic
+Acids Research Genomics and Bioinformatics (2023).")
     (license license:gpl3)))
 
 (define-public r-deeptrafo
@@ -24271,6 +24298,42 @@ set of components, written and maintained by the Dash team, is available in the
 using the shinydashboard package.  Removes the need to change the underlying css
 code by wrapping it into a set of convenient R functions.")
     (license license:expat)))
+
+(define-public r-dartr-spatial
+  (package
+    (name "r-dartr-spatial")
+    (version "0.76")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "dartR.spatial" version))
+              (sha256
+               (base32
+                "0m65y04h9lljpv4g5y0vnzd70pqmzdw538qb7kwksv41lkxlqnvf"))))
+    (properties `((upstream-name . "dartR.spatial")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vegan
+                             r-tidyr
+                             r-stampp
+                             r-sp
+                             r-raster
+                             r-mass
+                             r-ggplot2
+                             r-data-table
+                             r-dartr-data
+                             r-dartr-base
+                             r-crayon
+                             r-adegenet))
+    (home-page "https://green-striped-gecko.github.io/dartR/")
+    (synopsis
+     "Applying Landscape Genomic Methods on 'SNP' and 'Silicodart' Data")
+    (description
+     "This package provides landscape genomic functions to analyse SNP (single nuclear
+polymorphism) data, such as least cost path analysis and isolation by distance.
+Therefore each sample needs to have coordinate data attached (lat/lon) to be
+able to run most of the functions. @code{dartR.spatial} is a package that
+belongs to the @code{dartRverse} suit of packages and depends on
+@code{dartR.base} and @code{dartR.data'.}")
+    (license license:gpl3+)))
 
 (define-public r-dartr-data
   (package

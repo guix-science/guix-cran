@@ -4189,6 +4189,40 @@ Falconer and Mackay (1996, ISBN:0582243025) and Bernardo (2010,
 ISBN:978-0972072427).")
     (license license:expat)))
 
+(define-public r-qgisprocess
+  (package
+    (name "r-qgisprocess")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "qgisprocess" version))
+              (sha256
+               (base32
+                "075fanz6s4qfinx1yc503xl9viap639ricp9mdm314hq2d94lfjr"))))
+    (properties `((upstream-name . "qgisprocess")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-withr
+                             r-vctrs
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-rappdirs
+                             r-processx
+                             r-jsonlite
+                             r-glue
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://r-spatial.github.io/qgisprocess/")
+    (synopsis "Use 'QGIS' Processing Algorithms")
+    (description
+     "This package provides seamless access to the QGIS (<https://qgis.org/en/site/>)
+processing toolbox using the standalone qgis_process command-line utility.  Both
+native and third-party (plugin) processing providers are supported.  Beside
+referring data sources from file, also common objects from sf', terra and stars
+are supported.  The native processing algorithms are documented by QGIS.org
+(2023) <https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/>.")
+    (license license:gpl3+)))
+
 (define-public r-qgglmm
   (package
     (name "r-qgglmm")

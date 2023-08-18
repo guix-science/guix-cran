@@ -13827,6 +13827,36 @@ see <https://power.larc.nasa.gov/>.")
 and the Earth Observatory Natural Event Tracker (EONET) webservice.")
     (license license:cc0)))
 
+(define-public r-naryn
+  (package
+    (name "r-naryn")
+    (version "2.6.23")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "naryn" version))
+              (sha256
+               (base32
+                "0b0dgpamm86llk7vxazgzfdby2y7ks95msq3046b2kp524nihmqb"))))
+    (properties `((upstream-name . "naryn")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yaml
+                             r-tidyr
+                             r-stringr
+                             r-purrr
+                             r-magrittr
+                             r-lifecycle
+                             r-glue
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://tanaylab.github.io/naryn/")
+    (synopsis
+     "Native Access Medical Record Retriever for High Yield Analytics")
+    (description
+     "This package provides a toolkit for medical records data analysis.  The naryn
+package implements an efficient data structure for storing medical records, and
+provides a set of functions for data extraction, manipulation and analysis.")
+    (license license:expat)))
+
 (define-public r-narray
   (package
     (name "r-narray")

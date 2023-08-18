@@ -8919,13 +8919,13 @@ statistic and Jackknife, etc.")
 (define-public r-tp-idm
   (package
     (name "r-tp-idm")
-    (version "1.5")
+    (version "1.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TP.idm" version))
               (sha256
                (base32
-                "07rxn0mpar3p6blg8fd3kbvdngyz9h9n0r0lcljnfdajfzbysv7h"))))
+                "0w8sgzm5bmv9m16dryxpw51q000mfmbipxqnhb26bkzr6y46bd79"))))
     (properties `((upstream-name . "TP.idm")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=TP.idm")
@@ -10274,13 +10274,13 @@ annotate the texts.")
 (define-public r-tok
   (package
     (name "r-tok")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tok" version))
               (sha256
                (base32
-                "0c6zgaf78sibg46vdxgdyyxk9fijpmvwa3481kzph4dmxsfxlpw2"))))
+                "1rbn5b6gc5qx8d8rggxbvcs2phrdxj9r72sl6l75vpn4hh4ffpi6"))))
     (properties `((upstream-name . "tok")))
     (build-system r-build-system)
     (inputs (list))
@@ -12937,13 +12937,13 @@ cross-platform C++ library with APIs from several languages, and integrations.")
 (define-public r-tikzdevice
   (package
     (name "r-tikzdevice")
-    (version "0.12.4")
+    (version "0.12.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tikzDevice" version))
               (sha256
                (base32
-                "1x9nns15g2f6062grdvzy8sfj460xvsqyiyr3ylc0z425s0jj85c"))))
+                "1v2swv6xs8vijwkqd5cjc3s4hyigj7qa31h31wmnrd5yplshq1kx"))))
     (properties `((upstream-name . "tikzDevice")))
     (build-system r-build-system)
     (inputs (list))
@@ -17598,13 +17598,13 @@ feature space consisting of all possible phrases.")
 (define-public r-textrecipes
   (package
     (name "r-textrecipes")
-    (version "1.0.3")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "textrecipes" version))
               (sha256
                (base32
-                "0b771d8qbd70mz854n0d6s7wn8jplczk0dziyz1q3fzjcnkz1cv3"))))
+                "1bv3wsp5653apga3i43nh28pg72aa6c5jbl74vnig8fyikxflm4q"))))
     (properties `((upstream-name . "textrecipes")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs

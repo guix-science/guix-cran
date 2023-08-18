@@ -722,6 +722,39 @@ version 2.0 (see Fick, S.E. and Hijmans, R.J. (2017) <doi:10.1002/joc.5086>) and
 <doi:10.1038/s41597-020-00726-5>.")
     (license license:expat)))
 
+(define-public r-itscalledsoccer
+  (package
+    (name "r-itscalledsoccer")
+    (version "0.2.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "itscalledsoccer" version))
+              (sha256
+               (base32
+                "0ykkp75r5irkcdhk0p2ymhsyw2ns08ni5ifzydqq4gjdmjba8rkj"))))
+    (properties `((upstream-name . "itscalledsoccer")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringi
+                             r-rlang
+                             r-r6
+                             r-magrittr
+                             r-jsonlite
+                             r-httr
+                             r-httpcache
+                             r-glue
+                             r-dplyr
+                             r-data-table
+                             r-crayon
+                             r-clisymbols))
+    (home-page "https://github.com/American-Soccer-Analysis/itscalledsoccer-r")
+    (synopsis "American Soccer Analysis API Client")
+    (description
+     "This package provides a wrapper around the same API
+<https://app.americansocceranalysis.com/api/v1/__docs__/> that powers the
+American Soccer Analysis app.")
+    (license license:expat)))
+
 (define-public r-its-analysis
   (package
     (name "r-its-analysis")
@@ -2096,13 +2129,13 @@ online at <https://jali.shinyapps.io/isocor>.")
 (define-public r-isocir
   (package
     (name "r-isocir")
-    (version "2.0-7")
+    (version "2.0-7.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "isocir" version))
               (sha256
                (base32
-                "09cy79zxxj96a3q0izm83yrsmfxkpnqg7w1mcibfglgjg83a8lz3"))))
+                "0jgm0a26frq4fs5d578c44bpn15nshvzmrqfzcbwydf58x7w6sj2"))))
     (properties `((upstream-name . "isocir")))
     (build-system r-build-system)
     (propagated-inputs (list r-tsp r-combinat r-circular))
@@ -3088,13 +3121,13 @@ Interface.")
 (define-public r-irtest
   (package
     (name "r-irtest")
-    (version "1.0.0")
+    (version "1.7.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IRTest" version))
               (sha256
                (base32
-                "1w9d5pfzrp6xvfr5453kk0b6lif93virdc26wqlh8fhvrlyjwp1p"))))
+                "1y3x0jjs16sdm362wyq02yb3g297lj3mmj60p507rwka2icimh14"))))
     (properties `((upstream-name . "IRTest")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2 r-dcurver r-betafunctions))
@@ -5585,13 +5618,13 @@ non-character inputs such as numeric vectors and data frames are supported.")
 (define-public r-inventorymodel
   (package
     (name "r-inventorymodel")
-    (version "1.1.0")
+    (version "1.1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Inventorymodel" version))
               (sha256
                (base32
-                "1l87xghdksgmb2k3a8j382p7ffi2pma38a6pn31sfjsa6bgmrdnk"))))
+                "0x36pkr2f038cwdfqi03pljhg6xwhp7v97ymyqddb5lw5a0isw87"))))
     (properties `((upstream-name . "Inventorymodel")))
     (build-system r-build-system)
     (propagated-inputs (list r-gametheoryallocation r-e1071))
@@ -5795,25 +5828,26 @@ models proposed by Asano and Hirakawa (2017)
 (define-public r-intsdm
   (package
     (name "r-intsdm")
-    (version "1.0.5")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "intSDM" version))
               (sha256
                (base32
-                "098cq4sav84kckgdl8i9szkygnmiqbch4qfs90686wjkva5nk6my"))))
+                "1w7rsfbq1x32r961szqlap25wbxgvp9b8w56sfz0p8x90z1qkk89"))))
     (properties `((upstream-name . "intSDM")))
     (build-system r-build-system)
-    (propagated-inputs (list r-terra
-                             r-spocc
-                             r-sp
-                             r-raster
+    (propagated-inputs (list r-tidyterra
+                             r-terra
+                             r-sf
+                             r-rgbif
+                             r-r6
                              r-pointedsdms
-                             r-maps
                              r-inlabru
+                             r-giscor
                              r-ggplot2
                              r-geodata
-                             r-dplyr))
+                             r-blockcv))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=intSDM")
     (synopsis
@@ -16313,13 +16347,13 @@ management.")
 (define-public r-ibdsim2
   (package
     (name "r-ibdsim2")
-    (version "1.5.0")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ibdsim2" version))
               (sha256
                (base32
-                "1qbgk77cszf7hzsvxv2yqz07rzdh4vksxglx3wrzn5v18fm01c2q"))))
+                "0s0mnyhd0xcrr75qhqwgyipn22hlbgjf9nfi7gxbmwns16g3crb8"))))
     (properties `((upstream-name . "ibdsim2")))
     (build-system r-build-system)
     (propagated-inputs (list r-ribd r-rcpp r-pedtools r-glue r-ggplot2))

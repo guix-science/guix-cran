@@ -3308,6 +3308,30 @@ experiments and calculation of goal-finding strategies.  This package is
 centered on an approach using machine learning for path classification.")
     (license license:gpl3)))
 
+(define-public r-rtpc
+  (package
+    (name "r-rtpc")
+    (version "1.0.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rTPC" version))
+              (sha256
+               (base32
+                "17ycj1cf7azlxi3mn8lpwji194c3awbhky7l03v4yj1wim0r0mss"))))
+    (properties `((upstream-name . "rTPC")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/padpadpadpad/rTPC")
+    (synopsis "Fitting and Analysing Thermal Performance Curves")
+    (description
+     "Helps to fit thermal performance curves (TPCs). @code{rTPC} contains 26 model
+formulations previously used to fit TPCs and has helper functions to set
+sensible start parameters, upper and lower parameter limits and estimate
+parameters useful in downstream analyses, such as cardinal temperatures, maximum
+rate and optimum temperature.  See Padfield et al. (2021)
+<doi:10.1111/2041-210X.13585>.")
+    (license license:gpl3)))
+
 (define-public r-rtorch
   (package
     (name "r-rtorch")
@@ -16865,16 +16889,20 @@ panels.  The full documentation and tutorials are at
 (define-public r-rmss
   (package
     (name "r-rmss")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RMSS" version))
               (sha256
                (base32
-                "19ggr1s2mpaha3r7sd2dp1mnw94g9nwqwzsxzy11q8cpfyb3c02w"))))
+                "0wxvnyv5ycr7gsd2jg73x6115ii6r6swq4kz3hljnr636b4kjajk"))))
     (properties `((upstream-name . "RMSS")))
     (build-system r-build-system)
-    (propagated-inputs (list r-robstepsplitreg r-rcpparmadillo r-rcpp
+    (propagated-inputs (list r-srlars
+                             r-robustbase
+                             r-robstepsplitreg
+                             r-rcpparmadillo
+                             r-rcpp
                              r-cellwise))
     (home-page "https://cran.r-project.org/package=RMSS")
     (synopsis "Robust Multi-Model Subset Selection")
@@ -24074,13 +24102,13 @@ armadillo through a header file approach.")
 (define-public r-rgeedim
   (package
     (name "r-rgeedim")
-    (version "0.2.4")
+    (version "0.2.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rgeedim" version))
               (sha256
                (base32
-                "0ln2m3hakklj7sg1g73fv3jpfxr5jwkxn330padwqyxi9ci24nlg"))))
+                "0agi04bz9rbl2pwrrn0wgb359198sg3ia87rnarb4ckrrnj2n5gs"))))
     (properties `((upstream-name . "rgeedim")))
     (build-system r-build-system)
     (inputs (list python))
@@ -42085,6 +42113,32 @@ Internally, the package plots each individual page as a PNG, and then combines
 them in one PDF file.")
     (license license:expat)))
 
+(define-public r-rasterlist
+  (package
+    (name "r-rasterlist")
+    (version "0.5.20")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rasterList" version))
+              (sha256
+               (base32
+                "09w91kjya5bmdi1z6i5m82yaihnzxqh9b3cyadfzd1c68bpsplii"))))
+    (properties `((upstream-name . "rasterList")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-raster))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ecor/rasterList")
+    (synopsis "Raster Where Cells are Generic Objects")
+    (description
+     "This package provides a S4 class has been created such that complex operations
+can be executed on each cell of a raster map.  The raster of objects contains a
+raster map with the addition of a list of generic objects: one object for each
+raster cells.  It allows to write few lines of R code for complex map algebra.
+Two environmental applications about frequency analysis of raster map of
+precipitation and creation of a raster map of soil water retention curves have
+been presented.")
+    (license license:gpl3+)))
+
 (define-public r-rasterkernelestimates
   (package
     (name "r-rasterkernelestimates")
@@ -43132,30 +43186,23 @@ Society), 177, 191-208. <DOI:10.1111/rssa.12009>.")
 (define-public r-rankrate
   (package
     (name "r-rankrate")
-    (version "1.0.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rankrate" version))
               (sha256
                (base32
-                "0i4sf9hhyxry07bc31c1ww7hqig1r2vgkds34q5csq7g3mic3shf"))))
+                "14262gwyr9n9vwj0njb9piw0algmfr2y6sswarsafvmficagbfhm"))))
     (properties `((upstream-name . "rankrate")))
     (build-system r-build-system)
-    (propagated-inputs (list r-nloptr r-lpsolve r-gtools))
-    (home-page "https://cran.r-project.org/package=rankrate")
+    (propagated-inputs (list r-isotone r-gtools))
+    (native-inputs (list r-knitr))
+    (home-page "https://pearce790.github.io/rankrate/")
     (synopsis
-     "Statistical Tools for Preference Learning with Rankings and Ratings")
+     "Joint Statistical Models for Preference Learning with Rankings and Ratings")
     (description
-     "An implementation of the statistical methodology proposed by Pearce and
-Erosheva, \"A Unified Statistical Learning Model for Rankings and Scores with
-Application to Grant Panel Review\" (2022), which at time of release has been
-accepted in the Journal of Machine Learning Research.  The package provides
-tools for estimating parameters of a Mallows-Binomial model, the first joint
-statistical preference learning model for rankings and ratings.  The package
-includes functions for simulating rankings and ratings from the model,
-calculating the density of Mallows-Binomial data, estimating parameters using
-various exact and approximate algorithms, and for obtaining approximate
-confidence intervals based on the nonparametric bootstrap.")
+     "Statistical tools for the Mallows-Binomial model, the first joint statistical
+model for preference learning for rankings and ratings.")
     (license license:gpl3)))
 
 (define-public r-rankinplot

@@ -1727,6 +1727,47 @@ history using conventional commit messages
 (<https://www.conventionalcommits.org/en/v1.0.0/>).")
     (license license:gpl3)))
 
+(define-public r-automrp
+  (package
+    (name "r-automrp")
+    (version "1.0.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "autoMrP" version))
+              (sha256
+               (base32
+                "0fb2qsz4ibx2m21hsak87jmgrngal23y1yr4phs66vkn037pvkim"))))
+    (properties `((upstream-name . "autoMrP")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-purrr
+                             r-lme4
+                             r-knitr
+                             r-glmmlasso
+                             r-ggplot2
+                             r-gbm
+                             r-foreach
+                             r-forcats
+                             r-ebmaforecast
+                             r-e1071
+                             r-dplyr
+                             r-dorng
+                             r-doparallel))
+    (native-inputs (list r-r-rsp))
+    (home-page "https://github.com/retowuest/autoMrP")
+    (synopsis "Improving MrP with Ensemble Learning")
+    (description
+     "This package provides a tool that improves the prediction performance of
+multilevel regression with post-stratification @code{(MrP)} by combining a
+number of machine learning methods.  For information on the method, please refer
+to Broniecki, WÃ¼est, Leemann (2020) Improving Multilevel Regression with
+Post-Stratification Through Machine Learning @code{(autoMrP)} forthcoming in
+Journal of Politics'.  Final pre-print version:
+<https://lucasleemann.files.wordpress.com/2020/07/automrp-r2pa.pdf>.")
+    (license license:gpl3)))
+
 (define-public r-automl
   (package
     (name "r-automl")
@@ -7079,13 +7120,13 @@ diagnostic through local influence for three possible perturbation schemes.")
 (define-public r-arc
   (package
     (name "r-arc")
-    (version "1.3")
+    (version "1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "arc" version))
               (sha256
                (base32
-                "0isfa7d26jpj004lf4f06krbfa68zyzrh5431xa63k2dykvg8c5j"))))
+                "0wlp6c2mbsa5fygc4iy0ixgqz49zzcz2mr66sapy1nm0wri1dvdr"))))
     (properties `((upstream-name . "arc")))
     (build-system r-build-system)
     (propagated-inputs (list r-r-utils r-matrix r-discretization r-arules))
@@ -7093,16 +7134,14 @@ diagnostic through local influence for three possible perturbation schemes.")
     (synopsis "Association Rule Classification")
     (description
      "This package implements the Classification-based on Association Rules (CBA)
-(Bing Liu, Wynne Hsu,	Yiming Ma (1999)
-<https://dl.acm.org/doi/10.5555/3000292.3000305>) algorithm for association rule
-classification (ARC).  The package also contains several convenience methods
-that allow to automatically set CBA parameters (minimum confidence, minimum
-support) and it also natively handles numeric attributes by integrating a
-pre-discretization step.  The rule generation phase is handled by the arules
+algorithm for association rule classification.  The package, also described in
+Hahsler et al. (2019) <doi:10.32614/RJ-2019-048>, contains several convenience
+methods that allow to automatically set CBA parameters (minimum confidence,
+minimum support) and it also natively handles numeric attributes by integrating
+a pre-discretization step.  The rule generation phase is handled by the arules
 package.  To further decrease the size of the CBA models produced by the arc
-package, postprocessing by the @code{qCBA} package is suggested.  QCBA package
-can be obtained from CRAN archive or from <https://github.com/kliegr/QCBA>.")
-    (license license:agpl3)))
+package, postprocessing by the @code{qCBA} package is suggested.")
+    (license license:gpl3)))
 
 (define-public r-ararredux
   (package

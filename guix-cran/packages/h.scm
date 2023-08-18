@@ -4367,13 +4367,13 @@ the package to build on previous lab members code.")
 (define-public r-hockeystick
   (package
     (name "r-hockeystick")
-    (version "0.7.3")
+    (version "0.8.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hockeystick" version))
               (sha256
                (base32
-                "0yzkrhz2nl3jdrj3dy5clhhm0pjxdqil59dwpq49cl46yq8b6lrb"))))
+                "1p7c16zj8jwsl0pn44dl97vbax1qadpn3vy5rlnr1rgw7bxk9166"))))
     (properties `((upstream-name . "hockeystick")))
     (build-system r-build-system)
     (propagated-inputs (list r-treemapify
@@ -4385,6 +4385,7 @@ the package to build on previous lab members code.")
                              r-rcolorbrewer
                              r-patchwork
                              r-lubridate
+                             r-jsonlite
                              r-ggplot2
                              r-dplyr))
     (home-page "https://cortinah.github.io/hockeystick/")
@@ -4405,8 +4406,7 @@ NOAA Laboratory for Satellite Altimetry
 @code{<https://www.star.nesdis.noaa.gov/socd/lsa/SeaLevelRise/>} and HURDAT
 Atlantic Hurricane Database
 <https://www.aoml.noaa.gov/hrd/hurdat/Data_Storm.html>, Vostok Paleo carbon
-dioxide and temperature data:
-<https://cdiac.ess-dive.lbl.gov/trends/co2/vostok.html>.")
+dioxide and temperature data: <doi:10.3334/CDIAC/ATG.009>.")
     (license license:expat)))
 
 (define-public r-hoasso
@@ -8128,6 +8128,35 @@ Zhang Q. and Ma S. (2021).  Gaussian Graphical Model-based Heterogeneity
 Analysis via Penalized Fusion.  Biometrics, <doi:10.1111/biom.13426>.")
     (license license:gpl3)))
 
+(define-public r-heterogen
+  (package
+    (name "r-heterogen")
+    (version "1.2.33")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "heterogen" version))
+              (sha256
+               (base32
+                "17287n38km02ldwddldw9zh8f8w18f9vi7dcg52a17r9r7v0mshv"))))
+    (properties `((upstream-name . "heterogen")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra
+                             r-scales
+                             r-rio
+                             r-rcppeigen
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-future))
+    (home-page "https://github.com/patauchi/heterogen")
+    (synopsis "Spatial Functions for Heterogeneity and Climate Variability")
+    (description
+     "This package provides a comprehensive suite of spatial functions created to
+analyze and assess data heterogeneity and climate variability in spatial
+datasets.  This package is specifically designed to address the challenges
+associated with characterizing and understanding complex spatial patterns in
+environmental and climate-related data.")
+    (license license:gpl3+)))
+
 (define-public r-heterfunctionaldata
   (package
     (name "r-heterfunctionaldata")
@@ -10331,13 +10360,13 @@ continuous shrinkage priors on the effects.")
 (define-public r-hdbinseg
   (package
     (name "r-hdbinseg")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hdbinseg" version))
               (sha256
                (base32
-                "0fy9cqrygsnxkb3nxg56md19svrvkbijpxkqfk9p18cj5ibwrq94"))))
+                "0q5lfczymrd4ln04lbdysncx6ylcsgrk69mhvm7jjk7pybrpm9wq"))))
     (properties `((upstream-name . "hdbinseg")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-iterators r-foreach
@@ -10642,13 +10671,13 @@ Nine-dotted line, South Tibet, Hong Kong, Macao and Taiwan.")
 (define-public r-hce
   (package
     (name "r-hce")
-    (version "0.5.0")
+    (version "0.5.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hce" version))
               (sha256
                (base32
-                "0fw2g4014g69mmy7zqhll41d9s5brklmjx1c2hzkdili86xzhfky"))))
+                "15a7hbra5ian5bs60x675qsf2qgvaxl04nn5m6np11iswkb31dm1"))))
     (properties `((upstream-name . "hce")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

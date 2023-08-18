@@ -1182,6 +1182,40 @@ nonfatal event, and sample size calculation for standard win ratio test (Mao et
 al., 2021 <doi:10.1111/biom.13501>).")
     (license license:gpl2+)))
 
+(define-public r-wqtrends
+  (package
+    (name "r-wqtrends")
+    (version "1.4.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "wqtrends" version))
+              (sha256
+               (base32
+                "0zj9p24s4dwvyryzfgcjhfrp5dw4wyy6zzcsrhiqvbbjx9y631my"))))
+    (properties `((upstream-name . "wqtrends")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-viridislite
+                             r-tidyr
+                             r-tibble
+                             r-purrr
+                             r-plotly
+                             r-mixmeta
+                             r-mgcv
+                             r-lubridate
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=wqtrends")
+    (synopsis "Assess Water Quality Trends with Generalized Additive Models")
+    (description
+     "Assess Water Quality Trends for Long-Term Monitoring Data in Estuaries using
+Generalized Additive Models following Wood (2017) <doi:10.1201/9781315370279>
+and Error Propagation with Mixed-Effects Meta-Analysis following Sera et al.
+(2019) <doi:10.1002/sim.8362>.  Methods are available for model fitting,
+assessment of fit, annual and seasonal trend tests, and visualization of
+results.")
+    (license license:cc0)))
+
 (define-public r-wqspt
   (package
     (name "r-wqspt")

@@ -7481,6 +7481,30 @@ Liess et al. (2019) <doi:10.1038/s41598-019-51645-4> and Liess et al. (2020)
 <doi:10.1186/s12302-020-00394-7>.")
     (license license:gpl3)))
 
+(define-public r-streg
+  (package
+    (name "r-streg")
+    (version "1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "StReg" version))
+              (sha256
+               (base32
+                "0cwrizyk4l82alfwijpljwhcjhgcimrf1vv8wsz7azwwiqzb0cns"))))
+    (properties `((upstream-name . "StReg")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tseries r-numderiv r-mcmcpack r-matlab
+                             r-adgoftest))
+    (home-page "https://cran.r-project.org/package=StReg")
+    (synopsis "Student's t Regression Models")
+    (description
+     "It contains functions to estimate multivariate Student's t dynamic and static
+regression models for given degrees of freedom and lag length.  Users can also
+specify the trends and dummies of any kind in matrix form.  Poudyal, N., and
+Spanos, A. (2022) <doi:10.3390/econometrics10020017>.  Spanos, A. (1994)
+<http://www.jstor.org/stable/3532870>.")
+    (license license:gpl2)))
+
 (define-public r-streammoa
   (package
     (name "r-streammoa")
@@ -12078,6 +12102,39 @@ codelists are updated regularly according to the standard.  The authoritative
 version of the code lists made available in this package is
 <https://sdmx.org/?page_id=3215/>.")
     (license license:cc0)))
+
+(define-public r-statcanr
+  (package
+    (name "r-statcanr")
+    (version "0.2.6")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "statcanR" version))
+              (sha256
+               (base32
+                "1hnf3zjlpfp86lii9sz8m2dvzbj9bs320ffdr81q2jsla71xybaa"))))
+    (properties `((upstream-name . "statcanR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-reshape2
+                             r-readr
+                             r-qs
+                             r-qpdf
+                             r-httr
+                             r-ggplot2
+                             r-dt
+                             r-dplyr
+                             r-data-table
+                             r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/warint/statcanR/")
+    (synopsis "Client for Statistics Canada's Open Economic Data")
+    (description
+     "An easy connection with R to Statistics Canada's Web Data Service.  Open
+economic data (formerly known as CANSIM tables, now identified by Product IDs
+(PID)) are accessible as a data frame, directly in the user's R environment.
+Warin, Le Duc (2019) <doi:10.6084/m9.figshare.10544735>.")
+    (license license:expat)))
 
 (define-public r-statbasics
   (package
@@ -19542,6 +19599,32 @@ missing from the originating packages.  Some latitude-based tools for polar maps
 are included.")
     (license license:gpl3)))
 
+(define-public r-spev
+  (package
+    (name "r-spev")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "SPEV" version))
+              (sha256
+               (base32
+                "0gvbxmc0y8x2wf2lfgncwjhqy8gp8lk3mwmbcbhj8by0krglwipb"))))
+    (properties `((upstream-name . "SPEV")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=SPEV")
+    (synopsis "Unsmoothed and Smoothed Penalized PCA using Nesterov Smoothing")
+    (description
+     "We provide functionality to implement penalized PCA with an option to smooth the
+objective function using Nesterov smoothing.  Two functions are available to
+compute a user-specified number of eigenvectors.  The function
+unsmoothed_penalized_EV() computes a penalized PCA without smoothing and has
+three parameters (the input matrix, the Lasso penalty, and the number of desired
+eigenvectors).  The function smoothed_penalized_EV() computes a smoothed
+penalized PCA using the same parameters and additionally requires the
+specification of a smoothing parameter.  Both functions return a matrix having
+the desired eigenvectors as columns.")
+    (license license:gpl2+)))
+
 (define-public r-spetestnp
   (package
     (name "r-spetestnp")
@@ -20625,6 +20708,33 @@ via, say, spdl::debug() at the debug level.  The actual formatting is done by
 the fmt::format() function from the fmtlib library (that is also std::format()
 in C++20 or later).")
     (license license:gpl2+)))
+
+(define-public r-spdesign
+  (package
+    (name "r-spdesign")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "spdesign" version))
+              (sha256
+               (base32
+                "1h7wrzjcvqn8iynxfh3kz5ji73wfjdlmahkzmz99lq2s944pf8zp"))))
+    (properties `((upstream-name . "spdesign")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr r-randtoolbox r-matrixstats r-future
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://spdesign.edsandorf.me")
+    (synopsis "Designing Stated Preference Experiments")
+    (description
+     "Contemporary software commonly used to design stated preference experiments are
+expensive and the code is closed source.  This is a free software package with
+an easy to use interface to make flexible stated preference experimental designs
+using state-of-the-art methods.  For an overview of stated choice experimental
+design theory, see e.g., Rose, J. M. & Bliemer, M. C. J. (2014) in Hess S. &
+Daly.  A. <doi:10.4337/9781781003152>.  The package website can be accessed at
+<https://spdesign.edsandorf.me>.")
+    (license license:cc-by-sa4.0)))
 
 (define-public r-spdates
   (package
@@ -29857,6 +29967,58 @@ methodology is described in Langsrud and Heldal (2018)
 ratio of kernel densities, the difference in K Functions, the spatial scan
 statistic, and q nearest neighbors of cases.")
     (license license:gpl2+)))
+
+(define-public r-smacofx
+  (package
+    (name "r-smacofx")
+    (version "0.6-6")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "smacofx" version))
+              (sha256
+               (base32
+                "0i4v3qbizqniaf92nv2q2860k454hwnhqb789p0nkkcyh9wgyrc9"))))
+    (properties `((upstream-name . "smacofx")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-weights
+                             r-vegan
+                             r-smacof
+                             r-projectionbasedclustering
+                             r-plotrix
+                             r-minqa
+                             r-mass))
+    (home-page "https://r-forge.r-project.org/projects/stops/")
+    (synopsis "Flexible Multidimensional Scaling and 'smacof' Extensions")
+    (description
+     "Flexible multidimensional scaling (MDS) methods centered around scaling with
+majorization and extensions to the package smacof'.  This package enhances
+smacof and contains various functions, wrappers, methods and classes for
+fitting, plotting and displaying a large number of different flexible MDS models
+(some as of yet unpublished) such as Torgerson scaling (Torgerson, 1958,
+ISBN:978-0471879459) with powers, Sammon mapping (Sammon, 1969,
+<doi:10.1109/T-C.1969.222678>) with ratio and interval optimal scaling,
+Multiscale MDS (Ramsay, 1977, <doi:10.1007/BF02294052>) with ratio and interval
+optimal scaling, S-stress MDS (ALSCAL; Takane, Young & De Leeuw, 1977,
+<doi:10.1007/BF02293745>) with ratio and interval optimal scaling, elastic
+scaling @code{(McGee,} 1966, <doi:10.1111/j.2044-8317.1966.tb00367.x>) with
+ratio and interval optimal scaling, r-stress MDS (De Leeuw, Groenen & Mair,
+2016, <https://rpubs.com/deleeuw/142619>) with ratio, interval and non-metric
+optimal scaling, power-stress MDS (POST-MDS; Buja & Swayne, 2002
+<doi:10.1007/s00357-001-0031-0>) with ratio and interval optimal scaling,
+restricted power-stress (Rusch, Mair & Hornik, 2021,
+<doi:10.1080/10618600.2020.1869027>) with ratio and interval optimal scaling,
+approximate power-stress with ratio optimal scaling (Rusch, Mair & Hornik, 2021,
+<doi:10.1080/10618600.2020.1869027>), Box-Cox MDS (Chen & Buja, 2013,
+<https://jmlr.org/papers/v14/chen13a.html>), local MDS (Chen & Buja, 2009,
+<doi:10.1198/jasa.2009.0111>), curvilinear component analysis (Demartines &
+Herault, 1997, <doi:10.1109/72.554199>) and curvilinear distance analysis (Lee,
+Lendasse & Verleysen, 2004, <doi:10.1016/j.neucom.2004.01.007>).  There also are
+experimental models (e.g., sparsified MDS and sparsified POST-MDS).  Some
+functions are suitably flexible to allow any other sensible combination of
+explicit power transformations for weights, distances and input proximities with
+implicit ratio, interval or non-metric optimal scaling of the input proximities.
+ Most functions use a Majorization-Minimization algorithm.")
+    (license (list license:gpl2 license:gpl3))))
 
 (define-public r-smacof
   (package
@@ -40625,6 +40787,29 @@ by the port.  You can stop the application by leaving the terminal opened by the
 shortcut.")
     (license license:gpl2)))
 
+(define-public r-shiny-emptystate
+  (package
+    (name "r-shiny-emptystate")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "shiny.emptystate" version))
+              (sha256
+               (base32
+                "07vw8dw6yv3gqp400h2b1x2nv2v3hzgfgmhb8fxxdicbx08vxv47"))))
+    (properties `((upstream-name . "shiny.emptystate")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shiny r-r6 r-htmltools r-fontawesome))
+    (home-page "https://appsilon.github.io/shiny.emptystate/")
+    (synopsis "Empty State Components for 'Shiny'")
+    (description
+     "Offers a comprehensive solution for managing empty states in Shiny applications.
+ It provides tools to create both default and customizable components for
+scenarios where data is absent or doesn't match user-defined filters.  The
+package prioritizes user experience, ensuring clarity and consistency even when
+data is not available to display.")
+    (license license:lgpl3)))
+
 (define-public r-shiny-blueprint
   (package
     (name "r-shiny-blueprint")
@@ -49911,6 +50096,33 @@ within the script itself.")
     (description
      "Displays the content of a R script into the Cytoscape network-visualization app
 <https://cytoscape.org/>.")
+    (license license:expat)))
+
+(define-public r-scriptloc
+  (package
+    (name "r-scriptloc")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "scriptloc" version))
+              (sha256
+               (base32
+                "0k0dmh833chyvcbw5b7i85m0xgj5kd635h70x5y891jcwdrbccvh"))))
+    (properties `((upstream-name . "scriptloc")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=scriptloc")
+    (synopsis
+     "Get the Location of the R Script that is Being Sourced/Executed")
+    (description
+     "This package provides functions to retrieve the location of R scripts loaded
+through the source() function or run from the command line using the Rscript
+command.  This functionality is analogous to the Bash shell's ${BASH_SOURCE[0]}.
+ Users can first set the project root's path relative to the script path and
+then all subsequent paths relative to the root.  This system ensures that all
+paths lead to the same location regardless of where any script is
+executed/loaded from without resorting to the use of setwd() at the top of the
+scripts.")
     (license license:expat)))
 
 (define-public r-scriptexec

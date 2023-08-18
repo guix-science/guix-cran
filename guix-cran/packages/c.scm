@@ -17436,13 +17436,13 @@ auto-correlation in features.  Methods developed in Knox and Lucas (2021)
 (define-public r-commonsmath
   (package
     (name "r-commonsmath")
-    (version "1.2.7")
+    (version "1.2.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "commonsMath" version))
               (sha256
                (base32
-                "02i6pn568z6h2lnnalv7z3dd6xvh79ki8wy4h42qq05766x3xq2r"))))
+                "0qbb7c5xqffq17i636qf9ppanxlmph9wym9bz6n4dhscfniw14q8"))))
     (properties `((upstream-name . "commonsMath")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -27803,13 +27803,13 @@ nonparametric smoothers and clustering.")
 (define-public r-chronosphere
   (package
     (name "r-chronosphere")
-    (version "0.6.0")
+    (version "0.6.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "chronosphere" version))
               (sha256
                (base32
-                "1hvf2f9l9fykknskv7alpqi9j1ym155pd7a48993hif2p2m8ad02"))))
+                "1simv75zr3x448sbyig5nyg40q9p3gibxjzi1d1gdyiaqncp1n6w"))))
     (properties `((upstream-name . "chronosphere")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=chronosphere")
@@ -29201,13 +29201,13 @@ operations is available.")
 (define-public r-chemodiv
   (package
     (name "r-chemodiv")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "chemodiv" version))
               (sha256
                (base32
-                "1i9ypq045bmh8sw5sz92hlyv9gbdrwdg1rv4nhg8myvx9nrv1zwx"))))
+                "07y8wvi5vh5apvg57pd2q5rqvpxm0h3v899n12r76gwvj8z1a28s"))))
     (properties `((upstream-name . "chemodiv")))
     (build-system r-build-system)
     (propagated-inputs (list r-webchem
@@ -32964,13 +32964,13 @@ Q-matrix generation and detection of complete/identified Q-matrices.")
 (define-public r-cdmconnector
   (package
     (name "r-cdmconnector")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CDMConnector" version))
               (sha256
                (base32
-                "03sya42lxias466yd787jadcnpiv0h6vw7zg17z8qj4xmca99yq7"))))
+                "1b5h03gzl3w6fghcmpkzyzx6x7c11ax1d7hmqzirbs7c2gk27j7n"))))
     (properties `((upstream-name . "CDMConnector")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -32978,11 +32978,11 @@ Q-matrix generation and detection of complete/identified Q-matrices.")
                              r-tidyselect
                              r-tidyr
                              r-stringr
+                             r-stringi
                              r-rlang
                              r-readr
                              r-purrr
-                             r-pillar
-                             r-magrittr
+                             r-pool
                              r-lifecycle
                              r-jsonlite
                              r-glue
@@ -32994,7 +32994,7 @@ Q-matrix generation and detection of complete/identified Q-matrices.")
                              r-cli
                              r-checkmate))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=CDMConnector")
+    (home-page "https://darwin-eu.github.io/CDMConnector/")
     (synopsis "Connect to an OMOP Common Data Model")
     (description
      "This package provides tools for working with observational health data in the

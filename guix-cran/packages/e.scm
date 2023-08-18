@@ -8062,6 +8062,26 @@ Sander, Peter Gennemark, Keiko Funa, @code{BjÃ¶rn} Nilsson, Linda Lindahl, Sve
 Nelander (2011) <doi:10.1038/msb.2011.17>.")
     (license license:lgpl3)))
 
+(define-public r-epo
+  (package
+    (name "r-epo")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "epo" version))
+              (sha256
+               (base32
+                "1vmqgpr5f87n7qxvblp4m58z0l18sm8cc3i66cwk36rvcfxd8ik2"))))
+    (properties `((upstream-name . "epo")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xts r-rlang r-dplyr r-assertthat))
+    (home-page "https://github.com/Reckziegel/epo")
+    (synopsis "Enhanced Portfolio Optimization (EPO)")
+    (description
+     "This package implements the Enhanced Portfolio Optimization (EPO) method as
+described in Pedersen, Babu and Levine (2021) <doi:10.2139/ssrn.3530390>.")
+    (license license:expat)))
+
 (define-public r-epmrob
   (package
     (name "r-epmrob")
@@ -12309,13 +12329,13 @@ thermal reaction norms.  See <doi:10.7717/peerj.8451> for tsd functions; see
 (define-public r-embed
   (package
     (name "r-embed")
-    (version "1.1.1")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "embed" version))
               (sha256
                (base32
-                "09a8a1p96dpcx5s5d9xhbcipys77zmfq3nnn7j200avjpfdzgjfv"))))
+                "093fd33fpnjqai4gicjrf2snqgayzfcgkak3a5fs6qxzgvvfp12s"))))
     (properties `((upstream-name . "embed")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -15259,13 +15279,13 @@ signal.  Journal of the American Statistical Association 97.460 (2002):
 (define-public r-efdm
   (package
     (name "r-efdm")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "efdm" version))
               (sha256
                (base32
-                "1b1ay4gssyhmgzklklx0zg424sp5jb3nmn0ry4fix8z3jaf412il"))))
+                "0wv8vfp2903rvkdnjaawblvd9wi6xyy3n34h1iw2dbcmab84irmw"))))
     (properties `((upstream-name . "efdm")))
     (build-system r-build-system)
     (propagated-inputs (list r-data-table))

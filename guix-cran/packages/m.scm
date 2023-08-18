@@ -8813,6 +8813,33 @@ for fitted detection functions.  Abundance estimation is via a
 Horvitz-Thompson-like estimator.")
     (license license:gpl2+)))
 
+(define-public r-mrct
+  (package
+    (name "r-mrct")
+    (version "0.0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "mrct" version))
+              (sha256
+               (base32
+                "0sgdkkg7x3zly7s35gz7mz79wrwlvnrp8mm7rabqs2lw7lc93lza"))))
+    (properties `((upstream-name . "mrct")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-robustbase
+                             r-reshape2
+                             r-rdpack
+                             r-ggplot2
+                             r-fdapace
+                             r-fda))
+    (home-page "https://cran.r-project.org/package=mrct")
+    (synopsis
+     "Outlier Detection of Functional Data Based on the Minimum Regularized Covariance Trace Estimator")
+    (description
+     "Detect outlying observations in functional data sets based on the minimum
+regularized covariance trace (MRCT) estimator.  Includes implementation of
+Oguamalam et al. (2023) @code{<arXiv:2307.13509>.}")
+    (license license:gpl2+)))
+
 (define-public r-mrce
   (package
     (name "r-mrce")
@@ -23454,6 +23481,27 @@ Jaccard similarity index of Feinsinger's PS values between taxa pairs, as
 Proportional Overlap.")
     (license license:gpl2)))
 
+(define-public r-micromodal
+  (package
+    (name "r-micromodal")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "micromodal" version))
+              (sha256
+               (base32
+                "0qf5ckfcnkviilb2la8la9sjfcir7c79v4981jrpsxfy9n6y39vm"))))
+    (properties `((upstream-name . "micromodal")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-htmltools))
+    (native-inputs (list r-knitr esbuild))
+    (home-page "https://github.com/kennedymwavu/micromodal")
+    (synopsis "Create Simple and Elegant Modal Dialogs in 'shiny'")
+    (description
+     "Enables you to create accessible modal dialogs, with confidence and with minimal
+configuration.")
+    (license license:expat)))
+
 (define-public r-micromob
   (package
     (name "r-micromob")
@@ -24590,13 +24638,13 @@ call MHCnuggets from R.")
 (define-public r-mhazard
   (package
     (name "r-mhazard")
-    (version "0.2.2")
+    (version "0.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mhazard" version))
               (sha256
                (base32
-                "1jwks56njjkc4ck41yqmry60d49zkvj4ya2gkazg4h50149q2d5m"))))
+                "030r0l11qplmypwfk45mj31gba96xda7nxzgiyjsgrb20jmcsja5"))))
     (properties `((upstream-name . "mhazard")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival

@@ -870,38 +870,38 @@ new prediction object individually.")
 (define-public r-fuzzyclass
   (package
     (name "r-fuzzyclass")
-    (version "0.1.4")
+    (version "0.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FuzzyClass" version))
               (sha256
                (base32
-                "02lk84z8x1qkbpbggb13sxmy0dvv9qx5sxqr44bcgd78yf0yg0h8"))))
+                "02jnvzjp6aid6vznb4z2xlh6yn8qk1y9igsbvxyy09q7rvjq18db"))))
     (properties `((upstream-name . "FuzzyClass")))
     (build-system r-build-system)
     (propagated-inputs (list r-rootsolve
                              r-rdpack
                              r-purrr
+                             r-mvtnorm
                              r-mass
                              r-foreach
                              r-envstats
                              r-e1071
-                             r-dplyr
                              r-doparallel
                              r-catools))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/leapigufpb/FuzzyClass")
     (synopsis "Fuzzy and Non-Fuzzy Classifiers")
     (description
      "It provides classifiers which can be used for discrete variables and for
 continuous variables based on the Naive Bayes and Fuzzy Naive Bayes hypothesis.
 Those methods were developed by researchers belong to the Laboratory of
-Technologies for Virtual Teaching and Statistics @code{(LabTEVE)}
-(<http://www.de.ufpb.br/~labteve/>) and Laboratory of Applied Statistics to
-Image Processing and Geoprocessing (LEAPIG) (<http://www.de.ufpb.br/~leapig/>)
-at Federal University of Paraiba, Brazil'.  They considered some statistical
-distributions and their papers were published in the scientific literature, as
-for instance, the Gaussian classifier using fuzzy parameters, proposed by
-Moraes, Ferreira and Machado (2021) <doi:10.1007/s40815-020-00936-4>.")
+Technologies for Virtual Teaching and Statistics @code{(LabTEVE)} and Laboratory
+of Applied Statistics to Image Processing and Geoprocessing (LEAPIG) at Federal
+University of Paraiba, Brazil'.  They considered some statistical distributions
+and their papers were published in the scientific literature, as for instance,
+the Gaussian classifier using fuzzy parameters, proposed by Moraes, Ferreira and
+Machado (2021) <doi:10.1007/s40815-020-00936-4>.")
     (license license:expat)))
 
 (define-public r-fuzzyahp
@@ -1197,13 +1197,13 @@ and Mukherjee (2017) @code{<arXiv:1611.00953>.}")
 (define-public r-fusen
   (package
     (name "r-fusen")
-    (version "0.5.1")
+    (version "0.5.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fusen" version))
               (sha256
                (base32
-                "0fk6yynlncqpj3s8nf402zvjbqzyhv126yxwgfj5ny4hf9s96bka"))))
+                "05i89hf2ac32cprgvlwazxj441jihx0lfghs59s2wgbjjw55wixr"))))
     (properties `((upstream-name . "fusen")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -5067,19 +5067,19 @@ but using a radically improved programming strategy.")
 (define-public r-fraction
   (package
     (name "r-fraction")
-    (version "1.0")
+    (version "1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FRACTION" version))
               (sha256
                (base32
-                "0g25dzsbharsq8bzfka96zccaqppdclax24mz5m080ddg4y8zj49"))))
+                "10m67zwm4hvvarlrb8ckavf6rr0lbq17hlh43qad1k10lshb8qh4"))))
     (properties `((upstream-name . "FRACTION")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=FRACTION")
-    (synopsis "Numeric number into fraction")
+    (synopsis "Numeric Number into Fraction")
     (description
-     "This is the package which can help you turn numeric,dataframe,matrix into
+     "This is the package which can help you turn numeric,data.frame,matrix into
 fraction form.")
     (license license:gpl2)))
 
@@ -6431,6 +6431,45 @@ App': @code{<https://github.com/qlands/FormShare} >= 2.22.0> .  Analytics
 plugin: <https://github.com/qlands/formshare_analytics_plugin> .  Remote SQL
 plugin: <https://github.com/qlands/formshare_sql_plugin> .")
     (license license:gpl3)))
+
+(define-public r-formods
+  (package
+    (name "r-formods")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "formods" version))
+              (sha256
+               (base32
+                "0xkb54ww6zksgyfd9cbjws8fg0vsg2pvlnmqp4qk2inkjqi9myv8"))))
+    (properties `((upstream-name . "formods")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zip
+                             r-yaml
+                             r-writexl
+                             r-stringr
+                             r-shinywidgets
+                             r-shinyace
+                             r-shiny
+                             r-rlang
+                             r-rhandsontable
+                             r-readxl
+                             r-readr
+                             r-onbrand
+                             r-ggplot2
+                             r-ggforce
+                             r-dplyr
+                             r-digest
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://formods.ubiquity.tools/")
+    (synopsis "'Shiny' Modules for General Tasks")
+    (description
+     "Shiny apps can often make use of the same key elements, this package provides
+modules for common tasks (data upload, wrangling data, figure generation and
+saving the app state).  These modules can react and interact as well as generate
+code to create reproducible analyses.")
+    (license license:bsd-2)))
 
 (define-public r-formatters
   (package
@@ -20753,4 +20792,40 @@ Adaptive multigroup confidence intervals with constant coverage by Yu and Hoff
 <DOI:10.1093/biomet/asy009> and Exact adaptive confidence intervals for linear
 regression coefficients by Hoff and Yu <DOI:10.1214/18-EJS1517>.")
     (license license:gpl3)))
+
+(define-public r-f1datar
+  (package
+    (name "r-f1datar")
+    (version "1.3.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "f1dataR" version))
+              (sha256
+               (base32
+                "0w3csdrmaalsgvw9msgzczcjgs7ssyh092axgzya3nh5lw2v798n"))))
+    (properties `((upstream-name . "f1dataR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-reticulate
+                             r-rappdirs
+                             r-memoise
+                             r-magrittr
+                             r-lifecycle
+                             r-jsonlite
+                             r-janitor
+                             r-httr2
+                             r-glue
+                             r-dplyr
+                             r-cli
+                             r-cachem))
+    (native-inputs (list r-knitr))
+    (home-page "https://scasanova.github.io/f1dataR/")
+    (synopsis "Access Formula 1 Data")
+    (description
+     "Obtain Formula 1 data via the Ergast API <https://ergast.com/mrd/> and the
+unofficial API <https://www.formula1.com/en/f1-live.html> via the fastf1 Python
+library <https://docs.fastf1.dev/>.")
+    (license license:expat)))
 

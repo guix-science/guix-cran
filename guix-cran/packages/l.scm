@@ -1810,13 +1810,13 @@ based on the likelihood ratio
 (define-public r-lrstat
   (package
     (name "r-lrstat")
-    (version "0.1.14")
+    (version "0.1.15")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lrstat" version))
               (sha256
                (base32
-                "068g0nn7z0jdfm2qjk212fsmx2lsrpv6l06kx63cq143zk7g5iaz"))))
+                "1q7fgrid7va93pk99rpd0rqh3hrjgfdzkvi0bpx6gqwxv6y9yca6"))))
     (properties `((upstream-name . "lrstat")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -14321,6 +14321,30 @@ spillover effect.  The methods are developed by Hoshino and Yanagi (2023)
 properties of various sorts of latent scale, this program generates commands to
 obtain the graph using dot from graphviz'.")
     (license license:gpl2)))
+
+(define-public r-latcontrol
+  (package
+    (name "r-latcontrol")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "latcontrol" version))
+              (sha256
+               (base32
+                "0y5amp5w8faw69lsi55akqfzgr8bwacvyi0whkxz2ik9dlxcwv3b"))))
+    (properties `((upstream-name . "latcontrol")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-lavaan))
+    (home-page "https://cran.r-project.org/package=latcontrol")
+    (synopsis
+     "Evaluation of the Role of Control Variables in Structural Equation Models")
+    (description
+     "Various opportunities to evaluate the effects of including one or more control
+variable(s) in structural equation models onto model-implied variances,
+covariances, and parameter estimates.  The derivation of the methodology
+employed in this package can be obtained from @code{BlÃ¶tner} (2023)
+<doi:10.31234/osf.io/dy79z>.")
+    (license license:gpl3)))
 
 (define-public r-lassosir
   (package

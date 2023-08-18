@@ -34129,13 +34129,13 @@ install ashr (<https://github.com/stephens999/ashr>) and @code{CorShrink}
 (define-public r-palaeoverse
   (package
     (name "r-palaeoverse")
-    (version "1.2.0")
+    (version "1.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "palaeoverse" version))
               (sha256
                (base32
-                "02cfj7v88gk984an23dh63apc2a57362fm7j1y8vvy87kjz58m15"))))
+                "0jvc6gamlzvam3r2iwgjz02hpj47ya7vacvq2mpqbgc6sbnjmi7k"))))
     (properties `((upstream-name . "palaeoverse")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringdist
@@ -34157,7 +34157,8 @@ together to establish agreed standards.  The package currently includes
 functionality for data cleaning, binning (time and space), exploration,
 summarisation and visualisation.  Reference datasets (i.e.  Geological Time
 Scales <https://stratigraphy.org/chart>) and auxiliary functions are also
-provided.  Details can be found in: Jones et al., (2022) <doi:10.31223/X5Z94Q>.")
+provided.  Details can be found in: Jones et al., (2023) <doi:
+10.1111/2041-210X.14099>.")
     (license license:gpl3+)))
 
 (define-public r-palaeosig

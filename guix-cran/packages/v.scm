@@ -2886,6 +2886,32 @@ implemented tools are described by Seitidis et al. (2023)
 <doi:10.1002/jrsm.1617>.")
     (license license:gpl3+)))
 
+(define-public r-viscollin
+  (package
+    (name "r-viscollin")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "VisCollin" version))
+              (sha256
+               (base32
+                "1940bcgg7xqwg175af42fks26a51jnvzsljh3sb48b6fklybj00x"))))
+    (properties `((upstream-name . "VisCollin")))
+    (build-system r-build-system)
+    (home-page "https://github.com/friendly/VisCollin")
+    (synopsis "Visualizing Collinearity Diagnostics")
+    (description
+     "This package provides methods to calculate diagnostics for multicollinearity
+among predictors in a linear or generalized linear model.  It also provides
+methods to visualize those diagnostics following Friendly & Kwan (2009),
+\"Whereâs Waldo: Visualizing Collinearity Diagnostics\",
+<doi:10.1198/tast.2009.0012>.  These include better tabular presentation of
+collinearity diagnostics that highlight the important numbers, a semi-graphic
+tableplot of the diagnostics to make warning and danger levels more salient, and
+a \"collinearity biplot\" of the smallest dimensions of predictor space, where
+collinearity is most apparent.")
+    (license license:gpl3+)))
+
 (define-public r-visaotr
   (package
     (name "r-visaotr")

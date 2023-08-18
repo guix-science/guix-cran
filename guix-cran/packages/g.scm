@@ -869,6 +869,27 @@ package is implementation of method proposed in Xu et al (2019)
      "Generate Manhattan, Q-Q, and PCA plots from GWAS and PCA results using ggplot2'.")
     (license (license:fsdg-compatible "MIT + file LICENCE"))))
 
+(define-public r-gwalkr
+  (package
+    (name "r-gwalkr")
+    (version "0.1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "GWalkR" version))
+              (sha256
+               (base32
+                "1fgqlr2s9i2ili14k3v3na9ir71j6lvfqd5j5aj5z9ih0z3b646q"))))
+    (properties `((upstream-name . "GWalkR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shiny r-openssl r-jsonlite r-htmlwidgets))
+    (home-page "https://github.com/Kanaries/GWalkR/")
+    (synopsis "Interactive Exploratory Data Analysis Tool")
+    (description
+     "Simplify your R data analysis and data visualization workflow by turning your
+data frame into an interactive Tableau'-like interface, leveraging the
+graphic-walker @code{JavaScript} library and the htmlwidgets package.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-gvlma
   (package
     (name "r-gvlma")
@@ -5058,13 +5079,13 @@ Additional functions are provided for automatic cutting and diagnostic plotting.
 (define-public r-greeks
   (package
     (name "r-greeks")
-    (version "1.1.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "greeks" version))
               (sha256
                (base32
-                "1maq2vklfaf8nd8iqrsh0kib5r7p8bkgm5kk7n061lv8azggmbrq"))))
+                "0vrzrz9kbgqg1kck0q3zkp5sfq8pd9lqf9ri5nyfcdp2s42nwp0w"))))
     (properties `((upstream-name . "greeks")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -5081,16 +5102,16 @@ Additional functions are provided for automatic cutting and diagnostic plotting.
      "Sensitivities of Prices of Financial Options and Implied Volatilites")
     (description
      "This package provides methods to calculate sensitivities of financial option
-prices for European, Asian, American and Digital Options options in the Black
-Scholes model, and in more general jump diffusion models.  A shiny app to
-interactively view plot the results is included.  Furthermore, methods to
-compute implied volatilities are provided for a wide range of option types and
-custom payoff functions.  Classical formulas are implemented for European
-options in the Black Scholes Model, as is presented in Hull, J. C. (2017).
-Options, Futures, and Other Derivatives, Global Edition (9th Edition).  Pearson.
- In the case of Asian options, Malliavin Monte Carlo Greeks are implemented, see
-Hudde, A. & RÃ¼schendorf, L. (2016).  European and Asian Greeks for exponential
-LÃ©vy processes. @code{<arXiv:1603.00920>.} For American options, the Binomial
+prices for European, geometric and arithmetic Asian, and American options, with
+various payoff functions in the Black Scholes model, and in more general jump
+diffusion models.  A shiny app to interactively plot the results is included.
+Furthermore, methods to compute implied volatilities are provided for a wide
+range of option types and custom payoff functions.  Classical formulas are
+implemented for European options in the Black Scholes Model, as is presented in
+Hull, J. C. (2017), Options, Futures, and Other Derivatives.  In the case of
+Asian options, Malliavin Monte Carlo Greeks are implemented, see Hudde, A. &
+RÃ¼schendorf, L. (2023).  European and Asian Greeks for exponential LÃ©vy
+processes. <doi:10.1007/s11009-023-10014-5>.  For American options, the Binomial
 Tree Method is implemented, as is presented in Hull, J. C. (2017).")
     (license license:expat)))
 
@@ -5729,6 +5750,31 @@ or Quarto document.")
      "Optimizing a function F(U), where U is a semi-orthogonal matrix and F is
 invariant under an orthogonal transformation of U.")
     (license license:gpl2+)))
+
+(define-public r-graposas
+  (package
+    (name "r-graposas")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "graposas" version))
+              (sha256
+               (base32
+                "0wyrzhmkswx7s2a78lzphqm3jz9akxc462gy0icpvxn2hff9wvki"))))
+    (properties `((upstream-name . "graposas")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mvtnorm r-ga))
+    (home-page "https://cran.r-project.org/package=graposas")
+    (synopsis "Graphical Approach Optimal Sample Size")
+    (description
+     "Graphical approach provides a useful framework for multiplicity adjustment in
+clinical trials with multiple endpoints.  This package includes statistical
+methods to optimize sample size over initial weight and transition probability
+in a graphical approach under a common setting, which is to use marginal power
+for each endpoint in a trial design.  See Zhang, F. and Gou, J. (2023).  Sample
+size optimization for clinical trials using graphical approaches for
+multiplicity adjustment, Technical Report.")
+    (license license:gpl3)))
 
 (define-public r-graphx
   (package
@@ -13707,13 +13753,13 @@ imaging data.")
 (define-public r-gift
   (package
     (name "r-gift")
-    (version "1.1.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GIFT" version))
               (sha256
                (base32
-                "14wyls1npj34nbba048whmxmad4zxqd106p5pkv07cd4iwzdwc9g"))))
+                "1279pqfkxsmaqhsfkm0hmi5f408iapmckaa47616x28h58pc6rbh"))))
     (properties `((upstream-name . "GIFT")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -13886,6 +13932,28 @@ the sf and sp packages and for types in the trip and silicate packages.")
 Chinese, Japanese, and Korean text into tokens.  The main goal of this package
 is to provide an alternative to tidytext using morphological analysis.")
     (license license:gpl3+)))
+
+(define-public r-giacr
+  (package
+    (name "r-giacr")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "giacR" version))
+              (sha256
+               (base32
+                "12a6cj93id0x1xz39bcg52v7g1d9yd7k2nz2wiiljw2xgbirjjqz"))))
+    (properties `((upstream-name . "giacR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-r6 r-processx r-pingr r-jsonlite r-chromote))
+    (home-page "https://github.com/stla/giacR")
+    (synopsis "Interface to the Computer Algebra System 'Giac'")
+    (description
+     "Giac
+<https://www-fourier.ujf-grenoble.fr/~parisse/giac/doc/en/cascmd_en/cascmd_en.html>
+is a general purpose symbolic algebra software.  It powers the graphical
+interface Xcas'.  This package allows to execute Giac commands in R'.")
+    (license license:gpl3)))
 
 (define-public r-ghypernet
   (package
@@ -14773,13 +14841,13 @@ in package photobiology'.  Part of the r4photobiology suite, Aphalo P. J. (2015)
 (define-public r-ggspatial
   (package
     (name "r-ggspatial")
-    (version "1.1.8")
+    (version "1.1.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggspatial" version))
               (sha256
                (base32
-                "0nx5g4n9iqi8pqxq30ydmcyvmgwynn6zciffydg1p879035832vz"))))
+                "14q3fc33cjy8vc85mb9a6h8fgciypnlcxjihbgc6jbzjksd0l38p"))))
     (properties `((upstream-name . "ggspatial")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -24552,13 +24620,13 @@ and Gotway (2004, <ISBN:9781584883227>) and Waller and Gotway (2004,
 (define-public r-ge
   (package
     (name "r-ge")
-    (version "0.3.8")
+    (version "0.3.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GE" version))
               (sha256
                (base32
-                "0lix8sf2lzgi3lzcgb22xb2ycnc480r494niq9a5am79q3gr0g3s"))))
+                "1wq7za5wi39qsd5x1986myasf4pz3a5mh0fkzbpbklmcsahadrm5"))))
     (properties `((upstream-name . "GE")))
     (build-system r-build-system)
     (propagated-inputs (list r-diagrammer r-data-tree r-cge))

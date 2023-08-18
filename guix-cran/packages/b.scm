@@ -18445,13 +18445,13 @@ pre-install them.")
 (define-public r-bcgee
   (package
     (name "r-bcgee")
-    (version "0.1")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BCgee" version))
               (sha256
                (base32
-                "0ad0dj2ymgvkmcmq3jlpmn0pgigdql0xgvcwsbpdydv33a6snr04"))))
+                "09p2523hslfhg0qryfn81cd5mn8nskiv98yw3s0ajfywfnwrb68k"))))
     (properties `((upstream-name . "BCgee")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=BCgee")

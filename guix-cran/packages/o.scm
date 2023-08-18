@@ -1455,6 +1455,34 @@ OSM data are extracted from the Overpass web server (<https://overpass-api.de/>)
 and processed with very fast C++ routines for return to R'.")
     (license license:gpl3)))
 
+(define-public r-osmclass
+  (package
+    (name "r-osmclass")
+    (version "0.1.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "osmclass" version))
+              (sha256
+               (base32
+                "16vpb1fq93s386anvyl6i8ynk5mijs0c40sh86lcpmp9wmdb6msp"))))
+    (properties `((upstream-name . "osmclass")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringi r-data-table r-collapse))
+    (home-page "https://cran.r-project.org/package=osmclass")
+    (synopsis "Classify Open Street Map Features")
+    (description
+     "Classify Open Street Map (OSM) features into meaningful functional or analytical
+categories.  Designed for OSM PBF files, e.g. from
+<https://download.geofabrik.de/> imported as spatial data frames.  A
+classification consists of a list of categories that are related to certain OSM
+tags and values.  Given a layer from an OSM PBF file and a classification, the
+main osm_classify() function returns a classification data table giving, for
+each feature, the primary and alternative categories (if there is overlap)
+assigned, and the tag(s) and value(s) matched on.  The package also contains a
+classification of OSM features by economic function/significance, following
+Krantz (2023) <https://www.ssrn.com/abstract=4537867>.")
+    (license license:gpl3)))
+
 (define-public r-osldecomposition
   (package
     (name "r-osldecomposition")
