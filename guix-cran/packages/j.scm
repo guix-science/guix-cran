@@ -1801,27 +1801,6 @@ site-associated species.  Includes functions to estimate latent abundances
 through empirical Bayes methods.")
     (license license:gpl2+)))
 
-(define-public r-jointmodel
-  (package
-    (name "r-jointmodel")
-    (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "JointModel" version))
-              (sha256
-               (base32
-                "1zgs5c7saqyqxvxmhw5sxy5w67abq344aid6igw1da05bfy2az6h"))))
-    (properties `((upstream-name . "JointModel")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-survival r-statmod r-lme4))
-    (home-page "https://cran.r-project.org/package=JointModel")
-    (synopsis
-     "Semiparametric Joint Models for Longitudinal and Counting Processes")
-    (description
-     "Joint fit of a semiparametric regression model for longitudinal responses and a
-semiparametric transformation model for time-to-event data.")
-    (license license:gpl3)))
-
 (define-public r-jointmeancov
   (package
     (name "r-jointmeancov")
@@ -2879,26 +2858,6 @@ covariance matrices to be similar across classes, and the Group Graphical Lasso
 recommended over GGL for most applications.  Reference: Danaher P, Wang P,
 Witten DM. (2013) <doi:10.1111/rssb.12033>.")
     (license license:gpl2)))
-
-(define-public r-jgee
-  (package
-    (name "r-jgee")
-    (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "JGEE" version))
-              (sha256
-               (base32
-                "078348n623hlyc3n9yh67vv5acsnxapmbwybvrb1i7kawmqw5msi"))))
-    (properties `((upstream-name . "JGEE")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-mass r-gee))
-    (home-page "https://cran.r-project.org/package=JGEE")
-    (synopsis "Joint Generalized Estimating Equation Solver")
-    (description
-     "Fits two different joint generalized estimating equation models to multivariate
-longitudinal data.")
-    (license license:gpl2+)))
 
 (define-public r-jgcricolors
   (package

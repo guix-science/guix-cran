@@ -524,49 +524,6 @@ time-fractional differential equations.  References: Cahoy and Minkabo (2017)
 Pagnini (2010) <doi:10.1155/2010/104505>.")
     (license license:gpl3+)))
 
-(define-public r-mwridge
-  (package
-    (name "r-mwridge")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "MWRidge" version))
-              (sha256
-               (base32
-                "17kvs9npr1ff24z3pv9x2qnfwyy6w3hc7hm60ynzbjlk2rr11xr9"))))
-    (properties `((upstream-name . "MWRidge")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-glmnet))
-    (home-page "https://cran.r-project.org/package=MWRidge")
-    (synopsis
-     "Two Stage Moving-Window Ridge Method for Prediction and Estimation")
-    (description
-     "This package provides a two stage moving-window Ridge method for coefficients
-estimation and model prediction.  In the first stage, moving-window penalty and
-L1 penalty are applied.  In the second stage, ridge regression is applied.")
-    (license (list license:gpl2+ license:gpl3+))))
-
-(define-public r-mwlasso
-  (package
-    (name "r-mwlasso")
-    (version "1.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "MWLasso" version))
-              (sha256
-               (base32
-                "11lyk46lmjcd60q0mixi41b8ybjgyp1xi18g3ag4450xyhw3r17s"))))
-    (properties `((upstream-name . "MWLasso")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=MWLasso")
-    (synopsis
-     "Penalized Moving-Window Lasso Method for Genome-Wide Association Studies")
-    (description
-     "The Moving-Window Lasso (MWLasso) method for genome-wide association studies.  A
-window scans the design matrix.  For predictors in the same window, their
-coefficients estimates are smoothed.")
-    (license (list license:gpl2+ license:gpl3+))))
-
 (define-public r-mwcsr
   (package
     (name "r-mwcsr")
@@ -1188,24 +1145,6 @@ on the data augmentation algorithm proposed by Tanner and Wong
 adopted to to update the model parameters and draw imputations of the coarse
 data.")
     (license (list license:gpl2 license:gpl3))))
-
-(define-public r-mvnggrad
-  (package
-    (name "r-mvnggrad")
-    (version "0.1.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "mvngGrAd" version))
-              (sha256
-               (base32
-                "1cjy8rbcj7j82ii4wzh2gkxja89jl1fxzcxky5p95p1ky9hv0sz4"))))
-    (properties `((upstream-name . "mvngGrAd")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=mvngGrAd")
-    (synopsis "Moving Grid Adjustment in Plant Breeding Field Trials")
-    (description
-     "Package for moving grid adjustment in plant breeding field trials.")
-    (license license:gpl2+)))
 
 (define-public r-mvnfast
   (package
@@ -1894,13 +1833,13 @@ facilitate the model interpretation.")
 (define-public r-mvar-pt
   (package
     (name "r-mvar-pt")
-    (version "2.2.0")
+    (version "2.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MVar.pt" version))
               (sha256
                (base32
-                "19nmx615275pmpaxv6aq4cvw7y23vh8finxxbmj1lzk1chj53k29"))))
+                "00p6n91d28bibf24j3rkql1hp85dy9qag9spi98m6a2v5isp10p3"))))
     (properties `((upstream-name . "MVar.pt")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -1921,13 +1860,13 @@ analise multivariada.")
 (define-public r-mvar
   (package
     (name "r-mvar")
-    (version "2.2.0")
+    (version "2.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MVar" version))
               (sha256
                (base32
-                "17v9gmc67532q14csdgr3xgy66gaj8xn68pfffd1x83aan7ai3h6"))))
+                "0jmbgiw1mvdlkc41mxxk4cjknwh161ahai4gdavdcx66x87l754y"))))
     (properties `((upstream-name . "MVar")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -5060,6 +4999,40 @@ data sets and six vignettes covering a range different applications.")
 Multibiplot Analysis.")
     (license license:gpl2+)))
 
+(define-public r-multibiasmeta
+  (package
+    (name "r-multibiasmeta")
+    (version "0.2.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "multibiasmeta" version))
+              (sha256
+               (base32
+                "1a18ck269zxwsyig079aszqr4vgrha40z77ad4sckbw5kmdvbc6k"))))
+    (properties `((upstream-name . "multibiasmeta")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-robumeta
+                             r-rlang
+                             r-rdpack
+                             r-purrr
+                             r-metafor
+                             r-metabias
+                             r-evalue
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mathurlabstanford/multibiasmeta")
+    (synopsis "Sensitivity Analysis for Multiple Biases in Meta-Analyses")
+    (description
+     "Meta-analyses can be compromised by studies internal biases (e.g., confounding
+in nonrandomized studies) as well as by publication bias.  This package conducts
+sensitivity analyses for the joint effects of these biases (per Mathur (2022)
+<doi:10.31219/osf.io/u7vcb>).  These sensitivity analyses address two questions:
+(1) For a given severity of internal bias across studies and of publication
+bias, how much could the results change?; and (2) For a given severity of
+publication bias, how severe would internal bias have to be, hypothetically, to
+attenuate the results to the null or by a given amount?")
+    (license license:expat)))
+
 (define-public r-multibd
   (package
     (name "r-multibd")
@@ -7875,38 +7848,6 @@ is employed to obtain parameter estimates.  For the reference, see Rao and
 Molina (2015) <doi:10.1002/9781118735855>.")
     (license license:gpl3)))
 
-(define-public r-msaedb
-  (package
-    (name "r-msaedb")
-    (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "msaeDB" version))
-              (sha256
-               (base32
-                "0ccvg41d28qjbknhsamw95nq8fdibmz03pwblddkqywfl5yarii3"))))
-    (properties `((upstream-name . "msaeDB")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-mass r-magic))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/zazaperwira/msaeDB")
-    (synopsis "Difference Benchmarking for Multivariate Small Area Estimation")
-    (description
-     "This package implements Benchmarking Method for Multivariate Small Area
-Estimation under Fay Herriot Model.  Multivariate Small Area Estimation (MSAE)
-is a development of Univariate Small Area Estimation that considering the
-correlation among response variables and borrowing the strength from related
-areas and auxiliary variables to increase the effectiveness of sample size, the
-multivariate model in this package is based on multivariate model 1 proposed by
-Roberto Benavent and Domingo Morales (2016) <doi:10.1016/j.csda.2015.07.013>.
-Benchmarking in Small Area Estimation is a modification of Small Area Estimation
-model to guarantee that the aggregate weighted mean of the county predictors
-equals the corresponding weighted mean of survey estimates.  Difference
-Benchmarking is the simplest benchmarking method but widely used by multiplying
-empirical best linear unbiased prediction (EBLUP) estimator by the common
-adjustment factors (J.N.K Rao and Isabel Molina, 2015).")
-    (license license:gpl3)))
-
 (define-public r-msae
   (package
     (name "r-msae")
@@ -8378,6 +8319,38 @@ as the mediator, and the functional transformation is used to reduce the
 possible high dimension in the region-based methylated sites and account for
 their location information.")
     (license license:gpl2+)))
+
+(define-public r-mrmcsamplesize
+  (package
+    (name "r-mrmcsamplesize")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "MRMCsamplesize" version))
+              (sha256
+               (base32
+                "1wpgc0gfp5sv18l3kkw9kw1vrijnjjz163vsk8q02g64zcm7k78q"))))
+    (properties `((upstream-name . "MRMCsamplesize")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-fpow))
+    (home-page "https://github.com/technOslerphile/MRMCsamplesize")
+    (synopsis
+     "Sample Size Estimations for Planning Multi-Reader Multi-Case (MRMC) Studies Without Pilot Data")
+    (description
+     "Sample size estimations for MRMC studies based on the Obuchowski-Rockette (OR)
+methodology is implemented.  The function can calculate sample sizes where the
+endpoint of interest in the study is either ROC AUC
+(Area-Under-the-Receiver-Operating-Characteristics-Curve) or sensitivity.  The
+package can also return sample sizes for studies expected to have clustering
+effect (e.g.- multiple pulmonary nodules per patient).  All calculations assume
+that the study design is fully crossed (paired-reader, paired-case) where each
+reader reads/interprets each case and that there are two
+interventions/imaging-modalities/techniques in the study.  In addition to MRMC,
+it can also be used to estimate sample sizes for standalone studies where
+sensitivity or AUC are the primary endpoints.  The methods implemented are based
+on the methods described in Zhou et.al. (2011) <doi:10.1002/9780470906514> and
+Obuchowski (2000) <doi:10.1097/EDE.0b013e3181a663cc>.")
+    (license license:expat)))
 
 (define-public r-mrmcaov
   (package
@@ -9756,13 +9729,13 @@ Pasaniuc, WJ Gauderman, JS Witte (2020) <doi:10.1101/2020.07.06.190256>.")
 (define-public r-mpdir
   (package
     (name "r-mpdir")
-    (version "0.1-20")
+    (version "0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MPDiR" version))
               (sha256
                (base32
-                "1mm4mv042jr0n7z5cdaij39zrg2475p83gd3dxq6krz9yq8ii1q3"))))
+                "0n7zrcxqfvd0y4qiqsx0qf5rgqdrci5026wkdpffngamxlm80f86"))))
     (properties `((upstream-name . "MPDiR")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=MPDiR")
@@ -11895,40 +11868,6 @@ around the different modules such as preprocessing, analysis, vizualisation,
 etc.  See package help for more information.")
     (license license:artistic2.0)))
 
-(define-public r-mompca
-  (package
-    (name "r-mompca")
-    (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "MoMPCA" version))
-              (sha256
-               (base32
-                "1snixlq35xbzf005d877i493sf1wm48jqlq9515yl1s6lxmav1n7"))))
-    (properties `((upstream-name . "MoMPCA")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-topicmodels
-                             r-tm
-                             r-slam
-                             r-matrix
-                             r-magrittr
-                             r-foreach
-                             r-dplyr
-                             r-doparallel))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=MoMPCA")
-    (synopsis
-     "Inference and Clustering for Mixture of Multinomial Principal Component Analysis")
-    (description
-     "Cluster any count data matrix with a fixed number of variables, such as
-document/term matrices.  It integrates the dimension reduction aspect of topic
-models in the mixture models framework.  Inference is done by means of a greedy
-Classification Variational Expectation Maximisation (C-VEM) algorithm.  An
-Integrated Classication Likelihood (ICL) model selection is designed for
-selecting the latent dimension (number of topics) and the number of clusters.
-For more details, see the article of Jouvin et.  al. (2020) <arxiv:1909.00721>.")
-    (license license:gpl3)))
-
 (define-public r-momocs
   (package
     (name "r-momocs")
@@ -12502,26 +12441,6 @@ replication of published MOEA/D proposals.  The full framework is documented in
 a paper published in the Journal of Statistical Software
 [<doi:10.18637/jss.v092.i06>].")
     (license license:gpl2)))
-
-(define-public r-modygliani
-  (package
-    (name "r-modygliani")
-    (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "modygliani" version))
-              (sha256
-               (base32
-                "01g96cdm4hgbsh6xsdfjg7vp7zb138sxwgv0msrlm27a6p4fcnlx"))))
-    (properties `((upstream-name . "modygliani")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=modygliani")
-    (synopsis "MOlecular DYnamics GLobal ANalysis")
-    (description
-     "RMSD and Internal Energy analysis of NAMD and YASARA Molecular Dynamics output
-files.  Allows to comparison of different dynamics per different complexes.
-Input files have to be ASCII files tab separated.")
-    (license license:expat)))
 
 (define-public r-modules
   (package
@@ -14388,31 +14307,6 @@ functional connectivity networks across multiple subjects.  This package also
 contains an implementation of a novel algorithm through which to simulate
 multiple related precision matrices which exhibit properties frequently reported
 in neuroimaging analysis.")
-    (license license:gpl2)))
-
-(define-public r-mnreadr
-  (package
-    (name "r-mnreadr")
-    (version "2.1.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "mnreadR" version))
-              (sha256
-               (base32
-                "0h0l05l8cgrdrk8sk60p2284kp2xz35cygzyhlk0h2x29zhw7bb7"))))
-    (properties `((upstream-name . "mnreadR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr r-tibble r-nlme r-ggplot2 r-dplyr))
-    (home-page "https://legge.psych.umn.edu/mnread-acuity-charts")
-    (synopsis "MNREAD Parameters Estimation and Curve Plotting")
-    (description
-     "Allows to analyze the reading data obtained with the MNREAD Acuity Chart, a
-continuous-text reading acuity chart for normal and low vision.  Provides the
-necessary functions to plot the MNREAD curve and estimate automatically the four
-MNREAD parameters: Maximum Reading Speed, Critical Print Size, Reading Acuity
-and Reading Accessibility Index.  Parameters can be estimated either with the
-standard method or with a nonlinear mixed-effects (NLME) modeling.  See
-Calabrese et al.  2018 for more details <doi:10.1167/18.1.8>.")
     (license license:gpl2)))
 
 (define-public r-mnp
@@ -17214,33 +17108,6 @@ effects, and predictors can correlate at either level and accommodate models
 with multiple interaction effects.")
     (license license:gpl3)))
 
-(define-public r-mlmoi
-  (package
-    (name "r-mlmoi")
-    (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "MLMOI" version))
-              (sha256
-               (base32
-                "0fliax6ajacm2i416xi26qlwg3y7iw8y6hykkz0mcwp7djyn3n6s"))))
-    (properties `((upstream-name . "MLMOI")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xlconnect r-rmpfr r-rjava r-rdpack))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=MLMOI")
-    (synopsis
-     "Estimating Frequencies, Prevalence and Multiplicity of Infection")
-    (description
-     "The implemented methods reach out to scientists that seek to estimate
-multiplicity of infection (MOI) and lineage (allele) frequencies and prevalences
-at molecular markers using the maximum-likelihood method described in Schneider
-(2018) <doi:10.1371/journal.pone.0194148>, and Schneider and Escalante (2014)
-<doi:10.1371/journal.pone.0097899>.  Users can import data from Excel files in
-various formats, and perform maximum-likelihood estimation on the imported data
-by the package's moimle() function.")
-    (license license:gpl3)))
-
 (define-public r-mlmodelselection
   (package
     (name "r-mlmodelselection")
@@ -17416,28 +17283,6 @@ ISBN:9781849202015).")
      "This package provides a collection of evaluation metrics, including loss, score
 and utility functions, that measure regression, classification and ranking
 performance.")
-    (license license:gpl2)))
-
-(define-public r-mlmc
-  (package
-    (name "r-mlmc")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "mlmc" version))
-              (sha256
-               (base32
-                "01h7w0ajyg3bccynlpbi3yjpy089wczbfbajpg6yw5v4dppw7k7a"))))
-    (properties `((upstream-name . "mlmc")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-ggplot2))
-    (home-page "https://cran.r-project.org/package=mlmc")
-    (synopsis "Multi-Level Monte Carlo")
-    (description
-     "An implementation of Multi-level Monte Carlo for R. This package builds on the
-original Matlab and C++ implementations by Mike Giles to provide a full MLMC
-driver and example level samplers.  Multi-core parallel sampling of levels is
-provided built-in.")
     (license license:gpl2)))
 
 (define-public r-mlma
@@ -18691,28 +18536,6 @@ Multivariate Normal Mixture (MNM, Ghahramani and Jordan, 1994,
 <doi:10.21236/ADA295618>).")
     (license license:gpl2+)))
 
-(define-public r-mixtureinf
-  (package
-    (name "r-mixtureinf")
-    (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "MixtureInf" version))
-              (sha256
-               (base32
-                "12qcflmrpzh4w5b40xq5qicks6p0cwqpf5k84pwabkjb168afddv"))))
-    (properties `((upstream-name . "MixtureInf")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-quadprog))
-    (home-page "http://cran.r-project.org/package=MixtureInf")
-    (synopsis "Inference for Finite Mixture Models")
-    (description
-     "This package provides functions for computing the penalized maximum likelihood
-estimate (PMLE) or maximum likelihood estimate (MLE), testing the order of a
-finite mixture model using EM-test, drawing histogram of observations and the
-fitted density or probability mass function of the mixture model.")
-    (license license:agpl3+)))
-
 (define-public r-mixture
   (package
     (name "r-mixture")
@@ -18803,30 +18626,6 @@ addition'.")
 sub-Gaussian stable distributions developed by Teimouri (2022)
 @code{<arXiv:2205.14067>} and estimating parameters of the symmetric stable
 distribution within the Bayesian framework.")
-    (license license:gpl2+)))
-
-(define-public r-mixspe
-  (package
-    (name "r-mixspe")
-    (version "0.9.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "mixSPE" version))
-              (sha256
-               (base32
-                "18lxivrjhh7h0l9hj0x7r8qxv1dwsad2bkswg73n0a95zf6lgn87"))))
-    (properties `((upstream-name . "mixSPE")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-mvtnorm))
-    (home-page "https://cran.r-project.org/package=mixSPE")
-    (synopsis
-     "Mixtures of Power Exponential and Skew Power Exponential Distributions for Use in Model-Based Clustering and Classification")
-    (description
-     "Mixtures of skewed and elliptical distributions are implemented using mixtures
-of multivariate skew power exponential and power exponential distributions,
-respectively.  A generalized expectation-maximization framework is used for
-parameter estimation.  Methodology for mixtures of power exponential
-distributions is from Dang et al. (2015) <doi: 10.1111/biom.12351>.")
     (license license:gpl2+)))
 
 (define-public r-mixsmsn
@@ -21019,29 +20818,6 @@ by Du et al (2020), currently under review.  They, by construction, force
 selection of the same variables across multiply imputed data.  miselect also
 provides cross validated variants of these methods.")
     (license license:gpl3)))
-
-(define-public r-mise
-  (package
-    (name "r-mise")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "mise" version))
-              (sha256
-               (base32
-                "1ydbm76w3y0p5h82shxjblwlzbrmzwx0bgq9w2axjwz2nx8jfw0a"))))
-    (properties `((upstream-name . "mise")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=mise")
-    (synopsis "Clears the Workspace (Mise en Place)")
-    (description
-     "Clears the workspace.  Useful for the beginnings of R scripts, to avoid
-potential problems with accidentally using information from variables or
-functions from previous script evaluations, too many figure windows open at the
-same time, packages that you don't need any more, or a cluttered console.  Uses
-code from various @code{StackOverflow} users.  See help(mise) for pointers to
-the relevant @code{StackOverflow} pages.")
-    (license license:expat)))
 
 (define-public r-miscset
   (package
@@ -23847,13 +23623,13 @@ the covariates, using a backfitting approach to maximize the likelihood.")
 (define-public r-micompr
   (package
     (name "r-micompr")
-    (version "1.1.3")
+    (version "1.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "micompr" version))
               (sha256
                (base32
-                "0k9yngi75p0pcszlg8vmzxrsppm53z2z1c6rzk15gpl53f6cq88p"))))
+                "1i50zvhdfxz0zbx5vmiz9s055j6f0j0gf6a2vxhm7cw597rfp3s5"))))
     (properties `((upstream-name . "micompr")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -25655,13 +25431,13 @@ see: Chao et al. (2018) <doi:10.1002/ecm.1343>, Maire et al. (2015)
 (define-public r-mfag
   (package
     (name "r-mfag")
-    (version "1.8")
+    (version "1.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MFAg" version))
               (sha256
                (base32
-                "1kkcx6290ffk8g3amakaa5z5hz07z9iiqp2jxvma4pk85w6qay83"))))
+                "008krza4lhbv641sn0wlf9gl66n8x6c9d8404m76dsgdsr118c1a"))))
     (properties `((upstream-name . "MFAg")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=MFAg")
@@ -28004,28 +27780,6 @@ gravitational based search (Rashedi et al., 2009) and black hole optimization
     (license (list license:gpl2+
                    (license:fsdg-compatible "file://LICENSE")))))
 
-(define-public r-metaheuristicfpa
-  (package
-    (name "r-metaheuristicfpa")
-    (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "MetaheuristicFPA" version))
-              (sha256
-               (base32
-                "096k866mgrdgj55rzvdj080z80hzlj0667mydpz7gjaqdfriw8jg"))))
-    (properties `((upstream-name . "MetaheuristicFPA")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp))
-    (home-page "https://cran.r-project.org/package=MetaheuristicFPA")
-    (synopsis "An Implementation of Flower Pollination Algorithm in R")
-    (description
-     "This package provides a nature-inspired metaheuristics algorithm based on the
-pollination process of flowers.  This R package makes it easy to implement the
-standard flower pollination algorithm for every user.  The algorithm was first
-developed by Xin-She Yang in 2012 (<DOI:10.1007/978-3-642-32894-7_27>).")
-    (license license:gpl2)))
-
 (define-public r-metaggr
   (package
     (name "r-metaggr")
@@ -28774,6 +28528,37 @@ description of best practice usage may be found in the publication
 <https://link.springer.com/protocol/10.1007/978-1-4939-7819-9_20>.")
     (license license:gpl3)))
 
+(define-public r-metabolicsyndrome
+  (package
+    (name "r-metabolicsyndrome")
+    (version "0.1.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "MetabolicSyndrome" version))
+              (sha256
+               (base32
+                "0hacywgkpsa3j96k4z24j6r3srm22i8vs53010nyakdsczzlizvn"))))
+    (properties `((upstream-name . "MetabolicSyndrome")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-dplyr))
+    (home-page "https://github.com/jagadishramasamy/metsynd")
+    (synopsis "Diagnosis of Metabolic Syndrome")
+    (description
+     "The modified Adult Treatment Panel -III guidelines (ATP-III) proposed by
+American Heart Association (AHA) and National Heart, Lung and Blood Institute
+(NHLBI) are used widely for the clinical diagnosis of Metabolic Syndrome.  The
+AHA-NHLBI criteria advise using parameters such as waist circumference (WC),
+systolic blood pressure (SBP), diastolic blood pressure (DBP), fasting plasma
+glucose (FPG), triglycerides (TG) and high-density lipoprotein cholesterol
+(HDLC) for diagnosis of metabolic syndrome.  Each parameter has to be
+interpreted based on the proposed cut-offs, making the diagnosis slightly
+complex and error-prone.  This package is developed by incorporating the
+modified ATP-III guidelines, and it will aid in the easy and quick diagnosis of
+metabolic syndrome in busy healthcare settings and also for research purposes.
+The modified ATP-III-AHA-NHLBI criteria for the diagnosis is described by Grundy
+et al ., (2005) <doi:10.1161/CIRCULATIONAHA.105.169404>.")
+    (license license:gpl3)))
+
 (define-public r-metabolicsurv
   (package
     (name "r-metabolicsurv")
@@ -28993,17 +28778,17 @@ sample quantiles derived summaries in a meta-analysis.")
 (define-public r-metabias
   (package
     (name "r-metabias")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "metabias" version))
               (sha256
                (base32
-                "0hamzkc6abk5i10hnbnnra3wga2sgxdqvgldfh0rpq31am2hcwl1"))))
+                "0xgckbyxjb6s43b3z48cxb2jbyd7jaw17x0w3wiafqjbz9ahzdmk"))))
     (properties `((upstream-name . "metabias")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack))
-    (home-page "https://github.com/mikabr/metabias")
+    (home-page "https://github.com/mathurlabstanford/metabias")
     (synopsis "Meta-Analysis for Within-Study and/or Across-Study Biases")
     (description
      "This package provides common components (classes, methods, documentation) for
@@ -31462,28 +31247,6 @@ all within the GUI environment.  The MDS-GUI provides means of performing
 Classical Scaling, Least Squares Scaling, Metric SMACOF, Non-Metric SMACOF,
 Kruskal's Analysis and Sammon Mapping with animated optimisation.")
     (license license:gpl3+)))
-
-(define-public r-mdsdt
-  (package
-    (name "r-mdsdt")
-    (version "1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "mdsdt" version))
-              (sha256
-               (base32
-                "0nbzc54jac4wmfyrs821ycxh749cb1zfxcws0nbpk35rydqkc627"))))
-    (properties `((upstream-name . "mdsdt")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-polycor r-mnormt r-ellipse))
-    (home-page "https://cran.r-project.org/package=mdsdt")
-    (synopsis "Functions for Analysis of Data with General Recognition Theory")
-    (description
-     "This package provides tools associated with General Recognition Theory (Townsend
-& Ashby, 1986), including Gaussian model fitting of 2x2 and more general
-designs, associated plotting and model comparison tools, and tests of marginal
-response invariance and report independence.")
-    (license license:gpl2+)))
 
 (define-public r-mdscore
   (package
@@ -35464,13 +35227,13 @@ with a total of 196 variations.")
 (define-public r-matsindf
   (package
     (name "r-matsindf")
-    (version "0.4.3")
+    (version "0.4.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "matsindf" version))
               (sha256
                (base32
-                "0zcfsvry7nna95lgyim8lb6yh0ikkn3plar04inwp8nfwlyanflx"))))
+                "1rqhzk271y19i8mrcwcfb1ckdxx9adzs6in9xwlqic4n0yscmji9"))))
     (properties `((upstream-name . "matsindf")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -35493,13 +35256,13 @@ data frame and expand a data frame of matrices into a tidy data frame.")
 (define-public r-matsbyname
   (package
     (name "r-matsbyname")
-    (version "0.6.3")
+    (version "0.6.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "matsbyname" version))
               (sha256
                (base32
-                "1ncqjmcfbypysqqkrprb4xwqvzkrajbd7sp189ji8a9s982sv284"))))
+                "04c4ymbsyv0a8prcq911irf6kkyfgiqavh6vzm74nf9kjyq5xr93"))))
     (properties `((upstream-name . "matsbyname")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -36495,30 +36258,6 @@ large data collections\" and Bandelt, Maas, and Spieksma (2004)
 assignment problems with decomposable costs\".")
     (license license:gpl2)))
 
-(define-public r-matchbook
-  (package
-    (name "r-matchbook")
-    (version "1.0.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "matchbook" version))
-              (sha256
-               (base32
-                "0xfqg8z2zkn215kqmjjkqdwrgsk7cn4jdpxfgd6razhcbvflg48j"))))
-    (properties `((upstream-name . "matchbook")))
-    (build-system r-build-system)
-    (home-page "https://github.com/xanadunf/matchbook")
-    (synopsis "Wrapper for the 'Matchbook' API")
-    (description
-     "This package provides a wrapper for the some basic functionality around the
-Matchbook <http://www.matchbook.com> REST API. It features calls to get events,
-markets and runners in data frame format.  It features functions for bet
-placement and position management and also allows reporting of settled bet
-transactions.  Note: this package uses the back-lay format.  The default for
-odds type, currency and language are set according to those of the registered
-user account.")
-    (license license:expat)))
-
 (define-public r-match2c
   (package
     (name "r-match2c")
@@ -37347,35 +37086,6 @@ structural proprieties) analysis are provided.  See Spedicato (2017)
 depends on the suggested ctmcd package, that, as May 2023, can be retrieved from
 <https://cran.r-project.org/src/contrib/Archive/ctmcd/ctmcd_1.4.2.tar.gz>.")
     (license license:expat)))
-
-(define-public r-markophylo
-  (package
-    (name "r-markophylo")
-    (version "1.0.8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "markophylo" version))
-              (sha256
-               (base32
-                "05hfykjzx4wf2p1d6dvyx5lizfxmq3zprvnfg74r7l1izp7wpl38"))))
-    (properties `((upstream-name . "markophylo")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-phangorn r-numderiv
-                             r-ape))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=markophylo")
-    (synopsis "Markov Chain Models for Phylogenetic Trees")
-    (description
-     "Allows for fitting of maximum likelihood models using Markov chains on
-phylogenetic trees for analysis of discrete character data.  Examples of such
-discrete character data include restriction sites, gene family presence/absence,
-intron presence/absence, and gene family size data.  Hypothesis-driven user-
-specified substitution rate matrices can be estimated.  Allows for biologically
-realistic models combining constrained substitution rate matrices, site rate
-variation, site partitioning, branch-specific rates, allowing for non-stationary
-prior root probabilities, correcting for sampling bias, etc.  See Dang and
-Golding (2016) <doi:10.1093/bioinformatics/btv541> for more details.")
-    (license license:gpl2+)))
 
 (define-public r-markmyassignment
   (package
@@ -40542,25 +40252,6 @@ pane, and send (draft) email using gmailr'.")
      "Collect your data on digital marketing campaigns from Mailchimp using the
 Windsor.ai API <https://windsor.ai/api-fields/>.")
     (license license:gpl3)))
-
-(define-public r-mail
-  (package
-    (name "r-mail")
-    (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "mail" version))
-              (sha256
-               (base32
-                "1m89cvw5ba4d87kp2dj3f8bvd6sgj9k56prqmw761q919xwprgw6"))))
-    (properties `((upstream-name . "mail")))
-    (build-system r-build-system)
-    (home-page "www.linhi.com")
-    (synopsis "Sending Email Notifications from R")
-    (description
-     "Easy to use package for sending email notifications with status information from
-R")
-    (license license:gpl2+)))
 
 (define-public r-maicchecks
   (package

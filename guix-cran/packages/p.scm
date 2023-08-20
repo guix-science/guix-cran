@@ -709,28 +709,6 @@ variable, a more efficient algorithm is used and the output includes crossover
 indicators.")
     (license license:gpl2+)))
 
-(define-public r-pwd
-  (package
-    (name "r-pwd")
-    (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "PWD" version))
-              (sha256
-               (base32
-                "0ksr3biaqd4p5a4lv28i4cwk1fn9822ndq2161mgvc1c344p06fj"))))
-    (properties `((upstream-name . "PWD")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp))
-    (home-page "http://www-stat.wharton.upenn.edu/~danielmc/")
-    (synopsis
-     "Time Series Regression Using the Power Weighted Densities (PWD) Approach")
-    (description
-     "This package contains functions which allow the user to perform time series
-regression quickly using the Power Weighted Densities (PWD) approach.
-alphahat_LR_one_Rcpp() is the main workhorse function within this package.")
-    (license license:gpl3)))
-
 (define-public r-pvr
   (package
     (name "r-pvr")
@@ -1056,24 +1034,24 @@ Shiny input or output.")
 (define-public r-pursuit
   (package
     (name "r-pursuit")
-    (version "1.0.3")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Pursuit" version))
               (sha256
                (base32
-                "08hy55k9wmn9si6pa3gdhvnas6clfknqkp3d8qdfpch1z5vg594c"))))
+                "0pgx2vfvfgf0gndgnawk91hd13q39f0855hj1ivq30id91ym421r"))))
     (properties `((upstream-name . "Pursuit")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
     (home-page "https://cran.r-project.org/package=Pursuit")
     (synopsis "Projection Pursuit")
     (description
-     "Package for projection pursuit (PP) with 17 methods and grand tour with 3
-methods.  Being that projection pursuit searches for low-dimensional linear
-projections in high-dimensional data structures, while grand tour is a technique
-used to explore multivariate statistical data through animation.")
-    (license license:gpl2+)))
+     "Projection pursuit (PP) with 17 methods and grand tour with 3 methods.  Being
+that projection pursuit searches for low-dimensional linear projections in
+high-dimensional data structures, while grand tour is a technique used to
+explore multivariate statistical data through animation.")
+    (license license:gpl3)))
 
 (define-public r-purrrlyr
   (package
@@ -1713,13 +1691,13 @@ Moss and De Bin (2019) @code{<arXiv:1911.12445>.}")
 (define-public r-publicationbias
   (package
     (name "r-publicationbias")
-    (version "2.3.0")
+    (version "2.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PublicationBias" version))
               (sha256
                (base32
-                "1v4nh916ika9asil1jxsqf9c49y7kwz6sbrhqkbkc1ywa4rq6i2q"))))
+                "1nwkp5czv31v57qzaahj18lkw557a48qcnwrz6lmz9hw74b52qm6"))))
     (properties `((upstream-name . "PublicationBias")))
     (build-system r-build-system)
     (propagated-inputs (list r-robumeta
@@ -1731,7 +1709,7 @@ Moss and De Bin (2019) @code{<arXiv:1911.12445>.}")
                              r-glue
                              r-ggplot2
                              r-dplyr))
-    (home-page "https://github.com/mayamathur/PublicationBias")
+    (home-page "https://github.com/mathurlabstanford/PublicationBias")
     (synopsis "Sensitivity Analysis for Publication Bias in Meta-Analyses")
     (description
      "This package performs sensitivity analysis for publication bias in meta-analyses
@@ -2382,13 +2360,13 @@ construct definitions and corresponding instructions in a decentralized manner
 (define-public r-psyphy
   (package
     (name "r-psyphy")
-    (version "0.2-3")
+    (version "0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "psyphy" version))
               (sha256
                (base32
-                "1cf134l5j7ggclr08jb5vrj4jv4gq9s1b3njj0ic4263xg8wvv6n"))))
+                "0s3bdzbjbdapfgg44qlk4dp2m3h3hhcqy93vh32170rzkxj82p4p"))))
     (properties `((upstream-name . "psyphy")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=psyphy")
@@ -2591,37 +2569,6 @@ several of the biggest data sets for the psych package as well as four
 vignettes.  A few helper functions for file manipulation are included as well.
 For more information, see the <https://personality-project.org/r/> web page.")
     (license license:gpl2+)))
-
-(define-public r-psychtm
-  (package
-    (name "r-psychtm")
-    (version "2021.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "psychtm" version))
-              (sha256
-               (base32
-                "1qx3ks23wyi7c53p05jq2w18qz0kym0j43japz9sgj6zyh0c5649"))))
-    (properties `((upstream-name . "psychtm")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble
-                             r-rlang
-                             r-rcppprogress
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-label-switching
-                             r-coda))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ktw5691/psychtm/")
-    (synopsis "Text Mining Methods for Psychological Research")
-    (description
-     "This package provides text mining methods for social science research.  The
-package implements estimation, inference, summarization, and goodness-of-fit
-methods for topic models including Latent Dirichlet Allocation (LDA), supervised
-LDA, and supervised LDA with covariates using Bayesian Markov Chain Monte Carlo.
- A description of the key models and estimation methods is available in Wilcox,
-Jacobucci, Zhang, & Ammerman (2021). <doi:10.31234/osf.io/62tc3>.")
-    (license license:lgpl3+)))
 
 (define-public r-psychrolib
   (package
@@ -3263,31 +3210,6 @@ et al. (2019) <doi:10.1080/10543406.2019.1657133>, Wang et al. (2020)
 <doi:10.1080/10543406.2019.1684309> and Chen et al. (2020)
 <doi:10.1080/10543406.2020.1730877>.")
     (license license:gpl3+)))
-
-(define-public r-psr
-  (package
-    (name "r-psr")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "psr" version))
-              (sha256
-               (base32
-                "0lnszaspilk88hmdjbgid7nh0zrpc57mymchva4kqc3cpckw247a"))))
-    (properties `((upstream-name . "psr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr r-psych r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=psr")
-    (synopsis "Functions for Analyzing Performance Science Data")
-    (description
-     "This package contains functions to compute statistics relevant to performance
-scientists, coaches, and athletes.  The functions within the package that report
-group-wide statistics have to do with measurement instrument reliability and
-individual change of athletes.  Many of them come from the work of Hopkins
-(2000) <doi:10.2165/00007256-200030010-00001>.  There are also functions that
-apply a particular statistical concept to each measurement in the data.")
-    (license license:expat)))
 
 (define-public r-psqn
   (package
@@ -4353,28 +4275,6 @@ PRS-PGx Methods by Zhai, S., Zhang, H., Mehrotra, D.V., and Shen, J., 2021
      "Reverse depends for a given package are queued such that multiple workers can
 run the tests in parallel.")
     (license license:gpl2+)))
-
-(define-public r-prqlr
-  (package
-    (name "r-prqlr")
-    (version "0.5.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "prqlr" version))
-              (sha256
-               (base32
-                "1al0x2yxgpa58rbfz4lws94x73lffd7mn4h4i8060cxnczp6z7yf"))))
-    (properties `((upstream-name . "prqlr")))
-    (build-system r-build-system)
-    (inputs (list))
-    (native-inputs (list r-knitr))
-    (home-page "https://eitsupi.github.io/prqlr/")
-    (synopsis "R Bindings for the 'prql-compiler' Rust Library")
-    (description
-     "This package provides a function to convert PRQL strings to SQL strings.
-Combined with other R functions that take SQL as an argument, PRQL can be used
-on R.")
-    (license license:expat)))
 
 (define-public r-prp
   (package
@@ -11093,45 +10993,6 @@ Value, Pearson III (Gamma 2), Mielke's Kappa, Rayleigh or Generalized Logistic
 Distribution.  The PPCC test is performed with a fast Monte-Carlo simulation.")
     (license license:gpl3)))
 
-(define-public r-pp3
-  (package
-    (name "r-pp3")
-    (version "1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "PP3" version))
-              (sha256
-               (base32
-                "1g36al9w1rxyhfzbvpw9siqq57h2xl0zr94wysz8i0jzqkkqkrvf"))))
-    (properties `((upstream-name . "PP3")))
-    (build-system r-build-system)
-    (native-inputs (list gfortran))
-    (home-page "http://www.stats.bris.ac.uk/~guy")
-    (synopsis "Three-Dimensional Exploratory Projection Pursuit")
-    (description
-     "Exploratory projection pursuit is a method to discovers structure in
-multivariate data.  At heart this package uses a projection index to evaluate
-how interesting a specific three-dimensional projection of multivariate data
-(with more than three dimensions) is.  Typically, the main structure finding
-algorithm starts at a random projection and then iteratively changes the
-projection direction to move to a more interesting one.  In other words, the
-projection index is maximised over the projection direction to find the most
-interesting projection.  This maximum is, though, a local maximum.  So, this
-code has the ability to restart the algorithm from many different starting
-positions automatically.  Routines exist to plot a density estimate of
-projection indices over the runs, this enables the user to obtain an idea of the
-distribution of the projection indices, and, hence, which ones might be
-interesting.  Individual projection solutions, including those identified as
-interesting, can be extracted and plotted individually.  The package can make
-use of the mclapply() function to execute multiple runs in parallel to speed up
-index discovery.  Projection pursuit is similar to independent component
-analysis.  This package uses a projection index that maximises an entropy
-measure to look for projections that exhibit non-normality, and operates on
-sphered data.  Hence, information from this package is different from that
-obtained from principal components analysis, but the rationale behind both
-methods is similar.  Nason, G. P. (1995) <doi:10.2307/2986135>.")
-    (license license:gpl2+)))
-
 (define-public r-pp
   (package
     (name "r-pp")
@@ -14510,30 +14371,6 @@ based on bi-allelic marker dosage data.  Submitted to BMC Bioinformatics (2021).
 text.  Functions send requests to translation services online.")
     (license license:expat)))
 
-(define-public r-polyfreqs
-  (package
-    (name "r-polyfreqs")
-    (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "polyfreqs" version))
-              (sha256
-               (base32
-                "13859vbpys5yj1qiapyzv9wlvi6x6k0rm335bsi1v07ch3x2bh3b"))))
-    (properties `((upstream-name . "polyfreqs")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/pblischak/polyfreqs")
-    (synopsis "Bayesian Population Genomics in Autopolyploids")
-    (description
-     "This package implements a Gibbs sampling algorithm to perform Bayesian inference
-on biallelic SNP frequencies, genotypes and heterozygosity (observed and
-expected) in a population of autopolyploids.  See the published paper in
-Molecular Ecology Resources: Blischak et al. (2016)
-<doi:10.1111/1755-0998.12493>.")
-    (license license:gpl2+)))
-
 (define-public r-polycub
   (package
     (name "r-polycub")
@@ -15309,13 +15146,13 @@ numbers for both the ordinary and generalized Poisson binomial distribution.")
 (define-public r-poisson-glm-mix
   (package
     (name "r-poisson-glm-mix")
-    (version "1.3")
+    (version "1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "poisson.glm.mix" version))
               (sha256
                (base32
-                "1r6f9ks5bd9jg0mmxa8dj633pvz7byihyaakmkxg4xqrr1sa9g3f"))))
+                "02mnrrynlmcbcywmgm829kajlixwr91aj49d43pkfc3yxcnj815w"))))
     (properties `((upstream-name . "poisson.glm.mix")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=poisson.glm.mix")
@@ -15326,25 +15163,6 @@ clustering.  The (multivariate) responses can be partitioned into set of blocks.
  Three different parameterizations of the linear predictor are considered.  The
 models are estimated according to the EM algorithm with an efficient
 initialization scheme <doi:10.1016/j.csda.2014.07.005>.")
-    (license license:gpl2)))
-
-(define-public r-poisson
-  (package
-    (name "r-poisson")
-    (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "poisson" version))
-              (sha256
-               (base32
-                "1diyf1b84sr6iai3ghd3kcp6fc6w7fan49wzs1lzvxxsmp15ag2d"))))
-    (properties `((upstream-name . "poisson")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=poisson")
-    (synopsis "Simulating Homogenous & Non-Homogenous Poisson Processes")
-    (description
-     "This package contains functions and classes for simulating, plotting and
-analysing homogenous and non-homogenous Poisson processes.")
     (license license:gpl2)))
 
 (define-public r-poisnor
@@ -16798,27 +16616,6 @@ matching will make the differences in the baseline data smaller.  This method
 was described by Alvaro Fuentes (2022) <doi:10.1080/00273171.2021.1925521>.")
     (license license:gpl3)))
 
-(define-public r-plusser
-  (package
-    (name "r-plusser")
-    (version "0.4-0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "plusser" version))
-              (sha256
-               (base32
-                "1g100dh8cvn9q09j0jbkw4xmwjdp1lm4651369975fm99nrlp1j9"))))
-    (properties `((upstream-name . "plusser")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rjsonio r-rcurl r-plyr r-lubridate))
-    (home-page "http://kdss.at")
-    (synopsis "Google+ Interface for R")
-    (description
-     "plusser provides an API interface to Google+ so that posts, profiles and pages
-can be automatically retrieved.")
-    (license (list license:gpl3
-                   (license:fsdg-compatible "file://LICENSE")))))
-
 (define-public r-pluscode
   (package
     (name "r-pluscode")
@@ -17308,13 +17105,13 @@ La Regression PLS: Theorie et Pratique by Michel Tenenhaus.")
 (define-public r-plrmodels
   (package
     (name "r-plrmodels")
-    (version "1.3")
+    (version "1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PLRModels" version))
               (sha256
                (base32
-                "18l285w2c22f8gcxqpbbxykkxdfhdjpg5af7njrsq0mxr1p2a8wb"))))
+                "1jpnxsjj3gj72my1q4mswqxpil7vbqfv5gwd51fvx1z8vbdvkwa8"))))
     (properties `((upstream-name . "PLRModels")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=PLRModels")
@@ -19244,13 +19041,13 @@ inversions, MÃ¶bius transformations.")
 (define-public r-plan
   (package
     (name "r-plan")
-    (version "0.4-4")
+    (version "0.4-5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "plan" version))
               (sha256
                (base32
-                "0xpl1hrq0cs1bi8wn1bb1d4lmb6g1dfzp8wlwa9g2bc12yw5q8hg"))))
+                "0p81pzysbl58580393hw90w5svqiva9yvcwlmx247fld83lbh9qq"))))
     (properties `((upstream-name . "plan")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -20595,32 +20392,6 @@ Fenton (2013) <doi:10.1515/jqas-2012-0036> This dynamic rating system has proven
 to provide superior results for predicting association football outcomes.")
     (license license:gpl2)))
 
-(define-public r-pirate
-  (package
-    (name "r-pirate")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "pirate" version))
-              (sha256
-               (base32
-                "160mmyqdwbc4g7n7q9i4xcqp6h9bcpcz7vavsgdcpvs2mjfhfpjx"))))
-    (properties `((upstream-name . "pirate")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-plyr r-mass r-ggplot2))
-    (home-page "https://cran.r-project.org/package=pirate")
-    (synopsis "Generated Effect Modifier")
-    (description
-     "An implementation of the generated effect modifier (GEM) method.  This method
-constructs composite variables by linearly combining pre-treatment scalar
-patient characteristics to create optimal treatment effect modifiers in linear
-models.  The optimal linear combination is called a GEM. Treatment is assumed to
-have been assigned at random.  For reference, see E Petkova, T Tarpey, Z Su, and
-RT Ogden.  Generated effect modifiers (GEMs) in randomized clinical trials.
-Biostatistics (First published online: July 27, 2016,
-<doi:10.1093/biostatistics/kxw035>).")
-    (license license:expat)))
-
 (define-public r-piqp
   (package
     (name "r-piqp")
@@ -21157,26 +20928,6 @@ has changed in this new version.  The old version is still available at R-Forge.
 Pijavski method, which was published in Pijavski (1972)
 <DOI:10.1016/0041-5553(72)90115-2>.")
     (license license:lgpl3)))
-
-(define-public r-pigshift
-  (package
-    (name "r-pigshift")
-    (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "PIGShift" version))
-              (sha256
-               (base32
-                "115dnsh4b1rxx1d2kc8x3vl5366h5f0i6gg8l1w3v0f8309qigis"))))
-    (properties `((upstream-name . "PIGShift")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-mvtnorm r-ape))
-    (home-page "https://cran.r-project.org/package=PIGShift")
-    (synopsis "Polygenic Inverse Gamma Shifts")
-    (description
-     "Fits models of gene expression evolution to expression data from coregulated
-groups of genes, assuming inverse gamma distributed rate variation.")
-    (license license:gpl3)))
 
 (define-public r-piglet
   (package
@@ -22180,31 +21931,6 @@ provides enhancements to phylobase classes, specifically for use by package
 branch-annotated trees (as in @code{SigTree');} also provides support for a few
 other extra features.")
     (license license:gpl3)))
-
-(define-public r-phxnlme
-  (package
-    (name "r-phxnlme")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Phxnlme" version))
-              (sha256
-               (base32
-                "0h9mi8p95rp1s8xsdv38j9fpy2cy9zvjnldjmnj0n469kimp2782"))))
-    (properties `((upstream-name . "Phxnlme")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-testthat r-manipulate r-lattice r-gridextra
-                             r-ggplot2))
-    (home-page "https://cran.r-project.org/package=Phxnlme")
-    (synopsis "Run Phoenix NLME and Perform Post-Processing")
-    (description
-     "Calls Phoenix NLME (non-linear mixed effects), a population modeling and
-simulation software, for pharmacokinetics and pharmacodynamics analyses and
-conducts post-processing of the results.  This includes creation of various
-diagnostic plots, bootstrap and visual predictive checks.  See <http://
-www.certara.com/software/pkpd-modeling-and-simulation/phoenix-nlme/> for more
-information about Phoenix NLME'.")
-    (license license:gpl2)))
 
 (define-public r-phvid
   (package
@@ -24462,28 +24188,6 @@ mixture models. @code{McNicholas} and Murphy (2008)
 <doi:10.1016/j.csda.2009.02.011>.")
     (license license:gpl2+)))
 
-(define-public r-pgmgm
-  (package
-    (name "r-pgmgm")
-    (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "pGMGM" version))
-              (sha256
-               (base32
-                "1hkczz38g8a8253jm8vhm8948fs91g6b2rfzkz47srkkby9ksa4x"))))
-    (properties `((upstream-name . "pGMGM")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-mvtnorm r-mass r-jgl))
-    (home-page "https://cran.r-project.org/package=pGMGM")
-    (synopsis
-     "Estimating Multiple Gaussian Graphical Models (GGM) in Penalized Gaussian Mixture Models (GMM)")
-    (description
-     "This is an R and C code implementation of the New-SP and New-JGL method of Gao
-et al. (2016) <DOI:10.1214/16-EJS1135> to perform model-based clustering and
-multiple graph estimation.")
-    (license license:gpl2)))
-
 (define-public r-pgm2
   (package
     (name "r-pgm2")
@@ -25329,23 +25033,6 @@ as multi-layered tiff files.")
     (description "Allows users to stem Persian texts for text analysis.")
     (license license:gpl2+)))
 
-(define-public r-persiandictionary
-  (package
-    (name "r-persiandictionary")
-    (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "persiandictionary" version))
-              (sha256
-               (base32
-                "0rgi36ngpiax3p5zk4cdgf3463vgx7zg5wxscs2j7834yh37jwax"))))
-    (properties `((upstream-name . "persiandictionary")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=persiandictionary")
-    (synopsis "English to Persian dictionary")
-    (description "Translate words from English to Persian (Over 67,000 words)")
-    (license license:gpl2)))
-
 (define-public r-perseusr
   (package
     (name "r-perseusr")
@@ -25972,29 +25659,6 @@ percentiles while the other returns the values for every percentile from 1 to
 100.")
     (license license:expat)))
 
-(define-public r-perccal
-  (package
-    (name "r-perccal")
-    (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "perccal" version))
-              (sha256
-               (base32
-                "1akak068d0g70amj5sbvnqbywzy21l4wz11mhp71b7cp4xmr9n12"))))
-    (properties `((upstream-name . "perccal")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcppeigen r-rcpparmadillo r-rcpp))
-    (home-page "http://www.danielminhmccarthy.com")
-    (synopsis
-     "Implementing Double Bootstrap Linear Regression Confidence Intervals Using the 'perc-cal' Method")
-    (description
-     "This package contains functions which allow the user to compute confidence
-intervals quickly using the double bootstrap-based percentile calibrated
-('perc-cal') method for linear regression coefficients.  perccal_interval() is
-the primary user-facing function within this package.")
-    (license license:gpl3)))
-
 (define-public r-perc
   (package
     (name "r-perc")
@@ -26161,30 +25825,6 @@ include only those possibly contributing to the observed bioactivity, and
 prioritize these remaining compounds for those most likely contributing to each
 bioactivity data set.")
     (license (license:fsdg-compatible "CC BY-NC-SA 4.0"))))
-
-(define-public r-pepr
-  (package
-    (name "r-pepr")
-    (version "0.4.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "pepr" version))
-              (sha256
-               (base32
-                "0mnigx4lpl397k526sxp7ckrnp59hfrnm9gqcq0nx6j5d7379sp9"))))
-    (properties `((upstream-name . "pepr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-yaml r-stringr r-pryr r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=pepr")
-    (synopsis "Reading Portable Encapsulated Projects")
-    (description
-     "This package provides a PEP, or Portable Encapsulated Project, is a dataset that
-subscribes to the PEP structure for organizing metadata.  It is written using a
-simple YAML + CSV format, it is your one-stop solution to metadata management
-across data analysis environments.  This package reads this standardized project
-configuration structure into R.")
-    (license license:bsd-2)))
 
 (define-public r-peppm
   (package
@@ -27665,31 +27305,6 @@ RAM used so that developers can quickly identify and eliminate RAM hungry code."
 enriched regions or peaks where proteins are bound.  This package implements
 fast C code that computes the true and false positives with respect to a
 database of annotated region labels.")
-    (license license:gpl3)))
-
-(define-public r-peacots
-  (package
-    (name "r-peacots")
-    (version "1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "peacots" version))
-              (sha256
-               (base32
-                "128qpz06b0giz80lp9yq9l6pxcjglfr97yickg7z64vzzl2jilmq"))))
-    (properties `((upstream-name . "peacots")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=peacots")
-    (synopsis "Periodogram Peaks in Correlated Time Series")
-    (description
-     "Calculates the periodogram of a time series, maximum-likelihood fits an
-Ornstein-Uhlenbeck state space (OUSS) null model and evaluates the statistical
-significance of periodogram peaks against the OUSS null hypothesis.  The OUSS is
-a parsimonious model for stochastically fluctuating variables with linear
-stabilizing forces, subject to uncorrelated measurement errors.  Contrary to the
-classical white noise null model for detecting cyclicity, the OUSS model can
-account for temporal correlations typically occurring in ecological and
-geological time series.")
     (license license:gpl3)))
 
 (define-public r-peacock-test
@@ -31950,13 +31565,13 @@ act as wrappers around RSelenium methods.")
 (define-public r-parsec
   (package
     (name "r-parsec")
-    (version "1.2.6")
+    (version "1.2.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "parsec" version))
               (sha256
                (base32
-                "04irxvzk47cy7bpbzz4a12b5m4ar6y4a060j8ydll4ckjia9nyj0"))))
+                "0k6w4nd37yz9jlzwv0bkv90v72y5bjz7rhk8gjpbl6ym63brxps6"))))
     (properties `((upstream-name . "parsec")))
     (build-system r-build-system)
     (propagated-inputs (list r-netrankr r-igraph))
@@ -32658,28 +32273,6 @@ been implemented in parallel.  The optimization phase implements the
 @code{FastPAM1} algorithm, also in parallel.  Finally, calculation of silhouette
 is available and also implemented in parallel.")
     (license license:gpl2+)))
-
-(define-public r-parallelml
-  (package
-    (name "r-parallelml")
-    (version "1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "parallelML" version))
-              (sha256
-               (base32
-                "05j0rb81i8342m8drwgmgi1w30q96yf501d83cdq4zhjbchphbl1"))))
-    (properties `((upstream-name . "parallelML")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-foreach r-doparallel))
-    (home-page "www.infofarm.be")
-    (synopsis "Parallel-Voting Algorithm for many Classifiers")
-    (description
-     "By sampling your data, running the provided classifier on these samples in
-parallel on your own machine and letting your models vote on a prediction, we
-return much faster predictions than the regular machine learning algorithm and
-possibly even more accurate predictions.")
-    (license license:gpl2)))
 
 (define-public r-parallelmcmccombine
   (package
@@ -33396,13 +32989,13 @@ function.")
 (define-public r-panacea
   (package
     (name "r-panacea")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PANACEA" version))
               (sha256
                (base32
-                "19d03bdynjnpfx1hgn4fjq8nqzwgykmkrv227p8jps4y45z8zzb3"))))
+                "0pq5kq0i87yrdfs6id2lc6gg4dqsa07fsas13yc8jw6bd9lcf6rh"))))
     (properties `((upstream-name . "PANACEA")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2 r-org-hs-eg-db r-igraph r-dbi))
@@ -34048,33 +33641,6 @@ scenarios implemented only here, can allow for robust and easy simulations for
 novel situations.  Environmental data modified from that in RPANDA': Morlon H.
 et al (2016) <doi:10.1111/2041-210X.12526>.")
     (license license:gpl3)))
-
-(define-public r-paleobiodb
-  (package
-    (name "r-paleobiodb")
-    (version "0.7.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "paleobioDB" version))
-              (sha256
-               (base32
-                "0hgf0ns4mp2war254ysb9rcm4kij1d3xrwkr4s4n2h5in8dz23iq"))))
-    (properties `((upstream-name . "paleobioDB")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-scales
-                             r-rjson
-                             r-rcurl
-                             r-raster
-                             r-plyr
-                             r-maps
-                             r-gtools))
-    (home-page "https://docs.ropensci.org/paleobioDB")
-    (synopsis "Download and Process Data from the Paleobiology Database")
-    (description
-     "Includes 19 functions to wrap each endpoint of the @code{PaleobioDB} API, plus 8
-functions to visualize and process the fossil data.  The API documentation for
-the Paleobiology Database can be found in <http://paleobiodb.org/data1.1/>.")
-    (license license:gpl2)))
 
 (define-public r-pald
   (package
@@ -35118,13 +34684,13 @@ defined radial scheme.  See the pacviz documentation page for more information:
 (define-public r-pacs
   (package
     (name "r-pacs")
-    (version "0.4.10")
+    (version "0.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pacs" version))
               (sha256
                (base32
-                "1kchwlpyk2dsvlfx32z8v6h1ky7ac546cwrx0gaxxa9n79xj2ba1"))))
+                "0vqmck5jajlbn3iazb7s6jpfgbwvl7aa084ag25cahsmajczg2v7"))))
     (properties `((upstream-name . "pacs")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-stringi r-memoise r-jsonlite r-curl))
@@ -35592,29 +35158,6 @@ multiple samples.  It is particularly useful for analyzing single-cell data set.
  Please see Li et al. (2017) <doi:10.1371/journal.pcbi.1005875> for detail
 method description.")
     (license license:gpl3)))
-
-(define-public r-pabonlasso
-  (package
-    (name "r-pabonlasso")
-    (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "PabonLasso" version))
-              (sha256
-               (base32
-                "158xg9i13nqy1bnpch8r6a7yas01hsdidmcypgccmyh7d7l52mr1"))))
-    (properties `((upstream-name . "PabonLasso")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=PabonLasso")
-    (synopsis
-     "Pabon Lasso Graphs and Comparing Situations of a Unit in Two Different Times")
-    (description
-     "Pabon Lasso is a graphical method for monitoring the efficiency of different
-wards of a hospital or different hospitals.Pabon Lasso graph is divided into 4
-parts which are created after drawing the average of BTR and BOR. The part in
-the left-down side is Zone I, left-up side is Zone II, Right-up side part is
-Zone III and the last part is Zone IV.")
-    (license license:gpl2+)))
 
 (define-public r-pa
   (package

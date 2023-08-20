@@ -671,13 +671,13 @@ R for Introductory Statistics,\" second edition.")
 (define-public r-usincometaxes
   (package
     (name "r-usincometaxes")
-    (version "0.6.0")
+    (version "0.7.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "usincometaxes" version))
               (sha256
                (base32
-                "01b4kz1ggnr7rl714x99z77n0cgch4jsxnysz1314rvj11nk7ciq"))))
+                "018hc48l58p8ybdvdshh2kkl0pm6b8wsqgc0qjcq60z6v8s4sqx4"))))
     (properties `((upstream-name . "usincometaxes")))
     (build-system r-build-system)
     (propagated-inputs (list r-vroom r-v8 r-tibble))
@@ -2206,6 +2206,38 @@ optimal usage of hardness in a game.")
 outside the Unit circle.  You can also easily draw an unit circle.")
     (license license:gpl3)))
 
+(define-public r-uniswapper
+  (package
+    (name "r-uniswapper")
+    (version "0.6.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "uniswappeR" version))
+              (sha256
+               (base32
+                "0vsw2jvp3gndjrl7v9fndpaqx4kryf4szsz1si1cx1rxhqvlsf92"))))
+    (properties `((upstream-name . "uniswappeR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-scales
+                             r-rlang
+                             r-reticulate
+                             r-purrr
+                             r-patchwork
+                             r-lubridate
+                             r-jsonlite
+                             r-ghql
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://github.com/OmniacsDAO/uniswappeR")
+    (synopsis "Interact with the Uniswap Platform")
+    (description
+     "Routines to interact with the Uniswap trading platform and its API
+<https://uniswap.org>.  The package contains codebase to interact with the
+uniswap platform directly from R console, Ability to pull and export data
+related to the platform and analyse some aspects.")
+    (license license:gpl3)))
+
 (define-public r-uniset
   (package
     (name "r-uniset")
@@ -3549,13 +3581,13 @@ Shape.")
 (define-public r-ugmar
   (package
     (name "r-ugmar")
-    (version "3.4.4")
+    (version "3.4.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "uGMAR" version))
               (sha256
                (base32
-                "10ziypw60v71878gvjkzd23r2cczm403cnjdj5lmh8r4zwlsck9y"))))
+                "01zs919b24qb102qf9m19x0zzyg7yx8v8w674awzfk4lvm27d2aq"))))
     (properties `((upstream-name . "uGMAR")))
     (build-system r-build-system)
     (propagated-inputs (list r-pbapply r-gsl r-brobdingnag))

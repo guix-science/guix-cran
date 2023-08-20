@@ -4743,26 +4743,6 @@ optimal hedging and Monte Carlo method, from Chapter 3 of Statistical Methods
 for Financial Engineering', by Bruno Remillard, CRC Press, (2013).")
     (license license:gpl2+)))
 
-(define-public r-optgs
-  (package
-    (name "r-optgs")
-    (version "1.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OptGS" version))
-              (sha256
-               (base32
-                "1acwwjng5ri5vganv7b5pagp7524ifr0q8h1pbfb5g6z3x6w08kh"))))
-    (properties `((upstream-name . "OptGS")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=OptGS")
-    (synopsis
-     "Near-Optimal and Balanced Group-Sequential Designs for Clinical Trials with Continuous Outcomes")
-    (description
-     "This package provides functions to find near-optimal multi-stage designs for
-continuous outcomes.")
-    (license license:gpl2)))
-
 (define-public r-optextras
   (package
     (name "r-optextras")
@@ -7018,29 +6998,6 @@ whether x and y are from the same population, finds the correlation coefficient
 of x and y if x and y have the same length.")
     (license license:gpl2+)))
 
-(define-public r-onetr
-  (package
-    (name "r-onetr")
-    (version "1.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ONETr" version))
-              (sha256
-               (base32
-                "14l56qcmyyk2ivcfkfv7j2k4i1mfrngpi9zcc88w6xfhz5qlb548"))))
-    (properties `((upstream-name . "ONETr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml r-rcurl r-plyr))
-    (home-page "https://cran.r-project.org/package=ONETr")
-    (synopsis "Efficient Authenticated Interaction with the O*NET API")
-    (description
-     "This package provides a series of functions designed to enable users to easily
-search and interact with occupational data from the O*NET API
-<www.onetonline.org>.  The package produces parsed and listed XML data for
-custom interactions, or pre-packaged functions for easy extraction of specific
-data (e.g., Knowledge, Skills, Abilities, Work Styles, etc.).")
-    (license license:gpl3)))
-
 (define-public r-onetime
   (package
     (name "r-onetime")
@@ -7869,30 +7826,6 @@ different solvers.  It currently only supports linear constraints and objective
 functions.  See the ompr website <https://dirkschumacher.github.io/ompr/> for
 more information, documentation and examples.")
     (license license:expat)))
-
-(define-public r-omopr
-  (package
-    (name "r-omopr")
-    (version "0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "omopr" version))
-              (sha256
-               (base32
-                "1ng94jnarj7pszxzvdlnrr2dbcvv5p5yrscjw6ihqkskpraw9f7w"))))
-    (properties `((upstream-name . "omopr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rsqlite r-dplyr r-dbplyr r-dbi))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=omopr")
-    (synopsis "OMOP CDM Databases using the Tidyverse")
-    (description
-     "Utility functions for querying electronic health record (EHR) data in OMOP
-Common Data Model
-<https://www.ohdsi.org/data-standardization/the-common-data-model/> databases
-using a tidyverse approach based on dbplyr lazy queries.  This allows efficient
-in-database querying and data wrangling without explicit writing of SQL queries.")
-    (license license:lgpl3)))
 
 (define-public r-omnibusfisher
   (package

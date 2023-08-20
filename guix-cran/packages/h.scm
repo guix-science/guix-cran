@@ -1379,26 +1379,6 @@ tolerated dose (MTD) due to its ability to calibrate for an intermediate dose.
 More details can be found in Liao et al.  2022 <doi:10.1002/ijc.34203>.")
     (license license:gpl3)))
 
-(define-public r-hwwntest
-  (package
-    (name "r-hwwntest")
-    (version "1.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hwwntest" version))
-              (sha256
-               (base32
-                "1mz5svx5vbisdl5wxdnwip13pq4slyigc7j52l526rr9n0l0pr5v"))))
-    (properties `((upstream-name . "hwwntest")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-wavethresh r-polynom))
-    (home-page "https://cran.r-project.org/package=hwwntest")
-    (synopsis "Tests of White Noise using Wavelets")
-    (description
-     "This package provides methods to test whether time series is consistent with
-white noise.")
-    (license license:gpl2)))
-
 (define-public r-hwsdr
   (package
     (name "r-hwsdr")
@@ -5368,27 +5348,6 @@ Wolfgang Karl HÃ¤rdle, Sigbert Klinke, and Bernd RÃ¶nz (2015)
 series trend tests are also included.")
     (license license:gpl3)))
 
-(define-public r-hkex-api
-  (package
-    (name "r-hkex-api")
-    (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hkex.api" version))
-              (sha256
-               (base32
-                "0hqwihlrppchpaz2yaq92gf779yi5k8n7sxy1kbpjxs2qc18xvj2"))))
-    (properties `((upstream-name . "hkex.api")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml r-rcurl r-httr))
-    (home-page "https://cran.r-project.org/package=hkex.api")
-    (synopsis "API to Retrieve Data from Hong Kong Stock Exchange")
-    (description
-     "This package provides a set of functions helps to retrieve data from HKEX (Hong
-Kong Stock Exchange), see <https://www.hkex.com.hk/> for more information.  In
-addition, a function generates insert SQL statements from a dataframe.")
-    (license license:gpl3)))
-
 (define-public r-hkevp
   (package
     (name "r-hkevp")
@@ -5434,26 +5393,6 @@ District Councillors (<https://www.districtcouncils.gov.hk> and
 Department of Transport (<https://www.td.gov.hk/>).  All of the data in this
 package is available in the public domain.")
     (license license:gpl3)))
-
-(define-public r-hkclustering
-  (package
-    (name "r-hkclustering")
-    (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hkclustering" version))
-              (sha256
-               (base32
-                "19syq06y5dl0mcwyaxr7w1hj8ffp5s140j72djcz0lljhskzmp6f"))))
-    (properties `((upstream-name . "hkclustering")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-cluster))
-    (home-page "https://cran.r-project.org/package=hkclustering")
-    (synopsis "Ensemble Clustering using K Means and Hierarchical Clustering")
-    (description
-     "This package implements an ensemble algorithm for clustering combining a k-means
-and a hierarchical clustering approach.")
-    (license license:gpl2)))
 
 (define-public r-hk80
   (package
@@ -6202,13 +6141,13 @@ rayshader pipeline.")
 (define-public r-hillr
   (package
     (name "r-hillr")
-    (version "0.5.1")
+    (version "0.5.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hillR" version))
               (sha256
                (base32
-                "0yz2f3zz28k36f6afya5cg7k6kvyz6nzafr53pw6liy086nfrb9n"))))
+                "0gc4yirbn2bp38sjdgin7167yvm0kd6nk4yaj66jp0b5qbpc85gc"))))
     (properties `((upstream-name . "hillR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -7605,13 +7544,13 @@ that departed Houston (IAH and HOU) in 2011.")
 (define-public r-hfhub
   (package
     (name "r-hfhub")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hfhub" version))
               (sha256
                (base32
-                "0g0km18jgvnm70rh0azf05j8fdms22shnshmi4qaap8ck8lgljjr"))))
+                "0s2fm8lx680ymn8srln6dyay0lp03mxhyv7p71aw892hdq1d2sm1"))))
     (properties `((upstream-name . "hfhub")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -7858,13 +7797,13 @@ organizations); extract information, check ID validity and diagnostics.")
 (define-public r-hettx
   (package
     (name "r-hettx")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hettx" version))
               (sha256
                (base32
-                "17hfbzxfh4cinqizm33bi4wnax11w9ab7akcrl99bb59nw9xhpxr"))))
+                "15i9n2fcfbkv11qlgh4gsjvfnzzziwbcn8izzxw2d0kbdhhk7h8c"))))
     (properties `((upstream-name . "hettx")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -9425,6 +9364,26 @@ Zaineb SMIDA and Lionel CUCALA and Ali GANNOUN and Ghislain Durif (2022)
 Sophie DABO-NIANG and Michael GENIN (2023) <doi:10.1093/jrsssc/qlad017>.")
     (license license:gpl3)))
 
+(define-public r-hdsinrdata
+  (package
+    (name "r-hdsinrdata")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "HDSinRdata" version))
+              (sha256
+               (base32
+                "071ywrxw2qhiqb7djd71y20zw5mja6c7abkkrk04nsdsl9m98793"))))
+    (properties `((upstream-name . "HDSinRdata")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=HDSinRdata")
+    (synopsis "Data for the 'Health Data Science in R' Online Textbook")
+    (description
+     "This package contains seven datasets used in the chapters and exercises of Paul,
+Alice (2023) \"Health Data Science in R\"
+<https://alicepaul.github.io/health-data-science-in-r/>.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
+
 (define-public r-hdshop
   (package
     (name "r-hdshop")
@@ -10121,29 +10080,6 @@ linear classifier; 3) estimate the PCC of three design methods given design
 assumptions; 4) determine the sample size requirement to achieve the target PCC
 for three design methods.")
     (license license:gpl2)))
-
-(define-public r-hdd
-  (package
-    (name "r-hdd")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hdd" version))
-              (sha256
-               (base32
-                "0hnqjfp78s8fiabibf0dl57sj170ri1ysf7pyrk45z4qsnizbyn2"))))
-    (properties `((upstream-name . "hdd")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-readr r-fst r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=hdd")
-    (synopsis "Easy Manipulation of Out of Memory Data Sets")
-    (description
-     "Hard drive data: Class of data allowing the easy importation/manipulation of out
-of memory data sets.  The data sets are located on disk but look like in-memory,
-the syntax for manipulation is similar to data.table'.  Operations are performed
-\"chunk-wise\" behind the scene.")
-    (license license:gpl3)))
 
 (define-public r-hdcurves
   (package

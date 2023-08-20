@@ -1766,25 +1766,6 @@ images, see Taylor et al (2014) <doi:10.1080/00401706.2013.823890>.")
     (description "Estimates two-dimensional local wavelet spectra.")
     (license license:gpl2)))
 
-(define-public r-lrth
-  (package
-    (name "r-lrth")
-    (version "1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "LRTH" version))
-              (sha256
-               (base32
-                "08vakwb7ca7956gifynzijka441yyx0wd5bq5jfhz56lzcxgfb99"))))
-    (properties `((upstream-name . "LRTH")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=LRTH")
-    (synopsis "Likelihood Ratio Test Accounting for Genetic Heterogeneity")
-    (description
-     "R code of a likelihood ratio test for genome-wide association under genetic
-heterogeneity.")
-    (license license:gpl3)))
-
 (define-public r-lrtester
   (package
     (name "r-lrtester")
@@ -4574,13 +4555,13 @@ used to illustrate log-concave density estimation are made available.")
 (define-public r-logconcens
   (package
     (name "r-logconcens")
-    (version "0.17-2")
+    (version "0.17-3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "logconcens" version))
               (sha256
                (base32
-                "142zqpql4h874vmm5nim8rn4z96wjn9fazqgrl5j40xzfxv4h9s0"))))
+                "1a9p4pr8pva2bpqbq4wzrcisfffjvaigbvk6ixm2klys0nkwlbhp"))))
     (properties `((upstream-name . "logconcens")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=logconcens")
@@ -6327,13 +6308,13 @@ modeling.  Williams, Martin, Liu, and Rast (2020)
 (define-public r-lmm
   (package
     (name "r-lmm")
-    (version "1.3")
+    (version "1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lmm" version))
               (sha256
                (base32
-                "13b5rvdbzljir1fn4zxv2lshbga64vwzn6884izif9v5dkd5b29j"))))
+                "0ic3l311y7sq6q8kb5il3k115w1gpzy9kxx8fbjnx1zl2qsg10wf"))))
     (properties `((upstream-name . "lmm")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -7002,28 +6983,6 @@ transformation (z-score and min-max).  Besides such helper functions, the
 package also includes several interesting datasets that are useful for
 multivariate analysis.")
     (license license:gpl2+)))
-
-(define-public r-livechatr
-  (package
-    (name "r-livechatr")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "livechatR" version))
-              (sha256
-               (base32
-                "1k0z6q3s9iw962m1lwlx45p95flzl5jg1xh6ng426v9jh1yyrbb2"))))
-    (properties `((upstream-name . "livechatR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-purrr r-magrittr r-jsonlite r-dplyr
-                             r-data-table))
-    (home-page "https://github.com/lawwu/livechatR")
-    (synopsis "R Wrapper for LiveChat REST API")
-    (description
-     "This package provides a wrapper around @code{LiveChat's} API. The R functions
-allow for one to extract chat sessions, raw text of chats between agents and
-customers and events.")
-    (license license:gpl2)))
 
 (define-public r-live
   (package
@@ -9228,25 +9187,6 @@ id, group or location as well as activating effects.")
 wavelet lifting scales and wavelet energy of Knight et al (2017)
 <doi:10.1007/s11222-016-9698-2>.")
     (license license:gpl2)))
-
-(define-public r-lift
-  (package
-    (name "r-lift")
-    (version "0.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "lift" version))
-              (sha256
-               (base32
-                "0ynsyl6lw7z7bvwzk2idgxzzqji5ffnnc3bll9h4gwdw666g7fln"))))
-    (properties `((upstream-name . "lift")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=lift")
-    (synopsis "Compute the Top Decile Lift and Plot the Lift Curve")
-    (description
-     "Compute the top decile lift and plot the lift curve.  Cumulative lift curves are
-also supported.")
-    (license license:gpl2+)))
 
 (define-public r-lifetables
   (package
@@ -11528,32 +11468,6 @@ be used as a general tool for high throughput data sets where dependence may be
 involved.")
     (license license:gpl2+)))
 
-(define-public r-leap
-  (package
-    (name "r-leap")
-    (version "0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "LEAP" version))
-              (sha256
-               (base32
-                "1yrhanxvr7krvllqzv17qkc4wvmd7mgl57am8sn53773dbfipfc4"))))
-    (properties `((upstream-name . "LEAP")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=LEAP")
-    (synopsis
-     "Constructing Gene Co-Expression Networks for Single-Cell RNA-Sequencing Data Using Pseudotime Ordering")
-    (description
-     "Advances in sequencing technology now allow researchers to capture the
-expression profiles of individual cells.  Several algorithms have been developed
-to attempt to account for these effects by determining a cell's so-called
-`pseudotime', or relative biological state of transition.  By applying these
-algorithms to single-cell sequencing data, we can sort cells into their
-pseudotemporal ordering based on gene expression.  LEAP (Lag-based Expression
-Association for Pseudotime-series) then applies a time-series inspired lag-based
-correlation analysis to reveal linearly dependent genetic associations.")
-    (license license:gpl2)))
-
 (define-public r-leanr
   (package
     (name "r-leanr")
@@ -11907,13 +11821,13 @@ leaflet map.")
 (define-public r-leaflegend
   (package
     (name "r-leaflegend")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "leaflegend" version))
               (sha256
                (base32
-                "0jiv3cdkcil1krfzmyp0xa8j4c8vnwrd7vnrzsaqg9mkhcijvll7"))))
+                "1bh1b9gfh3fhnj648wqbs3a9k967fynznpqb65qgpjsjjjc67x5c"))))
     (properties `((upstream-name . "leaflegend")))
     (build-system r-build-system)
     (propagated-inputs (list r-leaflet r-htmlwidgets r-htmltools r-base64enc))

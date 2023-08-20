@@ -542,29 +542,6 @@ be configured to be collected.  Logging messages are displayed on console and
 optionally they are sent to Azure Log Analytics workspace in real-time.")
     (license license:expat)))
 
-(define-public r-aziztest
-  (package
-    (name "r-aziztest")
-    (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "aziztest" version))
-              (sha256
-               (base32
-                "0rpnyrb7zi42l1fc8ni0r5d0y6a4dr56917z8i54mv1jrk4hijjd"))))
-    (properties `((upstream-name . "aziztest")))
-    (build-system r-build-system)
-    (home-page "https://www.biorxiv.org/content/10.1101/2020.03.23.002972v2")
-    (synopsis "Novel Statistical Test for Aberration Enrichment")
-    (description
-     "Testing for heterogeneous effects in a case-control setting.  The aim here to
-discover an association that is beyond a mean difference between all cases and
-all controls.  Instead, the signal of interest here is present in only a
-proportion of the cases.  This test should be more powerful than a t-test or
-Wilcoxon test in this heterogeneous setting.  Please cite the corresponding
-paper: Mezlini et al. (2020) <doi:10.1101/2020.03.23.002972>.")
-    (license license:gpl3)))
-
 (define-public r-aziad
   (package
     (name "r-aziad")
@@ -817,41 +794,20 @@ they---rank and traffic history, sites linking to them, among other things.  See
 <https://aws.amazon.com/awis/> for more information.")
     (license license:expat)))
 
-(define-public r-awr-kms
-  (package
-    (name "r-awr-kms")
-    (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "AWR.KMS" version))
-              (sha256
-               (base32
-                "00aqhyqlncsv0vfcyhaazxaclwm63v5kscssash7529avdwd4gqg"))))
-    (properties `((upstream-name . "AWR.KMS")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rjava r-jsonlite r-awr))
-    (home-page "https://github.com/cardcorp/AWR.KMS")
-    (synopsis "Simple Client to the 'AWS' Key Management Service")
-    (description
-     "Encrypt plain text and decrypt cipher text using encryption keys hosted at
-Amazon Web Services ('AWS') Key Management Service ('KMS'), on which see
-<https://aws.amazon.com/kms> for more information.")
-    (license license:agpl3)))
-
 (define-public r-awr-kinesis
   (package
     (name "r-awr-kinesis")
-    (version "1.7.3")
+    (version "1.7.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "AWR.Kinesis" version))
               (sha256
                (base32
-                "1gfjzbb8xxfd2x5zabysqi0x10sb1c9826wqw8y555nsxgksqxz8"))))
+                "0ak2ry5zj6gb9g6laabv0ym3i1vqdwl56g6k58fkpjb87rlb2hbp"))))
     (properties `((upstream-name . "AWR.Kinesis")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rjava r-jsonlite r-futile-logger r-awr))
-    (home-page "https://github.com/cardcorp/AWR.Kinesis")
+    (propagated-inputs (list r-rjava r-logger r-jsonlite r-awr))
+    (home-page "https://github.com/daroczig/AWR.Kinesis")
     (synopsis "Amazon 'Kinesis' Consumer Application for Stream Processing")
     (description
      "Fetching data from Amazon Kinesis Streams using the Java-based
@@ -2148,30 +2104,6 @@ model by incorporating an increasing number of top-performing models to create a
 diverse combination.  Presently, only models from h2o.ai are supported.")
     (license license:expat)))
 
-(define-public r-autoencoder
-  (package
-    (name "r-autoencoder")
-    (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "autoencoder" version))
-              (sha256
-               (base32
-                "0ly1aanayk28nx6yqfhl7d0zm4vg6rfjikf5ibn8zhmkrfyflj1y"))))
-    (properties `((upstream-name . "autoencoder")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=autoencoder")
-    (synopsis
-     "Sparse Autoencoder for Automatic Learning of Representative Features from Unlabeled Data")
-    (description
-     "Implementation of the sparse autoencoder in R environment, following the notes
-of Andrew Ng
-@code{(http://www.stanford.edu/class/archive/cs/cs294a/cs294a.1104/sparseAutoencoder.pdf).}
-The features learned by the hidden layer of the autoencoder (through
-unsupervised learning of unlabeled data) can be used in constructing deep belief
-neural networks.")
-    (license license:gpl2)))
-
 (define-public r-autodeskr
   (package
     (name "r-autodeskr")
@@ -2657,13 +2589,13 @@ models trained on small data.")
 (define-public r-augmentedrcbd
   (package
     (name "r-augmentedrcbd")
-    (version "0.1.6")
+    (version "0.1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "augmentedRCBD" version))
               (sha256
                (base32
-                "0ng292zgq18zqqhwkq6600hrg3akb76b7i4lzh6hd7vcbifl3f6m"))))
+                "1gnl6i81m5w7hxi147ycr963sm661xscw0xb6wm9vcr043ddvx3p"))))
     (properties `((upstream-name . "augmentedRCBD")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi
@@ -2831,13 +2763,13 @@ Association (2005), <doi:10.1044/policy.GL2005-00014>.")
 (define-public r-audio
   (package
     (name "r-audio")
-    (version "0.1-10")
+    (version "0.1-11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "audio" version))
               (sha256
                (base32
-                "1pf4mwqar15v7y6sq8wkfqnr6rgpq9ywwsahzr76n6klijl33iw2"))))
+                "0z719jxmfzmh6c885m1yixjzdsl1wy17s1sw2hp4ppz4bcrzclhh"))))
     (properties `((upstream-name . "audio")))
     (build-system r-build-system)
     (native-inputs (list pkg-config))
@@ -4544,29 +4476,6 @@ correlation matrix and category scores can be used for further multivariate
 methods such as structural equation models.")
     (license license:gpl2)))
 
-(define-public r-aspc
-  (package
-    (name "r-aspc")
-    (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "aSPC" version))
-              (sha256
-               (base32
-                "1q301rw7dax5v58srg4jlcam1qq2igkaj7kg8wlnlml0hsck4c4a"))))
-    (properties `((upstream-name . "aSPC")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-mvtnorm r-energy))
-    (home-page "https://cran.r-project.org/package=aSPC")
-    (synopsis
-     "An Adaptive Sum of Powered Correlation Test (aSPC) for Global Association Between Two Random Vectors")
-    (description
-     "The @code{aSPC} test is designed to test global association between two groups
-of variables potentially with moderate to high dimension (e.g. in hundreds).
-The @code{aSPC} is particularly useful when the association signals between two
-groups of variables are sparse.")
-    (license license:gpl3)))
-
 (define-public r-asnipe
   (package
     (name "r-asnipe")
@@ -5610,56 +5519,6 @@ error distribution can be Normal or t-Student.  It provides the parameter
 estimates, the standard errors and prediction of future observations (available
 only for the normal case).  Olivari et all (2021)
 <doi:10.1080/10543406.2020.1852246>.")
-    (license license:gpl2+)))
-
-(define-public r-arpaldata
-  (package
-    (name "r-arpaldata")
-    (version "1.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ARPALData" version))
-              (sha256
-               (base32
-                "12bb5ghgwxvimh1frcq9cz6id15pj7zxz8mllwbda734c9y95x6g"))))
-    (properties `((upstream-name . "ARPALData")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tm
-                             r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-stringi
-                             r-sf
-                             r-rsocrata
-                             r-rlang
-                             r-readr
-                             r-purrr
-                             r-mondate
-                             r-moments
-                             r-magrittr
-                             r-lubridate
-                             r-ggplot2
-                             r-eurostat
-                             r-dplyr
-                             r-doparallel
-                             r-data-table
-                             r-aweek))
-    (home-page "https://cran.r-project.org/package=ARPALData")
-    (synopsis
-     "Retrieving, Managing and Analysing Air Quality and Weather Data for Lombardy (Italy) using ARPA Lombardia Open Database")
-    (description
-     "This package contains functions for retrieving, managing and analysing air
-quality and weather data from Regione Lombardia open database
-(<https://www.dati.lombardia.it/>).  Data are collected by ARPA Lombardia
-(Lombardia Environmental Protection Agency), Italy, through its ground
-monitoring network.  See the webpage
-<https://www.arpalombardia.it/Pages/ARPA_Home_Page.aspx> for further information
-on ARPA Lombardia's activities and history.  Data quality (e.g. missing values,
-exported values, graphical mapping) has been checked involving members of the
-ARPA Lombardia's office for air quality control.  The package makes available
-observations since 1989 (for weather) and 1996 (for air quality) and are updated
-with daily frequency by the regional agency.")
     (license license:gpl2+)))
 
 (define-public r-arothron
@@ -8389,29 +8248,6 @@ a modern @code{JavaScript} charting library to build interactive charts and
 visualizations with simple API. Apexcharts examples and documentation are
 available here: <https://apexcharts.com/>.")
     (license license:expat)))
-
-(define-public r-apex
-  (package
-    (name "r-apex")
-    (version "1.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "apex" version))
-              (sha256
-               (base32
-                "1ddzbzpnc17yvbl5yfyp0widqlx48qwlh80xcmyzhv045s680rdk"))))
-    (properties `((upstream-name . "apex")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-phangorn r-ape r-adegenet))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/thibautjombart/apex")
-    (synopsis "Phylogenetic Methods for Multiple Gene Data")
-    (description
-     "Toolkit for the analysis of multiple gene data (Jombart et al.  2017)
-<doi:10.1111/1755-0998.12567>.  Apex implements the new S4 classes multidna',
-@code{multiphyDat} and associated methods to handle aligned DNA sequences from
-multiple genes.")
-    (license license:gpl2+)))
 
 (define-public r-apercu
   (package
@@ -14438,28 +14274,6 @@ packages ALDEx2', @code{edgeR} and DESeq2 (Fernandes et al (2014)
 <doi:10.1186/2049-2618-2-15>, Anders et al. (2013)<doi:10.1038/nprot.2013.099>).")
     (license license:gpl3+)))
 
-(define-public r-aibd
-  (package
-    (name "r-aibd")
-    (version "0.1.9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "aibd" version))
-              (sha256
-               (base32
-                "1ispw8y0k665fdpw1c0swmhzl596jr89lnwyq741ak6ic92s3pzz"))))
-    (properties `((upstream-name . "aibd")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rscala r-commonsmath))
-    (home-page "https://cran.r-project.org/package=aibd")
-    (synopsis "Attraction Indian Buffet Distribution")
-    (description
-     "An implementation of probability mass function and sampling algorithms is
-provided for the attraction Indian buffet distribution (AIBD), originally from
-Dahl (2016)
-@code{<https://ww2.amstat.org/meetings/jsm/2016/onlineprogram/ActivityDetails.cfm?SessionID=213038>.}")
-    (license license:gpl3)))
-
 (define-public r-ahw
   (package
     (name "r-ahw")
@@ -16682,30 +16496,6 @@ on the prevalence of triers in the population.  See for: Kislev, M. M., and S.
 Kislev (2020) <doi:10.5539/ijms.v12n4p63>.")
     (license license:gpl3)))
 
-(define-public r-adoptr
-  (package
-    (name "r-adoptr")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "adoptr" version))
-              (sha256
-               (base32
-                "08d2fsqh5vczfr9cc8l554p6f0x85g58i5zg5j2m0chlmcispfk2"))))
-    (properties `((upstream-name . "adoptr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-nloptr r-glue))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/kkmann/adoptr")
-    (synopsis "Adaptive Optimal Two-Stage Designs in R")
-    (description
-     "Optimize one or two-arm, two-stage designs for clinical trials with respect to
-several pre-implemented objective criteria or implement custom objectives.
-Optimization under uncertainty and conditional (given stage-one outcome)
-constraints are supported.  See <doi:10.1002/sim.8291> and
-<doi:10.18637/jss.v098.i09> for details.")
-    (license license:expat)))
-
 (define-public r-adobeanalyticsr
   (package
     (name "r-adobeanalyticsr")
@@ -16836,31 +16626,6 @@ multipliers (ADMM) algorithm.  It currently supports a general elastic-net
 penalty that allows for both ridge and lasso-type penalties as special cases.
 This package is an alternative to the glasso package.  See Boyd et al (2010)
 <doi:10.1561/2200000016> for details regarding the estimation method.")
-    (license license:gpl2+)))
-
-(define-public r-admmnet
-  (package
-    (name "r-admmnet")
-    (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ADMMnet" version))
-              (sha256
-               (base32
-                "1la92fwg75ylqbz00znqd0rhv5r509kgh9wwznjacppif773wp6i"))))
-    (properties `((upstream-name . "ADMMnet")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcppeigen r-rcpp r-matrix))
-    (home-page "https://cran.r-project.org/package=ADMMnet")
-    (synopsis "Regularized Model with Selecting the Number of Non-Zeros")
-    (description
-     "Fit linear and cox models regularized with net (L1 and Laplacian), elastic-net
-(L1 and L2) or lasso (L1) penalty, and their adaptive forms, such as adaptive
-lasso and net adjusting for signs of linked coefficients.  In addition, it
-treats the number of non-zero coefficients as another tuning parameter and
-simultaneously selects with the regularization parameter.  The package uses
-one-step coordinate descent algorithm and runs extremely fast by taking into
-account the sparsity structure of coefficients.")
     (license license:gpl2+)))
 
 (define-public r-admmdensestsubmatrix

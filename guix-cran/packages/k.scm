@@ -3434,26 +3434,6 @@ in an Emacs shell buffer or in R Studio'.  In these cases keypress stops with an
 error message.")
     (license license:expat)))
 
-(define-public r-keyplayer
-  (package
-    (name "r-keyplayer")
-    (version "1.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "keyplayer" version))
-              (sha256
-               (base32
-                "0j4n46r9ivkbzqz8g22dq2bpmx7bs05yb5qp27p9jnfh5x19v2ds"))))
-    (properties `((upstream-name . "keyplayer")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sna r-matpow r-igraph))
-    (home-page "https://cran.r-project.org/package=keyplayer")
-    (synopsis "Locating Key Players in Social Networks")
-    (description
-     "Computes group centrality scores and identifies the most central group of
-players in a network.")
-    (license license:gpl3)))
-
 (define-public r-keyholder
   (package
     (name "r-keyholder")
@@ -4112,26 +4092,6 @@ development of this R package.  This project and network are lead by ACTA
 Ministry of Agriculture and Fishing of France.")
     (license license:lgpl3)))
 
-(define-public r-kendl
-  (package
-    (name "r-kendl")
-    (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "KENDL" version))
-              (sha256
-               (base32
-                "05vsh3x0li964a485q3n19c7fahcprvg1bnrvffagkxf8w1iz153"))))
-    (properties `((upstream-name . "KENDL")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=KENDL")
-    (synopsis
-     "Kernel-Smoothed Nonparametric Methods for Environmental Exposure Data Subject to Detection Limits")
-    (description
-     "Calculate the kernel-smoothed nonparametric estimator for the exposure
-distribution in presence of detection limits.")
-    (license license:gpl2)))
-
 (define-public r-kendallrandomwalks
   (package
     (name "r-kendallrandomwalks")
@@ -4478,27 +4438,6 @@ original data to that of permuted data.  If this test is significant, then there
 is sufficient evidence for at least one change point in the data.  Model
 selection is then used to determine the optimal k>0.")
     (license license:gpl2+)))
-
-(define-public r-kcopula
-  (package
-    (name "r-kcopula")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "kcopula" version))
-              (sha256
-               (base32
-                "07ddrq4lxp8i6n7c7ac7x9mdg9gfmlh7bv3n34qalwv0a6fa061w"))))
-    (properties `((upstream-name . "kcopula")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-pracma))
-    (home-page "https://github.com/mlkremer/kcopula")
-    (synopsis "The Bivariate K-Copula")
-    (description
-     "This package provides the density and distribution function of the bivariate
-K-copula by @code{WollschlÃ¤ger} and @code{SchÃ¤fer} (2016)
-<doi:10.21314/JOR.2016.342>.")
-    (license license:gpl3)))
 
 (define-public r-kcop
   (package

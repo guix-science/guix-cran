@@ -5888,16 +5888,17 @@ and Ranging) data.")
 (define-public r-treetools
   (package
     (name "r-treetools")
-    (version "1.9.2")
+    (version "1.10.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TreeTools" version))
               (sha256
                (base32
-                "1lbwgbhqnyq0iy49vnqfclfdsn1f47wpa42l2mgyi741pwfgqg4a"))))
+                "1ghp8dsr3y1xsbg53fw94xmwyxylcqd5jxijfi5hxis9mskc985j"))))
     (properties `((upstream-name . "TreeTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack
+                             r-rcurl
                              r-rcpp
                              r-r-cache
                              r-plottools
@@ -6544,31 +6545,6 @@ performing operations on the trait dataset within the treedata.table object.")
      "This package performs sparse discriminant analysis on a combination of node and
 leaf predictors when the predictor variables are structured according to a tree,
 as described in Fukuyama et al. (2017) <doi:10.1371/journal.pcbi.1005706>.")
-    (license license:gpl2)))
-
-(define-public r-treecm
-  (package
-    (name "r-treecm")
-    (version "1.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "treecm" version))
-              (sha256
-               (base32
-                "0vrawg4vvy270dn20gb2k99xi4q89l4mjz0mm7ikpz8wxqypzq2l"))))
-    (properties `((upstream-name . "treecm")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-plyr))
-    (home-page "https://github.com/mbask/treecm")
-    (synopsis "Centre of Mass Assessment and Consolidation of Trees")
-    (description
-     "The centre of mass is a crucial data for arborists in order to consolidate a
-tree using steel or dynamic cables.  Given field-recorded data on branchiness of
-a tree, the package: (i) computes and plots the centre of mass of the tree
-itself, (ii) computes branches slenderness coefficient in order to aid the
-arborist identify potentially dangerous branches, and (iii) computes the force
-acting on a ground plinth and its best position relating to the tree centre of
-mass, should the tree need to be stabilized by a steel cable.")
     (license license:gpl2)))
 
 (define-public r-treeclim
@@ -7457,27 +7433,6 @@ All other zero-shot classification model pipelines can be implemented using
 their model name from
 <https://huggingface.co/models?pipeline_tag=zero-shot-classification>}.")
     (license license:gpl3+)))
-
-(define-public r-transcriber
-  (package
-    (name "r-transcriber")
-    (version "0.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "transcribeR" version))
-              (sha256
-               (base32
-                "0y2kxg2da71i962fhsjxsr2ic3b31fmffhj3gg97b0nykfpcviib"))))
-    (properties `((upstream-name . "transcribeR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-httr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=transcribeR")
-    (synopsis "Automated Transcription of Audio Files Through the HP IDOL API")
-    (description
-     "Transcribes audio to text with the HP IDOL API. Includes functions to upload
-files, retrieve transcriptions, and monitor jobs.")
-    (license license:gpl3)))
 
 (define-public r-tramvs
   (package
@@ -12041,13 +11996,13 @@ dependency-free.")
 (define-public r-tinyarray
   (package
     (name "r-tinyarray")
-    (version "2.3.0")
+    (version "2.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tinyarray" version))
               (sha256
                (base32
-                "0q3j0ipv2ds9zfp15czl82p76qrxd0irwbjvz0jqdzivrkqcn231"))))
+                "1cwywxz0ndaw6vpgs89ywya6p00q5ngchm5aky8nhqvjipmibsk8"))))
     (properties `((upstream-name . "tinyarray")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -12056,8 +12011,6 @@ dependency-free.")
                              r-stringr
                              r-pheatmap
                              r-patchwork
-                             r-org-hs-eg-db
-                             r-magrittr
                              r-limma
                              r-ggplot2
                              r-dplyr
@@ -14749,13 +14702,13 @@ ESTIMATE (2013) <doi:10.1038/ncomms3612>.")
 (define-public r-tidyemoji
   (package
     (name "r-tidyemoji")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tidyEmoji" version))
               (sha256
                (base32
-                "03amap4lik63nqdznncg8ymw74avmrhci36gy8ckwwskrn9gqw93"))))
+                "0gy178kdj5c2mdxmczhbh3wai8lk9d2fk6c8qn8fpz3mc97zlx7p"))))
     (properties `((upstream-name . "tidyEmoji")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -14765,7 +14718,7 @@ ESTIMATE (2013) <doi:10.1038/ncomms3612>.")
                              r-emoji
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=tidyEmoji")
+    (home-page "https://pursuitofdatascience.github.io/tidyEmoji/")
     (synopsis "Discovers Emoji from Text")
     (description
      "Unicodes are not friendly to work with, and not all Unicodes are Emoji per se,
@@ -20168,13 +20121,13 @@ autocorrelation.  See @code{FernÃ¡ndez-MartÃ­nez} et al. (2017 and 2019)
 (define-public r-telp
   (package
     (name "r-telp")
-    (version "1.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TELP" version))
               (sha256
                (base32
-                "0wzm3dz0489ha7dd6lkashvvjydck9jw2pavlx9plpksvzr4q9ph"))))
+                "1qryql9mxad7wvbpq1k85p7kp4m4s6cawklpdspjl1m21f99rg5s"))))
     (properties `((upstream-name . "TELP")))
     (build-system r-build-system)
     (propagated-inputs (list r-wordcloud
@@ -22835,35 +22788,6 @@ that using TANDEM prevents the model from being dominated by gene expression and
 that the features selected by TANDEM are more interpretable.")
     (license license:gpl2)))
 
-(define-public r-tanb
-  (package
-    (name "r-tanb")
-    (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "TanB" version))
-              (sha256
-               (base32
-                "05y9j1a5nzqfpsw48gix5c4ds1cm80liad9wnwmddhbx4fda6p32"))))
-    (properties `((upstream-name . "TanB")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-pracma r-fdrtool))
-    (home-page "https://github.com/TrigonometricDistribution")
-    (synopsis "The TanB Distribution")
-    (description
-     "Density, distribution function, quantile function, random generation and
-survival function for the Tangent Burr Type XII Distribution as defined by
-SOUZA, L. New Trigonometric Class of Probabilistic Distributions.  219 p.
-Thesis (Doctorate in Biometry and Applied Statistics) - Department of Statistics
-and Information, Federal Rural University of Pernambuco, Recife, Pernambuco,
-2015 (available at
-<http://www.openthesis.org/documents/New-trigonometric-classes-probabilistic-distributions-602633.html>)
-and BRITO, C. C. R. Method Distributions generator and Probability Distributions
-Classes.  241 p.  Thesis (Doctorate in Biometry and Applied Statistics) -
-Department of Statistics University of Pernambuco, Recife, Pernambuco, 2014
-(available upon request).")
-    (license license:expat)))
-
 (define-public r-tanaka
   (package
     (name "r-tanaka")
@@ -23995,29 +23919,6 @@ quick and simple functionality.  Using a key-column common to both tables, see
 which rows are common and highlight differing values by column.  Also included
 are functions validating keys and uniqueness of in-group values.")
     (license license:expat)))
-
-(define-public r-table1xls
-  (package
-    (name "r-table1xls")
-    (version "0.4.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "table1xls" version))
-              (sha256
-               (base32
-                "0ixbshbp9hkcg12hj32vgb5bp0pj4rbc3i6g1xdg2zhqp7zanics"))))
-    (properties `((upstream-name . "table1xls")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xlconnect))
-    (home-page "https://cran.r-project.org/package=table1xls")
-    (synopsis
-     "Exports Reproducible Summary Tables to Multi-Tab Spreadsheet Files (.xls or .xlsx)")
-    (description
-     "This package provides a collection of time-saving wrappers for reproducible
-export of summary tables commonly used in scientific articles, to .xls/.xlsx
-multi-tab spreadsheets, while controlling spreadsheet layout.  Powered by
-@code{XLConnect'/'rJava} utilities.")
-    (license license:gpl3)))
 
 (define-public r-table1heatmap
   (package

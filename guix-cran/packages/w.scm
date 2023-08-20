@@ -290,43 +290,6 @@ Percival, D.B. (2000) <doi:10.2307/2669537> and Guerrier, S. & Molinari, R.
 (2016) @code{<arXiv:1607.05858>.}")
     (license license:agpl3)))
 
-(define-public r-wux
-  (package
-    (name "r-wux")
-    (version "2.2-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "wux" version))
-              (sha256
-               (base32
-                "0iw0kf0wfspnpc83v7gxhcakmp0z34cccnm0jn9c2za9ay9l2swv"))))
-    (properties `((upstream-name . "wux")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr
-                             r-sp
-                             r-rworldmap
-                             r-rgeos
-                             r-rgdal
-                             r-reshape
-                             r-ncdf4
-                             r-hmisc
-                             r-gdata
-                             r-fields
-                             r-corpcor
-                             r-class
-                             r-abind))
-    (home-page "https://cran.r-project.org/package=wux")
-    (synopsis "Wegener Center Climate Uncertainty Explorer")
-    (description
-     "This package provides methods to calculate and interpret climate change signals
-and time series from climate multi-model ensembles.  Climate model output in
-binary @code{NetCDF} format is read in and aggregated over a specified region to
-a data.frame for statistical analysis.  Global Circulation Models, as the CMIP5
-simulations, can be read in the same way as Regional Climate Models, as e.g. the
-CORDEX or ENSEMBLES simulations.  The package has been developed at the Wegener
-Center for Climate and Global Change at the University of Graz, Austria.")
-    (license license:gpl2+)))
-
 (define-public r-wufoor
   (package
     (name "r-wufoor")
@@ -782,13 +745,13 @@ based on robust location measures.")
 (define-public r-wrproteo
   (package
     (name "r-wrproteo")
-    (version "1.10.0")
+    (version "1.10.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wrProteo" version))
               (sha256
                (base32
-                "02gzrgfcj3hzyppfvp7vnih99z4z0sd76yd6dyhpqyx9d64q5fpy"))))
+                "0dx3ylmkysa5cy6525g7p5x99rq13cdsc7dbfxwzfhi080qg65r5"))))
     (properties `((upstream-name . "wrProteo")))
     (build-system r-build-system)
     (propagated-inputs (list r-wrmisc r-limma r-knitr))
@@ -1045,13 +1008,13 @@ user in a (hopefully) user-friendly manner.")
 (define-public r-wrapr
   (package
     (name "r-wrapr")
-    (version "2.0.9")
+    (version "2.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wrapr" version))
               (sha256
                (base32
-                "1swgf10vg9sh29mn4gsia1rjln47lrqsv765yl19hlpk85qwhsk4"))))
+                "1r2mqgf4wiwx83lgs20r59c3h7yynkaif4qp6lbd20y06avb1jz1"))))
     (properties `((upstream-name . "wrapr")))
     (build-system r-build-system)
     (native-inputs (list r-r-rsp r-knitr))
@@ -1483,27 +1446,6 @@ for general audiences, including individual and group users, introductory
 statistics courses, and more advanced statistics courses that desire an
 introduction to permutation tests.")
     (license license:gpl2+)))
-
-(define-public r-wpc
-  (package
-    (name "r-wpc")
-    (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "WPC" version))
-              (sha256
-               (base32
-                "0li502hwa4n945yfnilslyvl12ls66kazbfmxb4kkjbaf500mjp9"))))
-    (properties `((upstream-name . "WPC")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-survival r-msm))
-    (home-page "https://cran.r-project.org/package=WPC")
-    (synopsis "Weighted Predictiveness Curve")
-    (description
-     "Implementing weighted predictiveness curve to visualize the marker-by-treatment
-relationship and measure the performance of biomarkers for guiding treatment
-decision.")
-    (license license:lgpl2.0+)))
 
 (define-public r-wpa
   (package
@@ -2711,35 +2653,6 @@ well-known geometry vectors, and calculate bounding boxes are provided.")
 formats: ISO week, epidemiology week (epi week) and calendar date.")
     (license license:gpl2)))
 
-(define-public r-wknnmi
-  (package
-    (name "r-wknnmi")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "wkNNMI" version))
-              (sha256
-               (base32
-                "0qpl1b2134kz9mjl38w93lp3g6kpv9ygv9hygpssm845k02hkw7c"))))
-    (properties `((upstream-name . "wkNNMI")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-infotheo r-foreach))
-    (home-page "https://cran.r-project.org/package=wkNNMI")
-    (synopsis "Mutual Information-Weighted k-NN Imputation Algorithm")
-    (description
-     "Implementation of an adaptive weighted k-nearest neighbours (wk-NN) imputation
-algorithm for clinical register data developed to explicitly handle missing
-values of continuous/ordinal/categorical and static/dynamic features conjointly.
- For each subject with missing data to be imputed, the method creates a feature
-vector constituted by the information collected over his/her first window_size
-time units of visits.  This vector is used as sample in a k-nearest neighbours
-procedure, in order to select, among the other patients, the ones with the most
-similar temporal evolution of the disease over time.  An ad hoc similarity
-metric was implemented for the sample comparison, capable of handling the
-different nature of the data, the presence of multiple missing values and
-include the cross-information among features.")
-    (license license:gpl3)))
-
 (define-public r-wkb
   (package
     (name "r-wkb")
@@ -3431,36 +3344,6 @@ statistics API binding the pageviews package and using an additional self
 composed data source thus covering a time span from very late 2007 up to the
 present for daily page views.")
     (license license:gpl2+)))
-
-(define-public r-wikipediar
-  (package
-    (name "r-wikipediar")
-    (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "WikipediaR" version))
-              (sha256
-               (base32
-                "0fxk247jb82g0f3nmwraa4kvdpjxy5s4dcyzj9vkjw2lq8by3l0h"))))
-    (properties `((upstream-name . "WikipediaR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml r-httr))
-    (home-page "http://www.r-project.org")
-    (synopsis "R-Based Wikipedia Client")
-    (description
-     "This package provides an interface to the Wikipedia web application programming
-interface (API), using internet connexion.Three functions provide details for a
-specific Wikipedia page : all links that are present, all pages that link to,
-all the contributions (revisions for main pages, and discussions for talk
-pages).  Two functions provide details for a specific user : all contributions,
-and general information (as name, gender, rights or groups).  It provides
-additional information compared to others packages, as @code{WikipediR.} It does
-not need login.  The multiplex network that can be constructed from the results
-of the functions of @code{WikipediaR} can be modeled as Stochastic Block Model
-as in Barbillon P., Donnet, S., Lazega E., and Bar-Hen A. : Stochastic Block
-Models for Multiplex networks: an application to networks of researchers,
-@code{ArXiv} 1501.06444, http://arxiv.org/abs/1501.06444.")
-    (license license:gpl3+)))
 
 (define-public r-wikilake
   (package
@@ -6109,13 +5992,13 @@ to deal with outcome-dependent sampling in survival analysis.")
 (define-public r-wcorr
   (package
     (name "r-wcorr")
-    (version "1.9.6")
+    (version "1.9.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wCorr" version))
               (sha256
                (base32
-                "1f71fxn1cp0rgjf7lmx49dll35ys3lz7s8pw2qrfy59c86wnqvhs"))))
+                "0ja51w17q80r7xpwqhzn416b48ji9178026wf5ibm4s0hsfz7vb2"))))
     (properties `((upstream-name . "wCorr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-mnormt r-minqa))

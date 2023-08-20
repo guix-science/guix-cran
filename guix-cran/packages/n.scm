@@ -3920,16 +3920,16 @@ return spatial objects on sf format.")
 (define-public r-nomclust
   (package
     (name "r-nomclust")
-    (version "2.6.2")
+    (version "2.8.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nomclust" version))
               (sha256
                (base32
-                "16pxv2vqikias18835crjfx5yignckvrw4imwqi18463mg6y7v9b"))))
+                "1bl92zaf4iidm48xjxj0v812lx7gk3i3frvb59xr71y91ranwjpv"))))
     (properties `((upstream-name . "nomclust")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-cluster))
+    (propagated-inputs (list r-rcpp r-clvalid r-cluster))
     (home-page "https://cran.r-project.org/package=nomclust")
     (synopsis "Hierarchical Cluster Analysis of Nominal Data")
     (description
@@ -12184,13 +12184,13 @@ onward), the package can retrieve the aspatial Gini Index based Gini (1921)
 (define-public r-nda
   (package
     (name "r-nda")
-    (version "0.1.11")
+    (version "0.1.12")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nda" version))
               (sha256
                (base32
-                "1mzkhjgdpcfbv2za51kdgrszj5567wyzfirfh3gznxi17sgl4d8l"))))
+                "0lwxm7xvzlakl9j6ms4737dxxd7zpyf545m49zqff6kacjpv8gzy"))))
     (properties `((upstream-name . "nda")))
     (build-system r-build-system)
     (propagated-inputs (list r-visnetwork
@@ -12462,25 +12462,6 @@ variables', dimensions and attributes'.")
 coherence function, local indicators of spatial association (LISA), (Mantel)
 correlogram, (Partial) Mantel test.")
     (license license:gpl3)))
-
-(define-public r-ncdunnett
-  (package
-    (name "r-ncdunnett")
-    (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nCDunnett" version))
-              (sha256
-               (base32
-                "0q2db1pixqr0wbx4bd05c98i1p0vgaqsfa1iwjxr08c62a5xhkks"))))
-    (properties `((upstream-name . "nCDunnett")))
-    (build-system r-build-system)
-    (home-page "www.dex.ufla.br/~danielff/r_resources.html")
-    (synopsis "Noncentral Dunnett's Test Distribution")
-    (description
-     "Computes the noncentral Dunnett's test distribution (pdf, cdf and quantile) and
-generates random numbers.")
-    (license license:gpl2+)))
 
 (define-public r-ncdump
   (package
@@ -12901,19 +12882,18 @@ check the R package <https://CRAN.R-project.org/package=nlme>.")
 (define-public r-nbpmatching
   (package
     (name "r-nbpmatching")
-    (version "1.5.1")
+    (version "1.5.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nbpMatching" version))
               (sha256
                (base32
-                "0f90k9vq05gkc0sgywb98frig63df0ih4z41dq7m2inx1zk5rqns"))))
+                "0f7avg06lr5a1yixrl6mhcs98ywa91qbfkc7qlz2pxzpc1v13ffb"))))
     (properties `((upstream-name . "nbpMatching")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-hmisc))
     (native-inputs (list gfortran))
-    (home-page
-     "http://biostat.mc.vanderbilt.edu/wiki/Main/MatchedRandomization")
+    (home-page "https://biostat.app.vumc.org/wiki/Main/MatchedRandomization")
     (synopsis "Functions for Optimal Non-Bipartite Matching")
     (description
      "Perform non-bipartite matching and matched randomization.  A \"bipartite\"
@@ -13783,13 +13763,13 @@ number of useful other related data sets.")
 (define-public r-nasapower
   (package
     (name "r-nasapower")
-    (version "4.0.10")
+    (version "4.0.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nasapower" version))
               (sha256
                (base32
-                "0nwpfm32w674vjz3dqxa6fqf3syjww6siarlr8sjirlgqm06xm76"))))
+                "0md4y2fpjvx56j2a9v00n86x5gwvka07j4a53h80a6rdfyf21cnb"))))
     (properties `((upstream-name . "nasapower")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-readr r-lubridate r-jsonlite r-crul))
@@ -13797,9 +13777,9 @@ number of useful other related data sets.")
     (home-page "https://docs.ropensci.org/nasapower/")
     (synopsis "NASA POWER API Client")
     (description
-     "Client for NASA POWER global meteorology, surface solar energy and climatology
-data API'.  POWER (Prediction Of Worldwide Energy Resource) data are freely
-available for download with varying spatial resolutions dependent on the
+     "An API client for NASA POWER global meteorology, surface solar energy and
+climatology data API. POWER (Prediction Of Worldwide Energy Resource) data are
+freely available for download with varying spatial resolutions dependent on the
 original data and with several temporal resolutions depending on the POWER
 parameter and community.  This work is funded through the NASA Earth Science
 Directorate Applied Science Program.  For more on the data themselves, the
@@ -14177,13 +14157,13 @@ Markov model which is described in Strakova J., Straka M. and Hajic J. (2013)
 (define-public r-nameneedle
   (package
     (name "r-nameneedle")
-    (version "1.2.6")
+    (version "1.2.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "NameNeedle" version))
               (sha256
                (base32
-                "0cs65hs6fbkxv8pc2m4394c68nqbahjcryjnhhrhg50wam3y03lq"))))
+                "14w8amhaar6wksnpkssdgjlmyqb4n7qxda29vy6rps2dxfvi6klc"))))
     (properties `((upstream-name . "NameNeedle")))
     (build-system r-build-system)
     (home-page "http://oompa.r-forge.r-project.org/")

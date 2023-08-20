@@ -1687,13 +1687,13 @@ Spatio-Temporal Point Patterns, Third Edition, Diggle, pp.  83-86, (2003)
 (define-public r-bt
   (package
     (name "r-bt")
-    (version "0.3")
+    (version "0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BT" version))
               (sha256
                (base32
-                "1fzryjxczc7cny0msjmv4hf52wjgncn6278drrdv2z31a9j4asa0"))))
+                "1ifanv79rrbc9m6rxhnhhr5kss9idykpn672w3zxqi8fic9f0hsx"))))
     (properties `((upstream-name . "BT")))
     (build-system r-build-system)
     (propagated-inputs (list r-statmod r-rpart))
@@ -2508,32 +2508,6 @@ faster lookups on sorted vectors.")
      "Data sets for book \"Basic Statistics and Data Analysis\" by Larry J. Kitchens.")
     (license license:gpl3)))
 
-(define-public r-bsbt
-  (package
-    (name "r-bsbt")
-    (version "1.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "BSBT" version))
-              (sha256
-               (base32
-                "0ibqg3jr7l25aikz09s8v5w1z541dsw8pr30ixf6d1bly5bw5ahy"))))
-    (properties `((upstream-name . "BSBT")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-mass r-igraph r-expm))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/rowlandseymour/BSBT")
-    (synopsis "The Bayesian Spatial Bradley--Terry Model")
-    (description
-     "An implementation of the Bayesian Spatial Bradley--Terry (BSBT) model.  It can
-be used to investigate data sets where judges compared different spatial areas.
-It constructs a network to describe how the areas are connected, and then places
-a correlated prior distribution on the quality parameter for each area, based on
-the network.  The package includes MCMC algorithms to estimate the quality
-parameters.  The methodology is published in Seymour et.  al. (2020)
-@code{<arXiv:2010.14128>.}")
-    (license license:gpl3)))
-
 (define-public r-bsamgp
   (package
     (name "r-bsamgp")
@@ -3246,6 +3220,46 @@ models.  These are based on marginal predictions that integrate out random
 effects if necessary (see for example <doi:10.1186/s12874-015-0046-6> and
 <doi:10.1111/biom.12707>).")
     (license license:gpl3+)))
+
+(define-public r-brms-mmrm
+  (package
+    (name "r-brms-mmrm")
+    (version "0.0.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "brms.mmrm" version))
+              (sha256
+               (base32
+                "1l8sy9ckcq56j9wshgs55mdpr266scz43r5zqylcgr231v5zg3z2"))))
+    (properties `((upstream-name . "brms.mmrm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-trialr
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-purrr
+                             r-posterior
+                             r-mass
+                             r-ggridges
+                             r-ggplot2
+                             r-emmeans
+                             r-dplyr
+                             r-coda
+                             r-brms))
+    (native-inputs (list r-knitr))
+    (home-page "https://openpharma.github.io/brms.mmrm/")
+    (synopsis "Bayesian MMRMs using 'brms'")
+    (description
+     "The mixed model for repeated measures (MMRM) is a popular model for longitudinal
+clinical trial data with continuous endpoints, and brms is a powerful and
+versatile package for fitting Bayesian regression models.  The brms.mmrm R
+package leverages brms to run MMRMs, and it supports a simplified interfaced to
+reduce difficulty and align with the best practices of the life sciences.
+References: BÃ¼rkner (2017) <doi:10.18637/jss.v080.i01>, Mallinckrodt (2008)
+<doi:10.1177/009286150804200402>.")
+    (license license:expat)))
 
 (define-public r-brm
   (package
@@ -7671,31 +7685,6 @@ best models representation, BMA comparison.  Also includes Bayesian
 normal-conjugate linear model with Zellner's g prior, and assorted methods.")
     (license license:bsd-3)))
 
-(define-public r-bmrv
-  (package
-    (name "r-bmrv")
-    (version "1.32")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "BMRV" version))
-              (sha256
-               (base32
-                "1j1cwjk3l7f06nqdwrqdyhzm43bb8hj5wgdd14zc1grxyfc9ya95"))))
-    (properties `((upstream-name . "BMRV")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-bh))
-    (home-page "https://cran.r-project.org/package=BMRV")
-    (synopsis "Bayesian Models for Rare Variant Association Analysis")
-    (description
-     "This package provides two Bayesian models for detecting the association between
-rare genetic variants and a trait that can be continuous, ordinal or binary.
-Bayesian latent variable collapsing model (BLVCM) detects interaction effect and
-is dedicated to twin design while it can also be applied to independent samples.
- Hierarchical Bayesian multiple regression model (HBMR) incorporates genotype
-uncertainty information and can be applied to either independent or family
-samples.  Furthermore, it deals with continuous, binary and ordinal traits.")
-    (license license:gpl2+)))
-
 (define-public r-bmrmm
   (package
     (name "r-bmrmm")
@@ -8992,13 +8981,13 @@ Kieser, M. (2011) <doi:10.3414/ME09-01-0063>.")
 (define-public r-blendstat
   (package
     (name "r-blendstat")
-    (version "1.0.3")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Blendstat" version))
               (sha256
                (base32
-                "0d5zzqiav7b5prh8332kwqy6ga96lkbkdjis8qwifa11j5qa087a"))))
+                "0nh5nq8g009vbb4mmjcrhg46yi77dk1gza4si21m58b26qf5riy5"))))
     (properties `((upstream-name . "Blendstat")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-lattice))
@@ -9031,30 +9020,6 @@ analytical approximation derived in Harris et al. (2011, \"Occupancy is
 nine-tenths of the law,\" The American Naturalist).  Also includes a
 randomization method for assessing sources of model error.")
     (license (list license:gpl2 license:artistic2.0))))
-
-(define-public r-blendedlink
-  (package
-    (name "r-blendedlink")
-    (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "blendedLink" version))
-              (sha256
-               (base32
-                "19d1pnjag89jjvkl5a6wx531qjqp4cv5jk95md6jby27yr52r8vp"))))
-    (properties `((upstream-name . "blendedLink")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=blendedLink")
-    (synopsis "New Link Function that Blends Two Specified Link Functions")
-    (description
-     "This package provides a new link function that equals one specified link
-function up to a cutover then a linear rescaling of another specified link
-function.  For use in glm() or glm2().  The intended use is in binary
-regression, in which case the first link should be set to \"log\" and the second
-to \"logit\".  This ensures that fitted probabilities are between 0 and 1 and that
-exponentiated coefficients can be interpreted as relative risks for
-probabilities up to the cutoff.")
-    (license (list license:gpl2 license:gpl3))))
 
 (define-public r-blcop
   (package
@@ -9398,13 +9363,13 @@ data with ties.")
 (define-public r-blaise
   (package
     (name "r-blaise")
-    (version "1.3.9")
+    (version "1.3.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "blaise" version))
               (sha256
                (base32
-                "0jz49iblkmn7cl81r8q53kqq994l03hrccpqichbsp1cvlwrn5jd"))))
+                "1ki2na7a7qdzv2l62r4zkcj0wz73ks63piwcisl4xsw1mcc38rhl"))))
     (properties `((upstream-name . "blaise")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-stringr r-readr r-dplyr))
@@ -11313,13 +11278,13 @@ component analyses are limited to 3 or fewer dimensions.")
 (define-public r-biogrowth
   (package
     (name "r-biogrowth")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "biogrowth" version))
               (sha256
                (base32
-                "04k89fnfc85wiq09b5cff4k4yvhi8h87nzscig1lcznxxwljyi3j"))))
+                "0x4x9awqpda76g9hy8d9mw48c07ki2iwlbq5qaa7mw2pp8hg8kh5"))))
     (properties `((upstream-name . "biogrowth")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -12690,27 +12655,6 @@ likelihood.  The predicted probability and its confidence interval are computed
 by Metropolis-Hastings algorithm.  More details can be seen in Sung et al (2017)
 @code{<arXiv:1705.02511>.}")
     (license (list license:gpl2 license:gpl3))))
-
-(define-public r-binaryeppm
-  (package
-    (name "r-binaryeppm")
-    (version "2.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "BinaryEPPM" version))
-              (sha256
-               (base32
-                "0fydh3pp7y0glk2rhihcslzx10hgn5la922jbnqzg2nplvzv7ybj"))))
-    (properties `((upstream-name . "BinaryEPPM")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-numderiv r-lmtest r-formula r-expm))
-    (home-page "https://cran.r-project.org/package=BinaryEPPM")
-    (synopsis "Mean and Variance Modeling of Binary Data")
-    (description
-     "Modeling under- and over-dispersed binary data using extended Poisson process
-models (EPPM) as in the article Faddy and Smith (2012)
-<doi:10.1002/bimj.201100214> .")
-    (license license:gpl2)))
 
 (define-public r-binaryemvs
   (package
@@ -15342,20 +15286,23 @@ the bfsl solution.")
 (define-public r-bfs
   (package
     (name "r-bfs")
-    (version "0.5.2")
+    (version "0.5.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BFS" version))
               (sha256
                (base32
-                "1g7xz1hwq9vvids3b63n008454nym8vqj01fq4giqcf437vgcd6l"))))
+                "174h3s4mva9rzbn02ag3qjl64vk47lf4h4n7gdidlj1mjbkpjsys"))))
     (properties `((upstream-name . "BFS")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xml2
+    (propagated-inputs (list r-zip
+                             r-xml2
                              r-tidyrss
                              r-tibble
+                             r-sf
                              r-rvest
                              r-rstac
+                             r-rappdirs
                              r-pxweb
                              r-purrr
                              r-magrittr
@@ -15366,7 +15313,7 @@ the bfsl solution.")
     (home-page "https://felixluginbuhl.com/BFS/")
     (synopsis "Get Data from the Swiss Federal Statistical Office")
     (description
-     "Search and download data from the Swiss Federal Statistical Office (BFS)
+     "Search and download data from the Swiss Federal Statistical Office (BFS) APIs
 <https://www.bfs.admin.ch/>.")
     (license license:expat)))
 
@@ -19963,32 +19910,6 @@ distributions.  Based on @code{GonÃ§alves,} K.C.M, Moura, F.A.S and Migon,
 H.S.(2014) <https://www150.statcan.gc.ca/n1/en/catalogue/12-001-X201400111886>.")
     (license license:gpl3)))
 
-(define-public r-bayessae
-  (package
-    (name "r-bayessae")
-    (version "1.0-2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "BayesSAE" version))
-              (sha256
-               (base32
-                "1xbx9hr254agpcqs1fl7qi7h19fd2bbmjszn44l566n2svgvxwf5"))))
-    (properties `((upstream-name . "BayesSAE")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-lattice r-formula r-coda))
-    (home-page "https://cran.r-project.org/package=BayesSAE")
-    (synopsis "Bayesian Analysis of Small Area Estimation")
-    (description
-     "This package provides a variety of methods from Rao (2003, ISBN:0-471-41374-7)
-and some other research articles to deal with several specific small area area-
-level models in Bayesian framework.  Models provided range from the basic
-Fay-Herriot model to its improvement such as You-Chapman models, unmatched
-models, spatial models and so on.  Different types of priors for specific
-parameters could be chosen to obtain MCMC posterior draws.  The main sampling
-function is written in C with GSL lab so as to facilitate the computation.
-Model internal checking and model comparison criteria are also involved.")
-    (license license:gpl2)))
-
 (define-public r-bayess5
   (package
     (name "r-bayess5")
@@ -20556,34 +20477,6 @@ predictions.  Additional functionality is included for computing and plotting
 posteriors.")
     (license license:expat)))
 
-(define-public r-bayespiecewiseicar
-  (package
-    (name "r-bayespiecewiseicar")
-    (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "BayesPiecewiseICAR" version))
-              (sha256
-               (base32
-                "1qrmw7zmygdzz84p76hyh2d8dx88b8xhbbd7radqm39g35zq5wz6"))))
-    (properties `((upstream-name . "BayesPiecewiseICAR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-mvtnorm))
-    (home-page "https://cran.r-project.org/package=BayesPiecewiseICAR")
-    (synopsis "Hierarchical Bayesian Model for a Hazard Function")
-    (description
-     "Fits a piecewise exponential hazard to survival data using a Hierarchical
-Bayesian model with an Intrinsic Conditional Autoregressive formulation for the
-spatial dependency in the hazard rates for each piece.  This function uses
-Metropolis- Hastings-Green MCMC to allow the number of split points to vary.
-This function outputs graphics that display the histogram of the number of split
-points and the trace plots of the hierarchical parameters.  The function outputs
-a list that contains the posterior samples for the number of split points, the
-location of the split points, and the log hazard rates corresponding to these
-splits.  Additionally, this outputs the posterior samples of the two
-hierarchical parameters, Mu and Sigma^2.")
-    (license license:gpl2)))
-
 (define-public r-bayespiecehazselect
   (package
     (name "r-bayespiecehazselect")
@@ -20847,33 +20740,6 @@ implementations of the methods of Park and Oh (2015)
 <doi:10.1016/j.chemolab.2015.08.021>.The package uses JAGS'(Just Another Gibbs
 Sampler) to generate Markov chain Monte Carlo samples of parameters.")
     (license license:gpl2+)))
-
-(define-public r-bayesmra
-  (package
-    (name "r-bayesmra")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "BayesMRA" version))
-              (sha256
-               (base32
-                "005pygpa8bmr153naxnag7kn876lqwq34d8pzbj954nivlxl4zaw"))))
-    (properties `((upstream-name . "BayesMRA")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-spam
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-mvnfast
-                             r-matrix
-                             r-igraph
-                             r-fields))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/jtipton25/BayesMRA")
-    (synopsis "Bayesian Multi-Resolution Gaussian Process Approximations")
-    (description
-     "Software for fitting sparse Bayesian multi-resolution spatial models using
-Markov Chain Monte Carlo.")
-    (license license:gpl3+)))
 
 (define-public r-bayesmove
   (package
@@ -21552,13 +21418,13 @@ mediation effects are reported as analytic results.")
 (define-public r-bayesianlaterality
   (package
     (name "r-bayesianlaterality")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BayesianLaterality" version))
               (sha256
                (base32
-                "1b8ndwnwsj2wzbjp3rivdsx5nsfg2rgv6mnlyp7jxaksxvf4ray7"))))
+                "1dy00xgz9cc65aj39nf76crhfxfyackpcniwadrh38mk8zpbka42"))))
     (properties `((upstream-name . "BayesianLaterality")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmvtnorm
@@ -23299,33 +23165,6 @@ depicting species relationships.  Cardoso et al. (2015)
 <doi:10.1111/2041-210X.12310>.")
     (license license:gpl3)))
 
-(define-public r-bastah
-  (package
-    (name "r-bastah")
-    (version "1.0.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "bastah" version))
-              (sha256
-               (base32
-                "08xdba16wj0inp0kq2sbcrdr6wj8bwlq7rqnfrzjrz03wxhc5bk0"))))
-    (properties `((upstream-name . "bastah")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-scalreg
-                             r-matrix
-                             r-mass
-                             r-lars
-                             r-glmnet
-                             r-foreach
-                             r-bigquic))
-    (home-page "https://cran.r-project.org/package=bastah")
-    (synopsis "Big Data Statistical Analysis for High-Dimensional Models")
-    (description
-     "Big data statistical analysis for high-dimensional models is made possible by
-modifying lasso.proj() in hdi package by replacing its nodewise-regression with
-sparse precision matrix computation using @code{BigQUIC'.}")
-    (license (license:fsdg-compatible "GPL (== 2)"))))
-
 (define-public r-bass
   (package
     (name "r-bass")
@@ -24937,26 +24776,6 @@ URL of the API will depend on your company domain, and will be handled by the
 package automatically once you setup the config file.  The API documentation can
 be found here <https://documentation.bamboohr.com/docs>.")
     (license license:expat)))
-
-(define-public r-bamboo
-  (package
-    (name "r-bamboo")
-    (version "0.9.25")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "bamboo" version))
-              (sha256
-               (base32
-                "1il8sn8ck36b1m9hazhf6gmr58iqi2hjn0rrpcv1laij0lybrcws"))))
-    (properties `((upstream-name . "bamboo")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rscala))
-    (home-page "https://github.com/dbdahl/bamboo")
-    (synopsis "Protein Secondary Structure Prediction Using the Bamboo Method")
-    (description
-     "Implementation of the Bamboo methods described in Li, Dahl, Vannucci, Joo, and
-Tsai (2014) <DOI:10.1371/journal.pone.0109832>.")
-    (license license:gpl3)))
 
 (define-public r-bambi
   (package

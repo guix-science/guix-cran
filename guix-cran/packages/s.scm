@@ -3928,28 +3928,6 @@ calculation, estimation of expected precision for the estimates of totals, and
 calculation of optimal sample size allocation.")
     (license license:gpl2+)))
 
-(define-public r-surveyoutliers
-  (package
-    (name "r-surveyoutliers")
-    (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "surveyoutliers" version))
-              (sha256
-               (base32
-                "03nqw0zir3x57gg23hgsr2s99pv958kfsygqfwly96rvfdhr5p3v"))))
-    (properties `((upstream-name . "surveyoutliers")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=surveyoutliers")
-    (synopsis "Helps Manage Outliers in Sample Surveys")
-    (description
-     "At present, the only functionality is the calculation of optimal one-sided
-winsorizing cutoffs.  The main function is optimal.onesided.cutoff.bygroup.  It
-calculates the optimal tuning parameter for one-sided winsorisation, and so
-calculates winsorised values for a variable of interest.  See the help file for
-this function for more details and an example.")
-    (license (list license:gpl2 license:gpl3))))
-
 (define-public r-surveydata
   (package
     (name "r-surveydata")
@@ -8975,13 +8953,13 @@ error.")
 (define-public r-stokes
   (package
     (name "r-stokes")
-    (version "1.1-8")
+    (version "1.2-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "stokes" version))
               (sha256
                (base32
-                "0xmmvmjggpqb3qs4rjz6fsmcxl8b6as82abln5n8k62qjj77lhr7"))))
+                "0jxjpbscs28v675fkclrxwh0ndqbnsb6lylszdir8ivmgr4vcjam"))))
     (properties `((upstream-name . "stokes")))
     (build-system r-build-system)
     (propagated-inputs (list r-spray r-permutations r-partitions r-mathjaxr
@@ -9380,29 +9358,6 @@ numerous set and rep schemes.  The STMr package is originally created as a tool
 to help writing @code{JovanoviÄ} M. (2020) Strength Training Manual
 <ISBN:979-8604459898>.")
     (license license:expat)))
-
-(define-public r-stmotif
-  (package
-    (name "r-stmotif")
-    (version "2.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "STMotif" version))
-              (sha256
-               (base32
-                "07725wdm65lxmmivdipxd07yqi3syy7dl10shn4x60ahs0il91nw"))))
-    (properties `((upstream-name . "STMotif")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-shiny r-scales r-reshape2 r-rcolorbrewer
-                             r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/heraldoborges/STMotif/wiki")
-    (synopsis "Discovery of Motifs in Spatial-Time Series")
-    (description
-     "Allow to identify motifs in spatial-time series.  A motif is a previously
-unknown subsequence of a (spatial) time series with relevant number of
-occurrences.  For this purpose, the Combined Series Approach (CSA) is used.")
-    (license (list license:gpl2 license:gpl3))))
 
 (define-public r-stmosim
   (package
@@ -9890,26 +9845,6 @@ objects.")
     (license (list license:gpl2
                    (license:fsdg-compatible "file://LICENSE")))))
 
-(define-public r-sti
-  (package
-    (name "r-sti")
-    (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "STI" version))
-              (sha256
-               (base32
-                "1p408y9w2h4ljaq0bsw7vc1xghczjprf558cyg6994m0nv5fh4c4"))))
-    (properties `((upstream-name . "STI")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo r-fitdistrplus))
-    (home-page "https://cran.r-project.org/package=STI")
-    (synopsis "Calculation of the Standardized Temperature Index")
-    (description
-     "This package provides a set of functions for computing the Standardized
-Temperature Index (STI).")
-    (license license:gpl3)))
-
 (define-public r-stgs
   (package
     (name "r-stgs")
@@ -10296,6 +10231,32 @@ select best model with methods of forward selection, backward elimination,
 bidirectional selection and best subset selection.  A widely used selection
 criteria are available for variable selection.")
     (license license:expat)))
+
+(define-public r-stepr
+  (package
+    (name "r-stepr")
+    (version "2.1-8")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "stepR" version))
+              (sha256
+               (base32
+                "0gvlxxl82190ra99qwnwxx7q81w228m04x9c687hrihpmldlqjpp"))))
+    (properties `((upstream-name . "stepR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp r-r-cache r-lowpassfilter r-digest))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=stepR")
+    (synopsis "Multiscale Change-Point Inference")
+    (description
+     "Allows fitting of step-functions to univariate serial data where neither the
+number of jumps nor their positions is known by implementing the multiscale
+regression estimators SMUCE, simulataneous multiscale changepoint estimator, (K.
+Frick, A. Munk and H. Sieling, 2014) <doi:10.1111/rssb.12047> and HSMUCE,
+heterogeneous SMUCE, (F. Pein, H. Sieling and A. Munk, 2017)
+<doi:10.1111/rssb.12202>.  In addition, confidence intervals for the
+change-point locations and bands for the unknown signal can be obtained.")
+    (license license:gpl3)))
 
 (define-public r-stepplr
   (package
@@ -12161,13 +12122,13 @@ are explained in the text book of Montgomery and Runger (2010) <ISBN:
 (define-public r-statar
   (package
     (name "r-statar")
-    (version "0.7.5")
+    (version "0.7.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "statar" version))
               (sha256
                (base32
-                "1rjl1k4xp1qlg9c568624cj1z4jv1vvi1zrxrkn48ydb0vivp7gm"))))
+                "0fjlmzndcm88dlqf6kmd1ssy0ll2g7vap6cai954lh37zbbbb674"))))
     (properties `((upstream-name . "statar")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -16564,30 +16525,6 @@ occupation probabilities, von Neumann & Moore (1,d)-neighborhoods, and random
 variables weighting the percolation lattice sites.")
     (license license:gpl3)))
 
-(define-public r-spsi
-  (package
-    (name "r-spsi")
-    (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "spsi" version))
-              (sha256
-               (base32
-                "0q995hdp7knic6nca0kf5yzkvv8rsskisbzpkh9pijxjmp1wnjrx"))))
-    (properties `((upstream-name . "spsi")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-plot3d))
-    (home-page "https://cran.r-project.org/package=spsi")
-    (synopsis
-     "Shape-Preserving Uni-Variate and Bi-Variate Spline Interpolation")
-    (description
-     "Program uses method of polynomial of variable degrees to interpolate gridded
-data preserving monotonicity and/or convexity or none.  Method is implemented
-for univariate and bivariate cases.  If values of derivatives are provided,
-spline will fix them,if not program will estimate them numerically.  Package
-written purely in R.")
-    (license license:gpl2+)))
-
 (define-public r-spsh
   (package
     (name "r-spsh")
@@ -17026,41 +16963,6 @@ to simulate spreading activation in a network.  Behavior Research Methods, 51,
 discipline (Hankin, 2022, <doi:10.48550/ARXIV.2210.03856>).  To cite the package
 in publications please use Hankin (2022) <doi:10.48550/ARXIV.2210.10848>.")
     (license license:gpl2+)))
-
-(define-public r-spqr
-  (package
-    (name "r-spqr")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "SPQR" version))
-              (sha256
-               (base32
-                "1hsz9pbn428vbiwq5chs9j9hpsrsk1aqzjhgqwc5dybqi4x4qb8v"))))
-    (properties `((upstream-name . "SPQR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-yaimpute
-                             r-torch
-                             r-splines2
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-rcolorbrewer
-                             r-progressr
-                             r-progress
-                             r-loo
-                             r-interp
-                             r-ggplot2
-                             r-coro))
-    (home-page "https://github.com/stevengxu/SPQR")
-    (synopsis "Semi-Parametric Quantile Regression")
-    (description
-     "This package provides methods for flexible estimation of conditional density and
-quantile function, as well as model agnostic tools for analyzing quantile
-covariate effect and variable importance.  The estimation method implements the
-semi-parametric quantile regression model described in Xu and Reich (2021)
-<doi:10.1111/biom.13576>, and the model agnostic tools extend accumulative local
-effects (ALE) to quantile regression setting.")
-    (license license:gpl3+)))
 
 (define-public r-spqdep
   (package
@@ -17762,32 +17664,6 @@ communities, supervised NMF(Yun Cai, Hong Gu and Tobby Kenney
 (2017),<doi:10.1186/s40168-017-0323-1>) provides a better way to do this, while
 retaining all the advantages of NMF -- such as interpretability, and being based
 on a simple biological intuition.")
-    (license license:gpl3)))
-
-(define-public r-spnet
-  (package
-    (name "r-spnet")
-    (version "0.9.1-0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "spnet" version))
-              (sha256
-               (base32
-                "1fy0fpgz2k985brfqyza1l49y0w2j9z308n542pgmkzqsnsdscpw"))))
-    (properties `((upstream-name . "spnet")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sp r-shape))
-    (home-page "http://emmanuel.rousseaux.me/r-package-spnet")
-    (synopsis "Plotting (Social) Networks on Maps")
-    (description
-     "Facilitates the rendering of networks for which nodes have a specific position
-on a map (cities, participants in a political debate, etc.).  Map data and
-network data are stored together in a single object which handles the match
-between network nodes and their respective position on the map.  The plot method
-renders both the map and the network data.  Several networks can be plot
-simultaneously.  The graphic is highly customisable and the legend is
-automatically printed.  Map data have to be supplied as @code{SpatialPolygons}
-objects (from the sp package) and network data as named matrix'.")
     (license license:gpl3)))
 
 (define-public r-spnaf
@@ -18498,13 +18374,13 @@ of response trajectories.")
 (define-public r-splines2
   (package
     (name "r-splines2")
-    (version "0.5.0")
+    (version "0.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "splines2" version))
               (sha256
                (base32
-                "1mfp9303src2xvxcg7sgc5cl8mxxx26c9wm6j9c1f6h5bn9jvvzv"))))
+                "0aac9p93sngr4ydyg0s9v3p2w444d09ghb3lan3r14j9v8i1aw1f"))))
     (properties `((upstream-name . "splines2")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -18512,12 +18388,11 @@ of response trajectories.")
     (home-page "https://wwenjie.org/splines2")
     (synopsis "Regression Spline Functions and Classes")
     (description
-     "Constructs basis matrix of B-splines, M-splines, I-splines, convex splines
-(C-splines), periodic M-splines, natural cubic splines, generalized Bernstein
-polynomials, and their integrals (except C-splines) and derivatives of given
-order by close-form recursive formulas.  It also contains a C++ head-only
-library integrated with Rcpp.  See Wang and Yan (2021) <doi:10.6339/21-JDS1020>
-for details.")
+     "Constructs basis functions of B-splines, M-splines, I-splines, convex splines
+(C-splines), periodic splines, natural cubic splines, generalized Bernstein
+polynomials, their derivatives, and integrals (except C-splines) by closed-form
+recursive formulas.  It also contains a C++ head-only library integrated with
+Rcpp.  See Wang and Yan (2021) <doi:10.6339/21-JDS1020> for details.")
     (license license:gpl3+)))
 
 (define-public r-splice
@@ -19116,30 +18991,6 @@ Nadine Hilgert (2021) \"An exploratory penalized regression to identify combined
 effects of functional variables -Application to agri-environmental issues\"
 <https://hal.archives-ouvertes.fr/hal-03298977>.")
     (license license:gpl3)))
-
-(define-public r-spiassay
-  (package
-    (name "r-spiassay")
-    (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "SPIAssay" version))
-              (sha256
-               (base32
-                "0y02122lj4v95g62w84jmdjdazfz3rch133aid5sgakj2kv68cvh"))))
-    (properties `((upstream-name . "SPIAssay")))
-    (build-system r-build-system)
-    (home-page "http://www.r-project.org")
-    (synopsis "Genetic-Based Assay for the Identification of Cell Lines")
-    (description
-     "The SNP Panel Identification Assay (SPIA) is a package that enables an accurate
-determination of cell line identity from the genotype of single nucleotide
-polymorphisms (SNPs).  The SPIA test allows to discern when two cell lines are
-close enough to be called similar and when they are not.  Details about the
-method are available at \"Demichelis et al. (2008) SNP panel identification assay
-(SPIA): a genetic-based assay for the identification of cell lines.  Nucleic
-Acids Res., 3, 2446-2456\".")
-    (license license:gpl2+)))
 
 (define-public r-sphunif
   (package
@@ -24573,30 +24424,6 @@ methods for its classes that return plots which can be further refined with the
 ggplot2 package.")
     (license license:expat)))
 
-(define-public r-spaccr
-  (package
-    (name "r-spaccr")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "SpaCCr" version))
-              (sha256
-               (base32
-                "0qm1fr6nnax3i1i77fi73x1z8db557avh6kivs0nskb1dfj8ri4m"))))
-    (properties `((upstream-name . "SpaCCr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-ggplot2
-                             r-dplyr
-                             r-abind))
-    (home-page "https://cran.r-project.org/package=SpaCCr")
-    (synopsis "Spatial Convex Clustering")
-    (description "Genomic Region Detection via Spatial Convex Clustering.  See
-<https://arxiv.org/abs/1611.04696> for details.")
-    (license license:gpl3)))
-
 (define-public r-spaa
   (package
     (name "r-spaa")
@@ -26449,13 +26276,13 @@ be found in Ahn S and Datta S (2023) @code{<arXiv:2303.13702v1>.}")
 (define-public r-softclustering
   (package
     (name "r-softclustering")
-    (version "1.1902.2")
+    (version "2.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SoftClustering" version))
               (sha256
                (base32
-                "1r709r96ra9knkprjw6c227r7w6wygfpwc9pwwsjyw166305pxfs"))))
+                "0wnl3a0jnrhafkjj3yk0rij1ya0y4nxzix29mr5wpwgkhfyky8zy"))))
     (properties `((upstream-name . "SoftClustering")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=SoftClustering")
@@ -26749,34 +26576,6 @@ CP-Majority, ordinal Banzhaf or lexicographic excellence solution summarized by
 Tahar Allouche, Bruno Escoffier, Stefano Moretti and Meltem @code{ÃztÃ¼rk}
 (2020, <doi:10.24963/ijcai.2020/3>).")
     (license license:gpl3)))
-
-(define-public r-socialposition
-  (package
-    (name "r-socialposition")
-    (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "SocialPosition" version))
-              (sha256
-               (base32
-                "1rrrjlq6czzhzipvkisbq024ca22v2vzx7wa4ddr9j7hnyyzzpic"))))
-    (properties `((upstream-name . "SocialPosition")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=SocialPosition")
-    (synopsis "Social Position Indicators Construction Toolbox")
-    (description
-     "This package provides to sociologists (and related scientists) a toolbox to
-facilitate the construction of social position indicators from survey data.
-Social position indicators refer to what is commonly known as social class and
-social status.  There exists in the sociological literature many theoretical
-conceptualisation and empirical operationalization of social class and social
-status.  This first version of the package offers tools to construct the
-International Socio-Economic Index of Occupational Status (ISEI) and the Oesch
-social class schema.  It also provides tools to convert several occupational
-classifications (PCS82, PCS03, and ISCO08) into a common one (ISCO88) to
-facilitate data harmonisation work, and tools to collapse (i.e.  group)
-modalities of social position indicators.")
-    (license (list license:gpl2 license:gpl3))))
 
 (define-public r-socialmixr
   (package
@@ -29741,37 +29540,6 @@ size for a SMART design in the Bayesian setting with binary outcomes.  Please
 see Artman (2020) @code{<arXiv:2008.02341>.}")
     (license license:gpl3)))
 
-(define-public r-smartar
-  (package
-    (name "r-smartar")
-    (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "SMARTAR" version))
-              (sha256
-               (base32
-                "0ymhka4pjlqlnpv47abmc76ggijfw83i3jp9mrspnzcnb4d378xm"))))
-    (properties `((upstream-name . "SMARTAR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-mass))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/tonizhong/SMARTAR/")
-    (synopsis
-     "Sequential Multiple Assignment Randomized Trial and Adaptive Randomization")
-    (description
-     "Primary data analysis for sequential multiple assignment randomization trial
-(SMART) and calibration tools for clinical trial planning purposes. \\n The
-methods used for this package include: \\n (1) Likelihood-based global test
-(hypothesis test, power calculation) by in Zhong X., Cheng, B., Qian M., Cheung
-Y.K. (2019) <doi: 10.1016/j.cct.2019.105830>. \\n (2) IPWE-based global test
-(hypotehsis test, power calculation) by Ogbagaber S.B., Karp J., Wahed A.S.
-(2016) <doi:10.1002/sim.6747>. \\n (3) G estimates (pairwise comparison, power
-calculation) by Lavori R., Dawson P.W. (2012) <doi:
-10.1093/biostatistics/kxr016>. \\n (4) IPW estimates (pairwise comparison, power
-calculation) by Murphy S.A. (2005) <doi: 10.1002/sim.2022>. \\n (5) SAMRT with
-adaptive randomization by Cheung Y.K. (2015) <doi: 10.1111/biom.12258>.")
-    (license license:expat)))
-
 (define-public r-smapr
   (package
     (name "r-smapr")
@@ -31228,28 +30996,6 @@ Bureau of Transport Statistics (BTS) in the United States
 both sun and moon.  The model is a verbatim translation of the code by Janiczek
 and @code{DeYoung} (1987) <https://archive.org/details/DTIC_ADA182110>.")
     (license license:agpl3)))
-
-(define-public r-sky
-  (package
-    (name "r-sky")
-    (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Sky" version))
-              (sha256
-               (base32
-                "02vjdggvanzsjx7ihxskapp5d5dlyalj02122wmarj8qf1ha1i2m"))))
-    (properties `((upstream-name . "Sky")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-ebimage))
-    (home-page "https://cran.r-project.org/package=Sky")
-    (synopsis "Canopy Openness Analyzer Package")
-    (description
-     "This package provides an alternative to manually process hemispherical pictures.
- The algorithm processes each picture one by one to determine the proportion of
-sky pixel.  The algorithm uses the Ridler and Calvard method (Ridler and Calvard
-1978).")
-    (license license:gpl2+)))
 
 (define-public r-skpr
   (package
@@ -33074,35 +32820,6 @@ Geography and Statistics - IBGE. More information can be obtained from the
 official website <https://www.ibge.gov.br/>.")
     (license license:gpl3)))
 
-(define-public r-siniw
-  (package
-    (name "r-siniw")
-    (version "0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "SinIW" version))
-              (sha256
-               (base32
-                "1z7rcjy0i09a9hjpjj1x8i46lv042l20lvb6b0pnsky2sx3v78pd"))))
-    (properties `((upstream-name . "SinIW")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-pracma r-fdrtool))
-    (home-page "https://github.com/TrigonometricDistribution")
-    (synopsis "The SinIW Distribution")
-    (description
-     "Density, distribution function, quantile function, random generation and
-survival function for the Sine Inverse Weibull Distribution as defined by SOUZA,
-L. New Trigonometric Class of Probabilistic Distributions.  219 p.  Thesis
-(Doctorate in Biometry and Applied Statistics) - Department of Statistics and
-Information, Federal Rural University of Pernambuco, Recife, Pernambuco, 2015
-(available at
-<http://www.openthesis.org/documents/New-trigonometric-classes-probabilistic-distributions-602633.html>)
-and BRITO, C. C. R. Method Distributions generator and Probability Distributions
-Classes.  241 p.  Thesis (Doctorate in Biometry and Applied Statistics) -
-Department of Statistics and Information, Federal Rural University of
-Pernambuco, Recife, Pernambuco, 2014 (available upon request).")
-    (license license:expat)))
-
 (define-public r-sinib
   (package
     (name "r-sinib")
@@ -33959,34 +33676,6 @@ available that fit this standard.")
 equation modeling, which can be used for various purposes, such as such as model
 fit evaluation, power analysis, or missing data handling and planning.")
     (license license:gpl2+)))
-
-(define-public r-simscrpiecewise
-  (package
-    (name "r-simscrpiecewise")
-    (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "SimSCRPiecewise" version))
-              (sha256
-               (base32
-                "0mhlx9m5db8a40wf275qh59345676m8bpjjmyx1v22f6m9p3b2n4"))))
-    (properties `((upstream-name . "SimSCRPiecewise")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=SimSCRPiecewise")
-    (synopsis
-     "'Simulates Univariate and Semi-Competing Risks Data Given Covariates and Piecewise Exponential Baseline Hazards'")
-    (description
-     "This package contains two functions for simulating survival data from piecewise
-exponential hazards with a proportional hazards adjustment for covariates.  The
-first function @code{SimUNIVPiecewise} simulates univariate survival data based
-on a piecewise exponential hazard, covariate matrix and true regression vector.
-The second function @code{SimSCRPiecewise} semi-competing risks data based on
-three piecewise exponential hazards, three true regression vectors and three
-matrices of patient covariates (which can be different or the same).  This
-simulates from the Semi-Markov model of Lee et al (2015) given patient
-covariates, regression parameters, patient frailties and baseline hazard
-functions.")
-    (license license:gpl2)))
 
 (define-public r-simsalapar
   (package
@@ -35935,13 +35624,13 @@ projections.  A description of the model is given in Moritz et al. (2018)
 (define-public r-simet
   (package
     (name "r-simet")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "simET" version))
               (sha256
                (base32
-                "0yl3r2jmm8ds755vlgg1065mlqawdwgry2hrrjcnilpph0v9csm5"))))
+                "0l3mk2n1ik9xg660js97n03gix5im2f42q2r7hs9gvhs0g2552kp"))))
     (properties `((upstream-name . "simET")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -36883,13 +36572,13 @@ corresponding tip (OTU) labels and p-values.")
 (define-public r-sigr
   (package
     (name "r-sigr")
-    (version "1.1.4")
+    (version "1.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sigr" version))
               (sha256
                (base32
-                "1gx1dmdi8wjqlhp7a9cp915z0n5hl9xsv2hwzdmk0ijbjgipn7fh"))))
+                "16v6f25pdbfm10b3cicf11nzqz5ykq70vppll7rxqbyafkcfwcra"))))
     (properties `((upstream-name . "sigr")))
     (build-system r-build-system)
     (propagated-inputs (list r-wrapr))
@@ -37337,13 +37026,13 @@ Gibilisco (2019) <doi:10.1017/psrm.2019.58>.")
 (define-public r-sightabilitymodel
   (package
     (name "r-sightabilitymodel")
-    (version "1.5.3")
+    (version "1.5.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SightabilityModel" version))
               (sha256
                (base32
-                "0haxw2za05f7q06fcipqlkbfscmbqvyn1g30fpbdcx96rgbdlj67"))))
+                "1fj871q0mav3dffm3sjg4zsci0lm8z74nfgbbrv6jzab155vfrmc"))))
     (properties `((upstream-name . "SightabilityModel")))
     (build-system r-build-system)
     (propagated-inputs (list r-survey
@@ -41710,13 +41399,13 @@ Mayrhofer and Filzmoser (2022) <doi:10.48550/ARXIV.2210.10063>.")
 (define-public r-shapeselectforest
   (package
     (name "r-shapeselectforest")
-    (version "1.6")
+    (version "1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ShapeSelectForest" version))
               (sha256
                (base32
-                "1nifrypbg4g393dgz20jy3c53ppjvmx75c4m1bqvi3m0z4zzgmv3"))))
+                "096v3i0g4877zp883vi5n9cijbjdqga3dbinjlm5ws4j2zlghvb1"))))
     (properties `((upstream-name . "ShapeSelectForest")))
     (build-system r-build-system)
     (propagated-inputs (list r-raster r-coneproj))
@@ -41883,55 +41572,6 @@ with functions aiding their visualization.")
     (description
      "This package provides functions to read and write ESRI shapefiles.")
     (license (list license:gpl2+ license:gpl3+))))
-
-(define-public r-shapechange
-  (package
-    (name "r-shapechange")
-    (version "1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ShapeChange" version))
-              (sha256
-               (base32
-                "1ch7avx8mxjk8vrp17inaihmbsv968wflyk1n4fbjvacbl24vn2b"))))
-    (properties `((upstream-name . "ShapeChange")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-quadprog r-coneproj))
-    (home-page "https://cran.r-project.org/package=ShapeChange")
-    (synopsis "Change-Point Estimation using Shape-Restricted Splines")
-    (description
-     "In a scatterplot where the response variable is Gaussian, Poisson or binomial,
-we consider the case in which the mean function is smooth with a change-point,
-which is a mode, an inflection point or a jump point.  The main routine
-estimates the mean curve and the change-point as well using shape-restricted
-B-splines.  An optional subroutine delivering a bootstrap confidence interval
-for the change-point is incorporated in the main routine.")
-    (license license:gpl2+)))
-
-(define-public r-shallot
-  (package
-    (name "r-shallot")
-    (version "0.4.10")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "shallot" version))
-              (sha256
-               (base32
-                "05ciafpahcrsh9kwg1yqwbmanvkbv1i1cjjpvq3w4cdqkhn4fam7"))))
-    (properties `((upstream-name . "shallot")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rscala r-commonsmath))
-    (home-page "https://github.com/dbdahl/shallot")
-    (synopsis "Random Partition Distribution Indexed by Pairwise Information")
-    (description
-     "Implementations are provided for the models described in the paper D. B. Dahl,
-R. Day, J. Tsai (2017) <DOI:10.1080/01621459.2016.1165103>.  The Ewens,
-Ewens-Pitman, Ewens attraction, Ewens-Pitman attraction, and @code{ddCRP}
-distributions are available for prior and posterior simulation.  Posterior
-simulation is based on a user-supplied likelihood.  Supporting functions for
-partition estimation and plotting are also provided.")
-    (license (list license:asl2.0
-                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-shadowr
   (package
@@ -43692,28 +43332,6 @@ implementation, special care has been taken to assure numerical stability of the
 methods even for such large sample sizes.")
     (license license:gpl2+)))
 
-(define-public r-sequences
-  (package
-    (name "r-sequences")
-    (version "0.5.9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "sequences" version))
-              (sha256
-               (base32
-                "17571m525b6a3k4f0m936wfq401181gx1fpb7x4v0fhaldzdmk3a"))))
-    (properties `((upstream-name . "sequences")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/lgatto/sequences/")
-    (synopsis "Generic and Biological Sequences")
-    (description
-     "Educational package used in R courses to illustrate object-oriented programming
-and package development.  Using biological sequences (DNA and RNA) as a working
-example.")
-    (license license:gpl3)))
-
 (define-public r-seqtest
   (package
     (name "r-seqtest")
@@ -44325,13 +43943,13 @@ models.\" American Journal of Political Science 55.4 (2011): 991-1002.")
 (define-public r-separate
   (package
     (name "r-separate")
-    (version "0.3.1")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sEparaTe" version))
               (sha256
                (base32
-                "07pcpx1snik7hvhmbq9nlnq8dd0ijn0i9vnq5f3q2f1ik3gx4rh9"))))
+                "1nxiqsqz0sva9mxk1jscdq6ragc073gmqlrpa68zkfnfdzfrkb32"))))
     (properties `((upstream-name . "sEparaTe")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=sEparaTe")
@@ -44367,27 +43985,6 @@ variability (inter- and intra-observer variation).  The methods used in this
 package are referenced from Zoran B. @code{PopoviÄ} (2017)
 <doi:10.21037/cdt.2017.03.12>.")
     (license license:gpl3)))
-
-(define-public r-sentryr
-  (package
-    (name "r-sentryr")
-    (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "sentryR" version))
-              (sha256
-               (base32
-                "0kz81dbxg4zyns829cjhjm2g88pxzaaxdk7c8qabvl0zgqys2chy"))))
-    (properties `((upstream-name . "sentryR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-uuid r-tibble r-stringr r-jsonlite r-httr))
-    (home-page "https://github.com/ozean12/sentryR")
-    (synopsis "Send Errors and Messages to 'Sentry'")
-    (description
-     "Unofficial client for Sentry <https://sentry.io>, a self-hosted or cloud-based
-error-monitoring service.  It will inform about errors in real-time, and
-includes integration with the Plumber package.")
-    (license license:expat)))
 
 (define-public r-sentopics
   (package
@@ -48034,35 +47631,6 @@ anisotropy, von Neumann & Moore (1,d)-neighborhoods, described by Moskalev P.V.
 et al. (2011) @code{<arXiv:1105.2334v1>.}")
     (license license:gpl3)))
 
-(define-public r-seckw
-  (package
-    (name "r-seckw")
-    (version "0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "SecKW" version))
-              (sha256
-               (base32
-                "13x9l6ncx8qszkcr7dpfzrk4zqj4w8z5lwd394437vl4xf1xv0k6"))))
-    (properties `((upstream-name . "SecKW")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-pracma r-fdrtool))
-    (home-page "https://github.com/TrigonometricDistribution")
-    (synopsis "The SecKW Distribution")
-    (description
-     "Density, distribution function, quantile function, random generation and
-survival function for the Secant Kumaraswamy Weibull Distribution as defined by
-SOUZA, L. New Trigonometric Class of Probabilistic Distributions.  219 p.
-Thesis (Doctorate in Biometry and Applied Statistics) - Department of Statistics
-and Information, Federal Rural University of Pernambuco, Recife, Pernambuco,
-2015 (available at
-<http://www.openthesis.org/documents/New-trigonometric-classes-probabilistic-distributions-602633.html>)
-and BRITO, C. C. R. Method Distributions generator and Probability Distributions
-Classes.  241 p.  Thesis (Doctorate in Biometry and Applied Statistics) -
-Department of Statistics and Information, Federal Rural University of
-Pernambuco, Recife, Pernambuco, 2014 (available upon request).")
-    (license license:expat)))
-
 (define-public r-secfish
   (package
     (name "r-secfish")
@@ -48501,29 +48069,6 @@ Documentation about SEAHORS is provided by the vignette included in this package
 and by the companion scientific paper: Royer, Discamps, Plutniak, Thomas (2023,
 PCI Archaeology, <doi:10.5281/zenodo.7674698>).")
     (license license:gpl3)))
-
-(define-public r-seagull
-  (package
-    (name "r-seagull")
-    (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "seagull" version))
-              (sha256
-               (base32
-                "1kmidbxzs8zrjji6wsn8nrdv5mpfmmf6q30h1w4rc0swx1ycsgx4"))))
-    (properties `((upstream-name . "seagull")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrixstats))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/jklosa/seagull")
-    (synopsis "Lasso, Group Lasso, and Sparse-Group Lasso for Mixed Models")
-    (description
-     "Proximal gradient descent solver for the operators lasso, (fitted) group lasso,
-and (fitted) sparse-group lasso.  The implementation involves backtracking line
-search and warm starts.  Input data needs to be clustered/ grouped for each
-group lasso variant before calling these algorithms.")
-    (license license:gpl2+)))
 
 (define-public r-seagle
   (package
@@ -49229,25 +48774,6 @@ analysis.  The algorithms work with data sets provided in KEEL, ARFF and CSV
 format and also with data.frame objects.")
     (license license:lgpl3+)))
 
-(define-public r-sdef
-  (package
-    (name "r-sdef")
-    (version "1.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "sdef" version))
-              (sha256
-               (base32
-                "0x2b8shp02ik0dd11wi3jcrl9h9m963fnkfy47fwwhav9x6jg0jf"))))
-    (properties `((upstream-name . "sdef")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=sdef")
-    (synopsis "Synthesizing List of Differentially Expressed Features")
-    (description
-     "This package performs two tests to evaluate if the experiments are associated
-and returns a list of interesting features common to all the experiments.")
-    (license license:gpl2)))
-
 (define-public r-sde
   (package
     (name "r-sde")
@@ -49830,39 +49356,6 @@ infrastructure for implementing new error detection techniques.")
 conduct randomization tests on data gathered by means of such designs, as
 discussed in Bulte and Onghena (2013) <doi:10.22237/jmasm/1383280020>.")
     (license license:gpl2+)))
-
-(define-public r-scrselect
-  (package
-    (name "r-scrselect")
-    (version "1.3-3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "SCRSELECT" version))
-              (sha256
-               (base32
-                "118vwnd5gggvdhq7fbs0553l84vh5mhiag41q4svprd7p0pqd9hd"))))
-    (properties `((upstream-name . "SCRSELECT")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-mvtnorm))
-    (home-page "https://cran.r-project.org/package=SCRSELECT")
-    (synopsis
-     "Performs Bayesian Variable Selection on the Covariates in a Semi-Competing Risks Model")
-    (description
-     "This package contains four functions used in the DIC-tau_g procedure.
-SCRSELECT() and SCRSELECTRUN() uses Stochastic Search Variable Selection to
-select important covariates in the three hazard functions of a semi-competing
-risks model.  These functions perform the Gibbs sampler for variable selection
-and a Metropolis-Hastings-Green sampler for the number of split points and
-parameters for the three baseline hazard function.  The function SCRSELECT()
-returns the posterior sample of all quantities sampled in the Gibbs sampler
-after a burn-in period to a desired file location, while the function
-SCRSELECTRUN() returns posterior values of important quantities to the DIC-Tau_g
-procedure in a list.  The function DICTAUG() returns a list containing the DIC
-values for the unique models visited by the DIC-Tau_g grid search.  The function
-@code{ReturnModel()} uses SCRSELECTRUN() and DICTAUG() to return a summary of
-the posterior coefficient vectors for the optimal model along with saving this
-posterior sample to a desired path location.")
-    (license license:gpl2)))
 
 (define-public r-scroshi
   (package
@@ -55673,27 +55166,6 @@ data analysis, including proportions, margins of error and upper and lower
 bounds for simple, stratified and cluster sample designs.")
     (license license:expat)))
 
-(define-public r-sample-size
-  (package
-    (name "r-sample-size")
-    (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Sample.Size" version))
-              (sha256
-               (base32
-                "1vfnb2gg3rax4sxd81xqznfvh300nv45nn7zjsyrdjyg1n3ym7nw"))))
-    (properties `((upstream-name . "Sample.Size")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=Sample.Size")
-    (synopsis "Sample size calculation")
-    (description
-     "Computes the required sample size using the optimal designs with multiple
-constraints proposed in Mayo et al.(2010).  This optimal method is designed for
-two-arm, randomized phase II clinical trials, and the required sample size can
-be optimized either using fixed or flexible randomization allocation ratios.")
-    (license license:gpl2)))
-
 (define-public r-samm
   (package
     (name "r-samm")
@@ -56785,35 +56257,6 @@ Tapabrata Maiti(2004)
 <http://www.asasrms.org/Proceedings/y2004/files/Jsm2004-000737.pdf>.")
     (license license:gpl3)))
 
-(define-public r-saehb-zinb
-  (package
-    (name "r-saehb-zinb")
-    (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "saeHB.zinb" version))
-              (sha256
-               (base32
-                "0z8yngvd3rizxkfb8j6jn9gfm7q8888igdq354r9dibprkw4fxbs"))))
-    (properties `((upstream-name . "saeHB.zinb")))
-    (build-system r-build-system)
-    (inputs (list jags))
-    (propagated-inputs (list r-stringr r-rjags r-coda))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/hayunbuto/saeHB.zinb")
-    (synopsis
-     "Small Area Estimation using Hierarchical Bayesian under Zero Inflated Negative Binomial Distribution")
-    (description
-     "We designed this package to provide a function for area level of small area
-estimation using Hierarchical Bayesian (HB) method under Zero Inflated Negative
-Binomial Distribution.  This package provides model using Univariate Zero
-Inflated Negative Binomial Distribution for variable of interest.  This package
-also provides a dataset produced by a data generation.  The rjags package is
-employed to obtain parameter estimates.  Model-based estimators involves the HB
-estimators which include the mean and the variation of mean, and the quantile.
-For the reference, see Rao,J.N.K & Molina (2015) <doi:10.1002/9781118735855>.")
-    (license license:gpl3)))
-
 (define-public r-saehb-zib
   (package
     (name "r-saehb-zib")
@@ -56838,60 +56281,6 @@ variables of interest.  Some dataset produced by a data generation are also
 provided.  The rjags package is employed to obtain parameter estimates.
 Model-based estimators involves the HB estimators which include the mean and the
 variation of mean.")
-    (license license:gpl3)))
-
-(define-public r-saehb-twofold
-  (package
-    (name "r-saehb-twofold")
-    (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "saeHB.twofold" version))
-              (sha256
-               (base32
-                "1fdrh4h9y6blvib7d0hn1dhccz7rrmyf84a3g49chshiympkp6nv"))))
-    (properties `((upstream-name . "saeHB.twofold")))
-    (build-system r-build-system)
-    (inputs (list jags))
-    (propagated-inputs (list r-stringr r-rjags r-data-table r-coda))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/reymath99/saeHB.twofold")
-    (synopsis "Hierarchical Bayes Twofold Subarea Level Model SAE")
-    (description
-     "We designed this package to provides several functions for area and subarea
-level of small area estimation under Twofold Subarea Level Model using
-hierarchical Bayesian (HB) method with Univariate Normal distribution for
-variables of interest.  Some dataset simulated by a data generation are also
-provided.  The rjags package is employed to obtain parameter estimates using
-Gibbs Sampling algorithm.  Model-based estimators involves the HB estimators
-which include the mean, the variation of mean, and the quantile.  For the
-reference, see Rao and Molina (2015) <doi:10.1002/9781118735855>, Torabi and Rao
-(2014) <doi:10.1016/j.jmva.2014.02.001>, Leyla Mohadjer et al.(2007)
-<http://www.asasrms.org/Proceedings/y2007/Files/JSM2007-000559.pdf>, and
-Erciulescu et al.(2019) <doi:10.1111/rssa.12390>.")
-    (license license:gpl3)))
-
-(define-public r-saehb-spatial
-  (package
-    (name "r-saehb-spatial")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "saeHB.spatial" version))
-              (sha256
-               (base32
-                "0fqc3c5y4rwfpgfbwfsrdhqlwjbal28wi9djm1vlncr8phkzfpln"))))
-    (properties `((upstream-name . "saeHB.spatial")))
-    (build-system r-build-system)
-    (inputs (list jags))
-    (propagated-inputs (list r-stringr r-rjags r-coda))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/arinams/saeHB.spatial")
-    (synopsis
-     "Small Area Estimation under Spatial SAR Model using Hierarchical Bayesian Method")
-    (description
-     "This package provides several functions and datasets for area level of Small
-Area Estimation under Spatial SAR Model using Hierarchical Bayesian (HB) Method.")
     (license license:gpl3)))
 
 (define-public r-saehb-panel-beta
@@ -56998,97 +56387,6 @@ obtain parameter estimates.  For the references, see Rao and Molina (2015)
 and Ntzoufras (2009, ISBN-10: 1118210352).")
     (license license:gpl3)))
 
-(define-public r-saehb-hnb
-  (package
-    (name "r-saehb-hnb")
-    (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "saeHB.hnb" version))
-              (sha256
-               (base32
-                "1c7k0hhg078dmrz9crydh9napiim4r0kw4bv64y63zqbzsgrchm1"))))
-    (properties `((upstream-name . "saeHB.hnb")))
-    (build-system r-build-system)
-    (inputs (list jags))
-    (propagated-inputs (list r-stringr r-rjags r-coda))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/rakaikmana/saeHB.hnb")
-    (synopsis
-     "Small Area Estimation under Hurdle Negative Binomial Distribution using Hierarchical Bayesian Method")
-    (description
-     "We design this package to provide a function for area level of small area
-estimation using Hierarchical Bayesian (HB) method under Hurdle Negative
-Binomial Distribution.  This package provides model using Univariate Hurdle
-Negative Binomial Distribution for variable of interest.  This package also
-provides a dataset produced by a data generation.  The rjags package is employed
-to obtain parameter estimates.  Model-based estimators involves the Hierarchical
-Bayes estimators which include the mean and the variation of mean.  For
-references, see Hilbe (2011) <doi:10.1017/CBO9780511973420> and Rao (2015)
-<doi:10.1002/9781118735855>.")
-    (license license:gpl3)))
-
-(define-public r-saehb-gpois
-  (package
-    (name "r-saehb-gpois")
-    (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "saeHB.gpois" version))
-              (sha256
-               (base32
-                "1zz5xg393fv4r7bczp9ff690ypwspmm5p17p7vsn1vhcfwgx71di"))))
-    (properties `((upstream-name . "saeHB.gpois")))
-    (build-system r-build-system)
-    (inputs (list jags))
-    (propagated-inputs (list r-stringr r-rjags r-coda))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/joiceevangelista/saeHB.gpois")
-    (synopsis "SAE using HB Method under Generalized Poisson Distribution")
-    (description
-     "We designed this package to provide function for area level of Small Area
-Estimation using Hierarchical Bayesian (HB) method under Generalized Poisson
-Distribution.  This package provides model using Univariate Generalized Poisson
-Distribution for variable of interest.  Some datasets simulated by a data
-generation are also provided.  The rjags package is employed to obtain parameter
-estimates.  Model-based estimators involves the HB estimators which include the
-mean and the variation of mean.  For the reference, see Rao and Molina (2015)
-<doi:10.1002/9781118735855>, Wang (2021) <doi:10.1016/j.ecoinf.2021.101301> and
-Ntzoufras (2009) <doi:10.1002/9780470434567>.")
-    (license license:gpl3)))
-
-(define-public r-saehb
-  (package
-    (name "r-saehb")
-    (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "saeHB" version))
-              (sha256
-               (base32
-                "0jlfflpy67y8val89nn29larhw0v9qgsqp3x1sf3h1az9lc7bx5p"))))
-    (properties `((upstream-name . "saeHB")))
-    (build-system r-build-system)
-    (inputs (list jags))
-    (propagated-inputs (list r-stringr
-                             r-rjags
-                             r-nimble
-                             r-mass
-                             r-coda
-                             r-carbayesdata))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/zazaperwira/saeHB")
-    (synopsis "Small Area Estimation using Hierarchical Bayesian Method")
-    (description
-     "This package provides several functions for area level of small area estimation
-using hierarchical Bayesian (HB) method with several univariate distributions
-for variable of interest.  The dataset that used in every function is generated
-accordingly in the Example.  The rjags package is employed to obtain parameter
-estimates.  Model-based estimators involves the HB estimators which include the
-mean and the variation of mean.  For the reference, see Rao and Molina (2015)
-<doi:10.1002/9781118735855>.")
-    (license license:gpl3)))
-
 (define-public r-saeeb
   (package
     (name "r-saeeb")
@@ -57162,40 +56460,6 @@ which based on Wilcox (1979) <doi:10.1177/001316447903900302> and Kleinman
      "Selecting Auxiliary Variables in Small Area Estimation (SAE) Model")
     (description
      "Select best combination of auxiliary variables with certain criterion.")
-    (license license:gpl3)))
-
-(define-public r-sae-prop
-  (package
-    (name "r-sae-prop")
-    (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "sae.prop" version))
-              (sha256
-               (base32
-                "1sn8adldg7k2snji7bpb8vf28iqynb8dghkcxfd2649kgg63plai"))))
-    (properties `((upstream-name . "sae.prop")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-progress r-mass r-magic r-fpc r-corpcor))
-    (home-page "https://github.com/mrijalussholihin/sae.prop")
-    (synopsis
-     "Small Area Estimation using Fay-Herriot Models with Additive Logistic Transformation")
-    (description
-     "This package implements Additive Logistic Transformation (alr) for Small Area
-Estimation under Fay Herriot Model.  Small Area Estimation is used to borrow
-strength from auxiliary variables to improve the effectiveness of a domain
-sample size.  This package uses Empirical Best Linear Unbiased Prediction
-(EBLUP).  The Additive Logistic Transformation (alr) are based on transformation
-by Aitchison J (1986).  The covariance matrix for multivariate application is
-based on covariance matrix used by Esteban M, @code{LombardÃ­a} M,
-@code{LÃ³pez-VizcaÃ­no} E, Morales D, and PÃ©rez A
-<doi:10.1007/s11749-019-00688-w>.  The non-sampled models are modified
-area-level models based on models proposed by Anisa R, Kurnia A, and Indahwati I
-<doi:10.9790/5728-10121519>, with univariate model using model-3, and
-multivariate model using model-1.  The MSE are estimated using Parametric
-Bootstrap approach.  For non-sampled cases, MSE are estimated using modified
-approach proposed by Haris F and Ubaidillah A
-<doi:10.4108/eai.2-8-2019.2290339>.")
     (license license:gpl3)))
 
 (define-public r-sae
@@ -57344,26 +56608,6 @@ analyze the spatial scale, degree of anisotropy and preferred direction in each
 field.  These structural attributes are compared by a series of scores.  An
 experimental algorithm for the correction of these errors is included as well.")
     (license license:expat)))
-
-(define-public r-sacobra
-  (package
-    (name "r-sacobra")
-    (version "1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "SACOBRA" version))
-              (sha256
-               (base32
-                "1v45l56vifkg3v2bfhk3kfg4fn0dfvrjcgy13zzymm8blr7vazi5"))))
-    (properties `((upstream-name . "SACOBRA")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-testit r-r6 r-mgcv))
-    (home-page "https://cran.r-project.org/package=SACOBRA")
-    (synopsis "Self-Adjusting COBRA")
-    (description
-     "This package performs surrogate-assisted optimization for expensive black-box
-constrained problems.")
-    (license license:gpl2+)))
 
 (define-public r-saccr
   (package

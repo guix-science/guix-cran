@@ -508,13 +508,13 @@ Variable trees display information about nested subsets of a data frame.")
 (define-public r-vtreat
   (package
     (name "r-vtreat")
-    (version "1.6.3")
+    (version "1.6.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "vtreat" version))
               (sha256
                (base32
-                "181nsjl811m3k1123bvgnnwr253sc2mbj4ljzmawz9wl7dfbwfij"))))
+                "1b32rrmnkpm53vgdg479q4wwzlgcisbz9x24rvcn42pjm9r8wwf8"))))
     (properties `((upstream-name . "vtreat")))
     (build-system r-build-system)
     (propagated-inputs (list r-wrapr r-digest))
@@ -849,28 +849,6 @@ repository.  To access this data package, see the instructions at
 <https://github.com/kharchenkolab/vrnmf>.  The size of the @code{simulatedNMF}
 package is approximately 8 MB.")
     (license license:gpl3)))
-
-(define-public r-vrcp
-  (package
-    (name "r-vrcp")
-    (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vrcp" version))
-              (sha256
-               (base32
-                "1wrch1dqy752gkj24h1dgi2x3kf1797xj4pf1s9mszf3x3ic905d"))))
-    (properties `((upstream-name . "vrcp")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-ggplot2))
-    (home-page "https://cran.r-project.org/package=vrcp")
-    (synopsis
-     "Change Point Estimation for Regression with Varying Segments and Heteroscedastic Variances")
-    (description
-     "Estimation of varying regression segments and a change point in 2-segment
-regression models with heteroscedastic variances, and with or without a
-smoothness constraint at the change point.")
-    (license (list license:gpl2 license:gpl3))))
 
 (define-public r-vprr
   (package
@@ -3475,28 +3453,6 @@ related to response variables) among the given explanatory variables in
 different ways (i.e., model structures).")
     (license license:expat)))
 
-(define-public r-vifcp
-  (package
-    (name "r-vifcp")
-    (version "1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VIFCP" version))
-              (sha256
-               (base32
-                "0w41k25vss806m5vpwmmcfsmwaixmln0pliql3a6xlwsihha5i34"))))
-    (properties `((upstream-name . "VIFCP")))
-    (build-system r-build-system)
-    (native-inputs (list gfortran))
-    (home-page "https://cran.r-project.org/package=VIFCP")
-    (synopsis "Detecting Change-Points via VIFCP Method")
-    (description
-     "This package contains a function to support the following paper: Xiaoping Shi,
-Xiang-Sheng Wang, Dongwei Wei, Yuehua Wu (2016),
-<DOI:10.1007/s00180-015-0587-5>, A sequential multiple change-point detection
-procedure via VIF regression, Computational Statistics, 31(2): 671-691.")
-    (license license:lgpl3)))
-
 (define-public r-viewpoly
   (package
     (name "r-viewpoly")
@@ -4452,13 +4408,13 @@ input number.")
 (define-public r-verbalisr
   (package
     (name "r-verbalisr")
-    (version "0.5.0")
+    (version "0.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "verbalisr" version))
               (sha256
                (base32
-                "12qnjspn1y5sfjmicfc6wm1vcbyzhwqldx9n56xsnqsk9589690a"))))
+                "0nyydh6mlw2di7cmhdr1x8rm8gdsdnnc45kgx84mb2y6vb0275k4"))))
     (properties `((upstream-name . "verbalisr")))
     (build-system r-build-system)
     (propagated-inputs (list r-ribd r-pedtools))

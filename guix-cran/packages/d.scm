@@ -220,13 +220,13 @@ consistent with wood formation mechanisms through time.")
 (define-public r-dynsurv
   (package
     (name "r-dynsurv")
-    (version "0.4-4")
+    (version "0.4-5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dynsurv" version))
               (sha256
                (base32
-                "0dpc0a7ijzi8my3ifipgyvq1p7kibbs7r89wsddpvlr290ls61vw"))))
+                "1cflp9q3364qhz06hy9h42q7q455ylk8k3zldppnhz5cq0n56z2n"))))
     (properties `((upstream-name . "dynsurv")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -2395,26 +2395,6 @@ way through a data set, dtrackr seamlessly keeps track of your data flow and
 makes publication ready documentation of a data pipeline simple.")
     (license license:expat)))
 
-(define-public r-dtr
-  (package
-    (name "r-dtr")
-    (version "1.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "DTR" version))
-              (sha256
-               (base32
-                "1lzvk9ar6xf3n2vvy8vb9mvrbx3nafzzhvz5g7vf79jd71yz54jd"))))
-    (properties `((upstream-name . "DTR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-survival r-ggplot2 r-aod))
-    (home-page "http://CRAN.R-project.org/package=DTR")
-    (synopsis "Estimation and Comparison of Dynamic Treatment Regimes")
-    (description
-     "Estimation and comparison of survival distributions of dynamic treatment regimes
-(DTRs) from sequentially randomized clinical trials.")
-    (license license:gpl2+)))
-
 (define-public r-dtpcrm
   (package
     (name "r-dtpcrm")
@@ -3578,13 +3558,13 @@ distribution is not needed.  Posterior summaries are compared with those by
 (define-public r-dsam
   (package
     (name "r-dsam")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DSAM" version))
               (sha256
                (base32
-                "1ba8bf7azhf12wag3m87jarwrgcikcxpgn3jdk4y58rzlj7czsm1"))))
+                "1zyhbfigpgn86d3vyl6hib1h4bqnafysj0374nhrz91ln5qg4gzs"))))
     (properties `((upstream-name . "DSAM")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost r-proc r-matrix r-kohonen r-caret))
@@ -3934,36 +3914,6 @@ prescriptions.  Based on Pye et al (2018) <doi:10.1002/pds.4440>.")
 Medical Outcomes Partnership (OMOP) common data model.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
-(define-public r-drugclust
-  (package
-    (name "r-drugclust")
-    (version "0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "DrugClust" version))
-              (sha256
-               (base32
-                "0acvjqwzkbjmy101m501l7fkfxzkp6zflwvn56li5307xv9ggnfg"))))
-    (properties `((upstream-name . "DrugClust")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rocr r-mess r-e1071 r-cluster r-cclust))
-    (home-page "https://cran.r-project.org/package=DrugClust")
-    (synopsis
-     "Implementation of a Machine Learning Framework for Predicting Drugs Side Effects")
-    (description
-     "An implementation of a Machine Learning Framework for prediction of new drugs
-Side Effects.  Firstly drugs are clustered with respect to their features
-description and secondly predictions are made, according to Bayesian scores.
-Moreover it can perform protein enrichment considering the proteins clustered
-together in the first step of the algorithm.  This last tool is of extreme
-interest for biologist and drug discovery purposes, given the fact that it can
-be used either as a validation of the clusters obtained, as well as for the
-possible discovery of new interactions between certain side effects and non
-targeted pathways.  Clustering of the drugs in the feature space can be done
-using K-Means, PAM or K-Seeds (a novel clustering algorithm proposed by the
-author).")
-    (license license:gpl2)))
-
 (define-public r-drquality
   (package
     (name "r-drquality")
@@ -4150,13 +4100,13 @@ calculating success probabilities, and plotting outcome distributions.")
 (define-public r-driver
   (package
     (name "r-driver")
-    (version "0.4.0")
+    (version "0.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "driveR" version))
               (sha256
                (base32
-                "1zjpp8fff89hd7nbianm6ff88ws7j3z656awyz1ffb96rnhk1c6x"))))
+                "00cwzy097wbl1k3sw3nfn0kzb6af7hyzwaznvlckf77g7kw86bmi"))))
     (properties `((upstream-name . "driveR")))
     (build-system r-build-system)
     (propagated-inputs (list r-txdb-hsapiens-ucsc-hg38-knowngene
@@ -5664,13 +5614,13 @@ dating.  Read and write standard file formats used in dendrochronology.")
 (define-public r-dplbnde
   (package
     (name "r-dplbnde")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dplbnDE" version))
               (sha256
                (base32
-                "0vklb07h4izgpdi7w92gv87d1gl2fbdgpcq3b1ig9d55m37ssbsx"))))
+                "1dqdsy5195mbkibxmfmh6qb4m26sa6h04l8lkcy4b3a0w7j2bmgn"))))
     (properties `((upstream-name . "dplbnDE")))
     (build-system r-build-system)
     (propagated-inputs (list r-bnclassify))
@@ -6361,26 +6311,6 @@ Olga (2020) <doi:10.1371/journal.pcbi.1007819>.")
      "Load configuration from a .env file, that is in the current working directory,
 into environment variables.")
     (license license:expat)))
-
-(define-public r-dotc
-  (package
-    (name "r-dotc")
-    (version "0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "DoTC" version))
-              (sha256
-               (base32
-                "1hjjkmxrbiysy3xl6n4q7kxcygdq68jcsgki1p937zj9a17sa62j"))))
-    (properties `((upstream-name . "DoTC")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-plyr r-ggplot2))
-    (home-page "https://cran.r-project.org/package=DoTC")
-    (synopsis "Distribution of Typicality Coefficients")
-    (description
-     "Calculation of cluster typicality coefficients as being generated by fuzzy
-k-means clustering.")
-    (license license:gpl2+)))
 
 (define-public r-dostats
   (package
@@ -10324,29 +10254,6 @@ distance surface.  But the workhorse is distance_to.")
 metrics.")
     (license license:gpl3+)))
 
-(define-public r-distance-sample-size
-  (package
-    (name "r-distance-sample-size")
-    (version "0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "distance.sample.size" version))
-              (sha256
-               (base32
-                "0hlf3kp34rg1gnkxp4k3rnv0shv4fpgb0rhx3a6x5692lhyigbcs"))))
-    (properties `((upstream-name . "distance.sample.size")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-mass))
-    (home-page "https://cran.r-project.org/package=distance.sample.size")
-    (synopsis "Calculates Study Size Required for Distance Sampling")
-    (description
-     "Calculates the study size (either number of detections, or proportion of region
-that should be covered) to achieve a target precision for the estimated
-abundance.  The calculation allows for the penalty due to unknown detection
-function, and for overdispersion.  The user must specify a guess at the true
-detection function.")
-    (license (list license:gpl2 license:gpl3))))
-
 (define-public r-distance
   (package
     (name "r-distance")
@@ -10684,35 +10591,6 @@ its purpose is to trap plausible idiom that is ill-defined
 a possibly incorrect result.  To cite the package in publications please use
 Hankin (2022) <doi:10.48550/ARXIV.2210.03856>.")
     (license license:gpl2+)))
-
-(define-public r-diskimager
-  (package
-    (name "r-diskimager")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "diskImageR" version))
-              (sha256
-               (base32
-                "1r19k5fdjn6vkn11p5df77fnxfqaz3nciiaai0f3pr2bgpfppzka"))))
-    (properties `((upstream-name . "diskImageR")))
-    (build-system r-build-system)
-    (inputs (list))
-    (propagated-inputs (list r-zoo r-subplex))
-    (home-page "https://cran.r-project.org/package=diskImageR")
-    (synopsis
-     "Pipeline to Analyze Resistance and Tolerance from Drug Disk Diffusion Assays")
-    (description
-     "This package provides a pipeline to analyze photographs of disk diffusion
-plates.  This removes the need to analyze the plates themselves, and thus
-analysis can be done separate from the assay.  Furthermore, @code{diskImageR}
-removes potential researcher bias, by quantitative assessment of drug resistance
-as the zone diameter at multiple cutoff values of growth inhibition.  This
-method also extends the disk diffusion assay by measuring drug tolerance (in
-addition to drug resistance) as the fraction of the subpopulation that is able
-to grow above the resistance point @code{(\"FoG\"),} and drug sensitivity as the
-rate of change from no growth to full growth (\"slope\").")
-    (license license:gpl3)))
 
 (define-public r-disimpact
   (package
@@ -13052,28 +12930,6 @@ non-private function sensitivity; combined with the generic mechanisms, it
 permits turn-key privatization of arbitrary programs.")
     (license license:expat)))
 
-(define-public r-diffmeshgp
-  (package
-    (name "r-diffmeshgp")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "diffMeshGP" version))
-              (sha256
-               (base32
-                "1dc37hxh3fi27gw11kij57j78p87bza77s82niagdv6dqhldj5a4"))))
-    (properties `((upstream-name . "diffMeshGP")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=diffMeshGP")
-    (synopsis "Multi-Fidelity Computer Experiments Using the Tuo-Wu-Yu Model")
-    (description
-     "This R function implements the nonstationary Kriging model proposed by Tuo, Wu
-and Yu (2014) <DOI:10.1080/00401706.2013.842935> for analyzing multi-fidelity
-computer outputs.  This function computes the maximum likelihood estimates for
-the model parameters as well as the predictive means and variances of the exact
-solution (i.e., the conceptually highest fidelity).")
-    (license license:gpl2+)))
-
 (define-public r-diffmatchpatch
   (package
     (name "r-diffmatchpatch")
@@ -13490,31 +13346,6 @@ either side of the barrier and barrier strength.  Uses expectation maximisation
 in likelihood framework.  The method is described in Baird et al. (2023)
 <doi:10.1111/2041-210X.14010>.")
     (license license:gpl3+)))
-
-(define-public r-dief
-  (package
-    (name "r-dief")
-    (version "1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "dief" version))
-              (sha256
-               (base32
-                "1i4icdfqvw7imaj1fh392zmzfyz8aqlv9s5naqxm1pm0lqfxl6ca"))))
-    (properties `((upstream-name . "dief")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-plyr r-ggplot2 r-fmsb r-flux))
-    (home-page "https://github.com/maribelacosta/dief")
-    (synopsis "Metrics for Continuous Efficiency")
-    (description
-     "An implementation of the metrics dief@@t and dief@@k to measure the diefficiency
-(or continuous efficiency) of incremental approaches, see Acosta, M., Vidal, M.
-E., & Sure-Vetter, Y. (2017) <doi:10.1007/978-3-319-68204-4_1>.  The metrics
-dief@@t and dief@@k allow for measuring the diefficiency during an elapsed time
-period t or while k answers are produced, respectively.  dief@@t and dief@@k
-rely on the computation of the area under the curve of answer traces, and thus
-capturing the answer rate concentration over a time interval.")
-    (license license:expat)))
 
 (define-public r-didroorfm
   (package
@@ -19666,39 +19497,6 @@ evolution\" (DE) algorithm.  Users can obtain posterior mode (MAP) estimates via
 DEMAP, posterior samples via DEMCMC, and variational approximations via DEVI.")
     (license license:expat)))
 
-(define-public r-debar
-  (package
-    (name "r-debar")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "debar" version))
-              (sha256
-               (base32
-                "03xlhnbvmkg93f6zl3x22rfwvs17fscvl8irmnm19pifk4bvbpyd"))))
-    (properties `((upstream-name . "debar")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-seqinr r-aphid r-ape))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=debar")
-    (synopsis "Post-Clustering Denoiser for COI-5P Barcode Data")
-    (description
-     "The debar sequence processing pipeline is designed for denoising high throughput
-sequencing data for the animal DNA barcode marker cytochrome c oxidase I (COI).
-The package is designed to detect and correct insertion and deletion errors
-within sequencer outputs.  This is accomplished through comparison of input
-sequences against a profile hidden Markov model (PHMM) using the Viterbi
-algorithm (for algorithm details see Durbin et al.  1998, ISBN: 9780521629713).
-Inserted base pairs are removed and deleted base pairs are accounted for through
-the introduction of a placeholder character.  Since the PHMM is a probabilistic
-representation of the COI barcode, corrections are not always perfect.  For this
-reason debar censors base pairs adjacent to reported indel sites, turning them
-into placeholder characters (default is 7 base pairs in either direction, this
-feature can be disabled).  Testing has shown that this censorship results in the
-correct sequence length being restored, and erroneous base pairs being masked
-the vast majority of the time (>95%).")
-    (license license:gpl3)))
-
 (define-public r-dear
   (package
     (name "r-dear")
@@ -20879,40 +20677,6 @@ tools and efficient algorithms which test robustly the hypothesis of chaos based
 on the Lyapunov exponent in order to know if the data generating process behind
 time series behave chaotically or not.")
     (license license:gpl2+)))
-
-(define-public r-dcgor
-  (package
-    (name "r-dcgor")
-    (version "1.0.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "dcGOR" version))
-              (sha256
-               (base32
-                "0rvwa25r23yayx1i6xhkfaw2z85d2iyfx3slg3aq1m0fa7kj380p"))))
-    (properties `((upstream-name . "dcGOR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-matrix r-igraph r-dnet))
-    (home-page "http://supfam.org/dcGOR")
-    (synopsis "Analysis of Ontologies and Protein Domain Annotations")
-    (description
-     "There lacks a package for analysing domain-centric ontologies and annotations,
-particularly those in the @code{dcGO} database.  The @code{dcGO}
-@code{(http://supfam.org/SUPERFAMILY/dcGO)} is a comprehensive domain-centric
-database for annotating protein domains using a panel of ontologies including
-Gene Ontology.  With the package, users are expected to analyse and visualise
-domain-centric ontologies and annotations.  Supported analyses include but are
-not limited to: easy access to a wide range of ontologies and their
-domain-centric annotations; able to build customised ontologies and annotations;
-domain-based enrichment analysis and visualisation; construction of a domain
-(semantic similarity) network according to ontology annotations; significance
-analysis for estimating a contact (statistical significance) network via Random
-Walk with Restart; and high-performance parallel computing.  The new
-functionalities are: 1) to create domain-centric ontologies; 2) to predict
-ontology terms for input protein sequences (precisely domain content in the form
-of architectures) plus to assess the predictions; 3) to reconstruct ancestral
-discrete characters using maximum likelihood/parsimony.")
-    (license license:gpl2)))
 
 (define-public r-dcg
   (package
@@ -22441,6 +22205,31 @@ then the user is told which date cannot be standardized and the corresponding ID
 for the row. @code{datefixR} also allows the imputation of missing days and
 months with user-controlled behavior.")
     (license license:gpl3+)))
+
+(define-public r-dateback
+  (package
+    (name "r-dateback")
+    (version "1.0.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "dateback" version))
+              (sha256
+               (base32
+                "18fgzkxdkjbv33zrpv5p7288nr95by5jasv5l0d7bc9rkxkq5gix"))))
+    (properties `((upstream-name . "dateback")))
+    (build-system r-build-system)
+    (home-page "https://github.com/r-suzuki/dateback")
+    (synopsis
+     "Collect and Install R Packages on a Specified Date with Dependencies")
+    (description
+     "Works like a virtual CRAN snapshot for source packages.  It automatically
+downloads and installs tar.gz files with dependencies, all of which were
+available on a specific day.  This package aims to (partially) substitute the
+\"CRAN Time Machine\" (or \"MRAN Time Machine\") and its related packages including
+checkpoint and versions', which no longer work because of the retirement in July
+2023
+(<https://blog.revolutionanalytics.com/2023/01/mran-time-machine-retired.html>).")
+    (license license:expat)))
 
 (define-public r-date
   (package
@@ -24185,96 +23974,6 @@ cropping system model is described at J.W. Jones, G. Hoogenboomb, C.H. Porter,
 K.J. Boote, W.D. Batchelor, L.A. Hunt, P.W. Wilkens, U. Singh, A.J. Gijsman,
 J.T. Ritchie (2003) <doi:10.1016/S1161-0301(02)00107-7>.")
     (license license:gpl2+)))
-
-(define-public r-dashtable
-  (package
-    (name "r-dashtable")
-    (version "4.7.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "dashTable" version))
-              (sha256
-               (base32
-                "0iy07dxa90vsp3rfk8ij78j9ajz1mpxywmclxzkfj7axjyydxh5w"))))
-    (properties `((upstream-name . "dashTable")))
-    (build-system r-build-system)
-    (home-page "https://github.com/plotly/dash-table")
-    (synopsis "Core Interactive Table Component for 'dash'")
-    (description
-     "An interactive table component designed for editing and exploring large
-datasets, @code{dashDataTable} is rendered with standard, semantic HTML <table/>
-markup, which makes it accessible, responsive, and easy to style.  This
-component was written from scratch in React.js specifically for the dash
-community.  Its API was designed to be ergonomic and its behaviour is completely
-customizable through its properties.")
-    (license license:expat)))
-
-(define-public r-dashpivottable
-  (package
-    (name "r-dashpivottable")
-    (version "0.0.2-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "dashPivottable" version))
-              (sha256
-               (base32
-                "1fv5pnvimf7w1k1lsijh9y2zk4z1z00m6m640jxvqla5i1rqy8cq"))))
-    (properties `((upstream-name . "dashPivottable")))
-    (build-system r-build-system)
-    (native-inputs (list esbuild))
-    (home-page "https://github.com/plotly/dash-pivottable")
-    (synopsis "Interactive React-Based Pivot Tables for Dash")
-    (description
-     "Pivot tables are useful for interactive presentation of summary statistics
-computed for data contained in another table.  The @code{dashPivottable} package
-wraps react-pivottable', making it easy to add drag-and-drop tables into your
-Dash for R applications.")
-    (license license:expat)))
-
-(define-public r-dashhtmlcomponents
-  (package
-    (name "r-dashhtmlcomponents")
-    (version "1.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "dashHtmlComponents" version))
-              (sha256
-               (base32
-                "01zrwjlhwwajk2lnv7is1r6nril83l65pynx856y9mvnm05xkb7m"))))
-    (properties `((upstream-name . "dashHtmlComponents")))
-    (build-system r-build-system)
-    (native-inputs (list r-knitr esbuild))
-    (home-page "https://github.com/plotly/dash-html-components")
-    (synopsis "Vanilla HTML Components for 'Dash'")
-    (description
-     "Dash is a web application framework that provides pure Python and R abstraction
-around HTML, CSS, and @code{JavaScript.} Instead of writing HTML or using an
-HTML templating engine, you compose your layout using R functions within the
-@code{dashHtmlComponents} package.  The source for this package is on
-@code{GitHub:} plotly/dash-html-components.")
-    (license license:expat)))
-
-(define-public r-dashcorecomponents
-  (package
-    (name "r-dashcorecomponents")
-    (version "1.10.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "dashCoreComponents" version))
-              (sha256
-               (base32
-                "11jrlls6k6qlvi81741ga908aw22m05fhhr9jpzli982s611jrwl"))))
-    (properties `((upstream-name . "dashCoreComponents")))
-    (build-system r-build-system)
-    (native-inputs (list r-knitr esbuild))
-    (home-page "https://github.com/plotly/dash-core-components")
-    (synopsis "Core Interactive UI Components for 'Dash'")
-    (description
-     "Dash ships with supercharged components for interactive user interfaces.  A core
-set of components, written and maintained by the Dash team, is available in the
-@code{dashCoreComponents} package.  The source for this package is on
-@code{GitHub:} plotly/dash-core-components.")
-    (license license:expat)))
 
 (define-public r-dashboardthemes
   (package

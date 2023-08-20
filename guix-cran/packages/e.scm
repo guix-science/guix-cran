@@ -4872,13 +4872,13 @@ crosswalks to other habitat typologies.")
 (define-public r-eummd
   (package
     (name "r-eummd")
-    (version "0.0.7")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eummd" version))
               (sha256
                (base32
-                "0rl5l356v3j8jp22b3wgn8xbskqphzsxfd9hiwm1ji1fg5dvq6i1"))))
+                "0m9bm8iyw1q0bkr9aa1yp5gsc12sn5l9nadcm0gjkywlb2g8wwhk"))))
     (properties `((upstream-name . "eummd")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -4886,11 +4886,11 @@ crosswalks to other habitat typologies.")
     (synopsis "Efficient Univariate Maximum Mean Discrepancy")
     (description
      "Computes maximum mean discrepancy two-sample test for univariate data using the
-Laplacian kernel.  It is also possible to compute the p-value using
-permutations.  Also includes implementation for computing the robust median
-difference statistic Q_n from Croux and Rousseeuw (1992)
-<doi:10.1007/978-3-662-26811-7_58> based on Johnson and Mizoguchi (1978)
-<doi:10.1137/0207013>.")
+Laplacian kernel, as described in Bodenham and Kawahara (2023)
+<doi:10.1007/s11222-023-10271-x>.  The p-value is computed using permutations.
+Also includes implementation for computing the robust median difference
+statistic Q_n from Croux and Rousseeuw (1992) <doi:10.1007/978-3-662-26811-7_58>
+based on Johnson and Mizoguchi (1978) <doi:10.1137/0207013>.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-eulerian
@@ -5759,30 +5759,6 @@ data from different groups or classes via Joint Graphical Lasso.  Tuning
 parameters are selected via information criteria (AIC / BIC / extended BIC) or
 cross validation.")
     (license license:gpl2+)))
-
-(define-public r-esther
-  (package
-    (name "r-esther")
-    (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "EstHer" version))
-              (sha256
-               (base32
-                "1j8sczwfzil16j85mw5d1c7cxy7wimh0qq7zhmkh7mfnr36m9phr"))))
-    (properties `((upstream-name . "EstHer")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-mass r-glmnet))
-    (home-page "https://cran.r-project.org/package=EstHer")
-    (synopsis
-     "Estimation of Heritability in High Dimensional Sparse Linear Mixed Models using Variable Selection")
-    (description
-     "Our method is a variable selection method to select active components in sparse
-linear mixed models in order to estimate the heritability.  The selection allows
-us to reduce the size of the data sets which improves the accuracy of the
-estimations.  Our package also provides a confidence interval for the estimated
-heritability.")
-    (license license:gpl2)))
 
 (define-public r-ester
   (package
@@ -10870,25 +10846,6 @@ big for CRAN, can be found here on the package's Github Pages website:
 <https://jamiemkass.github.io/ENMeval/articles/ENMeval-2.0-vignette.html>.")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-engsoccerdata
-  (package
-    (name "r-engsoccerdata")
-    (version "0.1.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "engsoccerdata" version))
-              (sha256
-               (base32
-                "06fdgjgnk4lwshrkd0jad411x5nz9sxlri9fdhxrf2dr2hik4l8q"))))
-    (properties `((upstream-name . "engsoccerdata")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr r-magrittr r-dplyr))
-    (home-page "https://cran.r-project.org/package=engsoccerdata")
-    (synopsis "English and European Soccer Results 1871-2016")
-    (description
-     "Analyzing English & European soccer results data from 1871-2016.")
-    (license license:gpl2+)))
-
 (define-public r-engrexpt
   (package
     (name "r-engrexpt")
@@ -12426,13 +12383,13 @@ package.  The core module of this package is developed in C++'.")
 (define-public r-emayili
   (package
     (name "r-emayili")
-    (version "0.7.15")
+    (version "0.7.17")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "emayili" version))
               (sha256
                (base32
-                "0c8vs2rh1c4rdvs8w42mk7yhngyc6dfrl12zi56wn5sq9320258l"))))
+                "065h7cp6z02k1frv06qbczaqn79jnf6amlvs1ivzihps0jfz49j6"))))
     (properties `((upstream-name . "emayili")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -12802,33 +12759,6 @@ I&SI are also implemented.  In addition, the package provides functions to
 assess transitivity, linearity and stability of dominance networks.  See Neumann
 et al (2011) <doi:10.1016/j.anbehav.2011.07.016> for an introduction.")
     (license license:gpl2+)))
-
-(define-public r-elooptimized
-  (package
-    (name "r-elooptimized")
-    (version "0.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "EloOptimized" version))
-              (sha256
-               (base32
-                "09bg1gm8jhjj0r7yzdgi2zlyavrizgiljwh26mpb6ng6p5mkliid"))))
-    (properties `((upstream-name . "EloOptimized")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rlang
-                             r-reshape2
-                             r-magrittr
-                             r-lubridate
-                             r-dplyr
-                             r-bammtools))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/jtfeld/EloOptimized")
-    (synopsis "Optimized Elo Rating Method for Obtaining Dominance Ranks")
-    (description
-     "This package provides an implementation of the maximum likelihood methods for
-deriving Elo scores as published in Foerster, Franz et al. (2016)
-<DOI:10.1038/srep35404>.")
-    (license license:gpl3)))
 
 (define-public r-elochoice
   (package
@@ -15694,26 +15624,6 @@ method details see Yu L, Wang S, Lai KK (2008).
     (description "Read raw EEM data and prepares them for further analysis.")
     (license license:gpl3)))
 
-(define-public r-eel
-  (package
-    (name "r-eel")
-    (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "eel" version))
-              (sha256
-               (base32
-                "0cv6dhw57yy140g73z94g9x1s42fpyfliv9cm2z1alm7xwap1l0x"))))
-    (properties `((upstream-name . "eel")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rootsolve r-emplik))
-    (home-page "https://cran.r-project.org/package=eel")
-    (synopsis "Extended Empirical Likelihood")
-    (description
-     "Compute the extended empirical log likelihood ratio (Tsao & Wu, 2014) for the
-mean and parameters defined by estimating equations.")
-    (license license:gpl2+)))
-
 (define-public r-eegkitdata
   (package
     (name "r-eegkitdata")
@@ -18222,6 +18132,40 @@ Forest Change (Hansen et al., 2013) <doi:10.1126/science.1244693>, and
 Continuous Tree Cover data (Sexton et al., 2013)
 <doi:10.1080/17538947.2013.786146>.")
     (license license:gpl3)))
+
+(define-public r-ecocbo
+  (package
+    (name "r-ecocbo")
+    (version "0.10.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ecocbo" version))
+              (sha256
+               (base32
+                "003fdvlzalga0s968mznaa7i32v5v4ppw9n0dknqw0xh53fcg5zf"))))
+    (properties `((upstream-name . "ecocbo")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vegan
+                             r-sampling
+                             r-ggpubr
+                             r-ggplot2
+                             r-foreach
+                             r-doparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ecocbo")
+    (synopsis "Calculating Optimum Sampling Effort in Community Ecology")
+    (description
+     "This package provides a system for calculating the optimal sampling effort,
+based on the ideas of \"Ecological cost-benefit optimization\" as developed by A.
+Underwood (1997, ISBN 0 521 55696 1).  Data is obtained from simulated
+ecological communities, and the optimization follows the following procedure of
+four functions (1) sim_beta() estimates statistical power and type 2 error by
+using Permutational Multivariate Analysis of Variance, (2) plot_power()
+represents the results of the previous function, (3) scompvar() calculates the
+variation components necessary for (4) sim_cbo() to calculate the optimal
+combination of number of sites and samples depending on either an economical
+budget or on a desired statistical accuracy.")
+    (license license:gpl3+)))
 
 (define-public r-ecmwfr
   (package

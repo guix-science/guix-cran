@@ -535,33 +535,6 @@ the generalized dispersion index (GDI) with its marginal one (MDI) and the
 generalized variation index (GVI) with its marginal one (MVI) too.")
     (license license:gpl3)))
 
-(define-public r-gwfa
-  (package
-    (name "r-gwfa")
-    (version "0.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "gwfa" version))
-              (sha256
-               (base32
-                "0jz82d9lfyd07z0jjlfqzsg7a3vnyz0s1j0rrb5sg9pnvcfjk9qy"))))
-    (properties `((upstream-name . "gwfa")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sp r-rcpp))
-    (home-page "https://cran.r-project.org/package=gwfa")
-    (synopsis "Geographically Weighted Fractal Analysis")
-    (description
-     "This package performs Geographically Weighted Fractal Analysis (GWFA) to
-calculate the local fractal dimension of a set of points.  GWFA mixes the
-Sandbox multifractal algorithm and the Geographically Weighted Regression.
-Unlike fractal box-counting algorithm, the sandbox algorithm avoids border
-effects because the boxes are adjusted on the set of points.  The Geographically
-Weighted approach consists in applying a kernel that describes the way the
-neighbourhood of each estimated point is taken into account to estimate its
-fractal dimension.  GWFA can be used to discriminate built patterns of a city, a
-region, or a whole country.")
-    (license license:gpl2+)))
-
 (define-public r-gwex
   (package
     (name "r-gwex")
@@ -1638,18 +1611,18 @@ General Transit Feed Specification (GTFS) data format.")
 (define-public r-gtfsrouter
   (package
     (name "r-gtfsrouter")
-    (version "0.0.5")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gtfsrouter" version))
               (sha256
                (base32
-                "0yxgc4pi0g2wqswvwba0ij263i8b8p6wgsy6hbvklq0gim616shi"))))
+                "1jzh4s7jkwi8d30wa5f71qyvjsvggyzjbdyrl3fqyxzfvw2hkl8p"))))
     (properties `((upstream-name . "gtfsrouter")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-geodist r-data-table r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/ATFutures/gtfs-router")
+    (home-page "https://github.com/UrbanAnalyst/gtfsrouter")
     (synopsis "Routing with GTFS (General Transit Feed Specification) Data")
     (description
      "Use GTFS (General Transit Feed Specification) data for routing from nominated
@@ -2462,44 +2435,6 @@ Spreadsheets can be downloaded as a data frame, or as plain text to parse
 manually.  Google Sheets is the new name for Google Docs Spreadsheets
 <https://www.google.com/sheets/about>.")
     (license license:gpl3)))
-
-(define-public r-gsem
-  (package
-    (name "r-gsem")
-    (version "0.4.3.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "gSEM" version))
-              (sha256
-               (base32
-                "18kh41ibvfflz59gykiq7j2c6a72i8b0w8c2mcprd1nzhnyhvmhy"))))
-    (properties `((upstream-name . "gSEM")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-mass r-knitr r-htmlwidgets r-diagrammer))
-    (home-page "https://cran.r-project.org/package=gSEM")
-    (synopsis "Semi-Supervised Generalized Structural Equation Modeling")
-    (description
-     "Conducts a @code{semi-gSEM} statistical analysis (semi-supervised generalized
-structural equation modeling) on a data frame of coincident observations of
-multiple predictive or intermediate variables and a final continuous, outcome
-variable, via two functions @code{sgSEMp1()} and @code{sgSEMp2(),} representing
-fittings based on two statistical principles.  Principle 1 determines all
-sensible univariate relationships in the spirit of the Markovian process.  The
-relationship between each pair of variables, including predictors and the final
-outcome variable, is determined with the Markovian property that the value of
-the current predictor is sufficient in relating to the next level variable,
-i.e., the relationship is independent of the specific value of the
-preceding-level variables to the current predictor, given the current value.
-Principle 2 resembles the multiple regression principle in the way multiple
-predictors are considered simultaneously.  Specifically, the relationship of the
-first-level predictors (such as Time and irradiance etc) to the outcome variable
-(such as, module degradation or yellowing) is fit by a supervised additive
-model.  Then each significant intermediate variable is taken as the new outcome
-variable and the other variables (except the final outcome variable) as the
-predictors in investigating the next-level multivariate relationship by a
-supervised additive model.  This fitting process is continued until all sensible
-models are investigated.")
-    (license license:gpl2+)))
 
 (define-public r-gselection
   (package
@@ -3762,29 +3697,6 @@ distributed test statistics.  Enables to derive critical boundaries, power,
 drift, and confidence intervals of such designs.  Supports the alpha spending
 approach by @code{Lan-DeMets} (1994) <doi:10.1002/sim.4780131308>.")
     (license license:gpl3)))
-
-(define-public r-groupremmap
-  (package
-    (name "r-groupremmap")
-    (version "0.1-0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "groupRemMap" version))
-              (sha256
-               (base32
-                "1bfp746j0dx7kk44nyjqmimvgw14par9ayvqxnzldc05qsazjdwx"))))
-    (properties `((upstream-name . "groupRemMap")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=groupRemMap")
-    (synopsis
-     "Regularized Multivariate Regression for Identifying Master Predictors Using the GroupRemMap Penalty")
-    (description
-     "An implementation of the @code{GroupRemMap} penalty for fitting regularized
-multivariate response regression models under the high-dimension-low-sample-size
-setting.  When the predictors naturally fall into groups, the @code{GroupRemMap}
-penalty encourages procedure to select groups of predictors, while control for
-the overall sparsity of the final model.")
-    (license license:gpl2+)))
 
 (define-public r-groupr
   (package
@@ -5571,13 +5483,13 @@ without access to Hugin to use code written to use RHugin'.")
 (define-public r-grattaninflators
   (package
     (name "r-grattaninflators")
-    (version "0.3.1")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "grattanInflators" version))
               (sha256
                (base32
-                "1nqfl6hdw0ilz912rs2j39j5xmbmkx6ggdldnck8203h9s1dq3ga"))))
+                "1sfn462ibmiqknpqadq6dnnhsww3mywcnsxyb5kq1aa3cb3sacp1"))))
     (properties `((upstream-name . "grattanInflators")))
     (build-system r-build-system)
     (propagated-inputs (list r-hutils r-fy r-data-table))
@@ -5730,26 +5642,6 @@ in the preferred bibliography format, ready to be pasted into reports or
 manuscripts.  Alternatively, grateful can be used directly within an R Markdown
 or Quarto document.")
     (license license:expat)))
-
-(define-public r-grassmannoptim
-  (package
-    (name "r-grassmannoptim")
-    (version "2.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "GrassmannOptim" version))
-              (sha256
-               (base32
-                "1gdjx9dazrff2nj16044b7vr7jwddf5cj0iwnlhan46fnibsfwjf"))))
-    (properties `((upstream-name . "GrassmannOptim")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-matrix))
-    (home-page "https://userpages.umbc.edu/~kofi/GrassmannOptim/")
-    (synopsis "Grassmann Manifold Optimization")
-    (description
-     "Optimizing a function F(U), where U is a semi-orthogonal matrix and F is
-invariant under an orthogonal transformation of U.")
-    (license license:gpl2+)))
 
 (define-public r-graposas
   (package
@@ -8106,32 +7998,6 @@ selection and visualisation.  The package is named after W.S. Gosset aka
 design and analysis.")
     (license license:expat)))
 
-(define-public r-gorpiper
-  (package
-    (name "r-gorpiper")
-    (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "gorpiper" version))
-              (sha256
-               (base32
-                "0d5406zh75rxnq9mkkvyvsfj2h42rqyjb64q2qfl8x772vx2pdb0"))))
-    (properties `((upstream-name . "gorpiper")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble
-                             r-stringr
-                             r-purrr
-                             r-processx
-                             r-magrittr
-                             r-fs
-                             r-data-table
-                             r-crayon
-                             r-cli))
-    (home-page "https://cran.r-project.org/package=gorpiper")
-    (synopsis "GORpipe Tool for R")
-    (description "R library for executing GOR queries using local GORpipe.")
-    (license license:lgpl3+)))
-
 (define-public r-gorica
   (package
     (name "r-gorica")
@@ -8800,16 +8666,16 @@ by re-grouping another).")
 (define-public r-goodfibes
   (package
     (name "r-goodfibes")
-    (version "0.1.8")
+    (version "0.1.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GoodFibes" version))
               (sha256
                (base32
-                "0p9kjy66gz7vyz82xllj9v44pyik11k1rwl9y2iqvndwyaq3jsba"))))
+                "0pcjb1266zhwwxqhyn9jlq2mpqwxg77aka5k29zc84izyz6ba3nk"))))
     (properties `((upstream-name . "GoodFibes")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rgl r-prodlim r-imager r-concaveman))
+    (propagated-inputs (list r-splines2 r-rgl r-prodlim r-imager r-concaveman))
     (home-page "https://cran.r-project.org/package=GoodFibes")
     (synopsis
      "Detection and Reconstruction of Muscle Fibers from diceCT Image Data")
@@ -9786,13 +9652,13 @@ maximisation algorithm.  Bernhardt (2015) <doi:10.1016/j.csda.2014.11.011>.")
 (define-public r-gmvarkit
   (package
     (name "r-gmvarkit")
-    (version "2.0.8")
+    (version "2.0.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gmvarkit" version))
               (sha256
                (base32
-                "1v74v3ax2xlcpv6a9q03phq74avfp2m30vvg1ymhv72ydmckp4bx"))))
+                "095f35p7vvw4c3v332mjd8yzg6qrz8hx3zdq70xvv389yv7z4lsd"))))
     (properties `((upstream-name . "gmvarkit")))
     (build-system r-build-system)
     (propagated-inputs (list r-pbapply r-mvnfast r-gsl r-brobdingnag))
@@ -10074,13 +9940,13 @@ by Bayes rule.")
 (define-public r-gmmboost
   (package
     (name "r-gmmboost")
-    (version "1.1.3")
+    (version "1.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GMMBoost" version))
               (sha256
                (base32
-                "0p9jnwjc8g83qsxkjz9lhaip1hkpdg6n4fdpz34b96vb7qhzrrqc"))))
+                "0ysy5av49fmswhn66b67lvbvzb5k6x6i9y0h9yrkkllssrghd7dr"))))
     (properties `((upstream-name . "GMMBoost")))
     (build-system r-build-system)
     (propagated-inputs (list r-minqa r-magic))
@@ -11699,16 +11565,24 @@ Methodology. <doi:10.1027/1614-2241/a000153>.")
 (define-public r-glmmroptim
   (package
     (name "r-glmmroptim")
-    (version "0.2.5")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "glmmrOptim" version))
               (sha256
                (base32
-                "06q9z481vcpcavymmjzg3dbdrag1bclv0klq19psrpndip0j8rm7"))))
+                "1x9ii2w3nk3sj8ksv0cqqdf8320rpm4239r2fb5y298an99jhwws"))))
     (properties `((upstream-name . "glmmrOptim")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcppeigen r-rcpp r-matrix r-glmmrbase r-digest))
+    (propagated-inputs (list r-sparsechol
+                             r-rminqa
+                             r-rcppprogress
+                             r-rcppeigen
+                             r-rcpp
+                             r-matrix
+                             r-glmmrbase
+                             r-digest
+                             r-bh))
     (home-page "https://github.com/samuel-watson/glmmrOptim")
     (synopsis
      "Approximate Optimal Experimental Designs Using Generalised Linear Mixed Models")
@@ -14156,31 +14030,6 @@ file.  For more details see Reza Rawassizadeh (2019)
      "Colour palettes inspired by Studio Ghibli
 <https://en.wikipedia.org/wiki/Studio_Ghibli> films, ported to R for your
 enjoyment.")
-    (license license:expat)))
-
-(define-public r-ghcm
-  (package
-    (name "r-ghcm")
-    (version "3.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ghcm" version))
-              (sha256
-               (base32
-                "0byzi0q3amz7q6if0y54mk3wac0pycci9ypagr65p8rlhx04gqv3"))))
-    (properties `((upstream-name . "ghcm")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-refund r-rcpp r-mass r-compquadform))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/arlundborg/ghcm")
-    (synopsis "Functional Conditional Independence Testing with the GHCM")
-    (description
-     "This package provides a statistical hypothesis test for conditional
-independence.  Given residuals from a sufficiently powerful regression, it tests
-whether the covariance of the residuals is vanishing.  It can be applied to both
-discretely-observed functional data and multivariate data.  Details of the
-method can be found in Anton Rask Lundborg, Rajen D. Shah and Jonas Peters
-(2021) @code{<arXiv:2101.07108>.}")
     (license license:expat)))
 
 (define-public r-ghclass
@@ -17147,6 +16996,37 @@ system, which is helpful for operations such as puzzles; 3.  Simple and easy to
 operate; 4.  Optimization of clustering tree visualization.")
     (license license:gpl3)))
 
+(define-public r-gghdx
+  (package
+    (name "r-gghdx")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "gghdx" version))
+              (sha256
+               (base32
+                "0f59yl8qcm5aframjjg57ikpn7ywr0pyfkzpcqa1b5yaf0831gp9"))))
+    (properties `((upstream-name . "gghdx")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-sysfonts
+                             r-showtext
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-ggthemes
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/OCHA-DAP/gghdx")
+    (synopsis "HDX Theme, Scales, and Other Conveniences for 'ggplot2'")
+    (description
+     "This package provides a Humanitarian Data Exchange (HDX) theme, color palettes,
+and scales for ggplot2 to allow users to easily follow the HDX visual design
+guide, including convenience functions for for loading and using the Source Sans
+3 font.")
+    (license license:gpl3+)))
+
 (define-public r-gghdr
   (package
     (name "r-gghdr")
@@ -19850,19 +19730,19 @@ choice a summary table (as csv') that including the most recent 100
 (define-public r-germinationmetrics
   (package
     (name "r-germinationmetrics")
-    (version "0.1.7")
+    (version "0.1.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "germinationmetrics" version))
               (sha256
                (base32
-                "03573110wrmr9m2zvcmqqhrlm8k24x1z1vslyry75bcs2jm8fk4z"))))
+                "1lssjs9rp09l9draylrkslb74apizbanacgp00yyxhgxa39dk2g6"))))
     (properties `((upstream-name . "germinationmetrics")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack
                              r-plyr
-                             r-minpack-lm
                              r-mathjaxr
+                             r-gslnls
                              r-ggrepel
                              r-ggplot2
                              r-data-table
@@ -20921,13 +20801,13 @@ is approximately 12 MB.")
 (define-public r-geomapdata
   (package
     (name "r-geomapdata")
-    (version "2.0-0")
+    (version "2.0-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "geomapdata" version))
               (sha256
                (base32
-                "0mq7hxyyi1ikwdmh7ns9rnkvp2q5s48441i8msx8621scxdv6ga4"))))
+                "1fp0qwsk4h7inp6jhz1b0zsdhv6frlxbbk8crv4xjzxzc72zhzdx"))))
     (properties `((upstream-name . "geomapdata")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=geomapdata")
@@ -21185,16 +21065,16 @@ libraries.")
 (define-public r-geogrid
   (package
     (name "r-geogrid")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "geogrid" version))
               (sha256
                (base32
-                "0b8afwgj9x56z6zh525y7qkiwbv77mjcw3v19kfba0426jn4vi87"))))
+                "0jqqv5agnw071ysrmwz5r2z76f80rzm5bfl5g23gq1mbw85x8z8m"))))
     (properties `((upstream-name . "geogrid")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp r-sf r-rgeos r-rcpparmadillo r-rcpp))
+    (propagated-inputs (list r-sp r-sf r-rcpparmadillo r-rcpp))
     (home-page "https://github.com/jbaileyh/geogrid")
     (synopsis "Turn Geospatial Polygons into Regular or Hexagonal Grids")
     (description
@@ -21329,26 +21209,6 @@ spatial dependence.")
      "This package provides geofaceting functionality for ggplot2'.  Geofaceting
 arranges a sequence of plots of data for different geographical entities into a
 grid that preserves some of the geographical orientation.")
-    (license license:expat)))
-
-(define-public r-geofabrik
-  (package
-    (name "r-geofabrik")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "geofabrik" version))
-              (sha256
-               (base32
-                "0k92gmivccw3kbgkb9bjw7pxc4zc3zdj35x0cbzmjq0k3qxq8ad0"))))
-    (properties `((upstream-name . "geofabrik")))
-    (build-system r-build-system)
-    (home-page "https://ibarraespinosa.github.io/geofabrik/")
-    (synopsis "Downloading Open Street Map Data")
-    (description
-     "Download @code{OpenStreetMap} data from geofabrik servers
-<https://download.geofabrik.de/>.  This approach uses only the direct link
-downloads.  Besides, this package does not import any external package.")
     (license license:expat)))
 
 (define-public r-geoelectrics
@@ -22339,25 +22199,6 @@ block bootstrapping to estimate asymptotically correct standard errors of
 parameters from any standard generalised linear model that may be fit by the
 glm() function.")
     (license license:gpl2)))
-
-(define-public r-genomeplot
-  (package
-    (name "r-genomeplot")
-    (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "genomeplot" version))
-              (sha256
-               (base32
-                "15v01ngxq7kxav1bhw1mvqradrmvwsad5xh9l5skivb5smh9795w"))))
-    (properties `((upstream-name . "genomeplot")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-ggplot2))
-    (home-page "https://cran.r-project.org/package=genomeplot")
-    (synopsis "'Plot genome wide values for all chromosomes'")
-    (description
-     "Plot values of markers(SNPs, expression, genes, RNA,...) for all chromosomes.")
-    (license license:gpl3+)))
 
 (define-public r-genomeadmixr
   (package
@@ -26031,30 +25872,6 @@ to a generalized lambda distribution via moment matching methods, and
 generalized bootstrapping.")
     (license (license:fsdg-compatible "Unlimited"))))
 
-(define-public r-gazepath
-  (package
-    (name "r-gazepath")
-    (version "1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "gazepath" version))
-              (sha256
-               (base32
-                "1sv0vdwzmvpnj2k8lphnf4y12fi5md0j2725fjkv1n7a3dkd6faa"))))
-    (properties `((upstream-name . "gazepath")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo r-sp r-shiny r-scales r-jpeg))
-    (home-page "https://cran.r-project.org/package=gazepath")
-    (synopsis "Parse Eye-Tracking Data into Fixations")
-    (description
-     "Eye-tracking data must be transformed into fixations and saccades before it can
-be analyzed.  This package provides a non-parametric speed-based approach to do
-this on a trial basis.  The method is especially useful when there are large
-differences in data quality, as the thresholds are adjusted accordingly.  The
-same pre-processing procedure can be applied to all participants, while
-accounting for individual differences in data quality.")
-    (license license:gpl2)))
-
 (define-public r-gawdis
   (package
     (name "r-gawdis")
@@ -26632,13 +26449,13 @@ native functions that work on simple arrays.")
 (define-public r-garma
   (package
     (name "r-garma")
-    (version "0.9.11")
+    (version "0.9.13")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "garma" version))
               (sha256
                (base32
-                "05jhac1cm82xjpz1dnwp7xcs58b3lxbzh4wmr4z7hkn5jdh3gsv5"))))
+                "0h61f29x2261vky4cwmcfwlix7x1yg8qkhgkhiw1aryqmzvwf0lc"))))
     (properties `((upstream-name . "garma")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -26649,6 +26466,8 @@ native functions that work on simple arrays.")
                              r-pracma
                              r-nloptr
                              r-lubridate
+                             r-ltsa
+                             r-hypergeo
                              r-ggplot2
                              r-ga
                              r-forecast
@@ -26662,8 +26481,8 @@ native functions that work on simple arrays.")
     (description
      "This package provides methods for estimating univariate long
 memory-seasonal/cyclical Gegenbauer time series processes.  See for example
-(2018) <doi:10.1214/18-STS649>.  Refer to the vignette for details of fitting
-these processes.")
+(2022) <doi:10.1007/s00362-022-01290-3>.  Refer to the vignette for details of
+fitting these processes.")
     (license license:gpl3)))
 
 (define-public r-gargoyle

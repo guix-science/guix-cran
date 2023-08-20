@@ -1872,28 +1872,6 @@ various range of functions that allow to establish an adaptable data quality
 control.")
     (license license:expat)))
 
-(define-public r-qualci
-  (package
-    (name "r-qualci")
-    (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qualCI" version))
-              (sha256
-               (base32
-                "09mzsy5ryyrn1gz9ahrh95cpfk7g09pmjjy0m82fh4xc7j5w6kpf"))))
-    (properties `((upstream-name . "qualCI")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-combinat))
-    (home-page "https://cran.r-project.org/package=qualCI")
-    (synopsis
-     "Causal Inference with Qualitative and Ordinal Information on Outcomes")
-    (description
-     "Exact one-sided p-values and confidence intervals for an outcome variable
-defined on an interval measurement scale with only qualitative and ordinal
-information available.")
-    (license license:gpl2+)))
-
 (define-public r-quadrupen
   (package
     (name "r-quadrupen")
@@ -3301,29 +3279,6 @@ functions.  Sottile G, Frumento P, Chiodi M and Bottai M (2020)
 expression quantitative trait loci.")
     (license license:gpl2+)))
 
-(define-public r-qrage
-  (package
-    (name "r-qrage")
-    (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qrage" version))
-              (sha256
-               (base32
-                "00j74bnkcpp0h8v44jwzj67q9aaw47ajc2fvgr6dckj9rymydinl"))))
-    (properties `((upstream-name . "qrage")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-htmlwidgets))
-    (native-inputs (list esbuild))
-    (home-page "https://cran.r-project.org/package=qrage")
-    (synopsis "Tools that Create D3 JavaScript Force Directed Graph from R")
-    (description
-     "This package provides tools that create D3 @code{JavaScript} force directed
-graph from R. D3 @code{JavaScript} was created by Michael Bostock.  See
-http://d3js.org/ and, more specifically for Force Directed Graph
-https://github.com/mbostock/d3/wiki/Force-Layout.")
-    (license license:expat)))
-
 (define-public r-qragadget
   (package
     (name "r-qragadget")
@@ -3493,29 +3448,6 @@ that the data come from the test distribution.")
     (description "Extensions of ggplot2 Q-Q plot functionalities.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
-
-(define-public r-qqperm
-  (package
-    (name "r-qqperm")
-    (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "QQperm" version))
-              (sha256
-               (base32
-                "06xhv54zgnx8i22j23a0dqxhh7my416idpkkwq93qd1rdzgamzc8"))))
-    (properties `((upstream-name . "QQperm")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=QQperm")
-    (synopsis "Permutation Based QQ Plot and Inflation Factor Estimation")
-    (description
-     "This package provides users the necessary utility functions to generate
-permutation-based QQ plots and also estimate inflation factor based on the
-empirical NULL distribution.  While it has general utility, it is particularly
-helpful when the skewness of the Fisher's Exact test in sparse data situations
-with imbalanced case-control sample sizes renders the reliance on the uniform
-chi-square expected distribution inappropriate.")
-    (license license:gpl2+)))
 
 (define-public r-qqboxplot
   (package

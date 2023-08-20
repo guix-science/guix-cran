@@ -716,30 +716,6 @@ ones, preparing plots for publications, computing possibility and necessity
 values for comparisons, etc.")
     (license license:lgpl3+)))
 
-(define-public r-fuzzymcdm
-  (package
-    (name "r-fuzzymcdm")
-    (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "FuzzyMCDM" version))
-              (sha256
-               (base32
-                "0ss0s65mm6j0nax4mb9g668d9n9cgl0l016mc3h9hbjxfpqrbkks"))))
-    (properties `((upstream-name . "FuzzyMCDM")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rankaggreg))
-    (home-page "http://decsai.ugr.es/index.php?p=miembros&id=19909")
-    (synopsis "Multi-Criteria Decision Making Methods for Fuzzy Data")
-    (description
-     "Implementation of several MCDM methods for fuzzy data (triangular fuzzy numbers)
-for decision making problems.  The methods that are implemented in this package
-are Fuzzy TOPSIS (with two normalization procedures), Fuzzy VIKOR, Fuzzy
-Multi-MOORA and Fuzzy WASPAS. In addition, function @code{MetaRanking()}
-calculates a new ranking from the sum of the rankings calculated, as well as an
-aggregated ranking.")
-    (license license:lgpl3+)))
-
 (define-public r-fuzzym
   (package
     (name "r-fuzzym")
@@ -2420,16 +2396,24 @@ models, Technical report.")
 (define-public r-fude
   (package
     (name "r-fude")
-    (version "0.3.1")
+    (version "0.3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fude" version))
               (sha256
                (base32
-                "0ag0yrr9nw21dm587bfl2w04k0al11l28l6dfnjxb1k6jm6qxlfz"))))
+                "1amxr98c2cq5qrz4xml3g896aja89zkayy15p7p4z97hz0iixjig"))))
     (properties `((upstream-name . "fude")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sf r-magrittr r-glue r-dplyr))
+    (propagated-inputs (list r-tidyr
+                             r-stringi
+                             r-sf
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-glue
+                             r-forcats
+                             r-dplyr))
     (home-page "https://github.com/takeshinishimura/fude")
     (synopsis "Utilities for Fude Polygon")
     (description
@@ -3369,6 +3353,31 @@ based on atlases.  Mask data using labels, load data for specific atlas regions
 only, and visualize data and statistical results directly in R'.")
     (license license:expat)))
 
+(define-public r-fsatools
+  (package
+    (name "r-fsatools")
+    (version "2.0.5")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "FSAtools" version))
+              (sha256
+               (base32
+                "0i4grcr155vbsnw823jiwngyayzymka9k7zhsbw1f208q6xyrx4d"))))
+    (properties `((upstream-name . "FSAtools")))
+    (build-system r-build-system)
+    (home-page "https://bioinformatics.ovsa.fr/FSAtools")
+    (synopsis "Fragment Analysis and Capillary Sequencing Tool Kit")
+    (description
+     "This package provides a flexible and interfaced framework for importing,
+processing and ploting Applied Biosystems data files.  Application to
+Reverse-Transcriptase Multiplex Ligation-dependent Probe Amplification (RT-MLPA)
+gene-expression profiling and classification is illustrated in Mareschal, Ruminy
+et al (2015) <doi:10.1016/j.jmoldx.2015.01.007>.  Gene-fusion detection and
+Sanger sequencing are illustrated in Mareschal, Palau et al (2021)
+<doi:10.1182/bloodadvances.2020002517>.  Examples are provided for genotyping
+applications as well.")
+    (license license:gpl3+)))
+
 (define-public r-fsadata
   (package
     (name "r-fsadata")
@@ -3552,44 +3561,6 @@ and cumulants over running fixed length windows can be computed, as well as over
 time-based windows.  Moment computations are via a generalization of Welford's
 method, as described by Bennett et. (2009) <doi:10.1109/CLUSTR.2009.5289161>.")
     (license license:lgpl3)))
-
-(define-public r-frmpd
-  (package
-    (name "r-frmpd")
-    (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "frmpd" version))
-              (sha256
-               (base32
-                "0irgqdr0vr8k408lsxcrjkjbjvqvmy5mnjw9c1ghs86isrp5mciz"))))
-    (properties `((upstream-name . "frmpd")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=frmpd")
-    (synopsis "Regression Analysis of Panel Fractional Responses")
-    (description
-     "Estimation of panel data regression models for fractional responses.")
-    (license license:gpl2)))
-
-(define-public r-frmhet
-  (package
-    (name "r-frmhet")
-    (version "1.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "frmhet" version))
-              (sha256
-               (base32
-                "07sgsfhzrci8g1b0gicjfca1mgd8ppfqpkpp4q9bdxnjvdvlf45s"))))
-    (properties `((upstream-name . "frmhet")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=frmhet")
-    (synopsis
-     "Regression Analysis of Fractional Responses Under Unobserved Heterogeneity")
-    (description
-     "Estimation and specification analysis of fractional regression models with
-neglected heterogeneity and/or endogenous covariates.")
-    (license license:gpl2)))
 
 (define-public r-frk
   (package
@@ -5109,13 +5080,13 @@ using the box-counting method.  See Klinkenberg B. (1994)
 (define-public r-fractalregression
   (package
     (name "r-fractalregression")
-    (version "1.1")
+    (version "1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fractalRegression" version))
               (sha256
                (base32
-                "00vmb9l1whwlcbskzpy2ql004l47ll3phvdsdmxg8728vinjbacf"))))
+                "1d79bv3lpg1p6zvjsnf8qwm5ajpsklm8gpqm241jv1cgjyfsi64x"))))
     (properties `((upstream-name . "fractalRegression")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpparmadillo r-rcpp r-colorramps))
@@ -5613,30 +5584,6 @@ be returned as a list or a data.table, or even directly printed to an output
 file.")
     (license license:expat)))
 
-(define-public r-fplot
-  (package
-    (name "r-fplot")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "fplot" version))
-              (sha256
-               (base32
-                "0c8rgw23dvmwk2ssy8mbn29am72k6vji0xymz9rn5lrlmjk1lbpb"))))
-    (properties `((upstream-name . "fplot")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-formula r-dreamerr r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=fplot")
-    (synopsis "Automatic Distribution Graphs Using Formulas")
-    (description
-     "Easy way to plot regular/weighted/conditional distributions by using formulas.
-The core of the package concerns distribution plots which are automatic: the
-many options are tailored to the data at hand to offer the nicest and most
-meaningful graphs possible -- with no/minimum user input.  Further provide
-functions to plot conditional trends and boxplots.")
-    (license license:gpl3)))
-
 (define-public r-fpldata
   (package
     (name "r-fpldata")
@@ -5792,26 +5739,6 @@ series using RKHS and predictive confidence bands construction as proposed in
 three dimensional functional principal component scores.  The details of the
 method are explained in Lin et al.(2015) <doi:10.1371/journal.pone.0132945>.")
     (license (list license:gpl2 license:gpl3))))
-
-(define-public r-fpca2d
-  (package
-    (name "r-fpca2d")
-    (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "FPCA2D" version))
-              (sha256
-               (base32
-                "18bb90ppd9gd8pg9jxfyfkmlsaqk8w25fgaj9fk18ybm2nhsxqm6"))))
-    (properties `((upstream-name . "FPCA2D")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-corpcor))
-    (home-page "https://cran.r-project.org/package=FPCA2D")
-    (synopsis "Two Dimensional Functional Principal Component Analysis")
-    (description
-     "Compute the two dimension functional principal component scores for a series of
-two dimension images.")
-    (license license:gpl3)))
 
 (define-public r-fpass
   (package
@@ -8447,6 +8374,41 @@ can be found in Rueda et al. (2019) <doi:10.1038/s41598-019-54569-1>.")
 each observations.  The package takes advantage of @code{RcppArmadillo} to speed
 up the calculation of distances between observations.")
     (license license:expat)))
+
+(define-public r-fmesher
+  (package
+    (name "r-fmesher")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "fmesher" version))
+              (sha256
+               (base32
+                "15hgf92gikyih0xycwhqjrwq9jk4g3gjjlxjdlqh02maqfdcqrhf"))))
+    (properties `((upstream-name . "fmesher")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-withr
+                             r-tibble
+                             r-sp
+                             r-sf
+                             r-rlang
+                             r-rcpp
+                             r-r-methodss3
+                             r-matrix
+                             r-lifecycle
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://inlabru-org.github.io/fmesher/")
+    (synopsis "Triangle Meshes and Related Geometry Tools")
+    (description
+     "Generate planar and spherical triangle meshes, compute finite element
+calculations for 1- and 2-dimensional flat and curved manifolds with associated
+basis function spaces, methods for lines and polygons, and transparent handling
+of coordinate reference systems and coordinate transformation, including sf and
+sp geometries.  The core fmesher library code was originally part of the INLA
+package, and implements parts of \"Triangulations and Applications\" by Hjelle and
+Daehlen (2006) <doi:10.1007/3-540-33261-8>.")
+    (license (license:fsdg-compatible "MPL-2.0"))))
 
 (define-public r-fmerpack
   (package
@@ -13027,13 +12989,13 @@ have drawn in this file, and their respective canvas/page metadata.")
 (define-public r-figir
   (package
     (name "r-figir")
-    (version "0.1.6.8")
+    (version "0.1.7.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "figir" version))
               (sha256
                (base32
-                "0jbl6bxms4g6m3qamcgl5z0k57f2r3444577hi78gpsbwwx0n022"))))
+                "1vkx9q889lcm62101qsbq1yb542y1b3b7gc23xf57vwp2h1wfb84"))))
     (properties `((upstream-name . "figir")))
     (build-system r-build-system)
     (home-page "https://github.com/philaris/figir")
@@ -14444,27 +14406,6 @@ fixed effects model and an approximate expectation maximization (EM) algorithm
 for the logistic mixed effects model.  Based on He, K., Kalbfleisch, J.D., Li,
 Y. and Li, Y. (2013) <doi:10.1007/s10985-013-9264-6>.")
     (license license:gpl2)))
-
-(define-public r-fenmlm
-  (package
-    (name "r-fenmlm")
-    (version "2.4.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "FENmlm" version))
-              (sha256
-               (base32
-                "1a205a4iv54haixanyzx210lzqg7cnryjvqayvkdj1lhmdql4anw"))))
-    (properties `((upstream-name . "FENmlm")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-numderiv r-mass r-formula))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=FENmlm")
-    (synopsis "Fixed Effects Nonlinear Maximum Likelihood Models")
-    (description
-     "Efficient estimation of maximum likelihood models with multiple fixed-effects.
-Standard-errors can easily and flexibly be clustered and estimations exported.")
-    (license license:gpl2+)))
 
 (define-public r-fence
   (package
@@ -17442,25 +17383,6 @@ convenient solution for building a Multi-QC report, as well as, a one-sample
 report with result interpretations.")
     (license license:gpl2)))
 
-(define-public r-fastpseudo
-  (package
-    (name "r-fastpseudo")
-    (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "fastpseudo" version))
-              (sha256
-               (base32
-                "0paag4pjh3gs270j663bsl65sfrq43gk2zzqmalr03fmcckp6aaj"))))
-    (properties `((upstream-name . "fastpseudo")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=fastpseudo")
-    (synopsis "Fast Pseudo Observations")
-    (description
-     "Computes pseudo-observations for survival analysis on right-censored data based
-on restricted mean survival time.")
-    (license license:gpl2)))
-
 (define-public r-fastpos
   (package
     (name "r-fastpos")
@@ -19588,13 +19510,13 @@ more Findable, Accessible, Interoperable, and Reproducible.")
 (define-public r-fairadapt
   (package
     (name "r-fairadapt")
-    (version "0.2.5")
+    (version "0.2.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fairadapt" version))
               (sha256
                (base32
-                "0pxv7xz8r8kls5mm6dcxzqg5z2y3jhs8pnzbw34h1lyj16zb20b2"))))
+                "1ricsfd8psh4kh13hrv8xhdwlv88ca1axh9b2qafz8nqsm5q8ana"))))
     (properties `((upstream-name . "fairadapt")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales

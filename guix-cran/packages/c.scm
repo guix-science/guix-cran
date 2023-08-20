@@ -15,7 +15,6 @@
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages julia)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages machine-learning)
@@ -830,13 +829,13 @@ compared based on their prediction errors.")
 (define-public r-cvrisk
   (package
     (name "r-cvrisk")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CVrisk" version))
               (sha256
                (base32
-                "0xnpnjncdal2akdnkb52s7r82p2di0rc48h6nswbclkl5xf3snd6"))))
+                "1krqg3w2yqbpisivyym98p6yvhw1dw6qga8xm1sqxdd75g982fhq"))))
     (properties `((upstream-name . "CVrisk")))
     (build-system r-build-system)
     (home-page "https://github.com/vcastro/CVrisk")
@@ -2601,38 +2600,6 @@ continuous-time stochastic models to phylogenetic data.  The package is based on
 methods introduced in Noonan et al. (2021) <doi:10.1101/2021.05.21.445056>.")
     (license license:gpl3)))
 
-(define-public r-ctp
-  (package
-    (name "r-ctp")
-    (version "3.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "CTP" version))
-              (sha256
-               (base32
-                "02f423y7yx0hchzghfdbrrljsfq3af1wcbvk8z1q5wyzq99xcag5"))))
-    (properties `((upstream-name . "CTP")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-survival
-                             r-shape
-                             r-mass
-                             r-magrittr
-                             r-gmisc
-                             r-emmeans
-                             r-dplyr
-                             r-diagram
-                             r-clinfun))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=CTP")
-    (synopsis "Closed Testing Procedure (CTP)")
-    (description
-     "This is a package for constructing hypothesis trees for treatment comparisons
-based on the closure principle and analysing the corresponding Closed Testing
-Procedures (CTP) using adjusted p-values.  For reference, see Marcus, R.,
-Peritz, E, and Gabriel, K.R. (1976) <doi:10.2307/2335748> and Bauer, P (1991)
-<doi:10.1002/sim.4780100609>.")
-    (license license:gpl2+)))
-
 (define-public r-ctnote
   (package
     (name "r-ctnote")
@@ -4392,32 +4359,6 @@ and updated meta-analysis techniques (Rotondi and Donner, 2012).")
 data with Inverse-probability weighting (IPW) and for imbalance in covariates
 with augmentation (AUG).  The estimator IPW-AUG-GEE is Doubly robust (DR).")
     (license license:gpl2+)))
-
-(define-public r-crtests
-  (package
-    (name "r-crtests")
-    (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "crtests" version))
-              (sha256
-               (base32
-                "0z8idz37dgwvi1q2vryldii7fn9yxd32gds77ml76jfplxbkikpd"))))
-    (properties `((upstream-name . "crtests")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr r-plyr r-caret))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=crtests")
-    (synopsis "Classification and Regression Tests")
-    (description
-     "This package provides wrapper functions for running classification and
-regression tests using different machine learning techniques, such as Random
-Forests and decision trees.  The package provides standardized methods for
-preparing data to suit the algorithm's needs, training a model, making
-predictions, and evaluating results.  Also, some functions are provided to run
-multiple instances of a test.")
-    (license (list license:gpl3
-                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-crtconjoint
   (package
@@ -6775,19 +6716,18 @@ sorting.")
 (define-public r-crandep
   (package
     (name "r-crandep")
-    (version "0.3.1")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "crandep" version))
               (sha256
                (base32
-                "1jrvijvpczkcc48mdxx8w82zfn3bv77y4d2ijw00b8s0l3c0ma38"))))
+                "16h42s875h90mra346y0cxwqwnahdrcskhb35j8dl3s8389sfai0"))))
     (properties `((upstream-name . "crandep")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
                              r-stringr
                              r-rvest
-                             r-rcppgsl
                              r-rcpparmadillo
                              r-rcpp
                              r-igraph
@@ -7537,36 +7477,6 @@ density plots, stacked dot plots, histograms, multi-class stacked smooth density
 plots, and multi-class stacked histograms.")
     (license license:gpl2+)))
 
-(define-public r-cpk
-  (package
-    (name "r-cpk")
-    (version "1.3-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "cpk" version))
-              (sha256
-               (base32
-                "1njmk2w6zbp6j373v5nd1b6b8ni4slgzpf9qxn5wnqlws8801n73"))))
-    (properties `((upstream-name . "cpk")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=cpk")
-    (synopsis "Clinical Pharmacokinetics")
-    (description
-     "The package cpk provides simplified clinical pharmacokinetic functions for dose
-regimen design and modification at the point-of-care.  Currently, the following
-functions are available: (1) ttc.fn for target therapeutic concentration, (2)
-dr.fn for dose rate, (3) di.fn for dosing interval, (4) dm.fn for maintenance
-dose, (5) bc.ttc.fn for back calculation, (6) ar.fn for accumulation ratio, (7)
-dpo.fn for orally administered dose, (8) cmax.fn for peak concentration, (9)
-css.fn for steady-state concentration, (10) cmin.fn for trough,(11) ct.fn for
-concentration-time predictions, (12) dlcmax.fn for calculating loading dose
-based on drug's maximum concentration, (13) dlar.fn for calculating loading dose
-based on drug's accumulation ratio, and (14) R0.fn for calculating drug infusion
-rate.  Reference: Linares O, Linares A. Computational opioid prescribing: A
-novel application of clinical pharmacokinetics.  J Pain Palliat Care
-Pharmacother 2011;25:125-135.")
-    (license license:gpl2)))
-
 (define-public r-cpi
   (package
     (name "r-cpi")
@@ -7769,28 +7679,6 @@ algorithm, with improved efficiency using Armadillo templated C++ linear algebra
 library, and flexibility for user-specified preconditioning method.  Please
 check @code{<https://github.com/styvon/cPCG>} for latest updates.")
     (license license:gpl2+)))
-
-(define-public r-cpca
-  (package
-    (name "r-cpca")
-    (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "cpca" version))
-              (sha256
-               (base32
-                "1pccsjahb1qynnxa0akhfpcmhfmdg4rd1s6pfqrdl7bwbcmq4lqf"))))
-    (properties `((upstream-name . "cpca")))
-    (build-system r-build-system)
-    (home-page "https://github.com/variani/cpca")
-    (synopsis "Methods to perform Common Principal Component Analysis (CPCA)")
-    (description
-     "This package contains methods to perform Common Principal Component Analysis
-(CPCA).  The stepwise method by Trendafilov is published in the current version.
- Please see Trendafilov (2010).  Stepwise estimation of common principal
-components.  Computational Statistics & Data Analysis, 54(12), 3446-3457.
-doi:10.1016/j.csda.2010.03.010")
-    (license license:gpl3+)))
 
 (define-public r-cpc
   (package
@@ -9497,28 +9385,6 @@ Kowal (2022) @code{<arXiv:2110.14790>,} and Kowal and Wu (2023)
 @code{<arXiv:2110.12316>.}")
     (license license:gpl2+)))
 
-(define-public r-countseppm
-  (package
-    (name "r-countseppm")
-    (version "3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "CountsEPPM" version))
-              (sha256
-               (base32
-                "0iw7sfrb4yyaagwm1f4q9av5zvzia1mp2ns287ppsw3k248lz0kb"))))
-    (properties `((upstream-name . "CountsEPPM")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-numderiv r-lmtest r-formula r-expm))
-    (native-inputs (list r-r-rsp))
-    (home-page "https://cran.r-project.org/package=CountsEPPM")
-    (synopsis "Mean and Variance Modeling of Count Data")
-    (description
-     "Modeling under- and over-dispersed count data using extended Poisson process
-models (EPPM) as in the article Faddy and Smith (2011)
-<doi:10.18637/jss.v069.i06> .")
-    (license license:gpl2)))
-
 (define-public r-countrycode
   (package
     (name "r-countrycode")
@@ -9578,6 +9444,28 @@ include covariates and can be specified with familiar formula syntax as in glm()
 and package flexsurv'.  The methodology is described by Kharrat et all (2019)
 <doi:10.18637/jss.v090.i13> (included as vignette Countr_guide in the package).")
     (license license:gpl2+)))
+
+(define-public r-countprop
+  (package
+    (name "r-countprop")
+    (version "1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "countprop" version))
+              (sha256
+               (base32
+                "0yzrh8zr95b912p3lv0fw7vv5faylwyda0cwfvyg48j98c8hx3yf"))))
+    (properties `((upstream-name . "countprop")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zcompositions r-glasso r-compositions))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=countprop")
+    (synopsis
+     "Calculate Model-Based Metrics of Proportionality on Count-Based Compositional Data")
+    (description
+     "Calculates metrics of proportionality using the logit-normal multinomial model.
+It can also provide empirical and plugin estimates of these metrics.")
+    (license license:gpl3+)))
 
 (define-public r-countland
   (package
@@ -10027,35 +9915,6 @@ Guthier, C., & Cortina, J. M. (2019) <doi:10.1177/1094428119847277>.  and
 Guthier, C., Dormann, C., & Voelkle, M. C. (2020) <doi:10.1037/bul0000304>.")
     (license license:gpl3)))
 
-(define-public r-cosw
-  (package
-    (name "r-cosw")
-    (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "CosW" version))
-              (sha256
-               (base32
-                "12l4w8b5jnr8773hxk7khrdn705x6bdbw7s8z8w95bfbbi12dj6v"))))
-    (properties `((upstream-name . "CosW")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-pracma r-fdrtool))
-    (home-page "https://github.com/TrigonometricDistribution")
-    (synopsis "The CosW Distribution")
-    (description
-     "Density, distribution function, quantile function, random generation and
-survival function for the Cosine Weibull Distribution as defined by SOUZA, L.
-New Trigonometric Class of Probabilistic Distributions.  219 p.  Thesis
-(Doctorate in Biometry and Applied Statistics) - Department of Statistics and
-Information, Federal Rural University of Pernambuco, Recife, Pernambuco, 2015
-(available at
-<http://www.openthesis.org/documents/New-trigonometric-classes-probabilistic-distributions-602633.html>)
-and BRITO, C. C. R. Method Distributions generator and Probability Distributions
-Classes.  241 p.  Thesis (Doctorate in Biometry and Applied Statistics) -
-Department of Statistics and Information, Federal Rural University of
-Pernambuco, Recife, Pernambuco, 2014 (available upon request).")
-    (license license:expat)))
-
 (define-public r-costsensitive
   (package
     (name "r-costsensitive")
@@ -10082,29 +9941,6 @@ with arbitrary classifiers taking observation weights, or with regressors.  Also
 implements cost-proportionate rejection sampling for working with classifiers
 that don't accept observation weights.")
     (license license:bsd-2)))
-
-(define-public r-costat
-  (package
-    (name "r-costat")
-    (version "2.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "costat" version))
-              (sha256
-               (base32
-                "0c47bklqjgjmdglw3mi9lvygwjr5w6i1zv91ll3vpnl5dnay0692"))))
-    (properties `((upstream-name . "costat")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-wavethresh))
-    (home-page "https://cran.r-project.org/package=costat")
-    (synopsis "Time Series Costationarity Determination")
-    (description
-     "This package contains functions that can determine whether a time series is
-second-order stationary or not (and hence evidence for locally stationarity).
-Given two non-stationary series (i.e.  locally stationary series) this package
-can then discover time-varying linear combinations that are second-order
-stationary.")
-    (license license:gpl2+)))
 
 (define-public r-cost
   (package
@@ -13071,32 +12907,6 @@ in the following text.  Richard G. Brereton (2003) <ISBN:9780471489771>.")
 complex sample survey designs.  Wrapper around the survey package.")
     (license license:gpl3)))
 
-(define-public r-convexjlr
-  (package
-    (name "r-convexjlr")
-    (version "0.8.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "convexjlr" version))
-              (sha256
-               (base32
-                "1x2ra1xcyd7bvc7wq49wpihh0g9ygh1bq5214vvrhfrjfjifvlaw"))))
-    (properties `((upstream-name . "convexjlr")))
-    (build-system r-build-system)
-    (inputs (list julia))
-    (propagated-inputs (list r-magrittr r-juliacall))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/Non-Contradiction/convexjlr")
-    (synopsis "Disciplined Convex Programming in R using 'Convex.jl'")
-    (description
-     "This package provides a simple high-level wrapper for Julia package Convex.jl
-(see @code{<https://github.com/JuliaOpt/Convex.jl>} for more information), which
-makes it easy to describe and solve convex optimization problems in R. The
-problems can be dealt with include: linear programs, second-order cone programs,
-semidefinite programs, exponential cone programs.")
-    (license (list (license:fsdg-compatible "Apache License")
-                   (license:fsdg-compatible "file://LICENSE")))))
-
 (define-public r-convevol
   (package
     (name "r-convevol")
@@ -13192,29 +13002,6 @@ and defaults are provided for convenience but all \"marts\", \"filters\" and
 Symbols to Aliases and vice versa and function likely_symbol() attempts to
 determine the most likely current Gene Symbol.")
     (license license:gpl3)))
-
-(define-public r-convertgraph
-  (package
-    (name "r-convertgraph")
-    (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "convertGraph" version))
-              (sha256
-               (base32
-                "1jsrygj6ydzc0nzyzaq95j4blqavj7dqz182vgm1ckv8an3if0jx"))))
-    (properties `((upstream-name . "convertGraph")))
-    (build-system r-build-system)
-    (home-page "http://github.com/haghish/convertGraph")
-    (synopsis "Convert Graphical Files Format")
-    (description
-     "Converts graphical file formats (SVG, PNG, JPEG, BMP, GIF, PDF, etc) to one
-another.  The exceptions are the SVG file format that can only be converted to
-other formats and in contrast, PDF format, which can only be created from others
-graphical formats.  The main purpose of the package was to provide a solution
-for converting SVG file format to PNG which is often needed for exporting
-graphical files produced by R widgets.")
-    (license license:expat)))
 
 (define-public r-convertbonds
   (package
@@ -13687,13 +13474,13 @@ probability distributions at once, useful for simulation.")
 (define-public r-contfracr
   (package
     (name "r-contfracr")
-    (version "1.2")
+    (version "1.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "contFracR" version))
               (sha256
                (base32
-                "1pb1xbmgdpg1svxvhq3jx5dmxszivwzmhd18hmg4rlhym454sh1b"))))
+                "0yigrrs36q9wl8bla65ks1ykf233j33jwcqbhdhygryfhxp5cxab"))))
     (properties `((upstream-name . "contFracR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmpfr r-go2bigq r-gmp))
@@ -15540,31 +15327,6 @@ for more details.")
 deviates.")
     (license license:gpl2)))
 
-(define-public r-condmixt
-  (package
-    (name "r-condmixt")
-    (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "condmixt" version))
-              (sha256
-               (base32
-                "1x6n3ylaa9ywvz7v63i2pvd2lxm95wq19xy741g9hy73ld7hd7zn"))))
-    (properties `((upstream-name . "condmixt")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-evd))
-    (home-page "https://cran.r-project.org/package=condmixt")
-    (synopsis
-     "Conditional Density Estimation with Neural Network Conditional Mixtures")
-    (description
-     "Neural network conditional mixtures are mixture models whose parameters are
-predicted by a neural network.  The mixture model can thus change its parameters
-in response to changes in predictive covariates.  Mixtures included are
-gaussian, log-normal and hybrid Pareto mixtures.  The latter relies on the
-generalized Pareto distribution to account for the presence of large extreme
-events.  The unconditional mixtures are also available.")
-    (license license:gpl2)))
-
 (define-public r-conditionz
   (package
     (name "r-conditionz")
@@ -16770,30 +16532,6 @@ Pareto (2016) <doi:10.1007/s11205-015-0998-2>, Van Puyenbroeck and Rogge
 <doi:10.1016/j.ejor.2016.07.038> and other authors.")
     (license license:gpl3)))
 
-(define-public r-compicc
-  (package
-    (name "r-compicc")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "compicc" version))
-              (sha256
-               (base32
-                "1j2yy4dw3g96vpm3dq81dixhfzm3nqqawphmmg9hcsqir5f6xg9a"))))
-    (properties `((upstream-name . "compicc")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-irr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=compicc")
-    (synopsis "Calculate the Confidence Interval for the Difference of ICCs")
-    (description
-     "This package contains functions to calculate the confidence interval for the
-difference between the intraclass correlation coefficients (ICCs) of two
-datasets.  The package contains two functions: one for two dependent datasets
-and one for two independent datasets.  The method for calculating the confidence
-intervals is found in Ramasundarahettige et al. (2009) <DOI: 10.1002/sim.3523>.")
-    (license license:gpl3+)))
-
 (define-public r-comphclust
   (package
     (name "r-comphclust")
@@ -17548,27 +17286,6 @@ The other is a suite of semiparametric kernel machine methods that allow for
 statistical inference to be performed to test for potential associations between
 these community structures and an outcome of interest (binary or continuous).")
     (license license:gpl2+)))
-
-(define-public r-commentr
-  (package
-    (name "r-commentr")
-    (version "1.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "commentr" version))
-              (sha256
-               (base32
-                "0anlcbk8rj0yr8i23qmr6v5ws0695nkc3mvgr6pnq1fg2d4c4brj"))))
-    (properties `((upstream-name . "commentr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr))
-    (home-page "https://cran.r-project.org/package=commentr")
-    (synopsis "Print Nicely Formatted Comments for Use in Script Files")
-    (description
-     "This package provides functions to produce nicely formatted comments to use in
-R-scripts (or Latex/HTML/markdown etc).  A comment with formatting is printed to
-the console and can then be copied to a script.")
-    (license license:gpl2)))
 
 (define-public r-commafree
   (package
@@ -19277,35 +18994,6 @@ Cap <https://coinmarketcap.com/api/>.")
 missing multivariate data based on conditional copula specifications.")
     (license license:gpl2+)))
 
-(define-public r-coil
-  (package
-    (name "r-coil")
-    (version "1.2.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "coil" version))
-              (sha256
-               (base32
-                "023sn4waf8wb99ryxf0biag8rfg3j3sslf8fw7d00llzci8px5zj"))))
-    (properties `((upstream-name . "coil")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-seqinr r-aphid r-ape))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=coil")
-    (synopsis "Contextualization and Evaluation of COI-5P Barcode Data")
-    (description
-     "Designed for the cleaning, contextualization and assessment of cytochrome c
-oxidase I DNA barcode data (COI-5P, or the five prime portion of COI).  It
-contains functions for placing COI-5P barcode sequences into a common reading
-frame, translating DNA sequences to amino acids and for assessing the likelihood
-that a given barcode sequence includes an insertion or deletion error.  The
-error assessment relies on the comparison of input sequences against nucleotide
-and amino acid profile hidden Markov models (PHMMs) (for details see Durbin et
-al.  1998, ISBN: 9780521629713) trained on a taxonomically diverse set of
-reference sequences.  The functions are provided as a complete pipeline and are
-also available individually for efficient and targeted analysis of barcode data.")
-    (license license:gpl3)))
-
 (define-public r-cohorttools
   (package
     (name "r-cohorttools")
@@ -20559,13 +20247,13 @@ samples to obtain bias-free, inter-dataset corrected data.")
 (define-public r-coconots
   (package
     (name "r-coconots")
-    (version "1.1.1")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "coconots" version))
               (sha256
                (base32
-                "0qwhkbw442qk3vxpvjssp15qkwlarfvajppwyaj2ckngja3yaaqh"))))
+                "016pq8vsab334sjrl150zczlhwgv2m0q09y3spbi7qlzrcarq8sl"))))
     (properties `((upstream-name . "coconots")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -22688,13 +22376,13 @@ soft spatial/geographical constraints.")
 (define-public r-clustertend
   (package
     (name "r-clustertend")
-    (version "1.6")
+    (version "1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "clustertend" version))
               (sha256
                (base32
-                "1gkd414rxi9wq2c88j4dby9z38jk1r3w9s1rg3bs772c3hwkyn24"))))
+                "0zhpx8lg7cxywin9j5kglj2had20wy3mwwgjygv2gjibj7a6i3cl"))))
     (properties `((upstream-name . "clustertend")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=clustertend")
@@ -22703,7 +22391,7 @@ soft spatial/geographical constraints.")
      "Calculate some statistics aiming to help analyzing the clustering tendency of
 given data.  In the first version, Hopkins statistic is implemented.  See
 Hopkins and Skellam (1954) <doi:10.1093/oxfordjournals.aob.a083391>.")
-    (license license:gpl2+)))
+    (license license:expat)))
 
 (define-public r-clusterstability
   (package
@@ -23623,13 +23311,13 @@ data with the artificial panel data generator.  See Sobisek, Stachova, Fojtik
 (define-public r-clugenr
   (package
     (name "r-clugenr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "clugenr" version))
               (sha256
                (base32
-                "1qxdl2c7flknwb2h0z25xxpkf90cphhdgrar3hbfjgmlzwkld9q0"))))
+                "0bm6wblfcgw9c17g47pz5lhm456kss3dcr43qhwkvradyw7hfs7r"))))
     (properties `((upstream-name . "clugenr")))
     (build-system r-build-system)
     (propagated-inputs (list r-mathjaxr))
@@ -26050,13 +25738,13 @@ at <https://eriqande.github.io/CKMRpop/index.html> and can be read online there.
 (define-public r-ckmeans-1d-dp
   (package
     (name "r-ckmeans-1d-dp")
-    (version "4.3.4")
+    (version "4.3.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Ckmeans.1d.dp" version))
               (sha256
                (base32
-                "1lr9pang73hzmwlak9hc9sgsnqkw06ipfarfdbxz5ycibasvb4a6"))))
+                "0ga0pjva0samik36mapllqr34w8fqrr3f6drnch7ziy1igdrj1d3"))))
     (properties `((upstream-name . "Ckmeans.1d.dp")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-rcpp))
@@ -26070,7 +25758,7 @@ Song 2011) <doi:10.32614/RJ-2011-015> (Song & Zhong 2020)
 <doi:10.1093/bioinformatics/btaa613>, k-median, k-segments, and multi-channel
 weighted k-means.  Dynamic programming is used to minimize the sum of (weighted)
 within-cluster distances using respective metrics.  Its advantage over heuristic
-clustering in efficiency and accuracy is pronounced at a large number of
+clustering in efficiency and accuracy is pronounced when there are many
 clusters.  Multi-channel weighted k-means groups multiple univariate signals
 into k clusters.  An auxiliary function generates histograms adaptive to
 patterns in data.  This package provides a powerful set of tools for univariate
@@ -26160,37 +25848,6 @@ pharmacogenetics (PGx) assessments embedded within randomized clinical trials.")
 search, list, show for packages, organizations, and resources.  In addition,
 provides an interface to the datastore API.")
     (license license:expat)))
-
-(define-public r-cjoint
-  (package
-    (name "r-cjoint")
-    (version "2.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "cjoint" version))
-              (sha256
-               (base32
-                "1bs380ji9vsc1d77wqhl0ij9xblww3g9x3hiwpcpz26wihqcx7ac"))))
-    (properties `((upstream-name . "cjoint")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-survey
-                             r-shinyjs
-                             r-shinybs
-                             r-shiny
-                             r-sandwich
-                             r-matrix
-                             r-lmtest
-                             r-ggplot2
-                             r-dt))
-    (home-page "https://cran.r-project.org/package=cjoint")
-    (synopsis "AMCE Estimator for Conjoint Experiments")
-    (description
-     "An R implementation of the Average Marginal Component-specific Effects (AMCE)
-estimator presented in Hainmueller, J., Hopkins, D., and Yamamoto T. (2014)
-<DOI:10.1093/pan/mpt024> Causal Inference in Conjoint Analysis: Understanding
-Multi-Dimensional Choices via Stated Preference Experiments.  Political Analysis
-22(1):1-30.")
-    (license license:gpl2+)))
 
 (define-public r-cjive
   (package
@@ -30208,30 +29865,6 @@ package functions to identify changes, but we plan to extend this.  There are
 options for different types of graphics to assess the influence.")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-changepoint-geo
-  (package
-    (name "r-changepoint-geo")
-    (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "changepoint.geo" version))
-              (sha256
-               (base32
-                "1jlixdrq97n6bh09jq3hamlwkqfqbmqs14kr8swx20f8fvfr3fj2"))))
-    (properties `((upstream-name . "changepoint.geo")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rdpack r-ggplot2 r-changepoint-np r-changepoint))
-    (home-page "https://github.com/grundy95/changepoint.geo/")
-    (synopsis "Geometrically Inspired Multivariate Changepoint Detection")
-    (description
-     "This package implements the high-dimensional changepoint detection method
-@code{GeomCP} and the related mappings used for changepoint detection.  These
-methods view the changepoint problem from a geometrical viewpoint and aim to
-extract relevant geometrical features in order to detect changepoints.  The
-geomcp() function should be your first point of call.  References: Grundy et al.
-(2020) <doi:10.1007/s11222-020-09940-y>.")
-    (license (list license:gpl2+ license:gpl3+))))
-
 (define-public r-chandwich
   (package
     (name "r-chandwich")
@@ -31851,31 +31484,6 @@ many different circumstance.")
 functions.")
     (license license:gpl2+)))
 
-(define-public r-censys
-  (package
-    (name "r-censys")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "censys" version))
-              (sha256
-               (base32
-                "0r0yvaidn0qn96hx461415hywsjfgaz9wvvdssx7w97v2ndnk9sy"))))
-    (properties `((upstream-name . "censys")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringi r-purrr r-jsonlite r-httr))
-    (home-page "https://github.com/hrbrmstr/censys")
-    (synopsis "Tools to Query the 'Censys' API")
-    (description
-     "The Censys public search engine enables researchers to quickly ask questions
-about the hosts and networks that compose the Internet.  Details on how Censys
-was designed and how it is operated are available at
-<https://www.censys.io/about>.  Both basic and extended research access queries
-are made available.  More information on the SQL dialect used by the Censys
-engine can be found at
-<https://cloud.google.com/bigquery/docs/reference/legacy-sql>.")
-    (license (license:fsdg-compatible "AGPL + file LICENSE"))))
-
 (define-public r-censusr
   (package
     (name "r-censusr")
@@ -32805,30 +32413,6 @@ diagnosed from the optimal scores for said cluster, and this can be used to
 construct an imputed version of the data set which adjusts for response styles.")
     (license license:gpl2+)))
 
-(define-public r-cdrom
-  (package
-    (name "r-cdrom")
-    (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "CDROM" version))
-              (sha256
-               (base32
-                "0mvhqs4m8jp39x1rk31a1sqqmfq1avcnasgh8bizlyxx62igmi1b"))))
-    (properties `((upstream-name . "CDROM")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=CDROM")
-    (synopsis
-     "Phylogenetically Classifies Retention Mechanisms of Duplicate Genes from Gene Expression Data")
-    (description
-     "Classification is based on the recently developed phylogenetic approach by Assis
-and Bachtrog (2013).  The method classifies the evolutionary mechanisms
-retaining pairs of duplicate genes (conservation, neofunctionalization,
-subfunctionalization, or specialization) by comparing gene expression profiles
-of duplicate genes in one species to those of their single- copy ancestral genes
-in a sister species.")
-    (license license:gpl2)))
-
 (define-public r-cdrcr
   (package
     (name "r-cdrcr")
@@ -33302,13 +32886,13 @@ This class includes count data models with social interactions (Houndetoungan
 (define-public r-cdata
   (package
     (name "r-cdata")
-    (version "1.2.0")
+    (version "1.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cdata" version))
               (sha256
                (base32
-                "0n1abljjvbmbgi9i8k7vbma92r21w50rz6jys39gq62hy3qr6vzl"))))
+                "1qsxaxj21p2avbnqcgzn9pkrg6i413vcx4mwhkw39jb91sgml9l2"))))
     (properties `((upstream-name . "cdata")))
     (build-system r-build-system)
     (propagated-inputs (list r-wrapr r-rquery r-rqdatatable))
@@ -35088,44 +34672,38 @@ R-squared values as sensitivity parameters (Park, Kang, Lee, and Ma, 2023).")
 (define-public r-causact
   (package
     (name "r-causact")
-    (version "0.4.2")
+    (version "0.5.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "causact" version))
               (sha256
                (base32
-                "059s70q7pdhbym2aj8ww35j6iv9n3am4nh7ywqg41ahyhc7mm9k0"))))
+                "176amfndgcxj3rkw6pwnwq1nnn4bg63dml36yd9k8y1hwjivv2pp"))))
     (properties `((upstream-name . "causact")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-rstudioapi
                              r-rlang
+                             r-reticulate
                              r-purrr
                              r-magrittr
                              r-lifecycle
                              r-igraph
-                             r-htmlwidgets
-                             r-greta
                              r-ggplot2
                              r-forcats
                              r-dplyr
                              r-diagrammer
-                             r-cowplot
-                             r-coda))
+                             r-cowplot))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/flyaflya/causact")
-    (synopsis "Accelerated Bayesian Analytics with DAGs")
+    (synopsis "Fast, Easy, and Visual Bayesian Inference")
     (description
      "Accelerate Bayesian analytics workflows in R through interactive modelling,
 visualization, and inference.  Define probabilistic graphical models using
 directed acyclic graphs (DAGs) as a unifying language for business stakeholders,
-statisticians, and programmers.  This package relies on the sleek and elegant
-greta package for Bayesian inference.  greta', in turn, is an interface into
-@code{TensorFlow} from R'.  Install greta using instructions available here:
-<https://www.causact.com/install-tensorflow-greta-and-causact.html>.  See
-<https://github.com/flyaflya/causact> or <https://www.causact.com/> for more
-documentation.")
+statisticians, and programmers.  This package relies on interfacing with the
+numpyro python package.")
     (license license:expat)))
 
 (define-public r-cauchypca
@@ -36551,40 +36129,6 @@ available.  Methods are described in Peduzzi et al. (1996)
 (2019) <doi:10.1002/sim.7992>.")
     (license license:gpl2)))
 
-(define-public r-carpools
-  (package
-    (name "r-carpools")
-    (version "0.83")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "caRpools" version))
-              (sha256
-               (base32
-                "10m7fw1zfr9i6v2qg235diwf3fmfr88incxnqpvnhmqcn082mxrp"))))
-    (properties `((upstream-name . "caRpools")))
-    (build-system r-build-system)
-    (inputs (list bowtie))
-    (propagated-inputs (list r-xlsx
-                             r-venndiagram
-                             r-sm
-                             r-seqinr
-                             r-scatterplot3d
-                             r-rmarkdown
-                             r-deseq2
-                             r-biomart))
-    (native-inputs (list r-knitr))
-    (home-page "http://www.crispr-analyzer.de")
-    (synopsis "CRISPR AnalyzeR for Pooled CRISPR Screens")
-    (description
-     "CRISPR-Analyzer for pooled CRISPR screens @code{(caRpools)} provides an
-end-to-end analysis of CRISPR screens including quality control, hit candidate
-analysis, visualization and automated report generation using R markdown.  Needs
-@code{MAGeCK} (http://sourceforge.net/p/mageck/wiki/Home/), bowtie2 for all
-functions.  CRISPR (clustered regularly interspaced short palindromic repeats)
-is a method to perform genome editing.  See
-<https://en.wikipedia.org/wiki/CRISPR> for more information on CRISPR.")
-    (license (list license:gpl2+ license:gpl3+))))
-
 (define-public r-carpenter
   (package
     (name "r-carpenter")
@@ -37351,28 +36895,6 @@ symbolic sums and other important quantities.")
 surveys --- and other structured paper documents.  And it can output data in
 form a delimited file keeping field information intact.  For more information,
 read <https://shreddr.captricity.com/developer/overview/>.")
-    (license license:expat)))
-
-(define-public r-captioner
-  (package
-    (name "r-captioner")
-    (version "2.2.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "captioner" version))
-              (sha256
-               (base32
-                "0xg72pmgm84f0v45phfwxpsslhf12nhn1swmrj1yifj7g9sjvybj"))))
-    (properties `((upstream-name . "captioner")))
-    (build-system r-build-system)
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/adletaw/captioner")
-    (synopsis "Numbers Figures and Creates Simple Captions")
-    (description
-     "This package provides a method for automatically numbering figures, tables, or
-other objects.  Captions can be displayed in full, or as citations.  This is
-especially useful for adding figures and tables to R markdown documents without
-having to numbering them manually.")
     (license license:expat)))
 
 (define-public r-capo4sim

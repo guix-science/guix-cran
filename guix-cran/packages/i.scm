@@ -162,27 +162,6 @@ using an RStudio addin, and use helper functions to publish documentation and
 use git.")
     (license license:agpl3+)))
 
-(define-public r-iwisa
-  (package
-    (name "r-iwisa")
-    (version "1.0-2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iWISA" version))
-              (sha256
-               (base32
-                "0jqi1kh7jlc04nb9d1w711q4i8j1vgwbxjls09z7853kv22wxfyz"))))
-    (properties `((upstream-name . "iWISA")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-waveslim r-ggplot2 r-fda))
-    (home-page "https://cran.r-project.org/package=iWISA")
-    (synopsis "Wavelet-Based Index of Storm Activity")
-    (description
-     "This package provides a powerful system for estimating an improved wavelet-based
-index of magnetic storm activity, storm activity preindex (from individual
-station) and SQ variations.  It also serves as a flexible visualization tool.")
-    (license (list license:gpl2 license:gpl3))))
-
 (define-public r-iweigreg
   (package
     (name "r-iweigreg")
@@ -778,56 +757,6 @@ Modelling short time series data
 <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3398189> for an overview of
 the method.")
     (license (license:fsdg-compatible "MIT + file LICENCE"))))
-
-(define-public r-itrselect
-  (package
-    (name "r-itrselect")
-    (version "1.0-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ITRSelect" version))
-              (sha256
-               (base32
-                "0llr4hrlbnb728j5rw7vd3r9qlqf571hrldnm72kicis5di2v5di"))))
-    (properties `((upstream-name . "ITRSelect")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-svmisc r-rglpk r-ncvreg r-matrix r-formula))
-    (home-page "https://cran.r-project.org/package=ITRSelect")
-    (synopsis
-     "Variable Selection for Optimal Individualized Dynamic Treatment Regime")
-    (description
-     "Sequential advantage selection (SAS, Fan, Lu and Song, 2016)
-@code{<arXiv:1405.5239>} and penalized A-learning (PAL, Shi, et al., 2018)
-methods are implement for selecting important variables involved in optimal
-individualized (dynamic) treatment regime in both single-stage or multi-stage
-studies.")
-    (license license:gpl2)))
-
-(define-public r-itrlearn
-  (package
-    (name "r-itrlearn")
-    (version "1.0-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ITRLearn" version))
-              (sha256
-               (base32
-                "03xdbpn3qddcq9krdpnywd3xbzfh2viym2qqx6rcqs7w7bdhhlk6"))))
-    (properties `((upstream-name . "ITRLearn")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-kernlab r-formula))
-    (home-page "https://cran.r-project.org/package=ITRLearn")
-    (synopsis "Statistical Learning for Individualized Treatment Regime")
-    (description
-     "Maximin-projection learning (MPL, Shi, et al., 2018) is implemented for
-recommending a meaningful and reliable individualized treatment regime for
-future groups of patients based on the observed data from different populations
-with heterogeneity in individualized decision making.  Q-learning and A-learning
-are implemented for estimating the groupwise contrast function that shares the
-same marginal treatment effects.  The packages contains classical Q-learning and
-A-learning algorithms for a single stage study as a byproduct.  More functions
-will be added at later versions.")
-    (license license:gpl2)))
 
 (define-public r-itraxr
   (package
@@ -1550,13 +1479,13 @@ calender format yyyy-mm-dd to and from ISO 8601 week format yyyy-Www-d.")
 (define-public r-isowater
   (package
     (name "r-isowater")
-    (version "1.1.1")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "isoWater" version))
               (sha256
                (base32
-                "07ggvx6myiqfr8lqvgwgaiyq1rrgyi5y1v8pbcpf5j34i8y02v4y"))))
+                "10rsivlcza28r386a5rs3lv75vb4aancldyswhqql3cxmd12hzqb"))))
     (properties `((upstream-name . "isoWater")))
     (build-system r-build-system)
     (propagated-inputs (list r-r2winbugs
@@ -2768,18 +2697,18 @@ realized distributions of invasive species within the invaded range.")
 (define-public r-isdals
   (package
     (name "r-isdals")
-    (version "3.0.0")
+    (version "3.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "isdals" version))
               (sha256
                (base32
-                "04s2w482qpz3ww7hws4plhz9h60py75asm1f40bpqmbffwka57ms"))))
+                "01khfxymh708r4d9ddla6mnc4qcy76xi7l7l2y4za7lblfsmr41r"))))
     (properties `((upstream-name . "isdals")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=isdals")
     (synopsis
-     "Provides Datasets for Introduction to Statistical Data Analysis for the Life Sciences")
+     "Datasets for Introduction to Statistical Data Analysis for the Life Sciences")
     (description
      "This package provides datasets for the book \"Introduction to Statistical Data
 Analysis for the Life Sciences, Second edition\" by @code{EkstrÃ¸m} and SÃ¸rensen
@@ -4048,13 +3977,13 @@ Stieger, & Reips (2019) <doi:10.1177/2059799119884283>.")
 (define-public r-ipumsr
   (package
     (name "r-ipumsr")
-    (version "0.6.0")
+    (version "0.6.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ipumsr" version))
               (sha256
                (base32
-                "0hvaqqma1mdylhsa6h3h5k1xdy6rhgwgvmy90i8kwyqjsvmplfa9"))))
+                "1f3lhadiix2b78pzgsq8b39civ46lpnk3a2nwksi0rzfvgpvvwqh"))))
     (properties `((upstream-name . "ipumsr")))
     (build-system r-build-system)
     (propagated-inputs (list r-zeallot
@@ -4072,7 +4001,7 @@ Stieger, & Reips (2019) <doi:10.1177/2059799119884283>.")
                              r-haven
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://www.ipums.org")
+    (home-page "https://tech.popdata.org/ipumsr/")
     (synopsis
      "An R Interface for Downloading, Reading, and Handling IPUMS Data")
     (description
@@ -5463,35 +5392,6 @@ can be found in Cahoy and Sedransk (2019) <doi:10.1007/s42519-018-0027-2>.  The
 package can also be used as a teaching demo for introductory Bayesian courses.")
     (license license:gpl3+)))
 
-(define-public r-invlt
-  (package
-    (name "r-invlt")
-    (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "invLT" version))
-              (sha256
-               (base32
-                "0dcr2cclgzkvsw1lysmjrkwgahas96rjc328yc7a1a56pf62kw2v"))))
-    (properties `((upstream-name . "invLT")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=invLT")
-    (synopsis "Inversion of Laplace-Transformed Functions")
-    (description
-     "This package provides two functions for the numerical inversion of
-Laplace-Transformed functions, returning the value of the standard (time) domain
-function at a specified value.  The first algorithm is the first optimum contour
-algorithm described by Evans and Chung (2000)[1].  The second algorithm uses the
-Bromwich contour as per the definition of the inverse Laplace Transform.  The
-latter is unstable for numerical inversion and mainly included for comparison or
-interest.  There are also some additional functions provided for utility,
-including plotting and some simple Laplace Transform examples, for which there
-are known analytical solutions.  Polar-cartesian conversion functions are
-included in this package and are used by the inversion functions. [1] Evans &
-Chung, 2000: Laplace transform inversions using optimal contours in the complex
-plane; International Journal of Computer Mathematics v73 pp531-543.")
-    (license license:expat)))
-
 (define-public r-invgauss
   (package
     (name "r-invgauss")
@@ -5522,13 +5422,13 @@ functions.")
 (define-public r-invgamstochvol
   (package
     (name "r-invgamstochvol")
-    (version "0.1.0")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "invgamstochvol" version))
               (sha256
                (base32
-                "17zz744smp42s6jmh6001dpc7hnmk3pza3l2xhpshikgcdczcmia"))))
+                "01m5kz3qscrzwbyx5n0l45c92srv84dxp65j3pcmw8348p9m0sp1"))))
     (properties `((upstream-name . "invgamstochvol")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -6539,13 +6439,13 @@ Blackwell and Olson (2022) <doi:10.1017/pan.2021.19>.")
 (define-public r-interpretr
   (package
     (name "r-interpretr")
-    (version "0.2.4")
+    (version "0.2.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "interpretR" version))
               (sha256
                (base32
-                "0nfh3pyr7nn0r41xk0mfb4fs5rjkbh43lbw14x7pdmbgzpgsc22c"))))
+                "08vcjh0cxa070c7swg6mm4ygj58r5h8jzpz1h2wl72kxn2ka93yx"))))
     (properties `((upstream-name . "interpretR")))
     (build-system r-build-system)
     (propagated-inputs (list r-randomforest r-auc))
@@ -9527,62 +9427,6 @@ of a vector of pre-treatment covariates using the method proposed in Huling,
 Greifer, and Chen (2021) <arxiv:2107.07086>.")
     (license license:expat)))
 
-(define-public r-independence
-  (package
-    (name "r-independence")
-    (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "independence" version))
-              (sha256
-               (base32
-                "0yln5wd8m5fgh4h7k80vq22byf06k4d6574zxyqcig63hls7v568"))))
-    (properties `((upstream-name . "independence")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://cran.r-project.org/package=independence")
-    (synopsis "Fast Rank-Based Independence Testing")
-    (description
-     "This package performs three ranking-based nonparametric tests for the
-independence of two continuous variables: (1) the classical Hoeffding's D test;
-(2) a refined variant of it, named R; (3) the Bergsma-Dassios T* sign
-covariance.  The first test is consistent assuming an absolutely continuous
-bivariate distribution, i.e., the population coefficient D=0 iff the variables
-are independent.  The latter two are consistent under no restriction on the
-distribution.  All three statistics are computed in time O(n log n) given n iid
-paired samples.  The computation of R and T* uses a new algorithm, following
-work of Even-Zohar and Leng (2019), see @code{<arXiv:2010.09712>,}
-@code{<arXiv:1911.01414>.}")
-    (license license:gpl3+)))
-
-(define-public r-indelmiss
-  (package
-    (name "r-indelmiss")
-    (version "1.0.9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "indelmiss" version))
-              (sha256
-               (base32
-                "0i4qnvc0xb3ngnk8xdscmx7qnicfs7s6czawf6schb1nh2pjpzyq"))))
-    (properties `((upstream-name . "indelmiss")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-phangorn r-numderiv r-ape))
-    (home-page "https://cran.r-project.org/package=indelmiss")
-    (synopsis
-     "Insertion Deletion Analysis While Accounting for Possible Missing Data")
-    (description
-     "Genome-wide gene insertion and deletion rates can be modelled in a maximum
-likelihood framework with the additional flexibility of modelling potential
-missing data using the models included within.  These models simultaneously
-estimate insertion and deletion (indel) rates of gene families and proportions
-of \"missing\" data for (multiple) taxa of interest.  The likelihood framework is
-utilized for parameter estimation.  A phylogenetic tree of the taxa and gene
-presence/absence patterns (with data ordered by the tips of the tree) are
-required.  See Dang et al. (2016) <doi:10.1534/genetics.116.191973> for more
-details.")
-    (license license:gpl2+)))
-
 (define-public r-incubate
   (package
     (name "r-incubate")
@@ -10301,26 +10145,6 @@ methods like PCA and PLS.")
      "This package implements imputation methods using EM and Data Augmentation for
 multinomial data following the work of Schafer 1997 <ISBN: 978-0-412-04061-0>.")
     (license license:gpl3)))
-
-(define-public r-imputemissings
-  (package
-    (name "r-imputemissings")
-    (version "0.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "imputeMissings" version))
-              (sha256
-               (base32
-                "1dfhi235j1qz2mv89j92b903j5mdwlzisiyvvi9mmiacdj5ln89z"))))
-    (properties `((upstream-name . "imputeMissings")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-randomforest))
-    (home-page "https://cran.r-project.org/package=imputeMissings")
-    (synopsis "Impute Missing Values in a Predictive Context")
-    (description
-     "Compute missing values on a training data set and impute them on a new data set.
- Current available options are median/mode and random forest.")
-    (license license:gpl2+)))
 
 (define-public r-imputelcmd
   (package
@@ -13440,25 +13264,6 @@ allowing crossover of placebo volunteers to the vaccine arm.  Lin, D. Y., Gu,
 Y., Zeng, D., Janes, H. E., and Gilbert, P. B. (2021) <doi:10.1093/cid/ciab630>.")
     (license license:gpl2)))
 
-(define-public r-idos
-  (package
-    (name "r-idos")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iDOS" version))
-              (sha256
-               (base32
-                "1jj98ikzvfp6qbnh2j6msi0m89sbmjjafgry43rq7qmczzs81hl8"))))
-    (properties `((upstream-name . "iDOS")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-venndiagram))
-    (home-page "https://cran.r-project.org/package=iDOS")
-    (synopsis "Integrated Discovery of Oncogenic Signatures")
-    (description
-     "Integrate molecular profiles to discover candidate oncogenic drivers.")
-    (license license:gpl2)))
-
 (define-public r-idopnetwork
   (package
     (name "r-idopnetwork")
@@ -16396,27 +16201,6 @@ specified IBD pattern.  Additional functions provide summaries and further
 analysis of the simulated genomes.")
     (license license:gpl2+)))
 
-(define-public r-ibdlabels
-  (package
-    (name "r-ibdlabels")
-    (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IBDLabels" version))
-              (sha256
-               (base32
-                "1m9fd058yjxva6hin7i72i2nl285wfm0jkdn5xcng27yqlijyrm9"))))
-    (properties `((upstream-name . "IBDLabels")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=IBDLabels")
-    (synopsis "Convert Between Different IBD-State Labelling Schemes")
-    (description
-     "Convert \"label\", \"lexicographic\", \"jacquard\" and \"vec\", full state description
-vector.  All conversions are done to and from \"label\", as used in IBD_Haplo.
-More information regarding IBD_Haplo can be found at
-http://www.stat.washington.edu/thompson/Genepi/pangaea.shtml.")
-    (license license:gpl3)))
-
 (define-public r-ibd
   (package
     (name "r-ibd")
@@ -16522,27 +16306,6 @@ at <https://data.ibb.gov.tr/en/>.")
      "This package provides a collection of useful functions and datasets for the Data
 Science Course at IBAW in Lucerne.")
     (license license:expat)))
-
-(define-public r-ibatcgh
-  (package
-    (name "r-ibatcgh")
-    (version "1.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iBATCGH" version))
-              (sha256
-               (base32
-                "0xq4q4kc2f0whrxz1vmi2gca9pxqix2qm4sfkwbch85if2k8l8fj"))))
-    (properties `((upstream-name . "iBATCGH")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-msm))
-    (home-page "http://www.r-project.org")
-    (synopsis "Integrative Bayesian Analysis of Transcriptomic and CGH Data")
-    (description
-     "Bayesian integrative models of gene expression and comparative genomic
-hybridization data.  The package provides inference on copy number variations
-and their association with gene expression.")
-    (license license:gpl2)))
 
 (define-public r-ib
   (package

@@ -186,51 +186,6 @@ Traditional measures do not work as well for those network characteristics.  The
 main reference is @code{DePaolis} at al (2022) <doi:10.1007/s41109-022-00519-2>.")
     (license license:gpl3)))
 
-(define-public r-xtermstyle
-  (package
-    (name "r-xtermstyle")
-    (version "3.0.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "xtermStyle" version))
-              (sha256
-               (base32
-                "1q4qq8w4sgxbbb1x0i4k5xndvwisvjszg830wspwb37wigxz8xvz"))))
-    (properties `((upstream-name . "xtermStyle")))
-    (build-system r-build-system)
-    (home-page "https://github.com/backlin/xtermStyle")
-    (synopsis "Terminal Text Formatting Using Escape Sequences")
-    (description
-     "Can be used for coloring output in terminals.  It was developed for the standard
-Ubuntu terminal but should be compatible with any terminal using xterm or ANSI
-escape sequences.  If run in windows, RStudio, or any other platform not
-supporting such escape sequences it gracefully passes on any output without
-modifying it.")
-    (license license:gpl2+)))
-
-(define-public r-xtensor
-  (package
-    (name "r-xtensor")
-    (version "0.14.1-0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "xtensor" version))
-              (sha256
-               (base32
-                "1qni98kxyaggb1ixmmj1hh1jmbz8rhji91nifgrjxc1wsvmvswh0"))))
-    (properties `((upstream-name . "xtensor")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://github.com/xtensor-stack/xtensor")
-    (synopsis "Headers for the 'xtensor' Library")
-    (description
-     "The xtensor C++ library for numerical analysis with multi-dimensional array
-expressions is provided as a header-only C++14 library.  It offers an extensible
-expression system enabling lazy broadcasting; an API following the idioms of the
-C++ standard library; and tools to manipulate array expressions and build upon
-xtensor'.")
-    (license license:bsd-3)))
-
 (define-public r-xtal
   (package
     (name "r-xtal")
@@ -1036,26 +991,6 @@ accounting for publication bias in bivariate meta-analysis, based on symmetry of
 the galaxy plot.  Hong C. et al(2020) <doi:10.1093/aje/kwz286>, Chongliang L. et
 al(2020) <doi:10.1101/2020.07.27.20161562>.")
     (license license:gpl2+)))
-
-(define-public r-xlutils3
-  (package
-    (name "r-xlutils3")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "xlutils3" version))
-              (sha256
-               (base32
-                "1cxishi62bd36zlsy5qhzix1p68akdf9kpjg9gfm9aqpcijzccb9"))))
-    (properties `((upstream-name . "xlutils3")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-readxl r-magrittr))
-    (home-page "https://cran.r-project.org/package=xlutils3")
-    (synopsis "Extract Multiple Excel Files at Once")
-    (description
-     "Extract Excel files from folder.  Also display extracted data and compute a
-summary of it.  Based on the readxl package.")
-    (license license:gpl3)))
 
 (define-public r-xlsxjars
   (package
