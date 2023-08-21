@@ -12933,13 +12933,13 @@ rounding mode for floating point computations.")
 (define-public r-ie2miscdata
   (package
     (name "r-ie2miscdata")
-    (version "1.0.3")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ie2miscdata" version))
               (sha256
                (base32
-                "19jjpgnrbrnwzh5g3whpimbv7m2fgkvx7p3z6vqa1kfxqy0bn8yh"))))
+                "18hvkip57gvrmz3m3p66mlw45h60091jxbd2b65dimmc0k6wi7q4"))))
     (properties `((upstream-name . "ie2miscdata")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

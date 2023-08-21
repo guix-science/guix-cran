@@ -2617,13 +2617,13 @@ methods includes simulation and estimation of the parameters.")
 (define-public r-dtcompair
   (package
     (name "r-dtcompair")
-    (version "1.2.0")
+    (version "1.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DTComPair" version))
               (sha256
                (base32
-                "0wlbxqkm9jqqfr6h2a42zjixvlpq2fyij972372z4qk9qr06li2g"))))
+                "068ilw98lj4f11gi5fxc8lv6ymi86mahrkhfiagjdrmgcgpcai5w"))))
     (properties `((upstream-name . "DTComPair")))
     (build-system r-build-system)
     (propagated-inputs (list r-propcis r-gee r-ellipse))
@@ -16114,18 +16114,19 @@ parameters, such as effect size, sample size, and assignment probabilities.")
 (define-public r-designer
   (package
     (name "r-designer")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "designer" version))
               (sha256
                (base32
-                "0k14x0gn217lvd6vr4aszy2ngm3w7b45bas3g6vmik2q7h0klvqx"))))
+                "0fsvlrciym2g9mp96kwb04md1jnqxwj39zd8q5dihijj0p1ib5mi"))))
     (properties `((upstream-name . "designer")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinyscreenshot
                              r-shiny
                              r-shinipsum
+                             r-rappdirs
                              r-jsonlite
                              r-htmltools
                              r-golem
@@ -16135,7 +16136,7 @@ parameters, such as effect size, sample size, and assignment probabilities.")
                              r-bslib
                              r-bs4dash))
     (native-inputs (list r-knitr esbuild))
-    (home-page "https://github.com/ashbaldry/designer")
+    (home-page "https://ashbaldry.github.io/designer/")
     (synopsis "'Shiny' UI Prototype Builder")
     (description
      "This package provides a shiny application that enables the user to create a
@@ -17528,13 +17529,13 @@ availability, with time varying rates or not, and multi-stage model.")
 (define-public r-demokde
   (package
     (name "r-demokde")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "demoKde" version))
               (sha256
                (base32
-                "11im065srsjcy6df39b3gd2p6av2i8q716j3wl1dg8l9sh8z4yi0"))))
+                "1yhk77dgl45gs1j8ganr1y8prkczpyh8zrxf93mbrx1y9h54n34x"))))
     (properties `((upstream-name . "demoKde")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=demoKde")
@@ -19701,13 +19702,13 @@ straightforward R API. The package relies on the r2d3 R package and the D3
 (define-public r-ddpcr
   (package
     (name "r-ddpcr")
-    (version "1.15.1")
+    (version "1.15.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ddpcr" version))
               (sha256
                (base32
-                "1i6nl2c5k7bg9izz4a4cdgm46a88h08y0dpzbxr82bwqfc7l3kcx"))))
+                "1as25yc23n6jj87nccp7g2jrpvz6yxa7f6ba65g6ynvkzk57531b"))))
     (properties `((upstream-name . "ddpcr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -25344,18 +25345,18 @@ Varadhan, R. (2019) <doi:10.1080/10618600.2019.1594835>.")
 (define-public r-daagbio
   (package
     (name "r-daagbio")
-    (version "0.63-3")
+    (version "0.63-4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DAAGbio" version))
               (sha256
                (base32
-                "0n82d9nsvpl6cwp95by8ff9fmdafs2fdi603dlik5890adaw42x4"))))
+                "03lkq84x3skhvcrbs7235jlrhcnszk0pgziik4z93gy1qngrshn2"))))
     (properties `((upstream-name . "DAAGbio")))
     (build-system r-build-system)
     (propagated-inputs (list r-limma))
     (native-inputs (list r-knitr))
-    (home-page "http://maths-people.anu.edu.au/~johnm/")
+    (home-page "https://github.com/jhmaindonald/DAAGbio/")
     (synopsis
      "Data Sets and Functions, for Demonstrations with Expression Arrays and Gene Sequences")
     (description

@@ -17751,13 +17751,13 @@ maximum likelihood estimate(s) via Cox-Snell Methodology.")
 (define-public r-mlds
   (package
     (name "r-mlds")
-    (version "0.4.901")
+    (version "0.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MLDS" version))
               (sha256
                (base32
-                "0zswlng1vksnx1m6ycna2hbqmzzcfpqz1wgy519fr0j87bqxks69"))))
+                "0c8bmdjn6980lqihzc0rgg864hs1a51n2lrwi1vrxdp4xylvnqdd"))))
     (properties `((upstream-name . "MLDS")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -21746,13 +21746,13 @@ minimax approximation.")
 (define-public r-minimax
   (package
     (name "r-minimax")
-    (version "1.1")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "minimax" version))
               (sha256
                (base32
-                "0108gwdaaag219f2azzmd365d866bvlxvg247xin58f7sfdy038w"))))
+                "1jx90xbxflsi1q2wm3dl4vhz246yxbvhc8zybiv5f7fafam28h6p"))))
     (properties `((upstream-name . "minimax")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=minimax")
@@ -29026,13 +29026,13 @@ specialized syntax.")
 (define-public r-mess
   (package
     (name "r-mess")
-    (version "0.5.9")
+    (version "0.5.12")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MESS" version))
               (sha256
                (base32
-                "0bfpz61x2p8d0859xh69k21z2v3nif7jxzl79ni3020k7aagyzdm"))))
+                "1xyw04glhpgdcc3p96yvm346l62lsq37ml6lv59ap2ksws9pkq21"))))
     (properties `((upstream-name . "MESS")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
@@ -29045,7 +29045,8 @@ specialized syntax.")
                              r-ggplot2
                              r-ggformula
                              r-geepack
-                             r-geem))
+                             r-geem
+                             r-clipr))
     (home-page "https://github.com/ekstroem/MESS")
     (synopsis "Miscellaneous Esoteric Statistical Scripts")
     (description
@@ -33265,13 +33266,13 @@ and examples.")
 (define-public r-mcga
   (package
     (name "r-mcga")
-    (version "3.0.3")
+    (version "3.0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mcga" version))
               (sha256
                (base32
-                "109m01mab5awjf8zjzwl9j7hzac15dyq3x6zba9hsy5i02k5d5w4"))))
+                "1zj1bspw950zl2bh0dhn872f637iabk4gyrs8igrjyhm5calaj07"))))
     (properties `((upstream-name . "mcga")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-ga))

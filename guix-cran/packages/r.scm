@@ -8488,13 +8488,13 @@ Statistical Association <https://graemeblair.com/papers/randresp.pdf>.")
 (define-public r-rquery
   (package
     (name "r-rquery")
-    (version "1.4.9")
+    (version "1.4.99")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rquery" version))
               (sha256
                (base32
-                "12m80vr2sxm2ivvd1a27jy6vh9xvk5z4irlkaxm1f0sxi462brra"))))
+                "0540xw33wxk4w73s234pc0ss6vffzdkz7wqlca67im9h4sph19y3"))))
     (properties `((upstream-name . "rquery")))
     (build-system r-build-system)
     (propagated-inputs (list r-wrapr))
@@ -26804,13 +26804,13 @@ rotation and pesticide application regimes.")
 (define-public r-reset
   (package
     (name "r-reset")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RESET" version))
               (sha256
                (base32
-                "16p48xhcvqv2f1zqbca7p1hnqrngk7pchj6xaw7265pixaybvlbp"))))
+                "19rlmyljhiwiwh66xnqrz3m605jiy7kdaigivwmln7cvypzblzvk"))))
     (properties `((upstream-name . "RESET")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix))
@@ -34066,13 +34066,13 @@ interior-point method.")
 (define-public r-rds
   (package
     (name "r-rds")
-    (version "0.9-6")
+    (version "0.9-7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RDS" version))
               (sha256
                (base32
-                "1pm9xy8jklb5l21g464z6310iin4v6hkkl42msl5xpicfvv0axd2"))))
+                "0xq190as7vza2fim7b4qhk7x3kckqpca7pp8klh14vkjhix9yias"))))
     (properties `((upstream-name . "RDS")))
     (build-system r-build-system)
     (propagated-inputs (list r-statnet-common
@@ -36544,13 +36544,13 @@ Hardy, M (2006) @code{<arXiv:math/0601149v1>).}")
 (define-public r-rcppdynprog
   (package
     (name "r-rcppdynprog")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RcppDynProg" version))
               (sha256
                (base32
-                "10nc0sx3n83kg8rddbajifr9q8iyjmm59z5xcpqfmmfi345i26al"))))
+                "0zwm06riw0sc1qywmk8mfgay7lvzx8cmb7cijrr821j2sd0y2pyh"))))
     (properties `((upstream-name . "RcppDynProg")))
     (build-system r-build-system)
     (propagated-inputs (list r-wrapr r-rcpparmadillo r-rcpp))

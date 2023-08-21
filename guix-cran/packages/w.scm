@@ -238,13 +238,13 @@ published in 2006 by Chapman Hall / CRC Press.")
 (define-public r-wvplots
   (package
     (name "r-wvplots")
-    (version "1.3.5")
+    (version "1.3.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "WVPlots" version))
               (sha256
                (base32
-                "05fai10xb2ph3brfwy38mbp3qm41ci7vg5hv99yqahzi2z18r9mm"))))
+                "0zaqy1gii5ry2djqlyjqhiy4pqwng7r7lrpf1bw8g47v9vjjlq33"))))
     (properties `((upstream-name . "WVPlots")))
     (build-system r-build-system)
     (propagated-inputs (list r-wrapr

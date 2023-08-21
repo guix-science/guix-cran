@@ -3906,13 +3906,13 @@ of squares.")
 (define-public r-hopkins
   (package
     (name "r-hopkins")
-    (version "1.0")
+    (version "1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hopkins" version))
               (sha256
                (base32
-                "06fdks0jxv47d9xsyxzx2fdrbjw40dqj26qfkv5wdlcyv3lcfc4y"))))
+                "0wy4d5mmzd9qka5wpkglqy0m2pswypj64wp4hqpk94c6gj46ghwl"))))
     (properties `((upstream-name . "hopkins")))
     (build-system r-build-system)
     (propagated-inputs (list r-rann r-pdist r-donut))
@@ -3920,8 +3920,8 @@ of squares.")
     (home-page "https://kwstat.github.io/hopkins/")
     (synopsis "Calculate Hopkins Statistic for Clustering")
     (description
-     "Calculate Hopkins statistic to assess the clusterability of data.  See Hopkins
-and Skellam (1954) <doi:10.1093/oxfordjournals.aob.a083391>.")
+     "Calculate Hopkins statistic to assess the clusterability of data.  See Wright
+(2023) <doi:10.32614/RJ-2022-055>.")
     (license license:expat)))
 
 (define-public r-hopit

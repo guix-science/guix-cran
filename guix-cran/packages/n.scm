@@ -9972,13 +9972,13 @@ methods, see Marrs, Fosdick, and @code{McCormick} (2017)
 (define-public r-netrankr
   (package
     (name "r-netrankr")
-    (version "1.2.0")
+    (version "1.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "netrankr" version))
               (sha256
                (base32
-                "1b6wcvwqyqjfi1v8k8bf0ydsiyizpcgy47jf4z6v50sj22lwvxpn"))))
+                "14r5xy4j7d2vkbfrlylipx17n66kk7fl1n0hipx5hn6na5slxkfi"))))
     (properties `((upstream-name . "netrankr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix r-igraph))

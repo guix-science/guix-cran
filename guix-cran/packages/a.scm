@@ -4949,13 +4949,13 @@ with the book.")
 (define-public r-asbio
   (package
     (name "r-asbio")
-    (version "1.9-2")
+    (version "1.9-6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "asbio" version))
               (sha256
                (base32
-                "0xj71hx6y64qycgq0xg6z6avqxm34n523arsqkfjy3l1a4pqq1b4"))))
+                "1q21khpamhjz136ns76ixglvhlmjxmy5jrx3njsbc88k4hcp4995"))))
     (properties `((upstream-name . "asbio")))
     (build-system r-build-system)
     (inputs (list))

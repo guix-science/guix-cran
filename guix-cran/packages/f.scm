@@ -741,18 +741,18 @@ provided in the \"inst/examples\" folder.")
 (define-public r-fuzzylp
   (package
     (name "r-fuzzylp")
-    (version "0.1-6")
+    (version "0.1-7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FuzzyLP" version))
               (sha256
                (base32
-                "0k1cqyswhzp31dq91xigirkqhw3imkx68n4vasyvrgq6fm97dl1n"))))
+                "1x584h5a82npxk1jhz0mnn8zkyfd8qvvvhkrv3bfi81w2l893hi7"))))
     (properties `((upstream-name . "FuzzyLP")))
     (build-system r-build-system)
     (propagated-inputs (list r-roi-plugin-glpk r-roi r-fuzzynumbers))
     (native-inputs (list r-r-rsp))
-    (home-page "https://decsai.ugr.es/~pjvi")
+    (home-page "https://github.com/olbapjose/FuzzyLP")
     (synopsis "Fuzzy Linear Programming")
     (description
      "This package provides methods to solve Fuzzy Linear Programming Problems with
@@ -16472,23 +16472,23 @@ magnitude of one second.")
 (define-public r-fbrads
   (package
     (name "r-fbrads")
-    (version "0.2")
+    (version "17.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fbRads" version))
               (sha256
                (base32
-                "1a65gfvizzm6psspcvlhkxligdf9j1whrgzkg7ww520lk3z8lnnd"))))
+                "0kfbd0dc0k72qj5vd1bm11lqi6p61z7fmr8507fsc6ggcr97vw76"))))
     (properties `((upstream-name . "fbRads")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcurl
                              r-plyr
+                             r-logger
                              r-jsonlite
-                             r-futile-logger
                              r-digest
                              r-data-table
                              r-bit64))
-    (home-page "https://github.com/cardcorp/fbRads")
+    (home-page "https://github.com/daroczig/fbRads")
     (synopsis "Analyzing and Managing Facebook Ads from R")
     (description
      "Wrapper functions around the Facebook Marketing API to create, read, update and

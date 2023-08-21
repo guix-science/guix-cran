@@ -15689,13 +15689,13 @@ of Applied Statistics 5(4) 2493-2518.")
 (define-public r-pogromcydanych
   (package
     (name "r-pogromcydanych")
-    (version "1.7")
+    (version "1.7.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PogromcyDanych" version))
               (sha256
                (base32
-                "1fld65ksw47hvp0k1mjll0pxcpf0cjdqj5qhjx88mrbsr2f1y7x4"))))
+                "0601n76nybvahd5xsghwbydc7gfcvj1qbpqhw06d4mzy97am7yl0"))))
     (properties `((upstream-name . "PogromcyDanych")))
     (build-system r-build-system)
     (propagated-inputs (list r-smarterpoland r-dplyr))
@@ -28885,13 +28885,13 @@ right-censored, left-truncated, and interval-censored data.")
 (define-public r-pcgse
   (package
     (name "r-pcgse")
-    (version "0.4")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PCGSE" version))
               (sha256
                (base32
-                "0ky1nzhz6v9n34kas9nw2scc6ip7av19g09zcsxaa9436nhip4f6"))))
+                "1j990gjd34dqfaqmnsmmpyxn6xbzrq0ncci85s87s7k15r8b22b4"))))
     (properties `((upstream-name . "PCGSE")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmtstat r-mass))
@@ -29957,20 +29957,20 @@ birth-death model of diversification.  See Etienne, R.S. & J. Rosindell 2012
 (define-public r-pbcc
   (package
     (name "r-pbcc")
-    (version "0.0.3")
+    (version "0.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pbcc" version))
               (sha256
                (base32
-                "11qnmxky23s6dak0kpd22h9la7khn4zwr9msk0liry8i6slwhchg"))))
+                "1bmb9zn9ryis1fnhr6gz24y1mxbi876hkss0kpyl359pbgiq46p3"))))
     (properties `((upstream-name . "pbcc")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgenoud r-qcc r-ggpubr r-ggplot2))
     (home-page "https://github.com/kzst/pbcc")
     (synopsis "Percentile-Based Control Chart")
     (description
-     "Design and implementation of Percentile-based Shewharts Control Charts for
+     "Design and implementation of Percentile-based Shewhart Control Charts for
 continuous data.  Faraz (2019) <doi:10.1002/qre.2384>.")
     (license license:gpl2+)))
 
@@ -30553,13 +30553,13 @@ data related to gene sets and example input/output data.")
 (define-public r-pathfindr
   (package
     (name "r-pathfindr")
-    (version "2.1.0")
+    (version "2.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pathfindR" version))
               (sha256
                (base32
-                "0ipg5kf3y03r39q9gkbx69hkj9r21w67xdb4c18lpg0ndsrmh3il"))))
+                "1h421mj6r0k2zgjkp3f5jkmlzpipn7p9zzgi9cssilz3h1p762ps"))))
     (properties `((upstream-name . "pathfindR")))
     (build-system r-build-system)
     (inputs (list openjdk))

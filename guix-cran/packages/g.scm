@@ -23997,23 +23997,27 @@ for the latter.")
 (define-public r-gellipsoid
   (package
     (name "r-gellipsoid")
-    (version "0.7.2")
+    (version "0.7.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gellipsoid" version))
               (sha256
                (base32
-                "00xgh2416k4khhkn3v2grz5l1mlc7rj92bq224hg0sjr9yyd8yij"))))
+                "16dh4gs44vnc9v1hj9xjmsq88ygk9vyfp0asqgql1ar61wgmlsav"))))
     (properties `((upstream-name . "gellipsoid")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgl))
     (home-page "https://github.com/friendly/gellipsoid")
     (synopsis "Generalized Ellipsoids")
     (description
-     "Represent generalized geometric ellipsoids with the \"(U,D)\" representation.  It
+     "Represents generalized geometric ellipsoids with the \"(U,D)\" representation.  It
 allows degenerate and/or unbounded ellipsoids, together with methods for linear
-and duality transformations, and for plotting.  The ideas are described in
-Friendly, Monette & Fox (2013).")
+and duality transformations, and for plotting.  Thus ellipsoids are naturally
+extended to include lines, hyperplanes, points, cylinders, etc.  This permits
+exploration of a variety to statistical issues that can be visualized using
+ellipsoids as discussed by Friendly, Fox & Monette (2013), Elliptical Insights:
+Understanding Statistical Methods Through Elliptical Geometry
+<doi:10.1214/12-STS402>.")
     (license license:gpl2+)))
 
 (define-public r-geinter
@@ -26203,13 +26207,13 @@ Bithell (1991) <doi:10.1002/sim.4780101112>.")
 (define-public r-gatepoints
   (package
     (name "r-gatepoints")
-    (version "0.1.4")
+    (version "0.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gatepoints" version))
               (sha256
                (base32
-                "0gwyrkxn4xd79cl60xa312k6nz17mdjdiym65dq7s2384fa80wbm"))))
+                "0f9n32s1ssp4nmjarls4llmi91jxh4w4qwxf7awxaalqz4lrzbg2"))))
     (properties `((upstream-name . "gatepoints")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -27641,13 +27645,13 @@ Introduction with R', Wood (2006,2017) CRC.")
 (define-public r-galts
   (package
     (name "r-galts")
-    (version "1.3.1")
+    (version "1.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "galts" version))
               (sha256
                (base32
-                "0jg0yng1kc6s0qdhq8ps38dsxdcrgdcn8dl2dlclw6rcbknb6h4k"))))
+                "0a7yhdxja4jq2rn6p8imfg7ih3i4njqsz8zmkgwckj4q2x042lj5"))))
     (properties `((upstream-name . "galts")))
     (build-system r-build-system)
     (propagated-inputs (list r-genalg r-deoptim))

@@ -174,13 +174,13 @@ studies more comparable and reproducible.")
 (define-public r-ezknitr
   (package
     (name "r-ezknitr")
-    (version "0.6.2")
+    (version "0.6.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ezknitr" version))
               (sha256
                (base32
-                "021wp9i145ibbjf2jd98p89f7nzb95k7qnzfsnyd52q53cvds0g8"))))
+                "07cznigqndqly24lh3jdk3zq1r4xflivgdfhrh7mmhr83lqy1cha"))))
     (properties `((upstream-name . "ezknitr")))
     (build-system r-build-system)
     (propagated-inputs (list r-r-utils r-markdown r-knitr))

@@ -3460,13 +3460,13 @@ ordering, etc.).  This package is designed to work tightly with dplyr package.")
 (define-public r-keyboardsimulator
   (package
     (name "r-keyboardsimulator")
-    (version "2.6.0")
+    (version "2.6.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "KeyboardSimulator" version))
               (sha256
                (base32
-                "0fm57ln8l2g28ddq4m3iwd8drvc8hcgnwmhps39nj7rhjx2rnysv"))))
+                "1ifyxj9si1h781vxhbz4rcxisibs359hcfg67yfi455d37bqvrlp"))))
     (properties `((upstream-name . "KeyboardSimulator")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))

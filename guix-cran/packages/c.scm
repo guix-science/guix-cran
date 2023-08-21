@@ -10669,13 +10669,13 @@ be used to analyze the effects for a polytomous or multinomial outcome variable.
 (define-public r-correctr
   (package
     (name "r-correctr")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "correctR" version))
               (sha256
                (base32
-                "0mjknma3ffhkmqxfq6lslc6ywc4pmm973s6nn4xsjwai9n4nc1qi"))))
+                "01rmz47mn30zdjc22mrgdj4b9p82gj83ycpk01hcmmwwxflm6m1d"))))
     (properties `((upstream-name . "correctR")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -11027,13 +11027,13 @@ packages respectively).")
 (define-public r-corpora
   (package
     (name "r-corpora")
-    (version "0.5-1")
+    (version "0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "corpora" version))
               (sha256
                (base32
-                "1bkmarwxqfb4jf7aa1x82lhykmy25z1pknfmq1g1g789g074090k"))))
+                "1l1dnnm9zvgxr7jrqrz0a9m5dwz7mra0mr3i9qxjvgrzc6n6cxw8"))))
     (properties `((upstream-name . "corpora")))
     (build-system r-build-system)
     (home-page "http://SIGIL.R-Forge.R-Project.org/")
@@ -19208,13 +19208,13 @@ the Walloon Agricultural Research Centre (project MIMOSA, MOERMAN fund).")
 (define-public r-coga
   (package
     (name "r-coga")
-    (version "1.1.1")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "coga" version))
               (sha256
                (base32
-                "0128x4qmln1ks7cqd5n22aw41f097lw785lw4ca80nyn2bz5jmqk"))))
+                "1hrq31w00a2ix30w1xncmxrkxbwbdizsq05axn2kwcvq5miq10yk"))))
     (properties `((upstream-name . "coga")))
     (build-system r-build-system)
     (inputs (list gsl))
@@ -27635,13 +27635,13 @@ headless Chrome web browser.")
 (define-public r-chromer
   (package
     (name "r-chromer")
-    (version "0.4")
+    (version "0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "chromer" version))
               (sha256
                (base32
-                "075nbj254v2nl585r3hd1yh4dxy1mwfbrpvzfrg69rs9pdq6z6yq"))))
+                "03qhpb09l7h19h3a00ywgkm7p0naffj1yc5by8al9lpp1agm3anc"))))
     (properties `((upstream-name . "chromer")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-httr r-dplyr))
@@ -29984,13 +29984,13 @@ function can extract coefficients from polynomials.")
 (define-public r-cgwtools
   (package
     (name "r-cgwtools")
-    (version "3.3")
+    (version "4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cgwtools" version))
               (sha256
                (base32
-                "1dl9ghwfzjrl5pd6izy4c5qyfq2s8ywnqh97y1bhwmcw2qwb4ci6"))))
+                "0zklwpwhmx7qqq6rcfvia69564pvx7g23a31466l1giiwiyjklbq"))))
     (properties `((upstream-name . "cgwtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-gmp))
@@ -30004,7 +30004,8 @@ sequences.  The function splatnd allows the user to generate zero-argument
 commands without the need for @code{makeActiveBinding} .  Functions provided to
 convert from any base to any other base, and to find the n-th greatest max or
 n-th least min.  In addition, functions which mimic Unix shell commands,
-including head', tail ,'pushd ,and popd'.")
+including head', tail ,'pushd ,and popd'.  Various other goodies included as
+well.")
     (license license:lgpl3)))
 
 (define-public r-cgrcusum

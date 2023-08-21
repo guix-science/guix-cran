@@ -5919,13 +5919,13 @@ al.  2021, Frontiers in Applied Mathematics and Statistics', accepted.).")
 (define-public r-bootnet
   (package
     (name "r-bootnet")
-    (version "1.5.3")
+    (version "1.5.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bootnet" version))
               (sha256
                (base32
-                "0fd938xi5gyq616ag0n205b1a1m0r0dq6z1zqxbn83dg0p7qbaas"))))
+                "0f7wdhfanjn1m9p04pq1pbdppwrzjqgr4m0v1fg4x638i1hkw1cp"))))
     (properties `((upstream-name . "bootnet")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

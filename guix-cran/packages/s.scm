@@ -20330,13 +20330,13 @@ the degree of niche overlapping between species.  See Kleparski and Beaugrand
 (define-public r-species
   (package
     (name "r-species")
-    (version "1.1.3")
+    (version "1.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SPECIES" version))
               (sha256
                (base32
-                "0qh8vi522lyix61p0z1h3fja9x0lylrvg41bsv89228hia0vz3lq"))))
+                "18x779wh9g4fskggkiz6ggvgis4wipf1nf6bygc1v5n2yvni4fsw"))))
     (properties `((upstream-name . "SPECIES")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -29442,13 +29442,13 @@ shapefile'.")
 (define-public r-smarterpoland
   (package
     (name "r-smarterpoland")
-    (version "1.8")
+    (version "1.8.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SmarterPoland" version))
               (sha256
                (base32
-                "19pxr1zch2bm5jw676dp0p2crvmdmvzyxz07vhx926axpb4i0xbp"))))
+                "07nag50mzj7a4f5lprvvs6k7mppyzcwvkc3dj8b1il2k06q5ffh5"))))
     (properties `((upstream-name . "SmarterPoland")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjson r-jsonlite r-httr r-htmltools r-ggplot2))
@@ -33102,13 +33102,13 @@ within each class.")
 (define-public r-simvitd
   (package
     (name "r-simvitd")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SimVitD" version))
               (sha256
                (base32
-                "1ddzp43bnna6n96h6qkqfis1l7mihf20wcy98cn37ri96zacwly4"))))
+                "1wz3b73pnccqsbg8wssah4gmwv7ajmhhca313r07sppgqskmm68r"))))
     (properties `((upstream-name . "SimVitD")))
     (build-system r-build-system)
     (propagated-inputs (list r-simpleboot))
@@ -48718,13 +48718,13 @@ alternative probability-based approach as described in Shimada et al. (2021)
 (define-public r-sdetorus
   (package
     (name "r-sdetorus")
-    (version "0.1.8")
+    (version "0.1.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sdetorus" version))
               (sha256
                (base32
-                "1bf622k9szas3bfxz9f82dn28l1hdqxzpvgqwvzygy9vp2gi4gyp"))))
+                "186zq6ngii16447sj0r8aw07phq8a431xl77xpp4g3c00v0lxkic"))))
     (properties `((upstream-name . "sdetorus")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-mvtnorm r-colorramps))
@@ -48740,8 +48740,8 @@ likelihood estimation, organized in four blocks, is given: (i) based on the
 exact transition probability density, obtained as the numerical solution to the
 Fokker-Plank equation; (ii) based on wrapped pseudo-likelihoods; (iii) based on
 specific analytic approximations by wrapped processes; (iv) based on maximum
-likelihood of the stationary densities.  The package allows the reproducibility
-of the results in @code{GarcÃ­a-PortuguÃ©s} et al. (2019)
+likelihood of the stationary densities.  The package allows the replicability of
+the results in @code{GarcÃ­a-PortuguÃ©s} et al. (2019)
 <doi:10.1007/s11222-017-9790-2>.")
     (license license:gpl3)))
 

@@ -12530,13 +12530,13 @@ month, quarter and year.")
 (define-public r-timeordered
   (package
     (name "r-timeordered")
-    (version "0.9.9")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "timeordered" version))
               (sha256
                (base32
-                "0rfga5i6kckmlz2dzqb1pp634dl93wxp7v3kisxlbjl7mgnbck3k"))))
+                "0gcf2mvqzqrqxf7qqfhvxb42y32vxaz5nc29vnyig1lh6bnywkhq"))))
     (properties `((upstream-name . "timeordered")))
     (build-system r-build-system)
     (propagated-inputs (list r-plyr r-igraph))
