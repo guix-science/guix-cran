@@ -1187,13 +1187,13 @@ Keller-Ressel and Nargang (2019), see @code{<arXiv:1903.08977>.}")
 (define-public r-hydflood
   (package
     (name "r-hydflood")
-    (version "0.5.4")
+    (version "0.5.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hydflood" version))
               (sha256
                (base32
-                "0fa7spcnwh1kqi1qsyp7gid6ks7qgkkh4ifdqzr3rnyqrg3l8lfz"))))
+                "0gdrmicp99ifbwjda9xbz7q8s8mkb37rrrky875yalyxiprk4y22"))))
     (properties `((upstream-name . "hydflood")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-sf r-rdpack r-raster r-hyd1d))
@@ -1214,13 +1214,13 @@ published by Weber (2022) <doi:10.1594/PANGAEA.948042>.")
 (define-public r-hyd1d
   (package
     (name "r-hyd1d")
-    (version "0.4.5")
+    (version "0.4.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hyd1d" version))
               (sha256
                (base32
-                "16ja4av74bissxabhq1d1j7kg56c4hbxrziqgnl8h0qzbkkinwfm"))))
+                "0ikznysqbfx9rrxa87is3ycixf3q6fcvqqzih6d9khsqqz0xc5i4"))))
     (properties `((upstream-name . "hyd1d")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjsonio r-rdpack r-plotrix))
@@ -4210,6 +4210,54 @@ scaling with options for nominal, ordinal, and numerical scale levels (for
 rank-1 restrictions).  Variables can be grouped into sets, in order to emulate
 regression analysis and canonical correlation analysis.")
     (license license:gpl3)))
+
+(define-public r-holomics
+  (package
+    (name "r-holomics")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "Holomics" version))
+              (sha256
+               (base32
+                "13b45kbp8s0zcqldn8bg964cqkc5b6jqh764szl8v27cxg0chvcf"))))
+    (properties `((upstream-name . "Holomics")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-visnetwork
+                             r-tippy
+                             r-stringr
+                             r-shinywidgets
+                             r-shinyvalidate
+                             r-shinyjs
+                             r-shinybusy
+                             r-shinyalert
+                             r-shiny
+                             r-readxl
+                             r-openxlsx
+                             r-mixomics
+                             r-igraph
+                             r-golem
+                             r-ggplot2
+                             r-dt
+                             r-dplyr
+                             r-config
+                             r-bs4dash
+                             r-biocparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/MolinLab/Holomics")
+    (synopsis
+     "An User-Friendly R 'shiny' Application for Multi-Omics Data Integration and Analysis")
+    (description
+     "This package provides a shiny application, which allows you to perform single-
+and multi-omics analyses using your own omics datasets.  After the upload of the
+omics datasets and a metadata file, single-omics is performed for feature
+selection and dataset reduction.  These datasets are used for pairwise- and
+multi-omics analyses, where automatic tuning is done to identify correlations
+between the datasets - the end goal of the recommended Holomics workflow.
+Methods used in the package were implemented in the package mixomics by Florian
+@code{Rohart,BenoÃ®t} Gautier,Amrit Singh,Kim-Anh LÃª Cao (2017)
+<doi:10.1371/journal.pcbi.1005752> and are described there in further detail.")
+    (license license:gpl3+)))
 
 (define-public r-holodeck
   (package
@@ -8997,13 +9045,13 @@ easy to install and load multiple healthyverse packages in a single step.")
 (define-public r-healthyr-ts
   (package
     (name "r-healthyr-ts")
-    (version "0.2.9")
+    (version "0.2.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "healthyR.ts" version))
               (sha256
                (base32
-                "0bprpd36xjwb7ygimqin9qxybplpj28jp62s5ql9l0dwbfpprj2f"))))
+                "1vn9czpf3byq5mgsyvrasvf063n5r3rn50kvj2hdn23c0dn5jg6l"))))
     (properties `((upstream-name . "healthyR.ts")))
     (build-system r-build-system)
     (propagated-inputs (list r-workflowsets
@@ -10749,16 +10797,16 @@ level, and to graphically compare different sets of small area estimates.")
 (define-public r-hbmem
   (package
     (name "r-hbmem")
-    (version "0.3-3")
+    (version "0.3-4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hbmem" version))
               (sha256
                (base32
-                "1rajd5h9gp0rrpc0q0m0fx37mv2n70da3gnfvvnjc5a77mzfyqkp"))))
+                "0qhxc784zhilxhijlsykl10cqlxk9ll8m2cz9s1cmz76hlvrn0y9"))))
     (properties `((upstream-name . "hbmem")))
     (build-system r-build-system)
-    (home-page "http://pcn.psychology.msstate.edu/")
+    (home-page "https://pcn.psychology.msstate.edu/")
     (synopsis "Hierarchical Bayesian Analysis of Recognition Memory")
     (description
      "This package contains functions for fitting hierarchical versions of EVSD, UVSD,

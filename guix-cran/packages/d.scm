@@ -6782,13 +6782,13 @@ workflows (see <http://www.dominodatalab.com> for more information).")
 (define-public r-dogesr
   (package
     (name "r-dogesr")
-    (version "0.4.0")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dogesr" version))
               (sha256
                (base32
-                "0rs9g9r77wsk51alb69rc6afkd3v6vh4krmd8vkxhl40ksm32hmn"))))
+                "0w5qps781c406br5rba6mv127yrlgq7rzchk55j7mndrm7hwia63"))))
     (properties `((upstream-name . "dogesr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmarkdown
@@ -6796,6 +6796,7 @@ workflows (see <http://www.dominodatalab.com> for more information).")
                              r-qpdf
                              r-knitr
                              r-igraph
+                             r-ggthemes
                              r-ggplot2
                              r-dplyr))
     (native-inputs (list r-knitr))
@@ -6930,13 +6931,13 @@ are also added in order to facilitate examples.")
 (define-public r-doe-wrapper
   (package
     (name "r-doe-wrapper")
-    (version "0.11")
+    (version "0.12")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DoE.wrapper" version))
               (sha256
                (base32
-                "08bgfaiivqqnkhjb18flk1cpa33rh70i6g8v25x1ma3ffxqrwh96"))))
+                "0n6z27gf7xcbyzjdq0kjm7ghddg5gygxyp3r9a7s5h40s0pfxbdm"))))
     (properties `((upstream-name . "DoE.wrapper")))
     (build-system r-build-system)
     (propagated-inputs (list r-rsm
@@ -6945,26 +6946,26 @@ are also added in order to facilitate examples.")
                              r-doe-base
                              r-dicedesign
                              r-algdesign))
-    (home-page "http://prof.beuth-hochschule.de/groemping/DoE/")
+    (home-page "https://prof.bht-berlin.de/groemping/DoE/")
     (synopsis "Wrapper Package for Design of Experiments Functionality")
     (description
      "Various kinds of designs for (industrial) experiments can be created.  The
 package uses, and sometimes enhances, design generation routines from other
-packages.  So far, response surface designs from package rsm, latin hypercube
-samples from packages lhs and @code{DiceDesign,} and D-optimal designs from
+packages.  So far, response surface designs from package rsm', Latin hypercube
+samples from packages lhs and @code{DiceDesign',} and D-optimal designs from
 package @code{AlgDesign} have been implemented.")
     (license license:gpl2+)))
 
 (define-public r-doe-miparray
   (package
     (name "r-doe-miparray")
-    (version "1.0")
+    (version "1.0-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DoE.MIParray" version))
               (sha256
                (base32
-                "09czqhd07hjx35w2a48sgpn9j5y6k1sy92gwhsbbik9s99n7q9gy"))))
+                "0ginm4wqax2azcns4c17rgdfpclbmn058nq0lmpx90s4q7jfppax"))))
     (properties `((upstream-name . "DoE.MIParray")))
     (build-system r-build-system)
     (propagated-inputs (list r-doe-base r-combinat))
@@ -8977,13 +8978,13 @@ data frames with a tidyselect based workflow.")
 (define-public r-divraster
   (package
     (name "r-divraster")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "divraster" version))
               (sha256
                (base32
-                "0cj5j12ca5vq9mnm4vr8jv7m7sikb0d4cnwavjpv9694di7y3bj3"))))
+                "0cqnsihygl7ja72i9b1ll5gyrzi7b5xwy0k1vbn2741mdgzzx5wn"))))
     (properties `((upstream-name . "divraster")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-sesraster r-bat))
@@ -13007,13 +13008,13 @@ Genetic Networks for Cell Differentiation.  PLOS ONE 6(3): e17703.")
 (define-public r-differ
   (package
     (name "r-differ")
-    (version "0.0-7")
+    (version "0.0-8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "diffeR" version))
               (sha256
                (base32
-                "0yi0wkjr3cp7ncycn8ynh31r12ahhrdl681g5308axwrn2wiscl0"))))
+                "0l2pm4kh6yq3h3v27a5r28c0724g89pglaxd14f14cdxk51hznqx"))))
     (properties `((upstream-name . "diffeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -17946,13 +17947,13 @@ can be found on
 (define-public r-delayedeffect-design
   (package
     (name "r-delayedeffect-design")
-    (version "1.1.2")
+    (version "1.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DelayedEffect.Design" version))
               (sha256
                (base32
-                "1qx82r04d0bnr8k961fgp4rmy62rw0xfzzdamyfc8f5r92lk18yr"))))
+                "0iplpnhxzipvyk89dn13hi0pw1yqfbi8dm4dp2xmvn3avk76pjgs"))))
     (properties `((upstream-name . "DelayedEffect.Design")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=DelayedEffect.Design")
@@ -18466,6 +18467,48 @@ of deeptime is to enable users to add highly customizable timescales to their
 visualizations.  Other functions are also included to assist with other areas of
 deep time visualization.")
     (license license:gpl3+)))
+
+(define-public r-deeprstudio
+  (package
+    (name "r-deeprstudio")
+    (version "0.0.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "deepRstudio" version))
+              (sha256
+               (base32
+                "1aiv020396rvr9bingvqsmwh6ycax9fzicicwff94bhslj1z6bh7"))))
+    (properties `((upstream-name . "deepRstudio")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rstudioapi
+                             r-jsonlite
+                             r-httr
+                             r-crayon
+                             r-clipr
+                             r-assertthat))
+    (home-page "https://kumes.github.io/deepRstudio/")
+    (synopsis
+     "Seamless Language Translation in 'RStudio' using 'DeepL' API and 'Rstudioapi'")
+    (description
+     "Enhancing cross-language compatibility within the RStudio environment and
+supporting seamless language understanding, the @code{deepRstudio} package
+leverages the power of the @code{DeepL} API (see
+<https://www.deepl.com/docs-api>) to enable seamless, fast, accurate, and
+affordable translation of code comments, documents, and text.  This package
+offers the ability to translate selected text into English (EN), as well as from
+English into various languages, namely Japanese (JA), Chinese (ZH), Spanish
+(ES), French (FR), Russian (RU), Portuguese (PT), and Indonesian (ID).  With
+much of the text being written in English, the emphasis is on compatibility from
+English.  It is also designed for developers working on multilingual projects
+and data analysts collaborating with international teams, simplifying the
+translation process and making code more accessible and comprehensible to people
+with diverse language backgrounds.  This package uses the rstudioapi package and
+@code{DeepL} API, and is simply implemented, executed from addins or via
+shortcuts on RStudio'.  With just a few steps, content can be translated between
+supported languages, promoting better collaboration and expanding the global
+reach of work.  The functionality of this package works only on RStudio using
+rstudioapi'.")
+    (license license:artistic2.0)))
 
 (define-public r-deepregression
   (package
@@ -23998,6 +24041,31 @@ J.T. Ritchie (2003) <doi:10.1016/S1161-0301(02)00107-7>.")
 using the shinydashboard package.  Removes the need to change the underlying css
 code by wrapping it into a set of convenient R functions.")
     (license license:expat)))
+
+(define-public r-dartrverse
+  (package
+    (name "r-dartrverse")
+    (version "0.49")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "dartRverse" version))
+              (sha256
+               (base32
+                "0s0apsz8zjrjz9lgb2xwn5zhh38iha6lif109hzwpmsddbckp3y0"))))
+    (properties `((upstream-name . "dartRverse")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-dartr-data r-dartr-base r-cli))
+    (home-page "https://github.com/green-striped-gecko/dartRverse")
+    (synopsis "Install and Load the 'dartRverse' Suits of Packages")
+    (description
+     "This package provides a single function that supports the installation of all
+packages belonging to the @code{dartRverse'.} The @code{dartRverse} is a set of
+packages that work together to analyse SNP (single nuclear polymorphism) data.
+All packages aim to have a similar look and feel and are based on the same type
+of data structure ('genlight'), with additional metadata for loci and
+individuals (samples).  For more information visit the @code{GitHub} pages
+@code{<https://github.com/green-striped-gecko/dartRverse>.}")
+    (license license:gpl3+)))
 
 (define-public r-dartr-spatial
   (package

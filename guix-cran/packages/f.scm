@@ -3228,13 +3228,13 @@ support.")
 (define-public r-fselector
   (package
     (name "r-fselector")
-    (version "0.33")
+    (version "0.34")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FSelector" version))
               (sha256
                (base32
-                "1lfra416pzpbipv9rm0qf7mq1zqr11hmas29q7qiwmzs5ihflmrx"))))
+                "07nvfykr6zls7ip5nz9j3062nlna2va3dyldck292v96rd56xl99"))))
     (properties `((upstream-name . "FSelector")))
     (build-system r-build-system)
     (propagated-inputs (list r-rweka r-randomforest r-entropy r-digest))
@@ -7754,13 +7754,13 @@ of ancestor and descendent functions.")
 (define-public r-foodquotient
   (package
     (name "r-foodquotient")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "foodquotient" version))
               (sha256
                (base32
-                "16r19gzllwfjz1424yi19cvff7v33d1v5fjgv040lafq5ix7s2xx"))))
+                "11api7fh3v7ym4k22xf1clbgl0wxqmklr9irjw4y3bn57vmsy3i6"))))
     (properties `((upstream-name . "foodquotient")))
     (build-system r-build-system)
     (home-page "<https://naldc.nal.usda.gov/catalog/32818>")
@@ -14407,6 +14407,27 @@ for the logistic mixed effects model.  Based on He, K., Kalbfleisch, J.D., Li,
 Y. and Li, Y. (2013) <doi:10.1007/s10985-013-9264-6>.")
     (license license:gpl2)))
 
+(define-public r-fenmlm
+  (package
+    (name "r-fenmlm")
+    (version "2.4.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "FENmlm" version))
+              (sha256
+               (base32
+                "0s1i7kklh5vzfv6xi1j9dxp21cncs5gsxf7rn25rsg8b5srllsxl"))))
+    (properties `((upstream-name . "FENmlm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp r-numderiv r-mass r-formula))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=FENmlm")
+    (synopsis "Fixed Effects Nonlinear Maximum Likelihood Models")
+    (description
+     "Efficient estimation of maximum likelihood models with multiple fixed-effects.
+Standard-errors can easily and flexibly be clustered and estimations exported.")
+    (license license:gpl2+)))
+
 (define-public r-fence
   (package
     (name "r-fence")
@@ -17214,26 +17235,29 @@ Hockey League's stats API <https://www.nhl.com/>.")
 (define-public r-fastrg
   (package
     (name "r-fastrg")
-    (version "0.3.1")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fastRG" version))
               (sha256
                (base32
-                "0dh8f8771p6xardflsxbnlrzgn783mrbgrfyxb4z404xdyy5abhg"))))
+                "1ig6z8azl2vsl79nfs3s4f9v1f6f27vzc0kxb9zmvkpx3hfnlm7k"))))
     (properties `((upstream-name . "fastRG")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidygraph
+    (propagated-inputs (list r-tidyr
+                             r-tidygraph
                              r-tibble
                              r-rspectra
                              r-matrix
                              r-igraph
                              r-glue
-                             r-ellipsis))
+                             r-ggplot2
+                             r-ellipsis
+                             r-dplyr))
     (home-page "https://rohelab.github.io/fastRG/")
     (synopsis "Sample Generalized Random Dot Product Graphs in Linear Time")
     (description
-     "Samples generalized random product graph, a generalization of a broad class of
+     "Samples generalized random product graphs, a generalization of a broad class of
 network models.  Given matrices X, S, and Y with with non-negative entries,
 samples a matrix with expectation X S Y^T and independent Poisson or Bernoulli
 entries using the @code{fastRG} algorithm of Rohe et al. (2017)

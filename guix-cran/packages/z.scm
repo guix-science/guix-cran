@@ -147,13 +147,13 @@ included.")
 (define-public r-zmisc
   (package
     (name "r-zmisc")
-    (version "0.2.2")
+    (version "0.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "zmisc" version))
               (sha256
                (base32
-                "154qm0f2ds40gwxqv30nf2px26clkf2lw2y51ak12gxpj08b6mix"))))
+                "1mkk8a93xqwzrs99g6zmd5x3yn0qrz3v44y35jas9wl8x92bzr9f"))))
     (properties `((upstream-name . "zmisc")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -161,8 +161,9 @@ included.")
     (synopsis "Vector Look-Ups and Safer Sampling")
     (description
      "This package provides a collection of utility functions that facilitate looking
-up vector values from a lookup table, and support a safer approach to vector
-sampling, sequence generation, and aggregation.")
+up vector values from a lookup table, annotate values in at table for clearer
+viewing, and support a safer approach to vector sampling, sequence generation,
+and aggregation.")
     (license license:expat)))
 
 (define-public r-zipsae

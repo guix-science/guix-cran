@@ -2574,6 +2574,29 @@ reproducibility study <https://www.nitrc.org/projects/multimodal/>, including
 functional and structural imaging.")
     (license license:gpl2)))
 
+(define-public r-kira
+  (package
+    (name "r-kira")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "Kira" version))
+              (sha256
+               (base32
+                "0g7ysdikd3zr2957wdkv9x4pj2jbf9376zdcjlrsyn97ah0y7mq7"))))
+    (properties `((upstream-name . "Kira")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mass))
+    (home-page "https://cran.r-project.org/package=Kira")
+    (synopsis "Machine Learning")
+    (description
+     "Machine learning, containing several algorithms for supervised and unsupervised
+classification, in addition to a function that plots the Receiver Operating
+Characteristic (ROC) and Precision-Recall (PRC) curve graphs, and also a
+function that returns several metrics used for model evaluation, the latter can
+be used in ranking results from other packs.")
+    (license license:gpl3)))
+
 (define-public r-kinship2
   (package
     (name "r-kinship2")
@@ -2927,27 +2950,27 @@ common ones with rio (C-h.  Chan and al. (2018))
 (define-public r-khroma
   (package
     (name "r-khroma")
-    (version "1.10.0")
+    (version "1.11.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "khroma" version))
               (sha256
                (base32
-                "0kf9r21q7f21nwiw9mc6k2x5hnwayg0fiwydi4w8zjvzkwlskrj7"))))
+                "1d957wdf8z7vki3q3ciicls121p422ywpsayki82r2b79zl8swkp"))))
     (properties `((upstream-name . "khroma")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
     (home-page "https://packages.tesselle.org/khroma/")
     (synopsis "Colour Schemes for Scientific Data Visualization")
     (description
-     "Colour schemes ready for each type of data (qualitative, diverging or
-sequential), with colours that are distinct for all people, including
-colour-blind readers.  This package provides an implementation of Paul Tol
-(2018) and Fabio Crameri (2018) <doi:10.5194/gmd-11-2541-2018> colour schemes
-for use with graphics or ggplot2'.  It provides tools to simulate
-colour-blindness and to test how well the colours of any palette are
-identifiable.  Several scientific thematic schemes (geologic timescale, land
-cover, FAO soils, etc.) are also implemented.")
+     "Color schemes ready for each type of data (qualitative, diverging or
+sequential), with colors that are distinct for all people, including color-blind
+readers.  This package provides an implementation of Paul Tol (2018) and Fabio
+Crameri (2018) <doi:10.5194/gmd-11-2541-2018> color schemes for use with
+graphics or ggplot2'.  It provides tools to simulate color-blindness and to test
+how well the colors of any palette are identifiable.  Several scientific
+thematic schemes (geologic timescale, land cover, FAO soils, etc.) are also
+implemented.")
     (license license:gpl3+)))
 
 (define-public r-khq
@@ -3605,32 +3628,33 @@ found at Chuan et al. (2021) <doi:10.1038/s41746-021-00519-z>.")
 (define-public r-kertests
   (package
     (name "r-kertests")
-    (version "0.1.3")
+    (version "0.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "kerTests" version))
               (sha256
                (base32
-                "0981q4n4wrv62x4b8jccj5hx58n975rls3sn3s0mz7ajhh1xxbi9"))))
+                "135v5lcnvmlcabgqnlcba9q0wc51ajcklz04bknz3psaqv71bp71"))))
     (properties `((upstream-name . "kerTests")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=kerTests")
     (synopsis "Generalized Kernel Two-Sample Tests")
     (description
      "New kernel-based test and fast tests for testing whether two samples are from
-the same distribution.  They work well particularly for high-dimensional data.")
+the same distribution.  They work well particularly for high-dimensional data.
+Song, H. and Chen, H. (2023) @code{<arXiv:2011.06127>.}")
     (license license:gpl2+)))
 
 (define-public r-kerseg
   (package
     (name "r-kerseg")
-    (version "1.0")
+    (version "1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "kerSeg" version))
               (sha256
                (base32
-                "0f0v2yz93wm85kqgcxkb492n60n9j7xjnxkqpkrbgkdv5rh3b33k"))))
+                "15j3l9zlyg0hax5ynj9pvf0h60yr1y7wcx5v5zvk64ssmdyw0cdc"))))
     (properties `((upstream-name . "kerSeg")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -3981,13 +4005,13 @@ regression estimator constructed in a reproducing kernel Hilbert space.")
 (define-public r-kerdaa
   (package
     (name "r-kerdaa")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "kerDAA" version))
               (sha256
                (base32
-                "0fq8yc80rb04zidg7lrcvg8qhbbf10c835dsr8249ldpknk9sk6p"))))
+                "0z27qkfasjian0wwn0q4400153ni5h0c6297j4b0qqjl3ylaqakb"))))
     (properties `((upstream-name . "kerDAA")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm))
@@ -4852,19 +4876,22 @@ Michael Eliasziw, Neil Klar (1996) <doi:10.2307/2533154>.")
 (define-public r-kantorovich
   (package
     (name "r-kantorovich")
-    (version "3.0.1")
+    (version "3.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "kantorovich" version))
               (sha256
                (base32
-                "140fmbwaxn968n75my9336svgk7jw5zdq2ah1lcnl2m7qhxkvdxk"))))
+                "0hhqglqasc76pcybz7jc18dsq3bhgmbw11d2zc3xy8vg8i0ykz63"))))
     (properties `((upstream-name . "kantorovich")))
     (build-system r-build-system)
     (inputs (list gmp))
     (propagated-inputs (list r-slam
+                             r-roi-plugin-glpk
                              r-rglpk
                              r-rcdd
+                             r-ompr-roi
+                             r-ompr
                              r-lpsolve
                              r-gmp
                              r-cvxr))

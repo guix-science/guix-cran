@@ -436,13 +436,13 @@ the update date from the service.")
 (define-public r-ustfd
   (package
     (name "r-ustfd")
-    (version "0.4.0")
+    (version "0.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ustfd" version))
               (sha256
                (base32
-                "0xc0xhrny5gf0j9pp3yd46b46pkas5gwyjs0d3j94bp17ms8mi1z"))))
+                "1pc5yggffy3y4hg3qpiih9fyw4rzc65s5n650ng05k5xdfjmm7n2"))))
     (properties `((upstream-name . "ustfd")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -3387,16 +3387,16 @@ analyses.")
 (define-public r-ukbnmr
   (package
     (name "r-ukbnmr")
-    (version "1.5")
+    (version "2.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ukbnmr" version))
               (sha256
                (base32
-                "13wrvldv8mhl15k6lzg9kk0mfcbd2mqaylndcm31hllq121vjpq2"))))
+                "1xm80xxkzhwz9q8mr4apfhyizq0jwfdzcrj9j1ri0gc6mi0q4gxw"))))
     (properties `((upstream-name . "ukbnmr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-mass r-data-table))
+    (propagated-inputs (list r-mass r-data-table r-bit64))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ukbnmr")
     (synopsis
@@ -4000,13 +4000,13 @@ Pseudomonas aeruginosa for the drug class is fetched from the database.")
 (define-public r-ubms
   (package
     (name "r-ubms")
-    (version "1.2.4")
+    (version "1.2.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ubms" version))
               (sha256
                (base32
-                "10kya1im8czcrqaqq27iylf14v5qcq8nrsb3w0imafak4b8ikz4k"))))
+                "148ai6n0w6k2kvh7m33wc5iyamqh1r9c05i5ivxi9lz0r0xcfl3z"))))
     (properties `((upstream-name . "ubms")))
     (build-system r-build-system)
     (propagated-inputs (list r-unmarked

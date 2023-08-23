@@ -909,6 +909,33 @@ format, stratify a cohort, and calculate SMRs from the stratified cohort and
 rate file.")
     (license license:expat)))
 
+(define-public r-ltar
+  (package
+    (name "r-ltar")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "LTAR" version))
+              (sha256
+               (base32
+                "0jn0fym0v6j9c7pam1samafph9fiqrdr141n3mqj9xks0vaqrqqh"))))
+    (properties `((upstream-name . "LTAR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vars r-rtensor2 r-rtensor r-gsignal))
+    (home-page "https://cran.r-project.org/package=LTAR")
+    (synopsis "Tensor Forecasting Functions")
+    (description
+     "This package provides a set of tools for forecasting the next step in a
+multidimensional setting using tensors.  In the examples, a forecast is made of
+sea surface temperatures of a geographic grid (i.e.  lat/long).  Each
+observation is a matrix, the entries in the matrix and the sea surface
+temperature at a particular lattitude/longitude.  Cates, J., Hoover, R. C.,
+Caudle, K., Kopp, R., & Ozdemir, C. (2021) \"Transform-Based Tensor Auto
+Regression for Multilinear Time Series Forecasting\" in 2021 20th IEEE
+International Conference on Machine Learning and Applications (ICMLA) (pp.
+461-466), IEEE <doi:10.1109/ICMLA52953.2021.00078>.")
+    (license license:gpl3)))
+
 (define-public r-ltable
   (package
     (name "r-ltable")
@@ -1654,13 +1681,13 @@ biplots for the low-rank approximations of the interactions.")
 (define-public r-lsasim
   (package
     (name "r-lsasim")
-    (version "2.1.3")
+    (version "2.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lsasim" version))
               (sha256
                (base32
-                "1iphx4p38z3kfmmm8slqdzi85sy0lhx4p6sp5y1446f8hpcsbxcz"))))
+                "197grlgxvilw43lyjprmik0pjgns979xksi4pv422h9x9fwwyqpn"))))
     (properties `((upstream-name . "lsasim")))
     (build-system r-build-system)
     (propagated-inputs (list r-polycor r-mvtnorm r-cli))
@@ -4522,13 +4549,13 @@ a point mass at k.")
 (define-public r-logcondens
   (package
     (name "r-logcondens")
-    (version "2.1.7")
+    (version "2.1.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "logcondens" version))
               (sha256
                (base32
-                "1y6b7acgxg7v6hc0lkx1mlzs2bzvv0pb6nbccxk3ybgy39bqgn0s"))))
+                "001a2qr2bsdcw784s9mr5j4srqkw3l64aj4jngy7y1yi8xp20fgi"))))
     (properties `((upstream-name . "logcondens")))
     (build-system r-build-system)
     (propagated-inputs (list r-ks))
@@ -9052,13 +9079,13 @@ scientific models.  Based on Goffe et al (1994)
 (define-public r-lightsout
   (package
     (name "r-lightsout")
-    (version "0.3.1")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lightsout" version))
               (sha256
                (base32
-                "01c8mpfqbpii2xyfrp20hzcdaya0wk2kkjviyha1ny03560azb1q"))))
+                "0wkpg4yvn2br0r1vb23vl4ayhg4m8zph57p67wf3a4c0xqga3kvr"))))
     (properties `((upstream-name . "lightsout")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinyjs r-shiny r-magrittr))
@@ -11751,13 +11778,13 @@ single map.")
 (define-public r-leaflet-extras2
   (package
     (name "r-leaflet-extras2")
-    (version "1.2.1")
+    (version "1.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "leaflet.extras2" version))
               (sha256
                (base32
-                "1jh2vpygx4fnj7s0p5hn1wgpddwffvrsfhv7l5lg4cvaf8xzwvn3"))))
+                "0r17wj2qg85y6wcszmbq6nf49k5ddsfprqdscqg2bwdszxrvw2c9"))))
     (properties `((upstream-name . "leaflet.extras2")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-leaflet r-htmltools))
@@ -12414,6 +12441,31 @@ time series models that include abrupt changepoints and smooth dynamics.  The
 methods are described in Blei et al. (2003) <doi:10.1162/jmlr.2003.3.4-5.993>,
 Western and Kleykamp (2004) <doi:10.1093/pan/mph023>, Venables and Ripley (2002,
 ISBN-13:978-0387954578), and Christensen et al. (2018) <doi:10.1002/ecy.2373>.")
+    (license license:expat)))
+
+(define-public r-ldatree
+  (package
+    (name "r-ldatree")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "LDATree" version))
+              (sha256
+               (base32
+                "0spsizvffj59n34ml4sc9d7saq3nw6wj3hi99vgasj5dhj91n3ln"))))
+    (properties `((upstream-name . "LDATree")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-visnetwork r-scales r-magrittr r-lifecycle
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Moran79/LDATree")
+    (synopsis
+     "Classification Trees with Linear Discriminant Analysis at Terminal Nodes")
+    (description
+     "This package provides a classification tree method that uses LDA (Linear
+Discriminant Analysis) for variable selection, split determination, and model
+fitting in terminal nodes.  It automatically handles missing values and offers
+visualization tools.")
     (license license:expat)))
 
 (define-public r-ldashiny

@@ -1450,13 +1450,13 @@ introduction to permutation tests.")
 (define-public r-wpa
   (package
     (name "r-wpa")
-    (version "1.8.1")
+    (version "1.9.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wpa" version))
               (sha256
                (base32
-                "1r9b9w208j2czkjv0z9gi052bcb92psxl42sj0kahhya732mw1yk"))))
+                "0pdvj8q74dd7z3xdp4cb2j85jfhiljvribr23n99k7bi6kdxwyxi"))))
     (properties `((upstream-name . "wpa")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidytext
@@ -1827,17 +1827,16 @@ or tidyverse functions.  This package has been peer-reviewed by @code{rOpenSci}
 (define-public r-workflowr
   (package
     (name "r-workflowr")
-    (version "1.7.0")
+    (version "1.7.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "workflowr" version))
               (sha256
                (base32
-                "0j1ahxm7xjla1xa38dc8ykn1j5a4yw1p8ivjk3k3va25kam25cp3"))))
+                "0ziknnnjqdlzxgxhcqlvpnjlqd33mdglp0wss2pl655slpizzjb4"))))
     (properties `((upstream-name . "workflowr")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
-                             r-xfun
                              r-whisker
                              r-stringr
                              r-rstudioapi
@@ -2149,13 +2148,13 @@ given parallel corpus.")
 (define-public r-worcs
   (package
     (name "r-worcs")
-    (version "0.1.10")
+    (version "0.1.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "worcs" version))
               (sha256
                (base32
-                "0n4ypq430ln13bwc6g2m58pz071g9kwg0qcc450lqf9idal1l1j0"))))
+                "1hnik5hvy47rks1cbmyf0igra40dz1f6fvmy33dd9iljhrkxhapl"))))
     (properties `((upstream-name . "worcs")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml

@@ -4049,13 +4049,13 @@ also provided as a vignette.")
 (define-public r-assist
   (package
     (name "r-assist")
-    (version "3.1.8")
+    (version "3.1.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "assist" version))
               (sha256
                (base32
-                "1ayr3mvv31dm3ff1jfwfshhrfhpyvqnshw3azp0pz96d1f9f31hj"))))
+                "0n2348hld38jg1z8axaqs000qczbwbpq5yq5sshfn9k08p5b1szk"))))
     (properties `((upstream-name . "assist")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlme r-lattice))
@@ -5120,13 +5120,13 @@ RCAR, and RIPPER to build associative classifiers.  Hahsler et al (2019)
 (define-public r-artsy
   (package
     (name "r-artsy")
-    (version "0.2.3")
+    (version "0.2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "aRtsy" version))
               (sha256
                (base32
-                "1h5l7774mg03gjvyl4296hqbcwckr5cq469fmibgh16lh812jakq"))))
+                "08982646gd7m0f7zcj31jq7wmjh0lrl2gys5ma6v6ikqq06piy0c"))))
     (properties `((upstream-name . "aRtsy")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -6432,13 +6432,13 @@ and their corresponding tests.")
 (define-public r-ardl
   (package
     (name "r-ardl")
-    (version "0.2.3")
+    (version "0.2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ARDL" version))
               (sha256
                (base32
-                "13w2dqfn2j186n7ycya7vn8vj3pay242m4gbcg7vjv0x8rm78jlk"))))
+                "02yimcsbw8fgv0qslxp3f38k6wzaxwmp0f8f0k0nxx5bnlkc9c4c"))))
     (properties `((upstream-name . "ARDL")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -7576,26 +7576,6 @@ Draper and H. Smith (3rd Ed., 1998) including all the accompanying datasets.")
      "Collect your data on digital marketing campaigns from Appsflyer using the
 Windsor.ai API <https://windsor.ai/api-fields/>.")
     (license license:gpl3)))
-
-(define-public r-approxot
-  (package
-    (name "r-approxot")
-    (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "approxOT" version))
-              (sha256
-               (base32
-                "1j17dcs4nxss81q1d3mf6h7nkzrq202n7pqb7phza085xmjvpksx"))))
-    (properties `((upstream-name . "approxOT")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcppeigen r-rcppcgal r-rcpp r-bh))
-    (home-page "https://cran.r-project.org/package=approxOT")
-    (synopsis "Approximate and Exact Optimal Transport Methods")
-    (description
-     "R and C++ functions to perform exact and approximate optimal transport.  All C++
-methods are linkable to other R packages via their header files.")
-    (license license:gpl3+)))
 
 (define-public r-approxmatch
   (package
@@ -9875,13 +9855,13 @@ implementation that facilitates fast training through mini-batch learning.")
 (define-public r-anmc
   (package
     (name "r-anmc")
-    (version "0.2.4")
+    (version "0.2.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "anMC" version))
               (sha256
                (base32
-                "03yzyhqfc7g4aqn19iv3pc9413iz4jlh460p17dlbqwzzmici45p"))))
+                "0xrby8qyfd3dgi64kllspvalz9yrxjdj5qd1fqjdl6qwb3h6rkga"))))
     (properties `((upstream-name . "anMC")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-mvtnorm))
@@ -11214,13 +11194,13 @@ instruments simultaneously.")
 (define-public r-amigaffh
   (package
     (name "r-amigaffh")
-    (version "0.4.1")
+    (version "0.4.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "AmigaFFH" version))
               (sha256
                (base32
-                "1iv89nqlqc5lrnz9r56ajgmb54pkk1zafihh1m0528i0hg4l7qxm"))))
+                "0bj21d7k7zqz97aqmqb32hqcg3l1l52jw6yij11j5vsmcz62g0zn"))))
     (properties `((upstream-name . "AmigaFFH")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs r-tuner))
@@ -13922,13 +13902,13 @@ Visit: <https://yqzhong7.github.io/AIPW/> for more information.")
 (define-public r-aion
   (package
     (name "r-aion")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "aion" version))
               (sha256
                (base32
-                "0vnj87r17qsbh9vyp82qsb67lib8ch3j6wban36i9xc1lfljzmri"))))
+                "0m6l67nhip8ln875cxsbjghk27p890yb9xs5v18mrg5gjnjgmas7"))))
     (properties `((upstream-name . "aion")))
     (build-system r-build-system)
     (propagated-inputs (list r-arkhe))
@@ -15324,6 +15304,31 @@ relationship matrices for diploid and autopolyploid species.  Several methods
 are implemented considering additive and non-additive models.")
     (license license:gpl3)))
 
+(define-public r-aggutils
+  (package
+    (name "r-aggutils")
+    (version "1.0.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "aggutils" version))
+              (sha256
+               (base32
+                "0q4ly4wra1nj6zn733a0kvikcbjijailrbiyljyiz61ax4w0v5g6"))))
+    (properties `((upstream-name . "aggutils")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-docstring))
+    (home-page "https://github.com/forecastingresearch/aggutils")
+    (synopsis "Utilities for Aggregating Probabilistic Forecasts")
+    (description
+     "This package provides several methods for aggregating probabilistic forecasts.
+You have a group of people who have made probabilistic forecasts for the same
+event.  You want to take advantage of the \"wisdom of the crowd\" and combine
+these forecasts in some sensible way.  This package provides implementations of
+several strategies, including geometric mean of odds, an extremized aggregate
+(Neyman, Roughgarden (2021) <doi:10.1145/3490486.3538243>), and \"high-density
+trimmed mean\" (Powell et al. (2022) <doi:10.1037/dec0000191>).")
+    (license license:expat)))
+
 (define-public r-aggtrees
   (package
     (name "r-aggtrees")
@@ -15572,6 +15577,26 @@ and the variance of the proposed test statistics is estimated through the
 re-sampling method.  Furthermore, a graphical technique to compare the shape of
 the observed residual to a number of the approximated realizations is provided.")
     (license license:gpl3+)))
+
+(define-public r-aftr2
+  (package
+    (name "r-aftr2")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "aftR2" version))
+              (sha256
+               (base32
+                "1ff8khq9b8hjflkhfc1shx5k7sadcl0ahnsbx9c557b6sm0kqfr6"))))
+    (properties `((upstream-name . "aftR2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival))
+    (home-page "https://cran.r-project.org/package=aftR2")
+    (synopsis "R-Squared Measure under Accelerated Failure Time (AFT) Models")
+    (description
+     "Compute the R-squared measure under the accelerated failure time (AFT) models
+proposed in Chan et.  al. (2018) <doi:10.1080/03610918.2016.1177072>.")
+    (license license:gpl3)))
 
 (define-public r-afthd
   (package
@@ -18143,13 +18168,13 @@ Deconvolution Augmentation of Profiles for Tissue Specific cells
 (define-public r-adaptr
   (package
     (name "r-adaptr")
-    (version "1.3.1")
+    (version "1.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "adaptr" version))
               (sha256
                (base32
-                "0aka1rdzggm1yxia4zq9ipb74lah94l16idqscsakxbakk1hxk65"))))
+                "1kqxlqxbcvx8fy0cdihcl9sxj5y52dkjpymjbdzbrzx3dyq6kmlw"))))
     (properties `((upstream-name . "adaptr")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -18702,20 +18727,19 @@ al. (2019) @code{<arXiv:1907.11572>.}")
 (define-public r-activatr
   (package
     (name "r-activatr")
-    (version "0.1.1")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "activatr" version))
               (sha256
                (base32
-                "0sk2wwfzms2cf6d4z91mi22vss2jiz8ins4pb9djpgi1mln57iqy"))))
+                "0d3r9xp7nrva84az3p211f3g995g8p0lz49f6fjlmzd9pc3jzxg9"))))
     (properties `((upstream-name . "activatr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
                              r-tibble
                              r-slider
                              r-rlang
-                             r-magrittr
                              r-lubridate
                              r-httr
                              r-glue

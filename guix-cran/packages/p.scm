@@ -4676,13 +4676,13 @@ Proteome Discover can be easily used due to flexibility of functions.")
 (define-public r-protrackr
   (package
     (name "r-protrackr")
-    (version "0.3.7")
+    (version "0.3.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ProTrackR" version))
               (sha256
                (base32
-                "15m8g9v254avi68qr7v5q4fzhclkv1q849sj69fs0c9qcli1x384"))))
+                "02r8ax3wajk4fim15r6xkdzn4flw9a76a0gkd7sd7g2ym68rpcp2"))))
     (properties `((upstream-name . "ProTrackR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml r-tuner r-signal r-lattice r-audio))
@@ -6230,13 +6230,13 @@ excursion sets.")
 (define-public r-professr
   (package
     (name "r-professr")
-    (version "2.4-1")
+    (version "2.4-3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ProfessR" version))
               (sha256
                (base32
-                "1wsbx0dsygc1ipzhgs1pd0lhdb0qvp4ydqzwarn6zv27rzf4p3bd"))))
+                "0df7ll7zv3kh5ygdcq9klzjy4g1knd9z0zv3whw5x3a19kkaaili"))))
     (properties `((upstream-name . "ProfessR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rpmg))
@@ -17670,13 +17670,13 @@ available @code{mapDK} package by Sebastian Barfort.")
 (define-public r-plotdap
   (package
     (name "r-plotdap")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "plotdap" version))
               (sha256
                (base32
-                "1g4dfkbwj6673w76ysn236cz05m25y14fnwqbnm0kra3y18a339l"))))
+                "0v9rjz4fbglxcl66wwiipk1jqwm279fqcv0cyqhx3kqxizd2lm2b"))))
     (properties `((upstream-name . "plotdap")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -18648,6 +18648,33 @@ submitted for publication.  For additional references: Dunnett, C. W. (1955)
 microtiter plates.  Easily read in plate-shaped data and convert it to tidy
 format, combine plate-shaped data with tidy data, and view tidy data in plate
 shape.")
+    (license license:gpl3)))
+
+(define-public r-plasso
+  (package
+    (name "r-plasso")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "plasso" version))
+              (sha256
+               (base32
+                "1gx3vzxfnk9knr5wi8hvksjlg38q5gnyw1nci7lm2vi7y92fm5zr"))))
+    (properties `((upstream-name . "plasso")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-matrix r-iterators r-glmnet r-foreach
+                             r-doparallel))
+    (home-page "https://github.com/stefan-1997/plasso")
+    (synopsis "Cross-Validated (Post-) Lasso")
+    (description
+     "Built on top of the glmnet library by Friedman, Hastie and Tibshirani (2010)
+<doi:10.18637/jss.v033.i01>, the plasso package follows Knaus (2022)
+<doi:10.1093/ectj/utac015> and comes up with two functions that estimate least
+squares Lasso and Post-Lasso models.  The plasso() function adds coefficient
+paths for a Post-Lasso model to the standard glmnet output.  On top of that
+cv.plasso() cross-validates the coefficient paths for both the Lasso and
+Post-Lasso model and provides optimal hyperparameter values for the penalty term
+lambda.")
     (license license:gpl3)))
 
 (define-public r-plasmidprofiler
@@ -24789,6 +24816,28 @@ likelihood (2017) <doi:10.1080/10618600.2017.1340302>.")
 comprehension.")
     (license license:gpl2)))
 
+(define-public r-peruflorads43
+  (package
+    (name "r-peruflorads43")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "peruflorads43" version))
+              (sha256
+               (base32
+                "12wsnnsjf6ih8lkpq4k20awicxwcdv7m466vvw2afmky844kq0ss"))))
+    (properties `((upstream-name . "peruflorads43")))
+    (build-system r-build-system)
+    (home-page "https://github.com/PaulESantos/peruflorads43")
+    (synopsis
+     "Reviewed Official Classification of Endangered Wild Flora Species in Peru")
+    (description
+     "Provide users with a convenient way to access and analyze information on
+endangered plant species in Peru based on `Decreto Supremo N 043-2006-AG -
+Aprueban categorizacion de especies amenazadas de flora
+silvestre`<https://sinia.minam.gob.pe/normas/aprueban-categorizacion-especies-amenazadas-flora-silvestre>.")
+    (license license:expat)))
+
 (define-public r-perturbr
   (package
     (name "r-perturbr")
@@ -26534,13 +26583,13 @@ respective probabilities.")
 (define-public r-peip
   (package
     (name "r-peip")
-    (version "2.2-3")
+    (version "2.2-5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PEIP" version))
               (sha256
                (base32
-                "1ljalgffgrn9l3q914jjxrn1j740jqk4j8q1vzn3si4np9mz92vp"))))
+                "1xvwpsnyxnf3qi1hq5r7dx4bi4s03v53r0m979hyyzcc7w9fr5r5"))))
     (properties `((upstream-name . "PEIP")))
     (build-system r-build-system)
     (propagated-inputs (list r-rseis
@@ -26976,22 +27025,27 @@ kernel and burden association statistics.")
 (define-public r-pedbuildr
   (package
     (name "r-pedbuildr")
-    (version "0.2.1")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pedbuildr" version))
               (sha256
                (base32
-                "19yzfg5jms2qnww4p8npmk9815hrgqsbd49h8pi62yy9kjqnccai"))))
+                "1yq5ag62yf6qjkxvr4g0xggag0ic5gyby4y5vnhlakwn0h78yirv"))))
     (properties `((upstream-name . "pedbuildr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-pedtools r-pedprobr r-glue r-forrel))
+    (propagated-inputs (list r-ribd
+                             r-pedtools
+                             r-pedprobr
+                             r-pedmut
+                             r-glue
+                             r-forrel))
     (home-page "https://github.com/magnusdv/pedbuildr")
     (synopsis "Pedigree Reconstruction")
     (description
      "Reconstruct pedigrees from genotype data, by optimising the likelihood over all
 possible pedigrees subject to given restrictions.  Tailor-made plots facilitate
-evaluation of the output.  This package is part of the ped suite ecosystem for
+evaluation of the output.  This package is part of the pedsuite ecosystem for
 pedigree analysis.  In particular, it imports pedprobr for calculating pedigree
 likelihoods and forrel for estimating pairwise relatedness.")
     (license license:gpl3)))
@@ -27581,22 +27635,15 @@ Calculations and Graphs are provided.")
 (define-public r-pdr
   (package
     (name "r-pdr")
-    (version "1.8")
+    (version "1.9.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pdR" version))
               (sha256
                (base32
-                "1sjlcd8g564jrwmlhpjypgwqywz3ggq4lb6xwqzc1basbsx5zfrn"))))
+                "1vkgzkk5l2wjxldriqxjrkkvyyg6n3bhb69hx90ficnyy5q3z7s7"))))
     (properties `((upstream-name . "pdR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sandwich
-                             r-plm
-                             r-paper
-                             r-lmtest
-                             r-coefplot
-                             r-car
-                             r-boot))
     (home-page "https://cran.r-project.org/package=pdR")
     (synopsis
      "Threshold Model and Unit Root Tests in Cross-Section and Time Series Data")
@@ -30205,13 +30252,13 @@ charts, bar charts and box plots with colors, patterns, and images.")
 (define-public r-patternize
   (package
     (name "r-patternize")
-    (version "0.0.4")
+    (version "0.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "patternize" version))
               (sha256
                (base32
-                "08iaaky7rgqd46ln0k5np26y8rkgv07i1n5a05w18066p90pk9h7"))))
+                "1d0x27fy41sdxhmyj4cy01xxxcbyp4hvxjcybbmgg1r4ivi1sp08"))))
     (properties `((upstream-name . "patternize")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -31354,6 +31401,46 @@ class is used to run the PSO with methods to easily print, plot and save the
 result.")
     (license license:gpl3)))
 
+(define-public r-partialnetwork
+  (package
+    (name "r-partialnetwork")
+    (version "1.0.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "PartialNetwork" version))
+              (sha256
+               (base32
+                "1pn308cqwil0k674zc9bqxgxh052avjm2akhm1wm644labmi1vl3"))))
+    (properties `((upstream-name . "PartialNetwork")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppprogress
+                             r-rcppnumerical
+                             r-rcppeigen
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-matrix
+                             r-formula-tools
+                             r-formula
+                             r-foreach
+                             r-dorng
+                             r-doparallel
+                             r-abind))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ahoundetoungan/PartialNetwork")
+    (synopsis "Estimating Peer Effects Using Partial Network Data")
+    (description
+     "This package implements IV-estimator and Bayesian estimator for linear-in-means
+Spatial Autoregressive (SAR) model (see @code{LeSage,} 1997
+<https://journals.sagepub.com/doi/10.1177/016001769702000107>; Lee, 2004
+<https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1468-0262.2004.00558.x>;
+@code{BramoullÃ©} et al., 2009 <doi:10.1016/j.jeconom.2008.12.021>), while
+assuming that only a partial information about the network structure is
+available.  Examples are when the adjacency matrix is not fully observed or when
+only consistent estimation of the network formation model is available (see
+Boucher and Houndetoungan
+@code{<https://ahoundetoungan.com/files/Papers/PartialNetwork.pdf>).}")
+    (license license:gpl3)))
+
 (define-public r-partiallyoverlapping
   (package
     (name "r-partiallyoverlapping")
@@ -32312,13 +32399,13 @@ not split into subsets.")
 (define-public r-parallellogger
   (package
     (name "r-parallellogger")
-    (version "3.2.0")
+    (version "3.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ParallelLogger" version))
               (sha256
                (base32
-                "0wiw5f664gjzx7fqyfxczlibyvd2di1bmpl9gl3hl3psp3niayc0"))))
+                "0arfmjxc68yfznggfv5mmafxn9xvagwxslynhqapw4yf7vlqjjam"))))
     (properties `((upstream-name . "ParallelLogger")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-snow r-jsonlite))
@@ -32751,6 +32838,51 @@ clean the table, and additionally, add a row for the mean of the dependent
 variable without external manipulation.")
     (license license:gpl3+)))
 
+(define-public r-panelr
+  (package
+    (name "r-panelr")
+    (version "0.7.8")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "panelr" version))
+              (sha256
+               (base32
+                "0vq7f91lqpd0n507lswgj7zpp56dzps3zcvbgsp2ivaj3c9vy0s5"))))
+    (properties `((upstream-name . "panelr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-lmertest
+                             r-lme4
+                             r-jtools
+                             r-ggplot2
+                             r-formula
+                             r-dplyr
+                             r-crayon))
+    (native-inputs (list r-knitr))
+    (home-page "https://panelr.jacob-long.com")
+    (synopsis
+     "Regression Models and Utilities for Repeated Measures and Panel Data")
+    (description
+     "This package provides an object type and associated tools for storing and
+wrangling panel data.  Implements several methods for creating regression models
+that take advantage of the unique aspects of panel data.  Among other
+capabilities, automates the \"within-between\" (also known as \"between-within\" and
+\"hybrid\") panel regression specification that combines the desirable aspects of
+both fixed effects and random effects econometric models and fits them as
+multilevel models (Allison, 2009 <doi:10.4135/9781412993869.d33>; Bell & Jones,
+2015 <doi:10.1017/psrm.2014.7>).  These models can also be estimated via
+generalized estimating equations (GEE; @code{McNeish,} 2019
+<doi:10.1080/00273171.2019.1602504>) and Bayesian estimation is (optionally)
+supported via Stan'.  Supports estimation of asymmetric effects models via first
+differences (Allison, 2019 <doi:10.1177/2378023119826441>) as well as a
+generalized linear model extension thereof using GEE.")
+    (license license:expat)))
+
 (define-public r-panelpomp
   (package
     (name "r-panelpomp")
@@ -32845,13 +32977,13 @@ degree of heterogeneity across cross-sectional units in the panel data analysis.
 (define-public r-panelcount
   (package
     (name "r-panelcount")
-    (version "2.0.0")
+    (version "2.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PanelCount" version))
               (sha256
                (base32
-                "0lh90j0d7qwi14c6qq6idiyq0lpz4h8q6f0di9v182svi4s56waz"))))
+                "07dn8a86q51gvy4xkqz2mfmqkc59cf4zcwcqrw366b791y5g182y"))))
     (properties `((upstream-name . "PanelCount")))
     (build-system r-build-system)
     (propagated-inputs (list r-statmod r-rcpparmadillo r-rcpp r-mass))
@@ -32862,7 +32994,7 @@ degree of heterogeneity across cross-sectional units in the panel data analysis.
     (description
      "This package provides a high performance package implementing random effects
 and/or sample selection models for panel count data.  The details of the models
-are discussed in Peng and Van den Bulte (2022) <doi:10.2139/ssrn.2702053>.")
+are discussed in Peng and Van den Bulte (2023) <doi:10.2139/ssrn.2702053>.")
     (license license:expat)))
 
 (define-public r-panelaggregation
@@ -35162,13 +35294,13 @@ method description.")
 (define-public r-pa
   (package
     (name "r-pa")
-    (version "1.2-3")
+    (version "1.2-4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pa" version))
               (sha256
                (base32
-                "0qavvrc44x1cmnshynmmygwa7isxnmffbhhg53wcmpmypim9wfi4"))))
+                "0rjq0b68qh5ayn5nd174bw6h7d707fy4kli1zi74vj4yc51z0las"))))
     (properties `((upstream-name . "pa")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))

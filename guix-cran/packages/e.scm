@@ -1157,13 +1157,13 @@ control groups.  The exterior match is used to compare the two control groups.")
 (define-public r-extdist
   (package
     (name "r-extdist")
-    (version "0.7-1")
+    (version "0.7-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ExtDist" version))
               (sha256
                (base32
-                "0a3ixd9z9ddig9nvd60a6gbmv2bf1irm6rjl39xivq01dmw7j07q"))))
+                "0wramjs7s2nxgjb2k30jgbbpf7pj4a1gzzqx8p1qh4pskh15msfm"))))
     (properties `((upstream-name . "ExtDist")))
     (build-system r-build-system)
     (propagated-inputs (list r-optimx r-numderiv))
@@ -2789,13 +2789,13 @@ see Segal (2019) @code{<arXiv:1803.03356>} for more information.")
 (define-public r-exceedancetools
   (package
     (name "r-exceedancetools")
-    (version "1.3.4")
+    (version "1.3.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ExceedanceTools" version))
               (sha256
                (base32
-                "1vcyla5rgz8ivqzq4qq4bnw4qghkqww6zziwp0374ik86r2f6krb"))))
+                "1yp4dl2sb7j41nbqhx0dsag9b3qg3l82snvjxnb57z4p63zsb2r5"))))
     (properties `((upstream-name . "ExceedanceTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-splancs r-spatialtools r-matrixstats))
@@ -4813,13 +4813,13 @@ interpolate them to a standard one.  Potentially works with many CF-conform
 (define-public r-eurlex
   (package
     (name "r-eurlex")
-    (version "0.4.4")
+    (version "0.4.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eurlex" version))
               (sha256
                (base32
-                "0ncbzixrr0fxjgyhwjwa2y8aqpq7c9m9v3g733n2zg88jpkqqr0q"))))
+                "041xbvkpn692wf5gm98xyxnvzy31lla0x0qnc80vpc82m7s8xyg3"))))
     (properties `((upstream-name . "eurlex")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -6627,17 +6627,18 @@ Science, 9, online. <doi:10.5167/uzh-130652>.")
 (define-public r-ersa
   (package
     (name "r-ersa")
-    (version "0.1.3")
+    (version "0.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ERSA" version))
               (sha256
                (base32
-                "0djh633vmc89vl4bp7p4bazlb0pshpd2yckfj0yjk6vc9lrbql69"))))
+                "1ri2v6qxdi9if10vxxhgj0jwk4whfi45aqqdqri918djg0dk75p1"))))
     (properties `((upstream-name . "ERSA")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-shiny
+                             r-rlang
                              r-rcolorbrewer
                              r-purrr
                              r-miniui
@@ -11096,13 +11097,13 @@ effect modification.")
 (define-public r-endogeneity
   (package
     (name "r-endogeneity")
-    (version "2.1.2")
+    (version "2.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "endogeneity" version))
               (sha256
                (base32
-                "1dmb3gnkb6nxvcyzh7vhh0ra8164b337ir7higc5d3dmmssn81yy"))))
+                "19hhs46sz7m7qsnwrz81740iq6g8n0z3rnw2shv6sakc5z0z7jga"))))
     (properties `((upstream-name . "endogeneity")))
     (build-system r-build-system)
     (propagated-inputs (list r-statmod
@@ -11118,7 +11119,7 @@ effect modification.")
     (description
      "Various recursive two-stage models to address the endogeneity issue of treatment
 variables in observational study or mediators in experiments.  The details of
-the models are discussed in Peng (2022) <doi:10.1287/isre.2022.1113>.")
+the models are discussed in Peng (2023) <doi:10.1287/isre.2022.1113>.")
     (license license:gpl3+)))
 
 (define-public r-encryptr
@@ -13533,13 +13534,13 @@ documents, nodes, clusters, an interface to the cat API, and more.")
 (define-public r-elastes
   (package
     (name "r-elastes")
-    (version "0.1.6")
+    (version "0.1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "elastes" version))
               (sha256
                (base32
-                "1j28vqiflc6ij2yp9cniqs3vcjm597mrzdjvfg3235r9m6gf5yij"))))
+                "0sa95g6wcl3m8aygpg9ip1p3q8hwcin8mglzbl3mc9bvdfwkplsa"))))
     (properties `((upstream-name . "elastes")))
     (build-system r-build-system)
     (propagated-inputs (list r-sparseflmm r-orthogonalsplinebasis r-mgcv
@@ -13831,19 +13832,19 @@ implements methods by Rabe-Hesketh et al. (2003)
 (define-public r-eive
   (package
     (name "r-eive")
-    (version "3.1.1")
+    (version "3.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eive" version))
               (sha256
                (base32
-                "0bwq95xfpy6m0zav9315vb3npay8irjlni0jc9aciz4jyz08if5f"))))
+                "1ziijc43axgsm9j61saab7q4kqysqwx3gvl710lv7m57vll6k4zl"))))
     (properties `((upstream-name . "eive")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
     (home-page "https://cran.r-project.org/package=eive")
     (synopsis
-     "An Algorithm for Reducing Errors-in-Variable Bias in Simple and Multiple Linear Regression")
+     "An Algorithm for Reducing Errors-in-Variable Bias in Simple and Multiple Linear Regressions")
     (description
      "This package performs a compact genetic algorithm search to reduce
 errors-in-variables bias in linear regression.  The algorithm estimates the
@@ -15169,13 +15170,13 @@ are based on the sample covariance.")
 (define-public r-efdr
   (package
     (name "r-efdr")
-    (version "1.2")
+    (version "1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EFDR" version))
               (sha256
                (base32
-                "1k6y2qxfw5py1brh25apmzqm00y3a458x0wrrmdg604g1m9zlkg5"))))
+                "0mjf2r1aa5iyf4b9f50mb50h1rmhwdi3qyh235mihy3pj68195yn"))))
     (properties `((upstream-name . "EFDR")))
     (build-system r-build-system)
     (propagated-inputs (list r-waveslim
@@ -17159,13 +17160,13 @@ metrics to relate pairs of trajectories (dissimilarity and convergence).")
 (define-public r-ecotoxr
   (package
     (name "r-ecotoxr")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ECOTOXr" version))
               (sha256
                (base32
-                "08gkcq08i4sdsx4a12llwvy4hwg7cag355v3xachsxdnzbsc35ai"))))
+                "0i4ghmdqxiqrrlpzccdfsaa1kb3i5c629dci9ix5z94fy0ls611m"))))
     (properties `((upstream-name . "ECOTOXr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -17185,7 +17186,7 @@ metrics to relate pairs of trajectories (dissimilarity and convergence).")
                              r-dplyr
                              r-dbplyr
                              r-crayon))
-    (home-page "<https://github.com/pepijn-devries/ECOTOXr>")
+    (home-page "https://github.com/pepijn-devries/ECOTOXr")
     (synopsis "Download and Extract Data from US EPA's ECOTOX Database")
     (description
      "The US EPA ECOTOX database is a freely available database with a treasure of
@@ -18199,16 +18200,16 @@ downloads of weather forecasts and climate reanalysis data in R.")
 (define-public r-ecm
   (package
     (name "r-ecm")
-    (version "6.3.0")
+    (version "7.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ecm" version))
               (sha256
                (base32
-                "1g8y8wks7asjyybdh4nf19w5v8kvl56n69dl0sd0mlir98i4jmr3"))))
+                "1l254xhvfx7f83lm0jh2sfdy6ffxqmdm7mij37f36bgvagyssclp"))))
     (properties `((upstream-name . "ecm")))
     (build-system r-build-system)
-    (propagated-inputs (list r-urca r-sandwich r-lmtest r-earth r-car))
+    (propagated-inputs (list r-earth r-car))
     (home-page "https://github.com/gaurbans/ecm")
     (synopsis "Build Error Correction Models")
     (description

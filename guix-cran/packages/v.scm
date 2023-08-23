@@ -1707,19 +1707,19 @@ Virtualbox') have to be installed.")
 (define-public r-vmf
   (package
     (name "r-vmf")
-    (version "0.0.1")
+    (version "0.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "vMF" version))
               (sha256
                (base32
-                "1sygiqyzqikrpdiav0117hnv6zynq1d415v73ygjfj4c1v5l05h0"))))
+                "048hlayd4mqj60np3s9fbryd1fxb6zxzvckz18jp0dbmjbmzwbrl"))))
     (properties `((upstream-name . "vMF")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-bh))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ahoundetoungan/vMF")
-    (synopsis "Sampling from von Mises-Fisher Distribution")
+    (synopsis "Sampling from the von Mises-Fisher Distribution")
     (description
      "This package provides fast sampling from von Mises-Fisher distribution using the
 method proposed by Andrew T.A Wood (1994) <doi:10.1080/03610919408813161>.")
@@ -3181,6 +3181,35 @@ accumulation rates and given depth intervals between consecutive samples.")
 model using algorithm by Jin, Lin and Tamvakis (2012)
 <doi.org/10.1016/j.eneco.2012.03.003>.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-vip
+  (package
+    (name "r-vip")
+    (version "0.4.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "vip" version))
+              (sha256
+               (base32
+                "0n87g2z354az0scsf7w7n144p77yv1mk96w5vacn25p7jlldsram"))))
+    (properties `((upstream-name . "vip")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yardstick r-tibble r-ggplot2 r-foreach))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/koalaverse/vip/")
+    (synopsis "Variable Importance Plots")
+    (description
+     "This package provides a general framework for constructing variable importance
+plots from various types of machine learning models in R. Aside from some
+standard model- specific variable importance measures, this package also
+provides model- agnostic approaches that can be applied to any supervised
+learning algorithm.  These include 1) an efficient permutation-based variable
+importance measure, 2) variable importance based on Shapley values (Strumbelj
+and Kononenko, 2014) <doi:10.1007/s10115-013-0679-x>, and 3) the variance-based
+approach described in Greenwell et al. (2018) @code{<arXiv:1805.04755>.} A
+variance-based method for quantifying the relative strength of interaction
+effects is also included (see the previous reference for details).")
+    (license license:gpl2+)))
 
 (define-public r-violinplotter
   (package
@@ -5329,13 +5358,13 @@ Volume 5, <https://dgbonett.sites.ucsc.edu/>.")
 (define-public r-vcdextra
   (package
     (name "r-vcdextra")
-    (version "0.8-4")
+    (version "0.8-5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "vcdExtra" version))
               (sha256
                (base32
-                "0xvhnjd131jmhviknchhj5fz5np1g44csyzf0hf5617chf1v2kzb"))))
+                "09kpfnyi6q7xn4x6f7i3k8g6f2fdnm7kk81lxjmlhhn36jxc2p2i"))))
     (properties `((upstream-name . "vcdExtra")))
     (build-system r-build-system)
     (propagated-inputs (list r-vcd

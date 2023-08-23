@@ -1460,35 +1460,6 @@ Shapley regression, but with a significant advantage on computational
 performance.")
     (license license:gpl3)))
 
-(define-public r-rvowpalwabbit
-  (package
-    (name "r-rvowpalwabbit")
-    (version "0.0.18")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "RVowpalWabbit" version))
-              (sha256
-               (base32
-                "13c6d8n0v44xcvd46id48qgih9bw3hpnp6k4byvln9qjd9ji3pgy"))))
-    (properties `((upstream-name . "RVowpalWabbit")))
-    (build-system r-build-system)
-    (inputs (list zlib))
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://vowpalwabbit.org/")
-    (synopsis "R Interface to the Vowpal Wabbit")
-    (description
-     "The Vowpal Wabbit project is a fast out-of-core learning system sponsored by
-Microsoft Research (having started at Yahoo! Research) and written by John
-Langford along with a number of contributors.  This R package does not include
-the distributed computing implementation of the cluster/ directory of the
-upstream sources.  Use of the software as a network service is also not directly
-supported as the aim is a simpler direct call from R for validation and
-comparison.  Note that this package contains an embedded older version of Vowpal
-Wabbit'.  The package rvw at the @code{GitHub} repo
-<https://github.com/rvw-org/rvw-legacy> can provide an alternative using an
-external Vowpal Wabbit library installation.")
-    (license license:gpl2+)))
-
 (define-public r-rvmmin
   (package
     (name "r-rvmmin")
@@ -1848,13 +1819,13 @@ ISSN:00327786).  Hennekens, and @code{SchaminÃ©e} (2001) <doi:10.2307/3237010>
 (define-public r-rvcompare
   (package
     (name "r-rvcompare")
-    (version "0.1.7")
+    (version "0.1.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RVCompare" version))
               (sha256
                (base32
-                "17xidcn2p27ms4ssl9312i1pbv4dc4873096a7rv5b8ygkgnarrm"))))
+                "0dqz0c3idy9nzb9mlmlnyq05zql0nca1na7qxbgk136g4spbr1n3"))))
     (properties `((upstream-name . "RVCompare")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-pracma r-ggplot2))
@@ -2304,13 +2275,13 @@ criteria in terms of convergence & effective sample size.")
 (define-public r-runjags
   (package
     (name "r-runjags")
-    (version "2.2.2-1")
+    (version "2.2.2-1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "runjags" version))
               (sha256
                (base32
-                "0ab275jgaaz9lr4rp6g9ckdnpccqi26mabn896wyg2q5qzccxxk1"))))
+                "10q5bwf0lj4lpzclfgd5jnzyl9yqgkmflsy5anl5cdi9v15dynci"))))
     (properties `((upstream-name . "runjags")))
     (build-system r-build-system)
     (propagated-inputs (list r-lattice r-coda))
@@ -4518,13 +4489,13 @@ applying them to data.")
 (define-public r-rtableicc
   (package
     (name "r-rtableicc")
-    (version "1.0.7")
+    (version "1.0.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rTableICC" version))
               (sha256
                (base32
-                "1z896675kmm9p5dnmcnsz2205ynf05laqcxvlc9y0g5i0x8rf8v6"))))
+                "110jcrry258mw6dskv1p3pz5h9161y2dk3m8xl92ycvjfnxxzcbx"))))
     (properties `((upstream-name . "rTableICC")))
     (build-system r-build-system)
     (propagated-inputs (list r-partitions r-aster))
@@ -8434,13 +8405,13 @@ scalarisation approach.")
 (define-public r-rr2
   (package
     (name "r-rr2")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rr2" version))
               (sha256
                (base32
-                "1nbjai514zrv5j9w52x59inf9fqy0c7r1ijrr1d3xirkvk8c70mi"))))
+                "0c80zl8qyfd4fdvxp381vixfr8q2dxzn2j7siqawf0dbbvxpdr73"))))
     (properties `((upstream-name . "rr2")))
     (build-system r-build-system)
     (propagated-inputs (list r-phyr
@@ -8641,13 +8612,13 @@ L. Knight (1995) <doi:10.1119/1.17904> for more details.")
 (define-public r-rqdatatable
   (package
     (name "r-rqdatatable")
-    (version "1.3.2")
+    (version "1.3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rqdatatable" version))
               (sha256
                (base32
-                "1rpccibnhpvzf7ysh3h58sxvgbwsv28cpd1w2qw3vwc51rhlsbyp"))))
+                "08bjhfay2n58zsa19r81b8884zahdxi1rylhs4a241sqc0zmns23"))))
     (properties `((upstream-name . "rqdatatable")))
     (build-system r-build-system)
     (propagated-inputs (list r-wrapr r-rquery r-data-table))
@@ -8689,13 +8660,13 @@ government (MSIT) (No.  2022R1A2C1091319).")
 (define-public r-rpymat
   (package
     (name "r-rpymat")
-    (version "0.1.6")
+    (version "0.1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rpymat" version))
               (sha256
                (base32
-                "1gv7xfpjqpzhpbxx82yvbiglgxhgy8r5arqflqhip4il7vljyjki"))))
+                "0zrq4j0xw4blv9bsdrnkf0wb61bsm1lrlh92a2qw8p3daa48833q"))))
     (properties `((upstream-name . "rpymat")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstudioapi
@@ -10055,13 +10026,13 @@ approach and two alternatives approaches to characterize chromatographic column.
 (define-public r-rpdo
   (package
     (name "r-rpdo")
-    (version "0.3.1")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rpdo" version))
               (sha256
                (base32
-                "0yhg858i5a6s68000a74l4gldycbfmcwcvkk5zhjqzpxzdm7pqb2"))))
+                "0sh52y7hmnm9qhyp0m6vp3c23wzz3ds8j577z105s6f3pdf398l0"))))
     (properties `((upstream-name . "rpdo")))
     (build-system r-build-system)
     (propagated-inputs (list r-lifecycle r-chk))
@@ -10503,6 +10474,26 @@ display summary plots that are easy to interpret for a clinician.")
 static analysis tools as checking parameter documentation consistency and
 others.")
     (license license:gpl2+)))
+
+(define-public r-roxyglobals
+  (package
+    (name "r-roxyglobals")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "roxyglobals" version))
+              (sha256
+               (base32
+                "0gsmljh3qf3lgjl7cdh4kayrfjyrcmsrjdmc0y2s5fs21aaj515k"))))
+    (properties `((upstream-name . "roxyglobals")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-roxygen2 r-desc r-codetools r-brio))
+    (home-page "https://github.com/anthonynorth/roxyglobals")
+    (synopsis "'Roxygen2' Global Variable Declarations")
+    (description
+     "Generate @code{utils::globalVariables()} from roxygen2 @@global and @@autoglobal
+tags.")
+    (license license:expat)))
 
 (define-public r-roxygen2md
   (package
@@ -14087,13 +14078,13 @@ proposed by Tiku(1967, 1968) <doi:10.2307/2333859>,
 (define-public r-robustaft
   (package
     (name "r-robustaft")
-    (version "1.4-6")
+    (version "1.4-7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RobustAFT" version))
               (sha256
                (base32
-                "180a662ibl265593d1cplrkmydk4630r1jgfis1mq267l672ajdi"))))
+                "1i000j6d4s0yb99dxyq610a1znkiai9xc9l16wdb7lmnrhixz5qp"))))
     (properties `((upstream-name . "RobustAFT")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-robustbase r-deoptimr))
@@ -15111,13 +15102,13 @@ methods (based on packages distr', @code{distrEx',} @code{distrMod',}
 (define-public r-robeth
   (package
     (name "r-robeth")
-    (version "2.7-7")
+    (version "2.7-8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "robeth" version))
               (sha256
                (base32
-                "19sq1kakkbnikhkc688w7i6xjy9jjxl2h4ymqh1v7yqi4b6kv83n"))))
+                "0f5j9vc1d5nzisqa54ws3l7gn3ccnxg70ybl4fnawi531ih3rw60"))))
     (properties `((upstream-name . "robeth")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -15278,13 +15269,13 @@ and low-level plot functions for the ternary diagram.")
 (define-public r-robcbi
   (package
     (name "r-robcbi")
-    (version "1.1-3")
+    (version "1.1-4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "robcbi" version))
               (sha256
                (base32
-                "0rj732qdd0wd9d9pxldnsw5rif5d7wz327iydvxcf5x8lgvk42jd"))))
+                "17i1isd9j14qbrrp3vqslwi1iig9m10hxyhzmjkpffcm2hsjddwc"))))
     (properties `((upstream-name . "robcbi")))
     (build-system r-build-system)
     (propagated-inputs (list r-robeth))
@@ -18216,6 +18207,29 @@ write version 5 MAT files and version 5 files with variable compression.")
 dispersions.")
     (license license:expat)))
 
+(define-public r-rmass2
+  (package
+    (name "r-rmass2")
+    (version "0.0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rmass2" version))
+              (sha256
+               (base32
+                "0knjg6lzzdihzi8gry54cp76mqha1w7g15ad6kr5vw8nvfff54w6"))))
+    (properties `((upstream-name . "rmass2")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=rmass2")
+    (synopsis
+     "Repeated Measures with Attrition: Sample Sizes and Power Levels for 2 Groups")
+    (description
+     "For the calculation of sample size or power in a two-group repeated measures
+design, accounting for attrition and accommodating a variety of correlation
+structures for the repeated measures; details of the method can be found in the
+scientific paper: Donald Hedeker, Robert D. Gibbons, Christine Waternaux (1999)
+<doi:10.3102/10769986024001070>.")
+    (license (list license:gpl2 license:gpl3))))
+
 (define-public r-rmark
   (package
     (name "r-rmark")
@@ -20296,13 +20310,13 @@ network and associated properties.")
 (define-public r-riverdist
   (package
     (name "r-riverdist")
-    (version "0.16.0")
+    (version "0.16.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "riverdist" version))
               (sha256
                (base32
-                "1r7ya9z8bf0cdn9j1x5k6da11fil3213rxnfwddqfn9ad8gbb341"))))
+                "0n4warz8994zln9x1k1cnqgzn9rh8768p5dw8ywc3qbc2kr10ha9"))))
     (properties `((upstream-name . "riverdist")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf))
@@ -26225,6 +26239,33 @@ Choco-solver software to perform optimization using constraint programming (CP)
 techniques (<https://choco-solver.org/>).")
     (license license:gpl3+)))
 
+(define-public r-restk
+  (package
+    (name "r-restk")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "RESTK" version))
+              (sha256
+               (base32
+                "0pz3gafzvaaxd4qm731ayk7kbjj4w8ylq7z696avcs01r66prrk7"))))
+    (properties `((upstream-name . "RESTK")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-purrr))
+    (home-page "https://cran.r-project.org/package=RESTK")
+    (synopsis "An Implementation of the RESTK Algorithm")
+    (description
+     "Implementation of the RESTK algorithm based on Markov's Inequality from
+Vilardell, Sergi, Serra, Isabel, Mezzetti, Enrico, Abella, Jaume, Cazorla,
+Francisco J. and Del Castillo, J. (2022). \"Using Markov's Inequality with
+Power-Of-k Function for Probabilistic WCET Estimation\".  In 34th Euromicro
+Conference on Real-Time Systems (ECRTS 2022).  Leibniz International Proceedings
+in Informatics (LIPIcs) 231 20:1-20:24. <doi:10.4230/LIPIcs.ECRTS.2022.20>.
+This work has been supported by the European Research Council (ERC) under the
+European Union's Horizon 2020 research and innovation programme (grant agreement
+No.  772773).")
+    (license license:gpl3)))
+
 (define-public r-restimizeapi
   (package
     (name "r-restimizeapi")
@@ -26702,13 +26743,13 @@ details.")
 (define-public r-resilience
   (package
     (name "r-resilience")
-    (version "2023.1.0")
+    (version "2023.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "resilience" version))
               (sha256
                (base32
-                "0c6d7qjsyfhgbcasndfkmgqpc1n9cvpbbwa93lsn49hhpl3hnyva"))))
+                "0pa0c5l3jm5szn7vffg030krn7f9lz9riqvjz9n7waiszfs0mzdr"))))
     (properties `((upstream-name . "resilience")))
     (build-system r-build-system)
     (propagated-inputs (list r-nptest r-foreach r-doparallel))
@@ -30831,13 +30872,13 @@ studies.")
 (define-public r-refbasedmi
   (package
     (name "r-refbasedmi")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RefBasedMI" version))
               (sha256
                (base32
-                "1b28mm7wfrffwhr7zbhfgp5svbnvnahiwkh514977w1azbqsfcjd"))))
+                "0gn80inzb9ldh85ihwn7jzpg6ccjhzb2f56qzk2w2wcd86s9j6lh"))))
     (properties `((upstream-name . "RefBasedMI")))
     (build-system r-build-system)
     (propagated-inputs (list r-pastecs
@@ -30868,13 +30909,13 @@ methods (and their reference groups) can be specified.")
 (define-public r-ref-icar
   (package
     (name "r-ref-icar")
-    (version "2.0")
+    (version "2.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ref.ICAR" version))
               (sha256
                (base32
-                "0fywjhq2m3pw313sf0pyss7qz6gw72f0krk7ml02a35j150h1yzi"))))
+                "1mix12qxap6rqs6dg4nlbm9vlkzxgr1ivkjjkzap3k0km0agldx9"))))
     (properties `((upstream-name . "ref.ICAR")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdep
@@ -30898,7 +30939,7 @@ methods (and their reference groups) can be specified.")
 prior.  This model provides an objective Bayesian approach for modeling
 spatially correlated areal data using an intrinsic conditional autoregressive
 prior on a vector of spatial random effects.")
-    (license license:gpl2+)))
+    (license license:expat)))
 
 (define-public r-reemtree
   (package
@@ -31630,6 +31671,30 @@ the web programmatically.  The @code{redcapAPI} package facilitates the process
 of accessing data with options to prepare an analysis-ready data set consistent
 with the definitions in a database's data dictionary.")
     (license license:gpl2)))
+
+(define-public r-redbookperu
+  (package
+    (name "r-redbookperu")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "redbookperu" version))
+              (sha256
+               (base32
+                "1xmwqfhq7n6v3yjsnykz9px11chp2sph0bv0bg8wp0xbm72lzgqn"))))
+    (properties `((upstream-name . "redbookperu")))
+    (build-system r-build-system)
+    (home-page "https://github.com/PaulESantos/redbookperu")
+    (synopsis
+     "Access and Analyze the Data from the Red Book of Endemic Plants of Peru")
+    (description
+     "Access and analysis of data from `The Red Book of Endemic Plants of Peru`
+@code{LeÃ³n,} B., Roque, J., Ulloa, C., Jorgensen, P.M., Pitman, N., Cano, A.
+(2006)<doi:10.15381/rpb.v13i2.1782> providing taxonomic, geographic, and
+conservation information about Peru's endemic plant species.  The package offers
+functions to check species inclusion, obtain updated taxonomic details, and
+explore the dataset.")
+    (license license:expat)))
 
 (define-public r-redas
   (package
@@ -33812,16 +33877,16 @@ implementations.")
 (define-public r-rdwplus
   (package
     (name "r-rdwplus")
-    (version "0.1.0")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rdwplus" version))
               (sha256
                (base32
-                "1y4dnm2bb0w6pim4h79mv2km88s78vhsn5fhs7z45m0564hgk0x2"))))
+                "0bcdpza4rbvfzn69zws5s2l32rs7m39a5h3zxyz4gszff3yn37fx"))))
     (properties `((upstream-name . "rdwplus")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rgrass7 r-raster))
+    (propagated-inputs (list r-stringr r-stars r-sf r-rgrass))
     (home-page "https://cran.r-project.org/package=rdwplus")
     (synopsis "An Implementation of IDW-PLUS")
     (description
@@ -37518,13 +37583,13 @@ package, and is primarily for illustrative purposes.")
 (define-public r-rcmdrplugin-survival
   (package
     (name "r-rcmdrplugin-survival")
-    (version "1.3-0")
+    (version "1.3-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RcmdrPlugin.survival" version))
               (sha256
                (base32
-                "00baj2afa39n0r7hpinigdrx3jmr7akffsj0hy1wjdx673kzp242"))))
+                "1kyqrpqi1gbc7vbdy524a7ifpnsx42rkz34p72cdi7qjyq8x7vs7"))))
     (properties `((upstream-name . "RcmdrPlugin.survival")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rcmdr r-date r-car))
@@ -38432,13 +38497,13 @@ package requires a valid API key.  See vignettes for instructions on use.")
 (define-public r-rclickhouse
   (package
     (name "r-rclickhouse")
-    (version "0.6.7")
+    (version "0.6.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RClickhouse" version))
               (sha256
                (base32
-                "0pnavhsxza379c6j6bzpqg0m9dhfaivf3zcvxw6hsc64mgb7wjpd"))))
+                "1n3h9q0xx64pq4k584hqpk802kjs6k68dhyd7bgy9w9m1ifcx8fg"))))
     (properties `((upstream-name . "RClickhouse")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp
@@ -40275,13 +40340,13 @@ distribution and random vectors from the Dirichlet distribution.")
 (define-public r-rbest
   (package
     (name "r-rbest")
-    (version "1.7-1")
+    (version "1.7-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RBesT" version))
               (sha256
                (base32
-                "0785a5q2m5371arwvybdc72nly87az5qqbp5sgvfdy9rz9xgldnl"))))
+                "16ws9bg9a646mh6lhyfzvhgczbi5fi5a3cw4vlxh5w68by5h1s5x"))))
     (properties `((upstream-name . "RBesT")))
     (build-system r-build-system)
     (inputs (list pandoc pandoc))
@@ -42176,13 +42241,13 @@ metadata for each of the input variables needed for sending the data inquery.")
 (define-public r-rarity
   (package
     (name "r-rarity")
-    (version "1.3-6")
+    (version "1.3-8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Rarity" version))
               (sha256
                (base32
-                "1m742qrgc0c5vda9sb2q5n3ghmqnlnfhr1cfpxfs7s5ic707gmlb"))))
+                "1x4jwlk8d4nx6xq5kimsr63d7fnhdn3w5zgjrzgbz9yc3kjxgsm6"))))
     (properties `((upstream-name . "Rarity")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=Rarity")

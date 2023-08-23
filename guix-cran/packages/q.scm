@@ -3927,13 +3927,13 @@ B. (2000) <doi:10.1093/biomet/87.4.823>.")
 (define-public r-qicharts2
   (package
     (name "r-qicharts2")
-    (version "0.7.2")
+    (version "0.7.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "qicharts2" version))
               (sha256
                (base32
-                "01vbghxz9zwhjg6fl6djwidhsf0yy0gx3fx5d8syis4wc8xzhmby"))))
+                "147wzp1n55nrmrjzkzflrz1g2r4iif5nyncjlmcp9zk22qx1kl05"))))
     (properties `((upstream-name . "qicharts2")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-ggplot2))
@@ -4452,13 +4452,13 @@ fatty acid signature analysis (QFASA) to study predator diets.")
 (define-public r-qfa
   (package
     (name "r-qfa")
-    (version "2.0")
+    (version "2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "qfa" version))
               (sha256
                (base32
-                "0cvqgirfndwwlwpsqamhz9jmq8nqhaak1z908bw567h7l0skxc60"))))
+                "1cawddpspdwrnc7ysp0v109j3k1lqpl9gyhp0jg5ribfiipyszww"))))
     (properties `((upstream-name . "qfa")))
     (build-system r-build-system)
     (propagated-inputs (list r-rhpcblasctl
@@ -5247,16 +5247,17 @@ Hong Zhang, Judong Shen and Zheyang Wu (2020) @code{<arXiv:2005.00905>.}")
 (define-public r-qape
   (package
     (name "r-qape")
-    (version "2.0")
+    (version "2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "qape" version))
               (sha256
                (base32
-                "0fzh3n5g9q1wh5pahm7ynw83gc2afb71rqcxfp288zd0shf97q6p"))))
+                "18ryi0mxpm6rcfqj8dl4rvmkcpkch4yv001lwkbsipdm206704ys"))))
     (properties `((upstream-name . "qape")))
     (build-system r-build-system)
-    (propagated-inputs (list r-plyr
+    (propagated-inputs (list r-reshape2
+                             r-plyr
                              r-mvtnorm
                              r-matrixcalc
                              r-matrix
@@ -5267,8 +5268,8 @@ Hong Zhang, Judong Shen and Zheyang Wu (2020) @code{<arXiv:2005.00905>.}")
     (synopsis "Quantile of Absolute Prediction Errors")
     (description
      "Estimates QAPE using bootstrap procedures.  The residual, parametric and double
-bootstrap algorithms are used.  Functions using the parallel computing for
-bootstrapping and Monte Carlo analyses have been added.")
+bootstrap is used.  The test of normality using Cholesky decomposition is added.
+ Y pop is defined.")
     (license license:gpl2)))
 
 (define-public r-qaig

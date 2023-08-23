@@ -4294,13 +4294,13 @@ package additionally allows for a doubly truncated normal distribution.")
 (define-public r-truncexpfam
   (package
     (name "r-truncexpfam")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TruncExpFam" version))
               (sha256
                (base32
-                "0059afyfvzliwpw4l1846yxcpqqdy9c2kk0xa0fl5nxh89c2hr7v"))))
+                "11i28jqxy2isfqalf1b32x39d3g443kw86ci3nsb1nlzyrw6lis5"))))
     (properties `((upstream-name . "TruncExpFam")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmutil r-invgamma))
@@ -6465,6 +6465,50 @@ Dry Deposition Model.  Nowak DJ, Crane DE, Stevens JC (2006)
 EPA-454/B-96-001.  Weiss A, Norman JM (1985) Agricultural and Forest Meteorology
 34: 205â213.")
     (license license:gpl2)))
+
+(define-public r-treedbalance
+  (package
+    (name "r-treedbalance")
+    (version "1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "treeDbalance" version))
+              (sha256
+               (base32
+                "0i2sqvqjiw26z3fnbz6h3ki2yjhy0g33rr7wd4bl4vwvr833z7c2"))))
+    (properties `((upstream-name . "treeDbalance")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rgl))
+    (home-page "https://cran.r-project.org/package=treeDbalance")
+    (synopsis "Computation of 3D Tree Imbalance")
+    (description
+     "The main goal of the R package @code{treeDbalance} is to provide functions for
+the computation of several measurements of 3D node imbalance and their
+respective 3D tree imbalance indices, as well as to introduce the new phylo3D
+format for rooted 3D tree objects.  Moreover, it encompasses an example dataset
+of 3D models of 63 beans in phylo3D format.  Please note that this R package was
+developed alongside the project described in the manuscript Measuring 3D tree
+imbalance of plant models using graph-theoretical approaches by M. Fischer, S.
+Kersting, and L. KÃ¼hn (2023) @code{<arXiv:2307.14537>,} which provides precise
+mathematical definitions of the measurements.  Furthermore, the package contains
+several helpful functions, for example, some auxiliary functions for computing
+the ancestors, descendants, and depths of the nodes, which ensures that the
+computations can be done in linear time.  Most functions of @code{treeDbalance}
+require as input a rooted tree in the phylo3D format, an extended phylo format
+(as introduced in the R package ape 1.9 in November 2006).  Such a phylo3D
+object must have at least two new attributes next to those required by the phylo
+format: node.coord', the coordinates of the nodes, as well as edge.weight', the
+literal weight or volume of the edges.  Optional attributes are edge.diam', the
+diameter of the edges, and edge.length', the length of the edges.  For
+visualization purposes one can also specify edge.type', which ranges from normal
+cylinder to bud to leaf, as well as edge.color to change the color of the edge
+depiction.  This project was supported by the joint research project DIG-IT!
+funded by the European Social Fund (ESF), reference: ESF/14-BM-A55-0017/19, and
+the Ministry of Education, Science and Culture of Mecklenburg-Western Pomerania,
+Germany, as well as by the the project @code{ArtIGROW,} which is a part of the
+WIR!-Alliance @code{ArtIFARM} â Artificial Intelligence in Farming funded by
+the German Federal Ministry of Education and Research (FKZ: 03WIR4805).")
+    (license license:gpl3)))
 
 (define-public r-treedater
   (package
@@ -10682,13 +10726,13 @@ al (2019) <doi:10.1093/bioinformatics/btz447>.")
 (define-public r-tmle
   (package
     (name "r-tmle")
-    (version "1.5.0.2")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tmle" version))
               (sha256
                (base32
-                "1m1zz48cp8agxswgrwvvzdh50kyyc84hw328nyhbbnfkx19c6wj7"))))
+                "19rgp2m793zs8wd97c0fmjqj1mvq608xj8nm4w12c9nl8nvwm4w6"))))
     (properties `((upstream-name . "tmle")))
     (build-system r-build-system)
     (propagated-inputs (list r-superlearner r-glmnet))
@@ -10755,13 +10799,13 @@ and Yoshida (2023) <doi:10.21203/rs.3.rs-3047827/v1>, Yoshida et al. (2022)
 (define-public r-tmisc
   (package
     (name "r-tmisc")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Tmisc" version))
               (sha256
                (base32
-                "1zs7zxawl13pils9hff0i5aplxy32ccp27jcmjdh39lgf083s3v3"))))
+                "0j2cr51mrbxpmk70dz99d7h2y2y649zaql6262v7nzvqyc6m1h47"))))
     (properties `((upstream-name . "Tmisc")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-rstudioapi r-magrittr r-dplyr))
@@ -11782,21 +11826,22 @@ Ecology Resources, 17: 608-613.
 (define-public r-tipa
   (package
     (name "r-tipa")
-    (version "1.0.5")
+    (version "1.0.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tipa" version))
               (sha256
                (base32
-                "1mdjpbdbgd5n22l7fc0bfansh536ib1bgjaxzrl8g534cjxdnhgl"))))
+                "0w637cmg82h758kayf17z70kls7gs1h44b1ridd311j0yz4f5x6a"))))
     (properties `((upstream-name . "tipa")))
     (build-system r-build-system)
-    (propagated-inputs (list r-optimr))
+    (propagated-inputs (list r-optimx))
     (home-page "https://tipa.hugheylab.org")
     (synopsis "Tau-Independent Phase Analysis for Circadian Time-Course Data")
     (description
      "Accurately estimates phase shifts by accounting for period changes and for the
-point in the circadian cycle at which the stimulus occurs.")
+point in the circadian cycle at which the stimulus occurs.  See Tackenberg et
+al. (2018) <doi:10.1177/0748730418768116>.")
     (license license:gpl2)))
 
 (define-public r-tip
@@ -14678,13 +14723,13 @@ manipulation with minimal overhead.")
 (define-public r-tidyestimate
   (package
     (name "r-tidyestimate")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tidyestimate" version))
               (sha256
                (base32
-                "0cwk6clah4sapbmfl5vvcv6di39azxb07z73pypnqx4gd32kk5q7"))))
+                "0jsi14az84np5wr5zrqgnvy3rn9sv7v8yf7k34iacj35gdw7yx6c"))))
     (properties `((upstream-name . "tidyestimate")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-glue r-ggrepel r-ggplot2 r-dplyr))
@@ -15647,13 +15692,13 @@ dplyr time-based groups.")
 (define-public r-thurstonianirt
   (package
     (name "r-thurstonianirt")
-    (version "0.12.1")
+    (version "0.12.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "thurstonianIRT" version))
               (sha256
                (base32
-                "1qac1kg441x6fx3nxlhj1w1q7b3isivw6hzy7np3g1ics3kxpw8b"))))
+                "038d26hmhmyjwxssl4568ypjn8q28k08abz05ccddiw8ai992rw3"))))
     (properties `((upstream-name . "thurstonianIRT")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -15666,7 +15711,6 @@ dplyr time-based groups.")
                              r-rcppeigen
                              r-rcpp
                              r-mvtnorm
-                             r-mplusautomation
                              r-magrittr
                              r-lavaan
                              r-knitr
@@ -16839,13 +16883,13 @@ noisy black-box functions.  For details and tutorials, see Gramacy (2007)
 (define-public r-tglkmeans
   (package
     (name "r-tglkmeans")
-    (version "0.3.10")
+    (version "0.3.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tglkmeans" version))
               (sha256
                (base32
-                "1zjlllmgb4i2afmr29yq8svjlx5jlb87j18l5hy6wmr025c8njic"))))
+                "036b4f3qns6av2pmldd7dkkcrlxbdfdmlc6mx2yvbcwfzg0qfhcn"))))
     (properties `((upstream-name . "tglkmeans")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -23063,6 +23107,28 @@ example, track reconstruction, a rotation test, and Mahalanobis distance
 analysis).")
     (license license:gpl3+)))
 
+(define-public r-tagr
+  (package
+    (name "r-tagr")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "tagr" version))
+              (sha256
+               (base32
+                "0b1l3jg19r4s2awy1syj5i65r8cyrvplrichfq10c466rz5pm0b3"))))
+    (properties `((upstream-name . "tagr")))
+    (build-system r-build-system)
+    (home-page "https://github.com/jsugarelli/tagr/")
+    (synopsis "Tagging and Organizing Objects in R")
+    (description
+     "This package provides functions for attaching tags to R objects, searching for
+objects based on tags, and removing tags from objects.  It also includes a
+function for removing all tags from an object, as well as a function for
+deleting all objects with a specific tag from the R environment.  The package is
+useful for organizing and managing large collections of objects in R.")
+    (license license:gpl3)))
+
 (define-public r-tagcloud
   (package
     (name "r-tagcloud")
@@ -23369,16 +23435,16 @@ special handling for the format currently in use.")
 (define-public r-tabula
   (package
     (name "r-tabula")
-    (version "2.0.0")
+    (version "3.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tabula" version))
               (sha256
                (base32
-                "13mg0cacwx606942n40icr83yzq3px50wqfpxync0zraf6kr4zpp"))))
+                "1jdm37p1sc55xb3ha7rha65wv1jnfg29xxgpcfa4yikpfby1m834"))))
     (properties `((upstream-name . "tabula")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlang r-ggplot2 r-arkhe))
+    (propagated-inputs (list r-arkhe))
     (native-inputs (list r-knitr))
     (home-page "https://packages.tesselle.org/tabula/")
     (synopsis "Analysis and Visualization of Archaeological Count Data")
@@ -23386,9 +23452,9 @@ special handling for the format currently in use.")
      "An easy way to examine archaeological count data.  This package provides several
 tests and measures of diversity: heterogeneity and evenness (Brillouin, Shannon,
 Simpson, etc.), richness and rarefaction (Chao1, Chao2, ACE, ICE, etc.),
-turnover and similarity (Brainerd-Robinson, etc.).  The package make it easy to
+turnover and similarity (Brainerd-Robinson, etc.).  It allows to easily
 visualize count data and statistical thresholds: rank vs abundance plots,
-heatmaps, Ford (1962) and Bertin (1977) diagrams.")
+heatmaps, Ford (1962) and Bertin (1977) diagrams, etc.")
     (license license:gpl3+)))
 
 (define-public r-tabshiftr
@@ -24081,13 +24147,13 @@ functions.")
 (define-public r-tabbycat
   (package
     (name "r-tabbycat")
-    (version "0.17.0")
+    (version "0.18.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tabbycat" version))
               (sha256
                (base32
-                "1q18vnk4jyql46vjj6bhn2sa65yswg1hw8mbrwv7602dfk09p74x"))))
+                "1vp9cmjdj5zz2lkvc5jgd0f28wr2x4d4hif9aqnmwkkwm0ysb16h"))))
     (properties `((upstream-name . "tabbycat")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

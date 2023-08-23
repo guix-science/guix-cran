@@ -1160,13 +1160,13 @@ concentration versus time curve.")
 (define-public r-guilds
   (package
     (name "r-guilds")
-    (version "1.4.5")
+    (version "1.4.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GUILDS" version))
               (sha256
                (base32
-                "0pxajjrvihvk4yjr9h7yx85daxsbkapzf9dw6xxhxb1idnyihirm"))))
+                "0rjlx13shzmamxzqng0qjl5kwzg111lq245y9z6axb3al3ly59ij"))))
     (properties `((upstream-name . "GUILDS")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-pracma r-nloptr))
@@ -1763,13 +1763,13 @@ opinionated niche capabilities and helpers functions.")
 (define-public r-gtestsmulti
   (package
     (name "r-gtestsmulti")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gTestsMulti" version))
               (sha256
                (base32
-                "06lra9jknwrs9w5d23nyxjpy8k4v2dk4zib5n4mx14zgd3bmf7ca"))))
+                "126731bb0f454x0pr378x6ri71i8nl6i6zcqx9jdv68wj8f4g0zy"))))
     (properties `((upstream-name . "gTestsMulti")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-mass))
@@ -2198,17 +2198,16 @@ regularization.  Journal of Machine Learning Research, to appear, 2017\".")
 (define-public r-gsodr
   (package
     (name "r-gsodr")
-    (version "3.1.8")
+    (version "3.1.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GSODR" version))
               (sha256
                (base32
-                "13bw3v0s14p90c10vkpv4ghjaz7sfhyfhaw3dc4341p39fqnhdpl"))))
+                "0pjiblwjsy13cv6sivqhgjbrh9an3rm84mbm8c4v7z560q4y50ij"))))
     (properties `((upstream-name . "GSODR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-r-utils r-httr r-data-table r-curl
-                             r-countrycode))
+    (propagated-inputs (list r-r-utils r-data-table r-curl r-countrycode))
     (native-inputs (list r-knitr))
     (home-page "https://docs.ropensci.org/GSODR/")
     (synopsis "Global Surface Summary of the Day ('GSOD') Weather Data Client")
@@ -3374,13 +3373,13 @@ growth curves) at isolated time points.")
 (define-public r-growthpheno
   (package
     (name "r-growthpheno")
-    (version "2.1.19")
+    (version "2.1.21")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "growthPheno" version))
               (sha256
                (base32
-                "1cs544s2xvqv8zgy9mccz4y4qs5nncrzmi2slmwnjh94nk1481aw"))))
+                "01xsmkl9hywxz1ykghys7i6451iwq78n6pjbjsh505lqnzg5prv5"))))
     (properties `((upstream-name . "growthPheno")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi
@@ -3881,13 +3880,13 @@ of the grouping regarding an outcome of interest, as described in Becker et.  al
 (define-public r-groundhog
   (package
     (name "r-groundhog")
-    (version "3.1.0")
+    (version "3.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "groundhog" version))
               (sha256
                (base32
-                "12x0wm0acksgkg6ap6rzl76a9szfrpjvksyq768n6jqr5aixchv9"))))
+                "1cmzfwlccyp3wx5sx9lm09arvh7pnb233g42v2bak66dj7db60vn"))))
     (properties `((upstream-name . "groundhog")))
     (build-system r-build-system)
     (home-page "https://groundhogr.com/")
@@ -7720,13 +7719,13 @@ implementation to allow easy specification of various GPs'.")
 (define-public r-gparotation
   (package
     (name "r-gparotation")
-    (version "2023.3-1")
+    (version "2023.8-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GPArotation" version))
               (sha256
                (base32
-                "09iar73z0jnrikmscj2xanx0jnppipjziw41k9y6na257mn0hj47"))))
+                "1syg3snv95dv3pas5y5kqsm2hrmg1pdzgmy1m8nx9qkpwiwx8ig4"))))
     (properties `((upstream-name . "GPArotation")))
     (build-system r-build-system)
     (home-page "https://optimizer.r-forge.r-project.org/GPArotation_www/")
@@ -8103,13 +8102,13 @@ et al (1998, ISBN:0-471-55894-X), Korte, Vygen (2018)
 (define-public r-googleway
   (package
     (name "r-googleway")
-    (version "2.7.7")
+    (version "2.7.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "googleway" version))
               (sha256
                (base32
-                "0pcc5ypd5nn5m6xf3p9vdfj2a8f2dxrrqzfq5qm18mlfl9pnvn7x"))))
+                "17mihhyavl07aiyhm5pcsihmwznbdca5yfcaq4qk8kiyh81nnml0"))))
     (properties `((upstream-name . "googleway")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
@@ -12427,13 +12426,13 @@ positive when needed.")
 (define-public r-glassofast
   (package
     (name "r-glassofast")
-    (version "1.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "glassoFast" version))
               (sha256
                (base32
-                "1sgmh4l06q7mrmgnimphpqgix4k4jzaj2l30kpmnf92caa2v7ngw"))))
+                "0nyvmmrw6cr5j1mkf1qv6hn3q24kyn6gn48q6r7az4vn1m141hzz"))))
     (properties `((upstream-name . "glassoFast")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -13303,6 +13302,33 @@ References: Yu, C., N. T. Penna, and Z. Li (2017)
 <doi:10.1002/2016JD025753>.")
     (license license:gpl3)))
 
+(define-public r-ginormal
+  (package
+    (name "r-ginormal")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ginormal" version))
+              (sha256
+               (base32
+                "0kxc7n70ib5srp0z2ky1xjs13mf3xv0aggq7c8khdn7zz3q4y356"))))
+    (properties `((upstream-name . "ginormal")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bas))
+    (native-inputs (list gfortran))
+    (home-page "URLencode")
+    (synopsis "Generalized Inverse Normal Distribution Density and Generation")
+    (description
+     "Density function and generation of random variables from the Generalized Inverse
+Normal (GIN) distribution from Robert (1991) <doi:10.1016/0167-7152(91)90174-P>.
+ Also provides density functions and generation from the GIN distribution
+truncated to positive or negative reals.  Theoretical guarantees supporting the
+sampling algorithms and an application to Bayesian estimation of network
+formation models can be found in the working paper Ding, Estrada and
+@code{Montoya-BlandÃ³n} (2023)
+<https://www.smontoyablandon.com/publication/networks/network_externalities.pdf>.")
+    (license license:gpl3+)))
+
 (define-public r-giniwegneg
   (package
     (name "r-giniwegneg")
@@ -13875,13 +13901,13 @@ Schweitzer, F. (2019) <doi:10.1145/3341161.3342926> Casiraghi, G. (2019)
 (define-public r-ghyp
   (package
     (name "r-ghyp")
-    (version "1.6.3")
+    (version "1.6.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ghyp" version))
               (sha256
                (base32
-                "0jc4rrw0ny0x15im2r9kyrlg9qdnljnbpg5pq4avy997nfdgyhav"))))
+                "0964gr8hmqrbg7rwm4hplxfqz2iccpir1dchmnqidkjqj8p9yy1d"))))
     (properties `((upstream-name . "ghyp")))
     (build-system r-build-system)
     (propagated-inputs (list r-numderiv r-mass))
@@ -17467,13 +17493,13 @@ remember ggplot2 sequences.")
 (define-public r-gge
   (package
     (name "r-gge")
-    (version "1.7")
+    (version "1.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gge" version))
               (sha256
                (base32
-                "1lis0w4n0fns1fsl95p1pbvbqkb3vlwzb5pk5hqlzadjrnrs6gzw"))))
+                "1c8f8g4nw245cjxpx3fjw03cgwc1q13k9ly9jx1jcc6k6hsdkx9k"))))
     (properties `((upstream-name . "gge")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2 r-nipals))
@@ -17484,7 +17510,7 @@ remember ggplot2 sequences.")
      "Create biplots for GGE (genotype plus genotype-by-environment) and GGB (genotype
 plus genotype-by-block-of-environments) models.  See Laffont et al. (2013)
 <doi:10.2135/cropsci2013.03.0178>.")
-    (license license:gpl3)))
+    (license license:expat)))
 
 (define-public r-ggdoubleheat
   (package
@@ -20980,13 +21006,13 @@ while others require an internet connection.")
 (define-public r-geojsonio
   (package
     (name "r-geojsonio")
-    (version "0.11.1")
+    (version "0.11.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "geojsonio" version))
               (sha256
                (base32
-                "13nbgaz06gqgzn9yam0psikkpglgk6w66gqdh1cj4320jid09n3s"))))
+                "1k5chrwbahzshx35s3y8dbiq47d277yqqpwhh5dyqm7ay3xqvv34"))))
     (properties `((upstream-name . "geojsonio")))
     (build-system r-build-system)
     (propagated-inputs (list r-v8
@@ -21540,6 +21566,46 @@ methods were originally proposed in the field of brain imagery (seed Cai and al.
 Apparicio <doi:10.4000/cybergeo.36414>).")
     (license license:gpl2)))
 
+(define-public r-geocausal
+  (package
+    (name "r-geocausal")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "geocausal" version))
+              (sha256
+               (base32
+                "1pzfnq02wj3wwgpcdz24v1ism3d8j9z71kdy4ldjvihkhh2ac4sa"))))
+    (properties `((upstream-name . "geocausal")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-spatstat-model
+                             r-spatstat-geom
+                             r-spatstat-explore
+                             r-sp
+                             r-sf
+                             r-raster
+                             r-purrr
+                             r-progressr
+                             r-mclust
+                             r-latex2exp
+                             r-ggpubr
+                             r-ggplot2
+                             r-furrr
+                             r-dplyr
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mmukaigawara/geocausal")
+    (synopsis "Causal Inference with Spatio-Temporal Data")
+    (description
+     "Spatio-temporal causal inference based on point process data.  You provide the
+raw data of locations and timings of treatment and outcome events, specify
+counterfactual scenarios, and the package estimates causal effects over
+specified spatial and temporal windows.  See Papadogeorgou, et al. (2022)
+<doi:10.1111/rssb.12548>.")
+    (license license:expat)))
+
 (define-public r-geocacher
   (package
     (name "r-geocacher")
@@ -21605,13 +21671,13 @@ topology.")
 (define-public r-geobayes
   (package
     (name "r-geobayes")
-    (version "0.7.2")
+    (version "0.7.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "geoBayes" version))
               (sha256
                (base32
-                "039j7jj1r3ygizpwx6ixih5lny0l8rza95bvinjbmmfpval40vmi"))))
+                "14h3iwc0i8y205wvh81zmgz7x4qd605g7w2d3s4s4whnsmi7wf0q"))))
     (properties `((upstream-name . "geoBayes")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-optimx r-coda))
@@ -23545,6 +23611,37 @@ following general models : mixture models, composite models, folded models,
 skewed symmetric models and arc tan models.")
     (license license:gpl2+)))
 
+(define-public r-genderstat
+  (package
+    (name "r-genderstat")
+    (version "0.1.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "genderstat" version))
+              (sha256
+               (base32
+                "02g9hhy17m3fdvg6hkl8l2njzys6z3xssdwb094q31kffl987bqx"))))
+    (properties `((upstream-name . "genderstat")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-reshape2 r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=genderstat")
+    (synopsis "Quantitative Analysis Tools for Gender Studies")
+    (description
+     "This package provides tools for quantitative analysis in gender studies,
+including functions to calculate various gender inequality metrics such as the
+Gender Pay Gap, Gender Inequality Index (GII), Gender Development Index (GDI),
+and Gender Empowerment Measure (GEM).  Also includes extracted real datasets for
+practice and learning purposes, which were obtained from the UNDP Human
+Development Reports Data Center
+<https://hdr.undp.org/data-center/documentation-and-downloads> and the World
+Bank Gender Data Portal <https://genderdata.worldbank.org/indicators/>.
+References: Miller, Kevin; Vagins, Deborah J. (2021)
+<https://eric.ed.gov/?id=ED596219>.  Jacques Charmes & Saskia Wieringa (2003)
+<doi:10.1080/1464988032000125773>. @code{GaÃ«lle} Ferrant (2010)
+<https://shs.hal.science/halshs-00462463/>.")
+    (license license:expat)))
+
 (define-public r-genderinfer
   (package
     (name "r-genderinfer")
@@ -24949,16 +25046,16 @@ Press 2015).")
 (define-public r-gd
   (package
     (name "r-gd")
-    (version "1.10")
+    (version "10.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GD" version))
               (sha256
                (base32
-                "1sy77yxnwh2n48zahh498v30nl3hivrsmyp0jf3gyyzhxm8z1n5l"))))
+                "0ag2a1z4hp0knv4rdff8jwjijz642qzibaiqzmnyx6pzzi6f5b51"))))
     (properties `((upstream-name . "GD")))
     (build-system r-build-system)
-    (propagated-inputs (list r-badger))
+    (propagated-inputs (list r-bammtools))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=GD")
     (synopsis "Geographical Detectors for Assessing Spatial Factors")
@@ -27484,13 +27581,13 @@ copulas.")
 (define-public r-gamclass
   (package
     (name "r-gamclass")
-    (version "0.62.3")
+    (version "0.62.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gamclass" version))
               (sha256
                (base32
-                "0i2nynl4b46rdl8f2zashcg0dvlhcq9paq8hx5y40xpxm8iljqab"))))
+                "0y34970qwgssdnwnhb1hnkyav8j7pq3hkdskw63qs8cin4cknq7j"))))
     (properties `((upstream-name . "gamclass")))
     (build-system r-build-system)
     (propagated-inputs (list r-rpart r-randomforest r-latticeextra r-lattice))

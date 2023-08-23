@@ -4153,13 +4153,13 @@ arguments and body.")
 (define-public r-nodiv
   (package
     (name "r-nodiv")
-    (version "1.4.1")
+    (version "1.4.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nodiv" version))
               (sha256
                (base32
-                "05ryspls03nwap54501mcxnhgvqpnf08c6iad6xcq056qi5glxp2"))))
+                "1yz2ynn7cfwjim3bmwvf4v7fflghc2kfx9frwz2m85l9pcr3qlx0"))))
     (properties `((upstream-name . "nodiv")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan r-sp r-raster r-picante r-ape))
@@ -5411,13 +5411,13 @@ available.")
 (define-public r-nltt
   (package
     (name "r-nltt")
-    (version "1.4.8")
+    (version "1.4.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nLTT" version))
               (sha256
                (base32
-                "10njdpz0dl3ckj4ph6hl4ppj1dyj8chrlmq6cl286ayqqqzj8qap"))))
+                "1h87iwzy988jx1i70nxv24c3gjirrga5c3fw5al86m7qr1nz4sps"))))
     (properties `((upstream-name . "nLTT")))
     (build-system r-build-system)
     (propagated-inputs (list r-testit r-coda r-ape))
@@ -5920,13 +5920,13 @@ examples.")
 (define-public r-nlpsem
   (package
     (name "r-nlpsem")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nlpsem" version))
               (sha256
                (base32
-                "0yjqqbb7hy1qjq84bzsnq0cqbbxi2vkdv4bzj7h0q10rmlmbwnpz"))))
+                "0w2im40ncwmbhrwhfkmckivc4csk463wv1rpqr8yg4ffk3sknlp6"))))
     (properties `((upstream-name . "nlpsem")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -5951,7 +5951,8 @@ correlation or causation between multiple longitudinal variables; (3)
 multiple-group models for scenarios (1) and (2) to evaluate differences among
 manifested groups, and (4) longitudinal mixture models for scenarios (1) and
 (2), with an assumption that trajectories are from multiple latent classes.  The
-methods implemented are introduced in Jin Liu (2023) @code{<arXiv:2302.03237>.}")
+methods implemented are introduced in Jin Liu (2023)
+@code{<arXiv:2302.03237v2>.}")
     (license license:gpl3+)))
 
 (define-public r-nlpred
@@ -8343,13 +8344,13 @@ play-by-play data from <https://www.nfl.com/>.")
 (define-public r-nfl4th
   (package
     (name "r-nfl4th")
-    (version "1.0.3")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nfl4th" version))
               (sha256
                (base32
-                "0kjrfr382nkf1ihr82v6y4vqhlbgfrk0xp3mj6zmrbmcivbd42w6"))))
+                "1ilvchs7g26ks6wgb8s8av0pm10s161fqiahcwbsm5xfy9bh8q78"))))
     (properties `((upstream-name . "nfl4th")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -8358,7 +8359,6 @@ play-by-play data from <https://www.nfl.com/>.")
                              r-tibble
                              r-stringr
                              r-rlang
-                             r-rappdirs
                              r-purrr
                              r-nflreadr
                              r-nflfastr
@@ -8369,7 +8369,8 @@ play-by-play data from <https://www.nfl.com/>.")
                              r-httr
                              r-glue
                              r-dplyr
-                             r-curl))
+                             r-curl
+                             r-backports))
     (home-page "https://www.nfl4th.com/")
     (synopsis
      "Functions to Calculate Optimal Fourth Down Decisions in the National Football League")
@@ -9095,13 +9096,13 @@ the partitioned data.  For details see Jones, Mair, Simon, & Zeileis (2020)
 (define-public r-networktools
   (package
     (name "r-networktools")
-    (version "1.5.0")
+    (version "1.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "networktools" version))
               (sha256
                (base32
-                "0hqkq544jgk49gl0yaqh2bs3dmyrlhc8z9n201dj5id41w6qcl8s"))))
+                "0y5sfqn0ijgclm191kxfkqs6l8vnmdjsnjjsawq3nl4ziw7zlpfy"))))
     (properties `((upstream-name . "networktools")))
     (build-system r-build-system)
     (propagated-inputs (list r-wordcloud
@@ -11083,13 +11084,13 @@ ISBN 1452205663.")
 (define-public r-nestedcv
   (package
     (name "r-nestedcv")
-    (version "0.6.7")
+    (version "0.6.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nestedcv" version))
               (sha256
                (base32
-                "0aymjx29jlsxkv6nl4ivmi7rv8bvl5k6l499b3vs68g7rhd4pc1k"))))
+                "02lm4naf3gkgj8l1ffqprq49jmxqj0y0i8f0riywcsmkrcllhlkp"))))
     (properties `((upstream-name . "nestedcv")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -11802,13 +11803,13 @@ modeling.")
 (define-public r-negativecontroloutcomeadjustment
   (package
     (name "r-negativecontroloutcomeadjustment")
-    (version "0.0.5")
+    (version "0.0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "NegativeControlOutcomeAdjustment" version))
               (sha256
                (base32
-                "0nwz0xk59imsfjn9p3b0qkxi2h62b5ck16w1cvfy8a4r1dk22lil"))))
+                "02p19pc0pkw0dfac0hp1jdcm3g18sriizhqj73jp2yj66xlx1z52"))))
     (properties `((upstream-name . "NegativeControlOutcomeAdjustment")))
     (build-system r-build-system)
     (home-page

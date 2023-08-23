@@ -1153,16 +1153,16 @@ sparse inverse regression estimators proposed by Weng (2022)
 (define-public r-itcsegment
   (package
     (name "r-itcsegment")
-    (version "0.8")
+    (version "1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "itcSegment" version))
               (sha256
                (base32
-                "032wj34313m3wigdfalq356srdzg0cvnvxnaxwxws6bc44r78izf"))))
+                "11av3kfd8x29jq4x5axlqfzgwq3ngqkkv72j2yfs9snw2bfzg718"))))
     (properties `((upstream-name . "itcSegment")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp r-rgeos r-raster r-maptools))
+    (propagated-inputs (list r-terra))
     (home-page "https://cran.r-project.org/package=itcSegment")
     (synopsis "Individual Tree Crowns Segmentation")
     (description
@@ -2474,13 +2474,13 @@ assembly, and performs model selection.")
 (define-public r-isingsampler
   (package
     (name "r-isingsampler")
-    (version "0.2.1")
+    (version "0.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IsingSampler" version))
               (sha256
                (base32
-                "1cs4vk53b5fy6kywvycfjf62571yx92nvgp5i8hlvms1362ir7gv"))))
+                "195xl9ivdhpqbl291x3cji343lgg8wsy20yz71iv7cg6g5ni8vvx"))))
     (properties `((upstream-name . "IsingSampler")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-plyr r-nnet r-magrittr r-dplyr))
@@ -3405,13 +3405,13 @@ support data returned by web services provided by the IRIS DMC
 (define-public r-irismustangmetrics
   (package
     (name "r-irismustangmetrics")
-    (version "2.4.5")
+    (version "2.4.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IRISMustangMetrics" version))
               (sha256
                (base32
-                "1gcz9s7vxpvfxljkjn4f54m5cmiji4j3v2f7vk6wdc7hm904afzp"))))
+                "08p1xg4mqi36647nzmlmmmvdgzc9xgz4sf4lh2lrlma99f7y8kzd"))))
     (properties `((upstream-name . "IRISMustangMetrics")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
@@ -3977,13 +3977,13 @@ Stieger, & Reips (2019) <doi:10.1177/2059799119884283>.")
 (define-public r-ipumsr
   (package
     (name "r-ipumsr")
-    (version "0.6.1")
+    (version "0.6.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ipumsr" version))
               (sha256
                (base32
-                "1f3lhadiix2b78pzgsq8b39civ46lpnk3a2nwksi0rzfvgpvvwqh"))))
+                "1zix06lh3kvwb5b58fzsd817cmcz1xjzp90wxw00awlwdik4c5hc"))))
     (properties `((upstream-name . "ipumsr")))
     (build-system r-build-system)
     (propagated-inputs (list r-zeallot
@@ -4230,13 +4230,13 @@ discuss the problem of unintentional eviction.")
 (define-public r-ipmbook
   (package
     (name "r-ipmbook")
-    (version "0.1.4")
+    (version "0.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IPMbook" version))
               (sha256
                (base32
-                "152y6d949jjfdfmcjfi0g4p2d02pmqgamxmx5bi3wb352jbjxl08"))))
+                "1fad52j0cb187sbj7x1i7irlvyd2jhjgr84kf7m8v3ngwsn14wp3"))))
     (properties `((upstream-name . "IPMbook")))
     (build-system r-build-system)
     (propagated-inputs (list r-abind))
@@ -4505,13 +4505,13 @@ considering their options, and securing admission into their school of choice.")
 (define-public r-ipec
   (package
     (name "r-ipec")
-    (version "1.0.3")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IPEC" version))
               (sha256
                (base32
-                "1f5draxw3q26d03h6mcyc8zrd1gmizmc0v01sppdnx8a21878rqz"))))
+                "1ij9g8w5550nxbf65yd3gs8cc15d3yk2x94fmmzk7i8rfjvfzzjq"))))
     (properties `((upstream-name . "IPEC")))
     (build-system r-build-system)
     (propagated-inputs (list r-numderiv r-mass))
@@ -5365,13 +5365,13 @@ multinomial, independent samples, and multiple response).")
 (define-public r-invstableprior
   (package
     (name "r-invstableprior")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "InvStablePrior" version))
               (sha256
                (base32
-                "1nkbly897prbffdrcrxdvr16f6ipm3if1dg3rm35jcl2ksya6snd"))))
+                "1wkb7rl6hqz0a45p7nlniaj9skc7gxhpbm0b7f377q6icm3xn3ld"))))
     (properties `((upstream-name . "InvStablePrior")))
     (build-system r-build-system)
     (propagated-inputs (list r-nimble r-fdrtool))
@@ -7539,28 +7539,27 @@ installation.")
 (define-public r-install-load
   (package
     (name "r-install-load")
-    (version "1.2.4")
+    (version "1.2.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "install.load" version))
               (sha256
                (base32
-                "0ylis31bxyqhjpwb1fwadgb8wwrcjq4p8mrznqckrx6a0f6sai0m"))))
+                "1r1z6r1s65wpb5vxfwgmrip37pzr4ccz16b379mcqw8yq4fnzlcb"))))
     (properties `((upstream-name . "install.load")))
     (build-system r-build-system)
     (propagated-inputs (list r-fastmatch r-checkmate r-assertthat))
     (home-page "https://gitlab.com/iembry/install.load")
-    (synopsis "Check, Install and Load CRAN & USGS GRAN Packages")
+    (synopsis "Check, Install and Load CRAN Packages")
     (description
      "The function install_load checks the local R library(ies) to see if the required
 package(s) is/are installed or not.  If the package(s) is/are not installed,
 then the package(s) will be installed along with the required dependency(ies).
-This function pulls source or binary packages from the Rstudio-sponsored CRAN
-mirror and/or the USGS GRAN Repository.  Lastly, the chosen package(s) is/are
-loaded.  The function load_package simply loads the provided packages.  If this
-package does not fit your needs, then you may want to consider these other R
-packages: needs', easypackages', pacman', pak', @code{anyLib',} and/or
-librarian'.")
+This function pulls source or binary packages from the Posit/RStudio-sponsored
+CRAN mirror.  Lastly, the chosen package(s) is/are loaded.  The function
+load_package simply loads the provided package(s).  If this package does not fit
+your needs, then you may want to consider these other R packages: needs',
+easypackages', pacman', pak', @code{anyLib',} and/or librarian'.")
     (license (list license:cc-by-sa4.0 license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -9430,13 +9429,13 @@ Greifer, and Chen (2021) <arxiv:2107.07086>.")
 (define-public r-incubate
   (package
     (name "r-incubate")
-    (version "1.2.0")
+    (version "1.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "incubate" version))
               (sha256
                (base32
-                "1l1ahcw8nad6jmhxzl5vlswl2kvyfv3lwchhckbhwbahplkna5vs"))))
+                "1ip5vbk5d3a4sci09azmbqd1s2cm83l65yaq6fxjswizw3kvmscp"))))
     (properties `((upstream-name . "incubate")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -9453,10 +9452,10 @@ Greifer, and Chen (2021) <arxiv:2107.07086>.")
     (description
      "Fit parametric models for time-to-event data that show an initial incubation
 period', i.e., a variable delay phase where the hazard is zero.  The delayed
-Weibull distribution serves as the foundational data model.  The specific method
-of MPSE (maximum product of spacings estimation) is used for parameter
-estimation.  Bootstrap confidence intervals for parameters and significance
-tests in a two group setting are provided.")
+Weibull distribution serves as foundational data model.  The specific method of
+MPSE (maximum product of spacings estimation) is used for parameter estimation.
+Bootstrap confidence intervals for parameters and significance tests in a two
+group setting are provided.")
     (license license:lgpl3+)))
 
 (define-public r-inctools
@@ -9784,17 +9783,17 @@ by microarrays (T Sbarrato et al.  RNA. 2017 Aug 25;
 (define-public r-incase
   (package
     (name "r-incase")
-    (version "0.3.1")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "incase" version))
               (sha256
                (base32
-                "01x1alrk3pp4zi7r4nxnn9y16129ggmiqjys5sfhlybs505yq5vw"))))
+                "06qzzvxxwi0dp7ln864qszvk9xqbb4rgx5mbnkcvji7in6k2yj0n"))))
     (properties `((upstream-name . "incase")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlang r-plu r-magrittr r-backports))
-    (home-page "https://incase.rossellhayes.com")
+    (propagated-inputs (list r-rlang r-plu r-magrittr r-cli r-backports))
+    (home-page "https://pkg.rossellhayes.com/incase/")
     (synopsis "Pipe-Friendly Vector Replacement with Case Statements")
     (description
      "Offers a pipe-friendly alternative to the dplyr functions case_when() and
@@ -11555,13 +11554,13 @@ background of the methods.")
 (define-public r-imagedata
   (package
     (name "r-imagedata")
-    (version "0.1-61")
+    (version "0.1-62")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "imageData" version))
               (sha256
                (base32
-                "0bavyd8njfjd0l8dcsm6gklgc81kykl275w2gpvb5cxrhb9yp32n"))))
+                "1q5s6zda1vvinp23afxjys3zl17xaidb11a7iibxpz6rla75183d"))))
     (properties `((upstream-name . "imageData")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape
@@ -13451,13 +13450,13 @@ simulations on composite scores.")
 (define-public r-idiogramfish
   (package
     (name "r-idiogramfish")
-    (version "2.0.12")
+    (version "2.0.13")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "idiogramFISH" version))
               (sha256
                (base32
-                "0vf1398fkj564rwnbw8vpyrqn996vww7w582374fsslnnp3hjkbm"))))
+                "0d4jf219x1l5978yx1k2ynkcx1b5xwbbba2lcd67s80y6s1q1jhv"))))
     (properties `((upstream-name . "idiogramFISH")))
     (build-system r-build-system)
     (inputs (list pandoc))

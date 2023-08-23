@@ -2088,13 +2088,13 @@ semiparametric Bayesian models for random effects meta-analysis.")
 (define-public r-bspm
   (package
     (name "r-bspm")
-    (version "0.5.4")
+    (version "0.5.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bspm" version))
               (sha256
                (base32
-                "0cqgk0740cfpwpx8y0bilnrm0gjqn417yiha2cdgz3hx3i55s88n"))))
+                "07d68b8l3vxihd8wxy50rywldhdg3lwww5vab6cgdahc7vn937fl"))))
     (properties `((upstream-name . "bspm")))
     (build-system r-build-system)
     (inputs (list))
@@ -5715,6 +5715,46 @@ powerful wavelet packet tests for second-order stationarity.\" Applied and
 Computational Harmonic Analysis, 44, 558-585 <doi:10.1016/j.acha.2016.06.006>.")
     (license license:gpl2)))
 
+(define-public r-bootwar
+  (package
+    (name "r-bootwar")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "bootwar" version))
+              (sha256
+               (base32
+                "01n57w3jpa8wjz0mh2ndkm3ha5lcsg42c1r2fngm37limsdwybvb"))))
+    (properties `((upstream-name . "bootwar")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shinythemes r-shinyjs r-shiny r-npboottprm
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mightymetrika/bootwar")
+    (synopsis "Nonparametric Bootstrap Test with Pooled Resampling Card Game")
+    (description
+     "The card game War is simple in its rules but can be lengthy.  In another domain,
+the nonparametric bootstrap test with pooled resampling (nbpr) methods, as
+outlined in Dwivedi, Mallawaarachchi, and Alvarado (2017)
+<doi:10.1002/sim.7263>, is optimal for comparing paired or unpaired means in
+non-normal data, especially for small sample size studies.  However, many
+researchers are unfamiliar with these methods.  The bootwar package bridges this
+gap by enabling users to grasp the concepts of nbpr via Boot War, a variation of
+the card game War designed for small samples.  With the shuffle_cards()
+function, players can engage in Boot War using a standard 52-card deck, a custom
+deck created via an anonymous function, or interleaved custom decks where each
+player has their distinct deck.  The package further provides functions like
+deal_card(), score_keeper(), and play_round() to streamline gameplay and
+scoring.  Once a predetermined number of rounds concludes, users can employ the
+analyze_game() function to derive game results.  This function leverages the
+npboottprm package's nonparboot() to report nbpr results and, for comparative
+analysis, also reports results from the stats package's t.test() function.
+Additionally, bootwar features an interactive shiny web application, bootwar().
+This offers a user-centric interface to experience Boot War, enhancing
+understanding of nbpr methods across various distributions, sample sizes, number
+of bootstrap resamples, and confidence intervals.")
+    (license license:expat)))
+
 (define-public r-bootur
   (package
     (name "r-bootur")
@@ -5919,13 +5959,13 @@ al.  2021, Frontiers in Applied Mathematics and Statistics', accepted.).")
 (define-public r-bootnet
   (package
     (name "r-bootnet")
-    (version "1.5.4")
+    (version "1.5.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bootnet" version))
               (sha256
                (base32
-                "0f7wdhfanjn1m9p04pq1pbdppwrzjqgr4m0v1fg4x638i1hkw1cp"))))
+                "1m0jwhdk6nl0vb1m0sp3kkyv376f0pwgvbbpab3dygghv8qi7m21"))))
     (properties `((upstream-name . "bootnet")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -9212,13 +9252,13 @@ service, or through the Mailgun API service <https://www.mailgun.com/>.")
 (define-public r-blaster
   (package
     (name "r-blaster")
-    (version "1.0.6")
+    (version "1.0.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "blaster" version))
               (sha256
                (base32
-                "0a8481swn0c72q5vqb3zzki7xxd1bns2b606flcc5brvqh1jaqq4"))))
+                "1p0d76dzn3kkdk6r4lp3kjh06iy3r2l4zhqwr3p888gxibzfwyb0"))))
     (properties `((upstream-name . "blaster")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -11121,6 +11161,39 @@ purchased as asreml-R from VSNi <https://vsni.co.uk/>, who will supply a zip
 file for local installation/updating (see <https://asreml.kb.vsni.co.uk/>).")
     (license license:expat)))
 
+(define-public r-biomass
+  (package
+    (name "r-biomass")
+    (version "2.1.9")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "BIOMASS" version))
+              (sha256
+               (base32
+                "1ibxlvsf6nspkqqk64pr74v2qky7lfdhp8zyk2w2hlkik7h229ml"))))
+    (properties `((upstream-name . "BIOMASS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sp
+                             r-raster
+                             r-rappdirs
+                             r-proj4
+                             r-minpack-lm
+                             r-jsonlite
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/umr-amap/BIOMASS")
+    (synopsis
+     "Estimating Aboveground Biomass and Its Uncertainty in Tropical Forests")
+    (description
+     "This package contains functions to estimate aboveground biomass/carbon and its
+uncertainty in tropical forests.  These functions allow to (1) retrieve and to
+correct taxonomy, (2) estimate wood density and its uncertainty, (3) construct
+height-diameter models, (4) manage tree and plot coordinates, (5) estimate the
+aboveground biomass/carbon at the stand level with associated uncertainty.  To
+cite BIOMASS', please use citation(\"BIOMASS\").  See more in the article of
+RÃ©jou-MÃ©chain et al. (2017) <doi:10.1111/2041-210X.12753>.")
+    (license license:gpl2)))
+
 (define-public r-biomark
   (package
     (name "r-biomark")
@@ -11146,13 +11219,13 @@ under perturbation, and the other on higher criticism.")
 (define-public r-biolink
   (package
     (name "r-biolink")
-    (version "0.1.7")
+    (version "0.1.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "biolink" version))
               (sha256
                (base32
-                "1i9aisvb3lvljird89fy9fx7h3s1wi6dpilycbynqyhz8xqnnszj"))))
+                "03jsvzy6fqbx3w6gs7v1mnznkqwsad3ywdb4wxp0mbaq4vrsandm"))))
     (properties `((upstream-name . "biolink")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -12969,13 +13042,13 @@ includes functions for outlier detection and unbiased PCA projection.")
 (define-public r-bigtime
   (package
     (name "r-bigtime")
-    (version "0.2.2")
+    (version "0.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bigtime" version))
               (sha256
                (base32
-                "14hybc3cjl5cj7m6nsac9yhxiw1rpnc9mc8mc74yircbl3y6jv7n"))))
+                "1lnq8zjhvnm5q90y2aak11l8a726p1w4wgjwdvdn9pzlwgm8xia5"))))
     (properties `((upstream-name . "bigtime")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -15817,13 +15890,13 @@ differences in standardized regression coefficients, for models fitted by lm()."
 (define-public r-betamc
   (package
     (name "r-betamc")
-    (version "1.2.0")
+    (version "1.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "betaMC" version))
               (sha256
                (base32
-                "0b3pbblv9gz7577kd4027bgnw74scmn7i42p9fivv0kzw475s82a"))))
+                "0g1qkm3w344570q0j10avbs4ly3jpib1k4c4bbz5q53inbmh4jns"))))
     (properties `((upstream-name . "betaMC")))
     (build-system r-build-system)
     (home-page "https://github.com/jeksterslab/betaMC")
@@ -15834,8 +15907,8 @@ coefficients (beta) and other effect sizes, including multiple correlation,
 semipartial correlations, improvement in R-squared, squared partial
 correlations, and differences in standardized regression coefficients, for
 models fitted by lm(). @code{betaMC} combines ideas from Monte Carlo confidence
-intervals for the indirect effect (Preacher and Selig, 2012
-<doi:10.1080/19312458.2012.679848>) and the sampling covariance matrix of
+intervals for the indirect effect (Pesigan and Cheung, 2023
+<doi:10.3758/s13428-023-02114-4>) and the sampling covariance matrix of
 regression coefficients (Dudgeon, 2017 <doi:10.1007/s11336-017-9563-z>) to
 generate confidence intervals effect sizes in regression.")
     (license license:expat)))
@@ -20955,13 +21028,13 @@ selection.  Marginal likelihood is approximated by methods in Chib S (1995)
 (define-public r-bayesmallows
   (package
     (name "r-bayesmallows")
-    (version "1.3.0")
+    (version "1.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BayesMallows" version))
               (sha256
                (base32
-                "1mv1n2v9yvb8vzgld2dahv5v91843n81af5gbalhpg86yblizzfq"))))
+                "14nlx130iazgqqpn3yiqh8qsj387pnrwg8c5kjn7havx1vx4a2ig"))))
     (properties `((upstream-name . "BayesMallows")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat
@@ -21314,13 +21387,13 @@ F., Hoijtink, H. & Gu, X. (2019) <doi:10.31219/osf.io/d5kf3>.")
 (define-public r-bayesianplatformdesigntimetrend
   (package
     (name "r-bayesianplatformdesigntimetrend")
-    (version "1.1.2")
+    (version "1.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BayesianPlatformDesignTimeTrend" version))
               (sha256
                (base32
-                "0dmbx9fvh9mfyh3ambsnkxc8w7qifhdbwqh5bcr4ihprc59c8md2"))))
+                "1v4cvalyn2v1r1jbdhniw9gnh44nl2m64g7xp2bmqprx9fxb12md"))))
     (properties `((upstream-name . "BayesianPlatformDesignTimeTrend")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -23582,13 +23655,13 @@ al. (1982) and Ellis et al. (1982) <doi:10.1093/JXB/38.6.1033>
 (define-public r-baseset
   (package
     (name "r-baseset")
-    (version "0.0.17")
+    (version "0.9.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BaseSet" version))
               (sha256
                (base32
-                "1v5f8ixcnqngrhsfrydl7y48gmvmb5srs4xygydv4g4vpmd8gh0c"))))
+                "0dn4qxmba4pwf5ig7wivqijr35krm2h1cxgr99z44678k9hd3ip5"))))
     (properties `((upstream-name . "BaseSet")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-magrittr r-dplyr))

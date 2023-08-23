@@ -4593,13 +4593,13 @@ extending the splines beyond their endpoints.")
 (define-public r-crrstep
   (package
     (name "r-crrstep")
-    (version "2023.1.0")
+    (version "2023.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "crrstep" version))
               (sha256
                (base32
-                "10wcvsai6mqsw8whrjkgcw27fmc7qpzv0sawl22hamkl9g2i1bpl"))))
+                "0x4fvsvcxb529c7vp5fh6vp7l0sj1wszpqzbrk1da7kmf5454ki6"))))
     (properties `((upstream-name . "crrstep")))
     (build-system r-build-system)
     (propagated-inputs (list r-cmprsk))
@@ -12340,13 +12340,13 @@ mentioned.")
 (define-public r-copernicusmarine
   (package
     (name "r-copernicusmarine")
-    (version "0.0.6")
+    (version "0.0.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CopernicusMarine" version))
               (sha256
                (base32
-                "002rkgjphnpjll901dmmhi1ahhfl6c5k7bw740r6h7v18dkcx36j"))))
+                "01nzjm8fyv1kd7y8c4qj4al80kq96a16w4k0df9kss0m0cz86mls"))))
     (properties `((upstream-name . "CopernicusMarine")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -12360,7 +12360,7 @@ mentioned.")
                              r-httr
                              r-dplyr
                              r-crayon))
-    (home-page "<https://github.com/pepijn-devries/CopernicusMarine>")
+    (home-page "https://github.com/pepijn-devries/CopernicusMarine")
     (synopsis
      "Search Download and Handle Data from Copernicus Marine Service Information")
     (description
@@ -13431,13 +13431,13 @@ non-regular canvas.")
 (define-public r-contingencytables
   (package
     (name "r-contingencytables")
-    (version "2.1.0")
+    (version "2.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "contingencytables" version))
               (sha256
                (base32
-                "14c41lr4fpp22kld559bkcdnylwnqzva4wvmf6h5bd42j3xc91d5"))))
+                "0dd37i6ibj9r9bbb7h9bd64x2finv46p8dg5ljyrm14ylhvz5g10"))))
     (properties `((upstream-name . "contingencytables")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-boot))
@@ -16213,16 +16213,17 @@ data with zeros. @code{<arXiv:2002.05137>.}")
 (define-public r-compositereliability
   (package
     (name "r-compositereliability")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CompositeReliability" version))
               (sha256
                (base32
-                "0m1zx5c0jy45y5blj14ghwqq9cb99nh4bxw92qv9avpih5xl1l1d"))))
+                "04qpwqrz1x1hdjfin77fb4kywv9sspzdq7kn4f7jxaaz3ykhrhkc"))))
     (properties `((upstream-name . "CompositeReliability")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
+                             r-rsolnp
                              r-reshape2
                              r-psych
                              r-plyr
@@ -16498,13 +16499,13 @@ the analysed objects.")
 (define-public r-compind
   (package
     (name "r-compind")
-    (version "2.7.1")
+    (version "2.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Compind" version))
               (sha256
                (base32
-                "1429dw025h5fp1wvmyqc5b25wczwf2c44fgp47blzmd3b4qvj6sz"))))
+                "0h5kklflxdaf3i3iksblhfhyfsa44hrj9aniz83pyf62730lzjxx"))))
     (properties `((upstream-name . "Compind")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdep
@@ -16862,13 +16863,13 @@ pages, including providing new figure components.")
 (define-public r-comparegroups
   (package
     (name "r-comparegroups")
-    (version "4.7.0")
+    (version "4.7.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "compareGroups" version))
               (sha256
                (base32
-                "02g68vyx8z79jqmg3bvkqf0bsr2000ard26c4xp1g03ybn8xws06"))))
+                "1hlz2r4dvrrgs8jq7zj4mhjcsz0pq8jhfkn9j0v18fzv05zqp8sa"))))
     (properties `((upstream-name . "compareGroups")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
@@ -23846,19 +23847,21 @@ datasets to demonstrate the package functionalities.")
 (define-public r-clintools
   (package
     (name "r-clintools")
-    (version "0.9.8")
+    (version "0.9.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "clintools" version))
               (sha256
                (base32
-                "0w53frbvlx3970kkcd91v73szg48r1cb4y97q77r9rb5llq1nrds"))))
+                "0yay9s8490zmn2fjv3gqh58qmk8cci50phvz0cgab52kslhf0rvq"))))
     (properties `((upstream-name . "clintools")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
-                             r-stringr
+                             r-stringi
                              r-signal
+                             r-scales
                              r-proc
+                             r-parameters
                              r-nlme
                              r-lme4
                              r-irr
@@ -25344,13 +25347,13 @@ for easy modification.  Debug your binary classifiers faster and easier!")
 (define-public r-classgraph
   (package
     (name "r-classgraph")
-    (version "0.7-5")
+    (version "0.7-6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "classGraph" version))
               (sha256
                (base32
-                "19jb9jr1gfg4karymrbilh0zjrlsczhy2q03x5b0jxnh4ykhxfj8"))))
+                "10nyrs5xh70ajhi1q6pvx4s5lkl2r46ddxanhiyn9vv9swr2hzsw"))))
     (properties `((upstream-name . "classGraph")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgraphviz r-graph))
@@ -25518,13 +25521,13 @@ are detected using using a homogeneous embedding technique.")
 (define-public r-clamr
   (package
     (name "r-clamr")
-    (version "2.1-1")
+    (version "2.1-3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ClamR" version))
               (sha256
                (base32
-                "0raz1n79g24a9mc93zj49r20xcmdziw6vvcw5sd3qyjp1ycia13c"))))
+                "1qf0xflzww2vdv3sl2s8lncmv4k7aa4wbgpqm9v8slsa615a6n09"))))
     (properties `((upstream-name . "ClamR")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=ClamR")
@@ -25848,6 +25851,36 @@ pharmacogenetics (PGx) assessments embedded within randomized clinical trials.")
 search, list, show for packages, organizations, and resources.  In addition,
 provides an interface to the datastore API.")
     (license license:expat)))
+
+(define-public r-cjoint
+  (package
+    (name "r-cjoint")
+    (version "2.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "cjoint" version))
+              (sha256
+               (base32
+                "1byahl2x3mdz66cicyjbi5qrcbq9xqcyyny5rzxkg5m5nfgxprqk"))))
+    (properties `((upstream-name . "cjoint")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survey
+                             r-shinyjs
+                             r-shiny
+                             r-sandwich
+                             r-matrix
+                             r-lmtest
+                             r-ggplot2
+                             r-dt))
+    (home-page "https://cran.r-project.org/package=cjoint")
+    (synopsis "AMCE Estimator for Conjoint Experiments")
+    (description
+     "An R implementation of the Average Marginal Component-specific Effects (AMCE)
+estimator presented in Hainmueller, J., Hopkins, D., and Yamamoto T. (2014)
+<DOI:10.1093/pan/mpt024> Causal Inference in Conjoint Analysis: Understanding
+Multi-Dimensional Choices via Stated Preference Experiments.  Political Analysis
+22(1):1-30.")
+    (license license:gpl2+)))
 
 (define-public r-cjive
   (package
@@ -26365,17 +26398,18 @@ used within the analysis of the paper.")
 (define-public r-circumplex
   (package
     (name "r-circumplex")
-    (version "0.3.9")
+    (version "0.3.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "circumplex" version))
               (sha256
                (base32
-                "0rj6mzk77422ql020yra9gik7110r0qjnvmv2h5nc2prn5xd20kw"))))
+                "1g0r004c7y51mcv7iiymgzhdy9v8y9bk814bzaam4d8fxp7qzqlr"))))
     (properties `((upstream-name . "circumplex")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-tibble
+                             r-scales
                              r-rlang
                              r-rcpparmadillo
                              r-rcpp
@@ -32549,13 +32583,13 @@ Q-matrix generation and detection of complete/identified Q-matrices.")
 (define-public r-cdmconnector
   (package
     (name "r-cdmconnector")
-    (version "1.1.0")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CDMConnector" version))
               (sha256
                (base32
-                "1b5h03gzl3w6fghcmpkzyzx6x7c11ax1d7hmqzirbs7c2gk27j7n"))))
+                "0iz2yyvpp43cvrgb0xd721d7xjclr36zk8b59shsp326b3bjmj5b"))))
     (properties `((upstream-name . "CDMConnector")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -34287,44 +34321,6 @@ population attributable fractions Ferguson, OâConnell, and OâDonnell (
 plot format.")
     (license license:gpl2+)))
 
-(define-public r-causalot
-  (package
-    (name "r-causalot")
-    (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "causalOT" version))
-              (sha256
-               (base32
-                "04j546sg4b1alq71xaxkh5hqckvqzcyz3nihgdnnxw60gmd4yal6"))))
-    (properties `((upstream-name . "causalOT")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sandwich
-                             r-rspectra
-                             r-reticulate
-                             r-rcppeigen
-                             r-rcpp
-                             r-r6
-                             r-pbapply
-                             r-osqp
-                             r-matrixstats
-                             r-matrix
-                             r-loo
-                             r-lbfgsb3c
-                             r-bh
-                             r-approxot))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=causalOT")
-    (synopsis "Optimal Transport Weights for Causal Inference")
-    (description
-     "Uses optimal transport distances to find probabilistic matching estimators for
-causal inference.  These methods are described in Dunipace, Eric (2021)
-@code{<arXiv:2109.01991>.} The package will build the weights, estimate
-treatment effects, and calculate confidence intervals via the methods described
-in the paper.  The package also supports several other methods as described in
-the help files.")
-    (license license:gpl3+)))
-
 (define-public r-causaloptim
   (package
     (name "r-causaloptim")
@@ -35689,13 +35685,13 @@ statistical matching methods.")
 (define-public r-casecohortcoxsurvival
   (package
     (name "r-casecohortcoxsurvival")
-    (version "0.0.31")
+    (version "0.0.32")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CaseCohortCoxSurvival" version))
               (sha256
                (base32
-                "1r1ki47i7dp3q9wpw2vbaglnq33b109wlc6s51kfvfnlm8vi4nkp"))))
+                "1r8c0d776vhxckcsf7jyiigxm1i8rlklxwnfkqvg73jqz1qhw2nw"))))
     (properties `((upstream-name . "CaseCohortCoxSurvival")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-nnet))
@@ -36299,15 +36295,16 @@ field calculations.")
 (define-public r-carletonstats
   (package
     (name "r-carletonstats")
-    (version "2.1")
+    (version "2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CarletonStats" version))
               (sha256
                (base32
-                "05ljr9z8qfjrcwjk1rp19ra208dm910qc03hci0swkd0g2x3pyph"))))
+                "1d9g773l1ra5cr2q3azlkpkqy2035zq065cpfyavf57js0ks5ciq"))))
     (properties `((upstream-name . "CarletonStats")))
     (build-system r-build-system)
+    (propagated-inputs (list r-scales r-patchwork r-ggplot2))
     (home-page "https://github.com/aloy/CarletonStats")
     (synopsis "Functions for Statistics Classes at Carleton College")
     (description

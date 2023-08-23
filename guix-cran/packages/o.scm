@@ -5084,15 +5084,16 @@ data.  Further examples can be found in the vignette of the package.")
 (define-public r-opi
   (package
     (name "r-opi")
-    (version "2.10.1")
+    (version "2.11.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "OPI" version))
               (sha256
                (base32
-                "0yzl3s0bkygwh1mg2fshf370k7hr0iw091k1jpwf92fvym1a68ia"))))
+                "1y0z6kcvc8v1rk6fbi3j6sknd6wkfddlby49vapkp112xqjcmjkw"))))
     (properties `((upstream-name . "OPI")))
     (build-system r-build-system)
+    (propagated-inputs (list r-rfast r-abind))
     (home-page "https://people.eng.unimelb.edu.au/aturpin/opi/index.html")
     (synopsis "Open Perimetry Interface")
     (description
@@ -5105,7 +5106,7 @@ fully implemented on the Haag-Streit Octopus 900 with partial implementations on
 the Centervue Compass, Kowa AP 7000, Android phones and the @code{CrewT} IMO. It
 also has a cousin: the R package @code{visualFields',} which has tools for
 analysing and manipulating visual field data.")
-    (license license:gpl3)))
+    (license license:asl2.0)))
 
 (define-public r-opgmmassessment
   (package
@@ -5682,13 +5683,13 @@ metrics of their own.")
 (define-public r-openmeteo
   (package
     (name "r-openmeteo")
-    (version "0.2.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "openmeteo" version))
               (sha256
                (base32
-                "0fnqy3l3s5119vw8abmp1ldn44047m3p40js5r41yf03i56lxd29"))))
+                "0cr1r173xkaqm4hnd4fxzn5gb56mz8xpp2ciymnpviyw3h02828r"))))
     (properties `((upstream-name . "openmeteo")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -6385,16 +6386,16 @@ combination, model and error analysis, and forecast visualization.")
 (define-public r-oor
   (package
     (name "r-oor")
-    (version "0.1.3")
+    (version "0.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "OOR" version))
               (sha256
                (base32
-                "13v04rx2q6pbiq7dyd29wvimkr4sbq2f5rnn3a0lcbwr3x35r7h9"))))
+                "0p5bi4z6q2kz1hkn12hy7qsn1sdb336y8phmznd8cayyfil7hjvh"))))
     (properties `((upstream-name . "OOR")))
     (build-system r-build-system)
-    (home-page "http://github.com/mbinois/OOR")
+    (home-page "https://github.com/mbinois/OOR")
     (synopsis "Optimistic Optimization in R")
     (description
      "Implementation of optimistic optimization methods for global optimization of
@@ -7852,13 +7853,13 @@ types of omics data or samples with two types.")
 (define-public r-omnibus
   (package
     (name "r-omnibus")
-    (version "1.1.3")
+    (version "1.2.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "omnibus" version))
               (sha256
                (base32
-                "09sy56x8730ilv4szg4gzvgrh9vps3brsysvcssg4s6fidssinhn"))))
+                "1wqhizr19w6kx1gb1p34arr23m2272chfyaf5bpb8rqjb9zkswdz"))))
     (properties `((upstream-name . "omnibus")))
     (build-system r-build-system)
     (home-page "https://github.com/adamlilith/omnibus")
@@ -7869,7 +7870,9 @@ types of omics data or samples with two types.")
 matrices by a user-defined angle, switching from row- to column-indexing), dates
 (e.g., intuiting year from messy date strings), handling missing values (e.g.,
 removing elements/rows across multiple vectors or matrices if any have an NA),
-and text (e.g., flushing reports to the console in real-time).")
+text (e.g., flushing reports to the console in real-time); and combining data
+frames with different schema (copying, filling, or concatenating columns or
+applying functions before combining).")
     (license license:gpl3+)))
 
 (define-public r-omisc

@@ -2192,17 +2192,17 @@ Forecast Rankings', JRSS-B, 2016 <DOI:10.1111/rssb.12154>).")
 (define-public r-murl
   (package
     (name "r-murl")
-    (version "0.1-12")
+    (version "0.1-13")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "muRL" version))
               (sha256
                (base32
-                "1nzi0nyspva5ach0q0rvlljlfgmac8vxxggkwdzz1pr1cxhkprwd"))))
+                "1fx9v5z5n83q4hiwsh359ffrcr0n07hym6cz4rjb4f51h96x893v"))))
     (properties `((upstream-name . "muRL")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-maps))
-    (home-page "http://www.ryantmoore.org/software.murl.html")
+    (home-page "https://www.ryantmoore.org/software.murl.html")
     (synopsis "Mailmerge using R, LaTeX, and the Web")
     (description
      "This package provides mailmerge methods for reading spreadsheets of addresses
@@ -2552,13 +2552,13 @@ alternate ways of performing an analysis step, in R and R Notebooks.")
 (define-public r-multivator
   (package
     (name "r-multivator")
-    (version "1.1-10")
+    (version "1.1-11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "multivator" version))
               (sha256
                (base32
-                "1a469mhskkk2gx0j14f38fn0wdbfygl3psb0mnp7ckznhmh4w2lg"))))
+                "1r9v15bg0kyhq5xqzkpj6ilz745q6k3j46zh1n68pf17zmi0k0ww"))))
     (properties `((upstream-name . "multivator")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-mathjaxr r-emulator))
@@ -3198,19 +3198,22 @@ Computational and Graphical Statistics).")
 (define-public r-multipol
   (package
     (name "r-multipol")
-    (version "1.0-7")
+    (version "1.0-9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "multipol" version))
               (sha256
                (base32
-                "1rkrg3kayxa05jayg8bk1mm3hcvi76570wqfja5953hd9j4krgha"))))
+                "0cn6l0f1mn3n2rzsfr6ncc37aqc7ij9a8pkxbxq74j11bib0bhsf"))))
     (properties `((upstream-name . "multipol")))
     (build-system r-build-system)
     (propagated-inputs (list r-abind))
     (home-page "https://cran.r-project.org/package=multipol")
     (synopsis "Multivariate Polynomials")
-    (description "Various utilities to manipulate multivariate polynomials.")
+    (description
+     "Various utilities to manipulate multivariate polynomials.  The package is almost
+completely superceded by the spray and mvp packages, which are much more
+efficient.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-multiplierdea
@@ -5002,13 +5005,13 @@ Multibiplot Analysis.")
 (define-public r-multibiasmeta
   (package
     (name "r-multibiasmeta")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "multibiasmeta" version))
               (sha256
                (base32
-                "1a18ck269zxwsyig079aszqr4vgrha40z77ad4sckbw5kmdvbc6k"))))
+                "0z1aqf47pqxqkq2h6s7v73g8la5m1g0q0xhc298z2vblnns01lg1"))))
     (properties `((upstream-name . "multibiasmeta")))
     (build-system r-build-system)
     (propagated-inputs (list r-robumeta
@@ -6898,13 +6901,13 @@ between true and false positive interactions.")
 (define-public r-msimcc
   (package
     (name "r-msimcc")
-    (version "0.0.2")
+    (version "0.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mSimCC" version))
               (sha256
                (base32
-                "1ka2p5ymzaqyasan9j5lsxpxfiz5rp71lv4rdd8g4gh48chqvgaa"))))
+                "1dnyrc4hxdimqkk8rm57z74ihmlzmg8plx30ch7rf1z86i33hnjy"))))
     (properties `((upstream-name . "mSimCC")))
     (build-system r-build-system)
     (propagated-inputs (list r-foreach r-doparallel))
@@ -7683,13 +7686,13 @@ extensions.")
 (define-public r-msbp
   (package
     (name "r-msbp")
-    (version "1.4")
+    (version "1.4-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "msBP" version))
               (sha256
                (base32
-                "17hsnfipb6mgwhbc9rxzx5azc57ravz7zfnbc8r73sn1b270ydpb"))))
+                "1n833ghqh9n5m2qx8njsq5njbcap67y1v71a0vm1p2igh0f8b54i"))))
     (properties `((upstream-name . "msBP")))
     (build-system r-build-system)
     (native-inputs (list r-r-rsp))
@@ -11410,13 +11413,13 @@ package to find and visualize monophyly issues.\" Schwery, O. & O'Meara, B.C.
 (define-public r-monomvn
   (package
     (name "r-monomvn")
-    (version "1.9-17")
+    (version "1.9-18")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "monomvn" version))
               (sha256
                (base32
-                "0hzwcmdg0j2jrp5a19mixih4ng4xa8p315g77adardp6k6z2wcjk"))))
+                "16wv8ip6s720d5ksd1y0r25gd2210jwhlfvca5vyzizm768bkrha"))))
     (properties `((upstream-name . "monomvn")))
     (build-system r-build-system)
     (propagated-inputs (list r-quadprog r-pls r-mvtnorm r-mass r-lars))
@@ -14344,13 +14347,13 @@ Journal of Statistical Software, Vol.  14, No.  3 (May), pp.  1-32.
 (define-public r-mnorm
   (package
     (name "r-mnorm")
-    (version "1.2.0")
+    (version "1.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mnorm" version))
               (sha256
                (base32
-                "1iq8sgjg7y6779vvh1q11libcgsjkli4bngj1xm883zqwbwrwihg"))))
+                "1g7174hbknriwmj044zb4psc4f2np3qy308xsq2ik3n9fvxz0vyh"))))
     (properties `((upstream-name . "mnorm")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-hpa))
@@ -14361,8 +14364,9 @@ Journal of Statistical Software, Vol.  14, No.  3 (May), pp.  1-32.
 multivariate normal distribution and Gaussian copula (with various marginal
 distributions) using methods described in A. Genz (2004)
 <doi:10.1023/B:STCO.0000035304.20635.31>, A. Genz, F. Bretz (2009)
-<doi:10.1007/978-3-642-01689-9> and E. Kossova, B. Potanin (2018)
-<https:ideas.repec.org/a/ris/apltrx/0346.html>.")
+<doi:10.1007/978-3-642-01689-9>, H. I. Gassmann (2003)
+<doi:10.1198/1061860032283> and E. Kossova, B. Potanin (2018)
+<https://ideas.repec.org/a/ris/apltrx/0346.html>.")
     (license license:gpl2+)))
 
 (define-public r-mnonr
@@ -15850,13 +15854,13 @@ Haibe-Kains (2016) <doi:10.1186/s13029-016-0053-y>.")
 (define-public r-mm
   (package
     (name "r-mm")
-    (version "1.6-6")
+    (version "1.6-7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MM" version))
               (sha256
                (base32
-                "115sfl0n645g3wd8bnlmadzk9s9z1p83wjswclf6s5nqwx5qvas7"))))
+                "137v9728h5kxhvyrpvfawv25l9jzy7qi74pr4k91v286l0x7ksi6"))))
     (properties `((upstream-name . "MM")))
     (build-system r-build-system)
     (propagated-inputs (list r-partitions
@@ -16053,13 +16057,13 @@ mlt.")
 (define-public r-mlt
   (package
     (name "r-mlt")
-    (version "1.4-8")
+    (version "1.4-9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mlt" version))
               (sha256
                (base32
-                "11qnbrwl2vahbs1fqmagsahffxxhwg441z683194c3bvpfddl5cd"))))
+                "0a5nhm8pkadl26gz285klpj8m6jla2zq230g5r51hkyvm2vxcz74"))))
     (properties `((upstream-name . "mlt")))
     (build-system r-build-system)
     (propagated-inputs (list r-variables
@@ -17488,13 +17492,13 @@ increments (BAI) was described by @code{JevÅ¡enak} and Skudnik (2021)
 (define-public r-mlflow
   (package
     (name "r-mlflow")
-    (version "2.5.0")
+    (version "2.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mlflow" version))
               (sha256
                (base32
-                "1zjm66wx25y41kpr8wmjk52d51ghkq35myicxna2yld3xvx2h7ig"))))
+                "0si3ysh39hpd075k14b5ic5issvizn4f9alx1bb0fva2f7ip894l"))))
     (properties `((upstream-name . "mlflow")))
     (build-system r-build-system)
     (propagated-inputs (list r-zeallot
@@ -17773,13 +17777,13 @@ likelihood and test the internal validity of the estimated scale.")
 (define-public r-mldr-resampling
   (package
     (name "r-mldr-resampling")
-    (version "0.2.2")
+    (version "0.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mldr.resampling" version))
               (sha256
                (base32
-                "10vms4jiws5d8jk0hpld2r4qb2rbgh10fpkbvswqfb6mjv77016n"))))
+                "0knxv6ndni50g17b86gb6xshks6h776y5aa82hmz9q7n2mq1861v"))))
     (properties `((upstream-name . "mldr.resampling")))
     (build-system r-build-system)
     (propagated-inputs (list r-vecsets r-pbapply r-mldr r-e1071 r-data-table))
@@ -18180,13 +18184,13 @@ dimensions, any initial center, and any number of clusters to expect.")
 (define-public r-mkle
   (package
     (name "r-mkle")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MKLE" version))
               (sha256
                (base32
-                "0pnz99z2ms8j0acnpim0z7n7m0x6rkvzi5dhq8jhx0dnry4mznn0"))))
+                "0149l4ycn8f1v2ndfvl167xj7zb4zyi4wzaz12d9d5q5igavyx5x"))))
     (properties `((upstream-name . "MKLE")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=MKLE")
@@ -20041,13 +20045,13 @@ DNA Heteroplasmy calculated from single-cell datasets
 (define-public r-misty
   (package
     (name "r-misty")
-    (version "0.5.0")
+    (version "0.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "misty" version))
               (sha256
                (base32
-                "15za8p85i982sp4vw1c5bkvd9dk5yq8yhpi1dym8hfbj18l8rf0c"))))
+                "0zap43c9raylxhj6bkwap7phpsdw59yragdm7dgq0mcgd7pnaw92"))))
     (properties `((upstream-name . "misty")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
@@ -20074,8 +20078,8 @@ multilevel confirmatory factor analysis, between-group and longitudinal
 measurement equivalence evaluation, cross-level measurement equivalence
 evaluation, and multilevel composite reliability), and statistical analysis
 (e.g., confidence intervals, collinearity and residual diagnostics, dominance
-analysis, between- and within-subject analysis of variance, t-test, z-test,
-sample size determination).")
+analysis, between- and within-subject analysis of variance, latent class
+analysis, t-test, z-test, sample size determination).")
     (license license:expat)))
 
 (define-public r-mistral
@@ -22321,13 +22325,13 @@ from <https://www.gurobi.com> after obtaining a license.")
 (define-public r-mikropml
   (package
     (name "r-mikropml")
-    (version "1.6.0")
+    (version "1.6.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mikropml" version))
               (sha256
                (base32
-                "1m91blwkkcgby2pgpn5w1sbgk4vwxvhhbpsjrkcwpcifkkgys17n"))))
+                "13dlzrwyl4sqklypva35qq5194yc95fcpsyclvisdrky040xgxsy"))))
     (properties `((upstream-name . "mikropml")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -23061,13 +23065,13 @@ analysis.")
 (define-public r-microseq
   (package
     (name "r-microseq")
-    (version "2.1.5")
+    (version "2.1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "microseq" version))
               (sha256
                (base32
-                "1asdy0njy5xcykd88jxa8s5hkrh6kab566h3nf9i93yw1i6kmwip"))))
+                "1xa8r908jic06kv1qjmdidh3zzslbimjyhsy6v27xqzrh45svq4c"))))
     (properties `((upstream-name . "microseq")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -25113,13 +25117,13 @@ SIRS(Zhu et al. (2011)<doi:10.1198/jasa.2011.tm10563>), DC-SIS (Li et al. (2012)
 (define-public r-mfpp
   (package
     (name "r-mfpp")
-    (version "0.0.4")
+    (version "0.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mfpp" version))
               (sha256
                (base32
-                "0n752nm102cxscbi76hy1bh8kqd1svwknkj6l63jq5zd1z63a2yg"))))
+                "0i8yp3rmhqy8w6xvdlkg6k8vm3hdihsqrrc94sbx1c1nsd5p2m95"))))
     (properties `((upstream-name . "mfpp")))
     (build-system r-build-system)
     (propagated-inputs (list r-rfast
@@ -26311,13 +26315,13 @@ modeling, particularly crop and crop disease modeling.")
 (define-public r-meteoland
   (package
     (name "r-meteoland")
-    (version "2.0.1")
+    (version "2.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "meteoland" version))
               (sha256
                (base32
-                "1kms1932nk1a10sm6lgl898h9f72mhypi86s2bd8qi1w1lnr04df"))))
+                "0480g35nl0hs10z9mjq063b130fdqi67bzmclq8b1y4jdlqfzgpr"))))
     (properties `((upstream-name . "meteoland")))
     (build-system r-build-system)
     (propagated-inputs (list r-units
@@ -26599,13 +26603,13 @@ for re-analysis (scrape_meta, parse_CI_string, ci_to_var).")
 (define-public r-metaumbrella
   (package
     (name "r-metaumbrella")
-    (version "1.0.6")
+    (version "1.0.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "metaumbrella" version))
               (sha256
                (base32
-                "08mk1i6bx45gy385llraxf3dr3rwfwn5bsm3yly6yfn83wf7qjjy"))))
+                "0m9bwbvpgr29373lgamgg59n910n75jqwz6w4v4ppavmwp48mdx3"))))
     (properties `((upstream-name . "metaumbrella")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -30821,13 +30825,13 @@ Thomas Brendan Murphy (2010) <doi:10.1016/j.stamet.2010.01.002>.")
 (define-public r-meboot
   (package
     (name "r-meboot")
-    (version "1.4-9.3")
+    (version "1.4-9.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "meboot" version))
               (sha256
                (base32
-                "1d8h1l9kpmsndgpmwkxpn05bx22m51lkb2w40p03lwajc9847j3d"))))
+                "0akap3dl6nsfvh2f6d96ij6dvbblyrdnbqqh23ay8ah0r51zx9fs"))))
     (properties `((upstream-name . "meboot")))
     (build-system r-build-system)
     (propagated-inputs (list r-tdigest r-nlme r-hdrcde r-dynlm))
@@ -32581,13 +32585,13 @@ tree problems.")
 (define-public r-mcmcvis
   (package
     (name "r-mcmcvis")
-    (version "0.16.0")
+    (version "0.16.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MCMCvis" version))
               (sha256
                (base32
-                "0sp6fpbsh485yybhxpaffvjbx4yybxkd7lj6haq8q02h2sjdy02c"))))
+                "09ij85rb36m8nd2w09b0ynwf9p1qys8as550hjdcp23a2rd56siw"))))
     (properties `((upstream-name . "MCMCvis")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstan r-overlapping r-colorspace r-coda))
@@ -33660,13 +33664,13 @@ mcb'.")
 (define-public r-mcavariants
   (package
     (name "r-mcavariants")
-    (version "2.6")
+    (version "2.6.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MCAvariants" version))
               (sha256
                (base32
-                "19wnkk7bknj5yd0s63ssybyzbs7x022wyr444hlinw8b181x57f3"))))
+                "0hsm60z1xkjda74f1ab3m5d2l9rv5r88ms7fi0bndrys6dd9fzgl"))))
     (properties `((upstream-name . "MCAvariants")))
     (build-system r-build-system)
     (propagated-inputs (list r-plotly r-gridextra r-ggrepel r-ggplot2))
@@ -36946,13 +36950,13 @@ least-cost paths.")
 (define-public r-markowitzr
   (package
     (name "r-markowitzr")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MarkowitzR" version))
               (sha256
                (base32
-                "0p234zs7lvi83fv02mijrhp7hmr5cklddayb61krhx1h2hn4gzb9"))))
+                "18bs6hbj8bhs1var72vd3gkzjjx80f5cyq0a6fm99fmsggw1lmqa"))))
     (properties `((upstream-name . "MarkowitzR")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrixcalc r-gtools))
@@ -36961,7 +36965,8 @@ least-cost paths.")
     (synopsis "Statistical Significance of the Markowitz Portfolio")
     (description
      "This package provides a collection of tools for analyzing significance of
-Markowitz portfolios.")
+Markowitz portfolios, using the delta method on the second moment matrix,
+<arxiv:1312.0557>.")
     (license license:lgpl3)))
 
 (define-public r-markovmsm
@@ -38919,13 +38924,13 @@ visualizing networks with sensible defaults.")
 (define-public r-manymome
   (package
     (name "r-manymome")
-    (version "0.1.10")
+    (version "0.1.12")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "manymome" version))
               (sha256
                (base32
-                "0k8q78y30kljp6kfb7jxrlx8gj7k5ns471sirkd511ai7mnqnldf"))))
+                "0va5xxl46pgpwp335cf5a1h81jz1vmpqcs7nmqqf547xzw1d9rfj"))))
     (properties `((upstream-name . "manymome")))
     (build-system r-build-system)
     (propagated-inputs (list r-pbapply
@@ -40852,13 +40857,13 @@ probabilities.")
 (define-public r-madness
   (package
     (name "r-madness")
-    (version "0.2.7")
+    (version "0.2.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "madness" version))
               (sha256
                (base32
-                "0vcpydqnpmg9rvvzyjyqvd3qgs42n8cr9cafai51989v2w2bcf85"))))
+                "1a0jcvy7xq654hcjv0nsjfhwh9fgxzhk7grjy209mgzmkivdinpq"))))
     (properties `((upstream-name . "madness")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrixcalc r-matrix r-expm))
