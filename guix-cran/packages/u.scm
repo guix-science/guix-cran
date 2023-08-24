@@ -3387,13 +3387,13 @@ analyses.")
 (define-public r-ukbnmr
   (package
     (name "r-ukbnmr")
-    (version "2.1.3")
+    (version "2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ukbnmr" version))
               (sha256
                (base32
-                "1xm80xxkzhwz9q8mr4apfhyizq0jwfdzcrj9j1ri0gc6mi0q4gxw"))))
+                "05bcsz74aayi5rk9nv7izj4xz9mmf1yw933syvvp2g0ly6z8l66w"))))
     (properties `((upstream-name . "ukbnmr")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-data-table r-bit64))

@@ -749,13 +749,13 @@ matrices of 2-way and 3-way.  The GUI can be run in multiple languages.")
 (define-public r-dynatree
   (package
     (name "r-dynatree")
-    (version "1.2-15")
+    (version "1.2-16")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dynaTree" version))
               (sha256
                (base32
-                "0bgzf8lci9cmzv9b68q4nvmrbk84cvpgmff4wd6s0jfaqsww6vb6"))))
+                "14yxs9f03bdmrf3lis7hzk04smz0dddammbd0na4gw7bq14341bm"))))
     (properties `((upstream-name . "dynaTree")))
     (build-system r-build-system)
     (home-page "https://bobby.gramacy.com/r_packages/dynaTree/")
@@ -935,13 +935,13 @@ single latent hierarchy over time.  Strauss & Holekamp (in press).")
 (define-public r-dynamite
   (package
     (name "r-dynamite")
-    (version "1.4.3")
+    (version "1.4.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dynamite" version))
               (sha256
                (base32
-                "1kbdw94qprgqc0m8j10glxkmf4x54vl86nsybwx27vj1zk1cbj5h"))))
+                "0zvhcws7sgxmiamf09rm4la20b1q1grmxbz2qbgb15ycncwn9a8h"))))
     (properties `((upstream-name . "dynamite")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -3586,13 +3586,13 @@ splitting algorithms, please refer to: Chen et al. (2022)
 (define-public r-dsairm
   (package
     (name "r-dsairm")
-    (version "0.9.5")
+    (version "0.9.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DSAIRM" version))
               (sha256
                (base32
-                "1axzpgly8s5l35q834xznsycfxcy55ym5i846gsv8v5xdysr8kw1"))))
+                "0zp5dcfdzrywp252d1dcyvaxn8lygqs7hzxk0v9yzgahrbxnlvw9"))))
     (properties `((upstream-name . "DSAIRM")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
@@ -3621,13 +3621,13 @@ with the models.")
 (define-public r-dsaide
   (package
     (name "r-dsaide")
-    (version "0.9.3")
+    (version "0.9.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DSAIDE" version))
               (sha256
                (base32
-                "11sz57a0mmhk3lj621wnccmcbbrxp0ipg99phfk3wb927985p0zv"))))
+                "01yljprcwkq0n7w9yr1xlkajyzyd0n8kmxkj80wcldp5mvqjmyxd"))))
     (properties `((upstream-name . "DSAIDE")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
@@ -4434,13 +4434,13 @@ select the tuning parameters.")
 (define-public r-dreamerr
   (package
     (name "r-dreamerr")
-    (version "1.2.3")
+    (version "1.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dreamerr" version))
               (sha256
                (base32
-                "0g3gl4nzfw02alhyjw9flylfr2awyijjim50j1jdnp677zqlxkmf"))))
+                "1wpfc87vl8x2z1x1wr3lab0v9d0ddxhhjh8fk10baid77ypxq0gf"))))
     (properties `((upstream-name . "dreamerr")))
     (build-system r-build-system)
     (propagated-inputs (list r-formula))
@@ -12358,16 +12358,17 @@ the form of an exponential equation (Buckingham, (1914),
 (define-public r-dimensio
   (package
     (name "r-dimensio")
-    (version "0.3.1")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dimensio" version))
               (sha256
                (base32
-                "1nxb73xmvmkw0x0vg3sw8dgq1g58bwqpscknc21i3b4w61h5n02y"))))
+                "1p7i3qbykxwxz9ag1pw2pn8l1kvxyfr0nalai9sb32nm397fqvir"))))
     (properties `((upstream-name . "dimensio")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-ggplot2))
+    (native-inputs (list r-knitr))
     (home-page "https://packages.tesselle.org/dimensio/")
     (synopsis "Multivariate Data Analysis")
     (description
@@ -14871,17 +14872,16 @@ Weida Tong (2003) <doi:10.1021/ci020058s>.")
 (define-public r-dfoptim
   (package
     (name "r-dfoptim")
-    (version "2020.10-1")
+    (version "2023.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dfoptim" version))
               (sha256
                (base32
-                "0gy3wnvwvi9sydcbix226jds88n43r5nchvzrhqdag0j1bwpr9gy"))))
+                "0c2ws249n8ib7fx8vp32l2hswicjxsds7xm1f4gcfky9cvcacdn4"))))
     (properties `((upstream-name . "dfoptim")))
     (build-system r-build-system)
-    (home-page
-     "https://coah.jhu.edu/people/Faculty_personal_Pages/Varadhan.html")
+    (home-page "https://cran.r-project.org/package=dfoptim")
     (synopsis "Derivative-Free Optimization")
     (description
      "Derivative-Free optimization algorithms.  These algorithms do not require
@@ -21307,13 +21307,13 @@ variables for other statistical analysis.")
 (define-public r-dblockmodeling
   (package
     (name "r-dblockmodeling")
-    (version "0.2.0")
+    (version "0.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dBlockmodeling" version))
               (sha256
                (base32
-                "0c1hvawb9gw6vckims3g8kzn2c4f0as5x1vw39sdvkwc92xy26lv"))))
+                "18y6pkp273q15nkgqywzknsq1mnbiaw8jlzsaa76zadxf7xhsxls"))))
     (properties `((upstream-name . "dBlockmodeling")))
     (build-system r-build-system)
     (native-inputs (list gfortran))

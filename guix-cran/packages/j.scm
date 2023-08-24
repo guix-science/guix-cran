@@ -1210,13 +1210,13 @@ conservation analysis.  The algorithm is described in: Miranda-Esquivel, D
 (define-public r-jrc
   (package
     (name "r-jrc")
-    (version "0.5.1")
+    (version "0.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jrc" version))
               (sha256
                (base32
-                "0lg647nfijj6grlmwkasd6di5h6286dxmw1373k6n5gwym1g1l36"))))
+                "0zqif6csh4r5vbcw1dl12x2psb27r5lv0k5z0vv8bk3xk5r6vwlq"))))
     (properties `((upstream-name . "jrc")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr

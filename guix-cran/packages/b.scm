@@ -2835,13 +2835,13 @@ Windows.  Versions running on x86Linux and on 64-bit R under Windows are in
 (define-public r-brucer
   (package
     (name "r-brucer")
-    (version "2023.8")
+    (version "2023.8.23")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bruceR" version))
               (sha256
                (base32
-                "1p5wky0b6ak119nq1k2b87adypqcpv8pcrhfwai4c5daxyyxph95"))))
+                "0cbvs27iqn5p2vd2wwb47ggpgcp1cf00zqq50zp4v07apdsgx3a1"))))
     (properties `((upstream-name . "bruceR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -8252,6 +8252,33 @@ code related to the above model was retrieved from
  Users can inspect the MCMC simulation, create and customize insightful
 graphical representations or apply clustering techniques.")
     (license license:gpl2+)))
+
+(define-public r-blsbandit
+  (package
+    (name "r-blsbandit")
+    (version "0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "blsBandit" version))
+              (sha256
+               (base32
+                "08dppd0qym4lac5glifwaraddics8np522sfw4x8xg00vm335r25"))))
+    (properties `((upstream-name . "blsBandit")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-shiny
+                             r-rsqlite
+                             r-plotly
+                             r-jsonlite
+                             r-dbi))
+    (home-page "https://cran.r-project.org/package=blsBandit")
+    (synopsis "Data Viewer for Bureau of Labor Statistics Data")
+    (description
+     "Allows users to easily visualize data from the BLS (United States of America
+Bureau of Labor Statistics) <https://www.bls.gov>.  Currently unemployment data
+series U1-U6 are available.  Not affiliated with the Bureau of Labor Statistics
+or United States Government.")
+    (license license:expat)))
 
 (define-public r-blrshiny2
   (package
@@ -18322,18 +18349,17 @@ by Maruo et al. (2017) <doi:10.1002/sim.7279>.")
 (define-public r-bcmaps
   (package
     (name "r-bcmaps")
-    (version "1.2.0")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bcmaps" version))
               (sha256
                (base32
-                "1n23imq7ksini97fy47070bds87yb0gsplzca0qyknr97igfflx7"))))
+                "1wnm2k7rcxfxqqffb9sn5l5kv0x3pdqsz7hvqdgb2z439ywbkdjj"))))
     (properties `((upstream-name . "bcmaps")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
                              r-sf
-                             r-rlang
                              r-rappdirs
                              r-progress
                              r-lifecycle
@@ -18350,7 +18376,7 @@ Albers (<https://spatialreference.org/ref/epsg/nad83-bc-albers/>) equal-area
 projection, which is the B.C. government standard.  The layers are sourced from
 the British Columbia and Canadian government under open licenses, including B.C.
 Data Catalogue (<https://data.gov.bc.ca>), the Government of Canada Open Data
-Portal (<https://open.canada.ca/en/open-data>), and Statistics Canada
+Portal (<https://open.canada.ca/en/using-open-data>), and Statistics Canada
 (<https://www.statcan.gc.ca/en/reference/licence>).")
     (license (list license:asl2.0
                    (license:fsdg-compatible "file://LICENSE")))))

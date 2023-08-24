@@ -588,13 +588,13 @@ the two, respectively.")
 (define-public r-cxxfunplus
   (package
     (name "r-cxxfunplus")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cxxfunplus" version))
               (sha256
                (base32
-                "19953p12yjmhqhjjiw6ymnvn7krnbndqc8b91rc12ymmfp9x2crr"))))
+                "125lzra4mr4cw5j18nck1faa6jf4fiw4m5pc9mp1h39268c9va6v"))))
     (properties `((upstream-name . "cxxfunplus")))
     (build-system r-build-system)
     (propagated-inputs (list r-inline))
@@ -17340,6 +17340,34 @@ normal kernels and coarsened posteriors.  For more information, see Gorsky, Chan
 and Ma (2020) @code{<arXiv:2001.06451>.}")
     (license license:cc0)))
 
+(define-public r-comire
+  (package
+    (name "r-comire")
+    (version "0.8")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "CoMiRe" version))
+              (sha256
+               (base32
+                "0wq1li1snn4c01vw1zqv6s9sqjrmiw04pkkmx2zdy5wg6bzfz363"))))
+    (properties `((upstream-name . "CoMiRe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-truncnorm
+                             r-splines2
+                             r-rlang
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-mvtnorm
+                             r-kernsmooth
+                             r-gtools
+                             r-ggplot2))
+    (home-page "https://cran.r-project.org/package=CoMiRe")
+    (synopsis "Convex Mixture Regression")
+    (description
+     "Posterior inference under the convex mixture regression @code{(CoMiRe)} models
+introduced by Canale, Durante, and Dunson (2018) <doi:10.1111/biom.12917>.")
+    (license license:gpl2)))
+
 (define-public r-comics
   (package
     (name "r-comics")
@@ -33360,6 +33388,37 @@ when intermediate variables (mediators) are compositional and high-dimensional.
 Sohn, M.B. and Li, H. (2017).  Compositional Mediation Analysis for Microbiome
 Studies. (AOAS: In revision).")
     (license license:gpl2+)))
+
+(define-public r-ccml
+  (package
+    (name "r-ccml")
+    (version "1.3.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ccml" version))
+              (sha256
+               (base32
+                "0n23mz32jpc50j77zc0fhmdam78sab9birrcr97nhd92v56cykss"))))
+    (properties `((upstream-name . "ccml")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-snftool
+                             r-plyr
+                             r-ggplot2
+                             r-dicer
+                             r-consensusclusterplus))
+    (home-page "https://cran.r-project.org/package=ccml")
+    (synopsis "Consensus Clustering for Different Sample Coverage Data")
+    (description
+     "Consensus clustering, also called meta-clustering or cluster ensembles, has been
+increasingly used in clinical data.  Current consensus clustering methods tend
+to ensemble a number of different clusters from mathematical replicates with
+similar sample coverage.  As the fact of common variety of sample coverage in
+the real-world data, a new consensus clustering strategy dealing with such
+biological replicates is required.  This is a two-step consensus clustering
+package, which is used to input multiple predictive labels with different sample
+coverage (missing labels).")
+    (license license:gpl2)))
 
 (define-public r-ccmestimator
   (package

@@ -5564,13 +5564,13 @@ for a penalty linear in the number of changepoints.")
 (define-public r-fplyr
   (package
     (name "r-fplyr")
-    (version "1.2.1")
+    (version "1.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fplyr" version))
               (sha256
                (base32
-                "0k53rc7p0khv3mssghplz3ggzni2vl168mbwg72dgsn9b8nm98sy"))))
+                "0xslmd7kkm3fz8kl0y95d3y7grb8gir0l55n91rmcw1zlp8m9aj6"))))
     (properties `((upstream-name . "fplyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-iotools r-data-table))
@@ -9296,13 +9296,13 @@ and, in some cases, ignored nuisance variables.  See Hemerik, Goeman and Finos
 (define-public r-flipr
   (package
     (name "r-flipr")
-    (version "0.3.2")
+    (version "0.3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "flipr" version))
               (sha256
                (base32
-                "1a88nxgh6jca7jy1dnzq2d8lnydm107m24crxh9f418mv8wsrwnl"))))
+                "188kdgk390rh8wpfsvqbwpwa3dmwzlzv8sdgvfxl9f0ddbxasghb"))))
     (properties `((upstream-name . "flipr")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr

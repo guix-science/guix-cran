@@ -5005,13 +5005,13 @@ Multibiplot Analysis.")
 (define-public r-multibiasmeta
   (package
     (name "r-multibiasmeta")
-    (version "0.2.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "multibiasmeta" version))
               (sha256
                (base32
-                "0z1aqf47pqxqkq2h6s7v73g8la5m1g0q0xhc298z2vblnns01lg1"))))
+                "04qnb3l2y86xy8f1j754g8fy6hc1a26rwdznaka789k3dkkckk93"))))
     (properties `((upstream-name . "multibiasmeta")))
     (build-system r-build-system)
     (propagated-inputs (list r-robumeta
@@ -5063,13 +5063,13 @@ likelihood estimation and Bayesian inference.")
 (define-public r-multiatsm
   (package
     (name "r-multiatsm")
-    (version "0.3.3")
+    (version "0.3.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MultiATSM" version))
               (sha256
                (base32
-                "0hkayrchibk9nkv4cxx3a4310wh63bx4q0q5knp4p13jfyv4slwn"))))
+                "0cni4926xn0kfny1w0kkjhgwrb0bjqxa8cl4bx04xlch1n5f9692"))))
     (properties `((upstream-name . "MultiATSM")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-wrapr r-pracma r-hablar r-ggplot2))
@@ -30584,13 +30584,13 @@ Smet, Buysse, Steen and Vansteelandt (2013) <DOI:10.1080/00273171.2013.832132>."
 (define-public r-medfate
   (package
     (name "r-medfate")
-    (version "2.9.3")
+    (version "3.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "medfate" version))
               (sha256
                (base32
-                "0vsklvj6m0c2yyx29dsfwc22i9vnrgr34gifmd5c7sjddrpzagdq"))))
+                "0l911kqyhazz3c3fpfv7ybw2h3ff2xqqg9scaz8dqz4xjd9sv58x"))))
     (properties `((upstream-name . "medfate")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-rcpp r-meteoland r-ggplot2))
@@ -40765,13 +40765,13 @@ tropical Pacific Ocean.")
 (define-public r-madrat
   (package
     (name "r-madrat")
-    (version "3.3.6")
+    (version "3.6.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "madrat" version))
               (sha256
                (base32
-                "02pvb48sh9xm4vprnzq7rhqihqbqiwndmxwxknai19hm9iyjhz91"))))
+                "03wkzpr0nx50li0g69fn2fznfh6nbg4sdpymsilx3387v50vc9vs"))))
     (properties `((upstream-name . "madrat")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml

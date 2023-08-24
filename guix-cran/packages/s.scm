@@ -1271,13 +1271,13 @@ environmental decision making.")
 (define-public r-switchselection
   (package
     (name "r-switchselection")
-    (version "1.1.1")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "switchSelection" version))
               (sha256
                (base32
-                "0s9fca0l9q7m2qmmpw9q2hpwm81nj07ssvla4fnvrhx63ijg7c6n"))))
+                "0mgl3s02pz9nbhdnm7fhyd8vbrfl718rv7bardlqc448qyb78hb8"))))
     (properties `((upstream-name . "switchSelection")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-mnorm r-hpa r-gena))
@@ -5166,13 +5166,13 @@ by high-throughput technologies.")
 (define-public r-supernova
   (package
     (name "r-supernova")
-    (version "2.5.6")
+    (version "2.5.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "supernova" version))
               (sha256
                (base32
-                "12qysa3drisi3jkccrzz2i38f30mmcaryc950k9xjlha3v58kxfa"))))
+                "167q33ad0rqzccnlir96692kzsw1n07msgpy9w8939yaiv6div5g"))))
     (properties `((upstream-name . "supernova")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -8434,13 +8434,13 @@ components.  The methods can be used for forecasting.")
 (define-public r-stppsim
   (package
     (name "r-stppsim")
-    (version "1.2.7")
+    (version "1.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "stppSim" version))
               (sha256
                (base32
-                "1hg53fxpp4k6vfafd1aasjf4z1vaik5y137i424jhbxf69aqgl2b"))))
+                "0hpy6kxr9m5hmkgnpfs3r1mp5nn9hy52sxb3i1hs9d437mxmhjx6"))))
     (properties `((upstream-name . "stppSim")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -8453,8 +8453,9 @@ components.  The methods can be used for forecasting.")
                              r-sp
                              r-simriv
                              r-sf
-                             r-rgdal
                              r-raster
+                             r-progressr
+                             r-otusummary
                              r-magrittr
                              r-lubridate
                              r-leaflet
@@ -8462,6 +8463,7 @@ components.  The methods can be used for forecasting.")
                              r-gstat
                              r-ggplot2
                              r-geosphere
+                             r-future-apply
                              r-dplyr
                              r-data-table
                              r-cowplot
@@ -8470,17 +8472,18 @@ components.  The methods can be used for forecasting.")
     (home-page "https://github.com/MAnalytics/stppSim")
     (synopsis "Spatiotemporal Point Patterns Simulation")
     (description
-     "Generates artificial spatiotemporal (ST) point patterns through the integration
-of microsimulation (Holm, E., (2017)<doi:10.1002/9781118786352.wbieg0320>) and
-agent-based models (Bonabeau, E., (2002)<doi:10.1073/pnas.082080899>).  Allows a
-user to define the behaviours of a set of walkers (agents, objects, persons,
-etc.) whose interactions with the spatial (landscape) (Quaglietta, L. and Porto,
-M., (2019)<doi:10.1186/s40462-019-0154-8>) and the temporal domains produce new
-point events.  The resulting ST patterns from the point cloud can be measured
-and utilized for spatial and/or temporal model testings and evaluations.
-Application: With increasingly limited availability of fine-grained spatially
-and temporally stamped point data, the package provides an alternative source of
-data for a wide range of research in social and life sciences.")
+     "Generates artificial spatiotemporal (ST) point patterns and/or interactions
+through the integration of microsimulation (Holm, E.,
+(2017)<doi:10.1002/9781118786352.wbieg0320>) and agent-based models (Bonabeau,
+E., (2002)<doi:10.1073/pnas.082080899>).  The tool enables users to configure
+the actions of a group of walkers', which can be agents, objects, individuals,
+and more.  Their engagements with both spatial landscapes (Quaglietta, L. and
+Porto, M., (2019)<doi:10.1186/s40462-019-0154-8>) and time domains result in
+specific spatiotemporal point patterns and/or interactions.  These emerging
+spatiotemporal patterns can be visualized, analyzed, and then employed for both
+spatial and temporal model assessments.  Given the growing scarcity of detailed
+spatiotemporal data, this package offers an alternative dataset for a broad
+spectrum of studies in both the social and life sciences.")
     (license license:gpl3)))
 
 (define-public r-stpphawkes
@@ -26608,18 +26611,18 @@ Gottlieb (2018)
 (define-public r-socialranking
   (package
     (name "r-socialranking")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "socialranking" version))
               (sha256
                (base32
-                "1zq9dlmz7ygnp3cmfkdjmkq2c7rw852d8i06v9j1jl1s67wm33s5"))))
+                "0vfjhliha69rqa94y6y0g5yx4ni1cnfpsgf2h8nccypq6m3rcgjr"))))
     (properties `((upstream-name . "socialranking")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-relations r-rdpack))
     (native-inputs (list r-knitr))
-    (home-page "https://jassler.github.io/socialranking/")
+    (home-page "https://github.com/jassler/socialranking")
     (synopsis "Social Ranking Solutions for Power Relations on Coalitions")
     (description
      "The notion of power index has been widely used in literature to evaluate the
@@ -39952,6 +39955,30 @@ build Graph model like node or edge with customized attributes for R.
 @code{shinyCyJS} is built with cytoscape.js and htmlwidgets R package.")
     (license license:expat)))
 
+(define-public r-shinycox
+  (package
+    (name "r-shinycox")
+    (version "1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "shinyCox" version))
+              (sha256
+               (base32
+                "1fl2dj3568x7s47njz2lgnwr12s72mny4wi5gs99wm66mhzi5bf3"))))
+    (properties `((upstream-name . "shinyCox")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival r-shiny))
+    (home-page "https://github.com/harryc598/shinyCox")
+    (synopsis
+     "Create 'shiny' Applications for Cox Proportional Hazards Models")
+    (description
+     "Takes one or more fitted Cox proportional hazards models and writes a shiny
+application to a directory specified by the user.  The shiny application
+displays predicted survival curves based on user input, and contains none of the
+original data used to create the Cox model or models.  The goal is towards
+visualization and presentation of predicted survival curves.")
+    (license license:expat)))
+
 (define-public r-shinycohortbuilder
   (package
     (name "r-shinycohortbuilder")
@@ -44177,13 +44204,13 @@ by rows or grouping variable(s).")
 (define-public r-sentimentanalysis
   (package
     (name "r-sentimentanalysis")
-    (version "1.3-4")
+    (version "1.3-5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SentimentAnalysis" version))
               (sha256
                (base32
-                "04ibqyh18rzj1rgrpw3i1zzr35rvl7z7dzbp8w1lzg9s40yf3ij1"))))
+                "184nzmi17s86lvxa87ddq7vkmq6cmr7kss8bzz1ncp1nfcm2cczw"))))
     (properties `((upstream-name . "SentimentAnalysis")))
     (build-system r-build-system)
     (propagated-inputs (list r-tm
@@ -48601,16 +48628,16 @@ dynamic) species distribution models (SDMs).  See Anderson et al. (2022)
 (define-public r-sdmpredictors
   (package
     (name "r-sdmpredictors")
-    (version "0.2.14")
+    (version "0.2.15")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sdmpredictors" version))
               (sha256
                (base32
-                "1vrl6cb2m26xlyx5wxcxnblcykajjf8rj51598zyffy5kx4xjzyl"))))
+                "19znyvz98b3ykwqllzs2sjrw4sd6pd90130ws5d739xgpgsj1zwv"))))
     (properties `((upstream-name . "sdmpredictors")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rgdal r-raster r-r-utils))
+    (propagated-inputs (list r-terra r-raster r-r-utils))
     (native-inputs (list r-knitr))
     (home-page "http://lifewatch.github.io/sdmpredictors/")
     (synopsis "Species Distribution Modelling Predictor Datasets")
@@ -54462,24 +54489,25 @@ Address Sanitizer Wiki at <https://github.com/google/sanitizers/wiki>.")
 (define-public r-sanic
   (package
     (name "r-sanic")
-    (version "0.0.1")
+    (version "0.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sanic" version))
               (sha256
                (base32
-                "05fd7jpi7cf9klfh6dqf8wklrjh5q1b3xqddxhdihcsqvcqhg48l"))))
+                "0php70zcxhx6kqcyimx4icx2460ik6frvi3h21jw6qrz631l304r"))))
     (properties `((upstream-name . "sanic")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-matrix))
     (home-page "https://github.com/nk027/sanic")
     (synopsis "Solving Ax = b Nimbly in C++")
     (description
-     "Routines for solving large systems of linear equations in R. Direct and
-iterative solvers from the Eigen C++ library are made available.  Solvers
-include Cholesky, LU, QR, and Krylov subspace methods (Conjugate Gradient,
-@code{BiCGSTAB).} Both dense and sparse problems are supported.")
-    (license license:gpl3)))
+     "Routines for solving large systems of linear equations and eigenproblems in R.
+Direct and iterative solvers from the Eigen C++ library are made available.
+Solvers include Cholesky, LU, QR, and Krylov subspace methods (Conjugate
+Gradient, @code{BiCGSTAB).} Dense and sparse problems are supported.")
+    (license (list license:gpl3
+                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-sangertools
   (package
@@ -56522,6 +56550,37 @@ which based on Wilcox (1979) <doi:10.1177/001316447903900302> and Kleinman
     (description
      "Select best combination of auxiliary variables with certain criterion.")
     (license license:gpl3)))
+
+(define-public r-sae2
+  (package
+    (name "r-sae2")
+    (version "1.2-1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "sae2" version))
+              (sha256
+               (base32
+                "1ahq2gha8q3k6aj1a1qclibq209a3426sb77qy3fdgph9zkpij1x"))))
+    (properties `((upstream-name . "sae2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survey r-mass))
+    (home-page "https://cran.r-project.org/package=sae2")
+    (synopsis "Small Area Estimation: Time-Series Models")
+    (description
+     "Time series area-level models for small area estimation.  The package
+supplements the functionality of the sae package.  Specifically, it includes
+EBLUP fitting of the original Rao-Yu model, which in the original form did not
+have a spatial component.  The package also offers a modified ('dynamic')
+version of the Rao-Yu model, replacing the assumption of stationarity.  Both
+univariate and multivariate applications are supported.  Of particular note is
+the allowance for covariance of the area-level sample estimates over time, as
+encountered in rotating panel designs such as the U.S. National Crime
+Victimization Survey or present in a time-series of 5-year estimates from the
+American Community Survey.  Key references to the methods include J.N.K. Rao and
+I. Molina (2015, ISBN:9781118735787), J.N.K. Rao and M. Yu (1994)
+<doi:10.2307/3315407>, and R.E. Fay and R.A. Herriot (1979)
+<doi:10.1080/01621459.1979.10482505>.")
+    (license license:gpl2)))
 
 (define-public r-sae
   (package

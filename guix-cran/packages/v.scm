@@ -4970,13 +4970,13 @@ for use with RStudio'.")
 (define-public r-vec2dtransf
   (package
     (name "r-vec2dtransf")
-    (version "1.1.2")
+    (version "1.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "vec2dtransf" version))
               (sha256
                (base32
-                "1diwj005b0mzcik2v7phdbn792qy907cna3mzwr4sj21igjrhkmx"))))
+                "0sxsbm1q7v58b907xvpppwfljmqm2pyrch2zc82nmb10wfiha8k8"))))
     (properties `((upstream-name . "vec2dtransf")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp))

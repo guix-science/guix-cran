@@ -11704,18 +11704,24 @@ building this support in R packages, e.g. common validation & I/O tasks.")
 (define-public r-potions
   (package
     (name "r-potions")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "potions" version))
               (sha256
                (base32
-                "1g25spjzh2l8xcv0vhy4rdlscs41cr9xa173gfafy3b1x3bik91p"))))
+                "01dzgcapd21x88kp16pj0sqkx9r6xyfa9c6kxlna4vfpkwk99sh7"))))
     (properties `((upstream-name . "potions")))
     (build-system r-build-system)
-    (propagated-inputs (list r-yaml r-stringi r-rlang r-lobstr r-jsonlite))
+    (propagated-inputs (list r-yaml
+                             r-stringi
+                             r-rrapply
+                             r-rlang
+                             r-purrr
+                             r-lobstr
+                             r-jsonlite))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/AtlasOfLivingAustralia/potions")
+    (home-page "https://potions.ala.org.au")
     (synopsis "Easy Options Management")
     (description
      "Store and retrieve data from options() using syntax derived from the here
@@ -12476,13 +12482,13 @@ multivariate seasonal time series models.")
 (define-public r-portalr
   (package
     (name "r-portalr")
-    (version "0.4.0")
+    (version "0.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "portalr" version))
               (sha256
                (base32
-                "1sgbmsb5zf2fsi1abs1cigwp2qwiijrd06b3z4hdsb58n6dwim1z"))))
+                "1i241nn694nyyljldpsah1555spbhksassf7i18pmqigzpk01qix"))))
     (properties `((upstream-name . "portalr")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -13066,13 +13072,13 @@ file type options.")
 (define-public r-popepi
   (package
     (name "r-popepi")
-    (version "0.4.10")
+    (version "0.4.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "popEpi" version))
               (sha256
                (base32
-                "1z18ps2ra15xbv94zgvshbj448i7jj2cnhwaxgwnk9c9djna7fa8"))))
+                "0407vw95id6537q7kmaar0qbkdls6j9w7b2d8y957zrrd1wb43xg"))))
     (properties `((upstream-name . "popEpi")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-epi r-data-table))
@@ -13089,7 +13095,7 @@ Stare, and Esteve (2012) <doi:10.1111/j.1541-0420.2011.01640.x>) estimators),
 and standardized incidence and mortality ratios, all of which can be easily
 adjusted for by covariates such as age.  Fast splitting and aggregation of Lexis
 objects (from package Epi') and other computations achieved using data.table'.")
-    (license license:gpl3)))
+    (license license:expat)))
 
 (define-public r-poped
   (package
@@ -17987,13 +17993,13 @@ response theory (IRT) models.")
 (define-public r-plmixed
   (package
     (name "r-plmixed")
-    (version "0.1.6")
+    (version "0.1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PLmixed" version))
               (sha256
                (base32
-                "12flwwd1q1w0zprl9gfxdkd8aispv4y8yfckbdkawv70xrw4jnpz"))))
+                "1kn9w8xr9y1lnxa5hv95q3hipr7shs8pnhr6nr88v4rskgvvhffm"))))
     (properties `((upstream-name . "PLmixed")))
     (build-system r-build-system)
     (propagated-inputs (list r-optimx r-numderiv r-matrix r-lme4))
@@ -20294,13 +20300,13 @@ strike-zone plots using the ggplot2 package.")
 (define-public r-pisart
   (package
     (name "r-pisart")
-    (version "2.0.1")
+    (version "2.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pisaRT" version))
               (sha256
                (base32
-                "0g4z4ixg7bsig1rjhsymncmzpl135r6mr3pqlb60gmz11851bw9w"))))
+                "1dpskdi4kd9zajj2pl7n686sd2w8kai7zilrwsrcfgl1dkfr1m82"))))
     (properties `((upstream-name . "pisaRT")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=pisaRT")
@@ -24139,13 +24145,13 @@ correlation and distance covariance options are available to generate the graph.
 (define-public r-pgpx
   (package
     (name "r-pgpx")
-    (version "0.1.3")
+    (version "0.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pGPx" version))
               (sha256
                (base32
-                "1bv8fxy2rhb36201h4r4wx8gd5dsjw597n666mnk51r64wfmj62x"))))
+                "037grwk41z5zdcw6nc004x5hj5s6q8y7zck417ylgyygsvgazhsf"))))
     (properties `((upstream-name . "pGPx")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgenoud
@@ -31257,13 +31263,13 @@ Hall, 2015.  Includes a debugging aid.")
 (define-public r-partitioncomparison
   (package
     (name "r-partitioncomparison")
-    (version "0.2.5")
+    (version "0.2.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "partitionComparison" version))
               (sha256
                (base32
-                "0wzg2r4c61fd3cp8kwsc313gwcizh5aavw361lc9gqn57p1kml1j"))))
+                "1z4ckjgjsq94wbnazb3335rcy6hhqh8pf9j5d22z6qkgfgxcv7w6"))))
     (properties `((upstream-name . "partitionComparison")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-lpsolve))

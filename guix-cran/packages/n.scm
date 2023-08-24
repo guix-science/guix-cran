@@ -3443,13 +3443,13 @@ modified Polak-Ribiere-Polyak formula as described in (Li, Can, 2013,
 (define-public r-nonmemica
   (package
     (name "r-nonmemica")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nonmemica" version))
               (sha256
                (base32
-                "06fn7iwc30la2k6ib9zr7hvlygbh0267rnk1ybys4swq4jdmmigd"))))
+                "08wv6c56f90759mll9q8y3l3gjgv6bf8j7ac3pkpn463v76q78wm"))))
     (properties `((upstream-name . "nonmemica")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -11407,13 +11407,13 @@ and joining tables.")
 (define-public r-neoniso
   (package
     (name "r-neoniso")
-    (version "0.6.2")
+    (version "0.6.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "NEONiso" version))
               (sha256
                (base32
-                "1kl8y5z7cm7y04cqvwdkzf27mrrmvmwyix79d6wm03cmav2p6q54"))))
+                "10fwrw04g9430ni45njxy1gxrda9ynw6447zpwnbidbakr38hadl"))))
     (properties `((upstream-name . "NEONiso")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

@@ -1869,13 +1869,13 @@ placed in the top r-fraction of units.")
 (define-public r-rvaidememoire
   (package
     (name "r-rvaidememoire")
-    (version "0.9-83")
+    (version "0.9-83-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RVAideMemoire" version))
               (sha256
                (base32
-                "0h6vfm0yskh6irc078xy6ds7kl2w1jwszv6snhskp4xr1y0ls1sv"))))
+                "0m2xjig4ayixxs7p1kbzr5plvcir3b8fjm3fkbaxpqf6cbn3mhqi"))))
     (properties `((upstream-name . "RVAideMemoire")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -17543,17 +17543,17 @@ first version.")
 (define-public r-rmidas
   (package
     (name "r-rmidas")
-    (version "0.4.2")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rMIDAS" version))
               (sha256
                (base32
-                "0gkn0a091h5hffcmkbqa0qpxhkxxr9jz08dh1816bswfgn9i8ss6"))))
+                "0pxqkg6qm7y3ra0z0hnvjx68lhh6xq142cclgy3nmiplhbx4z493"))))
     (properties `((upstream-name . "rMIDAS")))
     (build-system r-build-system)
     (inputs (list python))
-    (propagated-inputs (list r-reticulate r-mltools r-data-table))
+    (propagated-inputs (list r-reticulate r-rappdirs r-mltools r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/MIDASverse/rMIDAS")
     (synopsis "Multiple Imputation with Denoising Autoencoders")
@@ -22571,13 +22571,13 @@ the data, we would have acceptable agreement (kappa above the threshold).")
 (define-public r-rhoneycomb
   (package
     (name "r-rhoneycomb")
-    (version "2.3.3")
+    (version "2.3.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rhoneycomb" version))
               (sha256
                (base32
-                "0alvg8skhpc9l00r9ng1j39ha1pqj5yp7g3gdfp3hq20znya6zgc"))))
+                "1vh6y4hfpcbpm448hd083ln197fc7h6pg6bngvmla2aj9vp6rlmx"))))
     (properties `((upstream-name . "rhoneycomb")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -24560,13 +24560,13 @@ evaluating outputs and assumptions.")
 (define-public r-rfpermute
   (package
     (name "r-rfpermute")
-    (version "2.5.1")
+    (version "2.5.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rfPermute" version))
               (sha256
                (base32
-                "156vaxkjs5959bh4fh65zqfy8p7ag66abizx6n3wj6q078048jvj"))))
+                "060v52jil5zannzinc6nvzwqd8kw0glpj3xflw606p9sxpzx11rl"))))
     (properties `((upstream-name . "rfPermute")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -27193,13 +27193,13 @@ simplify the creation of maps of the data.")
 (define-public r-rerddap
   (package
     (name "r-rerddap")
-    (version "1.0.3")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rerddap" version))
               (sha256
                (base32
-                "1mna7yq1qzmzwpkyif8jr6npd8fd2vfd3lczw3w5vmk9ghqvrfqy"))))
+                "16341yvfnd4p56wbww39fyprb6ngk1f9ydvmg1chcgppsk28f6nz"))))
     (properties `((upstream-name . "rerddap")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -27497,13 +27497,13 @@ PROJ library is available at <https://proj.org/>.")
 (define-public r-reproducible
   (package
     (name "r-reproducible")
-    (version "2.0.7")
+    (version "2.0.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "reproducible" version))
               (sha256
                (base32
-                "0hxxjninf9a4bc1djbrwidziwp6q5dbx7y1i7jpwdfm8q105vs4q"))))
+                "01rximynm0n3xj04y4fw1dwdya1vcka6z6zncvsxcybnak6725qp"))))
     (properties `((upstream-name . "reproducible")))
     (build-system r-build-system)
     (propagated-inputs (list r-lobstr r-fpcompare r-filelock r-digest

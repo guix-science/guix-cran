@@ -8,6 +8,7 @@
   #:use-module (gnu packages cran)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages web)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages haskell-xyz)
@@ -2154,30 +2155,30 @@ in Global Change Biology <doi:10.1111/gcb.16407>.")
 (define-public r-isobxr
   (package
     (name "r-isobxr")
-    (version "1.0.1")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "isobxr" version))
               (sha256
                (base32
-                "18kjymp7lkdnmzsl9cdgqk6x1njqwgp9rsf7z3gi683yfjli7p3g"))))
+                "1k6zky6v3hjw952jg4l0hnicw11iiqmxh7hcdjcb2nk2f4r4qn4g"))))
     (properties `((upstream-name . "isobxr")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
+                             r-tidyr
+                             r-tictoc
                              r-stringr
-                             r-shinythemes
-                             r-shinyjs
-                             r-shinyfiles
-                             r-shiny
                              r-rlang
+                             r-reshape2
                              r-readxl
                              r-r-utils
                              r-qgraph
-                             r-metr
+                             r-purrr
+                             r-magrittr
+                             r-gridextra
                              r-ggrepel
                              r-ggplot2
                              r-fs
-                             r-dt
                              r-dplyr
                              r-desolve
                              r-data-table))
@@ -2188,10 +2189,9 @@ in Global Change Biology <doi:10.1111/gcb.16407>.")
      "This package provides a set of functions to run simple and composite box-models
 to describe the dynamic or static distribution of stable isotopes in open or
 closed systems.  The package also allows the sweeping of many parameters in both
-static and dynamic conditions.  It also comes with a post-run plotting interface
-built under shiny.  The mathematical models used in this package are derived
-from Albarede, 1995, Introduction to Geochemical Modelling, Cambridge University
-Press, Cambridge <doi:10.1017/CBO9780511622960>.")
+static and dynamic conditions.  The mathematical models used in this package are
+derived from Albarede, 1995, Introduction to Geochemical Modelling, Cambridge
+University Press, Cambridge <doi:10.1017/CBO9780511622960>.")
     (license license:gpl3)))
 
 (define-public r-isoboost

@@ -10208,13 +10208,13 @@ and Jia Li (2017) <http://jmlr.org/papers/v18/16-342.html>.")
 (define-public r-hdclassif
   (package
     (name "r-hdclassif")
-    (version "2.2.0")
+    (version "2.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "HDclassif" version))
               (sha256
                (base32
-                "1l5zxhayhzh7q50ycl481hy0br66ylxyvzw1ahmjjrdkm8s3czyj"))))
+                "0npdnp86m71bsp4096j3yfcvr702ghhvdvxpd2m7lbnc8g3v0sdp"))))
     (properties `((upstream-name . "HDclassif")))
     (build-system r-build-system)
     (propagated-inputs (list r-rarpack r-mass))

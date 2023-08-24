@@ -4261,13 +4261,13 @@ converge to local minimum of objective function.")
 (define-public r-truncnormbayes
   (package
     (name "r-truncnormbayes")
-    (version "0.0.2")
+    (version "0.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "truncnormbayes" version))
               (sha256
                (base32
-                "0nsc7h8ddbzqbcfi4mhircgnagkk3an8iwvw7za44frn85vmx6id"))))
+                "06qz9xvqi59afjdq2djjvg455wx892w8p8wy2fb9wc4fnj0xbnrj"))))
     (properties `((upstream-name . "truncnormbayes")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -4278,7 +4278,7 @@ converge to local minimum of objective function.")
                              r-rcppeigen
                              r-rcpp
                              r-bh))
-    (home-page "https://github.com/leonkt/truncnormbayes")
+    (home-page "https://github.com/mathurlabstanford/truncnormbayes")
     (synopsis
      "Estimates Moments for a Truncated Normal Distribution using 'Stan'")
     (description
@@ -18642,13 +18642,13 @@ plenty of choices for the model types are available, which can be found in the
 (define-public r-testgardener
   (package
     (name "r-testgardener")
-    (version "3.2.3")
+    (version "3.2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TestGardener" version))
               (sha256
                (base32
-                "1vppjbpdbbf09m5bm57mq03g6xhk900yic3l774lj0h2gd7dq092"))))
+                "0dpylmmg758qnlj1y4k6ins23cyxl7k36dv87fvnj3adzmzb7g2i"))))
     (properties `((upstream-name . "TestGardener")))
     (build-system r-build-system)
     (propagated-inputs (list r-utf8
@@ -18746,13 +18746,13 @@ on 9 hypothesis tests for dependence.")
 (define-public r-testequavar
   (package
     (name "r-testequavar")
-    (version "0.1.3")
+    (version "0.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "testequavar" version))
               (sha256
                (base32
-                "1qih6a5i7982i05d6r6yxr0082psb5b7f6gznzhc4gzv4iyqr2pn"))))
+                "1cz7ffcnznd7pd7f0kd9ay0ym46g2hbdv9sq5wngis2p4srf0ykj"))))
     (properties `((upstream-name . "testequavar")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=testequavar")
@@ -18764,7 +18764,7 @@ procedure uses a variance-based statistic, and is derived from a normal-theory
 test.  The test equivalently expressed the hypothesis as a function of the log
 contrasts of the population variances.  A box-type acceptance region is
 constructed to test the hypothesis.  See Cahoy (2010)
-<doi:10.1016/j.csda.2010.04.012>.")
+\\doi{10.1016/j.csda.2010.04.012}.")
     (license license:gpl3+)))
 
 (define-public r-testdriver

@@ -14548,13 +14548,13 @@ estimating the additive hazards model.  For details see Chengyuan Lu(2021)
 (define-public r-ahmbook
   (package
     (name "r-ahmbook")
-    (version "0.2.6")
+    (version "0.2.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "AHMbook" version))
               (sha256
                (base32
-                "055li8mj863icvcrp23wfsg7gf8zmi8zn0hck2yraygazv2xk97k"))))
+                "06qc5fkvrjmalr4sxqn0y75fk0pcy68qx41w2d2sz0xjp4j9v9nd"))))
     (properties `((upstream-name . "AHMbook")))
     (build-system r-build-system)
     (propagated-inputs (list r-unmarked

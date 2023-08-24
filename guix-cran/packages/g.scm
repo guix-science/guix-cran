@@ -2584,20 +2584,19 @@ Cellwise and Casewise Contamination and Missing Data.")
 (define-public r-gsdesign2
   (package
     (name "r-gsdesign2")
-    (version "1.0.9")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gsDesign2" version))
               (sha256
                (base32
-                "09rz2qxlip9jfkallgsz7cxih1hfqapfdawz56lw8225y8k6p30f"))))
+                "04n0nlkw1zab3m802a8jrwgic4g8likv7x3zba92qipppfvjzqph"))))
     (properties `((upstream-name . "gsDesign2")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-rlang
                              r-rcpp
-                             r-purrr
                              r-npsurvss
                              r-mvtnorm
                              r-gt
@@ -5482,13 +5481,13 @@ without access to Hugin to use code written to use RHugin'.")
 (define-public r-grattaninflators
   (package
     (name "r-grattaninflators")
-    (version "0.4.0")
+    (version "0.4.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "grattanInflators" version))
               (sha256
                (base32
-                "1sfn462ibmiqknpqadq6dnnhsww3mywcnsxyb5kq1aa3cb3sacp1"))))
+                "0r3c81ld08l9fz2331jhqwrivsm78n97if76grhwn1ic2himvlh5"))))
     (properties `((upstream-name . "grattanInflators")))
     (build-system r-build-system)
     (propagated-inputs (list r-hutils r-fy r-data-table))
@@ -11512,13 +11511,13 @@ Nature medicine <doi:10.1038/s41591-022-01789-0>.")
 (define-public r-glmmselect
   (package
     (name "r-glmmselect")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GLMMselect" version))
               (sha256
                (base32
-                "0ad5swpmh05v8mnj942m4wz32gj5k0vrd43shhxm90mlh0ff2zyl"))))
+                "0jqg9pdf37mxxpxpnhvziq4j9x8mhznwfnzpprlq3q6zf3hg6a69"))))
     (properties `((upstream-name . "GLMMselect")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -11702,16 +11701,16 @@ with bootstrapping.")
 (define-public r-glmmlasso
   (package
     (name "r-glmmlasso")
-    (version "1.6.2")
+    (version "1.6.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "glmmLasso" version))
               (sha256
                (base32
-                "13vh35ks4r1gpg8b7l29wj27drf2bwm8nmrnxqqad2n6sparhbdq"))))
+                "1b2wkmsmnhmkql0kin56faf64abc6hijrs6dlz8qvwcbqpgbpcig"))))
     (properties `((upstream-name . "glmmLasso")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcppeigen r-rcpp r-minqa r-matrix r-gmmboost))
+    (propagated-inputs (list r-rcppeigen r-rcpp r-minqa r-matrix))
     (home-page "https://cran.r-project.org/package=glmmLasso")
     (synopsis
      "Variable Selection for Generalized Linear Mixed Models by L1-Penalized Estimation")
@@ -19956,13 +19955,13 @@ estimated iteratively until convergence.")
 (define-public r-geouy
   (package
     (name "r-geouy")
-    (version "0.2.7")
+    (version "0.2.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "geouy" version))
               (sha256
                (base32
-                "0wwz54jyq0qr3nw8zsnz4s0jl5j96xjarqxwzrkv1y1ni9g38gjw"))))
+                "02x52fid3pmaaj22b729zvrh8giwb2a4az66xxwp0lw03pf188zi"))))
     (properties `((upstream-name . "geouy")))
     (build-system r-build-system)
     (inputs (list proj geos gdal))

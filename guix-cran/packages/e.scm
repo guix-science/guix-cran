@@ -12796,13 +12796,13 @@ to some characteristic of interest.  Clark et al (2018)
 (define-public r-elo
   (package
     (name "r-elo")
-    (version "3.0.1")
+    (version "3.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "elo" version))
               (sha256
                (base32
-                "0cw3gcp0i4jvpmqv4595arqq3r5407gh6cy0l8jl7s9bi9mnvd9b"))))
+                "1phyg8by1pz3kvrb0x3w1a9f46ccadgzzznr6r8azfbqv46xyknf"))))
     (properties `((upstream-name . "elo")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-proc))
@@ -14801,13 +14801,13 @@ root tests are supported, and an improved unit root test is included.")
 (define-public r-eganet
   (package
     (name "r-eganet")
-    (version "2.0.0")
+    (version "2.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EGAnet" version))
               (sha256
                (base32
-                "1sa558dnzqnisj0xd4yzxa715lacahb9m0nsz8h784jc2b9xpilq"))))
+                "09m589sji3l7kdgg5mqsmpjk0adn0kzi0vpqqks02x3pf81k5gqr"))))
     (properties `((upstream-name . "EGAnet")))
     (build-system r-build-system)
     (propagated-inputs (list r-sna
@@ -15739,13 +15739,13 @@ Electoral Commission and Australian Bureau of Statistics) 2019.")
 (define-public r-eeaaq
   (package
     (name "r-eeaaq")
-    (version "0.0.2")
+    (version "0.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EEAaq" version))
               (sha256
                (base32
-                "0lqvgfhrm2gmmc262hn9flm3hb0bvk7ny21nkh2f7q6vghxhvwga"))))
+                "0qs6sqiqwl33bjz9k8hlfsqaawq3cc0ygm73pc8h200c5jwdk94n"))))
     (properties `((upstream-name . "EEAaq")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -15761,10 +15761,10 @@ Electoral Commission and Australian Bureau of Statistics) 2019.")
                              r-htmlwidgets
                              r-gstat
                              r-gifski
-                             r-ggspatial
                              r-ggpubr
                              r-ggplot2
                              r-dplyr
+                             r-curl
                              r-aweek))
     (home-page "https://cran.r-project.org/package=EEAaq")
     (synopsis
