@@ -20045,13 +20045,13 @@ DNA Heteroplasmy calculated from single-cell datasets
 (define-public r-misty
   (package
     (name "r-misty")
-    (version "0.5.1")
+    (version "0.5.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "misty" version))
               (sha256
                (base32
-                "0zap43c9raylxhj6bkwap7phpsdw59yragdm7dgq0mcgd7pnaw92"))))
+                "1cxf01010k27mnqdzfznjnnzfq2rx4d63x4gc3cq7b02i1414zm5"))))
     (properties `((upstream-name . "misty")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
@@ -41365,13 +41365,13 @@ equivalency.")
 (define-public r-mable
   (package
     (name "r-mable")
-    (version "3.1.1")
+    (version "3.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mable" version))
               (sha256
                (base32
-                "0nqhs7d99mf3bpk3m75nmpfql9pzas5lqaz83mrdhiwxd1f8shci"))))
+                "1ilhs04hiqdqwc13sp9szl5rgnc4vv6jczzq92dc7d70a5vr7m40"))))
     (properties `((upstream-name . "mable")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-iterators r-icenreg r-foreach

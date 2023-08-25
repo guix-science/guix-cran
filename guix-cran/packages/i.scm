@@ -7942,13 +7942,13 @@ access to sweep operations (in-place).")
 (define-public r-inpdfr
   (package
     (name "r-inpdfr")
-    (version "0.1.11")
+    (version "0.1.12")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "inpdfr" version))
               (sha256
                (base32
-                "1wnz73ggc7xcgynvdlvgz26qkfjmxxy0xg8gkf1far5346g4qd9y"))))
+                "1pargjl2v1kxxbdzf2jjcw3yxyqmxkq30rz3y5xywigq1ab2lpsw"))))
     (properties `((upstream-name . "inpdfr")))
     (build-system r-build-system)
     (inputs (list xpdf))
@@ -7960,8 +7960,7 @@ access to sweep operations (in-place).")
                              r-r-devices
                              r-metacom
                              r-entropart
-                             r-cluster
-                             r-ca))
+                             r-cluster))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/frareb/inpdfr/")
     (synopsis "Analyse Text Documents Using Ecological Tools")
@@ -14524,13 +14523,13 @@ financial-economic time series data.")
 (define-public r-ichimoku
   (package
     (name "r-ichimoku")
-    (version "1.4.7")
+    (version "1.4.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ichimoku" version))
               (sha256
                (base32
-                "0rlxr121ysmc7h81xlgrifmp91mcj5n9avr29db663l6r701zwsy"))))
+                "102wix87awd8d9ka0gm4riha5wkl9nfymykjryc1jrgq6qz6da6h"))))
     (properties `((upstream-name . "ichimoku")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

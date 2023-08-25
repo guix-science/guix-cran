@@ -3065,13 +3065,13 @@ independent or dependent proportions.")
 (define-public r-exactci
   (package
     (name "r-exactci")
-    (version "1.4-2")
+    (version "1.4-4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "exactci" version))
               (sha256
                (base32
-                "08phqmpj7f6mjbwfnykqmfmg7g9h6ksj3hyryn79d7kwxyh994i7"))))
+                "011y7sjsspn02z914c7x2w3h4fg38hlbqwg6s43rnsmrk398q76h"))))
     (properties `((upstream-name . "exactci")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat r-ssanv))
@@ -4780,13 +4780,13 @@ function).")
 (define-public r-eurocordexr
   (package
     (name "r-eurocordexr")
-    (version "0.2.3")
+    (version "0.2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eurocordexr" version))
               (sha256
                (base32
-                "0b31xdcf5z09nvxb7l34l37ysc0y5gdk3jyjsi1qf4kkzcpfbyng"))))
+                "1srn0n1imp975b3sfaz27yz1fxm8gs7h34wa6mf5xw551gm6kwwv"))))
     (properties `((upstream-name . "eurocordexr")))
     (build-system r-build-system)
     (propagated-inputs (list r-pcict
@@ -17546,16 +17546,17 @@ and quantify the dissimilarity between two or more ecological dynamic regimes.")
 (define-public r-ecopower
   (package
     (name "r-ecopower")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ecopower" version))
               (sha256
                (base32
-                "0x9rvwiypc3as44w67fn7dfsw1rrdhfpirz069hmzbw35gw0g1qh"))))
+                "0vlvdlpxvbjrgwffqjyvfxns0sscrpbvkjcd5v67ngfpnl1bjw5a"))))
     (properties `((upstream-name . "ecopower")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvabund r-ecocopula))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ecopower")
     (synopsis "Power Estimates and Equivalence Testing for Multivariate Data")
     (description

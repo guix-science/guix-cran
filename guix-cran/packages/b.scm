@@ -2468,6 +2468,29 @@ using a Gibbs wrapper around Radford Neal's univariate slice sampler (R package
 @code{MfUSampler)} is used for coefficient estimation.")
     (license license:gpl2+)))
 
+(define-public r-bsgof
+  (package
+    (name "r-bsgof")
+    (version "0.23.8")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "bsgof" version))
+              (sha256
+               (base32
+                "0vgf61fglzlbgdk64z826nzb9rv37kw39rlk6m8rl84m3cjsw80a"))))
+    (properties `((upstream-name . "bsgof")))
+    (build-system r-build-system)
+    (home-page "https://AppliedStat.GitHub.io/R/")
+    (synopsis "Birnbaum-Saunders Goodness-of-Fit Test")
+    (description
+     "This package performs goodness of fit test for the Birnbaum-Saunders
+distribution and provides the maximum likelihood estimate and the
+method-of-moments estimate.  For more details, see Park and Wang (2013)
+@code{<arXiv:2308.10150>.} This work was supported by the National Research
+Foundation of Korea (NRF) grants funded by the Korea government (MSIT) (No.
+2022R1A2C1091319, RS-2023-00242528).")
+    (license (list license:gpl2 license:gpl3))))
+
 (define-public r-bsearchtools
   (package
     (name "r-bsearchtools")
@@ -12023,13 +12046,13 @@ splinebins.")
 (define-public r-binseqtest
   (package
     (name "r-binseqtest")
-    (version "1.0.3")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "binseqtest" version))
               (sha256
                (base32
-                "0661a2bqmv6bckq23c6m04ggwrp8z10lfgjg9dgkz4bfxsd297gs"))))
+                "14na719dsz9bnvcyhlclzbaxvm4sc8g3v41jmhdzgr8bfbqahgk4"))))
     (properties `((upstream-name . "binseqtest")))
     (build-system r-build-system)
     (propagated-inputs (list r-clinfun))
@@ -16046,17 +16069,17 @@ tractability and ensuring computational feasibility.")
 (define-public r-betabit
   (package
     (name "r-betabit")
-    (version "2.1")
+    (version "2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BetaBit" version))
               (sha256
                (base32
-                "1c7hrv21pllcv766hlyc47ivsip0vhi2ld6mj8r42icssgw3jsgn"))))
+                "185bsjc1azvblg0hm39bq3r1c6c4vla9k5cz39p6kjzd1gn1zhr2"))))
     (properties `((upstream-name . "BetaBit")))
     (build-system r-build-system)
     (propagated-inputs (list r-digest))
-    (home-page "https://github.com/BetaAndBit/Wykresy")
+    (home-page "https://github.com/BetaAndBit/Charts")
     (synopsis "Mini Games from Adventures of Beta and Bit")
     (description
      "Three games: proton, frequon and regression.  Each one is a console-based
@@ -16071,7 +16094,7 @@ ciphered messages.  This time seven sub-tasks are pushing the bar much higher.
 Do you accept the challenge? In regression you will test your modeling skills in
 a series of eight sub-tasks.  Try only if ANOVA is your close friend.  It's a
 part of Beta and Bit project.  You will find more about the Beta and Bit project
-at @code{<https://github.com/BetaAndBit/Wykresy>.}")
+at @code{<https://github.com/BetaAndBit/Charts>.}")
     (license license:gpl2)))
 
 (define-public r-betabayes
@@ -20316,16 +20339,17 @@ using the algorithms summarized in Makalic and Schmidt (2016)
 (define-public r-bayesrecon
   (package
     (name "r-bayesrecon")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bayesRecon" version))
               (sha256
                (base32
-                "1mvhhsndjqggjdic3ah29mgz2xmvhzf916srlq8j2g2drd3qggn2"))))
+                "04grkz5b6vwp5brgd6vazfinl1ikrvj8kimns0b7rw0blb3z9fm3"))))
     (properties `((upstream-name . "bayesRecon")))
     (build-system r-build-system)
     (propagated-inputs (list r-lpsolve))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=bayesRecon")
     (synopsis "Probabilistic Reconciliation via Conditioning")
     (description
@@ -21054,13 +21078,13 @@ selection.  Marginal likelihood is approximated by methods in Chib S (1995)
 (define-public r-bayesmallows
   (package
     (name "r-bayesmallows")
-    (version "1.3.1")
+    (version "1.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BayesMallows" version))
               (sha256
                (base32
-                "14nlx130iazgqqpn3yiqh8qsj387pnrwg8c5kjn7havx1vx4a2ig"))))
+                "1qpj4qiikx8yv103qslafvwia1kjxqpj9fgwsjnvd87vr0gbja71"))))
     (properties `((upstream-name . "BayesMallows")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat

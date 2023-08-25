@@ -1797,13 +1797,13 @@ Oseledets (2011) <doi:10.1137/090752286>, Yuan Longao, et al (2017)
 (define-public r-ttservice
   (package
     (name "r-ttservice")
-    (version "0.3.6")
+    (version "0.3.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ttservice" version))
               (sha256
                (base32
-                "1151sm85nd68r1xczw6ja71vc29kq2dwm04wcc64kpqn68pfr3pb"))))
+                "1gkkr6vhj0kd16c3wvl35marlykqx80fkny5r7ymrn4vvb2zkm94"))))
     (properties `((upstream-name . "ttservice")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-dplyr))
@@ -5582,13 +5582,13 @@ and plot to file options are available in the package.")
 (define-public r-trendsegmentr
   (package
     (name "r-trendsegmentr")
-    (version "1.2.0")
+    (version "1.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "trendsegmentR" version))
               (sha256
                (base32
-                "1lp52zgz3wn6gzypmriyfd4417j3kyma3m1sv2vlcnyhr384ndw8"))))
+                "0mq2h50n2lszbva1wh2cfxgvy9snnrd1819kxvif7yfqzny7drqj"))))
     (properties `((upstream-name . "trendsegmentR")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=trendsegmentR")
@@ -9057,13 +9057,13 @@ of regression averaging (Matloff (2017, ISBN: 9781498710916)).")
 (define-public r-tourr
   (package
     (name "r-tourr")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tourr" version))
               (sha256
                (base32
-                "00n7faawhl44g11qz764lcpmxhbzrgrdypfxwg9hh4q7d6diy4pg"))))
+                "1hs4f5ry8pn50c93433q4cg9ksyj78g7x4fv7p5i1qg3pjnr7rh0"))))
     (properties `((upstream-name . "tourr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-mass r-dplyr))

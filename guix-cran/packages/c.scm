@@ -8698,13 +8698,13 @@ documented at <https://cmu-delphi.github.io/delphi-epidata/api/covidcast.html>."
 (define-public r-covid19wastewater
   (package
     (name "r-covid19wastewater")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Covid19Wastewater" version))
               (sha256
                (base32
-                "1l8yj7w97ryg7844bw4r5dlgx00i7vcl4yhlzqy7xyyjz8j7dyrg"))))
+                "1cqr9phfn5b2lsy2bm4kcgqb1zq1f961w9063synbwk4jzz36ql7"))))
     (properties `((upstream-name . "Covid19Wastewater")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -8727,7 +8727,7 @@ documented at <https://cmu-delphi.github.io/delphi-epidata/api/covidcast.html>."
                              r-dplyr
                              r-data-table))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=Covid19Wastewater")
+    (home-page "https://github.com/UW-Madison-DSI/Covid19Wastewater")
     (synopsis "Prepare, Analyze, and Visualize Covid-19 Wastewater Data")
     (description
      "Intended to make the process of analyzing epidemiological wastewater data easier
@@ -9384,6 +9384,30 @@ these methodologies, see the works of Kowal and Canale (2020)
 Kowal (2022) @code{<arXiv:2110.14790>,} and Kowal and Wu (2023)
 @code{<arXiv:2110.12316>.}")
     (license license:gpl2+)))
+
+(define-public r-countsplit
+  (package
+    (name "r-countsplit")
+    (version "4.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "countsplit" version))
+              (sha256
+               (base32
+                "0b406mpf5gqspjj828qbqx6mc5ab97mh5w4pip8hb8j74q8szpcc"))))
+    (properties `((upstream-name . "countsplit")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp r-matrix))
+    (home-page "https://github.com/anna-neufeld/countsplit")
+    (synopsis "Splitting a Count Matrix into Independent Folds")
+    (description
+     "This package implements the count splitting methodology from Neufeld et al.
+(2022) <doi:10.1093/biostatistics/kxac047> and Neufeld et al. (2023)
+@code{<arXiv:2307.12985>.} Intended for turning a matrix of single-cell RNA
+sequencing counts, or similar count datasets, into independent folds that can be
+used for training/testing or cross validation.  Assumes that the entries in the
+matrix are from a Poisson or a negative binomial distribution.")
+    (license license:expat)))
 
 (define-public r-countrycode
   (package
@@ -20474,6 +20498,34 @@ framework of recursive partitioning to explore heterogeneous method agreement in
 dependence of covariates.  COAT can also be used to perform a Bland-Altman test
 for differences in method agreement.")
     (license (list license:gpl2 license:gpl3))))
+
+(define-public r-coastlinefd
+  (package
+    (name "r-coastlinefd")
+    (version "0.1.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "CoastlineFD" version))
+              (sha256
+               (base32
+                "00py961g3aj330625gi1z1kbg2za0a0vrbqhq6666zgh3nx8xff0"))))
+    (properties `((upstream-name . "CoastlineFD")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-writexl
+                             r-tidyr
+                             r-sp
+                             r-sf
+                             r-rgdal
+                             r-readxl
+                             r-progress
+                             r-ggplot2
+                             r-fields))
+    (home-page "https://github.com/redworld123/CoastlineFD")
+    (synopsis "Calculate the Coastline Fractal Dimension")
+    (description
+     "This package provides a system is used to calculate the fractal dimension of
+coastline by boxes method and Dividers method.")
+    (license license:expat)))
 
 (define-public r-coarsedatatools
   (package

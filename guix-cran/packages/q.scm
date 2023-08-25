@@ -5103,13 +5103,13 @@ minimal causal configuration associated with a given phenomenon.")
 (define-public r-qbr
   (package
     (name "r-qbr")
-    (version "1.2.0")
+    (version "1.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "qbr" version))
               (sha256
                (base32
-                "16nvf4qna4vbn2jcadl0klddgpgviqn8v0mv3mmc8namrvighxww"))))
+                "0d6rhzi1kcd0q7vfnwdrvywyxavc97kmkbfza82srz3n91zjkjrb"))))
     (properties `((upstream-name . "qbr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -5118,6 +5118,7 @@ minimal causal configuration associated with a given phenomenon.")
                              r-purrr
                              r-magrittr
                              r-jsonlite
+                             r-httr2
                              r-httr
                              r-dplyr))
     (home-page "https://github.com/BHII-KSC/qbr")

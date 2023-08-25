@@ -9267,6 +9267,36 @@ model mortality pattern based on family and level as well as plot the results.")
 observations and create a report of the top sites to visit to see new species.")
     (license license:bsd-2)))
 
+(define-public r-lifemapr
+  (package
+    (name "r-lifemapr")
+    (version "1.0.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "LifemapR" version))
+              (sha256
+               (base32
+                "0mf6xgzvk5gc7n7w26drxf41h235ygkpylrf20gwifi2rz3lbs8k"))))
+    (properties `((upstream-name . "LifemapR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shiny
+                             r-rlang
+                             r-purrr
+                             r-leaflet-minicharts
+                             r-leaflet
+                             r-jsonlite
+                             r-htmltools
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=LifemapR")
+    (synopsis "Data Visualisation on 'Lifemap' Tree")
+    (description
+     "Allow to visualise data on the NCBI phylogenetic tree as presented in Lifemap
+<http://lifemap.univ-lyon1.fr/>'.  It takes as input a dataframe with at least a
+\"taxid\" column containing NCBI format @code{TaxIds} and allows to draw multiple
+layers with different visualisation tools.")
+    (license license:expat)))
+
 (define-public r-lifelogr
   (package
     (name "r-lifelogr")
@@ -12446,13 +12476,13 @@ ISBN-13:978-0387954578), and Christensen et al. (2018) <doi:10.1002/ecy.2373>.")
 (define-public r-ldatree
   (package
     (name "r-ldatree")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "LDATree" version))
               (sha256
                (base32
-                "0spsizvffj59n34ml4sc9d7saq3nw6wj3hi99vgasj5dhj91n3ln"))))
+                "1ipccqkzgxcgg9rydw9505r70p1ibwn0a8hfc34x2jxy3vs3r8sl"))))
     (properties `((upstream-name . "LDATree")))
     (build-system r-build-system)
     (propagated-inputs (list r-visnetwork r-scales r-magrittr r-lifecycle
@@ -14885,22 +14915,24 @@ provided in the metadata file (MTL file).")
 (define-public r-landsat
   (package
     (name "r-landsat")
-    (version "1.1.0")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "landsat" version))
               (sha256
                (base32
-                "15ymmwhkgw0lqyy2sryss3nsmkrjf4cc0bzlsr41vh5c2636srfd"))))
+                "13xjpw9hd1hhcs6d7xw9dc36808zjyqw3isn0ayafpww0wvv073n"))))
     (properties `((upstream-name . "landsat")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp r-rgdal r-mgcv r-lmodel2))
+    (propagated-inputs (list r-sp r-mgcv r-lmodel2))
     (home-page "https://cran.r-project.org/package=landsat")
     (synopsis "Radiometric and Topographic Correction of Satellite Imagery")
     (description
      "Processing of Landsat or other multispectral satellite imagery.  Includes
 relative normalization, image-based radiometric correction, and topographic
-correction options.")
+correction options.  The original package description was published as Goslee
+(2011) <doi:10.18637/jss.v043.i04>, and details of the topographic corrections
+in Goslee (2012) <doi:10.14358/PERS.78.9.973>.")
     (license license:gpl2+)))
 
 (define-public r-landpred

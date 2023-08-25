@@ -2922,13 +2922,13 @@ Gaussian noise using Unbalanced Haar wavelets.")
 (define-public r-umx
   (package
     (name "r-umx")
-    (version "4.15.1")
+    (version "4.16.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "umx" version))
               (sha256
                (base32
-                "0z8i73ziknf5xiv545nnyypcg7kazjnp6dsmn1glx78g91490rzv"))))
+                "04kjmcc9nf3x2ma2a5diajxr0qmssfd6axhdjq38qp7sgpwappxk"))))
     (properties `((upstream-name . "umx")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable

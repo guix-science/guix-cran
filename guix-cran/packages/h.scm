@@ -298,13 +298,13 @@ Hediger & Michel & Naef (2020) @code{<arXiv:1903.06287>.}")
 (define-public r-hypetools
   (package
     (name "r-hypetools")
-    (version "1.5.0")
+    (version "1.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "HYPEtools" version))
               (sha256
                (base32
-                "0qybixz2225g4c1rzsk2if6lbjhj21b6rpg55jq58cwq5sxqyw0a"))))
+                "1706lkinwmplmv7s4j1ggax9b1xif45j30k1cnzaw6d1vrssl3yf"))))
     (properties `((upstream-name . "HYPEtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -324,7 +324,7 @@ Hediger & Michel & Naef (2020) @code{<arXiv:1903.06287>.}")
                              r-data-table
                              r-clipr))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/rcapell/HYPEtools")
+    (home-page "https://hypeweb.smhi.se/")
     (synopsis
      "Tools for Processing and Analyzing Files from the Hydrological Catchment Model HYPE")
     (description
@@ -8326,17 +8326,17 @@ heritability scores for high-throughput sequencing data.\" BMC bioinformatics
 (define-public r-heritability
   (package
     (name "r-heritability")
-    (version "1.3")
+    (version "1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "heritability" version))
               (sha256
                (base32
-                "0a0pw8hppkgypl4jaa38hks9nxfwz2zbsd4w6w40j1hxlyy4km8m"))))
+                "053fqjc8772gqhxnm2gn7yz747432kizn5q5060g5bd77v15jlhp"))))
     (properties `((upstream-name . "heritability")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
-    (home-page "https://sites.google.com/site/wkruijer/")
+    (home-page "https://cran.r-project.org/package=heritability")
     (synopsis
      "Marker-Based Estimation of Heritability Using Individual Plant or Plot Data")
     (description
@@ -10817,13 +10817,13 @@ model to recognition memory confidence-ratings data.")
 (define-public r-hbim
   (package
     (name "r-hbim")
-    (version "1.1")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hbim" version))
               (sha256
                (base32
-                "1i4fx132xnkb1jp4ikhfibcxp47klsv08vbrj63mqfqr872b29mh"))))
+                "1wgzxmbdzigh9q6q2s4vfh58p8whmyp0jckfga1li5cibqbvpaf0"))))
     (properties `((upstream-name . "hbim")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm))
@@ -12366,6 +12366,26 @@ Haar-Fisz algorithm for Poisson intensity estimation.\" Journal of Computational
 and Graphical Statistics, 13, 621-638. <doi:10.1198/106186004X2697>.")
     (license license:gpl2+)))
 
+(define-public r-h3lib
+  (package
+    (name "r-h3lib")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "h3lib" version))
+              (sha256
+               (base32
+                "1lwyrqrbjwb4g26mm0bwwr9cifay9y28y417b2iynqkvkw4y4058"))))
+    (properties `((upstream-name . "h3lib")))
+    (build-system r-build-system)
+    (home-page "https://github.com/symbolixau/h3lib")
+    (synopsis "Exposes the 'Uber' 'H3' Library to R Packages")
+    (description
+     "H3 is a hexagonal hierarchical spatial index developed by Uber
+<https://h3geo.org/>.  This package exposes the source code of H3 (written in
+C') to routines that are callable through R'.")
+    (license license:expat)))
+
 (define-public r-h3jsr
   (package
     (name "r-h3jsr")
@@ -12484,25 +12504,27 @@ Word2Vec, as well as a fully automatic machine learning algorithm (H2O
 (define-public r-h0
   (package
     (name "r-h0")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "h0" version))
               (sha256
                (base32
-                "0wdf9grp6dnipcd6751wflkq5h4wgl9dmcx4hqly21lw162jq3yn"))))
+                "0nw671dgf50zqmw6j8znig6ksqf68hbshc8v87dcig70j1sqab4k"))))
     (properties `((upstream-name . "h0")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=h0")
     (synopsis
-     "Meta Analysis for Estimating the Hubble Constant via Time Delay Cosmography")
+     "Robust Bayesian Meta-Analysis for Estimating the Hubble Constant via Time Delay Cosmography")
     (description
-     "We provide a toolbox to conduct a meta analysis for estimating the current
-expansion rate of the Universe, called the Hubble constant H0, via time delay
-cosmography.  The input data are (i) estimates of Fermat potential differences
-and their one-sigma uncertainties (standard errors), and (ii) estimates of time
-delays and their one-sigma uncertainties.  Given these inputs, the meta analysis
-conducts a maximum likelihood estimation or a Bayesian inference to infer the
-Hubble constant.")
+     "We provide a toolbox to conduct a Bayesian meta-analysis for estimating the
+current expansion rate of the Universe, called the Hubble constant H0, via time
+delay cosmography.  The input data are Fermat potential difference and time
+delay estimates.  For a robust inference, we assume a Student's t error for
+these inputs.  Given these inputs, the meta-analysis produces posterior samples
+of the model parameters including the Hubble constant via Metropolis-Hastings
+within Gibbs.  The package provides an option to implement repelling-attracting
+Metropolis-Hastings within Gibbs in a case where the parameter space has
+multiple modes.")
     (license license:gpl2)))
 

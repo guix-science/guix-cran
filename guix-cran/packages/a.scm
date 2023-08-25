@@ -3602,20 +3602,20 @@ measures are identical to the correlation measure (r) for bi-allelic data.")
 (define-public r-asylum
   (package
     (name "r-asylum")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "asylum" version))
               (sha256
                (base32
-                "1jgh9b76z9d81n9bgny3x5pbgmplq1mi55ag4wb0zzgykrfvaa1s"))))
+                "1cjmrvlhk34swrl44xxjqnka1xi2sf0ciszx1szrg7wz4c9kb6mp"))))
     (properties `((upstream-name . "asylum")))
     (build-system r-build-system)
     (home-page "https://github.com/humaniverse/asylum")
     (synopsis "Data on Asylum and Resettlement for the UK")
     (description
      "Data on Asylum and Resettlement for the UK, provided by the Home Office
-<https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables-year-ending-march-2023>.")
+<https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables>.")
     (license license:expat)))
 
 (define-public r-asyk
@@ -3662,6 +3662,32 @@ Gamma, Exponential or Weibull.  For details see Chen (2000), Scaillet (2004)
 models with and without leverage (asymmetric and symmetric stochastic volatility
 models).  Further, it computes the logarithm of the likelihood given parameters
 using particle filters.")
+    (license license:gpl2+)))
+
+(define-public r-asus
+  (package
+    (name "r-asus")
+    (version "1.5.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "asus" version))
+              (sha256
+               (base32
+                "05rsbakby0w3xf5zaq5flp4if31x8fnm1l0n1r51ympw4wzzqjh5"))))
+    (properties `((upstream-name . "asus")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-wavethresh))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/trambakbanerjee/asus#asus")
+    (synopsis "Adaptive SURE Thresholding Using Side Information")
+    (description
+     "This package provides the ASUS procedure for estimating a high dimensional
+sparse parameter in the presence of auxiliary data that encode side information
+on sparsity.  It is a robust data combination procedure in the sense that even
+when pooling non-informative auxiliary data ASUS would be at least as efficient
+as competing soft thresholding based methods that do not use auxiliary data.
+For more information, please see the paper Adaptive Sparse Estimation with Side
+Information by Banerjee, Mukherjee and Sun (JASA 2020).")
     (license license:gpl2+)))
 
 (define-public r-astrofns
@@ -4332,13 +4358,13 @@ Galli, and Murray (2022)
 (define-public r-asremlplus
   (package
     (name "r-asremlplus")
-    (version "4.4.12")
+    (version "4.4.13")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "asremlPlus" version))
               (sha256
                (base32
-                "1fglfj0zzmygi9zi8dyd4glr1v2kdrq6h7jpijy9kmci080ld4gm"))))
+                "1fmbl7kdrs7mv5ia6i09mf560nn84bb4gn74cvfxrcaqqdxgpn6w"))))
     (properties `((upstream-name . "asremlPlus")))
     (build-system r-build-system)
     (inputs (list))
@@ -4687,13 +4713,13 @@ the Boost Software License', Version 1.0.")
 (define-public r-asht
   (package
     (name "r-asht")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "asht" version))
               (sha256
                (base32
-                "1vv88qrbdjav025ccw0nvxlhmxnyjb5frn4wb7sbxxzaaqflcmhc"))))
+                "08wrqhrlna2vg5icgqcaxciv51gq7rfmd458qy7dqmh7ydxcrxk6"))))
     (properties `((upstream-name . "asht")))
     (build-system r-build-system)
     (propagated-inputs (list r-ssanv
@@ -5143,6 +5169,36 @@ RCAR, and RIPPER to build associative classifiers.  Hahsler et al (2019)
      "This package provides algorithms for creating artworks in the ggplot2 language
 that incorporate some form of randomness.")
     (license license:gpl3+)))
+
+(define-public r-artpack
+  (package
+    (name "r-artpack")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "artpack" version))
+              (sha256
+               (base32
+                "124lybfsxy62qdwr14w8w88kn4fylfff6qd2xy07x2g3lncf6497"))))
+    (properties `((upstream-name . "artpack")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-knitr
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://meghansaha.github.io/artpack/")
+    (synopsis "Creates Generative Art Data")
+    (description
+     "Create data that displays generative art when mapped into a ggplot2 plot.
+Functionality includes specialized data frame creation for geometric shapes,
+tools that define artistic color palettes, tools for geometrically transforming
+data, and other miscellaneous tools that are helpful when using ggplot2 for
+generative art.")
+    (license license:expat)))
 
 (define-public r-artool
   (package
@@ -7605,13 +7661,13 @@ twice the optimal cost, Crama and Spieksma (1992)
 (define-public r-approximator
   (package
     (name "r-approximator")
-    (version "1.2-7")
+    (version "1.2-8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "approximator" version))
               (sha256
                (base32
-                "0smqjdla9mvzy164nsb0pw0sgal3w2wnyhqidp74h0smyczrr1zw"))))
+                "1ya1alx6dzcj8srzrdlcx3fxkb1bzja9l68y66km2mbc4qc03xwb"))))
     (properties `((upstream-name . "approximator")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-emulator))
@@ -12706,13 +12762,13 @@ generations.")
 (define-public r-allelematch
   (package
     (name "r-allelematch")
-    (version "2.5.2")
+    (version "2.5.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "allelematch" version))
               (sha256
                (base32
-                "15dkafz3gzrnwi3kmd4abyx4i29bm4lhy99lix2n2rjy123wc8fb"))))
+                "1gr0s2zfc4i61bxz1prq9p2lyq17h10vzp0mkq2z6c2rfzqfhazc"))))
     (properties `((upstream-name . "allelematch")))
     (build-system r-build-system)
     (propagated-inputs (list r-dynamictreecut))

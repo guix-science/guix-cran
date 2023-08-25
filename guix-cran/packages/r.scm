@@ -2605,13 +2605,13 @@ fit, forecast, simulation, inference and plotting.")
 (define-public r-rucrdtw
   (package
     (name "r-rucrdtw")
-    (version "0.1.4")
+    (version "0.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rucrdtw" version))
               (sha256
                (base32
-                "0865x8i2n63xjbq0pzalm4gd6rpg72yrcsm4rw40a3kzy2svvnlm"))))
+                "0x4y0czfmn3sp8b8dqh4cmnnbqfzf7kgcllv2x80zhk5nyqpyagx"))))
     (properties `((upstream-name . "rucrdtw")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -8559,13 +8559,13 @@ investigation.")
 (define-public r-rqpen
   (package
     (name "r-rqpen")
-    (version "3.2")
+    (version "3.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rqPen" version))
               (sha256
                (base32
-                "1afycbk4k9smziax20qfray9pa1gcgq17px0y2i1cc9i05q164dp"))))
+                "0548mwir8lpp4sw1dk62pja45d92mf0i1prz2r7gxwqmm3fwcphh"))))
     (properties `((upstream-name . "rqPen")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack
@@ -12462,13 +12462,13 @@ of LP, QP, QCP, IP.")
 (define-public r-roi-plugin-clarabel
   (package
     (name "r-roi-plugin-clarabel")
-    (version "0.2")
+    (version "0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ROI.plugin.clarabel" version))
               (sha256
                (base32
-                "07vvc1lhz92sr64vmkadk4mwmhvwzg6yqabx19lfpl7yzc2qyhih"))))
+                "0icaqbgh435drd00104rpy0xwvkdadh697nfp22kjnlz9mcwzfp1"))))
     (properties `((upstream-name . "ROI.plugin.clarabel")))
     (build-system r-build-system)
     (propagated-inputs (list r-slam r-roi r-clarabel))
@@ -21458,13 +21458,13 @@ and to convert them to spatstat (<http://spatstat.org/>) spatial patterns.")
 (define-public r-rim
   (package
     (name "r-rim")
-    (version "0.6.3")
+    (version "0.6.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rim" version))
               (sha256
                (base32
-                "0h50rwgy2lmznjx6jblc3srqvr1lp53hpvgll1krkraj45qnmkmx"))))
+                "0i4xb56kj4w9hd5i4g42y1ml6yy3p94lsmfm5mlkwixg8f25hhwj"))))
     (properties `((upstream-name . "rim")))
     (build-system r-build-system)
     (inputs (list maxima))
@@ -25998,13 +25998,13 @@ the help of comprehensive s3 classes.")
 (define-public r-retrodesign
   (package
     (name "r-retrodesign")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "retrodesign" version))
               (sha256
                (base32
-                "173jrpzasimplv8vbm8gzpl8aibnsjkgvhz1hd75is0b2l8gnbxy"))))
+                "1662z7i8r4073klcsva9l2g7kcrsi1a73gd5f9306q20lvmfr2nr"))))
     (properties `((upstream-name . "retrodesign")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -26013,17 +26013,17 @@ the help of comprehensive s3 classes.")
     (description
      "This package provides tools for working with Type S (Sign) and Type M
 (Magnitude) errors, as proposed in Gelman and Tuerlinckx (2000)
-<doi.org/10.1007/s001800000040> and Gelman & Carlin (2014)
-<doi.org/10.1177/1745691614551642>.  In addition to simply calculating the
+<doi:10.1007/s001800000040> and Gelman & Carlin (2014)
+<doi:10.1177/1745691614551642>.  In addition to simply calculating the
 probability of Type S/M error, the package includes functions for calculating
 these errors across a variety of effect sizes for comparison, and recommended
 sample size given \"tolerances\" for Type S/M errors.  To improve the speed of
 these calculations, closed forms solutions for the probability of a Type S/M
-error from Lu, Qiu, and Deng (2018) <doi.org/10.1111/bmsp.12132> are
-implemented.  As of 1.0.0, this includes support only for simple research
-designs.  See the package vignette for a fuller exposition on how Type S/M
-errors arise in research, and how to analyze them using the type of design
-analysis proposed in the above papers.")
+error from Lu, Qiu, and Deng (2018) <doi:10.1111/bmsp.12132> are implemented.
+As of 1.0.0, this includes support only for simple research designs.  See the
+package vignette for a fuller exposition on how Type S/M errors arise in
+research, and how to analyze them using the type of design analysis proposed in
+the above papers.")
     (license license:expat)))
 
 (define-public r-retriever
@@ -38308,13 +38308,13 @@ effect sizes and post hoc analysis for @code{multiWayAnova().}")
 (define-public r-rcmdrmisc
   (package
     (name "r-rcmdrmisc")
-    (version "2.7-2")
+    (version "2.9-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RcmdrMisc" version))
               (sha256
                (base32
-                "0r5vrnpd6zs2a2cnab15k6143kdwizaivb3dznjb59kv2aawg3w3"))))
+                "1xi8i9dmqj29xz90rvi10s7haf7bb1qxx20hg8yid20l52bphf9k"))))
     (properties `((upstream-name . "RcmdrMisc")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich
@@ -38340,13 +38340,13 @@ package in the R Commander GUI for R.")
 (define-public r-rcmdr
   (package
     (name "r-rcmdr")
-    (version "2.8-0")
+    (version "2.9-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Rcmdr" version))
               (sha256
                (base32
-                "1d3vpa433bdi3hc4c89sra82mw7hhgzmn1wp2n95w23pq4a8cgnz"))))
+                "1b3f4hmqid9in43jb8hp0j124qj41v4xc806c2vnwjx4x4ylfbny"))))
     (properties `((upstream-name . "Rcmdr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tcltk2
@@ -38356,7 +38356,7 @@ package in the R Commander GUI for R.")
                              r-effects
                              r-car
                              r-abind))
-    (home-page "https://www.r-project.org")
+    (home-page "https://r-forge.r-project.org/projects/rcmdr/")
     (synopsis "R Commander")
     (description
      "This package provides a platform-independent basic-statistics GUI (graphical
@@ -39379,13 +39379,13 @@ of palettes: aggregation, diverging, qualitative, and quantitative.")
 (define-public r-rcarbon
   (package
     (name "r-rcarbon")
-    (version "1.5.0")
+    (version "1.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rcarbon" version))
               (sha256
                (base32
-                "1d41fi2arsj8v5ccijqzyz55safcjirax9068rsjvr01zpxq6ag8"))))
+                "0wgf0jia5iwa7v1aln80521rj1q7rhx3l9rpf3df3za73kn4z7gm"))))
     (properties `((upstream-name . "rcarbon")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-model
@@ -40211,23 +40211,23 @@ quantitative DNA methylation analyses as described by Moskalev et al. (2011)
 (define-public r-rbi-helpers
   (package
     (name "r-rbi-helpers")
-    (version "0.3.3")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rbi.helpers" version))
               (sha256
                (base32
-                "0jlzfnw3r138inap6dnq0a7cbirs5q18ypxgcb3zfqq5zxkdx276"))))
+                "1qj5b9wwh40ni549l9xiarp7w5x9q5n22k413azjhnssm7799hbv"))))
     (properties `((upstream-name . "rbi.helpers")))
     (build-system r-build-system)
     (inputs (list))
     (propagated-inputs (list r-reshape2 r-rbi r-matrix r-lubridate
                              r-data-table))
-    (native-inputs (list r-r-rsp))
+    (native-inputs (list r-knitr))
     (home-page "https://libbi.org")
-    (synopsis "'RBi' Helper Functions")
+    (synopsis "'rbi' Helper Functions")
     (description
-     "This package contains a collection of helper functions to use with RBi', the R
+     "This package contains a collection of helper functions to use with rbi', the R
 interface to @code{LibBi',} described in Murray et al. (2015)
 <doi:10.18637/jss.v067.i10>.  It contains functions to adapt the proposal
 distribution and number of particles in particle Markov-Chain Monte Carlo, as

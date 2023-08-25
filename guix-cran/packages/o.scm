@@ -3311,13 +3311,13 @@ object from the graph package.")
 (define-public r-oralopioids
   (package
     (name "r-oralopioids")
-    (version "1.1.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "OralOpioids" version))
               (sha256
                (base32
-                "1i422my28dn9i2yxf7z856v9rw8g7xwabc9lw79y7ncb4f4qk0vz"))))
+                "1hy7wllsv72lf4jlbijq6yazp75nzml3aanby4rfp1gfmmx19sv6"))))
     (properties `((upstream-name . "OralOpioids")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -3678,13 +3678,13 @@ statistic.")
 (define-public r-optistock
   (package
     (name "r-optistock")
-    (version "0.0.1")
+    (version "0.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "optistock" version))
               (sha256
                (base32
-                "1nyz64bfi4s10i4mq7crdkn3b3zqr674vfxkdd3kphjqk0wmiv1j"))))
+                "1wl637hgdhiyk56xv39bb8m4v6nnlqyy6vgkradf90k084m9q52p"))))
     (properties `((upstream-name . "optistock")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -4005,13 +4005,13 @@ variables.")
 (define-public r-optimstrat
   (package
     (name "r-optimstrat")
-    (version "2.3")
+    (version "2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "optimStrat" version))
               (sha256
                (base32
-                "1jkwhgpw7nknd7h8c01z25x566bw2qb388i6g5nwcygxsshdgpri"))))
+                "0p52ly7yfz9jjlhd5912xdv1j01j1ccm57ygp9nz3rks7fi3b5r5"))))
     (properties `((upstream-name . "optimStrat")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-mvtnorm r-cubature))
@@ -10099,13 +10099,13 @@ other purposes.")
 (define-public r-ocecens
   (package
     (name "r-ocecens")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "oceCens" version))
               (sha256
                (base32
-                "03rk7lw8bkd0z0hiwvh5akbvw54bjay84989rznkgcmiljxbxpr4"))))
+                "1ckp89n22scmjli30x99iaxgyk41a27v1n9gxjp9n29y66lw71nb"))))
     (properties `((upstream-name . "oceCens")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival))

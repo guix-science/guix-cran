@@ -10593,6 +10593,46 @@ a possibly incorrect result.  To cite the package in publications please use
 Hankin (2022) <doi:10.48550/ARXIV.2210.03856>.")
     (license license:gpl2+)))
 
+(define-public r-disk-frame
+  (package
+    (name "r-disk-frame")
+    (version "0.8.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "disk.frame" version))
+              (sha256
+               (base32
+                "0mkzvxbjr9iw2bmnw4s5s7glly1nnf4j83y6yzw5vg1gwqghynky"))))
+    (properties `((upstream-name . "disk.frame")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-rlang
+                             r-rcpp
+                             r-purrr
+                             r-pryr
+                             r-jsonlite
+                             r-glue
+                             r-globals
+                             r-future-apply
+                             r-future
+                             r-fst
+                             r-fs
+                             r-dplyr
+                             r-data-table
+                             r-crayon
+                             r-bit64
+                             r-bigreadr
+                             r-benchmarkme
+                             r-arrow))
+    (home-page "https://diskframe.com")
+    (synopsis "Larger-than-RAM Disk-Based Data Manipulation Framework")
+    (description
+     "This package provides a disk-based data manipulation tool for working with
+large-than-RAM datasets.  Aims to lower the barrier-to-entry for manipulating
+large datasets by adhering closely to popular and familiar data manipulation
+paradigms like dplyr verbs and data.table syntax.")
+    (license license:expat)))
+
 (define-public r-disimpact
   (package
     (name "r-disimpact")
@@ -15366,13 +15406,13 @@ independent sample.")
 (define-public r-devrate
   (package
     (name "r-devrate")
-    (version "0.2.3")
+    (version "0.2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "devRate" version))
               (sha256
                (base32
-                "05jmxlbxqx8czaxy9lhanvcz6qjwp8r33a22njr52xhfk0d4yivk"))))
+                "06060wxji3mfwq6c58gmb07mz9sk9d5ls9d152vywjnz20ndpscd"))))
     (properties `((upstream-name . "devRate")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -18184,33 +18224,6 @@ parametric, using stable distributions, and another one- non-parametric, using
 the squared Mahalanobis distance.  The package also contains functions for data
 handling and building of new classifiers as well as some test data set.")
     (license license:gpl3)))
-
-(define-public r-defm
-  (package
-    (name "r-defm")
-    (version "0.1-0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "defm" version))
-              (sha256
-               (base32
-                "09556clb6xj724ls223pnkxbiz94bi5gdscgksp0k6qyay5qcy18"))))
-    (properties `((upstream-name . "defm")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://cran.r-project.org/package=defm")
-    (synopsis "Estimation and Simulation of Multi-Binary Response Models")
-    (description
-     "Multi-binary response models are a class of models that allow for the estimation
-of multiple binary outcomes simultaneously.  This package provides functions to
-estimate and simulate these models using the Discrete Exponential-Family Models
-[DEFM] framework.  In it, we implement the models described in Vega Yon,
-Valente, and Pugh (2023) @code{<doi:10.48550/arXiv.2211.00627>.} DEFMs include
-Exponential-Family Random Graph Models [ERGMs], which characterize graphs using
-sufficient statistics, which is also the core of DEFMs. Using sufficient
-statistics, we can describe the data through meaningful motifs, for example,
-transitions between different states, joint distribution of the outcomes, etc.")
-    (license license:expat)))
 
 (define-public r-deflist
   (package

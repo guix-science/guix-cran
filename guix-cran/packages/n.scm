@@ -5499,13 +5499,13 @@ transform.  It has applications in wavelet shrinkage.")
 (define-public r-nlstools
   (package
     (name "r-nlstools")
-    (version "2.0-0")
+    (version "2.0-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nlstools" version))
               (sha256
                (base32
-                "07givljg4ynp56613bnyh5a6cf41h6ihsrwp073zwnxr0l9c5gqf"))))
+                "1pbsdmg1gaf0v0w5ij75l381f8h91dnc7vlbl8za3aws1cxhjaw5"))))
     (properties `((upstream-name . "nlstools")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

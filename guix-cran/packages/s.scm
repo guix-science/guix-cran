@@ -1087,6 +1087,28 @@ bugs, request features, or discuss the development of the package, please
 subscribe to the @code{koRpus-dev} mailing list (<http://korpusml.reaktanz.de>).")
     (license license:gpl3+)))
 
+(define-public r-syllogi
+  (package
+    (name "r-syllogi")
+    (version "1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "syllogi" version))
+              (sha256
+               (base32
+                "1d9h61xvx5gjafr2cjk92c3ggvrf4p3wrrfv0kcyrk3qn6xd9d0c"))))
+    (properties `((upstream-name . "syllogi")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=syllogi")
+    (synopsis "Collection of Data Sets for Teaching Purposes")
+    (description
+     "Collection (syllogi in greek) of real and fictitious data sets for teaching
+purposes.  The datasets were manually entered by the author from the respective
+references as listed in the individual dataset documentation.  The fictions
+datasets are the creation of the author, that he has found useful for teaching
+statistics.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-syllabifyr
   (package
     (name "r-syllabifyr")
@@ -17725,6 +17747,47 @@ retaining all the advantages of NMF -- such as interpretability, and being based
 on a simple biological intuition.")
     (license license:gpl3)))
 
+(define-public r-spnetwork
+  (package
+    (name "r-spnetwork")
+    (version "0.4.3.8")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "spNetwork" version))
+              (sha256
+               (base32
+                "0jxm3csq6prqssw9jdlk0k1ipm19kfv1y8kjgyqfb5m5l1za5xvq"))))
+    (properties `((upstream-name . "spNetwork")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-spdep
+                             r-sf
+                             r-rdpack
+                             r-rcppprogress
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-progressr
+                             r-igraph
+                             r-ggplot2
+                             r-future-apply
+                             r-dplyr
+                             r-dbscan
+                             r-data-table
+                             r-cubature
+                             r-bh
+                             r-abind))
+    (native-inputs (list r-knitr))
+    (home-page "https://jeremygelb.github.io/spNetwork/")
+    (synopsis "Spatial Analysis on Network")
+    (description
+     "Perform spatial analysis on network.  Implement several methods for spatial
+analysis on network: Network Kernel Density estimation, building of spatial
+matrices based on network distance ('listw objects from spdep package), K
+functions estimation for point pattern analysis on network, k nearest neighbours
+on network, reachable area calculation, and graph generation References: Okabe
+et al (2019) <doi:10.1080/13658810802475491>; Okabe et al (2012,
+ISBN:978-0470770818);Baddeley et al (2015, ISBN:9781482210200).")
+    (license license:gpl2)))
+
 (define-public r-spnaf
   (package
     (name "r-spnaf")
@@ -19925,13 +19988,13 @@ stand-alone.  Binary (application) part is installed separately using
 (define-public r-spectralr
   (package
     (name "r-spectralr")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spectralR" version))
               (sha256
                (base32
-                "0vjx0m7cibv0dk7p5la77caf66bj8k7djhw6i1nibghk7qf00lbk"))))
+                "1kz47gydsqa3g47m6z546sf5jnfscsly1v3dpj97ns0qf5sh57bp"))))
     (properties `((upstream-name . "spectralR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -24710,16 +24773,17 @@ et al., (2020) <doi:10.1371/journal.pcbi.1007357> and Djordjilovic et al.,
 (define-public r-soundshape
   (package
     (name "r-soundshape")
-    (version "1.2.1")
+    (version "1.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SoundShape" version))
               (sha256
                (base32
-                "1fkwvvb5pw2qf950hb1d1y6bkazs09hgxd6nn933lhn8ci2v9bzc"))))
+                "1inp1255mdhbr0sfqwdmb6g0ab625c98q3avfk6w36gb0c77b5ry"))))
     (properties `((upstream-name . "SoundShape")))
     (build-system r-build-system)
     (propagated-inputs (list r-tuner
+                             r-stringr
                              r-seewave
                              r-reshape2
                              r-plot3d
@@ -41114,13 +41178,13 @@ and Biogeography 21, 109-120).")
 (define-public r-sharpshootr
   (package
     (name "r-sharpshootr")
-    (version "2.1")
+    (version "2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sharpshootR" version))
               (sha256
                (base32
-                "0vv1645060696c3jjy41m8wqly8a4hds5w123vvz7j09cdxfs632"))))
+                "0qy2glasnsmrdbgx7pvbhi0dzidgkfjl67ay5gkfjdy477n5micy"))))
     (properties `((upstream-name . "sharpshootR")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -41131,7 +41195,6 @@ and Biogeography 21, 109-120).")
                              r-rcolorbrewer
                              r-plyr
                              r-lattice
-                             r-hmisc
                              r-e1071
                              r-digest
                              r-curl
@@ -42992,13 +43055,13 @@ Methods for the Social Sciences\", Cambridge University Press.")
 (define-public r-setartree
   (package
     (name "r-setartree")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "setartree" version))
               (sha256
                (base32
-                "1vdw126japndb99z73mv4v1cikin8kgs529y2lwjzjj9ggyx4p7i"))))
+                "13j0shmnnwnbkzgl1wnirvfd9yi29smn3a5cjxg5xg89bjh77wc6"))))
     (properties `((upstream-name . "setartree")))
     (build-system r-build-system)
     (propagated-inputs (list r-generics))
@@ -46457,16 +46520,16 @@ includes specialised pedigree visualisations.")
 (define-public r-segregation
   (package
     (name "r-segregation")
-    (version "0.6.0")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "segregation" version))
               (sha256
                (base32
-                "0yajbbrbrkk6blb6r5y5fwvfz0j8kbc8fr91kb4f53j1afcbbhbx"))))
+                "170nikyari6kzzplkp8siv24278bjf4vv3w893yrlmqr0hfvw9gb"))))
     (properties `((upstream-name . "segregation")))
     (build-system r-build-system)
-    (propagated-inputs (list r-data-table))
+    (propagated-inputs (list r-rcppprogress r-rcpp r-data-table r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://elbersb.github.io/segregation/")
     (synopsis "Entropy-Based Segregation Indices")
@@ -46481,7 +46544,8 @@ decomposable.  The package provides tools to decompose the index by units and
 groups (local segregation), and by within and between terms.  The package also
 provides a method to decompose differences in segregation as described by Elbers
 (2021) <doi:10.1177/0049124121986204>.  The package includes standard error
-estimation by bootstrapping, which also corrects for small sample bias.")
+estimation by bootstrapping, which also corrects for small sample bias.  The
+package also contains functions for visualizing segregation patterns.")
     (license license:expat)))
 
 (define-public r-segrda
@@ -56868,6 +56932,31 @@ implementation of the @code{MapCurve} method (Hargrove et al. (2006)
 depth (intensity) and allele specific read depth (intensity) for whole genome
 sequencing (WGS), whole exome sequencing (WES) and SNP array data.")
     (license license:gpl2+)))
+
+(define-public r-s7
+  (package
+    (name "r-s7")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "S7" version))
+              (sha256
+               (base32
+                "1hfdfzfysrcbx53qjngzx8ycb353cy2drvxnf1d9a84mjl681gc3"))))
+    (properties `((upstream-name . "S7")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/rconsortium/OOP-WG/")
+    (synopsis
+     "An Object Oriented System Meant to Become a Successor to S3 and S4")
+    (description
+     "This package provides a new object oriented programming system designed to be a
+successor to S3 and S4.  It includes formal class, generic, and method
+specification, and a limited form of multiple dispatch.  It has been designed
+and implemented collaboratively by the R Consortium Object-Oriented Programming
+Working Group, which includes representatives from R-Core, Bioconductor',
+Posit'/'tidyverse', and the wider R community.")
+    (license license:expat)))
 
 (define-public r-s4vd
   (package

@@ -3381,13 +3381,13 @@ applications as well.")
 (define-public r-fsadata
   (package
     (name "r-fsadata")
-    (version "0.4.0")
+    (version "0.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FSAdata" version))
               (sha256
                (base32
-                "0wqviw5achsl9q7v8z8zzbnhq9gryfj793hi61js2z30m5dgjvm7"))))
+                "0zh0gkylziysqjc9gn3kjz7070x2rvmi1c64kxl6q2479929hysi"))))
     (properties `((upstream-name . "FSAdata")))
     (build-system r-build-system)
     (home-page "https://fishr-core-team.github.io/FSAdata/")
@@ -5038,20 +5038,18 @@ but using a radically improved programming strategy.")
 (define-public r-fraction
   (package
     (name "r-fraction")
-    (version "1.1")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FRACTION" version))
               (sha256
                (base32
-                "10m67zwm4hvvarlrb8ckavf6rr0lbq17hlh43qad1k10lshb8qh4"))))
+                "0j7mczw3jlmyls3lcsazybvhq87pp1c3imn4ks0bl08h1crdsdl6"))))
     (properties `((upstream-name . "FRACTION")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=FRACTION")
     (synopsis "Numeric Number into Fraction")
-    (description
-     "This is the package which can help you turn numeric,data.frame,matrix into
-fraction form.")
+    (description "Turn numeric,data.frame,matrix into fraction form.")
     (license license:gpl2)))
 
 (define-public r-fractd
@@ -5583,6 +5581,31 @@ the contiguous rows that have the same value in the first field.  The result can
 be returned as a list or a data.table, or even directly printed to an output
 file.")
     (license license:expat)))
+
+(define-public r-fplot
+  (package
+    (name "r-fplot")
+    (version "1.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "fplot" version))
+              (sha256
+               (base32
+                "0rjdjv67yh6nbxi3l8ds0dr26s9cxsrfqc47rkfwh82g1iga2fqi"))))
+    (properties `((upstream-name . "fplot")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp r-formula r-dreamerr r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=fplot")
+    (synopsis "Automatic Distribution Graphs Using Formulas")
+    (description
+     "Easy way to plot regular/weighted/conditional distributions by using formulas.
+The core of the package concerns distribution plots which are automatic: the
+many options are tailored to the data at hand to offer the nicest and most
+meaningful graphs possible -- with no/minimum user input.  Further provide
+functions to plot conditional trends and box plots.  See
+<https://lrberge.github.io/fplot/> for more information.")
+    (license license:gpl3)))
 
 (define-public r-fpldata
   (package
@@ -7520,13 +7543,13 @@ polynomial fits to describe and analyze force curve shapes.")
 (define-public r-forams
   (package
     (name "r-forams")
-    (version "2.0-5")
+    (version "2.0-6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "forams" version))
               (sha256
                (base32
-                "1fh3m9896ksv1h7b027yb955bzyv70yafhqvn5crkzalzk3jpb0s"))))
+                "1y8r64ckx7swx4rlmdsjp4k8ic5jmivwk4vbadx4gpp4brd2zk12"))))
     (properties `((upstream-name . "forams")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan))

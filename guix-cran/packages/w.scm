@@ -1095,13 +1095,13 @@ use to others as well.")
 (define-public r-wrangle
   (package
     (name "r-wrangle")
-    (version "0.5.10")
+    (version "0.6.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wrangle" version))
               (sha256
                (base32
-                "135160r3hlzxkqh97nycp5ad9b6628f61k6mbm0s8rprxwmcslhq"))))
+                "11bryvsggjphcrz7a92xanx9wcnaxmgm503ns9yq3nxfpyvxfgvf"))))
     (properties `((upstream-name . "wrangle")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-rlang r-magrittr r-dplyr))
@@ -2908,13 +2908,13 @@ based on error metrics.  Chen et al.(2017) <doi:10.1007/s00216-017-0218-9>.")
 (define-public r-windex
   (package
     (name "r-windex")
-    (version "2.0.4.1")
+    (version "2.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "windex" version))
               (sha256
                (base32
-                "0iwmb72fwvif6l6carn23f5zrkb5baxszi1imy1ls5c847kvqc0w"))))
+                "1anhpq9zhfin9wli7pkxf5iz547806kl18rjsd1k82jqc1rr62al"))))
     (properties `((upstream-name . "windex")))
     (build-system r-build-system)
     (propagated-inputs (list r-scatterplot3d r-phytools r-phangorn r-geiger

@@ -8230,13 +8230,13 @@ added to @code{JavaScript} code when they are missing.")
 (define-public r-pressure
   (package
     (name "r-pressure")
-    (version "0.2.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pressuRe" version))
               (sha256
                (base32
-                "13vw7xln6xh7r98fzpdjir2gb7hps6qbf177q72y1kcvklk2x2km"))))
+                "12824rpi1211mzq5p4qb55wfp11zanda23l3qw5fdmm9nj53qa79"))))
     (properties `((upstream-name . "pressuRe")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -8244,12 +8244,15 @@ added to @code{JavaScript} code when they are missing.")
                              r-sf
                              r-scales
                              r-readxl
+                             r-raster
                              r-pracma
                              r-magrittr
                              r-magick
                              r-ggplot2
                              r-ggmap
-                             r-dplyr))
+                             r-gdistance
+                             r-dplyr
+                             r-abind))
     (home-page "https://cran.r-project.org/package=pressuRe")
     (synopsis "Imports, Processes, and Visualizes Biomechanical Pressure Data")
     (description
@@ -8551,6 +8554,31 @@ analyses.")
 packages.  Runtime examples are provided in the package function as well as at
 <https://analyticmodels.shinyapps.io/PREPShiny/>.")
     (license license:gpl2)))
+
+(define-public r-preprocessrecordlinkage
+  (package
+    (name "r-preprocessrecordlinkage")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "PreProcessRecordLinkage" version))
+              (sha256
+               (base32
+                "15lbnzd6ii2wpcmv7jpasy8lmn85qrry33j3p77z8v81q4csjih8"))))
+    (properties `((upstream-name . "PreProcessRecordLinkage")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tm r-syn r-stringr r-recordlinkage r-data-table))
+    (home-page "https://cran.r-project.org/package=PreProcessRecordLinkage")
+    (synopsis "Preprocessing Record Linkage")
+    (description
+     "In this record linkage package, data preprocessing has been meticulously
+executed to cover a wide range of datasets, ensuring that variable names are
+standardized using synonyms.  This approach facilitates seamless data
+integration and analysis across various datasets.  While users have the
+flexibility to modify variable names, the system intelligently ensures that
+changes are only permitted when they do not compromise data consistency or
+essential variable essence.")
+    (license license:gpl3)))
 
 (define-public r-preprocessing
   (package
@@ -17930,13 +17958,13 @@ graphs.")
 (define-public r-plnmodels
   (package
     (name "r-plnmodels")
-    (version "1.0.3")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PLNmodels" version))
               (sha256
                (base32
-                "13ri1q3q9yl9rf96n98q1wsggmnmk29cz277sx85jmfr2q36nsdn"))))
+                "0ipx01zs3vh318hdqrvm4y59q0jdzkysr39amxmydv5ld8lx5cky"))))
     (properties `((upstream-name . "PLNmodels")))
     (build-system r-build-system)
     (propagated-inputs (list r-torch
@@ -18659,17 +18687,18 @@ shape.")
 (define-public r-plasso
   (package
     (name "r-plasso")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "plasso" version))
               (sha256
                (base32
-                "1gx3vzxfnk9knr5wi8hvksjlg38q5gnyw1nci7lm2vi7y92fm5zr"))))
+                "0ilfgc8yd4rgbh4g3536c7pfy6yjf7hl894cnjddqp9g0xk0annn"))))
     (properties `((upstream-name . "plasso")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-iterators r-glmnet r-foreach
                              r-doparallel))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/stefan-1997/plasso")
     (synopsis "Cross-Validated (Post-) Lasso")
     (description
@@ -18913,6 +18942,29 @@ stomatal conductance models, leaf energy balance using Penman-Monteith,
 Cowan-Farquhar optimization, humidity unit conversions.  See Duursma (2015)
 <doi:10.1371/journal.pone.0143346>.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-planr
+  (package
+    (name "r-planr")
+    (version "0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "planr" version))
+              (sha256
+               (base32
+                "04s1zkxbmfv1zx7zfgkgdq4l17swf4ys9djppzyvqqhkp8pbhzml"))))
+    (properties `((upstream-name . "planr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpproll r-magrittr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=planr")
+    (synopsis "Tools for Supply Chain Management, Demand and Supply Planning")
+    (description
+     "Perform flexible and quick calculations for Demand and Supply Planning, such as
+projected inventories and coverages, as well as replenishment plan.  For any
+time bucket, daily, weekly or monthly, and any granularity level, product or
+group of products.")
+    (license license:expat)))
 
 (define-public r-planningml
   (package
@@ -21528,19 +21580,21 @@ with the INLA package (<https://www.r-inla.org>).")
 (define-public r-phylter
   (package
     (name "r-phylter")
-    (version "0.9.7")
+    (version "0.9.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "phylter" version))
               (sha256
                (base32
-                "1gdpm6pq4gncgqb5cznr6z2m6gnma8mlwpvm31s50a8rj9qz3hp1"))))
+                "1dkm6wfrmbbx7ygfbvk68mv4ay3986wzy0wadxskbbvbvqcshjqa"))))
     (properties `((upstream-name . "phylter")))
     (build-system r-build-system)
     (propagated-inputs (list r-rspectra
                              r-rfast
                              r-reshape2
-                             r-mrfdepth
+                             r-rcppeigen
+                             r-rcpparmadillo
+                             r-rcpp
                              r-ggplot2
                              r-ape))
     (native-inputs (list r-knitr))
@@ -24578,30 +24632,6 @@ Mixed Models (PGLMMs; pglmm') following Ives & Helmus (2011) and Rafferty & Ives
 sim.meta.comm').")
     (license license:gpl3)))
 
-(define-public r-pexm
-  (package
-    (name "r-pexm")
-    (version "1.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "pexm" version))
-              (sha256
-               (base32
-                "1asw7z2dr9bqsxzfjyj0hf1zfym743315597ds2h3xvwwvsirwzj"))))
-    (properties `((upstream-name . "pexm")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rjags r-msm r-coda))
-    (home-page "https://github.com/vdinizm/pexm")
-    (synopsis
-     "Loading a JAGS Module for the Piecewise Exponential Distribution")
-    (description
-     "Load the Just Another Gibbs Sampling (JAGS) module pexm'.  The module provides
-the tools to work with the Piecewise Exponential (PE) distribution in a Bayesian
-model with the corresponding Markov Chain Monte Carlo algorithm (Gibbs Sampling)
-implemented via JAGS. Details about the module implementation can be found in
-Mayrink et al. (2021) <doi:10.18637/jss.v100.i08>.")
-    (license license:gpl3)))
-
 (define-public r-pewdata
   (package
     (name "r-pewdata")
@@ -25490,6 +25520,40 @@ concentrations of pharmaceuticals in the aqueous environment.  Jagadeesan K.,
 Barden R. and Kasprzyk-Hordern B. (2022)
 <https://www.ssrn.com/abstract=4306129>.")
     (license license:gpl3+)))
+
+(define-public r-periscope2
+  (package
+    (name "r-periscope2")
+    (version "0.1.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "periscope2" version))
+              (sha256
+               (base32
+                "16w730jy6viqvzvn1lvbjxfy4jqlf6wmpz957lf98kpy0g94hjg0"))))
+    (properties `((upstream-name . "periscope2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yaml
+                             r-writexl
+                             r-shinywidgets
+                             r-shiny
+                             r-lubridate
+                             r-fresh
+                             r-dt
+                             r-bs4dash))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Aggregate-Genius/periscope2")
+    (synopsis
+     "Enterprise Streamlined 'shiny' Application Framework Using 'bs4Dash'")
+    (description
+     "This package provides a framework for building enterprise, scalable and
+UI-standardized shiny applications.  It brings enhanced features such as
+bootstrap v4 <https://getbootstrap.com/docs/4.0/getting-started/introduction/>,
+additional and enhanced shiny modules, customizable UI features, as well as an
+enhanced application file organization paradigm.  This update allows developers
+to harness the ability to build powerful applications and enriches the shiny
+developers experience when building and maintaining applications.")
+    (license license:gpl3)))
 
 (define-public r-periscope
   (package
@@ -26717,13 +26781,13 @@ server of the Peer Models Network.")
 (define-public r-pedtools
   (package
     (name "r-pedtools")
-    (version "2.2.0")
+    (version "2.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pedtools" version))
               (sha256
                (base32
-                "1vzh88bxd3mcas8c41l30xsimp242xahrslyrll4r9f9vs959v01"))))
+                "0pdpf9fx5k88aq798vzpyvgczfr3gr6p5bcnqvvdxg3xagll4ql2"))))
     (properties `((upstream-name . "pedtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-pedmut r-kinship2))
@@ -27997,6 +28061,29 @@ the US Energy Information Administration, the World Bank, Eurostat, the European
 Central Bank, the Bank of England, the UK's Office of National Statistics,
 Deutsche Bundesbank, and INSEE.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-pdfestimator
+  (package
+    (name "r-pdfestimator")
+    (version "4.5")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "PDFEstimator" version))
+              (sha256
+               (base32
+                "1h64scfy7db8p8gyczrzhscfssk1cbzhr41z8jvs0n1d1xa2f982"))))
+    (properties `((upstream-name . "PDFEstimator")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-plot3d r-multirng))
+    (home-page "https://cran.r-project.org/package=PDFEstimator")
+    (synopsis "Multivariate Nonparametric Probability Density Estimator")
+    (description
+     "Farmer, J., D. Jacobs (2108) <DOI:10.1371/journal.pone.0196937>.  A multivariate
+nonparametric density estimator based on the maximum-entropy method.  Accurately
+predicts a probability density function (PDF) for random data using a novel
+iterative scoring function to determine the best fit without overfitting to the
+sample.")
+    (license license:gpl2+)))
 
 (define-public r-pdfcluster
   (package
@@ -33062,13 +33149,13 @@ it can create documents in many formats (for more information see
 (define-public r-pandoc
   (package
     (name "r-pandoc")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pandoc" version))
               (sha256
                (base32
-                "11kzgj8hp700y4p5mnxsr6sl0f6wvqnhs6wxl4yhn992jw4warc3"))))
+                "00bmvxvp4rskbjphp93lpwkp58bkqzlglir7my3icdgrbcyxagj3"))))
     (properties `((upstream-name . "pandoc")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-rappdirs r-fs))
