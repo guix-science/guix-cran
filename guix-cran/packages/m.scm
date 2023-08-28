@@ -5490,13 +5490,13 @@ depict the origin of successors of OTUs.")
 (define-public r-mulgar
   (package
     (name "r-mulgar")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mulgar" version))
               (sha256
                (base32
-                "0qlm68cxs3srp9zrljgllik76iskx3h28ma1ahivxw5zmv6dsb8l"))))
+                "00yaxi14x7g0pzdj65hgs2xm9m7w1w6xjhparbhcjz1jd34ga30y"))))
     (properties `((upstream-name . "mulgar")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -6768,13 +6768,13 @@ A.P. 2013.  Methods of Statistical Model Estimation.  Chapman & Hall / CRC.")
 (define-public r-msma
   (package
     (name "r-msma")
-    (version "2.2")
+    (version "3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "msma" version))
               (sha256
                (base32
-                "1p6lm07wlwyymhj2bpwn9kvxf6q2c6rf9554swnm8gkm1z82324f"))))
+                "03aal2l3qxzg25bwav11fmlyps7fbkvr7wzgbqnixjjbmp0c70nk"))))
     (properties `((upstream-name . "msma")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -10725,16 +10725,16 @@ description of the method see Pascariu et al. (2017).
 (define-public r-mortaar
   (package
     (name "r-mortaar")
-    (version "1.1.4")
+    (version "1.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mortAAR" version))
               (sha256
                (base32
-                "17b9kq1hr0xqw7jfvm90blpw5qbxjnycmgqzxb53yjhr65zbf1c8"))))
+                "13zx5ldlnc4zhvw7r9ria419dwlf0wbaa8107zvwpcynfb1z4fg7"))))
     (properties `((upstream-name . "mortAAR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tibble r-reshape2 r-rdpack r-magrittr))
+    (propagated-inputs (list r-tibble r-rlang r-reshape2 r-rdpack r-magrittr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=mortAAR")
     (synopsis "Analysis of Archaeological Mortality Data")
@@ -12448,13 +12448,13 @@ a paper published in the Journal of Statistical Software
 (define-public r-modules
   (package
     (name "r-modules")
-    (version "0.11.0")
+    (version "0.12.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "modules" version))
               (sha256
                (base32
-                "1y2ch9kfcp2qk2rz2dhy63ng1vrlcr69ml0nphyzbml19a7c3hvp"))))
+                "1sm4knfli0brqzqd1hhky7rxylalghz0lk991csx5wd8sy10m9lb"))))
     (properties `((upstream-name . "modules")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -13280,18 +13280,19 @@ objects.")
 (define-public r-modelsummary
   (package
     (name "r-modelsummary")
-    (version "1.4.1")
+    (version "1.4.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "modelsummary" version))
               (sha256
                (base32
-                "0iaamyl5gvw4dp5by1jg59xnm5mpyx5dql2ik0bwybsj1d2bf7bc"))))
+                "08z6xk6az4my8j91db7vkrrnp0cq9093zxpakss98aladwvdpn44"))))
     (properties `((upstream-name . "modelsummary")))
     (build-system r-build-system)
     (propagated-inputs (list r-tables
                              r-performance
                              r-parameters
+                             r-kableextra
                              r-insight
                              r-glue
                              r-generics
@@ -13655,6 +13656,27 @@ University of Technology, Faculty of Mathematics and Information Science.")
     (description
      "Uses dplyr and tidyeval to fit statistical models inside the database.  It
 currently supports KMeans and linear regression models.")
+    (license license:expat)))
+
+(define-public r-modeldatatoo
+  (package
+    (name "r-modeldatatoo")
+    (version "0.2.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "modeldatatoo" version))
+              (sha256
+               (base32
+                "0qric17sxfy4w4pgp8cvmm30vq9lddk58hzqrm5f7s63ydjb4n2i"))))
+    (properties `((upstream-name . "modeldatatoo")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-pins))
+    (home-page "https://github.com/tidymodels/modeldatatoo")
+    (synopsis "More Data Sets Useful for Modeling Examples")
+    (description
+     "More data sets used for demonstrating or testing model-related packages are
+contained in this package.  The data sets are downloaded and cached, allowing
+for more and bigger data sets.")
     (license license:expat)))
 
 (define-public r-modelcharts
@@ -21373,13 +21395,13 @@ imputation of the number of previous episodes.  See @code{HernÃ¡ndez-Herrera} 
 (define-public r-mirai-promises
   (package
     (name "r-mirai-promises")
-    (version "0.1.2")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mirai.promises" version))
               (sha256
                (base32
-                "0hq440a79czm2c9p9fpsnimsl21w4628d53y0610jm1f0d2xpy01"))))
+                "0dq8jw175fviw2399c9ls94nsg5c5276pkajy0hcmsxf7zcg9sjk"))))
     (properties `((upstream-name . "mirai.promises")))
     (build-system r-build-system)
     (propagated-inputs (list r-promises r-mirai r-later))
@@ -22378,6 +22400,30 @@ examples.")
      "This package provides functions for estimating structural equation models using
 instrumental variables.")
     (license license:gpl2)))
+
+(define-public r-miivefa
+  (package
+    (name "r-miivefa")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "MIIVefa" version))
+              (sha256
+               (base32
+                "1abim8mb7avnz4prxjsch0xfancav3bwblxvdqp7whbya1bm78c1"))))
+    (properties `((upstream-name . "MIIVefa")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-miivsem))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lluo0/MIIVefa/")
+    (synopsis
+     "Exploratory Factor Analysis Using Model Implied Instrumental Variables")
+    (description
+     "Data-driven approach for Exploratory Factor Analysis (EFA) that uses Model
+Implied Instrumental Variables (MIIVs).  The method starts with a one factor
+model and arrives at a suggested model with enhanced interpretability that
+allows cross-loadings and correlated errors.")
+    (license license:expat)))
 
 (define-public r-miipw
   (package
@@ -28471,33 +28517,6 @@ be found in Cahoy and Sedransk (2023), Cahoy and Sedransk (2022)
 acquired in a certain period of time.  At least three QC per day are required.")
     (license license:gpl2)))
 
-(define-public r-metabolomicsr
-  (package
-    (name "r-metabolomicsr")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "metabolomicsR" version))
-              (sha256
-               (base32
-                "0b12nddczh8i6hnv679pa521yps26n98j2cnai8s67xiw5ir0y5v"))))
-    (properties `((upstream-name . "metabolomicsR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-plotroc r-ggplot2 r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/XikunHan/metabolomicsR")
-    (synopsis "Tools for Metabolomics Data")
-    (description
-     "This package provides tools to preprocess, analyse, and visualize metabolomics
-data.  We included a set of functions for sample and metabolite quality control,
-outlier detection, missing value imputation, dimensional reduction,
-normalization, data integration, regression, metabolite annotation, enrichment
-analysis, and visualization of data and results.  The package is designed to be
-a comprehensive R package that can be easily used by researchers with basic R
-programming skills.  The framework designed here is versatile and is extensible
-to other various methods.")
-    (license license:gpl2)))
-
 (define-public r-metabolomicsbasics
   (package
     (name "r-metabolomicsbasics")
@@ -33108,39 +33127,6 @@ analysis and variationist studies (comparison of linguistic variants and of
 linguistic varieties).")
     (license license:gpl2)))
 
-(define-public r-mclcar
-  (package
-    (name "r-mclcar")
-    (version "0.2-0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "mclcar" version))
-              (sha256
-               (base32
-                "0zgf7ha22586nh1yzdnhz1rzrqkn6yzr12qva9ag297ry4z4bn5y"))))
-    (properties `((upstream-name . "mclcar")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-spdep
-                             r-spatialreg
-                             r-spam
-                             r-rsm
-                             r-nleqslv
-                             r-maxlik
-                             r-fields))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=mclcar")
-    (synopsis
-     "Estimating Conditional Auto-Regressive (CAR) Models using Monte Carlo Likelihood Methods")
-    (description
-     "The likelihood of direct CAR models and Binomial and Poisson GLM with latent CAR
-variables are approximated by the Monte Carlo likelihood.  The Maximum Monte
-Carlo likelihood estimator is found either by an iterative procedure of directly
-maximising the Monte Carlo approximation or by a response surface design
-method.Reference for the method can be found in the DPhil thesis in Z. Sha
-(2016).  For application a good reference is R.Bivand et.al (2017)
-<doi:10.1016/j.spasta.2017.01.002>.")
-    (license license:gpl2+)))
-
 (define-public r-mcl
   (package
     (name "r-mcl")
@@ -33230,42 +33216,6 @@ probability ratio test boundary (Fay, Kim and Hachey, 2007
 1991 <DOI:10.1093/biomet/78.2.301>.  Gives valid p-values and confidence
 intervals on p-values.")
     (license (list license:gpl2+ license:gpl3+))))
-
-(define-public r-mcglm
-  (package
-    (name "r-mcglm")
-    (version "0.8.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "mcglm" version))
-              (sha256
-               (base32
-                "04zl3y5zvms5n0s1mzsb8dm9g57l84zk16516kwni3gxmdkaq4sw"))))
-    (properties `((upstream-name . "mcglm")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix r-assertthat))
-    (native-inputs (list r-knitr))
-    (home-page "mcglm.leg.ufpr.br")
-    (synopsis "Multivariate Covariance Generalized Linear Models")
-    (description
-     "Fitting multivariate covariance generalized linear models @code{(McGLMs)} to
-data. @code{McGLM} is a general framework for non-normal multivariate data
-analysis, designed to handle multivariate response variables, along with a wide
-range of temporal and spatial correlation structures defined in terms of a
-covariance link function combined with a matrix linear predictor involving known
-matrices.  The models take non-normality into account in the conventional way by
-means of a variance function, and the mean structure is modelled by means of a
-link function and a linear predictor.  The models are fitted using an efficient
-Newton scoring algorithm based on quasi-likelihood and Pearson estimating
-functions, using only second-moment assumptions.  This provides a unified
-approach to a wide variety of different types of response variables and
-covariance structures, including multivariate extensions of repeated measures,
-time series, longitudinal, spatial and spatio-temporal structures.  The package
-offers a user-friendly interface for fitting @code{McGLMs} similar to the glm()
-R function.  See Bonat (2018) <doi:10.18637/jss.v084.i04>, for more information
-and examples.")
-    (license (list license:gpl3
-                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-mcga
   (package
@@ -38178,56 +38128,6 @@ and Mollinari et al. (2020) <doi:10.1534/g3.119.400620>.")
 re-labelling categorical variables.")
     (license license:gpl3)))
 
-(define-public r-mapping
-  (package
-    (name "r-mapping")
-    (version "1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "mapping" version))
-              (sha256
-               (base32
-                "1in4fjdiass73fdh3y937c600bdbv8gwjzxb5wj07wkc76jxb5ba"))))
-    (properties `((upstream-name . "mapping")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-viridislite
-                             r-tmaptools
-                             r-tmap
-                             r-stringr
-                             r-stringi
-                             r-sf
-                             r-s2
-                             r-rgdal
-                             r-mapview
-                             r-leafsync
-                             r-leafpop
-                             r-leaflet
-                             r-jsonlite
-                             r-httr
-                             r-htmltools
-                             r-ggplot2
-                             r-geojsonio
-                             r-dplyr
-                             r-curl
-                             r-cartography))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/serafinialessio/mapping")
-    (synopsis "Automatic Download, Linking, Manipulating Coordinates for Maps")
-    (description
-     "Maps are an important tool to visualise variables distribution across different
-spatial object.  The mapping process require to link the data with coordinates
-and then generate the correspondent map.  This package provide coordinates,
-linking and mapping functions for an automatic, flexible and easy approach of
-mapping workflow of different geographical statistical unit.Geographical
-coordinates are provided in the package and automatically linked with the input
-data to generate maps with internal provided functions or external
-functions.provide an easy, flexible and automatic approach to potentially
-download updated coordinates, to link statistical units with coordinates and to
-aggregate variables based on the spatial hierarchy of units.  The object
-returned from the package can be used for thematic maps with the build-in
-functions provided in mapping or with other packages already available.")
-    (license license:gpl2+)))
-
 (define-public r-mapme-biodiversity
   (package
     (name "r-mapme-biodiversity")
@@ -39076,13 +38976,13 @@ aggregation of biological data across diverse databases.")
 (define-public r-manova-rm
   (package
     (name "r-manova-rm")
-    (version "0.5.3")
+    (version "0.5.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MANOVA.RM" version))
               (sha256
                (base32
-                "0gdyd7avdc7jh1hp03wlbqi5krijxrgargkivq97qyk83zf387dx"))))
+                "03y6qzbh696h282pq8as2zy16y7j95d04qvn3labivd5qygfwfhp"))))
     (properties `((upstream-name . "MANOVA.RM")))
     (build-system r-build-system)
     (propagated-inputs (list r-plyr

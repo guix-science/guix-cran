@@ -6476,13 +6476,13 @@ directional and fluctuating selection in age-structured populations.")
 (define-public r-lmest
   (package
     (name "r-lmest")
-    (version "3.1.1")
+    (version "3.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "LMest" version))
               (sha256
                (base32
-                "08s99l1460gmw6477p44ad9q7gsll9x3srnlhrf0j0pplf0x2s0k"))))
+                "0a9lch9bylhy5r4v865lwzzz9qqi98na8bfnr5ga8kzy7akbnza0"))))
     (properties `((upstream-name . "LMest")))
     (build-system r-build-system)
     (propagated-inputs (list r-scatterplot3d
@@ -10577,13 +10577,13 @@ range of edit distance measures are available thanks to the stringdist package."
 (define-public r-lettervalue
   (package
     (name "r-lettervalue")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lettervalue" version))
               (sha256
                (base32
-                "1wq80kbmm5db8bhh7bvzgz92ddwl27la9wpzjw13pxv6cbmy388f"))))
+                "1wjvv1nr6i53nvmvpcpjdq5ycdhv4bl8b7pg280qm1hchak36lj0"))))
     (properties `((upstream-name . "lettervalue")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-purrr r-glue))
@@ -12476,13 +12476,13 @@ ISBN-13:978-0387954578), and Christensen et al. (2018) <doi:10.1002/ecy.2373>.")
 (define-public r-ldatree
   (package
     (name "r-ldatree")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "LDATree" version))
               (sha256
                (base32
-                "1ipccqkzgxcgg9rydw9505r70p1ibwn0a8hfc34x2jxy3vs3r8sl"))))
+                "1cn1b6wbfmgg1agjl2jwwshfdg1nmg8y46z00ascnp5myxylcga1"))))
     (properties `((upstream-name . "LDATree")))
     (build-system r-build-system)
     (propagated-inputs (list r-visnetwork r-scales r-magrittr r-lifecycle
@@ -13864,13 +13864,13 @@ lavaan path model without having to write the DOT language graph specification."
 (define-public r-lavaanextra
   (package
     (name "r-lavaanextra")
-    (version "0.1.7")
+    (version "0.1.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lavaanExtra" version))
               (sha256
                (base32
-                "1fd2l3zgvnzym1lwb9y744cv1iib7f2rzq62gsr7q8zziih5pk8s"))))
+                "1363cyvq5kdz3gvg4amiazd122fmbx4vygic0zsmi32306lf2wpk"))))
     (properties `((upstream-name . "lavaanExtra")))
     (build-system r-build-system)
     (propagated-inputs (list r-lavaan r-insight))
@@ -14938,13 +14938,13 @@ in Goslee (2012) <doi:10.14358/PERS.78.9.973>.")
 (define-public r-landpred
   (package
     (name "r-landpred")
-    (version "1.1")
+    (version "1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "landpred" version))
               (sha256
                (base32
-                "074zzlwj1pml7v7y47z67j5sp3xvsngsf0asan613q1bpvc4yq49"))))
+                "0xbmr896fyl2gvh6vy7fy7aixa5n2ycvwm509z6ys5wh0r8p296k"))))
     (properties `((upstream-name . "landpred")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival))
@@ -15017,13 +15017,13 @@ regression.  To find out more about the methods in this package, please see
 (define-public r-landest
   (package
     (name "r-landest")
-    (version "1.1")
+    (version "1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "landest" version))
               (sha256
                (base32
-                "1gcjxn9g3zq37glb92xgv2r9w5yq6hwsmgfmv2ijr66lla0qxsf4"))))
+                "1cr1qiz42j64yxpbpyll1l3lxazh1qq0ia4mh0qdyjk14kyyf9q0"))))
     (properties `((upstream-name . "landest")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival))
@@ -15052,6 +15052,37 @@ using a landmark estimation approach.")
     (description
      "Log-analytic methods intended for testing multiplicative effects.")
     (license license:gpl3)))
+
+(define-public r-lamle
+  (package
+    (name "r-lamle")
+    (version "0.3.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "lamle" version))
+              (sha256
+               (base32
+                "08fsylhqpk8hqm9kbqc4vlhmpaddr9cpgjjxvlfc9xqhnyhg7p3d"))))
+    (properties `((upstream-name . "lamle")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-numderiv r-mvtnorm
+                             r-fastghquad))
+    (home-page "https://cran.r-project.org/package=lamle")
+    (synopsis "Maximum Likelihood Estimation of Latent Variable Models")
+    (description
+     "Approximate marginal maximum likelihood estimation of multidimensional latent
+variable models via adaptive quadrature or Laplace approximations to the
+integrals in the likelihood function, as presented for confirmatory factor
+analysis models in Jin, S., Noh, M., and Lee, Y. (2018)
+<doi:10.1080/10705511.2017.1403287>, for item response theory models in
+Andersson, B., and Xin, T. (2021) <doi:10.3102/1076998620945199>, and for
+generalized linear latent variable models in Andersson, B., Jin, S., and Zhang,
+M. (2023) <doi:10.1016/j.csda.2023.107710>.  Models implemented include the
+generalized	partial credit model, the graded response model, and generalized
+linear latent variable models for Poisson, negative-binomial and normal
+distributions.  Supports a combination of binary, ordinal, count and continuous
+observed variables and multiple	group models.")
+    (license license:gpl2+)))
 
 (define-public r-lambdr
   (package

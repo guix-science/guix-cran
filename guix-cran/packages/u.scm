@@ -72,36 +72,6 @@ are designed to translate statistical approaches to applied user experience
 research.")
     (license license:expat)))
 
-(define-public r-uwo4419
-  (package
-    (name "r-uwo4419")
-    (version "0.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "uwo4419" version))
-              (sha256
-               (base32
-                "0hk5qhyarjxz7ngj5ak37vx0rak6xv0hfb4sdrsbci3kv5fqijv7"))))
-    (properties `((upstream-name . "uwo4419")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-rio
-                             r-rcolorbrewer
-                             r-psych
-                             r-magrittr
-                             r-haven
-                             r-gmodels
-                             r-ggplot2
-                             r-dplyr
-                             r-desctools))
-    (home-page "https://cran.r-project.org/package=uwo4419")
-    (synopsis "UWO POLSCI 4419/9715")
-    (description
-     "Supports the course Introduction to Methodology (POLSCI 4419/9715) at the
-University of Western Ontario.")
-    (license license:gpl2+)))
-
 (define-public r-uwham
   (package
     (name "r-uwham")
@@ -282,13 +252,13 @@ EFF-TOX trial are found in the package Phase123'.")
 (define-public r-utility
   (package
     (name "r-utility")
-    (version "1.4.5")
+    (version "1.4.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "utility" version))
               (sha256
                (base32
-                "0a11bxyg8la6yvxr04qbhay05jb2ihd7calc1zcisgj43kq6k7xd"))))
+                "0785pyapq03kyk9lwxyqvs2fdagay1dg71fjqikr6hidbid5fqr3"))))
     (properties `((upstream-name . "utility")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=utility")
@@ -1140,13 +1110,13 @@ itself.")
 (define-public r-ursa
   (package
     (name "r-ursa")
-    (version "3.9.10")
+    (version "3.9.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ursa" version))
               (sha256
                (base32
-                "13a7r0l99h9afcbzvx0ndfiq9hmh9ggvh7gndfi64l8v37h1dpvk"))))
+                "0ffv7q1xvq4xdwk0jhiyx60057bsdrah4hlz7f16266wc9vf1jds"))))
     (properties `((upstream-name . "ursa")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgdal r-png r-jpeg))
@@ -1301,13 +1271,13 @@ easy and fun.")
 (define-public r-upsvarapprox
   (package
     (name "r-upsvarapprox")
-    (version "0.1.3")
+    (version "0.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "UPSvarApprox" version))
               (sha256
                (base32
-                "14wjcr06gd1fphl6cdqkb5i1rfwamfbz4x4qn5zxklir88a6h1h4"))))
+                "14hj8yv366qix30x7hq1sfzrcrsx4ckfa010azi1ihzp307hfkbz"))))
     (properties `((upstream-name . "UPSvarApprox")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=UPSvarApprox")
@@ -2330,13 +2300,13 @@ that string.")
 (define-public r-uniprotr
   (package
     (name "r-uniprotr")
-    (version "2.2.2")
+    (version "2.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "UniprotR" version))
               (sha256
                (base32
-                "0xljps2ms559m0x0fsabpgi1cms4jvx5sy6d73v3fw1cp5wydgav"))))
+                "0zrhfcc58vizk4rb3acibcrn2xxp6mlbyxs0pk66crfiz0qn9pd8"))))
     (properties `((upstream-name . "UniprotR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyverse
@@ -2758,13 +2728,13 @@ in this package for more information concerning the metrics.")
 (define-public r-uncover
   (package
     (name "r-uncover")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "UNCOVER" version))
               (sha256
                (base32
-                "010y2vj55bfyhsn0lkmafi3cbq183m85vqk1pya82hp10qxpp6q2"))))
+                "0x5ggwnzca6wz3ikpsa3aq8b715w8drkpchqp3jsg0g9imiw5y3m"))))
     (properties `((upstream-name . "UNCOVER")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales

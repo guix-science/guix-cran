@@ -308,13 +308,13 @@ language like Julia'.")
 (define-public r-julia
   (package
     (name "r-julia")
-    (version "1.3.4")
+    (version "1.3.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Julia" version))
               (sha256
                (base32
-                "0fv2qdxn0nqr6i7y3q8kjqnyb66k63k4jcdrs0xq2h2rw5gxpfir"))))
+                "0ynzxflz92y38z7bl9g8nhrgvz2ay716izpya398b29h4qfb1w4r"))))
     (properties `((upstream-name . "Julia")))
     (build-system r-build-system)
     (home-page "https://github.com/msuzen/Julia")
@@ -2682,13 +2682,13 @@ scaling, and more!")
 (define-public r-jipapprox
   (package
     (name "r-jipapprox")
-    (version "0.1.4")
+    (version "0.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jipApprox" version))
               (sha256
                (base32
-                "18ga798iafkqvjmra1xw3fpqzhd7c9qjcvklsifs2s6p8czy06v7"))))
+                "0pi85gl0knyi5r32bdmy2x0w805kczs41nx3r45bq0zs66g14fix"))))
     (properties `((upstream-name . "jipApprox")))
     (build-system r-build-system)
     (propagated-inputs (list r-sampling))

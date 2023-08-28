@@ -137,6 +137,34 @@ subject's covariate data and the information about the binary dosage file
 returned by the @code{BinaryDosage::getbdinfo()} routine.")
     (license license:gpl3)))
 
+(define-public r-gxeprs
+  (package
+    (name "r-gxeprs")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "GxEprs" version))
+              (sha256
+               (base32
+                "0zy7yxhn2lwgccg4q9mrw3qvpbghj2m9adny4i94bzys8dp5dasr"))))
+    (properties `((upstream-name . "GxEprs")))
+    (build-system r-build-system)
+    (home-page "https://github.com/DoviniJ/GxEprs")
+    (synopsis "Genotype-by-Environment Interaction in Polygenic Score Models")
+    (description
+     "This package provides a novel PRS model is introduced to enhance the prediction
+accuracy by utilising @code{GxE} effects.  This package performs Genome Wide
+Association Studies (GWAS) and Genome Wide Environment Interaction Studies
+(GWEIS) using a discovery dataset.  The package has the ability to obtain
+polygenic risk scores (PRSs) for a target sample.  Finally it predicts the risk
+values of each individual in the target sample.  Users have the choice of using
+existing models (Li et al., 2015) <doi:10.1093/annonc/mdu565>, (Pandis et al.,
+2013) <doi:10.1093/ejo/cjt054>, (Peyrot et al., 2018)
+<doi:10.1016/j.biopsych.2017.09.009> and (Song et al., 2022)
+<doi:10.1038/s41467-022-32407-9>, as well as newly proposed models for genomic
+risk prediction (refer to the URL for more details).")
+    (license license:gpl3+)))
+
 (define-public r-gwsignif
   (package
     (name "r-gwsignif")
@@ -7260,13 +7288,13 @@ for Numerical Methods in Engineering, 114, 501-516.")
 (define-public r-gpltr
   (package
     (name "r-gpltr")
-    (version "1.3")
+    (version "1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GPLTR" version))
               (sha256
                (base32
-                "0kih4iqmcsw26y442rvpydqiyvhsgfqb7l1nlllk8hbfv6lwsbzp"))))
+                "0g8h94fc9c8w86z302f5ld6j3rzh6is7z5rjxr1v4arblpibxzr3"))))
     (properties `((upstream-name . "GPLTR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rpart))
@@ -7277,7 +7305,10 @@ for Numerical Methods in Engineering, 114, 501-516.")
 scale.  A four-step procedure is proposed to fit the model and test the joint
 effect of the selected tree part while adjusting on confounding factors.  We
 also proposed an ensemble procedure based on the bagging to improve prediction
-accuracy and computed several scores of importance for variable selection.")
+accuracy and computed several scores of importance for variable selection.  See
+Cyprien Mbogning et al.'(2014)<doi:10.1186/2043-9113-4-6> and Cyprien Mbogning
+et al.'(2015)<doi:10.1159/000380850> for an overview of all the methods
+implemented in this package.")
     (license license:gpl2+)))
 
 (define-public r-gplsim
@@ -9445,13 +9476,13 @@ moment matching networks is provided.")
 (define-public r-gnm
   (package
     (name "r-gnm")
-    (version "1.1-3")
+    (version "1.1-4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gnm" version))
               (sha256
                (base32
-                "0dqw5c1lsp5k11bii5lsgafb0f409fpcaqx5wcfsmcs56nb64afj"))))
+                "1drf92r4d24a2vnywqnm3blv99qjgsbsf6sl3j7pdajwn1f0k65c"))))
     (properties `((upstream-name . "gnm")))
     (build-system r-build-system)
     (propagated-inputs (list r-relimp r-qvcalc r-nnet r-matrix r-mass))
@@ -10054,13 +10085,13 @@ multithreaded C++ for modeling large data for industry use.")
 (define-public r-gmisc
   (package
     (name "r-gmisc")
-    (version "3.0.2")
+    (version "3.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Gmisc" version))
               (sha256
                (base32
-                "1l3ica4nszqwb24kfswgg6s67ywwncggin0d4b7iv9rvdrngg9hj"))))
+                "1s8gkqg54622xhsmhl7n5pff2b6xfij111m7h3i4inzfjfmziq43"))))
     (properties `((upstream-name . "Gmisc")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -13339,18 +13370,18 @@ References: Yu, C., N. T. Penna, and Z. Li (2017)
 (define-public r-ginormal
   (package
     (name "r-ginormal")
-    (version "0.0.1")
+    (version "0.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ginormal" version))
               (sha256
                (base32
-                "0kxc7n70ib5srp0z2ky1xjs13mf3xv0aggq7c8khdn7zz3q4y356"))))
+                "0b37np2h03m82dhww9slnchm3dk4qwfmj6v7q13li788cw7whid1"))))
     (properties `((upstream-name . "ginormal")))
     (build-system r-build-system)
     (propagated-inputs (list r-bas))
     (native-inputs (list gfortran))
-    (home-page "URLencode")
+    (home-page "https://github.com/smonto2/ginormal")
     (synopsis "Generalized Inverse Normal Distribution Density and Generation")
     (description
      "Density function and generation of random variables from the Generalized Inverse
@@ -20456,26 +20487,6 @@ methods.  Software companion for Diggle and Ribeiro (2007)
 <doi:10.1007/978-0-387-48536-2>.")
     (license license:gpl2+)))
 
-(define-public r-geophys
-  (package
-    (name "r-geophys")
-    (version "1.4-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "geophys" version))
-              (sha256
-               (base32
-                "1s64sbr0chv0z2vaw059khfkv8iga1kr6428kkglgafq5x2d6h3q"))))
-    (properties `((upstream-name . "geophys")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rseis r-rpmg r-rfoc r-geomap r-cluster))
-    (home-page "https://cran.r-project.org/package=geophys")
-    (synopsis "Geophysics, Continuum Mechanics, Gravity Modeling")
-    (description
-     "Codes for analyzing various problems of geophysics, continuum mechanics and
-gravity models.")
-    (license license:gpl2+)))
-
 (define-public r-geonetwork
   (package
     (name "r-geonetwork")
@@ -26366,13 +26377,13 @@ computes derived parameters such as t50 and AUC.")
 (define-public r-gasper
   (package
     (name "r-gasper")
-    (version "1.1.3")
+    (version "1.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gasper" version))
               (sha256
                (base32
-                "0ff110nc5p7x8q7cljvzyjqdyf4lwz1dkq2i0pqasiifdij6m71a"))))
+                "1r0hhn7rk2a1pdq02y3ih8f77b2zna2001pb5lyrp59klmda1d09"))))
     (properties `((upstream-name . "gasper")))
     (build-system r-build-system)
     (propagated-inputs (list r-rspectra
@@ -26425,20 +26436,23 @@ Computer Model Via Analysis of Variance and Visualization\",
 (define-public r-gasmodel
   (package
     (name "r-gasmodel")
-    (version "0.4.0")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gasmodel" version))
               (sha256
                (base32
-                "0xd59z9yhjx4f76zkpn551rd96qqwryvps69lkzvardah4hgyd60"))))
+                "0lnqg58dabdfg2vy3prqprm0gwnmsxlrvgmjawprk2qlmf2xl10m"))))
     (properties `((upstream-name . "gasmodel")))
     (build-system r-build-system)
-    (propagated-inputs (list r-pracma
+    (propagated-inputs (list r-tidyr
+                             r-pracma
                              r-numderiv
                              r-nloptr
                              r-mvnfast
                              r-matrix
+                             r-ggplot2
+                             r-dplyr
                              r-circstats
                              r-arrangements
                              r-abind))
@@ -26845,13 +26859,13 @@ evaluations.")
 (define-public r-gap-datasets
   (package
     (name "r-gap-datasets")
-    (version "0.0.5")
+    (version "0.0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gap.datasets" version))
               (sha256
                (base32
-                "170w271vs24car0xf73h8yv1hrpl83j6mik6mw7cw8p3zqpbb692"))))
+                "1jwpsb66sgj2zzgrpgwxc22df66gbhi278ywbmaicc10mipv050y"))))
     (properties `((upstream-name . "gap.datasets")))
     (build-system r-build-system)
     (home-page "https://jinghuazhao.github.io/R/")
@@ -26868,16 +26882,17 @@ ALHD2 markers and alcoholism (aldh2), APOE/APOC1 markers and Schizophrenia
 (define-public r-gap
   (package
     (name "r-gap")
-    (version "1.5-1")
+    (version "1.5-3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gap" version))
               (sha256
                (base32
-                "1p0kwdsay8n29sg8jpfjbyqj3848irzn3l6a238fn4jpbw23fk8d"))))
+                "1kjjnh0s9aicwkd7wsisi4c75y701irigsbzp7y6f2264bcgj6bf"))))
     (properties `((upstream-name . "gap")))
     (build-system r-build-system)
-    (propagated-inputs (list r-plotly r-ggplot2 r-gap-datasets r-dplyr))
+    (propagated-inputs (list r-rdpack r-plotly r-ggplot2 r-gap-datasets
+                             r-dplyr))
     (native-inputs (list r-knitr gfortran))
     (home-page "https://github.com/jinghuazhao/R")
     (synopsis "Genetic Analysis Package")

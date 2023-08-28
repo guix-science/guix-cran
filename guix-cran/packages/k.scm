@@ -1895,13 +1895,13 @@ problem with both equalities and inequalities constraints.")
 (define-public r-kmunicate
   (package
     (name "r-kmunicate")
-    (version "0.2.3")
+    (version "0.2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "KMunicate" version))
               (sha256
                (base32
-                "0qy3qh4jfmyznwy4lhia9xzvi5xh0id9xx12lsmd1blklaia4593"))))
+                "13pkhyzv47zp1zz43fs0frbjgbjylyandhrfnzzwryxpchrghpqh"))))
     (properties `((upstream-name . "KMunicate")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

@@ -6992,30 +6992,6 @@ hybrid Wavelet ANN model for time series forecasting using algorithm by Anjoy
 and Paul (2017) <DOI: 10.1007/s00521-017-3289-9>.")
     (license license:gpl3)))
 
-(define-public r-wavefunction
-  (package
-    (name "r-wavefunction")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "wavefunction" version))
-              (sha256
-               (base32
-                "1g0g9i0s93lcpcx7icqn15bvkmd79slkgimspvvwp2bxdsc5nnf2"))))
-    (properties `((upstream-name . "wavefunction")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=wavefunction")
-    (synopsis "Wave Function Representation of Real Distributions")
-    (description
-     "Real probability distributions can be represented as the square of an orthogonal
-sum in the Hermite basis.  This representation is formally similar to the
-representation of quantum mechanical states as wave functions, whose squared
-modulus is a probability density.  This is described in more detail in \"Wave
-function representation of probability distributions,\" by Madeleine B. Thompson
-@code{<arXiv:1712.07764>.} This package provides a reference implementation of
-the technique.")
-    (license license:asl2.0)))
-
 (define-public r-waved
   (package
     (name "r-waved")

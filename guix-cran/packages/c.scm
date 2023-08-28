@@ -3163,13 +3163,13 @@ equally sized groups, and the unnesting of data.frames within fully named lists.
 (define-public r-csurvey
   (package
     (name "r-csurvey")
-    (version "1.6")
+    (version "1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "csurvey" version))
               (sha256
                (base32
-                "0krlmj4am1naagk0w8fm9qnp98c81chk0z19xskh2c4r6ymswylk"))))
+                "0773535dfnpgcifg3wd66rblj3lzbrgkbqj4m6xnxa4q5l3j0j4q"))))
     (properties `((upstream-name . "csurvey")))
     (build-system r-build-system)
     (propagated-inputs (list r-survey
@@ -4736,13 +4736,13 @@ server and pull as little data locally as possible.")
 (define-public r-crov
   (package
     (name "r-crov")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "crov" version))
               (sha256
                (base32
-                "1i3a5nagzinsla6p3wjyj3x12gyfqs6vapaqxgr3dh6m727jw5i5"))))
+                "1vnhnw6rw8qyhahy6d67cq5m9sxr6yic21qi16vic1q5115fwx01"))))
     (properties `((upstream-name . "crov")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam r-gtools))
@@ -4752,12 +4752,13 @@ server and pull as little data locally as possible.")
     (description
      "Fits a constrained regression model for an ordinal response with ordinal
 predictors and possibly others, Espinosa and Hennig (2019)
-<doi:10.1007/s11222-018-9842-2>.  The parameter estimates associated with an
+<DOI:10.1007/s11222-018-9842-2>.  The parameter estimates associated with an
 ordinal predictor are constrained to be monotonic.  If a monotonicity direction
 (isotonic or antitonic) is not specified for an ordinal predictor by the user,
-then the monotonicity direction classification procedure establishes it.  Two
-monotonicity tests are also available to test the null hypothesis of
-monotonicity over a set of parameters associated with an ordinal predictor.")
+then one of the available methods will either establish it or drop the
+monotonicity assumption.  Two monotonicity tests are also available to test the
+null hypothesis of monotonicity over a set of parameters associated with an
+ordinal predictor.")
     (license license:gpl2)))
 
 (define-public r-crossword-r
@@ -9605,25 +9606,26 @@ data set.")
 (define-public r-counternull
   (package
     (name "r-counternull")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Counternull" version))
               (sha256
                (base32
-                "1vnjhqif8ydnp6fb225hml1d2sincscs4q1vacbzxah628ac9yhp"))))
+                "137vnq4lk2z54x6dbbps8vpa6p5cx21wjriaq9sp5b2s39m6hi0m"))))
     (properties `((upstream-name . "Counternull")))
     (build-system r-build-system)
-    (propagated-inputs (list r-effsize))
+    (propagated-inputs (list r-tidyr r-randomizr r-ggplot2 r-effsize r-dplyr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/ymabene/Counternull")
-    (synopsis
-     "Creating Null and Counternull Distributions to Find Counternull Values")
+    (synopsis "Randomization-Based Inference")
     (description
-     "Calculates the difference in average change over time for variables in given
-dataset.  Generates a randomization matrix to resample data for permutation
-testing.  Creates and plots null distributions and calculates P-Values.
-Identifies potential counternull values by generating and plotting counternull
-distributions.  Rosenthal and Rubin (1994)
+     "Randomization-Based Inference for customized experiments.  Computes Fisher-Exact
+P-Values alongside null randomization distributions.  Retrieves counternull sets
+and generates counternull distributions.  Computes Fisher Intervals and
+Fisher-Adjusted P-Values.  Package includes visualization of randomization
+distributions and Fisher Intervals.  Users can input custom test statistics and
+their own methods for randomization.  Rosenthal and Rubin (1994)
 <doi:10.1111/j.1467-9280.1994.tb00281.x>.")
     (license license:expat)))
 
@@ -9808,25 +9810,6 @@ specify multiple color ranges for masking.")
 2nd Edition (Cambridge University Press) and Hilbe, J.M. 2014.  Modeling Count
 Data (Cambridge University Press).")
     (license license:gpl2)))
-
-(define-public r-couchdb
-  (package
-    (name "r-couchdb")
-    (version "1.4.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "couchDB" version))
-              (sha256
-               (base32
-                "1n99amvnsjp88y091603hjsvp243c5i6dbrsvdjfmzgj5dsrv70m"))))
-    (properties `((upstream-name . "couchDB")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rjson r-rcurl r-httr r-bitops))
-    (home-page "https://cran.r-project.org/package=couchDB")
-    (synopsis "Connect to and Work with CouchDB Databases")
-    (description
-     "Interface to the @code{couchDB} document database <http://couchdb.apache.org>.")
-    (license license:agpl3)))
 
 (define-public r-cotrend
   (package
@@ -16725,31 +16708,21 @@ statistics and plots are also included.")
 (define-public r-comparison
   (package
     (name "r-comparison")
-    (version "1.0-5")
+    (version "1.0.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "comparison" version))
               (sha256
                (base32
-                "0vg8s9j2xjzv7bidd59givxgcqzhdd29q84dj4ww2a6vkmq269r7"))))
+                "0q5x1ank48w9zsfxswahjl7v6f46qxj70lvyn2pj7sz78nfpqjj6"))))
     (properties `((upstream-name . "comparison")))
     (build-system r-build-system)
-    (propagated-inputs (list r-isotone))
-    (home-page "github.com/jmcurran/comparison")
+    (propagated-inputs (list r-isotone r-cvglasso))
+    (home-page "https://github.com/jmcurran/comparison")
     (synopsis "Multivariate Likelihood Ratio Calculation and Evaluation")
     (description
      "This package provides functions for calculating and evaluating likelihood ratios
-from uni/multivariate continuous observations.  The package includes the
-two-level functions to calculate the LR assuming multivariate normality, and
-another with drops this assumption and uses a multivariate kernel density
-estimate.  The package also contains code to perform empirical cross entropy
-(ECE) calibration of likelihood ratios.  The LR functions are based primarily on
-Aitken, C.G.G. and Lucy, D. (2004) <doi:10.1046/j.0035-9254.2003.05271.x>,
-\"Evaluation of trace evidence in the form of multivariate data,\" Journal of the
-Royal Statistical Society: Series C (Applied Statistics), 53: 109-122.  The ECE
-functions are based primarily on D. Ramos and J. Gonzalez-Rodrigues, (2008)
-\"Cross-entropy analysis of the information in forensic speaker recognition,\" in
-Proc.  IEEE Odyssey, Speaker Lang.  Recognit.  Workshop.")
+from uni/multivariate continuous observations.")
     (license license:gpl2+)))
 
 (define-public r-comparetests
@@ -19463,13 +19436,13 @@ point estimates and confidence intervals for fitted models.")
 (define-public r-coefficientalpha
   (package
     (name "r-coefficientalpha")
-    (version "0.7")
+    (version "0.7.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "coefficientalpha" version))
               (sha256
                (base32
-                "0li1js501sa8m0ba76ymn4lz5y4np7kf96gnxz9kypg50kd58yis"))))
+                "0br0drapx4bw96zphnmcdwj8mw7gp0c9xm39gjmnqrvc3ycz5gh1"))))
     (properties `((upstream-name . "coefficientalpha")))
     (build-system r-build-system)
     (propagated-inputs (list r-rsem r-lavaan))
@@ -25491,28 +25464,6 @@ significance.")
 differential expression; see Simon's book for details on typical problem types.")
     (license license:asl2.0)))
 
-(define-public r-clarketest
-  (package
-    (name "r-clarketest")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "clarkeTest" version))
-              (sha256
-               (base32
-                "0vbb3j9rnh42qyp78a4jykp7p560d0ryfp28xgvxax8h8hr80457"))))
-    (properties `((upstream-name . "clarkeTest")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=clarkeTest")
-    (synopsis "Distribution-Free Tests of Non-Nested Models")
-    (description
-     "Implementation of Clarke's distribution-free test of non-nested models.
-Currently supported model functions are: lm(), glm() ('binomial', poisson',
-negative binomial links), polr() ('MASS'), clm() ('ordinal'), and multinom()
-('nnet').  For more information on the test, see Clarke (2007)
-<doi:10.1093/pan/mpm004>.")
-    (license license:gpl2+)))
-
 (define-public r-clarify
   (package
     (name "r-clarify")
@@ -29406,16 +29357,16 @@ been applied.")
 (define-public r-checkdown
   (package
     (name "r-checkdown")
-    (version "0.0.7")
+    (version "0.0.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "checkdown" version))
               (sha256
                (base32
-                "1bjij565vss2x8xbgq5qxx1d1snfw9wnphj0jhbm6vxxh2hg6g46"))))
+                "00yw24s3lz78n5l4h7lavnnyilhngz8zj8ixgj2wi71x66nacm0l"))))
     (properties `((upstream-name . "checkdown")))
     (build-system r-build-system)
-    (propagated-inputs (list r-markdown r-knitr))
+    (propagated-inputs (list r-markdown r-htmltools r-glue))
     (native-inputs (list r-knitr))
     (home-page "https://agricolamz.github.io/checkdown/")
     (synopsis "Check-Fields and Check-Boxes for 'rmarkdown'")
@@ -29982,13 +29933,13 @@ options for different types of graphics to assess the influence.")
 (define-public r-chandwich
   (package
     (name "r-chandwich")
-    (version "1.1.5")
+    (version "1.1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "chandwich" version))
               (sha256
                (base32
-                "1i3gg3ib4j33i5f3a6x9k2g8d5ccbdmv2pb2bdhiwwsjy8bfmsvq"))))
+                "03qcqw9xx8mw7hymjl3ym6l1adgw5ssv0pmcmdv2hk230mx2fsld"))))
     (properties `((upstream-name . "chandwich")))
     (build-system r-build-system)
     (propagated-inputs (list r-numderiv))
@@ -32479,26 +32430,6 @@ select the best vine (based on information criteria) among those which allow for
 such a conditional sampling.  The package includes a function to compare
 scatterplot matrices and pair-dependencies of two multivariate datasets.")
     (license license:gpl2+)))
-
-(define-public r-cdss
-  (package
-    (name "r-cdss")
-    (version "0.1-0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "CDSS" version))
-              (sha256
-               (base32
-                "1y0pjnxa8m5l9r3apzdagz41a6r8dc5yycv1avy30zfhjjy9m5a7"))))
-    (properties `((upstream-name . "CDSS")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-readods r-openxlsx))
-    (home-page "https://cran.r-project.org/package=CDSS")
-    (synopsis "Course-Dependent Skill Structures")
-    (description
-     "Deriving skill structures from skill assignment data for courses (sets of
-learning objects).")
-    (license license:gpl3)))
 
 (define-public r-cds
   (package

@@ -3737,16 +3737,17 @@ processes; periodic and stochastic time series analysis.")
 (define-public r-astrochron
   (package
     (name "r-astrochron")
-    (version "1.1")
+    (version "1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "astrochron" version))
               (sha256
                (base32
-                "0gvdilsacgbdcwz8598psxan3q5im5iw6xrn9zbdbg7sswrvc5ff"))))
+                "1wkc8314iyhkdg1y9gr1wzqj9h67n3kqq8wiiq9n2xmgly9b40sz"))))
     (properties `((upstream-name . "astrochron")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
+                             r-palinsol
                              r-multitaper
                              r-iterators
                              r-idpmisc
@@ -5523,13 +5524,13 @@ named after the dadaist Hans Arp, a friend of Rene Magritte.")
 (define-public r-arpobservation
   (package
     (name "r-arpobservation")
-    (version "1.2.1")
+    (version "1.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ARPobservation" version))
               (sha256
                (base32
-                "1gpq5wl3mwp4hi49h1g6nnizzpnfc19pv8chdyhv8y5sraq1k2ag"))))
+                "13qxw12i7nkbqxbya1ky1bdcq7f59hpgw0kfqkg4rqs6ll4fxp7a"))))
     (properties `((upstream-name . "ARPobservation")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -8068,6 +8069,41 @@ one plot, slider functions supports some interactive graphics, spin3R helps an
 inspection of a 3-dim point cloud, stem.leaf plots a stem and leaf plot,
 stem.leaf.backback plots back-to-back versions of stem and leaf plot.")
     (license license:gpl2+)))
+
+(define-public r-aplotextra
+  (package
+    (name "r-aplotextra")
+    (version "0.0.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "aplotExtra" version))
+              (sha256
+               (base32
+                "0sh3c78p37kn00hkps5ai3aqz391wwpbck2rar4rdvwclg4818my"))))
+    (properties `((upstream-name . "aplotExtra")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yulab-utils
+                             r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-purrr
+                             r-maftools
+                             r-ggstar
+                             r-ggplot2
+                             r-ggfun
+                             r-forcats
+                             r-dplyr
+                             r-aplot))
+    (home-page "https://github.com/YuLab-SMU/aplotExtra")
+    (synopsis "Creating Composite Plots using 'aplot'")
+    (description
+     "Many complex plots are actually composite plots, such as oncoplot',
+funkyheatmap', upsetplot', etc.  We can produce subplots using ggplot2 and
+combine them to create composite plots using aplot'.  In this way, it is easy to
+customize these complex plots, by adding, deleting or modifying subplots in the
+final plot.  This package provides a set of utilities to help users to create
+subplots and complex plots.")
+    (license license:artistic2.0)))
 
 (define-public r-aplore3
   (package
@@ -11250,13 +11286,13 @@ instruments simultaneously.")
 (define-public r-amigaffh
   (package
     (name "r-amigaffh")
-    (version "0.4.2")
+    (version "0.4.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "AmigaFFH" version))
               (sha256
                (base32
-                "0bj21d7k7zqz97aqmqb32hqcg3l1l52jw6yij11j5vsmcz62g0zn"))))
+                "0if2dzmpf9xyqabi7calfkzj1vfv7hafczbhswdz03zbl5zi9zba"))))
     (properties `((upstream-name . "AmigaFFH")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs r-tuner))
@@ -13709,13 +13745,13 @@ License.")
 (define-public r-airmonitor
   (package
     (name "r-airmonitor")
-    (version "0.3.11")
+    (version "0.3.12")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "AirMonitor" version))
               (sha256
                (base32
-                "0wvgn5rq0qzzf58jga0y44b90hcp4adp9g3i5k7n15cnmq3llmhf"))))
+                "15ai03z3h44llwzynvbs0kxd5ik11hfacxgn2wzj8fbaihy332pr"))))
     (properties `((upstream-name . "AirMonitor")))
     (build-system r-build-system)
     (propagated-inputs (list r-xts
@@ -15114,13 +15150,13 @@ Haralick (1973) <doi:10.1109/TSMC.1973.4309314>.")
 (define-public r-agridat
   (package
     (name "r-agridat")
-    (version "1.21")
+    (version "1.22")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "agridat" version))
               (sha256
                (base32
-                "1ihsv56j5nn01mqff8sj2m0cd2s3qynyy1nz742fln8krxq916i9"))))
+                "1pa738c86f36vnjl2k8il2igvvhv5r6vchywmmcdbc98ay1kzazn"))))
     (properties `((upstream-name . "agridat")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -15130,7 +15166,7 @@ Haralick (1973) <doi:10.1109/TSMC.1973.4309314>.")
      "Datasets from books, papers, and websites related to agriculture.  Example
 graphics and analyses are included.  Data come from small-plot trials,
 multi-environment trials, uniformity trials, yield monitors, and more.")
-    (license license:cc-by-sa4.0)))
+    (license license:expat)))
 
 (define-public r-agricolaeplotr
   (package
@@ -19530,13 +19566,13 @@ change <doi:10.1007/s10109-020-00342-2>.")
 (define-public r-abmr
   (package
     (name "r-abmr")
-    (version "1.0.9")
+    (version "1.0.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "abmR" version))
               (sha256
                (base32
-                "0675981yq7zdxpky851nx0lz4vdxi1jaagagb6g6szg3kjmg59yd"))))
+                "0klfrclmwxsqm3aazs9jlw8mh5rzcsvm2wjk2r1ycx76kvkx8wii"))))
     (properties `((upstream-name . "abmR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmap
@@ -19547,6 +19583,7 @@ change <doi:10.1007/s10109-020-00342-2>.")
                              r-rnaturalearth
                              r-raster
                              r-purrr
+                             r-maps
                              r-kableextra
                              r-gtsummary
                              r-gstat

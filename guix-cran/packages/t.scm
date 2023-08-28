@@ -5324,6 +5324,38 @@ trial designs because this is where Bayesian methods are used most.  If there is
 a method you would like implemented, please get in touch.")
     (license license:gpl3+)))
 
+(define-public r-trialemulation
+  (package
+    (name "r-trialemulation")
+    (version "0.0.3.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "TrialEmulation" version))
+              (sha256
+               (base32
+                "0w6cj85da9dmpymmjr2p0962p3gd8nkbdbnpynnqcjslzxwwjdm1"))))
+    (properties `((upstream-name . "TrialEmulation")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sandwich
+                             r-rcpp
+                             r-parglm
+                             r-mvtnorm
+                             r-formula-tools
+                             r-data-table
+                             r-checkmate
+                             r-broom))
+    (native-inputs (list r-knitr))
+    (home-page "https://causal-lda.github.io/TrialEmulation/")
+    (synopsis "Causal Analysis of Observational Time-to-Event Data")
+    (description
+     "This package implements target trial emulation methods to apply randomized
+clinical trial design and analysis in an observational setting.  Using marginal
+structural models, it can estimate intention-to-treat and per-protocol effects
+in emulated trials using electronic health records.  A description and
+application of the method can be found in Danaei et al (2013)
+<doi:10.1177/0962280211403603>.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-triadsim
   (package
     (name "r-triadsim")
@@ -5749,16 +5781,16 @@ sending digital rewards and incentives directly from R.")
 (define-public r-trellor
   (package
     (name "r-trellor")
-    (version "0.7.1")
+    (version "0.8.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "trelloR" version))
               (sha256
                (base32
-                "0rlnqpkvfp736m2ndz90v9rl4x17l3i8j70bsx7pfdd0nfffqsqv"))))
+                "04yh5msbslh3hg6507wmpwng3wrwyjjvj6aa1q2fjdj3np82vv55"))))
     (properties `((upstream-name . "trelloR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-jsonlite r-httr))
+    (propagated-inputs (list r-jsonlite r-httr r-curl))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jchrom/trelloR")
     (synopsis "Access the Trello API")
@@ -6095,13 +6127,13 @@ birth-death species trees, and sim.genetree() simulates coalescent gene trees.")
 (define-public r-treesearch
   (package
     (name "r-treesearch")
-    (version "1.3.2")
+    (version "1.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TreeSearch" version))
               (sha256
                (base32
-                "00khyb7myppcmw4y1wxzlp3x6835p8rfi9vmyfzg86bs5wlqg5g1"))))
+                "1nhy1bq4pkbj0c09750hzjnzgqv5k1042fjra9dw4yk24rk1dyi7"))))
     (properties `((upstream-name . "TreeSearch")))
     (build-system r-build-system)
     (propagated-inputs (list r-treetools
@@ -6115,6 +6147,7 @@ birth-death species trees, and sim.genetree() simulates coalescent gene trees.")
                              r-promises
                              r-plottools
                              r-future
+                             r-fs
                              r-fastmatch
                              r-cluster
                              r-cli
@@ -6314,13 +6347,13 @@ model see: Mallo et al. (2015) <doi:10.1093/sysbio/syv082>, Rasmussen and Kellis
 (define-public r-treedist
   (package
     (name "r-treedist")
-    (version "2.6.2")
+    (version "2.6.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TreeDist" version))
               (sha256
                (base32
-                "1cmzf4z9f5xp6fl972clkw6kfn1ljx68xsivhb3y4ihhm3zrqgdb"))))
+                "165535fzmrafps9lvzdnlgxz510x34rr6aqy56hv0qhaq0h13j9j"))))
     (properties `((upstream-name . "TreeDist")))
     (build-system r-build-system)
     (propagated-inputs (list r-treetools
@@ -7698,13 +7731,13 @@ discriminating ones among them.  A user's guide can be found on the
 (define-public r-tram
   (package
     (name "r-tram")
-    (version "0.8-3")
+    (version "1.0-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tram" version))
               (sha256
                (base32
-                "1f1v5q9f74jbiqvcd5ncjp2lbkm68p46yi1w0fnlb20j4yfhp3kg"))))
+                "1bzrr6zmiaaq68mmah5wn0srivi2aprgchpkk2gfb3dmcbidmrvm"))))
     (properties `((upstream-name . "tram")))
     (build-system r-build-system)
     (propagated-inputs (list r-variables
@@ -7891,35 +7924,6 @@ classify each individual trajectory in one of the clusters.")
      "Calculates trait moments from trait and community data using the methods
 developed in Maitner et al (2021) <doi:10.22541/au.162196147.76797968/v1>.")
     (license license:expat)))
-
-(define-public r-traitstats
-  (package
-    (name "r-traitstats")
-    (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "TraitStats" version))
-              (sha256
-               (base32
-                "07jiipxkidr0hnb3lbbb8yj007m5qzcbq9p5py276sckalamzri0"))))
-    (properties `((upstream-name . "TraitStats")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rlist r-qpdf r-lattice r-gridextra))
-    (home-page "https://www.niteshgpb.in/TraitStats.pdf")
-    (synopsis
-     "Statistical Data Analysis for Randomized Block Design Experiments")
-    (description
-     "This package provides functions for analysis of bulk data generated from
-experiments in Randomized block design as per Panse and Sukhatme (1954)
-<https://books.google.co.in/books?id=Efo9AAAAYAAJ>.  Computes analysis of
-variance; Descriptive statistics parameter like Mean, Minimum, Maximum, CV,
-Standard error of mean, Standard Error of deviation, CD; Genetic parameter
-statistics Genotypic Coefficient of Variation, Phenotypic Coefficient of
-Variation, Heritability in broad sense, Genetic Advance and Genetic Advance per
-cent mean; Variance and Co-variance matrix of genotypic, phenotypic and
-environmental; Correlation of genotypic, phenotypic and environmental.  Further
-includes directly publication ready tables.")
-    (license license:gpl3)))
 
 (define-public r-traits
   (package
@@ -9627,13 +9631,13 @@ based on several criteria to result in the best benefit. (LIU, H. et al., 2019)
 (define-public r-topr
   (package
     (name "r-topr")
-    (version "1.1.7")
+    (version "1.1.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "topr" version))
               (sha256
                (base32
-                "0pnwj0pq2xsdd7iydpd3ix9vxxhdm4y7zhabd8vl3xzh2y9scx5n"))))
+                "0rxw8a2d2pa5ahwmwj6psssmp8955j638h82brn2rbhkc4fccm70"))))
     (properties `((upstream-name . "topr")))
     (build-system r-build-system)
     (propagated-inputs (list r-toprdata
@@ -10900,13 +10904,13 @@ Owczarzy R (2004) <doi:10.1021/bi034621r>, Owczarzy R (2008)
 (define-public r-tmbstan
   (package
     (name "r-tmbstan")
-    (version "1.0.9")
+    (version "1.0.91")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tmbstan" version))
               (sha256
                (base32
-                "19k73j6i4ki4xdxh7whp09p94rqrpsn5dpr7ms9fqn7sv0xap7y1"))))
+                "0wsa1999iaxzzbh27xmw8qfka1hzfi81kf6p3zlhfq8299vrg4py"))))
     (properties `((upstream-name . "tmbstan")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb
@@ -13710,13 +13714,13 @@ the results in a tidy format.")
 (define-public r-tidyseurat
   (package
     (name "r-tidyseurat")
-    (version "0.6.1")
+    (version "0.7.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tidyseurat" version))
               (sha256
                (base32
-                "1m7abq60ghvxzv9aflvq9j6q231z17n5kr3cj6yg0prz8iykhjqz"))))
+                "1f3saa24rbb8pnal14xvqw62r09w6zg0pn9ajq8yrpdd9zdp7rv8"))))
     (properties `((upstream-name . "tidyseurat")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs

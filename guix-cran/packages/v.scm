@@ -1794,16 +1794,18 @@ Dominique, Z. (2014). <doi:10.1109/TSP.2013.2288675>.")
 (define-public r-vmdml
   (package
     (name "r-vmdml")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "VMDML" version))
               (sha256
                (base32
-                "0syqikndvpbpms2b116iyzkm191x6q60azbmznr7mwc8xa9469ss"))))
+                "12n32wx3hcvw55rrcwkv501cjl4zrpgh4d7y4m1irgrpjfqk77x2"))))
     (properties `((upstream-name . "VMDML")))
     (build-system r-build-system)
-    (propagated-inputs (list r-vmdecomp r-randomforest r-forecast r-e1071))
+    (propagated-inputs (list r-vmdecomp r-randomforest r-nnfor r-forecast
+                             r-e1071))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=VMDML")
     (synopsis "Variational Mode Decomposition Based Machine Learning Models")
     (description
@@ -1811,7 +1813,7 @@ Dominique, Z. (2014). <doi:10.1109/TSP.2013.2288675>.")
 models for univariate time series forecasting.  For method details see (i) K.
 Dragomiretskiy and D. Zosso (2014) <doi:10.1109/TSP.2013.2288675>; (ii) Pankaj
 Das (2020) <http://krishi.icar.gov.in/jspui/handle/123456789/44138>.")
-    (license license:gpl3)))
+    (license license:expat)))
 
 (define-public r-vmdecomp
   (package
@@ -2111,13 +2113,13 @@ Functions in vivaldi primarily operate on vcf files.")
 (define-public r-vivainsights
   (package
     (name "r-vivainsights")
-    (version "0.4.0")
+    (version "0.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "vivainsights" version))
               (sha256
                (base32
-                "08n44njwhyzll67b20vsb6zd3d2065i7f167v939595fcj7vpisi"))))
+                "0p76jyx6v1jvq7g94pqyy4idnrv8k1a4plk632bb3p93340yw3nf"))))
     (properties `((upstream-name . "vivainsights")))
     (build-system r-build-system)
     (propagated-inputs (list r-wpa
@@ -2138,7 +2140,6 @@ Functions in vivaldi primarily operate on vcf files.")
                              r-ggrepel
                              r-ggraph
                              r-ggplot2
-                             r-dt
                              r-dplyr
                              r-data-table))
     (home-page "https://microsoft.github.io/vivainsights/")

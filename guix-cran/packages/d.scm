@@ -1836,13 +1836,13 @@ S3 file system also generalizes to any list of http URLs.")
 (define-public r-duckdb
   (package
     (name "r-duckdb")
-    (version "0.8.1-1")
+    (version "0.8.1-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "duckdb" version))
               (sha256
                (base32
-                "02ymygj2y2g4szcmwcjqr5qffq76p9dpiinlwy4hv70cxrk8rs72"))))
+                "0sn738f3vybfpp5x1n36gmn68w80jznachzakygfx2ppqm6inwql"))))
     (properties `((upstream-name . "duckdb")))
     (build-system r-build-system)
     (propagated-inputs (list r-dbi))
@@ -4351,41 +4351,6 @@ consistent when at least one of the nuisance models is correctly specified, not
 necessarily both.  For more information, see Zetterqvist and @code{SjÃ¶lander}
 (2015) <doi:10.1515/em-2014-0021>.")
     (license (list license:gpl2 license:gpl3))))
-
-(define-public r-drfit
-  (package
-    (name "r-drfit")
-    (version "0.7.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "drfit" version))
-              (sha256
-               (base32
-                "03ahzmjzrkdrv36yj6vfg3g5bwn6lb7mlxmli68sixag5h83xq7f"))))
-    (properties `((upstream-name . "drfit")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-reshape2
-                             r-qcc
-                             r-odbc
-                             r-mass
-                             r-drc
-                             r-dbi))
-    (home-page "https://pkgdown.jrwb.de/drfit")
-    (synopsis "Dose-Response Data Evaluation")
-    (description
-     "This package provides a somewhat outdated package of basic and easy-to-use
-functions for fitting dose-response curves to continuous dose-response data,
-calculating some toxicological parameters and plotting the results.  Please
-consider using the more powerful and actively developed drc package.  Functions
-that are fitted are the cumulative density function of the log-normal
-distribution ('probit fit), of the logistic distribution ('logit fit), of the
-Weibull distribution ('weibull fit) and a linear-logistic model ('linlogit fit),
-derived from the latter, which is used to describe data showing stimulation at
-low doses (hormesis).  In addition, functions checking, plotting and retrieving
-dose-response data retrieved from a database accessed via odbc are included.  As
-an alternative to the original fitting methods, the algorithms from the drc
-package can be used.")
-    (license license:gpl2+)))
 
 (define-public r-drf
   (package
@@ -9025,34 +8990,6 @@ and frequency of shared types in two populations) in biological or ecological
 systems.")
     (license license:gpl3+)))
 
-(define-public r-divinsight
-  (package
-    (name "r-divinsight")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "DivInsight" version))
-              (sha256
-               (base32
-                "0chhr94id5n9zmkif49haqa2fjfhdhddp3ikwyfxp2cwmq223v88"))))
-    (properties `((upstream-name . "DivInsight")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vegan
-                             r-rgbif
-                             r-leaflet
-                             r-ggplot2
-                             r-geosphere
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=DivInsight")
-    (synopsis
-     "Diversity Index Calculation & Visualisation for Taxa and Location")
-    (description
-     "Repurpose occurrence data for calculating diversity index values, creating
-visuals, and generating species composition matrices for a chosen taxon and
-location.")
-    (license license:gpl3)))
-
 (define-public r-divest
   (package
     (name "r-divest")
@@ -11693,13 +11630,13 @@ bandwidth selectors in Hall, Watson and Cabrera (1987)
 (define-public r-dirichletprocess
   (package
     (name "r-dirichletprocess")
-    (version "0.4.1")
+    (version "0.4.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dirichletprocess" version))
               (sha256
                (base32
-                "0y6kc1ksazcj9j7lcf26cvpmnywl0wq8b6icycvwv3j85fs4yl8s"))))
+                "1b500cm5ljpvpa0axqnylcvk8x3vmva1jy179k97ggps58lmspcj"))))
     (properties `((upstream-name . "dirichletprocess")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-gtools r-ggplot2))
@@ -12372,28 +12309,6 @@ range of user-defined DI models (the DI() function).")
 Digital Science Dimensions using DSL API
 <https://www.dimensions.ai/dimensions-apis/>.")
     (license license:gpl3)))
-
-(define-public r-dimensionalanalysis
-  (package
-    (name "r-dimensionalanalysis")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "dimensionalAnalysis" version))
-              (sha256
-               (base32
-                "0pzncdrphnldgpvkm847wr6yrk30p1ayfwjlrg44kxackpl1w1y8"))))
-    (properties `((upstream-name . "dimensionalAnalysis")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-reticulate r-hash r-caracas))
-    (home-page "https://cran.r-project.org/package=dimensionalAnalysis")
-    (synopsis "Dimensional Analysis")
-    (description
-     "This package performs Rayleigh's method of dimensional analysis.  This form of
-dimensional analysis expresses a functional relationship of some variables in
-the form of an exponential equation (Buckingham, (1914),
-@code{<doi:10.1103/PhysRev.4.345>).}")
-    (license license:gpl2+)))
 
 (define-public r-dimensio
   (package
@@ -13216,13 +13131,13 @@ help narrow down the source of problems and differences.")
 (define-public r-diffcorr
   (package
     (name "r-diffcorr")
-    (version "0.4.2")
+    (version "0.4.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DiffCorr" version))
               (sha256
                (base32
-                "0q7slvyqajbr1pa4k3dc7jfn6qi6i2fnvh7hl49qi3a60yr55mir"))))
+                "1wzk5lfkrz12xxmyapmq6midb6ld6p624i8qzf299dlfsz5i3n5h"))))
     (properties `((upstream-name . "DiffCorr")))
     (build-system r-build-system)
     (propagated-inputs (list r-pcamethods r-multtest r-igraph r-fdrtool))
@@ -16529,13 +16444,13 @@ statistics.")
 (define-public r-describedisplay
   (package
     (name "r-describedisplay")
-    (version "0.2.9")
+    (version "0.2.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DescribeDisplay" version))
               (sha256
                (base32
-                "14iz7n00ll4gqm9xfwn79s7nhqhcs116hgpdfj2m9m9brpabpa6i"))))
+                "19fwg93p2vdl2sbg8llwijklsvim5vrgcvv2048akbdahvfj9rxb"))))
     (properties `((upstream-name . "DescribeDisplay")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-reshape2 r-plyr r-ggplot2 r-ggally))
@@ -18593,13 +18508,13 @@ vignettes, and the paper by Kristianingsih and @code{MacLean} (2020)
 (define-public r-deepnn
   (package
     (name "r-deepnn")
-    (version "1.1")
+    (version "1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "deepNN" version))
               (sha256
                (base32
-                "0iqvr8cl7ks5qvwsp1sx10r4jpbchf4mlsq0s3icr2cs3x3ryxvi"))))
+                "1wlj70md5vgzad5q2n6qhh076q01zd0k8fsqafmswl4545hmmz69"))))
     (properties `((upstream-name . "deepNN")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix))

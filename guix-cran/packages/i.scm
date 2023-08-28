@@ -8121,16 +8121,16 @@ Geological Survey (USGS) Idaho National Laboratory Project Office.")
 (define-public r-inlaspacetime
   (package
     (name "r-inlaspacetime")
-    (version "0.1.6")
+    (version "0.1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "INLAspacetime" version))
               (sha256
                (base32
-                "11kkmmz4lm0qdqmbnx1j719kdwmq3zrvmd5kh099x3gmrmi90ivd"))))
+                "0b3ahvgqkgb32zpr5cbyz1k0sszzm6pim1dxyhka6mv73732qzgw"))))
     (properties `((upstream-name . "INLAspacetime")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp r-sf r-matrix))
+    (propagated-inputs (list r-sp r-sf r-matrix r-fmesher))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/eliaskrainski/INLAspacetime")
     (synopsis "Spatial and Spatio-Temporal Models using 'INLA'")
@@ -9209,27 +9209,6 @@ significance of the relationship between species occurrence/abundance and groups
 of sites [De Caceres & Legendre (2009) <doi:10.1890/08-1823.1>].  Also includes
 functions to measure species niche breadth using resource categories [De Caceres
 et al. (2011) <doi:10.1111/J.1600-0706.2011.19679.x>].")
-    (license license:gpl2+)))
-
-(define-public r-indiantaxcalc
-  (package
-    (name "r-indiantaxcalc")
-    (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IndianTaxCalc" version))
-              (sha256
-               (base32
-                "1fxw884wj9n8drk2xz3rgr4f7b4fckh5firrf5gdz6d1nk9hdvc1"))))
-    (properties `((upstream-name . "IndianTaxCalc")))
-    (build-system r-build-system)
-    (home-page "https://github.com/iamsulthan/IndianTaxCalc")
-    (synopsis "Indian Income Tax Calculator")
-    (description
-     "Calculate Indian Income Tax liability for Financial years of Individual resident
-aged below 60 years,Senior Citizen,Super Senior Citizen, Firm, Local Authority,
-Any Non Resident Individual / Hindu Undivided Family / Association of Persons
-/Body of Individuals / Artificial Judicial Person, Co-operative Society.")
     (license license:gpl2+)))
 
 (define-public r-indgenerrors

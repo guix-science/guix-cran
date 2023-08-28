@@ -6150,54 +6150,6 @@ Regression Analysis, First Edition.  New York: Springer.")
      "This package provides a collection of fortunes from the R community.")
     (license (list license:gpl2 license:gpl3))))
 
-(define-public r-fortls
-  (package
-    (name "r-fortls")
-    (version "1.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "FORTLS" version))
-              (sha256
-               (base32
-                "0jrc4myifx9syddi03hrp9vfa7vl0lm68r11f043frd3nrnxi3fl"))))
-    (properties `((upstream-name . "FORTLS")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vroom
-                             r-voxr
-                             r-tidyr
-                             r-sp
-                             r-sf
-                             r-scales
-                             r-rgeos
-                             r-rcsf
-                             r-rcppeigen
-                             r-rcpp
-                             r-raster
-                             r-progress
-                             r-plotly
-                             r-moments
-                             r-lidr
-                             r-htmlwidgets
-                             r-distance
-                             r-dbscan
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/Molina-Valero/FORTLS")
-    (synopsis
-     "Automatic Processing of Terrestrial-Based Technologies Point Cloud Data for Forestry Purposes")
-    (description
-     "Process automation of point cloud data derived from terrestrial-based
-technologies such as Terrestrial Laser Scanner (TLS) or Simultaneous
-Localization and Mapping (SLAM).  FORTLS enables (i) detection of trees and
-estimation of tree-level attributes (e.g. diameters and heights), (ii)
-estimation of stand-level variables (e.g. density, basal area, mean and dominant
-height), (iii) computation of metrics related to important forest attributes
-estimated in Forest Inventories at stand-level, and (iv) optimization of plot
-design for combining TLS data and field measured data.  Documentation about
-FORTLS is described in Molina-Valero et al. (2022,
-<doi:10.1016/j.envsoft.2022.105337>).")
-    (license license:gpl3)))
-
 (define-public r-forstringr
   (package
     (name "r-forstringr")
@@ -6424,13 +6376,13 @@ code to create reproducible analyses.")
 (define-public r-formatters
   (package
     (name "r-formatters")
-    (version "0.5.0")
+    (version "0.5.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "formatters" version))
               (sha256
                (base32
-                "12bmfm2lm2x9bc1v4jr5kv96vlhnm72wbyjfzzx6j0d6cfssnl8n"))))
+                "1r6idapw5jz3g81pz4ffl7ifij94mgm0wl3ijg1gwxk8h2fs0w6b"))))
     (properties `((upstream-name . "formatters")))
     (build-system r-build-system)
     (propagated-inputs (list r-htmltools r-checkmate))
@@ -8401,13 +8353,13 @@ up the calculation of distances between observations.")
 (define-public r-fmesher
   (package
     (name "r-fmesher")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fmesher" version))
               (sha256
                (base32
-                "15hgf92gikyih0xycwhqjrwq9jk4g3gjjlxjdlqh02maqfdcqrhf"))))
+                "1x5affplbda5fs2a3fagpw2jzdmb787vgql5f6b7bi5prxn270qw"))))
     (properties `((upstream-name . "fmesher")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -8416,7 +8368,6 @@ up the calculation of distances between observations.")
                              r-sf
                              r-rlang
                              r-rcpp
-                             r-r-methodss3
                              r-matrix
                              r-lifecycle
                              r-dplyr))
@@ -12207,6 +12158,42 @@ GENEPOP format data files and allele/haplotype frequency format files.")
     (description
      "This package provides a tool to explore wide data sets, by detecting, ranking
 and plotting groups of statistically dependent columns.")
+    (license license:expat)))
+
+(define-public r-findsvi
+  (package
+    (name "r-findsvi")
+    (version "0.1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "findSVI" version))
+              (sha256
+               (base32
+                "1m40v46gl34dhndf8gl3x4l1zwjkz7bfwhbzkf7qscrvfz4lbh7g"))))
+    (properties `((upstream-name . "findSVI")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tidycensus
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/heli-xu/findSVI")
+    (synopsis "Calculate Social Vulnerability Index for Communities")
+    (description
+     "Developed by CDC/ATSDR (Centers for Disease Control and Prevention/ Agency for
+Toxic Substances and Disease Registry), Social Vulnerability Index (SVI) serves
+as a tool to assess the resilience of communities by taking into account
+socioeconomic and demographic factors.  Provided with year(s), region(s) and a
+geographic level of interest, @code{findSVI} retrieves required variables from
+US census data and calculates SVI for communities in the specified area based on
+CDC/ATSDR SVI documentation.  Reference for the calculation methods: Flanagan
+BE, Gregory EW, Hallisey EJ, Heitgerd JL, Lewis B (2011)
+<doi:10.2202/1547-7355.1792>.")
     (license license:expat)))
 
 (define-public r-findr
@@ -16861,13 +16848,13 @@ variable parameters.  Extended documentation at
 (define-public r-faulttree
   (package
     (name "r-faulttree")
-    (version "1.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FaultTree" version))
               (sha256
                (base32
-                "1xkpalsxc9flb7ksr5asg8sxmm52k6a1r7rsk8rbyphybgjlnh48"))))
+                "0abv34y7ms31inrkbc8ss8vnjxki9k49pa722n48irwqczxb328l"))))
     (properties `((upstream-name . "FaultTree")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -19936,26 +19923,6 @@ residuals of the support vector machine model are shown on a map.  Negative
 residuals may be potential areas with undiscovered and/or unregistered species,
 or areas with decreased species richness due to the negative effect of
 anthropogenic factors.")
-    (license license:gpl2+)))
-
-(define-public r-factorplot
-  (package
-    (name "r-factorplot")
-    (version "1.1-2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "factorplot" version))
-              (sha256
-               (base32
-                "025lfk122w66yxym3njcpzwnbhg40xi7p1c9vnxczcb8kz31745s"))))
-    (properties `((upstream-name . "factorplot")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-nnet r-multcomp))
-    (home-page "https://cran.r-project.org/package=factorplot")
-    (synopsis "Graphical Presentation of Simple Contrasts")
-    (description
-     "This package provides methods to calculate, print, summarize and plot pairwise
-differences from GLMs, GLHT or Multinomial Logit models.")
     (license license:gpl2+)))
 
 (define-public r-factormodel

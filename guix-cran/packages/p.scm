@@ -1934,36 +1934,6 @@ a fixed-point equilibrium), meaning that variability around a dynamic trajectory
 can be estimated (e.g. stochastic fluctuations during predator-prey dynamics).")
     (license license:gpl3)))
 
-(define-public r-ptsuite
-  (package
-    (name "r-ptsuite")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ptsuite" version))
-              (sha256
-               (base32
-                "1df273p8v6zvhy2jj6imhjigwj77grx6sxqmg0sidxwqny5d1d9c"))))
-    (properties `((upstream-name . "ptsuite")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://cran.r-project.org/package=ptsuite")
-    (synopsis "Tail Index Estimation for Power Law Distributions")
-    (description
-     "Various estimation methods for the shape parameter of Pareto distributed data.
-This package contains functions for various estimation methods such as maximum
-likelihood (Newman, 2005)<doi:10.1016/j.cities.2012.03.001>, Hill's estimator
-(Hill, 1975)<doi:10.1214/aos/1176343247>, least squares (Zaher et al.,
-2014)<doi:10.9734/BJMCS/2014/10890>, method of moments (Rytgaard,
-1990)<doi:10.2143/AST.20.2.2005443>, percentiles (Bhatti et al.,
-2018)<doi:10.1371/journal.pone.0196456>, and weighted least squares (Nair et
-al., 2019) to estimate the shape parameter of Pareto distributed data.  It also
-provides both a heuristic method (Hubert et al.,
-2013)<doi:10.1016/j.csda.2012.07.011> and a goodness of fit test (Gulati and
-Shapiro, 2008)<doi:10.1007/978-0-8176-4619-6> for testing for Pareto data as
-well as a method for generating Pareto distributed data.")
-    (license license:gpl3)))
-
 (define-public r-ptsr
   (package
     (name "r-ptsr")
@@ -5666,13 +5636,13 @@ Decision Analysis (MCDA) process involving multiple criteria, by PROMETHEE
 (define-public r-prolific-api
   (package
     (name "r-prolific-api")
-    (version "0.5.1")
+    (version "0.5.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "prolific.api" version))
               (sha256
                (base32
-                "04maca0pm5jkajafb7bc1qqlapawbbnsmml97xnwvdmi11hb9zsa"))))
+                "1xg1xgkj53zls6zh5nil5njb783ymks9hgfpsxcdnvhnhgsb50k2"))))
     (properties `((upstream-name . "prolific.api")))
     (build-system r-build-system)
     (inputs (list curl))
@@ -6038,23 +6008,27 @@ extraction and photometry in its own right.")
 (define-public r-profoc
   (package
     (name "r-profoc")
-    (version "1.2.0")
+    (version "1.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "profoc" version))
               (sha256
                (base32
-                "05wsc72031fp7pg9r9fl8fl0i19f4pidxnalpydnrd59zqrg1q7j"))))
+                "0s1fyckmfdjr5madwzrmpxkr34z940r43qny8g5aljz4qsbzlcip"))))
     (properties `((upstream-name . "profoc")))
     (build-system r-build-system)
-    (propagated-inputs (list r-splines2
+    (propagated-inputs (list r-tibble
+                             r-splines2
                              r-rcppprogress
                              r-rcpparmadillo
                              r-rcpp
                              r-matrix
                              r-lifecycle
+                             r-ggplot2
+                             r-generics
                              r-abind))
-    (home-page "https://profoc.berrisch.biz/")
+    (native-inputs (list r-knitr))
+    (home-page "https://profoc.berrisch.biz")
     (synopsis "Probabilistic Forecast Combination Using CRPS Learning")
     (description
      "Combine probabilistic forecasts using CRPS learning algorithms proposed in
@@ -6118,13 +6092,13 @@ and a within-person factor model to derive score profiles.")
 (define-public r-profilelikelihood
   (package
     (name "r-profilelikelihood")
-    (version "1.2")
+    (version "1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ProfileLikelihood" version))
               (sha256
                (base32
-                "18m4gk7rhfi0wd9hwmqhfa20gr260plvj41iimlqb5y9m2ld1b08"))))
+                "0yxcrxw3jb8bnwqh5f5d8bmm5jlkyxfld12zfyw3b1031zj1vh6i"))))
     (properties `((upstream-name . "ProfileLikelihood")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlme r-mass))
@@ -8743,13 +8717,13 @@ Quebec between 1980 and 2020.")
 (define-public r-premium
   (package
     (name "r-premium")
-    (version "3.2.9")
+    (version "3.2.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PReMiuM" version))
               (sha256
                (base32
-                "1d1as5hsicb1zdlb81pg092mvqlh3p0sibn2ga0zw7lrkr57wysj"))))
+                "000v6fqmh0v9747yvd8vfbfmic6jhpd5k9pj7yc0a8b0yw89xydp"))))
     (properties `((upstream-name . "PReMiuM")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdep
@@ -21163,13 +21137,13 @@ more.")
 (define-public r-piecepackr
   (package
     (name "r-piecepackr")
-    (version "1.13.3")
+    (version "1.13.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "piecepackr" version))
               (sha256
                (base32
-                "1aa7yvgb75bfh7d5lvq8zh6wgg35cbwmkw7rq72kva1gzib9c8an"))))
+                "026d3iczczqr560jdn7n4ycidfgd8lpzj0xshp0wff1kdsra244y"))))
     (properties `((upstream-name . "piecepackr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -21704,6 +21678,38 @@ visualization of microbiome data, in particular data stored in phyloseq objects.
 <http://www.jstor.org/stable/2958919>, and the tests are described in more
 detail in Callahan et al. (2016) <doi:10.12688/f1000research.8986.1>.")
     (license license:cc0)))
+
+(define-public r-phylosem
+  (package
+    (name "r-phylosem")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "phylosem" version))
+              (sha256
+               (base32
+                "0l25x2jcvzh9yazjdl0x92irjvxdim0jc9pq5clnf715m1cq03di"))))
+    (properties `((upstream-name . "phylosem")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tmb
+                             r-sem
+                             r-rcppeigen
+                             r-phylopath
+                             r-phylobase
+                             r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=phylosem")
+    (synopsis "Phylogenetic Structural Equation Model")
+    (description
+     "Applies phylogenetic comparative methods (PCM) and phylogenetic trait imputation
+using structural equation models (SEM), extending methods from Thorson et al.
+(2023) <doi:10.1111/2041-210X.14076>.  This implementation includes a minimal
+set of features, to allow users to easily read all of the documentation and
+source code.  PCM using SEM includes phylogenetic linear models and structural
+equation models as nested submodels, but also allows imputation of missing
+values.  Features and comparison with other packages are described in Thorson
+and van der Bijl (In revisions).")
+    (license license:gpl3)))
 
 (define-public r-phylosamp
   (package
@@ -29847,13 +29853,13 @@ parentheses or square brackets.")
 (define-public r-pbr
   (package
     (name "r-pbr")
-    (version "0.0.1")
+    (version "0.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pbr" version))
               (sha256
                (base32
-                "0gzj4hhrqm7nbxndycqg135l42026xj7y4hpznyi7cib4gf8bqs4"))))
+                "1y984v487hqn22cnhn3cghbvn5bxpvpqsrsizjd06vjwnflpazg2"))))
     (properties `((upstream-name . "pbr")))
     (build-system r-build-system)
     (propagated-inputs (list r-leaflet r-jsonlite r-httr r-htmltools))
@@ -30461,13 +30467,13 @@ patient profile report(s) or can be embedded in custom report(s).")
 (define-public r-patientprofiles
   (package
     (name "r-patientprofiles")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PatientProfiles" version))
               (sha256
                (base32
-                "0gkivibiafqjamlabgn6xga7mapcnpbgray6b7hdd86kicjvfbwb"))))
+                "1gdmq0rm0wqqqj74s3vg6cf917vg8yxs56wazcs0s1p9y6y529y3"))))
     (properties `((upstream-name . "PatientProfiles")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

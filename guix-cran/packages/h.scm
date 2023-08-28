@@ -2448,39 +2448,6 @@ obsolete are not included.")
 <span>Hello</span> to tags$span(\"Hello\")'), for usage in a Shiny UI.")
     (license license:gpl3)))
 
-(define-public r-htmcglm
-  (package
-    (name "r-htmcglm")
-    (version "0.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "htmcglm" version))
-              (sha256
-               (base32
-                "04fcjrr2pgzhcrp9jx70a99fsgvqf0724vj3p43kp8dlk95839h4"))))
-    (properties `((upstream-name . "htmcglm")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr r-sjmisc r-mcglm r-matrix r-doby))
-    (home-page "https://github.com/lineu96/htmcglm")
-    (synopsis "Hypothesis Testing for McGLMs")
-    (description
-     "This package performs hypothesis testing for multivariate covariance generalized
-linear models @code{(McGLMs).} @code{McGLM} is a general framework for
-non-normal multivariate data analysis, designed to handle multivariate response
-variables, along with a wide range of temporal and spatial correlation
-structures defined in terms of a covariance link function combined with a matrix
-linear predictor involving known matrices.  The models take non-normality into
-account in the conventional way by means of a variance function, and the mean
-structure is modelled by means of a link function and a linear predictor.  The
-models are fitted using an efficient Newton scoring algorithm based on
-quasi-likelihood and Pearson estimating functions, using only second-moment
-assumptions.  This provides a unified approach to a wide variety of different
-types of response variables and covariance structures, including multivariate
-extensions of repeated measures, time series, longitudinal, spatial and
-spatio-temporal structures.  The package offers a user-friendly interface for
-fitting @code{McGLMs} similar to the glm() R function.")
-    (license license:expat)))
-
 (define-public r-htm2txt
   (package
     (name "r-htm2txt")
@@ -4168,25 +4135,6 @@ with a blank center.  The package is named after Homer Simpson - arguably the
 best-known lover of doughnuts.")
     (license license:gpl2)))
 
-(define-public r-homer
-  (package
-    (name "r-homer")
-    (version "0.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "homeR" version))
-              (sha256
-               (base32
-                "0gi383392rs7snb2l9760vkws5hqfikyaj3i7cyby9g1sc2s6yx8"))))
-    (properties `((upstream-name . "homeR")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=homeR")
-    (synopsis "Useful Functions for Building Physics")
-    (description
-     "This package provides a collection of functions useful for the analysis of
-building physics experiments.")
-    (license license:gpl2+)))
-
 (define-public r-homals
   (package
     (name "r-homals")
@@ -4262,13 +4210,13 @@ Methods used in the package were implemented in the package mixomics by Florian
 (define-public r-holodeck
   (package
     (name "r-holodeck")
-    (version "0.2.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "holodeck" version))
               (sha256
                (base32
-                "1iazi5is41ap58vq56jgz88id0i6ppz55y9gx77a5navrrn0db4l"))))
+                "1phaj4yw01301rgcdv4w44q6y5vxwggmks0xdbvg9i2ak3kjcyfp"))))
     (properties `((upstream-name . "holodeck")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -4524,29 +4472,6 @@ be compressed and uncompressed easily to save disk space.")
 is provided.  Further, sets of @code{miRNA} target genes can be identified by
 using the targetscan.org API.")
     (license license:gpl2+)))
-
-(define-public r-hoa
-  (package
-    (name "r-hoa")
-    (version "2.1.4.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hoa" version))
-              (sha256
-               (base32
-                "152vz6cddphmxvm7vi6f3b7jjpib0nsb6qv2k1wrmfrpvv3hgsxx"))))
-    (properties `((upstream-name . "hoa")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-survival r-statmod))
-    (home-page "https://www.r-project.org")
-    (synopsis "Higher Order Likelihood Inference")
-    (description
-     "This package performs likelihood-based inference for a wide range of regression
-models.  Provides higher-order approximations for inference based on extensions
-of saddlepoint type arguments as discussed in the book Applied Asymptotics: Case
-Studies in Small-Sample Statistics by Brazzale, Davison, and Reid (2007).")
-    (license (list license:gpl2+
-                   (license:fsdg-compatible "file LICENCE")))))
 
 (define-public r-hnp
   (package
@@ -9237,21 +9162,22 @@ Mergers\" <doi:10.1111/ecin.12454>.")
 (define-public r-healthcal
   (package
     (name "r-healthcal")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "HealthCal" version))
               (sha256
                (base32
-                "15zwjjg7kyq68y05gpdap8nhw32cbvgrdzr4063a8vfmrmc41w1n"))))
+                "03q966d2kyi6x1ka4nmma94y75yj0vz4bk26psgnysvfz0nldfa3"))))
     (properties `((upstream-name . "HealthCal")))
     (build-system r-build-system)
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=HealthCal")
     (synopsis "Health Calculator")
     (description
      "Health Calculator helps to find different parameters like basal metabolic rate,
 body mass index etc.  related to fitness and health of a person.")
-    (license license:gpl3)))
+    (license license:expat)))
 
 (define-public r-headliner
   (package
@@ -10128,6 +10054,29 @@ linear classifier; 3) estimate the PCC of three design methods given design
 assumptions; 4) determine the sample size requirement to achieve the target PCC
 for three design methods.")
     (license license:gpl2)))
+
+(define-public r-hdd
+  (package
+    (name "r-hdd")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "hdd" version))
+              (sha256
+               (base32
+                "1xl5p56qrnvli2ga1p8xyvgsp17jyjm0xng5prigyngnpj327qpk"))))
+    (properties `((upstream-name . "hdd")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-readr r-fst r-dreamerr r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=hdd")
+    (synopsis "Easy Manipulation of Out of Memory Data Sets")
+    (description
+     "Hard drive data: Class of data allowing the easy importation/manipulation of out
+of memory data sets.  The data sets are located on disk but look like in-memory,
+the syntax for manipulation is similar to data.table'.  Operations are performed
+\"chunk-wise\" behind the scene.")
+    (license license:gpl3)))
 
 (define-public r-hdcurves
   (package

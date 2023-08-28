@@ -5197,13 +5197,13 @@ Lugosi (2006) <doi:10.1017/CBO9780511546921> for an overview.")
 (define-public r-openxlsx2
   (package
     (name "r-openxlsx2")
-    (version "0.8")
+    (version "1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "openxlsx2" version))
               (sha256
                (base32
-                "01hv3jwmzprcq6w4bwzkzyn6b2mq3w4vn1xfjlwvy3bywggx5zdx"))))
+                "0lv1jacknsqx1r56bcwsjpa0nzf6r9igg5iy8lqalfzimy2h4khr"))))
     (properties `((upstream-name . "openxlsx2")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip r-stringi r-rcpp r-r6 r-magrittr))
@@ -6476,13 +6476,13 @@ schemes.  Details on the packages in the OOMPA project can be found at
 (define-public r-oolong
   (package
     (name "r-oolong")
-    (version "0.4.3")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "oolong" version))
               (sha256
                (base32
-                "0hasipsr0mpr02c2g8m1yb2yz0fwnz2ix3y8b5216qhyapdv5h8s"))))
+                "1if27qswf17614pn94vx5pcmg1j55wvjkmrf63zdyfw4a7sapsc8"))))
     (properties `((upstream-name . "oolong")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -8048,13 +8048,13 @@ as DNA methylation and gene expression profiles.")
 (define-public r-omicnavigator
   (package
     (name "r-omicnavigator")
-    (version "1.13.6")
+    (version "1.13.13")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "OmicNavigator" version))
               (sha256
                (base32
-                "18612sicjjx47h45azg8kkqf73shy8xq37b3ra3wgbryp82amqw0"))))
+                "0dfc3v5n7sms0fjgm8g0f1r810q139378ha0i86hv1s88psxy08x"))))
     (properties `((upstream-name . "OmicNavigator")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-data-table))

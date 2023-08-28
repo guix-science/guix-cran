@@ -607,6 +607,27 @@ correction.  See @code{MrkviÄka} et al. (2021)
 <arxiv:2210.05424>.")
     (license license:gpl3)))
 
+(define-public r-ntsdists
+  (package
+    (name "r-ntsdists")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ntsDists" version))
+              (sha256
+               (base32
+                "1vjzqbwqdg8drgbsxazlaalmzb2phsb9261pmpkiy4k0fcan7qzj"))))
+    (properties `((upstream-name . "ntsDists")))
+    (build-system r-build-system)
+    (home-page "https://github.com/dmazarei/ntsDists")
+    (synopsis "Neutrosophic Distributions")
+    (description
+     "Computes the pdf, cdf, quantile function and generating random numbers for
+neutrosophic distributions.  This family have been developed by different
+authors in the recent years.  See Patro and Smarandache (2016)
+<doi:10.5281/zenodo.571153> and Rao et al (2023) <doi:10.5281/zenodo.7832786>.")
+    (license license:gpl2+)))
+
 (define-public r-ntdr
   (package
     (name "r-ntdr")
@@ -2930,6 +2951,26 @@ estimated on the normalized scores are also provided.  See Philipps et al (2014)
 <doi:10.1159/000365637> for details.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-normfluodbf
+  (package
+    (name "r-normfluodbf")
+    (version "1.4.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "normfluodbf" version))
+              (sha256
+               (base32
+                "0slmkqpqi3c3mrjd0ybg2bij1cgrn03ixs6mizjq048r3qbxgipq"))))
+    (properties `((upstream-name . "normfluodbf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-tibble r-foreign r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/AlphaPrime7/normfluodbf")
+    (synopsis "Cleans and Normalizes 'FLUOstar' 'DBF' Files")
+    (description
+     "Converts a FLUOstar DBF File into a Normalized Data Frame, Ready for Analysis.")
+    (license license:expat)))
+
 (define-public r-normexpression
   (package
     (name "r-normexpression")
@@ -3099,27 +3140,6 @@ visually.")
 NORMA, an optimization method based on classical stochastic gradient descent
 suitable for computing SVR models in an online setting.")
     (license license:gpl2)))
-
-(define-public r-norm2
-  (package
-    (name "r-norm2")
-    (version "2.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "norm2" version))
-              (sha256
-               (base32
-                "0ahz6x59k00pqalzjc3ajiby1ysmarjssga9amwh9vd6vmzzyfb7"))))
-    (properties `((upstream-name . "norm2")))
-    (build-system r-build-system)
-    (native-inputs (list gfortran))
-    (home-page "https://cran.r-project.org/package=norm2")
-    (synopsis "Analysis of Incomplete Multivariate Data under a Normal Model")
-    (description
-     "This package provides functions for parameter estimation, Bayesian posterior
-simulation and multiple imputation from incomplete multivariate data under a
-normal model.")
-    (license license:gpl3)))
 
 (define-public r-norgeo
   (package
@@ -4521,13 +4541,13 @@ chi-square tests.")
 (define-public r-nns
   (package
     (name "r-nns")
-    (version "10.0")
+    (version "10.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "NNS" version))
               (sha256
                (base32
-                "1995fjsnxjcvzi0k2zdayvchzd8l5vpv3vfkdzca6m5z4saxxzmi"))))
+                "18jiclcn9ikyx05kz16c7kn2gixxvq55x32kkj7iwm7lyw2kpjli"))))
     (properties `((upstream-name . "NNS")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -8937,25 +8957,6 @@ decoding analyses.  For more information on neural decoding see Meyers & Kreiman
      "Installs Neuroconductor packages from the release repository
 <https://neuroconductor.org/releases/> or from @code{GitHub'.}")
     (license license:gpl2)))
-
-(define-public r-neuroblastoma
-  (package
-    (name "r-neuroblastoma")
-    (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "neuroblastoma" version))
-              (sha256
-               (base32
-                "0hs87fvwaq53xxbh2dw3hjsmf1zkyqli9qyacxf72fnkyhhl8b45"))))
-    (properties `((upstream-name . "neuroblastoma")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=neuroblastoma")
-    (synopsis "Neuroblastoma copy number profiles")
-    (description
-     "Annotated neuroblastoma copy number profiles, a benchmark data set for
-change-point detection algorithms.")
-    (license license:gpl3)))
 
 (define-public r-neurobase
   (package
@@ -13656,13 +13657,13 @@ NBLAST-related functions for neuronal morphology comparison (Costa et al. (2016)
 (define-public r-nat
   (package
     (name "r-nat")
-    (version "1.8.22")
+    (version "1.8.23")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nat" version))
               (sha256
                (base32
-                "054an7p1qg03rzzxwdkj7iaa8rvaq15n1d8h9r8lc89ybrdqdga2"))))
+                "0wcn2dz44vfn475frir9fgj7hb45jvpkf2sxz7pd2m9a9p9idraf"))))
     (properties `((upstream-name . "nat")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -14575,13 +14576,13 @@ trained on the test set and impute test data).")
 (define-public r-nada2
   (package
     (name "r-nada2")
-    (version "1.1.3")
+    (version "1.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "NADA2" version))
               (sha256
                (base32
-                "1lmyppzcvg80jcp37viy7xi84mg94l33wchpwln9rm487ywnib56"))))
+                "13mxxc3cyrvmnjakq4g3yi97xlj53x76fyzxvp6p1f2f1vi0zvl5"))))
     (properties `((upstream-name . "NADA2")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan

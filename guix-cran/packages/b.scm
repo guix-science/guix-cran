@@ -4192,13 +4192,13 @@ analysis more parsimonious.")
 (define-public r-bravo
   (package
     (name "r-bravo")
-    (version "2.2.1")
+    (version "2.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bravo" version))
               (sha256
                (base32
-                "1lyfwsk1r6nfqaybwd6was9af4flbqhbqsjsnfjmc7hya2kcq26f"))))
+                "04hgjkxcjshj5n7d6pi58p5qkm8ni9zx7vnjwjh15bh1274yqqxr"))))
     (properties `((upstream-name . "bravo")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-matrix))
@@ -8025,13 +8025,13 @@ Zhang and Wang (2013, <doi:10.1007/s11336-012-9301-5>), Zhang (2014,
 (define-public r-bmem
   (package
     (name "r-bmem")
-    (version "2.0")
+    (version "2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bmem" version))
               (sha256
                (base32
-                "1sfxjy8bh4120a321b7qbds182ccd0pddivg8qywnab6wccknp86"))))
+                "0acw1xwswf5yi1a0j8pv996qcma3br0xw7a9w9mh7bx5xavlivvl"))))
     (properties `((upstream-name . "bmem")))
     (build-system r-build-system)
     (propagated-inputs (list r-snowfall r-sem r-mass r-lavaan r-amelia))
@@ -16320,28 +16320,6 @@ Implements PCR and PLS using AIC/BIC. Implements one-standard deviation rule for
 use with the caret package.")
     (license license:gpl2+)))
 
-(define-public r-best
-  (package
-    (name "r-best")
-    (version "0.5.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "BEST" version))
-              (sha256
-               (base32
-                "109zl99bz1bndan1pm3hm0f1da86a18lcyzl0741z14l0m0d91a9"))))
-    (properties `((upstream-name . "BEST")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rjags r-hdinterval r-coda))
-    (home-page "https://cran.r-project.org/package=BEST")
-    (synopsis "Bayesian Estimation Supersedes the t-Test")
-    (description
-     "An alternative to t-tests, producing posterior estimates for group means and
-standard deviations and their differences and effect sizes.  It implements the
-method of Kruschke (2013) Bayesian estimation supersedes the t test.  Journal of
-Experimental Psychology: General, 142(2):573-603 <doi: 10.1037/a0029146>.")
-    (license license:gpl3+)))
-
 (define-public r-bessel
   (package
     (name "r-bessel")
@@ -16977,16 +16955,21 @@ Projections.  2013. <doi:10.1007/978-94-007-7551-0>.")
 (define-public r-beezdemand
   (package
     (name "r-beezdemand")
-    (version "0.1.0")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "beezdemand" version))
               (sha256
                (base32
-                "1i6p36cfvz87k6llpibklmdbjb7vp1v38ijxaqkmv1jzc28sj3cl"))))
+                "0rzs0mhl8dyflfz69c98ibk5bnsaf651k72wpx4ihl1im2scapfw"))))
     (properties `((upstream-name . "beezdemand")))
     (build-system r-build-system)
-    (propagated-inputs (list r-reshape2 r-nlstools r-nls2 r-nlmrt r-ggplot2))
+    (propagated-inputs (list r-reshape2
+                             r-optimx
+                             r-nlstools
+                             r-nlsr
+                             r-nls2
+                             r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/brentkaplan/beezdemand")
     (synopsis "Behavioral Economic Easy Demand")
@@ -25448,13 +25431,13 @@ name \"Bagged @code{OutlierTrees\".} To learn more about the base procedure
 (define-public r-baffle
   (package
     (name "r-baffle")
-    (version "0.2.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "baffle" version))
               (sha256
                (base32
-                "09yfxxq252sbfx0yh6m0zkjvwdwgsj6ycr4n8llkqpf8qjspk22a"))))
+                "17307jn92sr4gindd9fvaqvk990v40mr77zp2xs0079h85vh8954"))))
     (properties `((upstream-name . "baffle")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

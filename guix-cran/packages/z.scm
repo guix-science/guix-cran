@@ -546,21 +546,19 @@ efficiently.")
 (define-public r-zfit
   (package
     (name "r-zfit")
-    (version "0.3.0")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "zfit" version))
               (sha256
                (base32
-                "0qzfl1fvs3rw5fnf27d26arbi70bj2cgbg7b8jbnka2vb2c20kwm"))))
+                "1pzzzb55v16piy1p1pyjrriiifbgxqnpaxi200cyfd8m39gz9n1j"))))
     (properties `((upstream-name . "zfit")))
     (build-system r-build-system)
     (home-page "https://torfason.github.io/zfit/")
     (synopsis "Fit Models in a Pipe")
     (description
-     "The goal of zfit is to improve the usage of basic model fitting functions within
-a piped work flow, in particular when passing and processing a data.frame using
-dplyr or similar packages.")
+     "Improve the usage of model fitting functions within a piped work flow.")
     (license license:expat)))
 
 (define-public r-zetasuite
@@ -697,13 +695,13 @@ to the Bootstrap\" Efron (1983) <0-412-04231-2>.")
 (define-public r-zenplots
   (package
     (name "r-zenplots")
-    (version "1.0.4")
+    (version "1.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "zenplots" version))
               (sha256
                (base32
-                "1r105ay0p00wfly8z54dg18i1fq7ppvxzri49i7zrlimqawzv19s"))))
+                "1zhxjql49hbwrim9y8qyyrkqwq09dv84vbini18xjkfv0z0lfmd2"))))
     (properties `((upstream-name . "zenplots")))
     (build-system r-build-system)
     (propagated-inputs (list r-pairviz r-mass r-loon r-graph))
@@ -792,13 +790,13 @@ autocorrelation-based periodograms.")
 (define-public r-zebu
   (package
     (name "r-zebu")
-    (version "0.2.1.0")
+    (version "0.2.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "zebu" version))
               (sha256
                (base32
-                "0mghj8a7z3is7iqr7vgwlwk4jpnn9rqd2fbjdamd0pdyr8spigz9"))))
+                "1bxzc110nxyssdvnk330qs8qbmf6m7v5gglcfdkxdzy5gcbs1bm6"))))
     (properties `((upstream-name . "zebu")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2 r-rcpp r-ggplot2 r-data-table))

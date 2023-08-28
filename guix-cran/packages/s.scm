@@ -1497,13 +1497,13 @@ and R programming.")
 (define-public r-swiper
   (package
     (name "r-swiper")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "swipeR" version))
               (sha256
                (base32
-                "0bxfnxf5q6wdh1mba8m4bnshsgbadlg4hhpr5wbykfk7dak4kkih"))))
+                "1wj878y15z9d6ijyv4pvff3vcdn78ybs4rqzhqdfrn47fa99zmdv"))))
     (properties `((upstream-name . "swipeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rchoicedialogs r-htmlwidgets r-htmltools
@@ -1913,15 +1913,16 @@ display the outputs.")
 (define-public r-swcrtdesign
   (package
     (name "r-swcrtdesign")
-    (version "3.3")
+    (version "4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "swCRTdesign" version))
               (sha256
                (base32
-                "0vrk1z42g0xm7gycbph31fgdf6wjx3w0k15xcmgm75fzwk2jzhr8"))))
+                "0q0f6f2fhjgqwvlhs14x6vz1fjq4iadx2g7cypifzpr1pq474nwf"))))
     (properties `((upstream-name . "swCRTdesign")))
     (build-system r-build-system)
+    (propagated-inputs (list r-lmertest r-lme4))
     (home-page "https://cran.r-project.org/package=swCRTdesign")
     (synopsis "Stepped Wedge Cluster Randomized Trial (SW CRT) Design")
     (description
@@ -5076,13 +5077,13 @@ applied to binary classification problems and used for prediction.")
 (define-public r-superranker
   (package
     (name "r-superranker")
-    (version "1.2.0")
+    (version "1.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SuperRanker" version))
               (sha256
                (base32
-                "01wilk3cy33z50yhg4i4gci298fj8s4xbrkb7k3i9gn8q13vviin"))))
+                "02yvx1lg2drhb111jcq90hq0vnycwp3mssclvazgcfyw9z7rnzwg"))))
     (properties `((upstream-name . "SuperRanker")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-prodlim))
@@ -5092,7 +5093,10 @@ applied to binary classification problems and used for prediction.")
      "This package provides tools for analysing the agreement of two or more rankings
 of the same items.  Examples are importance rankings of predictor variables and
 risk predictions of subjects.  Benchmarks for agreement are computed based on
-random permutation and bootstrap.")
+random permutation and bootstrap.  See @code{EkstrÃ¸m} CT, Gerds TA, Jensen, AK
+(2018). \"Sequential rank agreement methods for comparison of ranked lists.\"
+_Biostatistics_, *20*(4), 582-598 <doi:10.1093/biostatistics/kxy017> for more
+information.")
     (license license:gpl2+)))
 
 (define-public r-superpower
@@ -14987,13 +14991,13 @@ distribution.  The SSDM package also provides a user-friendly interface.")
 (define-public r-ssdforr
   (package
     (name "r-ssdforr")
-    (version "1.5.29")
+    (version "1.5.31")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SSDforR" version))
               (sha256
                (base32
-                "02ia7p28pi9x3qmmyhidjh04rmnk99w2xvxzm23l19cwgk35s4ip"))))
+                "1l66n5x7m90jw1r9cspb7i9k3wbc1xad4wc027bss40k9jwgqypw"))))
     (properties `((upstream-name . "SSDforR")))
     (build-system r-build-system)
     (propagated-inputs (list r-ttr
@@ -38396,13 +38400,13 @@ hoc structure of the shiny App.")
 (define-public r-shinytest2
   (package
     (name "r-shinytest2")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "shinytest2" version))
               (sha256
                (base32
-                "14lmrhmgylvypcpvsmbaghm5x55a9d9gz71zj4jc58rjn463d4db"))))
+                "0d0x9hl6vmf7wc5nbpb9rz0wydxvr6z5sl0hkn9g7d32rl6rwq36"))))
     (properties `((upstream-name . "shinytest2")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -41332,13 +41336,13 @@ illustrate function usage.")
 (define-public r-sharp
   (package
     (name "r-sharp")
-    (version "1.4.2")
+    (version "1.4.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sharp" version))
               (sha256
                (base32
-                "094ixdm4d90l4ggzpali50d0b20bk35b9b0ivzbianq7naqbv6w7"))))
+                "045k8252wfms08gdg10rdaj22ycfv2hr8ccrk6wxrd1gs973qfl9"))))
     (properties `((upstream-name . "sharp")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -54986,28 +54990,6 @@ extension to Spatial Sampling\".")
 and getting useful estimators such as total, mean, proportion about its
 population using simple random, stratified, systematic and cluster sampling.")
     (license license:gpl2)))
-
-(define-public r-samplingestimates
-  (package
-    (name "r-samplingestimates")
-    (version "0.1-3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "samplingEstimates" version))
-              (sha256
-               (base32
-                "1srdchlpxksfdqhf5qdvl7nz0qsxkxww7hzqj0q71asbzlq3am3p"))))
-    (properties `((upstream-name . "samplingEstimates")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-samplingvarest))
-    (home-page "http://www.numerika.mx")
-    (synopsis "Sampling Estimates")
-    (description
-     "This package provides functions to estimate from survey data.  This package is a
-user-friendly wrapper of the @code{samplingVarEst} package.  It considers that
-the user is more familiar with practical survey data rather than with research
-on survey sampling (variance estimation).  More functionalities are on the way.")
-    (license license:gpl2+)))
 
 (define-public r-samplingdatacrt
   (package

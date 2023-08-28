@@ -2672,27 +2672,6 @@ includes the possibility of drawing several plots (with different maximal number
 of modes / cut off values) in a single graph.")
     (license license:lgpl2.0+)))
 
-(define-public r-excelstrippr
-  (package
-    (name "r-excelstrippr")
-    (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "excelstrippr" version))
-              (sha256
-               (base32
-                "1ly76qja9b5l3xwfhigm1apd114y2iq5wdl27sd2h1y80n8xxf2v"))))
-    (properties `((upstream-name . "excelstrippr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr r-readxl r-dplyr))
-    (home-page "https://cran.r-project.org/package=excelstrippr")
-    (synopsis "Extracts Tabular Data from Excel Reports")
-    (description
-     "Removes metadata and summary formatting from Excel reports, so that data from
-those reports can more easily be loaded into R. Currently works with .xlsx and
-.xls format files.")
-    (license license:expat)))
-
 (define-public r-excelfunctionsr
   (package
     (name "r-excelfunctionsr")
@@ -4522,16 +4501,38 @@ statement evaluations are done by executing the verification trees.")
 (define-public r-evalitr
   (package
     (name "r-evalitr")
-    (version "0.3.0")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "evalITR" version))
               (sha256
                (base32
-                "16xx6blq51hck04zxvya4iyv9d6i1zkrqyfg10vc0kc3626vnlrn"))))
+                "0szrqcvi9x0wqxlyi1qyzpkj4y93qym8295nddip9ncl67kh2w09"))))
     (properties `((upstream-name . "evalITR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-quadprog r-matrix r-mass r-dplyr))
+    (propagated-inputs (list r-superlearner
+                             r-scales
+                             r-rqpen
+                             r-rpart
+                             r-rlang
+                             r-quadprog
+                             r-purrr
+                             r-matrix
+                             r-mass
+                             r-haven
+                             r-grf
+                             r-glmnet
+                             r-ggthemes
+                             r-ggplot2
+                             r-ggdist
+                             r-gbm
+                             r-forcats
+                             r-e1071
+                             r-dplyr
+                             r-cli
+                             r-caret
+                             r-bartcause))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/MichaelLLi/evalITR")
     (synopsis "Evaluating Individualized Treatment Rules")
     (description
@@ -6164,29 +6165,6 @@ L. (2020) <doi:10.6339/JDS.202007_18(3).0003>.")
 parameter by minimizing bias and variance in the effect estimate, where bias and
 variance are estimated from the posterior predictive distribution.  See Keller
 and Rice (2017) <doi:10.1093/aje/kwx225> for more details.")
-    (license license:gpl2+)))
-
-(define-public r-esg
-  (package
-    (name "r-esg")
-    (version "1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ESG" version))
-              (sha256
-               (base32
-                "17kw82dikcibqsdb1fvbx2x2f3shzbqggygabprcvwki8bg9hgni"))))
-    (properties `((upstream-name . "ESG")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=ESG")
-    (synopsis "Package for Asset Projection")
-    (description
-     "Presents a \"Scenarios\" class containing general parameters, risk parameters and
-projection results.  Risk parameters are gathered together into a
-@code{ParamsScenarios} sub-object.  The general process for using this package
-is to set all needed parameters in a Scenarios object, use the
-@code{customPathsGeneration} method to proceed to the projection, then use
-@code{xxx_PriceDistribution()} methods to get asset prices.")
     (license license:gpl2+)))
 
 (define-public r-esemifar
@@ -8131,13 +8109,13 @@ Swiderski and ML Zelditch (2022) <doi:10.1111/2041-210X.13914>.")
 (define-public r-eplusr
   (package
     (name "r-eplusr")
-    (version "0.16.1")
+    (version "0.16.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eplusr" version))
               (sha256
                (base32
-                "0g2nawdskwz6q8imvrnjmsh76da6l434bmbpy058f4krllrs4hmf"))))
+                "1b9kqrma6ayzsj146fdb2w2pwzmz1r6yy9g0abhx745gll8g9gqr"))))
     (properties `((upstream-name . "eplusr")))
     (build-system r-build-system)
     (propagated-inputs (list r-units
@@ -9944,22 +9922,22 @@ assessment from exposure to toxic substances - i.e.  USEPA (1997)
 (define-public r-envirem
   (package
     (name "r-envirem")
-    (version "2.3")
+    (version "3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "envirem" version))
               (sha256
                (base32
-                "0gffdj7jz61dlkznlk5a4w8fh72phfj3s9gnssb1z73jx82j34cw"))))
+                "06mxzm5kg0vm34z8sx5mbxxcdicjicjjdnhx0pi61dqnrwj47jml"))))
     (properties `((upstream-name . "envirem")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sf r-rsaga r-raster r-palinsol r-knitr))
-    (home-page "http://envirem.github.io")
+    (propagated-inputs (list r-terra r-palinsol r-knitr))
+    (home-page "https://github.com/ptitle/envirem")
     (synopsis "Generation of ENVIREM Variables")
     (description
      "Generation of bioclimatic rasters that are complementary to the typical 19
 bioclim variables.")
-    (license license:gpl2+)))
+    (license license:gpl3+)))
 
 (define-public r-envir
   (package
@@ -13229,50 +13207,6 @@ Datasets API <https://opentopography.org/developers/>, and the USGS Elevation
 Point Query Service <https://apps.nationalmap.gov/epqs/>.")
     (license license:cc0)))
 
-(define-public r-elementr
-  (package
-    (name "r-elementr")
-    (version "1.3.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "elementR" version))
-              (sha256
-               (base32
-                "01xbqargzc0bp1l5rcvxikr95ghj9w7w5byhrjbgwbia6y7zhxa2"))))
-    (properties `((upstream-name . "elementR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-tcltk2
-                             r-stringr
-                             r-shinyjs
-                             r-shinydashboard
-                             r-shiny
-                             r-readxl
-                             r-readods
-                             r-reader
-                             r-r6
-                             r-outliers
-                             r-lmtest
-                             r-httpuv
-                             r-gnumeric
-                             r-gdata
-                             r-envstats
-                             r-devtools
-                             r-colourpicker
-                             r-abind))
-    (home-page "https://github.com/charlottesirot/elementR")
-    (synopsis
-     "An Framework for Reducing Elemental LAICPMS Data from Solid Structures")
-    (description
-     "Aims to facilitate the reduction of elemental microchemistry data from
-solid-phase LAICPMS analysis (laser ablation inductive coupled plasma mass
-spectrometry).  The @code{elementR} package provides a reactive and user
-friendly interface (based on a shiny application) and a set of R6 classes for
-conducting all steps needed for an optimal data reduction while leaving maximum
-control for user.  For more details about the methods used in @code{elementR',}
-see Sirot et al (2017) <DOI:10.1111/2041-210X.12822>.")
-    (license license:gpl2+)))
-
 (define-public r-electoral
   (package
     (name "r-electoral")
@@ -14738,13 +14672,13 @@ semi-variogram fitting process.")
 (define-public r-eggcounts
   (package
     (name "r-eggcounts")
-    (version "2.3-2")
+    (version "2.3-3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eggCounts" version))
               (sha256
                (base32
-                "1hb7a78db97xz5hm311d60n2kg1wdlrf57vg4ixamqihyrcs5r4v"))))
+                "0ph3manyxlbd1sx3p4f5r5iqcm2lhm8i967p2cmnbddajrjx5fwl"))))
     (properties `((upstream-name . "eggCounts")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -17688,13 +17622,13 @@ Miele et al. (2021) @code{<doi:10.48550/arXiv.2103.10433>,} Botella et al (2021)
 (define-public r-econetgen
   (package
     (name "r-econetgen")
-    (version "0.2.3")
+    (version "0.2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EcoNetGen" version))
               (sha256
                (base32
-                "05j8m9vzkwlsw1h69s5myhbg85vyhqdxcl9r5mdwsrk9f58wajmz"))))
+                "0ljihc60b3k25hn3z09arql2y0byhxx4mljm2w4m8f3micqfwzfw"))))
     (properties `((upstream-name . "EcoNetGen")))
     (build-system r-build-system)
     (propagated-inputs (list r-igraph r-ggplot2))
@@ -19541,13 +19475,13 @@ and Arnold (2016) <doi: 10.1080/00949655.2015.1125901>.")
 (define-public r-eatgads
   (package
     (name "r-eatgads")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eatGADS" version))
               (sha256
                (base32
-                "0dgnh7lbb5wi8zg0g8lbg9k4w89sl7z9xjgr4x1pyx6wmjfmfran"))))
+                "10d9np84zb5jrak03iq72imj02c55jag121hf4g0yfpplaqnc85q"))))
     (properties `((upstream-name . "eatGADS")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -20252,13 +20186,13 @@ Census APIs (<https://www.census.gov/data/developers/data-sets.html>).")
 (define-public r-easyanova
   (package
     (name "r-easyanova")
-    (version "8.0")
+    (version "9.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "easyanova" version))
               (sha256
                (base32
-                "0ih21r4hg5mq1z4hy1w1r4zb96vizlc16fpv6f727iia2k3dwmyf"))))
+                "0xlp2v7bx6ian5mg4nq2vbi4421yl5h24jzyzay60p9r76579k3x"))))
     (properties `((upstream-name . "easyanova")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlme))
