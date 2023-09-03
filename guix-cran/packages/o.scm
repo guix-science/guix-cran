@@ -163,7 +163,7 @@ R. @code{OxCal} (<https://c14.arch.ox.ac.uk/oxcal.html>) is a standard
 archaeological tool intended to provide 14C calibration and analysis of
 archaeological and environmental chronological information. @code{OxcAAR} allows
 simple calibration with Oxcal and plotting of the results as well as the
-execution of sophisticated @code{('OxCal')} code and the import of the results
+execution of sophisticated ('@code{OxCal}') code and the import of the results
 of bulk analysis and complex Bayesian sequential calibration.")
     (license (list license:gpl2
                    (license:fsdg-compatible "file://LICENSE")))))
@@ -191,13 +191,13 @@ condition.")
 (define-public r-ows4r
   (package
     (name "r-ows4r")
-    (version "0.3-5")
+    (version "0.3-6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ows4R" version))
               (sha256
                (base32
-                "171amkkjjwf89n80dh2ixnvn0xxf1b64b7qhw1i4ch292jqnwmj0"))))
+                "1nzvvkixgcqpz0hxzb4fyby5c3rlh0ac3i5q00wz3w3bhhdzrdcb"))))
     (properties `((upstream-name . "ows4R")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
@@ -220,7 +220,7 @@ as the common web-service specification (OWS) and OGC Filter Encoding.  Partial
 support is provided for the Web Map Service (WMS).  The purpose is to add
 support for additional OGC service standards such as Web Coverage Processing
 Service (WCPS), the Sensor Observation Service (SOS), or even new standard
-services emerging such OGC API or @code{SensorThings.}")
+services emerging such OGC API or @code{SensorThings}.")
     (license license:expat)))
 
 (define-public r-owmr
@@ -591,7 +591,7 @@ survreg', and ivreg outputs.")
      "Outlier detection method that flags suspicious values within observations,
 constrasting them against the normal values in a user-readable format,
 potentially describing conditions within the data that make a given outlier more
-rare.  Full procedure is described in Cortes (2020) @code{<arXiv:2001.00636>.}
+rare.  Full procedure is described in Cortes (2020) <@code{arXiv:2001.00636>}.
 Loosely based on the @code{GritBot}
 <https://www.rulequest.com/gritbot-info.html> software.")
     (license license:gpl3+)))
@@ -627,9 +627,9 @@ Loosely based on the @code{GritBot}
      "Potential outliers are identified for all combinations of a dataset's variables.
  O3 plots are described in Unwin(2019) <doi:10.1080/10618600.2019.1575226>.  The
 available methods are HDoutliers() from the package HDoutliers',
-@code{FastPCS()} from the package @code{FastPCS',} @code{mvBACON()} from
-@code{robustX',} @code{adjOutlyingness()} from robustbase',
-@code{DectectDeviatingCells()} from @code{cellWise',} @code{covMcd()} from
+@code{FastPCS}() from the package @code{FastPCS}', @code{mvBACON}() from
+@code{robustX}', @code{adjOutlyingness}() from robustbase',
+@code{DectectDeviatingCells}() from @code{cellWise}', @code{covMcd}() from
 robustbase'.")
     (license license:gpl2+)))
 
@@ -801,7 +801,7 @@ Jombart T. 2019. <doi:10.1371/journal.pcbi.1006930>.")
      "Analyses of OTU tables produced by 16S @code{rRNA} gene amplicon sequencing, as
 well as example data.  It contains the data and scripts used in the paper Linz,
 et al. (2017) \"Bacterial community composition and dynamics spanning five years
-in freshwater bog lakes,\" <doi: @code{10.1128/mSphere.00169-17>.}")
+in freshwater bog lakes,\" <doi: 10.1128/@code{mSphere.00169-17>}.")
     (license license:gpl3)))
 
 (define-public r-otusummary
@@ -933,8 +933,8 @@ could benefit from the general framework provided by otsfeatures'.")
      "This package implements a set of online fault detectors for time-series, called:
 PEWMA see M. Carter et al. (2012) <doi:10.1109/SSP.2012.6319708>, SD-EWMA and
 TSSD-EWMA see H. Raza et al. (2015) <doi:10.1016/j.patcog.2014.07.028>, KNN-CAD
-see E. Burnaev et al. (2016) @code{<arXiv:1608.04585>,} KNN-LDCD see V.
-Ishimtsev et al. (2017) @code{<arXiv:1706.03412>} and CAD-OSE see M. Smirnov
+see E. Burnaev et al. (2016) <@code{arXiv:1608.04585>}, KNN-LDCD see V.
+Ishimtsev et al. (2017) <@code{arXiv:1706.03412>} and CAD-OSE see M. Smirnov
 (2018) <https://github.com/smirmik/CAD>.  The first three algorithms belong to
 prediction-based techniques and the last three belong to window-based
 techniques.  In addition, the SD-EWMA and PEWMA algorithms are algorithms
@@ -985,7 +985,7 @@ with Kaplan-Meier-like estimators when no unmeasured confounding assumption is
 satisfied (Jiang, R., Lu, W., Song, R., and Davidian, M. (2017)
 <doi:10.1111/rssb.12201>) and when no unmeasured confounding assumption fails to
 hold and a binary instrument is available (Xia, J., Zhan, Z., Zhang, J. (2022)
-@code{<arXiv:2210.05538>).}")
+<@code{arXiv:2210.05538>}).")
     (license license:expat)))
 
 (define-public r-otrimle
@@ -1210,7 +1210,7 @@ API(<https://genetics.opentargets.org/api>).")
     (description
      "Function for growing survival trees ensemble ('Naz Gul', Nosheen Faiz', Dan
 Brawn', Rafal Kulakowski', Zardad Khan', and Berthold Lausen (2020)
-@code{<arXiv:2005.09043>)} is given.  The trees are grown by the method of
+<@code{arXiv:2005.09043>}) is given.  The trees are grown by the method of
 random survival forest ('Marvin Wright', Andreas Ziegler (2017)
 <doi:10.18637/jss.v077.i01>).  The survival trees grown are assessed for both
 individual and collective performances.  The ensemble can give promising results
@@ -1533,7 +1533,7 @@ Further information and tutorials can be found at <https://luminescence.de>.")
     (synopsis "Raw System Credential Store Access from R")
     (description
      "Aims to support all features of the system credential store, including
-non-portable ones.  Supports Keychain on @code{macOS',} and Credential Manager
+non-portable ones.  Supports Keychain on @code{macOS}', and Credential Manager
 on Windows'.  See the keyring package if you need a portable API'.")
     (license license:expat)))
 
@@ -1610,7 +1610,7 @@ or public projects.")
      "This package provides a method to generate a design in the input space that
 sequentially fills the output space of a black-box function.  The output
 space-filling design will be helpful in inverse design or feature-based modeling
-problem.  Please see Wang et al.(2023) @code{<DOI:10.48550/arXiv.2305.07202>}
+problem.  Please see Wang et al.(2023) <DOI:10.48550/@code{arXiv.2305.07202>}
 for details.  This work is supported by U.S. National Foundation grant
 CMMI-1921646.")
     (license license:gpl2+)))
@@ -1677,7 +1677,7 @@ For additional detail see: Haneuse S, Saegusa T and Lumley T
     (description
      "Compound deconvolution for chromatographic data, including gas chromatography -
 mass spectrometry (GC-MS) and comprehensive gas chromatography - mass
-spectrometry @code{(GCxGC-MS).} The package includes functions to perform
+spectrometry (G@code{CxGC-MS}).  The package includes functions to perform
 independent component analysis - orthogonal signal deconvolution (ICA-OSD),
 independent component regression (ICR), multivariate curve resolution (MCR-ALS)
 and orthogonal signal deconvolution (OSD) alone.")
@@ -1705,7 +1705,7 @@ mainly supports the following articles: (1) Savchuk, O.Y., Hart, J.D. (2017).
 Fully robust one-sided cross-validation for regression functions.  Computational
 Statistics, <doi:10.1007/s00180-017-0713-7> and (2) Savchuk, O.Y. (2017).
 One-sided cross-validation for nonsmooth density functions,
-@code{<arXiv:1703.05157>.}")
+<@code{arXiv:1703.05157>}.")
     (license license:gpl2)))
 
 (define-public r-oscillatorgenerator
@@ -1734,13 +1734,13 @@ code was developed in the Biological Information Processing Group at the
 (define-public r-oscar
   (package
     (name "r-oscar")
-    (version "1.1.7")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "oscar" version))
               (sha256
                (base32
-                "0w2qcv82gw58fhhdlb9pjl3d8k2ivhlfw2cnbh9bz1vz5ycgsd9z"))))
+                "1fr7hwy7bnqz160vqlq84xzyfvhgsnjphqkcrfi0qc5lfbwlpm06"))))
     (properties `((upstream-name . "oscar")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-proc r-matrix r-hamlet))
@@ -1974,7 +1974,7 @@ dimension reduction methods such as @code{hMave} by Xia, Zhang, & Xu (2010)
 <DOI:10.1080/01621459.2012.746065>.  It also serves as a general purpose
 optimization solver for problems with orthogonality constraints, i.e., in
 Stiefel manifold.  Parallel computing for approximating the gradient is enabled
-through @code{OpenMP'.}")
+through @code{OpenMP}'.")
     (license license:gpl2+)))
 
 (define-public r-orsk
@@ -2474,14 +2474,14 @@ efficiency.")
     (synopsis "Ordered Random Forests")
     (description
      "An implementation of the Ordered Forest estimator as developed in Lechner &
-Okasa (2019) @code{<arXiv:1907.02436>.} The Ordered Forest flexibly estimates
+Okasa (2019) <@code{arXiv:1907.02436>}.  The Ordered Forest flexibly estimates
 the conditional probabilities of models with ordered categorical outcomes
 (so-called ordered choice models).  Additionally to common machine learning
 algorithms the orf package provides functions for estimating marginal effects as
 well as statistical inference thereof and thus provides similar output as in
 standard econometric models for ordered choice.  The core forest algorithm
 relies on the fast C++ forest implementation from the ranger package (Wright &
-Ziegler, 2017) @code{<arXiv:1508.04409>.}")
+Ziegler, 2017) <@code{arXiv:1508.04409>}.")
     (license license:gpl3)))
 
 (define-public r-ores
@@ -2682,7 +2682,7 @@ cyclical projection algorithm.")
     (description
      "This package implements Bayesian data analyses of balanced repeatability and
 reproducibility studies with ordinal measurements.  Model fitting is based on
-MCMC posterior sampling with rjags'.  Function @code{ordinalRR()} directly
+MCMC posterior sampling with rjags'.  Function @code{ordinalRR}() directly
 carries out the model fitting, and this function has the flexibility to allow
 the user to specify key aspects of the model, e.g., fixed versus random effects.
  Functions for preprocessing data and for the numerical and graphical display of
@@ -4088,8 +4088,8 @@ has a reduced set of methods and is intended to be on CRAN.")
     (synopsis "Parallel Version of the L-BFGS-B Optimization Method")
     (description
      "This package provides a parallel version of the L-BFGS-B method of optim().  The
-main function of the package is @code{optimParallel(),} which has the same usage
-and output as optim().  Using @code{optimParallel()} can significantly reduce
+main function of the package is @code{optimParallel}(), which has the same usage
+and output as optim().  Using @code{optimParallel}() can significantly reduce
 the optimization time.")
     (license license:gpl2+)))
 
@@ -4122,16 +4122,17 @@ unequal occurrences.  See the detailed methodology by Birks et al. (1990)
 (define-public r-optimlanduse
   (package
     (name "r-optimlanduse")
-    (version "1.1.2")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "optimLanduse" version))
               (sha256
                (base32
-                "0vrn794y6fp02ara6xa1vlfx7vim0gbx5bc1pkns2fh76gqpsa4n"))))
+                "16dd6sq9ss0k2kzqp02jcxsmg3qi5mvvk85nqy2hlpij2hdmh8bj"))))
     (properties `((upstream-name . "optimLanduse")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr r-lpsolveapi r-dplyr))
+    (propagated-inputs (list r-tidyr r-lpsolveapi r-future-apply r-future
+                             r-dplyr))
     (home-page "https://github.com/Forest-Economics-Goettingen/optimLanduse/")
     (synopsis "Robust Land-Use Optimization")
     (description
@@ -4208,7 +4209,7 @@ convergence are included.")
     (description
      "This package provides general purpose tools for helping users to implement
 steepest gradient descent methods for function optimization; for details see
-Ruder (2016) @code{<arXiv:1609.04747v2>.} Currently, the Steepest 2-Groups
+Ruder (2016) <@code{arXiv:1609.04747v2>}.  Currently, the Steepest 2-Groups
 Gradient Descent and the Adaptive Moment Estimation (Adam) are the methods
 implemented.  Other methods will be implemented in the future.")
     (license license:gpl3)))
@@ -4397,7 +4398,7 @@ entire distribution assumed.  Illustrations are included.  Also included is a
 routine to unbiasedly estimate Frobenius norms of variance-covariance matrices.
 Details of the method can be found in \"Optimal Rerandomization via a Criterion
 that Provides Insurance Against Failed Experiments\" Adam Kapelner, Abba M.
-Krieger, Michael Sklar and David Azriel (2020) @code{<arXiv:1905.03337>.}")
+Krieger, Michael Sklar and David Azriel (2020) <@code{arXiv:1905.03337>}.")
     (license license:gpl3)))
 
 (define-public r-optimall
@@ -4597,7 +4598,7 @@ not be overridden at the point when a package is loaded.")
      "Likelihood based optimal partitioning and indicator species analysis.  Finding
 the best binary partition for each species based on model selection, with the
 possibility to take into account modifying/confounding variables as described in
-Kemencei et al. (2014) @code{<doi:10.1556/ComEc.15.2014.2.6>.} The package
+Kemencei et al. (2014) <doi:10.1556/@code{ComEc.15.2014.2.6>}.  The package
 implements binary and multi-level response models, various measures of
 uncertainty, Lorenz-curve based thresholding, with native support for parallel
 computations.")
@@ -4657,7 +4658,7 @@ efficiency or gain achieved through the optimal design is quantified by
 comparing it to a random allocation.  This comparison allows for an assessment
 of how much improvement or advantage is gained by using the optimal design
 approach.  This work was supported by the Swedish Research Council
-@code{(VetenskapsrÃ¥det)} Grant 2019-02706.")
+(@code{VetenskapsrÃ¥det}) Grant 2019-02706.")
     (license license:gpl3+)))
 
 (define-public r-optic
@@ -4718,7 +4719,7 @@ holdout set is a straightforward way to manage this problem: a proportion of the
 population is held-out from computation of the previous risk score.  This
 package provides tools to estimate a size for this holdout set and associated
 errors.  Comprehensive vignettes are included.  Please see: Haidar-Wehbe S,
-Emerson SR, Aslett LJM, Liley J (2022) @code{<arXiv:2202.06374>} for details of
+Emerson SR, Aslett LJM, Liley J (2022) <@code{arXiv:2202.06374>} for details of
 methods.")
     (license license:gpl3+)))
 
@@ -5104,7 +5105,7 @@ project with support of Haag-Streit in 2010.  It specifies basic functions that
 allow many visual field tests to be constructed.  As of February 2022 it is
 fully implemented on the Haag-Streit Octopus 900 with partial implementations on
 the Centervue Compass, Kowa AP 7000, Android phones and the @code{CrewT} IMO. It
-also has a cousin: the R package @code{visualFields',} which has tools for
+also has a cousin: the R package @code{visualFields}', which has tools for
 analysing and manipulating visual field data.")
     (license license:asl2.0)))
 
@@ -5617,7 +5618,7 @@ simulation modelling and management strategy evaluation for fisheries.
 @code{openMSE} is an umbrella package for the MSEtool (Management Strategy
 Evaluation toolkit), DLMtool (Data-Limited Methods toolkit), and SAMtool (Stock
 Assessment Methods toolkit) packages.  By loading and installing
-@code{openMSE',} users have access to the full functionality contained within
+@code{openMSE}', users have access to the full functionality contained within
 these packages.  Learn more about @code{openMSE} at <https://openmse.com/>.")
     (license license:gpl3)))
 
@@ -5803,7 +5804,7 @@ intensive functions.  The histogram of oriented gradients descriptor is a
 modification of the @code{findHOGFeatures} function of the @code{SimpleCV}
 computer vision platform, the average_hash(), dhash() and phash() functions are
 based on the @code{ImageHash} python library.  The Gabor Feature Extraction
-functions are based on Matlab code of the paper, @code{\"CloudID:} Trustworthy
+functions are based on Matlab code of the paper, \"@code{CloudID}: Trustworthy
 cloud-based and cross-enterprise biometric identification\" by M. Haghighat, S.
 Zonouz, M. Abdel-Mottaleb, Expert Systems with Applications, vol.  42, no.  21,
 pp.  7905-7916, 2015, <doi:10.1016/j.eswa.2015.06.025>.  The SLIC and SLICO
@@ -5993,7 +5994,7 @@ static images, or to filter live video footage from a camera device.")
     (home-page "http://www.rforge.net/OpenCL/")
     (synopsis "Interface allowing R to use OpenCL")
     (description
-     "This package provides an interface to @code{OpenCL,} allowing R to leverage
+     "This package provides an interface to @code{OpenCL}, allowing R to leverage
 computing power of GPUs and other HPC accelerator devices.")
     (license license:bsd-3)))
 
@@ -6080,13 +6081,13 @@ API.")
 (define-public r-openalexr
   (package
     (name "r-openalexr")
-    (version "1.2.0")
+    (version "1.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "openalexR" version))
               (sha256
                (base32
-                "01i33yxs708xcm993v1kzpyrxgcnmjzjjis5k1147dsajp2fas8k"))))
+                "1jnhgv6zdcz8bar11q77l82zkr7xpv5xam92xv1vdspp9pvk6ixd"))))
     (properties `((upstream-name . "openalexR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-progress r-jsonlite r-httr))
@@ -6266,15 +6267,15 @@ philosophy of the package is described in Guo G. (2018)
     (home-page "https://github.com/obiba/opalr/")
     (synopsis "'Opal' Data Repository Client and 'DataSHIELD' Utils")
     (description
-     "Data integration Web application for biobanks by @code{OBiBa'.} Opal is the core
-database application for biobanks.  Participant data, once collected from any
-data source, must be integrated and stored in a central data repository under a
-uniform model.  Opal is such a central repository.  It can import, process,
-validate, query, analyze, report, and export data.  Opal is typically used in a
-research center to analyze the data acquired at assessment centres.  Its
-ultimate purpose is to achieve seamless data-sharing among biobanks.  This Opal
-client allows to interact with Opal web services and to perform operations on
-the R server side. @code{DataSHIELD} administration tools are also provided.")
+     "Data integration Web application for biobanks by O@code{BiBa}'.  Opal is the
+core database application for biobanks.  Participant data, once collected from
+any data source, must be integrated and stored in a central data repository
+under a uniform model.  Opal is such a central repository.  It can import,
+process, validate, query, analyze, report, and export data.  Opal is typically
+used in a research center to analyze the data acquired at assessment centres.
+Its ultimate purpose is to achieve seamless data-sharing among biobanks.  This
+Opal client allows to interact with Opal web services and to perform operations
+on the R server side. @code{DataSHIELD} administration tools are also provided.")
     (license license:gpl3)))
 
 (define-public r-opa
@@ -6325,16 +6326,16 @@ pairwise likelihood comparison of theories, calibrated with pre-existing data.")
 (define-public r-oosse
   (package
     (name "r-oosse")
-    (version "1.0.5")
+    (version "1.0.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "oosse" version))
               (sha256
                (base32
-                "0xa14c7wxkaj8qww3jsw26x3rwayqvpf7qcsw2xaz80j56ss4w9p"))))
+                "0bdn3r3qaxv94h2pvq6sa7ssh7kr3ngsk6733yqxbk0m7gmxgfdj"))))
     (properties `((upstream-name . "oosse")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rdpack r-matrix r-biocparallel))
+    (propagated-inputs (list r-rdpack r-matrix r-doparallel r-biocparallel))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=oosse")
     (synopsis "Out-of-Sample RÂ² with Standard Error Estimation")
@@ -6429,50 +6430,6 @@ Includes functions for assertions and testing, looping, and re-usable design
 patterns including Abstract and Decorator classes.")
     (license license:expat)))
 
-(define-public r-oompadata
-  (package
-    (name "r-oompadata")
-    (version "3.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "oompaData" version))
-              (sha256
-               (base32
-                "0gdp7bghgpz3q0h06w8r926x7wkpcvkpyf0v5qfi1qixbpvk5fdf"))))
-    (properties `((upstream-name . "oompaData")))
-    (build-system r-build-system)
-    (home-page "http://oompa.r-forge.r-project.org/")
-    (synopsis "Data to Illustrate OOMPA Algorithms")
-    (description
-     "This is a data-only package to provide example data for other packages that are
-part of the \"Object-Oriented Microrray and Proteomics Analysis\" suite of
-packages.  These are described in more detail at the package URL.")
-    (license license:asl2.0)))
-
-(define-public r-oompabase
-  (package
-    (name "r-oompabase")
-    (version "3.2.9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "oompaBase" version))
-              (sha256
-               (base32
-                "1cmw2s5dznmv675484jgvkzgvi6vhg0zbxsq6zhpqsisf672pjhl"))))
-    (properties `((upstream-name . "oompaBase")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-cluster))
-    (home-page "http://oompa.r-forge.r-project.org/")
-    (synopsis "Class Unions, Matrix Operations, and Color Schemes for OOMPA")
-    (description
-     "This package provides the class unions that must be preloaded in order for the
-basic tools in the OOMPA (Object-Oriented Microarray and Proteomics Analysis)
-project to be defined and loaded.  It also includes vectorized operations for
-row-by-row means, variances, and t-tests.  Finally, it provides new color
-schemes.  Details on the packages in the OOMPA project can be found at
-<http://oompa.r-forge.r-project.org/>.")
-    (license license:asl2.0)))
-
 (define-public r-oolong
   (package
     (name "r-oolong")
@@ -6531,9 +6488,9 @@ generated tests match those suggested in Chang et al. (2009) and Song et al.
     (synopsis "Outside Option Index")
     (description
      "Calculates the Outside Option Index proposed by Caldwell and Danieli (2018)
-@code{<https://drive.google.com/file/d/1j-uwD19S4gqgXIXeYch9jGBCaDhWZlRQ/view>.}
-This index uses the cross- sectional concentration of similar workers across job
-types to quantify the availability of outside options as a function of
+<https://drive.google.com/file/d/1j-@code{uwD19S4gqgXIXeYch9jGBCaDhWZlRQ/view>}.
+ This index uses the cross- sectional concentration of similar workers across
+job types to quantify the availability of outside options as a function of
 workersâ characteristics (e.g. commuting costs, preferences, and skills.)")
     (license license:gpl3)))
 
@@ -6558,7 +6515,7 @@ random forests for any measure that is available in the mlr package.  Supported
 random forest packages are @code{randomForest} and ranger and trained models of
 these packages with the train function of mlr'.  The main function is OOBCurve()
 that calculates the out-of-bag curve depending on the number of trees.  With the
-@code{OOBCurvePars()} function out-of-bag curves can also be calculated for
+OOB@code{CurvePars}() function out-of-bag curves can also be calculated for
 mtry', sample.fraction and min.node.size for the ranger package.")
     (license license:gpl3)))
 
@@ -6864,7 +6821,7 @@ energy related forecasting.  The models can be fitted recursively and can easily
 be setup for updating parameters when new data arrives.  See the included
 vignettes, the website <https://onlineforecasting.org> and the pre-print paper
 \"onlineforecast: An R package for adaptive and recursive forecasting\"
-@code{<arXiv:2109.12915>.}")
+<@code{arXiv:2109.12915>}.")
     (license license:gpl3)))
 
 (define-public r-onlinecov
@@ -6892,7 +6849,7 @@ estimated by a data-driven procedure.  The level of threshold in the stopping
 rule can be determined at a pre-selected average run length.  More detail can be
 seen in Li, L. and Li, J. (2020) \"Online Change-Point Detection in
 High-Dimensional Covariance Structure with Application to Dynamic Networks.\"
-@code{<arXiv:1911.07762>.}")
+<@code{arXiv:1911.07762>}.")
     (license license:gpl2+)))
 
 (define-public r-onlinebcp
@@ -6916,7 +6873,7 @@ High-Dimensional Covariance Structure with Application to Dynamic Networks.\"
 also perform missing data imputation with methods from VIM'.  The reference is
 Yigiter A, Chen J, An L, Danacioglu N (2015)
 <doi:10.1080/02664763.2014.1001330>.  The link to the package is
-@code{<https://CRAN.R-project.org/package=onlineBcp>.}")
+<https://CRAN.R-project.org/package=@code{onlineBcp>}.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-onion
@@ -7111,7 +7068,7 @@ Terza et al. (2008) <doi:10.1016/j.jhealeco.2007.09.009>.")
     (synopsis
      "One Rule Machine Learning Classification Algorithm with Enhancements")
     (description
-     "This package implements the One Rule @code{(OneR)} Machine Learning
+     "This package implements the One Rule (@code{OneR}) Machine Learning
 classification algorithm (Holte, R.C. (1993) <doi:10.1023/A:1022631118932>) with
 enhancements for sophisticated handling of numeric data and missing values
 together with extensive diagnostic functions.  It is useful as a baseline for
@@ -7210,7 +7167,7 @@ using hidden Markov models.")
     (home-page "https://cran.r-project.org/package=onelogin")
     (synopsis "Interact with the 'OneLogin' API")
     (description
-     "The identity provider @code{['OneLogin']<http://onelogin.com>} is used for
+     "The identity provider ['@code{OneLogin']<http://onelogin.com>} is used for
 authentication via Single Sign On (SSO).  This package provides an R interface
 to their API.")
     (license license:expat)))
@@ -7336,7 +7293,7 @@ paper: Wu, J, Chen L, Wei J, Weiss H, Chauhan A. (2020). <doi:10.1002/pst.1983>.
 opportunities for biology researchers.  ondisc (short for \"on-disk single cell\")
 enables users to easily and efficiently analyze large-scale single-cell data.
 ondisc makes computing on large-scale single-cell data FUN: Fast, Universal, and
-@code{iNtuitive.}")
+@code{iNtuitive}.")
     (license license:expat)))
 
 (define-public r-oncrawlr
@@ -7529,7 +7486,7 @@ inference is implemented using stan'.")
      "Bayesian Logistic Regression for Oncology Dose-Escalation Trials")
     (description
      "Bayesian logistic regression model with optional
-@code{EXchangeability-NonEXchangeability} parameter modelling for flexible
+EXchangeability-@code{NonEXchangeability} parameter modelling for flexible
 borrowing from historical or concurrent data-sources.  The safety model can
 guide dose-escalation decisions for adaptive oncology Phase I dose-escalation
 trials which involve an arbitrary number of drugs.  Please refer to
@@ -8372,7 +8329,7 @@ data run on the Olink platform.")
     (synopsis "For Accessing the Old Bailey Open Data")
     (description
      "Fetch trial data from the Old Bailey Online API
-@code{<https://www.oldbaileyonline.org/static/DocAPI.jsp>.} Data is returned in
+<https://www.oldbaileyonline.org/static/@code{DocAPI.jsp>}.  Data is returned in
 an analysis-ready data frame with fields for metadata including (but not limited
 to) the names of the first person speakers, defendants, victims, their recorded
 genders, verdicts, punishments, crime locations, and dates.  Optional parameters
@@ -8430,7 +8387,7 @@ increases.  Based on this, we propose two families of procedures - one based on
 the fluctuations of partial sums, and one based on extreme value theory - to
 monitor whether the first non-spiked eigenvalue diverges after a point in time
 in the monitoring horizon, thereby indicating the presence of a change point.
-See more details in He et al. @code{(2021)<arXiv:2112.13479>.}")
+See more details in He et al. (2021)<@code{arXiv:2112.13479>}.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-okxapi
@@ -8603,13 +8560,13 @@ D-statistics, for pairs of loci.  Petrowski et al. (2019)
 (define-public r-ohsome
   (package
     (name "r-ohsome")
-    (version "0.2.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ohsome" version))
               (sha256
                (base32
-                "1lakhx2f84ffgirzxwjbi9nfp6q28idp1i73f1x7cm83l32l2fss"))))
+                "0zw4r1sv46mfxzbp620a00wsh9i1dc21lmf1iadsdm4iss8pjk44"))))
     (properties `((upstream-name . "ohsome")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-readr r-jsonlite r-httr r-geojsonsf))
@@ -8886,10 +8843,10 @@ correlated with each of the variates.  More details can be found in Sei (2016)
      "Meta-Analysis Approach with Filtering for Identifying Gene-Level Gene-Environment Interactions with Genetic Association Data")
     (description
      "Offers a gene-based meta-analysis test with filtering to detect gene-environment
-interactions @code{(GxE)} with association data, proposed by Wang et al. (2018)
+interactions (@code{GxE}) with association data, proposed by Wang et al. (2018)
 <doi:10.1002/gepi.22115>.  It first conducts a meta-filtering test to filter out
 unpromising SNPs by combining all samples in the consortia data.  It then runs a
-test of omnibus-filtering-based @code{GxE} meta-analysis @code{(ofGEM)} that
+test of omnibus-filtering-based @code{GxE} meta-analysis (@code{ofGEM}) that
 combines the strengths of the fixed- and random-effects meta-analysis with
 meta-filtering.  It can also analyze data from multiple ethnic groups.")
     (license (list license:gpl2+ license:gpl3+))))
@@ -8920,13 +8877,13 @@ The method is based on Jie Ding, Yu Xiang, Lu Shen, Vahid Tarokh (2017)
 (define-public r-officedown
   (package
     (name "r-officedown")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "officedown" version))
               (sha256
                (base32
-                "086wx177n5yar531n6l2dxwq009ns5x14f4dhf9gd96f12fq4wra"))))
+                "0ymidhrnbk8z7ni4y0ngizyc7d3f35nmhmhpfqw8jg9faizich8z"))))
     (properties `((upstream-name . "officedown")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -9119,7 +9076,7 @@ code interface is described in Huling and Chien (2022)
      "Package for estimating the parameters of a nonlinear function using iterated
 linearization via Taylor series.  Method is based on @code{KubÃ¡Äek} (2000)
 ISBN: 80-244-0093-6.  The algorithm is a generalization of the procedure given
-in KÃ¶ning, R., Wimmer, G. and @code{WitkovskÃ½,} V. (2014)
+in KÃ¶ning, R., Wimmer, G. and @code{WitkovskÃ½}, V. (2014)
 <doi:10.1088/0957-0233/25/11/115001>.")
     (license license:gpl2+)))
 
@@ -9270,7 +9227,7 @@ Available from <https://CRAN.R-project.org/package=pwr>.")
     (synopsis "One-Sided Dynamic Principal Components")
     (description
      "This package provides functions to compute the one-sided dynamic principal
-components ('odpc') introduced in @code{PeÃ±a,} Smucler and Yohai (2019)
+components ('odpc') introduced in @code{PeÃ±a}, Smucler and Yohai (2019)
 <DOI:10.1080/01621459.2018.1520117>.  odpc is a novel dimension reduction
 technique for multivariate time series, that is useful for forecasting.  These
 dynamic principal components are defined as the linear combinations of the
@@ -9724,7 +9681,7 @@ feature-based method to identify anomalies.  First, it computes many features
 for each network.  Then it models the features using time series methods.  Using
 time series residuals it detects anomalies.  This way, the temporal dependencies
 are accounted for when identifying anomalies (Kandanaarachchi, Hyndman 2022)
-@code{<arXiv:2210.07407>.}")
+<@code{arXiv:2210.07407>}.")
     (license license:gpl3+)))
 
 (define-public r-odbc
@@ -9791,7 +9748,7 @@ databases embedded in Open Document Databases files, as @code{OpenOffice} and
     (home-page "https://cran.r-project.org/package=ODataQuery")
     (synopsis "Querying on 'OData'")
     (description
-     "Make querying on OData easier.  It exposes an @code{ODataQuery} object that can
+     "Make querying on OData easier.  It exposes an O@code{DataQuery} object that can
 be manipulated and provides features such as selection, filtering and ordering.")
     (license license:gpl3)))
 
@@ -9969,7 +9926,7 @@ README file at <https://github.com/opencasestudies/>.
     (synopsis "Bayesian Online Changepoint Detection")
     (description
      "This package implements the Bayesian online changepoint detection method by
-Adams and @code{MacKay} (2007) @code{<arXiv:0710.3742>} for univariate or
+Adams and @code{MacKay} (2007) <@code{arXiv:0710.3742>} for univariate or
 multivariate data.  Gaussian and Poisson probability models are implemented.
 Provides post-processing functions with alternative ways to extract
 changepoints.")
@@ -10054,7 +10011,7 @@ Furrer and Sain (2010) <doi:10.18637/jss.v036.i10> for the construct used.")
     (description
      "This package provides a function to detect and trim outliers in Gaussian mixture
 model-based clustering using methods described in Clark and @code{McNicholas}
-(2022) @code{<arXiv:1907.01136>.}")
+(2022) <@code{arXiv:1907.01136>}.")
     (license license:gpl2+)))
 
 (define-public r-ockc
@@ -10969,7 +10926,7 @@ are data_load(), data_produce(), and rel_risk_fun().")
 both the normal (NSR) and student-T (TSR) distributions.  The functions provided
 give prior and posterior objective densities and allow default Bayesian
 estimation of the model regression parameters.  Details can be found in Ordonez
-et al. (2020) @code{<arXiv:2004.04341>.}")
+et al. (2020) <@code{arXiv:2004.04341>}.")
     (license license:gpl2+)))
 
 (define-public r-obanalytics
@@ -11015,21 +10972,21 @@ models.")
 (define-public r-oasisr
   (package
     (name "r-oasisr")
-    (version "3.0.2")
+    (version "3.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "OasisR" version))
               (sha256
                (base32
-                "1388ld2nws3ppnkavg8s59q3inqf365c5cf9qvzbj6icmwqs9rdd"))))
+                "0jni6l3fbrd3pz34lis6zf6pqm3r29z32mxvkdfp4x9ncg68dlrs"))))
     (properties `((upstream-name . "OasisR")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdep
+                             r-sf
                              r-seg
-                             r-rgeos
-                             r-rgdal
                              r-outliers
-                             r-measurements))
+                             r-measurements
+                             r-lwgeom))
     (home-page "https://cran.r-project.org/package=OasisR")
     (synopsis
      "Outright Tool for the Analysis of Spatial Inequalities and Segregation")

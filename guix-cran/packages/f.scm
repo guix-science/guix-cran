@@ -242,14 +242,14 @@ weight.")
 in Roodman et al (2019, STATA Journal, <doi:10.1177/1536867X19830877>) and
 @code{MacKinnon} et al (2022), which makes it feasible to quickly calculate
 bootstrap test statistics based on a large number of bootstrap draws even for
-large samples.  Multiple bootstrap types as described in @code{MacKinnon,}
+large samples.  Multiple bootstrap types as described in @code{MacKinnon},
 Nielsen & Webb (2022) are supported.  Further, multiway clustering, regression
 weights, bootstrap weights, fixed effects and subcluster bootstrapping are
 supported.  Further, both restricted ('WCR') and unrestricted ('WCU') bootstrap
 are supported.  Methods are provided for a variety of fitted models, including
 lm()', feols() (from package fixest') and felm() (from package lfe').
 Additionally implements a heteroskedasticity-robust ('HC1') wild bootstrap.
-Last, the package provides an R binding to @code{WildBootTests.jl',} which
+Last, the package provides an R binding to @code{WildBootTests.jl}', which
 provides additional speed gains and functionality, including the WRE bootstrap
 for instrumental variable models (based on models of type ivreg() from package
 ivreg') and hypotheses with q > 1.")
@@ -407,7 +407,7 @@ foreseen.")
 Encapsulated Object Oriented Programming using R6. @code{FuzzyStatTra} contains
 Statistical Methods for Trapezoidal Fuzzy Numbers, whose aim is to provide some
 basic functions for doing statistical analysis with trapezoidal fuzzy numbers.
-For more details, you can visit the website of the @code{SMIRE+CoDiRE}
+For more details, you can visit the website of the SMIRE+@code{CoDiRE}
 (Statistical Methods with Imprecise Random Elements and Comparison of
 Distributions of Random Elements) Research Group
 (<https://bellman.ciencias.uniovi.es/smire+codire/>).  The most related paper
@@ -638,7 +638,7 @@ Wilcoxon signed rank and rank sum tests.")
      "Design and simulate fuzzy logic systems using Type-1 and Interval Type-2 Fuzzy
 Logic.  This toolkit includes with graphical user interface (GUI) and an
 adaptive neuro- fuzzy inference system (ANFIS).  This toolkit is a continuation
-from the previous package @code{('FuzzyToolkitUoN').} Produced by the
+from the previous package ('@code{FuzzyToolkitUoN}').  Produced by the
 Intelligent Modelling & Analysis Group (IMA) and Lab for @code{UnCertainty} In
 Data and decision making (LUCID), University of Nottingham.  A big thank you to
 the many people who have contributed to the development/evaluation of the
@@ -872,7 +872,7 @@ new prediction object individually.")
      "It provides classifiers which can be used for discrete variables and for
 continuous variables based on the Naive Bayes and Fuzzy Naive Bayes hypothesis.
 Those methods were developed by researchers belong to the Laboratory of
-Technologies for Virtual Teaching and Statistics @code{(LabTEVE)} and Laboratory
+Technologies for Virtual Teaching and Statistics (@code{LabTEVE}) and Laboratory
 of Applied Statistics to Image Processing and Geoprocessing (LEAPIG) at Federal
 University of Paraiba, Brazil'.  They considered some statistical distributions
 and their papers were published in the scientific literature, as for instance,
@@ -1033,7 +1033,7 @@ them in package tests and in Continuous Integration (CI) pipelines.")
      "Implementation of the Future API on top of the batchtools package.  This allows
 you to process futures, as defined by the future package, in parallel out of the
 box, not only on your local machine or ad-hoc cluster of machines, but also via
-high-performance compute ('HPC') job schedulers such as LSF', @code{OpenLava',}
+high-performance compute ('HPC') job schedulers such as LSF', @code{OpenLava}',
 Slurm', SGE', and TORQUE / PBS', e.g. y <- future.apply::future_lapply(files,
 FUN = process)'.")
     (license license:lgpl2.1+)))
@@ -1064,7 +1064,7 @@ standard right-censored failure time analysis framework are conducted for the
 distribution of the number of endpoints--in total as well as by treatment
 arm--at the end of the follow-up period.  The future (i.e., yet unobserved)
 enrollment, endpoint, and dropout times are generated according to mechanisms
-specified in the @code{simTrial()} function in the @code{seqDesign} package.  A
+specified in the @code{simTrial}() function in the @code{seqDesign} package.  A
 Bayesian model for the endpoint rate, offering the option to specify a robust
 mixture prior distribution, is used for generating future data (see the vignette
 for details).  Inference can be restricted to participants who received
@@ -1096,7 +1096,7 @@ continuous variables.  The responses may share the same set of predictors,
 however, the models and parameters differ across different platforms.
 Integrating information from different data sets can enhance the power of model
 selection.  Package is based on Xin Gao, Raymond J. Carroll (2017)
-@code{<arXiv:1610.00667v1>.}")
+<@code{arXiv:1610.00667v1>}.")
     (license license:gpl2+)))
 
 (define-public r-fusionclust
@@ -1167,7 +1167,7 @@ interactive charts <https://www.fusioncharts.com/>.")
      "Enables high-dimensional penalized regression across heterogeneous subgroups.
 Fusion penalties are used to share information about the linear parameters
 across subgroups.  The underlying model is described in detail in Dondelinger
-and Mukherjee (2017) @code{<arXiv:1611.00953>.}")
+and Mukherjee (2017) <@code{arXiv:1611.00953>}.")
     (license license:gpl3)))
 
 (define-public r-fusen
@@ -1226,9 +1226,9 @@ and sections in the appropriate files required for package development.")
      "Implementation of fused Markov graphical model (FMGM; Park and Won, 2022).  The
 functions include building mixed graphical model (MGM) objects from data,
 inference of networks using FMGM, stable edge-specific penalty selection
-@code{(StEPS)} for the determination of penalization parameters, and the
+(@code{StEPS}) for the determination of penalization parameters, and the
 visualization.  For details, please refer to Park and Won (2022)
-@code{<arXiv:2208.14959>.}")
+<@code{arXiv:2208.14959>}.")
     (license license:expat)))
 
 (define-public r-furniture
@@ -1250,8 +1250,8 @@ visualization.  For details, please refer to Park and Won (2022)
     (description
      "This package contains four main functions (i.e., four pieces of furniture):
 table1() which produces a well-formatted table of descriptive statistics common
-as Table 1 in research articles, @code{tableC()} which produces a well-formatted
-table of correlations, @code{tableF()} which provides frequency counts, and
+as Table 1 in research articles, @code{tableC}() which produces a well-formatted
+table of correlations, @code{tableF}() which provides frequency counts, and
 washer() which is helpful in cleaning up the data.  These furniture-themed
 functions are designed to simplify common tasks in quantitative analysis.  Other
 data summary and cleaning tools are also available.")
@@ -1260,13 +1260,13 @@ data summary and cleaning tools are also available.")
 (define-public r-funwithnumbers
   (package
     (name "r-funwithnumbers")
-    (version "1.1")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FunWithNumbers" version))
               (sha256
                (base32
-                "16w5hna0dm89alkch9wf7n8mqqz75scwg0g84qf57bl6sihnp750"))))
+                "1342n3gsrlk70njj45vxpk5sl467pxmsixkmvi4s9aim6d9my7pn"))))
     (properties `((upstream-name . "FunWithNumbers")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmpfr r-gmp))
@@ -1434,7 +1434,7 @@ describe the index of the functional predictor, but the same methods can equally
 be used for another unidimensional continuous index, such as space along a
 north-south axis.  Note that most of the functionality of this package has been
 superseded by added features after 2016 in the pfr function by Jonathan Gellar,
-Mathew W. @code{McLean,} Jeff Goldsmith, and Fabian Scheipl, in the refund
+Mathew W. @code{McLean}, Jeff Goldsmith, and Fabian Scheipl, in the refund
 package built by Jeff Goldsmith and co-authors and maintained by Julia Wrobel.
 The development of the funreg package in 2015 and 2016 was part of a research
 project supported by Award R03 CA171809-01 from the National Cancer Institute
@@ -1633,7 +1633,7 @@ switch between different funnel types, like first-first and last-firstafter.")
     (description
      "Fits a functional mediation model with a scalar distal outcome.  The method is
 described in detail by Coffman, Dziak, Litson, Chakraborti, Piper & Li (2021)
-@code{<arXiv:2112.03960>.} The model is similar to that of Lindquist (2012)
+<@code{arXiv:2112.03960>}.  The model is similar to that of Lindquist (2012)
 <doi:10.1080/01621459.2012.695640> although allowing a binary outcome as an
 alternative to a numerical outcome.  The development of this package was part of
 a research project supported by National Institutes of Health grants P50
@@ -1671,13 +1671,13 @@ series.")
 (define-public r-funkyheatmap
   (package
     (name "r-funkyheatmap")
-    (version "0.3.0")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "funkyheatmap" version))
               (sha256
                (base32
-                "1fvrkdc82dx8vzg6cgkga37nnk94635n9jp1ndgj2nr6q3k6zli9"))))
+                "1rx68k6znp3r5fc347mfxy981nvjibr5hcgf1a8c2q33hmbyqbi9"))))
     (properties `((upstream-name . "funkyheatmap")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -1686,6 +1686,7 @@ series.")
                              r-rdpack
                              r-rcolorbrewer
                              r-purrr
+                             r-patchwork
                              r-jsonlite
                              r-ggplot2
                              r-ggforce
@@ -1694,7 +1695,7 @@ series.")
                              r-cli
                              r-assertthat))
     (native-inputs (list r-knitr))
-    (home-page "https://funkyheatmap.dynverse.org")
+    (home-page "https://funkyheatmap.github.io/funkyheatmap/")
     (synopsis "Generating Funky Heatmaps for Data Frames")
     (description
      "Allows generating heatmap-like visualisations for benchmark data frames.  Funky
@@ -2034,7 +2035,7 @@ Wilson, Joan E. Bailey-Wilson, and Momiao Xiong (2013)
 network models.  In other words, this package will allow users to build deep
 learning models that have either functional or scalar responses paired with
 functional and scalar covariates.  We implement the theoretical discussion found
-in Thind, Multani and Cao (2020) @code{<arXiv:2006.09590>} through the help of a
+in Thind, Multani and Cao (2020) <@code{arXiv:2006.09590>} through the help of a
 main fitting and prediction function as well as a number of helper functions to
 assist with cross-validation, tuning, and the display of estimated functional
 weights.")
@@ -2090,12 +2091,12 @@ dependency using asymptotic chi-squared or exact distributions.  Functional test
 statistics are asymmetric and functionally optimal, unique from other related
 statistics.  Tests in this package reveal evidence for causality based on the
 causality-by- functionality principle.  They include asymptotic functional
-chi-squared tests (Zhang & Song 2013) @code{<arXiv:1311.2707>,} an adapted
+chi-squared tests (Zhang & Song 2013) <@code{arXiv:1311.2707>}, an adapted
 functional chi-squared test (Kumar & Song 2022)
 <doi:10.1093/bioinformatics/btac206>, and an exact functional test (Zhong & Song
 2019) <doi:10.1109/TCBB.2018.2809743> (Nguyen et al.  2020)
 <doi:10.24963/ijcai.2020/372>.  The normalized functional chi-squared test was
-used by Best Performer @code{NMSUSongLab} in HPN-DREAM (DREAM8) Breast Cancer
+used by Best Performer NMSU@code{SongLab} in HPN-DREAM (DREAM8) Breast Cancer
 Network Inference Challenges (Hill et al.  2016) <doi:10.1038/nmeth.3773>.  A
 function index (Zhong & Song 2019) <doi:10.1186/s12920-019-0565-9> (Kumar et al.
  2018) <doi:10.1109/BIBM.2018.8621502> derived from the functional test
@@ -2125,7 +2126,7 @@ Pearson's chi-squared or Fisher's exact tests.")
     (description
      "YACFP (Yet Another Convenience Function Package).  get_age() is a fast &
 accurate tool for measuring fractional years between two dates.
-@code{abbr_to_colClass()} is a much more concise way of feeding many types to a
+abbr_to_@code{colClass}() is a much more concise way of feeding many types to a
 @code{colClass} argument in a data reader.  stale_package_check() tries to
 identify any library() calls to unused packages.")
     (license license:gpl2+)))
@@ -2187,7 +2188,7 @@ monitoring of functional data, using the methods of Capezza et al. (2020)
     (description
      "Compute alpha and beta contributional diversity metrics, which is intended for
 linking taxonomic and functional microbiome data.  See @code{GitHub} repository
-for the tutorial: @code{<https://github.com/gavinmdouglas/FuncDiv/wiki>.}
+for the tutorial: <https://github.com/gavinmdouglas/@code{FuncDiv/wiki>}.
 Citation: Gavin M. Douglas, Sunu Kim, Morgan G. I. Langille, B. Jesse Shapiro
 (2023) <doi:10.1093/bioinformatics/btac809>.")
     (license license:agpl3)))
@@ -2278,7 +2279,7 @@ sweeper and sliding puzzles.")
      "Enable researchers to adjust identification rates using the 1/(lineup size)
 method, generate the full receiver operating characteristic (ROC) curves, and
 statistically compare the area under the curves (AUC).  References: Yueran Yang
-& Andrew Smith. (2020). @code{\"fullROC:} An R package for generating and
+& Andrew Smith. (2020). \"@code{fullROC}: An R package for generating and
 analyzing eyewitness-lineup ROC curves\". <doi:10.13140/RG.2.2.20415.94885/1> ,
 Andrew Smith, Yueran Yang, & Gary Wells. (2020). \"Distinguishing between
 investigator discriminability and eyewitness discriminability: A method for
@@ -2346,7 +2347,7 @@ developed by Jordan Mark Barbone.")
      "As in music, a fugue statistic repeats a theme in small variations.  Here, the
 psi-function that defines an m-statistic is slightly altered to maintain the
 same design sensitivity in matched sets of different sizes.  The main functions
-in the package are sen() and @code{senCI().} For sensitivity analyses for
+in the package are sen() and @code{senCI}().  For sensitivity analyses for
 m-statistics, see Rosenbaum (2007) Biometrics 63 456-464
 <doi:10.1111/j.1541-0420.2006.00717.x>.")
     (license license:gpl2)))
@@ -2483,7 +2484,7 @@ spectral density operator in frequencies and along the curve length.")
     (description
      "This package provides functions for visualizing, modeling, forecasting and
 hypothesis testing of functional time series. \\n Jim\\'{e}nez-Var\\'{o}n, C., Sun,
-Y. and Shang, H. L. (2023) @code{<arXiv:} 2305.19749>.")
+Y. and Shang, H. L. (2023) <@code{arXiv}: 2305.19749>.")
     (license license:gpl3)))
 
 (define-public r-ftrcool
@@ -2511,10 +2512,10 @@ package, users can convert biological sequences to discrete models based on
 chosen properties.  References: @code{iLearn} Z. Chen et al. (2019)
 <DOI:10.1093/bib/bbz041>. @code{iFeature} Z. Chen et al. (2018)
 <DOI:10.1093/bioinformatics/bty140>.
-@code{<https://CRAN.R-project.org/package=rDNAse>.} @code{PseKRAAC} Y. Zuo et
-al. @code{PseKRAAC:} a flexible web server for generating pseudo K-tuple reduced
+<https://CRAN.R-project.org/package=@code{rDNAse>}. @code{PseKRAAC} Y. Zuo et
+al. @code{PseKRAAC}: a flexible web server for generating pseudo K-tuple reduced
 amino acids composition (2017) <DOI:10.1093/bioinformatics/btw564>.
-@code{iDNA6mA-PseKNC} P. Feng et al. @code{iDNA6mA-PseKNC:} Identifying DNA
+@code{iDNA6mA-PseKNC} P. Feng et al. @code{iDNA6mA-PseKNC}: Identifying DNA
 N6-methyladenosine sites by incorporating nucleotide physicochemical properties
 into @code{PseKNC} (2019) <DOI:10.1016/j.ygeno.2018.01.005>.  I. Dubchak et al.
 Prediction of protein folding class using global description of amino acid
@@ -2984,7 +2985,7 @@ ISBN:9783527406234)), graphical LASSO (see Haworth and Cheng (2014)
 Models\" in Contributions to Statistics, in production), least angle regression
 (see Gelper and Croux (2008) <https://lirias.kuleuven.be/retrieve/16024>),
 mutual information (see Schelter et al. (2006, ISBN:9783527406234), Liu et al.
-(2016) @code{<doi:10.1109/ChiCC.2016.7554480>),} and partial spectral coherence
+(2016) <doi:10.1109/@code{ChiCC.2016.7554480>}), and partial spectral coherence
 (see Davis et al.(2016) <doi:10.1080/10618600.2015.1092978>).  In addition, the
 package implements functions for ensemble feature selection (using feature
 ranking and majority voting).  The package is implemented within Dmitry
@@ -3137,7 +3138,7 @@ which for many rows contain all 1's.")
     (description
      "Feature subset selection algorithms modularized in search algorithms and measure
 utilities.  Full list and more information available at
-@code{<https://dicits.ugr.es/software/FSinR/>.}")
+<https://dicits.ugr.es/software/F@code{SinR/>}.")
     (license license:gpl3)))
 
 (define-public r-fsia
@@ -3155,7 +3156,7 @@ utilities.  Full list and more information available at
     (home-page "https://cran.r-project.org/package=fsia")
     (synopsis "Import and Analysis of OMR Data from FormScanner")
     (description
-     "Import data of tests and questionnaires from @code{FormScanner.}
+     "Import data of tests and questionnaires from @code{FormScanner}.
 @code{FormScanner} is an open source software that converts scanned images to
 data using optical mark recognition (OMR) and it can be downloaded from
 <http://sourceforge.net/projects/formscanner/>.  The spreadsheet file created by
@@ -3610,7 +3611,7 @@ binomial, negative-binomial, gamma, and inverse-Gaussian) by employing a
 generalised linear mixed model (GLMM) framework.  Zammit-Mangion and Cressie
 <doi:10.18637/jss.v098.i04> describe `FRK` in a Gaussian setting, and detail its
 use of basis functions and BAUs, while Sainsbury-Dale et al.
-@code{<arXiv:2110.02507>} describe `FRK` in a non-Gaussian setting; two
+<@code{arXiv:2110.02507>} describe `FRK` in a non-Gaussian setting; two
 vignettes are available that summarise these papers and provide additional
 examples.")
     (license license:gpl2+)))
@@ -3923,7 +3924,7 @@ Liberty (2013) <doi:10.1145/2487575.2487623>).")
 dedicated to spectral decomposition of connectedness measures and their
 interpretation.  We implement all the developed estimators as well as the
 historical counterparts.  For more information, see the help or @code{GitHub}
-page @code{(<https://github.com/tomaskrehlik/frequencyConnectedness>)} for
+page (<https://github.com/tomaskrehlik/@code{frequencyConnectedness>}) for
 relevant information.")
     (license license:gpl2)))
 
@@ -4012,7 +4013,7 @@ occurrence/nonoccurrence behavioral data.")
      "Estimates Allele Frequency on qPCR DeltaDeltaCq from Bulk Samples")
     (description
      "Interval estimation of the population allele frequency from @code{qPCR} analysis
-based on the restriction enzyme digestion @code{(RED)-DeltaDeltaCq} method
+based on the restriction enzyme digestion (RED)-@code{DeltaDeltaCq} method
 (Osakabe et al.  2017, <doi:10.1016/j.pestbp.2017.04.003>), as well as general
 @code{DeltaDeltaCq} analysis.  Compatible with the Cq measurement of DNA
 extracted from multiple individuals at once, so called \"group-testing\", this
@@ -4455,7 +4456,7 @@ in publications please use Hankin (2022) <doi:10.48550/ARXIV.2211.04002>.")
      "Unified regularized estimating equation solver.  Currently the package includes
 one solver with the l1 penalty only.  More solvers and penalties are under
 development.  Reference: Yi Yang, Yuwen Gu, Yue Zhao, Jun Fan (2021)
-@code{<arXiv:2110.11074>.}")
+<@code{arXiv:2110.11074>}.")
     (license license:gpl3)))
 
 (define-public r-fredr
@@ -4566,13 +4567,13 @@ generate fuzzy IF-THEN rules automatically from numerical data, covering both
 steps.  Approaches that have been used in the past are, e.g., heuristic
 procedures, neuro-fuzzy techniques, clustering methods, genetic algorithms,
 squares methods, etc.  Furthermore, in this version we provide a universal
-framework named @code{frbsPMML',} which is adopted from the Predictive Model
+framework named @code{frbsPMML}', which is adopted from the Predictive Model
 Markup Language (PMML), for representing FRBS models.  PMML is an XML-based
 language to provide a standard for describing models produced by data mining and
 machine learning algorithms.  Therefore, we are allowed to export and import an
-FRBS model to/from @code{frbsPMML'.} Finally, this package aims to implement the
-most widely used standard procedures, thus offering a standard package for FRBS
-modeling to the R community.")
+FRBS model to/from @code{frbsPMML}'.  Finally, this package aims to implement
+the most widely used standard procedures, thus offering a standard package for
+FRBS modeling to the R community.")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -4593,7 +4594,7 @@ modeling to the R community.")
     (description
      "Generating fractional binomial random variables and computing density,
 cumulative distribution, and quantiles of fractional binomial distributions.
-(Lee, J. (2023) @code{<arXiv:2209.01516>.)}")
+(Lee, J. (2023) <@code{arXiv:2209.01516>}.)")
     (license license:expat)))
 
 (define-public r-frapplot
@@ -5208,7 +5209,7 @@ these distributions, the included functions calculate critical values and
 P-values used in unit root tests, cointegration tests, and rank tests in the
 Fractionally Cointegrated Vector Autoregression (FCVAR) model.  The functions
 implement procedures for tests described in the following articles: Johansen, S.
-and M. Ã.  Nielsen (2012) <doi:10.3982/ECTA9299>, @code{MacKinnon,} J. G. and
+and M. Ã.  Nielsen (2012) <doi:10.3982/ECTA9299>, @code{MacKinnon}, J. G. and
 M. Ã.  Nielsen (2014) <doi:10.1002/jae.2295>.")
     (license license:gpl3)))
 
@@ -5240,13 +5241,13 @@ The underlying mathematical structure is the Free Abelian group, hence the name.
 (define-public r-fqar
   (package
     (name "r-fqar")
-    (version "0.4.0")
+    (version "0.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fqar" version))
               (sha256
                (base32
-                "08z7wh2shsp6xnhgpxvba3mi8jgxsrv090y0klpbiiybwjzn239h"))))
+                "0mn8dxa1ialfjyhnrpg732j4jiwvk2ykr7ykhf3sf99x9b3rwy9l"))))
     (properties `((upstream-name . "fqar")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -5528,7 +5529,7 @@ analyze them from different points of view.")
      "Weighted Segmentation using Functional Pruning and Optimal Partioning")
     (description
      "Weighted-L2 FPOP Maidstone et al. (2017) <doi:10.1007/s11222-016-9636-3> and
-@code{pDPA/FPSN} Rigaill (2010) @code{<arXiv:1004.0887>} algorithm for detecting
+@code{pDPA/FPSN} Rigaill (2010) <@code{arXiv:1004.0887>} algorithm for detecting
 multiple changepoints in the mean of a vector.  Also includes a few model
 selection functions using Lebarbier (2005) <doi:10.1016/j.sigpro.2004.11.012>
 and the capsushe package.")
@@ -5801,7 +5802,7 @@ sparse functional design.  See the manuscript by Koner and Luo (2023)
 <https://salilkoner.github.io/assets/PASS_manuscript.pdf> for details of the
 PASS formula and computational details.  The details of the testing procedure
 for univariate and multivariate response are presented in Wang (2021)
-<doi:10.1214/21-EJS1802> and Koner and Luo (2023) @code{<arXiv:2302.05612>}
+<doi:10.1214/21-EJS1802> and Koner and Luo (2023) <@code{arXiv:2302.05612>}
 respectively.")
     (license license:expat)))
 
@@ -5858,7 +5859,7 @@ patterns.")
     (description
      "This package implements parsimonious hidden Markov models for four-way data via
 expectation- conditional maximization algorithm, as described in Tomarchio et
-al. (2020) @code{<arXiv:2107.04330>.} The matrix-variate normal distribution is
+al. (2020) <@code{arXiv:2107.04330>}.  The matrix-variate normal distribution is
 used as emission distribution.  For each hidden state, parsimony is reached via
 the eigen-decomposition of the covariance matrices of the emission distribution.
  This produces a family of 98 parsimonious hidden Markov models.")
@@ -6010,7 +6011,7 @@ image texture.")
     (home-page "https://cran.r-project.org/package=FossilSimShiny")
     (synopsis "Shiny Application for 'FossilSim'")
     (description
-     "This package provides a shiny application based on @code{FossilSim'.} Used for
+     "This package provides a shiny application based on @code{FossilSim}'.  Used for
 simulating tree, taxonomic and fossil data under mechanistic models of
 speciation, preservation and sampling.")
     (license license:gpl3+)))
@@ -6106,7 +6107,7 @@ areas.")
      "Anonymized data from surveys conducted by Forwards
 <https://forwards.github.io/>, the R Foundation task force on women and other
 under-represented groups.  Currently, a single data set of responses to a survey
-of attendees at @code{useR!} 2016 @code{<https://www.r-project.org/useR-2016/>,}
+of attendees at @code{useR}! 2016 <https://www.r-project.org/@code{useR-2016/>},
 the R user conference held at Stanford University, Stanford, California, USA,
 June 27 - June 30 2016.")
     (license license:cc0)))
@@ -6329,7 +6330,7 @@ to guide an investigation of the data.")
      "Simple Connection Between the 'FormShare App' and 'R' for Advanced Analytics")
     (description
      "This package provides analytics directly from R'.  It requires: @code{FormShare}
-App': @code{<https://github.com/qlands/FormShare} >= 2.22.0> .  Analytics
+App': <https://github.com/qlands/@code{FormShare} >= 2.22.0> .  Analytics
 plugin: <https://github.com/qlands/formshare_analytics_plugin> .  Remote SQL
 plugin: <https://github.com/qlands/formshare_sql_plugin> .")
     (license license:gpl3)))
@@ -6754,7 +6755,7 @@ Husch (2016). <doi:10.1002/9781118902028>.")
     (synopsis "Interactive Forest Plot")
     (description
      "Interactive forest plot for clinical trial safety analysis using metalite',
-reactable', plotly', and Analysis Data Model @code{(ADaM)} datasets.  Includes
+reactable', plotly', and Analysis Data Model (A@code{DaM}) datasets.  Includes
 functionality for adverse event filtering, incidence-based group filtering,
 hover-over reveals, and search and sort operations.  The workflow allows for
 metadata construction, data preparation, output formatting, and interactive plot
@@ -7009,7 +7010,7 @@ and Wallace (2001) <doi: 10.1287/mnsc.47.2.295.9834>.")
     (description
      "Approximate false positive rate control in selection frequency for random forest
 using the methods described by Ender Konukoglu and Melanie Ganz (2014)
-@code{<arXiv:1410.2838>.} Methods for calculating the selection frequency
+<@code{arXiv:1410.2838>}.  Methods for calculating the selection frequency
 threshold at false positive rates and selection frequency false positive rate
 feature selection.")
     (license license:expat)))
@@ -7187,7 +7188,7 @@ enhancing the reliability and efficiency of missing person investigations.")
     (description
      "Classical (bottom-up and top-down), optimal and heuristic combination forecast
 point (Di Fonzo and Girolimetto, 2023) <doi:10.1016/j.ijforecast.2021.08.004>
-and probabilistic (Girolimetto et al.  2023) @code{<arXiv:2303.17277>}
+and probabilistic (Girolimetto et al.  2023) <@code{arXiv:2303.17277>}
 reconciliation procedures for cross-sectional, temporal, and cross-temporal
 linearly constrained time series.")
     (license license:gpl3)))
@@ -7243,9 +7244,9 @@ used.  Detailed discussion is provided in the vignette.")
 coefficients based on localised and iterated Yule-Walker estimates and empirical
 mean squared and absolute prediction errors for the resulting predictors.  Also,
 functions to compute autocovariances for AR(p) processes, to simulate
-@code{tvARMA(p,q)} time series, and to verify an assumption from Kley et al.
+@code{tvARMA(p,q}) time series, and to verify an assumption from Kley et al.
 (2019), Electronic of Statistics, forthcoming.  Preprint
-@code{<arXiv:1611.04460>.}")
+<@code{arXiv:1611.04460>}.")
     (license license:gpl2+)))
 
 (define-public r-forecastml
@@ -7374,7 +7375,7 @@ supported to evaluate model accuracy.")
     (description
      "This package provides a web application for displaying, analysing and
 forecasting univariate time series.  Includes basic methods such as mean,
-@code{naÃ¯ve,} seasonal @code{naÃ¯ve} and drift, as well as more complex methods
+@code{naÃ¯ve}, seasonal @code{naÃ¯ve} and drift, as well as more complex methods
 such as Holt-Winters Box,G and Jenkins, G (1976) <doi:10.1111/jtsa.12194> and
 ARIMA Brockwell, P.J. and R.A.Davis (1991) <doi:10.1007/978-1-4419-0320-4>.")
     (license license:gpl2+)))
@@ -7425,7 +7426,7 @@ subset regressions and Information-theoretic (information criteria based).")
     (description
      "This package provides geometric- and regression-based forecast combination
 methods under a unified user interface for the packages
-@code{ForecastCombinations} and @code{GeomComb'.} Additionally, updated tools
+@code{ForecastCombinations} and @code{GeomComb}'.  Additionally, updated tools
 and convenience functions for data pre-processing are available in order to deal
 with common problems in forecast combination (missingness, collinearity).  For
 method details see Hsiao C, Wan SK (2014). <doi:10.1016/j.jeconom.2013.11.003>,
@@ -7451,7 +7452,7 @@ Timmermann A (2013). <doi:10.1016/j.jeconom.2013.04.017>, and Clemen RT (1989).
     (home-page "https://github.com/gmgeorg/ForeCA")
     (synopsis "Forecastable Component Analysis")
     (description
-     "Implementation of Forecastable Component Analysis @code{('ForeCA'),} including
+     "Implementation of Forecastable Component Analysis ('@code{ForeCA}'), including
 main algorithms and auxiliary function (summary, plotting, etc.) to apply
 @code{ForeCA} to multivariate time series data. @code{ForeCA} is a novel
 dimension reduction (DR) technique for temporally dependent signals.  Contrary
@@ -7612,13 +7613,13 @@ business), and emissions metric (e.g. carbon dioxide equivalent, methane).")
 (define-public r-footbayes
   (package
     (name "r-footbayes")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "footBayes" version))
               (sha256
                (base32
-                "1q2xcrrw4x2jdvxr5q3l9lh0sfg3wjw06s9qzil11pb93h5l2ik6"))))
+                "0gp784ad34ygnn06r4p1y3nqdx372ypgcgm94fcm1lqslsn7akj0"))))
     (properties `((upstream-name . "footBayes")))
     (build-system r-build-system)
     (inputs (list pandoc pandoc))
@@ -7640,7 +7641,8 @@ business), and emissions metric (e.g. carbon dioxide equivalent, methane).")
     (description
      "This is the first package allowing for the estimation, visualization and
 prediction of the most well-known football models: double Poisson, bivariate
-Poisson, Skellam, student_t.  The package allows Hamiltonian Monte Carlo (HMC)
+Poisson, Skellam, student_t, diagonal-inflated bivariate Poisson, and
+zero-inflated Skellam.  The package allows Hamiltonian Monte Carlo (HMC)
 estimation through the underlying Stan environment and Maximum Likelihood
 estimation (MLE, for static models only).  The model construction relies on the
 most well-known football references, such as Dixon and Coles (1997)
@@ -7867,30 +7869,6 @@ data analysis, compositional data analysis, diversity measurement, etc.).")
     (description "Supports the use of standardized folder names.")
     (license license:expat)))
 
-(define-public r-folderfun
-  (package
-    (name "r-folderfun")
-    (version "0.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "folderfun" version))
-              (sha256
-               (base32
-                "0rns8590r1897lj0gyrlj0zbaxjw2gjaxwnwdxiiw2kvyq7mjkis"))))
-    (properties `((upstream-name . "folderfun")))
-    (build-system r-build-system)
-    (native-inputs (list r-knitr))
-    (home-page "http://code.databio.org/folderfun")
-    (synopsis
-     "Creates and Manages Folder Functions for Portable Large-Scale R Analysis")
-    (description
-     "If you find yourself working on multiple different projects in R, you'll want a
-series of folders pointing to raw data, processed data, plot results,
-intermediate table outputs, etc.  This package makes it easier to do that by
-providing a quick and easy way to create and use functions for project-level
-directories.")
-    (license license:bsd-2)))
-
 (define-public r-foghorn
   (package
     (name "r-foghorn")
@@ -7944,7 +7922,7 @@ labels.  If color label categories are given, hover over colors in the legend to
 highlight only those points and click on colors to highlight multiple groups.
 For more information on the rationale and mathematical background, as well as an
 interactive introduction, see
-@code{<https://lea-urpa.github.io/focusedMDS.html>.}")
+<https://lea-urpa.github.io/@code{focusedMDS.html>}.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-foci
@@ -7967,7 +7945,7 @@ interactive introduction, see
      "Feature Ordering by Conditional Independence (FOCI) is a variable selection
 algorithm based on the measure of conditional dependence.  For more information,
 see the paper: Azadkia and Chatterjee (2019),\"A simple measure of conditional
-dependence\" @code{<arXiv:1910.12327>.}")
+dependence\" <@code{arXiv:1910.12327>}.")
     (license license:gpl3)))
 
 (define-public r-fnonlinear
@@ -8018,9 +7996,9 @@ processes and to simulate different types of chaotic time series maps.")
      "This package implements methods for network estimation and forecasting of
 high-dimensional time series exhibiting strong serial and cross-sectional
 correlations under a factor-adjusted vector autoregressive model.  See
-Barigozzi, Cho and Owens (2022) @code{<arXiv:2201.06110>} for further
+Barigozzi, Cho and Owens (2022) <@code{arXiv:2201.06110>} for further
 descriptions of FNETS methodology and Owens, Cho and Barigozzi (2023)
-@code{<arXiv:2301.11675>} accompanying the R package.")
+<@code{arXiv:2301.11675>} accompanying the R package.")
     (license license:gpl3+)))
 
 (define-public r-fmultivar
@@ -8043,7 +8021,7 @@ descriptions of FNETS methodology and Owens, Cho and Barigozzi (2023)
     (description
      "This package provides a collection of functions inspired by Venables and Ripley
 (2002) <doi:10.1007/978-0-387-21706-2> and Azzalini and Capitanio (1999)
-@code{<arXiv:0911.2093>} to manage, investigate and analyze bivariate and
+<@code{arXiv:0911.2093>} to manage, investigate and analyze bivariate and
 multivariate data sets of financial returns.")
     (license license:gpl2+)))
 
@@ -8188,7 +8166,7 @@ al. (2014) <doi:10.1016/j.neuroimage.2014.03.028>).")
     (description
      "Data-driven @code{fMRI} denoising with projection scrubbing (Pham et al (2022)
 <doi:10.1016/j.neuroimage.2023.119972>).  Also includes routines for DVARS
-(Derivatives @code{VARianceS)} (Afyouni and Nichols (2018)
+(Derivatives VA@code{RianceS}) (Afyouni and Nichols (2018)
 <doi:10.1016/j.neuroimage.2017.12.098>), motion scrubbing (Power et al (2012)
 <doi:10.1016/j.neuroimage.2011.10.018>), @code{aCompCor} (anatomical Components
 Correction) (Muschelli et al (2014) <doi:10.1016/j.neuroimage.2014.03.028>),
@@ -8245,7 +8223,7 @@ detailed by Friedman and Glover (2006) <doi:10.1002/jmri.20583>.")
     (description
      "This package provides functions that support stable prediction and
 classification with radiomics data through factor-analytic modeling.  For
-details, see Peeters et al. (2019) @code{<arXiv:1903.11696>.}")
+details, see Peeters et al. (2019) <@code{arXiv:1903.11696>}.")
     (license license:gpl2+)))
 
 (define-public r-fmpcloudr
@@ -8408,7 +8386,7 @@ Daehlen (2006) <doi:10.1007/3-540-33261-8>.")
     (description
      "Heterogeneity pursuit methodologies for regularized finite mixture regression by
 effects-model formulation proposed by Li et al. (2021)
-@code{<arXiv:2003.04787>.}")
+<@code{arXiv:2003.04787>}.")
     (license license:gpl3+)))
 
 (define-public r-fmeffects
@@ -8439,7 +8417,7 @@ effects-model formulation proposed by Li et al. (2021)
 with forward marginal effects.  You provide a model and data, and fmeffects
 computes feature effects.  The package is based on the theory in: C. A.
 Scholbeck, G. Casalicchio, C. Molnar, B. Bischl, and C. Heumann (2022)
-@code{<arXiv:2201.08837>.}")
+<@code{arXiv:2201.08837>}.")
     (license license:lgpl3)))
 
 (define-public r-fme
@@ -8468,9 +8446,9 @@ Scholbeck, G. Casalicchio, C. Molnar, B. Bischl, and C. Heumann (2022)
      "This package provides functions to help in fitting models to data, to perform
 Monte Carlo, sensitivity and identifiability analysis.  It is intended to work
 with models be written as a set of differential equations that are solved either
-by an integration routine from package @code{deSolve',} or a steady-state solver
-from package @code{rootSolve'.} However, the methods can also be used with other
-types of functions.")
+by an integration routine from package @code{deSolve}', or a steady-state solver
+from package @code{rootSolve}'.  However, the methods can also be used with
+other types of functions.")
     (license license:gpl2+)))
 
 (define-public r-fmdates
@@ -8501,13 +8479,13 @@ counter) calculations.")
 (define-public r-fmcmc
   (package
     (name "r-fmcmc")
-    (version "0.5-1")
+    (version "0.5-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fmcmc" version))
               (sha256
                (base32
-                "1w8qchyh3ry5nphv76pdbryp6hq8bccfhwzmsnghgzfd8hirrg27"))))
+                "0swlghwsir1gjw5n2c8kfi5zh6bbqjhk7nnjds2b6656s8xdpr9a"))))
     (properties `((upstream-name . "fmcmc")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-mass r-coda))
@@ -8628,7 +8606,7 @@ probability-based method that uses Masked Language Models to measure conceptual
 associations or relations (e.g., attitudes, biases, stereotypes, social norms,
 cultural values) as propositional representations in natural language.  The
 supported language models include BERT (Devlin et al., 2018)
-@code{<arXiv:1810.04805>} and its model variants available at Hugging Face
+<@code{arXiv:1810.04805>} and its model variants available at Hugging Face
 <https://huggingface.co/models?pipeline_tag=fill-mask>.  Python ('conda')
 environment and the transformers module can be installed automatically using the
 FMAT_load() function.  Methodological references and technical details are
@@ -8897,8 +8875,8 @@ compressed integer arithmetic via bit-manipulations; (e) distributed computing
 infrastructure for multidimensional subset sum; (f) arbitrary-precision
 zero-margin-of-error multidimensional Subset Sum accelerated by a simplified
 Bloom filter.  The package contains a copy of @code{xxHash} from
-@code{<https://github.com/Cyan4973/xxHash>.} Package vignette
-@code{(<arXiv:1612.04484v3>)} detailed a few historical updates.  Functions
+<https://github.com/Cyan4973/@code{xxHash>}.  Package vignette
+(<@code{arXiv:1612.04484v3>}) detailed a few historical updates.  Functions
 prefixed with aux (auxiliary) are independent implementations of published
 algorithms for solving optimization problems less relevant to Subset Sum.")
     (license license:gpl3)))
@@ -8920,7 +8898,7 @@ algorithms for solving optimization problems less relevant to Subset Sum.")
     (description
      "This package implements a path algorithm for the Fused Lasso Signal
 Approximator.  For more details see the help files or the article by Hoefling
-(2009) @code{<arXiv:0910.0526>.}")
+(2009) <@code{arXiv:0910.0526>}.")
     (license license:gpl2)))
 
 (define-public r-flr
@@ -8991,7 +8969,7 @@ measurement models.  Sales & Pane (2019). <doi:10.1214/18-AOAS1196>.")
     (synopsis
      "Tracing Information Flow for Inter-Software Comparisons in Mass Spectrometry-Based Bottom-Up Proteomics")
     (description
-     "Useful functions to standardize software outputs from @code{ProteomeDiscoverer,}
+     "Useful functions to standardize software outputs from @code{ProteomeDiscoverer},
 Spectronaut, DIA-NN and @code{MaxQuant} on precursor, modified peptide and
 proteingroup level and to trace software differences for identifications such as
 varying proteingroup denotations for common precursor.")
@@ -9195,7 +9173,7 @@ ISBN: 0918334683, 9780918334688).")
 quantiles of river flow distributions.  The focus is on regional estimation
 based on homogeneity assumptions and computed from multivariate observations
 (multiple measurement stations).  For details see Kinsvater et al. (2017)
-@code{<arXiv:1701.06455>.}")
+<@code{arXiv:1701.06455>}.")
     (license license:gpl2+)))
 
 (define-public r-flobr
@@ -10199,7 +10177,7 @@ function names.")
      "Shed light on black box machine learning models by the help of model
 performance, variable importance, global surrogate models, ICE profiles, partial
 dependence (Friedman J. H. (2001) <doi:10.1214/aos/1013203451>), accumulated
-local effects (Apley D. W. (2016) @code{<arXiv:1612.08468>),} further effects
+local effects (Apley D. W. (2016) <@code{arXiv:1612.08468>}), further effects
 plots, interaction strength, and variable contribution breakdown (Gosiewska and
 Biecek (2019) <arxiv:1903.11420>).  All tools are implemented to work with case
 weights and allow for stratified analysis.  Furthermore, multiple flashlights
@@ -10271,11 +10249,11 @@ statistical latent variable models for the simultaneous clustering and
 segmentation of heterogeneous functional data (i.e time series, or more
 generally longitudinal data, fitted by unsupervised algorithms, including EM
 algorithms.  Functional Latent Data Models for Clustering heterogeneous curves
-@code{('FLaMingos')} are originally introduced and written in Matlab by Faicel
+('F@code{LaMingos}') are originally introduced and written in Matlab by Faicel
 Chamroukhi
 <https://github.com/fchamroukhi?utf8=?&tab=repositories&q=mix&type=public&language=matlab>.
  The references are mainly the following ones.  Chamroukhi F. (2010)
-@code{<https://chamroukhi.com/FChamroukhi-PhD.pdf>.} Chamroukhi F., Same A.,
+<https://chamroukhi.com/FChamroukhi-@code{PhD.pdf>}.  Chamroukhi F., Same A.,
 Govaert, G. and Aknin P. (2010) <doi:10.1016/j.neucom.2009.12.023>.  Chamroukhi
 F., Same A., Aknin P. and Govaert G. (2011). <doi:10.1109/IJCNN.2011.6033590>.
 Same A., Chamroukhi F., Govaert G. and Aknin, P. (2011)
@@ -10507,7 +10485,7 @@ visualization of the state vector and graphical diagnostics of the residuals.")
 with 3 replaced by Fizz and 5 replaced by Buzz, with the option of specifying
 start and end numbers, step size and the numbers being replaced by fizz and
 buzz, respectively.  This package gives interviewers the optional answer of \"I
-use @code{fizzbuzzR::fizzbuzz()\"} when interviewing rather than having to write
+use @code{fizzbuzzR::fizzbuzz}()\" when interviewing rather than having to write
 an algorithm themselves.")
     (license license:gpl3+)))
 
@@ -10555,7 +10533,7 @@ an algorithm themselves.")
     (description
      "Several generalized / directional Fixed Sequence Multiple Testing Procedures
 (FSMTPs) are developed for testing a sequence of pre-ordered hypotheses while
-controlling the FWER, FDR and Directional Error @code{(mdFWER).} All three FWER
+controlling the FWER, FDR and Directional Error (@code{mdFWER}).  All three FWER
 controlling generalized FSMTPs are designed under arbitrary dependence, which
 allow any number of acceptances.  Two FDR controlling generalized FSMTPs are
 respectively designed under arbitrary dependence and independence, which allow
@@ -10835,7 +10813,7 @@ packages.")
     (synopsis "Fit Univariate Mixed and Usual Distributions")
     (description
      "Extends the fitdist() (from fitdistrplus') adding the Anderson-Darling ad.test()
-(from @code{ADGofTest')} and Kolmogorov Smirnov Test ks.test() inside, trying
+(from AD@code{GofTest}') and Kolmogorov Smirnov Test ks.test() inside, trying
 the distributions from stats package by default and offering a second function
 which uses mixed distributions to fit, this distributions are split with
 unsupervised learning, with Mclust() function (from mclust').")
@@ -11115,7 +11093,7 @@ longitudinal data, and construct potential landscapes thereafter.  The vector
 fields can be estimated with two nonparametric methods: the Multivariate Vector
 Field Kernel Estimator (MVKE) by Bandi & Moloche (2018)
 <doi:10.1017/S0266466617000305> and the Sparse Vector Field Consensus
-@code{(SparseVFC)} algorithm by Ma et al. (2013)
+(@code{SparseVFC}) algorithm by Ma et al. (2013)
 <doi:10.1016/j.patcog.2013.05.017>.  The potential landscapes can be constructed
 with a simulation-based approach with the simlandr package (Cui et al., 2021)
 <doi:10.31234/osf.io/pzva3>, or the Bhattacharya et al. (2011) method for path
@@ -11174,13 +11152,13 @@ Approximate Maximum Likelihood and the Cross-Entropy methods.  See Bee, M.
 (define-public r-fitconic
   (package
     (name "r-fitconic")
-    (version "1.2")
+    (version "1.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fitConic" version))
               (sha256
                (base32
-                "0mwnbq32mpj8d4127jwb283mn3gs4hm0klwk9prsrfkdnhqai41i"))))
+                "0hslw8mdjr0yjy7mx2b7di9d2yr89ga97zbgzh97qb3i8vasgwmq"))))
     (properties `((upstream-name . "fitConic")))
     (build-system r-build-system)
     (propagated-inputs (list r-pracma))
@@ -11436,12 +11414,12 @@ respiration and chamber effect, filter and extract target values of absolute and
 mass-specific metabolic rate.  Experimental design should include background
 respiration tests and measuring of one or more metabolic rate traits.  The R
 package is ideally integrated with the pump controller @code{PumpResp} and the
-DO meter @code{SensResp} (open-source hardware by @code{FishResp).} Raw
+DO meter @code{SensResp} (open-source hardware by @code{FishResp}).  Raw
 respirometry data can be also imported from @code{AquaResp} (free software),
-@code{AutoResp} @code{('LoligoSystems'),} @code{OxyView} @code{('PreSens'),}
-Pyro Oxygen Logger @code{('PyroScience')} and Q-box Aqua
-@code{('QubitSystems').} More information about the R package @code{FishResp'is}
-available in the publication by Morozov et al. (2019)
+@code{AutoResp} ('@code{LoligoSystems}'), @code{OxyView} ('@code{PreSens}'),
+Pyro Oxygen Logger ('@code{PyroScience}') and Q-box Aqua
+('@code{QubitSystems}').  More information about the R package
+@code{FishResp'is} available in the publication by Morozov et al. (2019)
 <doi:10.1093/conphys/coz003>.")
     (license license:gpl3)))
 
@@ -11649,7 +11627,7 @@ will be added in a future release.")
      "Proposes non-parametric estimates of the Fisher information measure and the
 Shannon entropy power.  More theoretical and implementation details can be found
 in Guignard et al. <doi:10.3389/feart.2020.00255>.  A python version of this
-work is available on github and @code{PyPi} @code{('FiShPy').}")
+work is available on github and @code{PyPi} ('@code{FiShPy}').")
     (license license:expat)))
 
 (define-public r-firebehavior
@@ -11755,10 +11733,10 @@ of three Mixtures of Finite Mixtures models: Dirichlet Process Mixtures (DPMs;
 Escobar and West (1995) <doi:10.1080/01621459.1995.10476550>), Static Mixtures
 of Finite Mixtures (Static MFMs; Miller and Harrison (2018)
 <doi:10.1080/01621459.2016.1255636>), and Dynamic Mixtures of Finite Mixtures
-(Dynamic MFMs; @code{FrÃ¼hwirth-Schnatter,} Malsiner-Walli and @code{GrÃ¼n}
-(2020) @code{<arXiv:2005.09918>).} For methodological details, please refer to
-Greve, @code{GrÃ¼n,} Malsiner-Walli and @code{FrÃ¼hwirth-Schnatter} (2020)
-@code{<arXiv:2012.12337>)} as well as the package vignette.")
+(Dynamic MFMs; @code{FrÃ¼hwirth-Schnatter}, Malsiner-Walli and @code{GrÃ¼n}
+(2020) <@code{arXiv:2005.09918>}).  For methodological details, please refer to
+Greve, @code{GrÃ¼n}, Malsiner-Walli and @code{FrÃ¼hwirth-Schnatter} (2020)
+<@code{arXiv:2012.12337>}) as well as the package vignette.")
     (license license:gpl2)))
 
 (define-public r-fipio
@@ -12015,7 +11993,7 @@ package contains implementations of the algorithms described in the paper:
 Cardoso JVM, Ying J, and Palomar DP (2021)
 <https://papers.nips.cc/paper/2021/hash/a64a034c3cb8eac64eb46ea474902797-Abstract.html>
 \"Learning graphs in heavy-tailed markets\", Advances in Neural Informations
-Processing Systems @code{(NeurIPS).}")
+Processing Systems (@code{NeurIPS}).")
     (license license:gpl3)))
 
 (define-public r-fingerpro
@@ -12089,7 +12067,7 @@ sources contribution.")
      "The ability to tune models is important.  finetune enhances the tune package by
 providing more specialized methods for finding reasonable values of model tuning
 parameters.  Two racing methods described by Kuhn (2014)
-@code{<arXiv:1405.6974>} are included.  An iterative search method using
+<@code{arXiv:1405.6974>} are included.  An iterative search method using
 generalized simulated annealing (Bohachevsky, Johnson and Stein, 1986)
 <doi:10.1080/00401706.1986.10488128> is also included.")
     (license license:expat)))
@@ -12236,7 +12214,7 @@ copied to a new folder.")
     (description
      "Finds CRAN packages by the topic requested.  The topic can be given as a
 character string or as a regular expression and will help users to locate CRAN
-packages matching their specified requirement. @code{findPackage(<string>)}
+packages matching their specified requirement. @code{findPackage(<string>})
 returns a data frame of packages with description containing the input string.")
     (license license:gpl3)))
 
@@ -12275,7 +12253,7 @@ separate LASSO constraints over the pre-treatment parameters and causal
 heterogeneity parameters of interest.  This allows for the qualitative
 distinction between causal and other parameters, thereby making the variable
 selection suitable for the exploration of causal heterogeneity.  The package
-also contains a class of functions, @code{CausalANOVA,} which estimates the
+also contains a class of functions, @code{CausalANOVA}, which estimates the
 average marginal interaction effects (AMIEs) by a regularized ANOVA as proposed
 by Egami and Imai (2019)<DOI:10.1080/01621459.2018.1476246>.  It contains a
 variety of regularization techniques to facilitate analysis of large factorial
@@ -12446,21 +12424,21 @@ computational finance.")
      "Learning bipartite and k-component bipartite graphs from financial datasets.
 This package contains implementations of the algorithms described in the paper:
 Cardoso JVM, Ying J, and Palomar DP (2022).
-@code{<https://openreview.net/pdf?id=WNSyF9qZaMd>} \"Learning bipartite graphs:
+<https://openreview.net/pdf?id=WN@code{SyF9qZaMd>} \"Learning bipartite graphs:
 heavy tails and multiple components, Advances in Neural Informations Processing
-Systems\" @code{(NeurIPS).}")
+Systems\" (@code{NeurIPS}).")
     (license license:gpl3)))
 
 (define-public r-finbif
   (package
     (name "r-finbif")
-    (version "0.9.1")
+    (version "0.9.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "finbif" version))
               (sha256
                (base32
-                "1iqhriahhmdil6xmns3a7srkyx8sxwhl7p58kbym46sdlwwvp705"))))
+                "0bc65qsg8qfkj9bz2j73kwnnbcr1jbl5hq4hbcrcfhlwwmsya2qp"))))
     (properties `((upstream-name . "finbif")))
     (build-system r-build-system)
     (propagated-inputs (list r-lutz r-lubridate r-httr r-digest))
@@ -12470,7 +12448,7 @@ Systems\" @code{(NeurIPS).}")
      "Interface for the 'Finnish Biodiversity Information Facility' API")
     (description
      "This package provides a programmatic interface to the Finnish Biodiversity
-Information Facility @code{('FinBIF')} API (<https://api.laji.fi>).
+Information Facility ('@code{FinBIF}') API (<https://api.laji.fi>).
 @code{FinBIF} aggregates Finnish biodiversity data from multiple sources in a
 single open access portal for researchers, citizen scientists, industry and
 government. @code{FinBIF} allows users of biodiversity information to find,
@@ -12701,8 +12679,8 @@ companies (ATS, Lotek, Teknologic).  The filtering steps check for false
 positives caused by reflected transmissions from surfaces and false pings from
 other noise generating equipment.  The filter is unique for each technology
 type.  The package was written in concert with the Interagency Telemetry
-Advisory Group @code{(iTAG)} and makes use of the JSATS California Fish Tracking
-Database: @code{<https://oceanview.pfeg.noaa.gov/CalFishTrack/>.}")
+Advisory Group (@code{iTAG}) and makes use of the JSATS California Fish Tracking
+Database: <https://oceanview.pfeg.noaa.gov/@code{CalFishTrack/>}.")
     (license license:gpl3+)))
 
 (define-public r-fillr
@@ -12842,13 +12820,13 @@ tags and proper file extensions.")
 (define-public r-filebin
   (package
     (name "r-filebin")
-    (version "0.0.5")
+    (version "0.0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "filebin" version))
               (sha256
                (base32
-                "1k13vwppk3f3acnyz32wrjmr80x0lbdzv0sx74xr87n1kbrrv5fn"))))
+                "006fj66y9sb9i58na85bpv1ilwka9vcwmqkwpc3ax95vigy36n5j"))))
     (properties `((upstream-name . "filebin")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -12885,7 +12863,7 @@ convenient file sharing on the web.")
     (description
      "Stores large arrays in files to avoid occupying large memories.  Implemented
 with super fast gigabyte-level multi-threaded reading/writing via
-@code{OpenMP'.} Supports multiple non-character data types (double, float,
+@code{OpenMP}'.  Supports multiple non-character data types (double, float,
 complex, integer, logical, and raw).")
     (license license:lgpl3)))
 
@@ -13171,7 +13149,7 @@ error terms are combined at a user-defined ratio.  Plot phenotypes can be
 generated by combining the simulated errors with genetic values (e.g. true,
 simulated or predicted). @code{FieldSimR} provides wrapper functions to simulate
 genetic values for multiple traits across multiple environments using the R
-package @code{AlphaSimR'.}")
+package @code{AlphaSimR}'.")
     (license license:gpl3+)))
 
 (define-public r-fieldhub
@@ -13294,7 +13272,7 @@ include the machinery for secure in-browser authentication and decryption.")
     (home-page "https://cran.r-project.org/package=fICA")
     (synopsis "Classical, Reloaded and Adaptive FastICA Algorithms")
     (description
-     "Algorithms for classical symmetric and deflation-based @code{FastICA,} reloaded
+     "Algorithms for classical symmetric and deflation-based @code{FastICA}, reloaded
 deflation-based @code{FastICA} algorithm and an algorithm for adaptive
 deflation-based @code{FastICA} using multiple nonlinearities.  For details, see
 Miettinen et al. (2014) <doi:10.1109/TSP.2014.2356442> and Miettinen et al.
@@ -13415,7 +13393,7 @@ equations (Smalian, Newton and Huber) as well stacking factor and form")
     (synopsis "Fitting Hidden Markov Models to Financial Data")
     (description
      "Fitting (hierarchical) hidden Markov models to financial data via maximum
-likelihood estimation.  See @code{OelschlÃ¤ger,} L. and Adam, T. \"Detecting
+likelihood estimation.  See @code{OelschlÃ¤ger}, L. and Adam, T. \"Detecting
 bearish and bullish markets in financial time series using hierarchical hidden
 Markov models\" (2021, Statistical Modelling) <doi:10.1177/1471082X211034048> for
 a reference.")
@@ -13511,8 +13489,8 @@ of this package is provide functions to support these activities.")
     (synopsis "Partial Separability and Functional Gaussian Graphical Models")
     (description
      "Estimates a functional graphical model and a partially separable
-@code{Karhunen-LoÃ¨ve} decomposition for a multivariate Gaussian process.  See
-Zapata J., Oh S. and Petersen A. (2019) @code{<arXiv:1910.03134>.}")
+Karhunen-@code{LoÃ¨ve} decomposition for a multivariate Gaussian process.  See
+Zapata J., Oh S. and Petersen A. (2019) <@code{arXiv:1910.03134>}.")
     (license license:gpl2+)))
 
 (define-public r-fglsnet
@@ -14112,7 +14090,7 @@ sampling is supported.")
      "This package provides functions for analysing and modelling extreme events in
 financial time Series.  The topics include: (i) data pre-processing, (ii)
 explorative data analysis, (iii) peak over threshold modelling, (iv) block
-maxima modelling, (v) estimation of @code{VaR} and @code{CVaR,} and (vi) the
+maxima modelling, (v) estimation of @code{VaR} and C@code{VaR}, and (vi) the
 computation of the extreme index.")
     (license license:gpl2+)))
 
@@ -14260,7 +14238,7 @@ visualisation.")
 Hadwiger, the Gamma, the Model1 and Model2, following the terminology of the
 following paper: Peristera P. and Kostaki A. (2007). \"Modeling fertility in
 modern populations\".  Demographic Research, 16(6): 141--194.
-@code{<doi:10.4054/DemRes.2007.16.6>.} Model based averaging is also supported.")
+<doi:10.4054/@code{DemRes.2007.16.6>}.  Model based averaging is also supported.")
     (license license:gpl2+)))
 
 (define-public r-fertboot
@@ -14647,7 +14625,7 @@ quarterly.  The package contains all datasets
 <https://www.federalreserve.gov/apps/fof/FOFTables.aspx> and descriptions
 <https://www.federalreserve.gov/apps/fof/Guide/z1_tables_description.pdf> with
 functions to understand series
-@code{<https://www.federalreserve.gov/apps/fof/SeriesStructure.aspx>} and
+<https://www.federalreserve.gov/apps/fof/@code{SeriesStructure.aspx>} and
 explore them.")
     (license license:expat)))
 
@@ -14852,7 +14830,7 @@ treatments under (hypothetically) baseline randomization.It allows a treatment
 to switch on and off and limited carryover effects.  It supports linear factor
 models, a generalization of gsynth and the matrix completion method.
 Implementation details can be found in Liu, Wang and Xu (2022)
-@code{<arXiv:2107.00856>.}")
+<@code{arXiv:2107.00856>}.")
     (license license:expat)))
 
 (define-public r-fechner
@@ -15026,9 +15004,9 @@ features of a instance to a vector.  Thus, it is a method to transform a real
 dataset to a matrix.  Without looking up the indices in an associative array, it
 applies a hash function to the features and uses their hash values as indices
 directly.  The method of feature hashing in this package was proposed in
-Weinberger et al. (2009) @code{<arXiv:0902.2206>.} The hashing algorithm is the
+Weinberger et al. (2009) <@code{arXiv:0902.2206>}.  The hashing algorithm is the
 murmurhash3 from the digest package.  Please see the README in
-@code{<https://github.com/wush978/FeatureHashing>} for more information.")
+<https://github.com/wush978/@code{FeatureHashing>} for more information.")
     (license (list license:gpl3+
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -15207,7 +15185,7 @@ Mustapha, K. B. (2018).  Finite Element Computations in Mechanics with R. [ISBN
      "False Discovery Exceedance Controlling Multiple Testing Procedures")
     (description
      "Multiple testing procedures for heterogeneous and discrete tests as described in
-DÃ¶hler and Roquain (2019) @code{<arXiv:1912.04607v1>.} The main algorithms of
+DÃ¶hler and Roquain (2019) <@code{arXiv:1912.04607v1>}.  The main algorithms of
 the paper are available as continuous, discrete and weighted versions.")
     (license license:gpl3)))
 
@@ -15467,7 +15445,7 @@ financial data for FDIC-insured institutions and accessing the data taxonomy.")
     (description
      "This package provides the probability density function (PDF), cumulative
 distribution function (CDF), and the partial derivatives of the PDF of the
-diffusion decision model (DDM; e.g., Ratcliff & @code{McKoon,} 2008,
+diffusion decision model (DDM; e.g., Ratcliff & @code{McKoon}, 2008,
 <doi:10.1162/neco.2008.12-06-420>) with across-trial variability in the drift
 rate.  Because the PDF, its partial derivatives, and the CDF of the DDM both
 contain an infinite sum, they need to be approximated.  fddm implements all
@@ -15568,7 +15546,7 @@ the plot of the functional data.")
     (description
      "This package performs alignment, PCA, and modeling of multidimensional and
 unidimensional functions using the square-root velocity framework (Srivastava et
-al., 2011 @code{<arXiv:1103.3817>} and Tucker et al., 2014
+al., 2011 <@code{arXiv:1103.3817>} and Tucker et al., 2014
 <DOI:10.1016/j.csda.2012.12.001>).  This framework allows for elastic analysis
 of functional data through phase and amplitude separation.")
     (license license:gpl3)))
@@ -15598,7 +15576,7 @@ of functional data through phase and amplitude separation.")
     (synopsis "Partially Observed Integrated Functional Depth")
     (description
      "Applications to visualization, outlier detection and classification.  Software
-companion for @code{ElÃ­as,} Antonio, @code{JimÃ©nez,} @code{RaÃºl,} Paganoni,
+companion for @code{ElÃ­as}, Antonio, @code{JimÃ©nez}, @code{RaÃºl}, Paganoni,
 Anna M. and Sangalli, Laura M., (2022), \"Integrated Depth for Partially Observed
 Functional Data\".  Journal of Computational and Graphical Statistics.
 <doi:10.1080/10618600.2022.2070171>.")
@@ -15765,7 +15743,7 @@ the covariates are modelled as a multivariate Gaussian mixture model, where the
 number of mixtures corresponds to the number of clusters.  The parameters of the
 model are estimated by maximizing the observed mixture likelihood via an EM
 algorithm (Arnqvist and @code{SjÃ¶stedt} de Luna, 2019)
-@code{<arXiv:1904.10265>.} The clustering method is used to analyze annual lake
+<@code{arXiv:1904.10265>}.  The clustering method is used to analyze annual lake
 sediment from lake @code{KassjÃ¶n} (Northern Sweden) which cover more than 6400
 years and can be seen as historical records of weather and climate.")
     (license license:gpl2+)))
@@ -15845,7 +15823,7 @@ constructed for each case.  Further, the influence of past predictor values is
 modeled by a smooth history index function, while the effects on the response
 are described by smooth varying coefficient functions, which are very useful in
 analyzing real data such as COVID data.  References: Yao, F., MÃ¼ller, H.G.,
-Wang, J.L. (2005) <doi: 10.1214/009053605000000660>. @code{SentÃ¼rk,} D.,
+Wang, J.L. (2005) <doi: 10.1214/009053605000000660>. @code{SentÃ¼rk}, D.,
 MÃ¼ller, H.G. (2010) <doi: 10.1198/jasa.2010.tm09228>.")
     (license license:bsd-3)))
 
@@ -16065,8 +16043,8 @@ version 1.1, this package includes B-splines, Fourier bases and polynomials.")
      "Collection of Fluorescence Fluctuation Spectroscopy Analysis Methods")
     (description
      "This is a package for fluorescence fluctuation spectroscopy data analysis
-methods such as @code{spFCS,} FCCS, scanning-FCS, @code{pCF,} N&B and
-@code{pCOMB,} among others.  In addition, several data detrending tools are
+methods such as @code{spFCS}, FCCS, scanning-FCS, @code{pCF}, N&B and
+@code{pCOMB}, among others.  In addition, several data detrending tools are
 provided.  For an extensive user's guide for the use of FCSlib, please navigate
 to (<https://github.com/FCSlib/FCSlib/tree/master/Documentation>).  Sample data
 can be found at (<https://github.com/FCSlib/FCSlib/tree/master/Sample%20Data>).
@@ -16146,7 +16124,7 @@ input and output, which enables the user to try out algorithms swiftly.
 Additionally, 26 statistical approaches for the estimation of the number of
 clusters as well as the mirrored density plot (MD-plot) of clusterability are
 implemented.  The packages is published in Thrun, M.C., Stier Q.: \"Fundamental
-Clustering Algorithms Suite\" (2021), @code{SoftwareX,}
+Clustering Algorithms Suite\" (2021), @code{SoftwareX},
 <DOI:10.1016/j.softx.2020.100642>.  Moreover, the fundamental clustering
 problems suite (FCPS) offers a variety of clustering challenges any algorithm
 should handle when facing real world data, see Thrun, M.C., Ultsch A.:
@@ -16203,7 +16181,7 @@ is not easy to detect.  The package provides an alternative to the tool at
 <https://flexiblecutoffs.org> as it allows to tailor flexible cutoffs to a given
 dataset and model, which is so far not available in the tool.  The package
 simulates fit indices based on a given dataset and model and then estimates the
-flexible cutoffs.  Some useful functions, e.g., to determine the @code{GoF-} or
+flexible cutoffs.  Some useful functions, e.g., to determine the @code{GoF}- or
 @code{BoF-nature} of a fit index, are provided.  So far, additional options for
 a relative use (is a model better than another?) are provided in an exploratory
 manner.")
@@ -16361,7 +16339,7 @@ p-values.")
     (synopsis "Feldman-Cousins Confidence Intervals")
     (description
      "This package provides support for building Feldman-Cousins confidence intervals
-[G. J. Feldman and R. D. Cousins (1998) @code{<doi:10.1103/PhysRevD.57.3873>].}")
+[G. J. Feldman and R. D. Cousins (1998) <doi:10.1103/@code{PhysRevD.57.3873>}].")
     (license license:gpl3+)))
 
 (define-public r-fcar
@@ -17078,7 +17056,7 @@ shortcuts to facilitate operations on very large data.")
     (synopsis "An Interface to the 'fastText' Library")
     (description
      "An interface to the @code{fastText} library
-@code{<https://github.com/facebookresearch/fastText>.} The package can be used
+<https://github.com/facebookresearch/@code{fastText>}.  The package can be used
 for text classification and to learn word vectors.  An example how to use
 @code{fastTextR} can be found in the README file.")
     (license license:bsd-3)))
@@ -17103,16 +17081,16 @@ for text classification and to learn word vectors.  An example how to use
      "Efficient Learning of Word Representations and Sentence Classification")
     (description
      "An interface to the @code{fastText}
-@code{<https://github.com/facebookresearch/fastText>} library for efficient
+<https://github.com/facebookresearch/@code{fastText>} library for efficient
 learning of word representations and sentence classification.  The
 @code{fastText} algorithm is explained in detail in (i) \"Enriching Word Vectors
 with subword Information\", Piotr Bojanowski, Edouard Grave, Armand Joulin, Tomas
 Mikolov, 2017, <doi:10.1162/tacl_a_00051>; (ii) \"Bag of Tricks for Efficient
 Text Classification\", Armand Joulin, Edouard Grave, Piotr Bojanowski, Tomas
-Mikolov, 2017, <doi:10.18653/v1/e17-2068>; (iii) @code{\"FastText.zip:}
+Mikolov, 2017, <doi:10.18653/v1/e17-2068>; (iii) \"@code{FastText.zip}:
 Compressing text classification models\", Armand Joulin, Edouard Grave, Piotr
 Bojanowski, Matthijs Douze, Herve Jegou, Tomas Mikolov, 2016,
-@code{<arXiv:1612.03651>.}")
+<@code{arXiv:1612.03651>}.")
     (license license:expat)))
 
 (define-public r-fastsom
@@ -17538,7 +17516,7 @@ allowed, however, categorical variables can be transformed into dummies and used
 with the Bernoulli distribution.  The implementation is largely based on the
 paper \"A comparison of event models for Naive Bayes anti-spam e-mail filtering\"
 written by K.M. Schneider (2003) <doi:10.3115/1067807.1067848>.  Any issues can
-be submitted to: @code{<https://github.com/mskogholt/fastNaiveBayes/issues>.}")
+be submitted to: <https://github.com/mskogholt/@code{fastNaiveBayes/issues>}.")
     (license license:gpl3)))
 
 (define-public r-fastmit
@@ -17559,7 +17537,7 @@ be submitted to: @code{<https://github.com/mskogholt/fastNaiveBayes/issues>.}")
     (description
      "This package provides a mutual information estimator based on k-nearest neighbor
 method proposed by A. Kraskov, et al. (2004)
-@code{<doi:10.1103/PhysRevE.69.066138>} to measure general dependence and the
+<doi:10.1103/@code{PhysRevE.69.066138>} to measure general dependence and the
 time complexity for our estimator is only squared to the sample size, which is
 faster than other statistics.  Besides, an implementation of mutual information
 based independence test is provided for analyzing multivariate data in Euclidean
@@ -17714,7 +17692,7 @@ power.")
 plus other useful methods such as a forward stepwise model generator (see the
 benchmarks by visiting the github page at the URL below).  The inputs are
 flexible enough to accomodate GPU computations.  The coefficient estimation
-employs the @code{fastLR()} method in the @code{RcppNumerical} package by Yixuan
+employs the @code{fastLR}() method in the @code{RcppNumerical} package by Yixuan
 Qiu et al.  This package allows their work to be more useful to a wider
 community that consumes inference.")
     (license license:gpl3)))
@@ -17779,7 +17757,7 @@ Records'', American Political Science Review and is available at
     (description
      "Fitting a fast Laplace approximation for Spatial Generalized Linear Mixed Model
 as described in Park and Lee (2021)
-@code{<https://github.com/sangwan93/fastLaplace/blob/main/FastLaplaceMain.pdf>.}")
+<https://github.com/sangwan93/@code{fastLaplace/blob/main/FastLaplaceMain.pdf>}.")
     (license license:gpl3)))
 
 (define-public r-fastknn
@@ -17823,7 +17801,7 @@ time.")
      "Faster K-Medoids Clustering Algorithms: FastPAM, FastCLARA, FastCLARANS")
     (description
      "R wrappers of C++ implementation of Faster K-Medoids clustering algorithms
-@code{(FastPAM,} @code{FastCLARA} and @code{FastCLARANS)} proposed in Erich
+(@code{FastPAM}, @code{FastCLARA} and @code{FastCLARANS}) proposed in Erich
 Schubert, Peter J. Rousseeuw 2019 <doi:10.1007/978-3-030-32047-8_16>.")
     (license license:gpl2+)))
 
@@ -17847,8 +17825,8 @@ Schubert, Peter J. Rousseeuw 2019 <doi:10.1007/978-3-030-32047-8_16>.")
 fast Kernel Machine method for multi-kernel analysis.  The approach is based on
 a low-rank approximation to the nuisance effect kernel matrices.  The algorithm
 is applicable to continuous, binary, and survival traits and is implemented
-using the existing single-kernel analysis software SKAT and @code{coxKM'.}
-@code{coxKM} can be obtained from @code{<https://github.com/lin-lab/coxKM>.}")
+using the existing single-kernel analysis software SKAT and @code{coxKM}'.
+@code{coxKM} can be obtained from <https://github.com/lin-lab/@code{coxKM>}.")
     (license license:gpl2)))
 
 (define-public r-fastjt
@@ -17926,10 +17904,10 @@ algorithm.")
     (home-page "https://cran.r-project.org/package=FastImputation")
     (synopsis "Learn from Training Data then Quickly Fill in Missing Data")
     (description
-     "@code{TrainFastImputation()} uses training data to describe a multivariate
+     "@code{TrainFastImputation}() uses training data to describe a multivariate
 normal distribution that the data approximates or can be transformed into
 approximating and stores this information as an object of class
-@code{FastImputationPatterns'.} @code{FastImputation()} function uses this
+@code{FastImputationPatterns}'. @code{FastImputation}() function uses this
 @code{FastImputationPatterns} object to impute (make a good guess at) missing
 data in a single line or a whole data frame of data.  This approximates the
 process used by Amelia <https://gking.harvard.edu/amelia> but is much faster
@@ -18001,7 +17979,7 @@ sampling (Murray, Adams, and @code{MacKay} 2010).")
     (synopsis
      "Fast and Stable Fitting of Generalized Linear Models using 'RcppEigen'")
     (description
-     "Fits generalized linear models efficiently using @code{RcppEigen'.} The
+     "Fits generalized linear models efficiently using @code{RcppEigen}'.  The
 iteratively reweighted least squares implementation utilizes the step-halving
 approach of Marschner (2011) <doi:10.32614/RJ-2011-012> to help safeguard
 against convergence issues.")
@@ -18028,7 +18006,7 @@ against convergence issues.")
 first is a fast GLCM feature texture computation based on Python Numpy arrays
 ('Github Repository, <https://github.com/tzm030329/GLCM>).  The second is a fast
 GLCM @code{RcppArmadillo} implementation which is parallelized (using
-@code{OpenMP')} with the option to return all GLCM features at once.  For more
+@code{OpenMP}') with the option to return all GLCM features at once.  For more
 information, see \"Artifact-Free Thin Cloud Removal Using Gans\" by Toizumi
 Takahiro, Zini Simone, Sagi Kazutoshi, Kaneko Eiji, Tsukada Masato, Schettini
 Raimondo (2019), IEEE International Conference on Image Processing (ICIP), pp.
@@ -18054,7 +18032,7 @@ Raimondo (2019), IEEE International Conference on Image Processing (ICIP), pp.
      "This package implements fast and exact computation of Gaussian stochastic
 process with the Matern kernel using forward filtering and backward smoothing
 algorithm.  It allows for the cases with or without a noise.  See the reference:
-Mengyang Gu and Yanxun Xu (2017), @code{<arXiv:1711.11501>.}")
+Mengyang Gu and Yanxun Xu (2017), <@code{arXiv:1711.11501>}.")
     (license license:gpl2+)))
 
 (define-public r-fasterelasticnet
@@ -18180,6 +18158,29 @@ significantly associated with a particular phenotype, while accounting for
 categorical covariates.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-fastbeta
+  (package
+    (name "r-fastbeta")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "fastbeta" version))
+              (sha256
+               (base32
+                "0jbvbdq3hdmp01wz9y1nidfzm80m3d0gdz6p8wi0wm32zxxh4c3q"))))
+    (properties `((upstream-name . "fastbeta")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-desolve r-adaptivetau))
+    (home-page "https://github.com/davidearn/fastbeta")
+    (synopsis
+     "Fast Estimation of Time-Varying Infectious Disease Transmission Rates")
+    (description
+     "This package provides methods for estimating time-varying infectious disease
+transmission rates from disease incidence time series, based on discretizations
+of an SIR model, as analyzed in Jagan et al. (2020)
+<doi:10.1371/journal.pcbi.1008124>.")
+    (license license:gpl2+)))
+
 (define-public r-fastbandchol
   (package
     (name "r-fastbandchol")
@@ -18199,7 +18200,7 @@ categorical covariates.")
     (description
      "Fast and numerically stable estimation of a covariance matrix by banding the
 Cholesky factor using a modified Gram-Schmidt algorithm implemented in
-@code{RcppArmadilo.} See <http://stat.umn.edu/~molst029> for details on the
+@code{RcppArmadilo}.  See <http://stat.umn.edu/~molst029> for details on the
 algorithm.")
     (license license:gpl2)))
 
@@ -18301,7 +18302,7 @@ hyperparameter, making usage easy.")
     (description
      "This package provides a collection of acceleration schemes for proximal gradient
 methods for estimating penalized regression parameters described in Goldstein,
-Studer, and Baraniuk (2016) @code{<arXiv:1411.3406>.} Schemes such as Fast
+Studer, and Baraniuk (2016) <@code{arXiv:1411.3406>}.  Schemes such as Fast
 Iterative Shrinkage and Thresholding Algorithm (FISTA) by Beck and Teboulle
 (2009) <doi:10.1137/080716542> and the adaptive stepsize rule introduced in
 Wright, Nowak, and Figueiredo (2009) <doi:10.1109/TSP.2009.2016892> are
@@ -18425,7 +18426,7 @@ provided by this package.  For more details, please see
      "It contains a function designed to the joint segmentation in the mean of several
 correlated series.  The method is described in the paper X. Collilieux, E.
 Lebarbier and S. Robin.  A factor model approach for the joint segmentation with
-between-series correlation (2015) @code{<arXiv:1505.05660>.}")
+between-series correlation (2015) <@code{arXiv:1505.05660>}.")
     (license license:gpl2)))
 
 (define-public r-fasano-franceschini-test
@@ -18538,7 +18539,7 @@ Introductory Course\" <https://iangow.github.io/far_book/>.")
     (synopsis "Factor-Adjusted Robust Multiple Testing")
     (description
      "This package performs robust multiple testing for means in the presence of known
-and unknown latent factors presented in Fan et al.(2019) @code{\"FarmTest:}
+and unknown latent factors presented in Fan et al.(2019) \"@code{FarmTest}:
 Factor-Adjusted Robust Multiple Testing With Approximate False Discovery
 Control\" <doi:10.1080/01621459.2018.1527700>.  Implements a series of adaptive
 Huber methods combined with fast data-drive tuning schemes proposed in Ke et
@@ -18577,7 +18578,7 @@ appropriate for cases where we have many variables compared to the number of
 samples.  Moreover, it implements a robust procedure to estimate distribution
 parameters wherever possible, hence being suitable for cases when the underlying
 distribution deviates from Gaussianity.  See the paper on the @code{FarmSelect}
-method, Fan et al.(2017) @code{<arXiv:1612.08490>,} for detailed description of
+method, Fan et al.(2017) <@code{arXiv:1612.08490>}, for detailed description of
 methods and further references.")
     (license license:gpl2)))
 
@@ -18606,7 +18607,7 @@ further info on ARFF and for <http://www.cs.waikato.ac.nz/ml/weka/> for more
 info on WEKA'.  farff gets rid of the Java dependency that RWeka enforces, and
 it is at least a faster reader (for bigger files).  It uses readr as parser
 back-end for the data section of the ARFF file.  Consistency with RWeka is
-tested on Github and Travis CI with hundreds of ARFF files from @code{OpenML'.}")
+tested on Github and Travis CI with hundreds of ARFF files from @code{OpenML}'.")
     (license license:bsd-2)))
 
 (define-public r-fardeep
@@ -18723,7 +18724,7 @@ covariance operator in a subspace, ...")
      "This package provides tools for detecting and summarize influential cases that
 can affect exploratory and confirmatory factor analysis models as well as
 structural equation models more generally (Chalmers, 2015,
-<doi:10.1177/0146621615597894>; Flora, D. B., @code{LaBrish,} C. & Chalmers, R.
+<doi:10.1177/0146621615597894>; Flora, D. B., @code{LaBrish}, C. & Chalmers, R.
 P., 2012, <doi:10.3389/fpsyg.2012.00055>).")
     (license license:gpl2+)))
 
@@ -18821,10 +18822,10 @@ details in R Journal article; Abel (2015) <doi:10.32614/RJ-2015-002>.")
     (description
      "Estimation and plotting of a function's FANOVA graph to identify the interaction
 structure and fitting, prediction and simulation of a Kriging model modified by
-the identified structure.  The interactive function @code{plotManipulate()} can
+the identified structure.  The interactive function @code{plotManipulate}() can
 only be run on the RStudio IDE with RStudio package manipulate loaded.  RStudio
 is freely available (<https://rstudio.com/>), and includes package manipulate'.
-The equivalent function @code{plotTk()} bases on CRAN Repository packages only.
+The equivalent function @code{plotTk}() bases on CRAN Repository packages only.
 For further information on the method see Fruth, J., Roustant, O., Kuhnt, S.
 (2014) <doi:10.1016/j.jspi.2013.11.007>.")
     (license license:gpl3)))
@@ -18849,7 +18850,7 @@ For further information on the method see Fruth, J., Roustant, O., Kuhnt, S.
 to estimate a feature allocation by minimizing the expected loss based on
 posterior samples from the feature allocation distribution.  The method is
 currently under peer review but an earlier draft is available in Dahl, Johnson,
-and Andros (2022+) @code{<doi:10.48550/arXiv.2207.13824>.}")
+and Andros (2022+) <doi:10.48550/@code{arXiv.2207.13824>}.")
     (license (list license:expat license:asl2.0))))
 
 (define-public r-fancycut
@@ -18969,11 +18970,11 @@ interpret and describe the factors.")
     (description
      "@code{FamSKAT-RC} is a family-based association kernel test for both rare and
 common variants.  This test is general and several special cases are known as
-other methods: @code{famSKAT,} which only focuses on rare variants in
+other methods: @code{famSKAT}, which only focuses on rare variants in
 family-based data, SKAT, which focuses on rare variants in population-based data
 (unrelated individuals), and SKAT-RC, which focuses on both rare and common
 variants in population-based data.  When one applies @code{famSKAT-RC} and sets
-the value of phi to 1, @code{famSKAT-RC} becomes @code{famSKAT.} When one
+the value of phi to 1, @code{famSKAT-RC} becomes @code{famSKAT}.  When one
 applies @code{famSKAT-RC} and set the value of phi to 1 and the kinship matrix
 to the identity matrix, @code{famSKAT-RC} becomes SKAT. When one applies
 @code{famSKAT-RC} and set the kinship matrix (fullkins) to the identity matrix
@@ -19000,7 +19001,7 @@ details see Saad M and Wijsman EM (2014) <doi:10.1002/gepi.21844>.")
     (synopsis "Flexible Algorithm for Model Selection")
     (description
      "Given a set of parameters describing model dynamics and a corresponding cost
-function, @code{FAMoS} performs a dynamic forward-backward model selection on a
+function, FA@code{MoS} performs a dynamic forward-backward model selection on a
 specified selection criterion.  It also applies a non-local swap search method.
 Works on any cost function.  For detailed information see Gabel et al. (2019)
 <doi:10.1371/journal.pcbi.1007230>.")
@@ -19069,7 +19070,7 @@ family-weighted scores across all families in which the feature appears.")
     (description
      "This package provides tools to study kinship networks, grandparenthood, and
 double burden (presence of children and oldest old parents) in virtual
-population produced by @code{VirtualPop'.}")
+population produced by @code{VirtualPop}'.")
     (license license:gpl2)))
 
 (define-public r-familiar
@@ -19156,7 +19157,7 @@ infer missing genotypes and carrier probabilities estimated from family's
 genotype and phenotype information or from a fitted model.  Plot functions
 include pedigrees of simulated families and predicted penetrance curves based on
 specified parameter values.  For more information see Choi, Y.-H., Briollais,
-L., He, W. and Kopciuk, K. (2021) @code{FamEvent:} An R Package for Generating
+L., He, W. and Kopciuk, K. (2021) @code{FamEvent}: An R Package for Generating
 and Modeling Time-to-Event Data in Family Designs, Journal of Statistical
 Software 97 (7), 1-30.")
     (license license:gpl2+)))
@@ -19365,7 +19366,7 @@ and/or observations.  Each observation is drawn from a multivariate Normal
 distribution where the mean vector and covariance matrix reflect the desired
 relationships.  Outputs can be used to evaluate the performances of variable
 selection, graphical modelling, or clustering approaches by comparing the true
-and estimated structures (B Bodinier et al (2021) @code{<arXiv:2106.02521>).}")
+and estimated structures (B Bodinier et al (2021) <@code{arXiv:2106.02521>}).")
     (license license:gpl3+)))
 
 (define-public r-fairsubset
@@ -19452,8 +19453,8 @@ Statistical Parity, Equal odds to detect the discrimination against unprivileged
 groups.  Visualize the bias using heatmap, radar plot, biplot, bar chart (and
 more!).  There are various pre-processing and post-processing bias mitigation
 algorithms implemented.  Package also supports calculating fairness metrics for
-regression models.  Find more details in @code{(WiÅniewski,} Biecek (2021))
-@code{<arXiv:2104.00507>.}")
+regression models.  Find more details in (@code{WiÅniewski}, Biecek (2021))
+<@code{arXiv:2104.00507>}.")
     (license license:gpl3)))
 
 (define-public r-fairml
@@ -19566,7 +19567,7 @@ more Findable, Accessible, Interoperable, and Reproducible.")
     (synopsis "Fair Data Adaptation with Quantile Preservation")
     (description
      "An implementation of the fair data adaptation with quantile preservation
-described in Plecko & Meinshausen (2019) @code{<arXiv:1911.06685>.} The
+described in Plecko & Meinshausen (2019) <@code{arXiv:1911.06685>}.  The
 adaptation procedure uses the specified causal graph to pre-process the given
 training and testing data in such a way to remove the bias caused by the
 protected attribute.  The procedure uses tree ensembles for quantile regression.")
@@ -19791,7 +19792,7 @@ repository documentation for more information.")
     (synopsis "'FactSet' Engines API Client")
     (description
      "Allow clients to fetch analytics through API for Portfolio Analytics'('PA'),
-Style Performance Risk('SPAR') and Vault products of @code{FactSet'.} Visit
+Style Performance Risk('SPAR') and Vault products of @code{FactSet}'.  Visit
 <https://github.com/factset/analyticsapi-engines-r-sdk/tree/master/Engines> for
 more information on the usage of package.  Visit
 <https://developer.factset.com/> for more information on products.")
@@ -19975,7 +19976,7 @@ confidence intervals.  Important reference papers include Slud EV. (1994)
 <https://www.ncbi.nlm.nih.gov/pubmed/8086609> Lin DY, Gong J, Gallo P, Bunn PH,
 Couper D. (2016) <DOI:10.1111/biom.12507> Leifer ES, Troendle JF, Kolecki A,
 Follmann DA. (2020)
-@code{<https://github.com/EricSLeifer/factorial2x2/blob/master/Leifer%20et%20al.%20paper.pdf>.}")
+<https://github.com/@code{EricSLeifer/factorial2x2/blob/master/Leifer%20et%20al.%20paper.pdf>}.")
     (license license:gpl2)))
 
 (define-public r-factorcopula
@@ -20005,7 +20006,7 @@ mixed continuous and discrete data in Kadhem and Nikoloulopoulos (2021)
 <doi:10.1111/bmsp.12231>; (2) bi-factor and second-order copula models for item
 response data in Kadhem and Nikoloulopoulos (2023)
 <doi:10.1007/s11336-022-09894-2>; (3) factor tree copula models for item
-response data in Kadhem and Nikoloulopoulos (2022) @code{<arXiv:2201.00339>.}")
+response data in Kadhem and Nikoloulopoulos (2022) <@code{arXiv:2201.00339>}.")
     (license license:gpl2+)))
 
 (define-public r-factorassumptions
@@ -20135,7 +20136,7 @@ classification and K-means is performed, using some of the first coordinates
 obtained from the previous principal axes method.  See, for example: Lebart, L.
 and Piron, M. and Morineau, A. (2006).  Statistique Exploratoire
 Multidimensionnelle, Dunod, Paris.  In order to permit to have different weights
-of the elements to be clustered, the function @code{kmeansW',} programmed in
+of the elements to be clustered, the function @code{kmeansW}', programmed in
 C++, is included.  It is a modification of kmeans'.  Some graphical functions
 include the option: gg=FALSE'.  When gg=TRUE', they use the ggplot2 and ggrepel
 packages to avoid the super-position of the labels.")
@@ -20205,7 +20206,7 @@ experiments with noncompliance.")
     (home-page "https://cran.r-project.org/package=FACT")
     (synopsis "Feature Attributions for ClusTering")
     (description
-     "We present FACT (Feature Attributions for @code{ClusTering),} a framework for
+     "We present FACT (Feature Attributions for @code{ClusTering}), a framework for
 unsupervised interpretation methods that can be used with an arbitrary
 clustering algorithm.  The package is capable of re-assigning instances to
 clusters (algorithm agnostic), preserves the integrity of the data and does not
@@ -20241,15 +20242,15 @@ Learning by Christoph Molnar, Giuseppe Casalicchio, and Bernd Bischl (2018)
     (synopsis "Cross-Section Factor Models")
     (description
      "Linear cross-section factor model fitting with least-squares and robust fitting
-the @code{lmrobdetMM()} function from @code{RobStatTM';} related volatility,
+the @code{lmrobdetMM}() function from @code{RobStatTM}'; related volatility,
 Value at Risk and Expected Shortfall risk and performance attribution
 (factor-contributed vs idiosyncratic returns); tabular displays of risk and
 performance reports; factor model Monte Carlo.  The package authors would like
 to thank Chicago Research on Security Prices,LLC for the cross-section of about
-300 CRSP stocks data (in the data.table object @code{stocksCRSP',} and S&P
+300 CRSP stocks data (in the data.table object @code{stocksCRSP}', and S&P
 GLOBAL MARKET INTELLIGENCE for contributing 14 factor scores (a.k.a \"alpha
 factors\".and \"factor exposures\") fundamental data on the 300 companies in the
-data.table object @code{factorSPGMI'.} The @code{stocksCRSP} and
+data.table object @code{factorSPGMI}'.  The @code{stocksCRSP} and
 @code{factorsSPGMI} data are not covered by the GPL-2 license, are not provided
 as open source of any kind, and they are not to be redistributed in any form.")
     (license license:gpl2)))
@@ -20658,11 +20659,11 @@ workflow consistent with the tidyverse.")
     (synopsis
      "Change Point Detection in High-Dimensional Time Series Networks")
     (description
-     "Implementation of the Factorized Binary Search @code{(FaBiSearch)} methodology
+     "Implementation of the Factorized Binary Search (@code{FaBiSearch}) methodology
 for the estimation of the number and the location of multiple change points in
 the network (or clustering) structure of multivariate high-dimensional time
 series.  The method is motivated by the detection of change points in functional
-connectivity networks for functional magnetic resonance imaging @code{(fMRI)}
+connectivity networks for functional magnetic resonance imaging (@code{fMRI})
 data. @code{FaBiSearch} uses non-negative matrix factorization (NMF), an
 unsupervised dimension reduction technique, and a new binary search algorithm to
 identify multiple change points.  It requires minimal assumptions.  Lastly, we
@@ -20678,7 +20679,7 @@ functional connectivity networks, and opt.rank(), for finding the optimal rank
 in NMF for a given data set.  The functions have been extensively tested on
 simulated multivariate high-dimensional time series data and @code{fMRI} data.
 For details on the @code{FaBiSearch} methodology, please see Ondrus et al.
-(2021) @code{<arXiv:2103.06347>.} For a more detailed explanation and applied
+(2021) <@code{arXiv:2103.06347>}.  For a more detailed explanation and applied
 examples of the fabisearch package, please see Ondrus and Cribben (2022),
 preprint.")
     (license license:expat)))
@@ -20700,7 +20701,7 @@ preprint.")
     (synopsis "FAB p-Values and Confidence Intervals")
     (description
      "Frequentist assisted by Bayes (FAB) p-values and confidence interval
-construction.  See Hoff (2019) @code{<arXiv:1907.12589>} \"Smaller p-values via
+construction.  See Hoff (2019) <@code{arXiv:1907.12589>} \"Smaller p-values via
 indirect information\", Hoff and Yu (2019) <doi:10.1214/18-EJS1517> \"Exact
 adaptive confidence intervals for linear regression coefficients\", and Yu and
 Hoff (2018) <doi:10.1093/biomet/asy009> \"Adaptive multigroup confidence

@@ -71,7 +71,7 @@
     (description
      "In practice, we will encounter problems where the longitudinal performance of
 processes needs to be monitored over time.  Dynamic screening systems
-@code{(DySS)} are methods that aim to identify and give signals to processes
+(@code{DySS}) are methods that aim to identify and give signals to processes
 with poor performance as early as possible.  This package is designed to
 implement dynamic screening systems and the related methods.  References: Qiu,
 P. and Xiang, D. (2014) <doi:10.1080/00401706.2013.822423>; Qiu, P. and Xiang,
@@ -100,7 +100,7 @@ D. (2015) <doi:10.1002/sim.6477>; Li, J. and Qiu, P. (2016)
     (synopsis "Background and Pathway Data Used in 'DysPIA'")
     (description
      "This dataset includes Background and Pathway data used in package
-@code{DysPIA'.}")
+@code{DysPIA}'.")
     (license license:gpl2+)))
 
 (define-public r-dyspia
@@ -172,13 +172,13 @@ annotation.  Saelens et al. (2019) <doi:10.1038/s41587-019-0071-9>.")
 (define-public r-dyntxregime
   (package
     (name "r-dyntxregime")
-    (version "4.12")
+    (version "4.14")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DynTxRegime" version))
               (sha256
                (base32
-                "07q6z2j73b3vcspkq4jkw4z7l618qgq9683dd0yljjq1l71fvl4i"))))
+                "1mgpy3y2dcv27ph8a870fpcsav72asvh136m8k3d37b5whg4ag1c"))))
     (properties `((upstream-name . "DynTxRegime")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgenoud r-modelobj r-kernlab r-dfoptim))
@@ -211,7 +211,7 @@ Laber, E. B., Chapman & Hall/CRC Press, 2020, ISBN:978-1-4987-6977-8.")
     (description
      "This package performs calculations with tree taper (or stem profile) equations,
 including model fitting.  The package implements the methods from
-@code{GarcÃ­a,} O. (2015) \"Dynamic modelling of tree form\"
+@code{GarcÃ­a}, O. (2015) \"Dynamic modelling of tree form\"
 <http://mcfns.net/index.php/Journal/article/view/MCFNS7.1_2>.  The models are
 parsimonious, describe well the tree bole shape over its full length, and are
 consistent with wood formation mechanisms through time.")
@@ -441,7 +441,7 @@ analysis.")
 abstract way.  Description can include an id, a description, a domain (range or
 list of values), and a default value.  dynparam can also convert parameter sets
 to a @code{ParamHelpers} format, in order to be able to use dynparam in
-conjunction with @code{mlrMBO'.}")
+conjunction with @code{mlrMBO}'.")
     (license license:expat)))
 
 (define-public r-dynpanel
@@ -492,7 +492,7 @@ the dependent variables.")
     (description
      "Demonstrate the results of a statistical model object as a dynamic nomogram in
 an RStudio panel or web browser.  The package provides two generics functions:
-@code{DynNom,} which display statistical model objects as a dynamic nomogram;
+@code{DynNom}, which display statistical model objects as a dynamic nomogram;
 DNbuilder, which builds required scripts to publish a dynamic nomogram on a web
 server such as the <https://www.shinyapps.io/>.  Current version of
 @code{DynNom} supports stats::lm, stats::glm, survival::coxph, rms::ols,
@@ -572,7 +572,7 @@ approximation are implemented.  Main references: Nagy and Suzdaleva (2013)
 longitudinal predictors to provide individual predictions.  Longitudinal
 predictors are modeled through the random forest.  The methodology is fully
 described for a survival outcome in: Devaux, Helmer, Genuer & Proust-Lima (2022)
-<doi: @code{10.48550/arXiv.2208.05801>.}")
+<doi: 10.48550/@code{arXiv.2208.05801>}.")
     (license license:lgpl3+)))
 
 (define-public r-dynetnlaresistance
@@ -766,7 +766,7 @@ classification models with hooks provided for sequential design and
 optimization, fully online learning with drift, variable selection, and
 sensitivity analysis of inputs.  Illustrative examples from the original dynamic
 trees paper (Gramacy, Taddy & Polson (2011); <doi:10.1198/jasa.2011.ap09769>)
-are facilitated by demos in the package; see @code{demo(package=\"dynaTree\").}")
+are facilitated by demos in the package; see demo(package=\"@code{dynaTree}\").")
     (license license:lgpl2.0+)))
 
 (define-public r-dynatopgis
@@ -792,7 +792,7 @@ are facilitated by demos in the package; see @code{demo(package=\"dynaTree\").}"
 data to build implementations of Dynamic TOPMODEL, a semi-distributed
 hydrological model proposed in Beven and Freer (2001) <doi:10.1002/hyp.252>.
 The dynatop package implements simulation code for Dynamic TOPMODEL based on the
-output of @code{dynatopGIS'.}")
+output of @code{dynatopGIS}'.")
     (license license:gpl2)))
 
 (define-public r-dynatop
@@ -847,8 +847,8 @@ dynamically and hierarchically aggregates smaller genome regions to larger ones
 and performs multiple testing for disease associations with a controlled
 node-level false discovery rate.  This method are members of the family of
 ancillary information assisted recursive testing introduced in Pura, Li, Chan
-and Xie (2021) @code{<arXiv:1906.07757v2>} and Li, Sung and Xie (2021)
-@code{<arXiv:2103.11085v2>.}")
+and Xie (2021) <@code{arXiv:1906.07757v2>} and Li, Sung and Xie (2021)
+<@code{arXiv:2103.11085v2>}.")
     (license license:gpl3)))
 
 (define-public r-dynaspec
@@ -1007,32 +1007,6 @@ Google Drive to minimise the computing power and storage demands associated with
 species distribution modelling at high spatio-temporal resolution.")
     (license license:gpl3+)))
 
-(define-public r-dynamichazard
-  (package
-    (name "r-dynamichazard")
-    (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "dynamichazard" version))
-              (sha256
-               (base32
-                "1khfy2fhvzgp165arj1yqvqi5p6lg94sxikwp5s5dxnsgzny00xm"))))
-    (properties `((upstream-name . "dynamichazard")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-survival r-rcpparmadillo r-rcpp r-boot))
-    (native-inputs (list r-r-rsp r-knitr gfortran))
-    (home-page "https://github.com/boennecd/dynamichazard")
-    (synopsis "Dynamic Hazard Models using State Space Models")
-    (description
-     "This package contains functions that lets you fit dynamic hazard models using
-state space models.  The first implemented model is described in Fahrmeir (1992)
-<doi:10.1080/01621459.1992.10475232> and Fahrmeir (1994)
-<doi:10.1093/biomet/81.2.317>.  Extensions hereof are available where the
-Extended Kalman filter is replaced by an unscented Kalman filter.  See
-Christoffersen (2021) <doi:10.18637/jss.v099.i07> for more details.  Particle
-filters and smoothers are also supported more general state space models.")
-    (license license:gpl2)))
-
 (define-public r-dynamicgp
   (package
     (name "r-dynamicgp")
@@ -1053,7 +1027,7 @@ filters and smoothers are also supported more general state space models.")
      "Emulating and solving inverse problems for dynamic computer experiments.  It
 contains two major functionalities: (1) localized GP model for large-scale
 dynamic computer experiments using the algorithm proposed by Zhang et al. (2018)
-@code{<arXiv:1611.09488>;} (2) solving inverse problems in dynamic computer
+<@code{arXiv:1611.09488>}; (2) solving inverse problems in dynamic computer
 experiments.  The current version only supports 64-bit version of R.")
     (license license:gpl2+)))
 
@@ -1385,7 +1359,7 @@ modelled via a discrete Weibull distribution.")
 searched area at a wind farm to estimate the fraction of carcasses falling in
 the searched area and format the output for use as the dwp parameter in the
 @code{GenEst} or eoa package for estimating bird and bat mortality, following
-Dalthorp, et al. (2022) @code{<arXiv:2201.10064>.}")
+Dalthorp, et al. (2022) <@code{arXiv:2201.10064>}.")
     (license license:cc0)))
 
 (define-public r-dwls
@@ -1518,7 +1492,7 @@ reads these files and enables a fast conversion into numerical format.")
      "Solving large scale distance weighted discrimination.  The main algorithm is a
 symmetric Gauss-Seidel based alternating direction method of multipliers (ADMM)
 method.  See Lam, X.Y., Marron, J.S., Sun, D.F., and Toh, K.C. (2018)
-@code{<arXiv:1604.05473>} for more details.")
+<@code{arXiv:1604.05473>} for more details.")
     (license license:gpl2)))
 
 (define-public r-dwbmodelun
@@ -1624,7 +1598,7 @@ packages for pedigree analysis.")
     (description
      "Functionality for analyzing dose-volume histograms (DVH) in radiation oncology:
 Read DVH text files, calculate DVH metrics as well as generalized equivalent
-uniform dose @code{(gEUD),} biologically effective dose (BED), equivalent dose
+uniform dose (@code{gEUD}), biologically effective dose (BED), equivalent dose
 in 2 Gy fractions (EQD2), normal tissue complication probability (NTCP), and
 tumor control probability (TCP).  Show DVH diagrams, check and visualize quality
 assurance constraints for the DVH. Includes web-based graphical user interface.")
@@ -1836,13 +1810,13 @@ S3 file system also generalizes to any list of http URLs.")
 (define-public r-duckdb
   (package
     (name "r-duckdb")
-    (version "0.8.1-2")
+    (version "0.8.1-3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "duckdb" version))
               (sha256
                (base32
-                "0sn738f3vybfpp5x1n36gmn68w80jznachzakygfx2ppqm6inwql"))))
+                "0pppqskp3dvr29iypbcz6g0qzw14mccinw2x1hacy1wkx9176ygf"))))
     (properties `((upstream-name . "duckdb")))
     (build-system r-build-system)
     (propagated-inputs (list r-dbi))
@@ -2276,7 +2250,7 @@ for drug target information; see Kanehisa et al. (2021) <doi:
     (description
      "This package provides methods for estimating multi-stage optimal dynamic
 treatment regimes for survival outcomes with dependent censoring.  Cho, H.,
-Holloway, S. T., and Kosorok, M. R. (2020) @code{<arXiv:2012.03294>.}")
+Holloway, S. T., and Kosorok, M. R. (2020) <@code{arXiv:2012.03294>}.")
     (license license:gpl2)))
 
 (define-public r-dtrreg
@@ -2297,7 +2271,7 @@ Holloway, S. T., and Kosorok, M. R. (2020) @code{<arXiv:2012.03294>.}")
      "DTR Estimation and Inference via G-Estimation, Dynamic WOLS, Q-Learning, and Dynamic Weighted Survival Modeling (DWSurv)")
     (description
      "Dynamic treatment regime estimation and inference via G-estimation, dynamic
-weighted ordinary least squares @code{(dWOLS)} and Q-learning.  Inference via
+weighted ordinary least squares (@code{dWOLS}) and Q-learning.  Inference via
 bootstrap and (for G-estimation) recursive sandwich estimation.  Estimation and
 inference for survival outcomes via Dynamic Weighted Survival Modeling (DWSurv).
  Extension to continuous treatment variables (gdwols).  Wallace et al. (2017)
@@ -2466,7 +2440,7 @@ model, where generalized methods of moments type estimators are used.")
     (description
      "This package provides a series of functions which aid in both simulating and
 determining the properties of finite, discrete-time, discrete state markov
-chains.  Two functions (DTMC, @code{MultDTMC)} produce n iterations of a Markov
+chains.  Two functions (DTMC, @code{MultDTMC}) produce n iterations of a Markov
 Chain(s) based on transition probabilities and an initial distribution.  The
 function FPTime determines the first passage time into each state.  The function
 statdistr determines the stationary distribution of a Markov Chain.")
@@ -2503,7 +2477,7 @@ contains R-functions to process diffusion-weighted data.  The functionality
 includes diffusion tensor imaging (DTI), diffusion kurtosis imaging (DKI),
 modeling for high angular resolution diffusion weighted imaging (HARDI) using
 Q-ball-reconstruction and tensor mixture models, several methods for structural
-adaptive smoothing including POAS and @code{msPOAS,} and a streamline fiber
+adaptive smoothing including POAS and @code{msPOAS}, and a streamline fiber
 tracking for tensor and tensor mixture models.  The package provides
 functionality to manipulate and visualize results in 2D and 3D.")
     (license license:gpl2+)))
@@ -2785,13 +2759,13 @@ information on dtangle see Hunt et al. (2019)
      "Data science methods used in wind energy applications.  Current functionalities
 include creating a multi-dimensional power curve model, performing power curve
 function comparison, covariate matching, and energy decomposition.  Relevant
-works for the developed functions are: @code{funGP()} - Prakash et al. (2022)
+works for the developed functions are: @code{funGP}() - Prakash et al. (2022)
 <doi:10.1080/00401706.2021.1905073>, AMK() - Lee et al. (2015)
-<doi:10.1080/01621459.2014.977385>, @code{tempGP()} - Prakash et al. (2022)
-<doi:10.1080/00401706.2022.2069158>, @code{ComparePCurve()} - Ding et al. (2021)
-<doi:10.1016/j.renene.2021.02.136>, @code{deltaEnergy()} - Latiffianti et al.
-(2022) <doi:10.1002/we.2722>, @code{syncSize()} - Latiffianti et al. (2022)
-<doi:10.1002/we.2722>, @code{imptPower()} - Latiffianti et al. (2022)
+<doi:10.1080/01621459.2014.977385>, @code{tempGP}() - Prakash et al. (2022)
+<doi:10.1080/00401706.2022.2069158>, @code{ComparePCurve}() - Ding et al. (2021)
+<doi:10.1016/j.renene.2021.02.136>, @code{deltaEnergy}() - Latiffianti et al.
+(2022) <doi:10.1002/we.2722>, @code{syncSize}() - Latiffianti et al. (2022)
+<doi:10.1002/we.2722>, @code{imptPower}() - Latiffianti et al. (2022)
 <doi:10.1002/we.2722>, All other functions - Ding (2019, ISBN:9780429956508).")
     (license license:expat)))
 
@@ -2988,7 +2962,7 @@ probability distributions.")
     (synopsis "Implementation of the Direct Sampling Spatial Prior")
     (description
      "Draw samples from the direct sampling spatial prior model as described in G.
-White, D. Sun, P. Speckman (2019) @code{<arXiv:1906.05575>.} The basic model
+White, D. Sun, P. Speckman (2019) <@code{arXiv:1906.05575>}.  The basic model
 assumes a Gaussian likelihood and derives a spatial prior based on thin-plate
 splines.")
     (license license:gpl3+)))
@@ -3093,7 +3067,7 @@ to find similar songs.  More information:
      "Test for no adverse shift in two-sample comparison when we have a training set,
 the reference distribution, and a test set.  The approach is flexible and relies
 on a robust and powerful test statistic, the weighted AUC. Technical details are
-in Kamulete, V. M. (2021) @code{<arXiv:1908.04000>.} Modern notions of
+in Kamulete, V. M. (2021) <@code{arXiv:1908.04000>}.  Modern notions of
 outlyingness such as trust scores and prediction uncertainty can be used as the
 underlying scores for example.")
     (license license:gpl3+)))
@@ -3117,7 +3091,7 @@ underlying scores for example.")
      "@code{DataSHIELD} is an infrastructure and series of R packages that enables the
 remote and non-disclosive analysis of sensitive research data.  This package is
 the @code{DataSHIELD} interface implementation for Opal', which is the data
-integration application for biobanks by @code{OBiBa'.} Participant data, once
+integration application for biobanks by O@code{BiBa}'.  Participant data, once
 collected from any data source, must be integrated and stored in a central data
 repository under a uniform model.  Opal is such a central repository.  It can
 import, process, validate, query, analyze, report, and export data.  Opal is the
@@ -3156,13 +3130,13 @@ MOLGENIS Armadillo server.  MOLGENIS Armadillo is a light-weight
 (define-public r-dsmmr
   (package
     (name "r-dsmmr")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dsmmR" version))
               (sha256
                (base32
-                "1s2fgz110y5w0b7dgrg9s087ld0b919463rlxn8j3rlwnra6p9cd"))))
+                "05hbwdycbz58mn01xl6958w03z4adjb00bgl1f9sqbhgy4x23397"))))
     (properties `((upstream-name . "dsmmR")))
     (build-system r-build-system)
     (propagated-inputs (list r-discreteweibull))
@@ -3183,7 +3157,11 @@ distributions.  Semi-Markov models are described in: Barbu, V.S., Limnios, N.
 (2008) <doi:10.1007/978-0-387-73173-5>.  Drifting Markov models are described
 in: Vergne, N. (2008) <doi:10.2202/1544-6115.1326>.  Reliability indicators of
 Drifting Markov models are described in: Barbu, V. S., Vergne, N. (2019)
-<doi:10.1007/s11009-018-9682-8>.")
+<doi:10.1007/s11009-018-9682-8>.  We acknowledge the DATALAB Project
+<https://lmrs-num.math.cnrs.fr/projet-datalab.html> (financed by the European
+Union with the European Regional Development fund (ERDF) and by the Normandy
+Region) and the HSMM-INCA Project (financed by the French Agence Nationale de la
+Recherche (ANR) under grant ANR-21-CE40-0005).")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-dsmisc
@@ -3550,7 +3528,7 @@ method.")
      "Discretization-based random sampling algorithm that is useful for a complex
 model in high dimension is implemented.  The normalizing constant of a target
 distribution is not needed.  Posterior summaries are compared with those by
-@code{OpenBUGS'.} The method is described: Wang and Lee (2014)
+@code{OpenBUGS}'.  The method is described: Wang and Lee (2014)
 <doi:10.1016/j.csda.2013.06.011> and exercised in Lee (2009)
 <http://hdl.handle.net/1993/21352>.")
     (license license:gpl3)))
@@ -3573,10 +3551,10 @@ distribution is not needed.  Posterior summaries are compared with those by
     (description
      "Providing six different algorithms that can be used to split the available data
 into training, test and validation subsets with similar distribution for
-hydrological model developments.  The @code{dataSplit()} function will help you
+hydrological model developments.  The @code{dataSplit}() function will help you
 divide the data according to specific requirements, and you can refer to the
 par.default() function to set the parameters for data splitting.  The
-@code{getAUC()} function will help you measure the similarity of distribution
+@code{getAUC}() function will help you measure the similarity of distribution
 features between the data subsets.  For more information about the data
 splitting algorithms, please refer to: Chen et al. (2022)
 <doi:10.1016/j.jhydrol.2022.128340>, Zheng et al. (2022)
@@ -3791,13 +3769,13 @@ drum patterns.")
 (define-public r-drugutilisation
   (package
     (name "r-drugutilisation")
-    (version "0.3.1")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DrugUtilisation" version))
               (sha256
                (base32
-                "16czxyqx815ri9132qz684h93v4kl7sl6033gdk40n4viy22rw8n"))))
+                "0fwcigf7gmyyrvxspnlm9f525m6h3wfchlw45pdms17af42xn242"))))
     (properties `((upstream-name . "DrugUtilisation")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -3814,6 +3792,7 @@ drum patterns.")
                              r-cli
                              r-checkmate
                              r-cdmconnector))
+    (native-inputs (list r-knitr))
     (home-page "https://darwin-eu-dev.github.io/DrugUtilisation/")
     (synopsis
      "Summarise Patient-Level Drug Utilisation in Data Mapped to the OMOP Common Data Model")
@@ -3963,7 +3942,7 @@ called Gabriel classification error is made accessible.")
     (description
      "Estimation of the total population size from capture-recapture data efficiently
 and with low bias implementing the methods from Das M, Kennedy EH, and Jewell NP
-(2021) @code{<arXiv:2104.14091>.} The estimator is doubly robust against errors
+(2021) <@code{arXiv:2104.14091>}.  The estimator is doubly robust against errors
 in the estimation of the intermediate nuisance parameters.  Users can choose
 from the flexible estimation models provided in the package, or use any other
 preferred model.")
@@ -4038,6 +4017,27 @@ not endorsed by or affiliated with NASA. See \"ASTM G86-17, Standard Test Method
 for Determining Ignition Sensitivity of Materials to Mechanical Impact in
 Ambient Liquid Oxygen and Pressurized Liquid and Gaseous Oxygen Environments\"
 <doi:10.1520/G0086-17>.")
+    (license license:expat)))
+
+(define-public r-dropout
+  (package
+    (name "r-dropout")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "dropout" version))
+              (sha256
+               (base32
+                "0g47cbsx55j88n8nwgfflnv07s6bh1wiaxvvzh159vfsfxy1a55f"))))
+    (properties `((upstream-name . "dropout")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/hendr1km/dropout")
+    (synopsis "Handling Incomplete Responses in Survey Data Analysis")
+    (description
+     "Offers robust tools to identify and manage incomplete responses in survey
+datasets, thereby enhancing the quality and reliability of research findings.")
     (license license:expat)))
 
 (define-public r-dromics
@@ -4136,7 +4136,7 @@ gene scores and memberships to cancer-related KEGG pathways.  It uses these
 features to estimate cancer-type-specific probability for each gene of being a
 cancer driver using the related task of a multi-task learning classification
 model.  The method is described in detail in Ulgen E, Sezerman OU. 2021.
-@code{driveR:} @code{driveR:} a novel method for prioritizing cancer driver
+@code{driveR}: @code{driveR}: a novel method for prioritizing cancer driver
 genes using somatic genomics data.  BMC Bioinformatics
 <doi:10.1186/s12859-021-04203-7>.")
     (license license:expat)))
@@ -4144,13 +4144,13 @@ genes using somatic genomics data.  BMC Bioinformatics
 (define-public r-drip
   (package
     (name "r-drip")
-    (version "1.7")
+    (version "1.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DRIP" version))
               (sha256
                (base32
-                "1926qmxxmmhbr6hwn4jkm553h5lj84g37rgvjy36kb4b8vpnlkd5"))))
+                "11kmklkgsngf8viqmh4i6pdfv2mnk8anssgmnwglrd6sqqdhvblw"))))
     (properties `((upstream-name . "DRIP")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -4247,7 +4247,7 @@ corresponding variables in two datasets, calculate_residuals_drift() checks
 distance between residual distributions for two models, calculate_model_drift()
 checks distance between partial dependency profiles for two models,
 check_drift() executes all checks against drift.  drifter is a part of the
-@code{DrWhy.AI} universe (Biecek 2018) @code{<arXiv:1806.08915>.}")
+@code{DrWhy.AI} universe (Biecek 2018) <@code{arXiv:1806.08915>}.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-driftbursthypothesis
@@ -4317,7 +4317,7 @@ MATLAB code is available upon request, see:
 (Briz-Redon et al.  2019) <doi:10.1016/j.aap.2019.105278> along a linear
 network.  Given a marked point pattern lying on the linear network, the method
 implemented uses a network-constrained version of kernel density estimation
-@code{(McSwiggan} et al.  2017) <doi:10.1111/sjos.12255> to approximate the
+(@code{McSwiggan} et al.  2017) <doi:10.1111/sjos.12255> to approximate the
 probability of occurrence across space for the type of event specified by the
 user through the marks of the pattern (Kelsall and Diggle 1995)
 <doi:10.2307/3318678>.  The goal is to detect microzones of the linear network
@@ -4370,7 +4370,7 @@ necessarily both.  For more information, see Zetterqvist and @code{SjÃ¶lander}
     (synopsis "Distributional Random Forests")
     (description
      "An implementation of distributional random forests as introduced in Cevid &
-Michel & Meinshausen & Buhlmann (2020) @code{<arXiv:2005.14458>.}")
+Michel & Meinshausen & Buhlmann (2020) <@code{arXiv:2005.14458>}.")
     (license license:gpl3)))
 
 (define-public r-dregar
@@ -4512,7 +4512,7 @@ Solutions based on single omics measurements have been proposed, and networks
 provide means to incorporate molecular interactions into reasoning.  However,
 how to integrate the wealth of information contained in multiple omics layers
 still poses a complex problem.  We present a novel network analysis pipeline,
-@code{DrDimont,} Drug response prediction from Differential analysis of
+@code{DrDimont}, Drug response prediction from Differential analysis of
 multi-omics networks.  It allows for comparative conclusions between two
 conditions and translates them into differential drug response predictions.
 @code{DrDimont} focuses on molecular interactions.  It establishes
@@ -4546,7 +4546,7 @@ to the software and explicitly not to the included data.")
     (synopsis "Doubly Robust Difference-in-Differences Estimators")
     (description
      "This package implements the locally efficient doubly robust
-difference-in-differences @code{(DiD)} estimators for the average treatment
+difference-in-differences (@code{DiD}) estimators for the average treatment
 effect proposed by Sant'Anna and Zhao (2020)
 <doi:10.1016/j.jeconom.2020.06.003>.  The estimator combines inverse probability
 weighting and outcome regression estimators (also implemented in the package) to
@@ -4669,7 +4669,7 @@ simulations and empirical application of Jiang et al. (2022).  In particular, we
 provide corresponding functions for generating the three types of random data
 described in this paper, as well as all the estimation strategies.  Detailed
 information about the data generation process and estimation strategy can be
-found in Jiang et al. (2022) @code{<doi:10.48550/arXiv.2201.13004>.}")
+found in Jiang et al. (2022) <doi:10.48550/@code{arXiv.2201.13004>}.")
     (license license:expat)))
 
 (define-public r-drbats
@@ -4778,7 +4778,7 @@ answering many research questions (Klar & Leeper, 2019)
     (home-page "https://cran.r-project.org/package=DRaWR")
     (synopsis "Discriminative Random Walk with Restart")
     (description
-     "We present @code{DRaWR,} a network-based method for ranking genes or properties
+     "We present D@code{RaWR}, a network-based method for ranking genes or properties
 related to a given gene set.  Such related genes or properties are identified
 from among the nodes of a large, heterogeneous network of biological
 information.  Our method involves a random walk with restarts, performed on an
@@ -4926,7 +4926,7 @@ and more, is available at the reference website
      "Drag and Drop Elements in 'Shiny' using 'Dragula Javascript Library'")
     (description
      "Move elements between containers in Shiny without explicitly using
-@code{JavaScript'.} It can be used to build custom inputs or to change the
+@code{JavaScript}'.  It can be used to build custom inputs or to change the
 positions of user interface elements like plots or tables.")
     (license license:gpl2)))
 
@@ -5178,7 +5178,7 @@ the package.  With version 3.0.4, the arguments for dr.step have been modified."
     (synopsis
      "BSA Software for Detecting All Types of QTLs in BC, DH, RIL and F2")
     (description
-     "The new @code{(dQTG.seq1} and @code{dQTG.seq2)} and existing @code{(SmoothLOD,}
+     "The new (@code{dQTG.seq1} and @code{dQTG.seq2}) and existing (@code{SmoothLOD},
 G', @code{deltaSNP} and ED) bulked segregant analysis methods are used to
 identify various types of quantitative trait loci for complex traits via extreme
 phenotype individuals in bi-parental segregation populations (F2, backcross,
@@ -5226,13 +5226,13 @@ Publication: Kapsner et al. (2021) <doi:10.1055/s-0041-1733847>.")
 (define-public r-dqagui
   (package
     (name "r-dqagui")
-    (version "0.2.2")
+    (version "0.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DQAgui" version))
               (sha256
                (base32
-                "1zscs93ax7s25f3vpqr75q28v06h449pydkqwgfygn3sn02n82nh"))))
+                "1wizx8wdqkl5vzk0bmmgzcbih0flp8bvdgy252ybfi5m8x3xczvr"))))
     (properties `((upstream-name . "DQAgui")))
     (build-system r-build-system)
     (propagated-inputs (list r-waiter
@@ -5257,7 +5257,7 @@ Publication: Kapsner et al. (2021) <doi:10.1055/s-0041-1733847>.")
     (synopsis "Graphical User Interface for Data Quality Assessment")
     (description
      "This package provides a graphical user interface (GUI) to the functions
-implemented in the R package DQAstats'. .  Publication: Mang et al. (2021)
+implemented in the R package DQAstats'.  Publication: Mang et al. (2021)
 <doi:10.1186/s12911-022-01961-z>.")
     (license license:gpl3)))
 
@@ -5461,7 +5461,7 @@ linear regression (Kifer et al., 2012)
 implements some popular randomization mechanisms such as the Laplace mechanism
 (Dwork et al., 2006a) <doi:10.1007/11681878_14>, Gaussian mechanism (Dwork et
 al., 2006b) <doi:10.1007/11761679_29>, and exponential mechanism
-@code{(McSherry} & Talwar, 2007) <doi:10.1109/FOCS.2007.66>.")
+(@code{McSherry} & Talwar, 2007) <doi:10.1109/FOCS.2007.66>.")
     (license license:gpl3)))
 
 (define-public r-dpp
@@ -5547,13 +5547,13 @@ manipulation.")
 (define-public r-dplr
   (package
     (name "r-dplr")
-    (version "1.7.4")
+    (version "1.7.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dplR" version))
               (sha256
                (base32
-                "1gnihbgbw5dimnzf23fhlkwairfdaixs7ss6rkhk45y551hbwf65"))))
+                "0w0ljanw4ayzmm1whga6p50iikyg7ijc02j70m9s7263vybj1n2r"))))
     (properties `((upstream-name . "dplR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
@@ -6338,7 +6338,7 @@ combines them according to principles of (multivariate) random-effects models.")
      "Constructs dynamic optimal shrinkage estimators for the weights of the global
 minimum variance portfolio which are reconstructed at given reallocation points
 as derived in Bodnar, Parolya, and @code{ThorsÃ©n} (2021)
-@code{(<arXiv:2106.02131>).} Two dynamic shrinkage estimators are available in
+(<@code{arXiv:2106.02131>}).  Two dynamic shrinkage estimators are available in
 this package.  One using overlapping samples while the other use nonoverlapping
 samples.")
     (license license:gpl3)))
@@ -6627,13 +6627,13 @@ of a topographic variable; and map a variable over a 3d triangle mesh.")
 (define-public r-donut
   (package
     (name "r-donut")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "donut" version))
               (sha256
                (base32
-                "0idynkhcdn9va32m1n1rxjyb7ghbkhyy1959wks2bn1a7k4yg87i"))))
+                "1vrarv850dja286s5l8y0fng7idai9rqr156z67zrwx347bdr4n2"))))
     (properties `((upstream-name . "donut")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -6687,7 +6687,7 @@ package.")
 analysis for R functions.  This package supports the application of
 decomposition methods by providing lapply'- or Map'-like meta-functions that
 compute dominance analysis (Azen, R., & Budescu, D. V. (2003)
-<doi:10.1037/1082-989X.8.2.129>; @code{GrÃ¶mping,} U. (2007)
+<doi:10.1037/1082-989X.8.2.129>; @code{GrÃ¶mping}, U. (2007)
 <doi:10.1198/000313007X188252>) or Shapley value regression (Lipovetsky, S., &
 Conklin, M. (2001) <doi:10.1002/asmb.446>) based on the values returned from
 other functions.")
@@ -6770,7 +6770,7 @@ workflows (see <http://www.dominodatalab.com> for more information).")
     (description
      "Work with data on Venetian doges and dogaresse and the noble families of the
 Republic of Venice, and use it for social network analysis, as used in Merelo
-(2022) @code{<arXiv:2209.07334>.}")
+(2022) <@code{arXiv:2209.07334>}.")
     (license license:gpl3)))
 
 (define-public r-doex
@@ -6917,7 +6917,7 @@ are also added in order to facilitate examples.")
      "Various kinds of designs for (industrial) experiments can be created.  The
 package uses, and sometimes enhances, design generation routines from other
 packages.  So far, response surface designs from package rsm', Latin hypercube
-samples from packages lhs and @code{DiceDesign',} and D-optimal designs from
+samples from packages lhs and @code{DiceDesign}', and D-optimal designs from
 package @code{AlgDesign} have been implemented.")
     (license license:gpl2+)))
 
@@ -7354,8 +7354,8 @@ process Rmarkdown code chunks.")
     (description
      "This is the core package that provides both the user API and developer API to
 deploy the parallel cluster on the cloud using the container service.  The user
-can call @code{clusterPreset()} to define the cloud service provider and
-container and @code{makeDockerCluster()} to create the cluster.  The developer
+can call @code{clusterPreset}() to define the cloud service provider and
+container and @code{makeDockerCluster}() to create the cluster.  The developer
 should see \"developer's cookbook\" on how to define the cloud provider and
 container.")
     (license license:gpl3)))
@@ -7522,7 +7522,7 @@ of Birth-Death-Immigration Markov Chains.")
     (synopsis "Data Operator")
     (description
      "Flexibly convert data between long and wide format using just two functions:
-@code{reshape_toLong()} and @code{reshape_toWide().}")
+reshape_@code{toLong}() and reshape_@code{toWide}().")
     (license license:gpl3)))
 
 (define-public r-dnr
@@ -7677,7 +7677,7 @@ Semiparametric Gaussian graphical models.  The multiple testing procedure
 asymptotically controls the false discovery rate (FDR) at a user-specified
 level.  To construct the test statistic, a truncated estimator is used to
 approximate the transformation functions and two R functions including
-@code{lassoGGM()} and @code{lassoNPN()} are provided to compute the lasso
+@code{lassoGGM}() and @code{lassoNPN}() are provided to compute the lasso
 estimates of the regression coefficients.")
     (license license:gpl3)))
 
@@ -7986,17 +7986,17 @@ submitted.")
 predictors can be continuous or categorical and the number of regressors may
 exceed the number of observations.  The selected model consists of a subset of
 numerical regressors and partitions of levels of factors.  Szymon Nowakowski,
-Piotr Pokarowski, Wojciech Rejchel and Agnieszka @code{SoÅtys,} 2023.
+Piotr Pokarowski, Wojciech Rejchel and Agnieszka @code{SoÅtys}, 2023.
 Improving Group Lasso for High-Dimensional Categorical Data.  In: Computational
 Science â ICCS 2023.  Lecture Notes in Computer Science, vol 14074, p.
 455-470.  Springer, Cham. <doi:10.1007/978-3-031-36021-3_47>.  Aleksandra
-@code{Maj-KaÅska,} Piotr Pokarowski and Agnieszka Prochenka, 2015.  Delete or
+Maj-@code{KaÅska}, Piotr Pokarowski and Agnieszka Prochenka, 2015.  Delete or
 merge regressors for linear model selection.  Electronic Journal of Statistics
 9(2): 1749-1778. <doi:10.1214/15-EJS1050>.  Piotr Pokarowski and Jan Mielniczuk,
 2015.  Combined l1 and greedy l0 penalized least squares for linear model
 selection.  Journal of Machine Learning Research 16(29): 961-992.
 <https://www.jmlr.org/papers/volume16/pokarowski15a/pokarowski15a.pdf>.  Piotr
-Pokarowski, Wojciech Rejchel, Agnieszka @code{SoÅtys,} @code{MichaÅ} Frej and
+Pokarowski, Wojciech Rejchel, Agnieszka @code{SoÅtys}, @code{MichaÅ} Frej and
 Jan Mielniczuk, 2022.  Improving Lasso for model selection and prediction.
 Scandinavian Journal of Statistics, 49(2): 831â863. <doi:10.1111/sjos.12546>.")
     (license license:gpl2)))
@@ -8120,7 +8120,7 @@ and sediment budgets from a field or a catchment on a daily basis.")
      "Dyadic mixed model analysis with multi-trait responses and pedigree-based
 partitioning of individual variation into a range of environmental and genetic
 variance components for individual and maternal effects.  Method documented in
-@code{dmmOverview.pdf;} dmm is an implementation of dispersion mean model
+@code{dmmOverview.pdf}; dmm is an implementation of dispersion mean model
 described by Searle et al. (1992) \"Variance Components\", Wiley, NY.")
     (license (list license:gpl2 license:gpl2+ license:gpl3))))
 
@@ -8172,8 +8172,8 @@ combination and random forest .")
     (description
      "Implementation of double machine learning (DML) algorithms in R, based on
 Emmenegger and Buehlmann (2021) \"Regularizing Double Machine Learning in
-Partially Linear Endogenous Models\" @code{<arXiv:2101.12525>} and Emmenegger and
-Buehlmann (2021) @code{<arXiv:2108.13657>} \"Double Machine Learning for
+Partially Linear Endogenous Models\" <@code{arXiv:2101.12525>} and Emmenegger and
+Buehlmann (2021) <@code{arXiv:2108.13657>} \"Double Machine Learning for
 Partially Linear Mixed-Effects Models with Repeated Measurements\".  First part:
 our goal is to perform inference for the linear parameter in partially linear
 models with confounding variables.  The standard DML estimator of the linear
@@ -8263,7 +8263,7 @@ Psychology, 78, 148-174.  Ulrich et al. (2015)
 <doi:10.1016/j.cogpsych.2015.02.005>.  Decision processes within choice
 reaction-time (CRT) tasks are often modelled using evidence accumulation models
 (EAMs), a variation of which is the Diffusion Decision Model (DDM, for a review,
-see Ratcliff & @code{McKoon,} 2008).  Ulrich et al. (2015) introduced a
+see Ratcliff & @code{McKoon}, 2008).  Ulrich et al. (2015) introduced a
 Diffusion Model for Conflict tasks (DMC).  The DMC model combines common
 features from within standard diffusion models with the addition of superimposed
 controlled and automatic activation.  The DMC model is used to explain
@@ -8685,7 +8685,7 @@ credible regions for variable selection.")
     (synopsis
      "Implementation of Adaptive or Non-Adaptive Differentiable Lasso and SCAD Penalties in Linear Models")
     (description
-     "An implementation of the differentiable lasso (dlasso) and SCAD @code{(dSCAD)}
+     "An implementation of the differentiable lasso (dlasso) and SCAD (@code{dSCAD})
 using iterative ridge algorithm.  This package allows selecting the tuning
 parameter by AIC, BIC, GIC and GIC.")
     (license license:gpl2+)))
@@ -8835,13 +8835,13 @@ avoid redundancy.")
 (define-public r-diztools
   (package
     (name "r-diztools")
-    (version "0.0.8")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DIZtools" version))
               (sha256
                (base32
-                "0cjfyq83vqc9b0q0w2iifdqvcpjgapicj5bc4b0pj8nh8fwgwrga"))))
+                "1zx7rc4qa6604fifcahld30vzkc68wdwhwaxq6nn8wi0ka4a4mk1"))))
     (properties `((upstream-name . "DIZtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-r-utils
@@ -9007,7 +9007,7 @@ systems.")
     (synopsis "Get Images Out of DICOM Format Quickly")
     (description
      "This package provides tools to sort DICOM-format medical image files, and
-convert them to @code{NIfTI-1} format.")
+convert them to N@code{IfTI-1} format.")
     (license (license:fsdg-compatible "BSD_3_clause + file LICENCE"))))
 
 (define-public r-diversityoccupancy
@@ -9192,7 +9192,7 @@ compared in a likelihood framework.")
     (synopsis "Easily Install and Load Interactive Data Visualization Tools")
     (description
      "This package provides a suite of loon related packages providing data analytic
-tools for Direct Interactive Visual Exploration in R @code{('diveR').} These
+tools for Direct Interactive Visual Exploration in R ('@code{diveR}').  These
 tools work with and complement those of the tidyverse suite, extending the
 grammar of ggplot2 to become a grammar of interactive graphics.  The suite
 provides many visual tools designed for moderately (100s of variables) high
@@ -9472,7 +9472,7 @@ family of packages.")
     (synopsis "Distribution Classes for Distributions from Rmetrics")
     (description
      "S4-distribution classes based on package distr for distributions from packages
-@code{fBasics} and @code{fGarch'.}")
+@code{fBasics} and @code{fGarch}'.")
     (license license:lgpl3)))
 
 (define-public r-distrr
@@ -9515,7 +9515,7 @@ of the variables of interest (see for example functions dcc5() and dcc6()).")
     (description
      "Fast distributed/parallel estimation for multinomial logistic regression via
 Poisson factorization and the gamlr package.  For details see: Taddy (2015,
-@code{AoAS),} Distributed Multinomial Regression, @code{<arXiv:1311.6139>.}")
+@code{AoAS}), Distributed Multinomial Regression, <@code{arXiv:1311.6139>}.")
     (license license:gpl3)))
 
 (define-public r-distro
@@ -9561,7 +9561,7 @@ name.")
     (synopsis "Object Oriented Implementation of Probability Models")
     (description
      "This package implements S4 classes for probability models based on packages
-distr and @code{distrEx'.}")
+distr and @code{distrEx}'.")
     (license license:lgpl3)))
 
 (define-public r-distributiontest
@@ -9662,7 +9662,7 @@ in Expectation Maximization.  The algorithm and applications of this package are
 published under: Lerch, F., Ultsch, A., Lotsch, J. (2020)
 <doi:10.1038/s41598-020-57432-w>.  The evolution is based on the GA package:
 Scrucca, L. (2013) <doi:10.18637/jss.v053.i04> while the Gaussian Mixture Logic
-stems from @code{AdaptGauss':} Ultsch, A, et al. (2015)
+stems from @code{AdaptGauss}': Ultsch, A, et al. (2015)
 <doi:10.3390/ijms161025897>.")
     (license license:expat)))
 
@@ -9793,8 +9793,8 @@ explored and visualized.")
     (synopsis "Documentation for 'distr' Family of R Packages")
     (description
      "This package provides documentation in form of a common vignette to packages
-distr', @code{distrEx',} @code{distrMod',} @code{distrSim',} @code{distrTEst',}
-@code{distrTeach',} and @code{distrEllipse'.}")
+distr', @code{distrEx}', @code{distrMod}', @code{distrSim}', @code{distrTEst}',
+@code{distrTeach}', and @code{distrEllipse}'.")
     (license license:lgpl3)))
 
 (define-public r-distr
@@ -9934,7 +9934,7 @@ supported.")
      "This package provides several methods for model distillation and
 interpretability for general black box machine learning models and treatment
 effect estimation methods.  For details on the algorithms implemented, see
-@code{<https://forestry-labs.github.io/distillML/index.html>} Brian Cho, Theo F.
+<https://forestry-labs.github.io/@code{distillML/index.html>} Brian Cho, Theo F.
 Saarinen, Jasjeet S. Sekhon, Simon Walter.")
     (license license:gpl3+)))
 
@@ -10019,7 +10019,7 @@ of bivariate data.  The method was proposed by Zhiqiu Hu & Rong-cai Yang (2013)
 the distributional method for the dichotomisation of continuous outcomes.  The
 method provides estimates with standard error of a comparison of proportions
 (difference, odds ratio and risk ratio) derived, with similar precision, from a
-comparison of means.  See the URL below or @code{<arXiv:1809.03279>} for more
+comparison of means.  See the URL below or <@code{arXiv:1809.03279>} for more
 information.")
     (license license:expat)))
 
@@ -10290,7 +10290,7 @@ algorithm was published by Malone et al. (2012)
     (home-page "https://murphymv.github.io/dissCqN/")
     (synopsis "Multiple Assemblage Dissimilarity for Orders q = 0-N")
     (description
-     "Calculate multiple or pairwise dissimilarity for orders q = 0-N @code{(CqN;}
+     "Calculate multiple or pairwise dissimilarity for orders q = 0-N (@code{CqN};
 Chao et al.  2008 <doi:10/fcvn63>) for a set of species assemblages or
 interaction networks.")
     (license license:gpl3+)))
@@ -10345,7 +10345,7 @@ resample the measured profiles in order to obtain a bootstrap estimate of f2
 model-independent non-parametric multivariate confidence region (MCR) procedure
 (Tsong et al. (1996) <doi:10.1177/009286159603000427>) or the T2-test for
 equivalence procedure (Hoffelder (2016)
-@code{<https://www.ecv.de/suse_item.php?suseId=Z|pi|8430>).} Functions for
+<https://www.ecv.de/suse_item.php?@code{suseId=Z|pi|8430>}).  Functions for
 estimation of f1, f2, bootstrap f2, MCR / T2-test for equivalence procedure are
 implemented.")
     (license license:gpl2+)))
@@ -10603,8 +10603,8 @@ paradigms like dplyr verbs and data.table syntax.")
      "This package implements methods for calculating disproportionate impact: the
 percentage point gap, proportionality index, and the 80% index.  California
 Community Colleges Chancellor's Office (2017).  Percentage Point Gap Method.
-@code{<https://www.cccco.edu/-/media/CCCCO-Website/About-Us/Divisions/Digital-Innovation-and-Infrastructure/Research/Files/PercentagePointGapMethod2017.ashx>.}
-California Community Colleges Chancellor's Office (2014).  Guidelines for
+<https://www.cccco.edu/-/media/CCCCO-Website/About-Us/Divisions/Digital-Innovation-and-Infrastructure/Research/Files/@code{PercentagePointGapMethod2017.ashx>}.
+ California Community Colleges Chancellor's Office (2014).  Guidelines for
 Measuring Disproportionate Impact in Equity Plans.
 <https://www.cccco.edu/-/media/CCCCO-Website/Files/DII/guidelines-for-measuring-disproportionate-impact-in-equity-plans-tfa-ada.pdf>.")
     (license license:gpl3)))
@@ -11008,7 +11008,7 @@ procedures directly from contingency tables.")
      "Structure learning of Bayesian network using coordinate-descent algorithm.  This
 algorithm is designed for discrete network assuming a multinomial data set, and
 we use a multi-logit model to do the regression.  The algorithm is described in
-Gu, Fu and Zhou (2016) @code{<arXiv:1403.2310>.}")
+Gu, Fu and Zhou (2016) <@code{arXiv:1403.2310>}.")
     (license license:gpl2+)))
 
 (define-public r-discoverableresearch
@@ -11307,7 +11307,7 @@ models.")
      "Computes discrete fast Fourier transform of river discharge data and the derived
 metrics.  The methods are described in J. L. Sabo, D. M. Post (2008)
 <doi:10.1890/06-1340.1> and J. L. Sabo, A. Ruhi, G. W. Holtgrieve, V. Elliott,
-M. E. Arias, P. B. Ngor, T. A. @code{RÃ¤sÃ¤nsen,} S. Nam (2017)
+M. E. Arias, P. B. Ngor, T. A. RÃ¤@code{sÃ¤nsen}, S. Nam (2017)
 <doi:10.1126/science.aao1053>.")
     (license license:gpl3)))
 
@@ -11452,7 +11452,7 @@ information, using a multi-state model.  Given data on age-specific mortality
 and either incidence or prevalence, Bayesian inference is used to estimate the
 posterior distributions of incidence, case fatality, and functions of these such
 as prevalence.  The methods are described in Jackson et al. (2021)
-@code{<arXiv:2111.14100>.}")
+<@code{arXiv:2111.14100>}.")
     (license license:gpl3)))
 
 (define-public r-disaggregation
@@ -11514,7 +11514,7 @@ low-frequency series for simulation studies in temporal disaggregation; Second -
 a toolkit utilizing temporal disaggregation and benchmarking techniques with a
 low-dimensional matrix of indicator series previously proposed in Dagum and
 Cholette (2006, ISBN:978-0-387-35439-2) ; and Third - novel techniques proposed
-by Mosley, Gibberd and Eckley (2021) @code{<arXiv:2108.05783>} for
+by Mosley, Gibberd and Eckley (2021) <@code{arXiv:2108.05783>} for
 disaggregating low-frequency series in the presence of high-dimensional
 indicator matrices.")
     (license license:gpl3+)))
@@ -11536,7 +11536,7 @@ indicator matrices.")
     (home-page "https://inseefr.github.io/disaggR/")
     (synopsis "Two-Steps Benchmarks for Time Series Disaggregation")
     (description
-     "The @code{twoStepsBenchmark()} and @code{threeRuleSmooth()} functions allow you
+     "The @code{twoStepsBenchmark}() and @code{threeRuleSmooth}() functions allow you
 to disaggregate a low-frequency time series with higher frequency time series,
 using the French National Accounts methodology.  The aggregated sum of the
 resulting time series is strictly equal to the low-frequency time series within
@@ -11763,7 +11763,7 @@ with general covariates and anisotropic errors.  Statistics and Computing 30(1):
 spherical mean vectors.  Communications in Statistics-Simulation and Computation
 (Accepted for publication). <doi:10.1080/03610918.2022.2045499>.  e) Tsagris M.
 and Alzeley O. (2023).  Circular and spherical projected Cauchy distributions.
-@code{<arXiv:2302.02468>.}")
+<@code{arXiv:2302.02468>}.")
     (license license:gpl2+)))
 
 (define-public r-directeffects
@@ -11897,7 +11897,7 @@ package also allows the users to estimate the regression curves and take the
 estimated curves as input to our methods.  Details of the methodology can be
 found in Yuhao Wang and Rajen D. Shah (2020) \"Debiased Inverse Propensity Score
 Weighting for Estimation of Average Treatment Effects with High-Dimensional
-Confounders\" @code{<arXiv:2011.08661>.} The package relies on the optimisation
+Confounders\" <@code{arXiv:2011.08661>}.  The package relies on the optimisation
 software MOSEK <https://www.mosek.com/> which must be installed separately; see
 the documentation for Rmosek'.")
     (license license:gpl3)))
@@ -12043,7 +12043,7 @@ given treatment group.")
      "Robust Tests for Differential Dispersion and Differential Expression in RNA-Sequencing Data")
     (description
      "This package implements the algorithm described in Jun Li and Alicia T. Lamere,
-@code{\"DiPhiSeq:} Robust comparison of expression levels on RNA-Seq data with
+\"@code{DiPhiSeq}: Robust comparison of expression levels on RNA-Seq data with
 large sample sizes\" (Unpublished).  Detects not only genes that show different
 average expressions (\"differential expression\", DE), but also genes that show
 different diversities of expressions in different groups (\"differentially
@@ -12077,8 +12077,8 @@ patterns ('WGCNA package).  Using the framework of linear model-based
 differential expression comparisons ('limma package), time-course expression
 patterns for genes in different conditions are compared and analyzed for
 significant pattern changes.  For reference, see: Greenham K, Sartor RC, Zorich
-S, Lou P, Mockler TC and @code{McClung} CR. @code{eLife.} 2020 Sep 30;9(4).
-@code{<doi:10.7554/eLife.58993>.}")
+S, Lou P, Mockler TC and @code{McClung} CR. @code{eLife}.  2020 Sep 30;9(4).
+<doi:10.7554/@code{eLife.58993>}.")
     (license license:gpl2+)))
 
 (define-public r-dint
@@ -12283,7 +12283,7 @@ data will contain proportions for each species and a community-level response
 variable, and may also include additional factors, such as blocks or treatments.
  The package can perform data manipulation tasks, such as computing pairwise
 interactions (the DI_data() function), can perform an automated model selection
-process (the @code{autoDI()} function) and has the flexibility to fit a wide
+process (the @code{autoDI}() function) and has the flexibility to fit a wide
 range of user-defined DI models (the DI() function).")
     (license license:gpl2+)))
 
@@ -12740,7 +12740,7 @@ images, and data frames).")
     (description
      "Find, visualize and explore patterns of differential taxa in vegetation data
 (namely in a phytosociological table), using the Differential Value
-@code{(DiffVal).} Patterns are searched through mathematical optimization
+(@code{DiffVal}).  Patterns are searched through mathematical optimization
 algorithms.  Ultimately, Total Differential Value (TDV) optimization aims at
 obtaining classifications of vegetation data based on differential taxa, as in
 the traditional geobotanical approach.  The Gurobi optimizer, as well as the R
@@ -12834,7 +12834,7 @@ the one given by shortest-paths and allows to study the geometry induced by
 different types of diffusion-like communication mechanisms taking place on
 complex networks.  For more details see: De Domenico, M. (2017)
 <doi:10.1103/physrevlett.118.168301> and Bertagnolli, G. and De Domenico, M.
-(2021) @code{<doi:10.1103/PhysRevE.103.042301>.}")
+(2021) <doi:10.1103/@code{PhysRevE.103.042301>}.")
     (license license:gpl2+)))
 
 (define-public r-diffr
@@ -12882,7 +12882,7 @@ statistics, models, and machine learners, within the framework of differential
 privacy of Dwork et al. (2006) <doi:10.1007/11681878_14>.  Example mechanisms
 include the Laplace mechanism for releasing numeric aggregates, and the
 exponential mechanism for releasing set elements.  A sensitivity sampler
-(Rubinstein & Alda, 2017) @code{<arXiv:1706.02562>} permits sampling target
+(Rubinstein & Alda, 2017) <@code{arXiv:1706.02562>} permits sampling target
 non-private function sensitivity; combined with the generic mechanisms, it
 permits turn-key privatization of arbitrary programs.")
     (license license:expat)))
@@ -13079,10 +13079,10 @@ related datasets.  For instance, it can identify differential gene network from
 datasets of case and control.  By performing data-driven network inference from
 two high-dimensional data sets, this tool can help users effectively translate
 two aggregated data blocks into knowledge of the changes among entities between
-two Gaussian Graphical Model.  Please run @code{demo(diffeeDemo)} to learn the
+two Gaussian Graphical Model.  Please run demo(@code{diffeeDemo}) to learn the
 basic functions provided by this package.  For further details, please read the
 original paper: Beilun Wang, Arshdeep Sekhon, Yanjun Qi (2018)
-@code{<arXiv:1710.11223>.}")
+<@code{arXiv:1710.11223>}.")
     (license license:gpl2)))
 
 (define-public r-diffdfs
@@ -13157,30 +13157,22 @@ variables (e.g., genes and metabolites) between 2 experimental conditions.")
 (define-public r-diffcor
   (package
     (name "r-diffcor")
-    (version "0.7.2")
+    (version "0.8.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "diffcor" version))
               (sha256
                (base32
-                "1kynrxrk9w5yf7p9pdydj098ps5vr07q0x530n0wad438kw0d14s"))))
+                "1dwr6ygh70rvmbs0pg6sqwxvzr3cvkp1rj69x7dnq753b7v2s3j6"))))
     (properties `((upstream-name . "diffcor")))
     (build-system r-build-system)
+    (propagated-inputs (list r-mass))
     (home-page "https://cran.r-project.org/package=diffcor")
     (synopsis "Fisher's z-Tests Concerning Difference of Correlations")
     (description
-     "Computations of Fisher's z-tests concerning differences between correlations.
-diffcor.one() tests whether an expected value differs from an observed value,
-for example, in construct validation.  diffcor.two() tests whether the
-correlation between two constructs differed across two studies/samples.
-diffcor.dep() checks whether the correlation between two constructs (r12) is
-significantly different from the correlation between the first construct with a
-third one (r13), given the intercorrelation of the compared constructs (r23).
-All outputs provide the compared correlations, test statistic in z-units, and
-p-values.  For diffcor.one() and diffcor.two(), the output further provides
-confidence intervals of the empirical correlations and the effect size Cohens q.
- According to Cohen (1988), q = |.10|, |.30| and |.50| are considered small,
-moderate, and large differences, respectively.")
+     "Computations of Fisher's z-tests concerning different kinds of correlation
+differences.  Additionally, approaches to estimating statistical power via Monte
+Carlo simulations are implemented.")
     (license license:gpl2+)))
 
 (define-public r-difconet
@@ -13465,7 +13457,7 @@ implementation with tuning parameters, consider the xgboost package.")
     (description
      "Estimates Two-way Fixed Effects difference-in-differences/event-study models
 using the approach proposed by Gardner (2021)
-@code{<doi:10.48550/arXiv.2207.05943>.} To avoid the problems caused by OLS
+<doi:10.48550/@code{arXiv.2207.05943>}.  To avoid the problems caused by OLS
 estimation of the Two-way Fixed Effects model, this function first estimates the
 fixed effects and covariates using untreated observations and then in a second
 stage, estimates the treatment effects.")
@@ -13528,10 +13520,10 @@ average treatment effects.")
     (synopsis "Retrieve the Dictionary Definitions of English Words")
     (description
      "An R interface to the Free Dictionary API <https://dictionaryapi.dev/>,
-@code{<https://github.com/meetDeveloper/freeDictionaryAPI>.} Retrieve dictionary
-definitions for English words, as well as additional information including
-phonetics, part of speech, origins, audio pronunciation, example usage, synonyms
-and antonyms, returned in tidy format for ease of use.")
+<https://github.com/@code{meetDeveloper/freeDictionaryAPI>}.  Retrieve
+dictionary definitions for English words, as well as additional information
+including phonetics, part of speech, origins, audio pronunciation, example
+usage, synonyms and antonyms, returned in tidy format for ease of use.")
     (license license:expat)))
 
 (define-public r-dictionar6
@@ -13678,7 +13670,7 @@ experiments designs, surrogates or test functions.")
      "This package performs cluster analysis using an ensemble clustering framework,
 Chiu & Talhouk (2018) <doi:10.1186/s12859-017-1996-y>.  Results from a diverse
 set of algorithms are pooled together using methods such as majority voting,
-K-Modes, @code{LinkCluE,} and CSPA. There are options to compare cluster
+K-Modes, @code{LinkCluE}, and CSPA. There are options to compare cluster
 assignments across algorithms using internal and external indices,
 visualizations such as heatmaps, and significance testing for the existence of
 clusters.")
@@ -13728,7 +13720,7 @@ infill, and problems with constraints.")
     (synopsis "Construction and Evaluation of Metamodels")
     (description
      "Estimation, validation and prediction of models of different types : linear
-models, additive models, @code{MARS,PolyMARS} and Kriging.")
+models, additive models, MARS,@code{PolyMARS} and Kriging.")
     (license license:gpl3)))
 
 (define-public r-dice
@@ -13819,7 +13811,7 @@ Couchez (2012, <doi:10.1051/kmae/2012018>), and the combined classification of
 guilds and size classes established by B-BÃ©res et al. (2017,
 <doi:10.1016/j.ecolind.2017.07.007>).  Current diatom-based biotic indices
 include the DES index by Descy (1979,
-@code{<https://pascal-francis.inist.fr/vibad/index.php?action=getRecordDetail&idt=PASCAL8060205402>),}
+<https://pascal-francis.inist.fr/vibad/index.php?action=@code{getRecordDetail&idt=PASCAL8060205402>}),
 the EPID index by Dell'Uomo (1996, ISBN: 3950009002), the IDAP index by Prygiel
 & Coste (1993, <doi:10.1007/BF00028033>), the ID-CH index by HÃ¼rlimann &
 Niederhauser (2007,
@@ -13834,7 +13826,7 @@ by @code{SlÃ¡deÄek} (1986, <doi:10.1002/aheh.19860140519>), the TDI index b
 Kelly, & Whitton (1995, <doi:10.1007/BF00003802>), the SPEAR(herbicide) index by
 Wood, Mitrovic, Lim, Warne, Dunlop, & Kefford (2019,
 <doi:10.1016/j.ecolind.2018.12.035>), the PBIDW index by Castro-Roa &
-Pinilla-Agudelo (2014), and the DISP index by @code{Stenger-KovÃ¡csa} et al.
+Pinilla-Agudelo (2014), and the DISP index by Stenger-@code{KovÃ¡csa} et al.
 (2018).")
     (license (list license:gpl2+ license:gpl3+))))
 
@@ -14032,6 +14024,40 @@ edges of the matrix.")
 <DOI:10.1186/s12874-016-0196-1> for meta-analysis of diagnostic accuracy studies
 with several cutpoints.")
     (license license:gpl2+)))
+
+(define-public r-diagl1
+  (package
+    (name "r-diagl1")
+    (version "0.0.6")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "diagL1" version))
+              (sha256
+               (base32
+                "0488zb7hy6681psfx0ypksyh738cyhw9flxn34ikfz4r54g1b5qv"))))
+    (properties `((upstream-name . "diagL1")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-quantreg
+                             r-matrixmodels
+                             r-matrix
+                             r-lawstat
+                             r-greekletters
+                             r-conquer))
+    (home-page "https://cran.r-project.org/package=diagL1")
+    (synopsis
+     "Routines for Fit, Inference and Diagnostics in Linear L1 Models")
+    (description
+     "Diagnostics for linear L1 regression (also known as LAD - Least Absolute
+Deviations), including: estimation, confidence intervals, tests of hypotheses,
+measures of leverage, methods of diagnostics for L1 regression, special
+diagnostics graphs and measures of leverage.  The algorithms are based in
+Dielman (2005) <doi:10.1080/0094965042000223680>, Elian et al. (2000)
+<doi:10.1080/03610920008832518> and Dodge (1997) <doi:10.1006/jmva.1997.1666>.
+This package builds on the quantreg package, which is a well-established package
+for tuning quantile regression models.  There are also tests to verify if the
+errors have a Laplace distribution based on the work of Puig and Stephens (2000)
+<doi:10.2307/1270952>.")
+    (license license:gpl3+)))
 
 (define-public r-diagis
   (package
@@ -14284,7 +14310,7 @@ the identification of various types of hubs like Housekeeping, Unique to stress
 maps -- for New Zealand District Health Boards and Regional Council areas.
 These allow faceted, coloured displays of quantitative information for
 comparison across District Health Boards or Regional Councils.  The preprint
-Lumley (2019) @code{<arXiv:1912.04435>} is based on the methods in this package.")
+Lumley (2019) <@code{arXiv:1912.04435>} is based on the methods in this package.")
     (license license:gpl3)))
 
 (define-public r-dharma
@@ -14313,8 +14339,8 @@ Lumley (2019) @code{<arXiv:1912.04435>} is based on the methods in this package.
      "The DHARMa package uses a simulation-based approach to create readily
 interpretable scaled (quantile) residuals for fitted (generalized) linear mixed
 models.  Currently supported are linear and generalized linear (mixed) models
-from lme4 (classes @code{lmerMod',} @code{glmerMod'),} @code{glmmTMB}
-GLMMadaptive and @code{spaMM',} generalized additive models ('gam from mgcv'),
+from lme4 (classes @code{lmerMod}', @code{glmerMod}'), @code{glmmTMB}
+GLMMadaptive and @code{spaMM}', generalized additive models ('gam from mgcv'),
 glm (including negbin from MASS', but excluding quasi-distributions) and lm
 model classes.  Moreover, externally created simulations, e.g. posterior
 predictive simulations from Bayesian software such as JAGS', STAN', or BUGS can
@@ -14384,7 +14410,7 @@ process, and linked Gaussian process emulations of computer models and systems
 of computer models.  The implementations follow Ming & Guillas (2021)
 <doi:10.1137/20M1323771> and Ming, Williamson, & Guillas (2023)
 <doi:10.1080/00401706.2022.2124311> and Ming & Williamson (2023)
-@code{<arXiv:2306.01212>.} To get started with the package, see
+<@code{arXiv:2306.01212>}.  To get started with the package, see
 <https://mingdeyu.github.io/dgpsi-R/>.")
     (license license:expat)))
 
@@ -14433,7 +14459,7 @@ tests.")
     (synopsis "Dynamic Graphical Models")
     (description
      "Dynamic graphical models for multivariate time series data to estimate directed
-dynamic networks in functional magnetic resonance imaging @code{(fMRI),} see
+dynamic networks in functional magnetic resonance imaging (@code{fMRI}), see
 Schwab et al. (2017) <doi:10.1016/j.neuroimage.2018.03.074>.")
     (license license:gpl3)))
 
@@ -14588,6 +14614,31 @@ data object was created or modified.  Since the DGEobj is customizable and
 extensible it is not limited to RNA-seq analysis types of workflows -- it can
 accommodate nearly any data analysis workflow that starts from a matrix of
 assays (rows) by samples (columns).")
+    (license license:gpl3)))
+
+(define-public r-dgear
+  (package
+    (name "r-dgear")
+    (version "0.1.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "DGEAR" version))
+              (sha256
+               (base32
+                "0pnfaamrqban478vxcr4cjklxqxh9kmxzd724jwq8a1xfgscs8pw"))))
+    (properties `((upstream-name . "DGEAR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-desctools))
+    (home-page "https://cran.r-project.org/package=DGEAR")
+    (synopsis "Differential Gene Expression Analysis with R")
+    (description
+     "Analyses gene expression data derived from experiments to detect differentially
+expressed genes by employing the concept of majority voting with five different
+statistical models.  It includes functions for differential expression analysis,
+significance testing, etc.  It simplifies the process of uncovering meaningful
+patterns and trends within gene expression data, aiding researchers in
+downstream analysis.  Boyer, R.S., Moore, J.S. (1991)
+<doi:10.1007/978-94-011-3488-0_5>.")
     (license license:gpl3)))
 
 (define-public r-dgca
@@ -14953,7 +15004,7 @@ in order to better suit requirements in terms of maximum tolerated dose (MTD)
 and maximal dose regimen (MDR).  This package has currently three different
 approaches: (a) an approach proposed by Zohar et al, 2011,
 <doi:10.1002/sim.4121> (denoted as ZKO), (b) the Variance Weighted pooling
-analysis (called @code{VarWT)} and (c) the Random Effects Model Based (REMB)
+analysis (called @code{VarWT}) and (c) the Random Effects Model Based (REMB)
 algorithm, where user can input his/her own model based approach or use the
 existing random effect logistic regression model (named as glimem) through the
 dfmeta package.")
@@ -15150,9 +15201,9 @@ Tabachnik & Fidell (2019, ISBN:9780134790541).")
     (description
      "This package contains the Detrended Fluctuation Analysis (DFA), Detrended
 Cross-Correlation Analysis (DCCA), Detrended Cross-Correlation Coefficient
-@code{(rhoDCCA),} Delta Amplitude Detrended Cross-Correlation Coefficient
-@code{(DeltarhoDCCA),} log amplitude Detrended Fluctuation Analysis
-@code{(DeltalogDFA),} two DFA automatic methods for identification of crossover
+(@code{rhoDCCA}), Delta Amplitude Detrended Cross-Correlation Coefficient
+(@code{DeltarhoDCCA}), log amplitude Detrended Fluctuation Analysis
+(@code{DeltalogDFA}), two DFA automatic methods for identification of crossover
 points and a Deltalog automatic method for identification of reference channels.")
     (license license:gpl3)))
 
@@ -15469,7 +15520,7 @@ detrital zircon geochronology community.")
     (synopsis "Tissue-Specific Enrichment Analysis")
     (description
      "Tissue-specific enrichment analysis to assess lists of candidate genes or
-RNA-Seq expression profiles.  Pei G., Dai Y., Zhao Z. Jia P. (2019) @code{deTS:}
+RNA-Seq expression profiles.  Pei G., Dai Y., Zhao Z. Jia P. (2019) @code{deTS}:
 Tissue-Specific Enrichment Analysis to decode tissue specificity.
 Bioinformatics, In submission.")
     (license license:gpl2+)))
@@ -15554,7 +15605,7 @@ when needed.")
     (synopsis
      "Suite of Deterministic and Robust Algorithms for Linear Regression")
     (description
-     "@code{DetLTS,} @code{DetMM} (and @code{DetS)} Algorithms for Deterministic,
+     "@code{DetLTS}, @code{DetMM} (and @code{DetS}) Algorithms for Deterministic,
 Robust Linear Regression.")
     (license license:gpl2+)))
 
@@ -15582,9 +15633,9 @@ arbitrary query points, the function det.query is available.  The functions det1
 and det2 provide density estimation and plotting for one- and two-dimensional
 datasets.  Conditional/unconditional smooth bootstrapping from an available
 distribution element tree can be performed by det.rnd'.  For more details on
-distribution element trees, see: Meyer, D.W. (2016) @code{<arXiv:1610.00345>} or
+distribution element trees, see: Meyer, D.W. (2016) <@code{arXiv:1610.00345>} or
 Meyer, D.W., Statistics and Computing (2017) <doi:10.1007/s11222-017-9751-9> and
-Meyer, D.W. (2017) @code{<arXiv:1711.04632>} or Meyer, D.W., Journal of
+Meyer, D.W. (2017) <@code{arXiv:1711.04632>} or Meyer, D.W., Journal of
 Computational and Graphical Statistics (2018)
 <doi:10.1080/10618600.2018.1482768>.")
     (license license:gpl2)))
@@ -15634,7 +15685,7 @@ embedded in Shiny apps or HTML documents.")
     (synopsis
      "Implementation of the DetMCD Algorithm (Robust and Deterministic Estimation of Location and Scatter)")
     (description
-     "Implementation of @code{DetMCD,} a new algorithm for robust and deterministic
+     "Implementation of @code{DetMCD}, a new algorithm for robust and deterministic
 estimation of location and scatter.  The benefits of robust and deterministic
 estimation are explained in Hubert, Rousseeuw and Verdonck (2012)
 <doi:10.1080/10618600.2012.672100>.")
@@ -15715,7 +15766,7 @@ be directly supplied as fitting methods to the glm() function.  They solve the
 linear programming problems for the detection of separation developed in Konis
 (2007, <https://ora.ox.ac.uk/objects/uuid:8f9ee0d0-d78e-4101-9ab4-f9cbceed2a2a>)
 using ROI <https://cran.r-project.org/package=ROI> or @code{lpSolveAPI}
-@code{<https://cran.r-project.org/package=lpSolveAPI>.} The post-fit methods
+<https://cran.r-project.org/package=@code{lpSolveAPI>}.  The post-fit methods
 apply to models with categorical responses, including binomial-response
 generalized linear models and multinomial-response models, such as baseline
 category logits and adjacent category logits models; for example, the models
@@ -15900,9 +15951,9 @@ experiments that are laid out in grids.  See Ryder (1981)
      "Calculates the desparsified lasso as originally introduced in van de Geer et al.
 (2014) <doi:10.1214/14-AOS1221>, and provides inference suitable for
 high-dimensional time series, based on the long run covariance estimator in
-Adamek et al. (2020) @code{<arXiv:2007.10952>.} Also estimates high-dimensional
+Adamek et al. (2020) <@code{arXiv:2007.10952>}.  Also estimates high-dimensional
 local projections by the desparsified lasso, as described in Adamek et al.
-(2022) @code{<arXiv:2209.03218>.}")
+(2022) <@code{arXiv:2209.03218>}.")
     (license license:gpl2+)))
 
 (define-public r-desirability2
@@ -16011,13 +16062,13 @@ effects <https://github.com/mmrabe/designr>.")
 (define-public r-designmatch
   (package
     (name "r-designmatch")
-    (version "0.5.3")
+    (version "0.5.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "designmatch" version))
               (sha256
                (base32
-                "1lzxkfa61iry34y2pqrclhcq83pa7h34nja381d1zzk7qwz0psp0"))))
+                "1x3pcwml6pa56ij2bc9jymfp066v7fd2avjl6awgpy3503qr56q1"))))
     (properties `((upstream-name . "designmatch")))
     (build-system r-build-system)
     (propagated-inputs (list r-slam r-mass r-lattice r-highs))
@@ -16061,7 +16112,7 @@ also included directions in the gurobi_installation file in the inst folder.")
     (synopsis "Library of Research Designs")
     (description
      "This package provides a simple interface to build designs using the package
-@code{DeclareDesign'.} In one line of code, users can specify the parameters of
+@code{DeclareDesign}'.  In one line of code, users can specify the parameters of
 individual designs and diagnose their properties.  The designers can also be
 used to compare performance of a given design across a range of combinations of
 parameters, such as effect size, sample size, and assignment probabilities.")
@@ -16576,7 +16627,7 @@ transformations to amplitude-frequency domain.")
 i.e.  abrupt, state changes.  For instance, when a job arrives to a queue, the
 queue length abruptly increases by 1.  This package is an R implementation of
 the event-oriented approach to DES; see the tutorial in Matloff (2008)
-@code{<http://heather.cs.ucdavis.edu/~matloff/156/PLN/DESimIntro.pdf>.}")
+<http://heather.cs.ucdavis.edu/~matloff/156/PLN/DE@code{SimIntro.pdf>}.")
     (license license:expat)))
 
 (define-public r-derivmkts
@@ -16830,7 +16881,7 @@ examples and applications.")
     (home-page "https://corradolanera.github.io/depigner/")
     (synopsis "Utility Package to Help you Deal with \"Pignas\"")
     (description
-     "Pigna @code{[_pÃ¬n'n'a_]} is the Italian word for pine cone.  In jargon, it is
+     "Pigna [_@code{pÃ¬n'n'a}_] is the Italian word for pine cone.  In jargon, it is
 used to identify a task which is boring, banal, annoying, painful, frustrating
 and maybe even with a not so beautiful or rewarding result, just like the
 obstinate act of trying to challenge yourself in extracting pine nuts from a
@@ -17153,7 +17204,7 @@ disease.")
     (description
      "Estimate a low rank matrix from noisy data using singular values thresholding
 and shrinking functions.  Impute missing values with matrix completion.  The
-method is described in @code{<arXiv:1602.01206>.}")
+method is described in <@code{arXiv:1602.01206>}.")
     (license license:gpl2+)))
 
 (define-public r-denoiseq
@@ -17318,7 +17369,7 @@ parameters usually found in forest studies are implemented.  The package
 contains Fibonacci series, its extensions and the Golden Number computation.
 Useful references are Arcadius Y. J. Akossou, Soufianou Arzouma, Eloi Y.
 Attakpa, @code{NoÃ«l} H. Fonton and Kouami Kokou (2013) <doi:10.3390/d5010099>
-and W. Bonou, R. Glele @code{KakaÃ¯,} A.E. Assogbadjo, H.N. Fonton, B. Sinsin
+and W. Bonou, R. Glele @code{KakaÃ¯}, A.E. Assogbadjo, H.N. Fonton, B. Sinsin
 (2009) <doi:10.1016/j.foreco.2009.05.032> .")
     (license license:gpl3)))
 
@@ -17397,7 +17448,7 @@ daily meteorological data, then check what trees are doing during that period.")
     (description
      "This package implements the Determinantal point process (DPP) based optimal
 design emulator described in Pratola, Lin and Craigmile (2018)
-@code{<arXiv:1804.02089>} for Gaussian process regression models.  See
+<@code{arXiv:1804.02089>} for Gaussian process regression models.  See
 <http://www.matthewpratola.com/software> for more information and examples.")
     (license license:agpl3)))
 
@@ -17447,7 +17498,7 @@ using test sets.")
     (synopsis "Runs a 'Shiny' App as Demo or Lists All Demo 'Shiny' Apps")
     (description
      "Mimics the demo functionality for Shiny apps in a package.  Apps stored to the
-package subdirectory inst/shiny can be called by @code{demoShiny(topic).}")
+package subdirectory inst/shiny can be called by @code{demoShiny(topic}).")
     (license license:gpl3)))
 
 (define-public r-demokin
@@ -17657,7 +17708,7 @@ method is provided for simulation of stochastic differential equations.  The
 package was originally written for internal use to support teaching by Zobitz,
 and refined to support the text \"Exploring modeling with data and differential
 equations using R\" by John Zobitz (2021)
-@code{<https://jmzobitz.github.io/ModelingWithR/index.html>.}")
+<https://jmzobitz.github.io/@code{ModelingWithR/index.html>}.")
     (license license:expat)))
 
 (define-public r-demodecomp
@@ -17679,7 +17730,7 @@ equations using R\" by John Zobitz (2021)
      "Two general demographic decomposition methods are offered: Pseudo-continuous
 decomposition proposed by Horiuchi, Wilmoth, and Pletcher (2008)
 <doi:10.1353/dem.0.0033> and stepwise replacement decomposition proposed by
-Andreev, Shkolnikov and Begun (2002) @code{<doi:10.4054/DemRes.2002.7.14>.}")
+Andreev, Shkolnikov and Begun (2002) <doi:10.4054/@code{DemRes.2002.7.14>}.")
     (license license:gpl3)))
 
 (define-public r-deming
@@ -17728,7 +17779,7 @@ political, institutional, and constitutional datasets.  âdemcon aims to red
 barriers to entry in political science research by automating common acquisition
 and pre-processing procedures.  This package particularly focuses on the V-Dem
 dataset (<https://www.v-dem.net/vdemds.html>), and provides adaptations of
-methods presented in Fjelde, H., Knutsen, C. H. & @code{NygÃ¥rd,} H. M. 2021,
+methods presented in Fjelde, H., Knutsen, C. H. & @code{NygÃ¥rd}, H. M. 2021,
 <doi:10.1093/isq/sqaa076>.")
     (license license:gpl3+)))
 
@@ -18005,7 +18056,7 @@ B-splines and the log of a root-n approximation of the sampling density of the
 observed vector of central moments in each class.  The so-obtained penalized
 log-likelihood is maximized using the EM algorithm to get an estimate of the
 spline parameters and, consequently, of the variable density and related
-quantities such as quantiles, see Lambert, P. (2021) @code{<arXiv:2107.03883>}
+quantities such as quantiles, see Lambert, P. (2021) <@code{arXiv:2107.03883>}
 for details.")
     (license license:gpl3)))
 
@@ -18133,7 +18184,7 @@ interval with double exponential formulas.")
     (synopsis "Classify RGB Images into Forest or Non-Forest")
     (description
      "This package implements two out-of box classifiers presented in
-@code{<doi:10.48550/arXiv.2112.01063>} for distinguishing forest and non-forest
+<doi:10.48550/@code{arXiv.2112.01063>} for distinguishing forest and non-forest
 terrain images.  Under these algorithms, there are frequentist approaches: one
 parametric, using stable distributions, and another one- non-parametric, using
 the squared Mahalanobis distance.  The package also contains functions for data
@@ -18354,9 +18405,9 @@ Acids Research Genomics and Bioinformatics (2023).")
 and ordinal neural network transformation models, as described in Baumann et al
 (2021) <doi:10.1007/978-3-030-86523-8_1> and Kook et al (2022)
 <doi:10.1016/j.patcog.2021.108263>.  Extensions such as autoregressive DCTMs
-(Ruegamer et al, 2022, @code{<doi:10.48550/arXiv.2110.08248>)} and
+(Ruegamer et al, 2022, <doi:10.48550/@code{arXiv.2110.08248>}) and
 transformation ensembles (Kook et al, 2022,
-@code{<doi:10.48550/arXiv.2205.12729>)} are implemented.")
+<doi:10.48550/@code{arXiv.2205.12729>}) are implemented.")
     (license license:gpl3)))
 
 (define-public r-deeptime
@@ -18528,7 +18579,7 @@ inspire and develop the package: Ian Goodfellow, Yoshua Bengio, Aaron Courville,
 Francis Bach (2016, ISBN:978-0262035613) Deep Learning.  Terrence J. Sejnowski
 (2018, ISBN:978-0262038034) The Deep Learning Revolution.  Grant Sanderson
 (3brown1blue)
-@code{<https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi>}
+<https://www.youtube.com/playlist?list=PLZHQ@code{ObOWTQDNU6R1_67000Dx_ZCJB-3pi>}
 Neural Networks @code{YouTube} playlist.  Michael A. Nielsen
 <http://neuralnetworksanddeeplearning.com/> Neural Networks and Deep Learning.")
     (license license:gpl3)))
@@ -18632,17 +18683,17 @@ the service (see <https://www.deepl.com/pro#developer).")
     (synopsis "Bayesian Deep Gaussian Processes using MCMC")
     (description
      "This package performs Bayesian posterior inference for deep Gaussian processes
-following Sauer, Gramacy, and Higdon (2023, @code{<arXiv:2012.08015>).} See
+following Sauer, Gramacy, and Higdon (2023, <@code{arXiv:2012.08015>}).  See
 Sauer (2023, <http://hdl.handle.net/10919/114845>) for comprehensive
 methodological details and <https://bitbucket.org/gramacylab/deepgp-ex/> for a
 variety of coding examples.  Models are trained through MCMC including
 elliptical slice sampling of latent Gaussian layers and Metropolis-Hastings
 sampling of kernel hyperparameters.  Vecchia-approximation for faster
 computation is implemented following Sauer, Cooper, and Gramacy (2022,
-@code{<arXiv:2204.02904>).} Downstream tasks include sequential design through
+<@code{arXiv:2204.02904>}).  Downstream tasks include sequential design through
 active learning Cohn/integrated mean squared error (ALC/IMSE; Sauer, Gramacy,
 and Higdon, 2023), optimization through expected improvement (EI; Gramacy,
-Sauer, and Wycoff, 2021 @code{<arXiv:2112.07457>),} and contour location through
+Sauer, and Wycoff, 2021 <@code{arXiv:2112.07457>}), and contour location through
 entropy (Sauer, 2023).  Models extend up to three layers deep; a one layer model
 is equivalent to typical Gaussian process regression.  Incorporates
 @code{OpenMP} and SNOW parallelization and utilizes C/C++ under the hood.")
@@ -19099,7 +19150,7 @@ codes and more.  It is also easy to extend the use by arbitrary code sets.")
      "Differential Co-Expression and Differential Expression Analysis")
     (description
      "Integrated differential expression (DE) and differential co-expression (DC)
-analysis on gene expression data based on DECODE @code{(DifferEntial}
+analysis on gene expression data based on DECODE (@code{DifferEntial}
 CO-expression and Differential Expression) algorithm.")
     (license license:gpl3)))
 
@@ -19121,7 +19172,7 @@ CO-expression and Differential Expression) algorithm.")
     (synopsis "Declare and Diagnose Research Designs")
     (description
      "Researchers can characterize and learn about the properties of research designs
-before implementation using @code{`DeclareDesign`.} Ex ante declaration and
+before implementation using `@code{DeclareDesign`}.  Ex ante declaration and
 diagnosis of designs can help researchers clarify the strengths and limitations
 of their designs and to improve their properties, and can help readers evaluate
 a research strategy prior to implementation and without access to results.  It
@@ -19700,7 +19751,7 @@ straightforward R API. The package relies on the r2d3 R package and the D3
      "Analysis and Visualization of Droplet Digital PCR in R and on the Web")
     (description
      "An interface to explore, analyze, and visualize droplet digital PCR
-@code{(ddPCR)} data in R. This is the first non-proprietary software for
+(@code{ddPCR}) data in R. This is the first non-proprietary software for
 analyzing two-channel @code{ddPCR} data.  An interactive tool was also created
 and is available online to facilitate this analysis for anyone who is not
 comfortable with using R.")
@@ -19723,7 +19774,7 @@ comfortable with using R.")
     (synopsis "Diagonally Dominant Principal Component Analysis")
     (description
      "Efficient procedures for fitting the DD-PCA (Ke et al., 2019,
-@code{<arXiv:1906.00051>)} by decomposing a large covariance matrix into a
+<@code{arXiv:1906.00051>}) by decomposing a large covariance matrix into a
 low-rank matrix plus a diagonally dominant matrix.  The implementation of DD-PCA
 includes the convex approach using the Alternating Direction Method of
 Multipliers (ADMM) and the non-convex approach using the iterative projection
@@ -19788,13 +19839,43 @@ approaches, see Tang, J., Chen, Z., Fu, A. W. C., & Cheung, D. W. (2002)
 (2007) <doi:10.1007/978-3-540-73499-4_6>, Papadimitriou, S., Gibbons, P. B., &
 Faloutsos, C. (2003) <doi:10.1109/ICDE.2003.1260802>, Breunig, M. M., Kriegel,
 H.-P., Ng, R. T., & Sander, J. (2000) <doi:10.1145/342009.335388>, Kriegel,
-H.-P., @code{KrÃ¶ger,} P., Schubert, E., & Zimek, A. (2009)
+H.-P., @code{KrÃ¶ger}, P., Schubert, E., & Zimek, A. (2009)
 <doi:10.1145/1645953.1646195>, Zhu, Q., Feng, Ji. & Huang, J. (2016)
 <doi:10.1016/j.patrec.2016.05.007>, Huang, J., Zhu, Q., Yang, L. & Feng, J.
 (2015) <doi:10.1016/j.knosys.2015.10.014>, Tang, B. & Haibo, He. (2017)
 <doi:10.1016/j.neucom.2017.02.039> and Gao, J., Hu, W., Zhang, X. & Wu, Ou.
 (2011) <doi:10.1007/978-3-642-20847-8_23>.")
     (license license:expat)))
+
+(define-public r-ddml
+  (package
+    (name "r-ddml")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ddml" version))
+              (sha256
+               (base32
+                "1vqlqhkns0ghn1vz5xdln263f6jlpkv4sw3bdy2r0abbbjmg63w5"))))
+    (properties `((upstream-name . "ddml")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xgboost
+                             r-ranger
+                             r-quadprog
+                             r-nnls
+                             r-matrix
+                             r-mass
+                             r-glmnet
+                             r-aer))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/thomaswiemann/ddml")
+    (synopsis "Double/Debiased Machine Learning")
+    (description
+     "Estimate common causal parameters using double/debiased machine learning as
+proposed by Chernozhukov et al. (2018) <doi:10.1111/ectj.12097>.  ddml
+simplifies estimation based on (short-)stacking, which leverages multiple base
+learners to increase robustness to the underlying data generating process.")
+    (license license:gpl3+)))
 
 (define-public r-ddm
   (package
@@ -19837,7 +19918,7 @@ graphical interface to guess parameters in the traditional way if desired.")
     (description
      "Statistical inference for the regression coefficients in high-dimensional linear
 models with hidden confounders.  The Doubly Debiased Lasso method was proposed
-in @code{<arXiv:2004.03758>.}")
+in <@code{arXiv:2004.03758>}.")
     (license license:expat)))
 
 (define-public r-ddiwr
@@ -20127,7 +20208,7 @@ generator for Davidian curves.")
     (home-page "https://www.cesargamboasanabria.com")
     (synopsis "Dimension Reduction with Dynamic CUR")
     (description
-     "Dynamic CUR @code{(dCUR)} boosts the CUR decomposition (Mahoney MW., Drineas P.
+     "Dynamic CUR (@code{dCUR}) boosts the CUR decomposition (Mahoney MW., Drineas P.
 (2009) <doi:10.1073/pnas.0803205106>) varying the k, the number of columns and
 rows used, and its final purposes to help find the stage, which minimizes the
 relative error to reduce matrix dimension.  The goal of CUR Decomposition is to
@@ -20162,7 +20243,7 @@ according to an external variable of the user's interest.")
      "Semi-Binary and Semi-Ternary Matrix Decomposition are performed based on
 Non-negative Matrix Factorization (NMF) and Singular Value Decomposition (SVD).
 For the details of the methods, see the reference section of @code{GitHub}
-README.md @code{<https://github.com/rikenbit/dcTensor>.}")
+README.md <https://github.com/rikenbit/@code{dcTensor>}.")
     (license license:expat)))
 
 (define-public r-dcsmooth
@@ -20261,7 +20342,7 @@ auto-distance correlation matrix.  Biometrika, 105(2): 337--352.
 <doi:10.1093/biomet/asx082>.  c) Fokianos Konstantinos and Pitsillou Maria
 (2017).  Consistent testing for pairwise dependence in time series.
 Technometrics, 59(2): 262--270. <doi:10.1080/00401706.2016.1156024>.  d)
-Pitsillou Maria and Fokianos Konstantinos (2016). @code{dCovTS:} Distance
+Pitsillou Maria and Fokianos Konstantinos (2016). @code{dCovTS}: Distance
 Covariance/Correlation for Time Series.  R Journal, 8(2):324-340.
 <doi:10.32614/RJ-2016-049>.")
     (license license:gpl2+)))
@@ -20316,7 +20397,7 @@ See @code{SzÃ©kely} et al.(2007) <doi:10.1214/009053607000000505>;
      "This package provides methods for distance covariance and distance correlation
 (Szekely, et al. (2007) <doi:10.1214/009053607000000505>), generalized version
 thereof (Sejdinovic, et al. (2013) <doi:10.1214/13-AOS1140>) and corresponding
-tests (Berschneider, Bottcher (2018) @code{<arXiv:1808.07280>.} Distance
+tests (Berschneider, Bottcher (2018) <@code{arXiv:1808.07280>}.  Distance
 standard deviation methods (Edelmann, et al. (2020) <doi:10.1214/19-AOS1935>)
 and distance correlation methods for survival endpoints (Edelmann, et al. (2021)
 <doi:10.1111/biom.13470>) are also included.")
@@ -20490,7 +20571,7 @@ clustering based on recursive k-means partitioning (k = 2).  Useful for
 clustering large datasets where computation of a n x n distance matrix is not
 feasible (e.g. n > 10,000 records).  For further information see Steinbach,
 Karypis and Kumar (2000)
-@code{<http://glaros.dtc.umn.edu/gkhome/fetch/papers/docclusterKDDTMW00.pdf>.}")
+<http://glaros.dtc.umn.edu/gkhome/fetch/papers/@code{docclusterKDDTMW00.pdf>}.")
     (license license:gpl3)))
 
 (define-public r-dclone
@@ -20513,7 +20594,7 @@ Karypis and Kumar (2000)
      "Low level functions for implementing maximum likelihood estimating procedures
 for complex models using data cloning and Bayesian Markov chain Monte Carlo
 methods as described in Solymos 2010 <doi:10.32614/RJ-2010-011>.  Sequential and
-parallel MCMC support for JAGS', @code{WinBUGS',} @code{OpenBUGS',} and Stan'.")
+parallel MCMC support for JAGS', @code{WinBUGS}', @code{OpenBUGS}', and Stan'.")
     (license license:gpl2)))
 
 (define-public r-dclear
@@ -20668,7 +20749,7 @@ time series behave chaotically or not.")
      "Data Cloud Geometry (DCG): Using Random Walks to Find Community Structure in Social Network Analysis")
     (description
      "Data cloud geometry (DCG) applies random walks in finding community structures
-for social networks.  Fushing, @code{VanderWaal,} @code{McCowan,} & Koehl (2013)
+for social networks.  Fushing, @code{VanderWaal}, @code{McCowan}, & Koehl (2013)
 (<doi:10.1371/journal.pone.0056259>).")
     (license license:gpl2+)))
 
@@ -20782,7 +20863,7 @@ Reference: Parichit Sharma, Hasan Kurban, Mehmet Dalkilic (2022)
     (description
      "Fast computation of the distance covariance dcov and distance correlation dcor'.
  The computation cost is only O(n log(n)) for the distance correlation (see
-Chaudhuri, Hu (2019) @code{<arXiv:1810.11332>}
+Chaudhuri, Hu (2019) <@code{arXiv:1810.11332>}
 <doi:10.1016/j.csda.2019.01.016>).  The functions are written entirely in C++ to
 speed up the computation.")
     (license license:gpl3+)))
@@ -20816,7 +20897,7 @@ speed up the computation.")
     (description
      "Estimates a variety of Dynamic Conditional Correlation (DCC) models.  More in
 detail, the dccmidas package allows the estimation of the corrected DCC
-@code{(cDCC)} of Aielli (2013) <doi:10.1080/07350015.2013.771027>, the DCC-MIDAS
+(@code{cDCC}) of Aielli (2013) <doi:10.1080/07350015.2013.771027>, the DCC-MIDAS
 of Colacito et al. (2011) <doi:10.1016/j.jeconom.2011.02.013>, the Asymmetric
 DCC of Cappiello et al. <doi:10.1093/jjfinec/nbl005>, and the Dynamic
 Equicorrelation (DECO) of Engle and Kelly (2012)
@@ -20871,7 +20952,7 @@ nonparametric models for single-, one-and-one-half-, and double-bounded CV data.
 Analysis (DFA) and Detrended Cross-Correlation Analysis (DCCA).  This package
 implements the results presented in Prass, T.S. and Pumi, G. (2019). \"On the
 behavior of the DFA and DCCA in trend-stationary processes\"
-@code{<arXiv:1910.10589>.}")
+<@code{arXiv:1910.10589>}.")
     (license license:gpl3+)))
 
 (define-public r-dc3net
@@ -20912,7 +20993,7 @@ gene networks.")
     (synopsis "Fast, Easy-to-Use Database Interface")
     (description
      "This package provides select, insert, update, upsert, and delete database
-operations.  Supports @code{PostgreSQL',} @code{MySQL',} SQLite', and more, and
+operations.  Supports @code{PostgreSQL}', @code{MySQL}', SQLite', and more, and
 plays nicely with the DBI package.")
     (license license:expat)))
 
@@ -21200,7 +21281,7 @@ calculation.")
     (description
      "This package implements the de-biased estimator for low-rank matrix completion
 and provides confidence intervals for entries of interest.  See: by Chen et al.
-(2019) <doi:10.1073/pnas.1910053116>, Mai (2021) @code{<arXiv:2103.11749>.}")
+(2019) <doi:10.1073/pnas.1910053116>, Mai (2021) <@code{arXiv:2103.11749>}.")
     (license license:gpl2)))
 
 (define-public r-dblr
@@ -21427,7 +21508,7 @@ for the full data in the database.  Thomas Lumley
      "This package contains functions that check for formatting of the Subject
 Phenotype data set and data dictionary as specified by the National Center for
 Biotechnology Information (NCBI) Database of Genotypes and Phenotypes
-@code{(dbGaP)} <https://www.ncbi.nlm.nih.gov/gap/docs/submissionguide/>.")
+(@code{dbGaP}) <https://www.ncbi.nlm.nih.gov/gap/docs/submissionguide/>.")
     (license license:gpl2)))
 
 (define-public r-dbflobr
@@ -21476,7 +21557,7 @@ as flobs (a flob is a blob that preserves the file extension).")
     (synopsis
      "Double Bootstrap Method for Analyzing Linear Models with Autoregressive Errors")
     (description
-     "Computes the double bootstrap as discussed in @code{McKnight,} @code{McKean,}
+     "Computes the double bootstrap as discussed in @code{McKnight}, @code{McKean},
 and Huitema (2000) <doi:10.1037/1082-989X.5.1.87>.  The double bootstrap method
 provides a better fit for a linear model with autoregressive errors than ARIMA
 when the sample size is small.")
@@ -21543,7 +21624,7 @@ and statistical techniques that consume much of researchersâ time and are
 error-prone.  While education research continues to grow across many disciplines
 of science, technology, engineering, and mathematics (STEM), the
 discipline-based education research community lacks tools to streamline
-education research data analysis. @code{âDBERlibRââan} âRâ package to
+education research data analysis.  âDBE@code{RlibRââan} âRâ package to
 streamline and automate assessment data processing and analysisâfills this
 gap.  The package reads user-provided assessment data, cleans them, merges
 multiple datasets (as necessary), checks assumption(s) for specific statistical
@@ -21645,7 +21726,7 @@ classification step.")
 @code{McCulloch} (2010) <doi:10.1214/09-AOAS285>) while allowing the updating of
 predictors or response so that BART can be incorporated as a conditional model
 in a Gibbs/Metropolis-Hastings sampler.  Also serves as a drop-in replacement
-for package @code{BayesTree'.}")
+for package @code{BayesTree}'.")
     (license license:gpl2+)))
 
 (define-public r-dbacf
@@ -21669,7 +21750,7 @@ estimation in change point regression with stationary errors circumventing the
 pre-estimation of the underlying signal of the observations.  Generic,
 first-order, (m+1)-gapped, difference-based autocovariance function estimator is
 based on M. Levine and I. Tecuapetla-GÃ³mez (2023)
-@code{<doi:10.48550/arXiv.1905.04578>.} Bias-reducing, second-order,
+<doi:10.48550/@code{arXiv.1905.04578>}.  Bias-reducing, second-order,
 (m+1)-gapped, difference-based estimator is based on I. Tecuapetla-GÃ³mez and A.
 Munk (2017) <doi:10.1111/sjos.12256>.  Robust autocovariance estimator for
 change point regression with autoregressive errors is based on S. Chakar et al.
@@ -21696,7 +21777,7 @@ method for covariance matrix estimation.")
      "Allows clinicians and researchers to compute daily dose (and subsequently days
 supply) for prescription refills using the following methods: Fixed window,
 fixed tablet, defined daily dose (DDD), and Random Effects Warfarin Days Supply
-@code{(REWarDS).} Daily dose is the computed dose that the patient takes every
+(RE@code{WarDS}).  Daily dose is the computed dose that the patient takes every
 day.  For medications with fixed dosing (e.g. direct oral anticoagulants) this
 is known and does not need to be estimated.  For medications with varying dose
 such as warfarin, however, the daily dose should be assumed or estimated to
@@ -21733,7 +21814,7 @@ at patient level are denoted with â-Pt-â.")
      "Programmatic interface to the Daymet web services (<http://daymet.ornl.gov>).
 Allows for easy downloads of Daymet climate data directly to your R workspace or
 your computer.  Routines for both single pixel data downloads and gridded
-@code{(netCDF)} data are provided.")
+(@code{netCDF}) data are provided.")
     (license license:agpl3)))
 
 (define-public r-dawai
@@ -21897,7 +21978,7 @@ concept of aoristic analysis.")
     (synopsis "Traduce al EspaÃ±ol Varios Conjuntos de Datos de PrÃ¡ctica")
     (description
      "Provee una @code{versiÃ³n} traducida de los siguientes conjuntos de datos:
-airlines', airports', @code{AwardsManagers',} babynames', Batting',
+airlines', airports', @code{AwardsManagers}', babynames', Batting',
 credit_data', diamonds', faithful', fueleconomy', Fielding', flights',
 gapminder', gss_cat', iris', Managers', mpg', mtcars', atmos', palmerpenguins',
 People, Pitching', planes', presidential', table1', table2', table3', table4a',
@@ -22306,7 +22387,7 @@ to illustrate paired data sets (such as before-after, male-female).")
 scientist's point of view.  The flagship idea of @code{DataVisualizations} is
 the mirrored density plot (MD-plot) for either classified or non-classified
 multivariate data published in Thrun, M.C. et al.: \"Analyzing the Fine Structure
-of Distributions\" (2020), @code{PLoS} ONE, <DOI:10.1371/journal.pone.0238835>.
+of Distributions\" (2020), P@code{LoS} ONE, <DOI:10.1371/journal.pone.0238835>.
 The MD-plot outperforms the box-and-whisker diagram (box plot), violin plot and
 bean plot and geom_violin plot of ggplot2.  Furthermore, a collection of various
 visualization methods for univariate data is provided.  In the case of
@@ -22455,7 +22536,7 @@ articles.  Including, for example: - de Carvalho (2012)
 upload information from the Refinitiv Datastream database.  This package uses
 the DSWS API and server used by the Datastream DFO addin'.  Details of this API
 are available at <https://www.refinitiv.com/en>.  Please report issues at
-@code{<https://github.com/CharlesCara/DatastreamDSWS2R/issues>.}")
+<https://github.com/@code{CharlesCara/DatastreamDSWS2R/issues>}.")
     (license license:gpl3)))
 
 (define-public r-datastepr
@@ -22568,7 +22649,7 @@ Ecological Metadata Language standards.")
     (synopsis "Interface to 'the CAVD DataSpace'")
     (description
      "This package provides a convenient API interface to access immunological data
-within the CAVD @code{DataSpace'(<https://dataspace.cavd.org>),} a data sharing
+within the CAVD @code{DataSpace'(<https://dataspace.cavd.org>}), a data sharing
 and discovery tool that facilitates exploration of HIV immunological data from
 pre-clinical and clinical HIV vaccine studies.")
     (license license:gpl3)))
@@ -22860,7 +22941,7 @@ documentation see
 @code{dataReporter} auto generates a customizable data report with a thorough
 summary of the checks and the results that a human can use to identify possible
 errors.  It provides an extendable suite of test for common potential errors in
-a dataset.  See Petersen AH, @code{EkstrÃ¸m} CT (2019). @code{\"dataMaid:} Your
+a dataset.  See Petersen AH, @code{EkstrÃ¸m} CT (2019). \"@code{dataMaid}: Your
 Assistant for Documenting Supervised Data Quality Screening in R.\" _Journal of
 Statistical Software_, *90*(6), 1-38 <doi:10.18637/jss.v090.i06> for more
 information.")
@@ -22869,16 +22950,16 @@ information.")
 (define-public r-datardis
   (package
     (name "r-datardis")
-    (version "0.0.3")
+    (version "0.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "datardis" version))
               (sha256
                (base32
-                "1z6rjgj7hri09nb7dldhgry4dlyx9v8zf1lqlrs7r1fwsl6znibw"))))
+                "0zcgl4jyz0xphliwjg8x5hqg9avflk0s5mgxd7gl52pxrki4mak3"))))
     (properties `((upstream-name . "datardis")))
     (build-system r-build-system)
-    (propagated-inputs (list r-magrittr r-dplyr))
+    (propagated-inputs (list r-dplyr))
     (home-page "https://cran.r-project.org/package=datardis")
     (synopsis "Data from the Doctor Who Series")
     (description "Explore data related to the Doctor Who TV series.")
@@ -23313,10 +23394,10 @@ types ('.xlsx', .xls', .csv', .txt') from a given directory into R data frames."
     (home-page "https://cran.r-project.org/package=DataGraph")
     (synopsis "Export Data from 'R' to 'DataGraph'")
     (description
-     "This package provides functions to pipe data from R to @code{DataGraph',} a
+     "This package provides functions to pipe data from R to @code{DataGraph}', a
 graphing and analysis application for mac OS. Create a live connection using
-either .dtable or .dtbin files that can be read by @code{DataGraph'.} Can save a
-data frame, collection of data frames and sequences of data frames and
+either .dtable or .dtbin files that can be read by @code{DataGraph}'.  Can save
+a data frame, collection of data frames and sequences of data frames and
 individual vectors.  For more information see
 <https://community.visualdatatools.com/datagraph/knowledge-base/r-package/>.")
     (license license:gpl2+)))
@@ -23508,7 +23589,7 @@ treat and format data.")
     (description
      "An interactive editor built on rhandsontable to allow the interactive viewing,
 entering, filtering and editing of data in R
-@code{<https://dillonhammill.github.io/DataEditR/>.}")
+<https://dillonhammill.github.io/@code{DataEditR/>}.")
     (license license:gpl2)))
 
 (define-public r-datadogr
@@ -23776,7 +23857,7 @@ concepts of self-organization and emergence, game theory, swarm intelligence and
 symmetry considerations.  The second module is the parameter-free
 high-dimensional data visualization technique, which generates projected points
 on the topographic map with hypsometric tints defined by the generalized
-U-matrix @code{(GeneratePswarmVisualization()).} The third module is the
+U-matrix (@code{GeneratePswarmVisualization}()).  The third module is the
 clustering method itself with non-critical parameters (DBSclustering()).
 Clustering can be verified by the visualization and vice versa.  The term DBS
 refers to the method as a whole.  It enables even a non-professional in the
@@ -23836,9 +23917,9 @@ package.")
     (synopsis "Connecting to Various Database Platforms")
     (description
      "An R @code{DataBase} Interface ('DBI') compatible interface to various database
-platforms @code{('PostgreSQL',} Oracle', Microsoft SQL Server', Amazon
+platforms ('@code{PostgreSQL}', Oracle', Microsoft SQL Server', Amazon
 Redshift', Microsoft Parallel Database Warehouse', IBM Netezza', Apache Impala',
-Google @code{BigQuery',} Snowflake', Spark', and SQLite').  Also includes
+Google @code{BigQuery}', Snowflake', Spark', and SQLite').  Also includes
 support for fetching data as Andromeda objects.  Uses either Java Database
 Connectivity ('JDBC') or other DBI drivers to connect to databases.")
     (license (license:fsdg-compatible "Apache License"))))
@@ -23987,12 +24068,12 @@ code by wrapping it into a set of convenient R functions.")
     (synopsis "Install and Load the 'dartRverse' Suits of Packages")
     (description
      "This package provides a single function that supports the installation of all
-packages belonging to the @code{dartRverse'.} The @code{dartRverse} is a set of
+packages belonging to the @code{dartRverse}'.  The @code{dartRverse} is a set of
 packages that work together to analyse SNP (single nuclear polymorphism) data.
 All packages aim to have a similar look and feel and are based on the same type
 of data structure ('genlight'), with additional metadata for loci and
 individuals (samples).  For more information visit the @code{GitHub} pages
-@code{<https://github.com/green-striped-gecko/dartRverse>.}")
+<https://github.com/green-striped-gecko/@code{dartRverse>}.")
     (license license:gpl3+)))
 
 (define-public r-dartr-spatial
@@ -24028,7 +24109,7 @@ polymorphism) data, such as least cost path analysis and isolation by distance.
 Therefore each sample needs to have coordinate data attached (lat/lon) to be
 able to run most of the functions. @code{dartR.spatial} is a package that
 belongs to the @code{dartRverse} suit of packages and depends on
-@code{dartR.base} and @code{dartR.data'.}")
+@code{dartR.base} and @code{dartR.data}'.")
     (license license:gpl3+)))
 
 (define-public r-dartr-data
@@ -24047,8 +24128,8 @@ belongs to the @code{dartRverse} suit of packages and depends on
     (home-page "https://github.com/green-striped-gecko/dartR.data")
     (synopsis "Auxiliary Data Package for Our Main Package 'dartR'")
     (description
-     "Data package for @code{dartR'.} Provides data sets to run examples in
-@code{dartR'.} This was necessary due to the size limit imposed by CRAN'.  The
+     "Data package for @code{dartR}'.  Provides data sets to run examples in
+@code{dartR}'.  This was necessary due to the size limit imposed by CRAN'.  The
 data in @code{dartR.data} is needed to run the examples provided in the
 @code{dartR} functions.  All available data sets are either based on actual data
 (but reduced in size) and/or simulated data sets to allow the fast execution of
@@ -24099,9 +24180,9 @@ Additional functions are available for visualization (e.g. Principle Coordinate
 Analysis) and creating a spatial representation using maps. @code{dartR.base} is
 the base package of the @code{dartRverse} suits of packages.  To install the
 other packages, we recommend to install the @code{dartRverse} package, that
-supports the installation of all packages in the @code{dartRverse'.} If you want
-to cite @code{dartR',} you find the information by typing
-@code{citation('dartR.base')} in the console.")
+supports the installation of all packages in the @code{dartRverse}'.  If you
+want to cite @code{dartR}', you find the information by typing
+citation('@code{dartR.base}') in the console.")
     (license license:gpl3+)))
 
 (define-public r-dartr
@@ -24152,7 +24233,7 @@ be used once SNP or related fragment presence/absence data from any source is
 imported.  Genetic datasets are stored in a derived genlight format (package
 adegenet'), that allows for a very compact storage of data and metadata.
 Functions are available for importing and exporting of SNP and silicodart data,
-for reporting on and filtering on various criteria (e.g. @code{CallRate',}
+for reporting on and filtering on various criteria (e.g. @code{CallRate}',
 heterozygosity, reproducibility, maximum allele frequency).  Additional
 functions are available for visualization (e.g. Principle Coordinate Analysis)
 and creating a spatial representation using maps. @code{dartR} supports also the
@@ -24161,8 +24242,9 @@ analysis of 3rd party software package such as newhybrid', structure',
 simulation functions, that allow to forward simulate SNP dynamics under
 different population and evolutionary dynamics.  Comprehensive tutorials and
 support can be found at our github repository:
-@code{github.com/green-striped-gecko/dartR/.} If you want to cite @code{dartR',}
-you find the information by typing @code{citation('dartR')} in the console.")
+github.com/green-striped-gecko/@code{dartR}/.  If you want to cite
+@code{dartR}', you find the information by typing citation('@code{dartR}') in
+the console.")
     (license license:gpl3+)))
 
 (define-public r-darksky
@@ -24264,7 +24346,7 @@ processed.")
      "Differential Analysis of short RNA transcripts that can be modeled by either
 Poisson or Negative binomial distribution.  The statistical methodology
 implemented in this package is based on the random selection of references genes
-(Desaulle et al. (2021) @code{<arXiv:2103.09872>).}")
+(Desaulle et al. (2021) <@code{arXiv:2103.09872>}).")
     (license license:expat)))
 
 (define-public r-daqapo
@@ -24302,7 +24384,7 @@ implemented in this package is based on the random selection of references genes
      "This package provides a variety of methods to identify data quality issues in
 process-oriented data, which are useful to verify data quality in a process
 mining context.  Builds on the class for activity logs implemented in the
-package @code{bupaR'.} Methods to identify data quality issues either consider
+package @code{bupaR}'.  Methods to identify data quality issues either consider
 each activity log entry independently (e.g. missing values, activity duration
 outliers,...), or focus on the relation amongst several activity log entries
 (e.g. batch registrations, violations of the expected activity order,...).")
@@ -24351,7 +24433,7 @@ of the more verbose function(.x) .x'.")
      "An implementation of Discriminant Analysis via Projections (DAP) method for
 high-dimensional binary classification in the case of unequal covariance
 matrices.  See Irina Gaynanova and Tianying Wang (2018)
-@code{<arXiv:1711.04817v2>.}")
+<@code{arXiv:1711.04817v2>}.")
     (license license:gpl2+)))
 
 (define-public r-danstat
@@ -24456,7 +24538,7 @@ Foundation for Analysis in the Health Sciences, Tenth Edition.")
 non-inferiority trials.  These include functions for sample size calculations
 and analyses of trials, with either a risk difference, risk ratio or arc-sine
 difference margin, and a function to run simulations to design a trial with the
-methods described in Quartagno et al. (2019) @code{<arXiv:1905.00241>.}")
+methods described in Quartagno et al. (2019) <@code{arXiv:1905.00241>}.")
     (license license:gpl2)))
 
 (define-public r-dang
@@ -24739,7 +24821,7 @@ machine learning, there is a strong belief that we need to strike a balance
 between interpretability and accuracy.  However, in field of the interpretable
 machine learning, there are more and more new ideas for explaining black-box
 models, that are implemented in R'.  DALEXtra creates DALEX Biecek (2018)
-@code{<arXiv:1806.08915>} explainer for many type of models including those
+<@code{arXiv:1806.08915>} explainer for many type of models including those
 created using python scikit-learn and keras libraries, and java h2o library.
 Important part of the package is Champion-Challenger analysis and innovative
 approach to model performance across subsets of test data presented in Funnel
@@ -25157,7 +25239,7 @@ Analysis of Experiments with R\", Lawson(2015) ISBN-13:978-1-4398-6813-3.")
     (synopsis "Translate Datasets to Portuguese")
     (description
      "Este pacote traduz os seguintes conjuntos de dados: airlines', airports',
-ames_raw', @code{AwardsManagers',} babynames', Batting', diamonds', faithful',
+ames_raw', @code{AwardsManagers}', babynames', Batting', diamonds', faithful',
 fueleconomy', Fielding', flights', gapminder', gss_cat', iris', Managers', mpg',
 mtcars', atmos', penguins', People, Pitching', pixarfilms','planes',
 presidential', table1', table2', table3', table4a', table4b', table5',
@@ -25206,18 +25288,18 @@ endpoints.")
 (define-public r-dad
   (package
     (name "r-dad")
-    (version "4.0.0")
+    (version "4.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dad" version))
               (sha256
                (base32
-                "154afqf3xwbdjp9qr3rlz06ln2cnwzafk3p9h73k0h2g5n8yp5b9"))))
+                "12jwfa1849mfjwplc57qw3lhn5zrqjrlxhisg9hykvhcpj6i0nfl"))))
     (properties `((upstream-name . "dad")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2 r-e1071 r-desctools))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=dad")
+    (home-page "https://forgemia.inra.fr/dad/dad")
     (synopsis "Three-Way / Multigroup Data Analysis Through Densities")
     (description
      "The data consist of a set of variables measured on several groups of
@@ -25313,7 +25395,7 @@ point to display the underlying distribution.  2.  It presents the effect size
 as a bootstrap 95% confidence interval on a separate but aligned axes.
 Estimation plots are introduced in Ho et al., Nature Methods 2019, 1548-7105.
 <doi:10.1038/s41592-019-0470-3>.  The free-to-view PDF is located at
-@code{<https://rdcu.be/bHhJ4>.}")
+<https://rdcu.be/@code{bHhJ4>}.")
     (license (license:fsdg-compatible "file://LICENSE"))))
 
 (define-public r-daarem
@@ -25567,7 +25649,7 @@ examples provided here are taken from the official D3Plus website
     (synopsis
      "Interactive Charts of Nested and Hierarchical Data with 'D3.js'")
     (description
-     "Builds interactive d3.js hierarchical visualisation easily. @code{D3partitionR}
+     "Builds interactive d3.js hierarchical visualisation easily.  D3@code{partitionR}
 makes it easy to build and customize sunburst, circle treemap, treemap,
 partition chart, ...")
     (license license:agpl3)))

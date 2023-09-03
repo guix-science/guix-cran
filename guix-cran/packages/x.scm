@@ -62,7 +62,7 @@ likelihood for the 3PL, GPCM, and GRM; (2) parameter estimation using joint or
 marginal likelihood estimation method; (3) simulation of computerized adaptive
 testing using built-in or customized algorithms; (4) assembly and simulation of
 multistage testing.  The full documentation and tutorials are at
-@code{<https://github.com/xluo11/xxIRT>.}")
+<https://github.com/xluo11/@code{xxIRT>}.")
     (license license:gpl3+)))
 
 (define-public r-xwf
@@ -343,13 +343,13 @@ form described in package XR and in the book \"Extending R\".")
 environmental scientists to study the environmental change for nearly a decade.
 However, a user-friendly, reliable, and robust platform to extract color-based
 statistics and time-series from a large stack of images is still lacking.  Here,
-we present an interactive open-source toolkit, called @code{xROI',} that
+we present an interactive open-source toolkit, called @code{xROI}', that
 facilitate the process time-series extraction and improve the quality of the
 final data. @code{xROI} provides a responsive environment for scientists to
 interactively a) delineate regions of interest (ROI), b) handle field of view
 (FOV) shifts, and c) extract and export time series data characterizing image
 color (i.e.  red, green and blue channel digital numbers for the defined ROI).
-Using @code{xROI',} user can detect FOV shifts without minimal difficulty.  The
+Using @code{xROI}', user can detect FOV shifts without minimal difficulty.  The
 software gives user the opportunity to readjust the mask files or redraw new
 ones every time an FOV shift occurs. @code{xROI} helps to significantly improve
 data accuracy and continuity.")
@@ -1108,13 +1108,13 @@ other's coefficients unrealistically.")
     (description
      "This package provides a tool for non linear mapping (non linear regression)
 using a mixture of regression model and an inverse regression strategy.  The
-methods include the @code{GLLiM} model (see Deleforge et al (2015)
+methods include the GL@code{LiM} model (see Deleforge et al (2015)
 <DOI:10.1007/s11222-014-9461-5>) based on Gaussian mixtures and a robust version
-of @code{GLLiM,} named @code{SLLiM} (see Perthame et al (2016)
+of GL@code{LiM}, named SL@code{LiM} (see Perthame et al (2016)
 <https://hal.archives-ouvertes.fr/hal-01347455>) based on a mixture of
-Generalized Student distributions.  The methods also include @code{BLLiM} (see
-Devijver et al (2017) @code{<arXiv:1701.07899>)} which is an extension of
-@code{GLLiM} with a sparse block diagonal structure for large covariance
+Generalized Student distributions.  The methods also include BL@code{LiM} (see
+Devijver et al (2017) <@code{arXiv:1701.07899>}) which is an extension of
+GL@code{LiM} with a sparse block diagonal structure for large covariance
 matrices (particularly interesting for transcriptomic data).")
     (license license:gpl2+)))
 
@@ -1281,7 +1281,7 @@ make plugin development easier.")
      "Computes robust association measures that do not presuppose linearity.  The xi
 correlation (xicor) is based on cross correlation between ranked increments.
 The reference for the methods implemented here is Chatterjee, Sourav (2020)
-@code{<arXiv:1909.10140>} This package includes the Galton peas example.")
+<@code{arXiv:1909.10140>} This package includes the Galton peas example.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-xhaz

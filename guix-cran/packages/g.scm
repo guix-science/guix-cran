@@ -134,7 +134,7 @@ For more details on the @code{OpenAI} Gym API specification, please see here:
 genome-wide by environment interaction study (GWEIS) scans using the genetic
 data stored in a binary dosage file.  The user provides a data frame with the
 subject's covariate data and the information about the binary dosage file
-returned by the @code{BinaryDosage::getbdinfo()} routine.")
+returned by the @code{BinaryDosage::getbdinfo}() routine.")
     (license license:gpl3)))
 
 (define-public r-gxeprs
@@ -298,6 +298,40 @@ non-normally distributed phenotype (Gregory Connor and Michael O'Neill,
 Regression Model (GWRM).")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-gwrlasso
+  (package
+    (name "r-gwrlasso")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "GWRLASSO" version))
+              (sha256
+               (base32
+                "172gjp4f3i2na53l04ddsz588qmhfs4fwdnbnvpjvkrc8xsp9yf2"))))
+    (properties `((upstream-name . "GWRLASSO")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-qpdf r-numbers r-matrix r-glmnet))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=GWRLASSO")
+    (synopsis "Hybrid Model for Spatial Prediction Through Local Regression")
+    (description
+     "It implements a hybrid spatial model for improved spatial prediction by
+combining the variable selection capability of LASSO (Least Absolute Shrinkage
+and Selection Operator) with the Geographically Weighted Regression (GWR) model
+that captures the spatially varying relationship efficiently.  For method
+details see, Wheeler, D.C.(2009).<DOI:10.1068/a40256>.  The developed hybrid
+model efficiently selects the relevant variables by using LASSO as the first
+step; these selected variables are then incorporated into the GWR framework,
+allowing the estimation of spatially varying regression coefficients at unknown
+locations and finally predicting the values of the response variable at unknown
+test locations while taking into account the spatial heterogeneity of the data.
+Integrating the LASSO and GWR models enhances prediction accuracy by considering
+spatial heterogeneity and capturing the local relationships between the
+predictors and the response variable.  The developed hybrid spatial model can be
+useful for spatial modeling, especially in scenarios involving complex spatial
+patterns and large datasets with multiple predictor variables.")
+    (license license:gpl2+)))
+
 (define-public r-gwqs
   (package
     (name "r-gwqs")
@@ -413,7 +447,7 @@ correlation.  Geographically weighted partial correlation coefficients are
 calculated following (Percival and Tsutsumida,
 2017)<doi:10.1553/giscience2017_01_s36> and are described in greater detail in
 (Tsutsumida et al., 2019)<doi:10.5194/ica-abs-1-372-2019> and (Percival et al.,
-@code{2021)<arXiv:2101.03491>.}")
+2021)<@code{arXiv:2101.03491>}.")
     (license license:gpl3)))
 
 (define-public r-gwpcor
@@ -557,7 +591,7 @@ selection: An application to gastric cancer screening <doi:10.1038/srep26582>.")
 count data and the univariate exponential variation index (VI) for nonnegative
 continuous data are performed.  Next, other functions of univariate indexes such
 the binomial dispersion index (DIb), the negative binomial dispersion index
-(DInb) and the inverse Gaussian variation index @code{(VIiG)} are given.
+(DInb) and the inverse Gaussian variation index (V@code{IiG}) are given.
 Finally, we are computed some multivariate versions of these functions such that
 the generalized dispersion index (GDI) with its marginal one (MDI) and the
 generalized variation index (GVI) with its marginal one (MVI) too.")
@@ -1272,7 +1306,7 @@ from Git', SQLite', and Make to provide a lab notebook for machine learning.")
 squares by singular value decomposition (PLS-SVD) and guided principal component
 analysis (guided-PCA).  For the details of the methods, see the reference
 section of @code{GitHub} README.md
-@code{<https://github.com/rikenbit/guidedPLS>.}")
+<https://github.com/rikenbit/@code{guidedPLS>}.")
     (license license:expat)))
 
 (define-public r-guide
@@ -1636,28 +1670,6 @@ measurement facets (e.g., items and raters).")
 General Transit Feed Specification (GTFS) data format.")
     (license license:expat)))
 
-(define-public r-gtfsrouter
-  (package
-    (name "r-gtfsrouter")
-    (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "gtfsrouter" version))
-              (sha256
-               (base32
-                "1jzh4s7jkwi8d30wa5f71qyvjsvggyzjbdyrl3fqyxzfvw2hkl8p"))))
-    (properties `((upstream-name . "gtfsrouter")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-geodist r-data-table r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/UrbanAnalyst/gtfsrouter")
-    (synopsis "Routing with GTFS (General Transit Feed Specification) Data")
-    (description
-     "Use GTFS (General Transit Feed Specification) data for routing from nominated
-start and end stations, and for extracting isochrones from nominated start
-station.")
-    (license license:gpl3)))
-
 (define-public r-gtfsio
   (package
     (name "r-gtfsio")
@@ -1806,7 +1818,7 @@ opinionated niche capabilities and helpers functions.")
     (description
      "New multi-sample tests for testing whether multiple samples are from the same
 distribution.  They work well particularly for high-dimensional data.  Song, H.
-and Chen, H. (2022) @code{<arXiv:2205.13787>.}")
+and Chen, H. (2022) <@code{arXiv:2205.13787>}.")
     (license license:gpl2+)))
 
 (define-public r-gtests
@@ -2071,7 +2083,7 @@ user-specified average run length.  Can be applied to any type of data
 measure is available.  See references (1) Chen, H. (2019) Sequential
 change-point detection based on nearest neighbors.  The Annals of Statistics,
 47(3):1381-1407. (2) Chu, L. and Chen, H. (2018) Sequential change-point
-detection for high-dimensional and non-Euclidean data @code{<arXiv:1810.05973>.}")
+detection for high-dimensional and non-Euclidean data <@code{arXiv:1810.05973>}.")
     (license license:gpl2+)))
 
 (define-public r-gstar
@@ -2511,13 +2523,13 @@ non-Euclidean, etc.) as long as a reasonable similarity measure is available.")
 (define-public r-gsed
   (package
     (name "r-gsed")
-    (version "2.5")
+    (version "2.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GSED" version))
               (sha256
                (base32
-                "0hz7rn0j62gy7bv67dxqpfdq86zv3yqhl9pwafcism94636h8vrj"))))
+                "1k8axyzk55d8idn65qj3gxqjsk27n2r0q78v7524mg8n3fhxs0wj"))))
     (properties `((upstream-name . "GSED")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rootsolve r-r-utils r-memoise))
@@ -2812,7 +2824,7 @@ prevalence and covariates.")
      "Given an adjacency matrix drawn from a Generalized Stochastic Block Model with
 missing observations, this package robustly estimates the probabilities of
 connection between nodes and detects outliers nodes, as describes in Gaucher,
-Klopp and Robin (2019) @code{<arXiv:1911.13122>.}")
+Klopp and Robin (2019) <@code{arXiv:1911.13122>}.")
     (license license:gpl3)))
 
 (define-public r-gsbdesign
@@ -3035,7 +3047,7 @@ experiments based on the General Recognition Theory.")
      "Testing Gene-Environment Interactions Through Genetic Risk Scores")
     (description
      "Statistical testing procedures for detecting @code{GxE} (gene-environment)
-interactions.  The main focus lies on @code{GRSxE} interaction tests that aim at
+interactions.  The main focus lies on GR@code{SxE} interaction tests that aim at
 detecting @code{GxE} interactions through GRS (genetic risk scores).  Moreover,
 a novel testing procedure based on bagging and OOB predictions is implemented
 for incorporating all available observations at both GRS construction and
@@ -3282,7 +3294,7 @@ parameters.")
     (description
      "This package implements the simple and computationally efficient standardization
 scheme for group lasso models with categorical predictors described in Detmer,
-Cebral, Slawski (2019) @code{<arXiv:1805.06915>.}")
+Cebral, Slawski (2019) <@code{arXiv:1805.06915>}.")
     (license license:gpl3)))
 
 (define-public r-grplasso
@@ -3436,7 +3448,7 @@ or features can be extracted from the data, including single time points,
 interval growth rates and other growth statistics, such as maximum growth or
 days to maximum growth.  The package also has tools adapted to inputting data
 from high-throughput phenotyping facilities, such from a Lemna-Tec Scananalyzer
-3D (see @code{<https://www.youtube.com/watch?v=MRAF_mAEa7E/>} for more
+3D (see <https://www.youtube.com/watch?v=MRAF_@code{mAEa7E/>} for more
 information).  The package @code{growthPheno} can also be installed from
 <http://chris.brien.name/rpackages/>.")
     (license license:gpl2+)))
@@ -3555,7 +3567,7 @@ effects dependence.")
      "Bayesian Non-Parametric Dependent Models for Time-Indexed Functional Data")
     (description
      "Estimates a collection of time-indexed functions under either of Gaussian
-process (GP) or intrinsic Gaussian Markov random field @code{(iGMRF)} prior
+process (GP) or intrinsic Gaussian Markov random field (@code{iGMRF}) prior
 formulations where a Dirichlet process mixture allows sub-groupings of the
 functions to share the same covariance or precision parameters.  The GP and
 @code{iGMRF} formulations both support any number of additive covariance or
@@ -3581,7 +3593,7 @@ seasonality.")
     (description
      "Functional denoising and functional ANOVA through wavelet-domain Markov groves.
 Fore more details see: Ma L. and Soriano J. (2016) Efficient functional ANOVA
-through wavelet-domain Markov groves. @code{<arXiv:1602.03990v2} [stat.ME]>.")
+through wavelet-domain Markov groves. <@code{arXiv:1602.03990v2} [stat.ME]>.")
     (license license:gpl3+)))
 
 (define-public r-groupwqs
@@ -3721,7 +3733,7 @@ response variable linearly using least squares.")
      "Computes probabilities related to group sequential designs for normally
 distributed test statistics.  Enables to derive critical boundaries, power,
 drift, and confidence intervals of such designs.  Supports the alpha spending
-approach by @code{Lan-DeMets} (1994) <doi:10.1002/sim.4780131308>.")
+approach by Lan-@code{DeMets} (1994) <doi:10.1002/sim.4780131308>.")
     (license license:gpl3)))
 
 (define-public r-groupr
@@ -3770,12 +3782,12 @@ pivoting and other group manipulation functions.")
     (synopsis "Independent Component Analysis for Grouped Data")
     (description
      "This package contains an implementation of an independent component analysis
-(ICA) for grouped data.  The main function @code{groupICA()} performs a blind
+(ICA) for grouped data.  The main function @code{groupICA}() performs a blind
 source separation, by maximizing an independence across sources and allows to
 adjust for varying confounding for user-specified groups.  Additionally, the
 package contains the function uwedge() which can be used to approximately
 jointly diagonalize a list of matrices.  For more details see the project
-website @code{<https://sweichwald.de/groupICA/>.}")
+website <https://sweichwald.de/@code{groupICA/>}.")
     (license license:agpl3)))
 
 (define-public r-groupedsurv
@@ -3925,7 +3937,7 @@ the user running the script happens to have installed).  This is achieved by
 using the command groundhog.library() instead of the base command library(), and
 including a date in the call.  The date is used to call on the same version of
 the package every time (the most recent version available at that date).  Load
-packages from CRAN, @code{GitHub,} or Gitlab.")
+packages from CRAN, @code{GitHub}, or Gitlab.")
     (license license:gpl3)))
 
 (define-public r-gromovlab
@@ -3946,7 +3958,7 @@ packages from CRAN, @code{GitHub,} or Gitlab.")
     (description
      "Computes Gromov-Hausdorff type l^p distances for labeled metric spaces.  These
 distances were introduced in V.Liebscher, Gromov meets Phylogenetics - new
-Animals for the Zoo of Metrics on Tree Space @code{<arXiv:1504.05795>} for
+Animals for the Zoo of Metrics on Tree Space <@code{arXiv:1504.05795>} for
 phylogenetic trees, but may apply to a diversity of scenarios.")
     (license license:gpl2+)))
 
@@ -4121,9 +4133,9 @@ GRMs, with twin-research-based SEM techniques, St Pourcain et al. (2017)
 probability of each option, value remaining in the test, and percent lift over
 the baseline for various marketing objectives.  References: Fink, Daniel (1997)
 \"A Compendium of Conjugate Priors\"
-@code{<https://www.johndcook.com/CompendiumOfConjugatePriors.pdf>.} Stucchio,
+<https://www.johndcook.com/@code{CompendiumOfConjugatePriors.pdf>}.  Stucchio,
 Chris (2015) \"Bayesian A/B Testing at VWO\"
-@code{<https://vwo.com/downloads/VWO_SmartStats_technical_whitepaper.pdf>.}")
+<https://vwo.com/downloads/VWO_@code{SmartStats_technical_whitepaper.pdf>}.")
     (license license:expat)))
 
 (define-public r-gripp
@@ -4171,7 +4183,7 @@ C. Santana 2008) <doi:10.1080/17415970802082922>.")
      "Calculates optical parameters of crystals like the optical axes, the axis angle
 2V, and the direction of the principal axes of the indicatrix from extinction
 angles measured on a spindle stage mounted on a polarisation microscope stage.
-Details of the method can be found in Dufey (2017) @code{<arXiv:1703.00070>.}")
+Details of the method can be found in Dufey (2017) <@code{arXiv:1703.00070>}.")
     (license license:gpl3)))
 
 (define-public r-grim
@@ -4201,7 +4213,7 @@ tables (i.e.  log-linear models) Graphical Gaussian models for multivariate
 normal data (i.e.  covariance selection models) Mixed interaction models.
 Documentation about @code{gRim} is provided by vignettes included in this
 package and the book by HÃ¸jsgaard, Edwards and Lauritzen (2012,
-<doi:10.1007/978-1-4614-2299-0>); see @code{citation(\"gRim\")} for details.")
+<doi:10.1007/978-1-4614-2299-0>); see citation(\"@code{gRim}\") for details.")
     (license license:gpl2+)))
 
 (define-public r-gridstacker
@@ -4274,7 +4286,7 @@ with content analysis.")
      "Can be used for optimal transport between two-dimensional grids with respect to
 separable cost functions of l^p form.  It utilizes the Frank-Wolfe algorithm to
 approximate so-called pivot measures: one-dimensional transport plans that fully
-describe the full transport, see G. Auricchio (2021) @code{<arXiv:2105.07278>.}
+describe the full transport, see G. Auricchio (2021) <@code{arXiv:2105.07278>}.
 For these, it offers methods for visualization and to extract the corresponding
 transport plans and costs.  Additionally, related functions for one-dimensional
 optimal transport are available.")
@@ -4583,7 +4595,7 @@ models and visualising them.")
     (description
      "Convert Ensembl gene identifiers from Genotype-Tissue Expression (GTEx) data to
 identifiers in other annotation systems, including Entrez', HGNC', and
-@code{UniProt'.}")
+@code{UniProt}'.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -4718,7 +4730,7 @@ differential equations.  This is an extension to the greta software, Golding
     (synopsis "Simple and Scalable Statistical Modelling in R")
     (description
      "Write statistical models in R and fit them by MCMC and optimisation on CPUs and
-GPUs, using Google @code{TensorFlow'.} greta lets you write your own model like
+GPUs, using Google @code{TensorFlow}'.  greta lets you write your own model like
 in BUGS, JAGS and Stan, except that you write models right in R, it scales well
 to massive datasets, and itâs easy to extend and build on.  See the website
 for more information, including tutorials, examples, package documentation, and
@@ -4728,13 +4740,13 @@ the greta forum.")
 (define-public r-greport
   (package
     (name "r-greport")
-    (version "0.7-3")
+    (version "0.7-4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "greport" version))
               (sha256
                (base32
-                "189jjnh3yya0v79mdy3mx0859larqh1n1kkzzrcapbqah8b3vr4h"))))
+                "1zyvw3npqz20mlfvmlrz742xxsigs21srn2df9yyjap93g7wqzy1"))))
     (properties `((upstream-name . "greport")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -4776,7 +4788,7 @@ used by greport for high-level graphics.")
 obtained p-values, published gene lists, and annotation) in the	estimation of a
 logistic regression model to enhance predictive performance and 	feature
 selection, as described in MÃ¼nch, Peeters, van der Vaart, and van de Wiel
-	(2018) @code{<arXiv:1805.00389>.}")
+	(2018) <@code{arXiv:1805.00389>}.")
     (license license:gpl2+)))
 
 (define-public r-gremlins
@@ -4800,7 +4812,7 @@ selection, as described in MÃ¼nch, Peeters, van der Vaart, and van de Wiel
 networks implying some common pre-specified groups of individuals.  The aim is
 to fit an adapted version of the popular stochastic block model to multipartite
 networks, as described in Bar-hen, Barbillon and Donnet (2020)
-@code{<arXiv:1807.10138>.}")
+<@code{arXiv:1807.10138>}.")
     (license license:gpl3)))
 
 (define-public r-gremlin
@@ -4849,7 +4861,7 @@ restricted log-likelihood, but with other algorithms available.")
 counts and measure the degree of relevance by standardized counts.  Users can
 set edge costs in the graph to compare the parameters of the distributions.
 Methods for comparing distributions are as described in: Xiaoping Shi (2021)
-@code{<arXiv:2107.00728>.}")
+<@code{arXiv:2107.00728>}.")
     (license license:expat)))
 
 (define-public r-gregry
@@ -5107,7 +5119,7 @@ In addition, it is a natural extension of the clisymbols package.")
     (description
      "These are @code{GreedyExperimentalDesign} Java dependency libraries.  Note: this
 package has no functionality of its own and should not be installed as a
-standalone package without @code{GreedyExperimentalDesign.}")
+standalone package without @code{GreedyExperimentalDesign}.")
     (license license:gpl3)))
 
 (define-public r-greedyexperimentaldesign
@@ -5154,9 +5166,9 @@ allow for three objective functions: Mahalanobis distance, Sum of absolute
 differences standardized and Kernel distances via the kernlab library.  This
 package is the result of a stream of research that can be found in Krieger, A,
 Azriel, D and Kapelner, A \"Nearly Random Designs with Greatly Improved Balance\"
-(2016) @code{<arXiv:1612.02315>,} Krieger, A, Azriel, D and Kapelner, A \"Better
+(2016) <@code{arXiv:1612.02315>}, Krieger, A, Azriel, D and Kapelner, A \"Better
 Experimental Design by Hybridizing Binary Matching with Imbalance Optimization\"
-(2021) @code{<arXiv:2012.03330>.}")
+(2021) <@code{arXiv:2012.03330>}.")
     (license license:gpl3)))
 
 (define-public r-greedyepl
@@ -5218,7 +5230,7 @@ minimizing the description length).  Several models are available such as:
 Stochastic Block Model, degree corrected Stochastic Block Model, Mixtures of
 Multinomial, Latent Block Model.  The optimization is performed thanks to a
 combination of greedy local search and a genetic algorithm (see
-@code{<arXiv:2002:11577>} for more details).")
+<@code{arXiv:2002:11577>} for more details).")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-grec
@@ -5343,13 +5355,13 @@ Hojsgaard and Lauritzen (2008, <doi:10.1111/j.1467-9868.2008.00666.x>).")
 (define-public r-grbase
   (package
     (name "r-grbase")
-    (version "1.8.9")
+    (version "1.9.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gRbase" version))
               (sha256
                (base32
-                "0zix34w60l94qsfh6gxw9qf4l564fmml9s4nc4y5kr4nv11b9jns"))))
+                "11gpdizvg11r4zz4wvlsrmd2880g49hw742d4bnwncxkb4b9wwgm"))))
     (properties `((upstream-name . "gRbase")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgraphviz
@@ -5367,7 +5379,7 @@ Hojsgaard and Lauritzen (2008, <doi:10.1111/j.1467-9868.2008.00666.x>).")
     (synopsis "Package for Graphical Modelling in R")
     (description
      "The @code{gRbase} package provides graphical modelling features used by e.g. the
-packages @code{gRain',} @code{gRim} and @code{gRc'.} @code{gRbase} implements
+packages @code{gRain}', @code{gRim} and @code{gRc}'. @code{gRbase} implements
 graph algorithms including (i) maximum cardinality search (for marked and
 unmarked graphs). (ii) moralization, (iii) triangulation, (iv) creation of
 junction tree. @code{gRbase} facilitates array operations, @code{gRbase}
@@ -5376,7 +5388,7 @@ illustrates how hierarchical log-linear models may be implemented and describes
 concept of graphical meta data.  The facilities of the package are documented in
 the book by HÃ¸jsgaard, Edwards and Lauritzen (2012,
 <doi:10.1007/978-1-4614-2299-0>) and in the paper by Dethlefsen and HÃ¸jsgaard,
-(2005, <doi:10.18637/jss.v014.i17>).  Please see @code{citation(\"gRbase\")} for
+(2005, <doi:10.18637/jss.v014.i17>).  Please see citation(\"@code{gRbase}\") for
 citation details.  NOTICE @code{gRbase} requires that the packages graph,
 Rgraphviz and RBGL are installed from bioconductor'.  For installation
 instructions please refer to the web page given below.")
@@ -5530,13 +5542,13 @@ about date input quality, performance, or the ABS catalogue.")
 (define-public r-gratis
   (package
     (name "r-gratis")
-    (version "1.0.3")
+    (version "1.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gratis" version))
               (sha256
                (base32
-                "1hbmqb093lxnv8gkn9vd0fsgs5a85yfdqxj5p8jmkq9078yr1vga"))))
+                "05ac9rxzps2mal20xqwa937ybdgl73nngswvjxwya20pbwhz6l73"))))
     (properties `((upstream-name . "gratis")))
     (build-system r-build-system)
     (propagated-inputs (list r-tsibble
@@ -5808,7 +5820,7 @@ subgraph).  The main function, agraph(), computes the segmentation of the
 signal.  The package also includes a wrapper around the competing method flsa()
 (from package flsa').  More information about this method in Goepp and van de
 Kassteele (2022) \"Graph-Based Spatial Segmentation of Health-Related Areal Data\"
-@code{<doi:10.48550/arXiv.2206.06752>.}")
+<doi:10.48550/@code{arXiv.2206.06752>}.")
     (license license:gpl3+)))
 
 (define-public r-graphql
@@ -6121,7 +6133,7 @@ scatter plot.")
 classification likelihood criterion and a mixture of stochastic block models.
 The method is described in the article \"Model-based clustering of multiple
 networks with a hierarchical algorithm\" by T. Rebafka (2022)
-@code{<arXiv:2211.02314>.}")
+<@code{arXiv:2211.02314>}.")
     (license license:gpl2)))
 
 (define-public r-graph4lg
@@ -6321,57 +6333,6 @@ mutations.  The higher the distance, the more deleterious the substitution is
 expected to be.")
     (license license:expat)))
 
-(define-public r-granovagg
-  (package
-    (name "r-granovagg")
-    (version "1.4.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "granovaGG" version))
-              (sha256
-               (base32
-                "0khqlqc6jg9cpdq06g6jlpfjcw3m6rj40ipljfai8g1630ril6q4"))))
-    (properties `((upstream-name . "granovaGG")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-reshape2 r-rcolorbrewer r-plyr r-gridextra
-                             r-ggplot2))
-    (home-page "https://cran.r-project.org/package=granovaGG")
-    (synopsis "Graphical Analysis of Variance Using ggplot2")
-    (description
-     "This collection of functions in @code{granovaGG} provides what we call elemental
-graphics for display of anova results.  The term elemental derives from the fact
-that each function is aimed at construction of graphical displays that afford
-direct visualizations of data with respect to the fundamental questions that
-drive the particular anova methods.  This package represents a modification of
-the original granova package; the key change is to use ggplot2', Hadley
-Wickham's package based on Grammar of Graphics concepts (due to Wilkinson).  The
-main function is granovagg.1w() (a graphic for one way ANOVA); two other
-functions (granovagg.ds() and granovagg.contr()) are to construct graphics for
-dependent sample analyses and contrast-based analyses respectively. (The
-function granova.2w(), which entails dynamic displays of data, is not currently
-part of @code{granovaGG'.)} The @code{granovaGG} functions are to display data
-for any number of groups, regardless of their sizes (however, very large data
-sets or numbers of groups can be problematic).  For granovagg.1w() a specialized
-approach is used to construct data-based contrast vectors for which anova data
-are displayed.  The result is that the graphics use a straight line to
-facilitate clear interpretations while being faithful to the standard effect
-test in anova.  The graphic results are complementary to standard summary
-tables; indeed, numerical summary statistics are provided as side effects of the
-graphic constructions.  granovagg.ds() and granovagg.contr() provide graphic
-displays and numerical outputs for a dependent sample and contrast-based
-analyses.  The graphics based on these functions can be especially helpful for
-learning how the respective methods work to answer the basic question(s) that
-drive the analyses.  This means they can be particularly helpful for students
-and non-statistician analysts.  But these methods can be of assistance for
-work-a-day applications of many kinds, as they can help to identify outliers,
-clusters or patterns, as well as highlight the role of non-linear
-transformations of data.  In the case of granovagg.1w() and granovagg.ds()
-several arguments are provided to facilitate flexibility in the construction of
-graphics that accommodate diverse features of data, according to their
-corresponding display requirements.  See the help files for individual
-functions.")
-    (license license:gpl2+)))
-
 (define-public r-granova
   (package
     (name "r-granova")
@@ -6421,7 +6382,7 @@ highlight the role of non-linear transformations of data.")
      "This package contains five functions performing the calculation of unconditional
 and conditional Granger-causality spectra, bootstrap inference on both, and
 inference on the difference between them via the bootstrap approach of Farne and
-Montanari, 2018 @code{<arXiv:1803.00374>.}")
+Montanari, 2018 <@code{arXiv:1803.00374>}.")
     (license license:gpl2+)))
 
 (define-public r-grandr
@@ -6502,7 +6463,7 @@ the object.")
     (home-page "https://gitlab.com/iagogv/GramQuad")
     (synopsis "Gram Quadrature")
     (description
-     "Numerical integration with Gram polynomials (based on @code{<arXiv:2106.14875>}
+     "Numerical integration with Gram polynomials (based on <@code{arXiv:2106.14875>}
 [math.NA] 28 Jun 2021, by Irfan Muhammad [School of Computer Science, University
 of Birmingham, UK]).")
     (license license:gpl3)))
@@ -6586,7 +6547,7 @@ Doctolero (2020) <doi:10.1111/2041-210X.13350>).")
      "Probability propagation in graphical independence networks, also known as
 Bayesian networks or probabilistic expert systems.  Documentation of the package
 is provided in vignettes included in the package and in the paper by HÃ¸jsgaard
-(2012, <doi:10.18637/jss.v046.i10>).  See @code{citation(\"gRain\")} for details.")
+(2012, <doi:10.18637/jss.v046.i10>).  See citation(\"@code{gRain}\") for details.")
     (license license:gpl2+)))
 
 (define-public r-grafzahl
@@ -6773,7 +6734,7 @@ for a variety of data types.")
     (description
      "Use the graph-constrained estimation (Grace) procedure (Zhao and Shojaie, 2016
 <doi:10.1111/biom.12418>) to estimate graph-guided linear regression
-coefficients and use the @code{Grace/GraceI/GraceR} tests to perform
+coefficients and use the Grace/@code{GraceI/GraceR} tests to perform
 graph-guided hypothesis tests on the association between the response and the
 predictors.")
     (license license:gpl3)))
@@ -6847,7 +6808,7 @@ for predicting other intramolecular @code{nonB} DNA structures are included.")
      "Server implementation of @code{GraphQL}
 <http://graphql.github.io/graphql-spec/>, a query language originally created by
 Facebook for describing data requirements on complex application data models.
-Visit <http://graphql.org> to learn more about @code{GraphQL'.}")
+Visit <http://graphql.org> to learn more about @code{GraphQL}'.")
     (license license:expat)))
 
 (define-public r-gpx
@@ -6896,10 +6857,10 @@ R.")
     (description
      "Fast scalable Gaussian process approximations, particularly well suited to
 spatial (aerial, remote-sensed) and environmental data, described in more detail
-in Katzfuss and Guinness (2017) @code{<arXiv:1708.06302>.} Package also contains
-a fast implementation of the incomplete Cholesky decomposition (IC0), based on
-Schaefer et al. (2019) @code{<arXiv:1706.02205>} and @code{MaxMin} ordering
-proposed in Guinness (2018) @code{<arXiv:1609.05372>.}")
+in Katzfuss and Guinness (2017) <@code{arXiv:1708.06302>}.  Package also
+contains a fast implementation of the incomplete Cholesky decomposition (IC0),
+based on Schaefer et al. (2019) <@code{arXiv:1706.02205>} and @code{MaxMin}
+ordering proposed in Guinness (2018) <@code{arXiv:1609.05372>}.")
     (license license:gpl2+)))
 
 (define-public r-gpvam
@@ -7122,7 +7083,7 @@ elevation difference and azimuth.(PLAZA, J. et al., 2022)
     (synopsis "General P-Splines")
     (description
      "General P-splines are non-uniform B-splines penalized by a general difference
-penalty, proposed by Li and Cao (2022) @code{<arXiv:2201.06808>.} Constructible
+penalty, proposed by Li and Cao (2022) <@code{arXiv:2201.06808>}.  Constructible
 on arbitrary knots, they extend the standard P-splines of Eilers and Marx (1996)
 <doi:10.1214/ss/1038425655>.  They are also related to the O-splines of
 O'Sullivan (1986) <doi:10.1214/ss/1177013525> via a sandwich formula that links
@@ -7220,10 +7181,10 @@ noise, time series lengths, sampling, etc.  This platform is developped at the
 Centre d'Etudes Spatiales de la Biosphere (CESBIO), UMR 5126 UPS/CNRS/CNES/IRD,
 18 av.  Edouard Belin, 31401 TOULOUSE, FRANCE. The developments were funded by
 the French program Les Enveloppes Fluides et l'Environnement (LEFE, MANU,
-projets @code{GloMo,} @code{SpatioGloMo} and @code{MoMu).} The French program
+projets @code{GloMo}, @code{SpatioGloMo} and @code{MoMu}).  The French program
 Defi @code{InFiNiTi} (CNRS) and PNTS are also acknowledged (projects
-Crops'IChaos and Musc & @code{SlowFast).} The method is described in the article
-: Mangiarotti S. and Huc M. (2019) <doi:10.1063/1.5081448>.")
+Crops'IChaos and Musc & @code{SlowFast}).  The method is described in the
+article : Mangiarotti S. and Huc M. (2019) <doi:10.1063/1.5081448>.")
     (license (license:fsdg-compatible "CeCILL-2"))))
 
 (define-public r-gpmap
@@ -7493,7 +7454,7 @@ and spheres are provided.  The original approximation is due to Vecchia (1988)
 <http://www.jstor.org/stable/2345768>, and the reordering and grouping methods
 are from Guinness (2018) <doi:10.1080/00401706.2018.1437476>.  Model fitting
 employs a Fisher scoring algorithm described in Guinness (2019)
-@code{<arXiv:1905.08374>.}")
+<@code{arXiv:1905.08374>}.")
     (license license:expat)))
 
 (define-public r-gpgame
@@ -7525,7 +7486,7 @@ setting (expensive pay-off evaluations, no derivatives).  The algorithm handles
 noiseless or noisy evaluations.  Two acquisition functions are available.
 Graphical outputs can be generated automatically.  V. Picheny, M. Binois, A.
 Habbal (2018) <doi:10.1007/s10898-018-0688-0>.  M. Binois, V. Picheny, P.
-Taillandier, A. Habbal (2020) @code{<arXiv:1902.06565v2>.}")
+Taillandier, A. Habbal (2020) <@code{arXiv:1902.06565v2>}.")
     (license license:gpl3)))
 
 (define-public r-gpg
@@ -7654,7 +7615,7 @@ detecting change points in the causal exposure response curves using
 observational data.  Ren, B., Wu, X., Braun, D., Pillai, N., & Dominici,
 F.(2021). \"Bayesian modeling for exposure response curve via gaussian processes:
 Causal effects of exposure to air pollution on health outcomes.\" @code{arXiv}
-preprint @code{<arXiv:2105.03454>.}")
+preprint <@code{arXiv:2105.03454>}.")
     (license license:gpl3+)))
 
 (define-public r-gpbstat
@@ -7784,7 +7745,7 @@ Software for Arbitrary Rotation Criteria in Factor Analysis\".")
     (synopsis "Derivative Free Gradient Projection Factor Rotation")
     (description
      "Derivative Free Gradient Projection Algorithms for Factor Rotation.  For more
-details see @code{?GPArotateDF.} Theory for these functions can be found in the
+details see ?GP@code{ArotateDF}.  Theory for these functions can be found in the
 following publications: Jennrich (2004) <doi:10.1007/BF02295647>.  Bernaards and
 Jennrich (2005) <doi:10.1177/0013164404272507>.")
     (license license:gpl2+)))
@@ -8026,39 +7987,6 @@ selection and visualisation.  The package is named after W.S. Gosset aka
 âStudentâ, a pioneer of modern statistics in small sample experimental
 design and analysis.")
     (license license:expat)))
-
-(define-public r-gorica
-  (package
-    (name "r-gorica")
-    (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "gorica" version))
-              (sha256
-               (base32
-                "0id0xqdw4rwqviym8l0a5gnl5a68ci5f4gn4bhywmzb6fh1nxj33"))))
-    (properties `((upstream-name . "gorica")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-quadprog
-                             r-mvtnorm
-                             r-mass
-                             r-lme4
-                             r-limsolve
-                             r-lavaan
-                             r-bain))
-    (home-page "https://informative-hypotheses.sites.uu.nl/software/goric/")
-    (synopsis "Evaluation of Inequality Constrained Hypotheses Using GORICA")
-    (description
-     "This package implements the generalized order-restricted information criterion
-approximation (GORICA), an AIC-like information criterion that can be utilized
-to evaluate informative hypotheses specifying directional relationships between
-model parameters in terms of (in)equality constraints (see Altinisik, Van Lissa,
-Hoijtink, Oldehinkel, & Kuiper, 2021), <doi:10.31234/osf.io/t3c8g>.  The GORICA
-is applicable not only to normal linear models, but also to generalized linear
-models (GLMs), generalized linear mixed models (GLMMs), structural equation
-models (SEMs), and contingency tables.  For contingency tables, restrictions on
-cell probabilities can be non-linear.")
-    (license license:gpl3+)))
 
 (define-public r-goric
   (package
@@ -8732,7 +8660,7 @@ curvature).")
     (synopsis "Good Regression")
     (description
      "Fit Good regression models to count data (Tur et al., 2021)
-@code{<arXiv:2105.01557>.} The package provides functions for model estimation
+<@code{arXiv:2105.01557>}.  The package provides functions for model estimation
 and model prediction.  Density, distribution function, quantile function and
 random generation for the Good distribution are also provided.")
     (license license:gpl2+)))
@@ -8885,7 +8813,7 @@ characteristics of different trial designs.")
     (description
      "This package provides tools for fitting statistical network models to dynamic
 network data.  Can be used for fitting both dynamic network actor models
-@code{('DyNAMs')} and relational event models ('REMs').  Stadtfeld, Hollway, and
+('@code{DyNAMs}') and relational event models ('REMs').  Stadtfeld, Hollway, and
 Block (2017a) <doi:10.1177/0081175017709295>, Stadtfeld, Hollway, and Block
 (2017b) <doi:10.1177/0081175017733457>, Stadtfeld and Block (2017)
 <doi:10.15195/v4.a14>, Hoffman et al. (2020) <doi:10.1017/nws.2020.3>.")
@@ -8952,7 +8880,7 @@ estimators for gamma, inverse Gaussian and generalized Pareto distributions.")
     (description
      "An interactive document on the topic of goodness of fit analysis using rmarkdown
 and shiny packages.  Runtime examples are provided in the package function as
-well as at @code{<https://predanalyticssessions1.shinyapps.io/ChiSquareGOF/>.}")
+well as at <https://predanalyticssessions1.shinyapps.io/@code{ChiSquareGOF/>}.")
     (license license:gpl2)))
 
 (define-public r-gofkmt
@@ -8976,7 +8904,7 @@ comes from one sample location-scale model where location and scale parameters
 are unknown.  It is well known that Khmaladze martingale transformation method -
 which was proposed by Khmaladze (1981) <DOI:10.1137/1126027> - provides
 asymptotic distribution free test for the GOF problem.  This package contains
-one function: @code{KhmaladzeTrans().} In this version, @code{KhmaladzeTrans()}
+one function: @code{KhmaladzeTrans}().  In this version, @code{KhmaladzeTrans}()
 provides test statistic and critical value of GOF test for normal, Cauchy, and
 logistic distributions.  This package used the main algorithm proposed by Kim
 (2020) <DOI:10.1007/s00180-020-00971-7> and tests for other distributions will
@@ -9048,8 +8976,8 @@ the gamma law are implemented using the method of Bhattacharya (2001)
      "Implementation of several goodness-of-fit tests for functional data.  Currently,
 mostly related with the functional linear model with functional/scalar response
 and functional/scalar predictor.  The package allows for the replication of the
-data applications considered in @code{GarcÃ­a-PortuguÃ©s,}
-@code{Ãlvarez-LiÃ©bana,} Ãlvarez-PÃ©rez and @code{GonzÃ¡lez-Manteiga} (2021)
+data applications considered in @code{GarcÃ­a-PortuguÃ©s},
+Ãlvarez-@code{LiÃ©bana}, Ãlvarez-PÃ©rez and @code{GonzÃ¡lez-Manteiga} (2021)
 <doi:10.1111/sjos.12486>.")
     (license license:gpl3)))
 
@@ -9079,7 +9007,7 @@ data applications considered in @code{GarcÃ­a-PortuguÃ©s,}
     (home-page "https://cran.r-project.org/package=gofCopula")
     (synopsis "Goodness-of-Fit Tests for Copulae")
     (description
-     "Several Goodness-of-Fit @code{(GoF)} tests for Copulae are provided.  A new
+     "Several Goodness-of-Fit (@code{GoF}) tests for Copulae are provided.  A new
 hybrid test, Zhang et al. (2016) <doi:10.1016/j.jeconom.2016.02.017> is
 implemented which supports all of the individual tests in the package, e.g.
 Genest et al. (2009) <doi:10.1016/j.insmatheco.2007.10.005>.  Estimation methods
@@ -9285,13 +9213,13 @@ package to solve the underlying linear optimisation problem.")
 (define-public r-go2bigq
   (package
     (name "r-go2bigq")
-    (version "1.0")
+    (version "2.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "go2bigq" version))
               (sha256
                (base32
-                "007sk6i10phxfmrgn03pa43ixfp1v27nxyvgmhzwrj5l9b532f0d"))))
+                "0xz6im5gc214m11w70m83mnas09sql9i0lvbgyfy0qvizn6zhyl3"))))
     (properties `((upstream-name . "go2bigq")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmpfr r-gmp))
@@ -9344,7 +9272,7 @@ and sheet sizes or read all sheets.")
     (description
      "Homogenize GNSS (Global Navigation Satellite System) time-series.  The general
 model is a segmentation in the mean model including a periodic function and
-considering monthly variances, see Quarello (2020) @code{<arXiv:2005.04683>.}")
+considering monthly variances, see Quarello (2020) <@code{arXiv:2005.04683>}.")
     (license license:gpl3)))
 
 (define-public r-gnrs
@@ -9538,9 +9466,9 @@ Anderson-Darling test for some continuous distribution functions proposed by
 Chen and Balakrishnan (1995)
 <http://asq.org/qic/display-item/index.html?item=11407>.  In addition to our
 classic distribution functions here, we calculate the Goodness of Fit
-@code{(GoF)} test to dataset which follows the extreme value distribution
+(@code{GoF}) test to dataset which follows the extreme value distribution
 function, without remembering the formula of distribution/density functions.
-Calculates the Value at Risk @code{(VaR)} and Average @code{VaR} are another
+Calculates the Value at Risk (@code{VaR}) and Average @code{VaR} are another
 important risk factors which are estimated by using well-known distribution
 functions.  Pflug and Romisch (2007, ISBN: 9812707409) is a good reference to
 study the properties of risk measures.")
@@ -9703,8 +9631,8 @@ models, quantile residual tests, graphical diagnostics, simulations,
 forecasting, and estimation of generalized impulse response function and
 generalized forecast error variance decomposition.  Leena Kalliovirta, Mika
 Meitz, Pentti Saikkonen (2016) <doi:10.1016/j.jeconom.2016.02.012>, Savi
-Virolainen (2022) @code{<arXiv:2007.04713>,} Savi Virolainen (2022)
-@code{<arXiv:2109.13648>.}")
+Virolainen (2022) <@code{arXiv:2007.04713>}, Savi Virolainen (2022)
+<@code{arXiv:2109.13648>}.")
     (license license:gpl3)))
 
 (define-public r-gmt
@@ -9845,7 +9773,7 @@ code with modular coding guidelines.")
      "This package provides functions for graph matching via nodes degree profiles are
 provided in this package.  The models we can handle include Erdos-Renyi random
 graphs and stochastic block models(SBM).  More details are in the reference
-paper: Yaofang Hu, Wanjie Wang and Yi Yu (2020) @code{<arXiv:2006.03284>.}")
+paper: Yaofang Hu, Wanjie Wang and Yi Yu (2020) <@code{arXiv:2006.03284>}.")
     (license license:gpl2)))
 
 (define-public r-gmpoly
@@ -10203,7 +10131,7 @@ Boogaart (2018) <doi:10.1007/s11004-018-9769-3>.")
 functional data, using a generalization of Mahalanobis distance, along with some
 functions useful for the analysis of functional data.  For further details, see
 Martino A., Ghiglietti, A., Ieva, F. and Paganoni A. M. (2017)
-@code{<arXiv:1708.00386>.}")
+<@code{arXiv:1708.00386>}.")
     (license license:gpl3)))
 
 (define-public r-gmeta
@@ -10317,9 +10245,9 @@ Combinatorial, GMDH MIA (Multilayered Iterative Algorithm), GMDH GIA
     (description
      "This package performs binary classification via Group Method of Data Handling
 (GMDH) - type neural network algorithms.  There exist two main algorithms
-available in GMDH() and @code{dceGMDH()} functions.  GMDH() performs
+available in GMDH() and @code{dceGMDH}() functions.  GMDH() performs
 classification via GMDH algorithm for a binary response and returns important
-variables. @code{dceGMDH()} performs classification via diverse classifiers
+variables. @code{dceGMDH}() performs classification via diverse classifiers
 ensemble based on GMDH (dce-GMDH) algorithm.  Also, the package produces a
 well-formatted table of descriptives for a binary response.  Moreover, it
 produces confusion matrix, its related statistics and scatter plot (2D and 3D)
@@ -10544,7 +10472,7 @@ implements large scale mediation analysis and adaptively selects potential
 confounding variables to adjust for each mediation test from a pool of candidate
 confounders.  The package is tailored for but not limited to genomic mediation
 analysis (e.g., cis-gene mediating trans-gene regulation pattern where an
-@code{eQTL,} its cis-linking gene transcript, and its trans-gene transcript play
+@code{eQTL}, its cis-linking gene transcript, and its trans-gene transcript play
 the roles as treatment, mediator and the outcome, respectively), restricting to
 scenarios with the presence of cis-association (i.e., treatment-mediator
 association) and random @code{eQTL} (i.e., treatment).")
@@ -10578,7 +10506,7 @@ Under the two-level model, by leveraging the variabilities across participants,
 the parameters are identifiable and consistently estimated based on a full
 conditional likelihood or a two-stage method.  See Zhao, Y., & Luo, X. (2017),
 Granger Mediation Analysis of Multiple Time Series with an Application to
-@code{fMRI,} @code{<arXiv:1709.05328>} for details.")
+@code{fMRI}, <@code{arXiv:1709.05328>} for details.")
     (license license:gpl2+)))
 
 (define-public r-gm
@@ -10614,7 +10542,7 @@ documents <https://rmarkdown.rstudio.com/>, R Jupyter Notebooks
 <https://jupyter.org/>, and RStudio <https://www.rstudio.com/>, so you can embed
 generated music anywhere.  Internally, uses @code{MusicXML}
 <https://www.musicxml.com/> to represent musical scores, and @code{MuseScore}
-<https://musescore.org/> to convert @code{MusicXML'.}")
+<https://musescore.org/> to convert @code{MusicXML}'.")
     (license license:expat)))
 
 (define-public r-glycanr
@@ -10688,7 +10616,7 @@ glycemia, measures of glycemic variability and measures of glycemic risk, from
 continuous glucose monitoring data.  Boris P. Kovatchev, Erik Otto, Daniel Cox,
 Linda Gonder-Frederick, and William Clarke (2006) <doi:10.2337/dc06-1085>.
 Jean-Pierre Le Floch, Philippe Escuyer, Eric Baudin, Dominique Baudon, and Leon
-Perlemuter (1990) <doi:10.2337/diacare.13.2.172>.  C.M. @code{McDonnell,} S.M.
+Perlemuter (1990) <doi:10.2337/diacare.13.2.172>.  C.M. @code{McDonnell}, S.M.
 Donath, S.I. Vidmar, G.A. Werther, and F.J. Cameron (2005)
 <doi:10.1089/dia.2005.7.253>.  Everitt, Brian (1998)
 <doi:10.1111/j.1751-5823.2011.00149_2.x>.  Becker, R. A., Chambers, J. M. and
@@ -10704,9 +10632,9 @@ B. L. Hoekstra, and J. Hans @code{DeVries} (2010) <doi:10.1210/er.2009-0021>.
 Gabor Marics, Zsofia Lendvai, Csaba Lodi, Levente Koncz, David Zakarias, Gyorgy
 Schuster, Borbala Mikos, Csaba Hermann, Attila J. Szabo, and Peter Toth-Heyn
 (2015) <doi:10.1186/s12938-015-0035-3>.  Thomas Danne, Revital Nimri, Tadej
-Battelino, Richard M. Bergenstal, Kelly L. Close, J. Hans @code{DeVries,}
-@code{SatishGarg,} Lutz Heinemann, Irl Hirsch, Stephanie A. Amiel, Roy Beck,
-Emanuele Bosi, Bruce Buckingham, @code{ClaudioCobelli,} Eyal Dassau, Francis J.
+Battelino, Richard M. Bergenstal, Kelly L. Close, J. Hans @code{DeVries},
+@code{SatishGarg}, Lutz Heinemann, Irl Hirsch, Stephanie A. Amiel, Roy Beck,
+Emanuele Bosi, Bruce Buckingham, @code{ClaudioCobelli}, Eyal Dassau, Francis J.
 Doyle, Simon Heller, Roman Hovorka, Weiping Jia, Tim Jones, Olga
 Kordonouri,Boris Kovatchev, Aaron Kowalski, Lori Laffel, David Maahs, Helen R.
 Murphy, Kirsten NÃ¸rgaard, Christopher G.Parkin, Eric Renard, Banshi Saboo,
@@ -10953,11 +10881,11 @@ change methods.")
     (synopsis "Estimating Functions with Multivariate B-Splines")
     (description
      "Generalized @code{LassO} applied to knot selection in multivariate
-@code{B-splinE} Regression (GLOBER) implements a novel approach for estimating
+B-@code{splinE} Regression (GLOBER) implements a novel approach for estimating
 functions in a multivariate nonparametric regression model based on an adaptive
 knot selection for B-splines using the Generalized Lasso.  For further details
 we refer the reader to the paper Savino, M. E. and LÃ©vy-Leduc, C. (2023),
-@code{<arXiv:2306.00686>.}")
+<@code{arXiv:2306.00686>}.")
     (license license:gpl2)))
 
 (define-public r-globe
@@ -11065,7 +10993,7 @@ performance of global optimization algorithms")
      "Second-order summary statistics K- and pair-correlation functions describe
 interactions in point pattern data.  This package provides computations to
 estimate those statistics on inhomogeneous point processes, using the methods of
-in T Shaw, J MÃ¸ller, R Waagepetersen, 2020 @code{<arXiv:2004.00527>.}")
+in T Shaw, J MÃ¸ller, R Waagepetersen, 2020 <@code{arXiv:2004.00527>}.")
     (license license:gpl2+)))
 
 (define-public r-glmxdiag
@@ -11218,7 +11146,7 @@ elastic-net penalized GLM with three popular families, including linear,
 logistic and Poisson regression models, can be fitted.  To avoid negative
 transfer, a transferable source detection algorithm is proposed.  We also
 provides visualization for the transferable source detection results.  The
-relevant paper is available on @code{arXiv:} @code{<arXiv:2105.14328>.}")
+relevant paper is available on @code{arXiv}: <@code{arXiv:2105.14328>}.")
     (license license:gpl2)))
 
 (define-public r-glmtoolbox
@@ -11462,7 +11390,7 @@ nested cross validation for the lasso and other models, it does not fit the
 general elastic net model.  If you are fitting not a relaxed lasso model but an
 elastic-net model, then the R-packages nestedcv
 <https://cran.r-project.org/package=nestedcv>, @code{glmnetSE}
-@code{<https://cran.r-project.org/package=glmnetSE>} or others may provide
+<https://cran.r-project.org/package=@code{glmnetSE>} or others may provide
 greater functionality when performing a nested CV. As with the glmnet package,
 this package passes most relevant information to the output object which can be
 evaluated using plot, summary() and predict() functions.  The glmnetr package
@@ -11620,9 +11548,9 @@ Methodology. <doi:10.1027/1614-2241/a000153>.")
 or modelled as a generalised linear mixed model including cluster randomised
 trials, cohort studies, spatial and temporal epidemiological studies, and
 split-plot designs.  See
-@code{<https://github.com/samuel-watson/glmmrBase/blob/master/README.md>} for a
+<https://github.com/samuel-watson/@code{glmmrBase/blob/master/README.md>} for a
 detailed manual on model specification.  A detailed discussion of the methods in
-this package can be found in Watson and Pan (2022) @code{<arXiv:2207.09183>.}")
+this package can be found in Watson and Pan (2022) <@code{arXiv:2207.09183>}.")
     (license license:gpl2+)))
 
 (define-public r-glmmrbase
@@ -11820,7 +11748,7 @@ with expectation propagation used to circumvent the need for multivariate
 integration.  In this version, the random effects can be any reasonable
 dimension.  However, only probit mixed models with one level of nesting are
 supported.  The methodology is described in Hall, Johnstone, Ormerod, Wand and
-Yu (2018) @code{<arXiv:1805.08423v1>.}")
+Yu (2018) <@code{arXiv:1805.08423v1>}.")
     (license license:gpl2+)))
 
 (define-public r-glmmadaptive
@@ -11867,7 +11795,7 @@ Gaussian quadrature rule; Jose C. Pinheiro and Douglas M. Bates (1995)
      "Conducts hierarchical partitioning to calculate individual contributions of each
 predictor (fixed effects) towards marginal R2 for generalized linear
 mixed-effect model (including lm, glm and glmm) based on output of
-@code{r.squaredGLMM()} in @code{MuMIn',} applying the algorithm of Lai J.,Zou
+r.@code{squaredGLMM}() in @code{MuMIn}', applying the algorithm of Lai J.,Zou
 Y., Zhang S.,Zhang X.,Mao L.(2022)glmm.hp: an R package for computing individual
 effect of predictors in generalized linear mixed models.Journal of Plant
 Ecology,15(6)1302-1307<doi:10.1093/jpe/rtac096>.")
@@ -12085,7 +12013,7 @@ algorithm so we do not have to fit all models.")
     (description
      "Several tests for high dimensional generalized linear models have been proposed
 recently.  In this package, we implemented a new test called adaptive sum of
-powered score @code{(aSPU)} for high dimensional generalized linear models,
+powered score (@code{aSPU}) for high dimensional generalized linear models,
 which is often more powerful than the existing methods in a wide scenarios.  We
 also implemented permutation based version of several existing methods for
 research purpose.  We recommend users use the @code{aSPU} test for their real
@@ -12515,7 +12443,7 @@ breakdown of other jobs a person did after their current one.")
     (description
      "This package performs variable selection in high-dimensional sparse GLARMA
 models.  For further details we refer the reader to the paper Gomtsyan et al.
-(2020), @code{<arXiv:2007.08623v1>.}")
+(2020), <@code{arXiv:2007.08623v1>}.")
     (license license:gpl2)))
 
 (define-public r-glarma
@@ -12608,8 +12536,8 @@ Absolute Deviation (SCAD) penalized estimation is possible for the following
 models: The Gaussian model with identity link, the Binomial model with logit
 link, the Poisson model with log link and the Gamma model with log link.  It is
 also possible to include a component in the model with non-tensor design e.g an
-intercept.  Also provided are functions, @code{glamlassoRR()} and
-@code{glamlassoS(),} fitting special cases of GLAMs.")
+intercept.  Also provided are functions, @code{glamlassoRR}() and
+@code{glamlassoS}(), fitting special cases of GLAMs.")
     (license license:gpl3)))
 
 (define-public r-gkrls
@@ -12639,9 +12567,9 @@ flexible machine learning method.  This package implements this method by
 providing a smooth term for use with mgcv and uses random sketching to
 facilitate scalable estimation on large datasets.  It provides additional
 functions for calculating marginal effects after estimation and for use with
-ensembles @code{('SuperLearning'),} double/debiased machine learning
-@code{('DoubleML'),} and robust/clustered standard errors ('sandwich').  Chang
-and Goplerud (2023) @code{<arXiv:2209.14355>} provide further details.")
+ensembles ('@code{SuperLearning}'), double/debiased machine learning
+('@code{DoubleML}'), and robust/clustered standard errors ('sandwich').  Chang
+and Goplerud (2023) <@code{arXiv:2209.14355>} provide further details.")
     (license license:gpl2+)))
 
 (define-public r-gkgraphr
@@ -12776,10 +12704,10 @@ quantitative traits (Soave et al., 2015; <doi:10.1016/j.ajhg.2015.05.015>).  The
 JLS method simultaneously tests the null hypothesis of equal mean and equal
 variance across genotypes, by aggregating association evidence from the
 individual location/mean-only and scale/variance-only tests using Fisher's
-method.  The generalized joint location-scale @code{(gJLS)} framework has been
+method.  The generalized joint location-scale (@code{gJLS}) framework has been
 developed to deal specifically with sample correlation and group uncertainty
 (Soave and Sun, 2017; <doi:10.1111/biom.12651>).  The current release:
-@code{gJLS2,} include additional functionalities that enable analyses of
+@code{gJLS2}, include additional functionalities that enable analyses of
 X-chromosome genotype data through novel methods for location (Chen et al.,
 2021; <doi:10.1002/gepi.22422>) and scale (Deng et al., 2019;
 <doi:10.1002/gepi.22247>).")
@@ -12941,7 +12869,7 @@ documents, and other HTML based resources.  This is most commonly used for
     (synopsis "Access to the 'Gitlab' API")
     (description
      "This package provides R functions to access the API of the project and
-repository management web application @code{GitLab'.} For many common tasks
+repository management web application @code{GitLab}'.  For many common tasks
 (repository file access, issue assignment and status, commenting) convenience
 wrappers are provided, and in addition the full API can be used by specifying
 request locations. @code{GitLab} is open-source software and can be self-hosted
@@ -13001,7 +12929,7 @@ available.")
     (synopsis "Helpful Way to Install R Packages Hosted on GitHub")
     (description
      "This package provides an helpful way to install packages hosted on
-@code{GitHub.}")
+@code{GitHub}.")
     (license license:expat)))
 
 (define-public r-gitgpt
@@ -13054,7 +12982,7 @@ repository using commit messages generated by passing the git diff output to the
      "'Rstudio' Addin for Version Control and Assignment Management using Git")
     (description
      "An Rstudio addin for version control that allows users to clone repositories,
-create and delete branches, and sync forks on @code{GitHub,} @code{GitLab,} etc.
+create and delete branches, and sync forks on @code{GitHub}, @code{GitLab}, etc.
  Furthermore, the addin uses the @code{GitLab} API to allow instructors to
 create forks and merge requests for all students/teams with one click of a
 button.")
@@ -13355,11 +13283,11 @@ overall effect.")
     (synopsis "GACOS InSAR Correction Workflow")
     (description
      "This package provides a workflow for correction of Differential Interferometric
-Synthetic Aperture Radar @code{(DInSAR)} atmospheric delay base on Generic
+Synthetic Aperture Radar (D@code{InSAR}) atmospheric delay base on Generic
 Atmospheric Correction Online Service for @code{InSAR} (GACOS) data and
 correction algorithms proposed by Chen Yu.  This package calculate the Both
 Zenith and LOS direction (User Depend).  You have to just download GACOS product
-on your area and preprocessed @code{D-InSAR} unwrapped images.  Cite those
+on your area and preprocessed D-@code{InSAR} unwrapped images.  Cite those
 references and this package in your work, when using this framework.
 References: Yu, C., N. T. Penna, and Z. Li (2017)
 <doi:10.1016/j.rse.2017.10.038>.  Yu, C., Li, Z., & Penna, N. T. (2017)
@@ -13390,7 +13318,7 @@ Normal (GIN) distribution from Robert (1991) <doi:10.1016/0167-7152(91)90174-P>.
 truncated to positive or negative reals.  Theoretical guarantees supporting the
 sampling algorithms and an application to Bayesian estimation of network
 formation models can be found in the working paper Ding, Estrada and
-@code{Montoya-BlandÃ³n} (2023)
+Montoya-@code{BlandÃ³n} (2023)
 <https://www.smontoyablandon.com/publication/networks/network_externalities.pdf>.")
     (license license:gpl3+)))
 
@@ -13434,7 +13362,7 @@ maximum inequality in the presence of weighted and negative attributes.")
     (description
      "An implementation of a new Gini covariance and correlation to measure dependence
 between a categorical and numerical variables.  Dang, X., Nguyen, D., Chen, Y.
-and Zhang, J., (2018) @code{<arXiv:1809.09793>.}")
+and Zhang, J., (2018) <@code{arXiv:1809.09793>}.")
     (license license:gpl2+)))
 
 (define-public r-gini
@@ -13538,13 +13466,13 @@ tools for navigating output.")
 (define-public r-gimme
   (package
     (name "r-gimme")
-    (version "0.7-14")
+    (version "0.7-15")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gimme" version))
               (sha256
                (base32
-                "01qn789cmjx4ba7p3n8s9bp678hbpsdzhw011ndwfh17qlvibn4s"))))
+                "0qg6zkik72pqgkkbqd7c2zn4l6k7fs91cnawk7m2hsw1naiksjjn"))))
     (properties `((upstream-name . "gimme")))
     (build-system r-build-system)
     (propagated-inputs (list r-qgraph
@@ -13617,8 +13545,8 @@ methods (Explicit tau-leap, Binomial tau-leap, and Optimized tau-leap).  The
 package also contains a library of template models that can be run as demo
 models and can easily be customized and extended.  Currently the following
 models are included, Decaying-Dimerization reaction set, linear chain system,
-logistic growth model, Lotka predator-prey model, @code{Rosenzweig-MacArthur}
-predator-prey model, @code{Kermack-McKendrick} SIR model, and a metapopulation
+logistic growth model, Lotka predator-prey model, Rosenzweig-@code{MacArthur}
+predator-prey model, Kermack-@code{McKendrick} SIR model, and a metapopulation
 SIRS model.  Pineda-Krch et al. (2008) <doi:10.18637/jss.v025.i12>.")
     (license license:gpl3+)))
 
@@ -13663,7 +13591,7 @@ Gamma (GIGG) regression model with adjustment covariates.  Hyperparameters in
 the GIGG prior specification can either be fixed by the user or can be estimated
 via Marginal Maximum Likelihood Estimation.  Jonathan Boss, Jyotishka Datta, Xin
 Wang, Sung Kyun Park, Jian Kang, Bhramar Mukherjee (2021)
-@code{<arXiv:2102.10670>.}")
+<@code{arXiv:2102.10670>}.")
     (license license:gpl2)))
 
 (define-public r-giftr
@@ -13710,7 +13638,7 @@ support.")
      "Reads in 'Neuroimaging' 'GIFTI' Files with Geometry Information")
     (description
      "This package provides functions to read in the geometry format under the
-Neuroimaging Informatics Technology Initiative @code{('NIfTI'),} called GIFTI
+Neuroimaging Informatics Technology Initiative ('N@code{IfTI}'), called GIFTI
 <https://www.nitrc.org/projects/gifti/>.  These files contain surfaces of brain
 imaging data.")
     (license license:gpl2)))
@@ -13813,7 +13741,7 @@ multiple correspondence analysis ('HOMALS'), monotone regression analysis
 graphical models efficiently.  Our approach could be divided into three
 categories.  First of all, we use Hard Graphical Thresholding for best subset
 selection problem of Gaussian graphical model, and the core concept of this
-method was proposed by Luo et al. (2014) @code{<arXiv:1407.7819>.} Secondly, a
+method was proposed by Luo et al. (2014) <@code{arXiv:1407.7819>}.  Secondly, a
 closed form solution for graphical lasso under acyclic graph structure is
 implemented in our package (Fattahi and Sojoudi (2019)
 <http://jmlr.org/papers/v20/17-501.html>).  Furthermore, we implement block
@@ -13948,15 +13876,15 @@ interface Xcas'.  This package allows to execute Giac commands in R'.")
      "Fit and Simulate Generalised Hypergeometric Ensembles of Graphs")
     (description
      "This package provides functions for model fitting and selection of generalised
-hypergeometric ensembles of random graphs @code{(gHypEG).} To learn how to use
+hypergeometric ensembles of random graphs (@code{gHypEG}).  To learn how to use
 it, check the vignettes for a quick tutorial.  Please reference its use as
 Casiraghi, G., Nanumyan, V. (2019) <doi:10.5281/zenodo.2555300> together with
 those relevant references from the one listed below.  The package is based on
 the research developed at the Chair of Systems Design, ETH Zurich.  Casiraghi,
-G., Nanumyan, V., Scholtes, I., Schweitzer, F. (2016) @code{<arXiv:1607.02441>.}
-Casiraghi, G., Nanumyan, V., Scholtes, I., Schweitzer, F. (2017)
+G., Nanumyan, V., Scholtes, I., Schweitzer, F. (2016) <@code{arXiv:1607.02441>}.
+ Casiraghi, G., Nanumyan, V., Scholtes, I., Schweitzer, F. (2017)
 <doi:10.1007/978-3-319-67256-4_11>.  Casiraghi, G., (2017)
-@code{<arXiv:1702.02048>} Brandenberger, L., Casiraghi, G., Nanumyan, V.,
+<@code{arXiv:1702.02048>} Brandenberger, L., Casiraghi, G., Nanumyan, V.,
 Schweitzer, F. (2019) <doi:10.1145/3341161.3342926> Casiraghi, G. (2019)
 <doi:10.1007/s41109-019-0241-1>.  Casiraghi, G., Nanumyan, V. (2021)
 <doi:10.1038/s41598-021-92519-y>.  Casiraghi, G. (2021)
@@ -13987,7 +13915,7 @@ AIC-based model selection routine, and functions for the computation of density,
 quantile, probability, random variates, expected shortfall and some portfolio
 optimization and plotting routines as well as the likelihood ratio test.  In
 addition, it contains the Generalized Inverse Gaussian distribution.  See
-Chapter 3 of A. J. @code{McNeil,} R. Frey, and P. Embrechts.  Quantitative risk
+Chapter 3 of A. J. @code{McNeil}, R. Frey, and P. Embrechts.  Quantitative risk
 management: Concepts, techniques and tools.  Princeton University Press,
 Princeton (2005).")
     (license license:gpl2+)))
@@ -14011,11 +13939,11 @@ Princeton (2005).")
     (description
      "Draw posterior samples to estimate the precision matrix for multivariate
 Gaussian data.  Posterior means of the samples is the graphical horseshoe
-estimate by Li, Bhadra and Craig(2017) @code{<arXiv:1707.06661>.} The function
+estimate by Li, Bhadra and Craig(2017) <@code{arXiv:1707.06661>}.  The function
 uses matrix decomposition and variable change from the Bayesian graphical lasso
 by Wang(2012) <doi:10.1214/12-BA729>, and the variable augmentation for sampling
 under the horseshoe prior by Makalic and Schmidt(2016)
-@code{<arXiv:1508.03884>.} Structure of the graphical horseshoe function was
+<@code{arXiv:1508.03884>}.  Structure of the graphical horseshoe function was
 inspired by the Bayesian graphical lasso function using blocked sampling,
 authored by Wang(2012) <doi:10.1214/12-BA729>.")
     (license license:gpl2)))
@@ -14069,7 +13997,7 @@ are checked with the libgraphqlparser C++ parser via the gaphql package.")
 statistics, e.g. Z-scores.  The knockoff inference is a general procedure for
 controlling the false discovery rate (FDR) when performing variable selection.
 This package provides a procedure which performs knockoff inference without ever
-constructing individual knockoffs @code{(GhostKnockoff).} It additionally
+constructing individual knockoffs (@code{GhostKnockoff}).  It additionally
 supports multiple knockoff inference for improved stability and reproducibility.
  Moreover, it supports meta-analysis of multiple overlapping studies.")
     (license license:gpl3)))
@@ -14152,7 +14080,7 @@ enjoyment.")
     (synopsis "Tools for Managing Classes on GitHub")
     (description
      "Interface for the @code{GitHub} API that enables efficient management of courses
-on @code{GitHub.} It has a functionality for managing organizations, teams,
+on @code{GitHub}.  It has a functionality for managing organizations, teams,
 repositories, and users on @code{GitHub} and helps automate most of the tedious
 and repetitive tasks around creating and distributing assignments.")
     (license license:gpl3)))
@@ -14229,9 +14157,9 @@ extends the gh package to let you authenticate and interact with @code{GitHub}
     (synopsis "Genome-Wide Haplotyping")
     (description
      "Haplotype calling from phased marker data.  Given user-defined haplotype blocks
-@code{(HapBlock),} the package identifies the different haplotype alleles
-@code{(HapAllele)} present in the data and scores sample haplotype allele
-genotypes @code{(HapGenotype)} based on @code{HapAllele} dose (i.e.  0, 1 or 2
+(@code{HapBlock}), the package identifies the different haplotype alleles
+(@code{HapAllele}) present in the data and scores sample haplotype allele
+genotypes (@code{HapGenotype}) based on @code{HapAllele} dose (i.e.  0, 1 or 2
 copies).  The output is not only useful for analyses that can handle
 multi-allelic markers, but is also conveniently formatted for existing pipelines
 intended for bi-allelic markers.  The package was first described in
@@ -14542,13 +14470,13 @@ the swiss federal statistical office.")
 (define-public r-ggsurvfit
   (package
     (name "r-ggsurvfit")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggsurvfit" version))
               (sha256
                (base32
-                "009fi4viiyscxsv26sy169qlmwp4nh2c21alw9nnkmlnwngs770w"))))
+                "1krkkmbl54227i2gwl8nwg8r3aghxb6cqvxvi0z791n1vr0zn7xy"))))
     (properties `((upstream-name . "ggsurvfit")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -14562,7 +14490,7 @@ the swiss federal statistical office.")
                              r-cli
                              r-broom))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/ddsjoberg/ggsurvfit")
+    (home-page "https://github.com/pharmaverse/ggsurvfit")
     (synopsis "Flexible Time-to-Event Figures")
     (description
      "Ease the creation of time-to-event (i.e.  survival) endpoint figures.  The
@@ -14644,52 +14572,6 @@ probability density function of the t-distribution.")
      "Make smoothed stacked area charts in ggplot2'.  Stream plots are useful to show
 magnitude trends over time.")
     (license license:expat)))
-
-(define-public r-ggstatsplot
-  (package
-    (name "r-ggstatsplot")
-    (version "0.12.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ggstatsplot" version))
-              (sha256
-               (base32
-                "17jxvzr4dlvsakrsvblxngg60jxh0c1a0i8phqqg63nbf79ng2lk"))))
-    (properties `((upstream-name . "ggstatsplot")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-statsexpressions
-                             r-rlang
-                             r-purrr
-                             r-performance
-                             r-patchwork
-                             r-parameters
-                             r-paletteer
-                             r-insight
-                             r-glue
-                             r-ggsignif
-                             r-ggside
-                             r-ggrepel
-                             r-ggplot2
-                             r-ggcorrplot
-                             r-dplyr
-                             r-datawizard
-                             r-correlation))
-    (native-inputs (list r-knitr))
-    (home-page "https://indrajeetpatil.github.io/ggstatsplot/")
-    (synopsis "'ggplot2' Based Plots with Statistical Details")
-    (description
-     "Extension of ggplot2', ggstatsplot creates graphics with details from
-statistical tests included in the plots themselves.  It provides an easier
-syntax to generate information-rich plots for statistical analysis of continuous
-(violin plots, scatterplots, histograms, dot plots, dot-and-whisker plots) or
-categorical (pie and bar charts) data.  Currently, it supports the most common
-types of statistical approaches and tests: parametric, nonparametric, robust,
-and Bayesian versions of t-test/ANOVA, correlation analyses, contingency table
-analysis, meta-analysis, and regression analyses.  References: Patil (2021)
-<doi:10.21105/joss.03236>.")
-    (license (list license:gpl3
-                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-ggstats
   (package
@@ -14971,10 +14853,10 @@ geom_glowpoint() add a neon glow around lines to get a steampunk style.")
     (synopsis "Render Sequence Plots using 'ggplot2'")
     (description
      "This package provides a set of wrapper functions that mainly re-produces most of
-the sequence plots rendered with @code{TraMineR::seqplot().} Whereas
+the sequence plots rendered with @code{TraMineR::seqplot}().  Whereas
 @code{TraMineR} uses base R to produce the plots this library draws on ggplot2'.
  The plots are produced on the basis of a sequence object defined with
-@code{TraMineR::seqdef().} The package automates the reshaping and plotting of
+@code{TraMineR::seqdef}().  The package automates the reshaping and plotting of
 sequence data.  Resulting plots are of class ggplot', i.e.  components can be
 added and tweaked using + and regular ggplot2 functions.")
     (license license:gpl3+)))
@@ -15000,7 +14882,7 @@ atlases (Desikan-Killiany and aseg).  By far, the largest bit of the package is
 the data for each of the atlases.  The functions and data enable users to plot
 tri-surface mesh plots of brain atlases, and customise these by projecting
 colours onto the brain segments based on values in their own data sets.
-Functions are wrappers for plotly'.  Mowinckel & @code{Vidal-PiÃ±eiro} (2020)
+Functions are wrappers for plotly'.  Mowinckel & Vidal-@code{PiÃ±eiro} (2020)
 <doi:10.1177/2515245920928009>.")
     (license license:expat)))
 
@@ -15024,7 +14906,7 @@ Functions are wrappers for plotly'.  Mowinckel & @code{Vidal-PiÃ±eiro} (2020)
     (description
      "This package contains ggplot2 geom for plotting brain atlases using simple
 features.  The largest component of the package is the data for the two built-in
-atlases.  Mowinckel & @code{Vidal-PiÃ±eiro} (2020)
+atlases.  Mowinckel & Vidal-@code{PiÃ±eiro} (2020)
 <doi:10.1177/2515245920928009>.")
     (license license:expat)))
 
@@ -15055,7 +14937,7 @@ atlases.  Mowinckel & @code{Vidal-PiÃ±eiro} (2020)
     (description
      "Some useful functions that can use grid and ggplot2 to plot sectors and interact
 with Seurat to plot gene expression percentages.  Also, there are some examples
-of how to draw sectors in @code{ComplexHeatmap'.}")
+of how to draw sectors in @code{ComplexHeatmap}'.")
     (license license:artistic2.0)))
 
 (define-public r-ggseas
@@ -15284,7 +15166,7 @@ cluster.  Additional data can be provided to the prioritize certain genomes.
 The results can be printed out as a list or a new phylogeny with graphs of the
 trees and distance distributions also available.  For detailed introduction see:
 Thomas H Clarke, Lauren M Brinkac, Granger Sutton, and Derrick E Fouts (2018),
-@code{GGRaSP:} a R-package for selecting representative genomes using Gaussian
+GG@code{RaSP}: a R-package for selecting representative genomes using Gaussian
 mixture models, Bioinformatics, bty300, <doi:10.1093/bioinformatics/bty300>.")
     (license license:gpl2)))
 
@@ -15660,7 +15542,7 @@ generating such plots.  For this, we developed a guidance that proposes an
 adequate set of diagnostics and a toolbox, called @code{ggPMX} to execute them.
 @code{ggPMX} is a toolbox that can generate all diagnostic plots at a quality
 sufficient for publication and submissions using few lines of code.  This
-package focuses on plots recommended by @code{ISoP} <doi:10.1002/psp4.12161>.
+package focuses on plots recommended by I@code{SoP} <doi:10.1002/psp4.12161>.
 While not required, you can get/install the R @code{lixoftConnectors} package in
 the Monolix installation, as described at the following url
 <https://monolix.lixoft.com/monolix-api/lixoftconnectors_installation/>.  When
@@ -16144,13 +16026,13 @@ easily use the Okabe-Ito palette in your data visualizations.")
 (define-public r-ggoceanmaps
   (package
     (name "r-ggoceanmaps")
-    (version "2.0.0")
+    (version "2.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggOceanMaps" version))
               (sha256
                (base32
-                "0b7iwad55w8cdpr6qps99lrq0lrzpf3k5mw3jd2072gvdy8dckck"))))
+                "1sshlsb91x6j4iyhbvdpps8lp4p9kxfdb79v0incnh4l8p48hqzk"))))
     (properties `((upstream-name . "ggOceanMaps")))
     (build-system r-build-system)
     (propagated-inputs (list r-units r-stars r-smoothr r-sf r-ggplot2))
@@ -16259,18 +16141,18 @@ package exploits).")
 (define-public r-ggmselect
   (package
     (name "r-ggmselect")
-    (version "0.1-12.6")
+    (version "0.1-12.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GGMselect" version))
               (sha256
                (base32
-                "1xdkpiwl80aq51f2010qq14h72p42agjklbiwrad8s43769yw34n"))))
+                "1l90viinjfbjwl7229aqbzv72d0jgjbcidv0ll770qsd1hc1p70r"))))
     (properties `((upstream-name . "GGMselect")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-lars r-gtools))
     (native-inputs (list gfortran))
-    (home-page "https://CRAN.R-project.org/package=GGMselect")
+    (home-page "https://cran.r-project.org/package=GGMselect")
     (synopsis "Gaussian Graphs Models Selection")
     (description
      "Graph estimation in Gaussian Graphical Models, following the method developed by
@@ -16555,7 +16437,7 @@ Chain Monte Carlo simulations, as well as for graphically display results from
 full MCMC analysis.  The package also facilitates the graphical interpretation
 of models by providing flexible functions to plot the results against observed
 variables, and functions to work with hierarchical/multilevel batches of
-parameters @code{(FernÃ¡ndez-i-MarÃ­n,} 2016 <doi:10.18637/jss.v070.i09>).")
+parameters (@code{FernÃ¡ndez-i-MarÃ­n}, 2016 <doi:10.18637/jss.v070.i09>).")
     (license license:gpl2)))
 
 (define-public r-ggmatplot
@@ -16837,7 +16719,7 @@ ggiraph'.")
     (description
      "This package provides a tool to process and analyse data collected with wearable
 raw acceleration sensors as described in Migueles and colleagues (JMPB 2019),
-and van Hees and colleagues @code{(JApplPhysiol} 2014; @code{PLoSONE} 2015).
+and van Hees and colleagues (J@code{ApplPhysiol} 2014; P@code{LoSONE} 2015).
 The package has been developed and tested for binary data from GENEActiv
 <https://activinsights.com/> and GENEA devices (not for sale), .csv-export data
 from Actigraph <https://theactigraph.com> devices, and .cwa and .wav-format data
@@ -17531,7 +17413,7 @@ descendant branches of interest.  Uses the Grammar of Graphics.")
     (description
      "Genotype plus genotype-by-environment (GGE) biplots rendered using ggplot2'.
 Provides a command line interface to all of the functionality contained within
-the archived package @code{GGEBiplotGUI'.}")
+the archived package GGE@code{BiplotGUI}'.")
     (license license:gpl3)))
 
 (define-public r-ggeasy
@@ -18139,7 +18021,7 @@ ggplot2'.")
      "Create Images of Volumetric Brain Data in NIfTI Format Using 'ggplot2' Syntax")
     (description
      "This package provides a ggplot2'-consistent approach to generating 2D displays
-of volumetric brain imaging data.  Display data from multiple @code{NIfTI}
+of volumetric brain imaging data.  Display data from multiple N@code{IfTI}
 images using standard ggplot2 conventions such scales, limits, and themes to
 control the appearance of displays.  The resulting plots are returned as
 patchwork objects, inheriting from ggplot', allowing for any standard
@@ -18456,7 +18338,7 @@ Software: <doi:10.18637/jss.v106.i06>.")
      "This package implements the G-Formula method for causal inference with
 time-varying treatments and confounders using Bayesian multiple imputation
 methods, as described by Bartlett, Olarte Parra and Daniel (2023)
-@code{<arXiv:2301.12026>.} It creates multiple synthetic imputed datasets under
+<@code{arXiv:2301.12026>}.  It creates multiple synthetic imputed datasets under
 treatment regimes of interest using the mice package.  These can then be
 analysed using rules developed for analysing multiple synthetic datasets.")
     (license license:gpl3+)))
@@ -18571,7 +18453,7 @@ procedure that automatically adapts proper weights and degrees of freedom to a
 given data.  The new p-value calculation methods are based on novel ideas of
 moment-ratio matching and joint-distribution approximation.  The technical
 details can be found in Hong Zhang and Zheyang Wu (2020)
-@code{<arXiv:2003.01286>.}")
+<@code{arXiv:2003.01286>}.")
     (license license:gpl2)))
 
 (define-public r-gfilogisreg
@@ -18781,7 +18663,7 @@ and the concordance measure, respectively, in the general framework of survival
 factorial designs with possibly heterogeneous survival and/or censoring
 distributions, for crossed designs with an arbitrary number of factors and
 nested designs with up to three factors.  Ditzhaus, Dobler and Pauly (2020)
-<doi:10.1177/0962280220980784> Ditzhaus, Janssen, Pauly (2020) @code{<arXiv:}
+<doi:10.1177/0962280220980784> Ditzhaus, Janssen, Pauly (2020) <@code{arXiv}:
 2004.10818v2> Dobler and Pauly (2019) <doi:10.1177/0962280219831316>.")
     (license license:gpl3+)))
 
@@ -18812,7 +18694,7 @@ nested designs with up to three factors.  Ditzhaus, Dobler and Pauly (2020)
     (description
      "This package performs test procedures for general hypothesis testing problems
 for four multivariate coefficients of variation (Ditzhaus and Smaga, 2023
-@code{<arXiv:2301.12009>).} We can verify the global hypothesis about equality
+<@code{arXiv:2301.12009>}).  We can verify the global hypothesis about equality
 as well as the particular hypotheses defined by contrasts, e.g., we can conduct
 post hoc tests.  We also provide the simultaneous confidence intervals for
 contrasts.")
@@ -19019,12 +18901,12 @@ Cannon (2010) <doi:10.1002/hyp.7506>.")
      "Joint Test of Gene and GxE Interactions via Varying Coefficients")
     (description
      "This package provides a novel statistical model to detect the joint genetic and
-dynamic gene-environment @code{(GxE)} interaction with continuous traits in
+dynamic gene-environment (@code{GxE}) interaction with continuous traits in
 genetic association studies.  It uses varying-coefficient models to account for
 different @code{GxE} trajectories, regardless whether the relationship is linear
-or not.  The package includes one function, @code{GxEtest(),} to test a single
+or not.  The package includes one function, @code{GxEtest}(), to test a single
 genetic variant (e.g., a single nucleotide polymorphism or SNP), and another
-function, @code{GxEscreen(),} to test for a set of genetic variants.  The method
+function, @code{GxEscreen}(), to test for a set of genetic variants.  The method
 involves a likelihood ratio test described in Crainiceanu, C. M., and Ruppert,
 D. (2004) <doi:10.1111/j.1467-9868.2004.00438.x>.")
     (license license:gpl3)))
@@ -19068,7 +18950,7 @@ used for Natural Language Processing.")
     (description
      "This package provides a function to retrieve the system timezone on Unix systems
 which has been found to find an answer when Sys.timezone() has failed.  It is
-based on an answer by Duane @code{McCully} posted on @code{StackOverflow',} and
+based on an answer by Duane @code{McCully} posted on @code{StackOverflow}', and
 adapted to be callable from R. The package also builds on Windows, but just
 returns NULL.")
     (license license:gpl2+)))
@@ -19406,7 +19288,7 @@ downloaded and imported from the ftp site
     (synopsis
      "Translating Coding Statements using get() and eval() for Improved Run-Time Coding Efficiency")
     (description
-     "The @code{getDTeval()} function facilitates the translation of the original
+     "The @code{getDTeval}() function facilitates the translation of the original
 coding statement to an optimized form for improved runtime efficiency without
 compromising on the programmatic coding design.  The function can either provide
 a translation of the coding statement, directly evaluate the translation to
@@ -19598,9 +19480,9 @@ functional general linear model, n-sample test of correspondence of distribution
 functions), for central regions of functional or multivariate data (e.g. outlier
 detection, functional boxplot) and for global confidence and prediction bands
 (e.g. confidence band in polynomial regression, Bayesian posterior prediction).
-See @code{MyllymÃ¤ki} and @code{MrkviÄka} (2020) @code{<arXiv:1911.06583>,}
+See @code{MyllymÃ¤ki} and @code{MrkviÄka} (2020) <@code{arXiv:1911.06583>},
 @code{MyllymÃ¤ki} et al. (2017) <doi: 10.1111/rssb.12172>, @code{MrkviÄka} and
-@code{MyllymÃ¤ki} (2022) @code{<arXiv:2008.10108>,} @code{MrkviÄka} et al.
+@code{MyllymÃ¤ki} (2022) <@code{arXiv:2008.10108>}, @code{MrkviÄka} et al.
 (2017) <doi: 10.1007/s11222-016-9683-9>, @code{MrkviÄka} et al. (2020) <doi:
 10.14736/kyb-2020-3-0432>, @code{MrkviÄka} et al. (2021) <doi:
 10.1007/s11009-019-09756-y>, @code{MrkviÄka} et al. (2022) <doi:
@@ -19911,7 +19793,7 @@ from a latent joint multivariate normal model which underpins generally
 structured data.  This model is constructed using a sequence of flexible
 conditional linear models that enables the resulting procedure to be efficiently
 implemented on high dimensional datasets in practice.  See Robbins (2021)
-@code{<arXiv:2008.02243>.}")
+<@code{arXiv:2008.02243>}.")
     (license license:gpl2)))
 
 (define-public r-gepaf
@@ -20157,7 +20039,7 @@ distribution.  Includes a collection of natural and synthetic fractals, and a
 simulator for deterministic chaos using a magnetic pendulum example.  The main
 purpose of these functions is pedagogical.  Researchers can find more complete
 alternatives for these tools in other packages such as compositions',
-@code{robCompositions',} sp', gstat and RFOC'.  All the functions are written in
+@code{robCompositions}', sp', gstat and RFOC'.  All the functions are written in
 plain R, with no compiled code and a minimal number of dependencies.
 Theoretical background and worked examples are available at
 <https://tinyurl.com/UCLgeostats/>.")
@@ -20365,13 +20247,13 @@ midpoint, bearing and more are derived from <https://www.movable-type.co.uk>.")
 (define-public r-geosapi
   (package
     (name "r-geosapi")
-    (version "0.6-5")
+    (version "0.6-6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "geosapi" version))
               (sha256
                (base32
-                "0gwzr1ya5a32smwi7841abh3j8zipyg3y430qbdgnchm1f349x20"))))
+                "1bmlizqid6i6wna1faxdlabv0bc054mfwx00pgkn18icc0qpxds9"))))
     (properties `((upstream-name . "geosapi")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
@@ -20587,13 +20469,13 @@ in polar co-ordinates.")
 (define-public r-geomorph
   (package
     (name "r-geomorph")
-    (version "4.0.5")
+    (version "4.0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "geomorph" version))
               (sha256
                (base32
-                "0fricj9cahf807nk0l5hb5x8442cx462jzvrcdkh42v1bbwl23ch"))))
+                "198ah0xin7xwkjcag74rrjlmaqsz253lm1n07010ffbn01f2cg58"))))
     (properties `((upstream-name . "geomorph")))
     (build-system r-build-system)
     (propagated-inputs (list r-rrpp
@@ -20631,7 +20513,7 @@ provide graphical depictions of shapes and patterns of shape variation.")
     (description
      "Utilizes methods of the @code{PyMongo} Python library to initialize, insert and
 query @code{GeoJson} data (see <https://github.com/mongodb/mongo-python-driver>
-for more information on @code{PyMongo').} Furthermore, it allows the user to
+for more information on @code{PyMongo}').  Furthermore, it allows the user to
 validate @code{GeoJson} objects and to use the console for @code{MongoDB} (bulk)
 commands.  The reticulate package provides the R interface to Python modules,
 classes and functions.")
@@ -20640,13 +20522,13 @@ classes and functions.")
 (define-public r-geomodels
   (package
     (name "r-geomodels")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GeoModels" version))
               (sha256
                (base32
-                "0vx9980zard9ynrpwzb6hki13zil5i5g1b613frj659ldczbh4ih"))))
+                "1ysf4df7jvab3cgdndval1zh15xj0yd6z4v2izcshryl0w2c7165"))))
     (properties `((upstream-name . "GeoModels")))
     (build-system r-build-system)
     (propagated-inputs (list r-zipfr
@@ -20696,7 +20578,7 @@ Gaetan (2015) <doi:10.1007/s11222-014-9460-6>, Bevilacqua et al. (2016)
 <doi:10.1016/j.jmva.2022.104949>, Bevilacqua et al. (2022)
 <doi:10.1007/s11749-021-00797-5>, Blasi et al. (2022)
 <doi:10.1016/j.spasta.2022.100596>, Morales-Navarrete et al. (2022)
-@code{<arXiv:2105.03734>,} and a large class of examples and tutorials.")
+<@code{arXiv:2105.03734>}, and a large class of examples and tutorials.")
     (license license:gpl3+)))
 
 (define-public r-geomod
@@ -20891,13 +20773,13 @@ map, USA map, Coso map, Japan Map.")
 (define-public r-geomap
   (package
     (name "r-geomap")
-    (version "2.5-2")
+    (version "2.5-5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GEOmap" version))
               (sha256
                (base32
-                "0akvxl498dzb143p4124hiimwa5rmgvqwzky03c59raj7c8fjscn"))))
+                "0gs8zd8rcdxgz0pm3nlynf4qy8axfsv7syagb22zi8yd4s4sf5wa"))))
     (properties `((upstream-name . "GEOmap")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-rpmg r-mba r-fields))
@@ -21015,7 +20897,7 @@ algorithms that are available on remote web processing servers (Read et al.
     (synopsis "GeoJson Processing Toolkit")
     (description
      "Includes functions for processing @code{GeoJson} objects
-@code{<https://en.wikipedia.org/wiki/GeoJSON>} relying on RFC 7946
+<https://en.wikipedia.org/wiki/@code{GeoJSON>} relying on RFC 7946
 <https://datatracker.ietf.org/doc/pdf/rfc7946.pdf>.  The geojson encoding is
 based on json11', a tiny JSON library for C++11
 <https://github.com/dropbox/json11>.  Furthermore, the source code is exported
@@ -21052,7 +20934,7 @@ in R through the Rcpp and @code{RcppArmadillo} packages.")
 including vectors, lists, data frames, shape files, and spatial classes.
 geojsonio does not aim to replace packages like sp', rgdal', rgeos', but rather
 aims to be a high level client to simplify conversions of data from and to
-@code{GeoJSON} and @code{TopoJSON'.}")
+@code{GeoJSON} and @code{TopoJSON}'.")
     (license license:expat)))
 
 (define-public r-geojson
@@ -21081,7 +20963,7 @@ aims to be a high level client to simplify conversions of data from and to
 @code{GeoJSON} easier.  Includes S3 classes for @code{GeoJSON} classes with
 brief summary output, and a few methods such as extracting and adding bounding
 boxes, properties, and coordinate reference systems; working with newline
-delimited @code{GeoJSON';} and serializing to/from Geobuf binary @code{GeoJSON}
+delimited @code{GeoJSON}'; and serializing to/from Geobuf binary @code{GeoJSON}
 format.")
     (license license:expat)))
 
@@ -21310,7 +21192,7 @@ of hyperbolic space, n-dimensional hyperbolic space is embedded in
 sheets.  Kendall's 2D shape space with K landmarks is of real dimension 2K-4;
 preshapes are represented as complex K-vectors with mean 0 and magnitude 1.
 Details are described in Shin, H.-Y. and Oh, H.-S. (2020)
-@code{<arXiv:2007.04518>.} Also see Fletcher, P. T. (2013)
+<@code{arXiv:2007.04518>}.  Also see Fletcher, P. T. (2013)
 <doi:10.1007/s11263-012-0591-y>.")
     (license license:gpl3)))
 
@@ -21669,24 +21551,6 @@ scales and for various years with harmonized attributes, projection and fixed
 topology.")
     (license license:expat)))
 
-(define-public r-geoboxplot
-  (package
-    (name "r-geoboxplot")
-    (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "GeoBoxplot" version))
-              (sha256
-               (base32
-                "164dh49ac3fx38fdglv32lmz92ca8jdd98cbhz6mxsk8r0jcladw"))))
-    (properties `((upstream-name . "GeoBoxplot")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=GeoBoxplot")
-    (synopsis "Geographic Box Plot")
-    (description
-     "Make geographic box plot as detailed in Willmott et al. (2007).")
-    (license license:gpl2+)))
-
 (define-public r-geobayes
   (package
     (name "r-geobayes")
@@ -21779,9 +21643,9 @@ Demographic and Health Surveys program (DHS) data.  Adjustment for jittering can
 be implemented either in the spatial random effect, or in the raster/distance
 based covariates, or in both.  Detailed information about the methods behind the
 package functionality can be found in two preprints.  Umut Altay, John Paige,
-Andrea Riebler, Geir-Arne Fuglstad (2022) @code{<arXiv:2202.11035v2>.} Umut
+Andrea Riebler, Geir-Arne Fuglstad (2022) <@code{arXiv:2202.11035v2>}.  Umut
 Altay, John Paige, Andrea Riebler, Geir-Arne Fuglstad (2022)
-@code{<arXiv:2211.07442v1>.}")
+<@code{arXiv:2211.07442v1>}.")
     (license license:gpl2+)))
 
 (define-public r-genwin
@@ -21827,7 +21691,7 @@ measures variability in subpopulations relative to the total population).")
     (description
      "Make it easy to create simplified trial summary (TS) domain based on FDA FDA
 guide
-@code{<https://github.com/TuCai/phuse/blob/master/inst/examples/07_genTS/www/Simplified_TS_Creation_Guide_v2.pdf>.}")
+<https://github.com/@code{TuCai/phuse/blob/master/inst/examples/07_genTS/www/Simplified_TS_Creation_Guide_v2.pdf>}.")
     (license license:expat)))
 
 (define-public r-gentag
@@ -21871,7 +21735,7 @@ applications.")
     (description
      "The @code{GenSVM} classifier is a generalized multiclass support vector machine
 (SVM).  This classifier aims to find decision boundaries that separate the
-classes with as wide a margin as possible.  In @code{GenSVM,} the loss function
+classes with as wide a margin as possible.  In @code{GenSVM}, the loss function
 is very flexible in the way that misclassifications are penalized.  This allows
 the user to tune the classifier to the dataset at hand and potentially obtain
 higher classification accuracy than alternative multiclass SVMs. Moreover, this
@@ -22139,7 +22003,7 @@ allows running the hybrid multi-group approach (Lamberti (2021)
 B).  Works also for diploids.  Two main functions: Run_Clustering() that
 regroups individuals with a same genotype based on proximity and
 Run_Genotyping() that assigns a genotype to each cluster.  For Shiny interface
-use: @code{launch_GenoShiny().}")
+use: launch_@code{GenoShiny}().")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-genoscan
@@ -22684,7 +22548,7 @@ asymmetric accuracy and partition similarity scores such as the adjusted Rand,
 Fowlkes-Mallows, adjusted mutual information, and pair sets indices), and
 internal cluster validity indices (e.g., the Calinski-Harabasz, Davies-Bouldin,
 Ball-Hall, Silhouette, and generalised Dunn indices).  See also the Python
-version of genieclust available on @code{PyPI',} which supports sparse data,
+version of genieclust available on @code{PyPI}', which supports sparse data,
 more metrics, and even larger datasets.")
     (license license:agpl3)))
 
@@ -22849,7 +22713,7 @@ the Additive Main effects and Multiplicative Interaction model or AMMI ('Gauch
 performance under the presence of outliers and missing values, this package
 includes robust versions of the AMMI model ('Rodrigues 2016,
 <doi:10.1093/bioinformatics/btv533>), and also imputation techniques
-specifically developed for this kind of data @code{('Arciniegas-AlarcÃ³n} 2014,
+specifically developed for this kind of data ('Arciniegas-@code{AlarcÃ³n} 2014,
 <doi:10.2478/bile-2014-0006>).")
     (license license:gpl2)))
 
@@ -22939,7 +22803,7 @@ in a linear model.  In the first step of GWAS, single nucleotide polymorphisms
 is performed on the data where each clump has one representative.  Malgorzata
 Bogdan, Ewout van den Berg, Chiara Sabatti, Weijie Su and Emmanuel Candes (2014)
 \"SLOPE - Adaptive Variable Selection via Convex Optimization\"
-@code{<arXiv:1407.3824>.}")
+<@code{arXiv:1407.3824>}.")
     (license license:gpl3)))
 
 (define-public r-geneset
@@ -23046,14 +22910,14 @@ inference.")
     (description
      "Generic Machine Learning Inference on heterogeneous treatment effects in
 randomized experiments as proposed in Chernozhukov, Demirer, Duflo and
-@code{FernÃ¡ndez-Val} (2020) @code{<arXiv:1712.04802>.} This package's workhorse
-is the mlr3 framework of Lang et al. (2019) <doi:10.21105/joss.01903>, which
-enables the specification of a wide variety of machine learners.  The main
-functionality, @code{GenericML(),} runs Algorithm 1 in Chernozhukov, Demirer,
-Duflo and @code{FernÃ¡ndez-Val} (2020) @code{<arXiv:1712.04802>} for a suite of
+@code{FernÃ¡ndez-Val} (2020) <@code{arXiv:1712.04802>}.  This package's
+workhorse is the mlr3 framework of Lang et al. (2019) <doi:10.21105/joss.01903>,
+which enables the specification of a wide variety of machine learners.  The main
+functionality, @code{GenericML}(), runs Algorithm 1 in Chernozhukov, Demirer,
+Duflo and @code{FernÃ¡ndez-Val} (2020) <@code{arXiv:1712.04802>} for a suite of
 user-specified machine learners.  All steps in the algorithm are customizable
 via setup functions.  Methods for printing and plotting are available for
-objects returned by @code{GenericML().} Parallel computing is supported.")
+objects returned by @code{GenericML}().  Parallel computing is supported.")
     (license license:gpl3+)))
 
 (define-public r-generator
@@ -23127,9 +22991,9 @@ function for use in Gaussian process models, as well as multiple methods for
 approximating it via covariance interpolation.  The available methods are linear
 interpolation, polynomial interpolation, and cubic spline interpolation.  Moreno
 Bevilacqua and Reinhard Furrer and Tarik Faouzi and Emilio Porcu (2019)
-@code{<url:<https://projecteuclid.org/journalArticle/Download?urlId=10.1214%2F17-AOS1652}
+<url:<https://projecteuclid.org/@code{journalArticle/Download?urlId=10.1214%2F17-AOS1652}
 >>.  Moreno Bevilacqua and Christian @code{CaamaÃ±o-Carrillo} and Emilio Porcu
-(2022) @code{<arXiv:2008.02904>.} Reinhard Furrer and Roman Flury and Florian
+(2022) <@code{arXiv:2008.02904>}.  Reinhard Furrer and Roman Flury and Florian
 Gerber (2022) <url:<https://CRAN.R-project.org/package=spam >>.")
     (license license:gpl2+)))
 
@@ -23188,7 +23052,7 @@ distribution, the generalized inverse Gaussian distribution and the skew-Laplace
 distribution.  Additional functionality is provided for the hyperbolic
 distribution, normal inverse Gaussian distribution and generalized inverse
 Gaussian distribution, including fitting of these distributions to data.  Linear
-models with hyperbolic errors may be fitted using @code{hyperblmFit.}")
+models with hyperbolic errors may be fitted using @code{hyperblmFit}.")
     (license license:gpl2+)))
 
 (define-public r-generalisedcovariancemeasure
@@ -23258,8 +23122,8 @@ multinomial and ordinal logistic models.  Included are the Hosmer-Lemeshow tests
     (synopsis "Generalized Correlations, Causal Paths and Portfolio Selection")
     (description
      "Since causal paths from data are important for all sciences, the package
-provides many sophisticated functions. @code{causeSummBlk()} and
-@code{causeSum2Blk()} give easy-to-interpret causal paths.  Let Z denote control
+provides many sophisticated functions. @code{causeSummBlk}() and
+@code{causeSum2Blk}() give easy-to-interpret causal paths.  Let Z denote control
 variables and compare two flipped kernel regressions: X=f(Y, Z)+e1 and
 Y=g(X,Z)+e2.  Our criterion Cr1 says that if |e1*Y|>|e2*X| then variation in X
 is more \"exogenous or independent\" than in Y and causal path is X to Y.
@@ -23267,18 +23131,18 @@ Criterion Cr2 requires |e2|<|e1|.  These inequalities between many absolute
 values are quantified by four orders of stochastic dominance.  Our third
 criterion Cr3 for the causal path X to Y requires new generalized partial
 correlations to satisfy |r*(x|y,z)|< |r*(y|x,z)|.  The function
-@code{parcorVec()} reports generalized partials between the first variable and
+@code{parcorVec}() reports generalized partials between the first variable and
 all others.  The package provides several R functions including get0outliers()
 for outlier detection, bigfp() for numerical integration by the trapezoidal
 rule, stochdom2() for stochastic dominance, pillar3D() for 3D charts,
-@code{canonRho()} for generalized canonical correlations, @code{depMeas()}
-measures nonlinear dependence, and @code{causeSummary(mtx)} reports summary of
+@code{canonRho}() for generalized canonical correlations, @code{depMeas}()
+measures nonlinear dependence, and @code{causeSummary(mtx}) reports summary of
 causal paths among matrix columns is easiest to use.  Portfolio selection:
-@code{decileVote(),} @code{momentVote(),} dif4mtx(), @code{exactSdMtx()} can
+@code{decileVote}(), @code{momentVote}(), dif4mtx(), @code{exactSdMtx}() can
 rank several stocks.  Several functions whose names begin with boot provide
-bootstrap statistical inference including a new @code{bootGcRsq()} test for
+bootstrap statistical inference including a new @code{bootGcRsq}() test for
 \"Granger-causality\" allowing nonlinear relations.  A new tool for evaluation of
-out-of-sample portfolio performance is @code{outOFsamp().} Panel data
+out-of-sample portfolio performance is @code{outOFsamp}().  Panel data
 implementation is now included.  See seven vignettes of the package for theory
 and usage tips.  See Vinod (2019) \\doi{10.1080/03610918.2015.1122048}.")
     (license license:gpl2+)))
@@ -23312,13 +23176,13 @@ distance from pairwise comparisons of individuals or population samples.")
 (define-public r-genepi
   (package
     (name "r-genepi")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "genepi" version))
               (sha256
                (base32
-                "0cms31s52r6027zc47fgd9nbr1li5vc39cajpg2fpdky4091rizz"))))
+                "0ff5cv8sxda55xjj1pdnaljsg840vmvaz51mgajczv9c0wgj70yj"))))
     (properties `((upstream-name . "genepi")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -23511,7 +23375,7 @@ GPL571, GPL20115, GPL1293, GPL6102, GPL6104, GPL6883, GPL6884, GPL13497,
 GPL14550, GPL17077, GPL6480.  GEO: Gene Expression Omnibus.  ID: identifier
 code.  The GEO datasets are downloaded from the URL
 <https://ftp.ncbi.nlm.nih.gov/geo/series/>.  More information can be found in
-the following manuscript: Davide Chicco, @code{\"geneExpressionFromGEO:} an R
+the following manuscript: Davide Chicco, \"@code{geneExpressionFromGEO}: an R
 package to facilitate data reading from Gene Expression Omnibus (GEO)\".
 Microarray Data Analysis, Methods in Molecular Biology, volume 2401, chapter 12,
 pages 187-194, Springer Protocols, 2021, <doi:10.1007/978-1-0716-1839-4_12>.")
@@ -23926,7 +23790,7 @@ exported data from Gen5 version 2.06.  It exports technically correct data
 defined in (Edwin de Jonge and Mark van der Loo (2013)
 <https://cran.r-project.org/doc/contrib/de_Jonge+van_der_Loo-Introduction_to_data_cleaning_with_R.pdf>)
 for customized analysis.  It contains Boltzmann fitting for general kinetic
-analysis.  See @code{<https://www.github.com/yanxianUCSB/gen5helper>} for more
+analysis.  See <https://www.github.com/@code{yanxianUCSB/gen5helper>} for more
 information, documentation and examples.")
     (license license:expat)))
 
@@ -24524,7 +24388,7 @@ pathway level analyses.")
     (home-page "http://github.com/alattuada/GeDS")
     (synopsis "Geometrically Designed Spline Regression")
     (description
-     "Geometrically Designed Spline @code{('GeDS')} Regression is a non-parametric
+     "Geometrically Designed Spline ('@code{GeDS}') Regression is a non-parametric
 geometrically motivated method for fitting variable knots spline predictor
 models in one or two independent variables, in the context of generalized
 (non-)linear models. @code{GeDS} estimates the number and position of the knots
@@ -24537,16 +24401,16 @@ Kaishev et al. (2016) <doi:10.1007/s00180-015-0621-7> and Dimitrova et al.
 (define-public r-gecko
   (package
     (name "r-gecko")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gecko" version))
               (sha256
                (base32
-                "15a4ar47705kh4zcgqdyhcnwrbcadifaxq3jma6k40jg62axbyid"))))
+                "11zvay16kjs0i60vlfglcvd2ym3yk9wwfa76qql2j5i7y3wmjbjk"))))
     (properties `((upstream-name . "gecko")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp r-raster r-geosphere))
+    (propagated-inputs (list r-terra r-sp r-geosphere))
     (home-page "https://cran.r-project.org/package=gecko")
     (synopsis "Geographical Ecology and Conservation Knowledge Online")
     (description
@@ -24646,7 +24510,7 @@ gdxrrw'.  The gdxrrw package is available on the GAMS wiki:
     (description
      "The method aims to identify important factors in screening experiments by
 aggregation over random models as studied in Singh and Stufken (2022)
-@code{<doi:10.48550/arXiv.2205.13497>.} This package provides functions to run
+<doi:10.48550/@code{arXiv.2205.13497>}.  This package provides functions to run
 the Gauss-Dantzig selector on screening experiments when interactions may be
 affecting the response.  Currently, all functions require each factor to be at
 two levels coded as +1 and -1.")
@@ -24672,7 +24536,7 @@ parameters like lower limits, upper limits and the frequencies of the
 corresponding classes.  The gds() function calculate and return the values of
 mean ('gmean'), median ('gmedian'), mode ('gmode'), variance ('gvar'), standard
 deviation ('gstdev'), coefficient of variance ('gcv'), quartiles ('gq1', gq2',
-gq3'), inter-quartile range @code{('gIQR'),} skewness ('g1'), and kurtosis
+gq3'), inter-quartile range ('@code{gIQR}'), skewness ('g1'), and kurtosis
 ('g2') which facilitate effective data analysis.  For skewness and kurtosis
 calculations we use moments.")
     (license license:gpl2+)))
@@ -24734,7 +24598,7 @@ exchange rates and international dollars via purchasing power parities.")
      "This package provides functions to compute the Generalized Dynamic Principal
 Components introduced in @code{PeÃ±a} and Yohai (2016)
 <DOI:10.1080/01621459.2015.1072542>.  The implementation includes an automatic
-procedure proposed in @code{PeÃ±a,} Smucler and Yohai (2020)
+procedure proposed in @code{PeÃ±a}, Smucler and Yohai (2020)
 <DOI:10.18637/jss.v092.c02> for the identification of both the number of lags to
 be used in the generalized dynamic principal components as well as the number of
 components required for a given reconstruction accuracy.")
@@ -24963,13 +24827,13 @@ function arguments introduced in GDAL version 3.5.2 or earlier are supported.")
 (define-public r-gdalraster
   (package
     (name "r-gdalraster")
-    (version "1.3.0")
+    (version "1.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gdalraster" version))
               (sha256
                (base32
-                "0klykay7qjlq1zaahcvh4376jakilh8bq8yak34807adjwa624pw"))))
+                "0ia8kljv6jnlg7ibngbi909axnvmiv56xd2mgkn661wqrzzb19g3"))))
     (properties `((upstream-name . "gdalraster")))
     (build-system r-build-system)
     (inputs (list zlib
@@ -24988,19 +24852,20 @@ function arguments introduced in GDAL version 3.5.2 or earlier are supported.")
      "Interface to the raster API of the Geospatial Data Abstraction Library ('GDAL')
 supporting manual creation of uninitialized datasets, creation from existing
 raster as template, low level I/O, configuration of virtual raster (VRT),
-coordinate transformation, and access to gdalwarp for reprojection.  Convenience
-functions facilitate working with spatial reference systems.  Calling signatures
-resemble the native C, C++ and Python APIs provided by the GDAL project
-(<https://gdal.org>).  Bindings to GDAL are implemented in class GDALRaster
-along with several stand-alone functions.  Additional functionality includes:
-class @code{RunningStats} for efficient summary statistics on large data
-streams; class @code{CmbTable} for counting unique combinations of integer
-values with a hash table; a raster overlay utility to identify and count unique
-combinations across multiple inputs; and a calculation utility for evaluating an
-R expression on raster layers with pixel coordinates available as variables.
-gdalraster may be suitable for applications that primarily need low-level raster
-I/O or prefer native GDAL'-like calling.  Additional functionality is somewhat
-aimed at thematic data analysis but may have other utility.")
+coordinate transformation, and access to gdalwarp for reprojection.  Includes
+selected GDAL algorithms and functions for working with spatial reference
+systems.  Calling signatures resemble the native C, C++ and Python APIs provided
+by the GDAL project (<https://gdal.org>).  Bindings are implemented via Rcpp
+exposed class along with several stand-alone functions.  Additional
+functionality includes: class @code{RunningStats} for efficient summary
+statistics on large data streams; class @code{CmbTable} for counting unique
+combinations of integers with a hash table; raster overlay to identify and count
+unique pixel combinations across multiple input layers; raster calculation by
+evaluating any R expression on a stack of layers with pixel coordinates
+available as variables; and raster display using base graphics'.  gdalraster may
+be suitable for applications that primarily need low-level I/O or prefer a
+direct GDAL API. The additional functionality is somewhat aimed at thematic data
+analysis but may have other utility.")
     (license license:expat)))
 
 (define-public r-gdalcubes
@@ -25039,7 +24904,7 @@ window aggregates over time, filtering by space, time, bands, and predicates on
 pixel values, exporting data cubes as @code{netCDF} or @code{GeoTIFF} files,
 plotting, and extraction from spatial and or spatiotemporal features.  All
 computational parts are implemented in C++, linking to the GDAL',
-@code{netCDF',} CURL', and SQLite libraries.  See Appel and Pebesma (2019)
+@code{netCDF}', CURL', and SQLite libraries.  See Appel and Pebesma (2019)
 <doi:10.3390/data4030092> for further details.")
     (license license:expat)))
 
@@ -25110,7 +24975,7 @@ Song (2020) <doi:10.1109/TITS.2020.3001193>, respectively.")
     (description
      "Multiple matrices/tensors can be specified and decomposed simultaneously by
 Probabilistic Latent Tensor Factorisation (PLTF).  See the reference section of
-@code{GitHub} README.md @code{<https://github.com/rikenbit/gcTensor>,} for
+@code{GitHub} README.md <https://github.com/rikenbit/@code{gcTensor>}, for
 details of the method.")
     (license license:expat)))
 
@@ -25132,7 +24997,7 @@ details of the method.")
     (description
      "This package provides implementation of the generic composite similarity measure
 (GCSM) described in Liu et al. (2020) <doi:10.1016/j.ecoinf.2020.101169>.  The
-implementation is in C++ and uses @code{RcppArmadillo'.} Additionally,
+implementation is in C++ and uses @code{RcppArmadillo}'.  Additionally,
 implementations of the structural similarity (SSIM) and the composite similarity
 measure based on means, standard deviations, and correlation coefficient (CMSC),
 are included.")
@@ -25315,7 +25180,7 @@ the reference section in the package documentation.")
      "Estimation of covariance matrices as solutions of continuous time Lyapunov
 equations.  Sparse coefficient matrix and diagonal noise are estimated with a
 proximal gradient method for an l1-penalized loss minimization problem.  Varando
-G, Hansen NR (2020) @code{<arXiv:2005.10483>.}")
+G, Hansen NR (2020) <@code{arXiv:2005.10483>}.")
     (license license:expat)))
 
 (define-public r-gckrig
@@ -25387,7 +25252,7 @@ Description of the method is available from: Han and @code{DeOliveira} (2018)
      "Generalized competing event model based on Cox PH model and Fine-Gray model.
 This function is designed to develop optimized risk-stratification methods for
 competing risks data, such as described in: 1.  Carmona R, Gulaya S, Murphy JD,
-Rose BS, Wu J, Noticewala @code{S,McHale} MT, Yashar CM, Vaida F, and Mell LK
+Rose BS, Wu J, Noticewala S,@code{McHale} MT, Yashar CM, Vaida F, and Mell LK
 (2014) <DOI:10.1016/j.ijrobp.2014.03.047>.  2.  Carmona R, Zakeri K, Green G,
 Hwang L, Gulaya S, Xu B, Verma R, Williamson CW, Triplett DP, Rose BS, Shen H,
 Vaida F, Murphy JD, and Mell LK (2016) <DOI:10.1200/JCO.2015.65.0739>.  3.
@@ -25707,20 +25572,29 @@ representation.")
 (define-public r-gbm-auto
   (package
     (name "r-gbm-auto")
-    (version "2023.06.13")
+    (version "2023.08.31")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gbm.auto" version))
               (sha256
                (base32
-                "1hrgcbkwlyw1j31ykn5f5krcii6bh1679dx44l4bjw5ylqry804q"))))
+                "14gahb13p9wpsf8a8mb6a7ikas9jcd4hwh4jn4rg1mray4pgj7in"))))
     (properties `((upstream-name . "gbm.auto")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringi
-                             r-shapefiles
+    (propagated-inputs (list r-viridis
+                             r-tidyselect
+                             r-stringi
+                             r-starsextra
+                             r-stars
                              r-sf
+                             r-readr
                              r-metrics
                              r-mapplots
+                             r-lubridate
+                             r-lifecycle
+                             r-ggspatial
+                             r-ggplot2
+                             r-ggmap
                              r-gbm
                              r-dplyr
                              r-dismo
@@ -25762,7 +25636,7 @@ using this package.")
      "Offers the Generalized Berk-Jones (GBJ) test for set-based inference in genetic
 association studies.  The GBJ is designed as an alternative to tests such as
 Berk-Jones (BJ), Higher Criticism (HC), Generalized Higher Criticism (GHC),
-Minimum p-value @code{(minP),} and Sequence Kernel Association Test (SKAT).  All
+Minimum p-value (@code{minP}), and Sequence Kernel Association Test (SKAT).  All
 of these other methods (except for SKAT) are also implemented in this package,
 and we additionally provide an omnibus test (OMNI) which integrates information
 from each of the tests.  The GBJ has been shown to outperform other tests in
@@ -25892,12 +25766,12 @@ Vallois (2016) <doi:10.1016/j.spl.2016.03.014>, Chen & Novick (1984)
     (home-page "https://cran.r-project.org/package=GB5mcPred")
     (synopsis "Gradient Boosting Algorithm for Predicting Methylation States")
     (description
-     "DNA methylation of 5-methylcytosine @code{(5mC)} is the result of a multi-step,
+     "DNA methylation of 5-methylcytosine (5@code{mC}) is the result of a multi-step,
 enzyme-dependent process.  Predicting these sites in-vitro is laborious, time
-consuming as well as costly.  This  @code{Gb5mC-Pred}  package is an in-silico
-pipeline for predicting DNA sequences containing the @code{5mC} sites.  It uses
+consuming as well as costly.  This  Gb5@code{mC-Pred}  package is an in-silico
+pipeline for predicting DNA sequences containing the 5@code{mC} sites.  It uses
 a machine learning approach which uses Stochastic Gradient Boosting approach for
-prediction of the sequences with @code{5mC} sites.  This package has been
+prediction of the sequences with 5@code{mC} sites.  This package has been
 developed by using the concept of Navarez and Roxas (2022)
 <doi:10.1109/TCBB.2021.3082184>.")
     (license license:gpl3)))
@@ -25928,7 +25802,7 @@ different econometric strategies to estimate these parametric distributions, the
 equally weighted minimum distance (EWMD) estimator and the optimally weighted
 minimum distance (OMD) estimator.  Asymptotic standard errors are reported for
 the OMD estimates.  Standard errors of the EWMD estimates are obtained by Monte
-Carlo simulation.  See Jorda et al. (2018) @code{<arXiv:1808.09831>} for a
+Carlo simulation.  See Jorda et al. (2018) <@code{arXiv:1808.09831>} for a
 detailed description of the estimation procedure.")
     (license license:gpl2+)))
 
@@ -26036,12 +25910,12 @@ an analytic or a numerical solution, both available in the function.")
     (description
      "This package provides a statistical disclosure control tool to protect tables by
 suppression using the Gaussian elimination secondary suppression algorithm.  A
-suggestion is to start by working with functions @code{SuppressSmallCounts()}
-and @code{SuppressDominantCells().} These functions use primary suppression
+suggestion is to start by working with functions @code{SuppressSmallCounts}()
+and @code{SuppressDominantCells}().  These functions use primary suppression
 functions for the minimum frequency rule and the dominance rule, respectively.
 Novel functionality for suppression of disclosive cells is also included.
 General primary suppression functions can be supplied as input to the general
-working horse function, @code{GaussSuppressionFromData().} Suppressed
+working horse function, @code{GaussSuppressionFromData}().  Suppressed
 frequencies can be replaced by synthetic decimal numbers as described in
 Langsrud (2019) <doi:10.1007/s11222-018-9848-9>.")
     (license license:expat)))
@@ -26190,7 +26064,7 @@ selection.  For more information see the web site below and the accompanying
 papers: L. Davies and L. Duembgen, \"Covariate Selection Based on a Model-free
 Approach to Linear Regression with Exact Probabilities\", 2022,
 <arxiv:2202.01553>.  L. Davies, \"Linear Regression, Covariate Selection and the
-Failure of Modelling\", 2022, @code{<arXiv:2112.08738>.}")
+Failure of Modelling\", 2022, <@code{arXiv:2112.08738>}.")
     (license license:gpl3)))
 
 (define-public r-gauser
@@ -26220,7 +26094,7 @@ parameter values in multi-species systems.  Note that the general methods
 applied here, as well as the form of the differential equations that we use, are
 described in detail in the Quantitative Ecology textbook by Lehman et al.,
 available at <http://hdl.handle.net/11299/204551>, and in Lina K. MÃ¼hlbauer,
-Maximilienne Schulze, W. Stanley Harpole, and Adam T. Clark. @code{gauseR':}
+Maximilienne Schulze, W. Stanley Harpole, and Adam T. Clark. @code{gauseR}':
 Simple methods for fitting Lotka-Volterra models describing Gause's Struggle for
 Existence in the journal Ecology and Evolution.")
     (license license:gpl3)))
@@ -26278,7 +26152,7 @@ Gaussian process software, see Erickson et al. (2018)
     (synopsis "Geographic and Taxonomic Occurrence R-Based Scrubbing")
     (description
      "Streamlines downloading and cleaning biodiversity data from Integrated Digitized
-Biocollections @code{(iDigBio)} and the Global Biodiversity Information Facility
+Biocollections (@code{iDigBio}) and the Global Biodiversity Information Facility
 (GBIF).")
     (license license:gpl3)))
 
@@ -26436,13 +26310,13 @@ Computer Model Via Analysis of Variance and Visualization\",
 (define-public r-gasmodel
   (package
     (name "r-gasmodel")
-    (version "0.5.0")
+    (version "0.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gasmodel" version))
               (sha256
                (base32
-                "0lnqg58dabdfg2vy3prqprm0gwnmsxlrvgmjawprk2qlmf2xl10m"))))
+                "1q98hyn45k0r2zv8dd7f952jhl8xynpv9wkvijdync2hhi8hy6qi"))))
     (properties `((upstream-name . "gasmodel")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -26971,7 +26845,7 @@ Weidong Tian and Hongbin Ji (2012) <doi:10.1038/cr.2011.149>.")
 data source.  In iterative training steps the distribution of generated data
 converges to that of the data source.  Direct applications of generative data
 are the created functions for data classifying and missing data completion.
-Reference: Goodfellow et al. (2014) @code{<arXiv:1406.2661v1>.}")
+Reference: Goodfellow et al. (2014) <@code{arXiv:1406.2661v1>}.")
     (license license:gpl2+)))
 
 (define-public r-gandatamodel
@@ -26999,7 +26873,7 @@ the trained neural network are assembled into a data model.  A prerequisite is
 the definition of a data source, the generation of generative data and the
 calculation of density values.  These tasks are executed using package
 @code{ganGenerativeData}
-@code{<https://cran.r-project.org/package=ganGenerativeData>.}")
+<https://cran.r-project.org/package=@code{ganGenerativeData>}.")
     (license license:gpl2+)))
 
 (define-public r-gamselbayes
@@ -27025,7 +26899,7 @@ The approximate Bayesian inference engine options are: (1) Markov chain Monte
 Carlo and (2) mean field variational Bayes.  Markov chain Monte Carlo has better
 Bayesian inferential accuracy, but requires a longer run-time.  Mean field
 variational Bayes is faster, but less accurate.  The methodology is described in
-He and Wand (2023) @code{<arXiv:2201.00412>.}")
+He and Wand (2023) <@code{arXiv:2201.00412>}.")
     (license license:gpl2+)))
 
 (define-public r-gamsel
@@ -27454,7 +27328,7 @@ of non-convex cost functions between L0 and L1 norms.  As much as possible,
 usage for this package is analogous to that for the glmnet package (which does
 the same thing for penalization between L1 and L2 norms).  For details see:
 Taddy (2017 JCGS), One-Step Estimator Paths for Concave Regularization',
-@code{<arXiv:1308.5623>.}")
+<@code{arXiv:1308.5623>}.")
     (license license:gpl3)))
 
 (define-public r-gametheoryallocation
@@ -27983,7 +27857,7 @@ Chapter 11.")
     (description
      "This package provides an effective machine learning-based tool that quantifies
 the gain of passive device installation on wind turbine generators.  H. Hwangbo,
-Y. Ding, and D. Cabezon (2019) @code{<arXiv:1906.05776>.}")
+Y. Ding, and D. Cabezon (2019) <@code{arXiv:1906.05776>}.")
     (license license:gpl3)))
 
 (define-public r-gaiah
@@ -28033,7 +27907,7 @@ of migrating birds.")
      "Fits linear regression, logistic and multinomial regression models, Poisson
 regression, Cox model via Global Adaptive Generative Adjustment Algorithm.  For
 more detailed information, see Bin Wang, Xiaofei Wang and Jianhua Guo (2022)
-@code{<arXiv:1911.00658>.} This paper provides the theoretical properties of
+<@code{arXiv:1911.00658>}.  This paper provides the theoretical properties of
 Gaga linear model when the load matrix is orthogonal.  Further study is going on
 for the nonorthogonal cases and generalized linear models.  These works are in
 part supported by the National Natural Foundation of China (No.12171076).")
@@ -28228,12 +28102,12 @@ solving the problem.")
      "Help to the occasional R user for synthesis and enhanced graphical visualization
 of redundancy analysis (RDA) and principal component analysis (PCA) methods and
 objects.  Inputs are : data frame, RDA (package vegan') and PCA (package
-@code{FactoMineR')} objects.  Outputs are : synthesized results of RDA,
+@code{FactoMineR}') objects.  Outputs are : synthesized results of RDA,
 displayed in console and saved in tables ; displayed and saved objects of PCA
 graphic visualization of individuals and variables projections with multiple
 graphic parameters.  Method note : for the RDA output synthesis, several
-functions of the package @code{RVAideMemoire',} developed by Maxime
-@code{HervÃ©,} are exploited.")
+functions of the package RV@code{AideMemoire}', developed by Maxime
+@code{HervÃ©}, are exploited.")
     (license license:expat)))
 
 (define-public r-gaabbreviate

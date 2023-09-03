@@ -107,7 +107,7 @@ method, geometric least squares or linear least squares.")
     (home-page "https://github.com/daandejongen/hystar/")
     (synopsis "Fit the Hysteretic Threshold Autoregressive Model")
     (description
-     "Estimate parameters of the hysteretic threshold autoregressive @code{(HysTAR)}
+     "Estimate parameters of the hysteretic threshold autoregressive (@code{HysTAR})
 model, using conditional least squares.  In addition, you can generate time
 series data from the @code{HysTAR} model.  For details, see Li, Guan, Li and Yu
 (2015) <doi:10.1093/biomet/asv017>.")
@@ -157,15 +157,15 @@ expert opinions or other empirical data (insofar available).  The package
 implements the methods put forth in the EU project @code{HyRiM} (Hybrid Risk
 Management for Utility Networks), FP7 EU Project Number 608090.  The method has
 been published in Rass, S., KÃ¶nig, S., Schauer, S., 2016.  Decisions with
-Uncertain Consequences-A Total Ordering on Loss-Distributions. @code{PLoS} ONE
+Uncertain Consequences-A Total Ordering on Loss-Distributions.  P@code{LoS} ONE
 11, e0168583. <doi:10.1371/journal.pone.0168583>, and applied for advanced
 persistent thread modeling in Rass, S., KÃ¶nig, S., Schauer, S., 2017.
-Defending Against Advanced Persistent Threats Using Game-Theory. @code{PLoS} ONE
-12, e0168675. <doi:10.1371/journal.pone.0168675>.  A volume covering the wider
-range of aspects of risk management, partially based on the theory implemented
-in the package is the book edited by S. Rass and S. Schauer, 2018.  Game Theory
-for Security and Risk Management: From Theory to Practice.  Springer,
-<doi:10.1007/978-3-319-75268-6>, ISBN 978-3-319-75267-9.")
+Defending Against Advanced Persistent Threats Using Game-Theory.  P@code{LoS}
+ONE 12, e0168675. <doi:10.1371/journal.pone.0168675>.  A volume covering the
+wider range of aspects of risk management, partially based on the theory
+implemented in the package is the book edited by S. Rass and S. Schauer, 2018.
+Game Theory for Security and Risk Management: From Theory to Practice.
+Springer, <doi:10.1007/978-3-319-75268-6>, ISBN 978-3-319-75267-9.")
     (license license:gpl3)))
 
 (define-public r-hypsoloop
@@ -292,7 +292,7 @@ documents via hypothes.is'.")
     (synopsis "Random Forest Two-Sample Tests")
     (description
      "An implementation of Random Forest-based two-sample tests as introduced in
-Hediger & Michel & Naef (2020) @code{<arXiv:1903.06287>.}")
+Hediger & Michel & Naef (2020) <@code{arXiv:1903.06287>}.")
     (license license:gpl3)))
 
 (define-public r-hypetools
@@ -497,13 +497,13 @@ random matrix theory.  This is an implementation of Koev & Edelman's algorithm
 (define-public r-hypergate
   (package
     (name "r-hypergate")
-    (version "0.8.3")
+    (version "0.8.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hypergate" version))
               (sha256
                (base32
-                "0h36wi4bdxinv7p9alyb7jv1902vdanxx7yvyaw2dcqkdjlzzj49"))))
+                "1ldymcb7b1bdhsacmvyqdxni2462kn1ssbab4rgh7lsqflfs0csb"))))
     (properties `((upstream-name . "hypergate")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -564,7 +564,7 @@ hypergraphs.")
      "This package provides functions and methods for organizing data in hypercubes
 (i.e., a multi-dimensional cube).  Cubes are generated from molten data frames.
 Each cube can be manipulated with five operations: rotation
-@code{(change.dimensionOrder()),} dicing and slicing (add.selection(),
+(change.@code{dimensionOrder}()), dicing and slicing (add.selection(),
 remove.selection()), drilling down (add.aggregation()), and rolling up
 (remove.aggregation()).")
     (license license:gpl3)))
@@ -614,7 +614,7 @@ functionalities allow to compute sliding windows statistics over the image.")
     (synopsis "The Hyperbolic Distribution")
     (description
      "Maintenance has been discontinued for this package.  It has been superseded by
-@code{GeneralizedHyperbolic'.} @code{GeneralizedHyperbolic} includes all the
+@code{GeneralizedHyperbolic}'. @code{GeneralizedHyperbolic} includes all the
 functionality of @code{HyperbolicDist} and more and is based on a more rational
 design. @code{HyperbolicDist} provides functions for the hyperbolic and related
 distributions.  Density, distribution and quantile functions and random number
@@ -1181,7 +1181,7 @@ iemisc package by Irucka Embry.")
     (description
      "Calculate an optimal embedding of a set of data points into low-dimensional
 hyperbolic space.  This uses the strain-minimizing hyperbolic embedding of
-Keller-Ressel and Nargang (2019), see @code{<arXiv:1903.08977>.}")
+Keller-Ressel and Nargang (2019), see <@code{arXiv:1903.08977>}.")
     (license license:gpl2)))
 
 (define-public r-hydflood
@@ -1230,13 +1230,13 @@ published by Weber (2022) <doi:10.1594/PANGAEA.948042>.")
     (description
      "An S4 class and several functions which utilize internally stored datasets and
 gauging data enable 1d water level interpolation.  The S4 class
-@code{(WaterLevelDataFrame)} structures the computation and visualisation of 1d
+(@code{WaterLevelDataFrame}) structures the computation and visualisation of 1d
 water level information along the German federal waterways Elbe and Rhine.
 hyd1d delivers 1d water level data - extracted from the FLYS database - and
 validated gauging data - extracted from the hydrological database @code{HyDaBa}
 - package-internally.  For computations near real time gauging data are queried
 externally from the PEGELONLINE REST API
-@code{<https://pegelonline.wsv.de/webservice/dokuRestapi>.}")
+<https://pegelonline.wsv.de/webservice/@code{dokuRestapi>}.")
     (license license:gpl2+)))
 
 (define-public r-hybridts
@@ -1550,7 +1550,7 @@ problems.")
      "Easily Create and Style Tables for LaTeX, HTML and Other Formats")
     (description
      "This package creates styled tables for data presentation.  Export to HTML,
-@code{LaTeX,} RTF, Word', Excel', and @code{PowerPoint'.} Simple, modern
+@code{LaTeX}, RTF, Word', Excel', and @code{PowerPoint}'.  Simple, modern
 interface to manipulate borders, size, position, captions, colours, text styles
 and number formatting.  Table cells can span multiple rows and/or columns.
 Includes a huxreg function for creation of regression tables, and quick_*
@@ -1753,7 +1753,7 @@ diagnostics for Bayesian modelling using Stan.")
      "Vapor pressure, relative humidity, absolute humidity, specific humidity, and
 mixing ratio are commonly used water vapor measures in meteorology.  This R
 package provides functions for calculating saturation vapor pressure
-@code{(hPa),} partial water vapor pressure (Pa), relative humidity (%), absolute
+(@code{hPa}), partial water vapor pressure (Pa), relative humidity (%), absolute
 humidity (kg/m^3), specific humidity (kg/kg), and mixing ratio (kg/kg) from
 temperature (K) and dew point (K).  Conversion functions between humidity
 measures are also provided.")
@@ -2110,9 +2110,9 @@ requests'.  Designed to work with httr'.")
      "This package provides a graphics device for R that is accessible via network
 protocols.  This package was created to make it easier to embed live R graphics
 in integrated development environments and other applications.  The included
-@code{HTML/JavaScript} client (plot viewer) aims to provide a better overall
+HTML/@code{JavaScript} client (plot viewer) aims to provide a better overall
 user experience when dealing with R graphics.  The device asynchronously serves
-graphics via HTTP and @code{WebSockets'.}")
+graphics via HTTP and @code{WebSockets}'.")
     (license license:gpl2+)))
 
 (define-public r-httpcache
@@ -2191,7 +2191,7 @@ methods are included for predicting tissue:plasma partition coefficients and
 volume of distribution (Pearce et al., 2017 <doi:10.1007/s10928-017-9548-7>).
 These functions and data provide a set of tools for using IVIVE to convert
 concentrations from high-throughput screening experiments (for example, Tox21,
-@code{ToxCast)} to real-world exposures via reverse dosimetry (also known as
+@code{ToxCast}) to real-world exposures via reverse dosimetry (also known as
 \"RTK\") (Wetmore et al., 2015 <doi:10.1093/toxsci/kfv171>).")
     (license license:gpl3)))
 
@@ -2263,20 +2263,21 @@ probing (HR-SIP), multi-window high resolution stable isotope probing
 (define-public r-htsr
   (package
     (name "r-htsr")
-    (version "2.0.1")
+    (version "2.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "htsr" version))
               (sha256
                (base32
-                "1klpdnjam4vkavdil3cby8kfgnl1krf558nnl8fps97plpwmbydx"))))
+                "09hp97fxynx4ggwrz7kcm0zzdxvcyrrh94063diisfssz0v62wp3"))))
     (properties `((upstream-name . "htsr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-writexls
+    (propagated-inputs (list r-writexls
+                             r-waiter
                              r-tibble
                              r-terra
                              r-stringr
+                             r-shinyfiles
                              r-shiny
                              r-rsqlite
                              r-rodbc
@@ -2287,6 +2288,7 @@ probing (HR-SIP), multi-window high resolution stable isotope probing
                              r-openair
                              r-lubridate
                              r-ggplot2
+                             r-fs
                              r-editdata
                              r-dplyr
                              r-directlabels
@@ -2490,7 +2492,7 @@ hyper-parameters is sampled with restricted Gibbs sampling for leveraging the
 high-dimensionality and Hamiltonian Monte Carlo for handling the
 high-correlation among coefficients.  A detailed description of the method: Li
 and Yao (2018), Journal of Statistical Computation and Simulation, 88:14,
-2827-2851, @code{<arXiv:1405.3319>.}")
+2827-2851, <@code{arXiv:1405.3319>}.")
     (license license:gpl3)))
 
 (define-public r-htetree
@@ -2678,7 +2680,7 @@ pairs of SNPs.  Based on recombination rates, genetic distances between markers
 can be estimated.  Markers with unusually large recombination rate to markers in
 close proximity (i.e.  putatively misplaced markers) shall be discarded in this
 derivation.  A workflow description is attached as vignette. *A pipeline is
-available at @code{GitHub*} <https://github.com/wittenburg/hsrecombi> Hampel,
+available at @code{GitHub}* <https://github.com/wittenburg/hsrecombi> Hampel,
 Teuscher, Gomez-Raya, Doschoris, Wittenburg (2018) \"Estimation of recombination
 rate and maternal linkage disequilibrium in half-sibs\"
 <doi:10.3389/fgene.2018.00186>.  Gomez-Raya (2012) \"Maximum likelihood
@@ -2799,7 +2801,7 @@ imputation and pedigree reconstruction using half-sib family SNP data.")
      "Implementation of S4 class of sets and multisets of numbers.  The implementation
 is based on the hash table from the package hash'.  Quick operations are allowed
 when the set is a dynamic object.  The implementation is discussed in detail in
-Ceoldo and Wit (2023) @code{<arXiv:2304.09809>.}")
+Ceoldo and Wit (2023) <@code{arXiv:2304.09809>}.")
     (license license:expat)))
 
 (define-public r-hsem
@@ -2846,13 +2848,13 @@ to handle two serious problems inadmissible solution and factor indeterminacy
 (define-public r-hsdm
   (package
     (name "r-hsdm")
-    (version "1.4.2")
+    (version "1.4.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hSDM" version))
               (sha256
                (base32
-                "11c1q7sxaisrpi0d9zskys71n2j36r0f66yay1w3bvkacpxnkwfd"))))
+                "10fccpzr1bq3fz9m3vycdxw3k6lgk17m4dx7zbph7r5611sjdhdl"))))
     (properties `((upstream-name . "hSDM")))
     (build-system r-build-system)
     (inputs (list gsl))
@@ -3079,7 +3081,7 @@ function for determining size-controlling critical values for such test
 statistics and a user-supplied significance level (also incorporating a check of
 conditions under which such a size-controlling critical value exists).  The
 three functions are based on results in Poetscher and Preinerstorfer (2021)
-\"Valid Heteroskedasticity Robust Testing\" @code{<arXiv:2104.12597>.}")
+\"Valid Heteroskedasticity Robust Testing\" <@code{arXiv:2104.12597>}.")
     (license license:gpl2)))
 
 (define-public r-hrqglas
@@ -3289,7 +3291,7 @@ with a various options.")
     (description
      "An implementation of high-probability lower bounds for the total variance
 distance as introduced in Michel & Naef & Meinshausen (2020)
-@code{<arXiv:2005.06006>.} An estimated lower-bound (with high-probability) on
+<@code{arXiv:2005.06006>}.  An estimated lower-bound (with high-probability) on
 the total variation distance between two probability distributions from which
 samples are observed can be obtained with the function HPLB.")
     (license license:gpl3)))
@@ -4085,7 +4087,7 @@ Bartlett, M. S. (1937) <doi:10.1098/rspa.1937.0109> Bhandary, M., & Dai, H.
 (2017) <doi:10.1080/03610918.2016.1202277> Gokpinar E. & Gokpinar F. (2017)
 <doi:10.1080/03610918.2014.955110> Liu, X., & Xu, X. (2010)
 <doi:10.1016/j.spl.2010.05.017> Levene, H. (1960)
-<https://cir.nii.ac.jp/crid/1573950400526848896> @code{GÃ¶kpÄ±nar,} E. (2020)
+<https://cir.nii.ac.jp/crid/1573950400526848896> GÃ¶@code{kpÄ±nar}, E. (2020)
 <doi:10.1080/03610918.2020.1800037>.")
     (license license:gpl2)))
 
@@ -4112,7 +4114,7 @@ and provides lower confidence bounds for true discovery proportions.  A robust
 but more conservative variant of the closed testing procedure that does not
 require the assumption of Simes inequality is also implemented.  The methods
 have been described in detail in Goeman et al (2016)
-@code{<arXiv:1611.06739v2>.}")
+<@code{arXiv:1611.06739v2>}.")
     (license license:gpl2+)))
 
 (define-public r-homeric
@@ -4203,7 +4205,7 @@ selection and dataset reduction.  These datasets are used for pairwise- and
 multi-omics analyses, where automatic tuning is done to identify correlations
 between the datasets - the end goal of the recommended Holomics workflow.
 Methods used in the package were implemented in the package mixomics by Florian
-@code{Rohart,BenoÃ®t} Gautier,Amrit Singh,Kim-Anh LÃª Cao (2017)
+Rohart,@code{BenoÃ®t} Gautier,Amrit Singh,Kim-Anh LÃª Cao (2017)
 <doi:10.1371/journal.pcbi.1005752> and are described there in further detail.")
     (license license:gpl3+)))
 
@@ -4283,7 +4285,7 @@ vocational choices.  A theory of vocational personalities and work environments.
 (GLMs) by enabling the possibility to add further constraints to the model.  The
 holiglm package simplifies estimating HGLMs using convex optimization.
 Additional information about the package can be found in the reference manual,
-the README and the accompanying paper @code{<doi:10.48550/arXiv.2205.15447>.}")
+the README and the accompanying paper <doi:10.48550/@code{arXiv.2205.15447>}.")
     (license license:gpl3)))
 
 (define-public r-holdem
@@ -4379,7 +4381,7 @@ Sources include: NOAA Mauna Loa Laboratory
 <https://nsidc.org/home>, CSIRO
 <https://research.csiro.au/slrwavescoast/sea-level/measurements-and-data/sea-level-data/>,
 NOAA Laboratory for Satellite Altimetry
-@code{<https://www.star.nesdis.noaa.gov/socd/lsa/SeaLevelRise/>} and HURDAT
+<https://www.star.nesdis.noaa.gov/socd/lsa/@code{SeaLevelRise/>} and HURDAT
 Atlantic Hurricane Database
 <https://www.aoml.noaa.gov/hrd/hurdat/Data_Storm.html>, Vostok Paleo carbon
 dioxide and temperature data: <doi:10.3334/CDIAC/ATG.009>.")
@@ -4407,7 +4409,7 @@ returns a result also for directed and weighted graphs.  References, Arcagni,
 A., Grassi, R., Stefani, S., & Torriero, A. (2017)
 <doi:10.1016/j.ejor.2017.04.028> Arcagni, A., Grassi, R., Stefani, S., &
 Torriero, A. (2021) <doi:10.1016/j.jbusres.2019.10.008> Arcagni, A., Cerqueti,
-R., & Grassi, R. (2023) @code{<doi:10.48550/arXiv.2304.01737>.}")
+R., & Grassi, R. (2023) <doi:10.48550/@code{arXiv.2304.01737>}.")
     (license license:gpl2+)))
 
 (define-public r-hoardr
@@ -4724,7 +4726,7 @@ experiments.")
      "Fitting hidden Markov models using automatic differentiation and Laplace
 approximation, allowing for fast inference and flexible covariate effects
 (including random effects and smoothing splines) on model parameters.  The
-package is described by Michelot (2022) @code{<arXiv:2211.14139>.}")
+package is described by Michelot (2022) <@code{arXiv:2211.14139>}.")
     (license license:gpl3)))
 
 (define-public r-hmmr
@@ -4875,7 +4877,7 @@ have also made changes to increase the speed of some of the functions.")
 solve Henderson's Mixed Model Equations (HMME) is recursive estimation of the
 fixed effects and random effects.  We provide a fast, stable, and scalable
 solver to the HMME without computing matrix inverse.  See Kim (2017)
-@code{<arXiv:1710.09663>} for more details.")
+<@code{arXiv:1710.09663>} for more details.")
     (license license:gpl3+)))
 
 (define-public r-hmmcopula
@@ -4933,13 +4935,13 @@ accommodated in the univariate setting.")
 (define-public r-hmer
   (package
     (name "r-hmer")
-    (version "1.5.0")
+    (version "1.5.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hmer" version))
               (sha256
                (base32
-                "0q2sgkf1xwnnjgn6g4h87wamkjj0fyxwb12yvx559rhjy3sp3h8j"))))
+                "1rnav6vd67daf4v8x7038zvakx0hh7fgcmldsipknbkilm49vdh7"))))
     (properties `((upstream-name . "hmer")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -5056,8 +5058,8 @@ Carlo algorithm with hands-on experience by tuning and fitting their own models.
  All of the code is written in R. Theoretical references are listed below:.
 Neal, Radford (2011) \"Handbook of Markov Chain Monte Carlo\" ISBN:
 978-1420079418, Betancourt, Michael (2017) \"A Conceptual Introduction to
-Hamiltonian Monte Carlo\" @code{<arXiv:1701.02434>,} Thomas, S., Tu, W. (2020)
-\"Learning Hamiltonian Monte Carlo in R\" @code{<arXiv:2006.16194>,} Gelman, A.,
+Hamiltonian Monte Carlo\" <@code{arXiv:1701.02434>}, Thomas, S., Tu, W. (2020)
+\"Learning Hamiltonian Monte Carlo in R\" <@code{arXiv:2006.16194>}, Gelman, A.,
 Carlin, J. B., Stern, H. S., Dunson, D. B., Vehtari, A., & Rubin, D. B. (2013)
 \"Bayesian Data Analysis\" ISBN: 978-1439840955, Agresti, Alan (2015) \"Foundations
 of Linear and Generalized Linear Models ISBN: 978-1118730034, Pinheiro, J.,
@@ -5265,7 +5267,7 @@ typing data is cleaned, and imputed to high-resolution using the NMDP (National
 Marrow Donor Program) haplotype reference database
 <https://haplostats.org/haplostats>.  High resolution data is analyzed for
 overall or single antigen eplet mismatch using a reference table (currently
-supporting @code{HLAMatchMaker} <http://www.epitopes.net> versions 2 and 3).
+supporting HLA@code{MatchMaker} <http://www.epitopes.net> versions 2 and 3).
 Data can enter or exit the workflow at different points depending on the user's
 aims and initial data quality.")
     (license license:expat)))
@@ -5317,7 +5319,7 @@ Wolfgang Karl HÃ¤rdle, Sigbert Klinke, and Bernd RÃ¶nz (2015)
     (synopsis "Hurst-Kolmogorov Process")
     (description
      "This package provides methods to make inference about the Hurst-Kolmogorov
-(fractional Gaussian noise, @code{fGn)} and the AR(1) process.  Related time
+(fractional Gaussian noise, @code{fGn}) and the AR(1) process.  Related time
 series trend tests are also included.")
     (license license:gpl3)))
 
@@ -5412,7 +5414,7 @@ Mendelian Randomization or transcriptome analysis.  Reference: Lai Jiang,
 Shujing Xu, Nicholas Mancuso, Paul J. Newcombe, David V. Conti (2020). \"A
 Hierarchical Approach Using Marginal Summary Statistics for Multiple
 Intermediates in a Mendelian Randomization or Transcriptome Analysis.\"
-@code{<bioRxiv><doi:10.1101/2020.02.03.924241>.}")
+<@code{bioRxiv><doi:10.1101/2020.02.03.924241>}.")
     (license license:expat)))
 
 (define-public r-hiver
@@ -5971,7 +5973,7 @@ Ecology Resources, DOI to be added upon acceptance.")
      "Hypergeometric Intersection distributions are a broad group of distributions
 that describe the probability of picking intersections when drawing
 independently from two (or more) urns containing variable numbers of balls
-belonging to the same n categories. @code{<arXiv:1305.0717>.}")
+belonging to the same n categories. <@code{arXiv:1305.0717>}.")
     (license license:gpl2+)))
 
 (define-public r-hindexcalculator
@@ -6019,7 +6021,7 @@ calculated.  Note: the excel file has to first be saved in a .csv format.")
 functions to simulate how these indicators may develop over time for a given set
 of researchers and to visualize the simulation data.  The implementation is
 based on the STATA ado h-index and is described in more detail in Bornmann et
-al. (2019) @code{<arXiv:1905.11052>.}")
+al. (2019) <@code{arXiv:1905.11052>}.")
     (license license:expat)))
 
 (define-public r-himach
@@ -6272,10 +6274,10 @@ et al. (2006) <doi:10.1002/spe.793>.")
      "Statistical Inference for Online Learning and Stochastic Approximation via HiGrad")
     (description
      "This package implements the Hierarchical Incremental GRAdient Descent
-@code{(HiGrad)} algorithm, a first-order algorithm for finding the minimizer of
+(@code{HiGrad}) algorithm, a first-order algorithm for finding the minimizer of
 a function in online learning just like stochastic gradient descent (SGD).  In
 addition, this method attaches a confidence interval to assess the uncertainty
-of its predictions.  See Su and Zhu (2018) @code{<arXiv:1802.04876>} for
+of its predictions.  See Su and Zhu (2018) <@code{arXiv:1802.04876>} for
 details.")
     (license license:gpl3)))
 
@@ -6301,8 +6303,8 @@ characterize the joint health effects attributable to exposure mixtures.
 However, the underlying dose-response relationship between toxicants and health
 outcomes of interest may be highly nonlinear, with possible nonlinear
 interaction effects.  Hierarchical integrative group least absolute shrinkage
-and selection operator @code{(HiGLASSO),} developed by Boss et al (2020)
-@code{<arXiv:2003.12844>,} is a general framework to identify noteworthy
+and selection operator (@code{HiGLASSO}), developed by Boss et al (2020)
+<@code{arXiv:2003.12844>}, is a general framework to identify noteworthy
 nonlinear main and interaction effects in the presence of group structures among
 a set of exposures.")
     (license license:gpl3)))
@@ -6345,7 +6347,7 @@ discovery rate, and the tail probability of false discovery proportion.")
     (home-page "https://github.com/Yongwoo-Eg-Kim/hightR")
     (synopsis "HIGHT Algorithm")
     (description
-     "HIGHT(HIGh security and light @code{weigHT)} algorithm is a block cipher
+     "HIGHT(HIGh security and light @code{weigHT}) algorithm is a block cipher
 encryption algorithm developed to provide confidentiality in computing
 environments that demand low power consumption and lightweight, such as
 RFID(Radio-Frequency Identification) and USN(Ubiquitous Sensor Network), or in
@@ -6407,27 +6409,28 @@ University and lead by Drs.  Herman Staats and Soman Abraham.")
     (home-page "https://gitlab.com/roigrp/solver/highs")
     (synopsis "'HiGHS' Optimization Solver")
     (description
-     "R interface to @code{HiGHS',} an optimization solver for solving mixed integer
+     "R interface to @code{HiGHS}', an optimization solver for solving mixed integer
 optimization problems with quadratic or linear objective and linear constraints.")
     (license license:gpl2+)))
 
 (define-public r-highriskzone
   (package
     (name "r-highriskzone")
-    (version "1.4.8")
+    (version "1.4.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "highriskzone" version))
               (sha256
                (base32
-                "167xj46v3m85pbwxw8cm0jcb1b8srqggsnk6wbjv2b0vgxm65rzg"))))
+                "0sg3a99pb2559chalxh66zv9mvwbgfx64vp1209vbhbx3sya48r2"))))
     (properties `((upstream-name . "highriskzone")))
     (build-system r-build-system)
-    (propagated-inputs (list r-spatstat-random
+    (propagated-inputs (list r-splancs
+                             r-spatstat-random
                              r-spatstat-geom
                              r-spatstat-explore
                              r-spatstat
-                             r-rgeos
+                             r-polyclip
                              r-mvtnorm
                              r-matrix
                              r-maps
@@ -6475,9 +6478,9 @@ characterize the return distribution.  Different formulations and fast
 algorithms are proposed for high-order portfolios based on the mean, variance,
 skewness, and kurtosis.  The package is based on the papers: R. Zhou and D. P.
 Palomar (2021). \"Solving High-Order Portfolios via Successive Convex
-Approximation Algorithms.\" @code{<arXiv:2008.00863>.} X. Wang, R. Zhou, J. Ying,
-and D. P. Palomar (2022). \"Efficient and Scalable High-Order Portfolios Design
-via Parametric Skew-t Distribution.\" @code{<arXiv:2206.02412>.}")
+Approximation Algorithms.\" <@code{arXiv:2008.00863>}.  X. Wang, R. Zhou, J.
+Ying, and D. P. Palomar (2022). \"Efficient and Scalable High-Order Portfolios
+Design via Parametric Skew-t Distribution.\" <@code{arXiv:2206.02412>}.")
     (license license:gpl3)))
 
 (define-public r-highmlr
@@ -6510,7 +6513,7 @@ obtain the best markers with optimal threshold levels according to their effect
 on disease progression and produce the most consistent level according to those
 threshold values.  The functions methodology is based on by Sonabend et al
 (2021) <doi:10.1093/bioinformatics/btab039> and Bhattacharjee et al (2021)
-@code{<arXiv:2012.02102>.}")
+<@code{arXiv:2012.02102>}.")
     (license license:gpl3)))
 
 (define-public r-highmean
@@ -6954,13 +6957,13 @@ regionalization results, and exporting region map and mean timeseries into
 (define-public r-hibayes
   (package
     (name "r-hibayes")
-    (version "2.0.0")
+    (version "3.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hibayes" version))
               (sha256
                (base32
-                "15kk6jpm9brrl6257dh57z57dd3zndqxz0qwj1nxfc06zrs3bppi"))))
+                "1vbad1x0scqq50w3lflgssqnyrhblk2hf6jczjxs4cbb0mny959n"))))
     (properties `((upstream-name . "hibayes")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -6968,6 +6971,7 @@ regionalization results, and exporting region map and mean timeseries into
                              r-rcpparmadillo
                              r-rcpp
                              r-matrix
+                             r-cmplot
                              r-bigmemory
                              r-bh))
     (home-page "https://github.com/YinLiLin/hibayes")
@@ -7056,7 +7060,7 @@ Markov/semi-Markov model, spline-based nonparametric estimation of additive
 state-switching models (Langrock et al., 2018 <doi:10.1111/stan.12133>) and many
 other useful tools (read for more description: Amini et al., 2022
 <doi:10.1007/s00180-022-01248-x> and its arxiv version:
-@code{<arXiv:2109.12489>).}")
+<@code{arXiv:2109.12489>}).")
     (license license:gpl3)))
 
 (define-public r-hhp
@@ -7260,7 +7264,7 @@ package development, plotting and scientific research.  Package development
 functionalities includes among others tools such as cross-referencing package
 imports with the description file, analysis of redundant package imports,
 editing of the description file and the creation of package badges for
-@code{GitHub.} Some of the other functionalities include automatic package
+@code{GitHub}.  Some of the other functionalities include automatic package
 installation and loading, plotting points without overlap, creating nice breaks
 for plots, overview tables and many more handy utility functions.")
     (license license:gpl3)))
@@ -7282,7 +7286,7 @@ for plots, overview tables and many more handy utility functions.")
     (description
      "Estimation of high-dimensional multi-response regression with heterogeneous
 noises under Heterogeneous group square-root Lasso penalty.  For details see:
-Ren, Z., Kang, Y., Fan, Y. and Lv, J. @code{(2018)<arXiv:1606.03803>.}")
+Ren, Z., Kang, Y., Fan, Y. and Lv, J. (2018)<@code{arXiv:1606.03803>}.")
     (license license:gpl2+)))
 
 (define-public r-hgraph
@@ -7317,13 +7321,13 @@ Implement reference about Baruch Awerbuch (1985)
 (define-public r-hgnc
   (package
     (name "r-hgnc")
-    (version "0.1.3")
+    (version "0.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hgnc" version))
               (sha256
                (base32
-                "0ql47734xlgfnwkdqk556cif2wga4q201d5byf283hsz670g3f64"))))
+                "180092gpcs3j94904ry42crs62knzrv926bp25dapigqqfj7jjqi"))))
     (properties `((upstream-name . "hgnc")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -7492,7 +7496,7 @@ Research 15(Oct):3297-3331.")
     (description
      "This package provides functions for the estimation, plotting, predicting and
 cross-validation of hierarchical feature regression models as described in
-Pfitzinger (2021) @code{<arXiv:2107.04831>.}")
+Pfitzinger (2021) <@code{arXiv:2107.04831>}.")
     (license license:gpl2)))
 
 (define-public r-hflights
@@ -7646,7 +7650,7 @@ lost nor inappropriately cut.")
      "This package contains all the hex font files from the GNU Unifont Project
 <https://unifoundry.com/unifont/> compressed by xz'.  GNU Unifont is a duospaced
 bitmap font that attempts to cover all the official Unicode glyphs plus several
-of the artificial scripts in the @code{(Under-)ConScript} Unicode Registry
+of the artificial scripts in the (Under-)@code{ConScript} Unicode Registry
 <http://www.kreativekorp.com/ucsur/>.  Provides a convenience function for
 loading in several of them at the same time as a bittermelon bitmap font object
 for easy rendering of the glyphs in an R terminal or graphics device.")
@@ -7797,8 +7801,8 @@ organizations); extract information, check ID validity and diagnostics.")
      "Fisherian and Neymanian Methods for Detecting and Measuring Treatment Effect Variation")
     (description
      "This package implements methods developed by Ding, Feller, and Miratrix (2016)
-<doi:10.1111/rssb.12124> @code{<arXiv:1412.5000>,} and Ding, Feller, and
-Miratrix (2018) <doi:10.1080/01621459.2017.1407322> @code{<arXiv:1605.06566>}
+<doi:10.1111/rssb.12124> <@code{arXiv:1412.5000>}, and Ding, Feller, and
+Miratrix (2018) <doi:10.1080/01621459.2017.1407322> <@code{arXiv:1605.06566>}
 for testing whether there is unexplained variation in treatment effects across
 observations, and for characterizing the extent of the explained and unexplained
 variation in treatment effects.  The package includes wrapper functions
@@ -7849,7 +7853,7 @@ OLS estimate of the average treatment effect (ATE).  See Sloczynski (2019),
     (description
      "Tests for a treatment effect using surrogate marker information accounting for
 heterogeneity in the utility of the surrogate.  Details are described in Parast
-et al (2022) @code{<arXiv:2209.08315>.}")
+et al (2022) <@code{arXiv:2209.08315>}.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-hett
@@ -7966,7 +7970,7 @@ generate and take coefficient modulo are provided.")
     (description
      "This package performs Gaussian process regression with heteroskedastic noise
 following the model by Binois, M., Gramacy, R., Ludkovski, M. (2016)
-@code{<arXiv:1611.05902>,} with implementation details in Binois, M. & Gramacy,
+<@code{arXiv:1611.05902>}, with implementation details in Binois, M. & Gramacy,
 R. B. (2021) <doi:10.18637/jss.v098.i13>.  The input dependent noise is modeled
 as another Gaussian process.  Replicated observations are encouraged as they
 yield computational savings.  Sequential design procedures based on the
@@ -8004,7 +8008,7 @@ the AIC, BIC and EBIC information criteria, as well as simulate mixed
 heterogeneous data for exploratory or simulation purposes and one multi-group
 multivariate mixed agricultural dataset pertaining to maize yields.  The package
 implements the methodological developments found in Hermes et al. (2022)
-@code{<doi:10.48550/arXiv.2210.13140>.}")
+<doi:10.48550/@code{arXiv.2210.13140>}.")
     (license license:gpl3)))
 
 (define-public r-heteroggm
@@ -8431,7 +8435,7 @@ obey the true-path-rule, the biological and logical rule that governs the
 internal coherence of biomedical ontologies; 4) is specifically designed for
 exploiting the hierarchical relationships of DAG-structured taxonomies, such as
 the Human Phenotype Ontology (HPO) or the Gene Ontology (GO), but can be safely
-applied to tree-structured taxonomies as well (as @code{FunCat),} since trees
+applied to tree-structured taxonomies as well (as @code{FunCat}), since trees
 are DAGs; 5) scales nicely both in terms of the complexity of the taxonomy and
 in the cardinality of the examples; 6) provides several utility functions to
 process and analyze graphs; 7) provides several performance metrics to evaluate
@@ -8485,7 +8489,7 @@ Events API, and Helsinki Region Infoshare statistics API.")
      "Tools for Environmental Analyses, Ecotoxicology and Various R Functions")
     (description
      "This package contains miscellaneous functions useful for managing @code{NetCDF}
-files (see @code{<https://en.wikipedia.org/wiki/NetCDF>),} get moon phase and
+files (see <https://en.wikipedia.org/wiki/@code{NetCDF>}), get moon phase and
 time for sun rise and fall, tide level, analyse and reconstruct periodic time
 series of temperature with irregular sinusoidal pattern, show scales and wind
 rose in plot with change of color of text, Metropolis-Hastings algorithm for
@@ -8618,7 +8622,7 @@ by default.")
     (description
      "Empirical value of the Hellinger correlation, a measure of dependence between
 two continuous random variables.  More details can be found in Geenens and
-Lafaye De Micheaux (2019) @code{<arXiv:1810.10276v4>.}")
+Lafaye De Micheaux (2019) <@code{arXiv:1810.10276v4>}.")
     (license license:gpl2+)))
 
 (define-public r-helixvis
@@ -8727,7 +8731,7 @@ Markov models), etc.")
     (synopsis "Property-Based Testing")
     (description
      "Hedgehog will eat all your bugs.  Hedgehog is a property-based testing package
-in the spirit of @code{QuickCheck'.} With Hedgehog', one can test properties of
+in the spirit of @code{QuickCheck}'.  With Hedgehog', one can test properties of
 their programs against randomly generated input, providing far superior test
 coverage compared to unit testing.  One of the key benefits of Hedgehog is
 integrated shrinking of counterexamples, which allows one to quickly find the
@@ -9289,7 +9293,7 @@ measured parameters and can be performed with an end-to-end unsupervised
 approach.  In the context of in vitro stimulation assays where high-parameter
 cytometry was used to monitor intracellular response markers, using cell
 populations annotated either through automated clustering or manual gating for a
-combined set of stimulated and unstimulated samples, @code{HDStIM} labels cells
+combined set of stimulated and unstimulated samples, HD@code{StIM} labels cells
 as responding or non-responding.  The package also provides auxiliary functions
 to rank intracellular markers based on their contribution to identifying
 responses and generating diagnostic plots.")
@@ -9434,8 +9438,8 @@ minimizing the Huber loss of the idiosyncratic error's L2 norm, which turns out
 to do Principal Component Analysis (PCA) on the weighted sample covariance
 matrix and thereby named as Huber PCA. The other one is based on minimizing the
 element-wise Huber loss, which can be solved by an iterative Huber regression
-algorithm, see the details in He et al. @code{(2023)<arXiv:2303.02817>.} In this
-package we also provide the code for traditional PCA by Bai, J.,
+algorithm, see the details in He et al. (2023)<@code{arXiv:2303.02817>}.  In
+this package we also provide the code for traditional PCA by Bai, J.,
 (2003)<doi:10.1111/1468-0262.00392>, the Robust Two Step (RTS) method by He et
 al. (2022)<doi:10.1080/07350015.2020.1811101>, the Quantile Factor Analysis
 (QFA) method by Chen et al. (2021)<doi:10.3982/ECTA15746>.")
@@ -9482,7 +9486,7 @@ al. (2022)<doi:10.1080/07350015.2020.1811101>, the Quantile Factor Analysis
     (synopsis "Hierarchical Dirichlet Process Generalized Linear Models")
     (description
      "Implementation of MCMC algorithms to estimate the Hierarchical Dirichlet Process
-Generalized Linear Model @code{(hdpGLM)} presented in the paper Ferrari (2020)
+Generalized Linear Model (@code{hdpGLM}) presented in the paper Ferrari (2020)
 Modeling Context-Dependent Latent Heterogeneity, Political Analysis
 <DOI:10.1017/pan.2019.13>.")
     (license license:expat)))
@@ -9698,7 +9702,7 @@ high-dimensional multivariate mediation (HDMM) by @code{ChÃ©n} et al. (2018);
 high-dimensional linear mediation analysis (HILMA) by Zhou et al. (2020);
 high-dimensional mediation analysis (HIMA) by Zhang et al. (2016); latent
 variable mediation analysis (LVMA) by Derkach et al. (2019); mediation by
-fixed-effect model @code{(MedFix)} by Zhang (2021); pathway LASSO by Zhao & Luo
+fixed-effect model (@code{MedFix}) by Zhang (2021); pathway LASSO by Zhao & Luo
 (2022); principal component mediation analysis (PCMA) by Huang & Pan (2016); and
 sparse principal component mediation analysis (SPCMA) by Zhao et al. (2020).
 Citations for the corresponding papers can be found in their respective
@@ -9763,7 +9767,7 @@ non-Gaussian errors and for instrumental variable (IV) and treatment effect
 estimation in a high-dimensional setting.  Moreover, the methods enable valid
 post-selection inference and rely on a theoretically grounded, data-driven
 choice of the penalty.  Chernozhukov, Hansen, Spindler (2016)
-@code{<arXiv:1603.01700>.}")
+<@code{arXiv:1603.01700>}.")
     (license license:expat)))
 
 (define-public r-hdlsskst
@@ -9800,6 +9804,35 @@ Ghosh (2021) <doi:10.1016/j.jmva.2021.104897>; Soham Sarkar and Anil K Ghosh
 Sture Holm (1979) <doi:10.2307/4615733>; Yoav Benjamini and Yosef Hochberg
 (1995) <doi: 10.2307/2346101>.")
     (license license:gpl2+)))
+
+(define-public r-hdjm
+  (package
+    (name "r-hdjm")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "HDJM" version))
+              (sha256
+               (base32
+                "1vv1q7hdq12wh5nbr8zh1f8fzx5caaq4b39wqy99mxpx8cnsb87n"))))
+    (properties `((upstream-name . "HDJM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival r-statmod r-rcppensmallen
+                             r-rcpparmadillo r-rcpp))
+    (home-page "https://cran.r-project.org/package=HDJM")
+    (synopsis "Penalized High-Dimensional Joint Model")
+    (description
+     "Joint models have been widely used to study the associations between
+longitudinal biomarkers and a survival outcome.  However, existing joint models
+only consider one or a few longitudinal biomarkers and cannot deal with
+high-dimensional longitudinal biomarkers.  This package can be used to fit our
+recently developed penalized joint model that can handle high-dimensional
+longitudinal biomarkers.  Specifically, an adaptive lasso penalty is imposed on
+the parameters for the effects of the longitudinal biomarkers on the survival
+outcome, which allows for variable selection.  Also, our algorithm is
+computationally efficient, which is based on the Gaussian variational
+approximation method.")
+    (license license:gpl2)))
 
 (define-public r-hdivar
   (package
@@ -9903,10 +9936,10 @@ objects, and functions.")
      "This package provides a correlation-based batch process for fast, accurate
 imputation for high dimensional missing data problems via chained random
 forests.  See Waggoner (2023) <doi:10.1007/s00180-023-01325-9> for more on
-@code{hdImpute',} Stekhoven and BÃ¼hlmann (2012)
-<doi:10.1093/bioinformatics/btr597> for more on @code{missForest',} and Mayer
-(2022) @code{<https://github.com/mayer79/missRanger>} for more on
-@code{missRanger'.}")
+@code{hdImpute}', Stekhoven and BÃ¼hlmann (2012)
+<doi:10.1093/bioinformatics/btr597> for more on @code{missForest}', and Mayer
+(2022) <https://github.com/mayer79/@code{missRanger>} for more on
+@code{missRanger}'.")
     (license license:expat)))
 
 (define-public r-hdi
@@ -9970,7 +10003,7 @@ models.")
 functions for reading data from and writing data to HDF5 files.  HDFql provides
 a high-level language for managing HDF5 data that is platform independent.  For
 more information, see the reference manual
-@code{<https://www.hdfql.com/resources/HDFqlReferenceManual.pdf>.}")
+<https://www.hdfql.com/resources/HD@code{FqlReferenceManual.pdf>}.")
     (license license:gpl3+)))
 
 (define-public r-hdflex
@@ -10363,7 +10396,7 @@ geographically close to each other within a cluster.  It modified typically used
 hierarchical agglomerative clustering algorithms for introducing the spatial
 homogeneity, by considering geographical locations as vertices and converting
 spatial adjacency into whether a shared edge exists between a pair of vertices
-(Tzeng & Hsu, 2022) @code{<arXiv:2201.08302>.} The constraints of the vertex
+(Tzeng & Hsu, 2022) <@code{arXiv:2201.08302>}.  The constraints of the vertex
 links automatically enforce the spatial contiguity property at each step of
 iterations.  In addition, methods to find an appropriate number of clusters and
 to report cluster members are also provided.")
@@ -10496,7 +10529,7 @@ effective solution to recover the above hidden compact representation under the
 likelihood framework.  Please see the Causal Discovery from Discrete Data using
 Hidden Compact Representation from NIPS 2018 by Ruichu Cai, Jie Qiao, Kun Zhang,
 Zhenjie Zhang and Zhifeng Hao (2018)
-@code{<https://nips.cc/Conferences/2018/Schedule?showEvent=11274>} for a
+<https://nips.cc/Conferences/2018/Schedule?@code{showEvent=11274>} for a
 description of some of our methods.")
     (license license:gpl2+)))
 
@@ -10685,7 +10718,7 @@ German, Danish, English, Spanish and French.")
     (home-page "https://gitlab.com/ezetoum27/hbv.ianigla")
     (synopsis "Modular Hydrological Model")
     (description
-     "The HBV hydrological model @code{(BergstrÃ¶m,} S. and @code{LindstrÃ¶m,} G.,
+     "The HBV hydrological model (@code{BergstrÃ¶m}, S. and @code{LindstrÃ¶m}, G.,
 (2015) <doi:10.1002/hyp.10510>) has been split in modules to allow the user to
 build his/her own model.  This version was developed by the author in
 IANIGLA-CONICET (Instituto Argentino de Nivologia, Glaciologia y Ciencias
@@ -10868,8 +10901,8 @@ various computational models with a single line of coding (Ahn et al., 2017)
     (home-page "https://github.com/jbolstad/hbamr/")
     (synopsis "Hierarchical Bayesian Aldrich-McKelvey Scaling via 'Stan'")
     (description
-     "Perform hierarchical Bayesian @code{Aldrich-McKelvey} scaling using Hamiltonian
-Monte Carlo via Stan'. @code{Aldrich-McKelvey} ('AM') scaling is a method for
+     "Perform hierarchical Bayesian Aldrich-@code{McKelvey} scaling using Hamiltonian
+Monte Carlo via Stan'.  Aldrich-@code{McKelvey} ('AM') scaling is a method for
 estimating the ideological positions of survey respondents and political actors
 on a common scale using positional survey data.  The hierarchical versions of
 the Bayesian AM model included in this package outperform other versions both in
@@ -10956,7 +10989,7 @@ images.")
      "The conditional treatment effect for competing risks data in observational
 studies is estimated.  While it is described as a constant difference between
 the hazard functions given the covariates, we do not assume specific functional
-forms for the covariates.  Rava, D. and Xu, R. (2021) @code{<arXiv:2112.09535>.}")
+forms for the covariates.  Rava, D. and Xu, R. (2021) <@code{arXiv:2112.09535>}.")
     (license license:gpl2)))
 
 (define-public r-hawkesbow
@@ -10978,7 +11011,7 @@ forms for the covariates.  Rava, D. and Xu, R. (2021) @code{<arXiv:2112.09535>.}
     (description
      "This package implements an estimation method for Hawkes processes when count
 data are only observed in discrete time, using a spectral approach derived from
-the Bartlett spectrum, see Cheysson and Lang (2020) @code{<arXiv:2003.04314>.}
+the Bartlett spectrum, see Cheysson and Lang (2020) <@code{arXiv:2003.04314>}.
 Some general use functions for Hawkes processes are also included: simulation of
 (in)homogeneous Hawkes process, maximum likelihood estimation, residual
 analysis, etc.")
@@ -11149,7 +11182,7 @@ kinds of data, especially when the region of a class is disconnected.  This
 package also improves the basic harvest classification tree algorithm by
 extending the field of data of algorithm to both continuous and categorical
 variables.  To learn more about the harvest classification tree algorithm, you
-can go to @code{http://www.stat.ubc.ca/Research/TechReports/techreports/220.pdf}
+can go to http://www.stat.ubc.ca/Research/@code{TechReports/techreports/220.pdf}
 for more information.")
     (license license:gpl2)))
 
@@ -11582,7 +11615,7 @@ individual.  The gamete genotype data may be generated from various platforms
 including genotyping arrays and sequencing even with low-coverage.  Hapi simply
 takes genotype data of known @code{hetSNPs} in single gamete cells as input and
 report the high-resolution haplotypes as well as confidence of each phased
-@code{hetSNPs.} The package also includes a module allowing downstream analyses
+@code{hetSNPs}.  The package also includes a module allowing downstream analyses
 and visualization of identified crossovers in the gametes.")
     (license license:gpl3)))
 
@@ -11666,7 +11699,7 @@ latitude and longitude points while accounting for the assumption that the
 points are on a spherical globe.  This package provides a fast, dataframe
 compatible, haversine function.  For the first publication on the haversine
 calculation see Joseph de Mendoza y RÃ­os (1795)
-@code{<https://books.google.cat/books?id=030t0OqlX2AC>} (In Spanish).")
+<https://books.google.cat/books?id=030t0@code{OqlX2AC>} (In Spanish).")
     (license license:expat)))
 
 (define-public r-handyplots
@@ -11708,7 +11741,7 @@ qq-plots, box plots, confidence intervals, and prediction intervals.")
     (description
      "Some useful functions for simply manipulating and analyzing data with data.frame
 format.  It mainly includes the following sections: @code{ReformatDataframe}
-(reformat dataframe with the modifiers), @code{InteractDataframe,} and Post-VCF
+(reformat dataframe with the modifiers), @code{InteractDataframe}, and Post-VCF
 (for downstream analysis for data generated from vcftools Petr et al (2011)
 <doi:10.1093/bioinformatics/btr330> or plink Chang et al (2015)
 <doi:10.1186/s13742-015-0047-8>.")
@@ -11786,7 +11819,7 @@ measurements at all levels.  Webpage provided at:
     (home-page "https://github.com/ropensci/handlr")
     (synopsis "Convert Among Citation Formats")
     (description
-     "Converts among many citation formats, including @code{BibTeX',} Citeproc',
+     "Converts among many citation formats, including @code{BibTeX}', Citeproc',
 Codemeta', RDF XML', RIS', Schema.org', and Citation File Format'.  A low level
 R6 class is provided, as well as stand-alone functions for each citation format
 for both read and write.")
@@ -12042,7 +12075,7 @@ distribution of susceptibilities, distribution of complexities with statistics,
 pathotype frequency distribution, as well as diversity indices for pathotypes.
 This package is meant to be a direct replacement for Herrmann, LÃ¶wer and
 Schachtel's (1999) <doi:10.1046/j.1365-3059.1999.00325.x> Habgood-Gilmour
-Spreadsheet, @code{HaGiS',} previously used for pathotype analysis.")
+Spreadsheet, @code{HaGiS}', previously used for pathotype analysis.")
     (license license:expat)))
 
 (define-public r-hadex
@@ -12286,19 +12319,19 @@ columns with missing values.")
 community detection algorithm at grid level.  Methods using raster as input and
 the value of each cell of the raster is the \"smoothness\" to indicate how easy
 the cell connecting with neighbor cells.  Details about the @code{habCluster}
-package methods can be found in Zhang et al. @code{<bioRxiv:2022.05.06.490926>.}")
+package methods can be found in Zhang et al. <@code{bioRxiv:2022.05.06.490926>}.")
     (license license:gpl3+)))
 
 (define-public r-haarfisz
   (package
     (name "r-haarfisz")
-    (version "4.5.3")
+    (version "4.5.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "haarfisz" version))
               (sha256
                (base32
-                "1qrp4hwxrj7nf7lrxvhwgi9vky0wbyfd165b8idavj0b2n29s98n"))))
+                "1c00zpswnbfd44j7fb6pib6fwri2qs8kasd3fxifmaj0i6zpq8jf"))))
     (properties `((upstream-name . "haarfisz")))
     (build-system r-build-system)
     (propagated-inputs (list r-wavethresh))
@@ -12445,9 +12478,9 @@ offers parallelized implementations of many supervised and unsupervised machine
 learning algorithms such as Generalized Linear Models (GLM), Gradient Boosting
 Machines (including XGBoost), Random Forests, Deep Neural Networks (Deep
 Learning), Stacked Ensembles, Naive Bayes, Generalized Additive Models (GAM),
-ANOVA GLM, Cox Proportional Hazards, K-Means, PCA, @code{ModelSelection,}
+ANOVA GLM, Cox Proportional Hazards, K-Means, PCA, @code{ModelSelection},
 Word2Vec, as well as a fully automatic machine learning algorithm (H2O
-@code{AutoML).}")
+@code{AutoML}).")
     (license license:asl2.0)))
 
 (define-public r-h0

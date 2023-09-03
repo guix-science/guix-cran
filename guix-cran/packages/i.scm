@@ -11,9 +11,8 @@
   #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages maths)
-  #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages pkg-config)
-  #:use-module (gnu packages multiprecision)
+  #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages java)
   #:use-module (gnu packages pdf)
   #:use-module (gnu packages tbb)
@@ -412,7 +411,7 @@ can be obtained from <http://www.gurobi.com/index>.  CPLEX can be obtained from
 @code{cplexAPI} are available from CRAN. MOSEK and the MOSEK R API can be
 obtained from <https://www.mosek.com/>.  The lp_solve library is freely
 available from <http://lpsolve.sourceforge.net/5.5/>, and is included when
-installing its API @code{lpSolveAPI',} which is available from CRAN.")
+installing its API @code{lpSolveAPI}', which is available from CRAN.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-ivmodel
@@ -457,13 +456,13 @@ Small (2020) <http://pages.cs.wisc.edu/~hyunseung/> for details.")
      "This package provides a method that estimates an IV-optimal individualized
 treatment rule.  An individualized treatment rule is said to be IV-optimal if it
 minimizes the maximum risk with respect to the putative IV and the set of IV
-identification assumptions.  Please refer to @code{<arXiv:2002.02579>} for more
+identification assumptions.  Please refer to <@code{arXiv:2002.02579>} for more
 details on the methodology and some theory underpinning the method.  Function
-IV-PILE() uses functions in the package @code{locClass'.} Package
+IV-PILE() uses functions in the package @code{locClass}'.  Package
 @code{locClass} can be accessed and installed from the R-Forge repository via
 the following link: <https://r-forge.r-project.org/projects/locclass/>.
 Alternatively, one can install the package by entering the following in R:
-@code{install.packages(\"locClass\",} repos=\"<http://R-Forge.R-project.org>\")'.")
+install.packages(\"@code{locClass}\", repos=\"<http://R-Forge.R-project.org>\")'.")
     (license license:gpl3)))
 
 (define-public r-ivgets
@@ -550,7 +549,7 @@ regressions.  Package based on @code{DiTraglia} and Garcia-Jimeno (2020)
     (description
      "Estimation and diagnostic tools for instrumental variables designs, which
 implements the guidelines proposed in Lal et al. (2023)
-@code{<arXiv:2303.11399>,} including bootstrapped standard errors, effective
+<@code{arXiv:2303.11399>}, including bootstrapped standard errors, effective
 F-statistics, Anderson-Rubin test, valid-t ratio test, and local-to-zero tests.")
     (license license:expat)))
 
@@ -599,7 +598,7 @@ cluster effect ratio.  To test the third estimand, user needs to install Gurobi
 and always-taker subpopulation in the context of instrumental variable
 estimation.  This package implements the method described in Marbach and
 Hangartner (2020) <doi:10.1017/pan.2019.48> and Hangartner, Marbach, Henckel,
-Maathuis, Kelz and Keele (2021) @code{<arXiv:2103.06328>.}")
+Maathuis, Kelz and Keele (2021) <@code{arXiv:2103.06328>}.")
     (license license:gpl3)))
 
 (define-public r-ivabss
@@ -681,14 +680,14 @@ and Forecasting\" by Peter J. Brockwell and Richard A. Davis.
      "Isolation Forest-Based Presence-Only Species Distribution Modeling")
     (description
      "Collection of R functions to do purely presence-only species distribution
-modeling with isolation forest @code{(iForest)} and its variations such as
-Extended isolation forest and @code{SCiForest.} See the details of these methods
-in references: Liu, F.T., Ting, K.M. and Zhou, Z.H. (2008)
+modeling with isolation forest (@code{iForest}) and its variations such as
+Extended isolation forest and S@code{CiForest}.  See the details of these
+methods in references: Liu, F.T., Ting, K.M. and Zhou, Z.H. (2008)
 <doi:10.1109/ICDM.2008.17>, Hariri, S., Kind, M.C. and Brunner, R.J. (2019)
 <doi:10.1109/TKDE.2019.2947676>, Liu, F.T., Ting, K.M. and Zhou, Z.H. (2010)
 <doi:10.1007/978-3-642-15883-4_18>, Guha, S., Mishra, N., Roy, G. and
 Schrijvers, O. (2016) <https://proceedings.mlr.press/v48/guha16.html>, Cortes,
-D. (2021) @code{<arXiv:2110.13402>.} Additionally, Shapley values are used to
+D. (2021) <@code{arXiv:2110.13402>}.  Additionally, Shapley values are used to
 explain model inputs and outputs.  See details in references: Shapley, L.S.
 (1953) <doi:10.1515/9781400881970-018>, Lundberg, S.M. and Lee, S.I. (2017)
 <https://dl.acm.org/doi/abs/10.5555/3295222.3295230>, Molnar, C. (2020)
@@ -698,7 +697,7 @@ variable response, analyze variable importance, draw spatial dependence of
 variables and examine variable contribution.  As utilities, the package includes
 a few functions to download bioclimatic variables including @code{WorldClim}
 version 2.0 (see Fick, S.E. and Hijmans, R.J. (2017) <doi:10.1002/joc.5086>) and
-@code{CMCC-BioClimInd} (see Noce, S., Caporaso, L. and Santini, M. (2020)
+CMCC-@code{BioClimInd} (see Noce, S., Caporaso, L. and Santini, M. (2020)
 <doi:10.1038/s41597-020-00726-5>.")
     (license license:expat)))
 
@@ -1096,7 +1095,7 @@ this package uses Cyclops for an efficient implementation.")
 implemented.  ICA, MICA/Group ICA, and Multilinear ICA extract statistically
 independent components from single matrix, multiple matrices, and single tensor,
 respectively.  For the details of these methods, see the reference section of
-@code{GitHub} README.md @code{<https://github.com/rikenbit/iTensor>.}")
+@code{GitHub} README.md <https://github.com/rikenbit/@code{iTensor>}.")
     (license license:expat)))
 
 (define-public r-itemanalysis
@@ -1339,7 +1338,7 @@ Lindon, J. C., Holmes, E. & Nicholson, J. (2005) <doi:10.1021/ac048630x>.")
 including methods for sub-Gaussian errors, classification, homoscedastic
 Gaussian errors and quantile regression.  See the documentation of ISS().
 Details can be found in the paper by MÃ¼ller, Reeve, Cannings and Samworth
-(2023) @code{<arXiv:2305.04852v2>.}")
+(2023) <@code{arXiv:2305.04852v2>}.")
     (license license:gpl3+)))
 
 (define-public r-israd
@@ -1371,12 +1370,12 @@ Details can be found in the paper by MÃ¼ller, Reeve, Cannings and Samworth
     (description
      "This is the central location for data and tools for the development,
 maintenance, analysis, and deployment of the International Soil Radiocarbon
-Database @code{(ISRaD).} @code{ISRaD} was developed as a collaboration between
+Database (IS@code{RaD}).  IS@code{RaD} was developed as a collaboration between
 the U.S. Geological Survey Powell Center and the Max Planck Institute for
 Biogeochemistry.  This R package provides tools for accessing and manipulating
-@code{ISRaD} data, compiling local data using the @code{ISRaD} data structure,
-and simple query and reporting functions for @code{ISRaD.} For more detailed
-information visit the @code{ISRaD} website at: <https://soilradiocarbon.org/>.")
+IS@code{RaD} data, compiling local data using the IS@code{RaD} data structure,
+and simple query and reporting functions for IS@code{RaD}.  For more detailed
+information visit the IS@code{RaD} website at: <https://soilradiocarbon.org/>.")
     (license license:gpl2)))
 
 (define-public r-isr
@@ -1500,9 +1499,9 @@ calender format yyyy-mm-dd to and from ISO 8601 week format yyyy-Www-d.")
     (home-page "https://cran.r-project.org/package=isoWater")
     (synopsis "Discovery, Retrieval, and Analysis of Water Isotope Data")
     (description
-     "The @code{wiDB...()} functions provide an interface to the public API of the
+     "The @code{wiDB}...() functions provide an interface to the public API of the
 @code{wiDB}
-@code{<https://github.com/SPATIAL-Lab/isoWater/blob/master/Protocol.md>:} build,
+<https://github.com/SPATIAL-Lab/@code{isoWater/blob/master/Protocol.md>}: build,
 check and submit queries, and receive and unpack responses.  Data analysis
 functions support Bayesian inference of the source and source isotope
 composition of water samples that may have experienced evaporation.  Algorithms
@@ -1528,20 +1527,20 @@ adapted from Bowen et al. (2018, <doi:10.1007/s00442-018-4192-5>).")
     (description
      "Fast and multi-threaded implementation of isolation forest (Liu, Ting, Zhou
 (2008) <doi:10.1109/ICDM.2008.17>), extended isolation forest (Hariri, Kind,
-Brunner (2018) @code{<arXiv:1811.02141>),} @code{SCiForest} (Liu, Ting, Zhou
+Brunner (2018) <@code{arXiv:1811.02141>}), S@code{CiForest} (Liu, Ting, Zhou
 (2010) <doi:10.1007/978-3-642-15883-4_18>), fair-cut forest (Cortes (2021)
-@code{<arXiv:2110:13402>),} robust random-cut forest (Guha, Mishra, Roy,
+<@code{arXiv:2110:13402>}), robust random-cut forest (Guha, Mishra, Roy,
 Schrijvers (2016) <http://proceedings.mlr.press/v48/guha16.html>), and
 customizable variations of them, for isolation-based outlier detection,
 clustered outlier detection, distance or similarity approximation (Cortes (2019)
-@code{<arXiv:1910.12362>),} isolation kernel calculation (Ting, Zhu, Zhou (2018)
+<@code{arXiv:1910.12362>}), isolation kernel calculation (Ting, Zhu, Zhou (2018)
 <doi:10.1145/3219819.3219990>), and imputation of missing values (Cortes (2019)
-@code{<arXiv:1911.06646>),} based on random or guided decision tree splitting,
+<@code{arXiv:1911.06646>}), based on random or guided decision tree splitting,
 and providing different metrics for scoring anomalies based on isolation depth
-or density (Cortes (2021) @code{<arXiv:2111.11639>).} Provides simple heuristics
-for fitting the model to categorical columns and handling missing data, and
-offers options for varying between random and guided splits, and for using
-different splitting criteria.")
+or density (Cortes (2021) <@code{arXiv:2111.11639>}).  Provides simple
+heuristics for fitting the model to categorical columns and handling missing
+data, and offers options for varying between random and guided splits, and for
+using different splitting criteria.")
     (license license:bsd-2)))
 
 (define-public r-isotracer
@@ -1651,23 +1650,20 @@ prespecified.")
 (define-public r-isosurv
   (package
     (name "r-isosurv")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "isoSurv" version))
               (sha256
                (base32
-                "1y6wdmxzzdl1dkvab72s2smm3brqfl0y3b9al8fnj3h2b8lw502j"))))
+                "19lhv8xhgqdy3k0x8iz4w83yxfplglwqv3xjzj0njg505lkyslvz"))))
     (properties `((upstream-name . "isoSurv")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-iso))
     (home-page "https://cran.r-project.org/package=isoSurv")
     (synopsis "Isotonic Regression on Survival Analysis")
     (description
-     "Nonparametric estimation on survival analysis under order restrictions.  It
-estimates monotone increasing or decreasing covariate effects in the
-proportional hazards model.  Yunro Chung et al. (2018)
-<doi:10.1093/biomet/asx064>.")
+     "Nonparametric estimation on survival analysis under order-restrictions.")
     (license license:gpl2+)))
 
 (define-public r-isospecr
@@ -1758,13 +1754,13 @@ normal profiles.")
 (define-public r-isoplotrgui
   (package
     (name "r-isoplotrgui")
-    (version "5.3")
+    (version "5.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IsoplotRgui" version))
               (sha256
                (base32
-                "00g8k06bd5l6nifks60bp23l9af2wrrvx93cs4kj0dkqqzd0y9hs"))))
+                "1s2kmsjk0pnn4vyrxrgg8860ayvc9a122dvrx63rrkck7dshniav"))))
     (properties `((upstream-name . "IsoplotRgui")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinylight r-isoplotr))
@@ -1781,13 +1777,13 @@ either be used offline, or hosted on a server to provide online access to the
 (define-public r-isoplotr
   (package
     (name "r-isoplotr")
-    (version "5.3")
+    (version "5.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IsoplotR" version))
               (sha256
                (base32
-                "034i7d01zqam1nyaqvvgg4gsllclw88fpia0il3m0sf3rh5s45km"))))
+                "1scv8l2k6hw43w9bfl2v3anhsggfyvsaykysmbixysg8gj76yb7n"))))
     (properties `((upstream-name . "IsoplotR")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -1796,17 +1792,18 @@ either be used offline, or hosted on a server to provide online access to the
     (description
      "Plots U-Pb data on Wetherill and Tera-Wasserburg concordia diagrams.  Calculates
 concordia and discordia ages.  Performs linear regression of measurements with
-correlated errors using York', Titterington and Ludwig approaches.  Generates
-Kernel Density Estimates (KDEs) and Cumulative Age Distributions (CADs).
-Produces Multidimensional Scaling (MDS) configurations and Shepard plots of
-multi-sample detrital datasets using the Kolmogorov-Smirnov distance as a
-dissimilarity measure.  Calculates 40Ar/39Ar ages, isochrons, and age spectra.
-Computes weighted means accounting for overdispersion.  Calculates U-Th-He
-(single grain and central) ages, logratio plots and ternary diagrams.  Processes
-fission track data using the external detector method and LA-ICP-MS, calculates
-central ages and plots fission track and other data on radial (a.k.a.
-Galbraith') plots.  Constructs total Pb-U, Pb-Pb, Th-Pb, K-Ca, Re-Os, Sm-Nd,
-Lu-Hf, Rb-Sr and 230Th-U isochrons as well as 230Th-U evolution plots.")
+correlated errors using York', Titterington', Ludwig and Omnivariant Generalised
+Least-Squares ('OGLS') approaches.  Generates Kernel Density Estimates (KDEs)
+and Cumulative Age Distributions (CADs).  Produces Multidimensional Scaling
+(MDS) configurations and Shepard plots of multi-sample detrital datasets using
+the Kolmogorov-Smirnov distance as a dissimilarity measure.  Calculates
+40Ar/39Ar ages, isochrons, and age spectra.  Computes weighted means accounting
+for overdispersion.  Calculates U-Th-He (single grain and central) ages,
+logratio plots and ternary diagrams.  Processes fission track data using the
+external detector method and LA-ICP-MS, calculates central ages and plots
+fission track and other data on radial (a.k.a.  Galbraith') plots.  Constructs
+total Pb-U, Pb-Pb, Th-Pb, K-Ca, Re-Os, Sm-Nd, Lu-Hf, Rb-Sr and 230Th-U isochrons
+as well as 230Th-U evolution plots.")
     (license license:gpl3)))
 
 (define-public r-isopleuros
@@ -1987,7 +1984,7 @@ permutations.")
     (description
      "Distributional regression under stochastic order restrictions for numeric and
 binary response variables and partially ordered covariates.  See Henzi, Ziegel,
-Gneiting (2020) @code{<arXiv:1909.03725>.}")
+Gneiting (2020) <@code{arXiv:1909.03725>}.")
     (license license:gpl2+)))
 
 (define-public r-isocorr
@@ -2051,7 +2048,7 @@ processing of ICP-MS experiments to quickly obtain optimal processing parameters
 compared to traditional Excel worksheet based approaches.  A more detailed
 description can be found in the corresponding article \"Data processing made
 easy: standalone tool for automated calculation of isotope ratio from transient
-signals â @code{IsoCor\"} by Tukhmetova et al.  in Journal of Analytical Atomic
+signals â @code{IsoCor}\" by Tukhmetova et al.  in Journal of Analytical Atomic
 Spectrometry (JAAS).  The most recent version of @code{IsoCor} can be tested
 online at <https://jali.shinyapps.io/isocor>.")
     (license license:gpl3+)))
@@ -2119,7 +2116,7 @@ Mendivil (2019) <doi:10.1007/s42519-019-0064-5>.")
      "This resource provides tools to create, compare, and post-process spatial
 isotope assignment models of animal origin.  It generates probability-of-origin
 maps for individuals based on user-provided tissue and environment isotope
-values (e.g., as generated by @code{IsoMAP,} Bowen et al. [2013]
+values (e.g., as generated by @code{IsoMAP}, Bowen et al. [2013]
 <doi:10.1111/2041-210X.12147>) using the framework established in Bowen et al.
 (2010) <doi:10.1146/annurev-earth-040809-152429>).  The package isocat can then
 quantitatively compare and cluster these maps to group individuals by similar
@@ -2212,7 +2209,7 @@ University Press, Cambridge <doi:10.1017/CBO9780511622960>.")
     (description
      "In classification problems a monotone relation between some predictors and the
 classes may be assumed.  In this package isoboost we propose new boosting
-algorithms, based on @code{LogitBoost,} that incorporate this isotonicity
+algorithms, based on @code{LogitBoost}, that incorporate this isotonicity
 information, yielding more accurate and easily interpretable rules.")
     (license (list license:gpl2 license:gpl3))))
 
@@ -2325,7 +2322,7 @@ see Troxel Ma and Heitjan (2004) and Xie and Heitjan (2004)
     (description
      "Paquete creado con el fin de facilitar el @code{cÃ¡lculo} y @code{distribuciÃ³n}
 del Ã­ndice Socio Material Territorial (ISMT), elaborado por el Observatorio de
-Ciudades UC. La @code{metodologÃ­a} completa @code{estÃ¡} disponible en \"ISMT\"
+Ciudades UC. La @code{metodologÃ­a} completa @code{estÃ}¡ disponible en \"ISMT\"
 (<https://ideocuc-ocuc.hub.arcgis.com/datasets/6ed956450cfc4293b7d90df3ce3474e4/about>)
 [Observatorio de Ciudades UC (2019)]. || Package created to facilitate the
 calculation and distribution of the Socio-Material Territorial Index by
@@ -2548,7 +2545,7 @@ boundary conditions.  Utility functions for exact solutions are provided.")
      "This package provides a toolbox for constructing potential landscapes for Ising
 networks.  The parameters of the networks can be directly supplied by users or
 estimated by the @code{IsingFit} package by van Borkulo and Epskamp (2016)
-@code{<https://CRAN.R-project.org/package=IsingFit>} from empirical data.  The
+<https://CRAN.R-project.org/package=@code{IsingFit>} from empirical data.  The
 Ising model's Boltzmann distribution is preserved for the potential landscape
 function.  The landscape functions can be used for quantifying and visualizing
 the stability of network states, as well as visualizing the simulation process.")
@@ -2570,7 +2567,7 @@ the stability of network states, as well as visualizing the simulation process."
     (home-page "https://cran.r-project.org/package=IsingFit")
     (synopsis "Fitting Ising Models Using the ELasso Method")
     (description
-     "This network estimation procedure @code{eLasso,} which is based on the Ising
+     "This network estimation procedure @code{eLasso}, which is based on the Ising
 model, combines l1-regularized logistic regression with model selection based on
 the Extended Bayesian Information Criterion (EBIC).  EBIC is a fit measure that
 identifies relevant relationships between variables.  The resulting network
@@ -2628,11 +2625,11 @@ sparse principal component analysis.  Journal of Multivariate Analysis,
      "Characterisation and calibration of single or multiple Ion Selective Electrodes
 (ISEs); activity estimation of experimental samples.  Implements methods
 described in: Dillingham, P.W., Radu, T., Diamond, D., Radu, A. and
-@code{McGraw,} C.M. (2012) <doi:10.1002/elan.201100510>, Dillingham, P.W.,
-Alsaedi, B.S.O. and @code{McGraw,} C.M. (2017)
+@code{McGraw}, C.M. (2012) <doi:10.1002/elan.201100510>, Dillingham, P.W.,
+Alsaedi, B.S.O. and @code{McGraw}, C.M. (2017)
 <doi:10.1109/ICSENS.2017.8233898>, Dillingham, P.W., Alsaedi, B.S.O., Radu, A.,
-and @code{McGraw,} C.M. (2019) <doi:10.3390/s19204544>, and Dillingham, P.W.,
-Alsaedi, B.S.O., Granados-Focil, S., Radu, A., and @code{McGraw,} C.M. (2020)
+and @code{McGraw}, C.M. (2019) <doi:10.3390/s19204544>, and Dillingham, P.W.,
+Alsaedi, B.S.O., Granados-Focil, S., Radu, A., and @code{McGraw}, C.M. (2020)
 <doi:10.1021/acssensors.9b02133>.")
     (license license:gpl2)))
 
@@ -2733,7 +2730,7 @@ Analysis for the Life Sciences, Second edition\" by @code{EkstrÃ¸m} and SÃ¸r
     (description
      "Implementation of a KL-based scoring rule to assess the quality of different
 missing value imputations in the broad sense as introduced in Michel et al.
-(2021) @code{<arXiv:2106.03742>.}")
+(2021) <@code{arXiv:2106.03742>}.")
     (license license:gpl3)))
 
 (define-public r-iscocrosswalks
@@ -2983,7 +2980,7 @@ functions, respectively (Weeks (2010) <doi:10.18637/jss.v035.i12>).  The
 bisection() function was written by modifying the bisection() function (Howard
 (2017, ISBN:9780367657918)).  The code of the inverse test characteristic curve
 scoring in the est_score() function was written by modifying the irt.eq.tse()
-function @code{(GonzÃ¡lez} (2014) <doi:10.18637/jss.v059.i07>).  In est_score()
+function (@code{GonzÃ¡lez} (2014) <doi:10.18637/jss.v059.i07>).  In est_score()
 function, the code of weighted likelihood estimation method was written by
 referring to the Pi(), Ji(), and Ii() functions of the @code{catR} package
 (Magis & Barrada (2017) <doi:10.18637/jss.v076.c01>).")
@@ -3548,7 +3545,7 @@ experiment in a city in Mexico with different sample size, n2, and an area of
 interest a2.  Due to the differences between the conditions, it is not possible
 to compare Moran's I in a straightforward way.  In this version of the package,
 the spatial autocorrelation Moran's I is calculated as proposed in Chen(2013)
-@code{<arXiv:1606.03658>.}")
+<@code{arXiv:1606.03658>}.")
     (license license:gpl2+)))
 
 (define-public r-irepro
@@ -3669,7 +3666,7 @@ leads to a large loss; it also provides weights to help identify outliers.
 Applications include the robust generalized linear models and extensions, where
 the mean is related to the predictors by boosting, and robust accelerated
 failure time models.  The package supersedes the R package ccboost'.  Wang
-(2021) @code{<arXiv:2101.07718>.}")
+(2021) <@code{arXiv:2101.07718>}.")
     (license license:gpl3+)))
 
 (define-public r-irafnet
@@ -3757,8 +3754,8 @@ with user-provided data.")
      "Iterated race is an extension of the Iterated F-race method for the automatic
 configuration of optimization algorithms, that is, (offline) tuning their
 parameters by finding the most appropriate settings given a set of instances of
-an optimization problem.  M. @code{LÃ³pez-IbÃ¡Ã±ez,} J. Dubois-Lacoste, L.
-PÃ©rez CÃ¡ceres, T. @code{StÃ¼tzle,} and M. Birattari (2016)
+an optimization problem.  M. LÃ³pez-@code{IbÃ¡Ã±ez}, J. Dubois-Lacoste, L.
+PÃ©rez CÃ¡ceres, T. @code{StÃ¼tzle}, and M. Birattari (2016)
 <doi:10.1016/j.orp.2016.09.002>.")
     (license license:gpl2+)))
 
@@ -3977,13 +3974,13 @@ Stieger, & Reips (2019) <doi:10.1177/2059799119884283>.")
 (define-public r-ipumsr
   (package
     (name "r-ipumsr")
-    (version "0.6.2")
+    (version "0.6.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ipumsr" version))
               (sha256
                (base32
-                "1zix06lh3kvwb5b58fzsd817cmcz1xjzp90wxw00awlwdik4c5hc"))))
+                "0rmg23y0am45vk77l27q1fyfbr7560m26f3bcp5j6qxcb97fya7j"))))
     (properties `((upstream-name . "ipumsr")))
     (build-system r-build-system)
     (propagated-inputs (list r-zeallot
@@ -4167,7 +4164,7 @@ with changing event rates.  This includes the possibility to incorporate
 additional information such as the number of events occurring or the location of
 an already known event.  It can also generate the probability density functions
 of specific events in the cases where additional information is available.
-Based on Hohmann (2019) @code{<arXiv:1901.10754>.}")
+Based on Hohmann (2019) <@code{arXiv:1901.10754>}.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-ipolygrowth
@@ -4332,10 +4329,10 @@ the composite performance of an individual.")
     (home-page "https://gitlab.com/chuxinyuan/ipkg")
     (synopsis "Install R Packages on GitHub from Hub.fastgit.xyz")
     (description
-     "When you want to install an R package on @code{GitHub,} but you can't access
-@code{GitHub,} this function helps you download and install the package from
+     "When you want to install an R package on @code{GitHub}, but you can't access
+@code{GitHub}, this function helps you download and install the package from
 another website <https://hub.fastgit.xyz/>, which is in real-time sync with
-@code{GitHub.}")
+@code{GitHub}.")
     (license license:expat)))
 
 (define-public r-ipft
@@ -4607,7 +4604,7 @@ digitizing software, such as @code{DigitizeIt} (for MAC or windows) or
 information should also be involved to increase the accuracy, like numbers of
 patients at risk (often reported at 5-10 time points under the x-axis of the K-M
 graph), total number of patients, and total number of events.  The package
-implements the modified iterative K-M estimation algorithm @code{(modified-iKM)}
+implements the modified iterative K-M estimation algorithm (modified-@code{iKM})
 improved upon the approach proposed by Guyot (2012) <doi:10.1186/1471-2288-12-9>
 with some modifications.")
     (license license:gpl2)))
@@ -4720,7 +4717,7 @@ interaction variable conditional on main effects, as described in Wang and Chen
      "An unsupervised clustering algorithm based on iterative pruning is for capturing
 population structure.  This version supports ordinal data which can be applied
 directly to SNP data to identify fine-level population structure and it is built
-on the iterative pruning Principal Component Analysis @code{('ipPCA')} algorithm
+on the iterative pruning Principal Component Analysis ('@code{ipPCA}') algorithm
 as explained in Intarapanich et al. (2009) <doi:10.1186/1471-2105-10-382>.  The
 IPCAPS involves an iterative process using multiple splits based on multivariate
 Gaussian mixture modeling of principal components and Expectation-Maximization
@@ -4795,7 +4792,7 @@ can find the full API documentation at <https://ipbase.com/docs> .")
 matrix) of population structure.  The framework is based on iterative Pruning
 procedure that performs data clustering by splitting a given population into
 subclusters until meeting the condition of stopping criteria the same as
-@code{ipPCA,} @code{iNJclust,} and IPCAPS frameworks.  The package also provides
+@code{ipPCA}, @code{iNJclust}, and IPCAPS frameworks.  The package also provides
 a function to retrieve phylogeny tree that construct a neighbor-joining tree
 based on a similar matrix between clusters.  By given multiple Q matrices with
 varying a number of ancestors (K), the framework define a similar value between
@@ -4899,6 +4896,29 @@ or hostname originates from.  Supported IPv4 and IPv6.  Please visit
 requires IP2Location Python module.  At the terminal, please run pip install
 IP2Location to install the module.")
     (license license:expat)))
+
+(define-public r-ip
+  (package
+    (name "r-ip")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "IP" version))
+              (sha256
+               (base32
+                "1xvlv8mlahyhzvl0zbj0352iiqk2smqfy3vlawz8ldlcmwvwim7k"))))
+    (properties `((upstream-name . "IP")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringi))
+    (native-inputs (list r-knitr pkg-config))
+    (home-page "https://cran.r-project.org/package=IP")
+    (synopsis "Classes and Methods for 'IP' Addresses")
+    (description
+     "This package provides S4 classes for Internet Protocol (IP) versions 4 and 6
+addresses and efficient methods for IP addresses comparison, arithmetic, bit
+manipulation and lookup.  Both IPv4 and IPv6 arbitrary ranges are also supported
+as well as domain lookup and whois query.")
+    (license license:gpl2+)))
 
 (define-public r-iotarelr
   (package
@@ -5218,7 +5238,7 @@ structure creation.")
      "This package provides a collection of functions for working with time series
 data, including functions for drawing, decomposing, and forecasting.  Includes
 capabilities to compare multiple series and fit both additive and multiplicative
-models.  Used by @code{iNZight',} a graphical user interface providing easy
+models.  Used by @code{iNZight}', a graphical user interface providing easy
 exploration and visualisation of data for students of statistics, available in
 both desktop and online versions.  Holt (1957)
 <doi:10.1016/j.ijforecast.2003.09.015>, Winters (1960)
@@ -5259,7 +5279,7 @@ Seasonal-Trend Decomposition Procedure Based on Loess\".")
     (synopsis "Tools for 'iNZight'")
     (description
      "This package provides a collection of wrapper functions for common variable and
-dataset manipulation workflows primarily used by @code{iNZight',} a graphical
+dataset manipulation workflows primarily used by @code{iNZight}', a graphical
 user interface providing easy exploration and visualisation of data for students
 of statistics, available in both desktop and online versions.  Additionally,
 many of the functions return the tidyverse code used to obtain the result in an
@@ -5292,7 +5312,7 @@ effort to bridge the gap between GUI and coding.")
     (description
      "This package provides a suite of functions to use with regression models,
 including summaries, residual plots, and factor comparisons.  Used as part of
-the Model Fitting module of @code{iNZight',} a graphical user interface
+the Model Fitting module of @code{iNZight}', a graphical user interface
 providing easy exploration and visualisation of data for students of statistics,
 available in both desktop and online versions.")
     (license license:gpl3)))
@@ -5336,7 +5356,7 @@ allowing for easy plot customisation.  The goal is to make it easy for beginners
 to start exploring a dataset through simple R function calls, as well as provide
 a similar interface to summary statistics and inference information.  Includes
 functionality to generate interactive HTML-driven graphs.  Used by
-@code{iNZight',} a graphical user interface providing easy exploration and
+@code{iNZight}', a graphical user interface providing easy exploration and
 visualisation of data for students of statistics, available in both desktop and
 online versions.")
     (license license:gpl3)))
@@ -5440,7 +5460,7 @@ functions.")
      "Computes the log likelihood for an inverse gamma stochastic volatility model
 using a closed form expression of the likelihood.  The details of the
 computation of this closed form expression are given in Gonzalez and Majoni
-(2023) @code{<http://rcea.org/RePEc/pdf/wp23-11.pdf>} .  The closed form
+(2023) <http://rcea.org/@code{RePEc/pdf/wp23-11.pdf>} .  The closed form
 expression is obtained for a stationary inverse gamma stochastic volatility
 model by marginalising out the volatility.  This allows the user to obtain the
 maximum likelihood estimator for this non linear non Gaussian state space model.
@@ -5757,7 +5777,7 @@ models proposed by Asano and Hirakawa (2017)
 all available data and thereby address the issues currently threatening
 biodiversity.  Data integration is a powerful modeling framework which allows us
 to combine these datasets together into a single model, yet retain the strengths
-of each individual dataset.  We therefore introduce the package, @code{intSDM':}
+of each individual dataset.  We therefore introduce the package, @code{intSDM}':
 an R package designed to help ecologists develop a reproducible workflow of
 integrated species distribution models, using data both provided from the user
 as well as data obtained freely online.  An introduction to data integration
@@ -6067,7 +6087,7 @@ dataset using integrative Non-negative Matrix factorization.")
     (synopsis "Mediation Analysis using Interventional Effects")
     (description
      "Implementing the interventional effects for mediation analysis for up to 3
-mediators.  The methods used are based on @code{VanderWeele,} Vansteelandt and
+mediators.  The methods used are based on @code{VanderWeele}, Vansteelandt and
 Robins (2014) <doi:10.1097/ede.0000000000000034>, Vansteelandt and Daniel (2017)
 <doi:10.1097/ede.0000000000000596> and Chan and Leung (2020; unpublished
 manuscript, available on request from the author of this package).  Linear
@@ -6176,13 +6196,13 @@ wrappers to functions in the gstat and sp packages.")
 (define-public r-inti
   (package
     (name "r-inti")
-    (version "0.6.1")
+    (version "0.6.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "inti" version))
               (sha256
                (base32
-                "0ikzm7lvniazn1iqd1m6qqf90fc6ajk1xvf0g7bc4xxzbz96q548"))))
+                "1lmm0v76c4ksvp9zrh163cb55c52d112wfvslyxm1vapvpcdmvk7"))))
     (properties `((upstream-name . "inti")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -6241,7 +6261,7 @@ technical writing.  Learn more about the inkaverse project at
      "Creation of tables of summary statistics or counts for clinical data (for
 TLFs').  These tables can be exported as in-text table (with the flextable
 package) for a Clinical Study Report (Word format) or a topline presentation
-@code{(PowerPoint} format), or as interactive table (with the DT package) to an
+(@code{PowerPoint} format), or as interactive table (with the DT package) to an
 html document for clinical data review.")
     (license license:expat)))
 
@@ -6317,7 +6337,7 @@ by means of Cronbach's alpha coefficient; and simulate interval-valued responses
 in this type of questionnaires.  The package also incorporates some real-life
 data that can be used to illustrate its working with several non-trivial
 reproducible examples.  The methodology used in this package is based in many
-theoretical and applied publications from @code{SMIRE+CoDiRE} (Statistical
+theoretical and applied publications from SMIRE+@code{CoDiRE} (Statistical
 Methods with Imprecise Random Elements and Comparison of Distributions of Random
 Elements) Research Group (<https://bellman.ciencias.uniovi.es/smire+codire/>)
 from the University of Oviedo (Spain).")
@@ -6475,7 +6495,7 @@ plots for (cross-validated) @code{randomForest} and ada models.")
     (description
      "High resolution mass spectrometry yields often large data sets of spectra from
 compounds which are not present in available libraries.  These spectra need to
-be annotated and @code{interpreted.'InterpretMSSpectrum} provides a set of
+be annotated and interpreted.'@code{InterpretMSSpectrum} provides a set of
 functions to perform such tasks for Electrospray-Ionization and
 Atmospheric-Pressure-Chemical-Ionization derived data in positive and negative
 ionization mode.")
@@ -6545,30 +6565,6 @@ editability.  Details on the EBM algorithm can be found in the paper by Rich
 Caruana, Yin Lou, Johannes Gehrke, Paul Koch, Marc Sturm, and Noemie Elhadad
 (2015, <doi:10.1145/2783258.2788613>).")
     (license license:expat)))
-
-(define-public r-interpolation
-  (package
-    (name "r-interpolation")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "interpolation" version))
-              (sha256
-               (base32
-                "12rxbpyi6hn2lijlxl3yaqp0fvxw3ipyk6x1hyl7dp3r8i5q4qy5"))))
-    (properties `((upstream-name . "interpolation")))
-    (build-system r-build-system)
-    (inputs (list gmp))
-    (propagated-inputs (list r-rcppcgal r-rcpp r-bh))
-    (native-inputs (list pkg-config))
-    (home-page "https://github.com/stla/interpolation")
-    (synopsis "Interpolation of Bivariate Functions")
-    (description
-     "This package provides two different methods, linear and nonlinear, to
-interpolate a bivariate function, scalar-valued or vector-valued.  The
-interpolated data are not necessarily gridded.  The algorithms are performed by
-the C++ library CGAL (<https://www.cgal.org/>).")
-    (license license:gpl3)))
 
 (define-public r-interplot
   (package
@@ -7358,8 +7354,8 @@ models.")
     (description
      "The @code{IntCal20} radiocarbon calibration curves (Reimer et al.  2020
 <doi:10.1017/RDC.2020.68>) are provided here in a single data package, together
-with previous @code{IntCal} curves @code{(IntCal13,} @code{IntCal09,}
-@code{IntCal04,} @code{IntCal98)} and postbomb curves.  Also provided are
+with previous @code{IntCal} curves (@code{IntCal13}, @code{IntCal09},
+@code{IntCal04}, @code{IntCal98}) and postbomb curves.  Also provided are
 functions to copy the curves into memory, and to plot the curves and their
 underlying data, as well as functions to calibrate radiocarbon dates.")
     (license license:gpl2+)))
@@ -7527,10 +7523,10 @@ stanapi are similar Stan clients with different objectives.")
      "Using R to Install Stuff on Windows OS (Such As: R, 'Rtools', 'RStudio', 'Git', and More!)")
     (description
      "R is great for installing software.  Through the installr package you can
-automate the updating of R (on Windows, using @code{updateR())} and install new
+automate the updating of R (on Windows, using @code{updateR}()) and install new
 software.  Software installation is initiated through a GUI (just run
 installr()), or through functions such as: install.Rtools(), install.pandoc(),
-install.git(), and many more.  The @code{updateR()} command performs the
+install.git(), and many more.  The @code{updateR}() command performs the
 following: finding the latest R version, downloading it, running the installer,
 deleting the installation file, copy and updating old packages to the new R
 installation.")
@@ -7559,7 +7555,7 @@ This function pulls source or binary packages from the Posit/RStudio-sponsored
 CRAN mirror.  Lastly, the chosen package(s) is/are loaded.  The function
 load_package simply loads the provided package(s).  If this package does not fit
 your needs, then you may want to consider these other R packages: needs',
-easypackages', pacman', pak', @code{anyLib',} and/or librarian'.")
+easypackages', pacman', pak', @code{anyLib}', and/or librarian'.")
     (license (list license:cc-by-sa4.0 license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -7915,7 +7911,7 @@ series (e.g. the ECA&D station data).")
     (home-page "https://cran.r-project.org/package=InPosition")
     (synopsis "Inference Tests for ExPosition")
     (description
-     "Non-parametric resampling-based inference tests for @code{ExPosition.}")
+     "Non-parametric resampling-based inference tests for @code{ExPosition}.")
     (license license:gpl2)))
 
 (define-public r-inplace
@@ -8047,10 +8043,10 @@ modern neural networks.  Implemented methods are: Connection Weights described
 by Olden et al. (2004) <doi:10.1016/j.ecolmodel.2004.03.013>, Layer-wise
 Relevance Propagation ('LRP') described by Bach et al. (2015)
 <doi:10.1371/journal.pone.0130140>, Deep Learning Important Features
-@code{('DeepLIFT')} described by Shrikumar et al. (2017)
-@code{<arXiv:1704.02685>} and gradient-based methods like @code{SmoothGrad}
-described by Smilkov et al. (2017) @code{<arXiv:1706.03825>,} Gradient x Input
-described by Baehrens et al. (2009) @code{<arXiv:0912.1128>} or Vanilla
+('@code{DeepLIFT}') described by Shrikumar et al. (2017)
+<@code{arXiv:1704.02685>} and gradient-based methods like @code{SmoothGrad}
+described by Smilkov et al. (2017) <@code{arXiv:1706.03825>}, Gradient x Input
+described by Baehrens et al. (2009) <@code{arXiv:0912.1128>} or Vanilla
 Gradient'.")
     (license license:expat)))
 
@@ -8140,20 +8136,20 @@ INLA package (<https://www.r-inla.org>).  These objects contain data to for the
 cgeneric interface in INLA', enabling fast parallel computations.  We
 implemented the spatial barrier model, see Bakka et.  al. (2019)
 <doi:10.1016/j.spasta.2019.01.002>, and some of the spatio-temporal models in
-Lindgren et.  al. (2023) @code{<arXiv:2006.04917>.} Details are provided in the
+Lindgren et.  al. (2023) <@code{arXiv:2006.04917>}.  Details are provided in the
 available vignettes and from the URL bellow.")
     (license license:gpl2+)))
 
 (define-public r-inlabru
   (package
     (name "r-inlabru")
-    (version "2.8.0")
+    (version "2.9.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "inlabru" version))
               (sha256
                (base32
-                "1fhlf61nfpg3va6ih5g820758h182h45sv5nblljqgw3lxkim8nw"))))
+                "198amkx9s9lsdd3kwglmr62kvs8qlf3kw606dpmw83kip2v6gxwp"))))
     (properties `((upstream-name . "inlabru")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -8167,6 +8163,7 @@ available vignettes and from the URL bellow.")
                              r-matrix
                              r-magrittr
                              r-lifecycle
+                             r-fmesher
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "http://www.inlabru.org")
@@ -8574,7 +8571,7 @@ functions have been provided for the assessment of dependence and correlation of
 two network centrality measures as well as the conditional probability of
 deviation from their corresponding means in opposite direction.  Fred Viole and
 David Nawrocki (2013, ISBN:1490523995).  Csardi G, Nepusz T (2006). \"The igraph
-software package for complex network research.\" @code{InterJournal,} Complex
+software package for complex network research.\" @code{InterJournal}, Complex
 Systems, 1695.  Adopted algorithms and sources are referenced in function
 document.")
     (license license:gpl3)))
@@ -8702,7 +8699,7 @@ calculates melt temperatures and melt shifts for each protein in the experiment.
     (description
      "Implementation of methods Extremum Surface Estimator (ESE) and Extremum Distance
 Estimator (EDE) to identify the inflection point of a curve .  Christopoulos, DT
-(2014) @code{<doi:10.48550/arXiv.1206.5478>} .  Christopoulos, DT (2016)
+(2014) <doi:10.48550/@code{arXiv.1206.5478>} .  Christopoulos, DT (2016)
 <https://veltech.edu.in/wp-content/uploads/2016/04/Paper-04-2016.pdf> .
 Christopoulos, DT (2016) <doi:10.2139/ssrn.3043076> .")
     (license license:gpl2+)))
@@ -8798,7 +8795,7 @@ day to day practices.")
     (description
      "The proportion of cancer cells in solid tumor sample, known as the tumor purity,
 has adverse impact on a variety of data analyses if not properly accounted for.
-We develop @code{InfiniumPurify',} which is a comprehensive R package for
+We develop @code{InfiniumPurify}', which is a comprehensive R package for
 estimating and accounting for tumor purity based on DNA methylation Infinium
 450k array data. @code{InfiniumPurify} provides functionalities for tumor purity
 estimation.  In addition, it can perform differential methylation detection and
@@ -9079,8 +9076,8 @@ Statistics Portugal (Instituto Nacional de Estatistica - INE) API
     (synopsis
      "Data, Functions and Support Materials from the Book \"industRial Data Science\"")
     (description
-     "Companion package to the book @code{\"industRial} data science\", J.Ramalho (2021)
-@code{<https://j-ramalho.github.io/industRial/>.} Provides data sets and
+     "Companion package to the book \"@code{industRial} data science\", J.Ramalho (2021)
+<https://j-ramalho.github.io/@code{industRial/>}.  Provides data sets and
 functions to complete the case studies and contains the book original Rmd files
 and tutorials.")
     (license license:gpl3+)))
@@ -9332,10 +9329,10 @@ numbers for not only a product or weighted index numbers as the Laspeyres index
      "Derivation of indexes for benchmarking purposes.  A methodology with flexible
 number of constituents is implemented.  Also functions for market capitalization
 and volume weighted indexes with fixed number of constituents are available.
-The main function of the package, @code{indexComp(),} provides the derived
-index, suitable for analysis purposes.  The functions @code{indexUpdate(),}
-@code{indexMemberSelection()} and @code{indexMembersUpdate()} are components of
-@code{indexComp()} and enable one to construct and continuously update an index,
+The main function of the package, @code{indexComp}(), provides the derived
+index, suitable for analysis purposes.  The functions @code{indexUpdate}(),
+@code{indexMemberSelection}() and @code{indexMembersUpdate}() are components of
+@code{indexComp}() and enable one to construct and continuously update an index,
 e.g. for display on a website.  The methodology behind the functions provided
 gets introduced in Trimborn and Haerdle (2018)
 <doi:10.1016/j.jempfin.2018.08.004>.")
@@ -9553,7 +9550,7 @@ sums that follow given distributions, or (4) represent bill sponsorships in the
 US Congress <doi:10.31219/osf.io/ectms>.  It can also generate an incidence
 matrix from an adjacency matrix, or bipartite graph from a unipartite graph, via
 a social process mirroring team, group, or organization formation
-@code{<doi:10.48550/arXiv.2204.13670>.}")
+<doi:10.48550/@code{arXiv.2204.13670>}.")
     (license license:gpl3)))
 
 (define-public r-incidental
@@ -9726,12 +9723,12 @@ for updating the DTW distance) - especially for life data streams or subsequence
 matching, (2) the vector based implementation of DTW which is faster because no
 matrices are allocated (reduces the space complexity from a quadratic to a
 linear level in the number of observations) - for all runtime intensive DTW
-computations, (3) the subsequence matching algorithm @code{runDTW,} that
+computations, (3) the subsequence matching algorithm @code{runDTW}, that
 efficiently finds the k-NN to a query pattern in a long time series, and (4) C++
 in the heart.  For details about DTW see the original paper \"Dynamic programming
 algorithm optimization for spoken word recognition\" by Sakoe and Chiba (1978)
 <DOI:10.1109/TASSP.1978.1163055>.  For details about this package, Dynamic Time
-Warping and Incremental Dynamic Time Warping please see @code{\"IncDTW:} An R
+Warping and Incremental Dynamic Time Warping please see \"@code{IncDTW}: An R
 Package for Incremental Calculation of Dynamic Time Warping\" by Leodolter et al.
 (2021) <doi:10.18637/jss.v099.i09>.")
     (license license:gpl2+)))
@@ -9962,7 +9959,7 @@ analyzes the reader-average area under the receiver operating characteristic
 endpoints with U-statistics (binary performance and score differences) following
 the work by Gallas, Pennello, and Myers 2007 <doi:10.1364/JOSAA.24.000B70>.
 Package development and documentation is at
-@code{<https://github.com/DIDSR/iMRMC/tree/master>.}")
+<https://github.com/DIDSR/@code{iMRMC/tree/master>}.")
     (license license:cc0)))
 
 (define-public r-imputets
@@ -10534,7 +10531,7 @@ are provided.")
      "Support for implicit expansion of arrays in operations involving arrays of
 mismatching sizes.  This pattern is known as \"broadcasting\" in Python and
 \"implicit expansion\" in Matlab and is explained for example in the article
-\"Array programming with @code{NumPy\"} by C. R. Harris et al. (2020)
+\"Array programming with @code{NumPy}\" by C. R. Harris et al. (2020)
 <doi:10.1038/s41586-020-2649-2>.")
     (license license:expat)))
 
@@ -10843,8 +10840,8 @@ functions.  Preprint is available at @code{bioRxiv} (Weber et al., 2019
      "This package provides a comprehensive framework for bioinformatics exploratory
 analysis of bulk and single-cell T-cell receptor and antibody repertoires.  It
 provides seamless data loading, analysis and visualisation for AIRR (Adaptive
-Immune Receptor Repertoire) data, both bulk immunosequencing @code{(RepSeq)} and
-single-cell sequencing @code{(scRNAseq).} Immunarch implements most of the
+Immune Receptor Repertoire) data, both bulk immunosequencing (@code{RepSeq}) and
+single-cell sequencing (@code{scRNAseq}).  Immunarch implements most of the
 widely used AIRR analysis methods, such as: clonality analysis, estimation of
 repertoire similarities in distribution of clonotypes and gene segments,
 repertoire diversity analysis, annotation of clonotypes using external immune
@@ -11113,7 +11110,7 @@ of an image color distribution can be trimmed.  Near-black or near-white colors
 can be trimmed in RGB color space independent of trimming brightness or
 saturation distributions in HSV color space.  Creating sequential palettes also
 offers control over the order of HSV color dimensions to sort by.  This package
-differs from other related packages like @code{RImagePalette} in approaches to
+differs from other related packages like R@code{ImagePalette} in approaches to
 quantizing and extracting colors in images to assemble color palettes and the
 level of user control over palettes construction.")
     (license license:expat)))
@@ -11449,8 +11446,8 @@ through @code{WebGL} filters and performing basic high-pass/low-pass filtering."
     (description
      "This package provides a general-purpose workflow for image segmentation using
 @code{TensorFlow} models based on the U-Net architecture by Ronneberger et al.
-(2015) @code{<arXiv:1505.04597>} and the U-Net++ architecture by Zhou et al.
-(2018) @code{<arXiv:1807.10165>.} We provide pre-trained models for assessing
+(2015) <@code{arXiv:1505.04597>} and the U-Net++ architecture by Zhou et al.
+(2018) <@code{arXiv:1807.10165>}.  We provide pre-trained models for assessing
 canopy density and understory vegetation density from vegetation photos.  In
 addition, the package provides a workflow for easily creating model input and
 model architectures for general-purpose image segmentation based on grayscale or
@@ -11553,9 +11550,9 @@ background of the methods.")
     (synopsis
      "Aids in Processing and Plotting Data from a Lemna-Tec Scananalyzer")
     (description
-     "Note that @code{imageData} has been superseded by @code{growthPheno'.} The
+     "Note that @code{imageData} has been superseded by @code{growthPheno}'.  The
 package @code{growthPheno} incorporates all the functionality of
-@code{imageData} and has functionality not available in @code{imageData',} but
+@code{imageData} and has functionality not available in @code{imageData}', but
 some @code{imageData} functions have been renamed.  The @code{imageData} package
 is no longer maintained, but is retained for legacy purposes.")
     (license license:gpl2+)))
@@ -11609,7 +11606,7 @@ data set.")
 implementations of the paper Novel A* Path Planning Algorithm for Line
 Segmentation of Handwritten Documents by Surinta O. et al (2014)
 <doi:10.1109/ICFHR.2014.37> available at
-@code{<https://github.com/smeucci/LineSegm>,} an implementation of A Statistical
+<https://github.com/smeucci/@code{LineSegm>}, an implementation of A Statistical
 approach to line segmentation in handwritten documents by Arivazhagan M. et al
 (2007) <doi:10.1117/12.704538>, and a wrapper for an image segmentation
 technique to detect words in text lines as described in the paper Scale Space
@@ -11682,7 +11679,7 @@ Rafael Grompone von Gioi et al (2012).  The algorithm is explained at
     (description
      "An open source library for face detection in images.  Provides a pretrained
 convolutional neural network based on
-@code{<https://github.com/ShiqiYu/libfacedetection>} which can be used to detect
+<https://github.com/@code{ShiqiYu/libfacedetection>} which can be used to detect
 faces which have size greater than 10x10 pixels.")
     (license license:bsd-3)))
 
@@ -11750,7 +11747,7 @@ relevant points in images which are characteristic to the digital image.")
      "An implementation of the \"FAST-9\" corner detection algorithm explained in the
 paper FASTER and better: A machine learning approach to corner detection by
 Rosten E., Porter R. and Drummond T. (2008), available at
-@code{<arXiv:0810.2434>.} The package allows to detect corners in digital
+<@code{arXiv:0810.2434>}.  The package allows to detect corners in digital
 images.")
     (license license:bsd-2)))
 
@@ -11849,8 +11846,8 @@ by drawing additional points from a mixture of multivariate normal
 distributions, accepting points within tolerance intervals.  As the algorithm
 proceeds, the acceptance intervals are narrowed.  The algorithm returns a set of
 points and sampling weights that account for the adaptive sampling scheme.  For
-more details see Rutter, Ozik, @code{DeYoreo,} and Collier (2018)
-@code{<arXiv:1804.02090>.}")
+more details see Rutter, Ozik, @code{DeYoreo}, and Collier (2018)
+<@code{arXiv:1804.02090>}.")
     (license license:gpl3)))
 
 (define-public r-ilse
@@ -12020,8 +12017,8 @@ unknown for the system (Demolin-Leite, 2024) <DOI:10.1590/1519-6984.253218>.")
     (description
      "Computes individual contributions to the overall Gini and Theil's T and Theil's
 L measures and their decompositions by groups such as race, gender, national
-origin, with the three functions of @code{iGini(),} @code{iTheiT(),} and
-@code{iTheilL().} For details, see Tim F. Liao (2019)
+origin, with the three functions of @code{iGini}(), @code{iTheiT}(), and
+@code{iTheilL}().  For details, see Tim F. Liao (2019)
 <doi:10.1177/0049124119875961>.")
     (license license:gpl2)))
 
@@ -12146,7 +12143,7 @@ toolkit.")
 significant change over time in drug utilization, and ii) characterize common
 change over time patterns among the time series for multiple geographic areas.
 For reference, see below: 1.  Song, J., Carey, M., Zhu, H., Miao, H.,
-@code{RamÂ´Ä±rez,} J. C., & Wu, H. (2018) <doi:10.1504/IJCBDD.2018.10011910> 2.
+@code{RamÂ´Ä±rez}, J. C., & Wu, H. (2018) <doi:10.1504/IJCBDD.2018.10011910> 2.
 Wu, S., Wu, H. (2013) <doi:10.1186/1471-2105-14-6> 3.  Carey, M., Wu, S., Gan,
 G. & Wu, H. (2016) <doi:10.1016/j.idm.2016.07.001>.")
     (license license:gpl3+)))
@@ -12194,12 +12191,12 @@ bootstrapping procedure.")
     (synopsis "Integrative Gene Set Enrichment Analysis Approaches")
     (description
      "To integrate multiple GSEA studies, we propose a hybrid strategy,
-@code{iGSEA-AT,} for choosing random effects (RE) versus fixed effect (FE)
+@code{iGSEA-AT}, for choosing random effects (RE) versus fixed effect (FE)
 models, with an attempt to achieve the potential maximum statistical efficiency
 as well as stability in performance in various practical situations.  In
-addition to @code{iGSEA-AT,} this package also provides options to perform
-integrative GSEA with testing based on a FE model @code{(iGSEA-FE)} and testing
-based on a RE model @code{(iGSEA-RE).} The approaches account for different set
+addition to @code{iGSEA-AT}, this package also provides options to perform
+integrative GSEA with testing based on a FE model (@code{iGSEA-FE}) and testing
+based on a RE model (@code{iGSEA-RE}).  The approaches account for different set
 sizes when testing a database of gene sets.  The function is easy to use, and
 the three approaches can be applied to both binary and continuous phenotypes.")
     (license license:gpl2)))
@@ -12353,13 +12350,13 @@ faculty friendship network, domestic US flights network, etc.")
     (synopsis "Shiny Interface for Simple Data Management")
     (description
      "Launches a shiny application generating code to view tables in several ways,
-import/export tables, modify tables, make some basic graphics. @code{IGoR} is a
+import/export tables, modify tables, make some basic graphics.  I@code{GoR} is a
 graphic user interface designed to help beginners using simple functions around
-table management and exploration.  Inspired by Rcmdr', @code{IGoR} is a code
+table management and exploration.  Inspired by Rcmdr', I@code{GoR} is a code
 generator that, with simple inputs under a Shiny application, provides R code
 mainly built around the tidyverse or some packages in the direct line of the
 Mosaic project: the rio and ggformula packages.  The generated code doesn't
-depend on @code{IGoR} and can be manually modified by the user or copied
+depend on I@code{GoR} and can be manually modified by the user or copied
 elsewhere.")
     (license license:gpl2+)))
 
@@ -12537,8 +12534,8 @@ studies and summary data based Mendelian randomization.")
     (synopsis "Score Taxon-Level IgA Binding in IgA-Seq Experiments")
     (description
      "This package provides functions to calculate indices used to score
-immunoglobulin A @code{(IgA)} binding of bacteria in @code{IgA} sequencing
-@code{(IgA-Seq)} experiments.  This includes the original Kau and Palm indices
+immunoglobulin A (@code{IgA}) binding of bacteria in @code{IgA} sequencing
+(@code{IgA-Seq}) experiments.  This includes the original Kau and Palm indices
 and more recent methods as described in Jackson et al. (2020)
 <doi:10.1101/2020.08.19.257501>.  Additionally the package contains a function
 to simulate @code{IgA-Seq} data and an example experimental data set for method
@@ -12650,20 +12647,20 @@ Intuitionistic Fuzzy Synthetic Measure (IFSM) and Intuitionistic Fuzzy Technique
 for Order of Preference by Similarity to Ideal Solution (IFTOPSIS) for
 intuitionistic fuzzy data sets for multi-criteria decision making problems.
 References describing the methods: @code{JefmaÅski} (2020)
-<doi:10.1007/978-3-030-52348-0_4>; @code{JefmaÅski,} Roszkowska,
-@code{Kusterka-JefmaÅska} (2021) <doi:10.3390/e23121636>.")
+<doi:10.1007/978-3-030-52348-0_4>; @code{JefmaÅski}, Roszkowska,
+Kusterka-@code{JefmaÅska} (2021) <doi:10.3390/e23121636>.")
     (license license:gpl2+)))
 
 (define-public r-ifctools
   (package
     (name "r-ifctools")
-    (version "0.3.5")
+    (version "0.3.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ifctools" version))
               (sha256
                (base32
-                "0w7yx4yhszamaf7k3ixsarxr7n5shrhim8ih7bkrf1fhfqlsn1g0"))))
+                "1qw50vc3icdfchas1l4d3i3i1r0i0w0kj91xm4wkyj4fsl19qqam"))))
     (properties `((upstream-name . "ifctools")))
     (build-system r-build-system)
     (home-page "https://github.com/lbraglia/ifctools")
@@ -12723,8 +12720,8 @@ details about the method can be found in the paper by Cabello-Aguilar (2022)
     (synopsis "Tools for Imaging Flow Cytometry")
     (description
      "This package contains several tools to treat imaging flow cytometry data from
-@code{ImageStreamÂ®} and @code{FlowSightÂ®} cytometers @code{('AmnisÂ®',} part
-of @code{LuminexÂ®').} Provides an easy and simple way to read and write .fcs,
+@code{ImageStreamÂ®} and @code{FlowSightÂ®} cytometers ('@code{AmnisÂ®}', part
+of @code{LuminexÂ®}').  Provides an easy and simple way to read and write .fcs,
 .rif, .cif and .daf files.  Information such as masks, features, regions and
 populations set within these files can be retrieved for each single cell.  In
 addition, raw data such as images stored can also be accessed.  Users, may
@@ -12752,7 +12749,7 @@ AUTHORS for a list of copyright holders and authors.")
     (home-page "https://github.com/jpritikin/ifaTools")
     (synopsis "Toolkit for Item Factor Analysis with 'OpenMx'")
     (description
-     "Tools, tutorials, and demos of Item Factor Analysis using @code{OpenMx'.} This
+     "Tools, tutorials, and demos of Item Factor Analysis using @code{OpenMx}'.  This
 software is described in Pritikin & Falk (2020) <doi:10.1177/0146621620929431>.")
     (license license:agpl3+)))
 
@@ -13091,7 +13088,7 @@ create .msp files for untargeted analyses.")
      "Parser for mzML, mzXML, and netCDF Files (Mass Spectrometry Data)")
     (description
      "This package provides a tiny parser to extract mass spectra data and metadata
-table of mass spectrometry acquisition properties from @code{mzML,} @code{mzXML}
+table of mass spectrometry acquisition properties from @code{mzML}, @code{mzXML}
 and @code{netCDF} files introduced in <doi:10.1021/acs.jproteome.2c00120>.")
     (license license:expat)))
 
@@ -13235,7 +13232,7 @@ analysis with right censored data using a prior near-ignorant Dirichlet Process.
     (synopsis "Durability of Vaccine Efficacy Against SARS-CoV-2 Infection")
     (description
      "This package implements a nonparametric maximum likelihood method for assessing
-potentially time-varying vaccine efficacy (VE) against @code{SARS-CoV-2}
+potentially time-varying vaccine efficacy (VE) against SARS-@code{CoV-2}
 infection under staggered enrollment and time-varying community transmission,
 allowing crossover of placebo volunteers to the vaccine arm.  Lin, D. Y., Gu,
 Y., Zeng, D., Janes, H. E., and Gilbert, P. B. (2021) <doi:10.1093/cid/ciab630>.")
@@ -13373,6 +13370,34 @@ identity information in animal signals: Overview and performance of available
 identity metrics\".")
     (license license:cc0)))
 
+(define-public r-idmc
+  (package
+    (name "r-idmc")
+    (version "0.3.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "idmc" version))
+              (sha256
+               (base32
+                "1z5v3r2ckcw7bwpbysd1pw3x7b9fw3clyhrw8p70g29kpnxwpy3k"))))
+    (properties `((upstream-name . "idmc")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-magrittr
+                             r-lifecycle
+                             r-jsonlite
+                             r-httr
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ocha-dap/idmc")
+    (synopsis "Load and Wrangle IDMC Displacement Data")
+    (description
+     "Utilities to work with data from the Internal Displacement Monitoring Centre
+(IDMC), with convenient functions for loading events data from the IDMC API and
+transforming events data to daily displacement estimates.")
+    (license license:gpl3+)))
+
 (define-public r-idmact
   (package
     (name "r-idmact")
@@ -13460,10 +13485,10 @@ simulations on composite scores.")
 data.frames for chromosome data and optionally mark data.  Two styles of
 chromosomes can be used: without or with visible chromatids.  Supports
 micrometers, @code{cM} and Mb or any unit.  Three styles of centromeres are
-available: triangle, rounded and @code{inProtein;} and six styles of marks are
-available: square @code{(squareLeft),} dots, @code{cM} @code{(cMLeft),}
-@code{cenStyle,} @code{upArrow} @code{(downArrow),} @code{exProtein}
-@code{(inProtein);} its legend (label) can be drawn inline or to the right of
+available: triangle, rounded and @code{inProtein}; and six styles of marks are
+available: square (@code{squareLeft}), dots, @code{cM} (@code{cMLeft}),
+@code{cenStyle}, @code{upArrow} (@code{downArrow}), @code{exProtein}
+(@code{inProtein}); its legend (label) can be drawn inline or to the right of
 karyotypes.  Idiograms can also be plotted in concentric circles.  It is
 possible to calculate chromosome indices by Levan et al. (1964)
 <doi:10.1111/j.1601-5223.1964.tb01953.x>, karyotype indices of Watanabe et al.
@@ -13667,13 +13692,13 @@ Vandebroek M (2020) <doi:10.18637/jss.v096.i03>.")
 (define-public r-ideatools
   (package
     (name "r-ideatools")
-    (version "3.5.0")
+    (version "3.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IDEATools" version))
               (sha256
                (base32
-                "12z3rhjgi68gs5qgm7133qn5mqk8d47rsx4gj6zcpri8mvzw3ci1"))))
+                "05amichli11yny5idmvl0k28v910nscf89qgghl5cjpqzcwq9jr4"))))
     (properties `((upstream-name . "IDEATools")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -13841,7 +13866,7 @@ This app provides a user-friendly interface to statistical methods implemented
 by the nrba package.  Krenzke, Van de Kerckhove, and Mohadjer (2005)
 <http://www.asasrms.org/Proceedings/y2005/files/JSM2005-000572.pdf> and Lohr and
 Riddles (2016)
-@code{<https://www150.statcan.gc.ca/n1/en/pub/12-001-x/2016002/article/14677-eng.pdf?st=q7PyNsGR>}
+<https://www150.statcan.gc.ca/n1/en/pub/12-001-x/2016002/article/14677-eng.pdf?st=q7@code{PyNsGR>}
 provide an overview of the statistical methods implemented in the application.")
     (license license:gpl3+)))
 
@@ -14122,7 +14147,7 @@ smoothing.")
      "This package performs Invariant Coordinate Selection (ICS) (Tyler, Critchley,
 Duembgen and Oja (2009) <doi:10.1111/j.1467-9868.2009.00706.x>) and especially
 ICS for multivariate outlier detection with application to quality control
-(Archimbaud, Nordhausen, Ruiz-Gazen (2016) @code{<arXiv:1612.06118>)} using a
+(Archimbaud, Nordhausen, Ruiz-Gazen (2016) <@code{arXiv:1612.06118>}) using a
 shiny app.")
     (license license:gpl2+)))
 
@@ -14739,7 +14764,7 @@ Utility (DATSU) <https://datsu.ices.dk/web/index.aspx>.")
     (description
      "R interface to access the web services of the ICES (International Council for
 the Exploration of the Sea) DATRAS trawl survey database
-@code{<https://datras.ices.dk/WebServices/Webservices.aspx>.}")
+<https://datras.ices.dk/@code{WebServices/Webservices.aspx>}.")
     (license license:gpl2+)))
 
 (define-public r-icesconnect
@@ -14972,9 +14997,9 @@ of model fits and imputation of censored data.")
     (synopsis "Analyzing High-Throughput Single Cell Sequencing Data")
     (description
      "This package provides a toolkit that allows scientists to work with data from
-single cell sequencing technologies such as @code{scRNA-seq,} @code{scVDJ-seq,}
-@code{scATAC-seq,} CITE-Seq and Spatial Transcriptomics (ST).  Single (i) Cell R
-package @code{('iCellR')} provides unprecedented flexibility at every step of
+single cell sequencing technologies such as @code{scRNA-seq}, @code{scVDJ-seq},
+@code{scATAC-seq}, CITE-Seq and Spatial Transcriptomics (ST).  Single (i) Cell R
+package ('@code{iCellR}') provides unprecedented flexibility at every step of
 the analysis pipeline, including normalization, clustering, dimensionality
 reduction, imputation, visualization, and so on.  Users can design both
 unsupervised and supervised models to best suit their research.  In addition,
@@ -15038,7 +15063,7 @@ lambda, beta and either gamma or eta parameters.")
      "Estimate test-retest reliability for complex sampling strategies and extract
 variances using @code{IntraClass} Effect Decomposition.  Developed by Brandmaier
 et al. (2018) \"Assessing reliability in neuroimaging research through
-intra-class effect decomposition (ICED)\" @code{<doi:10.7554/eLife.35718>} Also
+intra-class effect decomposition (ICED)\" <doi:10.7554/@code{eLife.35718>} Also
 includes functions to simulate data based on sampling strategy.  Unofficial
 version release name: \"Good work squirrels\".")
     (license license:expat)))
@@ -15251,7 +15276,7 @@ by the icd package for finding comorbidities.")
 matrix of distances between trajectories.  The distances implemented are the
 extended Hausdorff distances (Min et al.  2007) <doi:10.1080/13658810601073315>
 and the discrete @code{FrÃ©chet} distance (Magdy et al.  2015)
-@code{<doi:10.1109/IntelCIS.2015.7397286>.}")
+<doi:10.1109/@code{IntelCIS.2015.7397286>}.")
     (license license:gpl2+)))
 
 (define-public r-iccforest
@@ -15273,7 +15298,7 @@ and the discrete @code{FrÃ©chet} distance (Magdy et al.  2015)
      "This package implements the conditional inference forest approach to modeling
 interval-censored survival data.  It also provides functions to tune the
 parameters and evaluate the model fit.  See Yao et al. (2019)
-@code{<arXiv:1901.04599>.}")
+<@code{arXiv:1901.04599>}.")
     (license license:gpl2+)))
 
 (define-public r-iccde
@@ -15292,15 +15317,15 @@ parameters and evaluate the model fit.  See Yao et al. (2019)
     (synopsis "Computation of the Double-Entry Intraclass Correlation")
     (description
      "The functions compute the double-entry intraclass correlation, which is an index
-of profile similarity (Furr, 2010; @code{McCrae,} 2008).  The double-entry
+of profile similarity (Furr, 2010; @code{McCrae}, 2008).  The double-entry
 intraclass correlation is a more precise index of the agreement of two
 empirically observed profiles than the often-used intraclass correlation
-@code{(McCrae,} 2008).  The function transforms profiles comprising correlations
+(@code{McCrae}, 2008).  The function transforms profiles comprising correlations
 according to the Fisher z-transformation before the double-entry intraclass
 correlation is calculated.  If the profiles comprise scores such as sum scores
 from various personality scales, it is recommended to standardize each
 individual score prior to computation of the double-entry intraclass correlation
-@code{(McCrae,} 2008).  See Furr (2010) <doi:10.1080/00223890903379134> or
+(@code{McCrae}, 2008).  See Furr (2010) <doi:10.1080/00223890903379134> or
 @code{McCrae} (2008) <doi:10.1080/00223890701845104> for details.")
     (license license:gpl2+)))
 
@@ -15410,7 +15435,7 @@ in a dependent variable that is attributed to group heterogeneity in slopes.")
 model when a binary covariate is measured intermittently.  Methods include
 functions to fit calibration models from interval-censored data and modified
 partial likelihood for the proportional hazard model, Nevo et al. (2018+)
-@code{<arXiv:1801.01529>.}")
+<@code{arXiv:1801.01529>}.")
     (license license:gpl2+)))
 
 (define-public r-icc-sample-size
@@ -15486,11 +15511,11 @@ desired confidence interval width.")
     (description
      "Implementation of the methodology proposed in Data-driven design of targeted
 gene panels for estimating immunotherapy biomarkers', Bradley and Cannings
-(2021) @code{<arXiv:2102.04296>.} This package allows the user to fit generative
-models of mutation from an annotated mutation dataset, and then further to
-produce tunable linear estimators of exome-wide biomarkers.  It also contains
-functions to simulate mutation annotated format (MAF) data, as well as to
-analyse the output and performance of models.")
+(2021) <@code{arXiv:2102.04296>}.  This package allows the user to fit
+generative models of mutation from an annotated mutation dataset, and then
+further to produce tunable linear estimators of exome-wide biomarkers.  It also
+contains functions to simulate mutation annotated format (MAF) data, as well as
+to analyse the output and performance of models.")
     (license license:expat)))
 
 (define-public r-icarus
@@ -15722,7 +15747,7 @@ results for different categories of taxa (e.g. core versus rare taxa).")
      "This package provides a simple wrapper around the ical.js library executing
 Javascript code via V8 (the Javascript engine driving the Chrome browser and
 Node.js and accessible via the V8 R package).  This package enables users to
-parse @code{iCalendar} files ('.ics', .ifb', @code{.iCal',} @code{.iFBf')} into
+parse @code{iCalendar} files ('.ics', .ifb', .@code{iCal}', .@code{iFBf}') into
 lists and data.frames to ultimately do statistics on events, meetings,
 schedules, birthdays, and the like.")
     (license license:expat)))
@@ -15742,7 +15767,7 @@ schedules, birthdays, and the like.")
     (home-page "https://cran.r-project.org/package=iC10TrainingData")
     (synopsis "Training Datasets for iC10 Package")
     (description
-     "Training datasets for @code{iC10;} which implements the classifier described in
+     "Training datasets for @code{iC10}; which implements the classifier described in
 the paper Genome-driven integrated classification of breast cancer validated in
 over 7,500 samples (Ali HR et al., Genome Biology 2014).  It uses copy number
 and/or expression form breast cancer data, trains a pamr classifier (Tibshirani
@@ -15875,7 +15900,7 @@ has a graphing function to perform radarplots that make great data visualization
 for this type of data.  Beliaeff, B., & Burgeot, T. (2002).
 <https://pubmed.ncbi.nlm.nih.gov/12069320/>.  Sanchez, W., Burgeot, T., &
 Porcher, J.-M. (2013).<doi:10.1007/s11356-012-1359-1>.  Devin, S., Burgeot, T.,
-@code{GiambÃ©rini,} L., Minguez, L., & Pain-Devin, S. (2014).
+@code{GiambÃ©rini}, L., Minguez, L., & Pain-Devin, S. (2014).
 <doi:10.1007/s11356-013-2169-9>.  Minato N. (2022).
 <https://minato.sip21c.org/msb/>.")
     (license license:gpl3)))
@@ -15965,7 +15990,7 @@ Insights service output.")
     (description
      "Simulation of the random evolution of structured population dynamics, called
 stochastic Individual Based Models (IBMs) (see e.g. @code{FerriÃ¨re} and Tran
-(2009) <doi:10.1051/proc/2009033>, Bansaye and @code{MÃ©lÃ©ard} (2015)
+(2009) <doi:10.1051/proc/2009033>, Bansaye and MÃ©@code{lÃ©ard} (2015)
 <doi:10.1007/978-3-319-21711-6>, Boumezoued (2016)).  The package allows users
 to simulate the random evolution of a population in which individuals are
 characterised by their date of birth, a set of attributes, and their potential
@@ -15995,7 +16020,7 @@ date of death.")
     (synopsis "IBM in-Database Analytics for R")
     (description
      "Functionality required to efficiently use R with IBM(R) Db2(R) Warehouse
-offerings (formerly IBM @code{dashDB(R))} and IBM Db2 for z/OS(R) in conjunction
+offerings (formerly IBM @code{dashDB(R})) and IBM Db2 for z/OS(R) in conjunction
 with IBM Db2 Analytics Accelerator for z/OS. Many basic and complex R operations
 are pushed down into the database, which removes the main memory boundary of R
 and allows to make full use of parallel processing in the underlying database.")
@@ -16119,7 +16144,7 @@ more technical details about the algorithms please refer below URLs.
     (description
      "Some basic functions to implement belief functions including: transformation
 between belief functions using the method introduced by Philippe Smets
-@code{<arXiv:1304.1122>,} evidence combination, evidence discounting,
+<@code{arXiv:1304.1122>}, evidence combination, evidence discounting,
 decision-making, and constructing masses.  Currently, thirteen combination rules
 and six decision rules are supported.  It can also be used to generate different
 types of random masses when working on belief combination and conflict
@@ -16253,7 +16278,7 @@ Montesinos-LÃ³pez et al. (2017) <doi:10.1534/g3.117.300309>.")
     (synopsis "R Wrapper for Istanbul Municipality Open Data Portal")
     (description
      "Call wrappers for Istanbul Metropolitan Municipality's Open Data Portal
-(Turkish: Ä°stanbul @code{BÃ¼yÃ¼kÅehir} Belediyesi AÃ§Ä±k Veri @code{PortalÄ±)}
+(Turkish: Ä°stanbul BÃ¼@code{yÃ¼kÅehir} Belediyesi AÃ§Ä±k Veri @code{PortalÄ±})
 at <https://data.ibb.gov.tr/en/>.")
     (license license:expat)))
 
@@ -16351,7 +16376,7 @@ robust statistics (Richetin, Costantini, Perugini, and Schonbrodt, 2015,
     (synopsis "Scoring Algorithm for the Implicit Association Test (IAT)")
     (description
      "This minimalist package is designed to quickly score raw data outputted from an
-Implicit Association Test (IAT; Greenwald, @code{McGhee,} & Schwartz, 1998)
+Implicit Association Test (IAT; Greenwald, @code{McGhee}, & Schwartz, 1998)
 <doi:10.1037/0022-3514.74.6.1464>.  IAT scores are calculated as specified by
 Greenwald, Nosek, and Banaji (2003) <doi:10.1037/0022-3514.85.2.197>.  Outputted
 values can be interpreted as effect sizes.  The input function consists of three
@@ -16369,7 +16394,7 @@ your IAT), the type of item within that category (dependent on your IAT), a
 dummy variable indicating whether the participant was correct or incorrect on
 that trial (0=correct, 1=incorrect), and the participantâs reaction time (in
 milliseconds).  Three sample datasets are included in this package (labeled
-IAT', @code{TooFastIAT',} and @code{BriefIAT')} to practice with.")
+IAT', @code{TooFastIAT}', and @code{BriefIAT}') to practice with.")
     (license license:expat)))
 
 (define-public r-iatanalytics
@@ -16389,7 +16414,7 @@ IAT', @code{TooFastIAT',} and @code{BriefIAT')} to practice with.")
      "Compute Effect Sizes and Reliability for Implicit Association Test (IAT) Data")
     (description
      "Quickly score raw data outputted from an Implicit Association Test (IAT;
-Greenwald, @code{McGhee,} & Schwartz, 1998) <doi:10.1037/0022-3514.74.6.1464>.
+Greenwald, @code{McGhee}, & Schwartz, 1998) <doi:10.1037/0022-3514.74.6.1464>.
 IAT scores are calculated as specified by Greenwald, Nosek, and Banaji (2003)
 <doi:10.1037/0022-3514.85.2.197>.  The output of this function is a data frame
 that consists of four rows containing the following information: (1) the overall

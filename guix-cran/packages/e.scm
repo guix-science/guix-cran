@@ -218,7 +218,7 @@ responses for new inputs.  The input variables of the datasets can be
 quantitative, qualitative/categorical or mixed.  The output variable of the
 datasets is a scalar (quantitative).  The optimization of the likelihood
 function can be chosen by the users (see the documentation of
-@code{EzGP_fit()).} The modeling method is published in @code{\"EzGP:}
+@code{EzGP_fit}()).  The modeling method is published in \"@code{EzGP}:
 Easy-to-Interpret Gaussian Process Models for Computer Experiments with Both
 Quantitative and Qualitative Factors\" by Qian Xiao, Abhyuday Mandal, C. Devon
 Lin, and Xinwei Deng (2022) <doi:10.1137/19M1288462>.")
@@ -468,8 +468,8 @@ reading exercises.  The functions allow some basic data preparations and code
 fixations as first and second pass.  First passes can be further devided into
 forward and reading.  The package further allows for aggregating fixation times
 per AOI or per AOI and per type of pass (first forward, first rereading,
-second).  These methods are based on @code{HyÃ¶nÃ¤,} Lorch, and Rinck (2003)
-<doi:10.1016/B978-044451020-4/50018-9> and @code{HyÃ¶nÃ¤,} and Lorch (2004)
+second).  These methods are based on @code{HyÃ¶nÃ¤}, Lorch, and Rinck (2003)
+<doi:10.1016/B978-044451020-4/50018-9> and @code{HyÃ¶nÃ¤}, and Lorch (2004)
 <doi:10.1016/j.learninstruc.2004.01.001>.  It is also possible to convert
 between metric length and visual degrees.")
     (license license:gpl3)))
@@ -567,7 +567,7 @@ Associated publications of the data sets: Fu et al. (2020)
      "There is no ophthalmic researcher who has not had headaches from the handling of
 visual acuity entries.  Different notations, untidy entries.  This shall now be
 a matter of the past.  Eye makes it as easy as pie to work with VA data - easy
-cleaning, easy conversion between Snellen, @code{logMAR,} ETDRS letters, and
+cleaning, easy conversion between Snellen, @code{logMAR}, ETDRS letters, and
 qualitative visual acuity shall never pester you again.  The eye package
 automates the pesky task to count number of patients and eyes, and can help to
 clean data with easy re-coding for right and left eyes.  It also contains
@@ -715,13 +715,13 @@ confidence bands for the extremograms.")
 (define-public r-extremestat
   (package
     (name "r-extremestat")
-    (version "1.5.5")
+    (version "1.5.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "extremeStat" version))
               (sha256
                (base32
-                "0jjarsb45xzdkdca76k7g06c25xq2r3q1ldcxyb0jf26j4lkhi37"))))
+                "1vnjirjiadc116if11caglgvkfkwgrqry8a16as6fzhmfh56wg5h"))))
     (properties `((upstream-name . "extremeStat")))
     (build-system r-build-system)
     (propagated-inputs (list r-renext
@@ -801,7 +801,7 @@ and Stupfler (2020) <arxiv:2007.08944>, Daouia et al. (2018)
 events, subject to calibration, is computed.  This index is originally designed
 for weather or climate forecasts, but it may be used in other forecasting
 contexts.  This is the implementation of the index in Taillardat et al. (2019)
-@code{<arXiv:1905.04022>.}")
+<@code{arXiv:1905.04022>}.")
     (license license:gpl3)))
 
 (define-public r-extremefit
@@ -906,7 +906,7 @@ per Beranger at al. (2021) <doi:10.1007/s10687-020-00376-1>.")
      "Maximum likelihood estimation of an extended class of row-column (RC)
 association models for two-dimensional contingency tables, which are formulated
 by a condition of reduced rank on a matrix of extended association parameters;
-see Forcina (2019) @code{<arXiv:1910.13848>.} These parameters are defined by
+see Forcina (2019) <@code{arXiv:1910.13848>}.  These parameters are defined by
 choosing the logit type for the row and column variables among four different
 options and a transformation derived from suitable divergence measures.")
     (license license:gpl2+)))
@@ -954,7 +954,7 @@ data.")
 astrobiologist.  Using known astronomical measurements and assumptions the
 probability of extraterrestrial life existence could be estimated.  Equations
 such as the Drake equation (1961) as stated in the paper of Molina (2019)
-@code{<arXiv:1912.01783>,} Seager (2013)
+<@code{arXiv:1912.01783>}, Seager (2013)
 <https://www.space.com/22648-drake-equation-alien-life-seager.html> and Foucher
 et al, (2017) <doi:10.3390/life7040040> are included in the extraterrestrial
 package.")
@@ -1037,7 +1037,7 @@ Birnbaum-Saunders and truncated normal as the distribution for the frailty
 terms.  For the basal model, it is considered a parametric approach based on the
 exponential, Weibull and the piecewise exponential distributions as well as a
 semiparametric approach.  For details, see Gallardo and Bourguignon (2022)
-@code{<arXiv:2206.12973>.}")
+<@code{arXiv:2206.12973>}.")
     (license license:gpl2+)))
 
 (define-public r-extracttraindata
@@ -1219,7 +1219,7 @@ criteria.")
     (synopsis "Fast, Reliable and Elegant Reproducible Research")
     (description
      "Analysis of experimental results and automatic report generation in both
-interactive HTML and @code{LaTeX.} This package ships with a rich interface for
+interactive HTML and @code{LaTeX}.  This package ships with a rich interface for
 data modeling and built in functions for the rapid application of statistical
 tests and generation of common plots and tables with publish-ready quality.")
     (license license:gpl2)))
@@ -1337,7 +1337,7 @@ approach\" by Hyndman, Koehler, Ord and Snyder (Springer, 2008).")
 stochastic blockmodel where nodes belonging to the same group create
 interactions and non-interactions of similar lengths.  This package implements
 the methodology described by R. Rastelli and M. Fop (2019)
-@code{<arXiv:1901.09828>.}")
+<@code{arXiv:1901.09828>}.")
     (license license:gpl3)))
 
 (define-public r-exprnet
@@ -1495,7 +1495,7 @@ Serrano, and Foster (2004) <doi:10.1890/02-4057>.")
     (synopsis "Streamlined Export of Graphs and Data Tables")
     (description
      "Easily export R graphs and statistical output to Microsoft Office /
-@code{LibreOffice',} Latex and HTML Documents, using sensible defaults that
+@code{LibreOffice}', Latex and HTML Documents, using sensible defaults that
 result in publication-quality output with simple, straightforward commands.
 Output to Microsoft Office is in editable @code{DrawingML} vector format for
 graphs, and can use corporate template documents for styling.  This enables the
@@ -1505,7 +1505,7 @@ flexible, and functions enable the currently showing R graph or the currently
 showing R stats object to be exported, but also allow the graphical or tabular
 output to be passed as objects.  The package relies on package officer for
 export to Office documents,and output files are also fully compatible with
-@code{LibreOffice'.} Base R', ggplot2 and lattice plots are supported, as well
+@code{LibreOffice}'.  Base R', ggplot2 and lattice plots are supported, as well
 as a wide variety of R stats objects, via wrappers to xtable(), broom::tidy()
 and stargazer(), including aov(), lm(), glm(), lme(), glmnet() and coxph() as
 well as matrices and data frames and many more...")
@@ -1714,7 +1714,7 @@ the EXPLAIN method see Robnik-Sikonja and Kononenko (2008)
 <doi:10.1109/TKDE.2007.190734>, and the IME method is described in Strumbelj and
 Kononenko (2010, JMLR, vol.  11:1-18).  All models in package CORElearn are
 natively supported, for other prediction models a wrapper function is provided
-and illustrated for models from packages @code{randomForest',} nnet', and
+and illustrated for models from packages @code{randomForest}', nnet', and
 e1071'.")
     (license license:gpl3)))
 
@@ -2304,7 +2304,7 @@ with a random subset of features selected from the feature space.  The final
 predicted class of the test point is determined by using a majority vote in the
 predicted classes given by all base models.  Amjad Ali, Muhammad Hamraz, Naz
 Gul, Dost Muhammad Khan, Saeed Aldahmani, Zardad Khan (2022)
-@code{<doi:10.48550/arXiv.2205.15111>.}")
+<doi:10.48550/@code{arXiv.2205.15111>}.")
     (license license:gpl3+)))
 
 (define-public r-exiftoolr
@@ -2327,9 +2327,9 @@ Gul, Dost Muhammad Khan, Saeed Aldahmani, Zardad Khan (2022)
      "Reads, writes, and edits EXIF and other file metadata using @code{ExifTool}
 <https://exiftool.org/>, returning read results as a data frame. @code{ExifTool}
 supports many different metadata formats including EXIF, GPS, IPTC, XMP, JFIF,
-@code{GeoTIFF,} ICC Profile, Photoshop IRB, @code{FlashPix,} AFCP and ID3,
+@code{GeoTIFF}, ICC Profile, Photoshop IRB, @code{FlashPix}, AFCP and ID3,
 Lyrics3, as well as the maker notes of many digital cameras by Canon, Casio,
-DJI, FLIR, @code{FujiFilm,} GE, @code{GoPro,} HP, JVC/Victor, Kodak, Leaf,
+DJI, FLIR, @code{FujiFilm}, GE, @code{GoPro}, HP, JVC/Victor, Kodak, Leaf,
 Minolta/Konica-Minolta, Motorola, Nikon, Nintendo, Olympus/Epson,
 Panasonic/Leica, Pentax/Asahi, Phase One, Reconyx, Ricoh, Samsung, Sanyo,
 Sigma/Foveon and Sony.")
@@ -2356,9 +2356,9 @@ Sigma/Foveon and Sony.")
 as a data frame. @code{ExifTool} is a platform-independent Perl library plus a
 command-line application for reading, writing and editing meta information in a
 wide variety of files. @code{ExifTool} supports many different metadata formats
-including EXIF, GPS, IPTC, XMP, JFIF, @code{GeoTIFF,} ICC Profile, Photoshop
-IRB, @code{FlashPix,} AFCP and ID3, as well as the maker notes of many digital
-cameras by Canon, Casio, FLIR, @code{FujiFilm,} GE, HP, JVC/Victor, Kodak, Leaf,
+including EXIF, GPS, IPTC, XMP, JFIF, @code{GeoTIFF}, ICC Profile, Photoshop
+IRB, @code{FlashPix}, AFCP and ID3, as well as the maker notes of many digital
+cameras by Canon, Casio, FLIR, @code{FujiFilm}, GE, HP, JVC/Victor, Kodak, Leaf,
 Minolta/Konica-Minolta, Motorola, Nikon, Nintendo, Olympus/Epson,
 Panasonic/Leica, Pentax/Asahi, Phase One, Reconyx, Ricoh, Samsung, Sanyo,
 Sigma/Foveon and Sony.")
@@ -2438,7 +2438,7 @@ and thus keeping memory usage constant.")
     (description
      "Routines for Bayesian estimation and analysis of dynamic quantile linear models
 utilizing the extended asymmetric Laplace error distribution, also known as
-extended dynamic quantile linear models @code{(exDQLM)} described in Barata et
+extended dynamic quantile linear models (@code{exDQLM}) described in Barata et
 al (2020) <doi:10.1214/21-AOAS1497>.")
     (license license:expat)))
 
@@ -2580,11 +2580,11 @@ Mike Bostock.")
     (synopsis "Creating Tables of Excluded Observations")
     (description
      "Instead of counting observations before and after a subset() call, the
-@code{ExclusionTable()} function reports the number before and after each
+@code{ExclusionTable}() function reports the number before and after each
 subset() call together with the number of observations that have been excluded.
 This is especially useful in observational studies for keeping track how many
 observations have been excluded for each in-/ or exclusion criteria.  You just
-need to provide @code{ExclusionTable()} with a dataset and a list of logical
+need to provide @code{ExclusionTable}() with a dataset and a list of logical
 filter statements.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
@@ -2762,7 +2762,7 @@ package.")
     (description
      "Computes confidence intervals for the exceedance probability of normally
 distributed estimators.  Currently only supports general linear models.  Please
-see Segal (2019) @code{<arXiv:1803.03356>} for more information.")
+see Segal (2019) <@code{arXiv:1803.03356>} for more information.")
     (license license:gpl3+)))
 
 (define-public r-exceedancetools
@@ -2853,7 +2853,7 @@ based on R/exams exercises.")
      "Randomized multiple-select and single-select question generation for the
 @code{MyLearn} teaching and learning platform.  Question templates in the form
 of the R/exams package (see <http://www.r-exams.org/>) are transformed into XML
-format required by @code{MyLearn'.}")
+format required by @code{MyLearn}'.")
     (license license:gpl3)))
 
 (define-public r-exams
@@ -2878,7 +2878,7 @@ format, possibly including R code for dynamic generation of exercise elements.
 Exercise types include single-choice and multiple-choice questions, arithmetic
 problems, string questions, and combinations thereof (cloze).  Output formats
 include standalone files (PDF, HTML, Docx, ODT, ...), Moodle XML, QTI 1.2, QTI
-2.1, Blackboard, Canvas, @code{OpenOlat,} ILIAS, @code{TestVision,} Particify,
+2.1, Blackboard, Canvas, @code{OpenOlat}, ILIAS, @code{TestVision}, Particify,
 ARSnova, Kahoot!, Grasple, and TCExam.  In addition to fully customizable PDF
 exams, a standardized PDF format (NOPS) is provided that can be printed,
 scanned, and automatically evaluated.")
@@ -2957,7 +2957,7 @@ R.")
      "Computes exact p-values for multinomial goodness-of-fit tests based on multiple
 test statistics, namely, Pearson's chi-square, the log-likelihood ratio and the
 probability mass statistic.  Implements the algorithm detailed in Resin (2020)
-@code{<arXiv:2008.12682>.} Estimates based on the classical asymptotic
+<@code{arXiv:2008.12682>}.  Estimates based on the classical asymptotic
 chi-square approximation or Monte-Carlo simulation can also be computed.")
     (license license:gpl2+)))
 
@@ -3062,6 +3062,40 @@ independent or dependent proportions.")
      "Calculates exact tests and confidence intervals for one-sample binomial and one-
 or two-sample Poisson cases (see Fay (2010) <doi:10.32614/rj-2010-008>).")
     (license license:gpl3)))
+
+(define-public r-exactamente
+  (package
+    (name "r-exactamente")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "exactamente" version))
+              (sha256
+               (base32
+                "0z6r8asbimqr4wvcns5gn9z3bzzy6wqdfibxjyd0avdfx8qw15cl"))))
+    (properties `((upstream-name . "exactamente")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shinythemes r-shiny r-ggplot2))
+    (home-page "https://github.com/mightymetrika/exactamente")
+    (synopsis "Explore the Exact Bootstrap Method")
+    (description
+     "Researchers often use the bootstrap to understand a sample drawn from a
+population with unknown distribution.  The exact bootstrap method is a practical
+tool for exploring the distribution of small sample size data.  For a sample of
+size n, the exact bootstrap method generates the entire space of n to the power
+of n resamples and calculates all realizations of the selected statistic.  The
+exactamente package includes functions for implementing two bootstrap methods,
+the exact bootstrap and the regular bootstrap.  The exact_bootstrap() function
+applies the exact bootstrap method following methodologies outlined in
+Kisielinska (2013) <doi:10.1007/s00180-012-0350-0>.  The regular_bootstrap()
+function offers a more traditional bootstrap approach, where users can determine
+the number of resamples.  The e_vs_r() function allows users to directly compare
+results from these bootstrap methods.  To augment user experience, exactamente
+includes the function exactamente_app() which launches an interactive shiny web
+application.  This application facilitates exploration and comparison of the
+bootstrap methods, providing options for modifying various parameters and
+visualizing results.")
+    (license license:expat)))
 
 (define-public r-exact2x2
   (package
@@ -3316,7 +3350,7 @@ infrastructure for summaries, visualizations, and predictions.")
 value theory.  The first classifier is based on the generalized Pareto
 distribution (GPD) and the second classifier is based on the generalized extreme
 value (GEV) distribution.  For details, see Vignotto, E., & Engelke, S. (2018)
-@code{<arXiv:1808.09902>.}")
+<@code{arXiv:1808.09902>}.")
     (license license:gpl3)))
 
 (define-public r-evt0
@@ -3392,7 +3426,7 @@ or combining Gaussian random fuzzy numbers).")
      "Facilitates univariate and multivariate analysis of evolutionary sequences of
 phenotypic change.  The package extends the modeling framework available in the
 @code{paleoTS} package.  Please see
-@code{<https://klvoje.github.io/evoTS/index.html>} for information about the
+<https://klvoje.github.io/@code{evoTS/index.html>} for information about the
 package and the implemented models.")
     (license license:gpl2+)))
 
@@ -3456,7 +3490,7 @@ phylogenetic analyses and analyze macroevolutionary parameter outputs from clock
     (home-page "https://github.com/antonio-pgarcia/evoper")
     (synopsis "Evolutionary Parameter Estimation for 'Repast Simphony' Models")
     (description
-     "The @code{EvoPER,} Evolutionary Parameter Estimation for Individual-based Models
+     "The @code{EvoPER}, Evolutionary Parameter Estimation for Individual-based Models
 is an extensible package providing optimization driven parameter estimation
 methods using metaheuristics and evolutionary computation techniques (Particle
 Swarm Optimization, Simulated Annealing, Ant Colony Optimization for continuous
@@ -4041,7 +4075,7 @@ al. (2019) <doi:10.1257/aer.20180609>.")
     (home-page "https:://data-zoo.de")
     (synopsis "Event Study Analysis")
     (description
-     "Perform Event Studies from through our @code{<https://EventStudyTools.com>}
+     "Perform Event Studies from through our <https://@code{EventStudyTools.com>}
 Application Programming Interface, parse the results, visualize it, and / or use
 the results in further analysis.")
     (license license:expat)))
@@ -4222,7 +4256,7 @@ detection.")
      "Event dataset repository including both real-life and artificial event logs.
 They can be used in combination with functionalities provided by the
 @code{bupaR} packages.  Janssenswillen et al. (2020)
-@code{<http://ceur-ws.org/Vol-2703/paperTD7.pdf>.}")
+<http://ceur-ws.org/Vol-2703/@code{paperTD7.pdf>}.")
     (license license:expat)))
 
 (define-public r-event
@@ -4411,7 +4445,7 @@ measurement error (individually or in combination; @code{VanderWeele} & Ding
 (2017) <doi:10.7326/M16-2607>; Smith & @code{VanderWeele} (2019)
 <doi:10.1097/EDE.0000000000001032>; @code{VanderWeele} & Li (2019)
 <doi:10.1093/aje/kwz133>; Smith & @code{VanderWeele} (2021)
-@code{<arXiv:2005.02908>).} Also conducts sensitivity analyses for unmeasured
+<@code{arXiv:2005.02908>}).  Also conducts sensitivity analyses for unmeasured
 confounding in meta-analyses (Mathur & @code{VanderWeele} (2020a)
 <doi:10.1080/01621459.2018.1529598>; Mathur & @code{VanderWeele} (2020b)
 <doi:10.1097/EDE.0000000000001180>) and for additive measures of effect
@@ -4541,7 +4575,7 @@ Treatment Rules under randomized data.  The provided metrics include Population
 Average Value (PAV), Population Average Prescription Effect (PAPE), Area Under
 Prescription Effect Curve (AUPEC).  It also provides the tools to analyze
 Individualized Treatment Rules under budget constraints.  Detailed reference in
-Imai and Li (2019) @code{<arXiv:1905.05389>.}")
+Imai and Li (2019) <@code{arXiv:1905.05389>}.")
     (license license:gpl2+)))
 
 (define-public r-evalest
@@ -4774,7 +4808,7 @@ data, labels, and metadata.  On top of the core functionality, data search and
 data description/comparison functions are also provided.  Use
 <https://github.com/alekrutkowski/eurodata_codegen> â a point-and-click app
 for rapid and easy generation of richly-commented R code â to import a
-Eurostat dataset or its subset (based on the @code{eurodata::importData()}
+Eurostat dataset or its subset (based on the eurodata::@code{importData}()
 function).")
     (license license:gpl2)))
 
@@ -4963,7 +4997,7 @@ covariates.  Can be used all purposes.")
     (synopsis
      "Creates Safety Results Summary in XML to Upload to EudraCT, or ClinicalTrials.gov")
     (description
-     "The remit of the European Clinical Trials Data Base @code{(EudraCT}
+     "The remit of the European Clinical Trials Data Base (@code{EudraCT}
 <https://eudract.ema.europa.eu/> ), or @code{ClinicalTrials.gov}
 <https://clinicaltrials.gov/>, is to provide open access to summaries of all
 registered clinical trial results; thus aiming to prevent non-reporting of
@@ -4998,8 +5032,8 @@ hand.")
     (synopsis "An Euclidean View of Center and Spread")
     (description
      "Illustrates the concepts developed in Sarkar and Rashid (2019, ISSN:0025-5742)
-@code{<http://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiH4deL3q3xAhWX73MBHR_wDaYQFnoECAUQAw&url=https%3A%2F%2Fwww.indianmathsociety.org.in%2Fmathstudent-part-2-2019.pdf&usg=AOvVaw3SY--3T6UAWUnH5-Nj6bSc>.}
-This package helps a user guess four things (mean, MD, scaled MSD, and RMSD)
+<http://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2@code{ahUKEwiH4deL3q3xAhWX73MBHR_wDaYQFnoECAUQAw&url=https%3A%2F%2Fwww.indianmathsociety.org.in%2Fmathstudent-part-2-2019.pdf&usg=AOvVaw3SY--3T6UAWUnH5-Nj6bSc>}.
+ This package helps a user guess four things (mean, MD, scaled MSD, and RMSD)
 before they get the SD. 1) The package displays the Empirical Cumulative
 Distribution Function (ECDF) of the given data.  The user must choose the value
 of the mean by equating the areas of two colored (blue and green) regions.  The
@@ -5069,7 +5103,7 @@ delivery, as presented in F. E. Benth, S. Koekebakker, and F. Ollmar (2007)
 (2008) <doi:10.1142/6811>.  Portfolio insurance trading strategies for price
 risk management in the forward market, see F. Black (1976)
 <doi:10.1016/0304-405X(76)90024-6>, T. Bjork (2009)
-@code{<https://EconPapers.repec.org/RePEc:oxp:obooks:9780199574742>,} F. Black
+<https://@code{EconPapers.repec.org/RePEc:oxp:obooks:9780199574742>}, F. Black
 and R. W. Jones (1987) <doi:10.3905/jpm.1987.409131> and H. E. Leland (1980)
 <http://www.jstor.org/stable/2327419>.")
     (license license:expat)))
@@ -5108,7 +5142,7 @@ independence between variables that are possibly structured and of different
 nature.  Currently, the package covers functions and graphs as structured
 covariates.  It builds upon partykit to provide functionalities for fitting,
 printing, plotting, and predicting with Energy Trees.  Energy Trees are
-described in Giubilei et al. (2022) @code{<arXiv:2207.04430>.}")
+described in Giubilei et al. (2022) <@code{arXiv:2207.04430>}.")
     (license license:gpl3)))
 
 (define-public r-etrader
@@ -5181,8 +5215,8 @@ tutorial is shown in website).")
      "Utility Functions to Execute Standard Extract/Transform/Load Operations (using Package 'ff') on Large Data")
     (description
      "This package provides functions to facilitate the use of the ff package in
-interaction with big data in SQL databases (e.g. in Oracle', @code{MySQL',}
-@code{PostgreSQL',} Hive') by allowing easy importing directly into ffdf objects
+interaction with big data in SQL databases (e.g. in Oracle', @code{MySQL}',
+@code{PostgreSQL}', Hive') by allowing easy importing directly into ffdf objects
 using DBI', RODBC and RJDBC'.  Also contains some basic utility functions to do
 fast left outer join merging based on match', factorisation of data and a basic
 function for re-coding vectors.")
@@ -5284,28 +5318,6 @@ Pardo-de-Santayana, 2008.  Cultural Importance Indices: A Comparative Analysis
 Based on the Useful Wild Plants of Southern Cantabria (Northern Spain) 1.
 Economic Botany, 62(1), 24-39. <doi:10.1007/s12231-007-9004-5>.")
     (license (list license:gpl2+ license:gpl3+))))
-
-(define-public r-ether
-  (package
-    (name "r-ether")
-    (version "0.1.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ether" version))
-              (sha256
-               (base32
-                "1f3phh5vdfvlxqrpzsn6ysz0q3mbhr862fzsd3sp8m8qhry86cbx"))))
-    (properties `((upstream-name . "ether")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rmpfr r-jsonlite r-httr r-dplyr))
-    (home-page "https://cran.r-project.org/package=ether")
-    (synopsis "Interaction with the 'Ethereum' Blockchain")
-    (description
-     "Interacts with the open-source, public Ethereum <https://www.ethereum.org/>
-blockchain.  It provides a distributed computing platform via smart contracts.
-This package provides functions which interrogate blocks and transactions in the
-Ethereum blockchain.")
-    (license license:gpl2)))
 
 (define-public r-etc
   (package
@@ -5711,7 +5723,7 @@ specifically developed for ML estimation.  There are included optimization
 procedures such as nlminb and optim from base package, and DEoptim Mullen (2011)
 <doi: 10.18637/jss.v040.i06>.  Standard errors are estimated with
 @code{numDeriv} Gilbert (2011)
-@code{<https://CRAN.R-project.org/package=numDeriv>} or the option Hessian =
+<https://CRAN.R-project.org/package=@code{numDeriv>} or the option Hessian =
 TRUE of optim function.")
     (license license:gpl3)))
 
@@ -5793,7 +5805,7 @@ weights computed from the Akaike Information Criterion (AIC) or the Bayesian
 Information Criterion (BIC) and following Burnham & Anderson (2004,
 <doi:10.1177/0049124104268644>) recommendations, or to pseudo-BMA weights
 computed from the WAIC or the LOO-IC of models fitted with brms and following
-Yao et al. (2017, @code{<arXiv:1704.02030v3>).}")
+Yao et al. (2017, <@code{arXiv:1704.02030v3>}).")
     (license license:expat)))
 
 (define-public r-estcrm
@@ -5874,13 +5886,13 @@ official statistics of the Japanese government.")
 @code{estadÃ­stica} descriptiva e inferencial.  Las funciones contenidas en el
 paquete estadistica cubren los conceptos @code{bÃ¡sicos} estudiados en un curso
 introductorio.  Muchos conceptos son ilustrados con @code{grÃ¡ficos}
-@code{dinÃ¡micos} o web apps para facilitar su @code{comprensiÃ³n.} This package
-aims to help the teaching-learning process of descriptive and inferential
-statistics.  The functions contained in the package estadistica cover the basic
-concepts studied in a statistics introductory course.  Many concepts are
-illustrated with dynamic graphs or web apps to make the understanding easier.
-See: Esteban et al. (2005, ISBN: 9788497323741), Newbold et al.(2019,
-ISBN:9781292315034 ), Murgui et al. (2002, ISBN:9788484424673) .")
+@code{dinÃ¡micos} o web apps para facilitar su @code{comprensiÃ³n}.  This
+package aims to help the teaching-learning process of descriptive and
+inferential statistics.  The functions contained in the package estadistica
+cover the basic concepts studied in a statistics introductory course.  Many
+concepts are illustrated with dynamic graphs or web apps to make the
+understanding easier.  See: Esteban et al. (2005, ISBN: 9788497323741), Newbold
+et al.(2019, ISBN:9781292315034 ), Murgui et al. (2002, ISBN:9788484424673) .")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-essurvey
@@ -5932,7 +5944,7 @@ interpretation.  The only assumption for the method is that data points are
 independent and identically distributed, so it applies to fairly general
 situations, including continuous distributions, discrete distributions, and
 mixtures of both.  For details see Li, Munk, Sieling and Walther (2016)
-@code{<arXiv:1612.07216>.}")
+<@code{arXiv:1612.07216>}.")
     (license license:gpl3)))
 
 (define-public r-essentials
@@ -5972,8 +5984,8 @@ numbers (numeric and complex alike).")
     (synopsis "Efficient Stepwise Selection in Decomposable Models")
     (description
      "An implementation of the ESS algorithm following Amol Deshpande, Minos
-Garofalakis, Michael I Jordan (2013) @code{<arXiv:1301.2267>.} The ESS algorithm
-is used for model selection in decomposable graphical models.")
+Garofalakis, Michael I Jordan (2013) <@code{arXiv:1301.2267>}.  The ESS
+algorithm is used for model selection in decomposable graphical models.")
     (license license:gpl3)))
 
 (define-public r-esreg
@@ -6033,17 +6045,16 @@ formats, and retrieve the code to reproduce the plot.")
 (define-public r-espadon
   (package
     (name "r-espadon")
-    (version "1.3.2")
+    (version "1.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "espadon" version))
               (sha256
                (base32
-                "1zvl6lwwgndqavsf0sdkaavsyhl490iybbi1w3cwcpkc3g461v3c"))))
+                "0r46wr3i8q66j4vyz9qsxkg7fimc6hdac1ja48wyd2rpmgimsvhv"))))
     (properties `((upstream-name . "espadon")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp
-                             r-shinywidgets
+    (propagated-inputs (list r-shinywidgets
                              r-shiny
                              r-rvcg
                              r-rgl
@@ -6110,7 +6121,7 @@ This hierarchy evolved out of my personal experience in working with ESM data.")
     (home-page "https://github.com/EDiLD/esmisc")
     (synopsis "Misc Functions of Eduard SzÃ¶cs")
     (description
-     "Misc functions programmed by Eduard @code{SzÃ¶cs.} Provides read_regnie() to
+     "Misc functions programmed by Eduard @code{SzÃ¶cs}.  Provides read_regnie() to
 read gridded precipitation data from German Weather Service (DWD, see
 <http://www.dwd.de/> for more information).")
     (license license:expat)))
@@ -6167,6 +6178,29 @@ variance are estimated from the posterior predictive distribution.  See Keller
 and Rice (2017) <doi:10.1093/aje/kwx225> for more details.")
     (license license:gpl2+)))
 
+(define-public r-esg
+  (package
+    (name "r-esg")
+    (version "1.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ESG" version))
+              (sha256
+               (base32
+                "1r454bn7wwc8nv9f1z0dfgn6kj9ac35b3i19xx385jhlqsm1akgw"))))
+    (properties `((upstream-name . "ESG")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=ESG")
+    (synopsis "Package for Asset Projection")
+    (description
+     "Presents a \"Scenarios\" class containing general parameters, risk parameters and
+projection results.  Risk parameters are gathered together into a
+@code{ParamsScenarios} sub-object.  The general process for using this package
+is to set all needed parameters in a Scenarios object, use the
+@code{customPathsGeneration} method to proceed to the projection, then use
+xxx_@code{PriceDistribution}() methods to get asset prices.")
+    (license license:gpl2+)))
+
 (define-public r-esemifar
   (package
     (name "r-esemifar")
@@ -6217,10 +6251,10 @@ Feng, Y., (2021) <https://ideas.repec.org/p/pdn/ciepap/145.html>.")
     (description
      "This package provides a collection of functions developed to support the
 tutorial on using Exploratory Structural Equiation Modeling (ESEM) (Asparouhov &
-@code{MuthÃ©n,} 2009) <https://www.statmodel.com/download/EFACFA810.pdf>) with
+@code{MuthÃ©n}, 2009) <https://www.statmodel.com/download/EFACFA810.pdf>) with
 Longitudinal Study of Australian Children (LSAC) dataset (Mohal et al., 2023)
 <doi:10.26193/QR4L6Q>.  The package uses tidyverse','psych',
-@code{lavaan','semPlot} and provides additional functions to conduct ESEM. The
+lavaan','@code{semPlot} and provides additional functions to conduct ESEM. The
 package provides general functions to complete ESEM, including esem_c(),
 creation of target matrix (if it is used) make_target(), generation of the
 Confirmatory Factor Analysis (CFA) model syntax esem_cfa_syntax().  A sample
@@ -6254,7 +6288,7 @@ interim analysis.  The decision rule chooses the endpoint with the lower
 estimated required sample size.  Additionally, the sample size is reassessed
 using the estimated event probabilities and correlation between endpoints.  The
 implemented design is proposed in Bofill Roig, M., GÃ³mez Melis, G., Posch, M.,
-and Koenig, F. (2022). @code{<doi:10.48550/arXiv.2206.09639>.}")
+and Koenig, F. (2022). <doi:10.48550/@code{arXiv.2206.09639>}.")
     (license license:expat)))
 
 (define-public r-eseis
@@ -6344,7 +6378,7 @@ designs with sample size re-estimation presented in Lin et al. (2021) <doi:
 10.1016/j.cct.2020.106216>.  In details, three-proposed trial designs are
 provided, including the AED1-SSR (or ES1-SSR), AED2-SSR (or ES2-SSR) and
 AED3-SSR (or ES3-SSR).  In addition, this package also contains several widely
-used adaptive designs, such as the Marker Sequential Test @code{(MaST)} design
+used adaptive designs, such as the Marker Sequential Test (@code{MaST}) design
 proposed Freidlin et al. (2014) <doi:10.1177/1740774513503739>, the adaptive
 enrichment designs without early stopping (AED or ES), the sample size
 re-estimation procedure (SSR) based on the conditional power proposed by
@@ -6390,7 +6424,7 @@ difference in conditional mean outcome under control for the RCT compared to the
 combined experiment.  In order to help include truly unbiased external data in
 the analysis, the estimated average treatment effect on a negative control
 outcome may be added to the bias term in the selector.  For more details about
-this method, please see Dang et al. (2022) @code{<arXiv:2210.05802>.}")
+this method, please see Dang et al. (2022) <@code{arXiv:2210.05802>}.")
     (license license:gpl3)))
 
 (define-public r-escalation
@@ -6428,7 +6462,7 @@ this method, please see Dang et al. (2022) @code{<arXiv:2210.05802>.}")
 provide implementations of many dose-finding clinical trial designs, including
 the continual reassessment method (CRM) by O'Quigley et al. (1990)
 <doi:10.2307/2531628>, the toxicity probability interval (TPI) design by Ji et
-al. (2007) <doi:10.1177/1740774507079442>, the modified TPI @code{(mTPI)} design
+al. (2007) <doi:10.1177/1740774507079442>, the modified TPI (@code{mTPI}) design
 by Ji et al. (2010) <doi:10.1177/1740774510382799>, the Bayesian optimal
 interval design (BOIN) by Liu & Yuan (2015) <doi:10.1111/rssc.12089>,
 @code{EffTox} by Thall & Cook (2004) <doi:10.1111/j.0006-341X.2004.00218.x>; the
@@ -6538,7 +6572,7 @@ density of Fasiolo et al. (2018) <doi:10.1214/18-EJS1433>.")
 high-dimensional or not.  It tries to first estimate the number of factors using
 bi-cross-validation and then estimate the latent factor matrix and the noise
 variances.  For more information about the method, see Art B. Owen and Jingshu
-Wang 2015 archived article on factor model @code{(<arXiv:1503.03515>).}")
+Wang 2015 archived article on factor model (<@code{arXiv:1503.03515>}).")
     (license license:gpl2+)))
 
 (define-public r-es-dif
@@ -6595,8 +6629,8 @@ food sources, uplift potential, waterbodies, etc.) can be used to influence the
 trajectories.  Unterfinger M (2018). \"3-D Trajectory Simulation in Movement
 Ecology: Conditional Empirical Random Walk\".  Master's thesis, University of
 Zurich.
-@code{<https://www.geo.uzh.ch/dam/jcr:6194e41e-055c-4635-9807-53c5a54a3be7/MasterThesis_Unterfinger_2018.pdf>.}
-Technitis G, Weibel R, Kranstauber B, Safi K (2016). \"An algorithm for
+<https://www.geo.uzh.ch/dam/jcr:6194e41e-055c-4635-9807-53c5a54a3be7/@code{MasterThesis_Unterfinger_2018.pdf>}.
+ Technitis G, Weibel R, Kranstauber B, Safi K (2016). \"An algorithm for
 empirically informed random trajectory generation between two endpoints\".
 GIScience 2016: Ninth International Conference on Geographic Information
 Science, 9, online. <doi:10.5167/uzh-130652>.")
@@ -6652,7 +6686,7 @@ and residuals.")
     (synopsis "Exploratory Reduced Reparameterized Unified Model Estimation")
     (description
      "Perform a Bayesian estimation of the exploratory reduced reparameterized unified
-model @code{(ErRUM)} described by Culpepper and Chen (2018)
+model (@code{ErRUM}) described by Culpepper and Chen (2018)
 <doi:10.3102/1076998618791306>.")
     (license license:gpl2+)))
 
@@ -6974,8 +7008,8 @@ functions for hazard calculation and timing calibration.")
      "Calculates marginal effects and conducts process analysis in exponential family
 random graph models (ERGM).  Includes functions to conduct mediation and
 moderation analyses and to diagnose multicollinearity.  URL:
-@code{<https://github.com/sduxbury/ergMargins>.} @code{BugReports:}
-@code{<https://github.com/sduxbury/ergMargins/issues>.} Duxbury, Scott W (2021)
+<https://github.com/sduxbury/@code{ergMargins>}. @code{BugReports}:
+<https://github.com/sduxbury/@code{ergMargins/issues>}.  Duxbury, Scott W (2021)
 <doi:10.1177/0049124120986178>.  Long, J. Scott, and Sarah Mustillo (2018)
 <doi:10.1177/0049124118799374>.  Mize, Trenton D. (2019) <doi:10.15195/v6.a4>.
 Karlson, Kristian Bernt, Anders Holm, and Richard Breen (2012)
@@ -7005,7 +7039,7 @@ Karlson, Kristian Bernt, Anders Holm, and Richard Breen (2012)
      "This package provides a set of extensions for the ergm package to fit weighted
 networks whose edge weights are ranks.  See Krivitsky and Butts (2017)
 <doi:10.1177/0081175017692623> and Krivitsky, Hunter, Morris, and Klumb (2021)
-@code{<arXiv:2106.04997>.}")
+<@code{arXiv:2106.04997>}.")
     (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
 
 (define-public r-ergm-multi
@@ -7039,7 +7073,7 @@ networks whose edge weights are ranks.  See Krivitsky and Butts (2017)
 multilayer/multiplex/multirelational networks and samples of multiple networks.
 ergm.multi is a part of the Statnet suite of packages for network analysis.  See
 Krivitsky, Koehly, and Marcum (2020) <doi:10.1007/s11336-020-09720-7> and
-Krivitsky, Coletti, and Hens (2022) @code{<doi:10.48550/arXiv.2202.03685>.}")
+Krivitsky, Coletti, and Hens (2022) <doi:10.48550/@code{arXiv.2202.03685>}.")
     (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
 
 (define-public r-ergm-ego
@@ -7093,7 +7127,7 @@ See Krivitsky and Morris (2017) <doi:10.1214/16-AOAS1010>.")
      "This package provides a set of extensions for the ergm package to fit weighted
 networks whose edge weights are counts.  See Krivitsky (2012)
 <doi:10.1214/12-EJS696> and Krivitsky, Hunter, Morris, and Klumb (2021)
-@code{<arXiv:2106.04997>.}")
+<@code{arXiv:2106.04997>}.")
     (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
 
 (define-public r-ergm
@@ -7160,7 +7194,7 @@ problem within the expectile regression framework.  The ERFE model estimates the
 regressor effects on the expectiles of the response distribution.  The ERFE
 estimate corresponds to the classical fixed-effect within-estimator when the
 asymmetric point is 0.5.  The paper by Barry, Oualkacha, and Charpentier (2021,
-@code{<arXiv:2108.04737>)} gives more details about the ERFE model.")
+<@code{arXiv:2108.04737>}) gives more details about the ERFE model.")
     (license license:gpl3)))
 
 (define-public r-erer
@@ -7417,7 +7451,7 @@ are obtained by a (parametric) bootstrap approach.  For this bootstrap censoring
 is assumed to be exponentially distributed and estimates are obtained from the
 datasets under consideration.  All details can be found in K.Moellenhoff and
 A.Tresch: Survival analysis under non-proportional hazards: investigating
-non-inferiority or equivalence in time-to-event data @code{<arXiv:2009.06699>.}")
+non-inferiority or equivalence in time-to-event data <@code{arXiv:2009.06699>}.")
     (license license:gpl2+)))
 
 (define-public r-equil2
@@ -7611,7 +7645,7 @@ on the pooled sample.  The test even works for sample sizes as small as 2.")
     (description
      "Tests the equality of two covariance matrices, used in paper \"Two sample tests
 for high dimensional covariance matrices.\" Li and Chen (2012)
-@code{<arXiv:1206.0917>.}")
+<@code{arXiv:1206.0917>}.")
     (license license:gpl2)))
 
 (define-public r-eql
@@ -7725,7 +7759,7 @@ constituent models of the ensemble use disjoint subsets (phalanxes) of
 explanatory variables.  We provide an implementation of the phalanx-formation
 algorithm.  Please see Tomal et al. (2015) <doi:10.1214/14-AOAS778>, Tomal et
 al. (2016) <doi:10.1021/acs.jcim.5b00663>, and Tomal et al. (2019)
-@code{<arXiv:1706.06971>} for more details.")
+<@code{arXiv:1706.06971>} for more details.")
     (license license:gpl3)))
 
 (define-public r-epwshiftr
@@ -7929,7 +7963,7 @@ whisker packages.")
      "Analysis and visualization of similarities between epilepsy ontologies based on
 text mining results by comparing ranked lists of co-occurring drug terms in the
 @code{BioASQ} corpus.  The ranked result lists of neurological drug terms
-co-occurring with terms from the epilepsy ontologies @code{EpSO,} ESSO, EPILONT,
+co-occurring with terms from the epilepsy ontologies @code{EpSO}, ESSO, EPILONT,
 EPISEM and FENICS undergo further analysis.  The source data to create the
 ranked lists of drug names is produced using the text mining workflows described
 in Mueller, Bernd and Hagelstein, Alexandra (2016)
@@ -8008,8 +8042,8 @@ kidney injury (AKI), anemia, and chronic kidney disease (CKD).")
     (synopsis "Endogenous Perturbation Analysis of Cancer")
     (description
      "Estimates sparse matrices A or G using fast lasso regression from @code{mRNA}
-transcript levels Y and CNA profiles U. Two models are provided, @code{EPoC} A
-where AY + U + R = 0 and @code{EPoC} G where Y = GU + E, the matrices R and E
+transcript levels Y and CNA profiles U. Two models are provided, E@code{PoC} A
+where AY + U + R = 0 and E@code{PoC} G where Y = GU + E, the matrices R and E
 are so far treated as noise.  For details see the manual page of lassoshooting
 and the article Rebecka JÃ¶rnsten, Tobias Abenius, Teresia Kling, @code{LinnÃ©a}
 Schmidt, Erik Johansson, @code{TorbjÃ¶rn} E M Nordling, Bodil Nordlander, Chris
@@ -8133,7 +8167,7 @@ Swiderski and ML Zelditch (2022) <doi:10.1111/2041-210X.13914>.")
      "Toolkit for Using Whole Building Simulation Program 'EnergyPlus'")
     (description
      "This package provides a rich toolkit of using the whole building simulation
-program @code{EnergyPlus'(<https://energyplus.net>),} which enables programmatic
+program @code{EnergyPlus'(<https://energyplus.net>}), which enables programmatic
 navigation, modification of @code{EnergyPlus} models and makes it less painful
 to do parametric simulations and analysis.")
     (license license:expat)))
@@ -8354,7 +8388,7 @@ interaction trend at the mean level and the variance component analysis.")
     (description
      "Builds contingency tables that cross-tabulate multiple categorical variables and
 also calculates various summary measures.  Export to a variety of formats is
-supported, including: HTML', @code{LaTeX',} and Excel'.")
+supported, including: HTML', @code{LaTeX}', and Excel'.")
     (license license:gpl2)))
 
 (define-public r-epistemicgametheory
@@ -8414,13 +8448,13 @@ Prevention and Control.")
 (define-public r-episensr
   (package
     (name "r-episensr")
-    (version "1.2.0")
+    (version "1.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "episensr" version))
               (sha256
                (base32
-                "0nnl4sz7gmi09ik5g4qrh8ipv6rlskvn4sqdqj8nn47wxli52wdi"))))
+                "0jah8lwmgc7nfacw3nzlnfmrmh1hfnwpjdsvy928pvgh0rsamxvc"))))
     (properties `((upstream-name . "episensr")))
     (build-system r-build-system)
     (propagated-inputs (list r-triangle
@@ -8475,13 +8509,13 @@ M.P, and Fink A.K. \"Applying Quantitative Bias Analysis to Epidemiologic Data\"
     (synopsis
      "Ensemble Based Machine Learning Approach for Predicting Methylation States")
     (description
-     "DNA methylation @code{(6mA)} is a major epigenetic process by which alteration
+     "DNA methylation (6@code{mA}) is a major epigenetic process by which alteration
 in gene expression took place without changing the DNA sequence.  Predicting
 these sites in-vitro is laborious, time consuming as well as costly.  This
 @code{EpiSemble} package is an in-silico pipeline for predicting DNA sequences
-containing the @code{6mA} sites.  It uses an ensemble-based machine learning
+containing the 6@code{mA} sites.  It uses an ensemble-based machine learning
 approach by combining Support Vector Machine (SVM), Random Forest (RF) and
-Gradient Boosting approach to predict the sequences with @code{6mA} sites in it.
+Gradient Boosting approach to predict the sequences with 6@code{mA} sites in it.
  This package has been developed by using the concept of Chen et al. (2019)
 <doi:10.1093/bioinformatics/btz015>.")
     (license license:gpl3)))
@@ -8829,13 +8863,13 @@ the coursera Epidemics Massive Online Open Course
 (define-public r-epilps
   (package
     (name "r-epilps")
-    (version "1.1.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EpiLPS" version))
               (sha256
                (base32
-                "1axamip6f0dvl6zawqg6a35r4cbg0q4p70fpjl04p35c0gs3jgg2"))))
+                "098kmc88x1dhxgbg24vhcqg5302gbbsv8y2g3vcz2yxa9qgl5yl6"))))
     (properties `((upstream-name . "EpiLPS")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
@@ -8845,18 +8879,12 @@ the coursera Epidemics Massive Online Open Course
                              r-epiestim
                              r-coda))
     (native-inputs (list r-knitr))
-    (home-page "<https://github.com/oswaldogressani/EpiLPS>")
+    (home-page "<https://epilps.com/>")
     (synopsis
-     "Bayesian Tool for Fast and Flexible Estimation of the Reproduction Number")
+     "Fast and Flexible Bayesian Tool for Estimating Epidemiological Parameters")
     (description
-     "Estimation of the instantaneous reproduction number with Laplacian-P-splines
-following the methodology of Gressani et al. (2022)
-<doi:10.1371/journal.pcbi.1010618>.  The negative binomial distribution is used
-to model the time series of incidence data.  Two methods are available for
-inference : (1) a sampling-free approach based on a maximum a posteriori
-calibration of the hyperparameter vector and (2) a fully stochastic approach
-with a Metropolis-adjusted Langevin algorithm for efficient sampling of the
-posterior distribution.")
+     "Estimation of epidemiological parameters with Laplacian-P-splines following the
+methodology of Gressani et al. (2022) <doi:10.1371/journal.pcbi.1010618>.")
     (license license:gpl3)))
 
 (define-public r-epikit
@@ -9326,7 +9354,7 @@ wavelet-based auto-regressive neural network architecture.  This method provides
 additional support of exogenous variables and also generates confidence
 interval.  This package provides EWNet model for time series forecasting based
 on the algorithm by Panja, et al. (2022) and Panja, et al. (2023)
-@code{<arXiv:2206.10696>} <doi:10.1016/j.chaos.2023.113124>.")
+<@code{arXiv:2206.10696>} <doi:10.1016/j.chaos.2023.113124>.")
     (license license:gpl2+)))
 
 (define-public r-epibasix
@@ -9465,7 +9493,7 @@ concentrations.  More information of the model can be found at
     (synopsis
      "EPE's 4MD Model to Forecast the Adoption of Distributed Generation")
     (description
-     "EPE's (Empresa de Pesquisa @code{EnergÃ©tica)} 4MD (Modelo de Mercado da Micro e
+     "EPE's (Empresa de Pesquisa @code{EnergÃ©tica}) 4MD (Modelo de Mercado da Micro e
 @code{MinigeraÃ§Ã£o} @code{DistribuÃ­da} - Micro and Mini Distributed Generation
 Market Model) model to forecast the adoption of Distributed Generation.  Given
 the user's assumptions, it is possible to estimate how many consumer units will
@@ -9473,7 +9501,7 @@ have distributed generation in Brazil over the next 10 years, for example.  In
 addition, it is possible to estimate the installed capacity, the amount of
 investments that will be made in the country and the monthly energy contribution
 of this type of generation.
-@code{<https://www.epe.gov.br/sites-pt/publicacoes-dados-abertos/publicacoes/PublicacoesArquivos/publicacao-689/topico-639/NT_Metodologia_4MD_PDE_2032_VF.pdf>.}")
+<https://www.epe.gov.br/sites-pt/publicacoes-dados-abertos/publicacoes/@code{PublicacoesArquivos/publicacao-689/topico-639/NT_Metodologia_4MD_PDE_2032_VF.pdf>}.")
     (license license:gpl3+)))
 
 (define-public r-epcr
@@ -9499,13 +9527,13 @@ of this type of generation.
     (home-page "https://cran.r-project.org/package=ePCR")
     (synopsis "Ensemble Penalized Cox Regression for Survival Prediction")
     (description
-     "The top-performing ensemble-based Penalized Cox Regression @code{(ePCR)}
+     "The top-performing ensemble-based Penalized Cox Regression (@code{ePCR})
 framework developed during the DREAM 9.5 @code{mCRPC} Prostate Cancer Challenge
-@code{<https://www.synapse.org/ProstateCancerChallenge>} presented in Guinney J,
+<https://www.synapse.org/@code{ProstateCancerChallenge>} presented in Guinney J,
 Wang T, Laajala TD, et al. (2017) <doi:10.1016/S1470-2045(16)30560-5> is
 provided here-in, together with the corresponding follow-up work.  While
 initially aimed at modeling the most advanced stage of prostate cancer,
-metastatic Castration-Resistant Prostate Cancer @code{(mCRPC),} the modeling
+metastatic Castration-Resistant Prostate Cancer (@code{mCRPC}), the modeling
 framework has subsequently been extended to cover also the non-metastatic form
 of advanced prostate cancer (CRPC).  Readily fitted ensemble-based model
 S4-objects are provided, and a simulated example dataset based on a real-life
@@ -9549,7 +9577,7 @@ effects of thermal sensitivity and the exposition to different trends in
 environmental temperature on the abundance dynamics of ectotherms populations.
 It allows an easy implementation of the possible consequences of warming at
 global and local scales, constituting a useful tool for understanding the
-extinction risk of populations. (VÃ­ctor @code{SaldaÃ±a-NÃºÃ±ez,} Fernando
+extinction risk of populations. (VÃ­ctor @code{SaldaÃ±a-NÃºÃ±ez}, Fernando
 CÃ³rdova-Lepe, & Felipe N. Moreno-GÃ³mez, 2021) <doi:10.5281/zenodo.5034087>.")
     (license license:gpl3)))
 
@@ -9616,7 +9644,7 @@ systems.")
 functions from the EPANET programmer's toolkit as R functions so that basic or
 customized simulations can be carried out from R. The package uses EPANET
 version 2.2 from Open Water Analytics
-@code{<https://github.com/OpenWaterAnalytics/EPANET/releases/tag/v2.2>.}")
+<https://github.com/@code{OpenWaterAnalytics/EPANET/releases/tag/v2.2>}.")
     (license license:expat)))
 
 (define-public r-epandist
@@ -9753,7 +9781,7 @@ to extract colors from all types of figures and pdf files.")
     (synopsis
      "Wildlife Mortality Estimator for Low Fatality Rates and Imperfect Detection")
     (description
-     "Evidence of Absence software @code{(EoA)} is a user-friendly application for
+     "Evidence of Absence software (@code{EoA}) is a user-friendly application for
 estimating bird and bat fatalities at wind farms and designing search protocols.
  The software is particularly useful in addressing whether the number of
 fatalities has exceeded a given threshold and what search parameters are needed
@@ -9893,7 +9921,7 @@ the user and, 4) to estimate niche overlap among the species.")
     (description
      "Set of functions to keep track and find objects in user-defined environments by
 identifying environments by name --which cannot be retrieved with the built-in
-function @code{environmentName().} The package also provides functionality to
+function @code{environmentName}().  The package also provides functionality to
 obtain simplified information about function calling chains and to get an
 object's memory address.")
     (license (list license:gpl2+ license:gpl3+))))
@@ -10000,7 +10028,8 @@ Loos, M., Gerber, C., Corona, F., Hollender, J., Singer, H. (2015)
                 "1rk7y24lld16zk7f3aak3zf9i3xd27l8mffcvlxwqi7cpl1pqa9b"))))
     (properties `((upstream-name . "enviGCMS")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcolorbrewer
+    (propagated-inputs (list r-rdisop
+                             r-rcolorbrewer
                              r-mixtools
                              r-igraph
                              r-data-table
@@ -10272,7 +10301,7 @@ exponentially fast.")
     (description
      "This package contains methods for data analysis in entropic perspective.  These
 entropic perspective methods are nonparametric, and perform better on
-non-ordinal data.  Currently, the package has a function @code{HeatMap()} for
+non-ordinal data.  Currently, the package has a function @code{HeatMap}() for
 visualizing distributional characteristics among multiple populations (groups).")
     (license license:gpl3)))
 
@@ -10642,7 +10671,7 @@ being constrained by system RAM.")
     (description
      "An implementation of the clustering methods of categorical data discussed in
 Amiri, S., Clarke, B., and Clarke, J. (2015).  Clustering categorical data via
-ensembling dissimilarity matrices.  Preprint @code{<arXiv:1506.07930>.}")
+ensembling dissimilarity matrices.  Preprint <@code{arXiv:1506.07930>}.")
     (license license:gpl2+)))
 
 (define-public r-enrichwith
@@ -10775,7 +10804,7 @@ movement of a \"mass\" represented by a raster), interpolating across a time
 series of rasters, and use of spatially imprecise records.  The heart of the
 package is a set of \"training\" functions which automatically optimize model
 complexity based number of available occurrences.  These algorithms include
-@code{MaxEnt,} @code{MaxNet,} boosted regression trees/gradient boosting
+@code{MaxEnt}, @code{MaxNet}, boosted regression trees/gradient boosting
 machines, generalized additive models, generalized linear models, natural
 splines, and random forests.  To enhance interoperability with other modeling
 packages, no new classes are created.  The package works with PROJ6 geodetic
@@ -10973,7 +11002,7 @@ multivariate time series which is more practical in real data application.
 Fourthly, it is designed for online detection (Phase II), which is central for
 real time surveillance of stream data.  For more information please refer to O.
 Okhrin and Y.F. Xu (2017)
-@code{<https://github.com/YafeiXu/working_paper/raw/master/CPM102.pdf>.}")
+<https://github.com/@code{YafeiXu/working_paper/raw/master/CPM102.pdf>}.")
     (license license:gpl3+)))
 
 (define-public r-endtoend
@@ -11198,7 +11227,7 @@ factor.")
     (description
      "This package implements a segmentation algorithm for multiple change-point
 detection in univariate time series using the Ensemble Binary Segmentation of
-Korkas (2020) @code{<arXiv:2003.03649>.}")
+Korkas (2020) <@code{arXiv:2003.03649>}.")
     (license license:gpl2+)))
 
 (define-public r-encdna
@@ -11246,46 +11275,6 @@ character vectors.  Also contains routines to portably read and write UTF-8
 encoded text files, to convert all strings in an object to UTF-8', and to create
 character vectors with various encodings.")
     (license license:gpl3)))
-
-(define-public r-emur
-  (package
-    (name "r-emur")
-    (version "2.4.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "emuR" version))
-              (sha256
-               (base32
-                "1vwfzs02ga07z1risj4kc0iqqcwkx3wym996lp8kdipfclr4dr8i"))))
-    (properties `((upstream-name . "emuR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-wrassp
-                             r-v8
-                             r-uuid
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-shiny
-                             r-rstudioapi
-                             r-rsqlite
-                             r-rlang
-                             r-readr
-                             r-purrr
-                             r-mime
-                             r-jsonlite
-                             r-httr
-                             r-httpuv
-                             r-dplyr
-                             r-dbi
-                             r-cli
-                             r-base64enc))
-    (home-page "https://github.com/IPS-LMU/emuR")
-    (synopsis "Main Package of the EMU Speech Database Management System")
-    (description
-     "Provide the EMU Speech Database Management System (EMU-SDMS) with database
-management, data extraction, data preparation and data visualization facilities.
- See <https://ips-lmu.github.io/The-EMU-SDMS-Manual/> for more details.")
-    (license license:gpl2+)))
 
 (define-public r-emulator
   (package
@@ -11508,7 +11497,7 @@ analysis and editing of clinical and epidemiological data.")
 Operating Characteristic curve) and @code{pAUC} (partial area under ROC curve),
 from the given two samples of test data with disease/healthy subjects.  The
 method used is based on two sample empirical likelihood, as described in
-@code{<https://www.ms.uky.edu/~mai/research/eAUC1.pdf>.}")
+<https://www.ms.uky.edu/~mai/research/@code{eAUC1.pdf>}.")
     (license license:gpl2+)))
 
 (define-public r-emplik2
@@ -11711,7 +11700,7 @@ work with emojis when they are in strings.")
     (home-page "https://cran.r-project.org/package=EMMREML")
     (synopsis "Fitting Mixed Models with Known Covariance Structures")
     (description
-     "The main functions are emmreml', and @code{emmremlMultiKernel'.} emmreml solves
+     "The main functions are emmreml', and @code{emmremlMultiKernel}'.  emmreml solves
 a mixed model with known covariance structure using the EMMA algorithm.
 @code{emmremlMultiKernel} is a wrapper for emmreml to handle multiple random
 components with known covariance structures.  The function
@@ -11825,7 +11814,7 @@ Flack LK (2010) <doi:10.1109/TPAMI.2009.149> Baek J, @code{McLachlan} GJ (2011)
      "Mixture Model-Based Approach to the Clustering of Microarray Expression Data")
     (description
      "This package provides unsupervised selection and clustering of microarray data
-using mixture models.  Following the methods described in @code{McLachlan,} Bean
+using mixture models.  Following the methods described in @code{McLachlan}, Bean
 and Peel (2002) <doi:10.1093/bioinformatics/18.3.413> a subset of genes are
 selected based one the likelihood ratio statistic for the test of one versus two
 components when fitting mixtures of t-distributions to the expression data for
@@ -12294,7 +12283,7 @@ thermal reaction norms.  See <doi:10.7717/peerj.8451> for tsd functions; see
     (description
      "Predictors can be converted to one or more numeric representations using a
 variety of methods.  Effect encodings using simple generalized linear models
-@code{<arXiv:1611.09477>} or nonlinear models @code{<arXiv:1604.06737>} can be
+<@code{arXiv:1611.09477>} or nonlinear models <@code{arXiv:1604.06737>} can be
 used.  There are also functions for dimension reduction and other approaches.")
     (license license:expat)))
 
@@ -12362,13 +12351,13 @@ package.  The core module of this package is developed in C++'.")
 (define-public r-emayili
   (package
     (name "r-emayili")
-    (version "0.7.17")
+    (version "0.7.18")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "emayili" version))
               (sha256
                (base32
-                "065h7cp6z02k1frv06qbczaqn79jnf6amlvs1ivzihps0jfz49j6"))))
+                "0q38lkvp2298jkwlfr6b90ikvkzf31d2v56pdfxz2xf1qmf5p7b2"))))
     (properties `((upstream-name . "emayili")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -12610,13 +12599,13 @@ event loss tables, using a Poisson frequency and Beta severity distribution.")
 (define-public r-elt
   (package
     (name "r-elt")
-    (version "1.6")
+    (version "1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ELT" version))
               (sha256
                (base32
-                "0vbrf912m6f80sqyyrp0z4jhq38fnmcy6hgwy0qh8wgk3p1aqm7c"))))
+                "1ngpcrnzkx9svwglfd6pzz46frjvvckcfbm5g5myxi63raljfc8c"))))
     (properties `((upstream-name . "ELT")))
     (build-system r-build-system)
     (propagated-inputs (list r-xlsx r-locfit r-latticeextra r-lattice))
@@ -12898,7 +12887,7 @@ Guang-Bin Huang, Qin-Yu Zhu, Chee-Kheong Siew (2006), Elsevier B.V,
      "Given the omnipresence of the assumption of elliptical symmetry, it is essential
 to be able to test whether that assumption actually holds true or not for the
 data at hand.  This package provides several statistical tests for elliptical
-symmetry that are described in Babic et al. (2021) @code{<arXiv:2011.12560v2>.}")
+symmetry that are described in Babic et al. (2021) <@code{arXiv:2011.12560v2>}.")
     (license license:gpl3)))
 
 (define-public r-elliptcopulas
@@ -12960,7 +12949,7 @@ effect of factor.")
     (synopsis
      "Linear, Logistic and Generalized Linear Models Regressions for the EnvWAS/EWAS Approach")
     (description
-     "Tool for Environment-Wide Association Studies @code{(EnvWAS} / EWAS) which are
+     "Tool for Environment-Wide Association Studies (@code{EnvWAS} / EWAS) which are
 repeated analysis.  It includes three functions.  One function for linear
 regression, a second for logistic regression and a last one for generalized
 linear models.")
@@ -12969,13 +12958,13 @@ linear models.")
 (define-public r-elitism
   (package
     (name "r-elitism")
-    (version "1.0.4")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "elitism" version))
               (sha256
                (base32
-                "0n5g1nd1dd5wc76qa2va1lyxahg9p062l8wdqzq43ah6943pjzgr"))))
+                "1apqzcj3nnir8f448ainmkrw8qj6pfi7d163wy0pkgzsh0gjv8r0"))))
     (properties `((upstream-name . "elitism")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -12992,9 +12981,9 @@ procedures.  In this collection, the conservative Hochberg procedure, linear
 time Hommel procedures, asymptotic Rom procedure, Gou-Tamhane-Xi-Rom procedures,
 and Quick procedures are all developed in recent five years since 2014.  The
 package name \"elitism\" is an acronym of \"e\"quipment for \"l\"ogarithmic and
-l\"i\"near \"ti\"me \"s\"tepwise \"m\"ultiple hypothesis testing.  Version 1.0.0 was
-released on June 26, 2019.  See Gou, J., and Zhang, F. (2020).  Quick multiple
-test procedures and p-value adjustments.  Technical report.")
+l\"i\"near \"ti\"me \"s\"tepwise \"m\"ultiple hypothesis testing.  See Gou, J. (2022),
+\"Quick multiple test procedures and p-value adjustments\", Statistics in
+Biopharmaceutical Research 14(4), 636-650.")
     (license license:gpl3)))
 
 (define-public r-elist
@@ -13039,12 +13028,12 @@ comprehension.")
     (description
      "An alternative to Exploratory Factor Analysis (EFA) for metrical data in R.
 Drawing on characteristics of classical test theory, Exploratory Likert Scaling
-@code{(ELiS)} supports the user exploring multiple one-dimensional data
+(E@code{LiS}) supports the user exploring multiple one-dimensional data
 structures.  In common research practice, however, EFA remains the go-to method
 to uncover the (underlying) structure of a data set.  Orthogonal dimensions and
 the potential of overextraction are often accepted as side effects.  As
 described in MÃ¼ller-Schneider (2001) <doi:10.1515/zfsoz-2001-0404>),
-@code{ELiS} confronts these problems.  As a result, elisr provides the platform
+E@code{LiS} confronts these problems.  As a result, elisr provides the platform
 to fully exploit the exploratory potential of the multiple scaling approach
 itself.")
     (license license:gpl3+)))
@@ -13307,7 +13296,7 @@ city, and electoral zones.")
     (description
      "Perform ballot-polling Bayesian audits for ranked voting elections using
 Dirichlet-tree prior distributions.  Everest et al. (2022)
-@code{<arXiv:2206.14605>,} @code{<arXiv:2209.03881>.}")
+<@code{arXiv:2206.14605>}, <@code{arXiv:2209.03881>}.")
     (license license:gpl3)))
 
 (define-public r-elections
@@ -13490,9 +13479,9 @@ settings where these curves are only sparsely and irregularly observed.  It uses
 a novel approach for elastic shape mean estimation, where planar curves are
 treated as complex functions and a full Procrustes mean is estimated from the
 corresponding smoothed Hermitian covariance surface.  This is combined with the
-methods for elastic mean estimation proposed in Steyer, @code{StÃ¶cker,}
+methods for elastic mean estimation proposed in Steyer, @code{StÃ¶cker},
 Greven	(2022) <doi:10.1111/biom.13706>.  See @code{StÃ¶cker} et.  al. (2022)
-@code{<arXiv:2203.10522>} for details.")
+<@code{arXiv:2203.10522>} for details.")
     (license license:gpl3+)))
 
 (define-public r-elasso
@@ -13536,7 +13525,7 @@ least absolute shrinkage and selection operator for regression model.")
 on the elastic distance defined in the square-root-velocity framework.  For more
 details on this framework see Srivastava and Klassen (2016,
 <doi:10.1007/978-1-4939-4020-2>).  For more theoretical details on our methods
-and algorithms see Steyer et al. (2021, @code{<arXiv:2104.11039>).}")
+and algorithms see Steyer et al. (2021, <@code{arXiv:2104.11039>}).")
     (license license:gpl3)))
 
 (define-public r-elaborator
@@ -13615,7 +13604,7 @@ estimators, quantile (qdiff) and cumulative distribution functions (ddiff),
 probability-probability (P-P) and quantile-quantile (Q-Q) plots as well as
 receiver operating characteristic (ROC) curves.  EL calculations are based on J.
 Valeinis, E. Cers (2011)
-@code{<http://home.lu.lv/~valeinis/lv/petnieciba/EL_TwoSample_2011.pdf>.}")
+<http://home.lu.lv/~valeinis/lv/petnieciba/EL_@code{TwoSample_2011.pdf>}.")
     (license license:gpl2+)))
 
 (define-public r-eks
@@ -13642,7 +13631,7 @@ Valeinis, E. Cers (2011)
     (description
      "Extensions of the kernel smoothing functions from the ks package for
 compatibility with the tidyverse and geospatial ecosystems
-@code{<doi:10.48550/arXiv.2203.01686>.}")
+<doi:10.48550/@code{arXiv.2203.01686>}.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-ekmcmc
@@ -13734,7 +13723,7 @@ identification of interactions, measuring of variable importance, measuring of
 interaction importance, explanation of single prediction with break down plots
 (based on @code{xgboostExplainer} and @code{iBreakDown} packages).  To download
 the @code{LightGBM} use the following link:
-@code{<https://github.com/Microsoft/LightGBM>.} EIX is a part of the
+<https://github.com/Microsoft/@code{LightGBM>}.  EIX is a part of the
 @code{DrWhy.AI} universe.")
     (license license:gpl2)))
 
@@ -13871,17 +13860,17 @@ affiliated with EIOPA. The data is accessed through a REST API available at
 (define-public r-einsum
   (package
     (name "r-einsum")
-    (version "0.1.0")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "einsum" version))
               (sha256
                (base32
-                "01930c38hkbqhn8d5g7jfhr0mrdi077rg0kkbp5kagxcqx6jrg7w"))))
+                "06q9kmzgxkpvm3krn1w1nfy8h2xrbmxc9cd5b4mm7yx829r2jf09"))))
     (properties `((upstream-name . "einsum")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-mathjaxr r-glue))
-    (home-page "https://cran.r-project.org/package=einsum")
+    (home-page "https://const-ae.github.io/einsum/")
     (synopsis "Einstein Summation")
     (description
      "The summation notation suggested by Einstein (1916)
@@ -13986,7 +13975,7 @@ multivariate analysis.  Of course, eikosograms are also suited to discrete
 multivariate analysis with each variate in turn appearing as the response.  This
 makes it better suited than Mosaic plots to discrete graphical models based on
 conditional independence graphs (i.e. \"Bayesian Networks\" or
-@code{\"BayesNets\").} The eikosogram and its superiority to Venn diagrams in
+\"@code{BayesNets}\").  The eikosogram and its superiority to Venn diagrams in
 teaching probability is described in W.H. Cherry and R.W. Oldford (2003)
 <https://math.uwaterloo.ca/~rwoldfor/papers/eikosograms/paper.pdf>, its value in
 exploring conditional independence structure and relation to graphical and
@@ -14041,7 +14030,7 @@ decomposition and regression.  Missing data is accommodated, and a posterior
 mean for missing data is calculated under the assumption that the data are
 missing at random.  The marginal distribution of the relational data can be
 arbitrary, and is fit with an ordered probit specification.  See Hoff (2007)
-@code{<arXiv:0711.1146>} for details on the model.")
+<@code{arXiv:0711.1146>} for details on the model.")
     (license license:gpl2)))
 
 (define-public r-eiexpand
@@ -14080,13 +14069,13 @@ and EI-RÃC Methods\" <doi:10.1177/0049124119852394>.")
 (define-public r-eicompare
   (package
     (name "r-eicompare")
-    (version "3.0.3")
+    (version "3.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eiCompare" version))
               (sha256
                (base32
-                "1570qz3ikif39gww06phr73vqcm11s07awadiv846ki98s8ma7d8"))))
+                "15s75hy6dp7pqsp5rhh9lqyy8z8cd7gq4hxl08ah4jki82cf877d"))))
     (properties `((upstream-name . "eiCompare")))
     (build-system r-build-system)
     (propagated-inputs (list r-wru
@@ -14307,15 +14296,15 @@ Electronic Health Records through the projection and visualization of
 dissimilarities among data temporal batches.  This is done through the
 estimation of data statistical distributions over time and their projection in
 non-parametric statistical manifolds, uncovering the patterns of the data latent
-temporal variability. @code{EHRtemporalVariability} is particularly suitable for
-multi-modal data and categorical variables with a high number of values, common
-features of biomedical data where traditional statistical process control or
-time-series methods may not be appropriate. @code{EHRtemporalVariability} allows
-you to explore and identify dataset shifts through visual analytics formats such
-as Data Temporal heatmaps and Information Geometric Temporal (IGT) plots.  An
-additional @code{EHRtemporalVariability} Shiny app can be used to load and
-explore the package results and even to allow the use of these functions to
-those users non-experienced in R coding. (SÃ¡ez et al.  2020)
+temporal variability.  EH@code{RtemporalVariability} is particularly suitable
+for multi-modal data and categorical variables with a high number of values,
+common features of biomedical data where traditional statistical process control
+or time-series methods may not be appropriate.  EH@code{RtemporalVariability}
+allows you to explore and identify dataset shifts through visual analytics
+formats such as Data Temporal heatmaps and Information Geometric Temporal (IGT)
+plots.  An additional EH@code{RtemporalVariability} Shiny app can be used to
+load and explore the package results and even to allow the use of these
+functions to those users non-experienced in R coding. (SÃ¡ez et al.  2020)
 <doi:10.1093/gigascience/giaa079>.")
     (license (list license:asl2.0
                    (license:fsdg-compatible "file://LICENSE")))))
@@ -14342,11 +14331,11 @@ those users non-experienced in R coding. (SÃ¡ez et al.  2020)
 provides modules to perform diverse medication-related studies using data from
 EHR databases.  Especially, the package includes modules to perform
 pharmacokinetic/pharmacodynamic (PK/PD) analyses using EHRs, as outlined in
-Choi, Beck, @code{McNeer,} Weeks, Williams, James, Niu, Abou-Khalil, Birdwell,
+Choi, Beck, @code{McNeer}, Weeks, Williams, James, Niu, Abou-Khalil, Birdwell,
 Roden, Stein, Bejan, Denny, and Van Driest (2020) <doi:10.1002/cpt.1787>.
 Additional modules will be added in future.  In addition, this package provides
 various functions useful to perform Phenome Wide Association Study
-@code{(PheWAS)} to explore associations between drug exposure and phenotypes
+(@code{PheWAS}) to explore associations between drug exposure and phenotypes
 obtained from EHR data, as outlined in Choi, Carroll, Beck, Mosley, Roden,
 Denny, and Van Driest (2018) <doi:10.1093/bioinformatics/bty306>.")
     (license license:gpl3+)))
@@ -14517,7 +14506,7 @@ the genetic predisposition for obesity could be manifested through inherited
 variants that control metabolism through regulation of genes expressed in the
 brain and/or through the control of fat storage in the adipose tissue by
 dysregulation of genes expressed in adipose tissue.  We present a method
-@code{eGST} @code{(eQTL-based} genetic subtyper) that integrates tissue-specific
+@code{eGST} (@code{eQTL-based} genetic subtyper) that integrates tissue-specific
 @code{eQTLs} with GWAS data for a complex trait to probabilistically assign a
 tissue of interest to the phenotype of each individual in the study. @code{eGST}
 estimates the posterior probability that an individual's phenotype can be
@@ -14634,7 +14623,7 @@ Season (WRTDS).")
     (description
      "This package provides tools for importing, analyzing and visualizing
 ego-centered network data.  Supports several data formats, including the export
-formats of @code{EgoNet',} @code{EgoWeb} 2.0 and openeddi'.  An interactive
+formats of @code{EgoNet}', @code{EgoWeb} 2.0 and openeddi'.  An interactive
 (shiny) app for the intuitive visualization of ego-centered networks is
 provided.  Also included are procedures for creating and visualizing Clustered
 Graphs (Lerner 2008 <DOI:10.1109/PACIFICVIS.2008.4475458>).")
@@ -14798,7 +14787,7 @@ individual, group, and population level assessments.")
     (description
      "This package provides functions for assigning Clarke or Parkes (Consensus) error
 grid zones to blood glucose values, and for plotting both types of error grids
-in both @code{mg/mL} and mmol/L units.")
+in both mg/@code{mL} and mmol/L units.")
     (license license:expat)))
 
 (define-public r-efs
@@ -15845,7 +15834,7 @@ International Association for the Evaluation of Educational Achievement (IEA)
 Study (TIMSS), TIMSS Advanced, Progress in International Reading Literacy Study
 (PIRLS), International Civic and Citizenship Study (ICCS), International
 Computer and Information Literacy Study (ICILS), and Civic Education Study
-@code{(CivEd).}")
+(@code{CivEd}).")
     (license license:gpl2)))
 
 (define-public r-edstan
@@ -15979,9 +15968,9 @@ the hypotheses for f2 (see Hoffelder et al.,2015, Suarez-Sharp et al., 2020).")
     (synopsis "Energy-Based Dependence Measures")
     (description
      "Implementations of (1) mutual dependence measures and mutual independence tests
-in Jin, Z., and Matteson, D. S. (2017) @code{<arXiv:1709.02532>;} (2)
+in Jin, Z., and Matteson, D. S. (2017) <@code{arXiv:1709.02532>}; (2)
 independent component analysis methods based on mutual dependence measures in
-Jin, Z., and Matteson, D. S. (2017) @code{<arXiv:1709.02532>} and Pfister, N.,
+Jin, Z., and Matteson, D. S. (2017) <@code{arXiv:1709.02532>} and Pfister, N.,
 et al. (2018) <doi:10.1111/rssb.12235>; (3) conditional mean dependence measures
 and conditional mean independence tests in Shao, X., and Zhang, J. (2014)
 <doi:10.1080/01621459.2014.887012>, Park, T., et al. (2015)
@@ -16103,7 +16092,7 @@ ultrafast and require little memory, with the capability to handle very large
 sequences.  Three alignment methods are supported: global (Needleman-Wunsch),
 infix (Hybrid Wunsch), and prefix (Semi-Hybrid Wunsch).  The original C/C++
 library is described in \"Edlib: a C/C++ library for fast, exact sequence
-alignment using edit distance\", M. @code{Å oÅ¡iÄ,} M. @code{Å ikiÄ,}
+alignment using edit distance\", M. Å @code{oÅ¡iÄ}, M. Å @code{ikiÄ},
 <doi:10.1093/bioinformatics/btw753>.")
     (license license:expat)))
 
@@ -16643,7 +16632,7 @@ Buehlmann (1998) \"Sieve bootstrap for smoothing in nonstationary time series\"
      "Exploratory and descriptive analysis of event based data.  Provides methods for
 describing and selecting process data, and for preparing event log data for
 process mining.  Builds on the S3-class for event logs implemented in the
-package @code{bupaR'.}")
+package @code{bupaR}'.")
     (license license:expat)))
 
 (define-public r-eddington
@@ -16889,6 +16878,28 @@ researcher to make use of the information extracted by the cointegrating vector
 as an input in the neural network model.")
     (license license:gpl3)))
 
+(define-public r-ectsvr
+  (package
+    (name "r-ectsvr")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ECTSVR" version))
+              (sha256
+               (base32
+                "1l4j1a25cssf2pindkqpzgr7a67brg5qxqk9ysy96vvbc74n8i6l"))))
+    (properties `((upstream-name . "ECTSVR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-weightsvm r-vars r-urca))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ECTSVR")
+    (synopsis "Cointegration Based Support Vector Regression Model")
+    (description
+     "The cointegration based support vector regression model enables researchers to
+use data obtained from the cointegrating vector as input in the support vector
+regression model.")
+    (license license:expat)))
+
 (define-public r-ectotemp
   (package
     (name "r-ectotemp")
@@ -16993,7 +17004,7 @@ various co-data.  Co-data may be continuous or categorical.  The method
 accommodates inclusion of unpenalised covariates, posterior selection of
 covariates and multiple data types.  The model fit is used to predict for new
 samples.  The name ecpc stands for Empirical Bayes, Co-data learnt, Prediction
-and Covariate selection.  See Van Nee et al. (2020) @code{<arXiv:2005.04010>.}")
+and Covariate selection.  See Van Nee et al. (2020) <@code{arXiv:2005.04010>}.")
     (license license:gpl3+)))
 
 (define-public r-ecovirtual
@@ -17359,13 +17370,13 @@ Functions are written so they will work in a parallel-computing environment.")
 (define-public r-ecosim
   (package
     (name "r-ecosim")
-    (version "1.3-3")
+    (version "1.3-4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ecosim" version))
               (sha256
                (base32
-                "190xf0xy1cw40qx8x6y4m9avspxh0y11ffl3s18d5d2zr7rj3ag2"))))
+                "0v17iqrlm62vckglxkn3a617q4300pb40wdnyn4vpkxgiav9s86f"))))
     (properties `((upstream-name . "ecosim")))
     (build-system r-build-system)
     (propagated-inputs (list r-stoichcalc r-desolve))
@@ -17615,7 +17626,7 @@ variability in time and space.  Statistical models are developed to describe and
 understand the mechanisms that determine species interactions, and to decipher
 the organization of these ecological networks (Ohlmann et al. (2019)
 <doi:10.1111/ele.13221>, Gonzalez et al. (2020) <doi:10.1101/2020.04.02.021691>,
-Miele et al. (2021) @code{<doi:10.48550/arXiv.2103.10433>,} Botella et al (2021)
+Miele et al. (2021) <doi:10.48550/@code{arXiv.2103.10433>}, Botella et al (2021)
 <doi:10.1111/2041-210X.13738>).")
     (license license:gpl3)))
 
@@ -17642,7 +17653,7 @@ from within simulated networks randomly, by degree, by module, or by abundance.
 Simulations and sampling routines are implemented in FORTRAN', providing
 efficient generation times even for large networks.  Basic visualization methods
 also included.  Algorithms implemented here are described in de Aguiar et al.
-(2017) @code{<arXiv:1708.01242>.}")
+(2017) <@code{arXiv:1708.01242>}.")
     (license license:gpl3)))
 
 (define-public r-econet
@@ -18593,7 +18604,7 @@ Statistics at
     (description
      "This package provides a goodness-of-fit test for elliptical distributions with
 diagnostic capabilities.  Gilles R. Ducharme, Pierre Lafaye de Micheaux (2019)
-@code{<arXiv:1902.03622>.}")
+<@code{arXiv:1902.03622>}.")
     (license license:gpl2+)))
 
 (define-public r-ecfun
@@ -18755,13 +18766,13 @@ modified rejection sampling or uniformization.")
 (define-public r-ecce
   (package
     (name "r-ecce")
-    (version "2.0.2")
+    (version "2.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ecce" version))
               (sha256
                (base32
-                "0xffkrvmrhgssh27hfpqxkkbd6l4qb745nlv7jvjp0r3q08jwk8r"))))
+                "0p3icfp9b2ri84q79df40ws4nswl2jw39g9vvksr4g2y8l463w8p"))))
     (properties `((upstream-name . "ecce")))
     (build-system r-build-system)
     (propagated-inputs (list r-uuid r-jsonlite r-httr r-digest r-curl))
@@ -18771,12 +18782,14 @@ modified rejection sampling or uniformization.")
      "Translate English Words into Chinese, or Translate Chinese Words into English")
     (description
      "If translate English words into Chinese, there is a faster way for R user.
-@code{RYoudaoTranslate} package provides interface to Youdao
+R@code{YoudaoTranslate} package provides interface to Youdao
 <http://youdao.com/> translation open API for R user.  entcn package also
 provides similar features.  But it does not support Chinese words translation
 into English, I have made some improvements on the basis of this software.  You
 can pass in an English or Chinese word, ecce package support both English and
-Chinese translation.  It also support browse translation results in website.")
+Chinese translation.  It also support browse translation results in website.  In
+addition, also support obtain the pinyin of the Chinese character, so that you
+can more easily understand the pronunciation of the Chinese character.")
     (license license:expat)))
 
 (define-public r-ecb
@@ -18820,7 +18833,7 @@ retrieval of a vast quantity of statistical data.")
     (description
      "Fits Leroux model in spectral domain to estimate causal spatial effect as
 detailed in Guan, Y; Page, G.L.; Reich, B.J.; Ventrucci, M.; Yang, S; (2020)
-@code{<arXiv:2012.11767>.} Both the parametric and semi-parametric models are
+<@code{arXiv:2012.11767>}.  Both the parametric and semi-parametric models are
 available.  The semi-parametric model relies on INLA'.  The INLA package can be
 obtained from <https://www.r-inla.org/>.")
     (license (list license:gpl2+ license:gpl3+))))
@@ -18903,9 +18916,9 @@ about the drc package is available in Ritz C, Baty F, Streibig JC, Gerhard D
 g-modeling.  Methods are able to handle fully observed data as well as left-,
 right-, and interval-censored observations (Tobit likelihood); descriptions of
 these methods can be found in Barbehenn and Zhao (2023)
-@code{<arXiv:2306.07239>.} Additional, lower-level functionality based on Kiefer
-and Wolfowitz (1956) <doi:10.1214/aoms/1177728066> and Jiang and Zhang (2009)
-<doi:10.1214/08-AOS638> is provided that can be used to accelerate many
+<@code{arXiv:2306.07239>}.  Additional, lower-level functionality based on
+Kiefer and Wolfowitz (1956) <doi:10.1214/aoms/1177728066> and Jiang and Zhang
+(2009) <doi:10.1214/08-AOS638> is provided that can be used to accelerate many
 empirical Bayes and nonparametric maximum likelihood problems.")
     (license license:gpl3)))
 
@@ -18934,7 +18947,7 @@ empirical Bayes and nonparametric maximum likelihood problems.")
      "Presents a statistical method that uses a recursive algorithm for signal
 extraction.  The method handles a non-parametric estimation for the correlation
 of the errors.  See \"Krivobokova\", \"Serra\", \"Rosales\" and \"Klockmann\" (2021)
-@code{<arXiv:1812.06948>} for details.")
+<@code{arXiv:1812.06948>} for details.")
     (license license:gpl2)))
 
 (define-public r-ebreg
@@ -18959,7 +18972,7 @@ distribution, which can be used for estimation/inference on the model
 parameters, variable selection, and prediction of a future response.  The method
 was first presented in Martin, Ryan and Mess, Raymond and Walker, Stephen G
 (2017) <doi:10.3150/15-BEJ797>.  More details focused on the prediction problem
-are given in Martin, Ryan and Tang, Yiqi (2019) @code{<arXiv:1903.00961>.}")
+are given in Martin, Ryan and Tang, Yiqi (2019) <@code{arXiv:1903.00961>}.")
     (license license:gpl3)))
 
 (define-public r-ebrank
@@ -19042,7 +19055,7 @@ presentation of the method.")
      "This package provides simple, fast, and stable functions to fit the normal means
 model using empirical Bayes.  For available models and details, see function
 ebnm().  A comprehensive introduction to the package is provided by
-Willwerscheid and Stephens (2021) @code{<arXiv:2110.00152>.}")
+Willwerscheid and Stephens (2021) <@code{arXiv:2110.00152>}.")
     (license license:gpl3+)))
 
 (define-public r-ebmc
@@ -19066,7 +19079,7 @@ Willwerscheid and Stephens (2021) @code{<arXiv:2110.00152>.}")
     (home-page "https://cran.r-project.org/package=ebmc")
     (synopsis "Ensemble-Based Methods for Class Imbalance Problem")
     (description
-     "Four ensemble-based methods (SMOTEBoost, RUSBoost, @code{UnderBagging,} and
+     "Four ensemble-based methods (SMOTEBoost, RUSBoost, @code{UnderBagging}, and
 SMOTEBagging) for class imbalance problem are implemented for binary
 classification.  Such methods adopt ensemble methods and data re-sampling
 techniques to improve model performance in presence of class imbalance problem.
@@ -19266,7 +19279,7 @@ normal means model.  The intervals are robust in the sense that they achieve
 correct coverage regardless of the distribution of the means.  If the means are
 treated as fixed, the intervals have an average coverage guarantee.  The
 implementation is based on Armstrong, @code{KolesÃ¡r} and Plagborg-MÃ¸ller
-(2020) @code{<arXiv:2004.03448>.}")
+(2020) <@code{arXiv:2004.03448>}.")
     (license license:expat)))
 
 (define-public r-ebchs
@@ -19389,7 +19402,7 @@ models (Tversky & Sattath, 1979 <doi:10.1037/0033-295X.86.6.542>).")
      "Miscellaneous functions for data cleaning and data analysis of educational
 assessments.  Includes functions for descriptive analyses, character vector
 manipulations and weighted statistics.  Mainly a lightweight dependency for the
-packages @code{eatRep',} @code{eatGADS',} @code{eatPrep} and @code{eatModel}
+packages @code{eatRep}', @code{eatGADS}', @code{eatPrep} and @code{eatModel}
 (which will be subsequently submitted to CRAN').  The function for defining
 (weighted) contrasts in weighted effect coding refers to te Grotenhuis et al.
 (2017) <doi:10.1007/s00038-016-0901-1>.  Functions for weighted statistics refer
@@ -19466,7 +19479,7 @@ them to discrete ones.  With the correction of measurement error effects, we can
 obtain the corrected control limits of exponentially weighted moving average p
 control chart and reasonably adjusted exponentially weighted moving average p
 control charts.  The methods in this package can be found in some relevant
-references, such as Chen and Yang (2022) @code{<arXiv:} 2203.03384>; Yang et al.
+references, such as Chen and Yang (2022) <@code{arXiv}: 2203.03384>; Yang et al.
 (2011) <doi: 10.1016/j.eswa.2010.11.044>; Yang and Arnold (2014) <doi:
 10.1155/2014/238719>; Yang (2016) <doi: 10.1080/03610918.2013.763980> and Yang
 and Arnold (2016) <doi: 10.1080/00949655.2015.1125901>.")
@@ -19539,7 +19552,7 @@ the data as if it was a single spreadsheet.")
     (description
      "This package provides simple functions to create constraints for small test
 assembly problems (e.g. van der Linden (2005, ISBN: 978-0-387-29054-6)) using
-sparse matrices.  Currently, GLPK', @code{lpSolve',} Symphony', and Gurobi are
+sparse matrices.  Currently, GLPK', @code{lpSolve}', Symphony', and Gurobi are
 supported as solvers.  The gurobi package is not available from any mainstream
 repository; see <https://www.gurobi.com/downloads/>.")
     (license (list license:gpl2+ license:gpl3+))))
@@ -19680,13 +19693,13 @@ and visualizations with minimal programming.")
     (synopsis
      "Easy Interface to the Statistical Disclosure Control Package 'sdcTable' Extended with Own Implementation of 'GaussSuppression'")
     (description
-     "The main function, @code{ProtectTable(),} performs table suppression according
+     "The main function, @code{ProtectTable}(), performs table suppression according
 to a frequency rule with a data set as the only required input.  Within this
-function, @code{protectTable(),} protect_linked_tables() or
-@code{runArgusBatchFile()} in package @code{sdcTable} is called.  Lists of
-level-hierarchy (parameter @code{dimList')} and other required input to these
+function, @code{protectTable}(), protect_linked_tables() or
+@code{runArgusBatchFile}() in package @code{sdcTable} is called.  Lists of
+level-hierarchy (parameter @code{dimList}') and other required input to these
 functions are created automatically.  The suppression method Gauss (default) is
-implemented independently of @code{sdcTable'.} The function, PTgui(), starts a
+implemented independently of @code{sdcTable}'.  The function, PTgui(), starts a
 graphical user interface based on the shiny package.")
     (license (list license:asl2.0
                    (license:fsdg-compatible "file://LICENSE")))))
@@ -19742,7 +19755,7 @@ treatments, including mixed models and non linear models.")
 type conversion, data wrangling, and work flow.  Also includes some helpful data
 objects: NA strings, U.S. state list, color blind charting colors.  Built and
 shared by Oliver Wyman Actuarial Consulting.  Accepting proposed contributions
-through @code{GitHub.}")
+through @code{GitHub}.")
     (license license:gpl2+)))
 
 (define-public r-easypubmed
@@ -19838,7 +19851,7 @@ package.")
     (synopsis "Easy Loading and Installing of Packages")
     (description
      "Easily load and install multiple packages from different sources, including CRAN
-and @code{GitHub.} The libraries function allows you to load or attach multiple
+and @code{GitHub}.  The libraries function allows you to load or attach multiple
 packages in the same function call.  The packages function will load one or more
 packages, and install any packages that are not installed on your system (after
 prompting you).  Also included is a from_import function that allows you to
@@ -19900,7 +19913,7 @@ capabilities into/from multidimensional R arrays.")
     (synopsis "Easy Model-Builder Functions for 'OpenMx'")
     (description
      "Utilities for building certain kinds of common matrices and models in the
-extended structural equation modeling package, @code{OpenMx'.}")
+extended structural equation modeling package, @code{OpenMx}'.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-easylabel
@@ -20083,7 +20096,7 @@ deviation can be forced to display.")
     (synopsis "Easily Connect to Common Types of Databases")
     (description
      "This package provides a unified interface for connecting to databases ('SQLite',
-@code{MySQL',} @code{PostgreSQL').} Just provide the database name and the
+@code{MySQL}', @code{PostgreSQL}').  Just provide the database name and the
 package will ask you questions to help you configure the connection and setup
 your credentials.  Once database configuration and connection has been set up
 once, you won't have to do it ever again.")
@@ -20239,7 +20252,7 @@ and unbalanced data.")
     (description
      "Alluvial plots are similar to sankey diagrams and visualise categorical data
 over multiple dimensions as flows. (Rosvall M, Bergstrom CT (2010) Mapping
-Change in Large Networks. @code{PLoS} ONE 5(1): e8694.
+Change in Large Networks.  P@code{LoS} ONE 5(1): e8694.
 <doi:10.1371/journal.pone.0008694> Their graphical grammar however is a bit more
 complex then that of a regular x/y plots.  The ggalluvial package made a great
 job of translating that grammar into ggplot2 syntax and gives you many options
@@ -20424,40 +20437,6 @@ and \"Multivariate Adaptive Regression Splines\" <doi:10.1214/aos/1176347963>.
 (The term \"MARS\" is trademarked and thus not used in the name of the package.)")
     (license license:gpl3)))
 
-(define-public r-earlywarnings
-  (package
-    (name "r-earlywarnings")
-    (version "1.1.29")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "earlywarnings" version))
-              (sha256
-               (base32
-                "1xa9rijqqxa5l253dg8dn1jjhdakf8krl5rflq5v9gybfyrq1885"))))
-    (properties `((upstream-name . "earlywarnings")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tseries
-                             r-tgp
-                             r-spam
-                             r-som
-                             r-quadprog
-                             r-nortest
-                             r-moments
-                             r-lmtest
-                             r-knitr
-                             r-kernsmooth
-                             r-kendall
-                             r-ggplot2
-                             r-fields))
-    (native-inputs (list r-knitr))
-    (home-page "http://www.early-warning-signals.org")
-    (synopsis "Early Warning Signals for Critical Transitions in Time Series")
-    (description
-     "The Early-Warning-Signals Toolbox provides methods for estimating statistical
-changes in time series that can be used for identifying nearby critical
-transitions.")
-    (license license:bsd-2)))
-
 (define-public r-earlyr
   (package
     (name "r-earlyr")
@@ -20561,7 +20540,7 @@ changes in the industry over time, and discover new relationships in the data.")
     (synopsis "Estimator Augmentation and Simulation-Based Inference")
     (description
      "Estimator augmentation methods for statistical inference on high-dimensional
-data, as described in Zhou, Q. (2014) @code{<arXiv:1401.4425v2>} and Zhou, Q.
+data, as described in Zhou, Q. (2014) <@code{arXiv:1401.4425v2>} and Zhou, Q.
 and Min, S. (2017) <doi:10.1214/17-EJS1309>.  It provides several
 simulation-based inference methods: (a) Gaussian and wild multiplier bootstrap
 for lasso, group lasso, scaled lasso, scaled group lasso and their de-biased
@@ -20606,7 +20585,7 @@ Since Eagle is based on linear mixed models, it is best suited to the analysis
 of data on continuous traits.  However, it can tolerate non-normal data.  Eagle
 reports, as its findings, the best set of snp in strongest association with a
 trait.  For users unfamiliar with R, to perform an analysis, run
-@code{OpenGUI()'.} This opens a web browser to the menu-driven user interface
+@code{OpenGUI}()'.  This opens a web browser to the menu-driven user interface
 for the input of data, and for performing genome-wide analysis.")
     (license license:gpl3)))
 
@@ -20630,7 +20609,7 @@ for the input of data, and for performing genome-wide analysis.")
     (description
      "Computation and visualization of the empirical attainment function (EAF) for the
 analysis of random sets in multi-criterion optimization.  M.
-@code{LÃ³pez-IbÃ¡Ã±ez,} L. Paquete, and T. @code{StÃ¼tzle} (2010)
+LÃ³pez-@code{IbÃ¡Ã±ez}, L. Paquete, and T. @code{StÃ¼tzle} (2010)
 <doi:10.1007/978-3-642-02538-9_9>.")
     (license license:gpl2+)))
 

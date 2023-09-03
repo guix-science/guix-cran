@@ -161,7 +161,7 @@ Quantile Universal Threshold (QUT) for lasso regularization of Generalized
 Linear Models (GLM) and square-root lasso to obtain a sparse model with a good
 compromise between high true positive rate and low false discovery rate.
 Giacobino et al. (2017) <doi:10.1214/17-EJS1366>.  Sardy et al. (2017)
-@code{<arXiv:1708.02908>.}")
+<@code{arXiv:1708.02908>}.")
     (license license:gpl2)))
 
 (define-public r-qurve
@@ -540,7 +540,7 @@ testing code and for plotting multiple figures to the same device from
 independent sources that may be independent of one another (i.e., different
 function or modules the create the visualizations).  The suggested package
 fastshp can be installed from the repository
-@code{(<https://PredictiveEcology.r-universe.dev>).}")
+(<https://@code{PredictiveEcology.r-universe.dev>}).")
     (license license:gpl3)))
 
 (define-public r-quicknmix
@@ -651,16 +651,16 @@ dependencies beyond a C compiler.")
 (define-public r-quickcode
   (package
     (name "r-quickcode")
-    (version "0.2")
+    (version "0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "quickcode" version))
               (sha256
                (base32
-                "0db2p0ls4cff26v9akl6nzq4d0w3a0v4f334i0fhz8vdf806z8l0"))))
+                "0asa68jk43za5ya9kc0yxc1f1ya8rawdann39fwy4hp6r47q4s7p"))))
     (properties `((upstream-name . "quickcode")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rstudioapi))
+    (propagated-inputs (list r-rstudioapi r-rlang))
     (native-inputs (list r-knitr))
     (home-page "https://quickcode.obi.obianom.com")
     (synopsis "Compilation of Some Frequently Used R Functions")
@@ -691,7 +691,7 @@ Shorthand code to save memory usage.")
     (home-page "https://github.com/armcn/quickcheck")
     (synopsis "Property Based Testing")
     (description
-     "Property based testing, inspired by the original @code{QuickCheck'.} This
+     "Property based testing, inspired by the original @code{QuickCheck}'.  This
 package builds on the property based testing framework provided by hedgehog and
 is designed to seamlessly integrate with testthat'.")
     (license license:expat)))
@@ -985,11 +985,11 @@ relying on statistical summary measures alone, and why additional assumptions
 about the data generating mechanism are needed when estimating causal effects.
 The package includes \"Anscombe's Quartet\" (Anscombe 1973)
 <doi:10.1080/00031305.1973.10478966>, D'Agostino @code{McGowan} & Barrett (2023)
-\"Causal Quartet\" @code{<doi:10.48550/arXiv.2304.02683>,} \"Datasaurus Dozen\"
+\"Causal Quartet\" <doi:10.48550/@code{arXiv.2304.02683>}, \"Datasaurus Dozen\"
 (Matejka & Fitzmaurice 2017), \"Interaction Triptych\" (Rohrer & Arslan 2021)
 <doi:10.1177/25152459211007368>, \"Rashomon Quartet\" (Biecek et al.  2023)
-@code{<doi:10.48550/arXiv.2302.13356>,} and Gelman \"Variation and Heterogeneity
-Causal Quartets\" (Gelman et al.  2023) @code{<doi:10.48550/arXiv.2302.12878>.}")
+<doi:10.48550/@code{arXiv.2302.13356>}, and Gelman \"Variation and Heterogeneity
+Causal Quartets\" (Gelman et al.  2023) <doi:10.48550/@code{arXiv.2302.12878>}.")
     (license license:expat)))
 
 (define-public r-quartet
@@ -1019,7 +1019,7 @@ Causal Quartets\" (Gelman et al.  2023) @code{<doi:10.48550/arXiv.2302.12878>.}"
 cladograms, calculating the symmetric quartet distance of Bandelt & Dress
 (1986), Reconstructing the shape of a tree from observed dissimilarity data,
 Advances in Applied Mathematics, 7, 309-343 <doi:10.1016/0196-8858(86)90038-2>,
-and using the @code{tqDist} algorithm of Sand et al. (2014), @code{tqDist:} a
+and using the @code{tqDist} algorithm of Sand et al. (2014), @code{tqDist}: a
 library for computing the quartet and triplet distances between binary or
 general trees, Bioinformatics, 30, 2079â2080
 <doi:10.1093/bioinformatics/btu157> for pairs of binary trees.")
@@ -1073,15 +1073,15 @@ and the other is relying on an artificial neural network.")
     (synopsis
      "Simple Methods for Calculating and Backtesting Value at Risk and Expected Shortfall")
     (description
-     "Enables the user to calculate Value at Risk @code{(VaR)} and Expected Shortfall
+     "Enables the user to calculate Value at Risk (@code{VaR}) and Expected Shortfall
 (ES) by means of various types of historical simulation.  Currently plain-,
 age-, volatility-weighted- and filtered historical simulation are implemented in
 this package.  Volatility weighting can be carried out via an exponentially
 weighted moving average model (EWMA) or other GARCH-type models.  The
 performance can be assessed via Traffic Light Test, Coverage Tests and Loss
 Functions.  The methods of the package are described in Gurrola-Perez, P. and
-Murphy, D. (2015) @code{<https://EconPapers.repec.org/RePEc:boe:boeewp:0525>} as
-well as @code{McNeil,} J., Frey, R., and Embrechts, P. (2015)
+Murphy, D. (2015) <https://@code{EconPapers.repec.org/RePEc:boe:boeewp:0525>} as
+well as @code{McNeil}, J., Frey, R., and Embrechts, P. (2015)
 <https://ideas.repec.org/b/pup/pbooks/10496.html>.")
     (license license:gpl3)))
 
@@ -1110,9 +1110,9 @@ versions of all gates and can simulate complete or partial measurements of kets.
 quantum noise.  Includes larger applications, such as Steane error correction
 <DOI:10.1103/physrevlett.77.793>, Quantum Fourier Transform and Shor's algorithm
 (Shor 1999), Grover's algorithm (1996), Quantum Approximation Optimization
-Algorithm (QAOA) (Farhi, Goldstone, and Gutmann 2014) @code{<arXiv:1411.4028>,}
-and a variational quantum classifier (Schuld 2018) @code{<arXiv:1804.00633>.}
-Can be used with the gridsynth algorithm @code{<arXiv:1212.6253>} to perform
+Algorithm (QAOA) (Farhi, Goldstone, and Gutmann 2014) <@code{arXiv:1411.4028>},
+and a variational quantum classifier (Schuld 2018) <@code{arXiv:1804.00633>}.
+Can be used with the gridsynth algorithm <@code{arXiv:1212.6253>} to perform
 decomposition into the Clifford+T set.")
     (license license:gpl3)))
 
@@ -1206,7 +1206,7 @@ fitted curves are allowed, see Muggeo and others (2013)
      "Quantile Regression Forests is a tree-based ensemble method for estimation of
 conditional quantiles.  It is particularly well suited for high-dimensional
 data.  Predictor variables of mixed classes can be handled.  The package is
-dependent on the package @code{randomForest',} written by Andy Liaw.")
+dependent on the package @code{randomForest}', written by Andy Liaw.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-quantreg-nonpar
@@ -1277,7 +1277,7 @@ improve the performance of sample pattern detection, such as clustering,
 dimension reduction, and construction of networks between subjects.  The method
 has been published in Bioinformatics (Fei et al, 2018,
 <doi:10.1093/bioinformatics/bty117>).  Also available on @code{GitHub}
-@code{<https://github.com/tengfei-emory/QuantNorm>.}")
+<https://github.com/tengfei-emory/@code{QuantNorm>}.")
     (license license:gpl2+)))
 
 (define-public r-quantkriging
@@ -1588,7 +1588,7 @@ keyness plots.")
 data in the form of a document-feature matrix.  Includes original
 implementations of Laver', Benoit', and Garry's (2003)
 <doi:10.1017/S0003055403000698>, Wordscores model, the Perry and Benoit (2017)
-@code{<arXiv:1710.08963>} class affinity scaling model, and the Slapin and
+<@code{arXiv:1710.08963>} class affinity scaling model, and the Slapin and
 Proksch (2008) <doi:10.1111/j.1540-5907.2008.00338.x> wordfish model, as well as
 methods for correspondence analysis, latent semantic analysis, and fast Naive
 Bayes and linear SVMs specially designed for sparse textual data.")
@@ -1796,30 +1796,6 @@ for more information about the Qualtrics API. This package is
 community-maintained and is not officially supported by Qualtrics'.")
     (license license:expat)))
 
-(define-public r-qualpalr
-  (package
-    (name "r-qualpalr")
-    (version "0.4.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qualpalr" version))
-              (sha256
-               (base32
-                "1hlssqj2129796d00gnip3ih5b705qasw0hkj25xfz7xak0vdbkm"))))
-    (properties `((upstream-name . "qualpalr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcppparallel r-rcpparmadillo r-rcpp
-                             r-randtoolbox r-assertthat))
-    (native-inputs (list r-knitr))
-    (home-page "https://jolars.github.io/qualpalr/")
-    (synopsis "Automatic Generation of Qualitative Color Palettes")
-    (description
-     "Automatic generation of distinct qualitative color palettes, optionally adapted
-to color deficiency.  It takes a subspace of the HSL color space as input and
-projects it to the DIN99d color space where it selects and return colors that
-are maximally distinct.")
-    (license license:gpl3)))
-
 (define-public r-qualmap
   (package
     (name "r-qualmap")
@@ -1872,6 +1848,35 @@ various range of functions that allow to establish an adaptable data quality
 control.")
     (license license:expat)))
 
+(define-public r-quadtree
+  (package
+    (name "r-quadtree")
+    (version "0.1.14")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "quadtree" version))
+              (sha256
+               (base32
+                "15i68ykbr0ld8cfcha1ywf4lmsf7zpgi7qsn2rpf44k92fp6hzc7"))))
+    (properties `((upstream-name . "quadtree")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/dfriend21/quadtree/")
+    (synopsis "Region Quadtrees for Spatial Data")
+    (description
+     "This package provides functionality for working with raster-like quadtrees (also
+called âregion quadtreesâ), which allow for variable-sized cells.  The
+package allows for flexibility in the quadtree creation process.  Several
+functions defining how to split and aggregate cells are provided, and custom
+functions can be written for both of these processes.  In addition, quadtrees
+can be created using other quadtrees as âtemplatesâ, so that the new
+quadtree's structure is identical to the template quadtree.  The package also
+includes functionality for modifying quadtrees, querying values, saving
+quadtrees to a file, and calculating least-cost paths using the quadtree as a
+resistance surface.")
+    (license license:expat)))
+
 (define-public r-quadrupen
   (package
     (name "r-quadrupen")
@@ -1895,8 +1900,8 @@ control.")
     (description
      "Fits classical sparse regression models with efficient active set algorithms by
 solving quadratic problems as described by Grandvalet, Chiquet and Ambroise
-(2017) @code{<arXiv:1210.2077>.} Also provides a few methods for model selection
-purpose (cross-validation, stability selection).")
+(2017) <@code{arXiv:1210.2077>}.  Also provides a few methods for model
+selection purpose (cross-validation, stability selection).")
     (license license:gpl3+)))
 
 (define-public r-quadroot
@@ -2972,7 +2977,7 @@ practice.")
      "Provides R-Language Code to Examine Quantitative Risk Management Concepts")
     (description
      "This package provides functions/methods to accompany the book Quantitative Risk
-Management: Concepts, Techniques and Tools by Alexander J. @code{McNeil,}
+Management: Concepts, Techniques and Tools by Alexander J. @code{McNeil},
 Ruediger Frey, and Paul Embrechts.")
     (license license:gpl2+)))
 
@@ -3073,7 +3078,7 @@ partial multiplier bootstrap method and robust sandwich estimator.  Furthermore,
 a simultaneous procedure of estimating regression parameters and their standard
 errors via an iterative updating procedure is implemented (iterative).  See Kim,
 K. (2022) \"Smoothed quantile regression for censored residual life\",
-@code{<arXiv:2205.00413>.}")
+<@code{arXiv:2205.00413>}.")
     (license license:gpl3+)))
 
 (define-public r-qripkg
@@ -3127,8 +3132,8 @@ individual measurements.")
 in Quarto and RMarkdown reports and that produce Quarto elements for special
 formatting such as tabs and marginal notes and graphs.  Some of the functions
 produce entire report sections with tabs, e.g., the missing data report created
-by @code{missChk().} Special clinical trial graphics for adverse event reporting
-is also included.")
+by @code{missChk}().  Special clinical trial graphics for adverse event
+reporting is also included.")
     (license license:gpl2+)))
 
 (define-public r-qrencoder
@@ -3495,7 +3500,7 @@ extend to the Q-Q boxplot.")
 profiles.  For each profile, data imputations and adjustments are made as
 necessary and basic parameters are estimated.  Supports single dose, multi-dose,
 and multi-subject data.  Supports steady-state calculations and various routes
-of drug administration.  See @code{?qpNCA} and vignettes.  Methodology follows
+of drug administration.  See ?@code{qpNCA} and vignettes.  Methodology follows
 Rowland and Tozer (2011, ISBN:978-0-683-07404-8), Gabrielsson and Weiner (1997,
 ISBN:978-91-9765-100-4), and Gibaldi and Perrier (1982, ISBN:978-0824710422).")
     (license license:gpl3)))
@@ -3554,7 +3559,7 @@ constraints.  The method used is outlined in D. Goldfarb, and A. Idnani (1983)
     (home-page "https://github.com/lixiang117423/qPCRtools")
     (synopsis "Tools for qPCR")
     (description
-     "@code{RT-qPCR} is a widely used method to detect the expression level of genes
+     "RT-@code{qPCR} is a widely used method to detect the expression level of genes
 in biological research.  A crucial step in processing @code{qPCR} data is to
 calculate the amplification efficiency of genes to determine which method should
 be used to calculate expression level of genes.  This Package can do it easily.
@@ -3580,7 +3585,7 @@ based on three methods.")
     (synopsis "qPCR Ct Values to Expression Values")
     (description
      "Computes normalized cycle threshold (Ct) values (delta Ct) from raw quantitative
-polymerase chain reaction @code{(qPCR)} Ct values and conducts test of
+polymerase chain reaction (@code{qPCR}) Ct values and conducts test of
 significance using t.test().  Plots expression values based from
 log2(2^(-1*delta delta Ct)) across groups per gene of interest.  Methods for
 calculation of delta delta Ct and relative expression (2^(-1*delta delta Ct))
@@ -4314,15 +4319,15 @@ q-gaussian distribution with parameters mu and sig.")
     (synopsis "Quantum Game Theory Simulator")
     (description
      "General purpose toolbox for simulating quantum versions of game theoretic models
-(Flitney and Abbott 2002) @code{<arXiv:quant-ph/0208069>.} Quantum (Nielsen and
+(Flitney and Abbott 2002) <@code{arXiv:quant-ph/0208069>}.  Quantum (Nielsen and
 Chuang 2010, ISBN:978-1-107-00217-3) versions of models that have been handled
-are: Penny Flip Game (David A. Meyer 1998) @code{<arXiv:quant-ph/9804010>,}
-Prisoner's Dilemma (J. Orlin Grabbe 2005) @code{<arXiv:quant-ph/0506219>,} Two
-Person Duel (Flitney and Abbott 2004) @code{<arXiv:quant-ph/0305058>,} Battle of
-the Sexes (Nawaz and Toor 2004) @code{<arXiv:quant-ph/0110096>,} Hawk and Dove
-Game (Nawaz and Toor 2010) @code{<arXiv:quant-ph/0108075>,} Newcomb's Paradox
-(Piotrowski and Sladkowski 2002) @code{<arXiv:quant-ph/0202074>} and Monty Hall
-Problem (Flitney and Abbott 2002) @code{<arXiv:quant-ph/0109035>.}")
+are: Penny Flip Game (David A. Meyer 1998) <@code{arXiv:quant-ph/9804010>},
+Prisoner's Dilemma (J. Orlin Grabbe 2005) <@code{arXiv:quant-ph/0506219>}, Two
+Person Duel (Flitney and Abbott 2004) <@code{arXiv:quant-ph/0305058>}, Battle of
+the Sexes (Nawaz and Toor 2004) <@code{arXiv:quant-ph/0110096>}, Hawk and Dove
+Game (Nawaz and Toor 2010) <@code{arXiv:quant-ph/0108075>}, Newcomb's Paradox
+(Piotrowski and Sladkowski 2002) <@code{arXiv:quant-ph/0202074>} and Monty Hall
+Problem (Flitney and Abbott 2002) <@code{arXiv:quant-ph/0109035>}.")
     (license license:expat)))
 
 (define-public r-qfrm
@@ -4480,7 +4485,7 @@ periodograms\", Journal of the American Statistical Association, 107, 765â7
 <doi:10.1080/01621459.2012.682815>; Li, T.-H. (2014) Time Series with Mixed
 Spectra, CRC Press, <doi:10.1201/b15154>; Li, T.-H. (2022) \"Quantile Fourier
 transform, quantile series, and nonparametric estimation of quantile spectra\",
-@code{<doi:10.48550/arXiv.2211.05844>.}")
+<doi:10.48550/@code{arXiv.2211.05844>}.")
     (license license:gpl2+)))
 
 (define-public r-qf
@@ -4571,7 +4576,7 @@ Fechnerian distances can be computed.")
     (synopsis "Type 2 Diabetes Risk Calculator")
     (description
      "Calculate the risk of developing type 2 diabetes using risk prediction
-algorithms derived by @code{ClinRisk'.}")
+algorithms derived by @code{ClinRisk}'.")
     (license (license:fsdg-compatible "AGPL-3 + file LICENSE"))))
 
 (define-public r-qdcomparison
@@ -4798,8 +4803,8 @@ capability plots.  See Flores et al. (2021) <doi:10.32614/RJ-2021-034>.")
     (home-page "https://cran.r-project.org/package=qcQpcr")
     (synopsis "Histone ChIP-Seq qPCR Analyzer")
     (description
-     "Quality control of chromatin immunoprecipitation libraries @code{(ChIP-seq)} by
-quantitative polymerase chain reaction @code{(qPCR).} This function calculates
+     "Quality control of chromatin immunoprecipitation libraries (@code{ChIP-seq}) by
+quantitative polymerase chain reaction (@code{qPCR}).  This function calculates
 Enrichment value with respect to reference for each histone modification
 (specific to Vii7 software
 <http://www.thermofisher.com/ca/en/home/life-science/pcr/real-time-pcr/real-time-pcr-instruments/viia-7-real-time-pcr-system/viia-7-software.html>).
@@ -4851,12 +4856,12 @@ among constructs and between constructs and observed variables.")
      "This package provides functions for the joint analysis of K sets of p-values
 obtained for a same list of items.  This joint analysis is performed by querying
 a composed hypothesis, i.e.  an arbitrary complex combination of simple
-hypotheses, as described in Mary-Huard et al. (2021) @code{<arXiv:2104.14601>.}
+hypotheses, as described in Mary-Huard et al. (2021) <@code{arXiv:2104.14601>}.
 The null distribution corresponding to the composed hypothesis of interest is
 obtained by fitting non-parametric mixtures models (one for each of the simple
 hypothesis of the complex combination).  Type I error rate control is achieved
 through Bayesian False Discovery Rate control.  The 3 main functions of the
-package @code{GetHinfo(),} qch.fit() and qch.test() correspond to the 3 steps
+package @code{GetHinfo}(), qch.fit() and qch.test() correspond to the 3 steps
 for querying a composed hypothesis (composed H0/H1 formulation, inferring the
 null distribution and testing the null hypothesis).")
     (license license:gpl3)))
@@ -4962,7 +4967,7 @@ and EWMA charts.  Operating characteristic curves.  Process capability analysis.
     (description
      "CBA postprocessing algorithm that creates smaller models for datasets containing
 quantitative (numerical) attributes.  Article describing QCBA is published in
-Tomas Kliegr (2017) @code{<arXiv:1711.10166>.} The package can also postprocess
+Tomas Kliegr (2017) <@code{arXiv:1711.10166>}.  The package can also postprocess
 results of the SBRL package, which is no longer in CRAN, but can be obtained
 from <https://github.com/cran/sbrl>.")
     (license license:gpl3)))
@@ -5093,8 +5098,8 @@ diversity of the cases under analysis within and across partitions (see
     (synopsis "Qualitative Comparative Analysis")
     (description
      "An extensive set of functions to perform Qualitative Comparative Analysis: crisp
-sets @code{('csQCA'),} temporal @code{('tQCA'),} multi-value @code{('mvQCA')}
-and fuzzy sets @code{('fsQCA'),} using a GUI - graphical user interface.  QCA is
+sets ('@code{csQCA}'), temporal ('@code{tQCA}'), multi-value ('@code{mvQCA}')
+and fuzzy sets ('@code{fsQCA}'), using a GUI - graphical user interface.  QCA is
 a methodology that bridges the qualitative and quantitative divide in social
 science research.  It uses a Boolean minimization algorithm, resulting in a
 minimal causal configuration associated with a given phenomenon.")
@@ -5242,7 +5247,7 @@ short and long-run wald tests.")
      "Calculates the right-tail probability of quadratic forms of Gaussian variables
 using the skewness-kurtosis ratio matching method, modified Liu-Tang-Zhang
 method and Satterthwaite-Welch method.  The technical details can be found in
-Hong Zhang, Judong Shen and Zheyang Wu (2020) @code{<arXiv:2005.00905>.}")
+Hong Zhang, Judong Shen and Zheyang Wu (2020) <@code{arXiv:2005.00905>}.")
     (license license:gpl2)))
 
 (define-public r-qape

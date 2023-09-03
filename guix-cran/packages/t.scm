@@ -423,7 +423,7 @@ Anderson-Darling, Wasserstein, and DTS. The default test (two_sample) is based
 on the DTS test statistic, as it is the most powerful, and thus most useful to
 most users.  The DTS test statistic builds on the Wasserstein distance by using
 a weighting scheme like that of Anderson-Darling.  See the companion paper at
-@code{<arXiv:2007.01360>} or <https://codowd.com/public/DTS.pdf> for details of
+<@code{arXiv:2007.01360>} or <https://codowd.com/public/DTS.pdf> for details of
 that test statistic, and non-standard uses of the package (parallel for big N,
 weighted observations, one sample tests, etc).  We also include the permutation
 scheme to make test building simple for others.")
@@ -447,7 +447,7 @@ scheme to make test building simple for others.")
     (description
      "Estimation of gene-treatment interactions in randomized clinical trials
 exploiting gene-treatment independence.  Methods used in the package refer to J.
-Y. Dai, M. @code{LeBlanc,} and C. Kooperberg (2009) Biometrics
+Y. Dai, M. @code{LeBlanc}, and C. Kooperberg (2009) Biometrics
 <doi:10.1111/j.1541-0420.2008.01046.x>.")
     (license license:gpl2+)))
 
@@ -786,7 +786,7 @@ API, allowing users to send and receive text messages from R. See
     (home-page "https://conjugateprior.github.io/twfy")
     (synopsis "Drive the API for TheyWorkForYou")
     (description
-     "An R wrapper around the API of @code{TheyWorkForYou,} a parliamentary monitoring
+     "An R wrapper around the API of @code{TheyWorkForYou}, a parliamentary monitoring
 site that scrapes and repackages Hansard (the UK's parliamentary record) and
 augments it with information from the Register of Members Interests, election
 results, and voting records to provide a unified source of information about UK
@@ -995,13 +995,13 @@ Airbender', Spongebob Squarepants', and more.")
 (define-public r-tvreg
   (package
     (name "r-tvreg")
-    (version "0.5.8")
+    (version "0.5.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tvReg" version))
               (sha256
                (base32
-                "0ivabcp1hm0rmr55lrqgsgbg23mkzdg6h11k95m2yg5pm853zbh8"))))
+                "0viv485l2b93j72274h9m3dkrm2ah0kn37pgbxby3ajg2gi86bh9"))))
     (properties `((upstream-name . "tvReg")))
     (build-system r-build-system)
     (propagated-inputs (list r-vars
@@ -1115,7 +1115,7 @@ included here serve as a complete reference for various scenarios of time value
 of money.  Raymond M. Brooks (âFinancial Management,â 2018, ISBN:
 9780134730417).  Sheridan Titman, Arthur J. Keown, John D. Martin (âFinancial
 Management: Principles and Applications,â 2017, ISBN: 9780134417219).
-Jonathan Berk, Peter @code{DeMarzo,} David Stangeland, Andras Marosi
+Jonathan Berk, Peter @code{DeMarzo}, David Stangeland, Andras Marosi
 (âFundamentals of Corporate Finance,â 2019, ISBN: 9780134735313).  S. A.
 Hummelbrunner, Kelly Halliday, Ali R. Hassanlou (âContemporary Business
 Mathematics with Canadian Applications,â 2020, ISBN: 9780135285015).")
@@ -1124,13 +1124,13 @@ Mathematics with Canadian Applications,â 2020, ISBN: 9780135285015).")
 (define-public r-tvm
   (package
     (name "r-tvm")
-    (version "0.5.1")
+    (version "0.5.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tvm" version))
               (sha256
                (base32
-                "0isvsz7fgs8a74wxq9i3d3zah4nfa31rnv8xsqnqp93rbr947x6y"))))
+                "0kswqml9h12mvs6q48vibq8qd3l9dd9nxi8lmp90cxd4hkmg6vgw"))))
     (properties `((upstream-name . "tvm")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-reshape2 r-ggplot2))
@@ -1378,7 +1378,7 @@ smooth, contraction mapping such as the EM and MM algorithms.  It can be used to
 accelerate any smooth, linearly convergent acceleration scheme.  A tutorial
 style introduction to this package is available in a vignette on the CRAN
 download page or, when the package is loaded in an R session, with
-@code{vignette(\"turboEM\").}")
+vignette(\"@code{turboEM}\").")
     (license license:gpl2)))
 
 (define-public r-tuple
@@ -1426,7 +1426,7 @@ duplicate or other replicated elements.")
     (synopsis "Tune Random Forest of the 'ranger' Package")
     (description
      "Tuning random forest with one line.  The package is mainly based on the packages
-ranger and @code{mlrMBO'.}")
+ranger and @code{mlrMBO}'.")
     (license license:gpl3)))
 
 (define-public r-tunepareto
@@ -1490,7 +1490,7 @@ over time.")
      "Integrates several popular high-dimensional methods based on Linear Discriminant
 Analysis (LDA) and provides a comprehensive and user-friendly toolbox for
 linear, semi-parametric and tensor-variate classification as mentioned in Yuqing
-Pan, Qing Mai and Xin Zhang (2019) @code{<arXiv:1904.03469>.} Functions are
+Pan, Qing Mai and Xin Zhang (2019) <@code{arXiv:1904.03469>}.  Functions are
 included for covariate adjustment, model fitting, cross validation and
 prediction.")
     (license license:gpl2)))
@@ -1557,13 +1557,13 @@ LICENSE.note for additional license information.")
 (define-public r-tukeyc
   (package
     (name "r-tukeyc")
-    (version "1.3-41")
+    (version "1.3-42")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TukeyC" version))
               (sha256
                (base32
-                "1q41wvyzl3xyiqshnq0cpczrb8pr0y8m362wcnlbyc4awwfylasm"))))
+                "1mzygb3yna1qnk0n8rvwnm32kfrjd2fqwpc4kdwadw1sl6xvp44b"))))
     (properties `((upstream-name . "TukeyC")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable r-doby))
@@ -1684,7 +1684,7 @@ out Tucker Models.")
     (home-page "http://github.com/soodoku/tubern")
     (synopsis "R Client for the YouTube Analytics and Reporting API")
     (description
-     "Get statistics and reports from @code{YouTube.} To learn more about the
+     "Get statistics and reports from @code{YouTube}.  To learn more about the
 @code{YouTube} Analytics and Reporting API, see
 <https://developers.google.com/youtube/reporting/>.")
     (license license:expat)))
@@ -1770,7 +1770,7 @@ given target value in smaller computation time than algorithm B.")
 algorithms for performing tensor-train decomposition are available such as
 TT-SVD, TT-WOPT, and TT-Cross.  For the details of the algorithms, see I. V.
 Oseledets (2011) <doi:10.1137/090752286>, Yuan Longao, et al (2017)
-@code{<arXiv:1709.02641>,} I. V. Oseledets (2010)
+<@code{arXiv:1709.02641>}, I. V. Oseledets (2010)
 <doi:10.1016/j.laa.2009.07.024>.")
     (license license:artistic2.0)))
 
@@ -2499,11 +2499,11 @@ changes to the method introduced in version 0.2.03 focus on the inclusion of
 temperature as an additional climate variable.  This allows for land degradation
 assessment in temperature limited drylands.  A paper that details this work is
 currently under review.  There are also a number of bug fixes and speed
-improvements.  Version 0.3.0 introduces additional attribution for @code{eCO2,}
+improvements.  Version 0.3.0 introduces additional attribution for @code{eCO2},
 climate change and climate variability the details of which are in press in
 Burrell et al., (2020).  The version under active development and additional
 example scripts showing how the package can be applied can be found at
-@code{<https://github.com/ArdenB/TSSRESTREND>.}")
+<https://github.com/@code{ArdenB/TSSRESTREND>}.")
     (license license:gpl3)))
 
 (define-public r-tsrobprep
@@ -2850,7 +2850,7 @@ distributions (Skew Normal, Skew t, Skew Slash or Skew Contaminated Normal).")
     (synopsis "Time Series with Matrix Profile")
     (description
      "This package provides a toolkit implementing the Matrix Profile concept that was
-created by CS-UCR @code{<http://www.cs.ucr.edu/~eamonn/MatrixProfile.html>.}")
+created by CS-UCR <http://www.cs.ucr.edu/~eamonn/@code{MatrixProfile.html>}.")
     (license license:asl2.0)))
 
 (define-public r-tsmodel
@@ -3206,13 +3206,13 @@ origin evaluation.")
 (define-public r-tsfeatures
   (package
     (name "r-tsfeatures")
-    (version "1.1")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tsfeatures" version))
               (sha256
                (base32
-                "06b35b95rm72m92hhslqd31dnxp0s3k65qdbp3npkhdkw4xv9aj6"))))
+                "1z0c1pc2hsw76qwy6nibp1dnmk5vq495g2b81j844ajma6gj7ssy"))))
     (properties `((upstream-name . "tsfeatures")))
     (build-system r-build-system)
     (propagated-inputs (list r-urca
@@ -3348,8 +3348,8 @@ TARMA models.")
     (home-page "https://cran.r-project.org/package=TSeriesMMA")
     (synopsis "Multiscale Multifractal Analysis of Time Series Data")
     (description
-     "Multiscale multifractal analysis (MMA) @code{(GieraÅtowski} et al.,
-@code{2012)<DOI:10.1103/PhysRevE.85.021915>} is a time series analysis method,
+     "Multiscale multifractal analysis (MMA) (@code{GieraÅtowski} et al.,
+2012)<DOI:10.1103/@code{PhysRevE.85.021915>} is a time series analysis method,
 designed to describe scaling properties of fluctuations within the signal
 analyzed.  The main result of this procedure is the so called Hurst surface
 h(q,s) , which is a dependence of the local Hurst exponent h (fluctuation
@@ -3419,7 +3419,7 @@ Schreiber: <http://www.mpipks-dresden.mpg.de/~tisean/>.")
     (synopsis "Time Series Entropies")
     (description
      "Computes various entropies of given time series.  This is the initial version
-that includes @code{ApEn()} and @code{SampEn()} functions for calculating
+that includes @code{ApEn}() and @code{SampEn}() functions for calculating
 approximate entropy and sample entropy.  Approximate entropy was proposed by
 S.M. Pincus in \"Approximate entropy as a measure of system complexity\",
 Proceedings of the National Academy of Sciences of the United States of America,
@@ -3427,7 +3427,7 @@ Proceedings of the National Academy of Sciences of the United States of America,
 R. Moorman in \"Physiological time-series analysis using approximate entropy and
 sample entropy\", American Journal of Physiology, Heart and Circulatory
 Physiology, 278, 2039-2049 (June 2000).  This package also contains
-@code{FastApEn()} and @code{FastSampEn()} functions for calculating fast
+@code{FastApEn}() and @code{FastSampEn}() functions for calculating fast
 approximate entropy and fast sample entropy.  These are newly designed very fast
 algorithms, resulting from the modification of the original algorithms.  The
 calculated values of these entropies are not the same as the original ones, but
@@ -3691,7 +3691,7 @@ low-frequency series for simulation studies in temporal disaggregation; Second -
 a toolkit utilizing temporal disaggregation and benchmarking techniques with a
 low-dimensional matrix of indicator series previously proposed in Dagum and
 Cholette (2006, ISBN:978-0-387-35439-2) ; and Third - novel techniques proposed
-by Mosley, Gibberd and Eckley (2021) @code{<arXiv:2108.05783>} for
+by Mosley, Gibberd and Eckley (2021) <@code{arXiv:2108.05783>} for
 disaggregating low-frequency series in the presence of high-dimensional
 indicator matrices.")
     (license license:gpl3+)))
@@ -3919,9 +3919,9 @@ are allowed.  The conditional distribution can be Poisson or Negative Binomial."
     (description
      "This package provides functions for the analysis of time series using copula
 models.  The package is based on methodology described in the following
-references. @code{McNeil,} A.J. (2021) <doi:10.3390/risks9010014>, Bladt, M., &
-@code{McNeil,} A.J. (2021) <doi:10.1016/j.ecosta.2021.07.004>, Bladt, M., &
-@code{McNeil,} A.J. (2021) @code{<arXiv:2107.00960>.}")
+references. @code{McNeil}, A.J. (2021) <doi:10.3390/risks9010014>, Bladt, M., &
+@code{McNeil}, A.J. (2021) <doi:10.1016/j.ecosta.2021.07.004>, Bladt, M., &
+@code{McNeil}, A.J. (2021) <@code{arXiv:2107.00960>}.")
     (license license:gpl3)))
 
 (define-public r-tsclust
@@ -3974,10 +3974,10 @@ cluster evaluation metrics.")
 settings when instrumental variable regression is not suitable because of
 potentially invalid instrumental variables.  Based on Guo and Buehlmann (2022)
 \"Two Stage Curvature Identification with Machine Learning: Causal Inference with
-Possibly Invalid Instrumental Variables\" @code{<arXiv:2203.12808>.} The vignette
-is available in Carl, Emmenegger, BÃ¼hlmann and Guo (2023) \"TSCI: two stage
-curvature identification for causal inference with invalid instruments\"
-@code{<arXiv:2304.00513>.}")
+Possibly Invalid Instrumental Variables\" <@code{arXiv:2203.12808>}.  The
+vignette is available in Carl, Emmenegger, BÃ¼hlmann and Guo (2023) \"TSCI: two
+stage curvature identification for causal inference with invalid instruments\"
+<@code{arXiv:2304.00513>}.")
     (license license:gpl3+)))
 
 (define-public r-tsbss
@@ -4031,7 +4031,7 @@ Virta and Taskinen (2021) <doi:10.18637/jss.v098.i15>.")
     (synopsis "Class-Agnostic Time Series")
     (description
      "Time series toolkit with identical behavior for all time series classes:
-ts','xts', data.frame', data.table', tibble', zoo', @code{timeSeries',}
+ts','xts', data.frame', data.table', tibble', zoo', @code{timeSeries}',
 tsibble', tis or irts'.  Also converts reliably between these classes.")
     (license license:gpl3)))
 
@@ -4102,39 +4102,6 @@ Provide distribution d, p, q, r functions, fitting and testing functions.
 Project initiated by Paul Higbie and based on Cosma Shalizi's code.")
     (license license:gpl2+)))
 
-(define-public r-ts2net
-  (package
-    (name "r-ts2net")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ts2net" version))
-              (sha256
-               (base32
-                "0f45xnvg09qvcc202dfr9d1a29909gmz863pjyq78mhjj0glijqw"))))
-    (properties `((upstream-name . "ts2net")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-scales
-                             r-nonlineartseries
-                             r-mmpp
-                             r-minerva
-                             r-infotheo
-                             r-igraph
-                             r-dtw
-                             r-dbscan))
-    (home-page "https://github.com/lnferreira/ts2net")
-    (synopsis "From Time Series to Networks")
-    (description
-     "Transforming one or multiple time series into networks.  This package is useful
-for complex systems modeling, time series data mining, or time series analysis
-using networks.  An introduction to the topic and the descriptions of the
-methods implemented in this package can be found in Mitchell (2006)
-<doi:10.1016/j.artint.2006.10.002>, Silva and Zhao (2016)
-<doi:10.1007/978-3-319-17290-3>, and Silva et al. (2021)
-<doi:10.1002/widm.1404>.")
-    (license license:expat)))
-
 (define-public r-trycatchlog
   (package
     (name "r-trycatchlog")
@@ -4151,7 +4118,7 @@ methods implemented in this package can be found in Mitchell (2006)
     (home-page "https://github.com/aryoda/tryCatchLog")
     (synopsis "Advanced 'tryCatch()' and 'try()' Functions")
     (description
-     "Advanced @code{tryCatch()} and try() functions for better error handling
+     "Advanced @code{tryCatch}() and try() functions for better error handling
 (logging, stack trace with source code references and support for post-mortem
 analysis via dump files).")
     (license (list license:gpl3
@@ -4362,6 +4329,34 @@ truncation..")
 univariate and multivariate normal and Student distributions, described in Botev
 (2017) <doi:10.1111/rssb.12162> and Botev and L'Ecuyer (2015)
 <doi:10.1109/WSC.2015.7408180>.")
+    (license license:gpl3)))
+
+(define-public r-truncaipw
+  (package
+    (name "r-truncaipw")
+    (version "1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "truncAIPW" version))
+              (sha256
+               (base32
+                "01863yys0ih0piriksspylpsrfv7q4mkrsqhh1mgrkfyw1d11czn"))))
+    (properties `((upstream-name . "truncAIPW")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survpen r-survival))
+    (home-page "https://arxiv.org/pdf/2208.06836.pdf")
+    (synopsis
+     "Doubly Robust Estimation under Covariate-Induced Dependent Left Truncation")
+    (description
+     "Doubly robust estimation for the mean of an arbitrarily transformed survival
+time under covariate-induced dependent left truncation and noninformative right
+censoring.  The functions @code{truncAIPW}(), @code{truncAIPW_cen1}(), and
+@code{truncAIPW_cen2}() compute the doubly robust estimators under the scenario
+without censoring and the two censoring scenarios, respectively.  The package
+also contains three simulated data sets simu', simu_c1', and simu_c2', which are
+used to illustrate the usage of the functions in this package.  Reference: Wang,
+Y., Ying, A., Xu, R. (2022) \"Doubly robust estimation under covariate-induced
+dependent left truncation\" <@code{arXiv:2208.06836>}.")
     (license license:gpl3)))
 
 (define-public r-trumpetplots
@@ -4812,7 +4807,7 @@ variables.  The model_triplot() function delivers data-level explanations.  The
 generic plot function visualises in a concise way importance of hierarchical
 groups of predictors.  All of the the tools are model agnostic, therefore works
 for any predictive machine learning models.  Find more details in Biecek (2018)
-@code{<arXiv:1806.08915>.}")
+<@code{arXiv:1806.08915>}.")
     (license license:gpl3)))
 
 (define-public r-tripler
@@ -4920,9 +4915,9 @@ irregular spaced data.")
      "Access and manipulate spatial tracking data, with straightforward coercion from
 and to other formats.  Filter for speed and create time spent maps from tracking
 data.  There are coercion methods to convert between trip and ltraj from
-@code{adehabitatLT',} and between trip and psp and ppp from spatstat'.  Trip
+@code{adehabitatLT}', and between trip and psp and ppp from spatstat'.  Trip
 objects can be created from raw or grouped data frames, and from types in the
-sp', sf', amt', @code{trackeR',} mousetrap', and other packages, Sumner, MD
+sp', sf', amt', @code{trackeR}', mousetrap', and other packages, Sumner, MD
 (2011)
 <https://figshare.utas.edu.au/articles/thesis/The_tag_location_problem/23209538>.")
     (license license:gpl3)))
@@ -5408,7 +5403,7 @@ duration, the number of lying bouts, and the mean duration of lying bouts.
 Further capabilities are the description of lying laterality and the calculation
 of proxies for the level of physical activity of the cow.  Reference: Simmler
 M., Brouwers S. P. (2023)
-@code{<https://gitlab.com/AgroSimi/triact_manuscript>.}")
+<https://gitlab.com/@code{AgroSimi/triact_manuscript>}.")
     (license license:gpl3+)))
 
 (define-public r-tri-hierarchical-ibds
@@ -5472,7 +5467,7 @@ restrictions.")
      "This package performs fast variable selection in high-dimensional settings while
 controlling the false discovery rate (FDR) at a user-defined target level.  The
 package is based on the paper Machkour, Muma, and Palomar (2021)
-@code{<arXiv:2110.06048>.}")
+<@code{arXiv:2110.06048>}.")
     (license license:gpl3+)))
 
 (define-public r-tres
@@ -5835,7 +5830,7 @@ data in a structured way.")
      "Trelliscope is a scalable, flexible, interactive approach to visualizing data
 (Hafen, 2013 <doi:10.1109/LDAV.2013.6675164>).  This package provides methods
 that make it easy to create a Trelliscope display specification for
-@code{TrelliscopeJS.} High-level functions are provided for creating displays
+@code{TrelliscopeJS}.  High-level functions are provided for creating displays
 from within tidyverse or ggplot2 workflows.  Low-level functions are also
 provided for creating new interfaces.")
     (license license:bsd-3)))
@@ -6039,7 +6034,7 @@ total evidence dating analyses.")
     (description
      "This package provides tools for the exploration of distributions of phylogenetic
 trees.  This package includes a shiny interface which can be started from R
-using @code{treespaceServer().} For further details see Jombart et al. (2017)
+using @code{treespaceServer}().  For further details see Jombart et al. (2017)
 <DOI:10.1111/1755-0998.12676>.")
     (license license:expat)))
 
@@ -6076,7 +6071,7 @@ that carries the extinction time and age of its ancestor.  The symmetric mode
 can be seen as an vicariant or allopatric process where divided populations
 suffer equal evolutionary forces while the asymmetric mode could be seen as a
 peripatric speciation where a mother lineage continues to exist.  Reference: O.
-Hagen and T. Stadler (2017). @code{TreeSimGM:} Simulating phylogenetic trees
+Hagen and T. Stadler (2017). @code{TreeSimGM}: Simulating phylogenetic trees
 under general Bellman Harris models with lineage-specific shifts of speciation
 and extinction in R. Methods in Ecology and Evolution.
 <doi:10.1111/2041-210X.12917>.")
@@ -6187,7 +6182,7 @@ criteria are implemented.")
      "Correction Factors for Tree Plot Areas Intersected by Stand Boundaries")
     (description
      "The German national forest inventory uses angle count sampling, a sampling
-method first published as `Bitterlich, W.: Die @code{WinkelzÃ¤hlmessung.}
+method first published as `Bitterlich, W.: Die @code{WinkelzÃ¤hlmessung}.
 Allgemeine Forst- und Holzwirtschaftliche Zeitung, 58.  Jahrg., Folge 11/12 vom
 Juni 1947` and extended by Grosenbaugh
 (<https://academic.oup.com/jof/article-abstract/50/1/32/4684174>) as probability
@@ -6213,13 +6208,13 @@ their sizes and hence their probabilities need to be corrected.")
     (description
      "This package provides functionality for creation and comparison of polynomials
 that uniquely describe trees as introduced in Liu (2019,
-@code{<arXiv:1904.03332>).} The core method converts rooted unlabeled phylo
+<@code{arXiv:1904.03332>}).  The core method converts rooted unlabeled phylo
 objects from ape to the tree defining polynomials described with coefficient
 matrices.  Additionally, a conversion for rooted binary trees with binary trait
 labels is also provided.  Once the polynomials of trees are calculated there are
 functions to calculate distances, distance matrices and plot different distance
 trees from a target tree.  Manipulation and conversion to the tree defining
-polynomials is implemented in C++ with Rcpp and @code{RcppArmadillo'.}
+polynomials is implemented in C++ with Rcpp and @code{RcppArmadillo}'.
 Furthermore, parallel programming with @code{RcppThread} is used to improve
 performance converting to polynomials and calculating distances.")
     (license license:gpl2+)))
@@ -6522,7 +6517,7 @@ format for rooted 3D tree objects.  Moreover, it encompasses an example dataset
 of 3D models of 63 beans in phylo3D format.  Please note that this R package was
 developed alongside the project described in the manuscript Measuring 3D tree
 imbalance of plant models using graph-theoretical approaches by M. Fischer, S.
-Kersting, and L. KÃ¼hn (2023) @code{<arXiv:2307.14537>,} which provides precise
+Kersting, and L. KÃ¼hn (2023) <@code{arXiv:2307.14537>}, which provides precise
 mathematical definitions of the measurements.  Furthermore, the package contains
 several helpful functions, for example, some auxiliary functions for computing
 the ancestors, descendants, and depths of the nodes, which ensures that the
@@ -6538,7 +6533,7 @@ cylinder to bud to leaf, as well as edge.color to change the color of the edge
 depiction.  This project was supported by the joint research project DIG-IT!
 funded by the European Social Fund (ESF), reference: ESF/14-BM-A55-0017/19, and
 the Ministry of Education, Science and Culture of Mecklenburg-Western Pomerania,
-Germany, as well as by the the project @code{ArtIGROW,} which is a part of the
+Germany, as well as by the the project @code{ArtIGROW}, which is a part of the
 WIR!-Alliance @code{ArtIFARM} â Artificial Intelligence in Farming funded by
 the German Federal Ministry of Education and Research (FKZ: 03WIR4805).")
     (license license:gpl3)))
@@ -6734,7 +6729,7 @@ species, population, or genes) and the data used to create them.")
 of a large variety of (im)balance indices for rooted trees.  The package
 accompanies the manuscript Tree balance indices: a comprehensive survey by M.
 Fischer, L. Herbst, S. Kersting, L. Kuehn and K. Wicke (2021)
-@code{<arXiv:2109.12281>,} which gives a precise definition for the terms
+<@code{arXiv:2109.12281>}, which gives a precise definition for the terms
 balance index and imbalance index (Section 3) and provides an overview of the
 terminology in this manual (Section 2).  For further information on (im)balance
 indices, see also Fischer et al. (2021) <https://treebalance.wordpress.com>.
@@ -6753,7 +6748,7 @@ index.  As input, most functions of treebalance require a rooted (phylogenetic)
 tree in phylo format (as introduced in ape 1.9 in November 2006).  phylo is used
 to store (phylogenetic) trees with no vertices of out-degree one.  For further
 information on the format we kindly refer the reader to E. Paradis (2012)
-@code{<http://ape-package.ird.fr/misc/FormatTreeR_24Oct2012.pdf>.}")
+<http://ape-package.ird.fr/misc/@code{FormatTreeR_24Oct2012.pdf>}.")
     (license license:gpl3)))
 
 (define-public r-tree3d
@@ -6801,7 +6796,7 @@ options to change the diameter, height, and color of the tree's crown and trunk.
 as prediction = bias + feature_1_contribution + ... + feature_n_contribution'.
 This decomposition is then used to calculate the Mean Decrease Impurity (MDI)
 and Mean Decrease Impurity using out-of-bag samples (MDI-oob) feature importance
-measures based on the work of Li et al. (2019) @code{<arXiv:1906.10845>.}")
+measures based on the work of Li et al. (2019) <@code{arXiv:1906.10845>}.")
     (license license:expat)))
 
 (define-public r-treatmentselection
@@ -7094,7 +7089,7 @@ package implements a transfer learning framework for tensor GGMs, which takes
 full advantage of informative auxiliary domains even when non-informative
 auxiliary domains are present, benefiting from the carefully designed
 data-adaptive weights.  Reference: Ren, M., Zhen Y., and Wang J. (2022).
-\"Transfer learning for tensor graphical models\" @code{<arXiv:2211.09391>.}")
+\"Transfer learning for tensor graphical models\" <@code{arXiv:2211.09391>}.")
     (license license:gpl2)))
 
 (define-public r-transport
@@ -7169,7 +7164,7 @@ equations used in transplantation, focused mainly on transplantation of
 abdominal organs.  These functions include donor and recipient risk indices as
 used by NHS Blood & Transplant, OPTN/UNOS and Eurotransplant, tools for
 quantifying HLA mismatches, functions for calculating estimated glomerular
-filtration rate @code{(eGFR),} a function to calculate the APRI (AST to platelet
+filtration rate (@code{eGFR}), a function to calculate the APRI (AST to platelet
 ratio) score used in initial screening of suitability to receive a transplant
 from a hepatitis C seropositive donor and some biochemical unit converter
 functions.  All functions are designed to work with either US or international
@@ -7391,7 +7386,7 @@ seen as the spatial brother to the tweenr package.")
      "Implementation of the transformation of the Mean Opinion Scores (MOS) to be used
 before applying the rank based statistical techniques.  The method and its
 necessity is described in: Babak Naderi, Sebastian MÃ¶ller (2020)
-@code{<arXiv:2004.11490>.}")
+<@code{arXiv:2004.11490>}.")
     (license license:expat)))
 
 (define-public r-transformer
@@ -7412,7 +7407,7 @@ necessity is described in: Babak Naderi, Sebastian MÃ¶ller (2020)
      "Implementation of Transformer Deep Neural Network with Vignettes")
     (description
      "Transformer is a Deep Neural Network Architecture based i.a.  on the Attention
-mechanism (Vaswani et al. (2017) @code{<doi:10.48550/arXiv.1706.03762>).}")
+mechanism (Vaswani et al. (2017) <doi:10.48550/@code{arXiv.1706.03762>}).")
     (license license:expat)))
 
 (define-public r-transform-hazards
@@ -7505,7 +7500,7 @@ Stanford Natural Language Inference <https://nlp.stanford.edu/projects/snli/>
 and Multi-Genre Natural Language Inference
 <https://huggingface.co/datasets/multi_nli> datasets.  Using similar models,
 zero-shot classification transformers have demonstrated superior performance
-relative to other natural language processing models @code{<arXiv:1909.00161>.}
+relative to other natural language processing models <@code{arXiv:1909.00161>}.
 All other zero-shot classification model pipelines can be implemented using
 their model name from
 <https://huggingface.co/models?pipeline_tag=zero-shot-classification>}.")
@@ -7614,10 +7609,10 @@ model, other parametric survival models (Weibull, etc.), models for binary and
 ordered categorical variables, normal and transformed-normal (Box-Cox type)
 linear models, and continuous outcome logistic regression.  Hyperparameter
 tuning is facilitated through model-based optimization functionalities from
-package @code{mlrMBO'.} The accompanying vignette describes the methodology used
-in tramnet in detail.  Transformation models and model-based optimization are
-described in Hothorn et al. (2019) <doi:10.1111/sjos.12291> and Bischl et al.
-(2016) <arxiv:1703.03373>, respectively.")
+package @code{mlrMBO}'.  The accompanying vignette describes the methodology
+used in tramnet in detail.  Transformation models and model-based optimization
+are described in Hothorn et al. (2019) <doi:10.1111/sjos.12291> and Bischl et
+al. (2016) <arxiv:1703.03373>, respectively.")
     (license license:gpl2)))
 
 (define-public r-tramme
@@ -8314,7 +8309,7 @@ tags deployed on northern fur seals.")
     (description
      "This package provides an integrated user interface and workflow for the analysis
 of running, cycling and swimming data from GPS-enabled tracking devices through
-the @code{trackeR} @code{<https://CRAN.R-project.org/package=trackeR>} R
+the @code{trackeR} <https://CRAN.R-project.org/package=@code{trackeR>} R
 package.")
     (license license:gpl3)))
 
@@ -8381,7 +8376,7 @@ functionality.")
     (description
      "Collaborative writing and editing of R Markdown (or Sweave) documents.  The
 local .Rmd (or .Rnw) is uploaded as a plain-text file to Google Drive.  By
-taking advantage of the easily readable Markdown (or @code{LaTeX)} syntax and
+taking advantage of the easily readable Markdown (or @code{LaTeX}) syntax and
 the well-known online interface offered by Google Docs, collaborators can easily
 contribute to the writing and editing process.  After integrating all authorsâ
 contributions, the final document can be downloaded and rendered locally.")
@@ -8592,8 +8587,8 @@ available.")
      "Efficient method for fitting nonparametric matrix trace regression model.  The
 detailed description can be found in C. Lee, L. Li, H. Zhang, and M. Wang
 (2021).  Nonparametric Trace Regression via Sign Series Representation.
-@code{<arXiv:2105.01783>.} The method employs the aggregation of structured sign
-series for trace regression (ASSIST) algorithm.")
+<@code{arXiv:2105.01783>}.  The method employs the aggregation of structured
+sign series for trace regression (ASSIST) algorithm.")
     (license license:gpl2+)))
 
 (define-public r-tr8
@@ -8629,6 +8624,26 @@ Mycorrhizal intensity databases, Catminat, BROT, PLANTS, Jepson Flora Project).
 The TR8 name, inspired by \"car plates\" jokes, was chosen since it both reminds
 of the main object of the package and is extremely short to type.")
     (license license:gpl2+)))
+
+(define-public r-tqk
+  (package
+    (name "r-tqk")
+    (version "0.1.8")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "tqk" version))
+              (sha256
+               (base32
+                "1l4zsmfnpzcn34pjwzfr511qn7y03bymdak4pcysrj4s49xgx4qj"))))
+    (properties `((upstream-name . "tqk")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble r-magrittr r-jsonlite r-httr r-dplyr))
+    (home-page "https://github.com/mrchypark/tqk")
+    (synopsis "Get Financial Data in Korea")
+    (description
+     "Enables the acquisition of Korean financial market data, designed to integrate
+seamlessly with the tidyquant package.")
+    (license license:expat)))
 
 (define-public r-tpr
   (package
@@ -8891,7 +8906,7 @@ partial linear models.")
      "Constraint-based causal discovery using the PC algorithm while accounting for a
 partial node ordering, for example a partial temporal ordering when the data
 were collected in different waves of a cohort study.  Andrews RM, Foraita R,
-Didelez V, Witte J (2021) @code{<arXiv:2108.13395>} provide a guide how to use
+Didelez V, Witte J (2021) <@code{arXiv:2108.13395>} provide a guide how to use
 tpc to analyse cohort data.")
     (license license:gpl3+)))
 
@@ -8913,10 +8928,10 @@ tpc to analyse cohort data.")
     (synopsis "Estimation and Inference of Two-Way pAUC, pAUC and pODC")
     (description
      "This package provides tools for estimating and inferring two-way partial area
-under receiver operating characteristic curves (two-way @code{pAUC),} partial
-area under receiver operating characteristic curves @code{(pAUC),} and partial
-area under ordinal dominance curves @code{(pODC).} Methods includes Mann-Whitney
-statistic and Jackknife, etc.")
+under receiver operating characteristic curves (two-way @code{pAUC}), partial
+area under receiver operating characteristic curves (@code{pAUC}), and partial
+area under ordinal dominance curves (@code{pODC}).  Methods includes
+Mann-Whitney statistic and Jackknife, etc.")
     (license license:gpl2+)))
 
 (define-public r-tp-idm
@@ -8965,7 +8980,7 @@ functionality within the grid framework for plotting @code{ToxPi} graphs.
 ease-of-use, reproducibility, and transparency. @code{toxpiR} package behaves
 nearly identically to the GUI; the package documentation includes notes about
 all differences.  The vignettes download example files from
-@code{<https://github.com/ToxPi/ToxPi-example-files>.}")
+<https://github.com/@code{ToxPi/ToxPi-example-files>}.")
     (license license:gpl3+)))
 
 (define-public r-toxeval
@@ -9078,25 +9093,6 @@ of regression averaging (Matloff (2017, ISBN: 9781498710916)).")
      "This package implements geodesic interpolation and basis generation functions
 that allow you to create new tour methods from R.")
     (license license:expat)))
-
-(define-public r-tournament
-  (package
-    (name "r-tournament")
-    (version "0.2.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "TouRnament" version))
-              (sha256
-               (base32
-                "09i0frzzxi5ymjlvh81rmisxh35amrvhxbkjq5351fhlpf1n977z"))))
-    (properties `((upstream-name . "TouRnament")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=TouRnament")
-    (synopsis "Tools for Sports Competitions")
-    (description
-     "This package contains two functions related to sports competitions.  One to
-create league tables and one to create a match schedule.")
-    (license license:gpl3)))
 
 (define-public r-touch
   (package
@@ -9244,8 +9240,8 @@ bounds in raw scale units or in terms of effect sizes.  See: Lakens (2017)
     (synopsis "Create the Tree of Science from WoS and Scopus")
     (description
      "The goal of tosr is to create the Tree of Science from Web of Science
-@code{(WoS)} and Scopus data.  It can read files from both sources at the same
-time.  More information can be found in @code{Valencia-HernÃ¡ndez} (2020)
+(@code{WoS}) and Scopus data.  It can read files from both sources at the same
+time.  More information can be found in Valencia-@code{HernÃ¡ndez} (2020)
 <https://revistas.unal.edu.co/index.php/ingeinv/article/view/77718>.")
     (license license:expat)))
 
@@ -9274,23 +9270,23 @@ high-dimensional latent factors models.  It is making the simultaneous inference
 on a set of parameters from two directions, one is testing whether the estimated
 zero parameters indeed are zero and the other is testing whether there exists
 zero in the parameter set of non-zero.  More details can be referred to Wei Liu,
-et al. (2022) @code{<doi:10.48550/arXiv.2012.11100>.}")
+et al. (2022) <doi:10.48550/@code{arXiv.2012.11100>}.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-toscutil
   (package
     (name "r-toscutil")
-    (version "2.5.0")
+    (version "2.7.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "toscutil" version))
               (sha256
                (base32
-                "0mygvr5bkqy4jgnkx2ih60qp0yp1f78nigg6xk4aim9fw9312d3j"))))
+                "0ckj870hky8hxifps8y8982a4lz7hw797sszr147m3xhj73350pm"))))
     (properties `((upstream-name . "toscutil")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlang))
-    (home-page "https://cran.r-project.org/package=toscutil")
+    (propagated-inputs (list r-rlang r-languageserver))
+    (home-page "https://toscm.github.io/toscutil/")
     (synopsis "Utility Functions")
     (description
      "Base R sometimes requires verbose statements for simple, often recurring tasks,
@@ -9351,7 +9347,7 @@ latent Dirichlet allocation from the lda package, plots are offered for the
 descriptive analysis of text corpora and topic models.  In addition, an
 implementation of Chang's intruder words and intruder topics is provided.
 Sample data for the vignette is included in the @code{toscaData} package, which
-is available on @code{gitHub:} @code{<https://github.com/Docma-TU/toscaData>.}")
+is available on @code{gitHub}: <https://github.com/Docma-TU/@code{toscaData>}.")
     (license license:gpl2+)))
 
 (define-public r-tornado
@@ -9487,15 +9483,15 @@ results published in the literature and are not part of the optimizers offered
 in torch'.  Prospective users should test these optimizers with their data,
 since performance depends on the specific problem being solved.  The packages
 includes the following optimizers: (a) adabelief by Zhuang et al (2020),
-@code{<arXiv:2010.07468>;} (b) adabound by Luo et al.(2019),
-@code{<arXiv:1902.09843>;} (c) adahessian by Yao et al.(2021)
-@code{<arXiv:2006.00719>;} (d) adamw by Loshchilov & Hutter (2019),
-@code{<arXiv:1711.05101>;} (e) madgrad by Defazio and Jelassi (2021),
-@code{<arXiv:2101.11075>;} (f) nadam by Dozat (2019),
-@code{<https://openreview.net/pdf/OM0jvwB8jIp57ZJjtNEZ.pdf>;} (g) qhadam by Ma
-and Yarats(2019), @code{<arXiv:1810.06801>;} (h) radam by Liu et al. (2019),
-@code{<arXiv:1908.03265>;} (i) swats by Shekar and Sochee (2018),
-@code{<arXiv:1712.07628>;} (j) yogi by Zaheer et al.(2019),
+<@code{arXiv:2010.07468>}; (b) adabound by Luo et al.(2019),
+<@code{arXiv:1902.09843>}; (c) adahessian by Yao et al.(2021)
+<@code{arXiv:2006.00719>}; (d) adamw by Loshchilov & Hutter (2019),
+<@code{arXiv:1711.05101>}; (e) madgrad by Defazio and Jelassi (2021),
+<@code{arXiv:2101.11075>}; (f) nadam by Dozat (2019),
+<https://openreview.net/pdf/OM0@code{jvwB8jIp57ZJjtNEZ.pdf>}; (g) qhadam by Ma
+and Yarats(2019), <@code{arXiv:1810.06801>}; (h) radam by Liu et al. (2019),
+<@code{arXiv:1908.03265>}; (i) swats by Shekar and Sochee (2018),
+<@code{arXiv:1712.07628>}; (j) yogi by Zaheer et al.(2019),
 <https://papers.nips.cc/paper/8186-adaptive-methods-for-nonconvex-optimization>.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
@@ -9780,7 +9776,7 @@ statistical inference on the lengths of informative top-k lists, (2) stochastic
 aggregation of full or partial lists, and (3) graphical tools for the
 statistical exploration of input lists, and for the visualization of aggregation
 results.  Note that RGtk2 and @code{gWidgets2RGtk2} have been archived on CRAN.
-See @code{<https://github.com/pievos101/TopKLists>} for installation
+See <https://github.com/pievos101/@code{TopKLists>} for installation
 instructions.")
     (license license:lgpl3)))
 
@@ -9807,7 +9803,7 @@ optimized through the usage of svds() function in RSpectra package, on a
 the word-topic matrix A, and an algorithm for recovering the topic-document
 matrix W given A and D based on quadratic programming.  The details about the
 techniques are explained in the paper \"A new SVD approach to optimal topic
-estimation\" by Tracy Ke and Minzhe Wang (2017) @code{<arXiv:1704.07016>.}")
+estimation\" by Tracy Ke and Minzhe Wang (2017) <@code{arXiv:1704.07016>}.")
     (license license:expat)))
 
 (define-public r-topicmodels-etm
@@ -9833,7 +9829,7 @@ categorical distribution whose natural parameter is the inner product between a
 word embedding and an embedding of its assigned topic.  The techniques are
 explained in detail in the paper Topic Modeling in Embedding Spaces by Adji B.
 Dieng, Francisco J. R. Ruiz, David M. Blei (2019), available at
-@code{<arXiv:1907.04907>.}")
+<@code{arXiv:1907.04907>}.")
     (license license:expat)))
 
 (define-public r-topicdoc
@@ -9857,7 +9853,7 @@ Dieng, Francisco J. R. Ruiz, David M. Blei (2019), available at
 Latent Dirichlet Allocation and Correlated Topic Models fit using the
 topicmodels package.  For more details, see Chapter 12 in Airoldi et al. (2014,
 ISBN:9781466504080), pp 262-272 Mimno et al. (2011, ISBN:9781937284114), and
-Bischof et al. (2014) @code{<arXiv:1206.4631v1>.}")
+Bischof et al. (2014) <@code{arXiv:1206.4631v1>}.")
     (license license:expat)))
 
 (define-public r-topdowntimeratio
@@ -9888,7 +9884,7 @@ operates not on the basis of perpendicular distances.  Top-Down Time Ratio
 segmentation allows for disparate sampling time intervals by calculating the
 distance between locations and segments with respect to time.  Provided a
 trajectory with timestamps, tdtr() returns a set of straight- line segments that
-can represent the full trajectory. @code{McCool,} Lugtig, and Schouten (2022)
+can represent the full trajectory. @code{McCool}, Lugtig, and Schouten (2022)
 <doi:10.1007/s11116-022-10328-2> describe this method as implemented here in
 more detail.")
     (license license:gpl3+)))
@@ -9978,7 +9974,7 @@ Chef played out.")
     (home-page "https://cran.r-project.org/package=TooManyCellsR")
     (synopsis "An R Wrapper for 'TooManyCells'")
     (description
-     "An R wrapper for using @code{TooManyCells',} a command line program for
+     "An R wrapper for using @code{TooManyCells}', a command line program for
 clustering, visualizing, and quantifying cell clade relationships.  See
 <https://gregoryschwartz.github.io/too-many-cells/> for more details.")
     (license license:gpl3)))
@@ -10072,7 +10068,7 @@ for practitioners in uplift modeling, we propose a combination of tools that can
 be separated into the following ingredients: i) quantization, ii) visualization,
 iii) variable selection, iv) parameters estimation and, v) model validation.
 For more details, see
-@code{<https://dms.umontreal.ca/~murua/research/UpliftRegression.pdf>.}")
+<https://dms.umontreal.ca/~murua/research/@code{UpliftRegression.pdf>}.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-toolmark
@@ -10153,22 +10149,25 @@ particular for Canadian census data from different censuses.")
 (define-public r-tomicsvis
   (package
     (name "r-tomicsvis")
-    (version "1.2.3")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TOmicsVis" version))
               (sha256
                (base32
-                "0in6xc6mjsvp3bkrj8ik1mwd3pnq5sdxqc987ygw8yb80fzrfycs"))))
+                "0s46i8wnvvs15xwb0g62rpn864b27hbx0lrjpcv2wb1s27iz1wv3"))))
     (properties `((upstream-name . "TOmicsVis")))
     (build-system r-build-system)
     (propagated-inputs (list r-wgcna
                              r-venn
                              r-vegan
+                             r-upsetr
+                             r-umap
                              r-tidyr
                              r-survminer
                              r-survival
                              r-stringr
+                             r-shiny
                              r-rtsne
                              r-reshape2
                              r-rcolorbrewer
@@ -10248,7 +10247,7 @@ their sources.")
     (synopsis "Byte Pair Encoding Text Tokenization")
     (description
      "Unsupervised text tokenizer focused on computational efficiency.  Wraps the
-@code{YouTokenToMe} library @code{<https://github.com/VKCOM/YouTokenToMe>} which
+@code{YouTokenToMe} library <https://github.com/VKCOM/@code{YouTokenToMe>} which
 is an implementation of fast Byte Pair Encoding (BPE)
 <https://aclanthology.org/P16-1162/>.")
     (license (license:fsdg-compatible "MPL-2.0"))))
@@ -10316,7 +10315,7 @@ training new vocabularies and tokenizing texts.")
      "Approximations of global p-values when testing hypothesis in presence of
 non-identifiable nuisance parameters.  The method relies on the Euler
 characteristic heuristic and the expected Euler characteristic is efficiently
-computed by in Algeri and van Dyk (2018) @code{<arXiv:1803.03858>.}")
+computed by in Algeri and van Dyk (2018) <@code{arXiv:1803.03858>}.")
     (license license:gpl2)))
 
 (define-public r-togglr
@@ -10493,11 +10492,11 @@ datasets as ties are dependent upon each other.")
      "Node centrality measures for temporal networks.  Available measures are temporal
 degree centrality, temporal closeness centrality and temporal betweenness
 centrality defined by Kim and Anderson (2012)
-@code{<doi:10.1103/PhysRevE.85.026107>.} Applying the REN algorithm by Hanke and
-Foraita (2017) <doi:10.1186/s12859-017-1677-x> when calculating the centrality
-measures keeps the computational running time linear in the number of graph
-snapshots.  Further, all methods can run in parallel up to the number of nodes
-in the network.")
+<doi:10.1103/@code{PhysRevE.85.026107>}.  Applying the REN algorithm by Hanke
+and Foraita (2017) <doi:10.1186/s12859-017-1677-x> when calculating the
+centrality measures keeps the computational running time linear in the number of
+graph snapshots.  Further, all methods can run in parallel up to the number of
+nodes in the network.")
     (license license:gpl3)))
 
 (define-public r-tmvtnsim
@@ -10601,7 +10600,7 @@ and integrated auto-correlation time).")
      "This package provides methods for computing joint tests, controlling the
 Familywise Error Rate (FWER) and getting lower bounds on the number of false
 hypotheses in a set.  The methods implemented here are described in Mogensen and
-Markussen (2021) @code{<arXiv:2108.04731>.}")
+Markussen (2021) <@code{arXiv:2108.04731>}.")
     (license license:expat)))
 
 (define-public r-tmt
@@ -10752,7 +10751,7 @@ treatment, for continuous or binary outcomes.  Relative risk and odds ratio
 estimates are also reported for binary outcomes.  Missingness in the outcome is
 allowed, but not in treatment assignment or baseline covariate values.  The
 population mean is calculated when there is missingness, and no variation in the
-treatment assignment.  The @code{tmleMSM()} function estimates the parameters of
+treatment assignment.  The @code{tmleMSM}() function estimates the parameters of
 a marginal structural model for a binary point treatment effect.  Effect
 estimation stratified by a binary mediating variable is also available.  An ID
 argument can be used to identify repeated measures.  Default settings call
@@ -10796,7 +10795,7 @@ values or a user-supplied regression function are passed in as arguments.")
 These methods may be summarized in the following references: Yoshida, et al.
 (2022) <arxiv:2209.15045>, Barnhill et al. (2023) <arxiv:2303.02539>, Barnhill
 and Yoshida (2023) <doi:10.21203/rs.3.rs-3047827/v1>, Yoshida et al. (2022)
-@code{<arXiv:2206.04206>,} and Yoshida et al. (2019)
+<@code{arXiv:2206.04206>}, and Yoshida et al. (2019)
 <doi:10.1007/s11538-018-0493-4>.")
     (license license:expat)))
 
@@ -10878,7 +10877,7 @@ package in Chinese.")
     (home-page "https://cran.r-project.org/package=TmCalculator")
     (synopsis "Melting Temperature of Nucleic Acid Sequences")
     (description
-     "This tool is extended from methods in @code{Bio.SeqUtils.MeltingTemp} of python.
+     "This tool is extended from methods in Bio.@code{SeqUtils.MeltingTemp} of python.
  The melting temperature of nucleic acid sequences can be calculated in three
 method, the Wallace rule (Thein & Wallace (1986)
 <doi:10.1016/S0140-6736(86)90739-7>), empirical formulas based on G and C
@@ -10895,7 +10894,7 @@ thermodynamics (Breslauer K J (1986) <doi:10.1073/pnas.83.11.3746>, Sugimoto N
 Turner D H (2010) <doi:10.1093/nar/gkp892>, Sugimoto N (1995)
 <doi:10.1016/S0048-9697(98)00088-6>, Allawi H T (1997) <doi:10.1021/bi962590c>,
 Santalucia N (2005) <doi:10.1093/nar/gki918>), and it can also be corrected with
-salt ions and chemical compound @code{(SantaLucia} J (1996)
+salt ions and chemical compound (@code{SantaLucia} J (1996)
 <doi:10.1021/bi951907q>, @code{SantaLucia} J(1998) <doi:10.1073/pnas.95.4.1460>,
 Owczarzy R (2004) <doi:10.1021/bi034621r>, Owczarzy R (2008)
 <doi:10.1021/bi702363u>).")
@@ -11275,7 +11274,7 @@ single, easy to use function.  Reporting functions will return character strings
 to report p-values, confidence intervals, and hypothesis test and regression
 results.  Strings will be @code{LaTeX-formatted} as necessary and will knit
 pretty in an RMarkdown document.  The package also provides a wrapper for the
-@code{CreateTableOne()} function in the tableone package to make the results
+@code{CreateTableOne}() function in the tableone package to make the results
 knit-able.")
     (license license:gpl3)))
 
@@ -11323,7 +11322,7 @@ for support recovery of the precision matrices.")
      "Computes the solution path of the Terminating-LARS (T-LARS) algorithm.  The
 T-LARS algorithm is a major building block of the T-Rex selector (see R package
 trex').  The package is based on the papers Machkour, Muma, and Palomar (2021)
-@code{<arXiv:2110.06048>,} Efron, Hastie, Johnstone, and Tibshirani (2004)
+<@code{arXiv:2110.06048>}, Efron, Hastie, Johnstone, and Tibshirani (2004)
 <doi:10.1214/009053604000000067>, and Tibshirani (1996)
 <doi:10.1111/j.2517-6161.1996.tb02080.x>.")
     (license license:gpl3+)))
@@ -11348,7 +11347,7 @@ trex').  The package is based on the papers Machkour, Muma, and Palomar (2021)
      "This package implements a semiparametric estimator for the odds ratio model with
 censored, time-lagged, ordered categorical outcome in a randomized clinical
 trial that incorporates baseline and time-dependent information.  Tsiatis, A. A.
-and Davidian, M. (2021) @code{<arXiv:2106.15559>.}")
+and Davidian, M. (2021) <@code{arXiv:2106.15559>}.")
     (license license:gpl2)))
 
 (define-public r-tlaginterim
@@ -11373,7 +11372,7 @@ time-lagged outcome that may not be available for all enrolled subjects.
 Produces estimators, standard errors, and information that can be used to
 compute stopping boundaries using software that assumes that the estimators/test
 statistics have independent increments.  Tsiatis, A. A. and Davidian, M., (2022)
-@code{<arXiv:2204.10739>} .")
+<@code{arXiv:2204.10739>} .")
     (license license:gpl2)))
 
 (define-public r-tkrplotr
@@ -11484,8 +11483,8 @@ create new catalogs suited for specific needs.")
      "Acid/Base, Complexation, Redox, and Precipitation Titration Curves")
     (description
      "This package provides a collection of functions to plot acid/base titration
-curves @code{(pH} vs. volume of titrant), complexation titration curves
-@code{(pMetal} vs. volume of EDTA), redox titration curves (potential vs.volume
+curves (@code{pH} vs. volume of titrant), complexation titration curves
+(@code{pMetal} vs. volume of EDTA), redox titration curves (potential vs.volume
 of titrant), and precipitation titration curves (either @code{pAnalyte} or
 @code{pTitrant} vs. volume of titrant).  Options include the titration of
 mixtures, the ability to overlay two or more titration curves, and the ability
@@ -11531,14 +11530,14 @@ DLTs, and apply isotonic regression to devise estimates of DLT probability.")
     (description
      "In some phase I trials, the design goal is to find the dose associated with a
 certain target toxicity rate or the dose with a certain weighted sum of rates of
-various toxicity grades. @code{TITEgBOIN} provides the set up and calculations
+various toxicity grades.  TIT@code{EgBOIN} provides the set up and calculations
 needed to run a dose-finding trial using bayesian optimal interval (BOIN) (Yuan
 et al. (2016) <doi:10.1158/1078-0432.CCR-16-0592>), generalized bayesian optimal
-interval @code{(gBOIN)} (Mu et al. (2019) <doi:10.1111/rssc.12263>),
+interval (@code{gBOIN}) (Mu et al. (2019) <doi:10.1111/rssc.12263>),
 time-to-event bayesian optimal interval (TITEBOIN) (Lin et al. (2020)
 <doi:10.1093/biostatistics/kxz007>) and time-to-event generalized bayesian
-optimal interval @code{(TITEgBOIN)} (Takeda et al. (2022)
-<doi:10.1002/pst.2182>) designs. @code{TITEgBOIN} can conduct tasks: run
+optimal interval (TIT@code{EgBOIN}) (Takeda et al. (2022)
+<doi:10.1002/pst.2182>) designs.  TIT@code{EgBOIN} can conduct tasks: run
 simulations and get operating characteristics; determine the dose for the next
 cohort; select maximum tolerated dose (MTD).  These functions allow
 customization of design characteristics to vary sample size, cohort sizes,
@@ -12025,13 +12024,13 @@ project template for Rstudio'.")
 (define-public r-tinylabels
   (package
     (name "r-tinylabels")
-    (version "0.2.3")
+    (version "0.2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tinylabels" version))
               (sha256
                (base32
-                "0knqcdnlrydbfklizvx9mp304sjz6wp54nbx1zhy2g2730nwa61k"))))
+                "01pvnirma3wzfqnnz8zvyqajjyysjm3sd6813bgdhz199lcg7hhz"))))
     (properties `((upstream-name . "tinylabels")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -12237,7 +12236,7 @@ use in fitting time resolved spectroscopy data, and as described by Laptenok et
 al. (2007) <doi:10.18637/jss.v018.i08> for its use in fitting Fluorescence
 Lifetime Imaging Microscopy (FLIM) data, in the study of FÃ¶rster Resonance
 Energy Transfer (FRET). `TIMP` also serves as the computation backend for the
-@code{`GloTarAn`} software, a graphical user interface for the package, as
+`@code{GloTarAn`} software, a graphical user interface for the package, as
 described in Snellenburg et al. (2012) <doi:10.18637/jss.v049.i03>.")
     (license license:gpl2+)))
 
@@ -12328,13 +12327,13 @@ the hypothesis test.")
 (define-public r-timetools
   (package
     (name "r-timetools")
-    (version "1.15.2")
+    (version "1.15.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "timetools" version))
               (sha256
                (base32
-                "0d861nsq5xh9gnzvf3alzk6yjk8afxf3a7z39c1rrprfhwqxmxgx"))))
+                "0bhipgygbb76m4byl58ndbjqj88rxbwrar0dmgw842f1yp867bc5"))))
     (properties `((upstream-name . "timetools")))
     (build-system r-build-system)
     (home-page "https://sourceforge.net/projects/timetools/")
@@ -12345,8 +12344,8 @@ the hypothesis test.")
 series based on time instants and time durations are handled.  Both can be
 regularly or unevenly spaced (overlapping durations are allowed).  Only POSIX*
 format are used for dates and times.  The following classes are provided :
-POSIXcti', POSIXctp', @code{TimeIntervalDataFrame',}
-@code{TimeInstantDataFrame',} @code{SubtimeDataFrame} ; methods to switch from a
+POSIXcti', POSIXctp', @code{TimeIntervalDataFrame}',
+@code{TimeInstantDataFrame}', @code{SubtimeDataFrame} ; methods to switch from a
 class to another and to modify the time support of series (hourly time series to
 daily time series for instance) are also defined.  Tools provided can be used
 for instance to handle environmental monitoring data (not always produced on a
@@ -12644,21 +12643,21 @@ Filter, summarize date data by duration and convert to calendar units.")
 person's lsife.  Since this is entirely a visualization, the image
 <https://barryzee.github.io/henry-timeline/henry.html> will show the basic use
 to show a timeline of events.  The image
-@code{<https://barryzee.github.io/vermeer/cssOverlay.html>} shows how to
+<https://barryzee.github.io/vermeer/@code{cssOverlay.html>} shows how to
 correlate two timelines of events.  A brief description is available at
-@code{<https://barryzee.github.io/timeLineGraphics_manuscript/golden_age.html>.}")
+<https://barryzee.github.io/@code{timeLineGraphics_manuscript/golden_age.html>}.")
     (license license:gpl2+)))
 
 (define-public r-timedeppar
   (package
     (name "r-timedeppar")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "timedeppar" version))
               (sha256
                (base32
-                "0jazddjqrgipvpdxlqh8y3clhhad22syqw4hhaj19cdbxpvivgvw"))))
+                "0cg3akp5clyh0jm2808n4glmvfb8pjfsrpiw8724q7zsx3mfhgff"))))
     (properties `((upstream-name . "timedeppar")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm))
@@ -12719,7 +12718,7 @@ implement.  A new functionality is added in version 1.0.9 for estimating the
 time delay between doubly-lensed light curves observed in two bands.  See also
 Tak et al. (2017) <doi:10.1214/17-AOAS1027>, Tak et al. (2018)
 <doi:10.1080/10618600.2017.1415911>, Hu and Tak (2020)
-@code{<arXiv:2005.08049>.}")
+<@code{arXiv:2005.08049>}.")
     (license license:gpl2)))
 
 (define-public r-time-slots
@@ -12799,7 +12798,7 @@ hierarchies.")
     (description
      "This package provides functions for estimation of wood volumes, number of logs,
 diameters along the stem and heights at which certain diameters occur, based on
-taper functions and other parameters.  References: @code{McTague,} J. P., &
+taper functions and other parameters.  References: @code{McTague}, J. P., &
 Weiskittel, A. (2021). <doi:10.1139/cjfr-2020-0326>.")
     (license license:expat)))
 
@@ -12959,7 +12958,7 @@ cross-platform C++ library with APIs from several languages, and integrations.")
 R functions into @code{LaTeX} code blocks.  When included in a @code{LaTeX}
 document, these blocks are interpreted with the help of @code{TikZ'---a}
 graphics package for @code{TeX} and friends written by Till Tantau.  Using the
-@code{tikzDevice',} the text of R plots can contain @code{LaTeX} commands such
+@code{tikzDevice}', the text of R plots can contain @code{LaTeX} commands such
 as mathematical formula.  The device also allows arbitrary @code{LaTeX} code to
 be inserted into the output stream.")
     (license license:gpl2+)))
@@ -13028,10 +13027,10 @@ and load into R as sf objects.")
     (home-page "https://github.com/PROBIC/tigreBrowserWriter")
     (synopsis "'tigreBrowser' Database Writer")
     (description
-     "Write modelling results into a database for @code{tigreBrowser',} a web-based
+     "Write modelling results into a database for @code{tigreBrowser}', a web-based
 tool for browsing figures and summary data of independent model fits, such as
 Gaussian process models fitted for each gene or other genomic element.  The
-browser is available at @code{<https://github.com/PROBIC/tigreBrowser>.}")
+browser is available at <https://github.com/PROBIC/@code{tigreBrowser>}.")
     (license license:agpl3)))
 
 (define-public r-tightclust
@@ -13393,13 +13392,13 @@ documentation here for more detail: <https://gtfs.org/>.")
 (define-public r-tidytlg
   (package
     (name "r-tidytlg")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tidytlg" version))
               (sha256
                (base32
-                "0wy6pn5iq4xzm0fjr96wikiyz0f4s1bplxi78rdd9bkcynijzs8l"))))
+                "1m6f0mbaikgxkbh6q7z4fxhmqlywrmclvv4hhbq2hnhc6bajadrp"))))
     (properties `((upstream-name . "tidytlg")))
     (build-system r-build-system)
     (propagated-inputs (list r-usethis
@@ -13783,7 +13782,7 @@ interact seamlessly with the tidyverse.")
     (synopsis "Tidy Structural Equation Modeling")
     (description
      "This package provides a tidy workflow for generating, estimating, reporting, and
-plotting structural equation models using lavaan', @code{OpenMx',} or Mplus'.
+plotting structural equation models using lavaan', @code{OpenMx}', or Mplus'.
 Throughout this workflow, elements of syntax, results, and graphs are
 represented as tidy data, making them easy to customize.")
     (license license:gpl3+)))
@@ -14421,7 +14420,7 @@ tidy data principles.")
     (description
      "Estimates heterogeneous treatment effects using tidy semantics on experimental
 or observational data.  Methods are based on the doubly-robust learner of
-Kennedy (n.d.) @code{<arXiv:2004.14497>.} You provide a simple recipe for what
+Kennedy (n.d.) <@code{arXiv:2004.14497>}.  You provide a simple recipe for what
 machine learning algorithms to use in estimating the nuisance functions and
 tidyhte will take care of cross-validation, estimation, model selection,
 diagnostics and construction of relevant quantities of interest about the
@@ -14458,12 +14457,13 @@ variability of treatment effects.")
     (synopsis "Tidy Implementation of Heatmap")
     (description
      "This is a tidy implementation for heatmap.  At the moment it is based on the
-(great) package @code{ComplexHeatmap'.} The goal of this package is to interface
-a tidy data frame with this powerful tool.  Some of the advantages are: Row
-and/or columns colour annotations are easy to integrate just specifying one
-parameter (column names).  Custom grouping of rows is easy to specify providing
-a grouped tbl.  For example: df %>% group_by(...).  Labels size adjusted by row
-and column total number.  Default use of Brewer and Viridis palettes.")
+(great) package @code{ComplexHeatmap}'.  The goal of this package is to
+interface a tidy data frame with this powerful tool.  Some of the advantages
+are: Row and/or columns colour annotations are easy to integrate just specifying
+one parameter (column names).  Custom grouping of rows is easy to specify
+providing a grouped tbl.  For example: df %>% group_by(...).  Labels size
+adjusted by row and column total number.  Default use of Brewer and Viridis
+palettes.")
     (license license:gpl3)))
 
 (define-public r-tidygeorss
@@ -14802,7 +14802,7 @@ style.")
 within the calling environment of dplyr and ggplot2 functions.  Additionally,
 for plotting with ggplot2', users can map aesthetics to subject scales and all
 plausible values will be used.  This package supports student level data; to
-work with school or teacher level data, see @code{?EdSurvey::getData'.}")
+work with school or teacher level data, see ?@code{EdSurvey::getData}'.")
     (license license:gpl2)))
 
 (define-public r-tidydr
@@ -14992,34 +14992,6 @@ functions giving a tidier representation of the underlying data structures and
 functionality using a header-only implementation without additional
 dependencies.")
     (license license:gpl2+)))
-
-(define-public r-tidyconsultant
-  (package
-    (name "r-tidyconsultant")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "TidyConsultant" version))
-              (sha256
-               (base32
-                "1ipv0nx0xmba62c7qjgadpjsr850d9dl0z5zjkh1rj6kfxdgiis2"))))
-    (properties `((upstream-name . "TidyConsultant")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-validata
-                             r-tidybins
-                             r-presenter
-                             r-pacman
-                             r-framecleaner
-                             r-badger
-                             r-autostats))
-    (home-page "https://harrison4192.github.io/TidyConsultant/")
-    (synopsis "Tidy Consultant Universe")
-    (description
-     "Loads the 5 packages in the Tidy Consultant Universe.  This collection of
-packages is useful for anyone doing data science, data analysis, or quantitative
-consulting.  The functions in these packages range from data cleaning, data
-validation, data binning, statistical modeling, and file exporting.")
-    (license license:expat)))
 
 (define-public r-tidycomm
   (package
@@ -15287,7 +15259,7 @@ feature geometry for mapping and spatial analysis.")
     (description
      "This package provides users a quick exploratory dive into common visualizations
 without writing a single line of code given the users data follows the Analysis
-Data Model @code{(ADaM)} standards put forth by the Clinical Data Interchange
+Data Model (A@code{DaM}) standards put forth by the Clinical Data Interchange
 Standards Consortium (CDISC) <https://www.cdisc.org>.  Prominent modules/
 features of the application are the Table Generator, Population Explorer, and
 the Individual Explorer.  The Table Generator allows users to drag and drop
@@ -15414,11 +15386,11 @@ automatically summarize the properties of the binned columns.")
     (synopsis "Download Data from Bank of Spain")
     (description
      "This package provides tools to download data series from Banco de @code{EspaÃ±a}
-@code{('BdE')} on tibble format.  Banco de @code{EspaÃ±a} is the national
+('@code{BdE}') on tibble format.  Banco de @code{EspaÃ±a} is the national
 central bank and, within the framework of the Single Supervisory Mechanism
 ('SSM'), the supervisor of the Spanish banking system along with the European
 Central Bank.  This package is in no way sponsored endorsed or administered by
-Banco de @code{EspaÃ±a'.}")
+Banco de @code{EspaÃ±a}'.")
     (license license:gpl3+)))
 
 (define-public r-tidybayes
@@ -15794,13 +15766,13 @@ generation.  To learn more about Thrift go to <https://thrift.apache.org>.")
 (define-public r-threshr
   (package
     (name "r-threshr")
-    (version "1.0.3")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "threshr" version))
               (sha256
                (base32
-                "1vs2jfvh1pjzyfz1s4w92sw13yz2nhc28gc3iyqz8a82rrdm4mdq"))))
+                "10z0iv8rn78b9mk8sgsknnqp4g726bgw47f3cn7bgc2hg1g9f18a"))))
     (properties `((upstream-name . "threshr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rust r-revdbayes))
@@ -15854,13 +15826,13 @@ Skaltsa et al. (2010) <doi:10.1002/bimj.200900294> and Heagerty et al. (2000)
 (define-public r-thresholdroc
   (package
     (name "r-thresholdroc")
-    (version "2.9.1")
+    (version "2.9.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ThresholdROC" version))
               (sha256
                (base32
-                "1hainm0n5v9dc4q130r7jiica61p0pmnjnwh3v6i03djkvc2257l"))))
+                "0r1ahhfgqq1zk9rp80i25fcxmsxsmys3xi3mf4d9fbyqlvd6dw53"))))
     (properties `((upstream-name . "ThresholdROC")))
     (build-system r-build-system)
     (propagated-inputs (list r-proc r-numderiv r-mass r-ks))
@@ -16105,10 +16077,10 @@ inserted into any websites.  The R-shiny support allows the 3D viewer to be
 dynamically generated from reactive user inputs.  This feature has been fully
 adopted by RAVE <https://openwetware.org/wiki/RAVE>, an interactive toolbox to
 analyze @code{iEEG} data.  Documentation about @code{threeBrain} is provided by
-@code{<https://dipterix.org/threeBrain/>} and several vignettes included in this
+<https://dipterix.org/@code{threeBrain/>} and several vignettes included in this
 package.  To cite the package, please check our @code{NeuroImage} paper by
 Magnotti, Wang, and Beauchamp (2020, <doi:10.1016/j.neuroimage.2020.117341>), or
-see @code{citation(\"threeBrain\")} for details.")
+see citation(\"@code{threeBrain}\") for details.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -16133,24 +16105,24 @@ see @code{citation(\"threeBrain\")} for details.")
      "Design and analyze three-arm non-inferiority or superiority trials which follow
 a gold-standard design, i.e.  trials with an experimental treatment, an active,
 and a placebo control.  Method for the following distributions are implemented:
-Poisson (Mielke and Munk (2009) @code{<arXiv:0912.4169>),} negative binomial
+Poisson (Mielke and Munk (2009) <@code{arXiv:0912.4169>}), negative binomial
 (Muetze et al. (2016) <doi:10.1002/sim.6738>), normal (Pigeot et al. (2003)
 <doi:10.1002/sim.1450>; Hasler et al. (2009) <doi:10.1002/sim.3052>), binary
 (Friede and Kieser (2007) <doi:10.1002/sim.2543>), nonparametric (Muetze et al.
 (2017) <doi:10.1002/sim.7176>), exponential (Mielke and Munk (2009)
-@code{<arXiv:0912.4169>).}")
+<@code{arXiv:0912.4169>}).")
     (license license:gpl3+)))
 
 (define-public r-thredds
   (package
     (name "r-thredds")
-    (version "0.1-3")
+    (version "0.1-4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "thredds" version))
               (sha256
                (base32
-                "08jlvi0z0rdqc46pgzpv84x0r8qxpvnh2w34g1hyprgcwh0b7537"))))
+                "1323hgd7id4q1g88bczvnghdlb3g2vmywhij0f98ghj0a0ip6v00"))))
     (properties `((upstream-name . "thredds")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-rlang r-r6 r-magrittr r-httr))
@@ -16246,7 +16218,7 @@ University and Thomas Jefferson University Hospital, Philadelphia, PA.")
     (description
      "Determine the path of the executing script.  Compatible with a few popular GUIs:
 Rgui', RStudio', VSCode', Jupyter', and Rscript (shell).  Compatible with
-several functions and packages: source()', sys.source()', @code{debugSource()}
+several functions and packages: source()', sys.source()', @code{debugSource}()
 in RStudio', testthat::source_file()', knitr::knit()', compiler::loadcmp()', and
 box::use()'.")
     (license license:expat)))
@@ -16400,7 +16372,7 @@ Turkish higher education statistics more accessible.")
     (description
      "Estimation of the SF-ACE, a Causal Inference estimand proposed in the paper \"The
 Subtype-Free Average Causal Effect For Heterogeneous Disease Etiology\" (soon on
-@code{arXiv).}")
+@code{arXiv}).")
     (license license:gpl2+)))
 
 (define-public r-thermocouple
@@ -16512,9 +16484,9 @@ van Steenderen, C.J.M., Sutton, G.F., Owen, C.A., Martin, G.D., and Coetzee,
 J.A. Sample size assessments for thermal physiology studies: An R package and R
 Shiny GUI. 2023.  Physiological Entomology.  Under review.  The GUI version of
 this package is available on the R Shiny online server at:
-@code{<https://clarkevansteenderen.shinyapps.io/ThermalSampleR_Shiny/>} , or it
+<https://clarkevansteenderen.shinyapps.io/@code{ThermalSampleR_Shiny/>} , or it
 is accessible via @code{GitHub} at
-@code{<https://github.com/clarkevansteenderen/ThermalSampleR_Shiny/>.} We would
+<https://github.com/clarkevansteenderen/@code{ThermalSampleR_Shiny/>}.  We would
 like to thank Grant Duffy (University of Otago, Dundedin, New Zealand) for
 granting us permission to use the source code for the Test of Total Equivalency
 function.")
@@ -16587,7 +16559,7 @@ generation.")
      "This package provides a dataset with an uneven number of cases in each class is
 said to be unbalanced.  Many models produce a subpar performance on unbalanced
 datasets.  A dataset can be balanced by increasing the number of minority cases
-using SMOTE 2011 @code{<arXiv:1106.1813>,} @code{BorderlineSMOTE} 2005
+using SMOTE 2011 <@code{arXiv:1106.1813>}, @code{BorderlineSMOTE} 2005
 <doi:10.1007/11538059_91> and ADASYN 2008
 <https://ieeexplore.ieee.org/document/4633969>.  Or by decreasing the number of
 majority cases using @code{NearMiss} 2003
@@ -16854,36 +16826,6 @@ implementation of the TGS algorithm and its variants.")
 Soto et al. (2011) <doi:10.1139/x11-045>.")
     (license license:gpl2+)))
 
-(define-public r-tgp
-  (package
-    (name "r-tgp")
-    (version "2.4-21")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "tgp" version))
-              (sha256
-               (base32
-                "12ifd7rm3wskhbpnhfvz92z3graxzryq0iy1jiqmdk6bvhxkiww8"))))
-    (properties `((upstream-name . "tgp")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-maptree))
-    (home-page "https://bobby.gramacy.com/r_packages/tgp/")
-    (synopsis "Bayesian Treed Gaussian Process Models")
-    (description
-     "Bayesian nonstationary, semiparametric nonlinear regression and design by treed
-Gaussian processes (GPs) with jumps to the limiting linear model (LLM).  Special
-cases also implemented include Bayesian linear models, CART, treed linear
-models, stationary separable and isotropic GPs, and GP single-index models.
-Provides 1-d and 2-d plotting functions (with projection and slice capabilities)
-and tree drawing, designed for visualization of tgp-class output.  Sensitivity
-analysis and multi-resolution models are supported.  Sequential experimental
-design and adaptive sampling functions are also provided, including ALM, ALC,
-and expected improvement.  The latter supports derivative-free optimization of
-noisy black-box functions.  For details and tutorials, see Gramacy (2007)
-<doi:10.18637/jss.v019.i09> and Gramacy & Taddy (2010)
-<doi:10.18637/jss.v033.i06>.")
-    (license license:lgpl2.0+)))
-
 (define-public r-tglkmeans
   (package
     (name "r-tglkmeans")
@@ -16943,13 +16885,13 @@ Truncated Generalised Gamma Distribution (also in log10(x) and ln(x) space).")
 (define-public r-tgcd
   (package
     (name "r-tgcd")
-    (version "2.5")
+    (version "2.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tgcd" version))
               (sha256
                (base32
-                "1zsmard9vai0m4gz5mf5b9qqv6i7h5xhv1mbs2sc0kcznk28jirn"))))
+                "0rmlm52mgz4nwz4q96cn5i86dl13sh892aic69iwsmr5gyrmsj0b"))))
     (properties `((upstream-name . "tgcd")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -17005,7 +16947,7 @@ theme object.")
     (description
      "Extension of @code{funHDDC} Schmutz et al. (2018)
 <doi:10.1007/s00180-020-00958-4> for cases including outliers by fitting
-t-distributions for robust groups. @code{TFunHDDC} can cluster univariate or
+t-distributions for robust groups.  T@code{FunHDDC} can cluster univariate or
 multivariate data produced by the fda package for data using a b-splines or
 Fourier basis.")
     (license license:gpl3)))
@@ -17176,7 +17118,7 @@ See the Guide vignette for examples.")
     (synopsis "Interface to 'TensorFlow IO'")
     (description
      "Interface to @code{TensorFlow} IO', Datasets and filesystem extensions
-maintained by @code{`TensorFlow} SIG-IO`
+maintained by `@code{TensorFlow} SIG-IO`
 <https://github.com/tensorflow/community/blob/master/sigs/io/CHARTER.md>.")
     (license license:asl2.0)))
 
@@ -17236,7 +17178,7 @@ generalization, and speed up training.")
     (description
      "This package provides a convenient way to log scalars, images, audio, and
 histograms in the tfevent record file format.  Logged data can be visualized on
-the fly using @code{TensorBoard',} a web based tool that focuses on visualizing
+the fly using @code{TensorBoard}', a web based tool that focuses on visualizing
 the training progress of machine learning models.")
     (license license:expat)))
 
@@ -17422,13 +17364,42 @@ Newbold (1987) <doi:10.1080/01621459.1987.10478430>, Box and Tiao (1975)
     (description
      "@code{TensorFlow} SIG Addons <https://www.tensorflow.org/addons> is a repository
 of community contributions that conform to well-established API patterns, but
-implement new functionality not available in core @code{TensorFlow'.}
+implement new functionality not available in core @code{TensorFlow}'.
 @code{TensorFlow} natively supports a large number of operators, layers,
 metrics, losses, optimizers, and more.  However, in a fast moving field like
 Machine Learning, there are many interesting new developments that cannot be
 integrated into core @code{TensorFlow} (because their broad applicability is not
 yet clear, or it is mostly used by a smaller subset of the community).")
     (license license:asl2.0)))
+
+(define-public r-tfactsr
+  (package
+    (name "r-tfactsr")
+    (version "0.99.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "TFactSR" version))
+              (sha256
+               (base32
+                "05fijv096dxgacg6sh3m2ppy1wjj5g35qgz2khg1qcy384ys2bfr"))))
+    (properties `((upstream-name . "TFactSR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-qvalue))
+    (native-inputs (list r-knitr))
+    (home-page "https://afukushima.github.io/TFactSR/")
+    (synopsis
+     "Enrichment Approach to Predict Which Transcription Factors are Regulated")
+    (description
+     "R implementation of T@code{FactS} to predict which are the transcription factors
+(TFs), regulated in a biological condition based on lists of differentially
+expressed genes (DEGs) obtained from transcriptome experiments.  This package is
+based on the T@code{FactS} concept by Essaghir et al. (2010)
+<doi:10.1093/nar/gkq149> and expands it.  It allows users to perform
+T@code{FactS'-like} enrichment approach.  The package can import and use the
+original catalogue file from the T@code{FactS} as well as users defined
+catalogues of interest that are not supported by T@code{FactS} (e.g.,
+Arabidopsis).")
+    (license license:gpl3)))
 
 (define-public r-textutils
   (package
@@ -17446,7 +17417,7 @@ yet clear, or it is mostly used by a smaller subset of the community).")
     (synopsis "Utilities for Handling Strings and Text")
     (description
      "Utilities for handling character vectors that store human-readable text (either
-plain or with markup, such as HTML or @code{LaTeX).} The package provides, in
+plain or with markup, such as HTML or @code{LaTeX}).  The package provides, in
 particular, functions that help with the preparation of plain-text reports, e.g.
 for expanding and aligning strings that form the lines of such reports.  The
 package also provides generic functions for transforming R objects to HTML and
@@ -17506,7 +17477,7 @@ document-term matrix and extracting information from those (term-associations,
 most frequent terms).  It also embodies functions for calculating token
 statistics (collocations, look-up tables, string dissimilarities) and functions
 to work with sparse matrices.  Lastly, it includes functions for Word Vector
-Representations (i.e. @code{GloVe',} fasttext') and incorporates functions for
+Representations (i.e. @code{GloVe}', fasttext') and incorporates functions for
 the calculation of (pairwise) text document dissimilarities.  The source code is
 based on C++11 and exported in R through the Rcpp', @code{RcppArmadillo} and BH
 packages.")
@@ -17765,8 +17736,8 @@ functionality for analyzing and diagnostics for topic models.")
     (description
      "Multinomial (inverse) regression inference for text documents and associated
 attributes.  For details see: Taddy (2013 JASA) Multinomial Inverse Regression
-for Text Analysis @code{<arXiv:1012.2098>} and Taddy (2015, @code{AoAS),}
-Distributed Multinomial Regression, @code{<arXiv:1311.6139>.} A minimalist
+for Text Analysis <@code{arXiv:1012.2098>} and Taddy (2015, @code{AoAS}),
+Distributed Multinomial Regression, <@code{arXiv:1311.6139>}.  A minimalist
 partial least squares routine is also included.  Note that the topic modeling
 capability of earlier textir is now a separate package, maptpx'.")
     (license license:gpl3)))
@@ -18083,8 +18054,8 @@ TTS'.")
     (description
      "This is a companion package for the text2sdg package.  It contains the trained
 ensemble models needed by the detect_sdg function from the text2sdg package.
-See Wulff, Meier and Mata (2023) @code{<arXiv:2301.11353>} and Meier, Wulff and
-Mata (2021) @code{<arXiv:2110.05856>} for reference.")
+See Wulff, Meier and Mata (2023) <@code{arXiv:2301.11353>} and Meier, Wulff and
+Mata (2021) <@code{arXiv:2110.05856>} for reference.")
     (license license:gpl3+)))
 
 (define-public r-text2sdg
@@ -18120,7 +18091,7 @@ open-source analysis package that identifies SDGs in text using scientifically
 developed query systems, opening up the opportunity to monitor any type of
 text-based data, such as scientific output or corporate publications.  For more
 information regarding the methodology see Meier, Mata & Wulff (2022)
-@code{<arXiv:2110.05856>.}")
+<@code{arXiv:2110.05856>}.")
     (license license:gpl3)))
 
 (define-public r-text2map
@@ -18263,7 +18234,7 @@ statistics of statistical models into @code{LaTeX} tables or HTML tables/MS Word
 documents or to nicely formatted screen output for the R console for easy model
 comparison.  A list of several models can be combined in a single table.  The
 output is highly customizable.  New model types can be easily implemented.
-Details can be found in Leifeld (2013), @code{JStatSoft}
+Details can be found in Leifeld (2013), J@code{StatSoft}
 <doi:10.18637/jss.v055.i08>. (If the Zelig package, which this package enhances,
 cannot be found on CRAN, you can find it at <https://github.com/IQSS/Zelig>.  If
 the mnlogit package, which this package enhances, cannot be found on CRAN, you
@@ -18316,7 +18287,7 @@ discriminant analyses.")
     (home-page "https://github.com/Abhi-1U/texor")
     (synopsis "Converting 'LaTeX' 'R Journal' Articles into 'RJ-web-articles'")
     (description
-     "Articles in the R Journal were first authored in @code{LaTeX',} which performs
+     "Articles in the R Journal were first authored in @code{LaTeX}', which performs
 admirably for PDF files but is less than ideal for modern online interfaces.
 The texor package does all the transitional chores and conversions necessary to
 move to the online versions.")
@@ -18371,9 +18342,9 @@ threshold selection and to diagnose estimation convergence.")
     (home-page "https://github.com/alexrecuenco/TexExamRandomizer")
     (synopsis "Personalizes and Randomizes Exams Written in 'LaTeX'")
     (description
-     "Randomizing exams with @code{LaTeX'.} If you can compile your main document with
-@code{LaTeX',} the program should be able to compile the randomized versions
-without much extra effort when creating the document.")
+     "Randomizing exams with @code{LaTeX}'.  If you can compile your main document
+with @code{LaTeX}', the program should be able to compile the randomized
+versions without much extra effort when creating the document.")
     (license license:expat)))
 
 (define-public r-texcheckr
@@ -18854,7 +18825,7 @@ D. L. (1989) <doi:10.1002/ajpa.1330790113> and Konigsberg, L. W. (1991)
      "Uses the optimal test design approach by Birnbaum (1968, ISBN:9781593119348) and
 van der Linden (2018) <doi:10.1201/9781315117430> to construct fixed, adaptive,
 and parallel tests.  Supports the following mixed-integer programming (MIP)
-solver packages: Rsymphony', gurobi', @code{lpSolve',} and Rglpk'.  The gurobi
+solver packages: Rsymphony', gurobi', @code{lpSolve}', and Rglpk'.  The gurobi
 package is not available from CRAN; see <https://www.gurobi.com/downloads/>.")
     (license license:gpl2+)))
 
@@ -19332,13 +19303,13 @@ Includes a Shiny user interface for point-and-click ternary plotting.")
 (define-public r-tern
   (package
     (name "r-tern")
-    (version "0.8.4")
+    (version "0.9.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tern" version))
               (sha256
                (base32
-                "01k0mimlra38ppc85si3s91bmzcm917wnsf4q99jxff5l1c20khy"))))
+                "1z5xqbf81si3l0rcjgc7lygh49cm0h9irmq4q9d3a03kwlwxh080"))))
     (properties `((upstream-name . "tern")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -19561,10 +19532,10 @@ Details of the methods are described in Gerard and Hoff (2015)
     (description
      "Factor and autoregressive models for matrix and tensor valued time series.  We
 provide functions for estimation, simulation and prediction.  The models are
-discussed in Li et al (2021) @code{<arXiv:2110.00928>,} Chen et al (2020)
+discussed in Li et al (2021) <@code{arXiv:2110.00928>}, Chen et al (2020)
 <DOI:10.1080/01621459.2021.1912757>, Chen et al (2020)
 <DOI:10.1016/j.jeconom.2020.07.015>, and Xiao et al (2020)
-@code{<arXiv:2006.02611>.}")
+<@code{arXiv:2006.02611>}.")
     (license license:gpl2+)))
 
 (define-public r-tensortest2d
@@ -19604,7 +19575,7 @@ estimation, including parameter coefficients and standard deviation.")
     (description
      "This package implements the multiway sparse clustering approach of M. Wang and
 Y. Zeng, \"Multiway clustering via tensor block models\".  Advances in Neural
-Information Processing System 32 @code{(NeurIPS),} 715-725, 2019.")
+Information Processing System 32 (@code{NeurIPS}), 715-725, 2019.")
     (license license:gpl2+)))
 
 (define-public r-tensorregress
@@ -19682,7 +19653,7 @@ corresponding to the strongest factors are then used for projecting the data for
 a potentially improved re-estimation of the factor loading spaces themselves.  A
 new rank estimation method is also implemented to utilizes correlation
 information from the projected data.  See Chen and Lam (2023)
-@code{<arXiv:2208.04012>} for more details.")
+<@code{arXiv:2208.04012>} for more details.")
     (license license:gpl3)))
 
 (define-public r-tensorcomplete
@@ -19767,9 +19738,9 @@ Mai, Zhang, Pan and Deng (2021) <DOI: 10.1080/01621459.2021.1904959>.")
      "This package contains several utility functions for manipulating tensor-valued
 data (centering, multiplication from a single mode etc.) and the implementations
 of the following blind source separation methods for tensor-valued data:
-@code{tPCA',} @code{tFOBI',} @code{tJADE',} @code{k-tJADE',} @code{tgFOBI',}
-@code{tgJADE',} @code{tSOBI',} @code{tNSS.SD',} @code{tNSS.JD',}
-@code{tNSS.TD.JD',} @code{tPP} and @code{tTUCKER'.}")
+@code{tPCA}', @code{tFOBI}', @code{tJADE}', k-@code{tJADE}', @code{tgFOBI}',
+@code{tgJADE}', @code{tSOBI}', @code{tNSS.SD}', @code{tNSS.JD}',
+@code{tNSS.TD.JD}', @code{tPP} and @code{tTUCKER}'.")
     (license license:gpl2+)))
 
 (define-public r-tensorbf
@@ -19888,9 +19859,9 @@ subordinator distribution, classical TSD, generalized classical TSD, normal TSD,
 modified TSD, rapid decreasing TSD, and Kim-Rachev TSD. The package also
 provides functions to compute density and probability functions and tools to run
 Monte Carlo simulations.  This package has already been used for the estimation
-of tempered stable distributions (Massing (2023) @code{<arXiv:2303.07060>).} The
-following references form the theoretical background for various functions in
-this package.  References for each function are explicitly listed in its
+of tempered stable distributions (Massing (2023) <@code{arXiv:2303.07060>}).
+The following references form the theoretical background for various functions
+in this package.  References for each function are explicitly listed in its
 documentation: Bianchi et al. (2010) <doi:10.1007/978-88-470-1481-7_4> Bianchi
 et al. (2011) <doi:10.1137/S0040585X97984632> Carrasco (2017)
 <doi:10.1017/S0266466616000025> Feuerverger (1981)
@@ -19946,9 +19917,9 @@ runs for a generic biochemical network is formatted as rows and constitutes an
 observation.  The first column of each row is the computed timestep for each
 run.  Subsequent columns are used for the number of molecules of each
 participating molecular species or \"metabolite\" of a generic biochemical
-network.  In this way @code{TemporalGSSA',} is a wrapper for the R-package
-@code{GillespieSSA'.} The number of observations must be at least 30.  This will
-generate data that is statistically significant. @code{TemporalGSSA',}
+network.  In this way @code{TemporalGSSA}', is a wrapper for the R-package
+@code{GillespieSSA}'.  The number of observations must be at least 30.  This
+will generate data that is statistically significant. @code{TemporalGSSA}',
 transforms this raw data into a simulation time-dependent and
 metabolite-specific trial.  Each such trial is defined as a set of linear models
 (n >= 30) between a timestep and number of molecules for a metabolite.  Each
@@ -19996,9 +19967,9 @@ deployed in the following publications (2021, Heliyon)
     (description
      "This package performs maximum likelihood based estimation and inference on time
 to event data, possibly subject to non-informative right censoring.
-@code{FitParaSurv()} provides maximum likelihood estimates of model parameters
+@code{FitParaSurv}() provides maximum likelihood estimates of model parameters
 and distributional characteristics, including the mean, median, variance, and
-restricted mean. @code{CompParaSurv()} compares the mean, median, and restricted
+restricted mean. @code{CompParaSurv}() compares the mean, median, and restricted
 mean survival experiences of two treatment groups.  Candidate distributions
 include the exponential, gamma, generalized gamma, log-normal, and Weibull.")
     (license license:gpl3)))
@@ -20169,13 +20140,13 @@ autocorrelation.  See @code{FernÃ¡ndez-MartÃ­nez} et al. (2017 and 2019)
 (define-public r-telp
   (package
     (name "r-telp")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TELP" version))
               (sha256
                (base32
-                "1qryql9mxad7wvbpq1k85p7kp4m4s6cawklpdspjl1m21f99rg5s"))))
+                "0abdbhp898lgv7jmgg82vzdx6ibyi053xw8b3p3kx49yfbiyynny"))))
     (properties `((upstream-name . "TELP")))
     (build-system r-build-system)
     (propagated-inputs (list r-wordcloud
@@ -20221,7 +20192,7 @@ seeks to create a profile that define a social group.")
 steps check for false positives caused by reflected transmissions from surfaces
 and false pings from other noise generating equipment.  The filters are based on
 JSATS filtering algorithms found in package @code{filteRjsats}
-@code{<https://CRAN.R-project.org/package=filteRjsats>} but have been
+<https://CRAN.R-project.org/package=@code{filteRjsats>} but have been
 generalized to allow the user to define many of the filtering variables.
 Additionally, this package contains scripts used to help identify an optimal
 maximum blanking period as defined in Capello et al (2015)
@@ -20528,7 +20499,7 @@ particular teams.")
     (description
      "An implementation of the TEAM algorithm to identify local differences between
 two (e.g. case and control) independent, univariate distributions, as described
-in J Pura, C Chan, and J Xie (2019) @code{<arXiv:1906.07757>.} The algorithm is
+in J Pura, C Chan, and J Xie (2019) <@code{arXiv:1906.07757>}.  The algorithm is
 based on embedding a multiple-testing procedure on a hierarchical structure to
 identify high-resolution differences between two distributions.  The
 hierarchical structure is designed to identify strong, short-range differences
@@ -20700,10 +20671,10 @@ development easier and faster by nesting apps together.")
 random variable's true scale and its z-values.  To allow instructors to better
 better visualize histograms for these students, the package provides histograms
 with two horizontal axis containing z-values and the true scale of the variable.
- The function @code{TeachHistDens()} provides a density histogram with two axis.
-@code{TeachHistCounts()} and @code{TeachHistRelFreq()} are variations for count
-and relative frequency histograms, respectively. @code{TeachConfInterv()} and
-@code{TeachHypTest()} help instructors to visualize confidence levels and the
+ The function @code{TeachHistDens}() provides a density histogram with two axis.
+@code{TeachHistCounts}() and @code{TeachHistRelFreq}() are variations for count
+and relative frequency histograms, respectively. @code{TeachConfInterv}() and
+@code{TeachHypTest}() help instructors to visualize confidence levels and the
 results of hypothesis tests.")
     (license license:expat)))
 
@@ -20889,7 +20860,7 @@ compare trip distribution laws and models as described in Lenormand et al.
     (synopsis "Wicked Fast, Accurate Quantiles Using t-Digests")
     (description
      "The t-Digest construction algorithm, by Dunning et al., (2019)
-@code{<arXiv:1902.04023v1>,} uses a variant of 1-dimensional k-means clustering
+<@code{arXiv:1902.04023v1>}, uses a variant of 1-dimensional k-means clustering
 to produce a very compact data structure that allows accurate estimation of
 quantiles.  This t-Digest data structure can be used to estimate quantiles,
 compute other rank statistics or even to estimate related measures like trimmed
@@ -21249,7 +21220,7 @@ API key for free-but-capped access to the data.")
     (synopsis "Concentration-Response Modeling of HTS or Transcriptomics Data")
     (description
      "This package performs the basic concentration response curve fitting used in the
-tcpl package.  It is a substitute for the original @code{tcplFit()} function
+tcpl package.  It is a substitute for the original @code{tcplFit}() function
 (and sub-functions) and allows a wider variety of concentration-response models.
  All of the models included in the BMDExpress package are now part of this
 package, and the output includes a calculation of the bmd (Benchmark Dose or
@@ -21444,7 +21415,7 @@ and Gregg (1993) <doi:10.1007/BF01070999>; Schnider et al. (1998)
     (home-page "http://sistm.github.io/TcGSA/")
     (synopsis "Time-Course Gene Set Analysis")
     (description
-     "Implementation of Time-course Gene Set Analysis @code{(TcGSA),} a method for
+     "Implementation of Time-course Gene Set Analysis (@code{TcGSA}), a method for
 analyzing longitudinal gene-expression data at the gene set level.  Method is
 detailed in: Hejblum, Skinner & Thiebaut (2015) <doi:
 10.1371/journal.pcbi.1004310>.")
@@ -22226,10 +22197,10 @@ documentation is available at
      "Computes the t* statistic corresponding to the tau* population coefficient
 introduced by Bergsma and Dassios (2014) <DOI:10.3150/13-BEJ514> and does so in
 O(n^2) time following the algorithm of Heller and Heller (2016)
-@code{<arXiv:1605.08732>} building off of the work of Weihs, Drton, and Leung
+<@code{arXiv:1605.08732>} building off of the work of Weihs, Drton, and Leung
 (2016) <DOI:10.1007/s00180-015-0639-x>.  Also allows for independence testing
 using the asymptotic distribution of t* as described by Nandy, Weihs, and Drton
-(2016) @code{<arXiv:1602.04387>.}")
+(2016) <@code{arXiv:1602.04387>}.")
     (license license:gpl3+)))
 
 (define-public r-tauprocess
@@ -22253,7 +22224,7 @@ on Kendall's tau with right-censored data along with corresponding inference
 procedure.  The plot of tau process is provided as a graphical tool for
 monitoring the progression.  It complements another summary measures under
 nonproportional hazards.  For details, please refer to Tai, Wang and Wells
-(2022) @code{<doi:10.48550/arXiv.2207.14445>.}")
+(2022) <doi:10.48550/@code{arXiv.2207.14445>}.")
     (license license:expat)))
 
 (define-public r-tau
@@ -22752,7 +22723,7 @@ the package creator other than the formula grammar.  For example, one could
 chose to add a different S3 rendering function and output a format not provided
 in the default package, or possibly one would rather have Gini coefficients for
 their statistical content in a resulting table.  Routines to achieve New England
-Journal of Medicine style, Lancet style and @code{Hmisc::summaryM()} statistics
+Journal of Medicine style, Lancet style and Hmisc::@code{summaryM}() statistics
 are provided.  The package contains rendering for HTML5, Rmarkdown and an
 indexing format for use in tracing and tracking are provided.")
     (license license:gpl3)))
@@ -23062,7 +23033,7 @@ Einmahl, J.H.J., Kiriliouk, A., and Segers, J. (2018)
     (home-page "https://cran.r-project.org/package=TailClassifier")
     (synopsis "Tail Classifier for Thick-Tailed Discrete Data")
     (description
-     "Function @code{TailClassifier()} in this package is a Tail-Classifier function.
+     "Function @code{TailClassifier}() in this package is a Tail-Classifier function.
 The function suggests one of the following types of tail for your discrete data:
 1) Power decaying tail; 2) Sub-exponential decaying tail; and 3)
 Near-exponential decaying tail.")
@@ -23595,7 +23566,7 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
     (synopsis "Fit 'TabNet' Models for Classification and Regression")
     (description
      "This package implements the @code{TabNet} model by Sercan O. Arik et al. (2019)
-@code{<arXiv:1908.07442>} and provides a consistent interface for fitting and
+<@code{arXiv:1908.07442>} and provides a consistent interface for fitting and
 creating predictions.  It's also fully compatible with the tidymodels ecosystem.")
     (license license:expat)))
 
@@ -23669,7 +23640,7 @@ data into machine-readable @code{LongForm} Dataframes.")
     (description
      "This package creates a table of descriptive statistics for factor and numeric
 columns in a data frame.  Displays these by groups, if any.  Highly
-customizable, with support for html and pdf provided by @code{kableExtra'.}
+customizable, with support for html and pdf provided by @code{kableExtra}'.
 Respects original column order, column labels, and factor level order.  See
 ?tablet.data.frame and vignettes.")
     (license license:gpl3)))
@@ -23764,7 +23735,7 @@ abstraction.")
     (synopsis "Formula-Driven Table Generation")
     (description
      "Computes and displays complex tables of summary statistics.  Output may be in
-@code{LaTeX,} HTML, plain text, or an R matrix for further processing.")
+@code{LaTeX}, HTML, plain text, or an R matrix for further processing.")
     (license license:gpl2)))
 
 (define-public r-tableone
@@ -23837,7 +23808,7 @@ tables using xtable'.")
      "This package provides two classes extending data.table class.  Simple
 @code{tableList} class wraps data.table and any additional structures together.
 More complex @code{tableMatrix} class combines data.table and matrix'.  See
-@code{<http://github.com/InferenceTechnologies/tableMatrix>} for more
+<http://github.com/@code{InferenceTechnologies/tableMatrix>} for more
 information and examples.")
     (license license:gpl2)))
 
@@ -23865,7 +23836,7 @@ information and examples.")
     (description
      "This package provides a tool to create and style HTML tables with CSS. These can
 be exported and used in any application that accepts HTML (e.g. shiny',
-rmarkdown', @code{PowerPoint').} It also provides functions to create CSS files
+rmarkdown', @code{PowerPoint}').  It also provides functions to create CSS files
 (which also work with shiny).")
     (license license:expat)))
 
@@ -23887,7 +23858,7 @@ rmarkdown', @code{PowerPoint').} It also provides functions to create CSS files
     (description
      "Higher Criticism (HC) test between two frequency tables.  Test is based on an
 adaptation of the Tukey-Donoho-Jin HC statistic to testing frequency tables
-described in Kipnis (2019) @code{<arXiv:1911.01208>.}")
+described in Kipnis (2019) <@code{arXiv:1911.01208>}.")
     (license license:expat)))
 
 (define-public r-tableextra
@@ -24195,7 +24166,7 @@ analysis involving categorical variables quicker, simpler and more robust.")
     (home-page "https://cran.r-project.org/package=Taba")
     (synopsis "Taba Robust Correlations")
     (description
-     "Calculates the robust Taba linear, Taba rank (monotonic), @code{TabWil,} and
+     "Calculates the robust Taba linear, Taba rank (monotonic), @code{TabWil}, and
 @code{TabWil} rank correlations.  Test statistics as well as one sided or two
 sided p-values are provided for all correlations.  Multiple correlations and
 p-values can be calculated simultaneously across multiple variables.  In
@@ -24317,7 +24288,7 @@ function T2EQ() implements the T^2-test for equivalence according to Wellek
 (2010) <DOI:10.1201/ebk1439808184>.  The function
 T2EQ.dissolution.profiles.hoffelder() implements a variant of the T^2-test for
 equivalence according to Hoffelder (2016)
-@code{<http://www.ecv.de/suse_item.php?suseId=Z|pi|8430>} for the equivalence
+<http://www.ecv.de/suse_item.php?@code{suseId=Z|pi|8430>} for the equivalence
 comparison of highly variable dissolution profiles.")
     (license license:gpl3)))
 

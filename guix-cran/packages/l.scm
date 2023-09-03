@@ -15,7 +15,6 @@
   #:use-module (gnu packages finance)
   #:use-module (gnu packages java)
   #:use-module (gnu packages maths)
-  #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages linux)
   #:use-module (gnu packages bioinformatics)
   #:use-module (guix-cran packages z)
@@ -60,7 +59,7 @@
     (synopsis "Exact Spike Train Inference via L0 Optimization")
     (description
      "An implementation of algorithms described in Jewell and Witten (2017)
-@code{<arXiv:1703.08644>.}")
+<@code{arXiv:1703.08644>}.")
     (license license:gpl3)))
 
 (define-public r-lwqs
@@ -196,7 +195,7 @@ dynamically selecting the appropriate number of letter values to display.")
     (synopsis "Latent Variable Network Modeling")
     (description
      "Estimate, fit and compare Structural Equation Models (SEM) and network models
-(Gaussian Graphical Models; GGM) using @code{OpenMx.} Allows for two possible
+(Gaussian Graphical Models; GGM) using @code{OpenMx}.  Allows for two possible
 generalizations to include GGMs in SEM: GGMs can be used between latent
 variables (latent network modeling; LNM) or between residuals (residual network
 modeling; RNM).  For details, see Epskamp, Rhemtulla and Borsboom (2017)
@@ -291,7 +290,7 @@ function is done using a successive approximation/relaxation algorithm similar
 to another GP modeling package \"GPM\".  The modeling method is published in \"A
 Latent Variable Approach to Gaussian Process Modeling with Qualitative and
 Quantitative Factors\" by Yichi Zhang, Siyu Tao, Wei Chen, and Daniel W. Apley
-(2018) @code{<arXiv:1806.07504>.} The package is developed in IDEAL of
+(2018) <@code{arXiv:1806.07504>}.  The package is developed in IDEAL of
 Northwestern University.")
     (license license:gpl2)))
 
@@ -351,7 +350,7 @@ script output, switching logs, and logging to files or connections.")
 reduce the the amount of code needed for common tasks, abstract away torch
 details and make the same code work on both the CPU and GPU'.  It's flexible
 enough to support expressing a large range of models.  It's heavily inspired by
-fastai by Howard et al. (2020) @code{<arXiv:2002.04688>,} Keras by Chollet et
+fastai by Howard et al. (2020) <@code{arXiv:2002.04688>}, Keras by Chollet et
 al. (2015) and @code{PyTorch} Lightning by Falcon et al. (2019)
 <doi:10.5281/zenodo.3828935>.")
     (license license:expat)))
@@ -668,7 +667,7 @@ non-genetic covariates.")
 Tufte.  This package is the interface from R to the @code{LaTeX} package
 sparklines by Andreas Loeffer and Dan Luecking
 (<http://www.ctan.org/pkg/sparklines>).  It can work with Sweave or knitr or
-other engines that produce @code{TeX.} The package can be used to plot vectors,
+other engines that produce @code{TeX}.  The package can be used to plot vectors,
 matrices, data frames, time series (in ts or zoo format).")
     (license (list license:gpl2 license:gpl3))))
 
@@ -696,13 +695,13 @@ matrices, data frames, time series (in ts or zoo format).")
 (define-public r-ltsk
   (package
     (name "r-ltsk")
-    (version "1.0.9")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ltsk" version))
               (sha256
                (base32
-                "1zrcfhsm4599dj8dywzgpqabcc4sbfm7d99lxxmhqagqiqwamqyc"))))
+                "1gz048yg9hm40xyxganpza48dpmi43dxm5j5myysyxzi07p58l8n"))))
     (properties `((upstream-name . "ltsk")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -1283,8 +1282,8 @@ and scores for potential secretion and truncation.")
     (description
      "This package provides tools for statistical analysis using partitioning-based
 least squares regression as described in Cattaneo, Farrell and Feng (2019a,
-@code{<arXiv:1804.04916>)} and Cattaneo, Farrell and Feng (2019b,
-@code{<arXiv:1906.00202>):} lsprobust() for nonparametric point estimation of
+<@code{arXiv:1804.04916>}) and Cattaneo, Farrell and Feng (2019b,
+<@code{arXiv:1906.00202>}): lsprobust() for nonparametric point estimation of
 regression functions and their derivatives and for robust bias-corrected
 (pointwise and uniform) inference; lspkselect() for data-driven selection of the
 IMSE-optimal number of knots; lsprobust.plot() for regression plots with robust
@@ -1333,12 +1332,12 @@ metadata.  Related API can be accessed from
     (description
      "The least-squares Monte Carlo (LSM) simulation method is a popular method for
 the approximation of the value of early and multiple exercise options.
-@code{LSMRealOptions} provides implementations of the LSM simulation method to
+LSM@code{RealOptions} provides implementations of the LSM simulation method to
 value American option products and capital investment projects through real
-options analysis. @code{LSMRealOptions} values capital investment projects with
+options analysis.  LSM@code{RealOptions} values capital investment projects with
 cash flows dependent upon underlying state variables that are stochastically
 evolving, providing analysis into the timing and critical values at which
-investment is optimal. @code{LSMRealOptions} provides flexibility in the
+investment is optimal.  LSM@code{RealOptions} provides flexibility in the
 stochastic processes followed by underlying assets, the number of state
 variables, basis functions and underlying asset characteristics to allow a broad
 range of assets to be valued through the LSM simulation method.  Real options
@@ -1423,7 +1422,7 @@ in the near future.")
      "When the values of the outcome variable Y are either 0 or 1, the function lsm()
 calculates the estimation of the log likelihood in the saturated model.  This
 model is characterized by Llinas (2006, ISSN:2389-8976) in section 2.3 through
-the assumptions 1 and 2.  The function @code{LogLik()} works (almost perfectly)
+the assumptions 1 and 2.  The function @code{LogLik}() works (almost perfectly)
 when the number of independent variables K is high, but for small K it
 calculates wrong values in some cases.  For this reason, when Y is dichotomous
 and the data are grouped in J populations, it is recommended to use the function
@@ -1615,7 +1614,7 @@ and downloads available at <https://www.labsimdev.org/>).")
     (description
      "Implementation of Locally Scaled Density Based Clustering (LSDBC) algorithm
 proposed by Bicici and Yuret (2007) <doi:10.1007/978-3-540-71618-1_82>.  This
-package also contains some supporting functions such as @code{betaCV()} function
+package also contains some supporting functions such as @code{betaCV}() function
 and get_spectral() function.")
     (license (list license:gpl2+ license:gpl3+))))
 
@@ -1638,7 +1637,7 @@ and get_spectral() function.")
      "Bandwidth selection for kernel density estimators of 2-d level sets and highest
 density regions.  It applies a plug-in strategy to estimate the asymptotic risk
 function and minimize to get the optimal bandwidth matrix.  See Doss and Weng
-(2018) @code{<arXiv:1806.00731>} for more detail.")
+(2018) <@code{arXiv:1806.00731>} for more detail.")
     (license license:gpl3)))
 
 (define-public r-lsbclust
@@ -1724,10 +1723,10 @@ foundation can be found on Matta, T.H., Rutkowski, L., Rutkowski, D. et al.
      "Dieses R-Paket stellt Zusatzmaterial in Form von Daten, Funktionen und
 R-Hilfe-Seiten @code{fÃ¼r} den Herausgeberband Breit, S. und Schreiner, C.
 (Hrsg.). (2016). \"Large-Scale Assessment mit R: Methodische Grundlagen der
-Ã¶sterreichischen @code{BildungsstandardÃ¼berprÃ¼fung.\"} Wien: facultas. (ISBN:
+Ã¶sterreichischen @code{BildungsstandardÃ¼berprÃ¼fung}.\" Wien: facultas. (ISBN:
 978-3-7089-1343-8,
 <https://www.iqs.gv.at/themen/bildungsforschung/publikationen/veroeffentlichte-publikationen>)
-zur @code{VerfÃ¼gung.}")
+zur @code{VerfÃ¼gung}.")
     (license license:gpl3+)))
 
 (define-public r-lsafun
@@ -2220,7 +2219,7 @@ comparison density plots are performed to conduct the LP smoothed inference,
 where the letter L denotes nonparametric methods based on quantiles and P stands
 for polynomials.  Simulations methods are used to perform variance estimation,
 inference and post-selection adjustments.  Algeri S. and Zhang X. (2020)
-@code{<arXiv:2005.13011>.}")
+<@code{arXiv:2005.13011>}.")
     (license license:gpl3)))
 
 (define-public r-lps
@@ -2292,9 +2291,9 @@ gene expression data are also provided.")
 contextual covariates into account.  Three main functions are provided in this
 package: (i) LASER(): it generates specially-designed artificial relevant
 samples for a given case; (ii) g2l.proc(): computes customized fdr(z|x); and
-(iii) @code{rEB.proc():} performs empirical Bayes inference based on LASERs.
+(iii) @code{rEB.proc}(): performs empirical Bayes inference based on LASERs.
 The details can be found in Mukhopadhyay, S., and Wang, K (2021,
-@code{<arXiv:2004.09588>).}")
+<@code{arXiv:2004.09588>}).")
     (license license:gpl2)))
 
 (define-public r-lpower
@@ -2410,7 +2409,7 @@ asymptotic method with simultaneous confidence band (Liu, Jiang and Chen
      "LP nonparametric high-dimensional K-sample comparison method that includes (i)
 confirmatory test, (ii) exploratory analysis, and (iii) options to output a
 data-driven LP-transformed matrix for classification.  The primary reference is
-Mukhopadhyay, S. and Wang, K. (2020, Biometrika); @code{<arXiv:1810.01724>.}")
+Mukhopadhyay, S. and Wang, K. (2020, Biometrika); <@code{arXiv:1810.01724>}.")
     (license license:gpl2)))
 
 (define-public r-lpirfs
@@ -2485,7 +2484,7 @@ polynomial method.")
      "This package provides a bunch of algorithms based on linear programming for
 estimating, under the homogeneity hypothesis, @code{RxC} ecological contingency
 tables (or vote transition matrices) using exclusively aggregate data (from
-voting units).  References: Romero, @code{PavÃ­a,} @code{MartÃ­n} and Romero
+voting units).  References: Romero, @code{PavÃ­a}, @code{MartÃ­n} and Romero
 (2020) <doi:10.1080/02664763.2020.1804842>. @code{PavÃ­a} and Romero (2021a)
 <doi:10.31124/advance.14716638.v1>. @code{PavÃ­a} and Romero (2021b) Symmetry
 estimating RÃC vote transfer matrices from aggregate data.")
@@ -2623,13 +2622,13 @@ additional functions for mean shift clustering.  See Einbeck, Tutz and Evers
 (define-public r-lpcde
   (package
     (name "r-lpcde")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lpcde" version))
               (sha256
                (base32
-                "0lr7g01ld9cq6xr5w1svlrrylba0kas0b2rzdmdnwf6jsf8296cz"))))
+                "0jnwh677icjx781c330qmm8bz95470rvzggi5rygf0kvw9zr1biv"))))
     (properties `((upstream-name . "lpcde")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
@@ -2690,7 +2689,7 @@ experiment.")
 and the deviance test is implemented in order to assess if the data distribution
 deviates significantly from the postulated model.  Finally, the results are
 summarized in a CD-plot as described in Algeri S. (2019)
-@code{<arXiv:1906.06615>.}")
+<@code{arXiv:1906.06615>}.")
     (license license:gpl3)))
 
 (define-public r-lpacf
@@ -2920,7 +2919,7 @@ penalized by a Lasso type penalty and a nuclear norm.  LORI returns estimates of
 main effects, covariate effects and interactions, as well as an imputed count
 table.  The package also contains a multiple imputation procedure.  The methods
 are described in Robin, Josse, Moulines and Sardy (2019)
-@code{<arXiv:1703.02296v4>.}")
+<@code{arXiv:1703.02296v4>}.")
     (license license:gpl3)))
 
 (define-public r-lorenzregression
@@ -3086,7 +3085,7 @@ theory (IRT).")
     (description
      "Change-point detection algorithm with label constraints and a penalty for each
 change outside of labels.  Read TD Hocking, A Srivastava (2020)
-@code{<arXiv:2006.13967>} for details.")
+<@code{arXiv:2006.13967>} for details.")
     (license license:gpl3)))
 
 (define-public r-looprig
@@ -3141,7 +3140,7 @@ variables are accounted for.  Computation uses the characteristics of the
 Jacobian matrix as described e.g. in Thomas and Kaufman (2002)
 <doi:10.1016/s1631-0691(02)01452-x>.  Input can be the Jacobian matrix of the
 ODE model or the ODE function definition; in the latter case, the Jacobian
-matrix is determined using @code{numDeriv'.} Graph-based algorithms from igraph
+matrix is determined using @code{numDeriv}'.  Graph-based algorithms from igraph
 are employed for path detection.")
     (license license:gpl3)))
 
@@ -3312,7 +3311,7 @@ dimensions of the feature space can be any combination of continuous and
 categorical features provided by the data set.  A Predict function directly
 fetches corresponding entry value, and a default value is defined as the mean or
 median of all available observations.  The table and other components are
-represented using the S4 class @code{lookupTable.}")
+represented using the S4 class @code{lookupTable}.")
     (license license:expat)))
 
 (define-public r-lookup
@@ -3442,7 +3441,7 @@ marker as described in Agniel D and Parast L (2021) <doi:10.1111/biom.13310>.")
      "This package performs recursive partitioning of linear and nonlinear mixed
 effects models, specifically for longitudinal data.  The package is an extension
 of the original @code{longRPart} package by Stewart and Abdolell (2013)
-@code{<https://cran.r-project.org/package=longRPart>.}")
+<https://cran.r-project.org/package=@code{longRPart>}.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-longroc
@@ -3513,8 +3512,8 @@ and Liang (1997) <DOI:10.2307/2533554>, Diggle et al (2002)
      "An adaption of the consensus clustering approach from
 @code{ConsensusClusterPlus} for longitudinal data.  The longitudinal data is
 clustered with flexible mixture models from flexmix', while the consensus
-matrices are hierarchically clustered as in @code{ConsensusClusterPlus'.} By
-using the flexibility from flexmix and @code{FactoMineR',} one can use mixed
+matrices are hierarchically clustered as in @code{ConsensusClusterPlus}'.  By
+using the flexibility from flexmix and @code{FactoMineR}', one can use mixed
 data types for the clustering.")
     (license license:gpl2+)))
 
@@ -3698,7 +3697,7 @@ by considering covariance structures.  It provides estimates by missing at
 random and missing not at random assumptions.  In this R package, we present
 Bayesian approaches that statisticians and clinical researchers can easily use.
 The functions methodology is based on the book \"Bayesian Approaches in Oncology
-Using R and @code{OpenBUGS\"} by Bhattacharjee A (2020)
+Using R and @code{OpenBUGS}\" by Bhattacharjee A (2020)
 <doi:10.1201/9780429329449-14>.")
     (license license:gpl3)))
 
@@ -3870,7 +3869,7 @@ focused on how to strategically reduce dimensionality in the unsupervised case,
 yet in the supervised HDLSS regime, few works have attempted to devise
 dimensionality reduction techniques that leverage the labels associated with the
 data.  In this package and the associated manuscript Vogelstein et al. (2017)
-@code{<arXiv:1709.01233>,} we provide several methods for feature extraction,
+<@code{arXiv:1709.01233>}, we provide several methods for feature extraction,
 some utilizing labels and some not, along with easily extensible utilities to
 simplify cross-validative efforts to identify the best feature extraction
 method.  Additionally, we include a series of adaptable benchmark simulations to
@@ -3906,7 +3905,7 @@ a range of benchmark simulations and real data applications.")
 flexible and fully general class of statistical graph models.  This package
 provides functions for performing MOM, GMM and variational inference.  Visual
 diagnostics and goodness of fit metrics are provided.  See Fellows (2018)
-@code{<arXiv:1804.04583>} for a detailed description of the methods.")
+<@code{arXiv:1804.04583>} for a detailed description of the methods.")
     (license (license:fsdg-compatible "MIT + file LICENCE"))))
 
 (define-public r-lolliplot
@@ -3926,7 +3925,7 @@ diagnostics and goodness of fit metrics are provided.  See Fellows (2018)
     (synopsis "Plot Variants and Somatic Mutations")
     (description
      "Draw lolliplot using GRanges objects.  this package was designed only for
-drawing lolliplot.  So, it's faster than @code{trackViewer',} but un-related
+drawing lolliplot.  So, it's faster than @code{trackViewer}', but un-related
 functions has been derived.")
     (license license:gpl2+)))
 
@@ -4927,7 +4926,7 @@ package has no external dependencies.")
      "To decompose symmetric matrices such as brain connectivity matrices so that one
 can extract sparse latent component matrices and also estimate mixing
 coefficients, a blind source separation (BSS) method named LOCUS was proposed in
-Wang and Guo (2023) @code{<arXiv:2008.08915>.} For brain connectivity matrices,
+Wang and Guo (2023) <@code{arXiv:2008.08915>}.  For brain connectivity matrices,
 the outputs correspond to sparse latent connectivity traits and individual-level
 trait loadings.")
     (license license:gpl2)))
@@ -5129,7 +5128,7 @@ functions.")
     (description
      "This package provides a set of functions to locate some programs available on
 the user machine.  The package provides functions to locate Node.js', npm',
-@code{LibreOffice',} Microsoft Word', Microsoft @code{PowerPoint',} Microsoft
+@code{LibreOffice}', Microsoft Word', Microsoft @code{PowerPoint}', Microsoft
 Excel', Python', pip', Mozilla Firefox and Google Chrome'.  User can test the
 availability of a program with eventually a version and call it with function
 system2() or system().  This allows the use of a single function to retrieve the
@@ -5203,7 +5202,7 @@ described by Cobos et al. (2010) <doi:10.1109/LSP.2010.2091502>.")
     (home-page "https://cran.r-project.org/package=localsolver")
     (synopsis "R API to LocalSolver")
     (description
-     "The package converts R data onto input and data for @code{LocalSolver,} executes
+     "The package converts R data onto input and data for @code{LocalSolver}, executes
 optimization and exposes optimization results as R data. @code{LocalSolver}
 (http://www.localsolver.com/) is an optimization engine developed by
 Innovation24 (http://www.innovation24.fr/).  It is designed to solve large-scale
@@ -5312,7 +5311,7 @@ such as ATE, ATT, or the marginal policy relevant treatment effect.")
     (home-page "https://github.com/viadee/localICE")
     (synopsis "Local Individual Conditional Expectation")
     (description
-     "Local Individual Conditional Expectation @code{('localICE')} is a local
+     "Local Individual Conditional Expectation ('@code{localICE}') is a local
 explanation approach from the field of @code{eXplainable} Artificial
 Intelligence (XAI). @code{localICE} is a model-agnostic XAI approach which
 provides three-dimensional local explanations for particular data instances.
@@ -5326,11 +5325,11 @@ different color to the plot.  The given instance is added to the plot as two
 dotted lines according to the feature values.  The @code{localICE-package} can
 explain features of type factor and numeric of any machine learning model.
 Automatically supported machine learning packages are mlr',
-@code{randomForest',} caret or all other with an S3 predict function.  For
+@code{randomForest}', caret or all other with an S3 predict function.  For
 further model types from other libraries, a predict function has to be provided
 as an argument in order to get access to the model.  Reference to the ICE
 approach: Alex Goldstein, Adam Kapelner, Justin Bleich, Emil Pitkin (2013)
-@code{<arXiv:1309.6392>.}")
+<@code{arXiv:1309.6392>}.")
     (license license:bsd-3)))
 
 (define-public r-localgauss
@@ -5379,8 +5378,8 @@ detection.  The approximating neighbor curves are piecewise functions built from
 a functional sample.  Instead of a distance on a function space we use a locally
 defined distance function that satisfies stabilization criteria.  The package
 allows the implementation of the methodology and the replication of the results
-in @code{ElÃ­as,} A., @code{JimÃ©nez,} R. and Yukich, J. (2020)
-@code{<arXiv:2007.16059>.}")
+in @code{ElÃ­as}, A., @code{JimÃ©nez}, R. and Yukich, J. (2020)
+<@code{arXiv:2007.16059>}.")
     (license license:gpl3)))
 
 (define-public r-localcontrolstrategy
@@ -5452,7 +5451,7 @@ censoring may be present.  The approach extends to bias-corrected personalized
 predictions of treatment outcome differences, and analysis of heterogeneity of
 treatment effect-sizes across patient subgroups.  For further details, please
 see: Lauve NR, Nelson SJ, Young SS, Obenchain RL, Lambert CG.
-@code{LocalControl:} An R Package for Comparative Safety and Effectiveness
+@code{LocalControl}: An R Package for Comparative Safety and Effectiveness
 Research.  Journal of Statistical Software.  2020.  p.  1â32.  Available from
 <doi:10.18637/jss.v096.i04>.")
     (license (list license:asl2.0
@@ -5529,28 +5528,6 @@ load shape in terms of preserving time series properties.  It also offers
 powerful graphics, that allows the user to visually assess the derived load
 shape.")
     (license license:gpl3)))
-
-(define-public r-loadr
-  (package
-    (name "r-loadr")
-    (version "0.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "loadr" version))
-              (sha256
-               (base32
-                "01nsjsv7c8grsizfisczqwjrz5saff0pgn7716ig4i8nzargvz7a"))))
-    (properties `((upstream-name . "loadr")))
-    (build-system r-build-system)
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/databio/loadr")
-    (synopsis "Cleaner Workspaces with Shared Variable Environments")
-    (description
-     "This package provides intuitive functions for loading objects into environments,
-encouraging less cluttered workspaces and sharing variables with large or
-reusable data across users and sessions.  The user provides named variables
-which are loaded into the variable environment for later retrieval.")
-    (license license:bsd-2)))
 
 (define-public r-loadings
   (package
@@ -5643,8 +5620,8 @@ mode, normality test, histogram and correlation.")
     (synopsis "Lattice Options and Add-Ins")
     (description
      "Various plots and functions that make use of the lattice/trellis plotting
-framework.  The plots, which include @code{loaPlot(),} @code{RgoogleMapsPlot()}
-and @code{trianglePlot(),} use @code{panelPal(),} a function that extends
+framework.  The plots, which include @code{loaPlot}(), @code{RgoogleMapsPlot}()
+and @code{trianglePlot}(), use @code{panelPal}(), a function that extends
 lattice and hexbin package methods to automate plot subscript and panel-to-panel
 and panel-to-key synchronization/management.")
     (license license:gpl2+)))
@@ -5697,7 +5674,7 @@ Pareto tail is also implemented.  See Bee, M. (2022)
     (description
      "An implementation of logistic normal multinomial (LNM) clustering.  It is an
 extension of LNM mixture model proposed by Fang and Subedi (2020)
-@code{<arXiv:2011.06682>,} and is designed for clustering compositional data.
+<@code{arXiv:2011.06682>}, and is designed for clustering compositional data.
 The package includes 3 extended models: LNM Factor Analyzer (LNM-FA), LNM
 Bicluster Mixture Model (LNM-BMM) and Penalized LNM Factor Analyzer (LNM-FA).
 There are several advantages of LNM models: 1.  LNM provides more flexible
@@ -5706,7 +5683,7 @@ estimate; 3.  Bicluster can simultaneously cluster subjects and taxa, and
 provides significant biological insights; 4.  Penalty term allows sparse
 estimation in the covariance matrix.  Details for model assumptions and
 interpretation can be found in papers: Tu and Subedi (2021)
-@code{<arXiv:2101.01871>} and Tu and Subedi (2022) <doi:10.1002/sam.11555>.")
+<@code{arXiv:2101.01871>} and Tu and Subedi (2022) <doi:10.1002/sam.11555>.")
     (license license:gpl2+)))
 
 (define-public r-lnirt
@@ -5758,8 +5735,8 @@ network.  1) The @code{lncRNA-mRNA} interaction network was built from the
 protein-protein interactions and the @code{lncRNA-mRNA} co-expression
 relationships in 28 RNA-Seq data sets.  2) The interested @code{lncRNAs} can be
 mapped into networks as seed nodes and a random walk strategy will be performed
-to evaluate the rate of each coding genes influenced by the seed @code{lncRNAs.}
-3) Pathways regulated by the @code{lncRNA} set will be evaluated by a weighted
+to evaluate the rate of each coding genes influenced by the seed @code{lncRNAs}.
+ 3) Pathways regulated by the @code{lncRNA} set will be evaluated by a weighted
 Kolmogorov-Smirnov statistic as an ES Score.  4) The p value and false discovery
 rate value will also be calculated through a permutation analysis.  5) The
 running score of each pathway can be plotted and the heat map of each pathway
@@ -6009,7 +5986,7 @@ Jammalamadaka (2019).")
     (synopsis "An Algorithm for Gene Co-Expression Analysis")
     (description
      "Implementation based on Zhang, Jie & Huang, Kun (2014) <doi:10.4137/CIN.S14021>
-Normalized @code{ImQCM:} An Algorithm for Detecting Weak Quasi-Cliques in
+Normalized @code{ImQCM}: An Algorithm for Detecting Weak Quasi-Cliques in
 Weighted Graph with Applications in Gene Co-Expression Module Discovery in
 Cancers.  Cancer informatics, 13, CIN-S14021.")
     (license license:expat)))
@@ -6034,13 +6011,13 @@ Cancers.  Cancer informatics, 13, CIN-S14021.")
 (define-public r-lmomrfa
   (package
     (name "r-lmomrfa")
-    (version "3.5")
+    (version "3.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lmomRFA" version))
               (sha256
                (base32
-                "1cgwal38r139h18sqrrmvylvasn4v8q82fgp7kg8vk6m1dp5q0vf"))))
+                "1av113gxif93v26g2x4c4l4fbax42w5bv3560p5sgdxbnb7sdmqp"))))
     (properties `((upstream-name . "lmomRFA")))
     (build-system r-build-system)
     (propagated-inputs (list r-lmom))
@@ -6086,13 +6063,13 @@ values.")
 (define-public r-lmomco
   (package
     (name "r-lmomco")
-    (version "2.4.9")
+    (version "2.4.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lmomco" version))
               (sha256
                (base32
-                "0y14zwwg5nnskjpjm9b1d12694c33x6micmshxwwdyl3d1pysqvh"))))
+                "07ysvls3ydiman3f1a0c6f32xxk3fapa0wd0qq4pplx7bnl92al4"))))
     (properties `((upstream-name . "lmomco")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-lmoments r-goftest))
@@ -6100,27 +6077,24 @@ values.")
     (synopsis
      "L-Moments, Censored L-Moments, Trimmed L-Moments, L-Comoments, and Many Distributions")
     (description
-     "Extensive functions for L-moments (LMs) and probability-weighted moments (PWMs),
-parameter estimation for distributions, LM computation for distributions, and
-L-moment ratio diagrams.  Maximum likelihood and maximum product of spacings
-estimation are also available.  LMs for right-tail and left-tail censoring by
-known or unknown threshold and by indicator variable are available.  Asymmetric
-(asy) trimmed LMs (TL-moments, TLMs) are supported.  LMs of residual (resid) and
-reversed (rev) residual life are implemented along with 13 quantile function
-operators for reliability and survival analyses.  Exact analytical bootstrap
-estimates of order statistics, LMs, and variances-covariances of LMs are
-provided.  The Harri-Coble Tau34-squared Normality Test is available.
-Distribution support with \"L\" (LMs), \"TL\" (TLMs) and added (+) support for
-right-tail censoring (RC) encompasses: Asy Exponential (Exp) Power [L], Asy
-Triangular [L], Cauchy [TL], Eta-Mu [L], Exp. [L], Gamma [L], Generalized (Gen)
-Exp Poisson [L], Gen Extreme Value [L], Gen Lambda [L,TL], Gen Logistic [L), Gen
-Normal [L], Gen Pareto [L+RC, TL], Govindarajulu [L], Gumbel [L], Kappa [L],
-Kappa-Mu [L], Kumaraswamy [L], Laplace [L], Linear Mean Residual Quantile
-Function [L], Normal [L], 3-p log-Normal [L], Pearson Type III [L], Polynomial
-Density- Quantile 3 and 4[L], Rayleigh [L], Rev-Gumbel [L+RC], Rice/Rician [L],
-Slash [TL], 3-p Student t [L], Truncated Exponential [L], Wakeby [L], and
-Weibull [L].  Multivariate sample L-comoments (LCMs) are implemented to measure
-asymmetric associations.")
+     "Extensive functions for Lmoments (LMs) and probability-weighted moments (PWMs),
+distribution parameter estimation, LMs for distributions, LM ratio diagrams,
+multivariate Lcomoments, and asymmetric (asy) trimmed LMs (TLMs).  Maximum
+likelihood and maximum product spacings estimation are available.  Right-tail
+and left-tail LM censoring by threshold or indicator variable are available.
+LMs of residual (resid) and reversed (rev) residual life are implemented along
+with 13 quantile operators for reliability analyses.  Exact analytical bootstrap
+estimates of order statistics, LMs, and LM var-covars are available.
+Harri-Coble Tau34-squared Normality Test is available.  Distributions with L,
+TL, and added (+) support for right-tail censoring (RC) encompass: Asy
+Exponential (Exp) Power [L], Asy Triangular [L], Cauchy [TL], Eta-Mu [L], Exp.
+[L], Gamma [L], Generalized (Gen) Exp Poisson [L], Gen Extreme Value [L], Gen
+Lambda [L, TL], Gen Logistic [L], Gen Normal [L], Gen Pareto [L+RC, TL],
+Govindarajulu [L], Gumbel [L], Kappa [L], Kappa-Mu [L], Kumaraswamy [L], Laplace
+[L], Linear Mean Residual Quantile Function [L], Normal [L], 3p log-Normal [L],
+Pearson Type III [L], Polynomial Density-Quantile 3 and 4 [L], Rayleigh [L],
+Rev-Gumbel [L+RC], Rice [L], Singh Maddala [L], Slash [TL], 3p Student t [L],
+Truncated Exponential [L], Wakeby [L], and Weibull [L].")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-lmofit
@@ -6141,7 +6115,7 @@ asymmetric associations.")
     (synopsis "Advanced L-Moment Fitting of Distributions")
     (description
      "This package provides a complete framework for frequency analysis is provided by
-@code{LMoFit'.} It has functions related to the determination of sample
+L@code{MoFit}'.  It has functions related to the determination of sample
 L-moments as in Hosking, J.R.M. (1990) <doi:10.1111/j.2517-6161.1990.tb01775.x>,
 the fitting of various distributions as in Zaghloul et al. (2020)
 <doi:10.1016/j.advwatres.2020.103720> and Hosking, J.R.M. (2019)
@@ -6692,7 +6666,7 @@ experiments within the frame of linear models in R, as described in Onofri et al
 demodulating, processing, and analyzing multi-component amplitude modulated and
 frequency modulated signals.  This R package is based on the approach suggested
 by Smith (2005) <doi:10.1098/rsif.2005.0058> and the Python library
-@code{PyLMD'.}")
+@code{PyLMD}'.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-lmboot
@@ -6893,7 +6867,7 @@ Caigny et al., (2018) <DOI:10.1016/j.ejor.2018.02.009>).")
     (synopsis "The L-Logistic Bayesian Regression")
     (description
      "R functions and data sets for the work Paz, R.F., Balakrishnan, N and
-@code{BazÃ¡n,} J.L. (2018).  L-logistic regression models: Prior sensitivity
+@code{BazÃ¡n}, J.L. (2018).  L-logistic regression models: Prior sensitivity
 analysis, robustness to outliers and applications.  Brazilian Journal of
 Probability and Statistics,
 <https://www.imstat.org/wp-content/uploads/2018/05/BJPS397.pdf>.")
@@ -6960,7 +6934,7 @@ Eglington, and Harrel-Williams (2021)
 features of student data that are used as predictors of subsequent performance.
 LKT allows great flexibility in the choice of predictive components and features
 computed for these predictive components.  The system is built on top of
-@code{LiblineaR',} which enables extremely fast solutions compared to base glm()
+@code{LiblineaR}', which enables extremely fast solutions compared to base glm()
 in R.")
     (license license:gpl3)))
 
@@ -7072,18 +7046,18 @@ Liu (1993) <doi:10.1080/03610929308831027> v.  Liu (2001)
 (define-public r-litterfitter
   (package
     (name "r-litterfitter")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "litterfitter" version))
               (sha256
                (base32
-                "15v4ykvqri8gww8y6ra3979dm4f1vkcw0fdb5l8jilym3n0ndkg0"))))
+                "095jdrf0bfc465kabxnkdii1idqfnk4q7130kby0z499a88k1zpp"))))
     (properties `((upstream-name . "litterfitter")))
     (build-system r-build-system)
     (propagated-inputs (list r-plyr))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/cornwell-lab-unsw/litterfitter")
+    (home-page "https://github.com/traitecoevo/litterfitter/issues")
     (synopsis "Fit a Collection of Curves to Single Cohort Decomposition Data")
     (description
      "There is a long tradition of studying the flux of carbon from the biosphere to
@@ -7132,7 +7106,7 @@ e.g., trend analysis, power analysis, and baseline analysis.  Under the hood,
 these functions are also used by the user interface.  See Schulz et al. (2019)
 <doi:10.1016/j.envpol.2019.02.030> for details.  MS-Windows users are advised to
 run @code{litteR} in RStudio'.  See our vignette: Installation manual for
-RStudio and @code{litteR'.}")
+RStudio and @code{litteR}'.")
     (license license:gpl3+)))
 
 (define-public r-litriddle
@@ -7188,7 +7162,7 @@ Matrix') can be directly analyzed.  Conventional bagged predictions are
 available alongside an efficient prediction for MICE via the algorithm proposed
 by Doove et al (2014) <doi:10.1016/j.csda.2013.10.025>.  Survival and
 probability forests are not supported in the update, nor is data of class
-gwaa.data (R package @code{GenABEL');} use the original ranger package for these
+gwaa.data (R package @code{GenABEL}'); use the original ranger package for these
 analyses.")
     (license license:gpl3)))
 
@@ -7309,7 +7283,7 @@ default values to be inherited from another list.")
 represent.  Sometimes str() is not enough, so this suite of htmlwidgets is
 designed to help see, understand, and maybe even modify your R lists.  The
 function reactjson() requires a package @code{reactR} that can be installed from
-CRAN or @code{<https://github.com/timelyportfolio/reactR>.}")
+CRAN or <https://github.com/timelyportfolio/@code{reactR>}.")
     (license license:expat)))
 
 (define-public r-listr
@@ -7601,10 +7575,10 @@ according to priority.  Stack implements LIFO.")
     (home-page "https://tommi-s.github.io/")
     (synopsis "Integrative Visualizations of the Lipidome")
     (description
-     "Create lipidome-wide heatmaps of statistics with the @code{lipidomeR'.} The
+     "Create lipidome-wide heatmaps of statistics with the @code{lipidomeR}'.  The
 @code{lipidomeR} provides a streamlined pipeline for the systematic
 interpretation of the lipidome through publication-ready visualizations of
-regression models fitted on lipidomics data.  With @code{lipidomeR',}
+regression models fitted on lipidomics data.  With @code{lipidomeR}',
 associations between covariates and the lipidome can be interpreted
 systematically and intuitively through heatmaps, where lipids are categorized by
 the lipid class and are presented on two-dimensional maps organized by the lipid
@@ -7693,13 +7667,13 @@ variable ranges implied by linear (in)equalities.")
 (define-public r-linselect
   (package
     (name "r-linselect")
-    (version "1.1.3")
+    (version "1.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "LINselect" version))
               (sha256
                (base32
-                "1qxqwph5ja2kf1s4ggsv8w6hjgf9mr53a0gahhjix2v78309z42g"))))
+                "0av5bcg8n92abxfxyc694g5zx4i9j83bvg8p63i155rhid5k9bsp"))))
     (properties `((upstream-name . "LINselect")))
     (build-system r-build-system)
     (propagated-inputs (list r-randomforest
@@ -7716,7 +7690,7 @@ estimators, following the method developed by Y. Baraud, C. Giraud and S. Huet
 (2014) <doi:10.1214/13-AIHP539>.  In particular it solves the problem of
 variable selection by choosing the best predictor among predictors emanating
 from different methods as lasso, elastic-net, adaptive lasso, pls,
-@code{randomForest.} Moreover, it can be applied for choosing the tuning
+@code{randomForest}.  Moreover, it can be applied for choosing the tuning
 parameter in a Gauss-lasso procedure.")
     (license license:gpl3+)))
 
@@ -7872,7 +7846,7 @@ categorical).")
      "Implementations of most of the existing proximity-based methods of link
 prediction in graphs.  Among the 20 implemented methods are e.g.: Adamic L. and
 Adar E. (2003) <doi:10.1016/S0378-8733(03)00009-1>, Leicht E., Holme P., Newman
-M. (2006) @code{<doi:10.1103/PhysRevE.73.026120>,} Zhou T. and Zhang Y (2009)
+M. (2006) <doi:10.1103/@code{PhysRevE.73.026120>}, Zhou T. and Zhang Y (2009)
 <doi:10.1140/epjb/e2009-00335-8>, and Fouss F., Pirotte A., Renders J., and
 Saerens M. (2007) <doi:10.1109/TKDE.2007.46>.")
     (license license:expat)))
@@ -8112,16 +8086,16 @@ website.")
 (define-public r-lingmatch
   (package
     (name "r-lingmatch")
-    (version "1.0.5")
+    (version "1.0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lingmatch" version))
               (sha256
                (base32
-                "1jcbqlla0qdlx2gv1cc2ma8lg7rl30djyqp6mfmd93dfhqr9mr0g"))))
+                "01cp6sdns2bgfclcz21fhb69q39sr1zqxx2h582kp5s86ikkxbr3"))))
     (properties `((upstream-name . "lingmatch")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcppparallel r-rcpp r-matrix))
+    (propagated-inputs (list r-rcppparallel r-rcpp r-matrix r-bh))
     (home-page "https://github.com/miserman/lingmatch")
     (synopsis "Linguistic Matching and Accommodation")
     (description
@@ -8174,9 +8148,9 @@ the document.  It also provides a database of linguistic glosses.")
     (description
      "@code{LineUp} is an interactive technique designed to create, visualize and
 explore rankings of items based on a set of heterogeneous attributes.  This is a
-htmlwidget wrapper around the @code{JavaScript} library @code{LineUp.js'.} It is
-designed to be used in R Shiny apps and R Markddown files.  Due to an outdated
-webkit version of RStudio it won't work in the integrated viewer.")
+htmlwidget wrapper around the @code{JavaScript} library @code{LineUp.js}'.  It
+is designed to be used in R Shiny apps and R Markddown files.  Due to an
+outdated webkit version of RStudio it won't work in the integrated viewer.")
     (license license:expat)))
 
 (define-public r-lineup2
@@ -8708,7 +8682,7 @@ differential analysis of rhythmic transcriptome data.  See Singer and Hughey
 administrations of online studies, using sophisticated tailoring capabilities to
 support multiple study designs (see <https://www.limesurvey.org>).  This package
 supports programmatic creation of surveys that can then be imported into
-@code{LimeSurvey',} as well as user friendly import of responses from
+@code{LimeSurvey}', as well as user friendly import of responses from
 @code{LimeSurvey} studies.")
     (license license:gpl3+)))
 
@@ -8760,7 +8734,7 @@ a color (i.e.  ggplot(), plot(), flextable(), etc.).")
 data analysis.  With liminal you can create linked interactive graphics to
 diagnose the quality of a dimension reduction technique and explore the global
 structure of a dataset with a tour.  A complete description of the method is
-discussed in ['Lee & Laa & Cook (2020) @code{<arXiv:2012.06077>].}")
+discussed in ['Lee & Laa & Cook (2020) <@code{arXiv:2012.06077>}].")
     (license license:expat)))
 
 (define-public r-lime
@@ -8793,7 +8767,7 @@ cannot be used for explaining why a model made a specific prediction.  lime (a
 port of the lime Python package) is a method for explaining the outcome of black
 box models by fitting a local model around the point in question an
 perturbations of this point.  The approach is described in more detail in the
-article by Ribeiro et al. (2016) @code{<arXiv:1602.04938>.}")
+article by Ribeiro et al. (2016) <@code{arXiv:1602.04938>}.")
     (license license:expat)))
 
 (define-public r-lilrhino
@@ -8912,7 +8886,7 @@ machine-learning methods, a prognosis module with cox-PH and neural-network
 based Cox-nnet methods, and pathway analysis module to visualize the pathway and
 interpret metabolite-pathway relationships.  References: H. Paul Benton
 <http://www.metabolomics-forum.com/index.php?topic=281.0> Jeff Xia
-@code{<https://github.com/cangfengzhe/Metabo/blob/master/MetaboAnalyst/website/name_match.R>}
+<https://github.com/cangfengzhe/Metabo/blob/master/@code{MetaboAnalyst/website/name_match.R>}
 Travers Ching, Xun Zhu, Lana X. Garmire (2018)
 <doi:10.1371/journal.pcbi.1006076>.")
     (license license:gpl2)))
@@ -9122,7 +9096,7 @@ included.  View a demo online at <https://daattali.com/shiny/lightsout/>.")
 extract spectral data and metadata, as described in Gruson, White & Maia (2019)
 <doi:10.21105/joss.01857>.  Among other formats, it can import files from
 Avantes <https://www.avantes.com/>, CRAIC <https://www.microspectra.com/>, and
-@code{OceanInsight} (formerly @code{OceanOptics')}
+@code{OceanInsight} (formerly @code{OceanOptics}')
 <https://www.oceaninsight.com/> brands.")
     (license license:gpl2+)))
 
@@ -9411,16 +9385,16 @@ organization, plotting standard exploratory and analytical plots, predictions.")
     (synopsis "Quantification of Lifecourse Fluidity")
     (description
      "This package provides in built datasets and three functions.  These functions
-are mobility_index, @code{nonStanTest} and @code{linkedLives.} The
+are mobility_index, @code{nonStanTest} and @code{linkedLives}.  The
 mobility_index function facilitates the calculation of lifecourse fluidity,
 whilst the @code{nonStanTest} and the @code{linkedLives} functions allow the
 user to determine the probability that the observed sequence data was due to
 chance.  The @code{linkedLives} function acknowledges the fact that some
 individuals may have identical sequences.  The datasets available provide
-sequence data on marital @code{status(maritalData)} and mobility (mydata) for a
+sequence data on marital status(@code{maritalData}) and mobility (mydata) for a
 selected group of individuals from the British Household Panel Study (BHPS).  In
 addition, personal and house ID's for 100 individuals are provided in a third
-dataset @code{(myHouseID)} from the BHPS.")
+dataset (@code{myHouseID}) from the BHPS.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-lifecontingencies
@@ -9509,7 +9483,7 @@ and other manipulations.")
     (synopsis "Forest Analysis with Airborne Laser Scanning (LiDAR) Data")
     (description
      "This package provides functions for forest analysis using airborne laser
-scanning @code{(LiDAR} remote sensing) data: tree detection (method 1 in Eysn et
+scanning (@code{LiDAR} remote sensing) data: tree detection (method 1 in Eysn et
 al. (2015) <doi:10.3390/f6051721>) and segmentation; forest parameters
 estimation and mapping with the area-based approach.  It includes complementary
 steps for forest mapping: co-registration of field plots with @code{LiDAR} data
@@ -9544,13 +9518,13 @@ philosophy of the package is described in Guo G. (2022)
 (define-public r-libstable4u
   (package
     (name "r-libstable4u")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "libstable4u" version))
               (sha256
                (base32
-                "1kvy9hfla2f2jvkrb6jv3hbmzjv05q9xk8yw9dhjalrgmy0c59j8"))))
+                "1qhq255s20h30wrbfwdda35gjiijs9vri49jq2cnhl2kwmcgg71b"))))
     (properties `((upstream-name . "libstable4u")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppgsl r-rcpp))
@@ -9582,7 +9556,7 @@ under a new maintainer.")
     (description
      "Generate a local library copy with relevant packages.  All packages currently
 found within the search path - except base packages - will be copied to the
-directory provided and can be used later on with the @code{.libPaths()}
+directory provided and can be used later on with the .@code{libPaths}()
 function.")
     (license license:expat)))
 
@@ -9604,7 +9578,7 @@ function.")
     (synopsis
      "Install, Update, Load Packages from CRAN, 'GitHub', and 'Bioconductor' in One Step")
     (description
-     "Automatically install, update, and load CRAN', @code{GitHub',} and Bioconductor
+     "Automatically install, update, and load CRAN', @code{GitHub}', and Bioconductor
 packages in a single function call.  By accepting bare unquoted names for
 packages, it's easy to add or remove packages from the list.")
     (license license:gpl3)))
@@ -9841,7 +9815,7 @@ comprehensive since it is capable of generating maximin distance LHDs, maximum
 projection LHDs, and orthogonal and nearly orthogonal LHDs.  Detailed
 comparisons and summary of all the algorithms and construction methods in this
 package can be found at Hongzhi Wang, Qian Xiao and Abhyuday Mandal (2021)
-@code{<arXiv:2010.09154>.} This package is particularly useful in the area of
+<@code{arXiv:2010.09154>}.  This package is particularly useful in the area of
 Design and Analysis of Experiments (DAE).  More specifically, design of computer
 experiments.")
     (license license:expat)))
@@ -10044,7 +10018,7 @@ Descriptions of these customized designs are available in Siddiqi (2016)
 model, the same designs are applicable for LGD model with different underlying
 regression methods (OLS and fractional logistic regression).  To cover other
 important steps for LGD model development, it is recommended to use LGDtoolkit
-package along with PDtoolkit', and monobin (or @code{monobinShiny')} packages.
+package along with PDtoolkit', and monobin (or @code{monobinShiny}') packages.
 Additionally, LGDtoolkit provides set of procedures handy for initial and
 periodical model validation.")
     (license license:gpl3+)))
@@ -10100,7 +10074,7 @@ Taylor, Tilman M. Davies, Barry S. Rowlingson, Peter J. Diggle (2015)
     (synopsis "Simulation and Estimation of Log-GARCH Models")
     (description
      "Simulation and estimation of univariate and multivariate log-GARCH models.  The
-main functions of the package are: @code{lgarchSim(),} @code{mlgarchSim(),}
+main functions of the package are: @code{lgarchSim}(), @code{mlgarchSim}(),
 lgarch() and mlgarch().  The first two functions simulate from a univariate and
 a multivariate log-GARCH model, respectively, whereas the latter two estimate a
 univariate and multivariate log-GARCH model, respectively.")
@@ -10226,7 +10200,7 @@ LFMM program present in the LEA package (Frichot and Francois, 2015,
     (description
      "Various algorithms related to linguistic fuzzy logic: mining for linguistic
 fuzzy association rules, composition of fuzzy relations, performing
-perception-based logical deduction @code{(PbLD),} and forecasting time-series
+perception-based logical deduction (@code{PbLD}), and forecasting time-series
 using fuzzy rule-based ensemble (FRBE).  The package also contains basic
 fuzzy-related algebraic functions capable of handling missing values in
 different styles (Bochvar, Sobocinski, Kleene etc.), computation of Sugeno
@@ -10494,7 +10468,7 @@ starts by writing code to read in files from the @code{LexisNexis} newspaper
 archive (retrieved e.g., from <https://www.lexisnexis.com/> or any of the
 partner sites).  However, while this is a nice exercise I do recommend, not
 everyone has the time.  This package takes files downloaded from the newspaper
-archive of @code{LexisNexis',} reads them into R and offers functions for
+archive of @code{LexisNexis}', reads them into R and offers functions for
 further processing.")
     (license license:gpl3)))
 
@@ -10546,8 +10520,8 @@ fast and able to handle large lexicons.  Additionally, the package contains
 documentation for users to easily write new functions, allowing researchers to
 examine other relationships within a lexicon.  Preprint:
 <https://psyarxiv.com/8dyru/>.  Open access:
-@code{<https://link.springer.com/epdf/10.3758/s13428-021-01667-6?sharing_token=9WlO9soCc9y0uSuwWSUYfJAH0g46feNdnc402WrhzyrdKcK8uzZx_hDEtgbYzn3gvxdG5Cuj0j0cC4lVMFBqYCGTQmE2blN2Gwo74LJ8ro1pEOAYDRFy6Lhf1nc719vD-zU7GDvKOQxDAwPbrisvPBeXSIu0NkqXF7Jx3IuUwIs%3D>.}
-Citation: Li, Z., Crinnion, A.M. & Magnuson, J.S. (2021).
+<https://link.springer.com/epdf/10.3758/s13428-021-01667-6?sharing_token=9@code{WlO9soCc9y0uSuwWSUYfJAH0g46feNdnc402WrhzyrdKcK8uzZx_hDEtgbYzn3gvxdG5Cuj0j0cC4lVMFBqYCGTQmE2blN2Gwo74LJ8ro1pEOAYDRFy6Lhf1nc719vD-zU7GDvKOQxDAwPbrisvPBeXSIu0NkqXF7Jx3IuUwIs%3D>}.
+ Citation: Li, Z., Crinnion, A.M. & Magnuson, J.S. (2021).
 <doi:10.3758/s13428-021-01667-6>.")
     (license license:gpl3+)))
 
@@ -10698,7 +10672,7 @@ package is heavily inspired by the
     (synopsis "Less Code, More Results")
     (description
      "Each function accomplishes the work of multiple standard R functions.  For
-example, two function calls, Read() and @code{CountAll(),} read the data and
+example, two function calls, Read() and @code{CountAll}(), read the data and
 generate summary statistics for all variables in the data frame, plus histograms
 and bar charts as appropriate.  Other functions provide for comprehensive
 summary statistics via pivot tables, a comprehensive regression analysis, ANOVA
@@ -10740,7 +10714,7 @@ visualizations.")
      "\"Learning with Subset Stacking\" is a supervised learning algorithm that is based
 on training many local estimators on subsets of a given dataset, and then
 passing their predictions to a global estimator.  You can find the details about
-LESS in our manuscript at @code{<arXiv:2112.06251>.}")
+LESS in our manuscript at <@code{arXiv:2112.06251>}.")
     (license license:expat)))
 
 (define-public r-lero-lero
@@ -10942,7 +10916,7 @@ It is a refined description of the Lemna TKTD model published by Schmitt et al.
     (synopsis "Length-Based Multispecies Analysis by Numerical Simulation")
     (description
      "Set up, run and explore the outputs of the Length-based Multi-species model
-@code{(LeMans;} Hall et al.  2006 <doi:10.1139/f06-039>), focused on the marine
+(@code{LeMans}; Hall et al.  2006 <doi:10.1139/f06-039>), focused on the marine
 environment.")
     (license license:gpl3)))
 
@@ -11020,10 +10994,10 @@ Naming conventions for color mapping include those from @code{BrickLink}
     (home-page "https://cran.r-project.org/package=LEGIT")
     (synopsis "Latent Environmental & Genetic InTeraction (LEGIT) Model")
     (description
-     "Constructs genotype x environment interaction @code{(GxE)} models where G is a
+     "Constructs genotype x environment interaction (@code{GxE}) models where G is a
 weighted sum of genetic variants (genetic score) and E is a weighted sum of
 environments (environmental score) using the alternating optimization algorithm
-by Jolicoeur-Martineau et al. (2017) @code{<arXiv:1703.08111>.} This approach
+by Jolicoeur-Martineau et al. (2017) <@code{arXiv:1703.08111>}.  This approach
 has greatly enhanced predictive power over traditional @code{GxE} models which
 include only a single genetic variant and a single environmental exposure.
 Although this approach was originally made for @code{GxE} modelling, it is
@@ -11033,7 +11007,7 @@ It can also handle more than 2 latent variables (rather than just G and E) and
 results and is very parameter-efficient thus it can even be used with small
 sample sizes (n < 250).  Tools to determine the type of interaction (vantage
 sensitivity, diathesis-stress or differential susceptibility), with any number
-of genetic variants or environments, are available @code{<arXiv:1712.04058>.}
+of genetic variants or environments, are available <@code{arXiv:1712.04058>}.
 The software can now produce mixed-effects LEGIT models through the lme4
 package.")
     (license license:gpl3)))
@@ -11385,13 +11359,13 @@ adjusted model and R-squared).")
 (define-public r-learningrlab
   (package
     (name "r-learningrlab")
-    (version "2.3")
+    (version "2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "LearningRlab" version))
               (sha256
                (base32
-                "1103ym1lz315f092m0sm4zdpd5ydnwc8d1n69w9m2lilrz0a47yn"))))
+                "0wjmdmj9c96fz83nnh9np3xlpbgdq7z0bjp020gidyw0cmfjqddf"))))
     (properties `((upstream-name . "LearningRlab")))
     (build-system r-build-system)
     (propagated-inputs (list r-magick r-crayon))
@@ -11760,28 +11734,6 @@ lines or to enable/disable snapping to align shapes.")
 the geojson data for provinces, cities in China.")
     (license license:gpl2)))
 
-(define-public r-leaflet-opacity
-  (package
-    (name "r-leaflet-opacity")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "leaflet.opacity" version))
-              (sha256
-               (base32
-                "19dkl105sf7c9wrpl8kzwsjwwc7r9qb4c1g85w2lavpj0pbyazxw"))))
-    (properties `((upstream-name . "leaflet.opacity")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-htmlwidgets r-htmltools))
-    (native-inputs (list r-knitr esbuild))
-    (home-page "https://cran.r-project.org/package=leaflet.opacity")
-    (synopsis "Opacity Controls for Leaflet Maps")
-    (description
-     "Extends the leaflet R package with the @code{Leaflet.OpacityControls}
-@code{JavaScript} plugin.  Adds controls to the leaflet map for adjusting the
-opacity of a layer.")
-    (license license:gpl3)))
-
 (define-public r-leaflet-minicharts
   (package
     (name "r-leaflet-minicharts")
@@ -11870,7 +11822,7 @@ plugins.")
     (description
      "An add-on package to the leaflet package, which provides bindings for ESRI
 services.  This package allows a user to add ESRI provided services such as
-@code{MapService',} @code{ImageMapService',} @code{TiledMapService} etc.  to a
+@code{MapService}', @code{ImageMapService}', @code{TiledMapService} etc.  to a
 leaflet map.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
@@ -11914,7 +11866,7 @@ create symbols to plot on maps.")
     (description
      "This package provides bindings to the Leaflet.glify @code{JavaScript} library
 which extends the leaflet @code{JavaScript} library to render large data in the
-browser using @code{WebGl'.}")
+browser using @code{WebGl}'.")
     (license license:expat)))
 
 (define-public r-leafem
@@ -11991,7 +11943,7 @@ apps.")
     (home-page "https://github.com/mattocci27/LeafArea")
     (synopsis "Rapid Digital Image Analysis of Leaf Area")
     (description
-     "An interface for the image processing program @code{ImageJ',} which allows a
+     "An interface for the image processing program @code{ImageJ}', which allows a
 rapid digital image analysis for particle sizes.  This package includes function
 to write an @code{ImageJ} macro which is optimized for a leaf area analysis by
 default.")
@@ -12279,7 +12231,7 @@ suitable for describing highly leptokurtic time series obtained from the
 financial market.  It provides a theoretically solid foundation to explore such
 data where the normal distribution is not adequate.  The HMM implementation
 follows closely the book: \"Hidden Markov Models for Time Series\", by Zucchini,
-@code{MacDonald,} Langrock (2016).")
+@code{MacDonald}, Langrock (2016).")
     (license license:artistic2.0)))
 
 (define-public r-lddmm
@@ -12355,7 +12307,7 @@ sample).")
     (synopsis "Lan-DeMets Method for Group Sequential Boundaries")
     (description
      "Computations related to group sequential boundaries.  Includes calculation of
-bounds using the @code{Lan-DeMets} alpha spending function approach.  Based on
+bounds using the Lan-@code{DeMets} alpha spending function approach.  Based on
 FORTRAN program ld98 implemented by Reboussin, et al. (2000)
 <doi:10.1016/s0197-2456(00)00057-x>.")
     (license license:gpl2+)))
@@ -12773,7 +12725,7 @@ calculated, mainly based on Monte Carlo simulations.")
      "Helper functions to implement univariate and bivariate latent change score
 models in R using the lavaan package.  For details about Latent Change Score
 Modeling (LCSM) see @code{McArdle} (2009)
-<doi:10.1146/annurev.psych.60.110707.163612> and Grimm, An, @code{McArdle,}
+<doi:10.1146/annurev.psych.60.110707.163612> and Grimm, An, @code{McArdle},
 Zonderman and Resnick (2012) <doi:10.1080/10705511.2012.659627>.  The package
 automatically generates lavaan syntax for different model specifications and
 varying timepoints.  The lavaan syntax generated by this package can be returned
@@ -13059,7 +13011,7 @@ and edge-step normalization parameters.")
     (description
      "Providing a method for Local Discrimination via Latent Class Models.  The
 approach is described in
-@code{<https://www.r-project.org/conferences/useR-2009/abstracts/pdf/Bucker.pdf>.}")
+<https://www.r-project.org/conferences/@code{useR-2009/abstracts/pdf/Bucker.pdf>}.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-lccr
@@ -13394,13 +13346,13 @@ problems.")
 (define-public r-lba
   (package
     (name "r-lba")
-    (version "2.4.51")
+    (version "2.4.52")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lba" version))
               (sha256
                (base32
-                "1ln3la75rafr1a8l9dfhl05v3yvrvj1y92lzcqs5b55cb5hqbi71"))))
+                "04w275da78naxz1imbw78kpd0rns4ipmjgfs4f23h1q8zp5711fw"))))
     (properties `((upstream-name . "lba")))
     (build-system r-build-system)
     (propagated-inputs (list r-scatterplot3d r-rgl r-plotrix r-mass r-alabama))
@@ -13429,9 +13381,9 @@ designed for compositional data.")
     (synopsis "LaTeX Wrappers for R Users")
     (description
      "This package provides the functionality to write @code{LaTeX} code from within R
-without having to learn @code{LaTeX.} Functionality also exists to create HTML
+without having to learn @code{LaTeX}.  Functionality also exists to create HTML
 and Markdown code.  While the functionality still exists to write complete
-documents with @code{lazyWeave,} it is generally easier to do so with with
+documents with @code{lazyWeave}, it is generally easier to do so with with
 markdown and knitr. @code{lazyWeave's} main strength now is the ability to
 design custom and complex tables for reporting results.")
     (license (list license:gpl2+ license:gpl3+))))
@@ -13472,7 +13424,7 @@ changes using pattern recognition deep regression learning.  Summary of Methods
 used: Awesome H2O tutorials: <https://github.com/h2oai/awesome-h2o>, Market Type
 research of Van Tharp Institute: <https://www.vantharp.com/>, Reinforcement
 Learning R package:
-@code{<https://CRAN.R-project.org/package=ReinforcementLearning>.}")
+<https://CRAN.R-project.org/package=@code{ReinforcementLearning>}.")
     (license license:expat)))
 
 (define-public r-lazysql
@@ -13526,30 +13478,6 @@ in-memory data frames.  Basic features works with any drawing format ('GDAL
 vector data source') supported by the sf package.")
     (license license:gpl3)))
 
-(define-public r-lazynumbers
-  (package
-    (name "r-lazynumbers")
-    (version "1.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "lazyNumbers" version))
-              (sha256
-               (base32
-                "0dc0j79cv7j3y04mpb2pp3qrjwhiv74rypl9yplwyr36z6fgl00l"))))
-    (properties `((upstream-name . "lazyNumbers")))
-    (build-system r-build-system)
-    (inputs (list mpfr gmp))
-    (propagated-inputs (list r-rcppeigen r-rcppcgal r-rcpp r-bh))
-    (native-inputs (list pkg-config))
-    (home-page "https://github.com/stla/lazyNumbers")
-    (synopsis "Exact Floating-Point Arithmetic")
-    (description
-     "This package provides a new type of numbers called the lazy numbers.  Arithmetic
-on lazy numbers is exact, contrary to ordinary floating-point arithmetic.  The
-lazy numbers are implemented in C++ with the CGAL library
-(<https://www.cgal.org/>).")
-    (license license:gpl3)))
-
 (define-public r-lazydata
   (package
     (name "r-lazydata")
@@ -13566,10 +13494,10 @@ lazy numbers are implemented in C++ with the CGAL library
     (synopsis "LazyData Facility")
     (description
      "Supplies a @code{LazyData} facility for packages which have data sets but do not
-provide @code{LazyData:} true.  A single function is is included,
-@code{requireData,} which is a drop-in replacement for base::require, but
+provide @code{LazyData}: true.  A single function is is included,
+@code{requireData}, which is a drop-in replacement for base::require, but
 carrying the additional functionality.  By default, it suppresses package
-startup messages as well.  See argument @code{reallyQuitely'.}")
+startup messages as well.  See argument @code{reallyQuitely}'.")
     (license license:gpl2)))
 
 (define-public r-lazybar
@@ -13644,16 +13572,17 @@ leave-one-out cross-validation.")
 (define-public r-lax
   (package
     (name "r-lax")
-    (version "1.2.0")
+    (version "1.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lax" version))
               (sha256
                (base32
-                "0v05088a3hfmb2m6mzc6m7nibiq4qs5j052pnigyqkadf8mcyvjq"))))
+                "1wlmxkgckc2sqcxxknsmpzb0d3fgc5zb97b2vksyjinz5y2vjc3a"))))
     (properties `((upstream-name . "lax")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sandwich r-revdbayes r-numderiv r-chandwich))
+    (propagated-inputs (list r-sandwich r-revdbayes r-numderiv r-exdex
+                             r-chandwich))
     (native-inputs (list r-knitr))
     (home-page "https://paulnorthrop.github.io/lax/")
     (synopsis "Loglikelihood Adjustment for Extreme Value Models")
@@ -13663,8 +13592,8 @@ maximum likelihood estimation, by the extreme value analysis packages eva
 <https://cran.r-project.org/package=eva>, evd
 <https://cran.r-project.org/package=evd>, evir
 <https://cran.r-project.org/package=evir>, @code{extRemes}
-@code{<https://cran.r-project.org/package=extRemes>,} @code{fExtremes}
-@code{<https://cran.r-project.org/package=fExtremes>,} ismev
+<https://cran.r-project.org/package=@code{extRemes>}, @code{fExtremes}
+<https://cran.r-project.org/package=@code{fExtremes>}, ismev
 <https://cran.r-project.org/package=ismev>, mev
 <https://cran.r-project.org/package=mev>, POT
 <https://cran.r-project.org/package=POT> and texmex
@@ -13974,7 +13903,7 @@ sphere packing designs proposed in Xu He (2017)
 <doi:10.1080/01621459.2016.1222289> and Xu He (2019)
 <doi:10.1080/00401706.2018.1458655>, and densest packing-based maximum
 projections designs proposed in Xu He (2020) <doi:10.1093/biomet/asaa057> and Xu
-He (2018) @code{<arXiv:1709.02062v2>.}")
+He (2018) <@code{arXiv:1709.02062v2>}.")
     (license license:lgpl2.1)))
 
 (define-public r-latticedensity
@@ -14003,7 +13932,7 @@ He (2018) @code{<arXiv:1709.02062v2>.}")
      "Density Estimation and Nonparametric Regression on Irregular Regions")
     (description
      "This package provides functions that compute the lattice-based density estimator
-of Barry and @code{McIntyre,} which accounts for point processes in
+of Barry and @code{McIntyre}, which accounts for point processes in
 two-dimensional regions with irregular boundaries and holes.  The package also
 implements two-dimensional non-parametric regression for similar regions.")
     (license license:gpl2)))
@@ -14263,7 +14192,7 @@ essentially making latent correlation estimation almost as fast as rank-based
 correlation estimation.  The estimation is based on latent copula Gaussian
 models.  For continuous/binary types, see Fan, J., Liu, H., Ning, Y., and Zou,
 H. (2017).  For ternary type, see Quan X., Booth J.G. and Wells M.T. (2018)
-@code{<arXiv:1809.06255>.} For truncated type or zero-inflated type, see Yoon
+<@code{arXiv:1809.06255>}.  For truncated type or zero-inflated type, see Yoon
 G., Carroll R.J. and Gaynanova I. (2020) <doi:10.1093/biomet/asaa007>.  For
 approximation method of computation, see Yoon G., MÃ¼ller C.L. and Gaynanova I.
 (2021) <doi:10.1080/10618600.2021.1882468>.  The latter method uses multi-linear
@@ -14294,7 +14223,7 @@ estimation of average causal effects under network interference of unknown form.
  The target parameters are the local average direct effect, the local average
 indirect effect, the local average overall effect, and the local average
 spillover effect.  The methods are developed by Hoshino and Yanagi (2023)
-@code{<doi:10.48550/arXiv.2108.07455>.}")
+<doi:10.48550/@code{arXiv.2108.07455>}.")
     (license license:expat)))
 
 (define-public r-latdiag
@@ -14404,7 +14333,7 @@ take X'X and X'y instead of X and y.")
     (synopsis "3CoSE Algorithm")
     (description
      "This package contains functions to estimate a penalized regression model using
-@code{3CoSE} algorithm, see Weber, Striaukas, Schumacher Binder (2018)
+3@code{CoSE} algorithm, see Weber, Striaukas, Schumacher Binder (2018)
 <doi:10.2139/ssrn.3211163>.")
     (license license:gpl2+)))
 
@@ -14644,7 +14573,7 @@ in @code{ArXiv} (http://arxiv.org/abs/1405.7107).")
     (synopsis "Work with Look at NanoSIMS Data in R")
     (description
      "R interface for working with nanometer scale secondary ion mass spectrometry
-@code{(NanoSIMS)} data exported from Look at @code{NanoSIMS.}")
+(@code{NanoSIMS}) data exported from Look at @code{NanoSIMS}.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -14797,7 +14726,7 @@ dispersal kernel for the dissemination of the pathogen, and a SEIR
 ('Susceptible-Exposed-Infectious-Removedâ) structure with a discrete time
 step.  It provides a useful tool to assess the performance of a wide range of
 deployment options with respect to their epidemiological, evolutionary and
-economic outcomes.  Loup Rimbaud, Julien @code{PapaÃ¯x,} @code{Jean-FranÃ§ois}
+economic outcomes.  Loup Rimbaud, Julien @code{PapaÃ¯x}, Jean-@code{FranÃ§ois}
 Rey, Luke G Barrett, Peter H Thrall (2018) <doi:10.1371/journal.pcbi.1006067>.")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file://LICENSE")))))
@@ -14883,7 +14812,7 @@ are raster dataset exportable to any common GIS format.")
 workflow.  landscapemetrics reimplements the most common metrics from FRAGSTATS
 (<https://www.umass.edu/landeco/>) and new ones from the current literature on
 landscape metrics.  This package supports raster spatial objects and takes
-@code{RasterLayer,} @code{RasterStacks,} @code{RasterBricks} or lists of
+@code{RasterLayer}, @code{RasterStacks}, @code{RasterBricks} or lists of
 @code{RasterLayer} from the raster package as input arguments.  It further
 provides utility functions to visualize patches, select metrics and building
 blocks to develop new metrics.")
@@ -15012,6 +14941,32 @@ forward or linear mixed effects modelling.  There is also the option to model
 competing risks, either through cause-specific Cox regression or Fine-Gray
 regression.  To find out more about the methods in this package, please see
 <https://isobelbarrott.github.io/Landmarking/articles/Landmarking>.")
+    (license license:gpl2+)))
+
+(define-public r-landform
+  (package
+    (name "r-landform")
+    (version "0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "landform" version))
+              (sha256
+               (base32
+                "1g1c5iw2b798q304jfkk38qjr7780swq8pxs0m6526a8lfx517iw"))))
+    (properties `((upstream-name . "landform")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra))
+    (home-page "https://cran.r-project.org/package=landform")
+    (synopsis "Topographic Position Index-Based Landform Classification")
+    (description
+     "This package provides a function for classifying a landscape into different
+categories based on the Topographic Position Index (TPI) and slope.  It offers
+two types of classifications: Slope Position Classification, and Landform
+Classification.  The function internally calculates the TPI for the given
+landscape and then uses it along with the slope to perform the classification.
+Optionally, descriptive statistics for every class are calculated and plotted.
+The classifications are useful for identifying the position of a location on a
+slope and for identifying broader landform types.")
     (license license:gpl2+)))
 
 (define-public r-landest
@@ -15525,7 +15480,7 @@ based on research conducted during the author's @code{PhD} studies.")
     (home-page "https://cran.r-project.org/package=lactcurves")
     (synopsis "Lactation Curve Parameter Estimation")
     (description
-     "@code{AllCurves()} runs multiple lactation curve models and extracts selection
+     "@code{AllCurves}() runs multiple lactation curve models and extracts selection
 criteria for each model.  This package summarises the most common lactation
 curve models from the last century and provides a tool for researchers to
 quickly decide on which model fits their data best to proceed with their
@@ -15533,7 +15488,7 @@ analysis.  Start parameters were optimized based on a dataset with 1.7 million
 Holstein-Friesian cows.  If convergence fails, the start parameters need to be
 manually adjusted.  The models included in the package are taken from: (1)
 Michaelis-Menten: Michaelis, L. and M.L. Menten (1913).
-@code{<www.plantphys.info/plant_physiology/copyright/MichaelisMentenTranslation2.pdf>}
+<www.plantphys.info/plant_physiology/copyright/@code{MichaelisMentenTranslation2.pdf>}
 (1a) Michaelis-Menten (Rook): Rook, A.J., J. France, and M.S. Dhanoa (1993).
 <doi:10.1017/S002185960007684X> (1b) Michaelis-Menten + exponential (Rook):
 Rook, A.J., J. France, and M.S. Dhanoa (1993). <doi:10.1017/S002185960007684X>
@@ -15541,9 +15496,9 @@ Rook, A.J., J. France, and M.S. Dhanoa (1993). <doi:10.1017/S002185960007684X>
 <doi:10.1085/jgp.5.6.777> (3) Brody (1924): Brody, S., C.W. Tuner, and A.C.
 Ragsdale (1924). <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2140670/> (4)
 Schumacher: Schumacher, F.X. (1939) in Thornley, J.H.M. and J. France (2007).
-@code{<https://books.google.com.au/books/about/Mathematical_Models_in_Agriculture.html?id=rlwBCRSHobcC&redir_esc=y>}
+<https://books.google.com.au/books/about/Mathematical_Models_in_Agriculture.html?id=@code{rlwBCRSHobcC&redir_esc=y>}
 (4a) Schumacher (Lopez et al.  2015): Lopez, S. J. France, N.E. Odongo, R.A.
-@code{McBride,} E. Kebreab, O. @code{AlZahal,} B.W. @code{McBride,} and J.
+@code{McBride}, E. Kebreab, O. @code{AlZahal}, B.W. @code{McBride}, and J.
 Dijkstra (2015). <doi:10.3168/jds.2014-8132> (5) Parabolic exponential
 (Adediran): Adediran, S.A., D.A. Ratkowsky, D.J. Donaghy, and A.E.O. Malau-Aduli
 (2012). <doi:10.3168/jds.2011-4663> (6) Wood: Wood, P.D.P. (1967).
@@ -16067,7 +16022,7 @@ continuous design space, optimal Latin hypercube designs, and optimal
 order-of-addition designs.  LA is a brand new nature-inspired meta-heuristic
 optimization algorithm.  Detailed methodologies of LA and its implementation on
 numerical simulations can be found at Hongzhi Wang, Qian Xiao and Abhyuday
-Mandal (2021) @code{<arXiv:2010.09154>.}")
+Mandal (2021) <@code{arXiv:2010.09154>}.")
     (license license:expat)))
 
 (define-public r-l2hdchange
@@ -16088,7 +16043,7 @@ Mandal (2021) @code{<arXiv:2010.09154>.}")
      "This package provides a method for detecting multiple change points in
 high-dimensional time series, targeting dense or spatially clustered signals.
 See Li et al. (2023) \"L2 Inference for Change Points in High-Dimensional Time
-Series via a Two-Way MOSUM\". @code{arXiv} preprint @code{<arXiv:2208.13074>.}")
+Series via a Two-Way MOSUM\". @code{arXiv} preprint <@code{arXiv:2208.13074>}.")
     (license license:gpl3+)))
 
 (define-public r-l2e
@@ -16189,7 +16144,7 @@ and coordinate direction (design matrix columns) basis functions.")
      "This package provides an l1-version of the spectral clustering algorithm devoted
 to robustly clustering highly perturbed graphs using l1-penalty.  This algorithm
 is described with more details in the preprint C. Champion, M. Champion, M.
-@code{BlazÃ¨re,} R. Burcelin and J.M. Loubes, \"l1-spectral clustering algorithm:
+@code{BlazÃ¨re}, R. Burcelin and J.M. Loubes, \"l1-spectral clustering algorithm:
 a spectral clustering method using l1-regularization\" (2022).")
     (license license:gpl2)))
 
@@ -16263,7 +16218,7 @@ performance than methods commonly used in LINCS L1000 data deconvolution.")
     (description
      "This package provides function for the l1-ball prior on high-dimensional
 regression.  The main function, l1ball(), yields posterior samples for linear
-regression, as introduced by Xu and Duan (2020) @code{<arXiv:2006.01340>.}")
+regression, as introduced by Xu and Duan (2020) <@code{arXiv:2006.01340>}.")
     (license license:gpl2+)))
 
 (define-public r-l0learn

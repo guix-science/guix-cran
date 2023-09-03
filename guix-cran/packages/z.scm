@@ -83,9 +83,9 @@ package is not supported by Zoom (owner of the software).")
 The image processing algorithms and the machine learning classifiers in this
 package are (will be, since these have not been added yet) direct ports of an
 early python implementation that can be found at
-@code{<https://github.com/arickGrootveld/ZooID>.} The model weights and datasets
-(also not added yet) that are a part of this package can also be found at Arick
-Grootveld, Eva R. Kozak, Carmen Franco-Gordo (2023)
+<https://github.com/@code{arickGrootveld/ZooID>}.  The model weights and
+datasets (also not added yet) that are a part of this package can also be found
+at Arick Grootveld, Eva R. Kozak, Carmen Franco-Gordo (2023)
 <doi:10.5281/zenodo.7979996>.")
     (license license:gpl3+)))
 
@@ -303,7 +303,7 @@ frequency distribution, Zipf's law.)")
     (description
      "Implementation of four extensions of the Zipf distribution: the Marshall-Olkin
 Extended Zipf (MOEZipf) PÃ©rez-Casany, M., & Casellas, A. (2013)
-@code{<arXiv:1304.4540>,} the Zipf-Poisson Extreme (Zipf-PE), the Zipf-Poisson
+<@code{arXiv:1304.4540>}, the Zipf-Poisson Extreme (Zipf-PE), the Zipf-Poisson
 Stopped Sum (Zipf-PSS) and the Zipf-Polylog distributions.  In log-log scale,
 the two first extensions allow for top-concavity and top-convexity while the
 third one only allows for top-concavity.  All the extensions maintain the
@@ -594,11 +594,11 @@ different cell types (E Robert @code{McDonald} 3rd (2017) <doi:
 10.1016/j.cell.2017.06.010>) or single cell transcriptomics under different
 experimental conditions.  We found that simple computational methods based on a
 single statistical criterion is no longer adequate for analyzing such
-multi-dimensional data.  We herein introduce @code{ZetaSuite',} a statistical
+multi-dimensional data.  We herein introduce @code{ZetaSuite}', a statistical
 package initially designed to score hits from two-dimensional RNAi screens.We
 also illustrate a unique utility of @code{ZetaSuite} in analyzing single cell
 transcriptomics to differentiate rare cells from damaged ones (Vento-Tormo R
-(2018) <doi: 10.1038/s41586-018-0698-6>).  In @code{ZetaSuite',} we have the
+(2018) <doi: 10.1038/s41586-018-0698-6>).  In @code{ZetaSuite}', we have the
 following steps: QC of input datasets, normalization using Z-transformation,
 Zeta score calculation and hits selection based on defined Screen Strength.")
     (license (list license:gpl2 license:gpl3))))
@@ -880,7 +880,7 @@ the software).")
      "An implementation of z-curves - a method for estimating expected discovery and
 replicability rates on the bases of test-statistics of published studies.  The
 package provides functions for fitting the new density and EM version
-@code{(BartoÅ¡} & Schimmack, 2020, <doi:10.31234/osf.io/urgtn>), censored
+(@code{BartoÅ}¡ & Schimmack, 2020, <doi:10.31234/osf.io/urgtn>), censored
 observations, as well as the original density z-curve (Brunner & Schimmack,
 2020, <doi:10.15626/MP.2018.874>).  Furthermore, the package provides
 summarizing and plotting functions for the fitted z-curve objects.  See the

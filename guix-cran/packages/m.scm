@@ -182,7 +182,7 @@ data.frame automatically and make plots using pairs or lattice::parallelplot.")
      "The @code{mycobacrvR} package contains utilities to provide detailed information
 for B cell and T cell epitopes for predicted adhesins from various servers such
 as ABCpred, Bcepred, Bimas, Propred, @code{NetMHC} and IEDB. Please refer the
-URL below to download data files @code{(data_mycobacrvR.zip)} used in functions
+URL below to download data files (data_@code{mycobacrvR.zip}) used in functions
 of this package.")
     (license license:gpl2)))
 
@@ -406,7 +406,7 @@ Constraint-based causal discovery with mixed data.  International Journal of
 Data Science and Analytics, 6(1): 19-30. <doi:10.1007/s41060-018-0097-y>.  d)
 Tsagris, M., Papadovasilakis, Z., Lakiotaki, K. and Tsamardinos, I. (2018).
 Efficient feature selection on gene expression data: Which algorithm to use?
-@code{BioRxiv.} <doi:10.1101/431734>.  e) Tsagris, M. (2019).  Bayesian Network
+@code{BioRxiv}. <doi:10.1101/431734>.  e) Tsagris, M. (2019).  Bayesian Network
 Learning with the PC Algorithm: An Improved and Correct Variation.  Applied
 Artificial Intelligence, 33(2):101-123. <doi:10.1080/08839514.2018.1526760>.  f)
 Tsagris, M. and Tsamardinos, I. (2019).  Feature selection with the R package
@@ -470,9 +470,9 @@ Journal of Statistical Theory and Practice, 5:4, 627-648,
      "For single tensor data, any matrix factorization method can be specified the
 matricised tensor in each dimension by Multi-way Component Analysis (MWCA).  An
 originally extended MWCA is also implemented to specify and decompose multiple
-matrices and tensors simultaneously @code{(CoupledMWCA).} See the reference
+matrices and tensors simultaneously (@code{CoupledMWCA}).  See the reference
 section of @code{GitHub} README.md
-@code{<https://github.com/rikenbit/mwTensor>,} for details of the methods.")
+<https://github.com/rikenbit/@code{mwTensor>}, for details of the methods.")
     (license license:expat)))
 
 (define-public r-mwshiny
@@ -492,7 +492,7 @@ section of @code{GitHub} README.md
     (home-page "https://cran.r-project.org/package=mwshiny")
     (synopsis "'Shiny' for Multiple Windows")
     (description
-     "This package provides a simple function, @code{mwsApp(),} that runs a shiny app
+     "This package provides a simple function, @code{mwsApp}(), that runs a shiny app
 spanning multiple, connected windows.  This uses all standard shiny conventions,
 and depends only on the shiny package.")
     (license license:expat)))
@@ -690,9 +690,9 @@ generation.")
      "Fits multivariate Ornstein-Uhlenbeck types of models to continues trait data
 from species related by a common evolutionary history.  See K. Bartoszek, J,
 Pienaar, P. Mostad, S. Andersson, T. F. Hansen (2012)
-<doi:10.1016/j.jtbi.2012.08.005>.  The suggested @code{PCMBaseCpp} package
+<doi:10.1016/j.jtbi.2012.08.005>.  The suggested PCM@code{BaseCpp} package
 (which significantly speeds up the likelihood calculations) can be obtained from
-@code{<https://github.com/venelin/PCMBaseCpp/>.}")
+<https://github.com/venelin/PCM@code{BaseCpp/>}.")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file LICENCE")))))
 
@@ -733,7 +733,7 @@ multivariate normality proposed by Villasenor-Alva and Gonzalez-Estrada (2009)."
     (description
      "This package provides methods for high-dimensional multi-view learning based on
 the multi-view stacking (MVS) framework.  For technical details on the MVS and
-stacked penalized logistic regression @code{(StaPLR)} methods see Van Loon,
+stacked penalized logistic regression (@code{StaPLR}) methods see Van Loon,
 Fokkema, Szabo, & De Rooij (2020) <doi:10.1016/j.inffus.2020.03.007> and Van
 Loon et al. (2022) <doi:10.3389/fnins.2022.830630>.")
     (license license:gpl2)))
@@ -760,7 +760,7 @@ Loon et al. (2022) <doi:10.3389/fnins.2022.830630>.")
 useful for multidimensional predictions (such as a multinomial model) or
 calculating goodness of fit from latent variable models such as probabilistic
 topic models like latent Dirichlet allocation or deterministic topic models like
-latent semantic analysis.  Based on Jones (2019) @code{<arXiv:1911.11061>.}")
+latent semantic analysis.  Based on Jones (2019) <@code{arXiv:1911.11061>}.")
     (license license:expat)))
 
 (define-public r-mvr
@@ -882,7 +882,7 @@ effects on conditional and unconditional expectations.")
     (description
      "Generalized Egger tests for detecting publication bias in meta-analysis for
 diagnostic accuracy test (Noma (2020) <doi:10.1111/biom.13343>, Noma (2022)
-@code{<doi:10.48550/arXiv.2209.07270>).} These publication bias tests are
+<doi:10.48550/@code{arXiv.2209.07270>}).  These publication bias tests are
 generally more powerful compared with the conventional univariate publication
 bias tests and can incorporate correlation information between the outcome
 variables.")
@@ -940,7 +940,7 @@ To cite the package in publications, use Hankin 2022
      "Various methods for multivariate outlier detection: arw, a Mahalanobis-type
 method with an adaptive outlier cutoff value; locout, a method incorporating
 local neighborhood; pcout, a method for high-dimensional data;
-@code{mvoutlier.CoDa,} a method for compositional data.  References are provided
+mvoutlier.@code{CoDa}, a method for compositional data.  References are provided
 in the corresponding help files.")
     (license license:gpl3+)))
 
@@ -1080,12 +1080,12 @@ covariance matrix based on permutations of the transformed data residuals.")
     (home-page "https://cran.r-project.org/package=mvnormalTest")
     (synopsis "Powerful Tests for Multivariate Normality")
     (description
-     "This package provides a simple informative powerful test @code{(mvnTest())} for
+     "This package provides a simple informative powerful test (@code{mvnTest}()) for
 multivariate normality proposed by Zhou and Shao (2014)
 <doi:10.1080/02664763.2013.839637>, which combines kurtosis with Shapiro-Wilk
 test that is easy for biomedical researchers to understand and easy to implement
 in all dimensions.  This package also contains some other multivariate normality
-tests including Fattorini's FA test @code{(faTest()),} Mardia's skewness and
+tests including Fattorini's FA test (@code{faTest}()), Mardia's skewness and
 kurtosis test (mardia()), Henze-Zirkler's test (mhz()), Bowman and Shenton's
 test (msk()), Roystonâs H test (msw()), and Villasenor-Alva and
 Gonzalez-Estrada's test (msw()).  Empirical power calculation functions for
@@ -1188,7 +1188,7 @@ thanks to the use of C++ code and of the @code{OpenMP} API.")
     (description
      "This package provides tools of Bayesian analysis framework using the method
 suggested by Berger (1985) <doi:10.1007/978-1-4757-4286-2> for multivariate
-normal (MVN) distribution and multivariate normal mixture @code{(MixMVN)}
+normal (MVN) distribution and multivariate normal mixture (@code{MixMVN})
 distribution: a) calculating Bayesian posteriori of (Mix)MVN distribution; b)
 generating random vectors of (Mix)MVN distribution; c) Markov chain Monte Carlo
 (MCMC) for (Mix)MVN distribution.")
@@ -1336,9 +1336,9 @@ potential missingness proposed by Wang et al. (2018)
 <doi:10.1093/biostatistics/kxy022>.  The missingness of outcome values may
 depend on the values themselves (missing not at random and non-ignorable), or
 may depend on only the covariates (missing at random and ignorable), or both.
-This package provides functions for two models: 1) @code{mvMISE_b()} allows
+This package provides functions for two models: 1) @code{mvMISE_b}() allows
 correlated outcome-specific random intercepts with a factor-analytic structure,
-and 2) @code{mvMISE_e()} allows the correlated outcome-specific error terms with
+and 2) @code{mvMISE_e}() allows the correlated outcome-specific error terms with
 a graphical lasso penalty on the error precision matrix.  Both functions are
 motivated by the multivariate data analysis on data with clustered structures
 from labelling-based quantitative proteomic studies.  These models and functions
@@ -1424,7 +1424,7 @@ carry out this task by focusing on analyzing one trait at a time.  Previous
 studies have shown that jointly modeling multiple phenotypes can often
 dramatically increase statistical power for association mapping.  In this
 package, we present the multivariate MArginal @code{ePIstasis} Test
-@code{('mvMAPIT')} â a multi-outcome generalization of a recently proposed
+('@code{mvMAPIT}') â a multi-outcome generalization of a recently proposed
 epistatic detection method which seeks to detect marginal epistasis or the
 combined pairwise interaction effects between a given variant and all other
 variants.  By searching for marginal epistatic effects, one can identify genetic
@@ -1487,8 +1487,8 @@ series forecasting methods from Wilson, R. E. et al. (2021)
     (description
      "This package provides tools for analysing multivariate time series with
 wavelets.  This includes: simulation of a multivariate locally stationary
-wavelet @code{(mvLSW)} process from a multivariate evolutionary wavelet spectrum
-@code{(mvEWS);} estimation of the @code{mvEWS,} local coherence and local
+wavelet (@code{mvLSW}) process from a multivariate evolutionary wavelet spectrum
+(@code{mvEWS}); estimation of the @code{mvEWS}, local coherence and local
 partial coherence.  See Park, Eckley and Ombao (2014)
 <doi:10.1109/TSP.2014.2343937> for details.")
     (license license:gpl3+)))
@@ -1534,7 +1534,7 @@ p-values rather than classic approximate F-tests.")
 strength of bivariate associations of genomic variables.  For example,
 correlations of gene-level DNA copy number and gene expression measurements may
 be used to assess the impact of DNA copy number changes on gene expression in
-tumor tissue. @code{MVisAGe} enables users to quickly compute and visualize the
+tumor tissue.  M@code{VisAGe} enables users to quickly compute and visualize the
 correlations in order to assess the effect of regional genomic events such as
 changes in DNA copy number or DNA methylation level.  Please see Walter V, Du Y,
 Danilova L, Hayward MC, Hayes DN, 2018.  Cancer Research
@@ -1593,7 +1593,7 @@ observations are provided.")
      "Causal Inference using Multivariate Generalized Propensity Score")
     (description
      "This package provides methods for estimating and utilizing the multivariate
-generalized propensity score @code{(mvGPS)} for multiple continuous exposures
+generalized propensity score (@code{mvGPS}) for multiple continuous exposures
 described in Williams, J.R, and Crespi, C.M. (2020) <arxiv:2008.13767>.  The
 methods allow estimation of a dose-response surface relating the joint
 distribution of multiple continuous exposure variables to an outcome.  Weights
@@ -1623,7 +1623,7 @@ dose-response surfaces.")
     (description
      "Maximum likelihood estimates are obtained via an EM algorithm with either a
 first-order or a fully exponential Laplace approximation as documented by
-Broatch and Karl (2018) @code{<doi:10.48550/arXiv.1710.05284>,} Karl, Yang, and
+Broatch and Karl (2018) <doi:10.48550/@code{arXiv.1710.05284>}, Karl, Yang, and
 Lohr (2014) <doi:10.1016/j.csda.2013.11.019>, and by Karl (2012)
 <doi:10.1515/1559-0410.1471>.  Karl and Zimmerman
 <doi:10.1016/j.jspi.2020.06.004> use this package to illustrate how the home
@@ -1634,13 +1634,13 @@ scheduling.")
 (define-public r-mvgb
   (package
     (name "r-mvgb")
-    (version "0.0.3")
+    (version "0.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mvgb" version))
               (sha256
                (base32
-                "1inh9hs5942k37jcl84ljx7fsvma73apmmjjq6jlsdvsh4xn4cag"))))
+                "1928mfbhlhwh03xiwlf5mvn6yp0i95rlknqb132b5hdsd3y5xin3"))))
     (properties `((upstream-name . "mvgb")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -1716,7 +1716,7 @@ multiverse analysis using familiar syntax in R.")
      "This R package provides an implementation of multivariate extensions of a
 well-known fractal analysis technique, Detrended Fluctuations Analysis (DFA;
 Peng et al., 1995<doi:10.1063/1.166141>), for multivariate time series:
-multivariate DFA @code{(mvDFA).} Several coefficients are implemented that take
+multivariate DFA (@code{mvDFA}).  Several coefficients are implemented that take
 into account the correlation structure of the multivariate time series to
 varying degrees.  These coefficients may be used to analyze long memory and
 changes in the dynamic structure that would by univariate DFA. Therefore, this R
@@ -2232,7 +2232,7 @@ job postings of the American Political Science Association.")
     (description
      "This package provides methods for interpolating data in the Munsell color system
 following the ASTM D-1535 standard.  Hues and chromas with decimal values can be
-interpolated and converted to/from the Munsell color system and CIE @code{xyY,}
+interpolated and converted to/from the Munsell color system and CIE @code{xyY},
 CIE XYZ, CIE Lab, CIE Luv, or RGB. Includes ISCC-NBS color block lookup.  Based
 on the work by Paul Centore, \"The Munsell and Kubelka-Munk Toolbox\".")
     (license license:gpl3+)))
@@ -2355,13 +2355,13 @@ multivariate cumulative model and the multivariate adjacent categories model.")
 (define-public r-multnonparam
   (package
     (name "r-multnonparam")
-    (version "1.3.8")
+    (version "1.3.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MultNonParam" version))
               (sha256
                (base32
-                "0j6ma63yq4nj22vqlpbid24cdva8pj2d03ym9irwx5mp70f5zk55"))))
+                "0p66pqairn0k3ciz31ykb2kk0mr4jyzvarkf1knlh3dkvagh7pvj"))))
     (properties `((upstream-name . "MultNonParam")))
     (build-system r-build-system)
     (propagated-inputs (list r-icsnp))
@@ -2588,8 +2588,8 @@ alternate ways of performing an analysis step, in R and R Notebooks.")
      "It performs variable selection in a multivariate linear model by estimating the
 covariance matrix of the residuals then use it to remove the dependence that may
 exist among the responses and eventually performs variable selection by using
-the Lasso criterion.  The method is described in the paper @code{Perrot-DockÃ¨s}
-et al. (2017) @code{<arXiv:1704.00076>.}")
+the Lasso criterion.  The method is described in the paper Perrot-@code{DockÃ¨s}
+et al. (2017) <@code{arXiv:1704.00076>}.")
     (license license:gpl2+)))
 
 (define-public r-multivarmi
@@ -2667,7 +2667,7 @@ package estimates dissimilarity measures, builds dendrograms, obtains MANOVA,
 principal components, canonical variables, etc. (Pacote com metodologias de
 analise multivariada para @code{avaliaÃ§Ã£o} de experimentos.  O pacote estima
 medidas de dissimilaridade, construi de dendogramas, obtem a MANOVA, componentes
-principais, @code{variÃ¡veis} @code{canÃ´nicas,} etc.)")
+principais, @code{variÃ¡veis} @code{canÃ´nicas}, etc.)")
     (license license:gpl3)))
 
 (define-public r-multivariance
@@ -2726,7 +2726,7 @@ Statistics, Vol.  1, No.  1 (2020), <doi:10.1515/stat-2020-0001>.")
      "This package provides functions for simulating, estimating and forecasting
 stationary Vector Autoregressive (VAR) models for multiple subject data using
 the penalized multi-VAR framework in Fisher, Kim and Pipiras (2020)
-@code{<arXiv:2007.05052>.}")
+<@code{arXiv:2007.05052>}.")
     (license license:gpl2+)))
 
 (define-public r-multius
@@ -3076,7 +3076,7 @@ allowing researchers to determine optimal sampling designs.")
      "This package provides tools to solve real-world problems with multiple classes
 classifications by computing the areas under ROC and PR curve via
 micro-averaging and macro-averaging.  The vignettes of this package can be found
-via @code{<https://github.com/WandeRum/multiROC>.} The methodology is described
+via <https://github.com/@code{WandeRum/multiROC>}.  The methodology is described
 in V. Van Asch (2013)
 <https://www.clips.uantwerpen.be/~vincent/pdf/microaverage.pdf> and Pedregosa et
 al. (2011)
@@ -3146,7 +3146,7 @@ the penalty parameters by efficient (repeated) cross-validation and marginal
 likelihood maximization.  Multiple high-dimensional data types that require
 penalization are allowed, as well as unpenalized variables.  Paired and
 preferential data types can be specified.  See Van de Wiel et al. (2021),
-@code{<arXiv:2005.09301>.}")
+<@code{arXiv:2005.09301>}.")
     (license license:gpl3+)))
 
 (define-public r-multirich
@@ -3166,7 +3166,7 @@ preferential data types can be specified.  See Van de Wiel et al. (2021),
     (synopsis "Calculate Multivariate Richness via UTC and sUTC")
     (description
      "This package provides functions to calculate Unique Trait Combinations (UTC) and
-scaled Unique Trait Combinations @code{(sUTC)} as measures of multivariate
+scaled Unique Trait Combinations (@code{sUTC}) as measures of multivariate
 richness.  The package can also calculate beta-diversity for trait richness and
 can partition this into nestedness-related and turnover components.  The code
 will also calculate several measures of overlap.  See Keyel and Wiegand (2016)
@@ -3191,7 +3191,7 @@ will also calculate several measures of overlap.  See Keyel and Wiegand (2016)
      "Fits the Multiple Random Dot Product Graph Model and performs a test for whether
 two networks come from the same distribution.  Both methods are proposed in
 Nielsen, A.M., Witten, D., (2018) \"The Multiple Random Dot Product Graph Model\",
-@code{arXiv} preprint @code{<arXiv:1811.12172>} (Submitted to Journal of
+@code{arXiv} preprint <@code{arXiv:1811.12172>} (Submitted to Journal of
 Computational and Graphical Statistics).")
     (license license:gpl2)))
 
@@ -3857,7 +3857,7 @@ Martin Fortin, @code{JosÃ©} Almirall, and Kathryn Nicholson
     (description
      "Different examples and methods for testing (including different proposals
 described in Ameijeiras-Alonso et al., 2019 <DOI:10.1007/s11749-018-0611-5>) and
-exploring (including the mode tree, mode forest and @code{SiZer)} the number of
+exploring (including the mode tree, mode forest and @code{SiZer}) the number of
 modes using nonparametric techniques <DOI:10.18637/jss.v097.i09>.")
     (license license:gpl3)))
 
@@ -3915,7 +3915,7 @@ biomarkers data.  The model is framed within a Bayesian hierarchical framework,
 which provides flexibility to adapt to different biomarker distributions and
 facilitates inference on food intake from biomarker data alone, along with the
 associated uncertainty.  Details are in D'Angelo, et al. (2020)
-@code{<arXiv:2006.02995>.}")
+<@code{arXiv:2006.02995>}.")
     (license license:gpl2+)))
 
 (define-public r-multimark
@@ -4031,7 +4031,7 @@ python'.")
     (description
      "Efficiently estimates single- and multilevel latent class models with
 covariates, allowing for output visualization in all specifications.  For more
-technical details, see Lyrvall et al (2023) @code{<arXiv:2305.07276>.}")
+technical details, see Lyrvall et al (2023) <@code{arXiv:2305.07276>}.")
     (license license:gpl2+)))
 
 (define-public r-multileveltools
@@ -4368,7 +4368,7 @@ implements the sequential graphical procedure described in Maurer and Bretz
     (synopsis "MultiGroup Method and Simulation Data Analysis")
     (description
      "Two method new of multigroup and simulation of data.  The first technique called
-multigroup PCA @code{(mgPCA)} this multivariate exploration approach that has
+multigroup PCA (@code{mgPCA}) this multivariate exploration approach that has
 the idea of considering the structure of groups and / or different types of
 variables.  On the other hand, the second multivariate technique called
 Multigroup Dimensionality Reduction (MDR) it is another multivariate exploration
@@ -4462,7 +4462,7 @@ various layout options.")
     (description
      "This package performs variable selection in high-dimensional sparse GLARMA
 models.  For further details we refer the reader to the paper Gomtsyan et al.
-(2022), @code{<arXiv:2208.14721>.}")
+(2022), <@code{arXiv:2208.14721>}.")
     (license license:gpl2)))
 
 (define-public r-multifwf
@@ -4595,7 +4595,7 @@ Klingelhofer-Jens, & Krypotos <doi:10.31234/osf.io/2z6pd>.")
     (synopsis "Multiple Contrast Tests for Functional Data")
     (description
      "The provided package implements multiple contrast tests for functional data
-(Munko et al., 2023, @code{<arXiv:2306.15259>).} These procedures enable us to
+(Munko et al., 2023, <@code{arXiv:2306.15259>}).  These procedures enable us to
 evaluate the overall hypothesis regarding equality, as well as specific
 hypotheses defined by contrasts.  In particular, we can perform post hoc tests
 to examine particular comparisons of interest.  Different experimental designs
@@ -4625,13 +4625,13 @@ data.")
     (synopsis "Multivariate Functional Additive Mixed Models")
     (description
      "An implementation for multivariate functional additive mixed models
-@code{(multiFAMM),} see Volkmann et al. (2021, @code{<arXiv:2103.06606>).} It
+(@code{multiFAMM}), see Volkmann et al. (2021, <@code{arXiv:2103.06606>}).  It
 builds on developed methods for univariate sparse functional regression models
 and multivariate functional principal component analysis.  This package contains
 the function to run a @code{multiFAMM} and some convenience functions useful
 when working with large models.  An additional package on @code{GitHub} contains
 more convenience functions to reproduce the analyses of the corresponding paper
-@code{(<https://github.com/alexvolkmann/multifammPaper>).}")
+(<https://github.com/alexvolkmann/@code{multifammPaper>}).")
     (license license:gpl2+)))
 
 (define-public r-multidimbio
@@ -5222,13 +5222,13 @@ of the balanced two-factor fixed ANOVA model.")
 (define-public r-multgee
   (package
     (name "r-multgee")
-    (version "1.8.0")
+    (version "1.9.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "multgee" version))
               (sha256
                (base32
-                "1cp3762901af93m0i3m61ngnxbwjirjg46mkdcj0ycmk7phh7bcc"))))
+                "0hjlnmnn18cf2blcr23y8vc2l6zaqfi8223nfwm2bx3arslj41xn"))))
     (properties `((upstream-name . "multgee")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam r-rcpparmadillo r-rcpp r-gnm))
@@ -5627,7 +5627,7 @@ method are available in Carter et al (2010)
 (see W.H. Van Schuur (1984).  Structure in Political Beliefs: A New Model for
 Stochastic Unfolding with Application to European Party Activists, and W.J.Post
 (1992).  Nonparametric Unfolding Models: A Latent Structure Approach).  The
-package implements MUDFOLD (Multiple @code{UniDimensional} @code{unFOLDing),} an
+package implements MUDFOLD (Multiple @code{UniDimensional} @code{unFOLDing}), an
 iterative item selection algorithm that constructs unfolding scales from
 dichotomous preferential-choice data without explicitly assuming a parametric
 form of the item response functions.  Scale diagnostics from Post(1992) and
@@ -5635,42 +5635,6 @@ estimates for the person locations proposed by Johnson(2006) and Van
 Schuur(1984) are also available.  This model can be seen as the unfolding
 variant of Mokken(1971) scaling method.")
     (license license:gpl2+)))
-
-(define-public r-mudata2
-  (package
-    (name "r-mudata2")
-    (version "1.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "mudata2" version))
-              (sha256
-               (base32
-                "0gqdqdp370gbvmqr5gxgc6xnwb6lsm4wzd2xrq3x9s46nx3zaha3"))))
-    (properties `((upstream-name . "mudata2")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-withr
-                             r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-readr
-                             r-magrittr
-                             r-lubridate
-                             r-jsonlite
-                             r-glue
-                             r-fs
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://paleolimbot.github.io/mudata2/")
-    (synopsis "Interchange Tools for Multi-Parameter Spatiotemporal Data")
-    (description
-     "Formatting and structuring multi-parameter spatiotemporal data is often a
-time-consuming task.  This package offers functions and data structures designed
-to easily organize and visualize these data for applications in geology,
-paleolimnology, dendrochronology, and paleoclimate.  See Dunnington and Spooner
-(2018) <doi:10.1139/facets-2017-0026>.")
-    (license license:gpl2)))
 
 (define-public r-muckrock
   (package
@@ -5990,7 +5954,7 @@ effectiveness of our methods through simulations and a real data analysis.  To
 the best of our knowledge, this is the first work studying multi-task and
 transfer learning on GMMs with theoretical guarantees.  This package implements
 the algorithms proposed in Tian, Y., Weng, H., & Feng, Y. (2022)
-@code{<arXiv:2209.15224>.}")
+<@code{arXiv:2209.15224>}.")
     (license license:gpl2)))
 
 (define-public r-mthapower
@@ -6251,7 +6215,7 @@ used for estimation (see Perlin (2012) <doi:10.2139/ssrn.1714016>).")
     (synopsis "Multivariate Symmetric Uncertainty and Other Measurements")
     (description
      "Estimators for multivariate symmetrical uncertainty based on the work of Gustavo
-Sosa et al. (2016) @code{<arXiv:1709.08730>,} total correlation, information
+Sosa et al. (2016) <@code{arXiv:1709.08730>}, total correlation, information
 gain and symmetrical uncertainty of categorical variables.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
@@ -6285,7 +6249,7 @@ gain and symmetrical uncertainty of categorical variables.")
     (description
      "Interface for creating data sets and extracting data through the
 @code{MicroStrategy} REST API. Access the demo API at
-@code{<https://demo.microstrategy.com/MicroStrategyLibrary/api-docs/index.html>.}")
+<https://demo.microstrategy.com/@code{MicroStrategyLibrary/api-docs/index.html>}.")
     (license (list license:asl2.0
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -6327,7 +6291,7 @@ and score-based methods to select the next module and estimate ability levels
     (home-page "https://cran.r-project.org/package=mstknnclust")
     (synopsis "MST-kNN Clustering Algorithm")
     (description
-     "This package implements the @code{MST-kNN} clustering algorithm which was
+     "This package implements the MST-@code{kNN} clustering algorithm which was
 proposed by Inostroza-Ponta, M. (2008)
 <https://trove.nla.gov.au/work/28729389?selectedversion=NBD44634158>.")
     (license license:gpl2)))
@@ -6410,7 +6374,7 @@ of regimes in Markov switching models.")
      "This package provides a new approach to detect change points based on smoothing
 and multiple testing, which is for long data sequence modeled as piecewise
 constant functions plus stationary Gaussian noise, see Dan Cheng and Armin
-Schwartzman (2015) @code{<arXiv:1504.06384>.}")
+Schwartzman (2015) <@code{arXiv:1504.06384>}.")
     (license license:gpl3)))
 
 (define-public r-mstdif
@@ -6885,7 +6849,7 @@ other tumor classification systems.")
     (home-page "https://cran.r-project.org/package=MSiP")
     (synopsis "'MassSpectrometry' Interaction Prediction")
     (description
-     "The @code{MSiP} is a computational approach to predict protein-protein
+     "The M@code{SiP} is a computational approach to predict protein-protein
 interactions from large-scale affinity purification mass spectrometry (AP-MS)
 data.  This approach includes both spoke and matrix models for interpreting
 AP-MS data in a network context.  The \"spoke\" model considers only bait-prey
@@ -7001,7 +6965,7 @@ of this package.")
     (home-page "https://cran.r-project.org/package=msig")
     (synopsis "An R Package for Exploring Molecular Signatures Database")
     (description
-     "The Molecular Signatures Database @code{('MSigDB')} is one of the most widely
+     "The Molecular Signatures Database ('M@code{SigDB}') is one of the most widely
 used and comprehensive databases of gene sets for performing gene set enrichment
 analysis <doi:10.1016/j.cels.2015.12.004>.  The msig package provides you with
 powerful, easy-to-use and flexible query functions for the @code{MsigDB}
@@ -7039,10 +7003,10 @@ can be made from local database, which can be updated by msig_update() function.
     (synopsis "Multiplicative SHAP Values for Two-Part Models")
     (description
      "Allows for the computation of @code{mSHAP} values on two-part models as proposed
-by Matthews, S. and Hartman, B. (2021) @code{<arXiv:2106.08990>.} Also contains
+by Matthews, S. and Hartman, B. (2021) <@code{arXiv:2106.08990>}.  Also contains
 functions for simple plotting of the results (or any SHAP values).  For
 information about the @code{TreeSHAP} algorithm that @code{mSHAP} builds on, see
-Lundberg, S.M., Erion, G., Chen, H., @code{DeGrave,} A., Prutkin, J.M., Nair,
+Lundberg, S.M., Erion, G., Chen, H., @code{DeGrave}, A., Prutkin, J.M., Nair,
 B., Katz, R., Himmelfarb, J., Bansal, N., Lee, S.I. (2020)
 <doi:10.1038/s42256-019-0138-9>.")
     (license license:expat)))
@@ -7141,7 +7105,7 @@ high dimensional multiclass classification with many classes.  The algorithm
 computes the sparse group lasso penalized maximum likelihood estimate.  Use of
 parallel computing for cross validation and subsampling is supported through the
 foreach and @code{doParallel} packages.  Development version is on
-@code{GitHub,} please report package issues on @code{GitHub.}")
+@code{GitHub}, please report package issues on @code{GitHub}.")
     (license license:gpl2+)))
 
 (define-public r-msgarchelm
@@ -7268,6 +7232,27 @@ outperforms MS/MS dot product similarity for small-molecule compound
 identification\" <doi:10.1038/s41592-021-01331-z>.")
     (license license:asl2.0)))
 
+(define-public r-mseapca
+  (package
+    (name "r-mseapca")
+    (version "2.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "mseapca" version))
+              (sha256
+               (base32
+                "1izbai3d9199a5dpyg882hnc1d7fz0x9gjd5if79i50hhc3lwqyr"))))
+    (properties `((upstream-name . "mseapca")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml r-loadings))
+    (home-page "https://cran.r-project.org/package=mseapca")
+    (synopsis "Metabolite Set Enrichment Analysis for Loadings")
+    (description
+     "Computing metabolite set enrichment analysis (MSEA) (Yamamoto, H. et al. (2014)
+<doi:10.1186/1471-2105-15-51>) and single sample enrichment analysis (SSEA)
+(Yamamoto, H. (2023) <doi:10.51094/jxiv.262>).")
+    (license license:lgpl3)))
+
 (define-public r-msde
   (package
     (name "r-msde")
@@ -7291,7 +7276,7 @@ arbitrary time-homogeneous multivariate stochastic differential equation (SDE)
 models with possibly latent components.  The package provides a simple entry
 point to integrate user-defined models directly with the sampler's C++ code, and
 parallelizes large portions of the calculations when compiled with
-@code{OpenMP'.}")
+@code{OpenMP}'.")
     (license license:gpl3)))
 
 (define-public r-msda
@@ -7431,7 +7416,7 @@ website <https://www.microsoft.com/cognitive-services/> in order to obtain a
     (description
      "Statistical tests for validating multispecies coalescent gene tree simulators,
 using pairwise distances and rooted triple counts.  Background is given by
-Allman, Banos, and Rhodes (2019) @code{<arXiv:1908.01424>.}")
+Allman, Banos, and Rhodes (2019) <@code{arXiv:1908.01424>}.")
     (license license:expat)))
 
 (define-public r-mscquartets
@@ -7623,10 +7608,10 @@ different categories, and functions to predict the category (species,
 phenotypes, etc.) associated to a mass spectrum from a list of selected
 mass-over-charge values.  Three vignettes illustrating how to use the functions
 of this package from real data sets are also available online to help users:
-@code{<https://agodmer.github.io/MSclassifR_examples/Vignettes/Vignettemsclassifr_Ecrobiav3.html>,}
-@code{<https://agodmer.github.io/MSclassifR_examples/Vignettes/Vignettemsclassifr_Klebsiellav3.html>}
+<https://agodmer.github.io/M@code{SclassifR_examples/Vignettes/Vignettemsclassifr_Ecrobiav3.html>},
+<https://agodmer.github.io/M@code{SclassifR_examples/Vignettes/Vignettemsclassifr_Klebsiellav3.html>}
 and
-@code{<https://agodmer.github.io/MSclassifR_examples/Vignettes/Vignettemsclassifr_DAv3.html>.}")
+<https://agodmer.github.io/M@code{SclassifR_examples/Vignettes/Vignettemsclassifr_DAv3.html>}.")
     (license license:gpl3+)))
 
 (define-public r-mschart
@@ -7701,7 +7686,7 @@ extensions.")
     (description
      "This package performs Bayesian nonparametric multiscale density estimation and
 multiscale testing of group differences with multiscale Bernstein polynomials
-@code{(msBP)} mixtures as in Canale and Dunson (2016).")
+(@code{msBP}) mixtures as in Canale and Dunson (2016).")
     (license license:gpl2)))
 
 (define-public r-msbox
@@ -8210,7 +8195,7 @@ tests its significance.")
     (description
      "Computes mutual information matrices from continuous, categorical and survival
 variables, as well as feature selection with minimum redundancy, maximum
-relevance @code{(mRMR)} and a new ensemble @code{mRMR} technique.  Published in
+relevance (@code{mRMR}) and a new ensemble @code{mRMR} technique.  Published in
 De Jay et al. (2013) <doi:10.1093/bioinformatics/btt383>.")
     (license license:artistic2.0)))
 
@@ -8245,7 +8230,7 @@ De Jay et al. (2013) <doi:10.1093/bioinformatics/btt383>.")
      "Multi-Locus Random-SNP-Effect Mixed Linear Model Tools for Genome-Wide Association Study with Graphical User Interface")
     (description
      "Conduct multi-locus genome-wide association study under the framework of
-multi-locus random-SNP-effect mixed linear model @code{(mrMLM).} First, each
+multi-locus random-SNP-effect mixed linear model (@code{mrMLM}).  First, each
 marker on the genome is scanned.  Bonferroni correction is replaced by a less
 stringent selection criterion for significant test.  Then, all the markers that
 are potentially associated with the trait are included in a multi-locus genetic
@@ -8283,7 +8268,7 @@ Zhang H, Ni YL, Huang B, Zhang J, Feng JY, Wang SB, Dunwell JM, Zhang YM, Wu R
      "Multi-Locus Random-SNP-Effect Mixed Linear Model Tools for GWAS")
     (description
      "Conduct multi-locus genome-wide association study under the framework of
-multi-locus random-SNP-effect mixed linear model @code{(mrMLM).} First, each
+multi-locus random-SNP-effect mixed linear model (@code{mrMLM}).  First, each
 marker on the genome is scanned.  Bonferroni correction is replaced by a less
 stringent selection criterion for significant test.  Then, all the markers that
 are potentially associated with the trait are included in a multi-locus genetic
@@ -8292,7 +8277,7 @@ effects were further identified by likelihood ratio test for significant QTL.
 The program may run on a desktop or laptop computers.  If marker genotypes in
 association mapping population are almost homozygous, these methods in this
 software are very effective.  If there are many heterozygous marker genotypes,
-the @code{IIIVmrMLM} software is recommended.  Wen YJ, Zhang H, Ni YL, Huang B,
+the III@code{VmrMLM} software is recommended.  Wen YJ, Zhang H, Ni YL, Huang B,
 Zhang J, Feng JY, Wang SB, Dunwell JM, Zhang YM, Wu R (2018,
 <doi:10.1093/bib/bbw145>), and Li M, Zhang YW, Zhang ZC, Xiang Y, Liu MH, Zhou
 YH, Zuo JF, Zhang HQ, Chen Y, Zhang YM (2022, <doi:10.1016/j.molp.2022.02.012>).")
@@ -8640,7 +8625,7 @@ described in Clark et al. (2018) <doi:10.1002/ecy.2221>.")
      "Fitting and Predicting Large-Scale Nonlinear Regression Problems using Multi-Resolution Functional ANOVA (MRFA) Approach")
     (description
      "This package performs the MRFA approach proposed by Sung et al. (2019+)
-@code{<arXiv:1709.07064>} to fit and predict nonlinear regression problems,
+<@code{arXiv:1709.07064>} to fit and predict nonlinear regression problems,
 particularly for large-scale and high-dimensional problems.  The application
 includes deterministic or stochastic computer experiments, spatial datasets, and
 so on.")
@@ -8813,7 +8798,7 @@ Horvitz-Thompson-like estimator.")
     (description
      "Detect outlying observations in functional data sets based on the minimum
 regularized covariance trace (MRCT) estimator.  Includes implementation of
-Oguamalam et al. (2023) @code{<arXiv:2307.13509>.}")
+Oguamalam et al. (2023) <@code{arXiv:2307.13509>}.")
     (license license:gpl2+)))
 
 (define-public r-mrce
@@ -8837,6 +8822,26 @@ Levina, and Zhu (2010) <doi:10.1198/jcgs.2010.09188>.  This estimator fits the
 multiple output linear regression model with a sparse estimator of the error
 precision matrix and a sparse estimator of the regression coefficient matrix.")
     (license license:gpl2)))
+
+(define-public r-mrc
+  (package
+    (name "r-mrc")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "mRc" version))
+              (sha256
+               (base32
+                "0v8kyvgliss8lxbzcikd3vhmmq2ysl1fp87r37r5f8w9xsx5ba9z"))))
+    (properties `((upstream-name . "mRc")))
+    (build-system r-build-system)
+    (home-page "https://github.com/k-dettloff/mRc")
+    (synopsis "Multi-Visit Closed Population Mark-Recapture Estimates")
+    (description
+     "Compute bootstrap confidence intervals for the adjusted Schnabel and
+Schumacher-Eschmeyer multi-visit mark-recapture estimators based on Dettloff
+(2023) <doi:10.1016/j.fishres.2023.106756>.")
+    (license license:expat)))
 
 (define-public r-mrbsizer
   (package
@@ -8865,7 +8870,7 @@ multiresolution analysis has three steps: (1) Bayesian signal reconstruction.
 signal can be found. (3) Posterior credibility analysis of the differences of
 smooths created.  The method has first been proposed by Holmstrom, Pasanen,
 Furrer, Sain (2011) <DOI:10.1016/j.csda.2011.04.011>.  Matlab code is available
-under @code{<http://cc.oulu.fi/~lpasanen/MRBSiZer/>.}")
+under <http://cc.oulu.fi/~lpasanen/MRB@code{SiZer/>}.")
     (license license:gpl2)))
 
 (define-public r-mrbin
@@ -9005,7 +9010,7 @@ methods for two-sample Mendelian randomization with summary statistics by using
 Robust Adjusted Profile Score (RAPS).  References: Qingyuan Zhao, Jingshu Wang,
 Jack Bowden, Dylan S. Small.  Statistical inference in two-sample summary-data
 Mendelian randomization using robust adjusted profile score.
-@code{<arXiv:1801.09652>.}")
+<@code{arXiv:1801.09652>}.")
     (license license:gpl3)))
 
 (define-public r-mr-pivw
@@ -9024,7 +9029,7 @@ Mendelian randomization using robust adjusted profile score.
     (synopsis
      "Penalized Inverse-Variance Weighted Estimator for Mendelian Randomization")
     (description
-     "The penalized inverse-variance weighted @code{(pIVW)} estimator is a Mendelian
+     "The penalized inverse-variance weighted (@code{pIVW}) estimator is a Mendelian
 randomization method for estimating the causal effect of an exposure variable on
 an outcome of interest based on summary-level GWAS data.  The @code{pIVW}
 estimator accounts for weak instruments and balanced horizontal pleiotropy
@@ -9106,7 +9111,7 @@ are used in the book's many practical examples.")
      "Useful functions to analyze proteomic workflows including number of
 identifications, data completeness, missed cleavages, quantitative and retention
 time precision etc.  Various software outputs are supported such as
-@code{ProteomeDiscoverer',} Spectronaut', DIA-NN and @code{MaxQuant'.}")
+@code{ProteomeDiscoverer}', Spectronaut', DIA-NN and @code{MaxQuant}'.")
     (license license:expat)))
 
 (define-public r-mpv
@@ -9170,11 +9175,11 @@ MPTmultiverse performs a multiverse analysis for multinomial processing tree
 combining maximum-likelihood/frequentist and Bayesian estimation approaches with
 different levels of pooling (i.e., data aggregation).  For the frequentist
 approaches, no pooling (with and without parametric or nonparametric bootstrap)
-and complete pooling are implemented using @code{MPTinR}
-@code{<https://cran.r-project.org/package=MPTinR>.} For the Bayesian approaches,
-no pooling, complete pooling, and three different variants of partial pooling
-are implemented using @code{TreeBUGS}
-@code{<https://cran.r-project.org/package=TreeBUGS>.} The main function is
+and complete pooling are implemented using MP@code{TinR}
+<https://cran.r-project.org/package=MP@code{TinR>}.  For the Bayesian
+approaches, no pooling, complete pooling, and three different variants of
+partial pooling are implemented using @code{TreeBUGS}
+<https://cran.r-project.org/package=@code{TreeBUGS>}.  The main function is
 fit_mpt() who performs the multiverse analysis in one call.")
     (license license:gpl2)))
 
@@ -9251,7 +9256,7 @@ steps executed to arrive at observable response categories (Batchelder & Riefer,
     (synopsis "Modern Psychometrics with R")
     (description
      "Supplementary materials and datasets for the book \"Modern Psychometrics With R\"
-(Mair, 2018, Springer @code{useR!} series).")
+(Mair, 2018, Springer @code{useR}! series).")
     (license license:gpl2)))
 
 (define-public r-mpspline2
@@ -9425,7 +9430,7 @@ preserves dependence structures among predictors given existing data
 assess the trade-offs between sample size, effect size, and power of a design.
 This package includes several statistical models common in environmental
 mixtures studies.  For more details and tutorials, see Nguyen et al. (2022)
-@code{<arXiv:2209.08036>.}")
+<@code{arXiv:2209.08036>}.")
     (license license:lgpl2.0+)))
 
 (define-public r-mpoly
@@ -9866,7 +9871,7 @@ zero-inflated negative binomial regression models and robust models with
 non-convex loss functions.  Wang et al. (2014) <doi:10.1002/sim.6314>, Wang et
 al. (2015) <doi:10.1002/bimj.201400143>, Wang et al. (2016)
 <doi:10.1177/0962280214530608>, Wang (2021) <doi:10.1007/s11749-021-00770-2>,
-Wang (2020) @code{<arXiv:2010.02848>.}")
+Wang (2020) <@code{arXiv:2010.02848>}.")
     (license license:gpl2)))
 
 (define-public r-mp
@@ -10273,7 +10278,7 @@ occurring in networks.  motifr can visualize multi-level networks, count
 multi-level network motifs and compare motif occurrences to baseline models.  It
 also identifies contributions of existing or potential edges to motifs to find
 critical or missing edges.  The package is in many parts an R wrapper for the
-excellent @code{SESMotifAnalyser} Python package written by Tim Seppelt.")
+excellent SES@code{MotifAnalyser} Python package written by Tim Seppelt.")
     (license license:expat)))
 
 (define-public r-motifcluster
@@ -10297,7 +10302,7 @@ excellent @code{SESMotifAnalyser} Python package written by Tim Seppelt.")
 networks using motif adjacency matrices.  Methods perform well on large and
 sparse networks, and random sampling methods for generating weighted directed
 networks are also provided.  Based on methodology detailed in Underwood, Elliott
-and Cucuringu (2020) @code{<arXiv:2004.01293>.}")
+and Cucuringu (2020) <@code{arXiv:2004.01293>}.")
     (license license:gpl3)))
 
 (define-public r-motif
@@ -10352,18 +10357,18 @@ variety of effect sizes in the mean differences family (all versions of d) and
 the variance overlap family (eta, omega, epsilon, r).  MOTE provides non-central
 confidence intervals for each effect size, relevant test statistics, and output
 for reporting in APA Style (American Psychological Association, 2010,
-<ISBN:1433805618>) with @code{LaTeX'.} In research, an over-reliance on p-values
-may conceal the fact that a study is under-powered (Halsey, Curran-Everett,
-Vowler, & Drummond, 2015 <doi:10.1038/nmeth.3288>).  A test may be statistically
-significant, yet practically inconsequential (Fritz, Scherndl, & KÃ¼hberger,
-2012 <doi:10.1177/0959354312436870>).  Although the American Psychological
-Association has long advocated for the inclusion of effect sizes (Wilkinson &
-American Psychological Association Task Force on Statistical Inference, 1999
-<doi:10.1037/0003-066X.54.8.594>), the vast majority of peer-reviewed, published
-academic studies stop short of reporting effect sizes and confidence intervals
-(Cumming, 2013, <doi:10.1177/0956797613504966>).  MOTE simplifies the use and
-interpretation of effect sizes and confidence intervals.  For more information,
-visit <https://www.aggieerin.com/shiny-server>.")
+<ISBN:1433805618>) with @code{LaTeX}'.  In research, an over-reliance on
+p-values may conceal the fact that a study is under-powered (Halsey,
+Curran-Everett, Vowler, & Drummond, 2015 <doi:10.1038/nmeth.3288>).  A test may
+be statistically significant, yet practically inconsequential (Fritz, Scherndl,
+& KÃ¼hberger, 2012 <doi:10.1177/0959354312436870>).  Although the American
+Psychological Association has long advocated for the inclusion of effect sizes
+(Wilkinson & American Psychological Association Task Force on Statistical
+Inference, 1999 <doi:10.1037/0003-066X.54.8.594>), the vast majority of
+peer-reviewed, published academic studies stop short of reporting effect sizes
+and confidence intervals (Cumming, 2013, <doi:10.1177/0956797613504966>).  MOTE
+simplifies the use and interpretation of effect sizes and confidence intervals.
+For more information, visit <https://www.aggieerin.com/shiny-server>.")
     (license license:lgpl3)))
 
 (define-public r-motbfs
@@ -10384,13 +10389,13 @@ visit <https://www.aggieerin.com/shiny-server>.")
      "Learning Hybrid Bayesian Networks using Mixtures of Truncated Basis Functions")
     (description
      "Learning, manipulation and evaluation of mixtures of truncated basis functions
-@code{(MoTBFs),} which include mixtures of polynomials (MOPs) and mixtures of
+(@code{MoTBFs}), which include mixtures of polynomials (MOPs) and mixtures of
 truncated exponentials (MTEs). @code{MoTBFs} are a flexible framework for
-modelling hybrid Bayesian networks (I. @code{PÃ©rez-BernabÃ©,} A.
-@code{SalmerÃ³n,} H. Langseth (2015) <doi:10.1007/978-3-319-20807-7_36>; H.
-Langseth, T.D. Nielsen, I. @code{PÃ©rez-BernabÃ©,} A. @code{SalmerÃ³n} (2014)
-<doi:10.1016/j.ijar.2013.09.012>; I. @code{PÃ©rez-BernabÃ©,} A.
-@code{FernÃ¡ndez,} R. @code{RumÃ­,} A. @code{SalmerÃ³n} (2016)
+modelling hybrid Bayesian networks (I. PÃ©rez-@code{BernabÃ©}, A.
+@code{SalmerÃ³n}, H. Langseth (2015) <doi:10.1007/978-3-319-20807-7_36>; H.
+Langseth, T.D. Nielsen, I. PÃ©rez-@code{BernabÃ©}, A. @code{SalmerÃ³n} (2014)
+<doi:10.1016/j.ijar.2013.09.012>; I. PÃ©rez-@code{BernabÃ©}, A.
+@code{FernÃ¡ndez}, R. @code{RumÃ­}, A. @code{SalmerÃ³n} (2016)
 <doi:10.1007/s10618-015-0429-7>).  The package provides functionality for
 learning univariate, multivariate and conditional densities, with the
 possibility of incorporating prior knowledge.  Structural learning of hybrid
@@ -10448,12 +10453,12 @@ practical benefits and challenges of factorial and fractional factorial
 experiments for scientists interested in developing biological and/or behavioral
 interventions, especially in the context of the multiphase optimization strategy
 (see Collins, Kugler & Gwadz 2016) <DOI:10.1007/s10461-015-1145-4>.  The package
-currently contains three functions.  First, @code{RelativeCosts1()} draws a
+currently contains three functions.  First, @code{RelativeCosts1}() draws a
 graph of the relative cost of complete and reduced factorial designs versus
-other alternatives.  Second, @code{RandomAssignmentGenerator()} returns a
+other alternatives.  Second, @code{RandomAssignmentGenerator}() returns a
 dataframe which contains a list of random numbers that can be used to
 conveniently assign participants to conditions in an experiment with many
-conditions.  Third, @code{FactorialPowerPlan()} estimates the power, detectable
+conditions.  Third, @code{FactorialPowerPlan}() estimates the power, detectable
 effect size, or required sample size of a factorial or fractional factorial
 experiment, for main effects or interactions, given several possible choices of
 effect size metric, and allowing pretests and clustering.")
@@ -10598,26 +10603,6 @@ etc.  The software is suitable for general use, but intended mainly for teaching
 calculus.")
     (license license:gpl2+)))
 
-(define-public r-mortyr
-  (package
-    (name "r-mortyr")
-    (version "0.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "mortyr" version))
-              (sha256
-               (base32
-                "0flihmkzw8dypp2ijq22cd3rka6h8cd1qdyr4zrs9cv5335nddmk"))))
-    (properties `((upstream-name . "mortyr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble r-jsonlite r-httr))
-    (home-page "https://github.com/mikejohnpage/mortyr")
-    (synopsis "Wrapper to 'The Rick and Morty' API")
-    (description
-     "Returns information about characters, locations, and episodes from The Rick and
-Morty API: <https://rickandmortyapi.com>.")
-    (license license:expat)))
-
 (define-public r-mortcast
   (package
     (name "r-mortcast")
@@ -10741,8 +10726,8 @@ description of the method see Pascariu et al. (2017).
     (description
      "This package provides a collection of functions for the analysis of
 archaeological mortality data (on the topic see e.g. Chamberlain 2006
-@code{<https://books.google.de/books?id=nG5FoO_becAC&lpg=PA27&ots=LG0b_xrx6O&dq=life%20table%20archaeology&pg=PA27#v=onepage&q&f=false>).}
-It takes demographic data in different formats and displays the result in a
+<https://books.google.de/books?id=@code{nG5FoO_becAC&lpg=PA27&ots=LG0b_xrx6O&dq=life%20table%20archaeology&pg=PA27#v=onepage&q&f=false>}).
+ It takes demographic data in different formats and displays the result in a
 standard life table as well as plots the relevant indices (percentage of deaths,
 survivorship, probability of death, life expectancy, percentage of population).")
     (license (list license:gpl3
@@ -11039,7 +11024,7 @@ A. Berra's list of stop words for Ancient Greek and Latin.")
     (home-page "https://cran.r-project.org/package=moranajp")
     (synopsis "Morphological Analysis for Japanese")
     (description
-     "Supports morphological analysis for Japanese by using @code{MeCab'.} Can input
+     "Supports morphological analysis for Japanese by using @code{MeCab}'.  Can input
 data.frame and obtain all results of @code{MeCab} and row number of original
 data.frame as a text id.")
     (license license:expat)))
@@ -11135,7 +11120,7 @@ obtain more detailed results that aid in interpretation.")
     (synopsis "Mean Squared Out-of-Sample Error Projection")
     (description
      "Projects mean squared out-of-sample error for a linear regression based upon the
-methodology developed in Rohlfs (2022) @code{<doi:10.48550/arXiv.2209.01493>.}
+methodology developed in Rohlfs (2022) <doi:10.48550/@code{arXiv.2209.01493>}.
 It consumes as inputs the lm object from an estimated OLS regression (based on
 the \"training sample\") and a data.frame of out-of-sample cases (the \"test
 sample\") that have non-missing values for the same predictors.  The test sample
@@ -11182,7 +11167,7 @@ of out-of-sample \"hat\" or \"leverage\" values, as defined in the paper.")
     (description
      "This package provides a collection of functions to connect to a Moodle database,
 cache relevant tables locally and generate learning analytics.  Moodle is an
-open source Learning Management System (LMS) developed by @code{MoodleHQ.} For
+open source Learning Management System (LMS) developed by @code{MoodleHQ}.  For
 more information about Moodle, visit <https://moodle.org>.")
     (license license:expat)))
 
@@ -11209,8 +11194,8 @@ package data sets can be simulated and run based on the given model.  First,
 continuous and normal data sets are generated based on the given model.  Later
 Fleishman's power method (1978) <DOI:10.1007/BF02293811> is used to add
 non-normality if exists.  When data generation is completed (or when generated
-data sets are given) model test can also be run.  Please cite as @code{\"OrÃ§an,}
-F. (2021). @code{MonteCarloSEM:} An R Package to Simulate Data for SEM.
+data sets are given) model test can also be run.  Please cite as \"@code{OrÃ§an},
+F. (2021). @code{MonteCarloSEM}: An R Package to Simulate Data for SEM.
 International Journal of Assessment Tools in Education, 8 (3), 704-713.\"")
     (license license:gpl3)))
 
@@ -11405,7 +11390,7 @@ Turlach (2016) <doi:10.1080/00949655.2016.1139582>.")
      "Requires rooted phylogeny as input and creates a table of genera, their
 monophyly-status, which taxa cause problems in monophyly etc.  Different
 information can be extracted from the output and a plot function allows
-visualization of the results in a number of ways. @code{\"MonoPhy:} a simple R
+visualization of the results in a number of ways. \"@code{MonoPhy}: a simple R
 package to find and visualize monophyly issues.\" Schwery, O. & O'Meara, B.C.
 (2016) <doi:10.7717/peerj-cs.56>.")
     (license license:gpl3)))
@@ -11430,7 +11415,7 @@ package to find and visualize monophyly issues.\" Schwery, O. & O'Meara, B.C.
     (description
      "Estimation of multivariate normal (MVN) and student-t data of arbitrary
 dimension where the pattern of missing data is monotone.  See Pantaleo and
-Gramacy (2010) @code{<arXiv:0907.2135>.} Through the use of
+Gramacy (2010) <@code{arXiv:0907.2135>}.  Through the use of
 parsimonious/shrinkage regressions (plsr, pcr, lasso, ridge, etc.), where
 standard regressions fail, the package can handle a nearly arbitrary amount of
 missing data.  The current version supports maximum likelihood inference and a
@@ -11691,8 +11676,8 @@ the database.")
     (description
      "High-performance @code{MongoDB} client based on mongo-c-driver and jsonlite'.
 Includes support for aggregation, indexing, map-reduce, streaming, encryption,
-enterprise authentication, and @code{GridFS.} The online user manual provides an
-overview of the available methods in the package:
+enterprise authentication, and @code{GridFS}.  The online user manual provides
+an overview of the available methods in the package:
 <https://jeroen.github.io/mongolite/>.")
     (license license:asl2.0)))
 
@@ -11794,6 +11779,31 @@ dates to model \"ultimate\" time.")
 submit tips directly to the competition from R.")
     (license license:expat)))
 
+(define-public r-monan
+  (package
+    (name "r-monan")
+    (version "0.1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "MoNAn" version))
+              (sha256
+               (base32
+                "1dl3c0x3cmraav05b9mi4h8d0mlsiykshdrf54n83p3b3glc78bc"))))
+    (properties `((upstream-name . "MoNAn")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-snowfall))
+    (home-page "https://cran.r-project.org/package=MoNAn")
+    (synopsis "Mobility Network Analysis")
+    (description
+     "This package implements the method to analyse weighted mobility networks or
+distribution networks as outlined in: Block, P., Stadtfeld, C., & Robins, G.
+(2022) <doi:10.1016/j.socnet.2021.08.003>.  The purpose of the model is to
+analyse the structure of mobility, incorporating exogenous predictors pertaining
+to individuals and locations known from classical mobility analyses, as well as
+modelling emergent mobility patterns akin to structural patterns known from the
+statistical analysis of social networks.")
+    (license license:gpl3+)))
+
 (define-public r-monaco
   (package
     (name "r-monaco")
@@ -11813,7 +11823,7 @@ submit tips directly to the competition from R.")
     (description
      "This package provides a HTML widget rendering the Monaco editor.  The Monaco
 editor is the code editor which powers VS Code'.  It is particularly well
-developed for @code{JavaScript'.} In addition to the built-in features of the
+developed for @code{JavaScript}'.  In addition to the built-in features of the
 Monaco editor, the widget allows to prettify multiple languages, to view the
 HTML rendering of Markdown code, and to view and resize SVG images.")
     (license license:gpl3)))
@@ -12110,7 +12120,7 @@ designs for each two of the three criteria and all the three criteria within the
 class of Latin hypercube designs efficiently.  Provide criterion computing
 functions.  References of this package can be found in Morris, M. D. and
 Mitchell, T. J. (1995) <doi:10.1016/0378-3758(94)00035-T>, Lu Lu and Christine
-M. @code{Anderson-CookTimothy} J. Robinson (2011) <doi:10.1198/Tech.2011.10087>,
+M. Anderson-@code{CookTimothy} J. Robinson (2011) <doi:10.1198/Tech.2011.10087>,
 Joseph, V. R., Gul, E., and Ba, S. (2015) <doi:10.1093/biomet/asv002>.")
     (license license:lgpl2.0+)))
 
@@ -12240,7 +12250,7 @@ simplified, and smoothed in some other software prior to uploading into R.")
     (description
      "Multi-Objective optimization based on the Kriging metamodel.  Important
 functions: mkm() (builder for the multiobjective models), MVPF() (sequential
-minimizator using variance reduction), MEGO() (generalization of @code{ParEgo)}
+minimizator using variance reduction), MEGO() (generalization of @code{ParEgo})
 and HEGO() (minimizator using the expected hypervolume improvement).  References
 are Passos and Luersen (2018) <doi:10.1590/1679-78254324>.")
     (license license:gpl3)))
@@ -12347,7 +12357,7 @@ to the random one-factor-at-a-time (OFAT) design proposed by Morris (1991)
 the connection between Morris screening designs and Monte Carlo-based Sobol
 designs, and optimizing the design using a space-filling criterion.  This work
 is supported by a U.S. National Science Foundation (NSF) grant CMMI-1921646
-@code{<https://www.nsf.gov/awardsearch/showAward?AWD_ID=1921646>.}")
+<https://www.nsf.gov/awardsearch/@code{showAward?AWD_ID=1921646>}.")
     (license license:gpl2+)))
 
 (define-public r-moexer
@@ -12568,7 +12578,7 @@ functions, such as variable importance and a tuning function for the parameters.
     (home-page "https://fbertran.github.io/homepage/")
     (synopsis "Statistical Modelling in Action with R")
     (description
-     "Datasets and functions for the book @code{\"ModÃ©lisation} statistique par la
+     "Datasets and functions for the book \"@code{ModÃ©lisation} statistique par la
 pratique avec R\", F. Bertrand, E. Claeys and M. Maumy-Bertrand (2019,
 ISBN:9782100793525, Dunod, Paris).  The first chapter of the book is dedicated
 to an introduction to the R statistical software.  The second chapter deals with
@@ -12814,7 +12824,7 @@ Bootstrapping (BBS), Prewhitening (PW) , Trend Free Prewhitening (TFPW), Bias
 Corrected Prewhitening and Variance Correction Approach by calculating effective
 sample size.  Mann, H. B. (1945).<doi:10.1017/CBO9781107415324.004>.  Kendall,
 M. (1975).  Multivariate analysis.  Charles Griffin&Company Ltd,.  sen, P. K.
-(1968).<doi:10.2307/2285891>. @code{ÃnÃ¶z,} B., & Bayazit, M. (2012)
+(1968).<doi:10.2307/2285891>.  Ã@code{nÃ¶z}, B., & Bayazit, M. (2012)
 <doi:10.1002/hyp.8438>.  Hamed, K. H.
 (2009).<doi:10.1016/j.jhydrol.2009.01.040>.  Yue, S., & Wang, C. Y. (2002)
 <doi:10.1029/2001WR000861>.  Yue, S., Pilon, P., Phinney, B., & Cavadias, G.
@@ -12933,7 +12943,7 @@ Eleven Edition.  Academic Press.")
     (home-page "https://cran.r-project.org/package=ModEstM")
     (synopsis "Mode Estimation, Even in the Multimodal Case")
     (description
-     "Function @code{ModEstM()} is the only one of this package, it estimates the
+     "Function @code{ModEstM}() is the only one of this package, it estimates the
 modes of an empirical univariate distribution.  It relies on the
 stats::density() function, even for input control.  Due to very good performance
 of the density estimation, computation time is not an issue.  The multiple modes
@@ -12985,7 +12995,7 @@ permits estimating a school's value-added based on specific quantiles of the
 post-test distribution.  Estimating value-added based on quantiles of the
 post-test distribution provides a more complete picture of an education
 institution's contribution to learning for students of all abilities.  See Page,
-G.L.; San @code{MartÃ­n,} E.; Orellana, J.; Gonzalez, J. (2017)
+G.L.; San @code{MartÃ­n}, E.; Orellana, J.; Gonzalez, J. (2017)
 <doi:10.1111/rssa.12195> for more details.  The second model is a temporally
 dependent value-added model.  This model takes into account the temporal
 dependence that may exist in school performance between two cohorts in one of
@@ -13202,13 +13212,13 @@ Series Forecasting\" Pavlyshenko, B.M. (2019) <doi:10.3390>.")
 (define-public r-modeltime
   (package
     (name "r-modeltime")
-    (version "1.2.7")
+    (version "1.2.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "modeltime" version))
               (sha256
                (base32
-                "1ap5ghhz7c98vn19yvabs5qz2giww7i9qdapv41b1sj1c9fnakwx"))))
+                "1wvmz4wr972msfrld26ygahn1sky3p10x18975kbaksrw8qgz4ag"))))
     (properties `((upstream-name . "modeltime")))
     (build-system r-build-system)
     (propagated-inputs (list r-yardstick
@@ -13306,7 +13316,7 @@ objects.")
 side-by-side.  Draw coefficient plots, multi-level cross-tabs, dataset
 summaries, balance tables (a.k.a. \"Table 1s\"), and correlation matrices.  This
 package supports dozens of statistical models, and it can produce tables in
-HTML, @code{LaTeX,} Word, Markdown, PDF, @code{PowerPoint,} Excel, RTF, JPG, or
+HTML, @code{LaTeX}, Word, Markdown, PDF, @code{PowerPoint}, Excel, RTF, JPG, or
 PNG. Tables can easily be embedded in Rmarkdown or knitr dynamic documents.
 Details can be found in Arel-Bundock (2022) <doi:10.18637/jss.v103.i01>.")
     (license license:gpl3)))
@@ -13349,13 +13359,13 @@ Explanatory Model Analysis introduced in Baniecki et al. (2023)
 (define-public r-modelsse
   (package
     (name "r-modelsse")
-    (version "0.1-1")
+    (version "0.1-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "modelSSE" version))
               (sha256
                (base32
-                "1zz6jnk8cjwh9vnp313sv9xqmnybaz2ydwymfvbnkqzybbvm117v"))))
+                "05b64l3dn9jply4wzvk2vrjvcap934snagsgjgcsb5adr5vm4bq8"))))
     (properties `((upstream-name . "modelSSE")))
     (build-system r-build-system)
     (propagated-inputs (list r-delaporte))
@@ -13365,8 +13375,11 @@ Explanatory Model Analysis introduced in Baniecki et al. (2023)
     (description
      "Analytical tools to characterize infectious disease superspreading from contact
 tracing surveillance data, using theoretical frameworks of branching process
-(Lloyd-Smith et al. (2005) <doi:10.1038/nature04153>), and decomposition of
-reproduction number (Zhao et al. (2022) <doi:10.1371/journal.pcbi.1010281>).")
+with transmission heterogeneity (Lloyd-Smith et al. (2005)
+<doi:10.1038/nature04153>), case size distribution (Nishiura et al. (2012)
+<doi:10.1016/j.jtbi.2011.10.039>, and Kucharski and Althaus (2015)
+<doi:10.2807/1560-7917.ES2015.20.25.21167>), and decomposition of reproduction
+number (Zhao et al. (2022) <doi:10.1371/journal.pcbi.1010281>).")
     (license license:gpl3)))
 
 (define-public r-modelplotr
@@ -14132,8 +14145,8 @@ Kraus et al. (2011) <doi:10.1007/s00180-011-0244-6>.")
      "This package provides functions for calculating metrics for the measurement
 biodiversity and its changes across scales, treatments, and gradients.  The
 methods implemented in this package are described in: Chase, J.M., et al. (2018)
-<doi:10.1111/ele.13151>, @code{McGlinn,} D.J., et al. (2019)
-<doi:10.1111/2041-210X.13102>, and @code{McGlinn,} D.J., et al. (2021)
+<doi:10.1111/ele.13151>, @code{McGlinn}, D.J., et al. (2019)
+<doi:10.1111/2041-210X.13102>, and @code{McGlinn}, D.J., et al. (2021)
 <doi:10.1002/ecy.3233>.")
     (license license:expat)))
 
@@ -14292,16 +14305,16 @@ transformations will converge to the same woe transformation.")
     (description
      "Various affine invariant multivariate normality tests are provided.  It is
 designed to accompany the survey article Ebner, B. and Henze, N. (2020)
-@code{<arXiv:2004.07332>} titled \"Tests for multivariate normality -- a critical
+<@code{arXiv:2004.07332>} titled \"Tests for multivariate normality -- a critical
 review with emphasis on weighted L^2-statistics\".  We implement new and time
 honoured L^2-type tests of multivariate normality, such as the
 Baringhaus-Henze-Epps-Pulley (BHEP) test, the Henze-Zirkler test, the test of
-@code{Henze-JimÃ©nes-Gamero,} the test of
-@code{Henze-JimÃ©nes-Gamero-Meintanis,} the test of Henze-Visage, the
+Henze-@code{JimÃ©nes-Gamero}, the test of
+Henze-@code{JimÃ©nes-Gamero-Meintanis}, the test of Henze-Visage, the
 DÃ¶rr-Ebner-Henze test based on harmonic oscillator and the DÃ¶rr-Ebner-Henze
 test based on a double estimation in a PDE. Secondly, we include the measures of
 multivariate skewness and kurtosis by Mardia, Koziol, Malkovich and Afifi and
-MÃ³ri, Rohatgi and @code{SzÃ©kely,} as well as the associated tests.  Thirdly,
+MÃ³ri, Rohatgi and @code{SzÃ©kely}, as well as the associated tests.  Thirdly,
 we include the tests of multivariate normality by Cox and Small, the energy test
 of @code{SzÃ©kely} and Rizzo, the tests based on spherical harmonics by Manzotti
 and Quiroz and the test of Pudelko.  All the functions and tests need the data
@@ -14489,7 +14502,7 @@ is helpful to those who want to learn Multinomial Logistic Regression quickly
 and get a hands on experience.  The presentation has a template for solving
 problems on Multinomial Logistic Regression.  Runtime examples are provided in
 the package function as well as at
-@code{<https://jarvisatharva.shinyapps.io/MultinomPresentation>.}")
+<https://jarvisatharva.shinyapps.io/@code{MultinomPresentation>}.")
     (license license:gpl2)))
 
 (define-public r-mnlpred
@@ -14703,7 +14716,7 @@ L.; Carrasco, J.M.F and de Castro, M. (2021)
      "Clustering of data under a non-ignorable missingness mechanism.  Clustering is
 achieved by a semi-parametric mixture model and missingness is managed by using
 the pattern-mixture approach.  More details of the approach are available in Du
-Roy de Chaumaray et al. (2020) @code{<arXiv:2009.07662>.}")
+Roy de Chaumaray et al. (2020) <@code{arXiv:2009.07662>}.")
     (license license:gpl2+)))
 
 (define-public r-mmvbvs
@@ -14963,7 +14976,7 @@ permutation importance.")
 integrative analysis.  The method finds principal components that describe
 single matrices or that are common to several matrices.  The solutions are
 sparse.  Rank of solutions is automatically selected using cross validation.
-The method is described in Kallus et al. (2019) @code{<arXiv:1911.04927>.}")
+The method is described in Kallus et al. (2019) <@code{arXiv:1911.04927>}.")
     (license license:gpl3+)))
 
 (define-public r-mmpa
@@ -14984,7 +14997,7 @@ The method is described in Kallus et al. (2019) @code{<arXiv:1911.04927>.}")
     (description
      "To determine the number of quantitative assays needed for a sample of data using
 pooled testing methods, which include mini-pooling (MP), MP with algorithm
-(MPA), and marker-assisted MPA @code{(mMPA).} To estimate the number of assays
+(MPA), and marker-assisted MPA (@code{mMPA}).  To estimate the number of assays
 needed, the package also provides a tool to conduct Monte Carlo (MC) to simulate
 different orders in which the sample would be collected to form pools.  Using MC
 avoids the dependence of the estimated number of assays on any specific ordering
@@ -15114,7 +15127,7 @@ multiple GEE models.  GEE models are fit by a modified version of the
 regression, where responses Y(t) are time-additive, and model operates in the
 external environment, which is described as a continuous time Markov chain with
 finite state space.  Model is proposed by Alexander Andronov (2012)
-@code{<arXiv:1901.09600v1>} and algorithm of parameters estimation is based on
+<@code{arXiv:1901.09600v1>} and algorithm of parameters estimation is based on
 eigenvalues and eigenvectors decomposition.  Markov-switching regression models
 have the same idea of varying the regression parameters randomly in accordance
 with external environment.  The difference is that for Markov-modulated linear
@@ -15295,7 +15308,7 @@ Tantisira K, Weiss ST, Qiu W. (2018) <doi:10.1155/2018/6591634>.")
     (description
      "This package provides functions for the robust estimation of parametric families
 of copulas using minimization of the Maximum Mean Discrepancy, following the
-article Alquier, @code{ChÃ©rief-Abdellatif,} Derumigny and Fermanian (2022)
+article Alquier, @code{ChÃ©rief-Abdellatif}, Derumigny and Fermanian (2022)
 <doi:10.1080/01621459.2021.2024836>.")
     (license license:gpl3)))
 
@@ -15535,7 +15548,7 @@ Scutari (2010) <doi:10.18637/jss.v035.i03>.")
     (home-page "https://github.com/WeiGuoNIMH/mMARCH.AC")
     (synopsis "Processing of Accelerometry Data with 'GGIR' in mMARCH")
     (description
-     "Mobile Motor Activity Research Consortium for Health @code{(mMARCH)} is a
+     "Mobile Motor Activity Research Consortium for Health (@code{mMARCH}) is a
 collaborative network of studies of clinical and community samples that employ
 common clinical, biological, and digital mobile measures across involved
 studies.  One of the main scientific goals of @code{mMARCH} sites is developing
@@ -15572,7 +15585,7 @@ processing was created using Rmarkdown, and the report includes few exploratory
 plots and multiple commonly used features extracted from minute level actigraphy
 data.  Reference: Guo W, Leroux A, Shou S, Cui L, Kang S, Strippoli MP, Preisig
 M, Zipunnikov V, Merikangas K (2022) Processing of accelerometry data with GGIR
-in Motor Activity Research Consortium for Health @code{(mMARCH)} Journal for the
+in Motor Activity Research Consortium for Health (@code{mMARCH}) Journal for the
 Measurement of Physical Behaviour, 6(1): 37-44.")
     (license license:gpl3)))
 
@@ -15618,7 +15631,7 @@ devices installed on a moving platform.  1 Hz data of PM2.5 (mass concentrations
 of particulate matter with size less than 2.5 microns), Black carbon mass
 concentrations (BC), ultra-fine particle number concentrations, carbon dioxide
 along with GPS coordinates and relative humidity (RH) data collected by popular
-portable instruments (TSI @code{DustTrak-8530,} Aethlabs @code{microAeth-AE51,}
+portable instruments (TSI @code{DustTrak-8530}, Aethlabs @code{microAeth-AE51},
 TSI CPC3007, LICOR Li-830, Garmin GPSMAP 64s, Omega USB RH probe respectively).
 It incorporates device specific cleaning and correction algorithms.  RH
 correction is applied to @code{DustTrak} PM2.5 following the Chakrabarti et al.,
@@ -15670,7 +15683,7 @@ characters separated by characters as if it were a simple R(cpp) matrix.")
     (home-page "https://cran.r-project.org/package=mmap")
     (synopsis "Map Pages of Memory")
     (description
-     "R interface to POSIX mmap and Window's @code{MapViewOfFile.}")
+     "R interface to POSIX mmap and Window's @code{MapViewOfFile}.")
     (license license:gpl3)))
 
 (define-public r-mmand
@@ -15740,20 +15753,20 @@ Xu and Tian (2019) <doi:10.5705/ss.202016.0516>, Zhang and Huang (2022)
     (synopsis "Data for Mathematical Modeling and Applied Calculus")
     (description
      "This package contains the data sets for the textbook \"Mathematical Modeling and
-Applied Calculus\" by Joel Kilty and Alex M. @code{McAllister.} The book will be
+Applied Calculus\" by Joel Kilty and Alex M. @code{McAllister}.  The book will be
 published by Oxford University Press in 2018 with ISBN-13: 978-019882472.")
     (license license:gpl2+)))
 
 (define-public r-mmabig
   (package
     (name "r-mmabig")
-    (version "3.1-0")
+    (version "3.2-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mmabig" version))
               (sha256
                (base32
-                "12drgrbq8pn8c6psf4cn7shr6rd9r9pjrdr4h7i1abvs20m4xxhf"))))
+                "1ji832vs9gfzpl1ij85dgmkpqr3qy4p7r6kvrk0y3q3agjxw1gky"))))
     (properties `((upstream-name . "mmabig")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-mma r-gplots r-glmnet r-car))
@@ -15767,13 +15780,13 @@ published by Oxford University Press in 2018 with ISBN-13: 978-019882472.")
 (define-public r-mma
   (package
     (name "r-mma")
-    (version "10.6-1")
+    (version "10.7-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mma" version))
               (sha256
                (base32
-                "0m45c40rd61p4dhgc2x18ziw14m4almssbg8q2xma8n9b0mifc8i"))))
+                "0zqkqzi27qg4q6mirhw5gzjbsd9i06rxzr61zmmsw33wg5a6lgd3"))))
     (properties `((upstream-name . "mma")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-lattice r-gplots r-gbm r-car))
@@ -16050,13 +16063,13 @@ classification evaluation metrics based on confusion matrix.")
 (define-public r-mlt-docreg
   (package
     (name "r-mlt-docreg")
-    (version "1.1-6")
+    (version "1.1-7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mlt.docreg" version))
               (sha256
                (base32
-                "1ijfv3lwizk540g546pyi5i4sxcxwa3b2ylk0gsk68q5w704xpk6"))))
+                "05vrgddg4j2yc6b07dqypid9gvvpilv9ky2bgwml0az629666111"))))
     (properties `((upstream-name . "mlt.docreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncreg
@@ -16232,7 +16245,7 @@ mlr3tuning Tuner object, for tuning of machine learning algorithms within mlr3',
 as well as a bbotk Optimizer object for optimization of general objective
 functions using the bbotk black box optimization framework.  The control
 parameters of @code{mlrMBO} are faithfully reproduced as a paradox
-@code{ParamSet'.}")
+@code{ParamSet}'.")
     (license license:lgpl3)))
 
 (define-public r-mlrcpo
@@ -16484,7 +16497,7 @@ framework.")
      "This package provides an interface to @code{OpenML.org} to list and download
 machine learning data, tasks and experiments.  The @code{OpenML} objects can be
 automatically converted to mlr3 objects.  For a more sophisticated interface
-which also allows uploading to @code{OpenML',} see the @code{OpenML} package.")
+which also allows uploading to @code{OpenML}', see the @code{OpenML} package.")
     (license license:lgpl3)))
 
 (define-public r-mlr3mbo
@@ -16551,8 +16564,8 @@ optimization algorithms include Efficient Global Optimization by Jones et al.
     (home-page "https://mlr3hyperband.mlr-org.com")
     (synopsis "Hyperband for 'mlr3'")
     (description
-     "Successive Halving (Jamieson and Talwalkar (2016) @code{<arXiv:1502.07943>)} and
-Hyperband (Li et al.  2018 @code{<arXiv:1603.06560>)} optimization algorithm for
+     "Successive Halving (Jamieson and Talwalkar (2016) <@code{arXiv:1502.07943>}) and
+Hyperband (Li et al.  2018 <@code{arXiv:1603.06560>}) optimization algorithm for
 the mlr3 ecosystem.  The implementation in mlr3hyperband features improved
 scheduling and parallelizes the evaluation of configurations.  The package
 includes tuners for hyperparameter optimization in mlr3tuning and optimizers for
@@ -16675,8 +16688,8 @@ joint tuning of machine learning algorithms and debiasing methods.")
     (synopsis "Data Base Backend for 'mlr3'")
     (description
      "Extends the mlr3 package with a backend to transparently work with databases
-such as SQLite', @code{DuckDB',} @code{MySQL',} @code{MariaDB',} or
-@code{PostgreSQL'.} The package provides two additional backends:
+such as SQLite', @code{DuckDB}', @code{MySQL}', @code{MariaDB}', or
+@code{PostgreSQL}'.  The package provides two additional backends:
 @code{DataBackendDplyr} relies on the abstraction of package dbplyr to interact
 with most DBMS. @code{DataBackendDuckDB} operates on @code{DuckDB} data bases
 and also on Apache Parquet files.")
@@ -16857,7 +16870,7 @@ cost constraint.")
      "Multi-Label Prediction Using Gibbs Sampling (and Classifier Chains)")
     (description
      "An implementation of classifier chains (CC's) for multi-label prediction.  Users
-can employ an external package (e.g. @code{randomForest',} C50'), or supply
+can employ an external package (e.g. @code{randomForest}', C50'), or supply
 their own.  The package can train a single set of CC's or train an ensemble of
 CC's -- in parallel if running in a multi-core environment.  New observations
 are classified using a Gibbs sampler since each unobserved label is conditioned
@@ -16990,7 +17003,7 @@ centered variables, and displaying some basic missing data information.  A
 function for computing robust standard errors for linear mixed models based on
 Liang and Zeger (1986) <doi:10.1093/biomet/73.1.13> and Bell and
 @code{McCaffrey} (2002)
-@code{<https://www150.statcan.gc.ca/n1/en/pub/12-001-x/2002002/article/9058-eng.pdf?st=NxMjN1YZ>}
+<https://www150.statcan.gc.ca/n1/en/pub/12-001-x/2002002/article/9058-eng.pdf?st=@code{NxMjN1YZ>}
 is included as well as a function for checking for level-one homoskedasticity
 (Raudenbush & Bryk, 2002, ISBN:076191904X).")
     (license license:gpl2)))
@@ -17082,7 +17095,7 @@ insight into model results.  The package presented here, mlmtools', is a suite
 of pre- and post-estimation tools for multilevel models in R'.  Package
 implements post-estimation tools designed to work with models estimated using
 lme4''s (Bates et al., 2014) lmer() function, which fits linear mixed effects
-regression models.  Searle, S. R., Casella, G., & @code{McCulloch,} C. E. (2009,
+regression models.  Searle, S. R., Casella, G., & @code{McCulloch}, C. E. (2009,
 ISBN:978-0470009598).  Bates, D., MÃ¤chler, M., Bolker, B., & Walker, S. (2014)
 <doi:10.18637/jss.v067.i01>.")
     (license license:gpl3+)))
@@ -17224,8 +17237,8 @@ in the selected model and graphical functions.")
     (synopsis
      "Maximum Likelihood Estimation of DNA Methylation and Hydroxymethylation Proportions")
     (description
-     "Maximum likelihood estimates (MLE) of the proportions of @code{5-mC} and
-@code{5-hmC} in the DNA using information from BS-conversion, TAB-conversion,
+     "Maximum likelihood estimates (MLE) of the proportions of 5-@code{mC} and
+5-@code{hmC} in the DNA using information from BS-conversion, TAB-conversion,
 and @code{oxBS-conversion} methods.  One can use information from all three
 methods or any combination of two of them.  Estimates are based on Binomial
 model by Qu et al. (2013) <doi:10.1093/bioinformatics/btt459> and Kiihl et al.
@@ -17314,13 +17327,13 @@ performance.")
 (define-public r-mlma
   (package
     (name "r-mlma")
-    (version "6.2-1")
+    (version "6.3-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mlma" version))
               (sha256
                (base32
-                "1jvra77xhf0a6qb2kb953inpg2lzv0y88kb6zzcw35bb8gipzm78"))))
+                "16v3rwdc7kzn2k84ghkss14p1kqx86md9k1xv2k2x187f5lncamh"))))
     (properties `((upstream-name . "mlma")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -17335,7 +17348,7 @@ performance.")
     (description
      "Do multilevel mediation analysis with generalized additive multilevel models.
 The analysis method is described in Yu and Li (2020), \"Third-Variable Effect
-Analysis with Multilevel Additive Models\", @code{PLoS} ONE 15(10): e0241072.")
+Analysis with Multilevel Additive Models\", P@code{LoS} ONE 15(10): e0241072.")
     (license license:gpl2+)))
 
 (define-public r-mllrnrs
@@ -17633,7 +17646,7 @@ SR, @code{McVean} G, Turnbaugh PJ, Lander ES, Mitzenmacher M, Sabeti PC. (2011).
      "This package provides R6 objects to perform parallelized hyperparameter
 optimization and cross-validation.  Hyperparameter optimization can be performed
 with Bayesian optimization (via @code{ParBayesianOptimization}
-@code{<https://cran.r-project.org/package=ParBayesianOptimization>)} and grid
+<https://cran.r-project.org/package=@code{ParBayesianOptimization>}) and grid
 search.  The optimized hyperparameters can be validated using k-fold
 cross-validation.  Alternatively, hyperparameter optimization and validation can
 be performed with nested cross-validation.  While mlexperiments focuses on core
@@ -18315,7 +18328,7 @@ correctness of results or fitness for a particular purpose.")
     (description
      "Computation of standardized interquartile range (IQR), Huber-type skipped mean
 (Hampel (1985), <doi:10.2307/1268758>), robust coefficient of variation (CV)
-(Arachchige et al. (2019), @code{<arXiv:1907.01110>),} robust signal to noise
+(Arachchige et al. (2019), <@code{arXiv:1907.01110>}), robust signal to noise
 ratio (SNR), z-score, standardized mean difference (SMD), as well as functions
 that support graphical visualization such as boxplots based on quartiles (not
 hinges), negative logarithms and generalized logarithms for ggplot2 (Wickham
@@ -18493,7 +18506,7 @@ for VLMC with covariates.")
      "Tool for exploring DNA and amino acid variation and inferring the presence of
 target lineages from microbial high-throughput genomic DNA samples that
 potentially contain mixtures of variants/lineages. @code{MixviR} was originally
-created to help analyze environmental @code{SARS-CoV-2/Covid-19} samples from
+created to help analyze environmental SARS-@code{CoV-2/Covid-19} samples from
 environmental sources such as wastewater or dust, but can be applied to any
 microbial group.  Inputs include reference genome information in commonly-used
 file formats (fasta, bed) and one or more variant call format (VCF) files, which
@@ -18526,7 +18539,7 @@ takes two statistics per testing unit -- an estimated effect and its associated
 squared standard error -- and fits a nonparametric, shape-constrained mixture
 separately on two latent parameters.  It reports local false discovery rates
 (lfdr) and local false sign rates (lfsr).  Manuscript describing algorithm of
-@code{MixTwice:} Zheng et al(2021) <doi: 10.1093/bioinformatics/btab162>.")
+@code{MixTwice}: Zheng et al(2021) <doi: 10.1093/bioinformatics/btab162>.")
     (license license:gpl2)))
 
 (define-public r-mixturemissing
@@ -18555,9 +18568,9 @@ separately on two latent parameters.  It reports local false discovery rates
 values at random.  The models used are: Multivariate Contaminated Normal Mixture
 (MCNM, Tong and Tortora, 2022, <doi:10.1007/s11634-021-00476-1>), Multivariate
 Generalized Hyperbolic Mixture (MGHM, Wei et al., 2019,
-<doi:10.1016/j.csda.2018.08.016>), Multivariate Skew's t Mixture @code{(MStM,}
+<doi:10.1016/j.csda.2018.08.016>), Multivariate Skew's t Mixture (M@code{StM},
 Wei et al., 2019, <doi:10.1016/j.csda.2018.08.016>), Multivariate t Mixture
-@code{(MtM,} Wang et al., 2004, <doi:10.1016/j.patrec.2004.01.010>), and
+(@code{MtM}, Wang et al., 2004, <doi:10.1016/j.patrec.2004.01.010>), and
 Multivariate Normal Mixture (MNM, Ghahramani and Jordan, 1994,
 <doi:10.21236/ADA295618>).")
     (license license:gpl2+)))
@@ -18650,7 +18663,7 @@ addition'.")
     (description
      "Developed for model-based clustering using the finite mixtures of skewed
 sub-Gaussian stable distributions developed by Teimouri (2022)
-@code{<arXiv:2205.14067>} and estimating parameters of the symmetric stable
+<@code{arXiv:2205.14067>} and estimating parameters of the symmetric stable
 distribution within the Bayesian framework.")
     (license license:gpl2+)))
 
@@ -18700,7 +18713,7 @@ defined as a sum of two misclassification probabilities, measures the degree of
 interaction between components and can be readily employed to control the
 clustering complexity of datasets simulated from mixtures.  These datasets can
 then be used for systematic performance investigation of clustering and finite
-mixture modeling algorithms.  Among other capabilities of @code{MixSim',} there
+mixture modeling algorithms.  Among other capabilities of @code{MixSim}', there
 are computing the exact overlap for Gaussian mixtures, simulating Gaussian and
 non-Gaussian data, simulating outliers and noise variables, calculating various
 measures of agreement between two partitionings, and constructing parallel
@@ -18786,7 +18799,7 @@ Yao, Yan Wei, Chun Yu(2014)<doi:10.1016/j.csda.2013.07.019>; mixreg_Lap: Weixing
 Song, Weixin Yao, Yanru Xing(2014)<doi:10.1016/j.csda.2013.06.022>; mixreg_CWRM:
 Garcia-Escudero, L.A., Gordaliza, A., Greselin, F. et al.(2017)
 <doi:10.1007/s11222-021-10061-3>; mphd:Jingjing Wu, Weixin Yao, Sijia Xiang
-(2017)<doi:10.1080/00949655.2017.1318136>; @code{EMlogconc/EMlogconcHD:} George
+(2017)<doi:10.1080/00949655.2017.1318136>; EMlogconc/E@code{MlogconcHD}: George
 T. Chang, Guenther
 Walther(2007)<doi:10.1016/j.csda.2007.01.008>;Hypothesis_test: Supawadee
 Wichitchan, Weixin Yao, Guangren Yang(2019)<doi:10.1016/j.csda.2018.05.005>;
@@ -18795,7 +18808,7 @@ Seo(2016)<doi:10.1016/j.csda.2016.06.001>; sim/simonestep:Xiang, S., Yao,
 W.(2020)<doi:10.1007/s11634-020-00392-w>; paretomix1: Huang, M., Yao, W., Wang,
 S., and Chen, Y.
 (2018)<doi:10.1111/sjos.12316>;complhfrequency/distlatfrequency: Weixin Yao
-(2015)<doi:10.1080/00949655.2013.859259>; @code{MixReg_Pvary:} Mian Huang and
+(2015)<doi:10.1080/00949655.2013.859259>; @code{MixReg_Pvary}: Mian Huang and
 Weixin Yao (2012)<doi:10.1080/01621459.2012.682541>; pfmix: Weixin
 Yao(2010)<doi:10.1016/j.jspi.2010.02.004>; backfitlocal/backfitglobal: Xiang,
 S., Yao, W.(2018)<doi:10.1007/s10463-016-0584-7>;mixbspline: Dziak, J. J., Li,
@@ -18893,7 +18906,7 @@ as doing ANCOVA when you don't know the levels).  Turner (2000)
     (description
      "This package provides supplemental functions for the @code{mixRasch} package
 (Willse, 2014),
-@code{<https://cran.r-project.org/package=mixRasch/mixRasch.pdf>} including a
+<https://cran.r-project.org/package=@code{mixRasch/mixRasch.pdf>} including a
 plotting function to compare item parameters for multiple class models and a
 function that provides average theta values for each class in a mixture model.")
     (license (list license:gpl2+ license:gpl3+))))
@@ -19211,7 +19224,7 @@ developed in this package.")
     (description
      "Highly variable gene selection methods, including popular public available
 methods, and also the mixture of multiple highly variable gene selection
-methods, @code{<https://github.com/RuzhangZhao/mixhvg>.}")
+methods, <https://github.com/@code{RuzhangZhao/mixhvg>}.")
     (license license:gpl3)))
 
 (define-public r-mixghd
@@ -19278,7 +19291,7 @@ be found at <doi:10.18637/jss.v098.i03>.")
     (synopsis "Multiple Imputation Through 'XGBoost'")
     (description
      "Multiple imputation using XGBoost', subsampling, and predictive mean matching as
-described in Deng and Lumley (2023) @code{<arXiv:2106.01574>.} Our method
+described in Deng and Lumley (2023) <@code{arXiv:2106.01574>}.  Our method
 utilizes the capabilities of XGBoost, a highly efficient implementation of
 gradient boosted trees, to capture interactions and non-linear relations
 automatically.  Moreover, we have integrated subsampling and predictive mean
@@ -19310,8 +19323,8 @@ tools for evaluating the quality of the imputed values.")
     (synopsis "Mixture fMRI Clustering Analysis")
     (description
      "Utilizing model-based clustering (unsupervised) for functional magnetic
-resonance imaging @code{(fMRI)} data.  The developed methods (Chen and Maitra
-(2021) @code{<arXiv:2102.03639>)} include 2D and 3D clustering analyses (for
+resonance imaging (@code{fMRI}) data.  The developed methods (Chen and Maitra
+(2021) <@code{arXiv:2102.03639>}) include 2D and 3D clustering analyses (for
 p-values with voxel locations) and segmentation analyses (for p-values alone)
 for @code{fMRI} data where p-values indicate significant level of activation
 responding to stimulate of interesting.  The analyses are mainly identifying
@@ -19497,7 +19510,7 @@ examples of mixed membership models.")
     (synopsis
      "Mixed, Low-Rank, and Sparse Multivariate Regression on High-Dimensional Data")
     (description
-     "Mixed, low-rank, and sparse multivariate regression @code{('mixedLSR')} provides
+     "Mixed, low-rank, and sparse multivariate regression ('@code{mixedLSR}') provides
 tools for performing mixture regression when the coefficient matrix is low-rank
 and sparse. @code{mixedLSR} allows subgroup identification by alternating
 optimization with simulated annealing to encourage global optimum convergence.
@@ -19538,7 +19551,7 @@ experimentation approach, the entire runs are executed in one go (M. N. Das and
 V. Narasimham (1962) <doi:10.1214/AOMS/1177704374>. \"Construction of Rotatable
 Designs through Balanced Incomplete Block Designs\").  ATORDs_I() and ATORDs_II()
 functions generate non-sequential asymmetric third order designs.  Function
-named @code{SeqTORD()} generates symmetric sequential third order design in
+named @code{SeqTORD}() generates symmetric sequential third order design in
 blocks and also gives G-efficiency of the given design.  Function named
 Asymseq() generates asymmetric sequential third order designs in blocks (M.
 Hemavathi, Eldho Varghese, Shashi Shekhar and Seema Jaggi (2020)
@@ -19548,9 +19561,9 @@ in which some of the factors are qualitative in nature (Jyoti Divecha and Bharat
 Tarapara (2017) <doi:10.1080/08982112.2016.1217338>. \"Small, balanced,
 efficient, optimal, and near rotatable response surface designs for factorial
 experiments asymmetrical in some quantitative, qualitative factors\").  The
-Function named @code{QualRSD()} generates second order design with qualitative
+Function named @code{QualRSD}() generates second order design with qualitative
 factors along with their D-efficiency and G-efficiency.  The function named
-@code{RotatabilityQ()} calculates a measure of rotatability (measure Q, 0 <= Q
+@code{RotatabilityQ}() calculates a measure of rotatability (measure Q, 0 <= Q
 <= 1) given by Draper and Pukelshiem(1990) for given a design based on a second
 order model, (Norman R. Draper and Friedrich Pukelsheim(1990)
 <doi:10.1080/00401706.1990.10484635>. \"Another look at rotatability\").")
@@ -19578,7 +19591,7 @@ series with arbitrary distribution (discrete, continuous, mixture of both types)
 and for testing independence between random variables with arbitrary
 distributions.  The test statistics are based on the multilinear empirical
 copula and multipliers are used to compute P-values.  The test of independence
-between random variables appeared in Genest, @code{NeÅ¡lehovÃ¡,} RÃ©millard &
+between random variables appeared in Genest, @code{NeÅ¡lehovÃ}¡, RÃ©millard &
 Murphy (2019).")
     (license license:gpl3)))
 
@@ -19773,7 +19786,7 @@ thermogravimetric analysis (TGA) are imported, modified, and then modelled in a
 three- or four- part mixture model using the Fraser-Suzuki function.  The output
 is estimates for weights of pseudo-components corresponding to hemicellulose,
 cellulose, and lignin.  For more information see: MÃ¼ller-Hagedorn, M. and
-Bockhorn, H. (2007) <doi:10.1016/j.jaap.2006.12.008>, @code{ÃrfÃ£o,} J. J. M.
+Bockhorn, H. (2007) <doi:10.1016/j.jaap.2006.12.008>, Ã@code{rfÃ£o}, J. J. M.
 and Figueiredo, J. L. (2001) <doi:10.1016/S0040-6031(01)00634-7>, and Yang, H.
 and Yan, R. and Chen, H. and Zheng, C. and Lee, D. H. and Liang, D. T. (2006)
 <doi:10.1021/ef0580117>.")
@@ -20024,7 +20037,7 @@ Garrappa, R. (2015) <doi:10.1137/140971191>.")
      "Extract, transform and load MITRE standards.  This package gives you an approach
 to cybersecurity data sets.  All data sets are build on runtime downloading raw
 data from MITRE public services.  MITRE <https://www.mitre.org/> is a
-government-funded research organization based in Bedford and @code{McLean.}
+government-funded research organization based in Bedford and @code{McLean}.
 Current version includes most used standards as data frames.  It also provide a
 list of nodes and edges with all relationships.")
     (license license:cc0)))
@@ -20061,7 +20074,7 @@ list of nodes and edges with all relationships.")
     (description
      "Allows the estimation and downstream statistical analysis of the mitochondrial
 DNA Heteroplasmy calculated from single-cell datasets
-@code{<https://github.com/ScialdoneLab/MitoHEAR/tree/master>.}")
+<https://github.com/@code{ScialdoneLab/MitoHEAR/tree/master>}.")
     (license license:artistic2.0)))
 
 (define-public r-misty
@@ -20204,7 +20217,7 @@ method can be used for data visualisation, clustering or imputation of missing
 data.  It is an extension of the online algorithm of the kohonen package.  The
 method is described in the article \"Self-Organizing Maps for Exploration of
 Partially Observed Data and Imputation of Missing Values\" by S. Rejeb, C.
-Duveau, T. Rebafka (2022) @code{<arXiv:2202.07963>.}")
+Duveau, T. Rebafka (2022) <@code{arXiv:2202.07963>}.")
     (license license:gpl2+)))
 
 (define-public r-misssbm
@@ -20237,7 +20250,7 @@ Duveau, T. Rebafka (2022) @code{<arXiv:2202.07963>.}")
     (description
      "When a network is partially observed (here, NAs in the adjacency matrix rather
 than 1 or 0 due to missing information between node pairs), it is possible to
-account for the underlying process that generates those NAs. @code{missSBM',}
+account for the underlying process that generates those NAs. @code{missSBM}',
 presented in Barbillon, Chiquet and Tabouy (2022) <doi:10.18637/jss.v101.i12>,
 adjusts the popular stochastic block model from network data sampled under
 various missing data conditions, as described in Tabouy, Barbillon and Chiquet
@@ -20270,8 +20283,8 @@ This firstly avoids imputation with values not already present in the original
 data (like a value 0.3334 in 0-1 coded variable).  Secondly, predictive mean
 matching tries to raise the variance in the resulting conditional distributions
 to a realistic level.  This would allow e.g. to do multiple imputation when
-repeating the call to @code{missRanger().} A formula interface allows to control
-which variables should be imputed by which.")
+repeating the call to @code{missRanger}().  A formula interface allows to
+control which variables should be imputed by which.")
     (license license:gpl2+)))
 
 (define-public r-missplot
@@ -20522,7 +20535,7 @@ others (2023) <doi:10.13140/RG.2.2.11977.42087>.")
      "This package implements the computation of discrepancy statistics summarizing
 differences between the density of imputed and observed values and the
 construction of weights to balance covariates that are part of the missing data
-mechanism as described in Marbach (2021) @code{<arXiv:2107.05427>.}")
+mechanism as described in Marbach (2021) <@code{arXiv:2107.05427>}.")
     (license license:gpl3)))
 
 (define-public r-missdeaths
@@ -20580,7 +20593,7 @@ object oriented survival data simulation functions.")
      "This package provides a four step change point detection method that can detect
 break points with the presence of missing values proposed by Liu and Safikhani
 (2023)
-@code{<https://drive.google.com/file/d/1a8sV3RJ8VofLWikTDTQ7W4XJ76cEj4Fg/view?usp=drive_link>.}")
+<https://drive.google.com/file/d/1a8@code{sV3RJ8VofLWikTDTQ7W4XJ76cEj4Fg/view?usp=drive_link>}.")
     (license license:gpl2)))
 
 (define-public r-misscompare
@@ -20624,9 +20637,9 @@ mean and median imputation and random replacement, but also include more
 sophisticated algorithms already implemented in popular R packages, such as mi',
 described by Su et al. (2011) <doi:10.18637/jss.v045.i02>; mice', described by
 van Buuren and Groothuis-Oudshoorn (2011) <doi:10.18637/jss.v045.i03>;
-@code{missForest',} described by Stekhoven and Buhlmann (2012)
-<doi:10.1093/bioinformatics/btr597>; @code{missMDA',} described by Josse and
-Husson (2016) <doi:10.18637/jss.v070.i01>; and @code{pcaMethods',} described by
+@code{missForest}', described by Stekhoven and Buhlmann (2012)
+<doi:10.1093/bioinformatics/btr597>; @code{missMDA}', described by Josse and
+Husson (2016) <doi:10.18637/jss.v070.i01>; and @code{pcaMethods}', described by
 Stacklies et al. (2007) <doi:10.1093/bioinformatics/btm069>.  The central
 assumption behind @code{missCompare} is that structurally different datasets
 (e.g. larger datasets with a large number of correlated variables vs. smaller
@@ -20703,9 +20716,9 @@ analogous direct question.")
     (synopsis "Misreported Time Series Analysis")
     (description
      "This package provides a simple and trustworthy methodology for the analysis of
-misreported continuous time series.  See @code{MoriÃ±a,} D,
-@code{FernÃ¡ndez-Fontelo,} A, @code{CabaÃ±a,} A, Puig P. (2021)
-@code{<arXiv:2003.09202v2>.}")
+misreported continuous time series.  See @code{MoriÃ±a}, D,
+@code{FernÃ¡ndez-Fontelo}, A, @code{CabaÃ±a}, A, Puig P. (2021)
+<@code{arXiv:2003.09202v2>}.")
     (license license:gpl2+)))
 
 (define-public r-mispu
@@ -20731,7 +20744,7 @@ misreported continuous time series.  See @code{MoriÃ±a,} D,
     (description
      "There is an increasing interest in investigating how the compositions of
 microbial communities are associated with human health and disease.  In this
-package, we present a novel global testing method called @code{aMiSPU,} that is
+package, we present a novel global testing method called @code{aMiSPU}, that is
 highly adaptive and thus high powered across various scenarios, alleviating the
 issue with the choice of a phylogenetic distance.  Our simulations and real data
 analysis demonstrated that @code{aMiSPU} test was often more powerful than
@@ -20759,7 +20772,7 @@ several competing methods while correctly controlling type I error rates.")
 by missing covariates in additive partially linear model.  PRIME conducts
 imputation and regression simultaneously with known and unknown model structure.
  More details can be referred to Zishu Zhan, Xiangjie Li and Jingxiao Zhang.
-(2022) @code{<arXiv:2205.14994>.}")
+(2022) <@code{arXiv:2205.14994>}.")
     (license license:gpl3)))
 
 (define-public r-mispr
@@ -21065,7 +21078,7 @@ Association, <doi: 10.1080/01621459.2019.1635485>.")
                              r-corpcor))
     (home-page "https://pubmed.ncbi.nlm.nih.gov/22723856/")
     (synopsis "Combined miRNA- And mRNA-Testing")
-    (description "Package for combined @code{miRNA-} and @code{mRNA-testing.}")
+    (description "Package for combined @code{miRNA}- and @code{mRNA-testing}.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-mirtcat
@@ -21166,8 +21179,8 @@ profile of @code{microRNA} and pathways by the hypergeometric statistic test.
 The gene sets of pathways derived from the three public databases (Kyoto
 Encyclopedia of Genes and Genomes ('KEGG'); Reactome'; Biocarta') and the target
 gene sets of @code{microRNA} are provided by four
-@code{databases('TarBaseV6.0';} mir2Disease'; @code{miRecords';}
-@code{miRTarBase';).} (2) This package can quantify the change of correlation
+databases('@code{TarBaseV6.0}'; mir2Disease'; @code{miRecords}';
+@code{miRTarBase}';). (2) This package can quantify the change of correlation
 between @code{microRNA} for each pathway(or prior gene set) based on a
 @code{microRNA} expression data with cases and controls. (3) This package uses
 the weighted Kolmogorov-Smirnov statistic to calculate an enrichment score (ES)
@@ -21192,13 +21205,13 @@ This package can provide the visualization of the results.")
     (home-page "https://cran.r-project.org/package=miRNAss")
     (synopsis "Genome-Wide Discovery of Pre-miRNAs with few Labeled Examples")
     (description
-     "Machine learning method specifically designed for @code{pre-miRNA} prediction.
+     "Machine learning method specifically designed for pre-@code{miRNA} prediction.
 It takes advantage of unlabeled sequences to improve the prediction rates even
 when there are just a few positive examples, when the negative examples are
 unreliable or are not good representatives of its class.  Furthermore, the
 method can automatically search for negative examples if the user is unable to
 provide them. @code{MiRNAss} can find a good boundary to divide the
-@code{pre-miRNAs} from other groups of sequences; it automatically optimizes the
+pre-@code{miRNAs} from other groups of sequences; it automatically optimizes the
 threshold that defines the classes boundaries, and thus, it is robust to high
 class imbalance.  Each step of the method is scalable and can handle large
 volumes of data.")
@@ -21222,7 +21235,7 @@ volumes of data.")
     (description
      "This package provides a complete and dedicated analytical toolbox for quality
 control and diagnosis based on subject-related measurements of micro-RNA
-@code{(miRNA)} expressions.  The package consists of a set of functions that
+(@code{miRNA}) expressions.  The package consists of a set of functions that
 allow to train, optimize and use a Bayesian classifier that relies on multiplets
 of measured @code{miRNA} expressions.  The package also implements the quality
 control tools required to preprocess input datasets.  In addition, the package
@@ -21230,10 +21243,10 @@ provides a function to carry out a statistical analysis of @code{miRNA}
 expressions, which can give insights to improve the classifier's performance.
 The method implemented in the package was first introduced in L. Ricci, V. Del
 Vescovo, C. Cantaloni, M. Grasso, M. Barbareschi and M. A. Denti, \"Statistical
-analysis of a Bayesian classifier based on the expression of @code{miRNAs\",} BMC
+analysis of a Bayesian classifier based on the expression of @code{miRNAs}\", BMC
 Bioinformatics 16:287, 2015 <doi:10.1186/s12859-015-0715-9>.  The package is
 thoroughly described in M. Castelluzzo, A. Perinelli, S. Detassis, M. A. Denti
-and L. Ricci, @code{\"MiRNA-QC-and-Diagnosis:} An R package for diagnosis based
+and L. Ricci, \"@code{MiRNA-QC-and-Diagnosis}: An R package for diagnosis based
 on @code{MiRNA} expression\", @code{SoftwareX} 12:100569, 2020
 <doi:10.1016/j.softx.2020.100569>.  Please cite both these works if you use the
 package for your analysis.  DISCLAIMER: The software in this package is for
@@ -21314,18 +21327,18 @@ incorporate phylogenetic tree information.")
     (home-page "https://cran.r-project.org/package=miRetrieve")
     (synopsis "miRNA Text Mining in Abstracts")
     (description
-     "Providing tools for @code{microRNA} @code{(miRNA)} text mining.
+     "Providing tools for @code{microRNA} (@code{miRNA}) text mining.
 @code{miRetrieve} summarizes @code{miRNA} literature by extracting, counting,
 and analyzing @code{miRNA} names, thus aiming at gaining biological insights
 into a large amount of text within a short period of time.  To do so,
 @code{miRetrieve} uses regular expressions to extract @code{miRNAs} and
 tokenization to identify meaningful @code{miRNA} associations.  In addition,
 @code{miRetrieve} uses the latest @code{miRTarBase} version 8.0 (Hsi-Yuan Huang
-et al. (2020) @code{\"miRTarBase} 2020: updates to the experimentally validated
+et al. (2020) \"@code{miRTarBase} 2020: updates to the experimentally validated
 @code{microRNAâtarget} interaction database\" <doi:10.1093/nar/gkz896>) to
 display field-specific @code{miRNA-mRNA} interactions.  The most important
 functions are available as a Shiny web application under
-@code{<https://miretrieve.shinyapps.io/miRetrieve/>.}")
+<https://miretrieve.shinyapps.io/@code{miRetrieve/>}.")
     (license license:gpl3)))
 
 (define-public r-mires
@@ -21389,19 +21402,19 @@ invariance.  Martin, Williams, and Rast (2020) <doi:10.31234/osf.io/qbdjt>.")
     (description
      "Fitting recurrent events survival models for left-censored data with multiple
 imputation of the number of previous episodes.  See @code{HernÃ¡ndez-Herrera} G,
-@code{MoriÃ±a} D, Navarro A. (2020) @code{<arXiv:2007.15031>.}")
+@code{MoriÃ±a} D, Navarro A. (2020) <@code{arXiv:2007.15031>}.")
     (license license:gpl2+)))
 
 (define-public r-mirai-promises
   (package
     (name "r-mirai-promises")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mirai.promises" version))
               (sha256
                (base32
-                "0dq8jw175fviw2399c9ls94nsg5c5276pkajy0hcmsxf7zcg9sjk"))))
+                "1nj5hwxssgb4bs9g904a4966s1bhfdnqpddhblsj8fqc98grzf33"))))
     (properties `((upstream-name . "mirai.promises")))
     (build-system r-build-system)
     (propagated-inputs (list r-promises r-mirai r-later))
@@ -21414,7 +21427,7 @@ with promise objects from the promises package by Cheng (2021)
 <https://CRAN.R-project.org/package=promises>.  This facilitates their use with
 packages plumber by Schloerke and Allen (2022)
 <https://CRAN.R-project.org/package=plumber> and shiny by Cheng, Allaire,
-Sievert, Schloerke, Xie, Allen, @code{McPherson,} Dipert and Borges (2022)
+Sievert, Schloerke, Xie, Allen, @code{McPherson}, Dipert and Borges (2022)
 <https://CRAN.R-project.org/package=shiny>.")
     (license license:gpl3+)))
 
@@ -21521,12 +21534,12 @@ distributions.")
     (description
      "It can be used to create/encode molecular \"license-plates\" from sequences and to
 also decode the \"license-plates\" back to sequences.  While initially created for
-transfer RNA-derived small fragments @code{(tRFs),} this tool can be used for
-any genomic sequences including but not limited to: @code{tRFs,}
-@code{microRNAs,} etc.  The detailed information can reference to Pliatsika V,
+transfer RNA-derived small fragments (@code{tRFs}), this tool can be used for
+any genomic sequences including but not limited to: @code{tRFs},
+@code{microRNAs}, etc.  The detailed information can reference to Pliatsika V,
 Loher P, Telonis AG, Rigoutsos I (2016) <doi:10.1093/bioinformatics/btw194>.  It
-can also be used to annotate @code{tRFs.} The detailed information can reference
-to Loher P, Telonis AG, Rigoutsos I (2017) <doi:10.1038/srep41184>.")
+can also be used to annotate @code{tRFs}.  The detailed information can
+reference to Loher P, Telonis AG, Rigoutsos I (2017) <doi:10.1038/srep41184>.")
     (license license:gpl2+)))
 
 (define-public r-minsnps
@@ -21669,6 +21682,32 @@ to the @code{minMSE-method} as proposed by Schneider and Schlather (2017)
 groups and any allocation ratios by minimization algorithms.")
     (license license:gpl2+)))
 
+(define-public r-minioclient
+  (package
+    (name "r-minioclient")
+    (version "0.0.5")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "minioclient" version))
+              (sha256
+               (base32
+                "02bax8ld39z3nqsqzx0nlqydxyg5mp9r22s5dlcdh5041fgbhl5r"))))
+    (properties `((upstream-name . "minioclient")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-processx r-jsonlite r-glue r-fs))
+    (home-page "https://github.com/cboettig/minioclient")
+    (synopsis "Interface to the 'MinIO' Client")
+    (description
+     "An R interface to the @code{MinIO} Client.  The @code{MinIO} Client ('mc')
+provides a modern alternative to UNIX commands like ls', cat', cp', mirror',
+diff', find etc.  It supports filesystems and Amazon \"S3\" compatible cloud
+storage service (\"AWS\" Signature v2 and v4).  This package provides convenience
+functions for installing the @code{MinIO} client and running any operations, as
+described in the official documentation,
+<https://min.io/docs/minio/linux/reference/minio-mc.html?ref=docs-redirect>.
+This package provides a flexible and high-performance alternative to aws.s3'.")
+    (license license:expat)))
+
 (define-public r-minimeta
   (package
     (name "r-minimeta")
@@ -21736,14 +21775,14 @@ results inside R, in case more specific analyses are needed.")
     (home-page "https://cran.r-project.org/package=minimaxdesign")
     (synopsis "Minimax and Minimax Projection Designs")
     (description
-     "This package provides two main functions, minimax() and @code{miniMaxPro(),} for
+     "This package provides two main functions, minimax() and @code{miniMaxPro}(), for
 computing minimax and minimax projection designs using the minimax clustering
 algorithm in Mak and Joseph (2018) <DOI:10.1080/10618600.2017.1302881>.  Current
 design region options include the unit hypercube (\"hypercube\"), the unit simplex
 (\"simplex\"), the unit ball (\"ball\"), as well as user-defined constraints on the
 unit hypercube (\"custom\").  Minimax designs can also be computed on
 user-provided images using the function minimax.map().  Design quality can be
-assessed using the function @code{mMdist(),} which computes the minimax (fill)
+assessed using the function @code{mMdist}(), which computes the minimax (fill)
 distance of a design.")
     (license license:gpl2+)))
 
@@ -21943,7 +21982,7 @@ C implementation of minepy can be found at
     (synopsis "Bayesian Design for Minimum Effective Dosing-Finding Trial")
     (description
      "The nonparametric two-stage Bayesian adaptive design is a novel phase II
-clinical trial design for finding the minimum effective dose @code{(MinED).}
+clinical trial design for finding the minimum effective dose (@code{MinED}).
 This design is motivated by the top priority and concern of clinicians when
 testing a new drug, which is to effectively treat patients and minimize the
 chance of exposing them to subtherapeutic or overly toxic doses.  It is used to
@@ -21966,7 +22005,7 @@ design single-agent trials.")
     (home-page "https://cran.r-project.org/package=mined")
     (synopsis "Minimum Energy Designs")
     (description
-     "This is a method @code{(MinED)} for mining probability distributions using
+     "This is a method (@code{MinED}) for mining probability distributions using
 deterministic sampling which is proposed by Joseph, Wang, Gu, Lv, and Tuo (2019)
 <DOI:10.1080/00401706.2018.1552203>.  The @code{MinED} samples can be used for
 approximating the target distribution.  They can be generated from a density
@@ -22006,30 +22045,6 @@ information on Citrus, please see: Bruggner et al. (2014)
 <doi:10.1073/pnas.1408792111>.  To download the citrus package, please see
 <https://github.com/nolanlab/citrus>.")
     (license license:gpl2)))
-
-(define-public r-mindr
-  (package
-    (name "r-mindr")
-    (version "1.3.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "mindr" version))
-              (sha256
-               (base32
-                "0nv3wripimpbi8zf1h8fkj80ibrzava36kcai9f1gl8frincafr9"))))
-    (properties `((upstream-name . "mindr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-knitr r-htmlwidgets))
-    (native-inputs (list esbuild))
-    (home-page "https://github.com/pzhaonet/mindr")
-    (synopsis "Generate Mind Maps with R")
-    (description
-     "Convert Markdown ('.md') or R Markdown ('.Rmd') texts, R scripts, and directory
-structures, into mind map widgets or files ('.mm'), and vice versa.
-@code{\"FreeMind\"} mind map ('.mm') files can be opened by or imported to common
-mindmap software such as @code{FreeMind}
-(<http://freemind.sourceforge.net/wiki/index.php/Main_Page>).")
-    (license license:gpl3)))
 
 (define-public r-mindonstats
   (package
@@ -22096,7 +22111,7 @@ Linear Mixed Model.  The package follows the approach of Datta, Day and Basawa
     (description
      "Calculate dissolved gas concentrations from raw MIMS (Membrane Inlet Mass
 Spectrometer) signal data.  Use mimsy() on a formatted CSV file to return
-dissolved gas concentrations (mg and @code{microMole)} of N2, O2, Ar based on
+dissolved gas concentrations (mg and @code{microMole}) of N2, O2, Ar based on
 gas solubility at temperature, pressure, and salinity.  See references Benson
 and Krause (1984) <DOI:10.4319/lo.1992.37.6.1307>, Garcia and Gordon (1992)
 <DOI:10.4319/lo.1984.29.3.0620>, Stull (1947) <DOI:10.1021/ie50448a022>, and
@@ -22185,7 +22200,7 @@ metabolomics measurements assayed by Nightingale Health, comparing the
 distributions with a large Consortium (BBMRI-nl); project previously published
 metabolic scores [<doi:10.1016/j.ebiom.2021.103764>,
 <doi:10.1161/CIRCGEN.119.002610>, <doi:10.1038/s41467-019-11311-9>,
-@code{<doi:10.7554/eLife.63033>,} <doi:10.1161/CIRCULATIONAHA.114.013116>,
+<doi:10.7554/@code{eLife.63033>}, <doi:10.1161/CIRCULATIONAHA.114.013116>,
 <doi:10.1007/s00125-019-05001-w>]; and calibrate the metabolic surrogate values
 to a desired dataset.")
     (license license:gpl3)))
@@ -22218,7 +22233,7 @@ binary and count data (simultaneously).  Main effects such as column means,
 group effects, or effects of row-column side information (e.g. user/item
 attributes in recommendation system) may also be modelled in addition to the
 low-rank model. @code{GeneviÃ¨ve} Robin, Olga Klopp, Julie Josse, Ãric
-Moulines, Robert Tibshirani (2018) @code{<arXiv:1806.09734>.}")
+Moulines, Robert Tibshirani (2018) <@code{arXiv:1806.09734>}.")
     (license license:gpl3)))
 
 (define-public r-milr
@@ -22333,7 +22348,7 @@ prediction on whole slide images.  The mildsvm package provides an easy way to
 learn from this data by training Support Vector Machine (SVM)-based classifiers.
  It also contains helpful functions for building and printing multiple instance
 data frames.  The core methods from mildsvm come from the following references:
-Kent and Yu (2022) @code{<arXiv:2206.14704>;} Xiao, Liu, and Hao (2018)
+Kent and Yu (2022) <@code{arXiv:2206.14704>}; Xiao, Liu, and Hao (2018)
 <doi:10.1109/TNNLS.2017.2766164>; Muandet et al. (2012)
 <https://proceedings.neurips.cc/paper/2012/file/9bf31c7ff062936a96d3c8bd1f8f2ff3-Paper.pdf>;
 Chu and Keerthi (2007) <doi:10.1162/neco.2007.19.3.792>; and Andrews et al.
@@ -22373,7 +22388,7 @@ from <https://www.gurobi.com> after obtaining a license.")
     (description
      "An interface to build machine learning models for classification and regression
 problems.  mikropml implements the ML pipeline described by @code{TopÃ§uoÄlu}
-et al. (2020) @code{<doi:10.1128/mBio.00434-20>} with reasonable default options
+et al. (2020) <doi:10.1128/@code{mBio.00434-20>} with reasonable default options
 for data preprocessing, hyperparameter tuning, cross-validation, testing, model
 evaluation, and interpretation steps.  See the website
 <https://www.schlosslab.org/mikropml/> for more information, documentation, and
@@ -22479,8 +22494,8 @@ observational data.  This approach can be applied on a wide range of datasets
 and provide new biological insights on regulatory networks from single cell
 expression data, genomic alterations during tumor development and co-evolving
 residues in protein structures.  For more information you can refer to: Cabeli
-et al. @code{PLoS} Comp.  Bio.  2020 <doi:10.1371/journal.pcbi.1007866>, Verny
-et al. @code{PLoS} Comp.  Bio.  2017 <doi:10.1371/journal.pcbi.1005662>.")
+et al.  P@code{LoS} Comp.  Bio.  2020 <doi:10.1371/journal.pcbi.1007866>, Verny
+et al.  P@code{LoS} Comp.  Bio.  2017 <doi:10.1371/journal.pcbi.1005662>.")
     (license license:gpl2+)))
 
 (define-public r-migui
@@ -22546,7 +22561,7 @@ into traditional credit state migration (aka, \"transition\") matrices.  At a
 higher level, migrate is intended to help an analyst understand how risk moved
 in their credit portfolio over a time interval.  References to this methodology
 include: 1.  Schuermann, T. (2008) <doi:10.1002/9780470061596.risk0409>.  2.
-Perederiy, V. (2017) @code{<arXiv:1708.00062>.}")
+Perederiy, V. (2017) <@code{arXiv:1708.00062>}.")
     (license license:expat)))
 
 (define-public r-migraph
@@ -22908,7 +22923,7 @@ fashion(Wathen, J. K., & Thall, P. F. (2017) <doi: 10.1177/1740774517692302>).")
     (home-page "https://cran.r-project.org/package=midas")
     (synopsis "Turn HTML 'Shiny'")
     (description
-     "This package contains functions for converting existing @code{HTML/JavaScript}
+     "This package contains functions for converting existing HTML/@code{JavaScript}
 source into equivalent shiny functions.  Bootstraps the process of making new
 shiny functions by allowing us to turn HTML snippets directly into R functions.")
     (license license:gpl3)))
@@ -23074,7 +23089,7 @@ Davenport (2021) <doi:10.18637/jss.v097.i02>.")
      "An interface to the Microsoft 365 (formerly known as Office 365') suite of cloud
 services, building on the framework supplied by the @code{AzureGraph} package.
 Enables access from R to data stored in Teams', @code{SharePoint} Online and
-@code{OneDrive',} including the ability to list drive folder contents, upload
+@code{OneDrive}', including the ability to list drive folder contents, upload
 and download files, send messages, and retrieve data lists.  Also provides a
 full-featured Outlook email client, with the ability to send emails and manage
 emails and mail folders.")
@@ -23098,7 +23113,7 @@ emails and mail folders.")
      "Discrete Event Simulation in R and C++, with Tools for Cost-Effectiveness Analysis")
     (description
      "Discrete event simulation using both R and C++ (Karlsson et al 2016;
-@code{<doi:10.1109/eScience.2016.7870915>).} The C++ code is adapted from the
+<doi:10.1109/@code{eScience.2016.7870915>}).  The C++ code is adapted from the
 SSIM library <https://www.inf.usi.ch/carzaniga/ssim/>, allowing for
 event-oriented simulation.  The code includes a @code{SummaryReport} class for
 reporting events and costs by age and other covariates.  The C++ code is
@@ -23232,18 +23247,18 @@ time.  This version contains network visualisation functions.")
     (synopsis "Microplots (Sparklines) in 'LaTeX', 'Word', 'HTML', 'Excel'")
     (description
      "The microplot function writes a set of R graphics files to be used as microplots
-(sparklines) in tables in either @code{LaTeX',} HTML', Word', or Excel files.
-For @code{LaTeX',} we provide methods for the Hmisc::latex() generic function to
+(sparklines) in tables in either @code{LaTeX}', HTML', Word', or Excel files.
+For @code{LaTeX}', we provide methods for the Hmisc::latex() generic function to
 construct latex tabular environments which include the graphs.  These can be
 used directly with the operating system pdflatex or latex command, or by using
 one of Sweave', knitr', rmarkdown', or Emacs org-mode as an intermediary.  For
-MS Word', the @code{msWord()} function uses the flextable package to construct
+MS Word', the @code{msWord}() function uses the flextable package to construct
 Word tables which include the graphs.  There are several distinct approaches for
-constructing HTML files.  The simplest is to use the @code{msWord()} function
+constructing HTML files.  The simplest is to use the @code{msWord}() function
 with argument filetype=\"html\".  Alternatively, use either Emacs org-mode or the
-@code{htmlTable::htmlTable()} function to construct an HTML file containing
+@code{htmlTable::htmlTable}() function to construct an HTML file containing
 tables which include the graphs.  See the documentation for our as.htmlimg()
-function.  For Excel use on Windows', the file @code{examples/irisExcel.xls}
+function.  For Excel use on Windows', the file examples/@code{irisExcel.xls}
 includes VBA code which brings the individual panels into individual cells in
 the spreadsheet.  Examples in the examples and demo subdirectories are shown
 with lattice graphics, ggplot2 graphics, and base graphics.  Examples for
@@ -23400,7 +23415,7 @@ the areas contained within the package.  In version 3.0.0, the
 @code{BuildBorderGroup} function was upgraded to not use the retiring maptools',
 rgdal', and rgeos packages.  References: Carr and Pickle, Chapman and Hall/CRC,
 Visualizing Data Patterns with Micromaps, CRC Press, 2010.  Pickle, Pearson, and
-Carr (2015), @code{micromapST:} Exploring and Communicating Geospatial Patterns
+Carr (2015), @code{micromapST}: Exploring and Communicating Geospatial Patterns
 in US State Data., Journal of Statistical Software, 63(3), 1-25.,
 <https://www.jstatsoft.org/v63/i03/>.  Copyrighted 2013, 2014, 2015, 2016, 2022,
 and 2023 by Carr, Pearson and Pickle.")
@@ -23743,7 +23758,7 @@ summarize and plot the results.  The methods are described in Basagana et al.
     (description
      "Michel Rodange was a Luxembourguish writer and poet who lived in the 19th
 century.  His most notable work is Rodange (1872, ISBN:1166177424), (\"Renert
-oder de @code{FuuÃ} am Frack an a @code{Ma'nsgrÃ«Ãt\"),} but he also wrote many
+oder de @code{FuuÃ} am Frack an a Ma'@code{nsgrÃ«Ãt}\"), but he also wrote many
 more works, including Rodange, Tockert (1928)
 <https://www.autorenlexikon.lu/page/document/361/3614/1/FRE/index.html>
 (\"D'LÃ©ierchen - Dem LÃ©iweckerche @code{sÃ¤i} Lidd\") and Rodange, Welter (1929)
@@ -23781,7 +23796,7 @@ made from the plain text versions of his works available on
      "Multiple Imputation has been shown to be a flexible method to impute missing
 values by Van Buuren (2007) <doi:10.1177/0962280206074463>.  Expanding on this,
 random forests have been shown to be an accurate model by Stekhoven and Buhlmann
-@code{<arXiv:1105.0828>} to impute missing values in datasets.  They have the
+<@code{arXiv:1105.0828>} to impute missing values in datasets.  They have the
 added benefits of returning out of bag error and variable importance estimates,
 as well as being simple to run in parallel.")
     (license license:expat)))
@@ -24092,7 +24107,7 @@ PC and the FCI (Fast Causal Inference) algorithm for constraint-based causal
 discovery in incomplete and multiply imputed datasets.  Foraita R, Friemel J,
 GÃ¼nther K, Behrens T, Bullerdiek J, Nimzyk R, Ahrens W, Didelez V (2020)
 <doi:10.1111/rssa.12565>; Andrews RM, Foraita R, Didelez V, Witte J (2021)
-@code{<arXiv:2108.13395>;} Witte J, Foraita R, Didelez V (2022)
+<@code{arXiv:2108.13395>}; Witte J, Foraita R, Didelez V (2022)
 <doi:10.1002/sim.9535>.")
     (license license:gpl3+)))
 
@@ -24401,41 +24416,41 @@ data.  Implementing the method described in Dai and Lopez-Pintado (2022)
 histocompatibility complex (MHC) data.  The functions are tailored for amplicon
 data sets that have been filtered using the dada2 method (for more information
 on dada2, visit <https://benjjneb.github.io/dada2/> ), but even other types of
-data sets can be analyzed.  The @code{ReplMatch()} function matches replicates
-in data sets in order to evaluate genotyping success.  The @code{GetReplTable()}
-and @code{GetReplStats()} functions perform such an evaluation.  The
-@code{CreateFas()} function creates a fasta file with all the sequences in the
-data set.  The @code{CreateSamplesFas()} function creates individual fasta files
-for each sample in the data set.  The @code{DistCalc()} function calculates
+data sets can be analyzed.  The @code{ReplMatch}() function matches replicates
+in data sets in order to evaluate genotyping success.  The @code{GetReplTable}()
+and @code{GetReplStats}() functions perform such an evaluation.  The
+@code{CreateFas}() function creates a fasta file with all the sequences in the
+data set.  The @code{CreateSamplesFas}() function creates individual fasta files
+for each sample in the data set.  The @code{DistCalc}() function calculates
 Grantham, Sandberg, or p-distances from pairwise comparisons of all sequences in
 a data set, and mean distances of all pairwise comparisons within each sample in
 a data set.  The function additionally outputs five tables with physico-chemical
 z-descriptor values (based on Sandberg et al.  1998) for each amino acid
 position in all sequences in the data set.  These tables may be useful for
 further downstream analyses, such as estimation of MHC supertypes.  The
-@code{BootKmeans()} function is a wrapper for the kmeans() function of the stats
+@code{BootKmeans}() function is a wrapper for the kmeans() function of the stats
 package, which allows for bootstrapping.  Bootstrapping k-estimates may be
 desirable in data sets, where e.g. BIC- vs. k-values do not produce clear
-inflection points (\"elbows\"). @code{BootKmeans()} performs multiple runs of
+inflection points (\"elbows\"). @code{BootKmeans}() performs multiple runs of
 kmeans() and estimates optimal k-values based on a user-defined threshold of BIC
 reduction.  The method is an automated and bootstrapped version of visually
-inspecting elbow plots of BIC- vs. k-values.  The @code{ClusterMatch()} function
+inspecting elbow plots of BIC- vs. k-values.  The @code{ClusterMatch}() function
 is a tool for evaluating whether different k-means() clustering models identify
 similar clusters, and summarize bootstrap model stats as means for different
 estimated values of k.  It is designed to take files produced by the
-@code{BootKmeans()} function as input, but other data can be analysed if the
+@code{BootKmeans}() function as input, but other data can be analysed if the
 descriptions of the required data formats are observed carefully.  The
-@code{PapaDiv()} function compares parent pairs in the data set and calculate
+@code{PapaDiv}() function compares parent pairs in the data set and calculate
 their joint MHC diversity, taking into account sequence variants that occur in
-both parents.  The @code{HpltFind()} function infers putative haplotypes from
-families in the data set.  The @code{GetHpltTable()} and @code{GetHpltStats()}
+both parents.  The @code{HpltFind}() function infers putative haplotypes from
+families in the data set.  The @code{GetHpltTable}() and @code{GetHpltStats}()
 functions evaluate the accuracy of the haplotype inference.  The
-@code{CreateHpltOccTable()} function creates a binary (logical)
-haplotype-sequence occurrence matrix from the output of @code{HpltFind(),} for
+@code{CreateHpltOccTable}() function creates a binary (logical)
+haplotype-sequence occurrence matrix from the output of @code{HpltFind}(), for
 easy overview of which sequences are present in which haplotypes.  The
-@code{HpltMatch()} function compares haplotypes to help identify overlapping and
-potentially identical types.  The @code{NestTablesXL()} function translates the
-output from @code{HpltFind()} to an Excel workbook, that provides a convenient
+@code{HpltMatch}() function compares haplotypes to help identify overlapping and
+potentially identical types.  The @code{NestTablesXL}() function translates the
+output from @code{HpltFind}() to an Excel workbook, that provides a convenient
 overview for evaluation and curating of the inferred putative haplotypes.")
     (license license:expat)))
 
@@ -24456,7 +24471,7 @@ overview for evaluation and curating of the inferred putative haplotypes.")
     (home-page "https://github.com/richelbilderbeek/mhcnuggetsr/")
     (synopsis "Call MHCnuggets")
     (description
-     "MHCnuggets @code{(<https://github.com/KarchinLab/mhcnuggets>)} is a Python tool
+     "MHCnuggets (<https://github.com/@code{KarchinLab/mhcnuggets>}) is a Python tool
 to predict MHC class I and MHC class II epitopes.  This package allows one to
 call MHCnuggets from R.")
     (license license:gpl3)))
@@ -24868,15 +24883,15 @@ an implementation of Chen (2013) <doi:10.1002/bimj.201200195>.")
     (synopsis "Mosquito Gene Drive Explorer 2")
     (description
      "This package provides a simulation modeling framework which significantly
-extends capabilities from the @code{MGDrivE} simulation package via a new
+extends capabilities from the MG@code{DrivE} simulation package via a new
 mathematical and computational framework based on stochastic Petri nets.  For
-more information about @code{MGDrivE',} see our publication: SÃ¡nchez et al.
+more information about MG@code{DrivE}', see our publication: SÃ¡nchez et al.
 (2019) <doi:10.1111/2041-210X.13318> Some of the notable capabilities of
-@code{MGDrivE2} include: incorporation of human populations, epidemiological
+MG@code{DrivE2} include: incorporation of human populations, epidemiological
 dynamics, time-varying parameters, and a continuous-time simulation framework
 with various sampling algorithms for both deterministic and stochastic
-interpretations. @code{MGDrivE2} relies on the genetic inheritance structures
-provided in package @code{MGDrivE',} so we suggest installing that package
+interpretations.  MG@code{DrivE2} relies on the genetic inheritance structures
+provided in package MG@code{DrivE}', so we suggest installing that package
 initially.")
     (license license:gpl3)))
 
@@ -24963,7 +24978,7 @@ ggplot2'.")
     (synopsis "Multiscale Graph Correlation")
     (description
      "Multiscale Graph Correlation (MGC) is a framework developed by Vogelstein et al.
-(2019) @code{<DOI:10.7554/eLife.41690>} that extends global correlation
+(2019) <DOI:10.7554/@code{eLife.41690>} that extends global correlation
 procedures to be multiscale; consequently, MGC tests typically require far fewer
 samples than existing methods for a wide variety of dependence structures and
 dimensionalities, while maintaining computational efficiency.  Moreover, MGC
@@ -25218,7 +25233,7 @@ observed on different dimensional domains.  The estimation algorithm relies on
 univariate basis expansions for each element of the multivariate functional data
 (Happ & Greven, 2018) <doi:10.1080/01621459.2016.1273115>.  Multivariate and
 univariate functional data objects are represented by S4 classes for this type
-of data implemented in the package @code{funData'.} For more details on the
+of data implemented in the package @code{funData}'.  For more details on the
 general concepts of both packages and a case study, see Happ-Kurz (2020)
 <doi:10.18637/jss.v093.i05>.")
     (license license:gpl2)))
@@ -25374,7 +25389,7 @@ exogenous covariate sampled at a lower frequency.")
     (home-page "https://cran.r-project.org/package=mFDP")
     (synopsis "Flexible Control of the mFDP")
     (description
-     "Computes bounds for the median of the false discovery proportion @code{(mFDP).}
+     "Computes bounds for the median of the false discovery proportion (@code{mFDP}).
 These 50 percent confidence bounds for the FDP are simultaneously valid.  The
 method takes a vector of p-values as input.  Also provides @code{mFDP-adjusted}
 p-values.  Can be used for flexible @code{mFDP} control.")
@@ -25401,7 +25416,7 @@ p-values.  Can be used for flexible @code{mFDP} control.")
 the Multiscale Multifractal Analysis (MMA).  The MFDFA() function proposed in
 this package was used in Laib et al. (<doi:10.1016/j.chaos.2018.02.024> and
 <doi:10.1063/1.5022737>).  See references for more information.  Interested
-users can find a parallel version of the MFDFA() function on @code{GitHub.}")
+users can find a parallel version of the MFDFA() function on @code{GitHub}.")
     (license license:gpl3)))
 
 (define-public r-mfdb
@@ -25927,10 +25942,10 @@ computationally efficient sparse matrix representations.  Interfaces to the R
 packages INLA and inlabru are also provided, which facilitate working with
 Bayesian statistical models on metric graphs.  The main references for the
 methods are Bolin, Simas and Wallin (2022)
-@code{<doi:10.48550/arXiv.2205.06163>,} Bolin, Kovacs, Kumar and Simas (2023)
-@code{<doi:10.48550/arXiv.2302.03995>} and Bolin, Simas and Wallin (2023)
-@code{<doi:10.48550/arXiv.2304.03190>} and
-@code{<doi:10.48550/arXiv.2304.10372>.}")
+<doi:10.48550/@code{arXiv.2205.06163>}, Bolin, Kovacs, Kumar and Simas (2023)
+<doi:10.48550/@code{arXiv.2302.03995>} and Bolin, Simas and Wallin (2023)
+<doi:10.48550/@code{arXiv.2304.03190>} and
+<doi:10.48550/@code{arXiv.2304.10372>}.")
     (license license:gpl2+)))
 
 (define-public r-metrica
@@ -26092,7 +26107,7 @@ understand/maintain.  Learn more about the metools at
      "Meteorological Tools following the FAO56 irrigation paper of Allen et al. (1998)
 [1].  Functions for calculating: reference evapotranspiration (ETref),
 extraterrestrial radiation (Ra), net radiation (Rn), saturation vapor pressure
-@code{(satVP),} global radiation (Rs), soil heat flux (G), daylight hours, and
+(@code{satVP}), global radiation (Rs), soil heat flux (G), daylight hours, and
 more. [1] Allen, R. G., Pereira, L. S., Raes, D., & Smith, M. (1998).  Crop
 evapotranspiration-Guidelines for computing crop water requirements-FAO
 Irrigation and drainage paper 56.  FAO, Rome, 300(9).")
@@ -26215,10 +26230,10 @@ E-value is recently studied to facilitate multiple testing correction based on
 V. Vovk and R. Wang (2021) <doi:10.1214/20-AOS2020>.  This package provides
 E-value calculation for DNA methylation data and RNA-seq data.  Currently, five
 data formats are supported: DNA methylation levels using DMR detection tools
-@code{(BiSeq,} DMRfinder, @code{MethylKit,} Metilene and other DNA methylation
+(@code{BiSeq}, DMRfinder, @code{MethylKit}, Metilene and other DNA methylation
 tools) and RNA-seq data.  The relevant references are listed below: Katja
-Hebestreit and Hans-Ulrich Klein (2022) @code{<doi:10.18129/B9.bioc.BiSeq>;}
-Altuna Akalin et.al (2012) @code{<doi:10.18129/B9.bioc.methylKit>.}")
+Hebestreit and Hans-Ulrich Klein (2022) <doi:10.18129/B9.bioc.@code{BiSeq>};
+Altuna Akalin et.al (2012) <doi:10.18129/B9.bioc.@code{methylKit>}.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-metest
@@ -26329,8 +26344,8 @@ for complex and non-normal distributions ('meteorits') are originally introduced
 and written in Matlab by Faicel Chamroukhi.  The references are mainly the
 following ones.  The references are mainly the following ones.  Chamroukhi F.,
 Same A., Govaert, G. and Aknin P. (2009) <doi:10.1016/j.neunet.2009.06.040>.
-Chamroukhi F. (2010) @code{<https://chamroukhi.com/FChamroukhi-PhD.pdf>.}
-Chamroukhi F. (2015) @code{<arXiv:1506.06707>.} Chamroukhi F. (2015)
+Chamroukhi F. (2010) <https://chamroukhi.com/FChamroukhi-@code{PhD.pdf>}.
+Chamroukhi F. (2015) <@code{arXiv:1506.06707>}.  Chamroukhi F. (2015)
 <https://chamroukhi.com/FChamroukhi-HDR.pdf>.  Chamroukhi F. (2016)
 <doi:10.1109/IJCNN.2016.7727580>.  Chamroukhi F. (2016)
 <doi:10.1016/j.neunet.2016.03.002>.  Chamroukhi F. (2017)
@@ -26413,7 +26428,7 @@ a landscape [De Caceres et al. (2018) <doi:10.1016/j.envsoft.2018.08.003>].")
 and as a time series for a location.  Currently it works with GFS
 <https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast>,
 @code{MeteoGalicia}
-@code{<https://www.meteogalicia.gal/web/modelos/threddsIndex.action>,} NAM
+<https://www.meteogalicia.gal/web/modelos/@code{threddsIndex.action>}, NAM
 <https://www.ncei.noaa.gov/products/weather-climate-models/north-american-mesoscale>,
 and RAP
 <https://www.ncei.noaa.gov/products/weather-climate-models/rapid-refresh-update>.")
@@ -26448,7 +26463,7 @@ fronts.  For this purpose, separate function are provided that allow the
 detection of fronts based on the thermic front parameter [Hewson, 1998,
 <doi:10.1017/S1350482798000553>], the F diagnostic [Parfitt et al., 2017,
 <doi:10.1002/2017GL073662>] and the DSI [Mack et al., 2022,
-@code{<arXiv:2208.11438>].}")
+<@code{arXiv:2208.11438>}].")
     (license license:gpl2+)))
 
 (define-public r-meteo
@@ -26610,7 +26625,7 @@ the funnel plot in the context of meta-analysis are provided.")
      "Collection of functions to compute within-study covariances for different effect
 sizes, data visualization, and single and multiple imputations for missing data.
  Effect sizes include correlation (r), mean difference (MD), standardized mean
-difference (SMD), log odds ratio @code{(logOR),} log risk ratio @code{(logRR),}
+difference (SMD), log odds ratio (@code{logOR}), log risk ratio (@code{logRR}),
 and risk difference (RD).")
     (license license:gpl2+)))
 
@@ -26641,7 +26656,7 @@ and risk difference (RD).")
 than a threshold of scientific importance (function prop_stronger), to
 nonparametrically characterize the distribution of effects in a meta-analysis
 (calib_ests, pct_pval), to make effect size conversions (r_to_d, r_to_z, z_to_r,
-@code{d_to_logRR),} to compute and format inference in a meta-analysis
+d_to_@code{logRR}), to compute and format inference in a meta-analysis
 (format_CI, format_stat, tau_CI), to scrape results from existing meta-analyses
 for re-analysis (scrape_meta, parse_CI_string, ci_to_var).")
     (license license:gpl2)))
@@ -27537,7 +27552,7 @@ to find differentially expressed genes.")
 metabolomics data for convenient data handling, statistics and downstream
 analysis.  The resulting format corresponds to input data of the Shiny app
 @code{MetaboExtract}
-@code{(<https://www.metaboextract.shiny.dkfz.de/MetaboExtract/>).}")
+(<https://www.metaboextract.shiny.dkfz.de/@code{MetaboExtract/>}).")
     (license license:gpl3)))
 
 (define-public r-metalonda
@@ -27611,7 +27626,7 @@ Study Reports and Submission\" by Zhang et al. (2022) <https://r4csr.org/>.")
     (synopsis "ADaM Metadata Structure")
     (description
      "This package provides a metadata structure for clinical data analysis and
-reporting based on Analysis Data Model @code{(ADaM)} datasets.  The package
+reporting based on Analysis Data Model (A@code{DaM}) datasets.  The package
 simplifies clinical analysis and reporting tool development by defining
 standardized inputs, outputs, and workflow.  The package can be used to create
 analysis and reporting planning grid, mock table, and validated analysis and
@@ -27780,7 +27795,7 @@ described in: <http://biorxiv.org/content/early/2016/08/25/071514>.")
     (description
      "An ensemble meta-prediction framework to integrate multiple regression models
 into a current study.  Gu, T., Taylor, J.M.G. and Mukherjee, B. (2020)
-@code{<arXiv:2010.09971>.} A meta-analysis framework along with two weighted
+<@code{arXiv:2010.09971>}.  A meta-analysis framework along with two weighted
 estimators as the ensemble of empirical Bayes estimators, which combines the
 estimates from the different external models.  The proposed framework is
 flexible and robust in the ways that (i) it is capable of incorporating external
@@ -27910,13 +27925,13 @@ Ecology and Evolution 7, 323-330 <doi:10.1111/2041-210X.12472>.")
 (define-public r-metage
   (package
     (name "r-metage")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "metaGE" version))
               (sha256
                (base32
-                "10kg9jnxg6bkv5wfbgpw1mc0kh7l9bsd57kkxrjffh7ssgapniyr"))))
+                "0fi56hjl8lixwd0xakbyq44klgz6mlc7pdsf34x19cjgiq5559p8"))))
     (properties `((upstream-name . "metaGE")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -27927,23 +27942,23 @@ Ecology and Evolution 7, 323-330 <doi:10.1111/2041-210X.12472>.")
                              r-qqman
                              r-purrr
                              r-ks
+                             r-gplots
                              r-ggrepel
                              r-ggplot2
                              r-future
                              r-emdbook
                              r-dplyr
                              r-data-table
-                             r-corrplot
-                             r-complexheatmap
-                             r-circlize))
+                             r-corrplot))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=metaGE")
     (synopsis
      "Meta-Analysis for Detecting Genotype x Environment Associations")
     (description
      "Meta-analysis of genome-wide association studies for studying Genotype x
 Environment interactions.  The 4 main functions of the package
-@code{metaGE.collect(),} @code{metaGE.cor(),} @code{metaGE.fit()} and
-@code{metaGE.test()} correspond to 4 steps to perform the meta-analysis:
+@code{metaGE.collect}(), @code{metaGE.cor}(), @code{metaGE.fit}() and
+@code{metaGE.test}() correspond to 4 steps to perform the meta-analysis:
 Collecting the results of genome-wide association studies data from different
 files; Inferring the inter-environment correlation matrix; Performing global
 test procedure for quantitative trait loci detection (using a Fixed or Random
@@ -28027,7 +28042,7 @@ of classic meta-analysis is that the studies being aggregated are conceptually
 similar, and ideally, close replications.  However, in many fields, there is
 substantial heterogeneity between studies on the same topic.  Classic
 meta-analysis lacks the power to assess more than a handful of univariate
-moderators. @code{MetaForest,} by contrast, has substantial power to explore
+moderators. @code{MetaForest}, by contrast, has substantial power to explore
 heterogeneity in meta-analysis.  It can identify important moderators from a
 larger set of potential candidates, even with as little as 20 studies (Van
 Lissa, in preparation).  This is an appealing quality, because many
@@ -28171,7 +28186,7 @@ paths can be plotted to produce publication quality images.")
     (synopsis "Extract and Summarise Data from Published Figures")
     (description
      "High-throughput, flexible and reproducible extraction of data from figures in
-primary research papers. @code{metaDigitise()} can extract data and / or
+primary research papers. @code{metaDigitise}() can extract data and / or
 automatically calculate summary statistics for users from box plots, bar plots
 (e.g., mean and errors), scatter plots and histograms.")
     (license license:gpl2+)))
@@ -28349,7 +28364,7 @@ visualize the results as heat maps, traffic light plots, and more.")
     (description
      "This package implements routines for metagenome sample taxonomy assignments
 collection, aggregation, and visualization.  Accepts the EDGE-formatted output
-from GOTTCHA/GOTTCHA2, BWA, Kraken, @code{MetaPhlAn,} DIAMOND, and Pangia.
+from GOTTCHA/GOTTCHA2, BWA, Kraken, @code{MetaPhlAn}, DIAMOND, and Pangia.
 Produces SVG and PDF heatmap-like plots comparing taxa abundances across
 projects.")
     (license license:gpl2)))
@@ -28532,6 +28547,7 @@ acquired in a certain period of time.  At least three QC per day are required.")
     (propagated-inputs (list r-webchem
                              r-rpart
                              r-rlang
+                             r-rdisop
                              r-plyr
                              r-pcamethods
                              r-mixomics
@@ -28719,7 +28735,7 @@ components models to metabolomic spectral data.")
      "Data sets from a variety of biological sample matrices, analysed using a number
 of mass spectrometry based metabolomic analytical techniques.  The example data
 sets are stored remotely using @code{GitHub} releases
-@code{<https://github.com/aberHRML/metaboData/releases>} which can be accessed
+<https://github.com/@code{aberHRML/metaboData/releases>} which can be accessed
 from R using the package.  The package also includes the abr1 FIE-MS data set
 from the FIEmspro package <https://users.aber.ac.uk/jhd/>
 <doi:10.1038/nprot.2007.511>.")
@@ -28792,8 +28808,8 @@ meta-analyses, but some trials use other summary statistics such as the median
 and quartiles to report the results.  Therefore, researchers need to transform
 those information back to the sample mean and standard deviation.  This package
 implemented sample mean estimators by Luo et al. (2016)
-@code{<arXiv:1505.05687>,} sample standard deviation estimators by Wan et al.
-(2014) @code{<arXiv:1407.8038>,} and the best linear unbiased estimators (BLUEs)
+<@code{arXiv:1505.05687>}, sample standard deviation estimators by Wan et al.
+(2014) <@code{arXiv:1407.8038>}, and the best linear unbiased estimators (BLUEs)
 of location and scale parameters by Yang et al. (2018, submitted) based on
 sample quantiles derived summaries in a meta-analysis.")
     (license license:gpl2)))
@@ -28817,7 +28833,7 @@ sample quantiles derived summaries in a meta-analysis.")
      "This package provides common components (classes, methods, documentation) for
 packages that conduct meta-analytic corrections and sensitivity analyses for
 within-study and/or across-study biases in meta-analysis.  See the packages
-@code{PublicationBias',} phacking', and multibiasmeta'.  These package implement
+@code{PublicationBias}', phacking', and multibiasmeta'.  These package implement
 methods described in, respectively: Mathur & @code{VanderWeele} (2020)
 <doi:10.31219/osf.io/s9dp6>; Mathur (2022) <doi:10.31219/osf.io/ezjsx>; Mathur
 (2022) <doi:10.31219/osf.io/u7vcb>.")
@@ -28868,7 +28884,7 @@ graphic user interface is available.  The installation of R package INLA is
 compulsory for successful usage.  The INLA package can be obtained from
 <https://www.r-inla.org>.  We recommend the testing version, which can be
 downloaded by running: install.packages(\"INLA\",
-@code{repos=c(getOption(\"repos\"),}
+repos=c(@code{getOption(\"repos}\"),
 INLA=\"https://inla.r-inla-download.org/R/testing\"), dep=TRUE).")
     (license (list license:gpl2+ license:gpl3+))))
 
@@ -29019,7 +29035,7 @@ categorical data simple and easy.")
      "Mediation Analysis with External Summary-Level Information on Total Effect")
     (description
      "Fits the hard constraint, soft constraint, and unconstrained models in Boss et
-al. (2023) @code{<arXiv:2306.17347>} for mediation analyses with external
+al. (2023) <@code{arXiv:2306.17347>} for mediation analyses with external
 summary-level information on the total effect.")
     (license license:gpl2)))
 
@@ -29104,8 +29120,9 @@ book.")
      "Fits Bayesian regression models based on latent Meshed Gaussian Processes (MGP)
 as described in Peruzzi, Banerjee, Finley (2020)
 <doi:10.1080/01621459.2020.1833889>, Peruzzi, Banerjee, Dunson, and Finley
-(2021) @code{<arXiv:2101.03579>,} Peruzzi and Dunson (2022)
-@code{<arXiv:2201.10080>.} Funded by ERC grant 856506 and NIH grant R01ES028804.")
+(2021) <@code{arXiv:2101.03579>}, Peruzzi and Dunson (2022)
+<@code{arXiv:2201.10080>}.  Funded by ERC grant 856506 and NIH grant
+R01ES028804.")
     (license license:gpl3+)))
 
 (define-public r-mertools
@@ -29146,24 +29163,29 @@ Models.")
 (define-public r-merror
   (package
     (name "r-merror")
-    (version "2.0.2")
+    (version "3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "merror" version))
               (sha256
                (base32
-                "13d9r5r83zai8jnzxaz1ak40876aw20zbpr244gs55rvj5j7f87q"))))
+                "14mwkwz6ih4442b4vbxqr60694ka6v0salg0qa0fgw1vfxgknz44"))))
     (properties `((upstream-name . "merror")))
     (build-system r-build-system)
+    (propagated-inputs (list r-openmx))
     (home-page "https://cran.r-project.org/package=merror")
     (synopsis "Accuracy and Precision of Measurements")
     (description
      "N>=3 methods are used to measure each of n items.  The data are used to estimate
 simultaneously systematic error (bias) and random error (imprecision).  Observed
 measurements for each method or device are assumed to be linear functions of the
-unknown true values and the errors are assumed normally distributed.  Maximum
-likelihood estimation is used for the imprecision standard deviation estimates.
-Pairwise calibration curves and plots can be easily generated.")
+unknown true values and the errors are assumed normally distributed.  Pairwise
+calibration curves and plots can be easily generated.  Unlike the ncb.od
+function, the omx function builds a one-factor measurement error model using
+@code{OpenMx} and allows missing values, uses full information maximum
+likelihood to estimate parameters, and provides both likelihood-based and
+bootstrapped confidence intervals for all parameters, in addition to Wald-type
+intervals.")
     (license license:gpl2+)))
 
 (define-public r-mero
@@ -29208,7 +29230,7 @@ consistent after imputation.")
      "Mixed Effects Regression for Linear, Non-Linear and User-Defined Models")
     (description
      "Fits linear, non-linear, and user-defined mixed effects regression models
-following the framework developed by Crowther (2017) @code{<arXiv:1710.02223>.}
+following the framework developed by Crowther (2017) <@code{arXiv:1710.02223>}.
 merlin can fit multivariate outcome models of any type, each of which could be
 repeatedly measured (longitudinal), with any number of levels, and with any
 number of random effects at each level.  Standard distributions/models available
@@ -29221,7 +29243,7 @@ between each of them.  Non-linear and time-dependent effects are seamlessly
 incorporated into the predictor.  merlin allows multivariate normal random
 effects, which are integrated out using Gaussian quadrature or Monte-Carlo
 integration.  Note, merlin is based on the Stata package of the same name,
-described in Crowther (2018) @code{<arXiv:1806.01615>.}")
+described in Crowther (2018) <@code{arXiv:1806.01615>}.")
     (license license:gpl3+)))
 
 (define-public r-mergetrees
@@ -29848,7 +29870,7 @@ flexibility in specifying hypotheses and calibration methods, extending the
 framework to simultaneous inferences.  The core computational routines are
 implemented using the Eigen C++ library and @code{RcppEigen} interface, with
 @code{OpenMP} for parallel computation.  Details of the testing procedures are
-given in Kim, @code{MacEachern,} and Peruggia (2023)
+given in Kim, @code{MacEachern}, and Peruggia (2023)
 <doi:10.1080/10485252.2023.2206919>.  This work was supported by the U.S.
 National Science Foundation under Grants No.  SES-1921523 and DMS-2015552.")
     (license license:gpl2+)))
@@ -29925,7 +29947,7 @@ ensembles of linear models.")
     (description
      "Co-Expression Network Analysis by adopting network embedding technique.  Song
 W.-M., Zhang B. (2015) Multiscale Embedded Gene Co-expression Network Analysis.
-@code{PLoS} Comput Biol 11(11): e1004574. <doi: 10.1371/journal.pcbi.1004574>.")
+P@code{LoS} Comput Biol 11(11): e1004574. <doi: 10.1371/journal.pcbi.1004574>.")
     (license license:gpl3+)))
 
 (define-public r-mega2r
@@ -30095,7 +30117,7 @@ meerva.sim.block which simulates multiple datasets as described by the user, and
 analyzes these datasets, storing the regression coefficient estimates for
 inspection.  The augmented estimates, as well as how measurement error may arise
 in practice, is described in more detail by Kremers WK (2021)
-@code{<arXiv:2106.14063>} and is an extension of the works by Chen Y-H, Chen H.
+<@code{arXiv:2106.14063>} and is an extension of the works by Chen Y-H, Chen H.
 (2000) <doi:10.1111/1467-9868.00243>, Chen Y-H. (2002)
 <doi:10.1111/1467-9868.00324>, Wang X, Wang Q (2015)
 <doi:10.1016/j.jmva.2015.05.017> and Tong J, Huang J, Chubak J, et al. (2020)
@@ -30159,7 +30181,7 @@ hypothesis, high dimensional mediation testing, divide-aggregate composite null
 test, and Sobel's test under the composite null hypothesis.  Du, J., Zhou, X.,
 Hao, W., Liu, Y., Smith, J. A., & Mukherjee, B (2022) \"Methods for Large-scale
 Single Mediator Hypothesis Testing: Possible Choices and Comparisons.\"
-@code{arXiv} preprint @code{<arXiv:2203.13293>.}")
+@code{arXiv} preprint <@code{arXiv:2203.13293>}.")
     (license license:gpl3)))
 
 (define-public r-medrxivr
@@ -30223,7 +30245,7 @@ download the full-text PDFs of preprints matching their search criteria.")
     (synopsis "Morphological and Structural Features of Medicinal Leaves")
     (description
      "This package contains a dataset of morphological and structural features of
-Medicinal LEAves @code{(MedLEA)'.} The features of each species is recorded by
+Medicinal LEAves (@code{MedLEA})'.  The features of each species is recorded by
 manually viewing the medicinal plant repository available at
 (<http://www.instituteofayurveda.org/plants/>).  You can also download
 repository of leaf images of 1099 medicinal plants in Sri Lanka.")
@@ -30465,13 +30487,13 @@ consumers.")
 (define-public r-medianadesigner
   (package
     (name "r-medianadesigner")
-    (version "0.12")
+    (version "0.13")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MedianaDesigner" version))
               (sha256
                (base32
-                "028s66n7908fccpjc500sim50w1xayvqb9cg2jrzqj42mmmfbnj4"))))
+                "07vzfm583gqk0ars4gamyn21lpcsdxx86nkp227i9yk7lyj0r6kp"))))
     (properties `((upstream-name . "MedianaDesigner")))
     (build-system r-build-system)
     (inputs (list zlib))
@@ -30603,13 +30625,13 @@ Smet, Buysse, Steen and Vansteelandt (2013) <DOI:10.1080/00273171.2013.832132>."
 (define-public r-medfate
   (package
     (name "r-medfate")
-    (version "3.1.3")
+    (version "3.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "medfate" version))
               (sha256
                (base32
-                "0l911kqyhazz3c3fpfv7ybw2h3ff2xqqg9scaz8dqz4xjd9sv58x"))))
+                "1j37b0yyr6710ib6xk1i3mvn3alwwf2959ppbqbak1njzza2fvn9"))))
     (properties `((upstream-name . "medfate")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-rcpp r-meteoland r-ggplot2))
@@ -30643,7 +30665,7 @@ description of vegetation [De Caceres et al. (2015)
 free-text clinical notes.  Medication entities for the basic @code{medExtractR}
 implementation that can be extracted include drug name, strength, dose amount,
 dose, frequency, intake time, dose change, and time of last dose.  The basic
-@code{medExtractR} is outlined in Weeks, Beck, @code{McNeer,} Williams, Bejan,
+@code{medExtractR} is outlined in Weeks, Beck, @code{McNeer}, Williams, Bejan,
 Denny, Choi (2020) <doi: 10.1093/jamia/ocz207>.  The extended
 @code{medExtractR_tapering} implementation is intended to extract dosing
 information for more tapering schedules, which are far more complex.  The
@@ -30719,7 +30741,7 @@ epidemiological studies.")
     (synopsis "Mediation by Tilted Balancing")
     (description
      "Nonparametric estimation and inference for natural direct and indirect effects
-by Chan, Imai, Yam and Zhang (2016) @code{<arXiv:1601.03501>.}")
+by Chan, Imai, Yam and Zhang (2016) <@code{arXiv:1601.03501>}.")
     (license license:gpl2+)))
 
 (define-public r-mecoturn
@@ -30807,9 +30829,9 @@ D, Stefanski LA & Crainiceanu CM (2006, ISBN:1584886331).")
      "Compare Microbial Networks of 'trans_network' Class of 'microeco' Package")
     (description
      "Compare microbial co-occurrence networks created from trans_network class of
-microeco package @code{<https://github.com/ChiLiubio/microeco>.} This package is
-the extension of trans_network class of microeco package and especially useful
-when different networks are constructed and analyzed simultaneously.")
+microeco package <https://github.com/@code{ChiLiubio/microeco>}.  This package
+is the extension of trans_network class of microeco package and especially
+useful when different networks are constructed and analyzed simultaneously.")
     (license license:gpl3)))
 
 (define-public r-meclustnet
@@ -30890,7 +30912,7 @@ ring borders on the R graphical devices, or automatically detect ring borders
 using a linear detection algorithm.  This algorithm detects ring borders
 according to positive/negative extreme values in the smoothed time-series of
 gray values.  Most of the in-package routines can be recursively implemented
-using the @code{multiDetect()} function.")
+using the @code{multiDetect}() function.")
     (license license:gpl3)))
 
 (define-public r-measures
@@ -31046,7 +31068,7 @@ negative according to a dictionary lookup.  Then the sum of those scores is
 returned for the document.  We use the Hu and Liu sentiment dictionary ('Hu and
 Liu', 2004) <doi:10.1145/1014052.1014073> for determining sentiment.  The
 scoring function is vectorized by document, and scores for multiple documents
-are computed in parallel via @code{OpenMP'.}")
+are computed in parallel via @code{OpenMP}'.")
     (license (license:fsdg-compatible "BSD 2-clause License + file LICENSE"))))
 
 (define-public r-mdw
@@ -31446,7 +31468,7 @@ linear model in Guo and Cheng (2021) <DOI:10.1080/01621459.2021.1893177>.")
     (description
      "Allows users to conduct multivariate distance matrix regression using analytic
 p-values and compute measures of effect size.  For details on the method, see
-@code{McArtor,} Lubke, & Bergeman (2017) <doi:10.1007/s11336-016-9527-8>.")
+@code{McArtor}, Lubke, & Bergeman (2017) <doi:10.1007/s11336-016-9527-8>.")
     (license license:gpl2+)))
 
 (define-public r-mdmb
@@ -31520,7 +31542,7 @@ also conducted.")
 related metadata to visualize species presence/absence detection patterns and
 assess data quality.  The application calculates threshold values from raw
 fluorescence data using a method based on the second derivative method, Luu-The
-et al (2005) <doi:10.2144/05382RR05>, and utilizes the @code{âchipPCRâ}
+et al (2005) <doi:10.2144/05382RR05>, and utilizes the â@code{chipPCRâ}
 package by RÃ¶diger, Burdukiewicz, & Schierack (2015)
 <doi:10.1093/bioinformatics/btv205> to calculate Cq values.  The application has
 the ability to connect to a custom developed @code{MySQL} database to populate
@@ -31552,8 +31574,8 @@ calculated: 1.  For the one-sided testing problem one p-value based on a wild
 bootstrap approach is determined.  2.  In the two-sided case one p-value based
 on a chi-squared approximation and a second p-values based on a permutation
 approach are calculated.  Ditzhaus, M. and Friedrich, S. (2018)
-@code{<arXiv:1807.05504>.} Ditzhaus, M. and Pauly, M. (2018)
-@code{<arXiv:1808.05627>.}")
+<@code{arXiv:1807.05504>}.  Ditzhaus, M. and Pauly, M. (2018)
+<@code{arXiv:1808.05627>}.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-mdimnormn
@@ -31620,8 +31642,8 @@ random-effect models.")
     (description
      "This package provides functions to impute missing values using Gaussian copulas
 for mixed data types as described by Christoffersen et al. (2021)
-@code{<arXiv:2102.02642>.} The method is related to Hoff (2007)
-<doi:10.1214/07-AOAS107> and Zhao and Udell (2019) @code{<arXiv:1910.12845>} but
+<@code{arXiv:2102.02642>}.  The method is related to Hoff (2007)
+<doi:10.1214/07-AOAS107> and Zhao and Udell (2019) <@code{arXiv:1910.12845>} but
 differs by making a direct approximation of the log marginal likelihood using an
 extended version of the Fortran code created by Genz and Bretz (2002)
 <doi:10.1198/106186002394> in addition to also support multinomial variables.")
@@ -31642,9 +31664,9 @@ extended version of the Fortran code created by Genz and Bretz (2002)
     (home-page "https://github.com/burgerga/mdftracks")
     (synopsis "Read and Write 'MTrackJ Data Files'")
     (description
-     "@code{MTrackJ} is an @code{ImageJ} plugin for motion tracking and analysis (see
+     "M@code{TrackJ} is an @code{ImageJ} plugin for motion tracking and analysis (see
 <https://imagescience.org/meijering/software/mtrackj/>).  This package reads and
-writes @code{MTrackJ} Data Files ('.mdf', see
+writes M@code{TrackJ} Data Files ('.mdf', see
 <https://imagescience.org/meijering/software/mtrackj/format/>).  It supports 2D
 data and read/writes cluster, point, and channel information.  If desired,
 generates track identifiers that are unique over the clusters.  See the project
@@ -31994,7 +32016,7 @@ methods check whether the MCMC chain has the correct invariant distribution.
 They do not check other properties of successful samplers such as whether the
 chain can reach all points, i.e.  whether is recurrent.  The tests require the
 ability to sample from the prior and to run steps of the MCMC chain.  The
-methodology is described in Gandy and Scott (2020) @code{<arXiv:2001.06465>.}")
+methodology is described in Gandy and Scott (2020) <@code{arXiv:2001.06465>}.")
     (license license:gpl3)))
 
 (define-public r-mctq
@@ -32164,7 +32186,7 @@ CLSI recommendations (see J. A. Budd et al. (2018,
 analytical method comparison and bias estimation using patient samples.
 Furthermore, algorithms for Theil-Sen and equivariant Passing-Bablok estimators
 are implemented, see F. Dufey (2020, <doi:10.1515/ijb-2019-0157>) and J.
-Raymaekers and F. Dufey (2022, @code{<arXiv:2202:08060>).} A comprehensive
+Raymaekers and F. Dufey (2022, <@code{arXiv:2202:08060>}).  A comprehensive
 overview over the implemented methods and references can be found in the manual
 pages \"mcr-package\" and \"mcreg\".")
     (license license:gpl3+)))
@@ -32272,7 +32294,7 @@ vector and S matrix.  Instead, the user typically supplies the data in its raw
 form, and this package will calculate the needed objects and passes them into
 the @code{DoseFinding} functions.  If the user wishes to primarily use the
 functions provided in the @code{DoseFinding} package, a singular function
-@code{(prepareGen())} will provide mu and S. The package currently handles power
+(@code{prepareGen}()) will provide mu and S. The package currently handles power
 analysis and the MCP-Mod procedure for negative binomial, Poisson, and binomial
 data.  The MCP-Mod procedure can also be applied to survival data, but power
 analysis is not available.  Bretz, F., Pinheiro, J. C., and Branson, M. (2005)
@@ -32358,7 +32380,7 @@ parallel with temporary variables and a task handler.  Wrapped in this way the
 results of an mcparallel() call can be returned to the R session when the fork
 is complete without explicitly issuing a specific mccollect() to retrieve the
 value.  Outside of top-level tasks, multiple mcparallel() jobs can be retrieved
-with a single call to @code{mcparallelDoCheck().}")
+with a single call to @code{mcparallelDoCheck}().")
     (license license:gpl2)))
 
 (define-public r-mcpan
@@ -32568,7 +32590,7 @@ access the DHS modern contraceptive supply share data at national and
 subnational administration levels, estimate, evaluate and plot annual estimates
 with uncertainty for a sample of low- and middle-income countries.  Methods for
 the estimation of method supply shares at the national level are described in
-Comiskey, Alkema, Cahill (2022) @code{<arXiv:2212.03844>.}")
+Comiskey, Alkema, Cahill (2022) <@code{arXiv:2212.03844>}.")
     (license license:expat)))
 
 (define-public r-mcmst
@@ -32813,7 +32835,7 @@ output.")
     (synopsis
      "Functions to Store, Manipulate and Display Markov Chain Monte Carlo (MCMC) Output")
     (description
-     "This package implements a class @code{('mcmcOutput')} for efficiently storing
+     "This package implements a class ('@code{mcmcOutput}') for efficiently storing
 and handling Markov chain Monte Carlo (MCMC) output, intended as an aid for
 those writing customized MCMC samplers.  A range of constructor methods are
 provided covering common output formats.  Functions are provided to generate
@@ -33016,7 +33038,7 @@ summarized and plotted using ggplot2 functions.  Includes functions to remove
 sample and variable outliers and reformat counts into normalized log-transformed
 values for correlation and principal component/coordinate analysis.  Walkthrough
 and examples:
-@code{http://www.bio.utexas.edu/research/matz_lab/matzlab/Methods_files/walkthroughExample_mcmcOTU_R.txt.}")
+http://www.bio.utexas.edu/research/matz_lab/matzlab/Methods_files/@code{walkthroughExample_mcmcOTU_R.txt}.")
     (license license:gpl3)))
 
 (define-public r-mcm
@@ -33168,7 +33190,7 @@ and an inflation step until an equilibrium state is reached.")
 point and interval estimates for the minimal clinically important difference
 based on the classical anchor-based method.  For more details of the
 methodology, please see Zehua Zhou, Leslie J. Bisson and Jiwei Zhao (2021)
-@code{<arXiv:2108.11589>.}")
+<@code{arXiv:2108.11589>}.")
     (license license:gpl2+)))
 
 (define-public r-mci
@@ -33266,7 +33288,7 @@ the non-dominated sorting algorithm.")
     (synopsis "Multivariate Cluster Elastic Net")
     (description
      "Fits the Multivariate Cluster Elastic Net (MCEN) presented in Price & Sherwood
-(2018) @code{<arXiv:1707.03530>.} The MCEN model simultaneously estimates
+(2018) <@code{arXiv:1707.03530>}.  The MCEN model simultaneously estimates
 regression coefficients and a clustering of the responses for a multivariate
 response model.  Currently accommodates the Gaussian and binomial likelihood.")
     (license license:expat)))
@@ -33474,7 +33496,7 @@ mcca package in Li, Gao and D'Agostino (2019) <doi:10.1002/sim.8103>.")
     (description
      "This package implements Multi-Calibration Boosting (2018)
 <https://proceedings.mlr.press/v80/hebert-johnson18a.html> and Multi-Accuracy
-Boosting (2019) @code{<arXiv:1805.12317>} for the multi-calibration of a machine
+Boosting (2019) <@code{arXiv:1805.12317>} for the multi-calibration of a machine
 learning model's prediction.  MCBoost updates predictions for sub-groups in an
 iterative fashion in order to mitigate biases like poor calibration or large
 accuracy differences across subgroups.  Multi-Calibration works best in
@@ -33680,28 +33702,6 @@ of the MCAR hypothesis based on the theory of Frechet classes and compatibility.
  Also gives functions for computing halfspace representations of the marginal
 polytope and related geometric objects.")
     (license license:expat)))
-
-(define-public r-mc2d
-  (package
-    (name "r-mc2d")
-    (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "mc2d" version))
-              (sha256
-               (base32
-                "07h2gvmdfqjydikxksbqhikihg46fv6xyn8vk5kyni6x75gp9abk"))))
-    (properties `((upstream-name . "mc2d")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-mvtnorm r-ggpubr r-ggplot2))
-    (home-page "https://cran.r-project.org/package=mc2d")
-    (synopsis "Tools for Two-Dimensional Monte-Carlo Simulations")
-    (description
-     "This package provides a complete framework to build and study Two-Dimensional
-Monte-Carlo simulations, aka Second-Order Monte-Carlo simulations.  Also
-includes various distributions (pert, triangular, Bernoulli, empirical discrete
-and continuous).")
-    (license license:gpl2+)))
 
 (define-public r-mc-heterogeneity
   (package
@@ -34101,7 +34101,7 @@ Lobo et al. (2021) <doi:10.1093/g3journal/jkab308>.")
      "Utilizing a combination of machine learning models (Random Forest, Naive Bayes,
 K-Nearest Neighbor, Support Vector Machines, Extreme Gradient Boosting, and
 Linear Discriminant Analysis) and a deep Artificial Neural Network model,
-@code{MBMethPred} can predict medulloblastoma subgroups, including wingless
+MB@code{MethPred} can predict medulloblastoma subgroups, including wingless
 (WNT), sonic hedgehog (SHH), Group 3, and Group 4 from DNA methylation beta
 values.")
     (license (list license:gpl2+ license:gpl3+))))
@@ -34126,7 +34126,7 @@ values.")
      "Lightweight utilities for nucleic acid melting curve analysis are important in
 life sciences and diagnostics.  This software can be used for the analysis and
 presentation of melting curve data from microbead-based assays (surface melting
-curve analysis) and reactions in solution (e.g., quantitative PCR @code{(qPCR),}
+curve analysis) and reactions in solution (e.g., quantitative PCR (@code{qPCR}),
 real-time isothermal Amplification).  Further information are described in
 detail in two publications in The R Journal [
 <https://journal.r-project.org/archive/2013-2/roediger-bohm-schimke.pdf>;
@@ -34331,13 +34331,13 @@ transform (MBCn) â as is the Rank Resampling for Distributions and Dependen
 (define-public r-mbbefd
   (package
     (name "r-mbbefd")
-    (version "0.8.10")
+    (version "0.8.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mbbefd" version))
               (sha256
                (base32
-                "0963lwwb629dwgv1jk4y3438rfj0lm9g6q930xbgxdsc34hn3ppb"))))
+                "0yhrbyydbxibxxffk5y35yv7k0i8aq8qdkkzgpvzfmyipl1lgbnv"))))
     (properties `((upstream-name . "mbbefd")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp
@@ -34376,11 +34376,11 @@ to fit the distribution to empirical data.  See, e.g., Bernegger (1997)
      "Exploratory and predictive methods for the analysis of several blocks of
 variables measured on the same individuals.  The methods included are:
 Multiblock Principal Components Analysis (MB-PCA), Common Dimensions analysis
-@code{(ComDim),} Multiblock Partial Least Squares (MB-PLS) regression and
+(@code{ComDim}), Multiblock Partial Least Squares (MB-PLS) regression and
 Multiblock Weighted Covariate analysis (MB-WCov).  E. Tchandao Mangamana, V.
-Cariou, E. Vigneau, R. @code{GlÃ¨lÃ¨} @code{KakaÃ¯,} E.M. Qannari (2019)
+Cariou, E. Vigneau, R. @code{GlÃ¨lÃ¨} @code{KakaÃ¯}, E.M. Qannari (2019)
 <doi:10.1016/j.chemolab.2019.103856>; E. Tchandao Mangamana, R. @code{GlÃ¨lÃ¨}
-@code{KakaÃ¯,} E.M. Qannari (2021) <doi:10.1016/j.chemolab.2021.104388>.")
+@code{KakaÃ¯}, E.M. Qannari (2021) <doi:10.1016/j.chemolab.2021.104388>.")
     (license license:gpl3)))
 
 (define-public r-mba
@@ -34470,7 +34470,7 @@ many different shapes.")
 pairwise monotonic association from and based on the work of Pimentel (2009)
 <doi:10.4135/9781412985291.n2>.  Computation of association of vectors from one
 or multiple sets can be performed in parallel thanks to the packages foreach and
-@code{doMC'.}")
+@code{doMC}'.")
     (license license:gpl3)))
 
 (define-public r-mazegen
@@ -34512,7 +34512,7 @@ Difficulty and Ability).")
     (description
      "Supports the generation of parallelogram, equilateral triangle, regular hexagon,
 isosceles trapezoid, Koch snowflake, hexaflake', Sierpinski triangle, Sierpinski
-carpet and Sierpinski trapezoid mazes via @code{TurtleGraphics'.} Mazes are
+carpet and Sierpinski trapezoid mazes via @code{TurtleGraphics}'.  Mazes are
 generated by the recursive method: the domain is divided into sub-domains in
 which mazes are generated, then dividing lines with holes are drawn between
 them, see J. Buck, Recursive Division,
@@ -34545,7 +34545,7 @@ them, see J. Buck, Recursive Division,
      "This package provides a novel mediation analysis approach to address
 zero-inflated mediators containing true zeros and false zeros.  See Jiang et al
 (2023) \"A Novel Causal Mediation Analysis Approach for Zero-Inflated Mediators\"
-@code{<arXiv:2301.10064>} for more details.")
+<@code{arXiv:2301.10064>} for more details.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-mazamatimeseries
@@ -34699,13 +34699,13 @@ at stationary sites.")
 (define-public r-mazamacoreutils
   (package
     (name "r-mazamacoreutils")
-    (version "0.4.15")
+    (version "0.4.16")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MazamaCoreUtils" version))
               (sha256
                (base32
-                "1d1387cad90ah6pk9vpnyc5839smh4mm6a2lxn44yk9sl5fs15dw"))))
+                "021wrll07xrx9vk4vv0h7rmh5bll10gyywa5qyvd7sdpnvnrw3l3"))))
     (properties `((upstream-name . "MazamaCoreUtils")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -34792,7 +34792,7 @@ projections orthogonal to the first one, and so on.")
     (home-page "https://cran.r-project.org/package=MaxPro")
     (synopsis "Maximum Projection Designs")
     (description
-     "Generate maximum projection @code{(MaxPro)} designs for quantitative and/or
+     "Generate maximum projection (@code{MaxPro}) designs for quantitative and/or
 qualitative factors.  Details of the @code{MaxPro} criterion can be found in:
 (1) Joseph, Gul, and Ba. (2015) \"Maximum Projection Designs for Computer
 Experiments\", Biometrika, 102, 371-380, and (2) Joseph, Gul, and Ba. (2018)
@@ -34932,7 +34932,7 @@ which is a natural descriptor of a species distribution.")
     (synopsis "Inference for Maximin Effects in High-Dimensional Settings")
     (description
      "Implementation of the sampling and aggregation method for the covariate shift
-maximin effect, which was proposed in @code{<arXiv:2011.07568>.} It constructs
+maximin effect, which was proposed in <@code{arXiv:2011.07568>}.  It constructs
 the confidence interval for any linear combination of the high-dimensional
 maximin effect.")
     (license license:gpl3)))
@@ -35365,7 +35365,7 @@ distribution without the integer restriction on the degrees of freedom.")
      "This is the core functions needed by the tsmp package.  The low level and
 carefully checked mathematical functions are here.  These are implementations of
 the Matrix Profile concept that was created by CS-UCR
-@code{<http://www.cs.ucr.edu/~eamonn/MatrixProfile.html>.}")
+<http://www.cs.ucr.edu/~eamonn/@code{MatrixProfile.html>}.")
     (license license:gpl3)))
 
 (define-public r-matrixprofile
@@ -35409,7 +35409,7 @@ all-pairs-similarity for a given window size for time series data.")
     (synopsis "The Matrix Normal Distribution")
     (description
      "Computes densities, probabilities, and random deviates of the Matrix Normal
-(Pocuca et al. (2019) @code{<doi:10.48550/arXiv.1910.02859>).} Also includes
+(Pocuca et al. (2019) <doi:10.48550/@code{arXiv.1910.02859>}).  Also includes
 simple but useful matrix functions.  See the vignette for more information.")
     (license license:gpl3)))
 
@@ -35431,7 +35431,7 @@ simple but useful matrix functions.  See the vignette for more information.")
     (description
      "This package implements finite mixtures of matrix-variate contaminated normal
 distributions via expectation conditional-maximization algorithm for model-based
-clustering, as described in Tomarchio et al.(2020) @code{<arXiv:2005.03861>.}
+clustering, as described in Tomarchio et al.(2020) <@code{arXiv:2005.03861>}.
 One key advantage of this model is the ability to automatically detect potential
 outlying matrices by computing their a posteriori probability of being typical
 or atypical points.  Finite mixtures of matrix-variate t and matrix-variate
@@ -35503,7 +35503,7 @@ using linear regression with either additive or ANOVA genotype effects.  The
 models can include covariates to account for factors as population
 stratification, gender, and clinical variables.  It also supports models with
 heteroscedastic and/or correlated errors, false discovery rate estimation and
-separate treatment of local (cis) and distant (trans) @code{eQTLs.} For more
+separate treatment of local (cis) and distant (trans) @code{eQTLs}.  For more
 details see Shabalin (2012) <doi:10.1093/bioinformatics/bts163>.")
     (license license:lgpl3)))
 
@@ -35562,7 +35562,7 @@ hierarchical levels.  The algorithm will return a Loess-smoothed plot of the
 similarity values along with the inflection point, if there are any.  There is
 the option to search for an inflection point within a specified range.  The
 package also has a function that will return the matrix components at a
-specified cutoff.  References: Mullner. @code{<ArXiv:1109.2378>;} Cserhati,
+specified cutoff.  References: Mullner. <@code{ArXiv:1109.2378>}; Cserhati,
 Carter. (2020, Journal of Creation 34(3):41-50),
 <https://dl0.creation.com/articles/p137/c13759/j34-3_64-73.pdf>.")
     (license license:gpl3+)))
@@ -35610,7 +35610,7 @@ and Coxhead's coefficient are included for comparison and flexibility.")
     (home-page "https://cran.r-project.org/package=matrisk")
     (synopsis "Macroeconomic-at-Risk")
     (description
-     "The Macroeconomics-at-Risk @code{(MaR)} approach is based on a two-step
+     "The Macroeconomics-at-Risk (@code{MaR}) approach is based on a two-step
 semi-parametric estimation procedure that allows to forecast the full
 conditional distribution of an economic variable at a given horizon, as a
 function of a set of factors.  These density forecasts are then be used to
@@ -35618,7 +35618,7 @@ produce coherent forecasts for any downside risk measure, e.g., value-at-risk,
 expected shortfall, downside entropy.  Initially introduced by Adrian et al.
 (2019) <doi:10.1257/aer.20161923> to reveal the vulnerability of economic growth
 to financial conditions, the @code{MaR} approach is currently extensively used
-by international financial institutions to provide Value-at-Risk @code{(VaR)}
+by international financial institutions to provide Value-at-Risk (@code{VaR})
 type forecasts for GDP growth (Growth-at-Risk) or inflation (Inflation-at-Risk).
  This package provides methods for estimating these models.  Datasets for the US
 and the Eurozone are available to allow testing of the Adrian et al (2019)
@@ -36496,7 +36496,7 @@ package provides classes, functions, and methods for storing information
 contained in calibration certificates and converting balance readings to both
 conventional mass and real mass.  For the latter, the Magnitude of the Air
 Buoyancy Correction factor employs models (such as the CIMP-2007 formula revised
-by Picard, Davis, @code{GlÃ¤ser,} and Fujii (2008)
+by Picard, Davis, @code{GlÃ¤ser}, and Fujii (2008)
 <doi:10.1088/0026-1394/45/2/004>) to estimate the local air density using
 measured environmental conditions.")
     (license license:gpl3+)))
@@ -36597,19 +36597,19 @@ model fitting and posterior computation.")
 (define-public r-mase
   (package
     (name "r-mase")
-    (version "0.1.3")
+    (version "0.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mase" version))
               (sha256
                (base32
-                "10wyrvh3p344inx5qbzkwh4rr3lmpnh1ikhrghmlqr5607kiy3fm"))))
+                "0qfffkq4dvp7hrfgvbdzmk732iac4qf56ccyialyhnhjg581v5xi"))))
     (properties `((upstream-name . "mase")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survey
+    (propagated-inputs (list r-tidyr
+                             r-survey
                              r-rpms
                              r-rdpack
-                             r-magrittr
                              r-glmnet
                              r-dplyr
                              r-boot))
@@ -36625,7 +36625,7 @@ ISBN:978-0-387-40620-6).  Two of the estimators employ a statistical learning
 model as the assisting model: the elastic net regression estimator, which is an
 extension of the lasso regression estimator given by @code{McConville} et al.
 (2017) <doi:10.1093/jssam/smw041>, and the regression tree estimator described
-in @code{McConville} and Toth (2017) @code{<arXiv:1712.05708>.} The variance
+in @code{McConville} and Toth (2017) <@code{arXiv:1712.05708>}.  The variance
 estimators which approximate the joint inclusion probabilities can be found in
 Berger and Tille (2009) <doi:10.1016/S0169-7161(08)00002-3> and the bootstrap
 variance estimator is presented in Mashreghi et al. (2016)
@@ -36750,7 +36750,7 @@ selection criteria including bootstrap AICb, confidences intervals via the
 Hessian approximation or bootstrapping, and all conditional residual types.  See
 the user guide for examples of dynamic factor analysis, dynamic linear models,
 outlier and shock detection, and multivariate AR-p models.  Online workshops
-(lectures, @code{eBook,} and computer labs) at <https://atsa-es.github.io/>.")
+(lectures, @code{eBook}, and computer labs) at <https://atsa-es.github.io/>.")
     (license license:gpl2)))
 
 (define-public r-marsgwr
@@ -37015,13 +37015,13 @@ described in Zempleni et al. (2004) <doi:10.1002/asmb.521>, Dobi and Zempleni
 (define-public r-markovchain
   (package
     (name "r-markovchain")
-    (version "0.9.3")
+    (version "0.9.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "markovchain" version))
               (sha256
                (base32
-                "1p8vjz8yfrbn0i4qz249lsrjvgayzcj97n51xwmi7bp7zvk2lx0r"))))
+                "0fd8vdykyhdmkkr63kmifrfsr1j3pcl50ir8gfpyr9v61449m6hp"))))
     (properties `((upstream-name . "markovchain")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppparallel
@@ -37254,7 +37254,7 @@ state uncertainty and a simulation capability for HMM models.")
     (home-page "https://github.com/juliendiot42/markdownInput")
     (synopsis "Shiny Module for a Markdown Input with Result Preview")
     (description
-     "An R-Shiny module containing a @code{\"markdownInput\".} This input allows the
+     "An R-Shiny module containing a \"@code{markdownInput}\".  This input allows the
 user to write some markdown code and to preview the result.  This input has been
 inspired by the \"comment\" window of <https://github.com/>.")
     (license license:gpl3)))
@@ -37347,10 +37347,10 @@ and simulation (marima.sim()).")
      "This package provides the ability to perform \"Marginal Mediation\"--mediation
 wherein the indirect and direct effects are in terms of the average marginal
 effects (Bartus, 2005,
-@code{<https://EconPapers.repec.org/RePEc:tsj:stataj:v:5:y:2005:i:3:p:309-329>).}
-The style of the average marginal effects stems from Thomas Leeper's work on the
-\"margins\" package.  This framework allows the use of categorical mediators and
-outcomes with little change in interpretation from the continuous
+<https://@code{EconPapers.repec.org/RePEc:tsj:stataj:v:5:y:2005:i:3:p:309-329>}).
+ The style of the average marginal effects stems from Thomas Leeper's work on
+the \"margins\" package.  This framework allows the use of categorical mediators
+and outcomes with little change in interpretation from the continuous
 mediators/outcomes.  See <doi:10.13140/RG.2.2.18465.92001> for more details on
 the method.")
     (license license:gpl2)))
@@ -37617,31 +37617,6 @@ based on Markov Chain Monte Carlo.  The core algorithms of the package have been
 developed in C++'.")
     (license license:gpl2)))
 
-(define-public r-maraca
-  (package
-    (name "r-maraca")
-    (version "0.5.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "maraca" version))
-              (sha256
-               (base32
-                "09fvzyvi0szyw4xlkc8pslw0zznprvpvn5zjnw9yv9c899y9gj90"))))
-    (properties `((upstream-name . "maraca")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr r-hce r-ggplot2 r-dplyr r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/AstraZeneca/maraca")
-    (synopsis
-     "The Maraca Plot: Visualization of Hierarchical Composite Endpoints in Clinical Trials")
-    (description
-     "Library that supports visual interpretation of hierarchical composite endpoints
-(HCEs).  HCEs are complex constructs used as primary endpoints in clinical
-trials, combining outcomes of different types into ordinal endpoints, in which
-each patient contributes the most clinically important event (one and only one)
-to the analysis.")
-    (license (license:fsdg-compatible "Apache License (>= 2)"))))
-
 (define-public r-mar1s
   (package
     (name "r-mar1s")
@@ -37701,7 +37676,7 @@ autoregressive models.")
     (description
      "Evaluate treatment rules for costly and mutually exclusive treatment arms with
 Qini curves as proposed in Sverdrup, Wu, Athey, and Wager (2023)
-@code{<arXiv:2306.11979>.}")
+<@code{arXiv:2306.11979>}.")
     (license license:expat)))
 
 (define-public r-mapview
@@ -37740,27 +37715,6 @@ queryable via pop-up windows.  Additional functionality includes methods to
 visualise true- and false-color raster images and bounding boxes.")
     (license (list license:gpl3+
                    (license:fsdg-compatible "file://LICENSE")))))
-
-(define-public r-maptree
-  (package
-    (name "r-maptree")
-    (version "1.4-8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "maptree" version))
-              (sha256
-               (base32
-                "1x35nk4fi2b62krcvcv187n5sbqrgvw4pbm7r19ps3jlanpi5ksm"))))
-    (properties `((upstream-name . "maptree")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rpart r-cluster))
-    (home-page "https://cran.r-project.org/package=maptree")
-    (synopsis "Mapping, Pruning, and Graphing Tree Models")
-    (description
-     "This package provides functions with example data for graphing, pruning, and
-mapping models from hierarchical clustering, and classification and regression
-trees.")
-    (license (license:fsdg-compatible "Unlimited"))))
 
 (define-public r-maptpx
   (package
@@ -37802,7 +37756,7 @@ parallelization, uncomment the relevant flags in src/MAKEVARS before compiling."
     (synopsis "Download and Display Map Tiles")
     (description
      "To create maps from tiles, maptiles downloads, composes and displays tiles from
-a large number of providers (e.g. @code{OpenStreetMap',} Stamen', Esri', CARTO',
+a large number of providers (e.g. @code{OpenStreetMap}', Stamen', Esri', CARTO',
 or Thunderforest').")
     (license license:gpl3)))
 
@@ -38131,13 +38085,13 @@ re-labelling categorical variables.")
 (define-public r-mapme-biodiversity
   (package
     (name "r-mapme-biodiversity")
-    (version "0.3.0")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mapme.biodiversity" version))
               (sha256
                (base32
-                "18psh68lapkh1wq0p5hv85cqixffd8yvzhgzyyv7wxxgqbxkdd59"))))
+                "026q3sjsm1yzw3iixjx3cga00f239spbss33wlxhdc4dapd434hm"))))
     (properties `((upstream-name . "mapme.biodiversity")))
     (build-system r-build-system)
     (inputs (list proj gdal))
@@ -38148,10 +38102,12 @@ re-labelling categorical variables.")
                              r-stringr
                              r-sf
                              r-rvest
+                             r-r-utils
                              r-purrr
-                             r-pbapply
+                             r-progressr
                              r-magrittr
                              r-httr
+                             r-furrr
                              r-dplyr
                              r-curl))
     (native-inputs (list r-knitr))
@@ -38882,7 +38838,7 @@ equation modeling using lavaan() or regression using lm().")
 go.The goal is to provide a number of machine learning convenience functions.
 It provides the ability to build, tune and obtain predictions of several models
 in one function.  The models are built using functions from caret with easier to
-read syntax.  Kuhn(2014) @code{<arXiv:1405.6974>.}")
+read syntax.  Kuhn(2014) <@code{arXiv:1405.6974>}.")
     (license license:gpl2)))
 
 (define-public r-manydata
@@ -38959,7 +38915,7 @@ governance.")
      "The number of biological databases is growing rapidly, but different databases
 use different IDs to refer to the same biological entity.  The inconsistency in
 IDs impedes the integration of various types of biological data.  To resolve the
-problem, we developed @code{MantaID',} a data-driven, machine-learning based
+problem, we developed @code{MantaID}', a data-driven, machine-learning based
 approach that automates identifying IDs on a large scale.  The @code{MantaID}
 model's prediction accuracy was proven to be 99%, and it correctly and
 effectively predicted 100,000 ID entries within two minutes. @code{MantaID}
@@ -39026,7 +38982,7 @@ Friedrich, S., Konietschke, F. and Pauly, M. (2019) <doi:10.32614/RJ-2019-051>."
     (synopsis "Tools for Normalizing and Comparing ChIP-seq Samples")
     (description
      "Chromatin immunoprecipitation followed by high-throughput sequencing
-@code{(ChIP-seq)} is the premier technology for profiling genome-wide
+(@code{ChIP-seq}) is the premier technology for profiling genome-wide
 localization of chromatin-binding proteins, including transcription factors and
 histones with various modifications.  This package provides a robust method for
 normalizing @code{ChIP-seq} signals across individual samples or groups of
@@ -39430,10 +39386,10 @@ class is able to manage the cloud instance made by the non-kubernetes cloud
 service.  For creating a provider for the non-kubernetes cloud service, the
 developer needs to define a reference class inherited from
 @code{ManagedCloudProvider} and define the method for the generics
-@code{runDockerWorkerContainers(),} @code{getDockerWorkerStatus()} and
-@code{killDockerWorkerContainers().} For more information, please see the
+@code{runDockerWorkerContainers}(), @code{getDockerWorkerStatus}() and
+@code{killDockerWorkerContainers}().  For more information, please see the
 vignette in this package and
-@code{<https://CRAN.R-project.org/package=DockerParallel>.}")
+<https://CRAN.R-project.org/package=@code{DockerParallel>}.")
     (license license:gpl3)))
 
 (define-public r-mams
@@ -39476,7 +39432,7 @@ Islas Malvinas - La @code{NaciÃ³n} Argentina ratifica su @code{legÃ­tima} e
 imprescriptible @code{soberanÃ­a} sobre las islas Malvinas, Georgias del Sur y
 SÃ¡ndwich del Sur y los espacios @code{marÃ­timos} e insulares correspondientes,
 por ser parte integrante del territorio nacional.  La @code{recuperaciÃ³n} de
-dichos territorios y el ejercicio pleno de la @code{soberanÃ­a,} respetando el
+dichos territorios y el ejercicio pleno de la @code{soberanÃ­a}, respetando el
 modo de vida de sus habitantes y conforme a los principios del Derecho
 Internacional, constituyen un objetivo permanente e irrenunciable del pueblo
 argentino.")
@@ -39556,8 +39512,8 @@ analysis of MALDI mass spectrometry data (Palarea-Albaladejo et al. (2018)
     (synopsis "Import/Export Routines for 'MALDIquant'")
     (description
      "This package provides functions for reading (tab, csv, Bruker fid, Ciphergen
-XML, @code{mzXML,} @code{mzML,} @code{imzML,} Analyze 7.5, CDF, @code{mMass}
-MSD) and writing (tab, csv, @code{mMass} MSD, @code{mzML,} @code{imzML)}
+XML, @code{mzXML}, @code{mzML}, @code{imzML}, Analyze 7.5, CDF, @code{mMass}
+MSD) and writing (tab, csv, @code{mMass} MSD, @code{mzML}, @code{imzML})
 different file formats of mass spectrometry data into/from MALDIquant objects.")
     (license license:gpl3+)))
 
@@ -39582,7 +39538,7 @@ different file formats of mass spectrometry data into/from MALDIquant objects.")
 functions and data sets that will make working with Bahasa Malaysia text much
 easier.  For word stemming in particular, we will look up the Malay words in a
 dictionary and then proceed to remove \"extra suffix\" as explained in Khan,
-Rehman Ullah, Fitri Suraya Mohamad, Muh Inam @code{UlHaq,} Shahren Ahmad Zadi
+Rehman Ullah, Fitri Suraya Mohamad, Muh Inam @code{UlHaq}, Shahren Ahmad Zadi
 Adruce, Philip Nuli Anding, Sajjad Nawaz Khan, and Abdulrazak Yahya Saleh
 Al-Hababi (2017) <https://ijrest.net/vol-4-issue-12.html> .  This package
 includes a dictionary of Malay words that may be used to perform word stemming,
@@ -39979,8 +39935,8 @@ data is automatically converted to data.frame class.")
 Majorization-Minimization method to introduce a robust clustering.  The
 reference paper is: Julien Mairal, (2015) <doi:10.1137/140957639>.  The two most
 important functions in package @code{MajKMeans} are cluster_km() and
-@code{cluster_MajKm().} cluster_km() clusters data without
-Majorization-Minimization and @code{cluster_MajKm()} clusters data with
+cluster_@code{MajKm}().  cluster_km() clusters data without
+Majorization-Minimization and cluster_@code{MajKm}() clusters data with
 Majorization-Minimization method.  Both of these functions calculate the sum of
 squares (SS) of clustering.")
     (license license:gpl3)))
@@ -40180,7 +40136,7 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
      "This package provides a collection of easy-to-implement tools for checking
 whether a MAIC can be conducted.  An alternative way of calculating weights is
 also included.  These methods are introduced in Glimm & Yau (2021)
-@code{<arXiv:2108.01896>.}")
+<@code{arXiv:2108.01896>}.")
     (license license:gpl3+)))
 
 (define-public r-maic
@@ -40295,7 +40251,7 @@ for each subject.")
     (description
      "Correlates variation within the meta-genome to target species phenotype
 variations in meta-genome with association studies.  Follows the pipeline
-described in Chaston, J.M. et al. (2014) @code{<doi:10.1128/mBio.01631-14>.}")
+described in Chaston, J.M. et al. (2014) <doi:10.1128/@code{mBio.01631-14>}.")
     (license license:expat)))
 
 (define-public r-magmar
@@ -40350,7 +40306,7 @@ data in R, as well as for uploading local data to magma'.")
      "Clustering and Prediction using Multi-Task Gaussian Processes with Common Mean")
     (description
      "An implementation for the multi-task Gaussian processes with common mean
-framework.  Two main algorithms, called Magma and @code{MagmaClust',} are
+framework.  Two main algorithms, called Magma and @code{MagmaClust}', are
 available to perform predictions for supervised learning problems, in particular
 for time series or any functional/continuous data applications.  The
 corresponding articles has been respectively proposed by Arthur Leroy, Pierre
@@ -41008,7 +40964,7 @@ conserved linkage groups are identified as described in Simakov et al. (2020)
 <doi:10.1038/s41559-020-1156-z> and displayed on an Oxford Grid (Edwards (1991)
 <doi:10.1111/j.1469-1809.1991.tb00394.x>).  The package provides a function that
 uses a network-based greedy algorithm to find communities (Clauset et al. (2004)
-@code{<doi:10.1103/PhysRevE.70.066111>)} and so automatically order the
+<doi:10.1103/@code{PhysRevE.70.066111>}) and so automatically order the
 chromosomes on the plot to improve interpretability.")
     (license license:gpl3)))
 
@@ -41094,7 +41050,7 @@ two measures of uncertainty were proposed for model selection, see Liu, Li and
 Jiang (2020) <doi:10.1007/s11749-020-00737-9>.  The first measure is a kind of
 model confidence set that relates to the variation of model selection, called
 Mac.  The second measure focuses on error of model selection, called
-@code{LogP.} They are all computed via bootstrapping.  This package provides
+@code{LogP}.  They are all computed via bootstrapping.  This package provides
 functions to compute these two measures.  Furthermore, a similar model
 confidence set adapted from Bayesian Model Averaging can also be computed using
 this package.")
@@ -41207,7 +41163,7 @@ lift, and other performance curves.")
     (description
      "To assist biological researchers in assembling taxonomically and marker focused
 molecular sequence data sets.  MACER accepts a list of genera as a user input
-and uses @code{NCBI-GenBank} and BOLD as resources to download and assemble
+and uses NCBI-@code{GenBank} and BOLD as resources to download and assemble
 molecular sequence datasets.  These datasets are then assembled by marker,
 aligned, trimmed, and cleaned.  The use of this package allows the publication
 of specific parameters to ensure reproducibility.  The MACER package has four
@@ -41238,7 +41194,7 @@ structures.  Under the two/three-level mediation model, the correlation
 parameter is identifiable and is estimated based on a hierarchical-likelihood, a
 marginal-likelihood or a two-stage method.  See Zhao, Y., & Luo, X. (2014),
 Estimating Mediation Effects under Correlated Errors with an Application to
-@code{fMRI,} @code{<arXiv:1410.7217>} for details.")
+@code{fMRI}, <@code{arXiv:1410.7217>} for details.")
     (license license:gpl2+)))
 
 (define-public r-maboust
@@ -41445,7 +41401,7 @@ could be retrieved using hypergeometric tests.")
     (synopsis "Multi-Modal Similarity Matrix Joint Factorization")
     (description
      "This package provides a new method to implement clustering from multiple
-modality data of certain samples, the function @code{M2SMjF()} jointly
+modality data of certain samples, the function M2S@code{MjF}() jointly
 factorizes multiple similarity matrices into a shared sub-matrix and several
 modality private sub-matrices, which is further used for clustering.  Along with
 this method, we also provide function to calculate the similarity matrix and

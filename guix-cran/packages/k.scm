@@ -218,13 +218,13 @@ Archer Yi Yang, Boxiang Wang, Peng Shi & Robert William Platt (2023)
 (define-public r-ktsolve
   (package
     (name "r-ktsolve")
-    (version "1.3")
+    (version "1.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ktsolve" version))
               (sha256
                (base32
-                "0brxqb60m1lyqhsmds1c3c6cmbcxlzk2nwvi0fhkc8ziwzlfmd09"))))
+                "11ps4y7i8llb2v5d91zh9kmsnh6rxb4g6lwyzdalyixnzsy343m1"))))
     (properties `((upstream-name . "ktsolve")))
     (build-system r-build-system)
     (propagated-inputs (list r-nleqslv r-bb))
@@ -349,7 +349,7 @@ experts.")
 proposes mathematical formalisms to operationalize knowledge structures in a
 particular domain.  The @code{kstIO} package provides basic functionalities to
 read and write KST data from/to files to be used together with the kst',
-@code{kstMatrix',} pks or DAKS packages.")
+@code{kstMatrix}', pks or DAKS packages.")
     (license license:gpl3+)))
 
 (define-public r-kstatistics
@@ -374,8 +374,8 @@ of cumulants of a random sample using (multivariate) k-statistics and
 generating univariate and multivariate Faa di Bruno's formula and related
 polynomials, such as Bell polynomials, generalized complete Bell polynomials,
 partition polynomials and generalized partition polynomials.  For more details
-see Di Nardo E., Guarino G., Senato D. (2009) @code{<arXiv:0807.5008>,}
-@code{<arXiv:1012.6008>.}")
+see Di Nardo E., Guarino G., Senato D. (2009) <@code{arXiv:0807.5008>},
+<@code{arXiv:1012.6008>}.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-kst
@@ -496,7 +496,7 @@ paper of Liu et al. (2007), <doi:10.1111/j.1541-0420.2007.00799.x>.")
     (synopsis "K* Nearest Neighbors Algorithm")
     (description
      "Prediction with k* nearest neighbor algorithm based on a publication by Anava
-and Levy (2016) @code{<arXiv:1701.07266>.}")
+and Levy (2016) <@code{arXiv:1701.07266>}.")
     (license license:gpl2+)))
 
 (define-public r-ksharp
@@ -621,7 +621,7 @@ goodness-of-fit test of whether a given i.i.d.  sample is drawn from a given
 distribution.  It works for any distribution once its score function (the
 derivative of log-density) can be provided.  This method is based on \"A
 Kernelized Stein Discrepancy for Goodness-of-fit Tests and Model Evaluation\" by
-Liu, Lee, and Jordan, available at @code{<arXiv:1602.03253>.}")
+Liu, Lee, and Jordan, available at <@code{arXiv:1602.03253>}.")
     (license license:expat)))
 
 (define-public r-kscorrect
@@ -809,7 +809,7 @@ data.")
     (description
      "This package provides tools for applying Krippendorff's Alpha methodology
 <DOI:10.1080/19312450709336664>.  Both the customary methodology and Hughes
-methodology @code{<DOI:10.48550/arXiv.2210.13265>} are supported, the former
+methodology <DOI:10.48550/@code{arXiv.2210.13265>} are supported, the former
 being preferred for larger datasets, the latter for smaller datasets.  The
 framework supports common and user-defined distance functions, and can
 accommodate any number of units, any number of coders, and missingness.
@@ -991,7 +991,7 @@ descriptive statistics of peak counts of the features in a data set.")
     (home-page "https://cran.r-project.org/package=kpcalg")
     (synopsis "Kernel PC Algorithm for Causal Structure Detection")
     (description
-     "Kernel PC @code{(kPC)} algorithm for causal structure learning and causal
+     "Kernel PC (@code{kPC}) algorithm for causal structure learning and causal
 inference using graphical models. @code{kPC} is a version of PC algorithm that
 uses kernel based independence criteria in order to be able to deal with
 non-linear relationships and non-Gaussian noise.")
@@ -1034,7 +1034,7 @@ measure of conditional dependenceâ (URL listed below).  When X is empty, KP
 measures the unconditional dependence between Y and Z, which has been described
 in Deb, N., P. Ghosal, and B. Sen (2020), âMeasuring association on
 topological spaces using kernels and geometric graphsâ
-@code{<arXiv:2010.01768>,} and it is implemented in the functions KMAc() and
+<@code{arXiv:2010.01768>}, and it is implemented in the functions KMAc() and
 Klin() in this package.  The latter can be computed in near linear time.")
     (license license:gpl3)))
 
@@ -1096,8 +1096,8 @@ unsupervised approach, and this package - based on Hira L. Koul (1986)
 <DOI:10.1214/aos/1176350059> - proposes an efficient method for simple image
 segmentation - here, \"simple\" means that an image is black-and-white - which can
 easily be applied to MRI analysis.  This package includes a function
-@code{GetSegImage():} when a black-and-white image is given as an input,
-@code{GetSegImage()} separates an area of white pixels - which corresponds to a
+@code{GetSegImage}(): when a black-and-white image is given as an input,
+@code{GetSegImage}() separates an area of white pixels - which corresponds to a
 white lesion in MRI - from the given image.  For the second problem, consider
 linear regression model and autoregressive model of order q where errors in the
 linear regression model and innovations in the autoregression model are
@@ -1109,12 +1109,12 @@ function by using symmetry of the integrating measure in the distance.  Kim
 (2018) <DOI:10.1080/00949655.2017.1392527> proposed a fast computational method
 which enables practitioners to compute the minimum distance estimator of the
 vector of general multiple regression parameters for several integrating
-measures.  This package contains three functions: @code{KoulLrMde(),}
-@code{KoulArMde(),} and @code{Koul2StageMde().} The former two provide minimum
+measures.  This package contains three functions: @code{KoulLrMde}(),
+@code{KoulArMde}(), and Koul2@code{StageMde}().  The former two provide minimum
 distance estimators for linear regression model and autoregression model,
 respectively, where both are based on Koul's method.  These two functions take
 much less time for the computation than those based on parametric minimum
-distance estimation methods. @code{Koul2StageMde()} provides estimators for
+distance estimation methods.  Koul2@code{StageMde}() provides estimators for
 regression and autoregressive coefficients of linear regression model with
 autoregressive errors through minimum distant method of two stages.  The new
 version is written in Rcpp and dramatically reduces computational time.")
@@ -1163,8 +1163,8 @@ The idea is to determine if a covariate belongs to the model depending on
 whether it enters the model before or after its knockoff.  The procedure suits
 for a wide range of regressions with various types of response variables.
 Regression models available are exported from the R packages glmnet and
-@code{ordinalNet'.} Based on the paper linked to via the URL below: Gegout A.,
-Gueudin A., Karmann C. (2019) @code{<arXiv:1907.03153>.}")
+@code{ordinalNet}'.  Based on the paper linked to via the URL below: Gegout A.,
+Gueudin A., Karmann C. (2019) <@code{arXiv:1907.03153>}.")
     (license license:gpl3)))
 
 (define-public r-korpus-lang-en
@@ -1361,7 +1361,7 @@ information.")
     (home-page "https://cran.r-project.org/package=KOGMWU")
     (synopsis "Functional Summary and Meta-Analysis of Gene Expression Data")
     (description
-     "Rank-based tests for enrichment of KOG @code{(euKaryotic} Orthologous Groups)
+     "Rank-based tests for enrichment of KOG (@code{euKaryotic} Orthologous Groups)
 classes with up- or down-regulated genes based on a continuous measure.  The
 meta-analysis is based on correlation of KOG delta-ranks across datasets
 (delta-rank is the difference between mean rank of genes belonging to a KOG
@@ -1565,7 +1565,7 @@ background with administrative areas.")
      "Identification of putative causal variants in genome-wide association studies
 with the trio design.  The package implements the methods in the paper: Yang,
 Y., Wang, C., Liu, L., Buxbaum, J., He, Z., & Ionita-Laza, I. (2022).
-@code{KnockoffTrio:} A knockoff framework for the identification of putative
+@code{KnockoffTrio}: A knockoff framework for the identification of putative
 causal variants in genome-wide association studies with trio design.  The
 American Journal of Human Genetics, 109(10), 1761-1776.")
     (license license:gpl3)))
@@ -1647,7 +1647,7 @@ using a weighted similarity metric tailored to the problem of forecasting
 univariate time series where recent observations, seasonal patterns, and
 exogenous predictors are all relevant in predicting future observations of the
 series in question.  For more information on the formulation of this similarity
-metric please see Trupiano (2021) @code{<arXiv:2112.06266>.}")
+metric please see Trupiano (2021) <@code{arXiv:2112.06266>}.")
     (license license:gpl3+)))
 
 (define-public r-knnvs
@@ -1816,7 +1816,7 @@ in rmarkdown documents so that they can be made completely standalone.")
     (synopsis "'Knitr' Helpers - Mostly Tables")
     (description
      "This package provides several helper functions for working with knitr and
-@code{LaTeX'.} It includes @code{xTab} for creating traditional @code{LaTeX}
+@code{LaTeX}'.  It includes @code{xTab} for creating traditional @code{LaTeX}
 tables, @code{lTab} for generating longtable environments, and @code{sTab} for
 generating a supertabular environment.  Additionally, this package contains a
 knitr_setup() function which fixes a well-known bug in knitr', which distorts
@@ -2055,7 +2055,7 @@ Godichon-Baggioni, A. (2017). \"Fast Estimation of the Median Covariation Matrix
 with Application to Online Robust Principal Components Analysis\".  Test, 26(3),
 461-480 <doi:10.1007/s11749-016-0519-x>.  Godichon-Baggioni, A. and Surendran,
 S. \"A penalized criterion for selecting the number of clusters for K-medians\"
-@code{<arXiv:2209.03597>} Vardi, Y. and Zhang, C.-H. (2000). \"The multivariate
+<@code{arXiv:2209.03597>} Vardi, Y. and Zhang, C.-H. (2000). \"The multivariate
 L1-median and associated data depth\".  Proc.  Natl.  Acad.  Sci.  USA,
 97(4):1423-1426. <doi:10.1073/pnas.97.4.1423>.")
     (license license:gpl2+)))
@@ -2121,7 +2121,7 @@ H0: the M distributions are equal against H1: not all the distributions are
 equal.  Both permutation test and asymptotic test are available.  These tests
 are consistent against all alternatives where at least two samples have
 different distributions.  For more details on KMD and the associated tests, see
-Huang, Z. and B. Sen (2022) @code{<arXiv:2210.00634>.}")
+Huang, Z. and B. Sen (2022) <@code{arXiv:2210.00634>}.")
     (license license:gpl3)))
 
 (define-public r-kmc
@@ -2197,6 +2197,38 @@ Fienberg (2014) <DOI:10.1007/978-3-319-11257-2_20>, which is a k-means variant
 of locality sensitive hashing.  The method is illustrated with examples and a
 vignette.")
     (license license:gpl3)))
+
+(define-public r-klink
+  (package
+    (name "r-klink")
+    (version "0.6.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "KLINK" version))
+              (sha256
+               (base32
+                "0l0l9rncj0lqwmf0w7aisilqvj721gwx0lb5wh1ailxlznd6kp06"))))
+    (properties `((upstream-name . "KLINK")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-verbalisr
+                             r-shinydashboard
+                             r-shiny
+                             r-pkgload
+                             r-pedtools
+                             r-pedprobr
+                             r-pedmut
+                             r-openxlsx
+                             r-gt
+                             r-forrel))
+    (home-page "https://github.com/magnusdv/KLINK")
+    (synopsis "Kinship Analysis with Linked Markers")
+    (description
+     "This package provides a shiny application for forensic kinship testing, based on
+the pedsuite R packages.  KLINK is closely aligned with the (non-R) software
+Familias and @code{FamLink}', but offers several unique features, including
+visualisations and automated report generation.  The calculation of likelihood
+ratios supports pairs of linked markers, and all common mutation models.")
+    (license license:gpl3+)))
 
 (define-public r-klic
   (package
@@ -2395,7 +2427,7 @@ guarantee.  The method integrates three key components: knockoffs, subsampling
 for stability, and random feature mapping for nonparametric function
 approximation.  For more information, see the accompanying paper: Dai, X., Lyu,
 X., & Li, L. (2021).  âKernel Knockoffs Selection for Nonparametric Additive
-Modelsâ. @code{arXiv} preprint @code{<arXiv:2105.11659>.}")
+Modelsâ. @code{arXiv} preprint <@code{arXiv:2105.11659>}.")
     (license license:gpl2+)))
 
 (define-public r-kiwisr
@@ -2455,8 +2487,8 @@ confined aquifers: (1) for sealed wells, based on the model of Kitagawa et al
 (2011, <doi:10.1029/2010JB007794>), and (2) for open wells, based on the models
 of Cooper et al (1965, <doi:10.1029/JZ070i016p03915>), Hsieh et al (1987,
 <doi:10.1029/WR023i010p01824>), Rojstaczer (1988,
-@code{<doi:10.1029/JB093iB11p13619>),} Liu et al (1989,
-@code{<doi:10.1029/JB094iB07p09453>),} and Wang et al (2018,
+<doi:10.1029/JB093@code{iB11p13619>}), Liu et al (1989,
+<doi:10.1029/JB094@code{iB07p09453>}), and Wang et al (2018,
 <doi:10.1029/2018WR022793>).  Wang's solution is a special exception which
 allows for leakage out of the aquifer (semi-confined); it is equivalent to
 Hsieh's model when there is no leakage (the confined case).  These models treat
@@ -2548,7 +2580,7 @@ reproducibility study <doi:10.1016/j.neuroimage.2010.11.047>.")
     (synopsis
      "Example Functional Imaging Data from the Multi-Modal MRI 'Reproducibility' Resource")
     (description
-     "Functional magnetic resonance imaging @code{('fMRI')} data from the Kirby21
+     "Functional magnetic resonance imaging ('@code{fMRI}') data from the Kirby21
 reproducibility study <doi:10.1016/j.neuroimage.2010.11.047>.")
     (license license:gpl2)))
 
@@ -2577,13 +2609,13 @@ functional and structural imaging.")
 (define-public r-kira
   (package
     (name "r-kira")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Kira" version))
               (sha256
                (base32
-                "0g7ysdikd3zr2957wdkv9x4pj2jbf9376zdcjlrsyn97ah0y7mq7"))))
+                "1hs782is31j4d19737lwdqaxdvprws9lv0x4v3wn07pcsais5wki"))))
     (properties `((upstream-name . "Kira")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -2653,7 +2685,7 @@ example would be testing whether a contributor to a mixture is the father of a
 child of known genotype.  This provides most of the functionality of the
 @code{KinMix} package, but with some loss of efficiency and restriction on
 problem size, as the latter uses RHugin as the Bayes net engine, while this
-package uses @code{gRain'.} The package implements the methods introduced in
+package uses @code{gRain}'.  The package implements the methods introduced in
 Green, P. J. and Mortera, J. (2017) <doi:10.1016/j.fsigen.2017.02.001> and
 Green, P. J. and Mortera, J. (2021) <doi:10.1111/rssc.12498>.")
     (license license:gpl2+)))
@@ -3001,7 +3033,7 @@ dimensions (KHQ5D) is a condition-specific preference-based measure developed by
 Brazier and collaborators (2008) <doi:10.1177/0272989X07301820>.  Although not
 as popular as the SF6D <doi:10.1016/S0895-4356(98)00103-6> and EQ-5D
 <https://euroqol.org/>, the KHQ5D measures health-related quality of life
-@code{(HRQoL)} specifically for UI, not general conditions like the others two
+(HR@code{QoL}) specifically for UI, not general conditions like the others two
 instruments mentioned.  The KHQ5D ca be used in the clinical and economic
 evaluation of health care.  The subject self-rates their health in terms of five
 dimensions: Role Limitation (RL), Physical Limitations (PL), Social Limitations
@@ -3086,7 +3118,7 @@ collection of 3,202 samples with 602 additional trios.  The data is described in
 Auton et al. (2015) <doi:10.1038/nature15393> and Byrska-Bishop et al. (2022)
 <doi:10.1016/j.cell.2022.08.004>, and raw data is available at
 <http://ftp.1000genomes.ebi.ac.uk/vol1/ftp/>.  See Turner (2022)
-@code{<doi:10.48550/arXiv.2210.00539>} for more details.")
+<doi:10.48550/@code{arXiv.2210.00539>} for more details.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-kgode
@@ -3226,7 +3258,7 @@ component analysis technique for non-Gaussian functional/longitudinal data.  The
 crucial function of this package is KFPCA() and KFPCA_reg().  Moreover, least
 square estimates of functional principal component scores are also provided.
 Refer to Rou Zhong, Shishi Liu, Haocheng Li, Jingxiao Zhang. (2021)
-@code{<arXiv:2102.01286>.} Rou Zhong, Shishi Liu, Haocheng Li, Jingxiao Zhang.
+<@code{arXiv:2102.01286>}.  Rou Zhong, Shishi Liu, Haocheng Li, Jingxiao Zhang.
 (2021) <doi:10.1016/j.jmva.2021.104864>.")
     (license license:gpl3+)))
 
@@ -3255,7 +3287,7 @@ Kalman Filter method and is devoted to detect impulse-noised outliers.  These
 are data points that differ significantly from other observations.  ML
 (Maximization Likelihood) and EM (Expectation-Maximization algorithm) algorithms
 were implemented in kfino'.  The method is described in full details in the
-following @code{arXiv} e-Print: @code{<arXiv:2208.00961>.}")
+following @code{arXiv} e-Print: <@code{arXiv:2208.00961>}.")
     (license license:gpl3)))
 
 (define-public r-kfigr
@@ -3369,7 +3401,7 @@ development (Flora & Flake, 2017) <doi:10.1037/cbs0000069> with a cross
 validation technique that maximizes the available data (Hastie, Tibshirani, &
 Friedman, 2009) <isbn:978-0-387-21606-5>.  Also available are functions to
 determine k by drawing on power analytic techniques for covariance structures
-@code{(MacCallum,} Browne, & Sugawara, 1996) <doi:10.1037/1082-989X.1.2.130>,
+(@code{MacCallum}, Browne, & Sugawara, 1996) <doi:10.1037/1082-989X.1.2.130>,
 generate model syntax, and summarize results in a report.")
     (license license:gpl3+)))
 
@@ -3456,6 +3488,26 @@ not currently work in the Windows GUI', the OS X GUI ('R.app'), in Emacs ESS',
 in an Emacs shell buffer or in R Studio'.  In these cases keypress stops with an
 error message.")
     (license license:expat)))
+
+(define-public r-keyperm
+  (package
+    (name "r-keyperm")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "keyperm" version))
+              (sha256
+               (base32
+                "11jwh704iq134imv9p7brnjpvzbqyvd5bdw7id0ggnf7kp2w5rbj"))))
+    (properties `((upstream-name . "keyperm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tm r-slam r-rcpp))
+    (home-page "https://cran.r-project.org/package=keyperm")
+    (synopsis "Keyword Analysis Using Permutation Tests")
+    (description
+     "Efficient implementation of permutation tests for keyword analysis in corpus
+linguistics as described in Mildenberger (2023) <@code{arXiv:2308.13383>}.")
+    (license license:gpl2+)))
 
 (define-public r-keyholder
   (package
@@ -3571,7 +3623,7 @@ publication.")
     (home-page "https://keyatm.github.io/keyATM/")
     (synopsis "Keyword Assisted Topic Models")
     (description
-     "Fits keyword assisted topic models @code{(keyATM)} using collapsed Gibbs
+     "Fits keyword assisted topic models (@code{keyATM}) using collapsed Gibbs
 samplers.  The @code{keyATM} combines the latent dirichlet allocation (LDA)
 models with a small number of keywords selected by researchers in order to
 improve the interpretability and topic classification of the LDA. The
@@ -3642,7 +3694,7 @@ found at Chuan et al. (2021) <doi:10.1038/s41746-021-00519-z>.")
     (description
      "New kernel-based test and fast tests for testing whether two samples are from
 the same distribution.  They work well particularly for high-dimensional data.
-Song, H. and Chen, H. (2023) @code{<arXiv:2011.06127>.}")
+Song, H. and Chen, H. (2023) <@code{arXiv:2011.06127>}.")
     (license license:gpl2+)))
 
 (define-public r-kerseg
@@ -3664,7 +3716,7 @@ Song, H. and Chen, H. (2023) @code{<arXiv:2011.06127>.}")
      "New kernel-based test and fast tests for detecting change-points or
 changed-intervals where the distributions abruptly change.  They work well
 particularly for high-dimensional data.  Song, H. and Chen, H. (2022)
-@code{<arXiv:2206.01853>.}")
+<@code{arXiv:2206.01853>}.")
     (license license:gpl2+)))
 
 (define-public r-kernstadapt
@@ -3692,7 +3744,7 @@ particularly for high-dimensional data.  Song, H. and Chen, H. (2022)
      "Adaptive estimation of the first-order intensity function of a spatio-temporal
 point process using kernels and variable bandwidths.  The methodology used for
 estimation is presented in @code{GonzÃ¡lez} and Moraga (2022).
-@code{<arXiv:2208.12026>.}")
+<@code{arXiv:2208.12026>}.")
     (license license:expat)))
 
 (define-public r-kernsmoothirt
@@ -4020,7 +4072,7 @@ regression estimator constructed in a reproducing kernel Hilbert space.")
     (description
      "This package provides a new practical method to evaluate whether relationships
 between two sets of high-dimensional variables are different or not across two
-conditions.  Song, H. and Wu, M.C. (2023) @code{<arXiv:2307.15268>.}")
+conditions.  Song, H. and Wu, M.C. (2023) <@code{arXiv:2307.15268>}.")
     (license license:gpl2+)))
 
 (define-public r-kerastuner
@@ -4101,7 +4153,7 @@ uniform kernels and unsmoothed and pre-smoothed input data.")
      "Knowledge Synthesis in Agriculture - From Experimental Network to Meta-Analysis")
     (description
      "Demo and dataset accompaying the books : De l'analyse des @code{rÃ©seaux}
-@code{expÃ©rimentaux} Ã  la @code{mÃ©ta-analyse:} MÃ©thodes et applications avec
+@code{expÃ©rimentaux} Ã  la @code{mÃ©ta-analyse}: MÃ©thodes et applications avec
 le logiciel R pour les sciences agronomiques et environnementales (Published
 2018-06-28, Quae, for french version) by David Makowski, Francois Piraux and
 Francois Brun -
@@ -4137,8 +4189,8 @@ Ministry of Agriculture and Fishing of France.")
      "Kendall random walks are a continuous-space Markov chains generated by the
 Kendall generalized convolution.  This package provides tools for simulating
 these random walks and studying distributions related to them.  For more
-information about Kendall random walks see @code{Jasiulis-GoÅdyn} (2014)
-@code{<arXiv:1412.0220>.}")
+information about Kendall random walks see Jasiulis-@code{GoÅdyn} (2014)
+<@code{arXiv:1412.0220>}.")
     (license license:expat)))
 
 (define-public r-kelvin
@@ -4378,9 +4430,9 @@ Nagler (2018) <doi:10.18637/jss.v084.i07>.")
     (description
      "This package provides an efficient implementation of univariate local polynomial
 kernel density estimators that can handle bounded and discrete data.  See
-Geenens (2014) @code{<arXiv:1303.4121>,} Geenens and Wang (2018)
-@code{<arXiv:1602.04862>,} Nagler (2018a) @code{<arXiv:1704.07457>,} Nagler
-(2018b) @code{<arXiv:1705.05431>.}")
+Geenens (2014) <@code{arXiv:1303.4121>}, Geenens and Wang (2018)
+<@code{arXiv:1602.04862>}, Nagler (2018a) <@code{arXiv:1704.07457>}, Nagler
+(2018b) <@code{arXiv:1705.05431>}.")
     (license license:expat)))
 
 (define-public r-kcsnbshiny
@@ -4451,7 +4503,7 @@ handsontable is also provided to enter the input predictor values.")
      "The running statistics of interest is first extracted using a time window which
 is slid across the time series, and in each window, the running statistics value
 is computed.  KCP (Kernel Change Point) detection proposed by Arlot et al.
-(2012) @code{<arXiv:1202.3878>} is then implemented to flag the change points on
+(2012) <@code{arXiv:1202.3878>} is then implemented to flag the change points on
 the running statistics (Cabrieto et al., 2018, <doi:10.1016/j.ins.2018.03.010>).
  Change points are located by minimizing a variance criterion based on the
 pairwise similarities between running statistics which are computed via the
@@ -4483,8 +4535,8 @@ selection is then used to determine the optimal k>0.")
      "This package implements approaches of non-parametric smooth test to compare
 simultaneously K(K>1) copulas and non-parametric clustering of multivariate
 populations with arbitrary sizes.  See Yves I. Ngounou Bakam and Denys Pommeret
-(2022) @code{<arXiv:2112.05623>} and Yves I. Ngounou Bakam and Denys Pommeret
-(2022) @code{<arXiv:2211.06338>.}")
+(2022) <@code{arXiv:2112.05623>} and Yves I. Ngounou Bakam and Denys Pommeret
+(2022) <@code{arXiv:2211.06338>}.")
     (license license:gpl3+)))
 
 (define-public r-kbmvtskew
@@ -5029,21 +5081,16 @@ Regime Switching: Classical and Gibbs-Sampling Approaches with Applications\"
 (define-public r-kairos
   (package
     (name "r-kairos")
-    (version "1.2.0")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "kairos" version))
               (sha256
                (base32
-                "1fivyh61wqkq77aicqc90pihrn2kwir4mpbcp5jl9sklcdmh3l3w"))))
+                "1w0rwfnnlnkb7day3rb6nq9m6yxlzpg8c5dqvs7r3jcjcphp1zda"))))
     (properties `((upstream-name . "kairos")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlang
-                             r-hmisc
-                             r-ggplot2
-                             r-extradistr
-                             r-dimensio
-                             r-arkhe))
+    (propagated-inputs (list r-extradistr r-dimensio r-arkhe r-aion))
     (native-inputs (list r-knitr))
     (home-page "https://packages.tesselle.org/kairos/")
     (synopsis

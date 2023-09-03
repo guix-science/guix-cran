@@ -64,7 +64,7 @@ test case production, be able to test immediately generated files without any
 need to view or modify them, and enter a zero time latency between code
 implementation and industrial testing.  As with testthat', you may complete
 provided test cases according to your needs to push testing further, but this
-need is nearly void when using @code{wyz.code.offensiveProgramming'.}")
+need is nearly void when using wyz.code.@code{offensiveProgramming}'.")
     (license license:gpl3)))
 
 (define-public r-wyz-code-rdoc
@@ -149,14 +149,14 @@ up processing as many checks will be reduced to one single check.")
     (description
      "Meta testing is the ability to test a function without having to provide its
 parameter values.  Those values will be generated, based on semantic naming of
-parameters, as introduced by package @code{wyz.code.offensiveProgramming'.}
+parameters, as introduced by package wyz.code.@code{offensiveProgramming}'.
 Value generation logic can be completed with your own data types and generation
 schemes.  This to meet your most specific requirements and to answer to a wide
 variety of usages, from general use case to very specific ones.  While using
 meta testing, it becomes easier to generate stress test campaigns,
 non-regression test campaigns and robustness test campaigns, as generated tests
 can be saved and reused from session to session.  Main benefits of using
-@code{wyz.code.metaTesting} is ability to discover valid and invalid function
+wyz.code.@code{metaTesting} is ability to discover valid and invalid function
 parameter combinations, ability to infer valid parameter values, and to provide
 smart summaries that allows you to focus on dysfunctional cases.")
     (license license:gpl3)))
@@ -270,13 +270,13 @@ matching theoretical distribution.")
 (define-public r-wv
   (package
     (name "r-wv")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wv" version))
               (sha256
                (base32
-                "06xf3c97pjhln1v31waj8rmp4r0y2kp6v2x10pbpvi8m0nf5zfs1"))))
+                "0dx33bs05k6zi6rnk12v6z2l2pvvx2jdl99vafbpyydf0ls4ppbk"))))
     (properties `((upstream-name . "wv")))
     (build-system r-build-system)
     (propagated-inputs (list r-simts r-rcpparmadillo r-rcpp r-coda))
@@ -287,7 +287,7 @@ matching theoretical distribution.")
 to classical and robust wavelet variance for time series and regular lattices.
 More details can be found, for example, in Serroukh, A., Walden, A.T., &
 Percival, D.B. (2000) <doi:10.2307/2669537> and Guerrier, S. & Molinari, R.
-(2016) @code{<arXiv:1607.05858>.}")
+(2016) <@code{arXiv:1607.05858>}.")
     (license license:agpl3)))
 
 (define-public r-wufoor
@@ -359,14 +359,14 @@ Hwang CL. (1981, ISBN:978-3-540-10558-9).")
      "Computing Weighted Topological Overlaps (wTO) & Consensus wTO Network")
     (description
      "Computes the Weighted Topological Overlap with positive and negative signs
-@code{(wTO)} networks given a data frame containing the @code{mRNA} count/
+(@code{wTO}) networks given a data frame containing the @code{mRNA} count/
 expression/ abundance per sample, and a vector containing the interested nodes
 of interaction (a subset of the elements of the full data frame).  It also
 computes the cut-off threshold or p-value based on the individuals bootstrap or
 the values reshuffle per individual.  It also allows the construction of a
 consensus network, based on multiple @code{wTO} networks.  The package includes
 a visualization tool for the networks.  More about the methodology can be found
-at @code{<arXiv:1711.04702>.}")
+at <@code{arXiv:1711.04702>}.")
     (license license:gpl2)))
 
 (define-public r-wtest
@@ -718,30 +718,6 @@ resources features (e.g. reservoirs, aquifers, and etc.) based on Standard
 Operating Policy (SOP).")
     (license license:gpl3)))
 
-(define-public r-wrs2
-  (package
-    (name "r-wrs2")
-    (version "1.1-4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "WRS2" version))
-              (sha256
-               (base32
-                "1838wy59cqd65s0bw6c24xcvx7zflypqcbgs35l9s2fj87vw2hdc"))))
-    (properties `((upstream-name . "WRS2")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-reshape r-plyr r-mc2d r-mass))
-    (native-inputs (list r-knitr))
-    (home-page "https://r-forge.r-project.org/projects/psychor/")
-    (synopsis "Collection of Robust Statistical Methods")
-    (description
-     "This package provides a collection of robust statistical methods based on Wilcox
-WRS functions.  It implements robust t-tests (independent and dependent
-samples), robust ANOVA (including between-within subject designs), quantile
-ANOVA, robust correlation, robust mediation, and nonparametric ANCOVA models
-based on robust location measures.")
-    (license license:gpl3)))
-
 (define-public r-wrproteo
   (package
     (name "r-wrproteo")
@@ -770,7 +746,7 @@ al 2016 <doi:10.1038/nprot.2016.136>), Dia-NN (Demichev et al 2020
 <doi:10.1038/s41592-019-0638-x>), Fragpipe(da Veiga et al 2020,
 <doi:10.1038/s41592-020-0912-y>), @code{MassChroq} (Valot et al 2011]
 <doi:10.1002/pmic.201100120>), @code{OpenMS} (<doi:10.1038/nmeth.3959>),
-@code{ProteomeDiscoverer,} Proline (Bouyssie et al 2020
+@code{ProteomeDiscoverer}, Proline (Bouyssie et al 2020
 <doi:10.1093/bioinformatics/btaa118>) and Wombat-P. Meta-data provided by
 initial analysis software and/or in sdrf format can be integrated to the
 analysis.  Quantitative proteomics measurements frequently contain multiple NA
@@ -790,8 +766,8 @@ benchmark-tests (eg Navarro et al 2016 <doi:10.1038/nbt.3685>, Ramus et al 2016
 such sub-groups during normalization and testing.  Subsequently, ROC curves
 (Hand and Till 2001 <doi:10.1023/A:1010920819831>) can be constructed to compare
 multiple analysis approaches.  As detailed example the data-set from Ramus et al
-2016 <doi:10.1016/j.jprot.2015.11.011>) quantified by @code{MaxQuant,}
-@code{ProteomeDiscoverer,} and Proline is provided with a detailed analysis of
+2016 <doi:10.1016/j.jprot.2015.11.011>) quantified by @code{MaxQuant},
+@code{ProteomeDiscoverer}, and Proline is provided with a detailed analysis of
 heterologous spike-in proteins.")
     (license license:gpl3)))
 
@@ -1085,7 +1061,7 @@ directory within functions and wrap console messages around other functions.")
      "The main functionalities of wrappedtools are: adding backticks to variable
 names; rounding to desired precision with special case for p-values; selecting
 columns based on pattern and storing their position, name, and backticked name;
-computing and formatting of descriptive statistics (e.g. @code{meanÂ±SD),}
+computing and formatting of descriptive statistics (e.g. @code{meanÂ±SD}),
 comparing groups and creating publication-ready tables with descriptive
 statistics and p-values; creating specialized plots for correlation matrices.
 Functions were mainly written for my own daily work or teaching, but may be of
@@ -1205,7 +1181,7 @@ results.")
     (description
      "This package implements a permutation test method for the weighted quantile sum
 (WQS) regression, building off the @code{gWQS} package (Renzetti et al. (2021)
-@code{<https://CRAN.R-project.org/package=gWQS>).} Weighted quantile sum
+<https://CRAN.R-project.org/package=@code{gWQS>}).  Weighted quantile sum
 regression is a statistical technique to evaluate the effect of complex exposure
 mixtures on an outcome (Carrico et al. (2015) <doi:10.1007/s13253-014-0180-3>).
 The model features a statistical power and Type I error (i.e., false positive)
@@ -1562,7 +1538,7 @@ H. Bustince, and T. Calvo (2016, ISBN: 978-3-319-24753-3), G. Beliakov(2018)
      "It shows the connections between selected clusters from the latest time point
 and the clusters from all the previous time points.  The transition matrices
 between time point t and t+1 are obtained from Waddington-OT analysis
-@code{<https://github.com/ScialdoneLab/WOTPLY>.}")
+<https://github.com/@code{ScialdoneLab/WOTPLY>}.")
     (license license:gpl3)))
 
 (define-public r-wosr
@@ -1876,7 +1852,7 @@ results.")
     (home-page "https://github.com/EmilHvitfeldt/wordsalad")
     (synopsis "Provide Tools to Extract and Analyze Word Vectors")
     (description
-     "This package provides access to various word embedding methods @code{(GloVe,}
+     "This package provides access to various word embedding methods (@code{GloVe},
 fasttext and word2vec) to extract word vectors using a unified framework to
 increase reproducibility and correctness.")
     (license license:expat)))
@@ -2020,8 +1996,8 @@ into an R-friendly format.")
     (home-page "https://github.com/macmillancontentscience/wordpiece")
     (synopsis "R Implementation of Wordpiece Tokenization")
     (description
-     "Apply Wordpiece @code{(<arXiv:1609.08144>)} tokenization to input text, given an
-appropriate vocabulary.  The BERT @code{(<arXiv:1810.04805>)} tokenization
+     "Apply Wordpiece (<@code{arXiv:1609.08144>}) tokenization to input text, given an
+appropriate vocabulary.  The BERT (<@code{arXiv:1810.04805>}) tokenization
 conventions are used by default.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
@@ -2061,12 +2037,12 @@ demand and consumer surplus of Word-of-Mouth-campaigns on mean-field networks.")
     (home-page "https://wordnet.princeton.edu/")
     (synopsis "WordNet Interface")
     (description
-     "An interface to @code{WordNet} using the Jawbone Java API to @code{WordNet.}
+     "An interface to @code{WordNet} using the Jawbone Java API to @code{WordNet}.
 @code{WordNet} (<https://wordnet.princeton.edu/>) is a large lexical database of
 English.  Nouns, verbs, adjectives and adverbs are grouped into sets of
 cognitive synonyms (synsets), each expressing a distinct concept.  Synsets are
 interlinked by means of conceptual-semantic and lexical relations.  Please note
-that @code{WordNet(R)} is a registered tradename.  Princeton University makes
+that @code{WordNet(R}) is a registered tradename.  Princeton University makes
 @code{WordNet} available to research and commercial users free of charge
 provided the terms of their license
 (<https://wordnet.princeton.edu/license-and-commercial-use>) are followed, and
@@ -2240,7 +2216,7 @@ The consequences of disturbances refer to Dieter (2001), Moellmann and Moehring
 (2017), and Fuchs et al. (2022a, 2022b).  For the full references see
 documentation of the functions, package README, and Fuchs et al. (in
 preparation).  Apart from Dieter (2001) and Moellmann and Moehring (2017), all
-functions and factors are based on data from @code{HessenForst,} the forest
+functions and factors are based on data from @code{HessenForst}, the forest
 administration of the Federal State of Hesse in Germany.")
     (license license:expat)))
 
@@ -2327,7 +2303,7 @@ as exponential or first-order autoregressive.  Full details of the package can
 be found in the accompanying vignette.  Furthermore, the details of the package
 can be found in \"Diagnosing Glaucoma Progression with Visual Field Data Using a
 Spatiotemporal Boundary Detection Method\", by Berchuck et al (2018),
-@code{<arXiv:1805.11636>.} The paper is in press at the Journal of the American
+<@code{arXiv:1805.11636>}.  The paper is in press at the Journal of the American
 Statistical Association.")
     (license license:gpl2+)))
 
@@ -2520,7 +2496,7 @@ Procedures in Factorial Designs - Using R and SAS, Springer Verlag, to appear.")
     (description
      "Power calculator for the two-sample Wilcoxon-Mann-Whitney rank-sum test for a
 continuous outcome (Mollan, Trumble, Reifeis et.  al., Mar.  2020)
-<doi:10.1080/10543406.2020.1730866> @code{<arXiv:1901.04597>,} (Mann and Whitney
+<doi:10.1080/10543406.2020.1730866> <@code{arXiv:1901.04597>}, (Mann and Whitney
 1947) <doi:10.1214/aoms/1177730491>, (Shieh, Jan, and Randles 2006)
 <doi:10.1080/10485250500473099>.")
     (license license:gpl3)))
@@ -2671,11 +2647,11 @@ formats: ISO week, epidemiology week (epi week) and calendar date.")
      "Utility functions to convert between the Spatial classes specified by the
 package sp', and the well-known binary (WKB) representation for geometry
 specified by the Open Geospatial Consortium'.  Supports Spatial objects of class
-@code{SpatialPoints',} @code{SpatialPointsDataFrame',} @code{SpatialLines',}
-@code{SpatialLinesDataFrame',} @code{SpatialPolygons',} and
-@code{SpatialPolygonsDataFrame'.} Supports WKB geometry types Point',
-@code{LineString',} Polygon', @code{MultiPoint',} @code{MultiLineString',} and
-@code{MultiPolygon'.} Includes extensions to enable creation of maps with TIBCO
+@code{SpatialPoints}', @code{SpatialPointsDataFrame}', @code{SpatialLines}',
+@code{SpatialLinesDataFrame}', @code{SpatialPolygons}', and
+@code{SpatialPolygonsDataFrame}'.  Supports WKB geometry types Point',
+@code{LineString}', Polygon', @code{MultiPoint}', @code{MultiLineString}', and
+@code{MultiPolygon}'.  Includes extensions to enable creation of maps with TIBCO
 Spotfire'.")
     (license license:bsd-3)))
 
@@ -3425,7 +3401,7 @@ multilingual, interdisciplinary, semantic knowledgebase.  Includes functions to:
 read from wikidata (single items, properties, or properties); query wikidata
 (retrieving all items that match a set of criterial via Wikidata SPARQL query
 service); write to Wikidata (adding new items or statements via
-@code{QuickStatements);} and handle and manipulate Wikidata objects (as lists
+@code{QuickStatements}); and handle and manipulate Wikidata objects (as lists
 and tibbles).  Uses the Wikidata and Quickstatements APIs.")
     (license license:expat)))
 
@@ -3613,10 +3589,10 @@ mathematically convenient on wide matrices.")
     (home-page "https://github.com/bhaskarvk/widgetframe")
     (synopsis "'Htmlwidgets' in Responsive 'iframes'")
     (description
-     "This package provides two functions @code{frameableWidget()',} and
-@code{frameWidget()'.} The @code{frameableWidget()} is used to add extra code to
-a htmlwidget which allows is to be rendered correctly inside a responsive
-iframe'.  The @code{frameWidget()} is a htmlwidget which displays content of
+     "This package provides two functions @code{frameableWidget}()', and
+@code{frameWidget}()'.  The @code{frameableWidget}() is used to add extra code
+to a htmlwidget which allows is to be rendered correctly inside a responsive
+iframe'.  The @code{frameWidget}() is a htmlwidget which displays content of
 another htmlwidget inside a responsive iframe'.  These functions allow for
 easier embedding of htmlwidgets in content management systems such as
 wordpress', blogger etc.  They also allow for separation of widget content from
@@ -3861,7 +3837,7 @@ and additional statistical attributes are provided.")
     (synopsis "White Matter Normalization for Magnetic Resonance Images")
     (description
      "Shinohara (2014) <doi:10.1016/j.nicl.2014.08.008> introduced
-@code{WhiteStripe',} an intensity-based normalization of T1 and T2 images, where
+@code{WhiteStripe}', an intensity-based normalization of T1 and T2 images, where
 normal appearing white matter performs well, but requires segmentation.  This
 method performs white matter mean and standard deviation estimates on data that
 has been rigidly-registered to the MNI template and uses histogram-based
@@ -4345,7 +4321,7 @@ cite the package in publications, use Hankin 2022
      "The distributions of the weight of evidence (log Bayes factor) favouring case
 over noncase status in a test dataset (or test folds generated by
 cross-validation) can be used to quantify the performance of a diagnostic test
-@code{(McKeigue} (2019), <doi:10.1177/0962280218776989>).  The package can be
+(@code{McKeigue} (2019), <doi:10.1177/0962280218776989>).  The package can be
 used with any test dataset on which you have observed case-control status and
 have computed prior and posterior probabilities of case status using a model
 learned on a training dataset.  To quantify how the predictor will behave as a
@@ -4387,8 +4363,8 @@ probabilistically.  Although mixed-effects models are already available in R,
 @code{WeMix} is unique in implementing methods for mixed models using weights at
 multiple levels.  Both linear and logit models are supported.  Models may have
 up to three levels.  Random effects are estimated using the PIRLS algorithm from
-@code{lme4pureR} (Walker and Bates (2013)
-@code{<https://github.com/lme4/lme4pureR>).}")
+lme4@code{pureR} (Walker and Bates (2013)
+<https://github.com/lme4/lme4@code{pureR>}).")
     (license license:gpl2)))
 
 (define-public r-welo
@@ -4571,7 +4547,7 @@ treatments by easing and extending the functionality of several R packages and
 providing in-house estimation methods.  Available methods include propensity
 score weighting using generalized linear models, gradient boosting machines, the
 covariate balancing propensity score algorithm, Bayesian additive regression
-trees, and @code{SuperLearner,} and directly estimating balancing weights using
+trees, and @code{SuperLearner}, and directly estimating balancing weights using
 entropy balancing, energy balancing, and optimization-based weights.  Also
 allows for assessment of weights and checking of covariate balance by
 interfacing directly with the cobalt package.  See the vignette \"Installing
@@ -4620,7 +4596,7 @@ without weights (e.g. generated by propensity score methods).")
 intermediate step for variable/correlation selection for longitudinal ordinal
 and count data in Nikoloulopoulos, Joe and Chaganty (2011)
 <doi:10.1093/biostatistics/kxr005>, Nikoloulopoulos (2016)
-<doi:10.1002/sim.6871> and Nikoloulopoulos (2017) @code{<arXiv:1510.07376>.}")
+<doi:10.1002/sim.6871> and Nikoloulopoulos (2017) <@code{arXiv:1510.07376>}.")
     (license license:gpl2+)))
 
 (define-public r-weightedroc
@@ -4663,7 +4639,7 @@ example-specific cost values).")
 observational studies with I blocks of size J; see Rosenbaum (2018)
 <doi:10.1214/18-AOAS1153>.  The package can perform adaptive inference in block
 designs; see Rosenbaum (2012) <doi:10.1093/biomet/ass032>.  The main functions
-are @code{wgtRank()} and @code{wgtRanktt()} and ef2C().")
+are @code{wgtRank}() and @code{wgtRanktt}() and ef2C().")
     (license license:gpl2)))
 
 (define-public r-weightedporttest
@@ -4709,11 +4685,11 @@ to univariate and multivariate random variables.  The test is based on a
 weighted form of the sample covariance of the residuals after a nonlinear
 regression on the conditioning variables.  Details are described in Scheidegger,
 Hoerrmann and Buehlmann (2021) \"The Weighted Generalised Covariance Measure\"
-@code{<arXiv:2111.04361>.} The test is a generalisation of the Generalised
+<@code{arXiv:2111.04361>}.  The test is a generalisation of the Generalised
 Covariance Measure (GCM) implemented in the R package
 @code{GeneralisedCovarianceMeasure} by Jonas Peters and Rajen D. Shah based on
 Shah and Peters (2020) \"The Hardness of Conditional Independence Testing and the
-Generalised Covariance Measure\" @code{<arXiv:1804.07203>.}")
+Generalised Covariance Measure\" <@code{arXiv:1804.07203>}.")
     (license license:gpl2)))
 
 (define-public r-weightedensemble
@@ -4789,8 +4765,9 @@ typology of sequences are also provided.")
     (description
      "Estimates high-dimensional multivariate normal copula regression models with the
 weighted composite likelihood estimating equations in Nikoloulopoulos (2022)
-@code{<arXiv:2203.04619>.} It provides autoregressive moving average correlation
-structures and binary, ordinal, Poisson, and negative binomial regressions.")
+<@code{arXiv:2203.04619>}.  It provides autoregressive moving average
+correlation structures and binary, ordinal, Poisson, and negative binomial
+regressions.")
     (license (license:fsdg-compatible "GPL (>= 3.5.0)"))))
 
 (define-public r-weighted-desc-stat
@@ -4889,7 +4866,7 @@ bounds to existing plots are supported.")
     (description
      "This package provides a Shiny web application for life data analysis that
 depends on @code{WeibullR} by David Silkworth and Jurgen Symynck (2022)
-@code{<https://CRAN.R-project.org/package=WeibullR>,} an R package for Weibull
+<https://CRAN.R-project.org/package=@code{WeibullR>}, an R package for Weibull
 analysis.")
     (license (license:fsdg-compatible "Apache License"))))
 
@@ -4911,7 +4888,7 @@ analysis.")
     (description
      "Build interactive Weibull Probability Plots with @code{WeibullR} by David
 Silkworth and Jurgen Symynck (2022)
-@code{<https://CRAN.R-project.org/package=WeibullR>,} an R package for Weibull
+<https://CRAN.R-project.org/package=@code{WeibullR>}, an R package for Weibull
 analysis, and plotly by Carson Sievert (2020) <https://plotly-r.com>, an
 interactive web-based graphing library.")
     (license (license:fsdg-compatible "Apache License"))))
@@ -4934,7 +4911,7 @@ interactive web-based graphing library.")
     (description
      "An interactive introduction to Life Data Analysis that depends on
 @code{WeibullR} by David Silkworth and Jurgen Symynck (2022)
-@code{<https://CRAN.R-project.org/package=WeibullR>,} a R package for Weibull
+<https://CRAN.R-project.org/package=@code{WeibullR>}, a R package for Weibull
 Analysis, and learnr by Garrick Aden-Buie et al. (2023)
 <https://CRAN.R-project.org/package=learnr>, a framework for building
 interactive learning modules in R.")
@@ -4982,7 +4959,7 @@ ISBN: 1-471-14328-6).")
      "Life data analysis in the graphical tradition of Waloddi Weibull.  Methods
 derived from Robert B. Abernethy (2008, ISBN 0-965306-3-2), Wayne Nelson (1982,
 ISBN: 9780471094586), William Q. Meeker and Lois A. Escobar (1998, ISBN:
-1-471-14328-6), John I. @code{McCool,} (2012, ISBN: 9781118217986).")
+1-471-14328-6), John I. @code{McCool}, (2012, ISBN: 9781118217986).")
     (license license:gpl3+)))
 
 (define-public r-weibullness
@@ -5191,24 +5168,29 @@ datasets from Stata's online collection.")
 (define-public r-webtrackr
   (package
     (name "r-webtrackr")
-    (version "0.0.1")
+    (version "0.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "webtrackR" version))
               (sha256
                (base32
-                "1rg9f6l0rcc07k1b0y50qhf0fjf77l1xhg5ssbdc6r89b000fxb3"))))
+                "0ksfrwmbcl6ss1pyj696k1swrdpn6hv6pq4844rrjq2p42cgybnw"))))
     (properties `((upstream-name . "webtrackR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-urltools r-tibble r-igraph r-data-table))
+    (propagated-inputs (list r-urltools
+                             r-tibble
+                             r-rvest
+                             r-igraph
+                             r-httr
+                             r-data-table))
     (home-page "https://github.com/schochastics/webtrackR")
-    (synopsis "Analysing Web Tracking Data and Online News Behaviour")
+    (synopsis "Preprocessing and Analyzing Web Tracking Data")
     (description
-     "This package implements data structures and methods to work with web tracking
-data.  This includes data preprocessing steps, methods to construct audience
-networks as described in Mangold & Scharkow (2020)
-<doi:10.1080/19312458.2020.1724274>, and metrics of news audience polarization
-described in Mangold & Scharkow (2022) <doi:10.1080/19312458.2022.2085249>.")
+     "Data structures and methods to work with web tracking data.  The functions cover
+data preprocessing steps, enriching web tracking data with external information
+and methods for the analysis of digital behavior as used in several academic
+papers (e.g., Clemm von Hohenberg et al., 2023 <doi:10.17605/OSF.IO/M3U9P>;
+Stier et al., 2022 <doi:10.1017/S0003055421001222>).")
     (license license:expat)))
 
 (define-public r-websocket
@@ -5231,7 +5213,7 @@ described in Mangold & Scharkow (2022) <doi:10.1080/19312458.2022.2085249>.")
     (description
      "This package provides a @code{WebSocket} client interface for R.
 @code{WebSocket} is a protocol for low-overhead real-time communication:
-@code{<https://en.wikipedia.org/wiki/WebSocket>.}")
+<https://en.wikipedia.org/wiki/@code{WebSocket>}.")
     (license license:gpl2)))
 
 (define-public r-webshot2
@@ -5311,7 +5293,7 @@ species as a function of its prey (or predators) and environmental conditions.
 It exploits the topological ordering of the known trophic interaction network to
 predict species distribution in space and/or time, where the prey (or predator)
 distribution is unavailable.  The method implemented by the package is described
-in Poggiato, @code{AndrÃ©oletti,} Pollock and Thuiller (2022)
+in Poggiato, @code{AndrÃ©oletti}, Pollock and Thuiller (2022)
 <doi:10.22541/au.166853394.45823739/v1>.")
     (license license:gpl3)))
 
@@ -5453,6 +5435,30 @@ the jpeg and png packages.")
 or webmorph templates.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
+(define-public r-webmap
+  (package
+    (name "r-webmap")
+    (version "1.0.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "webmap" version))
+              (sha256
+               (base32
+                "1v6m9d3y9x2vqz7cbm6vknp5006v6vn7h2acjqddwinbjvvadzi9"))))
+    (properties `((upstream-name . "webmap")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-leaflet r-htmlwidgets r-htmltools r-checkmate))
+    (native-inputs (list r-knitr esbuild))
+    (home-page "https://rconnect.usgs.gov/INLPO/webmap-main/")
+    (synopsis "Create Interactive Web Maps Using 'The National Map' Services")
+    (description
+     "This package creates interactive web maps using the @code{JavaScript} Leaflet
+library with base layers of The National Map ('TNM').  TNM services provide
+access to base geospatial information that describes the landscape of the United
+States and its territories.  This package is dependent on, and intended to be
+used with, the leaflet package.")
+    (license license:expat)))
+
 (define-public r-webglobe
   (package
     (name "r-webglobe")
@@ -5584,7 +5590,7 @@ R Markdown that students can use in self-guided learning.")
      "This package provides a client for the @code{WebDriver} API'.  It allows driving
 a (probably headless) web browser, and can be used to test web applications,
 including Shiny apps.  In theory it works with any @code{WebDriver}
-implementation, but it was only tested with @code{PhantomJS'.}")
+implementation, but it was only tested with @code{PhantomJS}'.")
     (license license:expat)))
 
 (define-public r-webdeveloper
@@ -5644,8 +5650,8 @@ to web development.")
      "Chemical information from around the web.  This package interacts with a suite
 of web services for chemical information.  Sources include: Alan Wood's
 Compendium of Pesticide Common Names, Chemical Identifier Resolver,
-@code{ChEBI,} Chemical Translation Service, @code{ChemSpider,} ETOX, Flavornet,
-NIST Chemistry @code{WebBook,} OPSIN, @code{PubChem,} SRS, Wikidata.")
+@code{ChEBI}, Chemical Translation Service, @code{ChemSpider}, ETOX, Flavornet,
+NIST Chemistry @code{WebBook}, OPSIN, @code{PubChem}, SRS, Wikidata.")
     (license license:expat)))
 
 (define-public r-webanalytics
@@ -5786,8 +5792,8 @@ nonlinear time series models through weak ARMA representations.  It determines
 identification, estimation and validation for ARMA models and for AR and MA
 models in particular.  Functions can also be used in the strong case.  This
 package also works on white noises by omitting arguments p', q', ar and ma'.
-See Francq, C. and @code{ZakoÃ¯an,} J. (1998)
-<doi:10.1016/S0378-3758(97)00139-0> and Boubacar @code{MaÃ¯nassara,} Y. and
+See Francq, C. and @code{ZakoÃ¯an}, J. (1998)
+<doi:10.1016/S0378-3758(97)00139-0> and Boubacar @code{MaÃ¯nassara}, Y. and
 Saussereau, B. (2018) <doi:10.1080/01621459.2017.1380030> for more details.")
     (license license:gpl3+)))
 
@@ -5914,7 +5920,7 @@ weighted and directed networks, Yuan, Yan and Zhang (2021)
 networks, Opsahl, Agneessens and Skvoretz (2010)
 <doi:10.1016/j.socnet.2010.03.006>, Zhang, Wang and Yan (2022)
 <doi:10.1016/j.physa.2021.126438>, (3) clustering coefficient of weighted and
-directed networks, Fagiolo (2007) @code{<doi:10.1103/PhysRevE.76.026107>} and
+directed networks, Fagiolo (2007) <doi:10.1103/@code{PhysRevE.76.026107>} and
 Clemente and Grassi (2018) <doi:10.1016/j.chaos.2017.12.007>, (4) rewiring
 networks with given assortativity coefficients, Wang, Yan, Yuan and Zhang (2022)
 <doi:10.1007/s11222-022-10161-8>, (5) preferential attachment network
@@ -6229,7 +6235,7 @@ Locally Stationary Wavelet model of Korkas and Fryzlewicz (2017)
     (description
      "This package implements the diagnostic \"theta\" developed in Poetscher and
 Preinerstorfer (2020) \"How Reliable are Bootstrap-based Heteroskedasticity
-Robust Tests?\" @code{<arXiv:2005.04089>.} This diagnostic can be used to detect
+Robust Tests?\" <@code{arXiv:2005.04089>}.  This diagnostic can be used to detect
 and weed out bootstrap-based procedures that provably have size equal to one for
 a given testing problem.  The implementation covers a large variety of
 bootstrap-based procedures, cf.  the above mentioned article for details.  A
@@ -6559,7 +6565,7 @@ G. (1979) <doi:10.2307/1268518>.  References for the example data articles are:
 Damien Pas, Linda Hinnov, James E. (Jed) Day, Kenneth Kodama, Matthias
 Sinnesael, Wei Liu (2018) <doi:10.1016/j.epsl.2018.02.010>.  Steinhilber,
 Friedhelm, Abreu, Jacksiel, Beer, Juerg , Brunner, Irene, Christl, Marcus,
-Fischer, Hubertus, @code{HeikkilA,} U., Kubik, Peter, Mann, Mathias, Mccracken,
+Fischer, Hubertus, @code{HeikkilA}, U., Kubik, Peter, Mann, Mathias, Mccracken,
 K. , Miller, Heinrich, Miyahara, Hiroko, Oerter, Hans , Wilhelms, Frank. (2012
 <doi:10.1073/pnas.1118965109>.  Christian Zeeden, Frederik Hilgen, Thomas
 Westerhold, Lucas Lourens, Ursula RÃ¶hl, Torsten Bickert (2013)
@@ -6570,10 +6576,10 @@ Fourgeau, D. Giard (1982b) <doi:10.1190/1.1441329>.  Torrence, C., and G. P.
 Compo (1998)<https://paos.colorado.edu/research/wavelets/bams_79_01_0061.pdf>,
 Gouhier TC, Grinsted A, Simko V (2021) <https://github.com/tgouhier/biwavelet>.
 Angi Roesch and Harald Schmidbauer (2018)
-@code{<https://CRAN.R-project.org/package=WaveletComp>.} Russell, Brian, and
+<https://CRAN.R-project.org/package=@code{WaveletComp>}.  Russell, Brian, and
 Jiajun Han
-@code{(2016)<https://www.crewes.org/Documents/ResearchReports/2016/CRR201668.pdf>.}
-Gabor, Dennis (1946) <http://genesis.eecg.toronto.edu/gabor1946.pdf>.  J.
+(2016)<https://www.crewes.org/Documents/@code{ResearchReports/2016/CRR201668.pdf>}.
+ Gabor, Dennis (1946) <http://genesis.eecg.toronto.edu/gabor1946.pdf>.  J.
 Laskar, P. Robutel, F. Joutel, M. Gastineau, A.C.M. Correia, and B. Levrard, B.
 (2004) <doi:10.1051/0004-6361:20041335>.  Laskar, J., Fienga, A., Gastineau, M.,
 Manche, H. (2011a) <doi:10.1051/0004-6361/201116836>.  References for the
@@ -7625,9 +7631,9 @@ mapping MIME types from a database of over 1,500 extension mappings.")
      "Simulate Rehabilitation Strategies for Water Distribution Systems")
     (description
      "The outcome of various rehabilitation strategies for water distribution systems
-can be modeled with the Water Management Simulator @code{(WaMaSim).} Pipe breaks
-and the corresponding damage and rehabilitation costs are simulated.  It is
-mainly intended to be used as educational tool for the Water Infrastructure
+can be modeled with the Water Management Simulator (@code{WaMaSim}).  Pipe
+breaks and the corresponding damage and rehabilitation costs are simulated.  It
+is mainly intended to be used as educational tool for the Water Infrastructure
 Experimental and Computer Laboratory at ETH Zurich, Switzerland.")
     (license license:gpl3)))
 

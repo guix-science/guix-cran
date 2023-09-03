@@ -120,13 +120,13 @@ functionality).")
 (define-public r-ytanalytics
   (package
     (name "r-ytanalytics")
-    (version "0.0.4")
+    (version "0.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "YTAnalytics" version))
               (sha256
                (base32
-                "1l7mir36c5mjddm7dgk7xairxls8h7jbkmnfw404dycks4bp2dx2"))))
+                "0gd5c9wcwqimxhkmczpda96dnzilcdfw3w2qj6jag9m8f4y3xvip"))))
     (properties `((upstream-name . "YTAnalytics")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-httr r-dplyr))
@@ -251,7 +251,7 @@ or just large (trophy) individuals.")
      "Semiparametric modeling of lifetime data with crossing survival curves via Yang
 and Prentice model with piecewise exponential baseline distribution.  Details
 about the model can be found in Demarqui and Mayrink (2019)
-@code{<arXiv:1910.02406>.} Model fitting carried out via likelihood-based and
+<@code{arXiv:1910.02406>}.  Model fitting carried out via likelihood-based and
 Bayesian approaches.  The package also provides point and interval estimation
 for the crossing survival times.")
     (license license:gpl2+)))
@@ -375,7 +375,7 @@ stopping boundaries is established in Yang (2018 <doi:10.1002/sim.7958>).")
      "Semiparametric modeling of lifetime data with crossing survival curves via Yang
 and Prentice model with baseline hazard/odds modeled with Bernstein polynomials.
  Details about the model can be found in Demarqui et al. (2019)
-@code{<arXiv:1910.04475>.} Model fitting can be carried out via both maximum
+<@code{arXiv:1910.04475>}.  Model fitting can be carried out via both maximum
 likelihood and Bayesian approaches.  The package also provides point and
 interval estimation for the crossing survival times.")
     (license license:gpl2+)))
@@ -739,7 +739,7 @@ sentences.")
     (synopsis "Companion to the e-Book \"YaRrr!: The Pirate's Guide to R\"")
     (description
      "This package contains a mixture of functions and data sets referred to in the
-introductory e-book @code{\"YaRrr!:} The Pirate's Guide to R\".  The latest
+introductory e-book \"@code{YaRrr}!: The Pirate's Guide to R\".  The latest
 version of the e-book is available for free at
 <https://www.thepiratesguidetor.com>.")
     (license license:gpl2)))

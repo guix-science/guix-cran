@@ -482,7 +482,7 @@ includes variables that may be of further interest to historians, such as
 Southern Kingdom and Northern Kingdom discrepant dates, and the original
 amalgamated dating mechanic used by Ussher in the original text.  The raw data
 can also be called using \"usshraw\", as described in: Ussher, J. (1658)
-@code{<https://archive.org/stream/AnnalsOfTheWorld/Annals_djvu.txt>.}")
+<https://archive.org/stream/@code{AnnalsOfTheWorld/Annals_djvu.txt>}.")
     (license license:expat)))
 
 (define-public r-uspopcenters
@@ -524,7 +524,7 @@ can also be called using \"usshraw\", as described in: Ussher, J. (1658)
      "This package implements various independence tests for discrete, continuous, and
 infinite-dimensional data.  The tests are based on a U-statistic permutation
 test, the USP of Berrett, Kontoyiannis and Samworth (2020)
-@code{<arXiv:2001.05513>,} and shown to be minimax rate optimal in a wide range
+<@code{arXiv:2001.05513>}, and shown to be minimax rate optimal in a wide range
 of settings.  As the permutation principle is used, all tests have exact,
 non-asymptotic Type I error control at the nominal level.")
     (license license:expat)))
@@ -790,13 +790,13 @@ for a given data set.")
 (define-public r-usefun
   (package
     (name "r-usefun")
-    (version "0.4.8")
+    (version "0.4.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "usefun" version))
               (sha256
                (base32
-                "0jbwfr04y65rlc2aa6483w9qcdqa4bmcx76j4rp9fracfszjb1hg"))))
+                "0gkg7ncxvylvf33x1ncsvs48rzn69a47sk969mbizap3vmn5yw1k"))))
     (properties `((upstream-name . "usefun")))
     (build-system r-build-system)
     (propagated-inputs (list r-dplyr))
@@ -1128,6 +1128,29 @@ itself.")
 reading/writing, processing, multi-panel visualization.  SWU.")
     (license license:gpl2+)))
 
+(define-public r-urootab
+  (package
+    (name "r-urootab")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "URooTab" version))
+              (sha256
+               (base32
+                "0455ssqi0byi6absaxh5xvvyw9isn2fw3rjvyhmd7h9r5w3a1yd6"))))
+    (properties `((upstream-name . "URooTab")))
+    (build-system r-build-system)
+    (inputs (list))
+    (propagated-inputs (list r-zoo r-xts r-magrittr r-knitr r-eviewsr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/sagirumati/URooTab")
+    (synopsis "Tabular Reporting of 'EViews' Unit Root Tests")
+    (description
+     "Conduct unit root tests based on EViews (<https://eviews.com>) routines and
+report them in tables.  EViews (Econometric Views) is a commercial software for
+econometrics.")
+    (license (list license:gpl2+ license:gpl3+))))
+
 (define-public r-uroot
   (package
     (name "r-uroot")
@@ -1377,7 +1400,7 @@ rdacca.hp R package.Methods in Ecology and Evolution, 13: 782-788
     (description
      "@code{UpSet.js} is a re-implementation of @code{UpSetR} to create interactive
 set visualizations for more than three sets.  This is a htmlwidget wrapper
-around the @code{JavaScript} library @code{UpSet.js'.}")
+around the @code{JavaScript} library @code{UpSet.js}'.")
     (license (list license:agpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -1460,7 +1483,7 @@ binomial logit models.  Functions for plotting and tabulating the estimation
 output are available as well.  Estimation is based on Gibbs sampling where the
 Markov chain Monte Carlo algorithms are based on the latent variable
 representations and marginal data augmentation algorithms outlined in Zens G.,
-Fr<fc>hwirth-Schnatter S., Wagner H. (2020) @code{<arXiv:2011.06898>.}")
+Fr<fc>hwirth-Schnatter S., Wagner H. (2020) <@code{arXiv:2011.06898>}.")
     (license license:gpl3)))
 
 (define-public r-updown
@@ -2293,7 +2316,7 @@ coefficients.")
 of fixed size k unique to that string, if it has one.  If no such unique
 substring exists, the least frequent substring is used.  If multiple unique
 substrings exist, the lexicographically smallest substring is used.  This
-lexicographically smallest substring of size k is called the @code{\"UniqTag\"} of
+lexicographically smallest substring of size k is called the \"@code{UniqTag}\" of
 that string.")
     (license license:expat)))
 
@@ -2949,7 +2972,7 @@ Equation and Twin Modelling in R. Twin Research and Human Genetics, 22, 27-41.
      "Unmatched regression refers to the regression setting where covariates and
 predictors are collected separately/independently and so are not paired
 together, as in the usual regression setting.  Balabdaoui, Doss, and Durot
-(2021) @code{<arXiv:2007.00830>} study the unmatched regression setting where
+(2021) <@code{arXiv:2007.00830>} study the unmatched regression setting where
 the univariate regression function is known to be monotone.  This package
 implements methods for computing the estimator developed in Balabdaoui, Doss,
 and Durot (2021).  The main method is an active-set-trust-region-based method.")
@@ -3063,7 +3086,7 @@ sample moments and their powers and products.  Gerlovina and Hubbard (2019)
      "Tools for Analyzing Sequencing Data with Unique Molecular Identifiers")
     (description
      "This package provides tools for analyzing sequencing data containing unique
-molecular identifiers generated by @code{UMIErrorCorrect}
+molecular identifiers generated by UMI@code{ErrorCorrect}
 (<https://github.com/stahlberggroup/umierrorcorrect>).")
     (license license:gpl3)))
 
@@ -3125,7 +3148,7 @@ projection by ESOM is a grid of neurons which can be visualised as a three
 dimensional landscape in form of the Umatrix.  Further details can be found in
 the referenced publications (see url).  This package offers tools for
 calculating and visualising the ESOM as well as Umatrix, Pmatrix and
-@code{UStarMatrix.} All the functionality is also available through graphical
+U@code{StarMatrix}.  All the functionality is also available through graphical
 user interfaces implemented in shiny'.")
     (license license:gpl3)))
 
@@ -3297,7 +3320,7 @@ electric power transmission network) in the UK since 2011.")
     (description
      "This package provides functions to implement the methods of the Flood Estimation
 Handbook (FEH), associated updates and the revitalised flood hydrograph model
-@code{(ReFH).} Currently the package uses NRFA peak flow dataset version 11.1.
+(@code{ReFH}).  Currently the package uses NRFA peak flow dataset version 11.1.
 Aside from FEH functionality, further hydrological functions are available.
 Most of the methods implemented in this package are described in one or more of
 the following: \"Flood Estimation Handbook\", Centre for Ecology & Hydrology
@@ -3312,7 +3335,7 @@ estimation\" , Hammond (2021, <doi:10.2166/nh.2021.059>). \"Improving the FEH
 statistical procedures for flood frequency estimation\", Environment Agency
 (2008, ISBN: 978 1 84432 920 5). \"Low flow estimation in the United Kingdom\",
 Institute of Hydrology (1992, ISBN 0 948540 45 1).  Wallingford
-@code{HydroSolutions,} (2016,
+@code{HydroSolutions}, (2016,
 <http://software.hydrosolutions.co.uk/winfap4/Urban-Adjustment-Procedure-Technical-Note.pdf>).
  Data from the UK National River Flow Archive (<https://nrfa.ceh.ac.uk/>, terms
 and conditions: <https://nrfa.ceh.ac.uk/costs-terms-and-conditions>).")
@@ -3567,10 +3590,10 @@ Shape.")
      "Estimate Univariate Gaussian and Student's t Mixture Autoregressive Models")
     (description
      "Maximum likelihood estimation of univariate Gaussian Mixture Autoregressive
-(GMAR), Student's t Mixture Autoregressive @code{(StMAR),} and Gaussian and
-Student's t Mixture Autoregressive @code{(G-StMAR)} models, quantile residual
+(GMAR), Student's t Mixture Autoregressive (@code{StMAR}), and Gaussian and
+Student's t Mixture Autoregressive (G-@code{StMAR}) models, quantile residual
 tests, graphical diagnostics, forecast and simulate from GMAR, @code{StMAR} and
-@code{G-StMAR} processes.  Leena Kalliovirta, Mika Meitz, Pentti Saikkonen
+G-@code{StMAR} processes.  Leena Kalliovirta, Mika Meitz, Pentti Saikkonen
 (2015) <doi:10.1111/jtsa.12108>, Mika Meitz, Daniel Preve, Pentti Saikkonen
 (2023) <doi:10.1080/03610926.2021.1916531>, Savi Virolainen (2022)
 <doi:10.1515/snde-2020-0060>.")
@@ -3662,7 +3685,7 @@ basic operations such as (dis)attenuate effect size estimates.")
     (home-page "https://wiwi.uni-paderborn.de/en/dep4/feng/")
     (synopsis "Risk Measure Calculation in Financial TS")
     (description
-     "Enables the user to calculate Value at Risk @code{(VaR)} and Expected Shortfall
+     "Enables the user to calculate Value at Risk (@code{VaR}) and Expected Shortfall
 (ES) by means of various parametric and semiparametric GARCH-type models.  For
 the latter the estimation of the nonparametric scale function is carried out by
 means of a data-driven smoothing approach.  Model quality, in terms of
@@ -3878,7 +3901,7 @@ statistical power and are tailored for data in which the dimension L is much
 larger than sample size n.  See Gabriela B. Cybis, Marcio Valk and SÃ­lvia RC
 Lopes (2018) <doi:10.1080/00949655.2017.1374387>, Marcio Valk and Gabriela B.
 Cybis (2020) <doi:10.1080/10618600.2020.1796398>, Debora Z. Bello, Marcio Valk
-and Gabriela B. Cybis (2021) @code{<arXiv:2106.09115>.}")
+and Gabriela B. Cybis (2021) <@code{arXiv:2106.09115>}.")
     (license license:gpl3)))
 
 (define-public r-ucie
@@ -4129,12 +4152,12 @@ options.")
     (synopsis "User-Guided Bayesian Framework for Ensemble Feature Selection")
     (description
      "The framework proposed in Jenul et al., (2022) <doi:10.1007/s10994-022-06221-9>,
-together with an interactive Shiny dashboard. @code{UBayFS} is an ensemble
+together with an interactive Shiny dashboard.  U@code{BayFS} is an ensemble
 feature selection technique embedded in a Bayesian statistical framework.  The
 method combines data and user knowledge, where the first is extracted via
 data-driven ensemble feature selection.  The user can control the feature
 selection by assigning prior weights to features and penalizing specific feature
-combinations. @code{UBayFS} can be used for common feature selection as well as
+combinations.  U@code{BayFS} can be used for common feature selection as well as
 block feature selection.")
     (license license:gpl3)))
 
