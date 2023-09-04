@@ -4794,13 +4794,13 @@ composition (De Caceres et al, 2013) <doi:10.1111/2041-210X.12116>.")
 (define-public r-vegawidget
   (package
     (name "r-vegawidget")
-    (version "0.4.2")
+    (version "0.4.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "vegawidget" version))
               (sha256
                (base32
-                "0rnr54h11gd2x2llypdvaai6v8z3nk5fbpb7zd0dcy7hh55ncfcs"))))
+                "0p09nj45cxv35x84fmdk485v82wbjr724xi1f07p9zd9kn7vmpsf"))))
     (properties `((upstream-name . "vegawidget")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang

@@ -2169,13 +2169,13 @@ Gitter (2020) <doi:10.1186/s12859-019-3324-1>.")
 (define-public r-lpsolveapi
   (package
     (name "r-lpsolveapi")
-    (version "5.5.2.0-17.9")
+    (version "5.5.2.0-17.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lpSolveAPI" version))
               (sha256
                (base32
-                "04bqa719za6hbbip695190zcq6nkwqmm0qjfw8gpfkqpy7ryqlkv"))))
+                "1f8hv89iw8vfnc3f5a73575aqmqcmj5qbmamjklsq79cscjyzdsc"))))
     (properties `((upstream-name . "lpSolveAPI")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=lpSolveAPI")

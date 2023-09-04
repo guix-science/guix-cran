@@ -6482,13 +6482,13 @@ simulations and calculate dose-paths for future cohorts of patients.")
 (define-public r-esback
   (package
     (name "r-esback")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "esback" version))
               (sha256
                (base32
-                "09k895028hqa62m8fhbg5b33ry0in6kbrw0lnphn0rgjhlifxp4z"))))
+                "0l2v4y2sgfyc0a6ap2ww93y44jxijnxjma16p0bsh3clrvzbvcrr"))))
     (properties `((upstream-name . "esback")))
     (build-system r-build-system)
     (propagated-inputs (list r-esreg))
@@ -16299,13 +16299,13 @@ agriculture.  Methods are described by Pueyo-Ros, Comas & Corominas (2023)
 (define-public r-edibble
   (package
     (name "r-edibble")
-    (version "0.1.3")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "edibble" version))
               (sha256
                (base32
-                "173ch27169183ds9bm3f4dzniiiyhv69j33chqmxizrmrpq1mz0f"))))
+                "11ybx488vmglnwz82lddfndafd664akwq5vg2mqmbdhb530fxj89"))))
     (properties `((upstream-name . "edibble")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs

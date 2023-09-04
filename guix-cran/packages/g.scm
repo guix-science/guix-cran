@@ -1193,13 +1193,13 @@ execution time.")
 (define-public r-guiplot
   (package
     (name "r-guiplot")
-    (version "0.4.1")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "guiplot" version))
               (sha256
                (base32
-                "06phbwcz9yjr1vi822izjc2c6n3cr0wvwlfb61b186xfsc10mnqr"))))
+                "0w0airy3z9hskpsqsk136ipmj8wn9v9j5n6sicybwm0qvj83fzhj"))))
     (properties `((upstream-name . "guiplot")))
     (build-system r-build-system)
     (propagated-inputs (list r-svglite
@@ -1207,6 +1207,7 @@ execution time.")
                              r-rlang
                              r-r6
                              r-magrittr
+                             r-jsonlite
                              r-ggplot2
                              r-excelr
                              r-dt))
@@ -7987,6 +7988,39 @@ selection and visualisation.  The package is named after W.S. Gosset aka
 âStudentâ, a pioneer of modern statistics in small sample experimental
 design and analysis.")
     (license license:expat)))
+
+(define-public r-gorica
+  (package
+    (name "r-gorica")
+    (version "0.1.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "gorica" version))
+              (sha256
+               (base32
+                "0xvsdy5l3q4avsbz1qc853fz88mpq98lrsczzxgnwj4yaqp87g9k"))))
+    (properties `((upstream-name . "gorica")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-quadprog
+                             r-mvtnorm
+                             r-mass
+                             r-lme4
+                             r-limsolve
+                             r-lavaan
+                             r-bain))
+    (home-page "https://informative-hypotheses.sites.uu.nl/software/goric/")
+    (synopsis "Evaluation of Inequality Constrained Hypotheses Using GORICA")
+    (description
+     "This package implements the generalized order-restricted information criterion
+approximation (GORICA), an AIC-like information criterion that can be utilized
+to evaluate informative hypotheses specifying directional relationships between
+model parameters in terms of (in)equality constraints (see Altinisik, Van Lissa,
+Hoijtink, Oldehinkel, & Kuiper, 2021), <doi:10.31234/osf.io/t3c8g>.  The GORICA
+is applicable not only to normal linear models, but also to generalized linear
+models (GLMs), generalized linear mixed models (GLMMs), structural equation
+models (SEMs), and contingency tables.  For contingency tables, restrictions on
+cell probabilities can be non-linear.")
+    (license license:gpl3+)))
 
 (define-public r-goric
   (package
@@ -26879,13 +26913,13 @@ calculation of density values.  These tasks are executed using package
 (define-public r-gamselbayes
   (package
     (name "r-gamselbayes")
-    (version "1.0-3")
+    (version "2.0-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gamselBayes" version))
               (sha256
                (base32
-                "0w5jpnmihz8ggqz060849m1xy2r1bv46s89ar4mff95pf5bykfah"))))
+                "1947lpxhiyf2kf22miliikx8plzhb1l97w440fb626vvgwfa340j"))))
     (properties `((upstream-name . "gamselBayes")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -27174,21 +27208,23 @@ resulting fitted object.")
 (define-public r-gamlss-ggplots
   (package
     (name "r-gamlss-ggplots")
-    (version "2.0-1")
+    (version "2.1-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gamlss.ggplots" version))
               (sha256
                (base32
-                "1nzjfki007zky79xwi1mld7pxl6yg8snxdyh3zd9prndnbj6c85s"))))
+                "0b205awv7abl1jv2gg2ki2xdz91i0xikvixgygwjmwz6vri0p7zx"))))
     (properties `((upstream-name . "gamlss.ggplots")))
     (build-system r-build-system)
-    (propagated-inputs (list r-ggridges
+    (propagated-inputs (list r-mgcv
+                             r-ggridges
                              r-ggplot2
                              r-gamlss-inf
                              r-gamlss-foreach
                              r-gamlss-dist
                              r-gamlss
+                             r-foreach
                              r-ellipse))
     (home-page "https://www.gamlss.com/")
     (synopsis

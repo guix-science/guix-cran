@@ -6670,13 +6670,13 @@ package.")
 (define-public r-domir
   (package
     (name "r-domir")
-    (version "1.0.1")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "domir" version))
               (sha256
                (base32
-                "01dhc0s0223ydkbfnpvv0jp8pmpkmcnr2wksv16jm1ndy1bwwjsp"))))
+                "0wi2dx5pqgyn3wy2hm2jd4rd9b084wh2l80lpch7950ws2w51vz0"))))
     (properties `((upstream-name . "domir")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -14383,13 +14383,13 @@ Eigen and bindings to R.")
 (define-public r-dgpsi
   (package
     (name "r-dgpsi")
-    (version "2.2.0")
+    (version "2.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dgpsi" version))
               (sha256
                (base32
-                "0mdwf0rnr2h7wzl2bhlw0x2959x4k5m3lz2z8pp2wz9ysb507psg"))))
+                "1zp7my510ag3i0clqwqa5hr4ara9amq55cfyqbrnm837g9lwbnkv"))))
     (properties `((upstream-name . "dgpsi")))
     (build-system r-build-system)
     (propagated-inputs (list r-reticulate
@@ -14398,6 +14398,7 @@ Eigen and bindings to R.")
                              r-lhs
                              r-ggplot2
                              r-ggforce
+                             r-clhs
                              r-bitops
                              r-benchmarkme))
     (native-inputs (list r-knitr))
@@ -14406,9 +14407,9 @@ Eigen and bindings to R.")
      "Interface to 'dgpsi' for Deep and Linked Gaussian Process Emulations")
     (description
      "Interface to the python package dgpsi for Gaussian process, deep Gaussian
-process, and linked Gaussian process emulations of computer models and systems
-of computer models.  The implementations follow Ming & Guillas (2021)
-<doi:10.1137/20M1323771> and Ming, Williamson, & Guillas (2023)
+process, and linked deep Gaussian process emulations of computer models and
+networks using stochastic imputation (SI).  The implementations follow Ming &
+Guillas (2021) <doi:10.1137/20M1323771> and Ming, Williamson, & Guillas (2023)
 <doi:10.1080/00401706.2022.2124311> and Ming & Williamson (2023)
 <@code{arXiv:2306.01212>}.  To get started with the package, see
 <https://mingdeyu.github.io/dgpsi-R/>.")
@@ -20532,13 +20533,13 @@ zero-inflated models.  These methods are described in V. GÃ³mez-Rubio et al.
 (define-public r-dcluster
   (package
     (name "r-dcluster")
-    (version "0.2-8")
+    (version "0.2-9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DCluster" version))
               (sha256
                (base32
-                "1ixn81jn0vmfi3hyqs1lq3dhpw2f5xkvq8r34pj8x3n664z2h8q4"))))
+                "1qy5dd3v7f05s0qisj2qmxla4d7b7wqxslagfzs2rzj1b9szrhmc"))))
     (properties `((upstream-name . "DCluster")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdep r-mass r-boot))
@@ -22077,13 +22078,13 @@ of R's native numeric representations of timestamps where possible.")
 (define-public r-datetimerangepicker
   (package
     (name "r-datetimerangepicker")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DateTimeRangePicker" version))
               (sha256
                (base32
-                "0bbx3801i7iisyvsfssnvph01s20ynfm65kyi2kp7ga7xafwbafc"))))
+                "1g5gjbwb1h1407bwg5yzrpal2syk5439l73svsjjzs6y55dpixsg"))))
     (properties `((upstream-name . "DateTimeRangePicker")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-reactr r-lubridate r-htmltools))
@@ -22234,13 +22235,13 @@ O'Meara (2012) <doi:10.1093/bioinformatics/bts492>).")
 (define-public r-datefixr
   (package
     (name "r-datefixr")
-    (version "1.5.0")
+    (version "1.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "datefixR" version))
               (sha256
                (base32
-                "1y2ylgzf899d6j4ckl4b6w39s6l7ks709yj7gny42b3f09smqf4v"))))
+                "0kl04yz0dc13vl4717qrmv1183gf3f1nq36h1pqpa73dqa4gpzg7"))))
     (properties `((upstream-name . "datefixR")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-rlang r-rcpp r-lifecycle))
@@ -22262,26 +22263,22 @@ months with user-controlled behavior.")
 (define-public r-dateback
   (package
     (name "r-dateback")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dateback" version))
               (sha256
                (base32
-                "18fgzkxdkjbv33zrpv5p7288nr95by5jasv5l0d7bc9rkxkq5gix"))))
+                "0ja453w7nlb051sdl9rm2kdk40lz34zrixy3bmmmhjvcmcls9kxs"))))
     (properties `((upstream-name . "dateback")))
     (build-system r-build-system)
     (home-page "https://github.com/r-suzuki/dateback")
     (synopsis
      "Collect and Install R Packages on a Specified Date with Dependencies")
     (description
-     "Works like a virtual CRAN snapshot for source packages.  It automatically
+     "Works as a virtual CRAN snapshot for source packages.  It automatically
 downloads and installs tar.gz files with dependencies, all of which were
-available on a specific day.  This package aims to (partially) substitute the
-\"CRAN Time Machine\" (or \"MRAN Time Machine\") and its related packages including
-checkpoint and versions', which no longer work because of the retirement in July
-2023
-(<https://blog.revolutionanalytics.com/2023/01/mran-time-machine-retired.html>).")
+available on a specific day.")
     (license license:expat)))
 
 (define-public r-date

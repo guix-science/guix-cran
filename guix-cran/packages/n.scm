@@ -8739,6 +8739,60 @@ filtering.  The neverhpfilter package provides functions and data for
 reproducing his work.  Hamilton (2017) <doi:10.3386/w23429>.")
     (license license:gpl3)))
 
+(define-public r-nevada
+  (package
+    (name "r-nevada")
+    (version "0.2.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "nevada" version))
+              (sha256
+               (base32
+                "0ba5wbjsgd77f20flp9zqiasmypbxsmqg2yfw0qqwzjrkp3rvfqi"))))
+    (properties `((upstream-name . "nevada")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-withr
+                             r-umap
+                             r-tsne
+                             r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-rgeomstats
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-purrr
+                             r-magrittr
+                             r-igraph
+                             r-ggplot2
+                             r-furrr
+                             r-forcats
+                             r-flipr
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://astamm.github.io/nevada/")
+    (synopsis "Network-Valued Data Analysis")
+    (description
+     "This package provides a flexible statistical framework for network-valued data
+analysis.  It leverages the complexity of the space of distributions on graphs
+by using the permutation framework for inference as implemented in the flipr
+package.  Currently, only the two-sample testing problem is covered and
+generalization to k samples and regression will be added in the future as well.
+It is a 4-step procedure where the user chooses a suitable representation of the
+networks, a suitable metric to embed the representation into a metric space, one
+or more test statistics to target specific aspects of the distributions to be
+compared and a formula to compute the permutation p-value.  Two types of
+inference are provided: a global test answering whether there is a difference
+between the distributions that generated the two samples and a local test for
+localizing differences on the network structure.  The latter is assumed to be
+shared by all networks of both samples.  References: Lovato, I., Pini, A.,
+Stamm, A., Vantini, S. (2020) \"Model-free two-sample test for network-valued
+data\" <doi:10.1016/j.csda.2019.106896>; Lovato, I., Pini, A., Stamm, A., Taquet,
+M., Vantini, S. (2021) \"Multiscale null hypothesis testing for network-valued
+data: Analysis of brain networks of patients with autism\"
+<doi:10.1111/rssc.12463>.")
+    (license license:gpl3+)))
+
 (define-public r-neutralitytestr
   (package
     (name "r-neutralitytestr")

@@ -863,6 +863,34 @@ calculating conditional and unconditional expectations, and calculating marginal
 effects on conditional and unconditional expectations.")
     (license license:gpl2+)))
 
+(define-public r-mvpd
+  (package
+    (name "r-mvpd")
+    (version "0.0.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "mvpd" version))
+              (sha256
+               (base32
+                "10k82g2izv72k99j99mjljg2hxb66pzhgfqal2j5z3cj3gmkjabg"))))
+    (properties `((upstream-name . "mvpd")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stabledist
+                             r-mvtnorm
+                             r-matrixstats
+                             r-matrix
+                             r-libstable4u
+                             r-cubature))
+    (home-page "https://github.com/swihart/mvpd")
+    (synopsis
+     "Multivariate Product Distributions for Elliptically Contoured Distributions")
+    (description
+     "Estimates multivariate subgaussian stable densities and probabilities as well as
+generates random variates using product distribution theory.  A function for
+estimating the parameters from data to fit a distribution to data is also
+provided, using the method from Nolan (2013) <doi:10.1007/s00180-013-0396-7>.")
+    (license license:expat)))
+
 (define-public r-mvpbt
   (package
     (name "r-mvpbt")
@@ -24586,13 +24614,13 @@ Wagner (2021).")
 (define-public r-mgsda
   (package
     (name "r-mgsda")
-    (version "1.6")
+    (version "1.6.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MGSDA" version))
               (sha256
                (base32
-                "03n7ngfbh87hhgpkjkc1a0zjslr0k9zip1prvbwhyqkfq21zajbr"))))
+                "03pr294fddh2dyn2q4fvai12rmpf0wfanjd3m0wimfvmr8idbw9a"))))
     (properties `((upstream-name . "MGSDA")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -36659,21 +36687,21 @@ regression estimator.")
 (define-public r-mas
   (package
     (name "r-mas")
-    (version "0.1")
+    (version "0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mas" version))
               (sha256
                (base32
-                "07z0a6yis23zib16msjgx22mrag5xjbjpczj4kanvn8m3xikxrz3"))))
+                "0iksx2339nwbcg7c8vfkhr3yaxm6z98w61wwv9zwmgrr18ifg4n5"))))
     (properties `((upstream-name . "mas")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncdist r-rcppeigen r-rcpp))
     (home-page "https://cran.r-project.org/package=mas")
     (synopsis "Membership Association Studies")
     (description
-     "Genome-wide association analysis with membership information, variance
-adjustment, and correlated responses.")
+     "Genome-wide association analysis that accomodate membership information,
+variance adjustment, and correlated responses.")
     (license license:gpl3)))
 
 (define-public r-marvel
@@ -37661,16 +37689,16 @@ autoregressive models.")
 (define-public r-maq
   (package
     (name "r-maq")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "maq" version))
               (sha256
                (base32
-                "1s3a93305jy8h2pw93574b9gkc7a7agzb9w6030ibkzbg4a7d91h"))))
+                "1nq8vab5gdnpnhdfmcbyxjw474hhb83pv6yq5j52ayaa5sdxmvdq"))))
     (properties `((upstream-name . "maq")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-matrix))
+    (propagated-inputs (list r-rcpp))
     (home-page "https://github.com/grf-labs/maq")
     (synopsis "Multi-Armed Qini")
     (description

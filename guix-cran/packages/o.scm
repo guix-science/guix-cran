@@ -2232,13 +2232,13 @@ filter, organize and further analyze those ordinal relations.")
 (define-public r-origin
   (package
     (name "r-origin")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "origin" version))
               (sha256
                (base32
-                "132ccdh40rz2rxabqjfjrmhpjrm5b5hm9zfqm3qwssgligf30vg3"))))
+                "0m10x4d8qh67davyznx759blrb548jk8d7my2zc285yax0d6wp5z"))))
     (properties `((upstream-name . "origin")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstudioapi r-cli))
@@ -6959,16 +6959,17 @@ of x and y if x and y have the same length.")
 (define-public r-onetime
   (package
     (name "r-onetime")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "onetime" version))
               (sha256
                (base32
-                "17snjkldm11ry5f1mp18jkmlw7hk0zw5yl1qrmakh1lx7fq1326v"))))
+                "1yyi8r8dniavsjlqmj5z9x52av2qz0iz01i2r7qx69apqbkwd57b"))))
     (properties `((upstream-name . "onetime")))
     (build-system r-build-system)
     (propagated-inputs (list r-rappdirs r-filelock))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/hughjonesd/onetime")
     (synopsis "Run Code Only Once")
     (description

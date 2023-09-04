@@ -32694,13 +32694,13 @@ Syst.  Sci., 12, 2769-2784, www.nat-hazards-earth-syst-sci.net/12/2769/2012/,
 (define-public r-cdfquantreg
   (package
     (name "r-cdfquantreg")
-    (version "1.3.1-1")
+    (version "1.3.1-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cdfquantreg" version))
               (sha256
                (base32
-                "1qznl0csyh8l7kjr9i58lk0ifrfwkbp6zhrivb5kpg8mwsds9nv5"))))
+                "1abbr14fqn56c4yqrz1qbzq03xl5qi6px29wljd3yzysypvh9his"))))
     (properties `((upstream-name . "cdfquantreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-pracma r-mass r-formula))
@@ -35409,13 +35409,13 @@ Nasinski, Majchrowska, and Broniatowska (2020)
 (define-public r-cat
   (package
     (name "r-cat")
-    (version "0.0-7")
+    (version "0.0-9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cat" version))
               (sha256
                (base32
-                "1a5csycaddg7cmfn51sw520b9bbpp07a08hsi2f6lpzqiszhczj1"))))
+                "1wz6mbjzx03267yrszjimcd8yi82z2nfwyvz6l1ry2l300hv2qfs"))))
     (properties `((upstream-name . "cat")))
     (build-system r-build-system)
     (native-inputs (list gfortran))

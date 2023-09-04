@@ -2589,13 +2589,13 @@ information.")
 (define-public r-hstats
   (package
     (name "r-hstats")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hstats" version))
               (sha256
                (base32
-                "0dy1pd5pmb39qan6cim62xkbsrhzdv57q1grnwp5xwfhq5xc9yis"))))
+                "1zhan6hfd7yag2af4b1jrqjpb1c2rj8dfr0jwv99xcywf7yrwzw4"))))
     (properties `((upstream-name . "hstats")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))

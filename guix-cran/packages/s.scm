@@ -320,16 +320,16 @@ implemented method see Nowok, Raab and Dibben (2016)
 (define-public r-synthetic
   (package
     (name "r-synthetic")
-    (version "1.0.4")
+    (version "1.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SynthETIC" version))
               (sha256
                (base32
-                "00aw9s8fxqld0iv3wwlbf3y9gydbawbg611ijq8chldpxkcra5vv"))))
+                "0rdq3ry932bg272j3rdz5ykbydr5yqglxkfl9d5cxanczf1fvfsv"))))
     (properties `((upstream-name . "SynthETIC")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlang r-magrittr r-ggplot2))
+    (propagated-inputs (list r-rlang r-magrittr r-ggplot2 r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/agi-lab/SynthETIC")
     (synopsis "Synthetic Experience Tracking Insurance Claims")
@@ -16024,13 +16024,13 @@ transforming data into useful formats.")
 (define-public r-sqlhelpers
   (package
     (name "r-sqlhelpers")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sqlHelpers" version))
               (sha256
                (base32
-                "1h4mpssppicrxm4aga284q8z7dqzrdxzrh4sgnc5ylmgavzf29y9"))))
+                "0h4i3304fyr1rbjcaflqa43sywi9fz9aqqb6gxfpkhp0npsgwyx8"))))
     (properties `((upstream-name . "sqlHelpers")))
     (build-system r-build-system)
     (propagated-inputs (list r-toolbox r-stringi r-odbc r-dbi r-data-table))
@@ -37308,29 +37308,27 @@ estimation and inferential results.")
 (define-public r-sieve
   (package
     (name "r-sieve")
-    (version "1.0")
+    (version "2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Sieve" version))
               (sha256
                (base32
-                "1sk2d7wsw394xv2agwc4rlsb0ajppap5iaj8z8vm5339cxmkz72x"))))
+                "1vrnyv7a5q9ijb3z0s7sq4ijfmg7anhv31rlhqjw4pzdmpvs5xzd"))))
     (properties `((upstream-name . "Sieve")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-glmnet r-combinat))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-mass r-glmnet r-combinat))
     (home-page "https://cran.r-project.org/package=Sieve")
     (synopsis "Nonparametric Estimation by the Method of Sieves")
     (description
      "This package performs multivariate nonparametric regression/classification by
-the method of sieves (or using orthogonal series).  The method is suitable for
-continuous/binary problems with multivariate or moderate high-dimensional
-features (dimension < 100).  The main estimator in this package, penalized sieve
-estimator, is adaptive to the feature dimension with provable theoretical
-guarantees.  Moreover, such a method is computationally tractable in the sense
-it typically has a polynomial dependence (rather than an exponential one) on the
-feature dimension and an almost linear dependence on the sample size.  Details
-of the methods and model assumptions can be found in: Tianyu Zhang, and Noah
-Simon (2022) <@code{arXiv:2206.02994>}.")
+the method of sieves (using orthogonal basis).  The method is suitable for
+moderate high-dimensional features (dimension < 100).  The l1-penalized sieve
+estimator, a nonparametric generalization of Lasso, is adaptive to the feature
+dimension with provable theoretical guarantees.  We also include a nonparametric
+stochastic gradient descent estimator, Sieve-SGD, for online or large scale
+batch problems.  Details of the methods and model assumptions can be found in:
+<@code{arXiv:2206.02994>} <@code{arXiv:2104.00846>}.")
     (license license:gpl2)))
 
 (define-public r-sier

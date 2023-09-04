@@ -254,13 +254,13 @@ repository <https://forgemia.inra.fr/umr-gdec/bwgs> and modified as a R package.
 (define-public r-bwgr
   (package
     (name "r-bwgr")
-    (version "2.2")
+    (version "2.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bWGR" version))
               (sha256
                (base32
-                "1932mnpcg3b3zhm7f95gnfjv5j7gr4r3j0rk682csq0jwby43dlg"))))
+                "03cfz1gn0xda2z9n3hwnbp0d03zs82vgb3skkynvr5w5iwh251ip"))))
     (properties `((upstream-name . "bWGR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-matrix))
@@ -14997,6 +14997,41 @@ hemispheres can also be fit using either mean-field variational Bayes or Gibbs
 sampling.  The model can also be used more generally for multivariate
 (non-imaging) phenotypes with spatial correlation.")
     (license license:gpl2)))
+
+(define-public r-bgphazard
+  (package
+    (name "r-bgphazard")
+    (version "2.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "BGPhazard" version))
+              (sha256
+               (base32
+                "0i2fsvb9pvvhl4xpp87cacg9934hsi060c6d1z3j5hylwyq2k5h9"))))
+    (properties `((upstream-name . "BGPhazard")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-survival
+                             r-stringr
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-progress
+                             r-magrittr
+                             r-gridextra
+                             r-ggthemes
+                             r-ggplot2
+                             r-dplyr
+                             r-brobdingnag))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/EAMI91/BGPhazard")
+    (synopsis "Markov Beta and Gamma Processes for Modeling Hazard Rates")
+    (description
+     "Computes the hazard rate estimate as described by Nieto-Barajas & Walker (2002),
+Nieto-Barajas (2003), Nieto-Barajas & Walker (2007) and Nieto-Barajas & Yin
+(2008).")
+    (license license:gpl2+)))
 
 (define-public r-bgms
   (package

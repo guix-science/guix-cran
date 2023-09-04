@@ -630,13 +630,13 @@ does not require that the data be in geographic coordinates.")
 (define-public r-quickjsr
   (package
     (name "r-quickjsr")
-    (version "1.0.4")
+    (version "1.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "QuickJSR" version))
               (sha256
                (base32
-                "11fj3in9bzljj1jzz0y49yib1dcpbl8qr01sbqwa3wh4pq4c7mc0"))))
+                "0lc9m4jsk8h51rk4biphjvl8z5n1r78zq16yzvw6rwj38fhp8dlp"))))
     (properties `((upstream-name . "QuickJSR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-r6 r-jsonlite))
@@ -2069,24 +2069,26 @@ customization.")
 (define-public r-qtools
   (package
     (name "r-qtools")
-    (version "1.5.6")
+    (version "1.5.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Qtools" version))
               (sha256
                (base32
-                "1dgvx4c2nvyy7d5yw8fs241k68621ynbx4r8bjlnrdq1c5wd2iww"))))
+                "18shsapws7gq44i9kimdln08a4xkb15674q4b88is1504bgkafip"))))
     (properties `((upstream-name . "Qtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
                              r-rcpp
                              r-quantreg
+                             r-quantdr
                              r-numderiv
                              r-np
                              r-matrix
                              r-mass
                              r-gtools
                              r-glmx
+                             r-conquer
                              r-boot))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=Qtools")
@@ -2096,9 +2098,9 @@ customization.")
 These include methods for transformation-based quantile regression,
 quantile-based measures of location, scale and shape, methods for quantiles of
 discrete variables, quantile-based multiple imputation, restricted quantile
-regression, and directional quantile classification.  A vignette is given in
-Geraci (2016, The R Journal) <doi:10.32614/RJ-2016-037> and included in the
-package.")
+regression, directional quantile classification, and quantile ratio regression.
+A vignette is given in Geraci (2016, The R Journal) <doi:10.32614/RJ-2016-037>
+and included in the package.")
     (license license:gpl2+)))
 
 (define-public r-qtocen

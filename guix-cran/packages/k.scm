@@ -4078,13 +4078,13 @@ conditions.  Song, H. and Wu, M.C. (2023) <@code{arXiv:2307.15268>}.")
 (define-public r-kerastuner
   (package
     (name "r-kerastuner")
-    (version "0.1.0.5")
+    (version "0.1.0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "kerastuneR" version))
               (sha256
                (base32
-                "0mnigff937mcy5saamx7r6rp8mghnghnlzv0hancnmccv7rhfnnj"))))
+                "0n72m527slplgxxp7i5i91cpzbzgrlwmfc8gj2hs3wv41jrr1xl6"))))
     (properties `((upstream-name . "kerastuneR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyjson
@@ -4095,7 +4095,6 @@ conditions.  Song, H. and Wu, M.C. (2023) <@code{arXiv:2307.15268>}.")
                              r-reticulate
                              r-plotly
                              r-magick
-                             r-keras
                              r-echarts4r
                              r-dplyr
                              r-data-table

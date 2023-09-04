@@ -10762,16 +10762,18 @@ values or a user-supplied regression function are passed in as arguments.")
 (define-public r-tml
   (package
     (name "r-tml")
-    (version "0.1.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TML" version))
               (sha256
                (base32
-                "1c9b95av10qgn2p9zq6mcsqqhgs4708365w0jiyw626zsiqw1656"))))
+                "0yaqf000dgki3vb3gyr5zzmvnshspliawv8wap21y4iarrv15pl6"))))
     (properties `((upstream-name . "TML")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rgl
+    (propagated-inputs (list r-stringr
+                             r-rocr
+                             r-rgl
                              r-rfast
                              r-rcppalgos
                              r-rcdd
@@ -10794,9 +10796,9 @@ values or a user-supplied regression function are passed in as arguments.")
      "Suite of tropical geometric tools for use in machine learning applications.
 These methods may be summarized in the following references: Yoshida, et al.
 (2022) <arxiv:2209.15045>, Barnhill et al. (2023) <arxiv:2303.02539>, Barnhill
-and Yoshida (2023) <doi:10.21203/rs.3.rs-3047827/v1>, Yoshida et al. (2022)
-<@code{arXiv:2206.04206>}, and Yoshida et al. (2019)
-<doi:10.1007/s11538-018-0493-4>.")
+and Yoshida (2023) <doi:10.3390/math11153433>, Aliatimis et al. (2023)
+<@code{arXiv:2306.08796>}, Yoshida et al. (2022) <@code{arXiv:2206.04206>}, and
+Yoshida et al. (2019) <doi:10.1007/s11538-018-0493-4>.")
     (license license:expat)))
 
 (define-public r-tmisc
@@ -18862,13 +18864,13 @@ imputation (see Finch, 2008 <doi: 10.1111/j.1745-3984.2008.00062.x>).")
 (define-public r-testdat
   (package
     (name "r-testdat")
-    (version "0.4.1")
+    (version "0.4.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "testdat" version))
               (sha256
                (base32
-                "04hp8n5741l21yfi0g2rhcjp64vkvrhvv1q9wzw214xg8v96fh66"))))
+                "0ybmw0i7pr40h720iwpzvyyr26zb7akjkwbmw6243f644yl4rr0w"))))
     (properties `((upstream-name . "testdat")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -23085,13 +23087,13 @@ analysis).")
 (define-public r-tagr
   (package
     (name "r-tagr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tagr" version))
               (sha256
                (base32
-                "0b1l3jg19r4s2awy1syj5i65r8cyrvplrichfq10c466rz5pm0b3"))))
+                "0ffypwrdxl22c1l99k7js3wayh83xhjw10m9cdbdxapzzf6xm0bg"))))
     (properties `((upstream-name . "tagr")))
     (build-system r-build-system)
     (home-page "https://github.com/jsugarelli/tagr/")
