@@ -18,6 +18,7 @@
   #:use-module (gnu packages python)
   #:use-module (gnu packages cmake)
   #:use-module (gnu packages bioinformatics)
+  #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages pkg-config)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -883,19 +884,18 @@ textbook, 3rd edition.")
 (define-public r-nsm3
   (package
     (name "r-nsm3")
-    (version "1.17")
+    (version "1.18")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "NSM3" version))
               (sha256
                (base32
-                "0cghd9facz3hczw9g69swpv704sv8xfmr38snwq307h45kgdk27h"))))
+                "0m0ijafjlw9pili0hxfrv5blj9ysxhhwj6c4hpnp5ry97a4gkib9"))))
     (properties `((upstream-name . "NSM3")))
     (build-system r-build-system)
     (propagated-inputs (list r-waveslim
                              r-survival
                              r-suppdists
-                             r-semipar
                              r-rfit
                              r-quantreg
                              r-partitions
@@ -2994,6 +2994,36 @@ Weixiang Liu, Xiufeng Jin, Deshui Yu, Hua Wang, Gustavo Glusman, Max Robinson,
 Lin Liu, Jishou Ruan and Shan Gao (2018) <doi:10.1101/251140>.")
     (license license:artistic2.0)))
 
+(define-public r-normdata
+  (package
+    (name "r-normdata")
+    (version "0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "NormData" version))
+              (sha256
+               (base32
+                "122l1v4kmgbamix2gdbz2zdv4ng7zba05rxh1j4z0ffficmax4nq"))))
+    (properties `((upstream-name . "NormData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sandwich
+                             r-openxlsx
+                             r-mass
+                             r-lmtest
+                             r-dplyr
+                             r-doby
+                             r-car))
+    (home-page "https://cran.r-project.org/package=NormData")
+    (synopsis "Derivation of Regression-Based Normative Data")
+    (description
+     "Normative data are often used to estimate the relative position of a raw test
+score in the population.  This package allows for deriving regression-based
+normative data.  It includes functions that enable the fitting of regression
+models for the mean and residual (or variance) structures, test the model
+assumptions, derive the normative data in the form of normative tables or
+automatic scoring sheets, and estimate confidence intervals for the norms.")
+    (license license:gpl2+)))
+
 (define-public r-normalr
   (package
     (name "r-normalr")
@@ -4605,13 +4635,13 @@ version can only impute for a situation with one missing covariate.")
 (define-public r-nnlib2rcpp
   (package
     (name "r-nnlib2rcpp")
-    (version "0.2.2")
+    (version "0.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nnlib2Rcpp" version))
               (sha256
                (base32
-                "0a9mzj041zzjzzwwxcvz4vrbd8xl6hrv8m22a779fv2dyk8jnq5g"))))
+                "02vjfidbpkd38zsikd63wkx091rm481js3a7pgryv768ddia728g"))))
     (properties `((upstream-name . "nnlib2Rcpp")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -5140,13 +5170,13 @@ in network analysis.")
 (define-public r-nmdata
   (package
     (name "r-nmdata")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "NMdata" version))
               (sha256
                (base32
-                "18c82b04mav30490nswbqqpc7vvdk1bcjdx5ndl0xskxpihx4cs7"))))
+                "1ildwg1r7sa2xr0b0yl2x1dcd8rv6y3l5dm7wxq3wjjxi5bzazcg"))))
     (properties `((upstream-name . "NMdata")))
     (build-system r-build-system)
     (propagated-inputs (list r-fst r-data-table))
@@ -5561,13 +5591,13 @@ Torvisco, Rodriguez-Arias Fernandez and Cabello Sanchez (2018)
 (define-public r-nlsr
   (package
     (name "r-nlsr")
-    (version "2023.5.8")
+    (version "2023.8.31")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nlsr" version))
               (sha256
                (base32
-                "1ya38hk1xwvxnlymlx86imq6ww98y2mswf5fdm4s8r2qs3hy4bf4"))))
+                "0df3q1lmqy9abbfqxffssy0vkaizsmfqyr8fx88a2id4dbj5j6xl"))))
     (properties `((upstream-name . "nlsr")))
     (build-system r-build-system)
     (propagated-inputs (list r-digest))
@@ -8270,13 +8300,13 @@ seasons including the sophisticated tie-breaking procedures.")
 (define-public r-nflreadr
   (package
     (name "r-nflreadr")
-    (version "1.3.2")
+    (version "1.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nflreadr" version))
               (sha256
                (base32
-                "063cdp5x5f0jx5x0ydb9cbg3x6zlbk3rxsjmpshlwx89szslszjd"))))
+                "1437nzvqj0w5p3wxb0zfwjkn34ssd4q9zbsw0lmrbs0afifaf6dd"))))
     (properties `((upstream-name . "nflreadr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -9013,6 +9043,26 @@ decoding analyses.  For more information on neural decoding see Meyers & Kreiman
 <https://neuroconductor.org/releases/> or from @code{GitHub}'.")
     (license license:gpl2)))
 
+(define-public r-neuroblastoma
+  (package
+    (name "r-neuroblastoma")
+    (version "2023.9.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "neuroblastoma" version))
+              (sha256
+               (base32
+                "18n2ysrxb47wn5xpf906i5hn84f45r3ijla7sravyrsh8lbx6xih"))))
+    (properties `((upstream-name . "neuroblastoma")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=neuroblastoma")
+    (synopsis "Neuroblastoma Copy Number Profiles")
+    (description
+     "Annotated neuroblastoma copy number profiles, a benchmark data set for
+change-point detection algorithms, as described by Hocking et al.
+<doi:10.1186/1471-2105-14-164>.")
+    (license license:gpl3)))
+
 (define-public r-neurobase
   (package
     (name "r-neurobase")
@@ -9118,6 +9168,40 @@ with (Riedmiller, 1994) or without weight backtracking (Riedmiller and Braun,
 activation function.  Furthermore, the calculation of generalized weights
 (Intrator O & Intrator N, 1993) is implemented.")
     (license license:gpl2+)))
+
+(define-public r-neuralgam
+  (package
+    (name "r-neuralgam")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "neuralGAM" version))
+              (sha256
+               (base32
+                "0s7c15w1mclyls09agmczpcfnk7yx87ikbr4jp8splfcy2wipkmk"))))
+    (properties `((upstream-name . "neuralGAM")))
+    (build-system r-build-system)
+    (inputs (list tensorflow python))
+    (propagated-inputs (list r-tensorflow
+                             r-reticulate
+                             r-magrittr
+                             r-keras
+                             r-gridextra
+                             r-ggplot2
+                             r-formula-tools))
+    (home-page "https://inesortega.github.io/neuralGAM/")
+    (synopsis
+     "Interpretable Neural Network Based on Generalized Additive Models")
+    (description
+     "Neural network framework based on Generalized Additive Models from Hastie &
+Tibshirani (1990, ISBN:9780412343902), which trains a different neural network
+to estimate the contribution of each feature to the response variable.  The
+networks are trained independently leveraging the local scoring and backfitting
+algorithms to ensure that the Generalized Additive Model converges and it is
+additive.  The resultant Neural Network is a highly accurate and interpretable
+deep learning model, which can be used for high-risk AI practices where
+decision-making should be based on accountable and interpretable algorithms.")
+    (license (license:fsdg-compatible "MPL-2.0"))))
 
 (define-public r-networktree
   (package
@@ -9868,13 +9952,13 @@ more information, documentation and examples.")
 (define-public r-netsem
   (package
     (name "r-netsem")
-    (version "0.6.1")
+    (version "0.6.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "netSEM" version))
               (sha256
                (base32
-                "01yhqlax9vyhipw5cjg2mg9cbxj44g7mxlrsfa4mfsw22bd6dc6i"))))
+                "1znb3r8jc1ms4ajzb3ryr89wjx6f3rw1f410msh46d5h08wsjn9n"))))
     (properties `((upstream-name . "netSEM")))
     (build-system r-build-system)
     (propagated-inputs (list r-svglite
@@ -10102,13 +10186,13 @@ Graphics Package and seamlessly work with igraph and network objects.")
 (define-public r-netorigin
   (package
     (name "r-netorigin")
-    (version "1.1-5")
+    (version "1.1-6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "NetOrigin" version))
               (sha256
                (base32
-                "0rskc33pvsajpy0f1baagwmaks49xmydxinjspbkny7p3kaihrkf"))))
+                "0brjg6w79r6bkga9dpqph9l7k6wq5hvsjfhrwx7dnyr437f7z4hk"))))
     (properties `((upstream-name . "NetOrigin")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -12708,13 +12792,13 @@ using NCA metrics.")
 (define-public r-nca
   (package
     (name "r-nca")
-    (version "3.3.2")
+    (version "3.3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "NCA" version))
               (sha256
                (base32
-                "028lmwg8b7glgh2kkjjgkhabl6g672d8fkm1gvj73b7mq6f606yl"))))
+                "0a464k1gqn5546wfsjfg6la3g0q54pn4v5ngf9qbafxishjlavhx"))))
     (properties `((upstream-name . "NCA")))
     (build-system r-build-system)
     (propagated-inputs (list r-quantreg
@@ -12731,20 +12815,20 @@ using NCA metrics.")
     (description
      "This package performs a Necessary Condition Analysis (NCA). (Dul, J. 2016.
 Necessary Condition Analysis (NCA).  Logic and Methodology of Necessary but not
-Sufficient causality.\" Organizational Research Methods 19(1), 10-52,
-<https://journals.sagepub.com/doi/full/10.1177/1094428115584005>).  NCA
-identifies necessary (but not sufficient) conditions in datasets, where x causes
-(e.g. precedes) y.  Instead of drawing a regression line through the middle of
-the data in an xy-plot, NCA draws the ceiling line.  The ceiling line y = f(x)
-separates the area with observations from the area without observations.
-(Nearly) all observations are below the ceiling line: y <= f(x).  The empty zone
-is in the upper left hand corner of the xy-plot (with the convention that the
-x-axis is horizontal and the y-axis is vertical and that values increase upwards
-and to the right'').  The ceiling line is a (piecewise) linear non-decreasing
-line: a linear step function or a straight line.  It indicates which level of x
-(e.g. an effort or input) is necessary but not sufficient for a (desired) level
-of y (e.g. good performance or output).  A quick start guide for using this
-package can be found here: <https://repub.eur.nl/pub/78323/> or
+Sufficient causality.\" Organizational Research Methods 19(1), 10-52)
+<doi:10.1177/1094428115584005>.  NCA identifies necessary (but not sufficient)
+conditions in datasets, where x causes (e.g. precedes) y.  Instead of drawing a
+regression line through the middle of the data in an xy-plot, NCA draws the
+ceiling line.  The ceiling line y = f(x) separates the area with observations
+from the area without observations. (Nearly) all observations are below the
+ceiling line: y <= f(x).  The empty zone is in the upper left hand corner of the
+xy-plot (with the convention that the x-axis is horizontal and the y-axis is
+vertical and that values increase upwards and to the right'').  The ceiling line
+is a (piecewise) linear non-decreasing line: a linear step function or a
+straight line.  It indicates which level of x (e.g. an effort or input) is
+necessary but not sufficient for a (desired) level of y (e.g. good performance
+or output).  A quick start guide for using this package can be found here:
+<https://repub.eur.nl/pub/78323/> or
 <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2624981>.")
     (license license:gpl3+)))
 
@@ -13586,16 +13670,21 @@ contains 15 color schemes and checks for colorblind-friendliness of palettes.")
 (define-public r-natmanager
   (package
     (name "r-natmanager")
-    (version "0.4.9")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "natmanager" version))
               (sha256
                (base32
-                "193rgf2m6pxcxhawgw0xcfc9jqqf3l11zrhjy35fmxansqxmw4im"))))
+                "05iqbkxxcf3zckba7jqj84flmpr903dwjkjc4mldgmwvp4cjwagn"))))
     (properties `((upstream-name . "natmanager")))
     (build-system r-build-system)
-    (propagated-inputs (list r-withr r-usethis r-remotes r-gh r-curl))
+    (propagated-inputs (list r-withr
+                             r-usethis
+                             r-remotes
+                             r-pak
+                             r-gh
+                             r-curl))
     (home-page "https://github.com/natverse/natmanager")
     (synopsis "Install the 'Natverse' Packages from Scratch")
     (description

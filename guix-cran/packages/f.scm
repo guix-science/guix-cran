@@ -1234,13 +1234,13 @@ visualization.  For details, please refer to Park and Won (2022)
 (define-public r-furniture
   (package
     (name "r-furniture")
-    (version "1.9.12")
+    (version "1.9.14")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "furniture" version))
               (sha256
                (base32
-                "0akydlxq7my4xfrh6mjgm2i91h215lhbwmxxbjf0fr537yqxjrmd"))))
+                "07ds1vk1bvv6027g2z93161g3pkdp9vj3prbkjbwkj392sc9rg04"))))
     (properties `((upstream-name . "furniture")))
     (build-system r-build-system)
     (propagated-inputs (list r-knitr r-dplyr))
@@ -2134,13 +2134,13 @@ identify any library() calls to unused packages.")
 (define-public r-funcharts
   (package
     (name "r-funcharts")
-    (version "1.3.1")
+    (version "1.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "funcharts" version))
               (sha256
                (base32
-                "0bmlcqpx6yzgs0r0jsfyf8k0iw2xs59njjqby8zwkvd6adxc2rzs"))))
+                "1ag07wzphsqgaha0h4ya9n68rc79j4y9hhqnppwqphbyj8i029kn"))))
     (properties `((upstream-name . "funcharts")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -2159,8 +2159,9 @@ identify any library() calls to unused packages.")
     (description
      "This package provides functional control charts for statistical process
 monitoring of functional data, using the methods of Capezza et al. (2020)
-<doi:10.1002/asmb.2507> and Centofanti et al. (2020)
-<doi:10.1080/00401706.2020.1753581>.")
+<doi:10.1002/asmb.2507> and Centofanti et al. (2021)
+<doi:10.1080/00401706.2020.1753581>.  The package is thoroughly illustrated in
+the paper of Capezza et al (2023) <doi:10.1080/00224065.2023.2219012>.")
     (license license:gpl3)))
 
 (define-public r-funcdiv
@@ -7169,6 +7170,38 @@ enhancing the reliability and efficiency of missing person investigations.")
      "Routines for forecasting univariate time series using Theta Models.")
     (license license:gpl2+)))
 
+(define-public r-forecomp
+  (package
+    (name "r-forecomp")
+    (version "0.9.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ForeComp" version))
+              (sha256
+               (base32
+                "1d7hs563q0h6zx3ky3lj0acb25b2wi4g4c5vacrppf0lv8m16rqw"))))
+    (properties `((upstream-name . "ForeComp")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-ggplot2 r-forecast r-astsa))
+    (home-page "https://github.com/mcmcs/ForeComp")
+    (synopsis
+     "Size-Power Tradeoff Visualization for Equal Predictive Ability of Two Forecasts")
+    (description
+     "Offers a set of tools for visualizing and analyzing size and power properties of
+the test for equal predictive accuracy, the Diebold-Mariano test that is based
+on heteroskedasticity and autocorrelation-robust (HAR) inference.  A typical HAR
+inference is involved with non-parametric estimation of the long-run variance,
+and one of its tuning parameters, the truncation parameter, trades off a size
+and power.  Lazarus, Lewis, and Stock (2021)<doi:10.3982/ECTA15404>
+theoretically characterize the size-power frontier for the Gaussian multivariate
+location model. @code{ForeComp} computes and visualizes the finite-sample
+size-power frontier of the Diebold-Mariano test based on fixed-b asymptotics
+together with the Bartlett kernel.  To compute the finite-sample size and power,
+it works with the best approximating ARMA process to the given dataset.  It
+informs the user how their choice of the truncation parameter performs and how
+robust the testing outcomes are.")
+    (license license:gpl3+)))
+
 (define-public r-foreco
   (package
     (name "r-foreco")
@@ -9131,6 +9164,28 @@ compositional features.  See Fei and others (2023)
 from the Brazilian Flora 2020.")
     (license license:gpl2+)))
 
+(define-public r-flopart
+  (package
+    (name "r-flopart")
+    (version "2023.8.31")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "FLOPART" version))
+              (sha256
+               (base32
+                "1adidd9fsgibiia6wgdnv3xf5gwvk7awk28ahdlr053nzdwr767r"))))
+    (properties `((upstream-name . "FLOPART")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=FLOPART")
+    (synopsis "Functional Labeled Optimal Partitioning")
+    (description
+     "This package provides an efficient C++ code for computing an optimal
+segmentation model with Poisson loss, up-down constraints, and label
+constraints, as described by Kaufman et al. (2022) <@code{arXiv:2210.02580>}.")
+    (license license:gpl3)))
+
 (define-public r-floodfreqplot
   (package
     (name "r-floodfreqplot")
@@ -9508,13 +9563,13 @@ domestic flights within the country.")
 (define-public r-flightr
   (package
     (name "r-flightr")
-    (version "0.5.2")
+    (version "0.5.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FLightR" version))
               (sha256
                (base32
-                "0scbz1c3pm40v8h4h5qxckrpg2zixx29g9wwxiq06wlc7vajlh77"))))
+                "19ci9gw314sj4lyvw84mgg5ni5zbgq35glcwd4ry0rkkr9vikm28"))))
     (properties `((upstream-name . "FLightR")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm
@@ -15802,13 +15857,13 @@ Wasserstein metric of optimal transport.")
 (define-public r-fdaconcur
   (package
     (name "r-fdaconcur")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fdaconcur" version))
               (sha256
                (base32
-                "1xlhn9di70z49y79l2pwffqykmz8j5p09hihhf6rsbsrjy42nwbv"))))
+                "0i0wvaplcfl021hjh6f6qlimx0hrsxq18l8v4j2bvrnsr3allj60"))))
     (properties `((upstream-name . "fdaconcur")))
     (build-system r-build-system)
     (propagated-inputs (list r-fdapace))
@@ -15816,10 +15871,10 @@ Wasserstein metric of optimal transport.")
     (synopsis
      "Concurrent Regression and History Index Models for Functional Data")
     (description
-     "This package provides implementation of concurrent or varying coefficient
+     "This package provides an implementation of concurrent or varying coefficient
 regression methods for functional data.  The implementations are done for both
 dense and sparsely observed functional data.  Pointwise confidence bands can be
-constructed for each case.  Further, the influence of past predictor values is
+constructed for each case.  Further, the influence of past predictor values are
 modeled by a smooth history index function, while the effects on the response
 are described by smooth varying coefficient functions, which are very useful in
 analyzing real data such as COVID data.  References: Yao, F., MÃ¼ller, H.G.,

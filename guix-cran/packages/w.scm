@@ -13,6 +13,11 @@
   #:use-module (gnu packages web)
   #:use-module (gnu packages tls)
   #:use-module (gnu packages image)
+  #:use-module (gnu packages algebra)
+  #:use-module (gnu packages geo)
+  #:use-module (gnu packages ghostscript)
+  #:use-module (gnu packages pulseaudio)
+  #:use-module (gnu packages audio)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -3268,6 +3273,27 @@ Wikidata'.  Functions included for getting taxonomic information from each of
 the sources just listed, as well performing taxonomic search.")
     (license license:expat)))
 
+(define-public r-wikiprofiler
+  (package
+    (name "r-wikiprofiler")
+    (version "0.1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "wikiprofiler" version))
+              (sha256
+               (base32
+                "1a4d46y2ymn6z0m72x4aw449v2nyfkz87bdw25i6plb992b632hg"))))
+    (properties `((upstream-name . "wikiprofiler")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rsvg r-gson r-ggplotify))
+    (home-page "https://cran.r-project.org/package=wikiprofiler")
+    (synopsis "'WikiPathway' Based Data Integration and Visualization")
+    (description
+     "Queries online @code{WikiPathway} graphics and allows mapping user data (e.g.,
+expression values) on the graph.  The package designs a grammar of graphic
+syntax that using pipe operator to add graphic layer.")
+    (license license:artistic2.0)))
+
 (define-public r-wikipedir
   (package
     (name "r-wikipedir")
@@ -3675,13 +3701,13 @@ directory.  See vignettes for a detailed walk-through.")
 (define-public r-whomds
   (package
     (name "r-whomds")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "whomds" version))
               (sha256
                (base32
-                "1wzdf4lm0kmqn3hq09rydib5z96vzb2lhd3k98mamlfvydagscxi"))))
+                "1n7i7hh18mplqrhz554pwx4n70p1k7ryfzcgpxigzqphdny44npp"))))
     (properties `((upstream-name . "whomds")))
     (build-system r-build-system)
     (propagated-inputs (list r-wrightmap
@@ -5894,13 +5920,13 @@ Department of Natural Resources @code{ArcGIS} REST APIs
 (define-public r-wdnet
   (package
     (name "r-wdnet")
-    (version "1.2.0")
+    (version "1.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wdnet" version))
               (sha256
                (base32
-                "17bcyjag9fa5zmh14d0zsdc3abbxrfkhx11yr6dqm8hs587k17iy"))))
+                "163yx18xg6q09n07kbvigklr4y0mdnav76hafsf2i56fz1x5b632"))))
     (properties `((upstream-name . "wdnet")))
     (build-system r-build-system)
     (propagated-inputs (list r-wdm
@@ -5924,7 +5950,7 @@ directed networks, Fagiolo (2007) <doi:10.1103/@code{PhysRevE.76.026107>} and
 Clemente and Grassi (2018) <doi:10.1016/j.chaos.2017.12.007>, (4) rewiring
 networks with given assortativity coefficients, Wang, Yan, Yuan and Zhang (2022)
 <doi:10.1007/s11222-022-10161-8>, (5) preferential attachment network
-generation.")
+generation, Yuan, Wang, Yan and Zhang (2023) <doi:10.6339/23-JDS1110>.")
     (license license:gpl3+)))
 
 (define-public r-wdm
@@ -6507,22 +6533,24 @@ using the Weighted AVERage of all possible Regressions using the data available.
 (define-public r-waverider
   (package
     (name "r-waverider")
-    (version "0.3.1")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "WaverideR" version))
               (sha256
                (base32
-                "1gx7crfcr2pak8y8xidkrhlmdb63mcni2mcahq2fpi5496pnbnrj"))))
+                "1lm7xq443vninrph21xq6dikpd42xl9ilwfb22lfba2b7j7j5z6g"))))
     (properties `((upstream-name . "WaverideR")))
     (build-system r-build-system)
     (propagated-inputs (list r-waveletcomp
                              r-viridis
                              r-truncnorm
+                             r-rlist
                              r-reshape2
                              r-rcolorbrewer
                              r-matrixstats
                              r-matrix
+                             r-magick
                              r-hmisc
                              r-foreach
                              r-fancova
@@ -7358,20 +7386,20 @@ Z., Sharma, A., & Johnson, F. (2021) <doi:10.1016/J.JHYDROL.2021.126816>.")
 (define-public r-washi
   (package
     (name "r-washi")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "washi" version))
               (sha256
                (base32
-                "0b2fdnp92jny59q1qvgi3al83294pg8blfgg0q2lr4phjicxmcp5"))))
+                "04cibvi0d9spx8h0r28m1sz5drrkiblzfp63v6csm2n4dv55x075"))))
     (properties `((upstream-name . "washi")))
     (build-system r-build-system)
-    (propagated-inputs (list r-scales
+    (propagated-inputs (list r-systemfonts
+                             r-scales
                              r-officer
                              r-ggplot2
                              r-flextable
-                             r-extrafont
                              r-cli))
     (home-page "https://github.com/WA-Department-of-Agriculture/washi")
     (synopsis "Washington Soil Health Initiative Branding")
@@ -7517,16 +7545,18 @@ this package.")
 (define-public r-warbler
   (package
     (name "r-warbler")
-    (version "1.1.28")
+    (version "1.1.29")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "warbleR" version))
               (sha256
                (base32
-                "061scws8a3jkpnfkpcpwdcxnnqpszshj409qjgcdqrcl0s5d1jh0"))))
+                "1r45syh0j0p23yqnc4fjcznrgaaw2qk2vwpl105nhin5fx8khbyc"))))
     (properties `((upstream-name . "warbleR")))
     (build-system r-build-system)
+    (inputs (list sox libsndfile ghostscript gdal fftw))
     (propagated-inputs (list r-tuner
+                             r-testthat
                              r-seewave
                              r-rjson
                              r-rcurl
@@ -7537,7 +7567,7 @@ this package.")
                              r-knitr
                              r-fftw
                              r-dtw
-                             r-crayon
+                             r-cli
                              r-bioacoustics))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://marce10.github.io/warbleR/")
@@ -8041,22 +8071,23 @@ event in the presence of death.")
 (define-public r-w4mrutils
   (package
     (name "r-w4mrutils")
-    (version "0.0.1")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "W4MRUtils" version))
               (sha256
                (base32
-                "12yqy4066qj5k6imnqd6brkklhrx8a827fn8lhqcr6hfycm5p2ym"))))
+                "1hzr2p3kp9k2y154a2p9qc9shyqpkh0m5ylk2f9ivm4m0f3ifqdp"))))
     (properties `((upstream-name . "W4MRUtils")))
     (build-system r-build-system)
+    (propagated-inputs (list r-rlang))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=W4MRUtils")
     (synopsis "Utils List for W4M - Workflow for Metabolomics")
     (description
      "This package provides a set of utility function to prevent the spread of
-utilities script in W4M (Workflow For Metabolomics) scripts, and centralize them
-in a single package.  Some are meant to be replaced by real packages in a near
+utilities script in W4M (Workflow4Metabolomics) scripts, and centralize them in
+a single package.  Some are meant to be replaced by real packages in a near
 future, like the parse_args() function: it is here only to prepare the ground
 for more global changes in W4M scripts and tools.")
     (license license:agpl3+)))

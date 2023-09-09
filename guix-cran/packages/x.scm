@@ -964,13 +964,13 @@ into number of tables while preserving parent to child relationships.")
 (define-public r-xmeta
   (package
     (name "r-xmeta")
-    (version "1.3.1")
+    (version "1.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "xmeta" version))
               (sha256
                (base32
-                "1jl83qpf01h7smgpdkbv434gyimxknk423ri0yy09bxr5smbq7ch"))))
+                "1by3w7mn3kk4942pbjyqb6hbrsxbxywfjy96cq0cmvwzq7aamhxm"))))
     (properties `((upstream-name . "xmeta")))
     (build-system r-build-system)
     (propagated-inputs (list r-plotrix
@@ -1677,13 +1677,13 @@ to the 3D surface measurements.")
 (define-public r-x13binary
   (package
     (name "r-x13binary")
-    (version "1.1.57-3")
+    (version "1.1.57-4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "x13binary" version))
               (sha256
                (base32
-                "0sp0mwjxpaxlhfv94zb8n9grsq9ssp308c55q8ipkxn116d58ldm"))))
+                "00g94lxj3a4kzsfir7c7dqi9p3gxb4rc45aa0h712l19c286pmqd"))))
     (properties `((upstream-name . "x13binary")))
     (build-system r-build-system)
     (home-page "https://github.com/x13org/x13binary")

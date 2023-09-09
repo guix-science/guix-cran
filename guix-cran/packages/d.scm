@@ -1788,13 +1788,13 @@ the high-level user interface of dplyr'.")
 (define-public r-duckdbfs
   (package
     (name "r-duckdbfs")
-    (version "0.0.1")
+    (version "0.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "duckdbfs" version))
               (sha256
                (base32
-                "0c31yr18j2dqbxhy10qh47a5ynjjb1hjdy5p0r7pfklc3xg5c6n1"))))
+                "1rap9363q475msan20xlyarlrj2aisgcfpq1zdj9lxrhl0zf3w3r"))))
     (properties `((upstream-name . "duckdbfs")))
     (build-system r-build-system)
     (propagated-inputs (list r-duckdb r-dplyr r-dbplyr r-dbi))
@@ -2336,13 +2336,13 @@ Biometrics, 77: 465â 476, <doi:10.1111/biom.13337>.")
 (define-public r-dtrackr
   (package
     (name "r-dtrackr")
-    (version "0.4.0")
+    (version "0.4.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dtrackr" version))
               (sha256
                (base32
-                "1pwkdv0hc4y0184882s1xd5fxvh5mw9737mn1z89nxgk78ld25gc"))))
+                "0biwciv8f8rd6psydiriyylklw7q954dsr3rrax5a2fc3gn9adbz"))))
     (properties `((upstream-name . "dtrackr")))
     (build-system r-build-system)
     (propagated-inputs (list r-v8
@@ -2449,13 +2449,13 @@ statdistr determines the stationary distribution of a Markov Chain.")
 (define-public r-dti
   (package
     (name "r-dti")
-    (version "1.5.1")
+    (version "1.5.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dti" version))
               (sha256
                (base32
-                "08da7v7sl88g2jixfplvw9rc5rvlifq3fvyrgh9naa5jsmd8h5ia"))))
+                "065cmp4fcwb94ajg7p971jiw705kvmmygxzwscxgyqfhw2ad8hrj"))))
     (properties `((upstream-name . "dti")))
     (build-system r-build-system)
     (inputs (list gsl))
@@ -2468,7 +2468,7 @@ statdistr determines the stationary distribution of a Markov Chain.")
                              r-aws
                              r-adimpro))
     (native-inputs (list gfortran))
-    (home-page "http://www.wias-berlin.de/research/ats/imaging/")
+    (home-page "https://www.wias-berlin.de/research/ats/imaging/")
     (synopsis "Analysis of Diffusion Weighted Imaging (DWI) Data")
     (description
      "Diffusion Weighted Imaging (DWI) is a Magnetic Resonance Imaging modality, that
@@ -5382,13 +5382,13 @@ the Rmpfr package and hence the underlying MPFR and GMP C libraries.")
 (define-public r-dpq
   (package
     (name "r-dpq")
-    (version "0.5-5")
+    (version "0.5-6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DPQ" version))
               (sha256
                (base32
-                "1sb4k35z4qf5vds39xic8sxpj0h09z6j0vkrjsig4qdqjlpil5qh"))))
+                "0vvxsca8w7mzscqqfaq5sfxqyfh8c9ja3499i6gf4q46aa1w215j"))))
     (properties `((upstream-name . "DPQ")))
     (build-system r-build-system)
     (propagated-inputs (list r-sfsmisc))
@@ -5399,7 +5399,10 @@ the Rmpfr package and hence the underlying MPFR and GMP C libraries.")
      "Computations for approximations and alternatives for the DPQ (Density (pdf),
 Probability (cdf) and Quantile) functions for probability distributions in R.
 Primary focus is on (central and non-central) beta, gamma and related
-distributions such as the chi-squared, F, and t. -- This is for the use of
+distributions such as the chi-squared, F, and t. -- For several distribution
+functions, provide functions implementing formulas from Johnson, Kotz, and Kemp
+(1992) <doi:10.1002/bimj.4710360207> and Johnson, Kotz, and Balakrishnan (1995)
+for discrete or continuous distributions respectively.  This is for the use of
 researchers in these numerical approximation implementations, notably for my own
 use in order to improve standard R pbeta(), qgamma(), ..., etc:
 {'\"dpq\"'-functions}.")
@@ -11458,25 +11461,23 @@ as prevalence.  The methods are described in Jackson et al. (2021)
 (define-public r-disaggregation
   (package
     (name "r-disaggregation")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "disaggregation" version))
               (sha256
                (base32
-                "0n873a8bxqcgab0qkmxkr4xqg4mafm5qn2lmfclvibv2dhydpkjx"))))
+                "0v7wqx84bawl6kw6izy530kqhr3g7bzbnma17s691b7dzz4f5cnf"))))
     (properties `((upstream-name . "disaggregation")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb
                              r-splancs
                              r-sparsemvn
                              r-sp
-                             r-rgeos
-                             r-rgdal
+                             r-sf
                              r-rcppeigen
                              r-raster
                              r-matrix
-                             r-maptools
                              r-ggplot2
                              r-foreach
                              r-dplyr
@@ -11722,13 +11723,13 @@ a node, the corresponding text is displayed as a tooltip.")
 (define-public r-directional
   (package
     (name "r-directional")
-    (version "6.1")
+    (version "6.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Directional" version))
               (sha256
                (base32
-                "07msgyvq1zx63xbfcy5jydb6m4zf5bgpsd5nhpks58v1qj9lpylb"))))
+                "02q8ldp7xphxs87i8dsfi18ziidda23zdc7a158mbwrb19vvkwjx"))))
     (properties `((upstream-name . "Directional")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf
@@ -11762,7 +11763,8 @@ with general covariates and anisotropic errors.  Statistics and Computing 30(1):
 (2022).  An investigation of hypothesis testing procedures for circular and
 spherical mean vectors.  Communications in Statistics-Simulation and Computation
 (Accepted for publication). <doi:10.1080/03610918.2022.2045499>.  e) Tsagris M.
-and Alzeley O. (2023).  Circular and spherical projected Cauchy distributions.
+and Alzeley O. (2023).  Circular and spherical projected Cauchy distributions: A
+Novel Framework for Circular and Directional Data Modeling.
 <@code{arXiv:2302.02468>}.")
     (license license:gpl2+)))
 
@@ -11819,13 +11821,13 @@ networks: a new perspective\", Clemente, G.P., Grassi, R. (2017),
 (define-public r-direct
   (package
     (name "r-direct")
-    (version "1.0.1")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DIRECT" version))
               (sha256
                (base32
-                "00z4xlc9kxn19lw2b8xq6krsf5v3wfbr1ghl5ah5shr9dnv84lc1"))))
+                "0868918aa0nxhgmczpbpf9i06x9ik18vff51cdb4i9q405mal6sj"))))
     (properties `((upstream-name . "DIRECT")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=DIRECT")
@@ -14062,13 +14064,13 @@ errors have a Laplace distribution based on the work of Puig and Stephens (2000)
 (define-public r-diagis
   (package
     (name "r-diagis")
-    (version "0.2.2")
+    (version "0.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "diagis" version))
               (sha256
                (base32
-                "0bnyia73dcnygk6q4n4sxprhxj2pfmzcwmivk5kaxzagqi2zli8g"))))
+                "1gl720d1rrmqingsskkc86kl3n10c7cwvmx19yyxiprwzfkrjh95"))))
     (properties `((upstream-name . "diagis")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-gridextra r-ggplot2
@@ -14467,13 +14469,13 @@ Schwab et al. (2017) <doi:10.1016/j.neuroimage.2018.03.074>.")
 (define-public r-dglmextpois
   (package
     (name "r-dglmextpois")
-    (version "0.2.2")
+    (version "0.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DGLMExtPois" version))
               (sha256
                (base32
-                "1mzkzpbnzzxrzxcdc5bi0vcjnrkgnbknngs6syk3qsch08l6pif2"))))
+                "0bbf7cyrnn1ghvhbnv54pv6325l8v8fy1bayl4b6qgs84xd959p4"))))
     (properties `((upstream-name . "DGLMExtPois")))
     (build-system r-build-system)
     (propagated-inputs (list r-nloptr r-compoissonreg))
@@ -18191,6 +18193,33 @@ parametric, using stable distributions, and another one- non-parametric, using
 the squared Mahalanobis distance.  The package also contains functions for data
 handling and building of new classifiers as well as some test data set.")
     (license license:gpl3)))
+
+(define-public r-defm
+  (package
+    (name "r-defm")
+    (version "0.1-1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "defm" version))
+              (sha256
+               (base32
+                "1pq89pma7gmahjhd6l5cjxd1768v7xjnv206ghls8w495xnl6qjs"))))
+    (properties `((upstream-name . "defm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://cran.r-project.org/package=defm")
+    (synopsis "Estimation and Simulation of Multi-Binary Response Models")
+    (description
+     "Multi-binary response models are a class of models that allow for the estimation
+of multiple binary outcomes simultaneously.  This package provides functions to
+estimate and simulate these models using the Discrete Exponential-Family Models
+[DEFM] framework.  In it, we implement the models described in Vega Yon,
+Valente, and Pugh (2023) <doi:10.48550/@code{arXiv.2211.00627>}.  DEFMs include
+Exponential-Family Random Graph Models [ERGMs], which characterize graphs using
+sufficient statistics, which is also the core of DEFMs. Using sufficient
+statistics, we can describe the data through meaningful motifs, for example,
+transitions between different states, joint distribution of the outcomes, etc.")
+    (license license:expat)))
 
 (define-public r-deflist
   (package
@@ -21925,29 +21954,6 @@ archives from the network, share your own files, and install packages from the
 network.")
     (license license:gpl3)))
 
-(define-public r-datplot
-  (package
-    (name "r-datplot")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "datplot" version))
-              (sha256
-               (base32
-                "1y9pls1g2flz8n3jbh4jcp1fn78qwfbgsrzyf3jms9f6w8fs0f1d"))))
-    (properties `((upstream-name . "datplot")))
-    (build-system r-build-system)
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/lsteinmann/datplot")
-    (synopsis
-     "Preparation of Object Dating Ranges for Density Plots (Aoristic Analysis)")
-    (description
-     "Converting date ranges into dating steps eases the visualization of changes in
-e.g. pottery consumption, style and other variables over time.  This package
-provides tools to process and prepare data for visualization and employs the
-concept of aoristic analysis.")
-    (license license:cc-by-sa4.0)))
-
 (define-public r-datos
   (package
     (name "r-datos")
@@ -23888,13 +23894,13 @@ package.")
 (define-public r-databaseconnector
   (package
     (name "r-databaseconnector")
-    (version "6.2.3")
+    (version "6.2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DatabaseConnector" version))
               (sha256
                (base32
-                "05hylzsm93yx7nx6jk5gv6vwwwxnrpq0qijd30xx4lvwg4acxc46"))))
+                "1y37rrq8h7w7g9dxx26d21bf8c5y5qhcpvhlr31h5ja3vm624aaa"))))
     (properties `((upstream-name . "DatabaseConnector")))
     (build-system r-build-system)
     (inputs (list openjdk))
@@ -24913,6 +24919,46 @@ biota assembly through speciation, immigration and extinction.  See Valente et
 al. (2015) <doi:10.1111/ele.12461>.")
     (license (list license:gpl3+
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-dair
+  (package
+    (name "r-dair")
+    (version "0.9.9")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "daiR" version))
+              (sha256
+               (base32
+                "19rl58ns28wc3bwv8fs68zdcl59css9rwrfpfdjw4vay4dczfb6h"))))
+    (properties `((upstream-name . "daiR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-stringr
+                             r-readtext
+                             r-purrr
+                             r-pdftools
+                             r-magick
+                             r-jsonlite
+                             r-httr
+                             r-googlecloudstorager
+                             r-glue
+                             r-gargle
+                             r-fs
+                             r-data-table
+                             r-beepr
+                             r-base64enc))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Hegghammer/daiR")
+    (synopsis "Interface with Google Cloud Document AI API")
+    (description
+     "R interface for the Google Cloud Services Document AI API
+<https://cloud.google.com/document-ai/> with additional tools for output file
+parsing and text reconstruction.  Document AI is a powerful server-based OCR
+processor that extracts text and tables from images and PDF files with high
+accuracy. @code{daiR} gives R users programmatic access to this processor and
+additional tools to handle and visualize the output.  See the package website
+<https://dair.info/> for more information and examples.")
+    (license license:expat)))
 
 (define-public r-daiquiri
   (package

@@ -477,13 +477,13 @@ between metric length and visual degrees.")
 (define-public r-eyelinkreader
   (package
     (name "r-eyelinkreader")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eyelinkReader" version))
               (sha256
                (base32
-                "0nx2sc3r3mhz13f2xd00h6kd98nv2dyywslxi6l20riss5k6k671"))))
+                "0gbppd017dc93g3z3b9l885rr1r470jh7gvi89hd7nn5asba5zgz"))))
     (properties `((upstream-name . "eyelinkReader")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -504,7 +504,7 @@ recorded events and samples, is imported per trial.  The package allows to
 extract events of interest, such as saccades, blinks, etc.  as well as recorded
 variables and custom events (areas of interest, triggers) into separate tables.
 The package requires EDF API library that can be obtained at
-<https://www.sr-support.com/>.")
+<https://www.sr-research.com/support/>.")
     (license license:gpl3+)))
 
 (define-public r-eyedata
@@ -4848,13 +4848,13 @@ interpolate them to a standard one.  Potentially works with many CF-conform
 (define-public r-eurlex
   (package
     (name "r-eurlex")
-    (version "0.4.5")
+    (version "0.4.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eurlex" version))
               (sha256
                (base32
-                "041xbvkpn692wf5gm98xyxnvzy31lla0x0qnc80vpc82m7s8xyg3"))))
+                "0sd9bhsb5b2w5h7rqsqc6xqmr3aiwwc3a6rhanwimm4ipxiddn9v"))))
     (properties `((upstream-name . "eurlex")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -8204,13 +8204,13 @@ time-dependent exposures.  See Wang et al (2020)
 (define-public r-epiworldr
   (package
     (name "r-epiworldr")
-    (version "0.0-2")
+    (version "0.0-3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "epiworldR" version))
               (sha256
                (base32
-                "0dg452gpyn104fb4x55l39kmb2mnd8dmr16l7fa7h0c1xi16j5zb"))))
+                "0x148iw1kf4jl75dm4ywdh5x8sy20pf2nm80fw5ha36vw14948a3"))))
     (properties `((upstream-name . "epiworldR")))
     (build-system r-build-system)
     (propagated-inputs (list r-cpp11))
@@ -10768,21 +10768,22 @@ model applicability domain evaluation, and ensemble predictive modeling with
 (define-public r-enmsdmx
   (package
     (name "r-enmsdmx")
-    (version "1.0.6")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "enmSdmX" version))
               (sha256
                (base32
-                "0s63x1i7l2c14a8wd7g0jffdr2d39jfkfm9mg1a3xflh88h596js"))))
+                "15pdsva011dpa72ms7c6fdhadzcm603wzglfy9hg63krirvmfwkh"))))
     (properties `((upstream-name . "enmSdmX")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
+                             r-statisfactory
                              r-shiny
                              r-sf
                              r-scales
                              r-rjava
-                             r-randomforest
+                             r-ranger
                              r-omnibus
                              r-mumin
                              r-mgcv
@@ -10793,6 +10794,7 @@ model applicability domain evaluation, and ensemble predictive modeling with
                              r-dt
                              r-doparallel
                              r-dismo
+                             r-data-table
                              r-boot))
     (home-page "https://github.com/adamlilith/enmSdmX")
     (synopsis "Species Distribution Modeling and Ecological Niche Modeling")
@@ -12211,13 +12213,13 @@ Spectrum, The R Journal, 1, 40-46).")
 (define-public r-emcluster
   (package
     (name "r-emcluster")
-    (version "0.2-14")
+    (version "0.2-15")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EMCluster" version))
               (sha256
                (base32
-                "12ahgvnpqms930zzc1blpfmj97m679rns8h4nh1l0yr0y1w6lfcn"))))
+                "1p8zfavx9waz3n4nkz8f6cd5hlcjb53r4wiwnrll5dx8zpfjj8g2"))))
     (properties `((upstream-name . "EMCluster")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-mass))
@@ -14460,13 +14462,13 @@ Error (NMSE).")
 (define-public r-eha
   (package
     (name "r-eha")
-    (version "2.10.3")
+    (version "2.11.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eha" version))
               (sha256
                (base32
-                "05bnqxpkn5i0q750l1brm2bi7xv25dijwrxnb6nnm8f8plvbx6gw"))))
+                "1wgl51m5li6m73z4f7lnjffcnnfb5libakrib4rrh4plpqj010gg"))))
     (properties `((upstream-name . "eha")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival))
@@ -15253,16 +15255,16 @@ lower bound calculation.")
 (define-public r-efa-dimensions
   (package
     (name "r-efa-dimensions")
-    (version "0.1.7.7")
+    (version "0.1.7.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EFA.dimensions" version))
               (sha256
                (base32
-                "08mfillvxf2gvaisxrx9r842ky4kippqbpiklgjyxanssabk3jdg"))))
+                "0smcgd6g61fb3fshxfh7q055h6h11rh3q37mrc8yzfyg72y3461i"))))
     (properties `((upstream-name . "EFA.dimensions")))
     (build-system r-build-system)
-    (propagated-inputs (list r-psych r-polycor r-mirt r-efatools))
+    (propagated-inputs (list r-psych r-polycor r-mirt r-gparotation r-efatools))
     (home-page "https://cran.r-project.org/package=EFA.dimensions")
     (synopsis
      "Exploratory Factor Analysis Functions for Assessing Dimensionality")
@@ -15279,9 +15281,9 @@ promax rotation, and Procrustes rotations can be performed.  Additional
 functions focus on the factorability of a correlation matrix, the congruences
 between factors from different datasets, the assessment of local independence,
 the assessment of factor solution complexity, and internal consistency.
-Auerswald & Moshagen (2019, ISSN:1939-1463); Fabrigar & Wegener (2012,
-ISBN:978-0-19-973417-7); Field, Miles, & Field (2012, ISBN:978-1-4462-0045-2);
-O'Connor (2000, <doi:10.3758/bf03200807>); O'Connor (2001, ISSN:0146-6216).")
+Auerswald & Moshagen (2019, ISSN:1939-1463); Field, Miles, & Field (2012,
+ISBN:978-1-4462-0045-2); Mulaik (2010, ISBN:978-1-4200-9981-2); O'Connor (2000,
+<doi:10.3758/bf03200807>); O'Connor (2001, ISSN:0146-6216).")
     (license license:gpl2+)))
 
 (define-public r-ef
@@ -16219,6 +16221,35 @@ dependencies can be visualized with using the igraph package.")
 update a data.frame without coding.  You can get resultant data as a
 data.frame'.  In the package, modularized shiny app codes are provided.  These
 modules are intended for reuse across applications.")
+    (license license:gpl3)))
+
+(define-public r-editbl
+  (package
+    (name "r-editbl")
+    (version "0.9.5")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "editbl" version))
+              (sha256
+               (base32
+                "0rwyjk7ljl700kybs52gmm954ximsjm6nzk7cal83frjipx3gvnn"))))
+    (properties `((upstream-name . "editbl")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-uuid
+                             r-tibble
+                             r-shinyjs
+                             r-shiny
+                             r-fontawesome
+                             r-dt
+                             r-dplyr))
+    (home-page "https://github.com/openanalytics/editbl")
+    (synopsis
+     "'DT' Extension for CRUD (Create, Read, Update, Delete) Applications in 'shiny'")
+    (description
+     "The core of this package is a function @code{eDT}() which enhances
+DT::datatable() such that it can be used to interactively modify data in shiny'.
+ By the use of generic dplyr methods it supports many types of data storage,
+with relational databases ('dbplyr') being the main use case.")
     (license license:gpl3)))
 
 (define-public r-edison
@@ -19241,13 +19272,13 @@ non-zero effects.")
 (define-public r-ebdbnet
   (package
     (name "r-ebdbnet")
-    (version "1.2.7")
+    (version "1.2.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ebdbNet" version))
               (sha256
                (base32
-                "1n3ak1bzd3p6izpw2r4ckd32wpdw5m2s4qsf6fg9gpwk9l4vn603"))))
+                "0far2hvfvj6r4qzr47q72innxxnj0g8vxx6arn7wkcv30jmx34x7"))))
     (properties `((upstream-name . "ebdbNet")))
     (build-system r-build-system)
     (propagated-inputs (list r-igraph))

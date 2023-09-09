@@ -3252,13 +3252,13 @@ visit the package homepage <https://pbreheny.github.io/grpreg/>.")
 (define-public r-grpnet
   (package
     (name "r-grpnet")
-    (version "0.1")
+    (version "0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "grpnet" version))
               (sha256
                (base32
-                "0h6j1pflncb7cc1r6a439jw4g4izh7r98rm6ygk9wbfip3apvx65"))))
+                "1fwh7h4cfpyc2dia0bxddw171pn1y3qhvy1zyhj4rphhmlc02456"))))
     (properties `((upstream-name . "grpnet")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -3269,11 +3269,12 @@ visit the package homepage <https://pbreheny.github.io/grpreg/>.")
 net penalties.  Implements group lasso, group MCP, and group SCAD with an
 optional group ridge penalty.  Computes the regularization path for linear
 regression (gaussian), logistic regression (binomial), multinomial logistic
-regression (multinomial), log-linear count regression (poisson and negative
-binomial), and log-linear continuous regression (gamma and inverse gaussian).
-Regularization paths are computed using groupwise majorization descent.
-Cross-validation routines are available for tuning the regularization
-parameters.")
+regression (multinomial), log-linear count regression (poisson and
+negative.binomial), and log-linear continuous regression (gamma and inverse
+gaussian).  Supports default and formula methods for model specification, k-fold
+cross-validation for tuning the regularization parameters, and nonparametric
+regression via tensor product reproducing kernel (smoothing spline) basis
+function expansion.")
     (license license:gpl2+)))
 
 (define-public r-grplassocat
@@ -3790,6 +3791,42 @@ package contains the function uwedge() which can be used to approximately
 jointly diagonalize a list of matrices.  For more details see the project
 website <https://sweichwald.de/@code{groupICA/>}.")
     (license license:agpl3)))
+
+(define-public r-grouphmap
+  (package
+    (name "r-grouphmap")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "Grouphmap" version))
+              (sha256
+               (base32
+                "0wmzgd76adwq2gm8p1cxgy1kj1vl83bfsx4d9afk7wh3dxgq4c7l"))))
+    (properties `((upstream-name . "Grouphmap")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-pheatmap
+                             r-org-mm-eg-db
+                             r-limma
+                             r-dplyr
+                             r-clusterprofiler))
+    (home-page "https://cran.r-project.org/package=Grouphmap")
+    (synopsis
+     "'Grouphmap' is an Automated One-Step Common Analysis of Batch Expression Profile")
+    (description
+     "The Grouphmap was implemented in R, an open-source programming environment, and
+was released under the provided website.  The difference analysis is based on
+the limma package, which can cover gene and protein expression profiles
+(Reference: Matthew E Ritchie , Belinda Phipson , Di Wu , Yifang Hu , Charity W
+Law , Wei Shi , Gordon K Smyth (2015) <doi:10.1093/nar/gkv007>).  The GO
+enrichment analysis is based on the @code{clusterProfiler} package and supports
+three common species: human, mouse, and yeast (Reference: Guangchuang Yu, Li-Gen
+Wang, Yanyan Han, Qing-Yu He (2012) <doi:10.1089/omi.2011.0118>).  The results
+of batch difference analysis and enrichment analysis are output in separate
+folders for easy viewing and further visualization of the results during the
+process.  The results returned a heatmap in R and exported to 3 folders named
+DEG, go, and merge.")
+    (license license:artistic2.0)))
 
 (define-public r-groupedsurv
   (package
@@ -5538,6 +5575,40 @@ without access to Hugin to use code written to use RHugin'.")
      "Using Australian Bureau of Statistics indices, provides functions that convert
 historical, nominal statistics to real, contemporary values without worrying
 about date input quality, performance, or the ABS catalogue.")
+    (license license:gpl2)))
+
+(define-public r-grattan
+  (package
+    (name "r-grattan")
+    (version "2023.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "grattan" version))
+              (sha256
+               (base32
+                "148j0mf26rv2ads18543lvcf9izh61zr5if2djxn11zm3px3l8v5"))))
+    (properties `((upstream-name . "grattan")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-magrittr
+                             r-ineq
+                             r-hutilscpp
+                             r-hutils
+                             r-grattaninflators
+                             r-fy
+                             r-forecast
+                             r-fastmatch
+                             r-data-table
+                             r-checkmate
+                             r-assertthat))
+    (home-page "https://github.com/HughParsonage/grattan")
+    (synopsis "Australian Tax Policy Analysis")
+    (description
+     "Utilities to cost and evaluate Australian tax policy, including fast projections
+of personal income tax collections, high-performance tax and transfer
+calculators, and an interface to common indices from the Australian Bureau of
+Statistics.  Written to support Grattan Institute's Australian Perspectives
+program, and related projects.  Access to the Australian Taxation Office's
+sample files of personal income tax returns is assumed.")
     (license license:gpl2)))
 
 (define-public r-gratis
@@ -8251,13 +8322,13 @@ zip-up and ready to be published in Public Data Explorer'.")
 (define-public r-googlepolylines
   (package
     (name "r-googlepolylines")
-    (version "0.8.3")
+    (version "0.8.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "googlePolylines" version))
               (sha256
                (base32
-                "1r6mwh1wz0966bdbhvy6j0ibz1sa6xgq9k1cn8xpsmrlnr4y4ydv"))))
+                "1qrigccfnv6g2jii2kfdhnxnvx0mjpxq78pg8g8nza33w9lrmrrq"))))
     (properties `((upstream-name . "googlePolylines")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-bh))
@@ -9387,6 +9458,29 @@ generalized normal/exponential power distribution was introduced by Subbotin
 (1923) and rediscovered by Nadarajah (2005).  The parametrization given by
 Nadarajah (2005) <doi:10.1080/02664760500079464> is used.")
     (license license:gpl2+)))
+
+(define-public r-gnonadd
+  (package
+    (name "r-gnonadd")
+    (version "1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "gnonadd" version))
+              (sha256
+               (base32
+                "1fg7kf339bnsw9kjiva5n76mgp9kpzn78w6zh5an3bagzhf382rm"))))
+    (properties `((upstream-name . "gnonadd")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ggplot2))
+    (home-page "https://github.com/DecodeGenetics/gnonadd")
+    (synopsis "Various Non-Additive Models for Genetic Associations")
+    (description
+     "The goal of gnonadd is to simplify workflows in the analysis of non-additive
+effects of sequence variants.  This includes variance effects (Ivarsdottir et.
+al (2017) <doi:10.1038/ng.3928>), correlation effects, interaction effects and
+dominance effects.  The package also includes convenience functions for
+visualization.")
+    (license license:expat)))
 
 (define-public r-gnomonicm
   (package
@@ -11674,13 +11768,13 @@ LASSO penalties.")
 (define-public r-glmmml
   (package
     (name "r-glmmml")
-    (version "1.1.4")
+    (version "1.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "glmmML" version))
               (sha256
                (base32
-                "0xs6vn245y32pshlslblrj6517dwwmk0ffp2rzji8d8h0lsxidxx"))))
+                "1sfxg6nv5wz40dq0j3fhn8hcrlnqrsjkwif2g93s6fzaxa83vl8p"))))
     (properties `((upstream-name . "glmmML")))
     (build-system r-build-system)
     (native-inputs (list r-knitr gfortran))
@@ -14325,13 +14419,13 @@ categorical axis into a combination matrix axis.")
 (define-public r-ggum
   (package
     (name "r-ggum")
-    (version "0.4-3")
+    (version "0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GGUM" version))
               (sha256
                (base32
-                "1r4ijkc5xrlp2sq4jnhcrzzmkzilc4lbz3q5zc0kgcz348hf1a7w"))))
+                "1xbbapam5whnsa0f2fpvj2v56c7g5wm4jcs0xwzrcjlp9g293vqj"))))
     (properties `((upstream-name . "GGUM")))
     (build-system r-build-system)
     (propagated-inputs (list r-xlsx r-viridis r-rdpack r-psych r-abind))
@@ -17131,13 +17225,13 @@ not require a square coordinate system.")
 (define-public r-gggenes
   (package
     (name "r-gggenes")
-    (version "0.5.0")
+    (version "0.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gggenes" version))
               (sha256
                (base32
-                "06yyagxhh3l8ww5qvmscax11jc48f5r3cw5nhknd8yqsl65azlq9"))))
+                "08s0fhk2kz3ks64nfmdbd8p3swkn62cbw7dpbqgk9ydpmh5gpjbj"))))
     (properties `((upstream-name . "gggenes")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-ggplot2 r-ggfittext))
@@ -20556,13 +20650,13 @@ classes and functions.")
 (define-public r-geomodels
   (package
     (name "r-geomodels")
-    (version "1.1.1")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GeoModels" version))
               (sha256
                (base32
-                "1ysf4df7jvab3cgdndval1zh15xj0yd6z4v2izcshryl0w2c7165"))))
+                "1g8m9rxxp7a6nk3cczhz2jzslk07xwdwi9pjgip1i7mlap6p30px"))))
     (properties `((upstream-name . "GeoModels")))
     (build-system r-build-system)
     (propagated-inputs (list r-zipfr
@@ -20941,13 +21035,13 @@ in R through the Rcpp and @code{RcppArmadillo} packages.")
 (define-public r-geojsonio
   (package
     (name "r-geojsonio")
-    (version "0.11.2")
+    (version "0.11.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "geojsonio" version))
               (sha256
                (base32
-                "1k5chrwbahzshx35s3y8dbiq47d277yqqpwhh5dyqm7ay3xqvv34"))))
+                "0as0lcypj05j1vxkf3f13z4x6crjvgwmy06xrgq7j124f4syns3i"))))
     (properties `((upstream-name . "geojsonio")))
     (build-system r-build-system)
     (propagated-inputs (list r-v8
@@ -20955,7 +21049,6 @@ in R through the Rcpp and @code{RcppArmadillo} packages.")
                              r-sf
                              r-readr
                              r-magrittr
-                             r-lifecycle
                              r-jsonlite
                              r-jqr
                              r-geojsonsf
@@ -22007,13 +22100,13 @@ allows running the hybrid multi-group approach (Lamberti (2021)
 (define-public r-genotriplo
   (package
     (name "r-genotriplo")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GenoTriplo" version))
               (sha256
                (base32
-                "1z8l95zn9nwzyagxv8b5q4zhvrq0gajpkdphcj35l1b8szl315gs"))))
+                "0dbx5zc3zynvz9grc5p0ynl1hrkcnjrfjh0b6vx3nn1q3ndj413s"))))
     (properties `((upstream-name . "GenoTriplo")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -23253,13 +23346,13 @@ other gene features.")
 (define-public r-genekitr
   (package
     (name "r-genekitr")
-    (version "1.2.2")
+    (version "1.2.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "genekitr" version))
               (sha256
                (base32
-                "0g22w1bqmcli0vvidcw2ywmc76l3x7zhk3a4fw3vrhwm7vjwnp7k"))))
+                "0czmmi9xnmdqd5g9ivys1srmww0x93v2dc1f245kfk26s9xi7177"))))
     (properties `((upstream-name . "genekitr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -24693,6 +24786,38 @@ geographical genetics, accessibility indicators, and may also have applications
 in other fields of geospatial analysis.")
     (license license:gpl2+)))
 
+(define-public r-gdim
+  (package
+    (name "r-gdim")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "gdim" version))
+              (sha256
+               (base32
+                "02q5ynd22yisl3as9hyrg18p9j74lw6p1z3szm1k2ax0r3k04r27"))))
+    (properties `((upstream-name . "gdim")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-progress
+                             r-matrix
+                             r-magrittr
+                             r-irlba
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://github.com/RoheLab/gdim")
+    (synopsis "Estimate Graph Dimension using Cross-Validated Eigenvalues")
+    (description
+     "Cross-validated eigenvalues are estimated by splitting a graph into two parts,
+the training and the test graph.  The training graph is used to estimate
+eigenvectors, and the test graph is used to evaluate the correlation between the
+training eigenvectors and the eigenvectors of the test graph.  The correlations
+follow a simple central limit theorem that can be used to estimate graph
+dimension via hypothesis testing, see Chen et al. (2021)
+<@code{arXiv:2108.03336>} for details.")
+    (license license:gpl3+)))
+
 (define-public r-gdiff
   (package
     (name "r-gdiff")
@@ -24717,13 +24842,13 @@ between different package versions and between different R versions.")
 (define-public r-gdi
   (package
     (name "r-gdi")
-    (version "1.4.1")
+    (version "1.5.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gdi" version))
               (sha256
                (base32
-                "1bn0hrgc8fqpbn4zp9ycgr7i3kl8c6z4z5fqq14801fp94fa6w6w"))))
+                "1lsflav0wday5f6fclwwvnzj0b59hh4raw216karqshcs80c8ldf"))))
     (properties `((upstream-name . "gdi")))
     (build-system r-build-system)
     (propagated-inputs (list r-png r-jpeg))
@@ -24732,18 +24857,20 @@ between different package versions and between different R versions.")
     (synopsis "Volumetric Analysis using Graphic Double Integration")
     (description
      "This package provides tools implementing an automated version of the graphic
-double integration technique first employed by Jerison (1973)
-<ISBN:9780323141086> and Hurlburt (1999) <doi:10.1080/02724634.1999.10011145>.
-Graphic double integration is primarily used for volume or mass estimation of
-(extinct) animals, and the package gdi aims to make this technique as convenient
-and versatile as possible.  The main functions of gdi provide utilities for
-automatically measuring diameters from digital silhouettes provided as image
-files, and for calculating volume via graphic double integration with a simple
-elliptical, superelliptical (following Motani 2001
+double integration technique (GDI) for volume implementation, and some other
+related utilities for paleontological image-analysis.  GDI was first employed by
+Jerison (1973) <ISBN:9780323141086> and Hurlburt (1999)
+<doi:10.1080/02724634.1999.10011145> and is primarily used for volume or mass
+estimation of (extinct) animals.  The package gdi aims to make this technique as
+convenient and versatile as possible.  The core functions of gdi provide
+utilities for automatically measuring diameters from digital silhouettes
+provided as image files and calculating volume via graphic double integration
+with simple elliptical, superelliptical (following Motani 2001
 <doi:10.1666/0094-8373(2001)027%3C0735:EBMFST%3E2.0.CO;2>) or complex
-cross-sectional model.  Additionally, the package contains functions to help
-with estimating the position of the center of mass (COM), and for visualizing
-results.")
+cross-sectional models.  Additionally, the package provides functions for
+estimating the center of mass position (COM), the moment of inertia (I) for 3D
+shapes and the second moment of area (Ix) of 2D cross-sections, as well as for
+visualization of results.")
     (license license:gpl3+)))
 
 (define-public r-gdefrag
@@ -27922,6 +28049,30 @@ Y. Ding, and D. Cabezon (2019) <@code{arXiv:1906.05776>}.")
 habitat suitability data to calculate posterior probabilities of breeding origin
 of migrating birds.")
     (license license:cc0)))
+
+(define-public r-gagblup
+  (package
+    (name "r-gagblup")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "GAGBLUP" version))
+              (sha256
+               (base32
+                "192r4fr3idl78g9vllb7hdvlrfkghh1airblb94c1mjyrjkj2hxa"))))
+    (properties `((upstream-name . "GAGBLUP")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ga r-foreach r-doparallel))
+    (home-page "https://cran.r-project.org/package=GAGBLUP")
+    (synopsis
+     "Genetic Algorithm Assisted Genomic Best Liner Unbiased Prediction")
+    (description
+     "This package performs genetic algorithm (Scrucca, L (2013)
+<doi:10.18637/jss.v053.i04>) assisted genomic best liner unbiased prediction for
+genomic selection.  It also provides a binning method in natural population for
+genomic selection under the principle of linkage disequilibrium for dimensional
+reduction.")
+    (license license:gpl3)))
 
 (define-public r-gagas
   (package

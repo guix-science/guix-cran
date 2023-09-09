@@ -28,6 +28,7 @@
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages video)
+  #:use-module (gnu packages sqlite)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages perl)
   #:use-module (gnu packages gtk)
@@ -1640,28 +1641,29 @@ ISBN:978-0-471-18386-0).")
 (define-public r-swfscmisc
   (package
     (name "r-swfscmisc")
-    (version "1.6")
+    (version "1.6.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "swfscMisc" version))
               (sha256
                (base32
-                "1nsr4n4dqm2jhmf3z2yg9x63x394cank70i41zrp2m0sd9wqprgk"))))
+                "1qc2d3ykzxqqnjdq93j9nvkb8gfkvyr2x1l657q7jh1wcj8b7754"))))
     (properties `((upstream-name . "swfscMisc")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-spatstat-geom
                              r-sf
+                             r-runjags
                              r-rlang
-                             r-maps
-                             r-mapdata
+                             r-modeest
                              r-magrittr
                              r-kknn
                              r-hdinterval
                              r-ggrepel
                              r-ggplot2
-                             r-dplyr))
+                             r-dplyr
+                             r-abind))
     (home-page "https://github.com/EricArcher/swfscMisc")
     (synopsis "Miscellaneous Functions for Southwest Fisheries Science Center")
     (description
@@ -1857,13 +1859,13 @@ Embedding Association Test (Caliskan et al., 2017),
 (define-public r-swdpwr
   (package
     (name "r-swdpwr")
-    (version "1.7")
+    (version "1.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "swdpwr" version))
               (sha256
                (base32
-                "0mljayrs629d0pxbd9lzzplvs31i33fqb0bfb01ryvwyv0ckwjx9"))))
+                "1qvs63f5w6yf2g3abss3mrmdapiqcmbl9h2dl4rzvrnqcs35kgcx"))))
     (properties `((upstream-name . "swdpwr")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-random))
@@ -4011,6 +4013,42 @@ Guerin, and @code{McMahon} (2022) <doi:10.1002/sta4.454> explains why differing
 how we take folds based on survey design is useful.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-surveycc
+  (package
+    (name "r-surveycc")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "SurveyCC" version))
+              (sha256
+               (base32
+                "0k6ac7c1x4ppwrsv9icx5fw8y0vaw264f0h9ni4m5i4dix90ss79"))))
+    (properties `((upstream-name . "SurveyCC")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survey r-candisc))
+    (home-page "https://cran.r-project.org/package=SurveyCC")
+    (synopsis "Canonical Correlation for Survey Data")
+    (description
+     "This package performs canonical correlation for survey data, including multiple
+tests of significance for secondary canonical correlations.  A key feature of
+this package is that it incorporates survey data structure directly in a novel
+test of significance via a sequence of simple linear regression models on the
+canonical variates.  See references - Cruz-Cano and Mead-Morse (2023) \"Canonical
+Correlation Analysis for Complex Survey data\" The Stata Journal under review.
+Gentzke AS, Wang TW, Cornelius M, Park-Lee E, Ren C, Sawdey MD, Cullen KA,
+Loretan C, Jamal A, Homa DM (2021) \"Tobacco Product Use and Associated Factors
+among Middle and High School Students - National Youth Tobacco Survey, United
+States\" <doi:10.15585/mmwr.ss7105a1>.  Gittins R (1986 ISBN:3642698786,
+9783642698781). @code{CaliÅski} T., @code{KrzyÅko} M. and WOÅ@code{yÅski} W.
+(2006) \"A Comparison of Some Tests for Determining the Number of Nonzero
+Canonical Correlations\" <doi:10.1080/03610910600716290>.  Hyland A, Ambrose BK,
+Conway KP, et al. (2017) \"Design and methods of the Population Assessment of
+Tobacco and Health\" <doi:10.1136/tobaccocontrol-2016-052934>.  Johnstone IM.
+(2009) \"Approximate Null Distribution of the largest root in a Multivariate
+Analysis\" <doi:10.1214/08-AOAS220>.  Valliant R. and Dever JA. (2018
+ISBN:978-1-59718-260-7).")
+    (license license:expat)))
+
 (define-public r-surveybootstrap
   (package
     (name "r-surveybootstrap")
@@ -4061,13 +4099,13 @@ Rao and Wu (1988) <doi:10.1080/01621459.1988.10478591>.")
 (define-public r-survex
   (package
     (name "r-survex")
-    (version "1.0.0")
+    (version "1.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "survex" version))
               (sha256
                (base32
-                "1xvznffkbdgixw814k5w0q5d13mzibm7z5djbb8dcq0yycnmkh3y"))))
+                "1rjq4y1l2f3lyqv6zk4szylnxrpb559p1fq5kycicxv91vvq4f37"))))
     (properties `((upstream-name . "survex")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -4076,7 +4114,6 @@ Rao and Wu (1988) <doi:10.1080/01621459.1988.10478591>.")
                              r-kernelshap
                              r-ggplot2
                              r-dalex))
-    (native-inputs (list r-knitr))
     (home-page "https://modeloriented.github.io/survex/")
     (synopsis "Explainable Machine Learning in Survival Analysis")
     (description
@@ -4633,13 +4670,13 @@ incremental value of the surrogate outcome information.")
 (define-public r-surrogate
   (package
     (name "r-surrogate")
-    (version "3.1")
+    (version "3.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Surrogate" version))
               (sha256
                (base32
-                "1xw34l0cs1ak3cgwh8wm96nnxxv6wzs7761krzk8q2d7hpndz6qh"))))
+                "1vi2pl1n1bii0vs43npi97hd46axqcvzlmi69l21fb9yd56r88hn"))))
     (properties `((upstream-name . "Surrogate")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -4666,7 +4703,7 @@ incremental value of the surrogate outcome information.")
                              r-dplyr
                              r-cubature
                              r-copula))
-    (home-page "https://cran.r-project.org/package=Surrogate")
+    (home-page "https://github.com/florianstijven/Surrogate-development")
     (synopsis "Evaluation of Surrogate Endpoints in Clinical Trials")
     (description
      "In a clinical trial, it frequently occurs that the most credible outcome to
@@ -7134,13 +7171,13 @@ Modern Concepts, Methods and Applications, CRC Press.")
 (define-public r-stroke
   (package
     (name "r-stroke")
-    (version "23.6.3")
+    (version "23.9.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "stRoke" version))
               (sha256
                (base32
-                "00hpcn6g5l7mzjrnq4f4mw6d78cdwzpqgjkxzwnzmripr5disd7c"))))
+                "0rlhi8cj1gb5cpvpds4hr6m1g4g53yqlzrvl5gzn3xkiyd5i3kx3"))))
     (properties `((upstream-name . "stRoke")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -8336,13 +8373,13 @@ trees.")
 (define-public r-stranslate
   (package
     (name "r-stranslate")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "stranslate" version))
               (sha256
                (base32
-                "1lcifjqc9bmq9najr25xmlyqhpxwn8jjrz45d2hfncway2lw8i6v"))))
+                "09ps012v63m66ibmlcz3nbvizzq7v7lc0laf8x6fspswvb7a2zpb"))))
     (properties `((upstream-name . "stranslate")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-knitr r-crayon))
@@ -8353,7 +8390,7 @@ trees.")
      "Message translation is often managed with po files and the gettext programme,
 but sometimes another solution is needed.  In contrast to po files, a more
 flexible approach is used as in the Fluent <https://projectfluent.org/> project
-with RMarkdown snippets.  The key-value approach allows easier handling of the
+with R Markdown snippets.  The key-value approach allows easier handling of the
 translated messages.")
     (license license:gpl3)))
 
@@ -11932,13 +11969,13 @@ breeze.  See \"Time Series Analysis by State Space Methods\" by Durbin and Koopm
 (define-public r-states
   (package
     (name "r-states")
-    (version "0.3.1")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "states" version))
               (sha256
                (base32
-                "1yi7yigmxjcpa2p75bq0jj1pmiv5xh6zsxhayg7pa7p7fqdl3d9i"))))
+                "1ffaj7rzqnwzki4hr5f90hz3racaigmk8qbzanxbbbfsy881avmr"))))
     (properties `((upstream-name . "states")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-lifecycle r-dplyr))
@@ -14842,13 +14879,13 @@ information to a Sweave report.")
 (define-public r-ssdtools
   (package
     (name "r-ssdtools")
-    (version "1.0.5")
+    (version "1.0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ssdtools" version))
               (sha256
                (base32
-                "13dik0s1iq0g5fvydzaw3c4sl9zzdina4bf9hpgarkppmz3y1swr"))))
+                "13pyl9cscs6zsbfjg2x7gfk568mnrnhv7n5fkl0r47r6x94vbr0s"))))
     (properties `((upstream-name . "ssdtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam
@@ -16817,13 +16854,13 @@ indices, but each function can also be run separately.  Allstadt et al. (2015)
 (define-public r-springer
   (package
     (name "r-springer")
-    (version "0.1.7")
+    (version "0.1.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "springer" version))
               (sha256
                (base32
-                "12778xq093migw5rrxlbzdzyrfj16hadh6wv9l907m6dchv6wakn"))))
+                "13gg1xj84fkrkmyrw0h478qg8q2ig0axv1433n05fwy2mzp22yjp"))))
     (properties `((upstream-name . "springer")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-mass))
@@ -20608,13 +20645,13 @@ in C++20 or later).")
 (define-public r-spdesign
   (package
     (name "r-spdesign")
-    (version "0.0.1")
+    (version "0.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spdesign" version))
               (sha256
                (base32
-                "1h7wrzjcvqn8iynxfh3kz5ji73wfjdlmahkzmz99lq2s944pf8zp"))))
+                "0nhz7b6xgc6ns0h2fr39vb6bb3l0x6q8km7d0q5x8n71qdk4lf7h"))))
     (properties `((upstream-name . "spdesign")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-randtoolbox r-matrixstats r-future
@@ -20629,7 +20666,9 @@ an easy to use interface to make flexible stated preference experimental designs
 using state-of-the-art methods.  For an overview of stated choice experimental
 design theory, see e.g., Rose, J. M. & Bliemer, M. C. J. (2014) in Hess S. &
 Daly.  A. <doi:10.4337/9781781003152>.  The package website can be accessed at
-<https://spdesign.edsandorf.me>.")
+<https://spdesign.edsandorf.me>.  We acknowledge funding from the European
+Unionâs Horizon 2020 research and innovation program under the Marie
+Sklodowska-Curie grant INS@code{PiRE} (Grant agreement ID: 793163).")
     (license license:cc-by-sa4.0)))
 
 (define-public r-spdates
@@ -21239,23 +21278,23 @@ Baddeley and Nair (2019).")
 (define-public r-spatsoc
   (package
     (name "r-spatsoc")
-    (version "0.1.16")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spatsoc" version))
               (sha256
                (base32
-                "1pyw6606kwskgcfnzvgzvy8n4i9s3mmn1789d1lhk04h14r33fns"))))
+                "0aj9kg9013m0j3nx5qr2mvwczskkk0wy19yx1pb33wnqvhv2w0n0"))))
     (properties `((upstream-name . "spatsoc")))
     (build-system r-build-system)
-    (inputs (list geos))
-    (propagated-inputs (list r-sp r-rgeos r-igraph r-data-table r-adehabitathr))
+    (inputs (list sqlite proj geos gdal))
+    (propagated-inputs (list r-units r-sf r-igraph r-data-table r-adehabitathr))
     (native-inputs (list r-knitr))
     (home-page "https://docs.ropensci.org/spatsoc/")
     (synopsis
      "Group Animal Relocation Data by Spatial and Temporal Relationship")
     (description
-     "Detects spatial and temporal groups in GPS relocations (Robitaille et al. (2020)
+     "Detects spatial and temporal groups in GPS relocations (Robitaille et al. (2019)
 <doi:10.1111/2041-210X.13215>).  It can be used to convert GPS relocations to
 gambit-of-the-group format to build proximity-based social networks In addition,
 the randomizations function provides data-stream randomization methods suitable
@@ -32376,16 +32415,16 @@ their situation, retention and drop out.")
 (define-public r-sisireg
   (package
     (name "r-sisireg")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sisireg" version))
               (sha256
                (base32
-                "1gijdz5rllflrh7ndjm245ix8ngpqp5nhqjfpqsdyllwixlkchmv"))))
+                "0zqiagm963kvq1cpv0c8a0nffvydmx1vzjq458p77y1x81rjhmmr"))))
     (properties `((upstream-name . "sisireg")))
     (build-system r-build-system)
-    (propagated-inputs (list r-zoo r-raster))
+    (propagated-inputs (list r-zoo r-reticulate r-raster))
     (home-page "https://cran.r-project.org/package=sisireg")
     (synopsis "Sign-Simplicity-Regression-Solver")
     (description
@@ -33911,13 +33950,13 @@ Determinants of Rare Diseases', Greene et al 2016
 (define-public r-simrec
   (package
     (name "r-simrec")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "simrec" version))
               (sha256
                (base32
-                "17zzbzgdisp5qh0vlbmkjf6a3axnpwj2kw03wymfbb3z557pbxlr"))))
+                "1rpsvp7l24ayqc0bbcjsivnqxbrf8491mk6i9ndhyna6hcn9lzzg"))))
     (properties `((upstream-name . "simrec")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -36786,13 +36825,13 @@ properly by screen readers.")
 (define-public r-signnet
   (package
     (name "r-signnet")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "signnet" version))
               (sha256
                (base32
-                "1fws1yqdrsq1668f6ikb1k43c8la5w6qvc2mayr1ir2ywf9gk8h8"))))
+                "0vp6ja12ipl2cg7sam48ari5civ36fz24yvyvibi4m8ncdnpil6c"))))
     (properties `((upstream-name . "signnet")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix r-igraph))
@@ -38646,6 +38685,48 @@ is structured as a Bootstrap 3 input group.")
 entire viewable page, or a specific section of the page.  The captured image is
 automatically downloaded as a PNG image, or it can also be saved on the server.
 Powered by the html2canvas @code{JavaScript} library.")
+    (license license:expat)))
+
+(define-public r-shinysbm
+  (package
+    (name "r-shinysbm")
+    (version "0.1.5")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "shinySbm" version))
+              (sha256
+               (base32
+                "0r6zq235krg4rikpypwp9a2hwblgygl7mmc1phxrpxr8xppgq2da"))))
+    (properties `((upstream-name . "shinySbm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-visnetwork
+                             r-stringr
+                             r-shinydashboard
+                             r-shinyalert
+                             r-shiny
+                             r-sbm
+                             r-rmarkdown
+                             r-purrr
+                             r-patchwork
+                             r-magrittr
+                             r-golem
+                             r-ggplot2
+                             r-fresh
+                             r-flextable
+                             r-dt
+                             r-dplyr
+                             r-data-table
+                             r-config
+                             r-colourpicker))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=shinySbm")
+    (synopsis "'shiny' Application to Use the Stochastic Block Model")
+    (description
+     "This package provides a shiny interface for a simpler use of the sbm R package.
+It also contains useful functions to easily explore the sbm package results.
+With this package you should be able to use the stochastic block model without
+any knowledge in R, get automatic reports and nice visuals, as well as learning
+the basic functions of sbm'.")
     (license license:expat)))
 
 (define-public r-shinyrgl
@@ -41671,6 +41752,30 @@ with functions aiding their visualization.")
      "This package provides functions to read and write ESRI shapefiles.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-shapechange
+  (package
+    (name "r-shapechange")
+    (version "1.5")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ShapeChange" version))
+              (sha256
+               (base32
+                "0m9v5ykw8gfvyr9v149bs8sqjf9712yhvlg2rin6b5f1ww3mzl37"))))
+    (properties `((upstream-name . "ShapeChange")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-quadprog r-coneproj))
+    (home-page "https://cran.r-project.org/package=ShapeChange")
+    (synopsis "Change-Point Estimation using Shape-Restricted Splines")
+    (description
+     "In a scatterplot where the response variable is Gaussian, Poisson or binomial,
+we consider the case in which the mean function is smooth with a change-point,
+which is a mode, an inflection point or a jump point.  The main routine
+estimates the mean curve and the change-point as well using shape-restricted
+B-splines.  An optional subroutine delivering a bootstrap confidence interval
+for the change-point is incorporated in the main routine.")
+    (license license:gpl2+)))
+
 (define-public r-shadowr
   (package
     (name "r-shadowr")
@@ -41974,13 +42079,13 @@ implemented in frequency space, using a Fast Fourier Transform (FFT).")
 (define-public r-sgof
   (package
     (name "r-sgof")
-    (version "2.3.3")
+    (version "2.3.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sgof" version))
               (sha256
                (base32
-                "0gl54j0vjqvgyc4p0n5q818c862ykdzwz9cdypfw3r7jjgws2ar2"))))
+                "11y3c77yvq3xl3l596zgc1da4jdicyrrxn751dxh5ha21y98w31m"))))
     (properties `((upstream-name . "sgof")))
     (build-system r-build-system)
     (propagated-inputs (list r-poibin))
@@ -43307,17 +43412,17 @@ images/containers.")
 (define-public r-sequoia
   (package
     (name "r-sequoia")
-    (version "2.5.6")
+    (version "2.7.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sequoia" version))
               (sha256
                (base32
-                "1nw0yq6b4apm26dxzbrzqdndv55lkv8diayp6ghj93n6c0yws720"))))
+                "0slh9k3blxpfj8rrln85rxq507fqygwmvclqhnp2dsrmp9z4pj74"))))
     (properties `((upstream-name . "sequoia")))
     (build-system r-build-system)
     (propagated-inputs (list r-plyr))
-    (native-inputs (list r-r-rsp r-knitr gfortran))
+    (native-inputs (list r-r-rsp r-knitr gfortran esbuild))
     (home-page "https://jiscah.github.io/")
     (synopsis "Pedigree Inference from SNPs")
     (description
@@ -43384,13 +43489,13 @@ arbitrarily settled.")
 (define-public r-sequencespikeslab
   (package
     (name "r-sequencespikeslab")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SequenceSpikeSlab" version))
               (sha256
                (base32
-                "1aa89qnx43ia6lkaaz26jcrx8i9yxjsx5dpz8rpa0hv1h12g5ani"))))
+                "0kxcz2xqf8hiz7j0hb20ikl2mwjpplbmsis5906f7lqvzg85v97x"))))
     (properties `((upstream-name . "SequenceSpikeSlab")))
     (build-system r-build-system)
     (propagated-inputs (list r-selectiveinference r-rcppprogress r-rcpp))
@@ -50980,13 +51085,13 @@ more tools.")
 (define-public r-scitd
   (package
     (name "r-scitd")
-    (version "1.0.2")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "scITD" version))
               (sha256
                (base32
-                "0z6b0naz44am9z6mw03k5b550j19xgaxqyklhc57ns0lfv0l506k"))))
+                "0xcx8bvl2w2qa4c68w5hvfx9412qvscjvj8d6hp4q62z58xqy1f8"))))
     (properties `((upstream-name . "scITD")))
     (build-system r-build-system)
     (propagated-inputs (list r-sva
@@ -53592,16 +53697,21 @@ empirical graphical methods to visualize tail dependence.")
 (define-public r-sassy
   (package
     (name "r-sassy")
-    (version "1.1.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sassy" version))
               (sha256
                (base32
-                "0iimj7wncdsx6h0fk4cg79dqbhyrlg76bl8jkz8rl2ac6ywdyz2p"))))
+                "0485qa549svfb268djycbp4xa99fm1vhglpqlzm4k7szhfb6pkbq"))))
     (properties `((upstream-name . "sassy")))
     (build-system r-build-system)
-    (propagated-inputs (list r-reporter r-logr r-libr r-fmtr r-common))
+    (propagated-inputs (list r-reporter
+                             r-procs
+                             r-logr
+                             r-libr
+                             r-fmtr
+                             r-common))
     (native-inputs (list r-knitr))
     (home-page "https://r-sassy.org")
     (synopsis "Makes 'R' Easier for Everyone")
@@ -53704,13 +53814,13 @@ designed to load, count, extract, remove, and summarise components of SAS code."
 (define-public r-saslm
   (package
     (name "r-saslm")
-    (version "0.9.11")
+    (version "0.9.12")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sasLM" version))
               (sha256
                (base32
-                "1b9y75hbr6wjckcp4q0a91y5abq990ypkgr5pm9kjhy89mfl9snl"))))
+                "03rh64yym31zkfhwaw083839yl76jyrs6aw0vk0jhw82zl7b0z2v"))))
     (properties `((upstream-name . "sasLM")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm))
@@ -54260,13 +54370,13 @@ test for independent and paired cases.")
 (define-public r-saotd
   (package
     (name "r-saotd")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "saotd" version))
               (sha256
                (base32
-                "11ql731w3rc4spmd2ii52r49sxymxkf7wj2ngdvb8pcs4idar059"))))
+                "1x3zpzhs11bgxa8zhjdwr7n9fi55glhrif43zblh55ih3cqpcfc1"))))
     (properties `((upstream-name . "saotd")))
     (build-system r-build-system)
     (inputs (list mpfr gsl))
@@ -54872,13 +54982,13 @@ linear predictor.")
 (define-public r-samprior
   (package
     (name "r-samprior")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SAMprior" version))
               (sha256
                (base32
-                "1hr1q3a5787aak2r1cyqfk5w4h0yizrnhcz40cahyz5gl4zbpl1h"))))
+                "0c3mvs5sd9bs2f727f5j796dfqxwpkx2g2jy5xbxvasymd0m2aqn"))))
     (properties `((upstream-name . "SAMprior")))
     (build-system r-build-system)
     (propagated-inputs (list r-rbest r-metrics r-ggplot2 r-checkmate
@@ -56792,13 +56902,13 @@ workflow) have been implemented including the latest CRR2 developments.")
 (define-public r-saccadr
   (package
     (name "r-saccadr")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "saccadr" version))
               (sha256
                (base32
-                "1g8mdfykrqa0wg3aprazm3b05j4a7j4sqm1i04881dpyf5s42mlf"))))
+                "0c51zbkh8b0xi0sshzq5agbijw6nprrb3r1k77wcfqsr2mazfwi5"))))
     (properties `((upstream-name . "saccadr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

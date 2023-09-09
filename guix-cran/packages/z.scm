@@ -166,6 +166,29 @@ viewing, and support a safer approach to vector sampling, sequence generation,
 and aggregation.")
     (license license:expat)))
 
+(define-public r-zlib
+  (package
+    (name "r-zlib")
+    (version "1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "zlib" version))
+              (sha256
+               (base32
+                "0x6jawql116lsjgs7zi7hpfas85lzgm31flqz8gq5mg6z24qv8g7"))))
+    (properties `((upstream-name . "zlib")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://github.com/sgeist-ionos/R-zlib")
+    (synopsis "Compression and Decompression")
+    (description
+     "The zlib package for R aims to offer an R-based equivalent of Python's built-in
+zlib module for data compression and decompression.  This package provides a
+suite of functions for working with zlib compression, including utilities for
+compressing and decompressing data streams, manipulating compressed files, and
+working with gzip', zlib', and deflate formats.")
+    (license license:expat)))
+
 (define-public r-zipsae
   (package
     (name "r-zipsae")

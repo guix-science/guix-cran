@@ -3302,13 +3302,13 @@ models with penalized basis splines (P-Splines).  See
 (define-public r-pspatreg
   (package
     (name "r-pspatreg")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pspatreg" version))
               (sha256
                (base32
-                "1gf00i605fss6xn0gyk7y2cqpihmqm4klqd1z1pdxqq41cg8r34s"))))
+                "006wdg689b0xn54g45nchw5n1hjh5mr3bzyhraavzvxx6sjfhwq5"))))
     (properties `((upstream-name . "pspatreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -3576,6 +3576,28 @@ al.', 2008, <doi:10.1007/s00477-007-0163-9>) as an additional method for the
 intamap package.  More details on implementation (Barillec et.  al.', 2010,
 <doi:10.1016/j.cageo.2010.05.008>).")
     (license license:gpl2+)))
+
+(define-public r-psgoft
+  (package
+    (name "r-psgoft")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "PSGoft" version))
+              (sha256
+               (base32
+                "177znpqd6wix76bk59w452ki8qa6rmvwiwddflgqi6chybbn6cpr"))))
+    (properties `((upstream-name . "PSGoft")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-moments))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=PSGoft")
+    (synopsis "Modified Lilliefors Goodness-of-Fit Normality Test")
+    (description
+     "Presentation of a new goodness-of-fit normality test based on the Lilliefors
+method.  For details on this method see: Sulewski (2019)
+<doi:10.1080/03610918.2019.1664580>.")
+    (license license:gpl3)))
 
 (define-public r-psgd
   (package
@@ -5153,13 +5175,13 @@ and Arostegui I. (2018) <doi:10.1177/0962280217690413>).")
 (define-public r-propublicar
   (package
     (name "r-propublicar")
-    (version "1.1.3")
+    (version "1.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ProPublicaR" version))
               (sha256
                (base32
-                "0a370s5vfwi4y8fdaqmprq6nlb2hyc1gpvpw0iivav4ds9bw4lis"))))
+                "0rgfblkzx7rgv6q6k1vq47fxxdaa46hq5wv6vxal2bjj1v2qflav"))))
     (properties `((upstream-name . "ProPublicaR")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-lubridate r-httr r-dplyr r-config))
@@ -6427,6 +6449,30 @@ Gaussian.  The tilt functions are estimated via a GAM Poisson model.  Details
 can be found in \"Elements of Statistical Learning (2nd Edition)\" in Section
 14.7.4.")
     (license license:gpl2)))
+
+(define-public r-procs
+  (package
+    (name "r-procs")
+    (version "1.0.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "procs" version))
+              (sha256
+               (base32
+                "0k2v2l843c92raa3d2gdv3ns7bxr5ja48vf7lzqkig5qdixxfafc"))))
+    (properties `((upstream-name . "procs")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble r-reporter r-fmtr r-common))
+    (native-inputs (list r-knitr))
+    (home-page "https://procs.r-sassy.org")
+    (synopsis "Recreates Some 'SASÂ®' Procedures in 'R'")
+    (description
+     "This package contains functions to simulate the most commonly used SASÂ®
+procedures.  Specifically, the package aims to simulate the functionality of
+proc freq', proc means', proc transpose', proc sort', and proc print'.  The
+simulation will include recreating all statistics with the highest fidelity
+possible.")
+    (license license:cc0)))
 
 (define-public r-procmod
   (package
@@ -8134,6 +8180,45 @@ setting margins, plotting the map, scale bar, and north arrow, and resetting
 graphic parameters upon completion.")
     (license license:gpl2)))
 
+(define-public r-prettyglm
+  (package
+    (name "r-prettyglm")
+    (version "1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "prettyglm" version))
+              (sha256
+               (base32
+                "1pivjpnspis7zshdj7kasncb8qpy40ld9f40fwlb3x14snrvbqix"))))
+    (properties `((upstream-name . "prettyglm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vip
+                             r-tidyselect
+                             r-tidyr
+                             r-tidycat
+                             r-tibble
+                             r-stringr
+                             r-rcolorbrewer
+                             r-plotly
+                             r-knitr
+                             r-kableextra
+                             r-forcats
+                             r-dplyr
+                             r-car
+                             r-broom))
+    (native-inputs (list r-knitr))
+    (home-page "https://jared-fowler.github.io/prettyglm/")
+    (synopsis "Pretty Summaries of Generalized Linear Model Coefficients")
+    (description
+     "One of the main advantages of using Generalised Linear Models is their
+interpretability.  The goal of prettyglm is to provide a set of functions which
+easily create beautiful coefficient summaries which can readily be shared and
+explained.  prettyglm helps users create coefficient summaries which include
+categorical base levels, variable importance and type III p.values.  prettyglm
+also creates beautiful relativity plots for categorical, continuous and splined
+coefficients.")
+    (license license:gpl3)))
+
 (define-public r-prettycols
   (package
     (name "r-prettycols")
@@ -8832,13 +8917,13 @@ ML approach.")
 (define-public r-prefio
   (package
     (name "r-prefio")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "prefio" version))
               (sha256
                (base32
-                "1x8jjfijz8wsjflr12x2c45l49i15s4n372zf1qscqhkvbbxszwz"))))
+                "0zc8j1hj47iivx40i1wzilcn3456smbrzz2g6s1khqsx366mw9qr"))))
     (properties `((upstream-name . "prefio")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-magrittr r-dplyr))
@@ -10615,13 +10700,13 @@ bias-variance tradeoff.")
 (define-public r-ppmiss
   (package
     (name "r-ppmiss")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PPMiss" version))
               (sha256
                (base32
-                "0gbihilyhf1zd7s2k1n2axmywjbs0r23hn4gsbn6wvb9zqr4djf2"))))
+                "06vj4r6s2lnz74l49762chxkixxs63v88w5wknkmhdzv6795c4f4"))))
     (properties `((upstream-name . "PPMiss")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-pracma r-copula))
@@ -13523,13 +13608,13 @@ computed from genotypes and those computed from pooled data.  Carvalho et al.,
 (define-public r-poolfstat
   (package
     (name "r-poolfstat")
-    (version "2.1.2")
+    (version "2.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "poolfstat" version))
               (sha256
                (base32
-                "01qyg7wg9jdzagw03ns7ff6l6lczgbnivmhlxbqdydybp2y8adkp"))))
+                "17wama4lxl7q2i9j2v15kn33i2lszrsyim9qj8dihhx9r6p9vdls"))))
     (properties `((upstream-name . "poolfstat")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -13912,16 +13997,21 @@ provided in the separate package pomdp.  Kaelbling, Littman and Cassandra (1998)
 (define-public r-pomdp
   (package
     (name "r-pomdp")
-    (version "1.1.0")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pomdp" version))
               (sha256
                (base32
-                "0l9gc5nh99xdmm3k373hi4dh5qky5vb5s7r05kbyly4y4ii8fh5x"))))
+                "0v4vj5xiivh1z1jc93zwijhdfjs7lnb81szlgsmn9byc31ydg3br"))))
     (properties `((upstream-name . "pomdp")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-pomdpsolve r-matrix r-igraph r-foreach))
+    (propagated-inputs (list r-rcpp
+                             r-processx
+                             r-pomdpsolve
+                             r-matrix
+                             r-igraph
+                             r-foreach))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mhahsler/pomdp")
     (synopsis
@@ -14741,13 +14831,13 @@ Hanby (1971) <doi:10.1017/S000712340000925X>; Gallagher (1991)
 (define-public r-politeness
   (package
     (name "r-politeness")
-    (version "0.9.1")
+    (version "0.9.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "politeness" version))
               (sha256
                (base32
-                "09y2sg3mlxcwgmpv0sjnc67qr1jicj8lykgihsf7ysrzyc7ag9na"))))
+                "0lj5jgw9ldnidkbbg8k9ma2xxg3hcaaiq6dcmp8rc2mqp204irff"))))
     (properties `((upstream-name . "politeness")))
     (build-system r-build-system)
     (propagated-inputs (list r-tm
@@ -16609,6 +16699,41 @@ the High Performance Statistical Computing website
 <https://snoweye.github.io/hpsc/> for more information, documents and examples.")
     (license license:gpl2+)))
 
+(define-public r-pmcalibration
+  (package
+    (name "r-pmcalibration")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "pmcalibration" version))
+              (sha256
+               (base32
+                "1zhg55jdf8jd92216waa2g18mvni8qh6j2idgf77k6mcwb63m9zw"))))
+    (properties `((upstream-name . "pmcalibration")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival
+                             r-pbapply
+                             r-mgcv
+                             r-mass
+                             r-hmisc
+                             r-chk
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/stephenrho/pmcalibration")
+    (synopsis "Calibration Curves for Clinical Prediction Models")
+    (description
+     "Fit calibrations curves for clinical prediction models and calculate several
+associated metrics (Eavg, E50, E90, Emax).  Ideally predicted probabilities from
+a prediction model should align with observed probabilities.  Calibration curves
+relate predicted probabilities (or a transformation thereof) to observed
+outcomes via a flexible non-linear smoothing function.  pmcalibration allows
+users to choose between several smoothers (regression splines, generalized
+additive models/GAMs, lowess, loess).  Both binary and time-to-event outcomes
+are supported.  See Van Calster et al. (2016)
+<doi:10.1016/j.jclinepi.2015.12.005>; Austin and Steyerberg (2019)
+<doi:10.1002/sim.8281>; Austin et al. (2020) <doi:10.1002/sim.8570>.")
+    (license license:gpl3)))
+
 (define-public r-pmc
   (package
     (name "r-pmc")
@@ -17632,13 +17757,13 @@ spatiotemporal objects to KML following some basic cartographic rules.")
 (define-public r-plothmm
   (package
     (name "r-plothmm")
-    (version "2022.1.25")
+    (version "2023.8.28")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "plotHMM" version))
               (sha256
                (base32
-                "0qkr6w558aj9nbchvwi48k6m4g36zd3q2phbhl95rawsxv3dwdja"))))
+                "12mxkd1m3ivk25sr5sg97q2l2v5m95pmfhbrhrp9jmmpqfr1l983"))))
     (properties `((upstream-name . "plotHMM")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -23861,6 +23986,29 @@ circular analysis are based on methods from - Batschelet (1981)
 used to interface Python from R.")
     (license license:bsd-2)))
 
+(define-public r-pharmaversesdtm
+  (package
+    (name "r-pharmaversesdtm")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "pharmaversesdtm" version))
+              (sha256
+               (base32
+                "1gbf6b29nls47i0kw4b5xhd4bgqhyza18k93k58rwn7xjy6rfhcy"))))
+    (properties `((upstream-name . "pharmaversesdtm")))
+    (build-system r-build-system)
+    (home-page "https://pharmaverse.github.io/pharmaversesdtm/main/")
+    (synopsis "Test Data for the Pharmaverse Family of Packages")
+    (description
+     "This package provides a set of Study Data Tabulation Model (SDTM) datasets from
+the Clinical Data Interchange Standards Consortium (CDISC) pilot project used
+for testing and developing Analysis Data Model (A@code{DaM}) datasets inside the
+pharmaverse family of packages.  SDTM dataset specifications are described in:
+CDISC Submission Data Standards Team (2021)
+<https://www.cdisc.org/system/files/members/standard/foundational/SDTMIG%20v3.4-FINAL_2022-07-21.pdf>.")
+    (license license:asl2.0)))
+
 (define-public r-pharmaverse
   (package
     (name "r-pharmaverse")
@@ -23907,6 +24055,32 @@ can be written out to RTF, but cannot add certain metadata or features to the
 document that are required/expected in a report for a regulatory submission,
 such as multiple levels of titles and footnotes, making the document landscape,
 and controlling properties such as margins.")
+    (license license:expat)))
+
+(define-public r-phantsem
+  (package
+    (name "r-phantsem")
+    (version "1.0.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "phantSEM" version))
+              (sha256
+               (base32
+                "099kflbj66wfkl7b6f1l68763b7qkpjihp4r1xih5lvjwc8ap0b9"))))
+    (properties `((upstream-name . "phantSEM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-lavaan r-dplyr r-corpcor))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=phantSEM")
+    (synopsis
+     "Create Phantom Variables in Structural Equation Models for Sensitivity Analyses")
+    (description
+     "Create phantom variables, which are variables that were not observed, for the
+purpose of sensitivity analyses for structural equation models.  The package
+makes it easier for a user to test different combinations of covariances between
+the phantom variable(s) and observed variables.  The package may be used to
+assess a model's or effect's sensitivity to temporal bias (e.g., if
+cross-sectional data were collected) or confounding bias.")
     (license license:expat)))
 
 (define-public r-phagecocktail
@@ -25462,13 +25636,13 @@ statistics using the bootstrap-coupled approach implemented in the dabestr
 (define-public r-permpath
   (package
     (name "r-permpath")
-    (version "1.2")
+    (version "1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "permPATH" version))
               (sha256
                (base32
-                "074knhcn88nzisfl20ais71micnnjqbm5lqp6jfkqj176r2af7cq"))))
+                "1xjhpndlqdafv7g5yrps2rby8by76sh6y7kg2jhwbh6bv7x0d975"))))
     (properties `((upstream-name . "permPATH")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable r-r2html))
@@ -26221,13 +26395,13 @@ extensions and algorithms described in Kepplinger, D. (2020)
 (define-public r-penppml
   (package
     (name "r-penppml")
-    (version "0.2.2")
+    (version "0.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "penppml" version))
               (sha256
                (base32
-                "0lspspk5bbxycfkwmw9sbz84rbhjsxmnza3692lrnadyrpaw3s39"))))
+                "1pxfnq5z7aygd2i3qcn2nvzvbw83gp4zhy3bavir3vpjd655llc3"))))
     (properties `((upstream-name . "penppml")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -26458,13 +26632,13 @@ is described in Signorelli et al. (2021) <doi:10.1002/sim.9178>.")
 (define-public r-penaltylearning
   (package
     (name "r-penaltylearning")
-    (version "2020.5.13")
+    (version "2023.8.31")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "penaltyLearning" version))
               (sha256
                (base32
-                "0297rp5zn6d0axl44i3baq2vqvhrx6s8irrysvqdcx1rkishf4j0"))))
+                "1akajydxzq03pvhmgr3zr69wz6skfgf893dc8krm2aqcdn5b4i9a"))))
     (properties `((upstream-name . "penaltyLearning")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2 r-data-table))
@@ -27478,13 +27652,13 @@ ICML2015.")
 (define-public r-peaksegdisk
   (package
     (name "r-peaksegdisk")
-    (version "2022.2.1")
+    (version "2023.9.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PeakSegDisk" version))
               (sha256
                (base32
-                "1wvsg87frdyi7q58b438n331irlgm7wnfd3rf3ca5m636xz6cnr9"))))
+                "164s72pmb3h3niwzbfgiyssly46p00mmjg4nv7182a476xgcznj2"))))
     (properties `((upstream-name . "PeakSegDisk")))
     (build-system r-build-system)
     (propagated-inputs (list r-data-table))
@@ -27528,13 +27702,13 @@ RAM used so that developers can quickly identify and eliminate RAM hungry code."
 (define-public r-peakerror
   (package
     (name "r-peakerror")
-    (version "2021.7.1")
+    (version "2023.9.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PeakError" version))
               (sha256
                (base32
-                "0rsh81p0w11zp8rgxx9cm8537gxhf9hx6xizpbflfx60xhr96is5"))))
+                "07hidwjf0pgahdw12jlvv2cygfvizv1zjir49nmra01zm1yr5k62"))))
     (properties `((upstream-name . "PeakError")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=PeakError")
@@ -28475,13 +28649,13 @@ solution to this problem using loopy belief propagation algorithm.")
 (define-public r-pcsstools
   (package
     (name "r-pcsstools")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pcsstools" version))
               (sha256
                (base32
-                "1vp4lflxzzgjfh1nkkfvnb74pjmbcdgrc1hlakjd8i5rw7swvr20"))))
+                "0pqc6qpl95dxphi77wcgi0v22a1q455iqaplsrvg32cf0mn3gikg"))))
     (properties `((upstream-name . "pcsstools")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-gtools))
@@ -28492,7 +28666,7 @@ solution to this problem using loopy belief propagation algorithm.")
 statistics (i.e.  means, variances, and covariances) in place of individual
 participant data.  Possible models include linear models for linear
 combinations, products, and logical combinations of phenotypes.  Implements
-methods presented in Wolf et al. (2021) <doi:10.1101/2021.03.08.433979> Wolf et
+methods presented in Wolf et al. (2021) <doi:10.3389/fgene.2021.745901> Wolf et
 al. (2020) <doi:10.1142/9789811215636_0063> and Gasdaska et al. (2019)
 <doi:10.1142/9789813279827_0036>.")
     (license license:gpl3+)))
@@ -29085,13 +29259,13 @@ and 365-day calendars in addition to the gregorian calendar.")
 (define-public r-pchc
   (package
     (name "r-pchc")
-    (version "1.1")
+    (version "1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pchc" version))
               (sha256
                (base32
-                "0crb63i2hps59q96fi6if58wj4nd09nkad2vyqb6pffbr3wckvgb"))))
+                "0h1b1n9mw22wsh51nciphgyqk2cp98qkm4wskxw4ryj6lyqjk4k2"))))
     (properties `((upstream-name . "pchc")))
     (build-system r-build-system)
     (propagated-inputs (list r-robustbase

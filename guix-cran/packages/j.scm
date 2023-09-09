@@ -375,6 +375,42 @@ with image zoom, calibrator, and classifier.  Also provides detailed and
 R-independent extraction reports as fully-embedded .html records.")
     (license license:gpl2+)))
 
+(define-public r-juicedown
+  (package
+    (name "r-juicedown")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "juicedown" version))
+              (sha256
+               (base32
+                "1fvplx2p8510ayl32l04db728fajyp06jcfzivm47v8px434f2pf"))))
+    (properties `((upstream-name . "juicedown")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-xfun
+                             r-stringr
+                             r-sass
+                             r-rvest
+                             r-rlang
+                             r-markdown
+                             r-knitr
+                             r-juicyjuice
+                             r-glue
+                             r-dplyr
+                             r-clipr))
+    (home-page "https://kenjisato.github.io/juicedown/")
+    (synopsis
+     "'juice' + 'markdown': Convert 'R Markdown' into 'HTML' with Inline Styles")
+    (description
+     "This package provides a convenience tool to create HTML with inline styles using
+juicyjuice and markdown packages.  It is particularly useful when working on a
+content management system (CMS) whose code editor eliminates style and link
+tags.  The main use case of the package is the learning management system,
+Moodle'.  Additional helper functions for teaching purposes are provided.  Learn
+more about juicedown at <https://kenjisato.github.io/juicedown/>.")
+    (license license:expat)))
+
 (define-public r-jubilee
   (package
     (name "r-jubilee")
@@ -1637,13 +1673,13 @@ follows the ideas and notation of K. @code{McCrimmon} (2004, ISBN:0-387-95447-3)
 (define-public r-jops
   (package
     (name "r-jops")
-    (version "0.1.15")
+    (version "0.1.19")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "JOPS" version))
               (sha256
                (base32
-                "01yaw657826vfsfdscv3aqgswb5s2054s755agfxqm7g6sswpa13"))))
+                "0qnycf7yd1sas0v6jclmc1y0jq9bslqlf66mqyirpxcs2lsk0327"))))
     (properties `((upstream-name . "JOPS")))
     (build-system r-build-system)
     (propagated-inputs (list r-spats
@@ -1848,6 +1884,40 @@ Vollgraff and Obermayer <doi:10.1109/TSP.2006.877673>.  An example of
 application in the context of Brain-Computer Interfaces EEG denoising can be
 found in Gouy-Pailler et al (2010) <doi:10.1109/TBME.2009.2032162>.")
     (license license:gpl2+)))
+
+(define-public r-jointcalib
+  (package
+    (name "r-jointcalib")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "jointCalib" version))
+              (sha256
+               (base32
+                "0md4rmb7f3k6zy1y8s43p14wwrx2bv3j5j03sn7qh9mhpyssl8hn"))))
+    (properties `((upstream-name . "jointCalib")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survey
+                             r-sampling
+                             r-mathjaxr
+                             r-mass
+                             r-laeken
+                             r-ebal))
+    (home-page "https://github.com/ncn-foreigners/jointCalib")
+    (synopsis "Joint Calibration of Totals and Quantiles")
+    (description
+     "This package provides a small package containing functions to perform a joint
+calibration of totals and quantiles.  The calibration for totals is based on
+Deville and SÃ¤rndal (1992) <doi:10.1080/01621459.1992.10475217>, the
+calibration for quantiles is based on Harms and Duchesne (2006)
+<https://www150.statcan.gc.ca/n1/en/catalogue/12-001-X20060019255>.  The package
+uses standard calibration via the survey', sampling or laeken packages.  In
+addition, entropy balancing via the ebal package and empirical likelihood based
+on codes from Wu (2005)
+<https://www150.statcan.gc.ca/n1/pub/12-001-x/2005002/article/9051-eng.pdf> can
+be used.  See the paper by @code{BerÄsewicz} and Szymkowiak (2023) for details
+<@code{arXiv:2308.13281>}.")
+    (license license:gpl3)))
 
 (define-public r-jointai
   (package
@@ -2609,13 +2679,13 @@ estimation.  See Saulnier et al, 2021 <@code{arXiv:2110.02612>}.")
 (define-public r-jlmerclusterperm
   (package
     (name "r-jlmerclusterperm")
-    (version "1.0.3")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jlmerclusterperm" version))
               (sha256
                (base32
-                "1l27513896mzz6l88pzqffvj71sivxvswqgdrcpgrk1h8w84h658"))))
+                "0h5qf99r0aak949114j9bn56pa354wqy56c8m343if1fwihliiis"))))
     (properties `((upstream-name . "jlmerclusterperm")))
     (build-system r-build-system)
     (inputs (list julia))

@@ -1850,13 +1850,13 @@ chemical formula.")
 (define-public r-isopam
   (package
     (name "r-isopam")
-    (version "1.1.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "isopam" version))
               (sha256
                (base32
-                "0cj8gn5m7r1fs4riiw1d3cmpg7zy3dyfpcr40dy18zmp4kg6ff7m"))))
+                "1ygvpdpn1vjkpfl32sp41kss512r051c839yki288xidqg4j3z0a"))))
     (properties `((upstream-name . "isopam")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -2989,13 +2989,13 @@ referring to the Pi(), Ji(), and Ii() functions of the @code{catR} package
 (define-public r-irtpwr
   (package
     (name "r-irtpwr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "irtpwr" version))
               (sha256
                (base32
-                "009m14v1frwwqxi0vlvxk740ky34xj4k7pn4csl69yk429r8l9a2"))))
+                "12ypvfqirqniszxwx01h9hcp3pdk7yd379j42pys13rd8m05ii4m"))))
     (properties `((upstream-name . "irtpwr")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-random r-mirt r-ggplot2 r-digest
@@ -4442,13 +4442,13 @@ generated from the input data.")
 (define-public r-ipedsuploadables
   (package
     (name "r-ipedsuploadables")
-    (version "2.7.5")
+    (version "2.8.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IPEDSuploadables" version))
               (sha256
                (base32
-                "0rj1d87im7jxw9kyb82irxsanrqmn9fa29347yjn51lj8wqdgkwm"))))
+                "0za69wfhqpmr6hl64kvpmw2sjhys74bnfab21zlwbxq8palhpmxh"))))
     (properties `((upstream-name . "IPEDSuploadables")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -6777,13 +6777,13 @@ created.")
 (define-public r-interep
   (package
     (name "r-interep")
-    (version "0.3.2")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "interep" version))
               (sha256
                (base32
-                "1a4ws8wsrlkiq8dxrx85cq758dim3ym0sirag1k7hhv6pl825cxs"))))
+                "1c2s018h2r9xf5d1bywg4ml1kxszlc6fnrzddfc17wc20l31sw5b"))))
     (properties `((upstream-name . "interep")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-mass))
@@ -8999,21 +8999,21 @@ squared coefficient of variation is based on Garcia-Penalosa, C., & Orgiazzi, E.
 (define-public r-ineptr
   (package
     (name "r-ineptr")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ineptR" version))
               (sha256
                (base32
-                "04dvcg0zyb35lmvi2g0vhs8mr8a4i1rxinz0pjsrl4j0g1yrlk11"))))
+                "1rdw5idqaq9h2bys67lmks0dkrvr1a0272nr52ylf0cpglafs3n4"))))
     (properties `((upstream-name . "ineptR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
-                             r-rlang
                              r-readr
                              r-purrr
+                             r-progressr
                              r-magrittr
                              r-lifecycle
                              r-httr2
@@ -10849,6 +10849,34 @@ receptor databases and clonotype tracking in vaccination and cancer studies.  A
 successor to our previously published @code{tcR} immunoinformatics package
 (Nazarov 2015) <doi:10.1186/s12859-015-0613-1>.")
     (license license:agpl3)))
+
+(define-public r-imml
+  (package
+    (name "r-imml")
+    (version "0.1.5")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ImML" version))
+              (sha256
+               (base32
+                "1q4pwn47v0623qamzpsnldq4g5fhqd0bgkc5357h3588r9ahcdq3"))))
+    (properties `((upstream-name . "ImML")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rpart
+                             r-rlang
+                             r-randomforest
+                             r-ggplot2
+                             r-e1071
+                             r-dplyr
+                             r-caret))
+    (home-page "https://cran.r-project.org/package=ImML")
+    (synopsis
+     "Machine Learning Algorithms Fitting and Validation for Forestry")
+    (description
+     "Fitting and validation of machine learning algorithms for volume prediction of
+trees, currently for conifer trees based on diameter at breast height and height
+as explanatory variables.")
+    (license license:gpl3)))
 
 (define-public r-immigrate
   (package
@@ -16463,13 +16491,13 @@ capabilities for exploring raw IAT data.")
 (define-public r-iasd
   (package
     (name "r-iasd")
-    (version "1.1")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IASD" version))
               (sha256
                (base32
-                "1slhd42k639mbyxccl7n69p7ng2qx6pqag8wz3kdwn479spkavzn"))))
+                "0bw36kghfrz3kh8rafshv16q2ac0ynsjcks021g27knvvbapnic9"))))
     (properties `((upstream-name . "IASD")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=IASD")
@@ -16534,30 +16562,6 @@ package are the irregular autoregressive model (Eyheramendy et al.(2018)
 irregular autoregressive model (Elorrieta et al.(2021)
 <doi:10.1093/mnras/stab1216>).")
     (license license:gpl2)))
-
-(define-public r-iapws95
-  (package
-    (name "r-iapws95")
-    (version "1.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IAPWS95" version))
-              (sha256
-               (base32
-                "1nrdqjv7w99pxw519jbg57h56jwbmnal5155196jyzms782wyms3"))))
-    (properties `((upstream-name . "IAPWS95")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-pander r-ggplot2))
-    (native-inputs (list r-rmarkdown r-knitr gfortran))
-    (home-page "https://cran.r-project.org/package=IAPWS95")
-    (synopsis "Thermophysical Properties of Water and Steam")
-    (description
-     "This package provides functions for Water and Steam Properties based on the
-International Association for the Properties of Water (IAPWS) Formulation 1995
-for the Thermodynamic Properties of Ordinary Water Substance for General and
-Scientific Use and on the releases for viscosity, conductivity, surface tension
-and melting pressure.")
-    (license license:expat)))
 
 (define-public r-iapws
   (package
@@ -16774,13 +16778,13 @@ analysis (<https://www.reconverse.org/).")
 (define-public r-i2dash
   (package
     (name "r-i2dash")
-    (version "0.2.3")
+    (version "0.2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "i2dash" version))
               (sha256
                (base32
-                "0pj4s47nbs67jnnk0dsna59lrn983zzkybbf6hf4s77sikshmwf0"))))
+                "0silwp4pasry7z1yjhzyw06xpa8021v9bkhinc73i7dzr720ld5v"))))
     (properties `((upstream-name . "i2dash")))
     (build-system r-build-system)
     (propagated-inputs (list r-ymlthis

@@ -43,13 +43,13 @@
 (define-public r-qz
   (package
     (name "r-qz")
-    (version "0.2-2")
+    (version "0.2-3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "QZ" version))
               (sha256
                (base32
-                "13s9yp9dz95iar2s8mhyi1sfba4wsdddpjard01665s34cvf1xw9"))))
+                "14szpp8yv315wjn4d35l858bzkv2pd4s720ib921wsvpgn3xfx5d"))))
     (properties `((upstream-name . "QZ")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix))
@@ -1716,16 +1716,16 @@ on the package itself go to <https://www.quandl.com/tools/r>.")
 (define-public r-qualypso
   (package
     (name "r-qualypso")
-    (version "2.1")
+    (version "2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "QUALYPSO" version))
               (sha256
                (base32
-                "0d75r2835x9926rfk7wjkj2rixdq0apakz50vmg2lbmfgcfhgks1"))))
+                "1836gl90021m47vs7ckb5s9sg1xzrdnwbrha8acrnwjsp17iyydv"))))
     (properties `((upstream-name . "QUALYPSO")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rfast r-mass r-foreach r-expm r-doparallel))
+    (propagated-inputs (list r-rfast r-mass r-expm))
     (home-page "https://cran.r-project.org/package=QUALYPSO")
     (synopsis
      "Partitioning Uncertainty Components of an Incomplete Ensemble of Climate Projections")
@@ -2688,13 +2688,13 @@ functions provided by similar packages.")
 (define-public r-qspray
   (package
     (name "r-qspray")
-    (version "2.1.0")
+    (version "2.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "qspray" version))
               (sha256
                (base32
-                "0j8n64i2hsyiw37r7hf47g4dlndhgjn8s0jfyc6w7bznyjwadz7w"))))
+                "164ls4a4cij7szbi6jwia2021cgrv4zjhmamslyhnfymdj2nz051"))))
     (properties `((upstream-name . "qspray")))
     (build-system r-build-system)
     (inputs (list mpfr gmp))
@@ -4187,13 +4187,13 @@ phenotypic variance and additive genetic variance.")
 (define-public r-qgg
   (package
     (name "r-qgg")
-    (version "1.1.1")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "qgg" version))
               (sha256
                (base32
-                "11ijkr67d2b2avd0slw6cfsdhq3v10xyc36b01fj1s1whpm8vrvw"))))
+                "0195fzcr0xy2dns4jl5kn3nigy989l47syn8iavfdpqb76zsh0a3"))))
     (properties `((upstream-name . "qgg")))
     (build-system r-build-system)
     (propagated-inputs (list r-statmod
@@ -4201,7 +4201,9 @@ phenotypic variance and additive genetic variance.")
                              r-rcpp
                              r-mcmcpack
                              r-mass
-                             r-data-table))
+                             r-data-table
+                             r-corpcor
+                             r-coda))
     (native-inputs (list gfortran))
     (home-page "https://github.com/psoerensen/qgg")
     (synopsis "Statistical Tools for Quantitative Genetic Analyses")

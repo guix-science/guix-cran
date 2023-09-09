@@ -2276,13 +2276,13 @@ life\" functions, such as treating time series for trailing and leading values."
 (define-public r-tstutorial
   (package
     (name "r-tstutorial")
-    (version "1.2.6")
+    (version "1.2.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TSTutorial" version))
               (sha256
                (base32
-                "1yvymr2z1853zmgj1nf8p86pbyzx666rcfyyzqvrscb7ab0bdfld"))))
+                "0cjhf103h1s2g7q3p9z8n8b3pkydfxn2sbnhv9rjwiibhdk7ql2h"))))
     (properties `((upstream-name . "TSTutorial")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -2734,13 +2734,13 @@ TSP instances.")
 (define-public r-tspi
   (package
     (name "r-tspi")
-    (version "1.0.3")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tsPI" version))
               (sha256
                (base32
-                "00p7275iq8qn6c6dpqjr5s9fzc0a6njqqi9gvqnh5s9lfx9mbk1v"))))
+                "1an4dk8pjb0c47891p91sdrgcnd4xl9bal5f41shv1vkp0kk0nyy"))))
     (properties `((upstream-name . "tsPI")))
     (build-system r-build-system)
     (propagated-inputs (list r-kfas))
@@ -3151,13 +3151,13 @@ series data using nonlinear growth models.")
 (define-public r-tsfknn
   (package
     (name "r-tsfknn")
-    (version "0.5.1")
+    (version "0.5.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tsfknn" version))
               (sha256
                (base32
-                "1xwsyn6g11qrwkqz0mm7b7iy7d81khpb9jvmlq85g3w4ap4cd5nl"))))
+                "0r68azmcavrp3rx65nafn9nvj530x12y47sgzgkrjjbchfwm2jsw"))))
     (properties `((upstream-name . "tsfknn")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-ggplot2))
@@ -6001,13 +6001,13 @@ total evidence dating analyses.")
 (define-public r-treespace
   (package
     (name "r-treespace")
-    (version "1.1.4.2")
+    (version "1.1.4.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "treespace" version))
               (sha256
                (base32
-                "0pys9pz0b8w20rgp8l33k69yrl8bn98gsqy4rld6ky3nqdd8kzks"))))
+                "1f5kcydlnbbwf2q2rgb64y3i7x9p7prcw1xc5pjk8wqp2zyr0ijj"))))
     (properties `((upstream-name . "treespace")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinybs
@@ -6024,7 +6024,6 @@ total evidence dating analyses.")
                              r-distory
                              r-combinat
                              r-ape
-                             r-adephylo
                              r-adegraphics
                              r-adegenet
                              r-ade4))
@@ -6826,13 +6825,13 @@ details.")
 (define-public r-treatmentpatterns
   (package
     (name "r-treatmentpatterns")
-    (version "2.5.0")
+    (version "2.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TreatmentPatterns" version))
               (sha256
                (base32
-                "1z6si4n1yd7b2kb91mrcv746rvgjkagk1hsahz275126fhsz6x39"))))
+                "1f427vda5csfyzxmx33wb845pj27i6xc3i081bgp73aba2mcsl43"))))
     (properties `((upstream-name . "TreatmentPatterns")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -9276,13 +9275,13 @@ et al. (2022) <doi:10.48550/@code{arXiv.2012.11100>}.")
 (define-public r-toscutil
   (package
     (name "r-toscutil")
-    (version "2.7.3")
+    (version "2.7.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "toscutil" version))
               (sha256
                (base32
-                "0ckj870hky8hxifps8y8982a4lz7hw797sszr147m3xhj73350pm"))))
+                "07b89f43d9dm0lyfc0fd15bv2gxqmzz3ly9gzggix04v8zxivm2i"))))
     (properties `((upstream-name . "toscutil")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-languageserver))
@@ -9627,13 +9626,13 @@ based on several criteria to result in the best benefit. (LIU, H. et al., 2019)
 (define-public r-topr
   (package
     (name "r-topr")
-    (version "1.1.8")
+    (version "1.1.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "topr" version))
               (sha256
                (base32
-                "0rxw8a2d2pa5ahwmwj6psssmp8955j638h82brn2rbhkc4fccm70"))))
+                "0d39xnybvs1ajbdlm3szdm0ryngcrq2jd39iijfqmhagz9rilqi1"))))
     (properties `((upstream-name . "topr")))
     (build-system r-build-system)
     (propagated-inputs (list r-toprdata
@@ -15709,13 +15708,13 @@ Maydeu-Olivares (2011) <doi:10.1177/0013164410375112>; BÃ¼rkner et al. (2019)
 (define-public r-thunder
   (package
     (name "r-thunder")
-    (version "1.1.1")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "thunder" version))
               (sha256
                (base32
-                "1mx68i2qjhfp94xx4mawr4vz0d4vspryiq48bryhsd36l71qzlv9"))))
+                "10ii36qflc4wrvv0xgvvvbc12l3zai15njibsmlfvi8z89ai0jkl"))))
     (properties `((upstream-name . "thunder")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-httr r-dplyr r-curl r-airthermo))
@@ -16887,13 +16886,13 @@ Truncated Generalised Gamma Distribution (also in log10(x) and ln(x) space).")
 (define-public r-tgcd
   (package
     (name "r-tgcd")
-    (version "2.6")
+    (version "2.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tgcd" version))
               (sha256
                (base32
-                "0rmlm52mgz4nwz4q96cn5i86dl13sh892aic69iwsmr5gyrmsj0b"))))
+                "0ncd642yamwg4xgwrzavfral0gwkk0zlffw4w4ixw0yn0f7d7vv9"))))
     (properties `((upstream-name . "tgcd")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -19881,13 +19880,13 @@ et al. (2011) <doi:10.1137/S0040585X97984632> Carrasco (2017)
 (define-public r-tempr
   (package
     (name "r-tempr")
-    (version "0.9.9.20")
+    (version "0.9.9.23")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tempR" version))
               (sha256
                (base32
-                "12wnb9w5ql4q9n0gppjaxa66rrmdp0mklrhpp1chf9qr9wyzjkxi"))))
+                "1s1qyvxc0mz2wydyz4ba94sh71b4d52wzfiq9qsw6y5clff3282p"))))
     (properties `((upstream-name . "tempR")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=tempR")
@@ -19895,7 +19894,11 @@ et al. (2011) <doi:10.1137/S0040585X97984632> Carrasco (2017)
     (description
      "Analysis and visualization of data from temporal sensory methods, including for
 temporal check-all-that-apply (TCATA) and temporal dominance of sensations
-(TDS).")
+(TDS).  Methods are mainly from manuscripts by Castura, J.C., @code{AntÃºnez},
+L., @code{GimÃ©nez}, A., and Ares, G. (2016)
+<doi:10.1016/j.foodqual.2015.06.017>, Castura, Baker, and Ross (2016)
+<doi:10.1016/j.foodqual.2016.06.011>, and Pineau et al. (2009)
+<doi:10.1016/j.foodqual.2009.04.005>.")
     (license license:gpl2+)))
 
 (define-public r-temporalgssa
@@ -20548,6 +20551,59 @@ such as leaf size or stomatal conductance.  Other references are Monteith and
 Unsworth (2013, ISBN:9780123869104), Nobel (2009, ISBN:9780123741431), and
 Okajima et al. (2012) <doi:10.1007/s11284-011-0905-5>.")
     (license license:expat)))
+
+(define-public r-teal-reporter
+  (package
+    (name "r-teal-reporter")
+    (version "0.2.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "teal.reporter" version))
+              (sha256
+               (base32
+                "0jwc5vrlgxkbahcr4rww1l12cbkrrdda4xrcx6p6lwxbx2m847jg"))))
+    (properties `((upstream-name . "teal.reporter")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zip
+                             r-yaml
+                             r-shinywidgets
+                             r-shiny
+                             r-rmarkdown
+                             r-r6
+                             r-lifecycle
+                             r-knitr
+                             r-htmltools
+                             r-checkmate
+                             r-bslib))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/insightsengineering/teal.reporter")
+    (synopsis "Reporting Tools for 'shiny' Modules")
+    (description
+     "Prebuilt shiny modules containing tools for the generation of rmarkdown reports,
+supporting reproducible research and analysis.")
+    (license license:asl2.0)))
+
+(define-public r-teal-logger
+  (package
+    (name "r-teal-logger")
+    (version "0.1.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "teal.logger" version))
+              (sha256
+               (base32
+                "037l3sb0vbnijhl1an4d4f63kgjq77nrj0hfrn74yj9ml406g3wg"))))
+    (properties `((upstream-name . "teal.logger")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-withr r-shiny r-logger r-lifecycle r-glue))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=teal.logger")
+    (synopsis "Logging Setup for the 'teal' Family of Packages")
+    (description
+     "Utilizing the logger framework to record events within a package, specific to
+teal family of packages.  Supports logging namespaces, hierarchical logging,
+various log destinations, vectorization, and more.")
+    (license license:asl2.0)))
 
 (define-public r-teachnet
   (package
@@ -22304,13 +22360,13 @@ hypotheses without needing to correct p-values.")
 (define-public r-tastypie
   (package
     (name "r-tastypie")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tastypie" version))
               (sha256
                (base32
-                "15ivl0rvnp1j09axk0jaf1wip5cjbnvfmx0crhqqd5y27mfa2hzd"))))
+                "0a7wq8jg3f0852y9pla1f63dqnkwn3vnb9p7fh9jq9rf75ljcpjk"))))
     (properties `((upstream-name . "tastypie")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble

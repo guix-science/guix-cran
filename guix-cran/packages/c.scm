@@ -81,13 +81,13 @@ Office (CZSO, <https://czso.cz>).")
 (define-public r-czechrates
   (package
     (name "r-czechrates")
-    (version "0.2.2")
+    (version "0.2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "czechrates" version))
               (sha256
                (base32
-                "162r9inbjkgfm3y73jb3d9pxmgid94jjy5kxjp7058jsiv2ibn05"))))
+                "0mv9adynqyn8x3ppwf4dkl8ii9jy4l7qk7v6bz7bxl5qsd6a5imn"))))
     (properties `((upstream-name . "czechrates")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -2487,13 +2487,13 @@ the number of individuals is large.  For the main ctsem package, see
 (define-public r-ctsem
   (package
     (name "r-ctsem")
-    (version "3.7.6")
+    (version "3.8.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ctsem" version))
               (sha256
                (base32
-                "1nhrxyq9kv3kzyskjmskh79z9mhzz6ap9bq0df1f7h4v73425mjc"))))
+                "0xdvaailg7zss6cw3qzkccqxhp6kzi0wdgvf56xh5p15bk26n8ph"))))
     (properties `((upstream-name . "ctsem")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -7006,13 +7006,13 @@ of sample weights to generate statistical estimates, drawing from Hur & Achen
 (define-public r-cpsurvsim
   (package
     (name "r-cpsurvsim")
-    (version "1.2.1")
+    (version "1.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cpsurvsim" version))
               (sha256
                (base32
-                "1wsb5hrds0ym49r0lyb3l37q1qpqy4qjhqcyd7awavdx2pk94pgi"))))
+                "1didw3zglzinb22r1r7shg9796mwb3cwfb53i86q7sl0ljbja11i"))))
     (properties `((upstream-name . "cpsurvsim")))
     (build-system r-build-system)
     (propagated-inputs (list r-plyr r-knitr r-hmisc))
@@ -7576,13 +7576,13 @@ sites.")
 (define-public r-cpfa
   (package
     (name "r-cpfa")
-    (version "1.0-5")
+    (version "1.0-6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cpfa" version))
               (sha256
                (base32
-                "1vdlc0flgzgg361y0fy8hdpvl206hd1vzmaf0qj1lvdf9wwvhm60"))))
+                "1az6hpg8p45wlc9syym244060f4q9h29plfypd7fll0nx1i19cgy"))))
     (properties `((upstream-name . "cpfa")))
     (build-system r-build-system)
     (propagated-inputs (list r-randomforest
@@ -7595,10 +7595,11 @@ sites.")
     (home-page "https://cran.r-project.org/package=cpfa")
     (synopsis "Classification with Parallel Factor Analysis")
     (description
-     "Classification using Richard A. Harshman's Parallel Factor Analysis (Parafac)
-model-1 fit to a three-way or four-way data tensor/array.  See Harshman and
-Lundy (1994): <doi:10.1016/0167-9473(94)90132-5>.  Uses Parafac factor weights
-from one mode of this model as predictors to tune parameters for one or more
+     "Classification using Richard A. Harshman's Parallel Factor Analysis-1 (Parafac)
+model or Parallel Factor Analysis-2 (Parafac2) model fit to a three-way or
+four-way data array/tensor.  See Harshman and Lundy (1994):
+<doi:10.1016/0167-9473(94)90132-5>.  Uses component weights from one mode of the
+Parafac or Parafac2 model as features to tune parameters for one or more
 classification methods via a k-fold cross-validation procedure.  Supports
 penalized logistic regression, support vector machine, random forest, and
 feed-forward neural network.  Supports binary and multiclass classification.
@@ -8434,35 +8435,6 @@ appropriate for mixed data is used otherwise.")
 neighbor variance estimation (NNVE) method of Wang and Raftery (2002)
 <DOI:10.1198/016214502388618780>.")
     (license license:gpl2+)))
-
-(define-public r-covregrf
-  (package
-    (name "r-covregrf")
-    (version "1.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "CovRegRF" version))
-              (sha256
-               (base32
-                "15v5myjjmkclsldnhnbwgc18y0758npw9qdij5zx9g1bj83l3fy7"))))
-    (properties `((upstream-name . "CovRegRF")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-diagrammer r-data-tree r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=CovRegRF")
-    (synopsis "Covariance Regression with Random Forests")
-    (description
-     "Covariance Regression with Random Forests ('@code{CovRegRF}') is a random forest
-method for estimating the covariance matrix of a multivariate response given a
-set of covariates.  Random forest trees are built with a new splitting rule
-which is designed to maximize the distance between the sample covariance matrix
-estimates of the child nodes.  The method is described in Alakus et al. (2022)
-<@code{arXiv:2209.08173>}. @code{CovRegRF} uses @code{randomForestSRC} package
-(Ishwaran and Kogalur, 2022)
-<https://cran.r-project.org/package=@code{randomForestSRC>} by freezing at the
-version 3.1.0.  The custom splitting rule feature is utilised to apply the
-proposed splitting rule.")
-    (license license:gpl3+)))
 
 (define-public r-covkcd
   (package
@@ -9950,6 +9922,29 @@ implements cost-proportionate rejection sampling for working with classifiers
 that don't accept observation weights.")
     (license license:bsd-2)))
 
+(define-public r-costat
+  (package
+    (name "r-costat")
+    (version "2.4.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "costat" version))
+              (sha256
+               (base32
+                "1h1gm1an5axgi7bf0f7dmxyxzss1859d4lv89z0q4dkk1nq29qd2"))))
+    (properties `((upstream-name . "costat")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-wavethresh))
+    (home-page "https://cran.r-project.org/package=costat")
+    (synopsis "Time Series Costationarity Determination")
+    (description
+     "This package contains functions that can determine whether a time series is
+second-order stationary or not (and hence evidence for locally stationarity).
+Given two non-stationary series (i.e.  locally stationary series) this package
+can then discover time-varying linear combinations that are second-order
+stationary.  Cardinali, A. and Nason, G.P. (2013) <doi:10.18637/jss.v055.i01>.")
+    (license license:gpl2+)))
+
 (define-public r-cost
   (package
     (name "r-cost")
@@ -10675,18 +10670,17 @@ resamples or through k-fold cross-validation, as proposed by Nadeau and Bengio
 (define-public r-correctoverloadedpeaks
   (package
     (name "r-correctoverloadedpeaks")
-    (version "1.2.17")
+    (version "1.3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CorrectOverloadedPeaks" version))
               (sha256
                (base32
-                "1g7irjbhwnbhk74y3qxcjlrsn2yz8q6wn7ih16wq669nswryxhxk"))))
+                "00zb5wxygb95dmmn31wk6lmsljxpjypmpvwa047shysbyr4y5a4h"))))
     (properties `((upstream-name . "CorrectOverloadedPeaks")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xml r-digest r-bitops))
     (native-inputs (list r-knitr))
-    (home-page "http://dx.doi.org/10.1021/acs.analchem.6b02515")
+    (home-page "<doi:10.1021/acs.analchem.6b02515>")
     (synopsis "Correct Overloaded Peaks from GC-APCI-MS Data")
     (description
      "Analyzes and modifies metabolomics raw data (generated using GC-APCI-MS, Gas
@@ -11591,13 +11585,13 @@ http://arxiv.org/abs/1508.01939 for more details.")
 (define-public r-corclass
   (package
     (name "r-corclass")
-    (version "0.2")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "corclass" version))
               (sha256
                (base32
-                "0hsbbzzadj8yc4zmb88ncx90sfxpyfd9xmdwhb08m1z1jw96zhxp"))))
+                "09g8pvxw7pb1bxz3pviqgarfa41cqfc5k0ablli7sy5iq7jn8alh"))))
     (properties `((upstream-name . "corclass")))
     (build-system r-build-system)
     (propagated-inputs (list r-igraph))
@@ -12539,16 +12533,17 @@ goodness-of-fit.")
 (define-public r-coortweet
   (package
     (name "r-coortweet")
-    (version "1.3")
+    (version "1.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CooRTweet" version))
               (sha256
                (base32
-                "1svi2a18z6vgd30kx47pdfk4q08isgxa1pchlhmcff8qx969048h"))))
+                "0ws2fjvqnfx86776pbx23j8mbi02dvgm6fc4j7036h9qj6hqfbld"))))
     (properties `((upstream-name . "CooRTweet")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidytable
+                             r-textreuse
                              r-stringi
                              r-rcppsimdjson
                              r-matrix
@@ -12795,6 +12790,37 @@ use of the website.  Here we provide tools for working with cookies in shiny
 apps, in part by wrapping the js-cookie @code{JavaScript} library
 <https://github.com/js-cookie/js-cookie>.")
     (license license:expat)))
+
+(define-public r-cookiecutter
+  (package
+    (name "r-cookiecutter")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "cookiecutter" version))
+              (sha256
+               (base32
+                "0kpyn20xk2sfb5zh18yxl5qjf628max186v1knq4f2mik1n4lwbd"))))
+    (properties `((upstream-name . "cookiecutter")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-whisker
+                             r-stringr
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-mime
+                             r-jsonlite
+                             r-fs))
+    (home-page "https://github.com/felixhenninger/cookiecutter/")
+    (synopsis "Generate Project Files from a Template")
+    (description
+     "Generate project files and directories following a pre-made template.  You can
+specify variables to customize file names and content, and flexibly adapt the
+template to your needs.  cookiecutter for R implements a subset of the excellent
+cookiecutter package for the Python programming language
+(<https://github.com/cookiecutter/>), and aims to be largely compatible with the
+original cookiecutter template format.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-cooccurrenceaffinity
   (package
@@ -19853,13 +19879,13 @@ search strategy, a candidate code list will be returned.")
 (define-public r-codecountr
   (package
     (name "r-codecountr")
-    (version "0.0.2.1")
+    (version "0.0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "codecountR" version))
               (sha256
                (base32
-                "17s6vbq533gjcg1gkyn9yx5x227wdwq18j74rg1zj8xi9h1bsb2b"))))
+                "1dp7yf86hakn8kqh7a29hvmnsf1q4qnk5ym4p12w9rlzx3ca5mr6"))))
     (properties `((upstream-name . "codecountR")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -22341,6 +22367,32 @@ some basic data handling tools for angular data.")
      "Cluster analysis of a set of variables.  Variables can be quantitative,
 qualitative or a mixture of both.")
     (license license:gpl2+)))
+
+(define-public r-clustnet
+  (package
+    (name "r-clustnet")
+    (version "1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "clustNet" version))
+              (sha256
+               (base32
+                "08iwdh8r1f5ia53lbwhlkxf58nmwqq0768i5wgs41aqqyhcvwg07"))))
+    (properties `((upstream-name . "clustNet")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rbgl
+                             r-pcalg
+                             r-igraph
+                             r-graph
+                             r-clue
+                             r-bidag))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=clustNet")
+    (synopsis "Network-Based Clustering")
+    (description
+     "Network-based clustering using a Bayesian network mixture model with optional
+covariate adjustment.")
+    (license license:gpl3)))
 
 (define-public r-clustmixtype
   (package
@@ -25951,13 +26003,13 @@ article when utilizing this package: Murden, R., Zhang, Z., Guo, Y., & Risk, B.
 (define-public r-cjbart
   (package
     (name "r-cjbart")
-    (version "0.3.1")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cjbart" version))
               (sha256
                (base32
-                "1pifwnq85cwc2q621nk12cqc0iv2khhj0g3csbbp3jlf705qr763"))))
+                "1d6jg6m86i2vx1yq66flj22x061s2x8rxsasqnn688kaaqrya657"))))
     (properties `((upstream-name . "cjbart")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -31702,6 +31754,29 @@ models (e.g., Jackson (2016) <doi:10.18637/jss.v070.i08>), semi-parametric
 fitting a bivariate copula.")
     (license license:gpl2+)))
 
+(define-public r-censobr
+  (package
+    (name "r-censobr")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "censobr" version))
+              (sha256
+               (base32
+                "13iqya4c5q3hxpbhn9l4psa082p6w56d890pkmjavr4w4lqxzssz"))))
+    (properties `((upstream-name . "censobr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-httr r-dplyr r-checkmate r-arrow))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ipeaGIT/censobr")
+    (synopsis "Download Data from Brazil's Population Census")
+    (description
+     "Download data from Brazil's population census.  The package is built on top of
+the Arrow platform <https://arrow.apache.org/docs/r/>, which allows users to
+work with larger-than-memory census data using dplyr familiar functions.
+<https://arrow.apache.org/docs/r/articles/arrow.html#analyzing-arrow-data-with-dplyr>.")
+    (license license:expat)))
+
 (define-public r-censo2017
   (package
     (name "r-censo2017")
@@ -33644,13 +33719,13 @@ create layers from user data such as polygons and grids.")
 (define-public r-cca
   (package
     (name "r-cca")
-    (version "1.2.1")
+    (version "1.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CCA" version))
               (sha256
                (base32
-                "1l4vp8yd42rpsm40szjfzhvbb5c7kl7yf4346i0940s6gk7bzzi8"))))
+                "0r1f7m64608hq6bpw36wsw6fr4s8bj26x4062brqgn5dbpqlgczk"))))
     (properties `((upstream-name . "CCA")))
     (build-system r-build-system)
     (propagated-inputs (list r-fields r-fda))
@@ -34654,13 +34729,13 @@ R-squared values as sensitivity parameters (Park, Kang, Lee, and Ma, 2023).")
 (define-public r-causact
   (package
     (name "r-causact")
-    (version "0.5.2")
+    (version "0.5.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "causact" version))
               (sha256
                (base32
-                "176amfndgcxj3rkw6pwnwq1nnn4bg63dml36yd9k8y1hwjivv2pp"))))
+                "1ax5nhrdkfcflqsif8r4dbyj0n68kd7yz7bfq8yk8z52vpkbh4is"))))
     (properties `((upstream-name . "causact")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -36780,13 +36855,13 @@ Research Council (NERC) grant NE/N007352/1 and the TB Alliance.")
 (define-public r-carat
   (package
     (name "r-carat")
-    (version "2.2.0")
+    (version "2.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "carat" version))
               (sha256
                (base32
-                "1hdh96plf0cyhsijzfm7ydc24yf497wadcn91p7b2s1s42makzkn"))))
+                "0h7l448b9vxmfdvi3zq3xgzprh0nrwvm1c2bg9d4yfbz92y2ndfc"))))
     (properties `((upstream-name . "carat")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-rcpparmadillo r-rcpp r-gridextra
@@ -36802,7 +36877,8 @@ covariate-adaptive randomization are also available in the package to facilitate
 the inference for treatment effect under the included randomization procedures.
 Additionally, the package provides comprehensive and efficient tools to allow
 one to evaluate and compare the performance of randomization procedures and
-tests based on various criteria.")
+tests based on various criteria.  See Ma W, Ye X, Tu F, and Hu F (2023) <doi:
+10.18637/jss.v107.i02> for details.")
     (license license:gpl2+)))
 
 (define-public r-caramel
@@ -37434,13 +37510,13 @@ see: Burdukiewicz et al. (2020) <doi:10.3390/pharmaceutics12111045>.")
 (define-public r-cancergi
   (package
     (name "r-cancergi")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cancerGI" version))
               (sha256
                (base32
-                "1chkcyf9m98gbn6b3vmb1baw7kii4g5vxvg2xfi7i6wwdn8sqr65"))))
+                "1cbpxw6l09sdnf6nyw0hvhrc97awnidi72a2jsjf3v8ml012xd5f"))))
     (properties `((upstream-name . "cancerGI")))
     (build-system r-build-system)
     (propagated-inputs (list r-systemfit r-survival r-reshape2 r-qvalue
@@ -38009,13 +38085,13 @@ vocal behaviour.")
 (define-public r-calidad
   (package
     (name "r-calidad")
-    (version "0.4.0")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "calidad" version))
               (sha256
                (base32
-                "1b64wqfr4zb1r5bjbw5jbhs2yi1w91nv66s57h0fnija839zr9kw"))))
+                "170ijr5kxaqwbvv8p1vs3jsld61kflicyycnjy640d28byj4lpmc"))))
     (properties `((upstream-name . "calidad")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

@@ -2102,13 +2102,13 @@ same.")
 (define-public r-unitquantreg
   (package
     (name "r-unitquantreg")
-    (version "0.0.5")
+    (version "0.0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "unitquantreg" version))
               (sha256
                (base32
-                "1sb9gh0sdhs2bmybqkbnr82ymfiq1317iiihbgj56xxa4rwx13mg"))))
+                "087d4v5fpiznl37frjg6c01bfgvx3vx0yw8cnbm3wsdj9dak94ym"))))
     (properties `((upstream-name . "unitquantreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp

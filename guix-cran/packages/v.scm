@@ -770,31 +770,6 @@ groups.")
      "This package provides a shim command for survival analysis graphic generation.")
     (license license:expat)))
 
-(define-public r-vscc
-  (package
-    (name "r-vscc")
-    (version "0.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vscc" version))
-              (sha256
-               (base32
-                "100r5zs39b7wzn1wdxqjgh7nnxwqkwfvmz8xwm572vmwmnn7iv4i"))))
-    (properties `((upstream-name . "vscc")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-teigen r-mclust r-manlymix))
-    (home-page "https://cran.r-project.org/package=vscc")
-    (synopsis "Variable Selection for Clustering and Classification")
-    (description
-     "This package performs variable selection/feature reduction under a clustering or
-classification framework.  In particular, it can be used in an automated fashion
-using mixture model-based methods ('teigen and mclust are currently supported).
-Can account for mixtures of non-Gaussian distributions via Manly transform (via
-@code{ManlyMix}').  See Andrews and @code{McNicholas} (2014)
-<doi:10.1007/s00357-013-9139-2> and Neal and @code{McNicholas} (2023)
-<doi:10.48550/@code{arXiv.2305.16464>}.")
-    (license license:gpl2+)))
-
 (define-public r-vrtest
   (package
     (name "r-vrtest")
@@ -2868,13 +2843,13 @@ implemented tools are described by Seitidis et al. (2023)
 (define-public r-viscollin
   (package
     (name "r-viscollin")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "VisCollin" version))
               (sha256
                (base32
-                "1940bcgg7xqwg175af42fks26a51jnvzsljh3sb48b6fklybj00x"))))
+                "1pcd7b14a2qnq1jlk63fascdb8hkys8cg4jw4rx6xk9xmvpvyhlb"))))
     (properties `((upstream-name . "VisCollin")))
     (build-system r-build-system)
     (home-page "https://github.com/friendly/VisCollin")
@@ -3182,6 +3157,44 @@ accumulation rates and given depth intervals between consecutive samples.")
 model using algorithm by Jin, Lin and Tamvakis (2012)
 <doi.org/10.1016/j.eneco.2012.03.003>.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-viralx
+  (package
+    (name "r-viralx")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "viralx" version))
+              (sha256
+               (base32
+                "1x8lw63lrs0adgbxi7amckj5q5mii9nfrr62aph52ba97k9a6x07"))))
+    (properties `((upstream-name . "viralx")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-workflows
+                             r-vdiffr
+                             r-teachingdemos
+                             r-rsample
+                             r-recipes
+                             r-plotrix
+                             r-plotmo
+                             r-parsnip
+                             r-formula
+                             r-earth
+                             r-dplyr
+                             r-dalextra
+                             r-dalex))
+    (home-page "https://cran.r-project.org/package=viralx")
+    (synopsis "Explainers for Regression Models in HIV Research")
+    (description
+     "This package provides a dedicated viral-explainer model tool designed to empower
+researchers in the field of HIV research, particularly in viral load and CD4
+(Cluster of Differentiation 4) lymphocytes regression modeling.  Drawing
+inspiration from the tidymodels framework for rigorous model building of Max
+Kuhn and Hadley Wickham (2020) <https://www.tidymodels.org>, and the DALEXtra
+tool for explainability by Przemyslaw Biecek (2020) <@code{arXiv:2009.13248>}.
+It aims to facilitate interpretable and reproducible research in biostatistics
+and computational biology for the benefit of understanding HIV dynamics.")
+    (license license:gpl3+)))
 
 (define-public r-viralmodels
   (package
@@ -5152,13 +5165,13 @@ and unique) for elucidation of the underlying inherent dynamics.  Please refer
 (define-public r-vdgraph
   (package
     (name "r-vdgraph")
-    (version "2.2-6")
+    (version "2.2-7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Vdgraph" version))
               (sha256
                (base32
-                "042p7r179i1q0369zf8kqwrr54laxlc7m3d4s5ngg3h755bhhgcd"))))
+                "0kqcwlw8dsxb1jlp412m9a372kz26sampv56saxalf8rcyd3s2jp"))))
     (properties `((upstream-name . "Vdgraph")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -6008,6 +6021,28 @@ addressed by this package is the selection of the most representative variable
 within a group of variables of interest (i.e.  dimension reduction) and variable
 ranking with respect to a set of features of interest.")
     (license license:gpl3)))
+
+(define-public r-varoc
+  (package
+    (name "r-varoc")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "varoc" version))
+              (sha256
+               (base32
+                "1b8dfz56ly8hd36h9jf29irnckbc2v6s5whfmha3ah1bal7k2ajp"))))
+    (properties `((upstream-name . "varoc")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-proc r-corrplot))
+    (home-page "https://cran.r-project.org/package=varoc")
+    (synopsis "Value Added Receiver Operating Characteristics Curve")
+    (description
+     "This package provides a continuous version of the receiver operating
+characteristics (ROC) curve to visualize and assess the classification and
+continuity performances of biomarkers, diagnostic tests, or risk prediction
+models.")
+    (license license:gpl2+)))
 
 (define-public r-varjmcm
   (package

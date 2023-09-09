@@ -1495,16 +1495,16 @@ Foundation.  For details of these methods, see Gerard (2022a)
 (define-public r-hweintrinsic
   (package
     (name "r-hweintrinsic")
-    (version "1.2.2")
+    (version "1.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "HWEintrinsic" version))
               (sha256
                (base32
-                "035r5bi7m66g351cmrfmf4cj5qqm4fn5pgy3lzsp3gyp2dv0rkg5"))))
+                "0ijrczm0mm37a3v4v0hd7zb662rcyzqf58z4nbhrix1nf6vzj47m"))))
     (properties `((upstream-name . "HWEintrinsic")))
     (build-system r-build-system)
-    (home-page "http://onlinelibrary.wiley.com/doi/10.1002/sim.4084/abstract")
+    (home-page "https://onlinelibrary.wiley.com/doi/10.1002/sim.4084/abstract")
     (synopsis
      "Objective Bayesian Testing for the Hardy-Weinberg Equilibrium Problem")
     (description
@@ -1516,7 +1516,8 @@ tuning quantity, the training sample size, as discussed in Consonni, Moreno and
 Venturini (2010).  These priors are objective, satisfy Savage's continuity
 condition and have proved to behave extremely well for many statistical testing
 problems.")
-    (license license:gpl2+)))
+    (license (list license:gpl2+
+                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-huxtable
   (package
@@ -2848,13 +2849,13 @@ to handle two serious problems inadmissible solution and factor indeterminacy
 (define-public r-hsdm
   (package
     (name "r-hsdm")
-    (version "1.4.3")
+    (version "1.4.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hSDM" version))
               (sha256
                (base32
-                "10fccpzr1bq3fz9m3vycdxw3k6lgk17m4dx7zbph7r5611sjdhdl"))))
+                "1r2hbwf9795bxrd09c8hmmj7cm044x4w42606m3i3d3i065bpw4m"))))
     (properties `((upstream-name . "hSDM")))
     (build-system r-build-system)
     (inputs (list gsl))
@@ -2959,13 +2960,13 @@ Sweave source code for slides of selected chapters is included in this package
 (define-public r-hsaur2
   (package
     (name "r-hsaur2")
-    (version "1.1-19")
+    (version "1.1-20")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "HSAUR2" version))
               (sha256
                (base32
-                "0jmljx1pppq81h637kxgs35bfclzfs2pkms72b8immd6xf58kg4h"))))
+                "0660z2fxj5l0dzlb1xzgd446zzxqwc1kmv52k4aa7p45apxy9hn4"))))
     (properties `((upstream-name . "HSAUR2")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=HSAUR2")
@@ -4390,13 +4391,13 @@ dioxide and temperature data: <doi:10.3334/CDIAC/ATG.009>.")
 (define-public r-hoasso
   (package
     (name "r-hoasso")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "HOasso" version))
               (sha256
                (base32
-                "161sdrz0l07mzjsdhdqvdhayq4jbxiqpal0hn5q9k8lkl81aqcak"))))
+                "07xihcjj3gfxl1fd5x1dvfmfg8m19rfjzq110ay3vrj38sxxvkiw"))))
     (properties `((upstream-name . "HOasso")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-igraph))
@@ -8346,16 +8347,17 @@ routes and isolines are returned as sf objects.")
 (define-public r-heplots
   (package
     (name "r-heplots")
-    (version "1.4-2")
+    (version "1.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "heplots" version))
               (sha256
                (base32
-                "1knk7w23x3ycxr79vfp9399xfcrrj46bkzxbav3m9z9r36bx6j2x"))))
+                "01c4f2b7ja1q5cdzndgchf0ibrysd3m4d793diz680a8w47w11dh"))))
     (properties `((upstream-name . "heplots")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
+                             r-rgl
                              r-purrr
                              r-mass
                              r-magrittr
@@ -11234,6 +11236,30 @@ easier to plot with ggplot2 and to manipulate using tidyverse tools.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-harmonydata
+  (package
+    (name "r-harmonydata")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "harmonydata" version))
+              (sha256
+               (base32
+                "14cv91yhsybficcv5sqha078bnl6f7npjf425lf8p183078fcivr"))))
+    (properties `((upstream-name . "harmonydata")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-uuid r-jsonlite r-httr r-base64enc))
+    (home-page "<https://harmonydata.ac.uk>")
+    (synopsis "R Library for 'Harmony'")
+    (description
+     "Harmony is a tool using AI which allows you to compare items from questionnaires
+and identify similar content.  You can try Harmony at
+<https://harmonydata.ac.uk/app/> and you can read our blog at
+<https://harmonydata.ac.uk/blog/> or at
+<https://fastdatascience.com/how-does-harmony-work/>.  Documentation at
+<https://harmonydata.ac.uk/harmony-r-released/>.")
+    (license license:expat)))
+
 (define-public r-harmonizer
   (package
     (name "r-harmonizer")
@@ -12055,13 +12081,13 @@ instructions are documented at <https://hakaiinstitute.github.io/hakai-api/>.")
 (define-public r-hagis
   (package
     (name "r-hagis")
-    (version "3.1.6")
+    (version "3.1.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hagis" version))
               (sha256
                (base32
-                "1caa9yndj19in5vzcm4dhwhwkwy48017771as7yc7rsp899vm5mg"))))
+                "1s4n08zy7agqs8a1jzzyyba93j1nnd0d3bz63j5xd3yvw36brzjf"))))
     (properties `((upstream-name . "hagis")))
     (build-system r-build-system)
     (propagated-inputs (list r-pander r-ggplot2 r-data-table))
@@ -12351,13 +12377,13 @@ and Graphical Statistics, 13, 621-638. <doi:10.1198/106186004X2697>.")
 (define-public r-h3lib
   (package
     (name "r-h3lib")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "h3lib" version))
               (sha256
                (base32
-                "1lwyrqrbjwb4g26mm0bwwr9cifay9y28y417b2iynqkvkw4y4058"))))
+                "1drpsj8i42hmxr1spscbar6zhk230pypw8b5s689rs0d25nscd2g"))))
     (properties `((upstream-name . "h3lib")))
     (build-system r-build-system)
     (home-page "https://github.com/symbolixau/h3lib")

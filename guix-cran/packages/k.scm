@@ -1227,6 +1227,32 @@ features, or discuss the development of the package, please subscribe to the
 @code{koRpus-dev} mailing list (<https://korpusml.reaktanz.de>).")
     (license license:gpl3+)))
 
+(define-public r-konya
+  (package
+    (name "r-konya")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "konya" version))
+              (sha256
+               (base32
+                "03r3m5jld0ykfys3hglh5rk1nnm7g4rwc4ai6r6qa342z36p4hrj"))))
+    (properties `((upstream-name . "konya")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-rvest
+                             r-readr
+                             r-openxlsx
+                             r-jsonlite
+                             r-dplyr))
+    (home-page "https://github.com/ozancanozdemir/bursa")
+    (synopsis "R Wrapper for Konya Municipality Open Data Portal")
+    (description
+     "Call the data wrappers for Konya Metropolitan Municipality's Open Data Portal
+<https://acikveri.konya.bel.tr/>.  This will return all datasets stored in
+different formats.")
+    (license license:expat)))
+
 (define-public r-konpsurv
   (package
     (name "r-konpsurv")
@@ -1595,6 +1621,27 @@ American Journal of Human Genetics, 109(10), 1761-1776.")
      "This package provides functions for identification of putative causal loci in
 whole-genome sequencing data.  The functions allow genome-wide association scan.
  It also includes an efficient knockoff generator for genetic data.")
+    (license license:gpl3)))
+
+(define-public r-knockoffhybrid
+  (package
+    (name "r-knockoffhybrid")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "KnockoffHybrid" version))
+              (sha256
+               (base32
+                "0fzymcyb40v3bgd39a6nfxf4wrs171k655rx779q3vxb75nlnlnb"))))
+    (properties `((upstream-name . "KnockoffHybrid")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-spatest r-glmnet))
+    (home-page "https://cran.r-project.org/package=KnockoffHybrid")
+    (synopsis
+     "Hybrid Analysis of Population and Trio Data with Knockoff Statistics for FDR Control")
+    (description
+     "Identification of putative causal variants in genome-wide association studies
+using hybrid analysis of both the trio and population designs.")
     (license license:gpl3)))
 
 (define-public r-knockoff
@@ -3345,13 +3392,13 @@ Zhang, D., and Frangi, A. F. (2004) <DOI:10.1016/j.patcog.2003.10.015>.")
 (define-public r-kfas
   (package
     (name "r-kfas")
-    (version "1.5.0")
+    (version "1.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "KFAS" version))
               (sha256
                (base32
-                "18lmfr2prb38l1ifgf9df4xc8glihlg08g3k682pas484kb411lh"))))
+                "1kswy3ahd7ng8jhd1nl1x454ywqnlsgpxnzz0q2rll7hsl3xr4hj"))))
     (properties `((upstream-name . "KFAS")))
     (build-system r-build-system)
     (native-inputs (list r-knitr gfortran))
@@ -4649,6 +4696,50 @@ engine (i.e.  server-side), which eliminates the need for embedding the
 provided to automatically render beautiful math in R documentation files.")
     (license license:expat)))
 
+(define-public r-karyotapr
+  (package
+    (name "r-karyotapr")
+    (version "1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "karyotapR" version))
+              (sha256
+               (base32
+                "01mxsv4ky6d16xjkvi6lc2cfvrdll6whyizxf500m8ds9bdlmqha"))))
+    (properties `((upstream-name . "karyotapR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-viridislite
+                             r-umap
+                             r-tidyr
+                             r-tibble
+                             r-summarizedexperiment
+                             r-singlecellexperiment
+                             r-s4vectors
+                             r-rlang
+                             r-rhdf5
+                             r-purrr
+                             r-magrittr
+                             r-iranges
+                             r-gtools
+                             r-ggplot2
+                             r-genomicranges
+                             r-fitdistrplus
+                             r-dplyr
+                             r-dbscan
+                             r-complexheatmap
+                             r-cli
+                             r-circlize))
+    (home-page "https://github.com/joeymays/karyotapR")
+    (synopsis "DNA Copy Number Analysis for Genome-Wide Tapestri Panels")
+    (description
+     "Analysis of DNA copy number in single cells using custom genome-wide targeted
+DNA sequencing panels for the Mission Bio Tapestri platform.  Users can easily
+parse, manipulate, and visualize datasets produced from the automated Tapestri
+Pipeline', with support for normalization, clustering, and copy number calling.
+Functions are also available to deconvolute multiplexed samples by genotype and
+parsing barcoded reads from exogenous lentiviral constructs.")
+    (license license:expat)))
+
 (define-public r-karsts
   (package
     (name "r-karsts")
@@ -5080,13 +5171,13 @@ Regime Switching: Classical and Gibbs-Sampling Approaches with Applications\"
 (define-public r-kairos
   (package
     (name "r-kairos")
-    (version "2.0.0")
+    (version "2.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "kairos" version))
               (sha256
                (base32
-                "1w0rwfnnlnkb7day3rb6nq9m6yxlzpg8c5dqvs7r3jcjcphp1zda"))))
+                "1qb5vrvn1sf4ah2krsnhw1885w90zr2xwvgzb785mhg2mhq9sncs"))))
     (properties `((upstream-name . "kairos")))
     (build-system r-build-system)
     (propagated-inputs (list r-extradistr r-dimensio r-arkhe r-aion))

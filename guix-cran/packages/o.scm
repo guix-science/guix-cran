@@ -807,16 +807,16 @@ in freshwater bog lakes,\" <doi: 10.1128/@code{mSphere.00169-17>}.")
 (define-public r-otusummary
   (package
     (name "r-otusummary")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "otuSummary" version))
               (sha256
                (base32
-                "04l667qmp7wqkbdsk87j92gf89s13090kzs8cjlmxsp6i69r34z2"))))
+                "0zyjycymdlzszaqns5y2507lpy52dhl82wm4frv8nfy4xcwb3yxy"))))
     (properties `((upstream-name . "otuSummary")))
     (build-system r-build-system)
-    (propagated-inputs (list r-vegan r-reshape2))
+    (propagated-inputs (list r-reshape2))
     (home-page "https://github.com/cam315/otuSummary")
     (synopsis
      "Summarizing OTU Table Regarding the Composition, Abundance and Beta Diversity of Abundant and Rare Biospheres")
@@ -4404,13 +4404,13 @@ Krieger, Michael Sklar and David Azriel (2020) <@code{arXiv:1905.03337>}.")
 (define-public r-optimall
   (package
     (name "r-optimall")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "optimall" version))
               (sha256
                (base32
-                "1lq1pd8ns6ivffp5kh3w1vczdwp41mgsywlaykyc7vb6j55qycy4"))))
+                "191y1q55wvg6f68siz6axpg056hww8bs4i4gxyj6fn1jkg0x2x7c"))))
     (properties `((upstream-name . "optimall")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-rlang r-magrittr r-glue r-dplyr))
@@ -5379,37 +5379,41 @@ network).")
 (define-public r-openspecy
   (package
     (name "r-openspecy")
-    (version "0.9.5")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "OpenSpecy" version))
               (sha256
                (base32
-                "1m163jyzad6i70d7h98rwdziq9swilj4kwr1mhis2nk8k30ksk4v"))))
+                "1ysd5v0fcpg8ir14mzb0pphyig6afxrlr9vb6vblm5gwvbls69ix"))))
     (properties `((upstream-name . "OpenSpecy")))
     (build-system r-build-system)
-    (propagated-inputs (list r-signal
+    (propagated-inputs (list r-yaml
+                             r-signal
                              r-shiny
-                             r-rlang
+                             r-plotly
                              r-osfr
+                             r-jsonlite
+                             r-imager
                              r-hyperspec
-                             r-hexview
-                             r-dplyr
-                             r-digest))
+                             r-glmnet
+                             r-digest
+                             r-data-table
+                             r-catools))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/wincowgerDEV/OpenSpecy-package/")
     (synopsis "Analyze, Process, Identify, and Share Raman and (FT)IR Spectra")
     (description
      "Raman and (FT)IR spectral analysis tool for plastic particles and other
 environmental samples (Cowger et al.  2021, <doi:10.1021/acs.analchem.1c00123>).
- Supported features include reading spectral data files (.asp, .csv, .jdx, .spc,
-.spa, .0), Savitzky-Golay smoothing of spectral intensities with
-smooth_intens(), correcting background noise with subtr_bg() in accordance with
-Zhao et al. (2007) <doi:10.1366/000370207782597003>, and identifying spectra
-using an onboard reference library (Cowger et al.  2020,
-<doi:10.1177/0003702820929064>).  Analyzed spectra can be shared with the Open
-Specy community.  A Shiny app is available via run_app() or online at
-<https://openanalysis.org/openspecy/>.")
+ With read_any(), Open Specy provides a single function for reading individual,
+batch, or map spectral data files like .asp, .csv, .jdx, .spc, .spa, .0, and
+.zip.  process_spec() simplifies processing spectra, including smoothing,
+baseline correction, range restriction and flattening, intensity conversions,
+wavenumber alignment, and min-max normalization.  Spectra can be identified in
+batch using an onboard reference library (Cowger et al.  2020,
+<doi:10.1177/0003702820929064>) using match_spec().  A Shiny app is available
+via run_app() or online at <https://openanalysis.org/openspecy/>.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-openskies
@@ -6632,6 +6636,28 @@ anatomical and phenotype ontologies.  Includes functions for visualising
 character annotations and creating simple queries using ontological
 relationships.")
     (license license:gpl2+)))
+
+(define-public r-onsvplot
+  (package
+    (name "r-onsvplot")
+    (version "0.3.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "onsvplot" version))
+              (sha256
+               (base32
+                "06jkq25ivi8qn3c46616a7z47g2qfjpvnfwlzjx8shw4c36j5737"))))
+    (properties `((upstream-name . "onsvplot")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ggplot2))
+    (home-page "https://github.com/pabsantos/onsvplot/")
+    (synopsis
+     "National Road Safety Observatory (ONSV) Style for 'ggplot2' Graphics")
+    (description
+     "Helps to create ggplot2 charts in the style used by the National Road Safety
+Observatory (ONSV).  The package includes functions to customize ggplot2 objects
+with new theme and colors.")
+    (license license:expat)))
 
 (define-public r-onsr
   (package
@@ -10835,13 +10861,13 @@ OBI. More information about the Open Bodem Index can be found at
 (define-public r-obfuscator
   (package
     (name "r-obfuscator")
-    (version "0.2.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "obfuscatoR" version))
               (sha256
                (base32
-                "1pnlbfsp5fjvhwn2yl495v38g1wjg5l4ry79i1a2jznq2l91hn4p"))))
+                "1scd63giywfbvpynbxbk0kq01rwhx62416dibs5gky15dxfcsvmk"))))
     (properties `((upstream-name . "obfuscatoR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -10860,7 +10886,7 @@ obfuscation hypothesis.  It provides an easy to use interface and multiple
 options designed to vary the difficulty of the game and tailor it to the user's
 needs.  For more detail: Chorus et al., 2021, Obfuscation maximization-based
 decision-making: Theory, methodology and first empirical evidence, Mathematical
-Social Sciences, 109, 28-44.")
+Social Sciences, 109, 28-44, <doi:10.1016/j.mathsocsci.2020.10.002>.")
     (license license:gpl3)))
 
 (define-public r-obcost

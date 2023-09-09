@@ -347,13 +347,13 @@ package for importing and exporting cryptographic objects.  Part of the
 (define-public r-azuregraph
   (package
     (name "r-azuregraph")
-    (version "1.3.2")
+    (version "1.3.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "AzureGraph" version))
               (sha256
                (base32
-                "19wppl05w98s711jgkxxia5dckc8k6xr5zzs52dcvnh67r4cbjq7"))))
+                "0x7ya1yxk0cga9cfbfkd332l2syswdqjamzr2xqvb6ybwc5lpcy2"))))
     (properties `((upstream-name . "AzureGraph")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6
@@ -367,7 +367,7 @@ package for importing and exporting cryptographic objects.  Part of the
     (synopsis "Simple Interface to 'Microsoft Graph'")
     (description
      "This package provides a simple interface to the Microsoft Graph API
-<https://docs.microsoft.com/en-us/graph/overview>.  Graph is a comprehensive
+<https://learn.microsoft.com/en-us/graph/overview>.  Graph is a comprehensive
 framework for accessing data in various online Microsoft services.  This package
 was originally intended to provide an R interface only to the Azure Active
 Directory part, with a view to supporting interoperability of R and Azure':
@@ -3024,16 +3024,16 @@ and a client to API(s) implementing the @code{AtomPub} SWORD API specification."
 (define-public r-atnr
   (package
     (name "r-atnr")
-    (version "1.0.2")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ATNr" version))
               (sha256
                (base32
-                "0p6pya91aklylig80xca68n5xx0ngzn8p0ba8sfrznqj53g8x4r5"))))
+                "1wlzw5565hprlphjp3jrgyhmgqdbrzwka4m1ac7rhxdgljdfh2j5"))))
     (properties `((upstream-name . "ATNr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-desolve))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-r-rsp r-desolve))
     (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://cran.r-project.org/package=ATNr")
     (synopsis "Run Allometric Trophic Networks Models")
@@ -3168,6 +3168,36 @@ with expected references such as linear or quadratic,
 <https://en.wikipedia.org/wiki/Asymptotic_computational_complexity> Also
 includes functionality for measuring asymptotic memory and other quantities.")
     (license license:gpl3)))
+
+(define-public r-atemevs
+  (package
+    (name "r-atemevs")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "AteMeVs" version))
+              (sha256
+               (base32
+                "0k0kgaq20nygr8l2fq1wq94cfi8f0kxbnzk264d0q4k43mq688yj"))))
+    (properties `((upstream-name . "AteMeVs")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ncvreg r-mass))
+    (home-page "https://cran.r-project.org/package=AteMeVs")
+    (synopsis
+     "Average Treatment Effects with Measurement Error and Variable Selection for Confounders")
+    (description
+     "This package provides a recent method proposed by Yi and Chen (2023)
+<doi:10.1177/09622802221146308> is used to estimate the average treatment
+effects using noisy data containing both measurement error and spurious
+variables.  The package @code{AteMeVs} contains a set of functions that provide
+a step-by-step estimation procedure, including the correction of the measurement
+error effects, variable selection for building the model used to estimate the
+propensity scores, and estimation of the average treatment effects.  The
+functions contain multiple options for users to implement, including different
+ways to correct for the measurement error effects, distinct choices of penalty
+functions to do variable selection, and various regression models to
+characterize propensity scores.")
+    (license license:gpl2)))
 
 (define-public r-atbounds
   (package
@@ -4453,13 +4483,13 @@ methods such as structural equation models.")
 (define-public r-aspace
   (package
     (name "r-aspace")
-    (version "4.0.1")
+    (version "4.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "aspace" version))
               (sha256
                (base32
-                "1y1cjzkr3dpnaaym10y7k39zhsyc2h09a271bg17i01aqf8w0179"))))
+                "1k6s7wfjxzp3chd33r4449bzpnlb1yizlqmwvmpfbydjw6zcv3lq"))))
     (properties `((upstream-name . "aspace")))
     (build-system r-build-system)
     (propagated-inputs (list r-splancs r-hmisc))
@@ -4603,13 +4633,13 @@ models; see Bischl et al. (2016) <doi:10.1016/j.artint.2016.04.003>.")
 (define-public r-askgpt
   (package
     (name "r-askgpt")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "askgpt" version))
               (sha256
                (base32
-                "0g4g8yw2akjbafmk26wfy92g0pifq752mvzp2cnvxdh4cn4qa16z"))))
+                "1mi42jvnxrm9xhnrps540hmgi3nd3g9g7pjrkcgzmyj58ip98r66"))))
     (properties `((upstream-name . "askgpt")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -7323,13 +7353,13 @@ Doorenbos and Pruitt (1975, ISBN:9251002797) Guo et al. (2016)
 (define-public r-aqp
   (package
     (name "r-aqp")
-    (version "2.0")
+    (version "2.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "aqp" version))
               (sha256
                (base32
-                "1m5h30ywbvc7qnpnfba7ps0wr7w1azggfwgb8jsx4ls7vfy7dxwi"))))
+                "1dmwrml1qsaj9x0h8a9d2znpw4rscvlcapbj19chrxszncsr2lwi"))))
     (properties `((upstream-name . "aqp")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -8093,13 +8123,13 @@ book.")
 (define-public r-apisensr
   (package
     (name "r-apisensr")
-    (version "0.3.0")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "apisensr" version))
               (sha256
                (base32
-                "1mis266s4m0hp34m7b7p008dvw7780r8rypgbpk7h5hgd1w5d7m0"))))
+                "00mfmqck521wgx26az57ynmbj8j3c1vxykpqpwg17591s1jw5796"))))
     (properties `((upstream-name . "apisensr")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinymaterial
@@ -8114,7 +8144,9 @@ book.")
                              r-ggraph
                              r-ggplot2
                              r-episensr
-                             r-config))
+                             r-config
+                             r-attempt))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/dhaine/apisensr")
     (synopsis
      "Interface to 'episensr' for Sensitivity Analysis of Epidemiological Results")
@@ -8127,13 +8159,13 @@ exposure/outcome, or both.  See <https://cran.r-project.org/package=episensr>.")
 (define-public r-apis
   (package
     (name "r-apis")
-    (version "2.0.1")
+    (version "2.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "APIS" version))
               (sha256
                (base32
-                "1p3r8p5d32f8im8b851fs8hr54byw4yaggg4n08vrczpanlb29j7"))))
+                "1rqj15h6cyqhs7p3b4xa16jykxhv6ms37xi0b03wldmg9f02h8la"))))
     (properties `((upstream-name . "APIS")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinythemes
@@ -8181,6 +8213,40 @@ launch_APIShiny(), which perform parentage assignment.")
 inference.  Additionally, supports \"A Progressive Introduction to Linear Models\"
 by Joshua French (<https://jfrench.github.io/@code{LinearRegression/>}).")
     (license license:gpl3)))
+
+(define-public r-aphylo
+  (package
+    (name "r-aphylo")
+    (version "0.3-3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "aphylo" version))
+              (sha256
+               (base32
+                "1blvj2mz1pdsypxak78pmck097ryzaz24y4flzs5k5djqxgpjwnm"))))
+    (properties `((upstream-name . "aphylo")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-rcpp
+                             r-matrix
+                             r-mass
+                             r-fmcmc
+                             r-coda
+                             r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/USCbiostats/aphylo")
+    (synopsis
+     "Statistical Inference and Prediction of Annotations in Phylogenetic Trees")
+    (description
+     "This package implements a parsimonious evolutionary model to analyze and predict
+gene-functional annotations in phylogenetic trees as described in Vega Yon et
+al. (2021) <doi:10.1371/journal.pcbi.1007948>.  Focusing on computational
+efficiency, aphylo makes it possible to estimate pooled phylogenetic models,
+including thousands (hundreds) of annotations (trees) in the same run.  The
+package also provides the tools for visualization of annotated phylogenies,
+calculation of posterior probabilities (prediction) and goodness-of-fit
+assessment featured in Vega Yon et al. (2021).")
+    (license license:expat)))
 
 (define-public r-aphid
   (package
@@ -11969,13 +12035,13 @@ websites made with these tools.")
 (define-public r-altair
   (package
     (name "r-altair")
-    (version "4.2.2")
+    (version "4.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "altair" version))
               (sha256
                (base32
-                "0ckdfgrng3868qm9cspggd5xjbpmkq01q7ylnsiah6v72kzcn1fc"))))
+                "1hbwhyplvqdc06va0lahpqzg89aihjhryic48422h8mks956y0ff"))))
     (properties `((upstream-name . "altair")))
     (build-system r-build-system)
     (inputs (list python))
@@ -16037,6 +16103,27 @@ for error-prone data and estimate the functional covariates for an AFT model.")
 value, Negative predicted value) of a diagnostic test where can not measure the
 golden standard but can estimate it using the attributable fraction.")
     (license license:gpl3+)))
+
+(define-public r-afcolours
+  (package
+    (name "r-afcolours")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "afcolours" version))
+              (sha256
+               (base32
+                "04hmkcn4zmcp34mwav0wngld45a3pyrdb4cmnwg5ba7i0jk4z91y"))))
+    (properties `((upstream-name . "afcolours")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-dplyr))
+    (home-page "https://cran.r-project.org/package=afcolours")
+    (synopsis
+     "Government Analysis Function Recommended Accessible Colour Palette")
+    (description
+     "Government Analysis Function recommended colours for use in charts on gov.uk to
+help meet accessibility guidance.")
+    (license license:expat)))
 
 (define-public r-afc
   (package

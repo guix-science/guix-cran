@@ -7435,13 +7435,13 @@ Includes standard diagnostics and visualization tools to evaluate the results.")
 (define-public r-bnlearn
   (package
     (name "r-bnlearn")
-    (version "4.8.3")
+    (version "4.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bnlearn" version))
               (sha256
                (base32
-                "19yd6g3n7mbf03zpadwz4xcsq3d1n7fn3pgfgr1i1hjxhg2vg2n6"))))
+                "09wj8ha7ph12s1bvc2a1ld2f9qfqabflna160y1wx1a79c7annai"))))
     (properties `((upstream-name . "bnlearn")))
     (build-system r-build-system)
     (home-page "https://www.bnlearn.com/")
@@ -10966,13 +10966,13 @@ non-hierarchical clustering algorithms (Kreft & Jetz (2010)
 (define-public r-biorad
   (package
     (name "r-biorad")
-    (version "0.7.1")
+    (version "0.7.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bioRad" version))
               (sha256
                (base32
-                "129ml078cr26nhnqvn44qgxqr0s018aj11z92387ap67flcx2b7l"))))
+                "0x96lhmw9s8b2icqcr93r8ghiywi5hh0dpg5c8vizbl66kj3a8j6"))))
     (properties `((upstream-name . "bioRad")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
@@ -12091,13 +12091,13 @@ after stopping, allowing updating for missing assessments.")
 (define-public r-binsegrcpp
   (package
     (name "r-binsegrcpp")
-    (version "2022.7.21")
+    (version "2023.8.31")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "binsegRcpp" version))
               (sha256
                (base32
-                "15qiqzwy64xz6pbwy8mvw6xnmz52bjqbc0p6l5gsfkh6g489xjb0"))))
+                "1rx8rxgzjf4bjbx6gpf70pnma05g51lg6l1z0kdswj8m3pmqnk93"))))
     (properties `((upstream-name . "binsegRcpp")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-data-table))
@@ -13926,13 +13926,13 @@ of functions of R API to communicate with UCI-protocol based chess engines.")
 (define-public r-bigbits
   (package
     (name "r-bigbits")
-    (version "1.0")
+    (version "1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bigBits" version))
               (sha256
                (base32
-                "10cdcjz4abbyg3fmr7mmf3v9g61l5wswaz9ra6bc7v7s1vmzbim9"))))
+                "0vakcy5ymd4b5mhz5vjbkhp82bikdajh6wag4cgzbl3vdvx85xhf"))))
     (properties `((upstream-name . "bigBits")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmpfr r-gmp))
@@ -20381,13 +20381,13 @@ al., 2022) <doi:10.48550/@code{arXiv.2210.02286>}.")
 (define-public r-bayesqr
   (package
     (name "r-bayesqr")
-    (version "2.3")
+    (version "2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bayesQR" version))
               (sha256
                (base32
-                "1c6y7r9h9626ghp68pl5k1g0l95fwd6dp0jfznmhy53qza0ny8z4"))))
+                "1ci81pishhf9iv08gsnyfmx9kq9d4bswfvnwx3whykrkrlgifzmi"))))
     (properties `((upstream-name . "bayesQR")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -20927,13 +20927,13 @@ details regarding part of this framework can be found in Cullen et al. (2021)
 (define-public r-bayesmortalityplus
   (package
     (name "r-bayesmortalityplus")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BayesMortalityPlus" version))
               (sha256
                (base32
-                "0kk6lmvp162jxx22r87hxl2i089ghkksy1fw923fcd3iyi52x2r0"))))
+                "1ynsjk82ppdqh1qq9xk0rs3m5d0aj375zaj9w54v80r2sq6k5pzm"))))
     (properties `((upstream-name . "BayesMortalityPlus")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -25291,13 +25291,13 @@ author.  Hope this package also knows what you want!")
 (define-public r-bain
   (package
     (name "r-bain")
-    (version "0.2.8")
+    (version "0.2.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bain" version))
               (sha256
                (base32
-                "101rlxf1m6nrmzwxxv2w0m2a9s26l39a5nfjnad8gza5rvj7q076"))))
+                "1vcjpcfz1gxv0i837q60s23j5f36qdc7wy243dn2lixs6rdw9i3p"))))
     (properties `((upstream-name . "bain")))
     (build-system r-build-system)
     (propagated-inputs (list r-lavaan))

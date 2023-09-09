@@ -5060,13 +5060,13 @@ Lock^5 Includes version of datasets from earlier editions.")
 (define-public r-locits
   (package
     (name "r-locits")
-    (version "1.7.6")
+    (version "1.7.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "locits" version))
               (sha256
                (base32
-                "15jalcaqz5yymrhlzlsr3xmy34dspnv08lmychqjps8vv0irpr3j"))))
+                "13y313z0wmhrqfzgr3dbcmkdg6507p0wdvyxrnz1vm0rjwqv4911"))))
     (properties `((upstream-name . "locits")))
     (build-system r-build-system)
     (propagated-inputs (list r-wavethresh r-igraph))
@@ -9424,13 +9424,13 @@ contingencies insurances calculations are contained therein.  See Spedicato
 (define-public r-lidr
   (package
     (name "r-lidr")
-    (version "4.0.3")
+    (version "4.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lidR" version))
               (sha256
                (base32
-                "13b7bf4dnhmq9p2ba6c5wfz27ac37sa4nzzmqc30v8z95a1kwfvr"))))
+                "0zd5ygnv6ikgkvipyg1s7g0qf79fx58hwr7gs9lz6c7g71awm04k"))))
     (properties `((upstream-name . "lidR")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -12132,6 +12132,45 @@ Reduction Subspaces <doi:10.1007/978-81-322-3643-6_7>.")
 consisting of 10 Long Short-Term Memory layers that are fully connected along
 with the rest of the inputs.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-ldm
+  (package
+    (name "r-ldm")
+    (version "6.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "LDM" version))
+              (sha256
+               (base32
+                "1943kw0aznjv82wps952wcab8jh7wh3hkav59q6xgk9zmf4day1d"))))
+    (properties `((upstream-name . "LDM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vegan
+                             r-phangorn
+                             r-permute
+                             r-modeest
+                             r-matrixstats
+                             r-gunifrac
+                             r-castor
+                             r-biocparallel))
+    (native-inputs (list r-r-rsp))
+    (home-page "https://github.com/yijuanhu/LDM")
+    (synopsis
+     "Testing Hypotheses About the Microbiome using the Linear Decomposition Model")
+    (description
+     "This package provides a single analysis path that includes distance-based
+ordination, global tests of any effect of the microbiome, and tests of the
+effects of individual taxa with false-discovery-rate (FDR) control.  It
+accommodates both continuous and discrete covariates as well as interaction
+terms to be tested either singly or in combination, allows for adjustment of
+confounding covariates, and uses permutation-based p-values that can control for
+sample correlations.  It can be applied to transformed data, and an omnibus test
+can combine results from analyses conducted on different transformation scales.
+It can also be used for testing presence-absence associations based on infinite
+number of rarefaction replicates, testing mediation effects of the microbiome,
+analyzing censored time-to-event outcomes, and for compositional analysis by
+fitting linear models to centered-log-ratio taxa count data.")
+    (license license:gpl2+)))
 
 (define-public r-ldlinkr
   (package
