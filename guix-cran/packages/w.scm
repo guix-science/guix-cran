@@ -5,8 +5,8 @@
   #:use-module ((guix licenses)
                 #:prefix license:)
   #:use-module (gnu packages statistics)
-  #:use-module (gnu packages gcc)
   #:use-module (gnu packages cran)
+  #:use-module (gnu packages gcc)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages compression)
@@ -165,6 +165,48 @@ wyz.code.@code{metaTesting} is ability to discover valid and invalid function
 parameter combinations, ability to infer valid parameter values, and to provide
 smart summaries that allows you to focus on dysfunctional cases.")
     (license license:gpl3)))
+
+(define-public r-wxgenr
+  (package
+    (name "r-wxgenr")
+    (version "1.3.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "wxgenR" version))
+              (sha256
+               (base32
+                "04wcx4z0579wkgba3485a5abrwqz6yd8pn1ybg0isqmjp7r053jp"))))
+    (properties `((upstream-name . "wxgenR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sm
+                             r-plyr
+                             r-msm
+                             r-magrittr
+                             r-lubridate
+                             r-foreach
+                             r-dplyr
+                             r-doparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=wxgenR")
+    (synopsis "Stochastic Weather Generator with Seasonality")
+    (description
+     "This package provides a weather generator to simulate precipitation and
+temperature for regions with seasonality.  Users input training data containing
+precipitation, temperature, and seasonality (up to 20 seasons).  Including
+weather season as a training variable allows users to explore the effects of
+potential changes in season duration as well as average start- and end-time
+dates due to phenomena like climate change.  Data for training should be a
+single time series but can originate from station data, basin averages, grid
+cells, etc.  Bearup, L., Gangopadhyay, S., & Mikkelson, K. (2021). \"Hydroclimate
+Analysis Lower Santa Cruz River Basin Study (Technical Memorandum No
+ENV-2020-056).\" Bureau of Reclamation.
+<https://www.usbr.gov/lc/phoenix/programs/lscrbasin/LSCRBS_Hydroclimate_2021.pdf>.
+ Gangopadhyay, S., Bearup, L. A., Verdin, A., Pruitt, T., Halper, E., & Shamir,
+E. (2019, December 1). \"A collaborative stochastic weather generator for climate
+impacts assessment in the Lower Santa Cruz River Basin, Arizona.\" Fall Meeting
+2019, American Geophysical Union.
+<https://ui.adsabs.harvard.edu/abs/2019AGUFMGC41G1267G>.")
+    (license license:cc0)))
 
 (define-public r-wwr
   (package
@@ -2129,13 +2171,13 @@ given parallel corpus.")
 (define-public r-worcs
   (package
     (name "r-worcs")
-    (version "0.1.11")
+    (version "0.1.12")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "worcs" version))
               (sha256
                (base32
-                "1hnik5hvy47rks1cbmyf0igra40dz1f6fvmy33dd9iljhrkxhapl"))))
+                "1n04c9pd7w99h2xbz71pskbqmpqci1g7292c5m7by9jybi8v77b2"))))
     (properties `((upstream-name . "worcs")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -7298,18 +7340,18 @@ data, addresses some common data problems, and calculates and plots anomalies.")
 (define-public r-waspr
   (package
     (name "r-waspr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "waspr" version))
               (sha256
                (base32
-                "0rs7h9pjiqq7as5k7yrj3phn6lgdl7dzyirbmk2jjp7mw9iqhy9i"))))
+                "1l2q4bc3wx81a6ay7v118yw7rxl9aqih6xa4rdbjd9644ng27whn"))))
     (properties `((upstream-name . "waspr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-bh))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=waspr")
+    (home-page "https://github.com/joliencremers/waspr")
     (synopsis "Wasserstein Barycenters of Subset Posteriors")
     (description
      "This package provides functions to compute Wasserstein barycenters of subset
@@ -7776,6 +7818,54 @@ Durufle et al (2020) <doi:10.1093/bib/bbaa166> and Durufle et al (2020)
 <doi:10.3390/cells9102249>.")
     (license license:gpl3)))
 
+(define-public r-wallace
+  (package
+    (name "r-wallace")
+    (version "2.0.6")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "wallace" version))
+              (sha256
+               (base32
+                "0phyxnhslc3vkp27vxf85933wwj0brqn3p86bir8b1h3xxizy6mk"))))
+    (properties `((upstream-name . "wallace")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zip
+                             r-spthin
+                             r-spocc
+                             r-shinywidgets
+                             r-shinyjs
+                             r-shinyalert
+                             r-shiny
+                             r-sf
+                             r-rmarkdown
+                             r-rlang
+                             r-rjava
+                             r-rgeos
+                             r-rcolorbrewer
+                             r-magrittr
+                             r-leaflet-extras
+                             r-leaflet
+                             r-leafem
+                             r-knitcitations
+                             r-enmeval
+                             r-ecospat
+                             r-dt
+                             r-dplyr))
+    (home-page "http://wallaceecomod.github.io/wallace/")
+    (synopsis
+     "Modular Platform for Reproducible Modeling of Species Niches and Distributions")
+    (description
+     "The shiny application Wallace is a modular platform for reproducible modeling of
+species niches and distributions.  Wallace guides users through a complete
+analysis, from the acquisition of species occurrence and environmental data to
+visualizing model predictions on an interactive map, thus bundling complex
+workflows into a single, streamlined interface.  An extensive vignette, which
+guides users through most package functionality can be found on the package's
+@code{GitHub} Pages website:
+<https://wallaceecomod.github.io/wallace/articles/tutorial-v2.html>.")
+    (license license:gpl3)))
+
 (define-public r-walkscoreapi
   (package
     (name "r-walkscoreapi")
@@ -7826,13 +7916,13 @@ proprietary API that assigns locations a walkability score between 0 and 100.")
 (define-public r-walker
   (package
     (name "r-walker")
-    (version "1.0.7")
+    (version "1.0.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "walker" version))
               (sha256
                (base32
-                "1kgrka1pkk0fb1gx31dx7g3alq9jb4gfxbsadcdj0j5n2hx6ba8d"))))
+                "1y8jj3kf8wrkw3rkai0scnakb9cyb8dbvhji3vprs3cyprcrkf4r"))))
     (properties `((upstream-name . "walker")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders

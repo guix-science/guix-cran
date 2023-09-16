@@ -856,13 +856,13 @@ and visualization of process maps.  See also packages
 (define-public r-bundle
   (package
     (name "r-bundle")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bundle" version))
               (sha256
                (base32
-                "12ird5bmdcm3hwpzk7gjyldfizj4a9pd37v5ajwy14v4d0jxpn8g"))))
+                "1b3l14khp6fblb47sy9p5wh78izsbj1xjjj2r55hp2hcx2f1isjz"))))
     (properties `((upstream-name . "bundle")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr r-rlang r-purrr r-glue))
@@ -1117,17 +1117,18 @@ which identifies the groove locations.")
 (define-public r-bulkreadr
   (package
     (name "r-bulkreadr")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bulkreadr" version))
               (sha256
                (base32
-                "0fy3c2dvikfzly97blr5mhbrc14h7g4acjkn41qgcwzffzn04g9v"))))
+                "01h87l4hjm1vwdz5l5hs4nmhh5fwyigbf9m1xj8xf2avaz3d33sm"))))
     (properties `((upstream-name . "bulkreadr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
                              r-stringr
+                             r-sjlabelled
                              r-readxl
                              r-readr
                              r-purrr
@@ -1135,10 +1136,12 @@ which identifies the groove locations.")
                              r-magrittr
                              r-lubridate
                              r-inspectdf
+                             r-haven
                              r-googlesheets4
                              r-fs
                              r-dplyr
                              r-curl))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/gbganalyst/bulkreadr")
     (synopsis "The Ultimate Tool for Reading Data in Bulk")
     (description
@@ -1297,13 +1300,13 @@ anywhere anytime.")
 (define-public r-buildmer
   (package
     (name "r-buildmer")
-    (version "2.9")
+    (version "2.10.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "buildmer" version))
               (sha256
                (base32
-                "1jcn7isgg2dh84rhyz8xnh3xwxbcli70hf70dbjm4sq6a854kkk3"))))
+                "1wil9gg6n6d6lwr8q0r4z18w73s7l557c2c94mm4lxk75yz7wnbk"))))
     (properties `((upstream-name . "buildmer")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlme r-mgcv r-lme4))
@@ -2329,24 +2332,6 @@ and plot() to plot the tree into latex and PDF. See Yanchao Liu (2022)
 <@code{arXiv:2205.15263>} for technical details.  Source code and more data sets
 are at <https://github.com/profyliu/bsnsing/>.")
     (license license:gpl3)))
-
-(define-public r-bsmd
-  (package
-    (name "r-bsmd")
-    (version "2023.707")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "BsMD" version))
-              (sha256
-               (base32
-                "01jx3qpj93qgrpqbw8041ybisk26x00s3xqwvsml32x6n9rg81gq"))))
-    (properties `((upstream-name . "BsMD")))
-    (build-system r-build-system)
-    (native-inputs (list gfortran))
-    (home-page "https://cran.r-project.org/package=BsMD")
-    (synopsis "Bayes Screening and Model Discrimination")
-    (description "Bayes screening and model discrimination follow-up designs.")
-    (license license:gpl3+)))
 
 (define-public r-bsl
   (package
@@ -5043,28 +5028,6 @@ for Kaplan-Meier curves (e.g., generalizing Fisher's exact test to allow for
 right censoring), which are especially important for latter parts of the
 survival curve, small sample sizes or heavily censored data.  Includes mid-p
 options.")
-    (license license:gpl2+)))
-
-(define-public r-bpca
-  (package
-    (name "r-bpca")
-    (version "1.3-4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "bpca" version))
-              (sha256
-               (base32
-                "1b0qigynj35sr5nf9y6hvcr52ydskqwx5wxwb27zawps3iykyjwf"))))
-    (properties `((upstream-name . "bpca")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xtable r-scatterplot3d r-rgl))
-    (home-page "https://cran.r-project.org/package=bpca")
-    (synopsis
-     "Biplot of Multivariate Data Based on Principal Components Analysis")
-    (description
-     "This package implements biplot (2d and 3d) of multivariate data based on
-principal components analysis and diagnostic tools of the quality of the
-reduction.")
     (license license:gpl2+)))
 
 (define-public r-bpbounds
@@ -7838,13 +7801,13 @@ system identifications, J. Biomol.  NMR. 32 (2005) 13â22.
 (define-public r-bmlm
   (package
     (name "r-bmlm")
-    (version "1.3.13")
+    (version "1.3.14")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bmlm" version))
               (sha256
                (base32
-                "0qrl3snjj1kl3grf8nfnah67akvj82g7s3k3j3fiah4nv9c650yc"))))
+                "0wasklfsgs5bijsp4hy24l1gwfldbwbmnq10r1pf4jgpl9k1b7fs"))))
     (properties `((upstream-name . "bmlm")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -7953,13 +7916,13 @@ and plottings.")
 (define-public r-bmgarch
   (package
     (name "r-bmgarch")
-    (version "1.1.0")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bmgarch" version))
               (sha256
                (base32
-                "1r7hlc5d8jmk7sy7wv9yrilhla57vi9ar21dhmvfakms2z7gyg9d"))))
+                "0a0svnb7wxm9v8mzk0ld28scp51sp4rsgspxccqpkbmj31njc4d0"))))
     (properties `((upstream-name . "bmgarch")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -8722,6 +8685,34 @@ dynamic networks by simulations with application to Slovenian co-authorship
 networks).")
     (license license:gpl3+)))
 
+(define-public r-blockmissingdata
+  (package
+    (name "r-blockmissingdata")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "BlockMissingData" version))
+              (sha256
+               (base32
+                "12jgf58k3dgbyb7x4skcdc10m8pvyx8kzqq6fi4wn5x1g5595nxy"))))
+    (properties `((upstream-name . "BlockMissingData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-pryr
+                             r-matrix
+                             r-mass
+                             r-glmnetcr
+                             r-glmnet
+                             r-foreach
+                             r-doparallel))
+    (home-page "https://cran.r-project.org/package=BlockMissingData")
+    (synopsis
+     "Integrating Multi-Source Block-Wise Missing Data in Model Selection")
+    (description
+     "Model selection method with multiple block-wise imputation for block-wise
+missing data; see Xue, F., and Qu, A. (2021)
+<doi:10.1080/01621459.2020.1751176>.")
+    (license license:expat)))
+
 (define-public r-blockmatrix
   (package
     (name "r-blockmatrix")
@@ -9015,22 +9006,23 @@ vignette.  LICENSE: GPL-3 + file license.")
 (define-public r-blindreview
   (package
     (name "r-blindreview")
-    (version "1.2.0")
+    (version "1.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "blindreview" version))
               (sha256
                (base32
-                "1wanah2vrpm35al31gnsq0j6frp92f0h41x6jxpckq24vswb9vx5"))))
+                "0cjnl16limzxvs7rg17c4kx011yxvyxqqkjzglck8r1ii0dajhnv"))))
     (properties `((upstream-name . "blindreview")))
     (build-system r-build-system)
     (inputs (list gmp))
-    (propagated-inputs (list r-hmisc r-forsearch))
+    (propagated-inputs (list r-tibble r-hmisc r-ggplot2 r-forsearch r-cairo))
     (home-page "https://cran.r-project.org/package=blindreview")
     (synopsis "Blind Review Using Forward Search Procedures")
     (description
      "Randomly assigns identification to one of the variables of the dataset, say
 Treatment, and assigns random numbers to all the observations of the dataset.
+Centers each treatment at the grand mean to further mask the treatment.
 Reorders the database according to the random numbers, and then runs the
 appropriate forward search function on the blinded dataset.  A file is created
 from which the user can identify any outliers using the graphics function in
@@ -9989,13 +9981,13 @@ FK, Joly S, Silvestro D, Salamin N (in prep).")
 (define-public r-bistablehistory
   (package
     (name "r-bistablehistory")
-    (version "1.1.1")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bistablehistory" version))
               (sha256
                (base32
-                "0lk4kbxrnkr66cnyalzl2m18wwzf4y23r016nl1n52209vviql95"))))
+                "114m7banr0h4l7lzq2bsjz9l3qb7xgg297ix9aj62rmz02p7x5hf"))))
     (properties `((upstream-name . "bistablehistory")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -10008,7 +10000,6 @@ FK, Joly S, Silvestro D, Salamin N (in prep).")
                              r-rcppeigen
                              r-rcpp
                              r-purrr
-                             r-magrittr
                              r-loo
                              r-glue
                              r-future
@@ -10131,13 +10122,13 @@ https://github.com/wch/bisectr for examples and test script templates.")
 (define-public r-bisdata
   (package
     (name "r-bisdata")
-    (version "0.2-1")
+    (version "0.2-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BISdata" version))
               (sha256
                (base32
-                "0xmm40d9ag2g5j0lsy46ig3plzcqrw2p3iaciimw2y0v4fa8n3gh"))))
+                "0w7vn0x275iqsyc1l8p6c8r7v4brm8wnj7lnfb25dc9sfkz6jxx0"))))
     (properties `((upstream-name . "BISdata")))
     (build-system r-build-system)
     (home-page "http://enricoschumann.net/R/packages/BISdata/")
@@ -10877,6 +10868,35 @@ be used to represent any biosensor data such as ECG or medical imaging such as
 representation of glucose profiles using distributional data analysis\" (2021)
 <doi:10.1177/0962280221998064>.")
     (license license:gpl2)))
+
+(define-public r-biosampler
+  (package
+    (name "r-biosampler")
+    (version "1.0.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "biosampleR" version))
+              (sha256
+               (base32
+                "1cx6as9nvivx5laz029wrbd7jrhl3fhqj0lm1sb65ckx3arm8dwj"))))
+    (properties `((upstream-name . "biosampleR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/csim063/biosampleR")
+    (synopsis
+     "Biodiversity Index Calculation and Bootstrap Confidence Interval Estimation")
+    (description
+     "This package provides tools for the calculation of common biodiversity indices
+from count data.  Additionally, it incorporates bootstrapping techniques to
+generate multiple samples, facilitating the estimation of confidence intervals
+around these indices.  Furthermore, the package allows for the exploration of
+how variation in these indices changes with differing numbers of sites, making
+it a useful tool with which to begin an ecological analysis.  Methods are based
+on the following references: Chao et al. (2014) <doi:10.1890/13-0133.1>, Chao
+and Colwell (2022) <doi:10.1002/9781119902911.ch2>, Hsieh, Ma,` and Chao (2016)
+<doi:10.1111/2041-210X.12613>.")
+    (license license:expat)))
 
 (define-public r-bios2mds
   (package
@@ -11636,33 +11656,6 @@ implementation can be understood by running examples in @code{modelFrame}(), and
     (description
      "This package provides a tool to perform all different statistical tests and
 calculations needed by Biological Dosimetry Laboratories.")
-    (license license:gpl3)))
-
-(define-public r-biodiversityr
-  (package
-    (name "r-biodiversityr")
-    (version "2.15-2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "BiodiversityR" version))
-              (sha256
-               (base32
-                "1hhv7amdf3lx5jymkn1pvgrdm1bzvvn270wk8pjpj3rdmfjszj4g"))))
-    (properties `((upstream-name . "BiodiversityR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vegan r-rcmdr r-ggplot2))
-    (home-page
-     "http://www.worldagroforestry.org/output/tree-diversity-analysis")
-    (synopsis "Package for Community Ecology and Suitability Analysis")
-    (description
-     "Graphical User Interface (via the R-Commander) and utility functions (often
-based on the vegan package) for statistical analysis of biodiversity and
-ecological communities, including species accumulation curves, diversity
-indices, Renyi profiles, GLMs for analysis of species abundance and
-presence-absence, distance matrices, Mantel tests, and cluster, constrained and
-unconstrained ordination analysis.  A book on biodiversity and community ecology
-analysis is available for free download from the website.  In 2012, methods for
-(ensemble) suitability modelling and mapping were expanded in the package.")
     (license license:gpl3)))
 
 (define-public r-biodem
@@ -15442,13 +15435,13 @@ the bfsl solution.")
 (define-public r-bfs
   (package
     (name "r-bfs")
-    (version "0.5.3")
+    (version "0.5.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BFS" version))
               (sha256
                (base32
-                "174h3s4mva9rzbn02ag3qjl64vk47lf4h4n7gdidlj1mjbkpjsys"))))
+                "1f4l610wma94spa7vwj6s4wbpfjzd2mrax5529ldiqddi92q51kn"))))
     (properties `((upstream-name . "BFS")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -16457,13 +16450,13 @@ Kalogeropoulos, K., and Ntzoufras, I. (2022) <@code{arXiv:2211.15229>}.")
 (define-public r-bergm
   (package
     (name "r-bergm")
-    (version "5.0.5")
+    (version "5.0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Bergm" version))
               (sha256
                (base32
-                "0plidwnyh38hrkbd3ild476f54bz6i70r0h3chxh3wp35rl04ikl"))))
+                "0ibbskkanff7hxk2bcp6p8v0zk5wsb53zw12znmw855xas26spsy"))))
     (properties `((upstream-name . "Bergm")))
     (build-system r-build-system)
     (propagated-inputs (list r-statnet-common
@@ -16540,13 +16533,13 @@ the package.  It is the author's intention to distribute any future updates via
 (define-public r-bennu
   (package
     (name "r-bennu")
-    (version "0.2.1")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bennu" version))
               (sha256
                (base32
-                "0gyw032rk65h3x0a55f6h2yndy7s8pa69wrch3yq0dhw4axdspiz"))))
+                "04vgpk549fr5wwg11f5979iqd40yqamdch46vwxb57wxhraphcxy"))))
     (properties `((upstream-name . "bennu")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -16555,10 +16548,13 @@ the package.  It is the author's intention to distribute any future updates via
                              r-scales
                              r-rstantools
                              r-rstan
+                             r-rlang
                              r-rcppparallel
                              r-rcppeigen
                              r-rcpp
                              r-magrittr
+                             r-lifecycle
+                             r-glue
                              r-ggplot2
                              r-dplyr
                              r-bh))
@@ -17083,6 +17079,52 @@ GUTS framework Jager, T., Albert, C., Preuss, T.G. and Ashauer, R. (2011)
 <doi:10.1021/es103092a>.  The authors are grateful to Bayer A.G. for its
 financial support.")
     (license license:gpl3)))
+
+(define-public r-beebdc
+  (package
+    (name "r-beebdc")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "BeeBDC" version))
+              (sha256
+               (base32
+                "1p2i0jaywi9p04zkqszlscfym1ldck04gplmly4iz3s8rzwqf02d"))))
+    (properties `((upstream-name . "BeeBDC")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-stringr
+                             r-sf
+                             r-rnaturalearth
+                             r-readr
+                             r-paletteer
+                             r-openxlsx
+                             r-mgsub
+                             r-lubridate
+                             r-igraph
+                             r-here
+                             r-ggspatial
+                             r-ggplot2
+                             r-forcats
+                             r-dplyr
+                             r-cowplot
+                             r-coordinatecleaner
+                             r-complexheatmap
+                             r-circlize))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=BeeBDC")
+    (synopsis "Occurrence Data Cleaning")
+    (description
+     "Flags and checks occurrence data that are in Darwin Core format.  The package
+includes generic functions and data as well as some that are specific to bees.
+This package is meant to build upon and be complimentary to other excellent
+occurrence cleaning packages, including bdc and @code{CoordinateCleaner}'.  This
+package uses datasets from several sources and particularly from the Discover
+Life Website, created by Ascher and Pickering (2020).  For further information,
+please see the original publication and package website.  Publication - Dorey et
+al. (2023) <doi:10.1101/2023.06.30.547152> and package website - Dorey et al.
+(2023) <https://github.com/jbdorey/@code{BeeBDC>}.")
+    (license license:gpl3+)))
 
 (define-public r-bedmatrix
   (package
@@ -18224,25 +18266,25 @@ process mixture model in order to induce clustering.")
 (define-public r-bcrocsurface
   (package
     (name "r-bcrocsurface")
-    (version "1.0-5")
+    (version "1.0-6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bcROCsurface" version))
               (sha256
                (base32
-                "1jj7iag9azmxccc8a45vaxi6lw4jbfzj68wm0zdsggplgvzljn1f"))))
+                "0g0z4z3dw4mjp4dpa0d6bz46700jibixhlh2jj62z2l7qz5140cy"))))
     (properties `((upstream-name . "bcROCsurface")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgl r-rcpparmadillo r-rcpp r-nnet r-boot))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=bcROCsurface")
+    (home-page "https://github.com/toduckhanh/bcROCsurface")
     (synopsis
      "Bias-Corrected Methods for Estimating the ROC Surface of Continuous Diagnostic Tests")
     (description
      "The bias-corrected estimation methods for the receiver operating characteristics
 ROC surface and the volume under ROC surfaces (VUS) under missing at random
 (MAR) assumption.")
-    (license license:gpl2+)))
+    (license license:gpl3)))
 
 (define-public r-bcrm
   (package
@@ -19614,13 +19656,13 @@ models, considering species-specific calibration parameters and seasonality.")
 (define-public r-bayeszib
   (package
     (name "r-bayeszib")
-    (version "0.0.4")
+    (version "0.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bayesZIB" version))
               (sha256
                (base32
-                "02n76vw38xd1p6j2r505mkbfvnwij7i5lx8x6w9hrsnh9q0dy6dw"))))
+                "1265vnwmxxgahdccw81sirjb782z5pl3finf5gvmky3zgvj2p8kc"))))
     (properties `((upstream-name . "bayesZIB")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -19849,13 +19891,13 @@ distribution functions.")
 (define-public r-bayestfr
   (package
     (name "r-bayestfr")
-    (version "7.3-2")
+    (version "7.4-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bayesTFR" version))
               (sha256
                (base32
-                "1pxjbis26ck0fd2f19f0i0mn54wzis89niqhm3b6vz9zvv3angzh"))))
+                "0226157x56zfsmgacl15wrj035i0jvj7nnhwg38fgxa7jww8vbqh"))))
     (properties `((upstream-name . "bayesTFR")))
     (build-system r-build-system)
     (propagated-inputs (list r-wpp2019
@@ -20566,13 +20608,13 @@ of data, which is implemented in this package.")
 (define-public r-bayespm
   (package
     (name "r-bayespm")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bayespm" version))
               (sha256
                (base32
-                "1b258zar7cbm16dcfdii095bcm2j6imd5wir1sa9mc797lg05jz2"))))
+                "0w965fn7qvxq93bb1iiwzzkz6vc5k7gz87xfnwnywsqcm0bj2khb"))))
     (properties `((upstream-name . "bayespm")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmutil r-invgamma r-gridextra r-ggplot2
@@ -20580,17 +20622,29 @@ of data, which is implemented in this package.")
     (home-page "https://cran.r-project.org/package=bayespm")
     (synopsis "Bayesian Statistical Process Monitoring")
     (description
-     "The methods utilize available prior information and/or historical data,
-providing efficient online quality monitoring of a process, in terms of
-identifying moderate/large transient shifts (i.e., outliers) in the process.
+     "The R-package bayespm implements Bayesian Statistical Process Control and
+Monitoring (SPC/M) methodology.  These methods utilize available prior
+information and/or historical data, providing efficient online quality
+monitoring of a process, in terms of identifying moderate/large transient shifts
+(i.e., outliers) or persistent shifts of medium/small size in the process.
 These self-starting, sequentially updated tools can also run under complete
-absence of any prior information.  The Predictive Control Chart (PCC) mechanism
-is introduced for the quality monitoring of data from any discrete or continuous
-distribution that is a member of the regular exponential family.  Apart from
-monitoring, PCC allows also to derive sequentially updated posterior inference
-for the monitored parameter.  Bourazas K., Kiagias D. and Tsiamyrtzis P. (2022)
-\"Predictive Control Charts (PCC): A Bayesian approach in online monitoring of
-short runs\" <doi:10.1080/00224065.2021.1916413>.")
+absence of any prior information.  The Predictive Control Charts (PCC) are
+introduced for the quality monitoring of data from any discrete or continuous
+distribution that is a member of the regular exponential family.  The Predictive
+Ratio CUSUMs (PRC) are introduced for the Binomial, Poisson and Normal data (a
+later version of the library will cover all the remaining distributions from the
+regular exponential family).  The PCC targets transient process shifts of
+typically large size (a.k.a.  outliers), while PRC is focused in detecting
+persistent (structural) shifts that might be of medium or even small size.
+Apart from monitoring, both PCC and PRC provide the sequentially updated
+posterior inference for the monitored parameter.  Bourazas K., Kiagias D. and
+Tsiamyrtzis P. (2022) \"Predictive Control Charts (PCC): A Bayesian approach in
+online monitoring of short runs\" <doi:10.1080/00224065.2021.1916413>, Bourazas
+K., Sobas F. and Tsiamyrtzis, P. 2023. \"Predictive ratio CUSUM (PRC): A Bayesian
+approach in online change point detection of short runs\"
+<doi:10.1080/00224065.2022.2161434>, Bourazas K., Sobas F. and Tsiamyrtzis, P.
+2023. \"Design and properties of the predictive ratio cusum (PRC) control charts\"
+<doi:10.1080/00224065.2022.2161435>.")
     (license license:gpl2+)))
 
 (define-public r-bayesplay
@@ -22026,13 +22080,13 @@ Innovation Consortium (MDIC) Computer Modeling & Simulation Working Group.")
 (define-public r-bayesdlmfmri
   (package
     (name "r-bayesdlmfmri")
-    (version "0.0.2")
+    (version "0.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BayesDLMfMRI" version))
               (sha256
                (base32
-                "1aj2sy09ikamma8sgi51kzb4gpyr0a4mhm7rwzbqmhld8qbnh3f7"))))
+                "06806wckw629gl6p8jbxpg8lh6wsy8nhs2017qcfc3wwxb6dd3jc"))))
     (properties `((upstream-name . "BayesDLMfMRI")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack
@@ -25750,13 +25804,13 @@ Statistics group for their support in developing the BACCT package.")
 (define-public r-bacco
   (package
     (name "r-bacco")
-    (version "2.0-9")
+    (version "2.1-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BACCO" version))
               (sha256
                (base32
-                "0i1dnk0g3miyv3b60rzgjjm60180wxzv6v2q477r71q74b0v0r1y"))))
+                "1xqhb91pj6gcbr2afbq8jqkilhvy12qqq74zhv9c05i7dxl3b7ak"))))
     (properties `((upstream-name . "BACCO")))
     (build-system r-build-system)
     (propagated-inputs (list r-emulator r-calibrator r-approximator))

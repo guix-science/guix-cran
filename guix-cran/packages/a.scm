@@ -1005,13 +1005,13 @@ function.")
 (define-public r-avidar
   (package
     (name "r-avidar")
-    (version "1.1.3")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "avidaR" version))
               (sha256
                (base32
-                "1ahva473dhhbwlxlm9qz2x0ssmqg1hw1imnab39dijvmspaqvk5v"))))
+                "12z2cs5cayj72c6nx5y086m823grcmhq5m24aaqx4qn36lb6cdbb"))))
     (properties `((upstream-name . "avidaR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -1022,6 +1022,7 @@ function.")
                              r-r6
                              r-httr
                              r-dplyr
+                             r-curl
                              r-circlize
                              r-base64enc))
     (home-page "https://gitlab.com/fortunalab/avidaR")
@@ -1204,6 +1205,28 @@ packages, harmonising their outputs in tidy dataframes and using default values
 for each.  The core function @code{getBestModel}() allows the user to
 effortlessly benchmark seven algorithms along with a bagged estimator to
 identify which one performs the best for a given time series.")
+    (license license:gpl3)))
+
+(define-public r-autotransqf
+  (package
+    (name "r-autotransqf")
+    (version "0.1.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "AutoTransQF" version))
+              (sha256
+               (base32
+                "1kqdzz719r2bp37b6fn21njgbiyn7rrpms7jcjl8i0znwxkspd82"))))
+    (properties `((upstream-name . "AutoTransQF")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vgam r-moments r-matlab2r))
+    (home-page "https://github.com/yyyuehhu/AutoTransQF")
+    (synopsis "Novel Automatic Shifted Log Transformation")
+    (description
+     "This package provides a novel parametrization of log transformation and a shift
+parameter to automate the transformation process are proposed in R package
+@code{AutoTransQF} based on Feng et al. (2016).  Please read Feng et al. (2016)
+<doi:10.1002/sta4.104> for more details of the method.")
     (license license:gpl3)))
 
 (define-public r-autothresholdr
@@ -4511,13 +4534,13 @@ analysis of spatial patterns of travel behaviour (see Buliung and Remmel 2008
 (define-public r-asnipe
   (package
     (name "r-asnipe")
-    (version "1.1.16")
+    (version "1.1.17")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "asnipe" version))
               (sha256
                (base32
-                "0ky4v85gry8r265z8p7mi9kzq6j3s032jg4wddkzjjqgxzyzjl5y"))))
+                "01wv5pi44s2qzn33qcm4404ijqrwmqfrgchd88s7bwmdl47h3d77"))))
     (properties `((upstream-name . "asnipe")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-mass))
@@ -5583,6 +5606,54 @@ only for the normal case).  Olivari et all (2021)
 <doi:10.1080/10543406.2020.1852246>.")
     (license license:gpl2+)))
 
+(define-public r-arpaldata
+  (package
+    (name "r-arpaldata")
+    (version "1.4.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ARPALData" version))
+              (sha256
+               (base32
+                "0iysm1n8kbqk6ay9ddibnvdzjr061zj589w1i20iznyc86xk1ksm"))))
+    (properties `((upstream-name . "ARPALData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tm
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-stringi
+                             r-sf
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-ggplot2
+                             r-future-apply
+                             r-future
+                             r-eurostat
+                             r-dplyr
+                             r-curl
+                             r-aweek
+                             r-archive))
+    (home-page "https://cran.r-project.org/package=ARPALData")
+    (synopsis
+     "Retrieving and Analyzing Air Quality and Weather Data from ARPA Lombardia")
+    (description
+     "This package contains functions for retrieving, managing and analysing air
+quality and weather data from Regione Lombardia open database
+(<https://www.dati.lombardia.it/>).  Data are collected by ARPA Lombardia
+(Lombardia Environmental Protection Agency), Italy, through its ground
+monitoring network.  See the webpage <https://www.arpalombardia.it/> for further
+information on ARPA Lombardia's activities and history.  Data quality (e.g.
+missing values, exported values, graphical mapping) has been checked involving
+members of the ARPA Lombardia's office for air quality control.  The package
+makes available observations since 1989 (for weather) and 1968 (for air quality)
+and are updated with daily frequency by the regional agency.")
+    (license license:gpl2+)))
+
 (define-public r-arothron
   (package
     (name "r-arothron")
@@ -6041,13 +6112,13 @@ large.")
 (define-public r-argus
   (package
     (name "r-argus")
-    (version "0.1")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "argus" version))
               (sha256
                (base32
-                "0k016fpz03gzsy165cqk1gbszrk7xr330hxcnjl1d5r2hnfxgvxl"))))
+                "1qg1nphy7jn92zqx1lqg68l5dhpwa4b5407mkwwrsdy5x2r0x7s2"))))
     (properties `((upstream-name . "argus")))
     (build-system r-build-system)
     (propagated-inputs (list r-runuran))
@@ -7394,13 +7465,13 @@ bridging the gap between pedometric theory and practice.")
 (define-public r-aqlschemes
   (package
     (name "r-aqlschemes")
-    (version "1.7-1")
+    (version "1.7-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "AQLSchemes" version))
               (sha256
                (base32
-                "10j8qh7m975666ipgdvzrjiraqqb5rn8qj4w76s3ijl83y0v5j3v"))))
+                "1lnx2d1lwjzg6wc0kxdkh1lj00057iyvynl6m8nmmg7p8vz4r5jh"))))
     (properties `((upstream-name . "AQLSchemes")))
     (build-system r-build-system)
     (native-inputs (list r-r-rsp))
@@ -7907,13 +7978,13 @@ for binomial outcome are computed.")
 (define-public r-appeears
   (package
     (name "r-appeears")
-    (version "1.0")
+    (version "1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "appeears" version))
               (sha256
                (base32
-                "1q01wzqhg9qzacdwh13bgr2v8z0mv673gh7sx5xa9a9z6g6spvwm"))))
+                "1igrbp6mgflgxn9f63d738zzhgsdsvlgwbgidlbqy82v4i4q326p"))))
     (properties `((upstream-name . "appeears")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf
@@ -7927,7 +7998,7 @@ for binomial outcome are computed.")
                              r-geojsonio))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/bluegreen-labs/appeears")
-    (synopsis "Interface to 'AppEARS' NASA Web Services")
+    (synopsis "Interface to 'AppEEARS' NASA Web Services")
     (description
      "Programmatic interface to the NASA Application for Extracting and Exploring
 Analysis Ready Samples services (@code{AppEEARS};
@@ -9057,13 +9128,13 @@ it.")
 (define-public r-anyflights
   (package
     (name "r-anyflights")
-    (version "0.3.3")
+    (version "0.3.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "anyflights" version))
               (sha256
                (base32
-                "1iwiil15zc4zq6y7ns8r6w27w75v72fm3syn46bxrspw0iy0lj3v"))))
+                "1dycpzc36n31zd21f7iniij6l70cdmgcc3sgar7m8msvhimkafkj"))))
     (properties `((upstream-name . "anyflights")))
     (build-system r-build-system)
     (propagated-inputs (list r-vroom
@@ -9247,13 +9318,13 @@ simulate the effects of mergers under different competitive regimes.")
 (define-public r-anticlust
   (package
     (name "r-anticlust")
-    (version "0.7.0")
+    (version "0.8.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "anticlust" version))
               (sha256
                (base32
-                "00py6va36imp5l7v7w46brb0v9ycv41460j8ydjbn123wajvxm5m"))))
+                "0mns6d11i3p8vbm7cfxgqvln043ii5h1lxzwvdnpz9rqy90dj85r"))))
     (properties `((upstream-name . "anticlust")))
     (build-system r-build-system)
     (propagated-inputs (list r-rann r-matrix))
@@ -12774,36 +12845,6 @@ variant association test for candidate gene discovery\"
 <doi:10.1101/2022.12.23.521658>.")
     (license license:bsd-3)))
 
-(define-public r-alleleshift
-  (package
-    (name "r-alleleshift")
-    (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "AlleleShift" version))
-              (sha256
-               (base32
-                "1cmmxwp3qq28hln6k9hfv61b53nwx08iidhcxj8bdwv7msyp9f8k"))))
-    (properties `((upstream-name . "AlleleShift")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vegan r-biodiversityr r-adegenet))
-    (home-page "https://cran.r-project.org/package=AlleleShift")
-    (synopsis
-     "Predict and Visualize Population-Level Changes in Allele Frequencies in Response to Climate Change")
-    (description
-     "This package provides methods (<doi:10.7717/peerj.11534>) are provided of
-calibrating and predicting shifts in allele frequencies through redundancy
-analysis ('vegan::rda()') and generalized additive models ('mgcv::gam()').
-Visualization functions for predicted changes in allele frequencies include
-shift.dot.ggplot()', shift.pie.ggplot()', shift.moon.ggplot()',
-shift.waffle.ggplot() and shift.surf.ggplot() that are made with input data sets
-that are prepared by helper functions for each visualization method.  Examples
-in the documentation show how to prepare animated climate change graphics
-through a time series with the gganimate package.  Function amova.rda() shows
-how Analysis of Molecular Variance can be directly conducted with the results
-from redundancy analysis.")
-    (license license:gpl3)))
-
 (define-public r-alleleretain
   (package
     (name "r-alleleretain")
@@ -14277,13 +14318,13 @@ available as dataframes in R.")
 (define-public r-aid
   (package
     (name "r-aid")
-    (version "2.8")
+    (version "2.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "AID" version))
               (sha256
                (base32
-                "10s2q6lcsh6k0b9n89cjwja3cng4wqzcl9grcbpba8xdz2jncn6s"))))
+                "0s7020vh93rnyhcfsmsn1swffrbg1fx3pqq2bd043m4b90yrlzpc"))))
     (properties `((upstream-name . "AID")))
     (build-system r-build-system)
     (propagated-inputs (list r-tseries
@@ -14296,15 +14337,9 @@ available as dataframes in R.")
     (home-page "https://cran.r-project.org/package=AID")
     (synopsis "Box-Cox Power Transformation")
     (description
-     "This package performs Box-Cox power transformation for a single non-normal
-variable, ANOVA (Dag and Ilk, 2017) <doi:10.1080/03610918.2016.1204458> and
-Linear Models via different estimation techniques: maximum likelihood
-estimation, least square estimation, goodness-of-fit tests (Asar et al., 2017)
-<doi:10.1080/03610918.2014.957839>, artificial covariate (Dag et al., 2014)
-<doi:10.1080/03610918.2012.744042>, meta analysis (Yilmaz and Dag, 2022)
-<doi:10.28979/jarnas.1037343>.  It also performs graphical approaches, assesses
-the success of the transformation via tests and plots, computes mean and
-confidence interval for back transformed data.")
+     "This package performs Box-Cox power transformation for different purposes,
+graphical approaches, assesses the success of the transformation via tests and
+plots, computes mean and confidence interval for back transformed data.")
     (license license:gpl2+)))
 
 (define-public r-aiccpermanova
@@ -15019,13 +15054,13 @@ mean square error, AIC, BIC, as well as graphs with the equations automatically.
 (define-public r-agror
   (package
     (name "r-agror")
-    (version "1.3.4")
+    (version "1.3.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "AgroR" version))
               (sha256
                (base32
-                "1701n85db3id2li67qjnz4rxhcqpaqdk3098ia1vf3x5jgsfqjn3"))))
+                "05b7jwah898r4g0mvyf0qlwmv5rx48pj87agf257nqz3hwmvkip5"))))
     (properties `((upstream-name . "AgroR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcolorbrewer
@@ -17060,13 +17095,13 @@ Implementation Guide\" (CDISC Analysis Data Model Team, 2021,
 (define-public r-admiralonco
   (package
     (name "r-admiralonco")
-    (version "0.4.0")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "admiralonco" version))
               (sha256
                (base32
-                "0ywrin1hp45j4r467bjijlpdcbqzqkqv3wwdwspjwfanqhyn4qcl"))))
+                "1gi9dirx004iy0vs7mms9y1vrs9zjiai7jh76nv0xm3cwgdf5l15"))))
     (properties `((upstream-name . "admiralonco")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -17094,13 +17129,13 @@ Implementation Guide\" (CDISC Analysis Data Model Team (2021),
 (define-public r-admiraldev
   (package
     (name "r-admiraldev")
-    (version "0.4.0")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "admiraldev" version))
               (sha256
                (base32
-                "02xjwqjlk5nwfjs5y1glq4wdn5r9l88wvnx7pl0z9416rjjq2lqk"))))
+                "0h4qd7w5icmiw3dgcwmf8mp0lvbc06wcszc8859kv6l6zsihgnfd"))))
     (properties `((upstream-name . "admiraldev")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -17127,13 +17162,13 @@ admiral and admiral extension packages.")
 (define-public r-admiral-test
   (package
     (name "r-admiral-test")
-    (version "0.6.0")
+    (version "0.7.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "admiral.test" version))
               (sha256
                (base32
-                "15c8njk81w8rp22n5knvh3jxkh8qk2pmqs1snjmyd4vjrxh1vqf7"))))
+                "1bmzj9r6nbyk4wd63ps6qwrj35lpj4s4jj4dvlg0p7yyssig68pb"))))
     (properties `((upstream-name . "admiral.test")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=admiral.test")
@@ -17148,13 +17183,13 @@ the admiral package.")
 (define-public r-admiral
   (package
     (name "r-admiral")
-    (version "0.11.1")
+    (version "0.12.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "admiral" version))
               (sha256
                (base32
-                "1wl164falaw87rcahh1ip4zjp4kf87jiig6h8gqkja8p35x44h94"))))
+                "08ad819qixdfrk90jn7l2mr2ggj167hxddq70sx0xs216myq5ah8"))))
     (properties `((upstream-name . "admiral")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -18756,13 +18791,13 @@ component, and push it to an Acumos platform.")
 (define-public r-actxps
   (package
     (name "r-actxps")
-    (version "1.2.0")
+    (version "1.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "actxps" version))
               (sha256
                (base32
-                "1yy1yhpvk8ycyasdngwy9sg189cwli3n6k60iwvb1acpqy0rhhdd"))))
+                "1cia0xk2xb09y583za6w97ch3pvx4kcdw5vbx8slvnv2r4qkb1pw"))))
     (properties `((upstream-name . "actxps")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -18787,10 +18822,10 @@ component, and push it to an Acumos platform.")
     (description
      "Experience studies are used by actuaries to explore historical experience across
 blocks of business and to inform assumption setting activities.  This package
-provides functions for preparing data, creating studies, and beginning
-assumption development.  Experience study methods, including exposure
-calculations, are described in: Atkinson & @code{McGarry} (2016) \"Experience
-Study Calculations\"
+provides functions for preparing data, creating studies, visualizing results,
+and beginning assumption development.  Experience study methods, including
+exposure calculations, are described in: Atkinson & @code{McGarry} (2016)
+\"Experience Study Calculations\"
 <https://www.soa.org/49378a/globalassets/assets/files/research/experience-study-calculations.pdf>.
  The limited fluctuation credibility method used by the exp_stats() function is
 described in: Herzog (1999, ISBN:1-56698-374-6) \"Introduction to Credibility
@@ -19450,13 +19485,13 @@ user.")
 (define-public r-accucor
   (package
     (name "r-accucor")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "accucor" version))
               (sha256
                (base32
-                "1byhfh9lskgpi8sx6kb7prh88a2jglrjpq206rmh98hqd3r23n5j"))))
+                "1yq64hh7w328ks02fh9q2hnl73grwd31rrm6c0jqyb0f0lclkxir"))))
     (properties `((upstream-name . "accucor")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl

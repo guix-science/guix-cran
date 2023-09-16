@@ -4316,23 +4316,24 @@ the composite performance of an individual.")
 (define-public r-ipkg
   (package
     (name "r-ipkg")
-    (version "1.0.5")
+    (version "1.0.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ipkg" version))
               (sha256
                (base32
-                "0y1gqc61fqjai3vfsn0rdjd0r8g46ls2jvb97h6gfhdafgfxrq7f"))))
+                "0cm2hvdi5rbd7jnas0iishhld3m32gjs3xh1fq25zwn14spagngg"))))
     (properties `((upstream-name . "ipkg")))
     (build-system r-build-system)
     (propagated-inputs (list r-remotes))
     (home-page "https://gitlab.com/chuxinyuan/ipkg")
-    (synopsis "Install R Packages on GitHub from Hub.fastgit.xyz")
+    (synopsis
+     "Install R Packages or Download File from GitHub via the Proxy Site Https://Ghproxy.com")
     (description
-     "When you want to install an R package on @code{GitHub}, but you can't access
-@code{GitHub}, this function helps you download and install the package from
-another website <https://hub.fastgit.xyz/>, which is in real-time sync with
-@code{GitHub}.")
+     "When you want to install R packages or download file from @code{GitHub}, but you
+can't access @code{GitHub}, this package helps you install R packages or
+download file from @code{GitHub} via the proxy website <https://ghproxy.com/>,
+which is in real-time sync with @code{GitHub}.")
     (license license:expat)))
 
 (define-public r-ipft
@@ -6234,13 +6235,13 @@ technical writing.  Learn more about the inkaverse project at
 (define-public r-intextsummarytable
   (package
     (name "r-intextsummarytable")
-    (version "3.3.0")
+    (version "3.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "inTextSummaryTable" version))
               (sha256
                (base32
-                "0dlb6icamw1arhh92hmgj5wj7a6lv1c8j95gdrqzxgqgkawrl582"))))
+                "0b5qn3hczdvdhqw6lcf23cyy39lcvraizrr01nxgp27mdarppgqh"))))
     (properties `((upstream-name . "inTextSummaryTable")))
     (build-system r-build-system)
     (inputs (list pandoc))
@@ -9401,6 +9402,34 @@ of a vector of pre-treatment covariates using the method proposed in Huling,
 Greifer, and Chen (2021) <arxiv:2107.07086>.")
     (license license:expat)))
 
+(define-public r-indelmiss
+  (package
+    (name "r-indelmiss")
+    (version "1.0.10")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "indelmiss" version))
+              (sha256
+               (base32
+                "1dqdk6glzm40y4zxc9bfjg5qsvd2i4xm55w8f7671gyjkzjzavv5"))))
+    (properties `((upstream-name . "indelmiss")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp r-phangorn r-numderiv r-ape))
+    (home-page "https://cran.r-project.org/package=indelmiss")
+    (synopsis
+     "Insertion Deletion Analysis While Accounting for Possible Missing Data")
+    (description
+     "Genome-wide gene insertion and deletion rates can be modelled in a maximum
+likelihood framework with the additional flexibility of modelling potential
+missing data using the models included within.  These models simultaneously
+estimate insertion and deletion (indel) rates of gene families and proportions
+of \"missing\" data for (multiple) taxa of interest.  The likelihood framework is
+utilized for parameter estimation.  A phylogenetic tree of the taxa and gene
+presence/absence patterns (with data ordered by the tips of the tree) are
+required.  See Dang et al. (2016) <doi:10.1534/genetics.116.191973> for more
+details.")
+    (license license:gpl2+)))
+
 (define-public r-incubate
   (package
     (name "r-incubate")
@@ -11061,6 +11090,35 @@ plotting results, conducting posterior inference on parameters of interest,
 posterior predictive checking, and quantifying uncertainty.")
     (license license:gpl2+)))
 
+(define-public r-imhd
+  (package
+    (name "r-imhd")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ImHD" version))
+              (sha256
+               (base32
+                "0aawa3slyf2i05q73v8qicwkf80ry527c87z72anapy8nfzkija6"))))
+    (properties `((upstream-name . "ImHD")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xgboost
+                             r-rpart
+                             r-reshape2
+                             r-randomforest
+                             r-ggplot2
+                             r-e1071))
+    (home-page "https://cran.r-project.org/package=ImHD")
+    (synopsis
+     "Artificial Intelligence Based Machine Learning Algorithms for Height Diameter Relationships of Conifer Trees")
+    (description
+     "Estimating height of forest plant is one of the key challenges of recent times.
+This package will help to fit and validate AI (Artificial Intelligence) based
+machine learning algorithms for estimation of height of conifer trees based on
+diameter at breast height as explanatory variable using algorithm of Paul et al.
+(2022) <doi:10.1371/journal.pone.0270553>..")
+    (license license:gpl3)))
+
 (define-public r-imgur
   (package
     (name "r-imgur")
@@ -11113,13 +11171,13 @@ also includes functions for analyzing image annotations.")
 (define-public r-imgpalr
   (package
     (name "r-imgpalr")
-    (version "0.3.1")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "imgpalr" version))
               (sha256
                (base32
-                "0v9npy63mv9r9wnd8pcdw4rkr0bybhhmkj36sza7dah92i06il17"))))
+                "0wdddswyakcgwvp75ydp8q3wmxdgrms8r2lh9jm024f8im3j5ccw"))))
     (properties `((upstream-name . "imgpalr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -12723,24 +12781,21 @@ details about the method can be found in the paper by Cabello-Aguilar (2022)
 (define-public r-ifc
   (package
     (name "r-ifc")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IFC" version))
               (sha256
                (base32
-                "0j4lfppcf8ybs5y2a6bxdxfl1wx9nph7zdxpkr65kma0kdzrc7ih"))))
+                "0b0kda1wh9li6x2avjw3ayj882r69v06sjmwc31dkf59b8r67l9k"))))
     (properties `((upstream-name . "IFC")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
                              r-visnetwork
-                             r-tiff
                              r-rcpp
-                             r-png
                              r-latticeextra
                              r-lattice
                              r-kernsmooth
-                             r-jpeg
                              r-gridgraphics
                              r-gridextra
                              r-dt))
@@ -12748,9 +12803,9 @@ details about the method can be found in the paper by Cabello-Aguilar (2022)
     (synopsis "Tools for Imaging Flow Cytometry")
     (description
      "This package contains several tools to treat imaging flow cytometry data from
-@code{ImageStreamÂ®} and @code{FlowSightÂ®} cytometers ('@code{AmnisÂ®}', part
-of @code{LuminexÂ®}').  Provides an easy and simple way to read and write .fcs,
-.rif, .cif and .daf files.  Information such as masks, features, regions and
+@code{ImageStreamÂ®} and @code{FlowSightÂ®} cytometers ('@code{AmnisÂ®}
+@code{CytekÂ®}').  Provides an easy and simple way to read and write .fcs, .rif,
+.cif and .daf files.  Information such as masks, features, regions and
 populations set within these files can be retrieved for each single cell.  In
 addition, raw data such as images stored can also be accessed.  Users, may
 hopefully increase their productivity thanks to dedicated functions to extract,
@@ -14287,13 +14342,13 @@ tests.  Please see the vignette for a quickstart guide.")
 (define-public r-ics
   (package
     (name "r-ics")
-    (version "1.3-2")
+    (version "1.4-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ICS" version))
               (sha256
                (base32
-                "00k453h6bdlic0ldbbrdsaax9959r5dr5a39r9ma5hyyli3i2bik"))))
+                "1r5sk01fmraaapbgymhw1fhnb72yjzm8vdc1g4qz5igm79b1s3gq"))))
     (properties `((upstream-name . "ICS")))
     (build-system r-build-system)
     (propagated-inputs (list r-survey r-mvtnorm))
@@ -15956,13 +16011,13 @@ API.")
 (define-public r-ibr
   (package
     (name "r-ibr")
-    (version "2.0-3")
+    (version "2.0-4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ibr" version))
               (sha256
                (base32
-                "1plyz4sl0i8qhk9dh3h7zvh9h8wqr589jvasmvp7r3slp4ndhp1r"))))
+                "1vac4484n9jsn6m5pbdpw6zjjjgnas24176hs6mr51y2bjgywdkp"))))
     (properties `((upstream-name . "ibr")))
     (build-system r-build-system)
     (propagated-inputs (list r-mgcv))
@@ -16562,6 +16617,29 @@ package are the irregular autoregressive model (Eyheramendy et al.(2018)
 irregular autoregressive model (Elorrieta et al.(2021)
 <doi:10.1093/mnras/stab1216>).")
     (license license:gpl2)))
+
+(define-public r-iapws95
+  (package
+    (name "r-iapws95")
+    (version "1.2.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "IAPWS95" version))
+              (sha256
+               (base32
+                "0jccq1pj0b8xpa7zs20ikkwlyj0f2q5qzdz8kllm0qiwlrrj7jsn"))))
+    (properties `((upstream-name . "IAPWS95")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp r-pander r-ggplot2))
+    (native-inputs (list r-rmarkdown r-knitr gfortran))
+    (home-page "https://cran.r-project.org/package=IAPWS95")
+    (synopsis "Thermophysical Properties of Water and Steam")
+    (description
+     "An implementation of the International Association for the Properties of Water
+(IAPWS) Formulation 1995 for the Thermodynamic Properties of Ordinary Water
+Substance for General and Scientific Use and on the releases for viscosity,
+conductivity, surface tension and melting pressure.")
+    (license license:expat)))
 
 (define-public r-iapws
   (package

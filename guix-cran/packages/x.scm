@@ -10,8 +10,8 @@
   #:use-module (gnu packages xml)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages julia)
+  #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages java)
-  #:use-module (gnu packages gcc)
   #:use-module (gnu packages web)
   #:use-module (gnu packages perl)
   #:use-module (guix-cran packages z)
@@ -499,6 +499,46 @@ communication.  Will be used through a specific language interface package.
 Described in the book \"Extending R\".")
     (license license:gpl2+)))
 
+(define-public r-xqtlbiolinks
+  (package
+    (name "r-xqtlbiolinks")
+    (version "1.6.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "xQTLbiolinks" version))
+              (sha256
+               (base32
+                "0hi3admcpraq25d7n1fjbz9pv3gj7pj6wcr5694qa2xqizp7vmv2"))))
+    (properties `((upstream-name . "xQTLbiolinks")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-viridis
+                             r-summarizedexperiment
+                             r-stringr
+                             r-rmysql
+                             r-jsonlite
+                             r-iranges
+                             r-ggrepel
+                             r-ggplot2
+                             r-genomicranges
+                             r-genomicfeatures
+                             r-genomeinfodb
+                             r-dbi
+                             r-data-table
+                             r-curl
+                             r-cowplot
+                             r-biocgenerics))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/dingruofan/xQTLbiolinks")
+    (synopsis
+     "An R Package for Integrative Analysis of Quantitative Trait Locus Data of 'xQTL'")
+    (description
+     "Enables users-customized data retrieval, processing, analysis, and data
+visualization of molecular quantitative trait locus and gene expression data
+from public resources through the application programming interface
+<https://gtexportal.org/home/api-docs/index.html> of GTEx and
+<http://www.ebi.ac.uk/eqtl/api> of @code{eQTL} cagalogue'.")
+    (license license:gpl3+)))
+
 (define-public r-xpose4
   (package
     (name "r-xpose4")
@@ -597,13 +637,13 @@ graphics for data exploration and model diagnostics.")
 (define-public r-xportr
   (package
     (name "r-xportr")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "xportr" version))
               (sha256
                (base32
-                "02a6m3xcs5982vq58xysslv8hr624bkimigny2dv1x8a9jxc2xcc"))))
+                "12025w2pawp08019hq28jrl3my4j5z7vl8wild6iv50zk27d1yvi"))))
     (properties `((upstream-name . "xportr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tm
@@ -1083,13 +1123,13 @@ other's coefficients unrealistically.")
 (define-public r-xllim
   (package
     (name "r-xllim")
-    (version "2.2")
+    (version "2.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "xLLiM" version))
               (sha256
                (base32
-                "0gmy3jy1nf0fixgwcgfhrwcd85ran5ic7srzcx46akad828a4znq"))))
+                "0wamfc7r6b4wgr386yf9q5ci3r1dnym41qw23rs1rdxjc4lbl3rx"))))
     (properties `((upstream-name . "xLLiM")))
     (build-system r-build-system)
     (propagated-inputs (list r-randomforest
@@ -1111,11 +1151,11 @@ using a mixture of regression model and an inverse regression strategy.  The
 methods include the GL@code{LiM} model (see Deleforge et al (2015)
 <DOI:10.1007/s11222-014-9461-5>) based on Gaussian mixtures and a robust version
 of GL@code{LiM}, named SL@code{LiM} (see Perthame et al (2016)
-<https://hal.archives-ouvertes.fr/hal-01347455>) based on a mixture of
-Generalized Student distributions.  The methods also include BL@code{LiM} (see
-Devijver et al (2017) <@code{arXiv:1701.07899>}) which is an extension of
-GL@code{LiM} with a sparse block diagonal structure for large covariance
-matrices (particularly interesting for transcriptomic data).")
+<DOI:10.1016/j.jmva.2017.09.009>) based on a mixture of Generalized Student
+distributions.  The methods also include BL@code{LiM} (see Devijver et al (2017)
+<@code{arXiv:1701.07899>}) which is an extension of GL@code{LiM} with a sparse
+block diagonal structure for large covariance matrices (particularly interesting
+for transcriptomic data).")
     (license license:gpl2+)))
 
 (define-public r-xlink
@@ -1371,6 +1411,27 @@ provides some data checking and summarizing functions for rapidly exploring
 pharmacokinetics and pharmacodynamics (PKPD) datasets.")
     (license license:expat)))
 
+(define-public r-xgrove
+  (package
+    (name "r-xgrove")
+    (version "0.1-7")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "xgrove" version))
+              (sha256
+               (base32
+                "0sfnylzpgqsg7jvcy9yjywj13zl6np59qiciw0yr8fm4d91sxwnh"))))
+    (properties `((upstream-name . "xgrove")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rpart-plot r-rpart r-gbm r-dplyr))
+    (home-page "https://cran.r-project.org/package=xgrove")
+    (synopsis "Explanation Groves")
+    (description
+     "Compute surrogate explanation groves for predictive machine learning models and
+analyze complexity vs. explanatory power of an explanation according to
+Szepannek, G. and von Holt, B. (2023) <doi:10.1007/s41237-023-00205-2>.")
+    (license license:gpl2+)))
+
 (define-public r-xgb2sql
   (package
     (name "r-xgb2sql")
@@ -1519,30 +1580,6 @@ an Extensible Business Reporting Language ('XBRL') instance file and the
 associated collection of files that defines its Discoverable Taxonomy Set
 ('DTS').")
     (license license:gpl2+)))
-
-(define-public r-xbreed
-  (package
-    (name "r-xbreed")
-    (version "1.0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "xbreed" version))
-              (sha256
-               (base32
-                "032i04ginyf9dyabfkygnhrkq7lqdvvyw7s41vjimy2kvjrnkkkx"))))
-    (properties `((upstream-name . "xbreed")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-bglr))
-    (native-inputs (list r-knitr gfortran))
-    (home-page "https://cran.r-project.org/package=xbreed")
-    (synopsis "Genomic Simulation of Purebred and Crossbred Populations")
-    (description
-     "Simulation of purebred and crossbred genomic data as well as pedigree and
-phenotypes are possible by this package.  xbreed can be used for the simulation
-of populations with flexible genome structures and trait genetic architectures.
-It can also be used to evaluate breeding schemes and generate genetic data to
-test statistical tools.")
-    (license license:gpl3)))
 
 (define-public r-xaringanthemer
   (package

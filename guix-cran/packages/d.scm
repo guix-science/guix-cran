@@ -1748,21 +1748,33 @@ friendly way.")
 (define-public r-duckplyr
   (package
     (name "r-duckplyr")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "duckplyr" version))
               (sha256
                (base32
-                "1yz39cdhq17hym0mvn7xn27yg2497xdyq59i68ym99xgi6jnlpw6"))))
+                "0sqnlgbz4g3dmrp2a71k9nfr83pxsmavisqjiv1h3c4gzxg6qdj6"))))
     (properties `((upstream-name . "duckplyr")))
     (build-system r-build-system)
-    (home-page "https://github.com/krlmlr/duckplyr")
-    (synopsis
-     "Alternative Implementations of the Grammar of Data Manipulations")
+    (propagated-inputs (list r-vctrs
+                             r-tidyselect
+                             r-tibble
+                             r-rlang
+                             r-purrr
+                             r-lifecycle
+                             r-glue
+                             r-duckdb
+                             r-dplyr
+                             r-dbi
+                             r-collections
+                             r-cli))
+    (home-page "https://github.com/duckdblabs/duckplyr")
+    (synopsis "'DuckDB'-Backed Version of 'dplyr'")
     (description
-     "Defines a set of generics that provide a low-level implementer's interface for
-the high-level user interface of dplyr'.")
+     "This package provides a drop-in replacement for dplyr', powered by @code{DuckDB}
+for performance.  Also defines a set of generics that provide a low-level
+implementer's interface for the high-level user interface of dplyr'.")
     (license license:expat)))
 
 (define-public r-duckduckr
@@ -3668,13 +3680,13 @@ time series.  Bundesbank Discussion Paper 41/2018.")
 (define-public r-ds4psy
   (package
     (name "r-ds4psy")
-    (version "0.9.0")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ds4psy" version))
               (sha256
                (base32
-                "1w2234bnvniivivaa9k09fblw3l7dy2fiwk611x1iwp58xjmpr7c"))))
+                "1l5qqcpzad2nnhzzcb43slgmdg08v830l5np8mc7qh4wlig1x95l"))))
     (properties `((upstream-name . "ds4psy")))
     (build-system r-build-system)
     (propagated-inputs (list r-unikn r-ggplot2))
@@ -4022,16 +4034,16 @@ Ambient Liquid Oxygen and Pressurized Liquid and Gaseous Oxygen Environments\"
 (define-public r-dropout
   (package
     (name "r-dropout")
-    (version "1.0.0")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dropout" version))
               (sha256
                (base32
-                "0g47cbsx55j88n8nwgfflnv07s6bh1wiaxvvzh159vfsfxy1a55f"))))
+                "0wnnmc7n5lmgjkh5xbckwyv1fhd9zixqixs8x4rga5v3ir68r6w5"))))
     (properties `((upstream-name . "dropout")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tibble))
+    (propagated-inputs (list r-tibble r-rcpp r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/hendr1km/dropout")
     (synopsis "Handling Incomplete Responses in Survey Data Analysis")
@@ -10683,6 +10695,28 @@ Maddala, G. (1983) <doi:10.1017/CBO9780511810176>.  The parameters are estimated
 with maximum likelihood.")
     (license license:gpl3)))
 
+(define-public r-diseasemapping
+  (package
+    (name "r-diseasemapping")
+    (version "2.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "diseasemapping" version))
+              (sha256
+               (base32
+                "00zs73aa45y81mlqqyd8jsim8lys2x9a2njmvm64lp8prdh33b91"))))
+    (properties `((upstream-name . "diseasemapping")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=diseasemapping")
+    (synopsis "Modelling Spatial Variation in Disease Risk for Areal Data")
+    (description
+     "Formatting of population and case data, calculation of Standardized Incidence
+Ratios, and fitting the BYM model using INLA'.  For details see Brown (2015)
+<doi:10.18637/jss.v063.i12>.")
+    (license (list license:gpl2+ license:gpl3+))))
+
 (define-public r-disdat
   (package
     (name "r-disdat")
@@ -11421,13 +11455,13 @@ AUC.")
 (define-public r-disbayes
   (package
     (name "r-disbayes")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "disbayes" version))
               (sha256
                (base32
-                "1fx3la8x4h3bazvfnvlq5cnnz528wkfm9k12ic7id303qaxx3ia7"))))
+                "0dzgs048pwpl59fpnvqdra001xkwllxpkaxanwdbmzc8l1xmrwb2"))))
     (properties `((upstream-name . "disbayes")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -11454,8 +11488,8 @@ AUC.")
 information, using a multi-state model.  Given data on age-specific mortality
 and either incidence or prevalence, Bayesian inference is used to estimate the
 posterior distributions of incidence, case fatality, and functions of these such
-as prevalence.  The methods are described in Jackson et al. (2021)
-<@code{arXiv:2111.14100>}.")
+as prevalence.  The methods are described in Jackson et al. (2023)
+<doi:10.1093/jrsssa/qnac015>.")
     (license license:gpl3)))
 
 (define-public r-disaggregation
@@ -18480,13 +18514,13 @@ deep time visualization.")
 (define-public r-deeprstudio
   (package
     (name "r-deeprstudio")
-    (version "0.0.4")
+    (version "0.0.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "deepRstudio" version))
               (sha256
                (base32
-                "1aiv020396rvr9bingvqsmwh6ycax9fzicicwff94bhslj1z6bh7"))))
+                "0fqzxc8wnfvg7fjpmd02pbf7wnqa32n3pm42iwj6i9hbdx558rin"))))
     (properties `((upstream-name . "deepRstudio")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstudioapi
@@ -19529,6 +19563,29 @@ methods for solution localisation and curve continuation are based on the book
 0-387-94418-4).")
     (license license:gpl3)))
 
+(define-public r-debiasinfer
+  (package
+    (name "r-debiasinfer")
+    (version "0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "DebiasInfer" version))
+              (sha256
+               (base32
+                "1dbjf83mwhq0w8cfav64qjyvn05f1br8ffvyk18170ah00agpdm9"))))
+    (properties `((upstream-name . "DebiasInfer")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scalreg r-cvxr r-caret))
+    (home-page "https://github.com/zhangyk8/Debias-Infer/")
+    (synopsis
+     "Efficient Inference on High-Dimensional Linear Model with Missing Outcomes")
+    (description
+     "This package provides a statistically and computationally efficient debiasing
+method for conducting valid inference on the high-dimensional linear regression
+function with missing outcomes.  The reference paper is Zhang, Giessing, and
+Chen (2023) <@code{arXiv:2309.06429>}.")
+    (license license:expat)))
+
 (define-public r-debbi
   (package
     (name "r-debbi")
@@ -19621,6 +19678,44 @@ Miskowicz(2006,<doi:10.3390/s6010049>).  A collection of functions compare
 effectiveness and fidelity of sampled signals using statistical deadband
 algorithms.")
     (license license:gpl2)))
+
+(define-public r-ddtlcm
+  (package
+    (name "r-ddtlcm")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ddtlcm" version))
+              (sha256
+               (base32
+                "0ml423182xgxsdfzvl5xnyxp9ijmx5bkwvwdaqmfwk86x3994cbs"))))
+    (properties `((upstream-name . "ddtlcm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-truncnorm
+                             r-rdpack
+                             r-r-utils
+                             r-polca
+                             r-phylobase
+                             r-matrixstats
+                             r-matrix
+                             r-label-switching
+                             r-ggtree
+                             r-ggtext
+                             r-ggpubr
+                             r-ggplot2
+                             r-extradistr
+                             r-data-table
+                             r-bayeslogit
+                             r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/limengbinggz/ddtlcm")
+    (synopsis
+     "Latent Class Analysis with Dirichlet Diffusion Tree Process Prior")
+    (description
+     "This package implements a Bayesian algorithm to fit latent class models,
+particularly useful for weakly separated latent classes.  Reference: Li et al.
+(2023) <@code{arXiv:2306.04700>}.")
+    (license license:expat)))
 
 (define-public r-ddst
   (package
@@ -20630,13 +20725,13 @@ parallel MCMC support for JAGS', @code{WinBUGS}', @code{OpenBUGS}', and Stan'.")
 (define-public r-dclear
   (package
     (name "r-dclear")
-    (version "1.0.12")
+    (version "1.0.13")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DCLEAR" version))
               (sha256
                (base32
-                "03a2i5hjp49sp0s0vp4fs8ax9569yzk2zsp3h6lp0frjvp75m7c9"))))
+                "0f8q0avzl3jpjly1jsg02lz8h38208j25nfdf1v79qcp4ia7m3pp"))))
     (properties `((upstream-name . "DCLEAR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -21822,13 +21917,13 @@ at patient level are denoted with â-Pt-â.")
 (define-public r-daymetr
   (package
     (name "r-daymetr")
-    (version "1.7")
+    (version "1.7.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "daymetr" version))
               (sha256
                (base32
-                "0rambqnvw3wv8nb5ldzx8wbsjv6vwqhp144lw052i7y9i9jdyn93"))))
+                "069s7wxy2yis6x7q4faac0fcr305dxmvan7wc3fzgbix0hianvng"))))
     (properties `((upstream-name . "daymetr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -22723,6 +22818,29 @@ in some case studies throughout the text.")
      "Graphical interface for loading datasets in RStudio from all installed
 (including unloaded) packages, also includes command line interfaces.")
     (license license:gpl3)))
+
+(define-public r-datasetjson
+  (package
+    (name "r-datasetjson")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "datasetjson" version))
+              (sha256
+               (base32
+                "0fn17d5qg108v4f0gyg93ihzf1b817ic1qxd5vw7iw6jqpzkh20s"))))
+    (properties `((upstream-name . "datasetjson")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-jsonvalidate r-jsonlite))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/atorus-research/datasetjson")
+    (synopsis "Read and Write CDISC Dataset JSON Files")
+    (description
+     "Read, construct and write CDISC (Clinical Data Interchange Standards Consortium)
+Dataset JSON (@code{JavaScript} Object Notation) files, while validating per the
+Dataset JSON schema file, as described in CDISC (2023)
+<https://www.cdisc.org/dataset-json>.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-dataset
   (package
@@ -25233,13 +25351,13 @@ can follow the tutorial in the vignette available at
 (define-public r-daewr
   (package
     (name "r-daewr")
-    (version "1.2-10")
+    (version "1.2-11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "daewr" version))
               (sha256
                (base32
-                "0hckqjn12lkyjkbbql8l0pay5c430vhf0hp7hycp3v59i1aaz8bf"))))
+                "0hh7z0sdynrw4746hqvyra4dsqa9p1j8bip7b8asyvdpirxhvh23"))))
     (properties `((upstream-name . "daewr")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi r-lattice))
@@ -25373,6 +25491,29 @@ ceiling/floor effects.  The package currently includes functions for
 mean/variance estimation and mean comparison tests.  Implemented methods are
 from Aitkin (1964) <doi:10.1007/BF02289723> and Liu & Wang (in prep).")
     (license license:gpl2)))
+
+(define-public r-dacc
+  (package
+    (name "r-dacc")
+    (version "0.0-1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "dacc" version))
+              (sha256
+               (base32
+                "0qff89117zjvd8mqnypasc3dgfw2di0k59pavhgikn9l79vy3s5h"))))
+    (properties `((upstream-name . "dacc")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-pracma r-mass r-magrittr r-janitor r-iso))
+    (home-page "https://github.com/LiYanStat/dacc")
+    (synopsis "Detection and Attribution Analysis of Climate Change")
+    (description
+     "Conduct detection and attribution of climate change using methods including
+optimal fingerprinting via generalized total least squares or estimating
+equation.  Provide shrinkage estimators for covariance matrix from Ledoit and
+Wolf (2004) <doi:10.1016/S0047-259X(03)00096-4>, and Ledoit and Wolf (2017)
+<doi:10.2139/ssrn.2383361>.")
+    (license license:gpl3+)))
 
 (define-public r-dabr
   (package

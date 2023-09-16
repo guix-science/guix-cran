@@ -48,13 +48,13 @@
 (define-public r-fy
   (package
     (name "r-fy")
-    (version "0.3.0")
+    (version "0.4.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fy" version))
               (sha256
                (base32
-                "13803ld4b59ly5h3zlianag9901jyw6p70bsyz5dj7k62hg7ha3s"))))
+                "1gbv2hvh3y9qdld660i250snwxn4irp41qrr3pc1nakbf5b9aqnz"))))
     (properties `((upstream-name . "fy")))
     (build-system r-build-system)
     (propagated-inputs (list r-hutils r-fastmatch r-data-table))
@@ -668,6 +668,28 @@ on their abundance and occupancy.  It also includes functions to compute
 confidence intervals of classification metrics and plot results.  See Balbuena
 et al. (2020, <doi:10.1101/2020.08.12.247502>).")
     (license license:gpl3)))
+
+(define-public r-fuzzypovertyr
+  (package
+    (name "r-fuzzypovertyr")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "FuzzyPovertyR" version))
+              (sha256
+               (base32
+                "1fhgvjy83806l74bn2i8d1lslgbb38phhjfql65s98jbbckh98qp"))))
+    (properties `((upstream-name . "FuzzyPovertyR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-reshape2 r-ecp r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=FuzzyPovertyR")
+    (synopsis "Estimation of Fuzzy Poverty Measures")
+    (description
+     "Estimates fuzzy measures of poverty and deprivation.  It also estimates the
+sampling variance of these measures using bootstrap or jackknife repeated
+replications.")
+    (license license:expat)))
 
 (define-public r-fuzzynumbers-ext-2
   (package
@@ -2450,13 +2472,13 @@ spectral density operator in frequencies and along the curve length.")
 (define-public r-ftsa
   (package
     (name "r-ftsa")
-    (version "6.2")
+    (version "6.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ftsa" version))
               (sha256
                (base32
-                "1m8rjivhc5mqsbxjv2v9ly8yb70x0iqcsapbl6kgi3gwvgk4c5pn"))))
+                "00cb82cd692ni2ys55v6kkzz924gc3lsibgr2zaqw1f9iywkbnic"))))
     (properties `((upstream-name . "ftsa")))
     (build-system r-build-system)
     (propagated-inputs (list r-vars
@@ -2484,8 +2506,7 @@ spectral density operator in frequencies and along the curve length.")
     (synopsis "Functional Time Series Analysis")
     (description
      "This package provides functions for visualizing, modeling, forecasting and
-hypothesis testing of functional time series. \\n Jim\\'{e}nez-Var\\'{o}n, C., Sun,
-Y. and Shang, H. L. (2023) <@code{arXiv}: 2305.19749>.")
+hypothesis testing of functional time series.")
     (license license:gpl3)))
 
 (define-public r-ftrcool
@@ -4776,72 +4797,6 @@ Currently supports: gamma, power variance function, log-normal, and inverse
 Gaussian frailty models.")
     (license license:lgpl2.0)))
 
-(define-public r-frailtypack
-  (package
-    (name "r-frailtypack")
-    (version "3.5.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "frailtypack" version))
-              (sha256
-               (base32
-                "0yw08x6ss1af19zrm29i509gkjwmphg1hidxdfwkfgvrvcl4fnxz"))))
-    (properties `((upstream-name . "frailtypack")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-survival
-                             r-survc1
-                             r-statmod
-                             r-shiny
-                             r-rootsolve
-                             r-nlme
-                             r-mass
-                             r-doby
-                             r-boot))
-    (native-inputs (list r-knitr gfortran))
-    (home-page "https://cran.r-project.org/package=frailtypack")
-    (synopsis
-     "Shared, Joint (Generalized) Frailty Models; Surrogate Endpoints")
-    (description
-     "The following several classes of frailty models using a penalized likelihood
-estimation on the hazard function but also a parametric estimation can be fit
-using this R package: 1) A shared frailty model (with gamma or log-normal
-frailty distribution) and Cox proportional hazard model.  Clustered and
-recurrent survival times can be studied.  2) Additive frailty models for
-proportional hazard models with two correlated random effects (intercept random
-effect with random slope).  3) Nested frailty models for hierarchically
-clustered data (with 2 levels of clustering) by including two iid gamma random
-effects.  4) Joint frailty models in the context of the joint modelling for
-recurrent events with terminal event for clustered data or not.  A joint frailty
-model for two semi-competing risks and clustered data is also proposed.  5)
-Joint general frailty models in the context of the joint modelling for recurrent
-events with terminal event data with two independent frailty terms.  6) Joint
-Nested frailty models in the context of the joint modelling for recurrent events
-with terminal event, for hierarchically clustered data (with two levels of
-clustering) by including two iid gamma random effects.  7) Multivariate joint
-frailty models for two types of recurrent events and a terminal event.  8) Joint
-models for longitudinal data and a terminal event.  9) Trivariate joint models
-for longitudinal data, recurrent events and a terminal event.  10) Joint frailty
-models for the validation of surrogate endpoints in multiple randomized clinical
-trials with failure-time endpoints with the possibility to use a mediation
-analysis model.  11) Conditional and Marginal two-part joint models for
-longitudinal semicontinuous data and a terminal event.  12) Joint frailty-copula
-models for the validation of surrogate endpoints in multiple randomized clinical
-trials with failure-time endpoints.  13) Generalized shared and joint frailty
-models for recurrent and terminal events.  Proportional hazards (PH), additive
-hazard (AH), proportional odds (PO) and probit models are available in a fully
-parametric framework.  For PH and AH models, it is possible to consider
-type-varying coefficients and flexible semiparametric hazard function.
-Prediction values are available (for a terminal event or for a new recurrent
-event).  Left-truncated (not for Joint model), right-censored data,
-interval-censored data (only for Cox proportional hazard and shared frailty
-model) and strata are allowed.  In each model, the random effects have the gamma
-or normal distribution.  Now, you can also consider time-varying covariates
-effects in Cox, shared and joint frailty models (1-5).  The package includes
-concordance measures for Cox proportional hazards models and for shared frailty
-models.  Moreover, the package can be used with its shiny application, in a
-local mode or by following the link below.")
-    (license license:gpl2+)))
-
 (define-public r-frailtymmpen
   (package
     (name "r-frailtymmpen")
@@ -6152,6 +6107,53 @@ Regression Analysis, First Edition.  New York: Springer.")
      "This package provides a collection of fortunes from the R community.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-fortls
+  (package
+    (name "r-fortls")
+    (version "1.3.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "FORTLS" version))
+              (sha256
+               (base32
+                "00qjp916zqjj9w42bmlb7s72dcyrimg16545p9f0rsmlyiy8qs6n"))))
+    (properties `((upstream-name . "FORTLS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vroom
+                             r-voxr
+                             r-tidyr
+                             r-sf
+                             r-scales
+                             r-rcsf
+                             r-rcppeigen
+                             r-rcpp
+                             r-raster
+                             r-progress
+                             r-plotly
+                             r-moments
+                             r-lidr
+                             r-htmlwidgets
+                             r-distance
+                             r-dbscan
+                             r-data-table
+                             r-circular))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Molina-Valero/FORTLS")
+    (synopsis
+     "Automatic Processing of Terrestrial-Based Technologies Point Cloud Data for Forestry Purposes")
+    (description
+     "Process automation of point cloud data derived from terrestrial-based
+technologies such as Terrestrial Laser Scanner (TLS) or Simultaneous
+Localization and Mapping (SLAM).  FORTLS enables (i) detection of trees and
+estimation of tree-level attributes (e.g. diameters and heights), (ii)
+estimation of stand-level variables (e.g. density, basal area, mean and dominant
+height), (iii) computation of metrics related to important forest attributes
+estimated in Forest Inventories at stand-level, and (iv) optimization of plot
+design for combining TLS data and field measured data.  Documentation about
+FORTLS is described in Molina-Valero et al. (2022,
+<doi:10.1016/j.envsoft.2022.105337>).")
+    (license license:gpl3)))
+
 (define-public r-forstringr
   (package
     (name "r-forstringr")
@@ -6179,13 +6181,13 @@ packages such as dplyr and tidyr'.")
 (define-public r-forsearch
   (package
     (name "r-forsearch")
-    (version "4.0.0")
+    (version "4.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "forsearch" version))
               (sha256
                (base32
-                "1wng22h9zifcri0488kx859b0z7mmd44zlq6d9w0a01ysl7iz6i2"))))
+                "10r48all8db7s5v4q5xmcmhwz46q00hbvp2lgf9g6jsfqnplq5rb"))))
     (properties `((upstream-name . "forsearch")))
     (build-system r-build-system)
     (inputs (list gmp))
@@ -8061,13 +8063,13 @@ multivariate data sets of financial returns.")
 (define-public r-fmtr
   (package
     (name "r-fmtr")
-    (version "1.5.9")
+    (version "1.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fmtr" version))
               (sha256
                (base32
-                "0n62jrbxpb82d6rnbf6qxi8971cn0ywfl43r1d47j6dmjbl0dhq8"))))
+                "1294qzarkj5v4kcjw4px763c34gywgm1q4v7py8sh7ik2c2sg86g"))))
     (properties `((upstream-name . "fmtr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-rcpp r-crayon r-common))
@@ -10128,13 +10130,13 @@ dataframes to XML.")
 (define-public r-flattabler
   (package
     (name "r-flattabler")
-    (version "2.0.0")
+    (version "2.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "flattabler" version))
               (sha256
                (base32
-                "0yqxm1d4n2g98101xa79qg1i8mfkrc5d81wlv80mpxwdq4xsqfkz"))))
+                "10jii2xl100fjawhz9qlwnj2b3fa9pfipc8jli4qa03f1w3n7xmp"))))
     (properties `((upstream-name . "flattabler")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-stringr r-readxl r-dplyr))
@@ -12366,27 +12368,6 @@ viewer pane, included in a R Markdown document or in a Shiny app.  Also provides
 a Shiny application allowing to run the widget and to navigate in the results.")
     (license license:gpl3)))
 
-(define-public r-findallroots
-  (package
-    (name "r-findallroots")
-    (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "FindAllRoots" version))
-              (sha256
-               (base32
-                "0n4wfm21qj5zn06jqnzxa0w9mfn18dqi6hk1jjqa56dxqw1k7vw0"))))
-    (properties `((upstream-name . "FindAllRoots")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=FindAllRoots")
-    (synopsis
-     "Find all root(s) of the equation and Find root(s) of the equation by dichotomy")
-    (description
-     "Find all root(s) of the equation,including complex roots;Find root(s) of the
-equation by dichotomy.Besides,in dichotomy, more than one interval can be given
-at a time.")
-    (license license:gpl2+)))
-
 (define-public r-fincovregularization
   (package
     (name "r-fincovregularization")
@@ -14080,13 +14061,13 @@ scale changes and that common pitfalls are avoided.")
 (define-public r-fflr
   (package
     (name "r-fflr")
-    (version "2.1.0")
+    (version "2.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fflr" version))
               (sha256
                (base32
-                "0982h1r2hjn54xvnkxn999r4hlgxm6c1xw98hvnpa4zhk7959wsw"))))
+                "0bwifa7xmc9hnkjc3ddxq1hz4w46v7ii4c7vagzkdslp2k0877g9"))))
     (properties `((upstream-name . "fflr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-jsonlite r-httr))
@@ -14194,13 +14175,13 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
 (define-public r-fetch
   (package
     (name "r-fetch")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fetch" version))
               (sha256
                (base32
-                "06jwa4rkjkiylqfnkvvvk2g72m8889hm8w2rk36ggji0vy2cdywz"))))
+                "1q1rwfk4j8fvgxjhjpzdg6d0klcd39g55lcwhaznsj66ixwib84i"))))
     (properties `((upstream-name . "fetch")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -15606,6 +15587,35 @@ al., 2011 <@code{arXiv:1103.3817>} and Tucker et al., 2014
 of functional data through phase and amplitude separation.")
     (license license:gpl3)))
 
+(define-public r-fdasp
+  (package
+    (name "r-fdasp")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "fdaSP" version))
+              (sha256
+               (base32
+                "0c8mlw0q3f0qa5inj6bxdshfl04hx6jpfqhwn2nk87y2y9239m4y"))))
+    (properties `((upstream-name . "fdaSP")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rdpack
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-pracma
+                             r-ks
+                             r-foreach
+                             r-doparallel))
+    (home-page "https://cran.r-project.org/package=fdaSP")
+    (synopsis "Sparse Functional Data Analysis Methods")
+    (description
+     "This package provides algorithms to fit linear regression models under several
+popular penalization techniques and functional linear regression models based on
+Majorizing-Minimizing (MM) and Alternating Direction Method of Multipliers
+(ADMM) techniques.  See Boyd et al (2010) <doi:10.1561/2200000016> for complete
+introduction to the method.")
+    (license license:gpl3+)))
+
 (define-public r-fdapoifd
   (package
     (name "r-fdapoifd")
@@ -15806,13 +15816,13 @@ years and can be seen as historical records of weather and climate.")
 (define-public r-fdamixed
   (package
     (name "r-fdamixed")
-    (version "0.6")
+    (version "0.6.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fdaMixed" version))
               (sha256
                (base32
-                "0hyhb67qvvhyq68k5h4ffvsl4lmw66nfy5l14kwxnn42h3b810sc"))))
+                "1fv5jdz7ri9cf5wj0p0gdc60r75biifijqr1g3lz095cxsn7f9j0"))))
     (properties `((upstream-name . "fdaMixed")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-formula))
@@ -15823,7 +15833,7 @@ years and can be seen as historical records of weather and climate.")
 model framework.  Matrix computation are approximated by semi-explicit operator
 equivalents with linear computational complexity.  Markussen (2013)
 <doi:10.3150/11-BEJ389>.")
-    (license license:gpl2)))
+    (license license:gpl3+)))
 
 (define-public r-fdadensity
   (package
@@ -18166,6 +18176,40 @@ and discussed in the preprint available from Researchgate by Simone R. (2020)
 <https://tinyurl.com/vvk563e>.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-fastcpd
+  (package
+    (name "r-fastcpd")
+    (version "0.6.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "fastcpd" version))
+              (sha256
+               (base32
+                "089n7qysw05yd09aqwqn5lkz81zg4a83mr01wypr4xqxy65avrmb"))))
+    (properties `((upstream-name . "fastcpd")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-testthat
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-matrix
+                             r-glmnet
+                             r-fastglm
+                             r-desctools))
+    (home-page "https://fastcpd.xingchi.li")
+    (synopsis "Fast Change Point Detection via Sequential Gradient Descent")
+    (description
+     "This package implements fast change point detection algorithm based on the paper
+\"Sequential Gradient Descent and Quasi-Newton's Method for Change-Point
+Analysis\" by Xianyang Zhang, Trisha Dawn
+<https://proceedings.mlr.press/v206/zhang23b.html>.  The algorithm is based on
+dynamic programming with pruning and sequential gradient descent.  It is able to
+detect change points a magnitude faster than the vanilla Pruned Exact Linear
+Time(PELT).  The package includes examples of linear regression, logistic
+regression, Poisson regression, penalized linear regression data, and whole lot
+more examples with custom cost function in case the user wants to use their own
+cost function.")
+    (license license:gpl3+)))
+
 (define-public r-fastcox
   (package
     (name "r-fastcox")
@@ -19933,13 +19977,13 @@ it easier to construct function factories.")
 (define-public r-factorstochvol
   (package
     (name "r-factorstochvol")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "factorstochvol" version))
               (sha256
                (base32
-                "0wf3rng4fsi22z7qbqqvn74wwymr1ga2qimjlly63yg78lv676ca"))))
+                "1xa7x47db36i04xk0fd5y6mhhzj5p363xdm5rfjq6bzcmwv5pj4z"))))
     (properties `((upstream-name . "factorstochvol")))
     (build-system r-build-system)
     (propagated-inputs (list r-stochvol r-rcpparmadillo r-rcpp r-gigrvg
@@ -20165,13 +20209,13 @@ result as a report document (Word, PDF or HTML).")
 (define-public r-factoclass
   (package
     (name "r-factoclass")
-    (version "1.2.7")
+    (version "1.2.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FactoClass" version))
               (sha256
                (base32
-                "0hvlr9cw6wfckl8rzl5qqyp0h8rv8gcnyj6x930jq7h44kj0ji7d"))))
+                "0w20nrhaky2lj9z2if59fppim5063962xv2yl76g28xqgc6rmymq"))))
     (properties `((upstream-name . "FactoClass")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable

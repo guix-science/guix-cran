@@ -205,13 +205,13 @@ Vanderwaal and Herbert Ssegane (2013) <doi:10.1111/jawr.12089>.")
 (define-public r-hypr
   (package
     (name "r-hypr")
-    (version "0.2.3")
+    (version "0.2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hypr" version))
               (sha256
                (base32
-                "08aga0cpmlq550f0k9gzfxgnwg9k5n8d7jcmvzz4k8bq2i3cnysk"))))
+                "05lm56c845rcx5rfq8czbxavvl0jvy7j2gdmdnjdl2glkcnpid69"))))
     (properties `((upstream-name . "hypr")))
     (build-system r-build-system)
     (propagated-inputs (list r-pracma r-matrix r-mass r-magrittr r-cli))
@@ -337,13 +337,13 @@ model analysis.")
 (define-public r-hypervolume
   (package
     (name "r-hypervolume")
-    (version "3.1.1")
+    (version "3.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hypervolume" version))
               (sha256
                (base32
-                "0zkax7mawbd8sjdlvcg5nad5ayzxmhkv0r1mq76na4yv0k98iqqx"))))
+                "03x5zf1w44m5xb255lg4mwg98sr2cl4wvy7wb13lpk098w71q2id"))))
     (properties `((upstream-name . "hypervolume")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -1378,6 +1378,31 @@ toxicity well and leads to a recommended dose closer to the true maximum
 tolerated dose (MTD) due to its ability to calibrate for an intermediate dose.
 More details can be found in Liao et al.  2022 <doi:10.1002/ijc.34203>.")
     (license license:gpl3)))
+
+(define-public r-hwwntest
+  (package
+    (name "r-hwwntest")
+    (version "1.3.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "hwwntest" version))
+              (sha256
+               (base32
+                "1j6lpbrf3jp3nrz9m0s74inkr2ww4g8ajz30qjhlfwmacww0hdsg"))))
+    (properties `((upstream-name . "hwwntest")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-wavethresh r-polynom))
+    (home-page "https://cran.r-project.org/package=hwwntest")
+    (synopsis "Tests of White Noise using Wavelets")
+    (description
+     "This package provides methods to test whether time series is consistent with
+white noise.  Two new tests based on Haar wavelets and general wavelets
+described by Nason and Savchev (2014) <doi:10.1002/sta4.69> are provided and,
+for comparison purposes this package also implements the B test of Bartlett
+(1967) <doi:10.2307/2333850>.  Functionality is provided to compute an
+approximation to the theoretical power of the general wavelet test in the case
+of general ARMA alternatives.")
+    (license license:gpl2)))
 
 (define-public r-hwsdr
   (package
@@ -5557,13 +5582,13 @@ suitable for mapping, quantitative analysis, and network analysis.")
 (define-public r-historicalborrowlong
   (package
     (name "r-historicalborrowlong")
-    (version "0.0.6")
+    (version "0.0.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "historicalborrowlong" version))
               (sha256
                (base32
-                "087057dzjhsa8k0z8lzppn0xglms070bfz20mgb0ginwyypkf912"))))
+                "0ynf6sb850i01fwxj1pnha8q8n1qmmf7r0jkmz4azm5pblf12fg0"))))
     (properties `((upstream-name . "historicalborrowlong")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -6061,24 +6086,27 @@ modelling and forecasting, not for planning your flight!")
 (define-public r-hima
   (package
     (name "r-hima")
-    (version "2.2.0")
+    (version "2.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "HIMA" version))
               (sha256
                (base32
-                "1wv3lp9bzzj0hdbaql1c9k82icfs6jr5dlicfw4d8dmv1h5n610a"))))
+                "0r9dr3dvav8m8sxk84fm6m8y7fvsbd6dfblma17vizvslxpi5vwm"))))
     (properties `((upstream-name . "HIMA")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
+                             r-quantreg
                              r-ncvreg
                              r-mass
                              r-iterators
                              r-hommel
                              r-hdmt
+                             r-hdi
                              r-glmnet
                              r-foreach
-                             r-doparallel))
+                             r-doparallel
+                             r-conquer))
     (home-page "https://github.com/YinanZheng/HIMA/")
     (synopsis "High-Dimensional Mediation Analysis")
     (description
@@ -10038,21 +10066,48 @@ forecast.  The methods are explained in detail in Adaemmer et al. (2023)
 <doi:10.2139/ssrn.4342487>.")
     (license license:gpl2+)))
 
+(define-public r-hdf5r-extra
+  (package
+    (name "r-hdf5r-extra")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "hdf5r.Extra" version))
+              (sha256
+               (base32
+                "1h70ai0vz8nkhqbxyzzhpkzgp651vmcbygh6mz25vy7aidw981f8"))))
+    (properties `((upstream-name . "hdf5r.Extra")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang
+                             r-matrixextra
+                             r-matrix
+                             r-hdf5r
+                             r-easy-utils
+                             r-dplyr
+                             r-checkmate))
+    (home-page "https://github.com/ycli1995/hdf5r.Extra")
+    (synopsis "Extensions for 'HDF5' R Interfaces")
+    (description
+     "Some methods to manipulate HDF5 files, extending the hdf5r package.  Reading and
+writing R objects to HDF5 formats follow the specification of @code{AnnData}
+<https://anndata.readthedocs.io/en/latest/fileformat-prose.html>.")
+    (license license:expat)))
+
 (define-public r-hddplot
   (package
     (name "r-hddplot")
-    (version "0.59")
+    (version "0.59-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hddplot" version))
               (sha256
                (base32
-                "18llkpawm12cjxlcrlra60m16virfpjqiaqkvy9mb3wq1zif61rh"))))
+                "1q7mz7yxb4qvprj431kxv46cf9myckkycfbi6nzbkqw8mpwg02qy"))))
     (properties `((upstream-name . "hddplot")))
     (build-system r-build-system)
     (propagated-inputs (list r-multtest r-mass))
     (native-inputs (list r-knitr))
-    (home-page "http://maths-people.anu.edu.au/~johnm/")
+    (home-page "https://github.com/jhmaindonald/hddplot")
     (synopsis
      "Use Known Groups in High-Dimensional Data to Derive Scores for Plots")
     (description
@@ -10656,33 +10711,6 @@ Nine-dotted line, South Tibet, Hong Kong, Macao and Taiwan.")
 analysis method.  See Gasparyan SB et al (2022)
 <doi:10.1007/s43441-022-00420-1>.")
     (license license:expat)))
-
-(define-public r-hcci
-  (package
-    (name "r-hcci")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hcci" version))
-              (sha256
-               (base32
-                "11piy1ajg3j3dbh66szzf7lhc3x28fz75ai39vlx0gl5nc2v5zs5"))))
-    (properties `((upstream-name . "hcci")))
-    (build-system r-build-system)
-    (home-page "http://www.r-project.org")
-    (synopsis
-     "Interval estimation for the parameters of linear models with heteroskedasticity (Wild Bootstrap)")
-    (description
-     "This package calculates the interval estimates for the parameters of linear
-models heteroscedastic regression using bootstrap - (Wild Bootstrap) and double
-bootstrap-t (Wild Bootstrap).  It is also possible to calculate confidence
-intervals using the percentile bootstrap and percentile bootstrap double.  It is
-possible to calculate consistent estimates of the covariance matrix of the
-parameters of linear regression models with heteroskedasticity of unknown form.
-The package also provides function to calculate consistently the covariance
-matrix of the parameters of linear models with heteroskedasticity of unknown
-form.")
-    (license license:gpl2+)))
 
 (define-public r-hcandersenr
   (package

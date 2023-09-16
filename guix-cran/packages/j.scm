@@ -2166,6 +2166,28 @@ results using the RStudio Jobs GUI or to test code in a clean environment.  Two
 RStudio Addins can be used to run selected code as a job.")
     (license license:expat)))
 
+(define-public r-jnplots
+  (package
+    (name "r-jnplots")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "JNplots" version))
+              (sha256
+               (base32
+                "0k46y9gi02m9z58qny1r0fa76nriw0llz9dc62x9vvy1x3qayw2j"))))
+    (properties `((upstream-name . "JNplots")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scales r-nlme r-ape))
+    (home-page "https://github.com/kenstoyama/JNplots")
+    (synopsis "Visualize Outputs from the 'Johnson-Neyman' Technique")
+    (description
+     "Aids in the calculation and visualization of regions of non-significance using
+the Johnson-Neyman technique and its extensions as described by Bauer and Curran
+(2005) <doi:10.1207/s15327906mbr4003_5> to assess the influence of categorical
+and continuous moderators.  Allows correcting for phylogenetic relatedness.")
+    (license license:expat)))
+
 (define-public r-jmvreadwrite
   (package
     (name "r-jmvreadwrite")
@@ -2632,6 +2654,48 @@ package allows the creation and manipulation of full, sparse and symmetric
 matrices of any standard data type.")
     (license license:gpl2+)))
 
+(define-public r-jmastats
+  (package
+    (name "r-jmastats")
+    (version "0.2.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "jmastats" version))
+              (sha256
+               (base32
+                "1x9x9wpmjjaxq4rk9m6mlkydpmsxc9y68cqnp4viajghhjmabvqz"))))
+    (properties `((upstream-name . "jmastats")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-units
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-sf
+                             r-rvest
+                             r-rlang
+                             r-readr
+                             r-rappdirs
+                             r-purrr
+                             r-lubridate
+                             r-lifecycle
+                             r-ggplot2
+                             r-forcats
+                             r-dplyr
+                             r-crayon
+                             r-cli))
+    (home-page "https://github.com/uribo/jmastats")
+    (synopsis "Download Weather Data from Japan Meteorological Agency Website")
+    (description
+     "This package provides features that allow users to download weather data
+published by the Japan Meteorological Agency (JMA) website
+(<https://www.jma.go.jp/jma/index.html>).  The data includes information dating
+back to 1976 and aligns with the categories available on the website.
+Additionally, users can process the best track data of typhoons and easily
+handle earthquake record files.")
+    (license license:expat)))
+
 (define-public r-jm
   (package
     (name "r-jm")
@@ -2679,17 +2743,18 @@ estimation.  See Saulnier et al, 2021 <@code{arXiv:2110.02612>}.")
 (define-public r-jlmerclusterperm
   (package
     (name "r-jlmerclusterperm")
-    (version "1.0.4")
+    (version "1.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jlmerclusterperm" version))
               (sha256
                (base32
-                "0h5qf99r0aak949114j9bn56pa354wqy56c8m343if1fwihliiis"))))
+                "1g3mwfdw0pgnj4n3myjwvg2jrzyzbs7c008qm7npw4ys7ckmxzsn"))))
     (properties `((upstream-name . "jlmerclusterperm")))
     (build-system r-build-system)
     (inputs (list julia))
-    (propagated-inputs (list r-lme4 r-juliaconnector r-generics r-cli))
+    (propagated-inputs (list r-lme4 r-juliaconnector r-generics r-cli
+                             r-backports))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/yjunechoe/jlmerclusterperm")
     (synopsis

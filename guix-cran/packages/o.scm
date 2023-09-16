@@ -2067,13 +2067,13 @@ bundle.")
 (define-public r-ormplot
   (package
     (name "r-ormplot")
-    (version "0.3.5")
+    (version "0.3.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ormPlot" version))
               (sha256
                (base32
-                "1q9jhg1r815llrz12gdxmdqb4x11kk3ph3pp41da72969hsiw73l"))))
+                "0fr1g2lkzc50y79f1czkagcavnq1kfmk6qxg05gqj07jc66mvici"))))
     (properties `((upstream-name . "ormPlot")))
     (build-system r-build-system)
     (propagated-inputs (list r-rms r-gtable r-ggplot2))
@@ -2928,6 +2928,37 @@ the sample size.  These models have been described in Zhang and Archer (2021)
     (description
      "Calculates ordinated diet breadth with some plotting functions.")
     (license license:gpl3+)))
+
+(define-public r-ordgam
+  (package
+    (name "r-ordgam")
+    (version "0.9.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ordgam" version))
+              (sha256
+               (base32
+                "0flldxv53qyiprq44670b4b98i791si3nmi983pgkzd8s39aa68l"))))
+    (properties `((upstream-name . "ordgam")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ucminf
+                             r-sn
+                             r-numderiv
+                             r-mgcv
+                             r-matrix
+                             r-mass
+                             r-marqlevalg
+                             r-cubicbsplines))
+    (home-page "<https://github.com/plambertULiege/ordgam>")
+    (synopsis "Additive Model for Ordinal Data using Laplace P-Splines")
+    (description
+     "Additive proportional odds model for ordinal data using Laplace P-splines.  The
+combination of Laplace approximations and P-splines enable fast and flexible
+inference in a Bayesian framework.  Specific approximations are proposed to
+account for the asymmetry in the marginal posterior distributions of
+non-penalized parameters.  For more details, see Lambert and Gressani (2023)
+<doi:10.1177/1471082X231181173> ; Preprint: <@code{arXiv:2210.01668>}).")
+    (license license:gpl3)))
 
 (define-public r-ordfacreg
   (package
@@ -4430,17 +4461,16 @@ a Shiny application for observing the effects of different strata splits.")
 (define-public r-optimalgoldstandarddesigns
   (package
     (name "r-optimalgoldstandarddesigns")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "OptimalGoldstandardDesigns" version))
               (sha256
                (base32
-                "19nc1ljj63bivbmfvkm7z89v8b1fp59ya0j8kip3b6sa1yrj6j6p"))))
+                "1rw3syj5wb1v8ryqc9vkchi62pf02460f5i5zapq2azgfg99l66y"))))
     (properties `((upstream-name . "OptimalGoldstandardDesigns")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
-                             r-scales
                              r-rdpack
                              r-nloptr
                              r-mvtnorm
@@ -5379,13 +5409,13 @@ network).")
 (define-public r-openspecy
   (package
     (name "r-openspecy")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "OpenSpecy" version))
               (sha256
                (base32
-                "1ysd5v0fcpg8ir14mzb0pphyig6afxrlr9vb6vblm5gwvbls69ix"))))
+                "1dsxaqi1z2mjl5wd3zd844gxkcx8x8sp5wr71mmmh0whb0d79zbh"))))
     (properties `((upstream-name . "OpenSpecy")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -5853,13 +5883,13 @@ in R.")
 (define-public r-openebgm
   (package
     (name "r-openebgm")
-    (version "0.8.3")
+    (version "0.9.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "openEBGM" version))
               (sha256
                (base32
-                "120lp7fy6abj6f8g6naq4018d0dfzz6bq3dlh0xdhd4iclb7pplv"))))
+                "19q5xlvgc91mcr6sjzppgkmvdlfb6cr7rs952i2yys3w7ylwk3bj"))))
     (properties `((upstream-name . "openEBGM")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2 r-data-table))
@@ -5870,18 +5900,17 @@ in R.")
     (description
      "An implementation of @code{DuMouchel's} (1999)
 <doi:10.1080/00031305.1999.10474456> Bayesian data mining method for the market
-basket problem.  Calculates Empirical Bayes Geometric Mean (EBGM) and quantile
-scores from the posterior distribution using the Gamma-Poisson Shrinker (GPS)
-model to find unusually large cell counts in large, sparse contingency tables.
-Can be used to find unusually high reporting rates of adverse events associated
-with products.  In general, can be used to mine any database where the
-co-occurrence of two variables or items is of interest.  Also calculates
-relative and proportional reporting ratios.  Builds on the work of the
-@code{PhViD} package, from which much of the code is derived.  Some of the added
-features include stratification to adjust for confounding variables and data
-squashing to improve computational efficiency.  Now includes an implementation
-of the EM algorithm for hyperparameter estimation loosely derived from the
-@code{mederrRank} package.")
+basket problem.  Calculates Empirical Bayes Geometric Mean (EBGM) and posterior
+quantile scores using the Gamma-Poisson Shrinker (GPS) model to find unusually
+large cell counts in large, sparse contingency tables.  Can be used to find
+unusually high reporting rates of adverse events associated with products.  In
+general, can be used to mine any database where the co-occurrence of two
+variables or items is of interest.  Also calculates relative and proportional
+reporting ratios.  Builds on the work of the @code{PhViD} package, from which
+much of the code is derived.  Some of the added features include stratification
+to adjust for confounding variables and data squashing to improve computational
+efficiency.  Includes an implementation of the EM algorithm for hyperparameter
+estimation loosely derived from the @code{mederrRank} package.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-opendotar
@@ -7763,13 +7792,13 @@ modify its graphical elements with a suite of transform functions.")
 (define-public r-ompr-roi
   (package
     (name "r-ompr-roi")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ompr.roi" version))
               (sha256
                (base32
-                "0hgqanpijc31vlj3cnwx2fkr6i5y5wrl0ib7nxcz2pz1yb3gxwbg"))))
+                "1w0cyw5ixkri8523vdcfrlaf49farhgdf1bxiizwk5gppb3w5ibl"))))
     (properties `((upstream-name . "ompr.roi")))
     (build-system r-build-system)
     (propagated-inputs (list r-slam r-roi r-ompr r-matrix))
@@ -7787,13 +7816,13 @@ and examples on how to use it.")
 (define-public r-ompr
   (package
     (name "r-ompr")
-    (version "1.0.3")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ompr" version))
               (sha256
                (base32
-                "01ph26d4lxvmzmb9lhc8rn235crpcc4xcag8wfrsxcv7r0jz6wka"))))
+                "02glc09yrdvwls0i8ik1wh6fp3qa9ry55xd3yy3xk0rav8r3hcj3"))))
     (properties `((upstream-name . "ompr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -10061,6 +10090,36 @@ model-based clustering using methods described in Clark and @code{McNicholas}
 k-means clustering (Steinley and Hubert, 2008, <doi:10.1007/s11336-008-9058-z>).")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-ocf
+  (package
+    (name "r-ocf")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ocf" version))
+              (sha256
+               (base32
+                "04d0j863a2zqj3v9s9iwlc4v7fxpp6cydpphxcfr6n22f8ciq5bd"))))
+    (properties `((upstream-name . "ocf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-rcppeigen
+                             r-rcpp
+                             r-ranger
+                             r-orf
+                             r-matrix
+                             r-glmnet))
+    (native-inputs (list r-knitr))
+    (home-page "https://riccardo-df.github.io/ocf/")
+    (synopsis "Ordered Correlation Forest")
+    (description
+     "Nonparametric estimator for ordered non-numeric outcomes.  The estimator
+modifies a standard random forest splitting criterion to build a collection of
+forests, each estimating the conditional probability of a single class.  The
+package also implements a nonparametric estimator of the covariatesâ marginal
+effects.")
+    (license license:gpl3)))
+
 (define-public r-ocedata
   (package
     (name "r-ocedata")
@@ -10152,24 +10211,29 @@ Waterway, Port, Coastal, and Ocean Division, Vol 105, pp 457-459.")
 (define-public r-oceanmap
   (package
     (name "r-oceanmap")
-    (version "0.1.1")
+    (version "0.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "oceanmap" version))
               (sha256
                (base32
-                "06h4yxqcn3rjr3m2n82w128z110a4k5rg6msrbd0gcqksxc4vd2v"))))
+                "1z80dsyk1r3xg8ag8ka74y0z7m608hpppjn62rclzy0nilyyx45q"))))
     (properties `((upstream-name . "oceanmap")))
     (build-system r-build-system)
     (inputs (list imagemagick))
     (propagated-inputs (list r-sp
+                             r-sf
+                             r-reshape2
                              r-raster
                              r-plotrix
+                             r-plotly
                              r-ncdf4
                              r-maptools
                              r-maps
                              r-mapdata
                              r-lubridate
+                             r-ggplot2
+                             r-ggedit
                              r-fields
                              r-extrafont
                              r-abind))

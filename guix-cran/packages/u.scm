@@ -1236,6 +1236,38 @@ the vignette \"Extracting and Unifying Semi-Elasticities and Effect Sizes from
 Studies with Binary Dependent Variables\" that is included in this package.")
     (license license:gpl2+)))
 
+(define-public r-ura
+  (package
+    (name "r-ura")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ura" version))
+              (sha256
+               (base32
+                "18gs49hcmii951f995ch1sbk69lpf458halff539l8birv26q70d"))))
+    (properties `((upstream-name . "ura")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-magrittr
+                             r-irr
+                             r-dplyr))
+    (home-page "https://github.com/bengoehring/ura")
+    (synopsis "Monitoring Rater Reliability")
+    (description
+     "This package provides researchers with a simple set of diagnostic tools for
+monitoring the progress and reliability of raters conducting content coding
+tasks.  Goehring (2023)
+<https://bengoehring.github.io/files/ps-paper-anon-word-ca.docx> argues that
+supervisors---especially supervisors of small teams---should utilize
+computational tools to monitor reliability in real time.  As such, this package
+provides easy-to-use functions for calculating inter-rater reliability
+statistics and measuring the reliability of one coder compared to the rest of
+the team.")
+    (license license:expat)))
+
 (define-public r-uptimerobot
   (package
     (name "r-uptimerobot")
@@ -2565,13 +2597,13 @@ then to a composition of integers as suggested by Kuipers, J. and Moffa, G.
 (define-public r-unicol
   (package
     (name "r-unicol")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "unicol" version))
               (sha256
                (base32
-                "1pffrjk1wzkjw7s0dj9bmxzzrs4vyp2a1bp5cyb83alkqgg057lb"))))
+                "0fxndcj3x60nv934xkxkc10ws7lah5rv8r264inqs1fbhqjrrln6"))))
     (properties `((upstream-name . "unicol")))
     (build-system r-build-system)
     (propagated-inputs (list r-unikn))
@@ -3993,13 +4025,13 @@ Pseudomonas aeruginosa for the drug class is fetched from the database.")
 (define-public r-ubms
   (package
     (name "r-ubms")
-    (version "1.2.5")
+    (version "1.2.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ubms" version))
               (sha256
                (base32
-                "148ai6n0w6k2kvh7m33wc5iyamqh1r9c05i5ivxi9lz0r0xcfl3z"))))
+                "10jr2nb8pq0rxx1h0zci4zybbj108maa5kdzgf9bj87pzsrxhda7"))))
     (properties `((upstream-name . "ubms")))
     (build-system r-build-system)
     (propagated-inputs (list r-unmarked

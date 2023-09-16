@@ -2385,13 +2385,13 @@ the method.")
 (define-public r-svrep
   (package
     (name "r-svrep")
-    (version "0.6.1")
+    (version "0.6.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "svrep" version))
               (sha256
                (base32
-                "06gc98iyybm0kj4kdn52nfymzb0ngws3jbh9kx81gpz0jxr2iqbq"))))
+                "1b36d4f7dd5hf1wxmkwpp7sz9sfykf492xakp0v1b3qsby8gcdbc"))))
     (properties `((upstream-name . "svrep")))
     (build-system r-build-system)
     (propagated-inputs (list r-survey r-mvtnorm r-matrix r-dbi))
@@ -3138,13 +3138,13 @@ those measures.")
 (define-public r-survregcenscov
   (package
     (name "r-survregcenscov")
-    (version "1.5")
+    (version "1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SurvRegCensCov" version))
               (sha256
                (base32
-                "0p39xqrnx2x0fgdfdr9ffv2x9zcgi53kqya821gpbnn3ccjzxx58"))))
+                "1b5jap0g8vqrx34azimb3gx6gh5pjghlzb0ldw97f33ljzpqn438"))))
     (properties `((upstream-name . "SurvRegCensCov")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-numderiv))
@@ -3185,13 +3185,13 @@ Lopez-de-Ullibarri and Jacome (2013) <doi:10.18637/jss.v054.i11>.")
 (define-public r-survpen
   (package
     (name "r-survpen")
-    (version "1.5.2")
+    (version "1.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "survPen" version))
               (sha256
                (base32
-                "1mmz7bbl1l0pkpgi8jqfdpq33yqa6c2442g3q7cqlyy1s7p1dcd9"))))
+                "1gihr41a7smq4ql52gah249g3q2zd5zf5qiwpbxi7imgfzkmbzza"))))
     (properties `((upstream-name . "survPen")))
     (build-system r-build-system)
     (propagated-inputs (list r-statmod r-rcppeigen r-rcpp))
@@ -3638,6 +3638,36 @@ and are detailed by Kvamme et al. (2019)
 Akritas (1994) <doi:10.1214/aos/1176325630>.  DNNSurv is defined in Zhao and
 Feng (2020) <@code{arXiv:1908.02337>}.")
     (license license:expat)))
+
+(define-public r-survivalclusteringtree
+  (package
+    (name "r-survivalclusteringtree")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "SurvivalClusteringTree" version))
+              (sha256
+               (base32
+                "1h5iwwlw1gh82laargp7pwpspc7jljzizpyv251gsgdjrms72p79"))))
+    (properties `((upstream-name . "SurvivalClusteringTree")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-gridtext
+                             r-formula-tools
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=SurvivalClusteringTree")
+    (synopsis "Clustering Analysis Using Survival Tree and Forest Algorithms")
+    (description
+     "An outcome-guided algorithm is developed to identify clusters of samples with
+similar characteristics and survival rate.  The algorithm first builds a random
+forest and then defines distances between samples based on the fitted random
+forest.  Given the distances, we can apply hierarchical clustering algorithms to
+define clusters.  Details about this method is described in
+<https://github.com/luyouepiusf/@code{SurvivalClusteringTree>}.")
+    (license license:gpl2+)))
 
 (define-public r-survivalanalysis
   (package
@@ -6714,27 +6744,6 @@ treatment effect.  And, a sample size calculation procedure for the subgroup
 detection test.")
     (license license:gpl3)))
 
-(define-public r-subcultcon
-  (package
-    (name "r-subcultcon")
-    (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "SubCultCon" version))
-              (sha256
-               (base32
-                "08q6k4nsv3gl5qk87s87smdg047yc2a4i7kg0fp08i7q7h62jkvz"))))
-    (properties `((upstream-name . "SubCultCon")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=SubCultCon")
-    (synopsis
-     "Maximum-Likelihood Cultural Consensus Analysis with Sub-Cultures")
-    (description
-     "The three functions in the package compute the maximum likelihood estimates of
-the informants competence scores, tests for two answer keys with known groups,
-and finds \"best\" split of the informants into sub-culture groups.")
-    (license (list license:gpl2 license:gpl3))))
-
 (define-public r-subcopem2d
   (package
     (name "r-subcopem2d")
@@ -8655,13 +8664,13 @@ are they related?\" by Yashin A. et al. (2007), Biogerontology 8(3), 291(302),
 (define-public r-stplanr
   (package
     (name "r-stplanr")
-    (version "1.0.2")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "stplanr" version))
               (sha256
                (base32
-                "0wp9vxv9z7qm6k5kmsilpdaabgmwx4r3hyr4bggjwrpcf0bd59x9"))))
+                "0n32d8916qkavaqr4016gnggyqrh75lndlvayl8qxq88lmjps2bf"))))
     (properties `((upstream-name . "stplanr")))
     (build-system r-build-system)
     (propagated-inputs (list r-sfheaders
@@ -10403,13 +10412,13 @@ that combines the L0 with L2 or L1 norms.")
 (define-public r-steppedpower
   (package
     (name "r-steppedpower")
-    (version "0.3.2")
+    (version "0.3.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SteppedPower" version))
               (sha256
                (base32
-                "1yjc4w98l3657vsmrwm27sw5p1wibl1py59x01kq4h1g24fpw65r"))))
+                "0y31685vs3h5irz5f3gmqayz9bwkra2w2vgj8774q93jicza1vmf"))))
     (properties `((upstream-name . "SteppedPower")))
     (build-system r-build-system)
     (propagated-inputs (list r-rfast r-plotly r-matrix))
@@ -10971,13 +10980,13 @@ shared frailty gamma-Weibull models.  Sjolander, A. (2016)
 (define-public r-stdmod
   (package
     (name "r-stdmod")
-    (version "0.2.8")
+    (version "0.2.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "stdmod" version))
               (sha256
                (base32
-                "0y10syprbxk5hqhjl39cmz6vbvg6pyzkvp9jdm96cxpdyk83c8dw"))))
+                "15ibmdz80pl2ch61c43ligrpm9pxhi7mind9dq2bv7m8b2488bdz"))))
     (properties `((upstream-name . "stdmod")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-manymome r-lavaan r-ggplot2 r-boot))
@@ -12472,13 +12481,13 @@ are also provided, see Luedtke, Robitzsch and Wagner (2018)
 (define-public r-startr
   (package
     (name "r-startr")
-    (version "2.2.3")
+    (version "2.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "startR" version))
               (sha256
                (base32
-                "0palkna71d80rdcm8laq75b387mldgzaqrfgxjjr19irp6n65q5m"))))
+                "19mx63231wkxkh79k6fgpw3bs2hcq7kmli4cvrw17ka3jq2b9l56"))))
     (properties `((upstream-name . "startR")))
     (build-system r-build-system)
     (propagated-inputs (list r-s2dv
@@ -12643,13 +12652,13 @@ Convergence Index, (5) calculating topographic aspect and topographic slope.")
 (define-public r-starschemar
   (package
     (name "r-starschemar")
-    (version "1.2.1")
+    (version "1.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "starschemar" version))
               (sha256
                (base32
-                "17xra5fx6fz8d0lmphhv5ijmn3nrhkndsfm1ygx4k703yr2shv2s"))))
+                "0988kzdf4082yppmph918rnrrb6ss6bqayalffdxjs4dw2h0nlc3"))))
     (properties `((upstream-name . "starschemar")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -12660,7 +12669,7 @@ Convergence Index, (5) calculating topographic aspect and topographic slope.")
                              r-generics
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/josesamos/starschemar")
+    (home-page "https://josesamos.github.io/starschemar/")
     (synopsis "Obtaining Stars from Flat Tables")
     (description
      "Data in multidimensional systems is obtained from operational systems and is
@@ -18291,13 +18300,13 @@ package.  Split Knockoffs is first defined in Cao et al. (2021)
 (define-public r-splithalfr
   (package
     (name "r-splithalfr")
-    (version "2.2.0")
+    (version "2.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "splithalfr" version))
               (sha256
                (base32
-                "1c3q7x4fipsym0gz22kgl75r594hylbcci3a76q3yp0zazjmxxhx"))))
+                "0zy7p2cvxbq2p24vyi55hl4qcj42igfbsapmx3xh15rpcdhzsmm0"))))
     (properties `((upstream-name . "splithalfr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-rlang r-psych r-dplyr r-bcaboot))
@@ -21835,13 +21844,13 @@ RDDs.")
 (define-public r-spatialposition
   (package
     (name "r-spatialposition")
-    (version "2.1.1")
+    (version "2.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SpatialPosition" version))
               (sha256
                (base32
-                "0p2ii6pwxqrywp7m3hql2js9211vx6jk8lz76cbkzaz1i1g1q90k"))))
+                "12xglqrw4mqdfshd325gicrd3gnrkiaj1i2p5mlpklhdciahv1pi"))))
     (properties `((upstream-name . "SpatialPosition")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-sf r-raster r-isoband))
@@ -24062,13 +24071,13 @@ of the American Statistical Association 105(490): 713-726.")
 (define-public r-spant
   (package
     (name "r-spant")
-    (version "2.14.0")
+    (version "2.15.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spant" version))
               (sha256
                (base32
-                "01j2xdvxf022varj7lykiyin90z6g9z2yr6402in3splmqs81r5k"))))
+                "0xl807fgh33w2rx4ys9yyla1gmgavk503jfhp6naydrx5c8i920p"))))
     (properties `((upstream-name . "spant")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -25298,13 +25307,13 @@ package is described in Guo G. (2022) <doi:10.1007/s00180-022-01270-z>.")
 (define-public r-sop
   (package
     (name "r-sop")
-    (version "1.0")
+    (version "1.0-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SOP" version))
               (sha256
                (base32
-                "1c9haq0ds90rwhvmdicaxhzf7vz2m343491sw9qw7w7fbs4fn9fp"))))
+                "1c2mgdsd0ah0xcxzd8pncwvvh4ilp04dfblsjvw51vnm7lc2akxq"))))
     (properties `((upstream-name . "SOP")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -27101,13 +27110,13 @@ of the @code{MfUSampler} can be obtained from the archive
 (define-public r-snpsettest
   (package
     (name "r-snpsettest")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "snpsettest" version))
               (sha256
                (base32
-                "0vfm09bff7l7z36lzwp0ndnlb230f0kg6dlbjlpk028xd1iy4if1"))))
+                "0djz39b59x3kd5albdwjsgvln1qbm9xfbbglbym87xc3924sbwqj"))))
     (properties `((upstream-name . "snpsettest")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-gaston r-data-table))
@@ -28069,13 +28078,13 @@ products can be found at <https://earth.esa.int/eogateway/missions/smos/data>.")
 (define-public r-smoots
   (package
     (name "r-smoots")
-    (version "1.1.3")
+    (version "1.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "smoots" version))
               (sha256
                (base32
-                "09a3f8prplzl7bsmfxbgni2bx4z3xsmx9sdr7jzmx3janlhlf6c5"))))
+                "1drlnh22gn6fdziplnja5w7gc5lyvpjq54aqqmwfh6h78ivcg0vs"))))
     (properties `((upstream-name . "smoots")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
@@ -28344,35 +28353,6 @@ the effects that each continuous covariate has on the outcome, results are ex
 pressed in terms of hazard ratio curves, taking a specific covariate value as
 reference.  Confidence bands for these curves are also derived.")
     (license license:gpl3)))
-
-(define-public r-smoothhazard
-  (package
-    (name "r-smoothhazard")
-    (version "2023.06.27")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "SmoothHazard" version))
-              (sha256
-               (base32
-                "1jigxihw7mw0ivbarjic5qjx4ky450ys8db4j0i5i4z6sv9nfqix"))))
-    (properties `((upstream-name . "SmoothHazard")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-prodlim r-mvtnorm r-lava))
-    (native-inputs (list gfortran))
-    (home-page "https://cran.r-project.org/package=SmoothHazard")
-    (synopsis
-     "Estimation of Smooth Hazard Models for Interval-Censored Data with Applications to Survival and Illness-Death Models")
-    (description
-     "Estimation of two-state (survival) models and irreversible illness- death models
-with possibly interval-censored,left-truncated and right-censored data.
-Proportional intensities regression models can be specified to allow for
-covariates effects separately for each transition.  We use either a parametric
-approach with Weibull baseline intensities or a semi-parametric approach with
-M-splines approximation of baseline intensities in order to obtain smooth
-estimates of the hazard functions.  Parameter estimates are obtained by maximum
-likelihood in the parametric approach and by penalized maximum likelihood in the
-semi-parametric approach.")
-    (license license:gpl2+)))
 
 (define-public r-smoothedlasso
   (package
@@ -33838,16 +33818,16 @@ Jones, Angela Brooks-Wilson, and Jinko Graham (2018) <doi:10.1101/234153>.")
 (define-public r-simriv
   (package
     (name "r-simriv")
-    (version "1.0.5")
+    (version "1.0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SiMRiv" version))
               (sha256
                (base32
-                "02b8y6fqlz8yrndkhjypmz2bg5abw435hzq668icrvf9s1a0r5fy"))))
+                "1xwbfwhmlmgsbrg0cfgn1yp8f29vzsga8sw7fyclsf76dx9sbmc6"))))
     (properties `((upstream-name . "SiMRiv")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp r-rgdal r-raster r-mco))
+    (propagated-inputs (list r-raster r-mco))
     (home-page "https://www.r-project.org")
     (synopsis
      "Simulating Multistate Movements in River/Heterogeneous Landscapes")
@@ -34913,13 +34893,13 @@ networks.")
 (define-public r-simmr
   (package
     (name "r-simmr")
-    (version "0.5.1.212")
+    (version "0.5.1.213")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "simmr" version))
               (sha256
                (base32
-                "1whjbclpdfkdsx99qzx42yl5cln9nl45qrri4ijkk3s6pyrikf6b"))))
+                "18x67qgbr703lrx8hcplvk1vgm4yjki70sy40bih3mx1ra1cy5zb"))))
     (properties `((upstream-name . "simmr")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -42656,39 +42636,6 @@ interactomics technologies, such as TAP-MS, Virotrap and @code{BioID}.  SFINX
 can also be used via the website interface at <http://sfinx.ugent.be>.")
     (license license:asl2.0)))
 
-(define-public r-sfhotspot
-  (package
-    (name "r-sfhotspot")
-    (version "0.7.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "sfhotspot" version))
-              (sha256
-               (base32
-                "0sccgnq0l6wnnsmpjz8ka62g28ffcsdl3zds6apz79yhacdvmgvj"))))
-    (properties `((upstream-name . "sfhotspot")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble
-                             r-spdep
-                             r-spatialkde
-                             r-sf
-                             r-rlang
-                             r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "http://pkgs.lesscrime.info/sfhotspot/")
-    (synopsis "Hot-Spot Analysis with Simple Features")
-    (description
-     "Identify and understand clusters of points (typically representing the locations
-of places or events) stored in simple-features (SF) objects.  This is useful for
-analysing, for example, hot-spots of crime events.  The package emphasises
-producing results from point SF data in a single step using reasonable default
-values for all other arguments, to aid rapid data analysis by users who are
-starting out.  Functions available include kernel density estimation (for
-details, see Yip (2020) <doi:10.22224/gistbok/2020.1.12>), analysis of spatial
-association (Getis and Ord (1992) <doi:10.1111/j.1538-4632.1992.tb00261.x>) and
-hot-spot classification (Chainey (2020) ISBN:158948584X).")
-    (license license:expat)))
-
 (define-public r-sfheaders
   (package
     (name "r-sfheaders")
@@ -43282,13 +43229,13 @@ weighted particles.")
 (define-public r-serpstatr
   (package
     (name "r-serpstatr")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "serpstatr" version))
               (sha256
                (base32
-                "1l7hj4npnggmg6fsk5lydg6vrad791hvmv9rhx7yb0nsa1pzi155"))))
+                "09yzxkwgargd42f0bngv6jzhd8arzbvwj2js7lb9yf7vhjq1xv5f"))))
     (properties `((upstream-name . "serpstatr")))
     (build-system r-build-system)
     (propagated-inputs (list r-httr))
@@ -47999,13 +47946,13 @@ seasonal package.")
 (define-public r-seasonalityplot
   (package
     (name "r-seasonalityplot")
-    (version "0.99.3")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "seasonalityPlot" version))
               (sha256
                (base32
-                "12z15qlvyj9rrljzqbhgh384x53qqylwmzias4bhx0k3hq2qvsrj"))))
+                "0yksbj2va950k5xzpjnpwchh5kdns09s4mh8qdgl8s8gli8hcjq5"))))
     (properties `((upstream-name . "seasonalityPlot")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -48014,7 +47961,7 @@ seasonal package.")
                              r-magrittr
                              r-htmltools
                              r-dygraphs))
-    (home-page "https://kumes.github.io/seasonalityPlot/")
+    (home-page "https://github.com/kumeS/seasonalityPlot")
     (synopsis
      "Seasonality Variation Plots of Stock Prices and Cryptocurrencies")
     (description
@@ -53367,6 +53314,27 @@ Causal Treatment Effect Estimates\".  Statistics in Medicine, 39(18): 2447- 2476
 <doi: 10.1002/sim.8549>.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-sbck
+  (package
+    (name "r-sbck")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "SBCK" version))
+              (sha256
+               (base32
+                "1z5svxa639245jmv3bsikmbch8j4j51d7rjwhj62zcaxhb3ykhcs"))))
+    (properties `((upstream-name . "SBCK")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-transport r-roopsd r-rcppeigen r-rcpp r-r6))
+    (home-page "https://github.com/yrobink/SBCK")
+    (synopsis "Statistical Bias Correction Kit")
+    (description
+     "Implementation of several recent multivariate bias correction methods with a
+unified interface to facilitate their use.  A description and comparison between
+methods can be found in <doi:10.5194/esd-11-537-2020>.")
+    (license license:gpl3)))
+
 (define-public r-sbagm
   (package
     (name "r-sbagm")
@@ -56055,13 +56023,13 @@ the charts using an interactive web-based interface created with Shiny.")
 (define-public r-safetensors
   (package
     (name "r-safetensors")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "safetensors" version))
               (sha256
                (base32
-                "17x3vqql7lrj5wy1l75343k228pflr17mz5rcf2j6xnp0s6npm98"))))
+                "0xvg5y2sd7gzcal0qqgxbx8vcvmy50jm0j2ajr8iw3wyy5qpyvkp"))))
     (properties `((upstream-name . "safetensors")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-r6 r-jsonlite r-cli))

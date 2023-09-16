@@ -627,27 +627,6 @@ identifying,labeling, selecting, and measuring spatial objects.  Importantly, it
 does not require that the data be in geographic coordinates.")
     (license license:cc0)))
 
-(define-public r-quickjsr
-  (package
-    (name "r-quickjsr")
-    (version "1.0.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "QuickJSR" version))
-              (sha256
-               (base32
-                "0lc9m4jsk8h51rk4biphjvl8z5n1r78zq16yzvw6rwj38fhp8dlp"))))
-    (properties `((upstream-name . "QuickJSR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-r6 r-jsonlite))
-    (home-page "https://cran.r-project.org/package=QuickJSR")
-    (synopsis "Interface for the 'QuickJS' Lightweight 'JavaScript' Engine")
-    (description
-     "An R interface to the @code{QuickJS} portable @code{JavaScript} engine.  The
-engine is bundled entirely within the package, requiring no external system
-dependencies beyond a C compiler.")
-    (license license:expat)))
-
 (define-public r-quickcode
   (package
     (name "r-quickcode")
@@ -1796,6 +1775,29 @@ for more information about the Qualtrics API. This package is
 community-maintained and is not officially supported by Qualtrics'.")
     (license license:expat)))
 
+(define-public r-qualpalr
+  (package
+    (name "r-qualpalr")
+    (version "0.4.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "qualpalr" version))
+              (sha256
+               (base32
+                "13mahl7v1sldy35ssmr9k0anhx569g1rv44kgvdw5w5s8dm28512"))))
+    (properties `((upstream-name . "qualpalr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-randtoolbox r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://jolars.github.io/qualpalr/")
+    (synopsis "Automatic Generation of Qualitative Color Palettes")
+    (description
+     "Automatic generation of maximally distinct qualitative color palettes,
+optionally tailored to color deficiency.  A list of colors or a subspace of a
+color space is used as input and then projected to the DIN99d color space, where
+colors that are maximally distinct are chosen algorithmically.")
+    (license license:gpl3)))
+
 (define-public r-qualmap
   (package
     (name "r-qualmap")
@@ -1907,21 +1909,22 @@ selection purpose (cross-validation, stability selection).")
 (define-public r-quadroot
   (package
     (name "r-quadroot")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "QuadRoot" version))
               (sha256
                (base32
-                "0p6d8s3qrynaky3xv7srh7qrpm6b0xrlq70m8gqsfddlgrvxl668"))))
+                "1ixh4ikp8pqa7py4di9fgmi5rhjgsvh57j2f59g6xdcyl068c3g6"))))
     (properties `((upstream-name . "QuadRoot")))
     (build-system r-build-system)
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=QuadRoot")
     (synopsis "Quadratic Root for any Quadratic Equation")
     (description
      "It will assist the user to find simple quadratic roots from any quadratic
 equation.")
-    (license license:gpl3)))
+    (license license:gpl2)))
 
 (define-public r-quadraticsd
   (package
@@ -3110,13 +3113,13 @@ individual measurements.")
 (define-public r-qreport
   (package
     (name "r-qreport")
-    (version "0.1.0")
+    (version "1.0-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "qreport" version))
               (sha256
                (base32
-                "1kkmv1029rgaxc65myr0yakdn56dwyrgs4qxsnml06ki3wbcvrxd"))))
+                "06ycxcs9kkx3m9f74bjvlj84jjp60wd0hjd40mgpir2559hqmqnb"))))
     (properties `((upstream-name . "qreport")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -3127,15 +3130,16 @@ individual measurements.")
                              r-ggplot2
                              r-formula
                              r-data-table))
-    (home-page "https://cran.r-project.org/package=qreport")
+    (home-page "https://hbiostat.org/R/qreport/")
     (synopsis "Statistical Reporting with 'Quarto'")
     (description
      "This package provides statistical components, tables, and graphs that are useful
 in Quarto and RMarkdown reports and that produce Quarto elements for special
 formatting such as tabs and marginal notes and graphs.  Some of the functions
 produce entire report sections with tabs, e.g., the missing data report created
-by @code{missChk}().  Special clinical trial graphics for adverse event
-reporting is also included.")
+by @code{missChk}().  Functions for inserting variables and tables inside
+graphviz and mermaid diagrams are included, and so are special clinical trial
+graphics for adverse event reporting.")
     (license license:gpl2+)))
 
 (define-public r-qrencoder

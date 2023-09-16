@@ -2487,13 +2487,13 @@ the number of individuals is large.  For the main ctsem package, see
 (define-public r-ctsem
   (package
     (name "r-ctsem")
-    (version "3.8.1")
+    (version "3.9.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ctsem" version))
               (sha256
                (base32
-                "0xdvaailg7zss6cw3qzkccqxhp6kzi0wdgvf56xh5p15bk26n8ph"))))
+                "1622b1mgf0dxp53n1957y00hdbwic3mvixb213270sh59k21bzfl"))))
     (properties `((upstream-name . "ctsem")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -3162,13 +3162,13 @@ equally sized groups, and the unnesting of data.frames within fully named lists.
 (define-public r-csurvey
   (package
     (name "r-csurvey")
-    (version "1.7")
+    (version "1.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "csurvey" version))
               (sha256
                (base32
-                "0773535dfnpgcifg3wd66rblj3lzbrgkbqj4m6xnxa4q5l3j0j4q"))))
+                "06y6vqk5dx8lbgngfhblxpm77dmm38v2i6pdrl195qsmpm0ih93j"))))
     (properties `((upstream-name . "csurvey")))
     (build-system r-build-system)
     (propagated-inputs (list r-survey
@@ -5965,13 +5965,13 @@ Database <https://osf.io/zyaqn/>.")
 (define-public r-crimcv
   (package
     (name "r-crimcv")
-    (version "0.9.6")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "crimCV" version))
               (sha256
                (base32
-                "14ckk88i7jk8a7kl51d7qfdis44jng6zz9zd72cdp80a57dvrvzq"))))
+                "0jj1m0f65pp7w6ml4dwj73y2n9q02nizp5jqi9ph7klk8x069hzk"))))
     (properties `((upstream-name . "crimCV")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -6422,18 +6422,19 @@ Interpretable Discovery and Inference of Heterogeneous Treatment Effects.
 (define-public r-crctstepdown
   (package
     (name "r-crctstepdown")
-    (version "0.2.1")
+    (version "0.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "crctStepdown" version))
               (sha256
                (base32
-                "1v6r0w9wrwa7hwyyhzdybv1mshdw3wxa098mbn48101dhhy75945"))))
+                "0kac3mj3zyhz2dpvdv4x4c5y4p4iavkawifjnnbapbf65jm2wi9b"))))
     (properties `((upstream-name . "crctStepdown")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
-                             r-rlang
-                             r-rcpparmadillo
+                             r-reshape2
+                             r-rcppparallel
+                             r-rcppeigen
                              r-rcpp
                              r-lme4
                              r-ggpubr
@@ -6445,7 +6446,7 @@ Interpretable Discovery and Inference of Heterogeneous Treatment Effects.
      "Frequentist statistical inference for cluster randomised trials with multiple
 outcomes that controls the family-wise error rate and provides nominal coverage
 of confidence sets.  A full description of the methods can be found in Watson et
-al. (2021) <@code{arXiv:2107.10017>}.")
+al. (2023) <doi:10.1002/sim.9831>.")
     (license license:cc-by-sa4.0)))
 
 (define-public r-crch
@@ -7088,13 +7089,13 @@ documentation pages (e.g., ?cpss).")
 (define-public r-cpsr
   (package
     (name "r-cpsr")
-    (version "0.7.0")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cpsR" version))
               (sha256
                (base32
-                "178x58jklbiqa28r19dni8pdswbcc9qa9ys21l8w29r7g3g91gsc"))))
+                "06sdsqc17cnkn9zgy62dv56am7f1jvxiw205l7hbqlab4gbdp92a"))))
     (properties `((upstream-name . "cpsR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-jsonlite r-httr))
@@ -15673,6 +15674,44 @@ Inequality: Centrifugal and Centripetal Forces at Work\".  9.  Shannon, C. E.
 \"Measurement of Diversity\" <doi:10.1038/163688a0>.")
     (license license:gpl3+)))
 
+(define-public r-concrete
+  (package
+    (name "r-concrete")
+    (version "1.0.5")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "concrete" version))
+              (sha256
+               (base32
+                "05hl3ikdh8776hgw0wqz6acir8brkszgg01169q2v1dhgcsnfyjb"))))
+    (properties `((upstream-name . "concrete")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-survival
+                             r-superlearner
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-origami
+                             r-nleqslv
+                             r-mass
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/imbroglio-dc/concrete")
+    (synopsis
+     "Continuous-Time Competing Risks Estimation using Targeted Minimum Loss-Based Estimation (TMLE)")
+    (description
+     "One-step continuous-time Targeted Minimum Loss-Based Estimation (TMLE) for
+outcome-specific absolute risk estimands in right-censored survival settings
+with or without competing risks, implementing the methodology described in
+Rytgaard et al. (2023) <doi:10.1111/biom.13856> and Rytgaard and van der Laan
+(2023) <doi:10.1007/s10985-022-09576-2>.  Currently concrete can be used to
+estimate the effects of static or dynamic interventions on binary treatments
+given at baseline, cross-validated initial estimation of treatment propensity is
+done using the @code{SuperLearner} package, and initial estimation of
+conditional hazards is done using ensembles of Cox regressions from the survival
+package or Coxnet from the glmnet package.")
+    (license license:gpl3+)))
+
 (define-public r-concreg
   (package
     (name "r-concreg")
@@ -16195,13 +16234,13 @@ sensitivity analyses under dependent censoring (Yeh et al 2023)
 (define-public r-compositional
   (package
     (name "r-compositional")
-    (version "6.3")
+    (version "6.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Compositional" version))
               (sha256
                (base32
-                "09xkfrxapbvaqv2p2gp5dpmqzjvdm3dxs499g7ym6dyd6i971yfs"))))
+                "0prrs2m49j18idkj1xrqg0i5qq2bxzb89bcm8gdh7m66iybc341g"))))
     (properties `((upstream-name . "Compositional")))
     (build-system r-build-system)
     (propagated-inputs (list r-sn
@@ -16240,7 +16279,7 @@ Conference, 15-18 April 2015, Athens, Greece, 430--444.  d) Tsagris M. (2015).
 Regression analysis with compositional data containing zero values.  Chilean
 Journal of Statistics, 6(2):47--57.  e) Tsagris M., Preston S. and Wood A.T.A.
 (2016).  Improved supervised classification for compositional data using the
-alpha-transformation.  Journal of Classification, 33(2):243--261.
+alpha-transformation.  Journal of Classification, 33(2): 243--261.
 <doi:10.1007/s00357-016-9207-5>.  f) Tsagris M., Preston S. and Wood A.T.A.
 (2017).  Nonparametric hypothesis testing for equality of means on the simplex.
 Journal of Statistical Computation and Simulation, 87(2): 406--422.
@@ -16251,18 +16290,19 @@ Alenazi A. (2019).  Regression for compositional data with compositional data as
 predictor variables with or without zero values.  Journal of Data Science,
 17(1): 219--238. <doi:10.6339/JDS.201901_17(1).0010>.  i) Tsagris M. and Stewart
 C. (2020).  A folded model for compositional data analysis.  Australian and New
-Zealand Journal of Statistics, 62(2):249--277. <doi:10.1111/anzs.12289>.  j)
-Alenazi A. (2021).  Alenazi, A. (2021).  A review of compositional data analysis
-and recent advances.  Communications in Statistics--Theory and Methods (Accepted
-for publication). <doi:10.1080/03610926.2021.2014890>.  k) Alenazi, A. A.
-(2022).  f-divergence regression models for compositional data.  Pakistan
-Journal of Statistics and Operation Research, 867--882.
+Zealand Journal of Statistics, 62(2): 249--277. <doi:10.1111/anzs.12289>.  j)
+Alenazi A. (2021).  Alenazi, A. (2023).  A review of compositional data analysis
+and recent advances.  Communications in Statistics--Theory and Methods, 52(16):
+5535--5567. <doi:10.1080/03610926.2021.2014890>.  k) Alenazi, A. A. (2022).
+f-divergence regression models for compositional data.  Pakistan Journal of
+Statistics and Operation Research, 18(4): 867--882.
 <doi:10.18187/pjsor.v18i4.3969>.  l) Tsagris M. and Stewart C. (2022).  A Review
 of Flexible Transformations for Modeling Compositional Data.  In Advances and
 Innovations in Statistics and Data Science, pp.  225--234.
 <doi:10.1007/978-3-031-08329-7_10>.  m) Tsagris M., Alenazi A. and Stewart C.
-(2022).  Flexible non-parametric regression models for compositional response
-data with zeros. <@code{arXiv:2002.05137>}.")
+(2023).  Flexible non-parametric regression models for compositional response
+data with zeros.  Statistics and Computing, 33(5): 1--17.
+<doi:10.1007/s11222-023-10277-5>.")
     (license license:gpl2+)))
 
 (define-public r-compositereliability
@@ -18271,16 +18311,16 @@ be found.")
 (define-public r-colorhex
   (package
     (name "r-colorhex")
-    (version "0.1.2")
+    (version "0.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "colorhex" version))
               (sha256
                (base32
-                "01y68pimasvmbpmmmws4j2pmjizmglcnanwfbyqdz107mv3rhf7s"))))
+                "0k045p28ll0kb0zcwifxn9ami89izrsn1swmd1ayf8kqgjab6qh9"))))
     (properties `((upstream-name . "colorhex")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xml2 r-rvest r-ggplot2))
+    (propagated-inputs (list r-rvest r-httr2 r-ggplot2 r-curl r-cli))
     (home-page "https://github.com/drmowinckels/colorhex")
     (synopsis "Colors and Palettes from Color-Hex")
     (description
@@ -19162,6 +19202,39 @@ et al. <DOI:10.1002/pst.2194> and a manual in Meyer et al.
 <@code{arXiv:2202.02182>}.")
     (license license:expat)))
 
+(define-public r-cohortexplorer
+  (package
+    (name "r-cohortexplorer")
+    (version "0.0.17")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "CohortExplorer" version))
+              (sha256
+               (base32
+                "00jq8g82q4hlff7qhpprgmwl3pvlzialb046x4a2cd6nbir61j2d"))))
+    (properties `((upstream-name . "CohortExplorer")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang
+                             r-parallellogger
+                             r-lifecycle
+                             r-dplyr
+                             r-databaseconnector
+                             r-clock
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://ohdsi.github.io/CohortExplorer/")
+    (synopsis "Explorer of Profiles of Patients in a Cohort")
+    (description
+     "This software tool is designed to extract data from a randomized subset of
+individuals within a cohort and make it available for exploration in a shiny
+application environment.  It retrieves date-stamped, event-level records from
+one or more data sources that represent patient data in the Observational
+Medical Outcomes Partnership (OMOP) data model format.  This tool features a
+user-friendly interface that enables users to efficiently explore the extracted
+profiles, thereby facilitating applications, such as reviewing structured
+profiles.")
+    (license (license:fsdg-compatible "Apache License"))))
+
 (define-public r-cohortbuilder
   (package
     (name "r-cohortbuilder")
@@ -19194,6 +19267,35 @@ multiple filter types and reproducible R code.  Works standalone or with
 @code{shinyCohortBuilder} as the GUI for interactive Shiny apps.")
     (license license:expat)))
 
+(define-public r-cohortalgebra
+  (package
+    (name "r-cohortalgebra")
+    (version "0.0.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "CohortAlgebra" version))
+              (sha256
+               (base32
+                "0zmz6f1ysp4gy6lg15x1x93q7v5zli0znfsk522bki4qbh2h1qq8"))))
+    (properties `((upstream-name . "CohortAlgebra")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sqlrender
+                             r-rlang
+                             r-lifecycle
+                             r-dplyr
+                             r-databaseconnector
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/OHDSI/CohortAlgebra")
+    (synopsis
+     "Use of Interval Algebra to Create New Cohort(s) from Existing Cohorts")
+    (description
+     "This software tool is designed to generate new cohorts utilizing data from
+previously instantiated cohorts.  It employs interval algebra operators such as
+UNION, INTERSECT, and MINUS to manipulate the data within the instantiated
+cohorts and create new cohorts.")
+    (license (license:fsdg-compatible "Apache License"))))
+
 (define-public r-cohensdplibrary
   (package
     (name "r-cohensdplibrary")
@@ -19220,13 +19322,13 @@ within-subject, and single-group design).  Cousineau (2022)
 (define-public r-cognitor
   (package
     (name "r-cognitor")
-    (version "1.0.3")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cognitoR" version))
               (sha256
                (base32
-                "0xi27v2nf3civ5iarc836ygfv4sa9yqdbyx539q6d6hg20mj4nb7"))))
+                "0yxhmr5969ahbhlckvf2xwpi9fmmjahpzr9r9fjw3za91d43i9gz"))))
     (properties `((upstream-name . "cognitoR")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinyjs
@@ -20519,34 +20621,6 @@ dependence of covariates.  COAT can also be used to perform a Bland-Altman test
 for differences in method agreement.")
     (license (list license:gpl2 license:gpl3))))
 
-(define-public r-coastlinefd
-  (package
-    (name "r-coastlinefd")
-    (version "0.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "CoastlineFD" version))
-              (sha256
-               (base32
-                "00py961g3aj330625gi1z1kbg2za0a0vrbqhq6666zgh3nx8xff0"))))
-    (properties `((upstream-name . "CoastlineFD")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-writexl
-                             r-tidyr
-                             r-sp
-                             r-sf
-                             r-rgdal
-                             r-readxl
-                             r-progress
-                             r-ggplot2
-                             r-fields))
-    (home-page "https://github.com/redworld123/CoastlineFD")
-    (synopsis "Calculate the Coastline Fractal Dimension")
-    (description
-     "This package provides a system is used to calculate the fractal dimension of
-coastline by boxes method and Dividers method.")
-    (license license:expat)))
-
 (define-public r-coarsedatatools
   (package
     (name "r-coarsedatatools")
@@ -20910,6 +20984,26 @@ smoothing irregularly sampled signals, see Hamilton et al (2018)
 <doi:10.1080/00401706.2017.1281846>.")
     (license license:gpl2)))
 
+(define-public r-cnid
+  (package
+    (name "r-cnid")
+    (version "1.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "CNID" version))
+              (sha256
+               (base32
+                "1apqfaym4kd38k1dadn94hb7gchqxycdl12k1v4k4pcgw7jdqrpb"))))
+    (properties `((upstream-name . "CNID")))
+    (build-system r-build-system)
+    (home-page "https://gitlab.com/chuxinyuan/cnid")
+    (synopsis "Get Basic Information from Chinese ID Number")
+    (description
+     "The Chinese ID number contains a lot of information, this package helps you get
+the date of birth, age, age based on year, gender, region, zodiac, constellation
+information from the Chinese ID number.")
+    (license license:expat)))
+
 (define-public r-cncagui
   (package
     (name "r-cncagui")
@@ -21090,13 +21184,13 @@ for probit and tobit models are provided.")
 (define-public r-cmstatr
   (package
     (name "r-cmstatr")
-    (version "0.9.1")
+    (version "0.9.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cmstatr" version))
               (sha256
                (base32
-                "18kcrnbi3r8n8d7s8cl55r2n41cv4q4h6g8lf4pdkv06axg3l7ad"))))
+                "08bpyr8zc3mn8rwzd3g6wl16dh4pyxnsjichcd1vd6yvail7ykii"))))
     (properties `((upstream-name . "cmstatr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -21157,18 +21251,17 @@ function as well as at
 (define-public r-cmsafvis
   (package
     (name "r-cmsafvis")
-    (version "1.1.12")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cmsafvis" version))
               (sha256
                (base32
-                "013agd114x5rhxmz8rw0ygjn3qvsmpjjxqw527gc7n1yzwsjlhbm"))))
+                "1rx8g8ssprlspfkbb5x3hrahkl90mi58camqgicd39gy12dk0d7i"))))
     (properties `((upstream-name . "cmsafvis")))
     (build-system r-build-system)
-    (propagated-inputs (list r-yaml
-                             r-sp
-                             r-searchtrees
+    (propagated-inputs (list r-terra
+                             r-sf
                              r-rcolorbrewer
                              r-rastervis
                              r-raster
@@ -21182,8 +21275,7 @@ function as well as at
                              r-countrycode
                              r-colorspace
                              r-cmsafops
-                             r-assertthat
-                             r-animation))
+                             r-assertthat))
     (home-page "https://cran.r-project.org/package=cmsafvis")
     (synopsis "Tools to Visualize CM SAF NetCDF Data")
     (description
@@ -21243,32 +21335,27 @@ are provided on the CM SAF webpage (<http://www.cmsaf.eu/R_toolbox>).")
 (define-public r-cmsaf
   (package
     (name "r-cmsaf")
-    (version "3.4.4")
+    (version "3.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cmsaf" version))
               (sha256
                (base32
-                "1idrw097bznx8pznycz9q01y2wpsc9rcrs0ip9ilzqphcdj3g6w0"))))
+                "0a7ld5651ad3073hp2pyisbygxnd5lak11rinzgqrb5szlzih89q"))))
     (properties `((upstream-name . "cmsaf")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
-                             r-sp
                              r-shinywidgets
                              r-shinythemes
                              r-shinyjs
                              r-shinyfiles
                              r-shiny
                              r-searchtrees
-                             r-rworldxtra
                              r-raster
                              r-r-utils
                              r-ncdf4
-                             r-maptools
                              r-maps
-                             r-mapproj
                              r-fnn
-                             r-fields
                              r-data-table
                              r-colourpicker
                              r-colorspace
@@ -22443,6 +22530,30 @@ Data Mining and Knowledge Discovery 2, 283-304.")
 binary, ordinal or nominal variables) using a parsimonious mixture of latent
 Gaussian variable models.")
     (license license:gpl2)))
+
+(define-public r-clustlearn
+  (package
+    (name "r-clustlearn")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "clustlearn" version))
+              (sha256
+               (base32
+                "11f82p777n5qwiqig2anyi6dxpb75kkgslkq7ii3v9h111jk303m"))))
+    (properties `((upstream-name . "clustlearn")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-proxy r-cli))
+    (home-page "https://github.com/Ediu3095/clustlearn")
+    (synopsis "Learn Clustering Techniques Through Examples and Code")
+    (description
+     "Clustering methods, which (if asked) can provide step-by-step explanations of
+the algorithms used, as described in Ezugwu et.  al., (2022)
+<doi:10.1016/j.engappai.2022.104743>; and datasets to test them on, which
+highlight the strengths and weaknesses of each technique, as presented in the
+clustering section of scikit-learn (Pedregosa et al., 2011)
+<https://jmlr.csail.mit.edu/papers/v12/pedregosa11a.html>.")
+    (license license:expat)))
 
 (define-public r-clustimpute
   (package
@@ -26657,6 +26768,28 @@ and Mastrantonio G. et al. (2016) <doi: 10.1007/s11749-015-0458-y>.")
 estimating of models parameters.")
     (license license:gpl2+)))
 
+(define-public r-circnntsrmult
+  (package
+    (name "r-circnntsrmult")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "CircNNTSRmult" version))
+              (sha256
+               (base32
+                "1x5q8v33k67km0lclfs6dy408grq8yfvld7zx9y8zxm5qq3a576b"))))
+    (properties `((upstream-name . "CircNNTSRmult")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-psychtools r-circnntsr))
+    (home-page "https://cran.r-project.org/package=CircNNTSRmult")
+    (synopsis "Multivariate Circular Data using MNNTS Models")
+    (description
+     "This package provides a collection of utilities for the statistical analysis of
+multivariate circular data using distributions based on Multivariate Nonnegative
+Trigonometric Sums (MNNTS).  The package includes functions for calculation of
+densities and distributions, for the estimation of parameters, and more.")
+    (license license:gpl2+)))
+
 (define-public r-circnntsr
   (package
     (name "r-circnntsr")
@@ -29252,6 +29385,31 @@ such as examining changes in community structure over environmental, temporal or
 spatial gradients.")
     (license license:bsd-2)))
 
+(define-public r-checkthat
+  (package
+    (name "r-checkthat")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "checkthat" version))
+              (sha256
+               (base32
+                "1l88cn4q0475fizblypxjhrdrkqmc4a7ln3agz0cmsmp8z6j4gjd"))))
+    (properties `((upstream-name . "checkthat")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-purrr r-lifecycle r-glue r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/iancero/checkthat")
+    (synopsis "Intuitive Unit Testing Tools for Data Manipulation")
+    (description
+     "This package provides a lightweight data validation and testing toolkit for R.
+Its guiding philosophy is that adding code-based data checks to users existing
+workflow should be both quick and intuitive.  The suite of functions included
+therefore mirror the common data checks many users already perform by hand or by
+eye.  Additionally, the checkthat package is optimized to work within tidyverse
+data manipulation pipelines.")
+    (license license:expat)))
+
 (define-public r-checkr
   (package
     (name "r-checkr")
@@ -29407,13 +29565,13 @@ been applied.")
 (define-public r-checkdown
   (package
     (name "r-checkdown")
-    (version "0.0.8")
+    (version "0.0.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "checkdown" version))
               (sha256
                (base32
-                "00yw24s3lz78n5l4h7lavnnyilhngz8zj8ixgj2wi71x66nacm0l"))))
+                "0a6yn8a42mj7gadhylnalcg4s9al53b6i7fw42bsvys02aamqyxw"))))
     (properties `((upstream-name . "checkdown")))
     (build-system r-build-system)
     (propagated-inputs (list r-markdown r-htmltools r-glue))
@@ -29421,10 +29579,10 @@ been applied.")
     (home-page "https://agricolamz.github.io/checkdown/")
     (synopsis "Check-Fields and Check-Boxes for 'rmarkdown'")
     (description
-     "This package creates auto checking check-fields and check-boxes for rmarkdown
-html.  It could be used in class, when teacher share materials and tasks, so
-student can solve some problems and check themselves.  In contrast with the
-learnr package the checkdown package works without shiny'.")
+     "This package creates auto-grading check-fields and check-boxes for rmarkdown or
+quarto html.  It could be used in class, when teacher share materials and tasks,
+so student can solve some problems and check themselves.  In contrast to the
+learnr package the checkdown package works serverlessly without shiny'.")
     (license license:gpl2+)))
 
 (define-public r-checkdigit
@@ -29523,39 +29681,38 @@ developer in tedious coding tasks.")
 (define-public r-chatai4r
   (package
     (name "r-chatai4r")
-    (version "0.0.11")
+    (version "0.2.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "chatAI4R" version))
               (sha256
                (base32
-                "1kbaz9b84d1anjdcp6l4w3jmmp3y63fgpgnwm19nr7jvyv7z17h0"))))
+                "0iil1bl6l89lckxh4bdxjnjnww2h8q4gd83b29rbw4xfa1mlb8rb"))))
     (properties `((upstream-name . "chatAI4R")))
     (build-system r-build-system)
-    (propagated-inputs (list r-purrr
-                             r-png
-                             r-magrittr
+    (propagated-inputs (list r-xml2
+                             r-rvest
+                             r-rstudioapi
+                             r-pdftools
                              r-jsonlite
+                             r-igraph
                              r-httr
-                             r-hexsticker
-                             r-ebimage
+                             r-future
+                             r-deeprstudio
                              r-crayon
                              r-clipr
-                             r-base64enc
-                             r-assertthat
-                             r-animation
-                             r-abind))
+                             r-assertthat))
     (home-page "https://kumes.github.io/chatAI4R/")
     (synopsis "Chat-Based Interactive Artificial Intelligence for R")
     (description
      "The Large Language Model (LLM) represents a groundbreaking advancement in data
 science and programming, and also allows us to extend the world of R. A seamless
-interface for integrating the @code{OpenAI} API (see
-<https://openai.com/blog/openai-api>), Stable Diffusion and other Web APIs into
-R is provided in this package.  This package leverages LLM-based AI techniques,
-enabling efficient knowledge discovery and data analysis.  In addition, this
-package includes functionality for performing image generation such as txt2img
-(t2i) and img2img (i2i) using the DALL-E 2 and Stable Diffusion APIs.")
+interface for integrating the @code{OpenAI} Web APIs into R is provided in this
+package.  This package leverages LLM-based AI techniques, enabling efficient
+knowledge discovery and data analysis (see @code{OpenAI} Web APIs details
+<https://openai.com/blog/openai-api>).  The previous functions such as seamless
+translation and image generation have been moved to other packages
+@code{deepRstudio} and @code{stableDiffusion4R}'.")
     (license license:artistic2.0)))
 
 (define-public r-chartql
@@ -29585,13 +29742,13 @@ season Y sales\".")
 (define-public r-charlatan
   (package
     (name "r-charlatan")
-    (version "0.5.0")
+    (version "0.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "charlatan" version))
               (sha256
                (base32
-                "1acig89x3lzq5q0x8dvwpjgcy9ix6f2s5y0qq4y2mrwzk6bk40jh"))))
+                "1f83yrvc0qnxlvcpl41718vv3c26x131q285c1mgys1xwk3s97s7"))))
     (properties `((upstream-name . "charlatan")))
     (build-system r-build-system)
     (propagated-inputs (list r-whisker r-tibble r-r6))
@@ -31757,13 +31914,13 @@ fitting a bivariate copula.")
 (define-public r-censobr
   (package
     (name "r-censobr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "censobr" version))
               (sha256
                (base32
-                "13iqya4c5q3hxpbhn9l4psa082p6w56d890pkmjavr4w4lqxzssz"))))
+                "0z4mfz3irqyvgyp1cdr3hfjva0p6a93c6cg85jzkf3vc6ipc9l9d"))))
     (properties `((upstream-name . "censobr")))
     (build-system r-build-system)
     (propagated-inputs (list r-httr r-dplyr r-checkmate r-arrow))
@@ -33687,23 +33844,21 @@ robust and nonparametric methods.")
 (define-public r-ccamlrgis
   (package
     (name "r-ccamlrgis")
-    (version "4.0.4")
+    (version "4.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CCAMLRGIS" version))
               (sha256
                (base32
-                "1in7prc7w0bxybkwwccnmjv118xnf7wvfyk8g9hrk3296aglsf46"))))
+                "0hr5q3ncig56qyipygn8zl8nvkif6cf90h8pmg6b3snyzs0wrci3"))))
     (properties `((upstream-name . "CCAMLRGIS")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
                              r-stars
-                             r-sp
                              r-sf
-                             r-raster
                              r-magrittr
-                             r-geosphere
-                             r-dplyr))
+                             r-dplyr
+                             r-bezier))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ccamlr/CCAMLRGIS#readme")
     (synopsis "Antarctic Spatial Data Manipulation")
@@ -34763,16 +34918,46 @@ statisticians, and programmers.  This package relies on interfacing with the
 numpyro python package.")
     (license license:expat)))
 
+(define-public r-cauphy
+  (package
+    (name "r-cauphy")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "cauphy" version))
+              (sha256
+               (base32
+                "1lfk0dfy2g5dlnjbr9rnnd9mlqmfp66fl6wgqqlp2fg3r1njbr9b"))))
+    (properties `((upstream-name . "cauphy")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-robustbase
+                             r-pracma
+                             r-phylolm
+                             r-nloptr
+                             r-hdinterval
+                             r-foreach
+                             r-doparallel
+                             r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://gilles-didier.github.io/cauphy/")
+    (synopsis "Trait Evolution on Phylogenies Using the Cauchy Process")
+    (description
+     "The Cauchy Process can model pulsed continuous trait evolution on phylogenies.
+The likelihood is tractable, and is used for parameter inference and ancestral
+trait reconstruction.  See Bastide and Didier (2023)
+<doi:10.1093/sysbio/syad053>.")
+    (license license:gpl3+)))
+
 (define-public r-cauchypca
   (package
     (name "r-cauchypca")
-    (version "1.0")
+    (version "1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cauchypca" version))
               (sha256
                (base32
-                "1325cr6799ky3hxvhkb30xjq9pvk1wsm3rj0y11slwhs33hvl621"))))
+                "0a0825ahr31pc34pbw5nfq1nhhk78amv33s5b1irvw1l4b7vsqbk"))))
     (properties `((upstream-name . "cauchypca")))
     (build-system r-build-system)
     (propagated-inputs (list r-rfast r-foreach r-doparallel))
@@ -34784,8 +34969,8 @@ numpyro python package.")
 implemented that relies upon the Cauchy Distribution.  The algorithm is suitable
 for high dimensional data even if the sample size is less than the number of
 variables.  The methodology is described in this paper: Fayomi A., Pantazis Y.,
-Tsagris M. and Wood A.T.A. (2022).  Cauchy robust principal component analysis
-with applications to high-dimensional data sets. <@code{arXiv:2211.03181>}.")
+Tsagris M. and Wood A.T.A. (2022). \"Cauchy robust principal component analysis
+with applications to high-dimensional data sets\". <@code{arXiv:2211.03181>}.")
     (license license:gpl2+)))
 
 (define-public r-cauchycp
@@ -36022,13 +36207,13 @@ includes a variety of data accessible just by function call.")
 (define-public r-cartography
   (package
     (name "r-cartography")
-    (version "3.1.3")
+    (version "3.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cartography" version))
               (sha256
                (base32
-                "1b0qj3sj6aycrxjh54and8r3nqdpcc1vi1m4ljhv8dy0f266kjn6"))))
+                "1sww3n7glkzrpf1ki31z8309qr5496m1rm5gj3cprwif8fxfyjx5"))))
     (properties `((upstream-name . "cartography")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp

@@ -8954,13 +8954,13 @@ and plot.likert() functions to get started.")
 (define-public r-likelihoodr
   (package
     (name "r-likelihoodr")
-    (version "1.1.1")
+    (version "1.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "likelihoodR" version))
               (sha256
                (base32
-                "0m85jks9ymaly79nk453fc2bs85c6ihn9bbwkmi0q6k9s9p6j4kh"))))
+                "0ixgqan4606bfsgvnsg2h0kvq112518gjw784w0mif2z5xxkj7x5"))))
     (properties `((upstream-name . "likelihoodR")))
     (build-system r-build-system)
     (propagated-inputs (list r-lme4))
@@ -8975,9 +8975,9 @@ Edwards (1992, ISBN-13 : 978-0801844430), \"Statistical Evidence\" by R. Royall
 (1997, ISBN-13 : 978-0412044113), S.N. Goodman & R. Royall (2011)
 <doi:10.2105/AJPH.78.12.1568>, \"Understanding Psychology as a Science\" by Z.
 Dienes (2008, ISBN-13 : 978-0230542310), S. Glover & P. Dixon
-<https://link.springer.com/article/10.3758/BF03196706> and others.  This package
-accompanies \"Evidence-Based Statistics\" by P. Cahusac (2020, ISBN-13 :
-978-1119549802).")
+<doi:10.3758/BF03196706> and others.  This package accompanies \"Evidence-Based
+Statistics\" by P. Cahusac (2020, ISBN-13 : 978-1119549802)
+<doi:10.1002/9781119549833>.")
     (license license:gpl2)))
 
 (define-public r-likelihoodexplore
@@ -10765,13 +10765,13 @@ systems.  More info on LERI is available at
 (define-public r-leptokurticmixture
   (package
     (name "r-leptokurticmixture")
-    (version "1.0")
+    (version "1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "leptokurticMixture" version))
               (sha256
                (base32
-                "12b6k91ksm0ilfdgglmcag7hqqlg01my43s4p7nkaz34pc2s5lrf"))))
+                "0k107im942mi6kkd8sx7qj6h8hfa3gv3bnjz5jl34a98kj91hk49"))))
     (properties `((upstream-name . "leptokurticMixture")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=leptokurticMixture")
@@ -10779,11 +10779,7 @@ systems.  More info on LERI is available at
      "Implements Parsimonious Finite Mixtures of Multivariate Elliptical Leptokurtic-Normals")
     (description
      "This package provides a way to fit Parsimonious Finite Mixtures of Multivariate
-Elliptical Leptokurtic-Normals (MLN) based on the component covariance matrix
-eigen-decomposition.  Two methods of estimation are implemented.  The MLN is
-useful for fitting to data with excess kurtosis.  Based on work in Bagnato, L.,
-Punzo, A. and Zoia, M.G. (2017) <doi:10.1002/cjs.11308> and Browne (2023)
-<doi:10.1016/j.spl.2022.109640>.")
+Elliptical Leptokurtic-Normals.  Two methods of estimation are implemented.")
     (license license:gpl2+)))
 
 (define-public r-leprechaun
@@ -13140,13 +13136,13 @@ machines.")
 (define-public r-lcars
   (package
     (name "r-lcars")
-    (version "0.3.7")
+    (version "0.3.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lcars" version))
               (sha256
                (base32
-                "1hjlcl57aazcm5hgjiwmi116rk13z2gr65mpgcvyc0p9xih8bvdf"))))
+                "0c68f9l69brdjpiabpjwpfjll7hmgfn3mi6zrjpgzc8jvvlfxi44"))))
     (properties `((upstream-name . "lcars")))
     (build-system r-build-system)
     (propagated-inputs (list r-trekcolors r-shiny r-ggplot2))
@@ -15191,21 +15187,16 @@ citation('laketemps') for dataset attribution.")
 (define-public r-lakemorpho
   (package
     (name "r-lakemorpho")
-    (version "1.2.0")
+    (version "1.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lakemorpho" version))
               (sha256
                (base32
-                "0fcmrl6yi1dd0i1r4kyp8bf4yw1nwdk6862sdakfwr2jd1rxhi9q"))))
+                "02rz3smdga2kyvziafl3zk5r3lpkjikl8jxj10jbdh5al6m2lvkd"))))
     (properties `((upstream-name . "lakemorpho")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp
-                             r-rgeos
-                             r-rgdal
-                             r-raster
-                             r-geosphere
-                             r-cluster))
+    (propagated-inputs (list r-sp r-sf r-raster r-geosphere r-cluster))
     (home-page "https://github.com/jhollist/lakemorpho/")
     (synopsis "Lake Morphometry Metrics")
     (description

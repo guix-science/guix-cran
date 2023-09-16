@@ -416,13 +416,13 @@ analyses and graphing packages as necessary.")
 (define-public r-eyetrackingr
   (package
     (name "r-eyetrackingr")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eyetrackingR" version))
               (sha256
                (base32
-                "1hpiy84zzsvqqlrw8c7wrcmdggncwf3jq7q6m961lp62d2hhs576"))))
+                "0y0aj9p4yhjmf04pi1bmbr4ygx4n2myc1n42fh3nzmy2chcaj959"))))
     (properties `((upstream-name . "eyetrackingR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -435,7 +435,7 @@ analyses and graphing packages as necessary.")
                              r-broom-mixed
                              r-broom))
     (native-inputs (list r-knitr))
-    (home-page "http://www.eyetracking-r.com/")
+    (home-page "http://samforbes.me/eyetrackingR/")
     (synopsis "Eye-Tracking Data Analysis")
     (description
      "Addresses tasks along the pipeline from raw data to analysis and visualization
@@ -2445,13 +2445,13 @@ al (2020) <doi:10.1214/21-AOAS1497>.")
 (define-public r-exdex
   (package
     (name "r-exdex")
-    (version "1.2.1")
+    (version "1.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "exdex" version))
               (sha256
                (base32
-                "1j3ljbqv1cvxf95yva0ml7dwr8yy98ch697adbvwl8w8l3sjnv3l"))))
+                "1b5w9r2nhvl0i6ja5psx64gj7495mnl1gh4z2dz6309xznlk69nn"))))
     (properties `((upstream-name . "exdex")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpproll r-rcpparmadillo r-rcpp r-chandwich))
@@ -2471,11 +2471,11 @@ threshold inter-exceedance times (Ferro and Segers (2003)
 <doi:10.1111/1467-9868.00401>).  Three versions of this type of approach are
 provided: the iterated weight least squares approach of Suveges (2007)
 <doi:10.1007/s10687-007-0034-2>, the K-gaps model of Suveges and Davison (2010)
-<doi:10.1214/09-AOAS292> and a similar approach of Holesovsky, J. and Fusek, M.
-(2020) <doi:10.1007/s10687-020-00374-3> that we refer to as D-gaps.  For the
-K-gaps and D-gaps models this package allows missing values in the data, can
-accommodate independent subsets of data, such as monthly or seasonal time series
-from different years, and can incorporate information from right-censored
+<doi:10.1214/09-AOAS292> and a similar approach of Holesovsky and Fusek (2020)
+<doi:10.1007/s10687-020-00374-3> that we refer to as D-gaps.  For the K-gaps and
+D-gaps models this package allows missing values in the data, can accommodate
+independent subsets of data, such as monthly or seasonal time series from
+different years, and can incorporate information from right-censored
 inter-exceedance times.  Graphical diagnostics for the threshold level and the
 respective tuning parameters K and D are provided.")
     (license license:gpl2+)))
@@ -3148,46 +3148,6 @@ power at a specified alternative.  For more information, see âExact samples
 sizes for clinical trials subject to size and power constraintsâ by Lloyd,
 C.J. (2022) Preprint <doi:10.13140/RG.2.2.11828.94085>.")
     (license license:gpl2)))
-
-(define-public r-ewsmethods
-  (package
-    (name "r-ewsmethods")
-    (version "1.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "EWSmethods" version))
-              (sha256
-               (base32
-                "14hqvxsv88n6sqvwh3sqy6k0s7c121b52bm3krnqsxy872hjl346"))))
-    (properties `((upstream-name . "EWSmethods")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-tidyr
-                             r-seasonal
-                             r-scales
-                             r-reticulate
-                             r-redm
-                             r-moments
-                             r-infotheo
-                             r-gtools
-                             r-ggplot2
-                             r-forecast
-                             r-foreach
-                             r-egg
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/duncanobrien/EWSmethods")
-    (synopsis "Forecasting Tipping Points at the Community Level")
-    (description
-     "Rolling and expanding window approaches to assessing abundance based early
-warning signals, non-equilibrium resilience measures, and machine learning.  See
-Dakos et al. (2012) <doi:10.1371/journal.pone.0041010>, Deb et al. (2022)
-<doi:10.1098/rsos.211475>, Drake and Griffen (2010) <doi:10.1038/nature09389>,
-Ushio et al. (2018) <doi:10.1038/nature25504> and Weinans et al. (2021)
-<doi:10.1038/s41598-021-87839-y> for methodological details.  Graphical
-presentation of the outputs are also provided for clear and publishable figures.
- Visit the EWSmethods website for more information, and tutorials.")
-    (license license:expat)))
 
 (define-public r-ews
   (package
@@ -4971,6 +4931,37 @@ namely Premier League (England), Ligue 1 (France), Bundesliga (Germany), Serie A
 covariates.  Can be used all purposes.")
     (license license:gpl3+)))
 
+(define-public r-eufmdis-adapt
+  (package
+    (name "r-eufmdis-adapt")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "eufmdis.adapt" version))
+              (sha256
+               (base32
+                "0n8qj5dhc32ckbjiwvcfc904j9jilyb87x325a2vbgb35gfhf7sn"))))
+    (properties `((upstream-name . "eufmdis.adapt")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tibble
+                             r-shinywidgets
+                             r-shinydashboard
+                             r-shiny
+                             r-rlang
+                             r-magrittr
+                             r-htmltools
+                             r-ggplot2
+                             r-dt
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=eufmdis.adapt")
+    (synopsis "Analyse 'EuFMDiS' Output Files via a Shiny App")
+    (description
+     "Analyses @code{EuFMDiS} output files in a Shiny App.  The distributions of
+relevant output parameters are described in form of tables (quantiles) and
+plots.  The App is called using eufmdis.adapt::run_adapt().")
+    (license license:gpl3+)))
+
 (define-public r-eudract
   (package
     (name "r-eudract")
@@ -5347,13 +5338,13 @@ chosen.  For non-normal data, the Wilcoxon test is applied.")
 (define-public r-etasflp
   (package
     (name "r-etasflp")
-    (version "2.2.1")
+    (version "2.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "etasFLP" version))
               (sha256
                (base32
-                "1njz2dx14vm6hgqcjricr27fapsywnf0zyf220si4fnmglh1vyzi"))))
+                "14g1v66z27qx84vzjh7fhnpw3a2yki42ylrg7fn6iwyys5cxqj5c"))))
     (properties `((upstream-name . "etasFLP")))
     (build-system r-build-system)
     (propagated-inputs (list r-maps r-mapdata r-fields))
@@ -7798,13 +7789,13 @@ from climate changes using data from Global Climate Models ('GCM').")
 (define-public r-epubr
   (package
     (name "r-epubr")
-    (version "0.6.3")
+    (version "0.6.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "epubr" version))
               (sha256
                (base32
-                "1cpsxx02qcj3brr3ddy8dbnaf6wxf42s9y3kx8fq5ki3pmlwry7g"))))
+                "0cv1zkv27ab4h2lq8s4lgizvdrw0238lr042aw8rns27zbqz7is1"))))
     (properties `((upstream-name . "epubr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xslt
@@ -9332,6 +9323,41 @@ contact data, composed of case line lists and contacts between cases.  Also
 contains procedures for data handling, interactive graphics, and statistics.")
     (license license:gpl2+)))
 
+(define-public r-epicleanr
+  (package
+    (name "r-epicleanr")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "epiCleanr" version))
+              (sha256
+               (base32
+                "1wl38dvi3kp6zarzzl82pg6fwgrp1c9ybyvdgswaxjc52fdgya6h"))))
+    (properties `((upstream-name . "epiCleanr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-withr
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-rio
+                             r-purrr
+                             r-janitor
+                             r-glue
+                             r-ggplot2
+                             r-dplyr
+                             r-crayon
+                             r-countrycode))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/truenomad/epiCleanr")
+    (synopsis "Tidy Solution for Epidemiological Data")
+    (description
+     "Offers a tidy solution for epidemiological data.  It houses a range of functions
+for epidemiologists and public health data wizards for data management and
+cleaning.")
+    (license license:expat)))
+
 (define-public r-epicasting
   (package
     (name "r-epicasting")
@@ -9386,34 +9412,31 @@ researchers.")
 (define-public r-eph
   (package
     (name "r-eph")
-    (version "0.6.1")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eph" version))
               (sha256
                (base32
-                "1qj2xf8rp7rdlcwl677ad49ynzblia2kkdc5bky8y2hygkhb9c0g"))))
+                "1gr0j5xxdmi10d4n742r9764134fsh0xxqdfz5jk5df1z16wh7g2"))))
     (properties `((upstream-name . "eph")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
+                             r-tidyselect
                              r-tidyr
                              r-tibble
                              r-stringr
                              r-rlang
                              r-readxl
                              r-purrr
-                             r-magrittr
                              r-leaflet
-                             r-janitor
                              r-httr
                              r-htmltools
-                             r-glue
                              r-expss
                              r-dplyr
                              r-curl
                              r-cli
-                             r-attempt
-                             r-assertthat))
+                             r-attempt))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/holatam/eph")
     (synopsis
@@ -10880,13 +10903,13 @@ Engineering Experimentation\" (Elsevier, 2003) with sample code.")
 (define-public r-engression
   (package
     (name "r-engression")
-    (version "0.1.1")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "engression" version))
               (sha256
                (base32
-                "1zcp2krpxchq2gc78040fsjx9bmnm7hk1a7gyxrsdp1s45jr0lrq"))))
+                "0x2mfyqpbr1bd73llm69yspw0bp1hfv7gjlwmpslnzym1ry8if1b"))))
     (properties `((upstream-name . "engression")))
     (build-system r-build-system)
     (propagated-inputs (list r-torch))
@@ -12170,22 +12193,27 @@ Framework for Producing Small Area Estimates Based on Area-Level Models in R\"."
 (define-public r-emdannhybrid
   (package
     (name "r-emdannhybrid")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EMDANNhybrid" version))
               (sha256
                (base32
-                "0mm5zfkrja9pz58psp7b6r1lpixaa9y685xxv9srv9l9cl8d892j"))))
+                "17zkag633kh1xkcasvyimvd9w1dmy1hlnrfffb96v7qh35rc8q3n"))))
     (properties `((upstream-name . "EMDANNhybrid")))
     (build-system r-build-system)
-    (propagated-inputs (list r-nnfor r-forecast r-emd))
+    (propagated-inputs (list r-forecast r-emd))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=EMDANNhybrid")
-    (synopsis "Ensemble Machine Learning Hybrid Model")
+    (synopsis
+     "Empirical Mode Decomposition Based Artificial Neural Network Model")
     (description
-     "The researchers can use this package to fit Empirical Mode Decomposition and
-Artificial Neural Network based hybrid model for nonlinear and non stationary
-time series data.")
+     "Application of empirical mode decomposition based artificial neural network
+model for nonlinear and non stationary univariate time series forecasting.  For
+method details see (i) Choudhury (2019)
+<https://www.indianjournals.com/ijor.aspx?target=ijor:ijee3&volume=55&issue=1&article=013>;
+(ii) Das (2020)
+<https://www.indianjournals.com/ijor.aspx?target=ijor:ijee3&volume=56&issue=2&article=002>.")
     (license license:gpl3)))
 
 (define-public r-emd
@@ -13163,17 +13191,17 @@ fetching and parsing Associated Press election results.")
 (define-public r-elevatr
   (package
     (name "r-elevatr")
-    (version "0.4.5")
+    (version "0.99.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "elevatr" version))
               (sha256
                (base32
-                "0sadw65ml6ck2kx3cr95pf5h45z3ynjyrqv3h5i5c0bgcgajcqrw"))))
+                "1l18b72bvb7cfprxi99ylffbvs072g29ly3bcw6s1yv5asp50iw6"))))
     (properties `((upstream-name . "elevatr")))
     (build-system r-build-system)
     (propagated-inputs (list r-units
-                             r-sp
+                             r-terra
                              r-slippymath
                              r-sf
                              r-raster
@@ -13189,14 +13217,15 @@ fetching and parsing Associated Press election results.")
     (synopsis "Access Elevation Data from Various APIs")
     (description
      "Several web services are available that provide access to elevation data.  This
-package provides access to several of those services and returns elevation data
-either as a @code{SpatialPointsDataFrame} from point elevation services or as a
-raster object from raster elevation services.  Currently, the package supports
-access to the Amazon Web Services Terrain Tiles
+package provides access to many of those services and returns elevation data
+either as an sf simple features object from point elevation services or as a
+raster object from raster elevation services.  In future versions, elevatr will
+drop support for raster and will instead return terra objects.  Currently, the
+package supports access to the Amazon Web Services Terrain Tiles
 <https://registry.opendata.aws/terrain-tiles/>, the Open Topography Global
 Datasets API <https://opentopography.org/developers/>, and the USGS Elevation
 Point Query Service <https://apps.nationalmap.gov/epqs/>.")
-    (license license:cc0)))
+    (license license:expat)))
 
 (define-public r-electoral
   (package
@@ -16191,6 +16220,43 @@ fields can be found based on Fellegi and Holt's generalized principle.  Rules
 dependencies can be visualized with using the igraph package.")
     (license license:gpl3)))
 
+(define-public r-edith
+  (package
+    (name "r-edith")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "eDITH" version))
+              (sha256
+               (base32
+                "0mbnn9hci38hpqjn6ngxaa7b6riqmywvwa8cjjpv93wr6g6k23i1"))))
+    (properties `((upstream-name . "eDITH")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra
+                             r-rivnet
+                             r-rcpp
+                             r-ocnet
+                             r-laplacesdemon
+                             r-fields
+                             r-dharma
+                             r-bayesiantools))
+    (native-inputs (list r-knitr))
+    (home-page "https://lucarraro.github.io/eDITH/")
+    (synopsis "Model Transport of Environmental DNA in River Networks")
+    (description
+     "Runs the @code{eDITH} (environmental DNA Integrating Transport and Hydrology)
+model, which implements a mass balance of environmental DNA (@code{eDNA})
+transport at a river network scale coupled with a species distribution model to
+obtain maps of species distribution. @code{eDITH} can work with both @code{eDNA}
+concentration (e.g., obtained via quantitative polymerase chain reaction) or
+metabarcoding (read count) data.  Parameter estimation can be performed via
+Bayesian techniques (via the @code{BayesianTools} package) or optimization
+algorithms.  An interface to the DHARMa package for posterior predictive checks
+is provided.  See Carraro et al. (2018) <doi:10.1073/pnas.1813843115> and
+Carraro et al. (2020) <doi:10.1038/s41467-020-17337-8> for methodological
+details.")
+    (license license:expat)))
+
 (define-public r-editdata
   (package
     (name "r-editdata")
@@ -17469,13 +17535,13 @@ analyses (Robinson et al.  1995)
 (define-public r-ecoregime
   (package
     (name "r-ecoregime")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ecoregime" version))
               (sha256
                (base32
-                "0yh1439di84s3iq0rxkkr9k6fjbysmvkbrw4hmn4fw275ivhq3z7"))))
+                "1y44zsqhk5va1pcj5865bjk5wi20r2xk0gd49lf13i7sjav7fss4"))))
     (properties `((upstream-name . "ecoregime")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -20248,54 +20314,6 @@ Census APIs (<https://www.census.gov/data/developers/data-sets.html>).")
 functions are easy to use.  Performs analysis in various designs, with balanced
 and unbalanced data.")
     (license license:gpl2)))
-
-(define-public r-easyalluvial
-  (package
-    (name "r-easyalluvial")
-    (version "0.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "easyalluvial" version))
-              (sha256
-               (base32
-                "10nd1jay913jpipy0q2zl7f7pihqynpxmmccbg657jzcgnzva1rv"))))
-    (properties `((upstream-name . "easyalluvial")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-recipes
-                             r-rcolorbrewer
-                             r-randomforest
-                             r-purrr
-                             r-progressr
-                             r-progress
-                             r-magrittr
-                             r-gridextra
-                             r-ggridges
-                             r-ggplot2
-                             r-ggalluvial
-                             r-forcats
-                             r-dplyr))
-    (home-page "https://github.com/erblast/easyalluvial/")
-    (synopsis "Generate Alluvial Plots with a Single Line of Code")
-    (description
-     "Alluvial plots are similar to sankey diagrams and visualise categorical data
-over multiple dimensions as flows. (Rosvall M, Bergstrom CT (2010) Mapping
-Change in Large Networks.  P@code{LoS} ONE 5(1): e8694.
-<doi:10.1371/journal.pone.0008694> Their graphical grammar however is a bit more
-complex then that of a regular x/y plots.  The ggalluvial package made a great
-job of translating that grammar into ggplot2 syntax and gives you many options
-to tweak the appearance of an alluvial plot, however there still remains a
-multi-layered complexity that makes it difficult to use ggalluvial for
-explorative data analysis.  easyalluvial provides a simple interface to this
-package that allows you to produce a decent alluvial plot from any dataframe in
-either long or wide format from a single line of code while also handling
-continuous data.  It is meant to allow a quick visualisation of entire
-dataframes with a focus on different colouring options that can make alluvial
-plots a great tool for data exploration.")
-    (license license:cc0)))
 
 (define-public r-easyahp
   (package

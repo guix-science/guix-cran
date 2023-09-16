@@ -9,9 +9,9 @@
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages cran)
-  #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages java)
   #:use-module (gnu packages image)
+  #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages web)
@@ -630,28 +630,6 @@ sub-structure masking are as described in: Giri et al. (2015)
 <doi:10.1093/bioinformatics/btv416>.")
     (license license:gpl3)))
 
-(define-public r-rxmcda
-  (package
-    (name "r-rxmcda")
-    (version "1.5.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "RXMCDA" version))
-              (sha256
-               (base32
-                "1ci73q8xf3xxqw8b7sk83v5vz2cqgcb4lkx7qi3hd1ff4xkz1fpa"))))
-    (properties `((upstream-name . "RXMCDA")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml r-kappalab))
-    (home-page "https://github.com/paterijk/RXMCDA")
-    (synopsis "Functions to Parse and Create XMCDA Files")
-    (description
-     "This package provides functions which allow to read many XMCDA tags and
-transform them into R variables which are then usable in MCDA algorithms written
-in R. It also allows to write certain R variables into XML files respecting the
-XMCDA standard.")
-    (license (license:fsdg-compatible "CeCILL-2"))))
-
 (define-public r-rxkcd
   (package
     (name "r-rxkcd")
@@ -839,13 +817,13 @@ be plotted in rworldmap.")
 (define-public r-rworkflows
   (package
     (name "r-rworkflows")
-    (version "0.99.12")
+    (version "0.99.13")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rworkflows" version))
               (sha256
                (base32
-                "0vrggpczx11spz0nx95l7ljsg1xhz6wap3mmqzlf6hr3g3rbwg03"))))
+                "17n0qcy8gj7l3vpzy3grnimazqfsmralpakr4mivm614rrl86yzd"))))
     (properties `((upstream-name . "rworkflows")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -853,8 +831,6 @@ be plotted in rworldmap.")
                              r-here
                              r-desc
                              r-data-table
-                             r-biocviews
-                             r-biocpkgtools
                              r-biocmanager
                              r-badger))
     (native-inputs (list r-knitr))
@@ -3273,13 +3249,13 @@ test for autocorrelated data.  Journal of hydrology, 204(1-4), 182-196.
 (define-public r-rtrek
   (package
     (name "r-rtrek")
-    (version "0.3.3")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rtrek" version))
               (sha256
                (base32
-                "1lnjwslx1l0vgysw3m1s83h246grplmv4mdk4m6ym83mrdmkzvhi"))))
+                "0w5726mjy8yf9h1kk3snqc4rqbg6b55ybvkbk5xqnp5iarnsd7v4"))))
     (properties `((upstream-name . "rtrek")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -3288,14 +3264,13 @@ test for autocorrelated data.  Journal of hydrology, 204(1-4), 182-196.
                              r-rvest
                              r-purrr
                              r-memoise
-                             r-magrittr
                              r-jsonlite
                              r-jpeg
                              r-ggplot2
                              r-dplyr
                              r-downloader))
     (home-page "https://github.com/leonawicz/rtrek")
-    (synopsis "Datasets and Functions Relating to Star Trek")
+    (synopsis "Data Analysis Relating to Star Trek")
     (description
      "This package provides datasets related to the Star Trek fictional universe and
 functions for working with the data.  The package also provides access to real
@@ -4800,13 +4775,13 @@ of different algorithms.")
 (define-public r-rsurveycto
   (package
     (name "r-rsurveycto")
-    (version "0.1.4")
+    (version "0.1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rsurveycto" version))
               (sha256
                (base32
-                "0716zzmfq3an83vij996cnbddmw28yvl1mmmha53f3xpvn109qyn"))))
+                "1w9xg2qcgqachc8y24vqxgw701si5g9qb5ps68lrn4w33hbywzjl"))))
     (properties `((upstream-name . "rsurveycto")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -5151,13 +5126,13 @@ Stata commands (both inline and from a .do file) from R.")
 (define-public r-rstanemax
   (package
     (name "r-rstanemax")
-    (version "0.1.4")
+    (version "0.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rstanemax" version))
               (sha256
                (base32
-                "1hrrzr3xz0lr6d0pykrizfnb1f9g4hp9hjyaiqpcdzdqd53zxrcx"))))
+                "0n15dw6bz7g5j5dng32zna1r4p4ywkmspc82q1b3lcg3zbjmda3f"))))
     (properties `((upstream-name . "rstanemax")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -6171,6 +6146,33 @@ version of the package is documented in Journal of Statistical Software
     (description
      "This package implements the \"Stemming Algorithm for the Portuguese Language\"
 <DOI:10.1109/SPIRE.2001.10024>.")
+    (license license:expat)))
+
+(define-public r-rsleep
+  (package
+    (name "r-rsleep")
+    (version "1.0.9")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rsleep" version))
+              (sha256
+               (base32
+                "1yrpshyfjyp02qc8qys9h7sv0q6dvq7sj4jccwk5v9q69wpgdgzq"))))
+    (properties `((upstream-name . "rsleep")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-signal
+                             r-psd
+                             r-jsonlite
+                             r-ggplot2
+                             r-edfreader
+                             r-abind))
+    (native-inputs (list r-knitr))
+    (home-page "https://rsleep.org/")
+    (synopsis "Analysis of Sleep Data")
+    (description
+     "This package provides a toolbox for sleep data processing, visualization and
+analysis.  Tools for state of the art automatic sleep stages scoring.")
     (license license:expat)))
 
 (define-public r-rskey
@@ -8049,6 +8051,45 @@ estimate realized relatedness between pairs of individuals using SNP marker
 data.  See Wang (2017) <doi:10.1534/genetics.116.197004>.  This work was
 supported by National Institutes of Health grants R37 GM-046255.")
     (license license:gpl2+)))
+
+(define-public r-rrepest
+  (package
+    (name "r-rrepest")
+    (version "1.0.0.8")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "Rrepest" version))
+              (sha256
+               (base32
+                "0w7nhdcdzrih55jlz7066fm03rp17w5dig804l75dpflan9wspin"))))
+    (properties `((upstream-name . "Rrepest")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-purrr
+                             r-officer
+                             r-magrittr
+                             r-labelled
+                             r-foreach
+                             r-flextable
+                             r-dplyr
+                             r-doparallel
+                             r-data-table))
+    (home-page "https://cran.r-project.org/package=Rrepest")
+    (synopsis
+     "An Analyzer of International Large Scale Assessments in Education")
+    (description
+     "This package provides a fast way to analyze International Large-Scale
+Assessments (ILSAs) or any other dataset that includes replicated weights
+(Balanced Repeated Replication (BRR) weights, Jackknife replicate weights,...)
+and/or plausible values.  Rrepest contains functionalities that enable you to
+calculate basic statistics (means, correlations, etc.), frequencies, linear
+regression, or any other model already implemented in R that takes a data frame
+and weights as parameters.  It also includes options to prepare the results for
+publication, following the table formatting standards of the Organization for
+Economic Cooperation and Development (OECD).")
+    (license license:expat)))
 
 (define-public r-rrepast
   (package
@@ -10157,13 +10198,13 @@ implements this decomposition algorithm resulting with Robust PCA approach.")
 (define-public r-rpbk
   (package
     (name "r-rpbk")
-    (version "0.2.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rPBK" version))
               (sha256
                (base32
-                "0xxb8cphhiazq97aqv5qkaxf4a29s4abnbqmmffip7wy8jlws9r2"))))
+                "1g63gz7zhwx5icabcm15n2hpnp3v932b63k0jgl8623dwdybw15d"))))
     (properties `((upstream-name . "rPBK")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -10175,7 +10216,7 @@ implements this decomposition algorithm resulting with Robust PCA approach.")
                              r-ggplot2
                              r-bh))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=rPBK")
+    (home-page "https://gitlab.com/qonfluens/model/rPBK")
     (synopsis
      "Inference and Prediction of Generic Physiologically-Based Kinetic Models")
     (description
@@ -11723,13 +11764,13 @@ trajectories from single cell RNAseq data.")
 (define-public r-roopsd
   (package
     (name "r-roopsd")
-    (version "0.3.8")
+    (version "0.3.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ROOPSD" version))
               (sha256
                (base32
-                "0bndjhnshifbx02scw7d48wszar51vyv735a2r0chzq7qjj7drc3"))))
+                "0xc7fgg376wld4g61k7pfi1fwkxzzl69njn6p4v8ia4mnvp1p892"))))
     (properties `((upstream-name . "ROOPSD")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-numderiv r-lmoments))
@@ -12156,13 +12197,13 @@ time-series data.")
 (define-public r-rolap
   (package
     (name "r-rolap")
-    (version "2.1.0")
+    (version "2.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rolap" version))
               (sha256
                (base32
-                "06fzw94qwd77csi4zfkw38sxxgsr3b9mpm4j8av5dwhkf3d6l2nn"))))
+                "0mh6gdkyy1x1jdqlbydcvf8i4hwzjvy34h14lxi8km953flabm0b"))))
     (properties `((upstream-name . "rolap")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -12170,6 +12211,7 @@ time-series data.")
                              r-tibble
                              r-snakecase
                              r-rlang
+                             r-readr
                              r-purrr
                              r-dplyr
                              r-dm))
@@ -15706,13 +15748,13 @@ history events that occur at specific times.")
 (define-public r-rnomni
   (package
     (name "r-rnomni")
-    (version "1.0.1")
+    (version "1.0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RNOmni" version))
               (sha256
                (base32
-                "0mc74fp8i9dadsa2ifz3pjklhvjck5nb3iwz656z7fairq529ml6"))))
+                "1ap6rf59sr9v28s1a484bfz1c7jizrivlf1r4xvnp8dvb1hj1k9n"))))
     (properties `((upstream-name . "RNOmni")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-plyr))
@@ -15724,7 +15766,7 @@ history events that occur at specific times.")
 tests are recommend for continuous traits with non-normally distributed
 residuals.  INT-based tests robustly control the type I error in settings where
 standard linear regression does not, as when the residual distribution exhibits
-excess skew or kurtosis.  Moreover, INT-based tests dominate standard linear
+excess skew or kurtosis.  Moreover, INT-based tests outperform standard linear
 regression in terms of power.  These tests may be classified into two types.  In
 direct INT (D-INT), the phenotype is itself transformed.  In indirect INT
 (I-INT), phenotypic residuals are transformed.  The omnibus test (O-INT)
@@ -16847,13 +16889,13 @@ panels.  The full documentation and tutorials are at
 (define-public r-rmss
   (package
     (name "r-rmss")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RMSS" version))
               (sha256
                (base32
-                "0wxvnyv5ycr7gsd2jg73x6115ii6r6swq4kz3hljnr636b4kjajk"))))
+                "18hm626yr3xrsi9spzr42y9pf547xdx7byqq15bvh9f04qaalck3"))))
     (properties `((upstream-name . "RMSS")))
     (build-system r-build-system)
     (propagated-inputs (list r-srlars
@@ -19144,13 +19186,13 @@ from @code{GitHub}: <https://github.com/helske/Rlibeemd/>.")
 (define-public r-rlgt
   (package
     (name "r-rlgt")
-    (version "0.2-0")
+    (version "0.2-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Rlgt" version))
               (sha256
                (base32
-                "0fhaq36ppq6fj1bnx5lvpjh3y2qbp8sll69cz6b7qmags73mpyah"))))
+                "0hrqishf056d8nivm2rya2xxpdzmn69ajnxdp9w39fhdfjhzv90p"))))
     (properties `((upstream-name . "Rlgt")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm
@@ -19818,6 +19860,44 @@ discovery tasks.  Furthermore, RKEEL is a package with a R code layer between R
 and KEEL', for using KEEL in R code.  This package includes the datasets from
 KEEL in .dat format for its use in RKEEL package.  For more information about
 KEEL', see <http://www.keel.es/>.")
+    (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-rkeel
+  (package
+    (name "r-rkeel")
+    (version "1.3.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "RKEEL" version))
+              (sha256
+               (base32
+                "05fwzpa4dixc7lp89x122w07gzblxyyaf5l74gds0zgib9ik5cab"))))
+    (properties `((upstream-name . "RKEEL")))
+    (build-system r-build-system)
+    (inputs (list openjdk))
+    (propagated-inputs (list r-xml
+                             r-rkeeldata
+                             r-rjava
+                             r-r6
+                             r-pmml
+                             r-openssl
+                             r-matrix
+                             r-gdata
+                             r-foreach
+                             r-downloader
+                             r-doparallel
+                             r-arules))
+    (home-page "https://cran.r-project.org/package=RKEEL")
+    (synopsis "Using 'KEEL' in R Code")
+    (description
+     "KEEL is a popular Java software for a large number of different knowledge data
+discovery tasks.  This package takes the advantages of KEEL and R, allowing to
+use KEEL algorithms in simple R code.  The implemented R code layer between R
+and KEEL makes easy both using KEEL algorithms in R as implementing new
+algorithms for RKEEL in a very simple way.  It includes more than 100 algorithms
+for classification, regression, preprocess, association rules and imbalance
+learning, which allows a more complete experimentation process.  For more
+information about KEEL', see <http://www.keel.es/>.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-rkeajars
@@ -23238,13 +23318,13 @@ Transition to new package rgrass
 (define-public r-rgrass
   (package
     (name "r-rgrass")
-    (version "0.3-8")
+    (version "0.3-9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rgrass" version))
               (sha256
                (base32
-                "0ymfimbzpyzi6bvr2rvv8qg4pwbm7av8igi6dp9rxhzipks616ki"))))
+                "06zck7mwi2gv6qdxl2rj00kasyf5injb61hlmlcslr4scj5vdcq6"))))
     (properties `((upstream-name . "rgrass")))
     (build-system r-build-system)
     (inputs (list grass))
@@ -23535,6 +23615,45 @@ written in Go.  gnparser parses scientific names into their component parts; it
 utilizes a Parsing Expression Grammar specifically for scientific names.")
     (license license:expat)))
 
+(define-public r-rgnoisefilt
+  (package
+    (name "r-rgnoisefilt")
+    (version "1.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rgnoisefilt" version))
+              (sha256
+               (base32
+                "0w9xif0f2k5q5xvn37rc7b9ql1fz77kjjjmimnkmcg9ab1786j3z"))))
+    (properties `((upstream-name . "rgnoisefilt")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ubl
+                             r-rpart
+                             r-randomforest
+                             r-nnet
+                             r-modelr
+                             r-infotheo
+                             r-ggplot2
+                             r-gbm
+                             r-fnn
+                             r-entropy
+                             r-e1071
+                             r-arules))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/juanmartinsantos/rgnoisefilt")
+    (synopsis
+     "Elimination of Noisy Samples in Regression Datasets using Noise Filters")
+    (description
+     "Traditional noise filtering methods aim at removing noisy samples from a
+classification dataset.  This package adapts classic and recent filtering
+techniques for use in regression problems, and it also incorporates methods
+specifically designed for regression data.  In order to do this, it uses
+approaches proposed in the specialized literature, such as Martin et al. (2021)
+[<doi:10.1109/ACCESS.2021.3123151>] and Arnaiz-Gonzalez et al. (2016)
+[<doi:10.1016/j.eswa.2015.12.046>].  Thus, the goal of the implemented noise
+filters is to eliminate samples with noise in regression datasets.")
+    (license license:gpl3+)))
+
 (define-public r-rgmm
   (package
     (name "r-rgmm")
@@ -23606,33 +23725,6 @@ package and extend its functionality.  For example, the routines allow the user
 to directly control the camera position & orientation, as well as to generate 3D
 movies with a moving observer.")
     (license license:gpl3)))
-
-(define-public r-rglobi
-  (package
-    (name "r-rglobi")
-    (version "0.2.28")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "rglobi" version))
-              (sha256
-               (base32
-                "1i7il5sicir9xwjya0s8d54kzxhkkpdjz238q4snkdg2iwicxfc6"))))
-    (properties `((upstream-name . "rglobi")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rjson r-readr r-rcurl r-curl))
-    (native-inputs (list r-knitr))
-    (home-page "https://docs.ropensci.org/rglobi/")
-    (synopsis "R Interface to Global Biotic Interactions")
-    (description
-     "This package provides a programmatic interface to the web service methods
-provided by Global Biotic Interactions (@code{GloBI})
-(<https://www.globalbioticinteractions.org/>). @code{GloBI} provides access to
-spatial-temporal species interaction records from sources all over the world.
-rglobi provides methods to search species interactions by location, interaction
-type, and taxonomic name.  In addition, it supports Cypher, a graph query
-language, to allow for executing custom queries on the @code{GloBI} aggregate
-species interaction data set.")
-    (license license:expat)))
 
 (define-public r-rgl2gltf
   (package
@@ -24332,13 +24424,13 @@ expression data (Microarray/RNA-seq etc).")
 (define-public r-rgbif
   (package
     (name "r-rgbif")
-    (version "3.7.7")
+    (version "3.7.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rgbif" version))
               (sha256
                (base32
-                "1f2qi0vs8s1gxhqvvh6jyswv0p4c29ycm912hswxgc93v6rzghsg"))))
+                "18xihlvbaagmp6qdbknq6qblbbvz0g1r7shngh0dzfpvwr6bily0"))))
     (properties `((upstream-name . "rgbif")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -25983,13 +26075,13 @@ follow Crawford and Pendakur (2012) <doi:10.1111/j.1468-0297.2012.02545.x>.")
 (define-public r-revdbayes
   (package
     (name "r-revdbayes")
-    (version "1.5.1")
+    (version "1.5.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "revdbayes" version))
               (sha256
                (base32
-                "01q2cy6xhjdfxplhmjrh27i71q3z5byh3wf4wqmzi0z91zmih53p"))))
+                "15h1p7q4l0zfa8vpyypkn32b716hwdp5agf7scf91jkhs3bflsbg"))))
     (properties `((upstream-name . "revdbayes")))
     (build-system r-build-system)
     (propagated-inputs (list r-rust r-rcpparmadillo r-rcpp r-exdex r-bayesplot))
@@ -28782,13 +28874,13 @@ W., et al. (2015)
 (define-public r-rempsyc
   (package
     (name "r-rempsyc")
-    (version "0.1.5")
+    (version "0.1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rempsyc" version))
               (sha256
                (base32
-                "0yyys7kmz4drbrdhb522yyx6k6w0sx8dl7dhqk2s5b7mf38qp4fb"))))
+                "18clqk2v1rai1pw2fixdghsc6b96xgmq8wavra19c0a9dma9z906"))))
     (properties `((upstream-name . "rempsyc")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-dplyr))
@@ -28800,6 +28892,40 @@ W., et al. (2015)
 nice APA tables (following the style of the *American Psychological
 Association*) exportable to Word (via flextable'), easily run statistical tests
 or check assumptions, and automatize various other tasks.")
+    (license license:gpl3+)))
+
+(define-public r-remoteparts
+  (package
+    (name "r-remoteparts")
+    (version "1.0.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "remotePARTS" version))
+              (sha256
+               (base32
+                "0rhbvqiixzzwkyicd1w75xvbchhillsdwllgrglsbn04b4hzqa73"))))
+    (properties `((upstream-name . "remotePARTS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppeigen
+                             r-rcpp
+                             r-iterators
+                             r-geosphere
+                             r-foreach
+                             r-doparallel
+                             r-compquadform))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/morrowcj/remotePARTS")
+    (synopsis "Spatiotemporal Autoregression Analyses for Large Data Sets")
+    (description
+     "These tools were created to test map-scale hypotheses about trends in large
+remotely sensed data sets but any data with spatial and temporal variation can
+be analyzed.  Tests are conducted using the PARTS method for analyzing spatially
+autocorrelated time series (Ives et al., 2021: <doi:10.1016/j.rse.2021.112678>).
+ The method's unique approach can handle extremely large data sets that other
+spatiotemporal models cannot, while still appropriately accounting for spatial
+and temporal autocorrelation.  This is done by partitioning the data into
+smaller chunks, analyzing chunks separately and then combining the separate
+analyses into a single, correlated test of the map-scale hypotheses.")
     (license license:gpl3+)))
 
 (define-public r-remote
@@ -29551,13 +29677,13 @@ Treaty Reinsurance\" by Munich Re (2010)
 (define-public r-reins
   (package
     (name "r-reins")
-    (version "1.0.12")
+    (version "1.0.13")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ReIns" version))
               (sha256
                (base32
-                "06b3iibd50vy367jnia1a5y3s0jbmdwk3hkaylw296576rscib60"))))
+                "1fdz80wbvmhh1vs796cz69wza0cpj5xv08hn5prygnl5vgp7d737"))))
     (properties `((upstream-name . "ReIns")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rcpp r-foreach r-doparallel))
@@ -31701,13 +31827,13 @@ al (2019) <doi:10.1016/j.jbi.2019.103208>).")
 (define-public r-redcapapi
   (package
     (name "r-redcapapi")
-    (version "2.7.4")
+    (version "2.8.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "redcapAPI" version))
               (sha256
                (base32
-                "0lafklj9px2sffh19ycccz62w0f04107p89xyzhxc8lyp057648f"))))
+                "1nsjfwvhdpaxknjrm56fqllz2ynrc4k97b0rp261bg7k931q6465"))))
     (properties `((upstream-name . "redcapAPI")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -36423,17 +36549,17 @@ to effectively perform tokenization, POS tagging, and lemmatization.")
 (define-public r-rcppint64
   (package
     (name "r-rcppint64")
-    (version "0.0.1")
+    (version "0.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RcppInt64" version))
               (sha256
                (base32
-                "04fxrv0wxbqi3rwnmyrs1cn3fn8wzz7mpg5swmdjk3px8y9zl3ry"))))
+                "0jf8csqi811pp3xf3pkzrgjz3s6nd2z1qx3bz66qwwjmsq8y72y3"))))
     (properties `((upstream-name . "RcppInt64")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-bit64))
-    (home-page "https://cran.r-project.org/package=RcppInt64")
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://github.com/eddelbuettel/rcppint64")
     (synopsis
      "'Rcpp'-Based Helper Functions to Pass 'Int64' Values Between 'R' and 'C++'")
     (description
@@ -36583,16 +36709,16 @@ along with a few illustrative examples that can all be called from R.")
 (define-public r-rcppfarmhash
   (package
     (name "r-rcppfarmhash")
-    (version "0.0.2")
+    (version "0.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RcppFarmHash" version))
               (sha256
                (base32
-                "0nkismq7hmp1ahwv4z438zrcj7mqsfmas2yd6av6k2cmkgklqkbk"))))
+                "1gl9mnmcai8d0qclk1660z1mnzqcydxv88836vnpz9q008a1y8fk"))))
     (properties `((upstream-name . "RcppFarmHash")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
+    (propagated-inputs (list r-rcppint64 r-rcpp))
     (home-page "https://github.com/eddelbuettel/rcppfarmhash/")
     (synopsis "Interface to the Google 'FarmHash' Family of Hash Functions")
     (description
@@ -37392,6 +37518,26 @@ color palettes designed by experts <https://www.ncl.ucar.edu/index.shtml>.  Here
 we translate all NCL color palettes into R hexadecimal RGB colors and provide
 color selection function, which will help users make a beautiful figure.")
     (license license:gpl3)))
+
+(define-public r-rcolorconesa
+  (package
+    (name "r-rcolorconesa")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "RColorConesa" version))
+              (sha256
+               (base32
+                "0b42bvhpkqdaxay9yv4wjlb5dk2j2svsrmg0l557dd7w30xarwa6"))))
+    (properties `((upstream-name . "RColorConesa")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ggplot2))
+    (home-page "https://cran.r-project.org/package=RColorConesa")
+    (synopsis "Conesa Colors Palette")
+    (description
+     "This package provides a collection of palettes designed to integrate with
+ggplot', reflecting the color schemes associated with @code{ConesaLab}'.")
+    (license license:expat)))
 
 (define-public r-rcoletum
   (package
@@ -38704,31 +38850,42 @@ Sarrias (2016) <doi:10.18637/jss.v074.i10>.")
 (define-public r-rchivaltag
   (package
     (name "r-rchivaltag")
-    (version "0.1.2")
+    (version "0.1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RchivalTag" version))
               (sha256
                (base32
-                "0285n5mxs643546qhyqkccaq1fkn1hxagrhj2abahskfl53i9rsw"))))
+                "1x83rz4mn5p6cn5mqxra7q2ip0jpq79blwzig08lbdnbfncn3csx"))))
     (properties `((upstream-name . "RchivalTag")))
     (build-system r-build-system)
     (propagated-inputs (list r-xts
+                             r-stringr
                              r-sp
+                             r-shiny
+                             r-sf
                              r-rgeos
                              r-readr
                              r-raster
                              r-pracma
                              r-plyr
+                             r-plotly
                              r-pbsmapping
                              r-oceanmap
                              r-ncdf4
                              r-maptools
                              r-maps
                              r-mapdata
+                             r-lubridate
+                             r-leaflet-extras2
+                             r-leaflet
+                             r-htmlwidgets
+                             r-ggplot2
+                             r-ggedit
                              r-dygraphs))
     (home-page "https://cran.r-project.org/package=RchivalTag")
-    (synopsis "Analyzing Archival Tagging Data")
+    (synopsis
+     "Analyzing and Interactive Visualization of Archival Tagging Data")
     (description
      "This package provides a set of functions to generate, access and analyze
 standard data products from archival tagging data.")
@@ -40630,16 +40787,22 @@ multivariate T2 control chart.  Plot and summary functions.  Kosztyan et.  al.
 (define-public r-rbcb
   (package
     (name "r-rbcb")
-    (version "0.1.10")
+    (version "0.1.12")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rbcb" version))
               (sha256
                (base32
-                "0qqrb5kvin1ansy3dswdfib2952dlbl7x1zlig3j2mfqcgwn9450"))))
+                "170dhymiz76svb6f7zy96a62y2apqv5mbsamda5s4d7hhap32m06"))))
     (properties `((upstream-name . "rbcb")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xts r-xml2 r-tibble r-jsonlite r-httr))
+    (propagated-inputs (list r-xts
+                             r-xml2
+                             r-tibble
+                             r-purrr
+                             r-jsonlite
+                             r-httr
+                             r-digest))
     (home-page "https://github.com/wilsonfreitas/rbcb")
     (synopsis "R Interface to Brazilian Central Bank Web Services")
     (description
@@ -41702,13 +41865,13 @@ proposed statistic in case of nominal and ordinal data.")
 (define-public r-rater
   (package
     (name "r-rater")
-    (version "1.3.0")
+    (version "1.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rater" version))
               (sha256
                (base32
-                "1alkrf9x0hszj83kk3apb2azrmq0bgxg9nn1hjhwz98blyda2b0q"))))
+                "0ipgjhxn8d9g6yv369hckvq84v8rrw5b230zz24h72dy9s2nyr44"))))
     (properties `((upstream-name . "rater")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -42472,6 +42635,27 @@ Protection Agency's Air Quality System service using functions.  See
 <https://aqs.epa.gov/aqsweb/documents/data_api.html> for details about the US
 EPA Data Mart API.")
     (license license:cc0)))
+
+(define-public r-raqs
+  (package
+    (name "r-raqs")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "raqs" version))
+              (sha256
+               (base32
+                "08s4jww9cdd2h4nayf8v3g07xdamlhmia8iwdf4q7wkb1c2d4x1l"))))
+    (properties `((upstream-name . "raqs")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-httr2 r-cli))
+    (home-page "https://github.com/HimesGroup/raqs")
+    (synopsis "Interface to the US EPA Air Quality System (AQS) API")
+    (description
+     "Offers functions for fetching JSON data from the US EPA Air Quality System (AQS)
+API with options to comply with the API rate limits.  See
+<https://aqs.epa.gov/aqsweb/documents/data_api.html> for details of the AQS API.")
+    (license license:expat)))
 
 (define-public r-raptr
   (package
@@ -44674,13 +44858,13 @@ Ranking with Incomplete Information, Technical Report.")
 (define-public r-rainbowr
   (package
     (name "r-rainbowr")
-    (version "0.1.32")
+    (version "0.1.33")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RAINBOWR" version))
               (sha256
                (base32
-                "1x87an97405l7mlwzby8fhxxc7f6bnc9xyzjpn23nrbyvkpmyis8"))))
+                "1rzi0hys891qwfdfbckpk12ahg7cv9jx9p9n8hdgkwk2jva4qynq"))))
     (properties `((upstream-name . "RAINBOWR")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -45162,6 +45346,100 @@ they should be named in a data frame.  See
 <https://github.com/dnychka/Radiosonde> for the package home page.")
     (license license:gpl2+)))
 
+(define-public r-radiant-multivariate
+  (package
+    (name "r-radiant-multivariate")
+    (version "1.6.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "radiant.multivariate" version))
+              (sha256
+               (base32
+                "004xr7l54v7z41lqjdvc57ah7lqqa0l9n5lgyjzwn6vb6187pg1x"))))
+    (properties `((upstream-name . "radiant.multivariate")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shiny
+                             r-scales
+                             r-rlang
+                             r-radiant-model
+                             r-radiant-data
+                             r-psych
+                             r-polycor
+                             r-patchwork
+                             r-mass
+                             r-magrittr
+                             r-lubridate
+                             r-import
+                             r-gparotation
+                             r-gower
+                             r-ggrepel
+                             r-ggplot2
+                             r-dplyr
+                             r-clustmixtype
+                             r-car))
+    (home-page "https://github.com/radiant-rstats/radiant.multivariate/")
+    (synopsis
+     "Multivariate Menu for Radiant: Business Analytics using R and Shiny")
+    (description
+     "The Radiant Multivariate menu includes interfaces for perceptual mapping, factor
+analysis, cluster analysis, and conjoint analysis.  The application extends the
+functionality in radiant.data'.")
+    (license (list license:agpl3
+                   (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-radiant-model
+  (package
+    (name "r-radiant-model")
+    (version "1.6.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "radiant.model" version))
+              (sha256
+               (base32
+                "07vrdf9jdf7yzl9bnyd72fv4xvlixs50s65jwkd80wzx10mpl0z2"))))
+    (properties `((upstream-name . "radiant.model")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yaml
+                             r-xgboost
+                             r-vip
+                             r-tidyselect
+                             r-tidyr
+                             r-stringr
+                             r-stringi
+                             r-shiny
+                             r-scales
+                             r-sandwich
+                             r-rpart
+                             r-rlang
+                             r-ranger
+                             r-radiant-data
+                             r-radiant-basics
+                             r-psych
+                             r-pdp
+                             r-patchwork
+                             r-nnet
+                             r-neuralnettools
+                             r-magrittr
+                             r-lubridate
+                             r-import
+                             r-ggrepel
+                             r-ggplot2
+                             r-e1071
+                             r-dplyr
+                             r-diagrammer
+                             r-data-tree
+                             r-car
+                             r-broom))
+    (home-page "https://github.com/radiant-rstats/radiant.model/")
+    (synopsis "Model Menu for Radiant: Business Analytics using R and Shiny")
+    (description
+     "The Radiant Model menu includes interfaces for linear and logistic regression,
+naive Bayes, neural networks, classification and regression trees, model
+evaluation, collaborative filtering, decision analysis, and simulation.  The
+application extends the functionality in radiant.data'.")
+    (license (list license:agpl3
+                   (license:fsdg-compatible "file://LICENSE")))))
+
 (define-public r-radiant-design
   (package
     (name "r-radiant-design")
@@ -45225,6 +45503,36 @@ radiant.data'.")
 limit theorem simulation, comparing means and proportions, goodness-of-fit
 testing, cross-tabs, and correlation.  The application extends the functionality
 in radiant.data'.")
+    (license (list license:agpl3
+                   (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-radiant
+  (package
+    (name "r-radiant")
+    (version "1.6.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "radiant" version))
+              (sha256
+               (base32
+                "1nn17yq530mb0ayx25dv5dn9fr1qvbll7ih1hnyww7gix6rgji9p"))))
+    (properties `((upstream-name . "radiant")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shiny
+                             r-radiant-multivariate
+                             r-radiant-model
+                             r-radiant-design
+                             r-radiant-data
+                             r-radiant-basics
+                             r-import))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/radiant-rstats/radiant")
+    (synopsis "Business Analytics using R and Shiny")
+    (description
+     "This package provides a platform-independent browser-based interface for
+business analytics in R, based on the shiny package.  The application combines
+the functionality of radiant.data', radiant.design', radiant.basics',
+radiant.model', and radiant.multivariate'.")
     (license (list license:agpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 

@@ -6,8 +6,8 @@
                 #:prefix license:)
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages cran)
-  #:use-module (gnu packages gcc)
   #:use-module (gnu packages bioconductor)
+  #:use-module (gnu packages gcc)
   #:use-module (gnu packages web)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages xml)
@@ -18,7 +18,6 @@
   #:use-module (gnu packages python)
   #:use-module (gnu packages cmake)
   #:use-module (gnu packages bioinformatics)
-  #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages pkg-config)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -313,28 +312,6 @@ micronutrients, and compares them with the recommended dietary allowances (RDA).
 nutrient intake, and pie-charts showing the main foods contributing to the
 intake level of a given nutrient.  A shiny app exposing the main functionalities
 of the package is also provided.")
-    (license license:gpl3)))
-
-(define-public r-numosl
-  (package
-    (name "r-numosl")
-    (version "2.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "numOSL" version))
-              (sha256
-               (base32
-                "03h1p56650x4my5vq5jlmjsz5xj0w2j75qfr08rh7nr38dwgp1k8"))))
-    (properties `((upstream-name . "numOSL")))
-    (build-system r-build-system)
-    (native-inputs (list gfortran))
-    (home-page "https://CRAN.R-project.org/package=numOSL")
-    (synopsis "Numeric Routines for Optically Stimulated Luminescence Dating")
-    (description
-     "Package for optimizing regular numeric problems in optically stimulated
-luminescence dating, such as: equivalent dose calculation, dose rate
-determination, growth curve fitting, decay curve decomposition, statistical age
-model optimization, and statistical plot visualization.")
     (license license:gpl3)))
 
 (define-public r-numkm
@@ -632,13 +609,13 @@ authors in the recent years.  See Patro and Smarandache (2016)
 (define-public r-ntdr
   (package
     (name "r-ntdr")
-    (version "0.3.1")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ntdr" version))
               (sha256
                (base32
-                "0fc63vbc9mwhzk3csz7ydr63x433xd5n4j9szjxp6i7l1w73p530"))))
+                "12gb5rndmqmmx6gvsyllp31fqrpx8z55rx947h3xva20hr57p9j1"))))
     (properties `((upstream-name . "ntdr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -646,7 +623,9 @@ authors in the recent years.  See Patro and Smarandache (2016)
                              r-readxl
                              r-purrr
                              r-lubridate
-                             r-dplyr))
+                             r-httr
+                             r-dplyr
+                             r-curl))
     (native-inputs (list r-knitr))
     (home-page "https://vgxhc.github.io/ntdr/")
     (synopsis "Retrieve Data from the National Transit Database")
@@ -2684,6 +2663,35 @@ user-friendly reports need to be created.")
     (description "The noweb system for source code, implemented in R.")
     (license license:lgpl2.0)))
 
+(define-public r-novelqualcodes
+  (package
+    (name "r-novelqualcodes")
+    (version "0.13.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "novelqualcodes" version))
+              (sha256
+               (base32
+                "0mgmjd7zrknnsg8a4kjkdk98pnm0z1k73mim40ivb1qfp0pxmn0g"))))
+    (properties `((upstream-name . "novelqualcodes")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-readxl r-naturalsort r-ggplot2 r-ggpattern))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/DesiQuintans/novelqualcodes")
+    (synopsis
+     "Visualise the Path to a Stopping Point in Qualitative Interviews Based on Novel Codes")
+    (description
+     "In semi-structured interviews that use the framework method, it is not always
+clear how refinements to interview questions affect the decision of when to stop
+interviews.  The trend of novel and duplicate interview codes (novel codes are
+information that other interviewees have not previously mentioned) provides
+insight into the richness of qualitative information.  This package provides
+tools to visualise when refinements occur and how that affects the trends of
+novel and duplicate codes.  These visualisations, when used progressively as new
+interviews are finished, can help the researcher to decide on a stopping point
+for their interviews.")
+    (license license:expat)))
+
 (define-public r-novelforestsg
   (package
     (name "r-novelforestsg")
@@ -3493,13 +3501,13 @@ modified Polak-Ribiere-Polyak formula as described in (Li, Can, 2013,
 (define-public r-nonmemica
   (package
     (name "r-nonmemica")
-    (version "1.0.2")
+    (version "1.0.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nonmemica" version))
               (sha256
                (base32
-                "08wv6c56f90759mll9q8y3l3gjgv6bf8j7ac3pkpn463v76q78wm"))))
+                "063l0j77rjlk93hmc8kxwb6naw1j9fr61yvqkwm69578ba5vsr4k"))))
     (properties `((upstream-name . "nonmemica")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -4230,13 +4238,13 @@ mapped.")
 (define-public r-nodesub
   (package
     (name "r-nodesub")
-    (version "1.2.5")
+    (version "1.2.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nodeSub" version))
               (sha256
                (base32
-                "11a744gdfb2lwya01g1gg4165f692hjwym40r0rdi1y4l0jk8l8h"))))
+                "08ai25fkvnc026hif096f2389m553xqrcz08fkp2yjgavv5rrai6"))))
     (properties `((upstream-name . "nodeSub")))
     (build-system r-build-system)
     (propagated-inputs (list r-tracerer
@@ -4250,13 +4258,12 @@ mapped.")
                              r-phangorn
                              r-pbapply
                              r-mauricer
+                             r-lifecycle
                              r-geiger
                              r-ddd
                              r-beautier
                              r-beastier
                              r-babette
-                             r-assertthat
-                             r-aptreeshape
                              r-ape))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/thijsjanzen/nodeSub")
@@ -4980,6 +4987,29 @@ dimensions and/or non-metric spaces.  Hence, the main focus is on approximate
 methods\".  The wrapper also includes Approximate Kernel k-Nearest-Neighbor
 functions based on the NMSLIB <https://github.com/nmslib/nmslib> Python Library.")
     (license license:asl2.0)))
+
+(define-public r-nmsim
+  (package
+    (name "r-nmsim")
+    (version "0.0.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "NMsim" version))
+              (sha256
+               (base32
+                "03ssxv8w6g44m9cx57psp23mgcbx56ldwiyh68vyvb73zm23l075"))))
+    (properties `((upstream-name . "NMsim")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-r-utils r-nmdata r-mass r-data-table))
+    (home-page "https://philipdelff.github.io/NMsim/")
+    (synopsis "Seamless 'Nonmem' Simulation Platform")
+    (description
+     "This package provides a complete and seamless Nonmem simulation interface from
+within R. Turns Nonmem control streams into simulation control streams, executes
+them with specified simulation input data and returns the results.  The
+simulation is performed by Nonmem', eliminating time spent and risks of
+re-implementation of models in other tools.")
+    (license license:expat)))
 
 (define-public r-nmrrr
   (package
@@ -5970,13 +6000,13 @@ examples.")
 (define-public r-nlpsem
   (package
     (name "r-nlpsem")
-    (version "0.2.1")
+    (version "0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nlpsem" version))
               (sha256
                (base32
-                "0w2im40ncwmbhrwhfkmckivc4csk463wv1rpqr8yg4ffk3sknlp6"))))
+                "0i6skpmnbi99dkcdam61rq5rfk6wv41q0r1q357qm66wbqyj30fr"))))
     (properties `((upstream-name . "nlpsem")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -6971,13 +7001,13 @@ Andrecut (2009) <doi:10.1089/cmb.2008.0221>.")
 (define-public r-nimblesmc
   (package
     (name "r-nimblesmc")
-    (version "0.10.1")
+    (version "0.11.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nimbleSMC" version))
               (sha256
                (base32
-                "1bxm729v40zd9gflllp8plj7gk325mc4gdlmsvkrgp31rslkxx76"))))
+                "14ps01rphi31570m2qhmgpjhdn73aldhm5a20y6fqf3j24k86jys"))))
     (properties `((upstream-name . "nimbleSMC")))
     (build-system r-build-system)
     (propagated-inputs (list r-nimble))
@@ -7045,13 +7075,13 @@ increased MCMC efficiency.")
 (define-public r-nimblehmc
   (package
     (name "r-nimblehmc")
-    (version "0.1.1")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nimbleHMC" version))
               (sha256
                (base32
-                "0w416k8ln79iyir7z7fhj9s0yhjap3r8fyj71lc1csikgk878izd"))))
+                "09cnfnrm7f8zdih5f7d8zsxlr8bxhymk5cji812s658m2g8w9n6n"))))
     (properties `((upstream-name . "nimbleHMC")))
     (build-system r-build-system)
     (propagated-inputs (list r-nimble))
@@ -7060,12 +7090,14 @@ increased MCMC efficiency.")
      "Hamiltonian Monte Carlo and Other Gradient-Based MCMC Sampling Algorithms for 'nimble'")
     (description
      "This package provides gradient-based MCMC sampling algorithms for use with the
-MCMC engine provided by the nimble package.  This includes Hamiltonian Monte
-Carlo (HMC) and (under development) Langevin samplers.  The HMC sampler
-dynamically determines step size and number of leapfrog steps using the
-No-U-Turn (NUTS) algorithm as described in Hoffman and Gelman (2014)
-<@code{arXiv:1111.4246>}.  In addition, convenience functions are provided for
-generating and modifying MCMC configuration objects which employ HMC sampling.")
+MCMC engine provided by the nimble package.  This includes two versions of
+Hamiltonian Monte Carlo (HMC) No-U-Turn (NUTS) sampling, and (under development)
+Langevin samplers.  The `NUTS_classic` sampler implements the original HMC-NUTS
+algorithm as described in Hoffman and Gelman (2014) <@code{arXiv:1111.4246>}.
+The `NUTS` sampler is a modern version of HMC-NUTS sampling matching the HMC
+sampler available in version 2.32.2 of Stan (Stan Development Team, 2023).  In
+addition, convenience functions are provided for generating and modifying MCMC
+configuration objects which employ HMC sampling.")
     (license (list license:bsd-3 license:gpl2+))))
 
 (define-public r-nimbleecology
@@ -9168,40 +9200,6 @@ with (Riedmiller, 1994) or without weight backtracking (Riedmiller and Braun,
 activation function.  Furthermore, the calculation of generalized weights
 (Intrator O & Intrator N, 1993) is implemented.")
     (license license:gpl2+)))
-
-(define-public r-neuralgam
-  (package
-    (name "r-neuralgam")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "neuralGAM" version))
-              (sha256
-               (base32
-                "0s7c15w1mclyls09agmczpcfnk7yx87ikbr4jp8splfcy2wipkmk"))))
-    (properties `((upstream-name . "neuralGAM")))
-    (build-system r-build-system)
-    (inputs (list tensorflow python))
-    (propagated-inputs (list r-tensorflow
-                             r-reticulate
-                             r-magrittr
-                             r-keras
-                             r-gridextra
-                             r-ggplot2
-                             r-formula-tools))
-    (home-page "https://inesortega.github.io/neuralGAM/")
-    (synopsis
-     "Interpretable Neural Network Based on Generalized Additive Models")
-    (description
-     "Neural network framework based on Generalized Additive Models from Hastie &
-Tibshirani (1990, ISBN:9780412343902), which trains a different neural network
-to estimate the contribution of each feature to the response variable.  The
-networks are trained independently leveraging the local scoring and backfitting
-algorithms to ensure that the Generalized Additive Model converges and it is
-additive.  The resultant Neural Network is a highly accurate and interpretable
-deep learning model, which can be used for high-risk AI practices where
-decision-making should be based on accountable and interpretable algorithms.")
-    (license (license:fsdg-compatible "MPL-2.0"))))
 
 (define-public r-networktree
   (package
@@ -13670,13 +13668,13 @@ contains 15 color schemes and checks for colorblind-friendliness of palettes.")
 (define-public r-natmanager
   (package
     (name "r-natmanager")
-    (version "0.5.0")
+    (version "0.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "natmanager" version))
               (sha256
                (base32
-                "05iqbkxxcf3zckba7jqj84flmpr903dwjkjc4mldgmwvp4cjwagn"))))
+                "1lfz73zg95bv2wfk5pk0jb1r9n0w8ikfsza1cldfgffa93ii9ivd"))))
     (properties `((upstream-name . "natmanager")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -14253,13 +14251,13 @@ technique was published in 2017 <doi:10.1016/j.ymeth.2017.12.001>.")
 (define-public r-nametagger
   (package
     (name "r-nametagger")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nametagger" version))
               (sha256
                (base32
-                "1s3rsplia53cxqpxxkb7l7p56bkgvl5jcjcxgf1a8qaxxf5qngi5"))))
+                "1m6g8fx9fvd8zzvv4c9dh1dw63dkvl9i5mz8rqgvwqgqdvvvw1vi"))))
     (properties `((upstream-name . "nametagger")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -14547,6 +14545,39 @@ take advantage of sparse data.")
      "An application for the empirical extrapolation of time features selecting and
 summarizing the most relevant patterns in time sequences.")
     (license license:gpl3)))
+
+(define-public r-nair
+  (package
+    (name "r-nair")
+    (version "1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "NAIR" version))
+              (sha256
+               (base32
+                "0qal4khgmipgxv86ji3kpwk90lhaw7aqs70ckl4wh7mp402sxykn"))))
+    (properties `((upstream-name . "NAIR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-matrix
+                             r-lifecycle
+                             r-igraph
+                             r-ggraph
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page
+     "https://mlizhangx.github.io/Network-Analysis-for-Repertoire-Sequencing-/")
+    (synopsis "Network Analysis of Immune Repertoire")
+    (description
+     "Pipelines for studying the adaptive immune repertoire of T cells and B cells via
+network analysis based on receptor sequence similarity.  Relate clinical
+outcomes to immune repertoires based on their network properties, or to
+particular clusters and clones within a repertoire.  Yang et al. (2023)
+<doi:10.3389/fimmu.2023.1181825>.")
+    (license license:gpl3+)))
 
 (define-public r-naijr
   (package

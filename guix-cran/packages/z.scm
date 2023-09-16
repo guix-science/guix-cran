@@ -116,13 +116,13 @@ Optimization methods are taken from Heckbert (1985)
 (define-public r-zoid
   (package
     (name "r-zoid")
-    (version "1.1.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "zoid" version))
               (sha256
                (base32
-                "0x37250fq3a3jbl1a2p8zkbacwzhc1xylk1nnfmx2fcgjif40lmq"))))
+                "0c23ji48bq5qhsjshfai9srivn7lhjrzcs4fpysiw4245a2psyrr"))))
     (properties `((upstream-name . "zoid")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders

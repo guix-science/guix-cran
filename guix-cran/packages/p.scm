@@ -660,16 +660,17 @@ the USFS @code{AirFire} research team <https://www.airfire.org>.")
 (define-public r-pwexp
   (package
     (name "r-pwexp")
-    (version "0.3.0")
+    (version "0.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PWEXP" version))
               (sha256
                (base32
-                "1aak0s12b33dy93cqp2z4z525ymhp1z0l7gjh6j3m1brv1nyk9f0"))))
+                "1dw3g8f105hjs2b975c4aijr7spphl3f1f9jfbfvjzh0a0hgph6f"))))
     (properties `((upstream-name . "PWEXP")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survival r-segmented r-fastmatch))
+    (propagated-inputs (list r-survival r-segmented r-foreach r-fastmatch
+                             r-dosnow))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/zjph602xtc/PWEXP")
     (synopsis "Piecewise Exponential Distribution Prediction Model")
@@ -3482,6 +3483,32 @@ the other.  For more details see Klein et al. (2021)
 <doi:10.1007/s13571-019-00215-9>.")
     (license license:gpl2+)))
 
+(define-public r-psindependencetest
+  (package
+    (name "r-psindependencetest")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "PSIndependenceTest" version))
+              (sha256
+               (base32
+                "0nsg9c08j8ag66nlx2sjcddrpv2zkv1fm624afr50qyyyvr04g7z"))))
+    (properties `((upstream-name . "PSIndependenceTest")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=PSIndependenceTest")
+    (synopsis
+     "Independence Tests for Two-Way, Three-Way and Four-Way Contingency Tables")
+    (description
+     "Presentation two independence tests for two-way, three-way and four-way
+contingency tables.  These tests are: the modular test and the logarithmic
+minimum test.  For details on this method see: Sulewski (2017)
+<doi:10.18778/0208-6018.330.04>, Sulewski (2018)
+<doi:10.1080/02664763.2018.1424122>, Sulewski (2019)
+<doi:10.2478/bile-2019-0003>, Sulewski (2021)
+<doi:10.1080/00949655.2021.1908286>.")
+    (license license:gpl3)))
+
 (define-public r-psidr
   (package
     (name "r-psidr")
@@ -3828,6 +3855,36 @@ mathematical operations used to generate the PSDs are described in these sites:
 <https://www.mathworks.com/help/signal/ug/power-spectral-density-estimates-using-fft.html>.")
     (license (list license:gpl3+
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-psdistr
+  (package
+    (name "r-psdistr")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "PSDistr" version))
+              (sha256
+               (base32
+                "1djhpc9p5q9lqnx7pn2jcskmq28iriq42yyid70sc5r917c357x8"))))
+    (properties `((upstream-name . "PSDistr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-pracma))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=PSDistr")
+    (synopsis "Distributions Derived from Normal Distribution")
+    (description
+     "Presentation of distributions such as: two-piece power normal (TPPN),
+plasticizing component (PC), DS normal (DSN), expnormal (EN), Sulewski
+plasticizing component (SPC), easily changeable kurtosis (ECK) distributions.
+Density, distribution function, quantile function and random generation are
+presented.  For details on this method see: Sulewski (2019)
+<doi:10.1080/03610926.2019.1674871>, Sulewski (2021)
+<doi:10.1080/03610926.2020.1837881>, Sulewski (2021)
+<doi:10.1134/S1995080221120337>, Sulewski (2022) <\"New members of the Johnson
+family of probability dis-tributions: properties and application\">, Sulewski,
+Volodin (2022) <doi:10.1134/S1995080222110270>, Sulewski (2023)
+<doi:10.17713/ajs.v52i3.1434>.")
+    (license license:gpl3)))
 
 (define-public r-psdata
   (package
@@ -4267,6 +4324,28 @@ PRS-PGx Methods by Zhai, S., Zhang, H., Mehrotra, D.V., and Shen, J., 2021
      "Reverse depends for a given package are queued such that multiple workers can
 run the tests in parallel.")
     (license license:gpl2+)))
+
+(define-public r-prqlr
+  (package
+    (name "r-prqlr")
+    (version "0.5.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "prqlr" version))
+              (sha256
+               (base32
+                "1n7v2m24kgg4am196mb7ngjh9b934sh0vc58cka8kdfvhk57bksc"))))
+    (properties `((upstream-name . "prqlr")))
+    (build-system r-build-system)
+    (inputs (list))
+    (native-inputs (list r-knitr))
+    (home-page "https://eitsupi.github.io/prqlr/")
+    (synopsis "R Bindings for the 'prql-compiler' Rust Library")
+    (description
+     "This package provides a function to convert PRQL strings to SQL strings.
+Combined with other R functions that take SQL as an argument, PRQL can be used
+on R.")
+    (license license:expat)))
 
 (define-public r-prp
   (package
@@ -5658,13 +5737,13 @@ Decision Analysis (MCDA) process involving multiple criteria, by PROMETHEE
 (define-public r-prome
   (package
     (name "r-prome")
-    (version "1.8.1.0")
+    (version "1.9.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "prome" version))
               (sha256
                (base32
-                "1knhxdvb178hrdd7hnwli8yslflpynx944wnz9qszivlm9r9i6wf"))))
+                "134nc90av9js4qdq7dxy7z93h621i6w1vbgly38minprfam0wwm0"))))
     (properties `((upstream-name . "prome")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -5806,21 +5885,17 @@ subdirectories for specific components, templates for manuscripts, and so on.")
 (define-public r-projectmanagement
   (package
     (name "r-projectmanagement")
-    (version "1.4.7")
+    (version "1.5.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ProjectManagement" version))
               (sha256
                (base32
-                "1q5ssr9ixgjlpbnndcq1p1d3ichw873f42s283zx1swgav14yw54"))))
+                "04i1rz5dwgkgy6da12v3vhq3skqmnqlb3dry99hycjrfql0v4wsr"))))
     (properties `((upstream-name . "ProjectManagement")))
     (build-system r-build-system)
-    (propagated-inputs (list r-triangle
-                             r-plotly
-                             r-lpsolveapi
-                             r-kappalab
-                             r-igraph
-                             r-gametheory))
+    (propagated-inputs (list r-triangle r-plotly r-lpsolveapi r-kappalab
+                             r-igraph))
     (home-page "https://cran.r-project.org/package=ProjectManagement")
     (synopsis "Management of Deterministic and Stochastic Projects")
     (description
@@ -8281,13 +8356,13 @@ prettier versions of the originals.")
 (define-public r-prettifyaddins
   (package
     (name "r-prettifyaddins")
-    (version "2.6.0")
+    (version "2.6.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "prettifyAddins" version))
               (sha256
                (base32
-                "1ahn6sij5nz2l1hinfappj34n0j3aqq86005xv4jpy70gv0ymy3z"))))
+                "0ncj10j1ygc1dhlqdg5vklzf258bjbg6mry8i8vqqh1dxvl2djwr"))))
     (properties `((upstream-name . "prettifyAddins")))
     (build-system r-build-system)
     (propagated-inputs (list r-xrjulia
@@ -8642,13 +8717,13 @@ packages.  Runtime examples are provided in the package function as well as at
 (define-public r-preprocessrecordlinkage
   (package
     (name "r-preprocessrecordlinkage")
-    (version "1.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PreProcessRecordLinkage" version))
               (sha256
                (base32
-                "15lbnzd6ii2wpcmv7jpasy8lmn85qrry33j3p77z8v81q4csjih8"))))
+                "05j3nbilkw8iqhdazkjz58sgnnwan2nh28b2sqi0gphzdbwks7mi"))))
     (properties `((upstream-name . "PreProcessRecordLinkage")))
     (build-system r-build-system)
     (propagated-inputs (list r-tm r-syn r-stringr r-recordlinkage r-data-table))
@@ -10250,6 +10325,36 @@ include three loss functions as check, asymmetric least square and asymmetric
 Huber functions; and three structures as simple regression, fixed effects and
 fixed effects with penalized intercepts by LASSO.")
     (license license:gpl2+)))
+
+(define-public r-pqrbayes
+  (package
+    (name "r-pqrbayes")
+    (version "1.0.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "pqrBayes" version))
+              (sha256
+               (base32
+                "0mbhkha99qyk5hkpk13ysb0686lcn6q9vq34838fz1l7xy47mzw3"))))
+    (properties `((upstream-name . "pqrBayes")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-glmnet))
+    (home-page "https://github.com/cenwu/pqrBayes")
+    (synopsis "Bayesian Penalized Quantile Regression")
+    (description
+     "The quantile varying coefficient model is robust to data heterogeneity, outliers
+and heavy-tailed distributions in the response variable due to the check loss
+function in quantile regression.  In addition, it can flexibly model the dynamic
+pattern of regression coefficients through nonparametric varying coefficient
+functions.  Although high dimensional quantile varying coefficient model has
+been examined extensively in the frequentist framework, the corresponding
+Bayesian variable selection methods have rarely been developed.  In this
+package, we have implemented the Gibbs samplers of the penalized Bayesian
+quantile varying coefficient model with the spike-and-slab priors [Zhou et
+al.(2023)]<doi:10.1016/j.csda.2023.107808>.  The Markov Chain Monte Carlo (MCMC)
+algorithms of the proposed and alternative models can be efficiently performed
+by using the package.")
+    (license license:gpl2)))
 
 (define-public r-pqlseq
   (package
@@ -12958,35 +13063,6 @@ the model, which represents an estimation method that is not the best.  The
 popstudy package contains several tools for statistical analysis in demography
 and time series based in Shryock research (Shryock et.  al. (1980)
 <https://books.google.co.cr/books?id=8Oo6AQAAMAAJ>).")
-    (license license:gpl3)))
-
-(define-public r-popsom
-  (package
-    (name "r-popsom")
-    (version "6.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "popsom" version))
-              (sha256
-               (base32
-                "1zjg55fs4j36rp75k0961pndjqd4w085lc7v83nprjpc7jnx45g6"))))
-    (properties `((upstream-name . "popsom")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-hash r-ggplot2 r-fields))
-    (native-inputs (list gfortran))
-    (home-page "https://github.com/lutzhamel/popsom")
-    (synopsis
-     "An Efficient Implementation of Kohonen's Self-Organizing Maps (SOMs) with Starburst Visualizations")
-    (description
-     "Kohonen's self-organizing maps with a number of distinguishing features: (1) An
-efficient, single threaded, stochastic training algorithm inspired by ideas from
-tensor algebra.  Provides significant speedups over traditional single-threaded
-training algorithms.  No special accelerator hardware required (see
-<doi:10.1007/978-3-030-01057-7_60>). (2) Automatic centroid detection and
-visualization using starbursts. (3) Two models of the data: (a) a self
-organizing map model, (b) a centroid based clustering model. (4) A number of
-easily accessible quality metrics for the self organizing map and the centroid
-based cluster model (see <doi:10.1007/978-3-319-28518-4_4>).")
     (license license:gpl3)))
 
 (define-public r-popreconstruct
@@ -16139,13 +16215,13 @@ survey'.")
 (define-public r-pnar
   (package
     (name "r-pnar")
-    (version "1.4")
+    (version "1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PNAR" version))
               (sha256
                (base32
-                "1fcmn901d18rc89qv3bx66k3y0nccgxnmy372v9wj9gxxa65dsx1"))))
+                "02a8bg0kj9gbixq4g3vg55pf0vx7czsv3xqnkrpmfg9gzxybl34r"))))
     (properties `((upstream-name . "PNAR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rfast2
@@ -16157,19 +16233,16 @@ survey'.")
     (home-page "https://cran.r-project.org/package=PNAR")
     (synopsis "Poisson Network Autoregressive Models")
     (description
-     "Quasi likelihood-based methods for estimating Poisson Network Autoregression
-with p lags, PNAR, following generalized linear models are provided.  PNAR
-models with the identity and with the logarithmic link function are allowed.
-The inclusion of exogenous covariates is also possible.  Moreover, it provides
-tools for testing the linearity of linear PNAR model versus several nonlinear
-alternatives.  Finally, it allows generating multivariate count distributions,
-from linear and nonlinear PNAR models, where the dependence between Poisson
-random variables is generated by suitable copulas.  References include:
-Armillotta, M. and K. Fokianos (2022a).  Poisson network autoregression.
-<@code{arXiv:2104.06296>}.  Armillotta, M. and K. Fokianos (2022b).  Testing
-linearity for network autoregressive models. <@code{arXiv:2202.03852>}.
-Armillotta, M., Tsagris, M. and Fokianos, K. (2022c).  The R-package PNAR for
-modelling count network time series. <@code{arXiv:2211.02582>}.")
+     "Quasi likelihood-based methods for estimating linear and log-linear Poisson
+Network Autoregression models with p lags and covariates.  Tools for testing the
+linearity versus several non-linear alternatives.  Tools for simulation of
+multivariate count distributions, from linear and non-linear PNAR models, by
+using a specific copula construction.  References include: Armillotta, M. and K.
+Fokianos (2022a).  Poisson network autoregression. <@code{arXiv:2104.06296>}.
+Armillotta, M. and K. Fokianos (2022b).  Testing linearity for network
+autoregressive models. <@code{arXiv:2202.03852>}.  Armillotta, M., Tsagris, M.
+and Fokianos, K. (2022c).  The R-package PNAR for modelling count network time
+series. <@code{arXiv:2211.02582>}.")
     (license license:gpl2+)))
 
 (define-public r-pnadcibge
@@ -18424,18 +18497,17 @@ plots, information plots, and comparison plots for examining parameter drift.")
 (define-public r-pliman
   (package
     (name "r-pliman")
-    (version "2.0.0")
+    (version "2.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pliman" version))
               (sha256
                (base32
-                "1al6r9qgmy26ahqnqlxjjrad1j5c3ici8vs2k91pp3f6hkah5k3q"))))
+                "12kfj7vqrav2gkij1brm8lzsbgivmxflxvjigb5kp5c00spax8y7"))))
     (properties `((upstream-name . "pliman")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-raster r-foreach
                              r-doparallel))
-    (native-inputs (list r-knitr))
     (home-page "https://github.com/TiagoOlivoto/pliman")
     (synopsis "Tools for Plant Image Analysis")
     (description
@@ -20207,13 +20279,13 @@ and comparing PK values in R.")
 (define-public r-pk
   (package
     (name "r-pk")
-    (version "1.3-5")
+    (version "1.3-6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PK" version))
               (sha256
                (base32
-                "1wzz2qv6h6nc2hcsg4098951i608xbbhc9f9ngamfigh5sbmzbh6"))))
+                "0mynn21bmqn2jnaprlfvz0bf3mfjirdrc88n8d28hv74bk1a59vp"))))
     (properties `((upstream-name . "PK")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=PK")
@@ -20935,13 +21007,13 @@ et al. (2019) <DOI: 10.1093/bioinformatics/bty1049>, Nguyen et al. (2017)<DOI:
 (define-public r-pins
   (package
     (name "r-pins")
-    (version "1.2.1")
+    (version "1.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pins" version))
               (sha256
                (base32
-                "001qw73p9mgc21s6mp40awqm12fjr0whpry72hin533yj5s1w9va"))))
+                "0pmik7ixnyvjdc0r91hnmkhm5xh1ckw7s32x1p75cpyapb3bbarz"))))
     (properties `((upstream-name . "pins")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -25478,13 +25550,13 @@ with model selection in regression problems.")
 (define-public r-permutes
   (package
     (name "r-permutes")
-    (version "2.6")
+    (version "2.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "permutes" version))
               (sha256
                (base32
-                "03raz8vmb9wnhw6qsfizjjix6cdw5f0nqbq2375i0316njna4nsc"))))
+                "135k5b9w1cb2r08dqw4ij043wxbx9w6a0574zpns834k52z0zfqp"))))
     (properties `((upstream-name . "permutes")))
     (build-system r-build-system)
     (propagated-inputs (list r-plyr))
@@ -25847,13 +25919,13 @@ developers experience when building and maintaining applications.")
 (define-public r-periscope
   (package
     (name "r-periscope")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "periscope" version))
               (sha256
                (base32
-                "089pyb9hlf846ngjlggx1vygvsdyii3s13xbbgjmiy674j7srvkp"))))
+                "1llni5xs5fpnls3zysx0wrp4hc40qc6ll9vdpmffs6v2irnz43bz"))))
     (properties `((upstream-name . "periscope")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -29407,13 +29479,13 @@ involved.")
 (define-public r-pcfactorstan
   (package
     (name "r-pcfactorstan")
-    (version "1.5.3")
+    (version "1.5.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pcFactorStan" version))
               (sha256
                (base32
-                "0xyz0nmgyc1i46b37qs1ip25pv4932qn5fdisbdxmwig2sxvacd9"))))
+                "09mjvgvdlc85246jgi4x99jr2x2j6c5vn3y3gwjxw61cmmyybqzf"))))
     (properties `((upstream-name . "pcFactorStan")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -31222,13 +31294,13 @@ Statistics with R.")
 (define-public r-pasteascomment
   (package
     (name "r-pasteascomment")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pasteAsComment" version))
               (sha256
                (base32
-                "1837s2bfxpgjs15q1brr166iyar2xzvmdj0qxknb8hnqrmi207mf"))))
+                "165wsvgnrsbx9lh6bmffzyhdfhviap4vl556sbgr8f45lqcgsh69"))))
     (properties `((upstream-name . "pasteAsComment")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstudioapi r-clipr))
@@ -32396,40 +32468,6 @@ another.")
      "Parallelized version of the \"segment\" function from Bioconductor package
 \"DNAcopy\", utilizing multi-core computation on host CPU")
     (license license:gpl2)))
-
-(define-public r-parcats
-  (package
-    (name "r-parcats")
-    (version "0.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "parcats" version))
-              (sha256
-               (base32
-                "1dqkkmwfvpz5lkskii1z3lx2xw2jy3rhh2skrg7mc8kv8z3m9i2h"))))
-    (properties `((upstream-name . "parcats")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-purrr
-                             r-magrittr
-                             r-htmlwidgets
-                             r-forcats
-                             r-easyalluvial
-                             r-dplyr))
-    (native-inputs (list esbuild))
-    (home-page "https://erblast.github.io/parcats/")
-    (synopsis "Interactive Parallel Categories Diagrams for 'easyalluvial'")
-    (description
-     "Complex graphical representations of data are best explored using interactive
-elements.  parcats adds interactive graphing capabilities to the easyalluvial
-package.  The plotly.js parallel categories diagrams offer a good framework for
-creating interactive flow graphs that allow manual drag and drop sorting of
-dimensions and categories, highlighting single flows and displaying mouse over
-information.  The plotly.js dependency is quite heavy and therefore is
-outsourced into a separate package.")
-    (license license:expat)))
 
 (define-public r-parbayesianoptimization
   (package
@@ -33764,28 +33802,6 @@ mean regression function.  When used together, they give a complete summary of
 the predictive power of a prediction function.  Please refer to Gang Li and
 Xiaoyan Wang (2016) <@code{arXiv:1611.03063>} for more details.")
     (license license:gpl3)))
-
-(define-public r-pamctdp
-  (package
-    (name "r-pamctdp")
-    (version "0.3.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "pamctdp" version))
-              (sha256
-               (base32
-                "0qs8lj5g2fx5rfd0afv76x9x7wqm333qmjv6zzip6pf11dzkghyj"))))
-    (properties `((upstream-name . "pamctdp")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xtable r-factoclass r-ade4))
-    (home-page "https://cran.r-project.org/package=pamctdp")
-    (synopsis
-     "Principal Axes Methods for Contingency Tables with Partition Structures on Rows and Columns")
-    (description
-     "Correspondence Analysis of Contingency Tables with Simple and Double Structures
-Superimposed Representations, Intra Blocks Correspondence Analysis (IBCA),
-Weighted Intra Blocks Correspondence Analysis (WIBCA).")
-    (license license:gpl2+)))
 
 (define-public r-pambinaries
   (package

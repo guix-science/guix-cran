@@ -7,12 +7,12 @@
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages cran)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages gcc)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages python)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages haskell-xyz)
+  #:use-module (gnu packages gcc)
   #:use-module (gnu packages web)
   #:use-module (gnu packages graphviz)
   #:use-module (gnu packages java)
@@ -595,41 +595,6 @@ the binomial dispersion index (DIb), the negative binomial dispersion index
 Finally, we are computed some multivariate versions of these functions such that
 the generalized dispersion index (GDI) with its marginal one (MDI) and the
 generalized variation index (GVI) with its marginal one (MVI) too.")
-    (license license:gpl3)))
-
-(define-public r-gwex
-  (package
-    (name "r-gwex")
-    (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "GWEX" version))
-              (sha256
-               (base32
-                "0iykciifbskcrx1qv4874nxli1sq6nbmlfinq4ksir3p93y7ds87"))))
-    (properties `((upstream-name . "GWEX")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-renext
-                             r-nleqslv
-                             r-mvtnorm
-                             r-mass
-                             r-lmomco
-                             r-foreach
-                             r-fgarch
-                             r-envstats
-                             r-doparallel
-                             r-abind))
-    (native-inputs (list gfortran))
-    (home-page "https://cran.r-project.org/package=GWEX")
-    (synopsis
-     "Multi-Site Stochastic Models for Daily Precipitation and Temperature")
-    (description
-     "Application of multi-site models for daily precipitation and temperature data.
-This package is designed for an application to 105 precipitation and 26
-temperature gauges located in Switzerland.  It applies fitting procedures and
-provides weather generators described in the following references: - Evin, G.,
-A.-C. Favre, and B. Hingray. (2018) <doi:10.5194/hess-22-655-2018>. - Evin, G.,
-A.-C. Favre, and B. Hingray. (2018) <doi:10.1007/s00704-018-2404-x>.")
     (license license:gpl3)))
 
 (define-public r-gwer
@@ -1774,25 +1739,27 @@ J. P. B.; Pereira, R. H. M.; Andrade, P. R. (2022) <doi:10.31219/osf.io/8m2cy>."
 (define-public r-gtextras
   (package
     (name "r-gtextras")
-    (version "0.4.5")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gtExtras" version))
               (sha256
                (base32
-                "04vl7i9qllfn5977y47kc4355rpk9m63rii2c0v27i9lbvr3z4fr"))))
+                "000vwq4k0vrn75vzy6iflqydxl81rgn06a8kqca99gwywcqr3gvv"))))
     (properties `((upstream-name . "gtExtras")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
                              r-rlang
                              r-paletteer
+                             r-knitr
                              r-htmltools
                              r-gt
                              r-glue
                              r-ggplot2
                              r-fontawesome
                              r-dplyr
-                             r-commonmark))
+                             r-commonmark
+                             r-cli))
     (home-page "https://github.com/jthomasmock/gtExtras")
     (synopsis "Extending 'gt' for Beautiful HTML Tables")
     (description
@@ -3692,28 +3659,6 @@ grouped hypothesis, aiming at controlling both the total posterior false
 discovery rate and within-group false discovery rate.")
     (license license:gpl3)))
 
-(define-public r-groupsubsetselection
-  (package
-    (name "r-groupsubsetselection")
-    (version "1.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "groupsubsetselection" version))
-              (sha256
-               (base32
-                "118cj5xc8nbq4fs2gbzg1nhynixaflbl0si77gyy4ybw0drsz4nj"))))
-    (properties `((upstream-name . "groupsubsetselection")))
-    (build-system r-build-system)
-    (native-inputs (list gfortran))
-    (home-page "https://cran.r-project.org/package=groupsubsetselection")
-    (synopsis "Group Subset Selection")
-    (description
-     "Group subset selection for linear regression models is provided in this package.
- Given response variable, and explanatory variables, which are organised in
-groups, group subset selection selects a small number of groups to explain
-response variable linearly using least squares.")
-    (license license:gpl2)))
-
 (define-public r-groupseq
   (package
     (name "r-groupseq")
@@ -5014,13 +4959,13 @@ Equation for European Nutrient losses (GREEN); Grizzetti et al. (2005)
 (define-public r-greencrab-toolkit
   (package
     (name "r-greencrab-toolkit")
-    (version "0.1")
+    (version "0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "greencrab.toolkit" version))
               (sha256
                (base32
-                "14sin19fqmsb0a4nhdk27bcz8n4qmsz8j7q16n1v25s3r9f4x6rd"))))
+                "11lrbjm91m2lbgr0wdy84mal4qxs9x0bmniaijxpw9fdwrkqq0aw"))))
     (properties `((upstream-name . "greencrab.toolkit")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -5067,13 +5012,13 @@ Additional functions are provided for automatic cutting and diagnostic plotting.
 (define-public r-greeks
   (package
     (name "r-greeks")
-    (version "1.2.0")
+    (version "1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "greeks" version))
               (sha256
                (base32
-                "0vrzrz9kbgqg1kck0q3zkp5sfq8pd9lqf9ri5nyfcdp2s42nwp0w"))))
+                "0danj3nllcxzv9gf9b5sjcjn8qafmaas3nx54r0b447d3sqdl95f"))))
     (properties `((upstream-name . "greeks")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -7589,13 +7534,13 @@ and entering passphrases.")
 (define-public r-gpfda
   (package
     (name "r-gpfda")
-    (version "3.1.2")
+    (version "3.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GPFDA" version))
               (sha256
                (base32
-                "18dcban1j554d1034rgrsb2m26a7lw09sb3yhym4a9wb5nr80jp0"))))
+                "0s5jq2vmz02yr1wd79s6h5c8rvpbkdlnhdy5yfckk5nxddabcymb"))))
     (properties `((upstream-name . "GPFDA")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
@@ -10262,45 +10207,6 @@ Martino A., Ghiglietti, A., Ieva, F. and Paganoni A. M. (2017)
 <@code{arXiv:1708.00386>}.")
     (license license:gpl3)))
 
-(define-public r-gmeta
-  (package
-    (name "r-gmeta")
-    (version "2.3-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "gmeta" version))
-              (sha256
-               (base32
-                "02w3a8c189wdvcxsnclbgzb6bc9fq88rcw2danxa6i9g7q4kq2sp"))))
-    (properties `((upstream-name . "gmeta")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-binom r-biasedurn))
-    (native-inputs (list gfortran))
-    (home-page "https://cran.r-project.org/package=gmeta")
-    (synopsis
-     "Meta-Analysis via a Unified Framework of Confidence Distribution")
-    (description
-     "An implementation of an all-in-one function for a wide range of meta-analysis
-problems.  It contains three functions.  The gmeta() function unifies all
-standard meta-analysis methods and also several newly developed ones under a
-framework of combining confidence distributions (CDs).  Specifically, the
-package can perform classical p-value combination methods (such as methods of
-Fisher, Stouffer, Tippett, etc.), fit meta-analysis fixed-effect and
-random-effects models, and synthesizes 2x2 tables.  Furthermore, it can perform
-robust meta-analysis, which provides protection against model-misspecifications,
-and limits the impact of any unknown outlying studies.  In addition, the package
-implements two exact meta-analysis methods from synthesizing 2x2 tables with
-rare events (e.g., zero total event).  The np.gmeta() function summarizes
-information obtained from multiple studies and makes inference for study-level
-parameters with no distributional assumption.  Specifically, it can construct
-confidence intervals for unknown, fixed study-level parameters via confidence
-distribution.  Furthermore, it can perform estimation via asymptotic confidence
-distribution whether tie or near tie condition exist or not.  The plot.gmeta()
-function to visualize individual and combined CDs through extended forest plots
-is also available.  Compared to version 2.2-6, version 2.3-0 contains a new
-function np.gmeta().")
-    (license license:gpl2+)))
-
 (define-public r-gmedian
   (package
     (name "r-gmedian")
@@ -11650,13 +11556,13 @@ Methodology. <doi:10.1027/1614-2241/a000153>.")
 (define-public r-glmmroptim
   (package
     (name "r-glmmroptim")
-    (version "0.3.1")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "glmmrOptim" version))
               (sha256
                (base32
-                "1x9ii2w3nk3sj8ksv0cqqdf8320rpm4239r2fb5y298an99jhwws"))))
+                "0rs43vv31fdch83fs7ibx1zwwpcsdyqr7ggljfa9c168sgmhxa37"))))
     (properties `((upstream-name . "glmmrOptim")))
     (build-system r-build-system)
     (propagated-inputs (list r-sparsechol
@@ -11684,13 +11590,13 @@ this package can be found in Watson and Pan (2022) <@code{arXiv:2207.09183>}.")
 (define-public r-glmmrbase
   (package
     (name "r-glmmrbase")
-    (version "0.4.5")
+    (version "0.4.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "glmmrBase" version))
               (sha256
                (base32
-                "1kzl3ra81cxyaj8i0sr3s5xwbrz3s8ydznzz1vnlq8x8q64ii1pr"))))
+                "1bpi2z8gf7v4g5w3vwcxbpnx47gmr56sb17m42qp2zy4acjh27c1"))))
     (properties `((upstream-name . "glmmrBase")))
     (build-system r-build-system)
     (propagated-inputs (list r-sparsechol
@@ -12006,13 +11912,13 @@ for Rao's score test.  See Wald (1943) <doi:10.2307/1990256> for Wald's test.")
 (define-public r-glmertree
   (package
     (name "r-glmertree")
-    (version "0.2-3")
+    (version "0.2-4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "glmertree" version))
               (sha256
                (base32
-                "1pirwsssn05gfgl1frixc05nk37vingsjfddljmv3p5h6jr9c3ay"))))
+                "0d7wjn9bqja05d0g8rqy1d5c53h00dcyr08589cwflkbx3yxxg6s"))))
     (properties `((upstream-name . "glmertree")))
     (build-system r-build-system)
     (propagated-inputs (list r-partykit r-lme4 r-formula))
@@ -15088,6 +14994,33 @@ of how to draw sectors in @code{ComplexHeatmap}'.")
      "This package provides ggplot2 stats that estimate seasonally adjusted series and
 rolling summaries such as rolling average on the fly for time series.")
     (license license:gpl3)))
+
+(define-public r-ggrtsy
+  (package
+    (name "r-ggrtsy")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ggRtsy" version))
+              (sha256
+               (base32
+                "04q9674z0wgpd5igjhggih348jd6lv6nbwz4na597pn5d3pirhvl"))))
+    (properties `((upstream-name . "ggRtsy")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-purrr
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ggRtsy")
+    (synopsis "Add Some Van Gogh Colors and Overlay Colors on Your 'ggplot()'")
+    (description
+     "Works with ggplot2 to add a Van Gogh color palette to the userâs repertoire.
+It also has a function that work alongside ggplot2 to create more interesting
+data visualizations and add contextual information to the userâs plots.")
+    (license license:cc0)))
 
 (define-public r-ggroups
   (package
@@ -18206,13 +18139,13 @@ Kindlmann and Scheidegger (2014) <doi:10.1109/TVCG.2014.2346325>.")
 (define-public r-ggblanket
   (package
     (name "r-ggblanket")
-    (version "4.0.0")
+    (version "5.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggblanket" version))
               (sha256
                (base32
-                "1mn5735s5azp44118m3q91nfhq4af2hqyh8mmaw3pf6cfg1pwga7"))))
+                "1zlsni1y0p998pnxq0w5qlnzxai3jsngh3qw06dak207vz576wx2"))))
     (properties `((upstream-name . "ggblanket")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -21550,13 +21483,13 @@ at the University of Chicago.  Datasets are stored as sf objects.")
 (define-public r-geocmeans
   (package
     (name "r-geocmeans")
-    (version "0.3.3")
+    (version "0.3.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "geocmeans" version))
               (sha256
                (base32
-                "11ki3maklaj3c4fx9cs6l8virzhzxdrkrlr231rg0bvs3hlpwagj"))))
+                "02h171flg295ixpgl2glav2ij0wbvy7kclazdlldw40461aar5nk"))))
     (properties `((upstream-name . "geocmeans")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmap
@@ -21658,13 +21591,13 @@ other Geocaching-related tasks.")
 (define-public r-geobr
   (package
     (name "r-geobr")
-    (version "1.7.0")
+    (version "1.8.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "geobr" version))
               (sha256
                (base32
-                "0yx9mk5l2wh34xqg2v7p3p9hwdg2lpzd8bpgq4sm2qs0xk69sdw3"))))
+                "16j4v74dmnm8ix88n1qy5vgpbmspx3p56xgnlvlrkpdn77px1l7j"))))
     (properties `((upstream-name . "geobr")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-httr r-data-table r-curl))
@@ -21741,24 +21674,23 @@ although an effort is made to also offer annotations in English.")
 (define-public r-geoadjust
   (package
     (name "r-geoadjust")
-    (version "1.0.1")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GeoAdjust" version))
               (sha256
                (base32
-                "074zp2rbahy72gh7hymdqrll2fb5rzm1xsbzhxjhd7032nlvs8g3"))))
+                "0251672j2vl9jck31zfcqzsyw8pphzs934j8ljjmnw9qqd3gzd2p"))))
     (properties `((upstream-name . "GeoAdjust")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb
+                             r-terra
                              r-summer
-                             r-sp
-                             r-rgeos
+                             r-sf
                              r-rcppeigen
-                             r-raster
                              r-matrix
                              r-ggplot2
-                             r-geosphere
+                             r-fmesher
                              r-fields))
     (home-page "https://cran.r-project.org/package=GeoAdjust")
     (synopsis
@@ -25195,13 +25127,13 @@ to quantify model sensitivities.")
 (define-public r-gcplyr
   (package
     (name "r-gcplyr")
-    (version "1.5.2")
+    (version "1.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gcplyr" version))
               (sha256
                (base32
-                "0wbvnx9hk20caj0ap4nw97b59zyy4q4kbp83am61gblrn257wahj"))))
+                "01qhk9f8rjabs4vi5rfd9crmb2dwv7xflj3ci5abn04b9wykbmjf"))))
     (properties `((upstream-name . "gcplyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-dplyr))
@@ -27429,17 +27361,17 @@ discrete GAMLSS family distribution.")
 (define-public r-gamlss-cens
   (package
     (name "r-gamlss-cens")
-    (version "5.0-1")
+    (version "5.0-5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gamlss.cens" version))
               (sha256
                (base32
-                "1s83dgifidvc6cbrqirwlvwfzg08mlhmxxiqkbmnsy09i5j9fzd3"))))
+                "18f1b3wyaad9gflm1mnjqjqb0lz89hm6vav7kyfxf5zfgrpvln8j"))))
     (properties `((upstream-name . "gamlss.cens")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-gamlss-dist r-gamlss))
-    (home-page "http://www.gamlss.org/")
+    (home-page "https://www.gamlss.com/")
     (synopsis
      "Fitting an Interval Response Variable Using `gamlss.family' Distributions")
     (description

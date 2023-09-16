@@ -1876,13 +1876,13 @@ confidence intervals.")
 (define-public r-ttolr
   (package
     (name "r-ttolr")
-    (version "0.2")
+    (version "0.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tTOlr" version))
               (sha256
                (base32
-                "1fk33vp6y65mls1iczjf63wzj1rl1knbdcbd4rnqqfdcqhibb3p3"))))
+                "0pqaj80bvpccw6g8kvvlc4bkkzrrh0nvl4gbfz7b582lzd41xjyn"))))
     (properties `((upstream-name . "tTOlr")))
     (build-system r-build-system)
     (propagated-inputs (list r-latticeextra r-lattice))
@@ -1890,7 +1890,11 @@ confidence intervals.")
     (home-page "https://cran.r-project.org/package=tTOlr")
     (synopsis "Likelihood Ratio Statistics for One or Two Sample T-Tests")
     (description
-     "Several forms of likelihood ratio calculations are available.")
+     "Likelihood ratio and maximum likelihood statistics are provided that can be used
+as alternatives to p-values Colquhoun (2017) <doi:10.1098/rsos.171085>.
+Arguments can be either p-values or t-statistics.  together with degrees of
+freedom.  For the function @code{tTOlr}', the argument @code{twoSided} has the
+default @code{twoSided} = TRUE'.")
     (license license:gpl2+)))
 
 (define-public r-tth
@@ -3304,34 +3308,6 @@ ISBN:9781119041672); etc.")
 assets.  Manage the portfolio and capital of assets.  It also downloads and
 organizes data from the Tehran Stock Exchange (TSE).")
     (license license:bsd-2)))
-
-(define-public r-tseriestarma
-  (package
-    (name "r-tseriestarma")
-    (version "0.3-2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "tseriesTARMA" version))
-              (sha256
-               (base32
-                "0clxwlamqhlsbi7ldwwwk24rr5miyzg71gsw31x10g6zj7hwvrvd"))))
-    (properties `((upstream-name . "tseriesTARMA")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rugarch
-                             r-rsolnp
-                             r-rdpack
-                             r-matrix
-                             r-mathjaxr
-                             r-lbfgsb3c))
-    (native-inputs (list gfortran))
-    (home-page "https://cran.r-project.org/package=tseriesTARMA")
-    (synopsis "Analysis of Nonlinear Time Series Through TARMA Models")
-    (description
-     "Routines for nonlinear time series analysis based on Threshold Autoregressive
-Moving Average models.  It provides functions and methods for: TARMA model
-fitting and forecasting, tests for threshold effects, unit-root tests based on
-TARMA models.")
-    (license license:gpl2+)))
 
 (define-public r-tseriesmma
   (package
@@ -5120,18 +5096,17 @@ Biometrical Journal, 64(2), 301-311.")
 (define-public r-tridimregression
   (package
     (name "r-tridimregression")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TriDimRegression" version))
               (sha256
                (base32
-                "19r7639xw0jqq1wayaanvsk9pa1z92p9ph3zcjy0ifq3z92b1al4"))))
+                "1p6dncx53bk7vca193c46idsw6hvn0z5px3p3zh0qky1jan2rycl"))))
     (properties `((upstream-name . "TriDimRegression")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-stanheaders
-                             r-rstantools
                              r-rstan
                              r-rcppparallel
                              r-rcppeigen
@@ -5723,13 +5698,13 @@ Meteorological Organization, Geneva, 192 pp.")
 (define-public r-trenchr
   (package
     (name "r-trenchr")
-    (version "0.1.1")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TrenchR" version))
               (sha256
                (base32
-                "03w010s3zxbrn7nh439d5mg1670k2hylci28i74q39b9235xn8vz"))))
+                "0724dgm9yl906lk2vxffd465gy9kv7fdb0yymbnbq9flwxr4nfig"))))
     (properties `((upstream-name . "TrenchR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-rdpack r-msm r-desolve))
@@ -6825,13 +6800,13 @@ details.")
 (define-public r-treatmentpatterns
   (package
     (name "r-treatmentpatterns")
-    (version "2.5.1")
+    (version "2.5.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TreatmentPatterns" version))
               (sha256
                (base32
-                "1f427vda5csfyzxmx33wb845pj27i6xc3i081bgp73aba2mcsl43"))))
+                "12nm3acb0ksky59mpns5hrrcqc9hcwz12k9s1wkc8xp6w1xfkhg2"))))
     (properties `((upstream-name . "TreatmentPatterns")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -9186,17 +9161,18 @@ from decennial census and American Community Survey 1-year and 5-year estimates.
 (define-public r-toster
   (package
     (name "r-toster")
-    (version "0.7.1")
+    (version "0.8.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TOSTER" version))
               (sha256
                (base32
-                "0081vdl6wpm62x992z6bx3c46qxkiy3f6k8kvwpwvkslh76pbf0z"))))
+                "1y2aqf3ml0hhw3hcxnmchj0j7x6snd7x02cv91d7177j5bmv9g6n"))))
     (properties `((upstream-name . "TOSTER")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-r6
+                             r-lifecycle
                              r-jmvcore
                              r-ggplot2
                              r-ggdist
@@ -9626,13 +9602,13 @@ based on several criteria to result in the best benefit. (LIU, H. et al., 2019)
 (define-public r-topr
   (package
     (name "r-topr")
-    (version "1.1.9")
+    (version "1.1.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "topr" version))
               (sha256
                (base32
-                "0d39xnybvs1ajbdlm3szdm0ryngcrq2jd39iijfqmhagz9rilqi1"))))
+                "13gwqv7bdphpfhbm86851cnibbhrwfd7mzgyrcj4jdg36b2dqgx9"))))
     (properties `((upstream-name . "topr")))
     (build-system r-build-system)
     (propagated-inputs (list r-toprdata
@@ -10232,13 +10208,13 @@ their sources.")
 (define-public r-tokenizers-bpe
   (package
     (name "r-tokenizers-bpe")
-    (version "0.1.1")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tokenizers.bpe" version))
               (sha256
                (base32
-                "1d382pimyv4mdg2wsv5jzxgq3rhhxjrlv2kbqkqnbr2y5djz3xhv"))))
+                "0ar84a19c2qafdyx666ggbvl0sqv3pxg3yg3qpv59s7cbbdymwc1"))))
     (properties `((upstream-name . "tokenizers.bpe")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -10932,13 +10908,13 @@ Laplace approximation for the random effects.  This is demonstrated in Monnahan
 (define-public r-tmap
   (package
     (name "r-tmap")
-    (version "3.3-3")
+    (version "3.3-4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tmap" version))
               (sha256
                (base32
-                "012y50hbz2f87mwcmd9lp9ikcplvkz51g4fmanw3swlc1zpqxrb0"))))
+                "1xxa9ya1gci4ys5z00v95kp39rq12vd8kppj8j8n1a913kbbqrn9"))))
     (properties `((upstream-name . "tmap")))
     (build-system r-build-system)
     (propagated-inputs (list r-widgetframe
@@ -10957,7 +10933,7 @@ Laplace approximation for the random effects.  This is demonstrated in Monnahan
                              r-classint
                              r-abind))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/r-tmap/tmap")
+    (home-page "https://r-tmap.github.io/tmap/")
     (synopsis "Thematic Maps")
     (description
      "Thematic maps are geographical maps in which spatial data distributions are
@@ -12828,13 +12804,13 @@ correlations among the variables in a data-driven way.")
 (define-public r-tiler
   (package
     (name "r-tiler")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tiler" version))
               (sha256
                (base32
-                "0rfwl4djqhs55faan7fyq7q0pm93va6xvs2z2sarkmqaqixrg31c"))))
+                "09xxfkbgjd9x27fjkbk1ady7sxz9lqkmaw5027xgakn65g9vmssz"))))
     (properties `((upstream-name . "tiler")))
     (build-system r-build-system)
     (inputs (list python))
@@ -12911,13 +12887,13 @@ is proportional to the certain characteristics of the dataset.")
 (define-public r-tiledb
   (package
     (name "r-tiledb")
-    (version "0.20.3")
+    (version "0.21.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tiledb" version))
               (sha256
                (base32
-                "1sxq6cpyicxyszryqzhwq2w6iyzmgjn8qifxp3nj4v3f7hdcid0l"))))
+                "0r23d326c81mj8yzf4d2zkzrjamrx18sdxw8rpxgjrncm64g26vm"))))
     (properties `((upstream-name . "tiledb")))
     (build-system r-build-system)
     (inputs (list zlib pcre2))
@@ -14828,29 +14804,6 @@ visualizing high-dimensional data.  tidydr provides uniform output and is
 compatible with multiple methods, including prcomp', mds', Rtsne'.  etc.")
     (license license:artistic2.0)))
 
-(define-public r-tidydisasters
-  (package
-    (name "r-tidydisasters")
-    (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "tidyDisasters" version))
-              (sha256
-               (base32
-                "071hr4dmk5pq8m8b58b8zcz5kpgxnqw2l4rb2vkq1zhsrk9ynxmg"))))
-    (properties `((upstream-name . "tidyDisasters")))
-    (build-system r-build-system)
-    (native-inputs (list r-knitr))
-    (home-page "https://ccani007.github.io/tidyDisasters/")
-    (synopsis "Disaster Data Set Including FEMA, EMDAT and GTD Information")
-    (description
-     "Pre-processed data that contains a queryable data set with Federal Emergency
-Management Agency (FEMA), Emergency Events Database (EMDAT) and the Global
-Terrorism Database (GTD) merged.  The data set contains the reported natural and
-human made disasters that report 3 or more people killed in the United States of
-America.")
-    (license license:expat)))
-
 (define-public r-tidydice
   (package
     (name "r-tidydice")
@@ -15467,13 +15420,13 @@ for regression and classification problems with a simple verb framework.")
 (define-public r-tidier
   (package
     (name "r-tidier")
-    (version "0.0.1")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tidier" version))
               (sha256
                (base32
-                "1l6w04szx92wcmfix8p3mvazjzclvjqcdkd7n6bf8sq3cmj8n0wa"))))
+                "0n6gzanssni5l5wmm5iqql1k2wfxg7dzq1rk3dhar7rpyxghdnf1"))))
     (properties `((upstream-name . "tidier")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -15482,12 +15435,13 @@ for regression and classification problems with a simple verb framework.")
                              r-magrittr
                              r-furrr
                              r-dplyr
+                             r-dbplyr
                              r-checkmate))
     (home-page "https://github.com/talegari/tidier")
     (synopsis "Enhanced 'mutate'")
     (description
-     "This package provides Apache Spark style window aggregation for R dataframes via
-mutate in dplyr flavour.")
+     "This package provides Apache Spark style window aggregation for R dataframes and
+remote dbplyr tables via mutate in dplyr flavour.")
     (license license:gpl3+)))
 
 (define-public r-tidetables
@@ -16205,13 +16159,13 @@ University and Thomas Jefferson University Hospital, Philadelphia, PA.")
 (define-public r-this-path
   (package
     (name "r-this-path")
-    (version "2.0.0")
+    (version "2.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "this.path" version))
               (sha256
                (base32
-                "19rcrnfr59gaxlrqbakn8d1qcsx7k6zd7vadw0579sbmbmzwm2k0"))))
+                "1qq1la2725m5kgbwizhh62a06ywlh9qgsygh5f9zv1v5fxksxi9y"))))
     (properties `((upstream-name . "this.path")))
     (build-system r-build-system)
     (home-page "https://github.com/ArcadeAntics/this.path")
@@ -16220,8 +16174,8 @@ University and Thomas Jefferson University Hospital, Philadelphia, PA.")
      "Determine the path of the executing script.  Compatible with a few popular GUIs:
 Rgui', RStudio', VSCode', Jupyter', and Rscript (shell).  Compatible with
 several functions and packages: source()', sys.source()', @code{debugSource}()
-in RStudio', testthat::source_file()', knitr::knit()', compiler::loadcmp()', and
-box::use()'.")
+in RStudio', testthat::source_file()', knitr::knit()', compiler::loadcmp()',
+box::use()', shiny::@code{runApp}()', and plumber::plumb()'.")
     (license license:expat)))
 
 (define-public r-thinkr
@@ -16979,6 +16933,45 @@ version of substrings that starts from the end of strings, etc.  Other functions
 are useful for checking whether packages are installed, omitting missing data,
 and showing in-use connections.")
     (license license:expat)))
+
+(define-public r-tfrmtbuilder
+  (package
+    (name "r-tfrmtbuilder")
+    (version "0.0.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "tfrmtbuilder" version))
+              (sha256
+               (base32
+                "0zbsnvn6f22vybz7ix0k2l4wksn5ssdsflrqavjcsrya6nfjq9rc"))))
+    (properties `((upstream-name . "tfrmtbuilder")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-webshot2
+                             r-tidyr
+                             r-tfrmt
+                             r-stringr
+                             r-sortable
+                             r-shinywidgets
+                             r-shinyjs
+                             r-shinyfeedback
+                             r-shinycssloaders
+                             r-shinyace
+                             r-shiny
+                             r-rlang
+                             r-rio
+                             r-purrr
+                             r-gt
+                             r-forcats
+                             r-fontawesome
+                             r-dt
+                             r-dplyr
+                             r-bslib))
+    (home-page "https://cran.r-project.org/package=tfrmtbuilder")
+    (synopsis "'shiny' App Companion to the 'tfrmt' Package")
+    (description
+     "This package provides an interactive interface to the tfrmt package.  Users can
+import, modify, and export tables and templates with little to no code.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-tfrmt
   (package
@@ -18144,13 +18137,13 @@ Taylor (2019) <doi:10.1007/s42001-019-00048-6>, Taylor and Stoltz (2020)
 (define-public r-text-alignment
   (package
     (name "r-text-alignment")
-    (version "0.1.3")
+    (version "0.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "text.alignment" version))
               (sha256
                (base32
-                "1p2mnycz6c33jlmg617wvxj5vp4a530x2raqxxk554p3f7dqw2jx"))))
+                "1zw0hxrplpvn2w36q9cwm7s8hxixdin9yzkwj1fhxh5sgc7fq471"))))
     (properties `((upstream-name . "text.alignment")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -18939,13 +18932,13 @@ stepdown versions, and four FDR procedures.")
 (define-public r-testcomparer
   (package
     (name "r-testcomparer")
-    (version "1.0.0")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "testCompareR" version))
               (sha256
                (base32
-                "1kap04yh9b62iwg549p41ff26s4qz90jd4yi0v6456qg7pfb06mf"))))
+                "1k4y7hk7f9bs0bkcmi434khfg1c0lr930l50rydvjlwdgbhfy4k1"))))
     (properties `((upstream-name . "testCompareR")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -18963,7 +18956,7 @@ best asymptotic performance.  A summary of the methods is available in
 @code{RoldÃ¡n-Nofuentes} (2020) <doi:10.1186/s12874-020-00988-y>.  This package
 is targeted at clinical researchers who want to rapidly and effectively compare
 results from binary diagnostic tests.")
-    (license license:gpl2)))
+    (license license:gpl3)))
 
 (define-public r-testassay
   (package
@@ -19027,6 +19020,50 @@ testing the algorithm over the given arguments with respect to an arbitrary
 number of user-defined diagnostics, visualising the results of these tests, and
 finding the optimal argument combinations with respect to each diagnostic.")
     (license license:expat)))
+
+(define-public r-testanaapp
+  (package
+    (name "r-testanaapp")
+    (version "0.1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "TestAnaAPP" version))
+              (sha256
+               (base32
+                "0d3mas93lrqppl6padvfrssw0z36lpfnr82s33jl0d1dh66jbj5q"))))
+    (properties `((upstream-name . "TestAnaAPP")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidysem
+                             r-tidyr
+                             r-stringr
+                             r-shinydashboard
+                             r-shinycssloaders
+                             r-shiny
+                             r-rmarkdown
+                             r-plotrix
+                             r-openxlsx
+                             r-officer
+                             r-officedown
+                             r-mirt
+                             r-golem
+                             r-ggplot2
+                             r-flextable
+                             r-estcrm
+                             r-dt
+                             r-dplyr
+                             r-cowplot
+                             r-brucer))
+    (home-page "https://github.com/jiangyouxiang/TestAnaAPP")
+    (synopsis "The 'shiny' App for Test Analysis and Visualization")
+    (description
+     "This application enables exploratory factor analysis, confirmatory factor
+analysis, classical measurement theory analysis, unidimensional item response
+theory, multidimensional item response theory, and continuous item response
+model analysis, through the shiny interactive interface.  It also facilitates
+the visualization of the results.  Users can easily download the analysis
+results from the interactive interface.  Additionally, users can download a
+concise report about items and test quality on the interactive interface.")
+    (license license:gpl3+)))
 
 (define-public r-test2norm
   (package
@@ -20605,6 +20642,27 @@ teal family of packages.  Supports logging namespaces, hierarchical logging,
 various log destinations, vectorization, and more.")
     (license license:asl2.0)))
 
+(define-public r-teal-code
+  (package
+    (name "r-teal-code")
+    (version "0.4.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "teal.code" version))
+              (sha256
+               (base32
+                "1drwxgiigx20db4blzixljknafr651qs0fk5cmcal1xsl1k7hcwp"))))
+    (properties `((upstream-name . "teal.code")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-styler r-shiny r-rlang r-lifecycle r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://insightsengineering.github.io/teal.code/latest-tag/")
+    (synopsis "Code Storage and Execution Class for 'teal' Applications")
+    (description
+     "Introduction of qenv S4 class, that facilitates code execution and
+reproducibility in teal applications.")
+    (license license:asl2.0)))
+
 (define-public r-teachnet
   (package
     (name "r-teachnet")
@@ -20786,13 +20844,13 @@ codebooks and allows for extraction of code sequences.")
 (define-public r-tdsa
   (package
     (name "r-tdsa")
-    (version "1.0-1")
+    (version "1.1-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tdsa" version))
               (sha256
                (base32
-                "0k7av6f8f052b9ww7g8frvvmj8k740jsnk55jgfvwdw3k6bjjmwx"))))
+                "0zp0g2jcpl26vszbw3s5v6qc6l8jk2jll0nz0f3gywhiv93mjmgr"))))
     (properties `((upstream-name . "tdsa")))
     (build-system r-build-system)
     (propagated-inputs (list r-numderiv r-mathjaxr r-desolve))
@@ -20802,8 +20860,8 @@ codebooks and allows for extraction of code sequences.")
     (description
      "This package provides functions that can be used to calculate time-dependent
 state and parameter sensitivities for both continuous- and discrete-time
-deterministic models.  See Ng et al. (in review) <doi:10.1101/2023.04.13.536769>
-for more information about time-dependent sensitivity analysis.")
+deterministic models.  See Ng et al. (in press) <doi:10.1086/726143> for more
+information about time-dependent sensitivity analysis.")
     (license license:gpl3)))
 
 (define-public r-tdroc
@@ -21056,17 +21114,17 @@ using the Rcpp package.")
 (define-public r-tdaunif
   (package
     (name "r-tdaunif")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tdaunif" version))
               (sha256
                (base32
-                "0a24lqiimp54fmj4zi7bakxral8ny60n25h9arwl6m00c7cn98pl"))))
+                "03m8lzg4w1ys0shr2gir5m78c02r71l5pwqgvpcn004kirh3xhwv"))))
     (properties `((upstream-name . "tdaunif")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
-    (home-page "https://corybrunson.github.io/tdaunif/")
+    (home-page "https://tdaverse.github.io/tdaunif/")
     (synopsis "Uniform Manifold Samplers for Topological Data Analysis")
     (description
      "Uniform random samples from simple manifolds, sometimes with noise, are commonly
@@ -22264,13 +22322,13 @@ using the asymptotic distribution of t* as described by Nandy, Weihs, and Drton
 (define-public r-tauprocess
   (package
     (name "r-tauprocess")
-    (version "1.1.1")
+    (version "2.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tauProcess" version))
               (sha256
                (base32
-                "17i3q7gdhhchcyiiv9jf27x4ig0hzsbfh1lvqhmndpgv9fjmrzjz"))))
+                "1hwb2f257q5shnqqpa98g7d9xhf1mmmn9igh6km4p1kbbka52kqd"))))
     (properties `((upstream-name . "tauProcess")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival))
@@ -22282,7 +22340,7 @@ on Kendall's tau with right-censored data along with corresponding inference
 procedure.  The plot of tau process is provided as a graphical tool for
 monitoring the progression.  It complements another summary measures under
 nonproportional hazards.  For details, please refer to Tai, Wang and Wells
-(2022) <doi:10.48550/@code{arXiv.2207.14445>}.")
+(2023) <doi:10.1002/pst.2324>.")
     (license license:expat)))
 
 (define-public r-tau
@@ -23674,13 +23732,13 @@ data into machine-readable @code{LongForm} Dataframes.")
 (define-public r-tablet
   (package
     (name "r-tablet")
-    (version "0.6.2")
+    (version "0.6.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tablet" version))
               (sha256
                (base32
-                "1bsifjz2wdz416ws2iy203ipf1bcqw3r6d2fh124ha0hb1gvyikq"))))
+                "16wwwwcwwc18imv1zjvw5dvdaqqgscsp4z2xgvdqaa6ljx1l5snj"))))
     (properties `((upstream-name . "tablet")))
     (build-system r-build-system)
     (propagated-inputs (list r-yamlet

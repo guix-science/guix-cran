@@ -1546,6 +1546,59 @@ birds and other biological signals in weather radar data.  See Dokter et al.
 (2011) <doi:10.1098/rsif.2010.0116> for a paper describing the methodology.")
     (license license:lgpl3+)))
 
+(define-public r-voicer
+  (package
+    (name "r-voicer")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "voiceR" version))
+              (sha256
+               (base32
+                "1bc2h04i9l76wqrw93brg5ivpgd0pq20zq2nq8x7p851jfxz84p4"))))
+    (properties `((upstream-name . "voiceR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xfun
+                             r-tuner
+                             r-stringr
+                             r-soundgen
+                             r-shinyjs
+                             r-shinyfiles
+                             r-shiny
+                             r-seewave
+                             r-rmarkdown
+                             r-rlang
+                             r-rcompanion
+                             r-plotly
+                             r-phia
+                             r-mass
+                             r-knitr
+                             r-kableextra
+                             r-gtable
+                             r-gridextra
+                             r-ggthemes
+                             r-ggpubr
+                             r-ggplot2
+                             r-fsa
+                             r-foreach
+                             r-dt
+                             r-doparallel))
+    (home-page "https://cran.r-project.org/package=voiceR")
+    (synopsis "Voice Analytics for Social Scientists")
+    (description
+     "Simplifies and largely automates practical voice analytics for social science
+research.  This package offers an accessible and easy-to-use interface,
+including an interactive Shiny app, that simplifies the processing, extraction,
+analysis, and reporting of voice recording data in the behavioral and social
+sciences.  The package includes batch processing capabilities to read and
+analyze multiple voice files in parallel, automates the extraction of key vocal
+features for further analysis, and automatically generates APA formatted reports
+for typical between-group comparisons in experimental social science research.
+A more extensive methodological introduction that inspired the development of
+the @code{voiceR} package is provided in Hildebrand et al.  2020
+<doi:10.1016/j.jbusres.2020.09.020>.")
+    (license license:gpl2)))
+
 (define-public r-voice
   (package
     (name "r-voice")
@@ -3161,13 +3214,13 @@ model using algorithm by Jin, Lin and Tamvakis (2012)
 (define-public r-viralx
   (package
     (name "r-viralx")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "viralx" version))
               (sha256
                (base32
-                "1x8lw63lrs0adgbxi7amckj5q5mii9nfrr62aph52ba97k9a6x07"))))
+                "054w54m0k1z6jlfz6pp3nlarnady9kndvmmr5ibp7j14jyg7jhxy"))))
     (properties `((upstream-name . "viralx")))
     (build-system r-build-system)
     (propagated-inputs (list r-workflows
@@ -4271,13 +4324,13 @@ requirements, and auto-composing error messages when they do not.")
 (define-public r-vetiver
   (package
     (name "r-vetiver")
-    (version "0.2.3")
+    (version "0.2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "vetiver" version))
               (sha256
                (base32
-                "0fgs32lv90jbn2g82yz8nz8aralrn1nlx5395g92bhvd8s6dcrpj"))))
+                "19yz8p4w3rqyzsr2xb8ryav566b2321zy3h34gaxlz0am0wsryw3"))))
     (properties `((upstream-name . "vetiver")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -5128,13 +5181,13 @@ publication DN Olivieri (2014) <doi:10.1007/s00251-014-0784-3>.")
 (define-public r-vdiver
   (package
     (name "r-vdiver")
-    (version "1.1.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "vDiveR" version))
               (sha256
                (base32
-                "19rdvpyvmvlmqkxalfgbxrkz6y48w779r42icraa348ph1dc1n7f"))))
+                "1f2mvpnsm4kcjwc916258ll0cy9f53zfya42xbdi5x6wds08mi66"))))
     (properties `((upstream-name . "vDiveR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -5151,6 +5204,7 @@ publication DN Olivieri (2014) <doi:10.1007/s00251-014-0784-3>.")
                              r-ggpubr
                              r-ggplot2
                              r-gghalves
+                             r-dt
                              r-dplyr))
     (home-page "https://cran.r-project.org/package=vDiveR")
     (synopsis "Visualization of Viral Protein Sequence Diversity Dynamics")
