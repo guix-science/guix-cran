@@ -3323,13 +3323,13 @@ Sabri Taylanâs @code{PhD} dissertation.")
 (define-public r-atable
   (package
     (name "r-atable")
-    (version "0.1.13")
+    (version "0.1.14")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "atable" version))
               (sha256
                (base32
-                "0nf0sbpya2n0biri4p1x821z27c2yk9m1241rc6a9hkyva8ky37s"))))
+                "1dyg7zc19518dp3yxgyhcfklkmard9iwjkbnsl6sx5wkyk3s0vin"))))
     (properties `((upstream-name . "atable")))
     (build-system r-build-system)
     (propagated-inputs (list r-settings
@@ -6782,13 +6782,13 @@ which can be then easily used for further analysis.")
 (define-public r-archive
   (package
     (name "r-archive")
-    (version "1.1.5")
+    (version "1.1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "archive" version))
               (sha256
                (base32
-                "0zq61bvma82fxvczy3bhfy3x8k5s36avmblvfl1vsa2f0rp63nmk"))))
+                "0jshrkz2bvz9sq8iyij39ih6h3js3sqajzsa9ly5pqqhmmkk7q7c"))))
     (properties `((upstream-name . "archive")))
     (build-system r-build-system)
     (inputs (list zlib openssl libarchive libarchive libarchive))
@@ -6907,13 +6907,13 @@ Peluso, E., Cianfrani, Gaudio, F., Lungaroni, M., (2019),
 (define-public r-archeoviz
   (package
     (name "r-archeoviz")
-    (version "1.3.1")
+    (version "1.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "archeoViz" version))
               (sha256
                (base32
-                "1qrgpyfd0m2h2p63r95pxsbxnnkkc8n6azq2wfrf4n3xd919sdx1"))))
+                "0nvaj7p1nd3h620r8cf2pm3vjlyqq2d66jy4didvb5ackc93yfqx"))))
     (properties `((upstream-name . "archeoViz")))
     (build-system r-build-system)
     (propagated-inputs (list r-svglite
@@ -7708,6 +7708,31 @@ profiling tools and is not a wrapper for them.")
      "An unofficial companion to the textbook \"Applied Regression Analysis\" by N.R.
 Draper and H. Smith (3rd Ed., 1998) including all the accompanying datasets.")
     (license license:gpl3)))
+
+(define-public r-appsheet
+  (package
+    (name "r-appsheet")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "appsheet" version))
+              (sha256
+               (base32
+                "1csf5p9vmm0bn2kycs6ad7jzcw6c2ck6yimr7lb9nb58820s4g2f"))))
+    (properties `((upstream-name . "appsheet")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-httr2
+                             r-cli))
+    (home-page "https://github.com/calderonsamuel/appsheet")
+    (synopsis "An Interface to the 'AppSheet' API")
+    (description
+     "Functionality to add, delete, read and update table records from your
+@code{AppSheet} apps, using the official API <https://api.appsheet.com/>.")
+    (license license:expat)))
 
 (define-public r-appsflyer
   (package
@@ -9447,13 +9472,13 @@ designs.  More information on the methods is available online:
 (define-public r-anthro
   (package
     (name "r-anthro")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "anthro" version))
               (sha256
                (base32
-                "169h2vhdd2kxh4228lx1ab3fipixvka4686ngx6h8g15li9828s9"))))
+                "0vp55q0f9d4gljwzfzr07f80q5ip59imvklfw8gg1rjw83yaqpxr"))))
     (properties `((upstream-name . "anthro")))
     (build-system r-build-system)
     (propagated-inputs (list r-survey))
@@ -17058,13 +17083,13 @@ implemented in accordance with the \"Analysis Data Model Implementation Guide\"
 (define-public r-admiralophtha
   (package
     (name "r-admiralophtha")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "admiralophtha" version))
               (sha256
                (base32
-                "1jhdnd8cpc5zjfnsrl5mkghyv3zswmxfbncb08cym0rg0hlqv5n9"))))
+                "09hjnhfafsnh4dpyhzk09d8v1pliy6h3bdvk7bkaf5jizrna8dix"))))
     (properties `((upstream-name . "admiralophtha")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -17593,38 +17618,6 @@ the ADF format was created.  This package enables you to read ADF files and
 import and export files from and to such virtual DOS-formatted disks.")
     (license license:gpl3)))
 
-(define-public r-adespatial
-  (package
-    (name "r-adespatial")
-    (version "0.3-21")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "adespatial" version))
-              (sha256
-               (base32
-                "17x73rvyqsp5z2a5y7w9vh59hkyjvdvjparlgp9s54jqq2dmzxjg"))))
-    (properties `((upstream-name . "adespatial")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vegan
-                             r-spdep
-                             r-sp
-                             r-shiny
-                             r-mass
-                             r-lattice
-                             r-adephylo
-                             r-adegraphics
-                             r-ade4))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/sdray/adespatial")
-    (synopsis "Multivariate Multiscale Spatial Analysis")
-    (description
-     "This package provides tools for the multiscale spatial analysis of multivariate
-data.  Several methods are based on the use of a spatial weighting matrix and
-its eigenvector decomposition (Moran's Eigenvectors Maps, MEM).  Several
-approaches are described in the review Dray et al (2012)
-<doi:10.1890/11-1183.1>.")
-    (license license:gpl2+)))
-
 (define-public r-ader
   (package
     (name "r-ader")
@@ -17750,26 +17743,6 @@ clinical trials.  As this data is usually considered sensitive, this tool is
 provided as a stand-alone application that can be launched from any local
 machine on which the data is stored.")
     (license license:gpl3)))
-
-(define-public r-adephylo
-  (package
-    (name "r-adephylo")
-    (version "1.1-13")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "adephylo" version))
-              (sha256
-               (base32
-                "0vd7khqsfnik7j00hac97khv8b1kmi0az5hakg04m8fhx7z3589a"))))
-    (properties `((upstream-name . "adephylo")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-phylobase r-ape r-adegenet r-ade4))
-    (home-page "https://cran.r-project.org/package=adephylo")
-    (synopsis "Exploratory Analyses for the Phylogenetic Comparative Method")
-    (description
-     "Multivariate tools to analyze comparative data, i.e.  a phylogeny and some
-traits measured for each taxa.")
-    (license license:gpl2+)))
 
 (define-public r-adehabitatma
   (package

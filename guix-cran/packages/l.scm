@@ -1169,27 +1169,6 @@ Statistics with R: A Tutorial for Psychology Students and Other Beginners,
 Version 0.6.")
     (license license:expat)))
 
-(define-public r-lsplsglm
-  (package
-    (name "r-lsplsglm")
-    (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "lsplsGlm" version))
-              (sha256
-               (base32
-                "1qh68r033fwq1hc19h2srl1k6znvvvrcp38ghxadsksjfxllvniy"))))
-    (properties `((upstream-name . "lsplsGlm")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=lsplsGlm")
-    (synopsis "Classification using LS-PLS for Logistic Regression")
-    (description
-     "Fit logistic regression models using LS-PLS approaches to analyse both clinical
-and genomic data. (C. Bazzoli and S. Lambert-Lacroix. (2017) Classification
-using LS-PLS with logistic regression based on both clinical and gene expression
-variables <https://hal.archives-ouvertes.fr/hal-01405101>).")
-    (license license:gpl2+)))
-
 (define-public r-lspls
   (package
     (name "r-lspls")
@@ -1756,13 +1735,13 @@ found at <https://sites.google.com/site/fritzgntr/software-resources>.")
 (define-public r-ls2wstat
   (package
     (name "r-ls2wstat")
-    (version "2.1-4")
+    (version "2.1-5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "LS2Wstat" version))
               (sha256
                (base32
-                "1y5q5sqzx3iwxdmxf6yz5c3hbw7sihxgr8sibr0v8s9dc6r4a2sf"))))
+                "194mqp5v0hm1h97f6d5zdj5526329r55pjf9a4azrv5cmcnmwgjv"))))
     (properties `((upstream-name . "LS2Wstat")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdep r-matrixstats r-ls2w))
@@ -9170,13 +9149,13 @@ id, group or location as well as activating effects.")
 (define-public r-liftlrd
   (package
     (name "r-liftlrd")
-    (version "1.0-8")
+    (version "1.0-9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "liftLRD" version))
               (sha256
                (base32
-                "1m24f4mc70l808cpkcdm91hzb5b3bkzibvgyfi9zs6cs8apcvmy3"))))
+                "11xrh4pjvlqb0297a2wzngpa1m3b09axvcfd16hg393rifrisgh4"))))
     (properties `((upstream-name . "liftLRD")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlt r-adlift))
@@ -11868,13 +11847,13 @@ browser using @code{WebGl}'.")
 (define-public r-leafem
   (package
     (name "r-leafem")
-    (version "0.2.0")
+    (version "0.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "leafem" version))
               (sha256
                (base32
-                "13dsgnq90n80y3fz5xgy8sm3jbgzv3zkxxy4y902j0gnxarpiswp"))))
+                "1qvmygxm5957k7mnbi05vs3sjcwng9f18hbxx6143nl38fm5pzfy"))))
     (properties `((upstream-name . "leafem")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf
@@ -12088,13 +12067,13 @@ ldshrink().  Details of the methods are available in Gerard (2021a)
 (define-public r-ldrtools
   (package
     (name "r-ldrtools")
-    (version "0.2-1")
+    (version "0.2-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "LDRTools" version))
               (sha256
                (base32
-                "05srfyplsypi3whfa71lx7pnad23irpf0p7rxmrpv28jgdmrz6wf"))))
+                "0ll6przymxa98drwp0lq4mlar4blj6cig91mf2avifmp2aqfmk6c"))))
     (properties `((upstream-name . "LDRTools")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=LDRTools")

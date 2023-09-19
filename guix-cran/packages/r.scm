@@ -12062,30 +12062,6 @@ name.  The user can select and create different lists of colour names and
 different colour metrics for the conversion.")
     (license (list license:gpl2 license:gpl3))))
 
-(define-public r-rollregres
-  (package
-    (name "r-rollregres")
-    (version "0.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "rollRegres" version))
-              (sha256
-               (base32
-                "1q1xs43c860fqv5anfdv0zdb5s8n794yvhn1c7px1kdh2g0jbjp7"))))
-    (properties `((upstream-name . "rollRegres")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-checkmate))
-    (native-inputs (list r-knitr gfortran))
-    (home-page "https://github.com/boennecd/rollRegres")
-    (synopsis "Fast Rolling and Expanding Window Linear Regression")
-    (description
-     "This package provides methods for fast rolling and expanding linear regression
-models.  That is, series of linear regression models estimated on either an
-expanding window of data or a moving window of data.  The methods use rank-one
-updates and downdates of the upper triangular matrix from a QR decomposition
-(see Dongarra, Moler, Bunch, and Stewart (1979) <doi:10.1137/1.9781611971811>).")
-    (license license:gpl2)))
-
 (define-public r-rollmatch
   (package
     (name "r-rollmatch")
@@ -19117,45 +19093,6 @@ Richard Byrd, Jorge Nocedal and Jose Luis Morales used for hyperparameters
 optimization.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
-(define-public r-rlibkdv
-  (package
-    (name "r-rlibkdv")
-    (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Rlibkdv" version))
-              (sha256
-               (base32
-                "1gygvnjy1mqjisangs13ckiann4q98iraydp1wsjfwmkgif21vp4"))))
-    (properties `((upstream-name . "Rlibkdv")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-raster r-magrittr r-leaflet))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/bojianzhu/Rlibkdv")
-    (synopsis
-     "Versatile Kernel Density Visualization Library for Geospatial Analytics (Heatmap)")
-    (description
-     "Unlock the power of large-scale geospatial analysis, quickly generate
-high-resolution kernel density visualizations, supporting advanced analysis
-tasks such as bandwidth-tuning and spatiotemporal analysis.  Regardless of the
-size of your dataset, our library delivers efficient and accurate results.  Tsz
-Nam Chan, Leong Hou U, Byron Choi, Jianliang Xu, Reynold Cheng (2023)
-<doi:10.1145/3555041.3589401>.  Tsz Nam Chan, Rui Zang, Pak Lon Ip, Leong Hou U,
-Jianliang Xu (2023) <doi:10.1145/3555041.3589711>.  Tsz Nam Chan, Leong Hou U,
-Byron Choi, Jianliang Xu (2022) <doi:10.1145/3514221.3517823>.  Tsz Nam Chan,
-Pak Lon Ip, Kaiyan Zhao, Leong Hou U, Byron Choi, Jianliang Xu (2022)
-<doi:10.14778/3554821.3554855>.  Tsz Nam Chan, Pak Lon Ip, Leong Hou U, Byron
-Choi, Jianliang Xu (2022) <doi:10.14778/3503585.3503591>.  Tsz Nam Chan, Pak Lon
-Ip, Leong Hou U, Byron Choi, Jianliang Xu (2022) <doi:10.14778/3494124.3494135>.
- Tsz Nam Chan, Pak Lon Ip, Leong Hou U, Weng Hou Tong, Shivansh Mittal, Ye Li,
-Reynold Cheng (2021) <doi:10.14778/3476311.3476312>.  Tsz Nam Chan, Zhe Li,
-Leong Hou U, Jianliang Xu, Reynold Cheng (2021) <doi:10.14778/3461535.3461540>.
-Tsz Nam Chan, Reynold Cheng, Man Lung Yiu (2020) <doi:10.1145/3318464.3380561>.
-Tsz Nam Chan, Leong Hou U, Reynold Cheng, Man Lung Yiu, Shivansh Mittal (2020)
-<doi:10.1109/TKDE.2020.3018376>.  Tsz Nam Chan, Man Lung Yiu, Leong Hou U (2019)
-<doi:10.1109/ICDE.2019.00055>.")
-    (license license:expat)))
-
 (define-public r-rlibeemd
   (package
     (name "r-rlibeemd")
@@ -20447,41 +20384,6 @@ BA (2015). \"Open-channel computation with R.\" The R Journal, 7(2), 249â26
 <doi: 10.32614/RJ-2015-034>.")
     (license license:gpl3+)))
 
-(define-public r-rivnet
-  (package
-    (name "r-rivnet")
-    (version "0.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "rivnet" version))
-              (sha256
-               (base32
-                "0a2rlxd4dhnprh3lvgscg3w8f4v62mm1rbd0z0is9azb5ryf1ahh"))))
-    (properties `((upstream-name . "rivnet")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-traudem
-                             r-terra
-                             r-spam
-                             r-sf
-                             r-rcpp
-                             r-raster
-                             r-ocnet
-                             r-fields
-                             r-elevatr
-                             r-curl))
-    (native-inputs (list r-knitr))
-    (home-page "https://lucarraro.github.io/rivnet/")
-    (synopsis "Extract and Analyze Rivers from Elevation Data")
-    (description
-     "Seamless extraction of river networks from digital elevation models data.  The
-package allows analysis of digital elevation models that can be either
-externally provided or downloaded from open source repositories (thus
-interfacing with the elevatr package).  Extraction is performed via the D8 flow
-direction algorithm of @code{TauDEM} (Terrain Analysis Using Digital Elevation
-Models), thus interfacing with the traudem package.  Resulting river networks
-are compatible with functions from the OCNet package.")
-    (license license:expat)))
-
 (define-public r-rivivc
   (package
     (name "r-rivivc")
@@ -20759,13 +20661,13 @@ risk literacy more transparent.")
 (define-public r-risksimul
   (package
     (name "r-risksimul")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "riskSimul" version))
               (sha256
                (base32
-                "1yb2ipcqipsl92ighcpahjryir86pi59b1d3qiph7yraxbcx2909"))))
+                "05n5ffkjdhy799zhv7jd38am0yp3k8240z0abf73bi4mm3bw2raq"))))
     (properties `((upstream-name . "riskSimul")))
     (build-system r-build-system)
     (propagated-inputs (list r-runuran))
@@ -23536,13 +23438,13 @@ function.")
 (define-public r-rgoogleads
   (package
     (name "r-rgoogleads")
-    (version "0.9.2")
+    (version "0.10.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rgoogleads" version))
               (sha256
                (base32
-                "03y1dvshy6cadamig1gb72knz64g96w7s965k3cgvhnihm15fwd9"))))
+                "1v2g580js7avyqd02d9vyawj04x3yil6iw3w865h5901k40q817d"))))
     (properties `((upstream-name . "rgoogleads")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -23918,13 +23820,13 @@ ISBN:978-0849381294) and Rossmo (1995) <http://summit.sfu.ca/item/6820>.")
 (define-public r-rgeopat2
   (package
     (name "r-rgeopat2")
-    (version "0.3.9")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rgeopat2" version))
               (sha256
                (base32
-                "0l0sqkvjkzp4lmyk55l7zc02y04sa43cps47005gq8c38kyks45k"))))
+                "0l3gj2g4z7fcn5nx9kj3cz4a0g7k4f95gpwxsi82fybsdx5j5byv"))))
     (properties `((upstream-name . "rgeopat2")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-sf r-readr))
@@ -23932,9 +23834,9 @@ ISBN:978-0849381294) and Rossmo (1995) <http://summit.sfu.ca/item/6820>.")
     (synopsis "Additional Functions for 'GeoPAT' 2")
     (description
      "Supports analysis of spatial data processed with the @code{GeoPAT} 2 software
-<http://sil.uc.edu/cms/index.php?id=geopat2>.  Available features include
-creation of a grid based on the @code{GeoPAT} 2 grid header file and reading a
-@code{GeoPAT} 2 text outputs.")
+<https://github.com/Nowosad/geopat2>.  Available features include creation of a
+grid based on the @code{GeoPAT} 2 grid header file and reading a @code{GeoPAT} 2
+text outputs.")
     (license license:expat)))
 
 (define-public r-rgeomstats
@@ -26844,27 +26746,29 @@ their inclusion in the statistical models.")
 (define-public r-reslife
   (package
     (name "r-reslife")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "reslife" version))
               (sha256
                (base32
-                "144kc6pz7ls0glq5bvjiimyajgfpvswvfyk2hl7p7ccj5zfsm2qv"))))
+                "1yvv6zczw5j3j6qd8km3ln9i7rvnw3d4wvp52zv2yj7gigyxp45b"))))
     (properties `((upstream-name . "reslife")))
     (build-system r-build-system)
     (propagated-inputs (list r-pracma r-gsl r-flexsurv))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/an-crawford/reslife")
-    (synopsis "Calculate Residual Life Values for Different Distributions")
+    (synopsis
+     "Calculate Mean Residual Life (MRL) and Related Values for Different Distributions")
     (description
-     "This package provides a pair of functions for calculating mean, median, and/or
-percentile residual life using the outputs of either the flexsurv package or
-parameters provided by the user.  Input information about the distribution, the
-given life value, the percentile, and the type of residual life, and the
-function will return your desired values.  For the flexsurv option, the function
-allows the user to input their own data for making predictions.  This function
-is based on Jackson (2016) <doi:10.18637/jss.v070.i08>.")
+     "This package provides a pair of functions for calculating mean residual life
+(MRL), median residual life, and percentile residual life using the outputs of
+either the flexsurv package or parameters provided by the user.  Input
+information about the distribution, the given life value, the percentile, and
+the type of residual life, and the function will return your desired values.
+For the flexsurv option, the function allows the user to input their own data
+for making predictions.  This function is based on Jackson (2016)
+<doi:10.18637/jss.v070.i08>.")
     (license license:gpl3+)))
 
 (define-public r-resistorarray
@@ -32293,13 +32197,13 @@ Monopoly Profit Maximization, Cournot's Duopoly, Solow (1956,
 (define-public r-recommenderlab
   (package
     (name "r-recommenderlab")
-    (version "1.0.4")
+    (version "1.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "recommenderlab" version))
               (sha256
                (base32
-                "02bsb6r2r4p0gadgi8nijih4rr2v7pb0s4jfscgld3341nllz69q"))))
+                "0v8d1n8vp97iyasydznymz8g22p522yhmvqndpmwq5yw3v3wr4c4"))))
     (properties `((upstream-name . "recommenderlab")))
     (build-system r-build-system)
     (propagated-inputs (list r-registry
@@ -32500,13 +32404,13 @@ example, monthly precipitation).")
 (define-public r-recmap
   (package
     (name "r-recmap")
-    (version "1.0.15")
+    (version "1.0.16")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "recmap" version))
               (sha256
                (base32
-                "1973lx65ifyrsxip4qyhba2is45riknaja1x84ybj2l9a9y12d4l"))))
+                "0wz7nwk2jmlwa3897l3172hfmr1lr5ykqzhv2w5y39hkwmjfgyvj"))))
     (properties `((upstream-name . "recmap")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-rcpp r-ga))
@@ -32514,15 +32418,15 @@ example, monthly precipitation).")
     (home-page "https://cran.r-project.org/package=recmap")
     (synopsis "Compute the Rectangular Statistical Cartogram")
     (description
-     "This package provides an interface and a C++ implementation of the @code{RecMap}
-MP2 construction heuristic (Panse C. (2018) <doi:10.18637/jss.v086.c01>).  This
-algorithm draws maps according to a given statistical value (e.g., election
-results, population or epidemiological data).  The basic idea of the
-@code{RecMap} algorithm is that each map region (e.g., different countries) is
-represented by a rectangle.  The area of each rectangle represents the
-statistical value given as input (maintain zero cartographic error).
-Documentation about the usage of the recmap algorithm is provided by a vignette
-included in this package.")
+     "This package implements the @code{RecMap} MP2 construction heuristic
+<doi:10.1109/INFVIS.2004.57>.  This algorithm draws maps according to a given
+statistical value, e.g., election results, population, or epidemiological data.
+The basic idea of the @code{RecMap} algorithm is that each map region, e.g.,
+different countries, is represented by a rectangle.  The area of each rectangle
+represents the statistical value given as input (maintain zero cartographic
+error).  C++ is used to implement the computationally intensive tasks.  The
+vignette included in this package provides documentation about the usage of the
+recmap algorithm.")
     (license license:gpl3)))
 
 (define-public r-recluster
@@ -32636,13 +32540,13 @@ subunits and features.  Intended to be part of a 3D visualization workflow.")
 (define-public r-receptiviti
   (package
     (name "r-receptiviti")
-    (version "0.1.4")
+    (version "0.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "receptiviti" version))
               (sha256
                (base32
-                "14d5jpfv16pjf9qjimqpxmy7ai8zav8kliq2n57k4p7mk083qmly"))))
+                "0j4ypma8kp37q3kjnh9pxlw24mb8vmj0pis56a9gk6slzqivbbfi"))))
     (properties `((upstream-name . "receptiviti")))
     (build-system r-build-system)
     (propagated-inputs (list r-progressr
@@ -35132,21 +35036,16 @@ documentation, and examples.")
 (define-public r-rdflib
   (package
     (name "r-rdflib")
-    (version "0.2.6")
+    (version "0.2.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rdflib" version))
               (sha256
                (base32
-                "1gx31cxhdfg9hlfjyb178m4qw9ikgdfg6h09mwyyggkhrngnw6gq"))))
+                "10nnb3hqf1dbqxr9zn4d4jmwz4zkklw3vxfhc1vnn7ffhlm84d3f"))))
     (properties `((upstream-name . "rdflib")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-stringi
-                             r-redland
-                             r-readr
-                             r-jsonld
-                             r-dplyr))
+    (propagated-inputs (list r-tidyr r-stringi r-redland r-readr r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ropensci/rdflib")
     (synopsis "Tools to Manipulate and Query Semantic Data")
@@ -37450,13 +37349,13 @@ by Wickham H. (2015) <ISBN:9781491910597> and Marwick B. et al. (2018)
 (define-public r-rcompanion
   (package
     (name "r-rcompanion")
-    (version "2.4.30")
+    (version "2.4.34")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rcompanion" version))
               (sha256
                (base32
-                "0ncg7by6zkpn3p5wkdhsb5h406m4hq5bbgpbixjvsch8vy0srn73"))))
+                "0idv0gy1b2qfa0ayzf53mnv0mmk2nq7ykc5n8g7f2zrmfpwb9hcb"))))
     (properties `((upstream-name . "rcompanion")))
     (build-system r-build-system)
     (propagated-inputs (list r-plyr
@@ -37471,7 +37370,7 @@ by Wickham H. (2015) <ISBN:9781491910597> and Marwick B. et al. (2018)
     (description
      "This package provides functions and datasets to support Summary and Analysis of
 Extension Program Evaluation in R, and An R Companion for the Handbook of
-Biological Statistics.  Vignettes are available at <http://rcompanion.org>.")
+Biological Statistics.  Vignettes are available at <https://rcompanion.org>.")
     (license license:gpl3)))
 
 (define-public r-rcompadre
@@ -43774,27 +43673,28 @@ Examples are given for their use in diagnostic testing.")
 (define-public r-randomizer
   (package
     (name "r-randomizer")
-    (version "3.0.1")
+    (version "3.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "randomizeR" version))
               (sha256
                (base32
-                "06irrp0g5g3xxc6jzrzlr2sjizf8rp0wgv4x32ldlnh0kyrg0na6"))))
+                "00w4h8xamf6wix67g921j0xqma5y6zmzd23vr8k2qa48an9bnkfm"))))
     (properties `((upstream-name . "randomizeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
                              r-rlang
+                             r-reshape2
                              r-pwrgsd
                              r-purrr
-                             r-pracma
                              r-plotrix
                              r-mvtnorm
                              r-mstate
                              r-magrittr
+                             r-insight
+                             r-gsdesign
                              r-ggplot2
                              r-dplyr
-                             r-cubature
                              r-coin))
     (home-page "https://cran.r-project.org/package=randomizeR")
     (synopsis "Randomization for Clinical Trials")

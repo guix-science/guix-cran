@@ -2200,6 +2200,37 @@ Yifan Yang (2015)<doi: 10.1007/s00180-015-0567-9> and Mai Zhou and Yifan Yang
 (2015) <doi: 10.1201/b18598>.")
     (license license:lgpl3)))
 
+(define-public r-kmblock
+  (package
+    (name "r-kmblock")
+    (version "0.1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "kmBlock" version))
+              (sha256
+               (base32
+                "07y1gadn5givrx4ww9vzgcqdkchgd1ndjq65v6ssrbcxsx1lbgxl"))))
+    (properties `((upstream-name . "kmBlock")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo
+                             r-rcpp
+                             r-foreach
+                             r-dorng
+                             r-doparallel
+                             r-blockmodeling))
+    (home-page "https://cran.r-project.org/package=kmBlock")
+    (synopsis "k-Means Like Blockmodeling of One-Mode and Linked Networks")
+    (description
+     "This package implements k-means like blockmodeling of one-mode and linked
+networks as presented in Å½iberna (2020) <doi:10.1016/j.socnet.2019.10.006>.
+The development of this package is financially supported by the Slovenian
+Research Agency (<https://www.arrs.si/>) within the research programs P5-0168
+and the research projects J7-8279 (Blockmodeling multilevel and temporal
+networks) and J5-2557 (Comparison and evaluation of different approaches to
+blockmodeling dynamic networks by simulations with application to Slovenian
+co-authorship networks).")
+    (license license:gpl2+)))
+
 (define-public r-klustr
   (package
     (name "r-klustr")

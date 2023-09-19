@@ -4080,13 +4080,13 @@ subject to change; see the NEWS for further details on the latest changes.")
 (define-public r-vgamdata
   (package
     (name "r-vgamdata")
-    (version "1.1-8")
+    (version "1.1-9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "VGAMdata" version))
               (sha256
                (base32
-                "1smxhydcg6qa3lpgfg2cl0qpkysfi7i5vnhnri4r8w7axms2vrj8"))))
+                "1bk4c22rwpcm5aa1kdg0dh8c87pb54639xhlh4dkxwx2idn6s9b5"))))
     (properties `((upstream-name . "VGAMdata")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam))

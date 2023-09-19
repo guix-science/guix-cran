@@ -12917,13 +12917,13 @@ additional documentation refer to the following article: Busetto and Ranghetti
 (define-public r-modistools
   (package
     (name "r-modistools")
-    (version "1.1.4")
+    (version "1.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MODISTools" version))
               (sha256
                (base32
-                "174fj3r2hvr4sqiis2baqbia3b270frcrrqar6cahn1jczcqnypx"))))
+                "1qxkipbrxqfs6wmg8q9ycwzwmp5qg3g2iv55w6cy492lhri3fsqa"))))
     (properties `((upstream-name . "MODISTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -18539,17 +18539,17 @@ dimensions.")
 (define-public r-mkclass
   (package
     (name "r-mkclass")
-    (version "0.3")
+    (version "0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MKclass" version))
               (sha256
                (base32
-                "0sw0h99k24418iqvvq247kg5558y9mgashr5amay7gbf2va79v6j"))))
+                "1f6k00552vs3fql35mxrpqq52a8jw5g253k5a81shc11j9qapg9x"))))
     (properties `((upstream-name . "MKclass")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
-    (home-page "http://www.stamats.de/")
+    (home-page "https://github.com/stamats/MKclass")
     (synopsis "Statistical Classification")
     (description
      "Performance measures and scores for statistical classification such as accuracy,
@@ -19325,13 +19325,13 @@ For more information, see Molloy et al. (2019) <doi:10.3929/ethz-b-000334289>.")
 (define-public r-mixkernel
   (package
     (name "r-mixkernel")
-    (version "0.8")
+    (version "0.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mixKernel" version))
               (sha256
                (base32
-                "0slw5fvmzkfpx7nq5fbfldjrgh92v4g7j86jhbhghbkpwzzsjnyi"))))
+                "1sinbq30f57ihqy57vf69hq0c6f54j7w4dbx46vz39b7kx5319nz"))))
     (properties `((upstream-name . "mixKernel")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -19355,9 +19355,9 @@ unsupervised exploratory analysis.  Different solutions are provided to compute
 a meta-kernel, in a consensus way or in a way that best preserves the original
 topology of the data. @code{mixKernel} also integrates kernel PCA to visualize
 similarities between samples in a non linear space and from the multiple source
-point of view.  Functions to assess and display important variables are also
-provided in the package.  Ref: Jerome Mariette and Nathalie Villa-Vialaneix
-(2018) <doi:10.1093/bioinformatics/btx682>.")
+point of view <doi:10.1093/bioinformatics/btx682>.  A method to select (as well
+as funtions to display) important variables is also provided
+<doi:10.1093/nargab/lqac014>.")
     (license license:gpl2+)))
 
 (define-public r-mixindependr
@@ -20260,13 +20260,13 @@ DNA Heteroplasmy calculated from single-cell datasets
 (define-public r-misty
   (package
     (name "r-misty")
-    (version "0.5.2")
+    (version "0.5.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "misty" version))
               (sha256
                (base32
-                "1cxf01010k27mnqdzfznjnnzfq2rx4d63x4gc3cq7b02i1414zm5"))))
+                "05rb9pvklcxqypy35iba5rdkwsh7n0892ln3ycf4qx00hm79akcx"))))
     (properties `((upstream-name . "misty")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
@@ -21619,13 +21619,13 @@ Sievert, Schloerke, Xie, Allen, @code{McPherson}, Dipert and Borges (2022)
 (define-public r-mirai
   (package
     (name "r-mirai")
-    (version "0.9.1")
+    (version "0.10.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mirai" version))
               (sha256
                (base32
-                "17plr5g1fm0j5ss3md0a4kmrk6lw475ry8s7kk4l58hlyai3323m"))))
+                "1mjwdjz2v982vk0f8sckim8p0bzs78nbrzzx0f9q8bmpznkq9rdy"))))
     (properties `((upstream-name . "mirai")))
     (build-system r-build-system)
     (propagated-inputs (list r-nanonext))
@@ -22603,13 +22603,13 @@ instrumental variables.")
 (define-public r-miivefa
   (package
     (name "r-miivefa")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MIIVefa" version))
               (sha256
                (base32
-                "1abim8mb7avnz4prxjsch0xfancav3bwblxvdqp7whbya1bm78c1"))))
+                "1p1zh5zf1rwnncay0dj3fklbkl0nqak7wh0y4c4qylqd0453kd48"))))
     (properties `((upstream-name . "MIIVefa")))
     (build-system r-build-system)
     (propagated-inputs (list r-miivsem))
@@ -27642,13 +27642,13 @@ iterative algorithm proposed by Matejka & Fitzmaurice (2017)
 (define-public r-metamedian
   (package
     (name "r-metamedian")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "metamedian" version))
               (sha256
                (base32
-                "15qq3yig2j3nh06jz75fdfn5akq038wdhrkkczl06x16qlp37wfb"))))
+                "0zr0k1dkgqpzg7pc3g8ischh2mg2gy3vdrc7fiaa9m4hc62iqgzj"))))
     (properties `((upstream-name . "metamedian")))
     (build-system r-build-system)
     (propagated-inputs (list r-metafor r-metablue r-hmisc r-estmeansd))
@@ -34281,13 +34281,13 @@ Lobo et al. (2021) <doi:10.1093/g3journal/jkab308>.")
 (define-public r-mbmethpred
   (package
     (name "r-mbmethpred")
-    (version "0.1.4")
+    (version "0.1.4.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MBMethPred" version))
               (sha256
                (base32
-                "0wpnihv3sc6g0yj3f4iwaabi7sj3nrq14sicgy5gnpfvn8yjj4wy"))))
+                "0qpflcydkf2k8a7kqklvp7mskppviqkffkr98rfsklk8iqf8x9c9"))))
     (properties `((upstream-name . "MBMethPred")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -34310,7 +34310,7 @@ Lobo et al. (2021) <doi:10.1093/g3journal/jkab308>.")
                              r-catools
                              r-caret))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=MBMethPred")
+    (home-page "https://github.com/sharifrahmanie/MBMethPred")
     (synopsis "Medulloblastoma Subgroups Prediction")
     (description
      "Utilizing a combination of machine learning models (Random Forest, Naive Bayes,
@@ -34318,7 +34318,11 @@ K-Nearest Neighbor, Support Vector Machines, Extreme Gradient Boosting, and
 Linear Discriminant Analysis) and a deep Artificial Neural Network model,
 MB@code{MethPred} can predict medulloblastoma subgroups, including wingless
 (WNT), sonic hedgehog (SHH), Group 3, and Group 4 from DNA methylation beta
-values.")
+values.  See Sharif Rahmani E, Lawarde A, Lingasamy P, Moreno SV, Salumets A and
+Modhukur V (2023), MB@code{MethPred}: a computational framework for the accurate
+classification of childhood medulloblastoma subgroups using data integration and
+AI-based approaches.  Front.  Genet.  14:1233657. <doi:
+10.3389/fgene.2023.1233657> for more details.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-mbmca
@@ -35110,13 +35114,13 @@ Monte Carlo, mmc(), for statistics with nuisance parameters.")
 (define-public r-maxlike
   (package
     (name "r-maxlike")
-    (version "0.1-9")
+    (version "0.1-10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "maxlike" version))
               (sha256
                (base32
-                "0pv55ydmjj7kdmfac7a0y6rc32ym5vza8fs7qyavnx8ss9fv2bv3"))))
+                "0csixdzvs5kynd37c6zl985pazxqw8zh204pddxh7rj0872g82hc"))))
     (properties `((upstream-name . "maxlike")))
     (build-system r-build-system)
     (propagated-inputs (list r-raster))
@@ -35426,13 +35430,13 @@ data frame and expand a data frame of matrices into a tidy data frame.")
 (define-public r-matsbyname
   (package
     (name "r-matsbyname")
-    (version "0.6.4")
+    (version "0.6.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "matsbyname" version))
               (sha256
                (base32
-                "04c4ymbsyv0a8prcq911irf6kkyfgiqavh6vzm74nf9kjyq5xr93"))))
+                "16zp6n8g0ils49y91ssl84i4qwbhp1ascz7mlpnnrvgkrddpzgbv"))))
     (properties `((upstream-name . "matsbyname")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -35447,7 +35451,8 @@ data frame and expand a data frame of matrices into a tidy data frame.")
                              r-assertthat))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/MatthewHeun/matsbyname")
-    (synopsis "An Implementation of Matrix Mathematics")
+    (synopsis
+     "An Implementation of Matrix Mathematics that Respects Row and Column Names")
     (description
      "An implementation of matrix mathematics wherein operations are performed \"by
 name.\"")
@@ -37447,13 +37452,13 @@ inspired by the \"comment\" window of <https://github.com/>.")
 (define-public r-mark
   (package
     (name "r-mark")
-    (version "0.6.0")
+    (version "0.6.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mark" version))
               (sha256
                (base32
-                "05hh5jzf8yr2x4kjd26n1g2bq9faypn08bqxc3p4s9awy6lac6h2"))))
+                "1hhy2k2kmnh2nc5qvvqbbyn38c9bpvldcdgczdb0f3xipcnanji8"))))
     (properties `((upstream-name . "mark")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-fuj))
@@ -37563,13 +37568,13 @@ a conditional risk model.")
 (define-public r-marginaleffects
   (package
     (name "r-marginaleffects")
-    (version "0.15.0")
+    (version "0.15.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "marginaleffects" version))
               (sha256
                (base32
-                "1pwrcnwsb4vza8r8jg4v0f0hxn12q6nilglk4n0sgya14vqz6kwq"))))
+                "0964xbxz84iz7hc7lbr2sfwfy918mi3bpypx817vgzd3s58hvr2p"))))
     (properties `((upstream-name . "marginaleffects")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -38982,13 +38987,13 @@ Huband, et al. (2005) <doi:10.1109/TEVC.2005.861417>.")
 (define-public r-manynet
   (package
     (name "r-manynet")
-    (version "0.2.1")
+    (version "0.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "manynet" version))
               (sha256
                (base32
-                "1i21pqgmhrivg5kfb8f6w05wc4n98c4lnd9418avnlbgyihiza19"))))
+                "0kc567jc0mc4v71c0ymny5zhraja6xnrcviqgm75pvzyhs13q605"))))
     (properties `((upstream-name . "manynet")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidygraph
@@ -38997,7 +39002,7 @@ Huband, et al. (2005) <doi:10.1109/TEVC.2005.861417>.")
                              r-ggraph
                              r-ggplot2
                              r-dplyr))
-    (home-page "https://github.com/snlab-ch/manynet")
+    (home-page "https://snlab-ch.github.io/manynet/")
     (synopsis "Many Ways to Make, Manipulate, and Map Myriad Networks")
     (description
      "This package provides a set of tools for making, manipulating, and mapping many
@@ -41384,13 +41389,13 @@ spatial data on various man-made and natural structures.")
 (define-public r-machineshop
   (package
     (name "r-machineshop")
-    (version "3.6.2")
+    (version "3.7.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MachineShop" version))
               (sha256
                (base32
-                "08gl9pgp9a7ljf70babdkw2l5byd6j9284qzd2098yr6zbyns1bz"))))
+                "073v778c7zkpxhhdvqc4hiqlgj5ws9490cqpz22bk659f8f63bav"))))
     (properties `((upstream-name . "MachineShop")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble

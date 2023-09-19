@@ -2481,34 +2481,6 @@ of nodes; see Tumminello et al <doi:10.1371/journal.pone.0017994>.")
 essentially the same cost as a single SVM fit.")
     (license license:gpl2)))
 
-(define-public r-svmmaj
-  (package
-    (name "r-svmmaj")
-    (version "0.2.9.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "SVMMaj" version))
-              (sha256
-               (base32
-                "08f9sndcjgmmxl3zlbq86d8z0dbciv0ab1v9zx80svka7ckfv9z3"))))
-    (properties `((upstream-name . "SVMMaj")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-scales
-                             r-reshape2
-                             r-kernlab
-                             r-gridextra
-                             r-ggplot2
-                             r-dplyr))
-    (native-inputs (list))
-    (home-page "https://cran.r-project.org/package=SVMMaj")
-    (synopsis "Implementation of the SVM-Maj Algorithm")
-    (description
-     "This package implements the SVM-Maj algorithm to train data with support vector
-machine as described in Groenen et al. (2008) <doi:10.1007/s11634-008-0020-9>.
-This algorithm uses two efficient updates, one for linear kernel and one for the
-nonlinear kernel.")
-    (license license:gpl2)))
-
 (define-public r-svkomodo
   (package
     (name "r-svkomodo")
@@ -6852,6 +6824,53 @@ uses the Cambridge method for surplus allocation and Droop method for quota
 calculation.  Fractional surplus allocation and the Hare quota are available as
 options.")
     (license license:lgpl3)))
+
+(define-public r-stupscales
+  (package
+    (name "r-stupscales")
+    (version "1.0.3.5")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "stUPscales" version))
+              (sha256
+               (base32
+                "1jsir7p9gwlmndrryc3rl78ysv6q6p97apwgwv4ykkk2kv7jk8m6"))))
+    (properties `((upstream-name . "stUPscales")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-xts
+                             r-msm
+                             r-moments
+                             r-mar
+                             r-lmom
+                             r-lattice
+                             r-hydrogof
+                             r-ggplot2
+                             r-foreach
+                             r-emistatr
+                             r-doparallel
+                             r-data-table))
+    (home-page "https://cran.r-project.org/package=stUPscales")
+    (synopsis "Spatio-Temporal Uncertainty Propagation Across Multiple Scales")
+    (description
+     "Integrated environmental modelling requires coupling sub-models at different
+spatial and temporal scales, thus accounting for change of support procedures
+(aggregation and disaggregation).  We contribute to state-of-the-art open source
+tools that support uncertainty propagation analysis in temporal and
+spatio-temporal domains.  We implement the tool for uncertainty propagation in
+environmental modelling, with examples in the urban water domain.  The
+functionalities of the class setup and the methods and functions MC.setup,
+MC.sim, MC.analysis, MC.analysis_generic and Agg.t are contained, which are used
+for setting up, running and analysing Monte Carlo uncertainty propagation
+simulations, and for spatio-temporal aggregation.  We also implement
+functionalities to model and predict variables that vary in space and time.
+@code{stUPscales} takes uncertainty characterisation and propagation a step
+further by including temporal and spatio-temporal auto- and cross-correlation,
+resulting in more realistic (spatio-)temporal series of environmental variables.
+ Due to its modularity, the package allows the implementation of additional
+methods and functions for spatio-temporal disaggregation of model inputs and
+outputs, when linking models across multiple space-time scales.")
+    (license license:gpl3+)))
 
 (define-public r-studystrap
   (package
@@ -12875,6 +12894,37 @@ validation.  Some additional functions allow the calculation of absorbance slope
 parameters and create beautiful plots.")
     (license (license:fsdg-compatible "AGPL"))))
 
+(define-public r-staplr
+  (package
+    (name "r-staplr")
+    (version "3.2.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "staplr" version))
+              (sha256
+               (base32
+                "1wqknnrbcwcmw0kvyydwrgs0yz5cixpgxglva377lzqlbw8ll7wn"))))
+    (properties `((upstream-name . "staplr")))
+    (build-system r-build-system)
+    (inputs (list openjdk))
+    (propagated-inputs (list r-xml
+                             r-stringr
+                             r-rjava
+                             r-purrr
+                             r-pdftools
+                             r-glue
+                             r-fs
+                             r-assertthat))
+    (home-page "https://cran.r-project.org/package=staplr")
+    (synopsis "Toolkit for PDF Files")
+    (description
+     "This package provides functions to manipulate PDF files: fill out PDF forms;
+merge multiple PDF files into one; remove selected pages from a file; rename
+multiple files in a directory; rotate entire pdf document; rotate selected pages
+of a pdf file; Select pages from a file; splits single input PDF document into
+individual pages; splits single input PDF document into parts from given points.")
+    (license license:gpl3)))
+
 (define-public r-stapler
   (package
     (name "r-stapler")
@@ -12902,19 +12952,17 @@ this rating and the individual specificity/sensitivity for each rater.")
 (define-public r-stanmomo
   (package
     (name "r-stanmomo")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "StanMoMo" version))
               (sha256
                (base32
-                "1qf5pvz5bwn1ax0rj9w0q22w6icd3fv7xxpxjnf268pl65fxhmv8"))))
+                "1wdyys53zzsrwk9w7rxlj33j5hi21hiqf84gpsk6qrl5x88zw2mm"))))
     (properties `((upstream-name . "StanMoMo")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyverse
-                             r-tidyselect
+    (propagated-inputs (list r-tidyselect
                              r-tidyr
-                             r-tibble
                              r-stanheaders
                              r-rstantools
                              r-rstan
@@ -12922,8 +12970,6 @@ this rating and the individual specificity/sensitivity for each rater.")
                              r-rcppeigen
                              r-rcpp
                              r-loo
-                             r-latex2exp
-                             r-httr
                              r-ggplot2
                              r-ggfan
                              r-dplyr
@@ -15881,13 +15927,13 @@ Comput Biol.  2010 Oct;17(10):1385-95 [PMID 20976876].")
 (define-public r-sqmtools
   (package
     (name "r-sqmtools")
-    (version "1.6.2")
+    (version "1.6.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SQMtools" version))
               (sha256
                (base32
-                "1qlbgc9mqx111p4dqld1zlvczi54nhl1yghlrchy9kr984a697x8"))))
+                "0c725f0ksafxhgwhdb44h72gcs352afxi0gb843snnqwn5jmmsgh"))))
     (properties `((upstream-name . "SQMtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2 r-pathview r-ggplot2 r-data-table))
@@ -17488,13 +17534,13 @@ Stephen J. Roberts (1999) <doi:10.1109/IJCNN.1999.832603>.")
 (define-public r-spork
   (package
     (name "r-spork")
-    (version "0.2.2")
+    (version "0.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spork" version))
               (sha256
                (base32
-                "09n159nkrgpwf6ck24axgsxh6dm1xays9pgx940pzmaq7vzb5ng4"))))
+                "1dvww617kcy8x483nclkvbkbafrv7a2c3n0yfd88bc5vhvwcgz81"))))
     (properties `((upstream-name . "spork")))
     (build-system r-build-system)
     (propagated-inputs (list r-png r-latexpdf r-ggplot2))
@@ -27469,16 +27515,16 @@ package.")
 (define-public r-snotelr
   (package
     (name "r-snotelr")
-    (version "1.1")
+    (version "1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "snotelr" version))
               (sha256
                (base32
-                "001pkqqc7ysnjwypzl5fcsszymfqw67p5kn0gyxjqdpz4ns0crbg"))))
+                "140f34dsylsb0z9aw446xhsghl1r1qnddwai87201pymmjgqryn0"))))
     (properties `((upstream-name . "snotelr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-shiny r-rvest r-memoise r-magrittr r-httr))
+    (propagated-inputs (list r-shiny r-rvest r-memoise r-httr r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/bluegreen-labs/snotelr")
     (synopsis "Calculate and Visualize 'SNOTEL' Snow Data and Seasonality")
@@ -28415,13 +28461,13 @@ effects, smooth one-dimensional period effects and random errors.")
 (define-public r-smooth
   (package
     (name "r-smooth")
-    (version "3.2.1")
+    (version "4.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "smooth" version))
               (sha256
                (base32
-                "1kczg9ww3xpjd1z2a6flcyg038sqaik72akw3sn71m9c63ka7q95"))))
+                "0r123h71wxgwn694mn2vhc7hhicj8d33h5q4djmkp3m72dkzxyqj"))))
     (properties `((upstream-name . "smooth")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -28448,7 +28494,7 @@ Exponential Smoothing (Svetunkov & Kourentzes, 2018, <doi:
 2018 <doi: 10.1080/00207543.2017.1380326>) and several simulation functions.  It
 also allows dealing with intermittent demand based on the @code{iETS} framework
 (Svetunkov & Boylan, 2019, <doi: 10.13140/RG.2.2.35897.06242>).")
-    (license license:gpl2+)))
+    (license license:lgpl2.1)))
 
 (define-public r-smoke
   (package
@@ -45691,13 +45737,13 @@ forests.")
 (define-public r-semhelpinghands
   (package
     (name "r-semhelpinghands")
-    (version "0.1.8")
+    (version "0.1.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "semhelpinghands" version))
               (sha256
                (base32
-                "1qmn4hmfzf0k675cx24iadxfcwij17940dx58x5x48ngql4h48kw"))))
+                "03y571fvc2cglqsci5ibg178bdc9pg1w8n0kk2b5ir65kyqsqbih"))))
     (properties `((upstream-name . "semhelpinghands")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-lavaan r-ggrepel r-ggplot2 r-boot))
@@ -56980,17 +57026,17 @@ sequencing (WGS), whole exome sequencing (WES) and SNP array data.")
 (define-public r-s7
   (package
     (name "r-s7")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "S7" version))
               (sha256
                (base32
-                "1hfdfzfysrcbx53qjngzx8ycb353cy2drvxnf1d9a84mjl681gc3"))))
+                "0r3v586xbcrww63jifdbfh2fgdkr5f2mgp72f2zljg4x70zn3sfw"))))
     (properties `((upstream-name . "S7")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/rconsortium/OOP-WG/")
+    (home-page "https://github.com/rconsortium/S7/")
     (synopsis
      "An Object Oriented System Meant to Become a Successor to S3 and S4")
     (description

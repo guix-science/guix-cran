@@ -4528,13 +4528,13 @@ details see Hsu, L. and Wang, C. (2007). <doi:10.1016/j.techfore.2006.02.005>.")
 (define-public r-greybox
   (package
     (name "r-greybox")
-    (version "1.0.8")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "greybox" version))
               (sha256
                (base32
-                "1lb0k9lq39k5cykq46agiq2ykwfcrdc1pncxnry750r6wqyi5sp8"))))
+                "14624pgp02ajlhicq29683j34z2ap6xcjy71f3qbm5nq96w975f8"))))
     (properties `((upstream-name . "greybox")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -4558,7 +4558,7 @@ validation, solutions to the fat regression model problem and more.  Models
 developed in the package are tailored specifically for forecasting purposes.  So
 as a results there are several methods that allow producing forecasts from these
 models and visualising them.")
-    (license license:gpl2+)))
+    (license license:lgpl2.1)))
 
 (define-public r-grex
   (package
@@ -7005,22 +7005,20 @@ API, see <https://platform.openai.com/docs/introduction>.")
 (define-public r-gpseqclus
   (package
     (name "r-gpseqclus")
-    (version "1.3.0")
+    (version "1.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GPSeqClus" version))
               (sha256
                (base32
-                "0nkhpa3wldyimhzzsfhqrwkj62rr5xfb88zcjhg1dvg5fbvinigd"))))
+                "0bs6swzj2zh2dgyiwxirimz5gdk7vfssb7ga0cqmr9s5ckvgh8ir"))))
     (properties `((upstream-name . "GPSeqClus")))
     (build-system r-build-system)
     (propagated-inputs (list r-suncalc
-                             r-spacetime
                              r-sp
-                             r-rgdal
+                             r-sf
                              r-purrr
                              r-plyr
-                             r-plotkml
                              r-leaflet-extras
                              r-leaflet
                              r-htmlwidgets
@@ -9477,13 +9475,13 @@ moment matching networks is provided.")
 (define-public r-gnm
   (package
     (name "r-gnm")
-    (version "1.1-4")
+    (version "1.1-5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gnm" version))
               (sha256
                (base32
-                "1drf92r4d24a2vnywqnm3blv99qjgsbsf6sl3j7pdajwn1f0k65c"))))
+                "0igqzm6sdmk1wqc3rdy6pc3ba9n7bs76j5nql5qa1y2wg3rlxna4"))))
     (properties `((upstream-name . "gnm")))
     (build-system r-build-system)
     (propagated-inputs (list r-relimp r-qvcalc r-nnet r-matrix r-mass))
@@ -12146,13 +12144,13 @@ generated.")
 (define-public r-gllvm
   (package
     (name "r-gllvm")
-    (version "1.4.1")
+    (version "1.4.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gllvm" version))
               (sha256
                (base32
-                "1l91ngxmb7bn4g654faphmlp6spwnq6rihmq1n7h13pkwfbhdx9n"))))
+                "1k3yw1flqzj151kqx8wyh54a7crh62ya700x5n4989ngx5071dv3"))))
     (properties `((upstream-name . "gllvm")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb
@@ -24345,13 +24343,13 @@ fraction.  A reference is Yi Niu and Yingwei Peng (2014)
 (define-public r-geecrt
   (package
     (name "r-geecrt")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "geeCRT" version))
               (sha256
                (base32
-                "0dki86p1qah07h3xxq2x5abrnc75z82mxr07wx4cqjvan8431ivl"))))
+                "1zp9b56g3w3sjwffw00sjl50659mv7iyprlni7qp7d8w0wmkfsww"))))
     (properties `((upstream-name . "geeCRT")))
     (build-system r-build-system)
     (propagated-inputs (list r-rootsolve r-mvtnorm r-mass))
@@ -25023,13 +25021,13 @@ Press 2015).")
 (define-public r-gd
   (package
     (name "r-gd")
-    (version "10.2")
+    (version "10.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GD" version))
               (sha256
                (base32
-                "0ag2a1z4hp0knv4rdff8jwjijz642qzibaiqzmnyx6pzzi6f5b51"))))
+                "1qgkwqszc90b5aygqh28gfasqbsxy08inj9vm9b2id9z1rg69p8m"))))
     (properties `((upstream-name . "GD")))
     (build-system r-build-system)
     (propagated-inputs (list r-bammtools))
@@ -27262,34 +27260,6 @@ linear predictor for both.  The package also allows transformed or truncated
 distributions from the GAMLSS family to be used for the continuous part of the
 distribution.  Standard methods and GAMLSS diagnostics can be used with the
 resulting fitted object.")
-    (license (list license:gpl2 license:gpl3))))
-
-(define-public r-gamlss-ggplots
-  (package
-    (name "r-gamlss-ggplots")
-    (version "2.1-2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "gamlss.ggplots" version))
-              (sha256
-               (base32
-                "0b205awv7abl1jv2gg2ki2xdz91i0xikvixgygwjmwz6vri0p7zx"))))
-    (properties `((upstream-name . "gamlss.ggplots")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-mgcv
-                             r-ggridges
-                             r-ggplot2
-                             r-gamlss-inf
-                             r-gamlss-foreach
-                             r-gamlss-dist
-                             r-gamlss
-                             r-foreach
-                             r-ellipse))
-    (home-page "https://www.gamlss.com/")
-    (synopsis
-     "Plotting Generalised Additive Model for Location, Scale and Shape")
-    (description
-     "Plotting functions for Generalised Additive Models for Location Scale and Shape.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-gamlss-foreach

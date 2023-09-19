@@ -1104,13 +1104,13 @@ diagnosis and interpretation.")
 (define-public r-cvcrand
   (package
     (name "r-cvcrand")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cvcrand" version))
               (sha256
                (base32
-                "0zdf41sjqyi7mybxhypfx1vpc15w7qj9jg9bav64qbk0q5nk7jyc"))))
+                "02pdhaq0mm1vijdc0hwh4vpcvk5fhwq73lhkrrg2zr6bwq8q2syz"))))
     (properties `((upstream-name . "cvcrand")))
     (build-system r-build-system)
     (propagated-inputs (list r-tableone))
@@ -5096,13 +5096,13 @@ as well as from literature and a GUI to access them.")
 (define-public r-crossnma
   (package
     (name "r-crossnma")
-    (version "1.1.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "crossnma" version))
               (sha256
                (base32
-                "0s23lz9v8crpksb78rk9rzin9hzva8y490460jjw6rfd0cdc0ilc"))))
+                "0ma07lvf56z1ya587lb4zv8rbhzi8crnsgvh3xsz80livx9cdvp5"))))
     (properties `((upstream-name . "crossnma")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -6047,13 +6047,13 @@ analysis.")
 (define-public r-crfsuite
   (package
     (name "r-crfsuite")
-    (version "0.4.1")
+    (version "0.4.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "crfsuite" version))
               (sha256
                (base32
-                "0vm4gpyb9qxlj0xixnmjs8hv3xi3ydzd8dbymk7f78nafdvqwkxy"))))
+                "15ldbx8g9xa6sql6is2gcqryzqb9dad1hiarvrgmizdp5fd3gxnm"))))
     (properties `((upstream-name . "crfsuite")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-data-table))
@@ -6126,13 +6126,13 @@ Surmann (2017). <doi:10.21105/joss.00135>.")
 (define-public r-crew
   (package
     (name "r-crew")
-    (version "0.4.0")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "crew" version))
               (sha256
                (base32
-                "0f8qr9nidj68817q5ldp7hhnsaxfk5kcwwqdk0fvjbfgm81d79x8"))))
+                "0jcsxq6qcs704fa8b7shx4gbphfcb76h72v8sxddpkn47r7siwz2"))))
     (properties `((upstream-name . "crew")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -9070,19 +9070,19 @@ distribution by Johnstone (2008) <DOI:10.1214/08-AOS605>.")
 (define-public r-coveffectsplot
   (package
     (name "r-coveffectsplot")
-    (version "1.0.2")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "coveffectsplot" version))
               (sha256
                (base32
-                "1407zwxg5235qfy4zkjax28qasjwx81pzjgaix6wbvlwanspsw0g"))))
+                "172spmc5x5ln38rrybafa4143mhddlv6602r9njc6lbzswhlpcml"))))
     (properties `((upstream-name . "coveffectsplot")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-ggplot2 r-egg r-data-table
                              r-colourpicker))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/smouksassi/coveffectsplot")
+    (home-page "https://smouksassi.github.io/coveffectsplot/")
     (synopsis "Produce Forest Plots to Visualize Covariate Effects")
     (description
      "Produce forest plots to visualize covariate effects using either the command
@@ -17324,13 +17324,13 @@ for details under the FGM and general copulas, respectively.")
 (define-public r-common
   (package
     (name "r-common")
-    (version "1.0.8")
+    (version "1.0.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "common" version))
               (sha256
                (base32
-                "0l2gdgiz6hwvfsgln0mdsv14f15q8g1rd8si68kcdx5fg1x3p9q3"))))
+                "1qizisg38kmmszm0g8vj7ipkjadg6s95n56wlf63gq3plnkjnibv"))))
     (properties `((upstream-name . "common")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -18722,13 +18722,13 @@ gradient-matching, generalized profiling and forwards prediction error methods."
 (define-public r-collin
   (package
     (name "r-collin")
-    (version "0.0.2")
+    (version "0.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "collin" version))
               (sha256
                (base32
-                "12gxndq5xqfvc9m10y6pjf99npr65dp1fhpy5lg9wnq7r4zv2610"))))
+                "1j2rx4p8xf9fqrkay2133d8fh255szn290qnj0n93masg8vbv9l5"))))
     (properties `((upstream-name . "collin")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam r-nlme r-mgcv r-mass r-dlnm))
@@ -21295,17 +21295,16 @@ provided on the CM SAF webpage (<http://www.cmsaf.eu/R_toolbox>).")
 (define-public r-cmsafops
   (package
     (name "r-cmsafops")
-    (version "1.2.6")
+    (version "1.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cmsafops" version))
               (sha256
                (base32
-                "0glxw15hq1bh052wsavc1af93m67l3vz8y9bh42l8n8n06p89alw"))))
+                "0lyjyd78d0qprx8vjxpny2jl14cgy2xy47ydsv5awgg7bb4w34pg"))))
     (properties `((upstream-name . "cmsafops")))
     (build-system r-build-system)
     (propagated-inputs (list r-trend
-                             r-sp
                              r-searchtrees
                              r-raster
                              r-rainfarmr
@@ -25074,13 +25073,13 @@ account during the optimisation process, is also proposed (Roudier et al., 2012,
 (define-public r-clevr
   (package
     (name "r-clevr")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "clevr" version))
               (sha256
                (base32
-                "077qhqfzcy1ciar70df7q98ms003b9mnqgji1nxkx5ncw9hdkzd4"))))
+                "0r47mq0k55v3jvkzv1nlajqmcj03gq0igrxlcwhfrhbam9vwvapx"))))
     (properties `((upstream-name . "clevr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-matrix r-bh))
@@ -27479,6 +27478,35 @@ similarity measures and (b) a ground-truth-free test metric to assess the
 biological correctness of integration in real datasets.  See Hu Z, Ahmed A, Yau
 C (2021) <doi:10.1101/2021.03.29.437525> for more details.")
     (license license:expat)))
+
+(define-public r-cici
+  (package
+    (name "r-cici")
+    (version "0.9.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "CICI" version))
+              (sha256
+               (base32
+                "0dd152f3ffasmwrhjgkd4i480cp2jkp2qy7w22xbzjm3c22mpbvz"))))
+    (properties `((upstream-name . "CICI")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rngtools
+                             r-mgcv
+                             r-glmnet
+                             r-ggplot2
+                             r-foreach
+                             r-dorng
+                             r-doparallel))
+    (home-page "https://cran.r-project.org/package=CICI")
+    (synopsis
+     "Causal Inference with Continuous (Multiple Time Point) Interventions")
+    (description
+     "Estimation of counterfactual outcomes for multiple values of continuous
+interventions at different time points, and plotting of causal dose-response
+curves.  Details are given in Schomaker, @code{McIlleron}, Denti, Diaz (2023)
+<@code{arXiv:2305.06645>}.")
+    (license license:gpl2)))
 
 (define-public r-cicerone
   (package

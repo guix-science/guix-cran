@@ -1407,16 +1407,16 @@ of general ARMA alternatives.")
 (define-public r-hwsdr
   (package
     (name "r-hwsdr")
-    (version "1.0")
+    (version "1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hwsdr" version))
               (sha256
                (base32
-                "0r9chbjkdvr6614kpps5250pdg5w2gxyf2a0rvxf3hgs5krgcm32"))))
+                "1dfrqcd0nccrsv01hsvp2xic9nfhsqmvl7cqvv28amayqyv3lizk"))))
     (properties `((upstream-name . "hwsdr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sf r-raster r-httr))
+    (propagated-inputs (list r-terra r-sf r-httr r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/bluegreen-labs/hwsdr")
     (synopsis "Interface to the 'HWSD' Web Services")
@@ -3680,32 +3680,6 @@ log ratio and centred log ratio transformations.")
      "This package performs multiple hot-deck imputation of categorical and continuous
 variables in a data frame.")
     (license license:expat)))
-
-(define-public r-hostswitch
-  (package
-    (name "r-hostswitch")
-    (version "0.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HostSwitch" version))
-              (sha256
-               (base32
-                "1937rjjz3lzriym1brjfpp1b02zd40ry4205yrkrs3vxp1lp4234"))))
-    (properties `((upstream-name . "HostSwitch")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tippy r-shiny r-ggplot2 r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/berndpanassiti/HostSwitch")
-    (synopsis "Simulate the Extent of Host Switching by Consumers")
-    (description
-     "Using a simulation-based approach, the @code{HostSwitch} package provides
-functions to investigate host switches by consumers.  The individual-based model
-is based on the concept of ecological fitting.  The mockup model is published by
-Araujo et al.  2015.  Understanding Host-Switching by Ecological Fitting
-(<doi:10.1371/journal.pone.0139225>).  The package provides an R-friendly and
-modified version of this model which can be applied to different
-consumer-resource scenarios.")
-    (license license:gpl3+)))
 
 (define-public r-hospitals
   (package
@@ -8340,13 +8314,13 @@ Schweinberger and Luna (2018) <doi:10.18637/jss.v085.i01>.")
 (define-public r-herer
   (package
     (name "r-herer")
-    (version "0.9.1")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hereR" version))
               (sha256
                (base32
-                "1csy6lh0hbfdrm0pmcmmwp8gm8ykr4sx78sgjrp18xm4axx3a5j7"))))
+                "0la67qdsq72x8k19v27g73fh6w04fdgfj1cxbd3a6w1sfvjvvy6z"))))
     (properties `((upstream-name . "hereR")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr

@@ -1748,13 +1748,13 @@ friendly way.")
 (define-public r-duckplyr
   (package
     (name "r-duckplyr")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "duckplyr" version))
               (sha256
                (base32
-                "0sqnlgbz4g3dmrp2a71k9nfr83pxsmavisqjiv1h3c4gzxg6qdj6"))))
+                "0vy4llb30x19y68h4kyza6k555zvm1rmk8bzamgn5m7ag8qy8qwq"))))
     (properties `((upstream-name . "duckplyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -1769,7 +1769,7 @@ friendly way.")
                              r-dbi
                              r-collections
                              r-cli))
-    (home-page "https://github.com/duckdblabs/duckplyr")
+    (home-page "https://duckdblabs.github.io/duckplyr/")
     (synopsis "'DuckDB'-Backed Version of 'dplyr'")
     (description
      "This package provides a drop-in replacement for dplyr', powered by @code{DuckDB}
@@ -4852,6 +4852,28 @@ screenshots, upload their own images and maybe make a scientific figure.")
      "This package provides a set of user-friendly wrapper functions for creating
 consistent graphics and diagrams with lines, common shapes, text, and page
 settings.  Compatible with and based on the R grid package.")
+    (license license:expat)))
+
+(define-public r-drape
+  (package
+    (name "r-drape")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "drape" version))
+              (sha256
+               (base32
+                "0y4y6vvskizghqf78d1vr0skac0ks3yb83m9fgn8i3wmgqrhws19"))))
+    (properties `((upstream-name . "drape")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=drape")
+    (synopsis "Doubly Robust Average Partial Effects")
+    (description
+     "Doubly robust average partial effect estimation.  This implementation contains
+methods for adding additional smoothness to plug-in regression procedures and
+for estimating score functions using smoothing splines.  Details of the method
+can be found in Harvey Klyne and Rajen D. Shah (2023) <@code{arXiv:2308.09207>}.")
     (license license:expat)))
 
 (define-public r-dramaanalysis
@@ -8850,13 +8872,13 @@ avoid redundancy.")
 (define-public r-diztools
   (package
     (name "r-diztools")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DIZtools" version))
               (sha256
                (base32
-                "1zx7rc4qa6604fifcahld30vzkc68wdwhwaxq6nn8wi0ka4a4mk1"))))
+                "0i42k7h82x9g0mha8ppk17h3srgfjgwb9ysnib80pkjnp59kmpa5"))))
     (properties `((upstream-name . "DIZtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-r-utils
@@ -10698,13 +10720,13 @@ with maximum likelihood.")
 (define-public r-diseasemapping
   (package
     (name "r-diseasemapping")
-    (version "2.0.0")
+    (version "2.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "diseasemapping" version))
               (sha256
                (base32
-                "00zs73aa45y81mlqqyd8jsim8lys2x9a2njmvm64lp8prdh33b91"))))
+                "10wdbv1b48hr3hayanyxabcxkjnzp89z7hrc8bqvp26f21p3kz0j"))))
     (properties `((upstream-name . "diseasemapping")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra))
@@ -16820,13 +16842,13 @@ special, roxygen'-style comments.")
 (define-public r-depons2r
   (package
     (name "r-depons2r")
-    (version "1.2.1")
+    (version "1.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DEPONS2R" version))
               (sha256
                (base32
-                "09rd7bd855s7bs4fasdzc15fxi6191gfpjifqqyia0j857nr5n14"))))
+                "0izcmi194pd96gafma5hnnqgavwm51q7l9wnmbpl9siyxb7xfij6"))))
     (properties `((upstream-name . "DEPONS2R")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -22507,34 +22529,6 @@ found in the book by Thrun, M.C.: \"Projection-Based Clustering through
 Self-Organization and Swarm Intelligence\" (2018)
 <DOI:10.1007/978-3-658-20540-9>.")
     (license license:gpl3)))
-
-(define-public r-dataversionr
-  (package
-    (name "r-dataversionr")
-    (version "0.9.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "dataversionr" version))
-              (sha256
-               (base32
-                "013c45fbak32bcda9zj8dk0jw57xpbriymks4n38d9nliflqr6z5"))))
-    (properties `((upstream-name . "dataversionr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-rlang
-                             r-purrr
-                             r-magrittr
-                             r-lubridate
-                             r-dplyr
-                             r-diffdfs
-                             r-arrow))
-    (home-page "https://cran.r-project.org/package=dataversionr")
-    (synopsis "Time Versioned Storage of Data Frames")
-    (description
-     "Create, update, read and delete data frames in time versioned, parquet-backed
-datasets.  Inspect how your data frame has changed over time.  Run your analysis
-against multiple versions of your data frame.")
-    (license license:expat)))
 
 (define-public r-dataverse
   (package

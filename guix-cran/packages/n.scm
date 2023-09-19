@@ -6,8 +6,8 @@
                 #:prefix license:)
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages cran)
-  #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages gcc)
+  #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages web)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages xml)
@@ -222,24 +222,35 @@ described in Gade (2010) <doi:10.1017/S0373463309990415>.")
 (define-public r-nvcssl
   (package
     (name "r-nvcssl")
-    (version "1.0")
+    (version "2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "NVCSSL" version))
               (sha256
                (base32
-                "00dpi0b0zm5cfkyb2z8wfkw6xcax2kkplm9rzkvfjz7fchlmkx5r"))))
+                "1nsdhmay2blfa07ri1kfb204di8s5i7zk7qwwlbkhdjjl0qa3vd7"))))
     (properties `((upstream-name . "NVCSSL")))
     (build-system r-build-system)
-    (propagated-inputs (list r-plyr r-matrix r-grpreg))
+    (propagated-inputs (list r-plyr
+                             r-mvtnorm
+                             r-mcmcpack
+                             r-matrix
+                             r-mass
+                             r-grpreg
+                             r-gigrvg
+                             r-dae))
     (home-page "https://cran.r-project.org/package=NVCSSL")
     (synopsis "Nonparametric Varying Coefficient Spike-and-Slab Lasso")
     (description
-     "EM algorithm for fitting Bayesian varying coefficient models with the
-nonparametric varying coefficient spike-and-slab lasso of Bai et al. (2020)
-<@code{arXiv:1907.06477>}.  Also fits penalized frequentist varying coefficient
-models with the group lasso, group smoothly clipped absolute deviation, and
-group minimax concave penalty.")
+     "Fits Bayesian regularized varying coefficient models with the Nonparametric
+Varying Coefficient Spike-and-Slab Lasso (NVC-SSL) introduced by Bai et al.
+(2023) <@code{arXiv:1907.06477>}.  Functions to fit frequentist penalized
+varying coefficients are also provided, with the option of employing the group
+lasso penalty of Yuan and Lin (2006) <doi:10.1111/j.1467-9868.2005.00532.x>, the
+group minimax concave penalty (MCP) of Breheny and Huang
+<doi:10.1007/s11222-013-9424-2>, or the group smoothly clipped absolute
+deviation (SCAD) penalty of Breheny and Huang (2015)
+<doi:10.1007/s11222-013-9424-2>.")
     (license license:gpl3)))
 
 (define-public r-nutrition
@@ -312,6 +323,28 @@ micronutrients, and compares them with the recommended dietary allowances (RDA).
 nutrient intake, and pie-charts showing the main foods contributing to the
 intake level of a given nutrient.  A shiny app exposing the main functionalities
 of the package is also provided.")
+    (license license:gpl3)))
+
+(define-public r-numosl
+  (package
+    (name "r-numosl")
+    (version "2.7")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "numOSL" version))
+              (sha256
+               (base32
+                "05h73s5xspccx0wr8g5a7a3m3gnhj4qvisjykl4dwmsh80gh1r95"))))
+    (properties `((upstream-name . "numOSL")))
+    (build-system r-build-system)
+    (native-inputs (list gfortran))
+    (home-page "https://CRAN.R-project.org/package=numOSL")
+    (synopsis "Numeric Routines for Optically Stimulated Luminescence Dating")
+    (description
+     "Optimizing regular numeric problems in optically stimulated luminescence dating,
+such as: equivalent dose calculation, dose rate determination, growth curve
+fitting, decay curve decomposition, statistical age model optimization, and
+statistical plot visualization.")
     (license license:gpl3)))
 
 (define-public r-numkm
@@ -1629,13 +1662,13 @@ from partially-balanced incomplete block-design experiments.")
 (define-public r-npp
   (package
     (name "r-npp")
-    (version "0.4.0")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "NPP" version))
               (sha256
                (base32
-                "1891s5j39i728vqs6xz1bywnvgalsbiknn3yqsg71zlhj3h8ikll"))))
+                "1c45gkqx27685am2qfiyq7rnlz809lmyi3jhffgf3jhqcyg9mwm7"))))
     (properties `((upstream-name . "NPP")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=NPP")
@@ -6343,20 +6376,19 @@ covariate selection.")
 (define-public r-nlmixr2est
   (package
     (name "r-nlmixr2est")
-    (version "2.1.6")
+    (version "2.1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nlmixr2est" version))
               (sha256
                (base32
-                "0r6mhavj9hlsn7ig4an22j7w0yrhrcrjpcy9r64m21bga791xgnz"))))
+                "1yqcf5afg577rfpmiqp506n3sdfrfvvvkp6vrx6b4jqrwbhvdaz7"))))
     (properties `((upstream-name . "nlmixr2est")))
     (build-system r-build-system)
     (propagated-inputs (list r-symengine
                              r-rxode2random
                              r-rxode2parse
                              r-rxode2
-                             r-rvmmin
                              r-rex
                              r-rcpparmadillo
                              r-rcpp
@@ -7285,13 +7317,13 @@ information.")
 (define-public r-niledam
   (package
     (name "r-niledam")
-    (version "0.2")
+    (version "0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "NiLeDAM" version))
               (sha256
                (base32
-                "036hbzpfx9awq15fdnbfzmc5f84zq97kpzw0wds0m0ksxj8qhd73"))))
+                "1xqj33182fz6x633vs9iy3rxr7m13bqn1773fphs1sb8mvxwdvzq"))))
     (properties `((upstream-name . "NiLeDAM")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -8360,13 +8392,13 @@ repositories of the nflverse project.")
 (define-public r-nflplotr
   (package
     (name "r-nflplotr")
-    (version "1.1.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nflplotR" version))
               (sha256
                (base32
-                "13ibhri9x5k4waay230s2xhc9i8qm51glq0bgdc1ily8grgrxhgs"))))
+                "0rnzhfp1msmiqci6g37l9half8bc410g5vmbkzqk8v35vxml6r49"))))
     (properties `((upstream-name . "nflplotR")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -8377,6 +8409,7 @@ repositories of the nflverse project.")
                              r-magrittr
                              r-magick
                              r-ggplot2
+                             r-ggpath
                              r-data-table
                              r-cli
                              r-cachem))
@@ -10161,17 +10194,17 @@ Methods for graph pre-processing and for filtering edges of the graph.")
 (define-public r-netplot
   (package
     (name "r-netplot")
-    (version "0.1-1")
+    (version "0.2-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "netplot" version))
               (sha256
                (base32
-                "11s6gcxcwbnd5x3sb4ryi4ks1bsbf7ylgc0yrygv58ipisxb2780"))))
+                "0l4sy8wn2fd04fpkrh853r923dajpqldc78ws4kmh6ixn1l43c21"))))
     (properties `((upstream-name . "netplot")))
     (build-system r-build-system)
     (propagated-inputs (list r-sna r-network r-igraph))
-    (native-inputs (list r-knitr esbuild))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/USCCANA/netplot")
     (synopsis "Beautiful Graph Drawing")
     (description

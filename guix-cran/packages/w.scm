@@ -169,13 +169,13 @@ smart summaries that allows you to focus on dysfunctional cases.")
 (define-public r-wxgenr
   (package
     (name "r-wxgenr")
-    (version "1.3.4")
+    (version "1.3.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wxgenR" version))
               (sha256
                (base32
-                "04wcx4z0579wkgba3485a5abrwqz6yd8pn1ybg0isqmjp7r053jp"))))
+                "1q9rfkb2iv0h1pcra0jg3s8xp57fhxfyn000sgf5gf67k62ia32x"))))
     (properties `((upstream-name . "wxgenR")))
     (build-system r-build-system)
     (propagated-inputs (list r-sm
@@ -4179,6 +4179,30 @@ Inference,\" International Studies Quarterly 51 (March)
 <DOI:10.1111/j.1468-2478.2007.00445.x>.")
     (license license:gpl3+)))
 
+(define-public r-wh
+  (package
+    (name "r-wh")
+    (version "1.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "WH" version))
+              (sha256
+               (base32
+                "0zz7936s6yd30q1yxxwbkaczin3r2l189b27nqsfyazbav27hfsb"))))
+    (properties `((upstream-name . "WH")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/GuillaumeBiessy/WH")
+    (synopsis "Enhanced Implementation of Whittaker-Henderson Smoothing")
+    (description
+     "An enhanced implementation of Whittaker-Henderson smoothing for the gradation of
+one-dimensional and two-dimensional actuarial tables used to quantify Life
+Insurance risks.  WH is based on the methods described in Biessy (2023)
+<doi:10.48550/@code{arXiv.2306.06932>}.  Among other features, it generalizes
+the original smoothing algorithm to maximum likelihood estimation, automatically
+selects the smoothing parameter(s) and extrapolates beyond the range of data.")
+    (license license:gpl3+)))
+
 (define-public r-wgteff
   (package
     (name "r-wgteff")
@@ -5326,18 +5350,17 @@ search engines.")
 (define-public r-websdm
   (package
     (name "r-websdm")
-    (version "1.1-3")
+    (version "1.1-4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "webSDM" version))
               (sha256
                (base32
-                "0vhwxldxfbyy8ipadmcn2iicca3fndnvqvyji6c6k5hqpqxzj3l5"))))
+                "1ix1sl5nyki8p5g7fwmrskz0ys8drdbyap5nbrw9kv3kjxd7dz14"))))
     (properties `((upstream-name . "webSDM")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstantools
                              r-rstanarm
-                             r-matrix
                              r-jtools
                              r-igraph
                              r-gridextra

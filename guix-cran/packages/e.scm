@@ -4073,13 +4073,13 @@ classified using a partial-observations-classifier (Kandanaarachchi et al.
 (define-public r-eventpred
   (package
     (name "r-eventpred")
-    (version "0.1.5")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eventPred" version))
               (sha256
                (base32
-                "1b3iwp3xs7s786vxhl7zldpxj4y8wl9c2wbq6mgygdzbcl76ydsr"))))
+                "1jzq2y59r94mwdl9fs2kndiqbpzh95g1axds9gkxnvlvfzwvx78d"))))
     (properties `((upstream-name . "eventPred")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmvtnsim
@@ -4093,7 +4093,7 @@ classified using a partial-observations-classifier (Kandanaarachchi et al.
                              r-flexsurv
                              r-erify
                              r-dplyr))
-    (home-page "https://cran.r-project.org/package=eventPred")
+    (home-page "https://github.com/kaifenglu/eventPred")
     (synopsis "Event Prediction")
     (description
      "Predicts enrollment and events at the design or analysis stage using specified
@@ -13312,16 +13312,21 @@ city, and electoral zones.")
 (define-public r-elections-dtree
   (package
     (name "r-elections-dtree")
-    (version "1.1.2")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "elections.dtree" version))
               (sha256
                (base32
-                "0niqvr4c1kgkwb5s95m6z16vg2yc1h5vcdd578z4rnhkyys9ajhz"))))
+                "199ms891xgr8jgb5w0lrp8z1aj8faqrfsx60bcgv152v7y12mjx0"))))
     (properties `((upstream-name . "elections.dtree")))
     (build-system r-build-system)
-    (propagated-inputs (list r-testthat r-rdpack r-rcppthread r-rcpp r-r6))
+    (propagated-inputs (list r-testthat
+                             r-rdpack
+                             r-rcppthread
+                             r-rcpp
+                             r-r6
+                             r-prefio))
     (home-page "https://fleverest.github.io/elections.dtree/")
     (synopsis "Ranked Voting Election Audits with Dirichlet-Trees")
     (description
@@ -14692,13 +14697,13 @@ semi-variogram fitting process.")
 (define-public r-eggcounts
   (package
     (name "r-eggcounts")
-    (version "2.3-3")
+    (version "2.3-4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eggCounts" version))
               (sha256
                (base32
-                "0ph3manyxlbd1sx3p4f5r5iqcm2lhm8i967p2cmnbddajrjx5fwl"))))
+                "09zp5xvclxjc9w01v2650sm43dm2maig71f28mqhq2zmrjwm62hy"))))
     (properties `((upstream-name . "eggCounts")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -16219,43 +16224,6 @@ feasibility checks and more.  Data can be tested against the rules and erroneous
 fields can be found based on Fellegi and Holt's generalized principle.  Rules
 dependencies can be visualized with using the igraph package.")
     (license license:gpl3)))
-
-(define-public r-edith
-  (package
-    (name "r-edith")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "eDITH" version))
-              (sha256
-               (base32
-                "0mbnn9hci38hpqjn6ngxaa7b6riqmywvwa8cjjpv93wr6g6k23i1"))))
-    (properties `((upstream-name . "eDITH")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-terra
-                             r-rivnet
-                             r-rcpp
-                             r-ocnet
-                             r-laplacesdemon
-                             r-fields
-                             r-dharma
-                             r-bayesiantools))
-    (native-inputs (list r-knitr))
-    (home-page "https://lucarraro.github.io/eDITH/")
-    (synopsis "Model Transport of Environmental DNA in River Networks")
-    (description
-     "Runs the @code{eDITH} (environmental DNA Integrating Transport and Hydrology)
-model, which implements a mass balance of environmental DNA (@code{eDNA})
-transport at a river network scale coupled with a species distribution model to
-obtain maps of species distribution. @code{eDITH} can work with both @code{eDNA}
-concentration (e.g., obtained via quantitative polymerase chain reaction) or
-metabarcoding (read count) data.  Parameter estimation can be performed via
-Bayesian techniques (via the @code{BayesianTools} package) or optimization
-algorithms.  An interface to the DHARMa package for posterior predictive checks
-is provided.  See Carraro et al. (2018) <doi:10.1073/pnas.1813843115> and
-Carraro et al. (2020) <doi:10.1038/s41467-020-17337-8> for methodological
-details.")
-    (license license:expat)))
 
 (define-public r-editdata
   (package
@@ -17978,13 +17946,13 @@ Souza et al. (2016) <doi:10.1002/hyp.10953>.")
 (define-public r-ecoensemble
   (package
     (name "r-ecoensemble")
-    (version "1.0.4")
+    (version "1.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EcoEnsemble" version))
               (sha256
                (base32
-                "0rprg2qcxf6kq0hp2c64l8vl9wcd0apjb1xvb79nbaa7pf28h57m"))))
+                "0d5kha5i49p7fd8g4f1i999sag4jz8if6yashshr9hp6jr6mibpc"))))
     (properties `((upstream-name . "EcoEnsemble")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -18005,8 +17973,7 @@ Souza et al. (2016) <doi:10.1002/hyp.10953>.")
     (synopsis "General Framework for Combining Ecosystem Models")
     (description
      "Fit and sample from the ensemble model described in Spence et al (2018): \"A
-general framework for combining ecosystem
-models\"<https://onlinelibrary.wiley.com/doi/abs/10.1111/faf.12310>.")
+general framework for combining ecosystem models\"<doi:10.1111/faf.12310>.")
     (license license:gpl3+)))
 
 (define-public r-ecodist

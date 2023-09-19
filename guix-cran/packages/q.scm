@@ -5091,16 +5091,16 @@ diversity of the cases under analysis within and across partitions (see
 (define-public r-qca
   (package
     (name "r-qca")
-    (version "3.20")
+    (version "3.21")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "QCA" version))
               (sha256
                (base32
-                "1817sss1zxs57d7xnk625aic8swdzkw1h2q79zdnz2axmhf17bmg"))))
+                "1z5jpgnpxkbpac85k1hz6vxc1ycl0z6z171i7k0p8jaj15rh616x"))))
     (properties `((upstream-name . "QCA")))
     (build-system r-build-system)
-    (propagated-inputs (list r-venn r-shiny r-admisc))
+    (propagated-inputs (list r-venn r-shiny r-lpsolve r-admisc))
     (native-inputs (list esbuild))
     (home-page "https://cran.r-project.org/package=QCA")
     (synopsis "Qualitative Comparative Analysis")

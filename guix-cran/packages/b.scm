@@ -2526,13 +2526,13 @@ faster lookups on sorted vectors.")
 (define-public r-bsda
   (package
     (name "r-bsda")
-    (version "1.2.1")
+    (version "1.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BSDA" version))
               (sha256
                (base32
-                "0vcf3h1rkgs0mr6rri2zjkb3c62dmndm281zh4ddz2vyw27wpwg2"))))
+                "0i7jqx2a5nrabzzg27i3ag9w1dmasz2kxdbg5b469jcnnnk7kglb"))))
     (properties `((upstream-name . "BSDA")))
     (build-system r-build-system)
     (propagated-inputs (list r-lattice r-e1071))
@@ -4871,13 +4871,13 @@ provided.  See Cremers, Mulder & Klugkist (2018) <doi:10.1111/bmsp.12108> and
 (define-public r-bpmnvisualizationr
   (package
     (name "r-bpmnvisualizationr")
-    (version "0.3.2")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bpmnVisualizationR" version))
               (sha256
                (base32
-                "14gal7wbkmj4m1l4qlx228b6j9kfma706z8dvf9a637ny9609bap"))))
+                "135afhq1x2aqdmn609vfk0248wsqbp66lkw7wqqzsb6czpap1q90"))))
     (properties `((upstream-name . "bpmnVisualizationR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-rlang r-htmlwidgets))
@@ -11658,6 +11658,33 @@ implementation can be understood by running examples in @code{modelFrame}(), and
 calculations needed by Biological Dosimetry Laboratories.")
     (license license:gpl3)))
 
+(define-public r-biodiversityr
+  (package
+    (name "r-biodiversityr")
+    (version "2.15-3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "BiodiversityR" version))
+              (sha256
+               (base32
+                "1yif3169ywjaxq33i1mlqj0xw41hj61yjkn4qqdn2y2ziz30pspz"))))
+    (properties `((upstream-name . "BiodiversityR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vegan r-rcmdr r-ggplot2))
+    (home-page
+     "http://www.worldagroforestry.org/output/tree-diversity-analysis")
+    (synopsis "Package for Community Ecology and Suitability Analysis")
+    (description
+     "Graphical User Interface (via the R-Commander) and utility functions (often
+based on the vegan package) for statistical analysis of biodiversity and
+ecological communities, including species accumulation curves, diversity
+indices, Renyi profiles, GLMs for analysis of species abundance and
+presence-absence, distance matrices, Mantel tests, and cluster, constrained and
+unconstrained ordination analysis.  A book on biodiversity and community ecology
+analysis is available for free download from the website.  In 2012, methods for
+(ensemble) suitability modelling and mapping were expanded in the package.")
+    (license license:gpl3)))
+
 (define-public r-biodem
   (package
     (name "r-biodem")
@@ -15469,21 +15496,24 @@ the bfsl solution.")
 (define-public r-bfpack
   (package
     (name "r-bfpack")
-    (version "1.0.0")
+    (version "1.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BFpack" version))
               (sha256
                (base32
-                "1z5j6gd8zv39advb4xmpcbixbg8n516h0gpqkblb8dnb4mbh6d1s"))))
+                "19g304rb7dvf936kfj6a23dl4fcmm2rzix49cq3195ijj8cfsxs6"))))
     (properties `((upstream-name . "BFpack")))
     (build-system r-build-system)
-    (propagated-inputs (list r-pracma
+    (propagated-inputs (list r-sandwich
+                             r-pracma
                              r-mvtnorm
                              r-matrix
                              r-mass
                              r-lme4
                              r-extradistr
+                             r-ergm
+                             r-bergm
                              r-bain))
     (native-inputs (list r-knitr gfortran))
     (home-page "https://github.com/jomulder/BFpack")
@@ -15498,8 +15528,8 @@ linear mixed models, survival models, relational event models.  Parameters that
 can be tested are location parameters (e.g., group means, regression
 coefficients), variances (e.g., group variances), and measures of association
 (e.g,.  bivariate correlations), among others.  The statistical underpinnings
-are described in Mulder, Hoijtink, and Xin (2019) <@code{arXiv:1904.00679>},
-Mulder and Gelissen (2019) <@code{arXiv:1807.05819>}, Mulder (2016)
+are described in Mulder and Xin (2019) <DOI:10.1080/00273171.2021.1904809>,
+Mulder and Gelissen (2019) <DOI:10.1080/02664763.2021.1992360>, Mulder (2016)
 <DOI:10.1016/j.jmp.2014.09.004>, Mulder and Fox (2019) <DOI:10.1214/18-BA1115>,
 Mulder and Fox (2013) <DOI:10.1007/s11222-011-9295-3>, Boeing-Messing, van
 Assen, Hofman, Hoijtink, and Mulder (2017) <DOI:10.1037/met0000116>, Hoijtink,
@@ -17042,13 +17072,13 @@ want to know when it is ready.")
 (define-public r-beeguts
   (package
     (name "r-beeguts")
-    (version "1.1.2")
+    (version "1.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BeeGUTS" version))
               (sha256
                (base32
-                "059xa5rpnd92kmy8hd26ryx3gkls9vlwbwwbwl4my1z7vll5s59m"))))
+                "1880bsgwal06i7q3la1f8alrhj43mnsim6n8inrnaqcbqgi69v3n"))))
     (properties `((upstream-name . "BeeGUTS")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -21315,13 +21345,13 @@ equivalence (ROPE) tests as described in Kruschke and Liddell (2018)
 (define-public r-bayeslife
   (package
     (name "r-bayeslife")
-    (version "5.1-1")
+    (version "5.2-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bayesLife" version))
               (sha256
                (base32
-                "12i2a07v0kc5mbvj52vc4l9fi0xi68jdj0z91wdbiav4fqrjm4m5"))))
+                "116wa3sqxkp8ywc0s83clg1pp81bf1rhddpvjbcw9pyim57h4kxm"))))
     (properties `((upstream-name . "bayesLife")))
     (build-system r-build-system)
     (propagated-inputs (list r-wpp2019
@@ -25147,13 +25177,13 @@ supported, which is particularly helpful for genome-wide association study.")
 (define-public r-baldur
   (package
     (name "r-baldur")
-    (version "0.0.2")
+    (version "0.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "baldur" version))
               (sha256
                (base32
-                "1grx2r83821qj8927i67gxijxxma372f24i48grdyvyndvfj06iw"))))
+                "13nl5apdmb1pm32d58qq04vc2xngc35n6cv4sivf2s34yk4k0n4c"))))
     (properties `((upstream-name . "baldur")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
@@ -25189,7 +25219,7 @@ estimate the posterior distribution (by Hamiltonian Monte Carlo) for the
 differences in means for each peptide in the data.  Once the posterior is
 inferred, it integrates the tails to estimate the probability of error from
 which a statistical decision can be made.  See Berg and Popescu for details
-(<https://www.biorxiv.org/content/10.1101/2023.05.11.540411v1>).")
+(<doi:10.1101/2023.05.11.540411>).")
     (license license:expat)))
 
 (define-public r-balancedsampling

@@ -790,31 +790,22 @@ for a given data set.")
 (define-public r-usefun
   (package
     (name "r-usefun")
-    (version "0.4.9")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "usefun" version))
               (sha256
                (base32
-                "0gkg7ncxvylvf33x1ncsvs48rzn69a47sk969mbizap3vmn5yw1k"))))
+                "1gpyix8xpn4jmfjrycan6r1qvp7z7mhcngp02fcws6k2hvd7jajr"))))
     (properties `((upstream-name . "usefun")))
     (build-system r-build-system)
-    (propagated-inputs (list r-dplyr))
+    (propagated-inputs (list r-prroc r-dplyr))
     (home-page "https://github.com/bblodfon/usefun")
     (synopsis "Collection of Useful Functions by John")
     (description
      "This package provides a set of general functions that I have used in various
-projects and in other R packages.  They support some miscellaneous operations on
-data frames, matrices and vectors like adding a row on a ternary (3-value)
-data.frame based on positive and negative vector-indicators, rearranging a list
-of data.frames by rownames, pruning rows or columns of a data.frame that contain
-only one specific value given by the user, pruning and reordering a vector
-according to the common elements between its names and elements of another given
-vector, finding the non-common elements between two vectors (outer-section),
-normalization of a vector, matrix or data.frame's numeric values in a specified
-range, pretty printing of vector names and values in an R Markdown document.
-Also included is a function that returns the statistics needed for plotting a
-ROC curve.")
+projects and other R packages.  Miscellaneous operations on data frames,
+matrices and vectors, ROC and PR statistics.")
     (license license:expat)))
 
 (define-public r-usedthese
@@ -1593,13 +1584,13 @@ implemented methods.")
 (define-public r-updater
   (package
     (name "r-updater")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "updater" version))
               (sha256
                (base32
-                "035js05xzs0i3xs6bizm5ixiiylzhdjkr8z0yijiqiqxw38w6h2l"))))
+                "1grf0wv1z8n8fabrj4f5mj9vn9fngkqhniqngspbfkxkgws0rilf"))))
     (properties `((upstream-name . "updater")))
     (build-system r-build-system)
     (propagated-inputs (list r-renv r-cli))

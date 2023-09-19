@@ -3938,13 +3938,13 @@ values and more.")
 (define-public r-optionpricing
   (package
     (name "r-optionpricing")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "OptionPricing" version))
               (sha256
                (base32
-                "1x90v95mm1cylq0gnswniaf9imrjd7diid9hcv0vmffz4xa9ixks"))))
+                "0c4pq9qzbnqsfgdqq29vnkxjcb5six4xfj2djv05zw8qnyvhaljg"))))
     (properties `((upstream-name . "OptionPricing")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=OptionPricing")
@@ -10009,40 +10009,6 @@ vector (non-negative values that sum up to one and are ordered from the largest
 to the smallest).  Parameters are estimated in the Bayesian framework using MCMC
 methods.")
     (license license:gpl2+)))
-
-(define-public r-ocnet
-  (package
-    (name "r-ocnet")
-    (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OCNet" version))
-              (sha256
-               (base32
-                "0cgvgl1hzdb55gc733bli78jr8jfc5z9aaxpcqrg97n5ivln9yyh"))))
-    (properties `((upstream-name . "OCNet")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-ssn
-                             r-spam
-                             r-sp
-                             r-rgl
-                             r-rgdal
-                             r-rcpp
-                             r-igraph
-                             r-fields
-                             r-adespatial))
-    (native-inputs (list r-knitr gfortran))
-    (home-page "https://lucarraro.github.io/OCNet/")
-    (synopsis "Optimal Channel Networks")
-    (description
-     "Generate and analyze Optimal Channel Networks (OCNs): oriented spanning trees
-reproducing all scaling features characteristic of real, natural river networks.
- As such, they can be used in a variety of numerical experiments in the fields
-of hydrology, ecology and epidemiology.  See Carraro et al. (2020)
-<doi:10.1002/ece3.6479> for a presentation of the package; Rinaldo et al. (2014)
-<doi:10.1073/pnas.1322700111> for a theoretical overview on the OCN concept;
-Furrer and Sain (2010) <doi:10.18637/jss.v036.i10> for the construct used.")
-    (license license:gpl3)))
 
 (define-public r-oclust
   (package

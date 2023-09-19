@@ -4937,13 +4937,13 @@ al. (2015) <DOI:10.1109/tnb.2015.2457906> and Saini et al. (2015)
 (define-public r-proteus
   (package
     (name "r-proteus")
-    (version "1.1.1")
+    (version "1.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "proteus" version))
               (sha256
                (base32
-                "1yl8kqa5lamy7ww4ak73akx1vcaj81wk6galbc4xnn8p4wa8why5"))))
+                "1zmn2svlixbi0657rq6pcfs7cpp7d5r035j75lwpmx0n4pf0hg03"))))
     (properties `((upstream-name . "proteus")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam
@@ -4961,6 +4961,8 @@ al. (2015) <DOI:10.1109/tnb.2015.2457906> and Saini et al. (2015)
                              r-greybox
                              r-ggthemes
                              r-ggplot2
+                             r-future
+                             r-furrr
                              r-fancova
                              r-dplyr
                              r-actuar
@@ -10153,13 +10155,13 @@ double input symmetrical relevance ('DISR') method by Meyer and Bontempi (2006)
 (define-public r-prana
   (package
     (name "r-prana")
-    (version "1.0.3")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PRANA" version))
               (sha256
                (base32
-                "0v1s57gxkn7by2p07bpw8bm6yzi74qn17vf71b6px3ynvqdn87g3"))))
+                "1i9gwz4dlsz9w0z3d995w6s6f10gwvwhyb77agbmmwym1fd2k2wh"))))
     (properties `((upstream-name . "PRANA")))
     (build-system r-build-system)
     (propagated-inputs (list r-robustbase r-minet r-dplyr r-dnapath))
@@ -10171,7 +10173,8 @@ double input symmetrical relevance ('DISR') method by Meyer and Bontempi (2006)
 differential co-expression network analysis in expression data, which can
 incorporate additional clinical variables in the model.  This is a direct
 regression modeling for the differential network analysis, and it is therefore
-computationally amenable for the most users.")
+computationally amenable for the most users.  The full methodological details
+can be found in Ahn S et al (2023) <doi:10.1186/s12859-022-05123-w>.")
     (license license:gpl3)))
 
 (define-public r-prais
@@ -19185,18 +19188,18 @@ Cowan-Farquhar optimization, humidity unit conversions.  See Duursma (2015)
 (define-public r-planr
   (package
     (name "r-planr")
-    (version "0.1")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "planr" version))
               (sha256
                (base32
-                "04s1zkxbmfv1zx7zfgkgdq4l17swf4ys9djppzyvqqhkp8pbhzml"))))
+                "0pam4jmclsl2hn2mm9aymyqbxzqga9kfm3c0rws2rl9gmarg80g1"))))
     (properties `((upstream-name . "planr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpproll r-magrittr r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=planr")
+    (home-page "https://github.com/nguyennico/planr")
     (synopsis "Tools for Supply Chain Management, Demand and Supply Planning")
     (description
      "Perform flexible and quick calculations for Demand and Supply Planning, such as
@@ -21887,37 +21890,6 @@ of phylogenetic trees.")
      "This package provides functions to read and write APE-compatible phylogenetic
 trees in NEXUS and Newick formats, while preserving annotations.")
     (license license:expat)))
-
-(define-public r-phylosignal
-  (package
-    (name "r-phylosignal")
-    (version "1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "phylosignal" version))
-              (sha256
-               (base32
-                "1h73wwczwak5v89mybq16lmmfr0fxfv5mx347ffipy6q9vgvwqx5"))))
-    (properties `((upstream-name . "phylosignal")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo
-                             r-rcpp
-                             r-phylobase
-                             r-igraph
-                             r-dbi
-                             r-boot
-                             r-ape
-                             r-adephylo))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=phylosignal")
-    (synopsis "Exploring the Phylogenetic Signal in Continuous Traits")
-    (description
-     "This package provides a collection of tools to explore the phylogenetic signal
-in univariate and multivariate data.  The package provides functions to plot
-traits data against a phylogenetic tree, different measures and tests for the
-phylogenetic signal, methods to describe where the signal is located and a
-phylogenetic clustering method.")
-    (license license:gpl3)))
 
 (define-public r-phyloseqgraphtest
   (package
@@ -26669,13 +26641,13 @@ penalization methods is provided.")
 (define-public r-pencal
   (package
     (name "r-pencal")
-    (version "2.0.1")
+    (version "2.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pencal" version))
               (sha256
                (base32
-                "0k8r50010c19f6q05jcyhkzjgq7hvlc29gfhx6mmvd58b5crv57s"))))
+                "03mvrrwzpxrxwfd3sh0h7sb2b5kjrddl6wqcvq3kijqm6hs2rv4k"))))
     (properties `((upstream-name . "pencal")))
     (build-system r-build-system)
     (propagated-inputs (list r-survivalroc
@@ -26694,7 +26666,8 @@ penalization methods is provided.")
                              r-doparallel))
     (native-inputs (list r-knitr))
     (home-page "https://mirkosignorelli.github.io/r")
-    (synopsis "Penalized Regression Calibration (PRC)")
+    (synopsis
+     "Penalized Regression Calibration (PRC) for the Dynamic Prediction of Survival")
     (description
      "Computes penalized regression calibration (PRC), a statistical method that
 allows to predict survival from high-dimensional longitudinal predictors.  PRC
@@ -28390,13 +28363,13 @@ README'-file.")
 (define-public r-pdfetch
   (package
     (name "r-pdfetch")
-    (version "0.2.8")
+    (version "0.2.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pdfetch" version))
               (sha256
                (base32
-                "1014cpm1kiq0k04ymnwdmhmw0836z2gizk13p4lxxl02hw91fv10"))))
+                "03hx8h2sfahfy05wwrac048wzzlh1d1g6hbr0qzkkhk4xsv69qa1"))))
     (properties `((upstream-name . "pdfetch")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -30553,13 +30526,13 @@ group variances.")
 (define-public r-pawscore
   (package
     (name "r-pawscore")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pawscore" version))
               (sha256
                (base32
-                "15dwjzdrjzisn4grac8dd5fmlwc9r798rfkf5nmbdxrcyyldbg8q"))))
+                "0pf8lczi0g3cwi4hxrz4lggphpkbabswj0sppm7h688ijb1ph9qg"))))
     (properties `((upstream-name . "pawscore")))
     (build-system r-build-system)
     (propagated-inputs (list r-signal r-brglm2))
@@ -33869,45 +33842,6 @@ all groups.  Details about the method can be found in Seibold, Hothorn, Zeileis
 (2016) <@code{arXiv:1612.07498>}.  The package offers coef(), @code{logLik}(),
 plot(), and predict() functions for PALM trees.")
     (license (list license:gpl2 license:gpl3))))
-
-(define-public r-palmid
-  (package
-    (name "r-palmid")
-    (version "0.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "palmid" version))
-              (sha256
-               (base32
-                "0bh0p7alcbqkingxbg8gai7bch2cv8q90sfw92y7vj857nl09fh7"))))
-    (properties `((upstream-name . "palmid")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-viridislite
-                             r-scales
-                             r-rpostgresql
-                             r-rmarkdown
-                             r-plotly
-                             r-leaflet
-                             r-htmlwidgets
-                             r-htmltools
-                             r-gridextra
-                             r-ggwordcloud
-                             r-ggplotify
-                             r-ggplot2
-                             r-ggextra
-                             r-dt
-                             r-dplyr
-                             r-downloadthis
-                             r-dbplyr
-                             r-dbi))
-    (home-page "https://serratus.io/palmid")
-    (synopsis "RdRP Analysis Suite")
-    (description
-     "R Analysis suite for viral RNA dependent RNA polymerase (@code{RdRP}).
-Statistical and meta-data analysis of palmscan output and @code{palmDB}'/
-DIAMOND alignment files.  Cross reference an input RNA virus against 145,000
-@code{RdRP} identified in the Serratus project.")
-    (license license:agpl3)))
 
 (define-public r-palm
   (package

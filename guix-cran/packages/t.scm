@@ -3309,6 +3309,35 @@ assets.  Manage the portfolio and capital of assets.  It also downloads and
 organizes data from the Tehran Stock Exchange (TSE).")
     (license license:bsd-2)))
 
+(define-public r-tseriestarma
+  (package
+    (name "r-tseriestarma")
+    (version "0.3-4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "tseriesTARMA" version))
+              (sha256
+               (base32
+                "00ch7dg9fia7yh9q502wndi72nhz5ywqhhla9qgpgg08sfj2414f"))))
+    (properties `((upstream-name . "tseriesTARMA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-rugarch
+                             r-rsolnp
+                             r-rdpack
+                             r-matrix
+                             r-mathjaxr
+                             r-lbfgsb3c))
+    (native-inputs (list gfortran))
+    (home-page "https://cran.r-project.org/package=tseriesTARMA")
+    (synopsis "Analysis of Nonlinear Time Series Through TARMA Models")
+    (description
+     "Routines for nonlinear time series analysis based on Threshold Autoregressive
+Moving Average models.  It provides functions and methods for: TARMA model
+fitting and forecasting, tests for threshold effects, unit-root tests based on
+TARMA models.")
+    (license license:gpl2+)))
+
 (define-public r-tseriesmma
   (package
     (name "r-tseriesmma")
@@ -7667,34 +7696,33 @@ polyadic data.")
 (define-public r-traminer
   (package
     (name "r-traminer")
-    (version "2.2-7")
+    (version "2.2-8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TraMineR" version))
               (sha256
                (base32
-                "0kc3mfvrd7zkxm5a89kgjfaqm99kikfdkvccy4fh5xzz8jg7wv41"))))
+                "0qp7q8hbbr57ym9q2kcypi2b6ya5z7604kwaxmqzvcbz0rf90aq5"))))
     (properties `((upstream-name . "TraMineR")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan r-rcolorbrewer r-colorspace r-cluster
                              r-boot))
     (home-page "http://traminer.unige.ch")
-    (synopsis
-     "Trajectory Miner: a Toolbox for Exploring and Rendering Sequences")
+    (synopsis "Trajectory Miner: a Sequence Analysis Toolkit")
     (description
-     "Toolbox for the manipulation, description and rendering of categorical
-sequences, and more generally the mining of sequence data in the field of social
-sciences.  Although this sequence analysis toolbox is primarily intended for
-analyzing state or event sequences that describe life courses such as family
-formation histories or professional careers, its features also apply to many
-other kinds of categorical sequence data.  It accepts many different sequence
-representations as input and provides tools for converting sequences from one
-format to another.  It offers several functions for describing and rendering
-sequences, for computing distances between sequences with different metrics
-(among which optimal matching), original dissimilarity-based analysis tools, and
-functions for extracting the most frequent subsequences and identifying the most
-discriminating ones among them.  A user's guide can be found on the
-@code{TraMineR} web page.")
+     "Set of sequence analysis tools for manipulating, describing and rendering
+categorical sequences, and more generally mining sequence data in the field of
+social sciences.  Although this sequence analysis package is primarily intended
+for state or event sequences that describe time use or life courses such as
+family formation histories or professional careers, its features also apply to
+many other kinds of categorical sequence data.  It accepts many different
+sequence representations as input and provides tools for converting sequences
+from one format to another.  It offers several functions for describing and
+rendering sequences, for computing distances between sequences with different
+metrics (among which optimal matching), original dissimilarity-based analysis
+tools, and functions for extracting the most frequent event subsequences and
+identifying the most discriminating ones among them.  A user's guide can be
+found on the @code{TraMineR} web page.")
     (license license:gpl2+)))
 
 (define-public r-tram
@@ -11607,13 +11635,13 @@ series, which are compatible with FAME frequencies.")
 (define-public r-tipsae
   (package
     (name "r-tipsae")
-    (version "0.0.17")
+    (version "0.0.18")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tipsae" version))
               (sha256
                (base32
-                "0g1s69kb735laj7lfsnsai2wk8sxk8m9sx6a5s7s2wzwpapcbh71"))))
+                "0w7ig4p23zgsn8q95cx6l031yz8kd1dk8jmzw5sf7b2b5snxlhvd"))))
     (properties `((upstream-name . "tipsae")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -13686,46 +13714,6 @@ and most efficient data storage.")
 calculate standardized mean differences for variables in a data frame, returning
 the results in a tidy format.")
     (license license:expat)))
-
-(define-public r-tidyseurat
-  (package
-    (name "r-tidyseurat")
-    (version "0.7.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "tidyseurat" version))
-              (sha256
-               (base32
-                "1f3saa24rbb8pnal14xvqw62r09w6zg0pn9ajq8yrpdd9zdp7rv8"))))
-    (properties `((upstream-name . "tidyseurat")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vctrs
-                             r-ttservice
-                             r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-seuratobject
-                             r-seurat
-                             r-rlang
-                             r-purrr
-                             r-plotly
-                             r-pillar
-                             r-matrix
-                             r-magrittr
-                             r-lifecycle
-                             r-ggplot2
-                             r-fansi
-                             r-ellipsis
-                             r-dplyr
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/stemangiola/tidyseurat")
-    (synopsis "Brings Seurat to the Tidyverse")
-    (description
-     "It creates an invisible layer that allow to see the Seurat object as tibble and
-interact seamlessly with the tidyverse.")
-    (license license:gpl3)))
 
 (define-public r-tidysem
   (package
@@ -22322,25 +22310,25 @@ using the asymptotic distribution of t* as described by Nandy, Weihs, and Drton
 (define-public r-tauprocess
   (package
     (name "r-tauprocess")
-    (version "2.1.2")
+    (version "2.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tauProcess" version))
               (sha256
                (base32
-                "1hwb2f257q5shnqqpa98g7d9xhf1mmmn9igh6km4p1kbbka52kqd"))))
+                "0mqvq9bickv6jwfxcqgy3cxr3km6xg1mscgg480wd5fv0v2y4z51"))))
     (properties `((upstream-name . "tauProcess")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival))
     (home-page "https://github.com/s07308/tauProcess")
     (synopsis "Tau Measure with Right-Censored Data")
     (description
-     "This package provides a clinically meaningful measure of treatment effect based
-on Kendall's tau with right-censored data along with corresponding inference
-procedure.  The plot of tau process is provided as a graphical tool for
-monitoring the progression.  It complements another summary measures under
-nonproportional hazards.  For details, please refer to Tai, Wang and Wells
-(2023) <doi:10.1002/pst.2324>.")
+     "This package provides a clinically meaningful measures of treatment effects for
+right-censored data are provided, based on the concept of Kendall's tau, along
+with the corresponding inference procedures.  Two plots of tau processes, with
+the option to account for the cure fraction or not, are available.  The plots of
+tau processes serve as useful graphical tools for monitoring the relative
+performances over time.")
     (license license:expat)))
 
 (define-public r-tau

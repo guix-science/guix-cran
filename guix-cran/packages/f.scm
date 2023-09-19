@@ -19974,32 +19974,6 @@ factories, those techniques can be confusing.  This package is designed to make
 it easier to construct function factories.")
     (license license:expat)))
 
-(define-public r-factorstochvol
-  (package
-    (name "r-factorstochvol")
-    (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "factorstochvol" version))
-              (sha256
-               (base32
-                "1xa7x47db36i04xk0fd5y6mhhzj5p363xdm5rfjq6bzcmwv5pj4z"))))
-    (properties `((upstream-name . "factorstochvol")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stochvol r-rcpparmadillo r-rcpp r-gigrvg
-                             r-corrplot))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=factorstochvol")
-    (synopsis
-     "Bayesian Estimation of (Sparse) Latent Factor Stochastic Volatility Models")
-    (description
-     "Markov chain Monte Carlo (MCMC) sampler for fully Bayesian estimation of latent
-factor stochastic volatility models with interweaving
-<doi:10.1080/10618600.2017.1322091>.  Sparsity can be achieved through the usage
-of Normal-Gamma priors on the factor loading matrix
-<doi:10.1016/j.jeconom.2018.11.007>.")
-    (license license:gpl2+)))
-
 (define-public r-factorsr
   (package
     (name "r-factorsr")

@@ -522,13 +522,13 @@ regressions.  Package based on @code{DiTraglia} and Garcia-Jimeno (2020)
 (define-public r-ivdiag
   (package
     (name "r-ivdiag")
-    (version "1.0.4")
+    (version "1.0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ivDiag" version))
               (sha256
                (base32
-                "1kr6svbi4r3dfgx448q523c3ymfiwpg5k729n2bh19say4z6wk88"))))
+                "17rwdn6svbb93winnjsfx815mhg3sw21csi3khsn66kjgnxisqi7"))))
     (properties `((upstream-name . "ivDiag")))
     (build-system r-build-system)
     (propagated-inputs (list r-wcorr
@@ -549,8 +549,9 @@ regressions.  Package based on @code{DiTraglia} and Garcia-Jimeno (2020)
     (description
      "Estimation and diagnostic tools for instrumental variables designs, which
 implements the guidelines proposed in Lal et al. (2023)
-<@code{arXiv:2303.11399>}, including bootstrapped standard errors, effective
-F-statistics, Anderson-Rubin test, valid-t ratio test, and local-to-zero tests.")
+<@code{arXiv:2303.11399>}, including bootstrapped confidence intervals,
+effective F-statistic, Anderson-Rubin test, valid-t ratio test, and
+local-to-zero tests.")
     (license license:expat)))
 
 (define-public r-ivdesign
@@ -5858,27 +5859,31 @@ characteristics â A novel and practical method for estimating the
 (define-public r-intrinsicfrp
   (package
     (name "r-intrinsicfrp")
-    (version "0.1.0")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "intrinsicFRP" version))
               (sha256
                (base32
-                "1pjf3xkbqph40xxj51ddln1fq53dvndbp9hk6hyy6kkikdw22gi5"))))
+                "01hg53fb0xgkmgz3vnv6mf7cqwhlxw7w9pk2i92gsdij5x3cf4xx"))))
     (properties `((upstream-name . "intrinsicFRP")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (home-page "https://github.com/a91quaini/intrinsicFRP")
-    (synopsis "Adaptive Estimation of Intrinsic Factor Risk Premia")
+    (synopsis
+     "Oracle Estimation and Inference for Tradable Factor Risk Premia")
     (description
-     "Efficient computation of intrinsic and adaptive intrinsic factor risk premia and
-their standard errors.  Intrinsic factor risk premia are defined as the negative
-factor covariance with the SDF projection on test asset returns.  As opposed to
-benchmark notions of factor risk premia, they are well-defined even in presence
-of useless and weak factors, they do not depend on the degree of
-misspecification of the factor model, and are one-to-one linked to two-pass
-mimicking factor risk premia coefficients, whenever the latter are also
-well-defined.")
+     "Tradable factor risk premia are given by the negative factor covariance with the
+Stochastic Discount Factor projection on returns.  This package provides
+efficient computation of tradable and Oracle tradable factor risk premia
+estimators and their standard errors; see A. Quaini, F. Trojani and M. Yuan
+(2023) <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4574683>.  Tradable
+factor risk premia are robust to misspecification or weak identification in
+asset pricing models, and they are zero for any factor weakly correlated with
+returns.  Their Oracle estimator performs as well as if the weak or useless
+factors were known in advance.  This means it not only consistently removes
+useless factors and factors weakly correlated with returns but also gives rise
+to reliable tests of asset pricing models.")
     (license license:gpl3+)))
 
 (define-public r-intrinsicdimension
@@ -14262,13 +14267,13 @@ required by these approaches.")
 (define-public r-icsoutlier
   (package
     (name "r-icsoutlier")
-    (version "0.3-0")
+    (version "0.3-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ICSOutlier" version))
               (sha256
                (base32
-                "1vj1y4zw8pkghkg4qnmx0yk1yw4zzl9075n5czrna9ckk2p29fmh"))))
+                "00hp24rxqhlm3lxqjqxn2vg5x10ihgz5yvd454rhjg3f2nrbqvm7"))))
     (properties `((upstream-name . "ICSOutlier")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-moments r-ics))
@@ -14282,13 +14287,13 @@ the package offers different methods to choose the appropriate components.")
 (define-public r-icsnp
   (package
     (name "r-icsnp")
-    (version "1.1-1")
+    (version "1.1-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ICSNP" version))
               (sha256
                (base32
-                "1zf0k1kwdmjjqsbiiy3r2l47vjsrg09fj65p6zfld3j4gjbp17fd"))))
+                "1hyndbnfpvkdxgjihh3m8wd1hpdb0n346bl03z9ry2blppci2jvs"))))
     (properties `((upstream-name . "ICSNP")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-ics))
@@ -15334,13 +15339,13 @@ by the icd package for finding comorbidities.")
 (define-public r-icctraj
   (package
     (name "r-icctraj")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "iccTraj" version))
               (sha256
                (base32
-                "02fzqgg459y6d4f96fgvj0c5qvfpnp60d3gz7ddhf6zkk2rzhd0q"))))
+                "0c6ia3h7a16d8qsrkgrs2sy8xslc4qib6gq636ckbjxlja3pzln7"))))
     (properties `((upstream-name . "iccTraj")))
     (build-system r-build-system)
     (propagated-inputs (list r-trajectories
