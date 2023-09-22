@@ -5918,13 +5918,13 @@ calculate extreme climate index.")
 (define-public r-wdpar
   (package
     (name "r-wdpar")
-    (version "1.3.5")
+    (version "1.3.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wdpar" version))
               (sha256
                (base32
-                "1nvfzi3z7cpa9q4w2j9vixgg9n0zsc0g2fpcybrzdlwn8981zl5l"))))
+                "0z7p5gcz4fzaga1z5k8q3rnrwzd2iliq0bixsvnqhaddy5aznpms"))))
     (properties `((upstream-name . "wdpar")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

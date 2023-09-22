@@ -335,13 +335,13 @@ can be exploited for predictive power measurements in real datasets.")
 (define-public r-bvpsolve
   (package
     (name "r-bvpsolve")
-    (version "1.4.4")
+    (version "1.4.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bvpSolve" version))
               (sha256
                (base32
-                "00ipc4hwbywligz0ds99icjhcwwj45d4wlkiq48f32qjyz0igpfg"))))
+                "0xq5m57cya6l3c1glshrd29ywpm1rky36kqqrp4mw2scakz9p4wj"))))
     (properties `((upstream-name . "bvpSolve")))
     (build-system r-build-system)
     (propagated-inputs (list r-rootsolve r-desolve))
@@ -2332,6 +2332,24 @@ and plot() to plot the tree into latex and PDF. See Yanchao Liu (2022)
 <@code{arXiv:2205.15263>} for technical details.  Source code and more data sets
 are at <https://github.com/profyliu/bsnsing/>.")
     (license license:gpl3)))
+
+(define-public r-bsmd
+  (package
+    (name "r-bsmd")
+    (version "2023.920")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "BsMD" version))
+              (sha256
+               (base32
+                "13gwdgsq4c2g5y70adbz4hfgwygxna7k1q33q3sf0snz53y66gi9"))))
+    (properties `((upstream-name . "BsMD")))
+    (build-system r-build-system)
+    (native-inputs (list gfortran))
+    (home-page "https://cran.r-project.org/package=BsMD")
+    (synopsis "Bayes Screening and Model Discrimination")
+    (description "Bayes screening and model discrimination follow-up designs.")
+    (license license:gpl3+)))
 
 (define-public r-bsl
   (package
@@ -11259,13 +11277,13 @@ file for local installation/updating (see <https://asreml.kb.vsni.co.uk/>).")
 (define-public r-biomass
   (package
     (name "r-biomass")
-    (version "2.1.9")
+    (version "2.1.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BIOMASS" version))
               (sha256
                (base32
-                "1ibxlvsf6nspkqqk64pr74v2qky7lfdhp8zyk2w2hlkik7h229ml"))))
+                "09v1b9klxkrrdp62xnjqnlns8qgxby34sm3zpd0q69f0mqrnlyg3"))))
     (properties `((upstream-name . "BIOMASS")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp
@@ -11310,6 +11328,48 @@ lasso/elastic net, PCLDA, PLSDA, and several t-tests.  Two approaches for
 selecting cutoffs can be used, one based on the stability of model coefficients
 under perturbation, and the other on higher criticism.")
     (license license:gpl2+)))
+
+(define-public r-biom2
+  (package
+    (name "r-biom2")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "BioM2" version))
+              (sha256
+               (base32
+                "19f1cjsrafg5ccqxa19zdravgc03038sw0zqx1a4k8jmrqm42agr"))))
+    (properties `((upstream-name . "BioM2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-wordcloud2
+                             r-wgcna
+                             r-webshot
+                             r-uwot
+                             r-tm
+                             r-rocr
+                             r-rcolorbrewer
+                             r-mlr3verse
+                             r-mlr3
+                             r-jiebar
+                             r-htmlwidgets
+                             r-ggplot2
+                             r-dplyr
+                             r-cmplot
+                             r-caret))
+    (home-page "https://cran.r-project.org/package=BioM2")
+    (synopsis "Biologically Explainable Machine Learning Framework")
+    (description
+     "Biologically Explainable Machine Learning Framework for Phenotype Prediction
+using omics data described in Chen and Schwarz (2017)
+<@code{arXiv:1712.0036v1>.Identifying} reproducible and interpretable biological
+patterns from high-dimensional omics data is a critical factor in understanding
+the risk mechanism of complex disease.  As such, explainable machine learning
+can offer biological insight in addition to personalized risk scoring.In this
+process, a feature space of biological pathways will be generated, and the
+feature space can also be subsequently analyzed using WGCNA-based (Described in
+Horvath and Zhang (2005) <doi:10.2202/1544-6115.1128> and Langfelder and Horvath
+(2008) <doi:10.1186/1471-2105-9-559> ) methods.")
+    (license license:expat)))
 
 (define-public r-biolink
   (package
@@ -15107,22 +15167,23 @@ Knowledge, Journal of Statistical Software <doi:10.18637/jss.v047.i03>.")
 (define-public r-bgmisc
   (package
     (name "r-bgmisc")
-    (version "0.1")
+    (version "1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BGmisc" version))
               (sha256
                (base32
-                "15xgm3n3hn5zkrvyfcylyz5q3zah0155914a0rck0ipihb45sbbl"))))
+                "195mnq11a07in0g6n20bry391a6968gyiarbalbsplp0mbmkljjy"))))
     (properties `((upstream-name . "BGmisc")))
     (build-system r-build-system)
-    (propagated-inputs (list r-matrix))
+    (propagated-inputs (list r-matrix r-kinship2 r-igraph))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=BGmisc")
-    (synopsis "Behavior Genetic Modeling Functions")
+    (synopsis "An R Package for Extended Behavior Genetics Analysis")
     (description
-     "This package provides functions for behavior genetic modeling, including model
-identification, calculating relatedness, and various others (e.g., Hunter,
-Garrison, et al, 2019 <doi:10.1007/s10519-019-09973-8>).")
+     "The BGmisc R package offers a comprehensive suite of functions tailored for
+extended behavior genetics analysis, including model identification, calculating
+relatedness, pedigree conversion, pedigree simulation, and more.")
     (license license:gpl3)))
 
 (define-public r-bgmfiles
@@ -15462,13 +15523,13 @@ the bfsl solution.")
 (define-public r-bfs
   (package
     (name "r-bfs")
-    (version "0.5.4")
+    (version "0.5.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BFS" version))
               (sha256
                (base32
-                "1f4l610wma94spa7vwj6s4wbpfjzd2mrax5529ldiqddi92q51kn"))))
+                "0q4w1r9zf7ki3y4pxxmf40f1rpx9gx55bdysgdq42axbjbij944l"))))
     (properties `((upstream-name . "BFS")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -15478,12 +15539,12 @@ the bfsl solution.")
                              r-sf
                              r-rvest
                              r-rstac
-                             r-rappdirs
                              r-pxweb
                              r-purrr
                              r-magrittr
                              r-janitor
                              r-httr2
+                             r-fs
                              r-dplyr
                              r-curl))
     (home-page "https://felixluginbuhl.com/BFS/")

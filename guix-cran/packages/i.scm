@@ -1345,13 +1345,13 @@ Details can be found in the paper by MÃ¼ller, Reeve, Cannings and Samworth
 (define-public r-israd
   (package
     (name "r-israd")
-    (version "2.5.4")
+    (version "2.5.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ISRaD" version))
               (sha256
                (base32
-                "0qp0rbqvbfhj4jhc0335wy5370a66c7mxd4sp7bczkk9cvykv6x3"))))
+                "02h64lqqkc7a9n4f0hkz29bvyzjzwc024qr22iqg4m429i41kc3r"))))
     (properties `((upstream-name . "ISRaD")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
@@ -1547,13 +1547,13 @@ using different splitting criteria.")
 (define-public r-isotracer
   (package
     (name "r-isotracer")
-    (version "1.1.4")
+    (version "1.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "isotracer" version))
               (sha256
                (base32
-                "0wyvzfz0layh525fdn769x6nnm5d2447vjldnli49gasqb7g49nr"))))
+                "0qxdri6dq920d39ip1f37h1nzw90fr51bq4xc1m5bjv7vkqrqbks"))))
     (properties `((upstream-name . "isotracer")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -3048,13 +3048,13 @@ Interface.")
 (define-public r-irtest
   (package
     (name "r-irtest")
-    (version "1.7.0")
+    (version "1.11.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IRTest" version))
               (sha256
                (base32
-                "1y3x0jjs16sdm362wyq02yb3g297lj3mmj60p507rwka2icimh14"))))
+                "0wy0ai2mxpsag7psnzdicv7h299x8g00zkys7jr8h0kqbsx1llyz"))))
     (properties `((upstream-name . "IRTest")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2 r-dcurver r-betafunctions))
@@ -5129,17 +5129,19 @@ which can be visualized using the IOHanalyzer module.")
 (define-public r-iohanalyzer
   (package
     (name "r-iohanalyzer")
-    (version "0.1.6.3")
+    (version "0.1.8.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IOHanalyzer" version))
               (sha256
                (base32
-                "1y8qvjm9mrdfxzgxyn5w8798gay0mf4l5lw7s845bcglpyr91q6p"))))
+                "0814ycb0fchg9m5244i0wqj3y8dik9szmjcnjjv2w930sn2ccqcw"))))
     (properties `((upstream-name . "IOHanalyzer")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringi
+    (propagated-inputs (list r-viridis
+                             r-stringi
                              r-shiny
+                             r-rjson
                              r-reshape2
                              r-rcpp
                              r-rcolorbrewer
@@ -5148,11 +5150,12 @@ which can be visualized using the IOHanalyzer module.")
                              r-knitr
                              r-httr
                              r-ggplot2
+                             r-eaf
                              r-dplyr
                              r-data-table
                              r-colorspace
                              r-colorramps))
-    (home-page "http://iohprofiler.liacs.nl")
+    (home-page "https://iohanalyzer.liacs.nl")
     (synopsis "Data Analysis Part of 'IOHprofiler'")
     (description
      "The data analysis module for the Iterative Optimization Heuristics Profiler
@@ -11206,6 +11209,38 @@ quantizing and extracting colors in images to assemble color palettes and the
 level of user control over palettes construction.")
     (license license:expat)))
 
+(define-public r-imfor
+  (package
+    (name "r-imfor")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ImFoR" version))
+              (sha256
+               (base32
+                "10wm0wkcz85g94m4824fm6xy1mqk9syqr3rj5fx6bbs2mkh4wxca"))))
+    (properties `((upstream-name . "ImFoR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyverse
+                             r-nlme
+                             r-minpack-lm
+                             r-metrics
+                             r-ggpubr
+                             r-ggplot2
+                             r-caret))
+    (home-page "https://cran.r-project.org/package=ImFoR")
+    (synopsis "Non-Linear Height Diameter Models for Forestry")
+    (description
+     "Tree height is an important dendrometric variable and forms the basis of
+vertical structure of a forest stand.  This package will help to fit and
+validate various non-linear height diameter models for assessing the underlying
+relationship that exists between tree height and diameter at breast height in
+case of conifer trees.  This package has been implemented on Naslund, Curtis,
+Michailoff, Meyer, Power, Michaelis-Menten and Wykoff non linear models using
+algorithm of Huang et al. (1992) <doi:10.1139/x92-172> and Zeide et al. (1993)
+<doi:10.1093/forestscience/39.3.594>.")
+    (license license:gpl3)))
+
 (define-public r-imediate
   (package
     (name "r-imediate")
@@ -13018,13 +13053,13 @@ Survey (USGS) Contractor and/or USGS employee.")
 (define-public r-ie2misc
   (package
     (name "r-ie2misc")
-    (version "0.9.0")
+    (version "0.9.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ie2misc" version))
               (sha256
                (base32
-                "0cawlkhyfrwwcnqcp1lc1wc4a42ax4r9g9nzbl88sfjxy3fyirkx"))))
+                "09f40nn56s6j70zz1fhkf7yyzdrypjd7khar82ffj1gsr1k0rnzi"))))
     (properties `((upstream-name . "ie2misc")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi
@@ -14344,16 +14379,53 @@ and the ICSKATO test, which is the optimal combination of the ICSKAT and Burden
 tests.  Please see the vignette for a quickstart guide.")
     (license license:gpl3)))
 
+(define-public r-icsclust
+  (package
+    (name "r-icsclust")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ICSClust" version))
+              (sha256
+               (base32
+                "0sw8ck9384xc0rfj7q7yd0fjacilp64fx8b0l0cw5k920rnzskbj"))))
+    (properties `((upstream-name . "ICSClust")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tclust
+                             r-scales
+                             r-rrcov
+                             r-rcpproll
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-otrimle
+                             r-mvtnorm
+                             r-moments
+                             r-mclust
+                             r-ics
+                             r-heplots
+                             r-ggplot2
+                             r-ggally
+                             r-fpc
+                             r-cluster))
+    (home-page "https://github.com/AuroreAA/ICSClust")
+    (synopsis "Tandem Clustering with Invariant Coordinate Selection")
+    (description
+     "Implementation of tandem clustering with invariant coordinate selection with
+different scatter matrices and several choices for the selection of components
+as described in Alfons, A., Archimbaud, A., Nordhausen, K.and Ruiz-Gazen, A.
+(2022) <@code{arXiv:2212.06108>}.")
+    (license license:gpl3+)))
+
 (define-public r-ics
   (package
     (name "r-ics")
-    (version "1.4-0")
+    (version "1.4-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ICS" version))
               (sha256
                (base32
-                "1r5sk01fmraaapbgymhw1fhnb72yjzm8vdc1g4qz5igm79b1s3gq"))))
+                "0xbah28g7k7c37r4qsq3ki67r8jn4psincpkjxg1mmfar5521z29"))))
     (properties `((upstream-name . "ICS")))
     (build-system r-build-system)
     (propagated-inputs (list r-survey r-mvtnorm))

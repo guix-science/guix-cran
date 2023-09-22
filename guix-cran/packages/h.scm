@@ -2289,38 +2289,33 @@ probing (HR-SIP), multi-window high resolution stable isotope probing
 (define-public r-htsr
   (package
     (name "r-htsr")
-    (version "2.1.0")
+    (version "2.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "htsr" version))
               (sha256
                (base32
-                "09hp97fxynx4ggwrz7kcm0zzdxvcyrrh94063diisfssz0v62wp3"))))
+                "1gnjvkn6m0bfgw32afpvhvlsrlc672f3zb9fhrq57y3asc190jkx"))))
     (properties `((upstream-name . "htsr")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexls
                              r-waiter
                              r-tibble
-                             r-terra
                              r-stringr
                              r-shinyfiles
                              r-shiny
                              r-rsqlite
-                             r-rodbc
                              r-readxl
                              r-readr
                              r-rcpp
                              r-purrr
-                             r-openair
                              r-lubridate
                              r-ggplot2
                              r-fs
-                             r-editdata
                              r-dplyr
-                             r-directlabels
                              r-dbi))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=htsr")
+    (home-page "https://github.com/p-chevallier/htsr")
     (synopsis "Hydro-Meteorology Time-Series")
     (description
      "This package provides functions for the management and treatment of hydrology
@@ -6027,13 +6022,13 @@ al. (2019) <@code{arXiv:1905.11052>}.")
 (define-public r-himach
   (package
     (name "r-himach")
-    (version "0.3.1")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "himach" version))
               (sha256
                (base32
-                "11p6g1w77yx8cxrvhy53dllyjk4z3jiq9mhz3bjr2kbzi954mysf"))))
+                "0j262rkhfadd6n1ypzwv8pj543zinayihnvfsb5i8i6fx2lag88q"))))
     (properties `((upstream-name . "himach")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -6050,11 +6045,11 @@ al. (2019) <@code{arXiv:1905.11052>}.")
     (home-page "https://github.com/david6marsh/himach")
     (synopsis "High Mach Finds Routes for Supersonic Aircraft")
     (description
-     "For supersonic aircraft, flying subsonic over land, High Mach finds the best
-route between airports.  Allows for coastal buffer and potentially closed
-regions.  Uses a minimal model of aircraft performance: the focus is on time
-saved versus subsonic flight, rather than on vertical flight profile.  For
-modelling and forecasting, not for planning your flight!")
+     "For supersonic aircraft, flying subsonic over land, find the best route between
+airports.  Allow for coastal buffer and potentially closed regions.  Use a
+minimal model of aircraft performance: the focus is on time saved versus
+subsonic flight, rather than on vertical flight profile.  For modelling and
+forecasting, not for planning your flight!")
     (license license:expat)))
 
 (define-public r-hima

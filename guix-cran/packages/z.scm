@@ -760,17 +760,18 @@ detail on use and algorithms, see <doi:10.18637/jss.v095.i04>.")
 (define-public r-zen4r
   (package
     (name "r-zen4r")
-    (version "0.8")
+    (version "0.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "zen4R" version))
               (sha256
                (base32
-                "14psa7y6dh9iw2xcjrz4zjv4aclz9m2azr26v7xv42kd4jhk6fhv"))))
+                "09r3kd5mvaps30k4vszbfbhfb8hp6jq4f1v3kr9b8wgv7vqsa2k4"))))
     (properties `((upstream-name . "zen4R")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
                              r-xml
+                             r-utf8
                              r-r6
                              r-keyring
                              r-jsonlite

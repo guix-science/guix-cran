@@ -2892,13 +2892,13 @@ assume no censoring is present in the data.  Please contact Lior Rennert
 (define-public r-survstan
   (package
     (name "r-survstan")
-    (version "0.0.3")
+    (version "0.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "survstan" version))
               (sha256
                (base32
-                "1rk1slkyv13qpik32zmj2i3w7mzcsybdmq3wfh7cfpq9p1qxbw2n"))))
+                "0rwwz52s5ss9l5y7xikdf2d7r86lk0xmx190i6mg1aw8mhxplk2b"))))
     (properties `((upstream-name . "survstan")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -2928,10 +2928,10 @@ assume no censoring is present in the data.  Please contact Lior Rennert
 Stan'.  Implemented regression models include accelerated failure time models,
 proportional hazards models, proportional odds models, accelerated hazard
 models, and Yang and Prentice models.  Available baseline survival distributions
-include exponential, Weibull, log-normal, and log-logistic distributions.
-References: Lawless (2002) <ISBN:9780471372158>; Bennett (1982)
-<doi:10.1002/sim.4780020223>; Chen and Wang(2000)
-<doi:10.1080/01621459.2000.10474236>; Demarqui and Mayrink (2021)
+include exponential, Weibull, log-normal, log-logistic, and fatigue
+(Birnbaum-Saunders) distributions.  References: Lawless (2002)
+<ISBN:9780471372158>; Bennett (1982) <doi:10.1002/sim.4780020223>; Chen and
+Wang(2000) <doi:10.1080/01621459.2000.10474236>; Demarqui and Mayrink (2021)
 <doi:10.1214/20-BJPS471>.")
     (license license:expat)))
 
@@ -16001,13 +16001,13 @@ including the model's response function.")
 (define-public r-sqlrender
   (package
     (name "r-sqlrender")
-    (version "1.15.2")
+    (version "1.16.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SqlRender" version))
               (sha256
                (base32
-                "0i4gz3pxw9iysx5zkyhjxiccw2jz9xp0xn1n2zxz18lhyag8d3jl"))))
+                "0d0862hznrj1l1g8rpjrn3dn2dqyscbqkir19n4s8k5whrpb5l5l"))))
     (properties `((upstream-name . "SqlRender")))
     (build-system r-build-system)
     (inputs (list openjdk))
@@ -22463,13 +22463,13 @@ version, please check <https://github.com/leeshawn/SPAtest>.")
 (define-public r-spatentropy
   (package
     (name "r-spatentropy")
-    (version "2.2-0")
+    (version "2.2-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SpatEntropy" version))
               (sha256
                (base32
-                "0vp4mns6izycz9sznzqmww4h34gbk5nwfnnx10yba4l7y78zjjkg"))))
+                "08x59njg4x1hf578pg8xhcb00072gi5zf9iyxp75vz8rw89yqajn"))))
     (properties `((upstream-name . "SpatEntropy")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-random r-spatstat-geom r-spatstat))
@@ -27446,13 +27446,13 @@ package in the background.")
 (define-public r-snowft
   (package
     (name "r-snowft")
-    (version "1.6-0")
+    (version "1.6-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "snowFT" version))
               (sha256
                (base32
-                "00rq2xibzhx7441v9jg138a4fkmx28hifs4yyj3pwi8najf0df4n"))))
+                "0y7ql23vv5qdx0pgblfybjwxc0rgvv7z868c6axgy78xrzm6qjd1"))))
     (properties `((upstream-name . "snowFT")))
     (build-system r-build-system)
     (propagated-inputs (list r-snow r-rlecuyer))
@@ -29827,19 +29827,18 @@ methodology is described in Langsrud and Heldal (2018)
 (define-public r-smacpod
   (package
     (name "r-smacpod")
-    (version "2.5")
+    (version "2.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "smacpod" version))
               (sha256
                (base32
-                "0br9ahix3q2qv06aj8jr2828ysj0waik6za42ahd9b8hv7chrhad"))))
+                "193mqxk17ygr518p2mvk9wnj3hnckxay9jz85ng00kz2kaykdpd6"))))
     (properties `((upstream-name . "smacpod")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-random
                              r-spatstat-geom
                              r-spatstat-explore
-                             r-sp
                              r-smerc
                              r-plotrix
                              r-pbapply
@@ -31315,13 +31314,13 @@ systems are given in the \"Using skimr\" vignette and the README.")
 (define-public r-skilljar
   (package
     (name "r-skilljar")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "skilljaR" version))
               (sha256
                (base32
-                "1k3zy85i0x444g6mxmw3mh67xhdn4pyfgjjx04m7far8rldwd9p2"))))
+                "04x1hfg0kvbr5c1abl0kfh1x07kvgyzhxzd38j6blg16awcvfxva"))))
     (properties `((upstream-name . "skilljaR")))
     (build-system r-build-system)
     (propagated-inputs (list r-purrr r-magrittr r-jsonlite r-httr r-dplyr))
@@ -32441,13 +32440,13 @@ their situation, retention and drop out.")
 (define-public r-sisireg
   (package
     (name "r-sisireg")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sisireg" version))
               (sha256
                (base32
-                "0zqiagm963kvq1cpv0c8a0nffvydmx1vzjq458p77y1x81rjhmmr"))))
+                "1jw1nl8l7kh5fa3hh7zh418brck6zayhhqm50nqhbghlmjs7y67i"))))
     (properties `((upstream-name . "sisireg")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-reticulate r-raster))
@@ -33587,6 +33586,38 @@ models.  The user can specific all basis functions of time, random or
 deterministic covariates, random or deterministic left-truncation and
 right-censoring times, and model parameters.")
     (license license:gpl2)))
+
+(define-public r-simsurvey
+  (package
+    (name "r-simsurvey")
+    (version "0.1.6")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "SimSurvey" version))
+              (sha256
+               (base32
+                "0as8cifaymnd9rccynyhs4pfs27z0rhz18pbl0am0xvp3y7avbs0"))))
+    (properties `((upstream-name . "SimSurvey")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stars
+                             r-sf
+                             r-rlang
+                             r-progress
+                             r-plotly
+                             r-magrittr
+                             r-lifecycle
+                             r-foreach
+                             r-doparallel
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://paulregular.github.io/SimSurvey/")
+    (synopsis "Test Surveys by Simulating Spatially-Correlated Populations")
+    (description
+     "Simulate age-structured populations that vary in space and time and explore the
+efficacy of a range of built-in or user-defined sampling protocols to reproduce
+the population parameters of the known population. (See Regular et al. (2020)
+<doi:10.1371/journal.pone.0232822> for more details).")
+    (license license:gpl3)))
 
 (define-public r-simsurv
   (package
@@ -42682,6 +42713,39 @@ interactomics technologies, such as TAP-MS, Virotrap and @code{BioID}.  SFINX
 can also be used via the website interface at <http://sfinx.ugent.be>.")
     (license license:asl2.0)))
 
+(define-public r-sfhotspot
+  (package
+    (name "r-sfhotspot")
+    (version "0.8.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "sfhotspot" version))
+              (sha256
+               (base32
+                "17vlayqqhv59p9mhrxzxs5r6gfqd6wyyi1k6p05n2sd9c06jzadb"))))
+    (properties `((upstream-name . "sfhotspot")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-spdep
+                             r-spatialkde
+                             r-sf
+                             r-rlang
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "http://pkgs.lesscrime.info/sfhotspot/")
+    (synopsis "Hot-Spot Analysis with Simple Features")
+    (description
+     "Identify and understand clusters of points (typically representing the locations
+of places or events) stored in simple-features (SF) objects.  This is useful for
+analysing, for example, hot-spots of crime events.  The package emphasises
+producing results from point SF data in a single step using reasonable default
+values for all other arguments, to aid rapid data analysis by users who are
+starting out.  Functions available include kernel density estimation (for
+details, see Yip (2020) <doi:10.22224/gistbok/2020.1.12>), analysis of spatial
+association (Getis and Ord (1992) <doi:10.1111/j.1538-4632.1992.tb00261.x>) and
+hot-spot classification (Chainey (2020) ISBN:158948584X).")
+    (license license:expat)))
+
 (define-public r-sfheaders
   (package
     (name "r-sfheaders")
@@ -46214,13 +46278,13 @@ and Waernbaum (2022) <doi:10.1515/em-2022-0108>.")
 (define-public r-selection-index
   (package
     (name "r-selection-index")
-    (version "1.1.4")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "selection.index" version))
               (sha256
                (base32
-                "1d738yn30j19302bqx5v9fk357p9jqa0cjj0k9xiq2pvvhcdld3h"))))
+                "0yqg0j0sifpc25qpndrmnam64qy1qbzazqqs8rz99lynkwn3z1fh"))))
     (properties `((upstream-name . "selection.index")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

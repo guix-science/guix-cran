@@ -24,6 +24,7 @@
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages tls)
   #:use-module (gnu packages code)
+  #:use-module (gnu packages maths)
   #:use-module (gnu packages pdf)
   #:use-module (gnu packages java)
   #:use-module (guix-cran packages z)
@@ -4300,6 +4301,44 @@ PRS-PGx Methods by Zhai, S., Zhang, H., Mehrotra, D.V., and Shen, J., 2021
 (submitted).")
     (license license:gpl2+)))
 
+(define-public r-prsim
+  (package
+    (name "r-prsim")
+    (version "1.4-4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "PRSim" version))
+              (sha256
+               (base32
+                "17aqydzv220q15mhn1sir5ly5wzmv7sx1ckmk9fwr97lnf0pdh09"))))
+    (properties `((upstream-name . "PRSim")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-wavscalogram r-splus2r r-mev r-lmomco r-goftest))
+    (home-page "https://git.math.uzh.ch/reinhard.furrer/PRSim-devel")
+    (synopsis
+     "Stochastic Simulation of Streamflow Time Series using Phase Randomization")
+    (description
+     "This package provides a simulation framework to simulate streamflow time series
+with similar main characteristics as observed data.  These characteristics
+include the distribution of daily streamflow values and their temporal
+correlation as expressed by short- and long-range dependence.  The approach is
+based on the randomization of the phases of the Fourier transform or the phases
+of the wavelet transform.  The function prsim() is applicable to single site
+simulation and uses the Fourier transform.  The function prsim.wave() extends
+the approach to multiple sites and is based on the complex wavelet transform.
+The function prsim.weather() extends the approach to multiple variables for
+weather generation.  We further use the flexible four-parameter Kappa
+distribution, which allows for the extrapolation to yet unobserved low and high
+flows.  Alternatively, the empirical or any other distribution can be used.  A
+detailed description of the simulation approach for single sites and an
+application example can be found in Brunner et al. (2019)
+<doi:10.5194/hess-23-3175-2019>.  A detailed description and evaluation of the
+wavelet-based multi-site approach can be found in Brunner and Gilleland (2020)
+<doi:10.5194/hess-24-3967-2020>.  A detailed description and evaluation of the
+multi-variable and multi-site weather generator can be found in Brunner et al.
+(2021) <doi:10.5194/esd-12-621-2021>.")
+    (license license:gpl3)))
+
 (define-public r-prrd
   (package
     (name "r-prrd")
@@ -4328,13 +4367,13 @@ run the tests in parallel.")
 (define-public r-prqlr
   (package
     (name "r-prqlr")
-    (version "0.5.2")
+    (version "0.5.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "prqlr" version))
               (sha256
                (base32
-                "1n7v2m24kgg4am196mb7ngjh9b934sh0vc58cka8kdfvhk57bksc"))))
+                "0xagxc1077943jy3s2yi0ywxlf67wg0qfxr7h0f1d7clf3f5rx22"))))
     (properties `((upstream-name . "prqlr")))
     (build-system r-build-system)
     (inputs (list))
@@ -5760,6 +5799,30 @@ Decision Analysis (MCDA) process involving multiple criteria, by PROMETHEE
     (description
      "Algorithms and subroutines for patient-reported outcome data analysis.")
     (license license:expat)))
+
+(define-public r-prolsirm
+  (package
+    (name "r-prolsirm")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "prolsirm" version))
+              (sha256
+               (base32
+                "1nx4bal130r3c7hb0x5j22rh7988p62qll3rm0j8wkiqdnqkyhay"))))
+    (properties `((upstream-name . "prolsirm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mcmcpack))
+    (home-page "https://cran.r-project.org/package=prolsirm")
+    (synopsis "Procrustes Matching for Latent Space Item Response Model")
+    (description
+     "Procrustes matching of the posterior samples of person and item latent positions
+from latent space item response models.  The methods implemented in this package
+are based on work by Borg, I., Groenen, P. (1997, ISBN:978-0-387-94845-4), Jeon,
+M., Jin, I. H., Schweinberger, M., Baugh, S. (2021)
+<doi:10.1007/s11336-021-09762-5>, and Andrew, D. M., Kevin M. Q., Jong Hee Park.
+(2011) <doi:10.18637/jss.v042.i09>.")
+    (license license:gpl3+)))
 
 (define-public r-prolific-api
   (package
@@ -21919,13 +21982,13 @@ detail in Callahan et al. (2016) <doi:10.12688/f1000research.8986.1>.")
 (define-public r-phylosem
   (package
     (name "r-phylosem")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "phylosem" version))
               (sha256
                (base32
-                "0l25x2jcvzh9yazjdl0x92irjvxdim0jc9pq5clnf715m1cq03di"))))
+                "1ncvvp69yq42y8z9qj4fyn5vxfj1mmchh9iyh4fl8dv8syfw0k1n"))))
     (properties `((upstream-name . "phylosem")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb
@@ -22980,13 +23043,13 @@ series.")
 (define-public r-phevis
   (package
     (name "r-phevis")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PheVis" version))
               (sha256
                (base32
-                "0pb6lxyz0ikgl64872dqjk1zj7pa793ggrp53hrg2y5m76wn8drr"))))
+                "0gan84wn8bpzys8zricf5iv59az3sw30avnnf8hxgj24s6n363iz"))))
     (properties `((upstream-name . "PheVis")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -24052,6 +24115,29 @@ pharmaverse family of packages.  SDTM dataset specifications are described in:
 CDISC Submission Data Standards Team (2021)
 <https://www.cdisc.org/system/files/members/standard/foundational/SDTMIG%20v3.4-FINAL_2022-07-21.pdf>.")
     (license license:asl2.0)))
+
+(define-public r-pharmaverseadam
+  (package
+    (name "r-pharmaverseadam")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "pharmaverseadam" version))
+              (sha256
+               (base32
+                "1cz8jpn29krhnsx6gvp4kdaajr75kf4rskcg5y5q4ljarq892qzc"))))
+    (properties `((upstream-name . "pharmaverseadam")))
+    (build-system r-build-system)
+    (home-page "https://pharmaverse.github.io/pharmaverseadam/main/")
+    (synopsis "ADaM Test Data for the 'Pharmaverse' Family of Packages")
+    (description
+     "This package provides a set of Analysis Data Model (A@code{DaM}) datasets
+constructed using the Study Data Tabulation Model (SDTM) datasets contained in
+the pharmaversesdtm package and the template scripts from the admiral family of
+packages.  A@code{DaM} dataset specifications are described in: CDISC Analysis
+Data Model Team (2021)
+<https://www.cdisc.org/system/files/members/standard/foundational/A@code{DaMIG_v1.3.pdf>}.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-pharmaverse
   (package
@@ -25144,6 +25230,27 @@ SEmi-integrated Likelihood (PESEL).  See Piotr Sobczyk, Malgorzata Bogdan, Julie
 Josse Bayesian dimensionality reduction with PCA using penalized semi-integrated
 likelihood (2017) <doi:10.1080/10618600.2017.1340302>.")
     (license license:gpl3)))
+
+(define-public r-perutimber
+  (package
+    (name "r-perutimber")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "perutimber" version))
+              (sha256
+               (base32
+                "119zilijflhj8a9hn4swdpgy99ffa9n7b53wphgi4641hlnlpif5"))))
+    (properties `((upstream-name . "perutimber")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-lifecycle))
+    (home-page "https://github.com/PaulESantos/perutimber")
+    (synopsis "Catalogue of the Timber Forest Species of the Peruvian Amazon")
+    (description
+     "Access the data of the Catalogue of the Timber Forest Species of the Peruvian
+Amazon VÃ¡squez @code{MartÃ­nez}, R., & Rojas @code{GonzÃ¡les},
+R.D.P.(2022)<doi:10.21704/rfp.v37i3.1956>.")
+    (license license:expat)))
 
 (define-public r-peruse
   (package
@@ -26344,6 +26451,37 @@ Ch., Schumacher M.and Binder H. (2011) <doi:10.1007/s00180-011-0236-6>.")
      "Is designed to make easier printing summary statistics (for continues and factor
 level) tables in Latex, and plotting by factor.")
     (license license:gpl3)))
+
+(define-public r-pepbvs
+  (package
+    (name "r-pepbvs")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "PEPBVS" version))
+              (sha256
+               (base32
+                "1v0pl5jj2bh5iq45xgs35wzfz5hdklsnb72j4rnipy3qbm7zzliy"))))
+    (properties `((upstream-name . "PEPBVS")))
+    (build-system r-build-system)
+    (inputs (list gsl))
+    (propagated-inputs (list r-rcppgsl r-rcpparmadillo r-rcpp r-matrix))
+    (home-page "https://cran.r-project.org/package=PEPBVS")
+    (synopsis
+     "Bayesian Variable Selection using Power-Expected-Posterior Prior")
+    (description
+     "This package performs Bayesian variable selection under normal linear models for
+the data with the model parameters following as prior either the
+power-expected-posterior (PEP) or the intrinsic (a special case of the former)
+(Fouskakis and Ntzoufras (2022) <doi: 10.1214/21-BA1288>, Fouskakis and
+Ntzoufras (2020) <doi: 10.3390/econometrics8020017>).  The prior distribution on
+model space is the uniform on model space or the uniform on model dimension (a
+special case of the beta-binomial prior).  The selection can be done either with
+full enumeration of all possible models or using the Markov Chain Monte Carlo
+Model Composition (MC3) algorithm (Madigan and York (1995) <doi:
+10.2307/1403615>).  Complementary functions for making predictions, as well as
+plotting and printing the results are also provided.")
+    (license license:gpl2+)))
 
 (define-public r-peopleanalyticsdata
   (package
@@ -27916,13 +28054,13 @@ neighborhoods.")
 (define-public r-pdtoolkit
   (package
     (name "r-pdtoolkit")
-    (version "1.1.1")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PDtoolkit" version))
               (sha256
                (base32
-                "0q0cd0azdf71m6w67in9sjqm5lvb6ksvpin9p5iwr3shbzvq888w"))))
+                "0g4s5fw0m128kq9dhaa4j76b2islhbbj9a6dqbmcmvlqla0bqm3k"))))
     (properties `((upstream-name . "PDtoolkit")))
     (build-system r-build-system)
     (propagated-inputs (list r-rpart r-monobin r-dplyr))

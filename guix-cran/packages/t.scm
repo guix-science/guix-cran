@@ -12193,13 +12193,13 @@ arbitrary distributions with piecewise twice differentiable densities.")
 (define-public r-timsac
   (package
     (name "r-timsac")
-    (version "1.3.8-2")
+    (version "1.3.8-3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "timsac" version))
               (sha256
                (base32
-                "11hmh469db5hgzyjf5i0igzr8j1dg340ybl0q1wzxhwz6ha256ab"))))
+                "0whhggz749xcmdgqzql0n4r3hbm3bl2yjl2infmhpbhrfr1lqp3x"))))
     (properties `((upstream-name . "timsac")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -15645,6 +15645,33 @@ for the model estimation.  Functionality for extracting results, making
 predictions, and simulating data is provided as well.  References: Brown &
 Maydeu-Olivares (2011) <doi:10.1177/0013164410375112>; BÃ¼rkner et al. (2019)
 <doi:10.1177/0013164419832063>.")
+    (license license:gpl3+)))
+
+(define-public r-thurmod
+  (package
+    (name "r-thurmod")
+    (version "1.1.11")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ThurMod" version))
+              (sha256
+               (base32
+                "01ay1w3h300day5aljha93xyk0n8a98c7g5binvchgsa019mg9dd"))))
+    (properties `((upstream-name . "ThurMod")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mvtnorm r-matrixstats r-mass r-lavaan))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/MarkusTJansen/ThurMod")
+    (synopsis "Thurstonian CFA and Thurstonian IRT Modeling")
+    (description
+     "Fit Thurstonian forced-choice models (CFA (simple and factor) and IRT) in R.
+This package allows for the analysis of item response modeling (IRT) as well as
+confirmatory factor analysis (CFA) in the Thurstonian framework.  Currently,
+estimation can be performed by Mplus and lavaan'.  References: Brown &
+Maydeu-Olivares (2011) <doi:10.1177/0013164410375112>; Jansen, M. T., & Schulze,
+R. (in review).  The Thurstonian linked block design: Improving Thurstonian
+modeling for paired comparison and ranking data.; Maydeu-Olivares & BÃ¶ckenholt
+(2005) <doi:10.1037/1082-989X.10.3.285>.")
     (license license:gpl3+)))
 
 (define-public r-thunder
@@ -23573,19 +23600,18 @@ them into a standardised (tidy) output format.")
 (define-public r-tabr
   (package
     (name "r-tabr")
-    (version "0.4.5")
+    (version "0.4.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tabr" version))
               (sha256
                (base32
-                "1nkzbqy9nb6pd895glld009vmry5rnhd7h9q31s8xh97kwlwk9c2"))))
+                "0dsm98lhl7j2bb3z5cliz1f34sv904svhniw6iar1nqh6p9y8a5l"))))
     (properties `((upstream-name . "tabr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-purrr
-                             r-magrittr
                              r-ggplot2
                              r-dplyr
                              r-crayon))
@@ -23595,32 +23621,26 @@ them into a standardised (tidy) output format.")
      "Music Notation Syntax, Manipulation, Analysis and Transcription in R")
     (description
      "This package provides a music notation syntax and a collection of music
-programming functions for generating, manipulating, organizing and analyzing
-musical information in R. The music notation framework facilitates creating and
-analyzing music data in notation form.  Music data can be viewed, manipulated
-and analyzed while in different forms of representation based around different
-data structures: strings and data frames.  Each representation offers advantages
-over the other for different use cases.  Music syntax can be entered directly
-and represented in character strings to minimize the formatting overhead of data
-entry by using simple data structures, for example when wanting to quickly enter
-and transcribe short pieces of music to sheet music or tablature.  The package
+programming functions for generating, manipulating, organizing, and analyzing
+musical information in R. Music syntax can be entered directly in character
+strings, for example to quickly transcribe short pieces of music.  The package
 contains functions for directly performing various mathematical, logical and
 organizational operations and musical transformations on special object classes
 that facilitate working with music data and notation.  The same music data can
-also be organized in tidy data frames, allowing for a more familiar and powerful
-approach to the analysis of large amounts of structured music data.  Functions
-are available for mapping seamlessly between these data structures and their
-representations of musical information.  The package also provides API wrapper
-functions for transcribing musical representations in R into guitar tablature
-(\"tabs\") and basic sheet music using the @code{LilyPond} backend
-(<http://lilypond.org>). @code{LilyPond} is open source music engraving software
-for generating high quality sheet music based on markup syntax.  The package
-generates @code{LilyPond} files from R code and can pass them to @code{LilyPond}
-to be rendered into sheet music pdf files.  The package offers nominal MIDI file
-output support in conjunction with rendering sheet music.  The package can read
-MIDI files and attempts to structure the MIDI data to integrate as best as
-possible with the data structures and functionality found throughout the
-package.")
+be organized in tidy data frames for a familiar and powerful approach to the
+analysis of large amounts of structured music data.  Functions are available for
+mapping seamlessly between these formats and their representations of musical
+information.  The package also provides an API to @code{LilyPond}
+(<https://lilypond.org/>) for transcribing musical representations in R into
+tablature (\"tabs\") and sheet music. @code{LilyPond} is open source music
+engraving software for generating high quality sheet music based on markup
+syntax.  The package generates @code{LilyPond} files from R code and can pass
+them to the @code{LilyPond} command line interface to be rendered into sheet
+music PDF files or inserted into R markdown documents.  The package offers
+nominal MIDI file output support in conjunction with rendering sheet music.  The
+package can read MIDI files and attempts to structure the MIDI data to integrate
+as best as possible with the data structures and functionality found throughout
+the package.")
     (license license:expat)))
 
 (define-public r-taboolar

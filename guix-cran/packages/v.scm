@@ -1403,13 +1403,13 @@ information on teams, staff, sets, matches, and player-in-match statistics
 (define-public r-volesti
   (package
     (name "r-volesti")
-    (version "1.1.2-6")
+    (version "1.1.2-7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "volesti" version))
               (sha256
                (base32
-                "1ykmxl12ap21ds23nqlc861zn24hs9y7h0kkihyhpxnwfvyx1fbp"))))
+                "1x730da30y763j6dcdahspbpf81zqaazqzfvfznsi0kq05856z2n"))))
     (properties `((upstream-name . "volesti")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-bh))
@@ -4605,38 +4605,6 @@ managing capitalisations in tidy data.")
     (description "Calculate and plot Venn diagrams in 2D and 3D.")
     (license license:gpl3+)))
 
-(define-public r-vennlasso
-  (package
-    (name "r-vennlasso")
-    (version "0.1.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vennLasso" version))
-              (sha256
-               (base32
-                "0maydvx0qhdn5alqzqxjn485y9hw9qdr1xvgkmgwnjq59vni6d31"))))
-    (properties `((upstream-name . "vennLasso")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-visnetwork
-                             r-venndiagram
-                             r-survival
-                             r-rcppnumerical
-                             r-rcppeigen
-                             r-rcpp
-                             r-matrix
-                             r-mass
-                             r-igraph
-                             r-foreach))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/jaredhuling/vennLasso")
-    (synopsis "Variable Selection for Heterogeneous Populations")
-    (description
-     "This package provides variable selection and estimation routines for models with
-main effects stratified on multiple binary factors.  The @code{vennLasso}
-package is an implementation of the method introduced in Huling, et al. (2017)
-<doi:10.1111/biom.12769>.")
-    (license license:gpl2+)))
-
 (define-public r-venneuler
   (package
     (name "r-venneuler")
@@ -4944,13 +4912,13 @@ htmlwidget'.")
 (define-public r-vedicdatetime
   (package
     (name "r-vedicdatetime")
-    (version "0.1.7")
+    (version "0.1.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "VedicDateTime" version))
               (sha256
                (base32
-                "0rk8z2siawphdzs17hbjd0yxiav6lw01wxg5m3rwyal9wpca95l1"))))
+                "08kkwb5k0n4hjy9rw7bdgpls14a8xdnw3v0g56hhhxnwxf6whmly"))))
     (properties `((upstream-name . "VedicDateTime")))
     (build-system r-build-system)
     (propagated-inputs (list r-swephr))
@@ -4960,9 +4928,7 @@ htmlwidget'.")
     (description
      "This package provides platform for Vedic calendar system having several
 functionalities to facilitate conversion between Gregorian and Vedic calendar
-systems, and helpful in examining its impact in the time series analysis domain.
- The background is described in Neeraj Dhanraj Bokde et al. (2021)
-<doi:10.48550/@code{arXiv.2111.03441>}.")
+systems, and helpful in examining its impact in the time series analysis domain.")
     (license license:gpl3+)))
 
 (define-public r-vectorwavelet

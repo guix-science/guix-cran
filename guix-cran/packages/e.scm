@@ -847,46 +847,6 @@ package supports both Leamer's and Sala-i-Martin's versions of EBA, and allows
 users to customize all aspects of the analysis.")
     (license license:gpl2+)))
 
-(define-public r-extremaldep
-  (package
-    (name "r-extremaldep")
-    (version "0.0.4-0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ExtremalDep" version))
-              (sha256
-               (base32
-                "12mhzbd3rp8ny00azqhk1cdhsz25ybn0wcffzp7qfm5wfnknapfi"))))
-    (properties `((upstream-name . "ExtremalDep")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sp
-                             r-sn
-                             r-quadprog
-                             r-numderiv
-                             r-nloptr
-                             r-mvtnorm
-                             r-gtools
-                             r-foreach
-                             r-fda
-                             r-evd
-                             r-doparallel
-                             r-copula))
-    (home-page "https://faculty.unibocconi.it/simonepadoan/")
-    (synopsis "Extremal Dependence Models")
-    (description
-     "This package provides a set of procedures for parametric and non-parametric
-modelling of the dependence structure of multivariate extreme-values is
-provided.  The statistical inference is performed with non-parametric
-estimators, likelihood-based estimators and Bayesian techniques.  It adapts the
-methodologies of Beranger and Padoan (2015) <arxiv:1508.05561>, Marcon et al.
-(2016) <doi:10.1214/16-EJS1162>, Marcon et al. (2017) <doi:10.1002/sta4.145>,
-Marcon et al. (2017) <doi:10.1016/j.jspi.2016.10.004> and Beranger et al. (2021)
-<doi:10.1007/s10687-019-00364-0>.  This package also allows for the modelling of
-spatial extremes using flexible max-stable processes.  It provides simulation
-algorithms and fitting procedures relying on the Stephenson-Tawn likelihood as
-per Beranger at al. (2021) <doi:10.1007/s10687-020-00376-1>.")
-    (license license:gpl2+)))
-
 (define-public r-extrc
   (package
     (name "r-extrc")
@@ -2565,16 +2525,16 @@ Mike Bostock.")
 (define-public r-exclusiontable
   (package
     (name "r-exclusiontable")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ExclusionTable" version))
               (sha256
                (base32
-                "1adanj3rnk9vhz89rgl25w10ghm2xn1rl99ilnmpkq5jdblcifkx"))))
+                "01f4gklvrzglwg2ck0qr1d9l467bb4rsklv5bz4afrdk9snxgwz7"))))
     (properties `((upstream-name . "ExclusionTable")))
     (build-system r-build-system)
-    (propagated-inputs (list r-magrittr r-dplyr))
+    (propagated-inputs (list r-magrittr r-dplyr r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/entjos/ExclusionTable/")
     (synopsis "Creating Tables of Excluded Observations")
@@ -3668,6 +3628,46 @@ most code.")
 into the following groups; exploratory data analysis, block maxima, peaks over
 thresholds (univariate and bivariate), point processes, gev/gpd distributions.")
     (license license:gpl2+)))
+
+(define-public r-evinf
+  (package
+    (name "r-evinf")
+    (version "0.8.7")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "evinf" version))
+              (sha256
+               (base32
+                "0y57rraprwf7yzhj6fal9c4x0bp34j5xlgbdqa84fajjd29jjvac"))))
+    (properties `((upstream-name . "evinf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-stringi
+                             r-rlang
+                             r-rdpack
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-purrr
+                             r-pscl
+                             r-mlmetrics
+                             r-mistr
+                             r-mass
+                             r-magrittr
+                             r-generics
+                             r-foreach
+                             r-dplyr
+                             r-dorng
+                             r-doparallel))
+    (home-page "https://github.com/Doktorandahl/evinf")
+    (synopsis "Inference with Extreme Value Inflated Count Data")
+    (description
+     "Allows users to model and draw inferences from extreme value inflated count
+data, and to evaluate these models and compare to non extreme-value inflated
+counterparts.  The package is built to be compatible with standard presentation
+tools such as broom', tidy', and modelsummary'.")
+    (license license:expat)))
 
 (define-public r-evildice
   (package
@@ -5005,6 +5005,41 @@ needed by @code{EudraCT} and formats them into the precise requirements to
 directly upload an XML file into the web portal, with no further data entry by
 hand.")
     (license license:gpl2)))
+
+(define-public r-euclimatch
+  (package
+    (name "r-euclimatch")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "Euclimatch" version))
+              (sha256
+               (base32
+                "0bg12c4caqczwamqpdhm4cf8fkrbk0nknhs3gvqijybjb8lpza4g"))))
+    (properties `((upstream-name . "Euclimatch")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra
+                             r-rcppparallel
+                             r-rcpp
+                             r-rcolorbrewer
+                             r-foreach
+                             r-doparallel))
+    (home-page "https://cran.r-project.org/package=Euclimatch")
+    (synopsis "Euclidean Climatch Algorithm")
+    (description
+     "An interface for performing climate matching using the Euclidean \"Climatch\"
+algorithm.  Functions provide a vector of climatch scores (0-10) for each
+location (i.e., grid cell) within the recipient region, the percent of climatch
+scores >= a threshold value, and mean climatch score.  Tools for parallelization
+and visualizations are also provided.  Note that the floor function that rounds
+the climatch score down to the nearest integer has been removed in this
+implementation and the âClimatchâ algorithm, also referred to as the
+âClimateâ algorithm, is described in: Crombie, J., Brown, L., Lizzio, J., &
+Hood, G. (2008).  âClimatch user manualâ.  The method for the percent score
+is described in: Howeth, J.G., Gantz, C.A., Angermeier, P.L., Frimpong, E.A.,
+Hoff, M.H., Keller, R.P., Mandrak, N.E., Marchetti, M.P., Olden, J.D., Romagosa,
+C.M., and Lodge, D.M. (2016). <doi:10.1111/ddi.12391>.")
+    (license license:gpl3+)))
 
 (define-public r-euclideansd
   (package
@@ -7898,13 +7933,13 @@ quantitative treatments.")
 (define-public r-epoxy
   (package
     (name "r-epoxy")
-    (version "0.1.1")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "epoxy" version))
               (sha256
                (base32
-                "04qlyn1bxa6w784in1wja0378lj2d6bcm9rmzaa55xyh4abl8yna"))))
+                "0z725l7m5pymnrvww2anqg2bsvd887jdk0ggs0s2bf2jjd7wy84n"))))
     (properties `((upstream-name . "epoxy")))
     (build-system r-build-system)
     (propagated-inputs (list r-whisker
@@ -8402,6 +8437,32 @@ supported, including: HTML', @code{LaTeX}', and Excel'.")
 choice c(i) which is optimal, there is one type that expresses common belief in
 rationality.")
     (license license:gpl3)))
+
+(define-public r-epistats
+  (package
+    (name "r-epistats")
+    (version "1.6-1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "EpiStats" version))
+              (sha256
+               (base32
+                "02pp2b78hznm5n2ngk4bvgc7amwi32406fxvn52mbbvlpb8pjm0d"))))
+    (properties `((upstream-name . "EpiStats")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-epir r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=EpiStats")
+    (synopsis "Tools for Epidemiologists")
+    (description
+     "This package provides set of functions aimed at epidemiologists.  The package
+includes commands for measures of association and impact for case control
+studies and cohort studies.  It may be particularly useful for outbreak
+investigations including univariable analysis and stratified analysis.  The
+functions for cohort studies include the CS(), CSTable() and CSInter() commands.
+ The functions for case control studies include the CC(), CCTable() and
+CCInter() commands.")
+    (license license:lgpl3)))
 
 (define-public r-episignaldetection
   (package
@@ -9218,6 +9279,45 @@ held by the UK Health Security Agency, UKHSA.")
      "Package for data exploration and result presentation.  Full epicalc package with
 data management functions is available at <https://medipe.psu.ac.th/epicalc/>'.")
     (license license:gpl2+)))
+
+(define-public r-epidatr
+  (package
+    (name "r-epidatr")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "epidatr" version))
+              (sha256
+               (base32
+                "0vyzgansl9gkydadddhi5jayyakr11d0cjxjplfnx5jrwxds92l1"))))
+    (properties `((upstream-name . "epidatr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-tibble
+                             r-readr
+                             r-purrr
+                             r-openssl
+                             r-mmwrweek
+                             r-magrittr
+                             r-jsonlite
+                             r-httr
+                             r-glue
+                             r-cli
+                             r-checkmate
+                             r-cachem))
+    (native-inputs (list r-knitr))
+    (home-page "https://cmu-delphi.github.io/epidatr/")
+    (synopsis "Client for Delphi's 'Epidata' API")
+    (description
+     "The Delphi Epidata API provides real-time access to epidemiological surveillance
+data for influenza, COVID-19', and other diseases for the USA at various
+geographical resolutions, both from official government sources such as the
+Center for Disease Control (CDC) and Google Trends and private partners such as
+Facebook and Change Healthcare'.  It is built and maintained by the Carnegie
+Mellon University Delphi research group.  To cite this API: David C. Farrow,
+Logan C. Brooks, Aaron Rumack', Ryan J. Tibshirani', Roni Rosenfeld (2015).
+Delphi Epidata API. <https://github.com/cmu-delphi/delphi-epidata>.")
+    (license license:expat)))
 
 (define-public r-epidata
   (package
@@ -10211,13 +10311,13 @@ call.")
 (define-public r-envalysis
   (package
     (name "r-envalysis")
-    (version "0.5.5")
+    (version "0.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "envalysis" version))
               (sha256
                (base32
-                "0r3pzdk6sm7g937g37xmvc6a37yv2sfh71l5cvwli1kglqdd5ph8"))))
+                "1a51lfmgj50yxif9bfnlqhxlg1nyss6vb78jhkvkmx7c0qjdl0g2"))))
     (properties `((upstream-name . "envalysis")))
     (build-system r-build-system)
     (propagated-inputs (list r-lmtest r-ggplot2 r-drc))
@@ -12699,13 +12799,13 @@ model and model terms of interest for exact inference.  See Zamar et al. (2007)
 (define-public r-elosteepness
   (package
     (name "r-elosteepness")
-    (version "0.4.7")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EloSteepness" version))
               (sha256
                (base32
-                "11kfq8w6ywnzprhkv77aqyvak0h85kv51zfnmahpa8jw3amhkkl1"))))
+                "1fqqvwbvhlr5h30mav5nch4gqjr61yvpydmbd1zq4a19hwb8rivd"))))
     (properties `((upstream-name . "EloSteepness")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -12723,7 +12823,7 @@ model and model terms of interest for exact inference.  See Zamar et al. (2007)
      "Bayesian Dominance Hierarchy Steepness via Elo Rating and David's Scores")
     (description
      "Obtain Bayesian posterior distributions of dominance hierarchy steepness
-(Neumann and Fischer (2022) <doi:10.1111/2041-210X.14021>).  Steepness
+(Neumann and Fischer (2023) <doi:10.1111/2041-210X.14021>).  Steepness
 estimation is based on Bayesian implementations of either Elo-rating or David's
 scores.")
     (license license:gpl2+)))
@@ -14300,50 +14400,6 @@ tables using exclusively aggregate results from voting units.  Reference:
      "Software accompanying Gary King's book: A Solution to the Ecological Inference
 Problem. (1997).  Princeton University Press.  ISBN 978-0691012407.")
     (license license:gpl2+)))
-
-(define-public r-ehrtemporalvariability
-  (package
-    (name "r-ehrtemporalvariability")
-    (version "1.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "EHRtemporalVariability" version))
-              (sha256
-               (base32
-                "02izrgl526znn4xs10c5l3gv0b5chmgr376i26nli988cypmf32h"))))
-    (properties `((upstream-name . "EHRtemporalVariability")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-xts
-                             r-viridis
-                             r-scales
-                             r-rcolorbrewer
-                             r-plotly
-                             r-mass
-                             r-lubridate
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/hms-dbmi/EHRtemporalVariability")
-    (synopsis
-     "Delineating Temporal Dataset Shifts in Electronic Health Records")
-    (description
-     "This package provides functions to delineate temporal dataset shifts in
-Electronic Health Records through the projection and visualization of
-dissimilarities among data temporal batches.  This is done through the
-estimation of data statistical distributions over time and their projection in
-non-parametric statistical manifolds, uncovering the patterns of the data latent
-temporal variability.  EH@code{RtemporalVariability} is particularly suitable
-for multi-modal data and categorical variables with a high number of values,
-common features of biomedical data where traditional statistical process control
-or time-series methods may not be appropriate.  EH@code{RtemporalVariability}
-allows you to explore and identify dataset shifts through visual analytics
-formats such as Data Temporal heatmaps and Information Geometric Temporal (IGT)
-plots.  An additional EH@code{RtemporalVariability} Shiny app can be used to
-load and explore the package results and even to allow the use of these
-functions to those users non-experienced in R coding. (SÃ¡ez et al.  2020)
-<doi:10.1093/gigascience/giaa079>.")
-    (license (list license:asl2.0
-                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-ehr
   (package
@@ -16260,13 +16316,13 @@ modules are intended for reuse across applications.")
 (define-public r-editbl
   (package
     (name "r-editbl")
-    (version "0.9.5")
+    (version "0.9.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "editbl" version))
               (sha256
                (base32
-                "0rwyjk7ljl700kybs52gmm954ximsjm6nzk7cal83frjipx3gvnn"))))
+                "0anbfsj669igxhbf0d2cfjr9j4l08yhwr48yp2lcyh20pb8hcbip"))))
     (properties `((upstream-name . "editbl")))
     (build-system r-build-system)
     (propagated-inputs (list r-uuid
@@ -18536,13 +18592,13 @@ clusters using echelon scan method proposed by Kurihara (2003)
 (define-public r-echarty
   (package
     (name "r-echarty")
-    (version "1.5.4")
+    (version "1.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "echarty" version))
               (sha256
                (base32
-                "0zhcy5l0zhh92pg47w1vfw5fvscdaschz5qsz7spmdxhpax0min9"))))
+                "1yj01aa3gkwhvg3v5z44xlf5zvq7651v55kldx73ak2lsirc0r49"))))
     (properties `((upstream-name . "echarty")))
     (build-system r-build-system)
     (propagated-inputs (list r-htmlwidgets r-dplyr r-data-tree))
@@ -20405,31 +20461,6 @@ uniform color space, runs one of a few different clustering algorithms on the
 colors in the image searching for a user-supplied number of colors, and returns
 the resulting color palette.")
     (license license:expat)))
-
-(define-public r-earthtide
-  (package
-    (name "r-earthtide")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "earthtide" version))
-              (sha256
-               (base32
-                "06js9czzp5l83cdxmpjc7kkcvyadm9ic3zwd68kic21gcmcfaw0k"))))
-    (properties `((upstream-name . "earthtide")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcppthread r-rcppeigen r-rcpp r-r6 r-bh))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/jkennel/earthtide")
-    (synopsis
-     "Parallel Implementation of 'ETERNA 3.40' for Prediction and Analysis of Earth Tides")
-    (description
-     "This is a port of Fortran ETERNA 3.4
-<http://igets.u-strasbg.fr/soft_and_tool.php> by H.G. Wenzel for calculating
-synthetic Earth tides using the Hartmann and Wenzel (1994)
-<doi:10.1029/95GL03324> or Kudryavtsev (2004) <doi:10.1007/s00190-003-0361-2>
-tidal catalogs.")
-    (license license:gpl3)))
 
 (define-public r-earth
   (package

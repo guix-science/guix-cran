@@ -189,13 +189,13 @@ access signature (SAS).  Part of the @code{AzureR} family of packages.")
 (define-public r-azurermr
   (package
     (name "r-azurermr")
-    (version "2.4.3")
+    (version "2.4.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "AzureRMR" version))
               (sha256
                (base32
-                "076hgxx2d6jf24fhysxk3mnp22ns8i6cqp3mzd64rafl1clqy3l1"))))
+                "09mjc5ibk1g1azskqnrcgfb5bi88aw55g96cyas5vlwgi54xzs70"))))
     (properties `((upstream-name . "AzureRMR")))
     (build-system r-build-system)
     (propagated-inputs (list r-uuid
@@ -1032,6 +1032,29 @@ function.")
 database that stores genomic and transcriptomic data of self-replicating
 computer programs (known as digital organisms) that mutate and evolve within a
 user-defined computational environment.")
+    (license license:expat)))
+
+(define-public r-avesperu
+  (package
+    (name "r-avesperu")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "avesperu" version))
+              (sha256
+               (base32
+                "0m0gl81k96lh7l1k2nrznlsaiz9dal7kl7w12bcjn2376db0rw5v"))))
+    (properties `((upstream-name . "avesperu")))
+    (build-system r-build-system)
+    (home-page "https://github.com/PaulESantos/avesperu")
+    (synopsis "Access to the List of Birds Species of Peru")
+    (description
+     "Allows access to the data found in the species list featured in the renowned
+List of the Birds of Peru Plenge, M. A. (2023)
+<https://sites.google.com/site/boletinunop/checklist>.  This publication stands
+as one of Peru's most comprehensive reviews of bird diversity.  The dataset
+incorporates detailed species accounts and has been meticulously structured for
+effortless utilization within the R environment.")
     (license license:expat)))
 
 (define-public r-averisk
@@ -12644,13 +12667,13 @@ models, helping to select the best model.")
 (define-public r-alone
   (package
     (name "r-alone")
-    (version "0.2")
+    (version "0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "alone" version))
               (sha256
                (base32
-                "1qc3dbpyyc37x5ad2rrn3v5a39f00a0kmkm7xphc0w742zsl5p9y"))))
+                "15ivqnnpn96x2pg83mswagqb0qaymafphc7awzik14vbg7k9pk9j"))))
     (properties `((upstream-name . "alone")))
     (build-system r-build-system)
     (home-page "https://github.com/doehm/alone")
@@ -12747,6 +12770,43 @@ allometric growth.  This procedure is a theoretical generalization of the
 technique used by Thorpe (1975) <doi:10.1111/j.1095-8312.1975.tb00732.x> and
 Thorpe (1976) <doi:10.1111/j.1469-185X.1976.tb01063.x>.")
     (license license:gpl3+)))
+
+(define-public r-allometric
+  (package
+    (name "r-allometric")
+    (version "1.4.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "allometric" version))
+              (sha256
+               (base32
+                "04d1k0vnkc13i0d4b3id15nnxflvmfp0fdmrf16lcf0przx4nwz7"))))
+    (properties `((upstream-name . "allometric")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs
+                             r-units
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-refmanager
+                             r-purrr
+                             r-progress
+                             r-openssl
+                             r-magrittr
+                             r-isocodes
+                             r-gh
+                             r-dplyr
+                             r-curl))
+    (home-page "https://cran.r-project.org/package=allometric")
+    (synopsis "Structured Allometric Models for Trees")
+    (description
+     "Access allometric models used in forest resource analysis, such as volume
+equations, taper equations, biomass models, among many others.  Users are able
+to efficiently find and select allometric models suitable for their project area
+and use them in analysis.  Additionally, allometric provides a structured
+framework for adding new models to an open-source models repository.")
+    (license license:expat)))
 
 (define-public r-allmt
   (package
@@ -15553,13 +15613,13 @@ trimmed mean\" (Powell et al. (2022) <doi:10.1037/dec0000191>).")
 (define-public r-aggtrees
   (package
     (name "r-aggtrees")
-    (version "2.0.1")
+    (version "2.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "aggTrees" version))
               (sha256
                (base32
-                "02yk1w8j12s5v4zb6js9n45p1vfanm3ham6f8b3h4qcj7rvf94h5"))))
+                "15dz96g8vyyijbv7nm9wwzwwsm0kzv8mwhrirnm14219cx4z2r76"))))
     (properties `((upstream-name . "aggTrees")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -15576,12 +15636,12 @@ trimmed mean\" (Powell et al. (2022) <doi:10.1037/dec0000191>).")
     (synopsis "Aggregation Trees")
     (description
      "Nonparametric data-driven approach to discovering heterogeneous subgroups in a
-selection-on-observables framework.  Aggregation trees allow researchers to
-assess whether there is relevant heterogeneity in treatment effects.  The
-approach generates a sequence of optimal groupings, one for each level of
-granularity.  For each grouping, we obtain point estimation and inference about
-the Group Average Treatment Effects.  Please reference the use as Di Francesco
-(2022) <doi:10.2139/ssrn.4304256>.")
+selection-on-observables framework. @code{aggTrees} allows researchers to assess
+whether there exists relevant heterogeneity in treatment effects by generating a
+sequence of optimal groupings, one for each level of granularity.  For each
+grouping, we obtain point estimation and inference about the Group Average
+Treatment Effects.  Please reference the use as Di Francesco (2022)
+<doi:10.2139/ssrn.4304256>.")
     (license license:expat)))
 
 (define-public r-aggregater
@@ -19544,13 +19604,13 @@ for screen reader users.")
 (define-public r-accessibility
   (package
     (name "r-accessibility")
-    (version "1.1.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "accessibility" version))
               (sha256
                (base32
-                "1hnmxzzzfpkg76a1r927bf865bl49z4sfq3gbcxifc9nkf4rffym"))))
+                "1p0xc5smz0ja1q29ysbswirdakwq6cgda194aff1cjm62kfj81bz"))))
     (properties `((upstream-name . "accessibility")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-hmisc r-data-table r-checkmate))
@@ -19834,13 +19894,13 @@ original MATLAB routine proposed in Wang (2012) <doi:10.1214/12-BA729>.")
 (define-public r-abess
   (package
     (name "r-abess")
-    (version "0.4.7")
+    (version "0.4.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "abess" version))
               (sha256
                (base32
-                "0qx68hb83kl72w9j9rq3q0ig0x38sjd5hw0kw02sfqk2rx91ygyx"))))
+                "02261lda38931n3rgfm67ml85618wcysvl3hvr4yg9rc5y26gbfs"))))
     (properties `((upstream-name . "abess")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-matrix r-mass))

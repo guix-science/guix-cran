@@ -2743,13 +2743,13 @@ estimation.  See Saulnier et al, 2021 <@code{arXiv:2110.02612>}.")
 (define-public r-jlmerclusterperm
   (package
     (name "r-jlmerclusterperm")
-    (version "1.0.5")
+    (version "1.0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jlmerclusterperm" version))
               (sha256
                (base32
-                "1g3mwfdw0pgnj4n3myjwvg2jrzyzbs7c008qm7npw4ys7ckmxzsn"))))
+                "07kihrzjilqwig6sj93hd9gjhafkns93ag9w7ma6dxwvjq45bplb"))))
     (properties `((upstream-name . "jlmerclusterperm")))
     (build-system r-build-system)
     (inputs (list julia))
@@ -4066,13 +4066,13 @@ for binary data.")
 (define-public r-jab-adverse-reactions
   (package
     (name "r-jab-adverse-reactions")
-    (version "1.0.1")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jab.adverse.reactions" version))
               (sha256
                (base32
-                "0z7i6ni1bhih5yxwng1xxf8cgg3bb1il3p32rp5vfz2hfdm68vag"))))
+                "18rfaiv2w7lvd5psj6qkyfdc363y3xfrrg5fhmcv4s4n0cj8kbsv"))))
     (properties `((upstream-name . "jab.adverse.reactions")))
     (build-system r-build-system)
     (home-page "https://gitlab.com/iembry/jab.adverse.reactions")
@@ -4088,8 +4088,7 @@ information about vaccination$/immunization$ hazards, visit
 <https://www.ecoccs.com/healing.html#vaccines>,
 <https://www.questionuniverse.com/rethink_current_crisis.html#cov_vaccin>, and
 <https://www.questionuniverse.com/vaccination.html>.")
-    (license (list license:gpl3+
-                   (license:fsdg-compatible "file://LICENSE")))))
+    (license license:gpl3+)))
 
 (define-public r-jaatha
   (package

@@ -2420,13 +2420,13 @@ models, Technical report.")
 (define-public r-fude
   (package
     (name "r-fude")
-    (version "0.3.3")
+    (version "0.3.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fude" version))
               (sha256
                (base32
-                "1amxr98c2cq5qrz4xml3g896aja89zkayy15p7p4z97hz0iixjig"))))
+                "0pc0pwcndgdkswivlwzna9m7h7438p44mbfr66p08lxslbj1rrh1"))))
     (properties `((upstream-name . "fude")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -3784,13 +3784,13 @@ downloaded from the authors website.")
 (define-public r-frf2
   (package
     (name "r-frf2")
-    (version "2.3-2")
+    (version "2.3-3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FrF2" version))
               (sha256
                (base32
-                "161c6bvwd7gip3pwx0mk09k3q703zkw0320qx64w7pb1v2i6is0g"))))
+                "11ljgqxan5afsczihvwd14p4ygk8z7hif753ka5wxpla8wp92xxx"))))
     (properties `((upstream-name . "FrF2")))
     (build-system r-build-system)
     (propagated-inputs (list r-sfsmisc r-scatterplot3d r-igraph r-doe-base))
@@ -5226,13 +5226,13 @@ more information about floristic quality assessment and the associated database.
 (define-public r-fqadata
   (package
     (name "r-fqadata")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fqadata" version))
               (sha256
                (base32
-                "03ar7azb342qwf6rqz99wvip496clm8w6d95rf0m6c53yqjgniz2"))))
+                "1nxqq33j396wa12n3qwfrsh9l2g2pn2f9d25vfzihh3xnsbk0cv5"))))
     (properties `((upstream-name . "fqadata")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=fqadata")
@@ -17013,13 +17013,13 @@ performing wavelet decomposition of time series.  See Quilty and Adamowski
 (define-public r-fastverse
   (package
     (name "r-fastverse")
-    (version "0.3.1")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fastverse" version))
               (sha256
                (base32
-                "1i2gvvzcbgvg0xpakbyamkrf0f9kanrgzyna2nwy3wn4js8c5jhh"))))
+                "10k749zff9nhrwgyvc1fvpp34mncc7958z35y2v5sb08my2x26r0"))))
     (properties `((upstream-name . "fastverse")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-kit r-data-table r-collapse))
@@ -17156,6 +17156,30 @@ Mikolov, 2017, <doi:10.18653/v1/e17-2068>; (iii) \"@code{FastText.zip}:
 Compressing text classification models\", Armand Joulin, Edouard Grave, Piotr
 Bojanowski, Matthijs Douze, Herve Jegou, Tomas Mikolov, 2016,
 <@code{arXiv:1612.03651>}.")
+    (license license:expat)))
+
+(define-public r-faststepgraph
+  (package
+    (name "r-faststepgraph")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "FastStepGraph" version))
+              (sha256
+               (base32
+                "0b1mf7dykcgzy246jkj8qm146lk4ni5dkgf9i950bc4c2y3kaipf"))))
+    (properties `((upstream-name . "FastStepGraph")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mass r-foreach r-doparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/juancolonna/FastStepGraph")
+    (synopsis
+     "Fast Step Graph: A Fast Sparse Precision Matrix Estimation Algorithm")
+    (description
+     "It implements an improved and computationally faster version of the original
+Stepwise Gaussian Graphical Algorithm for estimating the Omega precision matrix
+from high-dimensional data.  Zamar, R., Ruiz, M., Lafit, G. and Nogales, J.
+(2021) <doi:10.52933/jdssv.v1i2.11>.")
     (license license:expat)))
 
 (define-public r-fastsom
@@ -18179,13 +18203,13 @@ and discussed in the preprint available from Researchgate by Simone R. (2020)
 (define-public r-fastcpd
   (package
     (name "r-fastcpd")
-    (version "0.6.2")
+    (version "0.7.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fastcpd" version))
               (sha256
                (base32
-                "089n7qysw05yd09aqwqn5lkz81zg4a83mr01wypr4xqxy65avrmb"))))
+                "071xn7347hggmzdhjga91a2i2dx4mky5802k5i78wvk84gl85w0s"))))
     (properties `((upstream-name . "fastcpd")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat
@@ -19640,37 +19664,6 @@ extension of the methodology proposed by \"Santos & Heras (2020)
 created for numerous tools common in the field in order to make the metadata
 more Findable, Accessible, Interoperable, and Reproducible.")
     (license license:bsd-3)))
-
-(define-public r-fairadapt
-  (package
-    (name "r-fairadapt")
-    (version "0.2.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "fairadapt" version))
-              (sha256
-               (base32
-                "1ricsfd8psh4kh13hrv8xhdwlv88ca1axh9b2qafz8nqsm5q8ana"))))
-    (properties `((upstream-name . "fairadapt")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-scales
-                             r-ranger
-                             r-quantreg
-                             r-qrnn
-                             r-igraph
-                             r-ggplot2
-                             r-cowplot
-                             r-assertthat))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/dplecko/fairadapt")
-    (synopsis "Fair Data Adaptation with Quantile Preservation")
-    (description
-     "An implementation of the fair data adaptation with quantile preservation
-described in Plecko & Meinshausen (2019) <@code{arXiv:1911.06685>}.  The
-adaptation procedure uses the specified causal graph to pre-process the given
-training and testing data in such a way to remove the bias caused by the
-protected attribute.  The procedure uses tree ensembles for quantile regression.")
-    (license license:gpl3+)))
 
 (define-public r-fahrmeir
   (package

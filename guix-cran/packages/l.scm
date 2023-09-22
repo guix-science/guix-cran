@@ -11177,6 +11177,29 @@ movement potential within a landscape (Lewis, 2021)
 <doi:10.1007/s10816-021-09522-w>.")
     (license license:gpl3)))
 
+(define-public r-learnsl
+  (package
+    (name "r-learnsl")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "LearnSL" version))
+              (sha256
+               (base32
+                "0iqw9hj5066yj4ij7v1dfdvn0q3y4wjwwznhilgsyvlbr0lj642b"))))
+    (properties `((upstream-name . "LearnSL")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-cli))
+    (home-page "https://github.com/ComiSeng/LearnSL")
+    (synopsis
+     "Learn Supervised Classification Methods Through Examples and Code")
+    (description
+     "Supervised classification methods, which (if asked) can provide step-by-step
+explanations of the algorithms used, as described in PK Josephine et.  al.,
+(2021) <doi:10.59176/kjcs.v1i1.1259>; and datasets to test them on, which
+highlight the strengths and weaknesses of each technique.")
+    (license license:expat)))
+
 (define-public r-learnrbook
   (package
     (name "r-learnrbook")
@@ -12405,15 +12428,16 @@ topics are implemented.")
 (define-public r-ldats
   (package
     (name "r-ldats")
-    (version "0.2.7")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "LDATS" version))
               (sha256
                (base32
-                "0im5lvhfbxvrkz9yvfg5xibzdlss869rdz5mixr4ric9lj0ixx0g"))))
+                "0qgn20a7n56y6n8bray39jxz79rkq1j1gqhb99ggnad7jfh2l41q"))))
     (properties `((upstream-name . "LDATS")))
     (build-system r-build-system)
+    (inputs (list gsl))
     (propagated-inputs (list r-viridis
                              r-topicmodels
                              r-progress
@@ -12426,7 +12450,7 @@ topics are implemented.")
                              r-digest
                              r-coda))
     (native-inputs (list r-knitr))
-    (home-page "https://weecology.github.io/LDATS")
+    (home-page "https://weecology.github.io/LDATS/")
     (synopsis "Latent Dirichlet Allocation Coupled with Time Series Analyses")
     (description
      "Combines Latent Dirichlet Allocation (LDA) and Bayesian multinomial time series

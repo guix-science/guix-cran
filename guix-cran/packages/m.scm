@@ -820,13 +820,13 @@ ellipse methods see Johnson and Wichern (2007, ISBN:9780131877153).")
 (define-public r-mvquad
   (package
     (name "r-mvquad")
-    (version "1.0-6")
+    (version "1.0-8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mvQuad" version))
               (sha256
                (base32
-                "016477dhjdkqiadc631vzpbp967mn4yli6by3s1k348mlfirwsi3"))))
+                "053qrqmd946y1qi1zn6kag41gxn9wdlp0zffw5ya5yyllxfzgszx"))))
     (properties `((upstream-name . "mvQuad")))
     (build-system r-build-system)
     (propagated-inputs (list r-statmod r-data-table))
@@ -5064,6 +5064,33 @@ publication bias, how severe would internal bias have to be, hypothetically, to
 attenuate the results to the null or by a given amount?")
     (license license:expat)))
 
+(define-public r-multibias
+  (package
+    (name "r-multibias")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "multibias" version))
+              (sha256
+               (base32
+                "0j247sk272k11na20bspv38fz9imkyr25rbhl8mba0xad9k3gim2"))))
+    (properties `((upstream-name . "multibias")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-magrittr r-dplyr))
+    (home-page "https://github.com/pcbrendel/multibias")
+    (synopsis "Simultaneous Multi-Bias Adjustment")
+    (description
+     "Quantify the causal effect of a binary exposure on a binary outcome with
+adjustment for multiple biases.  The functions can simultaneously adjust for any
+combination of uncontrolled confounding, exposure misclassification, and
+selection bias.  The underlying method generalizes the concept of combining
+inverse probability of selection weighting with predictive value weighting.
+Simultaneous multi-bias analysis can be used to enhance the validity and
+transparency of real-world evidence obtained from observational, longitudinal
+studies.  Based on the work from Paul Brendel, Aracelis Torres, Onyebuchi Arah
+(2023) <doi:10.1093/ije/dyad001>.")
+    (license license:expat)))
+
 (define-public r-multibd
   (package
     (name "r-multibd")
@@ -5760,6 +5787,29 @@ Taguchi (T1) method is for the family of T methods.  In addition, the Ta and Tb
 methods, which are the improved versions of the T1 method, are included.")
     (license license:expat)))
 
+(define-public r-mtsta
+  (package
+    (name "r-mtsta")
+    (version "0.0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "mtsta" version))
+              (sha256
+               (base32
+                "1k6q2lwvz39lvznqr48x03c7rdcqyxskkikv4wbvm1aiannmmqlj"))))
+    (properties `((upstream-name . "mtsta")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/PaulESantos/mtsta")
+    (synopsis
+     "Accessing the Red List of Montane Tree Species of the Tropical Andes")
+    (description
+     "Access the Red List of Montane Tree Species of the Tropical Andes Tejedor
+Garavito et al.(2014, ISBN:978-1-905164-60-8).  This package allows users to
+search for globally threatened tree species within the andean montane forests,
+including cloud forests and seasonal (wet) forests above 1500 m a.s.l.")
+    (license license:expat)))
+
 (define-public r-mtsdi
   (package
     (name "r-mtsdi")
@@ -6009,13 +6059,13 @@ DNA Haplogroups.  Based on formulae by Samuels et al.  AJHG, 2006.
 (define-public r-mtest
   (package
     (name "r-mtest")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MTest" version))
               (sha256
                (base32
-                "16h5jg9c3c06fsx0j788vk26cc46ps0ydycrc76bnw8f419bh9dd"))))
+                "0lx9z20q4r5rzn8c96kiiwif6vchyz40mi82xqhyzw4b535c93fb"))))
     (properties `((upstream-name . "MTest")))
     (build-system r-build-system)
     (propagated-inputs (list r-car))
@@ -6348,39 +6398,6 @@ is modeled at the protein level.  Methods exist for normalization, modeling,
 visualization, and export of results.  For a general introduction to MS-based
 thermal profiling, see Savitski et al. (2014) <doi:10.1126/science.1255784>.")
     (license license:gpl3)))
-
-(define-public r-mstest
-  (package
-    (name "r-mstest")
-    (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "MSTest" version))
-              (sha256
-               (base32
-                "0icrpzvgbr84scx44lkg0r3f0x6hppqqikcnr0hpsbg6125ihq5f"))))
-    (properties `((upstream-name . "MSTest")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rlang
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-pso
-                             r-numderiv
-                             r-nloptr
-                             r-lmf
-                             r-gensa
-                             r-ga
-                             r-foreach))
-    (home-page "https://github.com/roga11/MSTest")
-    (synopsis "Hypothesis Testing for Markov Switching Models")
-    (description
-     "Implementation of hypothesis testing procedures described in Hansen (1992)
-<doi:10.1002/jae.3950070506>, Carrasco, Hu, & Ploberger (2014)
-<doi:10.3982/ECTA8609>, Dufour & Luger (2017)
-<doi:10.1080/07474938.2017.1307548>, and Rodriguez Rondon & Dufour (2022)
-<https://grodriguezrondon.com/research/> that can be used to identify the number
-of regimes in Markov switching models.")
-    (license license:gpl3+)))
 
 (define-public r-mstem
   (package
@@ -9628,6 +9645,28 @@ Mantel correlograms.")
 equation models fit in Mplus', a stand-alone program developed by Muthen and
 Muthen.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-mplusparallel-automation
+  (package
+    (name "r-mplusparallel-automation")
+    (version "0.0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "mplusParallel.automation" version))
+              (sha256
+               (base32
+                "012zbd09vqln1xb8lj6akiv1nyhiayiwiwbk8q70yv1mfpj5jgpm"))))
+    (properties `((upstream-name . "mplusParallel.automation")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mplusautomation r-future r-furrr r-dplyr))
+    (home-page "https://cran.r-project.org/package=mplusParallel.automation")
+    (synopsis "Parallel Processing Automation for 'Mplus'")
+    (description
+     "Offers automation tools to parallelize Mplus operations when using R for data
+generation.  It facilitates streamlined integration between Mplus and R',
+allowing users to run and manage multiple Mplus models simultaneously and
+efficiently in R'.")
+    (license license:gpl3)))
 
 (define-public r-mplusautomation
   (package
@@ -13527,41 +13566,6 @@ transmission heterogeneity (Lloyd-Smith et al. (2005)
 number (Zhao et al. (2022) <doi:10.1371/journal.pcbi.1010281>).")
     (license license:gpl3)))
 
-(define-public r-modelplotr
-  (package
-    (name "r-modelplotr")
-    (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "modelplotr" version))
-              (sha256
-               (base32
-                "0i1ssfcyl97zaxc9khdngrmsq9ydrmgv2nd7c6kc6i9z93jbkk4k"))))
-    (properties `((upstream-name . "modelplotr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-scales
-                             r-rlang
-                             r-rcolorbrewer
-                             r-magrittr
-                             r-gridextra
-                             r-ggplot2
-                             r-ggfittext
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/jurrr/modelplotr")
-    (synopsis
-     "Plots to Evaluate the Business Performance of Predictive Models")
-    (description
-     "Plots to assess the quality of predictive models from a business perspective.
-Using these plots, it can be shown how implementation of the model will impact
-business targets like response on a campaign or return on investment.  Different
-scopes can be selected: compare models, compare datasets or compare target class
-values and various plot customization and highlighting options are available.
-targets like response on a campaign.  Different scopes can be selected: compare
-models, compare datasets or compare target class values and various plot
-customization and highlighting options are available.")
-    (license license:gpl3)))
-
 (define-public r-modelobj
   (package
     (name "r-modelobj")
@@ -13884,6 +13888,29 @@ lm.predict() predictions, assuming numeric types are represented in the database
 using sufficient precision.  Currently log and identity link functions are
 supported.")
     (license license:expat)))
+
+(define-public r-modelbpp
+  (package
+    (name "r-modelbpp")
+    (version "0.1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "modelbpp" version))
+              (sha256
+               (base32
+                "17hfy7g6ydj28fqs4s523px8cvnnp8pc80b4z9qlilg9jxq3r9xf"))))
+    (properties `((upstream-name . "modelbpp")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-pbapply r-lavaan r-igraph))
+    (native-inputs (list r-knitr))
+    (home-page "https://sfcheung.github.io/modelbpp/")
+    (synopsis "Model BIC Posterior Probability")
+    (description
+     "Fits the neighboring models of a fitted structural equation model and assesses
+the model uncertainty of the fitted model based on BIC posterior probabilities,
+using the method presented in Wu, Cheung, and Leung (2020)
+<doi:10.1080/00273171.2019.1574546>.")
+    (license license:gpl3+)))
 
 (define-public r-modelbased
   (package
@@ -17353,28 +17380,6 @@ marginal predictive likelihood (MPL) and the mean squared prediction error
 (MSPE) are provided for model selection.")
     (license license:gpl2)))
 
-(define-public r-mlmmm
-  (package
-    (name "r-mlmmm")
-    (version "0.3-1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "mlmmm" version))
-              (sha256
-               (base32
-                "1m5ziiqs3ll1xjm1yf7x4sdc910jypn3kjnbadf95xxkvqmfrsqq"))))
-    (properties `((upstream-name . "mlmmm")))
-    (build-system r-build-system)
-    (native-inputs (list gfortran))
-    (home-page "http://www.albany.edu/~ry491374")
-    (synopsis
-     "ML estimation under multivariate linear mixed models with missing values")
-    (description
-     "Computational strategies for multivariate linear mixed-effects models with
-missing values, Schafer and Yucel (2002), Journal of Computational and Graphical
-Statistics, 11, 421-442.")
-    (license license:gpl2)))
-
 (define-public r-mlmm-gwas
   (package
     (name "r-mlmm-gwas")
@@ -18942,13 +18947,13 @@ several years of advances since @code{MixSIR} and SIAR'.")
 (define-public r-mixsemirob
   (package
     (name "r-mixsemirob")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MixSemiRob" version))
               (sha256
                (base32
-                "07dj2j1cxyzr8dpxwzh2mqnsyz1l4zw4z51yfvsv4zy7x2k25164"))))
+                "0rvpwb4skd5s0f7qnm2mjrhfz4ppa6inqyfz970mpycihig3vilc"))))
     (properties `((upstream-name . "MixSemiRob")))
     (build-system r-build-system)
     (propagated-inputs (list r-ucminf
@@ -18963,41 +18968,13 @@ several years of advances since @code{MixSIR} and SIAR'.")
     (home-page "https://cran.r-project.org/package=MixSemiRob")
     (synopsis "Mixture Models: Parametric, Semiparametric, and Robust")
     (description
-     "Various functions to estimate parametric (Gaussian, T - distribution, Laplace,
-Pareto, log-concave distribution and etc.), non-parametric mixture models;
-Perform hypothesis testing, root selection and provide treatment for label
-switching for mixture models; Estimate parameters for mixture of regressions,
-proportion varying mixture of regressions and robust mixture of regressions.
-The functions and their corresponding reference paper are as follows: KDEEM: Ma,
-Y., Wang, S., Xu, L. et al.(2021)<doi:10.1007/s11749-020-00725-z>;
-KDEEM.H/KDEEM.LSE: David R. Hunter & Derek S. Young
-(2012)<doi:10.1080/10485252.2011.608430>; RM2_mixreg: Yu C, Yao W, Chen
-K.(2017)<doi:10.1002/cjs.11310>; mixlinrb_bi: Xiuqin Bai, Weixin Yao, John E.
-Boyer(2012)<doi:10.1016/j.csda.2012.01.016>; trimmix: N. Neykov, P. Filzmoser,
-R. Dimova, P. Neytchev,(2007)<doi:10.1016/j.csda.2006.12.024>; mixlint: Weixin
-Yao, Yan Wei, Chun Yu(2014)<doi:10.1016/j.csda.2013.07.019>; mixreg_Lap: Weixing
-Song, Weixin Yao, Yanru Xing(2014)<doi:10.1016/j.csda.2013.06.022>; mixreg_CWRM:
-Garcia-Escudero, L.A., Gordaliza, A., Greselin, F. et al.(2017)
-<doi:10.1007/s11222-021-10061-3>; mphd:Jingjing Wu, Weixin Yao, Sijia Xiang
-(2017)<doi:10.1080/00949655.2017.1318136>; EMlogconc/E@code{MlogconcHD}: George
-T. Chang, Guenther
-Walther(2007)<doi:10.1016/j.csda.2007.01.008>;Hypothesis_test: Supawadee
-Wichitchan, Weixin Yao, Guangren Yang(2019)<doi:10.1016/j.csda.2018.05.005>;
-mixscale: Sijia Xiang, Weixin Yao, Byungtae
-Seo(2016)<doi:10.1016/j.csda.2016.06.001>; sim/simonestep:Xiang, S., Yao,
-W.(2020)<doi:10.1007/s11634-020-00392-w>; paretomix1: Huang, M., Yao, W., Wang,
-S., and Chen, Y.
-(2018)<doi:10.1111/sjos.12316>;complhfrequency/distlatfrequency: Weixin Yao
-(2015)<doi:10.1080/00949655.2013.859259>; @code{MixReg_Pvary}: Mian Huang and
-Weixin Yao (2012)<doi:10.1080/01621459.2012.682541>; pfmix: Weixin
-Yao(2010)<doi:10.1016/j.jspi.2010.02.004>; backfitlocal/backfitglobal: Xiang,
-S., Yao, W.(2018)<doi:10.1007/s10463-016-0584-7>;mixbspline: Dziak, J. J., Li,
-R., Tan, X., Shiffman, S., & Shiyko, M. P. (2015)<doi:10.1037/met0000048>;
-root_selection: Supawadee Wichitchan, Weixin Yao & Guangren Yang
-(2019)<doi:10.1080/03610926.2018.1481972>;
-mixbino/mixbinosemi/mixbinosemionestep/mixbinosemifull:J. Cao and W.
-Yao(2012)<https://www3.stat.sinica.edu.tw/sstest/oldpdf/A22n12.pdf>.")
-    (license license:expat)))
+     "Various functions are provided to estimate parametric mixture models (with
+Gaussian, t, Laplace, log-concave distributions, etc.) and non-parametric
+mixture models.  The package performs hypothesis tests and addresses label
+switching issues in mixture models.  The package also allows for parameter
+estimation in mixture of regressions, proportion-varying mixture of regressions,
+and robust mixture of regressions.")
+    (license license:gpl2+)))
 
 (define-public r-mixsal
   (package
@@ -21866,6 +21843,27 @@ to the @code{minMSE-method} as proposed by Schneider and Schlather (2017)
      "Randomization schedules are generated in the schemes with k (k>=2) treatment
 groups and any allocation ratios by minimization algorithms.")
     (license license:gpl2+)))
+
+(define-public r-minipch
+  (package
+    (name "r-minipch")
+    (version "0.2.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "miniPCH" version))
+              (sha256
+               (base32
+                "1nji8w5wifdhjnvlpxirj83lgh10z6xvsmb9lfk7yjadw55bcqg3"))))
+    (properties `((upstream-name . "miniPCH")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp r-checkmate))
+    (home-page "https://simnph.github.io/miniPCH/")
+    (synopsis "Survival Distributions with Piece-Wise Constant Hazards")
+    (description
+     "Density, distribution function, ...  hazard function, cumulative hazard
+function, survival function for survival distributions with piece-wise constant
+hazards.")
+    (license license:gpl3+)))
 
 (define-public r-minioclient
   (package
@@ -32376,36 +32374,6 @@ The rethinking package requires installing rstan', which is onerous to install,
 while also not adding capabilities to this function.")
     (license license:agpl3+)))
 
-(define-public r-mcr
-  (package
-    (name "r-mcr")
-    (version "1.3.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "mcr" version))
-              (sha256
-               (base32
-                "0lcl8g6s5sq74hpdj4wj9xh3p7nr03h9wnlnib1pmdcs1avlp3za"))))
-    (properties `((upstream-name . "mcr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-robslopes))
-    (native-inputs (list gfortran))
-    (home-page "https://cran.r-project.org/package=mcr")
-    (synopsis "Method Comparison Regression")
-    (description
-     "Regression methods to quantify the relation between two measurement methods are
-provided by this package.  In particular it addresses regression problems with
-errors in both variables and without repeated measurements.  It implements the
-CLSI recommendations (see J. A. Budd et al. (2018,
-<https://clsi.org/standards/products/method-evaluation/documents/ep09/>) for
-analytical method comparison and bias estimation using patient samples.
-Furthermore, algorithms for Theil-Sen and equivariant Passing-Bablok estimators
-are implemented, see F. Dufey (2020, <doi:10.1515/ijb-2019-0157>) and J.
-Raymaekers and F. Dufey (2022, <@code{arXiv:2202:08060>}).  A comprehensive
-overview over the implemented methods and references can be found in the manual
-pages \"mcr-package\" and \"mcreg\".")
-    (license license:gpl3+)))
-
 (define-public r-mcptests
   (package
     (name "r-mcptests")
@@ -34399,16 +34367,16 @@ on practitioners to determine correct stepwise procedures independently.")
 (define-public r-mbhdesign
   (package
     (name "r-mbhdesign")
-    (version "2.2.2")
+    (version "2.3.14")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MBHdesign" version))
               (sha256
                (base32
-                "1z5jg4gb9jkc7cjy0413zj3lszqb28zx39bfmk59lls9d016iaak"))))
+                "06hs38w9g5iqgz1n4xf4p2x677ja1i48pdcd8bqf6vd4n71ld53l"))))
     (properties `((upstream-name . "MBHdesign")))
     (build-system r-build-system)
-    (propagated-inputs (list r-raster
+    (propagated-inputs (list r-terra
                              r-randtoolbox
                              r-mvtnorm
                              r-mgcv
@@ -34419,12 +34387,14 @@ on practitioners to determine correct stepwise procedures independently.")
     (synopsis "Spatial Designs for Ecological and Environmental Surveys")
     (description
      "This package provides spatially survey balanced designs using the quasi-random
-number method described Robinson et al. (2013) <doi:10.1111/biom.12059>.  These
-designs can accommodate, without substantial detrimental effects on spatial
-balance, legacy sites (Foster et al., 2017 <doi:10.1111/2041-210X.12782>), and
-for both point samples and transect samples (Foster et al.  2020,
-<doi:10.1111/2041-210X.13321>).  Additional information about the package use
-itself is given in Foster (2021) <doi:10.1111/2041-210X.13535>.")
+number method described Robinson et al. (2013) <doi:10.1111/biom.12059> and
+adjusted in Robinson et al. (2017) <doi:10.1016/j.spl.2017.05.004>.  Designs
+using MBHdesign can: 1) accommodate, without substantial detrimental effects on
+spatial balance, legacy sites (Foster et al., 2017
+<doi:10.1111/2041-210X.12782>); 2) be based on points or transects (foster et
+al.  2020 <doi:10.1111/2041-210X.13321> and produce clustered samples (Foster et
+al. (in press).  Additional information about the package use itself is given in
+Foster (2021) <doi:10.1111/2041-210X.13535>.")
     (license license:gpl2+)))
 
 (define-public r-mbest
@@ -37233,6 +37203,39 @@ depends on the suggested ctmcd package, that, as May 2023, can be retrieved from
 <https://cran.r-project.org/src/contrib/Archive/ctmcd/ctmcd_1.4.2.tar.gz>.")
     (license license:expat)))
 
+(define-public r-markophylo
+  (package
+    (name "r-markophylo")
+    (version "1.0.9")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "markophylo" version))
+              (sha256
+               (base32
+                "0w6csdvlybfx8azjsrz40mykafgqkl0w23bf2mm2ff5jh6cym66a"))))
+    (properties `((upstream-name . "markophylo")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo
+                             r-rcpp
+                             r-phangorn
+                             r-numderiv
+                             r-geiger
+                             r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=markophylo")
+    (synopsis "Markov Chain Models for Phylogenetic Trees")
+    (description
+     "Allows for fitting of maximum likelihood models using Markov chains on
+phylogenetic trees for analysis of discrete character data.  Examples of such
+discrete character data include restriction sites, gene family presence/absence,
+intron presence/absence, and gene family size data.  Hypothesis-driven user-
+specified substitution rate matrices can be estimated.  Allows for biologically
+realistic models combining constrained substitution rate matrices, site rate
+variation, site partitioning, branch-specific rates, allowing for non-stationary
+prior root probabilities, correcting for sampling bias, etc.  See Dang and
+Golding (2016) <doi:10.1093/bioinformatics/btv541> for more details.")
+    (license license:gpl2+)))
+
 (define-public r-markmyassignment
   (package
     (name "r-markmyassignment")
@@ -38300,13 +38303,13 @@ re-labelling categorical variables.")
 (define-public r-mapmisc
   (package
     (name "r-mapmisc")
-    (version "2.0.0")
+    (version "2.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mapmisc" version))
               (sha256
                (base32
-                "1nmnr95h8jp4g3m6is651qbyjqlf8vl89m5q7p25hpb03pfajvwr"))))
+                "0rj972xsl5jv7pa5q3nnqply0ivrdk7myfdxsw3hhqfsvjc8nk43"))))
     (properties `((upstream-name . "mapmisc")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-geosphere))

@@ -831,13 +831,13 @@ biosphere please see Lynch and Neufeld (2015) <doi:10.1038/nrmicro3400>).")
 (define-public r-ottrpal
   (package
     (name "r-ottrpal")
-    (version "1.1.1")
+    (version "1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ottrpal" version))
               (sha256
                (base32
-                "07nn49h8a7ag4kk7dibh3idhg5sf0xg3qxbczb8d9hvxssia6h8x"))))
+                "03wg6qmkgw7sm8w5q0r1wy7rf8d0m11fmp5dycscnfpd5cipsdf2"))))
     (properties `((upstream-name . "ottrpal")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -849,8 +849,10 @@ biosphere please see Lynch and Neufeld (2015) <doi:10.1038/nrmicro3400>).")
                              r-readr
                              r-r-utils
                              r-purrr
+                             r-openssl
                              r-magrittr
                              r-knitr
+                             r-jsonlite
                              r-httr
                              r-glue
                              r-fs
@@ -10591,28 +10593,6 @@ to see how much of a relationship needs to exist with the unmeasured variable
 before the conclusions change.  This package provides tools for doing a
 sensitivity analysis for regression (linear, logistic, and cox) style models.")
     (license license:gpl2)))
-
-(define-public r-obsmd
-  (package
-    (name "r-obsmd")
-    (version "6.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OBsMD" version))
-              (sha256
-               (base32
-                "0jvvcx2lc39rdnlbhykam6cf94lbci9zc1vshwfhvygblnmjgrzr"))))
-    (properties `((upstream-name . "OBsMD")))
-    (build-system r-build-system)
-    (native-inputs (list gfortran))
-    (home-page "https://cran.r-project.org/package=OBsMD")
-    (synopsis "Objective Bayesian Model Discrimination in Follow-Up Designs")
-    (description
-     "This package implements the objective Bayesian methodology proposed in Consonni
-and Deldossi in order to choose the optimal experiment that better discriminate
-between competing models, see Deldossi and Nai Ruscone (2020)
-<doi:10.18637/jss.v094.i02>.")
-    (license license:gpl2+)))
 
 (define-public r-observer
   (package

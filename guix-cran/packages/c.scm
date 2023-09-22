@@ -6097,13 +6097,13 @@ discrete data with pairwise and unary potentials.")
 (define-public r-crew-cluster
   (package
     (name "r-crew-cluster")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "crew.cluster" version))
               (sha256
                (base32
-                "14fwcx6jgyq6a66zv1m2xc8izlwww8xwdpqhpk4piy938i5dam8r"))))
+                "1dbm26qmpngcjffym6f1zr3c2qnc2lsil44wabx5h7wc0zl8lkfz"))))
     (properties `((upstream-name . "crew.cluster")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-r6 r-lifecycle r-crew))
@@ -8189,13 +8189,13 @@ marginal Cox model, proposed by Wang et al. (under review).")
 (define-public r-coxaipw
   (package
     (name "r-coxaipw")
-    (version "0.0.2")
+    (version "0.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CoxAIPW" version))
               (sha256
                (base32
-                "1m7af9x0wjrmfaxz1v3aalkgyg13mvijjp0bns7npvpk07drd6hr"))))
+                "1cdky1xx79dda48wkpwavyzn0ibqydr005cplbmam3dnsvd1byka"))))
     (properties `((upstream-name . "CoxAIPW")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -8218,8 +8218,13 @@ A and additional baseline covariates Z, while the propensity score model only
 depends on Z. With the help of cross-fitting techniques, achieves the
 rate-doubly robust property that allows the use of most machine learning or
 non-parametric methods for all 3 working models, which are not permitted in
-classic inverse probability weighting or doubly robust estimators.  Reference:
-Luo & Xu (2022) <doi:10.48550/@code{arXiv.2206.02296>}; Rava (2021)
+classic inverse probability weighting or doubly robust estimators.  When the
+proportional hazard assumption is violated, @code{CoxAIPW} estimates a causal
+estimated that is a weighted average of the time-varying log hazard ratio.
+Reference: Luo, J. (2023).  Statistical Robustness - Distributed Linear
+Regression, Informative Censoring, Causal Inference, and Non-Proportional
+Hazards [Unpublished doctoral dissertation].  University of California San
+Diego.; Luo & Xu (2022) <doi:10.48550/@code{arXiv.2206.02296>}; Rava (2021)
 <https://escholarship.org/uc/item/8h1846gs>.")
     (license license:gpl3)))
 
@@ -14153,13 +14158,13 @@ the methods are general and useful for terrestrial systems as well.")
 (define-public r-connectwidgets
   (package
     (name "r-connectwidgets")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "connectwidgets" version))
               (sha256
                (base32
-                "1p2sl6689ylx6d6vf0xch8754hnwi53xhjy7ai3wnr72m6ld3a3d"))))
+                "0lgr36699hnjwkjx56akwwnzkl5qm587yhqamxr6a53nh1j3h11y"))))
     (properties `((upstream-name . "connectwidgets")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -18722,13 +18727,13 @@ gradient-matching, generalized profiling and forwards prediction error methods."
 (define-public r-collin
   (package
     (name "r-collin")
-    (version "0.0.3")
+    (version "0.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "collin" version))
               (sha256
                (base32
-                "1j2rx4p8xf9fqrkay2133d8fh255szn290qnj0n93masg8vbv9l5"))))
+                "0dh3k9rh1ykrd5nvp5nh4q7zvv835hx8ydpyml88d90ksy8za90p"))))
     (properties `((upstream-name . "collin")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam r-nlme r-mgcv r-mass r-dlnm))
@@ -25627,13 +25632,13 @@ differential expression; see Simon's book for details on typical problem types."
 (define-public r-clarify
   (package
     (name "r-clarify")
-    (version "0.1.3")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "clarify" version))
               (sha256
                (base32
-                "09mspawbv5nnbh95nkl0val3kd5fd2vgyxkm1an9n45xjpbq3x55"))))
+                "1iyjs0wai41x6w0kv7szr7x5gfs05k2kya7bw4n37g0i8s829isq"))))
     (properties `((upstream-name . "clarify")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -27712,27 +27717,6 @@ are recorded and executed per data chunk, so large files can be processed with
 limited memory using the @code{LaF} package.")
     (license license:gpl2)))
 
-(define-public r-chsharp
-  (package
-    (name "r-chsharp")
-    (version "0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "CHsharp" version))
-              (sha256
-               (base32
-                "19mb5zzi9x4pm2z9jbha5dz4k5f1iqjv31aisyv4qh14k5ysdz2i"))))
-    (properties `((upstream-name . "CHsharp")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-scatterplot3d r-kernsmooth))
-    (native-inputs (list gfortran))
-    (home-page "https://cran.r-project.org/package=CHsharp")
-    (synopsis "Choi and Hall Style Data Sharpening")
-    (description
-     "This package provides functions for use in perturbing data prior to use of
-nonparametric smoothers and clustering.")
-    (license license:gpl3)))
-
 (define-public r-chronosphere
   (package
     (name "r-chronosphere")
@@ -27911,13 +27895,13 @@ headless Chrome web browser.")
 (define-public r-chromer
   (package
     (name "r-chromer")
-    (version "0.5")
+    (version "0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "chromer" version))
               (sha256
                (base32
-                "03qhpb09l7h19h3a00ywgkm7p0naffj1yc5by8al9lpp1agm3anc"))))
+                "1jn5dwl8i1di8hns3kjww6sqyba768j1302w3f43v9965vfr1xnp"))))
     (properties `((upstream-name . "chromer")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-httr r-dplyr))
@@ -27925,7 +27909,7 @@ headless Chrome web browser.")
     (synopsis "Interface to Chromosome Counts Database API")
     (description
      "This package provides a programmatic interface to the Chromosome Counts Database
-(<http://ccdb.tau.ac.il/>), Rice et al. (2014) <doi:10.1111/nph.13191>.  This
+(<https://ccdb.tau.ac.il/>), Rice et al. (2014) <doi:10.1111/nph.13191>.  This
 package is part of the R@code{OpenSci} suite (<https://ropensci.org>).")
     (license license:expat)))
 
@@ -29319,6 +29303,45 @@ Tan (2023) <doi:10.1007/s00248-022-01988-9>.  Processes taxonomic
 classifications in RDP Classifier format or OTU tables in phyloseq-class objects
 from the Bioconductor package phyloseq'.")
     (license license:gpl3)))
+
+(define-public r-chem-databases
+  (package
+    (name "r-chem-databases")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "chem.databases" version))
+              (sha256
+               (base32
+                "1xficpzs0v85irkp9hsfbng4jdvlmmynpjkqj93r1hw702vg325x"))))
+    (properties `((upstream-name . "chem.databases")))
+    (build-system r-build-system)
+    (home-page "https://gitlab.com/iembry/chem.databases")
+    (synopsis "Collection of 3 Chemical Databases from Public Sources")
+    (description
+     "This package contains the Multi-Species Acute Toxicity Database (CAS & SMILES
+columns only) [United States (US) Department of Health and Human Services (DHHS)
+National Institutes of Health (NIH) National Cancer Institute (NCI),
+\"Multi-Species Acute Toxicity Database\",
+<https://cactus.nci.nih.gov/download/acute-toxicity-db/>] combined with the
+Toxic Substances Control Act (TSCA) Inventory [United States Environmental
+Protection Agency (US EPA), \"Toxic Substances Control Act (TSCA) Chemical
+Substance Inventory\",
+<https://www.epa.gov/tsca-inventory/how-access-tsca-inventory} and
+<https://cdxapps.epa.gov/oms-substance-registry-services/substance-list-details/169>]
+and the Agency for Toxic Substances and Disease Registry (ATSDR) Database
+[United States (US) Department of Health and Human Services (DHHS) Centers for
+Disease Control and Prevention (CDC)/Agency for Toxic Substances and Disease
+Registry (ATSDR), \"Agency for Toxic Substances and Disease Registry (ATSDR)
+Database\",
+<https://cdxapps.epa.gov/oms-substance-registry-services/substance-list-details/105>]
+in 2 data sets.  One data set has a focus on the latter 2 databases and one data
+set focuses on the former database.  Also contains the collection of chemical
+data from Wikipedia compiled in the US EPA @code{CompTox} Chemicals Dashboard
+[United States Environmental Protection Agency (US EPA) / Wikimedia Foundation,
+Inc. \"@code{CompTox} Chemicals Dashboard v2.2.1\",
+<https://comptox.epa.gov/dashboard/chemical-lists/WIKIPEDIA>].")
+    (license license:cc0)))
 
 (define-public r-cheese
   (package
@@ -34949,13 +34972,13 @@ numpyro python package.")
 (define-public r-cauphy
   (package
     (name "r-cauphy")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cauphy" version))
               (sha256
                (base32
-                "1lfk0dfy2g5dlnjbr9rnnd9mlqmfp66fl6wgqqlp2fg3r1njbr9b"))))
+                "1bip2waavlk32waiz5q0f13wnzddhjj6ijhnkbk49nxvzi9m3a87"))))
     (properties `((upstream-name . "cauphy")))
     (build-system r-build-system)
     (propagated-inputs (list r-robustbase
@@ -38381,22 +38404,23 @@ especially simple one dimensional examples appears in inst/doc/one.dim/.")
 (define-public r-calibrationcurves
   (package
     (name "r-calibrationcurves")
-    (version "1.0.0")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CalibrationCurves" version))
               (sha256
                (base32
-                "0bhgwbpykj374nbsz62sjhzx2xahm7a5z8cfmg2pkpf713f6qaxb"))))
+                "0h6mnsl5zak7x2gcjja0rbdq87bjr6qqjbaal509f7gzy6jg3ql0"))))
     (properties `((upstream-name . "CalibrationCurves")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survival r-rms r-hmisc r-ggplot2))
-    (home-page "https://cran.r-project.org/package=CalibrationCurves")
+    (propagated-inputs (list r-survival r-rms r-hmisc r-ggplot2 r-bookdown))
+    (native-inputs (list r-knitr))
+    (home-page "https://bavodc.github.io/websiteCalibrationCurves/")
     (synopsis "Calibration Performance")
     (description
      "Plots calibration curves and computes statistics for assessing calibration
-performance.  See Van Calster et al. (2016)
-<doi:10.1016/j.jclinepi.2015.12.005>.")
+performance.  See De Cock Campo (2023) <@code{arXiv:2309.08559>} and Van Calster
+et al. (2016) <doi:10.1016/j.jclinepi.2015.12.005>.")
     (license license:gpl3+)))
 
 (define-public r-calibrationband

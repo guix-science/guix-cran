@@ -10720,13 +10720,13 @@ with maximum likelihood.")
 (define-public r-diseasemapping
   (package
     (name "r-diseasemapping")
-    (version "2.0.1")
+    (version "2.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "diseasemapping" version))
               (sha256
                (base32
-                "10wdbv1b48hr3hayanyxabcxkjnzp89z7hrc8bqvp26f21p3kz0j"))))
+                "0hpf6q754kg1ycjar9vlip7xv57khd83r14s6x0zfh6yc8gwwwfw"))))
     (properties `((upstream-name . "diseasemapping")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra))
@@ -16014,6 +16014,30 @@ Adamek et al. (2020) <@code{arXiv:2007.10952>}.  Also estimates high-dimensional
 local projections by the desparsified lasso, as described in Adamek et al.
 (2022) <@code{arXiv:2209.03218>}.")
     (license license:gpl2+)))
+
+(define-public r-desk
+  (package
+    (name "r-desk")
+    (version "1.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "desk" version))
+              (sha256
+               (base32
+                "0n4csns2bd6larj2pxlp0hqxidlk8nxxdz9b33a61m0prly5d2z5"))))
+    (properties `((upstream-name . "desk")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rstudioapi r-cli))
+    (home-page "https://github.com/OvGU-SH/desk")
+    (synopsis "Didactic Econometrics Starter Kit")
+    (description
+     "Written to help undergraduate as well as graduate students to get started with R
+for basic econometrics without the need to import specific functions and
+datasets from many different sources.  Primarily, the package is meant to
+accompany the German textbook Auer, L.v., Hoffmann, S., Kranz, T. (2023, ISBN:
+978-3-662-68263-0) from which the exercises cover all the topics from the
+textbook Auer, L.v. (2023, ISBN: 978-3-658-42699-6).")
+    (license license:gpl3+)))
 
 (define-public r-desirability2
   (package
@@ -21408,6 +21432,34 @@ Overman's Kd, Marcon and Puech's M).  Relies on spatstat for some core
 calculation.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-dbmodelselect
+  (package
+    (name "r-dbmodelselect")
+    (version "0.2.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "DBModelSelect" version))
+              (sha256
+               (base32
+                "1cbnypvcglbvlxdpr95yd65qfd56fhfx14gd0mr71jkkqhgmj0pk"))))
+    (properties `((upstream-name . "DBModelSelect")))
+    (build-system r-build-system)
+    (home-page "https://github.com/shkoeneman/DBModelSelect")
+    (synopsis "Distribution-Based Model Selection")
+    (description
+     "Perform model selection using distribution and probability-based methods,
+including standardized AIC, BIC, and AICc.  These standardized information
+criteria allow one to perform model selection in a way similar to the prevalent
+\"Rule of 2\" method, but formalize the method to rely on probability theory.  A
+novel goodness-of-fit procedure for assessing linear regression models is also
+available.  This test relies on theoretical properties of the estimated error
+variance for a normal linear regression model, and employs a bootstrap procedure
+to assess the null hypothesis that the fitted model shows no lack of fit.  For
+more information, see Koeneman and Cavanaugh (2023) <@code{arXiv:2309.10614>}.
+Functionality to perform all subsets linear or generalized linear regression is
+also available.")
+    (license license:gpl3)))
+
 (define-public r-dbmc
   (package
     (name "r-dbmc")
@@ -22177,13 +22229,13 @@ one data frame column.")
 (define-public r-datetimeutils
   (package
     (name "r-datetimeutils")
-    (version "0.6-1")
+    (version "0.6-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "datetimeutils" version))
               (sha256
                (base32
-                "0phk1d9vs5whkf0azwz5mn1q4j1crz0yq1fpln9si66bxzn0dzi6"))))
+                "0cw6aii5lr3k4af75ijklvfwgb5h3x0xk5n2kxzpvmdmmg3x97cd"))))
     (properties `((upstream-name . "datetimeutils")))
     (build-system r-build-system)
     (home-page "http://enricoschumann.net/R/packages/datetimeutils/")

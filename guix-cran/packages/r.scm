@@ -1096,6 +1096,28 @@ which aims to digest history files from the popular messenger service
 @code{WhatsApp} in all locales and from all devices.")
     (license license:gpl3)))
 
+(define-public r-rwgraph
+  (package
+    (name "r-rwgraph")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "RWgraph" version))
+              (sha256
+               (base32
+                "0hjwfpx90ixmxxhyd19bdkaljhrjrm4vv6fq40sddr4hwpsmlyky"))))
+    (properties `((upstream-name . "RWgraph")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-igraph))
+    (home-page "https://cran.r-project.org/package=RWgraph")
+    (synopsis "Random Walks on Graphs Representing a Transactional Network")
+    (description
+     "Random walk functions to extract new variables based on clients transactional
+behaviour.  For more details, see Eddin et al. (2021)
+<@code{arXiv:2112.07508v3>} and Oliveira et al. (2021)
+<@code{arXiv:2102.05373v2>}.")
+    (license license:gpl2+)))
+
 (define-public r-rwfec
   (package
     (name "r-rwfec")
@@ -2638,13 +2660,13 @@ This package fixes incorrect annotations in the original data sets.")
 (define-public r-rugarch
   (package
     (name "r-rugarch")
-    (version "1.4-9")
+    (version "1.5-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rugarch" version))
               (sha256
                (base32
-                "01gayzfslq03dhr2c282fr3rkywb0zhppvls56zh4ljv8gi1zh8g"))))
+                "07nyfwaqqlizg0cawgiv8wdj7qr36pgi0z1mk9lambzb0w453zlz"))))
     (properties `((upstream-name . "rugarch")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -2655,6 +2677,7 @@ This package fixes incorrect annotations in the original data sets.")
                              r-rcpparmadillo
                              r-rcpp
                              r-numderiv
+                             r-nloptr
                              r-ks
                              r-chron))
     (native-inputs (list gfortran))
@@ -6105,13 +6128,13 @@ Simonsohn (2015) <doi:10.1177/0956797614567341>.")
 (define-public r-rsm
   (package
     (name "r-rsm")
-    (version "2.10.3")
+    (version "2.10.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rsm" version))
               (sha256
                (base32
-                "1dcjsn3wa7rqdpixh37vjgk3z5siwlyn70qffp49m3awn258hwpg"))))
+                "1bh2kp0j10zsrkhv9ylghbi9cyrj4q6crbngv9pk0kkby2r4am2h"))))
     (properties `((upstream-name . "rsm")))
     (build-system r-build-system)
     (propagated-inputs (list r-estimability))
@@ -10458,41 +10481,6 @@ generated for the analysis of the precision agriculture experiment during the
 entire vegetative period of the crop.")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-rpadrino
-  (package
-    (name "r-rpadrino")
-    (version "0.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Rpadrino" version))
-              (sha256
-               (base32
-                "09lg0xvibg9x4nc6pwywkcfay78dg68hva7cbwm7f9s5x46v9v13"))))
-    (properties `((upstream-name . "Rpadrino")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-truncdist
-                             r-rmarkdown
-                             r-rlang
-                             r-purrr
-                             r-mvtnorm
-                             r-magrittr
-                             r-ipmr
-                             r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/padrinoDB/Rpadrino")
-    (synopsis "Interact with the 'PADRINO' IPM Database")
-    (description
-     "PADRINO houses textual representations of Integral Projection Models which can
-be converted from their table format into full kernels to reproduce or extend an
-already published analysis.  Rpadrino is an R interface to this database.  For
-more information on Integral Projection Models, see Easterling et al. (2000)
-<doi:10.1890/0012-9658(2000)081[0694:SSSAAN]2.0.CO;2>, Merow et al. (2013)
-<doi:10.1111/2041-210X.12146>, Rees et al. (2014) <doi:10.1111/1365-2656.12178>,
-and Metcalf et al. (2015) <doi:10.1111/2041-210X.12405>.  See Levin et al.
-(2021) for more information on ipmr', the engine that powers model
-reconstruction <doi:10.1111/2041-210X.13683>.")
-    (license license:gpl3)))
-
 (define-public r-rpact
   (package
     (name "r-rpact")
@@ -11815,13 +11803,13 @@ brings the results into the R environment.  R on FHIR is based on the
 (define-public r-romic
   (package
     (name "r-romic")
-    (version "1.1.1")
+    (version "1.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "romic" version))
               (sha256
                (base32
-                "0vqkizgk7dii5vdcmwmaj1i911xywqqj37qz34zi8phjg4hgy473"))))
+                "0gaiysrg6f0xriphkbkmxvwrp3hk3spg26wlprw7lmi72k81mmaj"))))
     (properties `((upstream-name . "romic")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -11835,6 +11823,7 @@ brings the results into the R environment.  R on FHIR is based on the
                              r-glue
                              r-ggplot2
                              r-dplyr
+                             r-cli
                              r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=romic")
@@ -14257,13 +14246,13 @@ and producing RVE-based forest plots.")
 (define-public r-robtt
   (package
     (name "r-robtt")
-    (version "1.2.0")
+    (version "1.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RoBTT" version))
               (sha256
                (base32
-                "0459sz6wnzf6jz07ib4bkyj4dzvzcp67bxfs8blsanrfvzgp5nvr"))))
+                "1c97cvbqrf5q5axycxsywqg7x198nxrs4xrqy9lh2isips3das6g"))))
     (properties `((upstream-name . "RoBTT")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -16010,13 +15999,13 @@ a focus on analytical laboratory data.")
 (define-public r-rngsetseed
   (package
     (name "r-rngsetseed")
-    (version "0.3-2")
+    (version "0.3-3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rngSetSeed" version))
               (sha256
                (base32
-                "00mqjjkhbnvxqkf1kz16gipsf98q62vmhx9v8140qs7c4ljbhc3a"))))
+                "1ymhrfv83nr2mkqncbi7k8h43xxz53r50vp215hakh093n5im71k"))))
     (properties `((upstream-name . "rngSetSeed")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=rngSetSeed")
@@ -18329,15 +18318,16 @@ dispersions.")
 (define-public r-rmass2
   (package
     (name "r-rmass2")
-    (version "0.0.0.1")
+    (version "0.0.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rmass2" version))
               (sha256
                (base32
-                "0knjg6lzzdihzi8gry54cp76mqha1w7g15ad6kr5vw8nvfff54w6"))))
+                "0bbjqna65ldxv3wjidzv89fnsxm939scfsiba4pi54saxa7d9vqc"))))
     (properties `((upstream-name . "rmass2")))
     (build-system r-build-system)
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=rmass2")
     (synopsis
      "Repeated Measures with Attrition: Sample Sizes and Power Levels for 2 Groups")
@@ -24899,34 +24889,6 @@ and source type maps are included for statistical analysis of moment tensors.")
      "R access to the FOAAS (F...  Off As A Service) web service is provided.")
     (license license:gpl2+)))
 
-(define-public r-rfmtool
-  (package
-    (name "r-rfmtool")
-    (version "4.1.10")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Rfmtool" version))
-              (sha256
-               (base32
-                "150y9xbnwhmazfd7az283pkyb02sfzv6y7f6fjwixx4cqv4bjzqf"))))
-    (properties `((upstream-name . "Rfmtool")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=Rfmtool")
-    (synopsis "Fuzzy Measure Tools")
-    (description
-     "Various tools for handling fuzzy measures, calculating Shapley value and
-interaction index, Choquet and Sugeno integrals, as well as fitting fuzzy
-measures to empirical data are provided.  Construction of fuzzy measures from
-empirical data is done by solving a linear programming problem by using lpsolve
-package, whose source in C adapted to the R environment is included.  The
-description of the basic theory of fuzzy measures is in the manual in the Doc
-folder in this package.  Please refer to the following: [1]
-<https://personal-sites.deakin.edu.au/~gleb/fmtools.html> [2] G. Beliakov, H.
-Bustince, T. Calvo, A Practical Guide to Averaging', Springer, (2016, ISBN:
-978-3-319-24753-3). [3] G. Beliakov, S. James, J-Z. Wu, Discrete Fuzzy
-Measures', Springer, (2020, ISBN: 978-3-030-15305-2).")
-    (license license:lgpl3)))
-
 (define-public r-rfm
   (package
     (name "r-rfm")
@@ -25334,6 +25296,37 @@ class discovery may be jointly performed.  For references, please see Tao Shi &
 Steve Horvath (2006) <doi:10.1198/106186006X94072> & Monti et al (2003)
 <doi:10.1023/A:1023949509487> .")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-rfcca
+  (package
+    (name "r-rfcca")
+    (version "1.0.11")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "RFCCA" version))
+              (sha256
+               (base32
+                "1l0igj4wxajq2712ia5rc4l11xqpdg32nx31h1d9dpnab31914wc"))))
+    (properties `((upstream-name . "RFCCA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-pma r-cca))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/calakus/RFCCA")
+    (synopsis "Random Forest with Canonical Correlation Analysis")
+    (description
+     "Random Forest with Canonical Correlation Analysis (RFCCA) is a random forest
+method for estimating the canonical correlations between two sets of variables
+depending on the subject-related covariates.  The trees are built with a
+splitting rule specifically designed to partition the data to maximize the
+canonical correlation heterogeneity between child nodes.  The method is
+described in Alakus et al. (2021) <doi:10.1093/bioinformatics/btab158>.  RFCCA
+uses @code{randomForestSRC} package (Ishwaran and Kogalur, 2020) by freezing at
+the version 2.9.3.  The custom splitting rule feature is utilised to apply the
+proposed splitting rule.  LAPACK and BLAS libraries are used for matrix
+decompositions.  The âRFCCAâ package includes the header files
+âlapacke.hâ and âcblas.hâ from the LAPACK and BLAS libraries.  The
+LAPACK library is licensed under modified BSD license.")
+    (license license:gpl3+)))
 
 (define-public r-rfast2
   (package
@@ -26456,13 +26449,13 @@ large datasets.")
 (define-public r-restatapi
   (package
     (name "r-restatapi")
-    (version "0.21.2")
+    (version "0.22.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "restatapi" version))
               (sha256
                (base32
-                "0358vmr9zb5q35wrxvr2022vl6w3i4dvi9nkj4lmzymwvib63w2s"))))
+                "1bd9aggyps8352l01g9jpnvmqqw7inf3zy3mh4l99i3d8s9kdid4"))))
     (properties `((upstream-name . "restatapi")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-rjson r-data-table))
@@ -26746,13 +26739,13 @@ their inclusion in the statistical models.")
 (define-public r-reslife
   (package
     (name "r-reslife")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "reslife" version))
               (sha256
                (base32
-                "1yvv6zczw5j3j6qd8km3ln9i7rvnw3d4wvp52zv2yj7gigyxp45b"))))
+                "0k9a8g9iv3vspcai7z00755l9d7nn5753k3ysd0pm3blsmyq2zpk"))))
     (properties `((upstream-name . "reslife")))
     (build-system r-build-system)
     (propagated-inputs (list r-pracma r-gsl r-flexsurv))
@@ -26762,7 +26755,7 @@ their inclusion in the statistical models.")
      "Calculate Mean Residual Life (MRL) and Related Values for Different Distributions")
     (description
      "This package provides a pair of functions for calculating mean residual life
-(MRL), median residual life, and percentile residual life using the outputs of
+(MRL) , median residual life, and percentile residual life using the outputs of
 either the flexsurv package or parameters provided by the user.  Input
 information about the distribution, the given life value, the percentile, and
 the type of residual life, and the function will return your desired values.
@@ -27193,13 +27186,13 @@ Ed.  2011, 2nd Ed.  2018) by Laura Chihara and Tim Hesterberg.")
 (define-public r-rereg
   (package
     (name "r-rereg")
-    (version "1.4.5")
+    (version "1.4.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "reReg" version))
               (sha256
                (base32
-                "00mqj2klbkibrqv1fqyv3m583rg711c7xasdpbn7345846851aq8"))))
+                "1p1rbj88bc5qz909w2q6mnzkscz2djdm8w3lcfj1pzka6699jz8z"))))
     (properties `((upstream-name . "reReg")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -29800,13 +29793,13 @@ for more details.")
 (define-public r-regspec
   (package
     (name "r-regspec")
-    (version "2.6")
+    (version "2.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "regspec" version))
               (sha256
                (base32
-                "1l9k2f47bqsnfvps7p93g15h1i6b1s66h77h9jvyv5kchyh4ci7c"))))
+                "1n70820i5g8rk27vxmfl17d8ad4iz5fda4ba4sbkcd6sc93ycndy"))))
     (properties `((upstream-name . "regspec")))
     (build-system r-build-system)
     (home-page "https://doi.org/10.1111/rssa.12210")
@@ -32197,13 +32190,13 @@ Monopoly Profit Maximization, Cournot's Duopoly, Solow (1956,
 (define-public r-recommenderlab
   (package
     (name "r-recommenderlab")
-    (version "1.0.5")
+    (version "1.0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "recommenderlab" version))
               (sha256
                (base32
-                "0v8d1n8vp97iyasydznymz8g22p522yhmvqndpmwq5yw3v3wr4c4"))))
+                "1dxpdgmv3hfwix1w8lzc0ijcd8myslsqnznr5pbwsrh7wypwqk1h"))))
     (properties `((upstream-name . "recommenderlab")))
     (build-system r-build-system)
     (propagated-inputs (list r-registry
@@ -36448,23 +36441,24 @@ to effectively perform tokenization, POS tagging, and lemmatization.")
 (define-public r-rcppint64
   (package
     (name "r-rcppint64")
-    (version "0.0.2")
+    (version "0.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RcppInt64" version))
               (sha256
                (base32
-                "0jf8csqi811pp3xf3pkzrgjz3s6nd2z1qx3bz66qwwjmsq8y72y3"))))
+                "0drfnsgjaac91g44cjvyrmw1fm75kdz7na8sikglx3k5vq0l1gb9"))))
     (properties `((upstream-name . "RcppInt64")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
     (home-page "https://github.com/eddelbuettel/rcppint64")
     (synopsis
-     "'Rcpp'-Based Helper Functions to Pass 'Int64' Values Between 'R' and 'C++'")
+     "'Rcpp'-Based Helper Functions to Pass 'Int64' and 'nanotime' Values Between 'R' and 'C++'")
     (description
      "Int64 values can be created and accessed via the bit64 package and its integer64
-class which package the int64 representation cleverly into a double'.  This
-packages helps conversions between R and C++ via several helper functions
+class which package the int64 representation cleverly into a double'.  The
+nanotime packages builds on this to support nanosecond-resolution timestamps.
+This packages helps conversions between R and C++ via several helper functions
 provided via a single header file.  A complete example client package is
 included as an illustration.")
     (license license:gpl2+)))
@@ -39976,13 +39970,13 @@ text files and more...")
 (define-public r-rbmi
   (package
     (name "r-rbmi")
-    (version "1.2.3")
+    (version "1.2.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rbmi" version))
               (sha256
                (base32
-                "1l8jnp24a01s0acv529bmxdbxzalh1i9i8h35ikkagvrhbwss8sb"))))
+                "17r54595yjqbm5800rmq467pp2b26h2az3hq409iq6ka6an9f1mg"))))
     (properties `((upstream-name . "rbmi")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -40001,8 +39995,14 @@ text files and more...")
     (home-page "https://insightsengineering.github.io/rbmi/")
     (synopsis "Reference Based Multiple Imputation")
     (description
-     "This package implements reference based multiple imputation allowing for the
-imputation of longitudinal datasets using predefined strategies.")
+     "This package implements standard and reference based multiple imputation methods
+for continuous longitudinal endpoints (Gower-Page et al. (2022)
+<doi:10.21105/joss.04251>).  In particular, this package supports deterministic
+conditional mean imputation and jackknifing as described in Wolbers et al.
+(2022) <doi:10.1002/pst.2234>, Bayesian multiple imputation as described in
+Carpenter et al. (2013) <doi:10.1080/10543406.2013.834911>, and bootstrapped
+maximum likelihood imputation as described in von Hippel and Bartlett (2021)
+<doi: 10.1214/20-STS793>.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-rbmf
@@ -40207,13 +40207,13 @@ periodically.  Feel free to suggest any databases or services you often use.")
 (define-public r-rbioacc
   (package
     (name "r-rbioacc")
-    (version "1.1-0")
+    (version "1.2-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rbioacc" version))
               (sha256
                (base32
-                "0lmkfr0s90hi06llsa0v4jbcx0jd1dx3qq9h6kb67ws0q6h9y028"))))
+                "0a2kbkmj0bv1b4bgqrc4kcvffh7a5bhbqpa8xd9r2ws3kzhgr2lh"))))
     (properties `((upstream-name . "rbioacc")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -40230,7 +40230,7 @@ periodically.  Feel free to suggest any databases or services you often use.")
                              r-ggally
                              r-bh))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/aursiber/rbioacc")
+    (home-page "https://gitlab.com/qonfluens/model/rbioacc")
     (synopsis "Inference and Prediction of ToxicoKinetic (TK) Models")
     (description
      "The MOSAICbioacc application is a turnkey package providing bioaccumulation
@@ -46343,13 +46343,13 @@ tables and listings for reporting and also include R plots.")
 (define-public r-r3pg
   (package
     (name "r-r3pg")
-    (version "0.1.5")
+    (version "0.1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "r3PG" version))
               (sha256
                (base32
-                "1xd2ydz6j4qwq4xqrijsmnfxhni015q760w8dldmk00xxj7mr59z"))))
+                "0sr5mxqd1pck4fcn3sh66qdn4kzyibzxmr422c77j7hlqcmqm27n"))))
     (properties `((upstream-name . "r3PG")))
     (build-system r-build-system)
     (native-inputs (list r-r-rsp gfortran))
@@ -46724,13 +46724,13 @@ include resize functionality in Markdown', Rmarkdown and Quarto documents.")
 (define-public r-r2redux
   (package
     (name "r-r2redux")
-    (version "1.0.15")
+    (version "1.0.16")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "r2redux" version))
               (sha256
                (base32
-                "0wm0d6s1s1pwypvcrhxsf3pkrr8wh00qkwy4iiwrl8l8i2cf59b2"))))
+                "013g3zp7h53yfw0lasnp8c6dp3n9mrsapmwb071x2cnlb385sm6v"))))
     (properties `((upstream-name . "r2redux")))
     (build-system r-build-system)
     (home-page "https://github.com/mommy003/r2redux")

@@ -4988,13 +4988,13 @@ independently or jointly.  Detailed model information is found in Keller (2022)
 (define-public r-greenclust
   (package
     (name "r-greenclust")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "greenclust" version))
               (sha256
                (base32
-                "198ix55x8cl5wx09p6ahzy3bvig86mvqf2qywjfilp6b4hnjgk7l"))))
+                "1wdz2lrrchwsxm68mvjcx3nlnr93n0jj8d5gr0j55idn7wn73gdq"))))
     (properties `((upstream-name . "greenclust")))
     (build-system r-build-system)
     (home-page "https://github.com/JeffJetton/greenclust")
@@ -7636,15 +7636,16 @@ preprint <@code{arXiv:2105.03454>}.")
 (define-public r-gpbstat
   (package
     (name "r-gpbstat")
-    (version "0.4.0")
+    (version "0.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gpbStat" version))
               (sha256
                (base32
-                "00s9zys6awwimdzqql7prbbpg45nyrsccjjb59pzwsr234bqpmwl"))))
+                "02sb9npwd1x8fnjl7999q4vlap23pn4692bhzp0vqwy1kbr0j7da"))))
     (properties `((upstream-name . "gpbStat")))
     (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-tibble r-purrr r-magrittr r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/nandp1/gpbStat/")
     (synopsis
@@ -18137,13 +18138,13 @@ Kindlmann and Scheidegger (2014) <doi:10.1109/TVCG.2014.2346325>.")
 (define-public r-ggblanket
   (package
     (name "r-ggblanket")
-    (version "5.0.0")
+    (version "5.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggblanket" version))
               (sha256
                (base32
-                "1zlsni1y0p998pnxq0w5qlnzxai3jsngh3qw06dak207vz576wx2"))))
+                "1dj9gri6h0fy5izr8g128ghx4lsbknflfflmpv3z1a4y6g962yb1"))))
     (properties `((upstream-name . "ggblanket")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -18199,36 +18200,6 @@ names, without having to directly work with the underlying geospatial data and
 tools.  The corresponding map data must be registered with cartographer either
 by the user or by another package.")
     (license license:expat)))
-
-(define-public r-ggasym
-  (package
-    (name "r-ggasym")
-    (version "0.1.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ggasym" version))
-              (sha256
-               (base32
-                "1vgsqq2m4w5clmf27mmj6jqn2s8m1izz3gj2bxqpmdcvzf5vxkgr"))))
-    (properties `((upstream-name . "ggasym")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-scales
-                             r-rlang
-                             r-purrr
-                             r-magrittr
-                             r-ggplot2
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ggasym")
-    (synopsis "Asymmetric Matrix Plotting in 'ggplot2'")
-    (description
-     "Plots a symmetric matrix with three different fill aesthetics for the top-left
-and bottom-right triangles and along the diagonal.  It operates within the
-Grammar of Graphics paradigm implemented in ggplot2'.")
-    (license license:gpl3)))
 
 (define-public r-ggarchery
   (package
@@ -21528,17 +21499,18 @@ Apparicio <doi:10.4000/cybergeo.36414>).")
 (define-public r-geocausal
   (package
     (name "r-geocausal")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "geocausal" version))
               (sha256
                (base32
-                "1pzfnq02wj3wwgpcdz24v1ism3d8j9z71kdy4ldjvihkhh2ac4sa"))))
+                "00i4prrgi02xv0h4r5xfmnl6h9b6arqnvd3vhzrgcmdqv4nl76xk"))))
     (properties `((upstream-name . "geocausal")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
                              r-tidyr
+                             r-terra
                              r-spatstat-model
                              r-spatstat-geom
                              r-spatstat-explore
@@ -21554,7 +21526,6 @@ Apparicio <doi:10.4000/cybergeo.36414>).")
                              r-furrr
                              r-dplyr
                              r-data-table))
-    (native-inputs (list r-knitr))
     (home-page "https://github.com/mmukaigawara/geocausal")
     (synopsis "Causal Inference with Spatio-Temporal Data")
     (description
@@ -21589,13 +21560,13 @@ other Geocaching-related tasks.")
 (define-public r-geobr
   (package
     (name "r-geobr")
-    (version "1.8.0")
+    (version "1.8.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "geobr" version))
               (sha256
                (base32
-                "16j4v74dmnm8ix88n1qy5vgpbmspx3p56xgnlvlrkpdn77px1l7j"))))
+                "16iw1p0qx57xylb7mp2qgx9fh7667hzfpw8dzakdzp8jpxmwgjwx"))))
     (properties `((upstream-name . "geobr")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-httr r-data-table r-curl))
@@ -24688,6 +24659,27 @@ apply Generalized Dissimilarity Models.  Mokany K, Ware C, Woolley SNC, Ferrier
 S, Fitzpatrick MC (2022) <doi:10.1111/geb.13459> Ferrier S, Manion G, Elith J,
 Richardson K (2007) <doi:10.1111/j.1472-4642.2007.00341.x>.")
     (license license:gpl3+)))
+
+(define-public r-gdldata
+  (package
+    (name "r-gdldata")
+    (version "0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "gdldata" version))
+              (sha256
+               (base32
+                "19zvchn55d70miqgxnbz3y1svj6gn6236l897qc0cbqmv48mjxh4"))))
+    (properties `((upstream-name . "gdldata")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-httr2))
+    (home-page "https://docs.globaldatalab.org/gdldata/")
+    (synopsis "'Global Data Lab' R API")
+    (description
+     "Retrieve datasets from the Global Data Lab website <https://globaldatalab.org>
+directly into R data frames.  Functions are provided to reference available
+options (indicators, levels, countries, regions) as well.")
+    (license license:expat)))
 
 (define-public r-gdistance
   (package

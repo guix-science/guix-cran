@@ -8,8 +8,8 @@
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages cran)
   #:use-module (gnu packages xdisorg)
-  #:use-module (gnu packages web)
   #:use-module (gnu packages bioconductor)
+  #:use-module (gnu packages web)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages maths)
@@ -919,13 +919,13 @@ Electronic Journal of Statistics.  13 (2) 4849 - 4883 <doi:10.1214/19-EJS1640>."
 (define-public r-quarto
   (package
     (name "r-quarto")
-    (version "1.2")
+    (version "1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "quarto" version))
               (sha256
                (base32
-                "186q07r2hwldhk6fvhamaqq21g5c74jp967rqan13l4diakgb739"))))
+                "1hbj762hgjk7047nycj7rrngsf8f6g2s06r7jjg78ilrjb429c1w"))))
     (properties `((upstream-name . "quarto")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -935,7 +935,7 @@ Electronic Journal of Statistics.  13 (2) 4849 - 4883 <doi:10.1214/19-EJS1640>."
                              r-processx
                              r-later
                              r-jsonlite))
-    (native-inputs (list r-knitr esbuild))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/quarto-dev/quarto-r")
     (synopsis "R Interface to 'Quarto' Markdown Publishing System")
     (description
