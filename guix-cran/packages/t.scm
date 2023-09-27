@@ -9683,16 +9683,16 @@ diagnosis.")
 (define-public r-topologygsa
   (package
     (name "r-topologygsa")
-    (version "1.4.7")
+    (version "1.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "topologyGSA" version))
               (sha256
                (base32
-                "073n8bkrapk6il3izqr3bmcdp7yc29yzpbyzh6fvy9rg0x4d3g0z"))))
+                "1pzyn916wllmry2gzwp6fhhcd3fjz7k4jlgsgqs3c2b2g0vqknm2"))))
     (properties `((upstream-name . "topologyGSA")))
     (build-system r-build-system)
-    (propagated-inputs (list r-grbase r-graph r-fields))
+    (propagated-inputs (list r-igraph r-grbase r-graph r-fields))
     (home-page "https://cran.r-project.org/package=topologyGSA")
     (synopsis "Gene Set Analysis Exploiting Pathway Topology")
     (description
@@ -9700,7 +9700,9 @@ diagnosis.")
 analysis using gene expression.  Given the structure of a graph (a pathway) we
 introduce two statistical tests to compare the mean and the concentration
 matrices between two groups.  Specifically, these tests can be performed on the
-graph and on its connected components (cliques).")
+graph and on its connected components (cliques).  The package is based on the
+method described in Massa M.S., Chiogna M., Romualdi C. (2010)
+<doi:10.1186/1752-0509-4-121>.")
     (license license:gpl3)))
 
 (define-public r-topodistance
@@ -12360,21 +12362,23 @@ regular time base).")
 (define-public r-timetk
   (package
     (name "r-timetk")
-    (version "2.8.3")
+    (version "2.8.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "timetk" version))
               (sha256
                (base32
-                "1ad5qba68am81pmlbkbp6baq0aicikabnyqv4sijcql567vya8iy"))))
+                "1ww5nhyvb4ysv0pbbhx8hlalm631gfyv2dvgz4f8f1926h6zy3k6"))))
     (properties `((upstream-name . "timetk")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
                              r-xts
                              r-tsfeatures
+                             r-timeseries
                              r-timedate
                              r-tidyselect
                              r-tidyr
+                             r-tidymodels
                              r-tibble
                              r-stringr
                              r-stringi
@@ -12992,13 +12996,13 @@ be inserted into the output stream.")
 (define-public r-tigris
   (package
     (name "r-tigris")
-    (version "2.0.3")
+    (version "2.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tigris" version))
               (sha256
                (base32
-                "1kk1dbg6fs711bg5v6p97rbmvffxfhyc1vkmvpnh51ffkmd2hihv"))))
+                "1jhz18ysr26fgm89ky39fqiaxx7spadysishyaml5f2pbam13r27"))))
     (properties `((upstream-name . "tigris")))
     (build-system r-build-system)
     (propagated-inputs (list r-uuid
@@ -13631,33 +13635,6 @@ of the stringdist package.")
 a way consistent across all the languages supported.  The generated lists are
 based on the morphological tagset from the Universal Dependencies.")
     (license license:gpl3+)))
-
-(define-public r-tidystats
-  (package
-    (name "r-tidystats")
-    (version "0.5.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "tidystats" version))
-              (sha256
-               (base32
-                "1y4jf1rvj8k256shiy2zb68vmvla8sxjr2ynnys5mw2i4ap326kj"))))
-    (properties `((upstream-name . "tidystats")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-readr
-                             r-purrr
-                             r-jsonlite
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://willemsleegers.github.io/tidystats/")
-    (synopsis "Save Output of Statistical Tests")
-    (description
-     "Save the output of statistical tests in an organized file that can be shared
-with others or used to report statistics in scientific papers.")
-    (license license:expat)))
 
 (define-public r-tidysq
   (package
@@ -15043,13 +15020,13 @@ Methods follow those introduced in Fine and Gray (1999) <doi:10.1002/sim.7501>."
 (define-public r-tidyclust
   (package
     (name "r-tidyclust")
-    (version "0.1.2")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tidyclust" version))
               (sha256
                (base32
-                "1gfqk2aap3j96fn1wpp6xz7z415x5l9a8jd9hrcm4978dg4r00r7"))))
+                "1zsy329z29j2ad413i7h24aijgqpjvl8imffq4pcqnxydwbf2z0d"))))
     (properties `((upstream-name . "tidyclust")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -15121,13 +15098,13 @@ knitr'/'markdown'.")
 (define-public r-tidycensus
   (package
     (name "r-tidycensus")
-    (version "1.4.4")
+    (version "1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tidycensus" version))
               (sha256
                (base32
-                "08vg9ayzb07ajaycf6qvjqzxjks3a16xlgd2hvx2ar0q2df4sgbw"))))
+                "1macaf6zfklbk8f5zhj6diicfbqnipg8xraclail657p1ii3pfb6"))))
     (properties `((upstream-name . "tidycensus")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -19113,13 +19090,13 @@ nonlinear associations between cognition and demographic variables.")
 (define-public r-tesseract
   (package
     (name "r-tesseract")
-    (version "5.1.0")
+    (version "5.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tesseract" version))
               (sha256
                (base32
-                "1ynd665mbfklqahzkjfbl6ja1djybgcmc71dpg5dxxjc3ny7rbkd"))))
+                "1wh14s66y6a56jpn8d3iqz9zs5i1lk1ffjp3p8i4iqm8rq1sm18z"))))
     (properties `((upstream-name . "tesseract")))
     (build-system r-build-system)
     (inputs (list zlib))
@@ -20008,13 +19985,13 @@ deployed in the following publications (2021, Heliyon)
 (define-public r-temporal
   (package
     (name "r-temporal")
-    (version "0.3.0")
+    (version "0.3.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Temporal" version))
               (sha256
                (base32
-                "1f1gp7zqaa2phv9rik6nmlj4dcqlm7z9s6y5iify3v6vai9sky72"))))
+                "0xsvnm4fvbyih731h6by7zva5pm11r8k0paky8kl7zdr72rpkym4"))))
     (properties `((upstream-name . "Temporal")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-numderiv r-expint r-dplyr))
@@ -20491,6 +20468,40 @@ non-parametric way of determining how similar an observation, from a process
 that is not purely random, is to other observations generated by the process.
 This package provides code to use the batch and recursive TEDA methods that have
 been published.")
+    (license license:gpl3+)))
+
+(define-public r-tectonicr
+  (package
+    (name "r-tectonicr")
+    (version "0.2.93")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "tectonicr" version))
+              (sha256
+               (base32
+                "0a5lxjk4ghjxyhmprh3ay8922dzp59affnkppl2s7zfbz5cnmxz0"))))
+    (properties `((upstream-name . "tectonicr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-viridis
+                             r-tidyr
+                             r-terra
+                             r-spatstat-explore
+                             r-smoothr
+                             r-sf
+                             r-rcolorbrewer
+                             r-ggplot2
+                             r-dplyr
+                             r-boot))
+    (native-inputs (list r-knitr))
+    (home-page "https://tobiste.github.io/tectonicr/")
+    (synopsis "Analyzing the Orientation of Maximum Horizontal Stress")
+    (description
+     "Models the direction of the maximum horizontal stress using relative plate
+motion parameters.  Statistical algorithms to evaluate the modeling results
+compared with the observed data.  Provides plots to visualize the results.
+Methods described in Stephan et al. (2023) <doi:10.1038/s41598-023-42433-2> and
+Wdowinski (1998) <doi:10.1016/S0079-1946(98)00091-3>.")
     (license license:gpl3+)))
 
 (define-public r-teamr

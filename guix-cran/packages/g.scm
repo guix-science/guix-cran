@@ -1636,6 +1636,28 @@ measurement facets (e.g., items and raters).")
 General Transit Feed Specification (GTFS) data format.")
     (license license:expat)))
 
+(define-public r-gtfsrouter
+  (package
+    (name "r-gtfsrouter")
+    (version "0.1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "gtfsrouter" version))
+              (sha256
+               (base32
+                "1v8b3yr7c7yaavy3ivj7ik2hmbdyjasmkxkbrs3f943m9fbkngwi"))))
+    (properties `((upstream-name . "gtfsrouter")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp r-geodist r-data-table r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/UrbanAnalyst/gtfsrouter")
+    (synopsis "Routing with 'GTFS' (General Transit Feed Specification) Data")
+    (description
+     "Use GTFS (General Transit Feed Specification) data for routing from nominated
+start and end stations, for extracting isochrones', and travel times from any
+nominated start station to all other stations.")
+    (license license:gpl3)))
+
 (define-public r-gtfsio
   (package
     (name "r-gtfsio")
@@ -3608,37 +3630,6 @@ The procedure controls the false discovery rate (FDR) at a user-specified
 threshold.")
     (license license:expat)))
 
-(define-public r-grouptesting
-  (package
-    (name "r-grouptesting")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "groupTesting" version))
-              (sha256
-               (base32
-                "00jy1gw6whslmfcqic99hmbxh2z75rj14cjzrm5mnpcajn37s66j"))))
-    (properties `((upstream-name . "groupTesting")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-pracma))
-    (native-inputs (list gfortran))
-    (home-page "https://cran.r-project.org/package=groupTesting")
-    (synopsis "Simulating and Modeling Group (Pooled) Testing Data")
-    (description
-     "This package provides an expectation-maximization (EM) algorithm using the
-approach introduced in Xie (2001) <doi:10.1002/sim.817>.  The EM algorithm can
-be used to estimate the prevalence (overall proportion) of a disease and to
-estimate a binary regression model from among the class of generalized linear
-models based on group testing data.  The estimation framework we consider offers
-a flexible and general approach; i.e., its application is not limited to any
-specific group testing protocol.  Consequently, the EM algorithm can model data
-arising from simple pooling as well as advanced pooling such as hierarchical
-testing, array testing, and quality control pooling.  Also, provided are
-functions that can be used to conduct the Wald tests described in Buse (1982)
-<doi:10.1080/00031305.1982.10482817> and to simulate the group testing data
-described in Kim et al. (2007) <doi:10.1111/j.1541-0420.2007.00817.x>.")
-    (license license:gpl3)))
-
 (define-public r-grouptest
   (package
     (name "r-grouptest")
@@ -5338,25 +5329,21 @@ Hojsgaard and Lauritzen (2008, <doi:10.1111/j.1467-9868.2008.00666.x>).")
 (define-public r-grbase
   (package
     (name "r-grbase")
-    (version "1.9.0")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gRbase" version))
               (sha256
                (base32
-                "11gpdizvg11r4zz4wvlsrmd2880g49hw742d4bnwncxkb4b9wwgm"))))
+                "0hnrdza3614mgb76br0cfx49kpjg1s0563shljl6jcqhbxhw944v"))))
     (properties `((upstream-name . "gRbase")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rgraphviz
-                             r-rcppeigen
+    (propagated-inputs (list r-rcppeigen
                              r-rcpparmadillo
                              r-rcpp
-                             r-rbgl
                              r-matrix
                              r-magrittr
-                             r-igraph
-                             r-graph
-                             r-biocmanager))
+                             r-igraph))
     (native-inputs (list r-knitr))
     (home-page "https://people.math.aau.dk/~sorenh/software/gR/")
     (synopsis "Package for Graphical Modelling in R")
@@ -5372,9 +5359,7 @@ concept of graphical meta data.  The facilities of the package are documented in
 the book by HÃ¸jsgaard, Edwards and Lauritzen (2012,
 <doi:10.1007/978-1-4614-2299-0>) and in the paper by Dethlefsen and HÃ¸jsgaard,
 (2005, <doi:10.18637/jss.v014.i17>).  Please see citation(\"@code{gRbase}\") for
-citation details.  NOTICE @code{gRbase} requires that the packages graph,
-Rgraphviz and RBGL are installed from bioconductor'.  For installation
-instructions please refer to the web page given below.")
+citation details.")
     (license license:gpl2+)))
 
 (define-public r-gravmagsubs
@@ -5595,13 +5580,13 @@ including MAR and ARIMA processes.  Kang, Y., Hyndman, R.J., Li, F.(2020)
 (define-public r-graticule
   (package
     (name "r-graticule")
-    (version "0.3.0")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "graticule" version))
               (sha256
                (base32
-                "1j30fipgxp698w549r4lp4kqi9g25ri8par3jglljm89jhggq6q8"))))
+                "0i2nhsrhixbwisgx8354aqsnik5sax9m63fzagmj4k3fcnpry7b0"))))
     (properties `((upstream-name . "graticule")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-reproj r-raster r-geosphere))
@@ -9406,13 +9391,13 @@ Nadarajah (2005) <doi:10.1080/02664760500079464> is used.")
 (define-public r-gnonadd
   (package
     (name "r-gnonadd")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gnonadd" version))
               (sha256
                (base32
-                "1fg7kf339bnsw9kjiva5n76mgp9kpzn78w6zh5an3bagzhf382rm"))))
+                "1yhh6s5hzvpdy6qrvnjx84basrbvi1r7dcgapwf7g8677c8f5fdb"))))
     (properties `((upstream-name . "gnonadd")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))
@@ -10334,13 +10319,13 @@ easy interface for accessing it is provided in this package.")
 (define-public r-gmcplite
   (package
     (name "r-gmcplite")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gMCPLite" version))
               (sha256
                (base32
-                "1vaqwbj64m7xvr9vhpy0vb3l88sp1cbnpnxvw20ma62qvrayk2yn"))))
+                "1v5nzzyxwjlrrn6qqi0jgd5z4zzyq5abjhd38cvr6rhyjjj9hlxi"))))
     (properties `((upstream-name . "gMCPLite")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-mass r-ggplot2))
@@ -10405,29 +10390,6 @@ described multiple test procedures.")
     (synopsis "Fast Estimation of Gaussian Mixture Copula Models")
     (description
      "Unsupervised Clustering and Meta-analysis using Gaussian Mixture Copula Models.")
-    (license license:gpl2+)))
-
-(define-public r-gmat
-  (package
-    (name "r-gmat")
-    (version "0.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "gmat" version))
-              (sha256
-               (base32
-                "0iq2b3s60fyam45ykk67xyi2yhr8ma1s2vw4059357j1948525p2"))))
-    (properties `((upstream-name . "gmat")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-igraph r-grbase))
-    (home-page "https://github.com/gherardovarando/gmat")
-    (synopsis "Simulation of Graphical Correlation Matrices")
-    (description
-     "Simulation of correlation matrices possibly constrained by a given undirected or
-acyclic directed graph.  In particular, the package provides functions that
-implement the simulation methods described in CÃ³rdoba et al. (2018)
-<doi:10.1007/978-3-030-03493-1_13> and CÃ³rdoba et al. (2020)
-<doi:10.1016/j.ijar.2020.07.007>.")
     (license license:gpl2+)))
 
 (define-public r-gmapsdistance
@@ -14857,13 +14819,13 @@ geom_glowpoint() add a neon glow around lines to get a steampunk style.")
 (define-public r-ggseqplot
   (package
     (name "r-ggseqplot")
-    (version "0.8.2")
+    (version "0.8.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggseqplot" version))
               (sha256
                (base32
-                "169jj1ki8yfxa1jryfbpy63jr8bjmx0jzkykd3bnzxy8vnxs6mss"))))
+                "1ml71lxkr1bnf0l0ljpnlj7rlfmgmk6zmydm899pwvgngph1rjq6"))))
     (properties `((upstream-name . "ggseqplot")))
     (build-system r-build-system)
     (propagated-inputs (list r-usethis
@@ -15470,13 +15432,13 @@ of interest and annotates the test results on the plot.")
 (define-public r-ggpolypath
   (package
     (name "r-ggpolypath")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggpolypath" version))
               (sha256
                (base32
-                "1ii9a0f0aniwf989n72dy9bh9f708qxhdy5xgml23ln6n4wf9wr0"))))
+                "0ipn1lhmpcdxim3235kxsw6vkj7cf7smqdm534jfa75ski4q9xpy"))))
     (properties `((upstream-name . "ggpolypath")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))
@@ -17299,31 +17261,6 @@ data.  The plots are created using ggplot2', and calculations done using the
 tidyverse collection of packages.  The package contains references to
 @code{FishBase} (Froese R., Pauly.  D., 2023) <https://www.fishbase.se/>.")
     (license license:gpl3)))
-
-(define-public r-ggfan
-  (package
-    (name "r-ggfan")
-    (version "0.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ggfan" version))
-              (sha256
-               (base32
-                "1p3hbznpsaznlk0lnjyazc130www0p5919qplg3kspng7qh8p22w"))))
-    (properties `((upstream-name . "ggfan")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rstan r-ggplot2 r-dplyr r-colorspace))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/jasonhilton/ggfan")
-    (synopsis "Summarise a Distribution Through Coloured Intervals")
-    (description
-     "This package implements the functionality of the fanplot package as geoms for
-ggplot2'.  Designed for summarising MCMC samples from a posterior distribution,
-where a visualisation is desired for several values of a continuous covariate.
-Increasing posterior intervals of the sampled quantity are mapped to a
-continuous colour scale.")
-    (license (list license:gpl2
-                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-ggetho
   (package
@@ -20044,6 +19981,31 @@ Endrizzi et al (2014)
     (description "This package provides tools")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-geostatsp
+  (package
+    (name "r-geostatsp")
+    (version "2.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "geostatsp" version))
+              (sha256
+               (base32
+                "0sd24fc5896xi5wijj3zhmkzq8rspnv9xcf6yc268f4cfzdwpzkc"))))
+    (properties `((upstream-name . "geostatsp")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra r-numderiv r-matrix r-abind))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=geostatsp")
+    (synopsis "Geostatistical Modelling with Likelihood and Bayes")
+    (description
+     "Geostatistical modelling facilities using @code{SpatRaster} and
+@code{SpatVector} objects are provided.  Non-Gaussian models are fit using
+INLA', and Gaussian geostatistical models use Maximum Likelihood Estimation.
+For details see Brown (2015) <doi:10.18637/jss.v063.i12>.  The
+@code{RandomFields} package is available at
+<https://www.wim.uni-mannheim.de/schlather/publications/software>.")
+    (license (list license:gpl2+ license:gpl3+))))
+
 (define-public r-geostats
   (package
     (name "r-geostats")
@@ -20552,13 +20514,13 @@ classes and functions.")
 (define-public r-geomodels
   (package
     (name "r-geomodels")
-    (version "1.1.2")
+    (version "1.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GeoModels" version))
               (sha256
                (base32
-                "1g8m9rxxp7a6nk3cczhz2jzslk07xwdwi9pjgip1i7mlap6p30px"))))
+                "0j8jb0k1k5dzw06rfz8962c2cagkd2s17lg5pvrs4kpphyvbyq2p"))))
     (properties `((upstream-name . "GeoModels")))
     (build-system r-build-system)
     (propagated-inputs (list r-zipfr
@@ -24795,6 +24757,28 @@ shapes and the second moment of area (Ix) of 2D cross-sections, as well as for
 visualization of results.")
     (license license:gpl3+)))
 
+(define-public r-gdelttools
+  (package
+    (name "r-gdelttools")
+    (version "1.6")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "GDELTtools" version))
+              (sha256
+               (base32
+                "1dz2m6pzb9pd1kq8wcwsjqv0c01klwbmdcndw4pf736xav03b4f8"))))
+    (properties `((upstream-name . "GDELTtools")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-plyr r-dplyr r-datetimeutils))
+    (home-page "https://cran.r-project.org/package=GDELTtools")
+    (synopsis "Download, Slice, and Normalize GDELT V1 Data")
+    (description
+     "The GDELT V1 Event data set is over 41 GB now and growing 250 MB a month.  The
+number of source articles has increased over time and unevenly across countries.
+ This package makes it easy to download a subset of that data, then normalize
+that data to facilitate valid time series analysis.")
+    (license license:expat)))
+
 (define-public r-gdefrag
   (package
     (name "r-gdefrag")
@@ -24910,16 +24894,17 @@ function arguments introduced in GDAL version 3.5.2 or earlier are supported.")
 (define-public r-gdalraster
   (package
     (name "r-gdalraster")
-    (version "1.4.0")
+    (version "1.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gdalraster" version))
               (sha256
                (base32
-                "0ia8kljv6jnlg7ibngbi909axnvmiv56xd2mgkn661wqrzzb19g3"))))
+                "14zxvc2w0n2qbjkjikny5dpcsf0anql0fq4rqq7l9739yrazm7q7"))))
     (properties `((upstream-name . "gdalraster")))
     (build-system r-build-system)
     (inputs (list zlib
+                  sqlite
                   proj
                   pcre2
                   openssl
@@ -24932,23 +24917,24 @@ function arguments introduced in GDAL version 3.5.2 or earlier are supported.")
     (synopsis
      "Bindings to the 'Geospatial Data Abstraction Library' Raster API")
     (description
-     "Interface to the raster API of the Geospatial Data Abstraction Library ('GDAL')
+     "Interface to the Raster API of the Geospatial Data Abstraction Library ('GDAL')
 supporting manual creation of uninitialized datasets, creation from existing
 raster as template, low level I/O, configuration of virtual raster (VRT),
 coordinate transformation, and access to gdalwarp for reprojection.  Includes
-selected GDAL algorithms and functions for working with spatial reference
+several GDAL algorithms and functions for working with spatial reference
 systems.  Calling signatures resemble the native C, C++ and Python APIs provided
-by the GDAL project (<https://gdal.org>).  Bindings are implemented via Rcpp
-exposed class along with several stand-alone functions.  Additional
-functionality includes: class @code{RunningStats} for efficient summary
-statistics on large data streams; class @code{CmbTable} for counting unique
-combinations of integers with a hash table; raster overlay to identify and count
-unique pixel combinations across multiple input layers; raster calculation by
-evaluating any R expression on a stack of layers with pixel coordinates
-available as variables; and raster display using base graphics'.  gdalraster may
-be suitable for applications that primarily need low-level I/O or prefer a
-direct GDAL API. The additional functionality is somewhat aimed at thematic data
-analysis but may have other utility.")
+by the GDAL project (<https://gdal.org>).  Bindings are implemented via exposed
+C++ class encapsulating a GDALDataset and its associated GDAL@code{RasterBand}
+objects, plus several stand-alone functions.  Additional functionality includes:
+class @code{RunningStats} for efficient summary statistics on large data
+streams; class @code{CmbTable} for counting unique combinations of integers with
+a hash table; raster combine() to identify and count unique pixel combinations
+across multiple input layers; raster calc() to evaluate an R expression on a
+stack of layers with pixel coordinates available as variables in the expression;
+and raster display using base graphics'.  gdalraster may be suitable for
+applications that primarily need low-level I/O or prefer a direct GDAL API. The
+additional functionality is somewhat aimed at thematic data analysis but may
+have other utility.")
     (license license:expat)))
 
 (define-public r-gdalcubes
@@ -26431,13 +26417,13 @@ and the Hessian matrix.")
 (define-public r-gasfluxes
   (package
     (name "r-gasfluxes")
-    (version "0.5")
+    (version "0.6-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gasfluxes" version))
               (sha256
                (base32
-                "0y17lpry9q6lkkmnpj9sn0yql1g5q1z32zcc7hxxip6sd46qxjqn"))))
+                "08lngyxr39iycp1fnyvl27qks421rx6l8x1akysnixhxy9f53apx"))))
     (properties `((upstream-name . "gasfluxes")))
     (build-system r-build-system)
     (propagated-inputs (list r-sfsmisc r-mass r-data-table))
@@ -27414,18 +27400,17 @@ the characteristic function.")
 (define-public r-gametheory
   (package
     (name "r-gametheory")
-    (version "2.7")
+    (version "2.7.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GameTheory" version))
               (sha256
                (base32
-                "0vb7sjia5s58gw9zpkzddps8knxvbrz7fbi3m6digl8bf5vwhxxw"))))
+                "1mq8406zgh4yww2jb7xvvmizyis9cb2hwdliacr4hxpjg38c3jdn"))))
     (properties `((upstream-name . "GameTheory")))
     (build-system r-build-system)
     (propagated-inputs (list r-lpsolveapi r-kappalab r-ineq r-gtools
                              r-combinat))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=GameTheory")
     (synopsis "Cooperative Game Theory")
     (description

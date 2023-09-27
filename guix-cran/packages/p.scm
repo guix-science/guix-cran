@@ -1427,13 +1427,13 @@ changes in the future.")
 (define-public r-pulsar
   (package
     (name "r-pulsar")
-    (version "0.3.10")
+    (version "0.3.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pulsar" version))
               (sha256
                (base32
-                "01ylrxm4p0zxi22hj3yk1z30bh2xkbh8aywzcbzidk05ysd9fr6l"))))
+                "14wkqxgi8vi5szd01j5q5vis07zav22wljy32g3vljxyn8jyz0pf"))))
     (properties `((upstream-name . "pulsar")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix))
@@ -1447,7 +1447,7 @@ Regularization Selection ('@code{StARS}'), with options for speed-ups including
 Bounded @code{StARS} (B-@code{StARS}), batch computing, and other stability
 metrics (e.g., graphlet stability G-@code{StARS}).  Christian L. MÃ¼ller,
 Richard Bonneau, Zachary Kurtz (2016) <@code{arXiv:1605.07072>}.")
-    (license license:gpl2+)))
+    (license license:gpl3+)))
 
 (define-public r-puls
   (package
@@ -2521,13 +2521,13 @@ text').")
 (define-public r-psychtools
   (package
     (name "r-psychtools")
-    (version "2.3.6")
+    (version "2.3.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "psychTools" version))
               (sha256
                (base32
-                "1vb2zvp7ysvzvv71var638phnblcfy9lviq34y8k1adyxc5zkdkh"))))
+                "06jw5nhb9vbdfb74y5fqnl9974p0bddymwgiyvm8mmfn2083vp1s"))))
     (properties `((upstream-name . "psychTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-psych r-foreign))
@@ -4118,45 +4118,6 @@ stratum, loess.psa that provides a graphic and loess based effect size estimate,
 and various balance functions that provide measures of the balance achieved via
 a PSA in a categorical covariate.")
     (license license:gpl2+)))
-
-(define-public r-psaboot
-  (package
-    (name "r-psaboot")
-    (version "1.3.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "PSAboot" version))
-              (sha256
-               (base32
-                "06ga93vv4w84cd0s5565z4crrqd1ghqk31cmlpiaq5dwx5g0p45g"))))
-    (properties `((upstream-name . "PSAboot")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-trimatch
-                             r-rpart
-                             r-reshape2
-                             r-psych
-                             r-psagraphics
-                             r-party
-                             r-modeltools
-                             r-matchit
-                             r-matching
-                             r-ggthemes
-                             r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/jbryer/PSAboot")
-    (synopsis "Bootstrapping for Propensity Score Analysis")
-    (description
-     "It is often advantageous to test a hypothesis more than once in the context of
-propensity score analysis (Rosenbaum, 2012) <doi:10.1093/biomet/ass032>.  The
-functions in this package facilitate bootstrapping for propensity score analysis
-(PSA).  By default, bootstrapping using two classification tree methods (using
-rpart and ctree functions), two matching methods (using Matching and
-@code{MatchIt} packages), and stratification with logistic regression.  A
-framework is described for users to implement additional propensity score
-methods.  Visualizations are emphasized for diagnosing balance; exploring the
-correlation relationships between bootstrap samples and methods; and to
-summarize results.")
-    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-przewodnik
   (package
@@ -9938,13 +9899,13 @@ on the work of Rothman and Greenland (2018).")
 (define-public r-precipe
   (package
     (name "r-precipe")
-    (version "3.0.1")
+    (version "3.0.1-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pRecipe" version))
               (sha256
                (base32
-                "02sn80ab1npwzw4vbdh89i6nnwrc0iflmwxhpigribrihacxpvxp"))))
+                "066rkdzrkh9s714x1fg5rmjikkwmna2d42fzlzgk1xjnn4ypsngh"))))
     (properties `((upstream-name . "pRecipe")))
     (build-system r-build-system)
     (inputs (list proj gdal))
@@ -17101,17 +17062,17 @@ so that R code can be used to power Tableau workbooks.")
 (define-public r-plu
   (package
     (name "r-plu")
-    (version "0.2.3")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "plu" version))
               (sha256
                (base32
-                "04p4ars9lsfqy3f474kvgvh0090gzlkrrk9vsd163wryhp3glnvn"))))
+                "0s4k5vqgwbw7ayjhs2j8w9az7pn8km5hykkic1ii4jpdiy03c23g"))))
     (properties `((upstream-name . "plu")))
     (build-system r-build-system)
     (propagated-inputs (list r-lifecycle))
-    (home-page "https://plu.rossellhayes.com")
+    (home-page "https://pkg.rossellhayes.com/plu/")
     (synopsis "Dynamically Pluralize Phrases")
     (description
      "Converts English phrases to singular or plural form based on the length of an
@@ -21468,13 +21429,13 @@ more.")
 (define-public r-piecepackr
   (package
     (name "r-piecepackr")
-    (version "1.13.6")
+    (version "1.13.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "piecepackr" version))
               (sha256
                (base32
-                "026d3iczczqr560jdn7n4ycidfgd8lpzj0xshp0wff1kdsra244y"))))
+                "1cj623bwagjpj2ih7g8b5aqibq803jn5nam54gfpyw9lccphgp35"))))
     (properties `((upstream-name . "piecepackr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -21982,13 +21943,13 @@ detail in Callahan et al. (2016) <doi:10.12688/f1000research.8986.1>.")
 (define-public r-phylosem
   (package
     (name "r-phylosem")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "phylosem" version))
               (sha256
                (base32
-                "1ncvvp69yq42y8z9qj4fyn5vxfj1mmchh9iyh4fl8dv8syfw0k1n"))))
+                "05g8bqh51xqf1dc2gdhxn0k0kj5wcqjrkqgxfsq2wiyd45wkwln3"))))
     (properties `((upstream-name . "phylosem")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb
@@ -24654,13 +24615,13 @@ simulation of the corresponding angular distribution.")
 (define-public r-pgmm
   (package
     (name "r-pgmm")
-    (version "1.2.6")
+    (version "1.2.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pgmm" version))
               (sha256
                (base32
-                "0wbczca8dmkkhm72dwali9n67zmsc5zd1v55zn3d6kmhh3jjwcyj"))))
+                "08fz5la19fnzsk80d1nsqg0fd27z3bq3s8kzizj11r5k1fn95sy8"))))
     (properties `((upstream-name . "pgmm")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=pgmm")
@@ -27316,13 +27277,13 @@ presentation of the ped suite is given in the book Pedigree Analysis in R
 (define-public r-pedsimulate
   (package
     (name "r-pedsimulate")
-    (version "1.4.0")
+    (version "1.4.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pedSimulate" version))
               (sha256
                (base32
-                "0x1djd9kjnbp8wrx2iy1hh3psf77lmhyipzdbyysd95ym6wkldvk"))))
+                "11p7gkxzd9ajyivxnpw4mzdn4c812gihl8q0x5w6h3s9ixsk8qrl"))))
     (properties `((upstream-name . "pedSimulate")))
     (build-system r-build-system)
     (home-page "https://github.com/nilforooshan/pedSimulate")
@@ -27339,13 +27300,13 @@ appended pedigree to an existing pedigree with genotypes.  Mrode, R. A. (2005)
 (define-public r-pedquant
   (package
     (name "r-pedquant")
-    (version "0.2.2.1")
+    (version "0.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pedquant" version))
               (sha256
                (base32
-                "1b7a9y7w3wa8v0wjg3n30ddf228fb17fgijcm680qqbh3sqrrl7k"))))
+                "1dqzc4w76xfmvis2qkv3s3si9hvrwz58xkn1pmm17hwi5r1jk9pl"))))
     (properties `((upstream-name . "pedquant")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -29938,13 +29899,13 @@ tests and the F-test.")
 (define-public r-pcalg
   (package
     (name "r-pcalg")
-    (version "2.7-8")
+    (version "2.7-9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pcalg" version))
               (sha256
                (base32
-                "1phjycamc1m5jk8lg730q2cvbwgkm5paizyp0xminlb4p56za8kr"))))
+                "05hi5j42x63l2py9iyrrdiladi8xkvwk1dwms6av96wswy9d5cdq"))))
     (properties `((upstream-name . "pcalg")))
     (build-system r-build-system)
     (propagated-inputs (list r-vcd
@@ -29962,7 +29923,7 @@ tests and the F-test.")
                              r-bh
                              r-bdsmatrix
                              r-abind))
-    (home-page "http://pcalg.r-forge.r-project.org/")
+    (home-page "https://pcalg.r-forge.r-project.org/")
     (synopsis "Methods for Graphical Models and Causal Inference")
     (description
      "This package provides functions for causal structure learning and causal
@@ -30705,17 +30666,17 @@ data.")
 (define-public r-pavo
   (package
     (name "r-pavo")
-    (version "2.8.0")
+    (version "2.9.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pavo" version))
               (sha256
                (base32
-                "05h19z9z7lnzlbbwvg225xal3dlhjbvij6b82pzvxvai37dq1ijx"))))
+                "1kl3qd1q6p4rmfbml0lfjj3wi40w3kkb9gahvin8k62m5aa4hmq6"))))
     (properties `((upstream-name . "pavo")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
-                             r-sp
+                             r-sf
                              r-progressr
                              r-plot3d
                              r-magick
@@ -33114,39 +33075,6 @@ developed a publicly available R package along with this shiny app to implement
 the proposed approach and some other existing methods.")
     (license license:gpl3)))
 
-(define-public r-papaja
-  (package
-    (name "r-papaja")
-    (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "papaja" version))
-              (sha256
-               (base32
-                "1pvknpvfns1r5bwadm58n4xjrlwgqfyhz9diy72zabbksxddqa26"))))
-    (properties `((upstream-name . "papaja")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zip
-                             r-yaml
-                             r-tinylabels
-                             r-rmdfiltr
-                             r-rmarkdown
-                             r-knitr
-                             r-glue
-                             r-broom
-                             r-bookdown))
-    (native-inputs (list r-r-rsp r-knitr))
-    (home-page "https://github.com/crsh/papaja")
-    (synopsis
-     "Prepare American Psychological Association Journal Articles with R Markdown")
-    (description
-     "This package provides tools to create dynamic, submission-ready manuscripts,
-which conform to American Psychological Association manuscript guidelines.  We
-provide R Markdown document formats for manuscripts (PDF and Word) and revision
-letters (PDF).  Helper functions facilitate reporting statistical analyses or
-create publication-ready tables and plots.")
-    (license license:expat)))
-
 (define-public r-pantarhei
   (package
     (name "r-pantarhei")
@@ -33282,23 +33210,24 @@ end.")
 (define-public r-panelview
   (package
     (name "r-panelview")
-    (version "1.1.16")
+    (version "1.1.17")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "panelView" version))
               (sha256
                (base32
-                "07wmjh0ha7ry8nf5vas50kixljshg7c1wkr8nq992a56dz9l5igq"))))
+                "05zfkjmkypjw72z3ph11q1wzac55b6knv4ngvb47jjpi3n5i91ga"))))
     (properties `((upstream-name . "panelView")))
     (build-system r-build-system)
     (propagated-inputs (list r-gridextra r-ggplot2 r-dplyr))
     (home-page "https://yiqingxu.org/packages/panelview/index.html")
     (synopsis "Visualizing Panel Data")
     (description
-     "Visualizes panel data.  It has three main functionalities: (1) it visualizes
+     "Visualizes panel data.  It has three main functionalities: (1) it plots the
 treatment status and missing values in a panel dataset; (2) it visualizes the
-temporal dynamics of an outcome variable (or any variable); (3) it visualizes
-bivariate relationships of two variables by unit or in aggregate.")
+temporal dynamics of a main variable of interest; (3) it depicts the bivariate
+relationships between a treatment variable and an outcome variable either by
+unit or in aggregate.  For details, see <doi:10.18637/jss.v107.i07>.")
     (license license:expat)))
 
 (define-public r-panelvar
@@ -33984,13 +33913,13 @@ plot(), and predict() functions for PALM trees.")
 (define-public r-palm
   (package
     (name "r-palm")
-    (version "1.1.4")
+    (version "1.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "palm" version))
               (sha256
                (base32
-                "1h323py9dgdymih9j2wk4r1kib767z7z84h2c3albxxf9b2hvq4f"))))
+                "108w8vsb41j1kwvymjcf5123xi8qiprcpiqynlvvfk1bp24jaz45"))))
     (properties `((upstream-name . "palm")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-r6 r-mvtnorm r-minqa r-gsl))

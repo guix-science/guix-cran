@@ -4672,13 +4672,13 @@ incremental value of the surrogate outcome information.")
 (define-public r-surrogate
   (package
     (name "r-surrogate")
-    (version "3.2.0")
+    (version "3.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Surrogate" version))
               (sha256
                (base32
-                "1vi2pl1n1bii0vs43npi97hd46axqcvzlmi69l21fb9yd56r88hn"))))
+                "1p5q2im2fy3wnp5fjyqc0ala6jr8hg1r2vwwgp0j27haqg1p1s8h"))))
     (properties `((upstream-name . "Surrogate")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -12098,6 +12098,30 @@ methods are described in Reimann, Filzmoser, Garrett, Dutter (2008,
 ISBN:978-0-470-98581-6).")
     (license license:gpl3+)))
 
+(define-public r-statconfr
+  (package
+    (name "r-statconfr")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "statConfR" version))
+              (sha256
+               (base32
+                "149aj19kp52yrgzs6aca50m3lfxrbiiy1mljhr6bxspckilmi36x"))))
+    (properties `((upstream-name . "statConfR")))
+    (build-system r-build-system)
+    (home-page "https://github.com/ManuelRausch/StatConfR")
+    (synopsis "Models of Decision Confidence and Metacognition")
+    (description
+     "This package provides fitting functions and other tools for decision confidence
+and metacognition researchers, including meta-@code{dÂ´/dÂ´}, often considered
+to be the gold standard to measure metacognitive efficiency.  Also allows to fit
+several static models of decision making and confidence to test the assumptions
+underlying meta-@code{dÂ´/dÂ´} and which may serve as an alternative when the
+assumptions of meta-@code{dÂ´/dÂ´} do not hold.  See also Rausch et al. (2023)
+<doi:10.31234/osf.io/kdz34>.")
+    (license license:gpl3+)))
+
 (define-public r-statcomp
   (package
     (name "r-statcomp")
@@ -12952,17 +12976,19 @@ this rating and the individual specificity/sensitivity for each rater.")
 (define-public r-stanmomo
   (package
     (name "r-stanmomo")
-    (version "1.1.1")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "StanMoMo" version))
               (sha256
                (base32
-                "1wdyys53zzsrwk9w7rxlj33j5hi21hiqf84gpsk6qrl5x88zw2mm"))))
+                "0hdh5c5zigmqs3v3ryk1h91w1a2mlqqjwbq51528w159frnd9mrl"))))
     (properties `((upstream-name . "StanMoMo")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyselect
+    (propagated-inputs (list r-tidyverse
+                             r-tidyselect
                              r-tidyr
+                             r-tibble
                              r-stanheaders
                              r-rstantools
                              r-rstan
@@ -12970,8 +12996,9 @@ this rating and the individual specificity/sensitivity for each rater.")
                              r-rcppeigen
                              r-rcpp
                              r-loo
+                             r-latex2exp
+                             r-httr
                              r-ggplot2
-                             r-ggfan
                              r-dplyr
                              r-bridgesampling
                              r-bh))
@@ -14621,13 +14648,13 @@ Can also expand schedules into flights.")
 (define-public r-ssimmap
   (package
     (name "r-ssimmap")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SSIMmap" version))
               (sha256
                (base32
-                "1iw9km8g3949bjfdid8nzlc2a3sd53lpdkbqs6zjfdhkwwbkvz17"))))
+                "1ydwwxisb8wwxb2n5xvz6474n4rwl57xpi4fa0b6jggkzxx113ig"))))
     (properties `((upstream-name . "SSIMmap")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -14766,13 +14793,13 @@ analyzes the allele frequency data described by Solberg et al. (2008)
 (define-public r-ssh
   (package
     (name "r-ssh")
-    (version "0.8.3")
+    (version "0.9.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ssh" version))
               (sha256
                (base32
-                "084qckk94cy3plqy0la4vcf54ch7lxv4ws2hzpbpb2pymsv4xipa"))))
+                "1m67h0zfr86cmaff5gd5v7dn4cv9xpb20jdmqi03r9qsmsm9j620"))))
     (properties `((upstream-name . "ssh")))
     (build-system r-build-system)
     (inputs (list zlib openssl openssh))
@@ -18608,6 +18635,38 @@ by users to match their experiences.  Reference: Avanzi B, Taylor G, Wang M
 (2021) \"SPLICE: A Synthetic Paid Loss and Incurred Cost Experience Simulator\"
 <@code{arXiv:2109.04058>}.")
     (license license:gpl3)))
+
+(define-public r-spldv
+  (package
+    (name "r-spldv")
+    (version "0.1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "spldv" version))
+              (sha256
+               (base32
+                "0n58rzzypr869b7i7jkbykqk5nk6y3238p5l42kqfl9kg4730g1c"))))
+    (properties `((upstream-name . "spldv")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sphet
+                             r-spatialreg
+                             r-numderiv
+                             r-memisc
+                             r-maxlik
+                             r-matrix
+                             r-mass
+                             r-formula
+                             r-car))
+    (home-page "https://github.com/gpiras/spldv")
+    (synopsis "Spatial Models for Limited Dependent Variables")
+    (description
+     "The current version of this package estimates spatial autoregressive models for
+binary dependent variables using GMM estimators.  It supports one-step (Pinkse
+and Slade, 1998) <doi:10.1016/S0304-4076(97)00097-3> and two-step GMM estimator
+along with the linearized GMM estimator proposed by Klier and @code{McMillen}
+(2008) <doi:10.1198/073500107000000188>.  It also allows for either Probit or
+Logit model and compute the average marginal effects.")
+    (license license:gpl2+)))
 
 (define-public r-splash
   (package
@@ -23353,13 +23412,13 @@ based on code from www.sparse-grids.de")
 (define-public r-sparsegl
   (package
     (name "r-sparsegl")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sparsegl" version))
               (sha256
                (base32
-                "1v1cch790v4icxay0l63pad613z4p5cax6xni4bdx4ih7mhn4ln8"))))
+                "0c5iqhq3rn5wsy8a5lj37b4spqhy46d7d5k5q3kn034amml4cyfb"))))
     (properties `((upstream-name . "sparsegl")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -27028,6 +27087,29 @@ Kidwell, K.M. \"A Bayesian analysis of small n sequential multiple assignment
 randomized trials (@code{snSMARTs}).\" (2018) Statistics in medicine, 37(26),
 pp.3723-3732 <doi:10.1002/sim.7900>.")
     (license license:gpl2)))
+
+(define-public r-snsfdatasets
+  (package
+    (name "r-snsfdatasets")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "SNSFdatasets" version))
+              (sha256
+               (base32
+                "0wqx2xxgz97z9vlxkqla1zsmxxdcpc9byzbd0wjgfkvq0mr0vfaf"))))
+    (properties `((upstream-name . "SNSFdatasets")))
+    (build-system r-build-system)
+    (home-page "http://enricoschumann.net/R/packages/SNSFdatasets/")
+    (synopsis
+     "Download Datasets from the Swiss National Science Foundation (SNF, FNS, SNSF)")
+    (description
+     "Download and read datasets from the Swiss National Science Foundation (SNF, FNS,
+SNSF; <https://snf.ch>).  The package is lightweight and without dependencies.
+Downloaded data can optionally be cached, to avoid repeated downloads of the
+same files.  There are also utilities for comparing different versions of
+datasets, i.e.  to report added, removed and changed entries.")
+    (license license:gpl3)))
 
 (define-public r-snsequate
   (package
@@ -31186,13 +31268,13 @@ testing sample.")
 (define-public r-skmeans
   (package
     (name "r-skmeans")
-    (version "0.2-15")
+    (version "0.2-16")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "skmeans" version))
               (sha256
                (base32
-                "16q801kk1dblk25wbr80lp5gfc0clxmg1wyzb0py1g8vw8v96mc1"))))
+                "0rigfkjq41ivj2hz35rqak23mmzyz15ic5izzkm3vxbwhsmk9ars"))))
     (properties `((upstream-name . "skmeans")))
     (build-system r-build-system)
     (propagated-inputs (list r-slam r-cluster r-clue))
@@ -35268,6 +35350,33 @@ counterfactual post-policy series to compare to the observed post-policy series.
  This package also provides methods to visualize such data, and also to
 incorporate seasonality models and smoothing and aggregation/summarization.
 This work partially funded by Arnold Ventures in collaboration with MDRC.")
+    (license license:gpl3)))
+
+(define-public r-simitation
+  (package
+    (name "r-simitation")
+    (version "0.0.7")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "simitation" version))
+              (sha256
+               (base32
+                "1f2d5niq42wyrqlxjfdfb744h5fy646fvlbi7xakkhvkwrah8x5f"))))
+    (properties `((upstream-name . "simitation")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=simitation")
+    (synopsis "Simplified Simulations")
+    (description
+     "This package provides tools for generating and analyzing simulation studies.
+Users may easily specify all terms of a simulation study, often in a single line
+of code.  Common univariate and bivariate methods, such as t tests, proportions
+tests, and chi squared tests, are integrated.  Multivariate studies involving
+linear or logistic regression may also be specified with symbolic inputs.  The
+simulation studies generate data for n observations in each of B experiments.
+Analyses of each experiment are integrated, and empirical results across the
+experiments are also provided.")
     (license license:gpl3)))
 
 (define-public r-simireff
@@ -39913,6 +40022,48 @@ popovers or tooltips.")
     (description "Easily display user feedback in Shiny apps.")
     (license license:expat)))
 
+(define-public r-shinyexprportal
+  (package
+    (name "r-shinyexprportal")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "shinyExprPortal" version))
+              (sha256
+               (base32
+                "0vicgrz0l115za2zvjwqmmxbwppq37xmsmd5rrkarqrpv7vwpg7y"))))
+    (properties `((upstream-name . "shinyExprPortal")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yaml
+                             r-vegawidget
+                             r-tidyr
+                             r-shiny
+                             r-rlang
+                             r-rfast
+                             r-qvalue
+                             r-markdown
+                             r-iheatmapr
+                             r-htmltools
+                             r-dt
+                             r-dplyr
+                             r-data-table
+                             r-config
+                             r-cli
+                             r-bslib))
+    (native-inputs (list r-knitr esbuild))
+    (home-page "https://c4tb.github.io/shinyExprPortal/")
+    (synopsis
+     "Configurable 'shiny' Portal for Sharing Analysis of Molecular Expression Data")
+    (description
+     "Enables deploying configuration file-based shiny apps with minimal programming
+for interactive exploration and analysis showcase of molecular expression data.
+For exploration, supports visualization of correlations between rows of an
+expression matrix and a table of observations, such as clinical measures, and
+comparison of changes in expression over time.  For showcase, enables
+visualizing the results of differential expression from package such as limma',
+co-expression modules from WGCNA and lower dimensional projections.")
+    (license license:expat)))
+
 (define-public r-shinyeffects
   (package
     (name "r-shinyeffects")
@@ -40084,13 +40235,13 @@ Customize boxes, add timelines and a lot more.")
 (define-public r-shinycyjs
   (package
     (name "r-shinycyjs")
-    (version "0.0.11")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "shinyCyJS" version))
               (sha256
                (base32
-                "1wvrv5hdr74d2a68iwy76ffawmy4mpw0swrngw41zqpjd6hjiyxd"))))
+                "1xgrjk7iyg313x0wkg9q3mp63aidbbhxmjp3jv8cgr4w6qcv0ny6"))))
     (properties `((upstream-name . "shinyCyJS")))
     (build-system r-build-system)
     (propagated-inputs (list r-htmlwidgets))
@@ -44126,34 +44277,6 @@ assigned to treatment arms upon entry into the experiment.  The schemes are
 evaluated for balance on covariates and on predictability (i.e., how well could
 a site worker guess the treatment of the next unit enrolled).")
     (license license:gpl2)))
-
-(define-public r-seq2r
-  (package
-    (name "r-seq2r")
-    (version "2.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "seq2R" version))
-              (sha256
-               (base32
-                "1ynhmfch8w2s0mh55km6v9afn0z3p43ckg79cz08d2z25lv5syrj"))))
-    (properties `((upstream-name . "seq2R")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-seqinr))
-    (native-inputs (list gfortran))
-    (home-page "https://cran.r-project.org/package=seq2R")
-    (synopsis
-     "Simple Method to Detect Compositional Changes in Genomic Sequences")
-    (description
-     "This software is useful for loading .fasta or .gbk files, and for retrieving
-sequences from @code{GenBank} dataset <https://www.ncbi.nlm.nih.gov/genbank/>.
-This package allows to detect differences or asymmetries based on nucleotide
-composition by using local linear kernel smoothers.  Also, it is possible to
-draw inference about critical points (i.  e.  maximum or minimum points) related
-with the derivative curves.  Additionally, bootstrap methods have been used for
-estimating confidence intervals and speed computational techniques (binning
-techniques) have been implemented in seq2R'.")
-    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-sepkoski
   (package
@@ -52112,13 +52235,13 @@ scdensity() help for for full citations.")
 (define-public r-scdb
   (package
     (name "r-scdb")
-    (version "0.1")
+    (version "0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SCDB" version))
               (sha256
                (base32
-                "012a0i0hdv48z3gd24dzdarpi939fqvf275axm8kp5mcffp765wr"))))
+                "0c9pfs08np4igwl0p8z8v6m0yibvylj7mrzpgp34iaibfd5lqgnr"))))
     (properties `((upstream-name . "SCDB")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyverse
@@ -52127,6 +52250,7 @@ scdensity() help for for full citations.")
                              r-stringr
                              r-rsqlite
                              r-rlang
+                             r-r6
                              r-purrr
                              r-openssl
                              r-lubridate
@@ -52142,8 +52266,8 @@ scdensity() help for for full citations.")
     (description
      "This package provides a collection of functions that enable easy access and
 updating of a database of data over time.  More specifically, the package
-facilitates type-2 history[1] for data-warehouses and provides a number of
-Quality of life improvements for working on SQL databases with R.\\cr [1] see
+facilitates type-2 history for data-warehouses and provides a number of Quality
+of life improvements for working on SQL databases with R. For reference see
 Ralph Kimball and Margy Ross (2013, ISBN 9781118530801).")
     (license license:gpl3)))
 
@@ -56337,17 +56461,18 @@ evaluation of Small Area estimators.")
 (define-public r-saetrafo
   (package
     (name "r-saetrafo")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "saeTrafo" version))
               (sha256
                (base32
-                "1mh8kg4zvy5j7k9v0msdirzl00aahdcblqjbfjp6l8i2w4hnk1s8"))))
+                "0dpz946x1731s3m631hks0y5mwsb7ygfca7ilaa06pnqcyd1zz4j"))))
     (properties `((upstream-name . "saeTrafo")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
                              r-sfsmisc
+                             r-rlang
                              r-reshape2
                              r-readods
                              r-parallelmap
@@ -56380,7 +56505,7 @@ model with log transformation\" by Molina and @code{MartÃ­n} (2018)
 regional income indicators under transformations and access to limited
 population auxiliary information\" by WÃ¼rz, Schmid and Tzavidis <unpublished>)
 can be entered.  Especially under limited data access, new methodologies are
-provided in @code{saeTrafo}'.  Several options are available to assess the used
+provided in @code{saeTrafo}.  Several options are available to assess the used
 model and to judge, present and export its results.  For a detailed description
 of the package and the methods used see the corresponding vignette.")
     (license license:gpl2)))

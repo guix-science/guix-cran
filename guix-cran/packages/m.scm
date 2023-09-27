@@ -1418,18 +1418,19 @@ tubes.  Directional and other multivariate histograms are provided.")
 (define-public r-mvmapit
   (package
     (name "r-mvmapit")
-    (version "2.0.1")
+    (version "2.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mvMAPIT" version))
               (sha256
                (base32
-                "0whjgyf8asvbbd0ic0x4yqisasmxywl91klxpnbg3kd5i8p831rw"))))
+                "1ab4snxbw9p80cs7d6fnxl7cv20l1h2b243q2nj50yh6xirx2a0h"))))
     (properties `((upstream-name . "mvMAPIT")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-testthat
                              r-rcppspdlog
+                             r-rcppprogress
                              r-rcppparallel
                              r-rcpparmadillo
                              r-rcpp
@@ -1467,7 +1468,7 @@ variance component estimation algorithm for efficient parameter inference and
 P-value computation.  Together with reasonable model approximations, our
 proposed approach is scalable to moderately sized genome-wide association
 studies.  Crawford et al. (2017) <doi:10.1371/journal.pgen.1006869>.  Stamp et
-al. (2022) <doi:10.1101/2022.11.30.518547>.")
+al. (2023) <doi:10.1093/g3journal/jkad118>.")
     (license license:gpl3+)))
 
 (define-public r-mvlswimpute
@@ -4564,13 +4565,13 @@ January 2022.")
 (define-public r-multifear
   (package
     (name "r-multifear")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "multifear" version))
               (sha256
                (base32
-                "15nxyb17qzwld3ngw5k60nsr5nnam09jc1ky87rvsvslj6f3v696"))))
+                "0240dk3cqdm9x9y139p5i0gj374f58qxnqw32cii1abhv852ijfm"))))
     (properties `((upstream-name . "multifear")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -4589,6 +4590,7 @@ January 2022.")
                              r-bootstrap
                              r-bayestestr
                              r-bayesfactor))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/AngelosPsy/multifear")
     (synopsis "Multiverse Analyses for Conditioning Data")
     (description
@@ -4598,7 +4600,7 @@ data, the functions are able to perform t-tests, analyses of variance, and mixed
 models for the provided data and return summary statistics and plots.  The
 function is also able to return for all those tests p-values, confidence
 intervals, and Bayes factors.  The methods are described in Lonsdorf, Gerlicher,
-Klingelhofer-Jens, & Krypotos <doi:10.31234/osf.io/2z6pd>.")
+Klingelhofer-Jens, & Krypotos (2022) <doi:10.1016/j.brat.2022.104072>.")
     (license license:gpl3)))
 
 (define-public r-multifanova
@@ -12039,30 +12041,6 @@ symmetric normal (N) are also included.  Density, probabilities and random
 deviates are also offered for these members.")
     (license license:gpl2+)))
 
-(define-public r-momr
-  (package
-    (name "r-momr")
-    (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "momr" version))
-              (sha256
-               (base32
-                "091vzaw8dm29q89lg2iys25rbg2aslgdn9sk06x038nngxdrn95r"))))
-    (properties `((upstream-name . "momr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-nortest r-hmisc r-gplots))
-    (home-page "https://cran.r-project.org/package=momr")
-    (synopsis "Mining Metaomics Data (MetaOMineR)")
-    (description
-     "@code{MetaOMineR} suite is a set of R packages that offers many functions and
-modules needed for the analyses of quantitative metagenomics data.  momr is the
-core package and contains routines for biomarker identification and exploration.
- Developed since the beginning of field, momr has evolved and is structured
-around the different modules such as preprocessing, analysis, vizualisation,
-etc.  See package help for more information.")
-    (license license:artistic2.0)))
-
 (define-public r-momocs
   (package
     (name "r-momocs")
@@ -17111,22 +17089,22 @@ studies.")
 (define-public r-mlpack
   (package
     (name "r-mlpack")
-    (version "4.2.0")
+    (version "4.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mlpack" version))
               (sha256
                (base32
-                "044bgls55rk669bqqxlxrhvyjfnqg4y5ws70xz7qllkz8yc1ljlj"))))
+                "0d2b6mldv3cnc4pk27d5vcb9bcm835kydxn0n0adalm54c8my74a"))))
     (properties `((upstream-name . "mlpack")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppensmallen r-rcpparmadillo r-rcpp))
-    (home-page "https://www.mlpack.org/doc/mlpack-4.2.0/r_documentation.html")
+    (home-page "https://www.mlpack.org/doc/mlpack-git/r_documentation.html")
     (synopsis "'Rcpp' Integration for the 'mlpack' Library")
     (description
      "This package provides a fast, flexible machine learning library, written in C++,
 that aims to provide fast, extensible implementations of cutting-edge machine
-learning algorithms.  See also Curtin et al. (2018) <doi:10.21105/joss.00726>.")
+learning algorithms.  See also Curtin et al. (2023) <doi:10.21105/joss.05026>.")
     (license license:bsd-3)))
 
 (define-public r-mlogitbma
@@ -17928,13 +17906,13 @@ that includes sensitivity analysis.")
 (define-public r-mlece
   (package
     (name "r-mlece")
-    (version "1.0.1")
+    (version "2.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MLEce" version))
               (sha256
                (base32
-                "0m5fa2167dyprcc3agmdvfjgd0qvnnqn5y6xqm2w3rmgvilhp24r"))))
+                "17p012cxx89kbxypgk0y08v0jrmlvn3m6ma75zn1mf1v7nz5i30r"))))
     (properties `((upstream-name . "MLEce")))
     (build-system r-build-system)
     (propagated-inputs (list r-sirt
@@ -17945,11 +17923,16 @@ that includes sensitivity analysis.")
                              r-ggplot2))
     (home-page "https://cran.r-project.org/package=MLEce")
     (synopsis
-     "Statistical Inference for Asymptotic Efficient Closed-Form Estimators")
+     "Asymptotic Efficient Closed-Form Estimators for Multivariate Distributions")
     (description
-     "Estimate asymptotic efficient closed-form estimators and provide goodness of
-fit, estimates, plot and etc.  Yue, S. (2001) <doi:10.1002/hyp.259>.  Mosimann,
-James E. (1962) <doi:10.1093/biomet/49.1-2.65>.")
+     "Asymptotic efficient closed-form estimators (MLEces) are provided in this
+package for three multivariate distributions(gamma, Weibull and Dirichlet) whose
+maximum likelihood estimators (MLEs) are not in closed forms.  Closed-form
+estimators are strong consistent, and have the similar asymptotic normal
+distribution like MLEs.  But the calculation of MLEces are much faster than the
+corresponding MLEs.  Further details and explanations of MLEces can be found in.
+ Jang, et al. (2023) <doi:10.1111/stan.12299>.  Kim, et al. (2023)
+<doi:10.1080/03610926.2023.2179880>.")
     (license license:gpl2)))
 
 (define-public r-mle-tools
@@ -18763,13 +18746,13 @@ Multivariate Normal Mixture (MNM, Ghahramani and Jordan, 1994,
 (define-public r-mixture
   (package
     (name "r-mixture")
-    (version "2.0.5")
+    (version "2.0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mixture" version))
               (sha256
                (base32
-                "16ydhsgssd5jbhf03llxy2gjhv3h3bqi01s45jcb9dwc3mbd306b"))))
+                "08p1nziyflkz992i74br4mpc0j1npp947jwvy9hvmxir0mnzchi8"))))
     (properties `((upstream-name . "mixture")))
     (build-system r-build-system)
     (inputs (list gsl))
@@ -20054,17 +20037,17 @@ missing values.  This package can be used as an independent alternative to the
 (define-public r-mixak
   (package
     (name "r-mixak")
-    (version "5.5")
+    (version "5.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mixAK" version))
               (sha256
                (base32
-                "0g60hynazs6ix2dp0svwql04rk6bxri2llc6pn6h5faqns9cpl4a"))))
+                "183bhlp2h3x5rfxfx21gg2wrz3ns458w9ygna9v51iagi5zzc1k5"))))
     (properties `((upstream-name . "mixAK")))
     (build-system r-build-system)
     (propagated-inputs (list r-mnormt r-lme4 r-fastghquad r-colorspace r-coda))
-    (home-page "https://www2.karlin.mff.cuni.cz/~komarek/")
+    (home-page "http://msekce.karlin.mff.cuni.cz/~komarek/")
     (synopsis
      "Multivariate Normal Mixture Models and Mixtures of Generalized Linear Mixed Models Including Model Based Clustering")
     (description
@@ -21570,13 +21553,13 @@ imputation of the number of previous episodes.  See @code{HernÃ¡ndez-Herrera} 
 (define-public r-mirai-promises
   (package
     (name "r-mirai-promises")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mirai.promises" version))
               (sha256
                (base32
-                "1nj5hwxssgb4bs9g904a4966s1bhfdnqpddhblsj8fqc98grzf33"))))
+                "17jdri470qvxp88h97zgblvbrb0pj1msym96sxlg93gmq2xd0ap8"))))
     (properties `((upstream-name . "mirai.promises")))
     (build-system r-build-system)
     (propagated-inputs (list r-promises r-mirai r-later))
@@ -24807,6 +24790,38 @@ canonical vectors in the p>>N setting, JASA <doi:10.1080/01621459.2015.1034318>.
 API. It can search for images using the WFS method.  It can Download images
 using WMS WMTS. It can also Download a full resolution image.")
     (license license:asl2.0)))
+
+(define-public r-mgpsdk
+  (package
+    (name "r-mgpsdk")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "MGPSDK" version))
+              (sha256
+               (base32
+                "07c92bmx572j0bda25d5rmygnq1mmp9pb8hyp387bqfm8yg7v9zi"))))
+    (properties `((upstream-name . "MGPSDK")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-reticulate r-r6))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=MGPSDK")
+    (synopsis
+     "Interact with the Maxar 'MGP' Application Programming Interfaces")
+    (description
+     "This package provides an interface to the Maxar Geospatial Platform (MGP)
+Application Programming Interface.
+<https://www.maxar.com/maxar-geospatial-platform> It facilitates imagery
+searches using the MGP Streaming Application Programming Interface via the Web
+Feature Service (WFS) method, and supports image downloads through Web Map
+Service (WMS) and Web Map Tile Service (WMTS) Open Geospatial Consortium (OGC)
+methods.  Additionally, it integrates with the Maxar Geospatial Platform
+Basemaps Application Programming Interface for accessing Maxar basemaps imagery
+and seamlines.  The package also offers seamless integration with the Maxar
+Geospatial Platform Discovery Application Programming Interface, allowing users
+to search, filter, and sort Maxar content, while retrieving detailed metadata in
+formats like @code{SpatioTemporal} Asset Catalog (STAC) and @code{GeoJSON}.")
+    (license license:expat)))
 
 (define-public r-mgms2
   (package
@@ -32659,13 +32674,13 @@ marginalized zero-inflated Poisson model described in Long et al. (2014)
 (define-public r-mcompanion
   (package
     (name "r-mcompanion")
-    (version "0.5.7")
+    (version "0.5.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mcompanion" version))
               (sha256
                (base32
-                "18yz16k8kq2g00k7kr9yj543ybf1l7gyji1g6584ahsmxy3qlwfv"))))
+                "14bv7ljz45x1n2gihbhlwh3zz68bpj7mqz0702k4j9139gra3zk0"))))
     (properties `((upstream-name . "mcompanion")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-matrix r-mass r-gbutils))
@@ -33420,6 +33435,32 @@ probability ratio test boundary (Fay, Kim and Hachey, 2007
 <DOI:10.1198/106186007X257025>) and a boundary proposed by Besag and Clifford,
 1991 <DOI:10.1093/biomet/78.2.301>.  Gives valid p-values and confidence
 intervals on p-values.")
+    (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-mcgibbsit
+  (package
+    (name "r-mcgibbsit")
+    (version "1.2.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "mcgibbsit" version))
+              (sha256
+               (base32
+                "1ykg2g57zxaw2z9f7sgyd6kc6wx1lmad13asiy7q79ydzw8x8smw"))))
+    (properties `((upstream-name . "mcgibbsit")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-coda))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/r-gregmisc/mcgibbsit")
+    (synopsis
+     "Warnes and Raftery's 'MCGibbsit' MCMC Run Length and Convergence Diagnostic")
+    (description
+     "Implementation of Warnes & Raftery's MCGibbsit run-length and convergence
+diagnostic for a set of (not-necessarily independent) Markov Chain Monte Carlo
+(MCMC) samplers.  It combines the quantile estimate error-bounding approach of
+the Raftery and Lewis MCMC run length diagnostic `gibbsit` with the between
+verses within chain approach of the Gelman and Rubin MCMC convergence
+diagnostic.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-mcga
@@ -34367,13 +34408,13 @@ on practitioners to determine correct stepwise procedures independently.")
 (define-public r-mbhdesign
   (package
     (name "r-mbhdesign")
-    (version "2.3.14")
+    (version "2.3.15")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MBHdesign" version))
               (sha256
                (base32
-                "06hs38w9g5iqgz1n4xf4p2x677ja1i48pdcd8bqf6vd4n71ld53l"))))
+                "03v6809drwjwr9xk19pr4n5wnqy5kh3vizfk0mlml3sn40fg3kxj"))))
     (properties `((upstream-name . "MBHdesign")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -34740,13 +34781,13 @@ zero-inflated mediators containing true zeros and false zeros.  See Jiang et al
 (define-public r-mazamatimeseries
   (package
     (name "r-mazamatimeseries")
-    (version "0.2.14")
+    (version "0.2.15")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MazamaTimeSeries" version))
               (sha256
                (base32
-                "0vhsl775vrr7054h38vrhpi5b0mj1xbvxdk4n02an8i687pf2gx0"))))
+                "04dqwky6cyvas2ygmnc3r6rb302dc2flrgljl9k9vc71xs0d2w57"))))
     (properties `((upstream-name . "MazamaTimeSeries")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -37175,13 +37216,13 @@ described in Zempleni et al. (2004) <doi:10.1002/asmb.521>, Dobi and Zempleni
 (define-public r-markovchain
   (package
     (name "r-markovchain")
-    (version "0.9.4")
+    (version "0.9.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "markovchain" version))
               (sha256
                (base32
-                "0fd8vdykyhdmkkr63kmifrfsr1j3pcl50ir8gfpyr9v61449m6hp"))))
+                "0z67i4j676gwvxyf1gw73x7jib7jm5jgyzqvami47mfvc3b2dygf"))))
     (properties `((upstream-name . "markovchain")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppparallel
@@ -37703,13 +37744,13 @@ maps.")
 (define-public r-marelac
   (package
     (name "r-marelac")
-    (version "2.1.10")
+    (version "2.1.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "marelac" version))
               (sha256
                (base32
-                "08phsghzvi0z78pkb5lkamni83fsw0bqfri99j6bjf6y14aygif9"))))
+                "0wl1z4sq61qq8d3szcd772rw35mlcrf7d9g8q9dr0znwvfj9gqdh"))))
     (properties `((upstream-name . "marelac")))
     (build-system r-build-system)
     (propagated-inputs (list r-shape r-seacarb))
@@ -39847,22 +39888,23 @@ normalized words.")
 (define-public r-malariaatlas
   (package
     (name "r-malariaatlas")
-    (version "1.0.1")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "malariaAtlas" version))
               (sha256
                (base32
-                "0k0406pn65ars4d6zlirfdd7z3rl2z82vsx5p97gmxnjjp6gjdpa"))))
+                "0mddrnw8g0hjnh9zv2ldfall7789szk6pkz215s3w6vnm5x20psp"))))
     (properties `((upstream-name . "malariaAtlas")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
+                             r-tidyterra
                              r-tidyr
+                             r-terra
                              r-stringi
-                             r-sp
+                             r-sf
                              r-rlang
-                             r-rgdal
-                             r-raster
+                             r-lifecycle
                              r-httr
                              r-gridextra
                              r-ggplot2

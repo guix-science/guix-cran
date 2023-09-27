@@ -1143,13 +1143,13 @@ Checks for unintended meanings by querying Wiktionary and Wikipedia.")
 (define-public r-av
   (package
     (name "r-av")
-    (version "0.8.4")
+    (version "0.8.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "av" version))
               (sha256
                (base32
-                "050hs0ifaaghbr0ys1jisjjbp5dfas1ghi928yk2vjv1c2lgs3lz"))))
+                "0xnzf91jw3sx50x6lyzbm3g7a3rn9ad0k39xgp3vpdgj8w6v1324"))))
     (properties `((upstream-name . "av")))
     (build-system r-build-system)
     (inputs (list zlib))
@@ -1286,13 +1286,13 @@ Threshold plugin functionality to R users.  See
 (define-public r-autostsm
   (package
     (name "r-autostsm")
-    (version "3.1.0")
+    (version "3.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "autostsm" version))
               (sha256
                (base32
-                "1qds3mw94jmkfqp7qxff8mixbk1dwslmwk5hz42wcid3vwpgq6g3"))))
+                "05nsvxcybckpv4y289ddh6rkzfmbjhf49db4nkwj9il2429c9v6c"))))
     (properties `((upstream-name . "autostsm")))
     (build-system r-build-system)
     (propagated-inputs (list r-strucchange
@@ -5632,13 +5632,13 @@ only for the normal case).  Olivari et all (2021)
 (define-public r-arpaldata
   (package
     (name "r-arpaldata")
-    (version "1.4.0")
+    (version "1.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ARPALData" version))
               (sha256
                (base32
-                "0iysm1n8kbqk6ay9ddibnvdzjr061zj589w1i20iznyc86xk1ksm"))))
+                "0vkrh31dki4ff4yfi5d4ywgs07gpga24dby516ydg6hryxrbzsq7"))))
     (properties `((upstream-name . "ARPALData")))
     (build-system r-build-system)
     (propagated-inputs (list r-tm
@@ -5646,7 +5646,6 @@ only for the normal case).  Olivari et all (2021)
                              r-tidyr
                              r-tibble
                              r-stringr
-                             r-stringi
                              r-sf
                              r-rlang
                              r-readr
@@ -8826,35 +8825,6 @@ frames.")
      "R interface for Apache Sedona based on sparklyr (<https://sedona.apache.org>).")
     (license license:asl2.0)))
 
-(define-public r-apa
-  (package
-    (name "r-apa")
-    (version "0.3.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "apa" version))
-              (sha256
-               (base32
-                "1nvhl5fqramsdrkpl1nmgr1vmki5c1lkdi1kkx7ihf0cz35f7c2a"))))
-    (properties `((upstream-name . "apa")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble
-                             r-stringr
-                             r-rmarkdown
-                             r-purrr
-                             r-mbess
-                             r-magrittr
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/dgromer/apa")
-    (synopsis
-     "Format Outputs of Statistical Tests According to APA Guidelines")
-    (description
-     "Formatter functions in the apa package take the return value of a statistical
-test function, e.g. a call to chisq.test() and return a string formatted
-according to the guidelines of the APA (American Psychological Association).")
-    (license license:gpl3+)))
-
 (define-public r-aovbay
   (package
     (name "r-aovbay")
@@ -9248,64 +9218,6 @@ by the anybadge library in python.")
 <doi:10.3390/bs12100398>.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
-(define-public r-ants
-  (package
-    (name "r-ants")
-    (version "0.0.16")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ANTs" version))
-              (sha256
-               (base32
-                "1bvbr9m5fbq3x5mfn4xhfm2x7a8zs616cf02gzv65r8k9q2348ll"))))
-    (properties `((upstream-name . "ANTs")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rstudioapi
-                             r-rcppeigen
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-lme4
-                             r-kendall
-                             r-gtools))
-    (native-inputs (list r-knitr esbuild))
-    (home-page "https://cran.r-project.org/package=ANTs")
-    (synopsis "Animal Network Toolkit Software")
-    (description
-     "How animals interact and develop social relationships in face of
-sociodemographic and ecological pressures is of great interest.  New
-methodologies, in particular Social Network Analysis (SNA), allow us to
-elucidate these types of questions.  However, the different methodologies
-developed to that end and the speed at which they emerge make their use
-difficult.  Moreover, the lack of communication between the different software
-developed to provide an answer to the same/different research questions is a
-source of confusion.  The R package Animal Network Toolkit ANTs was developed
-with the aim of implementing in one package the different social network
-analysis techniques currently used in the study of animal social networks.
-Hence, ANT is a toolkit for animal research allowing among other things to: 1)
-measure global, dyadic and nodal networks metrics; 2) perform data
-randomization: pre- and post-network (node and link permutations); 3) perform
-statistical permutation tests as correlation test (<doi:10.2307/2332226>),
-t-test (<doi:10.1037/h0041412>), General Linear Model (<doi:10.2307/2346786>),
-General Linear Mixed Model (<doi:10.2307/2346786>), deletion simulation
-(<doi:10.1098/rsbl.2003.0057>), Matrix @code{TauKr} correlations
-(<doi:10.1016/S0022-5193(05)80036-0>).  The package is partially coded in C++
-using the R package Rcpp for an optimal coding speed.  The package gives
-researchers a workflow from the raw data to the achievement of statistical
-analyses, allowing for a multilevel approach
-(<doi:10.1007/978-3-319-47829-6_1882-1>): from the individual's position and
-role within the network, to the identification of interaction patterns, and the
-study of the overall network properties.  Furthermore, ANT also provides a
-guideline on the SNA techniques used: 1) from the appropriate randomization
-technique according to the data collected; 2) to the choice, the meaning, the
-limitations and advantages of the network metrics to apply, 3) and the type of
-statistical tests to run.  The ANT project is multi-collaborative, aiming to
-provide access to advanced social network analysis techniques and to create new
-ones that meet researchers needs in future versions.  The ANT project is
-multi-collaborative, aiming to provide access to advanced social network
-analysis techniques and to create new ones that meet researchers needs in future
-versions.")
-    (license license:gpl3+)))
-
 (define-public r-antman
   (package
     (name "r-antman")
@@ -9517,21 +9429,20 @@ online: <https://www.who.int/tools/child-growth-standards>.")
 (define-public r-antaresviz
   (package
     (name "r-antaresviz")
-    (version "0.17.1")
+    (version "0.18.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "antaresViz" version))
               (sha256
                (base32
-                "072nh0x0qrbi9va27r20vjzjsbjriqbzbpwc7vl40pimjd0hd2x4"))))
+                "1lffsxv8fy3yq6rx6520rizp9f74d8bd78by5n209yr9yhw1629r"))))
     (properties `((upstream-name . "antaresViz")))
     (build-system r-build-system)
     (propagated-inputs (list r-webshot
                              r-spmaps
                              r-sp
                              r-shiny
-                             r-rgeos
-                             r-raster
+                             r-sf
                              r-ramcharts
                              r-plotly
                              r-manipulatewidget
@@ -9853,6 +9764,47 @@ Abnormal Region Detector (BARD) Bardwell and Fearnhead (2015)
 <@code{arXiv:1412.5565>}.  These methods are for the detection of anomalies in
 time series data.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-anomalize
+  (package
+    (name "r-anomalize")
+    (version "0.2.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "anomalize" version))
+              (sha256
+               (base32
+                "0i5vlhh9m00rqgk3wvy39fpzw9jxp38h3sxjqa74i54jy8maqdm6"))))
+    (properties `((upstream-name . "anomalize")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-timetk
+                             r-tidyr
+                             r-tibbletime
+                             r-tibble
+                             r-sweep
+                             r-rlang
+                             r-purrr
+                             r-glue
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/business-science/anomalize")
+    (synopsis "Tidy Anomaly Detection")
+    (description
+     "The anomalize package enables a \"tidy\" workflow for detecting anomalies in data.
+ The main functions are time_decompose(), anomalize(), and time_recompose().
+When combined, it's quite simple to decompose time series, detect anomalies, and
+create bands separating the \"normal\" data from the anomalous data at scale (i.e.
+ for multiple time series).  Time series decomposition is used to remove trend
+and seasonal components via the time_decompose() function and methods include
+seasonal decomposition of time series by Loess (\"stl\") and seasonal
+decomposition by piecewise medians (\"twitter\").  The anomalize() function
+implements two methods for anomaly detection of residuals including using an
+inner quartile range (\"iqr\") and generalized extreme studentized deviation
+(\"gesd\").  These methods are based on those used in the forecast package and the
+Twitter @code{AnomalyDetection} package.  Refer to the associated functions for
+specific references for these methods.")
+    (license license:gpl3+)))
 
 (define-public r-anom
   (package
@@ -10624,17 +10576,17 @@ Andrews, D. F. (1972) Plots of High-Dimensional Data.  Biometrics, 28(1),
 (define-public r-and
   (package
     (name "r-and")
-    (version "0.1.4")
+    (version "0.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "and" version))
               (sha256
                (base32
-                "072hhh8f6pnchryv6aclspd20i05fx63qxfgdvghpycvwbsn8fyg"))))
+                "1i95ap4yba5c5ygwsvwmqb3am4r5agv7yhls7ji7pnly8nkrknyn"))))
     (properties `((upstream-name . "and")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-glue))
-    (home-page "https://and.rossellhayes.com")
+    (home-page "https://pkg.rossellhayes.com/and/")
     (synopsis "Construct Natural-Language Lists with Internationalization")
     (description
      "Construct language-aware lists.  Make \"and\"-separated and \"or\"-separated lists
@@ -15741,13 +15693,13 @@ specified age distributions.")
 (define-public r-agena-ai
   (package
     (name "r-agena-ai")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "agena.ai" version))
               (sha256
                (base32
-                "1j7n04h2vdc4snlm32cgx1nbpfygqvk1za13y1shf82sn1ix30v4"))))
+                "1nn2634r93gg3nwqnlg8c44zajl5jadx0cszah8nq502qby5y36j"))))
     (properties `((upstream-name . "agena.ai")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjson r-rgraphviz r-openxlsx r-httr))
@@ -15758,7 +15710,9 @@ specified age distributions.")
      "An R wrapper for agena.ai <https://www.agena.ai> which provides users
 capabilities to work with agena.ai using the R environment.  Users can create
 Bayesian network models from scratch or import existing models in R and export
-to agena.ai cloud or local API for calculations.")
+to agena.ai cloud or local API for calculations.  Note: running calculations
+requires a valid agena.ai API license (past the initial trial period of the
+local API).")
     (license license:expat)))
 
 (define-public r-ageg
@@ -17268,13 +17222,13 @@ the admiral package.")
 (define-public r-admiral
   (package
     (name "r-admiral")
-    (version "0.12.0")
+    (version "0.12.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "admiral" version))
               (sha256
                (base32
-                "08ad819qixdfrk90jn7l2mr2ggj167hxddq70sx0xs216myq5ah8"))))
+                "1079v2fl0cwjk2918cijx02d92z3w9ixzlfw4gzfs8s2bsgbzb2a"))))
     (properties `((upstream-name . "admiral")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -19496,13 +19450,13 @@ PRISM raster.  See the examples, testing versions and more details from:
 (define-public r-accumulate
   (package
     (name "r-accumulate")
-    (version "0.9.0")
+    (version "0.9.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "accumulate" version))
               (sha256
                (base32
-                "14gy2l9ayhwym3dz1n70y76skpyzhl7dv4m2rf1kmj6qf1dznqb0"))))
+                "0c2iiliqpyblfdz189d06ljbbp0hyadhgr7hrzm0wfcm8245njah"))))
     (properties `((upstream-name . "accumulate")))
     (build-system r-build-system)
     (native-inputs (list r-simplermarkdown))

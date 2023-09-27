@@ -110,13 +110,13 @@ language proficiency, wording style, and phrasal adjustments remains your job.")
 (define-public r-wyz-code-offensiveprogramming
   (package
     (name "r-wyz-code-offensiveprogramming")
-    (version "1.1.23")
+    (version "1.1.24")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wyz.code.offensiveProgramming" version))
               (sha256
                (base32
-                "1cxzh5yp6y2r5n6qkhb4g4dkbyw7mdnsfh883bhksk527ra4qaln"))))
+                "1q3yn5yp2qlzqg1xpxlkpdkiij4kzwn9yj8mc9xxx4bxnbspkakq"))))
     (properties `((upstream-name . "wyz.code.offensiveProgramming")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-stringr r-r6 r-data-table r-crayon))
@@ -137,13 +137,13 @@ up processing as many checks will be reduced to one single check.")
 (define-public r-wyz-code-metatesting
   (package
     (name "r-wyz-code-metatesting")
-    (version "1.1.21")
+    (version "1.1.22")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wyz.code.metaTesting" version))
               (sha256
                (base32
-                "1033kz6zhbhd09dh40gp03dfy2kf9zskqh942i06jx1z2dvx3vvi"))))
+                "0xhcqqvh0lkw9mqdrib0q1inwgla5y9ayjc6pdkix6ckabfybagg"))))
     (properties `((upstream-name . "wyz.code.metaTesting")))
     (build-system r-build-system)
     (propagated-inputs (list r-wyz-code-offensiveprogramming r-tidyr
@@ -1076,13 +1076,13 @@ directory within functions and wrap console messages around other functions.")
 (define-public r-wrappedtools
   (package
     (name "r-wrappedtools")
-    (version "0.9.2")
+    (version "0.9.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wrappedtools" version))
               (sha256
                (base32
-                "10rvx4plw2l9xbhlb9zv720m91dxy1wx3pf5l60abq5cl4npwjzq"))))
+                "15ds3y211f3ji2v24y3radraxls6vcjjmfacd3wsfix6pfznr94a"))))
     (properties `((upstream-name . "wrappedtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -5479,18 +5479,18 @@ online at <https://webpower.psychstat.org>.")
 (define-public r-webp
   (package
     (name "r-webp")
-    (version "1.1.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "webp" version))
               (sha256
                (base32
-                "199l6qhf7f96gqsg0bqzazvl09q383z4087vb1vjiy22k031zbh6"))))
+                "0srmqrjff3c15d2921rd3b203c6qq170gschbp92fi3d3qshv0fk"))))
     (properties `((upstream-name . "webp")))
     (build-system r-build-system)
     (inputs (list libwebp))
     (native-inputs (list pkg-config))
-    (home-page "https://cran.r-project.org/package=webp")
+    (home-page "https://jeroen.r-universe.dev/webp")
     (synopsis "New Format for Lossless and Lossy Image Compression")
     (description
      "Lossless webp images are 26% smaller in size compared to PNG. Lossy webp images
@@ -6687,16 +6687,16 @@ Farres, A., Fienga, A. (2011b <doi:10.1051/0004-6361/201117504>.  J. Laskar
 (define-public r-waver
   (package
     (name "r-waver")
-    (version "0.2.1")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "waver" version))
               (sha256
                (base32
-                "1kl14cd96fwrqvk35sqbgi8bf31gc2ccxxy5d1v46scwyqkb0g5l"))))
+                "1yhbp1jimx33g4sjigr5vmqqrinz1mdfgvkaaj4y2gcx7sihiiwx"))))
     (properties `((upstream-name . "waver")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp r-rgeos r-rgdal r-geosphere))
+    (propagated-inputs (list r-sf r-geosphere))
     (home-page "https://github.com/pmarchand1/waver")
     (synopsis "Calculate Fetch and Wave Energy")
     (description
@@ -7732,6 +7732,34 @@ is mainly intended to be used as educational tool for the Water Infrastructure
 Experimental and Computer Laboratory at ETH Zurich, Switzerland.")
     (license license:gpl3)))
 
+(define-public r-wals
+  (package
+    (name "r-wals")
+    (version "0.2.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "WALS" version))
+              (sha256
+               (base32
+                "1sz55yw8cmnssyjvvr3xvjks3i2gn3cgalra7hkx24v18lp47ksc"))))
+    (properties `((upstream-name . "WALS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rdpack r-mass r-formula))
+    (home-page "https://github.com/kevhuy/WALS")
+    (synopsis "Weighted-Average Least Squares Model Averaging")
+    (description
+     "This package implements the Weighted-Average Least Squares method for model
+averaging of negative binomial regression models of Huynh (2023) (mimeo),
+generalized linear models of De Luca, Magnus, Peracchi (2018)
+<doi:10.1016/j.jeconom.2017.12.007> and linear regression models of Magnus,
+Powell, Pruefer (2010) <doi:10.1016/j.jeconom.2009.07.004>, see also Magnus, De
+Luca (2016) <doi:10.1111/joes.12094>.  Weighted-Average Least Squares for the
+linear regression model is based on the original MATLAB code by Magnus and De
+Luca <https://www.janmagnus.nl/items/WALS.pdf>, see also Kumar, Magnus (2013)
+<doi:10.1007/s13571-013-0060-9> and De Luca, Magnus (2011)
+<doi:10.1177/1536867X1201100402>.")
+    (license (list license:gpl2 license:gpl3))))
+
 (define-public r-walrus
   (package
     (name "r-walrus")
@@ -7844,13 +7872,13 @@ Durufle et al (2020) <doi:10.1093/bib/bbaa166> and Durufle et al (2020)
 (define-public r-wallace
   (package
     (name "r-wallace")
-    (version "2.0.6")
+    (version "2.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wallace" version))
               (sha256
                (base32
-                "0phyxnhslc3vkp27vxf85933wwj0brqn3p86bir8b1h3xxizy6mk"))))
+                "0gql7pwpwdhnqrrqh6qv0zyl8r1pgf5hh3h64rdnap4fhn1id5b9"))))
     (properties `((upstream-name . "wallace")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -7864,7 +7892,6 @@ Durufle et al (2020) <doi:10.1093/bib/bbaa166> and Durufle et al (2020)
                              r-rmarkdown
                              r-rlang
                              r-rjava
-                             r-rgeos
                              r-rcolorbrewer
                              r-magrittr
                              r-leaflet-extras
@@ -7982,13 +8009,13 @@ Vihola, Helske, Franks (2020, <doi:10.1111/sjos.12492>).")
 (define-public r-walkboutr
   (package
     (name "r-walkboutr")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "walkboutr" version))
               (sha256
                (base32
-                "1rv5pc2zqlx4b71mab3k6cjc1mfhg15aakl5vc1746z7ypsb2whn"))))
+                "0n6gk07bk0grqvd76w31di27spx4av3n8cgl4gzipxwjirkkmxky"))))
     (properties `((upstream-name . "walkboutr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

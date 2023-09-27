@@ -332,30 +332,6 @@ option to use Bayesian Model Averaging (BMA) is also part of this package that
 can be exploited for predictive power measurements in real datasets.")
     (license license:gpl2+)))
 
-(define-public r-bvpsolve
-  (package
-    (name "r-bvpsolve")
-    (version "1.4.4.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "bvpSolve" version))
-              (sha256
-               (base32
-                "0xq5m57cya6l3c1glshrd29ywpm1rky36kqqrp4mw2scakz9p4wj"))))
-    (properties `((upstream-name . "bvpSolve")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rootsolve r-desolve))
-    (native-inputs (list gfortran))
-    (home-page "https://cran.r-project.org/package=bvpSolve")
-    (synopsis "Solvers for Boundary Value Problems of Differential Equations")
-    (description
-     "This package provides functions that solve boundary value problems ('BVP') of
-systems of ordinary differential equations ('ODE') and differential algebraic
-equations ('DAE').  The functions provide an interface to the FORTRAN functions
-@code{twpbvpC}', colnew/colsys', and an R-implementation of the shooting method.
- Mazzia, F., J.R. Cash and K. Soetaert, 2014.")
-    (license license:gpl2+)))
-
 (define-public r-bvpa
   (package
     (name "r-bvpa")
@@ -1117,13 +1093,13 @@ which identifies the groove locations.")
 (define-public r-bulkreadr
   (package
     (name "r-bulkreadr")
-    (version "0.2.0")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bulkreadr" version))
               (sha256
                (base32
-                "01h87l4hjm1vwdz5l5hs4nmhh5fwyigbf9m1xj8xf2avaz3d33sm"))))
+                "0qbh3wsyafdixvwcbff0qajmy2ss6swq5m9kjzcsjai4cxahwbci"))))
     (properties `((upstream-name . "bulkreadr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -1524,13 +1500,13 @@ Lee 2005 <doi:10.1509/jmkr.2005.42.4.415>) models.")
 (define-public r-btsr
   (package
     (name "r-btsr")
-    (version "0.1.4")
+    (version "0.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BTSR" version))
               (sha256
                (base32
-                "05adkp73d02nv1agafsfag1dsd0c82pwxl0zqc7zyx0dhrxc9dlh"))))
+                "0kqgy61ijalpclrm20xwjbvbb5pkhkbgsbdbsz0mrb4v30a05dh4"))))
     (properties `((upstream-name . "BTSR")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -7819,13 +7795,13 @@ system identifications, J. Biomol.  NMR. 32 (2005) 13â22.
 (define-public r-bmlm
   (package
     (name "r-bmlm")
-    (version "1.3.14")
+    (version "1.3.15")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bmlm" version))
               (sha256
                (base32
-                "0wasklfsgs5bijsp4hy24l1gwfldbwbmnq10r1pf4jgpl9k1b7fs"))))
+                "1iig406z8whdjpbvajks2vzp1s1ay1f99r1n6qhs9xyi1z6yff2l"))))
     (properties `((upstream-name . "bmlm")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -9155,13 +9131,13 @@ Meucci, Attilio (2008) <doi:10.2139/ssrn.1117574>.")
 (define-public r-blavaan
   (package
     (name "r-blavaan")
-    (version "0.5-1")
+    (version "0.5-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "blavaan" version))
               (sha256
                (base32
-                "1i9r9k92mvnqwang21kg9dbj03yxx3rsw8fb451gd33l48rxw36j"))))
+                "0n07qjn76fac2fn5cqvn8shqnyd7jwrxqbf3353m5nx0haq3llpk"))))
     (properties `((upstream-name . "blavaan")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmvnsim
@@ -9273,13 +9249,13 @@ estimates the loglinear cognitive diagnosis model of Henson, Templin, and Willse
 (define-public r-blastula
   (package
     (name "r-blastula")
-    (version "0.3.3")
+    (version "0.3.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "blastula" version))
               (sha256
                (base32
-                "0n7cfz6m9wi7jdw8r093vmhld3q669drm9v59740dsan9s1kqq5i"))))
+                "0adflcar5vly97al072pjgb187f1kw64ddna6mm5p4rihq7ckryl"))))
     (properties `((upstream-name . "blastula")))
     (build-system r-build-system)
     (propagated-inputs (list r-uuid
@@ -15167,13 +15143,13 @@ Knowledge, Journal of Statistical Software <doi:10.18637/jss.v047.i03>.")
 (define-public r-bgmisc
   (package
     (name "r-bgmisc")
-    (version "1.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BGmisc" version))
               (sha256
                (base32
-                "195mnq11a07in0g6n20bry391a6968gyiarbalbsplp0mbmkljjy"))))
+                "0r44n75n19x2dwi7ysisl49309pwimq3nz66a0041ibhclf1rzvr"))))
     (properties `((upstream-name . "BGmisc")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-kinship2 r-igraph))
@@ -17315,13 +17291,13 @@ by Godard and van Eyll (2018) <doi:10.12688/f1000research.13925.3>.")
 (define-public r-beautier
   (package
     (name "r-beautier")
-    (version "2.6.5")
+    (version "2.6.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "beautier" version))
               (sha256
                (base32
-                "15nbgn2ndb2qgwqpalm0mkwwxw15ncq0rihkhbczzw4i6bcyhmyb"))))
+                "1z6awfw5sz30fdgjl1g0fq2amwjw0xnb5kamhfrf4xyl6hj2h60y"))))
     (properties `((upstream-name . "beautier")))
     (build-system r-build-system)
     (propagated-inputs (list r-testit
@@ -17332,8 +17308,7 @@ by Godard and van Eyll (2018) <doi:10.12688/f1000research.13925.3>.")
                              r-assertive
                              r-ape))
     (native-inputs (list r-knitr))
-    (home-page
-     "https://docs.ropensci.org/beautier/https://github.com/ropensci/beautier/")
+    (home-page "https://github.com/ropensci/beautier/")
     (synopsis "'BEAUti' from R")
     (description
      "BEAST2 (<https://www.beast2.org>) is a widely used Bayesian phylogenetic tool,
@@ -20676,19 +20651,18 @@ probabilistic components, such as total fertility rate and life expectancy
 (define-public r-bayespo
   (package
     (name "r-bayespo")
-    (version "0.3.1")
+    (version "0.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bayesPO" version))
               (sha256
                (base32
-                "1n9m89lhdj0ng3570x23kcjyjv85bky0hqrs1sl7qxjdzxacsisl"))))
+                "0i2wmxagzfic6vpac58dzc7acpjslnk551am549527nzrs4lnmkd"))))
     (properties `((upstream-name . "bayesPO")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppprogress r-rcppeigen r-rcpp r-coda))
     (native-inputs (list r-knitr))
-    (home-page
-     "<http://www.pg.im.ufrj.br/teses/Estatistica/Doutorado/043.pdf>")
+    (home-page "https://cran.r-project.org/package=bayesPO")
     (synopsis "Bayesian Inference for Presence-Only Data")
     (description
      "Presence-Only data is best modelled with a Point Process Model.  The work of
@@ -20890,23 +20864,23 @@ package from @code{GitHub}.")
 (define-public r-bayesnec
   (package
     (name "r-bayesnec")
-    (version "2.1.0.3")
+    (version "2.1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bayesnec" version))
               (sha256
                (base32
-                "1fvsr8qs9f3nnpb6jm33cqsc6i851r1fclv0qzlvxgx6z428fha5"))))
+                "02ahcaj72r0md6a2pj8ffz42xpv37hsvfixay57rc5sbdbics9gc"))))
     (properties `((upstream-name . "bayesnec")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
                              r-tidyr
+                             r-tibble
                              r-rlang
                              r-purrr
                              r-loo
                              r-ggplot2
                              r-formula-tools
-                             r-extradistr
                              r-evaluate
                              r-dplyr
                              r-chk
@@ -20919,9 +20893,11 @@ package from @code{GitHub}.")
 (2017)<doi:10.18637/jss.v080.i01>; Burkner (2018)<doi:10.32614/RJ-2018-017>;
 Carpenter et al. (2017)<doi:10.18637/jss.v076.i01> to fit
 concentration(dose)-response data using Bayesian methods for the purpose of
-estimating ECX values, but more particularly NEC (see Fox
-(2010)<doi:10.1016/j.ecoenv.2009.09.012>.  This package expands and supersedes
-an original version implemented in R2jags, see Fisher, Ricardo and Fox
+estimating ECx values, but more particularly NEC (see Fox
+(2010)<doi:10.1016/j.ecoenv.2009.09.012>), NSEC (see Fisher and Fox
+(2023)<doi:10.1002/etc.5610>), and N(S)EC (see Fisher et al.
+2023<doi:10.1002/ieam.4809>).  This package expands and supersedes an original
+version implemented in R2jags, see Fisher, Ricardo and Fox
 (2020)<doi:10.5281/ZENODO.3966864>.")
     (license license:gpl2)))
 
@@ -23053,13 +23029,13 @@ implemented in this package are described in Roman-Palacios et al. (2021)
 (define-public r-bawir
   (package
     (name "r-bawir")
-    (version "1.2.7")
+    (version "1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BAwiR" version))
               (sha256
                (base32
-                "1vvym7bbfbi1x91962nfcqql0fiyv4svdk5329rq43nnh188i456"))))
+                "1avqylrvsshhmvf4fd612949ymyx2i7m7k6w29pcnrawai1qw54c"))))
     (properties `((upstream-name . "BAwiR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -23071,6 +23047,7 @@ implemented in this package are described in Roman-Palacios et al. (2021)
                              r-rworldmap
                              r-rvest
                              r-reshape2
+                             r-readr
                              r-purrr
                              r-plyr
                              r-magrittr
@@ -23081,18 +23058,22 @@ implemented in this package are described in Roman-Palacios et al. (2021)
                              r-dplyr
                              r-anthropometry))
     (native-inputs (list r-knitr))
-    (home-page "https://www.R-project.org")
+    (home-page "https://www.uv.es/vivigui/basketball_platform.html")
     (synopsis "Analysis of Basketball Data")
     (description
-     "Collection of tools to work with basketball data.  Functions available are
-related to friendly web scraping and visualization.  Data were obtained from
-<https://www.euroleague.net/>, <https://www.eurocupbasketball.com/> and
-<https://www.acb.com/>, following the instructions of their respectives
-robots.txt files, when available.  Tools for visualization include a population
-pyramid, 2D plots, circular plots of players percentiles, plots of players
-monthly/yearly stats, team heatmaps, team shooting plots, team four factors
-plots, cross-tables with the results of regular season games and maps of
-nationalities.  Please see Vinue (2020) <doi:10.1089/big.2018.0124>.")
+     "Collection of tools to work with European basketball data.  Functions available
+are related to friendly web scraping, data management and visualization.  Data
+were obtained from <https://www.euroleaguebasketball.net/euroleague/>,
+<https://www.euroleaguebasketball.net/eurocup/> and <https://www.acb.com/>,
+following the instructions of their respectives robots.txt files, when
+available.  Box score data are available for the three leagues.  Play-by-play
+data are also available for the Spanish league.  Methods for analysis include a
+population pyramid, 2D plots, circular plots of players percentiles, plots of
+players monthly/yearly stats, team heatmaps, team shooting plots, team four
+factors plots, cross-tables with the results of regular season games, maps of
+nationalities, combinations of lineups, possessions-related variables, timeouts,
+performance by periods, personal fouls and offensive rebounds.  Please see Vinue
+(2020) <doi:10.1089/big.2018.0124>.")
     (license license:gpl2+)))
 
 (define-public r-batteryreduction

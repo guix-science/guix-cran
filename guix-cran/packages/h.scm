@@ -1187,13 +1187,13 @@ Keller-Ressel and Nargang (2019), see <@code{arXiv:1903.08977>}.")
 (define-public r-hydflood
   (package
     (name "r-hydflood")
-    (version "0.5.5")
+    (version "0.5.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hydflood" version))
               (sha256
                (base32
-                "0gdrmicp99ifbwjda9xbz7q8s8mkb37rrrky875yalyxiprk4y22"))))
+                "1g74gxarn3f8q0pnwwz802jrryry0w72py7agckaqwzwybfsklsc"))))
     (properties `((upstream-name . "hydflood")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-sf r-rdpack r-raster r-hyd1d))
@@ -6556,6 +6556,27 @@ documents.  The biggest limitations in formatting is the knowledge of CSS by the
 document authors.")
     (license license:expat)))
 
+(define-public r-highlighter
+  (package
+    (name "r-highlighter")
+    (version "0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "highlighter" version))
+              (sha256
+               (base32
+                "1ksgqx2ryg5lfka93yns5cphnf4xc4v55ncmpisydjbcpzd2105c"))))
+    (properties `((upstream-name . "highlighter")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-htmlwidgets r-htmltools r-glue r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://federiva.github.io/highlighter/")
+    (synopsis "Code Syntax Highlighting using the 'Prism.js' Library")
+    (description
+     "Code Syntax Highlighting made easy for code snippets or complete files.  Whether
+you're documenting your data analysis or creating interactive shiny apps.")
+    (license license:expat)))
+
 (define-public r-highfrequency
   (package
     (name "r-highfrequency")
@@ -9416,16 +9437,16 @@ summary and its standard errors, as described in Liang and Heagerty (2016)
 (define-public r-hdrfa
   (package
     (name "r-hdrfa")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "HDRFA" version))
               (sha256
                (base32
-                "07snry1s0c5r4dns50yh6i8gybnvfgc5p8awlggvk316868f2dd3"))))
+                "1vgxcm9lk83qhn0dwj1i3b1a7x9pl1f2hlwjfnskgwmcvzlyh12l"))))
     (properties `((upstream-name . "HDRFA")))
     (build-system r-build-system)
-    (propagated-inputs (list r-quantreg r-pracma r-mass))
+    (propagated-inputs (list r-quantreg r-pracma))
     (home-page "https://cran.r-project.org/package=HDRFA")
     (synopsis "High-Dimensional Robust Factor Analysis")
     (description
@@ -9437,11 +9458,9 @@ minimizing the Huber loss of the idiosyncratic error's L2 norm, which turns out
 to do Principal Component Analysis (PCA) on the weighted sample covariance
 matrix and thereby named as Huber PCA. The other one is based on minimizing the
 element-wise Huber loss, which can be solved by an iterative Huber regression
-algorithm, see the details in He et al. (2023)<@code{arXiv:2303.02817>}.  In
-this package we also provide the code for traditional PCA by Bai, J.,
-(2003)<doi:10.1111/1468-0262.00392>, the Robust Two Step (RTS) method by He et
-al. (2022)<doi:10.1080/07350015.2020.1811101>, the Quantile Factor Analysis
-(QFA) method by Chen et al. (2021)<doi:10.3982/ECTA15746>.")
+algorithm.  In this package we also provide the code for traditional PCA, the
+Robust Two Step (RTS) method by He et al. (2022) and the Quantile Factor
+Analysis (QFA) method by Chen et al. (2021) and He et al. (2023).")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-hdpglm
@@ -10038,13 +10057,13 @@ forecast.  The methods are explained in detail in Adaemmer et al. (2023)
 (define-public r-hdf5r-extra
   (package
     (name "r-hdf5r-extra")
-    (version "0.0.1")
+    (version "0.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hdf5r.Extra" version))
               (sha256
                (base32
-                "1h70ai0vz8nkhqbxyzzhpkzgp651vmcbygh6mz25vy7aidw981f8"))))
+                "0fpkgq845k2z63i0yl160hvnv7x857k81likdgasbw1x85rlihaf"))))
     (properties `((upstream-name . "hdf5r.Extra")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -10871,13 +10890,13 @@ various computational models with a single line of coding (Ahn et al., 2017)
 (define-public r-hbamr
   (package
     (name "r-hbamr")
-    (version "1.1.6")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hbamr" version))
               (sha256
                (base32
-                "1wv5iaidklw5kp3z1rv86qa4adgjgqz7agk7zzffl2v38nnvcvpd"))))
+                "0c70gizc5q4dg6by6smsh21v0am3hmskcx6lmb8mscid3q1gmbm5"))))
     (properties `((upstream-name . "hbamr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -11893,13 +11912,13 @@ patterns.")
 (define-public r-halk
   (package
     (name "r-halk")
-    (version "0.0.3")
+    (version "0.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "halk" version))
               (sha256
                (base32
-                "0v484xbnbyhnafybl5idylsmzrwhk9smymnjlfq9ld2bg23w9i71"))))
+                "1v6b8i1m0sdqk6gfjzfz35b8y1klb97m29m11wgpnshwzqxnfij2"))))
     (properties `((upstream-name . "halk")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

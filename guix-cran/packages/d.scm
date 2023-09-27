@@ -1452,26 +1452,6 @@ Reed(1989) <doi:10.1119/1.15963> and Ripley & Thompson(1987)
      "This package infers networks with hubs using degree weighted Lasso method.")
     (license license:gpl2)))
 
-(define-public r-dwdradar
-  (package
-    (name "r-dwdradar")
-    (version "0.2.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "dwdradar" version))
-              (sha256
-               (base32
-                "0y75gd9d7y2myp6filg2liv1r8rxwnffa9y9b2dq283m8kcwwai0"))))
-    (properties `((upstream-name . "dwdradar")))
-    (build-system r-build-system)
-    (native-inputs (list gfortran))
-    (home-page "https://cran.r-project.org/package=dwdradar")
-    (synopsis "Read Binary Radar Files from 'DWD' (German Weather Service)")
-    (description
-     "The DWD provides gridded radar data for Germany in binary format.  dwdradar
-reads these files and enables a fast conversion into numerical format.")
-    (license license:gpl2+)))
-
 (define-public r-dwdlarger
   (package
     (name "r-dwdlarger")
@@ -1995,47 +1975,40 @@ avoided.")
 (define-public r-dtwsat
   (package
     (name "r-dtwsat")
-    (version "0.2.8")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dtwSat" version))
               (sha256
                (base32
-                "1k4xdnx2ca2sr4pba59q86860bzwxsg94mzr56gjdyfp1rmasqv3"))))
+                "04bmic5qxz8ka6gn7npixcgky1vyf4jaq48i6h4cc34n9wwhzi4a"))))
     (properties `((upstream-name . "dtwSat")))
     (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-xtable
-                             r-sp
-                             r-scales
-                             r-rgdal
-                             r-reshape2
-                             r-rdpack
-                             r-rcolorbrewer
-                             r-raster
+    (propagated-inputs (list r-twdtw
+                             r-tidyr
+                             r-stars
+                             r-sf
                              r-proxy
-                             r-plyr
                              r-mgcv
-                             r-lubridate
-                             r-ggplot2
-                             r-foreach
-                             r-dtw
-                             r-data-table
-                             r-caret))
-    (native-inputs (list r-knitr gfortran))
-    (home-page "https://www.victor-maus.com/dtwSat/")
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/vwmaus/dtwSat/")
     (synopsis
      "Time-Weighted Dynamic Time Warping for Satellite Image Time Series Analysis")
     (description
-     "This package provides an implementation of the Time-Weighted Dynamic Time
-Warping (TWDTW) method for land cover mapping.  TWDTW computes the similarity
-between satellite image time series with a set of known temporal patterns (e.g.
-phenological cycles of the vegetation). @code{dtwSat} offers the user methods to
-create temporal patterns for land cover types, perform TWDTW analysis for
-satellite datasets, visualize the results of the analysis, produce land cover
-maps, create temporal plots for land cover change, and compute accuracy metrics.")
-    (license (list license:gpl3+
-                   (license:fsdg-compatible "file://LICENSE")))))
+     "This package provides a robust approach to land use mapping using
+multi-dimensional (multi-band) satellite image time series.  By leveraging the
+Time-Weighted Dynamic Time Warping (TWDTW) distance metric in tandem with a 1
+Nearest-Neighbor (1-NN) Classifier, this package offers functions to produce
+land use maps based on distinct seasonality patterns, commonly observed in the
+phenological cycles of vegetation.  The approach is described in Maus et al.
+(2016) <doi:10.1109/JSTARS.2016.2517118> and Maus et al. (2019)
+<doi:10.18637/jss.v088.i05>.  A primary advantage of TWDTW is its capability to
+handle irregularly sampled and noisy time series, while also requiring minimal
+training sets.  The package includes tools for training the 1-NN-TWDTW model,
+visualizing temporal patterns, producing land use maps, and visualizing the
+results.")
+    (license license:gpl3+)))
 
 (define-public r-dtwrappers
   (package
@@ -3727,22 +3700,16 @@ correlations, graphics and tables.")
 (define-public r-drviaspcn
   (package
     (name "r-drviaspcn")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DRviaSPCN" version))
               (sha256
                (base32
-                "1j6iss2aavrckkr3m50kcw7yrc1wqbpgmd60rw9bgk8vycd1m2iw"))))
+                "1nid3psahz0r8jq0y2bg0p3kdpcf6flm6d0bfw08zjiz8gcpllj3"))))
     (properties `((upstream-name . "DRviaSPCN")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-rvest
-                             r-pheatmap
-                             r-igraph
-                             r-gsva
-                             r-clusterprofiler
-                             r-chemminer))
+    (propagated-inputs (list r-pheatmap r-igraph r-gsva r-clusterprofiler))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=DRviaSPCN")
     (synopsis "Drug Repurposing in Cancer via a Subpathway Crosstalk Network")
@@ -3781,13 +3748,13 @@ drum patterns.")
 (define-public r-drugutilisation
   (package
     (name "r-drugutilisation")
-    (version "0.3.2")
+    (version "0.3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DrugUtilisation" version))
               (sha256
                (base32
-                "0fwcigf7gmyyrvxspnlm9f525m6h3wfchlw45pdms17af42xn242"))))
+                "140wiqq1g1cizmsd3sky4x1igsnb8mh5fillgka2pqljq0r6vi7a"))))
     (properties `((upstream-name . "DrugUtilisation")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -15777,28 +15744,6 @@ equivalent interest and discount rate calculation, present and future values of
 annuities, and loan amortization schedule.")
     (license license:gpl3)))
 
-(define-public r-detestset
-  (package
-    (name "r-detestset")
-    (version "1.1.7.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "deTestSet" version))
-              (sha256
-               (base32
-                "0cknv6d37vxfpvnckhgyrg5bw7i18gj85pyrrdyl5fxsqkqwk6ni"))))
-    (properties `((upstream-name . "deTestSet")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-desolve))
-    (native-inputs (list gfortran))
-    (home-page "https://cran.r-project.org/package=deTestSet")
-    (synopsis "Test Set for Differential Equations")
-    (description
-     "Solvers and test set for stiff and non-stiff differential equations, and
-differential algebraic equations.  See Mazzia, F., Cash, J.R., and K. Soetaert
-(2012) <DOI:10.1016/j.cam.2012.03.014>.")
-    (license (list license:gpl2+ license:gpl3+))))
-
 (define-public r-detectseparation
   (package
     (name "r-detectseparation")
@@ -21788,58 +21733,6 @@ generalization process by setting an additional parameter of
 generalization-percentage.")
     (license license:gpl2)))
 
-(define-public r-dberlibr
-  (package
-    (name "r-dberlibr")
-    (version "0.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "DBERlibR" version))
-              (sha256
-               (base32
-                "19hqp0q7j6b7h9bamn3v2d1kdwzi0mlqvx7b618fkixpibqndzn7"))))
-    (properties `((upstream-name . "DBERlibR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble
-                             r-rstatix
-                             r-reshape
-                             r-readr
-                             r-psych
-                             r-ggrepel
-                             r-ggpubr
-                             r-ggplot2
-                             r-emmeans
-                             r-dplyr
-                             r-car))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=DBERlibR")
-    (synopsis
-     "Automated Assessment Data Analysis for Discipline-Based Education Research")
-    (description
-     "Discipline-Based Education Research scientists repeatedly analyze assessment
-data to ensure question itemsâ reliability and examine the efficacy of a new
-educational intervention.  Analyzing assessment data comprises multiple steps
-and statistical techniques that consume much of researchersâ time and are
-error-prone.  While education research continues to grow across many disciplines
-of science, technology, engineering, and mathematics (STEM), the
-discipline-based education research community lacks tools to streamline
-education research data analysis.  âDBE@code{RlibRââan} âRâ package to
-streamline and automate assessment data processing and analysisâfills this
-gap.  The package reads user-provided assessment data, cleans them, merges
-multiple datasets (as necessary), checks assumption(s) for specific statistical
-techniques (as necessary), applies various statistical tests (e.g., one-way
-analysis of covariance, one-way repeated-measures analysis of variance), and
-presents and interprets the results all at once.  By providing the most
-frequently used analytic techniques, this package will contribute to education
-research by facilitating the creation and widespread use of evidence-based
-knowledge and practices.  The outputs contain a sample interpretation of the
-results for usersâ convenience.  User inputs are minimal; they only need to
-prepare the data files as instructed and type a function in the R console to
-conduct a specific data analysis.\\n For descriptions of the statistical methods
-employed in package, refer to the following Encyclopedia of Research Design,
-edited by Salkind, N. (2010) <doi:10.4135/9781412961288>.")
-    (license license:agpl3)))
-
 (define-public r-dbd
   (package
     (name "r-dbd")
@@ -23435,13 +23328,13 @@ data manipulation challenges.")
 (define-public r-datamods
   (package
     (name "r-datamods")
-    (version "1.4.1")
+    (version "1.4.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "datamods" version))
               (sha256
                (base32
-                "1jih91sa9438k0a2fzqg7h9s3mqg1yhfqxpjfi1ibbc34dpnxpvl"))))
+                "1qzzzv1hgyj1kgpjxfpblbw4yb3d3sxicmgrijnl90k6jdakg887"))))
     (properties `((upstream-name . "datamods")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
@@ -24632,13 +24525,13 @@ to match the functionality of the API endpoints.")
 (define-public r-dann
   (package
     (name "r-dann")
-    (version "0.2.6")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dann" version))
               (sha256
                (base32
-                "1kmhif5vpj221pmpv5l3a8dspcgqg4ygbvi4s51yyi9pxnlf3mvw"))))
+                "0hmmkzv3cq0yl8kgcj08557zx086ablh6ngmyxhb1chig7kmmb4x"))))
     (properties `((upstream-name . "dann")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -24648,15 +24541,16 @@ to match the functionality of the API endpoints.")
                              r-rcpp
                              r-purrr
                              r-mass
+                             r-hardhat
                              r-ggplot2
-                             r-fpc))
-    (native-inputs (list r-knitr))
+                             r-fpc
+                             r-ellipsis))
     (home-page "https://cran.r-project.org/package=dann")
     (synopsis "Discriminant Adaptive Nearest Neighbor Classification")
     (description
      "Discriminant Adaptive Nearest Neighbor Classification is a variation of k
 nearest neighbors where the shape of the neighborhood is data driven.  This
-package implements dann and sub_dann from Hastie (1995)
+package implements dann and sub_dann from Hastie (1996)
 <https://web.stanford.edu/~hastie/Papers/dann_IEEE.pdf>.")
     (license license:expat)))
 
@@ -25541,13 +25435,13 @@ from Aitkin (1964) <doi:10.1007/BF02289723> and Liu & Wang (in prep).")
 (define-public r-dacc
   (package
     (name "r-dacc")
-    (version "0.0-1")
+    (version "0.0-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dacc" version))
               (sha256
                (base32
-                "0qff89117zjvd8mqnypasc3dgfw2di0k59pavhgikn9l79vy3s5h"))))
+                "0yybgmpi171xym36c94qlxv2m9gc0ywgcbq0l6qv7w2na7axfq6b"))))
     (properties `((upstream-name . "dacc")))
     (build-system r-build-system)
     (propagated-inputs (list r-pracma r-mass r-magrittr r-janitor r-iso))

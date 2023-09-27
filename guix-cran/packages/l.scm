@@ -9884,13 +9884,13 @@ classification, and visualization.")
 (define-public r-lgpr
   (package
     (name "r-lgpr")
-    (version "1.2.3")
+    (version "1.2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lgpr" version))
               (sha256
                (base32
-                "1wzjkc4k3ly6j9jfsr71qm2j0frf0n67ndlaibf3f6yfwv535qmq"))))
+                "1xhkkykig3d2adh7nhvsjg75fxk8h9jdqdsadc9fwbdda354xvg7"))))
     (properties `((upstream-name . "lgpr")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -15190,13 +15190,13 @@ citation('laketemps') for dataset attribution.")
 (define-public r-lakemorpho
   (package
     (name "r-lakemorpho")
-    (version "1.3.0")
+    (version "1.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lakemorpho" version))
               (sha256
                (base32
-                "02rz3smdga2kyvziafl3zk5r3lpkjikl8jxj10jbdh5al6m2lvkd"))))
+                "11bvrr4h9bxa01sf6qilgglhljmfpfil5yz1xrwlyaiv091gvlfp"))))
     (properties `((upstream-name . "lakemorpho")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-sf r-raster r-geosphere r-cluster))
@@ -15243,6 +15243,27 @@ compute conversions and implement calculations commonly applied to raw data
 prior to estimating metabolism (e.g., oxygen saturation and optical conversion
 models).")
     (license license:gpl2+)))
+
+(define-public r-lair
+  (package
+    (name "r-lair")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "LAIr" version))
+              (sha256
+               (base32
+                "166j095mmqsbcxpyljp18khbrcqnjml1m2sdcjdxycih0s6wycry"))))
+    (properties `((upstream-name . "LAIr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra r-stringr r-purrr r-dplyr))
+    (home-page "https://cran.r-project.org/package=LAIr")
+    (synopsis "Converting NDVI to LAI of Field, Proximal and Satellite Data")
+    (description
+     "Convert Leaf Area Index (LAI) from the Normalized Difference Vegetation Index
+(NDVI) using available equations from literature.  Detailed description of
+conversion equations in Bajocco et al.  2022 <doi:10.3390/rs14153554>.")
+    (license license:expat)))
 
 (define-public r-lahman
   (package

@@ -640,6 +640,31 @@ authors in the recent years.  See Patro and Smarandache (2016)
 <doi:10.5281/zenodo.571153> and Rao et al (2023) <doi:10.5281/zenodo.7832786>.")
     (license license:gpl2+)))
 
+(define-public r-nts
+  (package
+    (name "r-nts")
+    (version "1.1.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "NTS" version))
+              (sha256
+               (base32
+                "0scj05h2r3sg34n0lmarbrgavz6q2n23gvs2v4w5q249q2cx6iis"))))
+    (properties `((upstream-name . "NTS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tensor r-rdpack r-mswm r-mass r-dlm))
+    (home-page "https://cran.r-project.org/package=NTS")
+    (synopsis "Nonlinear Time Series Analysis")
+    (description
+     "Simulation, estimation, prediction procedure, and model identification methods
+for nonlinear time series analysis, including threshold autoregressive models,
+Markov-switching models, convolutional functional autoregressive models,
+nonlinearity tests, Kalman filters and various sequential Monte Carlo methods.
+More examples and details about this package can be found in the book \"Nonlinear
+Time Series Analysis\" by Ruey S. Tsay and Rong Chen, John Wiley & Sons, 2018
+(ISBN: 978-1-119-26407-1).")
+    (license license:gpl2+)))
+
 (define-public r-ntdr
   (package
     (name "r-ntdr")
@@ -5607,6 +5632,28 @@ hazard - proportional odds.")
     (description
      "Uses a modified lifting algorithm on which it builds the nondecimated lifting
 transform.  It has applications in wavelet shrinkage.")
+    (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-nlsylinks
+  (package
+    (name "r-nlsylinks")
+    (version "2.2.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "NlsyLinks" version))
+              (sha256
+               (base32
+                "19w7jgvdz77lmwks0a4icrkarjfnwx6bcjkj4ss90zjs7nsfyafb"))))
+    (properties `((upstream-name . "NlsyLinks")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-lavaan))
+    (native-inputs (list r-knitr))
+    (home-page "https://nlsy-links.github.io/NlsyLinks/")
+    (synopsis "Utilities and Kinship Information for Research with the NLSY")
+    (description
+     "Utilities and kinship information for behavior genetics and developmental
+research using the National Longitudinal Survey of Youth (NLSY;
+<https://www.nlsinfo.org/>).")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-nlstools
@@ -14229,13 +14276,13 @@ form of Reporter Code Count (RCC) files.")
 (define-public r-nanonext
   (package
     (name "r-nanonext")
-    (version "0.10.0")
+    (version "0.10.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nanonext" version))
               (sha256
                (base32
-                "1mygxv3n3wdr23z7vkrprqfn3kx3iacls6my72skp4gfhzdm1vvz"))))
+                "1v2x7bp58giwa19ry0gsav88g39qdjxc0njz9g0n8gyxvj0wfjix"))))
     (properties `((upstream-name . "nanonext")))
     (build-system r-build-system)
     (home-page "https://shikokuchuo.net/nanonext/")

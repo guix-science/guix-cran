@@ -533,13 +533,13 @@ dealing with multicollinearity.  Initially described in Barbosa (2015)
 (define-public r-fuzzyresampling
   (package
     (name "r-fuzzyresampling")
-    (version "0.6.1")
+    (version "0.6.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FuzzyResampling" version))
               (sha256
                (base32
-                "1jsbnyd3449ms3vzqmd82xaznyzvvmxj5k665ph6sb8k05dcbr6c"))))
+                "0kx3axm46i0jgv2x09qpggaayy5027yya16g8x1jfgrn9ya62357"))))
     (properties `((upstream-name . "FuzzyResampling")))
     (build-system r-build-system)
     (home-page "https://github.com/mroman-ibs/FuzzyResampling")
@@ -1693,13 +1693,13 @@ series.")
 (define-public r-funkyheatmap
   (package
     (name "r-funkyheatmap")
-    (version "0.4.0")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "funkyheatmap" version))
               (sha256
                (base32
-                "1rx68k6znp3r5fc347mfxy981nvjibr5hcgf1a8c2q33hmbyqbi9"))))
+                "1rgb49pzhz91qlw75zp0bi231nc9frf1wrp1xd22hpydccklvq6r"))))
     (properties `((upstream-name . "funkyheatmap")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -5197,13 +5197,13 @@ The underlying mathematical structure is the Free Abelian group, hence the name.
 (define-public r-fqar
   (package
     (name "r-fqar")
-    (version "0.4.1")
+    (version "0.4.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fqar" version))
               (sha256
                (base32
-                "0mn8dxa1ialfjyhnrpg732j4jiwvk2ykr7ykhf3sf99x9b3rwy9l"))))
+                "0kwa40sm1c2gi3nhl0xfcqa9rh14rzv8w9jgji8217gk9mfrwbg8"))))
     (properties `((upstream-name . "fqar")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -5250,13 +5250,13 @@ Laboratory.")
 (define-public r-fqacalc
   (package
     (name "r-fqacalc")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fqacalc" version))
               (sha256
                (base32
-                "0mip89m2caxky9g4znlsfxai4r7h9kccm9k59m9y3ksrihnz5wz6"))))
+                "1n4vlz75d2jsl3chsarmgf5cg7zj06gxgn1mj79d85z86pn4jip3"))))
     (properties `((upstream-name . "fqacalc")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-magrittr r-fqadata r-dplyr))
@@ -6448,13 +6448,13 @@ displayed in a table.")
 (define-public r-forit
   (package
     (name "r-forit")
-    (version "2.0.1")
+    (version "2.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ForIT" version))
               (sha256
                (base32
-                "0rpnx1wa98gjdyb21k21i3p73xxb5wlsxd5rig0qygf4wnrwk828"))))
+                "0kc15b05dp3cybjln49d0ly962s4gayidi0qpb6mcy0qdxvb17lv"))))
     (properties `((upstream-name . "ForIT")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -6473,7 +6473,7 @@ displayed in a table.")
      "Tabacchi et al. (2011) published a very detailed study producing a uniform
 system of functions to estimate tree volume and phytomass components (stem,
 branches, stool).  The estimates of the 2005 Italian forest inventory
-(<https://www.inventarioforestale.org/>) are based on these functions.  The
+(<https://www.inventarioforestale.org/it/>) are based on these functions.  The
 study documents the domain of applicability of each function and the equations
 to quantify estimates accuracies for individual estimates as well as for
 aggregated estimates.  This package makes the functions available in the R
@@ -6650,13 +6650,13 @@ References: Atkins et al.  2018 <doi:10.1111/2041-210X.13061>; Hardiman et al.
 (define-public r-forestploter
   (package
     (name "r-forestploter")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "forestploter" version))
               (sha256
                (base32
-                "0mp0w2dmza5vj2wr36z59cvdhcb688din3aq1id4ha61ci0sbidv"))))
+                "0l19pw5an8d2zn32r64b8a3b95krq9r083ziry5973wdm0nya2pw"))))
     (properties `((upstream-name . "forestploter")))
     (build-system r-build-system)
     (propagated-inputs (list r-gtable r-gridextra))
@@ -8427,13 +8427,13 @@ effects-model formulation proposed by Li et al. (2021)
 (define-public r-fmeffects
   (package
     (name "r-fmeffects")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fmeffects" version))
               (sha256
                (base32
-                "1di2qannd78xkh5jmh55y86aqqx998m5cqdr3k5hj5iinb6vbqkr"))))
+                "1jqjlrqc9an8f9ij51xmi7fb6mljwsgchihnb3d63bzwc9a0iphh"))))
     (properties `((upstream-name . "fmeffects")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat
@@ -8445,7 +8445,7 @@ effects-model formulation proposed by Li et al. (2021)
                              r-cowplot
                              r-checkmate))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/holgstr/fme")
+    (home-page "https://github.com/holgstr/fmeffects")
     (synopsis "Model-Agnostic Interpretations with Forward Marginal Effects")
     (description
      "Create local, regional, and global explanations for any machine learning model
@@ -17980,13 +17980,13 @@ algorithm.")
 (define-public r-fastimputation
   (package
     (name "r-fastimputation")
-    (version "2.1")
+    (version "2.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FastImputation" version))
               (sha256
                (base32
-                "1h6nvrb7d0l5vdqzxi20cgh6yw90mmjrzbnn1lrkwr3n9fzfqw0l"))))
+                "0jnhspgxas7kswpgw4hihc1y1286w5n8bikwzls7vsik5lj5yac4"))))
     (properties `((upstream-name . "FastImputation")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix))
@@ -18203,13 +18203,13 @@ and discussed in the preprint available from Researchgate by Simone R. (2020)
 (define-public r-fastcpd
   (package
     (name "r-fastcpd")
-    (version "0.7.0")
+    (version "0.7.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fastcpd" version))
               (sha256
                (base32
-                "071xn7347hggmzdhjga91a2i2dx4mky5802k5i78wvk84gl85w0s"))))
+                "0vgs3kmmg11saz0va2qig60qv2d0xhwg07dqi05j9y09n28d0xzb"))))
     (properties `((upstream-name . "fastcpd")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat

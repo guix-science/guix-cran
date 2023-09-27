@@ -500,13 +500,13 @@ the Lauritzen-Spiegelhalter scheme; S. L. Lauritzen and D. J. Spiegelhalter
 (define-public r-jtdm
   (package
     (name "r-jtdm")
-    (version "0.1-0")
+    (version "0.1-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jtdm" version))
               (sha256
                (base32
-                "0bbnrayny9hafck5nksmgabnnrpl9iq17zs0qb1a35kmrmbjcskk"))))
+                "11x4zm5npgcbmvrir2maf7zr54mvg0ppckb145cckmqns94nk25j"))))
     (properties `((upstream-name . "jtdm")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2
@@ -524,7 +524,8 @@ Distribution Model is implemented in the Bayesian framework using conjugate
 priors and posteriors, thus guaranteeing fast inference.  In particular the
 package computes joint probabilities and multivariate confidence intervals, and
 enables the investigation of how they depend on the environment through partial
-response curves.")
+response curves.  The method implemented by the package is described in Poggiato
+et al. (2023) <doi:10.1111/geb.13706>.")
     (license license:gpl3)))
 
 (define-public r-jsuparameters
@@ -1858,6 +1859,35 @@ through empirical Bayes methods.")
 calculates test statistics.  This package implements the algorithms defined in
 Hornstein, Fan, Shedden, and Zhou (2018) <doi:10.1080/01621459.2018.1429275>.")
     (license license:gpl2)))
+
+(define-public r-jointfpm
+  (package
+    (name "r-jointfpm")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "JointFPM" version))
+              (sha256
+               (base32
+                "1fgh5jzn8ygbgc54nji8bfgwl4947k5vcnjmh45hh1pryjvqywnk"))))
+    (properties `((upstream-name . "JointFPM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival
+                             r-rstpm2
+                             r-rmutil
+                             r-rlang
+                             r-lifecycle
+                             r-data-table))
+    (home-page "https://github.com/entjos/JointFPM")
+    (synopsis "Parametric Model for Estimating the Mean Number of Events")
+    (description
+     "Implementation of a parametric joint model for modelling recurrent and competing
+event processes using generalised survival models.  The joint model can
+subsequently be used to predict the mean number of events in the presence of
+competing risks at different time points.  Comparisons of the mean number of
+event functions, e.g. the differences in mean number of events between two
+exposure groups, are also available.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-jointdiag
   (package

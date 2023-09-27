@@ -1698,24 +1698,22 @@ Chemistry.  See: Lacki, Valkenborg, Startek (2020)
 (define-public r-isorix
   (package
     (name "r-isorix")
-    (version "0.9.0")
+    (version "0.9.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IsoriX" version))
               (sha256
                (base32
-                "0pm51jxw16264nf5wdpjhyydrb16ydyw76h45madw5nf6bibhgsp"))))
+                "0l7d66wjq30mldqy79pwqfp607qhkc2y7hzl6kjxxvqsial6zgwq"))))
     (properties `((upstream-name . "IsoriX")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
+                             r-terra
                              r-spamm
-                             r-sp
                              r-rastervis
-                             r-raster
                              r-numderiv
                              r-latticeextra
-                             r-lattice
-                             r-elevatr))
+                             r-lattice))
     (home-page "https://github.com/courtiol/IsoriX/")
     (synopsis
      "Isoscape Computation and Inference of Spatial Origins using Mixed Models")
@@ -1726,7 +1724,7 @@ simplified interface to several other packages which implements a new
 statistical framework based on mixed models.  It uses @code{spaMM} for fitting
 and predicting isoscapes, and assigning an organism's origin depending on its
 isotopic ratio. @code{IsoriX} also relies heavily on the package
-@code{rasterVis} for plotting the maps produced with raster using lattice'.")
+@code{rasterVis} for plotting the maps produced with terra using lattice'.")
     (license license:gpl2+)))
 
 (define-public r-isopurer
@@ -12936,33 +12934,34 @@ actual Ultimate Reality}\" by Irucka Ajani Embry.")
 (define-public r-iemiscdata
   (package
     (name "r-iemiscdata")
-    (version "0.6.1")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "iemiscdata" version))
               (sha256
                (base32
-                "0a9x90kisgmrka0frk9myb1qdq3nl092n78wrif31b42arifa8h9"))))
+                "0kg9h91di5k2cdh2fwa5k7wbi28ian41zr5ksr8dnc3pb1lwv5n4"))))
     (properties `((upstream-name . "iemiscdata")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
     (home-page "https://gitlab.com/iembry/iemiscdata")
     (synopsis "Irucka Embry's Miscellaneous Data Collection")
     (description
-     "Miscellaneous data sets [Engineering Economics, Environmental/ Water Resources
-Engineering, US Presidential Elections].")
+     "Miscellaneous data sets [Chemistry, Engineering Economics, Environmental/Water
+Resources Engineering, Nuclear Accidents, US Presidential Elections, and US
+Continental Congress Presidents].")
     (license license:gpl3+)))
 
 (define-public r-iemisc
   (package
     (name "r-iemisc")
-    (version "1.0.3")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "iemisc" version))
               (sha256
                (base32
-                "1x7jnw6rrnq2wpv2xbk72fgkwwpxx7gzn113swnc6d6fhh16i32x"))))
+                "1yrppxylsrlh1l549qn1x0qnyd32zj3a2xji1a3qiv1sd1h7js41"))))
     (properties `((upstream-name . "iemisc")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -12991,7 +12990,7 @@ Engineering, US Presidential Elections].")
                              r-fpcompare
                              r-foreach
                              r-data-table
-                             r-chnosz
+                             r-chem-databases
                              r-checkmate
                              r-berryfunctions
                              r-assertthat

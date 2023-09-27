@@ -11,7 +11,6 @@
   #:use-module (gnu packages version-control)
   #:use-module (gnu packages java)
   #:use-module (gnu packages pkg-config)
-  #:use-module (gnu packages tbb)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages bioinformatics)
@@ -1159,6 +1158,32 @@ prediction functions return estimates of the test responses and their class
 membership probabilities.  Unexplained variations, error rates, confusion
 matrix, Brier scores, etc.  are also returned for the test data.")
     (license license:gpl3+)))
+
+(define-public r-otclust
+  (package
+    (name "r-otclust")
+    (version "1.0.5")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "OTclust" version))
+              (sha256
+               (base32
+                "0nr8vjiarkr55iddwxigd6zaz7c41y845qy33wb2rly22r41jzgp"))))
+    (properties `((upstream-name . "OTclust")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp r-rcolorbrewer r-magrittr r-ggplot2
+                             r-class))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=OTclust")
+    (synopsis
+     "Mean Partition, Uncertainty Assessment, Cluster Validation and Visualization Selection for Cluster Analysis")
+    (description
+     "Providing mean partition for ensemble clustering by optimal transport
+alignment(OTA), uncertainty measures for both partition-wise and cluster-wise
+assessment and multiple visualization functions to show uncertainty, for
+instance, membership heat map and plot of covering point set.  A partition
+refers to an overall clustering result.")
+    (license license:gpl2+)))
 
 (define-public r-otargen
   (package
@@ -5966,19 +5991,19 @@ the JSON file.")
 (define-public r-opencv
   (package
     (name "r-opencv")
-    (version "0.2.3")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "opencv" version))
               (sha256
                (base32
-                "1kpkw3wkvfs2g9pdkk0s9q7a3pq3vq7n9hw55bz0v9c2mmdcz92b"))))
+                "056qf318fisd051q40di7ipya3xdi30zmlmksrfgjf4hx09g52vd"))))
     (properties `((upstream-name . "opencv")))
     (build-system r-build-system)
-    (inputs (list zlib tbb))
+    (inputs (list zlib))
     (propagated-inputs (list r-rcpp r-magrittr))
     (native-inputs (list pkg-config))
-    (home-page "https://cran.r-project.org/package=opencv")
+    (home-page "https://ropensci.r-universe.dev/opencv")
     (synopsis "Bindings to 'OpenCV' Computer Vision Library")
     (description
      "Exposes some of the available @code{OpenCV} <https://opencv.org/> algorithms,
@@ -6116,13 +6141,13 @@ API.")
 (define-public r-openalexr
   (package
     (name "r-openalexr")
-    (version "1.2.1")
+    (version "1.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "openalexR" version))
               (sha256
                (base32
-                "1jnhgv6zdcz8bar11q77l82zkr7xpv5xam92xv1vdspp9pvk6ixd"))))
+                "0f8kdw25428rw6rgcng0vy4paw08mqzlnk11p8c5gi9f7bx40vw6"))))
     (properties `((upstream-name . "openalexR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-progress r-jsonlite r-httr))
@@ -6361,13 +6386,13 @@ pairwise likelihood comparison of theories, calibrated with pre-existing data.")
 (define-public r-oosse
   (package
     (name "r-oosse")
-    (version "1.0.8")
+    (version "1.0.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "oosse" version))
               (sha256
                (base32
-                "0bdn3r3qaxv94h2pvq6sa7ssh7kr3ngsk6733yqxbk0m7gmxgfdj"))))
+                "186vj059bxlywka1y8i4pgh4xbl3mx1mwh9c1wfb4dd37yirp35k"))))
     (properties `((upstream-name . "oosse")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-matrix r-doparallel r-biocparallel))
@@ -8021,13 +8046,13 @@ degree of sparsity.")
 (define-public r-omicsense
   (package
     (name "r-omicsense")
-    (version "0.1.1")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "OmicSense" version))
               (sha256
                (base32
-                "0rxq3siil4gbwrjp04mg970mgsy3vx2kyqldl40039gs0km7zb7n"))))
+                "0nac0ahciyajsicrs4rkn54xiwgvdm4m2kbg6icbsygwzzp2w14z"))))
     (properties `((upstream-name . "OmicSense")))
     (build-system r-build-system)
     (propagated-inputs (list r-kernlab r-ggplot2))
@@ -8561,37 +8586,33 @@ ordinal data.")
 (define-public r-ohun
   (package
     (name "r-ohun")
-    (version "0.1.0")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ohun" version))
               (sha256
                (base32
-                "1i8ri0fsy15m23j0h3g58i1qm0icz7k5f03k5lrg3c7jz9a8l7jn"))))
+                "09rx31ij775si18b4pfl11djfzzrpf1j324kbldhdq94kz18mf8f"))))
     (properties `((upstream-name . "ohun")))
     (build-system r-build-system)
     (propagated-inputs (list r-warbler
-                             r-viridis
                              r-tuner
-                             r-sp
-                             r-sim-diffproc
+                             r-sf
                              r-seewave
                              r-rlang
-                             r-rjson
-                             r-rcurl
-                             r-pbapply
-                             r-knitr
                              r-igraph
+                             r-ggplot2
                              r-fftw
-                             r-crayon))
-    (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://marce10.github.io/ohun/")
+                             r-cli
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://docs.ropensci.org/ohun/")
     (synopsis "Optimizing Acoustic Signal Detection")
     (description
      "Facilitates the automatic detection of acoustic signals, providing functions to
 diagnose and optimize the performance of detection routines.  Detections from
-other software can also be explored and optimized.  Reference: Hossin & Sulaiman
-(2015) <doi:10.5121/ijdkp.2015.5201>.")
+other software can also be explored and optimized.  Araya-Salas et al. (2022)
+<doi:10.1101/2022.12.13.520253>.")
     (license license:gpl2+)))
 
 (define-public r-ohtadstats
@@ -10378,13 +10399,13 @@ and Chan (2017) <doi:10.1214/17-AOS1546>.")
 (define-public r-occupationmeasurement
   (package
     (name "r-occupationmeasurement")
-    (version "0.2.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "occupationMeasurement" version))
               (sha256
                (base32
-                "0igqh8gwpdmrb47k6s7bhyjjjs3qy1g1nx27i6rsbyw52n97sdvm"))))
+                "0dq6x0wvwxc7lixww7v78z4a93wk1j1my6d0z816bwsvris7j6d5"))))
     (properties `((upstream-name . "occupationMeasurement")))
     (build-system r-build-system)
     (propagated-inputs (list r-tm
@@ -10461,6 +10482,31 @@ create a new random location for each occurrence using a uniform distribution
 with a defined interval within the occurrence location uncertainty, and (d) use
 repetitions to quantify EOO and AOO with attribute uncertainty.")
     (license license:gpl3)))
+
+(define-public r-occumb
+  (package
+    (name "r-occumb")
+    (version "1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "occumb" version))
+              (sha256
+               (base32
+                "112ysm4z19cickg3idsqwrv0jbhx5azy2gjkl4ga18shmzxk4339"))))
+    (properties `((upstream-name . "occumb")))
+    (build-system r-build-system)
+    (inputs (list jags))
+    (propagated-inputs (list r-knitr r-jagsui r-crayon r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://fukayak.github.io/occumb/")
+    (synopsis "Site Occupancy Modeling for Environmental DNA Metabarcoding")
+    (description
+     "Fits multispecies site occupancy models to environmental DNA metabarcoding data
+collected using spatially-replicated survey design.  Model fitting results can
+be used to evaluate and compare the effectiveness of species detection to find
+an efficient survey design.  Reference: Fukaya et al. (2022)
+<doi:10.1111/2041-210X.13732>.")
+    (license license:expat)))
 
 (define-public r-occcite
   (package

@@ -3105,17 +3105,17 @@ rdflib and redland packages.")
 (define-public r-virtualspecies
   (package
     (name "r-virtualspecies")
-    (version "1.5.1")
+    (version "1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "virtualspecies" version))
               (sha256
                (base32
-                "0l86awcjq6i1lqax596xy5qfmzwiz3cwp2rczvgg37fdrym97cm3"))))
+                "1bqrh17fcskklsdkwkg9lvlki67jigr0c32mq4bfl16iisrc1342"))))
     (properties `((upstream-name . "virtualspecies")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp r-rworldmap r-raster r-ade4))
-    (home-page "http://borisleroy.com/virtualspecies")
+    (propagated-inputs (list r-viridis r-terra r-rnaturalearth r-raster r-ade4))
+    (home-page "https://borisleroy.com/virtualspecies/")
     (synopsis "Generation of Virtual Species Distributions")
     (description
      "This package provides a framework for generating virtual species distributions,
@@ -5766,13 +5766,13 @@ package and its capabilities are described in (Dambon et al. (2021c)
 (define-public r-vartestnlme
   (package
     (name "r-vartestnlme")
-    (version "1.3.4")
+    (version "1.3.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "varTestnlme" version))
               (sha256
                (base32
-                "0rj6zh9cga6h1562jw71iqrczzdrrl9rlmfglj55rjyl03sqr4n4"))))
+                "1qxbx1hwylybm4nza6a7bqgck0krvbcvwabp1710dhkk7skfgk8x"))))
     (properties `((upstream-name . "varTestnlme")))
     (build-system r-build-system)
     (propagated-inputs (list r-saemix
@@ -5799,9 +5799,8 @@ package and its capabilities are described in (Dambon et al. (2021c)
 are equal to zero.  There is no restriction on the subset of variances that can
 be tested: for example, it is possible to test that all the variances are equal
 to zero.  Note that the implemented test is asymptotic.  This package should be
-used on model fits from packages nlme', lmer', and saemix'.  Charlotte Baey,
-Paul-Henry @code{CournÃ¨de} and Estelle Kuhn (2019)
-<doi:10.1016/j.csda.2019.01.014>.")
+used on model fits from packages nlme', lmer', and saemix'.  Charlotte Baey and
+Estelle Kuhn (2019) <doi:10.18637/jss.v107.i06>.")
     (license license:gpl2+)))
 
 (define-public r-varshrink

@@ -1781,23 +1781,24 @@ Informations-, Dokumentations- und Administrations-System'), see
 (define-public r-unrtf
   (package
     (name "r-unrtf")
-    (version "1.4.2")
+    (version "1.4.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "unrtf" version))
               (sha256
                (base32
-                "1pdii5l0z7dvcyzi7cbwqii1yn4g54nx1k2qshq86pabcjrka05s"))))
+                "1jm2rwik6vxbvzal98h8631csln7plwk5jcaaw4yvgwssmp141mk"))))
     (properties `((upstream-name . "unrtf")))
     (build-system r-build-system)
     (inputs (list pcre2))
     (propagated-inputs (list r-sys))
-    (home-page "https://docs.ropensci.org/unrtf/")
+    (home-page "https://cran.r-project.org/package=unrtf")
     (synopsis "Extract Text from Rich Text Format (RTF) Documents")
     (description
-     "Wraps the unrtf utility to extract text from RTF files.  Supports document
-conversion to HTML, @code{LaTeX} or plain text.  Output in HTML is recommended
-because unrtf has limited support for converting between character encodings.")
+     "Wraps the unrtf utility <https://www.gnu.org/software/unrtf/> to extract text
+from RTF files.  Supports document conversion to HTML, @code{LaTeX} or plain
+text.  Output in HTML is recommended because unrtf has limited support for
+converting between character encodings.")
     (license license:gpl3)))
 
 (define-public r-unrepx
@@ -3328,13 +3329,13 @@ electric power transmission network) in the UK since 2011.")
 (define-public r-ukfe
   (package
     (name "r-ukfe")
-    (version "0.2.9")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "UKFE" version))
               (sha256
                (base32
-                "1qw82lsmaam0zw9vk96jzhw9c2jl7ja7zck902l5xgc5izj3viy2"))))
+                "1yrjg99sywixriq7ibdfbz33ikwc6k2nb802prkjmiwlxhqcw10n"))))
     (properties `((upstream-name . "UKFE")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2))
@@ -3343,7 +3344,7 @@ electric power transmission network) in the UK since 2011.")
     (description
      "This package provides functions to implement the methods of the Flood Estimation
 Handbook (FEH), associated updates and the revitalised flood hydrograph model
-(@code{ReFH}).  Currently the package uses NRFA peak flow dataset version 11.1.
+(@code{ReFH}).  Currently the package uses NRFA peak flow dataset version 12.
 Aside from FEH functionality, further hydrological functions are available.
 Most of the methods implemented in this package are described in one or more of
 the following: \"Flood Estimation Handbook\", Centre for Ecology & Hydrology
@@ -3960,13 +3961,13 @@ capture much of the structure of the original data.")
 (define-public r-uci
   (package
     (name "r-uci")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "uci" version))
               (sha256
                (base32
-                "09lxal5bzi84zjl6nlx8jh93pasa8bkp2p5nzafyyqc69cxmp2ha"))))
+                "0bqyj69xplr8hbc1b9rpjxvzmnhwkqy2xdyd4my53niq2gm55750"))))
     (properties `((upstream-name . "uci")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdep

@@ -847,6 +847,45 @@ package supports both Leamer's and Sala-i-Martin's versions of EBA, and allows
 users to customize all aspects of the analysis.")
     (license license:gpl2+)))
 
+(define-public r-extremaldep
+  (package
+    (name "r-extremaldep")
+    (version "0.0.4-1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ExtremalDep" version))
+              (sha256
+               (base32
+                "141pf0yvcfds2a0lzcmw99rzb1v75bsgapxppjcdnr66fb0bsqh1"))))
+    (properties `((upstream-name . "ExtremalDep")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sn
+                             r-quadprog
+                             r-numderiv
+                             r-nloptr
+                             r-mvtnorm
+                             r-gtools
+                             r-foreach
+                             r-fda
+                             r-evd
+                             r-doparallel
+                             r-copula))
+    (home-page "https://faculty.unibocconi.it/simonepadoan/")
+    (synopsis "Extremal Dependence Models")
+    (description
+     "This package provides a set of procedures for parametric and non-parametric
+modelling of the dependence structure of multivariate extreme-values is
+provided.  The statistical inference is performed with non-parametric
+estimators, likelihood-based estimators and Bayesian techniques.  It adapts the
+methodologies of Beranger and Padoan (2015) <arxiv:1508.05561>, Marcon et al.
+(2016) <doi:10.1214/16-EJS1162>, Marcon et al. (2017) <doi:10.1002/sta4.145>,
+Marcon et al. (2017) <doi:10.1016/j.jspi.2016.10.004> and Beranger et al. (2021)
+<doi:10.1007/s10687-019-00364-0>.  This package also allows for the modelling of
+spatial extremes using flexible max-stable processes.  It provides simulation
+algorithms and fitting procedures relying on the Stephenson-Tawn likelihood as
+per Beranger at al. (2021) <doi:10.1007/s10687-020-00376-1>.")
+    (license license:gpl2+)))
+
 (define-public r-extrc
   (package
     (name "r-extrc")
@@ -977,13 +1016,13 @@ those values that are true.")
 (define-public r-extrafrail
   (package
     (name "r-extrafrail")
-    (version "1.7")
+    (version "1.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "extrafrail" version))
               (sha256
                (base32
-                "0ddismyamy4lkf42l6m088h6pvzq6619ybv4938ri5vk72p009sp"))))
+                "19rj2gykrxcbp1cv07xpfsz29mxsnfc38vrzf3ckqnbyqdp18v39"))))
     (properties `((upstream-name . "extrafrail")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-pracma r-msm r-expint))
@@ -1098,13 +1137,13 @@ control groups.  The exterior match is used to compare the two control groups.")
 (define-public r-extendedfamily
   (package
     (name "r-extendedfamily")
-    (version "0.2.2")
+    (version "0.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "extendedFamily" version))
               (sha256
                (base32
-                "194kn26y40al3w3s2m9iv3r5dp7ylvzsds3ngb9kq02y8hxv8rrn"))))
+                "1scv5y60xr7sc77yxlsqqgxccc28bmsac23850x75bw3q2hx1cfy"))))
     (properties `((upstream-name . "extendedFamily")))
     (build-system r-build-system)
     (propagated-inputs (list r-assertthat))
@@ -1299,30 +1338,6 @@ interactions and non-interactions of similar lengths.  This package implements
 the methodology described by R. Rastelli and M. Fop (2019)
 <@code{arXiv:1901.09828>}.")
     (license license:gpl3)))
-
-(define-public r-exprnet
-  (package
-    (name "r-exprnet")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ExprNet" version))
-              (sha256
-               (base32
-                "1cskr8mihnjihgddc44j24wkbiswm6ra1qj5nxva7klc744q5vk7"))))
-    (properties `((upstream-name . "ExprNet")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-igraph r-here r-foreach r-doparallel))
-    (home-page "https://github.com/WenbinWu2001/ExprNet")
-    (synopsis
-     "Characterizing Differential Expression of Selected Edges on a Network")
-    (description
-     "This package provides a toy model studying expressions of selected edges (namely
-a sub-network) on a network.  We aim to characterize how the lengths of selected
-edges vary between two phenotypes based on t tests results.  Two statistics, AT1
-and AT2, are computed to summarize the t tests results and distinguish the
-differentially expressed patterns of the sub-network.")
-    (license license:gpl3+)))
 
 (define-public r-exprep
   (package
@@ -1532,53 +1547,6 @@ remove as much redundant typing as possible.")
 set of tidy functions for exploratory data analysis.  Introduces three main
 verbs.  explore() to graphically explore a variable or table, describe() to
 describe a variable or table and report() to create an automated report.")
-    (license license:gpl3)))
-
-(define-public r-exploratory
-  (package
-    (name "r-exploratory")
-    (version "0.3.13")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "exploratory" version))
-              (sha256
-               (base32
-                "164ykw514gfj185ckg3p8jfn7y5al12iab34fqyrkrqpj84gf1qd"))))
-    (properties `((upstream-name . "exploratory")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-weights
-                             r-shinydashboard
-                             r-shiny
-                             r-remotes
-                             r-mediation
-                             r-lm-beta
-                             r-lemon
-                             r-ggridges
-                             r-ggplot2
-                             r-dt
-                             r-data-table))
-    (home-page "https://exploratoryonly.com")
-    (synopsis "Tool for Large-Scale Exploratory Analyses")
-    (description
-     "Conduct numerous exploratory analyses in an instant with a point-and-click
-interface.  With one simple command, this tool launches a Shiny App on the local
-machine.  Drag and drop variables in a data set to categorize them as possible
-independent, dependent, moderating, or mediating variables.  Then run dozens (or
-hundreds) of analyses instantly to uncover any statistically significant
-relationships among variables.  Any relationship thus uncovered should be tested
-in follow-up studies.  This tool is designed only to facilitate exploratory
-analyses and should NEVER be used for p-hacking.  Many of the functions used in
-this package are direct copies of functions in the R Package kim and ezr'.
-Selected References: Chang et al. (2021)
-<https://CRAN.R-project.org/package=shiny>.  Chang et al. (2018)
-<https://CRAN.R-project.org/package=shinydashboard>.  Cohen (1988)
-<doi:10.4324/9780203771587>.  Dowle et al. (2021)
-<https://CRAN.R-project.org/package=data.table>.  Ioannidis (2005)
-<doi:10.1371/journal.pmed.0020124> Kim (2021) <doi:10.5281/zenodo.4619237>.  Kim
-(2020) <https://CRAN.R-project.org/package=ezr>.  Simmons et al. (2011)
-<doi:10.1177/0956797611417632> Tingley et al. (2019)
-<https://CRAN.R-project.org/package=mediation>.  Wickham et al. (2020)
-<https://CRAN.R-project.org/package=ggplot2>.")
     (license license:gpl3)))
 
 (define-public r-explor
@@ -2182,13 +2150,13 @@ functions of this package.")
 (define-public r-expanalysis3d
   (package
     (name "r-expanalysis3d")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ExpAnalysis3d" version))
               (sha256
                (base32
-                "0gch9q19l3lqb35vfq1kcrga9jzqvrxr7d6x9lk7nzb78y735wa2"))))
+                "1hzl5dzayrqj1my187300bsm59w5vq2hi63z8hj768dsbdha2vpr"))))
     (properties `((upstream-name . "ExpAnalysis3d")))
     (build-system r-build-system)
     (propagated-inputs (list r-plotly r-magrittr r-fields r-crayon))
@@ -2369,6 +2337,41 @@ both.  Execution speed is optimized by using a multi-threaded C++ backend, and
 memory issues are solved by by only storing the best results during execution
 and thus keeping memory usage constant.")
     (license license:gpl3+)))
+
+(define-public r-exgaussestim
+  (package
+    (name "r-exgaussestim")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ExGaussEstim" version))
+              (sha256
+               (base32
+                "0f466dr0k8fzcv65jdlhp3z21zl7whavrh9h5hdrd2c5qpc2i23i"))))
+    (properties `((upstream-name . "ExGaussEstim")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-pracma
+                             r-nloptr
+                             r-invgamma
+                             r-gamlss-dist
+                             r-fitdistrplus
+                             r-dlm))
+    (home-page "https://cran.r-project.org/package=ExGaussEstim")
+    (synopsis
+     "Quantile Maximization Likelihood Estimation and Bayesian Ex-Gaussian Estimation")
+    (description
+     "Presents two methods to estimate the parameters mu', sigma', and tau of an
+ex-Gaussian distribution.  Those methods are Quantile Maximization Likelihood
+Estimation ('QMLE') and Bayesian.  The QMLE method allows a choice between three
+different estimation algorithms for these parameters : neldermead ('NEMD'),
+fminsearch ('FMIN'), and nlminb ('NLMI').  For more details about the methods
+you can refer at the following list: Brown, S., & Heathcote, A. (2003)
+<doi:10.3758/BF03195527>; @code{McCormack}, P. D., & Wright, N. M. (1964)
+<doi:10.1037/h0083285>; Van Zandt, T. (2000) <doi:10.3758/BF03214357>; El Haj,
+A., Slaoui, Y., Solier, C., & Perret, C. (2021)
+<doi:10.19139/soic-2310-5070-1251>; Gilks, W. R., Best, N. G., & Tan, K. K. C.
+(1995) <doi:10.2307/2986138>.")
+    (license license:gpl2)))
 
 (define-public r-exdqlm
   (package
@@ -2924,24 +2927,30 @@ chi-square approximation or Monte-Carlo simulation can also be computed.")
 (define-public r-exactmed
   (package
     (name "r-exactmed")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ExactMed" version))
               (sha256
                (base32
-                "1hq01z1xa7vdsypmc1cfrx9agn65c6d78c25v0fchbp2ik05998d"))))
+                "0cjpnym71n2w0yk9xh5b65x35g4ycy20d9ydk43xw0nl1cpksd56"))))
     (properties `((upstream-name . "ExactMed")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sandwich r-pkgcond r-lmtest r-brglm2))
+    (propagated-inputs (list r-sandwich
+                             r-pkgcond
+                             r-nnet
+                             r-mlogit
+                             r-lmtest
+                             r-dfidx
+                             r-brglm2))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ExactMed")
+    (home-page "https://caubm.github.io/ExactMed/")
     (synopsis "Exact Mediation Analysis for Binary Outcomes")
     (description
      "This package provides a tool for conducting exact parametric regression-based
 causal mediation analysis of binary outcomes as described in Samoilenko, Blais
 and Lefebvre (2018) <doi:10.1353/obs.2018.0013>; Samoilenko, Lefebvre (2021)
-<doi:10.1093/aje/kwab055>; and Samoilenko, Lefebvre (2022)
+<doi:10.1093/aje/kwab055>; and Samoilenko, Lefebvre (2023)
 <doi:10.1002/sim.9621>.")
     (license license:gpl3)))
 
@@ -5009,13 +5018,13 @@ hand.")
 (define-public r-euclimatch
   (package
     (name "r-euclimatch")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Euclimatch" version))
               (sha256
                (base32
-                "0bg12c4caqczwamqpdhm4cf8fkrbk0nknhs3gvqijybjb8lpza4g"))))
+                "09nydlqdxpfcvfaznpjchw3zlz05a03n7picn419ivvjmf6hrx8x"))))
     (properties `((upstream-name . "Euclimatch")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -8712,13 +8721,13 @@ described by Keil et al., (2019) <doi:10.1289/EHP5838>).")
 (define-public r-epinow2
   (package
     (name "r-epinow2")
-    (version "1.3.5")
+    (version "1.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EpiNow2" version))
               (sha256
                (base32
-                "02sp6bzpg2bf8ziyxrmrjjcw6pklcfyjxck0i7g81kawgq9nfnfj"))))
+                "0dadwmzfb0cqpa9ngqndy7q3zpi3wh1al6fy7i6gdhvnfm1gkahs"))))
     (properties `((upstream-name . "EpiNow2")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm
@@ -10431,13 +10440,13 @@ visualizing distributional characteristics among multiple populations (groups)."
 (define-public r-entropart
   (package
     (name "r-entropart")
-    (version "1.6-12")
+    (version "1.6-13")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "entropart" version))
               (sha256
                (base32
-                "151b3p36x051gqxfxvsfi6f9lcvl8rwhrp430pk65ibyd7ivklaj"))))
+                "1y2gdfnqz52w03g9zij07fkjhh3yf3qflk75j0bvfk7n727rz2jp"))))
     (properties `((upstream-name . "entropart")))
     (build-system r-build-system)
     (inputs (list pandoc))
@@ -20387,21 +20396,16 @@ coupled-to-MCMC schemes are implemented.")
 (define-public r-easy-utils
   (package
     (name "r-easy-utils")
-    (version "0.0.1")
+    (version "0.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "easy.utils" version))
               (sha256
                (base32
-                "1gw2nfvjvrq0wsnpp39sjbd329q3ja0s20dki41nw5hw6xlaqqvj"))))
+                "0gmjh8f542hi2w9gi57kxpfd6ykrn3iick9rsr3qjyxc442xkgnv"))))
     (properties `((upstream-name . "easy.utils")))
     (build-system r-build-system)
-    (propagated-inputs (list r-scales
-                             r-rlang
-                             r-randomcolor
-                             r-polychrome
-                             r-fastmatch
-                             r-dplyr))
+    (propagated-inputs (list r-scales r-rlang r-polychrome r-fastmatch r-dplyr))
     (home-page "https://github.com/ycli1995/easy.utils")
     (synopsis "Frequently Used Functions for Easy R Programming")
     (description
