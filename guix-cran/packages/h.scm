@@ -51,12 +51,12 @@
   (package
     (name "r-hystreet")
     (version "0.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hystReet" version))
-              (sha256
-               (base32
-                "1vrby9lgy0nm5wa5r1y3k3l2s9fc8vdf4szy8isvnzayr464xvwi"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hystReet" version))
+       (sha256
+        (base32 "1vrby9lgy0nm5wa5r1y3k3l2s9fc8vdf4szy8isvnzayr464xvwi"))))
     (properties `((upstream-name . "hystReet")))
     (build-system r-build-system)
     (propagated-inputs (list r-lubridate r-jsonlite r-httr))
@@ -72,12 +72,12 @@ provides pedestrian counts in different cities in Germany.")
   (package
     (name "r-hysteresis")
     (version "2.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hysteresis" version))
-              (sha256
-               (base32
-                "1nnfr50nafhimj2j5xpxly3i8xvkwwddz864gklwm9jzdpmv02yh"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hysteresis" version))
+       (sha256
+        (base32 "1nnfr50nafhimj2j5xpxly3i8xvkwwddz864gklwm9jzdpmv02yh"))))
     (properties `((upstream-name . "hysteresis")))
     (build-system r-build-system)
     (propagated-inputs (list r-msm r-mass r-car))
@@ -95,12 +95,12 @@ method, geometric least squares or linear least squares.")
   (package
     (name "r-hystar")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hystar" version))
-              (sha256
-               (base32
-                "1gyk78nfhhglry2dwy21h9s2hqlqisd7cffwg2864spmwml4brcf"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hystar" version))
+       (sha256
+        (base32 "1gyk78nfhhglry2dwy21h9s2hqlqisd7cffwg2864spmwml4brcf"))))
     (properties `((upstream-name . "hystar")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -117,12 +117,12 @@ series data from the @code{HysTAR} model.  For details, see Li, Guan, Li and Yu
   (package
     (name "r-hyspc-testthat")
     (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hySpc.testthat" version))
-              (sha256
-               (base32
-                "12za828sw2al3aa236ksmnwxpy2sqw8gl8b3p3vvrjk1l31l1qcm"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hySpc.testthat" version))
+       (sha256
+        (base32 "12za828sw2al3aa236ksmnwxpy2sqw8gl8b3p3vvrjk1l31l1qcm"))))
     (properties `((upstream-name . "hySpc.testthat")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat))
@@ -137,12 +137,12 @@ they test.  This allows to keep functional and unit test code together.")
   (package
     (name "r-hyrim")
     (version "2.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HyRiM" version))
-              (sha256
-               (base32
-                "02hb8kl02872xvyhg0k19xavcmhqmf0ddfnxx5nxlpzgzb432csd"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HyRiM" version))
+       (sha256
+        (base32 "02hb8kl02872xvyhg0k19xavcmhqmf0ddfnxx5nxlpzgzb432csd"))))
     (properties `((upstream-name . "HyRiM")))
     (build-system r-build-system)
     (propagated-inputs (list r-rglpk r-purrr r-polynom r-grimport2 r-compare))
@@ -172,12 +172,12 @@ Springer, <doi:10.1007/978-3-319-75268-6>, ISBN 978-3-319-75267-9.")
   (package
     (name "r-hypsoloop")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hypsoLoop" version))
-              (sha256
-               (base32
-                "0kwxzw2r406li2pmby92a3jik4k3z1vdgs54m4q45a8r8vz3y1nn"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hypsoLoop" version))
+       (sha256
+        (base32 "0kwxzw2r406li2pmby92a3jik4k3z1vdgs54m4q45a8r8vz3y1nn"))))
     (properties `((upstream-name . "hypsoLoop")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -206,12 +206,12 @@ Vanderwaal and Herbert Ssegane (2013) <doi:10.1111/jawr.12089>.")
   (package
     (name "r-hypr")
     (version "0.2.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hypr" version))
-              (sha256
-               (base32
-                "05lm56c845rcx5rfq8czbxavvl0jvy7j2gdmdnjdl2glkcnpid69"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hypr" version))
+       (sha256
+        (base32 "05lm56c845rcx5rfq8czbxavvl0jvy7j2gdmdnjdl2glkcnpid69"))))
     (properties `((upstream-name . "hypr")))
     (build-system r-build-system)
     (propagated-inputs (list r-pracma r-matrix r-mass r-magrittr r-cli))
@@ -229,12 +229,12 @@ Rabe et al. (2020) <doi:10.21105/joss.02134>.")
   (package
     (name "r-hypothesisr")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hypothesisr" version))
-              (sha256
-               (base32
-                "0z06risagphhvqiw4lrxy52q6q2yr10w2yxsm8iz1wh9ik097pcv"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hypothesisr" version))
+       (sha256
+        (base32 "0z06risagphhvqiw4lrxy52q6q2yr10w2yxsm8iz1wh9ik097pcv"))))
     (properties `((upstream-name . "hypothesisr")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-httr r-dplyr))
@@ -251,12 +251,12 @@ and delete their own annotations.")
   (package
     (name "r-hypothesis")
     (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hypothesis" version))
-              (sha256
-               (base32
-                "0mllh8lamls0rrbr9d12xa7a56pa2zahvr243kbfmhad81nalpl7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hypothesis" version))
+       (sha256
+        (base32 "0mllh8lamls0rrbr9d12xa7a56pa2zahvr243kbfmhad81nalpl7"))))
     (properties `((upstream-name . "hypothesis")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -279,12 +279,12 @@ documents via hypothes.is'.")
   (package
     (name "r-hyporf")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hypoRF" version))
-              (sha256
-               (base32
-                "1yyq1pjxm9p395wq4zfimvcagspl8vlk0kzpa92pr084q5f7jcyr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hypoRF" version))
+       (sha256
+        (base32 "1yyq1pjxm9p395wq4zfimvcagspl8vlk0kzpa92pr084q5f7jcyr"))))
     (properties `((upstream-name . "hypoRF")))
     (build-system r-build-system)
     (propagated-inputs (list r-ranger))
@@ -299,12 +299,12 @@ Hediger & Michel & Naef (2020) <@code{arXiv:1903.06287>}.")
   (package
     (name "r-hypetools")
     (version "1.5.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HYPEtools" version))
-              (sha256
-               (base32
-                "1706lkinwmplmv7s4j1ggax9b1xif45j30k1cnzaw6d1vrssl3yf"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HYPEtools" version))
+       (sha256
+        (base32 "1706lkinwmplmv7s4j1ggax9b1xif45j30k1cnzaw6d1vrssl3yf"))))
     (properties `((upstream-name . "HYPEtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -338,12 +338,12 @@ model analysis.")
   (package
     (name "r-hypervolume")
     (version "3.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hypervolume" version))
-              (sha256
-               (base32
-                "03x5zf1w44m5xb255lg4mwg98sr2cl4wvy7wb13lpk098w71q2id"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hypervolume" version))
+       (sha256
+        (base32 "03x5zf1w44m5xb255lg4mwg98sr2cl4wvy7wb13lpk098w71q2id"))))
     (properties `((upstream-name . "hypervolume")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -387,12 +387,12 @@ species distribution modeling.")
   (package
     (name "r-hyperspec")
     (version "0.100.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hyperSpec" version))
-              (sha256
-               (base32
-                "0m0ws6lm5q1555n0qhixj4fqq4bbcf7i7d73pg85z74a3058gk5s"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hyperSpec" version))
+       (sha256
+        (base32 "0m0ws6lm5q1555n0qhixj4fqq4bbcf7i7d73pg85z74a3058gk5s"))))
     (properties `((upstream-name . "hyperSpec")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -419,12 +419,12 @@ as a vector of absorbance values for discrete wavelengths is suitable.")
   (package
     (name "r-hypersampleplan")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hypersampleplan" version))
-              (sha256
-               (base32
-                "1sk3s1jm46ac4i7p433s3kyngj86kq2821zzhp30a3y8vi1j2psq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hypersampleplan" version))
+       (sha256
+        (base32 "1sk3s1jm46ac4i7p433s3kyngj86kq2821zzhp30a3y8vi1j2psq"))))
     (properties `((upstream-name . "hypersampleplan")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=hypersampleplan")
@@ -446,12 +446,12 @@ calculation of exact values of hypergeometric variables.")
   (package
     (name "r-hyperoverlap")
     (version "1.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hyperoverlap" version))
-              (sha256
-               (base32
-                "10kcphn5zl1pl70xg9bn947i9mbnjxk03p6y7xhdlv152cihffw0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hyperoverlap" version))
+       (sha256
+        (base32 "10kcphn5zl1pl70xg9bn947i9mbnjxk03p6y7xhdlv152cihffw0"))))
     (properties `((upstream-name . "hyperoverlap")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgl
@@ -475,12 +475,12 @@ can be found in: Brown et al. (2020) <doi:10.1111/2041-210X.13363> .")
   (package
     (name "r-hypergeomat")
     (version "4.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HypergeoMat" version))
-              (sha256
-               (base32
-                "06ljg2v0dbqi9mf2l236p616x62cbx4q05qymbsj8inmajwv0piz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HypergeoMat" version))
+       (sha256
+        (base32 "06ljg2v0dbqi9mf2l236p616x62cbx4q05qymbsj8inmajwv0piz"))))
     (properties `((upstream-name . "HypergeoMat")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-juliaconnector r-gsl
@@ -498,12 +498,12 @@ random matrix theory.  This is an implementation of Koev & Edelman's algorithm
   (package
     (name "r-hypergate")
     (version "0.8.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hypergate" version))
-              (sha256
-               (base32
-                "1ldymcb7b1bdhsacmvyqdxni2462kn1ssbab4rgh7lsqflfs0csb"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hypergate" version))
+       (sha256
+        (base32 "1ldymcb7b1bdhsacmvyqdxni2462kn1ssbab4rgh7lsqflfs0csb"))))
     (properties `((upstream-name . "hypergate")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -522,12 +522,12 @@ gating strategies outputs.")
   (package
     (name "r-hyperg")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HyperG" version))
-              (sha256
-               (base32
-                "0w84ph0vd03i22s8g52jf2w96yd80ynbh6x0p88apg92jdsapcrc"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HyperG" version))
+       (sha256
+        (base32 "0w84ph0vd03i22s8g52jf2w96yd80ynbh6x0p88apg92jdsapcrc"))))
     (properties `((upstream-name . "HyperG")))
     (build-system r-build-system)
     (propagated-inputs (list r-rspectra
@@ -549,12 +549,12 @@ hypergraphs.")
   (package
     (name "r-hypercube")
     (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hypercube" version))
-              (sha256
-               (base32
-                "0m0n64rl5fnhvhfdknrza8a0h5lw8vbgakaqbyfx77ixhwqhjn1l"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hypercube" version))
+       (sha256
+        (base32 "0m0n64rl5fnhvhfdknrza8a0h5lw8vbgakaqbyfx77ixhwqhjn1l"))))
     (properties `((upstream-name . "hypercube")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-plotly r-dplyr))
@@ -573,12 +573,12 @@ remove.selection()), drilling down (add.aggregation()), and rolling up
   (package
     (name "r-hyperbrick")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hyperbrick" version))
-              (sha256
-               (base32
-                "1a6l6dlylqm1dxz573rz5zqxn1nk85hcbfdxk0qwkr7z3yzl13c8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hyperbrick" version))
+       (sha256
+        (base32 "1a6l6dlylqm1dxz573rz5zqxn1nk85hcbfdxk0qwkr7z3yzl13c8"))))
     (properties `((upstream-name . "hyperbrick")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgdal
@@ -602,12 +602,12 @@ functionalities allow to compute sliding windows statistics over the image.")
   (package
     (name "r-hyperbolicdist")
     (version "0.6-4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HyperbolicDist" version))
-              (sha256
-               (base32
-                "0xsgy995z79qdamwdgs335r8zr2bk5cyw4wijqyvgwx3pqmwvvmr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HyperbolicDist" version))
+       (sha256
+        (base32 "0xsgy995z79qdamwdgs335r8zr2bk5cyw4wijqyvgwx3pqmwvvmr"))))
     (properties `((upstream-name . "HyperbolicDist")))
     (build-system r-build-system)
     (home-page "https://www.r-project.org")
@@ -628,12 +628,12 @@ hyperbolic distribution, including fitting of the hyperbolic to data.")
   (package
     (name "r-hyper2")
     (version "3.0-0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hyper2" version))
-              (sha256
-               (base32
-                "09nq5vxih9f7731nrd5avpk6gw4wbh9rpq4bmq7373ikgc3qy3mf"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hyper2" version))
+       (sha256
+        (base32 "09nq5vxih9f7731nrd5avpk6gw4wbh9rpq4bmq7373ikgc3qy3mf"))))
     (properties `((upstream-name . "hyper2")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack
@@ -657,12 +657,12 @@ supersedes the hyperdirichlet package.  Uses @code{disordR} discipline.")
   (package
     (name "r-hyper-fit")
     (version "1.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hyper.fit" version))
-              (sha256
-               (base32
-                "1xibiydfkhzsw0yqfc0xfzj4yz8xyxqlvnfpyxg33v5fwp9wap3v"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hyper.fit" version))
+       (sha256
+        (base32 "1xibiydfkhzsw0yqfc0xfzj4yz8xyxqlvnfpyxg33v5fwp9wap3v"))))
     (properties `((upstream-name . "hyper.fit")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgl r-mass r-magicaxis r-laplacesdemon))
@@ -682,12 +682,12 @@ intrinsic scatter in the generative model orthogonal to the hyperplane.")
   (package
     (name "r-hyfo")
     (version "1.4.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hyfo" version))
-              (sha256
-               (base32
-                "03z36ddq6vpld1v876adp5xrz0hjy46vhs5sn8sgaa57fhmya6cm"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hyfo" version))
+       (sha256
+        (base32 "03z36ddq6vpld1v876adp5xrz0hjy46vhs5sn8sgaa57fhmya6cm"))))
     (properties `((upstream-name . "hyfo")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -717,12 +717,12 @@ processing and post-processing tool for hydrological and hydraulic modellers.")
   (package
     (name "r-hydrotsm")
     (version "0.6-0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hydroTSM" version))
-              (sha256
-               (base32
-                "1msavd2k05apsky88zkk1l3c6y3v95fwhmr6xmwsap70bj25krsv"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hydroTSM" version))
+       (sha256
+        (base32 "1msavd2k05apsky88zkk1l3c6y3v95fwhmr6xmwsap70bj25krsv"))))
     (properties `((upstream-name . "hydroTSM")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -752,12 +752,12 @@ datasets that can be included in this package for academic purposes.")
   (package
     (name "r-hydrotoolkit")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hydroToolkit" version))
-              (sha256
-               (base32
-                "0bij4365hczvq17wj9hp0570v35m8ili11mp9dzfj3mvhhqrc9p4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hydroToolkit" version))
+       (sha256
+        (base32 "0bij4365hczvq17wj9hp0570v35m8ili11mp9dzfj3mvhhqrc9p4"))))
     (properties `((upstream-name . "hydroToolkit")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2 r-readxl r-plotly r-lubridate
@@ -774,12 +774,12 @@ Chile.")
   (package
     (name "r-hydrotoolbox")
     (version "1.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hydrotoolbox" version))
-              (sha256
-               (base32
-                "0m5crm8n8i3fv43am649cdyrbfcfbais8fwrg6c7zy81dbhmy9m9"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hydrotoolbox" version))
+       (sha256
+        (base32 "0m5crm8n8i3fv43am649cdyrbfcfbais8fwrg6c7zy81dbhmy9m9"))))
     (properties `((upstream-name . "hydrotoolbox")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -804,12 +804,12 @@ special features for Argentina and Chile data-sets).")
   (package
     (name "r-hydrostats")
     (version "0.2.9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hydrostats" version))
-              (sha256
-               (base32
-                "11ipfp5dnl336wbsw0nrrcd68hccp8igvlrr93rc3hrvif3slkim"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hydrostats" version))
+       (sha256
+        (base32 "11ipfp5dnl336wbsw0nrrcd68hccp8igvlrr93rc3hrvif3slkim"))))
     (properties `((upstream-name . "hydrostats")))
     (build-system r-build-system)
     (home-page "https://github.com/nickbond/hydrostats")
@@ -823,12 +823,12 @@ widely used in hydrology and stream ecology.")
   (package
     (name "r-hydroroute")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hydroroute" version))
-              (sha256
-               (base32
-                "1pvdvfmjrxplcycszaig2xbwlk1acs6smci1cwmmhdh2xpaffami"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hydroroute" version))
+       (sha256
+        (base32 "1pvdvfmjrxplcycszaig2xbwlk1acs6smci1cwmmhdh2xpaffami"))))
     (properties `((upstream-name . "hydroroute")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -859,12 +859,12 @@ on the event detection implemented in hydropeak'.")
   (package
     (name "r-hydropso")
     (version "0.5-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hydroPSO" version))
-              (sha256
-               (base32
-                "16gdv19yqla80s9fjmvahfn21jv62zivirzs5ch4zm9db54g6bry"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hydroPSO" version))
+       (sha256
+        (base32 "16gdv19yqla80s9fjmvahfn21jv62zivirzs5ch4zm9db54g6bry"))))
     (properties `((upstream-name . "hydroPSO")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -905,12 +905,12 @@ Rojas (2013) <doi:10.1016/j.envsoft.2013.01.004> for more details.")
   (package
     (name "r-hydroportailstats")
     (version "1.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HydroPortailStats" version))
-              (sha256
-               (base32
-                "1f5h9xqn4vn9wbnvlshbc8r200vx1pwm9ic7sdzsv4z0j7z7wl1j"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HydroPortailStats" version))
+       (sha256
+        (base32 "1f5h9xqn4vn9wbnvlshbc8r200vx1pwm9ic7sdzsv4z0j7z7wl1j"))))
     (properties `((upstream-name . "HydroPortailStats")))
     (build-system r-build-system)
     (propagated-inputs (list r-numderiv r-mvtnorm r-evd))
@@ -928,12 +928,12 @@ utilities.  Technical details are available (in French) in Renard (2016)
   (package
     (name "r-hydropeak")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hydropeak" version))
-              (sha256
-               (base32
-                "06x1qahavvhaqwdsjg65ixgc6migbm188v3w3vjng5xl2g2ybhqc"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hydropeak" version))
+       (sha256
+        (base32 "06x1qahavvhaqwdsjg65ixgc6migbm188v3w3vjng5xl2g2ybhqc"))))
     (properties `((upstream-name . "hydropeak")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -960,12 +960,12 @@ along the longitudinal flow path as proposed and validated in Greimel et al.
   (package
     (name "r-hydromopso")
     (version "0.1-3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hydroMOPSO" version))
-              (sha256
-               (base32
-                "14yvsxzlzpisn5hqyqcq1fmqsbj96pqcgyhnj414mj366x6w5qxp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hydroMOPSO" version))
+       (sha256
+        (base32 "14yvsxzlzpisn5hqyqcq1fmqsbj96pqcgyhnj414mj366x6w5qxp"))))
     (properties `((upstream-name . "hydroMOPSO")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-xts r-randtoolbox r-lhs r-hydrotsm))
@@ -996,12 +996,12 @@ time.")
   (package
     (name "r-hydrome")
     (version "2.0-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HydroMe" version))
-              (sha256
-               (base32
-                "1pzf3z3f2xqmj7ixdg01k8552l4vz7yaf2mb53q59ihfhlbqchni"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HydroMe" version))
+       (sha256
+        (base32 "1pzf3z3f2xqmj7ixdg01k8552l4vz7yaf2mb53q59ihfhlbqchni"))))
     (properties `((upstream-name . "HydroMe")))
     (build-system r-build-system)
     (home-page "https://CRAN.r-project.org/package=HydroMe")
@@ -1019,12 +1019,12 @@ curves.")
   (package
     (name "r-hydrogof")
     (version "0.4-0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hydroGOF" version))
-              (sha256
-               (base32
-                "0fw8b66k7gdkdjxgmdpp3lk9d8p0wmlvhq2rkcvajjb5wd09f43a"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hydroGOF" version))
+       (sha256
+        (base32 "0fw8b66k7gdkdjxgmdpp3lk9d8p0wmlvhq2rkcvajjb5wd09f43a"))))
     (properties `((upstream-name . "hydroGOF")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-xts r-hydrotsm))
@@ -1045,12 +1045,12 @@ welcomed.")
   (package
     (name "r-hydrogeo")
     (version "0.6-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hydrogeo" version))
-              (sha256
-               (base32
-                "16m6yvr9yhvb0vdh9pqd6gzf3h9km7gd89y6risjddv6g83469k8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hydrogeo" version))
+       (sha256
+        (base32 "16m6yvr9yhvb0vdh9pqd6gzf3h9km7gd89y6risjddv6g83469k8"))))
     (properties `((upstream-name . "hydrogeo")))
     (build-system r-build-system)
     (home-page "http://rockhead.biz")
@@ -1064,12 +1064,12 @@ Piper-Hill diagrams) of water analyses for major ions.")
   (package
     (name "r-hydroevents")
     (version "0.11")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hydroEvents" version))
-              (sha256
-               (base32
-                "1w433lmzk6lr2lnqn1qcq13c980kpi0r881cdzm56n53s89zdh36"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hydroEvents" version))
+       (sha256
+        (base32 "1w433lmzk6lr2lnqn1qcq13c980kpi0r881cdzm56n53s89zdh36"))))
     (properties `((upstream-name . "hydroEvents")))
     (build-system r-build-system)
     (home-page "https://github.com/conradwasko/hydroEvents")
@@ -1087,12 +1087,12 @@ R. J. (2013) <doi:10.7158/W12-028.2013.17.1>.")
   (package
     (name "r-hydrocode")
     (version "1.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HydroCode" version))
-              (sha256
-               (base32
-                "1kykxra9cg1n17l2zmnjk1qv8450v4qix5sylm1k9xxzirbb7wca"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HydroCode" version))
+       (sha256
+        (base32 "1kykxra9cg1n17l2zmnjk1qv8450v4qix5sylm1k9xxzirbb7wca"))))
     (properties `((upstream-name . "HydroCode")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp))
@@ -1107,12 +1107,12 @@ R. J. (2013) <doi:10.7158/W12-028.2013.17.1>.")
   (package
     (name "r-hydrocal")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HYDROCAL" version))
-              (sha256
-               (base32
-                "0xq53nysn9kv6p1clgdjxsvj7qjlcmg02frfpw9fnzim53pzzrp4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HYDROCAL" version))
+       (sha256
+        (base32 "0xq53nysn9kv6p1clgdjxsvj7qjlcmg02frfpw9fnzim53pzzrp4"))))
     (properties `((upstream-name . "HYDROCAL")))
     (build-system r-build-system)
     (home-page "GitHub")
@@ -1128,12 +1128,12 @@ and accompanying documentation by @code{McKay} and Fischenich (2011,
   (package
     (name "r-hydraulics")
     (version "0.6.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hydraulics" version))
-              (sha256
-               (base32
-                "1yk1s9fnphzmkpx9pfawm72i07kdj099q6i6cry9p08bzvac80xk"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hydraulics" version))
+       (sha256
+        (base32 "1yk1s9fnphzmkpx9pfawm72i07kdj099q6i6cry9p08bzvac80xk"))))
     (properties `((upstream-name . "hydraulics")))
     (build-system r-build-system)
     (propagated-inputs (list r-units
@@ -1168,12 +1168,12 @@ iemisc package by Irucka Embry.")
   (package
     (name "r-hydra")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hydra" version))
-              (sha256
-               (base32
-                "0r3r8cds4h15narawxhzkrvgnf00vlgrgqdgnmbzjyyb1dmry8wn"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hydra" version))
+       (sha256
+        (base32 "0r3r8cds4h15narawxhzkrvgnf00vlgrgqdgnmbzjyyb1dmry8wn"))))
     (properties `((upstream-name . "hydra")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=hydra")
@@ -1188,12 +1188,12 @@ Keller-Ressel and Nargang (2019), see <@code{arXiv:1903.08977>}.")
   (package
     (name "r-hydflood")
     (version "0.5.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hydflood" version))
-              (sha256
-               (base32
-                "1g74gxarn3f8q0pnwwz802jrryry0w72py7agckaqwzwybfsklsc"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hydflood" version))
+       (sha256
+        (base32 "1g74gxarn3f8q0pnwwz802jrryry0w72py7agckaqwzwybfsklsc"))))
     (properties `((upstream-name . "hydflood")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-sf r-rdpack r-raster r-hyd1d))
@@ -1215,12 +1215,12 @@ published by Weber (2022) <doi:10.1594/PANGAEA.948042>.")
   (package
     (name "r-hyd1d")
     (version "0.4.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hyd1d" version))
-              (sha256
-               (base32
-                "0ikznysqbfx9rrxa87is3ycixf3q6fcvqqzih6d9khsqqz0xc5i4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hyd1d" version))
+       (sha256
+        (base32 "0ikznysqbfx9rrxa87is3ycixf3q6fcvqqzih6d9khsqqz0xc5i4"))))
     (properties `((upstream-name . "hyd1d")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjsonio r-rdpack r-plotrix))
@@ -1243,12 +1243,12 @@ externally from the PEGELONLINE REST API
   (package
     (name "r-hybridts")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hybridts" version))
-              (sha256
-               (base32
-                "1x96g0cjgn3vklczksxdgpd5ayl3rl63k0ig0h8vacm2nxn4c6js"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hybridts" version))
+       (sha256
+        (base32 "1x96g0cjgn3vklczksxdgpd5ayl3rl63k0ig0h8vacm2nxn4c6js"))))
     (properties `((upstream-name . "hybridts")))
     (build-system r-build-system)
     (propagated-inputs (list r-waveletarima r-nnfor r-metrics r-forecast))
@@ -1278,12 +1278,12 @@ Bhattacharyya et al. (2022) <doi:10.1016/S0925-2312(01)00702-0>
   (package
     (name "r-hybridogram")
     (version "0.3.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hybridogram" version))
-              (sha256
-               (base32
-                "14p2gwmgcaf84aycdc2a51frw2pccrffsjk8n83gvj2ans8phrr9"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hybridogram" version))
+       (sha256
+        (base32 "14p2gwmgcaf84aycdc2a51frw2pccrffsjk8n83gvj2ans8phrr9"))))
     (properties `((upstream-name . "hybridogram")))
     (build-system r-build-system)
     (propagated-inputs (list r-pheatmap))
@@ -1303,12 +1303,12 @@ with a color legend.")
   (package
     (name "r-hybridmodels")
     (version "0.3.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hybridModels" version))
-              (sha256
-               (base32
-                "0fj3dvv7s1hlicvlb077pkhbj894brzgdxhp67jck9zpy2qymzxq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hybridModels" version))
+       (sha256
+        (base32 "0fj3dvv7s1hlicvlb077pkhbj894brzgdxhp67jck9zpy2qymzxq"))))
     (properties `((upstream-name . "hybridModels")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -1337,12 +1337,12 @@ information in Fernando S. Marques, Jose H. H. Grisi-Filho, Marcos Amaku et al.
   (package
     (name "r-hybridmicrobiomes")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HybridMicrobiomes" version))
-              (sha256
-               (base32
-                "0qn3pymx47a7r52mjj39n41aclmwmwspmwzlhjmdl84n8yy9c2fg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HybridMicrobiomes" version))
+       (sha256
+        (base32 "0qn3pymx47a7r52mjj39n41aclmwmwspmwzlhjmdl84n8yy9c2fg"))))
     (properties `((upstream-name . "HybridMicrobiomes")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-rgl r-phyloseq r-permanova
@@ -1359,12 +1359,12 @@ species.")
   (package
     (name "r-hybriddesign")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HybridDesign" version))
-              (sha256
-               (base32
-                "19hgljm7mhd00s2lvvxmdr35zifnl0kymmcx06jfqkld3qd3zli6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HybridDesign" version))
+       (sha256
+        (base32 "19hgljm7mhd00s2lvvxmdr35zifnl0kymmcx06jfqkld3qd3zli6"))))
     (properties `((upstream-name . "HybridDesign")))
     (build-system r-build-system)
     (propagated-inputs (list r-testit r-resourceselection))
@@ -1383,12 +1383,12 @@ More details can be found in Liao et al.  2022 <doi:10.1002/ijc.34203>.")
   (package
     (name "r-hwwntest")
     (version "1.3.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hwwntest" version))
-              (sha256
-               (base32
-                "1j6lpbrf3jp3nrz9m0s74inkr2ww4g8ajz30qjhlfwmacww0hdsg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hwwntest" version))
+       (sha256
+        (base32 "1j6lpbrf3jp3nrz9m0s74inkr2ww4g8ajz30qjhlfwmacww0hdsg"))))
     (properties `((upstream-name . "hwwntest")))
     (build-system r-build-system)
     (propagated-inputs (list r-wavethresh r-polynom))
@@ -1408,12 +1408,12 @@ of general ARMA alternatives.")
   (package
     (name "r-hwsdr")
     (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hwsdr" version))
-              (sha256
-               (base32
-                "1dfrqcd0nccrsv01hsvp2xic9nfhsqmvl7cqvv28amayqyv3lizk"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hwsdr" version))
+       (sha256
+        (base32 "1dfrqcd0nccrsv01hsvp2xic9nfhsqmvl7cqvv28amayqyv3lizk"))))
     (properties `((upstream-name . "hwsdr")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-sf r-httr r-dplyr))
@@ -1431,12 +1431,12 @@ Routines for both single pixel data downloads and gridded data are provided.")
   (package
     (name "r-hwordcloud")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hwordcloud" version))
-              (sha256
-               (base32
-                "0civbwv276lcwvfs4qzz14r8rk14kg1ml4zzhi3msnkkh29v70y2"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hwordcloud" version))
+       (sha256
+        (base32 "0civbwv276lcwvfs4qzz14r8rk14kg1ml4zzhi3msnkkh29v70y2"))))
     (properties `((upstream-name . "hwordcloud")))
     (build-system r-build-system)
     (propagated-inputs (list r-wordcloud2 r-shiny r-htmlwidgets r-colourpicker))
@@ -1452,12 +1452,12 @@ html widget, so you can use it in interactive documents and shiny applications."
   (package
     (name "r-hwig")
     (version "0.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hwig" version))
-              (sha256
-               (base32
-                "06a42a38qsjwijbbr2c8dsd7hjm751g1s4sgcmzvvfi6xy7svl3k"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hwig" version))
+       (sha256
+        (base32 "06a42a38qsjwijbbr2c8dsd7hjm751g1s4sgcmzvvfi6xy7svl3k"))))
     (properties `((upstream-name . "hwig")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatsoc r-data-table r-asnipe))
@@ -1475,12 +1475,12 @@ group by individual data according to methods described in Godde et al. (2013)
   (package
     (name "r-hwep")
     (version "2.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hwep" version))
-              (sha256
-               (base32
-                "0cvy9s9kwc1jp4klgbjahidpk8gkvfa43vry8i0y77nvfys7x9v9"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hwep" version))
+       (sha256
+        (base32 "0cvy9s9kwc1jp4klgbjahidpk8gkvfa43vry8i0y77nvfys7x9v9"))))
     (properties `((upstream-name . "hwep")))
     (build-system r-build-system)
     (propagated-inputs (list r-updog
@@ -1521,12 +1521,12 @@ Foundation.  For details of these methods, see Gerard (2022a)
   (package
     (name "r-hweintrinsic")
     (version "1.2.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HWEintrinsic" version))
-              (sha256
-               (base32
-                "0ijrczm0mm37a3v4v0hd7zb662rcyzqf58z4nbhrix1nf6vzj47m"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HWEintrinsic" version))
+       (sha256
+        (base32 "0ijrczm0mm37a3v4v0hd7zb662rcyzqf58z4nbhrix1nf6vzj47m"))))
     (properties `((upstream-name . "HWEintrinsic")))
     (build-system r-build-system)
     (home-page "https://onlinelibrary.wiley.com/doi/10.1002/sim.4084/abstract")
@@ -1548,12 +1548,12 @@ problems.")
   (package
     (name "r-huxtable")
     (version "5.5.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "huxtable" version))
-              (sha256
-               (base32
-                "1rpyqkdck6cmh2a7f5j71ypk2v9gzl3jf2b0z9jjlfrv1d1b8x7l"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "huxtable" version))
+       (sha256
+        (base32 "1rpyqkdck6cmh2a7f5j71ypk2v9gzl3jf2b0z9jjlfrv1d1b8x7l"))))
     (properties `((upstream-name . "huxtable")))
     (build-system r-build-system)
     (inputs (list calc))
@@ -1587,12 +1587,12 @@ one-liners to print data to a new document.")
   (package
     (name "r-hutilscpp")
     (version "0.9.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hutilscpp" version))
-              (sha256
-               (base32
-                "0sh7s1y8wxwrbhdf8kz3x7myzk5jxv0h1yz1lrh345bvw1jdqb9i"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hutilscpp" version))
+       (sha256
+        (base32 "0sh7s1y8wxwrbhdf8kz3x7myzk5jxv0h1yz1lrh345bvw1jdqb9i"))))
     (properties `((upstream-name . "hutilscpp")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-hutils r-data-table))
@@ -1611,12 +1611,12 @@ speeds.  The name is a portmanteau of the author and Rcpp'.")
   (package
     (name "r-hutils")
     (version "1.8.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hutils" version))
-              (sha256
-               (base32
-                "0pdya5gdyab5pwpgiw9yfa95m5ynqk154sydsfg56dxq1ihzfr74"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hutils" version))
+       (sha256
+        (base32 "0pdya5gdyab5pwpgiw9yfa95m5ynqk154sydsfg56dxq1ihzfr74"))))
     (properties `((upstream-name . "hutils")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-fastmatch r-data-table))
@@ -1634,12 +1634,12 @@ author.")
   (package
     (name "r-hurricaneexposure")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hurricaneexposure" version))
-              (sha256
-               (base32
-                "0a8xy71dkq2bzdnc90irxmbcxhi0anh87ic22x7b22c3m5605w6s"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hurricaneexposure" version))
+       (sha256
+        (base32 "0a8xy71dkq2bzdnc90irxmbcxhi0anh87ic22x7b22c3m5605w6s"))))
     (properties `((upstream-name . "hurricaneexposure")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -1676,12 +1676,12 @@ Sciences Program/Public Health Program Grant (NNX09AV81G).")
   (package
     (name "r-hurreconr")
     (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HurreconR" version))
-              (sha256
-               (base32
-                "1grdhvdkvp1s9x9mwpy4f38ayp5zv7mkiwz1pvjm4zlgjpzzq4l4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HurreconR" version))
+       (sha256
+        (base32 "1grdhvdkvp1s9x9mwpy4f38ayp5zv7mkiwz1pvjm4zlgjpzzq4l4"))))
     (properties `((upstream-name . "HurreconR")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra))
@@ -1704,12 +1704,12 @@ Foster (2004) <doi:10.1890/02-4057>.")
   (package
     (name "r-hurdlr")
     (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hurdlr" version))
-              (sha256
-               (base32
-                "1ryrqsxa07isxv2zx156bcn36d4yjvwpirb8jqcmqm97q7rmihmq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hurdlr" version))
+       (sha256
+        (base32 "1ryrqsxa07isxv2zx156bcn36d4yjvwpirb8jqcmqm97q7rmihmq"))))
     (properties `((upstream-name . "hurdlr")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=hurdlr")
@@ -1736,12 +1736,12 @@ manage data that is both zero-inflated and over-dispersed.")
   (package
     (name "r-huraultmisc")
     (version "1.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HuraultMisc" version))
-              (sha256
-               (base32
-                "0bi1y7icrg0f4n9ah9dsrijnfr39bqg3799rz4hccd1b061f0rvj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HuraultMisc" version))
+       (sha256
+        (base32 "0bi1y7icrg0f4n9ah9dsrijnfr39bqg3799rz4hccd1b061f0rvj"))))
     (properties `((upstream-name . "HuraultMisc")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -1764,12 +1764,12 @@ diagnostics for Bayesian modelling using Stan.")
   (package
     (name "r-humidity")
     (version "0.1.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "humidity" version))
-              (sha256
-               (base32
-                "143pn8jjinlda76b94qh5zw2sfajw0ifcx774x6adr2il5a5wm99"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "humidity" version))
+       (sha256
+        (base32 "143pn8jjinlda76b94qh5zw2sfajw0ifcx774x6adr2il5a5wm99"))))
     (properties `((upstream-name . "humidity")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -1789,12 +1789,12 @@ measures are also provided.")
   (package
     (name "r-humanleague")
     (version "2.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "humanleague" version))
-              (sha256
-               (base32
-                "07zss9mkrpvbbh08a7wjd7k06w6mp34kwfcgsdfhzvzacpnmxyn3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "humanleague" version))
+       (sha256
+        (base32 "07zss9mkrpvbbh08a7wjd7k06w6mp34kwfcgsdfhzvzacpnmxyn3"))))
     (properties `((upstream-name . "humanleague")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -1812,12 +1812,12 @@ provides an implementation of the Iterative Proportional Fitting (IPF) algorithm
   (package
     (name "r-humanize")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "humanize" version))
-              (sha256
-               (base32
-                "0hhhd640n77s8xaa2gbd9fckdk2yjg68gdb7wjy56a2khzqfssxr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "humanize" version))
+       (sha256
+        (base32 "0hhhd640n77s8xaa2gbd9fckdk2yjg68gdb7wjy56a2khzqfssxr"))))
     (properties `((upstream-name . "humanize")))
     (build-system r-build-system)
     (propagated-inputs (list r-lubridate r-glue r-assertthat))
@@ -1833,12 +1833,12 @@ convert values into human readable forms.")
   (package
     (name "r-humaniformat")
     (version "0.6.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "humaniformat" version))
-              (sha256
-               (base32
-                "0vaynjzz57pk4y1liag9lpn9jkag2033a6bkn28zzm7ndg3344l6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "humaniformat" version))
+       (sha256
+        (base32 "0vaynjzz57pk4y1liag9lpn9jkag2033a6bkn28zzm7ndg3344l6"))))
     (properties `((upstream-name . "humaniformat")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -1857,12 +1857,12 @@ names and salutations.")
   (package
     (name "r-humanformat")
     (version "1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "humanFormat" version))
-              (sha256
-               (base32
-                "0yzax988qp5c8kvjnj9ggm5yl9sklqhs7b2b4w81np5kxhxy973y"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "humanFormat" version))
+       (sha256
+        (base32 "0yzax988qp5c8kvjnj9ggm5yl9sklqhs7b2b4w81np5kxhxy973y"))))
     (properties `((upstream-name . "humanFormat")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat))
@@ -1876,12 +1876,12 @@ names and salutations.")
   (package
     (name "r-hum")
     (version "2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HUM" version))
-              (sha256
-               (base32
-                "06jx3f2zb52gjp05bq3zmgjkyiaa2j9v0biq23gg88gplpign6jw"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HUM" version))
+       (sha256
+        (base32 "06jx3f2zb52gjp05bq3zmgjkyiaa2j9v0biq23gg88gplpign6jw"))))
     (properties `((upstream-name . "HUM")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgl r-rcpp r-gtools))
@@ -1899,12 +1899,12 @@ Beffa, Junxi Wang, Jialiang Li, Frank Pessler, Frank Klawonn (2014)
   (package
     (name "r-huito")
     (version "0.2.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "huito" version))
-              (sha256
-               (base32
-                "1abq0jpihim04rmk4v5i24407ll1hjgmb6pwxjlz886bzbhrwhzq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "huito" version))
+       (sha256
+        (base32 "1abq0jpihim04rmk4v5i24407ll1hjgmb6pwxjlz886bzbhrwhzq"))))
     (properties `((upstream-name . "huito")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -1933,12 +1933,12 @@ Learn more about the inkaverse project at <https://inkaverse.com/>.")
   (package
     (name "r-hues")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hues" version))
-              (sha256
-               (base32
-                "062i7yc16nmnp15c1jh4xffw2lpklp36wkn1yvagh186ahnlgffx"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hues" version))
+       (sha256
+        (base32 "062i7yc16nmnp15c1jh4xffw2lpklp36wkn1yvagh186ahnlgffx"))))
     (properties `((upstream-name . "hues")))
     (build-system r-build-system)
     (propagated-inputs (list r-colorspace))
@@ -1957,12 +1957,12 @@ hue, chroma, and lightness.")
   (package
     (name "r-hudr")
     (version "1.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hudr" version))
-              (sha256
-               (base32
-                "1kvqbgyhyr4lvzqvfsa1597px8ydqpacphnm902hchqv5qvbxgm4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hudr" version))
+       (sha256
+        (base32 "1kvqbgyhyr4lvzqvfsa1597px8ydqpacphnm902hchqv5qvbxgm4"))))
     (properties `((upstream-name . "hudr")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-janitor r-httr r-data-table))
@@ -1978,12 +1978,12 @@ and Urban Development <https://www.huduser.gov/portal/dataset/fmr-api.html>.")
   (package
     (name "r-hubeau")
     (version "0.4.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hubeau" version))
-              (sha256
-               (base32
-                "0qvvd1a4plmhm6784xda75pn6751hjabr2x6i2h5y8hh85zidldy"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hubeau" version))
+       (sha256
+        (base32 "0qvvd1a4plmhm6784xda75pn6751hjabr2x6i2h5y8hh85zidldy"))))
     (properties `((upstream-name . "hubeau")))
     (build-system r-build-system)
     (propagated-inputs (list r-urltools
@@ -2004,12 +2004,12 @@ French National APIs on water <https://hubeau.eaufrance.fr/>.")
   (package
     (name "r-httptest2")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "httptest2" version))
-              (sha256
-               (base32
-                "18i4lzqkmhd500rjfkh24drcqvw8ric3disddcl7bm3rddwn4bvh"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "httptest2" version))
+       (sha256
+        (base32 "18i4lzqkmhd500rjfkh24drcqvw8ric3disddcl7bm3rddwn4bvh"))))
     (properties `((upstream-name . "httptest2")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat r-rlang r-jsonlite r-httr2 r-digest))
@@ -2030,12 +2030,12 @@ without access to a live server.")
   (package
     (name "r-httptest")
     (version "4.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "httptest" version))
-              (sha256
-               (base32
-                "1d97n6h15vad7z96w37b9dl0q7n4j9yksn32vxnx26iik8q2jic3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "httptest" version))
+       (sha256
+        (base32 "1d97n6h15vad7z96w37b9dl0q7n4j9yksn32vxnx26iik8q2jic3"))))
     (properties `((upstream-name . "httptest")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat r-jsonlite r-httr r-digest r-curl))
@@ -2060,12 +2060,12 @@ be distributed without access to a live server.")
   (package
     (name "r-httprequest")
     (version "0.0.11")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "httpRequest" version))
-              (sha256
-               (base32
-                "0qsi01fcrkps0h6r7l3l5ph3zlq9gscmq19b9ah2q2qlcv3hk4cf"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "httpRequest" version))
+       (sha256
+        (base32 "0qsi01fcrkps0h6r7l3l5ph3zlq9gscmq19b9ah2q2qlcv3hk4cf"))))
     (properties `((upstream-name . "httpRequest")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=httpRequest")
@@ -2078,12 +2078,12 @@ be distributed without access to a live server.")
   (package
     (name "r-httpproblems")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "httpproblems" version))
-              (sha256
-               (base32
-                "0zd683xd9f9hz6dxm4bmic54jqjcabr23kwl6afsmdjwnrwwsn06"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "httpproblems" version))
+       (sha256
+        (base32 "0zd683xd9f9hz6dxm4bmic54jqjcabr23kwl6afsmdjwnrwwsn06"))))
     (properties `((upstream-name . "httpproblems")))
     (build-system r-build-system)
     (home-page "https://github.com/atheriel/httpproblems")
@@ -2099,12 +2099,12 @@ servers in a standard way.")
   (package
     (name "r-httping")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "httping" version))
-              (sha256
-               (base32
-                "0hdcf51yak8yagy4xj9cyck934lgmvpkd08jvlql33ir5mqvvv3i"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "httping" version))
+       (sha256
+        (base32 "0hdcf51yak8yagy4xj9cyck934lgmvpkd08jvlql33ir5mqvvv3i"))))
     (properties `((upstream-name . "httping")))
     (build-system r-build-system)
     (propagated-inputs (list r-pryr r-magrittr r-jsonlite r-httr r-httpcode))
@@ -2119,12 +2119,12 @@ requests'.  Designed to work with httr'.")
   (package
     (name "r-httpgd")
     (version "1.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "httpgd" version))
-              (sha256
-               (base32
-                "1vns7bqzlgsgl45l4ijd14xh615ndf0q12i6jaxll00ayymf7gvd"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "httpgd" version))
+       (sha256
+        (base32 "1vns7bqzlgsgl45l4ijd14xh615ndf0q12i6jaxll00ayymf7gvd"))))
     (properties `((upstream-name . "httpgd")))
     (build-system r-build-system)
     (inputs (list zlib libpng freetype fontconfig cairo))
@@ -2145,12 +2145,12 @@ graphics via HTTP and @code{WebSockets}'.")
   (package
     (name "r-httpcache")
     (version "1.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "httpcache" version))
-              (sha256
-               (base32
-                "026sl19301al3sid9hlwq8jz5b0zvh9a4n3cl4niqvc2b57h133r"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "httpcache" version))
+       (sha256
+        (base32 "026sl19301al3sid9hlwq8jz5b0zvh9a4n3cl4niqvc2b57h133r"))))
     (properties `((upstream-name . "httpcache")))
     (build-system r-build-system)
     (propagated-inputs (list r-httr r-digest))
@@ -2172,12 +2172,12 @@ performance.")
   (package
     (name "r-httk")
     (version "2.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "httk" version))
-              (sha256
-               (base32
-                "1ziwlb4nigf0hk3ngmk309m0gmaylvmd00m553sh0qrm9k2dls9q"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "httk" version))
+       (sha256
+        (base32 "1ziwlb4nigf0hk3ngmk309m0gmaylvmd00m553sh0qrm9k2dls9q"))))
     (properties `((upstream-name . "httk")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm
@@ -2225,12 +2225,12 @@ concentrations from high-throughput screening experiments (for example, Tox21,
   (package
     (name "r-htt")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HTT" version))
-              (sha256
-               (base32
-                "0345ydb3rjdkj4zm6xr5y4kf6plvxfgbpwkjs81pls99mr208qwz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HTT" version))
+       (sha256
+        (base32 "0345ydb3rjdkj4zm6xr5y4kf6plvxfgbpwkjs81pls99mr208qwz"))))
     (properties `((upstream-name . "HTT")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-igraph r-ggraph r-ggplot2))
@@ -2253,12 +2253,12 @@ error, power, prediction accuracy, and complexity.")
   (package
     (name "r-htssip")
     (version "1.4.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HTSSIP" version))
-              (sha256
-               (base32
-                "1j2f6f3i4di4bvsk44gxz0narg45ld2rahfn23wpgni5bszy0vb3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HTSSIP" version))
+       (sha256
+        (base32 "1j2f6f3i4di4bvsk44gxz0narg45ld2rahfn23wpgni5bszy0vb3"))))
     (properties `((upstream-name . "HTSSIP")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -2290,12 +2290,12 @@ probing (HR-SIP), multi-window high resolution stable isotope probing
   (package
     (name "r-htsr")
     (version "2.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "htsr" version))
-              (sha256
-               (base32
-                "1gnjvkn6m0bfgw32afpvhvlsrlc672f3zb9fhrq57y3asc190jkx"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "htsr" version))
+       (sha256
+        (base32 "1gnjvkn6m0bfgw32afpvhvlsrlc672f3zb9fhrq57y3asc190jkx"))))
     (properties `((upstream-name . "htsr")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexls
@@ -2326,12 +2326,12 @@ and meteorology time-series stored in a Sqlite data base.")
   (package
     (name "r-hts")
     (version "6.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hts" version))
-              (sha256
-               (base32
-                "06mmxdm7a2fb1r4mb2x12b00rnkaxlrmlkv5yizr3yixmn4is9wb"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hts" version))
+       (sha256
+        (base32 "06mmxdm7a2fb1r4mb2x12b00rnkaxlrmlkv5yizr3yixmn4is9wb"))))
     (properties `((upstream-name . "hts")))
     (build-system r-build-system)
     (propagated-inputs (list r-sparsem r-rcppeigen r-rcpp r-matrix r-forecast))
@@ -2350,12 +2350,12 @@ top-down, optimal combination reconciliation (Hyndman et al.  2011)
   (package
     (name "r-htrx")
     (version "1.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HTRX" version))
-              (sha256
-               (base32
-                "1zr0j1j8qqr5jm6r6s8z86wfzf1gwhy10zjlhvcd00lhlz5l5lm4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HTRX" version))
+       (sha256
+        (base32 "1zr0j1j8qqr5jm6r6s8z86wfzf1gwhy10zjlhvcd00lhlz5l5lm4"))))
     (properties `((upstream-name . "HTRX")))
     (build-system r-build-system)
     (propagated-inputs (list r-tune r-recipes r-glmnet r-fastglm r-caret))
@@ -2374,12 +2374,12 @@ Methods for implementing HTRX are described in Yang Y, Lawson DJ (2023)
   (package
     (name "r-htmlutils")
     (version "0.1.8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HTMLUtils" version))
-              (sha256
-               (base32
-                "1jfhcyibvxqc96sig81a2fj2gplmwxm5h000xlihkbjk7k9fdsrz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HTMLUtils" version))
+       (sha256
+        (base32 "1jfhcyibvxqc96sig81a2fj2gplmwxm5h000xlihkbjk7k9fdsrz"))))
     (properties `((upstream-name . "HTMLUtils")))
     (build-system r-build-system)
     (propagated-inputs (list r-r2html))
@@ -2394,12 +2394,12 @@ dynamically sortable tables.")
   (package
     (name "r-htmldf")
     (version "0.6.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "htmldf" version))
-              (sha256
-               (base32
-                "19brwxqnsxzvgsqq3gsjkcyag9ag3xa3mrl5c4s7x48xx2knfh9q"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "htmldf" version))
+       (sha256
+        (base32 "19brwxqnsxzvgsqq3gsjkcyag9ag3xa3mrl5c4s7x48xx2knfh9q"))))
     (properties `((upstream-name . "htmldf")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -2429,12 +2429,12 @@ links, images, rss feeds, social media handles and page metadata.")
   (package
     (name "r-html5")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "html5" version))
-              (sha256
-               (base32
-                "1icji4y2x7bn4nrsf99n8b6g5v053bb9hpwvmp8bf5wh63d1ns8l"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "html5" version))
+       (sha256
+        (base32 "1icji4y2x7bn4nrsf99n8b6g5v053bb9hpwvmp8bf5wh63d1ns8l"))))
     (properties `((upstream-name . "html5")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=html5")
@@ -2453,12 +2453,12 @@ obsolete are not included.")
   (package
     (name "r-html2r")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "html2R" version))
-              (sha256
-               (base32
-                "1zdnwbqlpjh8r2xcl83da9pzh9cb8h908krnrs61vqhka7zb82ng"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "html2R" version))
+       (sha256
+        (base32 "1zdnwbqlpjh8r2xcl83da9pzh9cb8h908krnrs61vqhka7zb82ng"))))
     (properties `((upstream-name . "html2R")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinythemes r-shinyjqui r-shinyace r-shiny
@@ -2475,12 +2475,12 @@ obsolete are not included.")
   (package
     (name "r-htm2txt")
     (version "2.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "htm2txt" version))
-              (sha256
-               (base32
-                "0f03vckq4wzd2nbzjfqgjf2pnjfdq875lhpim10k80smq32w8xx0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "htm2txt" version))
+       (sha256
+        (base32 "0f03vckq4wzd2nbzjfqgjf2pnjfdq875lhpim10k80smq32w8xx0"))))
     (properties `((upstream-name . "htm2txt")))
     (build-system r-build-system)
     (home-page "https://github.com/replicable/htm2txt")
@@ -2493,12 +2493,12 @@ obsolete are not included.")
   (package
     (name "r-htlr")
     (version "0.4-4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HTLR" version))
-              (sha256
-               (base32
-                "0mi03r9izipvmla5pm0s42vm85ishr3bb8pjdw906s4q7lkxjivz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HTLR" version))
+       (sha256
+        (base32 "0mi03r9izipvmla5pm0s42vm85ishr3bb8pjdw906s4q7lkxjivz"))))
     (properties `((upstream-name . "HTLR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-magrittr r-glmnet
@@ -2520,12 +2520,12 @@ and Yao (2018), Journal of Statistical Computation and Simulation, 88:14,
   (package
     (name "r-htetree")
     (version "0.1.17")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "htetree" version))
-              (sha256
-               (base32
-                "0z7gbpzvj4w5vz8b3zs4mvr70qf8sz295cbypm5x6np0ac2gcdzm"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "htetree" version))
+       (sha256
+        (base32 "0z7gbpzvj4w5vz8b3zs4mvr70qf8sz295cbypm5x6np0ac2gcdzm"))))
     (properties `((upstream-name . "htetree")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -2554,12 +2554,12 @@ authors for their extremely useful and free package.")
   (package
     (name "r-htestclust")
     (version "0.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "htestClust" version))
-              (sha256
-               (base32
-                "081kxhc7sn070ys94pfzjf3gi2kkqwrqx2sclbgz4ihahqkbnhhr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "htestClust" version))
+       (sha256
+        (base32 "081kxhc7sn070ys94pfzjf3gi2kkqwrqx2sclbgz4ihahqkbnhhr"))))
     (properties `((upstream-name . "htestClust")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-bootstrap))
@@ -2586,12 +2586,12 @@ H., and Datta, S. (2017) <doi:10.1002/sim.7288> Dutta, S. and Datta, S. (2015)
   (package
     (name "r-htdp")
     (version "0.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "htdp" version))
-              (sha256
-               (base32
-                "0w579qp0p544xryb5r08m1nhqf7rmgv9q0lyx6my4av62l70ka5w"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "htdp" version))
+       (sha256
+        (base32 "0w579qp0p544xryb5r08m1nhqf7rmgv9q0lyx6my4av62l70ka5w"))))
     (properties `((upstream-name . "htdp")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -2611,12 +2611,12 @@ information.")
   (package
     (name "r-hstats")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hstats" version))
-              (sha256
-               (base32
-                "1zhan6hfd7yag2af4b1jrqjpb1c2rj8dfr0jwv99xcywf7yrwzw4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hstats" version))
+       (sha256
+        (base32 "1zhan6hfd7yag2af4b1jrqjpb1c2rj8dfr0jwv99xcywf7yrwzw4"))))
     (properties `((upstream-name . "hstats")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))
@@ -2637,12 +2637,12 @@ or individual conditional expectation plots.  DALEX explainers, meta learners
   (package
     (name "r-hsstan")
     (version "0.8.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hsstan" version))
-              (sha256
-               (base32
-                "0k7sqwx73zid68ji9l2hfihqdlk3rdpid81pp8g3fmi8dpvrzkms"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hsstan" version))
+       (sha256
+        (base32 "0k7sqwx73zid68ji9l2hfihqdlk3rdpid81pp8g3fmi8dpvrzkms"))))
     (properties `((upstream-name . "hsstan")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -2671,12 +2671,12 @@ Paasiniemi and Vehtari (2020) <doi:10.1214/20-EJS1711>).")
   (package
     (name "r-hsrecombi")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hsrecombi" version))
-              (sha256
-               (base32
-                "1f5ks1wvpc0dn5lwyhs479zhkcbcfg2c5gxxlwr9pliv5ncgcmla"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hsrecombi" version))
+       (sha256
+        (base32 "1f5ks1wvpc0dn5lwyhs479zhkcbcfg2c5gxxlwr9pliv5ncgcmla"))))
     (properties `((upstream-name . "hsrecombi")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlist
@@ -2713,12 +2713,12 @@ estimation of linkage disequilibrium in half-sib families\"
   (package
     (name "r-hspor")
     (version "1.1.9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HSPOR" version))
-              (sha256
-               (base32
-                "06lr8l71y5fcqcnmgq7cgiab1pcc98wnqzndbxcbikbh33cx7nxv"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HSPOR" version))
+       (sha256
+        (base32 "06lr8l71y5fcqcnmgq7cgiab1pcc98wnqzndbxcbikbh33cx7nxv"))))
     (properties `((upstream-name . "HSPOR")))
     (build-system r-build-system)
     (propagated-inputs (list r-npregfast r-corpcor))
@@ -2738,12 +2738,12 @@ as soon as available.")
   (package
     (name "r-hspm")
     (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hspm" version))
-              (sha256
-               (base32
-                "0ycdaji080xav2k87pcln7c26iy31bfjxzzccpyl57w3agcfwrcc"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hspm" version))
+       (sha256
+        (base32 "0ycdaji080xav2k87pcln7c26iy31bfjxzzccpyl57w3agcfwrcc"))))
     (properties `((upstream-name . "hspm")))
     (build-system r-build-system)
     (propagated-inputs (list r-sphet r-spdep r-matrix r-formula))
@@ -2768,12 +2768,12 @@ Bivand and Piras, (2015) <doi:10.18637/jss.v063.i18>, Drukker et al., (2013)
   (package
     (name "r-hsphase")
     (version "2.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hsphase" version))
-              (sha256
-               (base32
-                "1b62k9sc6604djy37anslvqjpbrj9wsc9mvnfbrnmhqf4g0nnpdq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hsphase" version))
+       (sha256
+        (base32 "1b62k9sc6604djy37anslvqjpbrj9wsc9mvnfbrnmhqf4g0nnpdq"))))
     (properties `((upstream-name . "hsphase")))
     (build-system r-build-system)
     (propagated-inputs (list r-snowfall r-rcpparmadillo r-rcpp))
@@ -2789,12 +2789,12 @@ imputation and pedigree reconstruction using half-sib family SNP data.")
   (package
     (name "r-hsetest")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HSEtest" version))
-              (sha256
-               (base32
-                "0dzc44icmb1kkjr46siqigy0zpi66189qpwijgmlqwhzrj4yql9c"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HSEtest" version))
+       (sha256
+        (base32 "0dzc44icmb1kkjr46siqigy0zpi66189qpwijgmlqwhzrj4yql9c"))))
     (properties `((upstream-name . "HSEtest")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=HSEtest")
@@ -2807,12 +2807,12 @@ imputation and pedigree reconstruction using half-sib family SNP data.")
   (package
     (name "r-hset")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hset" version))
-              (sha256
-               (base32
-                "16mlicwj11d3gjai1499vdmjibbr2iayni5zz2n516ir2s1cr48v"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hset" version))
+       (sha256
+        (base32 "16mlicwj11d3gjai1499vdmjibbr2iayni5zz2n516ir2s1cr48v"))))
     (properties `((upstream-name . "hset")))
     (build-system r-build-system)
     (propagated-inputs (list r-hash))
@@ -2829,12 +2829,12 @@ Ceoldo and Wit (2023) <@code{arXiv:2304.09809>}.")
   (package
     (name "r-hsem")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hsem" version))
-              (sha256
-               (base32
-                "0dgp65isbfmw0q4sn36l5226sf6vrl7mvn7gn50xvgybh0l6y7vk"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hsem" version))
+       (sha256
+        (base32 "0dgp65isbfmw0q4sn36l5226sf6vrl7mvn7gn50xvgybh0l6y7vk"))))
     (properties `((upstream-name . "hsem")))
     (build-system r-build-system)
     (propagated-inputs (list r-numderiv r-mvtnorm r-matrix r-boot))
@@ -2853,12 +2853,12 @@ to handle two serious problems inadmissible solution and factor indeterminacy
   (package
     (name "r-hse")
     (version "0.0-28")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hse" version))
-              (sha256
-               (base32
-                "14w09wm1kk7b4q8cl5cwjfqvzm2fb4ls8qjw6i0l54184fmw4dah"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hse" version))
+       (sha256
+        (base32 "14w09wm1kk7b4q8cl5cwjfqvzm2fb4ls8qjw6i0l54184fmw4dah"))))
     (properties `((upstream-name . "hse")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=hse")
@@ -2870,12 +2870,12 @@ to handle two serious problems inadmissible solution and factor indeterminacy
   (package
     (name "r-hsdm")
     (version "1.4.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hSDM" version))
-              (sha256
-               (base32
-                "1r2hbwf9795bxrd09c8hmmj7cm044x4w42606m3i3d3i065bpw4m"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hSDM" version))
+       (sha256
+        (base32 "1r2hbwf9795bxrd09c8hmmj7cm044x4w42606m3i3d3i065bpw4m"))))
     (properties `((upstream-name . "hSDM")))
     (build-system r-build-system)
     (inputs (list gsl))
@@ -2899,12 +2899,12 @@ their probability of occurrence, and assessing uncertainty in the model results.
   (package
     (name "r-hsdic")
     (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HSDiC" version))
-              (sha256
-               (base32
-                "0wiixb1ylx0l8qfgh5ark6alkdq87xaak1jlxizw1m589vghvqfp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HSDiC" version))
+       (sha256
+        (base32 "0wiixb1ylx0l8qfgh5ark6alkdq87xaak1jlxizw1m589vghvqfp"))))
     (properties `((upstream-name . "HSDiC")))
     (build-system r-build-system)
     (propagated-inputs (list r-quadprog r-ncvreg r-matrix r-glmnet))
@@ -2923,12 +2923,12 @@ algorithm (ADMM) to obtain the estimators.")
   (package
     (name "r-hscovar")
     (version "0.4.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hscovar" version))
-              (sha256
-               (base32
-                "06bkqcp0vcnkp0jqi0qjvxnw0lk0w4mrf88h1769ak7r49vzlr6f"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hscovar" version))
+       (sha256
+        (base32 "06bkqcp0vcnkp0jqi0qjvxnw0lk0w4mrf88h1769ak7r49vzlr6f"))))
     (properties `((upstream-name . "hscovar")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlist r-pwr r-matrix r-foreach))
@@ -2956,12 +2956,12 @@ polymorphisms for association analyses using linkage disequilibrium\"
   (package
     (name "r-hsaur3")
     (version "1.0-14")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HSAUR3" version))
-              (sha256
-               (base32
-                "1fsil4n4s71ff8np9w65h8n8b1b2rh017ja8vjd4wq07xi3prbwp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HSAUR3" version))
+       (sha256
+        (base32 "1fsil4n4s71ff8np9w65h8n8b1b2rh017ja8vjd4wq07xi3prbwp"))))
     (properties `((upstream-name . "HSAUR3")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=HSAUR3")
@@ -2981,12 +2981,12 @@ Sweave source code for slides of selected chapters is included in this package
   (package
     (name "r-hsaur2")
     (version "1.1-20")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HSAUR2" version))
-              (sha256
-               (base32
-                "0660z2fxj5l0dzlb1xzgd446zzxqwc1kmv52k4aa7p45apxy9hn4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HSAUR2" version))
+       (sha256
+        (base32 "0660z2fxj5l0dzlb1xzgd446zzxqwc1kmv52k4aa7p45apxy9hn4"))))
     (properties `((upstream-name . "HSAUR2")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=HSAUR2")
@@ -3005,12 +3005,12 @@ chapters (see HSAUR2/inst/slides).")
   (package
     (name "r-hsaur")
     (version "1.3-10")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HSAUR" version))
-              (sha256
-               (base32
-                "1z4drab395bnyfbd19rn9hr1gz78ny773g1anh54w18iszakkvib"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HSAUR" version))
+       (sha256
+        (base32 "1z4drab395bnyfbd19rn9hr1gz78ny773g1anh54w18iszakkvib"))))
     (properties `((upstream-name . "HSAUR")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=HSAUR")
@@ -3027,12 +3027,12 @@ chapters, a vignette containing all data analyses is available.")
   (package
     (name "r-hs")
     (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HS" version))
-              (sha256
-               (base32
-                "1vhbchc446j49jj7jgmy4l59n8ahk5l8jp1rl5xwsmn9iqir62mp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HS" version))
+       (sha256
+        (base32 "1vhbchc446j49jj7jgmy4l59n8ahk5l8jp1rl5xwsmn9iqir62mp"))))
     (properties `((upstream-name . "HS")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -3055,12 +3055,12 @@ minimization coefficient of variation, and spatial heterogeneity based method.")
   (package
     (name "r-hrw")
     (version "1.0-5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HRW" version))
-              (sha256
-               (base32
-                "08fh9504cck1ffrwim27nkrm9y1in6jl1s7zs8h8x3ik54p9jb0k"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HRW" version))
+       (sha256
+        (base32 "08fh9504cck1ffrwim27nkrm9y1in6jl1s7zs8h8x3ik54p9jb0k"))))
     (properties `((upstream-name . "HRW")))
     (build-system r-build-system)
     (propagated-inputs (list r-kernsmooth))
@@ -3080,12 +3080,12 @@ included.")
   (package
     (name "r-hrt")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hrt" version))
-              (sha256
-               (base32
-                "0l0hjspncr6pkc3sg11p63k1gy1jmc70g6581ykh6zy0b07zm8rk"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hrt" version))
+       (sha256
+        (base32 "0l0hjspncr6pkc3sg11p63k1gy1jmc70g6581ykh6zy0b07zm8rk"))))
     (properties `((upstream-name . "hrt")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-compquadform))
@@ -3109,12 +3109,12 @@ three functions are based on results in Poetscher and Preinerstorfer (2021)
   (package
     (name "r-hrqglas")
     (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hrqglas" version))
-              (sha256
-               (base32
-                "0v3hdjz8755ka4ahdx2dsyw3513hxg1r0ncj9id6gbmqq1l0s9a5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hrqglas" version))
+       (sha256
+        (base32 "0v3hdjz8755ka4ahdx2dsyw3513hxg1r0ncj9id6gbmqq1l0s9a5"))))
     (properties `((upstream-name . "hrqglas")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-quantreg r-matrix r-mass))
@@ -3137,12 +3137,12 @@ statistical consistent.")
   (package
     (name "r-hrm")
     (version "1.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HRM" version))
-              (sha256
-               (base32
-                "0qsxwi0v61k1waw21nrz86jazd5wgq2drhan3w8pmb35q2z20s35"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HRM" version))
+       (sha256
+        (base32 "0qsxwi0v61k1waw21nrz86jazd5wgq2drhan3w8pmb35q2z20s35"))))
     (properties `((upstream-name . "HRM")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -3172,12 +3172,12 @@ factors.")
   (package
     (name "r-hrcomprisk")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hrcomprisk" version))
-              (sha256
-               (base32
-                "0w0ij2yqgg6gkn3pdaism1xqw3dfnm670j2pmsd85qk1ybxzq9l5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hrcomprisk" version))
+       (sha256
+        (base32 "0w0ij2yqgg6gkn3pdaism1xqw3dfnm670j2pmsd85qk1ybxzq9l5"))))
     (properties `((upstream-name . "hrcomprisk")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival))
@@ -3193,12 +3193,12 @@ ratios to cause-specific hazard ratios using the approach from Ng et al. (2020).
   (package
     (name "r-hr")
     (version "0.2.50")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hR" version))
-              (sha256
-               (base32
-                "1zslalsb2zi6b91fb2k1m0vsbsdazls2gnnl7gv2xqvn6kdh4nf6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hR" version))
+       (sha256
+        (base32 "1zslalsb2zi6b91fb2k1m0vsbsdazls2gnnl7gv2xqvn6kdh4nf6"))))
     (properties `((upstream-name . "hR")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-rhandsontable r-knitr r-data-table))
@@ -3214,12 +3214,12 @@ analytics.  Get started with workforce planning using a simple Shiny app.")
   (package
     (name "r-hqreg")
     (version "1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hqreg" version))
-              (sha256
-               (base32
-                "1j6zp3rmpjx409vm7kq159mlawg87wsq0ypdkan34yxxv9py2jmi"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hqreg" version))
+       (sha256
+        (base32 "1j6zp3rmpjx409vm7kq159mlawg87wsq0ypdkan34yxxv9py2jmi"))))
     (properties `((upstream-name . "hqreg")))
     (build-system r-build-system)
     (home-page "http://arxiv.org/abs/1509.02957")
@@ -3234,12 +3234,12 @@ penalized regression models with Huber loss, quantile loss or squared loss.")
   (package
     (name "r-hqmisc")
     (version "0.2-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hqmisc" version))
-              (sha256
-               (base32
-                "10n5p5n9nw713ihz1mfm5d375msf29x68c3gk5l5slpzfk8cfh2n"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hqmisc" version))
+       (sha256
+        (base32 "10n5p5n9nw713ihz1mfm5d375msf29x68c3gk5l5slpzfk8cfh2n"))))
     (properties `((upstream-name . "hqmisc")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=hqmisc")
@@ -3256,12 +3256,12 @@ stratified sample of 80 talkers of Dutch.")
   (package
     (name "r-hqm")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HQM" version))
-              (sha256
-               (base32
-                "1q959qdakwzf07zbyxkvrslyc4kgd47g4wij2fgm7l4w3xm34lwz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HQM" version))
+       (sha256
+        (base32 "1q959qdakwzf07zbyxkvrslyc4kgd47g4wij2fgm7l4w3xm34lwz"))))
     (properties `((upstream-name . "HQM")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=HQM")
@@ -3277,12 +3277,12 @@ provides pointwise and uniform confidence bands and a bandwidth selection.")
   (package
     (name "r-hpoplot")
     (version "2.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hpoPlot" version))
-              (sha256
-               (base32
-                "176bf93gjwbi2z7nz81w4aycwax6f7jxvs3236zrmf0f0f4m7bkc"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hpoPlot" version))
+       (sha256
+        (base32 "176bf93gjwbi2z7nz81w4aycwax6f7jxvs3236zrmf0f0f4m7bkc"))))
     (properties `((upstream-name . "hpoPlot")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgraphviz r-magrittr r-functional))
@@ -3298,12 +3298,12 @@ with a various options.")
   (package
     (name "r-hplb")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HPLB" version))
-              (sha256
-               (base32
-                "1xxckjz90sdmng0sm9dlhwpzj79pxa3vd1cidxc44wjk4h25rq7q"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HPLB" version))
+       (sha256
+        (base32 "1xxckjz90sdmng0sm9dlhwpzj79pxa3vd1cidxc44wjk4h25rq7q"))))
     (properties `((upstream-name . "HPLB")))
     (build-system r-build-system)
     (propagated-inputs (list r-data-table))
@@ -3321,12 +3321,12 @@ samples are observed can be obtained with the function HPLB.")
   (package
     (name "r-hpir")
     (version "0.3.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hpiR" version))
-              (sha256
-               (base32
-                "0gz9ngnjgys7hzijsma2iyywwiv7vjar5gls28ds11wq8pmsv96n"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hpiR" version))
+       (sha256
+        (base32 "0gz9ngnjgys7hzijsma2iyywwiv7vjar5gls28ds11wq8pmsv96n"))))
     (properties `((upstream-name . "hpiR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -3362,12 +3362,12 @@ indexes can be found at: <http://www.github.com/andykrause/hpi_research>.")
   (package
     (name "r-hpfilter")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hpfilter" version))
-              (sha256
-               (base32
-                "1w1asqa4dszijwdmgdzx4ahl5bl34l0psczwvcal4kdkawy5kia2"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hpfilter" version))
+       (sha256
+        (base32 "1w1asqa4dszijwdmgdzx4ahl5bl34l0psczwvcal4kdkawy5kia2"))))
     (properties `((upstream-name . "hpfilter")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix))
@@ -3388,12 +3388,12 @@ references, see the vignette.")
   (package
     (name "r-hpcwld")
     (version "0.6-5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hpcwld" version))
-              (sha256
-               (base32
-                "1w7jpfnaqm9qhr52ixyihzwqklhf2pccshhpvf57pra3vc6cwv2l"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hpcwld" version))
+       (sha256
+        (base32 "1w7jpfnaqm9qhr52ixyihzwqklhf2pccshhpvf57pra3vc6cwv2l"))))
     (properties `((upstream-name . "hpcwld")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=hpcwld")
@@ -3416,12 +3416,12 @@ exactly, or approximately.  Stability analysis: see Rumyantsev and Morozov
   (package
     (name "r-hpackedbubble")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hpackedbubble" version))
-              (sha256
-               (base32
-                "1br7q4958f1zgvisglsaf41nz2ahnqi3bzazvlfnmk3nq03cb1ri"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hpackedbubble" version))
+       (sha256
+        (base32 "1br7q4958f1zgvisglsaf41nz2ahnqi3bzazvlfnmk3nq03cb1ri"))))
     (properties `((upstream-name . "hpackedbubble")))
     (build-system r-build-system)
     (propagated-inputs (list r-htmlwidgets))
@@ -3438,12 +3438,12 @@ charts.")
   (package
     (name "r-hpa")
     (version "1.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hpa" version))
-              (sha256
-               (base32
-                "18jjn02a34apd0iyq9h5ziqxqb0pcphprn9k8nnqyvjip8d6v3fz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hpa" version))
+       (sha256
+        (base32 "18jjn02a34apd0iyq9h5ziqxqb0pcphprn9k8nnqyvjip8d6v3fz"))))
     (properties `((upstream-name . "hpa")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppparallel r-rcpparmadillo r-rcpp))
@@ -3460,12 +3460,12 @@ Gallant and D. W. Nychka (1987) <doi:10.2307/1913241>.")
   (package
     (name "r-howzatr")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "howzatR" version))
-              (sha256
-               (base32
-                "00mv9qkn4ndp74jwqkjwqmy7j8ywhpl4ycg81yw3xlabbnqb292j"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "howzatR" version))
+       (sha256
+        (base32 "00mv9qkn4ndp74jwqkjwqmy7j8ywhpl4ycg81yw3xlabbnqb292j"))))
     (properties `((upstream-name . "howzatR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-magrittr))
@@ -3479,12 +3479,12 @@ Gallant and D. W. Nychka (1987) <doi:10.2307/1913241>.")
   (package
     (name "r-howmanyimputations")
     (version "0.2.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "howManyImputations" version))
-              (sha256
-               (base32
-                "1331xiv0gx72glakdqpr0dwi2ql4bnwfqwph4184y5pcr98dwsdr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "howManyImputations" version))
+       (sha256
+        (base32 "1331xiv0gx72glakdqpr0dwi2ql4bnwfqwph4184y5pcr98dwsdr"))))
     (properties `((upstream-name . "howManyImputations")))
     (build-system r-build-system)
     (propagated-inputs (list r-mice))
@@ -3503,12 +3503,12 @@ imputations are needed, following the work of von Hippel (2020)
   (package
     (name "r-howler")
     (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "howler" version))
-              (sha256
-               (base32
-                "00l1952hf2ngypg67y88rgn0xiicsjsyl6xf8r9r65ar9k0fl3yb"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "howler" version))
+       (sha256
+        (base32 "00l1952hf2ngypg67y88rgn0xiicsjsyl6xf8r9r65ar9k0fl3yb"))))
     (properties `((upstream-name . "howler")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-htmlwidgets))
@@ -3525,12 +3525,12 @@ as playing and pausing the audio can be triggered from the server.")
   (package
     (name "r-hover")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hover" version))
-              (sha256
-               (base32
-                "09lpga8a87h6fyg0j3av4xjna300ifsx2ygzwsnvh2l1d70fwf8m"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hover" version))
+       (sha256
+        (base32 "09lpga8a87h6fyg0j3av4xjna300ifsx2ygzwsnvh2l1d70fwf8m"))))
     (properties `((upstream-name . "hover")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-htmltools))
@@ -3545,12 +3545,12 @@ for use in shiny applications.")
   (package
     (name "r-housingdata")
     (version "0.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "housingData" version))
-              (sha256
-               (base32
-                "0ngfx2vjx705xixzpz0rgx1481cr2szj4yfi5g7ma1hhivddl7d1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "housingData" version))
+       (sha256
+        (base32 "0ngfx2vjx705xixzpz0rgx1481cr2szj4yfi5g7ma1hhivddl7d1"))))
     (properties `((upstream-name . "housingData")))
     (build-system r-build-system)
     (home-page "http://github.com/hafen/housingData")
@@ -3566,12 +3566,12 @@ Wikipedia are also included.")
   (package
     (name "r-hotspots")
     (version "1.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hotspots" version))
-              (sha256
-               (base32
-                "12v88k3yz1bsxx9p5dx8y54ccqcglwknm2jr7ybygdj2yasjr5l0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hotspots" version))
+       (sha256
+        (base32 "12v88k3yz1bsxx9p5dx8y54ccqcglwknm2jr7ybygdj2yasjr5l0"))))
     (properties `((upstream-name . "hotspots")))
     (build-system r-build-system)
     (propagated-inputs (list r-lattice r-ineq))
@@ -3590,12 +3590,12 @@ other values are similarly large.")
   (package
     (name "r-hotspot")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hotspot" version))
-              (sha256
-               (base32
-                "0a4w5d6rg324hd06lfwr1hxf6bwr10n55s3ynz5bpkh9c61yik3n"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hotspot" version))
+       (sha256
+        (base32 "0a4w5d6rg324hd06lfwr1hxf6bwr10n55s3ynz5bpkh9c61yik3n"))))
     (properties `((upstream-name . "hotspot")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=hotspot")
@@ -3609,12 +3609,12 @@ performing the analysis itself.")
   (package
     (name "r-hotellingellipse")
     (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HotellingEllipse" version))
-              (sha256
-               (base32
-                "1xvm54iqgdnqjpkmgi4ssgpdz2pap60y9z9whrv2ky3q16mjqycz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HotellingEllipse" version))
+       (sha256
+        (base32 "1xvm54iqgdnqjpkmgi4ssgpdz2pap60y9z9whrv2ky3q16mjqycz"))))
     (properties `((upstream-name . "HotellingEllipse")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -3638,12 +3638,12 @@ Brereton (2016) <DOI:10.1002/cem.2763>.")
   (package
     (name "r-hotelling")
     (version "1.0-8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Hotelling" version))
-              (sha256
-               (base32
-                "04x2x3anwf4d71dm7x6y08ysk7ygysshc0avisyshbl52x39l8si"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Hotelling" version))
+       (sha256
+        (base32 "04x2x3anwf4d71dm7x6y08ysk7ygysshc0avisyshbl52x39l8si"))))
     (properties `((upstream-name . "Hotelling")))
     (build-system r-build-system)
     (propagated-inputs (list r-corpcor))
@@ -3659,12 +3659,12 @@ log ratio and centred log ratio transformations.")
   (package
     (name "r-hot-deck")
     (version "1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hot.deck" version))
-              (sha256
-               (base32
-                "1zdrbqkqh3sbc4pkrqgv230h6jm6fvf3wwpb3y6r9l3g8zh4j18r"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hot.deck" version))
+       (sha256
+        (base32 "1zdrbqkqh3sbc4pkrqgv230h6jm6fvf3wwpb3y6r9l3g8zh4j18r"))))
     (properties `((upstream-name . "hot.deck")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-mice r-mass r-data-table))
@@ -3680,12 +3680,12 @@ variables in a data frame.")
   (package
     (name "r-hospitals")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hospitals" version))
-              (sha256
-               (base32
-                "03bg0fl1wpc7rxlzxgjdk48x8zsd7lv64dcs0fbg573wkhp02vim"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hospitals" version))
+       (sha256
+        (base32 "03bg0fl1wpc7rxlzxgjdk48x8zsd7lv64dcs0fbg573wkhp02vim"))))
     (properties `((upstream-name . "hospitals")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-stringr r-magrittr))
@@ -3699,12 +3699,12 @@ variables in a data frame.")
   (package
     (name "r-hospitalnetwork")
     (version "0.9.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HospitalNetwork" version))
-              (sha256
-               (base32
-                "183nb9h9b1z1ifpnzcxa8wh3xm2id6fnq9vqd4vkbxzw7wlyd86b"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HospitalNetwork" version))
+       (sha256
+        (base32 "183nb9h9b1z1ifpnzcxa8wh3xm2id6fnq9vqd4vkbxzw7wlyd86b"))))
     (properties `((upstream-name . "HospitalNetwork")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6
@@ -3729,12 +3729,12 @@ Opatowski L, Temime L. (2020) <doi:10.1038/s41598-020-71212-6>.")
   (package
     (name "r-hosm")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hosm" version))
-              (sha256
-               (base32
-                "062byyvgrjh77hz8i0qb4ixm0smp7xp9lrj84gliigqcy0b5i5w5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hosm" version))
+       (sha256
+        (base32 "062byyvgrjh77hz8i0qb4ixm0smp7xp9lrj84gliigqcy0b5i5w5"))))
     (properties `((upstream-name . "hosm")))
     (build-system r-build-system)
     (propagated-inputs (list r-units
@@ -3761,12 +3761,12 @@ research by Mubarak, Aslanargun, and Siklar (2022)
   (package
     (name "r-horseshoenlm")
     (version "0.0.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "horseshoenlm" version))
-              (sha256
-               (base32
-                "1m3n12wgmb1wnxc40bzpna261das8hy47l7hmvhfbzhmp7v803v5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "horseshoenlm" version))
+       (sha256
+        (base32 "1m3n12wgmb1wnxc40bzpna261das8hy47l7hmvhfbzhmp7v803v5"))))
     (properties `((upstream-name . "horseshoenlm")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-msm))
@@ -3786,12 +3786,12 @@ et.  al. (2019) <doi:10.1111/biom.13132> Maity et.  al. (2020).")
   (package
     (name "r-horseshoe")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "horseshoe" version))
-              (sha256
-               (base32
-                "1qhkw6agkhpmgf27429c3kqqhbvpg61l0dvfxg7n564y2ha76r3c"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "horseshoe" version))
+       (sha256
+        (base32 "1qhkw6agkhpmgf27429c3kqqhbvpg61l0dvfxg7n564y2ha76r3c"))))
     (properties `((upstream-name . "horseshoe")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -3813,12 +3813,12 @@ of thresholding, or credible intervals.")
   (package
     (name "r-hornpa")
     (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hornpa" version))
-              (sha256
-               (base32
-                "0b4dxzibngdiqj00ma2nzimbknfkscpq1ncalm9dc6pjwrmq43q1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hornpa" version))
+       (sha256
+        (base32 "0b4dxzibngdiqj00ma2nzimbknfkscpq1ncalm9dc6pjwrmq43q1"))))
     (properties `((upstream-name . "hornpa")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=hornpa")
@@ -3847,12 +3847,12 @@ Psychometrika, 32, 179-185.")
   (package
     (name "r-horm")
     (version "0.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HoRM" version))
-              (sha256
-               (base32
-                "09dkpzlwkkdn0z8g9fbb7hzxbrrq70x9v1zx254svck2jyk0hx58"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HoRM" version))
+       (sha256
+        (base32 "09dkpzlwkkdn0z8g9fbb7hzxbrrq70x9v1zx254svck2jyk0hx58"))))
     (properties `((upstream-name . "HoRM")))
     (build-system r-build-system)
     (propagated-inputs (list r-rsm r-quantmod r-orthopolynom r-mass r-ggplot2))
@@ -3871,12 +3871,12 @@ of squares.")
   (package
     (name "r-hopkins")
     (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hopkins" version))
-              (sha256
-               (base32
-                "0wy4d5mmzd9qka5wpkglqy0m2pswypj64wp4hqpk94c6gj46ghwl"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hopkins" version))
+       (sha256
+        (base32 "0wy4d5mmzd9qka5wpkglqy0m2pswypj64wp4hqpk94c6gj46ghwl"))))
     (properties `((upstream-name . "hopkins")))
     (build-system r-build-system)
     (propagated-inputs (list r-rann r-pdist r-donut))
@@ -3892,12 +3892,12 @@ of squares.")
   (package
     (name "r-hopit")
     (version "0.11.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hopit" version))
-              (sha256
-               (base32
-                "0cvka7r66c8divszvjxd0p1r7xyn9r3qgsrvc3vmzj2f43wdjlhv"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hopit" version))
+       (sha256
+        (base32 "0cvka7r66c8divszvjxd0p1r7xyn9r3qgsrvc3vmzj2f43wdjlhv"))))
     (properties `((upstream-name . "hopit")))
     (build-system r-build-system)
     (propagated-inputs (list r-survey
@@ -3946,12 +3946,12 @@ inter-individual differences in reporting behavior.")
   (package
     (name "r-hopbyhop")
     (version "3.41")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hopbyhop" version))
-              (sha256
-               (base32
-                "1dh502mjrk9dlqikn0ak4gh2dw9nrnp3zrz8j1xwa9cjn37al2wh"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hopbyhop" version))
+       (sha256
+        (base32 "1dh502mjrk9dlqikn0ak4gh2dw9nrnp3zrz8j1xwa9cjn37al2wh"))))
     (properties `((upstream-name . "hopbyhop")))
     (build-system r-build-system)
     (propagated-inputs (list r-pastecs r-ggplot2))
@@ -3969,12 +3969,12 @@ simulations.  It is also possible to consider random data and ACK probabilities.
   (package
     (name "r-hoopr")
     (version "1.8.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hoopR" version))
-              (sha256
-               (base32
-                "0rfz3gbsk7kq480bjanznxwqsgk228sj9apmwpb4cp49c4fgjhin"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hoopR" version))
+       (sha256
+        (base32 "0rfz3gbsk7kq480bjanznxwqsgk228sj9apmwpb4cp49c4fgjhin"))))
     (properties `((upstream-name . "hoopR")))
     (build-system r-build-system)
     (inputs (list pandoc pandoc))
@@ -4014,12 +4014,12 @@ data for themselves.")
   (package
     (name "r-homomorphicencryption")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HomomorphicEncryption" version))
-              (sha256
-               (base32
-                "1agw7s9ccj4hi74scqqs8v65gsavxb5c3217rw0kk9cibq7bma2v"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HomomorphicEncryption" version))
+       (sha256
+        (base32 "1agw7s9ccj4hi74scqqs8v65gsavxb5c3217rw0kk9cibq7bma2v"))))
     (properties `((upstream-name . "HomomorphicEncryption")))
     (build-system r-build-system)
     (propagated-inputs (list r-polynom))
@@ -4038,12 +4038,12 @@ as well as several helper functions.")
   (package
     (name "r-homomorpher")
     (version "0.2-2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "homomorpheR" version))
-              (sha256
-               (base32
-                "1iahq16nswlc3b87598206xdp24bg9v8acyjp1jivybl3fr4k3pq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "homomorpheR" version))
+       (sha256
+        (base32 "1iahq16nswlc3b87598206xdp24bg9v8acyjp1jivybl3fr4k3pq"))))
     (properties `((upstream-name . "homomorpheR")))
     (build-system r-build-system)
     (propagated-inputs (list r-sodium r-r6 r-gmp))
@@ -4059,12 +4059,12 @@ only the Paillier Scheme is implemented.")
   (package
     (name "r-homnormal")
     (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "homnormal" version))
-              (sha256
-               (base32
-                "1xw8j5b0w3ngqwzd458zcsmj6874dgxhrik1z3w7l188j5gr5vxa"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "homnormal" version))
+       (sha256
+        (base32 "1xw8j5b0w3ngqwzd458zcsmj6874dgxhrik1z3w7l188j5gr5vxa"))))
     (properties `((upstream-name . "homnormal")))
     (build-system r-build-system)
     (propagated-inputs (list r-huxtable))
@@ -4090,12 +4090,12 @@ Bartlett, M. S. (1937) <doi:10.1098/rspa.1937.0109> Bhandary, M., & Dai, H.
   (package
     (name "r-hommel")
     (version "1.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hommel" version))
-              (sha256
-               (base32
-                "1lvlazvvgmaqbawalgry1a59qmqxv2qy9g0ijhpcawwv2cfxmdja"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hommel" version))
+       (sha256
+        (base32 "1lvlazvvgmaqbawalgry1a59qmqxv2qy9g0ijhpcawwv2cfxmdja"))))
     (properties `((upstream-name . "hommel")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -4116,12 +4116,12 @@ have been described in detail in Goeman et al (2016)
   (package
     (name "r-homeric")
     (version "0.1-3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Homeric" version))
-              (sha256
-               (base32
-                "1vcs8fj39zpz45p7gph0mnx65hgr35na0b79i8llyw7i1h7zqzxr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Homeric" version))
+       (sha256
+        (base32 "1vcs8fj39zpz45p7gph0mnx65hgr35na0b79i8llyw7i1h7zqzxr"))))
     (properties `((upstream-name . "Homeric")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=Homeric")
@@ -4136,12 +4136,12 @@ best-known lover of doughnuts.")
   (package
     (name "r-homals")
     (version "1.0-10")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "homals" version))
-              (sha256
-               (base32
-                "0kjcy3nv28jrir6a4pf8y82908p5snx8wha8h9lip4y436n1f4iw"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "homals" version))
+       (sha256
+        (base32 "0kjcy3nv28jrir6a4pf8y82908p5snx8wha8h9lip4y436n1f4iw"))))
     (properties `((upstream-name . "homals")))
     (build-system r-build-system)
     (propagated-inputs (list r-scatterplot3d r-ape))
@@ -4160,12 +4160,12 @@ regression analysis and canonical correlation analysis.")
   (package
     (name "r-holomics")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Holomics" version))
-              (sha256
-               (base32
-                "13b45kbp8s0zcqldn8bg964cqkc5b6jqh764szl8v27cxg0chvcf"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Holomics" version))
+       (sha256
+        (base32 "13b45kbp8s0zcqldn8bg964cqkc5b6jqh764szl8v27cxg0chvcf"))))
     (properties `((upstream-name . "Holomics")))
     (build-system r-build-system)
     (propagated-inputs (list r-visnetwork
@@ -4208,12 +4208,12 @@ Rohart,@code{BenoÃ®t} Gautier,Amrit Singh,Kim-Anh LÃª Cao (2017)
   (package
     (name "r-holodeck")
     (version "0.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "holodeck" version))
-              (sha256
-               (base32
-                "1phaj4yw01301rgcdv4w44q6y5vxwggmks0xdbvg9i2ak3kjcyfp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "holodeck" version))
+       (sha256
+        (base32 "1phaj4yw01301rgcdv4w44q6y5vxwggmks0xdbvg9i2ak3kjcyfp"))))
     (properties `((upstream-name . "holodeck")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -4235,12 +4235,12 @@ different degrees of variance, covariance, and effect size.")
   (package
     (name "r-holland")
     (version "0.1.2-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "holland" version))
-              (sha256
-               (base32
-                "0f5nr17rmx1m3g4aw6c1f82xdj2ll5nr8slm8ha80cg2i6a90v10"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "holland" version))
+       (sha256
+        (base32 "0f5nr17rmx1m3g4aw6c1f82xdj2ll5nr8slm8ha80cg2i6a90v10"))))
     (properties `((upstream-name . "holland")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-mplusautomation))
@@ -4258,12 +4258,12 @@ vocational choices.  A theory of vocational personalities and work environments.
   (package
     (name "r-holiglm")
     (version "0.2.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "holiglm" version))
-              (sha256
-               (base32
-                "0002md0kmai9nbsgab47bcfdf1cmr8kgp7qyqbqcny76l3zzjwhx"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "holiglm" version))
+       (sha256
+        (base32 "0002md0kmai9nbsgab47bcfdf1cmr8kgp7qyqbqcny76l3zzjwhx"))))
     (properties `((upstream-name . "holiglm")))
     (build-system r-build-system)
     (propagated-inputs (list r-suppdists
@@ -4287,12 +4287,12 @@ the README and the accompanying paper <doi:10.48550/@code{arXiv.2205.15447>}.")
   (package
     (name "r-holdem")
     (version "1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "holdem" version))
-              (sha256
-               (base32
-                "0mcb4civ4p7apm7kfl88apvb4yznsmn4hggfggmjhs046g6bi2p7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "holdem" version))
+       (sha256
+        (base32 "0mcb4civ4p7apm7kfl88apvb4yznsmn4hggfggmjhs046g6bi2p7"))))
     (properties `((upstream-name . "holdem")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=holdem")
@@ -4309,12 +4309,12 @@ Probability with Texas Hold'em Examples.  Taylor and Francis, New York, ISBN-13:
   (package
     (name "r-hodgestools")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HodgesTools" version))
-              (sha256
-               (base32
-                "02i87pd5ah3mmf03878354p8nqh3bgn9cnrl1pnnrb3qw7afj19q"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HodgesTools" version))
+       (sha256
+        (base32 "02i87pd5ah3mmf03878354p8nqh3bgn9cnrl1pnnrb3qw7afj19q"))))
     (properties `((upstream-name . "HodgesTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-recordlinkage
@@ -4341,12 +4341,12 @@ the package to build on previous lab members code.")
   (package
     (name "r-hockeystick")
     (version "0.8.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hockeystick" version))
-              (sha256
-               (base32
-                "1p7c16zj8jwsl0pn44dl97vbax1qadpn3vy5rlnr1rgw7bxk9166"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hockeystick" version))
+       (sha256
+        (base32 "1p7c16zj8jwsl0pn44dl97vbax1qadpn3vy5rlnr1rgw7bxk9166"))))
     (properties `((upstream-name . "hockeystick")))
     (build-system r-build-system)
     (propagated-inputs (list r-treemapify
@@ -4386,12 +4386,12 @@ dioxide and temperature data: <doi:10.3334/CDIAC/ATG.009>.")
   (package
     (name "r-hoasso")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HOasso" version))
-              (sha256
-               (base32
-                "07xihcjj3gfxl1fd5x1dvfmfg8m19rfjzq110ay3vrj38sxxvkiw"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HOasso" version))
+       (sha256
+        (base32 "07xihcjj3gfxl1fd5x1dvfmfg8m19rfjzq110ay3vrj38sxxvkiw"))))
     (properties `((upstream-name . "HOasso")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-igraph))
@@ -4411,12 +4411,12 @@ R., & Grassi, R. (2023) <doi:10.48550/@code{arXiv.2304.01737>}.")
   (package
     (name "r-hoardr")
     (version "0.5.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hoardr" version))
-              (sha256
-               (base32
-                "0z34hgiwlgaljrfg0clmzx3fws1pdqq2hlg54awpvphz1qsx3r5r"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hoardr" version))
+       (sha256
+        (base32 "0z34hgiwlgaljrfg0clmzx3fws1pdqq2hlg54awpvphz1qsx3r5r"))))
     (properties `((upstream-name . "hoardr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rappdirs r-r6 r-digest))
@@ -4434,12 +4434,12 @@ be compressed and uncompressed easily to save disk space.")
   (package
     (name "r-hoarder")
     (version "0.9.4-2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hoardeR" version))
-              (sha256
-               (base32
-                "1jdxfalmi4p7gwb7jndxbzbklv1fk0c57shnl4jz27s81lndg437"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hoardeR" version))
+       (sha256
+        (base32 "1jdxfalmi4p7gwb7jndxbzbklv1fk0c57shnl4jz27s81lndg437"))))
     (properties `((upstream-name . "hoardeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
@@ -4474,12 +4474,12 @@ using the targetscan.org API.")
   (package
     (name "r-hnp")
     (version "1.2-6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hnp" version))
-              (sha256
-               (base32
-                "12cbc353ipr2rcc93skf1766g38j1pvpdkqk3cswv0cxsjl2x7pl"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hnp" version))
+       (sha256
+        (base32 "12cbc353ipr2rcc93skf1766g38j1pvpdkqk3cswv0cxsjl2x7pl"))))
     (properties `((upstream-name . "hnp")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -4495,12 +4495,12 @@ included.")
   (package
     (name "r-hnmf")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hNMF" version))
-              (sha256
-               (base32
-                "08xn9i24dcykvbcsqzmk33li5fm1alkvcmq2fp0a2ysw4lvwfwqs"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hNMF" version))
+       (sha256
+        (base32 "08xn9i24dcykvbcsqzmk33li5fm1alkvcmq2fp0a2ysw4lvwfwqs"))))
     (properties `((upstream-name . "hNMF")))
     (build-system r-build-system)
     (propagated-inputs (list r-rasterimage r-oro-nifti r-nnls r-nmf r-mass))
@@ -4515,12 +4515,12 @@ algorithms are available.")
   (package
     (name "r-hmvd")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HMVD" version))
-              (sha256
-               (base32
-                "0agzvsl2n3zg3i519b93jqpiq9zix0bbrjdzk3ymsbb42dzkmj0d"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HMVD" version))
+       (sha256
+        (base32 "0agzvsl2n3zg3i519b93jqpiq9zix0bbrjdzk3ymsbb42dzkmj0d"))))
     (properties `((upstream-name . "HMVD")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -4534,12 +4534,12 @@ algorithms are available.")
   (package
     (name "r-hmtl")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HMTL" version))
-              (sha256
-               (base32
-                "0pn192bikij1yqms6vnv1n313g4q21966314zvg1krrwisklny9r"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HMTL" version))
+       (sha256
+        (base32 "0pn192bikij1yqms6vnv1n313g4q21966314zvg1krrwisklny9r"))))
     (properties `((upstream-name . "HMTL")))
     (build-system r-build-system)
     (propagated-inputs (list r-proc r-matrix))
@@ -4560,12 +4560,12 @@ Xu, and Xin Gao (2022)
   (package
     (name "r-hmstimer")
     (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hmstimer" version))
-              (sha256
-               (base32
-                "178jnxhbpa5y2k2cw3w7czyapb23n6yygmymijvn3pzcgx607y3v"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hmstimer" version))
+       (sha256
+        (base32 "178jnxhbpa5y2k2cw3w7czyapb23n6yygmymijvn3pzcgx607y3v"))))
     (properties `((upstream-name . "hmstimer")))
     (build-system r-build-system)
     (propagated-inputs (list r-hms))
@@ -4582,12 +4582,12 @@ current system time and the system time when the timer was started.")
   (package
     (name "r-hmsc")
     (version "3.0-13")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Hmsc" version))
-              (sha256
-               (base32
-                "13gqwjniwxc5lgsj044qjq6ic0ibwvj3mviw4hq31s89m834gvyb"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Hmsc" version))
+       (sha256
+        (base32 "13gqwjniwxc5lgsj044qjq6ic0ibwvj3mviw4hq31s89m834gvyb"))))
     (properties `((upstream-name . "Hmsc")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm
@@ -4624,12 +4624,12 @@ et al. (2020) <doi:10.1111/2041-210X.13345>).")
   (package
     (name "r-hmr")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HMR" version))
-              (sha256
-               (base32
-                "1zxfz88sr9m0706r76qizlwcy4il2v49x1lx77nqx40626p4zp7n"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HMR" version))
+       (sha256
+        (base32 "1zxfz88sr9m0706r76qizlwcy4il2v49x1lx77nqx40626p4zp7n"))))
     (properties `((upstream-name . "HMR")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=HMR")
@@ -4643,12 +4643,12 @@ estimation.")
   (package
     (name "r-hmptrees")
     (version "1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HMPTrees" version))
-              (sha256
-               (base32
-                "1jha64iyb0816rdg2i3z7i31z02r72k6acmvw0ibw3sli8zcvphb"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HMPTrees" version))
+       (sha256
+        (base32 "1jha64iyb0816rdg2i3z7i31z02r72k6acmvw0ibw3sli8zcvphb"))))
     (properties `((upstream-name . "HMPTrees")))
     (build-system r-build-system)
     (propagated-inputs (list r-hmp r-foreach r-doparallel r-dirmult r-ape))
@@ -4664,12 +4664,12 @@ taxonomic tree objects.")
   (package
     (name "r-hmp")
     (version "2.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HMP" version))
-              (sha256
-               (base32
-                "0233p7gajr2aic0c5snni4g9v1bwn4zd5i3kagxhqxa3mvy5c7wc"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HMP" version))
+       (sha256
+        (base32 "0233p7gajr2aic0c5snni4g9v1bwn4zd5i3kagxhqxa3mvy5c7wc"))))
     (properties `((upstream-name . "HMP")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -4695,12 +4695,12 @@ experiments.")
   (package
     (name "r-hmmtmb")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hmmTMB" version))
-              (sha256
-               (base32
-                "0iy0n4hy33a4lj62xz953a80lg1pkghw32x0mk5bx8fb7z8hq4n8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hmmTMB" version))
+       (sha256
+        (base32 "0iy0n4hy33a4lj62xz953a80lg1pkghw32x0mk5bx8fb7z8hq4n8"))))
     (properties `((upstream-name . "hmmTMB")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmbstan
@@ -4728,12 +4728,12 @@ package is described by Michelot (2022) <@code{arXiv:2211.14139>}.")
   (package
     (name "r-hmmr")
     (version "1.0-0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hmmr" version))
-              (sha256
-               (base32
-                "1m0jmw0i66hm5z5rycvpdmasq8zhgsz91km491n0n923mm480hmh"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hmmr" version))
+       (sha256
+        (base32 "1m0jmw0i66hm5z5rycvpdmasq8zhgsz91km491n0n923mm480hmh"))))
     (properties `((upstream-name . "hmmr")))
     (build-system r-build-system)
     (propagated-inputs (list r-depmixs4))
@@ -4749,12 +4749,12 @@ package is described by Michelot (2022) <@code{arXiv:2211.14139>}.")
   (package
     (name "r-hmmpa")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HMMpa" version))
-              (sha256
-               (base32
-                "0c3jmvcklywqsjmskx7zbw4d3l8i6bzr5h741v8iwgyw67mjn37g"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HMMpa" version))
+       (sha256
+        (base32 "0c3jmvcklywqsjmskx7zbw4d3l8i6bzr5h741v8iwgyw67mjn37g"))))
     (properties `((upstream-name . "HMMpa")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=HMMpa")
@@ -4770,12 +4770,12 @@ cut-off point method.  Witowski V, Foraita R, Pitsiladis Y, Pigeot I, Wirsik N
   (package
     (name "r-hmmmlselect")
     (version "0.1.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HMMmlselect" version))
-              (sha256
-               (base32
-                "0kvw9nihbmvp19hbz5h8sz9jps5ik2di969jxdbp4ymj735c0fc9"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HMMmlselect" version))
+       (sha256
+        (base32 "0kvw9nihbmvp19hbz5h8sz9jps5ik2di969jxdbp4ymj735c0fc9"))))
     (properties `((upstream-name . "HMMmlselect")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-mvtnorm r-mcmcpack r-mclust
@@ -4793,12 +4793,12 @@ Manual.pdf file a detail description of all functions, and a detail tutorial.")
   (package
     (name "r-hmmm")
     (version "1.0-4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hmmm" version))
-              (sha256
-               (base32
-                "1sbr85lcmcw3lv0ygqwfbarr91dp3br1xnlygy49145cvl93nfci"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hmmm" version))
+       (sha256
+        (base32 "1sbr85lcmcw3lv0ygqwfbarr91dp3br1xnlygy49145cvl93nfci"))))
     (properties `((upstream-name . "hmmm")))
     (build-system r-build-system)
     (propagated-inputs (list r-quadprog r-nleqslv r-mvtnorm r-mass))
@@ -4819,12 +4819,12 @@ allowed and can be tested.")
   (package
     (name "r-hmmextra0s")
     (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HMMextra0s" version))
-              (sha256
-               (base32
-                "067yb9xg1b4z2k0zhjj4wlvlv46c7rxaipyqkc81r30zh4qfrr1c"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HMMextra0s" version))
+       (sha256
+        (base32 "067yb9xg1b4z2k0zhjj4wlvlv46c7rxaipyqkc81r30zh4qfrr1c"))))
     (properties `((upstream-name . "HMMextra0s")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-ellipse))
@@ -4855,12 +4855,12 @@ have also made changes to increase the speed of some of the functions.")
   (package
     (name "r-hmmesolver")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HMMEsolver" version))
-              (sha256
-               (base32
-                "0msin7rq3npz221mvrw3zcs6bwz439six99iblx5p3hkp1n1ljf3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HMMEsolver" version))
+       (sha256
+        (base32 "0msin7rq3npz221mvrw3zcs6bwz439six99iblx5p3hkp1n1ljf3"))))
     (properties `((upstream-name . "HMMEsolver")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-rcpparmadillo r-rcpp))
@@ -4879,12 +4879,12 @@ solver to the HMME without computing matrix inverse.  See Kim (2017)
   (package
     (name "r-hmmcopula")
     (version "1.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HMMcopula" version))
-              (sha256
-               (base32
-                "1gmvav02r3miaq4jx05qjcgzw5qv6w1j77vck5gpps8p38zcp34m"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HMMcopula" version))
+       (sha256
+        (base32 "1gmvav02r3miaq4jx05qjcgzw5qv6w1j77vck5gpps8p38zcp34m"))))
     (properties `((upstream-name . "HMMcopula")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-matrixcalc r-foreach r-doparallel
@@ -4905,12 +4905,12 @@ pseudo-observations defined as normalized ranks.")
   (package
     (name "r-hmm-discnp")
     (version "3.0-9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hmm.discnp" version))
-              (sha256
-               (base32
-                "1cwsgjf258hwyf12sn54iqiliikmadbknlvhclhmqrr2vvj7561f"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hmm.discnp" version))
+       (sha256
+        (base32 "1cwsgjf258hwyf12sn54iqiliikmadbknlvhclhmqrr2vvj7561f"))))
     (properties `((upstream-name . "hmm.discnp")))
     (build-system r-build-system)
     (propagated-inputs (list r-nnet))
@@ -4931,12 +4931,12 @@ accommodated in the univariate setting.")
   (package
     (name "r-hmer")
     (version "1.5.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hmer" version))
-              (sha256
-               (base32
-                "1rnav6vd67daf4v8x7038zvakx0hh7fgcmldsipknbkilm49vdh7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hmer" version))
+       (sha256
+        (base32 "1rnav6vd67daf4v8x7038zvakx0hh7fgcmldsipknbkilm49vdh7"))))
     (properties `((upstream-name . "hmer")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -4972,12 +4972,12 @@ this package, consult the manual or help files.")
   (package
     (name "r-hmeasure")
     (version "1.0-2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hmeasure" version))
-              (sha256
-               (base32
-                "0l4nlny532kddiaa1nmgd37971whhwzb54mb1pvbwax7fsg6hmhw"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hmeasure" version))
+       (sha256
+        (base32 "0l4nlny532kddiaa1nmgd37971whhwzb54mb1pvbwax7fsg6hmhw"))))
     (properties `((upstream-name . "hmeasure")))
     (build-system r-build-system)
     (home-page "http://www.hmeasure.net")
@@ -4998,12 +4998,12 @@ curves and related statistics.")
   (package
     (name "r-hmdhfdplus")
     (version "2.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HMDHFDplus" version))
-              (sha256
-               (base32
-                "1cz9q0kydb926v1n15z96cj1a7d1nyv2ffkxf00vay5l70n05137"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HMDHFDplus" version))
+       (sha256
+        (base32 "1cz9q0kydb926v1n15z96cj1a7d1nyv2ffkxf00vay5l70n05137"))))
     (properties `((upstream-name . "HMDHFDplus")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -5035,12 +5035,12 @@ Arguments and data are standardized.")
   (package
     (name "r-hmclearn")
     (version "0.0.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hmclearn" version))
-              (sha256
-               (base32
-                "0zalvgnibd1kygryqcah5d008y6a0nxpy61yyiqsriw89r01jyjk"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hmclearn" version))
+       (sha256
+        (base32 "0zalvgnibd1kygryqcah5d008y6a0nxpy61yyiqsriw89r01jyjk"))))
     (properties `((upstream-name . "hmclearn")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-mass r-bayesplot))
@@ -5065,12 +5065,12 @@ Bates, D. (2006) \"Mixed-effects Models in S and S-Plus\" ISBN: 978-1441903174."
   (package
     (name "r-hmcdm")
     (version "2.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hmcdm" version))
-              (sha256
-               (base32
-                "0w3ldx8bwcqbc0mv1f8yiby08w4s37jc7gp3p53pmldqk65s7qfb"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hmcdm" version))
+       (sha256
+        (base32 "0w3ldx8bwcqbc0mv1f8yiby08w4s37jc7gp3p53pmldqk65s7qfb"))))
     (properties `((upstream-name . "hmcdm")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstantools r-rcpparmadillo r-rcpp r-progress
@@ -5089,12 +5089,12 @@ learning model, and the joint learning model for responses and response times.")
   (package
     (name "r-hmb")
     (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HMB" version))
-              (sha256
-               (base32
-                "19z3d0b98fyjcnbxh3g6h2g927nv0408sbxjlzalrjlw9mbpzd2b"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HMB" version))
+       (sha256
+        (base32 "19z3d0b98fyjcnbxh3g6h2g927nv0408sbxjlzalrjlw9mbpzd2b"))))
     (properties `((upstream-name . "HMB")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -5111,12 +5111,12 @@ information available in a nested structure.  For reference see Saarela et al.
   (package
     (name "r-hlt")
     (version "1.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hlt" version))
-              (sha256
-               (base32
-                "0wzxymjb70lcgk1hj6ky6ypk9i6s0a5rm7yqlpbs1fddl6mkcln9"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hlt" version))
+       (sha256
+        (base32 "0wzxymjb70lcgk1hj6ky6ypk9i6s0a5rm7yqlpbs1fddl6mkcln9"))))
     (properties `((upstream-name . "hlt")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm
@@ -5142,12 +5142,12 @@ with the R Package hlt\"
   (package
     (name "r-hlsm")
     (version "0.9.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HLSM" version))
-              (sha256
-               (base32
-                "1nvjgv8lbqpig9snnxm3k1qs1r7bf43gw7a3prj9l3kmqdd0i4j3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HLSM" version))
+       (sha256
+        (base32 "1nvjgv8lbqpig9snnxm3k1qs1r7bf43gw7a3prj9l3kmqdd0i4j3"))))
     (properties `((upstream-name . "HLSM")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-igraph r-coda r-abind))
@@ -5163,12 +5163,12 @@ ensemble of networks as described in Sweet, Thomas & Junker (2013).
   (package
     (name "r-hlmdiag")
     (version "0.5.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HLMdiag" version))
-              (sha256
-               (base32
-                "0yy0qf9iw5gr40vlmm697rvvvgp077f08fialx3ijn0vfpsjbl2v"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HLMdiag" version))
+       (sha256
+        (base32 "0yy0qf9iw5gr40vlmm697rvvvgp077f08fialx3ijn0vfpsjbl2v"))))
     (properties `((upstream-name . "HLMdiag")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -5204,12 +5204,12 @@ using either lmer in the lme4 package or lme in the nlme package.")
   (package
     (name "r-hlidacr")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hlidacr" version))
-              (sha256
-               (base32
-                "02l86bvb4w8wdq9mk9zh5wkf5i5y5jlgld0ciz851p5ra70c395p"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hlidacr" version))
+       (sha256
+        (base32 "02l86bvb4w8wdq9mk9zh5wkf5i5y5jlgld0ciz851p5ra70c395p"))))
     (properties `((upstream-name . "hlidacr")))
     (build-system r-build-system)
     (propagated-inputs (list r-usethis
@@ -5232,12 +5232,12 @@ using either lmer in the lme4 package or lme in the nlme package.")
   (package
     (name "r-hlar")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hlaR" version))
-              (sha256
-               (base32
-                "0l0vch3sliyhm9pcz3x488bsq513c1iv2p55fg71141cr5k71pal"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hlaR" version))
+       (sha256
+        (base32 "0l0vch3sliyhm9pcz3x488bsq513c1iv2p55fg71141cr5k71pal"))))
     (properties `((upstream-name . "hlaR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyverse
@@ -5271,12 +5271,12 @@ aims and initial data quality.")
   (package
     (name "r-hkrbook")
     (version "0.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HKRbook" version))
-              (sha256
-               (base32
-                "1bhyhv72c8afyzwx7h6p33mgfvhgqfh5c5f85gj803p6ai60h544"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HKRbook" version))
+       (sha256
+        (base32 "1bhyhv72c8afyzwx7h6p33mgfvhgqfh5c5f85gj803p6ai60h544"))))
     (properties `((upstream-name . "HKRbook")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinywidgets
@@ -5301,12 +5301,12 @@ Wolfgang Karl HÃ¤rdle, Sigbert Klinke, and Bernd RÃ¶nz (2015)
   (package
     (name "r-hkprocess")
     (version "0.1-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HKprocess" version))
-              (sha256
-               (base32
-                "0kn84ccaypknxymynp6lnr8asd85rlzbk073z7511rriyz96hyj7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HKprocess" version))
+       (sha256
+        (base32 "0kn84ccaypknxymynp6lnr8asd85rlzbk073z7511rriyz96hyj7"))))
     (properties `((upstream-name . "HKprocess")))
     (build-system r-build-system)
     (propagated-inputs (list r-mcmcpack r-gtools))
@@ -5322,12 +5322,12 @@ series trend tests are also included.")
   (package
     (name "r-hkevp")
     (version "1.1.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hkevp" version))
-              (sha256
-               (base32
-                "1a3wqafgv9rn10zkg27bgill33zhv76infpp4j84hsqmgiix0gfl"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hkevp" version))
+       (sha256
+        (base32 "1a3wqafgv9rn10zkg27bgill33zhv76infpp4j84hsqmgiix0gfl"))))
     (properties `((upstream-name . "hkevp")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -5345,12 +5345,12 @@ spatial extrapolation.  The spatial latent variable model
   (package
     (name "r-hkdatasets")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hkdatasets" version))
-              (sha256
-               (base32
-                "1a594fgwc5bvimwp5m2zpb6pjy4iavcylxdmsq3hrnh9ll5g5582"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hkdatasets" version))
+       (sha256
+        (base32 "1a594fgwc5bvimwp5m2zpb6pjy4iavcylxdmsq3hrnh9ll5g5582"))))
     (properties `((upstream-name . "hkdatasets")))
     (build-system r-build-system)
     (propagated-inputs (list r-fst))
@@ -5368,12 +5368,12 @@ package is available in the public domain.")
   (package
     (name "r-hk80")
     (version "0.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HK80" version))
-              (sha256
-               (base32
-                "0c8scpzl5xgqm9rlsvh5nl3bz42i5pzvb873j9bn3bi15gcknbny"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HK80" version))
+       (sha256
+        (base32 "0c8scpzl5xgqm9rlsvh5nl3bz42i5pzvb873j9bn3bi15gcknbny"))))
     (properties `((upstream-name . "HK80")))
     (build-system r-build-system)
     (home-page "https://github.com/helixcn/")
@@ -5390,12 +5390,12 @@ in Hong Kong by Survey and Mapping Office Lands Department, Hong Kong Government
   (package
     (name "r-hjam")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hJAM" version))
-              (sha256
-               (base32
-                "1pnjcn54zi4d7h9zc9wr1gv51dzb0vasfcrw4c1kqymhxsq2yfh3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hJAM" version))
+       (sha256
+        (base32 "1pnjcn54zi4d7h9zc9wr1gv51dzb0vasfcrw4c1kqymhxsq2yfh3"))))
     (properties `((upstream-name . "hJAM")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2 r-ggpubr r-ggplot2 r-dplyr))
@@ -5416,12 +5416,12 @@ Intermediates in a Mendelian Randomization or Transcriptome Analysis.\"
   (package
     (name "r-hiver")
     (version "0.3.63")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HiveR" version))
-              (sha256
-               (base32
-                "1vi24k23a017czfy9kihmq4s1dywzm274dyhyp1imx94afsnmhc3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HiveR" version))
+       (sha256
+        (base32 "1vi24k23a017czfy9kihmq4s1dywzm274dyhyp1imx94afsnmhc3"))))
     (properties `((upstream-name . "HiveR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgl r-rcolorbrewer r-png r-plyr r-jpeg))
@@ -5441,12 +5441,12 @@ biology, bioinformatics.")
   (package
     (name "r-hive")
     (version "0.2-2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hive" version))
-              (sha256
-               (base32
-                "0ihghpfsk73lndrfrk5907kdsih9s0a7xq23zcyfaa05nk98510n"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hive" version))
+       (sha256
+        (base32 "0ihghpfsk73lndrfrk5907kdsih9s0a7xq23zcyfaa05nk98510n"))))
     (properties `((upstream-name . "hive")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml r-rjava))
@@ -5463,12 +5463,12 @@ provided.")
   (package
     (name "r-hitandrun")
     (version "0.5-6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hitandrun" version))
-              (sha256
-               (base32
-                "0r0iymcmhiv3q1n7mrn3zsz2libfq3cdsq517k7kdk9m35piqrcg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hitandrun" version))
+       (sha256
+        (base32 "0r0iymcmhiv3q1n7mrn3zsz2libfq3cdsq517k7kdk9m35piqrcg"))))
     (properties `((upstream-name . "hitandrun")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcdd))
@@ -5489,12 +5489,12 @@ Postmus, D. (2014) <doi:10.1016/j.ejor.2014.06.036>.")
   (package
     (name "r-histry")
     (version "0.2.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "histry" version))
-              (sha256
-               (base32
-                "01rdpzkfq7nyiq1gh0cm89dn3466cmhgfj9x19lhl2yvh8xsdz8x"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "histry" version))
+       (sha256
+        (base32 "01rdpzkfq7nyiq1gh0cm89dn3466cmhgfj9x19lhl2yvh8xsdz8x"))))
     (properties `((upstream-name . "histry")))
     (build-system r-build-system)
     (propagated-inputs (list r-roprov r-fastdigest r-evaluate r-codedepends))
@@ -5511,12 +5511,12 @@ history in R sessions and dynamic documents.")
   (package
     (name "r-histoslider")
     (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "histoslider" version))
-              (sha256
-               (base32
-                "1458bh7by00izx4q9idl479f08i3gk2g59mmzfvh945vbf399km0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "histoslider" version))
+       (sha256
+        (base32 "1458bh7by00izx4q9idl479f08i3gk2g59mmzfvh945vbf399km0"))))
     (properties `((upstream-name . "histoslider")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-rlang r-reactr r-htmltools))
@@ -5532,12 +5532,12 @@ vectors.")
   (package
     (name "r-historydata")
     (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "historydata" version))
-              (sha256
-               (base32
-                "1h69x3iig542d43p9zm8x83p4dq48iwsw606j4fndnqhx99vzkw6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "historydata" version))
+       (sha256
+        (base32 "1h69x3iig542d43p9zm8x83p4dq48iwsw606j4fndnqhx99vzkw6"))))
     (properties `((upstream-name . "historydata")))
     (build-system r-build-system)
     (home-page "https://github.com/ropensci/historydata")
@@ -5552,12 +5552,12 @@ suitable for mapping, quantitative analysis, and network analysis.")
   (package
     (name "r-historicalborrowlong")
     (version "0.0.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "historicalborrowlong" version))
-              (sha256
-               (base32
-                "0ynf6sb850i01fwxj1pnha8q8n1qmmf7r0jkmz4azm5pblf12fg0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "historicalborrowlong" version))
+       (sha256
+        (base32 "0ynf6sb850i01fwxj1pnha8q8n1qmmf7r0jkmz4azm5pblf12fg0"))))
     (properties `((upstream-name . "historicalborrowlong")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -5597,12 +5597,12 @@ hierarchical model approach to historical borrowing is discussed by Viele et al.
   (package
     (name "r-historicalborrow")
     (version "1.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "historicalborrow" version))
-              (sha256
-               (base32
-                "0g7fs6qn957s3zw4ibbqszn2zpncpf6m41r68dw8g6x942mr0fhv"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "historicalborrow" version))
+       (sha256
+        (base32 "0g7fs6qn957s3zw4ibbqszn2zpncpf6m41r68dw8g6x942mr0fhv"))))
     (properties `((upstream-name . "historicalborrow")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -5630,12 +5630,12 @@ methods are discussed by Viele et al. (2013) <doi:10.1002/pst.1589>.")
   (package
     (name "r-histogramtools")
     (version "0.3.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HistogramTools" version))
-              (sha256
-               (base32
-                "1wkv6ypn006d8j6bpbhc1knw0bky4y8r7jp87482yd19q5ljsgv0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HistogramTools" version))
+       (sha256
+        (base32 "1wkv6ypn006d8j6bpbhc1knw0bky4y8r7jp87482yd19q5ljsgv0"))))
     (properties `((upstream-name . "HistogramTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-hmisc r-ash))
@@ -5654,12 +5654,12 @@ to allow histograms over large data sets to be computed and manipulated in a
   (package
     (name "r-histogram")
     (version "0.0-25")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "histogram" version))
-              (sha256
-               (base32
-                "0yymc7fw4qkbigr8jiw2nzjyrw0ikkipz62pdn3bpz1f7nb7mi93"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "histogram" version))
+       (sha256
+        (base32 "0yymc7fw4qkbigr8jiw2nzjyrw0ikkipz62pdn3bpz1f7nb7mi93"))))
     (properties `((upstream-name . "histogram")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=histogram")
@@ -5674,12 +5674,12 @@ Rozenholc/Mildenberger/Gather (2010).")
   (package
     (name "r-histmdl")
     (version "0.7-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "histmdl" version))
-              (sha256
-               (base32
-                "0k6l3pfjzlgpxv55vy8dg4sl8zhh0460xcfszwp2k9sbzanwaamp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "histmdl" version))
+       (sha256
+        (base32 "0k6l3pfjzlgpxv55vy8dg4sl8zhh0460xcfszwp2k9sbzanwaamp"))))
     (properties `((upstream-name . "histmdl")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=histmdl")
@@ -5694,12 +5694,12 @@ estimation method.")
   (package
     (name "r-histdawass")
     (version "1.0.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HistDAWass" version))
-              (sha256
-               (base32
-                "1qasds1w4fiih7d11rns2y4lrrym7cwsj2iv5d55jw52m8m8wrsc"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HistDAWass" version))
+       (sha256
+        (base32 "1qasds1w4fiih7d11rns2y4lrrym7cwsj2iv5d55jw52m8m8wrsc"))))
     (properties `((upstream-name . "HistDAWass")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
@@ -5728,12 +5728,12 @@ series.  An introducing paper is Irpino A. Verde R. (2015) <doi:
   (package
     (name "r-histdata")
     (version "0.9-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HistData" version))
-              (sha256
-               (base32
-                "1c005rmzbxcc4m7rxnbxna4dlg3vrn5fhkj4vrkak3xrxbcfkafw"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HistData" version))
+       (sha256
+        (base32 "1c005rmzbxcc4m7rxnbxna4dlg3vrn5fhkj4vrkak3xrxbcfkafw"))))
     (properties `((upstream-name . "HistData")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -5752,12 +5752,12 @@ graphics or analysis in R.")
   (package
     (name "r-histdat")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HistDat" version))
-              (sha256
-               (base32
-                "06zxsja8qk48q9lrr9fbk4sbpidysp31mcirxfr12l348lc9zf10"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HistDat" version))
+       (sha256
+        (base32 "06zxsja8qk48q9lrr9fbk4sbpidysp31mcirxfr12l348lc9zf10"))))
     (properties `((upstream-name . "HistDat")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -5775,12 +5775,12 @@ calculation of summary statistics without the need for expanding your data.")
   (package
     (name "r-hisse")
     (version "2.1.11")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hisse" version))
-              (sha256
-               (base32
-                "1mal9x2x882lq3cf74yjrdan3i69x2kq309b154n6lm4gbpk95vw"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hisse" version))
+       (sha256
+        (base32 "1mal9x2x882lq3cf74yjrdan3i69x2kq309b154n6lm4gbpk95vw"))))
     (properties `((upstream-name . "hisse")))
     (build-system r-build-system)
     (propagated-inputs (list r-treesim
@@ -5812,12 +5812,12 @@ dependent rates of diversification.  Beaulieu and O'Meara (2016)
   (package
     (name "r-hirt")
     (version "0.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hIRT" version))
-              (sha256
-               (base32
-                "0s0i6p9iv0yv0l15dnwkpcmc91751jyjs1y1nz671lz6jpb8rz5c"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hIRT" version))
+       (sha256
+        (base32 "0s0i6p9iv0yv0l15dnwkpcmc91751jyjs1y1nz671lz6jpb8rz5c"))))
     (properties `((upstream-name . "hIRT")))
     (build-system r-build-system)
     (propagated-inputs (list r-rms r-pryr r-matrix r-ltm))
@@ -5837,12 +5837,12 @@ matrix.")
   (package
     (name "r-hirestec")
     (version "0.62")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HiResTEC" version))
-              (sha256
-               (base32
-                "10wiviaib93md82xvizqv7973j97d5sq607q8mfb9iqc5g3a8vaq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HiResTEC" version))
+       (sha256
+        (base32 "10wiviaib93md82xvizqv7973j97d5sq607q8mfb9iqc5g3a8vaq"))))
     (properties `((upstream-name . "HiResTEC")))
     (build-system r-build-system)
     (propagated-inputs (list r-plyr r-openxlsx r-interpretmsspectrum r-cormid
@@ -5865,12 +5865,12 @@ described in Hoffmann et al. (2018) <doi:10.1021/acs.analchem.8b00356>.")
   (package
     (name "r-hipread")
     (version "0.2.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hipread" version))
-              (sha256
-               (base32
-                "02zqzy7nv5il1da9h2kf9c87yzbnww0kmywbjsbhfp4zp98xki84"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hipread" version))
+       (sha256
+        (base32 "02zqzy7nv5il1da9h2kf9c87yzbnww0kmywbjsbhfp4zp98xki84"))))
     (properties `((upstream-name . "hipread")))
     (build-system r-build-system)
     (inputs (list zlib))
@@ -5888,12 +5888,12 @@ without storing the full file in memory.")
   (package
     (name "r-hippie")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hippie" version))
-              (sha256
-               (base32
-                "1c31l1qgjk7m1gif78wxq0wxwla5d2gkpgql48aqc8i2m9i65k67"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hippie" version))
+       (sha256
+        (base32 "1c31l1qgjk7m1gif78wxq0wxwla5d2gkpgql48aqc8i2m9i65k67"))))
     (properties `((upstream-name . "hippie")))
     (build-system r-build-system)
     (propagated-inputs (list r-sourcetools r-rstudioapi))
@@ -5911,12 +5911,12 @@ completions that appear around the user's cursor.")
   (package
     (name "r-hiphop")
     (version "0.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hiphop" version))
-              (sha256
-               (base32
-                "0k071kxf04b95f3z5y2h9dhnqrvzwgyhi3q26ghn3s76c155f1k1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hiphop" version))
+       (sha256
+        (base32 "0k071kxf04b95f3z5y2h9dhnqrvzwgyhi3q26ghn3s76c155f1k1"))))
     (properties `((upstream-name . "hiphop")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -5953,12 +5953,12 @@ Ecology Resources, DOI to be added upon acceptance.")
   (package
     (name "r-hint")
     (version "0.1-3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hint" version))
-              (sha256
-               (base32
-                "00ppz8009cp0wbkmrxdg8x9jjqqb803bl6ki13hsqz07aya0j4iy"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hint" version))
+       (sha256
+        (base32 "00ppz8009cp0wbkmrxdg8x9jjqqb803bl6ki13hsqz07aya0j4iy"))))
     (properties `((upstream-name . "hint")))
     (build-system r-build-system)
     (home-page "https://github.com/alextkalinka/hint")
@@ -5975,12 +5975,12 @@ belonging to the same n categories. <@code{arXiv:1305.0717>}.")
   (package
     (name "r-hindexcalculator")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hindexcalculator" version))
-              (sha256
-               (base32
-                "06b4dn629avmnyqxb0l39m00wz9cg9dddmm6qhgwgnzlxh14ifgk"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hindexcalculator" version))
+       (sha256
+        (base32 "06b4dn629avmnyqxb0l39m00wz9cg9dddmm6qhgwgnzlxh14ifgk"))))
     (properties `((upstream-name . "hindexcalculator")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=hindexcalculator")
@@ -6000,12 +6000,12 @@ calculated.  Note: the excel file has to first be saved in a .csv format.")
   (package
     (name "r-hindex")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hindex" version))
-              (sha256
-               (base32
-                "01mcd2br33qqkfcyxl584f3l6kyb2cgzpd207p0mynzdaallgxgc"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hindex" version))
+       (sha256
+        (base32 "01mcd2br33qqkfcyxl584f3l6kyb2cgzpd207p0mynzdaallgxgc"))))
     (properties `((upstream-name . "hindex")))
     (build-system r-build-system)
     (propagated-inputs (list r-purrr r-ggplot2 r-foreach))
@@ -6023,12 +6023,12 @@ al. (2019) <@code{arXiv:1905.11052>}.")
   (package
     (name "r-himach")
     (version "0.3.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "himach" version))
-              (sha256
-               (base32
-                "0j262rkhfadd6n1ypzwv8pj543zinayihnvfsb5i8i6fx2lag88q"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "himach" version))
+       (sha256
+        (base32 "0j262rkhfadd6n1ypzwv8pj543zinayihnvfsb5i8i6fx2lag88q"))))
     (properties `((upstream-name . "himach")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -6056,12 +6056,12 @@ forecasting, not for planning your flight!")
   (package
     (name "r-hima")
     (version "2.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HIMA" version))
-              (sha256
-               (base32
-                "0r9dr3dvav8m8sxk84fm6m8y7fvsbd6dfblma17vizvslxpi5vwm"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HIMA" version))
+       (sha256
+        (base32 "0r9dr3dvav8m8sxk84fm6m8y7fvsbd6dfblma17vizvslxpi5vwm"))))
     (properties `((upstream-name . "HIMA")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -6092,12 +6092,12 @@ Studies.  Bioinformatics. (2016) <doi:10.1093/bioinformatics/btw351>.  PMID:
   (package
     (name "r-hillshader")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hillshader" version))
-              (sha256
-               (base32
-                "12phdpkjc4gyk9ri33x86dzxb03llhpqf43vin9ssfr23sbblnqh"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hillshader" version))
+       (sha256
+        (base32 "12phdpkjc4gyk9ri33x86dzxb03llhpqf43vin9ssfr23sbblnqh"))))
     (properties `((upstream-name . "hillshader")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-rayshader r-raster))
@@ -6115,12 +6115,12 @@ rayshader pipeline.")
   (package
     (name "r-hillr")
     (version "0.5.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hillR" version))
-              (sha256
-               (base32
-                "0gc4yirbn2bp38sjdgin7167yvm0kd6nk4yaj66jp0b5qbpc85gc"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hillR" version))
+       (sha256
+        (base32 "0gc4yirbn2bp38sjdgin7167yvm0kd6nk4yaj66jp0b5qbpc85gc"))))
     (properties `((upstream-name . "hillR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -6141,12 +6141,12 @@ Numbers proposed by Chao, Chiu and Jost (2014)
   (package
     (name "r-hilldiv")
     (version "1.5.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hilldiv" version))
-              (sha256
-               (base32
-                "1jp4xvrpqd575y2x0i73s0bq708bzi6gdhqgz85bia6d5kf05lq9"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hilldiv" version))
+       (sha256
+        (base32 "1jp4xvrpqd575y2x0i73s0bq708bzi6gdhqgz85bia6d5kf05lq9"))))
     (properties `((upstream-name . "hilldiv")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -6188,12 +6188,12 @@ molecularly characterised biological systems in Alberdi & Gilbert (2019)
   (package
     (name "r-hildareadr")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hildareadR" version))
-              (sha256
-               (base32
-                "0hay1r6lxnyzjp97456d9wra7myrmifyx8cywzc85wclm355yc9b"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hildareadR" version))
+       (sha256
+        (base32 "0hay1r6lxnyzjp97456d9wra7myrmifyx8cywzc85wclm355yc9b"))))
     (properties `((upstream-name . "hildareadR")))
     (build-system r-build-system)
     (propagated-inputs (list r-haven r-dplyr))
@@ -6209,12 +6209,12 @@ and Labour Dynamics in Australia) survey maintained by the Melbourne Institute
   (package
     (name "r-hilbertsimilarity")
     (version "0.4.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hilbertSimilarity" version))
-              (sha256
-               (base32
-                "1251df3q7c7c69f8q9y9bxj210bk2dh80c8ca4s58isf0hr2x7zp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hilbertSimilarity" version))
+       (sha256
+        (base32 "1251df3q7c7c69f8q9y9bxj210bk2dh80c8ca4s58isf0hr2x7zp"))))
     (properties `((upstream-name . "hilbertSimilarity")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-entropy))
@@ -6236,12 +6236,12 @@ differences between samples can identified using a simple bootstrap procedure.")
   (package
     (name "r-hilbert")
     (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hilbert" version))
-              (sha256
-               (base32
-                "1vw1rn5adnqi99v5w47jmqx35rqv0slas3ldw7g34il1krz9xhms"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hilbert" version))
+       (sha256
+        (base32 "1vw1rn5adnqi99v5w47jmqx35rqv0slas3ldw7g34il1krz9xhms"))))
     (properties `((upstream-name . "hilbert")))
     (build-system r-build-system)
     (propagated-inputs (list r-cpp11))
@@ -6258,12 +6258,12 @@ et al. (2006) <doi:10.1002/spe.793>.")
   (package
     (name "r-higrad")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "higrad" version))
-              (sha256
-               (base32
-                "0q9av8qyvmvgy6a3l7svcmbkjjgnp4iny1cld4g3qsbaz3yp3jaj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "higrad" version))
+       (sha256
+        (base32 "0q9av8qyvmvgy6a3l7svcmbkjjgnp4iny1cld4g3qsbaz3yp3jaj"))))
     (properties `((upstream-name . "higrad")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix))
@@ -6283,12 +6283,12 @@ details.")
   (package
     (name "r-higlasso")
     (version "0.9.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "higlasso" version))
-              (sha256
-               (base32
-                "09d500jsxlrv658i90xnb2wj1ad89v1iwb6y7vascyvg3cff104h"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "higlasso" version))
+       (sha256
+        (base32 "09d500jsxlrv658i90xnb2wj1ad89v1iwb6y7vascyvg3cff104h"))))
     (properties `((upstream-name . "higlasso")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-purrr r-gglasso r-gcdnet))
@@ -6311,12 +6311,12 @@ a set of exposures.")
   (package
     (name "r-highttest")
     (version "1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "highTtest" version))
-              (sha256
-               (base32
-                "0w7114qnywpd3wcnxhpkmv0j7hqip25p6wdigg505k0gywanr7fp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "highTtest" version))
+       (sha256
+        (base32 "0w7114qnywpd3wcnxhpkmv0j7hqip25p6wdigg505k0gywanr7fp"))))
     (properties `((upstream-name . "highTtest")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=highTtest")
@@ -6334,12 +6334,12 @@ discovery rate, and the tail probability of false discovery proportion.")
   (package
     (name "r-hightr")
     (version "0.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hightR" version))
-              (sha256
-               (base32
-                "0d4p9qcj7z0ayk4nb3pxnfwww29d7ks0jzavxsbz6m82g7x1pmyh"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hightR" version))
+       (sha256
+        (base32 "0d4p9qcj7z0ayk4nb3pxnfwww29d7ks0jzavxsbz6m82g7x1pmyh"))))
     (properties `((upstream-name . "hightR")))
     (build-system r-build-system)
     (home-page "https://github.com/Yongwoo-Eg-Kim/hightR")
@@ -6364,12 +6364,12 @@ standard.  The detailed procedure is described in Hong et al. (2006)
   (package
     (name "r-highscreen")
     (version "0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "highSCREEN" version))
-              (sha256
-               (base32
-                "1nd4jayfhz89kpk4i7s3n3wlza1ik4w3gspplnjmfz951f8i3wlg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "highSCREEN" version))
+       (sha256
+        (base32 "1nd4jayfhz89kpk4i7s3n3wlza1ik4w3gspplnjmfz951f8i3wlg"))))
     (properties `((upstream-name . "highSCREEN")))
     (build-system r-build-system)
     (propagated-inputs (list r-gplots))
@@ -6393,12 +6393,12 @@ University and lead by Drs.  Herman Staats and Soman Abraham.")
   (package
     (name "r-highs")
     (version "0.1-10")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "highs" version))
-              (sha256
-               (base32
-                "1vjmzbfydlm434fa1mkwwfcdhmn6sq4ppib26nxfa9zakr7h7q2c"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "highs" version))
+       (sha256
+        (base32 "1vjmzbfydlm434fa1mkwwfcdhmn6sq4ppib26nxfa9zakr7h7q2c"))))
     (properties `((upstream-name . "highs")))
     (build-system r-build-system)
     (inputs (list cmake bash))
@@ -6415,12 +6415,12 @@ optimization problems with quadratic or linear objective and linear constraints.
   (package
     (name "r-highriskzone")
     (version "1.4.9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "highriskzone" version))
-              (sha256
-               (base32
-                "0sg3a99pb2559chalxh66zv9mvwbgfx64vp1209vbhbx3sya48r2"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "highriskzone" version))
+       (sha256
+        (base32 "0sg3a99pb2559chalxh66zv9mvwbgfx64vp1209vbhbx3sya48r2"))))
     (properties `((upstream-name . "highriskzone")))
     (build-system r-build-system)
     (propagated-inputs (list r-splancs
@@ -6451,12 +6451,12 @@ methodology', Mahling et al. (2013) <doi:10.1111/j.1467-9876.2012.01055.x>.")
   (package
     (name "r-highorderportfolios")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "highOrderPortfolios" version))
-              (sha256
-               (base32
-                "0qjmxiv5dcpgyl5c9vbbizwwg4lpppc9z09rf4c4lf0dfrcj4c5i"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "highOrderPortfolios" version))
+       (sha256
+        (base32 "0qjmxiv5dcpgyl5c9vbbizwwg4lpppc9z09rf4c4lf0dfrcj4c5i"))))
     (properties `((upstream-name . "highOrderPortfolios")))
     (build-system r-build-system)
     (propagated-inputs (list r-quadprog
@@ -6485,12 +6485,12 @@ Design via Parametric Skew-t Distribution.\" <@code{arXiv:2206.02412>}.")
   (package
     (name "r-highmlr")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "highMLR" version))
-              (sha256
-               (base32
-                "0jkv6blkzdnn263wxy7p0hspgf5fchl5fbmzpqb5lfvl2f3pi3j9"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "highMLR" version))
+       (sha256
+        (base32 "0jkv6blkzdnn263wxy7p0hspgf5fchl5fbmzpqb5lfvl2f3pi3j9"))))
     (properties `((upstream-name . "highMLR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -6518,12 +6518,12 @@ threshold values.  The functions methodology is based on by Sonabend et al
   (package
     (name "r-highmean")
     (version "3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "highmean" version))
-              (sha256
-               (base32
-                "1lq7z0l1737j4wvsy7951405afylyywp7vf2i7girzh459fdfzpc"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "highmean" version))
+       (sha256
+        (base32 "1lq7z0l1737j4wvsy7951405afylyywp7vf2i7girzh459fdfzpc"))))
     (properties `((upstream-name . "highmean")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-mnormt r-mass))
@@ -6538,12 +6538,12 @@ in two sample populations.")
   (package
     (name "r-highlighthtml")
     (version "0.2.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "highlightHTML" version))
-              (sha256
-               (base32
-                "0j3zrvil7k5wfsbgfj2b4nbx77qsj3b4makv5angcf8s59p7q80r"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "highlightHTML" version))
+       (sha256
+        (base32 "0j3zrvil7k5wfsbgfj2b4nbx77qsj3b4makv5angcf8s59p7q80r"))))
     (properties `((upstream-name . "highlightHTML")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -6560,12 +6560,12 @@ document authors.")
   (package
     (name "r-highlighter")
     (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "highlighter" version))
-              (sha256
-               (base32
-                "1ksgqx2ryg5lfka93yns5cphnf4xc4v55ncmpisydjbcpzd2105c"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "highlighter" version))
+       (sha256
+        (base32 "1ksgqx2ryg5lfka93yns5cphnf4xc4v55ncmpisydjbcpzd2105c"))))
     (properties `((upstream-name . "highlighter")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-htmlwidgets r-htmltools r-glue r-cli))
@@ -6581,12 +6581,12 @@ you're documenting your data analysis or creating interactive shiny apps.")
   (package
     (name "r-highfrequency")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "highfrequency" version))
-              (sha256
-               (base32
-                "1qx121y90g3cgvxpvjx54lg06arjc79m8hcl7k1m9hr10lhhyi1a"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "highfrequency" version))
+       (sha256
+        (base32 "1qx121y90g3cgvxpvjx54lg06arjc79m8hcl7k1m9hr10lhhyi1a"))))
     (properties `((upstream-name . "highfrequency")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -6618,12 +6618,12 @@ publication on CRAN. A working paper version can be found on SSRN:
   (package
     (name "r-highestmedianrules")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HighestMedianRules" version))
-              (sha256
-               (base32
-                "01fj3xgrb9iav5v91bq04hzv9nhnwy8l00dx6yykghwvzjwfv3ih"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HighestMedianRules" version))
+       (sha256
+        (base32 "01fj3xgrb9iav5v91bq04hzv9nhnwy8l00dx6yykghwvzjwfv3ih"))))
     (properties `((upstream-name . "HighestMedianRules")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmallow))
@@ -6644,12 +6644,12 @@ to the majority judgment\", A. Fabre, Social Choice & Welfare (forthcoming as of
   (package
     (name "r-highdmean")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "highDmean" version))
-              (sha256
-               (base32
-                "0z81iw1nb8y4pvmhk8ay9pq4kvqxwxwv8q6p47hy8s2b465sfy1f"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "highDmean" version))
+       (sha256
+        (base32 "0z81iw1nb8y4pvmhk8ay9pq4kvqxwxwv8q6p47hy8s2b465sfy1f"))))
     (properties `((upstream-name . "highDmean")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=highDmean")
@@ -6669,12 +6669,12 @@ as zwl_test() in this package, provide a reliable and powerful test.")
   (package
     (name "r-highcharter")
     (version "0.9.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "highcharter" version))
-              (sha256
-               (base32
-                "02yyzfhzgkrp8hgdp2gyqrrvxzh9wqn3c90lyd9nlavn4qn4789z"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "highcharter" version))
+       (sha256
+        (base32 "02yyzfhzgkrp8hgdp2gyqrrvxzh9wqn3c90lyd9nlavn4qn4789z"))))
     (properties `((upstream-name . "highcharter")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -6711,12 +6711,12 @@ syntax.")
   (package
     (name "r-hiersdr")
     (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hierSDR" version))
-              (sha256
-               (base32
-                "164l7gw5bkg09mfs0rnqwfsbgr4mppc0skbmqk2d98mcvvmmcwd7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hierSDR" version))
+       (sha256
+        (base32 "164l7gw5bkg09mfs0rnqwfsbgr4mppc0skbmqk2d98mcvvmmcwd7"))))
     (properties `((upstream-name . "hierSDR")))
     (build-system r-build-system)
     (propagated-inputs (list r-optimx
@@ -6740,12 +6740,12 @@ of Huling and Yu (2021) <doi:10.1111/biom.13546>.")
   (package
     (name "r-hierportfolios")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HierPortfolios" version))
-              (sha256
-               (base32
-                "13f0bkcqglf6v0b2kqgsdr9px78ai3z8km3vkqnhsnphg8kh3m4z"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HierPortfolios" version))
+       (sha256
+        (base32 "13f0bkcqglf6v0b2kqgsdr9px78ai3z8km3vkqnhsnphg8kh3m4z"))))
     (properties `((upstream-name . "HierPortfolios")))
     (build-system r-build-system)
     (propagated-inputs (list r-riskportfolios r-fastcluster r-cluster))
@@ -6762,12 +6762,12 @@ asset allocation (Raffinot, 2017) <DOI: 10.3905/jpm.2018.44.2.089>.")
   (package
     (name "r-hiernet")
     (version "1.9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hierNet" version))
-              (sha256
-               (base32
-                "0fdnj50s985w06wrjc67hcy6fc4lj8jbxlskgrli9m0181vbdj69"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hierNet" version))
+       (sha256
+        (base32 "0fdnj50s985w06wrjc67hcy6fc4lj8jbxlskgrli9m0181vbdj69"))))
     (properties `((upstream-name . "hierNet")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=hierNet")
@@ -6785,12 +6785,12 @@ Statistics.  41(3).  1111-1141.")
   (package
     (name "r-hierbipartite")
     (version "0.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hierBipartite" version))
-              (sha256
-               (base32
-                "1f6agxrv363wksi33b29v42hys90351ninb4li9m52n0kzv25m1f"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hierBipartite" version))
+       (sha256
+        (base32 "1f6agxrv363wksi33b29v42hys90351ninb4li9m52n0kzv25m1f"))))
     (properties `((upstream-name . "hierBipartite")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-irlba))
@@ -6815,12 +6815,12 @@ associations.  Finally, hierarchical clustering is applied.")
   (package
     (name "r-hierarchicalsets")
     (version "1.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hierarchicalSets" version))
-              (sha256
-               (base32
-                "0i0dl2r1gc8ckk2hb498km9bgsqbj7fp8gpp8778rba001nvgwx7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hierarchicalSets" version))
+       (sha256
+        (base32 "0i0dl2r1gc8ckk2hb498km9bgsqbj7fp8gpp8778rba001nvgwx7"))))
     (properties `((upstream-name . "hierarchicalSets")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -6850,12 +6850,12 @@ meaningful relational structure.")
   (package
     (name "r-hidimda")
     (version "0.2-4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HiDimDA" version))
-              (sha256
-               (base32
-                "0gxkxzys9mcy33xvsim8klaqmb2xwvy5bvgkn9r400j4qfjd3cgg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HiDimDA" version))
+       (sha256
+        (base32 "0gxkxzys9mcy33xvsim8klaqmb2xwvy5bvgkn9r400j4qfjd3cgg"))))
     (properties `((upstream-name . "HiDimDA")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -6872,12 +6872,12 @@ cross-validation and variable selection.")
   (package
     (name "r-hidecan")
     (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hidecan" version))
-              (sha256
-               (base32
-                "08yhjgmcmrnrm6rm0vlzvizadvywcs1p6mchw1synxvclfaxyi28"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hidecan" version))
+       (sha256
+        (base32 "08yhjgmcmrnrm6rm0vlzvizadvywcs1p6mchw1synxvclfaxyi28"))))
     (properties `((upstream-name . "hidecan")))
     (build-system r-build-system)
     (propagated-inputs (list r-vroom
@@ -6905,12 +6905,12 @@ is presented in Angelin-Bonnet et al. (2023) (currently in review).")
   (package
     (name "r-hiddenf")
     (version "2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hiddenf" version))
-              (sha256
-               (base32
-                "0shc1kfiq527mkc5i97zcm51hsvknnhjg7dyfvbfqyk145v6sz00"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hiddenf" version))
+       (sha256
+        (base32 "0shc1kfiq527mkc5i97zcm51hsvknnhjg7dyfvbfqyk145v6sz00"))))
     (properties `((upstream-name . "hiddenf")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=hiddenf")
@@ -6926,12 +6926,12 @@ variance tables and p-values from several other tests of non-additivity.")
   (package
     (name "r-hicseg")
     (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HiCseg" version))
-              (sha256
-               (base32
-                "19581k3g71wrznyqrp4hmspqyzcbcfbc48xgjlq13zmqii45hcn6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HiCseg" version))
+       (sha256
+        (base32 "19581k3g71wrznyqrp4hmspqyzcbcfbc48xgjlq13zmqii45hcn6"))))
     (properties `((upstream-name . "HiCseg")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=HiCseg")
@@ -6945,12 +6945,12 @@ problem as a two-dimensional segmentation issue.")
   (package
     (name "r-hiclimr")
     (version "2.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HiClimR" version))
-              (sha256
-               (base32
-                "11aip68cjyy70xr0la1apk6gbkabg8vnc3s5cbydyz7yl4v80nn8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HiClimR" version))
+       (sha256
+        (base32 "11aip68cjyy70xr0la1apk6gbkabg8vnc3s5cbydyz7yl4v80nn8"))))
     (properties `((upstream-name . "HiClimR")))
     (build-system r-build-system)
     (inputs (list netcdf))
@@ -6977,12 +6977,12 @@ regionalization results, and exporting region map and mean timeseries into
   (package
     (name "r-hibayes")
     (version "3.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hibayes" version))
-              (sha256
-               (base32
-                "1vbad1x0scqq50w3lflgssqnyrhblk2hf6jczjxs4cbb0mny959n"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hibayes" version))
+       (sha256
+        (base32 "1vbad1x0scqq50w3lflgssqnyrhblk2hf6jczjxs4cbb0mny959n"))))
     (properties `((upstream-name . "hibayes")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -7024,12 +7024,12 @@ Fernando et al. (2014) <doi:10.1186/1297-9686-46-50>.")
   (package
     (name "r-hht")
     (version "2.1.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hht" version))
-              (sha256
-               (base32
-                "13q30difb84byy62rrkxq2hjjl1526pn8j4qvhm5g3cgivvby5ci"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hht" version))
+       (sha256
+        (base32 "13q30difb84byy62rrkxq2hjjl1526pn8j4qvhm5g3cgivvby5ci"))))
     (properties `((upstream-name . "hht")))
     (build-system r-build-system)
     (propagated-inputs (list r-fields r-emd))
@@ -7049,12 +7049,12 @@ spectrum.")
   (package
     (name "r-hhsmm")
     (version "0.3.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hhsmm" version))
-              (sha256
-               (base32
-                "0b7bjvhyva3858dv01s6r891jkk14gm01hjqsab32m9w1b4r477p"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hhsmm" version))
+       (sha256
+        (base32 "0b7bjvhyva3858dv01s6r891jkk14gm01hjqsab32m9w1b4r477p"))))
     (properties `((upstream-name . "hhsmm")))
     (build-system r-build-system)
     (propagated-inputs (list r-splines2
@@ -7086,12 +7086,12 @@ other useful tools (read for more description: Amini et al., 2022
   (package
     (name "r-hhp")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HhP" version))
-              (sha256
-               (base32
-                "0rmvw52a7a75gcwsyv30wvxrb9ykhg4ji3pj2jhgbzjqdc4s9xzw"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HhP" version))
+       (sha256
+        (base32 "0rmvw52a7a75gcwsyv30wvxrb9ykhg4ji3pj2jhgbzjqdc4s9xzw"))))
     (properties `((upstream-name . "HhP")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-mass))
@@ -7115,12 +7115,12 @@ features\".  Biometrics, <doi:10.1111/biom.13426>.")
   (package
     (name "r-hhi")
     (version "1.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hhi" version))
-              (sha256
-               (base32
-                "1yl52c3nqdi8v60sr01l0vv8359803dm2i4c9ifazgj3h3a4h0yp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hhi" version))
+       (sha256
+        (base32 "1yl52c3nqdi8v60sr01l0vv8359803dm2i4c9ifazgj3h3a4h0yp"))))
     (properties `((upstream-name . "hhi")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))
@@ -7142,12 +7142,12 @@ associated with the package: Waggoner, Philip D. (2018)
   (package
     (name "r-hhh4contacts")
     (version "0.13.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hhh4contacts" version))
-              (sha256
-               (base32
-                "1cqwn09iqgh6131cm4b5j0kx7k5vil0ak42v064g4maayj0yqy7p"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hhh4contacts" version))
+       (sha256
+        (base32 "1cqwn09iqgh6131cm4b5j0kx7k5vil0ak42v064g4maayj0yqy7p"))))
     (properties `((upstream-name . "hhh4contacts")))
     (build-system r-build-system)
     (propagated-inputs (list r-surveillance))
@@ -7167,12 +7167,12 @@ the results from the paper, see demo(\"hhh4contacts\")'.")
   (package
     (name "r-hhg")
     (version "2.3.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HHG" version))
-              (sha256
-               (base32
-                "1ghw1rpf7n0dfclvxm3p02ym247p3rsncj9f9f97892lk9yin29c"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HHG" version))
+       (sha256
+        (base32 "1ghw1rpf7n0dfclvxm3p02ym247p3rsncj9f9f97892lk9yin29c"))))
     (properties `((upstream-name . "HHG")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmarkdown r-rcpp))
@@ -7193,12 +7193,12 @@ distribution-free, and are thus much faster to apply.")
   (package
     (name "r-hh")
     (version "3.1-49")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HH" version))
-              (sha256
-               (base32
-                "0yxqh0699x0vfk18p9850wziyglif0lywnljdl14biq71b5z1khj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HH" version))
+       (sha256
+        (base32 "0yxqh0699x0vfk18p9850wziyglif0lywnljdl14biq71b5z1khj"))))
     (properties `((upstream-name . "HH")))
     (build-system r-build-system)
     (propagated-inputs (list r-vcd
@@ -7236,12 +7236,12 @@ included in the scripts directory of the package.")
   (package
     (name "r-hgwrr")
     (version "0.3-0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hgwrr" version))
-              (sha256
-               (base32
-                "0m3h5zwdnj4l7i6nh0mrjj4wprajgazninzffxpy14g7fy907ifn"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hgwrr" version))
+       (sha256
+        (base32 "0m3h5zwdnj4l7i6nh0mrjj4wprajgazninzffxpy14g7fy907ifn"))))
     (properties `((upstream-name . "hgwrr")))
     (build-system r-build-system)
     (inputs (list gsl))
@@ -7260,12 +7260,12 @@ this model to reach better fitness.")
   (package
     (name "r-hgutils")
     (version "0.2.11")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hgutils" version))
-              (sha256
-               (base32
-                "0l288fqymh2i4dngy909gi8b4c9hdis02gqwyyvy6r8xzisk4m44"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hgutils" version))
+       (sha256
+        (base32 "0l288fqymh2i4dngy909gi8b4c9hdis02gqwyyvy6r8xzisk4m44"))))
     (properties `((upstream-name . "hgutils")))
     (build-system r-build-system)
     (propagated-inputs (list r-usethis
@@ -7292,12 +7292,12 @@ for plots, overview tables and many more handy utility functions.")
   (package
     (name "r-hgsl")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HGSL" version))
-              (sha256
-               (base32
-                "1p453xr3d1bmqc6mrmzb0hz9p0gp25m6v6qr0l3bapcf71vzbvq1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HGSL" version))
+       (sha256
+        (base32 "1p453xr3d1bmqc6mrmzb0hz9p0gp25m6v6qr0l3bapcf71vzbvq1"))))
     (properties `((upstream-name . "HGSL")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=HGSL")
@@ -7312,12 +7312,12 @@ Ren, Z., Kang, Y., Fan, Y. and Lv, J. (2018)<@code{arXiv:1606.03803>}.")
   (package
     (name "r-hgraph")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HGraph" version))
-              (sha256
-               (base32
-                "1y35lzym3mbr1v7j7v55i9mxb1vn65xzgp5542va1bngvrm25hjf"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HGraph" version))
+       (sha256
+        (base32 "1y35lzym3mbr1v7j7v55i9mxb1vn65xzgp5542va1bngvrm25hjf"))))
     (properties `((upstream-name . "HGraph")))
     (build-system r-build-system)
     (propagated-inputs (list r-knitr))
@@ -7341,12 +7341,12 @@ Implement reference about Baruch Awerbuch (1985)
   (package
     (name "r-hgnc")
     (version "0.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hgnc" version))
-              (sha256
-               (base32
-                "180092gpcs3j94904ry42crs62knzrv926bp25dapigqqfj7jjqi"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hgnc" version))
+       (sha256
+        (base32 "180092gpcs3j94904ry42crs62knzrv926bp25dapigqqfj7jjqi"))))
     (properties `((upstream-name . "hgnc")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -7374,12 +7374,12 @@ or resources.")
   (package
     (name "r-hgmnd")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HGMND" version))
-              (sha256
-               (base32
-                "1iwqssj66q9dfgddzwqmnnpvxnvlrq7p1axm95lpkf3vrpn5rp6b"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HGMND" version))
+       (sha256
+        (base32 "1iwqssj66q9dfgddzwqmnnpvxnvlrq7p1axm95lpkf3vrpn5rp6b"))))
     (properties `((upstream-name . "HGMND")))
     (build-system r-build-system)
     (propagated-inputs (list r-genscore))
@@ -7406,12 +7406,12 @@ and non-negative exponential family in each cluster.")
   (package
     (name "r-hgm")
     (version "1.23")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hgm" version))
-              (sha256
-               (base32
-                "15prmsbs5zq12r6nrg2ibq2y8qfyrp9vq1g4jm258m0alrxnjx8w"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hgm" version))
+       (sha256
+        (base32 "15prmsbs5zq12r6nrg2ibq2y8qfyrp9vq1g4jm258m0alrxnjx8w"))))
     (properties `((upstream-name . "hgm")))
     (build-system r-build-system)
     (propagated-inputs (list r-desolve))
@@ -7429,12 +7429,12 @@ HGM.")
   (package
     (name "r-hglm-data")
     (version "1.0-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hglm.data" version))
-              (sha256
-               (base32
-                "0mw1s0kahsh9jmwkxysfy5f7vbld7mpzmdnnww6im5h21jhnczx2"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hglm.data" version))
+       (sha256
+        (base32 "0mw1s0kahsh9jmwkxysfy5f7vbld7mpzmdnnww6im5h21jhnczx2"))))
     (properties `((upstream-name . "hglm.data")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-matrix r-mass))
@@ -7449,12 +7449,12 @@ the hglm package.")
   (package
     (name "r-hglm")
     (version "2.2-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hglm" version))
-              (sha256
-               (base32
-                "1lyxkvqzfll1qrz5c2km9ikhq0dm63x39by4vc1nmkd24yza93nc"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hglm" version))
+       (sha256
+        (base32 "1lyxkvqzfll1qrz5c2km9ikhq0dm63x39by4vc1nmkd24yza93nc"))))
     (properties `((upstream-name . "hglm")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-mass r-hglm-data))
@@ -7479,12 +7479,12 @@ extended for spatial modeling (Alam, Ronnegard and Shen 2015)
   (package
     (name "r-hglasso")
     (version "1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hglasso" version))
-              (sha256
-               (base32
-                "15sq5fk7iicglpyxdkh44mg112zij05ic4x3snhqyc2lx1hvp7cy"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hglasso" version))
+       (sha256
+        (base32 "15sq5fk7iicglpyxdkh44mg112zij05ic4x3snhqyc2lx1hvp7cy"))))
     (properties `((upstream-name . "hglasso")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-igraph r-glasso r-fields))
@@ -7501,12 +7501,12 @@ Research 15(Oct):3297-3331.")
   (package
     (name "r-hfr")
     (version "0.6.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hfr" version))
-              (sha256
-               (base32
-                "1l0iy0gc4j3gqqz0h7cjzg0nmf45vklsfy4x04a7y8zvidn01glr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hfr" version))
+       (sha256
+        (base32 "1l0iy0gc4j3gqqz0h7cjzg0nmf45vklsfy4x04a7y8zvidn01glr"))))
     (properties `((upstream-name . "hfr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcolorbrewer r-quadprog r-dendextend r-corpcor))
@@ -7522,12 +7522,12 @@ Pfitzinger (2021) <@code{arXiv:2107.04831>}.")
   (package
     (name "r-hflights")
     (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hflights" version))
-              (sha256
-               (base32
-                "1rb6finck13i6949i6hsgfk90q4ybxh1m3is2mlw2m6087bpzfbd"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hflights" version))
+       (sha256
+        (base32 "1rb6finck13i6949i6hsgfk90q4ybxh1m3is2mlw2m6087bpzfbd"))))
     (properties `((upstream-name . "hflights")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=hflights")
@@ -7541,12 +7541,12 @@ that departed Houston (IAH and HOU) in 2011.")
   (package
     (name "r-hfhub")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hfhub" version))
-              (sha256
-               (base32
-                "0s2fm8lx680ymn8srln6dyay0lp03mxhyv7p71aw892hdq1d2sm1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hfhub" version))
+       (sha256
+        (base32 "0s2fm8lx680ymn8srln6dyay0lp03mxhyv7p71aw892hdq1d2sm1"))))
     (properties `((upstream-name . "hfhub")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -7570,12 +7570,12 @@ files can be shared between different client libraries.")
   (package
     (name "r-hexview")
     (version "0.3-4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hexView" version))
-              (sha256
-               (base32
-                "01hiqyibsd4as7jcklzg09pl12la341mg561vn16z4jzdarfvkfc"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hexView" version))
+       (sha256
+        (base32 "01hiqyibsd4as7jcklzg09pl12la341mg561vn16z4jzdarfvkfc"))))
     (properties `((upstream-name . "hexView")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=hexView")
@@ -7589,12 +7589,12 @@ editor.  Additional functions to specify and read arbitrary binary formats.")
   (package
     (name "r-hextri")
     (version "0.9.17")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hextri" version))
-              (sha256
-               (base32
-                "04kk1a029i1rz617s9i3jvpnxillc3k3b7g3nrbsbi37ik6qk5r4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hextri" version))
+       (sha256
+        (base32 "04kk1a029i1rz617s9i3jvpnxillc3k3b7g3nrbsbi37ik6qk5r4"))))
     (properties `((upstream-name . "hextri")))
     (build-system r-build-system)
     (propagated-inputs (list r-hexbin r-fnn))
@@ -7610,12 +7610,12 @@ triangles to show class proportions.")
   (package
     (name "r-hextractor")
     (version "1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HextractoR" version))
-              (sha256
-               (base32
-                "1wp7n92wgrjyklq159ymrw8y5ads6lhj2fcz54rzdnccdyx5naxi"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HextractoR" version))
+       (sha256
+        (base32 "1wp7n92wgrjyklq159ymrw8y5ads6lhj2fcz54rzdnccdyx5naxi"))))
     (properties `((upstream-name . "HextractoR")))
     (build-system r-build-system)
     (propagated-inputs (list r-seqinr r-foreach r-doparallel))
@@ -7633,12 +7633,12 @@ lost nor inappropriately cut.")
   (package
     (name "r-hexsticker")
     (version "0.4.9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hexSticker" version))
-              (sha256
-               (base32
-                "0d9sz2cshn4lq18kd9fkgvjm3v29h0k22b6228rq2q3zhxi97ra0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hexSticker" version))
+       (sha256
+        (base32 "0d9sz2cshn4lq18kd9fkgvjm3v29h0k22b6228rq2q3zhxi97ra0"))))
     (properties `((upstream-name . "hexSticker")))
     (build-system r-build-system)
     (propagated-inputs (list r-sysfonts r-showtext r-hexbin r-ggplot2
@@ -7653,12 +7653,12 @@ lost nor inappropriately cut.")
   (package
     (name "r-hexfont")
     (version "0.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hexfont" version))
-              (sha256
-               (base32
-                "05p279ygpwdlmx4c9vdjs25k7yrgb4xp9cc05drjwncwh97qgj6v"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hexfont" version))
+       (sha256
+        (base32 "05p279ygpwdlmx4c9vdjs25k7yrgb4xp9cc05drjwncwh97qgj6v"))))
     (properties `((upstream-name . "hexfont")))
     (build-system r-build-system)
     (propagated-inputs (list r-bittermelon))
@@ -7679,12 +7679,12 @@ for easy rendering of the glyphs in an R terminal or graphics device.")
   (package
     (name "r-hexfinder")
     (version "0.8.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hexFinder" version))
-              (sha256
-               (base32
-                "1lz3a08rrdiprs5ghbalyk5zn6g404yxqvzrqg89n2hsciqnbqlm"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hexFinder" version))
+       (sha256
+        (base32 "1lz3a08rrdiprs5ghbalyk5zn6g404yxqvzrqg89n2hsciqnbqlm"))))
     (properties `((upstream-name . "hexFinder")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -7705,12 +7705,12 @@ for easy rendering of the glyphs in an R terminal or graphics device.")
   (package
     (name "r-heuristicsminer")
     (version "0.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "heuristicsmineR" version))
-              (sha256
-               (base32
-                "0w4f7xpz2342k38b5a7fs6fq50045hh2836390zg36nqdapg8vlv"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "heuristicsmineR" version))
+       (sha256
+        (base32 "0w4f7xpz2342k38b5a7fs6fq50045hh2836390zg36nqdapg8vlv"))))
     (properties `((upstream-name . "heuristicsmineR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -7745,12 +7745,12 @@ occurrence frequency or processing and waiting time of process activities.")
   (package
     (name "r-heuristica")
     (version "1.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "heuristica" version))
-              (sha256
-               (base32
-                "1j88sviy6yabh5prab0f1snnicbg843kbwyawakj3xx3p43v23lb"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "heuristica" version))
+       (sha256
+        (base32 "1j88sviy6yabh5prab0f1snnicbg843kbwyawakj3xx3p43v23lb"))))
     (properties `((upstream-name . "heuristica")))
     (build-system r-build-system)
     (propagated-inputs (list r-hmisc))
@@ -7773,12 +7773,12 @@ on many data sets and analyzed in: Gigerenzer, G., Todd, P. M., & the ABC Group
   (package
     (name "r-hetu")
     (version "1.0.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hetu" version))
-              (sha256
-               (base32
-                "1ml3jzfc71j0d7a7yn97sbfzlpdpg46jpjcn6xbnh17xrqc1mv2a"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hetu" version))
+       (sha256
+        (base32 "1ml3jzfc71j0d7a7yn97sbfzlpdpg46jpjcn6xbnh17xrqc1mv2a"))))
     (properties `((upstream-name . "hetu")))
     (build-system r-build-system)
     (propagated-inputs (list r-lubridate r-checkmate))
@@ -7794,12 +7794,12 @@ organizations); extract information, check ID validity and diagnostics.")
   (package
     (name "r-hettx")
     (version "0.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hettx" version))
-              (sha256
-               (base32
-                "15i9n2fcfbkv11qlgh4gsjvfnzzziwbcn8izzxw2d0kbdhhk7h8c"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hettx" version))
+       (sha256
+        (base32 "15i9n2fcfbkv11qlgh4gsjvfnzzziwbcn8izzxw2d0kbdhhk7h8c"))))
     (properties `((upstream-name . "hettx")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -7833,12 +7833,12 @@ visualizing the results of the test.")
   (package
     (name "r-hettreatreg")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hettreatreg" version))
-              (sha256
-               (base32
-                "092xd2yndg5n5shxmcyn2gh6a6w1i1497cvj009ih3ax8hk3crf0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hettreatreg" version))
+       (sha256
+        (base32 "092xd2yndg5n5shxmcyn2gh6a6w1i1497cvj009ih3ax8hk3crf0"))))
     (properties `((upstream-name . "hettreatreg")))
     (build-system r-build-system)
     (home-page "https://github.com/tslocz/hettreatreg")
@@ -7858,12 +7858,12 @@ OLS estimate of the average treatment effect (ATE).  See Sloczynski (2019),
   (package
     (name "r-hettest")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hettest" version))
-              (sha256
-               (base32
-                "0qmgm9q42xrgfgsk15a6h2mdnq0aiyccpzyp79hi271w54dkmbj0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hettest" version))
+       (sha256
+        (base32 "0qmgm9q42xrgfgsk15a6h2mdnq0aiyccpzyp79hi271w54dkmbj0"))))
     (properties `((upstream-name . "hettest")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=hettest")
@@ -7879,12 +7879,12 @@ et al (2022) <@code{arXiv:2209.08315>}.")
   (package
     (name "r-hett")
     (version "0.3-3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hett" version))
-              (sha256
-               (base32
-                "0i7q28nc67m62vi1ipfg035yqjh691fb1mp33dp1b68g5wjysphh"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hett" version))
+       (sha256
+        (base32 "0i7q28nc67m62vi1ipfg035yqjh691fb1mp33dp1b68g5wjysphh"))))
     (properties `((upstream-name . "hett")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-lattice))
@@ -7899,12 +7899,12 @@ heteroscedastic t-regression.")
   (package
     (name "r-hetsurr")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hetsurr" version))
-              (sha256
-               (base32
-                "1086lqxg6s5a0qxmd29bp3ninr4jzfdp3m6fsn9sfl7bagvrs5wy"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hetsurr" version))
+       (sha256
+        (base32 "1086lqxg6s5a0qxmd29bp3ninr4jzfdp3m6fsn9sfl7bagvrs5wy"))))
     (properties `((upstream-name . "hetsurr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rsurrogate))
@@ -7923,12 +7923,12 @@ Biometrics, In press.")
   (package
     (name "r-hetop")
     (version "0.2-6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HETOP" version))
-              (sha256
-               (base32
-                "1fjwyqh7l296pghmc4m81q8icgbhvqvxr61zd638fr46gls3ky2p"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HETOP" version))
+       (sha256
+        (base32 "1fjwyqh7l296pghmc4m81q8icgbhvqvxr61zd638fr46gls3ky2p"))))
     (properties `((upstream-name . "HETOP")))
     (build-system r-build-system)
     (propagated-inputs (list r-r2jags))
@@ -7948,12 +7948,12 @@ and Louis (1998) <doi:10.1111/1467-9868.00135>.")
   (package
     (name "r-hetools")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HEtools" version))
-              (sha256
-               (base32
-                "02mm6vy6iicl4jazcpg60slcnjgsdr1cd5j82dmjwzbm8b81az5m"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HEtools" version))
+       (sha256
+        (base32 "02mm6vy6iicl4jazcpg60slcnjgsdr1cd5j82dmjwzbm8b81az5m"))))
     (properties `((upstream-name . "HEtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-polynom))
@@ -7973,12 +7973,12 @@ generate and take coefficient modulo are provided.")
   (package
     (name "r-hetgp")
     (version "1.1.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hetGP" version))
-              (sha256
-               (base32
-                "0cdhqv9jy28hdbx3rd10zl1a0awv8y8wkhfbh4nfrz26y1329qc4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hetGP" version))
+       (sha256
+        (base32 "0cdhqv9jy28hdbx3rd10zl1a0awv8y8wkhfbh4nfrz26y1329qc4"))))
     (properties `((upstream-name . "hetGP")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-mass r-dicedesign))
@@ -8001,12 +8001,12 @@ and notably fast update functions when adding new observations.")
   (package
     (name "r-heteromixgm")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "heteromixgm" version))
-              (sha256
-               (base32
-                "0jhvjalpx7licjjvj8ld4als1jkm22mkbxmz893h91qzacznx8zk"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "heteromixgm" version))
+       (sha256
+        (base32 "0jhvjalpx7licjjvj8ld4als1jkm22mkbxmz893h91qzacznx8zk"))))
     (properties `((upstream-name . "heteromixgm")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmvtnorm
@@ -8034,12 +8034,12 @@ implements the methodological developments found in Hermes et al. (2022)
   (package
     (name "r-heteroggm")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HeteroGGM" version))
-              (sha256
-               (base32
-                "0cfzqhbnsy2254m1n6vbpcxlmiqw7cs26v81f5wyawlyyvdydmxi"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HeteroGGM" version))
+       (sha256
+        (base32 "0cfzqhbnsy2254m1n6vbpcxlmiqw7cs26v81f5wyawlyyvdydmxi"))))
     (properties `((upstream-name . "HeteroGGM")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-mass r-igraph))
@@ -8067,12 +8067,12 @@ Analysis via Penalized Fusion.  Biometrics, <doi:10.1111/biom.13426>.")
   (package
     (name "r-heterogen")
     (version "1.2.33")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "heterogen" version))
-              (sha256
-               (base32
-                "17287n38km02ldwddldw9zh8f8w18f9vi7dcg52a17r9r7v0mshv"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "heterogen" version))
+       (sha256
+        (base32 "17287n38km02ldwddldw9zh8f8w18f9vi7dcg52a17r9r7v0mshv"))))
     (properties `((upstream-name . "heterogen")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -8096,12 +8096,12 @@ environmental and climate-related data.")
   (package
     (name "r-heterfunctionaldata")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HeterFunctionalData" version))
-              (sha256
-               (base32
-                "0qrfmxwrxn0rd2ncy3afhraf7m0010nf9739jkj19h1j5vksi9n1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HeterFunctionalData" version))
+       (sha256
+        (base32 "0qrfmxwrxn0rd2ncy3afhraf7m0010nf9739jkj19h1j5vksi9n1"))))
     (properties `((upstream-name . "HeterFunctionalData")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=HeterFunctionalData")
@@ -8120,12 +8120,12 @@ Akritas (2010b) <doi:10.1016/j.jmva.2010.03.012>.")
   (package
     (name "r-hesim")
     (version "0.5.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hesim" version))
-              (sha256
-               (base32
-                "115c6f0i0j7i4k2rf5m6f4a9v8mz99mfvv560v0v12g9gjj9lncb"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hesim" version))
+       (sha256
+        (base32 "115c6f0i0j7i4k2rf5m6f4a9v8mz99mfvv560v0v12g9gjj9lncb"))))
     (properties `((upstream-name . "hesim")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -8160,12 +8160,12 @@ sensitivity analysis, and incorporation of patient heterogeneity fast.")
   (package
     (name "r-hero")
     (version "0.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hero" version))
-              (sha256
-               (base32
-                "0az2gva4rdbgsfd31512h8a23bvvbx812ws05rg2qs6r5qhwbj8r"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hero" version))
+       (sha256
+        (base32 "0az2gva4rdbgsfd31512h8a23bvvbx812ws05rg2qs6r5qhwbj8r"))))
     (properties `((upstream-name . "hero")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp
@@ -8190,12 +8190,12 @@ smoother of French and Kokoszka (2021) <doi:10.1016/j.spasta.2020.100413>.")
   (package
     (name "r-hermiter")
     (version "2.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hermiter" version))
-              (sha256
-               (base32
-                "190arngwpiankyxyd47i9kagq4gbzj023y8qybd81bm4r9jn3ax6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hermiter" version))
+       (sha256
+        (base32 "190arngwpiankyxyd47i9kagq4gbzj023y8qybd81bm4r9jn3ax6"))))
     (properties `((upstream-name . "hermiter")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppparallel r-rcpp r-bh))
@@ -8224,12 +8224,12 @@ estimators.\" Journal of Multivariate Analysis (2021)
   (package
     (name "r-hermite")
     (version "1.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hermite" version))
-              (sha256
-               (base32
-                "0j9s7ayvbvmgwybrvf703b72qbn8gskb105pis19ig2sslllzda3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hermite" version))
+       (sha256
+        (base32 "0j9s7ayvbvmgwybrvf703b72qbn8gskb105pis19ig2sslllzda3"))))
     (properties `((upstream-name . "hermite")))
     (build-system r-build-system)
     (propagated-inputs (list r-maxlik))
@@ -8244,12 +8244,12 @@ distribution.")
   (package
     (name "r-heritseq")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HeritSeq" version))
-              (sha256
-               (base32
-                "0jzf3pq43lllxvvmf0rqzxz9fx6931mgb0ipminlw1iakz8wa6w3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HeritSeq" version))
+       (sha256
+        (base32 "0jzf3pq43lllxvvmf0rqzxz9fx6931mgb0ipminlw1iakz8wa6w3"))))
     (properties `((upstream-name . "HeritSeq")))
     (build-system r-build-system)
     (propagated-inputs (list r-tweedie
@@ -8275,12 +8275,12 @@ heritability scores for high-throughput sequencing data.\" BMC bioinformatics
   (package
     (name "r-heritability")
     (version "1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "heritability" version))
-              (sha256
-               (base32
-                "053fqjc8772gqhxnm2gn7yz747432kizn5q5060g5bd77v15jlhp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "heritability" version))
+       (sha256
+        (base32 "053fqjc8772gqhxnm2gn7yz747432kizn5q5060g5bd77v15jlhp"))))
     (properties `((upstream-name . "heritability")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -8302,12 +8302,12 @@ Arabidopsis thaliana.")
   (package
     (name "r-hergm")
     (version "4.1-10")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hergm" version))
-              (sha256
-               (base32
-                "04vr5mmsr39rpjnans8xwp1z304rd3hi5za7qhjv7dn5s8c8pw9h"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hergm" version))
+       (sha256
+        (base32 "04vr5mmsr39rpjnans8xwp1z304rd3hi5za7qhjv7dn5s8c8pw9h"))))
     (properties `((upstream-name . "hergm")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -8331,12 +8331,12 @@ Schweinberger and Luna (2018) <doi:10.18637/jss.v085.i01>.")
   (package
     (name "r-herer")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hereR" version))
-              (sha256
-               (base32
-                "0la67qdsq72x8k19v27g73fh6w04fdgfj1cxbd3a6w1sfvjvvy6z"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hereR" version))
+       (sha256
+        (base32 "0la67qdsq72x8k19v27g73fh6w04fdgfj1cxbd3a6w1sfvjvvy6z"))))
     (properties `((upstream-name . "hereR")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -8366,12 +8366,12 @@ routes and isolines are returned as sf objects.")
   (package
     (name "r-heplots")
     (version "1.6.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "heplots" version))
-              (sha256
-               (base32
-                "01c4f2b7ja1q5cdzndgchf0ibrysd3m4d793diz680a8w47w11dh"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "heplots" version))
+       (sha256
+        (base32 "01c4f2b7ja1q5cdzndgchf0ibrysd3m4d793diz680a8w47w11dh"))))
     (properties `((upstream-name . "heplots")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -8397,12 +8397,12 @@ space when there are more than a few response variables.")
   (package
     (name "r-hemispher")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hemispheR" version))
-              (sha256
-               (base32
-                "1cmh166jzq6vflirvwf4mvy76x3j8x9q6r1h1p6jbkm0b2hck7ci"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hemispheR" version))
+       (sha256
+        (base32 "1cmh166jzq6vflirvwf4mvy76x3j8x9q6r1h1p6jbkm0b2hck7ci"))))
     (properties `((upstream-name . "hemispheR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -8428,12 +8428,12 @@ information is provided in the study by Chianucci F., Macek M. (2023)
   (package
     (name "r-hemdag")
     (version "2.7.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HEMDAG" version))
-              (sha256
-               (base32
-                "1dmfy5bbnjmjb4d7430i38z9hvpcrwafj6hw46118hwzcl4b6ldv"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HEMDAG" version))
+       (sha256
+        (base32 "1dmfy5bbnjmjb4d7430i38z9hvpcrwafj6hw46118hwzcl4b6ldv"))))
     (properties `((upstream-name . "HEMDAG")))
     (build-system r-build-system)
     (propagated-inputs (list r-rbgl
@@ -8467,12 +8467,12 @@ Valentini (2017) <doi:10.1186/s12859-017-1854-y>).")
   (package
     (name "r-helsinki")
     (version "1.0.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "helsinki" version))
-              (sha256
-               (base32
-                "1hsmxnfzbi8xvqz97rmq225w9prhxc558slmfxg03y5wpjqdpq4a"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "helsinki" version))
+       (sha256
+        (base32 "1hsmxnfzbi8xvqz97rmq225w9prhxc558slmfxg03y5wpjqdpq4a"))))
     (properties `((upstream-name . "helsinki")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -8495,12 +8495,12 @@ Events API, and Helsinki Region Infoshare statistics API.")
   (package
     (name "r-helpersmg")
     (version "6.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HelpersMG" version))
-              (sha256
-               (base32
-                "08rnjklka04d30gs4qms9i3wl8a8qkgvd8x6dsbad8zcr7q4ncbp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HelpersMG" version))
+       (sha256
+        (base32 "08rnjklka04d30gs4qms9i3wl8a8qkgvd8x6dsbad8zcr7q4ncbp"))))
     (properties `((upstream-name . "HelpersMG")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-matrix r-mass r-ggplot2 r-coda))
@@ -8522,12 +8522,12 @@ folder at one time.")
   (package
     (name "r-helminthr")
     (version "1.0.10")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "helminthR" version))
-              (sha256
-               (base32
-                "0ssw0smxc5zx3d189fq8c6kdg6d7db1sd5iblhz54pg41j9fvqhq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "helminthR" version))
+       (sha256
+        (base32 "0ssw0smxc5zx3d189fq8c6kdg6d7db1sd5iblhz54pg41j9fvqhq"))))
     (properties `((upstream-name . "helminthR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -8555,12 +8555,12 @@ geographic location.")
   (package
     (name "r-hellorust")
     (version "1.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hellorust" version))
-              (sha256
-               (base32
-                "075wb9yhkmmcgrwp65795whwl55s939gy2j4sdilgyxp853x9175"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hellorust" version))
+       (sha256
+        (base32 "075wb9yhkmmcgrwp65795whwl55s939gy2j4sdilgyxp853x9175"))))
     (properties `((upstream-name . "hellorust")))
     (build-system r-build-system)
     (inputs (list))
@@ -8581,12 +8581,12 @@ use-case, see the gifski package on CRAN'.")
   (package
     (name "r-hellojavaworld")
     (version "0.0-9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "helloJavaWorld" version))
-              (sha256
-               (base32
-                "1a8yxja54iqdy2k8bicrcx1y3rkgslas03is4v78yhbz42c9fi8s"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "helloJavaWorld" version))
+       (sha256
+        (base32 "1a8yxja54iqdy2k8bicrcx1y3rkgslas03is4v78yhbz42c9fi8s"))))
     (properties `((upstream-name . "helloJavaWorld")))
     (build-system r-build-system)
     (inputs (list openjdk))
@@ -8602,12 +8602,12 @@ file that resides inside an R package.")
   (package
     (name "r-hellno")
     (version "0.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hellno" version))
-              (sha256
-               (base32
-                "1j787rw9hh75bvkckmlz5xkgwc22gd7si3mgjd7v60dd6lykfa88"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hellno" version))
+       (sha256
+        (base32 "1j787rw9hh75bvkckmlz5xkgwc22gd7si3mgjd7v60dd6lykfa88"))))
     (properties `((upstream-name . "hellno")))
     (build-system r-build-system)
     (home-page "https://github.com/petermeissner/hellno")
@@ -8628,12 +8628,12 @@ by default.")
   (package
     (name "r-hellcor")
     (version "1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HellCor" version))
-              (sha256
-               (base32
-                "1bzc2ipm7vw7s849d43lcs0xrk2rs67h223dn9kahqg152mmknza"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HellCor" version))
+       (sha256
+        (base32 "1bzc2ipm7vw7s849d43lcs0xrk2rs67h223dn9kahqg152mmknza"))))
     (properties `((upstream-name . "HellCor")))
     (build-system r-build-system)
     (propagated-inputs (list r-orthopolynom r-fnn r-energy))
@@ -8649,12 +8649,12 @@ Lafaye De Micheaux (2019) <@code{arXiv:1810.10276v4>}.")
   (package
     (name "r-helixvis")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "helixvis" version))
-              (sha256
-               (base32
-                "113rnpnrcnw18ks78fgq79zdrw3kmpzpimlc45gvj0za2fbyci3p"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "helixvis" version))
+       (sha256
+        (base32 "113rnpnrcnw18ks78fgq79zdrw3kmpzpimlc45gvj0za2fbyci3p"))))
     (properties `((upstream-name . "helixvis")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-ggplot2 r-ggforce))
@@ -8673,12 +8673,12 @@ alpha-helical oligopeptides.  See Wadhwa RR, et al. (2018)
   (package
     (name "r-heims")
     (version "0.4.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "heims" version))
-              (sha256
-               (base32
-                "0vnq31jwn09grni4gdhf1hzd87b62as4f65b2qw7ky6mi38ahr5d"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "heims" version))
+       (sha256
+        (base32 "0vnq31jwn09grni4gdhf1hzd87b62as4f65b2qw7ky6mi38ahr5d"))))
     (properties `((upstream-name . "heims")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr
@@ -8703,12 +8703,12 @@ Australia's higher education system, as well as a range of relevant information.
   (package
     (name "r-heemod")
     (version "0.16.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "heemod" version))
-              (sha256
-               (base32
-                "0mwaxm0f6iqh6g85xib0sgc5sbmajnq40pmpsfl13k8nz4igjkb1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "heemod" version))
+       (sha256
+        (base32 "0mwaxm0f6iqh6g85xib0sgc5sbmajnq40pmpsfl13k8nz4igjkb1"))))
     (properties `((upstream-name . "heemod")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -8737,12 +8737,12 @@ Markov models), etc.")
   (package
     (name "r-hedgehog")
     (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hedgehog" version))
-              (sha256
-               (base32
-                "1mvjnm2zlc4pvw9vnhxr0dj1g1sfqvlrnnhcipzfbvr147yan9l5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hedgehog" version))
+       (sha256
+        (base32 "1mvjnm2zlc4pvw9vnhxr0dj1g1sfqvlrnnhcipzfbvr147yan9l5"))))
     (properties `((upstream-name . "hedgehog")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat r-rlang))
@@ -8762,12 +8762,12 @@ cause of bugs, given salient examples when incorrect behaviour occurs.")
   (package
     (name "r-heddlr")
     (version "0.6.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "heddlr" version))
-              (sha256
-               (base32
-                "0ixmcgvfbq4hi3wv1fyzpwacmxmixsw5yq6mq5xygk6ji03m1v23"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "heddlr" version))
+       (sha256
+        (base32 "0ixmcgvfbq4hi3wv1fyzpwacmxmixsw5yq6mq5xygk6ji03m1v23"))))
     (properties `((upstream-name . "heddlr")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml r-utf8 r-rlang))
@@ -8784,12 +8784,12 @@ your data, and combine them for exporting into a single R Markdown document.")
   (package
     (name "r-heda")
     (version "0.1.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HEDA" version))
-              (sha256
-               (base32
-                "0arya76isiaxmgmhl7q93vmga9apmbkq3scgz7zhgnrkd8mkh0i1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HEDA" version))
+       (sha256
+        (base32 "0arya76isiaxmgmhl7q93vmga9apmbkq3scgz7zhgnrkd8mkh0i1"))))
     (properties `((upstream-name . "HEDA")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-rlang r-lubridate r-ggplot2 r-dplyr))
@@ -8808,12 +8808,12 @@ but also accounts for the rate of change of the flow variation.  More details
   (package
     (name "r-heckmanem")
     (version "0.2-0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HeckmanEM" version))
-              (sha256
-               (base32
-                "0fq9hg9if7li9nfhsw5nw7j1z4wy7j9b5wcvcmvgddmfvimb7760"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HeckmanEM" version))
+       (sha256
+        (base32 "0fq9hg9if7li9nfhsw5nw7j1z4wy7j9b5wcvcmvgddmfvimb7760"))))
     (properties `((upstream-name . "HeckmanEM")))
     (build-system r-build-system)
     (propagated-inputs (list r-sampleselection r-performanceanalytics
@@ -8831,12 +8831,12 @@ four possible perturbation schema.")
   (package
     (name "r-heatwaver")
     (version "0.4.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "heatwaveR" version))
-              (sha256
-               (base32
-                "172qg8dgyn5lbwmyq8dxdccxr4aqaq6iixn5dqb4fy99ahgdbhyv"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "heatwaveR" version))
+       (sha256
+        (base32 "172qg8dgyn5lbwmyq8dxdccxr4aqaq6iixn5dqb4fy99ahgdbhyv"))))
     (properties `((upstream-name . "heatwaveR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -8864,12 +8864,12 @@ non-temperature data as well.")
   (package
     (name "r-heatmapflex")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "heatmapFlex" version))
-              (sha256
-               (base32
-                "0va8ac2wf1mzm6zamhfpid3xkm7310c6b695c5wbc705nwijnd9q"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "heatmapFlex" version))
+       (sha256
+        (base32 "0va8ac2wf1mzm6zamhfpid3xkm7310c6b695c5wbc705nwijnd9q"))))
     (properties `((upstream-name . "heatmapFlex")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcolorbrewer r-heatplus r-biobase))
@@ -8890,12 +8890,12 @@ clustered and ordered by a supervised clustering method.")
   (package
     (name "r-heatmapfit")
     (version "2.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "heatmapFit" version))
-              (sha256
-               (base32
-                "1rswp1wp58f21fpyjybcvvmnn53kr54ij83hp05qbvl7yn1fsnrb"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "heatmapFit" version))
+       (sha256
+        (base32 "1rswp1wp58f21fpyjybcvvmnn53kr54ij83hp05qbvl7yn1fsnrb"))))
     (properties `((upstream-name . "heatmapFit")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=heatmapFit")
@@ -8910,12 +8910,12 @@ in Esarey and Pierce (2012) <DOI:10.1093/pan/mps026>.")
   (package
     (name "r-heatex")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "heatex" version))
-              (sha256
-               (base32
-                "0c7bxblq24m80yi24gmrqqlcw8jh0lb749adsh51yr6nzpap6i9n"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "heatex" version))
+       (sha256
+        (base32 "0c7bxblq24m80yi24gmrqqlcw8jh0lb749adsh51yr6nzpap6i9n"))))
     (properties `((upstream-name . "heatex")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=heatex")
@@ -8932,12 +8932,12 @@ range of environmental conditions when wearing various clothing ensembles.")
   (package
     (name "r-heapsofpapers")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "heapsofpapers" version))
-              (sha256
-               (base32
-                "1b88ff4j6rh0qif43iyb12wipkkjmp5qx33qfzgffr5m54df4kfy"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "heapsofpapers" version))
+       (sha256
+        (base32 "1b88ff4j6rh0qif43iyb12wipkkjmp5qx33qfzgffr5m54df4kfy"))))
     (properties `((upstream-name . "heapsofpapers")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -8960,12 +8960,12 @@ up to, and adjusting for files that have already been downloaded.")
   (package
     (name "r-healthyverse")
     (version "1.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "healthyverse" version))
-              (sha256
-               (base32
-                "1h3d8wq6if1nkqc1d3n6y0g7i7xsvx9ci09z3jvhqx62f464ybgm"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "healthyverse" version))
+       (sha256
+        (base32 "1h3d8wq6if1nkqc1d3n6y0g7i7xsvx9ci09z3jvhqx62f464ybgm"))))
     (properties `((upstream-name . "healthyverse")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidydensity
@@ -8995,12 +8995,12 @@ easy to install and load multiple healthyverse packages in a single step.")
   (package
     (name "r-healthyr-ts")
     (version "0.2.10")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "healthyR.ts" version))
-              (sha256
-               (base32
-                "1vn9czpf3byq5mgsyvrasvf063n5r3rn50kvj2hdn23c0dn5jg6l"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "healthyR.ts" version))
+       (sha256
+        (base32 "1vn9czpf3byq5mgsyvrasvf063n5r3rn50kvj2hdn23c0dn5jg6l"))))
     (properties `((upstream-name . "healthyR.ts")))
     (build-system r-build-system)
     (propagated-inputs (list r-workflowsets
@@ -9036,12 +9036,12 @@ that takes the guesswork out of everything.")
   (package
     (name "r-healthyr-data")
     (version "1.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "healthyR.data" version))
-              (sha256
-               (base32
-                "1bbxy7x7q1jn5l48li3pfiqisxrfw87nql20v5c2f06m67mn2mq8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "healthyR.data" version))
+       (sha256
+        (base32 "1bbxy7x7q1jn5l48li3pfiqisxrfw87nql20v5c2f06m67mn2mq8"))))
     (properties `((upstream-name . "healthyR.data")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-janitor r-dplyr))
@@ -9056,12 +9056,12 @@ package.")
   (package
     (name "r-healthyr-ai")
     (version "0.0.13")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "healthyR.ai" version))
-              (sha256
-               (base32
-                "0qck4118f0kg9rfnmjc14qh7kdzvxh28rdlydhz8i5j91a6731a4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "healthyR.ai" version))
+       (sha256
+        (base32 "0qck4118f0kg9rfnmjc14qh7kdzvxh28rdlydhz8i5j91a6731a4"))))
     (properties `((upstream-name . "healthyR.ai")))
     (build-system r-build-system)
     (propagated-inputs (list r-yardstick
@@ -9097,12 +9097,12 @@ takes the guesswork out of everything.")
   (package
     (name "r-healthyr")
     (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "healthyR" version))
-              (sha256
-               (base32
-                "0wlw6sd187sw5ar58c4a5yz9fw0bc044cik1xsq54ipp4xprlnxp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "healthyR" version))
+       (sha256
+        (base32 "0wlw6sd187sw5ar58c4a5yz9fw0bc044cik1xsq54ipp4xprlnxp"))))
     (properties `((upstream-name . "healthyR")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
@@ -9134,12 +9134,12 @@ consistent verb framework that takes the guesswork out of everything.")
   (package
     (name "r-healthfinance")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "healthfinance" version))
-              (sha256
-               (base32
-                "163zhdd5mqp0q872dmr3xzw2ppapnwp46rr7vkkfnglz635nxvpz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "healthfinance" version))
+       (sha256
+        (base32 "163zhdd5mqp0q872dmr3xzw2ppapnwp46rr7vkkfnglz635nxvpz"))))
     (properties `((upstream-name . "healthfinance")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -9165,12 +9165,12 @@ ISBN:9780078025792).")
   (package
     (name "r-healthcare-antitrust")
     (version "0.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "healthcare.antitrust" version))
-              (sha256
-               (base32
-                "0m839fjklx2m52ilpbxpigjl7qphgk0hbi4rvjvx9y8gsp9xfnmd"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "healthcare.antitrust" version))
+       (sha256
+        (base32 "0m839fjklx2m52ilpbxpigjl7qphgk0hbi4rvjvx9y8gsp9xfnmd"))))
     (properties `((upstream-name . "healthcare.antitrust")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -9187,12 +9187,12 @@ Mergers\" <doi:10.1111/ecin.12454>.")
   (package
     (name "r-healthcal")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HealthCal" version))
-              (sha256
-               (base32
-                "03q966d2kyi6x1ka4nmma94y75yj0vz4bk26psgnysvfz0nldfa3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HealthCal" version))
+       (sha256
+        (base32 "03q966d2kyi6x1ka4nmma94y75yj0vz4bk26psgnysvfz0nldfa3"))))
     (properties `((upstream-name . "HealthCal")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -9207,12 +9207,12 @@ body mass index etc.  related to fitness and health of a person.")
   (package
     (name "r-headliner")
     (version "0.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "headliner" version))
-              (sha256
-               (base32
-                "1llq007b032q526csfxxwrrwaxkzgq8wl4g4cr65j8biwwynpaba"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "headliner" version))
+       (sha256
+        (base32 "1llq007b032q526csfxxwrrwaxkzgq8wl4g4cr65j8biwwynpaba"))))
     (properties `((upstream-name . "headliner")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -9235,12 +9235,12 @@ package.")
   (package
     (name "r-hdtweedie")
     (version "1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HDtweedie" version))
-              (sha256
-               (base32
-                "0m8xg6fkn81ni1npfadhv2b2zy7nazg46217hr3xw9y53d1a90gk"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HDtweedie" version))
+       (sha256
+        (base32 "0m8xg6fkn81ni1npfadhv2b2zy7nazg46217hr3xw9y53d1a90gk"))))
     (properties `((upstream-name . "HDtweedie")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -9258,12 +9258,12 @@ elastic net methods.")
   (package
     (name "r-hdtsa")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HDTSA" version))
-              (sha256
-               (base32
-                "1a2bc86047mla0dr89sf1xrin47v0mmdz6j5sil258hjxrl434hy"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HDTSA" version))
+       (sha256
+        (base32 "1a2bc86047mla0dr89sf1xrin47v0mmdz6j5sil258hjxrl434hy"))))
     (properties `((upstream-name . "HDTSA")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich r-rcppeigen r-rcpp r-clime))
@@ -9285,12 +9285,12 @@ Yao and Zhou (2017) <doi:10.1093/biomet/asw066>.")
   (package
     (name "r-hdstim")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HDStIM" version))
-              (sha256
-               (base32
-                "0v43lwszxmka5li6mp10i2c6zq4si5hm2qsb27lib5gq5cxm23r7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HDStIM" version))
+       (sha256
+        (base32 "0v43lwszxmka5li6mp10i2c6zq4si5hm2qsb27lib5gq5cxm23r7"))))
     (properties `((upstream-name . "HDStIM")))
     (build-system r-build-system)
     (propagated-inputs (list r-uwot
@@ -9324,12 +9324,12 @@ responses and generating diagnostic plots.")
   (package
     (name "r-hdspatialscan")
     (version "1.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HDSpatialScan" version))
-              (sha256
-               (base32
-                "1hwqdwr4jl887sgnjwq3gmxjhk6zz45nasvy3x7i7rmrqylxig60"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HDSpatialScan" version))
+       (sha256
+        (base32 "1hwqdwr4jl887sgnjwq3gmxjhk6zz45nasvy3x7i7rmrqylxig60"))))
     (properties `((upstream-name . "HDSpatialScan")))
     (build-system r-build-system)
     (propagated-inputs (list r-teachingdemos
@@ -9366,12 +9366,12 @@ Sophie DABO-NIANG and Michael GENIN (2023) <doi:10.1093/jrsssc/qlad017>.")
   (package
     (name "r-hdsinrdata")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HDSinRdata" version))
-              (sha256
-               (base32
-                "071ywrxw2qhiqb7djd71y20zw5mja6c7abkkrk04nsdsl9m98793"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HDSinRdata" version))
+       (sha256
+        (base32 "071ywrxw2qhiqb7djd71y20zw5mja6c7abkkrk04nsdsl9m98793"))))
     (properties `((upstream-name . "HDSinRdata")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=HDSinRdata")
@@ -9386,12 +9386,12 @@ Alice (2023) \"Health Data Science in R\"
   (package
     (name "r-hdshop")
     (version "0.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HDShOP" version))
-              (sha256
-               (base32
-                "18i17vv71wc0rqfl2i9bcfl1ry3bd61x9nd6g57x37ggjp7i6j5k"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HDShOP" version))
+       (sha256
+        (base32 "18i17vv71wc0rqfl2i9bcfl1ry3bd61x9nd6g57x37ggjp7i6j5k"))))
     (properties `((upstream-name . "HDShOP")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack))
@@ -9417,12 +9417,12 @@ efficient frontier recently developed by Bauder et al. (2021)
   (package
     (name "r-hds")
     (version "0.8.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hds" version))
-              (sha256
-               (base32
-                "1smg5ixrl7f2x3wn7s5i26dyadn5sigpf4jsk236z1bhnz617ax4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hds" version))
+       (sha256
+        (base32 "1smg5ixrl7f2x3wn7s5i26dyadn5sigpf4jsk236z1bhnz617ax4"))))
     (properties `((upstream-name . "hds")))
     (build-system r-build-system)
     (propagated-inputs (list r-tensor r-survival))
@@ -9438,12 +9438,12 @@ summary and its standard errors, as described in Liang and Heagerty (2016)
   (package
     (name "r-hdrfa")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HDRFA" version))
-              (sha256
-               (base32
-                "1vgxcm9lk83qhn0dwj1i3b1a7x9pl1f2hlwjfnskgwmcvzlyh12l"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HDRFA" version))
+       (sha256
+        (base32 "1vgxcm9lk83qhn0dwj1i3b1a7x9pl1f2hlwjfnskgwmcvzlyh12l"))))
     (properties `((upstream-name . "HDRFA")))
     (build-system r-build-system)
     (propagated-inputs (list r-quantreg r-pracma))
@@ -9467,12 +9467,12 @@ Analysis (QFA) method by Chen et al. (2021) and He et al. (2023).")
   (package
     (name "r-hdpglm")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hdpGLM" version))
-              (sha256
-               (base32
-                "1kan4nm4kd40xqagkly4pvahra0xsdlr5wyxgm567c22fzwp7khg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hdpGLM" version))
+       (sha256
+        (base32 "1kan4nm4kd40xqagkly4pvahra0xsdlr5wyxgm567c22fzwp7khg"))))
     (properties `((upstream-name . "hdpGLM")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyverse
@@ -9513,12 +9513,12 @@ Modeling Context-Dependent Latent Heterogeneity, Political Analysis
   (package
     (name "r-hdpca")
     (version "1.1.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hdpca" version))
-              (sha256
-               (base32
-                "0xcakpnp363lz98y3h87p1yhj0gs3f94gx2i8kz4mcizn1ll5xbd"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hdpca" version))
+       (sha256
+        (base32 "0xcakpnp363lz98y3h87p1yhj0gs3f94gx2i8kz4mcizn1ll5xbd"))))
     (properties `((upstream-name . "hdpca")))
     (build-system r-build-system)
     (propagated-inputs (list r-lpsolve r-boot))
@@ -9537,12 +9537,12 @@ the shrinkage bias in the predicted PC scores.  Dey, R. and Lee, S. (2019)
   (package
     (name "r-hdoutliers")
     (version "1.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HDoutliers" version))
-              (sha256
-               (base32
-                "0vc3g36cghs2ln8a3pb344b3vw1jpz9r8ld77ldd898vg9rhkq2m"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HDoutliers" version))
+       (sha256
+        (base32 "0vc3g36cghs2ln8a3pb344b3vw1jpz9r8ld77ldd898vg9rhkq2m"))))
     (properties `((upstream-name . "HDoutliers")))
     (build-system r-build-system)
     (propagated-inputs (list r-mclust r-fnn r-factominer))
@@ -9562,12 +9562,12 @@ uses probabilities to determine outliers.")
   (package
     (name "r-hdomdesign")
     (version "1.0-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HDOMDesign" version))
-              (sha256
-               (base32
-                "1wfq4w73dkkmfwn3n9rwpjlpvm1ak76dv9ymh6zqfls5whdmp59g"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HDOMDesign" version))
+       (sha256
+        (base32 "1wfq4w73dkkmfwn3n9rwpjlpvm1ak76dv9ymh6zqfls5whdmp59g"))))
     (properties `((upstream-name . "HDOMDesign")))
     (build-system r-build-system)
     (propagated-inputs (list r-hadamardr))
@@ -9583,12 +9583,12 @@ Kronecker product of sub-Hadamard matrices.")
   (package
     (name "r-hdnom")
     (version "6.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hdnom" version))
-              (sha256
-               (base32
-                "0i6wzffi5jww4wjp3f7vgnb8b9zfpsam2wyz9p7376r297j3hv66"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hdnom" version))
+       (sha256
+        (base32 "0i6wzffi5jww4wjp3f7vgnb8b9zfpsam2wyz9p7376r297j3hv66"))))
     (properties `((upstream-name . "hdnom")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -9613,12 +9613,12 @@ calibration, and comparison for high-dimensional data.")
   (package
     (name "r-hdmt")
     (version "1.0.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HDMT" version))
-              (sha256
-               (base32
-                "11wr7n6gj75k3a339h9hm167pni3vdbbnwwblc2b0wfljxsif6hf"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HDMT" version))
+       (sha256
+        (base32 "11wr7n6gj75k3a339h9hm167pni3vdbbnwwblc2b0wfljxsif6hf"))))
     (properties `((upstream-name . "HDMT")))
     (build-system r-build-system)
     (propagated-inputs (list r-qvalue r-fdrtool))
@@ -9649,12 +9649,12 @@ challenge.  Methods used in the package refer to James Y. Dai, Janet L. Stanford
   (package
     (name "r-hdmfa")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HDMFA" version))
-              (sha256
-               (base32
-                "01gsz862m038y0b4y5aqq08n5514cjz9lxvqh0ybv2rd4gjmvnxs"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HDMFA" version))
+       (sha256
+        (base32 "01gsz862m038y0b4y5aqq08n5514cjz9lxvqh0ybv2rd4gjmvnxs"))))
     (properties `((upstream-name . "HDMFA")))
     (build-system r-build-system)
     (propagated-inputs (list r-rspectra r-mass))
@@ -9683,12 +9683,12 @@ determining the pair of factor numbers are also given.")
   (package
     (name "r-hdmed")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hdmed" version))
-              (sha256
-               (base32
-                "19n1m8wrzwf4lvmfw1bgyhymxv79irs341yfnhlc8znq4nm35yfh"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hdmed" version))
+       (sha256
+        (base32 "19n1m8wrzwf4lvmfw1bgyhymxv79irs341yfnhlc8znq4nm35yfh"))))
     (properties `((upstream-name . "hdmed")))
     (build-system r-build-system)
     (propagated-inputs (list r-ncvreg
@@ -9731,12 +9731,12 @@ functions.")
   (package
     (name "r-hdme")
     (version "0.6.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hdme" version))
-              (sha256
-               (base32
-                "04s9r29yjirkzki6drcyglh2hd712habzdgpw0fnf3cy9960wv4v"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hdme" version))
+       (sha256
+        (base32 "04s9r29yjirkzki6drcyglh2hd712habzdgpw0fnf3cy9960wv4v"))))
     (properties `((upstream-name . "hdme")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -9763,12 +9763,12 @@ Dantzig Selector for the case of measurement error (Sorensen et al. (2018)
   (package
     (name "r-hdm")
     (version "0.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hdm" version))
-              (sha256
-               (base32
-                "1kibfc1fc94y1vk06nn0yfvpdzcm30a1jn89lqqfma70x5jpa25s"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hdm" version))
+       (sha256
+        (base32 "1kibfc1fc94y1vk06nn0yfvpdzcm30a1jn89lqqfma70x5jpa25s"))))
     (properties `((upstream-name . "hdm")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-glmnet r-ggplot2 r-formula r-checkmate))
@@ -9792,12 +9792,12 @@ choice of the penalty.  Chernozhukov, Hansen, Spindler (2016)
   (package
     (name "r-hdlsskst")
     (version "2.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HDLSSkST" version))
-              (sha256
-               (base32
-                "19snvpgiq8kxzqv6yimzn7nfxkch2xkm0sk41m7g4xwr412dn49j"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HDLSSkST" version))
+       (sha256
+        (base32 "19snvpgiq8kxzqv6yimzn7nfxkch2xkm0sk41m7g4xwr412dn49j"))))
     (properties `((upstream-name . "HDLSSkST")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -9827,12 +9827,12 @@ Sture Holm (1979) <doi:10.2307/4615733>; Yoav Benjamini and Yosef Hochberg
   (package
     (name "r-hdjm")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HDJM" version))
-              (sha256
-               (base32
-                "1vv1q7hdq12wh5nbr8zh1f8fzx5caaq4b39wqy99mxpx8cnsb87n"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HDJM" version))
+       (sha256
+        (base32 "1vv1q7hdq12wh5nbr8zh1f8fzx5caaq4b39wqy99mxpx8cnsb87n"))))
     (properties `((upstream-name . "HDJM")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-statmod r-rcppensmallen
@@ -9856,12 +9856,12 @@ approximation method.")
   (package
     (name "r-hdivar")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hdiVAR" version))
-              (sha256
-               (base32
-                "1vvsi1irnbjnyliz9wh783kbjkyz8agfbrx10436fsf8x33d1qs8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hdiVAR" version))
+       (sha256
+        (base32 "1vvsi1irnbjnyliz9wh783kbjkyz8agfbrx10436fsf8x33d1qs8"))))
     (properties `((upstream-name . "hdiVAR")))
     (build-system r-build-system)
     (propagated-inputs (list r-lpsolve r-abind))
@@ -9883,12 +9883,12 @@ Statistica Sinica.")
   (package
     (name "r-hdir")
     (version "1.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HDiR" version))
-              (sha256
-               (base32
-                "1qwd3y9645m8v2gdrb4xjpq86ixs9rgrw7iv3m5lm7nnf87qm350"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HDiR" version))
+       (sha256
+        (base32 "1qwd3y9645m8v2gdrb4xjpq86ixs9rgrw7iv3m5lm7nnf87qm350"))))
     (properties `((upstream-name . "HDiR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgl r-npcirc r-movmf r-directional r-circular))
@@ -9909,12 +9909,12 @@ occurrences.")
   (package
     (name "r-hdinterval")
     (version "0.2.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HDInterval" version))
-              (sha256
-               (base32
-                "1xlljhzd30mi7pic7q55h7hv0bccxfc2g32piv8jx830svnz01xv"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HDInterval" version))
+       (sha256
+        (base32 "1xlljhzd30mi7pic7q55h7hv0bccxfc2g32piv8jx830svnz01xv"))))
     (properties `((upstream-name . "HDInterval")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=HDInterval")
@@ -9930,12 +9930,12 @@ objects, and functions.")
   (package
     (name "r-hdimpute")
     (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hdImpute" version))
-              (sha256
-               (base32
-                "1gs3205z3v7zvr2xqi4jv8xpmngpw41nk0kbz7wx3g4a5152hagq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hdImpute" version))
+       (sha256
+        (base32 "1gs3205z3v7zvr2xqi4jv8xpmngpw41nk0kbz7wx3g4a5152hagq"))))
     (properties `((upstream-name . "hdImpute")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -9964,12 +9964,12 @@ forests.  See Waggoner (2023) <doi:10.1007/s00180-023-01325-9> for more on
   (package
     (name "r-hdi")
     (version "0.1-9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hdi" version))
-              (sha256
-               (base32
-                "0k35zqz58lcx5p7ijhks4j7kqp553zggvrx4lh6k4s85lp601x22"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hdi" version))
+       (sha256
+        (base32 "0k35zqz58lcx5p7ijhks4j7kqp553zggvrx4lh6k4s85lp601x22"))))
     (properties `((upstream-name . "hdi")))
     (build-system r-build-system)
     (propagated-inputs (list r-scalreg r-mass r-linprog r-glmnet))
@@ -9984,12 +9984,12 @@ models.")
   (package
     (name "r-hdglm")
     (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HDGLM" version))
-              (sha256
-               (base32
-                "0a5lnh3780lsczj8339sp97c5y64a2gsdf77i56fvpxpphq0dnf8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HDGLM" version))
+       (sha256
+        (base32 "0a5lnh3780lsczj8339sp97c5y64a2gsdf77i56fvpxpphq0dnf8"))))
     (properties `((upstream-name . "HDGLM")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -10004,12 +10004,12 @@ models.")
   (package
     (name "r-hdfqlr")
     (version "0.6-2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hdfqlr" version))
-              (sha256
-               (base32
-                "07lfr0vblahh3xhckwmzbmlja0janb73qkl4663mqgp6xk21jmi1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hdfqlr" version))
+       (sha256
+        (base32 "07lfr0vblahh3xhckwmzbmlja0janb73qkl4663mqgp6xk21jmi1"))))
     (properties `((upstream-name . "hdfqlr")))
     (build-system r-build-system)
     (inputs (list))
@@ -10028,12 +10028,12 @@ more information, see the reference manual
   (package
     (name "r-hdflex")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hdflex" version))
-              (sha256
-               (base32
-                "0423grfw56pwjh3km4ib55vgrzl5kk23j3g8f9d96jyjzkkxnbmi"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hdflex" version))
+       (sha256
+        (base32 "0423grfw56pwjh3km4ib55vgrzl5kk23j3g8f9d96jyjzkkxnbmi"))))
     (properties `((upstream-name . "hdflex")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -10058,12 +10058,12 @@ forecast.  The methods are explained in detail in Adaemmer et al. (2023)
   (package
     (name "r-hdf5r-extra")
     (version "0.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hdf5r.Extra" version))
-              (sha256
-               (base32
-                "0fpkgq845k2z63i0yl160hvnv7x857k81likdgasbw1x85rlihaf"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hdf5r.Extra" version))
+       (sha256
+        (base32 "0fpkgq845k2z63i0yl160hvnv7x857k81likdgasbw1x85rlihaf"))))
     (properties `((upstream-name . "hdf5r.Extra")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -10085,12 +10085,12 @@ writing R objects to HDF5 formats follow the specification of @code{AnnData}
   (package
     (name "r-hddplot")
     (version "0.59-2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hddplot" version))
-              (sha256
-               (base32
-                "1q7mz7yxb4qvprj431kxv46cf9myckkycfbi6nzbkqw8mpwg02qy"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hddplot" version))
+       (sha256
+        (base32 "1q7mz7yxb4qvprj431kxv46cf9myckkycfbi6nzbkqw8mpwg02qy"))))
     (properties `((upstream-name . "hddplot")))
     (build-system r-build-system)
     (propagated-inputs (list r-multtest r-mass))
@@ -10112,12 +10112,12 @@ implements, and extends, methods described in J.H. Maindonald and C.J. Burden
   (package
     (name "r-hddesign")
     (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HDDesign" version))
-              (sha256
-               (base32
-                "1jim4h9bwn8r637va7m81kwwsfwyzs9pzn5a9i7c8xz8b1x191bj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HDDesign" version))
+       (sha256
+        (base32 "1jim4h9bwn8r637va7m81kwwsfwyzs9pzn5a9i7c8xz8b1x191bj"))))
     (properties `((upstream-name . "HDDesign")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=HDDesign")
@@ -10137,12 +10137,12 @@ for three design methods.")
   (package
     (name "r-hdd")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hdd" version))
-              (sha256
-               (base32
-                "1xl5p56qrnvli2ga1p8xyvgsp17jyjm0xng5prigyngnpj327qpk"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hdd" version))
+       (sha256
+        (base32 "1xl5p56qrnvli2ga1p8xyvgsp17jyjm0xng5prigyngnpj327qpk"))))
     (properties `((upstream-name . "hdd")))
     (build-system r-build-system)
     (propagated-inputs (list r-readr r-fst r-dreamerr r-data-table))
@@ -10160,12 +10160,12 @@ the syntax for manipulation is similar to data.table'.  Operations are performed
   (package
     (name "r-hdcurves")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HDCurves" version))
-              (sha256
-               (base32
-                "1656ia0qn4yrbkcrpjiyqq72fbvb088d07ma7kchvg875nzwj42v"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HDCurves" version))
+       (sha256
+        (base32 "1656ia0qn4yrbkcrpjiyqq72fbvb088d07ma7kchvg875nzwj42v"))))
     (properties `((upstream-name . "HDCurves")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=HDCurves")
@@ -10181,12 +10181,12 @@ a non-hierarchical setting the package produces a single derivative curve.")
   (package
     (name "r-hdcpdetect")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HDcpDetect" version))
-              (sha256
-               (base32
-                "0ai35d9df5pmva52sb1rr20f11h0mbal6d179g865b7w6n90kfr1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HDcpDetect" version))
+       (sha256
+        (base32 "0ai35d9df5pmva52sb1rr20f11h0mbal6d179g865b7w6n90kfr1"))))
     (properties `((upstream-name . "HDcpDetect")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -10212,12 +10212,12 @@ large number of attributes but no more than a few hundred observations.")
   (package
     (name "r-hdclust")
     (version "1.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HDclust" version))
-              (sha256
-               (base32
-                "18l4qp261gj3kscfxs3s03kmb9y5ml31vnpgpm1iy125bks4mr2y"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HDclust" version))
+       (sha256
+        (base32 "18l4qp261gj3kscfxs3s03kmb9y5ml31vnpgpm1iy125bks4mr2y"))))
     (properties `((upstream-name . "HDclust")))
     (build-system r-build-system)
     (propagated-inputs (list r-rtsne r-rcppprogress r-rcpp))
@@ -10236,12 +10236,12 @@ and Jia Li (2017) <http://jmlr.org/papers/v18/16-342.html>.")
   (package
     (name "r-hdclassif")
     (version "2.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HDclassif" version))
-              (sha256
-               (base32
-                "0npdnp86m71bsp4096j3yfcvr702ghhvdvxpd2m7lbnc8g3v0sdp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HDclassif" version))
+       (sha256
+        (base32 "0npdnp86m71bsp4096j3yfcvr702ghhvdvxpd2m7lbnc8g3v0sdp"))))
     (properties `((upstream-name . "HDclassif")))
     (build-system r-build-system)
     (propagated-inputs (list r-rarpack r-mass))
@@ -10259,12 +10259,12 @@ model.")
   (package
     (name "r-hdci")
     (version "1.0-2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HDCI" version))
-              (sha256
-               (base32
-                "0wxbv54kbygymhh4r7052vnbj603c1kya01ykvmqzzkjyyfzidkz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HDCI" version))
+       (sha256
+        (base32 "0wxbv54kbygymhh4r7052vnbj603c1kya01ykvmqzzkjyyfzidkz"))))
     (properties `((upstream-name . "HDCI")))
     (build-system r-build-system)
     (propagated-inputs (list r-slam
@@ -10288,12 +10288,12 @@ are Lasso, Lasso+OLS, Lasso partial ridge, Lasso+OLS partial ridge.")
   (package
     (name "r-hdcate")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hdcate" version))
-              (sha256
-               (base32
-                "1jv6y38lzvm75s44n1pjvkkf5xcvrvclil318gvx54b16hvgggcg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hdcate" version))
+       (sha256
+        (base32 "1jv6y38lzvm75s44n1pjvkkf5xcvrvclil318gvx54b16hvgggcg"))))
     (properties `((upstream-name . "hdcate")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-locpol r-kernsmooth r-hdm r-caret))
@@ -10322,12 +10322,12 @@ misspecified (but not both).  This package is based on the paper by Fan et al.,
   (package
     (name "r-hdbrr")
     (version "1.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HDBRR" version))
-              (sha256
-               (base32
-                "03jl1m099z6gj2ipi7rnjnrd2rmk4zs54332rwlqyf40dv7ndbz1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HDBRR" version))
+       (sha256
+        (base32 "03jl1m099z6gj2ipi7rnjnrd2rmk4zs54332rwlqyf40dv7ndbz1"))))
     (properties `((upstream-name . "HDBRR")))
     (build-system r-build-system)
     (propagated-inputs (list r-numderiv r-mass r-bigstatsr))
@@ -10344,12 +10344,12 @@ QR decomposition for the posterior computation.")
   (package
     (name "r-hdbm")
     (version "0.9.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hdbm" version))
-              (sha256
-               (base32
-                "0lvaica195chl6bb10wvvr7fbmh8b954fpxcm9r0gyp0d0i2a2w4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hdbm" version))
+       (sha256
+        (base32 "0lvaica195chl6bb10wvvr7fbmh8b954fpxcm9r0gyp0d0i2a2w4"))))
     (properties `((upstream-name . "hdbm")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -10372,12 +10372,12 @@ continuous shrinkage priors on the effects.")
   (package
     (name "r-hdbinseg")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hdbinseg" version))
-              (sha256
-               (base32
-                "0q5lfczymrd4ln04lbdysncx6ylcsgrk69mhvm7jjk7pybrpm9wq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hdbinseg" version))
+       (sha256
+        (base32 "0q5lfczymrd4ln04lbdysncx6ylcsgrk69mhvm7jjk7pybrpm9wq"))))
     (properties `((upstream-name . "hdbinseg")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-iterators r-foreach
@@ -10396,12 +10396,12 @@ described in Cho and Fryzlewicz (2014) <doi:10.1111/rssb.12079> and Cho (2016)
   (package
     (name "r-hda")
     (version "0.2-14")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hda" version))
-              (sha256
-               (base32
-                "0azfxyws7yslcqplfddmdp5ngk91j5h7llvrg77yh5z0kkd09j1b"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hda" version))
+       (sha256
+        (base32 "0azfxyws7yslcqplfddmdp5ngk91j5h7llvrg77yh5z0kkd09j1b"))))
     (properties `((upstream-name . "hda")))
     (build-system r-build-system)
     (propagated-inputs (list r-e1071))
@@ -10416,12 +10416,12 @@ classification if the covariance matrices of the classes are unequal.")
   (package
     (name "r-hcv")
     (version "1.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HCV" version))
-              (sha256
-               (base32
-                "00ry36w2v4h3vkf2jq3djcma23xflr7fx7icy2vzwk9ffnmzvpxd"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HCV" version))
+       (sha256
+        (base32 "00ry36w2v4h3vkf2jq3djcma23xflr7fx7icy2vzwk9ffnmzvpxd"))))
     (properties `((upstream-name . "HCV")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp
@@ -10451,12 +10451,12 @@ to report cluster members are also provided.")
   (package
     (name "r-hctrial")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hctrial" version))
-              (sha256
-               (base32
-                "19li8i8hx0r3b63q80cnj6pr72rdbmykxq0kcfbn4azq3sdd046y"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hctrial" version))
+       (sha256
+        (base32 "19li8i8hx0r3b63q80cnj6pr72rdbmykxq0kcfbn4azq3sdd046y"))))
     (properties `((upstream-name . "hctrial")))
     (build-system r-build-system)
     (propagated-inputs (list r-genbinomapps r-clinfun))
@@ -10473,12 +10473,12 @@ controls.")
   (package
     (name "r-hctr")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HCTR" version))
-              (sha256
-               (base32
-                "1hg8mpallwxpmamk6q8x87w5hlqqwvbahfw5zmr9pisiagbwcsay"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HCTR" version))
+       (sha256
+        (base32 "1hg8mpallwxpmamk6q8x87w5hlqqwvbahfw5zmr9pisiagbwcsay"))))
     (properties `((upstream-name . "HCTR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-ncvreg r-mass r-harmonicmeanp r-glmnet))
@@ -10503,12 +10503,12 @@ provided in the multi-split algorithm.")
   (package
     (name "r-hctdesign")
     (version "0.7.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HCTDesign" version))
-              (sha256
-               (base32
-                "1nncyyw1dlbdl9f1pncwa9xdqrd7w2aw4ghnf01vwyq0m7pj90l1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HCTDesign" version))
+       (sha256
+        (base32 "1nncyyw1dlbdl9f1pncwa9xdqrd7w2aw4ghnf01vwyq0m7pj90l1"))))
     (properties `((upstream-name . "HCTDesign")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -10533,12 +10533,12 @@ Li (2020) <doi:10.1080/10543406.2019.1684305>.")
   (package
     (name "r-hct")
     (version "0.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HCT" version))
-              (sha256
-               (base32
-                "18k6p9y3vl39mxbvdjanyj3w74jqy2rym6rdbfrx5crvqm9k8hcp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HCT" version))
+       (sha256
+        (base32 "18k6p9y3vl39mxbvdjanyj3w74jqy2rym6rdbfrx5crvqm9k8hcp"))))
     (properties `((upstream-name . "HCT")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstan))
@@ -10555,12 +10555,12 @@ estimate that takes into account the among trial variation.")
   (package
     (name "r-hcr")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HCR" version))
-              (sha256
-               (base32
-                "14s46dyw3ifp3pwwlcwbbl47i6hy2whjj1n65i28am5a33nycgha"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HCR" version))
+       (sha256
+        (base32 "14s46dyw3ifp3pwwlcwbbl47i6hy2whjj1n65i28am5a33nycgha"))))
     (properties `((upstream-name . "HCR")))
     (build-system r-build-system)
     (propagated-inputs (list r-data-table))
@@ -10582,12 +10582,12 @@ description of some of our methods.")
   (package
     (name "r-hcmodelsets")
     (version "1.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HCmodelSets" version))
-              (sha256
-               (base32
-                "0jchr8ncjpl2ljwf09cmpv679vdla11r1vkylhqaacdp1zdb93w6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HCmodelSets" version))
+       (sha256
+        (base32 "0jchr8ncjpl2ljwf09cmpv679vdla11r1vkylhqaacdp1zdb93w6"))))
     (properties `((upstream-name . "HCmodelSets")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-mvtnorm r-ggplot2))
@@ -10608,12 +10608,12 @@ the proportional hazards model fitted by partial likelihood.")
   (package
     (name "r-hclust1d")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hclust1d" version))
-              (sha256
-               (base32
-                "1cari4ms1j5x2i5m9yd50j7alf18k7z053yhqbck0hs2mck9jx86"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hclust1d" version))
+       (sha256
+        (base32 "1cari4ms1j5x2i5m9yd50j7alf18k7z053yhqbck0hs2mck9jx86"))))
     (properties `((upstream-name . "hclust1d")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -10630,12 +10630,12 @@ complexity is paired with an efficient C++ implementation.")
   (package
     (name "r-hcidata")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hcidata" version))
-              (sha256
-               (base32
-                "16qzll0rhfc6szi9y5hxycq5462jm78kla70fnv1sqw7n34pvpg5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hcidata" version))
+       (sha256
+        (base32 "16qzll0rhfc6szi9y5hxycq5462jm78kla70fnv1sqw7n34pvpg5"))))
     (properties `((upstream-name . "hcidata")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack))
@@ -10659,12 +10659,12 @@ Larsen et al. (2019) <doi:10.1145/3338286.3340115>; Lilija et al. (2019)
   (package
     (name "r-hchinamap")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hchinamap" version))
-              (sha256
-               (base32
-                "1pia593g50zf3286f9g51slkvrpj1iy7lws9d7a3nqgb2v3yji1y"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hchinamap" version))
+       (sha256
+        (base32 "1pia593g50zf3286f9g51slkvrpj1iy7lws9d7a3nqgb2v3yji1y"))))
     (properties `((upstream-name . "hchinamap")))
     (build-system r-build-system)
     (propagated-inputs (list r-htmlwidgets))
@@ -10683,12 +10683,12 @@ Nine-dotted line, South Tibet, Hong Kong, Macao and Taiwan.")
   (package
     (name "r-hce")
     (version "0.5.8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hce" version))
-              (sha256
-               (base32
-                "15a7hbra5ian5bs60x675qsf2qgvaxl04nn5m6np11iswkb31dm1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hce" version))
+       (sha256
+        (base32 "15a7hbra5ian5bs60x675qsf2qgvaxl04nn5m6np11iswkb31dm1"))))
     (properties `((upstream-name . "hce")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -10704,12 +10704,12 @@ analysis method.  See Gasparyan SB et al (2022)
   (package
     (name "r-hcandersenr")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hcandersenr" version))
-              (sha256
-               (base32
-                "0r8z8kb9hwvgcsxbd7arbmqclhwlbcjpnf3p9mp5vgyxm84iz515"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hcandersenr" version))
+       (sha256
+        (base32 "0r8z8kb9hwvgcsxbd7arbmqclhwlbcjpnf3p9mp5vgyxm84iz515"))))
     (properties `((upstream-name . "hcandersenr")))
     (build-system r-build-system)
     (home-page "https://github.com/EmilHvitfeldt/hcandersenr")
@@ -10723,12 +10723,12 @@ German, Danish, English, Spanish and French.")
   (package
     (name "r-hbv-ianigla")
     (version "0.2.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HBV.IANIGLA" version))
-              (sha256
-               (base32
-                "1ngvw17k4i4cxdr59fsbm437fn1wqxjz7zn1l6aciygy3rlcncw9"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HBV.IANIGLA" version))
+       (sha256
+        (base32 "1ngvw17k4i4cxdr59fsbm437fn1wqxjz7zn1l6aciygy3rlcncw9"))))
     (properties `((upstream-name . "HBV.IANIGLA")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -10749,12 +10749,12 @@ and debris covered glacier melt simulations.")
   (package
     (name "r-hbstm")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HBSTM" version))
-              (sha256
-               (base32
-                "1rw0sav1xrw5sraah3yhw5ypyf99pi9h323nf02qidqfzr9xb214"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HBSTM" version))
+       (sha256
+        (base32 "1rw0sav1xrw5sraah3yhw5ypyf99pi9h323nf02qidqfzr9xb214"))))
     (properties `((upstream-name . "HBSTM")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-maps r-fbasics))
@@ -10771,12 +10771,12 @@ models.")
   (package
     (name "r-hbsae")
     (version "1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hbsae" version))
-              (sha256
-               (base32
-                "0fg782gxivkkwhqvxf09j1q20f2dqm7bd1y9bp99fy7mg88zp0gn"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hbsae" version))
+       (sha256
+        (base32 "0fg782gxivkkwhqvxf09j1q20f2dqm7bd1y9bp99fy7mg88zp0gn"))))
     (properties `((upstream-name . "hbsae")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix))
@@ -10798,12 +10798,12 @@ level, and to graphically compare different sets of small area estimates.")
   (package
     (name "r-hbmem")
     (version "0.3-4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hbmem" version))
-              (sha256
-               (base32
-                "0qhxc784zhilxhijlsykl10cqlxk9ll8m2cz9s1cmz76hlvrn0y9"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hbmem" version))
+       (sha256
+        (base32 "0qhxc784zhilxhijlsykl10cqlxk9ll8m2cz9s1cmz76hlvrn0y9"))))
     (properties `((upstream-name . "hbmem")))
     (build-system r-build-system)
     (home-page "https://pcn.psychology.msstate.edu/")
@@ -10818,12 +10818,12 @@ model to recognition memory confidence-ratings data.")
   (package
     (name "r-hbim")
     (version "1.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hbim" version))
-              (sha256
-               (base32
-                "1wgzxmbdzigh9q6q2s4vfh58p8whmyp0jckfga1li5cibqbvpaf0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hbim" version))
+       (sha256
+        (base32 "1wgzxmbdzigh9q6q2s4vfh58p8whmyp0jckfga1li5cibqbvpaf0"))))
     (properties `((upstream-name . "hbim")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm))
@@ -10840,12 +10840,12 @@ Uses Hill models for each component which are combined under Bliss independence.
   (package
     (name "r-hbbr")
     (version "1.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hbbr" version))
-              (sha256
-               (base32
-                "09sph4vliyb63pd0abq02ix5wz373r70kgldw44fm279zq4z772h"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hbbr" version))
+       (sha256
+        (base32 "09sph4vliyb63pd0abq02ix5wz373r70kgldw44fm279zq4z772h"))))
     (properties `((upstream-name . "hbbr")))
     (build-system r-build-system)
     (propagated-inputs (list r-r2jags))
@@ -10862,12 +10862,12 @@ al. (2019) <DOI:10.1080/19466315.2018.1527248>.")
   (package
     (name "r-hbayesdm")
     (version "1.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hBayesDM" version))
-              (sha256
-               (base32
-                "1vy1kaffviidhil39n7k2fr5rjgzkhkaj1r2nhmp908snq8nhf2m"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hBayesDM" version))
+       (sha256
+        (base32 "1vy1kaffviidhil39n7k2fr5rjgzkhkaj1r2nhmp908snq8nhf2m"))))
     (properties `((upstream-name . "hBayesDM")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -10891,12 +10891,12 @@ various computational models with a single line of coding (Ahn et al., 2017)
   (package
     (name "r-hbamr")
     (version "1.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hbamr" version))
-              (sha256
-               (base32
-                "0c70gizc5q4dg6by6smsh21v0am3hmskcx6lmb8mscid3q1gmbm5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hbamr" version))
+       (sha256
+        (base32 "0c70gizc5q4dg6by6smsh21v0am3hmskcx6lmb8mscid3q1gmbm5"))))
     (properties `((upstream-name . "hbamr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -10935,12 +10935,12 @@ The default model is described in BÃ¸lstad (2023) <doi:10.1017/pan.2023.18>.")
   (package
     (name "r-hbal")
     (version "1.2.8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hbal" version))
-              (sha256
-               (base32
-                "15id1r3h3h5pv0yahkcgzav8qhacha4wn688p7hmxpsq84d63xky"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hbal" version))
+       (sha256
+        (base32 "15id1r3h3h5pv0yahkcgzav8qhacha4wn688p7hmxpsq84d63xky"))))
     (properties `((upstream-name . "hbal")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -10966,12 +10966,12 @@ cross-validation to select variable penalties for the balancing conditions.")
   (package
     (name "r-hazer")
     (version "1.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hazer" version))
-              (sha256
-               (base32
-                "1d1qj6mamgxlvxq2hjik69zfzackjz5819iss98jf5gdbdngw41x"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hazer" version))
+       (sha256
+        (base32 "1d1qj6mamgxlvxq2hjik69zfzackjz5819iss98jf5gdbdngw41x"))))
     (properties `((upstream-name . "hazer")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -10992,12 +10992,12 @@ images.")
   (package
     (name "r-hazarddiff")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HazardDiff" version))
-              (sha256
-               (base32
-                "048lvhb4545a487kyknf5b5v8q3a9nsipbh0ii2k3pcc5vfql1h4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HazardDiff" version))
+       (sha256
+        (base32 "048lvhb4545a487kyknf5b5v8q3a9nsipbh0ii2k3pcc5vfql1h4"))))
     (properties `((upstream-name . "HazardDiff")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rootsolve r-rdpack r-ahaz))
@@ -11014,12 +11014,12 @@ forms for the covariates.  Rava, D. and Xu, R. (2021) <@code{arXiv:2112.09535>}.
   (package
     (name "r-hawkesbow")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hawkesbow" version))
-              (sha256
-               (base32
-                "0abbarpwlbasgmp0cr8144x2aqkmqf2i99pqd9g9sp9bxbg66056"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hawkesbow" version))
+       (sha256
+        (base32 "0abbarpwlbasgmp0cr8144x2aqkmqf2i99pqd9g9sp9bxbg66056"))))
     (properties `((upstream-name . "hawkesbow")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-nloptr r-bh))
@@ -11039,12 +11039,12 @@ analysis, etc.")
   (package
     (name "r-hawkes")
     (version "0.0-4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hawkes" version))
-              (sha256
-               (base32
-                "1ghwq3icxwmrai3xn9r8cnvlh3z3j18lznhw1bm31h9mkkp2dk0a"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hawkes" version))
+       (sha256
+        (base32 "1ghwq3icxwmrai3xn9r8cnvlh3z3j18lznhw1bm31h9mkkp2dk0a"))))
     (properties `((upstream-name . "hawkes")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -11061,12 +11061,12 @@ autocorrelation of process jumps on time intervals separated by a lag.")
   (package
     (name "r-hassediagram")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hasseDiagram" version))
-              (sha256
-               (base32
-                "1ni4wzj8g6qmpgz1xj62vawkcpm3jr4jqqr1xaxlh5nzbj9fn57h"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hasseDiagram" version))
+       (sha256
+        (base32 "1ni4wzj8g6qmpgz1xj62vawkcpm3jr4jqqr1xaxlh5nzbj9fn57h"))))
     (properties `((upstream-name . "hasseDiagram")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgraphviz r-graph))
@@ -11081,12 +11081,12 @@ partially ordered set.")
   (package
     (name "r-hassani-silva")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Hassani.Silva" version))
-              (sha256
-               (base32
-                "0rhi3mrlyxksgd34xxha73m0x6aqdf2xk8bshdnmm463rkzyy31l"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Hassani.Silva" version))
+       (sha256
+        (base32 "0rhi3mrlyxksgd34xxha73m0x6aqdf2xk8bshdnmm463rkzyy31l"))))
     (properties `((upstream-name . "Hassani.Silva")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=Hassani.Silva")
@@ -11109,12 +11109,12 @@ accuracy of forecasts.  KSPA test has been described in : Hassani and Silva
   (package
     (name "r-hassani-sacf")
     (version "2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Hassani.SACF" version))
-              (sha256
-               (base32
-                "16sk1vn47gd5qaq31p8hnqa5p29nd230v4vbg2lsn2bhy9m32km3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Hassani.SACF" version))
+       (sha256
+        (base32 "16sk1vn47gd5qaq31p8hnqa5p29nd230v4vbg2lsn2bhy9m32km3"))))
     (properties `((upstream-name . "Hassani.SACF")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=Hassani.SACF")
@@ -11134,12 +11134,12 @@ Yeganegi and M. R. (2019) <doi:10.1016/j.physa.2018.12.028>.")
   (package
     (name "r-hashr")
     (version "0.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hashr" version))
-              (sha256
-               (base32
-                "10rvq4rvg7fds2ylh21lri4wlvj870bncqq7kma7rf89rg5x1jz6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hashr" version))
+       (sha256
+        (base32 "10rvq4rvg7fds2ylh21lri4wlvj870bncqq7kma7rf89rg5x1jz6"))))
     (properties `((upstream-name . "hashr")))
     (build-system r-build-system)
     (home-page "https://github.com/markvanderloo/hashr")
@@ -11156,12 +11156,12 @@ algorithm.")
   (package
     (name "r-hashids")
     (version "0.9.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hashids" version))
-              (sha256
-               (base32
-                "0233qly4rb1g4znxm9h9h8gskzrjyav6nd26xkdl7990m5hcbcwh"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hashids" version))
+       (sha256
+        (base32 "0233qly4rb1g4znxm9h9h8gskzrjyav6nd26xkdl7990m5hcbcwh"))))
     (properties `((upstream-name . "hashids")))
     (build-system r-build-system)
     (home-page "https://github.com/ALShum/hashids-r/")
@@ -11180,12 +11180,12 @@ an integer to a hashid and decode a hashid back into an integer.")
   (package
     (name "r-harvest-tree")
     (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Harvest.Tree" version))
-              (sha256
-               (base32
-                "021zmppy7p2iakaxirfjdb5jzakg1ijma9d25ly2ni0nx0p1mh6z"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Harvest.Tree" version))
+       (sha256
+        (base32 "021zmppy7p2iakaxirfjdb5jzakg1ijma9d25ly2ni0nx0p1mh6z"))))
     (properties `((upstream-name . "Harvest.Tree")))
     (build-system r-build-system)
     (propagated-inputs (list r-rpart))
@@ -11208,12 +11208,12 @@ for more information.")
   (package
     (name "r-harrypotter")
     (version "2.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "harrypotter" version))
-              (sha256
-               (base32
-                "1j3sv0rpp4lcrf09j4a3an4lkwi2x1z18iv62fk6c2kpp9b14b8r"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "harrypotter" version))
+       (sha256
+        (base32 "1j3sv0rpp4lcrf09j4a3an4lkwi2x1z18iv62fk6c2kpp9b14b8r"))))
     (properties `((upstream-name . "harrypotter")))
     (build-system r-build-system)
     (propagated-inputs (list r-gridextra r-ggplot2))
@@ -11228,12 +11228,12 @@ the Harry Potter movie franchise.")
   (package
     (name "r-harrietr")
     (version "0.2.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "harrietr" version))
-              (sha256
-               (base32
-                "0n6vsqysj4ijh06z6nqmj8x1z4w9711dxhbfp8p8fwi0l75pj0cj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "harrietr" version))
+       (sha256
+        (base32 "0n6vsqysj4ijh06z6nqmj8x1z4w9711dxhbfp8p8fwi0l75pj0cj"))))
     (properties `((upstream-name . "harrietr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -11256,12 +11256,12 @@ easier to plot with ggplot2 and to manipulate using tidyverse tools.")
   (package
     (name "r-harmonydata")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "harmonydata" version))
-              (sha256
-               (base32
-                "14cv91yhsybficcv5sqha078bnl6f7npjf425lf8p183078fcivr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "harmonydata" version))
+       (sha256
+        (base32 "14cv91yhsybficcv5sqha078bnl6f7npjf425lf8p183078fcivr"))))
     (properties `((upstream-name . "harmonydata")))
     (build-system r-build-system)
     (propagated-inputs (list r-uuid r-jsonlite r-httr r-base64enc))
@@ -11280,12 +11280,12 @@ and identify similar content.  You can try Harmony at
   (package
     (name "r-harmonizer")
     (version "0.3.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "harmonizer" version))
-              (sha256
-               (base32
-                "05iiph9zx4wllviiwr92bhiq24bmi62iq9wjn8j91dvascd6xh5i"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "harmonizer" version))
+       (sha256
+        (base32 "05iiph9zx4wllviiwr92bhiq24bmi62iq9wjn8j91dvascd6xh5i"))))
     (properties `((upstream-name . "harmonizer")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -11302,12 +11302,12 @@ default from 1995 to 2022 and of PC8 from 2001 to 2021, respectively.")
   (package
     (name "r-harmonicmeanp")
     (version "3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "harmonicmeanp" version))
-              (sha256
-               (base32
-                "17irfw8788yhh36698p9w8wab6wcin1yzfinlbs3gdg70d42zcnd"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "harmonicmeanp" version))
+       (sha256
+        (base32 "17irfw8788yhh36698p9w8wab6wcin1yzfinlbs3gdg70d42zcnd"))))
     (properties `((upstream-name . "harmonicmeanp")))
     (build-system r-build-system)
     (propagated-inputs (list r-fmstable))
@@ -11338,12 +11338,12 @@ rate only in the weak sense, rather than the strong sense as intended.")
   (package
     (name "r-harmodel")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HARModel" version))
-              (sha256
-               (base32
-                "17sajqi2g5z69gvnfhkn850jkavi8syhm58xadd2khrm73nvwh2i"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HARModel" version))
+       (sha256
+        (base32 "17sajqi2g5z69gvnfhkn850jkavi8syhm58xadd2khrm73nvwh2i"))))
     (properties `((upstream-name . "HARModel")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-xts r-sandwich r-rcpparmadillo r-rcpp))
@@ -11358,12 +11358,12 @@ rate only in the weak sense, rather than the strong sense as intended.")
   (package
     (name "r-harbinger")
     (version "1.0.707")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "harbinger" version))
-              (sha256
-               (base32
-                "0ddpr6m4y09driqbbvrhdfmqfmrfbszbcf08bpk9ykxd6wrh55zz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "harbinger" version))
+       (sha256
+        (base32 "0ddpr6m4y09driqbbvrhdfmqfmrfbszbcf08bpk9ykxd6wrh55zz"))))
     (properties `((upstream-name . "harbinger")))
     (build-system r-build-system)
     (propagated-inputs (list r-tspred
@@ -11394,12 +11394,12 @@ state-of-the-art methods described in Salles et al. (2020)
   (package
     (name "r-hapsim")
     (version "0.31")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hapsim" version))
-              (sha256
-               (base32
-                "0jw6iw89d4y8wjy58biv40szp123ql7frz1mmdjdxljmwaby963h"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hapsim" version))
+       (sha256
+        (base32 "0jw6iw89d4y8wjy58biv40szp123ql7frz1mmdjdxljmwaby963h"))))
     (properties `((upstream-name . "hapsim")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -11415,12 +11415,12 @@ those estimated from an input data set.")
   (package
     (name "r-happytime")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "happytime" version))
-              (sha256
-               (base32
-                "03iblwb6w2dh9sibfi4nlswidck13hzsn7123838zp4sxfnrp041"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "happytime" version))
+       (sha256
+        (base32 "03iblwb6w2dh9sibfi4nlswidck13hzsn7123838zp4sxfnrp041"))))
     (properties `((upstream-name . "happytime")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=happytime")
@@ -11436,12 +11436,12 @@ including most of the delicious Cantonese cuisine.")
   (package
     (name "r-happign")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "happign" version))
-              (sha256
-               (base32
-                "1incrlf6frhrb2sb6w0x6fcgdy4vvr9qkcsq3r40pgpkkczdidl4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "happign" version))
+       (sha256
+        (base32 "1incrlf6frhrb2sb6w0x6fcgdy4vvr9qkcsq3r40pgpkkczdidl4"))))
     (properties `((upstream-name . "happign")))
     (build-system r-build-system)
     (inputs (list sqlite proj geos gdal))
@@ -11468,12 +11468,12 @@ elevation models, state borders, spatial databases, cadastral parcels, and more.
   (package
     (name "r-haplotypes")
     (version "1.1.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "haplotypes" version))
-              (sha256
-               (base32
-                "0w61ww76fq4iqzi6w9q2649925m5agnjaqhij40dwxyzsyqv9zjd"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "haplotypes" version))
+       (sha256
+        (base32 "0w61ww76fq4iqzi6w9q2649925m5agnjaqhij40dwxyzsyqv9zjd"))))
     (properties `((upstream-name . "haplotypes")))
     (build-system r-build-system)
     (propagated-inputs (list r-sna r-plotrix r-phangorn r-network r-ape))
@@ -11495,12 +11495,12 @@ haplotypes using statistical parsimony and plotting parsimony networks.")
   (package
     (name "r-haplotyper")
     (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "haplotyper" version))
-              (sha256
-               (base32
-                "0pcshlh29c4zazhkcq4371kqh9inrbx494y5a1qb1k2c92fkax31"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "haplotyper" version))
+       (sha256
+        (base32 "0pcshlh29c4zazhkcq4371kqh9inrbx494y5a1qb1k2c92fkax31"))))
     (properties `((upstream-name . "haplotyper")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -11521,12 +11521,12 @@ relative frequencies.")
   (package
     (name "r-haplosim")
     (version "1.8.4.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HaploSim" version))
-              (sha256
-               (base32
-                "15jawq5bxy2kjvl7bxqjr6p02ivhfrdzjmvjy1vp45jnaz6052v2"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HaploSim" version))
+       (sha256
+        (base32 "15jawq5bxy2kjvl7bxqjr6p02ivhfrdzjmvjy1vp45jnaz6052v2"))))
     (properties `((upstream-name . "HaploSim")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=HaploSim")
@@ -11540,12 +11540,12 @@ parameters.")
   (package
     (name "r-haplocatcher")
     (version "1.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HaploCatcher" version))
-              (sha256
-               (base32
-                "182ihr45s2g452h054c6m8lgvj629spq1rd9vglzyy8ymg0l6w4j"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HaploCatcher" version))
+       (sha256
+        (base32 "182ihr45s2g452h054c6m8lgvj629spq1rd9vglzyy8ymg0l6w4j"))))
     (properties `((upstream-name . "HaploCatcher")))
     (build-system r-build-system)
     (propagated-inputs (list r-randomforest
@@ -11580,12 +11580,12 @@ information on this method, refer to <doi:10.1007/s00122-022-04178-w>.")
   (package
     (name "r-haplo-ccs")
     (version "1.3.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "haplo.ccs" version))
-              (sha256
-               (base32
-                "103i1fxk990drlsdhjrh9p6rp05g7gqzmlqfcdx9a1di1qrhw5qh"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "haplo.ccs" version))
+       (sha256
+        (base32 "103i1fxk990drlsdhjrh9p6rp05g7gqzmlqfcdx9a1di1qrhw5qh"))))
     (properties `((upstream-name . "haplo.ccs")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-haplo-stats))
@@ -11602,12 +11602,12 @@ French et al. (2006) <doi:10.1002/gepi.20161>.")
   (package
     (name "r-haplin")
     (version "7.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Haplin" version))
-              (sha256
-               (base32
-                "1glvg7jnkaxff6frkhshlljgw8lw5flvn5sl4aqa4rv5j82zakn6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Haplin" version))
+       (sha256
+        (base32 "1glvg7jnkaxff6frkhshlljgw8lw5flvn5sl4aqa4rv5j82zakn6"))))
     (properties `((upstream-name . "Haplin")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-mgcv r-mass r-ff))
@@ -11638,12 +11638,12 @@ maternal disease gene haplotypes.  Annals of Human Genetics (2006) 70, pp.
   (package
     (name "r-hapi")
     (version "0.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Hapi" version))
-              (sha256
-               (base32
-                "0jqjhfq38k161kqff5cx0vxpsmjm2y5ca7049mvqiwqwvi4fp08m"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Hapi" version))
+       (sha256
+        (base32 "0jqjhfq38k161kqff5cx0vxpsmjm2y5ca7049mvqiwqwvi4fp08m"))))
     (properties `((upstream-name . "Hapi")))
     (build-system r-build-system)
     (propagated-inputs (list r-hmm r-ggplot2))
@@ -11665,12 +11665,12 @@ and visualization of identified crossovers in the gametes.")
   (package
     (name "r-hanstat")
     (version "0.90.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HanStat" version))
-              (sha256
-               (base32
-                "0ycppc7cq8jpg2xldl692mxg73agra3sq6zjzlpz7vvr9kqf64g6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HanStat" version))
+       (sha256
+        (base32 "0ycppc7cq8jpg2xldl692mxg73agra3sq6zjzlpz7vvr9kqf64g6"))))
     (properties `((upstream-name . "HanStat")))
     (build-system r-build-system)
     (propagated-inputs (list r-olsrr
@@ -11693,12 +11693,12 @@ calculation and all tested requirements.")
   (package
     (name "r-hansard")
     (version "0.8.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hansard" version))
-              (sha256
-               (base32
-                "00mcy58nhlphb0v0wchbaw1qamm0435s09nxxw6rr5z872rhyf5a"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hansard" version))
+       (sha256
+        (base32 "00mcy58nhlphb0v0wchbaw1qamm0435s09nxxw6rr5z872rhyf5a"))))
     (properties `((upstream-name . "hansard")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -11724,12 +11724,12 @@ available.")
   (package
     (name "r-hans")
     (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hans" version))
-              (sha256
-               (base32
-                "0hh2nlzxs2kj93yb7yfm873m6nymjw5qmkin3qqn3acza6dr0k6q"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hans" version))
+       (sha256
+        (base32 "0hh2nlzxs2kj93yb7yfm873m6nymjw5qmkin3qqn3acza6dr0k6q"))))
     (properties `((upstream-name . "hans")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -11748,12 +11748,12 @@ calculation see Joseph de Mendoza y RÃ­os (1795)
   (package
     (name "r-handyplots")
     (version "1.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "handyplots" version))
-              (sha256
-               (base32
-                "0pcl0iichdw2lkv8y00mv6n6c0rvrnsk75ka5lwm2g7b64pphsvk"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "handyplots" version))
+       (sha256
+        (base32 "0pcl0iichdw2lkv8y00mv6n6c0rvrnsk75ka5lwm2g7b64pphsvk"))))
     (properties `((upstream-name . "handyplots")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=handyplots")
@@ -11768,12 +11768,12 @@ qq-plots, box plots, confidence intervals, and prediction intervals.")
   (package
     (name "r-handyfunctions")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "handyFunctions" version))
-              (sha256
-               (base32
-                "0y476acqdm73y19k8s9c9vy8xryyjg16pay3vikslwccv7kgsigz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "handyFunctions" version))
+       (sha256
+        (base32 "0y476acqdm73y19k8s9c9vy8xryyjg16pay3vikslwccv7kgsigz"))))
     (properties `((upstream-name . "handyFunctions")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-rlang r-ggplot2))
@@ -11793,12 +11793,12 @@ format.  It mainly includes the following sections: @code{ReformatDataframe}
   (package
     (name "r-handwriter")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "handwriter" version))
-              (sha256
-               (base32
-                "1jq65dzvjpjrvhw76asmh8qghdzfgisvdn43hc0hmkj90nj6aaap"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "handwriter" version))
+       (sha256
+        (base32 "1jq65dzvjpjrvhw76asmh8qghdzfgisvdn43hc0hmkj90nj6aaap"))))
     (properties `((upstream-name . "handwriter")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -11824,12 +11824,12 @@ measurements at all levels.  Webpage provided at:
   (package
     (name "r-handtill2001")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HandTill2001" version))
-              (sha256
-               (base32
-                "0wgr3rhz1iklirpnzk25afh8fv1qpi2ijmx4xwzplw3w3qir4yv6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HandTill2001" version))
+       (sha256
+        (base32 "0wgr3rhz1iklirpnzk25afh8fv1qpi2ijmx4xwzplw3w3qir4yv6"))))
     (properties `((upstream-name . "HandTill2001")))
     (build-system r-build-system)
     (native-inputs (list))
@@ -11844,12 +11844,12 @@ measurements at all levels.  Webpage provided at:
   (package
     (name "r-handlr")
     (version "0.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "handlr" version))
-              (sha256
-               (base32
-                "0l0jwlslz2pyg7q447k56acfhgmx5njsriqdrwd02zzbsc3g6wm5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "handlr" version))
+       (sha256
+        (base32 "0l0jwlslz2pyg7q447k56acfhgmx5njsriqdrwd02zzbsc3g6wm5"))))
     (properties `((upstream-name . "handlr")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -11871,12 +11871,12 @@ for both read and write.")
   (package
     (name "r-handcoder")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "handcodeR" version))
-              (sha256
-               (base32
-                "01cc088i9dw4xy7iqy551mmprrm3s0pvkzr4xr78406pkbbzijfa"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "handcodeR" version))
+       (sha256
+        (base32 "01cc088i9dw4xy7iqy551mmprrm3s0pvkzr4xr78406pkbbzijfa"))))
     (properties `((upstream-name . "handcodeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinywidgets r-shiny))
@@ -11891,12 +11891,12 @@ hand.")
   (package
     (name "r-hamlet")
     (version "0.9.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hamlet" version))
-              (sha256
-               (base32
-                "076fh28grlrv38qywshi79m84jsz1ck9k4n0rg4svvr3gqkdbcn2"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hamlet" version))
+       (sha256
+        (base32 "076fh28grlrv38qywshi79m84jsz1ck9k4n0rg4svvr3gqkdbcn2"))))
     (properties `((upstream-name . "hamlet")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=hamlet")
@@ -11913,12 +11913,12 @@ patterns.")
   (package
     (name "r-halk")
     (version "0.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "halk" version))
-              (sha256
-               (base32
-                "1v6b8i1m0sdqk6gfjzfz35b8y1klb97m29m11wgpnshwzqxnfij2"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "halk" version))
+       (sha256
+        (base32 "1v6b8i1m0sdqk6gfjzfz35b8y1klb97m29m11wgpnshwzqxnfij2"))))
     (properties `((upstream-name . "halk")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -11942,12 +11942,12 @@ hierarchical age length keys and use them to assign ages given length.")
   (package
     (name "r-halfmoon")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "halfmoon" version))
-              (sha256
-               (base32
-                "19pclcrcbmmf1b1q2dhwh17a67xif992y3w6685si5bn0ripsj6h"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "halfmoon" version))
+       (sha256
+        (base32 "19pclcrcbmmf1b1q2dhwh17a67xif992y3w6685si5bn0ripsj6h"))))
     (properties `((upstream-name . "halfmoon")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidysmd r-tidyselect r-ggplot2 r-cli))
@@ -11964,12 +11964,12 @@ histograms.  halfmoon supports both weighting and matching techniques.")
   (package
     (name "r-halfcircle")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "halfcircle" version))
-              (sha256
-               (base32
-                "1gbqbv3cn8w09i3f2ji3qq0snb4fy9243y12agw686fx46dfmhxs"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "halfcircle" version))
+       (sha256
+        (base32 "1gbqbv3cn8w09i3f2ji3qq0snb4fy9243y12agw686fx46dfmhxs"))))
     (properties `((upstream-name . "halfcircle")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales))
@@ -11992,12 +11992,12 @@ circles, makes the comparison easier.")
   (package
     (name "r-haldensify")
     (version "0.2.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "haldensify" version))
-              (sha256
-               (base32
-                "071lgx6j92n40bjlrp3khmnavvkla371rkm1ssx20ig5pkay23pw"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "haldensify" version))
+       (sha256
+        (base32 "071lgx6j92n40bjlrp3khmnavvkla371rkm1ssx20ig5pkay23pw"))))
     (properties `((upstream-name . "haldensify")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -12038,12 +12038,12 @@ efficiency bound.")
   (package
     (name "r-hal9001")
     (version "0.4.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hal9001" version))
-              (sha256
-               (base32
-                "132qnrk6rm2qc5gw17iw61plx1ghnyzi7km8bp36vnqn19x9wj7j"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hal9001" version))
+       (sha256
+        (base32 "132qnrk6rm2qc5gw17iw61plx1ghnyzi7km8bp36vnqn19x9wj7j"))))
     (properties `((upstream-name . "hal9001")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -12076,12 +12076,12 @@ algorithm was described by Hejazi, Coyle, and van der Laan (2020)
   (package
     (name "r-hakaiapi")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hakaiApi" version))
-              (sha256
-               (base32
-                "0lxqk4cp1s1sm3nbsp74q1bpklmph620c2f1kii97h6yimnq9bi0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hakaiApi" version))
+       (sha256
+        (base32 "0lxqk4cp1s1sm3nbsp74q1bpklmph620c2f1kii97h6yimnq9bi0"))))
     (properties `((upstream-name . "hakaiApi")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-readr r-r6 r-httr r-dplyr))
@@ -12098,12 +12098,12 @@ instructions are documented at <https://hakaiinstitute.github.io/hakai-api/>.")
   (package
     (name "r-hagis")
     (version "3.1.11")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hagis" version))
-              (sha256
-               (base32
-                "1s4n08zy7agqs8a1jzzyyba93j1nnd0d3bz63j5xd3yvw36brzjf"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hagis" version))
+       (sha256
+        (base32 "1s4n08zy7agqs8a1jzzyyba93j1nnd0d3bz63j5xd3yvw36brzjf"))))
     (properties `((upstream-name . "hagis")))
     (build-system r-build-system)
     (propagated-inputs (list r-pander r-ggplot2 r-data-table))
@@ -12124,12 +12124,12 @@ Spreadsheet, @code{HaGiS}', previously used for pathotype analysis.")
   (package
     (name "r-hadex")
     (version "1.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HaDeX" version))
-              (sha256
-               (base32
-                "1qj6n03pd5kd5ff5h4v8wmnqxxylsxx1p6i88nahqkah2mzg9jdr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HaDeX" version))
+       (sha256
+        (base32 "1qj6n03pd5kd5ff5h4v8wmnqxxylsxx1p6i88nahqkah2mzg9jdr"))))
     (properties `((upstream-name . "HaDeX")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -12162,12 +12162,12 @@ functionalities are also available in the in-built Shiny app.")
   (package
     (name "r-hadamardr")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HadamardR" version))
-              (sha256
-               (base32
-                "0nr8m6fchpmlvhyisb61y0fymjjrk2k1sd67r14n87sgn3mafh4a"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HadamardR" version))
+       (sha256
+        (base32 "0nr8m6fchpmlvhyisb61y0fymjjrk2k1sd67r14n87sgn3mafh4a"))))
     (properties `((upstream-name . "HadamardR")))
     (build-system r-build-system)
     (propagated-inputs (list r-openxlsx r-numbers))
@@ -12186,12 +12186,12 @@ University Press for more information on Hadamard Matrices.")
   (package
     (name "r-hacsim")
     (version "1.0.6-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HACSim" version))
-              (sha256
-               (base32
-                "0hdczpn1x6zcxya8qlp82fzzpli3z2kfvynk5sqk97h1d55d27i4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HACSim" version))
+       (sha256
+        (base32 "0hdczpn1x6zcxya8qlp82fzzpli3z2kfvynk5sqk97h1d55d27i4"))))
     (properties `((upstream-name . "HACSim")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny
@@ -12225,12 +12225,12 @@ A Shiny app is also available.")
   (package
     (name "r-hacksig")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hacksig" version))
-              (sha256
-               (base32
-                "0sc35vyi00r2b3hgn1xw2zffd704adschjwhx0niv5a1l33dxbkp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hacksig" version))
+       (sha256
+        (base32 "0sc35vyi00r2b3hgn1xw2zffd704adschjwhx0niv5a1l33dxbkp"))))
     (properties `((upstream-name . "hacksig")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-tibble r-rlang r-future-apply r-dplyr))
@@ -12252,12 +12252,12 @@ implemented.")
   (package
     (name "r-hacksaw")
     (version "0.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hacksaw" version))
-              (sha256
-               (base32
-                "1ls4l53bsaxyd6lwka9z9sb6ypa2ymbxpfxhsj9k966031jv2vk3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hacksaw" version))
+       (sha256
+        (base32 "1ls4l53bsaxyd6lwka9z9sb6ypa2ymbxpfxhsj9k966031jv2vk3"))))
     (properties `((upstream-name . "hacksaw")))
     (build-system r-build-system)
     (propagated-inputs (list r-zeallot
@@ -12279,12 +12279,12 @@ NAs.  Shift row values.")
   (package
     (name "r-hackernews")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hackeRnews" version))
-              (sha256
-               (base32
-                "0vrdbk4dxbykb3hs35nxkl3s2ds92gs5qz66p85w8j5zjmwbw2x6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hackeRnews" version))
+       (sha256
+        (base32 "0vrdbk4dxbykb3hs35nxkl3s2ds92gs5qz66p85w8j5zjmwbw2x6"))))
     (properties `((upstream-name . "hackeRnews")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-jsonlite r-httr r-future-apply))
@@ -12300,12 +12300,12 @@ articles and other items in form of convenient R objects.")
   (package
     (name "r-hac")
     (version "1.1-0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HAC" version))
-              (sha256
-               (base32
-                "1k19qrirhzl8qaa4svf7qa90r7gphbbvm9m0977z9gd704n8b62a"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HAC" version))
+       (sha256
+        (base32 "1k19qrirhzl8qaa4svf7qa90r7gphbbvm9m0977z9gd704n8b62a"))))
     (properties `((upstream-name . "HAC")))
     (build-system r-build-system)
     (propagated-inputs (list r-copula))
@@ -12322,12 +12322,12 @@ methods and structural plots of Hierarchical Archimedean Copulae (HAC).")
   (package
     (name "r-hablar")
     (version "0.3.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hablar" version))
-              (sha256
-               (base32
-                "0mzk4nwsamf07cbscn8zjiqdf6ik0dc9c4v8cafrlsv1wxpbs09i"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hablar" version))
+       (sha256
+        (base32 "0mzk4nwsamf07cbscn8zjiqdf6ik0dc9c4v8cafrlsv1wxpbs09i"))))
     (properties `((upstream-name . "hablar")))
     (build-system r-build-system)
     (propagated-inputs (list r-purrr r-lubridate r-dplyr))
@@ -12343,12 +12343,12 @@ columns with missing values.")
   (package
     (name "r-habcluster")
     (version "1.0.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "habCluster" version))
-              (sha256
-               (base32
-                "1cjmhq8krkv4g1vy70kc3j667djzmq38xlqn568f437f6jaglvkp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "habCluster" version))
+       (sha256
+        (base32 "1cjmhq8krkv4g1vy70kc3j667djzmq38xlqn568f437f6jaglvkp"))))
     (properties `((upstream-name . "habCluster")))
     (build-system r-build-system)
     (propagated-inputs (list r-stars r-sf r-rcpp r-raster r-igraph))
@@ -12368,12 +12368,12 @@ package methods can be found in Zhang et al. <@code{bioRxiv:2022.05.06.490926>}.
   (package
     (name "r-haarfisz")
     (version "4.5.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "haarfisz" version))
-              (sha256
-               (base32
-                "1c00zpswnbfd44j7fb6pib6fwri2qs8kasd3fxifmaj0i6zpq8jf"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "haarfisz" version))
+       (sha256
+        (base32 "1c00zpswnbfd44j7fb6pib6fwri2qs8kasd3fxifmaj0i6zpq8jf"))))
     (properties `((upstream-name . "haarfisz")))
     (build-system r-build-system)
     (propagated-inputs (list r-wavethresh))
@@ -12394,12 +12394,12 @@ and Graphical Statistics, 13, 621-638. <doi:10.1198/106186004X2697>.")
   (package
     (name "r-h3lib")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "h3lib" version))
-              (sha256
-               (base32
-                "1drpsj8i42hmxr1spscbar6zhk230pypw8b5s689rs0d25nscd2g"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "h3lib" version))
+       (sha256
+        (base32 "1drpsj8i42hmxr1spscbar6zhk230pypw8b5s689rs0d25nscd2g"))))
     (properties `((upstream-name . "h3lib")))
     (build-system r-build-system)
     (home-page "https://github.com/symbolixau/h3lib")
@@ -12414,12 +12414,12 @@ C') to routines that are callable through R'.")
   (package
     (name "r-h3jsr")
     (version "1.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "h3jsr" version))
-              (sha256
-               (base32
-                "04h905p3xpaswpx728kp7z6bgqlncgzikfv6njvgvzbhmpfn9fs8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "h3jsr" version))
+       (sha256
+        (base32 "04h905p3xpaswpx728kp7z6bgqlncgzikfv6njvgvzbhmpfn9fs8"))))
     (properties `((upstream-name . "h3jsr")))
     (build-system r-build-system)
     (propagated-inputs (list r-v8 r-tidyr r-sf r-geojsonsf))
@@ -12436,12 +12436,12 @@ its @code{JavaScript} transpile h3-js <https://github.com/uber/h3-js> and V8
   (package
     (name "r-h2x2factorial")
     (version "2.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "H2x2Factorial" version))
-              (sha256
-               (base32
-                "01if0ps43xhcw6q5khdbvjd0yvvhkcj4gvdx538g2kaxzi3lrj1z"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "H2x2Factorial" version))
+       (sha256
+        (base32 "01if0ps43xhcw6q5khdbvjd0yvvhkcj4gvdx538g2kaxzi3lrj1z"))))
     (properties `((upstream-name . "H2x2Factorial")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm))
@@ -12459,12 +12459,12 @@ generators for the sample size estimations.")
   (package
     (name "r-h2otools")
     (version "0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "h2otools" version))
-              (sha256
-               (base32
-                "105zc76yi03ib5l6366an472hnf3m0pk1mwghwn8pwi91pfybzzr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "h2otools" version))
+       (sha256
+        (base32 "105zc76yi03ib5l6366an472hnf3m0pk1mwghwn8pwi91pfybzzr"))))
     (properties `((upstream-name . "h2otools")))
     (build-system r-build-system)
     (propagated-inputs (list r-h2o r-curl r-boot))
@@ -12481,12 +12481,12 @@ information about h2o package see <https://h2o.ai/>.")
   (package
     (name "r-h2o4gpu")
     (version "0.3.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "h2o4gpu" version))
-              (sha256
-               (base32
-                "004sskj3a1mzjfh86m0rq02z1f3kd6650bzv1d3j8pj0xdmqb86c"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "h2o4gpu" version))
+       (sha256
+        (base32 "004sskj3a1mzjfh86m0rq02z1f3kd6650bzv1d3j8pj0xdmqb86c"))))
     (properties `((upstream-name . "h2o4gpu")))
     (build-system r-build-system)
     (propagated-inputs (list r-reticulate r-magrittr))
@@ -12502,12 +12502,12 @@ solvers for machine learning algorithms.")
   (package
     (name "r-h2o")
     (version "3.42.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "h2o" version))
-              (sha256
-               (base32
-                "16wjcaskwkjw5bn4mj73qsywd9qcp8q906p3sfsr1vdk9qgm7bls"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "h2o" version))
+       (sha256
+        (base32 "16wjcaskwkjw5bn4mj73qsywd9qcp8q906p3sfsr1vdk9qgm7bls"))))
     (properties `((upstream-name . "h2o")))
     (build-system r-build-system)
     (inputs (list openjdk))
@@ -12529,12 +12529,12 @@ Word2Vec, as well as a fully automatic machine learning algorithm (H2O
   (package
     (name "r-h0")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "h0" version))
-              (sha256
-               (base32
-                "0nw671dgf50zqmw6j8znig6ksqf68hbshc8v87dcig70j1sqab4k"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "h0" version))
+       (sha256
+        (base32 "0nw671dgf50zqmw6j8znig6ksqf68hbshc8v87dcig70j1sqab4k"))))
     (properties `((upstream-name . "h0")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=h0")

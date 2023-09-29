@@ -37,12 +37,12 @@
   (package
     (name "r-zoomr")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "zoomr" version))
-              (sha256
-               (base32
-                "0i0b4v204p9cpgpw3dn5b29hvmf7r2k7swld0n9iy77asmf5gnvs"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "zoomr" version))
+       (sha256
+        (base32 "0i0b4v204p9cpgpw3dn5b29hvmf7r2k7swld0n9iy77asmf5gnvs"))))
     (properties `((upstream-name . "zoomr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -68,12 +68,12 @@ package is not supported by Zoom (owner of the software).")
   (package
     (name "r-zooid")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ZooID" version))
-              (sha256
-               (base32
-                "1i0kp5f4amczamajx5l56m63lmcgsjsvdakzncmllbsyg6nkqj0p"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ZooID" version))
+       (sha256
+        (base32 "1i0kp5f4amczamajx5l56m63lmcgsjsvdakzncmllbsyg6nkqj0p"))))
     (properties `((upstream-name . "ZooID")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=ZooID")
@@ -93,12 +93,12 @@ at Arick Grootveld, Eva R. Kozak, Carmen Franco-Gordo (2023)
   (package
     (name "r-zonohedra")
     (version "0.2-2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "zonohedra" version))
-              (sha256
-               (base32
-                "0bvlrbc3nkaw9pjzl65idw8ybk7frhyihr3cp93jby5rnip8xpyz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "zonohedra" version))
+       (sha256
+        (base32 "0bvlrbc3nkaw9pjzl65idw8ybk7frhyihr3cp93jby5rnip8xpyz"))))
     (properties `((upstream-name . "zonohedra")))
     (build-system r-build-system)
     (propagated-inputs (list r-logger))
@@ -117,12 +117,12 @@ Optimization methods are taken from Heckbert (1985)
   (package
     (name "r-zoid")
     (version "1.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "zoid" version))
-              (sha256
-               (base32
-                "0c23ji48bq5qhsjshfai9srivn7lhjrzcs4fpysiw4245a2psyrr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "zoid" version))
+       (sha256
+        (base32 "0c23ji48bq5qhsjshfai9srivn7lhjrzcs4fpysiw4245a2psyrr"))))
     (properties `((upstream-name . "zoid")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -148,12 +148,12 @@ included.")
   (package
     (name "r-zmisc")
     (version "0.2.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "zmisc" version))
-              (sha256
-               (base32
-                "1mkk8a93xqwzrs99g6zmd5x3yn0qrz3v44y35jas9wl8x92bzr9f"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "zmisc" version))
+       (sha256
+        (base32 "1mkk8a93xqwzrs99g6zmd5x3yn0qrz3v44y35jas9wl8x92bzr9f"))))
     (properties `((upstream-name . "zmisc")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -170,12 +170,12 @@ and aggregation.")
   (package
     (name "r-zlib")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "zlib" version))
-              (sha256
-               (base32
-                "0x6jawql116lsjgs7zi7hpfas85lzgm31flqz8gq5mg6z24qv8g7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "zlib" version))
+       (sha256
+        (base32 "0x6jawql116lsjgs7zi7hpfas85lzgm31flqz8gq5mg6z24qv8g7"))))
     (properties `((upstream-name . "zlib")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -193,12 +193,12 @@ working with gzip', zlib', and deflate formats.")
   (package
     (name "r-zipsae")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "zipsae" version))
-              (sha256
-               (base32
-                "03kwfpjpwxqlphdy7xyhsf7d0mcg67jhvm7yz4i73ckmjdmq7wrd"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "zipsae" version))
+       (sha256
+        (base32 "03kwfpjpwxqlphdy7xyhsf7d0mcg67jhvm7yz4i73ckmjdmq7wrd"))))
     (properties `((upstream-name . "zipsae")))
     (build-system r-build-system)
     (home-page "https://github.com/dheel/zipsae")
@@ -220,12 +220,12 @@ Boonstra and Marc Smeets (2016)<doi:10.1515/jos-2016-0051>.")
   (package
     (name "r-ziprop")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ZIprop" version))
-              (sha256
-               (base32
-                "1gvf6z7mx543a0hiqcknwhkplqa3mfmw3swi8n9vma10bqmgysx7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ZIprop" version))
+       (sha256
+        (base32 "1gvf6z7mx543a0hiqcknwhkplqa3mfmw3swi8n9vma10bqmgysx7"))))
     (properties `((upstream-name . "ZIprop")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgenoud r-purrr r-data-table))
@@ -245,12 +245,12 @@ details for the method at the following preprint e.g.:
   (package
     (name "r-zipr")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "zipR" version))
-              (sha256
-               (base32
-                "1aaw3dslhsw3zgxvkc1v60vsk44x64i4qmjwx0gq4f7dad1rbiqp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "zipR" version))
+       (sha256
+        (base32 "1aaw3dslhsw3zgxvkc1v60vsk44x64i4qmjwx0gq4f7dad1rbiqp"))))
     (properties `((upstream-name . "zipR")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -265,12 +265,12 @@ cbind.")
   (package
     (name "r-zipg")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ZIPG" version))
-              (sha256
-               (base32
-                "00dbxywmfkbi7svpnagqy49vfff33j9kychv6x4bpsm9inh8r94a"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ZIPG" version))
+       (sha256
+        (base32 "00dbxywmfkbi7svpnagqy49vfff33j9kychv6x4bpsm9inh8r94a"))))
     (properties `((upstream-name . "ZIPG")))
     (build-system r-build-system)
     (propagated-inputs (list r-pscl r-optimr r-mass))
@@ -289,12 +289,12 @@ al (2023) <doi:10.1080/01621459.2022.2151447>.")
   (package
     (name "r-zipfr")
     (version "0.6-70")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "zipfR" version))
-              (sha256
-               (base32
-                "15ng7rj7qbgxajx8jb9kv04xmbidg9wwzxr2xaskmlaxrxlqac8c"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "zipfR" version))
+       (sha256
+        (base32 "15ng7rj7qbgxajx8jb9kv04xmbidg9wwzxr2xaskmlaxrxlqac8c"))))
     (properties `((upstream-name . "zipfR")))
     (build-system r-build-system)
     (home-page "https://zipfR.R-Forge.R-project.org/")
@@ -312,12 +312,12 @@ frequency distribution, Zipf's law.)")
   (package
     (name "r-zipfextr")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "zipfextR" version))
-              (sha256
-               (base32
-                "03rlvvw7rfbhsbwd5njmgkkkrxq1lgjdydmpkn6h1hi97pc0gbhh"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "zipfextR" version))
+       (sha256
+        (base32 "03rlvvw7rfbhsbwd5njmgkkkrxq1lgjdydmpkn6h1hi97pc0gbhh"))))
     (properties `((upstream-name . "zipfextR")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam r-tolerance r-copula))
@@ -337,12 +337,12 @@ linearity associated with the Zipf model in the tail.")
   (package
     (name "r-zipfa")
     (version "0.8.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ZIPFA" version))
-              (sha256
-               (base32
-                "134pkdn4slhiv27rdkkmh2z7xch30ns0jhzxgd7r05bky0z1iri1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ZIPFA" version))
+       (sha256
+        (base32 "134pkdn4slhiv27rdkkmh2z7xch30ns0jhzxgd7r05bky0z1iri1"))))
     (properties `((upstream-name . "ZIPFA")))
     (build-system r-build-system)
     (propagated-inputs (list r-trustoptim r-optimx r-matrix r-foreach
@@ -361,12 +361,12 @@ based on the determined rank.")
   (package
     (name "r-zipcoder")
     (version "0.3.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "zipcodeR" version))
-              (sha256
-               (base32
-                "1fmjqfhxd0lgsn6l5jvi3qzhbq9865xcps3jm9iy72jx7jxr59lk"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "zipcodeR" version))
+       (sha256
+        (base32 "1fmjqfhxd0lgsn6l5jvi3qzhbq9865xcps3jm9iy72jx7jxr59lk"))))
     (properties `((upstream-name . "zipcodeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -395,12 +395,12 @@ calculations.")
   (package
     (name "r-zipbayes")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ZIPBayes" version))
-              (sha256
-               (base32
-                "0j56smgf44fki70jc6aypksbl70pyppc6s3xv82yrq5rndym077k"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ZIPBayes" version))
+       (sha256
+        (base32 "0j56smgf44fki70jc6aypksbl70pyppc6s3xv82yrq5rndym077k"))))
     (properties `((upstream-name . "ZIPBayes")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-mass))
@@ -420,12 +420,12 @@ internal validation scenario.")
   (package
     (name "r-zipangu")
     (version "0.3.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "zipangu" version))
-              (sha256
-               (base32
-                "0l5jhv0xl0rh7z546zn2p3gaci1v7d9d3ha6040kixclkmhb5dp6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "zipangu" version))
+       (sha256
+        (base32 "0l5jhv0xl0rh7z546zn2p3gaci1v7d9d3ha6040kixclkmhb5dp6"))))
     (properties `((upstream-name . "zipangu")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -452,12 +452,12 @@ general one.")
   (package
     (name "r-zinarp")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ZINARp" version))
-              (sha256
-               (base32
-                "1s5nvxcc7nw2kz90i7fqw5fi2qzzbsm5ppn92695v44q38h8jw9s"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ZINARp" version))
+       (sha256
+        (base32 "1s5nvxcc7nw2kz90i7fqw5fi2qzzbsm5ppn92695v44q38h8jw9s"))))
     (properties `((upstream-name . "ZINARp")))
     (build-system r-build-system)
     (propagated-inputs (list r-progress))
@@ -474,12 +474,12 @@ Autoregressive (ZINAR(p)) processes, as described in Garay et al. (2020)
   (package
     (name "r-zinar1")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ZINAR1" version))
-              (sha256
-               (base32
-                "1didfjb4215k9q82n1vaqln6f7fszsycsflydak2zl7xwficwhy6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ZINAR1" version))
+       (sha256
+        (base32 "1didfjb4215k9q82n1vaqln6f7fszsycsflydak2zl7xwficwhy6"))))
     (properties `((upstream-name . "ZINAR1")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam
@@ -501,12 +501,12 @@ described in Garay et al. (2021) <doi:10.1007/978-3-030-82110-4_2>.")
   (package
     (name "r-zillowr")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ZillowR" version))
-              (sha256
-               (base32
-                "1q0hdm654p6vkmajwrhx18ifm9sc4czdfd7cabhkqdky4p07c89r"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ZillowR" version))
+       (sha256
+        (base32 "1q0hdm654p6vkmajwrhx18ifm9sc4czdfd7cabhkqdky4p07c89r"))))
     (properties `((upstream-name . "ZillowR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml r-rcurl))
@@ -526,12 +526,12 @@ package is now deprecated as a result.")
   (package
     (name "r-zic")
     (version "0.9.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "zic" version))
-              (sha256
-               (base32
-                "1vd64ljigf6iwgzlgdxgj65nlwir176h7ddznddpaz2abh6n6zwp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "zic" version))
+       (sha256
+        (base32 "1vd64ljigf6iwgzlgdxgj65nlwir176h7ddznddpaz2abh6n6zwp"))))
     (properties `((upstream-name . "zic")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-coda))
@@ -548,12 +548,12 @@ set considering the demand for health care is provided.")
   (package
     (name "r-zibseq")
     (version "1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ZIBseq" version))
-              (sha256
-               (base32
-                "13rjy4jl9wil6hhpra4qmdis0iyqxchzsf9l7q6r0dz1f7dpd2nq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ZIBseq" version))
+       (sha256
+        (base32 "13rjy4jl9wil6hhpra4qmdis0iyqxchzsf9l7q6r0dz1f7dpd2nq"))))
     (properties `((upstream-name . "ZIBseq")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlme r-gamlss-dist r-gamlss))
@@ -570,12 +570,12 @@ efficiently.")
   (package
     (name "r-zfit")
     (version "0.4.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "zfit" version))
-              (sha256
-               (base32
-                "1pzzzb55v16piy1p1pyjrriiifbgxqnpaxi200cyfd8m39gz9n1j"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "zfit" version))
+       (sha256
+        (base32 "1pzzzb55v16piy1p1pyjrriiifbgxqnpaxi200cyfd8m39gz9n1j"))))
     (properties `((upstream-name . "zfit")))
     (build-system r-build-system)
     (home-page "https://torfason.github.io/zfit/")
@@ -588,12 +588,12 @@ efficiently.")
   (package
     (name "r-zetasuite")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ZetaSuite" version))
-              (sha256
-               (base32
-                "10b0acz88vc80x49wwv581abym75wswi4z92mnl4xn0vw62vjpqa"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ZetaSuite" version))
+       (sha256
+        (base32 "10b0acz88vc80x49wwv581abym75wswi4z92mnl4xn0vw62vjpqa"))))
     (properties `((upstream-name . "ZetaSuite")))
     (build-system r-build-system)
     (propagated-inputs (list r-rtsne
@@ -630,12 +630,12 @@ Zeta score calculation and hits selection based on defined Screen Strength.")
   (package
     (name "r-zetadiv")
     (version "1.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "zetadiv" version))
-              (sha256
-               (base32
-                "0m147z864g2pca28gbna1bb7jqr2f74x15fj8v8hhs3a2lr8lh37"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "zetadiv" version))
+       (sha256
+        (base32 "0m147z864g2pca28gbna1bb7jqr2f74x15fj8v8hhs3a2lr8lh37"))))
     (properties `((upstream-name . "zetadiv")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -663,12 +663,12 @@ additive models,shape constrained additive models, and I-splines.")
   (package
     (name "r-zerotradeflow")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "zerotradeflow" version))
-              (sha256
-               (base32
-                "03fvhk3yd6grqs0d6m3j537xzy0n9s64947g7gagaqbrm3n8j1m6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "zerotradeflow" version))
+       (sha256
+        (base32 "03fvhk3yd6grqs0d6m3j537xzy0n9s64947g7gagaqbrm3n8j1m6"))))
     (properties `((upstream-name . "zerotradeflow")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyverse
@@ -696,12 +696,12 @@ Yotov, Piermartini, Monteiro and Larch
   (package
     (name "r-zeroeqpart")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "zeroEQpart" version))
-              (sha256
-               (base32
-                "1n24nqyl0irpyspwx4b73xy228a84aa8zsn9fcf2lrlni5vyzmm0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "zeroEQpart" version))
+       (sha256
+        (base32 "1n24nqyl0irpyspwx4b73xy228a84aa8zsn9fcf2lrlni5vyzmm0"))))
     (properties `((upstream-name . "zeroEQpart")))
     (build-system r-build-system)
     (propagated-inputs (list r-ppcor r-mass))
@@ -719,12 +719,12 @@ to the Bootstrap\" Efron (1983) <0-412-04231-2>.")
   (package
     (name "r-zenplots")
     (version "1.0.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "zenplots" version))
-              (sha256
-               (base32
-                "1zhxjql49hbwrim9y8qyyrkqwq09dv84vbini18xjkfv0z0lfmd2"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "zenplots" version))
+       (sha256
+        (base32 "1zhxjql49hbwrim9y8qyyrkqwq09dv84vbini18xjkfv0z0lfmd2"))))
     (properties `((upstream-name . "zenplots")))
     (build-system r-build-system)
     (propagated-inputs (list r-pairviz r-mass r-loon r-graph))
@@ -743,12 +743,12 @@ detail on use and algorithms, see <doi:10.18637/jss.v095.i04>.")
   (package
     (name "r-zendeskr")
     (version "0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "zendeskR" version))
-              (sha256
-               (base32
-                "06cjwk08w3x6dx717123psinid5bx6c563jnfn890373jw6xnfrk"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "zendeskR" version))
+       (sha256
+        (base32 "06cjwk08w3x6dx717123psinid5bx6c563jnfn890373jw6xnfrk"))))
     (properties `((upstream-name . "zendeskR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjson r-rcurl))
@@ -761,12 +761,12 @@ detail on use and algorithms, see <doi:10.18637/jss.v095.i04>.")
   (package
     (name "r-zen4r")
     (version "0.9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "zen4R" version))
-              (sha256
-               (base32
-                "09r3kd5mvaps30k4vszbfbhfb8hp6jq4f1v3kr9b8wgv7vqsa2k4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "zen4R" version))
+       (sha256
+        (base32 "09r3kd5mvaps30k4vszbfbhfb8hp6jq4f1v3kr9b8wgv7vqsa2k4"))))
     (properties `((upstream-name . "zen4R")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -790,12 +790,12 @@ and download of files.")
   (package
     (name "r-zeitgebr")
     (version "0.3.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "zeitgebr" version))
-              (sha256
-               (base32
-                "1h2zx3ah1xdyyag40ragrv7gvpnlzqmappbnjp971dn9khqdxfqs"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "zeitgebr" version))
+       (sha256
+        (base32 "1h2zx3ah1xdyyag40ragrv7gvpnlzqmappbnjp971dn9khqdxfqs"))))
     (properties `((upstream-name . "zeitgebr")))
     (build-system r-build-system)
     (propagated-inputs (list r-waveletcomp r-pracma r-lomb r-data-table
@@ -815,12 +815,12 @@ autocorrelation-based periodograms.")
   (package
     (name "r-zebu")
     (version "0.2.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "zebu" version))
-              (sha256
-               (base32
-                "1bxzc110nxyssdvnk330qs8qbmf6m7v5gglcfdkxdzy5gcbs1bm6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "zebu" version))
+       (sha256
+        (base32 "1bxzc110nxyssdvnk330qs8qbmf6m7v5gglcfdkxdzy5gcbs1bm6"))))
     (properties `((upstream-name . "zebu")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2 r-rcpp r-ggplot2 r-data-table))
@@ -839,12 +839,12 @@ permutations.")
   (package
     (name "r-zebook")
     (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ZeBook" version))
-              (sha256
-               (base32
-                "0v98kbz9njjdx60x9dn8hl8mc6x19i5knjyg2gkwfd667yy1rkl6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ZeBook" version))
+       (sha256
+        (base32 "0v98kbz9njjdx60x9dn8hl8mc6x19i5knjyg2gkwfd667yy1rkl6"))))
     (properties `((upstream-name . "ZeBook")))
     (build-system r-build-system)
     (propagated-inputs (list r-triangle r-desolve))
@@ -860,12 +860,12 @@ environment, by Daniel Wallach (INRA), David Makowski (INRA), James W. Jones
   (package
     (name "r-zdeskr")
     (version "0.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "zdeskR" version))
-              (sha256
-               (base32
-                "0a22yhsvzc0z4xbj7cfy33gf73zi1a8ryp0x4na3kximwiiw6v09"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "zdeskR" version))
+       (sha256
+        (base32 "0a22yhsvzc0z4xbj7cfy33gf73zi1a8ryp0x4na3kximwiiw6v09"))))
     (properties `((upstream-name . "zdeskR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -889,12 +889,12 @@ the software).")
   (package
     (name "r-zcurve")
     (version "2.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "zcurve" version))
-              (sha256
-               (base32
-                "1bgc2inc5wmimbhmxqlyg02hcf3n06z2fx26dnqr9baabmdgkpfa"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "zcurve" version))
+       (sha256
+        (base32 "1bgc2inc5wmimbhmxqlyg02hcf3n06z2fx26dnqr9baabmdgkpfa"))))
     (properties `((upstream-name . "zcurve")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-rcpp r-nleqslv r-evmix))
@@ -916,12 +916,12 @@ discovery and replicability rates, validation studies, and limitations.")
   (package
     (name "r-zctacrosswalk")
     (version "2.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "zctaCrosswalk" version))
-              (sha256
-               (base32
-                "14yda45nqn9ywb7zpwp4kmjziglj0qjgm02lmi8ndvc5wi2r1ma7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "zctaCrosswalk" version))
+       (sha256
+        (base32 "14yda45nqn9ywb7zpwp4kmjziglj0qjgm02lmi8ndvc5wi2r1ma7"))))
     (properties `((upstream-name . "zctaCrosswalk")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-rlang r-readr r-dplyr))
@@ -939,12 +939,12 @@ ZIP Code Tabulation Areas (ZCTAs).")
   (package
     (name "r-zalpha")
     (version "0.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "zalpha" version))
-              (sha256
-               (base32
-                "04hi5lxgcqzmkbqppp5fv8x7wdgap3bgr8b8pv4pvavzh73jlmxs"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "zalpha" version))
+       (sha256
+        (base32 "04hi5lxgcqzmkbqppp5fv8x7wdgap3bgr8b8pv4pvavzh73jlmxs"))))
     (properties `((upstream-name . "zalpha")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -960,12 +960,12 @@ under selective pressure.  See Jacobs, Sluckin and Kivisild (2016)
   (package
     (name "r-z10")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Z10" version))
-              (sha256
-               (base32
-                "02kxlzplmss68zj1z97fvpcjyhhpic9hlx8f5j3gqn3m1mqm1dja"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Z10" version))
+       (sha256
+        (base32 "02kxlzplmss68zj1z97fvpcjyhhpic9hlx8f5j3gqn3m1mqm1dja"))))
     (properties `((upstream-name . "Z10")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-rjson r-magrittr r-lubridate r-dplyr))

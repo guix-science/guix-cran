@@ -50,12 +50,12 @@
   (package
     (name "r-nzpullover")
     (version "0.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nzpullover" version))
-              (sha256
-               (base32
-                "0b3mz5i58m48fa1x7gv4l3gqj0gvrar201ph2l1gkbcnfmazwjp8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nzpullover" version))
+       (sha256
+        (base32 "0b3mz5i58m48fa1x7gv4l3gqj0gvrar201ph2l1gkbcnfmazwjp8"))))
     (properties `((upstream-name . "nzpullover")))
     (build-system r-build-system)
     (home-page "https://github.com/nacnudus/nzpullover")
@@ -70,12 +70,12 @@ Originally published by the New Zealand Police at
   (package
     (name "r-nzilbb-labbcat")
     (version "1.3-0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nzilbb.labbcat" version))
-              (sha256
-               (base32
-                "1nrd67d78klhnbslrpqaigbv1qrvl2nr6l9qhmgm2j34qpjrv7n5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nzilbb.labbcat" version))
+       (sha256
+        (base32 "1nrd67d78klhnbslrpqaigbv1qrvl2nr6l9qhmgm2j34qpjrv7n5"))))
     (properties `((upstream-name . "nzilbb.labbcat")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-rstudioapi r-jsonlite r-httr))
@@ -96,12 +96,12 @@ information about @code{LaBB-CAT}', see Robert Fromont and Jennifer Hay (2008)
   (package
     (name "r-nzffdr")
     (version "2.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nzffdr" version))
-              (sha256
-               (base32
-                "14s2dfrrknaswg4l69lncsdbd7algpd9pzgrhpip0vbmyq9pa2ni"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nzffdr" version))
+       (sha256
+        (base32 "14s2dfrrknaswg4l69lncsdbd7algpd9pzgrhpip0vbmyq9pa2ni"))))
     (properties `((upstream-name . "nzffdr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -122,12 +122,12 @@ clean the data once in R.")
   (package
     (name "r-nzelect")
     (version "0.4.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nzelect" version))
-              (sha256
-               (base32
-                "19kcbq454yg9g76ix7v3nibgw2203d7vv6f2d6d2zkcc0h08bjm7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nzelect" version))
+       (sha256
+        (base32 "19kcbq454yg9g76ix7v3nibgw2203d7vv6f2d6d2zkcc0h08bjm7"))))
     (properties `((upstream-name . "nzelect")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -144,12 +144,12 @@ some convenience analytical function are also supplied.")
   (package
     (name "r-nycflights13")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nycflights13" version))
-              (sha256
-               (base32
-                "07aa76c77pm1wpzkwjmzv8n6ir5i6fxawx8wx586gwc5wajcb1qf"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nycflights13" version))
+       (sha256
+        (base32 "07aa76c77pm1wpzkwjmzv8n6ir5i6fxawx8wx586gwc5wajcb1qf"))))
     (properties `((upstream-name . "nycflights13")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble))
@@ -164,12 +164,12 @@ useful metadata on airlines, airports, weather, and planes.")
   (package
     (name "r-nvmix")
     (version "0.1-0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nvmix" version))
-              (sha256
-               (base32
-                "12lhch9sib2nx8j7500dchfi27fvpabbcdkcw9qh194fx22ycknx"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nvmix" version))
+       (sha256
+        (base32 "12lhch9sib2nx8j7500dchfi27fvpabbcdkcw9qh194fx22ycknx"))))
     (properties `((upstream-name . "nvmix")))
     (build-system r-build-system)
     (propagated-inputs (list r-qrng
@@ -197,12 +197,12 @@ functionality.")
   (package
     (name "r-nvctr")
     (version "0.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nvctr" version))
-              (sha256
-               (base32
-                "1r7q9snr9ya1586fwbyvnk8rlb9yikl4yp3bn9kni0sw820npk1d"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nvctr" version))
+       (sha256
+        (base32 "1r7q9snr9ya1586fwbyvnk8rlb9yikl4yp3bn9kni0sw820npk1d"))))
     (properties `((upstream-name . "nvctr")))
     (build-system r-build-system)
     (propagated-inputs (list r-pracma r-magrittr))
@@ -224,12 +224,12 @@ described in Gade (2010) <doi:10.1017/S0373463309990415>.")
   (package
     (name "r-nvcssl")
     (version "2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NVCSSL" version))
-              (sha256
-               (base32
-                "1nsdhmay2blfa07ri1kfb204di8s5i7zk7qwwlbkhdjjl0qa3vd7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NVCSSL" version))
+       (sha256
+        (base32 "1nsdhmay2blfa07ri1kfb204di8s5i7zk7qwwlbkhdjjl0qa3vd7"))))
     (properties `((upstream-name . "NVCSSL")))
     (build-system r-build-system)
     (propagated-inputs (list r-plyr
@@ -257,16 +257,16 @@ deviation (SCAD) penalty of Breheny and Huang (2015)
 (define-public r-nutrition
   (package
     (name "r-nutrition")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nutrition" version))
-              (sha256
-               (base32
-                "0jxpa4wxjcv0j03xq5g97bm1czx0d5mm2rixgckncfjijy5c092j"))))
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nutrition" version))
+       (sha256
+        (base32 "061rgb8vdpq971k3g0jhr0mq6gqib25rz010b5sbq9ynb5x66995"))))
     (properties `((upstream-name . "nutrition")))
     (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=nutrition")
+    (home-page "https://wleoncio.github.io/nutrition/")
     (synopsis "Useful Functions for People on a Diet")
     (description
      "This package contains a collection of functions for performing different kinds
@@ -280,12 +280,12 @@ L. (2010, ISBN:9780812109917).")
   (package
     (name "r-nutrinetwork")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nutriNetwork" version))
-              (sha256
-               (base32
-                "0wmprgibx9jzaav93m3kqx1h8cflvx287yjfi3b8pvmgna7q8fsy"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nutriNetwork" version))
+       (sha256
+        (base32 "0wmprgibx9jzaav93m3kqx1h8cflvx287yjfi3b8pvmgna7q8fsy"))))
     (properties `((upstream-name . "nutriNetwork")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmvtnorm r-matrix r-igraph r-huge r-glasso))
@@ -302,12 +302,12 @@ variables for continuous data, discrete data and mixed discrete-continuous data.
   (package
     (name "r-nutrientracker")
     (version "1.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NutrienTrackeR" version))
-              (sha256
-               (base32
-                "0s7ax1aqvlph92y0pfs5ji2b4fjig2ig2zcl5vlffcilwm4ccrpp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NutrienTrackeR" version))
+       (sha256
+        (base32 "0s7ax1aqvlph92y0pfs5ji2b4fjig2ig2zcl5vlffcilwm4ccrpp"))))
     (properties `((upstream-name . "NutrienTrackeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-ggplot2))
@@ -330,12 +330,12 @@ of the package is also provided.")
   (package
     (name "r-numosl")
     (version "2.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "numOSL" version))
-              (sha256
-               (base32
-                "05h73s5xspccx0wr8g5a7a3m3gnhj4qvisjykl4dwmsh80gh1r95"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "numOSL" version))
+       (sha256
+        (base32 "05h73s5xspccx0wr8g5a7a3m3gnhj4qvisjykl4dwmsh80gh1r95"))))
     (properties `((upstream-name . "numOSL")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -352,12 +352,12 @@ statistical plot visualization.")
   (package
     (name "r-numkm")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "numKM" version))
-              (sha256
-               (base32
-                "0g5jw12fmfc6nl6a3ghpslkjd2d7pbihl70sks35r7dalmr6ihzk"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "numKM" version))
+       (sha256
+        (base32 "0g5jw12fmfc6nl6a3ghpslkjd2d7pbihl70sks35r7dalmr6ihzk"))))
     (properties `((upstream-name . "numKM")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival))
@@ -371,12 +371,12 @@ statistical plot visualization.")
   (package
     (name "r-numgen")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "numGen" version))
-              (sha256
-               (base32
-                "1y41wq31r8126dz1sj23smq2k6v9yqczq4ddgzqb73dsrx9dmmc0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "numGen" version))
+       (sha256
+        (base32 "1y41wq31r8126dz1sj23smq2k6v9yqczq4ddgzqb73dsrx9dmmc0"))))
     (properties `((upstream-name . "numGen")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=numGen")
@@ -390,12 +390,12 @@ based on cognitive models.")
   (package
     (name "r-numform")
     (version "0.7.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "numform" version))
-              (sha256
-               (base32
-                "0n96jm141h4awazr8sads9d99faw8kdy3vbhmjr58d8iqf7793f8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "numform" version))
+       (sha256
+        (base32 "0n96jm141h4awazr8sads9d99faw8kdy3vbhmjr58d8iqf7793f8"))))
     (properties `((upstream-name . "numform")))
     (build-system r-build-system)
     (propagated-inputs (list r-glue))
@@ -414,12 +414,12 @@ remember and easy to deploy.")
   (package
     (name "r-numero")
     (version "1.9.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Numero" version))
-              (sha256
-               (base32
-                "0bii7d4hggdhid81a7scp1lwbw8pi0vh2j9cb3z8hfpp88j2g16j"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Numero" version))
+       (sha256
+        (base32 "0bii7d4hggdhid81a7scp1lwbw8pi0vh2j9cb3z8hfpp88j2g16j"))))
     (properties `((upstream-name . "Numero")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -442,12 +442,12 @@ significance of the observed data patterns, and to visualize the results.")
   (package
     (name "r-numbersbr")
     (version "0.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "numbersBR" version))
-              (sha256
-               (base32
-                "0ihxlny745gpz1ngq862rydn1zwn8zni1xw9mmgw8hkylsrnjfq8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "numbersBR" version))
+       (sha256
+        (base32 "0ihxlny745gpz1ngq862rydn1zwn8zni1xw9mmgw8hkylsrnjfq8"))))
     (properties `((upstream-name . "numbersBR")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr))
@@ -466,12 +466,12 @@ comparisons in big datasets.")
   (package
     (name "r-numbers")
     (version "0.8-5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "numbers" version))
-              (sha256
-               (base32
-                "02r2mlq3jygvwi7anbrrid6693qc7iklxhc9ksmqjdlmgzdxxmbp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "numbers" version))
+       (sha256
+        (base32 "02r2mlq3jygvwi7anbrrid6693qc7iklxhc9ksmqjdlmgzdxxmbp"))))
     (properties `((upstream-name . "numbers")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=numbers")
@@ -487,12 +487,12 @@ symbols, some divisor functions, Euler's Phi function, etc.")
   (package
     (name "r-numberofalleles")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "numberofalleles" version))
-              (sha256
-               (base32
-                "0rjl21844yqp2503gy71c6vg8xywc4lcx7qr9vwvkjw5wiwxls11"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "numberofalleles" version))
+       (sha256
+        (base32 "0rjl21844yqp2503gy71c6vg8xywc4lcx7qr9vwvkjw5wiwxls11"))))
     (properties `((upstream-name . "numberofalleles")))
     (build-system r-build-system)
     (propagated-inputs (list r-ribd r-rcpp r-pedtools r-partitions))
@@ -512,12 +512,12 @@ related according to a provided pedigree.")
   (package
     (name "r-nullabor")
     (version "0.3.9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nullabor" version))
-              (sha256
-               (base32
-                "19nfmsnzndg9pdjg7m9w4vm4c3209ny52cpjdhmmhggvf7dxaiyg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nullabor" version))
+       (sha256
+        (base32 "19nfmsnzndg9pdjg7m9w4vm4c3209ny52cpjdhmmhggvf7dxaiyg"))))
     (properties `((upstream-name . "nullabor")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -546,12 +546,12 @@ lineup, and examine the distributions of metrics.")
   (package
     (name "r-nucombog")
     (version "1.0.4.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NUCOMBog" version))
-              (sha256
-               (base32
-                "0s6gm3adc9qdh94pxzgccbxx1f1lbgqyvd4xk37xp6f3b5hwljdz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NUCOMBog" version))
+       (sha256
+        (base32 "0s6gm3adc9qdh94pxzgccbxx1f1lbgqyvd4xk37xp6f3b5hwljdz"))))
     (properties `((upstream-name . "NUCOMBog")))
     (build-system r-build-system)
     (propagated-inputs (list r-snowfall))
@@ -569,12 +569,12 @@ model can downloaded from <https://github.com/jeroenpullens/NUCOMBog>.")
   (package
     (name "r-nucim")
     (version "1.0.11")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nucim" version))
-              (sha256
-               (base32
-                "12qfs4xd8lnkjhb0gkvxym07rndrwh5idvppj16v78amrk96rj5z"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nucim" version))
+       (sha256
+        (base32 "12qfs4xd8lnkjhb0gkvxym07rndrwh5idvppj16v78amrk96rj5z"))))
     (properties `((upstream-name . "nucim")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-fields r-ebimage r-bioimagetools))
@@ -592,12 +592,12 @@ See Volker J. Schmid, Marion Cremer, Thomas Cremer (2017)
   (package
     (name "r-ntss")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NTSS" version))
-              (sha256
-               (base32
-                "1i3y3psr17p8p7s799sdki3pndb82pydl2g3dcz18snynjpmd31j"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NTSS" version))
+       (sha256
+        (base32 "1i3y3psr17p8p7s799sdki3pndb82pydl2g3dcz18snynjpmd31j"))))
     (properties `((upstream-name . "NTSS")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-random
@@ -623,12 +623,12 @@ correction.  See @code{MrkviÄka} et al. (2021)
   (package
     (name "r-ntsdists")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ntsDists" version))
-              (sha256
-               (base32
-                "1vjzqbwqdg8drgbsxazlaalmzb2phsb9261pmpkiy4k0fcan7qzj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ntsDists" version))
+       (sha256
+        (base32 "1vjzqbwqdg8drgbsxazlaalmzb2phsb9261pmpkiy4k0fcan7qzj"))))
     (properties `((upstream-name . "ntsDists")))
     (build-system r-build-system)
     (home-page "https://github.com/dmazarei/ntsDists")
@@ -644,12 +644,12 @@ authors in the recent years.  See Patro and Smarandache (2016)
   (package
     (name "r-nts")
     (version "1.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NTS" version))
-              (sha256
-               (base32
-                "0scj05h2r3sg34n0lmarbrgavz6q2n23gvs2v4w5q249q2cx6iis"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NTS" version))
+       (sha256
+        (base32 "0scj05h2r3sg34n0lmarbrgavz6q2n23gvs2v4w5q249q2cx6iis"))))
     (properties `((upstream-name . "NTS")))
     (build-system r-build-system)
     (propagated-inputs (list r-tensor r-rdpack r-mswm r-mass r-dlm))
@@ -669,12 +669,12 @@ Time Series Analysis\" by Ruey S. Tsay and Rong Chen, John Wiley & Sons, 2018
   (package
     (name "r-ntdr")
     (version "0.3.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ntdr" version))
-              (sha256
-               (base32
-                "12gb5rndmqmmx6gvsyllp31fqrpx8z55rx947h3xva20hr57p9j1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ntdr" version))
+       (sha256
+        (base32 "12gb5rndmqmmx6gvsyllp31fqrpx8z55rx947h3xva20hr57p9j1"))))
     (properties `((upstream-name . "ntdr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -697,12 +697,12 @@ in a tidy data format.")
   (package
     (name "r-nsyllable")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nsyllable" version))
-              (sha256
-               (base32
-                "1rxzfivg5pkx8485l4bxxrdnvik31g5jps5l386x0w7mfs6498jg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nsyllable" version))
+       (sha256
+        (base32 "1rxzfivg5pkx8485l4bxxrdnvik31g5jps5l386x0w7mfs6498jg"))))
     (properties `((upstream-name . "nsyllable")))
     (build-system r-build-system)
     (home-page "https://github.com/quanteda/nsyllable")
@@ -716,12 +716,12 @@ the number of vowel sequences for words not found.")
   (package
     (name "r-nswgeo")
     (version "0.3.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nswgeo" version))
-              (sha256
-               (base32
-                "0nny1dh0c3nkwglqi6rgwgri8hx1h66bzfpy388bjcyc31nkmihr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nswgeo" version))
+       (sha256
+        (base32 "0nny1dh0c3nkwglqi6rgwgri8hx1h66bzfpy388bjcyc31nkmihr"))))
     (properties `((upstream-name . "nswgeo")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-cartographer))
@@ -737,12 +737,12 @@ data with cartographer'.")
   (package
     (name "r-nst")
     (version "3.1.10")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NST" version))
-              (sha256
-               (base32
-                "1ycpccg7hcg84ygjzksbi0fcrkisvis5165bbnj64h52gjifgxh7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NST" version))
+       (sha256
+        (base32 "1ycpccg7hcg84ygjzksbi0fcrkisvis5165bbnj64h52gjifgxh7"))))
     (properties `((upstream-name . "NST")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -781,12 +781,12 @@ beta diversity, used by Ning et al (2020) <doi:10.1038/s41467-020-18560-z>.")
   (package
     (name "r-nsroc")
     (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nsROC" version))
-              (sha256
-               (base32
-                "1fi7k61fja98kpn528jprjdycwz01rnqm368m82anxh21k7q4s1m"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nsROC" version))
+       (sha256
+        (base32 "1fi7k61fja98kpn528jprjdycwz01rnqm368m82anxh21k7q4s1m"))))
     (properties `((upstream-name . "nsROC")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-sde))
@@ -803,12 +803,12 @@ presence of censored data, and performing meta-analysis studies, among others.")
   (package
     (name "r-nspmix")
     (version "1.5-0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nspmix" version))
-              (sha256
-               (base32
-                "1jaaw5ibn614yhlid0csnzj31npdx5zivm2nhnvyghzcmvyxavr8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nspmix" version))
+       (sha256
+        (base32 "1jaaw5ibn614yhlid0csnzj31npdx5zivm2nhnvyghzcmvyxavr8"))))
     (properties `((upstream-name . "nspmix")))
     (build-system r-build-system)
     (propagated-inputs (list r-lsei))
@@ -825,12 +825,12 @@ and Wang (2010) <doi:10.1007/s11222-009-9117-z>.")
   (package
     (name "r-nsp")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nsp" version))
-              (sha256
-               (base32
-                "1dbq6i79r3rlf69scgczv0p940mcza1l90l42af7xdhan0gh6z99"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nsp" version))
+       (sha256
+        (base32 "1dbq6i79r3rlf69scgczv0p940mcza1l90l42af7xdhan0gh6z99"))))
     (properties `((upstream-name . "nsp")))
     (build-system r-build-system)
     (propagated-inputs (list r-lpsolve))
@@ -851,12 +851,12 @@ see P. Fryzlewicz (2021) <https://stats.lse.ac.uk/fryzlewicz/nsp/nsp.pdf>.")
   (package
     (name "r-nso1212")
     (version "1.4.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NSO1212" version))
-              (sha256
-               (base32
-                "1wxp7rp43gl3xgwln8d1s7b7a5zhz4dlshf9dzgb2ippvjxjqbmc"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NSO1212" version))
+       (sha256
+        (base32 "1wxp7rp43gl3xgwln8d1s7b7a5zhz4dlshf9dzgb2ippvjxjqbmc"))))
     (properties `((upstream-name . "NSO1212")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-httr))
@@ -876,12 +876,12 @@ from the API.")
   (package
     (name "r-nsm3data")
     (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nsm3data" version))
-              (sha256
-               (base32
-                "15m3x7jmwmh3rs65v5j39672253crc379zq3k6xigi6p7qnba7sn"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nsm3data" version))
+       (sha256
+        (base32 "15m3x7jmwmh3rs65v5j39672253crc379zq3k6xigi6p7qnba7sn"))))
     (properties `((upstream-name . "nsm3data")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=nsm3data")
@@ -895,12 +895,12 @@ textbook, 3rd edition.")
   (package
     (name "r-nsm3")
     (version "1.18")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NSM3" version))
-              (sha256
-               (base32
-                "0m0ijafjlw9pili0hxfrv5blj9ysxhhwj6c4hpnp5ry97a4gkib9"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NSM3" version))
+       (sha256
+        (base32 "0m0ijafjlw9pili0hxfrv5blj9ysxhhwj6c4hpnp5ry97a4gkib9"))))
     (properties `((upstream-name . "NSM3")))
     (build-system r-build-system)
     (propagated-inputs (list r-waveslim
@@ -939,12 +939,12 @@ other procedures in the package.")
   (package
     (name "r-nsga3")
     (version "0.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nsga3" version))
-              (sha256
-               (base32
-                "1jv3kw22jw24n7lnwhq3857mygr2yfv8c5xp3lbqqgz5840cdfa1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nsga3" version))
+       (sha256
+        (base32 "1jv3kw22jw24n7lnwhq3857mygr2yfv8c5xp3lbqqgz5840cdfa1"))))
     (properties `((upstream-name . "nsga3")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost r-rpref r-parallelmap r-mlr))
@@ -965,12 +965,12 @@ a detailed description.")
   (package
     (name "r-nsga2r")
     (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nsga2R" version))
-              (sha256
-               (base32
-                "1b3kkd1mi6g13bl2mkzqyvz0ki296fa9pv055r8mpkdm6gk12lb4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nsga2R" version))
+       (sha256
+        (base32 "1b3kkd1mi6g13bl2mkzqyvz0ki296fa9pv055r8mpkdm6gk12lb4"))))
     (properties `((upstream-name . "nsga2R")))
     (build-system r-build-system)
     (propagated-inputs (list r-mco))
@@ -988,12 +988,12 @@ al. (2002) <doi:10.1109/4235.996017>.")
   (package
     (name "r-nseval")
     (version "0.4.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nseval" version))
-              (sha256
-               (base32
-                "07pabn4msb6q50x67z84flb8fpzf43s1dy61cnqd7rn4l7zgc181"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nseval" version))
+       (sha256
+        (base32 "07pabn4msb6q50x67z84flb8fpzf43s1dy61cnqd7rn4l7zgc181"))))
     (properties `((upstream-name . "nseval")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=nseval")
@@ -1007,12 +1007,12 @@ values (promises), \"...\" lists, and active calls.")
   (package
     (name "r-nser")
     (version "1.5.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nser" version))
-              (sha256
-               (base32
-                "0l03qkh6b2n2vq4piz583vb3b8jmgh1m5rm47fs2w2faqxxs2y9f"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nser" version))
+       (sha256
+        (base32 "0l03qkh6b2n2vq4piz583vb3b8jmgh1m5rm47fs2w2faqxxs2y9f"))))
     (properties `((upstream-name . "nser")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -1040,12 +1040,12 @@ Equities and Derivatives (F&O) segment.  Data source
   (package
     (name "r-nse")
     (version "1.21")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nse" version))
-              (sha256
-               (base32
-                "0mw2ijc6z0l8sa7z5fbcapp1rl87zhh5v32iw1mcjw4khwc93bk7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nse" version))
+       (sha256
+        (base32 "0mw2ijc6z0l8sa7z5fbcapp1rl87zhh5v32iw1mcjw4khwc93bk7"))))
     (properties `((upstream-name . "nse")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich
@@ -1067,12 +1067,12 @@ univariate time series as described in Ardia et al. (2018)
   (package
     (name "r-nscluster")
     (version "1.3.6-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NScluster" version))
-              (sha256
-               (base32
-                "0qaf36pf5gd91ivy4ns5gppmrzxcha7ghyih4hcbnxs2291jck0x"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NScluster" version))
+       (sha256
+        (base32 "0qaf36pf5gd91ivy4ns5gppmrzxcha7ghyih4hcbnxs2291jck0x"))))
     (properties `((upstream-name . "NScluster")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -1092,12 +1092,12 @@ interface is available.  For more details see Tanaka, Saga and Nakano
   (package
     (name "r-nscancor")
     (version "0.7.0-6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nscancor" version))
-              (sha256
-               (base32
-                "1fcw3qpsc7kpg2ha1qkp2277ir2kyhy71vjwypfp49y7nqiwm7kh"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nscancor" version))
+       (sha256
+        (base32 "1fcw3qpsc7kpg2ha1qkp2277ir2kyhy71vjwypfp49y7nqiwm7kh"))))
     (properties `((upstream-name . "nscancor")))
     (build-system r-build-system)
     (home-page "https://sigg-iten.ch/research/")
@@ -1120,12 +1120,12 @@ and Sigg et al. (2007) <doi:10.1109/MLSP.2007.4414315> for more details.")
   (package
     (name "r-nsarfima")
     (version "0.2.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nsarfima" version))
-              (sha256
-               (base32
-                "0sv63anrsh0ajfvvkb44zsvc7sxws3xpsgwxqa951gy98w8h58g5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nsarfima" version))
+       (sha256
+        (base32 "0sv63anrsh0ajfvvkb44zsvc7sxws3xpsgwxqa951gy98w8h58g5"))))
     (properties `((upstream-name . "nsarfima")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=nsarfima")
@@ -1144,12 +1144,12 @@ method and a minimum distance estimator.  Mayoral, L. (2007)
   (package
     (name "r-nsae")
     (version "0.4.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NSAE" version))
-              (sha256
-               (base32
-                "1pig0b2g6z1pc6is3nw7m88zwvwpg3pwvifvyc6p38kbin57m1pb"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NSAE" version))
+       (sha256
+        (base32 "1pig0b2g6z1pc6is3nw7m88zwvwpg3pwvifvyc6p38kbin57m1pb"))))
     (properties `((upstream-name . "NSAE")))
     (build-system r-build-system)
     (propagated-inputs (list r-spgwr
@@ -1183,12 +1183,12 @@ the package creation was in progress.")
   (package
     (name "r-nricens")
     (version "1.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nricens" version))
-              (sha256
-               (base32
-                "0fpgp6k3mhb0qxbx6248k9bscnmlzwj70mqh631a1nc4cpdjvw3q"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nricens" version))
+       (sha256
+        (base32 "0fpgp6k3mhb0qxbx6248k9bscnmlzwj70mqh631a1nc4cpdjvw3q"))))
     (properties `((upstream-name . "nricens")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival))
@@ -1204,12 +1204,12 @@ models with time to event and binary data.")
   (package
     (name "r-nrejections")
     (version "1.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NRejections" version))
-              (sha256
-               (base32
-                "0lzj7kyn4s8l306a6xwkgkv1z4dlfsr61i902lvdxv4ln4m6a5kq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NRejections" version))
+       (sha256
+        (base32 "0lzj7kyn4s8l306a6xwkgkv1z4dlfsr61i902lvdxv4ln4m6a5kq"))))
     (properties `((upstream-name . "NRejections")))
     (build-system r-build-system)
     (propagated-inputs (list r-stepwisetest r-mvtnorm r-matrixcalc r-foreach
@@ -1231,12 +1231,12 @@ rejections.")
   (package
     (name "r-nrba")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nrba" version))
-              (sha256
-               (base32
-                "0vlc0w2x2rpddgwxsr5zi2kgfzpvnkfskznjm2q77svigpb3lpc2"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nrba" version))
+       (sha256
+        (base32 "0vlc0w2x2rpddgwxsr5zi2kgfzpvnkfskznjm2q77svigpb3lpc2"))))
     (properties `((upstream-name . "nrba")))
     (build-system r-build-system)
     (propagated-inputs (list r-svrep r-survey r-magrittr r-dplyr r-broom))
@@ -1264,12 +1264,12 @@ provide an overview of the methods implemented in this package.")
   (package
     (name "r-npwbs")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "npwbs" version))
-              (sha256
-               (base32
-                "029vxc6iy1p6nv0vw6097rvpkwlf0a24643gr6dbycpbail9qlqg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "npwbs" version))
+       (sha256
+        (base32 "029vxc6iy1p6nv0vw6097rvpkwlf0a24643gr6dbycpbail9qlqg"))))
     (properties `((upstream-name . "npwbs")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=npwbs")
@@ -1287,12 +1287,12 @@ incorrectly detecting a change point in a sequence which does not contain any.")
   (package
     (name "r-nptest")
     (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nptest" version))
-              (sha256
-               (base32
-                "1yfxpw3xlscv0maqgvadxj93qgs25w027lk2br1zlckll8dvdakz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nptest" version))
+       (sha256
+        (base32 "1yfxpw3xlscv0maqgvadxj93qgs25w027lk2br1zlckll8dvdakz"))))
     (properties `((upstream-name . "nptest")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=nptest")
@@ -1311,12 +1311,12 @@ package.")
   (package
     (name "r-npsurvss")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "npsurvSS" version))
-              (sha256
-               (base32
-                "0k9xvxii5527vynf7yy50j7z4jhxgk5ydhdcaaygm9ynx5yq14ip"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "npsurvSS" version))
+       (sha256
+        (base32 "0k9xvxii5527vynf7yy50j7z4jhxgk5ydhdcaaygm9ynx5yq14ip"))))
     (properties `((upstream-name . "npsurvSS")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -1345,12 +1345,12 @@ Schoenfeld (1981) <doi:10.1093/biomet/68.1.316>.")
   (package
     (name "r-npsr")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "npsr" version))
-              (sha256
-               (base32
-                "1fzvilzjg9z05991sr1s1bdp17kfl6d1580qdllk8is9ac06np0v"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "npsr" version))
+       (sha256
+        (base32 "1fzvilzjg9z05991sr1s1bdp17kfl6d1580qdllk8is9ac06np0v"))))
     (properties `((upstream-name . "npsr")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-infotheo r-gmp))
@@ -1370,12 +1370,12 @@ IV model.")
   (package
     (name "r-npsf")
     (version "0.8.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "npsf" version))
-              (sha256
-               (base32
-                "011y8k3sdhhgzf4yn0wdxx55yv4kdpgyhj0bbm6krjdpphnr9557"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "npsf" version))
+       (sha256
+        (base32 "011y8k3sdhhgzf4yn0wdxx55yv4kdpgyhj0bbm6krjdpphnr9557"))))
     (properties `((upstream-name . "npsf")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-formula))
@@ -1399,13 +1399,13 @@ can be obtained.")
 (define-public r-nprotreg
   (package
     (name "r-nprotreg")
-    (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nprotreg" version))
-              (sha256
-               (base32
-                "0krzfxy4nlzwd9dgfk9wds3h7yhdsfyh4mw28kvp39xsj7qrp186"))))
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nprotreg" version))
+       (sha256
+        (base32 "152z2wsm4gwqw51imk80vxg9spvl9293vqsja8d8gh1rmsm6m5r2"))))
     (properties `((upstream-name . "nprotreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-foreach))
@@ -1424,12 +1424,12 @@ smoothing parameters.  See Marco Di Marzio, Agnese Panzera & Charles C. Taylor
   (package
     (name "r-nprocregression")
     (version "1.0-7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "npROCRegression" version))
-              (sha256
-               (base32
-                "0fl10gj6s09gfmb7wl1y62fr49qnckjqxbzhjkyx029v9klbfvp7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "npROCRegression" version))
+       (sha256
+        (base32 "0fl10gj6s09gfmb7wl1y62fr49qnckjqxbzhjkyx029v9klbfvp7"))))
     (properties `((upstream-name . "npROCRegression")))
     (build-system r-build-system)
     (propagated-inputs (list r-lattice))
@@ -1446,12 +1446,12 @@ inclusion of covariate information on the receiver operating characteristic
   (package
     (name "r-nproc")
     (version "2.1.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nproc" version))
-              (sha256
-               (base32
-                "1p5wjz0rafg27fsl48l9pmki3px1k0pav3ignz4swik5i1nhnc8w"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nproc" version))
+       (sha256
+        (base32 "1p5wjz0rafg27fsl48l9pmki3px1k0pav3ignz4swik5i1nhnc8w"))))
     (properties `((upstream-name . "nproc")))
     (build-system r-build-system)
     (propagated-inputs (list r-tree
@@ -1494,12 +1494,12 @@ adaptive way and compare different NP classifiers.")
   (package
     (name "r-nprobust")
     (version "0.4.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nprobust" version))
-              (sha256
-               (base32
-                "1vry64r3xms6xls6bqq918prjyhs5svhl2yjvq0jxycaaqw2sgyp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nprobust" version))
+       (sha256
+        (base32 "1vry64r3xms6xls6bqq918prjyhs5svhl2yjvq0jxycaaqw2sgyp"))))
     (properties `((upstream-name . "nprobust")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-ggplot2))
@@ -1523,12 +1523,12 @@ package are described in Calonico, Cattaneo and Farrell (2019,
   (package
     (name "r-npregfast")
     (version "1.5.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "npregfast" version))
-              (sha256
-               (base32
-                "1d2p23qqwa06rxfl5v9bcvq2j6pcsvjywq74qgrflkjk45g2kjb5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "npregfast" version))
+       (sha256
+        (base32 "1d2p23qqwa06rxfl5v9bcvq2j6pcsvjywq74qgrflkjk45g2kjb5"))))
     (properties `((upstream-name . "npregfast")))
     (build-system r-build-system)
     (propagated-inputs (list r-wesanderson
@@ -1554,12 +1554,12 @@ polynomial kernel smoothers or splines.  Additionally, a parametric model
   (package
     (name "r-npregderiv")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "npregderiv" version))
-              (sha256
-               (base32
-                "1k873cs3rs15l13z8017n4anacandx7di6yk1zlamcc5p3vlh59n"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "npregderiv" version))
+       (sha256
+        (base32 "1k873cs3rs15l13z8017n4anacandx7di6yk1zlamcc5p3vlh59n"))))
     (properties `((upstream-name . "npregderiv")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=npregderiv")
@@ -1574,12 +1574,12 @@ method of Wang and Lin (2015) <http://www.jmlr.org/papers/v16/wang15b.html>.")
   (package
     (name "r-npreg")
     (version "1.0-9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "npreg" version))
-              (sha256
-               (base32
-                "10pgcjhiannvxkbsw3ywkjzmgsq2m7dqwqhxkfcdnbc052n7s6di"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "npreg" version))
+       (sha256
+        (base32 "10pgcjhiannvxkbsw3ywkjzmgsq2m7dqwqhxkfcdnbc052n7s6di"))))
     (properties `((upstream-name . "npreg")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=npreg")
@@ -1597,12 +1597,12 @@ parameter selection, and flexible tools for prediction and inference.")
   (package
     (name "r-npred")
     (version "1.0.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NPRED" version))
-              (sha256
-               (base32
-                "0nkfgc9zy3gszmnay77yj7i0p8w1q8j1m9wb05hkrmhiacp4mbn4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NPRED" version))
+       (sha256
+        (base32 "0nkfgc9zy3gszmnay77yj7i0p8w1q8j1m9wb05hkrmhiacp4mbn4"))))
     (properties `((upstream-name . "NPRED")))
     (build-system r-build-system)
     (native-inputs (list r-knitr gfortran))
@@ -1621,12 +1621,12 @@ methodologies used in the package can be found in Sharma, A., Mehrotra, R.
   (package
     (name "r-npphen")
     (version "1.5.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "npphen" version))
-              (sha256
-               (base32
-                "1d585rz07ldmmfcsrb11nl2f7jry2p0cc5dm8vlwr1jv7ag0r9y5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "npphen" version))
+       (sha256
+        (base32 "1d585rz07ldmmfcsrb11nl2f7jry2p0cc5dm8vlwr1jv7ag0r9y5"))))
     (properties `((upstream-name . "npphen")))
     (build-system r-build-system)
     (propagated-inputs (list r-snow r-rgdal r-raster r-lubridate r-ks))
@@ -1647,12 +1647,12 @@ information, please check the following paper: Estay, S., @code{ChÃ¡vez}, R.O.
   (package
     (name "r-nppbib")
     (version "1.2-0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nppbib" version))
-              (sha256
-               (base32
-                "1nn6wf89jhr3gy4rcd6px0cd5b1bsr7pbaxng4adba8n3yrss7vs"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nppbib" version))
+       (sha256
+        (base32 "1nn6wf89jhr3gy4rcd6px0cd5b1bsr7pbaxng4adba8n3yrss7vs"))))
     (properties `((upstream-name . "nppbib")))
     (build-system r-build-system)
     (home-page "https://github.com/dalling1")
@@ -1667,12 +1667,12 @@ from partially-balanced incomplete block-design experiments.")
   (package
     (name "r-npp")
     (version "0.5.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NPP" version))
-              (sha256
-               (base32
-                "1c45gkqx27685am2qfiyq7rnlz809lmyi3jhffgf3jhqcyg9mwm7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NPP" version))
+       (sha256
+        (base32 "1c45gkqx27685am2qfiyq7rnlz809lmyi3jhffgf3jhqcyg9mwm7"))))
     (properties `((upstream-name . "NPP")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=NPP")
@@ -1689,12 +1689,12 @@ Metropolis-Hastings based on transformation.")
   (package
     (name "r-npordtests")
     (version "1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "npordtests" version))
-              (sha256
-               (base32
-                "1axzcyy45h3rs67m0i3cvwbmza1mnmraxan9j4zlpxdd5x9nz4h8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "npordtests" version))
+       (sha256
+        (base32 "1axzcyy45h3rs67m0i3cvwbmza1mnmraxan9j4zlpxdd5x9nz4h8"))))
     (properties `((upstream-name . "npordtests")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=npordtests")
@@ -1709,12 +1709,12 @@ ordered alternatives.")
   (package
     (name "r-npmv")
     (version "2.4.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "npmv" version))
-              (sha256
-               (base32
-                "04lfks2rlax59gxdnbgkpmk2vaax718z6hkgsvmyxf52iby6rvlr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "npmv" version))
+       (sha256
+        (base32 "04lfks2rlax59gxdnbgkpmk2vaax718z6hkgsvmyxf52iby6rvlr"))))
     (properties `((upstream-name . "npmv")))
     (build-system r-build-system)
     (propagated-inputs (list r-formula))
@@ -1734,12 +1734,12 @@ variables and regarding factor levels.")
   (package
     (name "r-npmr")
     (version "1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "npmr" version))
-              (sha256
-               (base32
-                "073i9zcnyp8l5fxblx2sfyn0b4lr6i595q6kl6ispvzmylwqj8na"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "npmr" version))
+       (sha256
+        (base32 "073i9zcnyp8l5fxblx2sfyn0b4lr6i595q6kl6ispvzmylwqj8na"))))
     (properties `((upstream-name . "npmr")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=npmr")
@@ -1755,12 +1755,12 @@ Reference: Powers S, Hastie T and Tibshirani R (2018)
   (package
     (name "r-npmlreg")
     (version "0.46-5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "npmlreg" version))
-              (sha256
-               (base32
-                "1f0bzccmral2y56aih37gmi6mjww6wmp2a8z6yxm501fgj2lgzfc"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "npmlreg" version))
+       (sha256
+        (base32 "1f0bzccmral2y56aih37gmi6mjww6wmp2a8z6yxm501fgj2lgzfc"))))
     (properties `((upstream-name . "npmlreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-statmod))
@@ -1776,12 +1776,12 @@ overdispersed generalized linear models and variance component models.")
   (package
     (name "r-npmlecmprsk")
     (version "3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NPMLEcmprsk" version))
-              (sha256
-               (base32
-                "0nm88fsxgrfk0j0lmir57bhxy4p8ah503gpj6jdlvjqw862jigiq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NPMLEcmprsk" version))
+       (sha256
+        (base32 "0nm88fsxgrfk0j0lmir57bhxy4p8ah503gpj6jdlvjqw862jigiq"))))
     (properties `((upstream-name . "NPMLEcmprsk")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=NPMLEcmprsk")
@@ -1800,12 +1800,12 @@ data, as described in Chang et al. (2007a).")
   (package
     (name "r-npmlda")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "npmlda" version))
-              (sha256
-               (base32
-                "1dr25an7cac89jyb8zhmj3ry6lq7sh7zxci1injplnk4gzy17mc5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "npmlda" version))
+       (sha256
+        (base32 "1dr25an7cac89jyb8zhmj3ry6lq7sh7zxci1injplnk4gzy17mc5"))))
     (properties `((upstream-name . "npmlda")))
     (build-system r-build-system)
     (home-page "https://github.com/npmldabook/npmlda/")
@@ -1821,12 +1821,12 @@ conditional-distribution based models with longitudinal Data.")
   (package
     (name "r-nplyr")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nplyr" version))
-              (sha256
-               (base32
-                "0n9pl6igjpdvsp39d7h5xr64c1ixlhc8bcxpbl70mz95p7jrld8h"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nplyr" version))
+       (sha256
+        (base32 "0n9pl6igjpdvsp39d7h5xr64c1ixlhc8bcxpbl70mz95p7jrld8h"))))
     (properties `((upstream-name . "nplyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-rlang r-purrr r-dplyr r-assertthat))
@@ -1846,12 +1846,12 @@ summarising grouped data, among others.")
   (package
     (name "r-nplr")
     (version "0.1-7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nplr" version))
-              (sha256
-               (base32
-                "1h3qv9dlw2gx8km3slyvrl588nif1n87df8xwmm6p75ziqhn2f56"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nplr" version))
+       (sha256
+        (base32 "1h3qv9dlw2gx8km3slyvrl588nif1n87df8xwmm6p75ziqhn2f56"))))
     (properties `((upstream-name . "nplr")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -1866,12 +1866,12 @@ logistic regression.  Can also be applied to proliferation analyses.")
   (package
     (name "r-nplplot")
     (version "4.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nplplot" version))
-              (sha256
-               (base32
-                "1sxmz0cl15fdc0s987nwjnl6ywxg4fqs8qnm5nkcbyj6b9jzcbwy"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nplplot" version))
+       (sha256
+        (base32 "1sxmz0cl15fdc0s987nwjnl6ywxg4fqs8qnm5nkcbyj6b9jzcbwy"))))
     (properties `((upstream-name . "nplplot")))
     (build-system r-build-system)
     (home-page "https://watson.hgen.pitt.edu/register/")
@@ -1888,12 +1888,12 @@ package to plot output from a variety of programs.")
   (package
     (name "r-npistats")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NPIstats" version))
-              (sha256
-               (base32
-                "0hbx2mzz1z2158c943dqfn0pq1aybj1xxy55mmvld4djr5zrlz9w"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NPIstats" version))
+       (sha256
+        (base32 "0hbx2mzz1z2158c943dqfn0pq1aybj1xxy55mmvld4djr5zrlz9w"))))
     (properties `((upstream-name . "NPIstats")))
     (build-system r-build-system)
     (propagated-inputs (list r-dplyr))
@@ -1913,12 +1913,12 @@ group.")
   (package
     (name "r-npintfactrep")
     (version "1.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "npIntFactRep" version))
-              (sha256
-               (base32
-                "14ms66ppzb4jjsa3fparic6gdn913f6wv2ccjyb02j1ahs4iaa4g"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "npIntFactRep" version))
+       (sha256
+        (base32 "14ms66ppzb4jjsa3fparic6gdn913f6wv2ccjyb02j1ahs4iaa4g"))))
     (properties `((upstream-name . "npIntFactRep")))
     (build-system r-build-system)
     (propagated-inputs (list r-plyr r-ez))
@@ -1938,12 +1938,12 @@ tests, only the resulting values for the interaction are relevant.")
   (package
     (name "r-npi")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "npi" version))
-              (sha256
-               (base32
-                "0akf9m46iy18nqm678sga1dxq1135jj33yrxz30yhd75w6nicgri"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "npi" version))
+       (sha256
+        (base32 "0akf9m46iy18nqm678sga1dxq1135jj33yrxz30yhd75w6nicgri"))))
     (properties `((upstream-name . "npi")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -1973,12 +1973,12 @@ credentials, and other attributes exposed by the API.")
   (package
     (name "r-nphrct")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nphRCT" version))
-              (sha256
-               (base32
-                "0b29izx3rz17g0jx72s33jj8ps0z3kq8fj2v0035hcjacnswz9ya"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nphRCT" version))
+       (sha256
+        (base32 "0b29izx3rz17g0jx72s33jj8ps0z3kq8fj2v0035hcjacnswz9ya"))))
     (properties `((upstream-name . "nphRCT")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-purrr r-ggplot2))
@@ -1997,12 +1997,12 @@ Magirr and Jimenez (2022) <@code{arXiv:2201.10445v1>}.")
   (package
     (name "r-nphpower")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nphPower" version))
-              (sha256
-               (base32
-                "0jqrbjm56nmhrmhsidz0bzyifq6kpqch8r64j8vd98b7xgcb6w4h"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nphPower" version))
+       (sha256
+        (base32 "0jqrbjm56nmhrmhsidz0bzyifq6kpqch8r64j8vd98b7xgcb6w4h"))))
     (properties `((upstream-name . "nphPower")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-survival r-mvtnorm r-mass))
@@ -2029,12 +2029,12 @@ The references for calculation under non-proportional hazards include Lakatos
   (package
     (name "r-nphmc")
     (version "2.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NPHMC" version))
-              (sha256
-               (base32
-                "0mi92rnpm96nc2ip10022qa7cjrlry9aibw8yx9xmn826bqipwir"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NPHMC" version))
+       (sha256
+        (base32 "0mi92rnpm96nc2ip10022qa7cjrlry9aibw8yx9xmn826bqipwir"))))
     (properties `((upstream-name . "NPHMC")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-smcure))
@@ -2050,12 +2050,12 @@ cure fractions.")
   (package
     (name "r-nphazardrate")
     (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NPHazardRate" version))
-              (sha256
-               (base32
-                "0na4iphva1dadz457ii8kxrhnki2asaxpbwr824rljyrldj9rcgg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NPHazardRate" version))
+       (sha256
+        (base32 "0na4iphva1dadz457ii8kxrhnki2asaxpbwr824rljyrldj9rcgg"))))
     (properties `((upstream-name . "NPHazardRate")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival))
@@ -2071,12 +2071,12 @@ hazard rate estimators.")
   (package
     (name "r-nph")
     (version "2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nph" version))
-              (sha256
-               (base32
-                "100x7ar498s18rs8m4bx0kf4h8vqk1clb4z4kdnlni16lrpc90hy"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nph" version))
+       (sha256
+        (base32 "100x7ar498s18rs8m4bx0kf4h8vqk1clb4z4kdnlni16lrpc90hy"))))
     (properties `((upstream-name . "nph")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-mvtnorm r-multcomp r-muhaz r-ggplot2))
@@ -2109,12 +2109,12 @@ multivariate normal approximation to the set of selected parameters.")
   (package
     (name "r-npflow")
     (version "0.13.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NPflow" version))
-              (sha256
-               (base32
-                "1bgdkm82pmzjv46pkxpvh5ffffmc6q68x5jjl7k330w9vwgx2kf0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NPflow" version))
+       (sha256
+        (base32 "1bgdkm82pmzjv46pkxpvh5ffffmc6q68x5jjl7k330w9vwgx2kf0"))))
     (properties `((upstream-name . "NPflow")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm
@@ -2140,12 +2140,12 @@ Thiebaut (2019) <doi: 10.1214/18-AOAS1209>.")
   (package
     (name "r-npexact")
     (version "0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "npExact" version))
-              (sha256
-               (base32
-                "055wm5lcj98wb71lqp2zdyl8kkwvi6lwmnaylynvr907xqabaqvd"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "npExact" version))
+       (sha256
+        (base32 "055wm5lcj98wb71lqp2zdyl8kkwvi6lwmnaylynvr907xqabaqvd"))))
     (properties `((upstream-name . "npExact")))
     (build-system r-build-system)
     (home-page "https://github.com/zauster/npExact")
@@ -2167,12 +2167,12 @@ the input.")
   (package
     (name "r-npde")
     (version "3.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "npde" version))
-              (sha256
-               (base32
-                "1zhf48wg8cfki5z0mv7k56s03km2n7c9gr2q70lvm2k7lz57amwq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "npde" version))
+       (sha256
+        (base32 "1zhf48wg8cfki5z0mv7k56s03km2n7c9gr2q70lvm2k7lz57amwq"))))
     (properties `((upstream-name . "npde")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-rlang r-mclust r-gridextra r-ggplot2))
@@ -2189,12 +2189,12 @@ those used in pharmacokinetics and pharmacodynamics.")
   (package
     (name "r-npcurepk")
     (version "1.0-2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "npcurePK" version))
-              (sha256
-               (base32
-                "1p1vl9w8z8xq6bfsn1kgq5cnzyf4aiax8iis0vb4xcxrb2wl0mav"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "npcurePK" version))
+       (sha256
+        (base32 "1p1vl9w8z8xq6bfsn1kgq5cnzyf4aiax8iis0vb4xcxrb2wl0mav"))))
     (properties `((upstream-name . "npcurePK")))
     (build-system r-build-system)
     (propagated-inputs (list r-npcure r-foreach r-doparallel r-desctools
@@ -2214,12 +2214,12 @@ cure status is partially known.  For details, see Safari et al (2021)
   (package
     (name "r-npcure")
     (version "0.1-5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "npcure" version))
-              (sha256
-               (base32
-                "0hf6w8w76qmjdsd6zgg85jj5ypmmg1a1ryzqwnxcypsdjxaq539z"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "npcure" version))
+       (sha256
+        (base32 "0hf6w8w76qmjdsd6zgg85jj5ypmmg1a1ryzqwnxcypsdjxaq539z"))))
     (properties `((upstream-name . "npcure")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-permute))
@@ -2236,12 +2236,12 @@ al. (2017a) <doi:10.1016/j.csda.2016.08.002> and LÃ³pez-Cheda et al. (2017b)
   (package
     (name "r-npcs")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "npcs" version))
-              (sha256
-               (base32
-                "0bd81fi1zg06s39msdrnhh0yv7y7zr2nn110w8fm9vdlcx100gam"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "npcs" version))
+       (sha256
+        (base32 "0bd81fi1zg06s39msdrnhh0yv7y7zr2nn110w8fm9vdlcx100gam"))))
     (properties `((upstream-name . "npcs")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -2272,12 +2272,12 @@ and Yang Feng, 2021).")
   (package
     (name "r-npcp")
     (version "0.2-5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "npcp" version))
-              (sha256
-               (base32
-                "0mh5z4flksj7v1klylwqn2dxn5sbvs16sdy46l7y7n93i4v3pqvi"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "npcp" version))
+       (sha256
+        (base32 "0mh5z4flksj7v1klylwqn2dxn5sbvs16sdy46l7y7n93i4v3pqvi"))))
     (properties `((upstream-name . "npcp")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich))
@@ -2308,12 +2308,12 @@ multivariate observations.")
   (package
     (name "r-npcox")
     (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NPCox" version))
-              (sha256
-               (base32
-                "09cyaj2xlad8277bw5nbdi51imhw5dr78zqks0cz3513igc262sa"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NPCox" version))
+       (sha256
+        (base32 "09cyaj2xlad8277bw5nbdi51imhw5dr78zqks0cz3513igc262sa"))))
     (properties `((upstream-name . "NPCox")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=NPCox")
@@ -2331,12 +2331,12 @@ standard errors.  More details can be found in Lu Tian et al. (2005)
   (package
     (name "r-npcoptest")
     (version "1.03")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "npcopTest" version))
-              (sha256
-               (base32
-                "1kpa3avi95aa93y038f4zqhhdp8vdscdk0c6397qmqjg34hf1dnr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "npcopTest" version))
+       (sha256
+        (base32 "1kpa3avi95aa93y038f4zqhhdp8vdscdk0c6397qmqjg34hf1dnr"))))
     (properties `((upstream-name . "npcopTest")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=npcopTest")
@@ -2353,12 +2353,12 @@ justification and examples are published in Rohmer (2016)
   (package
     (name "r-npclust")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "npclust" version))
-              (sha256
-               (base32
-                "0a1las0vxm4mhwvds66lvq87kb140sjrnjq5sihbrrh7wpbq31zg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "npclust" version))
+       (sha256
+        (base32 "0a1las0vxm4mhwvds66lvq87kb140sjrnjq5sihbrrh7wpbq31zg"))))
     (properties `((upstream-name . "npclust")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-ggplot2))
@@ -2380,12 +2380,12 @@ intervals.")
   (package
     (name "r-npcirc")
     (version "3.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NPCirc" version))
-              (sha256
-               (base32
-                "0qcam9n9llsblrpa2w0yj0axh79qwinz4wwbf4gvyrajfv935i8i"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NPCirc" version))
+       (sha256
+        (base32 "0qcam9n9llsblrpa2w0yj0axh79qwinz4wwbf4gvyrajfv935i8i"))))
     (properties `((upstream-name . "NPCirc")))
     (build-system r-build-system)
     (propagated-inputs (list r-shape
@@ -2409,12 +2409,12 @@ other conditional characteristics.")
   (package
     (name "r-npcd")
     (version "1.0-11")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NPCD" version))
-              (sha256
-               (base32
-                "107i33z4q5w2828sm0pm8234kmp1v3a2w72lmhvi0rpnjhg0x120"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NPCD" version))
+       (sha256
+        (base32 "107i33z4q5w2828sm0pm8234kmp1v3a2w72lmhvi0rpnjhg0x120"))))
     (properties `((upstream-name . "NPCD")))
     (build-system r-build-system)
     (propagated-inputs (list r-r-methodss3 r-bb))
@@ -2437,12 +2437,12 @@ model, and the R-RUM model.")
   (package
     (name "r-npbr")
     (version "1.8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "npbr" version))
-              (sha256
-               (base32
-                "1mvl16z4s517a87ljl1ksr1ixrz3c6v22hv36s6x60f9rcs96jj8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "npbr" version))
+       (sha256
+        (base32 "1mvl16z4s517a87ljl1ksr1ixrz3c6v22hv36s6x60f9rcs96jj8"))))
     (properties `((upstream-name . "npbr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rglpk r-quadprog r-np r-benchmarking))
@@ -2464,12 +2464,12 @@ empirical applications and simulated examples.")
   (package
     (name "r-npboottprm")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "npboottprm" version))
-              (sha256
-               (base32
-                "0a2c846vhvpz8nc4f1ar91px275y9fs570v7k9pdny4dw0kq1zqh"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "npboottprm" version))
+       (sha256
+        (base32 "0a2c846vhvpz8nc4f1ar91px275y9fs570v7k9pdny4dw0kq1zqh"))))
     (properties `((upstream-name . "npboottprm")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinythemes r-shiny r-ggplot2))
@@ -2497,12 +2497,12 @@ intuitive, user-friendly data exploration.")
   (package
     (name "r-npbayesimputecat")
     (version "0.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NPBayesImputeCat" version))
-              (sha256
-               (base32
-                "05zwa7hhf8p1icgdvvla0r70fgvjm7s38gp69h7wgsq8yl6vd876"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NPBayesImputeCat" version))
+       (sha256
+        (base32 "05zwa7hhf8p1icgdvvla0r70fgvjm7s38gp69h7wgsq8yl6vd876"))))
     (properties `((upstream-name . "NPBayesImputeCat")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -2527,12 +2527,12 @@ Manrique-Vallier and Reiter (2014) <doi:10.1080/10618600.2013.844700>.")
   (package
     (name "r-nparsurv")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nparsurv" version))
-              (sha256
-               (base32
-                "1qy9qkkpqrk49vjxbyvl25i4kfk0py6v64izd8lmaw38dynybpy2"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nparsurv" version))
+       (sha256
+        (base32 "1qy9qkkpqrk49vjxbyvl25i4kfk0py6v64izd8lmaw38dynybpy2"))))
     (properties `((upstream-name . "nparsurv")))
     (build-system r-build-system)
     (propagated-inputs (list r-th-data r-survival))
@@ -2548,12 +2548,12 @@ Censored Data and Two Factorial Influencing Variables.")
   (package
     (name "r-nparmd")
     (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nparMD" version))
-              (sha256
-               (base32
-                "0wfmw1d4w8frbimq62749siy28bzci3h3lhsl5jx7zl7mxpl0q9a"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nparMD" version))
+       (sha256
+        (base32 "0wfmw1d4w8frbimq62749siy28bzci3h3lhsl5jx7zl7mxpl0q9a"))))
     (properties `((upstream-name . "nparMD")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrixstats r-matrixcalc r-mass r-gtools
@@ -2577,12 +2577,12 @@ and in Munzel and Brunner (2000) <doi:10.1016/S0378-3758(99)00212-8>.")
   (package
     (name "r-nparld")
     (version "2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nparLD" version))
-              (sha256
-               (base32
-                "0c5iih0hy25kpg781sxmgq6x68g46ymsqjcg4lh3sff5bw5x08lk"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nparLD" version))
+       (sha256
+        (base32 "0c5iih0hy25kpg781sxmgq6x68g46ymsqjcg4lh3sff5bw5x08lk"))))
     (properties `((upstream-name . "nparLD")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -2603,12 +2603,12 @@ small sample sizes.")
   (package
     (name "r-nparcomp")
     (version "3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nparcomp" version))
-              (sha256
-               (base32
-                "1cs1idaylxdajb9vwpp6rkk56178i4c9nd0rxj8jbmdr56w4nrgq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nparcomp" version))
+       (sha256
+        (base32 "1cs1idaylxdajb9vwpp6rkk56178i4c9nd0rxj8jbmdr56w4nrgq"))))
     (properties `((upstream-name . "nparcomp")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-multcomp))
@@ -2631,12 +2631,12 @@ See Konietschke et al. (2015) <doi:10.18637/jss.v064.i09> for details.")
   (package
     (name "r-nparact")
     (version "0.8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nparACT" version))
-              (sha256
-               (base32
-                "0zwhz52j526n3xd21s7kghjaby56a8g296bkkc6scaa23zn1xg4b"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nparACT" version))
+       (sha256
+        (base32 "0zwhz52j526n3xd21s7kghjaby56a8g296bkkc6scaa23zn1xg4b"))))
     (properties `((upstream-name . "nparACT")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-stringr r-ggplot2))
@@ -2663,12 +2663,12 @@ reliable results, actigraphy data should cover a reasonable number of days.")
   (package
     (name "r-nozzle-r1")
     (version "1.1-1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Nozzle.R1" version))
-              (sha256
-               (base32
-                "0fanf7cl8dlb8iqw8ww03dd5s6mrpr97m2c511clqkaavbd0yzkp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Nozzle.R1" version))
+       (sha256
+        (base32 "0fanf7cl8dlb8iqw8ww03dd5s6mrpr97m2c511clqkaavbd0yzkp"))))
     (properties `((upstream-name . "Nozzle.R1")))
     (build-system r-build-system)
     (native-inputs (list esbuild))
@@ -2687,12 +2687,12 @@ user-friendly reports need to be created.")
   (package
     (name "r-noweb")
     (version "1.1-2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "noweb" version))
-              (sha256
-               (base32
-                "1h0v92l5jzgiy5rz33pan1l6rb3mykckmvn5c8jm3hhph6ipgqad"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "noweb" version))
+       (sha256
+        (base32 "1h0v92l5jzgiy5rz33pan1l6rb3mykckmvn5c8jm3hhph6ipgqad"))))
     (properties `((upstream-name . "noweb")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=noweb")
@@ -2704,12 +2704,12 @@ user-friendly reports need to be created.")
   (package
     (name "r-novelqualcodes")
     (version "0.13.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "novelqualcodes" version))
-              (sha256
-               (base32
-                "0mgmjd7zrknnsg8a4kjkdk98pnm0z1k73mim40ivb1qfp0pxmn0g"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "novelqualcodes" version))
+       (sha256
+        (base32 "0mgmjd7zrknnsg8a4kjkdk98pnm0z1k73mim40ivb1qfp0pxmn0g"))))
     (properties `((upstream-name . "novelqualcodes")))
     (build-system r-build-system)
     (propagated-inputs (list r-readxl r-naturalsort r-ggplot2 r-ggpattern))
@@ -2733,12 +2733,12 @@ for their interviews.")
   (package
     (name "r-novelforestsg")
     (version "2.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "novelforestSG" version))
-              (sha256
-               (base32
-                "0mpf645gimahn1sayminas2fam839s8v05g8qkxjywr4gdq5wflz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "novelforestSG" version))
+       (sha256
+        (base32 "0mpf645gimahn1sayminas2fam839s8v05g8qkxjywr4gdq5wflz"))))
     (properties `((upstream-name . "novelforestSG")))
     (build-system r-build-system)
     (home-page "https://hrlai.github.io/novelforestSG/")
@@ -2753,12 +2753,12 @@ phosphorous in novel secondary forests.  Applied Vegetation Science, 24, e12548.
   (package
     (name "r-noveldistns")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NovelDistns" version))
-              (sha256
-               (base32
-                "073969vk2vg58fx5h0v92m3zb1rdzlvv809vyahy3gxrj9n13lmh"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NovelDistns" version))
+       (sha256
+        (base32 "073969vk2vg58fx5h0v92m3zb1rdzlvv809vyahy3gxrj9n13lmh"))))
     (properties `((upstream-name . "NovelDistns")))
     (build-system r-build-system)
     (propagated-inputs (list r-rootsolve r-gsl r-adequacymodel))
@@ -2776,12 +2776,12 @@ alpha powerfamily, gull alpha power family.")
   (package
     (name "r-notifyme")
     (version "0.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "notifyme" version))
-              (sha256
-               (base32
-                "0b6xrv6c4id7rs0dafg96pl4brn4yma5xh9wjz78ql44bg3w5s91"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "notifyme" version))
+       (sha256
+        (base32 "0b6xrv6c4id7rs0dafg96pl4brn4yma5xh9wjz78ql44bg3w5s91"))))
     (properties `((upstream-name . "notifyme")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-httr r-dplyr))
@@ -2796,12 +2796,12 @@ R. Designed to be used with long running scripts.")
   (package
     (name "r-notebookutils")
     (version "1.5.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "notebookutils" version))
-              (sha256
-               (base32
-                "0f1vwc4y91k3yxsbbr7c47z3gwr3zk9dlyp3xx2ggrk4nnqhlafb"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "notebookutils" version))
+       (sha256
+        (base32 "0f1vwc4y91k3yxsbbr7c47z3gwr3zk9dlyp3xx2ggrk4nnqhlafb"))))
     (properties `((upstream-name . "notebookutils")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -2821,12 +2821,12 @@ development.")
   (package
     (name "r-not")
     (version "1.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "not" version))
-              (sha256
-               (base32
-                "0g40500h2cwimzf7w3zqas924i4cvxddmqv0ysqrm4r7y2dpv48i"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "not" version))
+       (sha256
+        (base32 "0g40500h2cwimzf7w3zqas924i4cvxddmqv0ysqrm4r7y2dpv48i"))))
     (properties `((upstream-name . "not")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=not")
@@ -2846,12 +2846,12 @@ Fryzlewicz (2019) <doi:10.1111/rssb.12322>.")
   (package
     (name "r-nostalgir")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NostalgiR" version))
-              (sha256
-               (base32
-                "0rpvwi815sdhaxqpji1y6g0vy8mkn5k6wci0a4jf54pkywwkwrwp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NostalgiR" version))
+       (sha256
+        (base32 "0rpvwi815sdhaxqpji1y6g0vy8mkn5k6wci0a4jf54pkywwkwrwp"))))
     (properties `((upstream-name . "NostalgiR")))
     (build-system r-build-system)
     (propagated-inputs (list r-txtplot))
@@ -2869,12 +2869,12 @@ quantile plots, density plots, image plots, and contour plots.")
   (package
     (name "r-nosoi")
     (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nosoi" version))
-              (sha256
-               (base32
-                "1b7csrgax5ig9ibiwbhh2cl357hvdc6my4408vld498c8jjf0lyw"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nosoi" version))
+       (sha256
+        (base32 "1b7csrgax5ig9ibiwbhh2cl357hvdc6my4408vld498c8jjf0lyw"))))
     (properties `((upstream-name . "nosoi")))
     (build-system r-build-system)
     (propagated-inputs (list r-raster r-data-table))
@@ -2896,12 +2896,12 @@ to create complex but relatively intuitive epidemiological simulations.")
   (package
     (name "r-nose")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nose" version))
-              (sha256
-               (base32
-                "17l78vmfqc22inq6zaqpnk2m91wp0nfjbbwfcpfqykf8lk9ipqna"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nose" version))
+       (sha256
+        (base32 "17l78vmfqc22inq6zaqpnk2m91wp0nfjbbwfcpfqykf8lk9ipqna"))))
     (properties `((upstream-name . "nose")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=nose")
@@ -2921,12 +2921,12 @@ continuity correction and to identify the presence of Simpson's paradox.")
   (package
     (name "r-nortstest")
     (version "1.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nortsTest" version))
-              (sha256
-               (base32
-                "0wn4xljczy4z9j95mxisi7gyn2j262zzhp2skz4wj8c5kxj1pc6g"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nortsTest" version))
+       (sha256
+        (base32 "0wn4xljczy4z9j95mxisi7gyn2j262zzhp2skz4wj8c5kxj1pc6g"))))
     (properties `((upstream-name . "nortsTest")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -2954,12 +2954,12 @@ linear time series models developed in several packages.")
   (package
     (name "r-nortestarma")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nortestARMA" version))
-              (sha256
-               (base32
-                "11ala9z0snsbn1xmj9yzs4kyh9js1w19x0dnnmh5cbr9bi7aag50"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nortestARMA" version))
+       (sha256
+        (base32 "11ala9z0snsbn1xmj9yzs4kyh9js1w19x0dnnmh5cbr9bi7aag50"))))
     (properties `((upstream-name . "nortestARMA")))
     (build-system r-build-system)
     (propagated-inputs (list r-astsa))
@@ -2974,12 +2974,12 @@ model.")
   (package
     (name "r-normpsy")
     (version "1.0.8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NormPsy" version))
-              (sha256
-               (base32
-                "13w4xjdjjg9mzmfaflc0gp306kazyvxshpj4vnl6gym3vpi9qax8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NormPsy" version))
+       (sha256
+        (base32 "13w4xjdjjg9mzmfaflc0gp306kazyvxshpj4vnl6gym3vpi9qax8"))))
     (properties `((upstream-name . "NormPsy")))
     (build-system r-build-system)
     (propagated-inputs (list r-lcmm))
@@ -3000,12 +3000,12 @@ estimated on the normalized scores are also provided.  See Philipps et al (2014)
   (package
     (name "r-normfluodbf")
     (version "1.4.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "normfluodbf" version))
-              (sha256
-               (base32
-                "0slmkqpqi3c3mrjd0ybg2bij1cgrn03ixs6mizjq048r3qbxgipq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "normfluodbf" version))
+       (sha256
+        (base32 "0slmkqpqi3c3mrjd0ybg2bij1cgrn03ixs6mizjq048r3qbxgipq"))))
     (properties `((upstream-name . "normfluodbf")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-tibble r-foreign r-data-table))
@@ -3020,12 +3020,12 @@ estimated on the normalized scores are also provided.  See Philipps et al (2014)
   (package
     (name "r-normexpression")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NormExpression" version))
-              (sha256
-               (base32
-                "1j4q8mb70ig40acfd9kfy12vxdvq3qpf53rxh47kkw8mywnd0449"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NormExpression" version))
+       (sha256
+        (base32 "1j4q8mb70ig40acfd9kfy12vxdvq3qpf53rxh47kkw8mywnd0449"))))
     (properties `((upstream-name . "NormExpression")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=NormExpression")
@@ -3043,12 +3043,12 @@ Lin Liu, Jishou Ruan and Shan Gao (2018) <doi:10.1101/251140>.")
   (package
     (name "r-normdata")
     (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NormData" version))
-              (sha256
-               (base32
-                "122l1v4kmgbamix2gdbz2zdv4ng7zba05rxh1j4z0ffficmax4nq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NormData" version))
+       (sha256
+        (base32 "122l1v4kmgbamix2gdbz2zdv4ng7zba05rxh1j4z0ffficmax4nq"))))
     (properties `((upstream-name . "NormData")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich
@@ -3073,12 +3073,12 @@ automatic scoring sheets, and estimate confidence intervals for the norms.")
   (package
     (name "r-normalr")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "normalr" version))
-              (sha256
-               (base32
-                "1ahrg188vbhnrnwag0zi6lcb3g0y1mbz06sl3j1wyllq5l918cc7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "normalr" version))
+       (sha256
+        (base32 "1ahrg188vbhnrnwag0zi6lcb3g0y1mbz06sl3j1wyllq5l918cc7"))))
     (properties `((upstream-name . "normalr")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-rlang r-purrr r-mass r-magrittr))
@@ -3106,12 +3106,12 @@ kurtosis, and other inferential assessments of normality.")
   (package
     (name "r-normalp")
     (version "0.7.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "normalp" version))
-              (sha256
-               (base32
-                "0fqpz6v9v3xjmyh7mh2yvkjdn3v4d0nk93x7s0gj28kazl7137kz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "normalp" version))
+       (sha256
+        (base32 "0fqpz6v9v3xjmyh7mh2yvkjdn3v4d0nk93x7s0gj28kazl7137kz"))))
     (properties `((upstream-name . "normalp")))
     (build-system r-build-system)
     (home-page "https://www.r-project.org")
@@ -3127,12 +3127,12 @@ normalp package.  In Journal of Statistical Software, Vol.  12, Issue 4).")
   (package
     (name "r-normallaplace")
     (version "0.3-0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NormalLaplace" version))
-              (sha256
-               (base32
-                "0njgjdx2yvvy5jb5zn6zr7jdz5hck5bbkicv15z4ai4ibmckqjmh"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NormalLaplace" version))
+       (sha256
+        (base32 "0njgjdx2yvvy5jb5zn6zr7jdz5hck5bbkicv15z4ai4ibmckqjmh"))))
     (properties `((upstream-name . "NormalLaplace")))
     (build-system r-build-system)
     (propagated-inputs (list r-generalizedhyperbolic r-distributionutils))
@@ -3149,12 +3149,12 @@ provided.")
   (package
     (name "r-normalizeh")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "normalizeH" version))
-              (sha256
-               (base32
-                "19lychfrv57yk245rzais4hx17csz1s6wm5vk6p7ypr6h9slf2cq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "normalizeH" version))
+       (sha256
+        (base32 "19lychfrv57yk245rzais4hx17csz1s6wm5vk6p7ypr6h9slf2cq"))))
     (properties `((upstream-name . "normalizeH")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=normalizeH")
@@ -3170,12 +3170,12 @@ Statistics, 1184-1238.\" <doi:10.1214/aos/1176344370>.")
   (package
     (name "r-normalityassessment")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NormalityAssessment" version))
-              (sha256
-               (base32
-                "0r9a51z614si3b45g01lfgapmgc4smjf2hylgy5kvq8w0yh0w5y6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NormalityAssessment" version))
+       (sha256
+        (base32 "0r9a51z614si3b45g01lfgapmgc4smjf2hylgy5kvq8w0yh0w5y6"))))
     (properties `((upstream-name . "NormalityAssessment")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -3199,12 +3199,12 @@ visually.")
   (package
     (name "r-norma")
     (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NORMA" version))
-              (sha256
-               (base32
-                "193q6dwn8v7k8xq0amjpvb3v6mn7c6agqa487gvjj78dy1qz720a"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NORMA" version))
+       (sha256
+        (base32 "193q6dwn8v7k8xq0amjpvb3v6mn7c6agqa487gvjj78dy1qz720a"))))
     (properties `((upstream-name . "NORMA")))
     (build-system r-build-system)
     (propagated-inputs (list r-rootsolve))
@@ -3220,12 +3220,12 @@ suitable for computing SVR models in an online setting.")
   (package
     (name "r-norgeo")
     (version "2.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "norgeo" version))
-              (sha256
-               (base32
-                "1437b49ig7j5c3ympb8mjn0qz43szpmwqd3s8rlqmlfhycnh9maw"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "norgeo" version))
+       (sha256
+        (base32 "1437b49ig7j5c3ympb8mjn0qz43szpmwqd3s8rlqmlfhycnh9maw"))))
     (properties `((upstream-name . "norgeo")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
@@ -3251,12 +3251,12 @@ available from SSB website <https://data.ssb.no/api/klass/v1/api-guide.html>.")
   (package
     (name "r-nordklimdata1")
     (version "1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nordklimdata1" version))
-              (sha256
-               (base32
-                "0c2hbh3qy8nrs275lxpzfgqsfgwp81m4kv0layvnjj09fcybm54x"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nordklimdata1" version))
+       (sha256
+        (base32 "0c2hbh3qy8nrs275lxpzfgqsfgwp81m4kv0layvnjj09fcybm54x"))))
     (properties `((upstream-name . "nordklimdata1")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=nordklimdata1")
@@ -3274,12 +3274,12 @@ meteorological services in Denmark (DMI), Finland (FMI), Iceland (VI), Norway
   (package
     (name "r-nord")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nord" version))
-              (sha256
-               (base32
-                "1gisqca85vzbqq5hs5bgqjgrjyksxj176x97kv9vv6mwll8kijl9"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nord" version))
+       (sha256
+        (base32 "1gisqca85vzbqq5hs5bgqjgrjyksxj176x97kv9vv6mwll8kijl9"))))
     (properties `((upstream-name . "nord")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))
@@ -3295,12 +3295,12 @@ colour palettes for use with ggplot2 via custom functions.")
   (package
     (name "r-nopp")
     (version "1.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nopp" version))
-              (sha256
-               (base32
-                "1kcgwhwj02bivqqd86l9gk3gqiws9c4kjcsjmd0arcfd1bcygbj2"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nopp" version))
+       (sha256
+        (base32 "1kcgwhwj02bivqqd86l9gk3gqiws9c4kjcsjmd0arcfd1bcygbj2"))))
     (properties `((upstream-name . "nopp")))
     (build-system r-build-system)
     (propagated-inputs (list r-mlogit r-mass))
@@ -3315,12 +3315,12 @@ equilibrium along a one-dimensional space.")
   (package
     (name "r-nopaco")
     (version "1.0.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nopaco" version))
-              (sha256
-               (base32
-                "0ffcbrk3l2xprd4jiilvk6i5l39x4mi7vrx4irzqnf3m9nwsz6w5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nopaco" version))
+       (sha256
+        (base32 "0ffcbrk3l2xprd4jiilvk6i5l39x4mi7vrx4irzqnf3m9nwsz6w5"))))
     (properties `((upstream-name . "nopaco")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix))
@@ -3335,12 +3335,12 @@ differences between concordances in (un)balanced data.")
   (package
     (name "r-nonprobest")
     (version "0.2.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NonProbEst" version))
-              (sha256
-               (base32
-                "1w2ihnwwdnxlnphyd26261lsxaknpi51c15rmn9m183djz9gsvdv"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NonProbEst" version))
+       (sha256
+        (base32 "1w2ihnwwdnxlnphyd26261lsxaknpi51c15rmn9m183djz9gsvdv"))))
     (properties `((upstream-name . "NonProbEst")))
     (build-system r-build-system)
     (propagated-inputs (list r-sampling r-matrix r-glmnet r-e1071 r-caret))
@@ -3370,12 +3370,12 @@ options to work with data coming from a non-probabilistic sample.")
   (package
     (name "r-nonparrolcor")
     (version "0.8.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NonParRolCor" version))
-              (sha256
-               (base32
-                "1rh345vydbg31pbkagyb2xmsy8riam9zj7sc86m6dqvl19lglvg5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NonParRolCor" version))
+       (sha256
+        (base32 "1rh345vydbg31pbkagyb2xmsy8riam9zj7sc86m6dqvl19lglvg5"))))
     (properties `((upstream-name . "NonParRolCor")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -3408,12 +3408,12 @@ J.L. Lopez-Martinez (2021) <doi:10.1016/j.ecoinf.2021.101379>.")
   (package
     (name "r-nonpareil")
     (version "3.4.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Nonpareil" version))
-              (sha256
-               (base32
-                "130aags0pgry0d34mj1n4lavc8q43hls7c3jhmkr8k6vyg3ij372"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Nonpareil" version))
+       (sha256
+        (base32 "130aags0pgry0d34mj1n4lavc8q43hls7c3jhmkr8k6vyg3ij372"))))
     (properties `((upstream-name . "Nonpareil")))
     (build-system r-build-system)
     (home-page "http://enve-omics.ce.gatech.edu/nonpareil/")
@@ -3426,12 +3426,12 @@ J.L. Lopez-Martinez (2021) <doi:10.1016/j.ecoinf.2021.101379>.")
   (package
     (name "r-nonparametric-bayes")
     (version "0.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nonparametric.bayes" version))
-              (sha256
-               (base32
-                "1acrjh0fcr15b9k2hpg0ihfav0w2lzjdpjyayz3f4hx596j32vi8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nonparametric.bayes" version))
+       (sha256
+        (base32 "1acrjh0fcr15b9k2hpg0ihfav0w2lzjdpjyayz3f4hx596j32vi8"))))
     (properties `((upstream-name . "nonparametric.bayes")))
     (build-system r-build-system)
     (propagated-inputs (list r-progress r-mvtnorm))
@@ -3449,12 +3449,12 @@ Nonparametric Bayesian statistics given at the Simons institute.")
   (package
     (name "r-nonparaeff")
     (version "0.5-13")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nonparaeff" version))
-              (sha256
-               (base32
-                "04ya0b4nwfcyw7asby8j5npa59p8w8ri3cifpigvqmdg47v9kzmc"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nonparaeff" version))
+       (sha256
+        (base32 "04ya0b4nwfcyw7asby8j5npa59p8w8ri3cifpigvqmdg47v9kzmc"))))
     (properties `((upstream-name . "nonparaeff")))
     (build-system r-build-system)
     (propagated-inputs (list r-lpsolve r-hmisc r-geometry))
@@ -3472,12 +3472,12 @@ its variations.")
   (package
     (name "r-nonpar")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nonpar" version))
-              (sha256
-               (base32
-                "0gflldd3kjbpdlvbwi073igj6shcqr9g5x6zcp5gfa12404qpflq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nonpar" version))
+       (sha256
+        (base32 "0gflldd3kjbpdlvbwi073igj6shcqr9g5x6zcp5gfa12404qpflq"))))
     (properties `((upstream-name . "nonpar")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=nonpar")
@@ -3492,12 +3492,12 @@ Test, The 2 Sample Median Test, Miller's Jackknife Procedure, Cochran's Q Test,
   (package
     (name "r-nonnormvtdist")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NonNorMvtDist" version))
-              (sha256
-               (base32
-                "11xqdrx03q3anavyxpzb0hz6mcbdy252rzzjlpa2byfdlrfvn178"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NonNorMvtDist" version))
+       (sha256
+        (base32 "11xqdrx03q3anavyxpzb0hz6mcbdy252rzzjlpa2byfdlrfvn178"))))
     (properties `((upstream-name . "NonNorMvtDist")))
     (build-system r-build-system)
     (propagated-inputs (list r-cubature))
@@ -3517,12 +3517,12 @@ Logistic, Burr, Cook-Johnsonâs uniform, F and Inverted Beta.  See Tapan Nay
   (package
     (name "r-nonneg-cg")
     (version "0.1.6-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nonneg.cg" version))
-              (sha256
-               (base32
-                "1ppwv5yad8v7qhjr4z5p5vl51ry3sxqbmg0ynkx11j67byggn6xf"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nonneg.cg" version))
+       (sha256
+        (base32 "1ppwv5yad8v7qhjr4z5p5vl51ry3sxqbmg0ynkx11j67byggn6xf"))))
     (properties `((upstream-name . "nonneg.cg")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -3539,12 +3539,12 @@ modified Polak-Ribiere-Polyak formula as described in (Li, Can, 2013,
   (package
     (name "r-nonmemica")
     (version "1.0.8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nonmemica" version))
-              (sha256
-               (base32
-                "000pjp7zk3pw7xhg0w8363b1q52l6ikqjpvdxjd1kb61y99bi6m2"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nonmemica" version))
+       (sha256
+        (base32 "000pjp7zk3pw7xhg0w8363b1q52l6ikqjpvdxjd1kb61y99bi6m2"))))
     (properties `((upstream-name . "nonmemica")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -3571,12 +3571,12 @@ nonlinear mixed effects modeling.  See package?nonmemica'.")
   (package
     (name "r-nonmem2rx")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nonmem2rx" version))
-              (sha256
-               (base32
-                "0z4mx08ajnqsq6lqhkvskxsiskpm05c5095mc874774s04qzs8by"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nonmem2rx" version))
+       (sha256
+        (base32 "0z4mx08ajnqsq6lqhkvskxsiskpm05c5095mc874774s04qzs8by"))))
     (properties `((upstream-name . "nonmem2rx")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -3619,12 +3619,12 @@ convert the objects converted from nonmem2rx to a full nlmixr2 fit.")
   (package
     (name "r-nonmem2r")
     (version "0.2.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nonmem2R" version))
-              (sha256
-               (base32
-                "1lnm2mniccpsk30njmi0b18aizblg5wadm3k2kdviyxi8j2735rw"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nonmem2R" version))
+       (sha256
+        (base32 "1lnm2mniccpsk30njmi0b18aizblg5wadm3k2kdviyxi8j2735rw"))))
     (properties `((upstream-name . "nonmem2R")))
     (build-system r-build-system)
     (propagated-inputs (list r-splines2
@@ -3651,12 +3651,12 @@ parameter estimates, provide visual predictive check (VPC) and goodness of fit
   (package
     (name "r-nonlineartseries")
     (version "0.2.12")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nonlinearTseries" version))
-              (sha256
-               (base32
-                "0fdyr7a5pac40wrrn6frj0q8pn03dic5a2rls3zr85yj48mimyfs"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nonlinearTseries" version))
+       (sha256
+        (base32 "0fdyr7a5pac40wrrn6frj0q8pn03dic5a2rls3zr85yj48mimyfs"))))
     (properties `((upstream-name . "nonlinearTseries")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -3682,12 +3682,12 @@ Holger Kantz and Thomas Schreiber (ISBN: 9780521529020).")
   (package
     (name "r-nonlineartsa")
     (version "0.5.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NonlinearTSA" version))
-              (sha256
-               (base32
-                "1z3fqw19kksadc31f1idrj37gzajrx91pprd07xdar7j6hddf4sn"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NonlinearTSA" version))
+       (sha256
+        (base32 "1z3fqw19kksadc31f1idrj37gzajrx91pprd07xdar7j6hddf4sn"))))
     (properties `((upstream-name . "NonlinearTSA")))
     (build-system r-build-system)
     (propagated-inputs (list r-tsdyn r-minpack-lm r-car))
@@ -3713,12 +3713,12 @@ Granger causality test performed using nonlinear models can also be applied.")
   (package
     (name "r-nonlinearicp")
     (version "0.1.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nonlinearICP" version))
-              (sha256
-               (base32
-                "1m9a1f0yrbjl0nx2l7r76pyi78b2bxj8v4jx92yga91f975mw6np"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nonlinearICP" version))
+       (sha256
+        (base32 "1m9a1f0yrbjl0nx2l7r76pyi78b2bxj8v4jx92yga91f975mw6np"))))
     (properties `((upstream-name . "nonlinearICP")))
     (build-system r-build-system)
     (propagated-inputs (list r-randomforest r-data-tree r-condindtests
@@ -3740,12 +3740,12 @@ Meinshausen: Invariant Causal Prediction for Nonlinear Models',
   (package
     (name "r-nonlineardotplot")
     (version "0.5.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nonLinearDotPlot" version))
-              (sha256
-               (base32
-                "073qgada7bqz8jnpac4f3qb9iwsaiyb5m5y0fjgvyrjnjij29zxk"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nonLinearDotPlot" version))
+       (sha256
+        (base32 "073qgada7bqz8jnpac4f3qb9iwsaiyb5m5y0fjgvyrjnjij29zxk"))))
     (properties `((upstream-name . "nonLinearDotPlot")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=nonLinearDotPlot")
@@ -3762,12 +3762,12 @@ Graphics, vol.  24, no.  1, pp.  616-625, 2018. <doi:10.1109/TVCG.2017.2744018>.
   (package
     (name "r-nonet")
     (version "0.4.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nonet" version))
-              (sha256
-               (base32
-                "1043vplj8libbzll172h82dfwnz2lsdba5na2g9liryg8p08h4v8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nonet" version))
+       (sha256
+        (base32 "1043vplj8libbzll172h82dfwnz2lsdba5na2g9liryg8p08h4v8"))))
     (properties `((upstream-name . "nonet")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyverse
@@ -3796,12 +3796,12 @@ provides freedom to user to ensemble models based on their design solutions.")
   (package
     (name "r-noncomplyr")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "noncomplyR" version))
-              (sha256
-               (base32
-                "1a9m6r9cizw42nmy24jdsrsbllg5z84fs8b239axnh1fxzskg2qy"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "noncomplyR" version))
+       (sha256
+        (base32 "1a9m6r9cizw42nmy24jdsrsbllg5z84fs8b239axnh1fxzskg2qy"))))
     (properties `((upstream-name . "noncomplyR")))
     (build-system r-build-system)
     (propagated-inputs (list r-mcmcpack))
@@ -3824,12 +3824,12 @@ using the data augmentation algorithm as described in Tanner and Wong (1987)
   (package
     (name "r-noncompliance")
     (version "0.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "noncompliance" version))
-              (sha256
-               (base32
-                "1lcybgj95z7lz7p26xbsdiv0vvms4ab4f8kad0pclacf1l43v0j6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "noncompliance" version))
+       (sha256
+        (base32 "1lcybgj95z7lz7p26xbsdiv0vvms4ab4f8kad0pclacf1l43v0j6"))))
     (properties `((upstream-name . "noncompliance")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-data-table))
@@ -3848,12 +3848,12 @@ that there are only Compliers and Never Takers in the population.")
   (package
     (name "r-noncompart")
     (version "0.6.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NonCompart" version))
-              (sha256
-               (base32
-                "0cda8rd45irx8q33zs9hcfhsanq09hnx3fpkpa9173pn0j6iw0zv"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NonCompart" version))
+       (sha256
+        (base32 "0cda8rd45irx8q33zs9hcfhsanq09hnx3fpkpa9173pn0j6iw0zv"))))
     (properties `((upstream-name . "NonCompart")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=NonCompart")
@@ -3871,12 +3871,12 @@ Applications.  5th ed.  2016. (ISBN:9198299107).")
   (package
     (name "r-nomordr")
     (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nomordR" version))
-              (sha256
-               (base32
-                "02d5gk5pd4vpd61ys9x81maxjrmbshx1wdv6xxsvafrnz7a7pmks"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nomordR" version))
+       (sha256
+        (base32 "02d5gk5pd4vpd61ys9x81maxjrmbshx1wdv6xxsvafrnz7a7pmks"))))
     (properties `((upstream-name . "nomordR")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=nomordR")
@@ -3891,12 +3891,12 @@ values.")
   (package
     (name "r-nomogramformula")
     (version "1.2.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nomogramFormula" version))
-              (sha256
-               (base32
-                "1j6g5kndl0n2g8acwq8pn09sk0bjcsphbcd77ha1j5dnwdmy73c0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nomogramFormula" version))
+       (sha256
+        (base32 "1j6g5kndl0n2g8acwq8pn09sk0bjcsphbcd77ha1j5dnwdmy73c0"))))
     (properties `((upstream-name . "nomogramFormula")))
     (build-system r-build-system)
     (propagated-inputs (list r-rms r-hmisc r-do))
@@ -3919,12 +3919,12 @@ restricted cubic spine, @code{TotalPoints.rms}() can be used.")
   (package
     (name "r-nomogramex")
     (version "3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nomogramEx" version))
-              (sha256
-               (base32
-                "16235rwblnzn8k53817llwy2pzhnpifh6ij159nxymjm8ar9qpbp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nomogramEx" version))
+       (sha256
+        (base32 "16235rwblnzn8k53817llwy2pzhnpifh6ij159nxymjm8ar9qpbp"))))
     (properties `((upstream-name . "nomogramEx")))
     (build-system r-build-system)
     (propagated-inputs (list r-rms r-pracma))
@@ -3942,12 +3942,12 @@ probability corresponding to the total points.")
   (package
     (name "r-nomnoml")
     (version "0.2.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nomnoml" version))
-              (sha256
-               (base32
-                "0dbn03agq02d28agzgwz92m2lr76c7xzpa7p5bj684fzw7zsks3w"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nomnoml" version))
+       (sha256
+        (base32 "0dbn03agq02d28agzgwz92m2lr76c7xzpa7p5bj684fzw7zsks3w"))))
     (properties `((upstream-name . "nomnoml")))
     (build-system r-build-system)
     (propagated-inputs (list r-webshot r-rlang r-png r-lifecycle r-htmlwidgets))
@@ -3963,12 +3963,12 @@ styling, R Markdown and exporting diagrams in the PNG format.")
   (package
     (name "r-nomisr")
     (version "0.4.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nomisr" version))
-              (sha256
-               (base32
-                "0mf301nhsl71h79jxfkwa27j5nifsxp7y6vxbnx87rybr80b3hg1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nomisr" version))
+       (sha256
+        (base32 "0mf301nhsl71h79jxfkwa27j5nifsxp7y6vxbnx87rybr80b3hg1"))))
     (properties `((upstream-name . "nomisr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -3993,12 +3993,12 @@ API documentation.")
   (package
     (name "r-nominatimlite")
     (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nominatimlite" version))
-              (sha256
-               (base32
-                "1lz4bnml9vs8rc7p71kiwwr0g38lvawbhsfj62a5cy8g1fxpghjw"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nominatimlite" version))
+       (sha256
+        (base32 "1lz4bnml9vs8rc7p71kiwwr0g38lvawbhsfj62a5cy8g1fxpghjw"))))
     (properties `((upstream-name . "nominatimlite")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-jsonlite r-dplyr))
@@ -4016,12 +4016,12 @@ return spatial objects on sf format.")
   (package
     (name "r-nomclust")
     (version "2.8.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nomclust" version))
-              (sha256
-               (base32
-                "1bl92zaf4iidm48xjxj0v812lx7gk3i3frvb59xr71y91ranwjpv"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nomclust" version))
+       (sha256
+        (base32 "1bl92zaf4iidm48xjxj0v812lx7gk3i3frvb59xr71y91ranwjpv"))))
     (properties `((upstream-name . "nomclust")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-clvalid r-cluster))
@@ -4037,12 +4037,12 @@ clustering.")
   (package
     (name "r-nombre")
     (version "0.4.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nombre" version))
-              (sha256
-               (base32
-                "16hpr628j8rzxg5k71qsgc9xhz1w4gpi3fry5vp1mbwvalmlish2"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nombre" version))
+       (sha256
+        (base32 "16hpr628j8rzxg5k71qsgc9xhz1w4gpi3fry5vp1mbwvalmlish2"))))
     (properties `((upstream-name . "nombre")))
     (build-system r-build-system)
     (propagated-inputs (list r-fracture))
@@ -4054,16 +4054,37 @@ conversion to cardinals, ordinals, numerators, and denominators.  Supports
 negative and non-integer numbers.")
     (license license:expat)))
 
+(define-public r-nolock
+  (package
+    (name "r-nolock")
+    (version "1.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nolock" version))
+       (sha256
+        (base32 "1n62fjnscfflvxya4j2km2vbg352gw3irlh8p2mrfil8k157vpnp"))))
+    (properties `((upstream-name . "nolock")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr r-rstudioapi r-pacman r-crayon))
+    (home-page "https://cran.r-project.org/package=nolock")
+    (synopsis "Append 'WITH (NOLOCK)' to 'SQL' Queries")
+    (description
+     "Automatically appends WITH (nolock) to all tables in SQL queries using a utility
+function.  This facilitates reading from databases in scenarios where
+non-blocking reads are preferable, such as in high-transaction environments.")
+    (license license:gpl3)))
+
 (define-public r-noisysbm
   (package
     (name "r-noisysbm")
     (version "0.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "noisySBM" version))
-              (sha256
-               (base32
-                "1zdkxr48kvpqs49figxxznq3d45nalja92lyal71m066s1blc6dg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "noisySBM" version))
+       (sha256
+        (base32 "1zdkxr48kvpqs49figxxznq3d45nalja92lyal71m066s1blc6dg"))))
     (properties `((upstream-name . "noisySBM")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcolorbrewer r-gtools r-ggplot2))
@@ -4084,12 +4105,12 @@ control\" by T. Rebafka, E. Roquain, F. Villers (2020) <@code{arXiv:1907.10176>}
   (package
     (name "r-noisyr")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "noisyr" version))
-              (sha256
-               (base32
-                "05nvxz5qa4lsi62va74yq4m68nlacjkl8xj5nsq7dik3357y53dr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "noisyr" version))
+       (sha256
+        (base32 "05nvxz5qa4lsi62va74yq4m68nlacjkl8xj5nsq7dik3357y53dr"))))
     (properties `((upstream-name . "noisyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -4117,12 +4138,12 @@ process, as well as tools to quality check and assess the stability of output.")
   (package
     (name "r-noisyce2")
     (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "noisyCE2" version))
-              (sha256
-               (base32
-                "02zkkyys9qknwm39gz4j4pvlvkd5qlvxqaprklzsd40dgz39cwq4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "noisyCE2" version))
+       (sha256
+        (base32 "02zkkyys9qknwm39gz4j4pvlvkd5qlvxqaprklzsd40dgz39cwq4"))))
     (properties `((upstream-name . "noisyCE2")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr))
@@ -4141,12 +4162,12 @@ easy-to-use under standard optimisation problems.")
   (package
     (name "r-noisemodel")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "noisemodel" version))
-              (sha256
-               (base32
-                "1p5rripvpcgxikgy84jaxbx0spyrclidv17i2pkf3i6712ap3m81"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "noisemodel" version))
+       (sha256
+        (base32 "1p5rripvpcgxikgy84jaxbx0spyrclidv17i2pkf3i6712ap3m81"))))
     (properties `((upstream-name . "noisemodel")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -4175,12 +4196,12 @@ attributes and both simultaneously.")
   (package
     (name "r-noise")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "noise" version))
-              (sha256
-               (base32
-                "0xqcg79v03d5x783pby6gqxrhylm67xk4ic9ib4jmjyrrbqklad1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "noise" version))
+       (sha256
+        (base32 "0xqcg79v03d5x783pby6gqxrhylm67xk4ic9ib4jmjyrrbqklad1"))))
     (properties `((upstream-name . "noise")))
     (build-system r-build-system)
     (propagated-inputs (list r-preprocesscore))
@@ -4202,12 +4223,12 @@ Genetics and Molecular Biology, 15(6), 447-471.")
   (package
     (name "r-noia")
     (version "0.97.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "noia" version))
-              (sha256
-               (base32
-                "18n2pmjmx1xqmshfvan1s7hlaciz05xhplg8zphcjhm2hfq7svv2"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "noia" version))
+       (sha256
+        (base32 "18n2pmjmx1xqmshfvan1s7hlaciz05xhplg8zphcjhm2hfq7svv2"))))
     (properties `((upstream-name . "noia")))
     (build-system r-build-system)
     (home-page "https://github.com/lerouzic/noia")
@@ -4228,12 +4249,12 @@ in Le Rouzic & Alvarez-Castro (2008).")
   (package
     (name "r-nofrills")
     (version "0.3.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nofrills" version))
-              (sha256
-               (base32
-                "1sclrzn7m0r4pxmv9vs0ay0l892p6kdz3yzdqwfkzzp8z45n6yzk"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nofrills" version))
+       (sha256
+        (base32 "1sclrzn7m0r4pxmv9vs0ay0l892p6kdz3yzdqwfkzzp8z45n6yzk"))))
     (properties `((upstream-name . "nofrills")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang))
@@ -4249,12 +4270,12 @@ arguments and body.")
   (package
     (name "r-nodiv")
     (version "1.4.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nodiv" version))
-              (sha256
-               (base32
-                "1yz2ynn7cfwjim3bmwvf4v7fflghc2kfx9frwz2m85l9pcr3qlx0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nodiv" version))
+       (sha256
+        (base32 "1yz2ynn7cfwjim3bmwvf4v7fflghc2kfx9frwz2m85l9pcr3qlx0"))))
     (properties `((upstream-name . "nodiv")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan r-sp r-raster r-picante r-ape))
@@ -4276,12 +4297,12 @@ mapped.")
   (package
     (name "r-nodesub")
     (version "1.2.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nodeSub" version))
-              (sha256
-               (base32
-                "08ai25fkvnc026hif096f2389m553xqrcz08fkp2yjgavv5rrai6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nodeSub" version))
+       (sha256
+        (base32 "08ai25fkvnc026hif096f2389m553xqrcz08fkp2yjgavv5rrai6"))))
     (properties `((upstream-name . "nodeSub")))
     (build-system r-build-system)
     (propagated-inputs (list r-tracerer
@@ -4319,12 +4340,12 @@ to infer phylogenies from alignments.  More information can be found in Janzen
   (package
     (name "r-node2vec")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "node2vec" version))
-              (sha256
-               (base32
-                "03gfpn4xgmdwlrpwi9pdpnh6k75mwp85j6vywkj0jsxhz3rbg95g"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "node2vec" version))
+       (sha256
+        (base32 "03gfpn4xgmdwlrpwi9pdpnh6k75mwp85j6vywkj0jsxhz3rbg95g"))))
     (properties `((upstream-name . "node2vec")))
     (build-system r-build-system)
     (propagated-inputs (list r-word2vec
@@ -4348,12 +4369,12 @@ Leskovec(2016),available at <@code{arXiv:1607.00653>}.")
   (package
     (name "r-noctua")
     (version "2.6.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "noctua" version))
-              (sha256
-               (base32
-                "1j7ikcviapdddyi71zwybcjyj6f1kyszb44vmbcq7jmvm7iazvmx"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "noctua" version))
+       (sha256
+        (base32 "1j7ikcviapdddyi71zwybcjyj6f1kyszb44vmbcq7jmvm7iazvmx"))))
     (properties `((upstream-name . "noctua")))
     (build-system r-build-system)
     (propagated-inputs (list r-uuid r-paws r-dbi r-data-table))
@@ -4372,12 +4393,12 @@ connecting to Amazon Web Service ('AWS') Athena
   (package
     (name "r-noah")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "noah" version))
-              (sha256
-               (base32
-                "1ln23lp4c70fin9sjjhm4ngy47f8sk2mcljp5q449b7hq8gqi12c"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "noah" version))
+       (sha256
+        (base32 "1ln23lp4c70fin9sjjhm4ngy47f8sk2mcljp5q449b7hq8gqi12c"))))
     (properties `((upstream-name . "noah")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -4404,12 +4425,12 @@ same pseudonym.")
   (package
     (name "r-noaastormevents")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "noaastormevents" version))
-              (sha256
-               (base32
-                "1d93h8av0bbv7a56g6m000qpsnzqpfdla0fmcj5y8fbbqkipxnfr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "noaastormevents" version))
+       (sha256
+        (base32 "1d93h8av0bbv7a56g6m000qpsnzqpfdla0fmcj5y8fbbqkipxnfr"))))
     (properties `((upstream-name . "noaastormevents")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
@@ -4447,12 +4468,12 @@ Sciences (R00ES022631) and the National Science Foundation (1331399).")
   (package
     (name "r-noaaoceans")
     (version "0.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "noaaoceans" version))
-              (sha256
-               (base32
-                "0pxsddzkrprzjch173shhmd7c2h6rh5xzs3n5bbs97l51ni8m60m"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "noaaoceans" version))
+       (sha256
+        (base32 "0pxsddzkrprzjch173shhmd7c2h6rh5xzs3n5bbs97l51ni8m60m"))))
     (properties `((upstream-name . "noaaoceans")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-rvest r-jsonlite r-httr))
@@ -4470,12 +4491,12 @@ at <https://api.tidesandcurrents.noaa.gov/api/prod/>.")
   (package
     (name "r-no-ping-pong")
     (version "0.1.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NO.PING.PONG" version))
-              (sha256
-               (base32
-                "1i8pwk4p43yqmk8irkmvza080sngmng0wv1yr847253a0frjg9mr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NO.PING.PONG" version))
+       (sha256
+        (base32 "1i8pwk4p43yqmk8irkmvza080sngmng0wv1yr847253a0frjg9mr"))))
     (properties `((upstream-name . "NO.PING.PONG")))
     (build-system r-build-system)
     (propagated-inputs (list r-metafor r-mcmcglmm r-mass))
@@ -4497,12 +4518,12 @@ of studies.  O'Connor & Ermacora (2021, <doi:10.3758/bf03200807>).")
   (package
     (name "r-nntensor")
     (version "1.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nnTensor" version))
-              (sha256
-               (base32
-                "1anyqk1pafvw20rgsbxcl604qdhnbcymfin3yz9nv2v4mv4sf1ci"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nnTensor" version))
+       (sha256
+        (base32 "1anyqk1pafvw20rgsbxcl604qdhnbcymfin3yz9nv2v4mv4sf1ci"))))
     (properties `((upstream-name . "nnTensor")))
     (build-system r-build-system)
     (propagated-inputs (list r-tagcloud
@@ -4526,12 +4547,12 @@ section of @code{GitHub} README.md
   (package
     (name "r-nntbiomarker")
     (version "0.29.11")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NNTbiomarker" version))
-              (sha256
-               (base32
-                "0sqlf7vzhpmq2g98c2qlrcqn3ba4ycfxbczgcjiqqhqsvgkpacc1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NNTbiomarker" version))
+       (sha256
+        (base32 "0sqlf7vzhpmq2g98c2qlrcqn3ba4ycfxbczgcjiqqhqsvgkpacc1"))))
     (properties `((upstream-name . "NNTbiomarker")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable r-stringr r-shiny r-mvbutils r-magrittr))
@@ -4559,12 +4580,12 @@ criteria for retrospective case-controls studies.")
   (package
     (name "r-nnt")
     (version "0.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nnt" version))
-              (sha256
-               (base32
-                "1rrqq8m3plsq13hsh53h948wbx37gl87hplj4ms2pxxf1zwqsmnj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nnt" version))
+       (sha256
+        (base32 "1rrqq8m3plsq13hsh53h948wbx37gl87hplj4ms2pxxf1zwqsmnj"))))
     (properties `((upstream-name . "nnt")))
     (build-system r-build-system)
     (propagated-inputs (list r-survrm2 r-survival))
@@ -4582,12 +4603,12 @@ in RMSTs between the treatment and control groups up to a chosen time t.")
   (package
     (name "r-nnspat")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nnspat" version))
-              (sha256
-               (base32
-                "0h17p87fzsqizldgxvmis4s8wyyhc0f95amdl8j7fw2kcmrivnay"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nnspat" version))
+       (sha256
+        (base32 "0h17p87fzsqizldgxvmis4s8wyyhc0f95amdl8j7fw2kcmrivnay"))))
     (properties `((upstream-name . "nnspat")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-pcds r-mass))
@@ -4616,12 +4637,12 @@ chi-square tests.")
   (package
     (name "r-nns")
     (version "10.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NNS" version))
-              (sha256
-               (base32
-                "18jiclcn9ikyx05kz16c7kn2gixxvq55x32kkj7iwm7lyw2kpjli"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NNS" version))
+       (sha256
+        (base32 "18jiclcn9ikyx05kz16c7kn2gixxvq55x32kkj7iwm7lyw2kpjli"))))
     (properties `((upstream-name . "NNS")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -4656,12 +4677,12 @@ and Stochastic dominance.  All routines based on: Viole, F. and Nawrocki, D.
   (package
     (name "r-nnmis")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NNMIS" version))
-              (sha256
-               (base32
-                "1w2i4xlx249p589yqdgbx1ra406ycxw729vbk1lqadbn71m6blaz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NNMIS" version))
+       (sha256
+        (base32 "1w2i4xlx249p589yqdgbx1ra406ycxw729vbk1lqadbn71m6blaz"))))
     (properties `((upstream-name . "NNMIS")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival))
@@ -4680,12 +4701,12 @@ version can only impute for a situation with one missing covariate.")
   (package
     (name "r-nnlib2rcpp")
     (version "0.2.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nnlib2Rcpp" version))
-              (sha256
-               (base32
-                "02vjfidbpkd38zsikd63wkx091rm481js3a7pgryv768ddia728g"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nnlib2Rcpp" version))
+       (sha256
+        (base32 "02vjfidbpkd38zsikd63wkx091rm481js3a7pgryv768ddia728g"))))
     (properties `((upstream-name . "nnlib2Rcpp")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -4702,12 +4723,12 @@ and versions of Autoencoder, BP, LVQ, MAM NN.")
   (package
     (name "r-nnlasso")
     (version "0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nnlasso" version))
-              (sha256
-               (base32
-                "1n7karlmgq61z9ywfx9xb5wvmxx40ydpnzzazj1xr70qlv5m0qk4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nnlasso" version))
+       (sha256
+        (base32 "1n7karlmgq61z9ywfx9xb5wvmxx40ydpnzzazj1xr70qlv5m0qk4"))))
     (properties `((upstream-name . "nnlasso")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=nnlasso")
@@ -4727,12 +4748,12 @@ coefficient estimates.")
   (package
     (name "r-nngeo")
     (version "0.4.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nngeo" version))
-              (sha256
-               (base32
-                "0scfclw2prjfgm1liwbbys9ds00pyb0fk8q0mw6d6nqnbrw9kfnd"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nngeo" version))
+       (sha256
+        (base32 "0scfclw2prjfgm1liwbbys9ds00pyb0fk8q0mw6d6nqnbrw9kfnd"))))
     (properties `((upstream-name . "nngeo")))
     (build-system r-build-system)
     (propagated-inputs (list r-units r-sf r-nabor r-data-table))
@@ -4751,12 +4772,12 @@ package also includes several other utility functions for spatial analysis.")
   (package
     (name "r-nngarrote")
     (version "1.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nnGarrote" version))
-              (sha256
-               (base32
-                "0km7vx9qkfijj2af5ma4q88mhgkrw361hpv3n8dyzpr8654hrw4v"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nnGarrote" version))
+       (sha256
+        (base32 "0km7vx9qkfijj2af5ma4q88mhgkrw361hpv3n8dyzpr8654hrw4v"))))
     (properties `((upstream-name . "nnGarrote")))
     (build-system r-build-system)
     (propagated-inputs (list r-glmnet))
@@ -4774,12 +4795,12 @@ penalized initial estimators extension as proposed by Yuan and Lin (2007)
   (package
     (name "r-nnfor")
     (version "0.9.8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nnfor" version))
-              (sha256
-               (base32
-                "0333c7h8lx1r9brw4dabyd28hyqvsr14hpsykbgx646k0xfkhrkr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nnfor" version))
+       (sha256
+        (base32 "0333c7h8lx1r9brw4dabyd28hyqvsr14hpsykbgx646k0xfkhrkr"))))
     (properties `((upstream-name . "nnfor")))
     (build-system r-build-system)
     (propagated-inputs (list r-uroot
@@ -4805,12 +4826,12 @@ specification methodology see: (i) Crone and Kourentzes (2010)
   (package
     (name "r-nndiagram")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nndiagram" version))
-              (sha256
-               (base32
-                "0x6gv8rmvnqvvwxgqmkybmvmf4g94im0lardkmb5a043krvgh3i4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nndiagram" version))
+       (sha256
+        (base32 "0x6gv8rmvnqvvwxgqmkybmvmf4g94im0lardkmb5a043krvgh3i4"))))
     (properties `((upstream-name . "nndiagram")))
     (build-system r-build-system)
     (propagated-inputs (list r-dplyr))
@@ -4834,12 +4855,12 @@ setting of @code{TeX} file.")
   (package
     (name "r-nncc")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nncc" version))
-              (sha256
-               (base32
-                "131mka187q7367ba0ac0ad45hfwnbfmdlxikjdqkbi7ci234yj8l"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nncc" version))
+       (sha256
+        (base32 "131mka187q7367ba0ac0ad45hfwnbfmdlxikjdqkbi7ci234yj8l"))))
     (properties `((upstream-name . "nncc")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -4865,12 +4886,12 @@ data.  Cui, Z., Marder, E. P., Click, E. S., Hoekstra, R. M., & Bruce, B. B.
   (package
     (name "r-nnbenchmark")
     (version "3.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NNbenchmark" version))
-              (sha256
-               (base32
-                "086smk3xy6p6ianw41h3gx806q7h28v1dg9d3khsrwyyf9gn8xyp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NNbenchmark" version))
+       (sha256
+        (base32 "086smk3xy6p6ianw41h3gx806q7h28v1dg9d3khsrwyyf9gn8xyp"))))
     (properties `((upstream-name . "NNbenchmark")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-pkgload))
@@ -4891,12 +4912,12 @@ submitted article to the R-Journal can be read at
   (package
     (name "r-nna")
     (version "0.0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nna" version))
-              (sha256
-               (base32
-                "17cz1jf7iv61wspqldfdwbdjhlr0wq09idkzlivfb8aik5w9f0z5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nna" version))
+       (sha256
+        (base32 "17cz1jf7iv61wspqldfdwbdjhlr0wq09idkzlivfb8aik5w9f0z5"))))
     (properties `((upstream-name . "nna")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=nna")
@@ -4914,12 +4935,12 @@ patterns).  Ludwig & Reynolds (1988, ISBN:0471832359).")
   (package
     (name "r-nmw")
     (version "0.1.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nmw" version))
-              (sha256
-               (base32
-                "1wzqdg7cc5q9yw2axvzzlh60az1x6f7ycaqwadns1xr416x0kwfw"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nmw" version))
+       (sha256
+        (base32 "1wzqdg7cc5q9yw2axvzzlh60az1x6f7ycaqwadns1xr416x0kwfw"))))
     (properties `((upstream-name . "nmw")))
     (build-system r-build-system)
     (propagated-inputs (list r-numderiv))
@@ -4936,12 +4957,12 @@ and Laplacian approximation are explained.")
   (package
     (name "r-nmvanova")
     (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NMVANOVA" version))
-              (sha256
-               (base32
-                "1jlqyg5vn7j8srvifjghd5a7820kadl8kbwib4qxalrfprq81h8p"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NMVANOVA" version))
+       (sha256
+        (base32 "1jlqyg5vn7j8srvifjghd5a7820kadl8kbwib4qxalrfprq81h8p"))))
     (properties `((upstream-name . "NMVANOVA")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=NMVANOVA")
@@ -4961,12 +4982,12 @@ designed variables/values.")
   (package
     (name "r-nmtox")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NMTox" version))
-              (sha256
-               (base32
-                "1slz6bq57l3f2wqd2nhm3b7dag6vg7wy9zi5rpl7ld1yyqfb0wfp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NMTox" version))
+       (sha256
+        (base32 "1slz6bq57l3f2wqd2nhm3b7dag6vg7wy9zi5rpl7ld1yyqfb0wfp"))))
     (properties `((upstream-name . "NMTox")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -4993,12 +5014,12 @@ methods can be found in
   (package
     (name "r-nmslibr")
     (version "1.0.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nmslibR" version))
-              (sha256
-               (base32
-                "0658j1rir16s84aw7xw698pr8j2xp7j70rd306w04f3dxynsrrqm"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nmslibR" version))
+       (sha256
+        (base32 "0658j1rir16s84aw7xw698pr8j2xp7j70rd306w04f3dxynsrrqm"))))
     (properties `((upstream-name . "nmslibR")))
     (build-system r-build-system)
     (propagated-inputs (list r-reticulate
@@ -5029,12 +5050,12 @@ functions based on the NMSLIB <https://github.com/nmslib/nmslib> Python Library.
   (package
     (name "r-nmsim")
     (version "0.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NMsim" version))
-              (sha256
-               (base32
-                "1k6ifkkjl2dzravj2l0nfhf4aycy4hwk2gpvhl4jxfapbcr083vb"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NMsim" version))
+       (sha256
+        (base32 "1k6ifkkjl2dzravj2l0nfhf4aycy4hwk2gpvhl4jxfapbcr083vb"))))
     (properties `((upstream-name . "NMsim")))
     (build-system r-build-system)
     (propagated-inputs (list r-r-utils r-nmdata r-mass r-data-table))
@@ -5052,12 +5073,12 @@ re-implementation of models in other tools.")
   (package
     (name "r-nmrrr")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nmrrr" version))
-              (sha256
-               (base32
-                "031rh5m52gznl65r7cxh0p6l7qdaygbda7kcx352958dycmnxfs1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nmrrr" version))
+       (sha256
+        (base32 "031rh5m52gznl65r7cxh0p6l7qdaygbda7kcx352958dycmnxfs1"))))
     (properties `((upstream-name . "nmrrr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-ggplot2 r-desctools))
@@ -5078,12 +5099,12 @@ workflows by users to help with analyzing and interpreting NMR data.")
   (package
     (name "r-nmof")
     (version "2.7-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NMOF" version))
-              (sha256
-               (base32
-                "08sfckjglrii0hn9ka5pdbx3k5y6s4f1w5wa1jcb0gsvyffk0gmh"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NMOF" version))
+       (sha256
+        (base32 "08sfckjglrii0hn9ka5pdbx3k5y6s4f1w5wa1jcb0gsvyffk0gmh"))))
     (properties `((upstream-name . "NMOF")))
     (build-system r-build-system)
     (home-page "https://gitlab.com/NMOF")
@@ -5103,12 +5124,12 @@ for portfolio selection and functions that help with stochastic simulations.")
   (package
     (name "r-nmmipw")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NMMIPW" version))
-              (sha256
-               (base32
-                "13mv6dpmlldqxkxq6kiydsfwyys5w7i8ws80a5l3377i5chdqi2c"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NMMIPW" version))
+       (sha256
+        (base32 "13mv6dpmlldqxkxq6kiydsfwyys5w7i8ws80a5l3377i5chdqi2c"))))
     (properties `((upstream-name . "NMMIPW")))
     (build-system r-build-system)
     (propagated-inputs (list r-numderiv r-nloptr r-lava))
@@ -5123,12 +5144,12 @@ probability weighting for non-monotone missing at random data.")
   (package
     (name "r-nmixgof")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nmixgof" version))
-              (sha256
-               (base32
-                "0cbwrsxrcf8pn4ycn6r0z8jdidw5l6kdvwyrks69fq4pjzx988d6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nmixgof" version))
+       (sha256
+        (base32 "0cbwrsxrcf8pn4ycn6r0z8jdidw5l6kdvwyrks69fq4pjzx988d6"))))
     (properties `((upstream-name . "nmixgof")))
     (build-system r-build-system)
     (propagated-inputs (list r-unmarked r-rcpp))
@@ -5144,12 +5165,12 @@ are given in Knape et al. (2017) <doi:10.1101/194340>.")
   (package
     (name "r-nmix")
     (version "2.0.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Nmix" version))
-              (sha256
-               (base32
-                "03zc2g9jlxp4nn78c7l7z9jf83l8xsw57aiz9p62dw7vxjj318xd"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Nmix" version))
+       (sha256
+        (base32 "03zc2g9jlxp4nn78c7l7z9jf83l8xsw57aiz9p62dw7vxjj318xd"))))
     (properties `((upstream-name . "Nmix")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -5170,12 +5191,12 @@ thorough presentation of many aspects of the posterior distribution.")
   (package
     (name "r-nmisc")
     (version "0.3.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Nmisc" version))
-              (sha256
-               (base32
-                "1k43cp63h96xv3f28fpvw7p2yh3lv1jbhq9bdp3yk6cg0870vya7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Nmisc" version))
+       (sha256
+        (base32 "1k43cp63h96xv3f28fpvw7p2yh3lv1jbhq9bdp3yk6cg0870vya7"))))
     (properties `((upstream-name . "Nmisc")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -5201,12 +5222,12 @@ projects.")
   (package
     (name "r-nmi")
     (version "2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NMI" version))
-              (sha256
-               (base32
-                "1rxphy9rhy9zhdiz48dvl9m26x6k681lnyn39lqxs0a6jhrxg7y3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NMI" version))
+       (sha256
+        (base32 "1rxphy9rhy9zhdiz48dvl9m26x6k681lnyn39lqxs0a6jhrxg7y3"))))
     (properties `((upstream-name . "NMI")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=NMI")
@@ -5221,12 +5242,12 @@ in network analysis.")
   (package
     (name "r-nmfn")
     (version "2.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NMFN" version))
-              (sha256
-               (base32
-                "1fdrw69zz2ri6wi1kd7v960kykacjxyr37iv8q5h7kwiidl0ha76"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NMFN" version))
+       (sha256
+        (base32 "1fdrw69zz2ri6wi1kd7v960kykacjxyr37iv8q5h7kwiidl0ha76"))))
     (properties `((upstream-name . "NMFN")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=NMFN")
@@ -5238,12 +5259,12 @@ in network analysis.")
   (package
     (name "r-nmfbin")
     (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nmfbin" version))
-              (sha256
-               (base32
-                "1g2yhb2g11fd0dl4xiq2xhjizyzg7f8x3rm01gjbdp1c68vlsf8q"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nmfbin" version))
+       (sha256
+        (base32 "1g2yhb2g11fd0dl4xiq2xhjizyzg7f8x3rm01gjbdp1c68vlsf8q"))))
     (properties `((upstream-name . "nmfbin")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -5259,12 +5280,12 @@ the updating process.  See e.g. @code{TomÃ©} et al (2015)
   (package
     (name "r-nmdata")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NMdata" version))
-              (sha256
-               (base32
-                "1ildwg1r7sa2xr0b0yl2x1dcd8rv6y3l5dm7wxq3wjjxi5bzazcg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NMdata" version))
+       (sha256
+        (base32 "1ildwg1r7sa2xr0b0yl2x1dcd8rv6y3l5dm7wxq3wjjxi5bzazcg"))))
     (properties `((upstream-name . "NMdata")))
     (build-system r-build-system)
     (propagated-inputs (list r-fst r-data-table))
@@ -5283,12 +5304,12 @@ but easily integrated with base and tidyverse'.")
   (package
     (name "r-nmcalc")
     (version "0.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NMcalc" version))
-              (sha256
-               (base32
-                "15jf38yvyiasq6bvnv23znp64njag432f1jb9zayghsny63m3dcl"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NMcalc" version))
+       (sha256
+        (base32 "15jf38yvyiasq6bvnv23znp64njag432f1jb9zayghsny63m3dcl"))))
     (properties `((upstream-name . "NMcalc")))
     (build-system r-build-system)
     (propagated-inputs (list r-data-table))
@@ -5304,12 +5325,12 @@ part of base R. This is not a noncompartmental analysis (NCA) package.")
   (package
     (name "r-nmathresh")
     (version "0.1.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nmathresh" version))
-              (sha256
-               (base32
-                "1jrf7k7an5y867k40aj28ib7vrjyqky2cslwzmfx28snp8ns1vd3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nmathresh" version))
+       (sha256
+        (base32 "1jrf7k7an5y867k40aj28ib7vrjyqky2cslwzmfx28snp8ns1vd3"))))
     (properties `((upstream-name . "nmathresh")))
     (build-system r-build-system)
     (propagated-inputs (list r-nnls r-matrix r-gtable r-gridextra r-ggplot2))
@@ -5327,12 +5348,12 @@ would result in a change of decision.")
   (package
     (name "r-nmarank")
     (version "0.3-0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nmarank" version))
-              (sha256
-               (base32
-                "1i2vagjq96q2vhr2lxbm3hqspddfq9qkqjcr8smni6ikmw32akil"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nmarank" version))
+       (sha256
+        (base32 "1i2vagjq96q2vhr2lxbm3hqspddfq9qkqjcr8smni6ikmw32akil"))))
     (properties `((upstream-name . "nmarank")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -5357,12 +5378,12 @@ probability.  Methodology based on Papakonstantinou et al. (2021)
   (package
     (name "r-nmaplateplot")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nmaplateplot" version))
-              (sha256
-               (base32
-                "1k6i4d1n2cadhp1nzb7ij1d58wrgyhrqpwq1flixgkyrzz375z9g"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nmaplateplot" version))
+       (sha256
+        (base32 "1k6i4d1n2cadhp1nzb7ij1d58wrgyhrqpwq1flixgkyrzz375z9g"))))
     (properties `((upstream-name . "nmaplateplot")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))
@@ -5381,12 +5402,12 @@ of different treatments.")
   (package
     (name "r-nmaoutlier")
     (version "0.1.18")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NMAoutlier" version))
-              (sha256
-               (base32
-                "0h0pxjg6ppz9zv7wcv1dka5g0f9wxk3bnwicfpsv1advcam4vmmn"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NMAoutlier" version))
+       (sha256
+        (base32 "0h0pxjg6ppz9zv7wcv1dka5g0f9wxk3bnwicfpsv1advcam4vmmn"))))
     (properties `((upstream-name . "NMAoutlier")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2
@@ -5413,12 +5434,12 @@ confidence intervals in each step of forward search algorithm.")
   (package
     (name "r-nmainla")
     (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nmaINLA" version))
-              (sha256
-               (base32
-                "1qjb5n1qr89rv2a5ay2p74cs3i6swkn8wllklgn57fnahb9pcrgi"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nmaINLA" version))
+       (sha256
+        (base32 "1qjb5n1qr89rv2a5ay2p74cs3i6swkn8wllklgn57fnahb9pcrgi"))))
     (properties `((upstream-name . "nmaINLA")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -5438,12 +5459,12 @@ meta-analysis dataset.  INLA package can be obtained from
   (package
     (name "r-nmadiagt")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NMADiagT" version))
-              (sha256
-               (base32
-                "0fskc3ldfdl17gazpfr2hixy79n7db4c1f5yl1jalhwxiabnxjwp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NMADiagT" version))
+       (sha256
+        (base32 "0fskc3ldfdl17gazpfr2hixy79n7db4c1f5yl1jalhwxiabnxjwp"))))
     (properties `((upstream-name . "NMADiagT")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjags
@@ -5473,12 +5494,12 @@ results.")
   (package
     (name "r-nmadb")
     (version "1.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nmadb" version))
-              (sha256
-               (base32
-                "17r5vc57ilhy6cfcqpfyp9nzzjaa5gc8qkgfn3y8sppqh1g1mi40"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nmadb" version))
+       (sha256
+        (base32 "17r5vc57ilhy6cfcqpfyp9nzzjaa5gc8qkgfn3y8sppqh1g1mi40"))))
     (properties `((upstream-name . "nmadb")))
     (build-system r-build-system)
     (propagated-inputs (list r-readxl r-rcurl r-jsonlite r-devtools))
@@ -5497,12 +5518,12 @@ University of Bern.")
   (package
     (name "r-nma")
     (version "1.3-2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NMA" version))
-              (sha256
-               (base32
-                "037a6m7lg1k4pjcrad4p4vcjx82v1r1j5yh1kncx95wgf441jmr4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NMA" version))
+       (sha256
+        (base32 "037a6m7lg1k4pjcrad4p4vcjx82v1r1j5yh1kncx95wgf441jmr4"))))
     (properties `((upstream-name . "NMA")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-metafor r-mass r-ggplot2 r-forestplot))
@@ -5529,12 +5550,12 @@ methods.")
   (package
     (name "r-nlwaldtest")
     (version "1.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nlWaldTest" version))
-              (sha256
-               (base32
-                "1cppdz8qvigjdz4sgr1gm2j09zi407xxmryc28zc7ps7rvgy344h"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nlWaldTest" version))
+       (sha256
+        (base32 "1cppdz8qvigjdz4sgr1gm2j09zi407xxmryc28zc7ps7rvgy344h"))))
     (properties `((upstream-name . "nlWaldTest")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=nlWaldTest")
@@ -5550,12 +5571,12 @@ available.")
   (package
     (name "r-nltt")
     (version "1.4.9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nLTT" version))
-              (sha256
-               (base32
-                "1h87iwzy988jx1i70nxv24c3gjirrga5c3fw5al86m7qr1nz4sps"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nLTT" version))
+       (sha256
+        (base32 "1h87iwzy988jx1i70nxv24c3gjirrga5c3fw5al86m7qr1nz4sps"))))
     (properties `((upstream-name . "nLTT")))
     (build-system r-build-system)
     (propagated-inputs (list r-testit r-coda r-ape))
@@ -5573,12 +5594,12 @@ each curve is normalised both in time and in number of lineages.")
   (package
     (name "r-nlts")
     (version "1.0-2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nlts" version))
-              (sha256
-               (base32
-                "0s49qjwavl9ns2746nn4zy4h4dh0njfcvznm3qd61qhs7np9w1db"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nlts" version))
+       (sha256
+        (base32 "0s49qjwavl9ns2746nn4zy4h4dh0njfcvznm3qd61qhs7np9w1db"))))
     (properties `((upstream-name . "nlts")))
     (build-system r-build-system)
     (propagated-inputs (list r-locfit r-acepack))
@@ -5594,12 +5615,12 @@ additivity.")
   (package
     (name "r-nltm")
     (version "1.4.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nltm" version))
-              (sha256
-               (base32
-                "0ps6rl0yafg8ajwfk3iqbgjngq354bfbys619p5c94i498bigwcf"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nltm" version))
+       (sha256
+        (base32 "0ps6rl0yafg8ajwfk3iqbgjngq354bfbys619p5c94i498bigwcf"))))
     (properties `((upstream-name . "nltm")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival))
@@ -5618,12 +5639,12 @@ hazard - proportional odds.")
   (package
     (name "r-nlt")
     (version "2.2-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nlt" version))
-              (sha256
-               (base32
-                "10wf00qzf28dxjfvv12wsqxlfn6xz15wk8njrzgsgm9px1g6s21f"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nlt" version))
+       (sha256
+        (base32 "10wf00qzf28dxjfvv12wsqxlfn6xz15wk8njrzgsgm9px1g6s21f"))))
     (properties `((upstream-name . "nlt")))
     (build-system r-build-system)
     (propagated-inputs (list r-ebayesthresh r-adlift))
@@ -5638,12 +5659,12 @@ transform.  It has applications in wavelet shrinkage.")
   (package
     (name "r-nlsylinks")
     (version "2.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NlsyLinks" version))
-              (sha256
-               (base32
-                "19w7jgvdz77lmwks0a4icrkarjfnwx6bcjkj4ss90zjs7nsfyafb"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NlsyLinks" version))
+       (sha256
+        (base32 "19w7jgvdz77lmwks0a4icrkarjfnwx6bcjkj4ss90zjs7nsfyafb"))))
     (properties `((upstream-name . "NlsyLinks")))
     (build-system r-build-system)
     (propagated-inputs (list r-lavaan))
@@ -5660,12 +5681,12 @@ research using the National Longitudinal Survey of Youth (NLSY;
   (package
     (name "r-nlstools")
     (version "2.0-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nlstools" version))
-              (sha256
-               (base32
-                "1pbsdmg1gaf0v0w5ij75l381f8h91dnc7vlbl8za3aws1cxhjaw5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nlstools" version))
+       (sha256
+        (base32 "1pbsdmg1gaf0v0w5ij75l381f8h91dnc7vlbl8za3aws1cxhjaw5"))))
     (properties `((upstream-name . "nlstools")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -5680,12 +5701,12 @@ provided.")
   (package
     (name "r-nlstac")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nlstac" version))
-              (sha256
-               (base32
-                "0q62bnwdnw4jjzj1gk74il4k5bc2lvaixckaqdqk9q4rkyx6p0z5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nlstac" version))
+       (sha256
+        (base32 "0q62bnwdnw4jjzj1gk74il4k5bc2lvaixckaqdqk9q4rkyx6p0z5"))))
     (properties `((upstream-name . "nlstac")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-foreach r-deriv))
@@ -5702,12 +5723,12 @@ Torvisco, Rodriguez-Arias Fernandez and Cabello Sanchez (2018)
   (package
     (name "r-nlsr")
     (version "2023.8.31")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nlsr" version))
-              (sha256
-               (base32
-                "0df3q1lmqy9abbfqxffssy0vkaizsmfqyr8fx88a2id4dbj5j6xl"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nlsr" version))
+       (sha256
+        (base32 "0df3q1lmqy9abbfqxffssy0vkaizsmfqyr8fx88a2id4dbj5j6xl"))))
     (properties `((upstream-name . "nlsr")))
     (build-system r-build-system)
     (propagated-inputs (list r-digest))
@@ -5728,12 +5749,12 @@ included.  Bounds and masks on parameters are handled properly.")
   (package
     (name "r-nlsmsn")
     (version "0.0-6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nlsmsn" version))
-              (sha256
-               (base32
-                "1wrqfmsb3l4bsdncyjl7hh3vwj9s6l43p7klww6f4k21asvh4p5s"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nlsmsn" version))
+       (sha256
+        (base32 "1wrqfmsb3l4bsdncyjl7hh3vwj9s6l43p7klww6f4k21asvh4p5s"))))
     (properties `((upstream-name . "nlsmsn")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=nlsmsn")
@@ -5750,12 +5771,12 @@ details in Garay, Lachos and Abanto-Valle (2011)
   (package
     (name "r-nlsmicrobio")
     (version "0.0-3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nlsMicrobio" version))
-              (sha256
-               (base32
-                "0vn0yv1h8idv91g7qhx8qfyvsvw4rbx7i8r8kfv13d40j1w4cfab"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nlsMicrobio" version))
+       (sha256
+        (base32 "0vn0yv1h8idv91g7qhx8qfyvsvw4rbx7i8r8kfv13d40j1w4cfab"))))
     (properties `((upstream-name . "nlsMicrobio")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlstools))
@@ -5770,12 +5791,12 @@ details in Garay, Lachos and Abanto-Valle (2011)
   (package
     (name "r-nlsic")
     (version "1.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nlsic" version))
-              (sha256
-               (base32
-                "02xvmzq1yv8bz6wksx4nck9ljxkprsn8xk39chjilir6jddkh6fq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nlsic" version))
+       (sha256
+        (base32 "02xvmzq1yv8bz6wksx4nck9ljxkprsn8xk39chjilir6jddkh6fq"))))
     (properties `((upstream-name . "nlsic")))
     (build-system r-build-system)
     (propagated-inputs (list r-nnls))
@@ -5804,12 +5825,12 @@ The NLSIC method was fist published in Sokol et al. (2012)
   (package
     (name "r-nlshrink")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nlshrink" version))
-              (sha256
-               (base32
-                "0adnr7g3n3brwlvyix8wa7h59gj036l5anv8abqy80ysmfcmsp0y"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nlshrink" version))
+       (sha256
+        (base32 "0adnr7g3n3brwlvyix8wa7h59gj036l5anv8abqy80ysmfcmsp0y"))))
     (properties `((upstream-name . "nlshrink")))
     (build-system r-build-system)
     (propagated-inputs (list r-nloptr r-mass))
@@ -5825,12 +5846,12 @@ matrices, based on publications by Ledoit and Wolf (2004, 2015, 2016).")
   (package
     (name "r-nlshelper")
     (version "0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nlshelper" version))
-              (sha256
-               (base32
-                "02xnx0j8p1im1hdwnia3n51dicscjf8s33y475i3dczvhmivvbmf"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nlshelper" version))
+       (sha256
+        (base32 "02xnx0j8p1im1hdwnia3n51dicscjf8s33y475i3dczvhmivvbmf"))))
     (properties `((upstream-name . "nlshelper")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlme r-mgcv r-magicaxis r-dplyr r-broom))
@@ -5845,12 +5866,12 @@ non-linear regression models fit with nls(), @code{nlsList}() or nlme().")
   (package
     (name "r-nlsem")
     (version "0.8-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nlsem" version))
-              (sha256
-               (base32
-                "0xw32bpd2snxyxl90sjdn5c0447jq9s6c58vxq40prg738mfqx06"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nlsem" version))
+       (sha256
+        (base32 "0xw32bpd2snxyxl90sjdn5c0447jq9s6c58vxq40prg738mfqx06"))))
     (properties `((upstream-name . "nlsem")))
     (build-system r-build-system)
     (propagated-inputs (list r-orthopolynom r-nlme r-mvtnorm r-lavaan
@@ -5866,12 +5887,12 @@ nonnormal distributions.")
   (package
     (name "r-nls2")
     (version "0.3-3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nls2" version))
-              (sha256
-               (base32
-                "05miqxfpg29jpf1p3bi347w5565bd3cih8dpvnc3p0i0hcbzmlkl"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nls2" version))
+       (sha256
+        (base32 "05miqxfpg29jpf1p3bi347w5565bd3cih8dpvnc3p0i0hcbzmlkl"))))
     (properties `((upstream-name . "nls2")))
     (build-system r-build-system)
     (propagated-inputs (list r-proto))
@@ -5884,12 +5905,12 @@ nonnormal distributions.")
   (package
     (name "r-nls-multstart")
     (version "1.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nls.multstart" version))
-              (sha256
-               (base32
-                "1fv6zw87n6fkblfn8q5mj957j9gx0qgjnkpypjdlircafb849gkf"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nls.multstart" version))
+       (sha256
+        (base32 "1fv6zw87n6fkblfn8q5mj957j9gx0qgjnkpypjdlircafb849gkf"))))
     (properties `((upstream-name . "nls.multstart")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-tibble r-purrr r-minpack-lm r-dplyr))
@@ -5905,12 +5926,12 @@ global minimum.")
   (package
     (name "r-nlrx")
     (version "0.4.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nlrx" version))
-              (sha256
-               (base32
-                "1ki8jhaa6ngqk046p61ssi0q9bskvc7vlz9j3d5ax0n118j5gx2q"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nlrx" version))
+       (sha256
+        (base32 "1ki8jhaa6ngqk046p61ssi0q9bskvc7vlz9j3d5ax0n118j5gx2q"))))
     (properties `((upstream-name . "nlrx")))
     (build-system r-build-system)
     (inputs (list udunits
@@ -5964,12 +5985,12 @@ high performance computing machines.  In order to use this package, Java and
   (package
     (name "r-nlrr")
     (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nlrr" version))
-              (sha256
-               (base32
-                "09wm8s5sadkhkq9pb3fjk66cb2xn8py46w1d7yp7fjhczh31bjsq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nlrr" version))
+       (sha256
+        (base32 "09wm8s5sadkhkq9pb3fjk66cb2xn8py46w1d7yp7fjhczh31bjsq"))))
     (properties `((upstream-name . "nlrr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rms r-hmisc))
@@ -5983,12 +6004,12 @@ high performance computing machines.  In order to use this package, Java and
   (package
     (name "r-nlroot")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NLRoot" version))
-              (sha256
-               (base32
-                "1x8mcdgqqrhyykr12bv4hl4wbh1zw2qgpnd2yrm68kb92iy95rh4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NLRoot" version))
+       (sha256
+        (base32 "1x8mcdgqqrhyykr12bv4hl4wbh1zw2qgpnd2yrm68kb92iy95rh4"))))
     (properties `((upstream-name . "NLRoot")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=NLRoot")
@@ -6001,12 +6022,12 @@ high performance computing machines.  In order to use this package, Java and
   (package
     (name "r-nlreg")
     (version "1.2-2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nlreg" version))
-              (sha256
-               (base32
-                "0gkcxg5m287axhvkl00xy26vidawhhb1ii1s13rh49v0yccwvvqh"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nlreg" version))
+       (sha256
+        (base32 "0gkcxg5m287axhvkl00xy26vidawhhb1ii1s13rh49v0yccwvvqh"))))
     (properties `((upstream-name . "nlreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-statmod))
@@ -6022,12 +6043,12 @@ with possibly non constant variance.")
   (package
     (name "r-nlraa")
     (version "1.9.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nlraa" version))
-              (sha256
-               (base32
-                "0bwlx9hv8a2a6220lsvwlgn0jwq9r3mbn095gffk5s6g80lgmm8r"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nlraa" version))
+       (sha256
+        (base32 "0bwlx9hv8a2a6220lsvwlgn0jwq9r3mbn095gffk5s6g80lgmm8r"))))
     (properties `((upstream-name . "nlraa")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlme
@@ -6063,12 +6084,12 @@ examples.")
   (package
     (name "r-nlputils")
     (version "0.0-5.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NLPutils" version))
-              (sha256
-               (base32
-                "1ca7cqfjzrhn0idgw8viqlr2w4lkzng64bqk8hvd08qm7bgg5vjl"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NLPutils" version))
+       (sha256
+        (base32 "1ca7cqfjzrhn0idgw8viqlr2w4lkzng64bqk8hvd08qm7bgg5vjl"))))
     (properties `((upstream-name . "NLPutils")))
     (build-system r-build-system)
     (propagated-inputs (list r-snowballc r-qdap r-nlp))
@@ -6081,12 +6102,12 @@ examples.")
   (package
     (name "r-nlpsem")
     (version "0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nlpsem" version))
-              (sha256
-               (base32
-                "0i6skpmnbi99dkcdam61rq5rfk6wv41q0r1q357qm66wbqyj30fr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nlpsem" version))
+       (sha256
+        (base32 "0i6skpmnbi99dkcdam61rq5rfk6wv41q0r1q357qm66wbqyj30fr"))))
     (properties `((upstream-name . "nlpsem")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -6119,12 +6140,12 @@ methods implemented are introduced in Jin Liu (2023)
   (package
     (name "r-nlpred")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nlpred" version))
-              (sha256
-               (base32
-                "05jna8hzd5v36a0dwag6zr8ms1pkryas3qarwb946bkxlslffp27"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nlpred" version))
+       (sha256
+        (base32 "05jna8hzd5v36a0dwag6zr8ms1pkryas3qarwb946bkxlslffp27"))))
     (properties `((upstream-name . "nlpred")))
     (build-system r-build-system)
     (propagated-inputs (list r-superlearner
@@ -6152,12 +6173,12 @@ receiver operating characteristics curve (@code{LeDell}, Petersen, van der Laan
   (package
     (name "r-nlpclient")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NLPclient" version))
-              (sha256
-               (base32
-                "0jhlz9mqziyk5574vl8qjjs4g75x27rlk90wvzm3q9kjrjyvad35"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NLPclient" version))
+       (sha256
+        (base32 "0jhlz9mqziyk5574vl8qjjs4g75x27rlk90wvzm3q9kjrjyvad35"))))
     (properties `((upstream-name . "NLPclient")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-nlp r-curl))
@@ -6176,12 +6197,12 @@ English.  More information can be found in the README.")
   (package
     (name "r-nlnet")
     (version "1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nlnet" version))
-              (sha256
-               (base32
-                "13lv4b6chsjrhimny3wc1y9ljgbxmm1byj4j04n4vj8icn87gyfd"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nlnet" version))
+       (sha256
+        (base32 "13lv4b6chsjrhimny3wc1y9ljgbxmm1byj4j04n4vj8icn87gyfd"))))
     (properties `((upstream-name . "nlnet")))
     (build-system r-build-system)
     (propagated-inputs (list r-tsp
@@ -6208,12 +6229,12 @@ generalized additive model.  References: Tianwei Yu (2018)<DOI:
   (package
     (name "r-nlms")
     (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nlMS" version))
-              (sha256
-               (base32
-                "01ijg1bp3r0dg8ph7qpsx3hqzrrvfhbykml20hqchxk7c5n2w9wz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nlMS" version))
+       (sha256
+        (base32 "01ijg1bp3r0dg8ph7qpsx3hqzrrvfhbykml20hqchxk7c5n2w9wz"))))
     (properties `((upstream-name . "nlMS")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlme))
@@ -6230,12 +6251,12 @@ nine regression models, named: \"linear\", \"quadratic\", \"cubic\", \"logistic\
   (package
     (name "r-nlmrt")
     (version "2016.3.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nlmrt" version))
-              (sha256
-               (base32
-                "1g0qq0a933ay65gkp04qgn2wqk6vw79pj2a228c2ski4rcmkjxyn"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nlmrt" version))
+       (sha256
+        (base32 "1g0qq0a933ay65gkp04qgn2wqk6vw79pj2a228c2ski4rcmkjxyn"))))
     (properties `((upstream-name . "nlmrt")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=nlmrt")
@@ -6256,12 +6277,12 @@ print and summary as of August 28, 2012.")
   (package
     (name "r-nlmm")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nlmm" version))
-              (sha256
-               (base32
-                "0pmw3a8mqmdli2rx8pgmq8i5l045jvcdidx9a7pgcfyymv9sqfpv"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nlmm" version))
+       (sha256
+        (base32 "0pmw3a8mqmdli2rx8pgmq8i5l045jvcdidx9a7pgcfyymv9sqfpv"))))
     (properties `((upstream-name . "nlmm")))
     (build-system r-build-system)
     (propagated-inputs (list r-statmod
@@ -6291,12 +6312,12 @@ Research) <doi:10.1177/0962280220903763>.")
   (package
     (name "r-nlmixr2rpt")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nlmixr2rpt" version))
-              (sha256
-               (base32
-                "1lc7pmh97wggfms2in37f5bdrri914ninr58ah92215p3fxcqmls"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nlmixr2rpt" version))
+       (sha256
+        (base32 "1lc7pmh97wggfms2in37f5bdrri914ninr58ah92215p3fxcqmls"))))
     (properties `((upstream-name . "nlmixr2rpt")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -6329,12 +6350,12 @@ outputs (e.g. R Markdown).")
   (package
     (name "r-nlmixr2plot")
     (version "2.0.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nlmixr2plot" version))
-              (sha256
-               (base32
-                "0bpb9pxdjpwg3kqldbmw8vlq2w843dgyv0q13265kbcpwqhqmnma"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nlmixr2plot" version))
+       (sha256
+        (base32 "0bpb9pxdjpwg3kqldbmw8vlq2w843dgyv0q13265kbcpwqhqmnma"))))
     (properties `((upstream-name . "nlmixr2plot")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgxr
@@ -6360,12 +6381,12 @@ nlmixr2 objects.")
   (package
     (name "r-nlmixr2lib")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nlmixr2lib" version))
-              (sha256
-               (base32
-                "1clar5nw77dc07q1l014ajc5avfdd2n82chdpbv1gcs2mfyrwr9r"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nlmixr2lib" version))
+       (sha256
+        (base32 "1clar5nw77dc07q1l014ajc5avfdd2n82chdpbv1gcs2mfyrwr9r"))))
     (properties `((upstream-name . "nlmixr2lib")))
     (build-system r-build-system)
     (propagated-inputs (list r-rxode2 r-nlmixr2est r-cli r-checkmate))
@@ -6384,12 +6405,12 @@ composition and modification functions to make model updates easier.")
   (package
     (name "r-nlmixr2extra")
     (version "2.0.8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nlmixr2extra" version))
-              (sha256
-               (base32
-                "1sxbkqwhj6lg49c3ah4kylvak1lgj2was6mqsh82klvp72fd61fd"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nlmixr2extra" version))
+       (sha256
+        (base32 "1sxbkqwhj6lg49c3ah4kylvak1lgj2was6mqsh82klvp72fd61fd"))))
     (properties `((upstream-name . "nlmixr2extra")))
     (build-system r-build-system)
     (propagated-inputs (list r-symengine
@@ -6424,12 +6445,12 @@ covariate selection.")
   (package
     (name "r-nlmixr2est")
     (version "2.1.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nlmixr2est" version))
-              (sha256
-               (base32
-                "1yqcf5afg577rfpmiqp506n3sdfrfvvvkp6vrx6b4jqrwbhvdaz7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nlmixr2est" version))
+       (sha256
+        (base32 "1yqcf5afg577rfpmiqp506n3sdfrfvvvkp6vrx6b4jqrwbhvdaz7"))))
     (properties `((upstream-name . "nlmixr2est")))
     (build-system r-build-system)
     (propagated-inputs (list r-symengine
@@ -6468,12 +6489,12 @@ C code provided in the rxode2 package (Wang, Hallow, and James 2015
   (package
     (name "r-nlmixr2data")
     (version "2.0.8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nlmixr2data" version))
-              (sha256
-               (base32
-                "1szf14wda6gagp32qm3w7dv5yyk91vs105q69b29x6nc6zi1zkxv"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nlmixr2data" version))
+       (sha256
+        (base32 "1szf14wda6gagp32qm3w7dv5yyk91vs105q69b29x6nc6zi1zkxv"))))
     (properties `((upstream-name . "nlmixr2data")))
     (build-system r-build-system)
     (home-page "https://nlmixr2.github.io/nlmixr2data/")
@@ -6491,12 +6512,12 @@ Hallow, and James 2015 <doi:10.1002/psp4.12052>).")
   (package
     (name "r-nlmixr2")
     (version "2.0.9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nlmixr2" version))
-              (sha256
-               (base32
-                "1mfbm053jkmqkg7hdvzczpfx35r9xc6113vxl20561pk2zxh9fq7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nlmixr2" version))
+       (sha256
+        (base32 "1mfbm053jkmqkg7hdvzczpfx35r9xc6113vxl20561pk2zxh9fq7"))))
     (properties `((upstream-name . "nlmixr2")))
     (build-system r-build-system)
     (propagated-inputs (list r-rxode2
@@ -6523,12 +6544,12 @@ C code provided in the rxode2 package (Wang, Hallow, and James 2015
   (package
     (name "r-nlmevpc")
     (version "2.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nlmeVPC" version))
-              (sha256
-               (base32
-                "0ymiif377c6rjplzvs3s4bgc62ymw2l3cigx8rh779blb0w90qf8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nlmeVPC" version))
+       (sha256
+        (base32 "0ymiif377c6rjplzvs3s4bgc62ymw2l3cigx8rh779blb0w90qf8"))))
     (properties `((upstream-name . "nlmeVPC")))
     (build-system r-build-system)
     (propagated-inputs (list r-timedate
@@ -6551,12 +6572,12 @@ coverage plots (Karlsson and Holford, 2008,
   (package
     (name "r-nlmeu")
     (version "0.70-9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nlmeU" version))
-              (sha256
-               (base32
-                "10vk098mv8h9hv6cn8sih2fmg9cjsqmvndqzqm8bbaahla1v6n7q"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nlmeU" version))
+       (sha256
+        (base32 "10vk098mv8h9hv6cn8sih2fmg9cjsqmvndqzqm8bbaahla1v6n7q"))))
     (properties `((upstream-name . "nlmeU")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlme))
@@ -6574,12 +6595,12 @@ Mixed-Effects Models: A Step-by-Step Approach by Galecki and Burzykowski (2013).
   (package
     (name "r-nlive")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nlive" version))
-              (sha256
-               (base32
-                "03nxazkb0ndriafh28dfqmyrzcpxa0fqflnlpbkjaa83g4im75j3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nlive" version))
+       (sha256
+        (base32 "03nxazkb0ndriafh28dfqmyrzcpxa0fqflnlpbkjaa83g4im75j3"))))
     (properties `((upstream-name . "nlive")))
     (build-system r-build-system)
     (propagated-inputs (list r-sqldf
@@ -6605,12 +6626,12 @@ generation of starting values.")
   (package
     (name "r-nlist")
     (version "0.3.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nlist" version))
-              (sha256
-               (base32
-                "1wq7bp834c7cl37wbrgd9ars3mm0s5c3l3fxlrry728a27c27f9h"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nlist" version))
+       (sha256
+        (base32 "1wq7bp834c7cl37wbrgd9ars3mm0s5c3l3fxlrry728a27c27f9h"))))
     (properties `((upstream-name . "nlist")))
     (build-system r-build-system)
     (propagated-inputs (list r-universals
@@ -6640,12 +6661,12 @@ and coda::mcmc.list objects.")
   (package
     (name "r-nlints")
     (version "1.4.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NlinTS" version))
-              (sha256
-               (base32
-                "045gqsy9q64mh10swm9a1bh8jvr41rjks3024cc195lad6jhj441"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NlinTS" version))
+       (sha256
+        (base32 "045gqsy9q64mh10swm9a1bh8jvr41rjks3024cc195lad6jhj441"))))
     (properties `((upstream-name . "NlinTS")))
     (build-system r-build-system)
     (propagated-inputs (list r-timeseries r-rdpack r-rcpp))
@@ -6669,12 +6690,12 @@ mutual information.")
   (package
     (name "r-nlgm")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nlgm" version))
-              (sha256
-               (base32
-                "03byqqj8ayq7hbaab4cfrk0nbxmiiq2c2i98szfydzkimhrw922a"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nlgm" version))
+       (sha256
+        (base32 "03byqqj8ayq7hbaab4cfrk0nbxmiiq2c2i98szfydzkimhrw922a"))))
     (properties `((upstream-name . "nlgm")))
     (build-system r-build-system)
     (propagated-inputs (list r-rfast2 r-rfast r-ggplot2))
@@ -6694,12 +6715,12 @@ approach\".  BMC medical research methodology, 21(1), 1-11.
   (package
     (name "r-nlcv")
     (version "0.3.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nlcv" version))
-              (sha256
-               (base32
-                "1ywnm8a13ifqa1bxnf659h1j6mg9iy02vaszyh9p966ps9c1pjab"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nlcv" version))
+       (sha256
+        (base32 "1ywnm8a13ifqa1bxnf659h1j6mg9iy02vaszyh9p966ps9c1pjab"))))
     (properties `((upstream-name . "nlcv")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -6737,12 +6758,12 @@ Poustka, and Ulrich Mansmann (2004) <doi:10.2202/1544-6115.1078>.")
   (package
     (name "r-nlcoptim")
     (version "0.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NlcOptim" version))
-              (sha256
-               (base32
-                "121njnbfww6qijbc9x6prw35glyzm18di01qvvjn62z4kgq4f7vi"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NlcOptim" version))
+       (sha256
+        (base32 "121njnbfww6qijbc9x6prw35glyzm18di01qvvjn62z4kgq4f7vi"))))
     (properties `((upstream-name . "NlcOptim")))
     (build-system r-build-system)
     (propagated-inputs (list r-quadprog r-mass))
@@ -6758,12 +6779,12 @@ parameters as a constrained matrix.")
   (package
     (name "r-nlar")
     (version "0.4.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nlaR" version))
-              (sha256
-               (base32
-                "11f2ka3fi74bkf0izzc17w2h8v3ngdxhy6m0fjv1wjrbby2cqh8g"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nlaR" version))
+       (sha256
+        (base32 "11f2ka3fi74bkf0izzc17w2h8v3ngdxhy6m0fjv1wjrbby2cqh8g"))))
     (properties `((upstream-name . "nlaR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rappdirs))
@@ -6780,12 +6801,12 @@ data for hundreds of lakes in the lower 48 states of the contiguous US.")
   (package
     (name "r-njtr1")
     (version "0.3.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "njtr1" version))
-              (sha256
-               (base32
-                "1fyp9myzlx670xjpzxq4ivbl1qs7f3rz6n424ydp1ml994mz709a"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "njtr1" version))
+       (sha256
+        (base32 "1fyp9myzlx670xjpzxq4ivbl1qs7f3rz6n424ydp1ml994mz709a"))))
     (properties `((upstream-name . "njtr1")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -6813,12 +6834,12 @@ this package.")
   (package
     (name "r-njira")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nJira" version))
-              (sha256
-               (base32
-                "0vh167kxljp68f0dx307wl6fp8nlp34vgrkr815z30mhx03p8j9r"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nJira" version))
+       (sha256
+        (base32 "0vh167kxljp68f0dx307wl6fp8nlp34vgrkr815z30mhx03p8j9r"))))
     (properties `((upstream-name . "nJira")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjson r-plyr r-httr))
@@ -6834,12 +6855,12 @@ fetched using Jira REST API, which can be found at the following URL:
   (package
     (name "r-njgeo")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "njgeo" version))
-              (sha256
-               (base32
-                "1cc6gm0l5z31hqif2d8wd503pb48xsmyr28pbildkxgy9z022af5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "njgeo" version))
+       (sha256
+        (base32 "1cc6gm0l5z31hqif2d8wd503pb48xsmyr28pbildkxgy9z022af5"))))
     (properties `((upstream-name . "njgeo")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-jsonlite r-httr r-dplyr r-curl))
@@ -6857,12 +6878,12 @@ shapefiles.")
   (package
     (name "r-nixmass")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nixmass" version))
-              (sha256
-               (base32
-                "0g8hm0mnbwahbnk44rfciiggxn5bscfni5gqc6y3za496cf9wlk1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nixmass" version))
+       (sha256
+        (base32 "0g8hm0mnbwahbnk44rfciiggxn5bscfni5gqc6y3za496cf9wlk1"))))
     (properties `((upstream-name . "nixmass")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-lubridate))
@@ -6884,12 +6905,12 @@ at-site parameters.  The methods are described in Winkler et al. (2021)
   (package
     (name "r-nivm")
     (version "0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nivm" version))
-              (sha256
-               (base32
-                "111jkgirgsl1j36xgwi81wzwxial3vdw8mqzi1faldxxd9a2cixm"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nivm" version))
+       (sha256
+        (base32 "111jkgirgsl1j36xgwi81wzwxial3vdw8mqzi1faldxxd9a2cixm"))))
     (properties `((upstream-name . "nivm")))
     (build-system r-build-system)
     (propagated-inputs (list r-ssanv r-bpcp))
@@ -6904,12 +6925,12 @@ rate or prespecified time.")
   (package
     (name "r-nitrogenuptake2016")
     (version "0.2.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NitrogenUptake2016" version))
-              (sha256
-               (base32
-                "13mh63z3x8yqd31v5a4d10bhzk4y67ac38flwk2msv7qcx37sny6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NitrogenUptake2016" version))
+       (sha256
+        (base32 "13mh63z3x8yqd31v5a4d10bhzk4y67ac38flwk2msv7qcx37sny6"))))
     (properties `((upstream-name . "NitrogenUptake2016")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-mass r-car))
@@ -6931,12 +6952,12 @@ species.")
   (package
     (name "r-nistunits")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NISTunits" version))
-              (sha256
-               (base32
-                "0km9l3k9p35sb1qrhrz4ijjsdihvsp6j7cz5kh46lgf7nn6xdk7a"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NISTunits" version))
+       (sha256
+        (base32 "0km9l3k9p35sb1qrhrz4ijjsdihvsp6j7cz5kh46lgf7nn6xdk7a"))))
     (properties `((upstream-name . "NISTunits")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=NISTunits")
@@ -6951,12 +6972,12 @@ the data from NIST (National Institute of Standards and Technology, USA)")
   (package
     (name "r-nistnls")
     (version "0.9-13")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NISTnls" version))
-              (sha256
-               (base32
-                "03a1c8a5dr5l5x4wbclnsh3vmx3dy7migfdzdx7d7p3s7hj3ibif"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NISTnls" version))
+       (sha256
+        (base32 "03a1c8a5dr5l5x4wbclnsh3vmx3dy7migfdzdx7d7p3s7hj3ibif"))))
     (properties `((upstream-name . "NISTnls")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=NISTnls")
@@ -6968,12 +6989,12 @@ the data from NIST (National Institute of Standards and Technology, USA)")
   (package
     (name "r-nirstat")
     (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NIRStat" version))
-              (sha256
-               (base32
-                "07l4ca7d9q840iy5a80sqafrlv20534jw65wzxs90j2d0jx4acs9"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NIRStat" version))
+       (sha256
+        (base32 "07l4ca7d9q840iy5a80sqafrlv20534jw65wzxs90j2d0jx4acs9"))))
     (properties `((upstream-name . "NIRStat")))
     (build-system r-build-system)
     (propagated-inputs (list r-mgcv r-gridextra r-ggplot2))
@@ -6993,12 +7014,12 @@ al (2018) <doi:10.1177/0962280218786302> for further details.")
   (package
     (name "r-nipter")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NIPTeR" version))
-              (sha256
-               (base32
-                "0ll6amqyw33a93xiccihidrnbaqlx1q7kqcd4wks7cvqawd8pgv1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NIPTeR" version))
+       (sha256
+        (base32 "0ll6amqyw33a93xiccihidrnbaqlx1q7kqcd4wks7cvqawd8pgv1"))))
     (properties `((upstream-name . "NIPTeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-sets r-s4vectors r-rsamtools))
@@ -7014,12 +7035,12 @@ al (2018) <doi:10.1177/0962280218786302> for further details.")
   (package
     (name "r-nipponmap")
     (version "0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NipponMap" version))
-              (sha256
-               (base32
-                "0jk3zz05vhximbbm15h7ngb0ffxp5w8zhisifipkdgvg1hpi7pb7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NipponMap" version))
+       (sha256
+        (base32 "0jk3zz05vhximbbm15h7ngb0ffxp5w8zhisifipkdgvg1hpi7pb7"))))
     (properties `((upstream-name . "NipponMap")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-sf))
@@ -7033,12 +7054,12 @@ al (2018) <doi:10.1177/0962280218786302> for further details.")
   (package
     (name "r-nipntk")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nipnTK" version))
-              (sha256
-               (base32
-                "0imy2x1h9d842ssw7hmmh21c4mj7s6y05mmjin1270skbnrk2zmr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nipnTK" version))
+       (sha256
+        (base32 "0imy2x1h9d842ssw7hmmh21c4mj7s6y05mmjin1270skbnrk2zmr"))))
     (properties `((upstream-name . "nipnTK")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr r-bbw))
@@ -7058,12 +7079,12 @@ the presented methods could be applied to other variables.")
   (package
     (name "r-nipals")
     (version "0.8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nipals" version))
-              (sha256
-               (base32
-                "0nv7h68hysxnpiinmgw6v3bz4ya53c0p96k9bfvcmalfb7hs8j5z"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nipals" version))
+       (sha256
+        (base32 "0nv7h68hysxnpiinmgw6v3bz4ya53c0p96k9bfvcmalfb7hs8j5z"))))
     (properties `((upstream-name . "nipals")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -7081,12 +7102,12 @@ Andrecut (2009) <doi:10.1089/cmb.2008.0221>.")
   (package
     (name "r-nimblesmc")
     (version "0.11.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nimbleSMC" version))
-              (sha256
-               (base32
-                "14ps01rphi31570m2qhmgpjhdn73aldhm5a20y6fqf3j24k86jys"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nimbleSMC" version))
+       (sha256
+        (base32 "14ps01rphi31570m2qhmgpjhdn73aldhm5a20y6fqf3j24k86jys"))))
     (properties `((upstream-name . "nimbleSMC")))
     (build-system r-build-system)
     (propagated-inputs (list r-nimble))
@@ -7104,12 +7125,12 @@ Filtering 2', and Liu-West', as described in Michaud et al. (2021),
   (package
     (name "r-nimblescr")
     (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nimbleSCR" version))
-              (sha256
-               (base32
-                "1gyc93isivvq0b8fv4pb2g3mpr1n7jfpj9bs86a417iwbf34x4a4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nimbleSCR" version))
+       (sha256
+        (base32 "1gyc93isivvq0b8fv4pb2g3mpr1n7jfpj9bs86a417iwbf34x4a4"))))
     (properties `((upstream-name . "nimbleSCR")))
     (build-system r-build-system)
     (propagated-inputs (list r-nimble))
@@ -7133,12 +7154,12 @@ For a recent application of @code{nimbleSCR}, see Milleret et al. (2021)
   (package
     (name "r-nimblenobounds")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nimbleNoBounds" version))
-              (sha256
-               (base32
-                "1sbaj1ayvqn86av045h5n7rrlw5r3zyk1i6v5v9sjm3f9pxyffgw"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nimbleNoBounds" version))
+       (sha256
+        (base32 "1sbaj1ayvqn86av045h5n7rrlw5r3zyk1i6v5v9sjm3f9pxyffgw"))))
     (properties `((upstream-name . "nimbleNoBounds")))
     (build-system r-build-system)
     (propagated-inputs (list r-nimble))
@@ -7155,12 +7176,12 @@ increased MCMC efficiency.")
   (package
     (name "r-nimblehmc")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nimbleHMC" version))
-              (sha256
-               (base32
-                "09cnfnrm7f8zdih5f7d8zsxlr8bxhymk5cji812s658m2g8w9n6n"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nimbleHMC" version))
+       (sha256
+        (base32 "09cnfnrm7f8zdih5f7d8zsxlr8bxhymk5cji812s658m2g8w9n6n"))))
     (properties `((upstream-name . "nimbleHMC")))
     (build-system r-build-system)
     (propagated-inputs (list r-nimble))
@@ -7183,12 +7204,12 @@ configuration objects which employ HMC sampling.")
   (package
     (name "r-nimbleecology")
     (version "0.4.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nimbleEcology" version))
-              (sha256
-               (base32
-                "1z4byxsana1fa2y7qhmiqbb8ana6zbas0cmbgcc703mqh1642jb2"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nimbleEcology" version))
+       (sha256
+        (base32 "1z4byxsana1fa2y7qhmiqbb8ana6zbas0cmbgcc703mqh1642jb2"))))
     (properties `((upstream-name . "nimbleEcology")))
     (build-system r-build-system)
     (propagated-inputs (list r-nimble))
@@ -7207,12 +7228,12 @@ occupancy, hidden Markov, dynamic hidden Markov, and N-mixture models. (Jolly
   (package
     (name "r-nimblecarbon")
     (version "0.2.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nimbleCarbon" version))
-              (sha256
-               (base32
-                "0gqzdiid3x5k8286j3wy31pha76diniyj7si0mzrmq13kw77lsls"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nimbleCarbon" version))
+       (sha256
+        (base32 "0gqzdiid3x5k8286j3wy31pha76diniyj7si0mzrmq13kw77lsls"))))
     (properties `((upstream-name . "nimbleCarbon")))
     (build-system r-build-system)
     (propagated-inputs (list r-snow
@@ -7237,12 +7258,12 @@ demographic inference (Crema and Shoda (2021)
   (package
     (name "r-nimbleapt")
     (version "1.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nimbleAPT" version))
-              (sha256
-               (base32
-                "0615fm6sa6nf607ay98r81m0pp8yvydpwzn3972imf87irps2k3l"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nimbleAPT" version))
+       (sha256
+        (base32 "0615fm6sa6nf607ay98r81m0pp8yvydpwzn3972imf87irps2k3l"))))
     (properties `((upstream-name . "nimbleAPT")))
     (build-system r-build-system)
     (propagated-inputs (list r-nimble))
@@ -7260,12 +7281,12 @@ NIMBLE models.  Adapted from Lacki & Miasojedow (2016)
   (package
     (name "r-nimble")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nimble" version))
-              (sha256
-               (base32
-                "0f2jshyvs40284bhv837aziw7k3f6yfh7kkrcyh8vyabmy6yfzqh"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nimble" version))
+       (sha256
+        (base32 "0f2jshyvs40284bhv837aziw7k3f6yfh7kkrcyh8vyabmy6yfzqh"))))
     (properties `((upstream-name . "nimble")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-pracma r-numderiv r-igraph r-coda))
@@ -7293,12 +7314,12 @@ is available at <https://r-nimble.org>.")
   (package
     (name "r-nimaa")
     (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NIMAA" version))
-              (sha256
-               (base32
-                "1lnxh9mak25mji38bifrif6qg0rjg3fj0lacjdgpk8iqjallvq7y"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NIMAA" version))
+       (sha256
+        (base32 "1lnxh9mak25mji38bifrif6qg0rjg3fj0lacjdgpk8iqjallvq7y"))))
     (properties `((upstream-name . "NIMAA")))
     (build-system r-build-system)
     (propagated-inputs (list r-visnetwork
@@ -7335,12 +7356,12 @@ Methods are mainly from the paper: Jafari, Mohieddin, et al. (2021)
   (package
     (name "r-nima")
     (version "0.6.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nima" version))
-              (sha256
-               (base32
-                "0n8r8h1m0v0ssbpv6p32jby49f45qbicwr0awm7x054p48qk49cy"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nima" version))
+       (sha256
+        (base32 "0n8r8h1m0v0ssbpv6p32jby49f45qbicwr0awm7x054p48qk49cy"))))
     (properties `((upstream-name . "nima")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -7365,12 +7386,12 @@ information.")
   (package
     (name "r-niledam")
     (version "0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NiLeDAM" version))
-              (sha256
-               (base32
-                "1xqj33182fz6x633vs9iy3rxr7m13bqn1773fphs1sb8mvxwdvzq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NiLeDAM" version))
+       (sha256
+        (base32 "1xqj33182fz6x633vs9iy3rxr7m13bqn1773fphs1sb8mvxwdvzq"))))
     (properties `((upstream-name . "NiLeDAM")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -7396,12 +7417,12 @@ information.")
   (package
     (name "r-nilde")
     (version "1.1-7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nilde" version))
-              (sha256
-               (base32
-                "014scmwhq9i66i2mhvrb71y6ccv0xzjqfgm2sqff9lzjv9smy2im"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nilde" version))
+       (sha256
+        (base32 "014scmwhq9i66i2mhvrb71y6ccv0xzjqfgm2sqff9lzjv9smy2im"))))
     (properties `((upstream-name . "nilde")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=nilde")
@@ -7419,12 +7440,12 @@ problem.")
   (package
     (name "r-nightmares")
     (version "0.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nightmares" version))
-              (sha256
-               (base32
-                "1dmqrb17ncwazy1nb0zzfy7fq51ah7rz0xmhmmx6d30paaix2vc7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nightmares" version))
+       (sha256
+        (base32 "1dmqrb17ncwazy1nb0zzfy7fq51ah7rz0xmhmmx6d30paaix2vc7"))))
     (properties `((upstream-name . "nightmares")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-rgdal r-raster))
@@ -7450,12 +7471,12 @@ Nicolas de Hidalgo.")
   (package
     (name "r-nightday")
     (version "1.0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NightDay" version))
-              (sha256
-               (base32
-                "1gwwxk428gkvci4dhfb3zikvidalpqkl0q2r6qpm58c12j14jk1h"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NightDay" version))
+       (sha256
+        (base32 "1gwwxk428gkvci4dhfb3zikvidalpqkl0q2r6qpm58c12j14jk1h"))))
     (properties `((upstream-name . "NightDay")))
     (build-system r-build-system)
     (propagated-inputs (list r-maps))
@@ -7468,12 +7489,12 @@ Nicolas de Hidalgo.")
   (package
     (name "r-nifti-io")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nifti.io" version))
-              (sha256
-               (base32
-                "03p0gn6id5bkn0qxf7v3splykpi9wpbasrhf2937gp25bsynrpjm"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nifti.io" version))
+       (sha256
+        (base32 "03p0gn6id5bkn0qxf7v3splykpi9wpbasrhf2937gp25bsynrpjm"))))
     (properties `((upstream-name . "nifti.io")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=nifti.io")
@@ -7492,12 +7513,12 @@ simple, value-based choice.\" Neuroimage, 214, 116764.")
   (package
     (name "r-nieve")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nieve" version))
-              (sha256
-               (base32
-                "019ql8qzmp4qi7ayx26jgcnbsjmq6sigmv07x30macnsq7s7n2gi"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nieve" version))
+       (sha256
+        (base32 "019ql8qzmp4qi7ayx26jgcnbsjmq6sigmv07x30macnsq7s7n2gi"))))
     (properties `((upstream-name . "nieve")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -7516,12 +7537,12 @@ their derivatives.")
   (package
     (name "r-nichevol")
     (version "0.1.20")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nichevol" version))
-              (sha256
-               (base32
-                "18c3l9mm4dh0pxpliv2sx7nyijdhmzgcd36xkzclhhh067lxifrs"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nichevol" version))
+       (sha256
+        (base32 "18c3l9mm4dh0pxpliv2sx7nyijdhmzgcd36xkzclhhh067lxifrs"))))
     (properties `((upstream-name . "nichevol")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-stringr r-geiger r-castor r-ape))
@@ -7554,12 +7575,12 @@ al. (1999) <doi:10.1126/science.285.5431.1265>, @code{SoberÃ³n} and Peterson
   (package
     (name "r-nicherover")
     (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nicheROVER" version))
-              (sha256
-               (base32
-                "0chg2bnz929mq17qylf3f57g6bg4ih6w20019yh7vkz7mwjnvi3p"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nicheROVER" version))
+       (sha256
+        (base32 "0chg2bnz929mq17qylf3f57g6bg4ih6w20019yh7vkz7mwjnvi3p"))))
     (properties `((upstream-name . "nicheROVER")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -7585,12 +7606,12 @@ for a worked example using fish stable isotope data.")
   (package
     (name "r-nichebarcoding")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NicheBarcoding" version))
-              (sha256
-               (base32
-                "16jkznc4624ww7vwid6f3m90wm2ds2c7zf1j1sw16dyrqmlyk9w3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NicheBarcoding" version))
+       (sha256
+        (base32 "16jkznc4624ww7vwid6f3m90wm2ds2c7zf1j1sw16dyrqmlyk9w3"))))
     (properties `((upstream-name . "NicheBarcoding")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -7615,12 +7636,12 @@ Models.")
   (package
     (name "r-nice")
     (version "0.4-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nice" version))
-              (sha256
-               (base32
-                "1p8vmimiq9sbjvbx6c2wqwwkpnzw4kkdvjry6qyadmm3frwhj5qb"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nice" version))
+       (sha256
+        (base32 "1p8vmimiq9sbjvbx6c2wqwwkpnzw4kkdvjry6qyadmm3frwhj5qb"))))
     (properties `((upstream-name . "nice")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=nice")
@@ -7632,12 +7653,12 @@ Models.")
   (package
     (name "r-nic")
     (version "0.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nic" version))
-              (sha256
-               (base32
-                "1bsmwdnkxmpp1wr7w4qmpm1x8vgllif0yqbn4n0k477bzlm9p7m4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nic" version))
+       (sha256
+        (base32 "1bsmwdnkxmpp1wr7w4qmpm1x8vgllif0yqbn4n0k477bzlm9p7m4"))))
     (properties `((upstream-name . "nic")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -7651,12 +7672,12 @@ Models.")
   (package
     (name "r-niaidmi")
     (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "niaidMI" version))
-              (sha256
-               (base32
-                "0cg349qdlbixdyfzs5ahaf218a8gcpb2rvm0xaabsq9ray9gmq1a"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "niaidMI" version))
+       (sha256
+        (base32 "0cg349qdlbixdyfzs5ahaf218a8gcpb2rvm0xaabsq9ray9gmq1a"))))
     (properties `((upstream-name . "niaidMI")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -7671,12 +7692,12 @@ COVID-19 scale, NIAID OS.")
   (package
     (name "r-nhstplot")
     (version "1.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nhstplot" version))
-              (sha256
-               (base32
-                "1m06w5mys5qwhah7hg3fwrzlbpckgvhn17jqzg36cyprpd02zx52"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nhstplot" version))
+       (sha256
+        (base32 "1m06w5mys5qwhah7hg3fwrzlbpckgvhn17jqzg36cyprpd02zx52"))))
     (properties `((upstream-name . "nhstplot")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))
@@ -7703,12 +7724,12 @@ shortcomings.")
   (package
     (name "r-nhsrplotthedots")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NHSRplotthedots" version))
-              (sha256
-               (base32
-                "1rqryqaxyb3d6kws8mznsnzv19h8nhn1323vkh9zq59la9r3kiai"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NHSRplotthedots" version))
+       (sha256
+        (base32 "1rqryqaxyb3d6kws8mznsnzv19h8nhn1323vkh9zq59la9r3kiai"))))
     (properties `((upstream-name . "NHSRplotthedots")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -7732,12 +7753,12 @@ summary indicators for when rules are breached.")
   (package
     (name "r-nhsrdatasets")
     (version "0.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NHSRdatasets" version))
-              (sha256
-               (base32
-                "1l4zrprnb3fsb2mibq8749a15xbvhn1g5yajbjf7gls81c8f2r7p"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NHSRdatasets" version))
+       (sha256
+        (base32 "1l4zrprnb3fsb2mibq8749a15xbvhn1g5yajbjf7gls81c8f2r7p"))))
     (properties `((upstream-name . "NHSRdatasets")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble))
@@ -7756,12 +7777,12 @@ in the NHS-R community: <https://nhsrcommunity.com/>.")
   (package
     (name "r-nhsnumber")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nhsnumber" version))
-              (sha256
-               (base32
-                "10vm3591gjr13ggnagjkh0v2915yl05mwyphpckimmrrbc3zsdip"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nhsnumber" version))
+       (sha256
+        (base32 "10vm3591gjr13ggnagjkh0v2915yl05mwyphpckimmrrbc3zsdip"))))
     (properties `((upstream-name . "nhsnumber")))
     (build-system r-build-system)
     (home-page "https://github.com/sellorm/nhsnumber")
@@ -7778,12 +7799,12 @@ created.")
   (package
     (name "r-nhsdatadictionary")
     (version "1.2.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NHSDataDictionaRy" version))
-              (sha256
-               (base32
-                "17jvyjxc28bmxadvcjhal4shklh24636zw6hrc7p7m71lbcw86aw"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NHSDataDictionaRy" version))
+       (sha256
+        (base32 "17jvyjxc28bmxadvcjhal4shklh24636zw6hrc7p7m71lbcw86aw"))))
     (properties `((upstream-name . "NHSDataDictionaRy")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -7813,12 +7834,12 @@ maintained.  This package was commissioned by the NHS-R community
   (package
     (name "r-nhs-predict")
     (version "1.4.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nhs.predict" version))
-              (sha256
-               (base32
-                "0lgyi1v940pjqfpwligw5ml6vagiz8wwsxbr9kfd1j70b5i0kjwd"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nhs.predict" version))
+       (sha256
+        (base32 "0lgyi1v940pjqfpwligw5ml6vagiz8wwsxbr9kfd1j70b5i0kjwd"))))
     (properties `((upstream-name . "nhs.predict")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=nhs.predict")
@@ -7843,12 +7864,12 @@ dedicated SCAN function.")
   (package
     (name "r-nhpoisson")
     (version "3.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NHPoisson" version))
-              (sha256
-               (base32
-                "1i6n59ckcxk1hwyz97jmnv4yb96ianjma6ka8lpz79ivs41jniad"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NHPoisson" version))
+       (sha256
+        (base32 "1i6n59ckcxk1hwyz97jmnv4yb96ianjma6ka8lpz79ivs41jniad"))))
     (properties `((upstream-name . "NHPoisson")))
     (build-system r-build-system)
     (propagated-inputs (list r-car))
@@ -7863,12 +7884,12 @@ and simulation of non homogeneous Poisson processes in time.")
   (package
     (name "r-nhmsar")
     (version "1.19")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NHMSAR" version))
-              (sha256
-               (base32
-                "0xbnzq3zlpda1xcfiz1lsa5q5frvrsf87z3xc41fvk1n5viak5fk"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NHMSAR" version))
+       (sha256
+        (base32 "0xbnzq3zlpda1xcfiz1lsa5q5frvrsf87z3xc41fvk1n5viak5fk"))))
     (properties `((upstream-name . "NHMSAR")))
     (build-system r-build-system)
     (propagated-inputs (list r-ucminf r-ncvreg r-lars r-glasso))
@@ -7885,12 +7906,12 @@ order 1 only.  Most functions of the package handle missing values.")
   (package
     (name "r-nhm")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nhm" version))
-              (sha256
-               (base32
-                "1yf9hnbmfb7xj8mbhnq40wvd0pd88x9qspy1jr3x0n8nb75i3jlp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nhm" version))
+       (sha256
+        (base32 "1yf9hnbmfb7xj8mbhnq40wvd0pd88x9qspy1jr3x0n8nb75i3jlp"))))
     (properties `((upstream-name . "nhm")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-maxlik r-desolve))
@@ -7908,12 +7929,12 @@ transition probabilities.")
   (package
     (name "r-nhlscrape")
     (version "0.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nhlscrape" version))
-              (sha256
-               (base32
-                "0x6y747j6lha3jw4v2wavgd12xw5nx4m8biv9rmq9z0qy53vncjc"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nhlscrape" version))
+       (sha256
+        (base32 "0x6y747j6lha3jw4v2wavgd12xw5nx4m8biv9rmq9z0qy53vncjc"))))
     (properties `((upstream-name . "nhlscrape")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -7938,12 +7959,12 @@ data is stored locally.  We use the API located at
   (package
     (name "r-nhldata")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NHLData" version))
-              (sha256
-               (base32
-                "0dfqalccbkmqrn3h1z6s78l818c8sqn7d6yc8mg872ygmszryci7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NHLData" version))
+       (sha256
+        (base32 "0dfqalccbkmqrn3h1z6s78l818c8sqn7d6yc8mg872ygmszryci7"))))
     (properties `((upstream-name . "NHLData")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=NHLData")
@@ -7956,12 +7977,12 @@ data is stored locally.  We use the API located at
   (package
     (name "r-nhlapi")
     (version "0.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nhlapi" version))
-              (sha256
-               (base32
-                "1c5s7fd9agzk20xi8v38dk8ih6lmn8c90mxncyr996bhipgr7vl3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nhlapi" version))
+       (sha256
+        (base32 "1c5s7fd9agzk20xi8v38dk8ih6lmn8c90mxncyr996bhipgr7vl3"))))
     (properties `((upstream-name . "nhlapi")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite))
@@ -7979,12 +8000,12 @@ directly is also provided.")
   (package
     (name "r-nhdr")
     (version "0.6.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nhdR" version))
-              (sha256
-               (base32
-                "1cf3lfkflwbvswdqnp74zrb7ndc2vbm9jj8dny1gqq3x9ciiy8gw"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nhdR" version))
+       (sha256
+        (base32 "1cf3lfkflwbvswdqnp74zrb7ndc2vbm9jj8dny1gqq3x9ciiy8gw"))))
     (properties `((upstream-name . "nhdR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -8018,12 +8039,12 @@ datasets.")
   (package
     (name "r-nhdplustools")
     (version "0.7.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nhdplusTools" version))
-              (sha256
-               (base32
-                "0yp17kpgv4sw3ghfm5fmi2zj6glf0l6syrkvvh0m384is9f20dxa"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nhdplusTools" version))
+       (sha256
+        (base32 "0yp17kpgv4sw3ghfm5fmi2zj6glf0l6syrkvvh0m384is9f20dxa"))))
     (properties `((upstream-name . "nhdplusTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -8058,12 +8079,12 @@ Protection Agency <https://www.epa.gov/waterdata/basic-information>.")
   (package
     (name "r-nhanesa")
     (version "0.7.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nhanesA" version))
-              (sha256
-               (base32
-                "0f0qjjndd4nl9rzmapn98hlzv5fzvvg88ls97rim7vnr6l4c7mqq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nhanesA" version))
+       (sha256
+        (base32 "0f0qjjndd4nl9rzmapn98hlzv5fzvvg88ls97rim7vnr6l4c7mqq"))))
     (properties `((upstream-name . "nhanesA")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -8084,12 +8105,12 @@ Survey (NHANES) website <https://www.cdc.gov/nchs/nhanes/index.htm>.")
   (package
     (name "r-nhanes")
     (version "2.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NHANES" version))
-              (sha256
-               (base32
-                "0aphv3rakfcfrv2km1xyxpj1bxiazy6gwrvs7lyhxmq468fk4c9a"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NHANES" version))
+       (sha256
+        (base32 "0aphv3rakfcfrv2km1xyxpj1bxiazy6gwrvs7lyhxmq468fk4c9a"))))
     (properties `((upstream-name . "NHANES")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=NHANES")
@@ -8105,12 +8126,12 @@ for details.")
   (package
     (name "r-ngspatial")
     (version "1.2-2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ngspatial" version))
-              (sha256
-               (base32
-                "09hdvmbna4m62zv18k5kj9718wzw7p43wnal2j6aa0m5sd2rx9rz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ngspatial" version))
+       (sha256
+        (base32 "09hdvmbna4m62zv18k5kj9718wzw7p43wnal2j6aa0m5sd2rx9rz"))))
     (properties `((upstream-name . "ngspatial")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-batchmeans))
@@ -8130,12 +8151,12 @@ spatial filtering model of Hughes (2017) <@code{arXiv:1706.04651>}.")
   (package
     (name "r-ngramrr")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ngramrr" version))
-              (sha256
-               (base32
-                "1p8s4p3h27g647rxx9qjfad5dzbngjbmvhw4gz0jbsmfqrsf72by"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ngramrr" version))
+       (sha256
+        (base32 "1p8s4p3h27g647rxx9qjfad5dzbngjbmvhw4gz0jbsmfqrsf72by"))))
     (properties `((upstream-name . "ngramrr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tm r-tau))
@@ -8151,12 +8172,12 @@ given sequence of text) tokenizer to be used with the tm package with no
   (package
     (name "r-ngramr")
     (version "1.9.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ngramr" version))
-              (sha256
-               (base32
-                "0iiaw8w3z8r45i129r78jwj4yicrp3lfzp7im6qmfn9k6v2bpsfv"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ngramr" version))
+       (sha256
+        (base32 "0iiaw8w3z8r45i129r78jwj4yicrp3lfzp7im6qmfn9k6v2bpsfv"))))
     (properties `((upstream-name . "ngramr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -8183,12 +8204,12 @@ given sequence of text) tokenizer to be used with the tm package with no
   (package
     (name "r-ngram")
     (version "3.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ngram" version))
-              (sha256
-               (base32
-                "04cafc0i3605vlxmiwfyf91572ppg3wmm0hi50y9x7ai12bznchc"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ngram" version))
+       (sha256
+        (base32 "04cafc0i3605vlxmiwfyf91572ppg3wmm0hi50y9x7ai12bznchc"))))
     (properties `((upstream-name . "ngram")))
     (build-system r-build-system)
     (home-page "https://github.com/wrathematics/ngram")
@@ -8207,12 +8228,12 @@ package.")
   (package
     (name "r-nglviewer")
     (version "1.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NGLVieweR" version))
-              (sha256
-               (base32
-                "15azdlr3a6gaacjcjpi61rwmx7c3idfn3w1zpgbaqmhxd9a4m6f0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NGLVieweR" version))
+       (sha256
+        (base32 "15azdlr3a6gaacjcjpi61rwmx7c3idfn3w1zpgbaqmhxd9a4m6f0"))))
     (properties `((upstream-name . "NGLVieweR")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-magrittr r-htmlwidgets))
@@ -8231,12 +8252,12 @@ viewer after creation in Shiny.")
   (package
     (name "r-ngbvs")
     (version "0.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NGBVS" version))
-              (sha256
-               (base32
-                "09pmqbmmn2ym2r61xqd86dv831x94gv8z7cga5863lcjy93mpy2a"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NGBVS" version))
+       (sha256
+        (base32 "09pmqbmmn2ym2r61xqd86dv831x94gv8z7cga5863lcjy93mpy2a"))))
     (properties `((upstream-name . "NGBVS")))
     (build-system r-build-system)
     (propagated-inputs (list r-rfast))
@@ -8255,12 +8276,12 @@ information in fine-mapping association studies, Genetic Epidemiology.
   (package
     (name "r-ngboostforecast")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ngboostForecast" version))
-              (sha256
-               (base32
-                "019l9w7m6lkbf0m9mlsd24agjasbzi7dmy72faq1s4xg49a5xa9a"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ngboostForecast" version))
+       (sha256
+        (base32 "019l9w7m6lkbf0m9mlsd24agjasbzi7dmy72faq1s4xg49a5xa9a"))))
     (properties `((upstream-name . "ngboostForecast")))
     (build-system r-build-system)
     (inputs (list python))
@@ -8276,12 +8297,12 @@ Probabilistic Prediction.")
   (package
     (name "r-nfwdist")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NFWdist" version))
-              (sha256
-               (base32
-                "0833lg0pd763awrc6ibidwf2ldl79w9lmm5acq4bnpd2hzsx60l8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NFWdist" version))
+       (sha256
+        (base32 "0833lg0pd763awrc6ibidwf2ldl79w9lmm5acq4bnpd2hzsx60l8"))))
     (properties `((upstream-name . "NFWdist")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -8297,12 +8318,12 @@ Probabilistic Prediction.")
   (package
     (name "r-nftbart")
     (version "1.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nftbart" version))
-              (sha256
-               (base32
-                "193507ii4f78g81937dixk7mja23sdicb0fvi0g3ryi0xjh913q0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nftbart" version))
+       (sha256
+        (base32 "193507ii4f78g81937dixk7mja23sdicb0fvi0g3ryi0xjh913q0"))))
     (properties `((upstream-name . "nftbart")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rcpp r-nnet))
@@ -8322,12 +8343,12 @@ complete description of the model at <doi:10.1111/biom.13857>.")
   (package
     (name "r-nflverse")
     (version "1.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nflverse" version))
-              (sha256
-               (base32
-                "1pamkg80b83gb5ab3zshh36xsr31ihv6qbh1aa42m6k4g1wk5g3r"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nflverse" version))
+       (sha256
+        (base32 "1pamkg80b83gb5ab3zshh36xsr31ihv6qbh1aa42m6k4g1wk5g3r"))))
     (properties `((upstream-name . "nflverse")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstudioapi
@@ -8353,12 +8374,12 @@ nflverse packages in a single step.  Learn more about the nflverse at
   (package
     (name "r-nflsimulator")
     (version "0.4.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NFLSimulatoR" version))
-              (sha256
-               (base32
-                "1s11jr684dvc25rapdi1mslk4z8ajrcf20ibnz6rr22ga3pylxyn"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NFLSimulatoR" version))
+       (sha256
+        (base32 "1s11jr684dvc25rapdi1mslk4z8ajrcf20ibnz6rr22ga3pylxyn"))))
     (properties `((upstream-name . "NFLSimulatoR")))
     (build-system r-build-system)
     (propagated-inputs (list r-progress r-nflfastr r-data-table))
@@ -8380,12 +8401,12 @@ Analytics at the NFL, Lopez (2019)
   (package
     (name "r-nflseedr")
     (version "1.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nflseedR" version))
-              (sha256
-               (base32
-                "0nk6264alv0d8d1wj7xqk4m57rl1w185jj5qj58d9hwiy2wmzvqz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nflseedR" version))
+       (sha256
+        (base32 "0nk6264alv0d8d1wj7xqk4m57rl1w185jj5qj58d9hwiy2wmzvqz"))))
     (properties `((upstream-name . "nflseedR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -8412,12 +8433,12 @@ seasons including the sophisticated tie-breaking procedures.")
   (package
     (name "r-nflreadr")
     (version "1.4.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nflreadr" version))
-              (sha256
-               (base32
-                "1437nzvqj0w5p3wxb0zfwjkn34ssd4q9zbsw0lmrbs0afifaf6dd"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nflreadr" version))
+       (sha256
+        (base32 "1437nzvqj0w5p3wxb0zfwjkn34ssd4q9zbsw0lmrbs0afifaf6dd"))))
     (properties `((upstream-name . "nflreadr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -8440,12 +8461,12 @@ repositories of the nflverse project.")
   (package
     (name "r-nflplotr")
     (version "1.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nflplotR" version))
-              (sha256
-               (base32
-                "0rnzhfp1msmiqci6g37l9half8bc410g5vmbkzqk8v35vxml6r49"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nflplotR" version))
+       (sha256
+        (base32 "0rnzhfp1msmiqci6g37l9half8bc410g5vmbkzqk8v35vxml6r49"))))
     (properties `((upstream-name . "nflplotR")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -8471,12 +8492,12 @@ analysis in ggplot2'.")
   (package
     (name "r-nflfastr")
     (version "4.5.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nflfastR" version))
-              (sha256
-               (base32
-                "0416bc4b40ydc842yg3y9safbrwgqlc431qxdzrh8zp4vcmg3lac"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nflfastR" version))
+       (sha256
+        (base32 "0416bc4b40ydc842yg3y9safbrwgqlc431qxdzrh8zp4vcmg3lac"))))
     (properties `((upstream-name . "nflfastR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -8508,12 +8529,12 @@ play-by-play data from <https://www.nfl.com/>.")
   (package
     (name "r-nfl4th")
     (version "1.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nfl4th" version))
-              (sha256
-               (base32
-                "1ilvchs7g26ks6wgb8s8av0pm10s161fqiahcwbsm5xfy9bh8q78"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nfl4th" version))
+       (sha256
+        (base32 "1ilvchs7g26ks6wgb8s8av0pm10s161fqiahcwbsm5xfy9bh8q78"))))
     (properties `((upstream-name . "nfl4th")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -8547,12 +8568,12 @@ plays in the National Football League and obtain fourth down plays from
   (package
     (name "r-nfer")
     (version "1.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nfer" version))
-              (sha256
-               (base32
-                "0s19ks4ildxqdbm4nv40f6c0rs1a6h9vx46654k8n0q18bgia448"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nfer" version))
+       (sha256
+        (base32 "0s19ks4ildxqdbm4nv40f6c0rs1a6h9vx46654k8n0q18bgia448"))))
     (properties `((upstream-name . "nfer")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -8572,12 +8593,12 @@ or pools of intervals are provided as data frames.")
   (package
     (name "r-nfcp")
     (version "1.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NFCP" version))
-              (sha256
-               (base32
-                "16dvk8jiyzd94lfif0nkwc0ix05is8bhyykaaa6p1irwgzk8cia4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NFCP" version))
+       (sha256
+        (base32 "16dvk8jiyzd94lfif0nkwc0ix05is8bhyykaaa6p1irwgzk8cia4"))))
     (properties `((upstream-name . "NFCP")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgenoud
@@ -8616,12 +8637,12 @@ structure futures data applied within this study provided in the NFCP package.")
   (package
     (name "r-nfactors")
     (version "2.4.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nFactors" version))
-              (sha256
-               (base32
-                "08gydk231zijw3inp6d3hnc5mz0zywi4vzlvqb4jmibhv0hncdxv"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nFactors" version))
+       (sha256
+        (base32 "08gydk231zijw3inp6d3hnc5mz0zywi4vzlvqb4jmibhv0hncdxv"))))
     (properties `((upstream-name . "nFactors")))
     (build-system r-build-system)
     (propagated-inputs (list r-psych r-mass r-lattice))
@@ -8643,12 +8664,12 @@ error of the regression coeffcient (sescree); 8.  Nelson R2; 9.  Bartlett khi-2;
   (package
     (name "r-nextgenshinyapps")
     (version "1.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nextGenShinyApps" version))
-              (sha256
-               (base32
-                "0yvjchdxd8zxilq05x5ihjh10wzn9cz8cp6sr6jrnxgkiyrgh46q"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nextGenShinyApps" version))
+       (sha256
+        (base32 "0yvjchdxd8zxilq05x5ihjh10wzn9cz8cp6sr6jrnxgkiyrgh46q"))))
     (properties `((upstream-name . "nextGenShinyApps")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-htmltools))
@@ -8666,12 +8687,12 @@ and Bootstrap <https://getbootstrap.com/>.")
   (package
     (name "r-newtestsurvrec")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "newTestSurvRec" version))
-              (sha256
-               (base32
-                "06p782md33wqh5wa1735yg5i01d42p74kl7h5qhqs9cd732ls6pz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "newTestSurvRec" version))
+       (sha256
+        (base32 "06p782md33wqh5wa1735yg5i01d42p74kl7h5qhqs9cd732ls6pz"))))
     (properties `((upstream-name . "newTestSurvRec")))
     (build-system r-build-system)
     (home-page "https://www.r-project.org")
@@ -8689,12 +8710,12 @@ of the limit product model of Pena (2001) <doi:10.1198/016214501753381922>.")
   (package
     (name "r-newsmd")
     (version "0.5.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "newsmd" version))
-              (sha256
-               (base32
-                "06iq628ysfbaawhx5yxkxh8a9d3nmzq87n80l88kj84k1lg1s5ph"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "newsmd" version))
+       (sha256
+        (base32 "06iq628ysfbaawhx5yxkxh8a9d3nmzq87n80l88kj84k1lg1s5ph"))))
     (properties `((upstream-name . "newsmd")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6))
@@ -8709,12 +8730,12 @@ of the limit product model of Pena (2001) <doi:10.1198/016214501753381922>.")
   (package
     (name "r-newsmap")
     (version "0.8.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "newsmap" version))
-              (sha256
-               (base32
-                "1kvf2q0wdn5ilw10cyd9pbigh26fm9qr4sghbaln28x5f96f1fva"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "newsmap" version))
+       (sha256
+        (base32 "1kvf2q0wdn5ilw10cyd9pbigh26fm9qr4sghbaln28x5f96f1fva"))))
     (properties `((upstream-name . "newsmap")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi r-quanteda-textstats r-quanteda
@@ -8732,12 +8753,12 @@ Arabic Japanese and Chinese (Simplified and Traditional).")
   (package
     (name "r-newscatcher")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "newscatcheR" version))
-              (sha256
-               (base32
-                "18r9lmg9q6fj0ggnpqggqywsbycblsdc42mdcpc2abzp98dsvww9"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "newscatcheR" version))
+       (sha256
+        (base32 "18r9lmg9q6fj0ggnpqggqywsbycblsdc42mdcpc2abzp98dsvww9"))))
     (properties `((upstream-name . "newscatcheR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyrss))
@@ -8754,12 +8775,12 @@ of the <https://github.com/kotartemiy/newscatcher> Python module.")
   (package
     (name "r-newsanchor")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "newsanchor" version))
-              (sha256
-               (base32
-                "1s8qhq9jk5gnsimnvy7kdayya0ks0ly309l7zxm5rafj5x7k5vwn"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "newsanchor" version))
+       (sha256
+        (base32 "1s8qhq9jk5gnsimnvy7kdayya0ks0ly309l7zxm5rafj5x7k5vwn"))))
     (properties `((upstream-name . "newsanchor")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -8781,12 +8802,12 @@ of the <https://github.com/kotartemiy/newscatcher> Python module.")
   (package
     (name "r-newmanomics")
     (version "1.0.10")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NewmanOmics" version))
-              (sha256
-               (base32
-                "16lhs1wq4593yj5q1kw0rq085i4dja6x3pw5crnj4l4zib8gpdb1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NewmanOmics" version))
+       (sha256
+        (base32 "16lhs1wq4593yj5q1kw0rq085i4dja6x3pw5crnj4l4zib8gpdb1"))))
     (properties `((upstream-name . "NewmanOmics")))
     (build-system r-build-system)
     (propagated-inputs (list r-oompabase))
@@ -8803,12 +8824,12 @@ can be applied to genome-scale transcriptomic or other expression data.")
   (package
     (name "r-newfocus")
     (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "newFocus" version))
-              (sha256
-               (base32
-                "0j7wl4yf4dnz4vbbnhsk39w9zqbnad2lhxwqbns1plhdd02hzsfr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "newFocus" version))
+       (sha256
+        (base32 "0j7wl4yf4dnz4vbbnhsk39w9zqbnad2lhxwqbns1plhdd02hzsfr"))))
     (properties `((upstream-name . "newFocus")))
     (build-system r-build-system)
     (propagated-inputs (list r-ctgt))
@@ -8831,12 +8852,12 @@ lower bound for number of true discoveries, see Ningning Xu et.al (2021)
   (package
     (name "r-newdistns")
     (version "2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Newdistns" version))
-              (sha256
-               (base32
-                "1b5njkzj8b0wrvvfv904di0933k9d320gadmfm5zl6pzdp34bh1i"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Newdistns" version))
+       (sha256
+        (base32 "1b5njkzj8b0wrvvfv904di0933k9d320gadmfm5zl6pzdp34bh1i"))))
     (properties `((upstream-name . "Newdistns")))
     (build-system r-build-system)
     (propagated-inputs (list r-adequacymodel))
@@ -8862,12 +8883,12 @@ distributions, and exponentiated exponential Poisson G distributions.")
   (package
     (name "r-neverhpfilter")
     (version "0.4-0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "neverhpfilter" version))
-              (sha256
-               (base32
-                "097nfz30pf4bd95l943ccsvndni0n8c6gpcdk5dv02802mcg0h81"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "neverhpfilter" version))
+       (sha256
+        (base32 "097nfz30pf4bd95l943ccsvndni0n8c6gpcdk5dv02802mcg0h81"))))
     (properties `((upstream-name . "neverhpfilter")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-xts))
@@ -8885,12 +8906,12 @@ reproducing his work.  Hamilton (2017) <doi:10.3386/w23429>.")
   (package
     (name "r-nevada")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nevada" version))
-              (sha256
-               (base32
-                "0ba5wbjsgd77f20flp9zqiasmypbxsmqg2yfw0qqwzjrkp3rvfqi"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nevada" version))
+       (sha256
+        (base32 "0ba5wbjsgd77f20flp9zqiasmypbxsmqg2yfw0qqwzjrkp3rvfqi"))))
     (properties `((upstream-name . "nevada")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -8939,12 +8960,12 @@ data: Analysis of brain networks of patients with autism\"
   (package
     (name "r-neutralitytestr")
     (version "0.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "neutralitytestr" version))
-              (sha256
-               (base32
-                "1660v7nng6dj9gwn04ynirms0g10wpsz33i26va229zdviqm5cyy"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "neutralitytestr" version))
+       (sha256
+        (base32 "1660v7nng6dj9gwn04ynirms0g10wpsz33i26va229zdviqm5cyy"))))
     (properties `((upstream-name . "neutralitytestr")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -8969,12 +8990,12 @@ model fits.  See Williams et al 2016 <doi:10.1038/ng.3489> and Williams et al
   (package
     (name "r-neurosim")
     (version "0.2-13")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "neuRosim" version))
-              (sha256
-               (base32
-                "0jxpkrb7rqmcmcl1gdmg9jjk09nl8czafc2ggdwmnc5hb805xx5n"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "neuRosim" version))
+       (sha256
+        (base32 "0jxpkrb7rqmcmcl1gdmg9jjk09nl8czafc2ggdwmnc5hb805xx5n"))))
     (properties `((upstream-name . "neuRosim")))
     (build-system r-build-system)
     (propagated-inputs (list r-desolve))
@@ -8993,12 +9014,12 @@ manipulate the arguments.  See Welvaert et al. (2011)
   (package
     (name "r-neuronorm")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "neuronorm" version))
-              (sha256
-               (base32
-                "1bypspygib963n255q6j5pmm14sw67ipmkq54faz8w2i3mdb845v"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "neuronorm" version))
+       (sha256
+        (base32 "1bypspygib963n255q6j5pmm14sw67ipmkq54faz8w2i3mdb845v"))))
     (properties `((upstream-name . "neuronorm")))
     (build-system r-build-system)
     (inputs (list cmake))
@@ -9017,12 +9038,12 @@ sites.")
   (package
     (name "r-neuromplex")
     (version "1.0-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "neuromplex" version))
-              (sha256
-               (base32
-                "1zj7x528qv4bp24fx546jj9kf0q0n26jyi65v6h2bl3c61rrb6bz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "neuromplex" version))
+       (sha256
+        (base32 "1zj7x528qv4bp24fx546jj9kf0q0n26jyi65v6h2bl3c61rrb6bz"))))
     (properties `((upstream-name . "neuromplex")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -9047,12 +9068,12 @@ Annals of Applied Statistics.  A preprint may be found at
   (package
     (name "r-neuroim")
     (version "0.0.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "neuroim" version))
-              (sha256
-               (base32
-                "00cjr6pkip6zi2d0q3qbn3lb3k0z82v6c19qslvgpa9n0g63dr5p"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "neuroim" version))
+       (sha256
+        (base32 "00cjr6pkip6zi2d0q3qbn3lb3k0z82v6c19qslvgpa9n0g63dr5p"))))
     (properties `((upstream-name . "neuroim")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaimpute
@@ -9079,12 +9100,12 @@ files and limited support for reading AFNI files.")
   (package
     (name "r-neurohcp")
     (version "0.9.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "neurohcp" version))
-              (sha256
-               (base32
-                "02z0lhmw2mr2fk8d8wp7nfcrfl8izds68zskm5j0xfabfb4dwkbx"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "neurohcp" version))
+       (sha256
+        (base32 "02z0lhmw2mr2fk8d8wp7nfcrfl8izds68zskm5j0xfabfb4dwkbx"))))
     (properties `((upstream-name . "neurohcp")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-httr r-digest r-base64enc r-aws-s3))
@@ -9100,12 +9121,12 @@ files and limited support for reading AFNI files.")
   (package
     (name "r-neurodecoder")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NeuroDecodeR" version))
-              (sha256
-               (base32
-                "0awz4kf8pdrb4jfh4x1cpawhijnvkkz58b0nshbvi6cx5r4122z3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NeuroDecodeR" version))
+       (sha256
+        (base32 "0awz4kf8pdrb4jfh4x1cpawhijnvkkz58b0nshbvi6cx5r4122z3"))))
     (properties `((upstream-name . "NeuroDecodeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -9138,12 +9159,12 @@ decoding analyses.  For more information on neural decoding see Meyers & Kreiman
   (package
     (name "r-neurocinstall")
     (version "0.12.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "neurocInstall" version))
-              (sha256
-               (base32
-                "1fkb6ji9gigqdjl50hbgdgfidqpjgqlh1aidf6vn4qnfr92bsvqf"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "neurocInstall" version))
+       (sha256
+        (base32 "1fkb6ji9gigqdjl50hbgdgfidqpjgqlh1aidf6vn4qnfr92bsvqf"))))
     (properties `((upstream-name . "neurocInstall")))
     (build-system r-build-system)
     (propagated-inputs (list r-devtools))
@@ -9159,12 +9180,12 @@ decoding analyses.  For more information on neural decoding see Meyers & Kreiman
   (package
     (name "r-neuroblastoma")
     (version "2023.9.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "neuroblastoma" version))
-              (sha256
-               (base32
-                "18n2ysrxb47wn5xpf906i5hn84f45r3ijla7sravyrsh8lbx6xih"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "neuroblastoma" version))
+       (sha256
+        (base32 "18n2ysrxb47wn5xpf906i5hn84f45r3ijla7sravyrsh8lbx6xih"))))
     (properties `((upstream-name . "neuroblastoma")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=neuroblastoma")
@@ -9179,12 +9200,12 @@ change-point detection algorithms, as described by Hocking et al.
   (package
     (name "r-neurobase")
     (version "1.32.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "neurobase" version))
-              (sha256
-               (base32
-                "0jg4fspqmdbrisxxwbpql5kv9am3d02m5j2dp8305p8dl0wz5vyj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "neurobase" version))
+       (sha256
+        (base32 "0jg4fspqmdbrisxxwbpql5kv9am3d02m5j2dp8305p8dl0wz5vyj"))))
     (properties `((upstream-name . "neurobase")))
     (build-system r-build-system)
     (propagated-inputs (list r-rnifti r-r-utils r-oro-nifti r-matrixstats
@@ -9203,12 +9224,12 @@ reading/writing and also other manipulation functions.")
   (package
     (name "r-neuralsens")
     (version "1.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NeuralSens" version))
-              (sha256
-               (base32
-                "0awghzv463xlawqs20z505yc9hz35h9bpnz0rq5k1720vdy9jq30"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NeuralSens" version))
+       (sha256
+        (base32 "0awghzv463xlawqs20z505yc9hz35h9bpnz0rq5k1720vdy9jq30"))))
     (properties `((upstream-name . "NeuralSens")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -9239,12 +9260,12 @@ the output with respect to that input in each training data point
   (package
     (name "r-neuralnettools")
     (version "1.5.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NeuralNetTools" version))
-              (sha256
-               (base32
-                "1q3q3vc1f0lglyx5ydv5nx6ywpvz50a9w7cql2j7cjvh4pd3pibs"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NeuralNetTools" version))
+       (sha256
+        (base32 "1q3q3vc1f0lglyx5ydv5nx6ywpvz50a9w7cql2j7cjvh4pd3pibs"))))
     (properties `((upstream-name . "NeuralNetTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-scales r-reshape2 r-nnet r-ggplot2))
@@ -9261,12 +9282,12 @@ conducting a sensitivity analysis, and obtaining a simple list of model weights.
   (package
     (name "r-neuralnet")
     (version "1.44.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "neuralnet" version))
-              (sha256
-               (base32
-                "09l808vgjh059a3f94vgsprfyp5c1hrbjn6i1cn34cxnbljwsrjz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "neuralnet" version))
+       (sha256
+        (base32 "09l808vgjh059a3f94vgsprfyp5c1hrbjn6i1cn34cxnbljwsrjz"))))
     (properties `((upstream-name . "neuralnet")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-deriv))
@@ -9285,12 +9306,12 @@ activation function.  Furthermore, the calculation of generalized weights
   (package
     (name "r-neuralgam")
     (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "neuralGAM" version))
-              (sha256
-               (base32
-                "10v47gqr2y7md9j4807zsnckavlv4p9lggj5ywkizhwgmdfn4bxx"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "neuralGAM" version))
+       (sha256
+        (base32 "10v47gqr2y7md9j4807zsnckavlv4p9lggj5ywkizhwgmdfn4bxx"))))
     (properties `((upstream-name . "neuralGAM")))
     (build-system r-build-system)
     (inputs (list tensorflow python))
@@ -9319,12 +9340,12 @@ decision-making should be based on accountable and interpretable algorithms.")
   (package
     (name "r-networktree")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "networktree" version))
-              (sha256
-               (base32
-                "0hkrqpx7b6sxalw1qyrncck70mx6p5gr57mf558l5mlqi52v7hg0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "networktree" version))
+       (sha256
+        (base32 "0hkrqpx7b6sxalw1qyrncck70mx6p5gr57mf558l5mlqi52v7hg0"))))
     (properties `((upstream-name . "networktree")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2
@@ -9349,12 +9370,12 @@ the partitioned data.  For details see Jones, Mair, Simon, & Zeileis (2020)
   (package
     (name "r-networktools")
     (version "1.5.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "networktools" version))
-              (sha256
-               (base32
-                "0y5sfqn0ijgclm191kxfkqs6l8vnmdjsnjjsawq3nl4ziw7zlpfy"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "networktools" version))
+       (sha256
+        (base32 "0y5sfqn0ijgclm191kxfkqs6l8vnmdjsnjjsawq3nl4ziw7zlpfy"))))
     (properties `((upstream-name . "networktools")))
     (build-system r-build-system)
     (propagated-inputs (list r-wordcloud
@@ -9380,12 +9401,12 @@ MDS, PCA, & eigenmodel network plotting.")
   (package
     (name "r-networktoolbox")
     (version "1.4.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NetworkToolbox" version))
-              (sha256
-               (base32
-                "026gizms1xsmlpzgssgqi2y5lfhvvbqkwy5q3a0d4xvzbmyan3y7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NetworkToolbox" version))
+       (sha256
+        (base32 "026gizms1xsmlpzgssgqi2y5lfhvvbqkwy5q3a0d4xvzbmyan3y7"))))
     (properties `((upstream-name . "NetworkToolbox")))
     (build-system r-build-system)
     (propagated-inputs (list r-r-matlab
@@ -9425,12 +9446,12 @@ network analysis.")
   (package
     (name "r-networkscaleup")
     (version "0.1-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "networkscaleup" version))
-              (sha256
-               (base32
-                "02ywmmj95xlgdavs81m0gbzyfwf9ac2wrbfwq2kcxgc0la4aimvc"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "networkscaleup" version))
+       (sha256
+        (base32 "02ywmmj95xlgdavs81m0gbzyfwf9ac2wrbfwq2kcxgc0la4aimvc"))))
     (properties `((upstream-name . "networkscaleup")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -9460,12 +9481,12 @@ Bernard, H. R., Shelley, G. A., and Johnsen, E. C. (1998)
   (package
     (name "r-networkriskmeasures")
     (version "0.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NetworkRiskMeasures" version))
-              (sha256
-               (base32
-                "1121ma43jxc4p9rw0sc8w32shf9xrmn5qd1xsqgzr8diymc49zhg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NetworkRiskMeasures" version))
+       (sha256
+        (base32 "1121ma43jxc4p9rw0sc8w32shf9xrmn5qd1xsqgzr8diymc49zhg"))))
     (properties `((upstream-name . "NetworkRiskMeasures")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-ggplot2 r-expm r-dplyr))
@@ -9480,12 +9501,12 @@ Bernard, H. R., Shelley, G. A., and Johnsen, E. C. (1998)
   (package
     (name "r-networkr")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "networkR" version))
-              (sha256
-               (base32
-                "07dq3syk0hr1kc2mqd70g0ih09hamd7rxxms60dyvnpm8978c1wz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "networkR" version))
+       (sha256
+        (base32 "07dq3syk0hr1kc2mqd70g0ih09hamd7rxxms60dyvnpm8978c1wz"))))
     (properties `((upstream-name . "networkR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix r-fastmatch
@@ -9506,12 +9527,12 @@ Kenneth Lange (2003, ISBN:978-8181281135).")
   (package
     (name "r-networklite")
     (version "1.0.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "networkLite" version))
-              (sha256
-               (base32
-                "12vifn3vnhk0nk357759zp154v3l8hyapjqygkz31czhz3a5baxa"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "networkLite" version))
+       (sha256
+        (base32 "12vifn3vnhk0nk357759zp154v3l8hyapjqygkz31czhz3a5baxa"))))
     (properties `((upstream-name . "networkLite")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-statnet-common r-network r-dplyr))
@@ -9531,12 +9552,12 @@ for multigraphs, hypergraphs, or loops.")
   (package
     (name "r-networkinference")
     (version "1.2.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NetworkInference" version))
-              (sha256
-               (base32
-                "1x63szbns8wf3k89ibk2p66prngw4fr2ckfn1568mnxdwnzvhrb4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NetworkInference" version))
+       (sha256
+        (base32 "1x63szbns8wf3k89ibk2p66prngw4fr2ckfn1568mnxdwnzvhrb4"))))
     (properties `((upstream-name . "NetworkInference")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppprogress
@@ -9559,12 +9580,12 @@ diffusion network that is underlying the diffusion process.")
   (package
     (name "r-networkgen")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "networkGen" version))
-              (sha256
-               (base32
-                "1vnh5dajiaf47kx1sxyp744mlk3yvl4sxj380i3b3ic1wlgyd2h1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "networkGen" version))
+       (sha256
+        (base32 "1vnh5dajiaf47kx1sxyp744mlk3yvl4sxj380i3b3ic1wlgyd2h1"))))
     (properties `((upstream-name . "networkGen")))
     (build-system r-build-system)
     (propagated-inputs (list r-mgcv r-igraph))
@@ -9579,12 +9600,12 @@ network mazes.")
   (package
     (name "r-networkextinction")
     (version "1.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NetworkExtinction" version))
-              (sha256
-               (base32
-                "1y2f715y077bwj8ymamrskwhbc7adg7q9ijkks2yr2gwj8i47xy4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NetworkExtinction" version))
+       (sha256
+        (base32 "1y2f715y077bwj8ymamrskwhbc7adg7q9ijkks2yr2gwj8i47xy4"))))
     (properties `((upstream-name . "NetworkExtinction")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -9616,12 +9637,12 @@ cascading effects, described in Dunne et al. (2002)
   (package
     (name "r-networkdynamicdata")
     (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "networkDynamicData" version))
-              (sha256
-               (base32
-                "176al8jp0gha6yzhyn5flmyackmmdnh1h8sasqrdcmba7ha7cya6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "networkDynamicData" version))
+       (sha256
+        (base32 "176al8jp0gha6yzhyn5flmyackmmdnh1h8sasqrdcmba7ha7cya6"))))
     (properties `((upstream-name . "networkDynamicData")))
     (build-system r-build-system)
     (propagated-inputs (list r-networkdynamic r-network))
@@ -9637,12 +9658,12 @@ objects.")
   (package
     (name "r-networkdynamic")
     (version "0.11.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "networkDynamic" version))
-              (sha256
-               (base32
-                "0nwfcis6hxca99kbcqv90g0hrfxgwqc7mml0jh4xq32wv384yric"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "networkDynamic" version))
+       (sha256
+        (base32 "0nwfcis6hxca99kbcqv90g0hrfxgwqc7mml0jh4xq32wv384yric"))))
     (properties `((upstream-name . "networkDynamic")))
     (build-system r-build-system)
     (propagated-inputs (list r-statnet-common r-networklite r-network))
@@ -9658,12 +9679,12 @@ for network analysis.")
   (package
     (name "r-networkdistance")
     (version "0.3.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NetworkDistance" version))
-              (sha256
-               (base32
-                "0z3q15aq5jqwbyxr4464nq74ib7644f185h8wfzvfi491xkrl4cr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NetworkDistance" version))
+       (sha256
+        (base32 "0z3q15aq5jqwbyxr4464nq74ib7644f185h8wfzvfi491xkrl4cr"))))
     (properties `((upstream-name . "NetworkDistance")))
     (build-system r-build-system)
     (propagated-inputs (list r-rspectra
@@ -9693,12 +9714,12 @@ inter-graph distance measures.")
   (package
     (name "r-networkcomparr")
     (version "0.0.0.9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NetworkComparr" version))
-              (sha256
-               (base32
-                "11vzcm80dvrk0cadiwg1zy7iml6q43777rzq2phg7dc3s0p1fian"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NetworkComparr" version))
+       (sha256
+        (base32 "11vzcm80dvrk0cadiwg1zy7iml6q43777rzq2phg7dc3s0p1fian"))))
     (properties `((upstream-name . "NetworkComparr")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2
@@ -9724,12 +9745,12 @@ networks can be directed or undirected.")
   (package
     (name "r-networkcomparisontest")
     (version "2.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NetworkComparisonTest" version))
-              (sha256
-               (base32
-                "08v29q7shygbbdbfrw6vpdhbs2qb4x8hycg0vhlfsm0w0fwivxhi"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NetworkComparisonTest" version))
+       (sha256
+        (base32 "08v29q7shygbbdbfrw6vpdhbs2qb4x8hycg0vhlfsm0w0fwivxhi"))))
     (properties `((upstream-name . "NetworkComparisonTest")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2 r-qgraph r-networktools r-matrix
@@ -9753,12 +9774,12 @@ available from <doi:10.1037/met0000476>.")
   (package
     (name "r-networkchange")
     (version "0.8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NetworkChange" version))
-              (sha256
-               (base32
-                "03rzyfiwbqpr4jj3wdg3s1gnfizz39j07yk0q2fkq3a8pfx4w306"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NetworkChange" version))
+       (sha256
+        (base32 "03rzyfiwbqpr4jj3wdg3s1gnfizz39j07yk0q2fkq3a8pfx4w306"))))
     (properties `((upstream-name . "NetworkChange")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -9791,12 +9812,12 @@ and WAIC are also provided.")
   (package
     (name "r-networkabc")
     (version "0.8-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "networkABC" version))
-              (sha256
-               (base32
-                "0754770z3db7faadh8bxk0h70frjk6v8zjklkhclxnach1vag2k6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "networkABC" version))
+       (sha256
+        (base32 "0754770z3db7faadh8bxk0h70frjk6v8zjklkhclxnach1vag2k6"))))
     (properties `((upstream-name . "networkABC")))
     (build-system r-build-system)
     (propagated-inputs (list r-sna r-rcolorbrewer r-network))
@@ -9829,12 +9850,12 @@ specific statistical methods to reverse engineer the underlying network.")
   (package
     (name "r-netweaver")
     (version "0.0.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NetWeaver" version))
-              (sha256
-               (base32
-                "058fi3vbp11mbg69n4yp1zf48akfdl6s2p0qpa0v6ngmk2zjk0bq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NetWeaver" version))
+       (sha256
+        (base32 "058fi3vbp11mbg69n4yp1zf48akfdl6s2p0qpa0v6ngmk2zjk0bq"))))
     (properties `((upstream-name . "NetWeaver")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -9851,12 +9872,12 @@ analysis features.")
   (package
     (name "r-netutils")
     (version "0.8.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "netUtils" version))
-              (sha256
-               (base32
-                "0laha093wxkvs06wh2hsmyxypn89n7vlh183zw6k26d67vl15a6j"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "netUtils" version))
+       (sha256
+        (base32 "0laha093wxkvs06wh2hsmyxypn89n7vlh183zw6k26d67vl15a6j"))))
     (properties `((upstream-name . "netUtils")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-igraph))
@@ -9874,12 +9895,12 @@ functions are build upon igraph'.")
   (package
     (name "r-nettskjemar")
     (version "0.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nettskjemar" version))
-              (sha256
-               (base32
-                "0cghjk9hw3m0b6xalqg0p7v60jvshcfy6z5sfl4p2z6y17pkf72b"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nettskjemar" version))
+       (sha256
+        (base32 "0cghjk9hw3m0b6xalqg0p7v60jvshcfy6z5sfl4p2z6y17pkf72b"))))
     (properties `((upstream-name . "nettskjemar")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -9905,12 +9926,12 @@ data portal.  Mowinckel (2021) <doi:10.5281/zenodo.4745481>.")
   (package
     (name "r-nett")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nett" version))
-              (sha256
-               (base32
-                "1prb1zskhc50jzqmh1cdk4lljr4xqp4aaaaw1r66hmpy0d9ghhph"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nett" version))
+       (sha256
+        (base32 "1prb1zskhc50jzqmh1cdk4lljr4xqp4aaaaw1r66hmpy0d9ghhph"))))
     (properties `((upstream-name . "nett")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix r-magrittr
@@ -9934,12 +9955,12 @@ Zhang and Amini (2020) <@code{arXiv:2012.15047>} Le and Levina (2022)
   (package
     (name "r-netswan")
     (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NetSwan" version))
-              (sha256
-               (base32
-                "1mwdy3ahagiifj2bd1ajrafvnxzi74a1x1d3i2laf1hqpz3fbgld"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NetSwan" version))
+       (sha256
+        (base32 "1mwdy3ahagiifj2bd1ajrafvnxzi74a1x1d3i2laf1hqpz3fbgld"))))
     (properties `((upstream-name . "NetSwan")))
     (build-system r-build-system)
     (propagated-inputs (list r-igraph))
@@ -9954,12 +9975,12 @@ resilience and vulnerability.")
   (package
     (name "r-netstat")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "netstat" version))
-              (sha256
-               (base32
-                "0d26w0xyi5645132bxybsy8zadfcfifbwp5s22r0cnd546czjvz8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "netstat" version))
+       (sha256
+        (base32 "0d26w0xyi5645132bxybsy8zadfcfifbwp5s22r0cnd546czjvz8"))))
     (properties `((upstream-name . "netstat")))
     (build-system r-build-system)
     (home-page "https://github.com/stevecondylios/netstat")
@@ -9978,21 +9999,28 @@ website (2017)
 (define-public r-netsimr
   (package
     (name "r-netsimr")
-    (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NetSimR" version))
-              (sha256
-               (base32
-                "018672x5x5f8pjap5y9qkjskwybrvmvfpn1736c5b7pf1hw5xzx6"))))
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NetSimR" version))
+       (sha256
+        (base32 "10rplfz94kj0lhlzv7nl0lsiwgimfjgcwz03rwhdixxwnlyj03gp"))))
     (properties `((upstream-name . "NetSimR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-shinybusy
+    (propagated-inputs (list r-shinyjs
+                             r-shinybusy
                              r-shiny
                              r-scales
+                             r-rsqlite
+                             r-rpostgresql
+                             r-rodbc
+                             r-rmysql
                              r-rmarkdown
+                             r-plotly
                              r-future-apply
-                             r-future))
+                             r-future
+                             r-dbi))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=NetSimR")
     (synopsis "Actuarial Functions for Non-Life Insurance Modelling")
@@ -10014,12 +10042,12 @@ tool to simulate insurance claims.")
   (package
     (name "r-netshiny")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "netShiny" version))
-              (sha256
-               (base32
-                "1k6dmhkjf29ww31c15jms0yxwyiqq1z7a9115zwbg620cjd3m6fm"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "netShiny" version))
+       (sha256
+        (base32 "1k6dmhkjf29ww31c15jms0yxwyiqq1z7a9115zwbg620cjd3m6fm"))))
     (properties `((upstream-name . "netShiny")))
     (build-system r-build-system)
     (propagated-inputs (list r-visnetwork
@@ -10065,12 +10093,12 @@ more information, documentation and examples.")
   (package
     (name "r-netsem")
     (version "0.6.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "netSEM" version))
-              (sha256
-               (base32
-                "1znb3r8jc1ms4ajzb3ryr89wjx6f3rw1f410msh46d5h08wsjn9n"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "netSEM" version))
+       (sha256
+        (base32 "1znb3r8jc1ms4ajzb3ryr89wjx6f3rw1f410msh46d5h08wsjn9n"))))
     (properties `((upstream-name . "netSEM")))
     (build-system r-build-system)
     (propagated-inputs (list r-svglite
@@ -10105,12 +10133,12 @@ H. French. (2013) <doi:10.1109/ACCESS.2013.2267611>.")
   (package
     (name "r-netseg")
     (version "1.0-2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "netseg" version))
-              (sha256
-               (base32
-                "1idj5xgd3yacy92qf4836vl18d93g4xn0za6qk722qbxa069mfyi"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "netseg" version))
+       (sha256
+        (base32 "1idj5xgd3yacy92qf4836vl18d93g4xn0za6qk722qbxa069mfyi"))))
     (properties `((upstream-name . "netseg")))
     (build-system r-build-system)
     (propagated-inputs (list r-igraph))
@@ -10132,12 +10160,12 @@ computational companion to Bojanowski & Corten (2014)
   (package
     (name "r-netsci")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NetSci" version))
-              (sha256
-               (base32
-                "1fliilk5z7lldkry5kijwab0k6ysqy87fcfrnwyywxkpxxrv1578"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NetSci" version))
+       (sha256
+        (base32 "1fliilk5z7lldkry5kijwab0k6ysqy87fcfrnwyywxkpxxrv1578"))))
     (properties `((upstream-name . "NetSci")))
     (build-system r-build-system)
     (propagated-inputs (list r-wto
@@ -10159,12 +10187,12 @@ Proximity, Separation, Jaccard Index, along with permutation, when needed.")
   (package
     (name "r-nets")
     (version "0.9.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nets" version))
-              (sha256
-               (base32
-                "00adkyd2hm8aynpnk4avzss8fxkbaai74n5cf03vpwyc306jq0d7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nets" version))
+       (sha256
+        (base32 "00adkyd2hm8aynpnk4avzss8fxkbaai74n5cf03vpwyc306jq0d7"))))
     (properties `((upstream-name . "nets")))
     (build-system r-build-system)
     (propagated-inputs (list r-igraph))
@@ -10177,12 +10205,12 @@ Proximity, Separation, Jaccard Index, along with permutation, when needed.")
   (package
     (name "r-netropy")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "netropy" version))
-              (sha256
-               (base32
-                "1c7gmv4lm2i2bmvhan5v0w3s3qvaxq0l7f4q76jhcc9mlz0plbh1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "netropy" version))
+       (sha256
+        (base32 "1c7gmv4lm2i2bmvhan5v0w3s3qvaxq0l7f4q76jhcc9mlz0plbh1"))))
     (properties `((upstream-name . "netropy")))
     (build-system r-build-system)
     (propagated-inputs (list r-igraph r-ggraph r-ggplot2))
@@ -10199,12 +10227,12 @@ Shafie and Frank (2022).")
   (package
     (name "r-netregr")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "netregR" version))
-              (sha256
-               (base32
-                "0n5absjra0imddz1spy1piij5rdz76wi4g568yby3rbhkm1896rs"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "netregR" version))
+       (sha256
+        (base32 "0n5absjra0imddz1spy1piij5rdz76wi4g568yby3rbhkm1896rs"))))
     (properties `((upstream-name . "netregR")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix))
@@ -10226,12 +10254,12 @@ methods, see Marrs, Fosdick, and @code{McCormick} (2017)
   (package
     (name "r-netrankr")
     (version "1.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "netrankr" version))
-              (sha256
-               (base32
-                "14r5xy4j7d2vkbfrlylipx17n66kk7fl1n0hipx5hn6na5slxkfi"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "netrankr" version))
+       (sha256
+        (base32 "14r5xy4j7d2vkbfrlylipx17n66kk7fl1n0hipx5hn6na5slxkfi"))))
     (properties `((upstream-name . "netrankr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix r-igraph))
@@ -10254,12 +10282,12 @@ in depth in the vignettes and in Schoch (2018)
   (package
     (name "r-netpreproc")
     (version "1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NetPreProc" version))
-              (sha256
-               (base32
-                "07drrgvgl3msbcxi113hinqss30lkzrv9hqkzwa41bpssfq8x68c"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NetPreProc" version))
+       (sha256
+        (base32 "07drrgvgl3msbcxi113hinqss30lkzrv9hqkzwa41bpssfq8x68c"))))
     (properties `((upstream-name . "NetPreProc")))
     (build-system r-build-system)
     (propagated-inputs (list r-graph))
@@ -10276,12 +10304,12 @@ Methods for graph pre-processing and for filtering edges of the graph.")
   (package
     (name "r-netplot")
     (version "0.2-0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "netplot" version))
-              (sha256
-               (base32
-                "0l4sy8wn2fd04fpkrh853r923dajpqldc78ws4kmh6ixn1l43c21"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "netplot" version))
+       (sha256
+        (base32 "0l4sy8wn2fd04fpkrh853r923dajpqldc78ws4kmh6ixn1l43c21"))))
     (properties `((upstream-name . "netplot")))
     (build-system r-build-system)
     (propagated-inputs (list r-sna r-network r-igraph))
@@ -10299,12 +10327,12 @@ Graphics Package and seamlessly work with igraph and network objects.")
   (package
     (name "r-netorigin")
     (version "1.1-6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NetOrigin" version))
-              (sha256
-               (base32
-                "0brjg6w79r6bkga9dpqph9l7k6wq5hvsjfhrwx7dnyr437f7z4hk"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NetOrigin" version))
+       (sha256
+        (base32 "0brjg6w79r6bkga9dpqph9l7k6wq5hvsjfhrwx7dnyr437f7z4hk"))))
     (properties `((upstream-name . "NetOrigin")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -10330,12 +10358,12 @@ estimation performance analysis and visualization.")
   (package
     (name "r-netmix")
     (version "0.2.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NetMix" version))
-              (sha256
-               (base32
-                "0363z06y7ildk7bifhj2lmva0hf591nyp10x9ccd6csj387n968p"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NetMix" version))
+       (sha256
+        (base32 "0363z06y7ildk7bifhj2lmva0hf591nyp10x9ccd6csj387n968p"))))
     (properties `((upstream-name . "NetMix")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
@@ -10367,12 +10395,12 @@ Application to International Conflicts', available at
   (package
     (name "r-netmhc2pan")
     (version "1.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "netmhc2pan" version))
-              (sha256
-               (base32
-                "0q98rar7iglwxmf1274wrjcr7kp544ayrjhd286x68jmf51cqyrg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "netmhc2pan" version))
+       (sha256
+        (base32 "0q98rar7iglwxmf1274wrjcr7kp544ayrjhd286x68jmf51cqyrg"))))
     (properties `((upstream-name . "netmhc2pan")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -10402,12 +10430,12 @@ the command-line, using a local installation.  This package allows to call
   (package
     (name "r-netmeta")
     (version "2.8-2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "netmeta" version))
-              (sha256
-               (base32
-                "132qkvpkami568w276qc269844z0d1l3yjbj71if4r2w8ra3p5wy"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "netmeta" version))
+       (sha256
+        (base32 "132qkvpkami568w276qc269844z0d1l3yjbj71if4r2w8ra3p5wy"))))
     (properties `((upstream-name . "netmeta")))
     (build-system r-build-system)
     (propagated-inputs (list r-metafor r-meta r-mass r-magic r-ggplot2))
@@ -10448,12 +10476,12 @@ et al. (2018) <doi:10.12688/f1000research.14770.3> and Davies et al. (2022)
   (package
     (name "r-netmediate")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "netmediate" version))
-              (sha256
-               (base32
-                "13yrc0sfq5vl6md3jwmzyrzqnkr68f6hksvlj834md1gx29rwj2q"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "netmediate" version))
+       (sha256
+        (base32 "13yrc0sfq5vl6md3jwmzyrzqnkr68f6hksvlj834md1gx29rwj2q"))))
     (properties `((upstream-name . "netmediate")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam
@@ -10485,12 +10513,12 @@ Snijders, Tom A. B., and Christian E. G. Steglich (2015)
   (package
     (name "r-netmap")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "netmap" version))
-              (sha256
-               (base32
-                "02b3qb0yk6hawd23x44p5d14dvxryf0c7ydlj6d75dgpsddnfj1n"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "netmap" version))
+       (sha256
+        (base32 "02b3qb0yk6hawd23x44p5d14dvxryf0c7ydlj6d75dgpsddnfj1n"))))
     (properties `((upstream-name . "netmap")))
     (build-system r-build-system)
     (propagated-inputs (list r-sna
@@ -10512,12 +10540,12 @@ ggplot2 grammar.")
   (package
     (name "r-netint")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NetInt" version))
-              (sha256
-               (base32
-                "08vmqjai1lakbb4zs895fn0hn3gw2q7zsdkx6yxidfff5qn4mq6b"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NetInt" version))
+       (sha256
+        (base32 "08vmqjai1lakbb4zs895fn0hn3gw2q7zsdkx6yxidfff5qn4mq6b"))))
     (properties `((upstream-name . "NetInt")))
     (build-system r-build-system)
     (propagated-inputs (list r-mathjaxr))
@@ -10542,12 +10570,12 @@ prediction).")
   (package
     (name "r-netindices")
     (version "1.4.4.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NetIndices" version))
-              (sha256
-               (base32
-                "0zi3b9i2apfdcm85k7ah6r6ad0v6rji5gysb410vc3bgrixa03lk"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NetIndices" version))
+       (sha256
+        (base32 "0zi3b9i2apfdcm85k7ah6r6ad0v6rji5gysb410vc3bgrixa03lk"))))
     (properties `((upstream-name . "NetIndices")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -10566,12 +10594,12 @@ and omnivory indices of food webs.")
   (package
     (name "r-netie")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "netie" version))
-              (sha256
-               (base32
-                "0ja59rfg576z8rbv073aaab32qazlrqhvyvxpssibwsvbfcrhklm"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "netie" version))
+       (sha256
+        (base32 "0ja59rfg576z8rbv073aaab32qazlrqhvyvxpssibwsvbfcrhklm"))))
     (properties `((upstream-name . "netie")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=netie")
@@ -10587,12 +10615,12 @@ clones.The model is based on the estimation result from Andrew Roth (2014)
   (package
     (name "r-netgwas")
     (version "1.14.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "netgwas" version))
-              (sha256
-               (base32
-                "0xa3nc7by7v360n6s8fym65fpaz0am4yym3m653nkcr545s0rc5n"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "netgwas" version))
+       (sha256
+        (base32 "0xa3nc7by7v360n6s8fym65fpaz0am4yym3m653nkcr545s0rc5n"))))
     (properties `((upstream-name . "netgwas")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmvtnorm
@@ -10625,12 +10653,12 @@ implements the methodological developments in Behrouzi and Wit (2017)
   (package
     (name "r-netgsa")
     (version "4.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "netgsa" version))
-              (sha256
-               (base32
-                "02127r3vskcksrd893qrs1wqwkbw3b8p33ybgvbwd9j4lxgifmr2"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "netgsa" version))
+       (sha256
+        (base32 "02127r3vskcksrd893qrs1wqwkbw3b8p33ybgvbwd9j4lxgifmr2"))))
     (properties `((upstream-name . "netgsa")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -10670,12 +10698,12 @@ about interactions among genes, as well as novel interactions learned from data.
   (package
     (name "r-netgen")
     (version "1.3.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "netgen" version))
-              (sha256
-               (base32
-                "1yqi4rb6w9ipxgbl1j1s2s81cg7nzrn65irn5gs82hsq94d6vv2j"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "netgen" version))
+       (sha256
+        (base32 "1yqi4rb6w9ipxgbl1j1s2s81cg7nzrn65irn5gs82hsq94d6vv2j"))))
     (properties `((upstream-name . "netgen")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -10698,12 +10726,12 @@ Vehicle-Routing-Problems or Travelling Salesperson Problems.")
   (package
     (name "r-netfacs")
     (version "0.5.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NetFACS" version))
-              (sha256
-               (base32
-                "05lqfawirdw4fh0hawm815hjdpyli7025dz3a5fsm6jh3l906z9i"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NetFACS" version))
+       (sha256
+        (base32 "05lqfawirdw4fh0hawm815hjdpyli7025dz3a5fsm6jh3l906z9i"))))
     (properties `((upstream-name . "NetFACS")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -10738,12 +10766,12 @@ V., & Hager, J. C. (2002). \"Facial action coding system - investigator's guide\
   (package
     (name "r-netexplorer")
     (version "0.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NetExplorer" version))
-              (sha256
-               (base32
-                "0k8jhl0p2dp45lx4h77r0bkcff8vn1f9gvr475cshpmyipziiwnq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NetExplorer" version))
+       (sha256
+        (base32 "0k8jhl0p2dp45lx4h77r0bkcff8vn1f9gvr475cshpmyipziiwnq"))))
     (properties `((upstream-name . "NetExplorer")))
     (build-system r-build-system)
     (native-inputs (list esbuild))
@@ -10761,12 +10789,12 @@ exportation.")
   (package
     (name "r-netdiffuser")
     (version "1.22.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "netdiffuseR" version))
-              (sha256
-               (base32
-                "0f4d0x03970iqxkbr0r9jm8gf28r79rimfnfr1djcajzihxaj7l6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "netdiffuseR" version))
+       (sha256
+        (base32 "0f4d0x03970iqxkbr0r9jm8gf28r79rimfnfr1djcajzihxaj7l6"))))
     (properties `((upstream-name . "netdiffuseR")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
@@ -10799,12 +10827,12 @@ al., (2015) <DOI:10.1016/j.socscimed.2015.10.001>; Valente (1995) <ISBN:
   (package
     (name "r-netda")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NetDA" version))
-              (sha256
-               (base32
-                "149wadsw6h2nlw8fpn1n9ami484zyzhbss5fdhc84bvcs21ivl81"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NetDA" version))
+       (sha256
+        (base32 "149wadsw6h2nlw8fpn1n9ami484zyzhbss5fdhc84bvcs21ivl81"))))
     (properties `((upstream-name . "NetDA")))
     (build-system r-build-system)
     (propagated-inputs (list r-glasso))
@@ -10821,12 +10849,12 @@ accommodated to do classification and prediction.")
   (package
     (name "r-netcox")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "netcox" version))
-              (sha256
-               (base32
-                "04biaynmvqrilp0kdxw55b990j7iqnvn8gr07dhzm9f7r9sr7xk6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "netcox" version))
+       (sha256
+        (base32 "04biaynmvqrilp0kdxw55b990j7iqnvn8gr07dhzm9f7r9sr7xk6"))))
     (properties `((upstream-name . "netcox")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rcpp r-glmnet))
@@ -10845,12 +10873,12 @@ structure.")
   (package
     (name "r-netcoupler")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NetCoupler" version))
-              (sha256
-               (base32
-                "1xycg179anf78kd1xfwzlmfp8igrl7k2bv105w3s2df5pd8gnpbg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NetCoupler" version))
+       (sha256
+        (base32 "1xycg179anf78kd1xfwzlmfp8igrl7k2bv105w3s2df5pd8gnpbg"))))
     (properties `((upstream-name . "NetCoupler")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -10881,12 +10909,12 @@ as an independent/predictor variable to the network.")
   (package
     (name "r-netcontrol")
     (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "netcontrol" version))
-              (sha256
-               (base32
-                "1gskb728ycnhz9a9g9ghm0dz3ajf3dzgyv23bsk9i01wj9hrxhc0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "netcontrol" version))
+       (sha256
+        (base32 "1gskb728ycnhz9a9g9ghm0dz3ajf3dzgyv23bsk9i01wj9hrxhc0"))))
     (properties `((upstream-name . "netcontrol")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack
@@ -10910,12 +10938,12 @@ various utilities.")
   (package
     (name "r-netcom")
     (version "2.1.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "netcom" version))
-              (sha256
-               (base32
-                "1i9d7w497qqjkwqvskbm1k5jj03pf84am8jifhhmxmmvd9sk6ldw"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "netcom" version))
+       (sha256
+        (base32 "1i9d7w497qqjkwqvskbm1k5jj03pf84am8jifhhmxmmvd9sk6ldw"))))
     (properties `((upstream-name . "netcom")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -10954,12 +10982,12 @@ interventions.  They have been developed and applied in Langendorf and Burgess
   (package
     (name "r-netcoin")
     (version "2.0.48")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "netCoin" version))
-              (sha256
-               (base32
-                "03rmi75rjjy03jy0cv6qzz46q06027zvbwy4vp13748vq49aql1s"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "netCoin" version))
+       (sha256
+        (base32 "03rmi75rjjy03jy0cv6qzz46q06027zvbwy4vp13748vq49aql1s"))))
     (properties `((upstream-name . "netCoin")))
     (build-system r-build-system)
     (propagated-inputs (list r-rd3plot
@@ -10981,12 +11009,12 @@ libraries of @code{JavaScript} in one package.")
   (package
     (name "r-netcmc")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "netcmc" version))
-              (sha256
-               (base32
-                "0w5xnnfglg0nm59wwqh2dpwkz0zlly3r2997wncf5whz5j4vcy88"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "netcmc" version))
+       (sha256
+        (base32 "0w5xnnfglg0nm59wwqh2dpwkz0zlly3r2997wncf5whz5j4vcy88"))))
     (properties `((upstream-name . "netcmc")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppprogress
@@ -11016,12 +11044,12 @@ structure (Browne et al. (2001) <doi:10.1177/1471082X0100100202>).")
   (package
     (name "r-netcluster")
     (version "0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NetCluster" version))
-              (sha256
-               (base32
-                "0aby8kfniw07jap795cwk69z83p45q5rap73zp1qbmkm3qcb31g4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NetCluster" version))
+       (sha256
+        (base32 "0aby8kfniw07jap795cwk69z83p45q5rap73zp1qbmkm3qcb31g4"))))
     (properties `((upstream-name . "NetCluster")))
     (build-system r-build-system)
     (propagated-inputs (list r-sna))
@@ -11035,12 +11063,12 @@ structure (Browne et al. (2001) <doi:10.1177/1471082X0100100202>).")
   (package
     (name "r-netclust")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "netClust" version))
-              (sha256
-               (base32
-                "1h58ispdx8ddsnqrrmcxn2rbqb0hb89gpjg4p14mr7vhxw5c9zva"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "netClust" version))
+       (sha256
+        (base32 "1h58ispdx8ddsnqrrmcxn2rbqb0hb89gpjg4p14mr7vhxw5c9zva"))))
     (properties `((upstream-name . "netClust")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -11055,12 +11083,12 @@ the main utility of @code{netClust}'.")
   (package
     (name "r-netchain")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "netchain" version))
-              (sha256
-               (base32
-                "1skpf1n6a17mjkcxqpl6vrskk04yvqa0v4n2zw9x5r1h46q9m6qk"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "netchain" version))
+       (sha256
+        (base32 "1skpf1n6a17mjkcxqpl6vrskk04yvqa0v4n2zw9x5r1h46q9m6qk"))))
     (properties `((upstream-name . "netchain")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-rcpp r-matrix r-igraph r-gtools))
@@ -11083,12 +11111,12 @@ demonstrated in Ogburn et al. (2018) <@code{arXiv:1812.04990>}.")
   (package
     (name "r-netassoc")
     (version "0.7.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "netassoc" version))
-              (sha256
-               (base32
-                "0hbyg31r9sjp0dyxlbsbw7r1kb1dwr0apilsw8saf1vlqwsiasga"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "netassoc" version))
+       (sha256
+        (base32 "0hbyg31r9sjp0dyxlbsbw7r1kb1dwr0apilsw8saf1vlqwsiasga"))))
     (properties `((upstream-name . "netassoc")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan r-infotheo r-igraph r-huge r-corpcor))
@@ -11107,12 +11135,12 @@ estimation methods.")
   (package
     (name "r-net4pg")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "net4pg" version))
-              (sha256
-               (base32
-                "1a00bqskgl053wcwgmg7xsccybrq76bqaipdnf5zbm1dslir0jdv"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "net4pg" version))
+       (sha256
+        (base32 "1a00bqskgl053wcwgmg7xsccybrq76bqaipdnf5zbm1dslir0jdv"))))
     (properties `((upstream-name . "net4pg")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-magrittr r-graph r-data-table))
@@ -11157,12 +11185,12 @@ Burger (2022) <doi:10.1186/s13059-022-02701-2>.")
   (package
     (name "r-nestr")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nestr" version))
-              (sha256
-               (base32
-                "0qgd1sl6x5y70r3l4vf0qqynlrkdyq7mmpb8mwjn7f1hjnym1gaj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nestr" version))
+       (sha256
+        (base32 "0qgd1sl6x5y70r3l4vf0qqynlrkdyq7mmpb8mwjn7f1hjnym1gaj"))))
     (properties `((upstream-name . "nestr")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs r-tidyselect r-rlang r-magrittr))
@@ -11177,12 +11205,12 @@ by using a human friendly syntax.")
   (package
     (name "r-nestmrmc")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NestMRMC" version))
-              (sha256
-               (base32
-                "08zk9g3mkwyli94ry1s762ddniwzjlf89plh86sgxfrcrhx1m908"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NestMRMC" version))
+       (sha256
+        (base32 "08zk9g3mkwyli94ry1s762ddniwzjlf89plh86sgxfrcrhx1m908"))))
     (properties `((upstream-name . "NestMRMC")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-mvtnorm r-magrittr r-imrmc r-dplyr))
@@ -11202,12 +11230,12 @@ methods, please refer to the paper by H Du, S Wen, Y Guo, F Jin, BD Gallas
   (package
     (name "r-nestfs")
     (version "1.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nestfs" version))
-              (sha256
-               (base32
-                "0qaxkg8m64admpw3zpwrd6z5lxdn0i5kl7dlixrp5r7c1j40aw3l"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nestfs" version))
+       (sha256
+        (base32 "0qaxkg8m64admpw3zpwrd6z5lxdn0i5kl7dlixrp5r7c1j40aw3l"))))
     (properties `((upstream-name . "nestfs")))
     (build-system r-build-system)
     (propagated-inputs (list r-proc r-dgof))
@@ -11223,12 +11251,12 @@ regression.")
   (package
     (name "r-nestedpp")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nestedpp" version))
-              (sha256
-               (base32
-                "0maw7ik209vdmm1fdnbi7chqy8wb1j1ql8jnry1y3af1g80lpa78"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nestedpp" version))
+       (sha256
+        (base32 "0maw7ik209vdmm1fdnbi7chqy8wb1j1ql8jnry1y3af1g80lpa78"))))
     (properties `((upstream-name . "nestedpp")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable r-reshape2 r-ggplot2))
@@ -11245,12 +11273,12 @@ frame.")
   (package
     (name "r-nestedmodels")
     (version "1.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nestedmodels" version))
-              (sha256
-               (base32
-                "02181m0q9z5xqcinmi1vzids1mm6g0zc58vv2ngz09f3md62im3l"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nestedmodels" version))
+       (sha256
+        (base32 "02181m0q9z5xqcinmi1vzids1mm6g0zc58vv2ngz09f3md62im3l"))))
     (properties `((upstream-name . "nestedmodels")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -11282,12 +11310,12 @@ parsnip and workflows packages.  Allows any model to be fit to nested data.")
   (package
     (name "r-nestedmenu")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NestedMenu" version))
-              (sha256
-               (base32
-                "1115wgzpbkgyvccngg0pigq52xnsi86b08ykycnlrpy1sjj7qfp6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NestedMenu" version))
+       (sha256
+        (base32 "1115wgzpbkgyvccngg0pigq52xnsi86b08ykycnlrpy1sjj7qfp6"))))
     (properties `((upstream-name . "NestedMenu")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-jquerylib r-htmlwidgets r-htmltools
@@ -11304,12 +11332,12 @@ This is useful for hierarchical choices (e.g. continent, country, city).")
   (package
     (name "r-nestedlogit")
     (version "0.3.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nestedLogit" version))
-              (sha256
-               (base32
-                "0lyqqxvh85zpvbcq4qp3cywr70312lw4xgas47hzybcrzqz9r63r"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nestedLogit" version))
+       (sha256
+        (base32 "0lyqqxvh85zpvbcq4qp3cywr70312lw4xgas47hzybcrzqz9r63r"))))
     (properties `((upstream-name . "nestedLogit")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -11337,12 +11365,12 @@ ISBN 1452205663.")
   (package
     (name "r-nestedcv")
     (version "0.6.9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nestedcv" version))
-              (sha256
-               (base32
-                "02lm4naf3gkgj8l1ffqprq49jmxqj0y0i8f0riywcsmkrcllhlkp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nestedcv" version))
+       (sha256
+        (base32 "02lm4naf3gkgj8l1ffqprq49jmxqj0y0i8f0riywcsmkrcllhlkp"))))
     (properties `((upstream-name . "nestedcv")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -11376,12 +11404,12 @@ parameters to encourage a sparse model as described by Piironen & Vehtari (2017)
   (package
     (name "r-nestedcategbayesimpute")
     (version "1.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NestedCategBayesImpute" version))
-              (sha256
-               (base32
-                "15j54whvhqy26v1iikpk8ys75d7m5b188ggdzrlgzhjg0f9j45fl"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NestedCategBayesImpute" version))
+       (sha256
+        (base32 "15j54whvhqy26v1iikpk8ys75d7m5b188ggdzrlgzhjg0f9j45fl"))))
     (properties `((upstream-name . "NestedCategBayesImpute")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppparallel r-rcpp r-dplyr r-coda))
@@ -11400,12 +11428,12 @@ versions of nested household data.")
   (package
     (name "r-nestcolor")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nestcolor" version))
-              (sha256
-               (base32
-                "1d5fajwh59raw1nxaw6ibh92qrazsgrn7kjph3sv87zq8aqy3snn"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nestcolor" version))
+       (sha256
+        (base32 "1d5fajwh59raw1nxaw6ibh92qrazsgrn7kjph3sv87zq8aqy3snn"))))
     (properties `((upstream-name . "nestcolor")))
     (build-system r-build-system)
     (propagated-inputs (list r-lifecycle r-ggplot2 r-checkmate))
@@ -11425,12 +11453,12 @@ in both static and interactive output at the downstream.")
   (package
     (name "r-nesrdata")
     (version "0.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nesRdata" version))
-              (sha256
-               (base32
-                "1lxvg11g8nizfn8sghirq2749fs9i4w1wiaz3v1djqbkzqcqfrcj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nesRdata" version))
+       (sha256
+        (base32 "1lxvg11g8nizfn8sghirq2749fs9i4w1wiaz3v1djqbkzqcqfrcj"))))
     (properties `((upstream-name . "nesRdata")))
     (build-system r-build-system)
     (propagated-inputs (list r-readr r-rappdirs r-purrr r-dplyr r-dataone))
@@ -11446,12 +11474,12 @@ National Eutrophication Survey
   (package
     (name "r-neptune")
     (version "0.2.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "neptune" version))
-              (sha256
-               (base32
-                "04d5rdcvnik9rj58npvs5z1r6ngs9hzc24wzix64czcynkkvkad0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "neptune" version))
+       (sha256
+        (base32 "04d5rdcvnik9rj58npvs5z1r6ngs9hzc24wzix64czcynkkvkad0"))))
     (properties `((upstream-name . "neptune")))
     (build-system r-build-system)
     (inputs (list python))
@@ -11480,12 +11508,12 @@ information see <https://neptune.ai/>.")
   (package
     (name "r-nepic")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NEpiC" version))
-              (sha256
-               (base32
-                "11zf112xcsg3k93vks2fnsflw2v2d56a0bsjpd460d21k3gipfz8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NEpiC" version))
+       (sha256
+        (base32 "11zf112xcsg3k93vks2fnsflw2v2d56a0bsjpd460d21k3gipfz8"))))
     (properties `((upstream-name . "NEpiC")))
     (build-system r-build-system)
     (propagated-inputs (list r-paireddata r-igraph))
@@ -11504,12 +11532,12 @@ protein-protein interaction network.")
   (package
     (name "r-nephro")
     (version "1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nephro" version))
-              (sha256
-               (base32
-                "08gryzr53cd5gc8ks7v9jicgk4lxcwcr7zd8vzsqvy04sh3scw9i"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nephro" version))
+       (sha256
+        (base32 "08gryzr53cd5gc8ks7v9jicgk4lxcwcr7zd8vzsqvy04sh3scw9i"))))
     (properties `((upstream-name . "nephro")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=nephro")
@@ -11528,12 +11556,12 @@ respective references are given.  In addition, the software includes Stevens
   (package
     (name "r-neotoma2")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "neotoma2" version))
-              (sha256
-               (base32
-                "120alfpd3k53pc0rwqz0d5z4mgsqzcfvg0z550p3sy3iagz9c02v"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "neotoma2" version))
+       (sha256
+        (base32 "120alfpd3k53pc0rwqz0d5z4mgsqzcfvg0z550p3sy3iagz9c02v"))))
     (properties `((upstream-name . "neotoma2")))
     (build-system r-build-system)
     (propagated-inputs (list r-wk
@@ -11566,12 +11594,12 @@ respective references are given.  In addition, the software includes Stevens
   (package
     (name "r-neonutilities")
     (version "2.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "neonUtilities" version))
-              (sha256
-               (base32
-                "1zd1kkavi69z5snhblxlm2algmdhrkwygabh9r6hldy6018kfa3y"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "neonUtilities" version))
+       (sha256
+        (base32 "1zd1kkavi69z5snhblxlm2algmdhrkwygabh9r6hldy6018kfa3y"))))
     (properties `((upstream-name . "neonUtilities")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -11601,12 +11629,12 @@ type, and converting formats.  For more information, see the readme file at
   (package
     (name "r-neonstore")
     (version "0.4.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "neonstore" version))
-              (sha256
-               (base32
-                "0fhjm6513kd4y3lry8dwcwk13ns92yk5h3san7ww2ahhdhy4hx9c"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "neonstore" version))
+       (sha256
+        (base32 "0fhjm6513kd4y3lry8dwcwk13ns92yk5h3san7ww2ahhdhy4hx9c"))))
     (properties `((upstream-name . "neonstore")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -11634,12 +11662,12 @@ that are far to big to fit into memory.")
   (package
     (name "r-neonos")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "neonOS" version))
-              (sha256
-               (base32
-                "11jgsf8c7rjfdbn9qljirzwvpnn4wckid4p4syx6py3dqjb4r19f"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "neonOS" version))
+       (sha256
+        (base32 "11jgsf8c7rjfdbn9qljirzwvpnn4wckid4p4syx6py3dqjb4r19f"))))
     (properties `((upstream-name . "neonOS")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-httr r-data-table r-curl))
@@ -11660,12 +11688,12 @@ and joining tables.")
   (package
     (name "r-neoniso")
     (version "0.6.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NEONiso" version))
-              (sha256
-               (base32
-                "0fwz6clfl9l38pmks1qq3sys8jnb7mib81nfq1k1hdwhjknr76hz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NEONiso" version))
+       (sha256
+        (base32 "0fwz6clfl9l38pmks1qq3sys8jnb7mib81nfq1k1hdwhjknr76hz"))))
     (properties `((upstream-name . "NEONiso")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -11702,12 +11730,12 @@ considered very experimental currently.")
   (package
     (name "r-neojags")
     (version "0.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "neojags" version))
-              (sha256
-               (base32
-                "10z5x78a3mjy5jbxlzfzsixp6w8y0v0mkxnwf5bq3rk5dgnga0g0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "neojags" version))
+       (sha256
+        (base32 "10z5x78a3mjy5jbxlzfzsixp6w8y0v0mkxnwf5bq3rk5dgnga0g0"))))
     (properties `((upstream-name . "neojags")))
     (build-system r-build-system)
     (propagated-inputs (list r-runjags r-rjags r-coda))
@@ -11737,12 +11765,12 @@ Stasinopoulos, M. D., Heller, G. Z., & Bastiani, F. D. (2019)
   (package
     (name "r-neo4r")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "neo4r" version))
-              (sha256
-               (base32
-                "0s4rjhn2mc8ca4p8p474a83dc277vrf7l968xwxkiac0d4fgbra7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "neo4r" version))
+       (sha256
+        (base32 "0s4rjhn2mc8ca4p8p474a83dc277vrf7l968xwxkiac0d4fgbra7"))))
     (properties `((upstream-name . "neo4r")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -11778,12 +11806,12 @@ the user.")
   (package
     (name "r-neo4jshell")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "neo4jshell" version))
-              (sha256
-               (base32
-                "0dkdg8ljyv7pi6zkpsq5akkl35vrhkr78xvc2ky99gwjsr0z77hf"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "neo4jshell" version))
+       (sha256
+        (base32 "0dkdg8ljyv7pi6zkpsq5akkl35vrhkr78xvc2ky99gwjsr0z77hf"))))
     (properties `((upstream-name . "neo4jshell")))
     (build-system r-build-system)
     (propagated-inputs (list r-sys r-ssh r-r-utils r-magrittr r-fs))
@@ -11800,12 +11828,12 @@ management of data on the Neo4J server and basic local server admin.")
   (package
     (name "r-neo2r")
     (version "2.4.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "neo2R" version))
-              (sha256
-               (base32
-                "185x98616kpc7zk9ifka22g8v4zyck0v5svl3swajf605rpgqzmp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "neo2R" version))
+       (sha256
+        (base32 "185x98616kpc7zk9ifka22g8v4zyck0v5svl3swajf605rpgqzmp"))))
     (properties `((upstream-name . "neo2R")))
     (build-system r-build-system)
     (inputs (list))
@@ -11824,12 +11852,12 @@ handle post-processing according to the data model and his needs.")
   (package
     (name "r-nemtr")
     (version "0.0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nemtr" version))
-              (sha256
-               (base32
-                "0vh6zagfldpir8dwxrk0h24dmzbvcik0vkj8cpx7rp324iv66mrn"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nemtr" version))
+       (sha256
+        (base32 "0vh6zagfldpir8dwxrk0h24dmzbvcik0vkj8cpx7rp324iv66mrn"))))
     (properties `((upstream-name . "nemtr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-magrittr r-ggplot2 r-dplyr))
@@ -11847,12 +11875,12 @@ are out of control.")
   (package
     (name "r-nembm")
     (version "1.00.01")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nemBM" version))
-              (sha256
-               (base32
-                "0zr2bxrla436yj5qba0jnrxw94alq9cp7zfkrvjwiyil4byj0a6c"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nemBM" version))
+       (sha256
+        (base32 "0zr2bxrla436yj5qba0jnrxw94alq9cp7zfkrvjwiyil4byj0a6c"))))
     (properties `((upstream-name . "nemBM")))
     (build-system r-build-system)
     (propagated-inputs (list r-ergm r-blockmodeling))
@@ -11874,12 +11902,12 @@ co-authorship networks).")
   (package
     (name "r-neldermead")
     (version "1.0-12")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "neldermead" version))
-              (sha256
-               (base32
-                "0ws2knrq3b3icv6fzimypzwvzvqf0sayi2ndhacn6lk4snms5pm3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "neldermead" version))
+       (sha256
+        (base32 "0ws2knrq3b3icv6fzimypzwvzvqf0sayi2ndhacn6lk4snms5pm3"))))
     (properties `((upstream-name . "neldermead")))
     (build-system r-build-system)
     (propagated-inputs (list r-optimsimplex r-optimbase))
@@ -11903,12 +11931,12 @@ Box's complex method (constrained optimization with a variable shape simplex,
   (package
     (name "r-neighbr")
     (version "1.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "neighbr" version))
-              (sha256
-               (base32
-                "1rmglfjmx6bfd4w1cpx4rvp7hy2vqvcamy854h5dq0l3kwk4pjcm"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "neighbr" version))
+       (sha256
+        (base32 "1rmglfjmx6bfd4w1cpx4rvp7hy2vqvcamy854h5dq0l3kwk4pjcm"))))
     (properties `((upstream-name . "neighbr")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -11926,12 +11954,12 @@ directly based on the PMML specification for KNN.")
   (package
     (name "r-neighbours")
     (version "0.1-3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "neighbours" version))
-              (sha256
-               (base32
-                "0q0d8504kjvsgik7pdhsgh9n1xszxa7p4mzpxajki2ym0x7hqx9k"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "neighbours" version))
+       (sha256
+        (base32 "0q0d8504kjvsgik7pdhsgh9n1xszxa7p4mzpxajki2ym0x7hqx9k"))))
     (properties `((upstream-name . "neighbours")))
     (build-system r-build-system)
     (home-page "http://enricoschumann.net/R/packages/neighbours/")
@@ -11953,12 +11981,12 @@ ISBN:978-0128150658).")
   (package
     (name "r-neighboot")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Neighboot" version))
-              (sha256
-               (base32
-                "18r6cww9g4fchf6hlwkw1lajh0lg4ch6msvx54zqgkrnhpixchnc"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Neighboot" version))
+       (sha256
+        (base32 "18r6cww9g4fchf6hlwkw1lajh0lg4ch6msvx54zqgkrnhpixchnc"))))
     (properties `((upstream-name . "Neighboot")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdstreeboot r-rds r-igraph r-dplyr))
@@ -11974,12 +12002,12 @@ uncertainty.")
   (package
     (name "r-negligible")
     (version "0.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "negligible" version))
-              (sha256
-               (base32
-                "131bgvac2dk8alnmjymdx6l7cgmz2cncsyg62zgc6asfrh90nrqc"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "negligible" version))
+       (sha256
+        (base32 "131bgvac2dk8alnmjymdx6l7cgmz2cncsyg62zgc6asfrh90nrqc"))))
     (properties `((upstream-name . "negligible")))
     (build-system r-build-system)
     (propagated-inputs (list r-wrs2
@@ -12015,12 +12043,12 @@ A. (2014) <doi:10.1111/bmsp.12015>.  Goertzen, J. R. & Cribbie, R. A. (2010)
   (package
     (name "r-negenes")
     (version "1.0-12")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "negenes" version))
-              (sha256
-               (base32
-                "0b82822vl86gni0pv5f6pjfzmks35i7q2rqkhgyb9z9c677g991q"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "negenes" version))
+       (sha256
+        (base32 "0b82822vl86gni0pv5f6pjfzmks35i7q2rqkhgyb9z9c677g991q"))))
     (properties `((upstream-name . "negenes")))
     (build-system r-build-system)
     (home-page "https://github.com/kbroman/negenes")
@@ -12035,12 +12063,12 @@ Lamichhane et al. (2003) <doi:10.1073/pnas.1231432100>.")
   (package
     (name "r-negbinbetabinreg")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NegBinBetaBinreg" version))
-              (sha256
-               (base32
-                "0ryi9gdf4sis77c0qxm6r86mfkk1nq9djs297y64nr6ng3rv9p9d"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NegBinBetaBinreg" version))
+       (sha256
+        (base32 "0ryi9gdf4sis77c0qxm6r86mfkk1nq9djs297y64nr6ng3rv9p9d"))))
     (properties `((upstream-name . "NegBinBetaBinreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-matrix r-boot))
@@ -12056,12 +12084,12 @@ modeling.")
   (package
     (name "r-negativecontroloutcomeadjustment")
     (version "0.0.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NegativeControlOutcomeAdjustment" version))
-              (sha256
-               (base32
-                "02p19pc0pkw0dfac0hp1jdcm3g18sriizhqj73jp2yj66xlx1z52"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NegativeControlOutcomeAdjustment" version))
+       (sha256
+        (base32 "02p19pc0pkw0dfac0hp1jdcm3g18sriizhqj73jp2yj66xlx1z52"))))
     (properties `((upstream-name . "NegativeControlOutcomeAdjustment")))
     (build-system r-build-system)
     (home-page
@@ -12077,12 +12105,12 @@ outcomes.")
   (package
     (name "r-needs")
     (version "0.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "needs" version))
-              (sha256
-               (base32
-                "16dkjpijz3rz7kd5ggxsdg55iwd42nll1vk6g5ix4xdbqrx6cp9x"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "needs" version))
+       (sha256
+        (base32 "16dkjpijz3rz7kd5ggxsdg55iwd42nll1vk6g5ix4xdbqrx6cp9x"))))
     (properties `((upstream-name . "needs")))
     (build-system r-build-system)
     (home-page "https://github.com/joshkatz/needs")
@@ -12096,12 +12124,12 @@ auto-installation.")
   (package
     (name "r-needmining")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "needmining" version))
-              (sha256
-               (base32
-                "0qsj0ihjchrnl4s44rpsizbcz033z00dmzvic2y1msv0bnfawl6p"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "needmining" version))
+       (sha256
+        (base32 "0qsj0ihjchrnl4s44rpsizbcz033z00dmzvic2y1msv0bnfawl6p"))))
     (properties `((upstream-name . "needmining")))
     (build-system r-build-system)
     (propagated-inputs (list r-tm
@@ -12125,12 +12153,12 @@ introduction to the topic of needmining.")
   (package
     (name "r-necklaces")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Necklaces" version))
-              (sha256
-               (base32
-                "0caq7l3xqhxssag42qi122j2ixmzng8hi4qjb0f114d9r88x64l7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Necklaces" version))
+       (sha256
+        (base32 "0caq7l3xqhxssag42qi122j2ixmzng8hi4qjb0f114d9r88x64l7"))))
     (properties `((upstream-name . "Necklaces")))
     (build-system r-build-system)
     (propagated-inputs (list r-kstatistics))
@@ -12147,12 +12175,12 @@ Guarino (2022) <@code{arXiv:2208.06855>}.")
   (package
     (name "r-nebula")
     (version "1.4.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nebula" version))
-              (sha256
-               (base32
-                "11z8b3vzpi3iahyf7idy2l1a24w7zz9pg8hxz24h00rbkqxawxq3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nebula" version))
+       (sha256
+        (base32 "11z8b3vzpi3iahyf7idy2l1a24w7zz9pg8hxz24h00rbkqxawxq3"))))
     (properties `((upstream-name . "nebula")))
     (build-system r-build-system)
     (propagated-inputs (list r-trust
@@ -12183,12 +12211,12 @@ structure in multi-subject single-cell data.  See He et al. (2021)
   (package
     (name "r-neatstats")
     (version "1.13.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "neatStats" version))
-              (sha256
-               (base32
-                "1fj042mwmmjza8giv0f2m7y11j8rnzrcmifyxrv4z9rfqddcvh2s"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "neatStats" version))
+       (sha256
+        (base32 "1fj042mwmmjza8giv0f2m7y11j8rnzrcmifyxrv4z9rfqddcvh2s"))))
     (properties `((upstream-name . "neatStats")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -12218,12 +12246,12 @@ to reportable printed statistics is covered for basic experimental designs.")
   (package
     (name "r-neatranges")
     (version "0.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "neatRanges" version))
-              (sha256
-               (base32
-                "0673lg8mihz8xwh12q12wfn19w8vvnjb7pnz4x3cn2xhkyzwhxq5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "neatRanges" version))
+       (sha256
+        (base32 "0673lg8mihz8xwh12q12wfn19w8vvnjb7pnz4x3cn2xhkyzwhxq5"))))
     (properties `((upstream-name . "neatRanges")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-data-table))
@@ -12237,12 +12265,12 @@ to reportable printed statistics is covered for basic experimental designs.")
   (package
     (name "r-neatr")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "neatR" version))
-              (sha256
-               (base32
-                "064mil95f4jd43gkpx0rdvxgf4ffxjpn8z31vc5yg98516hgcqb1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "neatR" version))
+       (sha256
+        (base32 "064mil95f4jd43gkpx0rdvxgf4ffxjpn8z31vc5yg98516hgcqb1"))))
     (properties `((upstream-name . "neatR")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-data-table))
@@ -12260,12 +12288,12 @@ that is better for presentation and any automation jobs that reports numbers.")
   (package
     (name "r-neatmaps")
     (version "2.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "neatmaps" version))
-              (sha256
-               (base32
-                "1kz1na3fzpd8vkxmpp5rz8ksyf8q2wk456csiii82winv9a2zxc9"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "neatmaps" version))
+       (sha256
+        (base32 "1kz1na3fzpd8vkxmpp5rz8ksyf8q2wk456csiii82winv9a2zxc9"))))
     (properties `((upstream-name . "neatmaps")))
     (build-system r-build-system)
     (propagated-inputs (list r-igraph r-heatmaply r-ggplot2 r-dplyr
@@ -12285,12 +12313,12 @@ dynamic visualizations.")
   (package
     (name "r-neat")
     (version "1.2.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "neat" version))
-              (sha256
-               (base32
-                "0mdv47l50wzxnjfk1sway7gzpkyf57svqip16fqn0hrc1fsrifbn"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "neat" version))
+       (sha256
+        (base32 "0mdv47l50wzxnjfk1sway7gzpkyf57svqip16fqn0hrc1fsrifbn"))))
     (properties `((upstream-name . "neat")))
     (build-system r-build-system)
     (propagated-inputs (list r-igraph))
@@ -12306,12 +12334,12 @@ Test described in Signorelli et al. (2016, <DOI:10.1186/s12859-016-1203-6>).")
   (package
     (name "r-ndtv")
     (version "0.13.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ndtv" version))
-              (sha256
-               (base32
-                "05kaqd7p77rfls0s1gqv74j3svh5xdvqni0jin5vxl8y900yc56j"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ndtv" version))
+       (sha256
+        (base32 "05kaqd7p77rfls0s1gqv74j3svh5xdvqni0jin5vxl8y900yc56j"))))
     (properties `((upstream-name . "ndtv")))
     (build-system r-build-system)
     (propagated-inputs (list r-statnet-common
@@ -12335,12 +12363,12 @@ structures and attributes.")
   (package
     (name "r-ndp")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NDP" version))
-              (sha256
-               (base32
-                "0wmld7g4w3d7d8lyj4132h3jpr8ng8kpy4ssqjp8r0lqwif2i86b"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NDP" version))
+       (sha256
+        (base32 "0wmld7g4w3d7d8lyj4132h3jpr8ng8kpy4ssqjp8r0lqwif2i86b"))))
     (properties `((upstream-name . "NDP")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-rmarkdown))
@@ -12359,12 +12387,12 @@ provided in the package function as well as at
   (package
     (name "r-ndl")
     (version "0.2.18")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ndl" version))
-              (sha256
-               (base32
-                "0b235v6jf98rrqp5aqw3jkk7mq8dbqmhb758zbzza1mavh4n2k7s"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ndl" version))
+       (sha256
+        (base32 "0b235v6jf98rrqp5aqw3jkk7mq8dbqmhb758zbzza1mavh4n2k7s"))))
     (properties `((upstream-name . "ndl")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-mass r-hmisc))
@@ -12379,12 +12407,12 @@ based on the Rescorla-Wagner equations and their equilibrium equations.")
   (package
     (name "r-ndi")
     (version "0.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ndi" version))
-              (sha256
-               (base32
-                "1ydj6lvycm6awvrddmq9a9s24rd4xw86mzk8hfhrqx8plz8pj4k4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ndi" version))
+       (sha256
+        (base32 "1ydj6lvycm6awvrddmq9a9s24rd4xw86mzk8hfhrqx8plz8pj4k4"))))
     (properties `((upstream-name . "ndi")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -12437,13 +12465,13 @@ onward), the package can retrieve the aspatial Gini Index based Gini (1921)
 (define-public r-nda
   (package
     (name "r-nda")
-    (version "0.1.12")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nda" version))
-              (sha256
-               (base32
-                "0lwxm7xvzlakl9j6ms4737dxxd7zpyf545m49zqff6kacjpv8gzy"))))
+    (version "0.1.13")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nda" version))
+       (sha256
+        (base32 "1v3nfjq0v0vjv3871qsx7sxl5b6p74187cvacj3jfjyxbzghb8pc"))))
     (properties `((upstream-name . "nda")))
     (build-system r-build-system)
     (propagated-inputs (list r-visnetwork
@@ -12466,12 +12494,12 @@ feature selection.  Plot functions.  Automated feature selections.  Kosztyan et.
   (package
     (name "r-ncvreg")
     (version "3.14.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ncvreg" version))
-              (sha256
-               (base32
-                "1q6klmyf7gbzkinjhv83k8gn95jgn3vkc927wsmffqjqc3d71rd7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ncvreg" version))
+       (sha256
+        (base32 "1q6klmyf7gbzkinjhv83k8gn95jgn3vkc927wsmffqjqc3d71rd7"))))
     (properties `((upstream-name . "ncvreg")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -12493,12 +12521,12 @@ and Huang (2011) <doi:10.1214/10-AOAS388> or visit the ncvreg homepage
   (package
     (name "r-ncutyx")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NCutYX" version))
-              (sha256
-               (base32
-                "0r2ghnvrbya3p1d8rb5bsnz5v852vvc6rq65yafn2xzr7886wrg2"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NCutYX" version))
+       (sha256
+        (base32 "0r2ghnvrbya3p1d8rb5bsnz5v852vvc6rq65yafn2xzr7886wrg2"))))
     (properties `((upstream-name . "NCutYX")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen
@@ -12523,12 +12551,12 @@ dependencies across multiple types of Omics data. (SJ Teran Hidalgo et al
   (package
     (name "r-ncscopula")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NCSCopula" version))
-              (sha256
-               (base32
-                "0amxp9daqp9bhz61hrq1dk88ai5xfd5sp3538rf3xwgs6walycr4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NCSCopula" version))
+       (sha256
+        (base32 "0amxp9daqp9bhz61hrq1dk88ai5xfd5sp3538rf3xwgs6walycr4"))))
     (properties `((upstream-name . "NCSCopula")))
     (build-system r-build-system)
     (propagated-inputs (list r-copula))
@@ -12545,12 +12573,12 @@ taken from Section 3 of Nasri, Remillard and Bouezmarni (2019)
   (package
     (name "r-ncsampling")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NCSampling" version))
-              (sha256
-               (base32
-                "0bv93xffnzvbip86b3pg7apxzh3410mxff77q119m0z7f6vm3fam"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NCSampling" version))
+       (sha256
+        (base32 "0bv93xffnzvbip86b3pg7apxzh3410mxff77q119m0z7f6vm3fam"))))
     (properties `((upstream-name . "NCSampling")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaimpute r-randomforest r-lattice))
@@ -12569,12 +12597,12 @@ Melville G. & Stone C. (2016) <doi:10.1080/00049158.2016.1218265>.")
   (package
     (name "r-ncpen")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ncpen" version))
-              (sha256
-               (base32
-                "0vl4cbrsifr5s1691gacmp0lk3aqyq0yfafafzv6g3zygi4igrsa"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ncpen" version))
+       (sha256
+        (base32 "0vl4cbrsifr5s1691gacmp0lk3aqyq0yfafafzv6g3zygi4igrsa"))))
     (properties `((upstream-name . "ncpen")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -12604,12 +12632,12 @@ School and the National Research Foundation of Korea.)")
   (package
     (name "r-ncopula")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nCopula" version))
-              (sha256
-               (base32
-                "03qbfvx0lg9prg52fk1jxar2bng2x6scac4g2c64kvp6vmf6x4mv"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nCopula" version))
+       (sha256
+        (base32 "03qbfvx0lg9prg52fk1jxar2bng2x6scac4g2c64kvp6vmf6x4mv"))))
     (properties `((upstream-name . "nCopula")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-stringi r-deriv r-copula))
@@ -12626,12 +12654,12 @@ compound distributions.  The model used is the one of Cossette et al. (2017)
   (package
     (name "r-ncoder")
     (version "0.2.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ncodeR" version))
-              (sha256
-               (base32
-                "1pxiqxhq2rxs8rxxhw1hbds7z2qkf7ws26a8wsbw815yn6jm10n8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ncodeR" version))
+       (sha256
+        (base32 "1pxiqxhq2rxs8rxxhw1hbds7z2qkf7ws26a8wsbw815yn6jm10n8"))))
     (properties `((upstream-name . "ncodeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rhor r-r6 r-cli))
@@ -12650,12 +12678,12 @@ data: large document collections, logfiles, and other text data.")
   (package
     (name "r-ncmisc")
     (version "1.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NCmisc" version))
-              (sha256
-               (base32
-                "10wzznqa26fxyj6bl979qmq29p3dkr8yap4s70l3mwhhk33zpz16"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NCmisc" version))
+       (sha256
+        (base32 "10wzznqa26fxyj6bl979qmq29p3dkr8yap4s70l3mwhhk33zpz16"))))
     (properties `((upstream-name . "NCmisc")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=NCmisc")
@@ -12673,12 +12701,12 @@ of correlated data, and more.")
   (package
     (name "r-ncmeta")
     (version "0.3.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ncmeta" version))
-              (sha256
-               (base32
-                "1w47dn04brqac98k5s8a88nh6d6qnkcilq3w4pfczbdff1rv2xlk"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ncmeta" version))
+       (sha256
+        (base32 "1w47dn04brqac98k5s8a88nh6d6qnkcilq3w4pfczbdff1rv2xlk"))))
     (properties `((upstream-name . "ncmeta")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-tibble r-rnetcdf r-rlang r-dplyr))
@@ -12699,12 +12727,12 @@ variables', dimensions and attributes'.")
   (package
     (name "r-ncf")
     (version "1.3-2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ncf" version))
-              (sha256
-               (base32
-                "1lqswih19g76aswnf6xygficzf7ri3yayqicifj8cqx8iwvrk91y"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ncf" version))
+       (sha256
+        (base32 "1lqswih19g76aswnf6xygficzf7ri3yayqicifj8cqx8iwvrk91y"))))
     (properties `((upstream-name . "ncf")))
     (build-system r-build-system)
     (home-page "https://ento.psu.edu/directory/onb1")
@@ -12720,12 +12748,12 @@ correlogram, (Partial) Mantel test.")
   (package
     (name "r-ncdump")
     (version "0.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ncdump" version))
-              (sha256
-               (base32
-                "09g98mzpky32z41jf23ahzhyv34l34y1gqq99j2hl4pqlvvhxs9i"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ncdump" version))
+       (sha256
+        (base32 "09g98mzpky32z41jf23ahzhyv34l34y1gqq99j2hl4pqlvvhxs9i"))))
     (properties `((upstream-name . "ncdump")))
     (build-system r-build-system)
     (propagated-inputs (list r-ncdf4 r-dplyr))
@@ -12741,12 +12769,12 @@ printed header output or to navigate nested lists of raw metadata.")
   (package
     (name "r-ncdfgeom")
     (version "1.1.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ncdfgeom" version))
-              (sha256
-               (base32
-                "0v53nns8xq2w6rbn11man8kgr4dqpy2glj2rhn9817lvk9pz8x18"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ncdfgeom" version))
+       (sha256
+        (base32 "0v53nns8xq2w6rbn11man8kgr4dqpy2glj2rhn9817lvk9pz8x18"))))
     (properties `((upstream-name . "ncdfgeom")))
     (build-system r-build-system)
     (propagated-inputs (list r-stars r-sf r-rnetcdf r-ncmeta r-dplyr))
@@ -12762,12 +12790,12 @@ files.")
   (package
     (name "r-ncdf4-helpers")
     (version "0.3-6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ncdf4.helpers" version))
-              (sha256
-               (base32
-                "0qnm41rbxb6v7aqh1mdkjhcc2rhs4wg6wmrllldzd99mzz8slv1r"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ncdf4.helpers" version))
+       (sha256
+        (base32 "0qnm41rbxb6v7aqh1mdkjhcc2rhs4wg6wmrllldzd99mzz8slv1r"))))
     (properties `((upstream-name . "ncdf4.helpers")))
     (build-system r-build-system)
     (propagated-inputs (list r-pcict r-ncdf4 r-abind))
@@ -12785,12 +12813,12 @@ Forecast (CF) Metadata Conventions
   (package
     (name "r-ncc")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NCC" version))
-              (sha256
-               (base32
-                "0zp854m5ig8w5xag4a1s56b33kfjds3wqydjxacvj5fkpr1y586d"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NCC" version))
+       (sha256
+        (base32 "0zp854m5ig8w5xag4a1s56b33kfjds3wqydjxacvj5fkpr1y586d"))))
     (properties `((upstream-name . "NCC")))
     (build-system r-build-system)
     (propagated-inputs (list r-spamm
@@ -12822,12 +12850,12 @@ Roig et al. (2022) <doi:10.1186/s12874-022-01683-w>, Saville et al. (2022)
   (package
     (name "r-ncbit")
     (version "2013.03.29.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ncbit" version))
-              (sha256
-               (base32
-                "01352byijhwhcb7jji7bf5cm6v2yfz925f8wbivrx12x0c65fzw4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ncbit" version))
+       (sha256
+        (base32 "01352byijhwhcb7jji7bf5cm6v2yfz925f8wbivrx12x0c65fzw4"))))
     (properties `((upstream-name . "ncbit")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=ncbit")
@@ -12840,12 +12868,12 @@ Roig et al. (2022) <doi:10.1186/s12874-022-01683-w>, Saville et al. (2022)
   (package
     (name "r-ncar")
     (version "0.4.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ncar" version))
-              (sha256
-               (base32
-                "1ymxb3av7vd7vljr8h3ga6v01z6nf5j9mc095z0hi31d1khwrd02"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ncar" version))
+       (sha256
+        (base32 "1ymxb3av7vd7vljr8h3ga6v01z6nf5j9mc095z0hi31d1khwrd02"))))
     (properties `((upstream-name . "ncar")))
     (build-system r-build-system)
     (propagated-inputs (list r-rtf r-noncompart))
@@ -12864,12 +12892,12 @@ Analysis - Concepts and Applications.  5th ed.  2016. (ISBN:9198299107).")
   (package
     (name "r-ncappc")
     (version "0.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ncappc" version))
-              (sha256
-               (base32
-                "0bf00iskrd3x43839bwn957mi3qvm2dhcmqa7hl1ib0gp2r1cnzx"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ncappc" version))
+       (sha256
+        (base32 "0bf00iskrd3x43839bwn957mi3qvm2dhcmqa7hl1ib0gp2r1cnzx"))))
     (properties `((upstream-name . "ncappc")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -12905,12 +12933,12 @@ using NCA metrics.")
   (package
     (name "r-nca")
     (version "3.3.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NCA" version))
-              (sha256
-               (base32
-                "0a464k1gqn5546wfsjfg6la3g0q54pn4v5ngf9qbafxishjlavhx"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NCA" version))
+       (sha256
+        (base32 "0a464k1gqn5546wfsjfg6la3g0q54pn4v5ngf9qbafxishjlavhx"))))
     (properties `((upstream-name . "NCA")))
     (build-system r-build-system)
     (propagated-inputs (list r-quantreg
@@ -12948,12 +12976,12 @@ or output).  A quick start guide for using this package can be found here:
   (package
     (name "r-nc")
     (version "2023.8.24")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nc" version))
-              (sha256
-               (base32
-                "158vn3ivypx6gpbx1mpz1kw7lv9ifk76k1hcz4zv84jss2a1q135"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nc" version))
+       (sha256
+        (base32 "158vn3ivypx6gpbx1mpz1kw7lv9ifk76k1hcz4zv84jss2a1q135"))))
     (properties `((upstream-name . "nc")))
     (build-system r-build-system)
     (propagated-inputs (list r-data-table))
@@ -12976,12 +13004,12 @@ conversion functions.")
   (package
     (name "r-nbtsvarsel")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NBtsVarSel" version))
-              (sha256
-               (base32
-                "0dwmi69ahyrq54nx1xi591i3g87r4aiv9l5k81lhqwa2aniv6snh"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NBtsVarSel" version))
+       (sha256
+        (base32 "0dwmi69ahyrq54nx1xi591i3g87r4aiv9l5k81lhqwa2aniv6snh"))))
     (properties `((upstream-name . "NBtsVarSel")))
     (build-system r-build-system)
     (propagated-inputs (list r-mpath r-matrix r-mass r-glmnet r-ggplot2))
@@ -12999,12 +13027,12 @@ we refer the reader to the paper Gomtsyan (2023), <@code{arXiv:2307.00929>}.")
   (package
     (name "r-nbtransmission")
     (version "1.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nbTransmission" version))
-              (sha256
-               (base32
-                "0vaj2zfyvm2vm1ly1419ysxxrqkv73802n96ifajknh1pair31zk"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nbTransmission" version))
+       (sha256
+        (base32 "0vaj2zfyvm2vm1ly1419ysxxrqkv73802n96ifajknh1pair31zk"))))
     (properties `((upstream-name . "nbTransmission")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -13032,12 +13060,12 @@ see Leavitt et al. (2020) <doi:10.1093/ije/dyaa031>.")
   (package
     (name "r-nbshiny3")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NBShiny3" version))
-              (sha256
-               (base32
-                "1p0n4jpzdaqwpidxairwpgc8qrdvr1r7cammpgnzc6a9ar2hcw1g"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NBShiny3" version))
+       (sha256
+        (base32 "1p0n4jpzdaqwpidxairwpgc8qrdvr1r7cammpgnzc6a9ar2hcw1g"))))
     (properties `((upstream-name . "NBShiny3")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny
@@ -13059,12 +13087,12 @@ package function as well as at <https://kartikeyab.shinyapps.io/NBShiny/>.")
   (package
     (name "r-nbshiny2")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NBShiny2" version))
-              (sha256
-               (base32
-                "0w4f19av8zl220zq3flmlqn86ivikclnsnkd7bc1wafhr12hmygp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NBShiny2" version))
+       (sha256
+        (base32 "0w4f19av8zl220zq3flmlqn86ivikclnsnkd7bc1wafhr12hmygp"))))
     (properties `((upstream-name . "NBShiny2")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny
@@ -13086,12 +13114,12 @@ package function as well as at <https://kartikeyab.shinyapps.io/NBShiny/>.")
   (package
     (name "r-nbshiny")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NBShiny" version))
-              (sha256
-               (base32
-                "0hcmdhj26hc3c8d5nb6yb7amv0rbdxywima0l0jqkxipx56idlcx"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NBShiny" version))
+       (sha256
+        (base32 "0hcmdhj26hc3c8d5nb6yb7amv0rbdxywima0l0jqkxipx56idlcx"))))
     (properties `((upstream-name . "NBShiny")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny
@@ -13113,12 +13141,12 @@ package function as well as at <https://kartikeyab.shinyapps.io/NBShiny/>.")
   (package
     (name "r-nbr")
     (version "0.1.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NBR" version))
-              (sha256
-               (base32
-                "1jaqlh40vda9jj4pzf13rsq8zj5s9vz8ggf74wm63dfy6lgfjjk8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NBR" version))
+       (sha256
+        (base32 "1jaqlh40vda9jj4pzf13rsq8zj5s9vz8ggf74wm63dfy6lgfjjk8"))))
     (properties `((upstream-name . "NBR")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlme))
@@ -13136,12 +13164,12 @@ check the R package <https://CRAN.R-project.org/package=nlme>.")
   (package
     (name "r-nbpmatching")
     (version "1.5.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nbpMatching" version))
-              (sha256
-               (base32
-                "0f7avg06lr5a1yixrl6mhcs98ywa91qbfkc7qlz2pxzpc1v13ffb"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nbpMatching" version))
+       (sha256
+        (base32 "0f7avg06lr5a1yixrl6mhcs98ywa91qbfkc7qlz2pxzpc1v13ffb"))))
     (properties `((upstream-name . "nbpMatching")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-hmisc))
@@ -13169,12 +13197,12 @@ bipartite matching can be performed using the prevent option in gendistance()'."
   (package
     (name "r-nbody")
     (version "1.33")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nbody" version))
-              (sha256
-               (base32
-                "1ky07bi830z3c2fvxq0fmicsllm736b510q4zphff4rwljx1awf2"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nbody" version))
+       (sha256
+        (base32 "1ky07bi830z3c2fvxq0fmicsllm736b510q4zphff4rwljx1awf2"))))
     (properties `((upstream-name . "nbody")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-magicaxis))
@@ -13195,12 +13223,12 @@ acceleration by other particles.")
   (package
     (name "r-nblr")
     (version "0.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nblR" version))
-              (sha256
-               (base32
-                "1p1m1jml7grpjfp5qibffm3dx8zz37h216bpcwybm293naprmbfr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nblR" version))
+       (sha256
+        (base32 "1p1m1jml7grpjfp5qibffm3dx8zz37h216bpcwybm293naprmbfr"))))
     (properties `((upstream-name . "nblR")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-cli))
@@ -13216,12 +13244,12 @@ results and box scores for teams and players.")
   (package
     (name "r-nblda")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NBLDA" version))
-              (sha256
-               (base32
-                "0h71c3kgqaijpnrz2cx2k4311j61paxnj96kwpv2dcdy9rhkbwar"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NBLDA" version))
+       (sha256
+        (base32 "0h71c3kgqaijpnrz2cx2k4311j61paxnj96kwpv2dcdy9rhkbwar"))))
     (properties `((upstream-name . "NBLDA")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))
@@ -13245,12 +13273,12 @@ support only the classification task with this version.")
   (package
     (name "r-nbfar")
     (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nbfar" version))
-              (sha256
-               (base32
-                "1gr9q83ff950x2lcyv9apsnjah4kpi8805mci9m0s3gvr7llpjq4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nbfar" version))
+       (sha256
+        (base32 "1gr9q83ff950x2lcyv9apsnjah4kpi8805mci9m0s3gvr7llpjq4"))))
     (properties `((upstream-name . "nbfar")))
     (build-system r-build-system)
     (propagated-inputs (list r-rrpack
@@ -13280,12 +13308,12 @@ more details.")
   (package
     (name "r-nberwp")
     (version "1.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nberwp" version))
-              (sha256
-               (base32
-                "0v1y51rmm0h3w0v5y97wprhdhyc14r4iprdpkmdh8q9ajj1ds1c0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nberwp" version))
+       (sha256
+        (base32 "0v1y51rmm0h3w0v5y97wprhdhyc14r4iprdpkmdh8q9ajj1ds1c0"))))
     (properties `((upstream-name . "nberwp")))
     (build-system r-build-system)
     (home-page "https://github.com/bldavies/nberwp")
@@ -13298,12 +13326,12 @@ more details.")
   (package
     (name "r-nbdesign")
     (version "2.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NBDesign" version))
-              (sha256
-               (base32
-                "0593rh2lf8wlxzjmwh2xx3jsb6miqx0wipqw9di10cbxbf6binb1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NBDesign" version))
+       (sha256
+        (base32 "0593rh2lf8wlxzjmwh2xx3jsb6miqx0wipqw9di10cbxbf6binb1"))))
     (properties `((upstream-name . "NBDesign")))
     (build-system r-build-system)
     (propagated-inputs (list r-pweall r-mass))
@@ -13322,12 +13350,12 @@ shape parameter equal to zero, i.e.  Poisson scenario.")
   (package
     (name "r-nbddirichlet")
     (version "1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NBDdirichlet" version))
-              (sha256
-               (base32
-                "11iqn74k7q6g7if35237jzabknjcdaanbq83hjicb2m0l5h31vvn"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NBDdirichlet" version))
+       (sha256
+        (base32 "11iqn74k7q6g7if35237jzabknjcdaanbq83hjicb2m0l5h31vvn"))))
     (properties `((upstream-name . "NBDdirichlet")))
     (build-system r-build-system)
     (home-page
@@ -13345,12 +13373,12 @@ functions for making tables that compare observed and theoretical statistics.")
   (package
     (name "r-nbconv")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nbconv" version))
-              (sha256
-               (base32
-                "1gmvkci1bbrhb4rffddr5z3fg628jfx62nzx7xs6bqcn9syg5fpb"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nbconv" version))
+       (sha256
+        (base32 "1gmvkci1bbrhb4rffddr5z3fg628jfx62nzx7xs6bqcn9syg5fpb"))))
     (properties `((upstream-name . "nbconv")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrixstats))
@@ -13372,12 +13400,12 @@ said convolutions are also provided.")
   (package
     (name "r-nbc4va")
     (version "1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nbc4va" version))
-              (sha256
-               (base32
-                "1xf9nmaycxs1d8xz30lciflhqjfyyx72gaa05kssqnlv90f5cy08"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nbc4va" version))
+       (sha256
+        (base32 "1xf9nmaycxs1d8xz30lciflhqjfyyx72gaa05kssqnlv90f5cy08"))))
     (properties `((upstream-name . "nbc4va")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny))
@@ -13394,12 +13422,12 @@ Autopsy (VA) built on code from Miasnikof et al (2015)
   (package
     (name "r-nbbttest")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NBBttest" version))
-              (sha256
-               (base32
-                "13p6kkakg2hd27xmh6vjnn8w161qaw23xzsx99pjgvz7w0n9idv3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NBBttest" version))
+       (sha256
+        (base32 "13p6kkakg2hd27xmh6vjnn8w161qaw23xzsx99pjgvz7w0n9idv3"))))
     (properties `((upstream-name . "NBBttest")))
     (build-system r-build-system)
     (propagated-inputs (list r-gtools r-gplots))
@@ -13428,12 +13456,12 @@ two conditions in small samples.")
   (package
     (name "r-nbbdesigns")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NBBDesigns" version))
-              (sha256
-               (base32
-                "0fm7i6cvwy7b29d1ig3s7akpb2kqf5xm5nqarhwmy79c1kll9jyb"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NBBDesigns" version))
+       (sha256
+        (base32 "0fm7i6cvwy7b29d1ig3s7akpb2kqf5xm5nqarhwmy79c1kll9jyb"))))
     (properties `((upstream-name . "NBBDesigns")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -13464,12 +13492,12 @@ such trials.")
   (package
     (name "r-nbapalettes")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nbapalettes" version))
-              (sha256
-               (base32
-                "1wrh2qcm90fcybhcc8wvs2s4a4z8y3mrhc28dvrkwynqwzsbalzs"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nbapalettes" version))
+       (sha256
+        (base32 "1wrh2qcm90fcybhcc8wvs2s4a4z8y3mrhc28dvrkwynqwzsbalzs"))))
     (properties `((upstream-name . "nbapalettes")))
     (build-system r-build-system)
     (propagated-inputs (list r-dplyr))
@@ -13482,12 +13510,12 @@ such trials.")
   (package
     (name "r-nbalover")
     (version "0.1.3.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NBAloveR" version))
-              (sha256
-               (base32
-                "0k1f14srzks26x5wnhj8mrfwcq7wgbywcklr804lxsh04h4d6pwp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NBAloveR" version))
+       (sha256
+        (base32 "0k1f14srzks26x5wnhj8mrfwcq7wgbywcklr804lxsh04h4d6pwp"))))
     (properties `((upstream-name . "NBAloveR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-magrittr r-dplyr))
@@ -13504,12 +13532,12 @@ users analyze basketball data.")
   (package
     (name "r-nb-mclust")
     (version "1.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NB.MClust" version))
-              (sha256
-               (base32
-                "0hzmrszxgx3pylf9pjjwk2ryjhwz7naxxkhcqpnfjv337vv5dg0i"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NB.MClust" version))
+       (sha256
+        (base32 "0hzmrszxgx3pylf9pjjwk2ryjhwz7naxxkhcqpnfjv337vv5dg0i"))))
     (properties `((upstream-name . "NB.MClust")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -13526,12 +13554,12 @@ allowed, while samples are assumed to be independent.")
   (package
     (name "r-nawtilus")
     (version "0.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nawtilus" version))
-              (sha256
-               (base32
-                "1agqx9wiiypkpjrwahwlw5qkvqgkh01swyzc75csf9698x0779pm"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nawtilus" version))
+       (sha256
+        (base32 "1agqx9wiiypkpjrwahwlw5qkvqgkh01swyzc75csf9698x0779pm"))))
     (properties `((upstream-name . "nawtilus")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -13555,12 +13583,12 @@ average outcomes in missing outcome cases.")
   (package
     (name "r-navigatr")
     (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "navigatr" version))
-              (sha256
-               (base32
-                "0qlrzv17nlichfncynl710bs9yjqbx860dgqc4lnsh9l3mv5qjjl"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "navigatr" version))
+       (sha256
+        (base32 "0qlrzv17nlichfncynl710bs9yjqbx860dgqc4lnsh9l3mv5qjjl"))))
     (properties `((upstream-name . "navigatr")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -13583,12 +13611,12 @@ operations on each item while maintaining the overall structure in attributes.")
   (package
     (name "r-navigation")
     (version "0.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "navigation" version))
-              (sha256
-               (base32
-                "129f2snh2mjp9mcifcxzh37zjhny8wlqhq00225pakl79kfzyyim"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "navigation" version))
+       (sha256
+        (base32 "129f2snh2mjp9mcifcxzh37zjhny8wlqhq00225pakl79kfzyyim"))))
     (properties `((upstream-name . "navigation")))
     (build-system r-build-system)
     (propagated-inputs (list r-simts
@@ -13623,12 +13651,12 @@ system in real-world conditions.")
   (package
     (name "r-naturesounds")
     (version "1.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NatureSounds" version))
-              (sha256
-               (base32
-                "1l8c0zn0bbrcdf098pcbr8fvrl614cl6iq820q0sd7sr36n3k1jr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NatureSounds" version))
+       (sha256
+        (base32 "1l8c0zn0bbrcdf098pcbr8fvrl614cl6iq820q0sd7sr36n3k1jr"))))
     (properties `((upstream-name . "NatureSounds")))
     (build-system r-build-system)
     (propagated-inputs (list r-tuner r-knitr))
@@ -13643,12 +13671,12 @@ system in real-world conditions.")
   (package
     (name "r-naturalist")
     (version "0.5.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "naturaList" version))
-              (sha256
-               (base32
-                "0692bd7sdf3rlcp7sgjkvm7w5gyd3qv4390f7bz286krimsxaqzq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "naturaList" version))
+       (sha256
+        (base32 "0692bd7sdf3rlcp7sgjkvm7w5gyd3qv4390f7bz286krimsxaqzq"))))
     (properties `((upstream-name . "naturaList")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -13683,12 +13711,12 @@ application.")
   (package
     (name "r-natural")
     (version "0.9.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "natural" version))
-              (sha256
-               (base32
-                "0zxwbf3gg2h0bhl2w0md3rd162vlsgg0dv3187hc0ax7333cc4cx"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "natural" version))
+       (sha256
+        (base32 "0zxwbf3gg2h0bhl2w0md3rd162vlsgg0dv3187hc0ax7333cc4cx"))))
     (properties `((upstream-name . "natural")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-glmnet))
@@ -13705,12 +13733,12 @@ linear models of Yu, Bien (2017) <@code{arXiv:1712.02412>}.")
   (package
     (name "r-natstrat")
     (version "2.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "natstrat" version))
-              (sha256
-               (base32
-                "1i3qjd787clbafpkjd0mkp6i540061q9xl9kxlgh9f517ksg8zpz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "natstrat" version))
+       (sha256
+        (base32 "1i3qjd787clbafpkjd0mkp6i540061q9xl9kxlgh9f517ksg8zpz"))))
     (properties `((upstream-name . "natstrat")))
     (build-system r-build-system)
     (propagated-inputs (list r-slam
@@ -13742,12 +13770,12 @@ instructions at
   (package
     (name "r-natserv")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "natserv" version))
-              (sha256
-               (base32
-                "1j6m0fddrhq36qfjmj99zs77vxk5waqkshxi37pr2ccnis9hzy9h"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "natserv" version))
+       (sha256
+        (base32 "1j6m0fddrhq36qfjmj99zs77vxk5waqkshxi37pr2ccnis9hzy9h"))))
     (properties `((upstream-name . "natserv")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-jsonlite r-crul))
@@ -13763,12 +13791,12 @@ methods to get data, image metadata, search taxonomic names, and make maps.")
   (package
     (name "r-natparkspalettes")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NatParksPalettes" version))
-              (sha256
-               (base32
-                "1arh6w08c0y6dzixza912rkhanid9c8rxlcqrmv6h98mqmsip9cf"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NatParksPalettes" version))
+       (sha256
+        (base32 "1arh6w08c0y6dzixza912rkhanid9c8rxlcqrmv6h98mqmsip9cf"))))
     (properties `((upstream-name . "NatParksPalettes")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))
@@ -13783,12 +13811,12 @@ contains 15 color schemes and checks for colorblind-friendliness of palettes.")
   (package
     (name "r-natmanager")
     (version "0.5.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "natmanager" version))
-              (sha256
-               (base32
-                "1lfz73zg95bv2wfk5pk0jb1r9n0w8ikfsza1cldfgffa93ii9ivd"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "natmanager" version))
+       (sha256
+        (base32 "1lfz73zg95bv2wfk5pk0jb1r9n0w8ikfsza1cldfgffa93ii9ivd"))))
     (properties `((upstream-name . "natmanager")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -13811,12 +13839,12 @@ GITHUB_PAT'.  natmanager will help the end user set this up if necessary.")
   (package
     (name "r-natcpp")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "natcpp" version))
-              (sha256
-               (base32
-                "0fy27dq6w9i9rir2v22zimzxibsaj9n4gbsl70ca4q57mgprl1hn"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "natcpp" version))
+       (sha256
+        (base32 "0fy27dq6w9i9rir2v22zimzxibsaj9n4gbsl70ca4q57mgprl1hn"))))
     (properties `((upstream-name . "natcpp")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -13835,12 +13863,12 @@ when it is available to enable large performance gains.")
   (package
     (name "r-nat-utils")
     (version "0.6.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nat.utils" version))
-              (sha256
-               (base32
-                "0d1d1525izy8jmk9jkp9x9zw4ln04bbg56gvfddm1jaxwa5aciqc"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nat.utils" version))
+       (sha256
+        (base32 "0d1d1525izy8jmk9jkp9x9zw4ln04bbg56gvfddm1jaxwa5aciqc"))))
     (properties `((upstream-name . "nat.utils")))
     (build-system r-build-system)
     (propagated-inputs (list r-checkmate))
@@ -13859,12 +13887,12 @@ functions for working with zip and gzip files including integrity tests.")
   (package
     (name "r-nat-templatebrains")
     (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nat.templatebrains" version))
-              (sha256
-               (base32
-                "13fwh9lqd7yz3j8ndhx650a6mf5hn2f0w3lqfha24vb2zrv0crsg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nat.templatebrains" version))
+       (sha256
+        (base32 "13fwh9lqd7yz3j8ndhx650a6mf5hn2f0w3lqfha24vb2zrv0crsg"))))
     (properties `((upstream-name . "nat.templatebrains")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgl
@@ -13886,12 +13914,12 @@ functions for handling template brains.")
   (package
     (name "r-nat-nblast")
     (version "1.6.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nat.nblast" version))
-              (sha256
-               (base32
-                "0m3x69m366ir5r2cf0msbwkrz32ds1cjyychw5l9z9cmdd8gmlsw"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nat.nblast" version))
+       (sha256
+        (base32 "0m3x69m366ir5r2cf0msbwkrz32ds1cjyychw5l9z9cmdd8gmlsw"))))
     (properties `((upstream-name . "nat.nblast")))
     (build-system r-build-system)
     (propagated-inputs (list r-spam
@@ -13914,12 +13942,12 @@ NBLAST-related functions for neuronal morphology comparison (Costa et al. (2016)
   (package
     (name "r-nat")
     (version "1.8.23")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nat" version))
-              (sha256
-               (base32
-                "0wcn2dz44vfn475frir9fgj7hb45jvpkf2sxz7pd2m9a9p9idraf"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nat" version))
+       (sha256
+        (base32 "0wcn2dz44vfn475frir9fgj7hb45jvpkf2sxz7pd2m9a9p9idraf"))))
     (properties `((upstream-name . "nat")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -13951,12 +13979,12 @@ package).")
   (package
     (name "r-naspaclust")
     (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "naspaclust" version))
-              (sha256
-               (base32
-                "1p4ilv2z5140h4kdix2w1v32vz1n8v33wq0fhc8n8mi7baknhd1i"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "naspaclust" version))
+       (sha256
+        (base32 "1p4ilv2z5140h4kdix2w1v32vz1n8v33wq0fhc8n8mi7baknhd1i"))))
     (properties `((upstream-name . "naspaclust")))
     (build-system r-build-system)
     (propagated-inputs (list r-stabledist r-rdpack r-rdist r-beepr))
@@ -13979,12 +14007,12 @@ Artificial Bee Colony algorithm.")
   (package
     (name "r-nasdaqdatalink")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NasdaqDataLink" version))
-              (sha256
-               (base32
-                "1dxsp8dq0r7zvl5rlx8x068lx30v06zzyapzq2zv207shhwgd9lq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NasdaqDataLink" version))
+       (sha256
+        (base32 "1dxsp8dq0r7zvl5rlx8x068lx30v06zzyapzq2zv207shhwgd9lq"))))
     (properties `((upstream-name . "NasdaqDataLink")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-xts r-jsonlite r-httr))
@@ -14003,12 +14031,12 @@ R package uses the Nasdaq Data Link API. For more information go to
   (package
     (name "r-nasaweather")
     (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nasaweather" version))
-              (sha256
-               (base32
-                "05pqrsf2vmkzc7l4jvvqbi8wf9f46854y73q2gilag62s85vm9xb"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nasaweather" version))
+       (sha256
+        (base32 "05pqrsf2vmkzc7l4jvvqbi8wf9f46854y73q2gilag62s85vm9xb"))))
     (properties `((upstream-name . "nasaweather")))
     (build-system r-build-system)
     (home-page "http://github.com/hadley/nasaweather")
@@ -14022,12 +14050,12 @@ number of useful other related data sets.")
   (package
     (name "r-nasapower")
     (version "4.0.11")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nasapower" version))
-              (sha256
-               (base32
-                "0md4y2fpjvx56j2a9v00n86x5gwvka07j4a53h80a6rdfyf21cnb"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nasapower" version))
+       (sha256
+        (base32 "0md4y2fpjvx56j2a9v00n86x5gwvka07j4a53h80a6rdfyf21cnb"))))
     (properties `((upstream-name . "nasapower")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-readr r-lubridate r-jsonlite r-crul))
@@ -14049,12 +14077,12 @@ see <https://power.larc.nasa.gov/>.")
   (package
     (name "r-nasadata")
     (version "0.9.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nasadata" version))
-              (sha256
-               (base32
-                "0y88qdy8c1y0prsajxic5vdqfixv9knjsbhw3vbfac8wv3a69bjl"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nasadata" version))
+       (sha256
+        (base32 "0y88qdy8c1y0prsajxic5vdqfixv9knjsbhw3vbfac8wv3a69bjl"))))
     (properties `((upstream-name . "nasadata")))
     (build-system r-build-system)
     (propagated-inputs (list r-png r-plyr r-jsonlite r-dplyr))
@@ -14069,12 +14097,12 @@ and the Earth Observatory Natural Event Tracker (EONET) webservice.")
   (package
     (name "r-naryn")
     (version "2.6.23")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "naryn" version))
-              (sha256
-               (base32
-                "0b0dgpamm86llk7vxazgzfdby2y7ks95msq3046b2kp524nihmqb"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "naryn" version))
+       (sha256
+        (base32 "0b0dgpamm86llk7vxazgzfdby2y7ks95msq3046b2kp524nihmqb"))))
     (properties `((upstream-name . "naryn")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -14099,12 +14127,12 @@ provides a set of functions for data extraction, manipulation and analysis.")
   (package
     (name "r-narray")
     (version "0.5.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "narray" version))
-              (sha256
-               (base32
-                "0vpx1fl24ba1c5x3bw0n8bx5yp77gsqybaxgbq6mj6by29ggq73l"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "narray" version))
+       (sha256
+        (base32 "0vpx1fl24ba1c5x3bw0n8bx5yp77gsqybaxgbq6mj6by29ggq73l"))))
     (properties `((upstream-name . "narray")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-rcpp r-progress))
@@ -14122,12 +14150,12 @@ data.frames, and many other helper functions.")
   (package
     (name "r-nardl")
     (version "0.1.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nardl" version))
-              (sha256
-               (base32
-                "1vf8im4zs4j0v3k617aaskq9n2fg8sn3j5bllcbz2ircrpijr21m"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nardl" version))
+       (sha256
+        (base32 "1vf8im4zs4j0v3k617aaskq9n2fg8sn3j5bllcbz2ircrpijr21m"))))
     (properties `((upstream-name . "nardl")))
     (build-system r-build-system)
     (propagated-inputs (list r-tseries
@@ -14148,12 +14176,12 @@ automatic bases aic and bic lags selection of independent variables proposed by
   (package
     (name "r-naptime")
     (version "1.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "naptime" version))
-              (sha256
-               (base32
-                "1cadfv5sdsmz61kf96hf2gbnghf24q40g5c3h9b8prvkxslap691"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "naptime" version))
+       (sha256
+        (base32 "1cadfv5sdsmz61kf96hf2gbnghf24q40g5c3h9b8prvkxslap691"))))
     (properties `((upstream-name . "naptime")))
     (build-system r-build-system)
     (propagated-inputs (list r-lubridate))
@@ -14170,12 +14198,12 @@ silence/prevent typical sources of error.")
   (package
     (name "r-naptanr")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "naptanr" version))
-              (sha256
-               (base32
-                "074pxm1c8k24b3gbn3ibbwpsixbmjq3wx9agxg3ljflny2s6hhqp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "naptanr" version))
+       (sha256
+        (base32 "074pxm1c8k24b3gbn3ibbwpsixbmjq3wx9agxg3ljflny2s6hhqp"))))
     (properties `((upstream-name . "naptanr")))
     (build-system r-build-system)
     (propagated-inputs (list r-httr r-data-table))
@@ -14193,12 +14221,12 @@ dataset, by ATCO region code, or by name of region.")
   (package
     (name "r-nap")
     (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NAP" version))
-              (sha256
-               (base32
-                "19j1ngl92vqjqsk893zfsgk6fard2aswcm1553kh9fzv2idvr36s"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NAP" version))
+       (sha256
+        (base32 "19j1ngl92vqjqsk893zfsgk6fard2aswcm1553kh9fzv2idvr36s"))))
     (properties `((upstream-name . "NAP")))
     (build-system r-build-system)
     (propagated-inputs (list r-foreach r-doparallel))
@@ -14223,12 +14251,12 @@ sequentially observed data.")
   (package
     (name "r-nanotime")
     (version "0.3.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nanotime" version))
-              (sha256
-               (base32
-                "05fbdhbax6k1glidmgl0zjc7y7v1ppbpz4422q3jmxmfack7hwd7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nanotime" version))
+       (sha256
+        (base32 "05fbdhbax6k1glidmgl0zjc7y7v1ppbpz4422q3jmxmfack7hwd7"))))
     (properties `((upstream-name . "nanotime")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-rcppdate r-rcppcctz r-rcpp r-bit64))
@@ -14245,12 +14273,12 @@ nanosecond-resolution timestamps.")
   (package
     (name "r-nanostringr")
     (version "0.4.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nanostringr" version))
-              (sha256
-               (base32
-                "1sivaycgg1j3q9iapy2nq7mp8cak316rgn475sv7pa57ig6g9b7b"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nanostringr" version))
+       (sha256
+        (base32 "1sivaycgg1j3q9iapy2nq7mp8cak316rgn475sv7pa57ig6g9b7b"))))
     (properties `((upstream-name . "nanostringr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -14276,13 +14304,13 @@ form of Reporter Code Count (RCC) files.")
 (define-public r-nanonext
   (package
     (name "r-nanonext")
-    (version "0.10.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nanonext" version))
-              (sha256
-               (base32
-                "1v2x7bp58giwa19ry0gsav88g39qdjxc0njz9g0n8gyxvj0wfjix"))))
+    (version "0.10.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nanonext" version))
+       (sha256
+        (base32 "1fcgxbin1sx9cahc6575x3b883fslqckgsli0r1dlc3bk7sx2fxk"))))
     (properties `((upstream-name . "nanonext")))
     (build-system r-build-system)
     (home-page "https://shikokuchuo.net/nanonext/")
@@ -14302,12 +14330,12 @@ concurrent messaging threads.")
   (package
     (name "r-nanoarrow")
     (version "0.2.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nanoarrow" version))
-              (sha256
-               (base32
-                "03c3c7fzygaidqgaj2p05snw1qi6j6h8vmymcs270smmvwk7cgdz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nanoarrow" version))
+       (sha256
+        (base32 "03c3c7fzygaidqgaj2p05snw1qi6j6h8vmymcs270smmvwk7cgdz"))))
     (properties `((upstream-name . "nanoarrow")))
     (build-system r-build-system)
     (home-page "https://github.com/apache/arrow-nanoarrow")
@@ -14325,12 +14353,12 @@ data interface.")
   (package
     (name "r-nandb")
     (version "2.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nandb" version))
-              (sha256
-               (base32
-                "1rbn4nibjzvwpccpmqn84w9a167f1avyl18kjlapy5dhafvixgbz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nandb" version))
+       (sha256
+        (base32 "1rbn4nibjzvwpccpmqn84w9a167f1avyl18kjlapy5dhafvixgbz"))))
     (properties `((upstream-name . "nandb")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -14366,12 +14394,12 @@ technique was published in 2017 <doi:10.1016/j.ymeth.2017.12.001>.")
   (package
     (name "r-nametagger")
     (version "0.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nametagger" version))
-              (sha256
-               (base32
-                "1m6g8fx9fvd8zzvv4c9dh1dw63dkvl9i5mz8rqgvwqgqdvvvw1vi"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nametagger" version))
+       (sha256
+        (base32 "1m6g8fx9fvd8zzvv4c9dh1dw63dkvl9i5mz8rqgvwqgqdvvvw1vi"))))
     (properties `((upstream-name . "nametagger")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -14389,12 +14417,12 @@ Markov model which is described in Strakova J., Straka M. and Hajic J. (2013)
   (package
     (name "r-namer")
     (version "0.1.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "namer" version))
-              (sha256
-               (base32
-                "1h3nfxdhvjjiki1rqjpmiih9vj1hz9j8m5wkazskz8asza23898i"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "namer" version))
+       (sha256
+        (base32 "1h3nfxdhvjjiki1rqjpmiih9vj1hz9j8m5wkazskz8asza23898i"))))
     (properties `((upstream-name . "namer")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -14416,12 +14444,12 @@ Markov model which is described in Strakova J., Straka M. and Hajic J. (2013)
   (package
     (name "r-nameneedle")
     (version "1.2.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NameNeedle" version))
-              (sha256
-               (base32
-                "14w8amhaar6wksnpkssdgjlmyqb4n7qxda29vy6rps2dxfvi6klc"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NameNeedle" version))
+       (sha256
+        (base32 "14w8amhaar6wksnpkssdgjlmyqb4n7qxda29vy6rps2dxfvi6klc"))))
     (properties `((upstream-name . "NameNeedle")))
     (build-system r-build-system)
     (home-page "http://oompa.r-forge.r-project.org/")
@@ -14436,12 +14464,12 @@ matches between sample names in different data sets.  See Wang et al. (2010)
   (package
     (name "r-namedropr")
     (version "2.4.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "namedropR" version))
-              (sha256
-               (base32
-                "06lg381imi8xnm6jlsxfffjyhzban6z29zwkw8bamglnk0frvzza"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "namedropR" version))
+       (sha256
+        (base32 "06lg381imi8xnm6jlsxfffjyhzban6z29zwkw8bamglnk0frvzza"))))
     (properties `((upstream-name . "namedropR")))
     (build-system r-build-system)
     (propagated-inputs (list r-webshot
@@ -14473,12 +14501,12 @@ scientific presentation slides and conference posters.")
   (package
     (name "r-namedcapture")
     (version "2020.4.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "namedCapture" version))
-              (sha256
-               (base32
-                "0zdw3h3n4qjv9cpidb3g523ld6rrh49l2c1yhfqhk5wb7vddrs46"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "namedCapture" version))
+       (sha256
+        (base32 "0zdw3h3n4qjv9cpidb3g523ld6rrh49l2c1yhfqhk5wb7vddrs46"))))
     (properties `((upstream-name . "namedCapture")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -14496,12 +14524,12 @@ installed from github.")
   (package
     (name "r-name")
     (version "0.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "name" version))
-              (sha256
-               (base32
-                "1va2qqcxgvc4nzkylxyyzz8yx6ndgb1hx7af3qjzf8m4mzg8qnvm"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "name" version))
+       (sha256
+        (base32 "1va2qqcxgvc4nzkylxyyzz8yx6ndgb1hx7af3qjzf8m4mzg8qnvm"))))
     (properties `((upstream-name . "name")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -14522,12 +14550,12 @@ functionality to add ordering by function and more explicit renaming.")
   (package
     (name "r-nam")
     (version "1.7.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NAM" version))
-              (sha256
-               (base32
-                "12d2yjl0af2ailvwk30fswalx1wzyj500qbrhiczsg1vr4rcqhkh"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NAM" version))
+       (sha256
+        (base32 "12d2yjl0af2ailvwk30fswalx1wzyj500qbrhiczsg1vr4rcqhkh"))))
     (properties `((upstream-name . "NAM")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -14547,12 +14575,12 @@ variance components through likelihood and Bayesian methods.")
   (package
     (name "r-nakagami")
     (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nakagami" version))
-              (sha256
-               (base32
-                "0bxsg5k51x7qrw34l16da79ck212drkgvzgn9d5zanx5dwv5asl2"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nakagami" version))
+       (sha256
+        (base32 "0bxsg5k51x7qrw34l16da79ck212drkgvzgn9d5zanx5dwv5asl2"))))
     (properties `((upstream-name . "nakagami")))
     (build-system r-build-system)
     (propagated-inputs (list r-assertthat))
@@ -14568,12 +14596,12 @@ Nakagami distribution of Nakagami (1960)
   (package
     (name "r-naivereg")
     (version "1.0.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "naivereg" version))
-              (sha256
-               (base32
-                "1cxfl419pp7xh1xrad29gvpn6hm0rhk40vylj97ypndh6gmnynzz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "naivereg" version))
+       (sha256
+        (base32 "1cxfl419pp7xh1xrad29gvpn6hm0rhk40vylj97ypndh6gmnynzz"))))
     (properties `((upstream-name . "naivereg")))
     (build-system r-build-system)
     (propagated-inputs (list r-ncvreg r-grpreg r-gmm r-glmnet))
@@ -14607,12 +14635,12 @@ working papers led by the same authors.")
   (package
     (name "r-naivebayes")
     (version "0.9.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "naivebayes" version))
-              (sha256
-               (base32
-                "070m78d8hsbqfbapb6g8vvh91gyznqfdpqsaq6z3raps8zlybsag"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "naivebayes" version))
+       (sha256
+        (base32 "070m78d8hsbqfbapb6g8vvh91gyznqfdpqsaq6z3raps8zlybsag"))))
     (properties `((upstream-name . "naivebayes")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -14630,12 +14658,12 @@ take advantage of sparse data.")
   (package
     (name "r-naive")
     (version "1.2.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "naive" version))
-              (sha256
-               (base32
-                "0ha54lc6g6yvh5g3kw5hdp2l7y2xi85b3ills3w1x092gma1q2cy"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "naive" version))
+       (sha256
+        (base32 "0ha54lc6g6yvh5g3kw5hdp2l7y2xi85b3ills3w1x092gma1q2cy"))))
     (properties `((upstream-name . "naive")))
     (build-system r-build-system)
     (propagated-inputs (list r-tictoc
@@ -14663,13 +14691,13 @@ summarizing the most relevant patterns in time sequences.")
 (define-public r-nair
   (package
     (name "r-nair")
-    (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NAIR" version))
-              (sha256
-               (base32
-                "0qal4khgmipgxv86ji3kpwk90lhaw7aqs70ckl4wh7mp402sxykn"))))
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NAIR" version))
+       (sha256
+        (base32 "0zcjv7siimxjc87qzq5948kifzkz6f1idmdr7625aa126k2kgk1s"))))
     (properties `((upstream-name . "NAIR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -14697,12 +14725,12 @@ particular clusters and clones within a repertoire.  Yang et al. (2023)
   (package
     (name "r-naijr")
     (version "0.6.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "naijR" version))
-              (sha256
-               (base32
-                "1108fz4rhckmb2d9s63rjb44dpfazhvhsqprgx82akbssr7xf9br"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "naijR" version))
+       (sha256
+        (base32 "1108fz4rhckmb2d9s63rjb44dpfazhvhsqprgx82akbssr7xf9br"))))
     (properties `((upstream-name . "naijR")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi
@@ -14726,12 +14754,12 @@ and information that are specific to the country.")
   (package
     (name "r-naflex")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "naflex" version))
-              (sha256
-               (base32
-                "18fqfhm6p38z4h8dznac5v8yz53n86cw2x6ma29kvcbvdp4r3yd2"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "naflex" version))
+       (sha256
+        (base32 "18fqfhm6p38z4h8dznac5v8yz53n86cw2x6ma29kvcbvdp4r3yd2"))))
     (properties `((upstream-name . "naflex")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -14746,12 +14774,12 @@ specified checks.")
   (package
     (name "r-naepprimer")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NAEPprimer" version))
-              (sha256
-               (base32
-                "19p1livdnayfcl88f8r9x1vg30x522q8lgx66pfgwpkxjzvrqa2l"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NAEPprimer" version))
+       (sha256
+        (base32 "19p1livdnayfcl88f8r9x1vg30x522q8lgx66pfgwpkxjzvrqa2l"))))
     (properties `((upstream-name . "NAEPprimer")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=NAEPprimer")
@@ -14766,12 +14794,12 @@ NAEP Primer.")
   (package
     (name "r-naepirtparams")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NAEPirtparams" version))
-              (sha256
-               (base32
-                "0qhfmkhi38z27ky3xbkvra5r6lw3kj9p3xrblm9j2657rj9kxc9j"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NAEPirtparams" version))
+       (sha256
+        (base32 "0qhfmkhi38z27ky3xbkvra5r6lw3kj9p3xrblm9j2657rj9kxc9j"))))
     (properties `((upstream-name . "NAEPirtparams")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=NAEPirtparams")
@@ -14801,12 +14829,12 @@ constants were all homogenized to \"univariate\".")
   (package
     (name "r-nadiv")
     (version "2.17.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nadiv" version))
-              (sha256
-               (base32
-                "0v2jw0md4bjn15g6slx2bx7ipr3r0s1zv3frjach3rd7b1bs9z7k"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nadiv" version))
+       (sha256
+        (base32 "0v2jw0md4bjn15g6slx2bx7ipr3r0s1zv3frjach3rd7b1bs9z7k"))))
     (properties `((upstream-name . "nadiv")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix))
@@ -14825,12 +14853,12 @@ international (<https://vsni.co.uk/software/asreml>).")
   (package
     (name "r-nadia")
     (version "0.4.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NADIA" version))
-              (sha256
-               (base32
-                "19545sc75a82smjvvyd353wjlh3wwzhwapcrk9fkg3ffjv9p4a3n"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NADIA" version))
+       (sha256
+        (base32 "19545sc75a82smjvvyd353wjlh3wwzhwapcrk9fkg3ffjv9p4a3n"))))
     (properties `((upstream-name . "NADIA")))
     (build-system r-build-system)
     (propagated-inputs (list r-vim
@@ -14866,12 +14894,12 @@ trained on the test set and impute test data).")
   (package
     (name "r-nada2")
     (version "1.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NADA2" version))
-              (sha256
-               (base32
-                "13mxxc3cyrvmnjakq4g3yi97xlj53x76fyzxvp6p1f2f1vi0zvl5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NADA2" version))
+       (sha256
+        (base32 "13mxxc3cyrvmnjakq4g3yi97xlj53x76fyzxvp6p1f2f1vi0zvl5"))))
     (properties `((upstream-name . "NADA2")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -14900,12 +14928,12 @@ videos at <https://practicalstats.com>.  This package adds new functions to the
   (package
     (name "r-nacho")
     (version "2.0.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NACHO" version))
-              (sha256
-               (base32
-                "1w32gnpi9hna2icrv5ig1qkpdrz6n3x79hkjz5fqschicg7fx4z4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NACHO" version))
+       (sha256
+        (base32 "1w32gnpi9hna2icrv5ig1qkpdrz6n3x79hkjz5fqschicg7fx4z4"))))
     (properties `((upstream-name . "NACHO")))
     (build-system r-build-system)
     (inputs (list pandoc pandoc))
@@ -14938,12 +14966,12 @@ size factors in an interactive web application.")
   (package
     (name "r-naaccr")
     (version "2.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "naaccr" version))
-              (sha256
-               (base32
-                "1j30fb7qvxzpx0y7hq8sbqvszwjfnc4r2g0j8885fmn2wxvcgzdx"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "naaccr" version))
+       (sha256
+        (base32 "1j30fb7qvxzpx0y7hq8sbqvszwjfnc4r2g0j8885fmn2wxvcgzdx"))))
     (properties `((upstream-name . "naaccr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml r-stringi r-data-table))
@@ -14959,12 +14987,12 @@ format defined by the North American Association of Central Cancer Registries
   (package
     (name "r-na-tools")
     (version "0.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "na.tools" version))
-              (sha256
-               (base32
-                "1lbzsckfg297n85kzbin65x1l6qgg9l50hd3xi2gflxc7n2xb8bw"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "na.tools" version))
+       (sha256
+        (base32 "1lbzsckfg297n85kzbin65x1l6qgg9l50hd3xi2gflxc7n2xb8bw"))))
     (properties `((upstream-name . "na.tools")))
     (build-system r-build-system)
     (home-page "https://github.com/decisionpatterns/na.tools")
@@ -14983,12 +15011,12 @@ etc.  of NAs'.")
   (package
     (name "r-n2h4")
     (version "0.8.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "N2H4" version))
-              (sha256
-               (base32
-                "1bqkjfw14jlk3hr10g5djp358qj07c8x4xyjsrcs86zx6yq2gbda"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "N2H4" version))
+       (sha256
+        (base32 "1bqkjfw14jlk3hr10g5djp358qj07c8x4xyjsrcs86zx6yq2gbda"))))
     (properties `((upstream-name . "N2H4")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -15009,12 +15037,12 @@ in Korea.")
   (package
     (name "r-n1qn1")
     (version "6.0.1-11")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "n1qn1" version))
-              (sha256
-               (base32
-                "17p48wm0wcw46lk9382yd9xpzx4rygdjyrbfdi6xnph1k5phjxpj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "n1qn1" version))
+       (sha256
+        (base32 "17p48wm0wcw46lk9382yd9xpzx4rygdjyrbfdi6xnph1k5phjxpj"))))
     (properties `((upstream-name . "n1qn1")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))

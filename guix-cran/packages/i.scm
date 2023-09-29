@@ -49,12 +49,12 @@
   (package
     (name "r-izmir")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "izmir" version))
-              (sha256
-               (base32
-                "1kkzia7470gsi3yhb1rak493vz965v5v5aj3cq4ginhjd7y0glfz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "izmir" version))
+       (sha256
+        (base32 "1kkzia7470gsi3yhb1rak493vz965v5v5aj3cq4ginhjd7y0glfz"))))
     (properties `((upstream-name . "izmir")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -76,12 +76,12 @@ as datasets that require an API key.")
   (package
     (name "r-izid")
     (version "0.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iZID" version))
-              (sha256
-               (base32
-                "1jaqdh6i5xyfw4y2wd9qivzjklf4j2xxnya8ssn7rv5bz6misgcz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iZID" version))
+       (sha256
+        (base32 "1jaqdh6i5xyfw4y2wd9qivzjklf4j2xxnya8ssn7rv5bz6misgcz"))))
     (properties `((upstream-name . "iZID")))
     (build-system r-build-system)
     (propagated-inputs (list r-rootsolve r-foreach r-extradistr r-doparallel))
@@ -100,12 +100,12 @@ these models.")
   (package
     (name "r-ixpopdymod")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IxPopDyMod" version))
-              (sha256
-               (base32
-                "0qnxf9a0d9lmvna5rzmddp5gsq9scpk9aw0kamhbmrxbxaxm4q9l"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IxPopDyMod" version))
+       (sha256
+        (base32 "0qnxf9a0d9lmvna5rzmddp5gsq9scpk9aw0kamhbmrxbxaxm4q9l"))))
     (properties `((upstream-name . "IxPopDyMod")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -132,12 +132,12 @@ shared.")
   (package
     (name "r-ixplorer")
     (version "0.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ixplorer" version))
-              (sha256
-               (base32
-                "0h0kmcaj783kmnlxnzw0gvf7gg4f6lcyn6l4hz8rz216d98qzxwp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ixplorer" version))
+       (sha256
+        (base32 "0h0kmcaj783kmnlxnzw0gvf7gg4f6lcyn6l4hz8rz216d98qzxwp"))))
     (properties `((upstream-name . "ixplorer")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -166,12 +166,12 @@ use git.")
   (package
     (name "r-iweigreg")
     (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iWeigReg" version))
-              (sha256
-               (base32
-                "077ymd271biyjhq2sbbbnla73anv8z8f953jh06m9abnx7rai9i6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iWeigReg" version))
+       (sha256
+        (base32 "077ymd271biyjhq2sbbbnla73anv8z8f953jh06m9abnx7rai9i6"))))
     (properties `((upstream-name . "iWeigReg")))
     (build-system r-build-system)
     (propagated-inputs (list r-trust r-mass))
@@ -187,12 +187,12 @@ for causal inference and missing data problems.")
   (package
     (name "r-ivyplot")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IVYplot" version))
-              (sha256
-               (base32
-                "1v739xlim3mcw09cyp4z3cbb25ipkpwm9h378fwy2ycp8lmq32gy"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IVYplot" version))
+       (sha256
+        (base32 "1v739xlim3mcw09cyp4z3cbb25ipkpwm9h378fwy2ycp8lmq32gy"))))
     (properties `((upstream-name . "IVYplot")))
     (build-system r-build-system)
     (propagated-inputs (list r-plyr))
@@ -210,12 +210,12 @@ than one observation with multiplicity declared in the subtitle.")
   (package
     (name "r-ivx")
     (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ivx" version))
-              (sha256
-               (base32
-                "1dg09aajk9rqmrlwq4xw7qd5ra1z8wjxipy5l85sl1nzii250drq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ivx" version))
+       (sha256
+        (base32 "1dg09aajk9rqmrlwq4xw7qd5ra1z8wjxipy5l85sl1nzii250drq"))))
     (properties `((upstream-name . "ivx")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -232,12 +232,12 @@ Magdalinos and Stamatogiannis (2015) <doi:10.1093/rfs/hhu139>.")
   (package
     (name "r-ivtools")
     (version "2.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ivtools" version))
-              (sha256
-               (base32
-                "1wv0r9dy893hafbbrjcjrphb8dgql71ya4zfbkl5dfp7d4ncfxl0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ivtools" version))
+       (sha256
+        (base32 "1wv0r9dy893hafbbrjcjrphb8dgql71ya4zfbkl5dfp7d4ncfxl0"))))
     (properties `((upstream-name . "ivtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -259,12 +259,12 @@ J., Babanezhad M., Goetghebeur E. (2011) <doi:10.1214/11-STS360>.")
   (package
     (name "r-ivsacim")
     (version "2.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ivsacim" version))
-              (sha256
-               (base32
-                "0pldg086kaaqc2wab1m61anabqaf0mffv1hsb8plz1qn2f8gdcp3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ivsacim" version))
+       (sha256
+        (base32 "0pldg086kaaqc2wab1m61anabqaf0mffv1hsb8plz1qn2f8gdcp3"))))
     (properties `((upstream-name . "ivsacim")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -282,12 +282,12 @@ provide a consistent variance estimate.")
   (package
     (name "r-ivs")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ivs" version))
-              (sha256
-               (base32
-                "06gjlmqqwlp86l708lk36vnxj83r082mbcccvp3x6g0apiy8ak98"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ivs" version))
+       (sha256
+        (base32 "06gjlmqqwlp86l708lk36vnxj83r082mbcccvp3x6g0apiy8ak98"))))
     (properties `((upstream-name . "ivs")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs r-rlang r-lifecycle r-glue))
@@ -308,12 +308,12 @@ in this package were inspired by James Allen's interval algebra, Allen (1983)
   (package
     (name "r-ivregex")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ivregEX" version))
-              (sha256
-               (base32
-                "0zh3rqvhn8ald6lxv9kywy2v1p0nr9ijv6plhpbxc6k51zzsgyl8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ivregEX" version))
+       (sha256
+        (base32 "0zh3rqvhn8ald6lxv9kywy2v1p0nr9ijv6plhpbxc6k51zzsgyl8"))))
     (properties `((upstream-name . "ivregEX")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich r-lmtest r-formula r-aer))
@@ -331,12 +331,12 @@ features.")
   (package
     (name "r-ivreg")
     (version "0.6-2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ivreg" version))
-              (sha256
-               (base32
-                "15iqj8rzmb1hybvnw8h6v321sj4pv7bg67nfk8g9bpzyds3zm9xl"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ivreg" version))
+       (sha256
+        (base32 "15iqj8rzmb1hybvnw8h6v321sj4pv7bg67nfk8g9bpzyds3zm9xl"))))
     (properties `((upstream-name . "ivreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-lmtest r-formula r-car))
@@ -358,12 +358,12 @@ other standard model tools.")
   (package
     (name "r-ivprobit")
     (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ivprobit" version))
-              (sha256
-               (base32
-                "05b5gf5gmi2yrkg61n7w12qlgpnjakd1z8hhqxy6py8hahsf84gm"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ivprobit" version))
+       (sha256
+        (base32 "05b5gf5gmi2yrkg61n7w12qlgpnjakd1z8hhqxy6py8hahsf84gm"))))
     (properties `((upstream-name . "ivprobit")))
     (build-system r-build-system)
     (propagated-inputs (list r-formula))
@@ -378,12 +378,12 @@ Least Squares estimators (Amemiya, Takeshi, (1978) <doi: 10.2307/1911443>).")
   (package
     (name "r-ivmte")
     (version "1.4.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ivmte" version))
-              (sha256
-               (base32
-                "1bwvkw04pn4mf7iyfvaiabgx0qd83si13sr9jpqim9zqqhf1c1dc"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ivmte" version))
+       (sha256
+        (base32 "1bwvkw04pn4mf7iyfvaiabgx0qd83si13sr9jpqim9zqqhf1c1dc"))))
     (properties `((upstream-name . "ivmte")))
     (build-system r-build-system)
     (propagated-inputs (list r-formula))
@@ -418,12 +418,12 @@ installing its API @code{lpSolveAPI}', which is available from CRAN.")
   (package
     (name "r-ivmodel")
     (version "1.9.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ivmodel" version))
-              (sha256
-               (base32
-                "1glm4nwlzyzwbv3nbi23qslnnqf47ps7iyd3wbr1bfdln0sr2s0l"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ivmodel" version))
+       (sha256
+        (base32 "1glm4nwlzyzwbv3nbi23qslnnqf47ps7iyd3wbr1bfdln0sr2s0l"))))
     (properties `((upstream-name . "ivmodel")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2 r-matrix r-ggplot2 r-formula))
@@ -441,12 +441,12 @@ Small (2020) <http://pages.cs.wisc.edu/~hyunseung/> for details.")
   (package
     (name "r-ivitr")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ivitr" version))
-              (sha256
-               (base32
-                "0fc5svmkxv0s20ipwbvkvmmh1w5gb1g6va496fa9qbf99wifnmrx"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ivitr" version))
+       (sha256
+        (base32 "0fc5svmkxv0s20ipwbvkvmmh1w5gb1g6va496fa9qbf99wifnmrx"))))
     (properties `((upstream-name . "ivitr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-randomforest r-nnet r-dplyr))
@@ -469,12 +469,12 @@ install.packages(\"@code{locClass}\", repos=\"<http://R-Forge.R-project.org>\")'
   (package
     (name "r-ivgets")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ivgets" version))
-              (sha256
-               (base32
-                "19bqfasrvdqvs2fvxh7h2l16qkm3rmcsv6m83x726i1i6adqj2bq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ivgets" version))
+       (sha256
+        (base32 "19bqfasrvdqvs2fvxh7h2l16qkm3rmcsv6m83x726i1i6adqj2bq"))))
     (properties `((upstream-name . "ivgets")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-ivreg r-gets))
@@ -492,12 +492,12 @@ can be used to detect outliers and structural breaks in the sample.")
   (package
     (name "r-ivdoctr")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ivdoctr" version))
-              (sha256
-               (base32
-                "0204blq5yxpwz00vf49k678ccnyih0lbglbxhm1c69hx5p4a62qn"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ivdoctr" version))
+       (sha256
+        (base32 "0204blq5yxpwz00vf49k678ccnyih0lbglbxhm1c69hx5p4a62qn"))))
     (properties `((upstream-name . "ivdoctr")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich
@@ -523,12 +523,12 @@ regressions.  Package based on @code{DiTraglia} and Garcia-Jimeno (2020)
   (package
     (name "r-ivdiag")
     (version "1.0.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ivDiag" version))
-              (sha256
-               (base32
-                "17rwdn6svbb93winnjsfx815mhg3sw21csi3khsn66kjgnxisqi7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ivDiag" version))
+       (sha256
+        (base32 "17rwdn6svbb93winnjsfx815mhg3sw21csi3khsn66kjgnxisqi7"))))
     (properties `((upstream-name . "ivDiag")))
     (build-system r-build-system)
     (propagated-inputs (list r-wcorr
@@ -558,12 +558,12 @@ local-to-zero tests.")
   (package
     (name "r-ivdesign")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ivdesign" version))
-              (sha256
-               (base32
-                "02v2cnljz3gk7mb8q3p1i54rj6l02r4pirznnrshy092zvrvr26m"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ivdesign" version))
+       (sha256
+        (base32 "02v2cnljz3gk7mb8q3p1i54rj6l02r4pirznnrshy092zvrvr26m"))))
     (properties `((upstream-name . "ivdesign")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=ivdesign")
@@ -582,12 +582,12 @@ cluster effect ratio.  To test the third estimand, user needs to install Gurobi
   (package
     (name "r-ivdesc")
     (version "1.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ivdesc" version))
-              (sha256
-               (base32
-                "0b28xghncvq182kl19m8k1frnr2cqj7nvnhcd831kfd84bk2sz13"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ivdesc" version))
+       (sha256
+        (base32 "0b28xghncvq182kl19m8k1frnr2cqj7nvnhcd831kfd84bk2sz13"))))
     (properties `((upstream-name . "ivdesc")))
     (build-system r-build-system)
     (propagated-inputs (list r-rsample r-purrr r-knitr))
@@ -606,12 +606,12 @@ Maathuis, Kelz and Keele (2021) <@code{arXiv:2103.06328>}.")
   (package
     (name "r-ivabss")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ivaBSS" version))
-              (sha256
-               (base32
-                "1pcls9lgj6i7qad5y28bvj2nra8kpnjslcdkjvl1q1aq8ig1yb98"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ivaBSS" version))
+       (sha256
+        (base32 "1pcls9lgj6i7qad5y28bvj2nra8kpnjslcdkjvl1q1aq8ig1yb98"))))
     (properties `((upstream-name . "ivaBSS")))
     (build-system r-build-system)
     (propagated-inputs (list r-bssprep))
@@ -629,12 +629,12 @@ et al. (2011) <doi:10.1109/TSP.2011.2181836> and Lee et al. (2007)
   (package
     (name "r-itsmr")
     (version "1.10")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "itsmr" version))
-              (sha256
-               (base32
-                "1dr8n95rjbsfvw82v2r8rsahxa26f75icp9fn3hfr0d6g0xpkb69"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "itsmr" version))
+       (sha256
+        (base32 "1dr8n95rjbsfvw82v2r8rsahxa26f75icp9fn3hfr0d6g0xpkb69"))))
     (properties `((upstream-name . "itsmr")))
     (build-system r-build-system)
     (home-page "https://georgeweigt.github.io/itsmr-refman.pdf")
@@ -651,12 +651,12 @@ and Forecasting\" by Peter J. Brockwell and Richard A. Davis.
   (package
     (name "r-itsdm")
     (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "itsdm" version))
-              (sha256
-               (base32
-                "1rd55arrha2xy5d68nymz3awycpk0797d9q55ia42rq9n1gi9w9k"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "itsdm" version))
+       (sha256
+        (base32 "1rd55arrha2xy5d68nymz3awycpk0797d9q55ia42rq9n1gi9w9k"))))
     (properties `((upstream-name . "itsdm")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -706,12 +706,12 @@ CMCC-@code{BioClimInd} (see Noce, S., Caporaso, L. and Santini, M. (2020)
   (package
     (name "r-itscalledsoccer")
     (version "0.2.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "itscalledsoccer" version))
-              (sha256
-               (base32
-                "0ykkp75r5irkcdhk0p2ymhsyw2ns08ni5ifzydqq4gjdmjba8rkj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "itscalledsoccer" version))
+       (sha256
+        (base32 "0ykkp75r5irkcdhk0p2ymhsyw2ns08ni5ifzydqq4gjdmjba8rkj"))))
     (properties `((upstream-name . "itscalledsoccer")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -739,12 +739,12 @@ American Soccer Analysis app.")
   (package
     (name "r-its-analysis")
     (version "1.6.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "its.analysis" version))
-              (sha256
-               (base32
-                "1ig7yq59y5xl1z182bbvgx8vsqs9sb1xscf6zxqn1qmy9f0ggf7v"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "its.analysis" version))
+       (sha256
+        (base32 "1ig7yq59y5xl1z182bbvgx8vsqs9sb1xscf6zxqn1qmy9f0ggf7v"))))
     (properties `((upstream-name . "its.analysis")))
     (build-system r-build-system)
     (propagated-inputs (list r-plyr r-ggplot2 r-forecast r-car r-boot))
@@ -763,12 +763,12 @@ the method.")
   (package
     (name "r-itraxr")
     (version "1.12.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "itraxR" version))
-              (sha256
-               (base32
-                "0s3arm3ln2p92by8lfj5fl1rh7cspj9v2q30rb4r99vncxp85alk"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "itraxR" version))
+       (sha256
+        (base32 "0s3arm3ln2p92by8lfj5fl1rh7cspj9v2q30rb4r99vncxp85alk"))))
     (properties `((upstream-name . "itraxR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tiff
@@ -800,12 +800,12 @@ transformation.")
   (package
     (name "r-itp")
     (version "1.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "itp" version))
-              (sha256
-               (base32
-                "0vh5rpl88v5b6s2vfv42ahaphlspiapx82xa74ynic4rmc2ffjis"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "itp" version))
+       (sha256
+        (base32 "0vh5rpl88v5b6s2vfv42ahaphlspiapx82xa74ynic4rmc2ffjis"))))
     (properties `((upstream-name . "itp")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -831,12 +831,12 @@ Oliveira and Takahashi (2021).")
   (package
     (name "r-itop")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iTOP" version))
-              (sha256
-               (base32
-                "1n6nlmmx2h63nksycgzr7qsnd1j6bxa629av7cfd3ihriim7dj47"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iTOP" version))
+       (sha256
+        (base32 "1n6nlmmx2h63nksycgzr7qsnd1j6bxa629av7cfd3ihriim7dj47"))))
     (properties `((upstream-name . "iTOP")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-corpcor))
@@ -856,12 +856,12 @@ for partial matrix correlations and binary data (Aben et al., 2018,
   (package
     (name "r-itol-toolkit")
     (version "1.1.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "itol.toolkit" version))
-              (sha256
-               (base32
-                "0akmjzp65vsl8hnh195lhm58f0qs1c3vy8ljd6njmq2f9fvjgxpj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "itol.toolkit" version))
+       (sha256
+        (base32 "0akmjzp65vsl8hnh195lhm58f0qs1c3vy8ljd6njmq2f9fvjgxpj"))))
     (properties `((upstream-name . "itol.toolkit")))
     (build-system r-build-system)
     (propagated-inputs (list r-wesanderson
@@ -892,12 +892,12 @@ annotation templates.")
   (package
     (name "r-itnr")
     (version "0.7.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ITNr" version))
-              (sha256
-               (base32
-                "0zpyrg4vcn17k75x1i1dp2hw8n2fp34qf4skywx3wrchjpxmsra8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ITNr" version))
+       (sha256
+        (base32 "0zpyrg4vcn17k75x1i1dp2hw8n2fp34qf4skywx3wrchjpxmsra8"))))
     (properties `((upstream-name . "ITNr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xergm-common
@@ -933,12 +933,12 @@ regional trade patterns.")
   (package
     (name "r-itertools2")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "itertools2" version))
-              (sha256
-               (base32
-                "0yra3x9ddvn5pp3jibm69205zazv81bz0cflw4mdvxpqadaf9f96"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "itertools2" version))
+       (sha256
+        (base32 "0yra3x9ddvn5pp3jibm69205zazv81bz0cflw4mdvxpqadaf9f96"))))
     (properties `((upstream-name . "itertools2")))
     (build-system r-build-system)
     (propagated-inputs (list r-iterators))
@@ -953,12 +953,12 @@ efficient looping.")
   (package
     (name "r-iterpc")
     (version "0.4.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iterpc" version))
-              (sha256
-               (base32
-                "06q7l8mz8ws4nn6gb0whnlqs8my2n8z2d2g8fvv3cxd28904dg9q"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iterpc" version))
+       (sha256
+        (base32 "06q7l8mz8ws4nn6gb0whnlqs8my2n8z2d2g8fvv3cxd28904dg9q"))))
     (properties `((upstream-name . "iterpc")))
     (build-system r-build-system)
     (propagated-inputs (list r-iterators r-gmp r-arrangements))
@@ -980,12 +980,12 @@ recommended to switch to arrangements'.")
   (package
     (name "r-iterors")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iterors" version))
-              (sha256
-               (base32
-                "0cvd1c9zmc43ks5sjbii9xvnlrdmyqw3qpf5bkn8c9i0dyrv6ap1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iterors" version))
+       (sha256
+        (base32 "0cvd1c9zmc43ks5sjbii9xvnlrdmyqw3qpf5bkn8c9i0dyrv6ap1"))))
     (properties `((upstream-name . "iterors")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang))
@@ -1004,12 +1004,12 @@ and refined from the iterators', itertools', and itertools2 packages.")
   (package
     (name "r-iterlap")
     (version "1.1-3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iterLap" version))
-              (sha256
-               (base32
-                "079d4hxf1ha8pgibzb4r1yk7xqpzndd7hjbp8294qb26jvvcnd8q"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iterLap" version))
+       (sha256
+        (base32 "079d4hxf1ha8pgibzb4r1yk7xqpzndd7hjbp8294qb26jvvcnd8q"))))
     (properties `((upstream-name . "iterLap")))
     (build-system r-build-system)
     (propagated-inputs (list r-randtoolbox r-quadprog))
@@ -1031,12 +1031,12 @@ skew or multimodal densities.")
   (package
     (name "r-iterator")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iteratoR" version))
-              (sha256
-               (base32
-                "0d0hc2669dsv1v4g5hz7n9rd4y502r4vw9795mi19jfgk662p2ml"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iteratoR" version))
+       (sha256
+        (base32 "0d0hc2669dsv1v4g5hz7n9rd4y502r4vw9795mi19jfgk662p2ml"))))
     (properties `((upstream-name . "iteratoR")))
     (build-system r-build-system)
     (home-page "https://github.com/stevecondylios/iteratoR")
@@ -1050,12 +1050,12 @@ convenient function call inside the loop.")
   (package
     (name "r-iterativehardthresholding")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IterativeHardThresholding" version))
-              (sha256
-               (base32
-                "0vv8v61pzlykdyjivl19q8nr9p22c845y902yljgrvc9ayidczqm"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IterativeHardThresholding" version))
+       (sha256
+        (base32 "0vv8v61pzlykdyjivl19q8nr9p22c845y902yljgrvc9ayidczqm"))))
     (properties `((upstream-name . "IterativeHardThresholding")))
     (build-system r-build-system)
     (propagated-inputs (list r-parallellogger r-cyclops))
@@ -1072,12 +1072,12 @@ this package uses Cyclops for an efficient implementation.")
   (package
     (name "r-itensor")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iTensor" version))
-              (sha256
-               (base32
-                "09js2kiw1prrkn03srz4xas37mwbx85zkawfb93wgl292r31j2x9"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iTensor" version))
+       (sha256
+        (base32 "09js2kiw1prrkn03srz4xas37mwbx85zkawfb93wgl292r31j2x9"))))
     (properties `((upstream-name . "iTensor")))
     (build-system r-build-system)
     (propagated-inputs (list r-rtensor
@@ -1103,12 +1103,12 @@ respectively.  For the details of these methods, see the reference section of
   (package
     (name "r-itemanalysis")
     (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "itemanalysis" version))
-              (sha256
-               (base32
-                "0spnf28ighcvg2haicxf8y88c6myxj3xdrpbiiyajpgivm8pzqqp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "itemanalysis" version))
+       (sha256
+        (base32 "0spnf28ighcvg2haicxf8y88c6myxj3xdrpbiiyajpgivm8pzqqp"))))
     (properties `((upstream-name . "itemanalysis")))
     (build-system r-build-system)
     (propagated-inputs (list r-polycor r-ggplot2 r-car))
@@ -1124,12 +1124,12 @@ any measurement textbook such as Crocker and Algina (2006, ISBN:9780495395911)."
   (package
     (name "r-itdr")
     (version "2.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "itdr" version))
-              (sha256
-               (base32
-                "1aaqpyl6j1zxmy60a1zgkcnmnrp9i44kiiy976baq5l2n10md6x4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "itdr" version))
+       (sha256
+        (base32 "1aaqpyl6j1zxmy60a1zgkcnmnrp9i44kiiy976baq5l2n10md6x4"))))
     (properties `((upstream-name . "itdr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-mass r-magic r-geigen r-energy))
@@ -1155,12 +1155,12 @@ sparse inverse regression estimators proposed by Weng (2022)
   (package
     (name "r-itcsegment")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "itcSegment" version))
-              (sha256
-               (base32
-                "11av3kfd8x29jq4x5axlqfzgwq3ngqkkv72j2yfs9snw2bfzg718"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "itcSegment" version))
+       (sha256
+        (base32 "11av3kfd8x29jq4x5axlqfzgwq3ngqkkv72j2yfs9snw2bfzg718"))))
     (properties `((upstream-name . "itcSegment")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra))
@@ -1176,12 +1176,12 @@ in raster format.")
   (package
     (name "r-itan")
     (version "3.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "itan" version))
-              (sha256
-               (base32
-                "14aabrwvmqiyn8mypiaz80m24a0bczz2fl00f4dk9ham6hww4v1q"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "itan" version))
+       (sha256
+        (base32 "14aabrwvmqiyn8mypiaz80m24a0bczz2fl00f4dk9ham6hww4v1q"))))
     (properties `((upstream-name . "itan")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape r-ggplot2))
@@ -1201,12 +1201,12 @@ distractor and the graphical analysis of each item.")
   (package
     (name "r-italy")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "italy" version))
-              (sha256
-               (base32
-                "0is90xp6980ja12jzi3816jq1y90ifcw6cvfmybb7invj6rr1cks"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "italy" version))
+       (sha256
+        (base32 "0is90xp6980ja12jzi3816jq1y90ifcw6cvfmybb7invj6rr1cks"))))
     (properties `((upstream-name . "italy")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=italy")
@@ -1227,12 +1227,12 @@ are available to assess the accuracy of oneâs method.  Please see Steorts
   (package
     (name "r-iswr")
     (version "2.0-8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ISwR" version))
-              (sha256
-               (base32
-                "1bay7na68awq68bw82dwhcfxp2d3di2dg33islq0mgrhd4sfdfza"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ISwR" version))
+       (sha256
+        (base32 "1bay7na68awq68bw82dwhcfxp2d3di2dg33islq0mgrhd4sfdfza"))))
     (properties `((upstream-name . "ISwR")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=ISwR")
@@ -1246,12 +1246,12 @@ are available to assess the accuracy of oneâs method.  Please see Steorts
   (package
     (name "r-isubgen")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iSubGen" version))
-              (sha256
-               (base32
-                "0kfrgh4399x71mwa5j36nfszd65ybp61fwpc7qj3j9ypmgidwbaj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iSubGen" version))
+       (sha256
+        (base32 "0kfrgh4399x71mwa5j36nfszd65ybp61fwpc7qj3j9ypmgidwbaj"))))
     (properties `((upstream-name . "iSubGen")))
     (build-system r-build-system)
     (propagated-inputs (list r-tensorflow r-philentropy r-keras
@@ -1269,12 +1269,12 @@ and similarity calculations.")
   (package
     (name "r-istats")
     (version "1.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iSTATS" version))
-              (sha256
-               (base32
-                "0fdicyycwh1d1yzrf9241d3cf03vzqyhchwsy191hiwa5fa6bm7w"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iSTATS" version))
+       (sha256
+        (base32 "0fdicyycwh1d1yzrf9241d3cf03vzqyhchwsy191hiwa5fa6bm7w"))))
     (properties `((upstream-name . "iSTATS")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinywidgets
@@ -1302,12 +1302,12 @@ Lindon, J. C., Holmes, E. & Nicholson, J. (2005) <doi:10.1021/ac048630x>.")
   (package
     (name "r-istacr")
     (version "0.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "istacr" version))
-              (sha256
-               (base32
-                "1hg94p0b5zkj50ckxrgas2a8rdwh0avspykscincxkfi0wk1cx0r"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "istacr" version))
+       (sha256
+        (base32 "1hg94p0b5zkj50ckxrgas2a8rdwh0avspykscincxkfi0wk1cx0r"))))
     (properties `((upstream-name . "istacr")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite))
@@ -1323,12 +1323,12 @@ Lindon, J. C., Holmes, E. & Nicholson, J. (2005) <doi:10.1021/ac048630x>.")
   (package
     (name "r-iss")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ISS" version))
-              (sha256
-               (base32
-                "1ab830k0j4s88p31n7da46q2r2jzldpr7pnx168f88xfighj9k4y"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ISS" version))
+       (sha256
+        (base32 "1ab830k0j4s88p31n7da46q2r2jzldpr7pnx168f88xfighj9k4y"))))
     (properties `((upstream-name . "ISS")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack))
@@ -1346,12 +1346,12 @@ Details can be found in the paper by MÃ¼ller, Reeve, Cannings and Samworth
   (package
     (name "r-israd")
     (version "2.5.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ISRaD" version))
-              (sha256
-               (base32
-                "02h64lqqkc7a9n4f0hkz29bvyzjzwc024qr22iqg4m429i41kc3r"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ISRaD" version))
+       (sha256
+        (base32 "02h64lqqkc7a9n4f0hkz29bvyzjzwc024qr22iqg4m429i41kc3r"))))
     (properties `((upstream-name . "ISRaD")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
@@ -1383,12 +1383,12 @@ information visit the IS@code{RaD} website at: <https://soilradiocarbon.org/>.")
   (package
     (name "r-isr")
     (version "2022.4.22")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ISR" version))
-              (sha256
-               (base32
-                "0j31qicbpjgl0igmk37qg10zng31xk6w4dd1izz5pzjwb3w9qkli"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ISR" version))
+       (sha256
+        (base32 "0j31qicbpjgl0igmk37qg10zng31xk6w4dd1izz5pzjwb3w9qkli"))))
     (properties `((upstream-name . "ISR")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -1405,12 +1405,12 @@ data.  The philosophy of the package is described in Guo G. (2020)
   (package
     (name "r-ispdata")
     (version "1.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ispdata" version))
-              (sha256
-               (base32
-                "16vzfwn4q1q0k1m01ibknwm37j2d4x63a3zrrqj25mq8nrg134bs"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ispdata" version))
+       (sha256
+        (base32 "16vzfwn4q1q0k1m01ibknwm37j2d4x63a3zrrqj25mq8nrg134bs"))))
     (properties `((upstream-name . "ispdata")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf
@@ -1433,12 +1433,12 @@ Public Safety Regions, Areas and Circumscriptions.")
   (package
     (name "r-ispd")
     (version "0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ispd" version))
-              (sha256
-               (base32
-                "06h4z342d17rkpr2wwck4sq79kprdq6fgqf10jg8cs1f52q6pq0h"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ispd" version))
+       (sha256
+        (base32 "06h4z342d17rkpr2wwck4sq79kprdq6fgqf10jg8cs1f52q6pq0h"))))
     (properties `((upstream-name . "ispd")))
     (build-system r-build-system)
     (propagated-inputs (list r-ibd))
@@ -1460,12 +1460,12 @@ with respect to subplot treatments.")
   (package
     (name "r-isoweek")
     (version "0.6-2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ISOweek" version))
-              (sha256
-               (base32
-                "1f1h8pgjaa14cvaj8ldl87b4vslxwvyfj46m0hkylwp73sv3g2mm"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ISOweek" version))
+       (sha256
+        (base32 "1f1h8pgjaa14cvaj8ldl87b4vslxwvyfj46m0hkylwp73sv3g2mm"))))
     (properties `((upstream-name . "ISOweek")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr))
@@ -1481,12 +1481,12 @@ calender format yyyy-mm-dd to and from ISO 8601 week format yyyy-Www-d.")
   (package
     (name "r-isowater")
     (version "1.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "isoWater" version))
-              (sha256
-               (base32
-                "10rsivlcza28r386a5rs3lv75vb4aancldyswhqql3cxmd12hzqb"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "isoWater" version))
+       (sha256
+        (base32 "10rsivlcza28r386a5rs3lv75vb4aancldyswhqql3cxmd12hzqb"))))
     (properties `((upstream-name . "isoWater")))
     (build-system r-build-system)
     (propagated-inputs (list r-r2winbugs
@@ -1513,12 +1513,12 @@ adapted from Bowen et al. (2018, <doi:10.1007/s00442-018-4192-5>).")
   (package
     (name "r-isotree")
     (version "0.5.22")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "isotree" version))
-              (sha256
-               (base32
-                "1y274hjhxf0jhhmycjd0p4vwlxsqbwnminqdh3qb61jxlz0r74vr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "isotree" version))
+       (sha256
+        (base32 "1y274hjhxf0jhhmycjd0p4vwlxsqbwnminqdh3qb61jxlz0r74vr"))))
     (properties `((upstream-name . "isotree")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -1548,12 +1548,12 @@ using different splitting criteria.")
   (package
     (name "r-isotracer")
     (version "1.1.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "isotracer" version))
-              (sha256
-               (base32
-                "0qxdri6dq920d39ip1f37h1nzw90fr51bq4xc1m5bjv7vkqrqbks"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "isotracer" version))
+       (sha256
+        (base32 "0qxdri6dq920d39ip1f37h1nzw90fr51bq4xc1m5bjv7vkqrqbks"))))
     (properties `((upstream-name . "isotracer")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -1589,12 +1589,12 @@ Tracer Addition Experiments\" by LÃ³pez-Sepulcre et al. (2020)
   (package
     (name "r-isotoper")
     (version "0.5.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IsotopeR" version))
-              (sha256
-               (base32
-                "0xgha5alh5y5qfz00rl73q4xlamnmrwij7kckljmy6zgrlrdnl6x"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IsotopeR" version))
+       (sha256
+        (base32 "0xgha5alh5y5qfz00rl73q4xlamnmrwij7kckljmy6zgrlrdnl6x"))))
     (properties `((upstream-name . "IsotopeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-runjags r-plotrix r-fgui r-ellipse r-colorspace))
@@ -1609,12 +1609,12 @@ estimation of concentration dependence and measurement error.")
   (package
     (name "r-isotonic-pen")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "isotonic.pen" version))
-              (sha256
-               (base32
-                "1lgw15df08f4dhrjjfr0jqkcvxwad92kflj2px526pcxwkj7cj3i"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "isotonic.pen" version))
+       (sha256
+        (base32 "1lgw15df08f4dhrjjfr0jqkcvxwad92kflj2px526pcxwkj7cj3i"))))
     (properties `((upstream-name . "isotonic.pen")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-coneproj))
@@ -1629,12 +1629,12 @@ regression estimator is calculated with the usual orderings.")
   (package
     (name "r-isotone")
     (version "1.1-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "isotone" version))
-              (sha256
-               (base32
-                "0kpzcfxac3yrvw4rszzc99r1mw78pq6bsgg0h332jamwvffhasgn"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "isotone" version))
+       (sha256
+        (base32 "0kpzcfxac3yrvw4rszzc99r1mw78pq6bsgg0h332jamwvffhasgn"))))
     (properties `((upstream-name . "isotone")))
     (build-system r-build-system)
     (propagated-inputs (list r-nnls))
@@ -1652,12 +1652,12 @@ prespecified.")
   (package
     (name "r-isosurv")
     (version "0.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "isoSurv" version))
-              (sha256
-               (base32
-                "19lhv8xhgqdy3k0x8iz4w83yxfplglwqv3xjzj0njg505lkyslvz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "isoSurv" version))
+       (sha256
+        (base32 "19lhv8xhgqdy3k0x8iz4w83yxfplglwqv3xjzj0njg505lkyslvz"))))
     (properties `((upstream-name . "isoSurv")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-iso))
@@ -1671,12 +1671,12 @@ prespecified.")
   (package
     (name "r-isospecr")
     (version "2.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IsoSpecR" version))
-              (sha256
-               (base32
-                "0cy9y3lh20xxj9sah8s2zrwnbzk39s5xmscj4mskvn897bmlksh6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IsoSpecR" version))
+       (sha256
+        (base32 "0cy9y3lh20xxj9sah8s2zrwnbzk39s5xmscj4mskvn897bmlksh6"))))
     (properties `((upstream-name . "IsoSpecR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -1699,12 +1699,12 @@ Chemistry.  See: Lacki, Valkenborg, Startek (2020)
   (package
     (name "r-isorix")
     (version "0.9.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IsoriX" version))
-              (sha256
-               (base32
-                "0l7d66wjq30mldqy79pwqfp607qhkc2y7hzl6kjxxvqsial6zgwq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IsoriX" version))
+       (sha256
+        (base32 "0l7d66wjq30mldqy79pwqfp607qhkc2y7hzl6kjxxvqsial6zgwq"))))
     (properties `((upstream-name . "IsoriX")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
@@ -1731,12 +1731,12 @@ isotopic ratio. @code{IsoriX} also relies heavily on the package
   (package
     (name "r-isopurer")
     (version "1.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ISOpureR" version))
-              (sha256
-               (base32
-                "1ydhsh3v6n7prrg0dm7hsg8wx1244g791xnz1sjyhljhm31hgwc0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ISOpureR" version))
+       (sha256
+        (base32 "1ydhsh3v6n7prrg0dm7hsg8wx1244g791xnz1sjyhljhm31hgwc0"))))
     (properties `((upstream-name . "ISOpureR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-futile-logger))
@@ -1754,12 +1754,12 @@ normal profiles.")
   (package
     (name "r-isoplotrgui")
     (version "5.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IsoplotRgui" version))
-              (sha256
-               (base32
-                "1s2kmsjk0pnn4vyrxrgg8860ayvc9a122dvrx63rrkck7dshniav"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IsoplotRgui" version))
+       (sha256
+        (base32 "1s2kmsjk0pnn4vyrxrgg8860ayvc9a122dvrx63rrkck7dshniav"))))
     (properties `((upstream-name . "IsoplotRgui")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinylight r-isoplotr))
@@ -1777,12 +1777,12 @@ either be used offline, or hosted on a server to provide online access to the
   (package
     (name "r-isoplotr")
     (version "5.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IsoplotR" version))
-              (sha256
-               (base32
-                "1scv8l2k6hw43w9bfl2v3anhsggfyvsaykysmbixysg8gj76yb7n"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IsoplotR" version))
+       (sha256
+        (base32 "1scv8l2k6hw43w9bfl2v3anhsggfyvsaykysmbixysg8gj76yb7n"))))
     (properties `((upstream-name . "IsoplotR")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -1809,12 +1809,12 @@ as well as 230Th-U evolution plots.")
   (package
     (name "r-isopleuros")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "isopleuros" version))
-              (sha256
-               (base32
-                "19hn9ydby2wi6aim6vb7wjj93f95md0g8sy41djlhr94m5v9xw3d"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "isopleuros" version))
+       (sha256
+        (base32 "19hn9ydby2wi6aim6vb7wjj93f95md0g8sy41djlhr94m5v9xw3d"))))
     (properties `((upstream-name . "isopleuros")))
     (build-system r-build-system)
     (home-page "https://packages.tesselle.org/isopleuros/")
@@ -1831,12 +1831,12 @@ soil texture charts, ceramic phase diagram).")
   (package
     (name "r-isopat")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "isopat" version))
-              (sha256
-               (base32
-                "0fznvgycyd35dh7pbq1xhp667gsficlmycn5pcrqcbs89069xr1s"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "isopat" version))
+       (sha256
+        (base32 "0fznvgycyd35dh7pbq1xhp667gsficlmycn5pcrqcbs89069xr1s"))))
     (properties `((upstream-name . "isopat")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=isopat")
@@ -1850,12 +1850,12 @@ chemical formula.")
   (package
     (name "r-isopam")
     (version "1.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "isopam" version))
-              (sha256
-               (base32
-                "1ygvpdpn1vjkpfl32sp41kss512r051c839yki288xidqg4j3z0a"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "isopam" version))
+       (sha256
+        (base32 "1ygvpdpn1vjkpfl32sp41kss512r051c839yki288xidqg4j3z0a"))))
     (properties `((upstream-name . "isopam")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -1877,12 +1877,12 @@ for species with greater weight and cluster medoids.")
   (package
     (name "r-isoorbi")
     (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "isoorbi" version))
-              (sha256
-               (base32
-                "0f098y43iiwyf6gv1gaq9r22gwk9lbki86vj0pqrvgcdyk4w6azj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "isoorbi" version))
+       (sha256
+        (base32 "0f098y43iiwyf6gv1gaq9r22gwk9lbki86vj0pqrvgcdyk4w6azj"))))
     (properties `((upstream-name . "isoorbi")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -1903,12 +1903,12 @@ spectrometer.  Hilkert et al. (2021) <doi:10.1021/acs.analchem.1c00944>.")
   (package
     (name "r-isokernel")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "isokernel" version))
-              (sha256
-               (base32
-                "04mrbq2822yhcq4q82xwm61a38zsk6w55jgjkp0xnardpv8a39pb"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "isokernel" version))
+       (sha256
+        (base32 "04mrbq2822yhcq4q82xwm61a38zsk6w55jgjkp0xnardpv8a39pb"))))
     (properties `((upstream-name . "isokernel")))
     (build-system r-build-system)
     (propagated-inputs (list r-rann r-matrix))
@@ -1922,12 +1922,12 @@ spectrometer.  Hilkert et al. (2021) <doi:10.1021/acs.analchem.1c00944>.")
   (package
     (name "r-isogeochem")
     (version "1.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "isogeochem" version))
-              (sha256
-               (base32
-                "112pcgbafjkgbfdkqvgz5i5iscfkjasq88k58az50cf47bqsqg0g"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "isogeochem" version))
+       (sha256
+        (base32 "112pcgbafjkgbfdkqvgz5i5iscfkjasq88k58az50cf47bqsqg0g"))))
     (properties `((upstream-name . "isogeochem")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -1943,12 +1943,12 @@ fractionation factors, and apply paleothermometry equations.")
   (package
     (name "r-isogene")
     (version "1.0-24")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IsoGene" version))
-              (sha256
-               (base32
-                "0flm0mszankvl3aizwsazyhvz2xkr4gfqiqywpc0r1swqj19610r"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IsoGene" version))
+       (sha256
+        (base32 "0flm0mszankvl3aizwsazyhvz2xkr4gfqiqywpc0r1swqj19610r"))))
     (properties `((upstream-name . "IsoGene")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable r-iso r-ff r-biobase r-affy))
@@ -1969,12 +1969,12 @@ permutations.")
   (package
     (name "r-isodistrreg")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "isodistrreg" version))
-              (sha256
-               (base32
-                "0na7jipwzr16afvz2l6wxh62mv0mrq1ma1qwxnys83zhr0dca099"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "isodistrreg" version))
+       (sha256
+        (base32 "0na7jipwzr16afvz2l6wxh62mv0mrq1ma1qwxnys83zhr0dca099"))))
     (properties `((upstream-name . "isodistrreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-osqp r-matrix))
@@ -1990,12 +1990,12 @@ Gneiting (2020) <@code{arXiv:1909.03725>}.")
   (package
     (name "r-isocorr")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IsoCorr" version))
-              (sha256
-               (base32
-                "0rhbclbpfd9d0dawbwwprlzx2j9k59gsmrb11yabiv5305b7vpx8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IsoCorr" version))
+       (sha256
+        (base32 "0rhbclbpfd9d0dawbwwprlzx2j9k59gsmrb11yabiv5305b7vpx8"))))
     (properties `((upstream-name . "IsoCorr")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=IsoCorr")
@@ -2014,12 +2014,12 @@ corrections performed.")
   (package
     (name "r-isocor")
     (version "0.1.40")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IsoCor" version))
-              (sha256
-               (base32
-                "191y51mg6kii4x99c7437888kkacml0ch53qh1gbwv10gl2c4w8z"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IsoCor" version))
+       (sha256
+        (base32 "191y51mg6kii4x99c7437888kkacml0ch53qh1gbwv10gl2c4w8z"))))
     (properties `((upstream-name . "IsoCor")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinyjs
@@ -2056,12 +2056,12 @@ online at <https://jali.shinyapps.io/isocor>.")
   (package
     (name "r-isocir")
     (version "2.0-7.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "isocir" version))
-              (sha256
-               (base32
-                "0jgm0a26frq4fs5d578c44bpn15nshvzmrqfzcbwydf58x7w6sj2"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "isocir" version))
+       (sha256
+        (base32 "0jgm0a26frq4fs5d578c44bpn15nshvzmrqfzcbwydf58x7w6sj2"))))
     (properties `((upstream-name . "isocir")))
     (build-system r-build-system)
     (propagated-inputs (list r-tsp r-combinat r-circular))
@@ -2076,12 +2076,12 @@ order restrictions.")
   (package
     (name "r-isocheck")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IsoCheck" version))
-              (sha256
-               (base32
-                "06g0srp14yiha95mbmifaqf5yr5ppjnc20nyr237ah3l776mhsif"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IsoCheck" version))
+       (sha256
+        (base32 "06g0srp14yiha95mbmifaqf5yr5ppjnc20nyr237ah3l776mhsif"))))
     (properties `((upstream-name . "IsoCheck")))
     (build-system r-build-system)
     (propagated-inputs (list r-plyr r-gtools r-dplyr))
@@ -2099,12 +2099,12 @@ Mendivil (2019) <doi:10.1007/s42519-019-0064-5>.")
   (package
     (name "r-isocat")
     (version "0.2.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "isocat" version))
-              (sha256
-               (base32
-                "1d6pi2l1lfi4226890lsfa02v0df1mc8gi214icsbk4fid4jygsx"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "isocat" version))
+       (sha256
+        (base32 "1d6pi2l1lfi4226890lsfa02v0df1mc8gi214icsbk4fid4jygsx"))))
     (properties `((upstream-name . "isocat")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-raster r-plyr r-magrittr r-foreach))
@@ -2130,12 +2130,12 @@ package <doi:10.1515/ami-2020-0004>.")
   (package
     (name "r-isocalcr")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "isocalcR" version))
-              (sha256
-               (base32
-                "1nn7pd0xj2j3xi5bvd6fvm062h1j0g1nxmp374r313fi2b0qcp0c"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "isocalcR" version))
+       (sha256
+        (base32 "1nn7pd0xj2j3xi5bvd6fvm062h1j0g1nxmp374r313fi2b0qcp0c"))))
     (properties `((upstream-name . "isocalcR")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -2152,12 +2152,12 @@ in Global Change Biology <doi:10.1111/gcb.16407>.")
   (package
     (name "r-isobxr")
     (version "2.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "isobxr" version))
-              (sha256
-               (base32
-                "1k6zky6v3hjw952jg4l0hnicw11iiqmxh7hcdjcb2nk2f4r4qn4g"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "isobxr" version))
+       (sha256
+        (base32 "1k6zky6v3hjw952jg4l0hnicw11iiqmxh7hcdjcb2nk2f4r4qn4g"))))
     (properties `((upstream-name . "isobxr")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
@@ -2194,12 +2194,12 @@ University Press, Cambridge <doi:10.1017/CBO9780511622960>.")
   (package
     (name "r-isoboost")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "isoboost" version))
-              (sha256
-               (base32
-                "1c239l9rfjr8scpfq5c9rl55jabk64jchcdndjsb9s5qyx2x0qdr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "isoboost" version))
+       (sha256
+        (base32 "1c239l9rfjr8scpfq5c9rl55jabk64jchcdndjsb9s5qyx2x0qdr"))))
     (properties `((upstream-name . "isoboost")))
     (build-system r-build-system)
     (propagated-inputs (list r-rpart r-isotone r-iso))
@@ -2216,12 +2216,12 @@ information, yielding more accurate and easily interpretable rules.")
   (package
     (name "r-iso11784tools")
     (version "1.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ISO11784Tools" version))
-              (sha256
-               (base32
-                "0nl7la7g6028bal6swnfplny81ngpfcrac46nlnpk2d99bpfvfs6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ISO11784Tools" version))
+       (sha256
+        (base32 "0nl7la7g6028bal6swnfplny81ngpfcrac46nlnpk2d99bpfvfs6"))))
     (properties `((upstream-name . "ISO11784Tools")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-stringr r-stringi r-dplyr))
@@ -2248,12 +2248,12 @@ fact that the PIT tags will transmit their binary code Least Significant Bit
   (package
     (name "r-isnullptr")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "isnullptr" version))
-              (sha256
-               (base32
-                "0kwjxq59n3qncdw63vsdvz7v5mzbl5lmckdfgiiw35pzmahnxzh9"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "isnullptr" version))
+       (sha256
+        (base32 "0kwjxq59n3qncdw63vsdvz7v5mzbl5lmckdfgiiw35pzmahnxzh9"))))
     (properties `((upstream-name . "isnullptr")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=isnullptr")
@@ -2268,12 +2268,12 @@ in case of a null pointer.")
   (package
     (name "r-isni")
     (version "1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "isni" version))
-              (sha256
-               (base32
-                "02a4vbhk26w796kxsyzqfp3bqxn64byfd5x5qma09lmdaxzmm71m"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "isni" version))
+       (sha256
+        (base32 "02a4vbhk26w796kxsyzqfp3bqxn64byfd5x5qma09lmdaxzmm71m"))))
     (properties `((upstream-name . "isni")))
     (build-system r-build-system)
     (propagated-inputs (list r-nnet
@@ -2307,12 +2307,12 @@ see Troxel Ma and Heitjan (2004) and Xie and Heitjan (2004)
   (package
     (name "r-ismtchile")
     (version "2.1.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ismtchile" version))
-              (sha256
-               (base32
-                "0b2y5r8r0vfin10qqnym80dz7vzk49hx6ic7gsnq3kn53wqrqhgk"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ismtchile" version))
+       (sha256
+        (base32 "0b2y5r8r0vfin10qqnym80dz7vzk49hx6ic7gsnq3kn53wqrqhgk"))))
     (properties `((upstream-name . "ismtchile")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-dplyr))
@@ -2334,12 +2334,12 @@ Observatorio de Ciudades UC. The full methodology is available at \"ISMT\"
   (package
     (name "r-ismev")
     (version "1.42")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ismev" version))
-              (sha256
-               (base32
-                "19giigxwf62cdkf7mglsca649n2ignb9bxyg9zl7im1vm3ngnmqd"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ismev" version))
+       (sha256
+        (base32 "19giigxwf62cdkf7mglsca649n2ignb9bxyg9zl7im1vm3ngnmqd"))))
     (properties `((upstream-name . "ismev")))
     (build-system r-build-system)
     (propagated-inputs (list r-mgcv))
@@ -2356,12 +2356,12 @@ statistics, peaks over thresholds and point processes.")
   (package
     (name "r-ism")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ISM" version))
-              (sha256
-               (base32
-                "0by0w6zgnwcwzbmxx16s8mb1avhc6aiavqp0qkxx6hr70vrgb997"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ISM" version))
+       (sha256
+        (base32 "0by0w6zgnwcwzbmxx16s8mb1avhc6aiavqp0qkxx6hr70vrgb997"))))
     (properties `((upstream-name . "ISM")))
     (build-system r-build-system)
     (propagated-inputs (list r-xlsxjars r-xlsx r-rjava))
@@ -2381,12 +2381,12 @@ Warfield,J.N. (1974, E-ISSN:2168-2909).")
   (package
     (name "r-islr2")
     (version "1.3-2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ISLR2" version))
-              (sha256
-               (base32
-                "0ljz5lb5srilziyqgka4rcp7d5r4hs6jq9fm3gi1g57agn896vyn"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ISLR2" version))
+       (sha256
+        (base32 "0ljz5lb5srilziyqgka4rcp7d5r4hs6jq9fm3gi1g57agn896vyn"))))
     (properties `((upstream-name . "ISLR2")))
     (build-system r-build-system)
     (home-page "https://www.statlearning.com")
@@ -2402,12 +2402,12 @@ some new datasets.")
   (package
     (name "r-islr")
     (version "1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ISLR" version))
-              (sha256
-               (base32
-                "1hr0r00m9y39gzb4q7nip07mhxmaly12zwmwkisyx641h0vcclbi"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ISLR" version))
+       (sha256
+        (base32 "1hr0r00m9y39gzb4q7nip07mhxmaly12zwmwkisyx641h0vcclbi"))))
     (properties `((upstream-name . "ISLR")))
     (build-system r-build-system)
     (home-page "https://www.statlearning.com")
@@ -2422,12 +2422,12 @@ Statistical Learning with Applications in R'.")
   (package
     (name "r-islasso")
     (version "1.5.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "islasso" version))
-              (sha256
-               (base32
-                "1dq8i1b7n78nl1hnx0g80gc16ryqpf7x6mv4pz4f6n5fc24c6vx3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "islasso" version))
+       (sha256
+        (base32 "1dq8i1b7n78nl1hnx0g80gc16ryqpf7x6mv4pz4f6n5fc24c6vx3"))))
     (properties `((upstream-name . "islasso")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-glmnet))
@@ -2447,12 +2447,12 @@ original paper; see <doi:10.1177/0962280219842890> and discussed in a tutorial
   (package
     (name "r-island")
     (version "0.2.9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "island" version))
-              (sha256
-               (base32
-                "0s76f1i22cnc5c1dzswflq43qgcpssdkb32xc2j0ajy4r8xak7kz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "island" version))
+       (sha256
+        (base32 "0s76f1i22cnc5c1dzswflq43qgcpssdkb32xc2j0ajy4r8xak7kz"))))
     (properties `((upstream-name . "island")))
     (build-system r-build-system)
     (inputs (list gsl))
@@ -2471,12 +2471,12 @@ assembly, and performs model selection.")
   (package
     (name "r-isingsampler")
     (version "0.2.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IsingSampler" version))
-              (sha256
-               (base32
-                "195xl9ivdhpqbl291x3cji343lgg8wsy20yz71iv7cg6g5ni8vvx"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IsingSampler" version))
+       (sha256
+        (base32 "195xl9ivdhpqbl291x3cji343lgg8wsy20yz71iv7cg6g5ni8vvx"))))
     (properties `((upstream-name . "IsingSampler")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-plyr r-nnet r-magrittr r-dplyr))
@@ -2493,12 +2493,12 @@ the Ising model the distribution can only be computed up to ~10 nodes.")
   (package
     (name "r-isinglenzmc")
     (version "0.2.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "isingLenzMC" version))
-              (sha256
-               (base32
-                "1pd1s3a1rv7vlxd5db1pgwdjps8w5im4zz2h3qzal9cwbis0hb51"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "isingLenzMC" version))
+       (sha256
+        (base32 "1pd1s3a1rv7vlxd5db1pgwdjps8w5im4zz2h3qzal9cwbis0hb51"))))
     (properties `((upstream-name . "isingLenzMC")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=isingLenzMC")
@@ -2516,12 +2516,12 @@ boundary conditions.  Utility functions for exact solutions are provided.")
   (package
     (name "r-isinglandr")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Isinglandr" version))
-              (sha256
-               (base32
-                "157l54xhvi2cqmw143243hl7371dgynp2phi6r969clsswg800sx"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Isinglandr" version))
+       (sha256
+        (base32 "157l54xhvi2cqmw143243hl7371dgynp2phi6r969clsswg800sx"))))
     (properties `((upstream-name . "Isinglandr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -2554,12 +2554,12 @@ the stability of network states, as well as visualizing the simulation process."
   (package
     (name "r-isingfit")
     (version "0.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IsingFit" version))
-              (sha256
-               (base32
-                "1prdzzp15klkdy72379bjksdgxr15nk16pqm35w95341cddxchc7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IsingFit" version))
+       (sha256
+        (base32 "1prdzzp15klkdy72379bjksdgxr15nk16pqm35w95341cddxchc7"))))
     (properties `((upstream-name . "IsingFit")))
     (build-system r-build-system)
     (propagated-inputs (list r-qgraph r-matrix r-glmnet))
@@ -2578,12 +2578,12 @@ with binary data.")
   (package
     (name "r-isfun")
     (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iSFun" version))
-              (sha256
-               (base32
-                "14m9wzvs4knq80kvrdqck9f0pyk7hricdclz0f8z9nq85djl4vim"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iSFun" version))
+       (sha256
+        (base32 "14m9wzvs4knq80kvrdqck9f0pyk7hricdclz0f8z9nq85djl4vim"))))
     (properties `((upstream-name . "iSFun")))
     (build-system r-build-system)
     (propagated-inputs (list r-irlba r-caret))
@@ -2608,12 +2608,12 @@ sparse principal component analysis.  Journal of Multivariate Analysis,
   (package
     (name "r-isetools")
     (version "3.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ISEtools" version))
-              (sha256
-               (base32
-                "1dj8q1072j7sn7j9s2mjxm12k6kn5gcqpic8jp2k1f3f7b85dbij"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ISEtools" version))
+       (sha256
+        (base32 "1dj8q1072j7sn7j9s2mjxm12k6kn5gcqpic8jp2k1f3f7b85dbij"))))
     (properties `((upstream-name . "ISEtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-coda))
@@ -2636,12 +2636,12 @@ Alsaedi, B.S.O., Granados-Focil, S., Radu, A., and @code{McGraw}, C.M. (2020)
   (package
     (name "r-isdparser")
     (version "0.4.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "isdparser" version))
-              (sha256
-               (base32
-                "05xkffmiiyhas5hzdjdylbrvh6fjc2fjh7s00iwjxkp4ba7rwq3g"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "isdparser" version))
+       (sha256
+        (base32 "05xkffmiiyhas5hzdjdylbrvh6fjc2fjh7s00iwjxkp4ba7rwq3g"))))
     (properties `((upstream-name . "isdparser")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-lubridate r-data-table))
@@ -2663,12 +2663,12 @@ for parsing entire files, or individual lines of data.")
   (package
     (name "r-isdm")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iSDM" version))
-              (sha256
-               (base32
-                "1hzs187mwv3k2wx6dpvkizjhkcx63mznd06wiw6047lf5jrlif0a"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iSDM" version))
+       (sha256
+        (base32 "1hzs187mwv3k2wx6dpvkizjhkcx63mznd06wiw6047lf5jrlif0a"))))
     (properties `((upstream-name . "iSDM")))
     (build-system r-build-system)
     (propagated-inputs (list r-virtualspecies
@@ -2694,12 +2694,12 @@ realized distributions of invasive species within the invaded range.")
   (package
     (name "r-isdals")
     (version "3.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "isdals" version))
-              (sha256
-               (base32
-                "01khfxymh708r4d9ddla6mnc4qcy76xi7l7l2y4za7lblfsmr41r"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "isdals" version))
+       (sha256
+        (base32 "01khfxymh708r4d9ddla6mnc4qcy76xi7l7l2y4za7lblfsmr41r"))))
     (properties `((upstream-name . "isdals")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=isdals")
@@ -2715,12 +2715,12 @@ Analysis for the Life Sciences, Second edition\" by @code{EkstrÃ¸m} and SÃ¸r
   (package
     (name "r-iscores")
     (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Iscores" version))
-              (sha256
-               (base32
-                "01xv3003yni984dyn0iwnn3kkl05ij8j21cxbmj9jl9zbw44pzi1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Iscores" version))
+       (sha256
+        (base32 "01xv3003yni984dyn0iwnn3kkl05ij8j21cxbmj9jl9zbw44pzi1"))))
     (properties `((upstream-name . "Iscores")))
     (build-system r-build-system)
     (propagated-inputs (list r-ranger r-kernlab))
@@ -2736,12 +2736,12 @@ missing value imputations in the broad sense as introduced in Michel et al.
   (package
     (name "r-iscocrosswalks")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iscoCrosswalks" version))
-              (sha256
-               (base32
-                "00pzz0fy0k7zvi5pf389w4g5z96rbc4gzjvhghcmbq71z319wwcn"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iscoCrosswalks" version))
+       (sha256
+        (base32 "00pzz0fy0k7zvi5pf389w4g5z96rbc4gzjvhghcmbq71z319wwcn"))))
     (properties `((upstream-name . "iscoCrosswalks")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-labourr r-data-table))
@@ -2764,12 +2764,12 @@ to the requested degree Occupational Hierarchical level.")
   (package
     (name "r-isco08conversions")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ISCO08ConveRsions" version))
-              (sha256
-               (base32
-                "0vr41ckgr51iakkc900wq2fvra9l2w8l70vz0n40lqzp0nwj9ivn"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ISCO08ConveRsions" version))
+       (sha256
+        (base32 "0vr41ckgr51iakkc900wq2fvra9l2w8l70vz0n40lqzp0nwj9ivn"))))
     (properties `((upstream-name . "ISCO08ConveRsions")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=ISCO08ConveRsions")
@@ -2786,12 +2786,12 @@ and jobs.")
   (package
     (name "r-isatabr")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "isatabr" version))
-              (sha256
-               (base32
-                "1qlc6007pbjgzmzii0bwifr0npdhlwnipk0c9yhxc2d85qid5a9m"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "isatabr" version))
+       (sha256
+        (base32 "1qlc6007pbjgzmzii0bwifr0npdhlwnipk0c9yhxc2d85qid5a9m"))))
     (properties `((upstream-name . "isatabr")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -2808,12 +2808,12 @@ It also contains methods for processing assay data.")
   (package
     (name "r-isat")
     (version "1.0.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ISAT" version))
-              (sha256
-               (base32
-                "0xlq568spfz527jxbqamrn1j87hnasg0kp2bcyjycaghmhsc6zmg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ISAT" version))
+       (sha256
+        (base32 "0xlq568spfz527jxbqamrn1j87hnasg0kp2bcyjycaghmhsc6zmg"))))
     (properties `((upstream-name . "ISAT")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-gtools))
@@ -2832,12 +2832,12 @@ spatial distance for each cell-type.")
   (package
     (name "r-isar")
     (version "0.1.12")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ISAR" version))
-              (sha256
-               (base32
-                "0c6ahpkpbmy8zg7ac0j3v01jw59g3h8n6s8c6lkrmk1my42yzr1c"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ISAR" version))
+       (sha256
+        (base32 "0c6ahpkpbmy8zg7ac0j3v01jw59g3h8n6s8c6lkrmk1my42yzr1c"))))
     (properties `((upstream-name . "ISAR")))
     (build-system r-build-system)
     (home-page "https://github.com/rtelmore/ISAR")
@@ -2852,12 +2852,12 @@ contains sixteen datasets and should be published in early 2024.")
   (package
     (name "r-isa2")
     (version "0.3.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "isa2" version))
-              (sha256
-               (base32
-                "0rjwnvmqmzwnch8j2zdh2b0drr76bq3c4f18h2glj44svn2dlmk2"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "isa2" version))
+       (sha256
+        (base32 "0rjwnvmqmzwnch8j2zdh2b0drr76bq3c4f18h2glj44svn2dlmk2"))))
     (properties `((upstream-name . "isa2")))
     (build-system r-build-system)
     (propagated-inputs (list r-lattice))
@@ -2872,12 +2872,12 @@ module or bicluster is a block of the reordered input matrix.")
   (package
     (name "r-irtshiny")
     (version "1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IRTShiny" version))
-              (sha256
-               (base32
-                "094ax94y6k5z4vlxfla2w19f57q0z32nwwd5npjbgmnkhvfhhl9v"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IRTShiny" version))
+       (sha256
+        (base32 "094ax94y6k5z4vlxfla2w19f57q0z32nwwd5npjbgmnkhvfhhl9v"))))
     (properties `((upstream-name . "IRTShiny")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinyace
@@ -2897,12 +2897,12 @@ Provides graphics for characteristic and information curves.")
   (package
     (name "r-irtreliability")
     (version "0.1-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "irtreliability" version))
-              (sha256
-               (base32
-                "15qs8bvgrwajj5kfd57rd34l1p2805ilyd7w60ngrqc14d6az9d2"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "irtreliability" version))
+       (sha256
+        (base32 "15qs8bvgrwajj5kfd57rd34l1p2805ilyd7w60ngrqc14d6az9d2"))))
     (properties `((upstream-name . "irtreliability")))
     (build-system r-build-system)
     (propagated-inputs (list r-mirt r-ltm r-fastghquad))
@@ -2922,12 +2922,12 @@ reliability coefficient estimators, derived in Andersson, B. and Xin, T. (2018)
   (package
     (name "r-irtrees")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "irtrees" version))
-              (sha256
-               (base32
-                "003gmnv2d0xsqd54chadkbd8c8kf8fwr4lza86k6qkfs7d3ifkjm"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "irtrees" version))
+       (sha256
+        (base32 "003gmnv2d0xsqd54chadkbd8c8kf8fwr4lza86k6qkfs7d3ifkjm"))))
     (properties `((upstream-name . "irtrees")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-diagrammer))
@@ -2943,12 +2943,12 @@ models from data with different shape and using different software.")
   (package
     (name "r-irtq")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "irtQ" version))
-              (sha256
-               (base32
-                "1728699zrzpazjs7csvlzlcz7mncxspsq3lykd3i0rrpw6cixwsn"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "irtQ" version))
+       (sha256
+        (base32 "1728699zrzpazjs7csvlzlcz7mncxspsq3lykd3i0rrpw6cixwsn"))))
     (properties `((upstream-name . "irtQ")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -2989,12 +2989,12 @@ referring to the Pi(), Ji(), and Ii() functions of the @code{catR} package
   (package
     (name "r-irtpwr")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "irtpwr" version))
-              (sha256
-               (base32
-                "12ypvfqirqniszxwx01h9hcp3pdk7yd379j42pys13rd8m05ii4m"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "irtpwr" version))
+       (sha256
+        (base32 "12ypvfqirqniszxwx01h9hcp3pdk7yd379j42pys13rd8m05ii4m"))))
     (properties `((upstream-name . "irtpwr")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-random r-mirt r-ggplot2 r-digest
@@ -3015,12 +3015,12 @@ estimation.  The methods are described in our paper (Zimmer et al. (2022)
   (package
     (name "r-irtgui")
     (version "0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "irtGUI" version))
-              (sha256
-               (base32
-                "1hyabm9wvld1b1gvcn02yyd8j1wrpfmpxkcj505az64lqj4p7yj0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "irtGUI" version))
+       (sha256
+        (base32 "1hyabm9wvld1b1gvcn02yyd8j1wrpfmpxkcj505az64lqj4p7yj0"))))
     (properties `((upstream-name . "irtGUI")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
@@ -3047,12 +3047,12 @@ Interface.")
   (package
     (name "r-irtest")
     (version "1.11.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IRTest" version))
-              (sha256
-               (base32
-                "0wy0ai2mxpsag7psnzdicv7h299x8g00zkys7jr8h0kqbsx1llyz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IRTest" version))
+       (sha256
+        (base32 "0wy0ai2mxpsag7psnzdicv7h299x8g00zkys7jr8h0kqbsx1llyz"))))
     (properties `((upstream-name . "IRTest")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2 r-dcurver r-betafunctions))
@@ -3075,12 +3075,12 @@ distribution.")
   (package
     (name "r-irtdemo")
     (version "0.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "irtDemo" version))
-              (sha256
-               (base32
-                "0rpwryybnj7b4bxn0mn1m496y85s2fpqdd78lmdl6jg1ck4j4pb3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "irtDemo" version))
+       (sha256
+        (base32 "0rpwryybnj7b4bxn0mn1m496y85s2fpqdd78lmdl6jg1ck4j4pb3"))))
     (properties `((upstream-name . "irtDemo")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-fgarch))
@@ -3096,12 +3096,12 @@ multidimensional IRT models.")
   (package
     (name "r-irtbemm")
     (version "1.0.8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IRTBEMM" version))
-              (sha256
-               (base32
-                "0n48wi1lha7rbi9b8q71y9wvxkjsglwnyhzd1yhdbfms6768slmv"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IRTBEMM" version))
+       (sha256
+        (base32 "0n48wi1lha7rbi9b8q71y9wvxkjsglwnyhzd1yhdbfms6768slmv"))))
     (properties `((upstream-name . "IRTBEMM")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=IRTBEMM")
@@ -3128,12 +3128,12 @@ likelihood estimates are available.")
   (package
     (name "r-irtawsi")
     (version "0.3.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "irtawsi" version))
-              (sha256
-               (base32
-                "1fxz0k9pyf1h0mv64lj8p1n5yhgmrzs5q0vq8l77sg3zd8gv66pf"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "irtawsi" version))
+       (sha256
+        (base32 "1fxz0k9pyf1h0mv64lj8p1n5yhgmrzs5q0vq8l77sg3zd8gv66pf"))))
     (properties `((upstream-name . "irtawsi")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinywidgets
@@ -3160,12 +3160,12 @@ Theory.")
   (package
     (name "r-irt")
     (version "0.2.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "irt" version))
-              (sha256
-               (base32
-                "1qckf91pady8gbp0bdbskijyqmmv2d9icb6ihmf0d2r49f37q4fh"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "irt" version))
+       (sha256
+        (base32 "1qckf91pady8gbp0bdbskijyqmmv2d9icb6ihmf0d2r49f37q4fh"))))
     (properties `((upstream-name . "irt")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -3182,12 +3182,12 @@ Computerized Adaptive Testing (CAT) functions that are used in psychometrics.")
   (package
     (name "r-irrna")
     (version "0.2.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "irrNA" version))
-              (sha256
-               (base32
-                "1s50k0vygqh3zcvy5j6h5krv9gfiv8sakmnbf90hpkh0rlirgf88"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "irrNA" version))
+       (sha256
+        (base32 "1s50k0vygqh3zcvy5j6h5krv9gfiv8sakmnbf90hpkh0rlirgf88"))))
     (properties `((upstream-name . "irrNA")))
     (build-system r-build-system)
     (home-page "https://CRAN.R-project.org/package=irrNA")
@@ -3208,12 +3208,12 @@ Kendall & Babington Smith (1939) \\doi{10.1214/aoms/1177732186}.")
   (package
     (name "r-irricc")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "irrICC" version))
-              (sha256
-               (base32
-                "0vi5g97kbyhwxz242d1hpqf11izd3kmlzh3997v07md1llcsp6s3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "irrICC" version))
+       (sha256
+        (base32 "0vi5g97kbyhwxz242d1hpqf11izd3kmlzh3997v07md1llcsp6s3"))))
     (properties `((upstream-name . "irrICC")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -3233,12 +3233,12 @@ Advanced Analytics, LLC.")
   (package
     (name "r-irreglong")
     (version "0.3.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IrregLong" version))
-              (sha256
-               (base32
-                "0gavbvmn9m1kamlyg9sb5zxpwq9gc32xcz14m6aqqrdps2xyv3kn"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IrregLong" version))
+       (sha256
+        (base32 "0gavbvmn9m1kamlyg9sb5zxpwq9gc32xcz14m6aqqrdps2xyv3kn"))))
     (properties `((upstream-name . "IrregLong")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-geepack r-data-table))
@@ -3260,12 +3260,12 @@ models (Liang Y (2009) <doi: 10.1111/j.1541-0420.2008.01104.x>).")
   (package
     (name "r-irrcac")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "irrCAC" version))
-              (sha256
-               (base32
-                "1j9z8vz5zcl51a8qq6maf9sw0dqaknkrai7gp31mzag7b6vwms06"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "irrCAC" version))
+       (sha256
+        (base32 "1j9z8vz5zcl51a8qq6maf9sw0dqaknkrai7gp31mzag7b6vwms06"))))
     (properties `((upstream-name . "irrCAC")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -3285,12 +3285,12 @@ Inter-Rater Reliability,\" 4th edition, Advanced Analytics, LLC.")
   (package
     (name "r-irr")
     (version "0.84.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "irr" version))
-              (sha256
-               (base32
-                "1hs4ylqm51smrmgsph7z9arwkz5px2a320acar324fkjdd3yifp7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "irr" version))
+       (sha256
+        (base32 "1hs4ylqm51smrmgsph7z9arwkz5px2a320acar324fkjdd3yifp7"))))
     (properties `((upstream-name . "irr")))
     (build-system r-build-system)
     (propagated-inputs (list r-lpsolve))
@@ -3306,12 +3306,12 @@ Kappa, ...")
   (package
     (name "r-iron")
     (version "0.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IRon" version))
-              (sha256
-               (base32
-                "1yl9i6gxzwy5f4qva3a14flzlk1xk7v2m02n0mg8ddchc5n6j3bc"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IRon" version))
+       (sha256
+        (base32 "1yl9i6gxzwy5f4qva3a14flzlk1xk7v2m02n0mg8ddchc5n6j3bc"))))
     (properties `((upstream-name . "IRon")))
     (build-system r-build-system)
     (propagated-inputs (list r-scam
@@ -3343,12 +3343,12 @@ tasks.  More information can be found in Ribeiro and Moniz (2020)
   (package
     (name "r-irocode")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iRoCoDe" version))
-              (sha256
-               (base32
-                "1m2cin8yxpirdnkw6v1lb4w04939dy9qwkaw5w2k8rqjsflr17ay"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iRoCoDe" version))
+       (sha256
+        (base32 "1m2cin8yxpirdnkw6v1lb4w04939dy9qwkaw5w2k8rqjsflr17ay"))))
     (properties `((upstream-name . "iRoCoDe")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=iRoCoDe")
@@ -3373,12 +3373,12 @@ t-designs. (Mcsorley, J.P., Phillips, N.C., Wallis, W.D. and Yucas, J.L.
   (package
     (name "r-irisseismic")
     (version "1.6.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IRISSeismic" version))
-              (sha256
-               (base32
-                "0da4bh5kvlp3dchsz0dyddwpwdvss7aij2xsi2kkppi3hrfwja7j"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IRISSeismic" version))
+       (sha256
+        (base32 "0da4bh5kvlp3dchsz0dyddwpwdvss7aij2xsi2kkppi3hrfwja7j"))))
     (properties `((upstream-name . "IRISSeismic")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
@@ -3402,12 +3402,12 @@ support data returned by web services provided by the IRIS DMC
   (package
     (name "r-irismustangmetrics")
     (version "2.4.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IRISMustangMetrics" version))
-              (sha256
-               (base32
-                "08p1xg4mqi36647nzmlmmmvdgzc9xgz4sf4lh2lrlma99f7y8kzd"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IRISMustangMetrics" version))
+       (sha256
+        (base32 "08p1xg4mqi36647nzmlmmmvdgzc9xgz4sf4lh2lrlma99f7y8kzd"))))
     (properties `((upstream-name . "IRISMustangMetrics")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
@@ -3432,12 +3432,12 @@ seismometers.")
   (package
     (name "r-irishdirectorates")
     (version "1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IrishDirectorates" version))
-              (sha256
-               (base32
-                "1mwjrmqga7f0p5w2m4f0i6mb68jimx6791pz03r8iqj3yx0vzkh0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IrishDirectorates" version))
+       (sha256
+        (base32 "1mwjrmqga7f0p5w2m4f0i6mb68jimx6791pz03r8iqj3yx0vzkh0"))))
     (properties `((upstream-name . "IrishDirectorates")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -3454,12 +3454,12 @@ illustrated in Friel, N., Rastelli, R., Wyse, J. and Raftery, A.E. (2016)
   (package
     (name "r-irg")
     (version "0.1.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "irg" version))
-              (sha256
-               (base32
-                "1c9v5yk1512ga51356fjyl8zblw61p9m55vx89fy81qi0vcwxrgj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "irg" version))
+       (sha256
+        (base32 "1c9v5yk1512ga51356fjyl8zblw61p9m55vx89fy81qi0vcwxrgj"))))
     (properties `((upstream-name . "irg")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpproll r-data-table r-chk))
@@ -3476,12 +3476,12 @@ rate of green (IRG) according to methods described in Bischoff et al. (2012)
   (package
     (name "r-irexamples")
     (version "0.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IRexamples" version))
-              (sha256
-               (base32
-                "0g9ncq280nsdkgpisy7gk2fd0daqjzrrqyx7dgdknanxzyyvb4xn"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IRexamples" version))
+       (sha256
+        (base32 "0g9ncq280nsdkgpisy7gk2fd0daqjzrrqyx7dgdknanxzyyvb4xn"))))
     (properties `((upstream-name . "IRexamples")))
     (build-system r-build-system)
     (propagated-inputs (list r-twang
@@ -3513,12 +3513,12 @@ that may be useful to institutional or educational researchers.")
   (package
     (name "r-irescale")
     (version "2.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Irescale" version))
-              (sha256
-               (base32
-                "037bzli0zwlfbf5xmllqg2pi0shs33ggrnw69kzyw2sf780y3hs2"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Irescale" version))
+       (sha256
+        (base32 "037bzli0zwlfbf5xmllqg2pi0shs33ggrnw69kzyw2sf780y3hs2"))))
     (properties `((upstream-name . "Irescale")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp
@@ -3551,12 +3551,12 @@ the spatial autocorrelation Moran's I is calculated as proposed in Chen(2013)
   (package
     (name "r-irepro")
     (version "1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iRepro" version))
-              (sha256
-               (base32
-                "0752bxa4gb875236cjifr6zgkxv18304781qrjl1sf7r7rzmb1cl"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iRepro" version))
+       (sha256
+        (base32 "0752bxa4gb875236cjifr6zgkxv18304781qrjl1sf7r7rzmb1cl"))))
     (properties `((upstream-name . "iRepro")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=iRepro")
@@ -3574,12 +3574,12 @@ residuals) is provided.")
   (package
     (name "r-iregression")
     (version "1.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iRegression" version))
-              (sha256
-               (base32
-                "1kwsrmsflmqan96aj0dczlszfww1dlg6rwycyid52f7ghg9810rn"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iRegression" version))
+       (sha256
+        (base32 "1kwsrmsflmqan96aj0dczlszfww1dlg6rwycyid52f7ghg9810rn"))))
     (properties `((upstream-name . "iRegression")))
     (build-system r-build-system)
     (propagated-inputs (list r-mgcv))
@@ -3595,12 +3595,12 @@ some goodness-of-fit measures.")
   (package
     (name "r-ircor")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ircor" version))
-              (sha256
-               (base32
-                "07apa4l4ib11xw25d44b403s3la29sqlid13q41hjrlfxafm91ld"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ircor" version))
+       (sha256
+        (base32 "07apa4l4ib11xw25d44b403s3la29sqlid13q41hjrlfxafm91ld"))))
     (properties `((upstream-name . "ircor")))
     (build-system r-build-system)
     (home-page "https://github.com/julian-urbano/ircor/")
@@ -3619,12 +3619,12 @@ ties.  It also includes Yilmaz et al. (2008) <doi:10.1145/1390334.1390435>
   (package
     (name "r-irccheck")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IRCcheck" version))
-              (sha256
-               (base32
-                "035sx36qf5hdnc51h8251qwxfm30r8h2v2qs2x161ip4cqghw019"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IRCcheck" version))
+       (sha256
+        (base32 "035sx36qf5hdnc51h8251qwxfm30r8h2v2qs2x161ip4cqghw019"))))
     (properties `((upstream-name . "IRCcheck")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-mass r-glmnet r-ggmncv r-corpcor))
@@ -3644,12 +3644,12 @@ L1-regularization.")
   (package
     (name "r-irboost")
     (version "0.1-1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "irboost" version))
-              (sha256
-               (base32
-                "0a7d3scikj4lmnh70vwck8gkbzh4d49j4yw5gk5bfi8nx1hfi47v"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "irboost" version))
+       (sha256
+        (base32 "0a7d3scikj4lmnh70vwck8gkbzh4d49j4yw5gk5bfi8nx1hfi47v"))))
     (properties `((upstream-name . "irboost")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost r-mpath))
@@ -3672,12 +3672,12 @@ failure time models.  The package supersedes the R package ccboost'.  Wang
   (package
     (name "r-irafnet")
     (version "1.1-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iRafNet" version))
-              (sha256
-               (base32
-                "0w9bry49apkrrrabglnv5w9l47jakmc30jh8q22a8gazwss293fb"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iRafNet" version))
+       (sha256
+        (base32 "0w9bry49apkrrrabglnv5w9l47jakmc30jh8q22a8gazwss293fb"))))
     (properties `((upstream-name . "iRafNet")))
     (build-system r-build-system)
     (propagated-inputs (list r-rocr))
@@ -3694,12 +3694,12 @@ jointly considered for gene regulatory network inference.")
   (package
     (name "r-iraceplot")
     (version "1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iraceplot" version))
-              (sha256
-               (base32
-                "0891wmk7m62qr0rzxxyzz7vpmzhjllj0d36vjafcf5bf12v0yzqk"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iraceplot" version))
+       (sha256
+        (base32 "0891wmk7m62qr0rzxxyzz7vpmzhjllj0d36vjafcf5bf12v0yzqk"))))
     (properties `((upstream-name . "iraceplot")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -3737,12 +3737,12 @@ with user-provided data.")
   (package
     (name "r-irace")
     (version "3.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "irace" version))
-              (sha256
-               (base32
-                "1x0b0qr1ccq3s4d6k3z6dz94z4caxsmaywwdalw4isd7lm28d4nr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "irace" version))
+       (sha256
+        (base32 "1x0b0qr1ccq3s4d6k3z6dz94z4caxsmaywwdalw4isd7lm28d4nr"))))
     (properties `((upstream-name . "irace")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6))
@@ -3762,12 +3762,12 @@ PÃ©rez CÃ¡ceres, T. @code{StÃ¼tzle}, and M. Birattari (2016)
   (package
     (name "r-ir")
     (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ir" version))
-              (sha256
-               (base32
-                "1ck5247w5lxffd2x3jrslfx13jigik48xmcnkr7my2kzjmnqiyr1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ir" version))
+       (sha256
+        (base32 "1ck5247w5lxffd2x3jrslfx13jigik48xmcnkr7my2kzjmnqiyr1"))))
     (properties `((upstream-name . "ir")))
     (build-system r-build-system)
     (propagated-inputs (list r-units
@@ -3799,12 +3799,12 @@ plotting).")
   (package
     (name "r-iqcc")
     (version "0.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IQCC" version))
-              (sha256
-               (base32
-                "1zalpmyywkrnci0jd8irakjhiqmr52zhj1sbxf9pz5c7wks2rdbc"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IQCC" version))
+       (sha256
+        (base32 "1zalpmyywkrnci0jd8irakjhiqmr52zhj1sbxf9pz5c7wks2rdbc"))))
     (properties `((upstream-name . "IQCC")))
     (build-system r-build-system)
     (propagated-inputs (list r-qcc r-misctools r-mass))
@@ -3820,12 +3820,12 @@ multivariate cases.")
   (package
     (name "r-iq")
     (version "1.9.10")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iq" version))
-              (sha256
-               (base32
-                "0nklhggsh8z8r7s39ssw22fkiy52wwgggpx2majsi6bmyj2w3arh"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iq" version))
+       (sha256
+        (base32 "0nklhggsh8z8r7s39ssw22fkiy52wwgggpx2majsi6bmyj2w3arh"))))
     (properties `((upstream-name . "iq")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp))
@@ -3847,12 +3847,12 @@ into a single quantitative value.")
   (package
     (name "r-ipwerrory")
     (version "2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ipwErrorY" version))
-              (sha256
-               (base32
-                "14p22mwc120kdlf6r1hfx4kp7nqrz2nl2vpvy45j8rbrc571b6ka"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ipwErrorY" version))
+       (sha256
+        (base32 "14p22mwc120kdlf6r1hfx4kp7nqrz2nl2vpvy45j8rbrc571b6ka"))))
     (properties `((upstream-name . "ipwErrorY")))
     (build-system r-build-system)
     (propagated-inputs (list r-nleqslv))
@@ -3873,12 +3873,12 @@ value of the outcome is assumed to be the same for all individuals.")
   (package
     (name "r-ipwcoxcsv")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ipwCoxCSV" version))
-              (sha256
-               (base32
-                "0avnvf4pnpxnik3iwwglpwkc8h0vsx9v6fxldkbvq7l9bphdbba1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ipwCoxCSV" version))
+       (sha256
+        (base32 "0avnvf4pnpxnik3iwwglpwkc8h0vsx9v6fxldkbvq7l9bphdbba1"))))
     (properties `((upstream-name . "ipwCoxCSV")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival))
@@ -3898,12 +3898,12 @@ regression model is assumed for propensity score model.")
   (package
     (name "r-ipwboxplot")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IPWboxplot" version))
-              (sha256
-               (base32
-                "07qvdflwmyy0406xkkgja31cggfv4pak2hhnhh8fwggj2zkj9z8n"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IPWboxplot" version))
+       (sha256
+        (base32 "07qvdflwmyy0406xkkgja31cggfv4pak2hhnhh8fwggj2zkj9z8n"))))
     (properties `((upstream-name . "IPWboxplot")))
     (build-system r-build-system)
     (propagated-inputs (list r-isotone))
@@ -3922,12 +3922,12 @@ marginal quantiles based on the Inverse Probability Weighting method.")
   (package
     (name "r-ipw")
     (version "1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ipw" version))
-              (sha256
-               (base32
-                "12acf71pc0xxpr5h1vhx8kxjlr5kymyhld97pp4bkikw5jykfl2a"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ipw" version))
+       (sha256
+        (base32 "12acf71pc0xxpr5h1vhx8kxjlr5kymyhld97pp4bkikw5jykfl2a"))))
     (properties `((upstream-name . "ipw")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-nnet r-mass r-geepack))
@@ -3946,12 +3946,12 @@ used to correct for informative censoring.")
   (package
     (name "r-ipv")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IPV" version))
-              (sha256
-               (base32
-                "0h1x2scmwgzl7i0kk4pf7kfq55yiqn065s5r944rrfk09y9g2vgy"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IPV" version))
+       (sha256
+        (base32 "0h1x2scmwgzl7i0kk4pf7kfq55yiqn065s5r944rrfk09y9g2vgy"))))
     (properties `((upstream-name . "IPV")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -3974,12 +3974,12 @@ Stieger, & Reips (2019) <doi:10.1177/2059799119884283>.")
   (package
     (name "r-ipumsr")
     (version "0.6.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ipumsr" version))
-              (sha256
-               (base32
-                "0rmg23y0am45vk77l27q1fyfbr7560m26f3bcp5j6qxcb97fya7j"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ipumsr" version))
+       (sha256
+        (base32 "0rmg23y0am45vk77l27q1fyfbr7560m26f3bcp5j6qxcb97fya7j"))))
     (properties `((upstream-name . "ipumsr")))
     (build-system r-build-system)
     (propagated-inputs (list r-zeallot
@@ -4012,12 +4012,12 @@ free of charge from the IPUMS website <https://www.ipums.org>.")
   (package
     (name "r-ipsrdbs")
     (version "0.2.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ipsRdbs" version))
-              (sha256
-               (base32
-                "16qyq2jzv5nhwsnsg20213vhg62aqjk2fx9mr2343dlx5j3cjvb3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ipsRdbs" version))
+       (sha256
+        (base32 "16qyq2jzv5nhwsnsg20213vhg62aqjk2fx9mr2343dlx5j3cjvb3"))))
     (properties `((upstream-name . "ipsRdbs")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-ggplot2 r-extradistr))
@@ -4035,12 +4035,12 @@ Sciences.\" Sahu (2023, isbn:978-3-031-37864-5) describes the methods in detail.
   (package
     (name "r-ipsfs")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ipsfs" version))
-              (sha256
-               (base32
-                "1cpa0m19nddpp852vyiqw0azx8idyaqv225akfyrych9y8kw9n4d"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ipsfs" version))
+       (sha256
+        (base32 "1cpa0m19nddpp852vyiqw0azx8idyaqv225akfyrych9y8kw9n4d"))))
     (properties `((upstream-name . "ipsfs")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=ipsfs")
@@ -4067,12 +4067,12 @@ function with sample data sets.")
   (package
     (name "r-ipsecr")
     (version "1.4.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ipsecr" version))
-              (sha256
-               (base32
-                "103qifpm0bgqqkx9r67h8bgd2i8nd05k90lflvxzcb8n6vfrzicv"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ipsecr" version))
+       (sha256
+        (base32 "103qifpm0bgqqkx9r67h8bgd2i8nd05k90lflvxzcb8n6vfrzicv"))))
     (properties `((upstream-name . "ipsecr")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -4096,12 +4096,12 @@ proposed by Efford (2004) <doi:10.1111/j.0030-1299.2004.13043.x>.")
   (package
     (name "r-iprior")
     (version "0.7.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iprior" version))
-              (sha256
-               (base32
-                "15qzqwikxy85fcd7psz363b5wb0kpi85icfyb47hbgdhln8fi2qb"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iprior" version))
+       (sha256
+        (base32 "15qzqwikxy85fcd7psz363b5wb0kpi85icfyb47hbgdhln8fi2qb"))))
     (properties `((upstream-name . "iprior")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -4125,12 +4125,12 @@ algorithm.")
   (package
     (name "r-ipr")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ipr" version))
-              (sha256
-               (base32
-                "1db06r784c6jga0anp6p5b3k47yfhr84nzxyjn52pc9zkg3yifjm"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ipr" version))
+       (sha256
+        (base32 "1db06r784c6jga0anp6p5b3k47yfhr84nzxyjn52pc9zkg3yifjm"))))
     (properties `((upstream-name . "ipr")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=ipr")
@@ -4146,12 +4146,12 @@ from the global health costs available for each patient.")
   (package
     (name "r-ippp")
     (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IPPP" version))
-              (sha256
-               (base32
-                "19ccs25fd56ns7ssi51w2jzjd4d57vyimwmfvf27mmigb537bd5y"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IPPP" version))
+       (sha256
+        (base32 "19ccs25fd56ns7ssi51w2jzjd4d57vyimwmfvf27mmigb537bd5y"))))
     (properties `((upstream-name . "IPPP")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -4170,12 +4170,12 @@ Based on Hohmann (2019) <@code{arXiv:1901.10754>}.")
   (package
     (name "r-ipolygrowth")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ipolygrowth" version))
-              (sha256
-               (base32
-                "0q3n2mbkkra09kxq3scglli0ghj4g0j4xv3py9maq0ii7mbx0547"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ipolygrowth" version))
+       (sha256
+        (base32 "0q3n2mbkkra09kxq3scglli0ghj4g0j4xv3py9maq0ii7mbx0547"))))
     (properties `((upstream-name . "ipolygrowth")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect r-tidyr r-rlang r-magrittr r-dplyr))
@@ -4195,12 +4195,12 @@ replicates) or multiple samples.")
   (package
     (name "r-ipmr")
     (version "0.0.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ipmr" version))
-              (sha256
-               (base32
-                "0zpw73bqv9gblyxaprkhb8f9dva0ivv47bjriyb3265vlzyd088c"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ipmr" version))
+       (sha256
+        (base32 "0zpw73bqv9gblyxaprkhb8f9dva0ivv47bjriyb3265vlzyd088c"))))
     (properties `((upstream-name . "ipmr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-rcpp r-purrr r-magrittr))
@@ -4227,12 +4227,12 @@ discuss the problem of unintentional eviction.")
   (package
     (name "r-ipmbook")
     (version "0.1.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IPMbook" version))
-              (sha256
-               (base32
-                "1fad52j0cb187sbj7x1i7irlvyd2jhjgr84kf7m8v3ngwsn14wp3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IPMbook" version))
+       (sha256
+        (base32 "1fad52j0cb187sbj7x1i7irlvyd2jhjgr84kf7m8v3ngwsn14wp3"))))
     (properties `((upstream-name . "IPMbook")))
     (build-system r-build-system)
     (propagated-inputs (list r-abind))
@@ -4248,12 +4248,12 @@ Schaub and Marc KÃ©ry (ISBN: 9780128205648).")
   (package
     (name "r-iplots")
     (version "1.1-8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iplots" version))
-              (sha256
-               (base32
-                "01s8a43s2spxgmp6px5dpd96p8f4sfp98nxmxk763hg2868rksx3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iplots" version))
+       (sha256
+        (base32 "01s8a43s2spxgmp6px5dpd96p8f4sfp98nxmxk763hg2868rksx3"))))
     (properties `((upstream-name . "iplots")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjava r-png))
@@ -4266,12 +4266,12 @@ Schaub and Marc KÃ©ry (ISBN: 9780128205648).")
   (package
     (name "r-iplookupapi")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iplookupapi" version))
-              (sha256
-               (base32
-                "1lkla7jz4jhpxb9bd1nzgr4ks5r6i0ng2dxidyv3072fxlpvih5p"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iplookupapi" version))
+       (sha256
+        (base32 "1lkla7jz4jhpxb9bd1nzgr4ks5r6i0ng2dxidyv3072fxlpvih5p"))))
     (properties `((upstream-name . "iplookupapi")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-httr))
@@ -4288,12 +4288,12 @@ can find the full API documentation at <https://iplookupapi.com/docs> .")
   (package
     (name "r-iplgp")
     (version "2.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IPLGP" version))
-              (sha256
-               (base32
-                "0sv4zl6kn72ajnp32k9xg011y0bjxsq3a0vcj3s0w4wwkcr1h2w5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IPLGP" version))
+       (sha256
+        (base32 "0sv4zl6kn72ajnp32k9xg011y0bjxsq3a0vcj3s0w4wwkcr1h2w5"))))
     (properties `((upstream-name . "IPLGP")))
     (build-system r-build-system)
     (propagated-inputs (list r-sommer r-ggplot2))
@@ -4316,12 +4316,12 @@ the composite performance of an individual.")
   (package
     (name "r-ipkg")
     (version "1.0.8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ipkg" version))
-              (sha256
-               (base32
-                "0cm2hvdi5rbd7jnas0iishhld3m32gjs3xh1fq25zwn14spagngg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ipkg" version))
+       (sha256
+        (base32 "0cm2hvdi5rbd7jnas0iishhld3m32gjs3xh1fq25zwn14spagngg"))))
     (properties `((upstream-name . "ipkg")))
     (build-system r-build-system)
     (propagated-inputs (list r-remotes))
@@ -4339,12 +4339,12 @@ which is in real-time sync with @code{GitHub}.")
   (package
     (name "r-ipft")
     (version "0.7.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ipft" version))
-              (sha256
-               (base32
-                "0jifmkwac5yfl110200ljm3pas3321j068af9xqzqs0av20m8hps"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ipft" version))
+       (sha256
+        (base32 "0jifmkwac5yfl110200ljm3pas3321j068af9xqzqs0av20m8hps"))))
     (properties `((upstream-name . "ipft")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-ggplot2 r-dplyr r-cluster r-apcluster))
@@ -4364,12 +4364,12 @@ estimations over RSSI data sets.")
   (package
     (name "r-ipfr")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ipfr" version))
-              (sha256
-               (base32
-                "0q44zw5g76qfqrqv6w2a8p905n4ljxab9jmyqk6fv9vs8j2kyivg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ipfr" version))
+       (sha256
+        (base32 "0q44zw5g76qfqrqv6w2a8p905n4ljxab9jmyqk6fv9vs8j2kyivg"))))
     (properties `((upstream-name . "ipfr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-mlr r-magrittr r-ggplot2 r-dplyr))
@@ -4393,12 +4393,12 @@ target balance/importance, general marginal agreement, and weight restriction.")
   (package
     (name "r-ipfp")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ipfp" version))
-              (sha256
-               (base32
-                "00588swwr7gz7gjx0clz55fgi4rm2h715fdmhsgm171bdmakh20r"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ipfp" version))
+       (sha256
+        (base32 "00588swwr7gz7gjx0clz55fgi4rm2h715fdmhsgm171bdmakh20r"))))
     (properties `((upstream-name . "ipfp")))
     (build-system r-build-system)
     (home-page "https://github.com/awblocker/ipfp")
@@ -4413,12 +4413,12 @@ fitting procedure.")
   (package
     (name "r-ipflasso")
     (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ipflasso" version))
-              (sha256
-               (base32
-                "0gf1yj35vr92qi59hffcf4hzrh2b439kfd6m745wgpxq6wic1hs3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ipflasso" version))
+       (sha256
+        (base32 "0gf1yj35vr92qi59hffcf4hzrh2b439kfd6m745wgpxq6wic1hs3"))))
     (properties `((upstream-name . "ipflasso")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-glmnet))
@@ -4443,12 +4443,12 @@ generated from the input data.")
   (package
     (name "r-ipedsuploadables")
     (version "2.8.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IPEDSuploadables" version))
-              (sha256
-               (base32
-                "0za69wfhqpmr6hl64kvpmw2sjhys74bnfab21zlwbxq8palhpmxh"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IPEDSuploadables" version))
+       (sha256
+        (base32 "0za69wfhqpmr6hl64kvpmw2sjhys74bnfab21zlwbxq8palhpmxh"))))
     (properties `((upstream-name . "IPEDSuploadables")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -4477,12 +4477,12 @@ can also be produced for purposes of data review and validation.")
   (package
     (name "r-ipeds")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IPEDS" version))
-              (sha256
-               (base32
-                "122v4m3lf5ix10a1ihw1qi8w975iamscaqg2vc5f5k6z8dy9s6ph"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IPEDS" version))
+       (sha256
+        (base32 "122v4m3lf5ix10a1ihw1qi8w975iamscaqg2vc5f5k6z8dy9s6ph"))))
     (properties `((upstream-name . "IPEDS")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-rlang r-readr r-dplyr))
@@ -4503,12 +4503,12 @@ considering their options, and securing admission into their school of choice.")
   (package
     (name "r-ipec")
     (version "1.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IPEC" version))
-              (sha256
-               (base32
-                "1ij9g8w5550nxbf65yd3gs8cc15d3yk2x94fmmzk7i8rfjvfzzjq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IPEC" version))
+       (sha256
+        (base32 "1ij9g8w5550nxbf65yd3gs8cc15d3yk2x94fmmzk7i8rfjvfzzjq"))))
     (properties `((upstream-name . "IPEC")))
     (build-system r-build-system)
     (propagated-inputs (list r-numderiv r-mass))
@@ -4526,12 +4526,12 @@ model/data set combination is close-to-linear or not.  See Bates and Watts
   (package
     (name "r-ipeadatar")
     (version "0.1.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ipeadatar" version))
-              (sha256
-               (base32
-                "1j600mhvy023ry9hx8ib6wqdv4mip1cjbwzs9190v8qpc9r2a460"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ipeadatar" version))
+       (sha256
+        (base32 "1j600mhvy023ry9hx8ib6wqdv4mip1cjbwzs9190v8qpc9r2a460"))))
     (properties `((upstream-name . "ipeadatar")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -4557,12 +4557,12 @@ R package uses the Ipeadata API. For more information, see
   (package
     (name "r-ipdw")
     (version "2.0-0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ipdw" version))
-              (sha256
-               (base32
-                "0lgxassvdd8vc4fyc84rbwwgdis7h4p5psqxxyb7xznm3zdzxc7h"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ipdw" version))
+       (sha256
+        (base32 "0lgxassvdd8vc4fyc84rbwwgdis7h4p5psqxxyb7xznm3zdzxc7h"))))
     (properties `((upstream-name . "ipdw")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-raster r-gdistance))
@@ -4580,12 +4580,12 @@ Euclidean distances.")
   (package
     (name "r-ipdfromkm")
     (version "0.1.10")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IPDfromKM" version))
-              (sha256
-               (base32
-                "1pqi6cshiha4gnra25fgpggyi42mn2hg25s9m9mh091rn5km44q0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IPDfromKM" version))
+       (sha256
+        (base32 "1pqi6cshiha4gnra25fgpggyi42mn2hg25s9m9mh091rn5km44q0"))))
     (properties `((upstream-name . "IPDfromKM")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-readbitmap r-gridextra r-ggplot2
@@ -4613,12 +4613,12 @@ with some modifications.")
   (package
     (name "r-ipdfilecheck")
     (version "0.7.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IPDFileCheck" version))
-              (sha256
-               (base32
-                "1y0qq6q98lq1srsp1mlb7mr9zn2v4j7gpzim9fgh3xarw6a89i0h"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IPDFileCheck" version))
+       (sha256
+        (base32 "1y0qq6q98lq1srsp1mlb7mr9zn2v4j7gpzim9fgh3xarw6a89i0h"))))
     (properties `((upstream-name . "IPDFileCheck")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -4650,12 +4650,12 @@ and age formats.")
   (package
     (name "r-ipcwswitch")
     (version "1.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ipcwswitch" version))
-              (sha256
-               (base32
-                "12z16c8sv1nhdv70kwx1a0wh588znkv5y5r0s9kcws0n3rjhzh9p"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ipcwswitch" version))
+       (sha256
+        (base32 "12z16c8sv1nhdv70kwx1a0wh588znkv5y5r0s9kcws0n3rjhzh9p"))))
     (properties `((upstream-name . "ipcwswitch")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival))
@@ -4672,12 +4672,12 @@ switches when estimating causal treatment effect in randomized clinical trials."
   (package
     (name "r-ipcwk")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IPCWK" version))
-              (sha256
-               (base32
-                "0hah1xl6zli0346jh57rjc5x8vynhaysj0l481rmvznsghv6im23"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IPCWK" version))
+       (sha256
+        (base32 "0hah1xl6zli0346jh57rjc5x8vynhaysj0l481rmvznsghv6im23"))))
     (properties `((upstream-name . "IPCWK")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-mass))
@@ -4695,12 +4695,12 @@ interaction variable conditional on main effects, as described in Wang and Chen
   (package
     (name "r-ipcaps")
     (version "1.1.8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IPCAPS" version))
-              (sha256
-               (base32
-                "17ifkgjjnvvcc8dp065ng4ad9lr85lcdcb401vi84yy8m2llbypw"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IPCAPS" version))
+       (sha256
+        (base32 "17ifkgjjnvvcc8dp065ng4ad9lr85lcdcb401vi84yy8m2llbypw"))))
     (properties `((upstream-name . "IPCAPS")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmixmod
@@ -4730,12 +4730,12 @@ function rubikclust() from the R package KRIS'.")
   (package
     (name "r-ipc")
     (version "0.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ipc" version))
-              (sha256
-               (base32
-                "07bl1yj1y0dd56zmqip73rvbzzciwi5lafvqfhz0zxlk6pzyqfpj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ipc" version))
+       (sha256
+        (base32 "07bl1yj1y0dd56zmqip73rvbzzciwi5lafvqfhz0zxlk6pzyqfpj"))))
     (properties `((upstream-name . "ipc")))
     (build-system r-build-system)
     (propagated-inputs (list r-txtq r-shiny r-r6))
@@ -4753,12 +4753,12 @@ tasks, and interrupting async tasks based on user input.")
   (package
     (name "r-ipbase")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ipbase" version))
-              (sha256
-               (base32
-                "0adddq34pvgwf535sliy455y9mlk1qfjln8w9wjjjjlg8vi166bg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ipbase" version))
+       (sha256
+        (base32 "0adddq34pvgwf535sliy455y9mlk1qfjln8w9wjjjjlg8vi166bg"))))
     (properties `((upstream-name . "ipbase")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-httr))
@@ -4775,12 +4775,12 @@ can find the full API documentation at <https://ipbase.com/docs> .")
   (package
     (name "r-ipadmixture")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ipADMIXTURE" version))
-              (sha256
-               (base32
-                "1fl7nyxg7gakjdggdc311wf037zaxwpqsw3ax7liq1pvw6flb9h7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ipADMIXTURE" version))
+       (sha256
+        (base32 "1fl7nyxg7gakjdggdc311wf037zaxwpqsw3ax7liq1pvw6flb9h7"))))
     (properties `((upstream-name . "ipADMIXTURE")))
     (build-system r-build-system)
     (propagated-inputs (list r-treemap r-ape))
@@ -4808,12 +4808,12 @@ Sissades Tongsima (2020) <doi:10.1101/2020.03.21.001206>.")
   (package
     (name "r-ipaddress")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ipaddress" version))
-              (sha256
-               (base32
-                "1b3w2iq3zbfmnch9wi26l0jra4784ykazimxdd4gkkqf972yk4vf"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ipaddress" version))
+       (sha256
+        (base32 "1b3w2iq3zbfmnch9wi26l0jra4784ykazimxdd4gkkqf972yk4vf"))))
     (properties `((upstream-name . "ipaddress")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs r-rlang r-rcpp r-cli r-asioheaders))
@@ -4831,12 +4831,12 @@ address spaces.  It is specifically designed to work well with the tidyverse'.")
   (package
     (name "r-ipa")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ipa" version))
-              (sha256
-               (base32
-                "029vz7pb37vnqm7x6h53p0y7z0nx2s36yklyfn9sz21gknsi983j"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ipa" version))
+       (sha256
+        (base32 "029vz7pb37vnqm7x6h53p0y7z0nx2s36yklyfn9sz21gknsi983j"))))
     (properties `((upstream-name . "ipa")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi))
@@ -4852,12 +4852,12 @@ Phonetic Alphabet), and ARPABET (used by the CMU Pronouncing Dictionary).")
   (package
     (name "r-ip2proxy")
     (version "1.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ip2proxy" version))
-              (sha256
-               (base32
-                "0h0krm4sli400mmk8jw9jnxlp773barnyx3z66y45iqr3m23z6lx"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ip2proxy" version))
+       (sha256
+        (base32 "0h0krm4sli400mmk8jw9jnxlp773barnyx3z66y45iqr3m23z6lx"))))
     (properties `((upstream-name . "ip2proxy")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-reticulate r-maps r-jsonlite r-ggplot2))
@@ -4874,12 +4874,12 @@ free database download.")
   (package
     (name "r-ip2location")
     (version "8.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ip2location" version))
-              (sha256
-               (base32
-                "1nbqg4nnhxwcwi9kgbyjkikdwh8djglxkrw0lcqfvaqn4n7qf1i5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ip2location" version))
+       (sha256
+        (base32 "1nbqg4nnhxwcwi9kgbyjkikdwh8djglxkrw0lcqfvaqn4n7qf1i5"))))
     (properties `((upstream-name . "ip2location")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-reticulate r-maps r-jsonlite r-ggplot2))
@@ -4901,12 +4901,12 @@ IP2Location to install the module.")
   (package
     (name "r-ip")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IP" version))
-              (sha256
-               (base32
-                "1xvlv8mlahyhzvl0zbj0352iiqk2smqfy3vlawz8ldlcmwvwim7k"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IP" version))
+       (sha256
+        (base32 "1xvlv8mlahyhzvl0zbj0352iiqk2smqfy3vlawz8ldlcmwvwim7k"))))
     (properties `((upstream-name . "IP")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi))
@@ -4924,12 +4924,12 @@ as well as domain lookup and whois query.")
   (package
     (name "r-iotarelr")
     (version "0.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iotarelr" version))
-              (sha256
-               (base32
-                "0bs2m5528cq4lsq33cs77n16hpd72bcbv64axyw95jbk71s48zrx"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iotarelr" version))
+       (sha256
+        (base32 "0bs2m5528cq4lsq33cs77n16hpd72bcbv64axyw95jbk71s48zrx"))))
     (properties `((upstream-name . "iotarelr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-rcpp r-gridextra r-ggplot2 r-ggalluvial))
@@ -4954,12 +4954,12 @@ and Berding and Pargmann (2022) <doi:10.30819/5581>.")
   (package
     (name "r-iotables")
     (version "0.9.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iotables" version))
-              (sha256
-               (base32
-                "1xs6hfr1h8mpm2ksbrx7kjqi01rvgfczsnxmv70czwpsc3lbzrdf"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iotables" version))
+       (sha256
+        (base32 "1xs6hfr1h8mpm2ksbrx7kjqi01rvgfczsnxmv70czwpsc3lbzrdf"))))
     (properties `((upstream-name . "iotables")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -4992,12 +4992,12 @@ calculations.  The package is part of @code{rOpenGov}
   (package
     (name "r-iosmooth")
     (version "0.94")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iosmooth" version))
-              (sha256
-               (base32
-                "06xgzhjgb6pznjzfli193q7kn8sh5jmqsssgymwj98bw7iwn4q3z"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iosmooth" version))
+       (sha256
+        (base32 "06xgzhjgb6pznjzfli193q7kn8sh5jmqsssgymwj98bw7iwn4q3z"))))
     (properties `((upstream-name . "iosmooth")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=iosmooth")
@@ -5011,12 +5011,12 @@ flat-top kernels.")
   (package
     (name "r-iopsych")
     (version "0.90.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iopsych" version))
-              (sha256
-               (base32
-                "0adxwxnb1zdlld3icdggx7cq6cp8z4h1jf105485w322a8c6s9ik"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iopsych" version))
+       (sha256
+        (base32 "0adxwxnb1zdlld3icdggx7cq6cp8z4h1jf105485w322a8c6s9ik"))))
     (properties `((upstream-name . "iopsych")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-mco))
@@ -5029,12 +5029,12 @@ flat-top kernels.")
   (package
     (name "r-ionr")
     (version "0.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ionr" version))
-              (sha256
-               (base32
-                "18rv5n5gihb6pz36s45yj17sdjsbj4485k4lnggdjj1gbbjkz2ni"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ionr" version))
+       (sha256
+        (base32 "18rv5n5gihb6pz36s45yj17sdjsbj4485k4lnggdjj1gbbjkz2ni"))))
     (properties `((upstream-name . "ionr")))
     (build-system r-build-system)
     (propagated-inputs (list r-psych r-gplots))
@@ -5059,12 +5059,12 @@ Journal of Personality DOI: <10.1002/per.2009> .")
   (package
     (name "r-ioncopy")
     (version "2.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ioncopy" version))
-              (sha256
-               (base32
-                "133ay7xvdigs4q9yx5bcwdgsgrgzk2n6xn412dkq3bg95pp1angr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ioncopy" version))
+       (sha256
+        (base32 "133ay7xvdigs4q9yx5bcwdgsgrgzk2n6xn412dkq3bg95pp1angr"))))
     (properties `((upstream-name . "ioncopy")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip r-shiny))
@@ -5082,12 +5082,12 @@ Mar 15) <doi:10.18632/oncotarget.7451>.")
   (package
     (name "r-iols")
     (version "0.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IOLS" version))
-              (sha256
-               (base32
-                "0s7yrkps61czsf1avvmb1xcq53v92pfikq949a4i46lsyidl69ib"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IOLS" version))
+       (sha256
+        (base32 "0s7yrkps61czsf1avvmb1xcq53v92pfikq949a4i46lsyidl69ib"))))
     (properties `((upstream-name . "IOLS")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-sandwich r-randomcolor r-matlib
@@ -5107,12 +5107,12 @@ corresponds to the correct way to perform the popular log(Y + 1) transformation.
   (package
     (name "r-iohexperimenter")
     (version "0.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IOHexperimenter" version))
-              (sha256
-               (base32
-                "0aacliznncl488rjsnx02pfj1mchhcyb36v816g959ll38pvc6bk"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IOHexperimenter" version))
+       (sha256
+        (base32 "0aacliznncl488rjsnx02pfj1mchhcyb36v816g959ll38pvc6bk"))))
     (properties `((upstream-name . "IOHexperimenter")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-magrittr r-bh r-assertthat))
@@ -5128,12 +5128,12 @@ which can be visualized using the IOHanalyzer module.")
   (package
     (name "r-iohanalyzer")
     (version "0.1.8.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IOHanalyzer" version))
-              (sha256
-               (base32
-                "0814ycb0fchg9m5244i0wqj3y8dik9szmjcnjjv2w930sn2ccqcw"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IOHanalyzer" version))
+       (sha256
+        (base32 "0814ycb0fchg9m5244i0wqj3y8dik9szmjcnjjv2w930sn2ccqcw"))))
     (properties `((upstream-name . "IOHanalyzer")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -5168,12 +5168,12 @@ widely used COCO (Comparing Continuous Optimisers) data format for benchmarking.
   (package
     (name "r-ioanalysis")
     (version "0.3.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ioanalysis" version))
-              (sha256
-               (base32
-                "0nprfqhwy5j11f5xgzaz8iw991cvgdcdmfca8sdvw8mci0cwkh5m"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ioanalysis" version))
+       (sha256
+        (base32 "0nprfqhwy5j11f5xgzaz8iw991cvgdcdmfca8sdvw8mci0cwkh5m"))))
     (properties `((upstream-name . "ioanalysis")))
     (build-system r-build-system)
     (propagated-inputs (list r-plot3d r-lpsolve r-ggplot2))
@@ -5195,12 +5195,12 @@ analysis with impact analysis (Dietzenbacher, van der Linden, and Steenge (2006)
   (package
     (name "r-io")
     (version "0.3.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "io" version))
-              (sha256
-               (base32
-                "1cyl8wvbngdrdkkckng1bs699rjp737j99kbd8r155fjj0370nx4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "io" version))
+       (sha256
+        (base32 "1cyl8wvbngdrdkkckng1bs699rjp737j99kbd8r155fjj0370nx4"))))
     (properties `((upstream-name . "io")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-filenamer))
@@ -5216,12 +5216,12 @@ structure creation.")
   (package
     (name "r-inzightts")
     (version "1.5.9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iNZightTS" version))
-              (sha256
-               (base32
-                "0mzyyl5a6ii7s84bzm7wqm0amdxpjc421vka28bd7884f5f5v791"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iNZightTS" version))
+       (sha256
+        (base32 "0mzyyl5a6ii7s84bzm7wqm0amdxpjc421vka28bd7884f5f5v791"))))
     (properties `((upstream-name . "iNZightTS")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -5253,12 +5253,12 @@ Seasonal-Trend Decomposition Procedure Based on Loess\".")
   (package
     (name "r-inzighttools")
     (version "1.13.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iNZightTools" version))
-              (sha256
-               (base32
-                "1cla8s690wf219q33qw8s5zzlpjgq7k27i9am4wxl59ycgn4p7n3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iNZightTools" version))
+       (sha256
+        (base32 "1cla8s690wf219q33qw8s5zzlpjgq7k27i9am4wxl59ycgn4p7n3"))))
     (properties `((upstream-name . "iNZightTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -5293,12 +5293,12 @@ effort to bridge the gap between GUI and coding.")
   (package
     (name "r-inzightregression")
     (version "1.3.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iNZightRegression" version))
-              (sha256
-               (base32
-                "1qlakpx509cfj9r6g0pw28s5wwjg9i0srvhjhzarq4myxzqd78yq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iNZightRegression" version))
+       (sha256
+        (base32 "1qlakpx509cfj9r6g0pw28s5wwjg9i0srvhjhzarq4myxzqd78yq"))))
     (properties `((upstream-name . "iNZightRegression")))
     (build-system r-build-system)
     (propagated-inputs (list r-patchwork
@@ -5324,12 +5324,12 @@ available in both desktop and online versions.")
   (package
     (name "r-inzightplots")
     (version "2.15.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iNZightPlots" version))
-              (sha256
-               (base32
-                "0h4s7wgia8knkksjvidjkkyzvwmr4w7qhc36f6ppjhlyzik0dmkp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iNZightPlots" version))
+       (sha256
+        (base32 "0h4s7wgia8knkksjvidjkkyzvwmr4w7qhc36f6ppjhlyzik0dmkp"))))
     (properties `((upstream-name . "iNZightPlots")))
     (build-system r-build-system)
     (propagated-inputs (list r-units
@@ -5368,12 +5368,12 @@ online versions.")
   (package
     (name "r-inzightmr")
     (version "2.2.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iNZightMR" version))
-              (sha256
-               (base32
-                "0c37bdpypl4kv3s4hxc7xzxiwa6fsbqxwhyi98hh3mfdj329p1m8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iNZightMR" version))
+       (sha256
+        (base32 "0c37bdpypl4kv3s4hxc7xzxiwa6fsbqxwhyi98hh3mfdj329p1m8"))))
     (properties `((upstream-name . "iNZightMR")))
     (build-system r-build-system)
     (home-page "https://inzight.nz")
@@ -5389,12 +5389,12 @@ multinomial, independent samples, and multiple response).")
   (package
     (name "r-invstableprior")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "InvStablePrior" version))
-              (sha256
-               (base32
-                "1wkb7rl6hqz0a45p7nlniaj9skc7gxhpbm0b7f377q6icm3xn3ld"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "InvStablePrior" version))
+       (sha256
+        (base32 "1wkb7rl6hqz0a45p7nlniaj9skc7gxhpbm0b7f377q6icm3xn3ld"))))
     (properties `((upstream-name . "InvStablePrior")))
     (build-system r-build-system)
     (propagated-inputs (list r-nimble r-fdrtool))
@@ -5419,12 +5419,12 @@ package can also be used as a teaching demo for introductory Bayesian courses.")
   (package
     (name "r-invgauss")
     (version "1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "invGauss" version))
-              (sha256
-               (base32
-                "0zpyn5cb0mv4095flvgsy5p34f03xkm13r4yqfy0gfqy92xm26fz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "invGauss" version))
+       (sha256
+        (base32 "0zpyn5cb0mv4095flvgsy5p34f03xkm13r4yqfy0gfqy92xm26fz"))))
     (properties `((upstream-name . "invGauss")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-optimx))
@@ -5446,12 +5446,12 @@ functions.")
   (package
     (name "r-invgamstochvol")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "invgamstochvol" version))
-              (sha256
-               (base32
-                "01m5kz3qscrzwbyx5n0l45c92srv84dxp65j3pcmw8348p9m0sp1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "invgamstochvol" version))
+       (sha256
+        (base32 "01m5kz3qscrzwbyx5n0l45c92srv84dxp65j3pcmw8348p9m0sp1"))))
     (properties `((upstream-name . "invgamstochvol")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -5475,12 +5475,12 @@ the exact smoothing distributions.")
   (package
     (name "r-investr")
     (version "1.4.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "investr" version))
-              (sha256
-               (base32
-                "12hrvi3gi3hwianjnzfir4771kbrfbcy35xmfksp0lxrfxvm61ra"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "investr" version))
+       (sha256
+        (base32 "12hrvi3gi3hwianjnzfir4771kbrfbcy35xmfksp0lxrfxvm61ra"))))
     (properties `((upstream-name . "investr")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlme))
@@ -5500,12 +5500,12 @@ Schubert Kabban (2014) <doi:10.32614/RJ-2014-009>.")
   (package
     (name "r-invertiforms")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "invertiforms" version))
-              (sha256
-               (base32
-                "0n3ksfdryk0g6f60acxh4i9f5z6gi9bsbal95z9pcd1vgvyhr1xw"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "invertiforms" version))
+       (sha256
+        (base32 "0n3ksfdryk0g6f60acxh4i9f5z6gi9bsbal95z9pcd1vgvyhr1xw"))))
     (properties `((upstream-name . "invertiforms")))
     (build-system r-build-system)
     (propagated-inputs (list r-sparselrmatrix r-matrix r-glue))
@@ -5519,12 +5519,12 @@ Schubert Kabban (2014) <doi:10.32614/RJ-2014-009>.")
   (package
     (name "r-inverseregex")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "inverseRegex" version))
-              (sha256
-               (base32
-                "1ca6adv602mh6fgkjy4qvmradki3wp44iak27i1k4cp3fi9cm986"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "inverseRegex" version))
+       (sha256
+        (base32 "1ca6adv602mh6fgkjy4qvmradki3wp44iak27i1k4cp3fi9cm986"))))
     (properties `((upstream-name . "inverseRegex")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -5542,12 +5542,12 @@ non-character inputs such as numeric vectors and data frames are supported.")
   (package
     (name "r-inventorymodel")
     (version "1.1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Inventorymodel" version))
-              (sha256
-               (base32
-                "0x36pkr2f038cwdfqi03pljhg6xwhp7v97ymyqddb5lw5a0isw87"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Inventorymodel" version))
+       (sha256
+        (base32 "0x36pkr2f038cwdfqi03pljhg6xwhp7v97ymyqddb5lw5a0isw87"))))
     (properties `((upstream-name . "Inventorymodel")))
     (build-system r-build-system)
     (propagated-inputs (list r-gametheoryallocation r-e1071))
@@ -5562,12 +5562,12 @@ perspective.")
   (package
     (name "r-inventorize")
     (version "1.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "inventorize" version))
-              (sha256
-               (base32
-                "0pbm9iw4v6wqr4qs5g2nfkgiaq75qdfcdicazy94fwwfvx5xbgbv"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "inventorize" version))
+       (sha256
+        (base32 "0pbm9iw4v6wqr4qs5g2nfkgiaq75qdfcdicazy94fwwfvx5xbgbv"))))
     (properties `((upstream-name . "inventorize")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -5601,12 +5601,12 @@ assistance from Patrick Chan) 2011W For further details or correspondence
   (package
     (name "r-invctr")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "invctr" version))
-              (sha256
-               (base32
-                "1sywjw078rc6nqiz1j77sd7c15nbjjpwqqni3363zzw5c3hgrpx5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "invctr" version))
+       (sha256
+        (base32 "1sywjw078rc6nqiz1j77sd7c15nbjjpwqqni3363zzw5c3hgrpx5"))))
     (properties `((upstream-name . "invctr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-plyr))
@@ -5626,12 +5626,12 @@ replace function for NAs, Inf and other values.")
   (package
     (name "r-invasioncorrection")
     (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "InvasionCorrection" version))
-              (sha256
-               (base32
-                "1wwx2kssjysl1lraac36pvxq34vg8qm0vwi861rs1iipfc35i84j"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "InvasionCorrection" version))
+       (sha256
+        (base32 "1wwx2kssjysl1lraac36pvxq34vg8qm0vwi861rs1iipfc35i84j"))))
     (properties `((upstream-name . "InvasionCorrection")))
     (build-system r-build-system)
     (propagated-inputs (list r-lattice))
@@ -5649,12 +5649,12 @@ cells and the new corrected coordinates.")
   (package
     (name "r-invariantcausalprediction")
     (version "0.8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "InvariantCausalPrediction" version))
-              (sha256
-               (base32
-                "01ckyvjl9lxdpkr0v1da4n4lw3b5z1bxlmf0v6ibqly1mhfwybjl"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "InvariantCausalPrediction" version))
+       (sha256
+        (base32 "01ckyvjl9lxdpkr0v1da4n4lw3b5z1bxlmf0v6ibqly1mhfwybjl"))))
     (properties `((upstream-name . "InvariantCausalPrediction")))
     (build-system r-build-system)
     (propagated-inputs (list r-mboost r-glmnet))
@@ -5670,12 +5670,12 @@ the model with a more experimental version.")
   (package
     (name "r-invacost")
     (version "1.1-5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "invacost" version))
-              (sha256
-               (base32
-                "0qh1illwkcr2hi9hcns08xw8xpqd9d9134mdznw91a5qisnl9wkk"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "invacost" version))
+       (sha256
+        (base32 "0qh1illwkcr2hi9hcns08xw8xpqd9d9134mdznw91a5qisnl9wkk"))))
     (properties `((upstream-name . "invacost")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -5699,12 +5699,12 @@ costs of invasive alien species (<doi:10.1111/2041-210X.13929>).")
   (package
     (name "r-intsvy")
     (version "2.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "intsvy" version))
-              (sha256
-               (base32
-                "1q9phc6051r3vhv55wac1xkl9xzw9c7sw4xidsf6k1lymmhdn064"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "intsvy" version))
+       (sha256
+        (base32 "1q9phc6051r3vhv55wac1xkl9xzw9c7sw4xidsf6k1lymmhdn064"))))
     (properties `((upstream-name . "intsvy")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape
@@ -5725,12 +5725,12 @@ international assessment studies (TIMSS, PIRLS, PISA, ICILS, and PIAAC).")
   (package
     (name "r-intsurv")
     (version "0.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "intsurv" version))
-              (sha256
-               (base32
-                "02ds4gikrgg19knylg68ziani702dyhqc37fhf9j7awa1qxy2r9l"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "intsurv" version))
+       (sha256
+        (base32 "02ds4gikrgg19knylg68ziani702dyhqc37fhf9j7awa1qxy2r9l"))))
     (properties `((upstream-name . "intsurv")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -5752,12 +5752,12 @@ models proposed by Asano and Hirakawa (2017)
   (package
     (name "r-intsdm")
     (version "2.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "intSDM" version))
-              (sha256
-               (base32
-                "1w7rsfbq1x32r961szqlap25wbxgvp9b8w56sfz0p8x90z1qkk89"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "intSDM" version))
+       (sha256
+        (base32 "1w7rsfbq1x32r961szqlap25wbxgvp9b8w56sfz0p8x90z1qkk89"))))
     (properties `((upstream-name . "intSDM")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyterra
@@ -5794,12 +5794,12 @@ Pescott, Schmucki, Simmonds and OâHara (2020)
   (package
     (name "r-intrvals")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "intRvals" version))
-              (sha256
-               (base32
-                "013n0qp12dqnnk931rvs6lql2r13z5j4jf27s4aqfyd80mnl5w7k"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "intRvals" version))
+       (sha256
+        (base32 "013n0qp12dqnnk931rvs6lql2r13z5j4jf27s4aqfyd80mnl5w7k"))))
     (properties `((upstream-name . "intRvals")))
     (build-system r-build-system)
     (propagated-inputs (list r-plyr r-lme4))
@@ -5814,12 +5814,12 @@ data corrected for missed arrival observations.")
   (package
     (name "r-intrval")
     (version "0.1-2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "intrval" version))
-              (sha256
-               (base32
-                "1fbgl2r359aml6cfz8x7h0381kxfx1dy0hr0c7012vr66f6c2lhi"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "intrval" version))
+       (sha256
+        (base32 "1fbgl2r359aml6cfz8x7h0381kxfx1dy0hr0c7012vr66f6c2lhi"))))
     (properties `((upstream-name . "intrval")))
     (build-system r-build-system)
     (home-page "https://github.com/psolymos/intrval")
@@ -5834,12 +5834,12 @@ b2)`).  Operators for negation and directional relations also implemented.")
   (package
     (name "r-intrinsickappa")
     (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "intrinsicKappa" version))
-              (sha256
-               (base32
-                "13m0k1r6l2havl6qi8m6403zkdbma47i29yb6xr9xnyqij2392qz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "intrinsicKappa" version))
+       (sha256
+        (base32 "13m0k1r6l2havl6qi8m6403zkdbma47i29yb6xr9xnyqij2392qz"))))
     (properties `((upstream-name . "intrinsicKappa")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -5861,12 +5861,12 @@ characteristics â A novel and practical method for estimating the
   (package
     (name "r-intrinsicfrp")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "intrinsicFRP" version))
-              (sha256
-               (base32
-                "01hg53fb0xgkmgz3vnv6mf7cqwhlxw7w9pk2i92gsdij5x3cf4xx"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "intrinsicFRP" version))
+       (sha256
+        (base32 "01hg53fb0xgkmgz3vnv6mf7cqwhlxw7w9pk2i92gsdij5x3cf4xx"))))
     (properties `((upstream-name . "intrinsicFRP")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -5891,12 +5891,12 @@ to reliable tests of asset pricing models.")
   (package
     (name "r-intrinsicdimension")
     (version "1.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "intrinsicDimension" version))
-              (sha256
-               (base32
-                "0cka20ifxx9njnvp18bzhrvmh3cwjnxkc0a23qzi43dahc51ijbc"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "intrinsicDimension" version))
+       (sha256
+        (base32 "0cka20ifxx9njnvp18bzhrvmh3cwjnxkc0a23qzi43dahc51ijbc"))))
     (properties `((upstream-name . "intrinsicDimension")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaimpute))
@@ -5917,12 +5917,12 @@ dimensions are provided.")
   (package
     (name "r-intrinsic")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "intRinsic" version))
-              (sha256
-               (base32
-                "0kx40w1228ppvvi3g54pw7552637azix809rpijqcfnps7p7kj1p"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "intRinsic" version))
+       (sha256
+        (base32 "0kx40w1228ppvvi3g54pw7552637azix809rpijqcfnps7p7kj1p"))))
     (properties `((upstream-name . "intRinsic")))
     (build-system r-build-system)
     (propagated-inputs (list r-salso
@@ -5955,12 +5955,12 @@ TWO-NN and Hidalgo models.  References: Denti (2023,
   (package
     (name "r-intrigue")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "INTRIGUE" version))
-              (sha256
-               (base32
-                "1l1vfl0m4iqniwp4bp1bfjpqhwahg341fpyxhryr0j8lypqaw7si"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "INTRIGUE" version))
+       (sha256
+        (base32 "1l1vfl0m4iqniwp4bp1bfjpqhwahg341fpyxhryr0j8lypqaw7si"))))
     (properties `((upstream-name . "INTRIGUE")))
     (build-system r-build-system)
     (propagated-inputs (list r-squarem r-rlist r-dplyr))
@@ -5978,12 +5978,12 @@ also included.")
   (package
     (name "r-intreggof")
     (version "0.85-5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "intRegGOF" version))
-              (sha256
-               (base32
-                "0xjq8vdlgqlzrvp752gd4qfrpnpapx7k6xzfsvfril8ngvm9a162"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "intRegGOF" version))
+       (sha256
+        (base32 "0xjq8vdlgqlzrvp752gd4qfrpnpapx7k6xzfsvfril8ngvm9a162"))))
     (properties `((upstream-name . "intRegGOF")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=intRegGOF")
@@ -5997,12 +5997,12 @@ Regression method.  Works for several different fitting techniques.")
   (package
     (name "r-intrees")
     (version "1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "inTrees" version))
-              (sha256
-               (base32
-                "1afyjh2winb591am1cawchkysyslzv01nwyihvjb7n844pqr5s2j"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "inTrees" version))
+       (sha256
+        (base32 "1afyjh2winb591am1cawchkysyslzv01nwyihvjb7n844pqr5s2j"))))
     (properties `((upstream-name . "inTrees")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -6026,12 +6026,12 @@ Deng, 2019, <doi:10.1007/s41060-018-0144-8>).")
   (package
     (name "r-intradaymodel")
     (version "0.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "intradayModel" version))
-              (sha256
-               (base32
-                "1rpcm6bix06lwkj7wndy3zarbxwm24x15vwwb2gfqj0527pvk0gl"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "intradayModel" version))
+       (sha256
+        (base32 "1rpcm6bix06lwkj7wndy3zarbxwm24x15vwwb2gfqj0527pvk0gl"))))
     (properties `((upstream-name . "intradayModel")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -6054,12 +6054,12 @@ provided by Chen (2016) <doi:10.2139/ssrn.3101695>.")
   (package
     (name "r-intnmf")
     (version "1.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IntNMF" version))
-              (sha256
-               (base32
-                "09qzyvv7d4wr68qrlhcd4ivr65is3mypv1vaxpswwcjmcmyr4gzp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IntNMF" version))
+       (sha256
+        (base32 "09qzyvv7d4wr68qrlhcd4ivr65is3mypv1vaxpswwcjmcmyr4gzp"))))
     (properties `((upstream-name . "IntNMF")))
     (build-system r-build-system)
     (propagated-inputs (list r-nmf r-mclust r-mass r-intersim r-cluster))
@@ -6074,12 +6074,12 @@ dataset using integrative Non-negative Matrix factorization.")
   (package
     (name "r-intmed")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "intmed" version))
-              (sha256
-               (base32
-                "0amcqzinj35yvb9nfy808bz098dqmnds13z335lgqm6sykriyjpl"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "intmed" version))
+       (sha256
+        (base32 "0amcqzinj35yvb9nfy808bz098dqmnds13z335lgqm6sykriyjpl"))))
     (properties `((upstream-name . "intmed")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -6106,12 +6106,12 @@ binary and count mediator/outcome variables respectively.")
   (package
     (name "r-intmap")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "intmap" version))
-              (sha256
-               (base32
-                "1fxq0jkahangv4pwsvnrr4iq2y6qp61l81b28yzwl74b0lmx6hbf"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "intmap" version))
+       (sha256
+        (base32 "1fxq0jkahangv4pwsvnrr4iq2y6qp61l81b28yzwl74b0lmx6hbf"))))
     (properties `((upstream-name . "intmap")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-r6 r-maybe r-bh))
@@ -6129,12 +6129,12 @@ be more convenient for certain situations.")
   (package
     (name "r-intlim")
     (version "2.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IntLIM" version))
-              (sha256
-               (base32
-                "04kjmp6akbw9yjg0lr19aripm5vjzm4bk7xqxm38hq9wn9cgli4g"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IntLIM" version))
+       (sha256
+        (base32 "04kjmp6akbw9yjg0lr19aripm5vjzm4bk7xqxm38hq9wn9cgli4g"))))
     (properties `((upstream-name . "IntLIM")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat
@@ -6171,12 +6171,12 @@ package: (1) Jalal K. Siddiqui, et al. (2018) <doi:10.1186/s12859-018-2085-6>,
   (package
     (name "r-intkrige")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "intkrige" version))
-              (sha256
-               (base32
-                "1p3fn5nzn1iliy025187k590qrsw3z3d47p67gzwwd6h050yrl86"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "intkrige" version))
+       (sha256
+        (base32 "1p3fn5nzn1iliy025187k590qrsw3z3d47p67gzwwd6h050yrl86"))))
     (properties `((upstream-name . "intkrige")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp
@@ -6204,12 +6204,12 @@ wrappers to functions in the gstat and sp packages.")
   (package
     (name "r-inti")
     (version "0.6.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "inti" version))
-              (sha256
-               (base32
-                "1lmm0v76c4ksvp9zrh163cb55c52d112wfvslyxm1vapvpcdmvk7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "inti" version))
+       (sha256
+        (base32 "1lmm0v76c4ksvp9zrh163cb55c52d112wfvslyxm1vapvpcdmvk7"))))
     (properties `((upstream-name . "inti")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -6242,12 +6242,12 @@ technical writing.  Learn more about the inkaverse project at
   (package
     (name "r-intextsummarytable")
     (version "3.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "inTextSummaryTable" version))
-              (sha256
-               (base32
-                "0b5qn3hczdvdhqw6lcf23cyy39lcvraizrr01nxgp27mdarppgqh"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "inTextSummaryTable" version))
+       (sha256
+        (base32 "0b5qn3hczdvdhqw6lcf23cyy39lcvraizrr01nxgp27mdarppgqh"))))
     (properties `((upstream-name . "inTextSummaryTable")))
     (build-system r-build-system)
     (inputs (list pandoc))
@@ -6276,12 +6276,12 @@ html document for clinical data review.")
   (package
     (name "r-intervcomp")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "intervcomp" version))
-              (sha256
-               (base32
-                "1l6x1fl84li6is3b92b96q3fbv0rpgqy2lvw9cbi2cq8nh9imnyx"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "intervcomp" version))
+       (sha256
+        (base32 "1l6x1fl84li6is3b92b96q3fbv0rpgqy2lvw9cbi2cq8nh9imnyx"))))
     (properties `((upstream-name . "intervcomp")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=intervcomp")
@@ -6299,12 +6299,12 @@ and Seier (2003) <doi:10.1198/0003130032323>, and Lemm (2006)
   (package
     (name "r-intervalsurgeon")
     (version "1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IntervalSurgeon" version))
-              (sha256
-               (base32
-                "02l2r83mz4x9x40p8gxwyrqa25qk0cy22k39lv93plvcpadcs8a5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IntervalSurgeon" version))
+       (sha256
+        (base32 "02l2r83mz4x9x40p8gxwyrqa25qk0cy22k39lv93plvcpadcs8a5"))))
     (properties `((upstream-name . "IntervalSurgeon")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -6320,12 +6320,12 @@ merging.")
   (package
     (name "r-intervalquestionstat")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IntervalQuestionStat" version))
-              (sha256
-               (base32
-                "0pvz5l0pvw8akmvv51c48fx1ppms9iq6s4bwscja8jk56akx2wlq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IntervalQuestionStat" version))
+       (sha256
+        (base32 "0pvz5l0pvw8akmvv51c48fx1ppms9iq6s4bwscja8jk56akx2wlq"))))
     (properties `((upstream-name . "IntervalQuestionStat")))
     (build-system r-build-system)
     (home-page "https://github.com/garciagarjose/IntervalQuestionStat/")
@@ -6354,12 +6354,12 @@ from the University of Oviedo (Spain).")
   (package
     (name "r-intervalaverage")
     (version "0.8.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "intervalaverage" version))
-              (sha256
-               (base32
-                "07p9r358q3jxm8n7nypxmvpfnh61njivcwaplgzzxrlcbway6fq9"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "intervalaverage" version))
+       (sha256
+        (base32 "07p9r358q3jxm8n7nypxmvpfnh61njivcwaplgzzxrlcbway6fq9"))))
     (properties `((upstream-name . "intervalaverage")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-data-table))
@@ -6382,12 +6382,12 @@ non-overlapping periods to calendar years).")
   (package
     (name "r-interva5")
     (version "1.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "InterVA5" version))
-              (sha256
-               (base32
-                "08cnhbq1048z7qcvvj0d1br7d8jljzf48ci94aixs0y0vs8lgvvz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "InterVA5" version))
+       (sha256
+        (base32 "08cnhbq1048z7qcvvj0d1br7d8jljzf48ci94aixs0y0vs8lgvvz"))))
     (properties `((upstream-name . "InterVA5")))
     (build-system r-build-system)
     (propagated-inputs (list r-readxl r-curl))
@@ -6404,12 +6404,12 @@ population level statistics.")
   (package
     (name "r-interva4")
     (version "1.7.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "InterVA4" version))
-              (sha256
-               (base32
-                "02fci1p8im8jpalv1mbrhrwhvpi23mzhwhpd1knpxyv7h6l9x0kg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "InterVA4" version))
+       (sha256
+        (base32 "02fci1p8im8jpalv1mbrhrwhvpi23mzhwhpd1knpxyv7h6l9x0kg"))))
     (properties `((upstream-name . "InterVA4")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=InterVA4")
@@ -6425,12 +6425,12 @@ statistics.")
   (package
     (name "r-intersim")
     (version "2.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "InterSIM" version))
-              (sha256
-               (base32
-                "14yccan88szf26w1hg1lkvmssids961gng7il3bjr2f1l0k8vd3b"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "InterSIM" version))
+       (sha256
+        (base32 "14yccan88szf26w1hg1lkvmssids961gng7il3bjr2f1l0k8vd3b"))))
     (properties `((upstream-name . "InterSIM")))
     (build-system r-build-system)
     (propagated-inputs (list r-nmf r-mass))
@@ -6445,12 +6445,12 @@ and protein expression.")
   (package
     (name "r-inters")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "inters" version))
-              (sha256
-               (base32
-                "1is65lid6v5ip6858i7mxjqaj0hgcr1xgk92zsh3qxpr8gn07cij"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "inters" version))
+       (sha256
+        (base32 "1is65lid6v5ip6858i7mxjqaj0hgcr1xgk92zsh3qxpr8gn07cij"))))
     (properties `((upstream-name . "inters")))
     (build-system r-build-system)
     (propagated-inputs (list r-glmnet r-fixest))
@@ -6467,12 +6467,12 @@ Blackwell and Olson (2022) <doi:10.1017/pan.2021.19>.")
   (package
     (name "r-interpretr")
     (version "0.2.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "interpretR" version))
-              (sha256
-               (base32
-                "08vcjh0cxa070c7swg6mm4ygj58r5h8jzpz1h2wl72kxn2ka93yx"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "interpretR" version))
+       (sha256
+        (base32 "08vcjh0cxa070c7swg6mm4ygj58r5h8jzpz1h2wl72kxn2ka93yx"))))
     (properties `((upstream-name . "interpretR")))
     (build-system r-build-system)
     (propagated-inputs (list r-randomforest r-auc))
@@ -6488,12 +6488,12 @@ plots for (cross-validated) @code{randomForest} and ada models.")
   (package
     (name "r-interpretmsspectrum")
     (version "1.3.8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "InterpretMSSpectrum" version))
-              (sha256
-               (base32
-                "0rw2zlqa3r0f4s0nji1k7lw23a9kg3ghb9gcifyh5q6k2308g6dc"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "InterpretMSSpectrum" version))
+       (sha256
+        (base32 "0rw2zlqa3r0f4s0nji1k7lw23a9kg3ghb9gcifyh5q6k2308g6dc"))))
     (properties `((upstream-name . "InterpretMSSpectrum")))
     (build-system r-build-system)
     (propagated-inputs (list r-plyr r-envipat))
@@ -6512,12 +6512,12 @@ ionization mode.")
   (package
     (name "r-interpretci")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "interpretCI" version))
-              (sha256
-               (base32
-                "1jg2dpfrhb1kij2z0gq4sw1lrb4v2sky13dpfmdnaz2k5xqnih2s"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "interpretCI" version))
+       (sha256
+        (base32 "1jg2dpfrhb1kij2z0gq4sw1lrb4v2sky13dpfmdnaz2k5xqnih2s"))))
     (properties `((upstream-name . "interpretCI")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -6549,12 +6549,12 @@ Generate documents explaining the statistical result step by step.")
   (package
     (name "r-interpret")
     (version "0.1.33")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "interpret" version))
-              (sha256
-               (base32
-                "17619lyfbvkssls5l3ymlvq72b2162w0n9r7xa5n8wjnnx8mlipz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "interpret" version))
+       (sha256
+        (base32 "17619lyfbvkssls5l3ymlvq72b2162w0n9r7xa5n8wjnnx8mlipz"))))
     (properties `((upstream-name . "interpret")))
     (build-system r-build-system)
     (home-page "https://github.com/interpretml/interpret")
@@ -6577,12 +6577,12 @@ Caruana, Yin Lou, Johannes Gehrke, Paul Koch, Marc Sturm, and Noemie Elhadad
   (package
     (name "r-interplot")
     (version "0.2.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "interplot" version))
-              (sha256
-               (base32
-                "1qs0ni16rbjilkahn15yn9sil3ba4n935bxpdbpwlsjina504jqj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "interplot" version))
+       (sha256
+        (base32 "1qs0ni16rbjilkahn15yn9sil3ba4n935bxpdbpwlsjina504jqj"))))
     (properties `((upstream-name . "interplot")))
     (build-system r-build-system)
     (propagated-inputs (list r-purrr
@@ -6603,12 +6603,12 @@ multiplicative interaction terms.")
   (package
     (name "r-interlinear")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "interlineaR" version))
-              (sha256
-               (base32
-                "0y1ym6iwly8sv94pdzwv2qy1g7z4hpqlrbcrpb1ds5a62a6axqj5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "interlineaR" version))
+       (sha256
+        (base32 "0y1ym6iwly8sv94pdzwv2qy1g7z4hpqlrbcrpb1ds5a62a6axqj5"))))
     (properties `((upstream-name . "interlineaR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-reshape2))
@@ -6634,12 +6634,12 @@ entries, the example(s) attached to senses, etc.")
   (package
     (name "r-interleave")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "interleave" version))
-              (sha256
-               (base32
-                "0316nzcms9hawjvslvbkpb5rg3jbmzsy1dzvmy1hi80zlyrm891v"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "interleave" version))
+       (sha256
+        (base32 "0316nzcms9hawjvslvbkpb5rg3jbmzsy1dzvmy1hi80zlyrm891v"))))
     (properties `((upstream-name . "interleave")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-geometries))
@@ -6657,12 +6657,12 @@ nested list structures.")
   (package
     (name "r-interimapp")
     (version "0.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "interimApp" version))
-              (sha256
-               (base32
-                "1g2f1plsgzqf277jy2afhchjlcamr9znm02rj4rvky7nnp63gph0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "interimApp" version))
+       (sha256
+        (base32 "1g2f1plsgzqf277jy2afhchjlcamr9znm02rj4rvky7nnp63gph0"))))
     (properties `((upstream-name . "interimApp")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinybs r-shiny r-interim))
@@ -6678,12 +6678,12 @@ trial based on the package interim'.")
   (package
     (name "r-interim")
     (version "0.8.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "interim" version))
-              (sha256
-               (base32
-                "1hcq1cx6fv4ivvyd3ww3gsbw12g6rw83qqqbrcgzlnjl1q0jh3nf"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "interim" version))
+       (sha256
+        (base32 "1hcq1cx6fv4ivvyd3ww3gsbw12g6rw83qqqbrcgzlnjl1q0jh3nf"))))
     (properties `((upstream-name . "interim")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=interim")
@@ -6698,12 +6698,12 @@ can be assessed.")
   (package
     (name "r-interfr")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "interfr" version))
-              (sha256
-               (base32
-                "1wn7i8dsll1qq3v39hgpbqnkjc8f4wlffy73453rw9lpq61y2fgj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "interfr" version))
+       (sha256
+        (base32 "1wn7i8dsll1qq3v39hgpbqnkjc8f4wlffy73453rw9lpq61y2fgj"))))
     (properties `((upstream-name . "interfr")))
     (build-system r-build-system)
     (propagated-inputs (list r-plotrix r-colorspec r-circstats))
@@ -6719,12 +6719,12 @@ images is still under development and will come soon.")
   (package
     (name "r-interflex")
     (version "1.2.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "interflex" version))
-              (sha256
-               (base32
-                "0crijwb076b3hprjnji52l8qnd5pp3w7pxy214sfqrg2g3y4gcfl"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "interflex" version))
+       (sha256
+        (base32 "0crijwb076b3hprjnji52l8qnd5pp3w7pxy214sfqrg2g3y4gcfl"))))
     (properties `((upstream-name . "interflex")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich
@@ -6761,12 +6761,12 @@ values of a moderator.")
   (package
     (name "r-interfaceqpcr")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "InterfaceqPCR" version))
-              (sha256
-               (base32
-                "12nmkv6qnzh2dnbhk1656dla6mrznh24gqblmn4xai7wg4p92fbx"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "InterfaceqPCR" version))
+       (sha256
+        (base32 "12nmkv6qnzh2dnbhk1656dla6mrznh24gqblmn4xai7wg4p92fbx"))))
     (properties `((upstream-name . "InterfaceqPCR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xlsx r-tkrplot r-reshape2 r-plyr))
@@ -6785,12 +6785,12 @@ created.")
   (package
     (name "r-interep")
     (version "0.4.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "interep" version))
-              (sha256
-               (base32
-                "1c2s018h2r9xf5d1bywg4ml1kxszlc6fnrzddfc17wc20l31sw5b"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "interep" version))
+       (sha256
+        (base32 "1c2s018h2r9xf5d1bywg4ml1kxszlc6fnrzddfc17wc20l31sw5b"))))
     (properties `((upstream-name . "interep")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-mass))
@@ -6813,12 +6813,12 @@ Research Award from Johnson Cancer Research Center, Kansas State University.")
   (package
     (name "r-interd")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "InteRD" version))
-              (sha256
-               (base32
-                "18grg2pyn0p3dwqhm2251d47sd97wcjr858y64lf5chkhvcz09nk"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "InteRD" version))
+       (sha256
+        (base32 "18grg2pyn0p3dwqhm2251d47sd97wcjr858y64lf5chkhvcz09nk"))))
     (properties `((upstream-name . "InteRD")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2
@@ -6847,12 +6847,12 @@ deconvolution system.")
   (package
     (name "r-interca")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "interca" version))
-              (sha256
-               (base32
-                "1ddv1rphdpvxbqbmrj3bgsdpksq84yjxdgygms5pw8jdz8yjyirs"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "interca" version))
+       (sha256
+        (base32 "1ddv1rphdpvxbqbmrj3bgsdpksq84yjxdgygms5pw8jdz8yjyirs"))))
     (properties `((upstream-name . "interca")))
     (build-system r-build-system)
     (propagated-inputs (list r-waiter
@@ -6883,12 +6883,12 @@ Markos, and Thanopoulos, 2022; <doi:10.1108/ACI-07-2022-0191>).")
   (package
     (name "r-interatrix")
     (version "1.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Interatrix" version))
-              (sha256
-               (base32
-                "1pjyfg5p6081hng9h6wcmfnlfkcs300c3x9ksdj01587b97ph9s1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Interatrix" version))
+       (sha256
+        (base32 "1pjyfg5p6081hng9h6wcmfnlfkcs300c3x9ksdj01587b97ph9s1"))))
     (properties `((upstream-name . "Interatrix")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -6901,12 +6901,12 @@ Markos, and Thanopoulos, 2022; <doi:10.1108/ACI-07-2022-0191>).")
   (package
     (name "r-interactiontest")
     (version "1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "interactionTest" version))
-              (sha256
-               (base32
-                "0ycr839l07xahakr4r2jvlmd0fcxfm4qi3g8agnyh24c2kwl3ck2"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "interactionTest" version))
+       (sha256
+        (base32 "0ycr839l07xahakr4r2jvlmd0fcxfm4qi3g8agnyh24c2kwl3ck2"))))
     (properties `((upstream-name . "interactionTest")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=interactionTest")
@@ -6923,12 +6923,12 @@ interaction terms.")
   (package
     (name "r-interactions")
     (version "1.1.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "interactions" version))
-              (sha256
-               (base32
-                "16lrlj0rc9bkxgmackpvcx8wx9pbsnr55vak6zx022ss820h3ljj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "interactions" version))
+       (sha256
+        (base32 "16lrlj0rc9bkxgmackpvcx8wx9pbsnr55vak6zx022ss820h3ljj"))))
     (properties `((upstream-name . "interactions")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -6956,12 +6956,12 @@ regression context.")
   (package
     (name "r-interactionrcs")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "interactionRCS" version))
-              (sha256
-               (base32
-                "07yhcgp9jc0fd29drsvdcpg8hw3zafr3njkx4qa5qhp3jsn0m3pm"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "interactionRCS" version))
+       (sha256
+        (base32 "07yhcgp9jc0fd29drsvdcpg8hw3zafr3njkx4qa5qhp3jsn0m3pm"))))
     (properties `((upstream-name . "interactionRCS")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -6986,12 +6986,12 @@ Greenland S. (1995) <doi:10.1097/00001648-199507000-00005>.")
   (package
     (name "r-interactionr")
     (version "0.1.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "interactionR" version))
-              (sha256
-               (base32
-                "1k6fn0y69s8dq14yqqai4qm97cdyp7sfn8ni19xs2h8hwgmxdhf9"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "interactionR" version))
+       (sha256
+        (base32 "1k6fn0y69s8dq14yqqai4qm97cdyp7sfn8ni19xs2h8hwgmxdhf9"))))
     (properties `((upstream-name . "interactionR")))
     (build-system r-build-system)
     (propagated-inputs (list r-officer r-msm r-flextable r-car))
@@ -7012,12 +7012,12 @@ Assmann et al. (1996), [<doi:10.1097/00001648-199605000-00012>]).")
   (package
     (name "r-interactionpower")
     (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "InteractionPoweR" version))
-              (sha256
-               (base32
-                "1mff2kasdrkk56xqvw66m8sn6186dk0nbv8bx0izpr5qf9dz308q"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "InteractionPoweR" version))
+       (sha256
+        (base32 "1mff2kasdrkk56xqvw66m8sn6186dk0nbv8bx0izpr5qf9dz308q"))))
     (properties `((upstream-name . "InteractionPoweR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -7051,12 +7051,12 @@ regressions.\" <doi:10.31234/osf.io/5ptd7>.")
   (package
     (name "r-intensitynet")
     (version "1.4.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "intensitynet" version))
-              (sha256
-               (base32
-                "0rgm8rj95r269ww7snwv6czqdxabhzwxyaf3587scprhhn7pncy3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "intensitynet" version))
+       (sha256
+        (base32 "0rgm8rj95r269ww7snwv6czqdxabhzwxyaf3587scprhhn7pncy3"))))
     (properties `((upstream-name . "intensitynet")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -7083,12 +7083,12 @@ following research: Eckardt and Mateu (2018)
   (package
     (name "r-intensity-analysis")
     (version "0.1.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "intensity.analysis" version))
-              (sha256
-               (base32
-                "1ydmn7njqk6i2667zaha8mvfndss4im39czadg1f3z6sndp2lsji"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "intensity.analysis" version))
+       (sha256
+        (base32 "1ydmn7njqk6i2667zaha8mvfndss4im39czadg1f3z6sndp2lsji"))))
     (properties `((upstream-name . "intensity.analysis")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgdal r-reshape2 r-raster r-ggplot2 r-differ))
@@ -7109,12 +7109,12 @@ changes by interval, category, and transition\".  Landscape and Urban Planning.
   (package
     (name "r-intensegrid")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "intensegRid" version))
-              (sha256
-               (base32
-                "1dhk14rxy7c2pawcg89bhbnx30nzi5hppywmf41aa7f40x2m7wxs"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "intensegRid" version))
+       (sha256
+        (base32 "1dhk14rxy7c2pawcg89bhbnx30nzi5hppywmf41aa7f40x2m7wxs"))))
     (properties `((upstream-name . "intensegRid")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -7141,12 +7141,12 @@ carbon intensity of the electricity system in Great Britain.")
   (package
     (name "r-intendo")
     (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "intendo" version))
-              (sha256
-               (base32
-                "1qkgb0yrlq2k9cg934v5pj8bb6kla911v3z7sadd1p7m8a10kdyw"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "intendo" version))
+       (sha256
+        (base32 "1qkgb0yrlq2k9cg934v5pj8bb6kla911v3z7sadd1p7m8a10kdyw"))))
     (properties `((upstream-name . "intendo")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=intendo")
@@ -7167,12 +7167,12 @@ focus on data validation and data documentation.")
   (package
     (name "r-integratedmrf")
     (version "1.1.9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IntegratedMRF" version))
-              (sha256
-               (base32
-                "0kklgc48cib4bjfs9qbw13nkp8xyjdazrg6z15x69jylnxyakic7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IntegratedMRF" version))
+       (sha256
+        (base32 "0kklgc48cib4bjfs9qbw13nkp8xyjdazrg6z15x69jylnxyakic7"))))
     (properties `((upstream-name . "IntegratedMRF")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-multivariaterandomforest r-limsolve
@@ -7195,12 +7195,12 @@ Jackknife-after-Bootstrap approach.")
   (package
     (name "r-integratedjm")
     (version "1.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IntegratedJM" version))
-              (sha256
-               (base32
-                "0fv24z7vidhn09ljk09pjzkrlg2rlwxcrhfjc53ybjjgsgay99z6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IntegratedJM" version))
+       (sha256
+        (base32 "0fv24z7vidhn09ljk09pjzkrlg2rlwxcrhfjc53ybjjgsgay99z6"))))
     (properties `((upstream-name . "IntegratedJM")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlme r-ggplot2 r-biobase))
@@ -7217,12 +7217,12 @@ plots to better understand the analysis.")
   (package
     (name "r-integratebs")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IntegrateBs" version))
-              (sha256
-               (base32
-                "1pkx4wpahd1sabzx55law3710x3vbh9yi6kii8gs2xfq3cb1llmq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IntegrateBs" version))
+       (sha256
+        (base32 "1pkx4wpahd1sabzx55law3710x3vbh9yi6kii8gs2xfq3cb1llmq"))))
     (properties `((upstream-name . "IntegrateBs")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=IntegrateBs")
@@ -7234,12 +7234,12 @@ plots to better understand the analysis.")
   (package
     (name "r-integr")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "integr" version))
-              (sha256
-               (base32
-                "172vj29bdk42ibgwj7dl06wslpg2dccp1i8iscbz1yd0j5kw36sq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "integr" version))
+       (sha256
+        (base32 "172vj29bdk42ibgwj7dl06wslpg2dccp1i8iscbz1yd0j5kw36sq"))))
     (properties `((upstream-name . "integr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rsvg r-gtools r-dplyr r-diagrammersvg
@@ -7259,12 +7259,12 @@ references, see the webpage of Aleks Jakulin
   (package
     (name "r-integirty")
     (version "1.0.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "integIRTy" version))
-              (sha256
-               (base32
-                "15f04p97fvqdq971adyafm3ljirfxz90lv096fdqn2vk0sq5dwyj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "integIRTy" version))
+       (sha256
+        (base32 "15f04p97fvqdq971adyafm3ljirfxz90lv096fdqn2vk0sq5dwyj"))))
     (properties `((upstream-name . "integIRTy")))
     (build-system r-build-system)
     (propagated-inputs (list r-mclust
@@ -7290,12 +7290,12 @@ accurately inferred.  See Tong and Coombes (2012)
   (package
     (name "r-intcensroc")
     (version "0.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "intcensROC" version))
-              (sha256
-               (base32
-                "1raqjc3g9fgyd01iax7hrmkk3nzzfi34a1ywhjrkwv1n9gsc58ns"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "intcensROC" version))
+       (sha256
+        (base32 "1raqjc3g9fgyd01iax7hrmkk3nzzfi34a1ywhjrkwv1n9gsc58ns"))))
     (properties `((upstream-name . "intcensROC")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-pracma))
@@ -7318,12 +7318,12 @@ censored survival data as well as area under the curve (AUC).")
   (package
     (name "r-intccr")
     (version "3.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "intccr" version))
-              (sha256
-               (base32
-                "1bpzsik6yypkxskp7ar8a1j0wmndsx41xn4kaffz0fni988l23hc"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "intccr" version))
+       (sha256
+        (base32 "1bpzsik6yypkxskp7ar8a1j0wmndsx41xn4kaffz0fni988l23hc"))))
     (properties `((upstream-name . "intccr")))
     (build-system r-build-system)
     (propagated-inputs (list r-splines2 r-mass r-foreach r-doparallel
@@ -7347,12 +7347,12 @@ models.")
   (package
     (name "r-intcal")
     (version "0.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IntCal" version))
-              (sha256
-               (base32
-                "0d5sd63ajmksafxfrfbd8jsgkbcxirjgd1532blylbcnwjlcws15"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IntCal" version))
+       (sha256
+        (base32 "0d5sd63ajmksafxfrfbd8jsgkbcxirjgd1532blylbcnwjlcws15"))))
     (properties `((upstream-name . "IntCal")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -7371,12 +7371,12 @@ underlying data, as well as functions to calibrate radiocarbon dates.")
   (package
     (name "r-intamap")
     (version "1.5-6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "intamap" version))
-              (sha256
-               (base32
-                "1d269rg1wf431v6p9blxspnnps8lyzcc8wid5qgy6hj3wrya0a37"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "intamap" version))
+       (sha256
+        (base32 "1d269rg1wf431v6p9blxspnnps8lyzcc8wid5qgy6hj3wrya0a37"))))
     (properties `((upstream-name . "intamap")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp
@@ -7402,12 +7402,12 @@ of the methods behind and possible usage <doi:10.1016/j.cageo.2010.03.019>.")
   (package
     (name "r-insurancerating")
     (version "0.7.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "insurancerating" version))
-              (sha256
-               (base32
-                "0yllp7r1jmv09py3v8blir7nc3vpd8y5a8b3r8k5ncyx7k56nbwh"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "insurancerating" version))
+       (sha256
+        (base32 "0yllp7r1jmv09py3v8blir7nc3vpd8y5a8b3r8k5ncyx7k56nbwh"))))
     (properties `((upstream-name . "insurancerating")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -7443,12 +7443,12 @@ coefficients in the output of a generalized linear regression analysis.")
   (package
     (name "r-insurancedata")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "insuranceData" version))
-              (sha256
-               (base32
-                "0wryh8i1v3bnpbqn6d6dpxr9bwwl6mnh5cb5igz0yanh4m1rx96w"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "insuranceData" version))
+       (sha256
+        (base32 "0wryh8i1v3bnpbqn6d6dpxr9bwwl6mnh5cb5igz0yanh4m1rx96w"))))
     (properties `((upstream-name . "insuranceData")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=insuranceData")
@@ -7466,12 +7466,12 @@ Polish National Science Center.")
   (package
     (name "r-instar")
     (version "0.2.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "instaR" version))
-              (sha256
-               (base32
-                "0c4m471ragkpksr0h21cdgnjxcknf01xqz543dahxgzjg9ncjwhg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "instaR" version))
+       (sha256
+        (base32 "0c4m471ragkpksr0h21cdgnjxcknf01xqz543dahxgzjg9ncjwhg"))))
     (properties `((upstream-name . "instaR")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-httr))
@@ -7487,12 +7487,12 @@ hashtag, popularity, user or location, and to access public users profile data."
   (package
     (name "r-instantiate")
     (version "0.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "instantiate" version))
-              (sha256
-               (base32
-                "1qnf2sjmkqrc8hcsmvf7c2yds7mixb4ypcqhilawv03iljy26qqz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "instantiate" version))
+       (sha256
+        (base32 "1qnf2sjmkqrc8hcsmvf7c2yds7mixb4ypcqhilawv03iljy26qqz"))))
     (properties `((upstream-name . "instantiate")))
     (build-system r-build-system)
     (inputs (list))
@@ -7516,12 +7516,12 @@ stanapi are similar Stan clients with different objectives.")
   (package
     (name "r-installr")
     (version "0.23.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "installr" version))
-              (sha256
-               (base32
-                "1qlwcww3bgbdfqk2qi1vvis11bnvkkwa6h2l195knhx0i0ha8pfj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "installr" version))
+       (sha256
+        (base32 "1qlwcww3bgbdfqk2qi1vvis11bnvkkwa6h2l195knhx0i0ha8pfj"))))
     (properties `((upstream-name . "installr")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr))
@@ -7543,12 +7543,12 @@ installation.")
   (package
     (name "r-install-load")
     (version "1.2.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "install.load" version))
-              (sha256
-               (base32
-                "1r1z6r1s65wpb5vxfwgmrip37pzr4ccz16b379mcqw8yq4fnzlcb"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "install.load" version))
+       (sha256
+        (base32 "1r1z6r1s65wpb5vxfwgmrip37pzr4ccz16b379mcqw8yq4fnzlcb"))))
     (properties `((upstream-name . "install.load")))
     (build-system r-build-system)
     (propagated-inputs (list r-fastmatch r-checkmate r-assertthat))
@@ -7570,12 +7570,12 @@ easypackages', pacman', pak', @code{anyLib}', and/or librarian'.")
   (package
     (name "r-instagramadsr")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "instagramadsR" version))
-              (sha256
-               (base32
-                "1g2gikps3qraa12x8vfxsyanxg2mkcix57pcsh5myi1lcp5r2y5z"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "instagramadsR" version))
+       (sha256
+        (base32 "1g2gikps3qraa12x8vfxsyanxg2mkcix57pcsh5myi1lcp5r2y5z"))))
     (properties `((upstream-name . "instagramadsR")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite))
@@ -7591,12 +7591,12 @@ easypackages', pacman', pak', @code{anyLib}', and/or librarian'.")
   (package
     (name "r-inspire")
     (version "1.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "INSPIRE" version))
-              (sha256
-               (base32
-                "0938l50yxnb5q628mp874ayx9ybvcjddis20y1hzm5cmlsg0hqhg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "INSPIRE" version))
+       (sha256
+        (base32 "0938l50yxnb5q628mp874ayx9ybvcjddis20y1hzm5cmlsg0hqhg"))))
     (properties `((upstream-name . "INSPIRE")))
     (build-system r-build-system)
     (propagated-inputs (list r-missmda))
@@ -7617,12 +7617,12 @@ Lee (2016) <DOI:10.1186/s13073-016-0319-7>.")
   (package
     (name "r-inspectumours")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "INSPECTumours" version))
-              (sha256
-               (base32
-                "1jh6p3bgnrjixqzvjl0z3nv6lh01fx3x925h3na2pi3scqx5gx0s"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "INSPECTumours" version))
+       (sha256
+        (base32 "1jh6p3bgnrjixqzvjl0z3nv6lh01fx3x925h3na2pi3scqx5gx0s"))))
     (properties `((upstream-name . "INSPECTumours")))
     (build-system r-build-system)
     (propagated-inputs (list r-waiter
@@ -7661,12 +7661,12 @@ pre-clinical tumour responses.")
   (package
     (name "r-inspector")
     (version "1.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "inspector" version))
-              (sha256
-               (base32
-                "16gc98af6wmwf32fz8zml5v17g5lkiybzyzsqgphx0k19hrbc6kr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "inspector" version))
+       (sha256
+        (base32 "16gc98af6wmwf32fz8zml5v17g5lkiybzyzsqgphx0k19hrbc6kr"))))
     (properties `((upstream-name . "inspector")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack))
@@ -7683,12 +7683,12 @@ verbose functions.")
   (package
     (name "r-inspectdf")
     (version "0.0.12")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "inspectdf" version))
-              (sha256
-               (base32
-                "1k9dszjfpvpc10qr9nbw5r55mdwslgblhlrgnqjnwx9i89j03mlk"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "inspectdf" version))
+       (sha256
+        (base32 "1k9dszjfpvpc10qr9nbw5r55mdwslgblhlrgnqjnwx9i89j03mlk"))))
     (properties `((upstream-name . "inspectdf")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -7713,12 +7713,12 @@ usage.")
   (package
     (name "r-inspectchangepoint")
     (version "1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "InspectChangepoint" version))
-              (sha256
-               (base32
-                "084ji77z0dnbjrhy6z40kjbblsgk3z00z256pfknkqxd3v7sawvc"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "InspectChangepoint" version))
+       (sha256
+        (base32 "084ji77z0dnbjrhy6z40kjbblsgk3z00z256pfknkqxd3v7sawvc"))))
     (properties `((upstream-name . "InspectChangepoint")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -7734,12 +7734,12 @@ estimated using a (wild) binary segmentation scheme.")
   (package
     (name "r-insilicova")
     (version "1.4.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "InSilicoVA" version))
-              (sha256
-               (base32
-                "15x6d928rk9in2swbaal6hcw2nikj153fgqyd7nhdkcbs1agrsl1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "InSilicoVA" version))
+       (sha256
+        (base32 "15x6d928rk9in2swbaal6hcw2nikj153fgqyd7nhdkcbs1agrsl1"))))
     (properties `((upstream-name . "InSilicoVA")))
     (build-system r-build-system)
     (inputs (list openjdk))
@@ -7761,12 +7761,12 @@ of the output.")
   (package
     (name "r-insee")
     (version "1.1.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "insee" version))
-              (sha256
-               (base32
-                "1f6y19dysm0mh3fkrwnqcgi5j1lzy08m3ij3wrx26q2vgwv5lkfg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "insee" version))
+       (sha256
+        (base32 "1f6y19dysm0mh3fkrwnqcgi5j1lzy08m3ij3wrx26q2vgwv5lkfg"))))
     (properties `((upstream-name . "insee")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -7792,12 +7792,12 @@ bdm macroeconomic database.")
   (package
     (name "r-insectdisease")
     (version "1.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "insectDisease" version))
-              (sha256
-               (base32
-                "1ncj5fgmx19caf8m2p3ij5iamk941m9y725gs0nqpa9m6zfnzgf8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "insectDisease" version))
+       (sha256
+        (base32 "1ncj5fgmx19caf8m2p3ij5iamk941m9y725gs0nqpa9m6zfnzgf8"))))
     (properties `((upstream-name . "insectDisease")))
     (build-system r-build-system)
     (propagated-inputs (list r-taxize r-plyr))
@@ -7817,12 +7817,12 @@ in a static format at <https://edwip.ecology.uga.edu/>.")
   (package
     (name "r-insect")
     (version "1.4.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "insect" version))
-              (sha256
-               (base32
-                "0pbac9il1jrhii0hxvvqjc3phyr2iamxwzanxx5mrkyjh2wsl3jh"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "insect" version))
+       (sha256
+        (base32 "0pbac9il1jrhii0hxvvqjc3phyr2iamxwzanxx5mrkyjh2wsl3jh"))))
     (properties `((upstream-name . "insect")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -7846,12 +7846,12 @@ sequence classification trees.  See Wilkinson et al (2018)
   (package
     (name "r-insane")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "insane" version))
-              (sha256
-               (base32
-                "1i8lijxa78i76dicdvcpp5c12il0341dsfjccn8m8axnsq7qg81h"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "insane" version))
+       (sha256
+        (base32 "1i8lijxa78i76dicdvcpp5c12il0341dsfjccn8m8axnsq7qg81h"))))
     (properties `((upstream-name . "insane")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -7886,12 +7886,12 @@ method described in Ndiaye et al., 2017 (<doi:10.1016/j.molmet.2017.03.011>).")
   (package
     (name "r-inqc")
     (version "2.0.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "INQC" version))
-              (sha256
-               (base32
-                "1gz7gyq5n2bmh18yrg29nz8kmdc0b35chwqxr6y2sggdm8j28akd"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "INQC" version))
+       (sha256
+        (base32 "1gz7gyq5n2bmh18yrg29nz8kmdc0b35chwqxr6y2sggdm8j28akd"))))
     (properties `((upstream-name . "INQC")))
     (build-system r-build-system)
     (propagated-inputs (list r-suncalc r-gdata r-evd))
@@ -7906,12 +7906,12 @@ series (e.g. the ECA&D station data).")
   (package
     (name "r-inposition")
     (version "0.12.7.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "InPosition" version))
-              (sha256
-               (base32
-                "0d9c7dwaa1v0j8p5ff9223fc2gkbmbvyqylma2d8l4x5m92jmkv0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "InPosition" version))
+       (sha256
+        (base32 "0d9c7dwaa1v0j8p5ff9223fc2gkbmbvyqylma2d8l4x5m92jmkv0"))))
     (properties `((upstream-name . "InPosition")))
     (build-system r-build-system)
     (propagated-inputs (list r-prettygraphs r-exposition))
@@ -7925,12 +7925,12 @@ series (e.g. the ECA&D station data).")
   (package
     (name "r-inplace")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "inplace" version))
-              (sha256
-               (base32
-                "06jb8xzjqywdww8j2i59c8663dfbrhnvj0lh3xm73j39sig6vh7l"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "inplace" version))
+       (sha256
+        (base32 "06jb8xzjqywdww8j2i59c8663dfbrhnvj0lh3xm73j39sig6vh7l"))))
     (properties `((upstream-name . "inplace")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -7946,12 +7946,12 @@ access to sweep operations (in-place).")
   (package
     (name "r-inpdfr")
     (version "0.1.12")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "inpdfr" version))
-              (sha256
-               (base32
-                "1pargjl2v1kxxbdzf2jjcw3yxyqmxkq30rz3y5xywigq1ab2lpsw"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "inpdfr" version))
+       (sha256
+        (base32 "1pargjl2v1kxxbdzf2jjcw3yxyqmxkq30rz3y5xywigq1ab2lpsw"))))
     (properties `((upstream-name . "inpdfr")))
     (build-system r-build-system)
     (inputs (list xpdf))
@@ -7976,12 +7976,12 @@ classical text mining	functions, as well as those from theoretical ecology.")
   (package
     (name "r-inops")
     (version "0.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "inops" version))
-              (sha256
-               (base32
-                "1y402a9r542hpwd1nfdc07mbgnf9alpnykl9di1v8fy0qly8s0an"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "inops" version))
+       (sha256
+        (base32 "1y402a9r542hpwd1nfdc07mbgnf9alpnykl9di1v8fy0qly8s0an"))))
     (properties `((upstream-name . "inops")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -7998,12 +7998,12 @@ vectors, matrices, and lists.")
   (package
     (name "r-ino")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ino" version))
-              (sha256
-               (base32
-                "1h47hlfxhxs14ms7wq7js4ygmq76d5i8f88ghhh5g2l6fdszfi90"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ino" version))
+       (sha256
+        (base32 "1h47hlfxhxs14ms7wq7js4ygmq76d5i8f88ghhh5g2l6fdszfi90"))))
     (properties `((upstream-name . "ino")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -8032,12 +8032,12 @@ functions, including likelihood functions of statistical models.  See
   (package
     (name "r-innsight")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "innsight" version))
-              (sha256
-               (base32
-                "0ckhxicgvvrwzsm1x396xp2fj6g7v2m2ga4gzvqrw4my10w4y3di"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "innsight" version))
+       (sha256
+        (base32 "0ckhxicgvvrwzsm1x396xp2fj6g7v2m2ga4gzvqrw4my10w4y3di"))))
     (properties `((upstream-name . "innsight")))
     (build-system r-build-system)
     (propagated-inputs (list r-torch r-r6 r-ggplot2 r-cli r-checkmate))
@@ -8061,12 +8061,12 @@ Gradient'.")
   (package
     (name "r-inlpubs")
     (version "1.0.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "inlpubs" version))
-              (sha256
-               (base32
-                "0al6a4lidc9hk7l2r233kyq7fcwsd7cbfcm813jqy89nn187cmis"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "inlpubs" version))
+       (sha256
+        (base32 "0al6a4lidc9hk7l2r233kyq7fcwsd7cbfcm813jqy89nn187cmis"))))
     (properties `((upstream-name . "inlpubs")))
     (build-system r-build-system)
     (propagated-inputs (list r-tm r-checkmate))
@@ -8082,12 +8082,12 @@ Gradient'.")
   (package
     (name "r-inlinedocs")
     (version "2019.12.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "inlinedocs" version))
-              (sha256
-               (base32
-                "11d8cnrzgq95w7hn234rcwrr1mmrv63f69807pnzxizxbgnp7wz3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "inlinedocs" version))
+       (sha256
+        (base32 "11d8cnrzgq95w7hn234rcwrr1mmrv63f69807pnzxizxbgnp7wz3"))))
     (properties `((upstream-name . "inlinedocs")))
     (build-system r-build-system)
     (home-page "http://github.com/tdhock/inlinedocs")
@@ -8103,12 +8103,12 @@ defined in R code, not comments.  It is also easy to define a new syntax.")
   (package
     (name "r-inlcolor")
     (version "1.0.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "inlcolor" version))
-              (sha256
-               (base32
-                "0998smgzkspij2fa5si1sk5dfpas3645crk5hqkdg9ip228cqn16"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "inlcolor" version))
+       (sha256
+        (base32 "0998smgzkspij2fa5si1sk5dfpas3645crk5hqkdg9ip228cqn16"))))
     (properties `((upstream-name . "inlcolor")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-rlang r-checkmate))
@@ -8125,12 +8125,12 @@ Geological Survey (USGS) Idaho National Laboratory Project Office.")
   (package
     (name "r-inlaspacetime")
     (version "0.1.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "INLAspacetime" version))
-              (sha256
-               (base32
-                "0b3ahvgqkgb32zpr5cbyz1k0sszzm6pim1dxyhka6mv73732qzgw"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "INLAspacetime" version))
+       (sha256
+        (base32 "0b3ahvgqkgb32zpr5cbyz1k0sszzm6pim1dxyhka6mv73732qzgw"))))
     (properties `((upstream-name . "INLAspacetime")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-sf r-matrix r-fmesher))
@@ -8151,12 +8151,12 @@ available vignettes and from the URL bellow.")
   (package
     (name "r-inlabru")
     (version "2.9.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "inlabru" version))
-              (sha256
-               (base32
-                "198amkx9s9lsdd3kwglmr62kvs8qlf3kw606dpmw83kip2v6gxwp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "inlabru" version))
+       (sha256
+        (base32 "198amkx9s9lsdd3kwglmr62kvs8qlf3kw606dpmw83kip2v6gxwp"))))
     (properties `((upstream-name . "inlabru")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -8194,12 +8194,12 @@ Ecology-focused introduction in Bachl, Lindgren, Borchers, and Illian (2019)
   (package
     (name "r-inlabma")
     (version "0.1-11")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "INLABMA" version))
-              (sha256
-               (base32
-                "0wzyb3c7zpksqz198kigi4rpblvk0rjamngmyabw5xdpizxdg6zi"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "INLABMA" version))
+       (sha256
+        (base32 "0wzyb3c7zpksqz198kigi4rpblvk0rjamngmyabw5xdpizxdg6zi"))))
     (properties `((upstream-name . "INLABMA")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdep r-sp r-matrix))
@@ -8213,13 +8213,13 @@ with INLA. The INLA package can be obtained from <http://www.r-inla.org>.")
 (define-public r-injurytools
   (package
     (name "r-injurytools")
-    (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "injurytools" version))
-              (sha256
-               (base32
-                "01fachbqa4m56anas1j0my0ifl3n675lzzf8lv6q4im4axn072b4"))))
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "injurytools" version))
+       (sha256
+        (base32 "1n8nr7mvmsrpzyirli3kmhn48z4mf4j2nj8k5nsl62jz5qsk7dlc"))))
     (properties `((upstream-name . "injurytools")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -8229,7 +8229,6 @@ with INLA. The INLA package can be obtained from <http://www.r-inla.org>.")
                              r-rlang
                              r-purrr
                              r-metr
-                             r-magrittr
                              r-lubridate
                              r-ggplot2
                              r-forcats
@@ -8251,12 +8250,12 @@ model-based analyses.")
   (package
     (name "r-injuryseverityscore")
     (version "0.0.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "InjurySeverityScore" version))
-              (sha256
-               (base32
-                "0g52cksa774in18ykrym61l3my9zm343bgsq5mg7mki9x65xd35z"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "InjurySeverityScore" version))
+       (sha256
+        (base32 "0g52cksa774in18ykrym61l3my9zm343bgsq5mg7mki9x65xd35z"))))
     (properties `((upstream-name . "InjurySeverityScore")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-rlang r-dplyr))
@@ -8278,12 +8277,12 @@ Economics, revised 29 Oct 2010.")
   (package
     (name "r-injector")
     (version "0.2.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "injectoR" version))
-              (sha256
-               (base32
-                "0sa32cspp6y3m04yfmd02kxx55mk7l9jxf4r9pk1a6k3sqnj6fl8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "injectoR" version))
+       (sha256
+        (base32 "0sa32cspp6y3m04yfmd02kxx55mk7l9jxf4r9pk1a6k3sqnj6fl8"))))
     (properties `((upstream-name . "injectoR")))
     (build-system r-build-system)
     (home-page "https://github.com/dfci-cccb/injectoR")
@@ -8299,12 +8298,12 @@ separates the responsibilities of use and construction.")
   (package
     (name "r-infusion")
     (version "2.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Infusion" version))
-              (sha256
-               (base32
-                "0dmbqwgavbfp54l47p6zdy75k9wi9zw3ai18q4gy8l4ag5vldzhi"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Infusion" version))
+       (sha256
+        (base32 "0dmbqwgavbfp54l47p6zdy75k9wi9zw3ai18q4gy8l4ag5vldzhi"))))
     (properties `((upstream-name . "Infusion")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -8331,12 +8330,12 @@ more advanced methods.")
   (package
     (name "r-infrafdtd-assist")
     (version "0.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "infraFDTD.assist" version))
-              (sha256
-               (base32
-                "04j5nl5vxk79iciz6s9bpiyn319c2dbh7fdahgwira2r30w2fxv9"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "infraFDTD.assist" version))
+       (sha256
+        (base32 "04j5nl5vxk79iciz6s9bpiyn319c2dbh7fdahgwira2r30w2fxv9"))))
     (properties `((upstream-name . "infraFDTD.assist")))
     (build-system r-build-system)
     (propagated-inputs (list r-fields))
@@ -8353,12 +8352,12 @@ atmosphere (see Kim et al., 2015 <doi:10.1002/2015GL064466>).")
   (package
     (name "r-infotrad")
     (version "1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "InfoTrad" version))
-              (sha256
-               (base32
-                "0blfn59w73hjga15sw8plwvn6yq9fj95nxwp018mp1harl8wa5db"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "InfoTrad" version))
+       (sha256
+        (base32 "0blfn59w73hjga15sw8plwvn6yq9fj95nxwp018mp1harl8wa5db"))))
     (properties `((upstream-name . "InfoTrad")))
     (build-system r-build-system)
     (propagated-inputs (list r-nloptr))
@@ -8381,12 +8380,12 @@ hierarchical agglomerative clustering approach proposed by Gan et.  al. (2015)
   (package
     (name "r-informedsen")
     (version "1.0.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "informedSen" version))
-              (sha256
-               (base32
-                "1zb93289jszyj57ji00r35hx8ralxw2n6i384h6myxddgl377qfv"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "informedSen" version))
+       (sha256
+        (base32 "1zb93289jszyj57ji00r35hx8ralxw2n6i384h6myxddgl377qfv"))))
     (properties `((upstream-name . "informedSen")))
     (build-system r-build-system)
     (propagated-inputs (list r-sensitivitymult))
@@ -8408,12 +8407,12 @@ observational studies Biometrika, 79(2), 367-374 <doi:10.1093/biomet/79.2.367>."
   (package
     (name "r-informativecensoring")
     (version "0.3.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "InformativeCensoring" version))
-              (sha256
-               (base32
-                "0i0n6da4rcqwld14q35inl57w57sb6dqil4jq0kyjyd2079fpnfp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "InformativeCensoring" version))
+       (sha256
+        (base32 "0i0n6da4rcqwld14q35inl57w57sb6dqil4jq0kyjyd2079fpnfp"))))
     (properties `((upstream-name . "InformativeCensoring")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-dplyr r-boot))
@@ -8431,12 +8430,12 @@ Imputation described in <DOI:10.1002/sim.3480>.")
   (package
     (name "r-information")
     (version "0.0.9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Information" version))
-              (sha256
-               (base32
-                "0pszwzj3r7vdvdsy9w1qz95zxp7y2bsyg36b58mm4qcvcvymd4kn"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Information" version))
+       (sha256
+        (base32 "0pszwzj3r7vdvdsy9w1qz95zxp7y2bsyg36b58mm4qcvcvymd4kn"))))
     (properties `((upstream-name . "Information")))
     (build-system r-build-system)
     (propagated-inputs (list r-plyr
@@ -8462,12 +8461,12 @@ and NIV).")
   (package
     (name "r-infodecompute")
     (version "0.6.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "infoDecompuTE" version))
-              (sha256
-               (base32
-                "0r1capiv4zr31dsy0sqly9zb00i86zq2ihbgsmb5g4cy0f04xlqz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "infoDecompuTE" version))
+       (sha256
+        (base32 "0r1capiv4zr31dsy0sqly9zb00i86zq2ihbgsmb5g4cy0f04xlqz"))))
     (properties `((upstream-name . "infoDecompuTE")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -8488,12 +8487,12 @@ much easily.")
   (package
     (name "r-influxdbr")
     (version "0.14.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "influxdbr" version))
-              (sha256
-               (base32
-                "03dzw86mvbc8w38q9skjki1z17vc04k9q8dx7sd3xg6xbr10f9d9"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "influxdbr" version))
+       (sha256
+        (base32 "03dzw86mvbc8w38q9skjki1z17vc04k9q8dx7sd3xg6xbr10f9d9"))))
     (properties `((upstream-name . "influxdbr")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -8520,12 +8519,12 @@ provided.")
   (package
     (name "r-influxdbclient")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "influxdbclient" version))
-              (sha256
-               (base32
-                "0zyb6ycyw03kwg8f27vhy14i0bh58j040bjbi9vm1m692hcvcqcd"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "influxdbclient" version))
+       (sha256
+        (base32 "0zyb6ycyw03kwg8f27vhy14i0bh58j040bjbi9vm1m692hcvcqcd"))))
     (properties `((upstream-name . "influxdbclient")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6
@@ -8546,12 +8545,12 @@ OSS (<https://portal.influxdata.com/downloads/>) and Cloud
   (package
     (name "r-influential")
     (version "2.2.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "influential" version))
-              (sha256
-               (base32
-                "19ha1hcirvxpp5nfmgk86jhlq0zprb81rzghijcjb8vpz80ldcdm"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "influential" version))
+       (sha256
+        (base32 "19ha1hcirvxpp5nfmgk86jhlq0zprb81rzghijcjb8vpz80ldcdm"))))
     (properties `((upstream-name . "influential")))
     (build-system r-build-system)
     (propagated-inputs (list r-ranger
@@ -8587,12 +8586,12 @@ document.")
   (package
     (name "r-influenceauc")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "influenceAUC" version))
-              (sha256
-               (base32
-                "0pscwfxs2y780lzd5sxldnnkzzs2lsjdwz71z44kn7884wqmikpm"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "influenceAUC" version))
+       (sha256
+        (base32 "0pscwfxs2y780lzd5sxldnnkzzs2lsjdwz71z44kn7884wqmikpm"))))
     (properties `((upstream-name . "influenceAUC")))
     (build-system r-build-system)
     (propagated-inputs (list r-rocr r-ggrepel r-ggplot2 r-geigen r-dplyr))
@@ -8612,12 +8611,12 @@ observations through data visualization.")
   (package
     (name "r-influence-sem")
     (version "2.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "influence.SEM" version))
-              (sha256
-               (base32
-                "0z83rvlri9g30291p0wv4s0jhiy6445lcrqrd4n1crach9672yzy"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "influence.SEM" version))
+       (sha256
+        (base32 "0z83rvlri9g30291p0wv4s0jhiy6445lcrqrd4n1crach9672yzy"))))
     (properties `((upstream-name . "influence.SEM")))
     (build-system r-build-system)
     (propagated-inputs (list r-lavaan))
@@ -8632,12 +8631,12 @@ influence for structural equation models.")
   (package
     (name "r-influence-me")
     (version "0.9-9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "influence.ME" version))
-              (sha256
-               (base32
-                "0f6d2hvs9qllyfpsp2cgh7w8yjxafclbk47n8av7j9zpp7s5yg9v"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "influence.ME" version))
+       (sha256
+        (base32 "0f6d2hvs9qllyfpsp2cgh7w8yjxafclbk47n8av7j9zpp7s5yg9v"))))
     (properties `((upstream-name . "influence.ME")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-lme4 r-lattice))
@@ -8659,12 +8658,12 @@ detect changing levels of significance.")
   (package
     (name "r-inflectssp")
     (version "1.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "InflectSSP" version))
-              (sha256
-               (base32
-                "14i53bsy693yh28y1akg4xd6srz077v9a8i7hx07qf73w2m84v1z"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "InflectSSP" version))
+       (sha256
+        (base32 "14i53bsy693yh28y1akg4xd6srz077v9a8i7hx07qf73w2m84v1z"))))
     (properties `((upstream-name . "InflectSSP")))
     (build-system r-build-system)
     (propagated-inputs (list r-xlsx
@@ -8692,12 +8691,12 @@ calculates melt temperatures and melt shifts for each protein in the experiment.
   (package
     (name "r-inflection")
     (version "1.3.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "inflection" version))
-              (sha256
-               (base32
-                "11kiclf3jd08im5lkm12p9winkcqp4y8897syvccx07qc99kifn8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "inflection" version))
+       (sha256
+        (base32 "11kiclf3jd08im5lkm12p9winkcqp4y8897syvccx07qc99kifn8"))))
     (properties `((upstream-name . "inflection")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -8715,12 +8714,12 @@ Christopoulos, DT (2016) <doi:10.2139/ssrn.3043076> .")
   (package
     (name "r-inflect")
     (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Inflect" version))
-              (sha256
-               (base32
-                "09904nn33libjv29n74n5nq1hj6ka8a4h3jllwpbxk9hsmnlmf9h"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Inflect" version))
+       (sha256
+        (base32 "09904nn33libjv29n74n5nq1hj6ka8a4h3jllwpbxk9hsmnlmf9h"))))
     (properties `((upstream-name . "Inflect")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
@@ -8745,12 +8744,12 @@ the experiment.  Reference to software development can be found at
   (package
     (name "r-inflation")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Inflation" version))
-              (sha256
-               (base32
-                "0ikhsslbg32kr9vcaxq8qwaa7ahiwvq91xwv53550wci2vyzmybp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Inflation" version))
+       (sha256
+        (base32 "0ikhsslbg32kr9vcaxq8qwaa7ahiwvq91xwv53550wci2vyzmybp"))))
     (properties `((upstream-name . "Inflation")))
     (build-system r-build-system)
     (propagated-inputs (list r-seasonal))
@@ -8767,12 +8766,12 @@ Ferreira et al. (2016) <https://goo.gl/UYLhcj>.")
   (package
     (name "r-infix")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "infix" version))
-              (sha256
-               (base32
-                "1zgy8f8b9pmpvpgqh3niczkr94xkc53xcjim73djmd10azw3kgrk"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "infix" version))
+       (sha256
+        (base32 "1zgy8f8b9pmpvpgqh3niczkr94xkc53xcjim73djmd10azw3kgrk"))))
     (properties `((upstream-name . "infix")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr))
@@ -8787,12 +8786,12 @@ day to day practices.")
   (package
     (name "r-infiniumpurify")
     (version "1.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "InfiniumPurify" version))
-              (sha256
-               (base32
-                "0yqah4rwpishas0xyv5a7cn4v18brj33cd7f494g21b9brggafq1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "InfiniumPurify" version))
+       (sha256
+        (base32 "0yqah4rwpishas0xyv5a7cn4v18brj33cd7f494g21b9brggafq1"))))
     (properties `((upstream-name . "InfiniumPurify")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrixstats))
@@ -8813,12 +8812,12 @@ tumor sample clustering with the consideration of tumor purities.")
   (package
     (name "r-infinitefactor")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "infinitefactor" version))
-              (sha256
-               (base32
-                "0j6f9q8z81znwakyx4h0l8ypz0y4yv11d7l3rwljmn4rgspyjl5c"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "infinitefactor" version))
+       (sha256
+        (base32 "0j6f9q8z81znwakyx4h0l8ypz0y4yv11d7l3rwljmn4rgspyjl5c"))))
     (properties `((upstream-name . "infinitefactor")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2 r-rcpparmadillo r-rcpp r-ggplot2))
@@ -8842,12 +8841,12 @@ Environmental Health Sciences grant 1R01ES028804-01.")
   (package
     (name "r-inferr")
     (version "0.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "inferr" version))
-              (sha256
-               (base32
-                "1ma90f31jcd65l5v3wqbx4x61gw3iay1a2hwjsd5aln1ivbgmzsv"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "inferr" version))
+       (sha256
+        (base32 "1ma90f31jcd65l5v3wqbx4x61gw3iay1a2hwjsd5aln1ivbgmzsv"))))
     (properties `((upstream-name . "inferr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-magrittr r-data-table))
@@ -8866,12 +8865,12 @@ tests, Levene's test, @code{McNemar} Test, Cochran's Q test and Runs test.")
   (package
     (name "r-inferference")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "inferference" version))
-              (sha256
-               (base32
-                "171h9zhvaza7fklcg07wk9sm8k2fy39k3cdjkzb3vk8p8acd051v"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "inferference" version))
+       (sha256
+        (base32 "171h9zhvaza7fklcg07wk9sm8k2fy39k3cdjkzb3vk8p8acd051v"))))
     (properties `((upstream-name . "inferference")))
     (build-system r-build-system)
     (propagated-inputs (list r-numderiv r-lme4 r-formula))
@@ -8890,12 +8889,12 @@ Vanderweele (2012) <doi:10.1177/0962280210386779>.")
   (package
     (name "r-inferencesmr")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "InferenceSMR" version))
-              (sha256
-               (base32
-                "1dxq1dsmrx9kx8vqxlbg22a91iv4skck4jhmmfk3kxi5znl121zc"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "InferenceSMR" version))
+       (sha256
+        (base32 "1dxq1dsmrx9kx8vqxlbg22a91iv4skck4jhmmfk3kxi5znl121zc"))))
     (properties `((upstream-name . "InferenceSMR")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival))
@@ -8914,12 +8913,12 @@ package is based on methods described in Sasieni (2003) <doi:
   (package
     (name "r-inext")
     (version "3.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iNEXT" version))
-              (sha256
-               (base32
-                "1yfvadvdwgby047svj9sjwkm7hhrni2ifn6d2g5bv9djcvi22msh"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iNEXT" version))
+       (sha256
+        (base32 "1yfvadvdwgby047svj9sjwkm7hhrni2ifn6d2g5bv9djcvi22msh"))))
     (properties `((upstream-name . "iNEXT")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2 r-rcpp r-ggplot2))
@@ -8939,12 +8938,12 @@ Monographs) for pertinent theory and methodologies, and Hsieh, Ma and Chao
   (package
     (name "r-inet")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "inet" version))
-              (sha256
-               (base32
-                "1kjy2kgi5v29yk6pv776gwdqzkscjh96p3iv1j906vh47zp8wrag"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "inet" version))
+       (sha256
+        (base32 "1kjy2kgi5v29yk6pv776gwdqzkscjh96p3iv1j906vh47zp8wrag"))))
     (properties `((upstream-name . "inet")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-hdi r-glmnet))
@@ -8959,12 +8958,12 @@ The package consists of wrappers for functions from the hdi package.")
   (package
     (name "r-ineqjd")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ineqJD" version))
-              (sha256
-               (base32
-                "0anv384jwzn5gkc0jqsl81bkmrjd21br99c5q30xd6ncxavj4s57"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ineqJD" version))
+       (sha256
+        (base32 "0anv384jwzn5gkc0jqsl81bkmrjd21br99c5q30xd6ncxavj4s57"))))
     (properties `((upstream-name . "ineqJD")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=ineqJD")
@@ -8982,12 +8981,12 @@ Valli I. (2017) <doi:10.26350/999999_000005> Zenga M., Valli I. (2018)
   (package
     (name "r-ineq-2d")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ineq.2d" version))
-              (sha256
-               (base32
-                "1l1d29krk1v66v4x66py8s6p30x6xw6d969ixcqnfsdyvbz3pwly"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ineq.2d" version))
+       (sha256
+        (base32 "1l1d29krk1v66v4x66py8s6p30x6xw6d969ixcqnfsdyvbz3pwly"))))
     (properties `((upstream-name . "ineq.2d")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -9007,12 +9006,12 @@ squared coefficient of variation is based on Garcia-Penalosa, C., & Orgiazzi, E.
   (package
     (name "r-ineptr")
     (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ineptR" version))
-              (sha256
-               (base32
-                "1rdw5idqaq9h2bys67lmks0dkrvr1a0272nr52ylf0cpglafs3n4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ineptR" version))
+       (sha256
+        (base32 "1rdw5idqaq9h2bys67lmks0dkrvr1a0272nr52ylf0cpglafs3n4"))))
     (properties `((upstream-name . "ineptR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -9038,12 +9037,12 @@ Statistics Portugal (Instituto Nacional de Estatistica - INE) API
   (package
     (name "r-inegir")
     (version "3.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "inegiR" version))
-              (sha256
-               (base32
-                "1rhkdmpz7mxi7ddyygss5rlh3c8hgxhzdk3fnvnlizc1l55cc6c0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "inegiR" version))
+       (sha256
+        (base32 "1rhkdmpz7mxi7ddyygss5rlh3c8hgxhzdk3fnvnlizc1l55cc6c0"))))
     (properties `((upstream-name . "inegiR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -9064,12 +9063,12 @@ Statistics Portugal (Instituto Nacional de Estatistica - INE) API
   (package
     (name "r-industrial")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "industRial" version))
-              (sha256
-               (base32
-                "0zgnykbr71pi3nii178ijmzd8ijwf3g8y8yz6g3jy4c0by7w676s"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "industRial" version))
+       (sha256
+        (base32 "0zgnykbr71pi3nii178ijmzd8ijwf3g8y8yz6g3jy4c0by7w676s"))))
     (properties `((upstream-name . "industRial")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -9093,12 +9092,12 @@ and tutorials.")
   (package
     (name "r-indtestpp")
     (version "3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IndTestPP" version))
-              (sha256
-               (base32
-                "1z48pr8znbk1gdvjfdvszxlzhj7v88p3y7zhi1f0xw75dkfpnwwy"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IndTestPP" version))
+       (sha256
+        (base32 "1z48pr8znbk1gdvjfdvszxlzhj7v88p3y7zhi1f0xw75dkfpnwwy"))))
     (properties `((upstream-name . "IndTestPP")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=IndTestPP")
@@ -9114,12 +9113,12 @@ and functions for generating and analysing different types of dependence.")
   (package
     (name "r-indisc")
     (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "InDisc" version))
-              (sha256
-               (base32
-                "0halx4m503b9d4vk5y0qmx6qyvc6lwjr4ys4xdcj6bnzv8wi8ymw"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "InDisc" version))
+       (sha256
+        (base32 "0halx4m503b9d4vk5y0qmx6qyvc6lwjr4ys4xdcj6bnzv8wi8ymw"))))
     (properties `((upstream-name . "InDisc")))
     (build-system r-build-system)
     (propagated-inputs (list r-psych r-matrixstats))
@@ -9136,12 +9135,12 @@ unidimensional and multidimensional Item Response Theory (IRT) Dual Models
   (package
     (name "r-indirect")
     (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "indirect" version))
-              (sha256
-               (base32
-                "1iaks18xcxqr2afzbzgxj4jr77p6gw2zmgb1398cgqkgdwb1yj13"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "indirect" version))
+       (sha256
+        (base32 "1iaks18xcxqr2afzbzgxj4jr77p6gw2zmgb1398cgqkgdwb1yj13"))))
     (properties `((upstream-name . "indirect")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-gplots))
@@ -9169,12 +9168,12 @@ may not be elicited.")
   (package
     (name "r-indiedown")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "indiedown" version))
-              (sha256
-               (base32
-                "0r46r6s0asd182gs5map4wilhfb7jhgrcinnl36ib3q1xxn06457"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "indiedown" version))
+       (sha256
+        (base32 "0r46r6s0asd182gs5map4wilhfb7jhgrcinnl36ib3q1xxn06457"))))
     (properties `((upstream-name . "indiedown")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr r-rlang r-gfonts r-fs r-cli))
@@ -9195,12 +9194,12 @@ functions that produce @code{LaTeX} code.")
   (package
     (name "r-indicspecies")
     (version "1.7.14")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "indicspecies" version))
-              (sha256
-               (base32
-                "15cfmjwblq3fcd2mymvh9p09jfgcifs2sngwnlfz3290glfb6zzm"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "indicspecies" version))
+       (sha256
+        (base32 "15cfmjwblq3fcd2mymvh9p09jfgcifs2sngwnlfz3290glfb6zzm"))))
     (properties `((upstream-name . "indicspecies")))
     (build-system r-build-system)
     (propagated-inputs (list r-permute))
@@ -9219,12 +9218,12 @@ et al. (2011) <doi:10.1111/J.1600-0706.2011.19679.x>].")
   (package
     (name "r-indgenerrors")
     (version "0.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IndGenErrors" version))
-              (sha256
-               (base32
-                "1iwq53vahcaa0cqmk8g0484drdlphips7p95z4rh6miv2bxjh8fa"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IndGenErrors" version))
+       (sha256
+        (base32 "1iwq53vahcaa0cqmk8g0484drdlphips7p95z4rh6miv2bxjh8fa"))))
     (properties `((upstream-name . "IndGenErrors")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))
@@ -9242,12 +9241,12 @@ Markov Models (HMM).  This improves the results in Duchesne, Ghoudi & Remillard
   (package
     (name "r-indexwizard")
     (version "0.2.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IndexWizard" version))
-              (sha256
-               (base32
-                "09qrnq8yzz4r8i7m696a1jzw91iiccwgj73176dabkh3pdrhrs3r"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IndexWizard" version))
+       (sha256
+        (base32 "09qrnq8yzz4r8i7m696a1jzw91iiccwgj73176dabkh3pdrhrs3r"))))
     (properties `((upstream-name . "IndexWizard")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -9268,12 +9267,12 @@ S., Pook, T. Geibel, J. and Reimer, C. (2023) <doi:10.1186/s12711-023-00807-0>."
   (package
     (name "r-indexnumr")
     (version "0.5.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IndexNumR" version))
-              (sha256
-               (base32
-                "15rjhzwygs4an51lxn66jlfww4j361b1jw4a6q3dz31bmlc9i5pg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IndexNumR" version))
+       (sha256
+        (base32 "15rjhzwygs4an51lxn66jlfww4j361b1jw4a6q3dz31bmlc9i5pg"))))
     (properties `((upstream-name . "IndexNumR")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -9292,12 +9291,12 @@ indexes using several splicing methods.")
   (package
     (name "r-indexnumber")
     (version "1.3.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IndexNumber" version))
-              (sha256
-               (base32
-                "0ff6fnkgbfwn3sasglr1aygvm9bawrvcj432xgka1vk28qnns0if"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IndexNumber" version))
+       (sha256
+        (base32 "0ff6fnkgbfwn3sasglr1aygvm9bawrvcj432xgka1vk28qnns0if"))))
     (properties `((upstream-name . "IndexNumber")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=IndexNumber")
@@ -9316,12 +9315,12 @@ numbers for not only a product or weighted index numbers as the Laspeyres index
   (package
     (name "r-indexconstruction")
     (version "0.1-3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IndexConstruction" version))
-              (sha256
-               (base32
-                "08bi3x7a9plxshgj6hq58mzkf1117a7p0fd1akqjh7k8mgywifwf"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IndexConstruction" version))
+       (sha256
+        (base32 "08bi3x7a9plxshgj6hq58mzkf1117a7p0fd1akqjh7k8mgywifwf"))))
     (properties `((upstream-name . "IndexConstruction")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -9349,12 +9348,12 @@ gets introduced in Trimborn and Haerdle (2018)
   (package
     (name "r-index0")
     (version "0.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "index0" version))
-              (sha256
-               (base32
-                "1kdjc86312a9x800h0i7z0z7bwbxyrqds8wnrm15aljkvk83xwxl"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "index0" version))
+       (sha256
+        (base32 "1kdjc86312a9x800h0i7z0z7bwbxyrqds8wnrm15aljkvk83xwxl"))))
     (properties `((upstream-name . "index0")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=index0")
@@ -9368,12 +9367,12 @@ one), as is common in mathematical notation and other programming languages.")
   (package
     (name "r-indeptest")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IndepTest" version))
-              (sha256
-               (base32
-                "017jasqsxm5m13rhfy9gxvd8nfib5k5y5c8520p3hcffqrxr683p"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IndepTest" version))
+       (sha256
+        (base32 "017jasqsxm5m13rhfy9gxvd8nfib5k5y5c8520p3hcffqrxr683p"))))
     (properties `((upstream-name . "IndepTest")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-mvtnorm r-fnn))
@@ -9390,12 +9389,12 @@ linear model which is an independence test between covariates and errors.")
   (package
     (name "r-independenceweights")
     (version "0.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "independenceWeights" version))
-              (sha256
-               (base32
-                "07650hc93dxfx0sl2mdjzg2r84117q7ylbb9yfm3lh7dlb014lxp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "independenceWeights" version))
+       (sha256
+        (base32 "07650hc93dxfx0sl2mdjzg2r84117q7ylbb9yfm3lh7dlb014lxp"))))
     (properties `((upstream-name . "independenceWeights")))
     (build-system r-build-system)
     (propagated-inputs (list r-osqp r-locfit))
@@ -9412,12 +9411,12 @@ Greifer, and Chen (2021) <arxiv:2107.07086>.")
   (package
     (name "r-indelmiss")
     (version "1.0.10")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "indelmiss" version))
-              (sha256
-               (base32
-                "1dqdk6glzm40y4zxc9bfjg5qsvd2i4xm55w8f7671gyjkzjzavv5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "indelmiss" version))
+       (sha256
+        (base32 "1dqdk6glzm40y4zxc9bfjg5qsvd2i4xm55w8f7671gyjkzjzavv5"))))
     (properties `((upstream-name . "indelmiss")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-phangorn r-numderiv r-ape))
@@ -9440,12 +9439,12 @@ details.")
   (package
     (name "r-incubate")
     (version "1.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "incubate" version))
-              (sha256
-               (base32
-                "1ip5vbk5d3a4sci09azmbqd1s2cm83l65yaq6fxjswizw3kvmscp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "incubate" version))
+       (sha256
+        (base32 "1ip5vbk5d3a4sci09azmbqd1s2cm83l65yaq6fxjswizw3kvmscp"))))
     (properties `((upstream-name . "incubate")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -9472,12 +9471,12 @@ group setting are provided.")
   (package
     (name "r-inctools")
     (version "1.0.15")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "inctools" version))
-              (sha256
-               (base32
-                "0ikldiwgizs2p9vcalk5729dr6krysnyr4ni0ybg9gljw7iafdlf"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "inctools" version))
+       (sha256
+        (base32 "0ikldiwgizs2p9vcalk5729dr6krysnyr4ni0ybg9gljw7iafdlf"))))
     (properties `((upstream-name . "inctools")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmvtnorm
@@ -9507,12 +9506,12 @@ Implements and extends the method of Kassanjee et al. (2012)
   (package
     (name "r-incr")
     (version "2.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "incR" version))
-              (sha256
-               (base32
-                "0mis4hwd9mw7ji322yqidiz8d9qsb4jkpndfdskxrrmpfpha9r91"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "incR" version))
+       (sha256
+        (base32 "0mis4hwd9mw7ji322yqidiz8d9qsb4jkpndfdskxrrmpfpha9r91"))))
     (properties `((upstream-name . "incR")))
     (build-system r-build-system)
     (propagated-inputs (list r-suncalc r-lubridate r-ggplot2))
@@ -9533,12 +9532,12 @@ studies, see Nests, Eggs, and Incubation: New ideas about avian reproduction
   (package
     (name "r-incompair")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IncomPair" version))
-              (sha256
-               (base32
-                "156mc4csbxz976md7ikjd6sqamzsfc8ik9xf1qbhrfl8y7957kbb"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IncomPair" version))
+       (sha256
+        (base32 "156mc4csbxz976md7ikjd6sqamzsfc8ik9xf1qbhrfl8y7957kbb"))))
     (properties `((upstream-name . "IncomPair")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=IncomPair")
@@ -9566,12 +9565,12 @@ paired test allowing for missing values\".")
   (package
     (name "r-incidentally")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "incidentally" version))
-              (sha256
-               (base32
-                "063m672ym9w5zmzvdhr17smqy1mffkl3vls7nhpsxc4bjswqls2g"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "incidentally" version))
+       (sha256
+        (base32 "063m672ym9w5zmzvdhr17smqy1mffkl3vls7nhpsxc4bjswqls2g"))))
     (properties `((upstream-name . "incidentally")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-matrix r-igraph))
@@ -9592,12 +9591,12 @@ a social process mirroring team, group, or organization formation
   (package
     (name "r-incidental")
     (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "incidental" version))
-              (sha256
-               (base32
-                "012pdwrkzlbnrrkvy67l6nvs1lrjgrzhfh3v4rqzk2ypdvfm3wmx"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "incidental" version))
+       (sha256
+        (base32 "012pdwrkzlbnrrkvy67l6nvs1lrjgrzhfh3v4rqzk2ypdvfm3wmx"))))
     (properties `((upstream-name . "incidental")))
     (build-system r-build-system)
     (propagated-inputs (list r-numderiv r-matrixstats r-mass r-ggplot2 r-dlnm))
@@ -9613,12 +9612,12 @@ delay distribution.")
   (package
     (name "r-incidenceprevalence")
     (version "0.4.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IncidencePrevalence" version))
-              (sha256
-               (base32
-                "1h94ihbc1xz9zpbimc3kdljbh1man79qajqxf2bfww8n1scikiad"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IncidencePrevalence" version))
+       (sha256
+        (base32 "1h94ihbc1xz9zpbimc3kdljbh1man79qajqxf2bfww8n1scikiad"))))
     (properties `((upstream-name . "IncidencePrevalence")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -9653,12 +9652,12 @@ cohort.")
   (package
     (name "r-incidence2")
     (version "2.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "incidence2" version))
-              (sha256
-               (base32
-                "1wd13m46siin6fcjhsk5r836ncplpq22by5f1b1fdpp5my6381ps"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "incidence2" version))
+       (sha256
+        (base32 "1wd13m46siin6fcjhsk5r836ncplpq22by5f1b1fdpp5my6381ps"))))
     (properties `((upstream-name . "incidence2")))
     (build-system r-build-system)
     (propagated-inputs (list r-pillar r-grates r-data-table))
@@ -9678,12 +9677,12 @@ outbreak analysis (<https://www.reconverse.org>).")
   (package
     (name "r-incidence")
     (version "1.7.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "incidence" version))
-              (sha256
-               (base32
-                "1wdxh2p7scm419fqki0i7vsz45rd7557h5n3zf9fshb8x1fdf2z7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "incidence" version))
+       (sha256
+        (base32 "1wdxh2p7scm419fqki0i7vsz45rd7557h5n3zf9fshb8x1fdf2z7"))))
     (properties `((upstream-name . "incidence")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2 r-aweek))
@@ -9704,12 +9703,12 @@ outbreak analysis.")
   (package
     (name "r-incgraph")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "incgraph" version))
-              (sha256
-               (base32
-                "0zjvxk2krdlm5bcr0m80nxy46f69a1xadfjw5sjw249b28wdclml"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "incgraph" version))
+       (sha256
+        (base32 "0zjvxk2krdlm5bcr0m80nxy46f69a1xadfjw5sjw249b28wdclml"))))
     (properties `((upstream-name . "incgraph")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -9732,12 +9731,12 @@ counts from scratch for each time point.")
   (package
     (name "r-incdtw")
     (version "1.1.4.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IncDTW" version))
-              (sha256
-               (base32
-                "0q8ssv86gbp3v6gznzm5vkc8qhny6ycbh85jg5z4izldpx8a4fq6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IncDTW" version))
+       (sha256
+        (base32 "0q8ssv86gbp3v6gznzm5vkc8qhny6ycbh85jg5z4izldpx8a4fq6"))))
     (properties `((upstream-name . "IncDTW")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -9772,12 +9771,12 @@ Package for Incremental Calculation of Dynamic Time Warping\" by Leodolter et al
   (package
     (name "r-incatome")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "INCATome" version))
-              (sha256
-               (base32
-                "1gbmcirs49ydmk5rg2vl5gdy39dfx9psw5mijibzjszcfjar3kqs"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "INCATome" version))
+       (sha256
+        (base32 "1gbmcirs49ydmk5rg2vl5gdy39dfx9psw5mijibzjszcfjar3kqs"))))
     (properties `((upstream-name . "INCATome")))
     (build-system r-build-system)
     (propagated-inputs (list r-siggenes r-multtest r-limma r-genefilter))
@@ -9794,12 +9793,12 @@ by microarrays (T Sbarrato et al.  RNA. 2017 Aug 25;
   (package
     (name "r-incase")
     (version "0.3.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "incase" version))
-              (sha256
-               (base32
-                "06qzzvxxwi0dp7ln864qszvk9xqbb4rgx5mbnkcvji7in6k2yj0n"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "incase" version))
+       (sha256
+        (base32 "06qzzvxxwi0dp7ln864qszvk9xqbb4rgx5mbnkcvji7in6k2yj0n"))))
     (properties `((upstream-name . "incase")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-plu r-magrittr r-cli r-backports))
@@ -9820,12 +9819,12 @@ on long operations that won't be used.")
   (package
     (name "r-inca")
     (version "0.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "inca" version))
-              (sha256
-               (base32
-                "1r3niibd6pja59am8in9gpyvxi2g5bh8bqqhdixzwaj3xzyyipii"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "inca" version))
+       (sha256
+        (base32 "1r3niibd6pja59am8in9gpyvxi2g5bh8bqqhdixzwaj3xzyyipii"))))
     (properties `((upstream-name . "inca")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix))
@@ -9846,12 +9845,12 @@ policy.")
   (package
     (name "r-inbreedr")
     (version "0.3.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "inbreedR" version))
-              (sha256
-               (base32
-                "0g7h4jgmnbpm4c6pb6fkmpzdg4adkc0k72444jpxbvyddq3hqh24"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "inbreedR" version))
+       (sha256
+        (base32 "0g7h4jgmnbpm4c6pb6fkmpzdg4adkc0k72444jpxbvyddq3hqh24"))))
     (properties `((upstream-name . "inbreedR")))
     (build-system r-build-system)
     (propagated-inputs (list r-data-table))
@@ -9868,12 +9867,12 @@ markers.")
   (package
     (name "r-inaparc")
     (version "1.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "inaparc" version))
-              (sha256
-               (base32
-                "0y3m2g5y12wj4af1wiqyi7nlb11avissd59g202rha0wqwzd8q3f"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "inaparc" version))
+       (sha256
+        (base32 "0y3m2g5y12wj4af1wiqyi7nlb11avissd59g202rha0wqwzd8q3f"))))
     (properties `((upstream-name . "inaparc")))
     (build-system r-build-system)
     (propagated-inputs (list r-lhs r-kpeaks))
@@ -9899,12 +9898,12 @@ initialization techniques are also available in the package inaparc'.")
   (package
     (name "r-in2extremes")
     (version "1.0-3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "in2extRemes" version))
-              (sha256
-               (base32
-                "1lgsqm29zmjyf8kynyra2p3q7bs4fyd7ac4v6s3pbahzhhzdk94y"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "in2extRemes" version))
+       (sha256
+        (base32 "1lgsqm29zmjyf8kynyra2p3q7bs4fyd7ac4v6s3pbahzhhzdk94y"))))
     (properties `((upstream-name . "in2extRemes")))
     (build-system r-build-system)
     (propagated-inputs (list r-extremes))
@@ -9919,12 +9918,12 @@ initialization techniques are also available in the package inaparc'.")
   (package
     (name "r-imtest")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IMTest" version))
-              (sha256
-               (base32
-                "0n0swbi051cr7mrjmszqg79hxa38ccyq69ws8c37ixwb0lpxmx48"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IMTest" version))
+       (sha256
+        (base32 "0n0swbi051cr7mrjmszqg79hxa38ccyq69ws8c37ixwb0lpxmx48"))))
     (properties `((upstream-name . "IMTest")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2 r-mass r-ltm r-lme4))
@@ -9940,12 +9939,12 @@ models.")
   (package
     (name "r-imsig")
     (version "1.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "imsig" version))
-              (sha256
-               (base32
-                "175is0b39grc609dskv9274czv4iwnmlg81dl4nr01xdp6f7g487"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "imsig" version))
+       (sha256
+        (base32 "175is0b39grc609dskv9274czv4iwnmlg81dl4nr01xdp6f7g487"))))
     (properties `((upstream-name . "imsig")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -9966,12 +9965,12 @@ abundances using gene expression data.")
   (package
     (name "r-imrmc")
     (version "1.2.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iMRMC" version))
-              (sha256
-               (base32
-                "0a99arybhv5awlkrmzyv6m4cbdszw77qjw90ywwbddkccq1fq2h2"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iMRMC" version))
+       (sha256
+        (base32 "0a99arybhv5awlkrmzyv6m4cbdszw77qjw90ywwbddkccq1fq2h2"))))
     (properties `((upstream-name . "iMRMC")))
     (build-system r-build-system)
     (inputs (list openjdk))
@@ -10001,12 +10000,12 @@ Package development and documentation is at
   (package
     (name "r-imputets")
     (version "3.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "imputeTS" version))
-              (sha256
-               (base32
-                "0y5nam1flciw4sbnzbjsjakmvznfvlpxh1y5d48g4pn5173bxzgx"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "imputeTS" version))
+       (sha256
+        (base32 "0y5nam1flciw4sbnzbjsjakmvznfvlpxh1y5d48g4pn5173bxzgx"))))
     (properties `((upstream-name . "imputeTS")))
     (build-system r-build-system)
     (propagated-inputs (list r-stinepack
@@ -10031,12 +10030,12 @@ Smoothing on ARIMA models'.  Published in Moritz and Bartz-Beielstein (2017)
   (package
     (name "r-imputetestbench")
     (version "3.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "imputeTestbench" version))
-              (sha256
-               (base32
-                "0yc1l3r7g7x2pgyli6j08ikvsbvr24kijnn7pdj54blw7c0pdmm2"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "imputeTestbench" version))
+       (sha256
+        (base32 "0yc1l3r7g7x2pgyli6j08ikvsbvr24kijnn7pdj54blw7c0pdmm2"))))
     (properties `((upstream-name . "imputeTestbench")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -10059,12 +10058,12 @@ metrics can be used.")
   (package
     (name "r-imputerobust")
     (version "1.3-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ImputeRobust" version))
-              (sha256
-               (base32
-                "1zvwlpffpm4gqysz57clf8jkqr72yjbzx90pdy95la51m0b6cdbd"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ImputeRobust" version))
+       (sha256
+        (base32 "1zvwlpffpm4gqysz57clf8jkqr72yjbzx90pdy95la51m0b6cdbd"))))
     (properties `((upstream-name . "ImputeRobust")))
     (build-system r-build-system)
     (propagated-inputs (list r-purrr
@@ -10086,12 +10085,12 @@ in de Jong, van Buuren and Spiess <doi:10.1080/03610918.2014.911894>.")
   (package
     (name "r-imputeree")
     (version "0.0.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "imputeREE" version))
-              (sha256
-               (base32
-                "0sc4ha10grjxvszcc7s4z39yqjd80mwa859mpq1mll910qxwfs6h"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "imputeREE" version))
+       (sha256
+        (base32 "0sc4ha10grjxvszcc7s4z39yqjd80mwa859mpq1mll910qxwfs6h"))))
     (properties `((upstream-name . "imputeREE")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -10116,12 +10115,12 @@ al. (2019) <doi:10.1007/s00710-019-00682-y>.")
   (package
     (name "r-imputer")
     (version "2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "imputeR" version))
-              (sha256
-               (base32
-                "0jfyl6k285x4lc58q13fhi004l4yaqas0d4g08rx78ml7p6l1r48"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "imputeR" version))
+       (sha256
+        (base32 "0jfyl6k285x4lc58q13fhi004l4yaqas0d4g08rx78ml7p6l1r48"))))
     (properties `((upstream-name . "imputeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2))
@@ -10138,12 +10137,12 @@ methods like PCA and PLS.")
   (package
     (name "r-imputemulti")
     (version "0.8.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "imputeMulti" version))
-              (sha256
-               (base32
-                "0192wzmz5114aq0nxlysjjkcylfkgpz3f214wqry5lpz0219lr79"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "imputeMulti" version))
+       (sha256
+        (base32 "0192wzmz5114aq0nxlysjjkcylfkgpz3f214wqry5lpz0219lr79"))))
     (properties `((upstream-name . "imputeMulti")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-gtools r-data-table))
@@ -10159,12 +10158,12 @@ multinomial data following the work of Schafer 1997 <ISBN: 978-0-412-04061-0>.")
   (package
     (name "r-imputelcmd")
     (version "2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "imputeLCMD" version))
-              (sha256
-               (base32
-                "0w6wn9b74phiz9f58b6p95fymgrrlh94avhas046ngzaax6ay71n"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "imputeLCMD" version))
+       (sha256
+        (base32 "0w6wn9b74phiz9f58b6p95fymgrrlh94avhas046ngzaax6ay71n"))))
     (properties `((upstream-name . "imputeLCMD")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmvtnorm r-pcamethods r-norm r-impute))
@@ -10188,12 +10187,12 @@ a more complex scenario where the missing data are both MAR and MNAR.")
   (package
     (name "r-imputegeneric")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "imputeGeneric" version))
-              (sha256
-               (base32
-                "16680bkx1p5w0l5jh6g8f0qbcv0alw9xr2gkbhfs0rpbv5canl7f"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "imputeGeneric" version))
+       (sha256
+        (base32 "16680bkx1p5w0l5jh6g8f0qbcv0alw9xr2gkbhfs0rpbv5canl7f"))))
     (properties `((upstream-name . "imputeGeneric")))
     (build-system r-build-system)
     (propagated-inputs (list r-parsnip r-gower))
@@ -10214,12 +10213,12 @@ the imputation functions.")
   (package
     (name "r-imputefin")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "imputeFin" version))
-              (sha256
-               (base32
-                "11qd43zs8gd3fg3f47lrb6b4r0w7kxczain61bxc67ppzflrafmd"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "imputeFin" version))
+       (sha256
+        (base32 "11qd43zs8gd3fg3f47lrb6b4r0w7kxczain61bxc67ppzflrafmd"))))
     (properties `((upstream-name . "imputeFin")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-mvtnorm r-mass r-magrittr))
@@ -10248,12 +10247,12 @@ Stochastic EM. IEEE Trans.  on Signal Processing, vol.  67, no.  8, pp.
   (package
     (name "r-imptree")
     (version "0.5.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "imptree" version))
-              (sha256
-               (base32
-                "0f087000092ydnpj3ch4mbip8wp32scn8xw4vlkq5lf6130gfs1b"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "imptree" version))
+       (sha256
+        (base32 "0f087000092ydnpj3ch4mbip8wp32scn8xw4vlkq5lf6130gfs1b"))))
     (properties `((upstream-name . "imptree")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -10273,12 +10272,12 @@ original imprecise information gain of Abellan and Moral (2003)
   (package
     (name "r-impshrinkage")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ImpShrinkage" version))
-              (sha256
-               (base32
-                "18ik1sl2628hcz37rkdq2fdbx1c6hs7svalsfc90w3ww0aijy91y"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ImpShrinkage" version))
+       (sha256
+        (base32 "18ik1sl2628hcz37rkdq2fdbx1c6hs7svalsfc90w3ww0aijy91y"))))
     (properties `((upstream-name . "ImpShrinkage")))
     (build-system r-build-system)
     (home-page "https://github.com/mnrzrad/ImpShrinkage")
@@ -10294,12 +10293,12 @@ chapter 7 of Saleh, A. K. Md.  E. (2006) <ISBN: 978-0-471-56375-4>.")
   (package
     (name "r-imprinting")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "imprinting" version))
-              (sha256
-               (base32
-                "0s2qrby2sx7ikalfagvqaz0cx953m44x0fms3pcmjdgyvfzhdyvz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "imprinting" version))
+       (sha256
+        (base32 "0s2qrby2sx7ikalfagvqaz0cx953m44x0fms3pcmjdgyvfzhdyvz"))))
     (properties `((upstream-name . "imprinting")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect r-tidyr r-ggplot2 r-dplyr r-cowplot))
@@ -10321,12 +10320,12 @@ vaccination and exposure to specific clades, strains, etc.")
   (package
     (name "r-impressionist-colors")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "impressionist.colors" version))
-              (sha256
-               (base32
-                "03z5w7y7vbvlnn30r9y3ip93h364f87nhwdb9hcki26csiq2bnlv"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "impressionist.colors" version))
+       (sha256
+        (base32 "03z5w7y7vbvlnn30r9y3ip93h364f87nhwdb9hcki26csiq2bnlv"))))
     (properties `((upstream-name . "impressionist.colors")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=impressionist.colors")
@@ -10341,12 +10340,12 @@ the original paintings where colors were sampled from.")
   (package
     (name "r-imprecise101")
     (version "0.2.2.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "imprecise101" version))
-              (sha256
-               (base32
-                "1558fxg8i5ifbvnww3wlfq79d9lgy7kg5z98i73q7q64rc2pxs82"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "imprecise101" version))
+       (sha256
+        (base32 "1558fxg8i5ifbvnww3wlfq79d9lgy7kg5z98i73q7q64rc2pxs82"))))
     (properties `((upstream-name . "imprecise101")))
     (build-system r-build-system)
     (propagated-inputs (list r-tolerance r-pscl))
@@ -10369,12 +10368,12 @@ further generalization are also illustrated.")
   (package
     (name "r-importinegi")
     (version "1.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "importinegi" version))
-              (sha256
-               (base32
-                "1m9415ymjvymr73z8cjb1kdycf93pykl4yngqp2h06wppwn7506a"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "importinegi" version))
+       (sha256
+        (base32 "1m9415ymjvymr73z8cjb1kdycf93pykl4yngqp2h06wppwn7506a"))))
     (properties `((upstream-name . "importinegi")))
     (build-system r-build-system)
     (propagated-inputs (list r-rio
@@ -10396,12 +10395,12 @@ created by Instituto Nacional de Estadistica y Geografia (INEGI).  See
   (package
     (name "r-importexport")
     (version "1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ImportExport" version))
-              (sha256
-               (base32
-                "07i7p9xha1f23r07lw87ak13hd4wavdvwh8vb8sg2gyvnpa5njwp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ImportExport" version))
+       (sha256
+        (base32 "07i7p9xha1f23r07lw87ak13hd4wavdvwh8vb8sg2gyvnpa5njwp"))))
     (properties `((upstream-name . "ImportExport")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
@@ -10423,12 +10422,12 @@ attention to the date variables and the labelled ones.")
   (package
     (name "r-importar")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "importar" version))
-              (sha256
-               (base32
-                "0xv445fmjhsbdlsq03k2rlycnggn3rcyq5a49zrg4jvjamzr0rgr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "importar" version))
+       (sha256
+        (base32 "0xv445fmjhsbdlsq03k2rlycnggn3rcyq5a49zrg4jvjamzr0rgr"))))
     (properties `((upstream-name . "importar")))
     (build-system r-build-system)
     (home-page "https://github.com/andreaphsz/importar")
@@ -10443,12 +10442,12 @@ prevent namespace conflicts.")
   (package
     (name "r-importanceindice")
     (version "0.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ImportanceIndice" version))
-              (sha256
-               (base32
-                "1rxjb4nmpwpf018k0rwf2gs993dz3dq120x0b78y4r8jkkccyphq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ImportanceIndice" version))
+       (sha256
+        (base32 "1rxjb4nmpwpf018k0rwf2gs993dz3dq120x0b78y4r8jkkccyphq"))))
     (properties `((upstream-name . "ImportanceIndice")))
     (build-system r-build-system)
     (propagated-inputs (list r-crayon))
@@ -10475,12 +10474,12 @@ Attention and non-attention levels (DEMOLIN-LEITE,2024) <DOI:
   (package
     (name "r-implyr")
     (version "0.4.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "implyr" version))
-              (sha256
-               (base32
-                "0rblsmx1z2n4g3fims5wa3wyf5znr0gkwd2yfz3130bcm6346da0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "implyr" version))
+       (sha256
+        (base32 "0rblsmx1z2n4g3fims5wa3wyf5znr0gkwd2yfz3130bcm6346da0"))))
     (properties `((upstream-name . "implyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -10505,12 +10504,12 @@ information about Impala.")
   (package
     (name "r-implied")
     (version "0.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "implied" version))
-              (sha256
-               (base32
-                "01wnqi380w810z4f743mfr2jbv7y22v6xa4p2rpwwcx4vbpvqnnm"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "implied" version))
+       (sha256
+        (base32 "01wnqi380w810z4f743mfr2jbv7y22v6xa4p2rpwwcx4vbpvqnnm"))))
     (properties `((upstream-name . "implied")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -10526,12 +10525,12 @@ are available, including basic normalization, Shin's method (Hyun Song Shin,
   (package
     (name "r-implicitmeasures")
     (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "implicitMeasures" version))
-              (sha256
-               (base32
-                "177d69fbyzrg28ddxqlqbf7hm25mj5rpmpslh0mad2xqzyvdylvn"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "implicitMeasures" version))
+       (sha256
+        (base32 "177d69fbyzrg28ddxqlqbf7hm25mj5rpmpslh0mad2xqzyvdylvn"))))
     (properties `((upstream-name . "implicitMeasures")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable r-tidyr r-stringr r-ggplot2))
@@ -10552,12 +10551,12 @@ are provided.")
   (package
     (name "r-implicitexpansion")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "implicitExpansion" version))
-              (sha256
-               (base32
-                "1b701f5lc5lr1drr1qyjzmgrasg4sys9wnk9i6f12ckfcxspczng"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "implicitExpansion" version))
+       (sha256
+        (base32 "1b701f5lc5lr1drr1qyjzmgrasg4sys9wnk9i6f12ckfcxspczng"))))
     (properties `((upstream-name . "implicitExpansion")))
     (build-system r-build-system)
     (home-page "https://github.com/ManuelHentschel/implicitExpansion")
@@ -10574,12 +10573,12 @@ mismatching sizes.  This pattern is known as \"broadcasting\" in Python and
   (package
     (name "r-impimp")
     (version "0.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "impimp" version))
-              (sha256
-               (base32
-                "0xkxph4f1rcpkryx9v339bfbsnq3xwdj1flb4j2dgh99apj126sq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "impimp" version))
+       (sha256
+        (base32 "0xkxph4f1rcpkryx9v339bfbsnq3xwdj1flb4j2dgh99apj126sq"))))
     (properties `((upstream-name . "impimp")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=impimp")
@@ -10599,12 +10598,12 @@ Endres, Fink and Augustin (2018, <doi:10.5282/ubm/epub.42423>).")
   (package
     (name "r-impactr")
     (version "0.4.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "impactr" version))
-              (sha256
-               (base32
-                "08pb38wk5g6vy0iq2xajycdfv0h0pflxlbai4l0q8i1h8ssgb54z"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "impactr" version))
+       (sha256
+        (base32 "08pb38wk5g6vy0iq2xajycdfv0h0pflxlbai4l0q8i1h8ssgb54z"))))
     (properties `((upstream-name . "impactr")))
     (build-system r-build-system)
     (propagated-inputs (list r-vroom
@@ -10634,12 +10633,12 @@ for use with raw accelerometer data from triaxial @code{ActiGraph}
   (package
     (name "r-impactflu")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "impactflu" version))
-              (sha256
-               (base32
-                "0wpaq2q61g6hl9fffs5cjbzdz1qc8dxsbknfs0iarwkn08460bn5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "impactflu" version))
+       (sha256
+        (base32 "0wpaq2q61g6hl9fffs5cjbzdz1qc8dxsbknfs0iarwkn08460bn5"))))
     (properties `((upstream-name . "impactflu")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -10662,12 +10661,12 @@ as influenza.")
   (package
     (name "r-impacteffectsize")
     (version "0.6.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ImpactEffectsize" version))
-              (sha256
-               (base32
-                "06dywikscwvigcw50h9yd3fjf3h25ymkxphwy8r6n3v2nl9iba3m"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ImpactEffectsize" version))
+       (sha256
+        (base32 "06dywikscwvigcw50h9yd3fjf3h25ymkxphwy8r6n3v2nl9iba3m"))))
     (properties `((upstream-name . "ImpactEffectsize")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-paralleldist r-matrixstats r-catools))
@@ -10685,12 +10684,12 @@ two groups.")
   (package
     (name "r-impact")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IMPACT" version))
-              (sha256
-               (base32
-                "0ai22gvmfj9j00cw742szfqqay63b5lmnszkwwdfdvidls43v0bm"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IMPACT" version))
+       (sha256
+        (base32 "0ai22gvmfj9j00cw742szfqqay63b5lmnszkwwdfdvidls43v0bm"))))
     (properties `((upstream-name . "IMPACT")))
     (build-system r-build-system)
     (home-page "http://www.uv.mx/personal/nehuerta/impact")
@@ -10706,12 +10705,12 @@ importance and impact of the items.")
   (package
     (name "r-imp4p")
     (version "1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "imp4p" version))
-              (sha256
-               (base32
-                "1ld8bjjrlij9m7xns7izibag9mndrfh21xgq1w7g3bh5ag9p9fs0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "imp4p" version))
+       (sha256
+        (base32 "1ld8bjjrlij9m7xns7izibag9mndrfh21xgq1w7g3bh5ag9p9fs0"))))
     (properties `((upstream-name . "imp4p")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm
@@ -10731,12 +10730,12 @@ impute data sets in the context of bottom-up MS-based proteomics.")
   (package
     (name "r-imp")
     (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IMP" version))
-              (sha256
-               (base32
-                "0ilvgz2bngffyx6ifqqx1snsn6mmq7rx3wg44093yrviaw39qdfv"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IMP" version))
+       (sha256
+        (base32 "0ilvgz2bngffyx6ifqqx1snsn6mmq7rx3wg44093yrviaw39qdfv"))))
     (properties `((upstream-name . "IMP")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-shiny r-ggplot2 r-dplyr))
@@ -10752,12 +10751,12 @@ interactively (as Shiny Apps).")
   (package
     (name "r-imola")
     (version "0.5.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "imola" version))
-              (sha256
-               (base32
-                "087zdzn1vkyvqrdlwnackr6jyacrhg69q4b77s8z477kplickw8x"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "imola" version))
+       (sha256
+        (base32 "087zdzn1vkyvqrdlwnackr6jyacrhg69q4b77s8z477kplickw8x"))))
     (properties `((upstream-name . "imola")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -10778,12 +10777,12 @@ added CSS.")
   (package
     (name "r-immunesim")
     (version "0.8.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "immuneSIM" version))
-              (sha256
-               (base32
-                "0brj12xnkzmn3n91vb39fq3q68wmzmwx9l38dl38yypp0l8pknjl"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "immuneSIM" version))
+       (sha256
+        (base32 "0brj12xnkzmn3n91vb39fq3q68wmzmwx9l38dl38yypp0l8pknjl"))))
     (properties `((upstream-name . "immuneSIM")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -10816,12 +10815,12 @@ functions.  Preprint is available at @code{bioRxiv} (Weber et al., 2019
   (package
     (name "r-immunarch")
     (version "0.9.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "immunarch" version))
-              (sha256
-               (base32
-                "1yjmr7n352xnkrw9pa122kb716y02bmjr6lw6413gn77bwkxnfpy"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "immunarch" version))
+       (sha256
+        (base32 "1yjmr7n352xnkrw9pa122kb716y02bmjr6lw6413gn77bwkxnfpy"))))
     (properties `((upstream-name . "immunarch")))
     (build-system r-build-system)
     (propagated-inputs (list r-uuid
@@ -10889,12 +10888,12 @@ successor to our previously published @code{tcR} immunoinformatics package
   (package
     (name "r-imml")
     (version "0.1.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ImML" version))
-              (sha256
-               (base32
-                "1q4pwn47v0623qamzpsnldq4g5fhqd0bgkc5357h3588r9ahcdq3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ImML" version))
+       (sha256
+        (base32 "1q4pwn47v0623qamzpsnldq4g5fhqd0bgkc5357h3588r9ahcdq3"))))
     (properties `((upstream-name . "ImML")))
     (build-system r-build-system)
     (propagated-inputs (list r-rpart
@@ -10917,12 +10916,12 @@ as explanatory variables.")
   (package
     (name "r-immigrate")
     (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Immigrate" version))
-              (sha256
-               (base32
-                "0pnnvv63kkg7pgyblb1vlx54c6169n40fn58aypdy5xcnknabvxn"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Immigrate" version))
+       (sha256
+        (base32 "0pnnvv63kkg7pgyblb1vlx54c6169n40fn58aypdy5xcnknabvxn"))))
     (properties `((upstream-name . "Immigrate")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-proc))
@@ -10942,12 +10941,12 @@ package also performs prediction for the above feature selection methods.")
   (package
     (name "r-immer")
     (version "1.4-15")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "immer" version))
-              (sha256
-               (base32
-                "0vif1q04q847pn1hxr3mg70wwfcvvc8n8ag27s7c2bpza2vj8khc"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "immer" version))
+       (sha256
+        (base32 "0vif1q04q847pn1hxr3mg70wwfcvvc8n8ag27s7c2bpza2vj8khc"))))
     (properties `((upstream-name . "immer")))
     (build-system r-build-system)
     (propagated-inputs (list r-tam
@@ -10972,12 +10971,12 @@ of the functionality of the package.  See Wang, Su and Qiu (2014;
   (package
     (name "r-immcp")
     (version "1.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "immcp" version))
-              (sha256
-               (base32
-                "0xjk0a1dr45rnf6fzir74805winn1wppci2wk7wr2pwpmba86vzq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "immcp" version))
+       (sha256
+        (base32 "0xjk0a1dr45rnf6fzir74805winn1wppci2wk7wr2pwpmba86vzq"))))
     (properties `((upstream-name . "immcp")))
     (build-system r-build-system)
     (propagated-inputs (list r-visnetwork
@@ -11012,12 +11011,12 @@ Medicine and be used for drug-repositioning in Traditional Chinese Medicine.")
   (package
     (name "r-immailgun")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IMmailgun" version))
-              (sha256
-               (base32
-                "09acmi6xj186fb8nhj8q0nxmkp2p32a1l95glzvz84gax4xakhz8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IMmailgun" version))
+       (sha256
+        (base32 "09acmi6xj186fb8nhj8q0nxmkp2p32a1l95glzvz84gax4xakhz8"))))
     (properties `((upstream-name . "IMmailgun")))
     (build-system r-build-system)
     (propagated-inputs (list r-httr))
@@ -11032,12 +11031,12 @@ from <https://www.mailgun.com> .")
   (package
     (name "r-imix")
     (version "1.1.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IMIX" version))
-              (sha256
-               (base32
-                "0j5wh4j039xmwxb75msgfvh4f7p5xafvn2z47vyn12hd4dznwndq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IMIX" version))
+       (sha256
+        (base32 "0j5wh4j039xmwxb75msgfvh4f7p5xafvn2z47vyn12hd4dznwndq"))))
     (properties `((upstream-name . "IMIX")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm
@@ -11065,12 +11064,12 @@ Ziqiao Wang and Peng Wei (2020) <doi:10.1093/bioinformatics/btaa1001>.")
   (package
     (name "r-imifa")
     (version "2.1.10")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IMIFA" version))
-              (sha256
-               (base32
-                "033y5y3i63z0gj7pqhf6d73l3lcfnv2srfs244p3wsal4xv11hg4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IMIFA" version))
+       (sha256
+        (base32 "033y5y3i63z0gj7pqhf6d73l3lcfnv2srfs244p3wsal4xv11hg4"))))
     (properties `((upstream-name . "IMIFA")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
@@ -11100,12 +11099,12 @@ posterior predictive checking, and quantifying uncertainty.")
   (package
     (name "r-imhd")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ImHD" version))
-              (sha256
-               (base32
-                "0aawa3slyf2i05q73v8qicwkf80ry527c87z72anapy8nfzkija6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ImHD" version))
+       (sha256
+        (base32 "0aawa3slyf2i05q73v8qicwkf80ry527c87z72anapy8nfzkija6"))))
     (properties `((upstream-name . "ImHD")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -11129,12 +11128,12 @@ diameter at breast height as explanatory variable using algorithm of Paul et al.
   (package
     (name "r-imgur")
     (version "1.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "imguR" version))
-              (sha256
-               (base32
-                "14f7ghgc8rbrpqb21rinfbrj1wh80i6ii0awwi814152v5qzj4b3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "imguR" version))
+       (sha256
+        (base32 "14f7ghgc8rbrpqb21rinfbrj1wh80i6ii0awwi814152v5qzj4b3"))))
     (properties `((upstream-name . "imguR")))
     (build-system r-build-system)
     (propagated-inputs (list r-png r-jpeg r-httr))
@@ -11150,12 +11149,12 @@ sharing of plots.")
   (package
     (name "r-imgrec")
     (version "0.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "imgrec" version))
-              (sha256
-               (base32
-                "0va04b264v2ywvqdgmvigygsd5f6vdy5cj2ip2nsyi1fzh68hadx"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "imgrec" version))
+       (sha256
+        (base32 "0va04b264v2ywvqdgmvigygsd5f6vdy5cj2ip2nsyi1fzh68hadx"))))
     (properties `((upstream-name . "imgrec")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -11178,12 +11177,12 @@ also includes functions for analyzing image annotations.")
   (package
     (name "r-imgpalr")
     (version "0.3.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "imgpalr" version))
-              (sha256
-               (base32
-                "0wdddswyakcgwvp75ydp8q3wmxdgrms8r2lh9jm024f8im3j5ccw"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "imgpalr" version))
+       (sha256
+        (base32 "0wdddswyakcgwvp75ydp8q3wmxdgrms8r2lh9jm024f8im3j5ccw"))))
     (properties `((upstream-name . "imgpalr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -11211,12 +11210,12 @@ level of user control over palettes construction.")
   (package
     (name "r-imfor")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ImFoR" version))
-              (sha256
-               (base32
-                "10wm0wkcz85g94m4824fm6xy1mqk9syqr3rj5fx6bbs2mkh4wxca"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ImFoR" version))
+       (sha256
+        (base32 "10wm0wkcz85g94m4824fm6xy1mqk9syqr3rj5fx6bbs2mkh4wxca"))))
     (properties `((upstream-name . "ImFoR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyverse
@@ -11243,12 +11242,12 @@ algorithm of Huang et al. (1992) <doi:10.1139/x92-172> and Zeide et al. (1993)
   (package
     (name "r-imediate")
     (version "0.5.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iMediate" version))
-              (sha256
-               (base32
-                "1lwhrzm4g2fcazh782g7p11v5pyx165ig1dzgkmdmjffpwk0w8b4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iMediate" version))
+       (sha256
+        (base32 "1lwhrzm4g2fcazh782g7p11v5pyx165ig1dzgkmdmjffpwk0w8b4"))))
     (properties `((upstream-name . "iMediate")))
     (build-system r-build-system)
     (propagated-inputs (list r-plotly r-mvtnorm r-mbess))
@@ -11262,12 +11261,12 @@ algorithm of Huang et al. (1992) <doi:10.1139/x92-172> and Zeide et al. (1993)
   (package
     (name "r-imec")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IMEC" version))
-              (sha256
-               (base32
-                "1k85pr6s6lysn53n59i8rcdhyg7r3il5avbckvvz43p6lh0fgxpy"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IMEC" version))
+       (sha256
+        (base32 "1k85pr6s6lysn53n59i8rcdhyg7r3il5avbckvvz43p6lh0fgxpy"))))
     (properties `((upstream-name . "IMEC")))
     (build-system r-build-system)
     (propagated-inputs (list r-qgraph r-isingsampler r-igraph))
@@ -11290,12 +11289,12 @@ model is available in this R-package.")
   (package
     (name "r-imdbapi")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "imdbapi" version))
-              (sha256
-               (base32
-                "11v7c0s7qqf02b186md5lhgkgmywkn8lmmanlz3gfcxca26g047y"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "imdbapi" version))
+       (sha256
+        (base32 "11v7c0s7qqf02b186md5lhgkgmywkn8lmmanlz3gfcxca26g047y"))))
     (properties `((upstream-name . "imdbapi")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-httr r-dplyr))
@@ -11310,12 +11309,12 @@ metadata about movies, games and television shows through a public API.")
   (package
     (name "r-imd")
     (version "1.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IMD" version))
-              (sha256
-               (base32
-                "0cixq15n38bj49xp9cxra7rzi9sp5fbf4ac4m7nl2iiswscy15fr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IMD" version))
+       (sha256
+        (base32 "0cixq15n38bj49xp9cxra7rzi9sp5fbf4ac4m7nl2iiswscy15fr"))))
     (properties `((upstream-name . "IMD")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-rlang r-readr r-janitor r-dplyr))
@@ -11342,12 +11341,12 @@ on data from
   (package
     (name "r-imcexperiment")
     (version "0.99.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "imcExperiment" version))
-              (sha256
-               (base32
-                "0fagasb94q7gxx49c7n4p2cb9j3n5qnfx86s7nvz4naicy96qbyr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "imcExperiment" version))
+       (sha256
+        (base32 "0fagasb94q7gxx49c7n4p2cb9j3n5qnfx86s7nvz4naicy96qbyr"))))
     (properties `((upstream-name . "imcExperiment")))
     (build-system r-build-system)
     (propagated-inputs (list r-summarizedexperiment r-spatstat-geom
@@ -11365,12 +11364,12 @@ and unique cellular labeling.")
   (package
     (name "r-imbibe")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "imbibe" version))
-              (sha256
-               (base32
-                "03vaz5vippnmbgs2l4gxpmsnrkxjw7d156ng13r07zicq43g9gwp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "imbibe" version))
+       (sha256
+        (base32 "03vaz5vippnmbgs2l4gxpmsnrkxjw7d156ng13r07zicq43g9gwp"))))
     (properties `((upstream-name . "imbibe")))
     (build-system r-build-system)
     (propagated-inputs (list r-rnifti r-rcpp r-magrittr))
@@ -11386,12 +11385,12 @@ images.")
   (package
     (name "r-imbalancedatrel")
     (version "0.1.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "imbalanceDatRel" version))
-              (sha256
-               (base32
-                "017z434pshsc2v8w1nlrvlf6dswdjk060flrn951n59vdzvl5rhj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "imbalanceDatRel" version))
+       (sha256
+        (base32 "017z434pshsc2v8w1nlrvlf6dswdjk060flrn951n59vdzvl5rhj"))))
     (properties `((upstream-name . "imbalanceDatRel")))
     (build-system r-build-system)
     (propagated-inputs (list r-smotewb r-rfast r-rcccd r-rann))
@@ -11407,12 +11406,12 @@ any data to be generated in class overlapping area.")
   (package
     (name "r-imbalance")
     (version "1.0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "imbalance" version))
-              (sha256
-               (base32
-                "14f7p3x8818b1asfynp3w4sxdacsd14dzs7r166s1jdadwwfwi1s"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "imbalance" version))
+       (sha256
+        (base32 "14f7p3x8818b1asfynp3w4sxdacsd14dzs7r166s1jdadwwfwi1s"))))
     (properties `((upstream-name . "imbalance")))
     (build-system r-build-system)
     (propagated-inputs (list r-smotefamily
@@ -11443,12 +11442,12 @@ perform oversampling.")
   (package
     (name "r-imak")
     (version "2.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IMak" version))
-              (sha256
-               (base32
-                "1972iwam1kkkb3107pq8jhmm3q0ypn92p519srzm82xnbf0m7828"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IMak" version))
+       (sha256
+        (base32 "1972iwam1kkkb3107pq8jhmm3q0ypn92p519srzm82xnbf0m7828"))))
     (properties `((upstream-name . "IMak")))
     (build-system r-build-system)
     (propagated-inputs (list r-png))
@@ -11466,12 +11465,12 @@ psychometric quality standards (see Blum & Holling, 2018)
   (package
     (name "r-imagine")
     (version "2.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "imagine" version))
-              (sha256
-               (base32
-                "0dwq7gb068wd87fclca3hmdfr50bxf39va7dp1ky1i6qhk8w8g2l"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "imagine" version))
+       (sha256
+        (base32 "0dwq7gb068wd87fclca3hmdfr50bxf39va7dp1ky1i6qhk8w8g2l"))))
     (properties `((upstream-name . "imagine")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -11488,12 +11487,12 @@ R and C++ algorithms.")
   (package
     (name "r-imaginator")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "imaginator" version))
-              (sha256
-               (base32
-                "0wjgfsp7dhy8q7rai4bvikmw1y3iancnqdnqlhbi7a563s4mkpkr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "imaginator" version))
+       (sha256
+        (base32 "0wjgfsp7dhy8q7rai4bvikmw1y3iancnqdnqlhbi7a563s4mkpkr"))))
     (properties `((upstream-name . "imaginator")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -11523,12 +11522,12 @@ distributions for claim amounts.")
   (package
     (name "r-imageviewer")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "imageviewer" version))
-              (sha256
-               (base32
-                "1rsrwy5v0gnsmbay1zqijhvll2l1bs844m52w65588j9nlx4fci9"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "imageviewer" version))
+       (sha256
+        (base32 "1rsrwy5v0gnsmbay1zqijhvll2l1bs844m52w65588j9nlx4fci9"))))
     (properties `((upstream-name . "imageviewer")))
     (build-system r-build-system)
     (propagated-inputs (list r-htmlwidgets))
@@ -11548,12 +11547,12 @@ through @code{WebGL} filters and performing basic high-pass/low-pass filtering."
   (package
     (name "r-imageseg")
     (version "0.5.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "imageseg" version))
-              (sha256
-               (base32
-                "1ps303zcqmiy5jv65z1c1lyzbjdcb2akvy2rmcwbms8j7a1y1shg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "imageseg" version))
+       (sha256
+        (base32 "1ps303zcqmiy5jv65z1c1lyzbjdcb2akvy2rmcwbms8j7a1y1shg"))))
     (properties `((upstream-name . "imageseg")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -11582,12 +11581,12 @@ color images, both for binary and multi-class image segmentation.")
   (package
     (name "r-imagerextra")
     (version "1.3.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "imagerExtra" version))
-              (sha256
-               (base32
-                "1f6mxfn7am4ph9acbbx53r4bk4vsm73p7arh8rvrsic9pgma3gqf"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "imagerExtra" version))
+       (sha256
+        (base32 "1f6mxfn7am4ph9acbbx53r4bk4vsm73p7arh8rvrsic9pgma3gqf"))))
     (properties `((upstream-name . "imagerExtra")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-magrittr r-imager r-fftwtools))
@@ -11603,12 +11602,12 @@ package imager'.")
   (package
     (name "r-imagefx")
     (version "0.4.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "imagefx" version))
-              (sha256
-               (base32
-                "1mxd33y8zbq8kig6m6xihb5w8wrjppgmpyjspvaxjwk7si9a09k1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "imagefx" version))
+       (sha256
+        (base32 "1mxd33y8zbq8kig6m6xihb5w8wrjppgmpyjspvaxjwk7si9a09k1"))))
     (properties `((upstream-name . "imagefx")))
     (build-system r-build-system)
     (propagated-inputs (list r-signal r-moments))
@@ -11628,12 +11627,12 @@ filtering, and plotting.")
   (package
     (name "r-imagefluency")
     (version "0.2.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "imagefluency" version))
-              (sha256
-               (base32
-                "1kssg6lj29f7c2isnzw98crygpj761q0qp38i7zs8008cwbch4cy"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "imagefluency" version))
+       (sha256
+        (base32 "1kssg6lj29f7c2isnzw98crygpj761q0qp38i7zs8008cwbch4cy"))))
     (properties `((upstream-name . "imagefluency")))
     (build-system r-build-system)
     (propagated-inputs (list r-readbitmap r-r-utils r-pracma r-openimager
@@ -11654,12 +11653,12 @@ background of the methods.")
   (package
     (name "r-imagedata")
     (version "0.1-62")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "imageData" version))
-              (sha256
-               (base32
-                "1q5s6zda1vvinp23afxjys3zl17xaidb11a7iibxpz6rla75183d"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "imageData" version))
+       (sha256
+        (base32 "1q5s6zda1vvinp23afxjys3zl17xaidb11a7iibxpz6rla75183d"))))
     (properties `((upstream-name . "imageData")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape
@@ -11685,12 +11684,12 @@ is no longer maintained, but is retained for legacy purposes.")
   (package
     (name "r-image2data")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "image2data" version))
-              (sha256
-               (base32
-                "03fvl7fj7kc6i6xgyrixwk0ahgmlg26ihvwvkxh6yxzhjj48syfq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "image2data" version))
+       (sha256
+        (base32 "03fvl7fj7kc6i6xgyrixwk0ahgmlg26ihvwvkxh6yxzhjj48syfq"))))
     (properties `((upstream-name . "image2data")))
     (build-system r-build-system)
     (propagated-inputs (list r-readbitmap))
@@ -11712,12 +11711,12 @@ data set.")
   (package
     (name "r-image-textlinedetector")
     (version "0.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "image.textlinedetector" version))
-              (sha256
-               (base32
-                "0zbixw0j241il357n9mljcw4lvq6f1ddadx2a0ahykdf1w0vplyx"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "image.textlinedetector" version))
+       (sha256
+        (base32 "0zbixw0j241il357n9mljcw4lvq6f1ddadx2a0ahykdf1w0vplyx"))))
     (properties `((upstream-name . "image.textlinedetector")))
     (build-system r-build-system)
     (inputs (list zlib tbb))
@@ -11746,12 +11745,12 @@ by Vinciarelli A. and Luettin J. (2001) <doi:10.1016/S0167-8655(01)00042-3>.")
   (package
     (name "r-image-otsu")
     (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "image.Otsu" version))
-              (sha256
-               (base32
-                "0van4w7f3rnd2p5fsfjm7pq1j7ky90z9j0sir1mszjxjkcj6s9rz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "image.Otsu" version))
+       (sha256
+        (base32 "0van4w7f3rnd2p5fsfjm7pq1j7ky90z9j0sir1mszjxjkcj6s9rz"))))
     (properties `((upstream-name . "image.Otsu")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -11767,12 +11766,12 @@ algorithm is explained at <doi:10.5201/ipol.2016.158>.")
   (package
     (name "r-image-linesegmentdetector")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "image.LineSegmentDetector" version))
-              (sha256
-               (base32
-                "1mx6vkmm9miwqdd5vil44if0dikzn5cy3kxvb3vp0kwfm8k36ib5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "image.LineSegmentDetector" version))
+       (sha256
+        (base32 "1mx6vkmm9miwqdd5vil44if0dikzn5cy3kxvb3vp0kwfm8k36ib5"))))
     (properties `((upstream-name . "image.LineSegmentDetector")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-rcpp))
@@ -11789,12 +11788,12 @@ Rafael Grompone von Gioi et al (2012).  The algorithm is explained at
   (package
     (name "r-image-libfacedetection")
     (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "image.libfacedetection" version))
-              (sha256
-               (base32
-                "0mr7zrqd73mhvs918615lwsf2bgg63x3wh16wdpwhb2zd7ybm87a"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "image.libfacedetection" version))
+       (sha256
+        (base32 "0mr7zrqd73mhvs918615lwsf2bgg63x3wh16wdpwhb2zd7ybm87a"))))
     (properties `((upstream-name . "image.libfacedetection")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -11811,12 +11810,12 @@ faces which have size greater than 10x10 pixels.")
   (package
     (name "r-image-dlib")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "image.dlib" version))
-              (sha256
-               (base32
-                "0wrg6cwnrqwvgs5w1wjhc8ald7fij76xr2qbv6yb217v13ahwskm"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "image.dlib" version))
+       (sha256
+        (base32 "0wrg6cwnrqwvgs5w1wjhc8ald7fij76xr2qbv6yb217v13ahwskm"))))
     (properties `((upstream-name . "image.dlib")))
     (build-system r-build-system)
     (inputs (list zlib))
@@ -11834,12 +11833,12 @@ of digital images, in particular SURF and HOG descriptors.")
   (package
     (name "r-image-cornerdetectionharris")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "image.CornerDetectionHarris" version))
-              (sha256
-               (base32
-                "150qz9wfpa33914x1am2ifzm0k2bdkmgk1qypvgxy958ginlaxsg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "image.CornerDetectionHarris" version))
+       (sha256
+        (base32 "150qz9wfpa33914x1am2ifzm0k2bdkmgk1qypvgxy958ginlaxsg"))))
     (properties `((upstream-name . "image.CornerDetectionHarris")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -11856,12 +11855,12 @@ relevant points in images which are characteristic to the digital image.")
   (package
     (name "r-image-cornerdetectionf9")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "image.CornerDetectionF9" version))
-              (sha256
-               (base32
-                "04qy2yvgjmgb8r3piw6v5g97abljqv1nw7vn2wvn1npkq9lzj94x"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "image.CornerDetectionF9" version))
+       (sha256
+        (base32 "04qy2yvgjmgb8r3piw6v5g97abljqv1nw7vn2wvn1npkq9lzj94x"))))
     (properties `((upstream-name . "image.CornerDetectionF9")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -11879,12 +11878,12 @@ images.")
   (package
     (name "r-image-contourdetector")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "image.ContourDetector" version))
-              (sha256
-               (base32
-                "0h9nq6k99rfmldw1c00k2anlpbjbpm26pp1d7jg2wz334dvlvlij"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "image.ContourDetector" version))
+       (sha256
+        (base32 "0h9nq6k99rfmldw1c00k2anlpbjbpm26pp1d7jg2wz334dvlvlij"))))
     (properties `((upstream-name . "image.ContourDetector")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-rcpp))
@@ -11902,12 +11901,12 @@ algorithm is explained at <doi:10.5201/ipol.2016.175>.")
   (package
     (name "r-image-cannyedges")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "image.CannyEdges" version))
-              (sha256
-               (base32
-                "0c8pvk91xyys6d2i03yy88kylb3jli5jkpq2s069n7p0yl3z7rr1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "image.CannyEdges" version))
+       (sha256
+        (base32 "0c8pvk91xyys6d2i03yy88kylb3jli5jkpq2s069n7p0yl3z7rr1"))))
     (properties `((upstream-name . "image.CannyEdges")))
     (build-system r-build-system)
     (inputs (list libpng fftw))
@@ -11924,12 +11923,12 @@ package provides an interface to the algorithm available at
   (package
     (name "r-image-binarization")
     (version "0.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "image.binarization" version))
-              (sha256
-               (base32
-                "03p06qmv1s5i08hw4616qf7dqyqp3hrcibz1w66bh5dzv6yl9j7c"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "image.binarization" version))
+       (sha256
+        (base32 "03p06qmv1s5i08hw4616qf7dqyqp3hrcibz1w66bh5dzv6yl9j7c"))))
     (properties `((upstream-name . "image.binarization")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-magick))
@@ -11947,12 +11946,12 @@ character recognition or handwritten text recognition.")
   (package
     (name "r-imabc")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "imabc" version))
-              (sha256
-               (base32
-                "1p420jlvqqcqdjqp7y4mcjkzimw3qiygph5yrvmm75znax3fkg4z"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "imabc" version))
+       (sha256
+        (base32 "1p420jlvqqcqdjqp7y4mcjkzimw3qiygph5yrvmm75znax3fkg4z"))))
     (properties `((upstream-name . "imabc")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm r-mass r-lhs r-foreach r-data-table))
@@ -11978,12 +11977,12 @@ more details see Rutter, Ozik, @code{DeYoreo}, and Collier (2018)
   (package
     (name "r-ilse")
     (version "1.1.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ILSE" version))
-              (sha256
-               (base32
-                "0jx0f7lk18k0wsypi4ynq1zqbb9hsmcmf0chxyrpqkadfqb6mgwr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ILSE" version))
+       (sha256
+        (base32 "0jx0f7lk18k0wsypi4ynq1zqbb9hsmcmf0chxyrpqkadfqb6mgwr"))))
     (properties `((upstream-name . "ILSE")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-pbapply))
@@ -12002,12 +12001,12 @@ iteratively.  More details can be referred to Huazhen Lin, Wei Liu and Wei Lan.
   (package
     (name "r-ils")
     (version "0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ILS" version))
-              (sha256
-               (base32
-                "0l4rrl1j72lqg87nzw4xap054gl2h3m90g8sl5bzg3jc7c290rd7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ILS" version))
+       (sha256
+        (base32 "0l4rrl1j72lqg87nzw4xap054gl2h3m90g8sl5bzg3jc7c290rd7"))))
     (properties `((upstream-name . "ILS")))
     (build-system r-build-system)
     (propagated-inputs (list r-multcomp r-mass r-lattice r-fda-usc
@@ -12034,12 +12033,12 @@ smoothing bootstrap resampling.")
   (package
     (name "r-ijtiff")
     (version "2.3.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ijtiff" version))
-              (sha256
-               (base32
-                "0isqrxpb2xb60h5nm2aycj5kccy77h3b8xx4c11nhhisagpr42z7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ijtiff" version))
+       (sha256
+        (base32 "0isqrxpb2xb60h5nm2aycj5kccy77h3b8xx4c11nhhisagpr42z7"))))
     (properties `((upstream-name . "ijtiff")))
     (build-system r-build-system)
     (inputs (list zlib zlib libtiff libjpeg-turbo))
@@ -12071,12 +12070,12 @@ saved from @code{ImageJ} and write TIFF files than can be correctly read by
   (package
     (name "r-iivpredictor")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IIVpredictor" version))
-              (sha256
-               (base32
-                "15361j8b60jj3bh8cjxs39d9bir1aywy9bd254s5w94cakhy0ld5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IIVpredictor" version))
+       (sha256
+        (base32 "15361j8b60jj3bh8cjxs39d9bir1aywy9bd254s5w94cakhy0ld5"))))
     (properties `((upstream-name . "IIVpredictor")))
     (build-system r-build-system)
     (propagated-inputs (list r-r2jags r-lavaan))
@@ -12093,12 +12092,12 @@ within individual variability indicators as predictors.For more details, see
   (package
     (name "r-iiproductionunknown")
     (version "0.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IIProductionUnknown" version))
-              (sha256
-               (base32
-                "1zbmwa59ynqskxx6cf2hwfrgh3a2p95vcjy5f0kgz8vbh093cr0m"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IIProductionUnknown" version))
+       (sha256
+        (base32 "1zbmwa59ynqskxx6cf2hwfrgh3a2p95vcjy5f0kgz8vbh093cr0m"))))
     (properties `((upstream-name . "IIProductionUnknown")))
     (build-system r-build-system)
     (propagated-inputs (list r-crayon))
@@ -12126,12 +12125,12 @@ unknown for the system (Demolin-Leite, 2024) <DOI:10.1590/1519-6984.253218>.")
   (package
     (name "r-iineq")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iIneq" version))
-              (sha256
-               (base32
-                "15487majkslabw33dgqfx0jmbzzjhiy8z07bki5540d1wf6rmmnn"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iIneq" version))
+       (sha256
+        (base32 "15487majkslabw33dgqfx0jmbzzjhiy8z07bki5540d1wf6rmmnn"))))
     (properties `((upstream-name . "iIneq")))
     (build-system r-build-system)
     (propagated-inputs (list r-foreach r-doparallel))
@@ -12150,12 +12149,12 @@ origin, with the three functions of @code{iGini}(), @code{iTheiT}(), and
   (package
     (name "r-ihsep")
     (version "0.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IHSEP" version))
-              (sha256
-               (base32
-                "18zkqg9vinc8a37i86k516jyjrn3gqbyzb86lq9dix4kskvlvpfd"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IHSEP" version))
+       (sha256
+        (base32 "18zkqg9vinc8a37i86k516jyjrn3gqbyzb86lq9dix4kskvlvpfd"))))
     (properties `((upstream-name . "IHSEP")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-lpint))
@@ -12174,12 +12173,12 @@ Calculate the mean intensity process.")
   (package
     (name "r-ihpdr")
     (version "1.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ihpdr" version))
-              (sha256
-               (base32
-                "1qa9ndb5aqbmlqbl0ivh10ddah2rbhsc6928dml20fjgz7lggdww"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ihpdr" version))
+       (sha256
+        (base32 "1qa9ndb5aqbmlqbl0ivh10ddah2rbhsc6928dml20fjgz7lggdww"))))
     (properties `((upstream-name . "ihpdr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -12205,12 +12204,12 @@ format.")
   (package
     (name "r-iheiddown")
     (version "0.9.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iheiddown" version))
-              (sha256
-               (base32
-                "1h7cb52wk0z5na543v78vjj2xh77kj3nwgl5vgqnf5186mrknh5v"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iheiddown" version))
+       (sha256
+        (base32 "1h7cb52wk0z5na543v78vjj2xh77kj3nwgl5vgqnf5186mrknh5v"))))
     (properties `((upstream-name . "iheiddown")))
     (build-system r-build-system)
     (propagated-inputs (list r-xaringan
@@ -12251,12 +12250,12 @@ toolkit.")
   (package
     (name "r-ihclust")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ihclust" version))
-              (sha256
-               (base32
-                "049jlx8bspl1md06zyh3m7fr666cymmcwarsjrkr8pdd7vlg918j"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ihclust" version))
+       (sha256
+        (base32 "049jlx8bspl1md06zyh3m7fr666cymmcwarsjrkr8pdd7vlg918j"))))
     (properties `((upstream-name . "ihclust")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2 r-foreach r-factoextra r-doparallel))
@@ -12276,12 +12275,12 @@ G. & Wu, H. (2016) <doi:10.1016/j.idm.2016.07.001>.")
   (package
     (name "r-igst")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IGST" version))
-              (sha256
-               (base32
-                "12ycrfsgwakaj3k39k1j4ky58wr7a2ibyz6j9cznvjjv6cgz9zg5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IGST" version))
+       (sha256
+        (base32 "12ycrfsgwakaj3k39k1j4ky58wr7a2ibyz6j9cznvjjv6cgz9zg5"))))
     (properties `((upstream-name . "IGST")))
     (build-system r-build-system)
     (propagated-inputs (list r-e1071 r-bootmrmr))
@@ -12303,12 +12302,12 @@ bootstrapping procedure.")
   (package
     (name "r-igsea")
     (version "1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iGSEA" version))
-              (sha256
-               (base32
-                "1xlz8mbxqnrwyqj7jwma7vmvjlaccajbfxf3hi4wp5qs2pch8806"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iGSEA" version))
+       (sha256
+        (base32 "1xlz8mbxqnrwyqj7jwma7vmvjlaccajbfxf3hi4wp5qs2pch8806"))))
     (properties `((upstream-name . "iGSEA")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=iGSEA")
@@ -12329,12 +12328,12 @@ the three approaches can be applied to both binary and continuous phenotypes.")
   (package
     (name "r-igrf")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "igrf" version))
-              (sha256
-               (base32
-                "1287mx1fpbq9y8jbyb43hlignkqg313rn3kc52pm6b2n77ipkrc6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "igrf" version))
+       (sha256
+        (base32 "1287mx1fpbq9y8jbyb43hlignkqg313rn3kc52pm6b2n77ipkrc6"))))
     (properties `((upstream-name . "igrf")))
     (build-system r-build-system)
     (native-inputs (list r-knitr gfortran))
@@ -12349,12 +12348,12 @@ standard spherical harmonic representation of the Earth's main field.")
   (package
     (name "r-igraphtosonia")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "igraphtosonia" version))
-              (sha256
-               (base32
-                "0vy9jnpjp68l8s0hi1l57j9p41c543h3iqv16pwl550f38zqp8j6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "igraphtosonia" version))
+       (sha256
+        (base32 "0vy9jnpjp68l8s0hi1l57j9p41c543h3iqv16pwl550f38zqp8j6"))))
     (properties `((upstream-name . "igraphtosonia")))
     (build-system r-build-system)
     (propagated-inputs (list r-igraph))
@@ -12368,12 +12367,12 @@ standard spherical harmonic representation of the Earth's main field.")
   (package
     (name "r-igraphmatch")
     (version "2.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iGraphMatch" version))
-              (sha256
-               (base32
-                "13rc8bi2p8gh238jxyqphah89dlpvmjwialzaha3ikdnmfgr41f4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iGraphMatch" version))
+       (sha256
+        (base32 "13rc8bi2p8gh238jxyqphah89dlpvmjwialzaha3ikdnmfgr41f4"))))
     (properties `((upstream-name . "iGraphMatch")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-matrix r-irlba r-igraph r-clue))
@@ -12390,12 +12389,12 @@ of either.")
   (package
     (name "r-igraphinshiny")
     (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "igraphinshiny" version))
-              (sha256
-               (base32
-                "1ww5s4jfihzcx4k35lbhzsf54z720xh7b2p5alzk843m6rx77986"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "igraphinshiny" version))
+       (sha256
+        (base32 "1ww5s4jfihzcx4k35lbhzsf54z720xh7b2p5alzk843m6rx77986"))))
     (properties `((upstream-name . "igraphinshiny")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-igraph))
@@ -12409,12 +12408,12 @@ of either.")
   (package
     (name "r-igraphdata")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "igraphdata" version))
-              (sha256
-               (base32
-                "19w5npa4b8c054v94xlr7nmhhg2fhq4m8jbds86skp8zvipl4rkl"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "igraphdata" version))
+       (sha256
+        (base32 "19w5npa4b8c054v94xlr7nmhhg2fhq4m8jbds86skp8zvipl4rkl"))))
     (properties `((upstream-name . "igraphdata")))
     (build-system r-build-system)
     (home-page "http://igraph.org")
@@ -12431,12 +12430,12 @@ faculty friendship network, domestic US flights network, etc.")
   (package
     (name "r-igorrr")
     (version "0.3.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IGoRRR" version))
-              (sha256
-               (base32
-                "1p3dakv9xv835pkixa4smp3bhnrydrfskh8b92kkp8vb8sahjyzd"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IGoRRR" version))
+       (sha256
+        (base32 "1p3dakv9xv835pkixa4smp3bhnrydrfskh8b92kkp8vb8sahjyzd"))))
     (properties `((upstream-name . "IGoRRR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -12488,12 +12487,12 @@ elsewhere.")
   (package
     (name "r-igor")
     (version "0.1.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "igoR" version))
-              (sha256
-               (base32
-                "1sqkxf6mp77hf15jg992krgpkw36mx9c2fqg4xzz88s47wwwg5wy"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "igoR" version))
+       (sha256
+        (base32 "1sqkxf6mp77hf15jg992krgpkw36mx9c2fqg4xzz88s47wwwg5wy"))))
     (properties `((upstream-name . "igoR")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -12510,12 +12509,12 @@ Project <https://correlatesofwar.org/>.  See also Pevehouse, J. C. et al.
   (package
     (name "r-iglu")
     (version "3.4.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iglu" version))
-              (sha256
-               (base32
-                "0ilfkmwmh3xshd67y45v9kvyd69xgf8wmxcw3hxi9zpsb0r4vmsb"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iglu" version))
+       (sha256
+        (base32 "0ilfkmwmh3xshd67y45v9kvyd69xgf8wmxcw3hxi9zpsb0r4vmsb"))))
     (properties `((upstream-name . "iglu")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -12548,12 +12547,12 @@ plots, lasagna plots and ambulatory glucose profile report.")
   (package
     (name "r-igcop")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "igcop" version))
-              (sha256
-               (base32
-                "0jl107mdwbldi319qflqjzy8vk02sr4nihky8jl5kcgr6x55qh6z"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "igcop" version))
+       (sha256
+        (base32 "0jl107mdwbldi319qflqjzy8vk02sr4nihky8jl5kcgr6x55qh6z"))))
     (properties `((upstream-name . "igcop")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs r-rlang r-rcpp))
@@ -12571,12 +12570,12 @@ or IGL copula.")
   (package
     (name "r-igcities")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IGCities" version))
-              (sha256
-               (base32
-                "1564bzvi6vgg9q8s97mxjwklr83vkcv8f526savkhnjxdzi1zmy0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IGCities" version))
+       (sha256
+        (base32 "1564bzvi6vgg9q8s97mxjwklr83vkcv8f526savkhnjxdzi1zmy0"))))
     (properties `((upstream-name . "IGCities")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=IGCities")
@@ -12595,12 +12594,12 @@ policies.")
   (package
     (name "r-igate")
     (version "0.3.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "igate" version))
-              (sha256
-               (base32
-                "0b8dk976z0764cmxwcq6w2f3akv7iivivharinq029p90b600qza"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "igate" version))
+       (sha256
+        (base32 "0b8dk976z0764cmxwcq6w2f3akv7iivivharinq029p90b600qza"))))
     (properties `((upstream-name . "igate")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -12625,12 +12624,12 @@ information on the technology.")
   (package
     (name "r-igasso")
     (version "1.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iGasso" version))
-              (sha256
-               (base32
-                "066g27lv9i4yc6ksz2y14q8xn4k547mfvjwpjjzxm35mjywxbsqg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iGasso" version))
+       (sha256
+        (base32 "066g27lv9i4yc6ksz2y14q8xn4k547mfvjwpjjzxm35mjywxbsqg"))))
     (properties `((upstream-name . "iGasso")))
     (build-system r-build-system)
     (propagated-inputs (list r-mbess r-mass r-lattice r-compquadform))
@@ -12645,12 +12644,12 @@ studies and summary data based Mendelian randomization.")
   (package
     (name "r-igascores")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IgAScores" version))
-              (sha256
-               (base32
-                "0ckqjbn0xc894dc23gbaqzr6z6rl5h0k8gc5gjhbhwvrc2zlyfsp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IgAScores" version))
+       (sha256
+        (base32 "0ckqjbn0xc894dc23gbaqzr6z6rl5h0k8gc5gjhbhwvrc2zlyfsp"))))
     (properties `((upstream-name . "IgAScores")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -12670,12 +12669,12 @@ testing.")
   (package
     (name "r-ig-vancouver-2014-topcolour")
     (version "0.1.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ig.vancouver.2014.topcolour" version))
-              (sha256
-               (base32
-                "0yclvm6xppf4w1qf25nf82hg1pliah68z7h3f683svv0j62q748h"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ig.vancouver.2014.topcolour" version))
+       (sha256
+        (base32 "0yclvm6xppf4w1qf25nf82hg1pliah68z7h3f683svv0j62q748h"))))
     (properties `((upstream-name . "ig.vancouver.2014.topcolour")))
     (build-system r-build-system)
     (home-page
@@ -12694,12 +12693,12 @@ Instagram is a web photo sharing service.  It can be found at:
   (package
     (name "r-ifs")
     (version "0.1.10")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ifs" version))
-              (sha256
-               (base32
-                "0w27z3fjv007717dsn72bm9hbpgzd6pfib6maf9ihnsjllb6k0v5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ifs" version))
+       (sha256
+        (base32 "0w27z3fjv007717dsn72bm9hbpgzd6pfib6maf9ihnsjllb6k0v5"))))
     (properties `((upstream-name . "ifs")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=ifs")
@@ -12713,12 +12712,12 @@ Instagram is a web photo sharing service.  It can be found at:
   (package
     (name "r-ifp")
     (version "0.2.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IFP" version))
-              (sha256
-               (base32
-                "066wz6bjqcvq22gjg2wcmglp798f87rsc8yhm13p0dic3arb5ph6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IFP" version))
+       (sha256
+        (base32 "066wz6bjqcvq22gjg2wcmglp798f87rsc8yhm13p0dic3arb5ph6"))))
     (properties `((upstream-name . "IFP")))
     (build-system r-build-system)
     (propagated-inputs (list r-haplo-stats r-coda))
@@ -12734,12 +12733,12 @@ association data, especially with large controls re-sequenced data.")
   (package
     (name "r-iforecast")
     (version "1.0.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iForecast" version))
-              (sha256
-               (base32
-                "03g15xps3bymx2jj6j02pr1llk3lcb5lc3s5r0i2c86qc92lprch"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iForecast" version))
+       (sha256
+        (base32 "03g15xps3bymx2jj6j02pr1llk3lcb5lc3s5r0i2c86qc92lprch"))))
     (properties `((upstream-name . "iForecast")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-caret))
@@ -12754,12 +12753,12 @@ models.")
   (package
     (name "r-ifmcdm")
     (version "0.1.17")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IFMCDM" version))
-              (sha256
-               (base32
-                "04qiq5i2nw3l64yz0xwh7c8dcfh69xinb8l0zq0a8gi67vd1yka7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IFMCDM" version))
+       (sha256
+        (base32 "04qiq5i2nw3l64yz0xwh7c8dcfh69xinb8l0zq0a8gi67vd1yka7"))))
     (properties `((upstream-name . "IFMCDM")))
     (build-system r-build-system)
     (propagated-inputs (list r-dplyr))
@@ -12779,12 +12778,12 @@ Kusterka-@code{JefmaÅska} (2021) <doi:10.3390/e23121636>.")
   (package
     (name "r-ifctools")
     (version "0.3.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ifctools" version))
-              (sha256
-               (base32
-                "1qw50vc3icdfchas1l4d3i3i1r0i0w0kj91xm4wkyj4fsl19qqam"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ifctools" version))
+       (sha256
+        (base32 "1qw50vc3icdfchas1l4d3i3i1r0i0w0kj91xm4wkyj4fsl19qqam"))))
     (properties `((upstream-name . "ifctools")))
     (build-system r-build-system)
     (home-page "https://github.com/lbraglia/ifctools")
@@ -12798,12 +12797,12 @@ Kusterka-@code{JefmaÅska} (2021) <doi:10.3390/e23121636>.")
   (package
     (name "r-ifcnvr")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ifCNVR" version))
-              (sha256
-               (base32
-                "0qcmgd3vi413n4ipa6ybkr7a1kwxyr2al8cw4gfr8fp2av1sk4vc"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ifCNVR" version))
+       (sha256
+        (base32 "0qcmgd3vi413n4ipa6ybkr7a1kwxyr2al8cw4gfr8fp2av1sk4vc"))))
     (properties `((upstream-name . "ifCNVR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmarkdown r-isotree r-data-table))
@@ -12820,12 +12819,12 @@ details about the method can be found in the paper by Cabello-Aguilar (2022)
   (package
     (name "r-ifc")
     (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IFC" version))
-              (sha256
-               (base32
-                "0b0kda1wh9li6x2avjw3ayj882r69v06sjmwc31dkf59b8r67l9k"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IFC" version))
+       (sha256
+        (base32 "0b0kda1wh9li6x2avjw3ayj882r69v06sjmwc31dkf59b8r67l9k"))))
     (properties `((upstream-name . "IFC")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -12857,12 +12856,12 @@ AUTHORS for a list of copyright holders and authors.")
   (package
     (name "r-ifatools")
     (version "0.23")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ifaTools" version))
-              (sha256
-               (base32
-                "16xf3165gkmh3f9843m0n4wqdwwdfs6rjh64qcpz8srsm2z5y3l2"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ifaTools" version))
+       (sha256
+        (base32 "16xf3165gkmh3f9843m0n4wqdwwdfs6rjh64qcpz8srsm2z5y3l2"))))
     (properties `((upstream-name . "ifaTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-rpf r-reshape2 r-openmx r-ggplot2))
@@ -12878,12 +12877,12 @@ software is described in Pritikin & Falk (2020) <doi:10.1177/0146621620929431>."
   (package
     (name "r-ietd")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IETD" version))
-              (sha256
-               (base32
-                "0avhyw0zcb8vj0nqfy41yq5kcd8yf9rmaawdvfcy5rqwxmi1mw9l"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IETD" version))
+       (sha256
+        (base32 "0avhyw0zcb8vj0nqfy41yq5kcd8yf9rmaawdvfcy5rqwxmi1mw9l"))))
     (properties `((upstream-name . "IETD")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack
@@ -12910,12 +12909,12 @@ Restrepo-Posada P, Eagleson P (1982) <doi:10.1016/0022-1694(82)90136-6>.")
   (package
     (name "r-iemisctext")
     (version "0.9.99")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iemisctext" version))
-              (sha256
-               (base32
-                "02rr7sjjbrvfxwjl87f2ki245a8cw5fvx7z2z4rl8ixxlyxj9p5v"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iemisctext" version))
+       (sha256
+        (base32 "02rr7sjjbrvfxwjl87f2ki245a8cw5fvx7z2z4rl8ixxlyxj9p5v"))))
     (properties `((upstream-name . "iemisctext")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -12935,12 +12934,12 @@ actual Ultimate Reality}\" by Irucka Ajani Embry.")
   (package
     (name "r-iemiscdata")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iemiscdata" version))
-              (sha256
-               (base32
-                "0kg9h91di5k2cdh2fwa5k7wbi28ian41zr5ksr8dnc3pb1lwv5n4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iemiscdata" version))
+       (sha256
+        (base32 "0kg9h91di5k2cdh2fwa5k7wbi28ian41zr5ksr8dnc3pb1lwv5n4"))))
     (properties `((upstream-name . "iemiscdata")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -12956,12 +12955,12 @@ Continental Congress Presidents].")
   (package
     (name "r-iemisc")
     (version "1.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iemisc" version))
-              (sha256
-               (base32
-                "1yrppxylsrlh1l549qn1x0qnyd32zj3a2xji1a3qiv1sd1h7js41"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iemisc" version))
+       (sha256
+        (base32 "1yrppxylsrlh1l549qn1x0qnyd32zj3a2xji1a3qiv1sd1h7js41"))))
     (properties `((upstream-name . "iemisc")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -13011,12 +13010,12 @@ Statistics, Mortality Calculators, Quick Search, etc.).")
   (package
     (name "r-ieeeround")
     (version "0.2-0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ieeeround" version))
-              (sha256
-               (base32
-                "0xaxrlalyn8w0w4fva8fd86306nvw3iyz44r0hvay3gsrmgn3fjh"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ieeeround" version))
+       (sha256
+        (base32 "0xaxrlalyn8w0w4fva8fd86306nvw3iyz44r0hvay3gsrmgn3fjh"))))
     (properties `((upstream-name . "ieeeround")))
     (build-system r-build-system)
     (home-page "http://www.sci.unich.it/~amato")
@@ -13030,12 +13029,12 @@ rounding mode for floating point computations.")
   (package
     (name "r-ie2miscdata")
     (version "1.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ie2miscdata" version))
-              (sha256
-               (base32
-                "18hvkip57gvrmz3m3p66mlw45h60091jxbd2b65dimmc0k6wi7q4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ie2miscdata" version))
+       (sha256
+        (base32 "18hvkip57gvrmz3m3p66mlw45h60091jxbd2b65dimmc0k6wi7q4"))))
     (properties `((upstream-name . "ie2miscdata")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -13053,12 +13052,12 @@ Survey (USGS) Contractor and/or USGS employee.")
   (package
     (name "r-ie2misc")
     (version "0.9.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ie2misc" version))
-              (sha256
-               (base32
-                "09f40nn56s6j70zz1fhkf7yyzdrypjd7khar82ffj1gsr1k0rnzi"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ie2misc" version))
+       (sha256
+        (base32 "09f40nn56s6j70zz1fhkf7yyzdrypjd7khar82ffj1gsr1k0rnzi"))))
     (properties `((upstream-name . "ie2misc")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi
@@ -13086,12 +13085,12 @@ Cherokee Nation Technology Solutions (CNTS) United States Geological Survey
   (package
     (name "r-idx2r")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "idx2r" version))
-              (sha256
-               (base32
-                "14d3rasnf8mghwzpg6h4larybgy7drrv0jh71x28qwry49acsqyh"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "idx2r" version))
+       (sha256
+        (base32 "14d3rasnf8mghwzpg6h4larybgy7drrv0jh71x28qwry49acsqyh"))))
     (properties `((upstream-name . "idx2r")))
     (build-system r-build-system)
     (home-page "https://github.com/edoffagne/idx2r")
@@ -13108,12 +13107,12 @@ matrices in binary format.  The format is described on the website from Yann
   (package
     (name "r-idsl-ufax")
     (version "1.9.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IDSL.UFAx" version))
-              (sha256
-               (base32
-                "0zdz5s2fa7bgqmscxlf9ppvkpnxidy9fhkxn3qf94bc7y4h5xzh7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IDSL.UFAx" version))
+       (sha256
+        (base32 "0zdz5s2fa7bgqmscxlf9ppvkpnxidy9fhkxn3qf94bc7y4h5xzh7"))))
     (properties `((upstream-name . "IDSL.UFAx")))
     (build-system r-build-system)
     (propagated-inputs (list r-readxl r-rcppalgos r-idsl-ufa r-idsl-ipa))
@@ -13130,12 +13129,12 @@ C, B, Br, Cl, K, S, Si, N, H, As, F, I, Na, O, and P.")
   (package
     (name "r-idsl-ufa")
     (version "2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IDSL.UFA" version))
-              (sha256
-               (base32
-                "19kd3zp0864dfwkja4lvkiq58nqfb91jyfq2wm1qp84h9hj4bd8l"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IDSL.UFA" version))
+       (sha256
+        (base32 "19kd3zp0864dfwkja4lvkiq58nqfb91jyfq2wm1qp84h9hj4bd8l"))))
     (properties `((upstream-name . "IDSL.UFA")))
     (build-system r-build-system)
     (propagated-inputs (list r-readxl r-idsl-ipa))
@@ -13154,12 +13153,12 @@ annotation.  The IDSL.UFA methods was described in
   (package
     (name "r-idsl-sufa")
     (version "1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IDSL.SUFA" version))
-              (sha256
-               (base32
-                "0db79jcvks54x2fb58g9ynw05zz95bjiwcd77g37jzjwq70ds5ah"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IDSL.SUFA" version))
+       (sha256
+        (base32 "0db79jcvks54x2fb58g9ynw05zz95bjiwcd77g37jzjwq70ds5ah"))))
     (properties `((upstream-name . "IDSL.SUFA")))
     (build-system r-build-system)
     (home-page "https://github.com/idslme/idsl.sufa")
@@ -13176,12 +13175,12 @@ adduct formulas.")
   (package
     (name "r-idsl-npa")
     (version "1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IDSL.NPA" version))
-              (sha256
-               (base32
-                "15hi2y49kak2ijfg0lyl0wp0fsaj005y90z56j52f9cn331bil9k"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IDSL.NPA" version))
+       (sha256
+        (base32 "15hi2y49kak2ijfg0lyl0wp0fsaj005y90z56j52f9cn331bil9k"))))
     (properties `((upstream-name . "IDSL.NPA")))
     (build-system r-build-system)
     (propagated-inputs (list r-readxl r-idsl-mxp r-idsl-ipa r-idsl-fsa))
@@ -13196,12 +13195,12 @@ create .msp files for untargeted analyses.")
   (package
     (name "r-idsl-mxp")
     (version "2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IDSL.MXP" version))
-              (sha256
-               (base32
-                "0m6n94xzpwba5ag030zl5piharssmkj1fz4mz2lybs2935f1zfbp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IDSL.MXP" version))
+       (sha256
+        (base32 "0m6n94xzpwba5ag030zl5piharssmkj1fz4mz2lybs2935f1zfbp"))))
     (properties `((upstream-name . "IDSL.MXP")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-base64enc))
@@ -13218,12 +13217,12 @@ and @code{netCDF} files introduced in <doi:10.1021/acs.jproteome.2c00120>.")
   (package
     (name "r-idsl-ipa")
     (version "2.9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IDSL.IPA" version))
-              (sha256
-               (base32
-                "05v3bpa7lqn62mb125g3nc6b8726cws521ils8w7qzwlh5ffa8gn"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IDSL.IPA" version))
+       (sha256
+        (base32 "05v3bpa7lqn62mb125g3nc6b8726cws521ils8w7qzwlh5ffa8gn"))))
     (properties `((upstream-name . "IDSL.IPA")))
     (build-system r-build-system)
     (propagated-inputs (list r-readxl r-idsl-mxp))
@@ -13243,12 +13242,12 @@ visualization of extracted ion chromatograms (EICs) and total ion chromatograms
   (package
     (name "r-idsl-fsa")
     (version "1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IDSL.FSA" version))
-              (sha256
-               (base32
-                "1f7w43c2ghwbhi77bsddaahifgpl13wbh6x0ffz85cwca7gqslmw"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IDSL.FSA" version))
+       (sha256
+        (base32 "1f7w43c2ghwbhi77bsddaahifgpl13wbh6x0ffz85cwca7gqslmw"))))
     (properties `((upstream-name . "IDSL.FSA")))
     (build-system r-build-system)
     (home-page "https://github.com/idslme/idsl.fsa")
@@ -13267,12 +13266,12 @@ packages introduced in <doi:10.1021/acs.analchem.3c00376>.")
   (package
     (name "r-idsl-csa")
     (version "1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IDSL.CSA" version))
-              (sha256
-               (base32
-                "1p7axdnpkyvys3rgj0swfl0rjs07f5wximwb570gyqhdlswzmxcm"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IDSL.CSA" version))
+       (sha256
+        (base32 "1p7axdnpkyvys3rgj0swfl0rjs07f5wximwb570gyqhdlswzmxcm"))))
     (properties `((upstream-name . "IDSL.CSA")))
     (build-system r-build-system)
     (propagated-inputs (list r-readxl r-idsl-mxp r-idsl-ipa r-idsl-fsa))
@@ -13293,12 +13292,12 @@ The IDSL.CSA package was introduced in <doi:10.1021/acs.analchem.3c00376>.")
   (package
     (name "r-idsa")
     (version "2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IDSA" version))
-              (sha256
-               (base32
-                "0ld2359ksnw9jrjicnqikh5r321mfy2i7vzlhh9phm60k0qf5j98"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IDSA" version))
+       (sha256
+        (base32 "0ld2359ksnw9jrjicnqikh5r321mfy2i7vzlhh9phm60k0qf5j98"))))
     (properties `((upstream-name . "IDSA")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2 r-kableextra r-ggplot2 r-gd))
@@ -13317,12 +13316,12 @@ spatial heterogeneity.")
   (package
     (name "r-idpsurvival")
     (version "1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IDPSurvival" version))
-              (sha256
-               (base32
-                "0hifs8vw3rxlb5vlxs1433pcv2dh7p0mxpgb2n03d98f20vkdwfw"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IDPSurvival" version))
+       (sha256
+        (base32 "0hifs8vw3rxlb5vlxs1433pcv2dh7p0mxpgb2n03d98f20vkdwfw"))))
     (properties `((upstream-name . "IDPSurvival")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rsolnp r-gtools))
@@ -13340,12 +13339,12 @@ analysis with right censored data using a prior near-ignorant Dirichlet Process.
   (package
     (name "r-idove")
     (version "1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iDOVE" version))
-              (sha256
-               (base32
-                "1ks83ha183mmda9pqhvaa9636gwjlkyr6hrdnhfjv75fks54476f"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iDOVE" version))
+       (sha256
+        (base32 "1ks83ha183mmda9pqhvaa9636gwjlkyr6hrdnhfjv75fks54476f"))))
     (properties `((upstream-name . "iDOVE")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -13364,12 +13363,12 @@ Y., Zeng, D., Janes, H. E., and Gilbert, P. B. (2021) <doi:10.1093/cid/ciab630>.
   (package
     (name "r-idopnetwork")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "idopNetwork" version))
-              (sha256
-               (base32
-                "0gp9d5p7nqnsfy2n3lxhinmldriwyzq55ilmi5gq3vavf1h0iw24"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "idopNetwork" version))
+       (sha256
+        (base32 "0gp9d5p7nqnsfy2n3lxhinmldriwyzq55ilmi5gq3vavf1h0iw24"))))
     (properties `((upstream-name . "idopNetwork")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -13401,12 +13400,12 @@ For more information on our model, see Chen et al. (2019)
   (package
     (name "r-idmodelr")
     (version "0.4.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "idmodelr" version))
-              (sha256
-               (base32
-                "11h7l1iv21jxmjwmg0klwiadvwpn1bj055y4a7fqfgsbbqraxlsj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "idmodelr" version))
+       (sha256
+        (base32 "11h7l1iv21jxmjwmg0klwiadvwpn1bj055y4a7fqfgsbbqraxlsj"))))
     (properties `((upstream-name . "idmodelr")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -13450,12 +13449,12 @@ research focussed, resources.")
   (package
     (name "r-idmining")
     (version "1.0.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IDmining" version))
-              (sha256
-               (base32
-                "1yv8lclkb1ws2n4yd3l561lqhp25vlw0f6d073yg04pidr2dpg2a"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IDmining" version))
+       (sha256
+        (base32 "1yv8lclkb1ws2n4yd3l561lqhp25vlw0f6d073yg04pidr2dpg2a"))))
     (properties `((upstream-name . "IDmining")))
     (build-system r-build-system)
     (propagated-inputs (list r-foreach r-doparallel r-data-table))
@@ -13472,12 +13471,12 @@ estimator is used for the ID estimation, but other tools are included as well.")
   (package
     (name "r-idmeasurer")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IDmeasurer" version))
-              (sha256
-               (base32
-                "0n7rziaaxm9dqixmw6rxgq9dwnwdl3dsdnpd9s59k5skdlaxnl5m"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IDmeasurer" version))
+       (sha256
+        (base32 "0n7rziaaxm9dqixmw6rxgq9dwnwdl3dsdnpd9s59k5skdlaxnl5m"))))
     (properties `((upstream-name . "IDmeasurer")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-lme4 r-infotheo))
@@ -13496,12 +13495,12 @@ identity metrics\".")
   (package
     (name "r-idmc")
     (version "0.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "idmc" version))
-              (sha256
-               (base32
-                "1z5v3r2ckcw7bwpbysd1pw3x7b9fw3clyhrw8p70g29kpnxwpy3k"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "idmc" version))
+       (sha256
+        (base32 "1z5v3r2ckcw7bwpbysd1pw3x7b9fw3clyhrw8p70g29kpnxwpy3k"))))
     (properties `((upstream-name . "idmc")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -13524,12 +13523,12 @@ transforming events data to daily displacement estimates.")
   (package
     (name "r-idmact")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "idmact" version))
-              (sha256
-               (base32
-                "1rkrmkmmwrqgj6d1ykjp4xrlb2823ks1pfibqg3pvvly2223wzcn"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "idmact" version))
+       (sha256
+        (base32 "1rkrmkmmwrqgj6d1ykjp4xrlb2823ks1pfibqg3pvvly2223wzcn"))))
     (properties `((upstream-name . "idmact")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang))
@@ -13557,12 +13556,12 @@ simulations on composite scores.")
   (package
     (name "r-idm")
     (version "1.8.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "idm" version))
-              (sha256
-               (base32
-                "04ac2yq983vk9v3iyd1p2sqxy8ppdr4p7bcvfbg2d9fanj4b1fa7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "idm" version))
+       (sha256
+        (base32 "04ac2yq983vk9v3iyd1p2sqxy8ppdr4p7bcvfbg2d9fanj4b1fa7"))))
     (properties `((upstream-name . "idm")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggrepel r-ggplot2 r-corpcor r-ca r-animation))
@@ -13576,12 +13575,12 @@ simulations on composite scores.")
   (package
     (name "r-idiogramfish")
     (version "2.0.13")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "idiogramFISH" version))
-              (sha256
-               (base32
-                "0d4jf219x1l5978yx1k2ynkcx1b5xwbbba2lcd67s80y6s1q1jhv"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "idiogramFISH" version))
+       (sha256
+        (base32 "0d4jf219x1l5978yx1k2ynkcx1b5xwbbba2lcd67s80y6s1q1jhv"))))
     (properties `((upstream-name . "idiogramFISH")))
     (build-system r-build-system)
     (inputs (list pandoc))
@@ -13622,12 +13621,12 @@ and classify chromosomes by morphology Guerra (1986) and Levan et al. (1964).")
   (package
     (name "r-idingo")
     (version "1.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iDINGO" version))
-              (sha256
-               (base32
-                "00x9q73y2a1bxnbqv18sjp7nrbj1bk56rzhmllpnllwy8k9dw31j"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iDINGO" version))
+       (sha256
+        (base32 "00x9q73y2a1bxnbqv18sjp7nrbj1bk56rzhmllpnllwy8k9dw31j"))))
     (properties `((upstream-name . "iDINGO")))
     (build-system r-build-system)
     (propagated-inputs (list r-visnetwork
@@ -13649,12 +13648,12 @@ Class et.  al., (2018) <doi:10.1093/bioinformatics/btx750> and Ha et.  al.,
   (package
     (name "r-idf")
     (version "2.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IDF" version))
-              (sha256
-               (base32
-                "19mg7a83badb3wqnrmx5ric0nlfdb33wcxfmq9457s8019ghvpvv"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IDF" version))
+       (sha256
+        (base32 "19mg7a83badb3wqnrmx5ric0nlfdb33wcxfmq9457s8019ghvpvv"))))
     (properties `((upstream-name . "IDF")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpproll r-pbapply r-ismev r-fastmatch r-evd))
@@ -13673,12 +13672,12 @@ duration-dependent generalized extreme value distribution [Koutsoyiannis et al.,
   (package
     (name "r-idetect")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IDetect" version))
-              (sha256
-               (base32
-                "1q1jwgildhx6sp883ni7vcsa3gj997855v5ky41dyf34kv7hvdl1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IDetect" version))
+       (sha256
+        (base32 "1q1jwgildhx6sp883ni7vcsa3gj997855v5ky41dyf34kv7hvdl1"))))
     (properties `((upstream-name . "IDetect")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=IDetect")
@@ -13700,12 +13699,12 @@ with heavy-tailed noise.")
   (package
     (name "r-ider")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ider" version))
-              (sha256
-               (base32
-                "0cy1q9nmgxlrpysw6j04i0dzd14zwla8zv8dvxs0zxyrlqxwv2yh"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ider" version))
+       (sha256
+        (base32 "0cy1q9nmgxlrpysw6j04i0dzd14zwla8zv8dvxs0zxyrlqxwv2yh"))))
     (properties `((upstream-name . "ider")))
     (build-system r-build-system)
     (propagated-inputs (list r-glm2 r-fnn))
@@ -13722,12 +13721,12 @@ box-counting dimension, and the information dimension.")
   (package
     (name "r-idendr0")
     (version "1.5.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "idendr0" version))
-              (sha256
-               (base32
-                "11c12d166bp2i498d8y6ipg5jhz1xsdsrmnhjqnrqqzp9avvrsjp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "idendr0" version))
+       (sha256
+        (base32 "11c12d166bp2i498d8y6ipg5jhz1xsdsrmnhjqnrqqzp9avvrsjp"))))
     (properties `((upstream-name . "idendr0")))
     (build-system r-build-system)
     (propagated-inputs (list r-tkrplot))
@@ -13745,12 +13744,12 @@ base R graphics and Tcl/Tk GUI.")
   (package
     (name "r-idem")
     (version "5.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "idem" version))
-              (sha256
-               (base32
-                "0vgxrw7rdhnxrrsg46x6nd2zx938j1z41fr4gp9pjmh2q6rnnaxl"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "idem" version))
+       (sha256
+        (base32 "0vgxrw7rdhnxrrsg46x6nd2zx938j1z41fr4gp9pjmh2q6rnnaxl"))))
     (properties `((upstream-name . "idem")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -13784,12 +13783,12 @@ outcomes not due to death.")
   (package
     (name "r-idefix")
     (version "1.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "idefix" version))
-              (sha256
-               (base32
-                "0jqjrg0qfzij5bx8r60wpjghsxnszdxgp58ynj10n7q9hc4fhsys"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "idefix" version))
+       (sha256
+        (base32 "0jqjrg0qfzij5bx8r60wpjghsxnszdxgp58ynj10n7q9hc4fhsys"))))
     (properties `((upstream-name . "idefix")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmvtnorm
@@ -13815,12 +13814,12 @@ Vandebroek M (2020) <doi:10.18637/jss.v096.i03>.")
   (package
     (name "r-ideatools")
     (version "3.5.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IDEATools" version))
-              (sha256
-               (base32
-                "05amichli11yny5idmvl0k28v910nscf89qgghl5cjpqzcwq9jr4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IDEATools" version))
+       (sha256
+        (base32 "05amichli11yny5idmvl0k28v910nscf89qgghl5cjpqzcwq9jr4"))))
     (properties `((upstream-name . "IDEATools")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -13853,12 +13852,12 @@ range of reporting materials.")
   (package
     (name "r-ideamdb")
     (version "0.0.9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ideamdb" version))
-              (sha256
-               (base32
-                "1f4dcv6c8ny7pik547f4840vhll26mzfcijnfsiqx31xhn0gsizd"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ideamdb" version))
+       (sha256
+        (base32 "1f4dcv6c8ny7pik547f4840vhll26mzfcijnfsiqx31xhn0gsizd"))))
     (properties `((upstream-name . "ideamdb")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-stringr r-ggplot2 r-dplyr))
@@ -13878,12 +13877,12 @@ freely delivered under formal request through the official web page
   (package
     (name "r-ideafilter")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IDEAFilter" version))
-              (sha256
-               (base32
-                "1nwsq5jy374f2sdnrxw79kq3wklydrygm4qsd6v6npdqw55jli2l"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IDEAFilter" version))
+       (sha256
+        (base32 "1nwsq5jy374f2sdnrxw79kq3wklydrygm4qsd6v6npdqw55jli2l"))))
     (properties `((upstream-name . "IDEAFilter")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinytime
@@ -13913,12 +13912,12 @@ statements used to actually slice the data.")
   (package
     (name "r-ide")
     (version "0.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IDE" version))
-              (sha256
-               (base32
-                "1pbfxhcbnmn0mh7a96ff58p4dpkb0di7l0v40nqyjk4jbkpd8rfl"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IDE" version))
+       (sha256
+        (base32 "1pbfxhcbnmn0mh7a96ff58p4dpkb0di7l0v40nqyjk4jbkpd8rfl"))))
     (properties `((upstream-name . "IDE")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -13950,12 +13949,12 @@ an evolution algorithm.")
   (package
     (name "r-idcnrba")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "idcnrba" version))
-              (sha256
-               (base32
-                "12i8g8cfci7aqxqv7ir1ccdlddm1fpxp0j1lh6c2jp01kcf47br1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "idcnrba" version))
+       (sha256
+        (base32 "12i8g8cfci7aqxqv7ir1ccdlddm1fpxp0j1lh6c2jp01kcf47br1"))))
     (properties `((upstream-name . "idcnrba")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -13996,12 +13995,12 @@ provide an overview of the statistical methods implemented in the application.")
   (package
     (name "r-idcard")
     (version "0.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IDCard" version))
-              (sha256
-               (base32
-                "06b5zqmgh4clni3mv6ab2a52r4z34isbz0hd1i61793gps9fkc0y"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IDCard" version))
+       (sha256
+        (base32 "06b5zqmgh4clni3mv6ab2a52r4z34isbz0hd1i61793gps9fkc0y"))))
     (properties `((upstream-name . "IDCard")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr))
@@ -14017,12 +14016,12 @@ this package can help check whether the given ID is right or not.")
   (package
     (name "r-idbr")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "idbr" version))
-              (sha256
-               (base32
-                "0silsd3ydrrg924klga8dascxjfmi2czw7sz3ap2j7gkgvxcfcpv"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "idbr" version))
+       (sha256
+        (base32 "0silsd3ydrrg924klga8dascxjfmi2czw7sz3ap2j7gkgvxcfcpv"))))
     (properties `((upstream-name . "idbr")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf
@@ -14046,12 +14045,12 @@ visit
   (package
     (name "r-idarps")
     (version "0.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "idarps" version))
-              (sha256
-               (base32
-                "15ckavi7j4afwyq3m0z2kpq2j93wxmjfnhn7lh6r4ymwmj7bbsvy"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "idarps" version))
+       (sha256
+        (base32 "15ckavi7j4afwyq3m0z2kpq2j93wxmjfnhn7lh6r4ymwmj7bbsvy"))))
     (properties `((upstream-name . "idarps")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=idarps")
@@ -14068,12 +14067,12 @@ visualization are also implemented.")
   (package
     (name "r-idar")
     (version "1.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "idar" version))
-              (sha256
-               (base32
-                "0433kyhwzaicb10jmb6b6b6lbfhd5g2zsdrg6v02lndb2j7dlk5c"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "idar" version))
+       (sha256
+        (base32 "0433kyhwzaicb10jmb6b6b6lbfhd5g2zsdrg6v02lndb2j7dlk5c"))))
     (properties `((upstream-name . "idar")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-random
@@ -14099,12 +14098,12 @@ species in a community.  See applications of these methods in Wiegand et al.
   (package
     (name "r-icvectorfields")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ICvectorfields" version))
-              (sha256
-               (base32
-                "0h10ijh00ahk2aawg090sspdyxzln8cwzvrfqyi45p19sbx93503"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ICvectorfields" version))
+       (sha256
+        (base32 "0h10ijh00ahk2aawg090sspdyxzln8cwzvrfqyi45p19sbx93503"))))
     (properties `((upstream-name . "ICvectorfields")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-rcpp r-fftwtools))
@@ -14127,12 +14126,12 @@ sequence of two raster images.")
   (package
     (name "r-icv")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ICV" version))
-              (sha256
-               (base32
-                "1na87i39jy5d8ibldqcqz3a072ihkgcl0k629sxch9hk6v6j5lly"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ICV" version))
+       (sha256
+        (base32 "1na87i39jy5d8ibldqcqz3a072ihkgcl0k629sxch9hk6v6j5lly"))))
     (properties `((upstream-name . "ICV")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=ICV")
@@ -14149,12 +14148,12 @@ estimation.  Journal of the American Statistical Association, 105(489), 415-423
   (package
     (name "r-ictest")
     (version "0.3-5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ICtest" version))
-              (sha256
-               (base32
-                "13i7zsjy4dqx48vzn9294k7xb93m6r2ab3d546rymfqdzdjszpnp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ICtest" version))
+       (sha256
+        (base32 "13i7zsjy4dqx48vzn9294k7xb93m6r2ab3d546rymfqdzdjszpnp"))))
     (properties `((upstream-name . "ICtest")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -14185,12 +14184,12 @@ dimension reduction tests and estimates for the number of interesting components
   (package
     (name "r-icsw")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "icsw" version))
-              (sha256
-               (base32
-                "0g7bcqs0rpbs1p202i9wjbl8hhy3r196zambm044xyf7kvsbzzf6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "icsw" version))
+       (sha256
+        (base32 "0g7bcqs0rpbs1p202i9wjbl8hhy3r196zambm044xyf7kvsbzzf6"))))
     (properties `((upstream-name . "icsw")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=icsw")
@@ -14205,12 +14204,12 @@ compliance.")
   (package
     (name "r-icsurv")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ICsurv" version))
-              (sha256
-               (base32
-                "1wgv9bjcx8y9qvkx3nfax86clhfmwr7bxzq8i12aqmp1clxpgx6a"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ICsurv" version))
+       (sha256
+        (base32 "1wgv9bjcx8y9qvkx3nfax86clhfmwr7bxzq8i12aqmp1clxpgx6a"))))
     (properties `((upstream-name . "ICsurv")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrixcalc r-mass))
@@ -14225,12 +14224,12 @@ semiparametric regression models will be included in later versions.")
   (package
     (name "r-icssmoothing")
     (version "1.2.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ICSsmoothing" version))
-              (sha256
-               (base32
-                "141ly37ccj1ky9lr37baa3vkbbkr73z8nxfkyavjrzhzw8d5r2rr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ICSsmoothing" version))
+       (sha256
+        (base32 "141ly37ccj1ky9lr37baa3vkbbkr73z8nxfkyavjrzhzw8d5r2rr"))))
     (properties `((upstream-name . "ICSsmoothing")))
     (build-system r-build-system)
     (propagated-inputs (list r-polynom r-ggplot2))
@@ -14248,12 +14247,12 @@ smoothing.")
   (package
     (name "r-icsshiny")
     (version "0.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ICSShiny" version))
-              (sha256
-               (base32
-                "0a13vps0mkv5qs6qnl7ar0mdbkbd7i1c6kgwahmkb3id3n9bw0cl"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ICSShiny" version))
+       (sha256
+        (base32 "0a13vps0mkv5qs6qnl7ar0mdbkbd7i1c6kgwahmkb3id3n9bw0cl"))))
     (properties `((upstream-name . "ICSShiny")))
     (build-system r-build-system)
     (propagated-inputs (list r-simsalapar
@@ -14277,12 +14276,12 @@ shiny app.")
   (package
     (name "r-icss")
     (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ICSS" version))
-              (sha256
-               (base32
-                "0kmsw8347ka5n0qncx7hqgs153ihkmxbl0wc5kqlb2l42sl6rp8x"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ICSS" version))
+       (sha256
+        (base32 "0kmsw8347ka5n0qncx7hqgs153ihkmxbl0wc5kqlb2l42sl6rp8x"))))
     (properties `((upstream-name . "ICSS")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstack))
@@ -14302,12 +14301,12 @@ required by these approaches.")
   (package
     (name "r-icsoutlier")
     (version "0.3-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ICSOutlier" version))
-              (sha256
-               (base32
-                "00hp24rxqhlm3lxqjqxn2vg5x10ihgz5yvd454rhjg3f2nrbqvm7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ICSOutlier" version))
+       (sha256
+        (base32 "00hp24rxqhlm3lxqjqxn2vg5x10ihgz5yvd454rhjg3f2nrbqvm7"))))
     (properties `((upstream-name . "ICSOutlier")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-moments r-ics))
@@ -14322,12 +14321,12 @@ the package offers different methods to choose the appropriate components.")
   (package
     (name "r-icsnp")
     (version "1.1-2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ICSNP" version))
-              (sha256
-               (base32
-                "1hyndbnfpvkdxgjihh3m8wd1hpdb0n346bl03z9ry2blppci2jvs"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ICSNP" version))
+       (sha256
+        (base32 "1hyndbnfpvkdxgjihh3m8wd1hpdb0n346bl03z9ry2blppci2jvs"))))
     (properties `((upstream-name . "ICSNP")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-ics))
@@ -14343,12 +14342,12 @@ Hotelling's T-test, estimates of shape are implemented.")
   (package
     (name "r-icskat")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ICSKAT" version))
-              (sha256
-               (base32
-                "13cx2480kyzcwxp9b57p3rq4fs6x1fd4wpwm7iwiqjh17v4vb54l"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ICSKAT" version))
+       (sha256
+        (base32 "13cx2480kyzcwxp9b57p3rq4fs6x1fd4wpwm7iwiqjh17v4vb54l"))))
     (properties `((upstream-name . "ICSKAT")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -14382,12 +14381,12 @@ tests.  Please see the vignette for a quickstart guide.")
   (package
     (name "r-icsclust")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ICSClust" version))
-              (sha256
-               (base32
-                "0sw8ck9384xc0rfj7q7yd0fjacilp64fx8b0l0cw5k920rnzskbj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ICSClust" version))
+       (sha256
+        (base32 "0sw8ck9384xc0rfj7q7yd0fjacilp64fx8b0l0cw5k920rnzskbj"))))
     (properties `((upstream-name . "ICSClust")))
     (build-system r-build-system)
     (propagated-inputs (list r-tclust
@@ -14419,12 +14418,12 @@ as described in Alfons, A., Archimbaud, A., Nordhausen, K.and Ruiz-Gazen, A.
   (package
     (name "r-ics")
     (version "1.4-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ICS" version))
-              (sha256
-               (base32
-                "0xbah28g7k7c37r4qsq3ki67r8jn4psincpkjxg1mmfar5521z29"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ICS" version))
+       (sha256
+        (base32 "0xbah28g7k7c37r4qsq3ki67r8jn4psincpkjxg1mmfar5521z29"))))
     (properties `((upstream-name . "ICS")))
     (build-system r-build-system)
     (propagated-inputs (list r-survey r-mvtnorm))
@@ -14443,12 +14442,12 @@ system or independent components, depending on the underlying assumptions.")
   (package
     (name "r-icrsf")
     (version "1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "icRSF" version))
-              (sha256
-               (base32
-                "1a7046lspk70cvrvzwzhnqcmc3cqa5a9bmzlw012jvcn39m2ca3l"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "icRSF" version))
+       (sha256
+        (base32 "1a7046lspk70cvrvzwzhnqcmc3cqa5a9bmzlw012jvcn39m2ca3l"))))
     (properties `((upstream-name . "icRSF")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-icensmis))
@@ -14470,12 +14469,12 @@ a likelihood ratio test statistic.")
   (package
     (name "r-icrf")
     (version "2.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "icrf" version))
-              (sha256
-               (base32
-                "1apd9klng8dhd9z9nzqzpx8i84rvpwgyam9mzyh8jk6vd49cgjaf"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "icrf" version))
+       (sha256
+        (base32 "1apd9klng8dhd9z9nzqzpx8i84rvpwgyam9mzyh8jk6vd49cgjaf"))))
     (properties `((upstream-name . "icrf")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=icrf")
@@ -14492,12 +14491,12 @@ used to improve accuracy and smoothed survival curves are provided.")
   (package
     (name "r-icranks")
     (version "3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ICRanks" version))
-              (sha256
-               (base32
-                "1vwzqkjg7i5hm96s8frp72n6xqadlsawzr1wby1fhsxl2m5f1797"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ICRanks" version))
+       (sha256
+        (base32 "1vwzqkjg7i5hm96s8frp72n6xqadlsawzr1wby1fhsxl2m5f1797"))))
     (properties `((upstream-name . "ICRanks")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-multcomp r-gmp))
@@ -14513,12 +14512,12 @@ techniques.")
   (package
     (name "r-icr")
     (version "0.6.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "icr" version))
-              (sha256
-               (base32
-                "1g1gx0bbx6s8pqd5y0ckdi0r2kbg3lmr8djbaa7nj15jnf519zcx"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "icr" version))
+       (sha256
+        (base32 "1g1gx0bbx6s8pqd5y0ckdi0r2kbg3lmr8djbaa7nj15jnf519zcx"))))
     (properties `((upstream-name . "icr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -14535,12 +14534,12 @@ use of parallel threads where supported.")
   (package
     (name "r-icpsrdata")
     (version "0.6.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "icpsrdata" version))
-              (sha256
-               (base32
-                "0mc96yj0nld63s4bhagha9dp8c2a2c7qdnk3lfh7yk0vq9ghjfin"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "icpsrdata" version))
+       (sha256
+        (base32 "0mc96yj0nld63s4bhagha9dp8c2a2c7qdnk3lfh7yk0vq9ghjfin"))))
     (properties `((upstream-name . "icpsrdata")))
     (build-system r-build-system)
     (propagated-inputs (list r-rvest r-purrr r-httr))
@@ -14556,12 +14555,12 @@ Consortium for Political and Social Research archive.")
   (package
     (name "r-icosa")
     (version "0.11.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "icosa" version))
-              (sha256
-               (base32
-                "1z1xajdg7q5n3ijjy45klrh4q3i855afl9088f42dwidyban3w3h"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "icosa" version))
+       (sha256
+        (base32 "1z1xajdg7q5n3ijjy45klrh4q3i855afl9088f42dwidyban3w3h"))))
     (properties `((upstream-name . "icosa")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-sf r-rcpp r-igraph))
@@ -14582,12 +14581,12 @@ and vector objects, and treating the grids as a graphs.")
   (package
     (name "r-iconr")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iconr" version))
-              (sha256
-               (base32
-                "17q7zj92yrj49slmrpwkxkjd0imrl9ildms9zj8qx7yc7dcv4c1s"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iconr" version))
+       (sha256
+        (base32 "17q7zj92yrj49slmrpwkxkjd0imrl9ildms9zj8qx7yc7dcv4c1s"))))
     (properties `((upstream-name . "iconr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgdal r-magick r-igraph))
@@ -14605,12 +14604,12 @@ and vector objects, and treating the grids as a graphs.")
   (package
     (name "r-icods")
     (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ICODS" version))
-              (sha256
-               (base32
-                "0ch463yxnhb3kcpwqmbshm1jljnnrw8lgisym6yvsr8h2gpi15zm"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ICODS" version))
+       (sha256
+        (base32 "0ch463yxnhb3kcpwqmbshm1jljnnrw8lgisym6yvsr8h2gpi15zm"))))
     (properties `((upstream-name . "ICODS")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -14628,12 +14627,12 @@ Q., Zhou, H., and Cai, J. (2017) <doi:10.1093/biomet/asw067>.")
   (package
     (name "r-icmm")
     (version "1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "icmm" version))
-              (sha256
-               (base32
-                "179q8w60g4yrv6wqgfmg47by1zc1mbhsdjgl7jq4wirqvwnxvgym"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "icmm" version))
+       (sha256
+        (base32 "179q8w60g4yrv6wqgfmg47by1zc1mbhsdjgl7jq4wirqvwnxvgym"))))
     (properties `((upstream-name . "icmm")))
     (build-system r-build-system)
     (propagated-inputs (list r-ebayesthresh))
@@ -14652,12 +14651,12 @@ information can be found in the papers listed in the URL below.")
   (package
     (name "r-iclick")
     (version "1.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iClick" version))
-              (sha256
-               (base32
-                "0yq0r9nz1mf9ci6l30ylqxbgl8mf1ahyqzr7m6nks0ygxabipdnd"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iClick" version))
+       (sha256
+        (base32 "0yq0r9nz1mf9ci6l30ylqxbgl8mf1ahyqzr7m6nks0ygxabipdnd"))))
     (properties `((upstream-name . "iClick")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -14687,12 +14686,12 @@ financial-economic time series data.")
   (package
     (name "r-ichimoku")
     (version "1.4.9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ichimoku" version))
-              (sha256
-               (base32
-                "1fp8rwh6qgx4g10ia4aykc8jqnhm2agy727ad1hw0qi50armcam6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ichimoku" version))
+       (sha256
+        (base32 "1fp8rwh6qgx4g10ia4aykc8jqnhm2agy727ad1hw0qi50armcam6"))))
     (properties `((upstream-name . "ichimoku")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -14722,12 +14721,12 @@ indices.")
   (package
     (name "r-icgor")
     (version "2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ICGOR" version))
-              (sha256
-               (base32
-                "18fn10f5nqqbrfibqmp602nqpx794fy3gpxp1bd10xn48llhqfc4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ICGOR" version))
+       (sha256
+        (base32 "18fn10f5nqqbrfibqmp602nqpx794fy3gpxp1bd10xn48llhqfc4"))))
     (properties `((upstream-name . "ICGOR")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-pracma r-mass r-icsurv))
@@ -14745,12 +14744,12 @@ with interval censored data.")
   (package
     (name "r-icglm")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ICglm" version))
-              (sha256
-               (base32
-                "1dmnz6sf311xsvyg8dh082pxgzizm701cf1ml0xg4s9kls3fd2i8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ICglm" version))
+       (sha256
+        (base32 "1dmnz6sf311xsvyg8dh082pxgzizm701cf1ml0xg4s9kls3fd2i8"))))
     (properties `((upstream-name . "ICglm")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix))
@@ -14764,12 +14763,12 @@ with interval censored data.")
   (package
     (name "r-icesvocab")
     (version "1.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "icesVocab" version))
-              (sha256
-               (base32
-                "0cd2w0w2m176mpfd3lzvxl88bcli1qrkjrli539i764nlyh0ipl0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "icesVocab" version))
+       (sha256
+        (base32 "0cd2w0w2m176mpfd3lzvxl88bcli1qrkjrli539i764nlyh0ipl0"))))
     (properties `((upstream-name . "icesVocab")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2))
@@ -14785,12 +14784,12 @@ Council for the Exploration of the Sea) Vocabularies database
   (package
     (name "r-icesvms")
     (version "1.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "icesVMS" version))
-              (sha256
-               (base32
-                "0ppml34s4zz3vav08fjaj71bml8amaslw22zmib0scvw8k70jlir"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "icesVMS" version))
+       (sha256
+        (base32 "0ppml34s4zz3vav08fjaj71bml8amaslw22zmib0scvw8k70jlir"))))
     (properties `((upstream-name . "icesVMS")))
     (build-system r-build-system)
     (propagated-inputs (list r-icesvocab r-icesconnect r-httr r-glue))
@@ -14807,12 +14806,12 @@ summaries and data products.")
   (package
     (name "r-icestaf")
     (version "4.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "icesTAF" version))
-              (sha256
-               (base32
-                "0xifza8s24gy09fibqdpkh0zc723jkx09ycx44gqffrx0ch8syds"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "icesTAF" version))
+       (sha256
+        (base32 "0xifza8s24gy09fibqdpkh0zc723jkx09ycx44gqffrx0ch8syds"))))
     (properties `((upstream-name . "icesTAF")))
     (build-system r-build-system)
     (propagated-inputs (list r-taf r-roxygen2 r-purrr r-data-tree))
@@ -14829,12 +14828,12 @@ collaboration in marine science.")
   (package
     (name "r-icessd")
     (version "2.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "icesSD" version))
-              (sha256
-               (base32
-                "1k0i79hh63bmsqw5m6ym2h3dydrjji57lkysp5n9x293lgh04pf2"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "icesSD" version))
+       (sha256
+        (base32 "1k0i79hh63bmsqw5m6ym2h3dydrjji57lkysp5n9x293lgh04pf2"))))
     (properties `((upstream-name . "icesSD")))
     (build-system r-build-system)
     (propagated-inputs (list r-icesconnect r-httr))
@@ -14849,12 +14848,12 @@ collaboration in marine science.")
   (package
     (name "r-icessag")
     (version "1.4.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "icesSAG" version))
-              (sha256
-               (base32
-                "0dsjsn3qx3k7grjgqsj120valzga7vjlj6jb8mfwmi85gmvlx329"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "icesSAG" version))
+       (sha256
+        (base32 "0dsjsn3qx3k7grjgqsj120valzga7vjlj6jb8mfwmi85gmvlx329"))))
     (properties `((upstream-name . "icesSAG")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-png r-openssl r-icesvocab r-httr))
@@ -14869,12 +14868,12 @@ database <https://sg.ices.dk>.")
   (package
     (name "r-icesdatsuqc")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "icesDatsuQC" version))
-              (sha256
-               (base32
-                "0pspd702vg2k7fza9jvj7hdnpjlg4k41mwiq45k7bsr0cbksggsg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "icesDatsuQC" version))
+       (sha256
+        (base32 "0pspd702vg2k7fza9jvj7hdnpjlg4k41mwiq45k7bsr0cbksggsg"))))
     (properties `((upstream-name . "icesDatsuQC")))
     (build-system r-build-system)
     (propagated-inputs (list r-sqldf r-icesdatsu))
@@ -14889,12 +14888,12 @@ ICES Data Submission Utility (DATSU) <https://datsu.ices.dk/web/index.aspx>.")
   (package
     (name "r-icesdatsu")
     (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "icesDatsu" version))
-              (sha256
-               (base32
-                "0vprh8y6x28q33b6zx9qhq991q0aqn5rhccf44k8211n5dwa555k"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "icesDatsu" version))
+       (sha256
+        (base32 "0vprh8y6x28q33b6zx9qhq991q0aqn5rhccf44k8211n5dwa555k"))))
     (properties `((upstream-name . "icesDatsu")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-icesconnect r-httr))
@@ -14910,12 +14909,12 @@ Utility (DATSU) <https://datsu.ices.dk/web/index.aspx>.")
   (package
     (name "r-icesdatras")
     (version "1.4.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "icesDatras" version))
-              (sha256
-               (base32
-                "0xhv95zs1bwxplvvdh2flx9v97zwvc8pvckwfjxcrff64vxxb0f1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "icesDatras" version))
+       (sha256
+        (base32 "0xhv95zs1bwxplvvdh2flx9v97zwvc8pvckwfjxcrff64vxxb0f1"))))
     (properties `((upstream-name . "icesDatras")))
     (build-system r-build-system)
     (home-page "https://datras.ices.dk/WebServices/Webservices.aspx")
@@ -14930,12 +14929,12 @@ the Exploration of the Sea) DATRAS trawl survey database
   (package
     (name "r-icesconnect")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "icesConnect" version))
-              (sha256
-               (base32
-                "067jh43vp79pcw8bs1iarrd680x0ajc25vp91ckpjpzm22311wbr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "icesConnect" version))
+       (sha256
+        (base32 "067jh43vp79pcw8bs1iarrd680x0ajc25vp91ckpjpzm22311wbr"))))
     (properties `((upstream-name . "icesConnect")))
     (build-system r-build-system)
     (propagated-inputs (list r-whoami
@@ -14956,12 +14955,12 @@ VMS database, the ICES DATSU web services, and the ICES @code{SharePoint} site."
   (package
     (name "r-icesat2r")
     (version "1.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IceSat2R" version))
-              (sha256
-               (base32
-                "1jwy1fwnc2rq3c643maa2h7hrwzq0sm6iv35kil95n3pw7pkgdy3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IceSat2R" version))
+       (sha256
+        (base32 "1jwy1fwnc2rq3c643maa2h7hrwzq0sm6iv35kil95n3pw7pkgdy3"))))
     (properties `((upstream-name . "IceSat2R")))
     (build-system r-build-system)
     (propagated-inputs (list r-units
@@ -15005,12 +15004,12 @@ sea-ice freeboard, and vegetation canopy height begun by ICESat in 2003.")
   (package
     (name "r-icesadvice")
     (version "2.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "icesAdvice" version))
-              (sha256
-               (base32
-                "1i47kz45m45nn23j0ydq8vahw97py2im80yxadlqbvldjcm98vdw"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "icesAdvice" version))
+       (sha256
+        (base32 "1i47kz45m45nn23j0ydq8vahw97py2im80yxadlqbvldjcm98vdw"))))
     (properties `((upstream-name . "icesAdvice")))
     (build-system r-build-system)
     (home-page "https://ices.dk/advice")
@@ -15025,12 +15024,12 @@ These include methods for calculating reference points and model diagnostics.")
   (package
     (name "r-icertool")
     (version "0.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "icertool" version))
-              (sha256
-               (base32
-                "0wwkqcvjmv2z8a8j597c2fjjcka1jz932i94rmqxcy31brvbi2nl"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "icertool" version))
+       (sha256
+        (base32 "0wwkqcvjmv2z8a8j597c2fjjcka1jz932i94rmqxcy31brvbi2nl"))))
     (properties `((upstream-name . "icertool")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyverse
@@ -15059,12 +15058,12 @@ calculation.")
   (package
     (name "r-icensmis")
     (version "1.5.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "icensmis" version))
-              (sha256
-               (base32
-                "1afpn07a25j2jh89r78bvarg2kr0sk3ap8gdmvk75lc6g3dhvri9"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "icensmis" version))
+       (sha256
+        (base32 "1afpn07a25j2jh89r78bvarg2kr0sk3ap8gdmvk75lc6g3dhvri9"))))
     (properties `((upstream-name . "icensmis")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -15088,12 +15087,12 @@ Andrea S Foulkes, Yunsheng Ma, and Raji Balasubramanian (2020) <doi:
   (package
     (name "r-icenreg")
     (version "2.0.15")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "icenReg" version))
-              (sha256
-               (base32
-                "1cjlvj4i5bir5769a22w8bb9477h04d8rpxk9ks72jp6zjjkq5qa"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "icenReg" version))
+       (sha256
+        (base32 "1cjlvj4i5bir5769a22w8bb9477h04d8rpxk9ks72jp6zjjkq5qa"))))
     (properties `((upstream-name . "icenReg")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -15116,12 +15115,12 @@ of model fits and imputation of censored data.")
   (package
     (name "r-icellr")
     (version "1.6.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iCellR" version))
-              (sha256
-               (base32
-                "0jdm61mbjl0m4d9p6yc4b1pvbdzlk5qgably1y5ck8r9sk426vdn"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iCellR" version))
+       (sha256
+        (base32 "0jdm61mbjl0m4d9p6yc4b1pvbdzlk5qgably1y5ck8r9sk426vdn"))))
     (properties `((upstream-name . "iCellR")))
     (build-system r-build-system)
     (propagated-inputs (list r-uwot
@@ -15175,12 +15174,12 @@ et al (2020) <doi:10.1101/2020.05.05.078550> and Khodadadi-Jamayran, et al
   (package
     (name "r-iceinfer")
     (version "1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ICEinfer" version))
-              (sha256
-               (base32
-                "0hg1vdg9clsk24lqdh89dfzlb0mnig690wq06pzd5nl9mr6dlvns"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ICEinfer" version))
+       (sha256
+        (base32 "0hg1vdg9clsk24lqdh89dfzlb0mnig690wq06pzd5nl9mr6dlvns"))))
     (properties `((upstream-name . "ICEinfer")))
     (build-system r-build-system)
     (propagated-inputs (list r-lattice))
@@ -15206,12 +15205,12 @@ lambda, beta and either gamma or eta parameters.")
   (package
     (name "r-iced")
     (version "0.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ICED" version))
-              (sha256
-               (base32
-                "0l23xvkkzak1s87bzc4fhy2cy0mvzqv8hs9qc8lk2nminnfxg03p"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ICED" version))
+       (sha256
+        (base32 "0l23xvkkzak1s87bzc4fhy2cy0mvzqv8hs9qc8lk2nminnfxg03p"))))
     (properties `((upstream-name . "ICED")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-mass r-lavaan r-knitr r-boot))
@@ -15230,13 +15229,13 @@ version release name: \"Good work squirrels\".")
 (define-public r-icecream
   (package
     (name "r-icecream")
-    (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "icecream" version))
-              (sha256
-               (base32
-                "0gqad5sf78ggvdjhiis6x0y69ksrk1wgs4b8nxq51xna5wy5yqgl"))))
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "icecream" version))
+       (sha256
+        (base32 "0pd78w28x1q1faxarsb0wm9jcqvjfpahm62d4wdywv8vh57crh5w"))))
     (properties `((upstream-name . "icecream")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-purrr r-pillar r-glue r-cli))
@@ -15253,12 +15252,12 @@ toggled globally without modifying code.")
   (package
     (name "r-icebox")
     (version "1.1.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ICEbox" version))
-              (sha256
-               (base32
-                "08rzbdd0qbhr6a5pjb6346j3zhyb2xl5wmrh3qivwpl19binjiza"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ICEbox" version))
+       (sha256
+        (base32 "08rzbdd0qbhr6a5pjb6346j3zhyb2xl5wmrh3qivwpl19binjiza"))))
     (properties `((upstream-name . "ICEbox")))
     (build-system r-build-system)
     (propagated-inputs (list r-sfsmisc))
@@ -15278,12 +15277,12 @@ to what extent they may exist.")
   (package
     (name "r-icds")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ICDS" version))
-              (sha256
-               (base32
-                "1bnj2ngh2n2yhgx8z9kawnpgkfgqw3b8xw9wkhimws4f2ir4k1zl"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ICDS" version))
+       (sha256
+        (base32 "1bnj2ngh2n2yhgx8z9kawnpgkfgqw3b8xw9wkhimws4f2ir4k1zl"))))
     (properties `((upstream-name . "ICDS")))
     (build-system r-build-system)
     (propagated-inputs (list r-org-hs-eg-db r-metap r-igraph r-graphite))
@@ -15306,12 +15305,12 @@ level for these key dysfunctional sub-pathways.")
   (package
     (name "r-icdpicr")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "icdpicr" version))
-              (sha256
-               (base32
-                "099ipcpz1cff7cr572lww34az4wwym8phpbk2ph0545k2fk0c56d"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "icdpicr" version))
+       (sha256
+        (base32 "099ipcpz1cff7cr572lww34az4wwym8phpbk2ph0545k2fk0c56d"))))
     (properties `((upstream-name . "icdpicr")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr))
@@ -15332,12 +15331,12 @@ icdpicr is an open-access update that accepts both ICD-9 and ICD-10 codes.")
   (package
     (name "r-icdglm")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "icdGLM" version))
-              (sha256
-               (base32
-                "1mh9kwn21n19v4lrmj33ghpna7dl66fx19gi6lcjanmrpzrkwdnz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "icdGLM" version))
+       (sha256
+        (base32 "1mh9kwn21n19v4lrmj33ghpna7dl66fx19gi6lcjanmrpzrkwdnz"))))
     (properties `((upstream-name . "icdGLM")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix))
@@ -15354,12 +15353,12 @@ the method of weights by Ibrahim (1990) <DOI:10.2307/2290013>.")
   (package
     (name "r-icd10gm")
     (version "1.2.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ICD10gm" version))
-              (sha256
-               (base32
-                "1zraky9jcgl3qvn8nagi3arp3y1m5ihxc1hga2q8f3m96hhhqq3k"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ICD10gm" version))
+       (sha256
+        (base32 "1zraky9jcgl3qvn8nagi3arp3y1m5ihxc1hga2q8f3m96hhhqq3k"))))
     (properties `((upstream-name . "ICD10gm")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -15389,12 +15388,12 @@ redistributed in accordance with their license.")
   (package
     (name "r-icd-data")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "icd.data" version))
-              (sha256
-               (base32
-                "0cynr9327wfg88661w4hali48mb6ghyvlqgybsa38k9bbf57v8aa"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "icd.data" version))
+       (sha256
+        (base32 "0cynr9327wfg88661w4hali48mb6ghyvlqgybsa38k9bbf57v8aa"))))
     (properties `((upstream-name . "icd.data")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=icd.data")
@@ -15411,12 +15410,12 @@ by the icd package for finding comorbidities.")
   (package
     (name "r-icctraj")
     (version "1.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iccTraj" version))
-              (sha256
-               (base32
-                "0c6ia3h7a16d8qsrkgrs2sy8xslc4qib6gq636ckbjxlja3pzln7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iccTraj" version))
+       (sha256
+        (base32 "0c6ia3h7a16d8qsrkgrs2sy8xslc4qib6gq636ckbjxlja3pzln7"))))
     (properties `((upstream-name . "iccTraj")))
     (build-system r-build-system)
     (propagated-inputs (list r-trajectories
@@ -15442,12 +15441,12 @@ and the discrete @code{FrÃ©chet} distance (Magdy et al.  2015)
   (package
     (name "r-iccforest")
     (version "0.5.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ICcforest" version))
-              (sha256
-               (base32
-                "0z511d3drq5flxwvx7kjv3v5yanjhvs5ayvkm996jbiz3k49a12v"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ICcforest" version))
+       (sha256
+        (base32 "0z511d3drq5flxwvx7kjv3v5yanjhvs5ayvkm996jbiz3k49a12v"))))
     (properties `((upstream-name . "ICcforest")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-partykit r-ipred r-icenreg))
@@ -15464,12 +15463,12 @@ parameters and evaluate the model fit.  See Yao et al. (2019)
   (package
     (name "r-iccde")
     (version "0.3.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iccde" version))
-              (sha256
-               (base32
-                "1z7ra8s0sddjmbfb8flgp4kmz1ckgwshz8h2nnpbd3liav84b5xv"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iccde" version))
+       (sha256
+        (base32 "1z7ra8s0sddjmbfb8flgp4kmz1ckgwshz8h2nnpbd3liav84b5xv"))))
     (properties `((upstream-name . "iccde")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=iccde")
@@ -15492,12 +15491,12 @@ individual score prior to computation of the double-entry intraclass correlation
   (package
     (name "r-icccounts")
     (version "1.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iccCounts" version))
-              (sha256
-               (base32
-                "0h1bjnyl24i2y8z1pys4k89q2dy5cfd808bc7w54j1vyyap0k899"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iccCounts" version))
+       (sha256
+        (base32 "0h1bjnyl24i2y8z1pys4k89q2dy5cfd808bc7w54j1vyyap0k899"))))
     (properties `((upstream-name . "iccCounts")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam
@@ -15526,12 +15525,12 @@ found in Carrasco (2010) <doi:10.1111/j.1541-0420.2009.01335.x>.")
   (package
     (name "r-iccbin")
     (version "1.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ICCbin" version))
-              (sha256
-               (base32
-                "1pzlaj7w98pgrlg3zvpmdv0dpgi5gih0j73qv86ak75fkxvrnzzw"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ICCbin" version))
+       (sha256
+        (base32 "1pzlaj7w98pgrlg3zvpmdv0dpgi5gih0j73qv86ak75fkxvrnzzw"))))
     (properties `((upstream-name . "ICCbin")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=ICCbin")
@@ -15547,12 +15546,12 @@ different types of confidence intervals.")
   (package
     (name "r-iccbeta")
     (version "1.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iccbeta" version))
-              (sha256
-               (base32
-                "03ms1c8qpbgxabj3hh4n0gwcazw6cd0cvixck5rz8fkvj04xzjak"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iccbeta" version))
+       (sha256
+        (base32 "03ms1c8qpbgxabj3hh4n0gwcazw6cd0cvixck5rz8fkvj04xzjak"))))
     (properties `((upstream-name . "iccbeta")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-lme4))
@@ -15570,12 +15569,12 @@ in a dependent variable that is attributed to group heterogeneity in slopes.")
   (package
     (name "r-iccalib")
     (version "1.0.8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ICcalib" version))
-              (sha256
-               (base32
-                "1y2w12ka0qxh9dg6dlcrnndz1xrv8gkppan64qkyk5vjrh18ajz4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ICcalib" version))
+       (sha256
+        (base32 "1y2w12ka0qxh9dg6dlcrnndz1xrv8gkppan64qkyk5vjrh18ajz4"))))
     (properties `((upstream-name . "ICcalib")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -15601,12 +15600,12 @@ partial likelihood for the proportional hazard model, Nevo et al. (2018+)
   (package
     (name "r-icc-sample-size")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ICC.Sample.Size" version))
-              (sha256
-               (base32
-                "1w6v1jp8bfvf6c49ikswkc5527gdx5cyqnw95x00pgmm6riwlsp9"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ICC.Sample.Size" version))
+       (sha256
+        (base32 "1w6v1jp8bfvf6c49ikswkc5527gdx5cyqnw95x00pgmm6riwlsp9"))))
     (properties `((upstream-name . "ICC.Sample.Size")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=ICC.Sample.Size")
@@ -15625,12 +15624,12 @@ for estimating intraclass correlation coefficients with precision and assurance.
   (package
     (name "r-icc")
     (version "2.4.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ICC" version))
-              (sha256
-               (base32
-                "1a0fnhqw297x5xrw9dwdb9m6ziz8wc3fnndkrn2s23xrw5vm0c1s"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ICC" version))
+       (sha256
+        (base32 "1a0fnhqw297x5xrw9dwdb9m6ziz8wc3fnndkrn2s23xrw5vm0c1s"))))
     (properties `((upstream-name . "ICC")))
     (build-system r-build-system)
     (home-page "https://github.com/matthewwolak/ICC")
@@ -15647,12 +15646,12 @@ desired confidence interval width.")
   (package
     (name "r-icbiomark")
     (version "0.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ICBioMark" version))
-              (sha256
-               (base32
-                "1bvlbczlkjdql98ds5wgmg3j2dxbfm5i4yzq98pdkzaiccg8sx2v"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ICBioMark" version))
+       (sha256
+        (base32 "1bvlbczlkjdql98ds5wgmg3j2dxbfm5i4yzq98pdkzaiccg8sx2v"))))
     (properties `((upstream-name . "ICBioMark")))
     (build-system r-build-system)
     (propagated-inputs (list r-purrr
@@ -15681,12 +15680,12 @@ to analyse the output and performance of models.")
   (package
     (name "r-icarus")
     (version "0.3.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "icarus" version))
-              (sha256
-               (base32
-                "0nk4z1xw8ca7nkxvkbrblpp42b1pim3dskj9sczpdva0s8ksnq43"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "icarus" version))
+       (sha256
+        (base32 "0nk4z1xw8ca7nkxvkbrblpp42b1pim3dskj9sczpdva0s8ksnq43"))))
     (properties `((upstream-name . "icarus")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=icarus")
@@ -15704,12 +15703,12 @@ calibration.")
   (package
     (name "r-icarh")
     (version "2.0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iCARH" version))
-              (sha256
-               (base32
-                "1x703ydssmgb7j0hgqn3d5sh9457jgj7s2m8i12x2b9wvkh0fz8j"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iCARH" version))
+       (sha256
+        (base32 "1x703ydssmgb7j0hgqn3d5sh9457jgj7s2m8i12x2b9wvkh0fz8j"))))
     (properties `((upstream-name . "iCARH")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstan
@@ -15744,12 +15743,12 @@ parameters.")
   (package
     (name "r-icardafigsr")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "icardaFIGSr" version))
-              (sha256
-               (base32
-                "1yysqkyr36388i8za8jhz0m1vdn3jv8kpb24pnhbxlwsq8r5x0jr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "icardaFIGSr" version))
+       (sha256
+        (base32 "1yysqkyr36388i8za8jhz0m1vdn3jv8kpb24pnhbxlwsq8r5x0jr"))))
     (properties `((upstream-name . "icardaFIGSr")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp
@@ -15777,12 +15776,12 @@ subsets from Genebank Collection.")
   (package
     (name "r-icaod")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ICAOD" version))
-              (sha256
-               (base32
-                "07fxh60vsndlvjijjsh1a9l2qkp78sb9nkg5x5mslh209lpjjhw1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ICAOD" version))
+       (sha256
+        (base32 "07fxh60vsndlvjijjsh1a9l2qkp78sb9nkg5x5mslh209lpjjhw1"))))
     (properties `((upstream-name . "ICAOD")))
     (build-system r-build-system)
     (propagated-inputs (list r-sn
@@ -15806,12 +15805,12 @@ al. (2017) <doi:10.1016/j.csda.2016.06.014> and Masoudi et al. (2019)
   (package
     (name "r-icams")
     (version "2.3.10")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ICAMS" version))
-              (sha256
-               (base32
-                "0kkxn45addgl7mg8w4ybna7xaj11dgrwax06l0ml3bnk8h0nrgi5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ICAMS" version))
+       (sha256
+        (base32 "0kkxn45addgl7mg8w4ybna7xaj11dgrwax06l0ml3bnk8h0nrgi5"))))
     (properties `((upstream-name . "ICAMS")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -15847,12 +15846,12 @@ mutational spectra and signatures.  Handles both \"counts-based\" and
   (package
     (name "r-icamp")
     (version "1.5.12")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iCAMP" version))
-              (sha256
-               (base32
-                "0rx0mjkmlqf5awq387h1bzampvkwp67jbkjz29qmw85ma6vlqbpi"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iCAMP" version))
+       (sha256
+        (base32 "0rx0mjkmlqf5awq387h1bzampvkwp67jbkjz29qmw85ma6vlqbpi"))))
     (properties `((upstream-name . "iCAMP")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -15891,12 +15890,12 @@ results for different categories of taxa (e.g. core versus rare taxa).")
   (package
     (name "r-ical")
     (version "0.1.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ical" version))
-              (sha256
-               (base32
-                "1raanaagas1c8w66d8s045z5ip1i97xca4233d55jk6cazv0mb1w"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ical" version))
+       (sha256
+        (base32 "1raanaagas1c8w66d8s045z5ip1i97xca4233d55jk6cazv0mb1w"))))
     (properties `((upstream-name . "ical")))
     (build-system r-build-system)
     (propagated-inputs (list r-v8))
@@ -15915,12 +15914,12 @@ schedules, birthdays, and the like.")
   (package
     (name "r-ic10trainingdata")
     (version "1.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iC10TrainingData" version))
-              (sha256
-               (base32
-                "175ymib3h359296hk36psryksisipx63ybvacz8hys21irzx58j1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iC10TrainingData" version))
+       (sha256
+        (base32 "175ymib3h359296hk36psryksisipx63ybvacz8hys21irzx58j1"))))
     (properties `((upstream-name . "iC10TrainingData")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=iC10TrainingData")
@@ -15939,12 +15938,12 @@ annotation for the training dataset has been obtained from Mark Dunning's
   (package
     (name "r-ic10")
     (version "1.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iC10" version))
-              (sha256
-               (base32
-                "1xq6xv582wxdb0nc2nia3q38155gx8z26idiqyx7h1rjb20hhwdl"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iC10" version))
+       (sha256
+        (base32 "1xq6xv582wxdb0nc2nia3q38155gx8z26idiqyx7h1rjb20hhwdl"))))
     (properties `((upstream-name . "iC10")))
     (build-system r-build-system)
     (propagated-inputs (list r-pamr r-impute r-ic10trainingdata))
@@ -15962,12 +15961,12 @@ and predicts the @code{iC10} group.")
   (package
     (name "r-ic-infer")
     (version "1.1-6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ic.infer" version))
-              (sha256
-               (base32
-                "14vcwx5592br4zky9mq82akwk8pfiz7p1rx2jvyb48prrs2mm9gy"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ic.infer" version))
+       (sha256
+        (base32 "14vcwx5592br4zky9mq82akwk8pfiz7p1rx2jvyb48prrs2mm9gy"))))
     (properties `((upstream-name . "ic.infer")))
     (build-system r-build-system)
     (propagated-inputs (list r-quadprog r-mvtnorm r-kappalab r-boot))
@@ -15985,12 +15984,12 @@ averaging over R-squared for different orderings of regressors is also included.
   (package
     (name "r-ibst")
     (version "1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iBST" version))
-              (sha256
-               (base32
-                "0z7v679s5w270dfls61hh4fab9pzzj4lsqwsx06r59s0hlsrv5nw"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iBST" version))
+       (sha256
+        (base32 "0z7v679s5w270dfls61hh4fab9pzzj4lsqwsx06r59s0hlsrv5nw"))))
     (properties `((upstream-name . "iBST")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rpart r-rcpp))
@@ -16011,12 +16010,12 @@ implemented in this package.")
   (package
     (name "r-ibs")
     (version "1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ibs" version))
-              (sha256
-               (base32
-                "06zyg6c083437nhilqfhcf6yzlvazkpxhi3dh5d3dqv2zhxixlz4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ibs" version))
+       (sha256
+        (base32 "06zyg6c083437nhilqfhcf6yzlvazkpxhi3dh5d3dqv2zhxixlz4"))))
     (properties `((upstream-name . "ibs")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -16032,12 +16031,12 @@ B-spline function with a given set of knots and order and set of de Boor points
   (package
     (name "r-ibrtools")
     (version "0.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IBRtools" version))
-              (sha256
-               (base32
-                "0ah4fg93ihr4m8af19r2gnfibmalvmrc3pmac1afkw6jc0bnir4p"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IBRtools" version))
+       (sha256
+        (base32 "0ah4fg93ihr4m8af19r2gnfibmalvmrc3pmac1afkw6jc0bnir4p"))))
     (properties `((upstream-name . "IBRtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -16068,12 +16067,12 @@ Porcher, J.-M. (2013).<doi:10.1007/s11356-012-1359-1>.  Devin, S., Burgeot, T.,
   (package
     (name "r-ibrokers")
     (version "0.10-2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IBrokers" version))
-              (sha256
-               (base32
-                "06pp2fgzbwpk95r0pvaskx44q33mlady8bq5i13c4qc60vkafyag"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IBrokers" version))
+       (sha256
+        (base32 "06pp2fgzbwpk95r0pvaskx44q33mlady8bq5i13c4qc60vkafyag"))))
     (properties `((upstream-name . "IBrokers")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-xts))
@@ -16088,12 +16087,12 @@ API.")
   (package
     (name "r-ibr")
     (version "2.0-4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ibr" version))
-              (sha256
-               (base32
-                "1vac4484n9jsn6m5pbdpw6zjjjgnas24176hs6mr51y2bjgywdkp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ibr" version))
+       (sha256
+        (base32 "1vac4484n9jsn6m5pbdpw6zjjjgnas24176hs6mr51y2bjgywdkp"))))
     (properties `((upstream-name . "ibr")))
     (build-system r-build-system)
     (propagated-inputs (list r-mgcv))
@@ -16108,12 +16107,12 @@ splines, Duchon splines or low rank splines.")
   (package
     (name "r-ibmsunburst")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ibmsunburst" version))
-              (sha256
-               (base32
-                "165fgz5fhfzn2cyr2y6caf980a5r50g2p6qrj0ssxyzlqspipjhn"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ibmsunburst" version))
+       (sha256
+        (base32 "165fgz5fhfzn2cyr2y6caf980a5r50g2p6qrj0ssxyzlqspipjhn"))))
     (properties `((upstream-name . "ibmsunburst")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-htmlwidgets))
@@ -16129,12 +16128,12 @@ Insights service output.")
   (package
     (name "r-ibmpopsim")
     (version "0.4.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IBMPopSim" version))
-              (sha256
-               (base32
-                "03q65ysg2najjqqrjd9jnm7069q8gxhkyqwb7r7l6171wipwdi3y"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IBMPopSim" version))
+       (sha256
+        (base32 "03q65ysg2najjqqrjd9jnm7069q8gxhkyqwb7r7l6171wipwdi3y"))))
     (properties `((upstream-name . "IBMPopSim")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -16160,12 +16159,12 @@ date of death.")
   (package
     (name "r-ibmdbr")
     (version "1.50.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ibmdbR" version))
-              (sha256
-               (base32
-                "151gg05gcy5wpyvyflr4mc0jq1npxzq9pc4spjc81x2igd14c370"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ibmdbR" version))
+       (sha256
+        (base32 "151gg05gcy5wpyvyflr4mc0jq1npxzq9pc4spjc81x2igd14c370"))))
     (properties `((upstream-name . "ibmdbR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rpart-plot
@@ -16189,12 +16188,12 @@ and allows to make full use of parallel processing in the underlying database.")
   (package
     (name "r-ibmcraftr")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ibmcraftr" version))
-              (sha256
-               (base32
-                "0zm5j0a1wjj5agibp38h73qxpq0njvrhfq3077xhhfizcb3v24sb"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ibmcraftr" version))
+       (sha256
+        (base32 "0zm5j0a1wjj5agibp38h73qxpq0njvrhfq3077xhhfizcb3v24sb"))))
     (properties `((upstream-name . "ibmcraftr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -16215,12 +16214,12 @@ attributes on demographic, health belief and movement.")
   (package
     (name "r-ibmacousticr")
     (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ibmAcousticR" version))
-              (sha256
-               (base32
-                "1hrd2273n9fgi3hgjissjn4syw914mxm4wr98ij819yahsi9aj42"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ibmAcousticR" version))
+       (sha256
+        (base32 "1hrd2273n9fgi3hgjissjn4syw914mxm4wr98ij819yahsi9aj42"))))
     (properties `((upstream-name . "ibmAcousticR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml r-jsonlite r-httr))
@@ -16239,12 +16238,12 @@ supported by IBM'.")
   (package
     (name "r-ibm")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ibm" version))
-              (sha256
-               (base32
-                "0g6wg2qpa4q142xw2vq5pca4ll6pb8hyll5g0c93kk8crddk51s7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ibm" version))
+       (sha256
+        (base32 "0g6wg2qpa4q142xw2vq5pca4ll6pb8hyll5g0c93kk8crddk51s7"))))
     (properties `((upstream-name . "ibm")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -16261,12 +16260,12 @@ for speed.")
   (package
     (name "r-ibfs")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IBFS" version))
-              (sha256
-               (base32
-                "04n021h781h5v1nlljdzam12agsw8hyhy50b0ld8d4vh6iy37ijp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IBFS" version))
+       (sha256
+        (base32 "04n021h781h5v1nlljdzam12agsw8hyhy50b0ld8d4vh6iy37ijp"))))
     (properties `((upstream-name . "IBFS")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=IBFS")
@@ -16290,12 +16289,12 @@ more technical details about the algorithms please refer below URLs.
   (package
     (name "r-ibelief")
     (version "1.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ibelief" version))
-              (sha256
-               (base32
-                "0fl2vvyl2qygppcycbnjkmlvq6rmxq18y1hk512d6szgi0czvpls"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ibelief" version))
+       (sha256
+        (base32 "0fl2vvyl2qygppcycbnjkmlvq6rmxq18y1hk512d6szgi0czvpls"))))
     (properties `((upstream-name . "ibelief")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=ibelief")
@@ -16314,12 +16313,12 @@ management.")
   (package
     (name "r-ibdsim2")
     (version "2.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ibdsim2" version))
-              (sha256
-               (base32
-                "0s0mnyhd0xcrr75qhqwgyipn22hlbgjf9nfi7gxbmwns16g3crb8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ibdsim2" version))
+       (sha256
+        (base32 "0s0mnyhd0xcrr75qhqwgyipn22hlbgjf9nfi7gxbmwns16g3crb8"))))
     (properties `((upstream-name . "ibdsim2")))
     (build-system r-build-system)
     (propagated-inputs (list r-ribd r-rcpp r-pedtools r-glue r-ggplot2))
@@ -16342,12 +16341,12 @@ visualising and comparing IBD distributions is available at
   (package
     (name "r-ibdsim")
     (version "0.9-8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IBDsim" version))
-              (sha256
-               (base32
-                "1a0xz1khl6cz6ajcn903fcmsv8g7hfdh7684zhk0g6awsgwqdf5q"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IBDsim" version))
+       (sha256
+        (base32 "1a0xz1khl6cz6ajcn903fcmsv8g7hfdh7684zhk0g6awsgwqdf5q"))))
     (properties `((upstream-name . "IBDsim")))
     (build-system r-build-system)
     (propagated-inputs (list r-paramlink))
@@ -16366,12 +16365,12 @@ analysis of the simulated genomes.")
   (package
     (name "r-ibd")
     (version "1.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ibd" version))
-              (sha256
-               (base32
-                "0rxvy4hn4fpbv6y214ggkmgfvzwns5mkanp4h8201rjk3v84mk2r"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ibd" version))
+       (sha256
+        (base32 "0rxvy4hn4fpbv6y214ggkmgfvzwns5mkanp4h8201rjk3v84mk2r"))))
     (properties `((upstream-name . "ibd")))
     (build-system r-build-system)
     (propagated-inputs (list r-multcomp r-lpsolve r-emmeans r-car))
@@ -16395,12 +16394,12 @@ treatment contrasts in incomplete block design set up is supported.")
   (package
     (name "r-ibcf-mtme")
     (version "1.6-0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IBCF.MTME" version))
-              (sha256
-               (base32
-                "1nlfsfdw8lfr3n2717i6kn1hafwr6hmqzfpg249amlrfjn0pghji"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IBCF.MTME" version))
+       (sha256
+        (base32 "1nlfsfdw8lfr3n2717i6kn1hafwr6hmqzfpg249amlrfjn0pghji"))))
     (properties `((upstream-name . "IBCF.MTME")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-lsa r-dplyr))
@@ -16418,12 +16417,12 @@ Montesinos-LÃ³pez et al. (2017) <doi:10.1534/g3.117.300309>.")
   (package
     (name "r-ibb")
     (version "0.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ibb" version))
-              (sha256
-               (base32
-                "11rfrf0ap97rsq0yy23sjahp1bin3j31zdd61p8b5mbp0s0k7ci4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ibb" version))
+       (sha256
+        (base32 "11rfrf0ap97rsq0yy23sjahp1bin3j31zdd61p8b5mbp0s0k7ci4"))))
     (properties `((upstream-name . "ibb")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -16445,12 +16444,12 @@ at <https://data.ibb.gov.tr/en/>.")
   (package
     (name "r-ibawds")
     (version "0.5.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ibawds" version))
-              (sha256
-               (base32
-                "1w4hm4gn5v7xj3gn54c3r0276c7ic441hn34q3j5qxwmh16af6qy"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ibawds" version))
+       (sha256
+        (base32 "1w4hm4gn5v7xj3gn54c3r0276c7ic441hn34q3j5qxwmh16af6qy"))))
     (properties `((upstream-name . "ibawds")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -16472,12 +16471,12 @@ Science Course at IBAW in Lucerne.")
   (package
     (name "r-ib")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ib" version))
-              (sha256
-               (base32
-                "10h3b9ncz59rp8j628axnrl7gksjiyg576672dhcyd3ygd4by7p5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ib" version))
+       (sha256
+        (base32 "10h3b9ncz59rp8j628axnrl7gksjiyg576672dhcyd3ygd4by7p5"))))
     (properties `((upstream-name . "ib")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam
@@ -16500,12 +16499,12 @@ the bootstrap bias correction technique.")
   (package
     (name "r-iatscores")
     (version "0.2.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IATscores" version))
-              (sha256
-               (base32
-                "1dmcwkylq6zazjycjsmbxnzvkav19w13j69gnm1f558wsdxpvhx1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IATscores" version))
+       (sha256
+        (base32 "1dmcwkylq6zazjycjsmbxnzvkav19w13j69gnm1f558wsdxpvhx1"))))
     (properties `((upstream-name . "IATscores")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-reshape2 r-qgraph r-dplyr))
@@ -16523,12 +16522,12 @@ robust statistics (Richetin, Costantini, Perugini, and Schonbrodt, 2015,
   (package
     (name "r-iatscore")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IATScore" version))
-              (sha256
-               (base32
-                "0sg4apj1sp0xc311cbkvflhv9kw1jxvjhdr0xjw79s662mnhkhgz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IATScore" version))
+       (sha256
+        (base32 "0sg4apj1sp0xc311cbkvflhv9kw1jxvjhdr0xjw79s662mnhkhgz"))))
     (properties `((upstream-name . "IATScore")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=IATScore")
@@ -16560,12 +16559,12 @@ IAT', @code{TooFastIAT}', and @code{BriefIAT}') to practice with.")
   (package
     (name "r-iatanalytics")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IATanalytics" version))
-              (sha256
-               (base32
-                "10g9iscfjmlxrkzls9320h9azpc5fnhh6276p7zn8sxqgp1nvnz9"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IATanalytics" version))
+       (sha256
+        (base32 "10g9iscfjmlxrkzls9320h9azpc5fnhh6276p7zn8sxqgp1nvnz9"))))
     (properties `((upstream-name . "IATanalytics")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=IATanalytics")
@@ -16602,12 +16601,12 @@ package to practice with.")
   (package
     (name "r-iat")
     (version "0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IAT" version))
-              (sha256
-               (base32
-                "110rn2q09gspfd4msyh30dllxdxdraffkr18h1nm72brzhmx9cfi"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IAT" version))
+       (sha256
+        (base32 "110rn2q09gspfd4msyh30dllxdxdraffkr18h1nm72brzhmx9cfi"))))
     (properties `((upstream-name . "IAT")))
     (build-system r-build-system)
     (propagated-inputs (list r-lazyeval r-ggplot2 r-dplyr))
@@ -16623,12 +16622,12 @@ capabilities for exploring raw IAT data.")
   (package
     (name "r-iasd")
     (version "1.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IASD" version))
-              (sha256
-               (base32
-                "0bw36kghfrz3kh8rafshv16q2ac0ynsjcks021g27knvvbapnic9"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IASD" version))
+       (sha256
+        (base32 "0bw36kghfrz3kh8rafshv16q2ac0ynsjcks021g27knvvbapnic9"))))
     (properties `((upstream-name . "IASD")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=IASD")
@@ -16644,12 +16643,12 @@ distribution is unimodal or bimodal.")
   (package
     (name "r-iarm")
     (version "0.4.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iarm" version))
-              (sha256
-               (base32
-                "0ib8b37inq1hdzjm9y9bvk8x1qzn08vkvj3y75gg1swsqxh8w106"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iarm" version))
+       (sha256
+        (base32 "0ib8b37inq1hdzjm9y9bvk8x1qzn08vkvj3y75gg1swsqxh8w106"))))
     (properties `((upstream-name . "iarm")))
     (build-system r-build-system)
     (propagated-inputs (list r-vcdextra
@@ -16673,12 +16672,12 @@ ISBN:978-1-84821-222-0).")
   (package
     (name "r-iar")
     (version "1.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iAR" version))
-              (sha256
-               (base32
-                "0svxn81a0yq3m51594zrpy99i8p9zcfjzbxsi19yyfcm6iymzv24"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iAR" version))
+       (sha256
+        (base32 "0svxn81a0yq3m51594zrpy99i8p9zcfjzbxsi19yyfcm6iymzv24"))))
     (properties `((upstream-name . "iAR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-rcpparmadillo r-rcpp r-ggplot2))
@@ -16698,12 +16697,12 @@ irregular autoregressive model (Elorrieta et al.(2021)
   (package
     (name "r-iapws95")
     (version "1.2.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IAPWS95" version))
-              (sha256
-               (base32
-                "0jccq1pj0b8xpa7zs20ikkwlyj0f2q5qzdz8kllm0qiwlrrj7jsn"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IAPWS95" version))
+       (sha256
+        (base32 "0jccq1pj0b8xpa7zs20ikkwlyj0f2q5qzdz8kllm0qiwlrrj7jsn"))))
     (properties `((upstream-name . "IAPWS95")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-pander r-ggplot2))
@@ -16721,12 +16720,12 @@ conductivity, surface tension and melting pressure.")
   (package
     (name "r-iapws")
     (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iapws" version))
-              (sha256
-               (base32
-                "115m678kb2bz450pjg8a5jrjj3g2q2cgpyg9cksz3ysm6j5vrb1a"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iapws" version))
+       (sha256
+        (base32 "115m678kb2bz450pjg8a5jrjj3g2q2cgpyg9cksz3ysm6j5vrb1a"))))
     (properties `((upstream-name . "iapws")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=iapws")
@@ -16744,12 +16743,12 @@ R15-11, R16-17(2018), R17-20 and R18-21 at <http://iapws.org>.")
   (package
     (name "r-ialiquor")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ialiquor" version))
-              (sha256
-               (base32
-                "0nrp75lzb49lhkxspvaq6wx5c48ny6fq9m3r1bz0v5f2fd5ilrdx"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ialiquor" version))
+       (sha256
+        (base32 "0nrp75lzb49lhkxspvaq6wx5c48ny6fq9m3r1bz0v5f2fd5ilrdx"))))
     (properties `((upstream-name . "ialiquor")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -16766,12 +16765,12 @@ documentation and examples.  Data source: Iowa Data portal
   (package
     (name "r-iai")
     (version "1.10.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iai" version))
-              (sha256
-               (base32
-                "17ap6zsbcvm8n5y7i6vssc705ra5ll91yvppg08v8252wzxarr31"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iai" version))
+       (sha256
+        (base32 "17ap6zsbcvm8n5y7i6vssc705ra5ll91yvppg08v8252wzxarr31"))))
     (properties `((upstream-name . "iai")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -16799,12 +16798,12 @@ and evaluation licenses are available.")
   (package
     (name "r-iadt")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IADT" version))
-              (sha256
-               (base32
-                "1hyshs7dlpbsvpkn56fi7cfn54qkwmwyf9bhh1yks9nnhdxpbsgd"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IADT" version))
+       (sha256
+        (base32 "1hyshs7dlpbsvpkn56fi7cfn54qkwmwyf9bhh1yks9nnhdxpbsgd"))))
     (properties `((upstream-name . "IADT")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmpfr r-rdpack r-mvnfast r-mgcv))
@@ -16829,12 +16828,12 @@ does not require resampling or refitting black-box prediction models.")
   (package
     (name "r-iadf")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iadf" version))
-              (sha256
-               (base32
-                "18r9qyhicbfrkpqnxnn5i854s0afq4pnbaw2ckw1qrhy3pzys6zp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iadf" version))
+       (sha256
+        (base32 "18r9qyhicbfrkpqnxnn5i854s0afq4pnbaw2ckw1qrhy3pzys6zp"))))
     (properties `((upstream-name . "iadf")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -16856,12 +16855,12 @@ fluctuations.")
   (package
     (name "r-iadapt")
     (version "2.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iAdapt" version))
-              (sha256
-               (base32
-                "050kzacvf19m8s89layqqf0l85db1k4cd3akb16jrv9wjfi9k61v"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iAdapt" version))
+       (sha256
+        (base32 "050kzacvf19m8s89layqqf0l85db1k4cd3akb16jrv9wjfi9k61v"))))
     (properties `((upstream-name . "iAdapt")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinydashboard r-shiny r-matrix))
@@ -16878,12 +16877,12 @@ further reading <DOI:10.1080/19466315.2018.1462727>.")
   (package
     (name "r-iacsspcr")
     (version "1.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IAcsSPCR" version))
-              (sha256
-               (base32
-                "0x0h1vicw0jlm9p10cw7g75g2x0d73rjpdwh1j7lxq6cnbpkbxf9"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IAcsSPCR" version))
+       (sha256
+        (base32 "0x0h1vicw0jlm9p10cw7g75g2x0d73rjpdwh1j7lxq6cnbpkbxf9"))))
     (properties `((upstream-name . "IAcsSPCR")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi r-lattice r-frf2 r-abind))
@@ -16900,12 +16899,12 @@ CRC Press.")
   (package
     (name "r-i2extras")
     (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "i2extras" version))
-              (sha256
-               (base32
-                "14k9s5ppq3c7ldh6gqi82awmkk34ac0br0qr42gqba9lrssf4bsr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "i2extras" version))
+       (sha256
+        (base32 "14k9s5ppq3c7ldh6gqi82awmkk34ac0br0qr42gqba9lrssf4bsr"))))
     (properties `((upstream-name . "i2extras")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -16933,12 +16932,12 @@ analysis (<https://www.reconverse.org/).")
   (package
     (name "r-i2dash")
     (version "0.2.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "i2dash" version))
-              (sha256
-               (base32
-                "0silwp4pasry7z1yjhzyw06xpa8021v9bkhinc73i7dzr720ld5v"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "i2dash" version))
+       (sha256
+        (base32 "0silwp4pasry7z1yjhzyw06xpa8021v9bkhinc73i7dzr720ld5v"))))
     (properties `((upstream-name . "i2dash")))
     (build-system r-build-system)
     (propagated-inputs (list r-ymlthis
@@ -16966,12 +16965,12 @@ organize scientific findings thematically across different pages and layouts.")
   (package
     (name "r-i18n")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "i18n" version))
-              (sha256
-               (base32
-                "1ksvrrpymflfbr7acnv3sh4xa0xqjp44ngdpkp500p50mwpww1wr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "i18n" version))
+       (sha256
+        (base32 "1ksvrrpymflfbr7acnv3sh4xa0xqjp44ngdpkp500p50mwpww1wr"))))
     (properties `((upstream-name . "i18n")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr))

@@ -46,12 +46,12 @@
   (package
     (name "r-jwileymisc")
     (version "1.4.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "JWileymisc" version))
-              (sha256
-               (base32
-                "1bgkhfda7p5alh8h2y804x5wvhksigg06hym9safxx15kmv1yxcn"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "JWileymisc" version))
+       (sha256
+        (base32 "1bgkhfda7p5alh8h2y804x5wvhksigg06hym9safxx15kmv1yxcn"))))
     (properties `((upstream-name . "JWileymisc")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam
@@ -86,12 +86,12 @@ distributions, and generic functions for residual and model diagnostics.")
   (package
     (name "r-jvnvar")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jvnVaR" version))
-              (sha256
-               (base32
-                "0zh0dc6wqlrxn5r2yv9vkpyfb8xsbdidkjv9g6qr94fyxlbs4yci"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jvnVaR" version))
+       (sha256
+        (base32 "0zh0dc6wqlrxn5r2yv9vkpyfb8xsbdidkjv9g6qr94fyxlbs4yci"))))
     (properties `((upstream-name . "jvnVaR")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=jvnVaR")
@@ -105,12 +105,12 @@ the report: Value at Risk <researchgate.net>.")
   (package
     (name "r-jvcoords")
     (version "1.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jvcoords" version))
-              (sha256
-               (base32
-                "1ixmz3pj18zddgah59iqd4zbm5praw0dvn6c93dn5mrwx92pa65c"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jvcoords" version))
+       (sha256
+        (base32 "1ixmz3pj18zddgah59iqd4zbm5praw0dvn6c93dn5mrwx92pa65c"))))
     (properties `((upstream-name . "jvcoords")))
     (build-system r-build-system)
     (home-page "https://github.com/seehuhn/jvcoords")
@@ -131,12 +131,12 @@ alternatives.")
   (package
     (name "r-justifyalpha")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "JustifyAlpha" version))
-              (sha256
-               (base32
-                "0bd7sn4sn95kal5q2x1q78fsk1mhakr5fax3z6ny2yda2h266af9"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "JustifyAlpha" version))
+       (sha256
+        (base32 "0bd7sn4sn95kal5q2x1q78fsk1mhakr5fax3z6ny2yda2h266af9"))))
     (properties `((upstream-name . "JustifyAlpha")))
     (build-system r-build-system)
     (propagated-inputs (list r-superpower
@@ -161,12 +161,12 @@ Maier & Lakens (2021) <doi:10.31234/osf.io/ts4r6>).")
   (package
     (name "r-justifier")
     (version "0.2.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "justifier" version))
-              (sha256
-               (base32
-                "0zpmxcgaa0y5qpk82m4jmkljvfrsv8fm8dmzxhvblicyl28d33bs"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "justifier" version))
+       (sha256
+        (base32 "0zpmxcgaa0y5qpk82m4jmkljvfrsv8fm8dmzxhvblicyl28d33bs"))))
     (properties `((upstream-name . "justifier")))
     (build-system r-build-system)
     (propagated-inputs (list r-yum
@@ -193,12 +193,12 @@ machine-readable, facilitating efficient extraction and organisation.")
   (package
     (name "r-just-install")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "just.install" version))
-              (sha256
-               (base32
-                "1g82g4lhdk8mf1v4j47y2pgdrryz4175djx42kmg85vw7mlpvlcj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "just.install" version))
+       (sha256
+        (base32 "1g82g4lhdk8mf1v4j47y2pgdrryz4175djx42kmg85vw7mlpvlcj"))))
     (properties `((upstream-name . "just.install")))
     (build-system r-build-system)
     (propagated-inputs (list r-remotes r-dplyr))
@@ -214,12 +214,12 @@ it will be skipped.")
   (package
     (name "r-junctions")
     (version "2.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "junctions" version))
-              (sha256
-               (base32
-                "0lm3n8n9dfi9nsdazj74pd57kxm2kzrd1gxdzd0izzwgkjnsrsqc"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "junctions" version))
+       (sha256
+        (base32 "0lm3n8n9dfi9nsdazj74pd57kxm2kzrd1gxdzd0izzwgkjnsrsqc"))))
     (properties `((upstream-name . "junctions")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-rcppparallel r-rcpp r-nloptr))
@@ -238,12 +238,12 @@ based on Janzen (2018, <doi:10.1101/058107>) and Janzen (2020,
   (package
     (name "r-jump")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "JUMP" version))
-              (sha256
-               (base32
-                "0i84vpzgs9bj0idxxjl885x818hq23drxy0h2pl6zbyz2z1v331m"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "JUMP" version))
+       (sha256
+        (base32 "0i84vpzgs9bj0idxxjl885x818hq23drxy0h2pl6zbyz2z1v331m"))))
     (properties `((upstream-name . "JUMP")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -260,12 +260,12 @@ manuscript corresponding to this package [Lyu, P. et al., (2023),
   (package
     (name "r-juliaconnector")
     (version "1.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "JuliaConnectoR" version))
-              (sha256
-               (base32
-                "0chbax02l1p3qr0skvnxw1b8g7kf6s7sk2f3gj0ddl5kj6ls1p5n"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "JuliaConnectoR" version))
+       (sha256
+        (base32 "0chbax02l1p3qr0skvnxw1b8g7kf6s7sk2f3gj0ddl5kj6ls1p5n"))))
     (properties `((upstream-name . "JuliaConnectoR")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=JuliaConnectoR")
@@ -281,12 +281,12 @@ corresponding article <doi:10.18637/jss.v101.i06>.")
   (package
     (name "r-juliacall")
     (version "0.17.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "JuliaCall" version))
-              (sha256
-               (base32
-                "036rxp2lygvpxpykpxx2lqyyzidzzi95lv6g30n70hzy0agjym4j"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "JuliaCall" version))
+       (sha256
+        (base32 "036rxp2lygvpxpykpxx2lqyyzidzzi95lv6g30n70hzy0agjym4j"))))
     (properties `((upstream-name . "JuliaCall")))
     (build-system r-build-system)
     (inputs (list))
@@ -309,12 +309,12 @@ language like Julia'.")
   (package
     (name "r-julia")
     (version "1.3.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Julia" version))
-              (sha256
-               (base32
-                "0ynzxflz92y38z7bl9g8nhrgvz2ay716izpya398b29h4qfb1w4r"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Julia" version))
+       (sha256
+        (base32 "0ynzxflz92y38z7bl9g8nhrgvz2ay716izpya398b29h4qfb1w4r"))))
     (properties `((upstream-name . "Julia")))
     (build-system r-build-system)
     (home-page "https://github.com/msuzen/Julia")
@@ -328,12 +328,12 @@ plane in the given region and resolution.  Benoit B Mandelbrot (1982).")
   (package
     (name "r-juicyjuice")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "juicyjuice" version))
-              (sha256
-               (base32
-                "0ap1nsyihlagc1yqvwr2x9s16kzb3c8azfi50mzv95275a5l3xb4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "juicyjuice" version))
+       (sha256
+        (base32 "0ap1nsyihlagc1yqvwr2x9s16kzb3c8azfi50mzv95275a5l3xb4"))))
     (properties `((upstream-name . "juicyjuice")))
     (build-system r-build-system)
     (propagated-inputs (list r-v8))
@@ -354,12 +354,12 @@ these CSS transformations when given HTML text and it does so by using the
   (package
     (name "r-juicr")
     (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "juicr" version))
-              (sha256
-               (base32
-                "0vkbgbagcgaxj6k62b033ik85jnkzvshg8dm9cz7vq4yjqj3icip"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "juicr" version))
+       (sha256
+        (base32 "0vkbgbagcgaxj6k62b033ik85jnkzvshg8dm9cz7vq4yjqj3icip"))))
     (properties `((upstream-name . "juicr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml r-rcurl))
@@ -379,12 +379,12 @@ R-independent extraction reports as fully-embedded .html records.")
   (package
     (name "r-juicedown")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "juicedown" version))
-              (sha256
-               (base32
-                "1fvplx2p8510ayl32l04db728fajyp06jcfzivm47v8px434f2pf"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "juicedown" version))
+       (sha256
+        (base32 "1fvplx2p8510ayl32l04db728fajyp06jcfzivm47v8px434f2pf"))))
     (properties `((upstream-name . "juicedown")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -415,12 +415,12 @@ more about juicedown at <https://kenjisato.github.io/juicedown/>.")
   (package
     (name "r-jubilee")
     (version "0.3.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jubilee" version))
-              (sha256
-               (base32
-                "1j2y44pfx9z2k169lh42b4dnfrrnk8jqsjn3wz4l9iscr6r91lx7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jubilee" version))
+       (sha256
+        (base32 "1j2y44pfx9z2k169lh42b4dnfrrnk8jqsjn3wz4l9iscr6r91lx7"))))
     (properties `((upstream-name . "jubilee")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -449,12 +449,12 @@ cycles, optimal interest rate, and recession forecasts.")
   (package
     (name "r-jtools")
     (version "2.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jtools" version))
-              (sha256
-               (base32
-                "1fcpsh9kdr83ngxab6y9b00ridsz764qj3rdlc3dcmqbgas6m8vr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jtools" version))
+       (sha256
+        (base32 "1fcpsh9kdr83ngxab6y9b00ridsz764qj3rdlc3dcmqbgas6m8vr"))))
     (properties `((upstream-name . "jtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -479,12 +479,12 @@ models produced by the survey and lme4 packages are points of emphasis.")
   (package
     (name "r-jti")
     (version "0.8.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jti" version))
-              (sha256
-               (base32
-                "0jxqv3xa9yyzizx1rhxjv65c8b253shridy57skrd5kya701n460"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jti" version))
+       (sha256
+        (base32 "0jxqv3xa9yyzizx1rhxjv65c8b253shridy57skrd5kya701n460"))))
     (properties `((upstream-name . "jti")))
     (build-system r-build-system)
     (propagated-inputs (list r-sparta r-rcpparmadillo r-rcpp r-igraph))
@@ -501,12 +501,12 @@ the Lauritzen-Spiegelhalter scheme; S. L. Lauritzen and D. J. Spiegelhalter
   (package
     (name "r-jtdm")
     (version "0.1-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jtdm" version))
-              (sha256
-               (base32
-                "11x4zm5npgcbmvrir2maf7zr54mvg0ppckb145cckmqns94nk25j"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jtdm" version))
+       (sha256
+        (base32 "11x4zm5npgcbmvrir2maf7zr54mvg0ppckb145cckmqns94nk25j"))))
     (properties `((upstream-name . "jtdm")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2
@@ -532,12 +532,12 @@ et al. (2023) <doi:10.1111/geb.13706>.")
   (package
     (name "r-jsuparameters")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "JSUparameters" version))
-              (sha256
-               (base32
-                "0jikzazdp6id72d5csplhsa2yrm9cb02f00bfzriyhgfl43v09mh"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "JSUparameters" version))
+       (sha256
+        (base32 "0jikzazdp6id72d5csplhsa2yrm9cb02f00bfzriyhgfl43v09mh"))))
     (properties `((upstream-name . "JSUparameters")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=JSUparameters")
@@ -557,12 +557,12 @@ the Golden Section Search Method for Numerical Optimization\",
   (package
     (name "r-jstreer")
     (version "2.3.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jsTreeR" version))
-              (sha256
-               (base32
-                "0kxjh95habvfn0y4dv003wlvng3r8ljmic7q5iz8110rlf0m83l0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jsTreeR" version))
+       (sha256
+        (base32 "0kxjh95habvfn0y4dv003wlvng3r8ljmic7q5iz8110rlf0m83l0"))))
     (properties `((upstream-name . "jsTreeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinyace
@@ -594,12 +594,12 @@ server side file system.")
   (package
     (name "r-jstree")
     (version "1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jsTree" version))
-              (sha256
-               (base32
-                "06mmz55brm6w19vnlk1w8qaz0n3czlyl4fs62nzgdlsdjn8pad1h"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jsTree" version))
+       (sha256
+        (base32 "06mmz55brm6w19vnlk1w8qaz0n3czlyl4fs62nzgdlsdjn8pad1h"))))
     (properties `((upstream-name . "jsTree")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-htmlwidgets r-htmltools r-data-table))
@@ -617,12 +617,12 @@ R Markdown documents.")
   (package
     (name "r-jstor")
     (version "0.3.11")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jstor" version))
-              (sha256
-               (base32
-                "1n5l6wz93bjhhhpikmvmjd5famxbrsk3d6z61bb7sp6xvslychlj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jstor" version))
+       (sha256
+        (base32 "1n5l6wz93bjhhhpikmvmjd5famxbrsk3d6z61bb7sp6xvslychlj"))))
     (properties `((upstream-name . "jstor")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -650,12 +650,12 @@ full-texts delivered by Data for Research by JSTOR.")
   (package
     (name "r-jstable")
     (version "1.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jstable" version))
-              (sha256
-               (base32
-                "10lggan0rf9r0p8cf8blpz7plqq4dzwkvfm2dqrha5hparl6gka4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jstable" version))
+       (sha256
+        (base32 "10lggan0rf9r0p8cf8blpz7plqq4dzwkvfm2dqrha5hparl6gka4"))))
     (properties `((upstream-name . "jstable")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -684,12 +684,12 @@ survey-weighted Cox model results for publication.")
   (package
     (name "r-jsparo")
     (version "1.5.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "JSparO" version))
-              (sha256
-               (base32
-                "0n13arzf063x0sw0kmm86bny440jpijan4lh1ikxayrz2skg8zbz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "JSparO" version))
+       (sha256
+        (base32 "0n13arzf063x0sw0kmm86bny440jpijan4lh1ikxayrz2skg8zbz"))))
     (properties `((upstream-name . "JSparO")))
     (build-system r-build-system)
     (propagated-inputs (list r-pracma))
@@ -707,12 +707,12 @@ J@code{SparO}.")
   (package
     (name "r-jsonvalidate")
     (version "1.3.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jsonvalidate" version))
-              (sha256
-               (base32
-                "0myvm93azl6mj60l8fp91qa3ln3nnwj4p48xli8k215sm6zhhv1b"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jsonvalidate" version))
+       (sha256
+        (base32 "0myvm93azl6mj60l8fp91qa3ln3nnwj4p48xli8k215sm6zhhv1b"))))
     (properties `((upstream-name . "jsonvalidate")))
     (build-system r-build-system)
     (propagated-inputs (list r-v8))
@@ -728,12 +728,12 @@ schema.  Drafts 04, 06 and 07 of JSON schema are supported.")
   (package
     (name "r-jsonstrings")
     (version "2.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jsonStrings" version))
-              (sha256
-               (base32
-                "0936nhm6zx4la7i6fwigz0kvgf9dirz422vhrzjr45f37pyfvkxy"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jsonStrings" version))
+       (sha256
+        (base32 "0936nhm6zx4la7i6fwigz0kvgf9dirz422vhrzjr45f37pyfvkxy"))))
     (properties `((upstream-name . "jsonStrings")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-r6))
@@ -748,12 +748,12 @@ JSON string, merge two JSON strings, and more.")
   (package
     (name "r-jsonstat")
     (version "0.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jsonstat" version))
-              (sha256
-               (base32
-                "0p0d3snl1971p5ikrkmwqrjjh4fy0b89qk3rnd1dayfb0r80xnnj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jsonstat" version))
+       (sha256
+        (base32 "0p0d3snl1971p5ikrkmwqrjjh4fy0b89qk3rnd1dayfb0r80xnnj"))))
     (properties `((upstream-name . "jsonstat")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-jsonlite r-dplyr r-cli))
@@ -769,12 +769,12 @@ format for data dissemination.")
   (package
     (name "r-jsonnormalize")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jsonNormalize" version))
-              (sha256
-               (base32
-                "1szvi8c0r75jv7y2y1jsampb783svvx04x4rvyw8v9qkiw0qpfis"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jsonNormalize" version))
+       (sha256
+        (base32 "1szvi8c0r75jv7y2y1jsampb783svvx04x4rvyw8v9qkiw0qpfis"))))
     (properties `((upstream-name . "jsonNormalize")))
     (build-system r-build-system)
     (propagated-inputs (list r-v8 r-rstudioapi))
@@ -790,12 +790,12 @@ provides RStudio addins for the same purpose.")
   (package
     (name "r-jsonld")
     (version "2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jsonld" version))
-              (sha256
-               (base32
-                "0bplz2s97wl9yp383jazykh5647iw6kbr1zanqai2s0sxp1xbwn8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jsonld" version))
+       (sha256
+        (base32 "0bplz2s97wl9yp383jazykh5647iw6kbr1zanqai2s0sxp1xbwn8"))))
     (properties `((upstream-name . "jsonld")))
     (build-system r-build-system)
     (propagated-inputs (list r-v8 r-jsonlite r-curl))
@@ -814,12 +814,12 @@ JSON-LD documents.")
   (package
     (name "r-json64")
     (version "0.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "json64" version))
-              (sha256
-               (base32
-                "19q8qgf4wnd3np12ajy180klpjy0g2csw5micwb4sl7qfzl6wc7j"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "json64" version))
+       (sha256
+        (base32 "19q8qgf4wnd3np12ajy180klpjy0g2csw5micwb4sl7qfzl6wc7j"))))
     (properties `((upstream-name . "json64")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite))
@@ -852,12 +852,12 @@ of the JSON structure).")
   (package
     (name "r-json2args")
     (version "0.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "json2aRgs" version))
-              (sha256
-               (base32
-                "0n1kj1kll6x7ar00y32pf8z38z7z1bnj29nlv9dx068n4kmy89v7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "json2aRgs" version))
+       (sha256
+        (base32 "0n1kj1kll6x7ar00y32pf8z38z7z1bnj29nlv9dx068n4kmy89v7"))))
     (properties `((upstream-name . "json2aRgs")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml r-jsonlite))
@@ -878,12 +878,12 @@ available at the following URL:
   (package
     (name "r-jsmodule")
     (version "1.4.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jsmodule" version))
-              (sha256
-               (base32
-                "13hc2ppmbn0l9iyj9si639j8f6ayrjkvr2dymiy0i8ys3510h8jx"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jsmodule" version))
+       (sha256
+        (base32 "13hc2ppmbn0l9iyj9si639j8f6ayrjkvr2dymiy0i8ys3510h8jx"))))
     (properties `((upstream-name . "jsmodule")))
     (build-system r-build-system)
     (propagated-inputs (list r-timeroc
@@ -928,12 +928,12 @@ survival analysis.")
   (package
     (name "r-jsmediation")
     (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "JSmediation" version))
-              (sha256
-               (base32
-                "1y6s8fwdyaixvqa1p8nn1jf75k2dgv4p9kv59rwjrckq70s026x2"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "JSmediation" version))
+       (sha256
+        (base32 "1y6s8fwdyaixvqa1p8nn1jf75k2dgv4p9kv59rwjrckq70s026x2"))))
     (properties `((upstream-name . "JSmediation")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -959,12 +959,12 @@ Judd. (2018) <doi:10.1037/pspa0000132>.")
   (package
     (name "r-jsm")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "JSM" version))
-              (sha256
-               (base32
-                "0vcsay1jpjlfdwykad4hp319swr9lv1ajlcyhmiizwr1ph3f1az9"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "JSM" version))
+       (sha256
+        (base32 "0vcsay1jpjlfdwykad4hp319swr9lv1ajlcyhmiizwr1ph3f1az9"))))
     (properties `((upstream-name . "JSM")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-statmod r-rcppeigen r-rcpp r-nlme))
@@ -981,12 +981,12 @@ and longitudinal data.  Refer to the Journal of Statistical Software article:
   (package
     (name "r-jskm")
     (version "0.5.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jskm" version))
-              (sha256
-               (base32
-                "059hyagi20saqwdwhpaz8ra8yf5y4ihz974285sr15skgr7y1kv2"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jskm" version))
+       (sha256
+        (base32 "059hyagi20saqwdwhpaz8ra8yf5y4ihz974285sr15skgr7y1kv2"))))
     (properties `((upstream-name . "jskm")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-survey r-scales r-ggpubr r-ggplot2))
@@ -1002,12 +1002,12 @@ tables below.  svyjskm() provides plot for weighted Kaplan-Meier estimator.")
   (package
     (name "r-jshintr")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jshintr" version))
-              (sha256
-               (base32
-                "08j28c2ab9fh6g7qp2vl8j5hz5kkikvl2id979kv92ach9vranyd"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jshintr" version))
+       (sha256
+        (base32 "08j28c2ab9fh6g7qp2vl8j5hz5kkikvl2id979kv92ach9vranyd"))))
     (properties `((upstream-name . "jshintr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstudioapi r-htmlwidgets r-htmltools))
@@ -1022,12 +1022,12 @@ addin.  The report appears in the RStudio viewer pane.")
   (package
     (name "r-jsdm")
     (version "0.2.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jSDM" version))
-              (sha256
-               (base32
-                "1rqy6xh6qhvmfgjnjlbkq71dr6c0fdwddvs7cbvv1p5qvf12zhx9"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jSDM" version))
+       (sha256
+        (base32 "1rqy6xh6qhvmfgjnjlbkq71dr6c0fdwddvs7cbvv1p5qvf12zhx9"))))
     (properties `((upstream-name . "jSDM")))
     (build-system r-build-system)
     (inputs (list gsl))
@@ -1054,12 +1054,12 @@ computation efficiency.")
   (package
     (name "r-jscore")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jScore" version))
-              (sha256
-               (base32
-                "0hb63l10cwvpvix155d16v35lp1v88lp69f6q1s09njc6qdsg212"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jScore" version))
+       (sha256
+        (base32 "0hb63l10cwvpvix155d16v35lp1v88lp69f6q1s09njc6qdsg212"))))
     (properties `((upstream-name . "jScore")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -1076,12 +1076,12 @@ described in Ahmadinejad and Liu. (2021) <@code{arXiv:2109.01306>}.")
   (package
     (name "r-jsconsole")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "JSconsole" version))
-              (sha256
-               (base32
-                "1jpa48xb7hh4ap25sqrl67rzqra53qhcfwpfgs6hmpjnrld8n3ha"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "JSconsole" version))
+       (sha256
+        (base32 "1jpa48xb7hh4ap25sqrl67rzqra53qhcfwpfgs6hmpjnrld8n3ha"))))
     (properties `((upstream-name . "JSconsole")))
     (build-system r-build-system)
     (propagated-inputs (list r-v8 r-rstudioapi))
@@ -1097,12 +1097,12 @@ selected lines.  This is useful to test the code.")
   (package
     (name "r-js")
     (version "1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "js" version))
-              (sha256
-               (base32
-                "0s5rj845255a4fzv4h76gcnnqyl5cg3c03r2ay3f00jxnxvvigcg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "js" version))
+       (sha256
+        (base32 "0s5rj845255a4fzv4h76gcnnqyl5cg3c03r2ay3f00jxnxvvigcg"))))
     (properties `((upstream-name . "js")))
     (build-system r-build-system)
     (propagated-inputs (list r-v8))
@@ -1119,12 +1119,12 @@ optimize and analyze @code{JavaScript} code.")
   (package
     (name "r-jrvfinance")
     (version "1.4.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jrvFinance" version))
-              (sha256
-               (base32
-                "0g3w65avys5chni0zlahzwqgv09z9na08yhay385ax33ddwrcrjv"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jrvFinance" version))
+       (sha256
+        (base32 "0g3w65avys5chni0zlahzwqgv09z9na08yhay385ax33ddwrcrjv"))))
     (properties `((upstream-name . "jrvFinance")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -1142,12 +1142,12 @@ pricing and Greeks are also provided.")
   (package
     (name "r-jrt")
     (version "1.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jrt" version))
-              (sha256
-               (base32
-                "03k5dgqqzhhd6n4pdpcyq0zy4dj35yj41c6wnz4pa2i0i16jgfdq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jrt" version))
+       (sha256
+        (base32 "03k5dgqqzhhd6n4pdpcyq0zy4dj35yj41c6wnz4pa2i0i16jgfdq"))))
     (properties `((upstream-name . "jrt")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -1175,12 +1175,12 @@ functions.")
   (package
     (name "r-jrsicklsnmf")
     (version "1.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jrSiCKLSNMF" version))
-              (sha256
-               (base32
-                "1ai3maxl1gmgr9bvc813xnfz5lk9kgzm6a46p8iidjpnv5p42c4v"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jrSiCKLSNMF" version))
+       (sha256
+        (base32 "1ai3maxl1gmgr9bvc813xnfz5lk9kgzm6a46p8iidjpnv5p42c4v"))))
     (properties `((upstream-name . "jrSiCKLSNMF")))
     (build-system r-build-system)
     (propagated-inputs (list r-umap
@@ -1223,12 +1223,12 @@ details on the methods used in this package please see Ellis, Roy, and Datta
   (package
     (name "r-jrich")
     (version "0.60-35")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jrich" version))
-              (sha256
-               (base32
-                "1y486bfqmfg3f22wm0lfk3lh20ljgi8qrgn5jji0f417wh48nf0x"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jrich" version))
+       (sha256
+        (base32 "1y486bfqmfg3f22wm0lfk3lh20ljgi8qrgn5jji0f417wh48nf0x"))))
     (properties `((upstream-name . "jrich")))
     (build-system r-build-system)
     (propagated-inputs (list r-ape))
@@ -1248,12 +1248,12 @@ conservation analysis.  The algorithm is described in: Miranda-Esquivel, D
   (package
     (name "r-jrc")
     (version "0.6.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jrc" version))
-              (sha256
-               (base32
-                "0zqif6csh4r5vbcw1dl12x2psb27r5lv0k5z0vv8bk3xk5r6vwlq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jrc" version))
+       (sha256
+        (base32 "0zqif6csh4r5vbcw1dl12x2psb27r5lv0k5z0vv8bk3xk5r6vwlq"))))
     (properties `((upstream-name . "jrc")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -1275,12 +1275,12 @@ session.")
   (package
     (name "r-jql")
     (version "3.6.9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "JQL" version))
-              (sha256
-               (base32
-                "0d926hngv4r6zl5f6yai3jwhl9hql2hv6ja3yjgplglkns66g4lh"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "JQL" version))
+       (sha256
+        (base32 "0d926hngv4r6zl5f6yai3jwhl9hql2hv6ja3yjgplglkns66g4lh"))))
     (properties `((upstream-name . "JQL")))
     (build-system r-build-system)
     (propagated-inputs (list r-randomforest r-pdist r-caret))
@@ -1307,12 +1307,12 @@ Bootstrap.")
   (package
     (name "r-jqbr")
     (version "1.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jqbr" version))
-              (sha256
-               (base32
-                "1afraa18zwv3lbgxpqj4zkvlhzmv5ziajww1iccpkr7ca1rn4zk3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jqbr" version))
+       (sha256
+        (base32 "1afraa18zwv3lbgxpqj4zkvlhzmv5ziajww1iccpkr7ca1rn4zk3"))))
     (properties `((upstream-name . "jqbr")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-jsonlite r-htmltools))
@@ -1331,12 +1331,12 @@ about @code{jQuery} @code{QueryBuilder} see <https://querybuilder.js.org/>.")
   (package
     (name "r-jpstat")
     (version "0.4.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jpstat" version))
-              (sha256
-               (base32
-                "1vzqipxk019f9chm9nxcsifiv3i2cmqvwgyx45zrh2cxsrn8bhvk"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jpstat" version))
+       (sha256
+        (base32 "1vzqipxk019f9chm9nxcsifiv3i2cmqvwgyx45zrh2cxsrn8bhvk"))))
     (properties `((upstream-name . "jpstat")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -1364,12 +1364,12 @@ statistics, and RESAS (Regional Economy and Society Analyzing System,
   (package
     (name "r-jpmesh")
     (version "2.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jpmesh" version))
-              (sha256
-               (base32
-                "0q8adf582h92qwdwgh4dk53s8rixrrh96r8vzy6bwxvizqf0i3y8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jpmesh" version))
+       (sha256
+        (base32 "0q8adf582h92qwdwgh4dk53s8rixrrh96r8vzy6bwxvizqf0i3y8"))))
     (properties `((upstream-name . "jpmesh")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -1395,12 +1395,12 @@ mesh code using ggplot2 and leaflet', etc.")
   (package
     (name "r-jpgrid")
     (version "0.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jpgrid" version))
-              (sha256
-               (base32
-                "0pp5nwvv0sglr089m78q4kaq7pkj7w2qdylpaahyjqb4iqk06grh"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jpgrid" version))
+       (sha256
+        (base32 "0pp5nwvv0sglr089m78q4kaq7pkj7w2qdylpaahyjqb4iqk06grh"))))
     (properties `((upstream-name . "jpgrid")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -1431,12 +1431,12 @@ different scales, and vice versa.")
   (package
     (name "r-jpen")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "JPEN" version))
-              (sha256
-               (base32
-                "12rvp5bmlkwyr1gg336k655hp09gym0d2wwry70c1rz30x1sf2zs"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "JPEN" version))
+       (sha256
+        (base32 "12rvp5bmlkwyr1gg336k655hp09gym0d2wwry70c1rz30x1sf2zs"))))
     (properties `((upstream-name . "JPEN")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm))
@@ -1452,12 +1452,12 @@ Covariance Matrices.")
   (package
     (name "r-jpcity")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jpcity" version))
-              (sha256
-               (base32
-                "0aw97p2ac8kb32f0lmji7xqr985vxl1i708pjaghzc3q1w8mx9ab"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jpcity" version))
+       (sha256
+        (base32 "0aw97p2ac8kb32f0lmji7xqr985vxl1i708pjaghzc3q1w8mx9ab"))))
     (properties `((upstream-name . "jpcity")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -1482,12 +1482,12 @@ city codes at a specific point in time.")
   (package
     (name "r-joyn")
     (version "0.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "joyn" version))
-              (sha256
-               (base32
-                "17x9rwcrqv7qx9w0cfyshjsij9cdl0fk13cfqbv0ibnc2nfycw87"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "joyn" version))
+       (sha256
+        (base32 "17x9rwcrqv7qx9w0cfyshjsij9cdl0fk13cfqbv0ibnc2nfycw87"))))
     (properties `((upstream-name . "joyn")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-glue r-data-table r-cli))
@@ -1505,12 +1505,12 @@ flexibility of `dplyr`, and the diagnosis and features of the `merge` command in
   (package
     (name "r-jousboost")
     (version "2.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "JOUSBoost" version))
-              (sha256
-               (base32
-                "0f3rr7aw20nvmlpqrq3wzgmr55lqdqhk3wphpqq7msgvaf1zrcl7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "JOUSBoost" version))
+       (sha256
+        (base32 "0f3rr7aw20nvmlpqrq3wzgmr55lqdqhk3wphpqq7msgvaf1zrcl7"))))
     (properties `((upstream-name . "JOUSBoost")))
     (build-system r-build-system)
     (propagated-inputs (list r-rpart r-rcpp r-foreach r-doparallel))
@@ -1525,12 +1525,12 @@ used with machine learning methods such as @code{AdaBoost}, random forests, etc.
   (package
     (name "r-journalabbr")
     (version "0.4.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "journalabbr" version))
-              (sha256
-               (base32
-                "17b9igqnd9f9pp1wkpg9zvkmvzhhhnr4nrkgzpvlb0f9hihaj60s"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "journalabbr" version))
+       (sha256
+        (base32 "17b9igqnd9f9pp1wkpg9zvkmvzhhhnr4nrkgzpvlb0f9hihaj60s"))))
     (properties `((upstream-name . "journalabbr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidytable
@@ -1556,12 +1556,12 @@ that can be directly used for latex paper writing based on Rmd files.")
   (package
     (name "r-jot")
     (version "0.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jot" version))
-              (sha256
-               (base32
-                "0pzlj9vcz7p3zcg2y32cir593x193cxswkc3y9d1xh58vamrgs60"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jot" version))
+       (sha256
+        (base32 "0pzlj9vcz7p3zcg2y32cir593x193cxswkc3y9d1xh58vamrgs60"))))
     (properties `((upstream-name . "jot")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml r-cli))
@@ -1581,12 +1581,12 @@ version histories.")
   (package
     (name "r-jose")
     (version "1.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jose" version))
-              (sha256
-               (base32
-                "09k6wnnqlsbmlag4156rcsnavph52grqagkax9kd1sxgpknril3v"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jose" version))
+       (sha256
+        (base32 "09k6wnnqlsbmlag4156rcsnavph52grqagkax9kd1sxgpknril3v"))))
     (properties `((upstream-name . "jose")))
     (build-system r-build-system)
     (propagated-inputs (list r-openssl r-jsonlite))
@@ -1605,12 +1605,12 @@ services like OAuth 2.0, @code{LetsEncrypt}, and Github Apps.")
   (package
     (name "r-josaplay")
     (version "0.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "josaplay" version))
-              (sha256
-               (base32
-                "0q6kjk3mjxwbqvq3zz0ylpi1viznp9pxzngqpjzv5sibv0ndh0lf"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "josaplay" version))
+       (sha256
+        (base32 "0q6kjk3mjxwbqvq3zz0ylpi1viznp9pxzngqpjzv5sibv0ndh0lf"))))
     (properties `((upstream-name . "josaplay")))
     (build-system r-build-system)
     (propagated-inputs (list r-utf8 r-magrittr))
@@ -1627,12 +1627,12 @@ determine which josa is appropriate.")
   (package
     (name "r-josae")
     (version "0.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "JoSAE" version))
-              (sha256
-               (base32
-                "1vjxzbfs8a7kpmn2lb9dca67d4njmzjr3pl16s0r9ihmmxxwwili"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "JoSAE" version))
+       (sha256
+        (base32 "1vjxzbfs8a7kpmn2lb9dca67d4njmzjr3pl16s0r9ihmmxxwwili"))))
     (properties `((upstream-name . "JoSAE")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlme))
@@ -1651,12 +1651,12 @@ vignette further explains the use of the implemented functions.")
   (package
     (name "r-jordan")
     (version "1.0-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jordan" version))
-              (sha256
-               (base32
-                "1d0my0lf8bmlmygz9f23skywzsrhy4xaykyrblbmhb00l0vxpa5s"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jordan" version))
+       (sha256
+        (base32 "1d0my0lf8bmlmygz9f23skywzsrhy4xaykyrblbmhb00l0vxpa5s"))))
     (properties `((upstream-name . "jordan")))
     (build-system r-build-system)
     (propagated-inputs (list r-onion r-mathjaxr r-emulator))
@@ -1675,12 +1675,12 @@ follows the ideas and notation of K. @code{McCrimmon} (2004, ISBN:0-387-95447-3)
   (package
     (name "r-jops")
     (version "0.1.19")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "JOPS" version))
-              (sha256
-               (base32
-                "0qnycf7yd1sas0v6jclmc1y0jq9bslqlf66mqyirpxcs2lsk0327"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "JOPS" version))
+       (sha256
+        (base32 "0qnycf7yd1sas0v6jclmc1y0jq9bslqlf66mqyirpxcs2lsk0327"))))
     (properties `((upstream-name . "JOPS")))
     (build-system r-build-system)
     (propagated-inputs (list r-spats
@@ -1705,12 +1705,12 @@ Marx (2021, ISBN:978-1108482950).")
   (package
     (name "r-joinxl")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "joinXL" version))
-              (sha256
-               (base32
-                "1l76bckjz5r1kdsh0s10i0gpca12rkfkp14346fn7avdcw73v23i"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "joinXL" version))
+       (sha256
+        (base32 "1l76bckjz5r1kdsh0s10i0gpca12rkfkp14346fn7avdcw73v23i"))))
     (properties `((upstream-name . "joinXL")))
     (build-system r-build-system)
     (propagated-inputs (list r-timeseries
@@ -1742,12 +1742,12 @@ to choose a base or source file and columns to merge or minus on.")
   (package
     (name "r-jointvip")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jointVIP" version))
-              (sha256
-               (base32
-                "1m1fqngc2000i7mfp6rcs5js0bg0kzspmavi55ksrb1kybf8rh7k"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jointVIP" version))
+       (sha256
+        (base32 "1m1fqngc2000i7mfp6rcs5js0bg0kzspmavi55ksrb1kybf8rh7k"))))
     (properties `((upstream-name . "jointVIP")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggrepel r-ggplot2))
@@ -1776,12 +1776,12 @@ Glyburide on Adverse Birth Outcomes\" by Liao et al. (2023)
   (package
     (name "r-jointseg")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jointseg" version))
-              (sha256
-               (base32
-                "0zilkxk30w3l9mwikmsgvpy5misjggs98c3bjrjy1pfc4b0is943"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jointseg" version))
+       (sha256
+        (base32 "0zilkxk30w3l9mwikmsgvpy5misjggs98c3bjrjy1pfc4b0is943"))))
     (properties `((upstream-name . "jointseg")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrixstats r-dnacopy r-acnr))
@@ -1801,12 +1801,12 @@ cancer studies.  The methods are described in Pierre-Jean, Rigaill and Neuvial
   (package
     (name "r-jointpm")
     (version "2.3.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jointPm" version))
-              (sha256
-               (base32
-                "0z3icbmgz0j3a2gg4gsw9h6wr0gd54kh36q57a7z71hlsrniwyfn"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jointPm" version))
+       (sha256
+        (base32 "0z3icbmgz0j3a2gg4gsw9h6wr0gd54kh36q57a7z71hlsrniwyfn"))))
     (properties `((upstream-name . "jointPm")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=jointPm")
@@ -1823,12 +1823,12 @@ bivariate extreme value models as described in Zheng, Westra, and Sisson (2013)
   (package
     (name "r-jointnmix")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jointNmix" version))
-              (sha256
-               (base32
-                "0ibh7hqkpzlfk3bk4d2dd64jhr8cvw563k082vwnljiam7k5nj4b"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jointNmix" version))
+       (sha256
+        (base32 "0ibh7hqkpzlfk3bk4d2dd64jhr8cvw563k082vwnljiam7k5nj4b"))))
     (properties `((upstream-name . "jointNmix")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=jointNmix")
@@ -1843,12 +1843,12 @@ through empirical Bayes methods.")
   (package
     (name "r-jointmeancov")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jointMeanCov" version))
-              (sha256
-               (base32
-                "1cai5g63n11dirn9fldzkqxcnkxc20ndr9ygrr9rk0s1qz8x63pb"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jointMeanCov" version))
+       (sha256
+        (base32 "1cai5g63n11dirn9fldzkqxcnkxc20ndr9ygrr9rk0s1qz8x63pb"))))
     (properties `((upstream-name . "jointMeanCov")))
     (build-system r-build-system)
     (propagated-inputs (list r-glasso))
@@ -1864,12 +1864,12 @@ Hornstein, Fan, Shedden, and Zhou (2018) <doi:10.1080/01621459.2018.1429275>.")
   (package
     (name "r-jointfpm")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "JointFPM" version))
-              (sha256
-               (base32
-                "1fgh5jzn8ygbgc54nji8bfgwl4947k5vcnjmh45hh1pryjvqywnk"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "JointFPM" version))
+       (sha256
+        (base32 "1fgh5jzn8ygbgc54nji8bfgwl4947k5vcnjmh45hh1pryjvqywnk"))))
     (properties `((upstream-name . "JointFPM")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -1893,12 +1893,12 @@ exposure groups, are also available.")
   (package
     (name "r-jointdiag")
     (version "0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jointDiag" version))
-              (sha256
-               (base32
-                "18x6rxaxhz9hcp6rfmjlanbfsc5q61p6xcxixnc8ayyxbdq7q6rf"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jointDiag" version))
+       (sha256
+        (base32 "18x6rxaxhz9hcp6rfmjlanbfsc5q61p6xcxixnc8ayyxbdq7q6rf"))))
     (properties `((upstream-name . "jointDiag")))
     (build-system r-build-system)
     (home-page "https://github.com/gouypailler/jointDiag")
@@ -1919,12 +1919,12 @@ found in Gouy-Pailler et al (2010) <doi:10.1109/TBME.2009.2032162>.")
   (package
     (name "r-jointcalib")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jointCalib" version))
-              (sha256
-               (base32
-                "0md4rmb7f3k6zy1y8s43p14wwrx2bv3j5j03sn7qh9mhpyssl8hn"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jointCalib" version))
+       (sha256
+        (base32 "0md4rmb7f3k6zy1y8s43p14wwrx2bv3j5j03sn7qh9mhpyssl8hn"))))
     (properties `((upstream-name . "jointCalib")))
     (build-system r-build-system)
     (propagated-inputs (list r-survey
@@ -1953,12 +1953,12 @@ be used.  See the paper by @code{BerÄsewicz} and Szymkowiak (2023) for detail
   (package
     (name "r-jointai")
     (version "1.0.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "JointAI" version))
-              (sha256
-               (base32
-                "1f1dmdrm8i7la2ydlcpnl0gk1yxdgf9x7s802mgp6hjplcrgzf3q"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "JointAI" version))
+       (sha256
+        (base32 "1f1dmdrm8i7la2ydlcpnl0gk1yxdgf9x7s802mgp6hjplcrgzf3q"))))
     (properties `((upstream-name . "JointAI")))
     (build-system r-build-system)
     (inputs (list jags))
@@ -1988,12 +1988,12 @@ help of the package rjags'.")
   (package
     (name "r-joint-cox")
     (version "3.16")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "joint.Cox" version))
-              (sha256
-               (base32
-                "0i2lf4q5w3893wppcig85r3ljr84j0d2m2id9kw9g194c8qgaqmm"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "joint.Cox" version))
+       (sha256
+        (base32 "0i2lf4q5w3893wppcig85r3ljr84j0d2m2id9kw9g194c8qgaqmm"))))
     (properties `((upstream-name . "joint.Cox")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival))
@@ -2023,12 +2023,12 @@ also available.")
   (package
     (name "r-joinet")
     (version "0.0.10")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "joinet" version))
-              (sha256
-               (base32
-                "1jjx1rvg2x9zdfdqsjk04hcn7qsf8g7pq8q0x9q83kd8sb1ikjk5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "joinet" version))
+       (sha256
+        (base32 "1jjx1rvg2x9zdfdqsjk04hcn7qsf8g7pq8q0x9q83kd8sb1ikjk5"))))
     (properties `((upstream-name . "joinet")))
     (build-system r-build-system)
     (propagated-inputs (list r-palasso r-glmnet r-cornet))
@@ -2049,12 +2049,12 @@ measurement.  If required, install MRCE or @code{remMap} from @code{GitHub}
   (package
     (name "r-joinerml")
     (version "0.4.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "joineRML" version))
-              (sha256
-               (base32
-                "07drhpyvsmmsbv4knx4ma91f773f48jf14lnpn8cdl5sslc6f4pp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "joineRML" version))
+       (sha256
+        (base32 "07drhpyvsmmsbv4knx4ma91f773f48jf14lnpn8cdl5sslc6f4pp"))))
     (properties `((upstream-name . "joineRML")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -2093,12 +2093,12 @@ Medical Research Council (Grant number MR/M013227/1).")
   (package
     (name "r-joiner")
     (version "1.2.8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "joineR" version))
-              (sha256
-               (base32
-                "0hf83115g5m0m1wv9yji2wvyzb5j4wrzbzkspdcswk9i4hkmp4h7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "joineR" version))
+       (sha256
+        (base32 "0hf83115g5m0m1wv9yji2wvyzb5j4wrzbzkspdcswk9i4hkmp4h7"))))
     (properties `((upstream-name . "joineR")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-statmod r-nlme r-mass r-lattice))
@@ -2125,12 +2125,12 @@ Research Council (Grant numbers G0400615 and MR/M013227/1).")
   (package
     (name "r-jof")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "JoF" version))
-              (sha256
-               (base32
-                "1my6fc4awrc822ibsvx3hiz4l49vp8dx0j05v56r7d27xizy8j0j"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "JoF" version))
+       (sha256
+        (base32 "1my6fc4awrc822ibsvx3hiz4l49vp8dx0j05v56r7d27xizy8j0j"))))
     (properties `((upstream-name . "JoF")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -2152,12 +2152,12 @@ decay, and presented frequency) that can be compared to empirical results.")
   (package
     (name "r-jocre")
     (version "0.3.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jocre" version))
-              (sha256
-               (base32
-                "1i9n3r16pq6r4sy3fc1rxpil5ws8v2is0xdxafinvwr1hzkv1gz6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jocre" version))
+       (sha256
+        (base32 "1i9n3r16pq6r4sy3fc1rxpil5ws8v2is0xdxafinvwr1hzkv1gz6"))))
     (properties `((upstream-name . "jocre")))
     (build-system r-build-system)
     (propagated-inputs (list r-tsp r-plyr r-kernsmooth r-boot))
@@ -2177,12 +2177,12 @@ well.")
   (package
     (name "r-job")
     (version "0.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "job" version))
-              (sha256
-               (base32
-                "0d7pw3q5lqlgmav1vx63y8l6gdav96656bg378wj001rx5gx052h"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "job" version))
+       (sha256
+        (base32 "0d7pw3q5lqlgmav1vx63y8l6gdav96656bg378wj001rx5gx052h"))))
     (properties `((upstream-name . "job")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstudioapi r-digest))
@@ -2200,12 +2200,12 @@ RStudio Addins can be used to run selected code as a job.")
   (package
     (name "r-jnplots")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "JNplots" version))
-              (sha256
-               (base32
-                "0k46y9gi02m9z58qny1r0fa76nriw0llz9dc62x9vvy1x3qayw2j"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "JNplots" version))
+       (sha256
+        (base32 "0k46y9gi02m9z58qny1r0fa76nriw0llz9dc62x9vvy1x3qayw2j"))))
     (properties `((upstream-name . "JNplots")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-nlme r-ape))
@@ -2222,12 +2222,12 @@ and continuous moderators.  Allows correcting for phylogenetic relatedness.")
   (package
     (name "r-jmvreadwrite")
     (version "0.4.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jmvReadWrite" version))
-              (sha256
-               (base32
-                "08039hh1nc1586kad2fx6nnghayklfrfyy5na5hsjqqn9db37h9w"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jmvReadWrite" version))
+       (sha256
+        (base32 "08039hh1nc1586kad2fx6nnghayklfrfyy5na5hsjqqn9db37h9w"))))
     (properties `((upstream-name . "jmvReadWrite")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip r-jsonlite))
@@ -2246,12 +2246,12 @@ easy transfer of data and analyses between jamovi and R.")
   (package
     (name "r-jmvcore")
     (version "2.4.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jmvcore" version))
-              (sha256
-               (base32
-                "1pzcv5rkkhff73cf9kfp56d5frk5vjjj6ls1cd4bskyrm0754p3a"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jmvcore" version))
+       (sha256
+        (base32 "1pzcv5rkkhff73cf9kfp56d5frk5vjjj6ls1cd4bskyrm0754p3a"))))
     (properties `((upstream-name . "jmvcore")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi r-rlang r-r6 r-jsonlite r-base64enc))
@@ -2266,12 +2266,12 @@ jamovi platform (see <https://www.jamovi.org> for more information).")
   (package
     (name "r-jmvconnect")
     (version "2.3.13")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jmvconnect" version))
-              (sha256
-               (base32
-                "0b5klfn4986haw3hhy3aarf88g08s1d46b8xrpxxqnwqw8yd7l88"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jmvconnect" version))
+       (sha256
+        (base32 "0b5klfn4986haw3hhy3aarf88g08s1d46b8xrpxxqnwqw8yd7l88"))))
     (properties `((upstream-name . "jmvconnect")))
     (build-system r-build-system)
     (inputs (list))
@@ -2288,61 +2288,16 @@ jamovi platform (see <https://www.jamovi.org> for more information).")
 spreadsheet (see <https://www.jamovi.org> for more information) from R.")
     (license license:gpl2+)))
 
-(define-public r-jmv
-  (package
-    (name "r-jmv")
-    (version "2.3.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jmv" version))
-              (sha256
-               (base32
-                "0mhai7kvc6fpsybpgj6adnbqsg3nlx16zfjdg6lxkhzjdv0s4gpm"))))
-    (properties `((upstream-name . "jmv")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vcdextra
-                             r-vcd
-                             r-rocr
-                             r-r6
-                             r-psych
-                             r-pmcmr
-                             r-nnet
-                             r-mvnormtest
-                             r-multcomp
-                             r-mass
-                             r-magrittr
-                             r-lavaan
-                             r-jmvcore
-                             r-gparotation
-                             r-ggridges
-                             r-ggrepel
-                             r-ggplot2
-                             r-ggally
-                             r-emmeans
-                             r-dplyr
-                             r-car
-                             r-bayesfactor
-                             r-afex))
-    (home-page "https://cran.r-project.org/package=jmv")
-    (synopsis "The 'jamovi' Analyses")
-    (description
-     "This package provides a suite of common statistical methods such as
-descriptives, t-tests, ANOVAs, regression, correlation matrices, proportion
-tests, contingency tables, and factor analysis.  This package is also useable
-from the jamovi statistical spreadsheet (see <https://www.jamovi.org> for more
-information).")
-    (license license:gpl2+)))
-
 (define-public r-jmuoutlier
   (package
     (name "r-jmuoutlier")
     (version "2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jmuOutlier" version))
-              (sha256
-               (base32
-                "1vj9n1hsf780f7l0a22kmi3qm84j4dzjybjkh5zwh6bhwfjnjws3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jmuOutlier" version))
+       (sha256
+        (base32 "1vj9n1hsf780f7l0a22kmi3qm84j4dzjybjkh5zwh6bhwfjnjws3"))))
     (properties `((upstream-name . "jmuOutlier")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=jmuOutlier")
@@ -2360,12 +2315,12 @@ triangular distributions.  Performs power calculations for the binomial test.")
   (package
     (name "r-jmotif")
     (version "1.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jmotif" version))
-              (sha256
-               (base32
-                "0b2qllpfgs6q5fwfhxl5b4xdyzbvnja7ld766akf0xxznxvglkrg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jmotif" version))
+       (sha256
+        (base32 "0b2qllpfgs6q5fwfhxl5b4xdyzbvnja7ld766akf0xxznxvglkrg"))))
     (properties `((upstream-name . "jmotif")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -2383,12 +2338,12 @@ discovery along with interpretable time series classification.")
   (package
     (name "r-jmisc")
     (version "0.3.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Jmisc" version))
-              (sha256
-               (base32
-                "0fcch7rg8gn92855smd7h2andr33h9dnccjy12w2bx0px8rnqa0s"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Jmisc" version))
+       (sha256
+        (base32 "0fcch7rg8gn92855smd7h2andr33h9dnccjy12w2bx0px8rnqa0s"))))
     (properties `((upstream-name . "Jmisc")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=Jmisc")
@@ -2400,12 +2355,12 @@ discovery along with interpretable time series classification.")
   (package
     (name "r-jmi")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "JMI" version))
-              (sha256
-               (base32
-                "05phkwfb9v4g9jixlvbj6br7sbi64zvrgjwfr0v87ijddkxc9si9"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "JMI" version))
+       (sha256
+        (base32 "05phkwfb9v4g9jixlvbj6br7sbi64zvrgjwfr0v87ijddkxc9si9"))))
     (properties `((upstream-name . "JMI")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -2421,12 +2376,12 @@ provides the p-value for dependence tests.  See Zeng, X., Xia, Y. and Tong, H.
   (package
     (name "r-jmh")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "JMH" version))
-              (sha256
-               (base32
-                "0085ka230hz9qxl7r907mwny9m5hdd15wnw7vy9j3z9c2lv2nhpb"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "JMH" version))
+       (sha256
+        (base32 "0085ka230hz9qxl7r907mwny9m5hdd15wnw7vy9j3z9c2lv2nhpb"))))
     (properties `((upstream-name . "JMH")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -2457,12 +2412,12 @@ using an Expectation Maximization algorithm.")
   (package
     (name "r-jmetrik")
     (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jmetrik" version))
-              (sha256
-               (base32
-                "1if1kxx8apgkbxpkjnlj2lpsfnyj2splsg1p3j5vxa7q6wx70f9j"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jmetrik" version))
+       (sha256
+        (base32 "1if1kxx8apgkbxpkjnlj2lpsfnyj2splsg1p3j5vxa7q6wx70f9j"))))
     (properties `((upstream-name . "jmetrik")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=jmetrik")
@@ -2483,12 +2438,12 @@ data type, item scoring, special data codes, and variable label.")
   (package
     (name "r-jmdesign")
     (version "1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "JMdesign" version))
-              (sha256
-               (base32
-                "0pa0j4hw5r3j94p2hhlb0qnsh1mvr1fdllqpkr50gci607ckv0g3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "JMdesign" version))
+       (sha256
+        (base32 "0pa0j4hw5r3j94p2hhlb0qnsh1mvr1fdllqpkr50gci607ckv0g3"))))
     (properties `((upstream-name . "JMdesign")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=JMdesign")
@@ -2504,12 +2459,12 @@ Sigma_theta, is unknown.")
   (package
     (name "r-jmdem")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jmdem" version))
-              (sha256
-               (base32
-                "15zrxgd5fgi4wzp4s963pnwj3vkgxs4ygqrcpncy9b6j2cxrivdc"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jmdem" version))
+       (sha256
+        (base32 "15zrxgd5fgi4wzp4s963pnwj3vkgxs4ygqrcpncy9b6j2cxrivdc"))))
     (properties `((upstream-name . "jmdem")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam r-statmod))
@@ -2529,12 +2484,12 @@ power on the other.  Wu & Li (2016) <doi:10.1016/j.csda.2016.04.015>.")
   (package
     (name "r-jmcm")
     (version "0.2.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jmcm" version))
-              (sha256
-               (base32
-                "1dpm94k2s2vx3dvd5rk7xrsq786phl0hq7xi9fjjxbr8qfmxhsck"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jmcm" version))
+       (sha256
+        (base32 "1dpm94k2s2vx3dvd5rk7xrsq786phl0hq7xi9fjjxbr8qfmxhsck"))))
     (properties `((upstream-name . "jmcm")))
     (build-system r-build-system)
     (propagated-inputs (list r-roptim r-rcpparmadillo r-rcpp r-formula))
@@ -2552,12 +2507,12 @@ algebra and @code{RcppArmadillo} glue.")
   (package
     (name "r-jmbig")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jmBIG" version))
-              (sha256
-               (base32
-                "129b39ax1flw9d4aar0v6640axm934myipag524vh5dfzc2dsrdr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jmBIG" version))
+       (sha256
+        (base32 "129b39ax1flw9d4aar0v6640axm934myipag524vh5dfzc2dsrdr"))))
     (properties `((upstream-name . "jmBIG")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -2589,12 +2544,12 @@ medical and health sciences.")
   (package
     (name "r-jmbayes2")
     (version "0.4-5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "JMbayes2" version))
-              (sha256
-               (base32
-                "0qdfp3r7wfy955f956jhryvxbnnw2zrnkqq931191z2v0xmird97"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "JMbayes2" version))
+       (sha256
+        (base32 "0qdfp3r7wfy955f956jhryvxbnnw2zrnkqq931191z2v0xmird97"))))
     (properties `((upstream-name . "JMbayes2")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -2620,12 +2575,12 @@ accommodated.  Rizopoulos (2012, ISBN:9781439872864).")
   (package
     (name "r-jmbayes")
     (version "0.8-85")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "JMbayes" version))
-              (sha256
-               (base32
-                "0s11jpzflc2zg60g4ffcw23c2f4zz3mzddrc2cl5y43xl2v304lb"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "JMbayes" version))
+       (sha256
+        (base32 "0s11jpzflc2zg60g4ffcw23c2f4zz3mzddrc2cl5y43xl2v304lb"))))
     (properties `((upstream-name . "JMbayes")))
     (build-system r-build-system)
     (inputs (list jags))
@@ -2653,12 +2608,12 @@ data using MCMC; Dimitris Rizopoulos (2016) <doi:10.18637/jss.v072.i07>.")
   (package
     (name "r-jmatrix")
     (version "1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jmatrix" version))
-              (sha256
-               (base32
-                "0ydy93bfgci11dam45lqpskj4pdlwjk4qq57g1f4352558nh9hkp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jmatrix" version))
+       (sha256
+        (base32 "0ydy93bfgci11dam45lqpskj4pdlwjk4qq57g1f4352558nh9hkp"))))
     (properties `((upstream-name . "jmatrix")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-memuse))
@@ -2688,12 +2643,12 @@ matrices of any standard data type.")
   (package
     (name "r-jmastats")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jmastats" version))
-              (sha256
-               (base32
-                "1x9x9wpmjjaxq4rk9m6mlkydpmsxc9y68cqnp4viajghhjmabvqz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jmastats" version))
+       (sha256
+        (base32 "1x9x9wpmjjaxq4rk9m6mlkydpmsxc9y68cqnp4viajghhjmabvqz"))))
     (properties `((upstream-name . "jmastats")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -2730,12 +2685,12 @@ handle earthquake record files.")
   (package
     (name "r-jm")
     (version "1.5-2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "JM" version))
-              (sha256
-               (base32
-                "133s565gp18ddnbawhzix978p4yj11lp4vlaqs0dq52ww46f3byj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "JM" version))
+       (sha256
+        (base32 "133s565gp18ddnbawhzix978p4yj11lp4vlaqs0dq52ww46f3byj"))))
     (properties `((upstream-name . "JM")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-nlme r-mass))
@@ -2750,12 +2705,12 @@ data.")
   (package
     (name "r-jlpm")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "JLPM" version))
-              (sha256
-               (base32
-                "0k63vi44vfb0k9nkqyhh3iymrca7p47xf2h4x2c4fi50v6bs3v2l"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "JLPM" version))
+       (sha256
+        (base32 "0k63vi44vfb0k9nkqyhh3iymrca7p47xf2h4x2c4fi50v6bs3v2l"))))
     (properties `((upstream-name . "JLPM")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-stringr r-randtoolbox r-marqlevalg))
@@ -2774,12 +2729,12 @@ estimation.  See Saulnier et al, 2021 <@code{arXiv:2110.02612>}.")
   (package
     (name "r-jlmerclusterperm")
     (version "1.0.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jlmerclusterperm" version))
-              (sha256
-               (base32
-                "07kihrzjilqwig6sj93hd9gjhafkns93ag9w7ma6dxwvjq45bplb"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jlmerclusterperm" version))
+       (sha256
+        (base32 "07kihrzjilqwig6sj93hd9gjhafkns93ag9w7ma6dxwvjq45bplb"))))
     (properties `((upstream-name . "jlmerclusterperm")))
     (build-system r-build-system)
     (inputs (list julia))
@@ -2805,12 +2760,12 @@ functionalities for interfacing with Julia from R powered by the
   (package
     (name "r-jlctree")
     (version "0.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jlctree" version))
-              (sha256
-               (base32
-                "0l8piz0m9iv9lbw35yx1ww0db0pv0qhbvkz4l36fwjsgnjlh8f6a"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jlctree" version))
+       (sha256
+        (base32 "0l8piz0m9iv9lbw35yx1ww0db0pv0qhbvkz4l36fwjsgnjlh8f6a"))))
     (properties `((upstream-name . "jlctree")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rpart r-lme4))
@@ -2829,12 +2784,12 @@ association.  See Zhang and Simonoff (2018) <@code{arXiv:1812.01774>}.")
   (package
     (name "r-jjb")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jjb" version))
-              (sha256
-               (base32
-                "0y9yvnzg6xngz1fvzl5jm4yb1pg6wrp3id0gysv214wcznf3gna9"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jjb" version))
+       (sha256
+        (base32 "0y9yvnzg6xngz1fvzl5jm4yb1pg6wrp3id0gysv214wcznf3gna9"))))
     (properties `((upstream-name . "jjb")))
     (build-system r-build-system)
     (home-page "https://github.com/coatless/jjb")
@@ -2849,12 +2804,12 @@ scaling, and more!")
   (package
     (name "r-jipapprox")
     (version "0.1.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jipApprox" version))
-              (sha256
-               (base32
-                "0pi85gl0knyi5r32bdmy2x0w805kczs41nx3r45bq0zs66g14fix"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jipApprox" version))
+       (sha256
+        (base32 "0pi85gl0knyi5r32bdmy2x0w805kczs41nx3r45bq0zs66g14fix"))))
     (properties `((upstream-name . "jipApprox")))
     (build-system r-build-system)
     (propagated-inputs (list r-sampling))
@@ -2871,12 +2826,12 @@ probabilities of a general sampling design as in Fattorini (2006)
   (package
     (name "r-jinjar")
     (version "0.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jinjar" version))
-              (sha256
-               (base32
-                "10lilj98ppy3cpimn5pzsfkvm5chz4bw1rx3a3frgy56nmapnmsv"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jinjar" version))
+       (sha256
+        (base32 "10lilj98ppy3cpimn5pzsfkvm5chz4bw1rx3a3frgy56nmapnmsv"))))
     (properties `((upstream-name . "jinjar")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-jsonlite r-fs r-cpp11 r-cli))
@@ -2894,12 +2849,12 @@ such as variables, loops, conditions and inheritance.")
   (package
     (name "r-jiebard")
     (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jiebaRD" version))
-              (sha256
-               (base32
-                "1wadpcdca4pm56r8q22y4axmqdbb2dazsh2vlhjy73rpymqfcph4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jiebaRD" version))
+       (sha256
+        (base32 "1wadpcdca4pm56r8q22y4axmqdbb2dazsh2vlhjy73rpymqfcph4"))))
     (properties `((upstream-name . "jiebaRD")))
     (build-system r-build-system)
     (home-page "https://github.com/qinwf/jiebaRD/")
@@ -2913,12 +2868,12 @@ speech tagging.  This package provides the data files required by @code{jiebaR}.
   (package
     (name "r-jiebar")
     (version "0.11")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jiebaR" version))
-              (sha256
-               (base32
-                "08v64xwr9jp4vh88x7y935khh4cmj8rwsjaxfd2c67n0445qppmd"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jiebaR" version))
+       (sha256
+        (base32 "08v64xwr9jp4vh88x7y935khh4cmj8rwsjaxfd2c67n0445qppmd"))))
     (properties `((upstream-name . "jiebaR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-jiebard))
@@ -2933,12 +2888,12 @@ speech tagging.  This package provides the data files required by @code{jiebaR}.
   (package
     (name "r-jico")
     (version "0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "JICO" version))
-              (sha256
-               (base32
-                "08ah7bjwkxm8fdk1s0vj3lpc7dvgz9llyhh4z9xsgpf4w98rwsvb"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "JICO" version))
+       (sha256
+        (base32 "08ah7bjwkxm8fdk1s0vj3lpc7dvgz9llyhh4z9xsgpf4w98rwsvb"))))
     (properties `((upstream-name . "JICO")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlist r-nleqslv r-matrix r-mass))
@@ -2959,12 +2914,12 @@ cross-validation function to perform hyperparameter tuning.")
   (package
     (name "r-jgsbook")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jgsbook" version))
-              (sha256
-               (base32
-                "0q2k2fff6qzn9mgf629arpc055xjhych0bj412kq9yp68kgmzr46"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jgsbook" version))
+       (sha256
+        (base32 "0q2k2fff6qzn9mgf629arpc055xjhych0bj412kq9yp68kgmzr46"))))
     (properties `((upstream-name . "jgsbook")))
     (build-system r-build-system)
     (propagated-inputs (list r-statip r-jsonlite r-httr r-curl))
@@ -2980,12 +2935,12 @@ by grosse Schlarmann (2022) <https://www.produnis.de/R/>.")
   (package
     (name "r-jgr")
     (version "1.9-2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "JGR" version))
-              (sha256
-               (base32
-                "1rcmbgxwzwhzh5fa0lghjdllcfkpirdavdghvxx5fjysn7a38mjv"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "JGR" version))
+       (sha256
+        (base32 "1rcmbgxwzwhzh5fa0lghjdllcfkpirdavdghvxx5fjysn7a38mjv"))))
     (properties `((upstream-name . "JGR")))
     (build-system r-build-system)
     (inputs (list openjdk))
@@ -3002,12 +2957,12 @@ application which depends on your OS.")
   (package
     (name "r-jgl")
     (version "2.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "JGL" version))
-              (sha256
-               (base32
-                "02p9z32f8j60wnh1szkjr2zfa9zwyw0gqinpsvll4dymf8cjawpw"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "JGL" version))
+       (sha256
+        (base32 "02p9z32f8j60wnh1szkjr2zfa9zwyw0gqinpsvll4dymf8cjawpw"))))
     (properties `((upstream-name . "JGL")))
     (build-system r-build-system)
     (propagated-inputs (list r-igraph))
@@ -3029,12 +2984,12 @@ Witten DM. (2013) <doi:10.1111/rssb.12033>.")
   (package
     (name "r-jgcricolors")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jgcricolors" version))
-              (sha256
-               (base32
-                "1lg6yzqly5y2cf396b6rvfqplnfyz9v9ay2g4q9m110mng5ln96l"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jgcricolors" version))
+       (sha256
+        (base32 "1lg6yzqly5y2cf396b6rvfqplnfyz9v9ay2g4q9m110mng5ln96l"))))
     (properties `((upstream-name . "jgcricolors")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-rcolorbrewer r-markdown r-knitr
@@ -3051,12 +3006,12 @@ Change Research Institute for maps and charts.")
   (package
     (name "r-jfm")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "JFM" version))
-              (sha256
-               (base32
-                "08655vgfb2ll8hwjsj5lsw4849rahn3blisdqn8bwfhclrwd24xn"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "JFM" version))
+       (sha256
+        (base32 "08655vgfb2ll8hwjsj5lsw4849rahn3blisdqn8bwfhclrwd24xn"))))
     (properties `((upstream-name . "JFM")))
     (build-system r-build-system)
     (propagated-inputs (list r-rvcg
@@ -3077,12 +3032,12 @@ derived from point cloud and makes data available for structural analysis.")
   (package
     (name "r-jfe")
     (version "2.5.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "JFE" version))
-              (sha256
-               (base32
-                "11aybw7jmvg9fnihxl7l9w9294b4841x1nqq7csw3x1pbj40a4pj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "JFE" version))
+       (sha256
+        (base32 "11aybw7jmvg9fnihxl7l9w9294b4841x1nqq7csw3x1pbj40a4pj"))))
     (properties `((upstream-name . "JFE")))
     (build-system r-build-system)
     (propagated-inputs (list r-tcltk2 r-fportfolio))
@@ -3099,12 +3054,12 @@ Bacon (2004) <DOI:10.1002/9781119206309>.")
   (package
     (name "r-jfa")
     (version "0.6.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jfa" version))
-              (sha256
-               (base32
-                "0ayir29lxj4kvqs7p78cma2ll46irkgf0x2j03iijv60pga2h0rb"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jfa" version))
+       (sha256
+        (base32 "0ayir29lxj4kvqs7p78cma2ll46irkgf0x2j03iijv60pga2h0rb"))))
     (properties `((upstream-name . "jfa")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncdist
@@ -3139,12 +3094,12 @@ for repeated values.")
   (package
     (name "r-jewel")
     (version "2.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jewel" version))
-              (sha256
-               (base32
-                "0lj97bgqd2q3s2dcksn1nv4wwiw4ik9aimwa7kamfl0lmrlcz165"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jewel" version))
+       (sha256
+        (base32 "0lj97bgqd2q3s2dcksn1nv4wwiw4ik9aimwa7kamfl0lmrlcz165"))))
     (properties `((upstream-name . "jewel")))
     (build-system r-build-system)
     (propagated-inputs (list r-smut
@@ -3169,12 +3124,12 @@ Implementation of the method described in Angelini, De Canditiis and Plaksienko
   (package
     (name "r-jetpack")
     (version "0.5.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jetpack" version))
-              (sha256
-               (base32
-                "0c2vvayci7jm1p97ccgb5nccrgvdyid4fgh12cab18xwrwx1hzxx"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jetpack" version))
+       (sha256
+        (base32 "0c2vvayci7jm1p97ccgb5nccrgvdyid4fgh12cab18xwrwx1hzxx"))))
     (properties `((upstream-name . "jetpack")))
     (build-system r-build-system)
     (propagated-inputs (list r-renv r-remotes r-docopt r-desc))
@@ -3191,12 +3146,12 @@ dependencies with a single function.")
   (package
     (name "r-jenga")
     (version "1.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jenga" version))
-              (sha256
-               (base32
-                "0yq1nkaakzajjdk3w6hzikl6pwqx0546mcb1ik688b0l55vmwphc"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jenga" version))
+       (sha256
+        (base32 "0yq1nkaakzajjdk3w6hzikl6pwqx0546mcb1ik688b0l55vmwphc"))))
     (properties `((upstream-name . "jenga")))
     (build-system r-build-system)
     (propagated-inputs (list r-tictoc
@@ -3229,12 +3184,12 @@ search.")
   (package
     (name "r-jeek")
     (version "1.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jeek" version))
-              (sha256
-               (base32
-                "15n0k0i1wwp72g8zqrjmglnckab3p65q3rnpg6d6h8hjcpv82i7g"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jeek" version))
+       (sha256
+        (base32 "15n0k0i1wwp72g8zqrjmglnckab3p65q3rnpg6d6h8hjcpv82i7g"))))
     (properties `((upstream-name . "jeek")))
     (build-system r-build-system)
     (propagated-inputs (list r-pcapp r-lpsolve r-igraph))
@@ -3260,12 +3215,12 @@ Related Sparse Gaussian Graphical Models\" (ICML 2018) <@code{arXiv:1806.00548>}
   (package
     (name "r-jds-rmd")
     (version "0.3.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jds.rmd" version))
-              (sha256
-               (base32
-                "1ylpq3b6vqi8gj2q2vfkl9zshkwcn08mqms9rpvlwc34wrp09ian"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jds.rmd" version))
+       (sha256
+        (base32 "1ylpq3b6vqi8gj2q2vfkl9zshkwcn08mqms9rpvlwc34wrp09ian"))))
     (properties `((upstream-name . "jds.rmd")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmarkdown r-bookdown))
@@ -3280,12 +3235,12 @@ Science.")
   (package
     (name "r-jdmbs")
     (version "1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Jdmbs" version))
-              (sha256
-               (base32
-                "14wprvxjyx1da1642z11wkzjiyxd5rbpaw1mzq4x6aw53dvh1kgv"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Jdmbs" version))
+       (sha256
+        (base32 "14wprvxjyx1da1642z11wkzjiyxd5rbpaw1mzq4x6aw53dvh1kgv"))))
     (properties `((upstream-name . "Jdmbs")))
     (build-system r-build-system)
     (propagated-inputs (list r-png r-igraph r-ggplot2))
@@ -3308,12 +3263,12 @@ affect each other.")
   (package
     (name "r-jdenticon")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jdenticon" version))
-              (sha256
-               (base32
-                "19gczsf3b00rm1hbqf2azsxh698h0xbbdn3fx3nj5hr7ka24chzr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jdenticon" version))
+       (sha256
+        (base32 "19gczsf3b00rm1hbqf2azsxh698h0xbbdn3fx3nj5hr7ka24chzr"))))
     (properties `((upstream-name . "jdenticon")))
     (build-system r-build-system)
     (propagated-inputs (list r-yesno
@@ -3334,12 +3289,12 @@ reduce user dependencies.")
   (package
     (name "r-jcrimpactfactor")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "JCRImpactFactor" version))
-              (sha256
-               (base32
-                "1i7853i8k03nq7ax9rypm9qcl5qgyddblgbfjp3yxi1s3a6bkwk1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "JCRImpactFactor" version))
+       (sha256
+        (base32 "1i7853i8k03nq7ax9rypm9qcl5qgyddblgbfjp3yxi1s3a6bkwk1"))))
     (properties `((upstream-name . "JCRImpactFactor")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr))
@@ -3356,12 +3311,12 @@ journals only that were included Journal Citation Reports JCR'.")
   (package
     (name "r-jcp")
     (version "1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jcp" version))
-              (sha256
-               (base32
-                "120hhysgnb5992ss2ays7ksyy0xb251lsxgnxihc11h2rqg6wqv8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jcp" version))
+       (sha256
+        (base32 "120hhysgnb5992ss2ays7ksyy0xb251lsxgnxihc11h2rqg6wqv8"))))
     (properties `((upstream-name . "jcp")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=jcp")
@@ -3379,12 +3334,12 @@ of changes in expectation and variance, Scandinavian Journal of Statistics, DOI
   (package
     (name "r-jcext")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jcext" version))
-              (sha256
-               (base32
-                "02zppiyq3gy551zi1g00gam1w4y1wgzn5zi9wrcz8yw915dla0ix"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jcext" version))
+       (sha256
+        (base32 "02zppiyq3gy551zi1g00gam1w4y1wgzn5zi9wrcz8yw915dla0ix"))))
     (properties `((upstream-name . "jcext")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -3407,12 +3362,12 @@ during the period considered for the analysis.  See Otero et al., (2017)
   (package
     (name "r-jbrowser")
     (version "0.10.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "JBrowseR" version))
-              (sha256
-               (base32
-                "0siqg09lcjdkvqlywsp9fggn574f6yn207nda3q65n0p2xprl8ry"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "JBrowseR" version))
+       (sha256
+        (base32 "0siqg09lcjdkvqlywsp9fggn574f6yn207nda3q65n0p2xprl8ry"))))
     (properties `((upstream-name . "JBrowseR")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -3442,12 +3397,12 @@ custom theme.")
   (package
     (name "r-jaya")
     (version "0.1.9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Jaya" version))
-              (sha256
-               (base32
-                "0b23l7xp4waxjy1vkk09xaali5axr5900v9hkki4f75wh4gb1l53"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Jaya" version))
+       (sha256
+        (base32 "0b23l7xp4waxjy1vkk09xaali5axr5900v9hkki4f75wh4gb1l53"))))
     (properties `((upstream-name . "Jaya")))
     (build-system r-build-system)
     (propagated-inputs (list r-ga))
@@ -3466,12 +3421,12 @@ Rao (2016) <doi:10.5267/j.ijiec.2015.8.004> .")
   (package
     (name "r-javagd")
     (version "0.6-5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "JavaGD" version))
-              (sha256
-               (base32
-                "1wl31k02x3j9hpf8c8gsmi3k3b3vz9a3y38pz6wa9r41r791rnr1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "JavaGD" version))
+       (sha256
+        (base32 "1wl31k02x3j9hpf8c8gsmi3k3b3vz9a3y38pz6wa9r41r791rnr1"))))
     (properties `((upstream-name . "JavaGD")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjava))
@@ -3487,12 +3442,12 @@ Simple AWT and Swing implementations are included.")
   (package
     (name "r-jatsdecoder")
     (version "1.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "JATSdecoder" version))
-              (sha256
-               (base32
-                "0422liy1qyih0nrwmd1vmzlsk94axmvnraxgwyp4j87ip7qvxaak"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "JATSdecoder" version))
+       (sha256
+        (base32 "0422liy1qyih0nrwmd1vmzlsk94axmvnraxgwyp4j87ip7qvxaak"))))
     (properties `((upstream-name . "JATSdecoder")))
     (build-system r-build-system)
     (propagated-inputs (list r-opennlp r-nlp))
@@ -3522,12 +3477,12 @@ BÃ¶schen, I. (2021) <doi:10.1038/s41598-021-98782-3> and BÃ¶schen, I (2023)
   (package
     (name "r-jarbes")
     (version "2.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jarbes" version))
-              (sha256
-               (base32
-                "0lx565m9abvai47ndpryxbhpsdnh76sbaf0mixpd58raqnysc26b"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jarbes" version))
+       (sha256
+        (base32 "0lx565m9abvai47ndpryxbhpsdnh76sbaf0mixpd58raqnysc26b"))))
     (properties `((upstream-name . "jarbes")))
     (build-system r-build-system)
     (inputs (list jags))
@@ -3554,12 +3509,12 @@ results of observational studies (OS).")
   (package
     (name "r-japanstat")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "japanstat" version))
-              (sha256
-               (base32
-                "0rd2q23s9r075ns47ccmr8fjvdcv2jncjs9w1c668s597cwkf6lb"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "japanstat" version))
+       (sha256
+        (base32 "0rd2q23s9r075ns47ccmr8fjvdcv2jncjs9w1c668s597cwkf6lb"))))
     (properties `((upstream-name . "japanstat")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -3587,12 +3542,12 @@ formatting.")
   (package
     (name "r-janus")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "janus" version))
-              (sha256
-               (base32
-                "0dpd24qxwlnrrjyx2gffsmfbsf1schfnq9ck75k9935gmwy2ig04"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "janus" version))
+       (sha256
+        (base32 "0dpd24qxwlnrrjyx2gffsmfbsf1schfnq9ck75k9935gmwy2ig04"))))
     (properties `((upstream-name . "janus")))
     (build-system r-build-system)
     (propagated-inputs (list r-tictoc
@@ -3622,12 +3577,12 @@ deep-neural networks using tensorflow'.")
   (package
     (name "r-jamendor")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "JamendoR" version))
-              (sha256
-               (base32
-                "0rrfbci413mqq53p5fyj8rjangdx21iyin6hzqkxyrxrv3n5mfbx"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "JamendoR" version))
+       (sha256
+        (base32 "0rrfbci413mqq53p5fyj8rjangdx21iyin6hzqkxyrxrv3n5mfbx"))))
     (properties `((upstream-name . "JamendoR")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-httr r-dplyr))
@@ -3644,12 +3599,12 @@ information for a given Jamendo user (including yourself!) or enter an artist's
   (package
     (name "r-jalcal")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jalcal" version))
-              (sha256
-               (base32
-                "19smqrhvab8f2xb8pa8x6gmvr0r2lwvqisfahixs7aa8lxi708jw"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jalcal" version))
+       (sha256
+        (base32 "19smqrhvab8f2xb8pa8x6gmvr0r2lwvqisfahixs7aa8lxi708jw"))))
     (properties `((upstream-name . "jalcal")))
     (build-system r-build-system)
     (home-page "https://github.com/jalilian/jalcal")
@@ -3667,12 +3622,12 @@ tools for converting the Jalali and Gregorian dates.")
   (package
     (name "r-jagsui")
     (version "1.5.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jagsUI" version))
-              (sha256
-               (base32
-                "1ig2v5k1xjggh694azr96cv80qapq8al7dhsjhvkx0dihp8kgad2"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jagsUI" version))
+       (sha256
+        (base32 "1ig2v5k1xjggh694azr96cv80qapq8al7dhsjhvkx0dihp8kgad2"))))
     (properties `((upstream-name . "jagsUI")))
     (build-system r-build-system)
     (inputs (list jags))
@@ -3695,12 +3650,12 @@ switching between MCMC samplers.")
   (package
     (name "r-jagstargets")
     (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jagstargets" version))
-              (sha256
-               (base32
-                "12iiqma5b114rnbcknid0qhhc1wr5hm4p2hg8d0bmxhsxnr9hfkr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jagstargets" version))
+       (sha256
+        (base32 "12iiqma5b114rnbcknid0qhhc1wr5hm4p2hg8d0bmxhsxnr9hfkr"))))
     (properties `((upstream-name . "jagstargets")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -3736,12 +3691,12 @@ methodology, please refer to the documentation of targets
   (package
     (name "r-jagshelper")
     (version "0.1.11")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jagshelper" version))
-              (sha256
-               (base32
-                "0n8jzzqy4zpzqx461dkma5sg4hvdr15hz2xg1jy7dhf6gz4yljls"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jagshelper" version))
+       (sha256
+        (base32 "0n8jzzqy4zpzqx461dkma5sg4hvdr15hz2xg1jy7dhf6gz4yljls"))))
     (properties `((upstream-name . "jagshelper")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-jagsui))
@@ -3761,12 +3716,12 @@ can be found at <DOI:10.1214/ss/1177011136>.")
   (package
     (name "r-jaggr")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jaggR" version))
-              (sha256
-               (base32
-                "0qd4kwcc8zcvg2p1njcv7z4y5ssg77zsylph5bcaqdjxq996q7rv"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jaggR" version))
+       (sha256
+        (base32 "0qd4kwcc8zcvg2p1njcv7z4y5ssg77zsylph5bcaqdjxq996q7rv"))))
     (properties `((upstream-name . "jaggR")))
     (build-system r-build-system)
     (propagated-inputs (list r-glue r-formatr))
@@ -3787,12 +3742,12 @@ time, further information can be obtained by emailing James Curran.")
   (package
     (name "r-jadelizardoptions")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jadeLizardOptions" version))
-              (sha256
-               (base32
-                "1919qm9b5nb6bjwbqhsnimgn5lhcrrhd90ndnsc9kj3z3khw9mkd"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jadeLizardOptions" version))
+       (sha256
+        (base32 "1919qm9b5nb6bjwbqhsnimgn5lhcrrhd90ndnsc9kj3z3khw9mkd"))))
     (properties `((upstream-name . "jadeLizardOptions")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-magrittr r-ggplot2 r-dplyr))
@@ -3812,12 +3767,12 @@ essential reference for option traders (First edition.)â, 2019, ISBN:
   (package
     (name "r-jacpop")
     (version "0.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jacpop" version))
-              (sha256
-               (base32
-                "0kq6rn33civ2g6i5nwfqvcgmnn5k2dwmw60lkmz4ywm0y4xxlkai"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jacpop" version))
+       (sha256
+        (base32 "0kq6rn33civ2g6i5nwfqvcgmnn5k2dwmw60lkmz4ywm0y4xxlkai"))))
     (properties `((upstream-name . "jacpop")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=jacpop")
@@ -3833,12 +3788,12 @@ rare variant analysis.")
   (package
     (name "r-jacobieigen")
     (version "0.3-4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "JacobiEigen" version))
-              (sha256
-               (base32
-                "1jm63w2jn89pk725x3d9myq010mb0g5ir8vhv29mkiwgrqig6iw1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "JacobiEigen" version))
+       (sha256
+        (base32 "1jm63w2jn89pk725x3d9myq010mb0g5ir8vhv29mkiwgrqig6iw1"))))
     (properties `((upstream-name . "JacobiEigen")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -3855,12 +3810,12 @@ Mainly as a programming example for teaching purposes.")
   (package
     (name "r-jacobi")
     (version "2.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jacobi" version))
-              (sha256
-               (base32
-                "1l2cmnd2z5a5308d5ri1bviyh8w41x2sg1gi8f79xghxwvf7djbp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jacobi" version))
+       (sha256
+        (base32 "1l2cmnd2z5a5308d5ri1bviyh8w41x2sg1gi8f79xghxwvf7djbp"))))
     (properties `((upstream-name . "jacobi")))
     (build-system r-build-system)
     (propagated-inputs (list r-rvcg r-rgl r-rcpp r-carlson))
@@ -3879,12 +3834,12 @@ supported.")
   (package
     (name "r-jackstraw")
     (version "1.3.8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jackstraw" version))
-              (sha256
-               (base32
-                "04d0ribg8nbxazv92hmzzks2krsx024glfc90cm9dxz7if44cwc9"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jackstraw" version))
+       (sha256
+        (base32 "04d0ribg8nbxazv92hmzzks2krsx024glfc90cm9dxz7if44cwc9"))))
     (properties `((upstream-name . "jackstraw")))
     (build-system r-build-system)
     (propagated-inputs (list r-rsvd
@@ -3922,12 +3877,12 @@ identities in single cell RNA-seq.")
   (package
     (name "r-jackstrap")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jackstrap" version))
-              (sha256
-               (base32
-                "09y9pgb920lnbzlgm6j188q8lw1air83kx383a2f89zz7hhgg7jr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jackstrap" version))
+       (sha256
+        (base32 "09y9pgb920lnbzlgm6j188q8lw1air83kx383a2f89zz7hhgg7jr"))))
     (properties `((upstream-name . "jackstrap")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -3957,12 +3912,12 @@ Frontier Measurements for Outliers.\" <doi:10.1007/s11123-005-4702-4>.")
   (package
     (name "r-jackknifer")
     (version "1.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jackknifeR" version))
-              (sha256
-               (base32
-                "0s2kf0r102gwcrjd2ggimyxw99nwcdd0pfwgyw922f2kzwf0rxq6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jackknifeR" version))
+       (sha256
+        (base32 "0s2kf0r102gwcrjd2ggimyxw99nwcdd0pfwgyw922f2kzwf0rxq6"))))
     (properties `((upstream-name . "jackknifeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-foreach r-doparallel))
@@ -3981,12 +3936,12 @@ intervals based on the methodology discussed by Quenouille (1956)
   (package
     (name "r-jackknifekme")
     (version "1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jackknifeKME" version))
-              (sha256
-               (base32
-                "0c5shl6s46kz7a623gccqk2plrrf2g29nwr6vbny6009pq3jvzam"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jackknifeKME" version))
+       (sha256
+        (base32 "0c5shl6s46kz7a623gccqk2plrrf2g29nwr6vbny6009pq3jvzam"))))
     (properties `((upstream-name . "jackknifeKME")))
     (build-system r-build-system)
     (propagated-inputs (list r-imputeyn))
@@ -4001,12 +3956,12 @@ estimators.")
   (package
     (name "r-jackalope")
     (version "1.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jackalope" version))
-              (sha256
-               (base32
-                "1cslrl2cvcpi2kisb2plkz8c3wfxkbkf816nnyb06k4mv3gy4r5d"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jackalope" version))
+       (sha256
+        (base32 "1cslrl2cvcpi2kisb2plkz8c3wfxkbkf816nnyb06k4mv3gy4r5d"))))
     (properties `((upstream-name . "jackalope")))
     (build-system r-build-system)
     (inputs (list zlib))
@@ -4043,12 +3998,12 @@ file formats.")
   (package
     (name "r-jack")
     (version "5.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jack" version))
-              (sha256
-               (base32
-                "0qxshhyrplq5bfgb1spjfh7iwazbjna5hv2rkn6fwbrpgvbc9jrg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jack" version))
+       (sha256
+        (base32 "0qxshhyrplq5bfgb1spjfh7iwazbjna5hv2rkn6fwbrpgvbc9jrg"))))
     (properties `((upstream-name . "jack")))
     (build-system r-build-system)
     (inputs (list gmp))
@@ -4076,12 +4031,12 @@ matrix theory.  Schur polynomials appear in the field of combinatorics.")
   (package
     (name "r-jaccard")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jaccard" version))
-              (sha256
-               (base32
-                "1dmla6qc1k8iw2d7zfjqhf13gqd2lpsrj09yh47ljf994fpab936"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jaccard" version))
+       (sha256
+        (base32 "1dmla6qc1k8iw2d7zfjqhf13gqd2lpsrj09yh47ljf994fpab936"))))
     (properties `((upstream-name . "jaccard")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-qvalue r-magrittr r-dplyr))
@@ -4097,12 +4052,12 @@ for binary data.")
   (package
     (name "r-jab-adverse-reactions")
     (version "1.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jab.adverse.reactions" version))
-              (sha256
-               (base32
-                "18rfaiv2w7lvd5psj6qkyfdc363y3xfrrg5fhmcv4s4n0cj8kbsv"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jab.adverse.reactions" version))
+       (sha256
+        (base32 "18rfaiv2w7lvd5psj6qkyfdc363y3xfrrg5fhmcv4s4n0cj8kbsv"))))
     (properties `((upstream-name . "jab.adverse.reactions")))
     (build-system r-build-system)
     (home-page "https://gitlab.com/iembry/jab.adverse.reactions")
@@ -4124,12 +4079,12 @@ information about vaccination$/immunization$ hazards, visit
   (package
     (name "r-jaatha")
     (version "3.2.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jaatha" version))
-              (sha256
-               (base32
-                "13vmmrbvr073mmhgh84dp2wwx3r71bnli90nycfliqfnmzwr8ynl"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jaatha" version))
+       (sha256
+        (base32 "13vmmrbvr073mmhgh84dp2wwx3r71bnli90nycfliqfnmzwr8ynl"))))
     (properties `((upstream-name . "jaatha")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-assertthat))

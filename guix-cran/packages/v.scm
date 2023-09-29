@@ -50,12 +50,12 @@
   (package
     (name "r-vwpre")
     (version "1.2.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VWPre" version))
-              (sha256
-               (base32
-                "1hhpqxzh9h5dy45r04l1fa1k4a14s0m6z6fhfg22kpwpryszbc44"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VWPre" version))
+       (sha256
+        (base32 "1hhpqxzh9h5dy45r04l1fa1k4a14s0m6z6fhfg22kpwpryszbc44"))))
     (properties `((upstream-name . "VWPre")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -87,12 +87,12 @@ maintenance and the addition of minor functionality.")
   (package
     (name "r-vwline")
     (version "0.2-2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vwline" version))
-              (sha256
-               (base32
-                "1hilr996xn5wh8kfyab55w2i1c02a8x909h4ahag5q6s7603qng5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vwline" version))
+       (sha256
+        (base32 "1hilr996xn5wh8kfyab55w2i1c02a8x909h4ahag5q6s7603qng5"))))
     (properties `((upstream-name . "vwline")))
     (build-system r-build-system)
     (propagated-inputs (list r-polyclip r-gridbezier))
@@ -107,12 +107,12 @@ curve allowed to vary along the length of the curve.")
   (package
     (name "r-vvtermtime")
     (version "0.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vvtermtime" version))
-              (sha256
-               (base32
-                "0c7cry87wgk86wydrw0l8icc25lx5fcxzm1wyfs2ls8ppmpkz3l7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vvtermtime" version))
+       (sha256
+        (base32 "0c7cry87wgk86wydrw0l8icc25lx5fcxzm1wyfs2ls8ppmpkz3l7"))))
     (properties `((upstream-name . "vvtermtime")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-jsonlite r-httr))
@@ -130,12 +130,12 @@ for details.")
   (package
     (name "r-vvtableau")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vvtableau" version))
-              (sha256
-               (base32
-                "0vlqp8m8ygknf1dak35w0kdzhsinazzwqp92488l9f447r8r7gz8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vvtableau" version))
+       (sha256
+        (base32 "0vlqp8m8ygknf1dak35w0kdzhsinazzwqp92488l9f447r8r7gz8"))))
     (properties `((upstream-name . "vvtableau")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -164,12 +164,12 @@ Tableau workbooks.")
   (package
     (name "r-vvshiny")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vvshiny" version))
-              (sha256
-               (base32
-                "015rac6hz6k5wrg75abiyicjpljfs3cxibrala4dm5jxnwrm79sa"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vvshiny" version))
+       (sha256
+        (base32 "015rac6hz6k5wrg75abiyicjpljfs3cxibrala4dm5jxnwrm79sa"))))
     (properties `((upstream-name . "vvshiny")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -204,12 +204,12 @@ use-cases are supported.")
   (package
     (name "r-vvsculptor")
     (version "0.4.10")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vvsculptor" version))
-              (sha256
-               (base32
-                "076fdzhr5b39k1vavj3jf7897vpdjgfbf8fxxqi6y4cy0pz4iisi"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vvsculptor" version))
+       (sha256
+        (base32 "076fdzhr5b39k1vavj3jf7897vpdjgfbf8fxxqi6y4cy0pz4iisi"))))
     (properties `((upstream-name . "vvsculptor")))
     (build-system r-build-system)
     (propagated-inputs (list r-dplyr))
@@ -229,12 +229,12 @@ needs.")
   (package
     (name "r-vvmover")
     (version "1.5.10")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vvmover" version))
-              (sha256
-               (base32
-                "1aaky8vs9yl9k3qfd3lm4wj234gp5z0pgff1lfqj2p0av18q6nn8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vvmover" version))
+       (sha256
+        (base32 "1aaky8vs9yl9k3qfd3lm4wj234gp5z0pgff1lfqj2p0av18q6nn8"))))
     (properties `((upstream-name . "vvmover")))
     (build-system r-build-system)
     (propagated-inputs (list r-readxl r-readr r-dplyr))
@@ -253,12 +253,12 @@ with a comprehensive set of tools to work with different types of data files.")
   (package
     (name "r-vvfiller")
     (version "0.6.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vvfiller" version))
-              (sha256
-               (base32
-                "0kknnnkfdw9h4wxs215pgmg1j0mbl5lqfw4xl0il8rw6n0yy7vsn"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vvfiller" version))
+       (sha256
+        (base32 "0kknnnkfdw9h4wxs215pgmg1j0mbl5lqfw4xl0il8rw6n0yy7vsn"))))
     (properties `((upstream-name . "vvfiller")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-purrr r-dplyr))
@@ -274,12 +274,12 @@ of Student Analytics.")
   (package
     (name "r-vvconverter")
     (version "0.5.8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vvconverter" version))
-              (sha256
-               (base32
-                "12bnrrvbad7njgqvkb0hp1a041qnyvfiqlg1aaqkym29wlc2zwk3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vvconverter" version))
+       (sha256
+        (base32 "12bnrrvbad7njgqvkb0hp1a041qnyvfiqlg1aaqkym29wlc2zwk3"))))
     (properties `((upstream-name . "vvconverter")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-lubridate r-dplyr))
@@ -296,12 +296,12 @@ academic year.")
   (package
     (name "r-vvcanvas")
     (version "0.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vvcanvas" version))
-              (sha256
-               (base32
-                "1f5xmgz08sx4a9mgc6id4y1jqnh5jf828vyd439gpbzr52b67dmm"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vvcanvas" version))
+       (sha256
+        (base32 "1f5xmgz08sx4a9mgc6id4y1jqnh5jf828vyd439gpbzr52b67dmm"))))
     (properties `((upstream-name . "vvcanvas")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -328,12 +328,12 @@ API.")
   (package
     (name "r-vvauditor")
     (version "0.5.8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vvauditor" version))
-              (sha256
-               (base32
-                "0b8gflvvhxasaxhkyc45qr6z07xk22kh3g4n9rgbsl4816g8x64m"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vvauditor" version))
+       (sha256
+        (base32 "0b8gflvvhxasaxhkyc45qr6z07xk22kh3g4n9rgbsl4816g8x64m"))))
     (properties `((upstream-name . "vvauditor")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-magrittr r-findr r-dplyr))
@@ -352,12 +352,12 @@ errors or inconsistencies in data.")
   (package
     (name "r-vurocs")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VUROCS" version))
-              (sha256
-               (base32
-                "1r4hq7az50v7lbyx5w6b4zs2kwi5cypqn9k6ac4kr8jr3jlyanr3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VUROCS" version))
+       (sha256
+        (base32 "1r4hq7az50v7lbyx5w6b4zs2kwi5cypqn9k6ac4kr8jr3jlyanr3"))))
     (properties `((upstream-name . "VUROCS")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-foreach r-doparallel))
@@ -373,12 +373,12 @@ association.")
   (package
     (name "r-vulntoolkit")
     (version "1.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VulnToolkit" version))
-              (sha256
-               (base32
-                "01m8spmd4na7mxgnplnnq3n4pab9349z2dk44b455vcadll0fsdi"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VulnToolkit" version))
+       (sha256
+        (base32 "01m8spmd4na7mxgnplnnq3n4pab9349z2dk44b455vcadll0fsdi"))))
     (properties `((upstream-name . "VulnToolkit")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml r-plyr))
@@ -399,12 +399,12 @@ and application examples, see Hill, T.D. and S.C. Anisfeld (2021)
   (package
     (name "r-vuer")
     (version "0.5.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vueR" version))
-              (sha256
-               (base32
-                "0am4iwgadi9c9f7zm5zx3nrzyhy7w1qgp9rkyypzwb6bicjjb9cz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vueR" version))
+       (sha256
+        (base32 "0am4iwgadi9c9f7zm5zx3nrzyhy7w1qgp9rkyypzwb6bicjjb9cz"))))
     (properties `((upstream-name . "vueR")))
     (build-system r-build-system)
     (propagated-inputs (list r-htmlwidgets r-htmltools))
@@ -419,12 +419,12 @@ and application examples, see Hill, T.D. and S.C. Anisfeld (2021)
   (package
     (name "r-vudc")
     (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vudc" version))
-              (sha256
-               (base32
-                "0zxz6n3ixa3xjzcinky8ymqjx9w8y8z65mz8d84dl00mxzkmkz4h"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vudc" version))
+       (sha256
+        (base32 "0zxz6n3ixa3xjzcinky8ymqjx9w8y8z65mz8d84dl00mxzkmkz4h"))))
     (properties `((upstream-name . "vudc")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=vudc")
@@ -438,12 +438,12 @@ qddplot.")
   (package
     (name "r-vtype")
     (version "0.8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vtype" version))
-              (sha256
-               (base32
-                "0j070bn86a6hlg99h2qaf0dlbnjjsmx1zdcmvl3acymr31bqyvrj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vtype" version))
+       (sha256
+        (base32 "0j070bn86a6hlg99h2qaf0dlbnjjsmx1zdcmvl3acymr31bqyvrj"))))
     (properties `((upstream-name . "vtype")))
     (build-system r-build-system)
     (propagated-inputs (list r-randomforest))
@@ -461,12 +461,12 @@ data.")
   (package
     (name "r-vtshiny")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VTShiny" version))
-              (sha256
-               (base32
-                "1zq6irla3q7hqs8jpjdya7vy3frqrj72rwmd1sgxwrkgpmpxw6x7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VTShiny" version))
+       (sha256
+        (base32 "1zq6irla3q7hqs8jpjdya7vy3frqrj72rwmd1sgxwrkgpmpxw6x7"))))
     (properties `((upstream-name . "VTShiny")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-rmarkdown r-envstats))
@@ -483,12 +483,12 @@ as at
   (package
     (name "r-vtree")
     (version "5.6.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vtree" version))
-              (sha256
-               (base32
-                "0qszya11qh2xzq1blbrcli3l8hhf0dannhh2hn3gi59c9dn3jr16"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vtree" version))
+       (sha256
+        (base32 "0qszya11qh2xzq1blbrcli3l8hhf0dannhh2hn3gi59c9dn3jr16"))))
     (properties `((upstream-name . "vtree")))
     (build-system r-build-system)
     (propagated-inputs (list r-utf8
@@ -509,12 +509,12 @@ Variable trees display information about nested subsets of a data frame.")
   (package
     (name "r-vtreat")
     (version "1.6.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vtreat" version))
-              (sha256
-               (base32
-                "1b32rrmnkpm53vgdg479q4wwzlgcisbz9x24rvcn42pjm9r8wwf8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vtreat" version))
+       (sha256
+        (base32 "1b32rrmnkpm53vgdg479q4wwzlgcisbz9x24rvcn42pjm9r8wwf8"))))
     (properties `((upstream-name . "vtreat")))
     (build-system r-build-system)
     (propagated-inputs (list r-wrapr r-digest))
@@ -536,12 +536,12 @@ levels (levels seen during application, but not during training).  Reference:
   (package
     (name "r-vtable")
     (version "1.4.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vtable" version))
-              (sha256
-               (base32
-                "1fc8p4d7c7jy2sxpcbf1qjaq2qz678v0ivlmrxphbmdh6x2lscwy"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vtable" version))
+       (sha256
+        (base32 "1fc8p4d7c7jy2sxpcbf1qjaq2qz678v0ivlmrxphbmdh6x2lscwy"))))
     (properties `((upstream-name . "vtable")))
     (build-system r-build-system)
     (propagated-inputs (list r-sjlabelled r-rstudioapi r-knitr r-kableextra
@@ -559,12 +559,12 @@ statistics.  See the vignette \"vtable\" for a package overview.")
   (package
     (name "r-vsurf")
     (version "1.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VSURF" version))
-              (sha256
-               (base32
-                "14rkd1n7ffy7hz3xgqqysbphy89h6lpmkhjrlpsfmwb2jzhv29y0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VSURF" version))
+       (sha256
+        (base32 "14rkd1n7ffy7hz3xgqqysbphy89h6lpmkhjrlpsfmwb2jzhv29y0"))))
     (properties `((upstream-name . "VSURF")))
     (build-system r-build-system)
     (propagated-inputs (list r-rpart r-randomforest r-foreach r-doparallel))
@@ -587,12 +587,12 @@ purpose.  Genuer, R. Poggi, J.-M. and Tuleau-Malot, C. (2015)
   (package
     (name "r-vstsr")
     (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vstsr" version))
-              (sha256
-               (base32
-                "071nfxkwwpbp2d8khxq7d1pp268pa1fcfj619bs6xwg4wk9srr3k"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vstsr" version))
+       (sha256
+        (base32 "071nfxkwwpbp2d8khxq7d1pp268pa1fcfj619bs6xwg4wk9srr3k"))))
     (properties `((upstream-name . "vstsr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcurl r-r6 r-jsonlite r-httr))
@@ -610,12 +610,12 @@ ability to use any API service with a shell for any non-predefined call.")
   (package
     (name "r-vstdct")
     (version "0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vstdct" version))
-              (sha256
-               (base32
-                "0g26cplp5vjppyw8w37vdy3wah3i9wi14j64vl7i8d2fjbhqhqxp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vstdct" version))
+       (sha256
+        (base32 "0g26cplp5vjppyw8w37vdy3wah3i9wi14j64vl7i8d2fjbhqhqxp"))))
     (properties `((upstream-name . "vstdct")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlme r-mass r-dtt))
@@ -637,12 +637,12 @@ example are included.  For details see (Klockmann, Krivobokova; 2023),
   (package
     (name "r-vsp")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vsp" version))
-              (sha256
-               (base32
-                "0aa3vqzazh0x5irbmqh9ac1xiprwnbgbrjl9bybxzynl91hwg9yw"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vsp" version))
+       (sha256
+        (base32 "0aa3vqzazh0x5irbmqh9ac1xiprwnbgbrjl9bybxzynl91hwg9yw"))))
     (properties `((upstream-name . "vsp")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -670,12 +670,12 @@ overlapping stochastic blockmodels.")
   (package
     (name "r-vsolassobag")
     (version "0.99.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VSOLassoBag" version))
-              (sha256
-               (base32
-                "1jmnm435x36jlhbzl7kgjiby7kb7yjhh013zdnnvf9pcjaallqn9"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VSOLassoBag" version))
+       (sha256
+        (base32 "1jmnm435x36jlhbzl7kgjiby7kb7yjhh013zdnnvf9pcjaallqn9"))))
     (properties `((upstream-name . "VSOLassoBag")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -701,12 +701,12 @@ multiple LASSO models to determine the optimal candidates.  Luo H, Zhao Q, et al
   (package
     (name "r-vsgoftest")
     (version "1.0-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vsgoftest" version))
-              (sha256
-               (base32
-                "0vypi4cf04bljmx3jwq3ixs86ivd6p7a825ik189y71fyqg9g70v"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vsgoftest" version))
+       (sha256
+        (base32 "0vypi4cf04bljmx3jwq3ixs86ivd6p7a825ik189y71fyqg9g70v"))))
     (properties `((upstream-name . "vsgoftest")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-fitdistrplus))
@@ -726,12 +726,12 @@ Lequesne and Regnault (2020) <doi:10.18637/jss.v096.c01>.")
   (package
     (name "r-vsdecomp")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VSdecomp" version))
-              (sha256
-               (base32
-                "1vx68rhsxvi3kkrwr98hqhivhdmb9dm9rnmgspx74dskhkysjwbg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VSdecomp" version))
+       (sha256
+        (base32 "1vx68rhsxvi3kkrwr98hqhivhdmb9dm9rnmgspx74dskhkysjwbg"))))
     (properties `((upstream-name . "VSdecomp")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-reshape r-lfe r-hmisc r-ggplot2))
@@ -748,12 +748,12 @@ groups.")
   (package
     (name "r-vsd")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vsd" version))
-              (sha256
-               (base32
-                "18whnvary4glblzx1vxf3yzsllnnnbnyijwhbw7bi3agppnwrf22"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vsd" version))
+       (sha256
+        (base32 "18whnvary4glblzx1vxf3yzsllnnnbnyijwhbw7bi3agppnwrf22"))))
     (properties `((upstream-name . "vsd")))
     (build-system r-build-system)
     (propagated-inputs (list r-survminer
@@ -774,12 +774,12 @@ groups.")
   (package
     (name "r-vrtest")
     (version "1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vrtest" version))
-              (sha256
-               (base32
-                "1ln1ayh18q5lxiavznq19ccwb90dviw5ncbwpbghiawa1i0q42d2"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vrtest" version))
+       (sha256
+        (base32 "1ln1ayh18q5lxiavznq19ccwb90dviw5ncbwpbghiawa1i0q42d2"))))
     (properties `((upstream-name . "vrtest")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=vrtest")
@@ -796,12 +796,12 @@ test (Kim, 2009) <doi:10.1016/j.frl.2009.04.003>.")
   (package
     (name "r-vrnmf")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vrnmf" version))
-              (sha256
-               (base32
-                "0n0kmzhygaii9kipcmr943s0vcf8brxgsk25m9illd4fij6nwpp2"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vrnmf" version))
+       (sha256
+        (base32 "0n0kmzhygaii9kipcmr943s0vcf8brxgsk25m9illd4fij6nwpp2"))))
     (properties `((upstream-name . "vrnmf")))
     (build-system r-build-system)
     (propagated-inputs (list r-quadprog r-nnls r-matrix r-lpsolveapi r-ica))
@@ -829,12 +829,12 @@ package is approximately 8 MB.")
   (package
     (name "r-vprr")
     (version "0.2.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vprr" version))
-              (sha256
-               (base32
-                "02hx3wbj921fsir8yldkgcygci01w1171bxsxi2khplck4gkqn9i"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vprr" version))
+       (sha256
+        (base32 "02hx3wbj921fsir8yldkgcygci01w1171bxsxi2khplck4gkqn9i"))))
     (properties `((upstream-name . "vprr")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -865,12 +865,12 @@ output and create organized and easily portable data products.")
   (package
     (name "r-vpdtw")
     (version "2.1-14")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VPdtw" version))
-              (sha256
-               (base32
-                "1pr8jrd7ymgf46h2gbvanqjrvpc4xs39sk86vvxhawzf3w31g257"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VPdtw" version))
+       (sha256
+        (base32 "1pr8jrd7ymgf46h2gbvanqjrvpc4xs39sk86vvxhawzf3w31g257"))))
     (properties `((upstream-name . "VPdtw")))
     (build-system r-build-system)
     (home-page "https://github.com/ethanbass/VPdtw/")
@@ -888,12 +888,12 @@ Montoliu, I., Rezzi S., Martin F., Guy P., Bruce S., and Kochhar S.(2009)
   (package
     (name "r-vpc")
     (version "1.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vpc" version))
-              (sha256
-               (base32
-                "15s9f6hmqawv2594xqv58hnqg2wm1fm8qaj8h9k4m55cx4sf1hik"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vpc" version))
+       (sha256
+        (base32 "15s9f6hmqawv2594xqv58hnqg2wm1fm8qaj8h9k4m55cx4sf1hik"))))
     (properties `((upstream-name . "vpc")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -917,12 +917,12 @@ for continuous, categorical, censored, and (repeated) time-to-event data.")
   (package
     (name "r-voxr")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VoxR" version))
-              (sha256
-               (base32
-                "16r9ggc5x889g8rjqvp1q2kgf5asjzhykd1ldjy3ny9m48p501ad"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VoxR" version))
+       (sha256
+        (base32 "16r9ggc5x889g8rjqvp1q2kgf5asjzhykd1ldjy3ny9m48p501ad"))))
     (properties `((upstream-name . "VoxR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgl
@@ -950,12 +950,12 @@ the concept of space exploration and are described in Lecigne et al. (2018,
   (package
     (name "r-voxel")
     (version "1.3.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "voxel" version))
-              (sha256
-               (base32
-                "1xlym8xc22dq67h0lylrr16z7b4zdidpgrkvbs7n9fnkh6vijw2j"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "voxel" version))
+       (sha256
+        (base32 "1xlym8xc22dq67h0lylrr16z7b4zdidpgrkvbs7n9fnkh6vijw2j"))))
     (properties `((upstream-name . "voxel")))
     (build-system r-build-system)
     (propagated-inputs (list r-purrr
@@ -976,12 +976,12 @@ format.")
   (package
     (name "r-vowels")
     (version "1.2-2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vowels" version))
-              (sha256
-               (base32
-                "0xhfn3avx9h6kg3jwd47n2x7w8q8c9h13wsxd74hhbbn2gkjrs84"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vowels" version))
+       (sha256
+        (base32 "0xhfn3avx9h6kg3jwd47n2x7w8q8c9h13wsxd74hhbbn2gkjrs84"))))
     (properties `((upstream-name . "vowels")))
     (build-system r-build-system)
     (home-page "http://blogs.uoregon.edu/vowels/")
@@ -995,12 +995,12 @@ sociophonetic vowel formant data.  vowels is the backend for the NORM website.")
   (package
     (name "r-vov")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vov" version))
-              (sha256
-               (base32
-                "0hbb9zj33a98rv4grm644k650pq6kgmm6l01mkd4p0ic0mxa9fyh"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vov" version))
+       (sha256
+        (base32 "0hbb9zj33a98rv4grm644k650pq6kgmm6l01mkd4p0ic0mxa9fyh"))))
     (properties `((upstream-name . "vov")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-htmltools r-glue))
@@ -1016,12 +1016,12 @@ functions to see it move.")
   (package
     (name "r-vottrans")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vottrans" version))
-              (sha256
-               (base32
-                "1fp7jrw072ws39bqsg88bm2qndcv68aa2vdqwgnza58p1dfq3x9f"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vottrans" version))
+       (sha256
+        (base32 "1fp7jrw072ws39bqsg88bm2qndcv68aa2vdqwgnza58p1dfq3x9f"))))
     (properties `((upstream-name . "vottrans")))
     (build-system r-build-system)
     (propagated-inputs (list r-quadprog))
@@ -1036,12 +1036,12 @@ solve.QP() in package quadprog'.")
   (package
     (name "r-votesys")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "votesys" version))
-              (sha256
-               (base32
-                "1z7cx3rj3bfrkb6jkmf1m1wad5ff46zrab5vhk69wf3jbwd9h920"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "votesys" version))
+       (sha256
+        (base32 "1z7cx3rj3bfrkb6jkmf1m1wad5ff46zrab5vhk69wf3jbwd9h920"))))
     (properties `((upstream-name . "votesys")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-gtools r-data-table))
@@ -1057,12 +1057,12 @@ check validity of ballots are also provided to ensure flexibility.")
   (package
     (name "r-votesmart")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "votesmart" version))
-              (sha256
-               (base32
-                "184q553p8n76jch4xiyfsqbczbjza3v9s8xsd8zwckxq5j2cgyvp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "votesmart" version))
+       (sha256
+        (base32 "184q553p8n76jch4xiyfsqbczbjza3v9s8xsd8zwckxq5j2cgyvp"))))
     (properties `((upstream-name . "votesmart")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -1086,12 +1086,12 @@ check validity of ballots are also provided to ensure flexibility.")
   (package
     (name "r-votesim")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "voteSim" version))
-              (sha256
-               (base32
-                "00i6jkfvb7dk6mbhl9hv08mhwj6sjkakmv02ybwxw1hy9gqbsacs"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "voteSim" version))
+       (sha256
+        (base32 "00i6jkfvb7dk6mbhl9hv08mhwj6sjkakmv02ybwxw1hy9gqbsacs"))))
     (properties `((upstream-name . "voteSim")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm r-genord r-extradistr))
@@ -1107,12 +1107,12 @@ for continuous or discrete evaluations.")
   (package
     (name "r-voteogram")
     (version "0.3.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "voteogram" version))
-              (sha256
-               (base32
-                "16bhnf9p2sanbcsdmdjb4iqca7hx4ghd40psxavndv1vkhw3cv0r"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "voteogram" version))
+       (sha256
+        (base32 "16bhnf9p2sanbcsdmdjb4iqca7hx4ghd40psxavndv1vkhw3cv0r"))))
     (properties `((upstream-name . "voteogram")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-scales r-jsonlite r-ggplot2 r-dplyr))
@@ -1131,12 +1131,12 @@ cartograms and theme them.")
   (package
     (name "r-vote")
     (version "2.3-2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vote" version))
-              (sha256
-               (base32
-                "12kvz83ncansrsvw4mrws6fafn9fy6c0nvqvknrzl08kv290c9dr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vote" version))
+       (sha256
+        (base32 "12kvz83ncansrsvw4mrws6fafn9fy6c0nvqvknrzl08kv290c9dr"))))
     (properties `((upstream-name . "vote")))
     (build-system r-build-system)
     (propagated-inputs (list r-knitr r-formattable r-fields r-data-table))
@@ -1153,12 +1153,12 @@ plurality, condorcet and two-round runoff methods (Raftery et al. (2021)
   (package
     (name "r-voss")
     (version "0.1.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Voss" version))
-              (sha256
-               (base32
-                "00f3ljm85z8gr1qyc6nj9g35ywzm78khy8r82wb5ys8fx68n0vwl"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Voss" version))
+       (sha256
+        (base32 "00f3ljm85z8gr1qyc6nj9g35ywzm78khy8r82wb5ys8fx68n0vwl"))))
     (properties `((upstream-name . "Voss")))
     (build-system r-build-system)
     (propagated-inputs (list r-fields))
@@ -1174,12 +1174,12 @@ additions).")
   (package
     (name "r-vosonsml")
     (version "0.32.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vosonSML" version))
-              (sha256
-               (base32
-                "1fs939zq2vnilc3fp6cplsqk0iz71i8xjdcbvspsccw7rsdp2qs8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vosonSML" version))
+       (sha256
+        (base32 "1fs939zq2vnilc3fp6cplsqk0iz71i8xjdcbvspsccw7rsdp2qs8"))))
     (properties `((upstream-name . "vosonSML")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -1207,12 +1207,12 @@ media data and generating networks for analysis.  Supports Twitter,
   (package
     (name "r-vosondash")
     (version "0.5.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VOSONDash" version))
-              (sha256
-               (base32
-                "1qivx5ddl9jsn6q6ic2w8jrczxlx23z087k5arfz2rixgj7rndyg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VOSONDash" version))
+       (sha256
+        (base32 "1qivx5ddl9jsn6q6ic2w8jrczxlx23z087k5arfz2rixgj7rndyg"))))
     (properties `((upstream-name . "VOSONDash")))
     (build-system r-build-system)
     (propagated-inputs (list r-wordcloud
@@ -1242,12 +1242,12 @@ media data using @code{vosonSML}'.")
   (package
     (name "r-voson-tcn")
     (version "0.5.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "voson.tcn" version))
-              (sha256
-               (base32
-                "1fylp5770by5ybpda6n8c3y8n7zsmc62f5q11k0ndh5kp7ka11cb"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "voson.tcn" version))
+       (sha256
+        (base32 "1fylp5770by5ybpda6n8c3y8n7zsmc62f5q11k0ndh5kp7ka11cb"))))
     (properties `((upstream-name . "voson.tcn")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -1269,12 +1269,12 @@ media data using @code{vosonSML}'.")
   (package
     (name "r-vortexrdata")
     (version "1.0.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vortexRdata" version))
-              (sha256
-               (base32
-                "0b47q3aslz4110a1bfaa103i098y2ngzrjh01rwasq3gd6xbif9n"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vortexRdata" version))
+       (sha256
+        (base32 "0b47q3aslz4110a1bfaa103i098y2ngzrjh01rwasq3gd6xbif9n"))))
     (properties `((upstream-name . "vortexRdata")))
     (build-system r-build-system)
     (home-page "https://github.com/carlopacioni/vortexRdata/")
@@ -1292,12 +1292,12 @@ functionality of parsing raw Vortex output into R objects.")
   (package
     (name "r-vorteksexport")
     (version "0.1.8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VorteksExport" version))
-              (sha256
-               (base32
-                "0r9wmd9bdarjkqmpwp85xz27nbyhjkcpxm8qb8bqjmxq4nds6nxx"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VorteksExport" version))
+       (sha256
+        (base32 "0r9wmd9bdarjkqmpwp85xz27nbyhjkcpxm8qb8bqjmxq4nds6nxx"))))
     (properties `((upstream-name . "VorteksExport")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=VorteksExport")
@@ -1314,12 +1314,12 @@ Requires installation of Vorteks software.")
   (package
     (name "r-voronoitreemap")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "voronoiTreemap" version))
-              (sha256
-               (base32
-                "1wvnqdrvba4ss4f3k8gzb720irdq2brv2aaq16ywifv8fnjf02r3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "voronoiTreemap" version))
+       (sha256
+        (base32 "1wvnqdrvba4ss4f3k8gzb720irdq2brv2aaq16ywifv8fnjf02r3"))))
     (properties `((upstream-name . "voronoiTreemap")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinyjs
@@ -1342,12 +1342,12 @@ Brandes (2012) <doi:10.1111/j.1467-8659.2012.03078.x>.")
   (package
     (name "r-volumodel")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "voluModel" version))
-              (sha256
-               (base32
-                "1ym9cpx4ygzh9956y7sg1zl5kagamkg1wmr3ydzff1gz6ldg7gam"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "voluModel" version))
+       (sha256
+        (base32 "1ym9cpx4ygzh9956y7sg1zl5kagamkg1wmr3ydzff1gz6ldg7gam"))))
     (properties `((upstream-name . "voluModel")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
@@ -1381,12 +1381,12 @@ JA (2016) <doi:10.1038/ncomms11484>.  Nychka D, Furrer R, Paige J, Sain S (2021)
   (package
     (name "r-volleystat")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "volleystat" version))
-              (sha256
-               (base32
-                "0n1r0bvvmba21cs3qgpnw9jxpgl2n82fhxa40sa1w2gav5rch5i6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "volleystat" version))
+       (sha256
+        (base32 "0n1r0bvvmba21cs3qgpnw9jxpgl2n82fhxa40sa1w2gav5rch5i6"))))
     (properties `((upstream-name . "volleystat")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -1404,12 +1404,12 @@ information on teams, staff, sets, matches, and player-in-match statistics
   (package
     (name "r-volesti")
     (version "1.1.2-7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "volesti" version))
-              (sha256
-               (base32
-                "1x730da30y763j6dcdahspbpf81zqaazqzfvfznsi0kq05856z2n"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "volesti" version))
+       (sha256
+        (base32 "1x730da30y763j6dcdahspbpf81zqaazqzfvfznsi0kq05856z2n"))))
     (properties `((upstream-name . "volesti")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-bh))
@@ -1430,12 +1430,12 @@ volesti are described in A. Chalkis and V. Fisikopoulos (2022)
   (package
     (name "r-volcanoplot")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "volcanoPlot" version))
-              (sha256
-               (base32
-                "06nkv56c36wgnb7s6gkpp14syzhm5zm2wdfjx9wamxp5cf0wk3mk"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "volcanoPlot" version))
+       (sha256
+        (base32 "06nkv56c36wgnb7s6gkpp14syzhm5zm2wdfjx9wamxp5cf0wk3mk"))))
     (properties `((upstream-name . "volcanoPlot")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -1462,12 +1462,12 @@ of more robust safety monitoring framework like the Shiny app from the
   (package
     (name "r-volcano3d")
     (version "2.0.9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "volcano3D" version))
-              (sha256
-               (base32
-                "1k1n49pzsdkwia09mf9ra75cbnx49q99ygn5c92kyq8kqv83d1w8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "volcano3D" version))
+       (sha256
+        (base32 "1k1n49pzsdkwia09mf9ra75cbnx49q99ygn5c92kyq8kqv83d1w8"))))
     (properties `((upstream-name . "volcano3D")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -1496,12 +1496,12 @@ three-class data.")
   (package
     (name "r-volatilitytrader")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "volatilityTrader" version))
-              (sha256
-               (base32
-                "1zz6286kmzcj8k66mpj9nidsf86dkw2ms75ck6rrvnl5h1idcacj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "volatilityTrader" version))
+       (sha256
+        (base32 "1zz6286kmzcj8k66mpj9nidsf86dkw2ms75ck6rrvnl5h1idcacj"))))
     (properties `((upstream-name . "volatilityTrader")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-magrittr r-ggplot2 r-dplyr))
@@ -1522,12 +1522,12 @@ Futures, and Other Derivatives (11th ed.)â, 2022, ISBN: 9780136939979).")
   (package
     (name "r-vol2birdr")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vol2birdR" version))
-              (sha256
-               (base32
-                "0f6zjrsi7slw7wx84q4iq1afmwclmwjq8ly1r4m9l2hkfg3nclim"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vol2birdR" version))
+       (sha256
+        (base32 "0f6zjrsi7slw7wx84q4iq1afmwclmwjq8ly1r4m9l2hkfg3nclim"))))
     (properties `((upstream-name . "vol2birdR")))
     (build-system r-build-system)
     (inputs (list zlib proj hdf5 gsl))
@@ -1550,12 +1550,12 @@ birds and other biological signals in weather radar data.  See Dokter et al.
   (package
     (name "r-voicer")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "voiceR" version))
-              (sha256
-               (base32
-                "1bc2h04i9l76wqrw93brg5ivpgd0pq20zq2nq8x7p851jfxz84p4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "voiceR" version))
+       (sha256
+        (base32 "1bc2h04i9l76wqrw93brg5ivpgd0pq20zq2nq8x7p851jfxz84p4"))))
     (properties `((upstream-name . "voiceR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xfun
@@ -1603,12 +1603,12 @@ the @code{voiceR} package is provided in Hildebrand et al.  2020
   (package
     (name "r-voice")
     (version "0.4.21")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "voice" version))
-              (sha256
-               (base32
-                "0fh1k0596npm6yah992g3hc79g6lh12b7k97nnxlm1pgpdbb503v"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "voice" version))
+       (sha256
+        (base32 "0fh1k0596npm6yah992g3hc79g6lh12b7k97nnxlm1pgpdbb503v"))))
     (properties `((upstream-name . "voice")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -1634,12 +1634,12 @@ audio in general.")
   (package
     (name "r-voi")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "voi" version))
-              (sha256
-               (base32
-                "1ncxlswjh5z239kipb3mq5j0xvxawhrxd4w6jmdz150gq510nccq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "voi" version))
+       (sha256
+        (base32 "1ncxlswjh5z239kipb3mq5j0xvxawhrxd4w6jmdz150gq510nccq"))))
     (properties `((upstream-name . "voi")))
     (build-system r-build-system)
     (propagated-inputs (list r-progress
@@ -1667,12 +1667,12 @@ et al. (2022) <doi:10.1146/annurev-statistics-040120-010730>.")
   (package
     (name "r-vocaldia")
     (version "0.8.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vocaldia" version))
-              (sha256
-               (base32
-                "1nr1w85m4xhk6777iqww94mb82c3smfhr96mybpi9m1kk7f6rv0i"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vocaldia" version))
+       (sha256
+        (base32 "1nr1w85m4xhk6777iqww94mb82c3smfhr96mybpi9m1kk7f6rv0i"))))
     (properties `((upstream-name . "vocaldia")))
     (build-system r-build-system)
     (home-page "https://git.ecdf.ed.ac.uk/sluzfil/vocaldia")
@@ -1693,12 +1693,12 @@ segmentation (Luz, 2012) <doi:10.1145/2328967.2328970> and classification (Luz,
   (package
     (name "r-vntrs")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vntrs" version))
-              (sha256
-               (base32
-                "0ffjjzcs7i4zli7bn83gkgi0q7dmgyxrhv9l3gdambma9hsig45c"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vntrs" version))
+       (sha256
+        (base32 "0ffjjzcs7i4zli7bn83gkgi0q7dmgyxrhv9l3gdambma9hsig45c"))))
     (properties `((upstream-name . "vntrs")))
     (build-system r-build-system)
     (propagated-inputs (list r-trust))
@@ -1714,12 +1714,12 @@ et al. (2009) \"A Heuristic for Nonlinear Global Optimization\"
   (package
     (name "r-vmr")
     (version "0.0.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vmr" version))
-              (sha256
-               (base32
-                "0vm4wxf9zb2xgjd9xam3gy6mqr621x922ldshrxs4cibaag3lq5x"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vmr" version))
+       (sha256
+        (base32 "0vm4wxf9zb2xgjd9xam3gy6mqr621x922ldshrxs4cibaag3lq5x"))))
     (properties `((upstream-name . "vmr")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-curl))
@@ -1736,12 +1736,12 @@ Virtualbox') have to be installed.")
   (package
     (name "r-vmf")
     (version "0.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vMF" version))
-              (sha256
-               (base32
-                "048hlayd4mqj60np3s9fbryd1fxb6zxzvckz18jp0dbmjbmzwbrl"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vMF" version))
+       (sha256
+        (base32 "048hlayd4mqj60np3s9fbryd1fxb6zxzvckz18jp0dbmjbmzwbrl"))))
     (properties `((upstream-name . "vMF")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -1757,12 +1757,12 @@ method proposed by Andrew T.A Wood (1994) <doi:10.1080/03610919408813161>.")
   (package
     (name "r-vmeasur")
     (version "0.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vmeasur" version))
-              (sha256
-               (base32
-                "17rqr8zpfnq3f0d3yi9w09wvrbq79g4w7rkqf4l2wyd8ic5npwb0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vmeasur" version))
+       (sha256
+        (base32 "17rqr8zpfnq3f0d3yi9w09wvrbq79g4w7rkqf4l2wyd8ic5npwb0"))))
     (properties `((upstream-name . "vmeasur")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -1802,12 +1802,12 @@ also included.")
   (package
     (name "r-vmdtdnn")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vmdTDNN" version))
-              (sha256
-               (base32
-                "08bdihlf2lj1wfxilshxww3sav7c35qiqzs468mdahbn4vnzbngr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vmdTDNN" version))
+       (sha256
+        (base32 "08bdihlf2lj1wfxilshxww3sav7c35qiqzs468mdahbn4vnzbngr"))))
     (properties `((upstream-name . "vmdTDNN")))
     (build-system r-build-system)
     (propagated-inputs (list r-vmdecomp r-nnfor r-forecast))
@@ -1823,12 +1823,12 @@ Dominique, Z. (2014). <doi:10.1109/TSP.2013.2288675>.")
   (package
     (name "r-vmdml")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VMDML" version))
-              (sha256
-               (base32
-                "12n32wx3hcvw55rrcwkv501cjl4zrpgh4d7y4m1irgrpjfqk77x2"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VMDML" version))
+       (sha256
+        (base32 "12n32wx3hcvw55rrcwkv501cjl4zrpgh4d7y4m1irgrpjfqk77x2"))))
     (properties `((upstream-name . "VMDML")))
     (build-system r-build-system)
     (propagated-inputs (list r-vmdecomp r-randomforest r-nnfor r-forecast
@@ -1847,12 +1847,12 @@ Das (2020) <http://krishi.icar.gov.in/jspui/handle/123456789/44138>.")
   (package
     (name "r-vmdecomp")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VMDecomp" version))
-              (sha256
-               (base32
-                "0iq2lj7n77qmryf95cjl2y869bhy6i0mx44qls7xc07g0qplwqx3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VMDecomp" version))
+       (sha256
+        (base32 "0iq2lj7n77qmryf95cjl2y869bhy6i0mx44qls7xc07g0qplwqx3"))))
     (properties `((upstream-name . "VMDecomp")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-glue r-data-table))
@@ -1875,12 +1875,12 @@ and Pattern Recognition.  EMMCVPR 2015.  Lecture Notes in Computer Science, vol
   (package
     (name "r-vltimecausality")
     (version "0.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VLTimeCausality" version))
-              (sha256
-               (base32
-                "09fpjskdc3bz1qjqvcivk873jyl0mcjm4zds2xa6bd82ka8rb4b8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VLTimeCausality" version))
+       (sha256
+        (base32 "09fpjskdc3bz1qjqvcivk873jyl0mcjm4zds2xa6bd82ka8rb4b8"))))
     (properties `((upstream-name . "VLTimeCausality")))
     (build-system r-build-system)
     (propagated-inputs (list r-tseries r-rtransferentropy r-ggplot2 r-dtw))
@@ -1906,12 +1906,12 @@ Please see Chainarong Amornbunchornvej, Elena Zheleva, and Tanya Berger-Wolf
   (package
     (name "r-vlmc")
     (version "1.4-3-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VLMC" version))
-              (sha256
-               (base32
-                "0cwfpxcj8g68j9z9fl66i0amj8ypf199iv3yyxzsmniqv4w5x4ar"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VLMC" version))
+       (sha256
+        (base32 "0cwfpxcj8g68j9z9fl66i0amj8ypf199iv3yyxzsmniqv4w5x4ar"))))
     (properties `((upstream-name . "VLMC")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -1926,12 +1926,12 @@ Please see Chainarong Amornbunchornvej, Elena Zheleva, and Tanya Berger-Wolf
   (package
     (name "r-vlf")
     (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VLF" version))
-              (sha256
-               (base32
-                "096a7nx60qm4b7fil4s3r4mlp8fq60v0lq893jh3ij6gm63mfcim"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VLF" version))
+       (sha256
+        (base32 "096a7nx60qm4b7fil4s3r4mlp8fq60v0lq893jh3ij6gm63mfcim"))))
     (properties `((upstream-name . "VLF")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=VLF")
@@ -1952,12 +1952,12 @@ and Kerr (2012) <doi:10.1371/journal.pone.0043992>.")
   (package
     (name "r-vlda")
     (version "1.1.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vlda" version))
-              (sha256
-               (base32
-                "17xn8qqh043dm05ib3h4l1qx07wxncf5d06x9l1wl6jbkvnsm2nq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vlda" version))
+       (sha256
+        (base32 "17xn8qqh043dm05ib3h4l1qx07wxncf5d06x9l1wl6jbkvnsm2nq"))))
     (properties `((upstream-name . "vlda")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggsci r-ggrepel r-ggplot2 r-ggiraph r-dplyr))
@@ -1979,12 +1979,12 @@ for more information).")
   (package
     (name "r-vlad")
     (version "0.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vlad" version))
-              (sha256
-               (base32
-                "0c3zfjm5nj7iisfnl822sk8wdszv6hcsaf51sn7aqnlp579hq2jk"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vlad" version))
+       (sha256
+        (base32 "0c3zfjm5nj7iisfnl822sk8wdszv6hcsaf51sn7aqnlp579hq2jk"))))
     (properties `((upstream-name . "vlad")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -2013,12 +2013,12 @@ et al. (2019) <doi:10.1002/sim.8104>.")
   (package
     (name "r-vkr")
     (version "0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vkR" version))
-              (sha256
-               (base32
-                "1pk444fcw4yyv2dnfrw9vynbpc4gwr5yv9jd41djp9yipdf6d53l"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vkR" version))
+       (sha256
+        (base32 "1pk444fcw4yyv2dnfrw9vynbpc4gwr5yv9jd41djp9yipdf6d53l"))))
     (properties `((upstream-name . "vkR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml r-purrr r-jsonlite r-httr))
@@ -2034,12 +2034,12 @@ based in Russia.")
   (package
     (name "r-vizdraws")
     (version "1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vizdraws" version))
-              (sha256
-               (base32
-                "1r4kn8ki4ymqg87j223fs6fs9vyscc5bsfbnc4v9gvjy96jjxy3h"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vizdraws" version))
+       (sha256
+        (base32 "1r4kn8ki4ymqg87j223fs6fs9vyscc5bsfbnc4v9gvjy96jjxy3h"))))
     (properties `((upstream-name . "vizdraws")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-magrittr r-htmlwidgets r-dplyr))
@@ -2058,12 +2058,12 @@ providers it will use zero by default.")
   (package
     (name "r-vivo")
     (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vivo" version))
-              (sha256
-               (base32
-                "1cfval06byviw7himr5nql34h4jaway9gb6dzya3v994p7v851cg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vivo" version))
+       (sha256
+        (base32 "1cfval06byviw7himr5nql34h4jaway9gb6dzya3v994p7v851cg"))))
     (properties `((upstream-name . "vivo")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2 r-dalex))
@@ -2080,12 +2080,12 @@ Partial Dependence Profiles.")
   (package
     (name "r-vivid")
     (version "0.2.8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vivid" version))
-              (sha256
-               (base32
-                "0zl9p8dsrz9lmylnfxj4b50g1lvk7563ss0w3k1pidkwrs4kazin"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vivid" version))
+       (sha256
+        (base32 "0zl9p8dsrz9lmylnfxj4b50g1lvk7563ss0w3k1pidkwrs4kazin"))))
     (properties `((upstream-name . "vivid")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp
@@ -2113,12 +2113,12 @@ laid out in a pairs plot or zenplots style.")
   (package
     (name "r-vivaldi")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vivaldi" version))
-              (sha256
-               (base32
-                "1dvihjc6vjzg2w1j0q6vjhlhpwkknwsd97lpbqbfpacpp337mvx8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vivaldi" version))
+       (sha256
+        (base32 "1dvihjc6vjzg2w1j0q6vjhlhpwkknwsd97lpbqbfpacpp337mvx8"))))
     (properties `((upstream-name . "vivaldi")))
     (build-system r-build-system)
     (propagated-inputs (list r-vcfr
@@ -2142,12 +2142,12 @@ Functions in vivaldi primarily operate on vcf files.")
   (package
     (name "r-vivainsights")
     (version "0.4.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vivainsights" version))
-              (sha256
-               (base32
-                "0p76jyx6v1jvq7g94pqyy4idnrv8k1a4plk632bb3p93340yw3nf"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vivainsights" version))
+       (sha256
+        (base32 "0p76jyx6v1jvq7g94pqyy4idnrv8k1a4plk632bb3p93340yw3nf"))))
     (properties `((upstream-name . "vivainsights")))
     (build-system r-build-system)
     (propagated-inputs (list r-wpa
@@ -2183,12 +2183,12 @@ analyzing and visualizing data specific to Microsoft Viva Insights'.")
   (package
     (name "r-vitality")
     (version "1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vitality" version))
-              (sha256
-               (base32
-                "17micfmlksnw167vavvhlk431fm20k74y5ggs47pgz5fwpm854zp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vitality" version))
+       (sha256
+        (base32 "17micfmlksnw167vavvhlk431fm20k74y5ggs47pgz5fwpm854zp"))))
     (properties `((upstream-name . "vitality")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=vitality")
@@ -2202,12 +2202,12 @@ of mortality models.")
   (package
     (name "r-vitae")
     (version "0.5.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vitae" version))
-              (sha256
-               (base32
-                "19qcympcs9w9klrvhz5ls4p6186dcddv5dv7kn7jkc0js84i9sbv"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vitae" version))
+       (sha256
+        (base32 "19qcympcs9w9klrvhz5ls4p6186dcddv5dv7kn7jkc0js84i9sbv"))))
     (properties `((upstream-name . "vitae")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -2233,12 +2233,12 @@ maintenance of curriculum vitae.")
   (package
     (name "r-vita")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vita" version))
-              (sha256
-               (base32
-                "114p2lzcr8rn68f0z4kmjdnragqlmi18axda9ma4sbqh8mrmjs9v"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vita" version))
+       (sha256
+        (base32 "114p2lzcr8rn68f0z4kmjdnragqlmi18axda9ma4sbqh8mrmjs9v"))))
     (properties `((upstream-name . "vita")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-randomforest))
@@ -2266,12 +2266,12 @@ experimental.")
   (package
     (name "r-visxhclust")
     (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "visxhclust" version))
-              (sha256
-               (base32
-                "1wx16mg5g58p4mgf5y776i5ahgpqqjy4wbfqhfjph36mrhs6qr22"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "visxhclust" version))
+       (sha256
+        (base32 "1wx16mg5g58p4mgf5y776i5ahgpqqjy4wbfqhfjph36mrhs6qr22"))))
     (properties `((upstream-name . "visxhclust")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -2308,12 +2308,12 @@ computation of evaluation criteria.")
   (package
     (name "r-visvow")
     (version "1.3.9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "visvow" version))
-              (sha256
-               (base32
-                "08cbh2hqvxmd1j1y6p3aigmj6f6fdpw3ffda09j3himmfnxaw1y3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "visvow" version))
+       (sha256
+        (base32 "08cbh2hqvxmd1j1y6p3aigmj6f6fdpw3ffda09j3himmfnxaw1y3"))))
     (properties `((upstream-name . "visvow")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexls
@@ -2351,12 +2351,12 @@ computation of evaluation criteria.")
   (package
     (name "r-visualpred")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "visualpred" version))
-              (sha256
-               (base32
-                "19jq9h9kiv4vbzqz8zrv5gqb1bprq5jy7mcxvdwpfnna2rja6q4z"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "visualpred" version))
+       (sha256
+        (base32 "19jq9h9kiv4vbzqz8zrv5gqb1bprq5jy7mcxvdwpfnna2rja6q4z"))))
     (properties `((upstream-name . "visualpred")))
     (build-system r-build-system)
     (propagated-inputs (list r-randomforest
@@ -2391,12 +2391,12 @@ teaching purposes, but it has also many practical uses.")
   (package
     (name "r-visualizesimon2stage")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VisualizeSimon2Stage" version))
-              (sha256
-               (base32
-                "1xb001jdhf0z96zg51pkg9jng4nb4f7asqip7s5kx46fmzd1343s"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VisualizeSimon2Stage" version))
+       (sha256
+        (base32 "1xb001jdhf0z96zg51pkg9jng4nb4f7asqip7s5kx46fmzd1343s"))))
     (properties `((upstream-name . "VisualizeSimon2Stage")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))
@@ -2413,12 +2413,12 @@ design.")
   (package
     (name "r-visualize-cran-downloads")
     (version "1.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Visualize.CRAN.Downloads" version))
-              (sha256
-               (base32
-                "1jfj0qp4a6jxw423d6ik18r7gy6zzcxlp71mfhpam256xay0sq8f"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Visualize.CRAN.Downloads" version))
+       (sha256
+        (base32 "1jfj0qp4a6jxw423d6ik18r7gy6zzcxlp71mfhpam256xay0sq8f"))))
     (properties `((upstream-name . "Visualize.CRAN.Downloads")))
     (build-system r-build-system)
     (propagated-inputs (list r-plotly r-htmlwidgets r-cranlogs))
@@ -2435,12 +2435,12 @@ RStudio CRAN mirror.")
   (package
     (name "r-visualize")
     (version "4.4.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "visualize" version))
-              (sha256
-               (base32
-                "1k3jpvj1yysxc4g1a1w3m1y91104aqxqv8jh9qdd23gwy7a29525"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "visualize" version))
+       (sha256
+        (base32 "1k3jpvj1yysxc4g1a1w3m1y91104aqxqv8jh9qdd23gwy7a29525"))))
     (properties `((upstream-name . "visualize")))
     (build-system r-build-system)
     (home-page "https://github.com/coatless/visualize")
@@ -2457,12 +2457,12 @@ Also provided on the graph is the mean and variance of the distribution.")
   (package
     (name "r-visualfields")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "visualFields" version))
-              (sha256
-               (base32
-                "1z62xappwjdv9f7ql5spydkb626rdj3hvpvzy3d71fwm0y3qwki3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "visualFields" version))
+       (sha256
+        (base32 "1z62xappwjdv9f7ql5spydkb626rdj3hvpvzy3d71fwm0y3qwki3"))))
     (properties `((upstream-name . "visualFields")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
@@ -2497,12 +2497,12 @@ research.  The package is described in Marin-Franch and Swanson (2013)
   (package
     (name "r-visualdom")
     (version "0.8.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VisualDom" version))
-              (sha256
-               (base32
-                "14qg44sivfhnvjac5yq4n5llhwq669m3j7a2z84rlz0737x7x5xd"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VisualDom" version))
+       (sha256
+        (base32 "14qg44sivfhnvjac5yq4n5llhwq669m3j7a2z84rlz0737x7x5xd"))))
     (properties `((upstream-name . "VisualDom")))
     (build-system r-build-system)
     (propagated-inputs (list r-waveslim r-wavemulcor r-plot3d))
@@ -2530,12 +2530,12 @@ rdata_Lorenz') to exemplify the use of the functions contained in
   (package
     (name "r-vistributions")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vistributions" version))
-              (sha256
-               (base32
-                "1nzkbyqks38n7gp55iqhrlxqyfwxk4fvqzi9vsb45h0m0hlmwhxr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vistributions" version))
+       (sha256
+        (base32 "1nzkbyqks38n7gp55iqhrlxqyfwxk4fvqzi9vsb45h0m0hlmwhxr"))))
     (properties `((upstream-name . "vistributions")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-ggplot2))
@@ -2551,12 +2551,12 @@ binomial distributions.")
   (package
     (name "r-vistree")
     (version "0.8.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "visTree" version))
-              (sha256
-               (base32
-                "1l07zfr2hagjpdxfw5290wa3ki4bl7iqxrrhda0d1bp3wmwfz0ai"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "visTree" version))
+       (sha256
+        (base32 "1l07zfr2hagjpdxfw5290wa3ki4bl7iqxrrhda0d1bp3wmwfz0ai"))))
     (properties `((upstream-name . "visTree")))
     (build-system r-build-system)
     (propagated-inputs (list r-rpart r-partykit r-colorspace))
@@ -2575,12 +2575,12 @@ associated inner nodes.")
   (package
     (name "r-vistla")
     (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vistla" version))
-              (sha256
-               (base32
-                "117gng2kp3ngmi9w6h3qcradqc0dmb2alm1j41zpygkby6v8b1jw"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vistla" version))
+       (sha256
+        (base32 "117gng2kp3ngmi9w6h3qcradqc0dmb2alm1j41zpygkby6v8b1jw"))))
     (properties `((upstream-name . "vistla")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=vistla")
@@ -2600,12 +2600,12 @@ to a single feature.")
   (package
     (name "r-vistime")
     (version "1.2.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vistime" version))
-              (sha256
-               (base32
-                "18gqx71mpjsccfnab11j3g8wl11x2sk7bbjbcpi23qsk5d7sy112"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vistime" version))
+       (sha256
+        (base32 "18gqx71mpjsccfnab11j3g8wl11x2sk7bbjbcpi23qsk5d7sy112"))))
     (properties `((upstream-name . "vistime")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -2631,12 +2631,12 @@ using mouse hover or zoom.")
   (package
     (name "r-visstatistics")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "visStatistics" version))
-              (sha256
-               (base32
-                "0lp6sf2wrjjp1zh77yhlgr9sfpls54z0bny0l36v98ik4qykky0f"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "visStatistics" version))
+       (sha256
+        (base32 "0lp6sf2wrjjp1zh77yhlgr9sfpls54z0bny0l36v98ik4qykky0f"))))
     (properties `((upstream-name . "visStatistics")))
     (build-system r-build-system)
     (propagated-inputs (list r-vcd r-nortest r-multcompview r-cairo))
@@ -2674,12 +2674,12 @@ chisqu.test().  In both cases case an additional mosaic plot is generated.")
   (package
     (name "r-visreg")
     (version "2.7.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "visreg" version))
-              (sha256
-               (base32
-                "070yhyxxh3w16i54k790n47bgcjn4b10b6g1z553x6afjc3l3a6d"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "visreg" version))
+       (sha256
+        (base32 "070yhyxxh3w16i54k790n47bgcjn4b10b6g1z553x6afjc3l3a6d"))))
     (properties `((upstream-name . "visreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-lattice))
@@ -2696,12 +2696,12 @@ glm', coxph', rlm', gam', locfit', lmer', @code{randomForest}', etc.)")
   (package
     (name "r-visr")
     (version "0.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "visR" version))
-              (sha256
-               (base32
-                "0s403njzcasp6l55k1lzh3jmd5ajdfblg312pwl8b5w3zpqp32jg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "visR" version))
+       (sha256
+        (base32 "0s403njzcasp6l55k1lzh3jmd5ajdfblg312pwl8b5w3zpqp32jg"))))
     (properties `((upstream-name . "visR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -2730,12 +2730,12 @@ principles as described in: \"Vandemeulebroecke et al. (2018)\"
   (package
     (name "r-visitorcounts")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VisitorCounts" version))
-              (sha256
-               (base32
-                "0qm5qccikwdkdc9pm0gck5id3rjicb07jbds4fbvn3db071bzrdy"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VisitorCounts" version))
+       (sha256
+        (base32 "0qm5qccikwdkdc9pm0gck5id3rjicb07jbds4fbvn3db071bzrdy"))))
     (properties `((upstream-name . "VisitorCounts")))
     (build-system r-build-system)
     (propagated-inputs (list r-rssa))
@@ -2756,12 +2756,12 @@ at Wood, Guerry, Silver, and Lacayo (2013) <doi:10.1038/srep02976>.")
   (package
     (name "r-visit")
     (version "2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "visit" version))
-              (sha256
-               (base32
-                "0mrwah122w9dyivyzs8xlv6vq9w8bpr468zjjw5q974wk7h31mk4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "visit" version))
+       (sha256
+        (base32 "0mrwah122w9dyivyzs8xlv6vq9w8bpr468zjjw5q974wk7h31mk4"))))
     (properties `((upstream-name . "visit")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -2795,12 +2795,12 @@ further details.")
   (package
     (name "r-visielse")
     (version "1.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ViSiElse" version))
-              (sha256
-               (base32
-                "1ay09dahlqnfrgf4gl4s45a4ahrk2xliagxqz5h826w2vzsawqcc"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ViSiElse" version))
+       (sha256
+        (base32 "1ay09dahlqnfrgf4gl4s45a4ahrk2xliagxqz5h826w2vzsawqcc"))))
     (properties `((upstream-name . "ViSiElse")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -2828,12 +2828,12 @@ actions.")
   (package
     (name "r-viscomplexr")
     (version "1.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "viscomplexr" version))
-              (sha256
-               (base32
-                "1b45yi5xv4vq52pfa064ll3ghxgkwpbknzq94gg60vcvb7spd0if"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "viscomplexr" version))
+       (sha256
+        (base32 "1b45yi5xv4vq52pfa064ll3ghxgkwpbknzq94gg60vcvb7spd0if"))))
     (properties `((upstream-name . "viscomplexr")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -2855,12 +2855,12 @@ Parallel processing is used for optimum performance.")
   (package
     (name "r-viscomp")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "viscomp" version))
-              (sha256
-               (base32
-                "18s9qapznc50xwjr3lx48nsn9prji8n13byqzvhy151wm4anak7k"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "viscomp" version))
+       (sha256
+        (base32 "18s9qapznc50xwjr3lx48nsn9prji8n13byqzvhy151wm4anak7k"))))
     (properties `((upstream-name . "viscomp")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -2897,12 +2897,12 @@ implemented tools are described by Seitidis et al. (2023)
   (package
     (name "r-viscollin")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VisCollin" version))
-              (sha256
-               (base32
-                "1pcd7b14a2qnq1jlk63fascdb8hkys8cg4jw4rx6xk9xmvpvyhlb"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VisCollin" version))
+       (sha256
+        (base32 "1pcd7b14a2qnq1jlk63fascdb8hkys8cg4jw4rx6xk9xmvpvyhlb"))))
     (properties `((upstream-name . "VisCollin")))
     (build-system r-build-system)
     (home-page "https://github.com/friendly/VisCollin")
@@ -2923,12 +2923,12 @@ collinearity is most apparent.")
   (package
     (name "r-visaotr")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "visaOTR" version))
-              (sha256
-               (base32
-                "12ix8ljbykwf493hw6npli2ad665jip2mzb8p25j5v10f8ij88qm"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "visaOTR" version))
+       (sha256
+        (base32 "12ix8ljbykwf493hw6npli2ad665jip2mzb8p25j5v10f8ij88qm"))))
     (properties `((upstream-name . "visaOTR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -2955,12 +2955,12 @@ is an implementation of Zishu Zhan and Jingxiao Zhang. (2022+).")
   (package
     (name "r-visae")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "visae" version))
-              (sha256
-               (base32
-                "0ycwb380z8nb646w7w42952lwvdi8prmph7yv1lraswvp4wjfx3p"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "visae" version))
+       (sha256
+        (base32 "0ycwb380z8nb646w7w42952lwvdi8prmph7yv1lraswvp4wjfx3p"))))
     (properties `((upstream-name . "visae")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -2986,12 +2986,12 @@ analysis as described in Diniz et.  al (2021)<doi:10.1186/s12874-021-01368-w>.")
   (package
     (name "r-visachartr")
     (version "3.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "visachartR" version))
-              (sha256
-               (base32
-                "0jwhb5ad6n9pcxx2ss6jzxj9gzi448x2ssw07h3igs7bxjh47lp1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "visachartR" version))
+       (sha256
+        (base32 "0jwhb5ad6n9pcxx2ss6jzxj9gzi448x2ssw07h3igs7bxjh47lp1"))))
     (properties `((upstream-name . "visachartR")))
     (build-system r-build-system)
     (propagated-inputs (list r-htmlwidgets))
@@ -3009,12 +3009,12 @@ components for the web.")
   (package
     (name "r-visa")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "visa" version))
-              (sha256
-               (base32
-                "1mx7nbbpxs4fdp781a75qvffa42dx2n6anslbfs9bnprmvzmljqr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "visa" version))
+       (sha256
+        (base32 "1mx7nbbpxs4fdp781a75qvffa42dx2n6anslbfs9bnprmvzmljqr"))))
     (properties `((upstream-name . "visa")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2 r-rcolorbrewer r-matrix r-ggpmisc
@@ -3036,12 +3036,12 @@ results of analysis in the ggplot2 style.")
   (package
     (name "r-virustotal")
     (version "0.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "virustotal" version))
-              (sha256
-               (base32
-                "020kwhki5740857zd24xm18dg3whzhf527qhmfx1cxyqyld404wy"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "virustotal" version))
+       (sha256
+        (base32 "020kwhki5740857zd24xm18dg3whzhf527qhmfx1cxyqyld404wy"))))
     (properties `((upstream-name . "virustotal")))
     (build-system r-build-system)
     (propagated-inputs (list r-plyr r-httr))
@@ -3059,12 +3059,12 @@ among other things.  See <http://www.virustotal.com> for more information.")
   (package
     (name "r-virtuoso")
     (version "0.1.8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "virtuoso" version))
-              (sha256
-               (base32
-                "1smb8sjfqcp3jflplgf92swasxzrp72fnnqwyisf87pjknm91qsc"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "virtuoso" version))
+       (sha256
+        (base32 "1smb8sjfqcp3jflplgf92swasxzrp72fnnqwyisf87pjknm91qsc"))))
     (properties `((upstream-name . "virtuoso")))
     (build-system r-build-system)
     (propagated-inputs (list r-rappdirs
@@ -3106,12 +3106,12 @@ rdflib and redland packages.")
   (package
     (name "r-virtualspecies")
     (version "1.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "virtualspecies" version))
-              (sha256
-               (base32
-                "1bqrh17fcskklsdkwkg9lvlki67jigr0c32mq4bfl16iisrc1342"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "virtualspecies" version))
+       (sha256
+        (base32 "1bqrh17fcskklsdkwkg9lvlki67jigr0c32mq4bfl16iisrc1342"))))
     (properties `((upstream-name . "virtualspecies")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis r-terra r-rnaturalearth r-raster r-ade4))
@@ -3129,12 +3129,12 @@ realism.")
   (package
     (name "r-virtualpop")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VirtualPop" version))
-              (sha256
-               (base32
-                "0g3yzv9fqmxydqq6b56l6abz03slk7425aahixs3q26gwp587rz4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VirtualPop" version))
+       (sha256
+        (base32 "0g3yzv9fqmxydqq6b56l6abz03slk7425aahixs3q26gwp587rz4"))))
     (properties `((upstream-name . "VirtualPop")))
     (build-system r-build-system)
     (propagated-inputs (list r-msm r-hmdhfdplus))
@@ -3155,12 +3155,12 @@ generations.  The genealogies that result facilitate the study of family ties.")
   (package
     (name "r-virtualpollen")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "virtualPollen" version))
-              (sha256
-               (base32
-                "0caiyl7h9qn3nv34dafv5rs4v7n4avyjpng0rkz6aw3ri1zn8sa0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "virtualPollen" version))
+       (sha256
+        (base32 "0caiyl7h9qn3nv34dafv5rs4v7n4avyjpng0rkz6aw3ri1zn8sa0"))))
     (properties `((upstream-name . "virtualPollen")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -3186,12 +3186,12 @@ accumulation rates and given depth intervals between consecutive samples.")
   (package
     (name "r-virf")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VIRF" version))
-              (sha256
-               (base32
-                "0bdkmbmkmmj78h9x025qsdzjzcx8xr2s98wlspcsghlz4hxkzcas"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VIRF" version))
+       (sha256
+        (base32 "0bdkmbmkmmj78h9x025qsdzjzcx8xr2s98wlspcsghlz4hxkzcas"))))
     (properties `((upstream-name . "VIRF")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmgarch
@@ -3215,12 +3215,12 @@ model using algorithm by Jin, Lin and Tamvakis (2012)
   (package
     (name "r-viralx")
     (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "viralx" version))
-              (sha256
-               (base32
-                "054w54m0k1z6jlfz6pp3nlarnady9kndvmmr5ibp7j14jyg7jhxy"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "viralx" version))
+       (sha256
+        (base32 "054w54m0k1z6jlfz6pp3nlarnady9kndvmmr5ibp7j14jyg7jhxy"))))
     (properties `((upstream-name . "viralx")))
     (build-system r-build-system)
     (propagated-inputs (list r-workflows
@@ -3253,12 +3253,12 @@ and computational biology for the benefit of understanding HIV dynamics.")
   (package
     (name "r-viralmodels")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "viralmodels" version))
-              (sha256
-               (base32
-                "1sjy2xwn4ga7di8n8lvivj5vnhlrl7frrqwymgb9q5jky2b5qv9w"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "viralmodels" version))
+       (sha256
+        (base32 "1sjy2xwn4ga7di8n8lvivj5vnhlrl7frrqwymgb9q5jky2b5qv9w"))))
     (properties `((upstream-name . "viralmodels")))
     (build-system r-build-system)
     (propagated-inputs (list r-workflowsets
@@ -3291,16 +3291,46 @@ to contribute to HIV research and the visibility of vulnerable seropositive
 populations.")
     (license license:gpl3+)))
 
+(define-public r-viraldomain
+  (package
+    (name "r-viraldomain")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "viraldomain" version))
+       (sha256
+        (base32 "184hhd3k2sq984cs4hv938biwawx4wkwm8qgwvaks142fdb5phdm"))))
+    (properties `((upstream-name . "viraldomain")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-workflows
+                             r-vdiffr
+                             r-recipes
+                             r-parsnip
+                             r-nnet
+                             r-ggplot2
+                             r-earth
+                             r-dplyr
+                             r-applicable))
+    (home-page "https://cran.r-project.org/package=viraldomain")
+    (synopsis "Applicability Domain Methods of Viral Load and CD4 Lymphocytes")
+    (description
+     "This package provides methods for assessing the applicability domain of models
+that predict viral load and CD4 (Cluster of Differentiation 4) lymphocyte
+counts.  These methods help determine the extent of extrapolation when making
+predictions.")
+    (license license:gpl3+)))
+
 (define-public r-vip
   (package
     (name "r-vip")
     (version "0.4.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vip" version))
-              (sha256
-               (base32
-                "0n87g2z354az0scsf7w7n144p77yv1mk96w5vacn25p7jlldsram"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vip" version))
+       (sha256
+        (base32 "0n87g2z354az0scsf7w7n144p77yv1mk96w5vacn25p7jlldsram"))))
     (properties `((upstream-name . "vip")))
     (build-system r-build-system)
     (propagated-inputs (list r-yardstick r-tibble r-ggplot2 r-foreach))
@@ -3324,12 +3354,12 @@ effects is also included (see the previous reference for details).")
   (package
     (name "r-violinplotter")
     (version "3.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "violinplotter" version))
-              (sha256
-               (base32
-                "1xy57mycdsr9qr48n1jrw0nzwz848r0xcns864d8gyc8zikp3x6a"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "violinplotter" version))
+       (sha256
+        (base32 "1xy57mycdsr9qr48n1jrw0nzwz848r0xcns864d8gyc8zikp3x6a"))))
     (properties `((upstream-name . "violinplotter")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=violinplotter")
@@ -3345,12 +3375,12 @@ tool for comparing means and assessing trends of categorical factors.")
   (package
     (name "r-vines")
     (version "1.1.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vines" version))
-              (sha256
-               (base32
-                "057d2fdh03cq9kh4vz94arqscahmz14xbr2g59l0vn205lnyilf1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vines" version))
+       (sha256
+        (base32 "057d2fdh03cq9kh4vz94arqscahmz14xbr2g59l0vn205lnyilf1"))))
     (properties `((upstream-name . "vines")))
     (build-system r-build-system)
     (propagated-inputs (list r-tsp r-cubature r-copula r-adgoftest))
@@ -3368,12 +3398,12 @@ function evaluation, and simulation.")
   (package
     (name "r-vinereg")
     (version "0.8.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vinereg" version))
-              (sha256
-               (base32
-                "0d1ibrhjsbjaaz2cd9lg76cjplkys716i689khzaiv4sgbjhwdh1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vinereg" version))
+       (sha256
+        (base32 "0d1ibrhjsbjaaz2cd9lg76cjplkys716i689khzaiv4sgbjhwdh1"))))
     (properties `((upstream-name . "vinereg")))
     (build-system r-build-system)
     (propagated-inputs (list r-wdm
@@ -3398,12 +3428,12 @@ nonparametric pair-copulas.  See Kraus and Czado (2017)
   (package
     (name "r-vinecopula")
     (version "2.5.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VineCopula" version))
-              (sha256
-               (base32
-                "0s2v27i5cljvxzh3awpf3bcfbbghch0lphhghqnc7x51w1prxfai"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VineCopula" version))
+       (sha256
+        (base32 "0s2v27i5cljvxzh3awpf3bcfbbghch0lphhghqnc7x51w1prxfai"))))
     (properties `((upstream-name . "VineCopula")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-mass r-lattice r-adgoftest))
@@ -3422,12 +3452,12 @@ bivariate copula models are also provided.")
   (package
     (name "r-vindecodr")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vindecodr" version))
-              (sha256
-               (base32
-                "0yvchdf90l8lkzyba5wrpma6vjcgf19li159s8s79y8sgp5pyx7p"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vindecodr" version))
+       (sha256
+        (base32 "0yvchdf90l8lkzyba5wrpma6vjcgf19li159s8s79y8sgp5pyx7p"))))
     (properties `((upstream-name . "vindecodr")))
     (build-system r-build-system)
     (propagated-inputs (list r-httr))
@@ -3448,12 +3478,12 @@ the vehicles, including make, model, model year, and gross vehicle weight rating
   (package
     (name "r-vimpclust")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vimpclust" version))
-              (sha256
-               (base32
-                "0ly7piz7q88sh2g7zq5b2pqph9467b4fclgq9amm0m7xc8vrv4f9"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vimpclust" version))
+       (sha256
+        (base32 "0ly7piz7q88sh2g7zq5b2pqph9467b4fclgq9amm0m7xc8vrv4f9"))))
     (properties `((upstream-name . "vimpclust")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-polychrome r-pcamixdata r-mclust
@@ -3477,12 +3507,12 @@ Lacaille, A. Mourer and M. Olteanu
   (package
     (name "r-vimp")
     (version "2.3.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vimp" version))
-              (sha256
-               (base32
-                "069pcxzavi213idpslnc1skylsb1wn6xldajnn54prlwq9hkfb19"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vimp" version))
+       (sha256
+        (base32 "069pcxzavi213idpslnc1skylsb1wn6xldajnn54prlwq9hkfb19"))))
     (properties `((upstream-name . "vimp")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -3509,12 +3539,12 @@ Williamson et al. (JASA, 2021), and Williamson and Feng (ICML, 2020).")
   (package
     (name "r-vimean")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VIMean" version))
-              (sha256
-               (base32
-                "0kxrcigp94h2j1vx5pj24sp73iqxldc1ygm5bak4jrld66r0nb5b"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VIMean" version))
+       (sha256
+        (base32 "0kxrcigp94h2j1vx5pj24sp73iqxldc1ygm5bak4jrld66r0nb5b"))))
     (properties `((upstream-name . "VIMean")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=VIMean")
@@ -3529,12 +3559,12 @@ of mean (VIM).  The methodology can be found at Peter M Rothwell et al. (2010)
   (package
     (name "r-villager")
     (version "1.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "villager" version))
-              (sha256
-               (base32
-                "0g72zpsqi39ax44n3s3x66b1fbgyx6w2wraf531jsy7vj95ivr2p"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "villager" version))
+       (sha256
+        (base32 "0g72zpsqi39ax44n3s3x66b1fbgyx6w2wraf531jsy7vj95ivr2p"))))
     (properties `((upstream-name . "villager")))
     (build-system r-build-system)
     (propagated-inputs (list r-uuid r-readr r-r6))
@@ -3552,12 +3582,12 @@ fit researcher needs.")
   (package
     (name "r-viking")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "viking" version))
-              (sha256
-               (base32
-                "1wrkv044646756fmc4bmij06pbmzyi8jydbpisngs3pa4wnixcvw"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "viking" version))
+       (sha256
+        (base32 "1wrkv044646756fmc4bmij06pbmzyi8jydbpisngs3pa4wnixcvw"))))
     (properties `((upstream-name . "viking")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=viking")
@@ -3572,12 +3602,12 @@ Vilmarest (2022) <https://theses.hal.science/tel-03716104/>.")
   (package
     (name "r-vigor")
     (version "1.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VIGoR" version))
-              (sha256
-               (base32
-                "0ikyfla1c4x6plm05pihaas6qz43dip20i75c4cwk1lq7fqayq92"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VIGoR" version))
+       (sha256
+        (base32 "0ikyfla1c4x6plm05pihaas6qz43dip20i75c4cwk1lq7fqayq92"))))
     (properties `((upstream-name . "VIGoR")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=VIGoR")
@@ -3595,12 +3625,12 @@ different ways (i.e., model structures).")
   (package
     (name "r-viewpoly")
     (version "0.3.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "viewpoly" version))
-              (sha256
-               (base32
-                "1say30d46vj67ng5mprhwl02jf9d0kv573j80r05z08szmcm4sxb"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "viewpoly" version))
+       (sha256
+        (base32 "1say30d46vj67ng5mprhwl02jf9d0kv573j80r05z08szmcm4sxb"))))
     (properties `((upstream-name . "viewpoly")))
     (build-system r-build-system)
     (propagated-inputs (list r-vroom
@@ -3640,12 +3670,12 @@ QTLpoly and @code{polyqtlR} packages.")
   (package
     (name "r-viewpipesteps")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ViewPipeSteps" version))
-              (sha256
-               (base32
-                "0lcm7zzflbbjpb1mdy6pppdmg9gvlcn7hg42a4fgm0kxhniwnmyg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ViewPipeSteps" version))
+       (sha256
+        (base32 "0lcm7zzflbbjpb1mdy6pppdmg9gvlcn7hg42a4fgm0kxhniwnmyg"))))
     (properties `((upstream-name . "ViewPipeSteps")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-rstudioapi r-dplyr))
@@ -3661,12 +3691,12 @@ select steps in a convenient way.")
   (package
     (name "r-vietnameseconverter")
     (version "0.4.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vietnameseConverter" version))
-              (sha256
-               (base32
-                "1bnscv1yz4hr6cvpavdj2gjn6dqy96rbagxl9280a2xxav09mps3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vietnameseConverter" version))
+       (sha256
+        (base32 "1bnscv1yz4hr6cvpavdj2gjn6dqy96rbagxl9280a2xxav09mps3"))))
     (properties `((upstream-name . "vietnameseConverter")))
     (build-system r-build-system)
     (propagated-inputs (list r-utf8 r-sf r-gsubfn))
@@ -3685,12 +3715,12 @@ with the correct Unicode characters (with or without diacritics).")
   (package
     (name "r-vietnamcode")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vietnamcode" version))
-              (sha256
-               (base32
-                "0vc0c1fg30afar2dkch5h27b8jbglcd9ja6d5hcypnibqz4c68vz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vietnamcode" version))
+       (sha256
+        (base32 "0vc0c1fg30afar2dkch5h27b8jbglcd9ja6d5hcypnibqz4c68vz"))))
     (properties `((upstream-name . "vietnamcode")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=vietnamcode")
@@ -3704,12 +3734,12 @@ diacritics and different spellings.")
   (package
     (name "r-video")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "video" version))
-              (sha256
-               (base32
-                "0h500mpbjiwggx1m8zfydhr9n4v27is9s46ay9856d2lgv2srlfg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "video" version))
+       (sha256
+        (base32 "0h500mpbjiwggx1m8zfydhr9n4v27is9s46ay9856d2lgv2srlfg"))))
     (properties `((upstream-name . "video")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-jsonlite r-htmlwidgets))
@@ -3726,12 +3756,12 @@ as playing and pausing the video to be triggered from the server.")
   (package
     (name "r-vicus")
     (version "0.99.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Vicus" version))
-              (sha256
-               (base32
-                "1f4vmz34gms0vbvpn94rgdhbbvxbqmjxzhd9n4fxfm0dizmba004"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Vicus" version))
+       (sha256
+        (base32 "1f4vmz34gms0vbvpn94rgdhbbvxbqmjxzhd9n4fxfm0dizmba004"))))
     (properties `((upstream-name . "Vicus")))
     (build-system r-build-system)
     (propagated-inputs (list r-rspectra r-rann r-matrix))
@@ -3750,12 +3780,12 @@ methods, see the reference section of @code{GitHub} README.md
   (package
     (name "r-vicmapr")
     (version "0.2.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VicmapR" version))
-              (sha256
-               (base32
-                "0djv95l32nz6wwslwgn0v037fjbl3fz15vybn39c6g1iw9a2a46s"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VicmapR" version))
+       (sha256
+        (base32 "0djv95l32nz6wwslwgn0v037fjbl3fz15vybn39c6g1iw9a2a46s"))))
     (properties `((upstream-name . "VicmapR")))
     (build-system r-build-system)
     (inputs (list proj geos gdal))
@@ -3794,12 +3824,12 @@ bcdata R package <doi:10.21105/joss.02927>.")
   (package
     (name "r-vici")
     (version "0.7.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vici" version))
-              (sha256
-               (base32
-                "0fwqp5avnsyi07b9zw26qw30vkya28mlc3v1anhf6zq7hc7mgp54"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vici" version))
+       (sha256
+        (base32 "0fwqp5avnsyi07b9zw26qw30vkya28mlc3v1anhf6zq7hc7mgp54"))))
     (properties `((upstream-name . "vici")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -3828,12 +3858,12 @@ Journal of Immunological Methods, 477:112711. <doi:10.1016/j.jim.2019.112711>.")
   (package
     (name "r-vicc")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vICC" version))
-              (sha256
-               (base32
-                "13lcs7wwj1xfbjf3q7r8ssf00jg5hr1vjp2pyw0r42iz7mx47xjv"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vICC" version))
+       (sha256
+        (base32 "13lcs7wwj1xfbjf3q7r8ssf00jg5hr1vjp2pyw0r42iz7mx47xjv"))))
     (properties `((upstream-name . "vICC")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjags r-rdpack r-nlme r-ggplot2 r-coda))
@@ -3850,12 +3880,12 @@ effects model <10.31234/osf.io/hpq7w>.")
   (package
     (name "r-vic5")
     (version "0.2.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VIC5" version))
-              (sha256
-               (base32
-                "1zkvzkras94gyc43b9j4bq4mpyg9l1idx2pdd8a728gmq1daky0k"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VIC5" version))
+       (sha256
+        (base32 "1zkvzkras94gyc43b9j4bq4mpyg9l1idx2pdd8a728gmq1daky0k"))))
     (properties `((upstream-name . "VIC5")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-lubridate r-foreach))
@@ -3885,12 +3915,12 @@ Geosci.  Model Dev., 11, 3481-3496, <doi:10.5194/gmd-11-3481-2018>\".")
   (package
     (name "r-viafr")
     (version "0.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "viafr" version))
-              (sha256
-               (base32
-                "1cxmk82cr2ci99j7wgfp7slqwyk5rxv109mk2c09mxqn3pdavil9"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "viafr" version))
+       (sha256
+        (base32 "1cxmk82cr2ci99j7wgfp7slqwyk5rxv109mk2c09mxqn3pdavil9"))))
     (properties `((upstream-name . "viafr")))
     (build-system r-build-system)
     (propagated-inputs (list r-utf8
@@ -3918,12 +3948,12 @@ variations in language, character set, and spelling.  For more information go to
   (package
     (name "r-via")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "via" version))
-              (sha256
-               (base32
-                "0mk6zrirf38a6qym15w9w76gw813mc7p265mcach90asrzfglb6q"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "via" version))
+       (sha256
+        (base32 "0mk6zrirf38a6qym15w9w76gw813mc7p265mcach90asrzfglb6q"))))
     (properties `((upstream-name . "via")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=via")
@@ -3941,12 +3971,12 @@ data instead of lists.")
   (package
     (name "r-vhica")
     (version "0.2.8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vhica" version))
-              (sha256
-               (base32
-                "10785bx2wcnrfg77914r93fzlixhjpqz22sj3gfrh5n4qswzs91g"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vhica" version))
+       (sha256
+        (base32 "10785bx2wcnrfg77914r93fzlixhjpqz22sj3gfrh5n4qswzs91g"))))
     (properties `((upstream-name . "vhica")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=vhica")
@@ -3965,12 +3995,12 @@ transposable element sequences with that of regular genes.")
   (package
     (name "r-vhdclassification")
     (version "0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VHDClassification" version))
-              (sha256
-               (base32
-                "1ij4h3gzxb9mm9q743kc3sg2q609mnqz6mhlrbim1wcjji2b7bv4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VHDClassification" version))
+       (sha256
+        (base32 "1ij4h3gzxb9mm9q743kc3sg2q609mnqz6mhlrbim1wcjji2b7bv4"))))
     (properties `((upstream-name . "VHDClassification")))
     (build-system r-build-system)
     (propagated-inputs (list r-lattice r-e1071))
@@ -3987,12 +4017,12 @@ there are many more variables than observations).")
   (package
     (name "r-vhcub")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vhcub" version))
-              (sha256
-               (base32
-                "04a8hdm4pxl8fzwy9q2wqc9q0dl5r49xwbid70yj9qlflh683id0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vhcub" version))
+       (sha256
+        (base32 "04a8hdm4pxl8fzwy9q2wqc9q0dl5r49xwbid70yj9qlflh683id0"))))
     (properties `((upstream-name . "vhcub")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-seqinr r-ggplot2 r-biostrings))
@@ -4017,12 +4047,12 @@ ENc.GC3plot() and PR2.plot().")
   (package
     (name "r-vglmer")
     (version "1.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vglmer" version))
-              (sha256
-               (base32
-                "0wfl1n6xp6qiv34d4p5qy3mwzrvf3n324hrlksdpa68j5xfw9w0f"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vglmer" version))
+       (sha256
+        (base32 "0wfl1n6xp6qiv34d4p5qy3mwzrvf3n324hrlksdpa68j5xfw9w0f"))))
     (properties `((upstream-name . "vglmer")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen
@@ -4049,12 +4079,12 @@ the approximation using marginal augmentation.  Goplerud (2022)
   (package
     (name "r-vgamextra")
     (version "0.0-5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VGAMextra" version))
-              (sha256
-               (base32
-                "11s7s2dm2yf5s9qbwbyavz01l9fk86grp4mlhrh8hd6lfmxxxcxm"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VGAMextra" version))
+       (sha256
+        (base32 "11s7s2dm2yf5s9qbwbyavz01l9fk86grp4mlhrh8hd6lfmxxxcxm"))))
     (properties `((upstream-name . "VGAMextra")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam))
@@ -4081,12 +4111,12 @@ subject to change; see the NEWS for further details on the latest changes.")
   (package
     (name "r-vgamdata")
     (version "1.1-9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VGAMdata" version))
-              (sha256
-               (base32
-                "1bk4c22rwpcm5aa1kdg0dh8c87pb54639xhlh4dkxwx2idn6s9b5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VGAMdata" version))
+       (sha256
+        (base32 "1bk4c22rwpcm5aa1kdg0dh8c87pb54639xhlh4dkxwx2idn6s9b5"))))
     (properties `((upstream-name . "VGAMdata")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam))
@@ -4107,12 +4137,12 @@ contains some old VGAM family functions which have been replaced by newer ones
   (package
     (name "r-vfs")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VFS" version))
-              (sha256
-               (base32
-                "1b8sl8id2gj4iqkpjzd3giybbix2jvskwsbw1kqj3zqr77hygxwg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VFS" version))
+       (sha256
+        (base32 "1b8sl8id2gj4iqkpjzd3giybbix2jvskwsbw1kqj3zqr77hygxwg"))))
     (properties `((upstream-name . "VFS")))
     (build-system r-build-system)
     (propagated-inputs (list r-nleqslv r-e1071))
@@ -4132,12 +4162,12 @@ al., 2009 <doi:10.2134/jeq2008.0337>).")
   (package
     (name "r-vfprogression")
     (version "0.7.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vfprogression" version))
-              (sha256
-               (base32
-                "0kgw1jx0rl9v8qy8qg7zjzdgvwqdi7k1lsvsx3lnpw4sfpkzsq23"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vfprogression" version))
+       (sha256
+        (base32 "0kgw1jx0rl9v8qy8qg7zjzdgvwqdi7k1lsvsx3lnpw4sfpkzsq23"))))
     (properties `((upstream-name . "vfprogression")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=vfprogression")
@@ -4156,12 +4186,12 @@ included.  The VF analysis methods could be found in -- Musch et al. (1999)
   (package
     (name "r-vfp")
     (version "1.4.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VFP" version))
-              (sha256
-               (base32
-                "14idww1vy695mp9v2h0nxqi6flmm41cr30i0yd2nwjsnriwqgzak"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VFP" version))
+       (sha256
+        (base32 "14idww1vy695mp9v2h0nxqi6flmm41cr30i0yd2nwjsnriwqgzak"))))
     (properties `((upstream-name . "VFP")))
     (build-system r-build-system)
     (propagated-inputs (list r-vca r-mass r-gnm))
@@ -4183,12 +4213,12 @@ treatment of patients.")
   (package
     (name "r-vfinputs")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vfinputs" version))
-              (sha256
-               (base32
-                "10fh6ybsqy9xm7gwl0kska0pgk810sgq9kvf86gmnm0pmrcqzsdh"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vfinputs" version))
+       (sha256
+        (base32 "10fh6ybsqy9xm7gwl0kska0pgk810sgq9kvf86gmnm0pmrcqzsdh"))))
     (properties `((upstream-name . "vfinputs")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-scales r-jsonlite r-htmltools))
@@ -4204,12 +4234,12 @@ facilitate filtering across multiple outputs.")
   (package
     (name "r-vfcp")
     (version "1.4.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vfcp" version))
-              (sha256
-               (base32
-                "0zj1ihqdx5x1695al1xyi8k001yw8x7gdss72myxlnh7b4flnp9m"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vfcp" version))
+       (sha256
+        (base32 "0zj1ihqdx5x1695al1xyi8k001yw8x7gdss72myxlnh7b4flnp9m"))))
     (properties `((upstream-name . "vfcp")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-extradistr r-copula))
@@ -4229,12 +4259,12 @@ amh', the copula dimension may be larger than 2.")
   (package
     (name "r-vewaningvariant")
     (version "1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VEwaningVariant" version))
-              (sha256
-               (base32
-                "1w0d7z86gg16vjg3bd9flr53q02wjz5hzs0460hx167ixi13m5jv"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VEwaningVariant" version))
+       (sha256
+        (base32 "1w0d7z86gg16vjg3bd9flr53q02wjz5hzs0460hx167ixi13m5jv"))))
     (properties `((upstream-name . "VEwaningVariant")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rcpparmadillo r-rcpp r-ggplot2))
@@ -4256,12 +4286,12 @@ vaccine.")
   (package
     (name "r-vewaning")
     (version "1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VEwaning" version))
-              (sha256
-               (base32
-                "1438j8dlfmn2yacg1haa66fmmv11x49b38qyl03jvw9vcxi1gz4x"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VEwaning" version))
+       (sha256
+        (base32 "1438j8dlfmn2yacg1haa66fmmv11x49b38qyl03jvw9vcxi1gz4x"))))
     (properties `((upstream-name . "VEwaning")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-ggplot2))
@@ -4283,12 +4313,12 @@ Davidian, M. (2021) <@code{arXiv:2102.13103>} .")
   (package
     (name "r-vetresearchlmm")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VetResearchLMM" version))
-              (sha256
-               (base32
-                "1a7wm04bsr5shak7l8ypxlhlnx3qkq1jdpjnji1n05p6b00ih9h1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VetResearchLMM" version))
+       (sha256
+        (base32 "1a7wm04bsr5shak7l8ypxlhlnx3qkq1jdpjnji1n05p6b00ih9h1"))))
     (properties `((upstream-name . "VetResearchLMM")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlme r-multcomp r-lmertest r-lme4 r-ggplot2))
@@ -4305,12 +4335,12 @@ Research.  International Livestock Research Institute.")
   (package
     (name "r-vetr")
     (version "0.2.15")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vetr" version))
-              (sha256
-               (base32
-                "0858wivgdbjs4qww6szi32ifc4l0a3nx0c0zf2778d4nxs9zgxk2"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vetr" version))
+       (sha256
+        (base32 "0858wivgdbjs4qww6szi32ifc4l0a3nx0c0zf2778d4nxs9zgxk2"))))
     (properties `((upstream-name . "vetr")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -4325,12 +4355,12 @@ requirements, and auto-composing error messages when they do not.")
   (package
     (name "r-vetiver")
     (version "0.2.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vetiver" version))
-              (sha256
-               (base32
-                "19yz8p4w3rqyzsr2xb8ryav566b2321zy3h34gaxlz0am0wsryw3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vetiver" version))
+       (sha256
+        (base32 "19yz8p4w3rqyzsr2xb8ryav566b2321zy3h34gaxlz0am0wsryw3"))))
     (properties `((upstream-name . "vetiver")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -4367,12 +4397,12 @@ models.")
   (package
     (name "r-vesselr")
     (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vesselr" version))
-              (sha256
-               (base32
-                "1wzprnpiv04gxhqgki36gp1a0xj9l3mchllphwkfsdja4axq3prk"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vesselr" version))
+       (sha256
+        (base32 "1wzprnpiv04gxhqgki36gp1a0xj9l3mchllphwkfsdja4axq3prk"))))
     (properties `((upstream-name . "vesselr")))
     (build-system r-build-system)
     (propagated-inputs (list r-pbmcapply r-pbapply r-oro-nifti))
@@ -4387,12 +4417,12 @@ filter, and Frangi vesselness filter of 3-dimensional volumes.")
   (package
     (name "r-verylargeintegers")
     (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VeryLargeIntegers" version))
-              (sha256
-               (base32
-                "1a6hyipn9522zj69amlxmqip45gflml5kcyjlxi4vf4y1givb7qs"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VeryLargeIntegers" version))
+       (sha256
+        (base32 "1a6hyipn9522zj69amlxmqip45gflml5kcyjlxi4vf4y1givb7qs"))))
     (properties `((upstream-name . "VeryLargeIntegers")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -4410,12 +4440,12 @@ Factorization algorithms - Random generators of diferent types of integers.")
   (package
     (name "r-vertexsort")
     (version "0.1-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VertexSort" version))
-              (sha256
-               (base32
-                "0n9m5l85ylin6756rsksak94nv0626qd7czhhj6plz4nfrr27sgl"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VertexSort" version))
+       (sha256
+        (base32 "0n9m5l85ylin6756rsksak94nv0626qd7czhhj6plz4nfrr27sgl"))))
     (properties `((upstream-name . "VertexSort")))
     (build-system r-build-system)
     (propagated-inputs (list r-snowfall r-igraph))
@@ -4436,12 +4466,12 @@ preserving node out-degrees.")
   (package
     (name "r-vertexsimilarity")
     (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VertexSimilarity" version))
-              (sha256
-               (base32
-                "0f638y272dbmz5747wxqy9pxasxk3a9f9wf31gf297qx7268ab1m"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VertexSimilarity" version))
+       (sha256
+        (base32 "0f638y272dbmz5747wxqy9pxasxk3a9f9wf31gf297qx7268ab1m"))))
     (properties `((upstream-name . "VertexSimilarity")))
     (build-system r-build-system)
     (propagated-inputs (list r-igraph))
@@ -4457,12 +4487,12 @@ paper <DOI:10.1103/@code{PhysRevE.73.026120>}.")
   (package
     (name "r-versionsort")
     (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "versionsort" version))
-              (sha256
-               (base32
-                "00r0h2iqlfq0nidqbhx4fv29rlppfx43jv2n2zp38lpx5vbqjhnj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "versionsort" version))
+       (sha256
+        (base32 "00r0h2iqlfq0nidqbhx4fv29rlppfx43jv2n2zp38lpx5vbqjhnj"))))
     (properties `((upstream-name . "versionsort")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=versionsort")
@@ -4476,12 +4506,12 @@ forms.  No strong dependencies guaranteed.")
   (package
     (name "r-vermeulen")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vermeulen" version))
-              (sha256
-               (base32
-                "10jlgrwpgkfiwlyli6mpd0wavi71h39sj6mklnvfskhnblvqdrz8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vermeulen" version))
+       (sha256
+        (base32 "10jlgrwpgkfiwlyli6mpd0wavi71h39sj6mklnvfskhnblvqdrz8"))))
     (properties `((upstream-name . "vermeulen")))
     (build-system r-build-system)
     (propagated-inputs (list r-memoise))
@@ -4505,12 +4535,12 @@ series x 3 replicates + no template controls ('NTC') x 3 replicates).")
   (package
     (name "r-verification")
     (version "1.42")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "verification" version))
-              (sha256
-               (base32
-                "0pdqvg7cm9gam49lhc2xy42w788hh2zd06apydc95q2gj95xnaiw"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "verification" version))
+       (sha256
+        (base32 "0pdqvg7cm9gam49lhc2xy42w788hh2zd06apydc95q2gj95xnaiw"))))
     (properties `((upstream-name . "verification")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-fields r-dtw r-circstats r-boot))
@@ -4525,12 +4555,12 @@ forecasts expressed as parametric distributions are included.")
   (package
     (name "r-verhoeff")
     (version "0.4.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "verhoeff" version))
-              (sha256
-               (base32
-                "0kpxpl5s5342ajg22cwb7y9ks240drp37q1g67n19krdy6ih14kz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "verhoeff" version))
+       (sha256
+        (base32 "0kpxpl5s5342ajg22cwb7y9ks240drp37q1g67n19krdy6ih14kz"))))
     (properties `((upstream-name . "verhoeff")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=verhoeff")
@@ -4547,12 +4577,12 @@ input number.")
   (package
     (name "r-verbalisr")
     (version "0.5.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "verbalisr" version))
-              (sha256
-               (base32
-                "0nyydh6mlw2di7cmhdr1x8rm8gdsdnnc45kgx84mb2y6vb0275k4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "verbalisr" version))
+       (sha256
+        (base32 "0nyydh6mlw2di7cmhdr1x8rm8gdsdnnc45kgx84mb2y6vb0275k4"))))
     (properties `((upstream-name . "verbalisr")))
     (build-system r-build-system)
     (propagated-inputs (list r-ribd r-pedtools))
@@ -4569,12 +4599,12 @@ pedigree analysis.  For a demonstration of verbalisr', see the online app
   (package
     (name "r-verbaliser")
     (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "verbaliseR" version))
-              (sha256
-               (base32
-                "16ndjpsfp700h5wz3y7hram6x8lp4piykcrz7y4ybrkgwyaik851"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "verbaliseR" version))
+       (sha256
+        (base32 "16ndjpsfp700h5wz3y7hram6x8lp4piykcrz7y4ybrkgwyaik851"))))
     (properties `((upstream-name . "verbaliseR")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr))
@@ -4591,12 +4621,12 @@ managing capitalisations in tidy data.")
   (package
     (name "r-vennplot")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vennplot" version))
-              (sha256
-               (base32
-                "0x59awa1zsjwk5qb1jzv6d2mn2fm4aq1lq8zlbnf1da0h4837yab"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vennplot" version))
+       (sha256
+        (base32 "0x59awa1zsjwk5qb1jzv6d2mn2fm4aq1lq8zlbnf1da0h4837yab"))))
     (properties `((upstream-name . "vennplot")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-rgl r-rcpp))
@@ -4609,12 +4639,12 @@ managing capitalisations in tidy data.")
   (package
     (name "r-venneuler")
     (version "1.1-3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "venneuler" version))
-              (sha256
-               (base32
-                "0znr5l41mpappv2agji4nxr42vydhd35jbmjwzwapgahff2arlr1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "venneuler" version))
+       (sha256
+        (base32 "0znr5l41mpappv2agji4nxr42vydhd35jbmjwzwapgahff2arlr1"))))
     (properties `((upstream-name . "venneuler")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjava))
@@ -4627,12 +4657,12 @@ managing capitalisations in tidy data.")
   (package
     (name "r-venn")
     (version "1.11")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "venn" version))
-              (sha256
-               (base32
-                "054ky4sh47p5fw271ag79p84vdxm5bqa6gw0dvkz2y00r73ibn9k"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "venn" version))
+       (sha256
+        (base32 "054ky4sh47p5fw271ag79p84vdxm5bqa6gw0dvkz2y00r73ibn9k"))))
     (properties `((upstream-name . "venn")))
     (build-system r-build-system)
     (propagated-inputs (list r-admisc))
@@ -4647,12 +4677,12 @@ intersections.")
   (package
     (name "r-vembedr")
     (version "0.1.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vembedr" version))
-              (sha256
-               (base32
-                "1hmwgrp9vj7qwmsvnvgry8h707kj53wp5chpxqsbgxi9jryabpc0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vembedr" version))
+       (sha256
+        (base32 "1hmwgrp9vj7qwmsvnvgry8h707kj53wp5chpxqsbgxi9jryabpc0"))))
     (properties `((upstream-name . "vembedr")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -4674,12 +4704,12 @@ video in your R Markdown documents or Shiny applications.")
   (package
     (name "r-velociraptr")
     (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "velociraptr" version))
-              (sha256
-               (base32
-                "0a67vmv05cxc9f27aqzr6nkgy2mj3fhykwj5nb23qwfqa669a5hi"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "velociraptr" version))
+       (sha256
+        (base32 "0a67vmv05cxc9f27aqzr6nkgy2mj3fhykwj5nb23qwfqa669a5hi"))))
     (properties `((upstream-name . "velociraptr")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf))
@@ -4695,12 +4725,12 @@ and analyzing fossil data from the Paleobiology Database
   (package
     (name "r-vein")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vein" version))
-              (sha256
-               (base32
-                "0g0j9whhli4hhv4minciyj0dpnms85lzy6parlppjb2wfsxyp2aa"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vein" version))
+       (sha256
+        (base32 "0g0j9whhli4hhv4minciyj0dpnms85lzy6parlppjb2wfsxyp2aa"))))
     (properties `((upstream-name . "vein")))
     (build-system r-build-system)
     (propagated-inputs (list r-units r-sf r-dotcall64 r-data-table r-cptcity))
@@ -4722,12 +4752,12 @@ create a structure of directories and scripts.")
   (package
     (name "r-vegtable")
     (version "0.1.8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vegtable" version))
-              (sha256
-               (base32
-                "0q854isd0bm53xxj45h64cxnvkck0hm43vrxizyxxgqwqf0syg3z"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vegtable" version))
+       (sha256
+        (base32 "0q854isd0bm53xxj45h64cxnvkck0hm43vrxizyxxgqwqf0syg3z"))))
     (properties `((upstream-name . "vegtable")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegdata
@@ -4749,12 +4779,12 @@ import/export routines for exchange of data with Juice
   (package
     (name "r-vegperiod")
     (version "0.4.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vegperiod" version))
-              (sha256
-               (base32
-                "0m10m85cf0qk2q2ln1qziqicv79rbjqqi9py18r412j7m43pn013"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vegperiod" version))
+       (sha256
+        (base32 "0m10m85cf0qk2q2ln1qziqicv79rbjqqi9py18r412j7m43pn013"))))
     (properties `((upstream-name . "vegperiod")))
     (build-system r-build-system)
     (home-page "https://rnuske.github.io/vegperiod/")
@@ -4769,12 +4799,12 @@ based on daily mean temperatures and the day of the year.")
   (package
     (name "r-vegdata")
     (version "0.9.11.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vegdata" version))
-              (sha256
-               (base32
-                "14vmxxpnq3kasciqzxipl21kdlqv7m3dmcr4v8wlm6q2l9cnpzdy"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vegdata" version))
+       (sha256
+        (base32 "14vmxxpnq3kasciqzxipl21kdlqv7m3dmcr4v8wlm6q2l9cnpzdy"))))
     (properties `((upstream-name . "vegdata")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -4806,12 +4836,12 @@ appropriate taxonomic lists, e.g. the German taxonomic standard list
   (package
     (name "r-vegclust")
     (version "2.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vegclust" version))
-              (sha256
-               (base32
-                "18v1iqgabhsdxi76kvy9wgp9h2i17aw4c43kcki7lzyqiyyql0nx"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vegclust" version))
+       (sha256
+        (base32 "18v1iqgabhsdxi76kvy9wgp9h2i17aw4c43kcki7lzyqiyyql0nx"))))
     (properties `((upstream-name . "vegclust")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan))
@@ -4829,12 +4859,12 @@ composition (De Caceres et al, 2013) <doi:10.1111/2041-210X.12116>.")
   (package
     (name "r-vegawidget")
     (version "0.4.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vegawidget" version))
-              (sha256
-               (base32
-                "0p09nj45cxv35x84fmdk485v82wbjr724xi1f07p9zd9kn7vmpsf"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vegawidget" version))
+       (sha256
+        (base32 "0p09nj45cxv35x84fmdk485v82wbjr724xi1f07p9zd9kn7vmpsf"))))
     (properties `((upstream-name . "vegawidget")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -4859,12 +4889,12 @@ a means to interact with signals, events, and datasets in a Vega chart using
   (package
     (name "r-vegan3d")
     (version "1.2-0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vegan3d" version))
-              (sha256
-               (base32
-                "15yb521l487krvhh0bnbawxxd03sqwha4njh9i0na4zx3hrlpqgi"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vegan3d" version))
+       (sha256
+        (base32 "15yb521l487krvhh0bnbawxxd03sqwha4njh9i0na4zx3hrlpqgi"))))
     (properties `((upstream-name . "vegan3d")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan r-scatterplot3d r-rgl r-cluster))
@@ -4879,12 +4909,12 @@ analysis, especially with the vegan package.")
   (package
     (name "r-vegalite")
     (version "0.6.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vegalite" version))
-              (sha256
-               (base32
-                "0dlzhvrg3nj6knyycdgg3d1vzq3dn9vxb34fjin9hzilszqmarbk"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vegalite" version))
+       (sha256
+        (base32 "0dlzhvrg3nj6knyycdgg3d1vzq3dn9vxb34fjin9hzilszqmarbk"))))
     (properties `((upstream-name . "vegalite")))
     (build-system r-build-system)
     (propagated-inputs (list r-webshot
@@ -4913,12 +4943,12 @@ htmlwidget'.")
   (package
     (name "r-vedicdatetime")
     (version "0.1.9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VedicDateTime" version))
-              (sha256
-               (base32
-                "08kkwb5k0n4hjy9rw7bdgpls14a8xdnw3v0g56hhhxnwxf6whmly"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VedicDateTime" version))
+       (sha256
+        (base32 "08kkwb5k0n4hjy9rw7bdgpls14a8xdnw3v0g56hhhxnwxf6whmly"))))
     (properties `((upstream-name . "VedicDateTime")))
     (build-system r-build-system)
     (propagated-inputs (list r-swephr))
@@ -4935,12 +4965,12 @@ systems, and helpful in examining its impact in the time series analysis domain.
   (package
     (name "r-vectorwavelet")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vectorwavelet" version))
-              (sha256
-               (base32
-                "1z0gl28hgrqgx0ynv248a80fh190pm15c9cg1l1665acrw62kqs7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vectorwavelet" version))
+       (sha256
+        (base32 "1z0gl28hgrqgx0ynv248a80fh190pm15c9cg1l1665acrw62kqs7"))))
     (properties `((upstream-name . "vectorwavelet")))
     (build-system r-build-system)
     (propagated-inputs (list r-spam
@@ -4965,12 +4995,12 @@ analyses.")
   (package
     (name "r-vectorcoder")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VectorCodeR" version))
-              (sha256
-               (base32
-                "0qakd219a1955iqmp28vbhi3h7wpvayfcgv2dmxi5qsslw1ws21b"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VectorCodeR" version))
+       (sha256
+        (base32 "0qakd219a1955iqmp28vbhi3h7wpvayfcgv2dmxi5qsslw1ws21b"))))
     (properties `((upstream-name . "VectorCodeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyverse r-tidyr r-readxl r-ggplot2 r-dplyr))
@@ -4993,12 +5023,12 @@ Needham, R., Naemi, R., & Chockalingam, N. (2015)
   (package
     (name "r-vecsets")
     (version "1.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vecsets" version))
-              (sha256
-               (base32
-                "1wp5pbjgw6smivmf4rgy0y2gspgbcwb2js8y657jd1spzl5bbvfr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vecsets" version))
+       (sha256
+        (base32 "1wp5pbjgw6smivmf4rgy0y2gspgbcwb2js8y657jd1spzl5bbvfr"))))
     (properties `((upstream-name . "vecsets")))
     (build-system r-build-system)
     (propagated-inputs (list r-pracma))
@@ -5017,12 +5047,12 @@ the items) tools functionality.")
   (package
     (name "r-veccompare")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "veccompare" version))
-              (sha256
-               (base32
-                "03nyyxvhhwfxxg5w6qflk7q234ipbhj9fd4abcp50sxz3diabch1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "veccompare" version))
+       (sha256
+        (base32 "03nyyxvhhwfxxg5w6qflk7q234ipbhj9fd4abcp50sxz3diabch1"))))
     (properties `((upstream-name . "veccompare")))
     (build-system r-build-system)
     (propagated-inputs (list r-venndiagram
@@ -5046,12 +5076,12 @@ for use with RStudio'.")
   (package
     (name "r-vec2dtransf")
     (version "1.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vec2dtransf" version))
-              (sha256
-               (base32
-                "0sxsbm1q7v58b907xvpppwfljmqm2pyrch2zc82nmb10wfiha8k8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vec2dtransf" version))
+       (sha256
+        (base32 "0sxsbm1q7v58b907xvpppwfljmqm2pyrch2zc82nmb10wfiha8k8"))))
     (properties `((upstream-name . "vec2dtransf")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp))
@@ -5068,12 +5098,12 @@ allowing to obtain residuals and RMSE.")
   (package
     (name "r-vdspcalibration")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VDSPCalibration" version))
-              (sha256
-               (base32
-                "1hrmmhvk3mhd3bdl0msnm5shcj4cjgd3pn1rkfkv8fh4llqvz7w8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VDSPCalibration" version))
+       (sha256
+        (base32 "1hrmmhvk3mhd3bdl0msnm5shcj4cjgd3pn1rkfkv8fh4llqvz7w8"))))
     (properties `((upstream-name . "VDSPCalibration")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=VDSPCalibration")
@@ -5092,12 +5122,12 @@ method is described in Tian, Durazo-Arvizu, Myers, et al. (2014)
   (package
     (name "r-vdsm")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VDSM" version))
-              (sha256
-               (base32
-                "09h09av2yydq1vwd77lgfjjk87432sas60905sxkw0mjixf6hq22"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VDSM" version))
+       (sha256
+        (base32 "09h09av2yydq1vwd77lgfjjk87432sas60905sxkw0mjixf6hq22"))))
     (properties `((upstream-name . "VDSM")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -5125,12 +5155,12 @@ Uncertainty\" <https://homepages.uc.edu/~qinyn/VDSM/VDSM.html>.")
   (package
     (name "r-vdjgermlines")
     (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VDJgermlines" version))
-              (sha256
-               (base32
-                "1aqjhkcj3bd5hk7iz0f2cy5nfp23gvhqsmg6nzlxd9klwc6xpq2h"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VDJgermlines" version))
+       (sha256
+        (base32 "1aqjhkcj3bd5hk7iz0f2cy5nfp23gvhqsmg6nzlxd9klwc6xpq2h"))))
     (properties `((upstream-name . "VDJgermlines")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringdist r-ape))
@@ -5148,12 +5178,12 @@ publication DN Olivieri (2014) <doi:10.1007/s00251-014-0784-3>.")
   (package
     (name "r-vdiver")
     (version "1.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vDiveR" version))
-              (sha256
-               (base32
-                "1f2mvpnsm4kcjwc916258ll0cy9f53zfya42xbdi5x6wds08mi66"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vDiveR" version))
+       (sha256
+        (base32 "1f2mvpnsm4kcjwc916258ll0cy9f53zfya42xbdi5x6wds08mi66"))))
     (properties `((upstream-name . "vDiveR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -5186,12 +5216,12 @@ and unique) for elucidation of the underlying inherent dynamics.  Please refer
   (package
     (name "r-vdgraph")
     (version "2.2-7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Vdgraph" version))
-              (sha256
-               (base32
-                "0kqcwlw8dsxb1jlp412m9a372kz26sampv56saxalf8rcyd3s2jp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Vdgraph" version))
+       (sha256
+        (base32 "0kqcwlw8dsxb1jlp412m9a372kz26sampv56saxalf8rcyd3s2jp"))))
     (properties `((upstream-name . "Vdgraph")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -5210,12 +5240,12 @@ several minimal run response surface designs.")
   (package
     (name "r-vdg")
     (version "1.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vdg" version))
-              (sha256
-               (base32
-                "0fdqmvzw6dd18w653kfvnw16489jpsyl1395xffhm8rz1dqkrhj1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vdg" version))
+       (sha256
+        (base32 "0fdqmvzw6dd18w653kfvnw16489jpsyl1395xffhm8rz1dqkrhj1"))))
     (properties `((upstream-name . "vdg")))
     (build-system r-build-system)
     (propagated-inputs (list r-quantreg r-proxy r-gridextra r-ggplot2))
@@ -5239,12 +5269,12 @@ alternative.")
   (package
     (name "r-vdar")
     (version "0.1.3-2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vdar" version))
-              (sha256
-               (base32
-                "061ahwf8gyjqs5j9mkqnpn7899mivn4qbygnnzihmv065xj5vpd9"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vdar" version))
+       (sha256
+        (base32 "061ahwf8gyjqs5j9mkqnpn7899mivn4qbygnnzihmv065xj5vpd9"))))
     (properties `((upstream-name . "vdar")))
     (build-system r-build-system)
     (propagated-inputs (list r-compositions))
@@ -5264,12 +5294,12 @@ non-compositional data.")
   (package
     (name "r-vdap")
     (version "2.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VDAP" version))
-              (sha256
-               (base32
-                "134x4aisaim72xkyzb1vb8vhl2m4i12yzh6cj858a1ag7b0ing3n"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VDAP" version))
+       (sha256
+        (base32 "134x4aisaim72xkyzb1vb8vhl2m4i12yzh6cj858a1ag7b0ing3n"))))
     (properties `((upstream-name . "VDAP")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-reshape2 r-ggplot2 r-drc))
@@ -5288,12 +5318,12 @@ generate peptides that follow the observed compositional trends.")
   (package
     (name "r-vcvcomp")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vcvComp" version))
-              (sha256
-               (base32
-                "0mip0v8gv358aadc3b4913dcz27kscx3dv15nwns20pan5jvyhv2"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vcvComp" version))
+       (sha256
+        (base32 "0mip0v8gv358aadc3b4913dcz27kscx3dv15nwns20pan5jvyhv2"))))
     (properties `((upstream-name . "vcvComp")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -5312,12 +5342,12 @@ dataset from Kerschbaumer et al. (2013) <doi:10.5061/dryad.fc02f>.")
   (package
     (name "r-vctsfr")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vctsfr" version))
-              (sha256
-               (base32
-                "0g436m3dkyli06asjr4kdbhdx7mq0pcclmfpvblb5bsqrh5944i1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vctsfr" version))
+       (sha256
+        (base32 "0g436m3dkyli06asjr4kdbhdx7mq0pcclmfpvblb5bsqrh5944i1"))))
     (properties `((upstream-name . "vctsfr")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-ggplot2))
@@ -5335,12 +5365,12 @@ information in a collection of time series.")
   (package
     (name "r-vcr")
     (version "1.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vcr" version))
-              (sha256
-               (base32
-                "0vqq4lwgk9ss3x2vhkmgcymdwfppxjbaycm7pwik70sz9pkdk2d4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vcr" version))
+       (sha256
+        (base32 "0vqq4lwgk9ss3x2vhkmgcymdwfppxjbaycm7pwik70sz9pkdk2d4"))))
     (properties `((upstream-name . "vcr")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -5368,12 +5398,12 @@ requests in the same cassette use a cached HTTP response.")
   (package
     (name "r-vcpen")
     (version "1.9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vcpen" version))
-              (sha256
-               (base32
-                "0gg5ln9r7i8rh91pf7789fic4aah22jc259qyg606bax2w57qmi5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vcpen" version))
+       (sha256
+        (base32 "0gg5ln9r7i8rh91pf7789fic4aah22jc259qyg606bax2w57qmi5"))))
     (properties `((upstream-name . "vcpen")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-knitr))
@@ -5387,12 +5417,12 @@ requests in the same cassette use a cached HTTP response.")
   (package
     (name "r-vcov")
     (version "0.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vcov" version))
-              (sha256
-               (base32
-                "1w89mr8dk6436bxap28rszajgm9k7sjfqsr1i4p68dlhw8zk4yq1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vcov" version))
+       (sha256
+        (base32 "1w89mr8dk6436bxap28rszajgm9k7sjfqsr1i4p68dlhw8zk4yq1"))))
     (properties `((upstream-name . "vcov")))
     (build-system r-build-system)
     (home-page "https://github.com/MichaelChirico/vcov")
@@ -5409,12 +5439,12 @@ time computing other summary statistics which are summarily ignored.")
   (package
     (name "r-vcmeta")
     (version "1.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vcmeta" version))
-              (sha256
-               (base32
-                "070qlyhalnkvz1z2sd5ndirn6py44dfc95ncs7ddvlhpd8lxp6xm"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vcmeta" version))
+       (sha256
+        (base32 "070qlyhalnkvz1z2sd5ndirn6py44dfc95ncs7ddvlhpd8lxp6xm"))))
     (properties `((upstream-name . "vcmeta")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-mathjaxr r-ggplot2))
@@ -5435,12 +5465,12 @@ Volume 5, <https://dgbonett.sites.ucsc.edu/>.")
   (package
     (name "r-vcdextra")
     (version "0.8-5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vcdExtra" version))
-              (sha256
-               (base32
-                "09kpfnyi6q7xn4x6f7i3k8g6f2fdnm7kk81lxjmlhhn36jxc2p2i"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vcdExtra" version))
+       (sha256
+        (base32 "09kpfnyi6q7xn4x6f7i3k8g6f2fdnm7kk81lxjmlhhn36jxc2p2i"))))
     (properties `((upstream-name . "vcdExtra")))
     (build-system r-build-system)
     (propagated-inputs (list r-vcd
@@ -5472,12 +5502,12 @@ David Meyer.")
   (package
     (name "r-vccp")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vccp" version))
-              (sha256
-               (base32
-                "1c0mk46c74kj5y9rfniywbxxmwb2z16szzpq6b2sw8q0qi1cf5ji"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vccp" version))
+       (sha256
+        (base32 "1c0mk46c74kj5y9rfniywbxxmwb2z16szzpq6b2sw8q0qi1cf5ji"))))
     (properties `((upstream-name . "vccp")))
     (build-system r-build-system)
     (propagated-inputs (list r-vinecopula r-mvtnorm r-mosum))
@@ -5499,12 +5529,12 @@ data.  For details on the VCCP methodology, please see Xiong & Cribben (2021).")
   (package
     (name "r-vca")
     (version "1.4.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VCA" version))
-              (sha256
-               (base32
-                "07r2vdmg94knz2mjvrw1jisajjsv1nsyx80y20wwc8msxkp8lijh"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VCA" version))
+       (sha256
+        (base32 "07r2vdmg94knz2mjvrw1jisajjsv1nsyx80y20wwc8msxkp8lijh"))))
     (properties `((upstream-name . "VCA")))
     (build-system r-build-system)
     (propagated-inputs (list r-numderiv r-matrix r-lme4))
@@ -5531,12 +5561,12 @@ description of the features.")
   (package
     (name "r-vbv")
     (version "0.6.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VBV" version))
-              (sha256
-               (base32
-                "1nrdcvkdv38xl67qi9igcp3l5j4hckiyg3klg7z0rfj6zzpszm71"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VBV" version))
+       (sha256
+        (base32 "1nrdcvkdv38xl67qi9igcp3l5j4hckiyg3klg7z0rfj6zzpszm71"))))
     (properties `((upstream-name . "VBV")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=VBV")
@@ -5558,12 +5588,12 @@ Applied Econometrics.  Springer 2014, p.  9-40.")
   (package
     (name "r-vbsparsepca")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VBsparsePCA" version))
-              (sha256
-               (base32
-                "0h1kzz7rjh4wn4nbq1v3r4f6nrmlh0lscww2vwfz886x1w2c9sys"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VBsparsePCA" version))
+       (sha256
+        (base32 "0h1kzz7rjh4wn4nbq1v3r4f6nrmlh0lscww2vwfz886x1w2c9sys"))))
     (properties `((upstream-name . "VBsparsePCA")))
     (build-system r-build-system)
     (propagated-inputs (list r-pracma r-mass))
@@ -5583,12 +5613,12 @@ estimated variance of the random noise.")
   (package
     (name "r-vblpcm")
     (version "2.4.9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VBLPCM" version))
-              (sha256
-               (base32
-                "13qwqpnhdxd5lriz5p4w1dcng7msxbm4z2lfj93w7wcwidl93jw9"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VBLPCM" version))
+       (sha256
+        (base32 "13qwqpnhdxd5lriz5p4w1dcng7msxbm4z2lfj93w7wcwidl93jw9"))))
     (properties `((upstream-name . "VBLPCM")))
     (build-system r-build-system)
     (inputs (list gsl))
@@ -5605,12 +5635,12 @@ fast Variational Bayes approximation developed in Salter-Townshend and Murphy
   (package
     (name "r-vbjm")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VBJM" version))
-              (sha256
-               (base32
-                "0g7mmjba8pyfz92p7fgp9shpm9pclymacm45y3h6hlmsbpc7sh3p"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VBJM" version))
+       (sha256
+        (base32 "0g7mmjba8pyfz92p7fgp9shpm9pclymacm45y3h6hlmsbpc7sh3p"))))
     (properties `((upstream-name . "VBJM")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -5638,12 +5668,12 @@ inference and is computationally efficient.")
   (package
     (name "r-vaultr")
     (version "1.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vaultr" version))
-              (sha256
-               (base32
-                "1ahn79ixwmnglib3cllha941pvhg1jgk89qcxq4gi7ip8zj0v7sj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vaultr" version))
+       (sha256
+        (base32 "1ahn79ixwmnglib3cllha941pvhg1jgk89qcxq4gi7ip8zj0v7sj"))))
     (properties `((upstream-name . "vaultr")))
     (build-system r-build-system)
     (inputs (list))
@@ -5664,12 +5694,12 @@ through several backends including user name/password and authentication via
   (package
     (name "r-vatcheckapi")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vatcheckapi" version))
-              (sha256
-               (base32
-                "1jmfd6qksvw1dnlp4dyb33mr7y9phq9yw0k9qjla0z1jqc0gsnps"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vatcheckapi" version))
+       (sha256
+        (base32 "1jmfd6qksvw1dnlp4dyb33mr7y9phq9yw0k9qjla0z1jqc0gsnps"))))
     (properties `((upstream-name . "vatcheckapi")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-httr))
@@ -5687,12 +5717,12 @@ subscription.  You can find the full API documentation at
   (package
     (name "r-vasicekreg")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vasicekreg" version))
-              (sha256
-               (base32
-                "0hlac3p6mm7x88wdlqc93byx1s2a287kvhwzhz01pz4anap30683"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vasicekreg" version))
+       (sha256
+        (base32 "0hlac3p6mm7x88wdlqc93byx1s2a287kvhwzhz01pz4anap30683"))))
     (properties `((upstream-name . "vasicekreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-mvtnorm r-gamlss-dist r-gamlss))
@@ -5711,12 +5741,12 @@ functions are written in C++ using Rcpp', developed by Eddelbuettel and Francois
   (package
     (name "r-vasicek")
     (version "0.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vasicek" version))
-              (sha256
-               (base32
-                "04g5dfn8zlm8n8sxmdq9xgkf0qbvvznqx27nyan268s5wlnnabd6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vasicek" version))
+       (sha256
+        (base32 "04g5dfn8zlm8n8sxmdq9xgkf0qbvvznqx27nyan268s5wlnnabd6"))))
     (properties `((upstream-name . "vasicek")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm))
@@ -5731,12 +5761,12 @@ distribution with the intent to make the lives of risk modelers easier.")
   (package
     (name "r-varycoef")
     (version "0.3.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "varycoef" version))
-              (sha256
-               (base32
-                "1dfych3qhqq4qadizxjgh4lswnm47m2g59gv14c8j349ji94i8qh"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "varycoef" version))
+       (sha256
+        (base32 "1dfych3qhqq4qadizxjgh4lswnm47m2g59gv14c8j349ji94i8qh"))))
     (properties `((upstream-name . "varycoef")))
     (build-system r-build-system)
     (propagated-inputs (list r-spam
@@ -5767,12 +5797,12 @@ package and its capabilities are described in (Dambon et al. (2021c)
   (package
     (name "r-vartestnlme")
     (version "1.3.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "varTestnlme" version))
-              (sha256
-               (base32
-                "1qxbx1hwylybm4nza6a7bqgck0krvbcvwabp1710dhkk7skfgk8x"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "varTestnlme" version))
+       (sha256
+        (base32 "1qxbx1hwylybm4nza6a7bqgck0krvbcvwabp1710dhkk7skfgk8x"))))
     (properties `((upstream-name . "varTestnlme")))
     (build-system r-build-system)
     (propagated-inputs (list r-saemix
@@ -5807,12 +5837,12 @@ Estelle Kuhn (2019) <doi:10.18637/jss.v107.i06>.")
   (package
     (name "r-varshrink")
     (version "0.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VARshrink" version))
-              (sha256
-               (base32
-                "09hysmxxawcbyfx6bia546aqydryl2r5p3ai7bvl6ghdckw5mnpl"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VARshrink" version))
+       (sha256
+        (base32 "09hysmxxawcbyfx6bia546aqydryl2r5p3ai7bvl6ghdckw5mnpl"))))
     (properties `((upstream-name . "VARshrink")))
     (build-system r-build-system)
     (propagated-inputs (list r-vars
@@ -5843,12 +5873,12 @@ S.-H. Kim (2016) <doi:10.1016/j.csda.2016.03.007> and Ni and Sun (2005)
   (package
     (name "r-varsexplore")
     (version "0.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "varsExplore" version))
-              (sha256
-               (base32
-                "0d18wqq7fbs5ljdphsdgqmv8ab0wrzzykjhf4lqksi7n78s1fa2r"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "varsExplore" version))
+       (sha256
+        (base32 "0d18wqq7fbs5ljdphsdgqmv8ab0wrzzykjhf4lqksi7n78s1fa2r"))))
     (properties `((upstream-name . "varsExplore")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -5876,12 +5906,12 @@ used to generate a table of summary statistics.")
   (package
     (name "r-varsellcm")
     (version "2.1.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VarSelLCM" version))
-              (sha256
-               (base32
-                "03rg7zh1cq55vfc0ak6j7crs4n7fnbsxz8nllmplklx8wm47krf5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VarSelLCM" version))
+       (sha256
+        (base32 "03rg7zh1cq55vfc0ak6j7crs4n7fnbsxz8nllmplklx8wm47krf5"))))
     (properties `((upstream-name . "VarSelLCM")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-rcpparmadillo r-rcpp r-mgcv r-ggplot2))
@@ -5902,12 +5932,12 @@ interpretation of the results.")
   (package
     (name "r-varselectexposure")
     (version "1.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VARSELECTEXPOSURE" version))
-              (sha256
-               (base32
-                "0hfcy00zynrg2vfqym17zfs3ggm4wvsvjf2qib4pbd53qfhzabwa"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VARSELECTEXPOSURE" version))
+       (sha256
+        (base32 "0hfcy00zynrg2vfqym17zfs3ggm4wvsvjf2qib4pbd53qfhzabwa"))))
     (properties `((upstream-name . "VARSELECTEXPOSURE")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -5922,12 +5952,12 @@ Effect.")
   (package
     (name "r-varsel")
     (version "0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "varSel" version))
-              (sha256
-               (base32
-                "05dk2s4lzd4sxrwsfs2yqsj08qrdrfwx1fs07nb9a8sd0in6vlpj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "varSel" version))
+       (sha256
+        (base32 "05dk2s4lzd4sxrwsfs2yqsj08qrdrfwx1fs07nb9a8sd0in6vlpj"))))
     (properties `((upstream-name . "varSel")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=varSel")
@@ -5946,12 +5976,12 @@ Sensing, 51, 2632-2645, <DOI:10.1109/TGRS.2012.2216272>.")
   (package
     (name "r-vars")
     (version "1.5-9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vars" version))
-              (sha256
-               (base32
-                "1b3w2vi0szpps7kzy30s1n8h2iaj4jxg82ym6zrza0z7msgmypi8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vars" version))
+       (sha256
+        (base32 "1b3w2vi0szpps7kzy30s1n8h2iaj4jxg82ym6zrza0z7msgmypi8"))))
     (properties `((upstream-name . "vars")))
     (build-system r-build-system)
     (propagated-inputs (list r-urca r-strucchange r-sandwich r-mass r-lmtest))
@@ -5967,12 +5997,12 @@ models and estimation of SVAR and SVEC models.")
   (package
     (name "r-varreg")
     (version "2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VarReg" version))
-              (sha256
-               (base32
-                "06n8bb4h722k1d83hbzgjasl9jrcj7pwj895zdkkdalw7crim88m"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VarReg" version))
+       (sha256
+        (base32 "06n8bb4h722k1d83hbzgjasl9jrcj7pwj895zdkkdalw7crim88m"))))
     (properties `((upstream-name . "VarReg")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-sn))
@@ -5989,12 +6019,12 @@ each.")
   (package
     (name "r-varredopt")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VarRedOpt" version))
-              (sha256
-               (base32
-                "0h44m8850q4aksrqj11yr2a2qj37w8fhv0plpvdzcl087ifyj0g9"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VarRedOpt" version))
+       (sha256
+        (base32 "0h44m8850q4aksrqj11yr2a2qj37w8fhv0plpvdzcl087ifyj0g9"))))
     (properties `((upstream-name . "VarRedOpt")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=VarRedOpt")
@@ -6015,12 +6045,12 @@ package.  See Kemal @code{DinÃ§er} @code{DingeÃ}§ & Wolfgang HÃ¶rmann (201
   (package
     (name "r-varrank")
     (version "0.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "varrank" version))
-              (sha256
-               (base32
-                "0f2k18v6ygb5cwd6jri9ws97zq47znrqacv2adkd2yqp3jhwd24f"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "varrank" version))
+       (sha256
+        (base32 "0f2k18v6ygb5cwd6jri9ws97zq47znrqacv2adkd2yqp3jhwd24f"))))
     (properties `((upstream-name . "varrank")))
     (build-system r-build-system)
     (propagated-inputs (list r-fnn))
@@ -6045,12 +6075,12 @@ ranking with respect to a set of features of interest.")
   (package
     (name "r-varoc")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "varoc" version))
-              (sha256
-               (base32
-                "1b8dfz56ly8hd36h9jf29irnckbc2v6s5whfmha3ah1bal7k2ajp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "varoc" version))
+       (sha256
+        (base32 "1b8dfz56ly8hd36h9jf29irnckbc2v6s5whfmha3ah1bal7k2ajp"))))
     (properties `((upstream-name . "varoc")))
     (build-system r-build-system)
     (propagated-inputs (list r-proc r-corrplot))
@@ -6067,12 +6097,12 @@ models.")
   (package
     (name "r-varjmcm")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "varjmcm" version))
-              (sha256
-               (base32
-                "1xgy3n57pxhv6wrsw9h4dranxbw6hdpm1f9ra3kwlzrpz5c3289x"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "varjmcm" version))
+       (sha256
+        (base32 "1xgy3n57pxhv6wrsw9h4dranxbw6hdpm1f9ra3kwlzrpz5c3289x"))))
     (properties `((upstream-name . "varjmcm")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-mass r-jmcm r-expm))
@@ -6094,12 +6124,12 @@ Maadooliat, M. Pourahmadi and J. Z. Huang (2013)
   (package
     (name "r-varitas")
     (version "0.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "varitas" version))
-              (sha256
-               (base32
-                "16y0fcisdf4pypwqshy9c45v57axa25k8cpp1pr2ij95zycs3g1k"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "varitas" version))
+       (sha256
+        (base32 "16y0fcisdf4pypwqshy9c45v57axa25k8cpp1pr2ij95zycs3g1k"))))
     (properties `((upstream-name . "varitas")))
     (build-system r-build-system)
     (inputs (list perl bwa bedtools))
@@ -6127,12 +6157,12 @@ variant information.")
   (package
     (name "r-variskscore")
     (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vaRiskScore" version))
-              (sha256
-               (base32
-                "031k19ric26xvrva3rs9894n7ak87h96d2c4ip1lrr0lhhbk3awv"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vaRiskScore" version))
+       (sha256
+        (base32 "031k19ric26xvrva3rs9894n7ak87h96d2c4ip1lrr0lhhbk3awv"))))
     (properties `((upstream-name . "vaRiskScore")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=vaRiskScore")
@@ -6151,12 +6181,12 @@ X., Tsai, S., Ramanan, B., & Ebrahimi, R. (2021) <doi:10.1161/JAHA.120.019217>."
   (package
     (name "r-variosig")
     (version "0.3-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "variosig" version))
-              (sha256
-               (base32
-                "09cxigii0sj78yqd18p4mm9jjqvd1k2cgjy43pxpmqdhia0q2pmv"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "variosig" version))
+       (sha256
+        (base32 "09cxigii0sj78yqd18p4mm9jjqvd1k2cgjy43pxpmqdhia0q2pmv"))))
     (properties `((upstream-name . "variosig")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat r-sp r-gstat))
@@ -6173,12 +6203,12 @@ for hypothesis test.")
   (package
     (name "r-varimp")
     (version "0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "varImp" version))
-              (sha256
-               (base32
-                "1bxlfqxi8iiv6raawl9668yhlmbak96ahd0ljzwrilnciqbclc2b"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "varImp" version))
+       (sha256
+        (base32 "1bxlfqxi8iiv6raawl9668yhlmbak96ahd0ljzwrilnciqbclc2b"))))
     (properties `((upstream-name . "varImp")))
     (build-system r-build-system)
     (propagated-inputs (list r-party r-measures))
@@ -6196,12 +6226,12 @@ extra functions exist (@code{varImpACC} and @code{varImpAUC}).")
   (package
     (name "r-variantspark")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "variantspark" version))
-              (sha256
-               (base32
-                "13hkp6l64hi7xlll09gin7kdlkqrkn0lggrw8147zy9ivhknhk59"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "variantspark" version))
+       (sha256
+        (base32 "13hkp6l64hi7xlll09gin7kdlkqrkn0lggrw8147zy9ivhknhk59"))))
     (properties `((upstream-name . "variantspark")))
     (build-system r-build-system)
     (propagated-inputs (list r-sparklyr))
@@ -6224,12 +6254,12 @@ read VCF files, run analyses and return the output in a spark data frame.")
   (package
     (name "r-variancegamma")
     (version "0.4-0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VarianceGamma" version))
-              (sha256
-               (base32
-                "0n3vmyxfn0sid6zax4n8508li7gnfdd4gghpf3i296dm3w8wn8ip"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VarianceGamma" version))
+       (sha256
+        (base32 "0n3vmyxfn0sid6zax4n8508li7gnfdd4gghpf3i296dm3w8wn8ip"))))
     (properties `((upstream-name . "VarianceGamma")))
     (build-system r-build-system)
     (propagated-inputs (list r-generalizedhyperbolic r-distributionutils))
@@ -6248,12 +6278,12 @@ different sets of parameterizations for the variance gamma distribution.")
   (package
     (name "r-varian")
     (version "0.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "varian" version))
-              (sha256
-               (base32
-                "0jyw46qx2w19h02mrwv3w3n8qc1n4b3ckm38qly1y4a4w9ib6c2i"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "varian" version))
+       (sha256
+        (base32 "0jyw46qx2w19h02mrwv3w3n8qc1n4b3ckm38qly1y4a4w9ib6c2i"))))
     (properties `((upstream-name . "varian")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstan r-mass r-gridextra r-ggplot2 r-formula))
@@ -6268,12 +6298,12 @@ and use that as an outcome or a predictor in a second stage model.")
   (package
     (name "r-variablescreening")
     (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VariableScreening" version))
-              (sha256
-               (base32
-                "0djfpv46fhc3x4jvmjr93lyh4fxfzzvyrs3wjncx3h0z0s9n6w45"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VariableScreening" version))
+       (sha256
+        (base32 "0djfpv46fhc3x4jvmjr93lyh4fxfzzvyrs3wjncx3h0z0s9n6w45"))))
     (properties `((upstream-name . "VariableScreening")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-gee r-expm r-energy))
@@ -6300,12 +6330,12 @@ REIMHERR (2016) <DOI:10.1214/16-AOAS912>.")
   (package
     (name "r-variables")
     (version "1.1-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "variables" version))
-              (sha256
-               (base32
-                "13hji43m9nb7rpc8p4bz1qva5jhxwdk16mcprvhb5pxp78w7clyf"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "variables" version))
+       (sha256
+        (base32 "13hji43m9nb7rpc8p4bz1qva5jhxwdk16mcprvhb5pxp78w7clyf"))))
     (properties `((upstream-name . "variables")))
     (build-system r-build-system)
     (home-page "http://ctm.R-forge.R-project.org")
@@ -6317,12 +6347,12 @@ REIMHERR (2016) <DOI:10.1214/16-AOAS912>.")
   (package
     (name "r-variability")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "variability" version))
-              (sha256
-               (base32
-                "1nwb6jlkgzmnhkfcfww3gci5p9g21wwg4z78n8xiq6r760byaz67"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "variability" version))
+       (sha256
+        (base32 "1nwb6jlkgzmnhkfcfww3gci5p9g21wwg4z78n8xiq6r760byaz67"))))
     (properties `((upstream-name . "variability")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=variability")
@@ -6340,12 +6370,12 @@ Chaudhary, B.D. (1977, ISBN:81766330709788176633079).")
   (package
     (name "r-varfrompdb")
     (version "2.2.10")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VarfromPDB" version))
-              (sha256
-               (base32
-                "09j8y6n0bwsj3n620nbni6b7f4pmb91q41770sfpc5v3l5i3jc7c"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VarfromPDB" version))
+       (sha256
+        (base32 "09j8y6n0bwsj3n620nbni6b7f4pmb91q41770sfpc5v3l5i3jc7c"))))
     (properties `((upstream-name . "VarfromPDB")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2r
@@ -6387,12 +6417,12 @@ employed to capture the information from @code{PubMed} abstracts.")
   (package
     (name "r-varest")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "varEst" version))
-              (sha256
-               (base32
-                "0i6nsxl5w4zipzrmdvx8plmxr33n405w2qhks3s7zzs3kcys32v6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "varEst" version))
+       (sha256
+        (base32 "0i6nsxl5w4zipzrmdvx8plmxr33n405w2qhks3s7zzs3kcys32v6"))))
     (properties `((upstream-name . "varEst")))
     (build-system r-build-system)
     (propagated-inputs (list r-sam r-lm-beta r-glmnet r-caret))
@@ -6408,12 +6438,12 @@ Bootstrap-refitted cross validation, Ensemble method.")
   (package
     (name "r-vares")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VaRES" version))
-              (sha256
-               (base32
-                "0k65ip5q4zgyklvn8mbc1ykz7kpfr5xvz041g1pq88f43g2sgv4b"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VaRES" version))
+       (sha256
+        (base32 "0k65ip5q4zgyklvn8mbc1ykz7kpfr5xvz041g1pq88f43g2sgv4b"))))
     (properties `((upstream-name . "VaRES")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=VaRES")
@@ -6431,12 +6461,12 @@ Afuecheta (2015) <doi:10.1080/03610918.2014.944658> for more details.")
   (package
     (name "r-vared")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VarED" version))
-              (sha256
-               (base32
-                "16j9p2a143y4hqclsv1mig0fccrzjx2r0lll0wz8isjp9x1wzjv8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VarED" version))
+       (sha256
+        (base32 "16j9p2a143y4hqclsv1mig0fccrzjx2r0lll0wz8isjp9x1wzjv8"))))
     (properties `((upstream-name . "VarED")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=VarED")
@@ -6450,12 +6480,12 @@ difference-based estimation functions.")
   (package
     (name "r-vardpoor")
     (version "0.20.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vardpoor" version))
-              (sha256
-               (base32
-                "0jqls76xhhxc5hppy3pq5wkj9gjx3g3pzfbhnis7k10ysn76a1qj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vardpoor" version))
+       (sha256
+        (base32 "0jqls76xhhxc5hppy3pq5wkj9gjx3g3pzfbhnis7k10ysn76a1qj"))))
     (properties `((upstream-name . "vardpoor")))
     (build-system r-build-system)
     (propagated-inputs (list r-surveyplanning
@@ -6489,12 +6519,12 @@ of variation, the margin of error, confidence interval, design effect.")
   (package
     (name "r-vardiag")
     (version "0.2-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vardiag" version))
-              (sha256
-               (base32
-                "07i0wv84sw035bpjil3cfw69fdgbcf2j8wq4k22narkrz83iyi2z"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vardiag" version))
+       (sha256
+        (base32 "07i0wv84sw035bpjil3cfw69fdgbcf2j8wq4k22narkrz83iyi2z"))))
     (properties `((upstream-name . "vardiag")))
     (build-system r-build-system)
     (home-page "https://github.com/edzer/vardiag/")
@@ -6506,12 +6536,12 @@ of variation, the margin of error, confidence interval, design effect.")
   (package
     (name "r-vardetect")
     (version "0.1.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VARDetect" version))
-              (sha256
-               (base32
-                "1yrlyg4b53bdmfjcqi07l0gr3f01h8jwj6g6av3plyk96cvl4svb"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VARDetect" version))
+       (sha256
+        (base32 "1yrlyg4b53bdmfjcqi07l0gr3f01h8jwj6g6av3plyk96cvl4svb"))))
     (properties `((upstream-name . "VARDetect")))
     (build-system r-build-system)
     (propagated-inputs (list r-sparsevar
@@ -6541,12 +6571,12 @@ algorithms and related extensions from Safikhani and Shojaie (2020)
   (package
     (name "r-varclust")
     (version "0.9.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "varclust" version))
-              (sha256
-               (base32
-                "0knmfq3pn38j8p29j6sqapdv3g5335si3gwiw932ml5z49a8ga5m"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "varclust" version))
+       (sha256
+        (base32 "0knmfq3pn38j8p29j6sqapdv3g5335si3gwiw932ml5z49a8ga5m"))))
     (properties `((upstream-name . "varclust")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-pesel r-foreach r-dorng
@@ -6566,12 +6596,12 @@ initializations of cluster centers.")
   (package
     (name "r-varbvs")
     (version "2.6-10")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "varbvs" version))
-              (sha256
-               (base32
-                "0sjna51mz433s24dkjcq2aal6ss41gx6xlm2l45rm6s1q1k4m87f"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "varbvs" version))
+       (sha256
+        (base32 "0sjna51mz433s24dkjcq2aal6ss41gx6xlm2l45rm6s1q1k4m87f"))))
     (properties `((upstream-name . "varbvs")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-nor1mix r-matrix r-latticeextra
@@ -6595,12 +6625,12 @@ over a million variables and thousands of samples.")
   (package
     (name "r-varbin")
     (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "varbin" version))
-              (sha256
-               (base32
-                "0gcynwc0vx7qlp3z0pcc4i7mjlnxkwy8ydxz2wr244fw32qgp4kq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "varbin" version))
+       (sha256
+        (base32 "0gcynwc0vx7qlp3z0pcc4i7mjlnxkwy8ydxz2wr244fw32qgp4kq"))))
     (properties `((upstream-name . "varbin")))
     (build-system r-build-system)
     (propagated-inputs (list r-rpart))
@@ -6627,12 +6657,12 @@ functional forms and maximum information value.")
   (package
     (name "r-varband")
     (version "0.9.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "varband" version))
-              (sha256
-               (base32
-                "16z66rx7xq5zan8pnw100c9r5syw1ml4hgzi9mch52aia23v21p9"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "varband" version))
+       (sha256
+        (base32 "16z66rx7xq5zan8pnw100c9r5syw1ml4hgzi9mch52aia23v21p9"))))
     (properties `((upstream-name . "varband")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -6649,12 +6679,12 @@ available at <https://arxiv.org/abs/1604.07451>.")
   (package
     (name "r-var-etp")
     (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VAR.etp" version))
-              (sha256
-               (base32
-                "03zybsn28r6jz8rshmifgqavx4kmfvj92wbqjf5fvfj4fypis8kx"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VAR.etp" version))
+       (sha256
+        (base32 "03zybsn28r6jz8rshmifgqavx4kmfvj92wbqjf5fvfj4fypis8kx"))))
     (properties `((upstream-name . "VAR.etp")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=VAR.etp")
@@ -6668,12 +6698,12 @@ testing, prediction for stationary vector autoregressive models.")
   (package
     (name "r-vapour")
     (version "0.9.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vapour" version))
-              (sha256
-               (base32
-                "0m4mqx3chd7w98ky6man0ynvh7i310bw0bk5gg1cs4gm2myzs20p"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vapour" version))
+       (sha256
+        (base32 "0m4mqx3chd7w98ky6man0ynvh7i310bw0bk5gg1cs4gm2myzs20p"))))
     (properties `((upstream-name . "vapour")))
     (build-system r-build-system)
     (inputs (list zlib
@@ -6700,12 +6730,12 @@ only what GDAL does, to enable developing further tools.")
   (package
     (name "r-vanquish")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vanquish" version))
-              (sha256
-               (base32
-                "01di1j36npl7vnyhgsagvyf6j8bxcw867dwf9dgi7l1328s7lf0l"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vanquish" version))
+       (sha256
+        (base32 "01di1j36npl7vnyhgsagvyf6j8bxcw867dwf9dgi7l1328s7lf0l"))))
     (properties `((upstream-name . "vanquish")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam r-ggplot2 r-e1071 r-changepoint))
@@ -6725,12 +6755,12 @@ support vector machine, the contamination of a sample can be detected.")
   (package
     (name "r-vannstats")
     (version "1.3.4.14")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vannstats" version))
-              (sha256
-               (base32
-                "0fzs2w2rqmdl4a595xi34l7b0sw68yik3yv4mxzqfznwsxiaj8m4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vannstats" version))
+       (sha256
+        (base32 "0fzs2w2rqmdl4a595xi34l7b0sw68yik3yv4mxzqfznwsxiaj8m4"))))
     (properties `((upstream-name . "vannstats")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -6759,12 +6789,12 @@ scatter(), p.corr(), ow.anova(), and rm.anova().")
   (package
     (name "r-vangogh")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vangogh" version))
-              (sha256
-               (base32
-                "1ny4dgwkk54pgwgg3lwcv8vcdnizlajdck68ihpzh2s1yz4n38bm"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vangogh" version))
+       (sha256
+        (base32 "1ny4dgwkk54pgwgg3lwcv8vcdnizlajdck68ihpzh2s1yz4n38bm"))))
     (properties `((upstream-name . "vangogh")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))
@@ -6778,12 +6808,12 @@ scatter(), p.corr(), ow.anova(), and rm.anova().")
   (package
     (name "r-vandalico")
     (version "0.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vandalico" version))
-              (sha256
-               (base32
-                "0ipx9yq5wgpwphy1wzpa8jh605k3b5nkhplj4k0bym107010s3qd"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vandalico" version))
+       (sha256
+        (base32 "0ipx9yq5wgpwphy1wzpa8jh605k3b5nkhplj4k0bym107010s3qd"))))
     (properties `((upstream-name . "vandalico")))
     (build-system r-build-system)
     (propagated-inputs (list r-rocr))
@@ -6801,12 +6831,12 @@ accepted on 28 January 2022.")
   (package
     (name "r-vancouvr")
     (version "0.1.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VancouvR" version))
-              (sha256
-               (base32
-                "12njm15ah307rsncnmckpx05d4cncqj0paa40xdgp7mfz821s36c"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VancouvR" version))
+       (sha256
+        (base32 "12njm15ah307rsncnmckpx05d4cncqj0paa40xdgp7mfz821s36c"))))
     (properties `((upstream-name . "VancouvR")))
     (build-system r-build-system)
     (propagated-inputs (list r-urltools
@@ -6832,12 +6862,12 @@ and access data and geographic records.")
   (package
     (name "r-vampyr")
     (version "1.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vampyr" version))
-              (sha256
-               (base32
-                "137sdv4shmjg1cpndjknrys2jkvyq3p9l11nrdh0bzp9xxc1wkh1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vampyr" version))
+       (sha256
+        (base32 "137sdv4shmjg1cpndjknrys2jkvyq3p9l11nrdh0bzp9xxc1wkh1"))))
     (properties `((upstream-name . "vampyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-semplot
@@ -6862,12 +6892,12 @@ described in Ferrando, Lorenzo-Seva & Chico (2009)
   (package
     (name "r-vamc")
     (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vamc" version))
-              (sha256
-               (base32
-                "04kkli4xzf3gzvs215lzch8bl877cdq3awh3mz1k321zhsa1d0jn"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vamc" version))
+       (sha256
+        (base32 "04kkli4xzf3gzvs215lzch8bl877cdq3awh3mz1k321zhsa1d0jn"))))
     (properties `((upstream-name . "vamc")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack))
@@ -6887,12 +6917,12 @@ large variable annuities.  The main valuation methodology was proposed by Gan
   (package
     (name "r-vam")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VAM" version))
-              (sha256
-               (base32
-                "04lq8i4zwdc9a4n4hvabdyv4a4cmmqbf534cdnnck7jc0dk5rphr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VAM" version))
+       (sha256
+        (base32 "04lq8i4zwdc9a4n4hvabdyv4a4cmmqbf534cdnnck7jc0dk5rphr"))))
     (properties `((upstream-name . "VAM")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-mass))
@@ -6907,12 +6937,12 @@ RNA sequencing data.")
   (package
     (name "r-valuemap")
     (version "2.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "valuemap" version))
-              (sha256
-               (base32
-                "1mmk60njwbylgp3nn5lkbkvyw6xkq4gg9k18smjlr47ys6bn6k4p"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "valuemap" version))
+       (sha256
+        (base32 "1mmk60njwbylgp3nn5lkbkvyw6xkq4gg9k18smjlr47ys6bn6k4p"))))
     (properties `((upstream-name . "valuemap")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf
@@ -6933,12 +6963,12 @@ analysts efforts & time with pre-set visualize options.")
   (package
     (name "r-valueeq5d")
     (version "0.7.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "valueEQ5D" version))
-              (sha256
-               (base32
-                "1w1l07s1rfxc1ba6kdq0l1vmb2qib6gmdm91706cmy1azfa92n4d"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "valueEQ5D" version))
+       (sha256
+        (base32 "1w1l07s1rfxc1ba6kdq0l1vmb2qib6gmdm91706cmy1azfa92n4d"))))
     (properties `((upstream-name . "valueEQ5D")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat))
@@ -6973,12 +7003,12 @@ Hout et al (2012) <doi: 10.1016/j.jval.2012.02.008>.")
   (package
     (name "r-valse")
     (version "0.1-0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "valse" version))
-              (sha256
-               (base32
-                "0l3fdsgrmalifcxscjsxsfq07v8vipg0rdw6xh94q7xw5gdfsms0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "valse" version))
+       (sha256
+        (base32 "0l3fdsgrmalifcxscjsxsfq07v8vipg0rdw6xh94q7xw5gdfsms0"))))
     (properties `((upstream-name . "valse")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2 r-mass r-ggplot2 r-cowplot))
@@ -7001,12 +7031,12 @@ Analysis and Clustering.")
   (package
     (name "r-valottery")
     (version "0.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "valottery" version))
-              (sha256
-               (base32
-                "0rlv8agm9ng4jcb9ixqifh7kjczvkx7047brq8yf9kg7rb8mzgpz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "valottery" version))
+       (sha256
+        (base32 "0rlv8agm9ng4jcb9ixqifh7kjczvkx7047brq8yf9kg7rb8mzgpz"))))
     (properties `((upstream-name . "valottery")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=valottery")
@@ -7020,12 +7050,12 @@ downloaded from https://www.valottery.com/.")
   (package
     (name "r-valorate")
     (version "1.0-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "valorate" version))
-              (sha256
-               (base32
-                "06vczszpkipsxfs7h6ld33vvxb5ci62rwg3cglwy3lcfifhbnsfi"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "valorate" version))
+       (sha256
+        (base32 "06vczszpkipsxfs7h6ld33vvxb5ci62rwg3cglwy3lcfifhbnsfi"))))
     (properties `((upstream-name . "valorate")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival))
@@ -7047,12 +7077,12 @@ analysis of large datasets in few minutes
   (package
     (name "r-valmetrics")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "valmetrics" version))
-              (sha256
-               (base32
-                "1fdaljdfvfmqarxdyjs9pcd8ji2z9i379vcxf65jvnhiaqlsms57"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "valmetrics" version))
+       (sha256
+        (base32 "1fdaljdfvfmqarxdyjs9pcd8ji2z9i379vcxf65jvnhiaqlsms57"))))
     (properties `((upstream-name . "valmetrics")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -7069,12 +7099,12 @@ Johanna Wetterlind, Mats Soderstrom and Bo Stenberg (2021).
   (package
     (name "r-validiclust")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VALIDICLUST" version))
-              (sha256
-               (base32
-                "1glcvzrbc7glxmbmas3zzb114a5cfl7gsf7xlxaifrrgvcahrvnx"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VALIDICLUST" version))
+       (sha256
+        (base32 "1glcvzrbc7glxmbmas3zzb114a5cfl7gsf7xlxaifrrgvcahrvnx"))))
     (properties `((upstream-name . "VALIDICLUST")))
     (build-system r-build-system)
     (propagated-inputs (list r-dplyr r-diptest))
@@ -7093,12 +7123,12 @@ testing: valid inference and practical considerations\",
   (package
     (name "r-validatetools")
     (version "0.5.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "validatetools" version))
-              (sha256
-               (base32
-                "10wardp2c70zx5ii940sjql3xh5p3vqxv4ayyifhhlr8vzvr5cj0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "validatetools" version))
+       (sha256
+        (base32 "10wardp2c70zx5ii940sjql3xh5p3vqxv4ayyifhhlr8vzvr5cj0"))))
     (properties `((upstream-name . "validatetools")))
     (build-system r-build-system)
     (propagated-inputs (list r-validate r-lpsolveapi))
@@ -7114,12 +7144,12 @@ set a rules formulated with validate'.")
   (package
     (name "r-validaters")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "validateRS" version))
-              (sha256
-               (base32
-                "1ivw9ddr6z2wrsqvhbn87p5pikhkxlz8p45pb5nq13dvs359vkww"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "validateRS" version))
+       (sha256
+        (base32 "1ivw9ddr6z2wrsqvhbn87p5pikhkxlz8p45pb5nq13dvs359vkww"))))
     (properties `((upstream-name . "validateRS")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm r-triangle r-reshape2 r-data-table))
@@ -7136,12 +7166,12 @@ S. Sauer, K. Schulze (ECB WP series, forthcoming).")
   (package
     (name "r-validateit")
     (version "1.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "validateIt" version))
-              (sha256
-               (base32
-                "16lcbn853rfnyh8hlvjdxh4abx6wkzsn876fh4mlfkpbcrnmp0ps"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "validateIt" version))
+       (sha256
+        (base32 "16lcbn853rfnyh8hlvjdxh4abx6wkzsn876fh4mlfkpbcrnmp0ps"))))
     (properties `((upstream-name . "validateIt")))
     (build-system r-build-system)
     (propagated-inputs (list r-tm r-snowballc r-rlang r-pymturkr r-here))
@@ -7162,12 +7192,12 @@ information, please visit
   (package
     (name "r-validate")
     (version "1.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "validate" version))
-              (sha256
-               (base32
-                "020l46qd4fyqr7hksgvsvzlh2ibppwgpfasv8a0schl4vjf29a7j"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "validate" version))
+       (sha256
+        (base32 "020l46qd4fyqr7hksgvsvzlh2ibppwgpfasv8a0schl4vjf29a7j"))))
     (properties `((upstream-name . "validate")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml r-settings))
@@ -7188,12 +7218,12 @@ file as well.  See also Van der Loo and De Jonge (2018)
   (package
     (name "r-validata")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "validata" version))
-              (sha256
-               (base32
-                "01ghnkkhqgjllpwdvphcqymps7jq3wd919rplk092iiwwq1mpb9m"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "validata" version))
+       (sha256
+        (base32 "01ghnkkhqgjllpwdvphcqymps7jq3wd919rplk092iiwwq1mpb9m"))))
     (properties `((upstream-name . "validata")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -7228,12 +7258,12 @@ kind of overlap or mapping exists between 2 columns?")
   (package
     (name "r-validann")
     (version "1.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "validann" version))
-              (sha256
-               (base32
-                "00c0hkjiv8n7mksx6sknb4xkkivxr1ml31k697csv4imwrk09dy5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "validann" version))
+       (sha256
+        (base32 "00c0hkjiv8n7mksx6sknb4xkkivxr1ml31k697csv4imwrk09dy5"))))
     (properties `((upstream-name . "validann")))
     (build-system r-build-system)
     (propagated-inputs (list r-moments))
@@ -7250,12 +7280,12 @@ fitting feed-forward ANNs with a single hidden layer.")
   (package
     (name "r-valhallr")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "valhallr" version))
-              (sha256
-               (base32
-                "1lgdcvbk5g8xq9b18aqfq434cvdcshl3b6s28sx4r3jb8fxkia26"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "valhallr" version))
+       (sha256
+        (base32 "1lgdcvbk5g8xq9b18aqfq434cvdcshl3b6s28sx4r3jb8fxkia26"))))
     (properties `((upstream-name . "valhallr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -7290,12 +7320,12 @@ be downloaded from <https://github.com/valhalla/valhalla>.")
   (package
     (name "r-valet")
     (version "0.9.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "valet" version))
-              (sha256
-               (base32
-                "0xgp3rzwyshjw8s9ncpals8naja7fc2yk81abl08gh43zp294scm"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "valet" version))
+       (sha256
+        (base32 "0xgp3rzwyshjw8s9ncpals8naja7fc2yk81abl08gh43zp294scm"))))
     (properties `((upstream-name . "valet")))
     (build-system r-build-system)
     (propagated-inputs (list r-readr
@@ -7318,12 +7348,12 @@ responses as a list.")
   (package
     (name "r-valerie")
     (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VALERIE" version))
-              (sha256
-               (base32
-                "15z8234jhh7hv3gijrvy8hap6gdgvm6qll9b00qbji7vyc3dg4pg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VALERIE" version))
+       (sha256
+        (base32 "15z8234jhh7hv3gijrvy8hap6gdgvm6qll9b00qbji7vyc3dg4pg"))))
     (properties `((upstream-name . "VALERIE")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -7361,12 +7391,12 @@ by Wickham (2007) <https://CRAN.R-project.org/package=ggplot2>.")
   (package
     (name "r-valection")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "valection" version))
-              (sha256
-               (base32
-                "0104zcg3cw57ksgmb321hnyv095mn3frxci9vikj1smwarpnrpzc"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "valection" version))
+       (sha256
+        (base32 "0104zcg3cw57ksgmb321hnyv095mn3frxci9vikj1smwarpnrpzc"))))
     (properties `((upstream-name . "valection")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat))
@@ -7386,12 +7416,12 @@ Valection: Design Optimization for Validation and Verification Studies; Biorxiv
   (package
     (name "r-valaddin")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "valaddin" version))
-              (sha256
-               (base32
-                "15j1zkmxf11706hrjhn6vh2h9zmlcdihrxqyxflp3kah9an0hldm"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "valaddin" version))
+       (sha256
+        (base32 "15j1zkmxf11706hrjhn6vh2h9zmlcdihrxqyxflp3kah9an0hldm"))))
     (properties `((upstream-name . "valaddin")))
     (build-system r-build-system)
     (propagated-inputs (list r-lazyeval))
@@ -7408,12 +7438,12 @@ interactive use.")
   (package
     (name "r-vajointsurv")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VAJointSurv" version))
-              (sha256
-               (base32
-                "19ib4b1kf1zg4l571f2asxkwbab44pzs954agj0wx1p6kb2v608q"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VAJointSurv" version))
+       (sha256
+        (base32 "19ib4b1kf1zg4l571f2asxkwbab44pzs954agj0wx1p6kb2v608q"))))
     (properties `((upstream-name . "VAJointSurv")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat
@@ -7440,12 +7470,12 @@ and random covariate effects are supported along with non-proportional hazards."
   (package
     (name "r-vagam")
     (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vagam" version))
-              (sha256
-               (base32
-                "1bgpf0z23yqyaz7dfmqilyqvr5v4w891027xrlr0mk9grj4srmiq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vagam" version))
+       (sha256
+        (base32 "1bgpf0z23yqyaz7dfmqilyqvr5v4w891027xrlr0mk9grj4srmiq"))))
     (properties `((upstream-name . "vagam")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm r-mvtnorm r-mgcv r-matrix r-gamm4))
@@ -7466,12 +7496,12 @@ Hui et al. (2018) <doi:10.1080/01621459.2018.1518235>.")
   (package
     (name "r-vagalumer")
     (version "0.1.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vagalumeR" version))
-              (sha256
-               (base32
-                "0zakpg5p9kif61d35as08f2dac3wncyvhpc83rqjp96g99wjf701"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vagalumeR" version))
+       (sha256
+        (base32 "0zakpg5p9kif61d35as08f2dac3wncyvhpc83rqjp96g99wjf701"))))
     (properties `((upstream-name . "vagalumeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -7492,12 +7522,12 @@ artists/bands.")
   (package
     (name "r-vaersvax")
     (version "1.0.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vaersvax" version))
-              (sha256
-               (base32
-                "0bfbpdjnykvb9r0p28bz8lrqxksy4jvwnd28y6gdlprpisiipiic"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vaersvax" version))
+       (sha256
+        (base32 "0bfbpdjnykvb9r0p28bz8lrqxksy4jvwnd28y6gdlprpisiipiic"))))
     (properties `((upstream-name . "vaersvax")))
     (build-system r-build-system)
     (home-page "https://gitlab.com/iembry/vaers")
@@ -7526,12 +7556,12 @@ about vaccination/immunization hazards, visit
   (package
     (name "r-vaersndvax")
     (version "1.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vaersNDvax" version))
-              (sha256
-               (base32
-                "0hvw7vbxs87c9xkdv3617fkjwz2dbawscbd7dgaixhdhcr3k823a"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vaersNDvax" version))
+       (sha256
+        (base32 "0hvw7vbxs87c9xkdv3617fkjwz2dbawscbd7dgaixhdhcr3k823a"))))
     (properties `((upstream-name . "vaersNDvax")))
     (build-system r-build-system)
     (home-page "https://gitlab.com/iembry/vaersND")
@@ -7561,12 +7591,12 @@ hazards, visit <http://www.questionuniverse.com/rethink.html/#vaccine>.")
   (package
     (name "r-vader")
     (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vader" version))
-              (sha256
-               (base32
-                "1xjak5xlgpk0ds4l825kq90dg6kk5i5al5zmjqjqn8b7xdgix8mf"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vader" version))
+       (sha256
+        (base32 "1xjak5xlgpk0ds4l825kq90dg6kk5i5al5zmjqjqn8b7xdgix8mf"))))
     (properties `((upstream-name . "vader")))
     (build-system r-build-system)
     (propagated-inputs (list r-tm))
@@ -7583,12 +7613,12 @@ texts from other domains.  Hutto & Gilbert (2014)
   (package
     (name "r-vacuum")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vacuum" version))
-              (sha256
-               (base32
-                "0cmlvlz83gyga05g71hrnq4kpck9flq0qlhjviqqz9zrmljzin0x"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vacuum" version))
+       (sha256
+        (base32 "0cmlvlz83gyga05g71hrnq4kpck9flq0qlhjviqqz9zrmljzin0x"))))
     (properties `((upstream-name . "vacuum")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-dplyr))
@@ -7608,12 +7638,12 @@ paper \"The Future of Data Analysis\", Tukey, John W. (1962)
   (package
     (name "r-vaccine")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vaccine" version))
-              (sha256
-               (base32
-                "03kc9pgpqzfsd2xjkf5zvkbfzdffbpx26g1ispd5yn2y7mbliyjb"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vaccine" version))
+       (sha256
+        (base32 "03kc9pgpqzfsd2xjkf5zvkbfzdffbpx26g1ispd5yn2y7mbliyjb"))))
     (properties `((upstream-name . "vaccine")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm

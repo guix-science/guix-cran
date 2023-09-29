@@ -45,12 +45,12 @@
   (package
     (name "r-ozmaps")
     (version "0.4.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ozmaps" version))
-              (sha256
-               (base32
-                "0sqxaiw1mdcg81228g7k7r6fla6d7hfk9ax2z6pws8457xbvrzka"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ozmaps" version))
+       (sha256
+        (base32 "0sqxaiw1mdcg81228g7k7r6fla6d7hfk9ax2z6pws8457xbvrzka"))))
     (properties `((upstream-name . "ozmaps")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-sf r-oz))
@@ -71,12 +71,12 @@ municipality.")
   (package
     (name "r-oz")
     (version "1.0-22")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "oz" version))
-              (sha256
-               (base32
-                "042f2pplhwj6q7n87qk6r2xcriif76ywyf4mcx3xsr2fjislajw9"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oz" version))
+       (sha256
+        (base32 "042f2pplhwj6q7n87qk6r2xcriif76ywyf4mcx3xsr2fjislajw9"))))
     (properties `((upstream-name . "oz")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=oz")
@@ -90,12 +90,12 @@ boundaries.")
   (package
     (name "r-oyster")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "oysteR" version))
-              (sha256
-               (base32
-                "11zg959h9104hh8wid4003s8c4z9xhmicj39cc5vq1j8g1g7ilr7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oysteR" version))
+       (sha256
+        (base32 "11zg959h9104hh8wid4003s8c4z9xhmicj39cc5vq1j8g1g7ilr7"))))
     (properties `((upstream-name . "oysteR")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -123,12 +123,12 @@ found in the third party packages you use.")
   (package
     (name "r-oxybs")
     (version "1.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OxyBS" version))
-              (sha256
-               (base32
-                "11l3gm0jvw993jb13f6kpv77m6z0d1jswscma2v28qzkw053r3dc"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OxyBS" version))
+       (sha256
+        (base32 "11l3gm0jvw993jb13f6kpv77m6z0d1jswscma2v28qzkw053r3dc"))))
     (properties `((upstream-name . "OxyBS")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=OxyBS")
@@ -144,12 +144,12 @@ oxy-bisulfite conversion.")
   (package
     (name "r-oxcaar")
     (version "1.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "oxcAAR" version))
-              (sha256
-               (base32
-                "1szifw978qr7v8n178jhg4ap2jwvfnwjl2izbbiydwx8q1fyj2q4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oxcAAR" version))
+       (sha256
+        (base32 "1szifw978qr7v8n178jhg4ap2jwvfnwjl2izbbiydwx8q1fyj2q4"))))
     (properties `((upstream-name . "oxcAAR")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-stringi r-jsonlite))
@@ -171,12 +171,12 @@ of bulk analysis and complex Bayesian sequential calibration.")
   (package
     (name "r-ox")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ox" version))
-              (sha256
-               (base32
-                "0j0va301bmppvmk6paqaqqaw85h8yf92i3pz7i59f2j8q9im82rx"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ox" version))
+       (sha256
+        (base32 "0j0va301bmppvmk6paqaqqaw85h8yf92i3pz7i59f2j8q9im82rx"))))
     (properties `((upstream-name . "ox")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -191,12 +191,12 @@ condition.")
   (package
     (name "r-ows4r")
     (version "0.3-6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ows4R" version))
-              (sha256
-               (base32
-                "1nzvvkixgcqpz0hxzb4fyby5c3rlh0ac3i5q00wz3w3bhhdzrdcb"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ows4R" version))
+       (sha256
+        (base32 "1nzvvkixgcqpz0hxzb4fyby5c3rlh0ac3i5q00wz3w3bhhdzrdcb"))))
     (properties `((upstream-name . "ows4R")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
@@ -226,12 +226,12 @@ services emerging such OGC API or @code{SensorThings}.")
   (package
     (name "r-owmr")
     (version "0.8.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "owmr" version))
-              (sha256
-               (base32
-                "0qlb5aw6n06yf8y2gd2fjp8kp3w0xgqh3fka7rxqndgvaqmin1a6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "owmr" version))
+       (sha256
+        (base32 "0qlb5aw6n06yf8y2gd2fjp8kp3w0xgqh3fka7rxqndgvaqmin1a6"))))
     (properties `((upstream-name . "owmr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -256,12 +256,12 @@ it on leaflet maps.")
   (package
     (name "r-owenq")
     (version "1.0.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OwenQ" version))
-              (sha256
-               (base32
-                "0az36s6vrnfa93w12549v9zf6q9xg0a4kvrq5hnkaqxl314zaz1y"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OwenQ" version))
+       (sha256
+        (base32 "0az36s6vrnfa93w12549v9zf6q9xg0a4kvrq5hnkaqxl314zaz1y"))))
     (properties `((upstream-name . "OwenQ")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppnumerical r-rcppeigen r-rcpp r-bh))
@@ -278,12 +278,12 @@ for the calculation of the power of equivalence tests.")
   (package
     (name "r-owea")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OWEA" version))
-              (sha256
-               (base32
-                "05h3aj074manlwnlzqp023zkql6gmsm9p1nfs6zki7ifdd83wj7m"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OWEA" version))
+       (sha256
+        (base32 "05h3aj074manlwnlzqp023zkql6gmsm9p1nfs6zki7ifdd83wj7m"))))
     (properties `((upstream-name . "OWEA")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-mass r-gtools))
@@ -303,12 +303,12 @@ approximate designs and relative efficiency is provided as well.")
   (package
     (name "r-owdbr")
     (version "1.0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "owdbr" version))
-              (sha256
-               (base32
-                "0q4654zr5aw04sssy7127vafry72b7p3d8i44fqvqg3055awin0i"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "owdbr" version))
+       (sha256
+        (base32 "0q4654zr5aw04sssy7127vafry72b7p3d8i44fqvqg3055awin0i"))))
     (properties `((upstream-name . "owdbr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -329,12 +329,12 @@ governmental social programs.")
   (package
     (name "r-owd")
     (version "1.0.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "owd" version))
-              (sha256
-               (base32
-                "08f1zzlnkfdzm5rlw14qm6yvn68j2yas21zjsy31pc59rh3lzkyh"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "owd" version))
+       (sha256
+        (base32 "08f1zzlnkfdzm5rlw14qm6yvn68j2yas21zjsy31pc59rh3lzkyh"))))
     (properties `((upstream-name . "owd")))
     (build-system r-build-system)
     (home-page "https://github.com/Feakster/owd")
@@ -348,12 +348,12 @@ computer's file manager.")
   (package
     (name "r-ovtool")
     (version "1.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OVtool" version))
-              (sha256
-               (base32
-                "1ghfbvnfl092g0kikgjghgf0l1y7ihqykssfvvfi6q6pgzl8kz4y"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OVtool" version))
+       (sha256
+        (base32 "1ghfbvnfl092g0kikgjghgf0l1y7ihqykssfvvfi6q6pgzl8kz4y"))))
     (properties `((upstream-name . "OVtool")))
     (build-system r-build-system)
     (propagated-inputs (list r-varhandle
@@ -390,12 +390,12 @@ package, ov_sim.  The method is demonstrated in Griffin et al. (2020)
   (package
     (name "r-overviewr")
     (version "0.0.13")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "overviewR" version))
-              (sha256
-               (base32
-                "13g2qjd9421nfmabhs2xx8h393id9c9x1h547r953q7aabjmkr89"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "overviewR" version))
+       (sha256
+        (base32 "13g2qjd9421nfmabhs2xx8h393id9c9x1h547r953q7aabjmkr89"))))
     (properties `((upstream-name . "overviewR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -420,12 +420,12 @@ publishable @code{LaTeX} code to present the sample information.")
   (package
     (name "r-overture")
     (version "0.4-0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "overture" version))
-              (sha256
-               (base32
-                "1s16x5kn0apb0w1f7hqzcsqvw3x621y5n6yr1qn7yb7431pdw3cz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "overture" version))
+       (sha256
+        (base32 "1s16x5kn0apb0w1f7hqzcsqvw3x621y5n6yr1qn7yb7431pdw3cz"))))
     (properties `((upstream-name . "overture")))
     (build-system r-build-system)
     (propagated-inputs (list r-bigmemory))
@@ -445,12 +445,12 @@ adaptive Metropolis samplers.  References: Roberts and Rosenthal (2009)
   (package
     (name "r-overlapptest")
     (version "1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "overlapptest" version))
-              (sha256
-               (base32
-                "0qvsiwh76isiz3rcrizahp6p35lscrjijidnjwwwpmc0r9pm7xzd"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "overlapptest" version))
+       (sha256
+        (base32 "0qvsiwh76isiz3rcrizahp6p35lscrjijidnjwwwpmc0r9pm7xzd"))))
     (properties `((upstream-name . "overlapptest")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-geom))
@@ -466,12 +466,12 @@ a null model of random rotation, as explained in De la Cruz et al. (2017)
   (package
     (name "r-overlapping")
     (version "2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "overlapping" version))
-              (sha256
-               (base32
-                "1dq2xsinl5rh8sf2bayv6xs7x8i0d54c405p8l82ji3xrkz49clf"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "overlapping" version))
+       (sha256
+        (base32 "1dq2xsinl5rh8sf2bayv6xs7x8i0d54c405p8l82ji3xrkz49clf"))))
     (properties `((upstream-name . "overlapping")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat r-ggplot2))
@@ -486,12 +486,12 @@ more kernel density estimations from empirical data.")
   (package
     (name "r-overdisp")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "overdisp" version))
-              (sha256
-               (base32
-                "155zkxpv0jqy21winp3r17vnrd6xh2a92glha4d9i2vi541d9kix"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "overdisp" version))
+       (sha256
+        (base32 "155zkxpv0jqy21winp3r17vnrd6xh2a92glha4d9i2vi541d9kix"))))
     (properties `((upstream-name . "overdisp")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=overdisp")
@@ -517,12 +517,12 @@ unnecessary, since the command runs in the basic R language.")
   (package
     (name "r-ouwie")
     (version "2.10")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OUwie" version))
-              (sha256
-               (base32
-                "19bh0vb7azxpzrjw2829gcjcq91fnzb5ybhkp3fsvg9xccmjq9dg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OUwie" version))
+       (sha256
+        (base32 "19bh0vb7azxpzrjw2829gcjcq91fnzb5ybhkp3fsvg9xccmjq9dg"))))
     (properties `((upstream-name . "OUwie")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcolorbrewer
@@ -552,12 +552,12 @@ al (2012).")
   (package
     (name "r-outreg")
     (version "0.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "outreg" version))
-              (sha256
-               (base32
-                "04f1x7mxq4swbd7bfwjjgx4838jm6qj4piaighmhcscwrdkxa1cp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "outreg" version))
+       (sha256
+        (base32 "04f1x7mxq4swbd7bfwjjgx4838jm6qj4piaighmhcscwrdkxa1cp"))))
     (properties `((upstream-name . "outreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-stringr r-sandwich r-reshape2
@@ -573,12 +573,12 @@ survreg', and ivreg outputs.")
   (package
     (name "r-outliertree")
     (version "1.8.1-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "outliertree" version))
-              (sha256
-               (base32
-                "0hhhnhnz2avl4i2jv509yfi55xp69lannyfkadn9ipknyb1bbz1y"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "outliertree" version))
+       (sha256
+        (base32 "0hhhnhnz2avl4i2jv509yfi55xp69lannyfkadn9ipknyb1bbz1y"))))
     (properties `((upstream-name . "outliertree")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-rcereal))
@@ -599,12 +599,12 @@ Loosely based on the @code{GritBot}
   (package
     (name "r-outlierso3")
     (version "0.6.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OutliersO3" version))
-              (sha256
-               (base32
-                "165v572w9bnvay9f0xyxzbhgj1i86ndia4rzqy98i48dfdbdb990"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OutliersO3" version))
+       (sha256
+        (base32 "165v572w9bnvay9f0xyxzbhgj1i86ndia4rzqy98i48dfdbdb990"))))
     (properties `((upstream-name . "OutliersO3")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -636,12 +636,12 @@ robustbase'.")
   (package
     (name "r-outlierensembles")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "outlierensembles" version))
-              (sha256
-               (base32
-                "0m2iaf3rbpwvyrjz6qglbrinmz676hnbqqm6vc38zb3k3cjcllaq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "outlierensembles" version))
+       (sha256
+        (base32 "0m2iaf3rbpwvyrjz6qglbrinmz676hnbqqm6vc38zb3k3cjcllaq"))))
     (properties `((upstream-name . "outlierensembles")))
     (build-system r-build-system)
     (propagated-inputs (list r-psych r-estcrm r-apcluster r-airt))
@@ -660,12 +660,12 @@ from Schubert et al (2012) <doi:10.1137/1.9781611972825.90>, Chiang et al (2017)
   (package
     (name "r-outforest")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "outForest" version))
-              (sha256
-               (base32
-                "03m3jfbydagv4skpijz1xjhsydfb0ci2n0qz4zigfys6hxhfzg36"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "outForest" version))
+       (sha256
+        (base32 "03m3jfbydagv4skpijz1xjhsydfb0ci2n0qz4zigfys6hxhfzg36"))))
     (properties `((upstream-name . "outForest")))
     (build-system r-build-system)
     (propagated-inputs (list r-ranger r-missranger r-fnn))
@@ -688,12 +688,12 @@ method is trained on a reference data, it can be applied to new data.")
   (package
     (name "r-outerbase")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "outerbase" version))
-              (sha256
-               (base32
-                "18c73vp0fjcgg4vhf9bfxm21j8s85cmicqi5j76q0wm800qaqvm9"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "outerbase" version))
+       (sha256
+        (base32 "18c73vp0fjcgg4vhf9bfxm21j8s85cmicqi5j76q0wm800qaqvm9"))))
     (properties `((upstream-name . "outerbase")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -717,12 +717,12 @@ additional information on Gaussian processes are Rasmussen and Williams (2005)
   (package
     (name "r-outcomerate")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "outcomerate" version))
-              (sha256
-               (base32
-                "07mwml7r98qjgvrp938sqf7klyspz110583j0zwb72j69n4whmrj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "outcomerate" version))
+       (sha256
+        (base32 "07mwml7r98qjgvrp938sqf7klyspz110583j0zwb72j69n4whmrj"))))
     (properties `((upstream-name . "outcomerate")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack))
@@ -742,12 +742,12 @@ these standards, see AAPOR (2016)
   (package
     (name "r-outbreaks")
     (version "1.9.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "outbreaks" version))
-              (sha256
-               (base32
-                "0x6r4rzcvd1rp8j4brq9c0zl2xsl5jfi18dny20an7aqk310p11v"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "outbreaks" version))
+       (sha256
+        (base32 "0x6r4rzcvd1rp8j4brq9c0zl2xsl5jfi18dny20an7aqk310p11v"))))
     (properties `((upstream-name . "outbreaks")))
     (build-system r-build-system)
     (home-page "https://github.com/reconhub/outbreaks")
@@ -761,12 +761,12 @@ text files.")
   (package
     (name "r-outbreaker2")
     (version "1.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "outbreaker2" version))
-              (sha256
-               (base32
-                "06wlmf51ciy7zy5nchfn2myvkwrvq44cnzzjl75vz32ixn8iy56v"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "outbreaker2" version))
+       (sha256
+        (base32 "06wlmf51ciy7zy5nchfn2myvkwrvq44cnzzjl75vz32ixn8iy56v"))))
     (properties `((upstream-name . "outbreaker2")))
     (build-system r-build-system)
     (propagated-inputs (list r-visnetwork r-rcpp r-magrittr r-ggplot2 r-ape))
@@ -785,12 +785,12 @@ Jombart T. 2019. <doi:10.1371/journal.pcbi.1006930>.")
   (package
     (name "r-otutable")
     (version "1.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OTUtable" version))
-              (sha256
-               (base32
-                "1sm037ihm12xyp7ns5f0c1psflvm1aj3xnsj5nzh2rsjn35hvd6h"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OTUtable" version))
+       (sha256
+        (base32 "1sm037ihm12xyp7ns5f0c1psflvm1aj3xnsj5nzh2rsjn35hvd6h"))))
     (properties `((upstream-name . "OTUtable")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=OTUtable")
@@ -807,12 +807,12 @@ in freshwater bog lakes,\" <doi: 10.1128/@code{mSphere.00169-17>}.")
   (package
     (name "r-otusummary")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "otuSummary" version))
-              (sha256
-               (base32
-                "0zyjycymdlzszaqns5y2507lpy52dhl82wm4frv8nfy4xcwb3yxy"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "otuSummary" version))
+       (sha256
+        (base32 "0zyjycymdlzszaqns5y2507lpy52dhl82wm4frv8nfy4xcwb3yxy"))))
     (properties `((upstream-name . "otuSummary")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2))
@@ -831,12 +831,12 @@ biosphere please see Lynch and Neufeld (2015) <doi:10.1038/nrmicro3400>).")
   (package
     (name "r-ottrpal")
     (version "1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ottrpal" version))
-              (sha256
-               (base32
-                "03wg6qmkgw7sm8w5q0r1wy7rf8d0m11fmp5dycscnfpd5cipsdf2"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ottrpal" version))
+       (sha256
+        (base32 "03wg6qmkgw7sm8w5q0r1wy7rf8d0m11fmp5dycscnfpd5cipsdf2"))))
     (properties `((upstream-name . "ottrpal")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -872,12 +872,12 @@ with the OTTR Template repository to create courses.")
   (package
     (name "r-ottr")
     (version "1.4.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ottr" version))
-              (sha256
-               (base32
-                "0wl1053xk94ra4y24cnwpixz8igj7c3qy05yhfcb5wkpkvj52k9s"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ottr" version))
+       (sha256
+        (base32 "0wl1053xk94ra4y24cnwpixz8igj7c3qy05yhfcb5wkpkvj52k9s"))))
     (properties `((upstream-name . "ottr")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip r-testthat r-r6 r-jsonlite))
@@ -893,12 +893,12 @@ Markdown documents, and R Jupyter Notebooks.")
   (package
     (name "r-otsfeatures")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "otsfeatures" version))
-              (sha256
-               (base32
-                "1akny7bdls9ddvkpm906ih9h7bc5sgnj03z7kkzbpy703d1y6krr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "otsfeatures" version))
+       (sha256
+        (base32 "1akny7bdls9ddvkpm906ih9h7bc5sgnj03z7kkzbpy703d1y6krr"))))
     (properties `((upstream-name . "otsfeatures")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-latex2exp r-ggplot2 r-bolstad2 r-astsa))
@@ -918,12 +918,12 @@ could benefit from the general framework provided by otsfeatures'.")
   (package
     (name "r-otsad")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "otsad" version))
-              (sha256
-               (base32
-                "1jb6raxm70aywbgs7bdyw8vccy1nj924f4hkpjrlgnvzmy0hyhvs"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "otsad" version))
+       (sha256
+        (base32 "1jb6raxm70aywbgs7bdyw8vccy1nj924f4hkpjrlgnvzmy0hyhvs"))))
     (properties `((upstream-name . "otsad")))
     (build-system r-build-system)
     (propagated-inputs (list r-sigmoid r-reticulate r-plotly r-ggplot2))
@@ -947,12 +947,12 @@ designed to work in non-stationary environments.")
   (package
     (name "r-otrselect")
     (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OTRselect" version))
-              (sha256
-               (base32
-                "007wnad6ka3d5hx9l537m6cvk9qlf0lirrz54yy665szyprpqy27"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OTRselect" version))
+       (sha256
+        (base32 "007wnad6ka3d5hx9l537m6cvk9qlf0lirrz54yy665szyprpqy27"))))
     (properties `((upstream-name . "OTRselect")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-lars))
@@ -968,12 +968,12 @@ Appropriate for either censored or uncensored continuous response.")
   (package
     (name "r-otrkm")
     (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "otrKM" version))
-              (sha256
-               (base32
-                "16zydn1vpxqh0xn6bi5159sjlnqxqvmwwhg9cx016sxfiv579m1z"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "otrKM" version))
+       (sha256
+        (base32 "16zydn1vpxqh0xn6bi5159sjlnqxqvmwwhg9cx016sxfiv579m1z"))))
     (properties `((upstream-name . "otrKM")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rgenoud))
@@ -993,12 +993,12 @@ hold and a binary instrument is available (Xia, J., Zhan, Z., Zhang, J. (2022)
   (package
     (name "r-otrimle")
     (version "2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "otrimle" version))
-              (sha256
-               (base32
-                "0rca8ln9cyikfpsf1af550cfx2zx110c8jxv64xf8dnnd09s9h7b"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "otrimle" version))
+       (sha256
+        (base32 "0rca8ln9cyikfpsf1af550cfx2zx110c8jxv64xf8dnnd09s9h7b"))))
     (properties `((upstream-name . "otrimle")))
     (build-system r-build-system)
     (propagated-inputs (list r-robustbase r-mvtnorm r-mclust r-foreach
@@ -1019,12 +1019,12 @@ Hennig (2017) <https://jmlr.org/papers/v18/16-382.html>.")
   (package
     (name "r-otrecod")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OTrecod" version))
-              (sha256
-               (base32
-                "1w3w6vsp5v2sccpn0zzjiwcnwmgcindh7wnsnf90qprvjwlys7mw"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OTrecod" version))
+       (sha256
+        (base32 "1w3w6vsp5v2sccpn0zzjiwcnwmgcindh7wnsnf90qprvjwlys7mw"))))
     (properties `((upstream-name . "OTrecod")))
     (build-system r-build-system)
     (propagated-inputs (list r-vcd
@@ -1058,12 +1058,12 @@ is fully completed.")
   (package
     (name "r-otpr")
     (version "0.5.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "otpr" version))
-              (sha256
-               (base32
-                "1wh5rmwwwdf1wkb18ayx6zcnhwf80zziznk64jg1974g8crgdxsb"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "otpr" version))
+       (sha256
+        (base32 "1wh5rmwwwdf1wkb18ayx6zcnhwf80zziznk64jg1974g8crgdxsb"))))
     (properties `((upstream-name . "otpr")))
     (build-system r-build-system)
     (propagated-inputs (list r-urltools
@@ -1089,12 +1089,12 @@ R objects are returned.")
   (package
     (name "r-otp")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "otp" version))
-              (sha256
-               (base32
-                "0l0r56kn8jmjxhzz646fimi91blpgpynrrgfd03rh3dbifd5xhdz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "otp" version))
+       (sha256
+        (base32 "0l0r56kn8jmjxhzz646fimi91blpgpynrrgfd03rh3dbifd5xhdz"))))
     (properties `((upstream-name . "otp")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-openssl r-base64url))
@@ -1111,12 +1111,12 @@ RFC 4226 <https://tools.ietf.org/html/rfc4226> and RFC 6238
   (package
     (name "r-otinference")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "otinference" version))
-              (sha256
-               (base32
-                "1l75jjnkyk8yzaw9zyk45jq9ys304i6pzm2xd5apxrb1jk75a3li"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "otinference" version))
+       (sha256
+        (base32 "1l75jjnkyk8yzaw9zyk45jq9ys304i6pzm2xd5apxrb1jk75a3li"))))
     (properties `((upstream-name . "otinference")))
     (build-system r-build-system)
     (propagated-inputs (list r-transport r-sm r-rglpk r-mass))
@@ -1132,12 +1132,12 @@ multivariate data using these limiting distributions and binning.")
   (package
     (name "r-ote")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OTE" version))
-              (sha256
-               (base32
-                "0jvvrrfhpc5kibbxrd5r4dj97jp5m072fxnkpcyz11gi65db3z4g"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OTE" version))
+       (sha256
+        (base32 "0jvvrrfhpc5kibbxrd5r4dj97jp5m072fxnkpcyz11gi65db3z4g"))))
     (properties `((upstream-name . "OTE")))
     (build-system r-build-system)
     (propagated-inputs (list r-randomforest))
@@ -1163,12 +1163,12 @@ matrix, Brier scores, etc.  are also returned for the test data.")
   (package
     (name "r-otclust")
     (version "1.0.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OTclust" version))
-              (sha256
-               (base32
-                "0nr8vjiarkr55iddwxigd6zaz7c41y845qy33wb2rly22r41jzgp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OTclust" version))
+       (sha256
+        (base32 "0nr8vjiarkr55iddwxigd6zaz7c41y845qy33wb2rly22r41jzgp"))))
     (properties `((upstream-name . "OTclust")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-rcolorbrewer r-magrittr r-ggplot2
@@ -1189,12 +1189,12 @@ refers to an overall clustering result.")
   (package
     (name "r-otargen")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "otargen" version))
-              (sha256
-               (base32
-                "05h7nsgnb742rix6l4wnlyp87bs6baii6j69phdba5cjss5d6m8c"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "otargen" version))
+       (sha256
+        (base32 "05h7nsgnb742rix6l4wnlyp87bs6baii6j69phdba5cjss5d6m8c"))))
     (properties `((upstream-name . "otargen")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -1223,12 +1223,12 @@ API(<https://genetics.opentargets.org/api>).")
   (package
     (name "r-oste")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OSTE" version))
-              (sha256
-               (base32
-                "0l8whr883g3jp5ckgxr4zf9vj055jrjb7pfraacd15smnrbl0v5d"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OSTE" version))
+       (sha256
+        (base32 "0l8whr883g3jp5ckgxr4zf9vj055jrjb7pfraacd15smnrbl0v5d"))))
     (properties `((upstream-name . "OSTE")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-ranger r-prodlim r-pec))
@@ -1248,12 +1248,12 @@ on fewer survival trees selected in the final ensemble.")
   (package
     (name "r-ostats")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Ostats" version))
-              (sha256
-               (base32
-                "0d2qk76issb2k5f2ghfvpq0k8ra7d7nj9hp4ja1s0817zwr0g3zz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Ostats" version))
+       (sha256
+        (base32 "0d2qk76issb2k5f2ghfvpq0k8ra7d7nj9hp4ja1s0817zwr0g3zz"))))
     (properties `((upstream-name . "Ostats")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -1293,12 +1293,12 @@ described in Grady et al. (2018)
   (package
     (name "r-ossurvival")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OSsurvival" version))
-              (sha256
-               (base32
-                "1fbxddbhppqlh49wgh2fldixar5mk7rywjbfvbpdb6fvpgn1sc4g"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OSsurvival" version))
+       (sha256
+        (base32 "1fbxddbhppqlh49wgh2fldixar5mk7rywjbfvbpdb6fvpgn1sc4g"))))
     (properties `((upstream-name . "OSsurvival")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=OSsurvival")
@@ -1315,12 +1315,12 @@ time-to-event outcome; details are described in Wang et al (2021)
   (package
     (name "r-ossanma")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OssaNMA" version))
-              (sha256
-               (base32
-                "04y36yi1qvxazf0s563d41g91x2190r1c5phkgkfqdcml94dmnln"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OssaNMA" version))
+       (sha256
+        (base32 "04y36yi1qvxazf0s563d41g91x2190r1c5phkgkfqdcml94dmnln"))))
     (properties `((upstream-name . "OssaNMA")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlcoptim r-deoptimr))
@@ -1338,12 +1338,12 @@ treatment group with a fixed total sample size to maximize the power.")
   (package
     (name "r-osrmr")
     (version "0.1.36")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "osrmr" version))
-              (sha256
-               (base32
-                "1vnf6g1d9fjckz9ay910nb9gr1km2adwk3b0k460mxvpr36izkh7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "osrmr" version))
+       (sha256
+        (base32 "1vnf6g1d9fjckz9ay910nb9gr1km2adwk3b0k460mxvpr36izkh7"))))
     (properties `((upstream-name . "osrmr")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-rjson r-r-utils r-bitops r-assertthat))
@@ -1360,12 +1360,12 @@ handle servers that run locally as well as the OSRM webserver.")
   (package
     (name "r-osrm")
     (version "4.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "osrm" version))
-              (sha256
-               (base32
-                "05zvsmgrfg8143cma3xr2c758a7lbabsb53sxzw5xkc7z19amfyb"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "osrm" version))
+       (sha256
+        (base32 "05zvsmgrfg8143cma3xr2c758a7lbabsb53sxzw5xkc7z19amfyb"))))
     (properties `((upstream-name . "osrm")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-rcppsimdjson r-mapiso r-googlepolylines
@@ -1384,12 +1384,12 @@ distances matrices (travel time and kilometric distance).")
   (package
     (name "r-osnmtf")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OSNMTF" version))
-              (sha256
-               (base32
-                "0g83wqh97iz3g4ganj2dy3biyn8cmb0v8zz6rydald1hfszj8aa2"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OSNMTF" version))
+       (sha256
+        (base32 "0g83wqh97iz3g4ganj2dy3biyn8cmb0v8zz6rydald1hfszj8aa2"))))
     (properties `((upstream-name . "OSNMTF")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-dplyr))
@@ -1412,12 +1412,12 @@ Factorization\" which will be submitted to BBRC.")
   (package
     (name "r-osmscale")
     (version "0.5.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OSMscale" version))
-              (sha256
-               (base32
-                "0rjhyhh1iafgd9h1pbd2clyg2sh0gg7y1aqmiislqyn6h6jrvgqn"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OSMscale" version))
+       (sha256
+        (base32 "0rjhyhh1iafgd9h1pbd2clyg2sh0gg7y1aqmiislqyn6h6jrvgqn"))))
     (properties `((upstream-name . "OSMscale")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-openstreetmap r-berryfunctions))
@@ -1433,12 +1433,12 @@ map projection.")
   (package
     (name "r-osmextract")
     (version "0.5.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "osmextract" version))
-              (sha256
-               (base32
-                "0fapfydxgm9wliqqapjdrpcj7w4f1s9k8ff8nw6hki8hh5hyrk4x"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "osmextract" version))
+       (sha256
+        (base32 "0fapfydxgm9wliqqapjdrpcj7w4f1s9k8ff8nw6hki8hh5hyrk4x"))))
     (properties `((upstream-name . "osmextract")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-jsonlite r-httr))
@@ -1454,12 +1454,12 @@ several providers.")
   (package
     (name "r-osmdata")
     (version "0.2.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "osmdata" version))
-              (sha256
-               (base32
-                "0073dnnznq479ffnizrv8wqmfiv3gmdmmlkmkh1hxgr7p32v1i4z"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "osmdata" version))
+       (sha256
+        (base32 "0073dnnznq479ffnizrv8wqmfiv3gmdmmlkmkh1hxgr7p32v1i4z"))))
     (properties `((upstream-name . "osmdata")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -1486,12 +1486,12 @@ and processed with very fast C++ routines for return to R'.")
   (package
     (name "r-osmclass")
     (version "0.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "osmclass" version))
-              (sha256
-               (base32
-                "16vpb1fq93s386anvyl6i8ynk5mijs0c40sh86lcpmp9wmdb6msp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "osmclass" version))
+       (sha256
+        (base32 "16vpb1fq93s386anvyl6i8ynk5mijs0c40sh86lcpmp9wmdb6msp"))))
     (properties `((upstream-name . "osmclass")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi r-data-table r-collapse))
@@ -1514,12 +1514,12 @@ Krantz (2023) <https://www.ssrn.com/abstract=4537867>.")
   (package
     (name "r-osldecomposition")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OSLdecomposition" version))
-              (sha256
-               (base32
-                "0xz27p4wd1a5y8x24sqgpyvgdwi2dzk4qh2s50xrdr82prb2znkv"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OSLdecomposition" version))
+       (sha256
+        (base32 "0xz27p4wd1a5y8x24sqgpyvgdwi2dzk4qh2s50xrdr82prb2znkv"))))
     (properties `((upstream-name . "OSLdecomposition")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -1548,12 +1548,12 @@ Further information and tutorials can be found at <https://luminescence.de>.")
   (package
     (name "r-oskeyring")
     (version "0.1.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "oskeyring" version))
-              (sha256
-               (base32
-                "1fsgz4jln3nk53bxpmjpc7dcapc9j1wdqlrab169ymvrlzypgvqc"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oskeyring" version))
+       (sha256
+        (base32 "1fsgz4jln3nk53bxpmjpc7dcapc9j1wdqlrab169ymvrlzypgvqc"))))
     (properties `((upstream-name . "oskeyring")))
     (build-system r-build-system)
     (home-page "https://github.com/r-lib/oskeyring#readme")
@@ -1568,12 +1568,12 @@ on Windows'.  See the keyring package if you need a portable API'.")
   (package
     (name "r-oshka")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "oshka" version))
-              (sha256
-               (base32
-                "02hglpq5lknq93zbcf219lhnhppzgygkhxqixb15f89rxf9fczgs"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oshka" version))
+       (sha256
+        (base32 "02hglpq5lknq93zbcf219lhnhppzgygkhxqixb15f89rxf9fczgs"))))
     (properties `((upstream-name . "oshka")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -1592,12 +1592,12 @@ objects that would interfere with evaluation.")
   (package
     (name "r-osfr")
     (version "0.2.9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "osfr" version))
-              (sha256
-               (base32
-                "0gbkg6hlip2bkwifsgvnaimrmi1pamaxf8xv7g0yxw5wdf8zyy5c"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "osfr" version))
+       (sha256
+        (base32 "0gbkg6hlip2bkwifsgvnaimrmi1pamaxf8xv7g0yxw5wdf8zyy5c"))))
     (properties `((upstream-name . "osfr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -1622,12 +1622,12 @@ or public projects.")
   (package
     (name "r-osfd")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OSFD" version))
-              (sha256
-               (base32
-                "1xw76hi34vgq1r6r22z4bqp114nzg4h85mvz6pya724vyf110vhg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OSFD" version))
+       (sha256
+        (base32 "1xw76hi34vgq1r6r22z4bqp114nzg4h85mvz6pya724vyf110vhg"))))
     (properties `((upstream-name . "OSFD")))
     (build-system r-build-system)
     (propagated-inputs (list r-twinning r-rcpparmadillo r-rcpp r-lhs r-dplyr))
@@ -1646,12 +1646,12 @@ CMMI-1921646.")
   (package
     (name "r-osdr")
     (version "1.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OSDR" version))
-              (sha256
-               (base32
-                "0yf9l0fkqf9adanl8182nyislj2s2xvsnf2xp5y7pdj3af2k4m7w"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OSDR" version))
+       (sha256
+        (base32 "0yf9l0fkqf9adanl8182nyislj2s2xvsnf2xp5y7pdj3af2k4m7w"))))
     (properties `((upstream-name . "OSDR")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=OSDR")
@@ -1666,12 +1666,12 @@ Representatives (OSDR), as defined by D.Gale (1968)
   (package
     (name "r-osdesign")
     (version "1.8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "osDesign" version))
-              (sha256
-               (base32
-                "0l5dq8rj4rg4v324610kj2j5nv7py6z1jcplhb6br1gvldj7ng1d"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "osDesign" version))
+       (sha256
+        (base32 "0l5dq8rj4rg4v324610kj2j5nv7py6z1jcplhb6br1gvldj7ng1d"))))
     (properties `((upstream-name . "osDesign")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=osDesign")
@@ -1689,12 +1689,12 @@ For additional detail see: Haneuse S, Saegusa T and Lumley T
   (package
     (name "r-osd")
     (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "osd" version))
-              (sha256
-               (base32
-                "1py9p15nrcydr8w9ilxkxabiz9zlqnls8xn9avjkxd8x6602jx6p"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "osd" version))
+       (sha256
+        (base32 "1py9p15nrcydr8w9ilxkxabiz9zlqnls8xn9avjkxd8x6602jx6p"))))
     (properties `((upstream-name . "osd")))
     (build-system r-build-system)
     (propagated-inputs (list r-nnls r-jade))
@@ -1714,12 +1714,12 @@ and orthogonal signal deconvolution (OSD) alone.")
   (package
     (name "r-oscv")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OSCV" version))
-              (sha256
-               (base32
-                "17wrfak6b6m2l3iqbhdwcfh0rlqb14rkvrbari7v46gya9v7hq20"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OSCV" version))
+       (sha256
+        (base32 "17wrfak6b6m2l3iqbhdwcfh0rlqb14rkvrbari7v46gya9v7hq20"))))
     (properties `((upstream-name . "OSCV")))
     (build-system r-build-system)
     (propagated-inputs (list r-mc2d))
@@ -1739,12 +1739,12 @@ One-sided cross-validation for nonsmooth density functions,
   (package
     (name "r-oscillatorgenerator")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OscillatorGenerator" version))
-              (sha256
-               (base32
-                "0zqw8l955msxkdviw5vd493749zwc22qby9mfmyqnqqmq0pyjw4w"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OscillatorGenerator" version))
+       (sha256
+        (base32 "0zqw8l955msxkdviw5vd493749zwc22qby9mfmyqnqqmq0pyjw4w"))))
     (properties `((upstream-name . "OscillatorGenerator")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=OscillatorGenerator")
@@ -1762,12 +1762,12 @@ code was developed in the Biological Information Processing Group at the
   (package
     (name "r-oscar")
     (version "1.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "oscar" version))
-              (sha256
-               (base32
-                "1fr7hwy7bnqz160vqlq84xzyfvhgsnjphqkcrfi0qc5lfbwlpm06"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oscar" version))
+       (sha256
+        (base32 "1fr7hwy7bnqz160vqlq84xzyfvhgsnjphqkcrfi0qc5lfbwlpm06"))))
     (properties `((upstream-name . "oscar")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-proc r-matrix r-hamlet))
@@ -1796,12 +1796,12 @@ Multiple regression model families are supported: Cox, logistic, and Gaussian.")
   (package
     (name "r-osc")
     (version "1.0.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "osc" version))
-              (sha256
-               (base32
-                "00a0ys5ni0hg5zxi0sr5ak3n4c252vhvd6gynnx1b0lqna7bz9qi"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "osc" version))
+       (sha256
+        (base32 "00a0ys5ni0hg5zxi0sr5ak3n4c252vhvd6gynnx1b0lqna7bz9qi"))))
     (properties `((upstream-name . "osc")))
     (build-system r-build-system)
     (propagated-inputs (list r-raster))
@@ -1818,12 +1818,12 @@ sphere (great-circle or orthodromic distance).")
   (package
     (name "r-oryzaprobe")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OryzaProbe" version))
-              (sha256
-               (base32
-                "0sih1pc0ch5w769w7sc56ixppv4njqq31g7n49290kzn8d46i3fw"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OryzaProbe" version))
+       (sha256
+        (base32 "0sih1pc0ch5w769w7sc56ixppv4njqq31g7n49290kzn8d46i3fw"))))
     (properties `((upstream-name . "OryzaProbe")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -1849,12 +1849,12 @@ keep multiple probes by appending sequence numbers to duplicate the RAP-DB ID.")
   (package
     (name "r-orus")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "oRus" version))
-              (sha256
-               (base32
-                "0q6hgiidcpm95pyisndihxjg78v6k1zycdqd72309aankdk0g5h4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oRus" version))
+       (sha256
+        (base32 "0q6hgiidcpm95pyisndihxjg78v6k1zycdqd72309aankdk0g5h4"))))
     (properties `((upstream-name . "oRus")))
     (build-system r-build-system)
     (propagated-inputs (list r-xlsx
@@ -1882,12 +1882,12 @@ stories, for project management purposes.")
   (package
     (name "r-ortsc")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ORTSC" version))
-              (sha256
-               (base32
-                "0byja1gi44ymn68cfai8apcimlxmnflqr1pj8k4y7l8lqd3fyz60"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ORTSC" version))
+       (sha256
+        (base32 "0byja1gi44ymn68cfai8apcimlxmnflqr1pj8k4y7l8lqd3fyz60"))))
     (properties `((upstream-name . "ORTSC")))
     (build-system r-build-system)
     (propagated-inputs (list r-googlecloudvisionr r-googleauthr))
@@ -1902,12 +1902,12 @@ label detection and repurpose this feature for image classification.")
   (package
     (name "r-orthopolynom")
     (version "1.0-6.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "orthopolynom" version))
-              (sha256
-               (base32
-                "1ig2pyyibbynwmhapbicij5g47acnz8npjm46xnjybskcv96wjpc"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "orthopolynom" version))
+       (sha256
+        (base32 "1ig2pyyibbynwmhapbicij5g47acnz8npjm46xnjybskcv96wjpc"))))
     (properties `((upstream-name . "orthopolynom")))
     (build-system r-build-system)
     (propagated-inputs (list r-polynom))
@@ -1925,12 +1925,12 @@ objects.")
   (package
     (name "r-orthopanels")
     (version "1.2-4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OrthoPanels" version))
-              (sha256
-               (base32
-                "1l7fllkswiypdg88l3hy1ckd1gx7visfrzw24wrr2xc265iqyn26"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OrthoPanels" version))
+       (sha256
+        (base32 "1l7fllkswiypdg88l3hy1ckd1gx7visfrzw24wrr2xc265iqyn26"))))
     (properties `((upstream-name . "OrthoPanels")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -1950,12 +1950,12 @@ infinity, with a T as low as 2.")
   (package
     (name "r-orthogonalsplinebasis")
     (version "0.1.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "orthogonalsplinebasis" version))
-              (sha256
-               (base32
-                "0wdqyijvwf9fdg22s6ck22bjk3xc30snlx29sxvm15yiz3rj498v"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "orthogonalsplinebasis" version))
+       (sha256
+        (base32 "0wdqyijvwf9fdg22s6ck22bjk3xc30snlx29sxvm15yiz3rj498v"))))
     (properties `((upstream-name . "orthogonalsplinebasis")))
     (build-system r-build-system)
     (home-page "https://github.com/halpo/obsplines")
@@ -1970,12 +1970,12 @@ functions.")
   (package
     (name "r-orthodr")
     (version "0.6.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "orthoDr" version))
-              (sha256
-               (base32
-                "0nrrwqpjm5dp487kql0nv9gaarar3dw1fwwmjd1ib3ya9l7m77xq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "orthoDr" version))
+       (sha256
+        (base32 "0nrrwqpjm5dp487kql0nv9gaarar3dw1fwwmjd1ib3ya9l7m77xq"))))
     (properties `((upstream-name . "orthoDr")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -2008,12 +2008,12 @@ through @code{OpenMP}'.")
   (package
     (name "r-orsk")
     (version "1.0-8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "orsk" version))
-              (sha256
-               (base32
-                "01gnqqcasdwbh5dk1yg50qiyn59wsk0d01q0xwg0aqcclmnsfkds"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "orsk" version))
+       (sha256
+        (base32 "01gnqqcasdwbh5dk1yg50qiyn59wsk0d01q0xwg0aqcclmnsfkds"))))
     (properties `((upstream-name . "orsk")))
     (build-system r-build-system)
     (propagated-inputs (list r-bhh2 r-bb))
@@ -2030,12 +2030,12 @@ information (Wang (2013) <doi:10.18637/jss.v055.i05>).")
   (package
     (name "r-orsifronts")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "orsifronts" version))
-              (sha256
-               (base32
-                "0nxhijiqhhrxwrm5fy619lsdqyji43xyfqg4309pfb7da4377i3q"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "orsifronts" version))
+       (sha256
+        (base32 "0nxhijiqhhrxwrm5fy619lsdqyji43xyfqg4309pfb7da4377i3q"))))
     (properties `((upstream-name . "orsifronts")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp))
@@ -2054,12 +2054,12 @@ Circumpolar Current fronts page, please see package CITATION for details.")
   (package
     (name "r-oro-pet")
     (version "0.2.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "oro.pet" version))
-              (sha256
-               (base32
-                "0drk4mlacg443y5qljyp5jrq3lcr08qmsxnr8mgp93cxrdlwvr1i"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oro.pet" version))
+       (sha256
+        (base32 "0drk4mlacg443y5qljyp5jrq3lcr08qmsxnr8mgp93cxrdlwvr1i"))))
     (properties `((upstream-name . "oro.pet")))
     (build-system r-build-system)
     (propagated-inputs (list r-oro-nifti r-oro-dicom r-msm r-minpack-lm))
@@ -2074,12 +2074,12 @@ of the Rigorous Analytics bundle.")
   (package
     (name "r-oro-dicom")
     (version "0.5.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "oro.dicom" version))
-              (sha256
-               (base32
-                "1ar70xk2bqk7jgckfivgp4np3dxaynmgdg41n8x0sg9cpxl2lc38"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oro.dicom" version))
+       (sha256
+        (base32 "1ar70xk2bqk7jgckfivgp4np3dxaynmgdg41n8x0sg9cpxl2lc38"))))
     (properties `((upstream-name . "oro.dicom")))
     (build-system r-build-system)
     (propagated-inputs (list r-oro-nifti))
@@ -2095,12 +2095,12 @@ bundle.")
   (package
     (name "r-ormplot")
     (version "0.3.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ormPlot" version))
-              (sha256
-               (base32
-                "0fr1g2lkzc50y79f1czkagcavnq1kfmk6qxg05gqj07jc66mvici"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ormPlot" version))
+       (sha256
+        (base32 "0fr1g2lkzc50y79f1czkagcavnq1kfmk6qxg05gqj07jc66mvici"))))
     (properties `((upstream-name . "ormPlot")))
     (build-system r-build-system)
     (propagated-inputs (list r-rms r-gtable r-ggplot2))
@@ -2118,12 +2118,12 @@ model summary as a modifiable object.")
   (package
     (name "r-ormbigdata")
     (version "0.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ormBigData" version))
-              (sha256
-               (base32
-                "1rq202k4assmij21bjjk1ba7121p5p3rp21k548cc6lk81xj1rcc"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ormBigData" version))
+       (sha256
+        (base32 "1rq202k4assmij21bjjk1ba7121p5p3rp21k548cc6lk81xj1rcc"))))
     (properties `((upstream-name . "ormBigData")))
     (build-system r-build-system)
     (propagated-inputs (list r-sparsem
@@ -2146,12 +2146,12 @@ for details.")
   (package
     (name "r-orloca-es")
     (version "4.9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "orloca.es" version))
-              (sha256
-               (base32
-                "00zb08dqcsh1ljl4f2djm1pwbrfbaddgapn3v8nascmwxlhb2hkw"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "orloca.es" version))
+       (sha256
+        (base32 "00zb08dqcsh1ljl4f2djm1pwbrfbaddgapn3v8nascmwxlhb2hkw"))))
     (properties `((upstream-name . "orloca.es")))
     (build-system r-build-system)
     (propagated-inputs (list r-orloca))
@@ -2178,12 +2178,12 @@ Research, 167, pg.  7-41, 2009. <DOI:10.1007/s10479-008-0352-z>.")
   (package
     (name "r-orloca")
     (version "5.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "orloca" version))
-              (sha256
-               (base32
-                "09xsas6qpv00p63n17yd95p88v4rcwwmp187n3y3p0nx9q3y3vrf"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "orloca" version))
+       (sha256
+        (base32 "09xsas6qpv00p63n17yd95p88v4rcwwmp187n3y3p0nx9q3y3vrf"))))
     (properties `((upstream-name . "orloca")))
     (build-system r-build-system)
     (propagated-inputs (list r-ucminf r-rmarkdown r-png r-knitr))
@@ -2208,12 +2208,12 @@ of Operations Research, 167, pg.  7-41, 2009. <DOI:10.1007/s10479-008-0352-z>.")
   (package
     (name "r-orkm")
     (version "0.7.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ORKM" version))
-              (sha256
-               (base32
-                "1sgxbydxl3gv34fnzc8615hziv6a3qmq8vnmys0lwxahxvix11j9"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ORKM" version))
+       (sha256
+        (base32 "1sgxbydxl3gv34fnzc8615hziv6a3qmq8vnmys0lwxahxvix11j9"))))
     (properties `((upstream-name . "ORKM")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-mass))
@@ -2229,12 +2229,12 @@ data.  The philosophy of the package is described in Guo G. (2020)
   (package
     (name "r-orion")
     (version "1.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ORION" version))
-              (sha256
-               (base32
-                "0zzlvx1yd3hy8dy7nbmkj7d2k6609ys91s894qcgx5n7jirqviy3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ORION" version))
+       (sha256
+        (base32 "0zzlvx1yd3hy8dy7nbmkj7d2k6609ys91s894qcgx5n7jirqviy3"))))
     (properties `((upstream-name . "ORION")))
     (build-system r-build-system)
     (propagated-inputs (list r-tunepareto
@@ -2260,12 +2260,12 @@ filter, organize and further analyze those ordinal relations.")
   (package
     (name "r-origin")
     (version "1.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "origin" version))
-              (sha256
-               (base32
-                "0m10x4d8qh67davyznx759blrb548jk8d7my2zc285yax0d6wp5z"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "origin" version))
+       (sha256
+        (base32 "0m10x4d8qh67davyznx759blrb548jk8d7my2zc285yax0d6wp5z"))))
     (properties `((upstream-name . "origin")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstudioapi r-cli))
@@ -2286,12 +2286,12 @@ provided in the RStudio Markers pane.  Lives in the spirit of lintr and styler'.
   (package
     (name "r-origami")
     (version "1.0.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "origami" version))
-              (sha256
-               (base32
-                "0b66alm1mr6vsgj5cgliqxw8vpm1x504qs42crlf0n6339a38h5l"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "origami" version))
+       (sha256
+        (base32 "0b66alm1mr6vsgj5cgliqxw8vpm1x504qs42crlf0n6339a38h5l"))))
     (properties `((upstream-name . "origami")))
     (build-system r-build-system)
     (propagated-inputs (list r-listenv
@@ -2315,12 +2315,12 @@ implementation was first described by Coyle and Hejazi (2018)
   (package
     (name "r-orientlib")
     (version "0.10.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "orientlib" version))
-              (sha256
-               (base32
-                "05xwx040l1ln06rkmsg8l4394b3inaf663mw4fng54wwacgv9jfj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "orientlib" version))
+       (sha256
+        (base32 "05xwx040l1ln06rkmsg8l4394b3inaf663mw4fng54wwacgv9jfj"))))
     (properties `((upstream-name . "orientlib")))
     (build-system r-build-system)
     (home-page "https://github.com/dmurdoch/orientlib")
@@ -2334,12 +2334,12 @@ orientlib help topic for details.")
   (package
     (name "r-oriclust")
     (version "1.0-2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ORIClust" version))
-              (sha256
-               (base32
-                "036jbfq4klzlppybvcj8wjchcyqmmxwvvr3rn9436cz4zm2yjy4a"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ORIClust" version))
+       (sha256
+        (base32 "036jbfq4klzlppybvcj8wjchcyqmmxwvvr3rn9436cz4zm2yjy4a"))))
     (properties `((upstream-name . "ORIClust")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=ORIClust")
@@ -2356,12 +2356,12 @@ obtained from short time-course or dose-response microarray experiments.")
   (package
     (name "r-orgutils")
     (version "0.4-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "orgutils" version))
-              (sha256
-               (base32
-                "1yc3avhq3786his7nd60zfbzd9inkfrfz938r8378z59zbb1mzqq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "orgutils" version))
+       (sha256
+        (base32 "1yc3avhq3786his7nd60zfbzd9inkfrfz938r8378z59zbb1mzqq"))))
     (properties `((upstream-name . "orgutils")))
     (build-system r-build-system)
     (propagated-inputs (list r-textutils))
@@ -2378,12 +2378,12 @@ tables into data frames.")
   (package
     (name "r-orgr")
     (version "0.9.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "orgR" version))
-              (sha256
-               (base32
-                "1q4qbwnbhmja8rqiph7g7m4wxhzhk9mh91x1jgbnky8bs4ljdgrx"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "orgR" version))
+       (sha256
+        (base32 "1q4qbwnbhmja8rqiph7g7m4wxhzhk9mh91x1jgbnky8bs4ljdgrx"))))
     (properties `((upstream-name . "orgR")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-lubridate r-ggthemes r-ggplot2
@@ -2406,12 +2406,12 @@ help user managing their complex org files.")
   (package
     (name "r-organizr")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "organizr" version))
-              (sha256
-               (base32
-                "1i6j7c7d588gnjmh3ddknrs95mhw6ikq53c6wd3zy82lmjvh96bv"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "organizr" version))
+       (sha256
+        (base32 "1i6j7c7d588gnjmh3ddknrs95mhw6ikq53c6wd3zy82lmjvh96bv"))))
     (properties `((upstream-name . "organizr")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -2432,12 +2432,12 @@ well as Rmarkdown or Quarto documents with automatically assigned name prefixes.
   (package
     (name "r-org")
     (version "2022.11.23")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "org" version))
-              (sha256
-               (base32
-                "0ppiwdzy7x0fnqq5j23dim4g64cn3bq72v2vd91c2i3sg4n5ahlk"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "org" version))
+       (sha256
+        (base32 "0ppiwdzy7x0fnqq5j23dim4g64cn3bq72v2vd91c2i3sg4n5ahlk"))))
     (properties `((upstream-name . "org")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -2454,12 +2454,12 @@ and org helps you take care of the details.")
   (package
     (name "r-orfid")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ORFID" version))
-              (sha256
-               (base32
-                "11g4l45x3jwyffamr2qd0h7y15kyynqqwxh1mp1mnv0lchmdyr89"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ORFID" version))
+       (sha256
+        (base32 "11g4l45x3jwyffamr2qd0h7y15kyynqqwxh1mp1mnv0lchmdyr89"))))
     (properties `((upstream-name . "ORFID")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -2487,12 +2487,12 @@ efficiency.")
   (package
     (name "r-orf")
     (version "0.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "orf" version))
-              (sha256
-               (base32
-                "1njcnya5f2wx50l7gyf53js16xj1y6pwgbghxq4nm4grf2ck3mz1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "orf" version))
+       (sha256
+        (base32 "1njcnya5f2wx50l7gyf53js16xj1y6pwgbghxq4nm4grf2ck3mz1"))))
     (properties `((upstream-name . "orf")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable r-rcpp r-ranger r-ggplot2))
@@ -2515,12 +2515,12 @@ Ziegler, 2017) <@code{arXiv:1508.04409>}.")
   (package
     (name "r-ores")
     (version "0.3.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ores" version))
-              (sha256
-               (base32
-                "0xzc0d38z7h5ghab3kqsv0r2cl3888j7vn94p51xlwcbhnq10kip"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ores" version))
+       (sha256
+        (base32 "0xzc0d38z7h5ghab3kqsv0r2cl3888j7vn94p51xlwcbhnq10kip"))))
     (properties `((upstream-name . "ores")))
     (build-system r-build-system)
     (propagated-inputs (list r-httr))
@@ -2538,12 +2538,12 @@ damaging, or made in good faith.")
   (package
     (name "r-oreo")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "oreo" version))
-              (sha256
-               (base32
-                "1qzv6fjana5fx45msqasqfniiancsch6j8r1llh1xyg2wjhqdj23"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oreo" version))
+       (sha256
+        (base32 "1qzv6fjana5fx45msqasqfniiancsch6j8r1llh1xyg2wjhqdj23"))))
     (properties `((upstream-name . "oreo")))
     (build-system r-build-system)
     (propagated-inputs (list r-spectral
@@ -2573,12 +2573,12 @@ Erwin, Dimitris Vlassopoulos, Michel Cloitre (2011) <doi:10.1122/1.3544591>).")
   (package
     (name "r-ordr")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ordr" version))
-              (sha256
-               (base32
-                "07nsl6mdm4dmyl8vsqzcpd2mihcxsm68gjx3v1dfqgjqmz477nvf"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ordr" version))
+       (sha256
+        (base32 "07nsl6mdm4dmyl8vsqzcpd2mihcxsm68gjx3v1dfqgjqmz477nvf"))))
     (properties `((upstream-name . "ordr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -2619,12 +2619,12 @@ Wickham et al (2019) <doi:10.21105/joss.01686>.")
   (package
     (name "r-ordpens")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ordPens" version))
-              (sha256
-               (base32
-                "1q6v3xkaahpzkycjnn75a62narwj4g86ha9m786nfp941ql44vlr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ordPens" version))
+       (sha256
+        (base32 "1q6v3xkaahpzkycjnn75a62narwj4g86ha9m786nfp941ql44vlr"))))
     (properties `((upstream-name . "ordPens")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlrsim r-quadprog r-mgcv r-grplasso r-glmpath))
@@ -2643,12 +2643,12 @@ second-order difference/smoothing penalty.")
   (package
     (name "r-ordnor")
     (version "2.2.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OrdNor" version))
-              (sha256
-               (base32
-                "0yjvylp8z24w6nbwy9rjyk0y7gpzsxzsqm8x4q4fn8g87cb3314v"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OrdNor" version))
+       (sha256
+        (base32 "0yjvylp8z24w6nbwy9rjyk0y7gpzsxzsqm8x4q4fn8g87cb3314v"))))
     (properties `((upstream-name . "OrdNor")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-matrix r-genord r-corpcor))
@@ -2666,12 +2666,12 @@ et al. (2015) <DOI:10.1080/10543406.2014.920868>.")
   (package
     (name "r-ordmonreg")
     (version "1.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OrdMonReg" version))
-              (sha256
-               (base32
-                "1xca8pvvq79j484l2rmn4nva8ncx8z51g5diljikck231y8qjqaz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OrdMonReg" version))
+       (sha256
+        (base32 "1xca8pvvq79j484l2rmn4nva8ncx8z51g5diljikck231y8qjqaz"))))
     (properties `((upstream-name . "OrdMonReg")))
     (build-system r-build-system)
     (home-page "http://www.ceremade.dauphine.fr/~fadoua")
@@ -2694,12 +2694,12 @@ cyclical projection algorithm.")
   (package
     (name "r-ordinalrr")
     (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ordinalRR" version))
-              (sha256
-               (base32
-                "1sfkq8gryyls22208ympw5scgb4jkd27pyc1qklw4x7cz9wfnfbp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ordinalRR" version))
+       (sha256
+        (base32 "1sfkq8gryyls22208ympw5scgb4jkd27pyc1qklw4x7cz9wfnfbp"))))
     (properties `((upstream-name . "ordinalRR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjags))
@@ -2726,12 +2726,12 @@ Technometrics paper.")
   (package
     (name "r-ordinalpattern")
     (version "0.2.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ordinalpattern" version))
-              (sha256
-               (base32
-                "1xxii1lxbkip778wj92kicj4xlpriqa47b258bvmng2s4djkmg0y"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ordinalpattern" version))
+       (sha256
+        (base32 "1xxii1lxbkip778wj92kicj4xlpriqa47b258bvmng2s4djkmg0y"))))
     (properties `((upstream-name . "ordinalpattern")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-gtools))
@@ -2751,12 +2751,12 @@ provided.")
   (package
     (name "r-ordinalnet")
     (version "2.12")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ordinalNet" version))
-              (sha256
-               (base32
-                "0ijgxp1lh4hbgks0p5041f5s6kpfrlm6f7hdz2nm3dn1rhq6bwvi"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ordinalNet" version))
+       (sha256
+        (base32 "0ijgxp1lh4hbgks0p5041f5s6kpfrlm6f7hdz2nm3dn1rhq6bwvi"))))
     (properties `((upstream-name . "ordinalNet")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=ordinalNet")
@@ -2783,12 +2783,12 @@ toward the parallel model.  For details, refer to Wurm, Hanlon, and Rathouz
   (package
     (name "r-ordinallbm")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ordinalLBM" version))
-              (sha256
-               (base32
-                "1sfzkm3f9s5nbalakgk5v919wr7hdlr5p280rw2p8dy4wxr3xk3s"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ordinalLBM" version))
+       (sha256
+        (base32 "1sfzkm3f9s5nbalakgk5v919wr7hdlr5p280rw2p8dy4wxr3xk3s"))))
     (properties `((upstream-name . "ordinalLBM")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2 r-rcolorbrewer))
@@ -2804,12 +2804,12 @@ block model (OLBM), as described in Corneli, Bouveyron and Latouche (2019).")
   (package
     (name "r-ordinalgmifs")
     (version "1.0.8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ordinalgmifs" version))
-              (sha256
-               (base32
-                "0c97c3zss34x9n8szr95z51qx8ix55mlrbqvg8dz128xpd3684rj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ordinalgmifs" version))
+       (sha256
+        (base32 "0c97c3zss34x9n8szr95z51qx8ix55mlrbqvg8dz128xpd3684rj"))))
     (properties `((upstream-name . "ordinalgmifs")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival))
@@ -2826,12 +2826,12 @@ monotone incremental forward stagewise method.")
   (package
     (name "r-ordinalforest")
     (version "2.4-3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ordinalForest" version))
-              (sha256
-               (base32
-                "06blmwmn42dv6sri3j3473arrql5rihdlp7kgh56b2w1j2wdqq7s"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ordinalForest" version))
+       (sha256
+        (base32 "06blmwmn42dv6sri3j3473arrql5rihdlp7kgh56b2w1j2wdqq7s"))))
     (properties `((upstream-name . "ordinalForest")))
     (build-system r-build-system)
     (propagated-inputs (list r-verification r-rcpp r-nnet r-combinat))
@@ -2861,12 +2861,12 @@ Ordinal Forests.  Journal of Classification 37, 4â17.
   (package
     (name "r-ordinalcont")
     (version "2.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ordinalCont" version))
-              (sha256
-               (base32
-                "1azwcr1si3b8dxf2y59d3rxw4msfq79khzg7zgqd0kbzyka4ygl8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ordinalCont" version))
+       (sha256
+        (base32 "1azwcr1si3b8dxf2y59d3rxw4msfq79khzg7zgqd0kbzyka4ygl8"))))
     (properties `((upstream-name . "ordinalCont")))
     (build-system r-build-system)
     (propagated-inputs (list r-deriv r-boot))
@@ -2890,12 +2890,12 @@ al (2020) <doi:10.18637/jss.v096.i08>.")
   (package
     (name "r-ordinalclust")
     (version "1.3.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ordinalClust" version))
-              (sha256
-               (base32
-                "0hmqvhrmijgzanh08z5v82a07zl7xm69wl8zzj99fksahyrgxjdc"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ordinalClust" version))
+       (sha256
+        (base32 "0hmqvhrmijgzanh08z5v82a07zl7xm69wl8zzj99fksahyrgxjdc"))))
     (properties `((upstream-name . "ordinalClust")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppprogress r-rcpparmadillo r-rcpp r-bh))
@@ -2912,12 +2912,12 @@ Julien Jacques (2016) <doi:10.1007/s11222-015-9585-2>).")
   (package
     (name "r-ordinalbayes")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ordinalbayes" version))
-              (sha256
-               (base32
-                "13f9rv6gndjr18rfk60rmginzam1xjsssjn45l6hhl6y3gglsyzh"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ordinalbayes" version))
+       (sha256
+        (base32 "13f9rv6gndjr18rfk60rmginzam1xjsssjn45l6hhl6y3gglsyzh"))))
     (properties `((upstream-name . "ordinalbayes")))
     (build-system r-build-system)
     (inputs (list jags))
@@ -2941,12 +2941,12 @@ the sample size.  These models have been described in Zhang and Archer (2021)
   (package
     (name "r-ordibreadth")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ordiBreadth" version))
-              (sha256
-               (base32
-                "04faqhas1p9lxhghd4xq07yq1nxv7ns18avhvkql7sy5a9g7bfs1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ordiBreadth" version))
+       (sha256
+        (base32 "04faqhas1p9lxhghd4xq07yq1nxv7ns18avhvkql7sy5a9g7bfs1"))))
     (properties `((upstream-name . "ordiBreadth")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan))
@@ -2960,12 +2960,12 @@ the sample size.  These models have been described in Zhang and Archer (2021)
   (package
     (name "r-ordgam")
     (version "0.9.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ordgam" version))
-              (sha256
-               (base32
-                "0flldxv53qyiprq44670b4b98i791si3nmi983pgkzd8s39aa68l"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ordgam" version))
+       (sha256
+        (base32 "0flldxv53qyiprq44670b4b98i791si3nmi983pgkzd8s39aa68l"))))
     (properties `((upstream-name . "ordgam")))
     (build-system r-build-system)
     (propagated-inputs (list r-ucminf
@@ -2991,12 +2991,12 @@ non-penalized parameters.  For more details, see Lambert and Gressani (2023)
   (package
     (name "r-ordfacreg")
     (version "1.0.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OrdFacReg" version))
-              (sha256
-               (base32
-                "16mavsmp6d8rfmimmp5ynwyzir0gycpg8rhd8cwanlrndyclqlpv"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OrdFacReg" version))
+       (sha256
+        (base32 "16mavsmp6d8rfmimmp5ynwyzir0gycpg8rhd8cwanlrndyclqlpv"))))
     (properties `((upstream-name . "OrdFacReg")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-mass r-eha))
@@ -3018,12 +3018,12 @@ active set algorithm that efficiently computes such estimators.")
   (package
     (name "r-orderstats")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "orderstats" version))
-              (sha256
-               (base32
-                "0a3ga0cjryvbininspsx5wzc96s3fza06s3d5fhbllbixz0rap4a"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "orderstats" version))
+       (sha256
+        (base32 "0a3ga0cjryvbininspsx5wzc96s3fza06s3d5fhbllbixz0rap4a"))))
     (properties `((upstream-name . "orderstats")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=orderstats")
@@ -3040,12 +3040,12 @@ directly sampling from the order statistic distribution.")
   (package
     (name "r-orders")
     (version "0.1.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "orders" version))
-              (sha256
-               (base32
-                "1rn5pjfshinv4nqja9aw8cl3y33vgdd3xgn20q72h8gii5isrfps"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "orders" version))
+       (sha256
+        (base32 "1rn5pjfshinv4nqja9aw8cl3y33vgdd3xgn20q72h8gii5isrfps"))))
     (properties `((upstream-name . "orders")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam r-newdistns r-gamlss-dist r-actuar))
@@ -3081,12 +3081,12 @@ distributions.")
   (package
     (name "r-orderly")
     (version "1.4.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "orderly" version))
-              (sha256
-               (base32
-                "0k7xk64schhw9jdbg50hlnf6gfhlgnv1n20rz3fga02z38441xkn"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "orderly" version))
+       (sha256
+        (base32 "0k7xk64schhw9jdbg50hlnf6gfhlgnv1n20rz3fga02z38441xkn"))))
     (properties `((upstream-name . "orderly")))
     (build-system r-build-system)
     (inputs (list git))
@@ -3118,12 +3118,12 @@ lifespans.")
   (package
     (name "r-ordering")
     (version "0.7.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ordering" version))
-              (sha256
-               (base32
-                "0sgwgcjg6sazmi11c9qvxfrzg671kcp18i2q20xbmbj4v3yqhwbh"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ordering" version))
+       (sha256
+        (base32 "0sgwgcjg6sazmi11c9qvxfrzg671kcp18i2q20xbmbj4v3yqhwbh"))))
     (properties `((upstream-name . "ordering")))
     (build-system r-build-system)
     (home-page "https://github.com/decisionpatterns/ordering")
@@ -3141,12 +3141,12 @@ for the degree of ordering. `ordering` provides a numeric indication of ordering
   (package
     (name "r-orddisp")
     (version "2.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ordDisp" version))
-              (sha256
-               (base32
-                "0906y98ydiadyqhz9ad2ssw1282a10c418k20vkbwzad2xip7grg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ordDisp" version))
+       (sha256
+        (base32 "0906y98ydiadyqhz9ad2ssw1282a10c418k20vkbwzad2xip7grg"))))
     (properties `((upstream-name . "ordDisp")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam))
@@ -3162,12 +3162,12 @@ styles (RSRS) for the regression analysis of ordinal responses.")
   (package
     (name "r-ordcrm")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ordcrm" version))
-              (sha256
-               (base32
-                "1hy24s23l099b21w5j3p2f0748s8xmhxhslfp65fg7ycwda5qsyw"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ordcrm" version))
+       (sha256
+        (base32 "1hy24s23l099b21w5j3p2f0748s8xmhxhslfp65fg7ycwda5qsyw"))))
     (properties `((upstream-name . "ordcrm")))
     (build-system r-build-system)
     (propagated-inputs (list r-rms))
@@ -3196,12 +3196,12 @@ dose finding designs under various scenarios.")
   (package
     (name "r-ordcd")
     (version "1.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OrdCD" version))
-              (sha256
-               (base32
-                "1wg4sxirzp8r91qzzvrx4yashg1f574ayaxbviy8hdca3iydfl1j"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OrdCD" version))
+       (sha256
+        (base32 "1wg4sxirzp8r91qzzvrx4yashg1f574ayaxbviy8hdca3iydfl1j"))))
     (properties `((upstream-name . "OrdCD")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-mass r-igraph r-grbase r-bnlearn))
@@ -3220,12 +3220,12 @@ Proceedings of the 38th Conference on Uncertainty in Artificial Intelligence,
   (package
     (name "r-ordbetareg")
     (version "0.7.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ordbetareg" version))
-              (sha256
-               (base32
-                "12z5ig4m62fy6j76anidj6gpy0g2xcr35yv0xv0avgi57wf4rpwv"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ordbetareg" version))
+       (sha256
+        (base32 "12z5ig4m62fy6j76anidj6gpy0g2xcr35yv0xv0avgi57wf4rpwv"))))
     (properties `((upstream-name . "ordbetareg")))
     (build-system r-build-system)
     (propagated-inputs (list r-transformr
@@ -3250,12 +3250,12 @@ hierarchical, dynamic and multivariate modeling.")
   (package
     (name "r-orcutt")
     (version "2.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "orcutt" version))
-              (sha256
-               (base32
-                "0pj7pqzbcg4gp35nsz3avyawmx69dgj0l2w0x8ypw5qwl4zhmnyk"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "orcutt" version))
+       (sha256
+        (base32 "0pj7pqzbcg4gp35nsz3avyawmx69dgj0l2w0x8ypw5qwl4zhmnyk"))))
     (properties `((upstream-name . "orcutt")))
     (build-system r-build-system)
     (propagated-inputs (list r-lmtest))
@@ -3273,12 +3273,12 @@ previous residuals.")
   (package
     (name "r-orcs")
     (version "1.2.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Orcs" version))
-              (sha256
-               (base32
-                "0b2h0vyvp6hnp9i03c8yxfhrlbdq0akdlw2ik0k5c09wfiq7amq6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Orcs" version))
+       (sha256
+        (base32 "0b2h0vyvp6hnp9i03c8yxfhrlbdq0akdlw2ik0k5c09wfiq7amq6"))))
     (properties `((upstream-name . "Orcs")))
     (build-system r-build-system)
     (inputs (list))
@@ -3310,12 +3310,12 @@ particular scope of application.")
   (package
     (name "r-orcme")
     (version "2.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ORCME" version))
-              (sha256
-               (base32
-                "1pm8ajj24qqj2fir0gjzq5f4mfpl1cnj6fm2z5qg6g3sbnm57ayk"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ORCME" version))
+       (sha256
+        (base32 "1pm8ajj24qqj2fir0gjzq5f4mfpl1cnj6fm2z5qg6g3sbnm57ayk"))))
     (properties `((upstream-name . "ORCME")))
     (build-system r-build-system)
     (propagated-inputs (list r-iso))
@@ -3330,12 +3330,12 @@ course) profiles.  It implements the method described by Lin et al. (2012).")
   (package
     (name "r-orclus")
     (version "0.2-6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "orclus" version))
-              (sha256
-               (base32
-                "0d78mn2vl2yxlvdswyxkxp9zg59b8cvfksz9m56kddn79aps1ikl"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "orclus" version))
+       (sha256
+        (base32 "0d78mn2vl2yxlvdswyxkxp9zg59b8cvfksz9m56kddn79aps1ikl"))))
     (properties `((upstream-name . "orclus")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=orclus")
@@ -3350,12 +3350,12 @@ classification.")
   (package
     (name "r-orca")
     (version "1.1-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "orca" version))
-              (sha256
-               (base32
-                "1wd5nh2vh6j1rp78hbw17qipi67f0wimrbkiarak8f7k5pfiy1zn"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "orca" version))
+       (sha256
+        (base32 "1wd5nh2vh6j1rp78hbw17qipi67f0wimrbkiarak8f7k5pfiy1zn"))))
     (properties `((upstream-name . "orca")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=orca")
@@ -3370,12 +3370,12 @@ object from the graph package.")
   (package
     (name "r-oralopioids")
     (version "1.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OralOpioids" version))
-              (sha256
-               (base32
-                "1hy7wllsv72lf4jlbijq6yazp75nzml3aanby4rfp1gfmmx19sv6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OralOpioids" version))
+       (sha256
+        (base32 "1hy7wllsv72lf4jlbijq6yazp75nzml3aanby4rfp1gfmmx19sv6"))))
     (properties `((upstream-name . "OralOpioids")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -3411,12 +3411,12 @@ prescription from a licensed healthcare provider.")
   (package
     (name "r-ora")
     (version "2.0-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ora" version))
-              (sha256
-               (base32
-                "0albxqma220rnrpfdq3z9cawr83q1a0zzczbbcy4nijjm4mswphy"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ora" version))
+       (sha256
+        (base32 "0albxqma220rnrpfdq3z9cawr83q1a0zzczbbcy4nijjm4mswphy"))))
     (properties `((upstream-name . "ora")))
     (build-system r-build-system)
     (propagated-inputs (list r-roracle r-dbi))
@@ -3431,12 +3431,12 @@ interface for the ROracle package.")
   (package
     (name "r-opvar")
     (version "1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OpVaR" version))
-              (sha256
-               (base32
-                "1923p60yzh8fycwl1fwy01r7ml5yx0kx01ckhgii7slm4cachf5f"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OpVaR" version))
+       (sha256
+        (base32 "1923p60yzh8fycwl1fwy01r7ml5yx0kx01ckhgii7slm4cachf5f"))))
     (properties `((upstream-name . "OpVaR")))
     (build-system r-build-system)
     (propagated-inputs (list r-vinecopula
@@ -3469,12 +3469,12 @@ value-at-risk.")
   (package
     (name "r-opusminer")
     (version "0.1-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "opusminer" version))
-              (sha256
-               (base32
-                "1vw6pbk1iiaxmfws95wmwf56p3afk10s5c3x9f0lliamckpyzkck"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "opusminer" version))
+       (sha256
+        (base32 "1vw6pbk1iiaxmfws95wmwf56p3afk10s5c3x9f0lliamckpyzkck"))))
     (properties `((upstream-name . "opusminer")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-matrix r-arules))
@@ -3494,12 +3494,12 @@ information in relation to the OPUS Miner algorithm.")
   (package
     (name "r-optweight")
     (version "0.2.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "optweight" version))
-              (sha256
-               (base32
-                "1mfk9sp47flqq7i762wip5191j8m0q9kbyxs4a7f0pd76qwf67q2"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "optweight" version))
+       (sha256
+        (base32 "1mfk9sp47flqq7i762wip5191j8m0q9kbyxs4a7f0pd76qwf67q2"))))
     (properties `((upstream-name . "optweight")))
     (build-system r-build-system)
     (propagated-inputs (list r-osqp r-matrix r-ggplot2))
@@ -3518,12 +3518,12 @@ covariates.")
   (package
     (name "r-opttesting")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OPTtesting" version))
-              (sha256
-               (base32
-                "1d5pkvrzz5hvr764kyliyba5mgix9y340gdcvc0d0si41rz12r91"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OPTtesting" version))
+       (sha256
+        (base32 "1d5pkvrzz5hvr764kyliyba5mgix9y340gdcvc0d0si41rz12r91"))))
     (properties `((upstream-name . "OPTtesting")))
     (build-system r-build-system)
     (propagated-inputs (list r-rspectra r-rootsolve r-quantreg))
@@ -3540,12 +3540,12 @@ testing procedure.")
   (package
     (name "r-optsig")
     (version "2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OptSig" version))
-              (sha256
-               (base32
-                "0fdszrblayi2hlmkgvwqxw1fh5nh2jad6sxlc788jrzjrd8nkldj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OptSig" version))
+       (sha256
+        (base32 "0fdszrblayi2hlmkgvwqxw1fh5nh2jad6sxlc788jrzjrd8nkldj"))))
     (properties `((upstream-name . "OptSig")))
     (build-system r-build-system)
     (propagated-inputs (list r-pwr))
@@ -3565,12 +3565,12 @@ a multiple regression model.  The details are covered in Kim and Choi (2020)
   (package
     (name "r-opts")
     (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OPTS" version))
-              (sha256
-               (base32
-                "0h382gcjq2f4qm63xnqvhjvxyn9w01dzx8964fk6cm2izhw04bk2"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OPTS" version))
+       (sha256
+        (base32 "0h382gcjq2f4qm63xnqvhjvxyn9w01dzx8964fk6cm2izhw04bk2"))))
     (properties `((upstream-name . "OPTS")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-cvtools r-changepoint))
@@ -3588,12 +3588,12 @@ variable selection for generalized linear models.")
   (package
     (name "r-optrefine")
     (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "optrefine" version))
-              (sha256
-               (base32
-                "1ijahjraiaax0xyr1y4s3aq1b4xk8h7ablrvy2m2fr879q3xfi9i"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "optrefine" version))
+       (sha256
+        (base32 "1ijahjraiaax0xyr1y4s3aq1b4xk8h7ablrvy2m2fr879q3xfi9i"))))
     (properties `((upstream-name . "optrefine")))
     (build-system r-build-system)
     (propagated-inputs (list r-sampling r-rglpk r-mass r-ggplot2))
@@ -3612,12 +3612,12 @@ installed following the instructions at
   (package
     (name "r-optrcdmaeat")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "optrcdmaeAT" version))
-              (sha256
-               (base32
-                "16g4612mwyfsckn6l71fbrjnnjv4yvnac1cccbrn3k8jh07qgb1h"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "optrcdmaeAT" version))
+       (sha256
+        (base32 "16g4612mwyfsckn6l71fbrjnnjv4yvnac1cccbrn3k8jh07qgb1h"))))
     (properties `((upstream-name . "optrcdmaeAT")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-mass r-igraph))
@@ -3639,12 +3639,12 @@ interface (GUI) R package tcltk to ensure that it is user friendly.")
   (package
     (name "r-optr")
     (version "1.2.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "optR" version))
-              (sha256
-               (base32
-                "0q7jf4m0gzm11izl5lff17pvr855smqmc6zzi1bc7m6h3z865l32"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "optR" version))
+       (sha256
+        (base32 "0q7jf4m0gzm11izl5lff17pvr855smqmc6zzi1bc7m6h3z865l32"))))
     (properties `((upstream-name . "optR")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=optR")
@@ -3658,12 +3658,12 @@ Gauss-Seidel, Conjugate Gradient Method (CGM) and Cholesky methods.")
   (package
     (name "r-optpart")
     (version "3.0-3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "optpart" version))
-              (sha256
-               (base32
-                "18h659gbgzflq81lcchc058xjgljkmhpsjkh51ylygwrv1qjrz2i"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "optpart" version))
+       (sha256
+        (base32 "18h659gbgzflq81lcchc058xjgljkmhpsjkh51ylygwrv1qjrz2i"))))
     (properties `((upstream-name . "optpart")))
     (build-system r-build-system)
     (propagated-inputs (list r-plotrix r-mass r-labdsv r-cluster))
@@ -3684,12 +3684,12 @@ are also included.")
   (package
     (name "r-optmatch")
     (version "0.10.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "optmatch" version))
-              (sha256
-               (base32
-                "0d8xrq6b2dkr78dk25rikmsypfd2vsvv8y9pmsfv7gfzgxb62xib"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "optmatch" version))
+       (sha256
+        (base32 "0d8xrq6b2dkr78dk25rikmsypfd2vsvv8y9pmsfv7gfzgxb62xib"))))
     (properties `((upstream-name . "optmatch")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-rlemon r-rcpp r-dplyr))
@@ -3709,12 +3709,12 @@ matching directives, or calipers, alone or in combination.")
   (package
     (name "r-optm")
     (version "0.1.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OptM" version))
-              (sha256
-               (base32
-                "1x3df5qmbs920rgxpc32grwran49nxpnw9swrba9877c0ixg2dww"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OptM" version))
+       (sha256
+        (base32 "1x3df5qmbs920rgxpc32grwran49nxpnw9swrba9877c0ixg2dww"))))
     (properties `((upstream-name . "OptM")))
     (build-system r-build-system)
     (propagated-inputs (list r-sizer r-boot))
@@ -3737,12 +3737,12 @@ statistic.")
   (package
     (name "r-optistock")
     (version "0.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "optistock" version))
-              (sha256
-               (base32
-                "1wl637hgdhiyk56xv39bb8m4v6nnlqyy6vgkradf90k084m9q52p"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "optistock" version))
+       (sha256
+        (base32 "1wl637hgdhiyk56xv39bb8m4v6nnlqyy6vgkradf90k084m9q52p"))))
     (properties `((upstream-name . "optistock")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -3759,12 +3759,12 @@ certain length.")
   (package
     (name "r-optisolve")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "optiSolve" version))
-              (sha256
-               (base32
-                "0mhl5gdz3y3cs3p6v7z4n50na3sqj0w739gixcf4qgb1ppx0h1xa"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "optiSolve" version))
+       (sha256
+        (base32 "0mhl5gdz3y3cs3p6v7z4n50na3sqj0w739gixcf4qgb1ppx0h1xa"))))
     (properties `((upstream-name . "optiSolve")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -3793,12 +3793,12 @@ problems with second order cone constraints and solved with package cccp'.")
   (package
     (name "r-optisembleforecasting")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OptiSembleForecasting" version))
-              (sha256
-               (base32
-                "0j1xjh59iyb99p73wjvqr8yrsj6yplsl2rrx50bds9ksjbq1qmym"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OptiSembleForecasting" version))
+       (sha256
+        (base32 "0j1xjh59iyb99p73wjvqr8yrsj6yplsl2rrx50bds9ksjbq1qmym"))))
     (properties `((upstream-name . "OptiSembleForecasting")))
     (build-system r-build-system)
     (propagated-inputs (list r-tsutils
@@ -3848,12 +3848,12 @@ package has been developed using concept of Wang et al. (2022)
   (package
     (name "r-optisel")
     (version "2.0.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "optiSel" version))
-              (sha256
-               (base32
-                "0rqwwc33rb4bp8j3m0lqrv8l539h6bbfhlj4gwa07xsdpvkyq4b5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "optiSel" version))
+       (sha256
+        (base32 "0rqwwc33rb4bp8j3m0lqrv8l539h6bbfhlj4gwa07xsdpvkyq4b5"))))
     (properties `((upstream-name . "optiSel")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -3896,12 +3896,12 @@ for preparing and plotting pedigrees.")
   (package
     (name "r-optiscale")
     (version "1.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "optiscale" version))
-              (sha256
-               (base32
-                "1ay2lfk4isv0gir5diwxlx4ml5bv5qyqbwm34py85fp6bh92987r"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "optiscale" version))
+       (sha256
+        (base32 "1ay2lfk4isv0gir5diwxlx4ml5bv5qyqbwm34py85fp6bh92987r"))))
     (properties `((upstream-name . "optiscale")))
     (build-system r-build-system)
     (propagated-inputs (list r-lattice))
@@ -3922,12 +3922,12 @@ values can be untied in the optimal transformation.")
   (package
     (name "r-optionstrat")
     (version "1.4.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "optionstrat" version))
-              (sha256
-               (base32
-                "0vidaf888zdls5yxy7637fqg6r39l3rxw9bhn16s4xmag7kawljv"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "optionstrat" version))
+       (sha256
+        (base32 "0vidaf888zdls5yxy7637fqg6r39l3rxw9bhn16s4xmag7kawljv"))))
     (properties `((upstream-name . "optionstrat")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -3945,12 +3945,12 @@ options.")
   (package
     (name "r-options")
     (version "0.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "options" version))
-              (sha256
-               (base32
-                "11x18vicg7g3hpjiyhn4hb20g7zccn1bj74q39sh5il3v0wpkbg9"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "options" version))
+       (sha256
+        (base32 "11x18vicg7g3hpjiyhn4hb20g7zccn1bj74q39sh5il3v0wpkbg9"))))
     (properties `((upstream-name . "options")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -3966,12 +3966,12 @@ values and more.")
   (package
     (name "r-optionpricing")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OptionPricing" version))
-              (sha256
-               (base32
-                "0c4pq9qzbnqsfgdqq29vnkxjcb5six4xfj2djv05zw8qnyvhaljg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OptionPricing" version))
+       (sha256
+        (base32 "0c4pq9qzbnqsfgdqq29vnkxjcb5six4xfj2djv05zw8qnyvhaljg"))))
     (properties `((upstream-name . "OptionPricing")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=OptionPricing")
@@ -3985,12 +3985,12 @@ and European Options under Geometric Brownian Motion.")
   (package
     (name "r-optional")
     (version "2.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "optional" version))
-              (sha256
-               (base32
-                "1q7k9rsa7m3ag7mwx88101ksy0c01gk0xl0425jfkwm0d4g5pyy0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "optional" version))
+       (sha256
+        (base32 "1q7k9rsa7m3ag7mwx88101ksy0c01gk0xl0425jfkwm0d4g5pyy0"))))
     (properties `((upstream-name . "optional")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr))
@@ -4006,12 +4006,12 @@ functional languages.")
   (package
     (name "r-optinterv")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "optinterv" version))
-              (sha256
-               (base32
-                "1yvjb9fyqj3pfglfdwdq4kpw9i5g5i3klgpqb05xdnacbnpdxvmp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "optinterv" version))
+       (sha256
+        (base32 "1yvjb9fyqj3pfglfdwdq4kpw9i5g5i3klgpqb05xdnacbnpdxvmp"))))
     (properties `((upstream-name . "optinterv")))
     (build-system r-build-system)
     (propagated-inputs (list r-weights
@@ -4037,12 +4037,12 @@ better optimize social experiments designed to increase some desired outcome.")
   (package
     (name "r-optimus")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "optimus" version))
-              (sha256
-               (base32
-                "01njyjfrm6kjwx2qq41c0hsgxzydnrmr3538cpbfdn5i0z5blgyx"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "optimus" version))
+       (sha256
+        (base32 "01njyjfrm6kjwx2qq41c0hsgxzydnrmr3538cpbfdn5i0z5blgyx"))))
     (properties `((upstream-name . "optimus")))
     (build-system r-build-system)
     (propagated-inputs (list r-ordinal r-mvabund))
@@ -4064,12 +4064,12 @@ variables.")
   (package
     (name "r-optimstrat")
     (version "2.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "optimStrat" version))
-              (sha256
-               (base32
-                "0p52ly7yfz9jjlhd5912xdv1j01j1ccm57ygp9nz3rks7fi3b5r5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "optimStrat" version))
+       (sha256
+        (base32 "0p52ly7yfz9jjlhd5912xdv1j01j1ccm57ygp9nz3rks7fi3b5r5"))))
     (properties `((upstream-name . "optimStrat")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-mvtnorm r-cubature))
@@ -4084,12 +4084,12 @@ survey.")
   (package
     (name "r-optimsimplex")
     (version "1.0-8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "optimsimplex" version))
-              (sha256
-               (base32
-                "1q5hfbiq265q5im6wg78spaqsfj421hpzh8bz51zmi188h6xwnwr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "optimsimplex" version))
+       (sha256
+        (base32 "1q5hfbiq265q5im6wg78spaqsfj421hpzh8bz51zmi188h6xwnwr"))))
     (properties `((upstream-name . "optimsimplex")))
     (build-system r-build-system)
     (propagated-inputs (list r-optimbase))
@@ -4110,12 +4110,12 @@ methods: the simplex method of Spendley et al. (1962)
   (package
     (name "r-optimr")
     (version "2019-12.16")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "optimr" version))
-              (sha256
-               (base32
-                "003wz9r3xdi47ad22l4dkhp0dalknb2s9fp82yamjx7x1xbfvcbk"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "optimr" version))
+       (sha256
+        (base32 "003wz9r3xdi47ad22l4dkhp0dalknb2s9fp82yamjx7x1xbfvcbk"))))
     (properties `((upstream-name . "optimr")))
     (build-system r-build-system)
     (propagated-inputs (list r-setrng r-rvmmin r-rcgmin r-optextras r-numderiv))
@@ -4133,12 +4133,12 @@ has a reduced set of methods and is intended to be on CRAN.")
   (package
     (name "r-optimparallel")
     (version "1.0-2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "optimParallel" version))
-              (sha256
-               (base32
-                "178ayfaivkbxkghxbg97lx4gl27kxkmgaaw9y8q5206r4cncd6qg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "optimParallel" version))
+       (sha256
+        (base32 "178ayfaivkbxkghxbg97lx4gl27kxkmgaaw9y8q5206r4cncd6qg"))))
     (properties `((upstream-name . "optimParallel")))
     (build-system r-build-system)
     (native-inputs (list r-r-rsp))
@@ -4155,12 +4155,12 @@ the optimization time.")
   (package
     (name "r-optimos-prime")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "optimos.prime" version))
-              (sha256
-               (base32
-                "1a76gfzpd2s4gq15cd3frndak7wc6q3xqh9sllkk665031fx6z1h"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "optimos.prime" version))
+       (sha256
+        (base32 "1a76gfzpd2s4gq15cd3frndak7wc6q3xqh9sllkk665031fx6z1h"))))
     (properties `((upstream-name . "optimos.prime")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyverse r-plotly r-ggplot2))
@@ -4181,12 +4181,12 @@ unequal occurrences.  See the detailed methodology by Birks et al. (1990)
   (package
     (name "r-optimlanduse")
     (version "1.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "optimLanduse" version))
-              (sha256
-               (base32
-                "16dd6sq9ss0k2kzqp02jcxsmg3qi5mvvk85nqy2hlpij2hdmh8bj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "optimLanduse" version))
+       (sha256
+        (base32 "16dd6sq9ss0k2kzqp02jcxsmg3qi5mvvk85nqy2hlpij2hdmh8bj"))))
     (properties `((upstream-name . "optimLanduse")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-lpsolveapi r-future-apply r-future
@@ -4208,17 +4208,17 @@ the portfolio performance as presented by Gosling et al. (2020)
 (define-public r-optimizer
   (package
     (name "r-optimizer")
-    (version "0.3.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "optimizeR" version))
-              (sha256
-               (base32
-                "0wm3sikncr3aqdcpnfs1i564izsag116gkh14facdz5j10ichg8s"))))
+    (version "0.3.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "optimizeR" version))
+       (sha256
+        (base32 "10f5qncn4ngwcvwcw1p81spj9y0zi2w9alvh267v1l28m2pa68q4"))))
     (properties `((upstream-name . "optimizeR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-glue r-cli))
-    (home-page "https://github.com/loelschlaeger/optimizeR")
+    (propagated-inputs (list r-testfunctions r-cli))
+    (home-page "https://loelschlaeger.de/optimizeR/")
     (synopsis "Unified Framework for Numerical Optimizers")
     (description
      "This package provides a unified framework for numerical optimizers in R,
@@ -4229,12 +4229,12 @@ particularly for their inputs and outputs.")
   (package
     (name "r-optimization")
     (version "1.0-9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "optimization" version))
-              (sha256
-               (base32
-                "1pg9a78hhm0h4pfagj13r1dmynv714knhw2dxhzhcvlgk9inpam8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "optimization" version))
+       (sha256
+        (base32 "1pg9a78hhm0h4pfagj13r1dmynv714knhw2dxhzhcvlgk9inpam8"))))
     (properties `((upstream-name . "optimization")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-colorspace))
@@ -4253,12 +4253,12 @@ convergence are included.")
   (package
     (name "r-optimg")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "optimg" version))
-              (sha256
-               (base32
-                "0fc7d3g5nxjjcbwh6v5m0ryhanw80v250j8m7j2gv4c9ql4g650d"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "optimg" version))
+       (sha256
+        (base32 "0fc7d3g5nxjjcbwh6v5m0ryhanw80v250j8m7j2gv4c9ql4g650d"))))
     (properties `((upstream-name . "optimg")))
     (build-system r-build-system)
     (propagated-inputs (list r-ucminf))
@@ -4276,12 +4276,12 @@ implemented.  Other methods will be implemented in the future.")
   (package
     (name "r-optimcheck")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "optimCheck" version))
-              (sha256
-               (base32
-                "1qjkv1mfyn7sw0dkxxcdaqj85vl71cgffpf3k3mvzy0s8yhxjb4n"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "optimCheck" version))
+       (sha256
+        (base32 "1qjkv1mfyn7sw0dkxxcdaqj85vl71cgffpf3k3mvzy0s8yhxjb4n"))))
     (properties `((upstream-name . "optimCheck")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -4301,12 +4301,12 @@ systematic unit-testing of optimization routines.")
   (package
     (name "r-optimbase")
     (version "1.0-10")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "optimbase" version))
-              (sha256
-               (base32
-                "0hdzbqr03jwy1vz3q9iw0kvii5p9g1vm4c3hs3jxszcj1rgrfm12"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "optimbase" version))
+       (sha256
+        (base32 "0hdzbqr03jwy1vz3q9iw0kvii5p9g1vm4c3hs3jxszcj1rgrfm12"))))
     (properties `((upstream-name . "optimbase")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix))
@@ -4326,12 +4326,12 @@ criteria, etc...")
   (package
     (name "r-optimaregion")
     (version "1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OptimaRegion" version))
-              (sha256
-               (base32
-                "01nbisv45amv5pfnl0hmbc751qjkjvw8xsva50q8ypm02p2jw07f"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OptimaRegion" version))
+       (sha256
+        (base32 "01nbisv45amv5pfnl0hmbc751qjkjvw8xsva50q8ypm02p2jw07f"))))
     (properties `((upstream-name . "OptimaRegion")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -4356,12 +4356,12 @@ controllable factors, or Thin Plate Spline models in 2 controllable factors.")
   (package
     (name "r-optimaltiming")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OptimalTiming" version))
-              (sha256
-               (base32
-                "1mchb7wdk1v56la30ivi40aq6zma64lrdb94d64d0s7x67m8315w"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OptimalTiming" version))
+       (sha256
+        (base32 "1mchb7wdk1v56la30ivi40aq6zma64lrdb94d64d0s7x67m8315w"))))
     (properties `((upstream-name . "OptimalTiming")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-mstate))
@@ -4379,12 +4379,12 @@ interval.  The method is referred to de Wreede, L., Fiocco, M., & Putter, H.
   (package
     (name "r-optimalthreshold")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "optimalThreshold" version))
-              (sha256
-               (base32
-                "1m39q36p7i7z31b90awriq5jf9rfybyw5lj3m1w33v2ssipkzp1n"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "optimalThreshold" version))
+       (sha256
+        (base32 "1m39q36p7i7z31b90awriq5jf9rfybyw5lj3m1w33v2ssipkzp1n"))))
     (properties `((upstream-name . "optimalThreshold")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjags r-mgcv r-hdinterval r-coda r-ars))
@@ -4414,12 +4414,12 @@ M (2019) <doi:10.1002/bimj.200900242> for diagnostic markers.")
   (package
     (name "r-optimalsurrogate")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OptimalSurrogate" version))
-              (sha256
-               (base32
-                "1kw87h6im3s1xzj0va22w0av67s0qz59vmf36lkh2mi5x1mi7gws"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OptimalSurrogate" version))
+       (sha256
+        (base32 "1kw87h6im3s1xzj0va22w0av67s0qz59vmf36lkh2mi5x1mi7gws"))))
     (properties `((upstream-name . "OptimalSurrogate")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -4437,12 +4437,12 @@ quantities of this proportion.  Details are described in Wang et al (2020)
   (package
     (name "r-optimalrerandexpdesigns")
     (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OptimalRerandExpDesigns" version))
-              (sha256
-               (base32
-                "033qwzglpzjk302dr19yak34j2k19k6vihd3vlj9c8xsiikmrfmj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OptimalRerandExpDesigns" version))
+       (sha256
+        (base32 "033qwzglpzjk302dr19yak34j2k19k6vihd3vlj9c8xsiikmrfmj"))))
     (properties `((upstream-name . "OptimalRerandExpDesigns")))
     (build-system r-build-system)
     (propagated-inputs (list r-momentchi2 r-greedyexperimentaldesign r-ggplot2))
@@ -4463,12 +4463,12 @@ Krieger, Michael Sklar and David Azriel (2020) <@code{arXiv:1905.03337>}.")
   (package
     (name "r-optimall")
     (version "0.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "optimall" version))
-              (sha256
-               (base32
-                "191y1q55wvg6f68siz6axpg056hww8bs4i4gxyj6fn1jkg0x2x7c"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "optimall" version))
+       (sha256
+        (base32 "191y1q55wvg6f68siz6axpg056hww8bs4i4gxyj6fn1jkg0x2x7c"))))
     (properties `((upstream-name . "optimall")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-rlang r-magrittr r-glue r-dplyr))
@@ -4489,12 +4489,12 @@ a Shiny application for observing the effects of different strata splits.")
   (package
     (name "r-optimalgoldstandarddesigns")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OptimalGoldstandardDesigns" version))
-              (sha256
-               (base32
-                "1rw3syj5wb1v8ryqc9vkchi62pf02460f5i5zapq2azgfg99l66y"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OptimalGoldstandardDesigns" version))
+       (sha256
+        (base32 "1rw3syj5wb1v8ryqc9vkchi62pf02460f5i5zapq2azgfg99l66y"))))
     (properties `((upstream-name . "OptimalGoldstandardDesigns")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -4518,12 +4518,12 @@ in Meis et al. (2023) <doi:10.1002/sim.9630>.")
   (package
     (name "r-optimaldesign")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OptimalDesign" version))
-              (sha256
-               (base32
-                "02vxxb25q7fl73y7zq0a89ra0s88wji4mrql7p88014p073lj2as"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OptimalDesign" version))
+       (sha256
+        (base32 "02vxxb25q7fl73y7zq0a89ra0s88wji4mrql7p88014p073lj2as"))))
     (properties `((upstream-name . "OptimalDesign")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgl
@@ -4546,12 +4546,12 @@ file gurobi_inst.txt, respectively.")
   (package
     (name "r-optimalcutpoints")
     (version "1.1-5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OptimalCutpoints" version))
-              (sha256
-               (base32
-                "07lgh3maxvz8vmw3zd02bfy7yp4jn0krflnqpp5bax3zhy6kmmbi"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OptimalCutpoints" version))
+       (sha256
+        (base32 "07lgh3maxvz8vmw3zd02bfy7yp4jn0krflnqpp5bax3zhy6kmmbi"))))
     (properties `((upstream-name . "OptimalCutpoints")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=OptimalCutpoints")
@@ -4568,12 +4568,12 @@ Numerical and graphical output for all methods is easily obtained.")
   (package
     (name "r-optim-functions")
     (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "optim.functions" version))
-              (sha256
-               (base32
-                "1la3v8yd9cdichp3mka4x86hr9lynh6qfg7h9ab6cwijw6kzkn6g"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "optim.functions" version))
+       (sha256
+        (base32 "1la3v8yd9cdichp3mka4x86hr9lynh6qfg7h9ab6cwijw6kzkn6g"))))
     (properties `((upstream-name . "optim.functions")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-randtoolbox r-lhs))
@@ -4588,12 +4588,12 @@ and a common interface to sample them.")
   (package
     (name "r-optigrab")
     (version "0.9.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "optigrab" version))
-              (sha256
-               (base32
-                "1c3q4kx8rkgpjsy0hy2w2dd9kv51avnw1ab82hzmjgngfnvaig0n"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "optigrab" version))
+       (sha256
+        (base32 "1c3q4kx8rkgpjsy0hy2w2dd9kv51avnw1ab82hzmjgngfnvaig0n"))))
     (properties `((upstream-name . "optigrab")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi r-magrittr))
@@ -4611,12 +4611,12 @@ Microsoft- style syntaxes, verb commands and more.")
   (package
     (name "r-optifunset")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "optifunset" version))
-              (sha256
-               (base32
-                "18pvdl04ln1i0w30ljdb3k86j27zg2nvrn3ws54c1g6zg9haqhbg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "optifunset" version))
+       (sha256
+        (base32 "18pvdl04ln1i0w30ljdb3k86j27zg2nvrn3ws54c1g6zg9haqhbg"))))
     (properties `((upstream-name . "optifunset")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=optifunset")
@@ -4634,12 +4634,12 @@ not be overridden at the point when a package is loaded.")
   (package
     (name "r-opticut")
     (version "0.1-2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "opticut" version))
-              (sha256
-               (base32
-                "1j479wa7mlp62c2y7shha1w7ybhfy8wvjfaz27kmwd1f61ma1g0l"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "opticut" version))
+       (sha256
+        (base32 "1j479wa7mlp62c2y7shha1w7ybhfy8wvjfaz27kmwd1f61ma1g0l"))))
     (properties `((upstream-name . "opticut")))
     (build-system r-build-system)
     (propagated-inputs (list r-resourceselection
@@ -4665,12 +4665,12 @@ computations.")
   (package
     (name "r-opticskxi")
     (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "opticskxi" version))
-              (sha256
-               (base32
-                "1vdz5sgjgyh2nj034w87d2yxcbbg97f1b0vijlwzwjkrfz5knfhl"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "opticskxi" version))
+       (sha256
+        (base32 "1vdz5sgjgyh2nj034w87d2yxcbbg97f1b0vijlwzwjkrfz5knfhl"))))
     (properties `((upstream-name . "opticskxi")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-ggplot2))
@@ -4688,12 +4688,12 @@ investigate datasets with unknown number of clusters.")
   (package
     (name "r-optical")
     (version "1.7.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "optical" version))
-              (sha256
-               (base32
-                "1g400s4xbf9c8ss02qhm6q31sv7mrki4a9x1fdjjsyrgmclv9q2s"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "optical" version))
+       (sha256
+        (base32 "1g400s4xbf9c8ss02qhm6q31sv7mrki4a9x1fdjjsyrgmclv9q2s"))))
     (properties `((upstream-name . "optical")))
     (build-system r-build-system)
     (home-page "https://scenic555.github.io/optical/")
@@ -4722,12 +4722,12 @@ approach.  This work was supported by the Swedish Research Council
   (package
     (name "r-optic")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "optic" version))
-              (sha256
-               (base32
-                "166ngas1zp1ln951n26kmyfj9jcpi2fm2g2yxs9vs4as6fl1yf2n"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "optic" version))
+       (sha256
+        (base32 "166ngas1zp1ln951n26kmyfj9jcpi2fm2g2yxs9vs4as6fl1yf2n"))))
     (properties `((upstream-name . "optic")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -4755,12 +4755,12 @@ al. (2022) <doi:10.1186/s12874-021-01471-y> for a description of our methods.")
   (package
     (name "r-optholdoutsize")
     (version "0.1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OptHoldoutSize" version))
-              (sha256
-               (base32
-                "0ab0vvbg1nmpbbhq5a5nkwv7ap0fq4542l5da7g8qlwc23h6sfs5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OptHoldoutSize" version))
+       (sha256
+        (base32 "0ab0vvbg1nmpbbhq5a5nkwv7ap0fq4542l5da7g8qlwc23h6sfs5"))))
     (properties `((upstream-name . "OptHoldoutSize")))
     (build-system r-build-system)
     (propagated-inputs (list r-ranger r-mvtnorm r-mnormt r-mle-tools
@@ -4784,12 +4784,12 @@ methods.")
   (package
     (name "r-opthedging")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OptHedging" version))
-              (sha256
-               (base32
-                "0g7qaf5abvbcqv2h1dciwn3gwpz084ryqjjk0yabdm4ym0y38ddm"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OptHedging" version))
+       (sha256
+        (base32 "0g7qaf5abvbcqv2h1dciwn3gwpz084ryqjjk0yabdm4ym0y38ddm"))))
     (properties `((upstream-name . "OptHedging")))
     (build-system r-build-system)
     (home-page "http://www.r-project.org")
@@ -4805,12 +4805,12 @@ for Financial Engineering', by Bruno Remillard, CRC Press, (2013).")
   (package
     (name "r-optextras")
     (version "2019-12.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "optextras" version))
-              (sha256
-               (base32
-                "1sqkid6h13h8i8wzri26s828ycwlxlwpwxd85r8bw9h8hs1n602r"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "optextras" version))
+       (sha256
+        (base32 "1sqkid6h13h8i8wzri26s828ycwlxlwpwxd85r8bw9h8hs1n602r"))))
     (properties `((upstream-name . "optextras")))
     (build-system r-build-system)
     (propagated-inputs (list r-numderiv))
@@ -4832,12 +4832,12 @@ forward, central and backward gradient approximation codes.")
   (package
     (name "r-optedr")
     (version "2.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "optedr" version))
-              (sha256
-               (base32
-                "17r0axfh7yjv5xj9060vi5vysnmi38pz5dsvm0fazfcpzzlxnld7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "optedr" version))
+       (sha256
+        (base32 "17r0axfh7yjv5xj9060vi5vysnmi38pz5dsvm0fazfcpzzlxnld7"))))
     (properties `((upstream-name . "optedr")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny
@@ -4862,12 +4862,12 @@ function has been provided to transform approximate designs to exact designs.")
   (package
     (name "r-optdesignslopeint")
     (version "1.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "optDesignSlopeInt" version))
-              (sha256
-               (base32
-                "0kjfhy1ccdxgb2sxa3928m1pqpbvl1rxz0kajqf9yvga451l5ddd"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "optDesignSlopeInt" version))
+       (sha256
+        (base32 "0kjfhy1ccdxgb2sxa3928m1pqpbvl1rxz0kajqf9yvga451l5ddd"))))
     (properties `((upstream-name . "optDesignSlopeInt")))
     (build-system r-build-system)
     (propagated-inputs (list r-mcmcpack))
@@ -4883,12 +4883,12 @@ divided by the intercept and provides confidence intervals for the ratio.")
   (package
     (name "r-optcirclust")
     (version "0.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OptCirClust" version))
-              (sha256
-               (base32
-                "0g34kn2gmvy9r4ph0vbssc9gl8bcpw6d72b8zpf38iml4zh52b0n"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OptCirClust" version))
+       (sha256
+        (base32 "0g34kn2gmvy9r4ph0vbssc9gl8bcpw6d72b8zpf38iml4zh52b0n"))))
     (properties `((upstream-name . "OptCirClust")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2 r-rdpack r-rcpp r-plotrix
@@ -4917,12 +4917,12 @@ clustering.")
   (package
     (name "r-optbiomarker")
     (version "1.0-28")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "optBiomarker" version))
-              (sha256
-               (base32
-                "10i9ir0056qxyiayg10v6v25m1b94m1wd7c8ssigiqjhjncpddw5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "optBiomarker" version))
+       (sha256
+        (base32 "10i9ir0056qxyiayg10v6v25m1b94m1wd7c8ssigiqjhjncpddw5"))))
     (properties `((upstream-name . "optBiomarker")))
     (build-system r-build-system)
     (propagated-inputs (list r-rpanel
@@ -4945,12 +4945,12 @@ microarray data.")
   (package
     (name "r-optbin")
     (version "1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "optbin" version))
-              (sha256
-               (base32
-                "08v8dn3jn75p1f04lc963gasyszjf57j7kajwpqv4w20lwjsw17w"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "optbin" version))
+       (sha256
+        (base32 "08v8dn3jn75p1f04lc963gasyszjf57j7kajwpqv4w20lwjsw17w"))))
     (properties `((upstream-name . "optbin")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=optbin")
@@ -4964,12 +4964,12 @@ minimizing the (mean) squared error within all bins.")
   (package
     (name "r-optbdmaeat")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "optbdmaeAT" version))
-              (sha256
-               (base32
-                "1y1mvcyjihpj1wgjmifhmd10717wr1srp7h87azs4gfypgsiqchn"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "optbdmaeAT" version))
+       (sha256
+        (base32 "1y1mvcyjihpj1wgjmifhmd10717wr1srp7h87azs4gfypgsiqchn"))))
     (properties `((upstream-name . "optbdmaeAT")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-mass r-igraph))
@@ -4991,12 +4991,12 @@ friendly.")
   (package
     (name "r-optband")
     (version "0.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "optband" version))
-              (sha256
-               (base32
-                "0mg6awg1vgnbqrbkf9vnyj5jfbakna0jsclhi0w3v1rh0rsd5jlp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "optband" version))
+       (sha256
+        (base32 "0mg6awg1vgnbqrbkf9vnyj5jfbakna0jsclhi0w3v1rh0rsd5jlp"))))
     (properties `((upstream-name . "optband")))
     (build-system r-build-system)
     (propagated-inputs (list r-lambertw))
@@ -5013,12 +5013,12 @@ minimized.  Produces an approximate solution based on local time arguments.")
   (package
     (name "r-opt5pl")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Opt5PL" version))
-              (sha256
-               (base32
-                "0v3ibfzmkfnkhxylhaqcd3yqygsk7027ga12vb6gj4h4zcccf17f"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Opt5PL" version))
+       (sha256
+        (base32 "0v3ibfzmkfnkhxylhaqcd3yqygsk7027ga12vb6gj4h4zcccf17f"))))
     (properties `((upstream-name . "Opt5PL")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-matrixcalc))
@@ -5034,12 +5034,12 @@ algorithm in Hyun, Wong, Yang (2018) <doi:10.18637/jss.v083.i05>.")
   (package
     (name "r-oppr")
     (version "1.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "oppr" version))
-              (sha256
-               (base32
-                "1kyzrpr09fmx7rhbgwy5d1s8ggl7avcrs4vjb9s6m03w756zbb3a"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oppr" version))
+       (sha256
+        (base32 "1kyzrpr09fmx7rhbgwy5d1s8ggl7avcrs4vjb9s6m03w756zbb3a"))))
     (properties `((upstream-name . "oppr")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -5081,12 +5081,12 @@ and evaluating their benefits.  For more information, see Hanson et al. (2019)
   (package
     (name "r-opportunistic")
     (version "1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Opportunistic" version))
-              (sha256
-               (base32
-                "0kaj11ziij1v65l972x4kbr7vzkx4dwa27ymabiip4dg57a976wr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Opportunistic" version))
+       (sha256
+        (base32 "0kaj11ziij1v65l972x4kbr7vzkx4dwa27ymabiip4dg57a976wr"))))
     (properties `((upstream-name . "Opportunistic")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=Opportunistic")
@@ -5103,12 +5103,12 @@ simulations.")
   (package
     (name "r-opitools")
     (version "1.8.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "opitools" version))
-              (sha256
-               (base32
-                "1w5s78dxz03asxc46mn5vy9y21dr6km12ms563cgcaf9g9rw9dqc"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "opitools" version))
+       (sha256
+        (base32 "1w5s78dxz03asxc46mn5vy9y21dr6km12ms563cgcaf9g9rw9dqc"))))
     (properties `((upstream-name . "opitools")))
     (build-system r-build-system)
     (propagated-inputs (list r-wordcloud2
@@ -5143,12 +5143,12 @@ data.  Further examples can be found in the vignette of the package.")
   (package
     (name "r-opi")
     (version "2.11.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OPI" version))
-              (sha256
-               (base32
-                "1y0z6kcvc8v1rk6fbi3j6sknd6wkfddlby49vapkp112xqjcmjkw"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OPI" version))
+       (sha256
+        (base32 "1y0z6kcvc8v1rk6fbi3j6sknd6wkfddlby49vapkp112xqjcmjkw"))))
     (properties `((upstream-name . "OPI")))
     (build-system r-build-system)
     (propagated-inputs (list r-rfast r-abind))
@@ -5170,12 +5170,12 @@ analysing and manipulating visual field data.")
   (package
     (name "r-opgmmassessment")
     (version "0.3.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "opGMMassessment" version))
-              (sha256
-               (base32
-                "09ii297524q2bgw2iqvd4s5bhnmm6gm5dh4lxskq1yxynfqdl77r"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "opGMMassessment" version))
+       (sha256
+        (base32 "09ii297524q2bgw2iqvd4s5bhnmm6gm5dh4lxskq1yxynfqdl77r"))))
     (properties `((upstream-name . "opGMMassessment")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -5208,12 +5208,12 @@ Malkusch, S. and A. Ultsch. (2022) <doi:10.1016/j.imu.2022.101113>.")
   (package
     (name "r-operators")
     (version "0.1-8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "operators" version))
-              (sha256
-               (base32
-                "0zgcv2q46qyqv4dhbd33s4044zjw38w8dqfpzs0c1lxjpkil3dnx"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "operators" version))
+       (sha256
+        (base32 "0zgcv2q46qyqv4dhbd33s4044zjw38w8dqfpzs0c1lxjpkil3dnx"))))
     (properties `((upstream-name . "operators")))
     (build-system r-build-system)
     (home-page "https://github.com/romainfrancois/operators")
@@ -5227,12 +5227,12 @@ manipulation.")
   (package
     (name "r-opera")
     (version "1.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "opera" version))
-              (sha256
-               (base32
-                "09gh0c74y3n25f9p1rya8ybql5mfaqkcnr8i8wwwzfm67vqdfrnh"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "opera" version))
+       (sha256
+        (base32 "09gh0c74y3n25f9p1rya8ybql5mfaqkcnr8i8wwwzfm67vqdfrnh"))))
     (properties `((upstream-name . "opera")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack
@@ -5256,12 +5256,12 @@ Lugosi (2006) <doi:10.1017/CBO9780511546921> for an overview.")
   (package
     (name "r-openxlsx2")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "openxlsx2" version))
-              (sha256
-               (base32
-                "0lv1jacknsqx1r56bcwsjpa0nzf6r9igg5iy8lqalfzimy2h4khr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "openxlsx2" version))
+       (sha256
+        (base32 "0lv1jacknsqx1r56bcwsjpa0nzf6r9igg5iy8lqalfzimy2h4khr"))))
     (properties `((upstream-name . "openxlsx2")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip r-stringi r-rcpp r-r6 r-magrittr))
@@ -5277,12 +5277,12 @@ writing, styling and editing worksheets.")
   (package
     (name "r-openva")
     (version "1.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "openVA" version))
-              (sha256
-               (base32
-                "1qnp9p25xlphf4ns6p27l0ylk169zi831l5ww2pw4ilw1dvmhk21"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "openVA" version))
+       (sha256
+        (base32 "1qnp9p25xlphf4ns6p27l0ylk169zi831l5ww2pw4ilw1dvmhk21"))))
     (properties `((upstream-name . "openVA")))
     (build-system r-build-system)
     (propagated-inputs (list r-tariff
@@ -5318,12 +5318,12 @@ method.")
   (package
     (name "r-opentripplanner")
     (version "0.5.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "opentripplanner" version))
-              (sha256
-               (base32
-                "04qf01jy675glwnxjf430z43c9hi5dxjv6g2h85ny778hzvhq087"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "opentripplanner" version))
+       (sha256
+        (base32 "04qf01jy675glwnxjf430z43c9hi5dxjv6g2h85ny778hzvhq087"))))
     (properties `((upstream-name . "opentripplanner")))
     (build-system r-build-system)
     (propagated-inputs (list r-sfheaders
@@ -5353,12 +5353,12 @@ peer-reviewed by @code{rOpenSci} (v.  0.2.0.0).")
   (package
     (name "r-opentreechronograms")
     (version "2022.1.28")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OpenTreeChronograms" version))
-              (sha256
-               (base32
-                "0si5aaami2x705fmzp9357h1nwhdm3sb829cbvf7zfyicqyaihkg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OpenTreeChronograms" version))
+       (sha256
+        (base32 "0si5aaami2x705fmzp9357h1nwhdm3sb829cbvf7zfyicqyaihkg"))))
     (properties `((upstream-name . "OpenTreeChronograms")))
     (build-system r-build-system)
     (propagated-inputs (list r-usethis
@@ -5381,12 +5381,12 @@ peer-reviewed by @code{rOpenSci} (v.  0.2.0.0).")
   (package
     (name "r-openstreetmap")
     (version "0.3.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OpenStreetMap" version))
-              (sha256
-               (base32
-                "0kyv14lxi86n6aba4jqmsfpmn075k0ki34q6gkkvhq8yv48wg831"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OpenStreetMap" version))
+       (sha256
+        (base32 "0kyv14lxi86n6aba4jqmsfpmn075k0ki34q6gkkvhq8yv48wg831"))))
     (properties `((upstream-name . "OpenStreetMap")))
     (build-system r-build-system)
     (inputs (list openjdk))
@@ -5407,12 +5407,12 @@ graphics, or ggplot2.  This package is not affiliated with the
   (package
     (name "r-openstars")
     (version "1.2.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "openSTARS" version))
-              (sha256
-               (base32
-                "1xpba5bagq16n1k94izshdizqyx99mad1nx2w77ljznmx5qrpqa6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "openSTARS" version))
+       (sha256
+        (base32 "1xpba5bagq16n1k94izshdizqyx99mad1nx2w77ljznmx5qrpqa6"))))
     (properties `((upstream-name . "openSTARS")))
     (build-system r-build-system)
     (propagated-inputs (list r-ssn
@@ -5437,12 +5437,12 @@ network).")
   (package
     (name "r-openspecy")
     (version "1.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OpenSpecy" version))
-              (sha256
-               (base32
-                "1dsxaqi1z2mjl5wd3zd844gxkcx8x8sp5wr71mmmh0whb0d79zbh"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OpenSpecy" version))
+       (sha256
+        (base32 "1dsxaqi1z2mjl5wd3zd844gxkcx8x8sp5wr71mmmh0whb0d79zbh"))))
     (properties `((upstream-name . "OpenSpecy")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -5477,12 +5477,12 @@ via run_app() or online at <https://openanalysis.org/openspecy/>.")
   (package
     (name "r-openskies")
     (version "1.1.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "openSkies" version))
-              (sha256
-               (base32
-                "03nlbmxp36z82myrbamwl1zngsnfxfw80niisapv53n605p4lrg1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "openSkies" version))
+       (sha256
+        (base32 "03nlbmxp36z82myrbamwl1zngsnfxfw80niisapv53n605p4lrg1"))))
     (properties `((upstream-name . "openSkies")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -5508,12 +5508,12 @@ information, as well as aircraft state vectors.")
   (package
     (name "r-opensensmapr")
     (version "0.6.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "opensensmapr" version))
-              (sha256
-               (base32
-                "0inq86zrkax281wh5rj3pxjp3lgrhsqvma0p6kvizb5c7cwws5in"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "opensensmapr" version))
+       (sha256
+        (base32 "0inq86zrkax281wh5rj3pxjp3lgrhsqvma0p6kvizb5c7cwws5in"))))
     (properties `((upstream-name . "opensensmapr")))
     (build-system r-build-system)
     (propagated-inputs (list r-readr
@@ -5539,12 +5539,12 @@ helper functions for data exploration and transformation.")
   (package
     (name "r-openrepgrid-ic")
     (version "0.6.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OpenRepGrid.ic" version))
-              (sha256
-               (base32
-                "1h6n44szm5fa04fsnq0yvqp3m8djxsh5v3y409hzjgvb90vjzmyz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OpenRepGrid.ic" version))
+       (sha256
+        (base32 "1h6n44szm5fa04fsnq0yvqp3m8djxsh5v3y409hzjgvb90vjzmyz"))))
     (properties `((upstream-name . "OpenRepGrid.ic")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -5582,12 +5582,12 @@ description of the interpretive clustering (IC) method.")
   (package
     (name "r-openrepgrid")
     (version "0.1.14")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OpenRepGrid" version))
-              (sha256
-               (base32
-                "1gy06cyjb50673jb9548c9v37im4hsm245r7rwhx280q9fsn17ws"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OpenRepGrid" version))
+       (sha256
+        (base32 "1gy06cyjb50673jb9548c9v37im4hsm245r7rwhx280q9fsn17ws"))))
     (properties `((upstream-name . "OpenRepGrid")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
@@ -5617,12 +5617,12 @@ functions to quantitatively analyze and visualize repertory grid data.")
   (package
     (name "r-opennlpdata")
     (version "1.5.3-4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "openNLPdata" version))
-              (sha256
-               (base32
-                "0j45rh9qki8r5wavaysrfsvb3wc3x8jjicqff2yi0r34j58xvlv8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "openNLPdata" version))
+       (sha256
+        (base32 "0j45rh9qki8r5wavaysrfsvb3wc3x8jjicqff2yi0r34j58xvlv8"))))
     (properties `((upstream-name . "openNLPdata")))
     (build-system r-build-system)
     (inputs (list openjdk))
@@ -5637,12 +5637,12 @@ functions to quantitatively analyze and visualize repertory grid data.")
   (package
     (name "r-opennlp")
     (version "0.2-7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "openNLP" version))
-              (sha256
-               (base32
-                "15yl74wv6w1d2wwpn1xlkkpam3c62977gnqal651fv623v29gg35"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "openNLP" version))
+       (sha256
+        (base32 "15yl74wv6w1d2wwpn1xlkkpam3c62977gnqal651fv623v29gg35"))))
     (properties `((upstream-name . "openNLP")))
     (build-system r-build-system)
     (inputs (list openjdk))
@@ -5662,12 +5662,12 @@ entity extraction, chunking, parsing, and coreference resolution.  See
   (package
     (name "r-openmse")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "openMSE" version))
-              (sha256
-               (base32
-                "15jp9hybnkwmnkcqawhpd3y3imq6wfxxzxzh90yx4cvzky36hf89"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "openMSE" version))
+       (sha256
+        (base32 "15jp9hybnkwmnkcqawhpd3y3imq6wfxxzxzh90yx4cvzky36hf89"))))
     (properties `((upstream-name . "openMSE")))
     (build-system r-build-system)
     (propagated-inputs (list r-samtool r-msetool r-dlmtool r-crayon))
@@ -5687,12 +5687,12 @@ these packages.  Learn more about @code{openMSE} at <https://openmse.com/>.")
   (package
     (name "r-openml")
     (version "1.12")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OpenML" version))
-              (sha256
-               (base32
-                "0ij4mnbfkckidv9f414fclyhrbbkgmpz5zsjiqa3zlckr3pfaxg7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OpenML" version))
+       (sha256
+        (base32 "0ij4mnbfkckidv9f414fclyhrbbkgmpz5zsjiqa3zlckr3pfaxg7"))))
     (properties `((upstream-name . "OpenML")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
@@ -5723,12 +5723,12 @@ uploading of data sets, tasks, flows and runs.  See
   (package
     (name "r-openmetrics")
     (version "0.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "openmetrics" version))
-              (sha256
-               (base32
-                "0bcljsirlkxn0h87j2g2jb6spcik84h7nms06mcj40ckx188yr82"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "openmetrics" version))
+       (sha256
+        (base32 "0bcljsirlkxn0h87j2g2jb6spcik84h7nms06mcj40ckx188yr82"))))
     (properties `((upstream-name . "openmetrics")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6))
@@ -5746,12 +5746,12 @@ metrics of their own.")
   (package
     (name "r-openmeteo")
     (version "0.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "openmeteo" version))
-              (sha256
-               (base32
-                "0cr1r173xkaqm4hnd4fxzn5gb56mz8xpp2ciymnpviyw3h02828r"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "openmeteo" version))
+       (sha256
+        (base32 "0cr1r173xkaqm4hnd4fxzn5gb56mz8xpp2ciymnpviyw3h02828r"))))
     (properties `((upstream-name . "openmeteo")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -5773,12 +5773,12 @@ is located at <https://open-meteo.com/en/docs>.")
   (package
     (name "r-openland")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OpenLand" version))
-              (sha256
-               (base32
-                "02d1dflcbjvm9hgvsm5gpc3s0n0njf4w3224yqk9nc0i49nw01fi"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OpenLand" version))
+       (sha256
+        (base32 "02d1dflcbjvm9hgvsm5gpc3s0n0njf4w3224yqk9nc0i49nw01fi"))))
     (properties `((upstream-name . "OpenLand")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -5806,12 +5806,12 @@ output graphics.")
   (package
     (name "r-openintro")
     (version "2.4.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "openintro" version))
-              (sha256
-               (base32
-                "1svvlhdnv8dvqwphsn83asfd5xzvvar2bz334aqndqx76dv9j88j"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "openintro" version))
+       (sha256
+        (base32 "1svvlhdnv8dvqwphsn83asfd5xzvvar2bz334aqndqx76dv9j88j"))))
     (properties `((upstream-name . "openintro")))
     (build-system r-build-system)
     (propagated-inputs (list r-usdata
@@ -5839,12 +5839,12 @@ of Windows operating system.")
   (package
     (name "r-openimager")
     (version "1.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OpenImageR" version))
-              (sha256
-               (base32
-                "0j15kwhjazr35yqs9lhw0pfqmrd9rm75gs160dn3xcyc3nw2is56"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OpenImageR" version))
+       (sha256
+        (base32 "0j15kwhjazr35yqs9lhw0pfqmrd9rm75gs160dn3xcyc3nw2is56"))))
     (properties `((upstream-name . "OpenImageR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tiff
@@ -5882,12 +5882,12 @@ Suesstrunk, EPFL Technical Report no.  149300, June 2010.")
   (package
     (name "r-openeo")
     (version "1.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "openeo" version))
-              (sha256
-               (base32
-                "002zrvrm417ix80vrqnl2wygqh0vjymfi5hl88v6ajfspp9r73qn"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "openeo" version))
+       (sha256
+        (base32 "002zrvrm417ix80vrqnl2wygqh0vjymfi5hl88v6ajfspp9r73qn"))))
     (properties `((upstream-name . "openeo")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf
@@ -5911,12 +5911,12 @@ in R.")
   (package
     (name "r-openebgm")
     (version "0.9.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "openEBGM" version))
-              (sha256
-               (base32
-                "19q5xlvgc91mcr6sjzppgkmvdlfb6cr7rs952i2yys3w7ylwk3bj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "openEBGM" version))
+       (sha256
+        (base32 "19q5xlvgc91mcr6sjzppgkmvdlfb6cr7rs952i2yys3w7ylwk3bj"))))
     (properties `((upstream-name . "openEBGM")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2 r-data-table))
@@ -5944,12 +5944,12 @@ estimation loosely derived from the @code{mederrRank} package.")
   (package
     (name "r-opendotar")
     (version "0.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "opendotaR" version))
-              (sha256
-               (base32
-                "17cygsw3nkg6zincfrcdh1509rlz3n5zrv9wvv7mjngm61sn79nf"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "opendotaR" version))
+       (sha256
+        (base32 "17cygsw3nkg6zincfrcdh1509rlz3n5zrv9wvv7mjngm61sn79nf"))))
     (properties `((upstream-name . "opendotaR")))
     (build-system r-build-system)
     (propagated-inputs (list r-lubridate r-jsonlite r-dplyr))
@@ -5966,12 +5966,12 @@ the JSON file.")
   (package
     (name "r-opendatatoronto")
     (version "0.1.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "opendatatoronto" version))
-              (sha256
-               (base32
-                "1fiviazs0ydxvmsqaayhwnxf4wl4sx1psn8i5mpis7218d9ihagy"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "opendatatoronto" version))
+       (sha256
+        (base32 "1fiviazs0ydxvmsqaayhwnxf4wl4sx1psn8i5mpis7218d9ihagy"))))
     (properties `((upstream-name . "opendatatoronto")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -5992,12 +5992,12 @@ the JSON file.")
   (package
     (name "r-opencv")
     (version "0.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "opencv" version))
-              (sha256
-               (base32
-                "056qf318fisd051q40di7ipya3xdi30zmlmksrfgjf4hx09g52vd"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "opencv" version))
+       (sha256
+        (base32 "056qf318fisd051q40di7ipya3xdi30zmlmksrfgjf4hx09g52vd"))))
     (properties `((upstream-name . "opencv")))
     (build-system r-build-system)
     (inputs (list zlib))
@@ -6015,12 +6015,12 @@ static images, or to filter live video footage from a camera device.")
   (package
     (name "r-opencr")
     (version "2.2.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "openCR" version))
-              (sha256
-               (base32
-                "003xhwskxjh0m9mvp8sdkbjmcb0i0wya1s8d8frnzgsbim2ymi22"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "openCR" version))
+       (sha256
+        (base32 "003xhwskxjh0m9mvp8sdkbjmcb0i0wya1s8d8frnzgsbim2ymi22"))))
     (properties `((upstream-name . "openCR")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -6043,12 +6043,12 @@ static images, or to filter live video footage from a camera device.")
   (package
     (name "r-opencl")
     (version "0.2-2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OpenCL" version))
-              (sha256
-               (base32
-                "0gxzda615f67nbljancb8kixzdzkjsy8i0345mlnmlr8kqv4qyhw"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OpenCL" version))
+       (sha256
+        (base32 "0gxzda615f67nbljancb8kixzdzkjsy8i0345mlnmlr8kqv4qyhw"))))
     (properties `((upstream-name . "OpenCL")))
     (build-system r-build-system)
     (home-page "http://www.rforge.net/OpenCL/")
@@ -6062,12 +6062,12 @@ computing power of GPUs and other HPC accelerator devices.")
   (package
     (name "r-opencage")
     (version "0.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "opencage" version))
-              (sha256
-               (base32
-                "1sjkpp6cj6ivd68p6ql6vwgdvy0fwfkjv84wgwgb4i7f4mnxgnff"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "opencage" version))
+       (sha256
+        (base32 "1sjkpp6cj6ivd68p6ql6vwgdvy0fwfkjv84wgwgb4i7f4mnxgnff"))))
     (properties `((upstream-name . "opencage")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -6095,12 +6095,12 @@ address of a location (reverse geocoding), see <https://opencagedata.com/>.")
   (package
     (name "r-openblender")
     (version "0.5.81")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "openblender" version))
-              (sha256
-               (base32
-                "01akixxj04kgrxhv04icrivfpnipnpg9j62i3y19q3jkl9846lh1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "openblender" version))
+       (sha256
+        (base32 "01akixxj04kgrxhv04icrivfpnipnpg9j62i3y19q3jkl9846lh1"))))
     (properties `((upstream-name . "openblender")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-httr))
@@ -6115,12 +6115,12 @@ address of a location (reverse geocoding), see <https://opencagedata.com/>.")
   (package
     (name "r-openbanker")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "openbankeR" version))
-              (sha256
-               (base32
-                "04jh3nnp53dzbk96dcz0xi67jqmp66mzbj81cy8mhhd2rl5ry9cj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "openbankeR" version))
+       (sha256
+        (base32 "04jh3nnp53dzbk96dcz0xi67jqmp66mzbj81cy8mhhd2rl5ry9cj"))))
     (properties `((upstream-name . "openbankeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -6142,12 +6142,12 @@ API.")
   (package
     (name "r-openalexr")
     (version "1.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "openalexR" version))
-              (sha256
-               (base32
-                "0f8kdw25428rw6rgcng0vy4paw08mqzlnk11p8c5gi9f7bx40vw6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "openalexR" version))
+       (sha256
+        (base32 "0f8kdw25428rw6rgcng0vy4paw08mqzlnk11p8c5gi9f7bx40vw6"))))
     (properties `((upstream-name . "openalexR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-progress r-jsonlite r-httr))
@@ -6163,12 +6163,12 @@ API.")
   (package
     (name "r-openairmaps")
     (version "0.8.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "openairmaps" version))
-              (sha256
-               (base32
-                "18acrnb57cmq7z4sxnyjaa1nc8l52wa9fijgcb30garz8lhlldab"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "openairmaps" version))
+       (sha256
+        (base32 "18acrnb57cmq7z4sxnyjaa1nc8l52wa9fijgcb30garz8lhlldab"))))
     (properties `((upstream-name . "openairmaps")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -6203,12 +6203,12 @@ and air mass trajectories.")
   (package
     (name "r-openair")
     (version "2.17-0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "openair" version))
-              (sha256
-               (base32
-                "1bvwi6avr25bxxdinh918jqjfvxja8njd069lcabk7fwfm0g675q"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "openair" version))
+       (sha256
+        (base32 "1bvwi6avr25bxxdinh918jqjfvxja8njd069lcabk7fwfm0g675q"))))
     (properties `((upstream-name . "openair")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -6241,12 +6241,12 @@ subsequent papers.")
   (package
     (name "r-opdoe")
     (version "1.0-10")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OPDOE" version))
-              (sha256
-               (base32
-                "04z944i4f3i0cjnxh32wf7n2dfyynnvkz4lxdkn90flam2np58yv"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OPDOE" version))
+       (sha256
+        (base32 "04z944i4f3i0cjnxh32wf7n2dfyynnvkz4lxdkn90flam2np58yv"))))
     (properties `((upstream-name . "OPDOE")))
     (build-system r-build-system)
     (propagated-inputs (list r-polynom
@@ -6266,12 +6266,12 @@ subsequent papers.")
   (package
     (name "r-opdisdownsampling")
     (version "0.8.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "opdisDownsampling" version))
-              (sha256
-               (base32
-                "0laf24x2h6xwhd5wwcwi1iqg5gni29bmlfr86yrvpdrdgr7f4cha"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "opdisDownsampling" version))
+       (sha256
+        (base32 "0laf24x2h6xwhd5wwcwi1iqg5gni29bmlfr86yrvpdrdgr7f4cha"))))
     (properties `((upstream-name . "opdisDownsampling")))
     (build-system r-build-system)
     (propagated-inputs (list r-twosamples
@@ -6293,12 +6293,12 @@ of bio-medical data.")
   (package
     (name "r-opc")
     (version "0.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OPC" version))
-              (sha256
-               (base32
-                "01ljrczj9ds18x40fas4rsca4phqsjaz8w8nvbr7xprf4fp8zpcj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OPC" version))
+       (sha256
+        (base32 "01ljrczj9ds18x40fas4rsca4phqsjaz8w8nvbr7xprf4fp8zpcj"))))
     (properties `((upstream-name . "OPC")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -6314,12 +6314,12 @@ philosophy of the package is described in Guo G. (2018)
   (package
     (name "r-opalr")
     (version "3.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "opalr" version))
-              (sha256
-               (base32
-                "194ljy4d7id7q5nif6llh34fxpx6s3x5i3m2grixy3i512apqsm0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "opalr" version))
+       (sha256
+        (base32 "194ljy4d7id7q5nif6llh34fxpx6s3x5i3m2grixy3i512apqsm0"))))
     (properties `((upstream-name . "opalr")))
     (build-system r-build-system)
     (propagated-inputs (list r-progress r-mime r-labelled r-jsonlite r-httr))
@@ -6342,12 +6342,12 @@ on the R server side. @code{DataSHIELD} administration tools are also provided."
   (package
     (name "r-opa")
     (version "0.8.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "opa" version))
-              (sha256
-               (base32
-                "1dh7lzprcaz0j24npvmx7rr8yn8nlr5dp77zr4mmhwgv6912mv24"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "opa" version))
+       (sha256
+        (base32 "1dh7lzprcaz0j24npvmx7rr8yn8nlr5dp77zr4mmhwgv6912mv24"))))
     (properties `((upstream-name . "opa")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -6365,12 +6365,12 @@ percentage of orderings in the data that are matched by the hypothesis.")
   (package
     (name "r-oottest")
     (version "0.9.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "oottest" version))
-              (sha256
-               (base32
-                "1y0k0jcncjkcgfxybs2yyfcc7ywa49jnalrw8mn7m04h58gqg77x"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oottest" version))
+       (sha256
+        (base32 "1y0k0jcncjkcgfxybs2yyfcc7ywa49jnalrw8mn7m04h58gqg77x"))))
     (properties `((upstream-name . "oottest")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -6387,12 +6387,12 @@ pairwise likelihood comparison of theories, calibrated with pre-existing data.")
   (package
     (name "r-oosse")
     (version "1.0.10")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "oosse" version))
-              (sha256
-               (base32
-                "186vj059bxlywka1y8i4pgh4xbl3mx1mwh9c1wfb4dd37yirp35k"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oosse" version))
+       (sha256
+        (base32 "186vj059bxlywka1y8i4pgh4xbl3mx1mwh9c1wfb4dd37yirp35k"))))
     (properties `((upstream-name . "oosse")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-matrix r-doparallel r-biocparallel))
@@ -6409,12 +6409,12 @@ estimate is provided, and confidence intervals are constructed.")
   (package
     (name "r-oos")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OOS" version))
-              (sha256
-               (base32
-                "0jnj5y26rv0i2561mywcxb7aavmpq16ippq6rblb8jiqjd05nhib"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OOS" version))
+       (sha256
+        (base32 "0jnj5y26rv0i2561mywcxb7aavmpq16ippq6rblb8jiqjd05nhib"))))
     (properties `((upstream-name . "OOS")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -6448,12 +6448,12 @@ combination, model and error analysis, and forecast visualization.")
   (package
     (name "r-oor")
     (version "0.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OOR" version))
-              (sha256
-               (base32
-                "0p5bi4z6q2kz1hkn12hy7qsn1sdb336y8phmznd8cayyfil7hjvh"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OOR" version))
+       (sha256
+        (base32 "0p5bi4z6q2kz1hkn12hy7qsn1sdb336y8phmznd8cayyfil7hjvh"))))
     (properties `((upstream-name . "OOR")))
     (build-system r-build-system)
     (home-page "https://github.com/mbinois/OOR")
@@ -6473,12 +6473,12 @@ dimensions, for example, for hyperparameter tuning.")
   (package
     (name "r-ooplah")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ooplah" version))
-              (sha256
-               (base32
-                "1p74jh9g62yicrw0lhpbn0diqi2myl24z28kpd2b3mglyffadr0b"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ooplah" version))
+       (sha256
+        (base32 "1p74jh9g62yicrw0lhpbn0diqi2myl24z28kpd2b3mglyffadr0b"))))
     (properties `((upstream-name . "ooplah")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6))
@@ -6494,12 +6494,12 @@ patterns including Abstract and Decorator classes.")
   (package
     (name "r-oolong")
     (version "0.5.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "oolong" version))
-              (sha256
-               (base32
-                "1if27qswf17614pn94vx5pcmg1j55wvjkmrf63zdyfw4a7sapsc8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oolong" version))
+       (sha256
+        (base32 "1if27qswf17614pn94vx5pcmg1j55wvjkmrf63zdyfw4a7sapsc8"))))
     (properties `((upstream-name . "oolong")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -6535,12 +6535,12 @@ generated tests match those suggested in Chang et al. (2009) and Song et al.
   (package
     (name "r-ooi")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OOI" version))
-              (sha256
-               (base32
-                "0ivxgq539v68kak3zzakywppba0grzh7qn1h404s4ag30cxv0g8p"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OOI" version))
+       (sha256
+        (base32 "0ivxgq539v68kak3zzakywppba0grzh7qn1h404s4ag30cxv0g8p"))))
     (properties `((upstream-name . "OOI")))
     (build-system r-build-system)
     (propagated-inputs (list r-modi))
@@ -6558,12 +6558,12 @@ workersâ characteristics (e.g. commuting costs, preferences, and skills.)")
   (package
     (name "r-oobcurve")
     (version "0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OOBCurve" version))
-              (sha256
-               (base32
-                "1i7prybs3b60ipl34zrq6mcr6w9kc1d44b14mxcd752k42k6xs2r"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OOBCurve" version))
+       (sha256
+        (base32 "1i7prybs3b60ipl34zrq6mcr6w9kc1d44b14mxcd752k42k6xs2r"))))
     (properties `((upstream-name . "OOBCurve")))
     (build-system r-build-system)
     (propagated-inputs (list r-ranger r-randomforest r-mlr))
@@ -6583,12 +6583,12 @@ mtry', sample.fraction and min.node.size for the ranger package.")
   (package
     (name "r-ontologysimilarity")
     (version "2.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ontologySimilarity" version))
-              (sha256
-               (base32
-                "035z572lbsfcnr9c0hl8gir1kgk0dw8dxzr3v8dqd93k6jr6kaxb"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ontologySimilarity" version))
+       (sha256
+        (base32 "035z572lbsfcnr9c0hl8gir1kgk0dw8dxzr3v8dqd93k6jr6kaxb"))))
     (properties `((upstream-name . "ontologySimilarity")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-ontologyindex))
@@ -6606,12 +6606,12 @@ similarity in the context of a collection of terms sets - Greene et al.  2017
   (package
     (name "r-ontologyplot")
     (version "1.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ontologyPlot" version))
-              (sha256
-               (base32
-                "0n51x2im134wq3a54wrv02j1pgkpm1qcgb9hd0y6fchz43i039j1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ontologyPlot" version))
+       (sha256
+        (base32 "0n51x2im134wq3a54wrv02j1pgkpm1qcgb9hd0y6fchz43i039j1"))))
     (properties `((upstream-name . "ontologyPlot")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgraphviz r-paintmap r-ontologyindex))
@@ -6628,12 +6628,12 @@ with various graphical options - Greene et al.  2017
   (package
     (name "r-ontologics")
     (version "0.7.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ontologics" version))
-              (sha256
-               (base32
-                "1ggdnydxl5xdh8vjjxna778d3c3wvw1rcvvjdcnrllms8i30cvga"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ontologics" version))
+       (sha256
+        (base32 "1ggdnydxl5xdh8vjjxna778d3c3wvw1rcvvjdcnrllms8i30cvga"))))
     (properties `((upstream-name . "ontologics")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -6665,12 +6665,12 @@ Knowledge Organisation System (SKOS).")
   (package
     (name "r-ontofast")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ontoFAST" version))
-              (sha256
-               (base32
-                "0l3d8bp86849rp0qrs1dfv7bjmrfdqvahb1x656vk69fi20722ma"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ontoFAST" version))
+       (sha256
+        (base32 "0l3d8bp86849rp0qrs1dfv7bjmrfdqvahb1x656vk69fi20722ma"))))
     (properties `((upstream-name . "ontoFAST")))
     (build-system r-build-system)
     (propagated-inputs (list r-visnetwork
@@ -6697,12 +6697,12 @@ relationships.")
   (package
     (name "r-onsvplot")
     (version "0.3.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "onsvplot" version))
-              (sha256
-               (base32
-                "06jkq25ivi8qn3c46616a7z47g2qfjpvnfwlzjx8shw4c36j5737"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "onsvplot" version))
+       (sha256
+        (base32 "06jkq25ivi8qn3c46616a7z47g2qfjpvnfwlzjx8shw4c36j5737"))))
     (properties `((upstream-name . "onsvplot")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))
@@ -6719,12 +6719,12 @@ with new theme and colors.")
   (package
     (name "r-onsr")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "onsr" version))
-              (sha256
-               (base32
-                "0qazwqdbbinsrimn7rf7xcjz5l5zp372i5j54rp87xy098q7c0l3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "onsr" version))
+       (sha256
+        (base32 "0qazwqdbbinsrimn7rf7xcjz5l5zp372i5j54rp87xy098q7c0l3"))))
     (properties `((upstream-name . "onsr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-readr r-jsonlite r-httr))
@@ -6738,12 +6738,12 @@ with new theme and colors.")
   (package
     (name "r-onpoint")
     (version "1.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "onpoint" version))
-              (sha256
-               (base32
-                "06zdgxcizw66l9ll8g1wsbrj0c4zl8zp2z7l2cn4sz45kr3qkvfg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "onpoint" version))
+       (sha256
+        (base32 "06zdgxcizw66l9ll8g1wsbrj0c4zl8zp2z7l2cn4sz45kr3qkvfg"))))
     (properties `((upstream-name . "onpoint")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-random r-spatstat-geom
@@ -6763,12 +6763,12 @@ ISBN:9781420082548).")
   (package
     (name "r-onnx")
     (version "0.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "onnx" version))
-              (sha256
-               (base32
-                "1s0swrcff9v9ffbjkraahmb398gh2jrca2wf5k6gs8037frnl8wd"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "onnx" version))
+       (sha256
+        (base32 "1s0swrcff9v9ffbjkraahmb398gh2jrca2wf5k6gs8037frnl8wd"))))
     (properties `((upstream-name . "onnx")))
     (build-system r-build-system)
     (propagated-inputs (list r-reticulate))
@@ -6786,12 +6786,12 @@ and standard data types.")
   (package
     (name "r-onmarg")
     (version "1.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "onmaRg" version))
-              (sha256
-               (base32
-                "0n4gf8fx6c4abwxcajz8bpsfvgl42dflb99wfn4632csag1a50rl"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "onmaRg" version))
+       (sha256
+        (base32 "0n4gf8fx6c4abwxcajz8bpsfvgl42dflb99wfn4632csag1a50rl"))))
     (properties `((upstream-name . "onmaRg")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-sf r-readxl r-httr r-dplyr))
@@ -6822,12 +6822,12 @@ Public Health Ontario website:
   (package
     (name "r-onls")
     (version "0.1-2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "onls" version))
-              (sha256
-               (base32
-                "19pgrhr7xzas4s592l4sgv1dfynf3s3d227zwcdv6z6wrxh40hyj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "onls" version))
+       (sha256
+        (base32 "19pgrhr7xzas4s592l4sgv1dfynf3s3d227zwcdv6z6wrxh40hyj"))))
     (properties `((upstream-name . "onls")))
     (build-system r-build-system)
     (propagated-inputs (list r-minpack-lm))
@@ -6843,12 +6843,12 @@ and plotting.")
   (package
     (name "r-onlineretail")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "onlineretail" version))
-              (sha256
-               (base32
-                "0lid3g4v51c664304cxgjm209qxv88hqglv89frmj4afc0y6k7sc"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "onlineretail" version))
+       (sha256
+        (base32 "0lid3g4v51c664304cxgjm209qxv88hqglv89frmj4afc0y6k7sc"))))
     (properties `((upstream-name . "onlineretail")))
     (build-system r-build-system)
     (home-page "https://github.com/allanvc/onlineretail/")
@@ -6864,12 +6864,12 @@ the donor's permission, Dr. Daqing Chen.")
   (package
     (name "r-onlinepca")
     (version "1.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "onlinePCA" version))
-              (sha256
-               (base32
-                "08qivsfnwz5vp089lv9czsaz3nfi42kn9yhgzf27dji18y2xscic"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "onlinePCA" version))
+       (sha256
+        (base32 "08qivsfnwz5vp089lv9czsaz3nfi42kn9yhgzf27dji18y2xscic"))))
     (properties `((upstream-name . "onlinePCA")))
     (build-system r-build-system)
     (propagated-inputs (list r-rspectra r-rcpparmadillo r-rcpp))
@@ -6884,12 +6884,12 @@ low-rank incremental methods, and stochastic optimization methods.")
   (package
     (name "r-onlineforecast")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "onlineforecast" version))
-              (sha256
-               (base32
-                "0cpwb6bx1qcf05rbi5ycdpgmfb0c5lvhki1c77kzhds5bn3gw5k4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "onlineforecast" version))
+       (sha256
+        (base32 "0cpwb6bx1qcf05rbi5ycdpgmfb0c5lvhki1c77kzhds5bn3gw5k4"))))
     (properties `((upstream-name . "onlineforecast")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-r6 r-pbs r-digest))
@@ -6910,12 +6910,12 @@ vignettes, the website <https://onlineforecasting.org> and the pre-print paper
   (package
     (name "r-onlinecov")
     (version "1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "onlineCOV" version))
-              (sha256
-               (base32
-                "04ikvsd76f6xhja7djyv433m88lfj2vf0y9qi6x1s4i9kh8xkbz9"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "onlineCOV" version))
+       (sha256
+        (base32 "04ikvsd76f6xhja7djyv433m88lfj2vf0y9qi6x1s4i9kh8xkbz9"))))
     (properties `((upstream-name . "onlineCOV")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -6938,12 +6938,12 @@ High-Dimensional Covariance Structure with Application to Dynamic Networks.\"
   (package
     (name "r-onlinebcp")
     (version "0.1.8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "onlineBcp" version))
-              (sha256
-               (base32
-                "1pwpnmpgh3hl8mv1pbn577dn832nxbsfaxn3hqghvs4dn06lwngf"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "onlineBcp" version))
+       (sha256
+        (base32 "1pwpnmpgh3hl8mv1pbn577dn832nxbsfaxn3hqghvs4dn06lwngf"))))
     (properties `((upstream-name . "onlineBcp")))
     (build-system r-build-system)
     (propagated-inputs (list r-vim))
@@ -6962,12 +6962,12 @@ Yigiter A, Chen J, An L, Danacioglu N (2015)
   (package
     (name "r-onion")
     (version "1.5-0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "onion" version))
-              (sha256
-               (base32
-                "07q5wwphb6jsk7ya7hgsf5782yalvhyc7h43hsd9rg4rhpmy8in9"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "onion" version))
+       (sha256
+        (base32 "07q5wwphb6jsk7ya7hgsf5782yalvhyc7h43hsd9rg4rhpmy8in9"))))
     (properties `((upstream-name . "onion")))
     (build-system r-build-system)
     (propagated-inputs (list r-emulator))
@@ -6986,12 +6986,12 @@ nonassociative.  See the package vignette for more details.")
   (package
     (name "r-onewaytests")
     (version "2.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "onewaytests" version))
-              (sha256
-               (base32
-                "1434ra36rmkjiw8q5d7cbzkhy7kvq5bnx6s1pfy319p6zcy083nd"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "onewaytests" version))
+       (sha256
+        (base32 "1434ra36rmkjiw8q5d7cbzkhy7kvq5bnx6s1pfy319p6zcy083nd"))))
     (properties `((upstream-name . "onewaytests")))
     (build-system r-build-system)
     (propagated-inputs (list r-nortest r-moments r-ggplot2 r-car))
@@ -7015,12 +7015,12 @@ and normality of data in each group via tests and plots (Dag et al., 2018,
   (package
     (name "r-onetwosamples")
     (version "1.1-0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OneTwoSamples" version))
-              (sha256
-               (base32
-                "0qa5v3c1f5mckvgmw8zbxqkk1q8k8dig1xg9k8pfyvfxqjard1ny"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OneTwoSamples" version))
+       (sha256
+        (base32 "0qa5v3c1f5mckvgmw8zbxqkk1q8k8dig1xg9k8pfyvfxqjard1ny"))))
     (properties `((upstream-name . "OneTwoSamples")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=OneTwoSamples")
@@ -7042,12 +7042,12 @@ of x and y if x and y have the same length.")
   (package
     (name "r-onetime")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "onetime" version))
-              (sha256
-               (base32
-                "1yyi8r8dniavsjlqmj5z9x52av2qz0iz01i2r7qx69apqbkwd57b"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "onetime" version))
+       (sha256
+        (base32 "1yyi8r8dniavsjlqmj5z9x52av2qz0iz01i2r7qx69apqbkwd57b"))))
     (properties `((upstream-name . "onetime")))
     (build-system r-build-system)
     (propagated-inputs (list r-rappdirs r-filelock))
@@ -7064,12 +7064,12 @@ very first time.")
   (package
     (name "r-onestep")
     (version "0.9.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OneStep" version))
-              (sha256
-               (base32
-                "06gnw364p74nnb9rx3ghyfavd02xmnvzy94hzdwgxqs86z30b2gz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OneStep" version))
+       (sha256
+        (base32 "06gnw364p74nnb9rx3ghyfavd02xmnvzy94hzdwgxqs86z30b2gz"))))
     (properties `((upstream-name . "OneStep")))
     (build-system r-build-system)
     (propagated-inputs (list r-numderiv r-fitdistrplus))
@@ -7086,12 +7086,12 @@ than the maximum likelihood estimator for large observation samples.")
   (package
     (name "r-onest")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ONEST" version))
-              (sha256
-               (base32
-                "07mfykpkcgcqafw1w3qr9x83zpy2p0q7v1zkgwpd69g79j0r3yap"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ONEST" version))
+       (sha256
+        (base32 "07mfykpkcgcqafw1w3qr9x83zpy2p0q7v1zkgwpd69g79j0r3yap"))))
     (properties `((upstream-name . "ONEST")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -7111,12 +7111,12 @@ data from Rimm et al. (2017 <doi:10.1001/jamaoncol.2017.0013>).")
   (package
     (name "r-onesamplemr")
     (version "0.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OneSampleMR" version))
-              (sha256
-               (base32
-                "18d467bhym9mp41n65rp0wg75f40szc7w5804p3hh9xqw7c3q2qq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OneSampleMR" version))
+       (sha256
+        (base32 "18d467bhym9mp41n65rp0wg75f40szc7w5804p3hh9xqw7c3q2qq"))))
     (properties `((upstream-name . "OneSampleMR")))
     (build-system r-build-system)
     (propagated-inputs (list r-msm r-lmtest r-ivreg r-gmm r-formula))
@@ -7138,12 +7138,12 @@ Terza et al. (2008) <doi:10.1016/j.jhealeco.2007.09.009>.")
   (package
     (name "r-oner")
     (version "2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OneR" version))
-              (sha256
-               (base32
-                "1k7rzhcwq5b2yi4zfsc1r0yb6w65gxj9835d2a1dclallja3zav2"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OneR" version))
+       (sha256
+        (base32 "1k7rzhcwq5b2yi4zfsc1r0yb6w65gxj9835d2a1dclallja3zav2"))))
     (properties `((upstream-name . "OneR")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -7162,12 +7162,12 @@ machine learning models and the rules are often helpful heuristics.")
   (package
     (name "r-onemapsgapi")
     (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "onemapsgapi" version))
-              (sha256
-               (base32
-                "0q1i17dkgcxqswa9wckxzsf1wr118zsw7yhbrbkbikvm27hqrrva"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "onemapsgapi" version))
+       (sha256
+        (base32 "0q1i17dkgcxqswa9wckxzsf1wr118zsw7yhbrbkbikvm27hqrrva"))))
     (properties `((upstream-name . "onemapsgapi")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -7195,12 +7195,12 @@ excessive data cleaning.")
   (package
     (name "r-onemap")
     (version "3.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "onemap" version))
-              (sha256
-               (base32
-                "0h5bi4zyiglic60msrkfny28k1rb7avqbs87ipzwwayb452b970c"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "onemap" version))
+       (sha256
+        (base32 "0h5bi4zyiglic60msrkfny28k1rb7avqbs87ipzwwayb452b970c"))))
     (properties `((upstream-name . "onemap")))
     (build-system r-build-system)
     (propagated-inputs (list r-vcfr
@@ -7233,12 +7233,12 @@ using hidden Markov models.")
   (package
     (name "r-onelogin")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "onelogin" version))
-              (sha256
-               (base32
-                "06p3a8kaxmvsj8nn7dy8w6wv1jjw67is991hqg9q0fa20ifym3dl"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "onelogin" version))
+       (sha256
+        (base32 "06p3a8kaxmvsj8nn7dy8w6wv1jjw67is991hqg9q0fa20ifym3dl"))))
     (properties `((upstream-name . "onelogin")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -7259,12 +7259,12 @@ to their API.")
   (package
     (name "r-onehot")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "onehot" version))
-              (sha256
-               (base32
-                "1cdsz007wr054k5phvihhg4qx0fc039k2s6484m92kws8mb2ziix"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "onehot" version))
+       (sha256
+        (base32 "1cdsz007wr054k5phvihhg4qx0fc039k2s6484m92kws8mb2ziix"))))
     (properties `((upstream-name . "onehot")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=onehot")
@@ -7278,12 +7278,12 @@ them.  It converts factor columns into onehot vectors.")
   (package
     (name "r-oneclust")
     (version "0.2.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "oneclust" version))
-              (sha256
-               (base32
-                "033vpzccj5z56spn2mqpjq9f17vk6ib9y15p2hfqk8rwqkfbvcqs"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oneclust" version))
+       (sha256
+        (base32 "033vpzccj5z56spn2mqpjq9f17vk6ib9y15p2hfqk8rwqkfbvcqs"))))
     (properties `((upstream-name . "oneclust")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-magrittr))
@@ -7300,12 +7300,12 @@ programming.")
   (package
     (name "r-onearmtte")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OneArmTTE" version))
-              (sha256
-               (base32
-                "186386pjjvlfq38950n1sdx0wq31q8ggjlqlrn07v68bcqjl70y6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OneArmTTE" version))
+       (sha256
+        (base32 "186386pjjvlfq38950n1sdx0wq31q8ggjlqlrn07v68bcqjl70y6"))))
     (properties `((upstream-name . "OneArmTTE")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-tibble r-survival r-dplyr))
@@ -7321,12 +7321,12 @@ time-to-event data.")
   (package
     (name "r-onearm2stage")
     (version "1.1.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OneArm2stage" version))
-              (sha256
-               (base32
-                "14vrf3x625c0xad18pajbgb4d4l57f1gqhy4y2l3wg1m1i2kiyns"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OneArm2stage" version))
+       (sha256
+        (base32 "14vrf3x625c0xad18pajbgb4d4l57f1gqhy4y2l3wg1m1i2kiyns"))))
     (properties `((upstream-name . "OneArm2stage")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-ipdfromkm r-flexsurv))
@@ -7350,12 +7350,12 @@ paper: Wu, J, Chen L, Wei J, Weiss H, Chauhan A. (2020). <doi:10.1002/pst.1983>.
   (package
     (name "r-ondisc")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ondisc" version))
-              (sha256
-               (base32
-                "071jrldclkaz5lfp3k5fh1ilpgvvcnakh2vvnr69n3pri9dl3fls"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ondisc" version))
+       (sha256
+        (base32 "071jrldclkaz5lfp3k5fh1ilpgvvcnakh2vvnr69n3pri9dl3fls"))))
     (properties `((upstream-name . "ondisc")))
     (build-system r-build-system)
     (propagated-inputs (list r-rhdf5lib
@@ -7383,12 +7383,12 @@ ondisc makes computing on large-scale single-cell data FUN: Fast, Universal, and
   (package
     (name "r-oncrawlr")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "oncrawlR" version))
-              (sha256
-               (base32
-                "0cm26diaf3jlzfrpgh13q0hakakmj6vy41wk9z0w81az4jcg9sn9"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oncrawlR" version))
+       (sha256
+        (base32 "0cm26diaf3jlzfrpgh13q0hakakmj6vy41wk9z0w81az4jcg9sn9"))))
     (properties `((upstream-name . "oncrawlR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -7427,34 +7427,34 @@ performance on search engines.")
 (define-public r-oncotree
   (package
     (name "r-oncotree")
-    (version "0.3.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Oncotree" version))
-              (sha256
-               (base32
-                "11pn50zshv1rl2mvars5iwzqfzlm9i8rd1rlz3pn1nn94051d8ab"))))
+    (version "0.3.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Oncotree" version))
+       (sha256
+        (base32 "1c40xggz3ldgma73ik0m10asamd9kns4i30w3zgw4hvpyzalbvm4"))))
     (properties `((upstream-name . "Oncotree")))
     (build-system r-build-system)
     (propagated-inputs (list r-boot))
-    (home-page "https://cran.r-project.org/package=Oncotree")
+    (home-page "https://github.com/anikoszabo/Oncotree")
     (synopsis "Estimating Oncogenetic Trees")
     (description
-     "This package contains functions to construct and evaluate directed tree
-structures that model the process of occurrence of genetic alterations during
-carcinogenesis.")
+     "Construct and evaluate directed tree structures that model the process of
+occurrence of genetic alterations during carcinogenesis as described in Szabo,
+A. and Boucher, K (2002) <doi:10.1016/S0025-5564(02)00086-X>.")
     (license license:gpl2+)))
 
 (define-public r-oncopredict
   (package
     (name "r-oncopredict")
     (version "0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "oncoPredict" version))
-              (sha256
-               (base32
-                "1slq5vp78n5hcq24vlg35r6xansdgriyjw8y9iyb0lj3cdaq38c3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oncoPredict" version))
+       (sha256
+        (base32 "1slq5vp78n5hcq24vlg35r6xansdgriyjw8y9iyb0lj3cdaq38c3"))))
     (properties `((upstream-name . "oncoPredict")))
     (build-system r-build-system)
     (propagated-inputs (list r-txdb-hsapiens-ucsc-hg19-knowngene
@@ -7492,12 +7492,12 @@ the population.")
   (package
     (name "r-oncomsm")
     (version "0.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "oncomsm" version))
-              (sha256
-               (base32
-                "1crjpfa7yxcafnhsxs2sbf153lsr9ffaqdxjxp0zkd7hiash0mfm"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oncomsm" version))
+       (sha256
+        (base32 "1crjpfa7yxcafnhsxs2sbf153lsr9ffaqdxjxp0zkd7hiash0mfm"))))
     (properties `((upstream-name . "oncomsm")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -7533,12 +7533,12 @@ inference is implemented using stan'.")
   (package
     (name "r-oncobayes2")
     (version "0.8-9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OncoBayes2" version))
-              (sha256
-               (base32
-                "06k0lbriyx6b1nlvpyjhf5g8dp8wa37wi1pmlpfqq7ryivp39v38"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OncoBayes2" version))
+       (sha256
+        (base32 "06k0lbriyx6b1nlvpyjhf5g8dp8wa37wi1pmlpfqq7ryivp39v38"))))
     (properties `((upstream-name . "OncoBayes2")))
     (build-system r-build-system)
     (inputs (list pandoc pandoc))
@@ -7581,12 +7581,12 @@ Neuenschwander et al. (2008) <doi:10.1002/sim.3230> and Neuenschwander et al.
   (package
     (name "r-once")
     (version "0.4.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "once" version))
-              (sha256
-               (base32
-                "0yshpww3rq68m0qx7kid3zlcxi1nf81vmziclyvpg61aikj8fhx5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "once" version))
+       (sha256
+        (base32 "0yshpww3rq68m0qx7kid3zlcxi1nf81vmziclyvpg61aikj8fhx5"))))
     (properties `((upstream-name . "once")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr))
@@ -7601,12 +7601,12 @@ the resulting object to disk.")
   (package
     (name "r-onc-api")
     (version "2.0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "onc.api" version))
-              (sha256
-               (base32
-                "10scbhg6aniqzrbkblhfhz9ni710xzppbzfrr4wrhsy1z5y2nfwc"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "onc.api" version))
+       (sha256
+        (base32 "10scbhg6aniqzrbkblhfhz9ni710xzppbzfrr4wrhsy1z5y2nfwc"))))
     (properties `((upstream-name . "onc.api")))
     (build-system r-build-system)
     (propagated-inputs (list r-tictoc
@@ -7630,12 +7630,12 @@ data with a single line of code.")
   (package
     (name "r-onbrand")
     (version "1.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "onbrand" version))
-              (sha256
-               (base32
-                "1kqi84b91vqgsx5h3k690qn6hfxssj8fh72bvsqbk1x819sdk77w"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "onbrand" version))
+       (sha256
+        (base32 "1kqi84b91vqgsx5h3k690qn6hfxssj8fh72bvsqbk1x819sdk77w"))))
     (properties `((upstream-name . "onbrand")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -7660,12 +7660,12 @@ workflows that can be replicated across different organizational templates.")
   (package
     (name "r-onboardclient")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OnboardClient" version))
-              (sha256
-               (base32
-                "15ymf163a80s4yvi5z884irvkb1ivnxpr505z96s23hs8ibhk2bh"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OnboardClient" version))
+       (sha256
+        (base32 "15ymf163a80s4yvi5z884irvkb1ivnxpr505z96s23hs8ibhk2bh"))))
     (properties `((upstream-name . "OnboardClient")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -7694,12 +7694,12 @@ model/ontology.")
   (package
     (name "r-onbabynames")
     (version "0.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "onbabynames" version))
-              (sha256
-               (base32
-                "13sp9gnqnsx2b8dq13qnkin813clnanh6hzv3vi7bxy514pvmisj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "onbabynames" version))
+       (sha256
+        (base32 "13sp9gnqnsx2b8dq13qnkin813clnanh6hzv3vi7bxy514pvmisj"))))
     (properties `((upstream-name . "onbabynames")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble))
@@ -7715,12 +7715,12 @@ privacy.")
   (package
     (name "r-onage")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OnAge" version))
-              (sha256
-               (base32
-                "1zby5sf92c185b5m19jv4ndgbv6mz107nc47zn1d6bijrypzpc20"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OnAge" version))
+       (sha256
+        (base32 "1zby5sf92c185b5m19jv4ndgbv6mz107nc47zn1d6bijrypzpc20"))))
     (properties `((upstream-name . "OnAge")))
     (build-system r-build-system)
     (home-page "https://lbbe.univ-lyon1.fr/OnAge.html")
@@ -7738,12 +7738,12 @@ Douhard et al. (2017) <doi:10.1111/oik.04421>.")
   (package
     (name "r-onadata")
     (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "onadata" version))
-              (sha256
-               (base32
-                "0l7fqskgqm421mcijmbbb1xgi99y1j673qil5r9whwfdxk78xgqc"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "onadata" version))
+       (sha256
+        (base32 "0l7fqskgqm421mcijmbbb1xgi99y1j673qil5r9whwfdxk78xgqc"))))
     (properties `((upstream-name . "onadata")))
     (build-system r-build-system)
     (home-page "https://ona-book.org")
@@ -7759,12 +7759,12 @@ Keith @code{McNulty} (2021).")
   (package
     (name "r-omu")
     (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "omu" version))
-              (sha256
-               (base32
-                "1ha1x0df5wb4lajid3w6ab52w1jhhflfp1kp88gjhg9h2kch7prl"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "omu" version))
+       (sha256
+        (base32 "1ha1x0df5wb4lajid3w6ab52w1jhhflfp1kp88gjhg9h2kch7prl"))))
     (properties `((upstream-name . "omu")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -7794,12 +7794,12 @@ gathers functional orthology and gene data from the KEGG-REST API.")
   (package
     (name "r-omsvg")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "omsvg" version))
-              (sha256
-               (base32
-                "018sphpmmgpq5alag0il83q51f3r3jx3pnnzjrvg4gn6691nkwvz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "omsvg" version))
+       (sha256
+        (base32 "018sphpmmgpq5alag0il83q51f3r3jx3pnnzjrvg4gn6691nkwvz"))))
     (properties `((upstream-name . "omsvg")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -7820,12 +7820,12 @@ modify its graphical elements with a suite of transform functions.")
   (package
     (name "r-ompr-roi")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ompr.roi" version))
-              (sha256
-               (base32
-                "1w0cyw5ixkri8523vdcfrlaf49farhgdf1bxiizwk5gppb3w5ibl"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ompr.roi" version))
+       (sha256
+        (base32 "1w0cyw5ixkri8523vdcfrlaf49farhgdf1bxiizwk5gppb3w5ibl"))))
     (properties `((upstream-name . "ompr.roi")))
     (build-system r-build-system)
     (propagated-inputs (list r-slam r-roi r-ompr r-matrix))
@@ -7844,12 +7844,12 @@ and examples on how to use it.")
   (package
     (name "r-ompr")
     (version "1.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ompr" version))
-              (sha256
-               (base32
-                "02glc09yrdvwls0i8ik1wh6fp3qa9ry55xd3yy3xk0rav8r3hcj3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ompr" version))
+       (sha256
+        (base32 "02glc09yrdvwls0i8ik1wh6fp3qa9ry55xd3yy3xk0rav8r3hcj3"))))
     (properties `((upstream-name . "ompr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -7872,12 +7872,12 @@ more information, documentation and examples.")
   (package
     (name "r-omnibusfisher")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OmnibusFisher" version))
-              (sha256
-               (base32
-                "0x3q04g45nixgsrl4biqqi6bk4kx79spq5whm3n4ppr0nkv8dw4h"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OmnibusFisher" version))
+       (sha256
+        (base32 "0x3q04g45nixgsrl4biqqi6bk4kx79spq5whm3n4ppr0nkv8dw4h"))))
     (properties `((upstream-name . "OmnibusFisher")))
     (build-system r-build-system)
     (propagated-inputs (list r-survey r-stringr r-compquadform))
@@ -7894,12 +7894,12 @@ types of omics data or samples with two types.")
   (package
     (name "r-omnibus")
     (version "1.2.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "omnibus" version))
-              (sha256
-               (base32
-                "1wqhizr19w6kx1gb1p34arr23m2272chfyaf5bpb8rqjb9zkswdz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "omnibus" version))
+       (sha256
+        (base32 "1wqhizr19w6kx1gb1p34arr23m2272chfyaf5bpb8rqjb9zkswdz"))))
     (properties `((upstream-name . "omnibus")))
     (build-system r-build-system)
     (home-page "https://github.com/adamlilith/omnibus")
@@ -7919,12 +7919,12 @@ applying functions before combining).")
   (package
     (name "r-omisc")
     (version "0.1.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Omisc" version))
-              (sha256
-               (base32
-                "0p0iraascyx16y05rpc2c9k25s4crc0wrxy58dpj7jd47g2360ar"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Omisc" version))
+       (sha256
+        (base32 "0p0iraascyx16y05rpc2c9k25s4crc0wrxy58dpj7jd47g2360ar"))))
     (properties `((upstream-name . "Omisc")))
     (build-system r-build-system)
     (propagated-inputs (list r-psych r-mass r-copula))
@@ -7945,12 +7945,12 @@ about univariate bootstrapping see: Lee and Rodgers (1998) and Beasley et al
   (package
     (name "r-omicwas")
     (version "0.8.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "omicwas" version))
-              (sha256
-               (base32
-                "03l53vbsard0hpaffcaa9l1aa3nh3w16j00k2jz2jqrrg02z0d7h"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "omicwas" version))
+       (sha256
+        (base32 "03l53vbsard0hpaffcaa9l1aa3nh3w16j00k2jz2jqrrg02z0d7h"))))
     (properties `((upstream-name . "omicwas")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -7982,12 +7982,12 @@ cell-type-specific epigenome-wide and transcriptome association study\".")
   (package
     (name "r-omicstools")
     (version "1.0.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "omicsTools" version))
-              (sha256
-               (base32
-                "0k6cpdxafz6x5360m97x8mvvi09mb36yx42slkq6nr4axpm089pf"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "omicsTools" version))
+       (sha256
+        (base32 "0k6cpdxafz6x5360m97x8mvvi09mb36yx42slkq6nr4axpm089pf"))))
     (properties `((upstream-name . "omicsTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -8016,12 +8016,12 @@ al. (2011) <doi:10.1038/nprot.2011.335>.")
   (package
     (name "r-omicspls")
     (version "2.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OmicsPLS" version))
-              (sha256
-               (base32
-                "08vx4925j5ln366h7nzhf1ra5ciplrqw911258chi9di7gpm8g50"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OmicsPLS" version))
+       (sha256
+        (base32 "08vx4925j5ln366h7nzhf1ra5ciplrqw911258chi9di7gpm8g50"))))
     (properties `((upstream-name . "OmicsPLS")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-softimpute r-magrittr r-ggplot2
@@ -8047,12 +8047,12 @@ degree of sparsity.")
   (package
     (name "r-omicsense")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OmicSense" version))
-              (sha256
-               (base32
-                "0nac0ahciyajsicrs4rkn54xiwgvdm4m2kbg6icbsygwzzp2w14z"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OmicSense" version))
+       (sha256
+        (base32 "0nac0ahciyajsicrs4rkn54xiwgvdm4m2kbg6icbsygwzzp2w14z"))))
     (properties `((upstream-name . "OmicSense")))
     (build-system r-build-system)
     (propagated-inputs (list r-kernlab r-ggplot2))
@@ -8069,12 +8069,12 @@ using omics data.")
   (package
     (name "r-omics")
     (version "0.1-5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "omics" version))
-              (sha256
-               (base32
-                "1y2x33mfgq98nglhvpr1wq1v6nfiq4njy2yac47x72rpwxsj9vb1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "omics" version))
+       (sha256
+        (base32 "1y2x33mfgq98nglhvpr1wq1v6nfiq4njy2yac47x72rpwxsj9vb1"))))
     (properties `((upstream-name . "omics")))
     (build-system r-build-system)
     (propagated-inputs (list r-pheatmap r-lme4))
@@ -8089,12 +8089,12 @@ as DNA methylation and gene expression profiles.")
   (package
     (name "r-omicnavigator")
     (version "1.13.13")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OmicNavigator" version))
-              (sha256
-               (base32
-                "0dfc3v5n7sms0fjgm8g0f1r810q139378ha0i86hv1s88psxy08x"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OmicNavigator" version))
+       (sha256
+        (base32 "0dfc3v5n7sms0fjgm8g0f1r810q139378ha0i86hv1s88psxy08x"))))
     (properties `((upstream-name . "OmicNavigator")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-data-table))
@@ -8117,12 +8117,12 @@ fine-grained filtering based on statistical significance.")
   (package
     (name "r-omickriging")
     (version "1.4.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OmicKriging" version))
-              (sha256
-               (base32
-                "08frr38yf5d0l3zwkbq9465xrbyzsn8sx9icqc3yvfnxrkhrpzig"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OmicKriging" version))
+       (sha256
+        (base32 "08frr38yf5d0l3zwkbq9465xrbyzsn8sx9icqc3yvfnxrkhrpzig"))))
     (properties `((upstream-name . "OmicKriging")))
     (build-system r-build-system)
     (propagated-inputs (list r-rocr r-irlba r-foreach r-doparallel))
@@ -8145,12 +8145,12 @@ Y to predict Y.")
   (package
     (name "r-omegag")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OmegaG" version))
-              (sha256
-               (base32
-                "1aihcrgml67rvnx9vpnq2nnbc79kicw4ks1fradsa36ykkdz6b1g"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OmegaG" version))
+       (sha256
+        (base32 "1aihcrgml67rvnx9vpnq2nnbc79kicw4ks1fradsa36ykkdz6b1g"))))
     (properties `((upstream-name . "OmegaG")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=OmegaG")
@@ -8180,12 +8180,12 @@ of @code{OmegaG} do not necessarily represent the policy of the ALSAC.")
   (package
     (name "r-olympicrshiny")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OlympicRshiny" version))
-              (sha256
-               (base32
-                "17caq517hqd89qvlsmirrcb7l9ny55rqyfrwhx037s30005mxq9f"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OlympicRshiny" version))
+       (sha256
+        (base32 "17caq517hqd89qvlsmirrcb7l9ny55rqyfrwhx037s30005mxq9f"))))
     (properties `((upstream-name . "OlympicRshiny")))
     (build-system r-build-system)
     (propagated-inputs (list r-summarytools
@@ -8209,12 +8209,12 @@ Olympics events are included.  Data is from Kaggle at
   (package
     (name "r-olstrajr")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OLStrajr" version))
-              (sha256
-               (base32
-                "1ln2as15aay4hzdm82yc024dlv7wdip9l5dryrdhkmmhjy026gia"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OLStrajr" version))
+       (sha256
+        (base32 "1ln2as15aay4hzdm82yc024dlv7wdip9l5dryrdhkmmhjy026gia"))))
     (properties `((upstream-name . "OLStrajr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -8246,12 +8246,12 @@ the resampling processes.")
   (package
     (name "r-olsrr")
     (version "0.5.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "olsrr" version))
-              (sha256
-               (base32
-                "0rh1jb0z0ypspzcp4vbpzjz960yj76myk2j4zb1vi9gnnj3clw8y"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "olsrr" version))
+       (sha256
+        (base32 "0rh1jb0z0ypspzcp4vbpzjz960yj76myk2j4zb1vi9gnnj3clw8y"))))
     (properties `((upstream-name . "olsrr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp
@@ -8276,12 +8276,12 @@ assessment and variable selection procedures.")
   (package
     (name "r-olr")
     (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "olr" version))
-              (sha256
-               (base32
-                "1l6m2gbglh8idy4k2q23qgfb7in1a6pnwiji1gbygfan6paw4xza"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "olr" version))
+       (sha256
+        (base32 "1l6m2gbglh8idy4k2q23qgfb7in1a6pnwiji1gbygfan6paw4xza"))))
     (properties `((upstream-name . "olr")))
     (build-system r-build-system)
     (propagated-inputs (list r-plyr))
@@ -8307,12 +8307,12 @@ R-squared terms.  A Python version is available at:
   (package
     (name "r-ollggamma")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ollggamma" version))
-              (sha256
-               (base32
-                "1990hr9gww636xr4gkvc816hd0pc78nw3ypbzflkh5g3pmsn7bc2"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ollggamma" version))
+       (sha256
+        (base32 "1990hr9gww636xr4gkvc816hd0pc78nw3ypbzflkh5g3pmsn7bc2"))))
     (properties `((upstream-name . "ollggamma")))
     (build-system r-build-system)
     (home-page "https://mjsaldanha.com/posts/ollggamma")
@@ -8327,12 +8327,12 @@ Odd Log-Logistic Generalized Gamma proposed in Prataviera, F. et al (2017)
   (package
     (name "r-ollg")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ollg" version))
-              (sha256
-               (base32
-                "1xjfn3hlmmx65kphchhxqa9fx6qmkiyx24lp19si1y3v92wdv2i9"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ollg" version))
+       (sha256
+        (base32 "1xjfn3hlmmx65kphchhxqa9fx6qmkiyx24lp19si1y3v92wdv2i9"))))
     (properties `((upstream-name . "ollg")))
     (build-system r-build-system)
     (home-page "https://github.com/dmazarei/ollg")
@@ -8348,12 +8348,12 @@ different authors in the recent years.  See Alizadeh (2019)
   (package
     (name "r-olinkanalyze")
     (version "3.5.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OlinkAnalyze" version))
-              (sha256
-               (base32
-                "0zykprc6z8z8j08yk3jxr2i4bf5zkl0aab7y0dg0g1m3cnzf40vf"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OlinkAnalyze" version))
+       (sha256
+        (base32 "0zykprc6z8z8j08yk3jxr2i4bf5zkl0aab7y0dg0g1m3cnzf40vf"))))
     (properties `((upstream-name . "OlinkAnalyze")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -8394,12 +8394,12 @@ data run on the Olink platform.")
   (package
     (name "r-oldbailey")
     (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "oldbailey" version))
-              (sha256
-               (base32
-                "17wvnz23rhl0n50mq2b93523kxdvc3imvfii9b33viwcm4cq6zkn"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oldbailey" version))
+       (sha256
+        (base32 "17wvnz23rhl0n50mq2b93523kxdvc3imvfii9b33viwcm4cq6zkn"))))
     (properties `((upstream-name . "oldbailey")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -8424,12 +8424,12 @@ terms, and trial dates.")
   (package
     (name "r-olctools")
     (version "0.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "olctools" version))
-              (sha256
-               (base32
-                "1gbchwynvmryarz32f24v56kj57h7x6nrrm878fkjkpq140cqwzz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "olctools" version))
+       (sha256
+        (base32 "1gbchwynvmryarz32f24v56kj57h7x6nrrm878fkjkpq140cqwzz"))))
     (properties `((upstream-name . "olctools")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -8446,12 +8446,12 @@ validating, encoding and decoding entries that follow this standard.")
   (package
     (name "r-olcpm")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OLCPM" version))
-              (sha256
-               (base32
-                "0bylr62ma4wbbkjnp67whlndch1vwilm083wlkrfdnmhwqigzjz0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OLCPM" version))
+       (sha256
+        (base32 "0bylr62ma4wbbkjnp67whlndch1vwilm083wlkrfdnmhwqigzjz0"))))
     (properties `((upstream-name . "OLCPM")))
     (build-system r-build-system)
     (propagated-inputs (list r-rspectra r-laplacesdemon))
@@ -8477,12 +8477,12 @@ See more details in He et al. (2021)<@code{arXiv:2112.13479>}.")
   (package
     (name "r-okxapi")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "okxAPI" version))
-              (sha256
-               (base32
-                "0wysfpkij9l265clw6qi4zpr1c860idxfp82xz2nmy1l5b2n8ri0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "okxAPI" version))
+       (sha256
+        (base32 "0wysfpkij9l265clw6qi4zpr1c860idxfp82xz2nmy1l5b2n8ri0"))))
     (properties `((upstream-name . "okxAPI")))
     (build-system r-build-system)
     (propagated-inputs (list r-websocket
@@ -8503,12 +8503,12 @@ including REST API and @code{WebSocket} API.")
   (package
     (name "r-oknne")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OkNNE" version))
-              (sha256
-               (base32
-                "10kkg6n6fsqm1kir1ay96br1m8adykarmp57bnw900fiblqqa2i0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OkNNE" version))
+       (sha256
+        (base32 "10kkg6n6fsqm1kir1ay96br1m8adykarmp57bnw900fiblqqa2i0"))))
     (properties `((upstream-name . "OkNNE")))
     (build-system r-build-system)
     (propagated-inputs (list r-fnn))
@@ -8531,12 +8531,12 @@ Kumam, P., Khan, D.M., Khalil, U., Sulaiman, M. and Khan, Z. (2020)
   (package
     (name "r-ojsr")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ojsr" version))
-              (sha256
-               (base32
-                "0nwdws9kqnya9qjc939b7ksrf7ri6d25zzcdxhyhabirhnrqdg7m"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ojsr" version))
+       (sha256
+        (base32 "0nwdws9kqnya9qjc939b7ksrf7ri6d25zzcdxhyhabirhnrqdg7m"))))
     (properties `((upstream-name . "ojsr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -8562,12 +8562,12 @@ articles metadata from their head tag in html, or from Open Archives Initiative
   (package
     (name "r-oii")
     (version "1.0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "oii" version))
-              (sha256
-               (base32
-                "1n41hikn53ikyynsravg127cw5csa8s0s1l63w5hym7c6j625ya5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oii" version))
+       (sha256
+        (base32 "1n41hikn53ikyynsravg127cw5csa8s0s1l63w5hym7c6j625ya5"))))
     (properties `((upstream-name . "oii")))
     (build-system r-build-system)
     (propagated-inputs (list r-rapportools r-gmodels r-deducer))
@@ -8587,12 +8587,12 @@ ordinal data.")
   (package
     (name "r-ohun")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ohun" version))
-              (sha256
-               (base32
-                "09rx31ij775si18b4pfl11djfzzrpf1j324kbldhdq94kz18mf8f"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ohun" version))
+       (sha256
+        (base32 "09rx31ij775si18b4pfl11djfzzrpf1j324kbldhdq94kz18mf8f"))))
     (properties `((upstream-name . "ohun")))
     (build-system r-build-system)
     (propagated-inputs (list r-warbler
@@ -8619,12 +8619,12 @@ other software can also be explored and optimized.  Araya-Salas et al. (2022)
   (package
     (name "r-ohtadstats")
     (version "2.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ohtadstats" version))
-              (sha256
-               (base32
-                "0hkjs322vii1dsminlkwpwi12sc9pd88jag7p4dmy6nfw2hh2d69"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ohtadstats" version))
+       (sha256
+        (base32 "0hkjs322vii1dsminlkwpwi12sc9pd88jag7p4dmy6nfw2hh2d69"))))
     (properties `((upstream-name . "ohtadstats")))
     (build-system r-build-system)
     (propagated-inputs (list r-lattice))
@@ -8640,12 +8640,12 @@ D-statistics, for pairs of loci.  Petrowski et al. (2019)
   (package
     (name "r-ohsome")
     (version "0.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ohsome" version))
-              (sha256
-               (base32
-                "0zw4r1sv46mfxzbp620a00wsh9i1dc21lmf1iadsdm4iss8pjk44"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ohsome" version))
+       (sha256
+        (base32 "0zw4r1sv46mfxzbp620a00wsh9i1dc21lmf1iadsdm4iss8pjk44"))))
     (properties `((upstream-name . "ohsome")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-readr r-jsonlite r-httr r-geojsonsf))
@@ -8664,12 +8664,12 @@ specify your own temporal, spatial and/or thematic filters.")
   (package
     (name "r-ohpl")
     (version "1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OHPL" version))
-              (sha256
-               (base32
-                "0svim112khdymdj1bsj8vri6r0zph5312y148mlh5h98rah40i08"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OHPL" version))
+       (sha256
+        (base32 "0svim112khdymdj1bsj8vri6r0zph5312y148mlh5h98rah40i08"))))
     (properties `((upstream-name . "OHPL")))
     (build-system r-build-system)
     (propagated-inputs (list r-pls r-mvtnorm r-glmnet))
@@ -8689,12 +8689,12 @@ correlated variables, such as spectroscopic data.")
   (package
     (name "r-ohoegdm")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ohoegdm" version))
-              (sha256
-               (base32
-                "1p1jica3fr4a5ilz1m2gxyzbapxjvgiw4v5rn90d5qgsmbp1hj42"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ohoegdm" version))
+       (sha256
+        (base32 "1p1jica3fr4a5ilz1m2gxyzbapxjvgiw4v5rn90d5qgsmbp1hj42"))))
     (properties `((upstream-name . "ohoegdm")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -8711,12 +8711,12 @@ Balamuta, J. J. (In Press) <doi:10.1080/00273171.2021.1985949>.")
   (package
     (name "r-ohmmed")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "oHMMed" version))
-              (sha256
-               (base32
-                "114azwvl40rbkfir9ypgnsivjymlrfn72cwnqah7plwhq22llqvf"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oHMMed" version))
+       (sha256
+        (base32 "114azwvl40rbkfir9ypgnsivjymlrfn72cwnqah7plwhq22llqvf"))))
     (properties `((upstream-name . "oHMMed")))
     (build-system r-build-system)
     (propagated-inputs (list r-vcd
@@ -8748,12 +8748,12 @@ autocorrelation.")
   (package
     (name "r-ohit")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Ohit" version))
-              (sha256
-               (base32
-                "132d4drc2phw9ppxnczb1ycdg3dv085k8p6bcaj3v866j0hfxjgb"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Ohit" version))
+       (sha256
+        (base32 "132d4drc2phw9ppxnczb1ycdg3dv085k8p6bcaj3v866j0hfxjgb"))))
     (properties `((upstream-name . "Ohit")))
     (build-system r-build-system)
     (home-page "http://mx.nthu.edu.tw/~cking/pdf/IngLai2011.pdf")
@@ -8772,12 +8772,12 @@ a high-dimensional linear regression model via OGA+HDIC+Trim.")
   (package
     (name "r-ohenery")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ohenery" version))
-              (sha256
-               (base32
-                "0i7cc110c30y7dm86srh2xkikkmlr28mvy0kkjxywxmiwnrsmzjq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ohenery" version))
+       (sha256
+        (base32 "0i7cc110c30y7dm86srh2xkikkmlr28mvy0kkjxywxmiwnrsmzjq"))))
     (properties `((upstream-name . "ohenery")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-maxlik r-magrittr r-dplyr))
@@ -8793,12 +8793,12 @@ and Henery <doi:10.1111/j.2517-6161.1981.tb01153.x> models.")
   (package
     (name "r-ohcspackage")
     (version "0.1.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OHCSpackage" version))
-              (sha256
-               (base32
-                "0dr2yxz9amqq9mpl8skhdvs7w01zc4y3sw4wqs0iwj1pj9jb96fz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OHCSpackage" version))
+       (sha256
+        (base32 "0dr2yxz9amqq9mpl8skhdvs7w01zc4y3sw4wqs0iwj1pj9jb96fz"))))
     (properties `((upstream-name . "OHCSpackage")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-readr r-openxlsx r-dplyr))
@@ -8818,12 +8818,12 @@ streamline their data preparation processes.")
   (package
     (name "r-ogrdbstats")
     (version "0.5.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ogrdbstats" version))
-              (sha256
-               (base32
-                "140i4wippqr1260a1c4syg6lfspkf9q8rifnalf6iaaqx2bz4yfq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ogrdbstats" version))
+       (sha256
+        (base32 "140i4wippqr1260a1c4syg6lfspkf9q8rifnalf6iaaqx2bz4yfq"))))
     (properties `((upstream-name . "ogrdbstats")))
     (build-system r-build-system)
     (propagated-inputs (list r-tigger
@@ -8859,12 +8859,12 @@ provided is described in <doi:10.3389/fimmu.2019.00435>.")
   (package
     (name "r-oglmx")
     (version "3.0.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "oglmx" version))
-              (sha256
-               (base32
-                "13axmhbqhv4kkcdsdmp9r7p0d0kyqlsaqgyyllbkxlxb4hfz79b6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oglmx" version))
+       (sha256
+        (base32 "13axmhbqhv4kkcdsdmp9r7p0d0kyqlsaqgyyllbkxlxb4hfz79b6"))))
     (properties `((upstream-name . "oglmx")))
     (build-system r-build-system)
     (propagated-inputs (list r-maxlik))
@@ -8885,12 +8885,12 @@ included.")
   (package
     (name "r-ogi")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OGI" version))
-              (sha256
-               (base32
-                "0qw55jamkvdf3vfa5c0ygbymbs4d9q15dihiqz691hdfnyjvc2mk"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OGI" version))
+       (sha256
+        (base32 "0qw55jamkvdf3vfa5c0ygbymbs4d9q15dihiqz691hdfnyjvc2mk"))))
     (properties `((upstream-name . "OGI")))
     (build-system r-build-system)
     (propagated-inputs (list r-lpsolve))
@@ -8908,12 +8908,12 @@ correlated with each of the variates.  More details can be found in Sei (2016)
   (package
     (name "r-ofgem")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ofGEM" version))
-              (sha256
-               (base32
-                "0xdkl8k12an9pdy6i5nay4m2iakrwsp0lr3zl8gphii75j0ywz7k"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ofGEM" version))
+       (sha256
+        (base32 "0xdkl8k12an9pdy6i5nay4m2iakrwsp0lr3zl8gphii75j0ywz7k"))))
     (properties `((upstream-name . "ofGEM")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-forestplot r-compquadform))
@@ -8934,12 +8934,12 @@ meta-filtering.  It can also analyze data from multiple ethnic groups.")
   (package
     (name "r-offlinechange")
     (version "0.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "offlineChange" version))
-              (sha256
-               (base32
-                "005afrm4ki4zz3zkgrf8c1v9gf5cjhc5g50mjkqya3r8npaccwq2"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "offlineChange" version))
+       (sha256
+        (base32 "005afrm4ki4zz3zkgrf8c1v9gf5cjhc5g50mjkqya3r8npaccwq2"))))
     (properties `((upstream-name . "offlineChange")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -8957,12 +8957,12 @@ The method is based on Jie Ding, Yu Xiang, Lu Shen, Vahid Tarokh (2017)
   (package
     (name "r-officedown")
     (version "0.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "officedown" version))
-              (sha256
-               (base32
-                "0ymidhrnbk8z7ni4y0ngizyc7d3f35nmhmhpfqw8jg9faizich8z"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "officedown" version))
+       (sha256
+        (base32 "0ymidhrnbk8z7ni4y0ngizyc7d3f35nmhmhpfqw8jg9faizich8z"))))
     (properties `((upstream-name . "officedown")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -8994,12 +8994,12 @@ define placeholder where content is to be added.")
   (package
     (name "r-oews2021")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "oews2021" version))
-              (sha256
-               (base32
-                "0b03jqn7bz528qky6h35h3kxr6pnfqpllc4h2lgpf790slsfc054"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oews2021" version))
+       (sha256
+        (base32 "0b03jqn7bz528qky6h35h3kxr6pnfqpllc4h2lgpf790slsfc054"))))
     (properties `((upstream-name . "oews2021")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=oews2021")
@@ -9015,12 +9015,12 @@ national level.  Metropolitan data is not included.")
   (package
     (name "r-oews2020")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "oews2020" version))
-              (sha256
-               (base32
-                "0qan0dw6v25219xxij8ra36ccdvz21n4c1025dnb36rgb63wa3kg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oews2020" version))
+       (sha256
+        (base32 "0qan0dw6v25219xxij8ra36ccdvz21n4c1025dnb36rgb63wa3kg"))))
     (properties `((upstream-name . "oews2020")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=oews2020")
@@ -9036,12 +9036,12 @@ national level.  Metropolitan data is not included.")
   (package
     (name "r-oesr")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "oesr" version))
-              (sha256
-               (base32
-                "078jjvm9d0g8jaab0x2z4h7h8m2pznamiglhkwv07xc65cskjmpb"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oesr" version))
+       (sha256
+        (base32 "078jjvm9d0g8jaab0x2z4h7h8m2pznamiglhkwv07xc65cskjmpb"))))
     (properties `((upstream-name . "oesr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -9067,12 +9067,12 @@ Evaluation Sciences.")
   (package
     (name "r-oenokpm")
     (version "2.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OenoKPM" version))
-              (sha256
-               (base32
-                "0ppp8ijzgv6qvgjl7cnnp1zkcqnyx4h6gyk1f1qskr9izbz84sv6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OenoKPM" version))
+       (sha256
+        (base32 "0ppp8ijzgv6qvgjl7cnnp1zkcqnyx4h6gyk1f1qskr9izbz84sv6"))))
     (properties `((upstream-name . "OenoKPM")))
     (build-system r-build-system)
     (propagated-inputs (list r-openxlsx r-minpack-lm r-ggplot2))
@@ -9101,12 +9101,12 @@ production: Use of methodology for modeling\". <doi:10.1016/j.lwt.2020.109660>."
   (package
     (name "r-oem")
     (version "2.0.11")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "oem" version))
-              (sha256
-               (base32
-                "0p9s68zgma9mcjnz0xg6h07yp38rqj209asg18hji8528iazbv8g"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oem" version))
+       (sha256
+        (base32 "0p9s68zgma9mcjnz0xg6h07yp38rqj209asg18hji8528iazbv8g"))))
     (properties `((upstream-name . "oem")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen
@@ -9134,12 +9134,12 @@ code interface is described in Huling and Chien (2022)
   (package
     (name "r-oefpil")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OEFPIL" version))
-              (sha256
-               (base32
-                "0gnbbz2spaqlqqn7978l15jv7xiqpfrh8k9girrpdqih02x95rfw"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OEFPIL" version))
+       (sha256
+        (base32 "0gnbbz2spaqlqqn7978l15jv7xiqpfrh8k9girrpdqih02x95rfw"))))
     (properties `((upstream-name . "OEFPIL")))
     (build-system r-build-system)
     (propagated-inputs (list r-plyr
@@ -9163,12 +9163,12 @@ in KÃ¶ning, R., Wimmer, G. and @code{WitkovskÃ½}, V. (2014)
   (package
     (name "r-oecd")
     (version "0.2.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OECD" version))
-              (sha256
-               (base32
-                "13f185xvjlhxbg94vmnzvyddidxsbkvffjabp7jkg1zjl4x680s1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OECD" version))
+       (sha256
+        (base32 "13f185xvjlhxbg94vmnzvyddidxsbkvffjabp7jkg1zjl4x680s1"))))
     (properties `((upstream-name . "OECD")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-readsdmx r-httr))
@@ -9183,12 +9183,12 @@ Development (OECD).")
   (package
     (name "r-ods")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ODS" version))
-              (sha256
-               (base32
-                "0i7giibass7hadvv6mb7k9xrykgfss57jmm6gpbym8qcywhzq4ny"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ODS" version))
+       (sha256
+        (base32 "0i7giibass7hadvv6mb7k9xrykgfss57jmm6gpbym8qcywhzq4ny"))))
     (properties `((upstream-name . "ODS")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-cubature))
@@ -9217,12 +9217,12 @@ estimated likelihood method analyzing a secondary outcome in case-cohort data
   (package
     (name "r-odrf")
     (version "0.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ODRF" version))
-              (sha256
-               (base32
-                "017z7yr4r864cxvqyn14fxgmc2rgq01c95sbcmp6qg8dj03bcz53"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ODRF" version))
+       (sha256
+        (base32 "017z7yr4r864cxvqyn14fxgmc2rgq01c95sbcmp6qg8dj03bcz53"))))
     (properties `((upstream-name . "ODRF")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -9253,12 +9253,12 @@ of Breiman (1984) <DOI:10.1201/9781315139470> and Random Forest of Breiman
   (package
     (name "r-odr")
     (version "1.4.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "odr" version))
-              (sha256
-               (base32
-                "037v6523kbl0izfzyg6lp6h4r5p8w23dp8r1fpx07wyr34q2w8vn"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "odr" version))
+       (sha256
+        (base32 "037v6523kbl0izfzyg6lp6h4r5p8w23dp8r1fpx07wyr34q2w8vn"))))
     (properties `((upstream-name . "odr")))
     (build-system r-build-system)
     (native-inputs (list r-rmarkdown r-markdown r-knitr))
@@ -9288,12 +9288,12 @@ Available from <https://CRAN.R-project.org/package=pwr>.")
   (package
     (name "r-odpc")
     (version "2.0.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "odpc" version))
-              (sha256
-               (base32
-                "0cbkq8parb8br1j386xk5mgwz8gkmwvp79f9sjvzhs7z6wlbp0pv"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "odpc" version))
+       (sha256
+        (base32 "0cbkq8parb8br1j386xk5mgwz8gkmwvp79f9sjvzhs7z6wlbp0pv"))))
     (properties `((upstream-name . "odpc")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
@@ -9318,12 +9318,12 @@ squared error.")
   (package
     (name "r-odns")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "odns" version))
-              (sha256
-               (base32
-                "0a2ifmyrsfih5a7jwc0b6l9wl7c1s5x08fq5bfm27xm9jnb8fwsn"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "odns" version))
+       (sha256
+        (base32 "0a2ifmyrsfih5a7jwc0b6l9wl7c1s5x08fq5bfm27xm9jnb8fwsn"))))
     (properties `((upstream-name . "odns")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-httr r-glue r-data-table))
@@ -9340,12 +9340,12 @@ data.")
   (package
     (name "r-odmeans")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ODMeans" version))
-              (sha256
-               (base32
-                "1f8difw0npidsnn9sis8pf73i8p4p5cl63g4v02jaxmlmm184wvf"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ODMeans" version))
+       (sha256
+        (base32 "1f8difw0npidsnn9sis8pf73i8p4p5cl63g4v02jaxmlmm184wvf"))))
     (properties `((upstream-name . "ODMeans")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2 r-geosphere))
@@ -9364,12 +9364,12 @@ the origin and destination of each cluster.")
   (package
     (name "r-odk")
     (version "1.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "odk" version))
-              (sha256
-               (base32
-                "0fcnr4c1clwx1sk6fgg4cx506gdi90n2h05g0i47p4s5bra0qwwl"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "odk" version))
+       (sha256
+        (base32 "0fcnr4c1clwx1sk6fgg4cx506gdi90n2h05g0i47p4s5bra0qwwl"))))
     (properties `((upstream-name . "odk")))
     (build-system r-build-system)
     (propagated-inputs (list r-openxlsx r-gsheet))
@@ -9389,12 +9389,12 @@ submission_url'.")
   (package
     (name "r-odin")
     (version "1.2.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "odin" version))
-              (sha256
-               (base32
-                "0m8afhbpjdcdscgw7ngsdr7n8qpxicn3pqjrsjbwi4hrk5aii7ry"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "odin" version))
+       (sha256
+        (base32 "0m8afhbpjdcdscgw7ngsdr7n8qpxicn3pqjrsjbwi4hrk5aii7ry"))))
     (properties `((upstream-name . "odin")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -9428,12 +9428,12 @@ interpolation, and for integrating quantities that represent arrays.")
   (package
     (name "r-odetector")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "odetector" version))
-              (sha256
-               (base32
-                "094i6ykv3s0c5yhdnlgpkz1wb6pr9k6r3vsh7zgkxyy5iayi6dlv"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "odetector" version))
+       (sha256
+        (base32 "094i6ykv3s0c5yhdnlgpkz1wb6pr9k6r3vsh7zgkxyy5iayi6dlv"))))
     (properties `((upstream-name . "odetector")))
     (build-system r-build-system)
     (propagated-inputs (list r-ppclust))
@@ -9456,12 +9456,12 @@ partitioning clustering algorithms such as Fuzzy C-means and its variants.")
   (package
     (name "r-odesensitivity")
     (version "1.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ODEsensitivity" version))
-              (sha256
-               (base32
-                "0yddv5h3y0xfviqjgrbixawd00jc1rh9ngckfqka5j855vhchh66"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ODEsensitivity" version))
+       (sha256
+        (base32 "0yddv5h3y0xfviqjgrbixawd00jc1rh9ngckfqka5j855vhchh66"))))
     (properties `((upstream-name . "ODEsensitivity")))
     (build-system r-build-system)
     (propagated-inputs (list r-sensitivity r-odenetwork r-desolve r-checkmate))
@@ -9482,12 +9482,12 @@ ODEnetwork'.  A detailed plotting function provides outputs on the calculations.
   (package
     (name "r-odenetwork")
     (version "1.3.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ODEnetwork" version))
-              (sha256
-               (base32
-                "0wicp0xxqq3jl0kjhc26iqpk8rwa9nv2aiwf18pkgnqxbyw6lgnp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ODEnetwork" version))
+       (sha256
+        (base32 "0wicp0xxqq3jl0kjhc26iqpk8rwa9nv2aiwf18pkgnqxbyw6lgnp"))))
     (properties `((upstream-name . "ODEnetwork")))
     (build-system r-build-system)
     (propagated-inputs (list r-desolve r-checkmate))
@@ -9506,12 +9506,12 @@ method is described by Surmann, Ligges, and Weihs (2014)
   (package
     (name "r-odeintr")
     (version "1.7.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "odeintr" version))
-              (sha256
-               (base32
-                "0wfb5lgv10p0qyfbn9hdg14bda37v43lpgbwv6nbw63zzbsbazqi"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "odeintr" version))
+       (sha256
+        (base32 "0wfb5lgv10p0qyfbn9hdg14bda37v43lpgbwv6nbw63zzbsbazqi"))))
     (properties `((upstream-name . "odeintr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-bh))
@@ -9525,12 +9525,12 @@ method is described by Surmann, Ligges, and Weihs (2014)
   (package
     (name "r-odeguts")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "odeGUTS" version))
-              (sha256
-               (base32
-                "0ra9svfwdvsil5hqbmyxhnz80zm905v1m2lm8s5cbkjkfs5fsnls"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "odeGUTS" version))
+       (sha256
+        (base32 "0ra9svfwdvsil5hqbmyxhnz80zm905v1m2lm8s5cbkjkfs5fsnls"))))
     (properties `((upstream-name . "odeGUTS")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-tidyr r-magrittr r-dplyr r-desolve))
@@ -9550,12 +9550,12 @@ Singer and Philippe Veber (2021) <https://CRAN.R-project.org/package=morse>.")
   (package
     (name "r-oddstream")
     (version "0.5.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "oddstream" version))
-              (sha256
-               (base32
-                "1nwjw7fq6b4jdq4m2w0a7xgmzjg5a6pbma1d3r9msiz8rnhb0c54"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oddstream" version))
+       (sha256
+        (base32 "1nwjw7fq6b4jdq4m2w0a7xgmzjg5a6pbma1d3r9msiz8rnhb0c54"))))
     (properties `((upstream-name . "oddstream")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -9595,12 +9595,12 @@ Smith-Miles, K., et al. (2019) <doi:10.1080/10618600.2019.1617160>.")
   (package
     (name "r-oddsratio")
     (version "2.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "oddsratio" version))
-              (sha256
-               (base32
-                "1db0pxi5j18rvi8dyc2xx1im3l269775vpjjavapjcv2pylfg5r0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oddsratio" version))
+       (sha256
+        (base32 "1db0pxi5j18rvi8dyc2xx1im3l269775vpjjavapjcv2pylfg5r0"))))
     (properties `((upstream-name . "oddsratio")))
     (build-system r-build-system)
     (propagated-inputs (list r-mgcv r-ggplot2))
@@ -9626,12 +9626,12 @@ inserted into the smooth function plot.")
   (package
     (name "r-oddsplotty")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OddsPlotty" version))
-              (sha256
-               (base32
-                "0adgbrni7yrarybh0djmq68hifwqzn2rn9mfqgwqma1d7mg3ai93"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OddsPlotty" version))
+       (sha256
+        (base32 "0adgbrni7yrarybh0djmq68hifwqzn2rn9mfqgwqma1d7mg3ai93"))))
     (properties `((upstream-name . "OddsPlotty")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidymodels
@@ -9657,12 +9657,12 @@ of CARET's GLM model class, by returning the final trained model.")
   (package
     (name "r-oddsapir")
     (version "0.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "oddsapiR" version))
-              (sha256
-               (base32
-                "0vjmmbyxsnc40sv053s3jgwssxnn897kf5hkx1vbxrym7zx775k9"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oddsapiR" version))
+       (sha256
+        (base32 "0vjmmbyxsnc40sv053s3jgwssxnn897kf5hkx1vbxrym7zx775k9"))))
     (properties `((upstream-name . "oddsapiR")))
     (build-system r-build-system)
     (inputs (list pandoc pandoc))
@@ -9688,12 +9688,12 @@ from The Odds API <https://the-odds-api.com>.")
   (package
     (name "r-odds-n-ends")
     (version "0.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "odds.n.ends" version))
-              (sha256
-               (base32
-                "1md0m1z8a6jnmkjj2njngpqpasnvgngdxj57r3jc7jq356qzg707"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "odds.n.ends" version))
+       (sha256
+        (base32 "1md0m1z8a6jnmkjj2njngpqpasnvgngdxj57r3jc7jq356qzg707"))))
     (properties `((upstream-name . "odds.n.ends")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -9713,12 +9713,12 @@ value of the outcome.  Calculates model sensitivity and specificity.")
   (package
     (name "r-odds-converter")
     (version "1.4.8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "odds.converter" version))
-              (sha256
-               (base32
-                "09s8pg55gpsxmrbimzg5rsr1n07la93781sar6vab5p9zn9zxgx4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "odds.converter" version))
+       (sha256
+        (base32 "09s8pg55gpsxmrbimzg5rsr1n07la93781sar6vab5p9zn9zxgx4"))))
     (properties `((upstream-name . "odds.converter")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=odds.converter")
@@ -9733,12 +9733,12 @@ Probability are covered in this package.")
   (package
     (name "r-oddnet")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "oddnet" version))
-              (sha256
-               (base32
-                "00r6pl0s715gk7sybl725sriqdpddabxhnjjz4y51vzl5fwwfcyv"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oddnet" version))
+       (sha256
+        (base32 "00r6pl0s715gk7sybl725sriqdpddabxhnjjz4y51vzl5fwwfcyv"))))
     (properties `((upstream-name . "oddnet")))
     (build-system r-build-system)
     (propagated-inputs (list r-tsibble
@@ -9767,12 +9767,12 @@ are accounted for when identifying anomalies (Kandanaarachchi, Hyndman 2022)
   (package
     (name "r-odbc")
     (version "1.3.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "odbc" version))
-              (sha256
-               (base32
-                "0mvqf0my25djxvpx809rbm7484f0m6bpf8bqmg0c04avfiqg2c5i"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "odbc" version))
+       (sha256
+        (base32 "0mvqf0my25djxvpx809rbm7484f0m6bpf8bqmg0c04avfiqg2c5i"))))
     (properties `((upstream-name . "odbc")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -9792,12 +9792,12 @@ are accounted for when identifying anomalies (Kandanaarachchi, Hyndman 2022)
   (package
     (name "r-odb")
     (version "1.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ODB" version))
-              (sha256
-               (base32
-                "0frkbl99ilpmppm4fm97lbkqhmjgcwlz9j5vh5nzzcsxrh8qwicn"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ODB" version))
+       (sha256
+        (base32 "0frkbl99ilpmppm4fm97lbkqhmjgcwlz9j5vh5nzzcsxrh8qwicn"))))
     (properties `((upstream-name . "ODB")))
     (build-system r-build-system)
     (inputs (list zip))
@@ -9814,12 +9814,12 @@ databases embedded in Open Document Databases files, as @code{OpenOffice} and
   (package
     (name "r-odataquery")
     (version "0.5.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ODataQuery" version))
-              (sha256
-               (base32
-                "058j3rc5kh134ndsxn5gck2xh6llrs73cyxpa5z8zkmsw9am22qj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ODataQuery" version))
+       (sha256
+        (base32 "058j3rc5kh134ndsxn5gck2xh6llrs73cyxpa5z8zkmsw9am22qj"))))
     (properties `((upstream-name . "ODataQuery")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-r6 r-jsonlite r-httr))
@@ -9835,12 +9835,12 @@ be manipulated and provides features such as selection, filtering and ordering."
   (package
     (name "r-od")
     (version "0.4.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "od" version))
-              (sha256
-               (base32
-                "1mnf2dl3zj7zamibnv8ai0z2wbbwplzvjbzq3mswj6jc7386ja43"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "od" version))
+       (sha256
+        (base32 "1mnf2dl3zj7zamibnv8ai0z2wbbwplzvjbzq3mswj6jc7386ja43"))))
     (properties `((upstream-name . "od")))
     (build-system r-build-system)
     (propagated-inputs (list r-sfheaders))
@@ -9866,12 +9866,12 @@ between countries.")
   (package
     (name "r-octopusr")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "octopusR" version))
-              (sha256
-               (base32
-                "1hah1zphwrvj1kx344s9nxq8bw4q358fz9j487hi6dkfhjvg7j21"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "octopusR" version))
+       (sha256
+        (base32 "1hah1zphwrvj1kx344s9nxq8bw4q358fz9j487hi6dkfhjvg7j21"))))
     (properties `((upstream-name . "octopusR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -9894,12 +9894,12 @@ consumption data.")
   (package
     (name "r-octopus")
     (version "0.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "octopus" version))
-              (sha256
-               (base32
-                "1b71xjnjksz21v4dp0fwq90hsv09ab1wifz4x903qbgvbiv4ig8i"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "octopus" version))
+       (sha256
+        (base32 "1b71xjnjksz21v4dp0fwq90hsv09ab1wifz4x903qbgvbiv4ig8i"))))
     (properties `((upstream-name . "octopus")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinyjs
@@ -9926,12 +9926,12 @@ more.")
   (package
     (name "r-ocsdata")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OCSdata" version))
-              (sha256
-               (base32
-                "0119c2i9k63mbz40lbbf7x59nf4yyhrmaynn0m0sh1h3jjbsiazc"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OCSdata" version))
+       (sha256
+        (base32 "0119c2i9k63mbz40lbbf7x59nf4yyhrmaynn0m0sh1h3jjbsiazc"))))
     (properties `((upstream-name . "OCSdata")))
     (build-system r-build-system)
     (propagated-inputs (list r-usethis r-purrr r-httr))
@@ -9966,12 +9966,12 @@ README file at <https://github.com/opencasestudies/>.
   (package
     (name "r-ocs4r")
     (version "0.2-3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ocs4R" version))
-              (sha256
-               (base32
-                "09zl9jl1kzvyq0wccp41j32pr3as93qh250iaawhwkpcswjpyl89"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ocs4R" version))
+       (sha256
+        (base32 "09zl9jl1kzvyq0wccp41j32pr3as93qh250iaawhwkpcswjpyl89"))))
     (properties `((upstream-name . "ocs4R")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
@@ -9992,12 +9992,12 @@ README file at <https://github.com/opencasestudies/>.
   (package
     (name "r-ocp")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ocp" version))
-              (sha256
-               (base32
-                "0q52s8j3z3xwnma3sxx6019qxid66bf0a43w4g8xjagplwps57dx"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ocp" version))
+       (sha256
+        (base32 "0q52s8j3z3xwnma3sxx6019qxid66bf0a43w4g8xjagplwps57dx"))))
     (properties `((upstream-name . "ocp")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -10015,12 +10015,12 @@ changepoints.")
   (package
     (name "r-ocomposition")
     (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ocomposition" version))
-              (sha256
-               (base32
-                "0fk8ia95yjlvyvmjw7qg72piqa40kcqq9wlb3flc6a81pys1ycb5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ocomposition" version))
+       (sha256
+        (base32 "0fk8ia95yjlvyvmjw7qg72piqa40kcqq9wlb3flc6a81pys1ycb5"))))
     (properties `((upstream-name . "ocomposition")))
     (build-system r-build-system)
     (propagated-inputs (list r-coda r-bayesm))
@@ -10037,12 +10037,12 @@ methods.")
   (package
     (name "r-oclust")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "oclust" version))
-              (sha256
-               (base32
-                "08247vcjs7hhzbj69f2x39n5y5ycns0qd7pdlvpwyn4j7yd1ji31"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oclust" version))
+       (sha256
+        (base32 "08247vcjs7hhzbj69f2x39n5y5ycns0qd7pdlvpwyn4j7yd1ji31"))))
     (properties `((upstream-name . "oclust")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm
@@ -10063,12 +10063,12 @@ model-based clustering using methods described in Clark and @code{McNicholas}
   (package
     (name "r-ockc")
     (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ockc" version))
-              (sha256
-               (base32
-                "1iqv9vjdcv96a8k5ccrh6r3jpjq39g4g0qjhb4hzvfv17p28rpcb"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ockc" version))
+       (sha256
+        (base32 "1iqv9vjdcv96a8k5ccrh6r3jpjq39g4g0qjhb4hzvfv17p28rpcb"))))
     (properties `((upstream-name . "ockc")))
     (build-system r-build-system)
     (propagated-inputs (list r-modeltools r-flexclust))
@@ -10083,12 +10083,12 @@ k-means clustering (Steinley and Hubert, 2008, <doi:10.1007/s11336-008-9058-z>).
   (package
     (name "r-ocf")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ocf" version))
-              (sha256
-               (base32
-                "04d0j863a2zqj3v9s9iwlc4v7fxpp6cydpphxcfr6n22f8ciq5bd"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ocf" version))
+       (sha256
+        (base32 "04d0j863a2zqj3v9s9iwlc4v7fxpp6cydpphxcfr6n22f8ciq5bd"))))
     (properties `((upstream-name . "ocf")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -10113,12 +10113,12 @@ effects.")
   (package
     (name "r-ocedata")
     (version "0.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ocedata" version))
-              (sha256
-               (base32
-                "0yj90gaaacq6d53di2vz23za5sz9wy2j626ib3cbdhvxg731pizk"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ocedata" version))
+       (sha256
+        (base32 "0yj90gaaacq6d53di2vz23za5sz9wy2j626ib3cbdhvxg731pizk"))))
     (properties `((upstream-name . "ocedata")))
     (build-system r-build-system)
     (home-page "https://dankelley.github.io/ocedata/")
@@ -10132,12 +10132,12 @@ other purposes.")
   (package
     (name "r-ocecens")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "oceCens" version))
-              (sha256
-               (base32
-                "1ckp89n22scmjli30x99iaxgyk41a27v1n9gxjp9n29y66lw71nb"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oceCens" version))
+       (sha256
+        (base32 "1ckp89n22scmjli30x99iaxgyk41a27v1n9gxjp9n29y66lw71nb"))))
     (properties `((upstream-name . "oceCens")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival))
@@ -10154,12 +10154,12 @@ Hamasaki, and Evans (2020)<doi:10.1002/sim.7890>.")
   (package
     (name "r-oceanwaves")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "oceanwaves" version))
-              (sha256
-               (base32
-                "1v4gj4ippv1l3r77z2ic19x5zi5lpsh5wihaqay3264zhpb3kv9a"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oceanwaves" version))
+       (sha256
+        (base32 "1v4gj4ippv1l3r77z2ic19x5zi5lpsh5wihaqay3264zhpb3kv9a"))))
     (properties `((upstream-name . "oceanwaves")))
     (build-system r-build-system)
     (propagated-inputs (list r-signal r-ggplot2 r-bspec))
@@ -10180,12 +10180,12 @@ Waterway, Port, Coastal, and Ocean Division, Vol 105, pp 457-459.")
   (package
     (name "r-oceanview")
     (version "1.0.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OceanView" version))
-              (sha256
-               (base32
-                "1ww6xhpvs3y0zx7pgj8083a8v4l4cm0b0b497b4gsjbcbnbnal9c"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OceanView" version))
+       (sha256
+        (base32 "1ww6xhpvs3y0zx7pgj8083a8v4l4cm0b0b497b4gsjbcbnbnal9c"))))
     (properties `((upstream-name . "OceanView")))
     (build-system r-build-system)
     (propagated-inputs (list r-shape r-rgl r-plot3drgl r-plot3d))
@@ -10201,12 +10201,12 @@ Waterway, Port, Coastal, and Ocean Division, Vol 105, pp 457-459.")
   (package
     (name "r-oceanmap")
     (version "0.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "oceanmap" version))
-              (sha256
-               (base32
-                "1z80dsyk1r3xg8ag8ka74y0z7m608hpppjn62rclzy0nilyyx45q"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oceanmap" version))
+       (sha256
+        (base32 "1z80dsyk1r3xg8ag8ka74y0z7m608hpppjn62rclzy0nilyyx45q"))))
     (properties `((upstream-name . "oceanmap")))
     (build-system r-build-system)
     (inputs (list imagemagick))
@@ -10238,12 +10238,12 @@ formats include netcdf, Raster, .nc and .gz files.")
   (package
     (name "r-oceanis")
     (version "1.8.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "oceanis" version))
-              (sha256
-               (base32
-                "13zdzqjlf5pihji6np9a3m2j5ycy4jvfl75knzry2ir78zr9ngj7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oceanis" version))
+       (sha256
+        (base32 "13zdzqjlf5pihji6np9a3m2j5ycy4jvfl75knzry2ir78zr9ngj7"))))
     (properties `((upstream-name . "oceanis")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -10279,12 +10279,12 @@ technology). - Create frozen maps with the possibility to add labels.")
   (package
     (name "r-oceanic")
     (version "0.1.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "oceanic" version))
-              (sha256
-               (base32
-                "12lrn13xfrxny8nqhjh5qg61bx1y8akyqxf7slbpg9npbwp04f1n"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oceanic" version))
+       (sha256
+        (base32 "12lrn13xfrxny8nqhjh5qg61bx1y8akyqxf7slbpg9npbwp04f1n"))))
     (properties `((upstream-name . "oceanic")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdata
@@ -10306,12 +10306,12 @@ refer to Flanders Marine Institute (2020) <doi:10.14284/403>.")
   (package
     (name "r-oceanexplorer")
     (version "0.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "oceanexplorer" version))
-              (sha256
-               (base32
-                "1n8lxhnq7asfjlpgjs3xwngnc9dyk4q5yb2jn0kpb87i214z68hs"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oceanexplorer" version))
+       (sha256
+        (base32 "1n8lxhnq7asfjlpgjs3xwngnc9dyk4q5yb2jn0kpb87i214z68hs"))))
     (properties `((upstream-name . "oceanexplorer")))
     (build-system r-build-system)
     (propagated-inputs (list r-waiter
@@ -10351,12 +10351,12 @@ found here: <https://www.ncei.noaa.gov/products/world-ocean-atlas>.")
   (package
     (name "r-oce")
     (version "1.8-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "oce" version))
-              (sha256
-               (base32
-                "0ryykzrlmqipqnjizxzyq084kibpfxid9m7k287ycfmli1d0m492"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oce" version))
+       (sha256
+        (base32 "0ryykzrlmqipqnjizxzyq084kibpfxid9m7k287ycfmli1d0m492"))))
     (properties `((upstream-name . "oce")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-gsw))
@@ -10378,12 +10378,12 @@ is discussed extensively by Kelley (2018) \"Oceanographic Analysis with R\"
   (package
     (name "r-ocd")
     (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ocd" version))
-              (sha256
-               (base32
-                "06pyc352pvn85k76z9797gwk0ksbb3snvh6krysp68k3lcygq872"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ocd" version))
+       (sha256
+        (base32 "06pyc352pvn85k76z9797gwk0ksbb3snvh6krysp68k3lcygq872"))))
     (properties `((upstream-name . "ocd")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=ocd")
@@ -10399,13 +10399,13 @@ and Chan (2017) <doi:10.1214/17-AOS1546>.")
 (define-public r-occupationmeasurement
   (package
     (name "r-occupationmeasurement")
-    (version "0.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "occupationMeasurement" version))
-              (sha256
-               (base32
-                "0dq6x0wvwxc7lixww7v78z4a93wk1j1my6d0z816bwsvris7j6d5"))))
+    (version "0.3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "occupationMeasurement" version))
+       (sha256
+        (base32 "03kq8sbcbb1swnc7rl2qqzmvlhfb7n5ba8q546v657cm35h15rr9"))))
     (properties `((upstream-name . "occupationMeasurement")))
     (build-system r-build-system)
     (propagated-inputs (list r-tm
@@ -10432,12 +10432,12 @@ a ready-to-use shiny application provided for quick and easy data collection.")
   (package
     (name "r-occupancy")
     (version "1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "occupancy" version))
-              (sha256
-               (base32
-                "0j50vg1405n1hp72xqsq1hp3gdbfx5yq9w1zdv6dzjc6vjhbx00d"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "occupancy" version))
+       (sha256
+        (base32 "0j50vg1405n1hp72xqsq1hp3gdbfx5yq9w1zdv6dzjc6vjhbx00d"))))
     (properties `((upstream-name . "occupancy")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrixstats))
@@ -10455,12 +10455,12 @@ distributions are implemented as described in OâNeill (2019)
   (package
     (name "r-occuncertain")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "occUncertain" version))
-              (sha256
-               (base32
-                "0rlcwiy45kx9168g7bf1hkz9rkbpfgn7b085lzksg97f05hij52z"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "occUncertain" version))
+       (sha256
+        (base32 "0rlcwiy45kx9168g7bf1hkz9rkbpfgn7b085lzksg97f05hij52z"))))
     (properties `((upstream-name . "occUncertain")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgdal r-knitr r-conr))
@@ -10487,12 +10487,12 @@ repetitions to quantify EOO and AOO with attribute uncertainty.")
   (package
     (name "r-occumb")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "occumb" version))
-              (sha256
-               (base32
-                "112ysm4z19cickg3idsqwrv0jbhx5azy2gjkl4ga18shmzxk4339"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "occumb" version))
+       (sha256
+        (base32 "112ysm4z19cickg3idsqwrv0jbhx5azy2gjkl4ga18shmzxk4339"))))
     (properties `((upstream-name . "occumb")))
     (build-system r-build-system)
     (inputs (list jags))
@@ -10512,12 +10512,12 @@ an efficient survey design.  Reference: Fukaya et al. (2022)
   (package
     (name "r-occcite")
     (version "0.5.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "occCite" version))
-              (sha256
-               (base32
-                "08bc0pi2i2fmc9fcmir150b7g8jnd58q3qaakw2gk25yjy14rp7j"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "occCite" version))
+       (sha256
+        (base32 "08bc0pi2i2fmc9fcmir150b7g8jnd58q3qaakw2gk25yjy14rp7j"))))
     (properties `((upstream-name . "occCite")))
     (build-system r-build-system)
     (propagated-inputs (list r-waffle
@@ -10552,12 +10552,12 @@ enhanced ability to repeat analyses.")
   (package
     (name "r-occ")
     (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "occ" version))
-              (sha256
-               (base32
-                "1aka29qqwbd494kvi15yyyqkb9hks4ky2gcvykxhx2drm2fnsn4g"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "occ" version))
+       (sha256
+        (base32 "1aka29qqwbd494kvi15yyyqkb9hks4ky2gcvykxhx2drm2fnsn4g"))))
     (properties `((upstream-name . "occ")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=occ")
@@ -10574,12 +10574,12 @@ efficient restricted maximum likelihood estimation'.")
   (package
     (name "r-oca")
     (version "0.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OCA" version))
-              (sha256
-               (base32
-                "19bayggqkzzpvn7ax8m8xgvz27a03iyybsxjz2vphf03dwsr8c5h"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OCA" version))
+       (sha256
+        (base32 "19bayggqkzzpvn7ax8m8xgvz27a03iyybsxjz2vphf03dwsr8c5h"))))
     (properties `((upstream-name . "OCA")))
     (build-system r-build-system)
     (propagated-inputs (list r-mathjaxr))
@@ -10598,12 +10598,12 @@ Shortfall, using both the normal and the t-student distribution, see Urbina and
   (package
     (name "r-oc")
     (version "1.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "oc" version))
-              (sha256
-               (base32
-                "0g4ij5g2xkkd73srm21b2xc170rgwbdsdx2qjkp3pr30axb0bf91"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oc" version))
+       (sha256
+        (base32 "0g4ij5g2xkkd73srm21b2xc170rgwbdsdx2qjkp3pr30axb0bf91"))))
     (properties `((upstream-name . "oc")))
     (build-system r-build-system)
     (propagated-inputs (list r-pscl))
@@ -10620,12 +10620,12 @@ though a rollcall object from package pscl'.")
   (package
     (name "r-obssens")
     (version "1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "obsSens" version))
-              (sha256
-               (base32
-                "07dvz3v580yliwqvfisgvzvg8ly9nw3r4y5bmwkmgphbfmh88635"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "obsSens" version))
+       (sha256
+        (base32 "07dvz3v580yliwqvfisgvzvg8ly9nw3r4y5bmwkmgphbfmh88635"))))
     (properties `((upstream-name . "obsSens")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=obsSens")
@@ -10644,12 +10644,12 @@ sensitivity analysis for regression (linear, logistic, and cox) style models.")
   (package
     (name "r-observer")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "observer" version))
-              (sha256
-               (base32
-                "1027827k57qb4xppx0xxxffd1s3n7pz754irdx3v1v3piix8xi8m"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "observer" version))
+       (sha256
+        (base32 "1027827k57qb4xppx0xxxffd1s3n7pz754irdx3v1v3piix8xi8m"))))
     (properties `((upstream-name . "observer")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -10670,12 +10670,12 @@ observe_if() and inspect().")
   (package
     (name "r-observation")
     (version "0.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Observation" version))
-              (sha256
-               (base32
-                "1z9ldp050f7jy76s8yk509nwjx1ymvk5k9d19i67brd7xcawxnr3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Observation" version))
+       (sha256
+        (base32 "1z9ldp050f7jy76s8yk509nwjx1ymvk5k9d19i67brd7xcawxnr3"))))
     (properties `((upstream-name . "Observation")))
     (build-system r-build-system)
     (propagated-inputs (list r-svdialogs))
@@ -10693,12 +10693,12 @@ described by Hibbing PR, Ellingson LD, Dixon PM, & Welk GJ (2018)
   (package
     (name "r-obre")
     (version "0.2-0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OBRE" version))
-              (sha256
-               (base32
-                "1x1s46yffjr140mwx8amnh02k6g8x2gz5hz7lypiwxh0v7a8bm8w"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OBRE" version))
+       (sha256
+        (base32 "1x1s46yffjr140mwx8amnh02k6g8x2gz5hz7lypiwxh0v7a8bm8w"))))
     (properties `((upstream-name . "OBRE")))
     (build-system r-build-system)
     (propagated-inputs (list r-pracma))
@@ -10716,12 +10716,12 @@ using a closed formula.")
   (package
     (name "r-obmbpkg")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OBMbpkg" version))
-              (sha256
-               (base32
-                "01wch8wwij3fd0jambk0hpkhlnp4ryrq8qnnr2w1iad9zssjyii5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OBMbpkg" version))
+       (sha256
+        (base32 "01wch8wwij3fd0jambk0hpkhlnp4ryrq8qnnr2w1iad9zssjyii5"))))
     (properties `((upstream-name . "OBMbpkg")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=OBMbpkg")
@@ -10740,12 +10740,12 @@ the probability of subsequent captures due to their becoming \"trap happy\" or
   (package
     (name "r-obliquersf")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "obliqueRSF" version))
-              (sha256
-               (base32
-                "1y9bkhwlb9aabfvnz62cg128c242hd1qdrwmmf6i76yfg0b0w10k"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "obliqueRSF" version))
+       (sha256
+        (base32 "1y9bkhwlb9aabfvnz62cg128c242hd1qdrwmmf6i76yfg0b0w10k"))))
     (properties `((upstream-name . "obliqueRSF")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -10777,12 +10777,12 @@ combinations of input variables.")
   (package
     (name "r-oblicubes")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "oblicubes" version))
-              (sha256
-               (base32
-                "0656dfaz19bmcaiqh988lryj5gql39q8pwnl6c9fab07wwd85w3k"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oblicubes" version))
+       (sha256
+        (base32 "0656dfaz19bmcaiqh988lryj5gql39q8pwnl6c9fab07wwd85w3k"))))
     (properties `((upstream-name . "oblicubes")))
     (build-system r-build-system)
     (native-inputs (list r-rmarkdown r-knitr))
@@ -10799,12 +10799,12 @@ isocubes package <https://github.com/coolbutuseless/isocubes>.")
   (package
     (name "r-obl")
     (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OBL" version))
-              (sha256
-               (base32
-                "06icw1dnmavgaf51fs2nfi6582cpjrnlii1j9s62nwnwfnqw00v3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OBL" version))
+       (sha256
+        (base32 "06icw1dnmavgaf51fs2nfi6582cpjrnlii1j9s62nwnwfnqw00v3"))))
     (properties `((upstream-name . "OBL")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -10824,12 +10824,12 @@ isocubes package <https://github.com/coolbutuseless/isocubes>.")
   (package
     (name "r-objectsignals")
     (version "0.10.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "objectSignals" version))
-              (sha256
-               (base32
-                "087hknxhw3zqxrzdazbqw9zxi01dvrzcgm6k1i7r231vvvm6nxid"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "objectSignals" version))
+       (sha256
+        (base32 "087hknxhw3zqxrzdazbqw9zxi01dvrzcgm6k1i7r231vvvm6nxid"))))
     (properties `((upstream-name . "objectSignals")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=objectSignals")
@@ -10845,12 +10845,12 @@ buffered.")
   (package
     (name "r-objectremover")
     (version "0.8.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "objectremover" version))
-              (sha256
-               (base32
-                "0qywigwb6r5lzvw8ylgriwignk4ayfkvfnmc6cb1yxsg0hrc4hiv"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "objectremover" version))
+       (sha256
+        (base32 "0qywigwb6r5lzvw8ylgriwignk4ayfkvfnmc6cb1yxsg0hrc4hiv"))))
     (properties `((upstream-name . "objectremover")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-miniui))
@@ -10869,12 +10869,12 @@ management within R is important.")
   (package
     (name "r-objectproperties")
     (version "0.6.8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "objectProperties" version))
-              (sha256
-               (base32
-                "02rbxp2w0q6sr3zvgj99a4hi8dldn57isvimfhqjm1j8yc8p3afz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "objectProperties" version))
+       (sha256
+        (base32 "02rbxp2w0q6sr3zvgj99a4hi8dldn57isvimfhqjm1j8yc8p3afz"))))
     (properties `((upstream-name . "objectProperties")))
     (build-system r-build-system)
     (propagated-inputs (list r-objectsignals))
@@ -10891,12 +10891,12 @@ defining enumerated types, as well as other bounded types, as S4 classes.")
   (package
     (name "r-obic")
     (version "2.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OBIC" version))
-              (sha256
-               (base32
-                "0yrgnrhxn5nv0gbhzj2psskr12yaygv7bns64al1cgk18dlrsgb0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OBIC" version))
+       (sha256
+        (base32 "0yrgnrhxn5nv0gbhzj2psskr12yaygv7bns64al1cgk18dlrsgb0"))))
     (properties `((upstream-name . "OBIC")))
     (build-system r-build-system)
     (propagated-inputs (list r-data-table r-checkmate))
@@ -10918,12 +10918,12 @@ OBI. More information about the Open Bodem Index can be found at
   (package
     (name "r-obfuscator")
     (version "0.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "obfuscatoR" version))
-              (sha256
-               (base32
-                "1scd63giywfbvpynbxbk0kq01rwhx62416dibs5gky15dxfcsvmk"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "obfuscatoR" version))
+       (sha256
+        (base32 "1scd63giywfbvpynbxbk0kq01rwhx62416dibs5gky15dxfcsvmk"))))
     (properties `((upstream-name . "obfuscatoR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -10949,12 +10949,12 @@ Social Sciences, 109, 28-44, <doi:10.1016/j.mathsocsci.2020.10.002>.")
   (package
     (name "r-obcost")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "obcost" version))
-              (sha256
-               (base32
-                "1i2a4xzgagx9f8fs1jh9pgmvsd7hkyhhr3dj349fijbis6fvq6v5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "obcost" version))
+       (sha256
+        (base32 "1i2a4xzgagx9f8fs1jh9pgmvsd7hkyhhr3dj349fijbis6fvq6v5"))))
     (properties `((upstream-name . "obcost")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-dplyr))
@@ -10987,12 +10987,12 @@ are data_load(), data_produce(), and rel_risk_fun().")
   (package
     (name "r-obaspatial")
     (version "1.9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OBASpatial" version))
-              (sha256
-               (base32
-                "13jx5f5piii9cys7xyhfwilyg87zsi632fscy8902mlhbgg7abkp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OBASpatial" version))
+       (sha256
+        (base32 "13jx5f5piii9cys7xyhfwilyg87zsi632fscy8902mlhbgg7abkp"))))
     (properties `((upstream-name . "OBASpatial")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncdist
@@ -11016,12 +11016,12 @@ et al. (2020) <@code{arXiv:2004.04341>}.")
   (package
     (name "r-obanalytics")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "obAnalytics" version))
-              (sha256
-               (base32
-                "1l4ld120qk0adycmvqrkzada10kb7z03lj2njzqagmacl1z8598f"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "obAnalytics" version))
+       (sha256
+        (base32 "1l4ld120qk0adycmvqrkzada10kb7z03lj2njzqagmacl1z8598f"))))
     (properties `((upstream-name . "obAnalytics")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-reshape2 r-ggplot2))
@@ -11036,12 +11036,12 @@ et al. (2020) <@code{arXiv:2004.04341>}.")
   (package
     (name "r-oaxaca")
     (version "0.1.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "oaxaca" version))
-              (sha256
-               (base32
-                "1z3sbkgzaqq6n1bz0f17gqrbfjbm8bp20384ryx3jq2v50b6gbry"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oaxaca" version))
+       (sha256
+        (base32 "1z3sbkgzaqq6n1bz0f17gqrbfjbm8bp20384ryx3jq2v50b6gbry"))))
     (properties `((upstream-name . "oaxaca")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2 r-ggplot2 r-formula))
@@ -11056,12 +11056,12 @@ models.")
   (package
     (name "r-oasisr")
     (version "3.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OasisR" version))
-              (sha256
-               (base32
-                "0jni6l3fbrd3pz34lis6zf6pqm3r29z32mxvkdfp4x9ncg68dlrs"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OasisR" version))
+       (sha256
+        (base32 "0jni6l3fbrd3pz34lis6zf6pqm3r29z32mxvkdfp4x9ncg68dlrs"))))
     (properties `((upstream-name . "OasisR")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdep
@@ -11082,12 +11082,12 @@ segregation.")
   (package
     (name "r-oarray")
     (version "1.4-9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Oarray" version))
-              (sha256
-               (base32
-                "04jng89s19rd8lbjm76wm4p4ggkffwnsa5qa60c4lwn2rj89a8a1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Oarray" version))
+       (sha256
+        (base32 "04jng89s19rd8lbjm76wm4p4ggkffwnsa5qa60c4lwn2rj89a8a1"))))
     (properties `((upstream-name . "Oarray")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=Oarray")
@@ -11099,12 +11099,12 @@ segregation.")
   (package
     (name "r-oaqc")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "oaqc" version))
-              (sha256
-               (base32
-                "1rc0l79xygmr2rp5sjadzigbj65a13z5xlvrxzy26cl0wsxwhmjf"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oaqc" version))
+       (sha256
+        (base32 "1rc0l79xygmr2rp5sjadzigbj65a13z5xlvrxzy26cl0wsxwhmjf"))))
     (properties `((upstream-name . "oaqc")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -11122,12 +11122,12 @@ orbit-aware counts are computed respective each of the edges and nodes.")
   (package
     (name "r-oaplots")
     (version "0.0.25")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "oaPlots" version))
-              (sha256
-               (base32
-                "0c5ig1ar02vg38pjjmp3gd53ij1j7pzajs0zrlfajz141qkv2ysr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oaPlots" version))
+       (sha256
+        (base32 "0c5ig1ar02vg38pjjmp3gd53ij1j7pzajs0zrlfajz141qkv2ysr"))))
     (properties `((upstream-name . "oaPlots")))
     (build-system r-build-system)
     (propagated-inputs (list r-oacolors r-ggplot2))
@@ -11140,12 +11140,12 @@ orbit-aware counts are computed respective each of the edges and nodes.")
   (package
     (name "r-oaiharvester")
     (version "0.3-4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OAIHarvester" version))
-              (sha256
-               (base32
-                "0b5v275w0c7y073fgwiy966djrw6p1zggzqlywa2fsdn2p0aq56w"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OAIHarvester" version))
+       (sha256
+        (base32 "0b5v275w0c7y073fgwiy966djrw6p1zggzqlywa2fsdn2p0aq56w"))))
     (properties `((upstream-name . "OAIHarvester")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-curl))
@@ -11161,12 +11161,12 @@ Harvesting (OAI-PMH) version 2.0 (for more information, see
   (package
     (name "r-oacolors")
     (version "0.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "oaColors" version))
-              (sha256
-               (base32
-                "040sdqrk9dciylnnrrshlj06s9qhvngii9shx1p8412ip7mk8r1m"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oaColors" version))
+       (sha256
+        (base32 "040sdqrk9dciylnnrrshlj06s9qhvngii9shx1p8412ip7mk8r1m"))))
     (properties `((upstream-name . "oaColors")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcolorbrewer r-mass))
@@ -11181,12 +11181,12 @@ Harvesting (OAI-PMH) version 2.0 (for more information, see
   (package
     (name "r-o2plsda")
     (version "0.0.18")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "o2plsda" version))
-              (sha256
-               (base32
-                "17dmb82q4g7lspvrvrz9324qinkr07vlhxsr2vd5ikj7cqxivgmv"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "o2plsda" version))
+       (sha256
+        (base32 "17dmb82q4g7lspvrvrz9324qinkr07vlhxsr2vd5ikj7cqxivgmv"))))
     (properties `((upstream-name . "o2plsda")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
@@ -11214,12 +11214,12 @@ specific for each data set separately.")
   (package
     (name "r-o2geosocial")
     (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "o2geosocial" version))
-              (sha256
-               (base32
-                "158nbc45h4k677lgx9n976d9kz7hy8fb7z5s2v6pmkmh521jdn2a"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "o2geosocial" version))
+       (sha256
+        (base32 "158nbc45h4k677lgx9n976d9kz7hy8fb7z5s2v6pmkmh521jdn2a"))))
     (properties `((upstream-name . "o2geosocial")))
     (build-system r-build-system)
     (propagated-inputs (list r-visnetwork

@@ -37,12 +37,12 @@
   (package
     (name "r-yum")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "yum" version))
-              (sha256
-               (base32
-                "1k9q34n1pzv4c7hp7cd4yhm8v1qv41an8vfh65n4byvyzipxp85y"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "yum" version))
+       (sha256
+        (base32 "1k9q34n1pzv4c7hp7cd4yhm8v1qv41an8vfh65n4byvyzipxp85y"))))
     (properties `((upstream-name . "yum")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml))
@@ -64,12 +64,12 @@ functionality).")
   (package
     (name "r-yuimagui")
     (version "1.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "yuimaGUI" version))
-              (sha256
-               (base32
-                "1sl45kmqqq7hg3lkpn3cy70f409fwsgg76gjldx1l4cvmyzyf9hl"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "yuimaGUI" version))
+       (sha256
+        (base32 "1sl45kmqqq7hg3lkpn3cy70f409fwsgg76gjldx1l4cvmyzyf9hl"))))
     (properties `((upstream-name . "yuimaGUI")))
     (build-system r-build-system)
     (propagated-inputs (list r-yuima
@@ -93,12 +93,12 @@ functionality).")
   (package
     (name "r-yuima")
     (version "1.15.22")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "yuima" version))
-              (sha256
-               (base32
-                "04qhb8w0f5ix4f99lsfcnfkx0xpwn12rfdvkg1fk484n0l7gli0r"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "yuima" version))
+       (sha256
+        (base32 "04qhb8w0f5ix4f99lsfcnfkx0xpwn12rfdvkg1fk484n0l7gli0r"))))
     (properties `((upstream-name . "yuima")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -121,12 +121,12 @@ functionality).")
   (package
     (name "r-ytanalytics")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "YTAnalytics" version))
-              (sha256
-               (base32
-                "1kvw5p0fy3vqvlqwg2dnvpkq21rmf3c3xl46b2a9lifnr9fpncgk"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "YTAnalytics" version))
+       (sha256
+        (base32 "1kvw5p0fy3vqvlqwg2dnvpkq21rmf3c3xl46b2a9lifnr9fpncgk"))))
     (properties `((upstream-name . "YTAnalytics")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-httr r-dplyr))
@@ -143,12 +143,12 @@ period, location, and other data quickly and efficiently.  For working with the
   (package
     (name "r-yrmisc")
     (version "0.1.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "YRmisc" version))
-              (sha256
-               (base32
-                "1crms7dqmhj7br1a5p5j0j7p6sdfimnip31207i6g24f9jkkysv1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "YRmisc" version))
+       (sha256
+        (base32 "1crms7dqmhj7br1a5p5j0j7p6sdfimnip31207i6g24f9jkkysv1"))))
     (properties `((upstream-name . "YRmisc")))
     (build-system r-build-system)
     (propagated-inputs (list r-gridextra r-ggplot2))
@@ -166,12 +166,12 @@ analysis.")
   (package
     (name "r-ypssc")
     (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ypssc" version))
-              (sha256
-               (base32
-                "0fpph19amj1cafcbh5k6s75pi7nahzgfvnsbs9i5644gv43iavbj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ypssc" version))
+       (sha256
+        (base32 "0fpph19amj1cafcbh5k6s75pi7nahzgfvnsbs9i5644gv43iavbj"))))
     (properties `((upstream-name . "ypssc")))
     (build-system r-build-system)
     (propagated-inputs (list r-svdialogs
@@ -197,12 +197,12 @@ proteins.")
   (package
     (name "r-ypr")
     (version "0.6.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ypr" version))
-              (sha256
-               (base32
-                "0hn4zbg270p8yg4wxcszwfc0vsf2mb21lkqi1745000rh5cbz8sa"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ypr" version))
+       (sha256
+        (base32 "0hn4zbg270p8yg4wxcszwfc0vsf2mb21lkqi1745000rh5cbz8sa"))))
     (properties `((upstream-name . "ypr")))
     (build-system r-build-system)
     (propagated-inputs (list r-yesno
@@ -227,12 +227,12 @@ or just large (trophy) individuals.")
   (package
     (name "r-yppe")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "YPPE" version))
-              (sha256
-               (base32
-                "01q0l22nwfpld2wcygk5x28c2c6cv35hxy2fm1azn8bqsv7xy5il"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "YPPE" version))
+       (sha256
+        (base32 "01q0l22nwfpld2wcygk5x28c2c6cv35hxy2fm1azn8bqsv7xy5il"))))
     (properties `((upstream-name . "YPPE")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -260,12 +260,12 @@ for the crossing survival times.")
   (package
     (name "r-ypmodelphreg")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "YPmodelPhreg" version))
-              (sha256
-               (base32
-                "1bgzibrqdwsy93zscffmbjgxnnl3axip9l4amfp0g5517p7i78hp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "YPmodelPhreg" version))
+       (sha256
+        (base32 "1bgzibrqdwsy93zscffmbjgxnnl3axip9l4amfp0g5517p7i78hp"))))
     (properties `((upstream-name . "YPmodelPhreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival))
@@ -292,12 +292,12 @@ hazard ratio function with point-wise and simultaneous confidence bands.")
   (package
     (name "r-ypmodel")
     (version "1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "YPmodel" version))
-              (sha256
-               (base32
-                "177rzbd8k0356b8z2sbvl3x5cg2w9kr8ryf36laqijyayhcik093"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "YPmodel" version))
+       (sha256
+        (base32 "177rzbd8k0356b8z2sbvl3x5cg2w9kr8ryf36laqijyayhcik093"))))
     (properties `((upstream-name . "YPmodel")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=YPmodel")
@@ -322,12 +322,12 @@ package.")
   (package
     (name "r-ypinterimtesting")
     (version "1.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "YPInterimTesting" version))
-              (sha256
-               (base32
-                "0fca963rsbs9k7ivffsqk4hzap6ll7s709kqs6aby0plghrdla2w"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "YPInterimTesting" version))
+       (sha256
+        (base32 "0fca963rsbs9k7ivffsqk4hzap6ll7s709kqs6aby0plghrdla2w"))))
     (properties `((upstream-name . "YPInterimTesting")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-mass))
@@ -351,12 +351,12 @@ stopping boundaries is established in Yang (2018 <doi:10.1002/sim.7958>).")
   (package
     (name "r-ypbp")
     (version "0.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "YPBP" version))
-              (sha256
-               (base32
-                "1slc7glr4hb0my5zkssprngb6si98npjj33nsbsm0nbm61hnb9n8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "YPBP" version))
+       (sha256
+        (base32 "1slc7glr4hb0my5zkssprngb6si98npjj33nsbsm0nbm61hnb9n8"))))
     (properties `((upstream-name . "YPBP")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -384,12 +384,12 @@ interval estimation for the crossing survival times.")
   (package
     (name "r-youngswimmers")
     (version "0.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "youngSwimmers" version))
-              (sha256
-               (base32
-                "02ih66ad8v5qkgyszllkh9319sfd6fqcci4zrvbjr1dfwlwa2ri1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "youngSwimmers" version))
+       (sha256
+        (base32 "02ih66ad8v5qkgyszllkh9319sfd6fqcci4zrvbjr1dfwlwa2ri1"))))
     (properties `((upstream-name . "youngSwimmers")))
     (build-system r-build-system)
     (propagated-inputs (list r-lifecycle r-data-table))
@@ -402,12 +402,12 @@ interval estimation for the crossing survival times.")
   (package
     (name "r-yorkr")
     (version "0.0.41")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "yorkr" version))
-              (sha256
-               (base32
-                "0ypm7di343wpsg7x85bx4044bhf2fxp638yyy0rvj23x11z0ra8v"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "yorkr" version))
+       (sha256
+        (base32 "0ypm7di343wpsg7x85bx4044bhf2fxp638yyy0rvj23x11z0ra8v"))))
     (properties `((upstream-name . "yorkr")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -427,12 +427,12 @@ from Cricsheet <https://cricsheet.org/>.")
   (package
     (name "r-ympes")
     (version "0.4.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ympes" version))
-              (sha256
-               (base32
-                "1vxyq148m7kaj9f4lgr5jlnd31rn1wh8cbjn0j2s22kip1p57aaf"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ympes" version))
+       (sha256
+        (base32 "1vxyq148m7kaj9f4lgr5jlnd31rn1wh8cbjn0j2s22kip1p57aaf"))))
     (properties `((upstream-name . "ympes")))
     (build-system r-build-system)
     (home-page "https://github.com/TimTaylor/ympes")
@@ -450,12 +450,12 @@ frame.")
   (package
     (name "r-ymlthis")
     (version "0.1.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ymlthis" version))
-              (sha256
-               (base32
-                "127rh8mfff0ii6wcd7iaaz60vlkynjlrs188wwcap8l2qgv67idy"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ymlthis" version))
+       (sha256
+        (base32 "127rh8mfff0ii6wcd7iaaz60vlkynjlrs188wwcap8l2qgv67idy"))))
     (properties `((upstream-name . "ymlthis")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -485,12 +485,12 @@ files related to your project.")
   (package
     (name "r-yll")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "yll" version))
-              (sha256
-               (base32
-                "0lf3cd6pfzki29nk2iy0vd6v4dw6zlsbrjh2839zq5vlpiimsvck"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "yll" version))
+       (sha256
+        (base32 "0lf3cd6pfzki29nk2iy0vd6v4dw6zlsbrjh2839zq5vlpiimsvck"))))
     (properties `((upstream-name . "yll")))
     (build-system r-build-system)
     (home-page "https://github.com/AntoineSoetewey/yll")
@@ -508,12 +508,12 @@ deaths (Aragon et al., 2008).")
   (package
     (name "r-yieldcurve")
     (version "5.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "YieldCurve" version))
-              (sha256
-               (base32
-                "0dckpls1g8787ysb3q11i531223d48zdimnmhvbyynmm2a8gi0xv"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "YieldCurve" version))
+       (sha256
+        (base32 "0dckpls1g8787ysb3q11i531223d48zdimnmhvbyynmm2a8gi0xv"))))
     (properties `((upstream-name . "YieldCurve")))
     (build-system r-build-system)
     (propagated-inputs (list r-xts))
@@ -531,12 +531,12 @@ of interest rate of Federal Reserve Bank and European Central Bank.")
   (package
     (name "r-yhatr")
     (version "0.15.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "yhatr" version))
-              (sha256
-               (base32
-                "18g2cr1kjxnfw6cwzl62ynppfv1zz732kbx18zq8918l85kx6wbw"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "yhatr" version))
+       (sha256
+        (base32 "18g2cr1kjxnfw6cwzl62ynppfv1zz732kbx18zq8918l85kx6wbw"))))
     (properties `((upstream-name . "yhatr")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-jsonlite r-httr))
@@ -549,12 +549,12 @@ of interest rate of Federal Reserve Bank and European Central Bank.")
   (package
     (name "r-yhat")
     (version "2.0-3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "yhat" version))
-              (sha256
-               (base32
-                "00cbzj2bvr2pfspycqyf7jrdqyfg63zx25b6r9k3khafvn0ch7h1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "yhat" version))
+       (sha256
+        (base32 "00cbzj2bvr2pfspycqyf7jrdqyfg63zx25b6r9k3khafvn0ch7h1"))))
     (properties `((upstream-name . "yhat")))
     (build-system r-build-system)
     (propagated-inputs (list r-yacca r-plotrix r-misctools r-boot))
@@ -572,12 +572,12 @@ adjusted effect sizes.")
   (package
     (name "r-yfr")
     (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "yfR" version))
-              (sha256
-               (base32
-                "1jdqz0cb13fgvrak1sgs4h2cwgr8rcbg68c35mlaqnmkfn2w3xvc"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "yfR" version))
+       (sha256
+        (base32 "1jdqz0cb13fgvrak1sgs4h2cwgr8rcbg68c35mlaqnmkfn2w3xvc"))))
     (properties `((upstream-name . "yfR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -614,12 +614,12 @@ support for parallel computation.")
   (package
     (name "r-yesno")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "yesno" version))
-              (sha256
-               (base32
-                "1n9v8m1wkk9p2ahl7d1khbffxmshv68q1v44v04y4v1k6qjvm0i2"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "yesno" version))
+       (sha256
+        (base32 "1n9v8m1wkk9p2ahl7d1khbffxmshv68q1v44v04y4v1k6qjvm0i2"))))
     (properties `((upstream-name . "yesno")))
     (build-system r-build-system)
     (home-page "https://github.com/poissonconsulting/yesno")
@@ -631,12 +631,12 @@ support for parallel computation.")
   (package
     (name "r-ycevo")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ycevo" version))
-              (sha256
-               (base32
-                "1s61rdsll7b9dyc1lamyp4mlsw7vyf9lshw2dg3x5i3xf5rmrrsd"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ycevo" version))
+       (sha256
+        (base32 "1s61rdsll7b9dyc1lamyp4mlsw7vyf9lshw2dg3x5i3xf5rmrrsd"))))
     (properties `((upstream-name . "ycevo")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -658,12 +658,12 @@ and document the methods of this package.")
   (package
     (name "r-yatesalgo-factorialexp-sr")
     (version "4.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "YatesAlgo.FactorialExp.SR" version))
-              (sha256
-               (base32
-                "0jr2q2dla7dpf0ail0l8ar44cnaxrkvqc7cvsrsdgj97hr970lp9"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "YatesAlgo.FactorialExp.SR" version))
+       (sha256
+        (base32 "0jr2q2dla7dpf0ail0l8ar44cnaxrkvqc7cvsrsdgj97hr970lp9"))))
     (properties `((upstream-name . "YatesAlgo.FactorialExp.SR")))
     (build-system r-build-system)
     (propagated-inputs (list r-lubridate))
@@ -678,12 +678,12 @@ factorial experiment using Yates algorithm.")
   (package
     (name "r-yatah")
     (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "yatah" version))
-              (sha256
-               (base32
-                "0cckmslzm19kg7vkv28aq8h4yx8m2khqs9d6y98gwl64qrjiz42g"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "yatah" version))
+       (sha256
+        (base32 "0cckmslzm19kg7vkv28aq8h4yx8m2khqs9d6y98gwl64qrjiz42g"))))
     (properties `((upstream-name . "yatah")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-purrr r-ape))
@@ -699,12 +699,12 @@ with strings and ranks separated with special patterns like \"|*__\" or \";*__\"
   (package
     (name "r-yasp")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "yasp" version))
-              (sha256
-               (base32
-                "0fza8h9y1wmarsmjcvw4r970d6j4ii795pd2h4xh9nlsirv50adi"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "yasp" version))
+       (sha256
+        (base32 "0fza8h9y1wmarsmjcvw4r970d6j4ii795pd2h4xh9nlsirv50adi"))))
     (properties `((upstream-name . "yasp")))
     (build-system r-build-system)
     (home-page "https://github.com/t-kalinowski/yasp")
@@ -725,12 +725,12 @@ sentences.")
   (package
     (name "r-yarrr")
     (version "0.1.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "yarrr" version))
-              (sha256
-               (base32
-                "1258bj7x4icaxfabnnd3fgwydnqbzxkih7zw0sdlwdax3q8fw5c5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "yarrr" version))
+       (sha256
+        (base32 "1258bj7x4icaxfabnnd3fgwydnqbzxkih7zw0sdlwdax3q8fw5c5"))))
     (properties `((upstream-name . "yarrr")))
     (build-system r-build-system)
     (propagated-inputs (list r-jpeg r-circlize r-bayesfactor))
@@ -748,12 +748,12 @@ version of the e-book is available for free at
   (package
     (name "r-yarr")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "yarr" version))
-              (sha256
-               (base32
-                "16q109jrydckz7s1rkmr2sh8q92cgr1c534fvpbh3h0bc3fvvf8g"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "yarr" version))
+       (sha256
+        (base32 "16q109jrydckz7s1rkmr2sh8q92cgr1c534fvpbh3h0bc3fvvf8g"))))
     (properties `((upstream-name . "yarr")))
     (build-system r-build-system)
     (home-page "https://github.com/fdavidcl/yarr")
@@ -772,12 +772,12 @@ generalized from those in packages mldr and mldr.datasets'.")
   (package
     (name "r-yamlme")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "yamlme" version))
-              (sha256
-               (base32
-                "1019nzchqif4r3c7ywq23bjx711g359q44s8jy0rxyv03rij6xh9"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "yamlme" version))
+       (sha256
+        (base32 "1019nzchqif4r3c7ywq23bjx711g359q44s8jy0rxyv03rij6xh9"))))
     (properties `((upstream-name . "yamlme")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml r-rmarkdown))
@@ -795,12 +795,12 @@ packages taxlist and vegtable'.")
   (package
     (name "r-yamlet")
     (version "0.10.32")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "yamlet" version))
-              (sha256
-               (base32
-                "0nab4zc86alsnvm63mlf3dkwsra8mmvvf1cif4vw8ab625l7151q"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "yamlet" version))
+       (sha256
+        (base32 "0nab4zc86alsnvm63mlf3dkwsra8mmvvf1cif4vw8ab625l7151q"))))
     (properties `((upstream-name . "yamlet")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -831,12 +831,12 @@ readability.  See ?yamlet, ?decorate, ?modify, ?io_csv, and ?ggplot.decorated.")
   (package
     (name "r-yaletoolkit")
     (version "4.2.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "YaleToolkit" version))
-              (sha256
-               (base32
-                "07rqi8j9gzrr4jj9h8mdnh5i251q8rwfdj4lbcmszp64pi09rkck"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "YaleToolkit" version))
+       (sha256
+        (base32 "07rqi8j9gzrr4jj9h8mdnh5i251q8rwfdj4lbcmszp64pi09rkck"))))
     (properties `((upstream-name . "YaleToolkit")))
     (build-system r-build-system)
     (propagated-inputs (list r-iterators r-foreach))
@@ -854,12 +854,12 @@ the help page for this function).")
   (package
     (name "r-yaimpute")
     (version "1.0-33")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "yaImpute" version))
-              (sha256
-               (base32
-                "0b2i0aymwb150068ji27i574p8lf8566cy6amppgzj8vxdi54naq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "yaImpute" version))
+       (sha256
+        (base32 "0b2i0aymwb150068ji27i574p8lf8566cy6amppgzj8vxdi54naq"))))
     (properties `((upstream-name . "yaImpute")))
     (build-system r-build-system)
     (home-page "https://github.com/jeffreyevans/yaImpute")
@@ -880,12 +880,12 @@ and building ensemble imputations, and mapping results.")
   (package
     (name "r-yahoofinancer")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "yahoofinancer" version))
-              (sha256
-               (base32
-                "1wmxz2xmy39167kx9lfps9wq1ci9hqzpzc5xymnlrazbdviw1isy"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "yahoofinancer" version))
+       (sha256
+        (base32 "1wmxz2xmy39167kx9lfps9wq1ci9hqzpzc5xymnlrazbdviw1isy"))))
     (properties `((upstream-name . "yahoofinancer")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -909,12 +909,12 @@ as provided on <https://finance.yahoo.com/>.")
   (package
     (name "r-yager")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "yager" version))
-              (sha256
-               (base32
-                "178ypdr3f0w9rb4ci8q2hshr62b7993m8q6zxc4pf0msq175n1ml"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "yager" version))
+       (sha256
+        (base32 "178ypdr3f0w9rb4ci8q2hshr62b7993m8q6zxc4pf0msq175n1ml"))))
     (properties `((upstream-name . "yager")))
     (build-system r-build-system)
     (propagated-inputs (list r-randtoolbox r-mlmetrics r-lhs))
@@ -930,12 +930,12 @@ or the classification.")
   (package
     (name "r-yaconsensus")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "yaConsensus" version))
-              (sha256
-               (base32
-                "1srph1yc8lr00yvx6sjm0br9h2cq94xqb9yjxfb0bqvvmskp6s2s"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "yaConsensus" version))
+       (sha256
+        (base32 "1srph1yc8lr00yvx6sjm0br9h2cq94xqb9yjxfb0bqvvmskp6s2s"))))
     (properties `((upstream-name . "yaConsensus")))
     (build-system r-build-system)
     (propagated-inputs (list r-pheatmap r-foreach r-doparallel))
@@ -953,12 +953,12 @@ run in parallel.")
   (package
     (name "r-yacca")
     (version "1.4-2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "yacca" version))
-              (sha256
-               (base32
-                "197iv7qcbp9xx8kmpwb98acpkgzn9m7sncn6qi7k0chjx78095ws"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "yacca" version))
+       (sha256
+        (base32 "197iv7qcbp9xx8kmpwb98acpkgzn9m7sncn6qi7k0chjx78095ws"))))
     (properties `((upstream-name . "yacca")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=yacca")

@@ -44,12 +44,12 @@
   (package
     (name "r-qz")
     (version "0.2-3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "QZ" version))
-              (sha256
-               (base32
-                "14szpp8yv315wjn4d35l858bzkv2pd4s720ib921wsvpgn3xfx5d"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QZ" version))
+       (sha256
+        (base32 "14szpp8yv315wjn4d35l858bzkv2pd4s720ib921wsvpgn3xfx5d"))))
     (properties `((upstream-name . "QZ")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix))
@@ -68,12 +68,12 @@ precision of LAPACK library (version 3.10.0 or later).")
   (package
     (name "r-qwraps2")
     (version "0.5.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qwraps2" version))
-              (sha256
-               (base32
-                "1ars25aa50fn6m4v423pzs4rkplxhpi26qi3aq7f39bgmqpnpy83"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qwraps2" version))
+       (sha256
+        (base32 "1ars25aa50fn6m4v423pzs4rkplxhpi26qi3aq7f39bgmqpnpy83"))))
     (properties `((upstream-name . "qwraps2")))
     (build-system r-build-system)
     (propagated-inputs (list r-xfun
@@ -102,12 +102,12 @@ fundamentally different from qwraps'.")
   (package
     (name "r-qwdap")
     (version "1.1.17")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "QWDAP" version))
-              (sha256
-               (base32
-                "1yq2xm5a1im8g65j89d6xqfbknlrpfh9lpm1ggmn5fw8wq4519ni"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QWDAP" version))
+       (sha256
+        (base32 "1yq2xm5a1im8g65j89d6xqfbknlrpfh9lpm1ggmn5fw8wq4519ni"))))
     (properties `((upstream-name . "QWDAP")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-pls r-corelearn))
@@ -121,16 +121,40 @@ continuous time quantum walk simulation, feature selection, regression analysis,
 time series prediction, and series fit calculation.")
     (license license:gpl2)))
 
+(define-public r-qwalkr
+  (package
+    (name "r-qwalkr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qwalkr" version))
+       (sha256
+        (base32 "0mxzx782lvdrm0hx0v6xgzvw3r9zlfp9bz1vss2l59fgdqlhavn4"))))
+    (properties `((upstream-name . "qwalkr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-lifecycle))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/vitormarquesr/qwalkr")
+    (synopsis "Handle Continuous-Time Quantum Walks with R")
+    (description
+     "This package provides functions and tools for creating, visualizing, and
+investigating properties of continuous-time quantum walks, including efficient
+calculation of matrices such as the mixing matrix, average mixing matrix, and
+spectral decomposition of the Hamiltonian.  E. Farhi (1997):
+<@code{arXiv:quant-ph/9706062v2>}; C. Godsil (2011) <@code{arXiv:1103.2578v3>}.")
+    (license license:expat)))
+
 (define-public r-qvcalc
   (package
     (name "r-qvcalc")
     (version "1.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qvcalc" version))
-              (sha256
-               (base32
-                "17sr4100ciy5jp0b8sxvqjxf4m176ayzd5yyaw40ri4xf6h0z7la"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qvcalc" version))
+       (sha256
+        (base32 "17sr4100ciy5jp0b8sxvqjxf4m176ayzd5yyaw40ri4xf6h0z7la"))))
     (properties `((upstream-name . "qvcalc")))
     (build-system r-build-system)
     (home-page "https://davidfirth.github.io/qvcalc/")
@@ -144,12 +168,12 @@ measures of approximation error.")
   (package
     (name "r-qut")
     (version "2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qut" version))
-              (sha256
-               (base32
-                "1jsp3sv1631ar1sad8fy4l60ar2pbi20g50yz9mhs83427n3l63b"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qut" version))
+       (sha256
+        (base32 "1jsp3sv1631ar1sad8fy4l60ar2pbi20g50yz9mhs83427n3l63b"))))
     (properties `((upstream-name . "qut")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-lars r-glmnet r-flare))
@@ -168,12 +192,12 @@ Giacobino et al. (2017) <doi:10.1214/17-EJS1366>.  Sardy et al. (2017)
   (package
     (name "r-qurve")
     (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "QurvE" version))
-              (sha256
-               (base32
-                "1i1cmwndi8vkl2hs06mlad53l1q19fmrg32vciyllvv3s9r45mgz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QurvE" version))
+       (sha256
+        (base32 "1i1cmwndi8vkl2hs06mlad53l1q19fmrg32vciyllvv3s9r45mgz"))))
     (properties `((upstream-name . "QurvE")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -218,12 +242,12 @@ knowledge.  The package is described in further detail in Wirth et al. (2023)
   (package
     (name "r-quran")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "quRan" version))
-              (sha256
-               (base32
-                "108d797l9ggggc5b61pl7f6avzknmnnib2ys5vrg385zfbx9srvw"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quRan" version))
+       (sha256
+        (base32 "108d797l9ggggc5b61pl7f6avzknmnnib2ys5vrg385zfbx9srvw"))))
     (properties `((upstream-name . "quRan")))
     (build-system r-build-system)
     (home-page "https://github.com/andrewheiss/quRan")
@@ -238,12 +262,12 @@ translations), formatted to be convenient for text analysis.")
   (package
     (name "r-quotedargs")
     (version "0.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "quotedargs" version))
-              (sha256
-               (base32
-                "11cswg9bmddsl1axxcdz11flq46p1zkpv022526f2vgl4qsprwbm"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quotedargs" version))
+       (sha256
+        (base32 "11cswg9bmddsl1axxcdz11flq46p1zkpv022526f2vgl4qsprwbm"))))
     (properties `((upstream-name . "quotedargs")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=quotedargs")
@@ -258,12 +282,12 @@ quoted, and may pass them as quoted to other functions.")
   (package
     (name "r-quoradsr")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "quoradsR" version))
-              (sha256
-               (base32
-                "1gdb5zvi7hs2mpzv07w1mbm9w4ksidbz28mjb6w20bfpy6casfz5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quoradsR" version))
+       (sha256
+        (base32 "1gdb5zvi7hs2mpzv07w1mbm9w4ksidbz28mjb6w20bfpy6casfz5"))))
     (properties `((upstream-name . "quoradsR")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite))
@@ -279,12 +303,12 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
   (package
     (name "r-quint")
     (version "2.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "quint" version))
-              (sha256
-               (base32
-                "1fmzdnikskq8f70h6bh5ig5s6d227bzd6q93n2c05ymj1m5s9ban"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quint" version))
+       (sha256
+        (base32 "1fmzdnikskq8f70h6bh5ig5s6d227bzd6q93n2c05ymj1m5s9ban"))))
     (properties `((upstream-name . "quint")))
     (build-system r-build-system)
     (propagated-inputs (list r-rpart r-partykit r-formula))
@@ -302,12 +326,12 @@ in Dusseldorp, E., Doove, L., & Van Mechelen, I. (2016)
   (package
     (name "r-quincunx")
     (version "0.1.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "quincunx" version))
-              (sha256
-               (base32
-                "0r76rgzxqlm74brzh4kwxns3jb7hs9bfzfxdp8156cfrpjk7hxs0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quincunx" version))
+       (sha256
+        (base32 "0r76rgzxqlm74brzh4kwxns3jb7hs9bfzfxdp8156cfrpjk7hxs0"))))
     (properties `((upstream-name . "quincunx")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
@@ -338,12 +362,12 @@ PGS Catalog data by accessing the REST API <https://www.pgscatalog.org/rest/>.")
   (package
     (name "r-quiltr")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "quiltr" version))
-              (sha256
-               (base32
-                "1my36y9kf52jm6w923qmffi3809d0xcc68sm5ngvfacszn665k23"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quiltr" version))
+       (sha256
+        (base32 "1my36y9kf52jm6w923qmffi3809d0xcc68sm5ngvfacszn665k23"))))
     (properties `((upstream-name . "quiltr")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -360,12 +384,12 @@ Format .txt file that read into Qualtrics.")
   (package
     (name "r-quietr")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "quietR" version))
-              (sha256
-               (base32
-                "1f923dllhchgf49bp2d9186v3cxzdya6i56ww6cj0n0mh8gfi27z"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quietR" version))
+       (sha256
+        (base32 "1f923dllhchgf49bp2d9186v3cxzdya6i56ww6cj0n0mh8gfi27z"))))
     (properties `((upstream-name . "quietR")))
     (build-system r-build-system)
     (home-page "https://github.com/thomascjohnson/quietR")
@@ -380,12 +404,12 @@ set of simple toggle functions to be used to suppress console output.")
   (package
     (name "r-quiddich")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "quiddich" version))
-              (sha256
-               (base32
-                "10kiyn1all58klyygmz6zw0w9nfl9vq19qybmkqh410rd5ryjz3p"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quiddich" version))
+       (sha256
+        (base32 "10kiyn1all58klyygmz6zw0w9nfl9vq19qybmkqh410rd5ryjz3p"))))
     (properties `((upstream-name . "quiddich")))
     (build-system r-build-system)
     (propagated-inputs (list r-ape))
@@ -406,12 +430,12 @@ A.L., Haase, M. 2019.  QUIDDICH: QUick IDentification of DIagnostic CHaracters.\
   (package
     (name "r-quid")
     (version "0.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "quid" version))
-              (sha256
-               (base32
-                "10qfby1w3q3z0vwqk3nnxxlf62cr5v60ipagx0wb79vanl318pp0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quid" version))
+       (sha256
+        (base32 "10qfby1w3q3z0vwqk3nnxxlf62cr5v60ipagx0wb79vanl318pp0"))))
     (properties `((upstream-name . "quid")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -446,12 +470,12 @@ See Haaf and Rouder (2017) <doi:10.1037/met0000156>; Haaf, Klaassen and Rouder
   (package
     (name "r-quickregression")
     (version "0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "quickregression" version))
-              (sha256
-               (base32
-                "1z0sspi8q7dvgxqbj5na56v458pv6jhxrssnm6j23156dchgw39h"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quickregression" version))
+       (sha256
+        (base32 "1z0sspi8q7dvgxqbj5na56v458pv6jhxrssnm6j23156dchgw39h"))))
     (properties `((upstream-name . "quickregression")))
     (build-system r-build-system)
     (propagated-inputs (list r-car))
@@ -467,12 +491,12 @@ Factor (VIF) level.")
   (package
     (name "r-quickreg")
     (version "1.5.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "quickReg" version))
-              (sha256
-               (base32
-                "1l1v3k8albxlaz18l2b2x2ryifq4pbdq6n4q7555hnfcik9rqmw5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quickReg" version))
+       (sha256
+        (base32 "1l1v3k8albxlaz18l2b2x2ryifq4pbdq6n4q7555hnfcik9rqmw5"))))
     (properties `((upstream-name . "quickReg")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -499,12 +523,12 @@ ggplot2'.")
   (package
     (name "r-quickpsy")
     (version "0.1.5.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "quickpsy" version))
-              (sha256
-               (base32
-                "0dfqlpghnw79idw3ir03cxx9n88sqs5p14jz7jgpkdwvjpw1y4q9"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quickpsy" version))
+       (sha256
+        (base32 "0dfqlpghnw79idw3ir03cxx9n88sqs5p14jz7jgpkdwvjpw1y4q9"))))
     (properties `((upstream-name . "quickpsy")))
     (build-system r-build-system)
     (propagated-inputs (list r-mpdir r-ggplot2 r-dplyr r-deoptim))
@@ -519,12 +543,12 @@ or any function defined by the user) for multiple groups.")
   (package
     (name "r-quickplot")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "quickPlot" version))
-              (sha256
-               (base32
-                "0228mcv6cz74whzxmgcdb79w0k8mibszw4kwnjjs6pljz41rxcbq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quickPlot" version))
+       (sha256
+        (base32 "0228mcv6cz74whzxmgcdb79w0k8mibszw4kwnjjs6pljz41rxcbq"))))
     (properties `((upstream-name . "quickPlot")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-fpcompare r-data-table))
@@ -547,12 +571,12 @@ fastshp can be installed from the repository
   (package
     (name "r-quicknmix")
     (version "1.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "quickNmix" version))
-              (sha256
-               (base32
-                "01gnvnpfxry354qf772m187mfvjigqngjpi1k9y1g5nvlv7a4d62"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quickNmix" version))
+       (sha256
+        (base32 "01gnvnpfxry354qf772m187mfvjigqngjpi1k9y1g5nvlv7a4d62"))))
     (properties `((upstream-name . "quickNmix")))
     (build-system r-build-system)
     (propagated-inputs (list r-optimparallel r-foreach r-doparallel))
@@ -578,12 +602,12 @@ Simon Fraser University.\".")
   (package
     (name "r-quickmatch")
     (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "quickmatch" version))
-              (sha256
-               (base32
-                "1qfslhjlbjpzigz8n6b7w41g8pwdiwri091ivd5igp1xy5pv8a3w"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quickmatch" version))
+       (sha256
+        (base32 "1qfslhjlbjpzigz8n6b7w41g8pwdiwri091ivd5igp1xy5pv8a3w"))))
     (properties `((upstream-name . "quickmatch")))
     (build-system r-build-system)
     (propagated-inputs (list r-scclust r-sandwich r-distances))
@@ -601,12 +625,12 @@ magnitude quicker than other methods.")
   (package
     (name "r-quickmapr")
     (version "0.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "quickmapr" version))
-              (sha256
-               (base32
-                "0962qm8ak0wpqld8nrb8rvvb78743zfrfsq2xrwdlql681j2nv8c"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quickmapr" version))
+       (sha256
+        (base32 "0962qm8ak0wpqld8nrb8rvvb78743zfrfsq2xrwdlql681j2nv8c"))))
     (properties `((upstream-name . "quickmapr")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp
@@ -631,12 +655,12 @@ does not require that the data be in geographic coordinates.")
   (package
     (name "r-quickcode")
     (version "0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "quickcode" version))
-              (sha256
-               (base32
-                "0asa68jk43za5ya9kc0yxc1f1ya8rawdann39fwy4hp6r47q4s7p"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quickcode" version))
+       (sha256
+        (base32 "0asa68jk43za5ya9kc0yxc1f1ya8rawdann39fwy4hp6r47q4s7p"))))
     (properties `((upstream-name . "quickcode")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstudioapi r-rlang))
@@ -652,12 +676,12 @@ Shorthand code to save memory usage.")
   (package
     (name "r-quickcheck")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "quickcheck" version))
-              (sha256
-               (base32
-                "060pas64vzgqr038d1ab36h69z6rk6xaqf6kydwcs2phhir67zyc"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quickcheck" version))
+       (sha256
+        (base32 "060pas64vzgqr038d1ab36h69z6rk6xaqf6kydwcs2phhir67zyc"))))
     (properties `((upstream-name . "quickcheck")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -679,12 +703,12 @@ is designed to seamlessly integrate with testthat'.")
   (package
     (name "r-quickblock")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "quickblock" version))
-              (sha256
-               (base32
-                "0ij4ivpnkjzdixbq7pg4g1xkb031qawadr22qhzp0q210qhmhc0m"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quickblock" version))
+       (sha256
+        (base32 "0ij4ivpnkjzdixbq7pg4g1xkb031qawadr22qhzp0q210qhmhc0m"))))
     (properties `((upstream-name . "quickblock")))
     (build-system r-build-system)
     (propagated-inputs (list r-scclust r-distances))
@@ -701,12 +725,12 @@ quicker than other methods.")
   (package
     (name "r-quhomology")
     (version "1.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "quhomology" version))
-              (sha256
-               (base32
-                "0wiih00zk4682wy1r4nyifh76h5bnvl3f785wjzmrwylnfy951l3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quhomology" version))
+       (sha256
+        (base32 "0wiih00zk4682wy1r4nyifh76h5bnvl3f785wjzmrwylnfy951l3"))))
     (properties `((upstream-name . "quhomology")))
     (build-system r-build-system)
     (propagated-inputs (list r-numbers r-mass))
@@ -724,12 +748,12 @@ or not.")
   (package
     (name "r-queueing")
     (version "0.2.12")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "queueing" version))
-              (sha256
-               (base32
-                "0hw1ykm24cjpfwh7ac7fjf7mhc59mq8wy2g07aacpy5ibwi8bbsf"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "queueing" version))
+       (sha256
+        (base32 "0hw1ykm24cjpfwh7ac7fjf7mhc59mq8wy2g07aacpy5ibwi8bbsf"))))
     (properties `((upstream-name . "queueing")))
     (build-system r-build-system)
     (home-page "https://www.r-project.org")
@@ -749,12 +773,12 @@ calculators.  This work is dedicated to the memory of D. Sixto Rios Insua.")
   (package
     (name "r-queuecomputer")
     (version "1.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "queuecomputer" version))
-              (sha256
-               (base32
-                "0qlcj4rqfkp8qanzwi1p2s7r89x5w6aa8zwkcl7rqapbd4nwayhc"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "queuecomputer" version))
+       (sha256
+        (base32 "0qlcj4rqfkp8qanzwi1p2s7r89x5w6aa8zwkcl7rqapbd4nwayhc"))))
     (properties `((upstream-name . "queuecomputer")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-rcpparmadillo r-rcpp r-dplyr))
@@ -772,12 +796,12 @@ arbitrary arrival and service times.  Please see Ebert, Wu, Mengersen & Ruggeri
   (package
     (name "r-questr")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "QuESTr" version))
-              (sha256
-               (base32
-                "1vvvraqgy570dj86km4qpiax4a0zhfym94am0fn6ld43p3iixg02"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QuESTr" version))
+       (sha256
+        (base32 "1vvvraqgy570dj86km4qpiax4a0zhfym94am0fn6ld43p3iixg02"))))
     (properties `((upstream-name . "QuESTr")))
     (build-system r-build-system)
     (propagated-inputs (list r-kernlab r-ggplot2))
@@ -799,12 +823,12 @@ genetic information.")
   (package
     (name "r-questionr")
     (version "0.7.8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "questionr" version))
-              (sha256
-               (base32
-                "1abbnxnmljnn6ak55l4yrihr6fwrhzsb1rd7h8r0dijjwsgyawmg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "questionr" version))
+       (sha256
+        (base32 "1abbnxnmljnn6ak55l4yrihr6fwrhzsb1rd7h8r0dijjwsgyawmg"))))
     (properties `((upstream-name . "questionr")))
     (build-system r-build-system)
     (inputs (list xclip))
@@ -830,12 +854,12 @@ metadata handling, and several convenience functions.")
   (package
     (name "r-quest")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "quest" version))
-              (sha256
-               (base32
-                "15al3j850v7i59zr9yybxjrb3lnpd14369rp5vnpzwxy80jpy7d9"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quest" version))
+       (sha256
+        (base32 "15al3j850v7i59zr9yybxjrb3lnpd14369rp5vnpzwxy80jpy7d9"))))
     (properties `((upstream-name . "quest")))
     (build-system r-build-system)
     (propagated-inputs (list r-str2str r-psychtools r-psych r-plyr r-car))
@@ -858,12 +882,12 @@ their primary word (e.g., centers_by()) act on multiple columns of a data.frame.
   (package
     (name "r-queryup")
     (version "1.0.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "queryup" version))
-              (sha256
-               (base32
-                "0rl31vs1m7qjbix1qgmvnxrvjf2k2ikd8p9frz1yia7xxaq1m286"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "queryup" version))
+       (sha256
+        (base32 "0rl31vs1m7qjbix1qgmvnxrvjf2k2ikd8p9frz1yia7xxaq1m286"))))
     (properties `((upstream-name . "queryup")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-httr))
@@ -879,12 +903,12 @@ their primary word (e.g., centers_by()) act on multiple columns of a data.frame.
   (package
     (name "r-queryparser")
     (version "0.3.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "queryparser" version))
-              (sha256
-               (base32
-                "0va2h1midvf8adymqwg79flpqq7ciznk285kmyqdskkn87argjd2"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "queryparser" version))
+       (sha256
+        (base32 "0va2h1midvf8adymqwg79flpqq7ciznk285kmyqdskkn87argjd2"))))
     (properties `((upstream-name . "queryparser")))
     (build-system r-build-system)
     (home-page "https://github.com/ianmcook/queryparser")
@@ -897,12 +921,12 @@ their primary word (e.g., centers_by()) act on multiple columns of a data.frame.
   (package
     (name "r-quclu")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "QuClu" version))
-              (sha256
-               (base32
-                "09fakiyj9kz9ac05jmis0zp9jmizvdyc8cid0js5xzm308dxnlsd"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QuClu" version))
+       (sha256
+        (base32 "09fakiyj9kz9ac05jmis0zp9jmizvdyc8cid0js5xzm308dxnlsd"))))
     (properties `((upstream-name . "QuClu")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=QuClu")
@@ -920,12 +944,12 @@ Electronic Journal of Statistics.  13 (2) 4849 - 4883 <doi:10.1214/19-EJS1640>."
   (package
     (name "r-quarto")
     (version "1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "quarto" version))
-              (sha256
-               (base32
-                "1hbj762hgjk7047nycj7rrngsf8f6g2s06r7jjg78ilrjb429c1w"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quarto" version))
+       (sha256
+        (base32 "1hbj762hgjk7047nycj7rrngsf8f6g2s06r7jjg78ilrjb429c1w"))))
     (properties `((upstream-name . "quarto")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -947,12 +971,12 @@ formats using Quarto'.")
   (package
     (name "r-quartets")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "quartets" version))
-              (sha256
-               (base32
-                "0j5qgk3ha621l3njah54rnxf12ndafcai5bdvv96n888c3yki3nd"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quartets" version))
+       (sha256
+        (base32 "0j5qgk3ha621l3njah54rnxf12ndafcai5bdvv96n888c3yki3nd"))))
     (properties `((upstream-name . "quartets")))
     (build-system r-build-system)
     (home-page "https://github.com/r-causal/quartets")
@@ -975,12 +999,12 @@ Causal Quartets\" (Gelman et al.  2023) <doi:10.48550/@code{arXiv.2302.12878>}."
   (package
     (name "r-quartet")
     (version "1.2.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Quartet" version))
-              (sha256
-               (base32
-                "1chbn80y04hhcii1b58s7l1vak85ihdpl5q833mszrqili5zrmb1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Quartet" version))
+       (sha256
+        (base32 "1chbn80y04hhcii1b58s7l1vak85ihdpl5q833mszrqili5zrmb1"))))
     (properties `((upstream-name . "Quartet")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
@@ -1008,12 +1032,12 @@ general trees, Bioinformatics, 30, 2079â2080
   (package
     (name "r-quarrint")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "quarrint" version))
-              (sha256
-               (base32
-                "13fdmmrgn23xd9vpywmcl7pf729gmcxjfl1wxs30axsbp4h1s6rk"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quarrint" version))
+       (sha256
+        (base32 "13fdmmrgn23xd9vpywmcl7pf729gmcxjfl1wxs30axsbp4h1s6rk"))))
     (properties `((upstream-name . "quarrint")))
     (build-system r-build-system)
     (propagated-inputs (list r-neuralnet))
@@ -1031,12 +1055,12 @@ and the other is relying on an artificial neural network.")
   (package
     (name "r-quarks")
     (version "1.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "quarks" version))
-              (sha256
-               (base32
-                "132ic5wr59sb89f352p7zspjx214575x45gla01dkcsimfrinjdg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quarks" version))
+       (sha256
+        (base32 "132ic5wr59sb89f352p7zspjx214575x45gla01dkcsimfrinjdg"))))
     (properties `((upstream-name . "quarks")))
     (build-system r-build-system)
     (propagated-inputs (list r-yfr
@@ -1068,12 +1092,12 @@ well as @code{McNeil}, J., Frey, R., and Embrechts, P. (2015)
   (package
     (name "r-quantumops")
     (version "3.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "QuantumOps" version))
-              (sha256
-               (base32
-                "0gl1myf7q444imyvsjvxiaxaahf0n0bsggwbd0z3az73l6yf1gjh"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QuantumOps" version))
+       (sha256
+        (base32 "0gl1myf7q444imyvsjvxiaxaahf0n0bsggwbd0z3az73l6yf1gjh"))))
     (properties `((upstream-name . "QuantumOps")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=QuantumOps")
@@ -1099,12 +1123,12 @@ decomposition into the Clifford+T set.")
   (package
     (name "r-quantspec")
     (version "1.2-3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "quantspec" version))
-              (sha256
-               (base32
-                "0ifwq2jmvxhpijz9yd9hffkff6ixcliaqkp9ispp9k1b8icwi8zn"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quantspec" version))
+       (sha256
+        (base32 "0ifwq2jmvxhpijz9yd9hffkff6ixcliaqkp9ispp9k1b8icwi8zn"))))
     (properties `((upstream-name . "quantspec")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-snowfall r-rcpp r-quantreg r-abind))
@@ -1120,12 +1144,12 @@ periodograms for univariate and multivariate time series.  See Kley (2016)
   (package
     (name "r-quantregranger")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "quantregRanger" version))
-              (sha256
-               (base32
-                "1a9q2prr790bpw6s0y5ni5ppd3vqkjr0v4nqp6ywcj5n3sk69pvx"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quantregRanger" version))
+       (sha256
+        (base32 "1a9q2prr790bpw6s0y5ni5ppd3vqkjr0v4nqp6ywcj5n3sk69pvx"))))
     (properties `((upstream-name . "quantregRanger")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-ranger))
@@ -1140,12 +1164,12 @@ forest package ranger'.")
   (package
     (name "r-quantreggrowth")
     (version "1.7-0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "quantregGrowth" version))
-              (sha256
-               (base32
-                "0as226mcchbq41wrhl3vb8j4szqvcfk9zdsnf9fnyn50ymh4c5mb"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quantregGrowth" version))
+       (sha256
+        (base32 "0as226mcchbq41wrhl3vb8j4szqvcfk9zdsnf9fnyn50ymh4c5mb"))))
     (properties `((upstream-name . "quantregGrowth")))
     (build-system r-build-system)
     (propagated-inputs (list r-sparsem r-quantreg))
@@ -1169,12 +1193,12 @@ fitted curves are allowed, see Muggeo and others (2013)
   (package
     (name "r-quantregforest")
     (version "1.3-7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "quantregForest" version))
-              (sha256
-               (base32
-                "0lk7r02i6zpx9sdl2rp0r7fc3a84s8qhg49nh2x7k3vxwa095pjz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quantregForest" version))
+       (sha256
+        (base32 "0lk7r02i6zpx9sdl2rp0r7fc3a84s8qhg49nh2x7k3vxwa095pjz"))))
     (properties `((upstream-name . "quantregForest")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcolorbrewer r-randomforest))
@@ -1192,12 +1216,12 @@ dependent on the package @code{randomForest}', written by Andy Liaw.")
   (package
     (name "r-quantreg-nonpar")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "quantreg.nonpar" version))
-              (sha256
-               (base32
-                "1f9120awnkwsgdiqg98lg7xs5l4y80930869x6k9q76595r5m92k"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quantreg.nonpar" version))
+       (sha256
+        (base32 "1f9120awnkwsgdiqg98lg7xs5l4y80930869x6k9q76595r5m92k"))))
     (properties `((upstream-name . "quantreg.nonpar")))
     (build-system r-build-system)
     (propagated-inputs (list r-rearrangement r-quantreg r-mnormt r-fda))
@@ -1216,12 +1240,12 @@ resampling methods.")
   (package
     (name "r-quantoptr")
     (version "0.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "quantoptr" version))
-              (sha256
-               (base32
-                "0f9vy9yhya4wpya8n345s6n7a5sb29chdkl5fz6dwa31lp1mvvj3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quantoptr" version))
+       (sha256
+        (base32 "0f9vy9yhya4wpya8n345s6n7a5sb29chdkl5fz6dwa31lp1mvvj3"))))
     (properties `((upstream-name . "quantoptr")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-rgenoud r-rdpack r-quantreg))
@@ -1239,12 +1263,12 @@ treatment regime is also included.")
   (package
     (name "r-quantnorm")
     (version "1.0.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "QuantNorm" version))
-              (sha256
-               (base32
-                "1hds9ybwsgnmcpa22vlmgdq02ilhn0c6a7z1qjiq4i5iqjd4gwf6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QuantNorm" version))
+       (sha256
+        (base32 "1hds9ybwsgnmcpa22vlmgdq02ilhn0c6a7z1qjiq4i5iqjd4gwf6"))))
     (properties `((upstream-name . "QuantNorm")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=QuantNorm")
@@ -1263,12 +1287,12 @@ has been published in Bioinformatics (Fei et al, 2018,
   (package
     (name "r-quantkriging")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "quantkriging" version))
-              (sha256
-               (base32
-                "0v6kckgzhgsn3158sc06xszdhmk8sfny10j1qyppxsl2hk89n8jf"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quantkriging" version))
+       (sha256
+        (base32 "0v6kckgzhgsn3158sc06xszdhmk8sfny10j1qyppxsl2hk89n8jf"))))
     (properties `((upstream-name . "quantkriging")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2 r-matrix r-hetgp r-ggplot2))
@@ -1288,12 +1312,12 @@ ability to automatically perform leave-one-out cross validation.")
   (package
     (name "r-quantities")
     (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "quantities" version))
-              (sha256
-               (base32
-                "15z988jz1kza162qwfbiz90wjm3sc8kfkylwa73nkjifcd9l2ir5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quantities" version))
+       (sha256
+        (base32 "15z988jz1kza162qwfbiz90wjm3sc8kfkylwa73nkjifcd9l2ir5"))))
     (properties `((upstream-name . "quantities")))
     (build-system r-build-system)
     (propagated-inputs (list r-units r-rcpp r-errors))
@@ -1314,12 +1338,12 @@ vignettes; see citation(\"quantities\") for details.")
   (package
     (name "r-quantilogram")
     (version "2.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "quantilogram" version))
-              (sha256
-               (base32
-                "0gvr93d6jjixcrislym0mna2l3plqhl8adaqiagdvxg4y0adfmf0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quantilogram" version))
+       (sha256
+        (base32 "0gvr93d6jjixcrislym0mna2l3plqhl8adaqiagdvxg4y0adfmf0"))))
     (properties `((upstream-name . "quantilogram")))
     (build-system r-build-system)
     (propagated-inputs (list r-sparsem r-quantreg r-np))
@@ -1343,12 +1367,12 @@ series analysis and Han, Linton, Oka and Whang (2016)
   (package
     (name "r-quantilenpci")
     (version "0.9.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "QuantileNPCI" version))
-              (sha256
-               (base32
-                "043lkg1pyaja7a4f9lmcwrvdjpfly2z378s15snwnxj8vb5pgr38"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QuantileNPCI" version))
+       (sha256
+        (base32 "043lkg1pyaja7a4f9lmcwrvdjpfly2z378s15snwnxj8vb5pgr38"))))
     (properties `((upstream-name . "QuantileNPCI")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -1364,12 +1388,12 @@ statistics\", Journal of Applied Statistics, 26:3, 343-353.")
   (package
     (name "r-quantilegrader")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "QuantileGradeR" version))
-              (sha256
-               (base32
-                "1zwc6bg636gk8zll7wpznd3pzl611hcj2fmzp8b9505rra13p0g2"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QuantileGradeR" version))
+       (sha256
+        (base32 "1zwc6bg636gk8zll7wpznd3pzl611hcj2fmzp8b9505rra13p0g2"))))
     (properties `((upstream-name . "QuantileGradeR")))
     (build-system r-build-system)
     (home-page
@@ -1408,12 +1432,12 @@ and as close as possible to p[2]% of restaurants receive the second top grade.")
   (package
     (name "r-quantilegh")
     (version "0.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "QuantileGH" version))
-              (sha256
-               (base32
-                "0nb30qg7znld8sqwywb7phwnb7h2dwamilq0bjn96bw0yviywjqa"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QuantileGH" version))
+       (sha256
+        (base32 "0nb30qg7znld8sqwywb7phwnb7h2dwamilq0bjn96bw0yviywjqa"))))
     (properties `((upstream-name . "QuantileGH")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam
@@ -1438,12 +1462,12 @@ of finite mixtures of Tukey's g-and-h distributions.")
   (package
     (name "r-quantileda")
     (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "quantileDA" version))
-              (sha256
-               (base32
-                "0jbklxsy33j7clcw97qq4ijwkrb94v2m11gjcfa38vplfxm9913q"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quantileDA" version))
+       (sha256
+        (base32 "0jbklxsy33j7clcw97qq4ijwkrb94v2m11gjcfa38vplfxm9913q"))))
     (properties `((upstream-name . "quantileDA")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=quantileDA")
@@ -1455,12 +1479,12 @@ of finite mixtures of Tukey's g-and-h distributions.")
   (package
     (name "r-quantification")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "quantification" version))
-              (sha256
-               (base32
-                "116cp88q9cmizxc2a8lsysa1vwyp1y86457fx5qkq5dcm4g721g8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quantification" version))
+       (sha256
+        (base32 "116cp88q9cmizxc2a8lsysa1vwyp1y86457fx5qkq5dcm4g721g8"))))
     (properties `((upstream-name . "quantification")))
     (build-system r-build-system)
     (propagated-inputs (list r-car))
@@ -1476,12 +1500,12 @@ balance approach and the conditional expectations method.")
   (package
     (name "r-quanteda-textstats")
     (version "0.96.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "quanteda.textstats" version))
-              (sha256
-               (base32
-                "1nx716fvdpwac67m8ld0nhqvv34a2hfk2c7kf1b2l1n60x285cr2"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quanteda.textstats" version))
+       (sha256
+        (base32 "1nx716fvdpwac67m8ld0nhqvv34a2hfk2c7kf1b2l1n60x285cr2"))))
     (properties `((upstream-name . "quanteda.textstats")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi
@@ -1508,12 +1532,12 @@ quanteda package and are specially designed for sparse textual data.")
   (package
     (name "r-quanteda-textplots")
     (version "0.94.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "quanteda.textplots" version))
-              (sha256
-               (base32
-                "05dz3llp79i1giz0b7lm6kb14qf2rp26xz33skb71iiks290zp19"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quanteda.textplots" version))
+       (sha256
+        (base32 "05dz3llp79i1giz0b7lm6kb14qf2rp26xz33skb71iiks290zp19"))))
     (properties `((upstream-name . "quanteda.textplots")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi
@@ -1541,12 +1565,12 @@ keyness plots.")
   (package
     (name "r-quanteda-textmodels")
     (version "0.9.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "quanteda.textmodels" version))
-              (sha256
-               (base32
-                "1shsyz8nz8cabmsgrimxym4b0fd3zbjp3vx5si41rp9gr9c94sx1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quanteda.textmodels" version))
+       (sha256
+        (base32 "1shsyz8nz8cabmsgrimxym4b0fd3zbjp3vx5si41rp9gr9c94sx1"))))
     (properties `((upstream-name . "quanteda.textmodels")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi
@@ -1577,12 +1601,12 @@ Bayes and linear SVMs specially designed for sparse textual data.")
   (package
     (name "r-quantdr")
     (version "1.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "quantdr" version))
-              (sha256
-               (base32
-                "0w6jdd6i4wxbk4fp44rmy32mwq9ng63zwamq8zpa1hlfbm5qh4s2"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quantdr" version))
+       (sha256
+        (base32 "0w6jdd6i4wxbk4fp44rmy32mwq9ng63zwamq8zpa1hlfbm5qh4s2"))))
     (properties `((upstream-name . "quantdr")))
     (build-system r-build-system)
     (propagated-inputs (list r-quantreg r-mvtnorm r-kernsmooth r-dr))
@@ -1598,12 +1622,12 @@ Nonparametric estimation of conditional quantiles is also available.")
   (package
     (name "r-quantdates")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "quantdates" version))
-              (sha256
-               (base32
-                "1hyds8rwr1yg740aq4w5fqjrwdf3dl4phf8mj8qsgbb7i0wbbf3q"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quantdates" version))
+       (sha256
+        (base32 "1hyds8rwr1yg740aq4w5fqjrwdf3dl4phf8mj8qsgbb7i0wbbf3q"))))
     (properties `((upstream-name . "quantdates")))
     (build-system r-build-system)
     (propagated-inputs (list r-lubridate))
@@ -1623,12 +1647,12 @@ Derivatives Association (ISDA) (2006)
   (package
     (name "r-quantcurves")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "quantCurves" version))
-              (sha256
-               (base32
-                "0z00agd4q157cjkc4gwyfw3kka043wcf5j7yzn8cqm281fqh1jny"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quantCurves" version))
+       (sha256
+        (base32 "0z00agd4q157cjkc4gwyfw3kka043wcf5j7yzn8cqm281fqh1jny"))))
     (properties `((upstream-name . "quantCurves")))
     (build-system r-build-system)
     (propagated-inputs (list r-quantreggrowth r-quantreg r-np r-locpol
@@ -1646,12 +1670,12 @@ al.(2019) <doi:10.1186/s12874-019-0666-3>.")
   (package
     (name "r-quantbondcurves")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "QuantBondCurves" version))
-              (sha256
-               (base32
-                "035dd5q1jg3m2208khkg92k6ypskh85j04g9v4b83qff8lq91fg0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QuantBondCurves" version))
+       (sha256
+        (base32 "035dd5q1jg3m2208khkg92k6ypskh85j04g9v4b83qff8lq91fg0"))))
     (properties `((upstream-name . "QuantBondCurves")))
     (build-system r-build-system)
     (propagated-inputs (list r-rsolnp r-quantdates r-lubridate))
@@ -1673,12 +1697,12 @@ Serrat, A. (2022, ISBN: 978-1-119-83555-4).")
   (package
     (name "r-quandl")
     (version "2.11.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Quandl" version))
-              (sha256
-               (base32
-                "1bsba6blbcq0my8wm0qcy0qabbgx344gjljnjwaqfrqkjcphf5xs"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Quandl" version))
+       (sha256
+        (base32 "1bsba6blbcq0my8wm0qcy0qabbgx344gjljnjwaqfrqkjcphf5xs"))))
     (properties `((upstream-name . "Quandl")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-xts r-jsonlite r-httr))
@@ -1696,12 +1720,12 @@ on the package itself go to <https://www.quandl.com/tools/r>.")
   (package
     (name "r-qualypso")
     (version "2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "QUALYPSO" version))
-              (sha256
-               (base32
-                "1836gl90021m47vs7ckb5s9sg1xzrdnwbrha8acrnwjsp17iyydv"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QUALYPSO" version))
+       (sha256
+        (base32 "1836gl90021m47vs7ckb5s9sg1xzrdnwbrha8acrnwjsp17iyydv"))))
     (properties `((upstream-name . "QUALYPSO")))
     (build-system r-build-system)
     (propagated-inputs (list r-rfast r-mass r-expm))
@@ -1721,12 +1745,12 @@ Eckert, S. Morin, and D. Verfaillie. (2019) <doi:10.1175/JCLI-D-18-0606.1>.")
   (package
     (name "r-qualvar")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qualvar" version))
-              (sha256
-               (base32
-                "1c7b7lcyq2l46sslk185r6xfh5fb35z9qihrhnh294sw1k52bffa"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qualvar" version))
+       (sha256
+        (base32 "1c7b7lcyq2l46sslk185r6xfh5fb35z9qihrhnh294sw1k52bffa"))))
     (properties `((upstream-name . "qualvar")))
     (build-system r-build-system)
     (native-inputs (list r-rmarkdown r-knitr))
@@ -1742,12 +1766,12 @@ Eckert, S. Morin, and D. Verfaillie. (2019) <doi:10.1175/JCLI-D-18-0606.1>.")
   (package
     (name "r-qualtrics")
     (version "3.1.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qualtRics" version))
-              (sha256
-               (base32
-                "0jfzghqj8qz5wz13j4v0h58l7mflmz7jm324j2agr109q2kl2vma"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qualtRics" version))
+       (sha256
+        (base32 "0jfzghqj8qz5wz13j4v0h58l7mflmz7jm324j2agr109q2kl2vma"))))
     (properties `((upstream-name . "qualtRics")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -1779,12 +1803,12 @@ community-maintained and is not officially supported by Qualtrics'.")
   (package
     (name "r-qualpalr")
     (version "0.4.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qualpalr" version))
-              (sha256
-               (base32
-                "13mahl7v1sldy35ssmr9k0anhx569g1rv44kgvdw5w5s8dm28512"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qualpalr" version))
+       (sha256
+        (base32 "13mahl7v1sldy35ssmr9k0anhx569g1rv44kgvdw5w5s8dm28512"))))
     (properties `((upstream-name . "qualpalr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-randtoolbox r-assertthat))
@@ -1802,12 +1826,12 @@ colors that are maximally distinct are chosen algorithmically.")
   (package
     (name "r-qualmap")
     (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qualmap" version))
-              (sha256
-               (base32
-                "0r8v7r2mh1dsvr9lvdcmddp5agbx5djg7850zf6ixlv8zak6cxz5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qualmap" version))
+       (sha256
+        (base32 "0r8v7r2mh1dsvr9lvdcmddp5agbx5djg7850zf6ixlv8zak6cxz5"))))
     (properties `((upstream-name . "qualmap")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf
@@ -1832,12 +1856,12 @@ can be entered as vectors and transformed using qualmap.")
   (package
     (name "r-qualitycontrol")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qualitycontrol" version))
-              (sha256
-               (base32
-                "134dksflv43bixqa5lhcjgwqnahzpb2fnzl4dhc81wdb9pcqsg7v"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qualitycontrol" version))
+       (sha256
+        (base32 "134dksflv43bixqa5lhcjgwqnahzpb2fnzl4dhc81wdb9pcqsg7v"))))
     (properties `((upstream-name . "qualitycontrol")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-readxl r-openxlsx r-janitor r-dplyr))
@@ -1854,12 +1878,12 @@ control.")
   (package
     (name "r-quadtree")
     (version "0.1.14")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "quadtree" version))
-              (sha256
-               (base32
-                "15i68ykbr0ld8cfcha1ywf4lmsf7zpgi7qsn2rpf44k92fp6hzc7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quadtree" version))
+       (sha256
+        (base32 "15i68ykbr0ld8cfcha1ywf4lmsf7zpgi7qsn2rpf44k92fp6hzc7"))))
     (properties `((upstream-name . "quadtree")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-rcpp))
@@ -1883,12 +1907,12 @@ resistance surface.")
   (package
     (name "r-quadrupen")
     (version "0.2-10")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "quadrupen" version))
-              (sha256
-               (base32
-                "1vlpx0yf7b4vka4lrdqsfyjnajbcv25kdp8y27di3ww6h0759h9l"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quadrupen" version))
+       (sha256
+        (base32 "1vlpx0yf7b4vka4lrdqsfyjnajbcv25kdp8y27di3ww6h0759h9l"))))
     (properties `((upstream-name . "quadrupen")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -1910,12 +1934,12 @@ selection purpose (cross-validation, stability selection).")
   (package
     (name "r-quadroot")
     (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "QuadRoot" version))
-              (sha256
-               (base32
-                "1ixh4ikp8pqa7py4di9fgmi5rhjgsvh57j2f59g6xdcyl068c3g6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QuadRoot" version))
+       (sha256
+        (base32 "1ixh4ikp8pqa7py4di9fgmi5rhjgsvh57j2f59g6xdcyl068c3g6"))))
     (properties `((upstream-name . "QuadRoot")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -1930,12 +1954,12 @@ equation.")
   (package
     (name "r-quadraticsd")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "quadraticSD" version))
-              (sha256
-               (base32
-                "07v71anh0kz898x6j677bxx5lyarc4r0z1j0vx501ffi38icc1f0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quadraticSD" version))
+       (sha256
+        (base32 "07v71anh0kz898x6j677bxx5lyarc4r0z1j0vx501ffi38icc1f0"))))
     (properties `((upstream-name . "quadraticSD")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-ggplot2))
@@ -1954,12 +1978,12 @@ the Standard Deviaton?, Nepalese Journal of Statistics, Vol.  3, 1-10.")
   (package
     (name "r-quadprogxt")
     (version "0.0.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "quadprogXT" version))
-              (sha256
-               (base32
-                "1yna2kx9pr58vyy6f4mwx4a6avjz84wwhcary88v1k0ihhv9swcz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quadprogXT" version))
+       (sha256
+        (base32 "1yna2kx9pr58vyy6f4mwx4a6avjz84wwhcary88v1k0ihhv9swcz"))))
     (properties `((upstream-name . "quadprogXT")))
     (build-system r-build-system)
     (propagated-inputs (list r-quadprog))
@@ -1974,12 +1998,12 @@ constraints and absolute values in the objective function.")
   (package
     (name "r-quadmesh")
     (version "0.5.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "quadmesh" version))
-              (sha256
-               (base32
-                "0af795r29976ir0ma48chmlm17001xg5wd29waz356cfhinzs2nk"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quadmesh" version))
+       (sha256
+        (base32 "0af795r29976ir0ma48chmlm17001xg5wd29waz356cfhinzs2nk"))))
     (properties `((upstream-name . "quadmesh")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp
@@ -2008,12 +2032,12 @@ dtriangmesh functions.")
   (package
     (name "r-quadmatrix")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "quadmatrix" version))
-              (sha256
-               (base32
-                "0nngrvvbalmrr6g9bq9f5qrllvwfq5p1b9yhs4zb098s3wga8jms"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quadmatrix" version))
+       (sha256
+        (base32 "0nngrvvbalmrr6g9bq9f5qrllvwfq5p1b9yhs4zb098s3wga8jms"))))
     (properties `((upstream-name . "quadmatrix")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrixcalc r-geigen))
@@ -2028,12 +2052,12 @@ dtriangmesh functions.")
   (package
     (name "r-quadcleanr")
     (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "quadcleanR" version))
-              (sha256
-               (base32
-                "1kiadc6wwq89yb6pdld646afqhh7i3xs1f667vab3svygfqn670x"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quadcleanR" version))
+       (sha256
+        (base32 "1kiadc6wwq89yb6pdld646afqhh7i3xs1f667vab3svygfqn670x"))))
     (properties `((upstream-name . "quadcleanR")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr))
@@ -2050,12 +2074,12 @@ comparability between quadrats collected under different methodologies.")
   (package
     (name "r-qtwacademic")
     (version "2022.12.13")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qtwAcademic" version))
-              (sha256
-               (base32
-                "1llckj25x2wr3g3wa1m43fqa6v9ddyf444wbwwjdfwc9ix9j5fkj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qtwAcademic" version))
+       (sha256
+        (base32 "1llckj25x2wr3g3wa1m43fqa6v9ddyf444wbwwjdfwc9ix9j5fkj"))))
     (properties `((upstream-name . "qtwAcademic")))
     (build-system r-build-system)
     (propagated-inputs (list r-fs))
@@ -2073,12 +2097,12 @@ customization.")
   (package
     (name "r-qtools")
     (version "1.5.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Qtools" version))
-              (sha256
-               (base32
-                "18shsapws7gq44i9kimdln08a4xkb15674q4b88is1504bgkafip"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Qtools" version))
+       (sha256
+        (base32 "18shsapws7gq44i9kimdln08a4xkb15674q4b88is1504bgkafip"))))
     (properties `((upstream-name . "Qtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
@@ -2110,12 +2134,12 @@ and included in the package.")
   (package
     (name "r-qtocen")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "QTOCen" version))
-              (sha256
-               (base32
-                "0wlbxk1rd56k02jf3pfzbx6xx5mmf6sb7gvds0067cvb7m42ghcr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QTOCen" version))
+       (sha256
+        (base32 "0wlbxk1rd56k02jf3pfzbx6xx5mmf6sb7gvds0067cvb7m42ghcr"))))
     (properties `((upstream-name . "QTOCen")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rgenoud r-rdpack r-quantreg
@@ -2137,12 +2161,12 @@ model of a dynamic treatment experiment proposed in literature.")
   (package
     (name "r-qtlrel")
     (version "1.14")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "QTLRel" version))
-              (sha256
-               (base32
-                "1brxlvqlcax0f5l0bnc9cirn2v6xwhb851cvzkwrgsxi4m7xn839"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QTLRel" version))
+       (sha256
+        (base32 "1brxlvqlcax0f5l0bnc9cirn2v6xwhb851cvzkwrgsxi4m7xn839"))))
     (properties `((upstream-name . "QTLRel")))
     (build-system r-build-system)
     (propagated-inputs (list r-lattice r-gdata))
@@ -2165,12 +2189,12 @@ genotypic data in certain circumstances.")
   (package
     (name "r-qtlpoly")
     (version "0.2.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qtlpoly" version))
-              (sha256
-               (base32
-                "10a9zcsf2f6hkigwa3gpck2vg2pf9qa1z19kpk9kxbv4j1hja23s"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qtlpoly" version))
+       (sha256
+        (base32 "10a9zcsf2f6hkigwa3gpck2vg2pf9qa1z19kpk9kxbv4j1hja23s"))))
     (properties `((upstream-name . "qtlpoly")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlrsim
@@ -2199,12 +2223,12 @@ al. (2020) <doi:10.1534/genetics.120.303080>.")
   (package
     (name "r-qtlnet")
     (version "1.5.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qtlnet" version))
-              (sha256
-               (base32
-                "0jdf3hyzas0lyv2v4gqai9mhh7218a1mvm0nlwv9hfdbij0hi84v"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qtlnet" version))
+       (sha256
+        (base32 "0jdf3hyzas0lyv2v4gqai9mhh7218a1mvm0nlwv9hfdbij0hi84v"))))
     (properties `((upstream-name . "qtlnet")))
     (build-system r-build-system)
     (propagated-inputs (list r-sem r-qtl r-pcalg r-igraph r-graph))
@@ -2224,12 +2248,12 @@ Annals of Applied Statistics 4: 320-339. <doi:10.1214/09-AOAS288>.")
   (package
     (name "r-qtlmt")
     (version "0.1-6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qtlmt" version))
-              (sha256
-               (base32
-                "023h60z8d05832l2g7mg776hfjb0i7xpvhz3i899rc3h5pgjd94c"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qtlmt" version))
+       (sha256
+        (base32 "023h60z8d05832l2g7mg776hfjb0i7xpvhz3i899rc3h5pgjd94c"))))
     (properties `((upstream-name . "qtlmt")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=qtlmt")
@@ -2246,12 +2270,12 @@ perform multiple-trait composite multiple-interval mapping.")
   (package
     (name "r-qtlhot")
     (version "1.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qtlhot" version))
-              (sha256
-               (base32
-                "0gf0fsq91g830vqg5kz01zznm40qpjncy964ccvmms3i6d3hxd9m"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qtlhot" version))
+       (sha256
+        (base32 "0gf0fsq91g830vqg5kz01zznm40qpjncy964ccvmms3i6d3hxd9m"))))
     (properties `((upstream-name . "qtlhot")))
     (build-system r-build-system)
     (propagated-inputs (list r-qtl r-mnormt r-corpcor))
@@ -2271,12 +2295,12 @@ causality for pairs of phenotypes in system genetics.  Genetics 193 : 1003-1013.
   (package
     (name "r-qtlemm")
     (version "1.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "QTLEMM" version))
-              (sha256
-               (base32
-                "1s0rk0lsn9ci0i8b9lm19v7fs0n9n6zg6hkmacdgdhhkfak0g5bm"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QTLEMM" version))
+       (sha256
+        (base32 "1s0rk0lsn9ci0i8b9lm19v7fs0n9n6zg6hkmacdgdhhkfak0g5bm"))))
     (properties `((upstream-name . "QTLEMM")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm))
@@ -2316,12 +2340,12 @@ Kao (2021) <doi: 10.1093/g3journal/jkab056>.")
   (package
     (name "r-qtlcharts")
     (version "0.16")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qtlcharts" version))
-              (sha256
-               (base32
-                "1bf7cdcbbxblsx357pymq54yr4aa7iaxpq4f73nbxdal9nbcqkda"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qtlcharts" version))
+       (sha256
+        (base32 "1bf7cdcbbxblsx357pymq54yr4aa7iaxpq4f73nbxdal9nbcqkda"))))
     (properties `((upstream-name . "qtlcharts")))
     (build-system r-build-system)
     (propagated-inputs (list r-qtl r-htmlwidgets))
@@ -2340,12 +2364,12 @@ variation in quantitative traits.  Broman (2015)
   (package
     (name "r-qtlc")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qtlc" version))
-              (sha256
-               (base32
-                "17ij4alx4qg556b5kq7qsjygj5jf8iyx1f0v52pvx1z2sm6nppww"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qtlc" version))
+       (sha256
+        (base32 "17ij4alx4qg556b5kq7qsjygj5jf8iyx1f0v52pvx1z2sm6nppww"))))
     (properties `((upstream-name . "qtlc")))
     (build-system r-build-system)
     (propagated-inputs (list r-tiff r-rgl r-plot3d))
@@ -2360,12 +2384,12 @@ chromatography (TLC) plates.")
   (package
     (name "r-qtlbook")
     (version "0.18-8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qtlbook" version))
-              (sha256
-               (base32
-                "1c849xy2ki7niddajv5wnsm0zdp5381w8zm9lc8rvkdbs2v6rhf4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qtlbook" version))
+       (sha256
+        (base32 "1c849xy2ki7niddajv5wnsm0zdp5381w8zm9lc8rvkdbs2v6rhf4"))))
     (properties `((upstream-name . "qtlbook")))
     (build-system r-build-system)
     (home-page "http://rqtl.org/book")
@@ -2379,12 +2403,12 @@ chromatography (TLC) plates.")
   (package
     (name "r-qtl2pleio")
     (version "1.4.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qtl2pleio" version))
-              (sha256
-               (base32
-                "0az71vgj1gv7rfz0hnc9rysh49ak2pnkvmih5mwmymr4an84c34k"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qtl2pleio" version))
+       (sha256
+        (base32 "0az71vgj1gv7rfz0hnc9rysh49ak2pnkvmih5mwmymr4an84c34k"))))
     (properties `((upstream-name . "qtl2pleio")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -2413,12 +2437,12 @@ multiparental populations.")
   (package
     (name "r-qtl2pattern")
     (version "1.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qtl2pattern" version))
-              (sha256
-               (base32
-                "12ysbqcf7bq1ibdyznlzc3kg71k7vd6cgy9xgmmhmdv8hkhdlf26"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qtl2pattern" version))
+       (sha256
+        (base32 "12ysbqcf7bq1ibdyznlzc3kg71k7vd6cgy9xgmmhmdv8hkhdlf26"))))
     (properties `((upstream-name . "qtl2pattern")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -2445,12 +2469,12 @@ handle multiple traits together.  See <https://github.com/byandell/qtl2pattern>.
   (package
     (name "r-qtl2ggplot")
     (version "1.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qtl2ggplot" version))
-              (sha256
-               (base32
-                "0w3xlyxcg0v111fp7z998m5qk0rfyk4k1dl7bpbww9v2ppizzr36"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qtl2ggplot" version))
+       (sha256
+        (base32 "0w3xlyxcg0v111fp7z998m5qk0rfyk4k1dl7bpbww9v2ppizzr36"))))
     (properties `((upstream-name . "qtl2ggplot")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -2477,12 +2501,12 @@ to better handle high-dimensional data and complex cross designs.")
   (package
     (name "r-qtl2fst")
     (version "0.26")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qtl2fst" version))
-              (sha256
-               (base32
-                "0wpqpmj752pwjgghv7b30r69nc950h5fnsszsj142p7vws7ss8j9"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qtl2fst" version))
+       (sha256
+        (base32 "0wpqpmj752pwjgghv7b30r69nc950h5fnsszsj142p7vws7ss8j9"))))
     (properties `((upstream-name . "qtl2fst")))
     (build-system r-build-system)
     (propagated-inputs (list r-qtl2 r-fst))
@@ -2501,12 +2525,12 @@ reduced memory usage with only a modest increase in computation time.")
   (package
     (name "r-qtl2convert")
     (version "0.28")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qtl2convert" version))
-              (sha256
-               (base32
-                "06703m9mkpc77agkmikr9bhr4ag1z161k8pq8l1i562mkd0qlgs8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qtl2convert" version))
+       (sha256
+        (base32 "06703m9mkpc77agkmikr9bhr4ag1z161k8pq8l1i562mkd0qlgs8"))))
     (properties `((upstream-name . "qtl2convert")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-qtl2 r-qtl))
@@ -2521,12 +2545,12 @@ qtl', and DOQTL packages for mapping quantitative trait loci (QTL).")
   (package
     (name "r-qtl-gcimapping-gui")
     (version "2.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "QTL.gCIMapping.GUI" version))
-              (sha256
-               (base32
-                "0a155vl869i3li2i67b89p056x50ycqp9yk0ll5g3fp3xcdl80zs"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QTL.gCIMapping.GUI" version))
+       (sha256
+        (base32 "0a155vl869i3li2i67b89p056x50ycqp9yk0ll5g3fp3xcdl80zs"))))
     (properties `((upstream-name . "QTL.gCIMapping.GUI")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -2559,12 +2583,12 @@ identified by likelihood radio test.  See Wen et al. (2018)
   (package
     (name "r-qtl-gcimapping")
     (version "3.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "QTL.gCIMapping" version))
-              (sha256
-               (base32
-                "17f2xmgklbi8kicv7v951zm3bf1q4bdx9lcfbxpac3i7xm985fgr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QTL.gCIMapping" version))
+       (sha256
+        (base32 "17f2xmgklbi8kicv7v951zm3bf1q4bdx9lcfbxpac3i7xm985fgr"))))
     (properties `((upstream-name . "QTL.gCIMapping")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -2598,12 +2622,12 @@ et al. (2018) <doi:10.1093/bib/bby058>.")
   (package
     (name "r-qte")
     (version "1.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qte" version))
-              (sha256
-               (base32
-                "1hz3rwsi3w2b1xjigf5s3866djcxdkjz7jwcz0rin22v5h6sql80"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qte" version))
+       (sha256
+        (base32 "1hz3rwsi3w2b1xjigf5s3866djcxdkjz7jwcz0rin22v5h6sql80"))))
     (properties `((upstream-name . "qte")))
     (build-system r-build-system)
     (propagated-inputs (list r-texreg
@@ -2634,12 +2658,12 @@ Callaway and Li (2019) <doi:10.3982/QE935>, Callaway, Li, and Oka (2018)
   (package
     (name "r-qsub")
     (version "1.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qsub" version))
-              (sha256
-               (base32
-                "0ygys183pj420jr9bz13x009qis3qr1aqxgw3l2d4xx3xv90iy3g"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qsub" version))
+       (sha256
+        (base32 "0ygys183pj420jr9bz13x009qis3qr1aqxgw3l2d4xx3xv90iy3g"))))
     (properties `((upstream-name . "qsub")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -2663,12 +2687,12 @@ the qsub command.")
   (package
     (name "r-qst")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qst" version))
-              (sha256
-               (base32
-                "0f5c4088y9c5fxyy2dyfkp049lnzvys3zyizazxsa82xwkwsbc8a"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qst" version))
+       (sha256
+        (base32 "0f5c4088y9c5fxyy2dyfkp049lnzvys3zyizazxsa82xwkwsbc8a"))))
     (properties `((upstream-name . "qst")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -2692,12 +2716,12 @@ functions provided by similar packages.")
   (package
     (name "r-qspray")
     (version "2.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qspray" version))
-              (sha256
-               (base32
-                "164ls4a4cij7szbi6jwia2021cgrv4zjhmamslyhnfymdj2nz051"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qspray" version))
+       (sha256
+        (base32 "164ls4a4cij7szbi6jwia2021cgrv4zjhmamslyhnfymdj2nz051"))))
     (properties `((upstream-name . "qspray")))
     (build-system r-build-system)
     (inputs (list mpfr gmp))
@@ -2723,12 +2747,12 @@ provides a function to compute @code{GrÃ¶bner} bases (reference
   (package
     (name "r-qsplines")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qsplines" version))
-              (sha256
-               (base32
-                "0zln3w2qx8ck9631hkq8ig5bc2l55wg5mdp3i0fm9amg8mhzq37i"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qsplines" version))
+       (sha256
+        (base32 "0zln3w2qx8ck9631hkq8ig5bc2l55wg5mdp3i0fm9amg8mhzq37i"))))
     (properties `((upstream-name . "qsplines")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-rcpp r-onion r-bh))
@@ -2747,12 +2771,12 @@ allow to construct spherical curves.  References: Barry and Goldman
   (package
     (name "r-qsort")
     (version "0.2.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qsort" version))
-              (sha256
-               (base32
-                "1xvp29dijfa2207wyw3z09rmffn61fngfy0f00qjk284n1jnnvrg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qsort" version))
+       (sha256
+        (base32 "1xvp29dijfa2207wyw3z09rmffn61fngfy0f00qjk284n1jnnvrg"))))
     (properties `((upstream-name . "qsort")))
     (build-system r-build-system)
     (propagated-inputs (list r-purrr r-gridextra r-ggplot2 r-cowplot))
@@ -2776,12 +2800,12 @@ Preschool Q-set (Baumrind, 1968 revised by Wanda Bronson,
   (package
     (name "r-qsimulatr")
     (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qsimulatR" version))
-              (sha256
-               (base32
-                "1h1pfr9cdramkr0ph7hmbvz585zwa964fd8z1hzc00pyr36ypf3k"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qsimulatR" version))
+       (sha256
+        (base32 "1h1pfr9cdramkr0ph7hmbvz585zwa964fd8z1hzc00pyr36ypf3k"))))
     (properties `((upstream-name . "qsimulatR")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -2802,12 +2826,12 @@ hardware <https://quantum-computing.ibm.com/>.")
   (package
     (name "r-qsardata")
     (version "1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "QSARdata" version))
-              (sha256
-               (base32
-                "0dhldnh0jzzb4assycc0l14s45ymvha48w04jbnr34lrwgr9krh4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QSARdata" version))
+       (sha256
+        (base32 "0dhldnh0jzzb4assycc0l14s45ymvha48w04jbnr34lrwgr9krh4"))))
     (properties `((upstream-name . "QSARdata")))
     (build-system r-build-system)
     (home-page "http://qsardata.r-forge.r-project.org/")
@@ -2820,12 +2844,12 @@ hardware <https://quantum-computing.ibm.com/>.")
   (package
     (name "r-qrnn")
     (version "2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qrnn" version))
-              (sha256
-               (base32
-                "19lavs7r7xhwxgbaw6i6makfrbym7aiz8ar3vcb8ff1p2jdpqnag"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qrnn" version))
+       (sha256
+        (base32 "19lavs7r7xhwxgbaw6i6makfrbym7aiz8ar3vcb8ff1p2jdpqnag"))))
     (properties `((upstream-name . "qrnn")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=qrnn")
@@ -2842,12 +2866,12 @@ the ability to fit multiple non-crossing quantile functions following Cannon
   (package
     (name "r-qrnlmm")
     (version "3.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qrNLMM" version))
-              (sha256
-               (base32
-                "085xjxgswzfra90s88h0mhpns9fpm9pjpi6y2zcv46a67zfvpn9v"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qrNLMM" version))
+       (sha256
+        (base32 "085xjxgswzfra90s88h0mhpns9fpm9pjpi6y2zcv46a67zfvpn9v"))))
     (properties `((upstream-name . "qrNLMM")))
     (build-system r-build-system)
     (propagated-inputs (list r-quantreg
@@ -2871,12 +2895,12 @@ convergence and fitting results.")
   (package
     (name "r-qrng")
     (version "0.0-9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qrng" version))
-              (sha256
-               (base32
-                "1qkfaqj0bmfvray5cdv83ic967wf2lsvnr37z008vi7kwm2glpig"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qrng" version))
+       (sha256
+        (base32 "1qkfaqj0bmfvray5cdv83ic967wf2lsvnr37z008vi7kwm2glpig"))))
     (properties `((upstream-name . "qrng")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=qrng")
@@ -2890,12 +2914,12 @@ dimensions.")
   (package
     (name "r-qrmtools")
     (version "0.0-16")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qrmtools" version))
-              (sha256
-               (base32
-                "14396xnh4m1kkrhngpai3s4a94csqqbpi1nlqalq0l53iyvj8bcz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qrmtools" version))
+       (sha256
+        (base32 "14396xnh4m1kkrhngpai3s4a94csqqbpi1nlqalq0l53iyvj8bcz"))))
     (properties `((upstream-name . "qrmtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -2920,12 +2944,12 @@ Management practice.")
   (package
     (name "r-qrmix")
     (version "0.9.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qrmix" version))
-              (sha256
-               (base32
-                "1r695d9bmmngvblh9jj0rnjymdaln9w0jywz51wla0bdssssf845"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qrmix" version))
+       (sha256
+        (base32 "1r695d9bmmngvblh9jj0rnjymdaln9w0jywz51wla0bdssssf845"))))
     (properties `((upstream-name . "qrmix")))
     (build-system r-build-system)
     (propagated-inputs (list r-quantreg r-mass))
@@ -2940,12 +2964,12 @@ based on quantile regression proposed by Emir et al., 2017 (unpublished).")
   (package
     (name "r-qrmdata")
     (version "2022-05-31-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qrmdata" version))
-              (sha256
-               (base32
-                "1wp92qjmhy12l4l80kbq7rxc8vnwinfi5qbp74a5zkpwrbdrhi2h"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qrmdata" version))
+       (sha256
+        (base32 "1wp92qjmhy12l4l80kbq7rxc8vnwinfi5qbp74a5zkpwrbdrhi2h"))))
     (properties `((upstream-name . "qrmdata")))
     (build-system r-build-system)
     (propagated-inputs (list r-xts))
@@ -2961,12 +2985,12 @@ practice.")
   (package
     (name "r-qrm")
     (version "0.4-31")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "QRM" version))
-              (sha256
-               (base32
-                "15dyk3zfy92vj4xny04dh5mqcyb8qh61566m313qs17mxwibvn2a"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QRM" version))
+       (sha256
+        (base32 "15dyk3zfy92vj4xny04dh5mqcyb8qh61566m313qs17mxwibvn2a"))))
     (properties `((upstream-name . "QRM")))
     (build-system r-build-system)
     (propagated-inputs (list r-timeseries
@@ -2990,12 +3014,12 @@ Ruediger Frey, and Paul Embrechts.")
   (package
     (name "r-qrlmm")
     (version "2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qrLMM" version))
-              (sha256
-               (base32
-                "1y612kqnwqzrg5b7c4fc0al8zxycb6g6bgq747yvkm9kqyhbxszh"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qrLMM" version))
+       (sha256
+        (base32 "1y612kqnwqzrg5b7c4fc0al8zxycb6g6bgq747yvkm9kqyhbxszh"))))
     (properties `((upstream-name . "qrLMM")))
     (build-system r-build-system)
     (propagated-inputs (list r-quantreg r-psych r-mvtnorm r-lqr r-ald))
@@ -3014,12 +3038,12 @@ results.")
   (package
     (name "r-qrjoint")
     (version "2.0-9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qrjoint" version))
-              (sha256
-               (base32
-                "0dvz5adawy143r0ddgrblzac76igwmngnblr6vq57sxlvj1nsm7h"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qrjoint" version))
+       (sha256
+        (base32 "0dvz5adawy143r0ddgrblzac76igwmngnblr6vq57sxlvj1nsm7h"))))
     (properties `((upstream-name . "qrjoint")))
     (build-system r-build-system)
     (propagated-inputs (list r-quantreg r-matrix r-kernlab r-coda))
@@ -3034,12 +3058,12 @@ regression setting.")
   (package
     (name "r-qrisk3")
     (version "0.6.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "QRISK3" version))
-              (sha256
-               (base32
-                "1qyipdmw7ygxlclnyf726bjkirskkkf4cygyv0y421c9x7dgznij"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QRISK3" version))
+       (sha256
+        (base32 "1qyipdmw7ygxlclnyf726bjkirskkkf4cygyv0y421c9x7dgznij"))))
     (properties `((upstream-name . "QRISK3")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=QRISK3")
@@ -3055,12 +3079,12 @@ published open-sourced free risk prediction algorithm QRISK3-2017
   (package
     (name "r-qris")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qris" version))
-              (sha256
-               (base32
-                "0rdfpxip37wxim9ini4vgjjpk5b9jqdlaygqkbid2jgjzzya98h0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qris" version))
+       (sha256
+        (base32 "0rdfpxip37wxim9ini4vgjjpk5b9jqdlaygqkbid2jgjzzya98h0"))))
     (properties `((upstream-name . "qris")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -3090,12 +3114,12 @@ K. (2022) \"Smoothed quantile regression for censored residual life\",
   (package
     (name "r-qripkg")
     (version "0.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "QRIpkg" version))
-              (sha256
-               (base32
-                "0xqc72p3jm61kifha77c8sfk7b1p7cfdskzkm29w4j06009qd8a8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QRIpkg" version))
+       (sha256
+        (base32 "0xqc72p3jm61kifha77c8sfk7b1p7cfdskzkm29w4j06009qd8a8"))))
     (properties `((upstream-name . "QRIpkg")))
     (build-system r-build-system)
     (propagated-inputs (list r-quantreg r-ggplot2))
@@ -3114,12 +3138,12 @@ individual measurements.")
   (package
     (name "r-qreport")
     (version "1.0-0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qreport" version))
-              (sha256
-               (base32
-                "06ycxcs9kkx3m9f74bjvlj84jjp60wd0hjd40mgpir2559hqmqnb"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qreport" version))
+       (sha256
+        (base32 "06ycxcs9kkx3m9f74bjvlj84jjp60wd0hjd40mgpir2559hqmqnb"))))
     (properties `((upstream-name . "qreport")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -3146,12 +3170,12 @@ graphics for adverse event reporting.")
   (package
     (name "r-qrencoder")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qrencoder" version))
-              (sha256
-               (base32
-                "1lg60lg2fiqdw0m228i8pln2p0kqp9f21qmrx6r6rwxifvwlfhv8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qrencoder" version))
+       (sha256
+        (base32 "1lg60lg2fiqdw0m228i8pln2p0kqp9f21qmrx6r6rwxifvwlfhv8"))))
     (properties `((upstream-name . "qrencoder")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-raster r-png r-base64enc))
@@ -3170,12 +3194,12 @@ via the included libqrencoder library created by Kentaro Fukuchi.")
   (package
     (name "r-qregvcm")
     (version "1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "QRegVCM" version))
-              (sha256
-               (base32
-                "0fcydkf6r2qxd59ylr8vn76bkxks91v58gfzvq3rjd5mqf9vsaaq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QRegVCM" version))
+       (sha256
+        (base32 "0fcydkf6r2qxd59ylr8vn76bkxks91v58gfzvq3rjd5mqf9vsaaq"))))
     (properties `((upstream-name . "QRegVCM")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncsp r-sparsem r-quantreg))
@@ -3192,12 +3216,12 @@ General heteroscedastic VCM.")
   (package
     (name "r-qregbb")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "QregBB" version))
-              (sha256
-               (base32
-                "0rihfd2542wpfv43115pkxh233ma1qwkwxivawqs9f4faypyi5mh"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QregBB" version))
+       (sha256
+        (base32 "0rihfd2542wpfv43115pkxh233ma1qwkwxivawqs9f4faypyi5mh"))))
     (properties `((upstream-name . "QregBB")))
     (build-system r-build-system)
     (propagated-inputs (list r-quantreg))
@@ -3215,12 +3239,12 @@ time series.  The Annals of Statistics, 46(3), 1138-1166.")
   (package
     (name "r-qrcode")
     (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qrcode" version))
-              (sha256
-               (base32
-                "1sxaqyp35k8cj5ilrrkifnf4icsm306arsfk2xq2vbx4qzxv96hq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qrcode" version))
+       (sha256
+        (base32 "1sxaqyp35k8cj5ilrrkifnf4icsm306arsfk2xq2vbx4qzxv96hq"))))
     (properties `((upstream-name . "qrcode")))
     (build-system r-build-system)
     (propagated-inputs (list r-assertthat))
@@ -3233,12 +3257,12 @@ time series.  The Annals of Statistics, 46(3), 1138-1166.")
   (package
     (name "r-qrcmnp")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qrcmNP" version))
-              (sha256
-               (base32
-                "0hxg9w4k4k14fan6hb476wnnnpf4y6xywc2vbjka7cmpl1ydw1p4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qrcmNP" version))
+       (sha256
+        (base32 "0hxg9w4k4k14fan6hb476wnnnpf4y6xywc2vbjka7cmpl1ydw1p4"))))
     (properties `((upstream-name . "qrcmNP")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-qrcm))
@@ -3255,12 +3279,12 @@ functions.  Sottile G, Frumento P, Chiodi M and Bottai M (2020)
   (package
     (name "r-qrcm")
     (version "3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qrcm" version))
-              (sha256
-               (base32
-                "0y1na936vk5qsir5plzjrbv39jpnq01qplza32z31x6y28is2fz9"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qrcm" version))
+       (sha256
+        (base32 "0y1na936vk5qsir5plzjrbv39jpnq01qplza32z31x6y28is2fz9"))))
     (properties `((upstream-name . "qrcm")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-pch))
@@ -3274,12 +3298,12 @@ functions.  Sottile G, Frumento P, Chiodi M and Bottai M (2020)
   (package
     (name "r-qrank")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "QRank" version))
-              (sha256
-               (base32
-                "1f924r5bf5vjfl12hk1n5m3f94g30f6vmvzq2bn8295dflyndck0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QRank" version))
+       (sha256
+        (base32 "1f924r5bf5vjfl12hk1n5m3f94g30f6vmvzq2bn8295dflyndck0"))))
     (properties `((upstream-name . "QRank")))
     (build-system r-build-system)
     (propagated-inputs (list r-quantreg))
@@ -3294,12 +3318,12 @@ expression quantitative trait loci.")
   (package
     (name "r-qragadget")
     (version "0.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "QRAGadget" version))
-              (sha256
-               (base32
-                "06ka6n9sh7h8ka6mklbvk8f7sqmz50mk74fjaj1r4l774wribxaq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QRAGadget" version))
+       (sha256
+        (base32 "06ka6n9sh7h8ka6mklbvk8f7sqmz50mk74fjaj1r4l774wribxaq"))))
     (properties `((upstream-name . "QRAGadget")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp
@@ -3323,12 +3347,12 @@ configurations.")
   (package
     (name "r-qra")
     (version "0.2.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qra" version))
-              (sha256
-               (base32
-                "0wx0lz8a7qc1fdpvgyfhpbryy7wk7yi90ii2yirh57dvpyfq54m0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qra" version))
+       (sha256
+        (base32 "0wx0lz8a7qc1fdpvgyfhpbryy7wk7yi90ii2yirh57dvpyfq54m0"))))
     (properties `((upstream-name . "qra")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmarkdown
@@ -3359,12 +3383,12 @@ betabinomial error family.  See also Maindonald, Waddell, and Petry (2001)
   (package
     (name "r-qr")
     (version "0.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "QR" version))
-              (sha256
-               (base32
-                "1xar0mj8s2nb8sks8dzf4wn1axc4rhmhx1qsjn2blsi4i8gfncka"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QR" version))
+       (sha256
+        (base32 "1xar0mj8s2nb8sks8dzf4wn1axc4rhmhx1qsjn2blsi4i8gfncka"))))
     (properties `((upstream-name . "QR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tinytest))
@@ -3382,12 +3406,12 @@ Guide\".  Third Edition.  SIAM.")
   (package
     (name "r-qqvases")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qqvases" version))
-              (sha256
-               (base32
-                "1fli4v1slmnwcmzmmfw84sa4mx3xzv3im1q0plb8811sbsgmwdvl"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qqvases" version))
+       (sha256
+        (base32 "1fli4v1slmnwcmzmmfw84sa4mx3xzv3im1q0plb8811sbsgmwdvl"))))
     (properties `((upstream-name . "qqvases")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinythemes r-shiny))
@@ -3406,12 +3430,12 @@ distributions, either as samples or continuous functions.")
   (package
     (name "r-qqtest")
     (version "1.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qqtest" version))
-              (sha256
-               (base32
-                "1v0qbbp2dpqflpg7yif7hipwdbz27isfyfwcia1ln7z0nnvkjm8c"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qqtest" version))
+       (sha256
+        (base32 "1v0qbbp2dpqflpg7yif7hipwdbz27isfyfwcia1ln7z0nnvkjm8c"))))
     (properties `((upstream-name . "qqtest")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -3439,12 +3463,12 @@ that the data come from the test distribution.")
   (package
     (name "r-qqplotr")
     (version "0.0.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qqplotr" version))
-              (sha256
-               (base32
-                "0kj1m7m04599d3b6227vja02zwq5d2vc0cyz2c7jvki4g3q2knxf"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qqplotr" version))
+       (sha256
+        (base32 "0kj1m7m04599d3b6227vja02zwq5d2vc0cyz2c7jvki4g3q2knxf"))))
     (properties `((upstream-name . "qqplotr")))
     (build-system r-build-system)
     (propagated-inputs (list r-robustbase
@@ -3464,12 +3488,12 @@ that the data come from the test distribution.")
   (package
     (name "r-qqboxplot")
     (version "0.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qqboxplot" version))
-              (sha256
-               (base32
-                "1rsipw7cn2gqpqpa0ysj99ms5jpnbynjs4gkkmbr2w0c2466fhgx"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qqboxplot" version))
+       (sha256
+        (base32 "1rsipw7cn2gqpqpa0ysj99ms5jpnbynjs4gkkmbr2w0c2466fhgx"))))
     (properties `((upstream-name . "qqboxplot")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))
@@ -3489,12 +3513,12 @@ extend to the Q-Q boxplot.")
   (package
     (name "r-qpnca")
     (version "1.1.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qpNCA" version))
-              (sha256
-               (base32
-                "1mlv9yc929w8ypfzhfplhjbxxj1qdx4v9gh6dr68lylvm9ahx032"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qpNCA" version))
+       (sha256
+        (base32 "1mlv9yc929w8ypfzhfplhjbxxj1qdx4v9gh6dr68lylvm9ahx032"))))
     (properties `((upstream-name . "qpNCA")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-magrittr r-knitr r-ggplot2 r-dplyr))
@@ -3515,12 +3539,12 @@ ISBN:978-91-9765-100-4), and Gibaldi and Perrier (1982, ISBN:978-0824710422).")
   (package
     (name "r-qpmadr")
     (version "1.1.0-0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qpmadr" version))
-              (sha256
-               (base32
-                "0krv3zhr42z2mkkbn2bkglzfxbf06dmd9vnnc3rcyhm1r85n4fbq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qpmadr" version))
+       (sha256
+        (base32 "0krv3zhr42z2mkkbn2bkglzfxbf06dmd9vnnc3rcyhm1r85n4fbq"))))
     (properties `((upstream-name . "qpmadr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-checkmate))
@@ -3536,12 +3560,12 @@ constraints.  The method used is outlined in D. Goldfarb, and A. Idnani (1983)
   (package
     (name "r-qpcrtools")
     (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qPCRtools" version))
-              (sha256
-               (base32
-                "1z5yha37w4zgf0yzkrrap34s4f2ngblvh698d7m0dfdchgai63qp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qPCRtools" version))
+       (sha256
+        (base32 "1z5yha37w4zgf0yzkrrap34s4f2ngblvh698d7m0dfdchgai63qp"))))
     (properties `((upstream-name . "qPCRtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-xlsx
@@ -3577,12 +3601,12 @@ based on three methods.")
   (package
     (name "r-qpcrhelper")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qPCRhelper" version))
-              (sha256
-               (base32
-                "0v1d4k2v2sgcy0xh2vq21yv9sw71bj44rc273g9ggg214zqdprxd"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qPCRhelper" version))
+       (sha256
+        (base32 "0v1d4k2v2sgcy0xh2vq21yv9sw71bj44rc273g9ggg214zqdprxd"))))
     (properties `((upstream-name . "qPCRhelper")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstatix r-magrittr r-ggpubr r-ggplot2 r-dplyr))
@@ -3603,12 +3627,12 @@ values are described in: Livak & Schmittgen, (2001)
   (package
     (name "r-qolmiss")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "QoLMiss" version))
-              (sha256
-               (base32
-                "00g1ykwlmc4w0bmzj0jg9ckr2bvkl8qcxd67wdc12alccqqd584v"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QoLMiss" version))
+       (sha256
+        (base32 "00g1ykwlmc4w0bmzj0jg9ckr2bvkl8qcxd67wdc12alccqqd584v"))))
     (properties `((upstream-name . "QoLMiss")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-missmethods r-dplyr))
@@ -3628,12 +3652,12 @@ original data set.")
   (package
     (name "r-qoi")
     (version "0.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qoi" version))
-              (sha256
-               (base32
-                "0sdarr3f6by3kgaq7302kwkgv0vcy4q0mkprdlawkybaafzlzb9x"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qoi" version))
+       (sha256
+        (base32 "0sdarr3f6by3kgaq7302kwkgv0vcy4q0mkprdlawkybaafzlzb9x"))))
     (properties `((upstream-name . "qoi")))
     (build-system r-build-system)
     (home-page "https://github.com/JohannesFriedrich/qoi4R")
@@ -3649,12 +3673,12 @@ and write both files and in-memory raw vectors.")
   (package
     (name "r-qmvs")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qmvs" version))
-              (sha256
-               (base32
-                "0mmz0f62n5yip3h7knagc3rp7kb5jyfr9a24ih6knya5lri5d70h"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qmvs" version))
+       (sha256
+        (base32 "0mmz0f62n5yip3h7knagc3rp7kb5jyfr9a24ih6knya5lri5d70h"))))
     (properties `((upstream-name . "qmvs")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=qmvs")
@@ -3674,12 +3698,12 @@ distance between the empirical response times and the model prediction.")
   (package
     (name "r-qmrparser")
     (version "0.1.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qmrparser" version))
-              (sha256
-               (base32
-                "0d17b64gzf5xlhc5z8qxjj759c1paiv8kxikk2r6ph6zfwvvxw0y"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qmrparser" version))
+       (sha256
+        (base32 "0d17b64gzf5xlhc5z8qxjj759c1paiv8kxikk2r6ph6zfwvvxw0y"))))
     (properties `((upstream-name . "qmrparser")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=qmrparser")
@@ -3693,12 +3717,12 @@ files.")
   (package
     (name "r-qmethod")
     (version "1.8.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qmethod" version))
-              (sha256
-               (base32
-                "0smkqqq8pcxix4lf35skkf9p5jw9mc3llkmyr334qkk85kvgnwn6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qmethod" version))
+       (sha256
+        (base32 "0smkqqq8pcxix4lf35skkf9p5jw9mc3llkmyr334qkk85kvgnwn6"))))
     (properties `((upstream-name . "qmethod")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable r-psych r-knitr r-digest))
@@ -3731,12 +3755,12 @@ online and offline use.")
   (package
     (name "r-qmd")
     (version "1.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qmd" version))
-              (sha256
-               (base32
-                "15y1bivli3jy09l4j37zp327x1nchkg6qm8hs46srcxznh9zb99d"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qmd" version))
+       (sha256
+        (base32 "15y1bivli3jy09l4j37zp327x1nchkg6qm8hs46srcxznh9zb99d"))))
     (properties `((upstream-name . "qmd")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-qad r-ggplot2 r-dplyr r-cowplot))
@@ -3753,12 +3777,12 @@ Statistics, 16, 2206-2251.")
   (package
     (name "r-qmap")
     (version "1.0-4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qmap" version))
-              (sha256
-               (base32
-                "02xvq1mw83gln7phacbi3vhkvb100crggbldv13mhwq3wjnmg5k2"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qmap" version))
+       (sha256
+        (base32 "02xvq1mw83gln7phacbi3vhkvb100crggbldv13mhwq3wjnmg5k2"))))
     (properties `((upstream-name . "qmap")))
     (build-system r-build-system)
     (propagated-inputs (list r-fitdistrplus))
@@ -3774,12 +3798,12 @@ Statistics, 16, 2206-2251.")
   (package
     (name "r-qlifetable")
     (version "0.0.1-15")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qlifetable" version))
-              (sha256
-               (base32
-                "0mqwlvkrd3sfnjx3vwc1pr6wzjwk7gz6mgmakxhh6gbh0v3swf0d"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qlifetable" version))
+       (sha256
+        (base32 "0mqwlvkrd3sfnjx3vwc1pr6wzjwk7gz6mgmakxhh6gbh0v3swf0d"))))
     (properties `((upstream-name . "qlifetable")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=qlifetable")
@@ -3795,12 +3819,12 @@ general or an insured population.  References: @code{PavÃ­a} and @code{LledÃ�
   (package
     (name "r-qlearning")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "QLearning" version))
-              (sha256
-               (base32
-                "1bx77yxsnzh0ny3ghala5fw54lxzrxqk9s32qk3dzvfbyp4paggn"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QLearning" version))
+       (sha256
+        (base32 "1bx77yxsnzh0ny3ghala5fw54lxzrxqk9s32qk3dzvfbyp4paggn"))))
     (properties `((upstream-name . "QLearning")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=QLearning")
@@ -3815,12 +3839,12 @@ described in work by Strehl, Li, Wiewiora, Langford & Littman (2006)
   (package
     (name "r-qlcal")
     (version "0.0.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qlcal" version))
-              (sha256
-               (base32
-                "1dl6bahdyimkw93fgqf7qz62dn1znp2ia972fdvj33sx0zgnwngy"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qlcal" version))
+       (sha256
+        (base32 "1dl6bahdyimkw93fgqf7qz62dn1znp2ia972fdvj33sx0zgnwngy"))))
     (properties `((upstream-name . "qlcal")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-bh))
@@ -3838,12 +3862,12 @@ Quantuccia').")
   (package
     (name "r-qkerntool")
     (version "1.19")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qkerntool" version))
-              (sha256
-               (base32
-                "14inry2hqvkmy0y2y3cl75ri4vri0hirv98gw2rymny69lia5x0s"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qkerntool" version))
+       (sha256
+        (base32 "14inry2hqvkmy0y2y3cl75ri4vri0hirv98gw2rymny69lia5x0s"))))
     (properties `((upstream-name . "qkerntool")))
     (build-system r-build-system)
     (propagated-inputs (list r-class))
@@ -3864,12 +3888,12 @@ embedding, sammon's mapping and t-Distributed stochastic neighbor embedding.")
   (package
     (name "r-qindex")
     (version "0.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Qindex" version))
-              (sha256
-               (base32
-                "15xwnyimylixhv5p0y386ll2lj8b5l9pawfpnjahcf2j2mbkhmbn"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Qindex" version))
+       (sha256
+        (base32 "15xwnyimylixhv5p0y386ll2lj8b5l9pawfpnjahcf2j2mbkhmbn"))))
     (properties `((upstream-name . "Qindex")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -3892,12 +3916,12 @@ optimally dichotomized numeric predictor(s), as in Yi, et.  al. (2023)
   (package
     (name "r-qiitr")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qiitr" version))
-              (sha256
-               (base32
-                "0qbqx7g4np2ygyxiqmq5cww1az6ijjx6na6b1mp4ywmyxkjg3k29"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qiitr" version))
+       (sha256
+        (base32 "0qbqx7g4np2ygyxiqmq5cww1az6ijjx6na6b1mp4ywmyxkjg3k29"))))
     (properties `((upstream-name . "qiitr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstudioapi r-purrr r-jsonlite r-httr))
@@ -3912,12 +3936,12 @@ programmers.  See <https://qiita.com/api/v2/docs> for more information.")
   (package
     (name "r-qif")
     (version "1.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qif" version))
-              (sha256
-               (base32
-                "12azs7c0anpd71d5663y1jrhirry6cr78wislp4fk64hmsbx7sx4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qif" version))
+       (sha256
+        (base32 "12azs7c0anpd71d5663y1jrhirry6cr78wislp4fk64hmsbx7sx4"))))
     (properties `((upstream-name . "qif")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -3939,12 +3963,12 @@ B. (2000) <doi:10.1093/biomet/87.4.823>.")
   (package
     (name "r-qicharts2")
     (version "0.7.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qicharts2" version))
-              (sha256
-               (base32
-                "147wzp1n55nrmrjzkzflrz1g2r4iif5nyncjlmcp9zk22qx1kl05"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qicharts2" version))
+       (sha256
+        (base32 "147wzp1n55nrmrjzkzflrz1g2r4iif5nyncjlmcp9zk22qx1kl05"))))
     (properties `((upstream-name . "qicharts2")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-ggplot2))
@@ -3966,12 +3990,12 @@ rule [Mohammed, Worthington, Woodall (2008) <doi:10.1136/qshc.2004.012047>].")
   (package
     (name "r-qicharts")
     (version "0.5.8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qicharts" version))
-              (sha256
-               (base32
-                "1n8jvb9dfb2k60zi9z99sncpwqbbj0h8zngmqq2k795zpa79gf1d"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qicharts" version))
+       (sha256
+        (base32 "1n8jvb9dfb2k60zi9z99sncpwqbbj0h8zngmqq2k795zpa79gf1d"))))
     (properties `((upstream-name . "qicharts")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-latticeextra r-lattice r-ggplot2))
@@ -3994,12 +4018,12 @@ empty subgroups are handled gracefully.")
   (package
     (name "r-qi")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "QI" version))
-              (sha256
-               (base32
-                "1r65xq892mga54dfbh5va5zji5d1dx8k0fy611kbdviwqf0dfhx5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QI" version))
+       (sha256
+        (base32 "1r65xq892mga54dfbh5va5zji5d1dx8k0fy611kbdviwqf0dfhx5"))))
     (properties `((upstream-name . "QI")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))
@@ -4020,12 +4044,12 @@ to denote the quantity factor.")
   (package
     (name "r-qhscrnomo")
     (version "3.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "QHScrnomo" version))
-              (sha256
-               (base32
-                "1lr5x0cz1lkvcglhyvxy2pbg4bvvn46ii6vr5zwlm3zg05jhzx1v"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QHScrnomo" version))
+       (sha256
+        (base32 "1lr5x0cz1lkvcglhyvxy2pbg4bvvn46ii6vr5zwlm3zg05jhzx1v"))))
     (properties `((upstream-name . "QHScrnomo")))
     (build-system r-build-system)
     (propagated-inputs (list r-rms r-hmisc r-cmprsk))
@@ -4044,12 +4068,12 @@ Kattan MW, Heller G, Brennan MF (2003) <doi:10.1002/sim.1574>.")
   (package
     (name "r-qhot")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "QHOT" version))
-              (sha256
-               (base32
-                "02z0n2jawd6m7bvyvpcy0j13p1c0zm036g62n56xva18qnq5c9lb"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QHOT" version))
+       (sha256
+        (base32 "02z0n2jawd6m7bvyvpcy0j13p1c0zm036g62n56xva18qnq5c9lb"))))
     (properties `((upstream-name . "QHOT")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=QHOT")
@@ -4064,12 +4088,12 @@ including the flanking markers of QTLs.")
   (package
     (name "r-qha")
     (version "0.0.8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qha" version))
-              (sha256
-               (base32
-                "0sdf6g6884wn73i237xkwszg2mq8xddhvyy225qzpplh5za4pnhl"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qha" version))
+       (sha256
+        (base32 "0sdf6g6884wn73i237xkwszg2mq8xddhvyy225qzpplh5za4pnhl"))))
     (properties `((upstream-name . "qha")))
     (build-system r-build-system)
     (propagated-inputs (list r-factominer r-factoclass r-ade4))
@@ -4089,12 +4113,12 @@ en Estadistica, 8(1), 11-32.")
   (package
     (name "r-qgtools")
     (version "2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qgtools" version))
-              (sha256
-               (base32
-                "1gj7vbam53yr2rnxzfxng1p107bjcyjmyj47cxyzaiv19pznkbmw"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qgtools" version))
+       (sha256
+        (base32 "1gj7vbam53yr2rnxzfxng1p107bjcyjmyj47cxyzaiv19pznkbmw"))))
     (properties `((upstream-name . "qgtools")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=qgtools")
@@ -4112,12 +4136,12 @@ tested.  This package also offers fast computations for many large data sets.")
   (package
     (name "r-qgshiny")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qgshiny" version))
-              (sha256
-               (base32
-                "0ydhwg4abn8n9pwnjnwf1n1k854zw31z8f2splzdm5j279lsjg3r"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qgshiny" version))
+       (sha256
+        (base32 "0ydhwg4abn8n9pwnjnwf1n1k854zw31z8f2splzdm5j279lsjg3r"))))
     (properties `((upstream-name . "qgshiny")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-rmarkdown))
@@ -4136,12 +4160,12 @@ ISBN:978-0972072427).")
   (package
     (name "r-qgisprocess")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qgisprocess" version))
-              (sha256
-               (base32
-                "075fanz6s4qfinx1yc503xl9viap639ricp9mdm314hq2d94lfjr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qgisprocess" version))
+       (sha256
+        (base32 "075fanz6s4qfinx1yc503xl9viap639ricp9mdm314hq2d94lfjr"))))
     (properties `((upstream-name . "qgisprocess")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -4170,12 +4194,12 @@ are supported.  The native processing algorithms are documented by QGIS.org
   (package
     (name "r-qgglmm")
     (version "0.7.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "QGglmm" version))
-              (sha256
-               (base32
-                "0ghvicz4ia1180byj28lmg49889hqhb94g1jrkhm6hnzgqbjnfmd"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QGglmm" version))
+       (sha256
+        (base32 "0ghvicz4ia1180byj28lmg49889hqhb94g1jrkhm6hnzgqbjnfmd"))))
     (properties `((upstream-name . "QGglmm")))
     (build-system r-build-system)
     (propagated-inputs (list r-cubature))
@@ -4192,12 +4216,12 @@ phenotypic variance and additive genetic variance.")
   (package
     (name "r-qgg")
     (version "1.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qgg" version))
-              (sha256
-               (base32
-                "0195fzcr0xy2dns4jl5kn3nigy989l47syn8iavfdpqb76zsh0a3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qgg" version))
+       (sha256
+        (base32 "0195fzcr0xy2dns4jl5kn3nigy989l47syn8iavfdpqb76zsh0a3"))))
     (properties `((upstream-name . "qgg")))
     (build-system r-build-system)
     (propagated-inputs (list r-statmod
@@ -4224,12 +4248,12 @@ association analyses.  Rohde et al. (2019) <doi:10.1101/503631>.")
   (package
     (name "r-qgcompint")
     (version "0.7.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qgcompint" version))
-              (sha256
-               (base32
-                "0v2b7rr6m5mx3wyclbryxlcdly1a2vj8z0ywsyq4vvj66g2aa0yk"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qgcompint" version))
+       (sha256
+        (base32 "0v2b7rr6m5mx3wyclbryxlcdly1a2vj8z0ywsyq4vvj66g2aa0yk"))))
     (properties `((upstream-name . "qgcompint")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -4257,12 +4281,12 @@ the effects of exposure mixtures; <doi:10.1289/EHP5838>.")
   (package
     (name "r-qgcomp")
     (version "2.15.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qgcomp" version))
-              (sha256
-               (base32
-                "0qllrh5zmmd63kwjn7j3f5z56zr27q7czf6shdzcrf6ajy99risp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qgcomp" version))
+       (sha256
+        (base32 "0qllrh5zmmd63kwjn7j3f5z56zr27q7czf6shdzcrf6ajy99risp"))))
     (properties `((upstream-name . "qgcomp")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -4294,12 +4318,12 @@ mixtures; <doi:10.1289/EHP5838>.")
   (package
     (name "r-qgaussian")
     (version "0.1.8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qGaussian" version))
-              (sha256
-               (base32
-                "02xy35xg4swr1ldnsbywnz2h0ga1pbsivnj0aqmpll7kvwl9qz4c"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qGaussian" version))
+       (sha256
+        (base32 "02xy35xg4swr1ldnsbywnz2h0ga1pbsivnj0aqmpll7kvwl9qz4c"))))
     (properties `((upstream-name . "qGaussian")))
     (build-system r-build-system)
     (propagated-inputs (list r-zipfr r-robustbase r-rcpp))
@@ -4314,12 +4338,12 @@ q-gaussian distribution with parameters mu and sig.")
   (package
     (name "r-qgametheory")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "QGameTheory" version))
-              (sha256
-               (base32
-                "0h3qkb0zg6km3s89bjnv9503hgcng4wfywfy1x5dsbj5azs9hs5w"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QGameTheory" version))
+       (sha256
+        (base32 "0h3qkb0zg6km3s89bjnv9503hgcng4wfywfy1x5dsbj5azs9hs5w"))))
     (properties `((upstream-name . "QGameTheory")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcolorbrewer r-r-utils r-dplyr))
@@ -4342,12 +4366,12 @@ Problem (Flitney and Abbott 2002) <@code{arXiv:quant-ph/0109035>}.")
   (package
     (name "r-qfrm")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "QFRM" version))
-              (sha256
-               (base32
-                "02fixwxc97lgdp1ajhk9z12qj1cdl79vyl6q3jy37i6k7xh9mdfl"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QFRM" version))
+       (sha256
+        (base32 "02fixwxc97lgdp1ajhk9z12qj1cdl79vyl6q3jy37i6k7xh9mdfl"))))
     (properties `((upstream-name . "QFRM")))
     (build-system r-build-system)
     (home-page "http://Oleg.Rice.edu")
@@ -4366,12 +4390,12 @@ Spring 2015.")
   (package
     (name "r-qfratio")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qfratio" version))
-              (sha256
-               (base32
-                "09cvayyryfll9zmwnlc9rcyc5p6hs4cmcv04hq9cs0pcx4n075j6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qfratio" version))
+       (sha256
+        (base32 "09cvayyryfll9zmwnlc9rcyc5p6hs4cmcv04hq9cs0pcx4n075j6"))))
     (properties `((upstream-name . "qfratio")))
     (build-system r-build-system)
     (inputs (list gsl))
@@ -4395,12 +4419,12 @@ arguments.")
   (package
     (name "r-qfasar")
     (version "1.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qfasar" version))
-              (sha256
-               (base32
-                "14370bmq4qx5j02va13wz52m2lgl4vb992p9587z9v2sxl1v4jjg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qfasar" version))
+       (sha256
+        (base32 "14370bmq4qx5j02va13wz52m2lgl4vb992p9587z9v2sxl1v4jjg"))))
     (properties `((upstream-name . "qfasar")))
     (build-system r-build-system)
     (propagated-inputs (list r-rsolnp))
@@ -4426,12 +4450,12 @@ Please refer to the vignette for additional details and references.")
   (package
     (name "r-qfasa")
     (version "1.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "QFASA" version))
-              (sha256
-               (base32
-                "1f61mm2wmpnzcr4c77gbpp41gf8lrfydar93zr9r95py9ds1p1h6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QFASA" version))
+       (sha256
+        (base32 "1f61mm2wmpnzcr4c77gbpp41gf8lrfydar93zr9r95py9ds1p1h6"))))
     (properties `((upstream-name . "QFASA")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -4466,12 +4490,12 @@ fatty acid signature analysis (QFASA) to study predator diets.")
   (package
     (name "r-qfa")
     (version "2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qfa" version))
-              (sha256
-               (base32
-                "1cawddpspdwrnc7ysp0v109j3k1lqpl9gyhp0jg5ribfiipyszww"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qfa" version))
+       (sha256
+        (base32 "1cawddpspdwrnc7ysp0v109j3k1lqpl9gyhp0jg5ribfiipyszww"))))
     (properties `((upstream-name . "qfa")))
     (build-system r-build-system)
     (propagated-inputs (list r-rhpcblasctl
@@ -4500,12 +4524,12 @@ transform, quantile series, and nonparametric estimation of quantile spectra\",
   (package
     (name "r-qf")
     (version "0.0.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "QF" version))
-              (sha256
-               (base32
-                "0kvhvpj28293i65wh00jyz7fsbqk5q8x5i05bsk29n2rfrf627bl"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QF" version))
+       (sha256
+        (base32 "0kvhvpj28293i65wh00jyz7fsbqk5q8x5i05bsk29n2rfrf627bl"))))
     (properties `((upstream-name . "QF")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppgsl r-rcpp))
@@ -4524,12 +4548,12 @@ algorithm based on the numerical inversion of Mellin transforms.")
   (package
     (name "r-qest")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Qest" version))
-              (sha256
-               (base32
-                "02q0j4vynk3hhfg1xfgdvp3piicc4cc1s1i1q710d06r8mmfz1cj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Qest" version))
+       (sha256
+        (base32 "02q0j4vynk3hhfg1xfgdvp3piicc4cc1s1i1q710d06r8mmfz1cj"))))
     (properties `((upstream-name . "Qest")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-pch r-matrixstats))
@@ -4549,12 +4573,12 @@ parametric quantile functions. <doi:10.1016/j.csda.2022.107471>.")
   (package
     (name "r-qdm")
     (version "0.1-0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qdm" version))
-              (sha256
-               (base32
-                "0cfxyy8s5zfb7867f9xv9scq9blq2qnw68x66m7y7nqlrrff5xdr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qdm" version))
+       (sha256
+        (base32 "0cfxyy8s5zfb7867f9xv9scq9blq2qnw68x66m7y7nqlrrff5xdr"))))
     (properties `((upstream-name . "qdm")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=qdm")
@@ -4572,12 +4596,12 @@ Fechnerian distances can be computed.")
   (package
     (name "r-qdiabetes")
     (version "1.0-2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "QDiabetes" version))
-              (sha256
-               (base32
-                "0r1rbg3azh7y4f5r9w0zj6qa658f63gyq6b007q514iivkzxib1c"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QDiabetes" version))
+       (sha256
+        (base32 "0r1rbg3azh7y4f5r9w0zj6qa658f63gyq6b007q514iivkzxib1c"))))
     (properties `((upstream-name . "QDiabetes")))
     (build-system r-build-system)
     (home-page "https://github.com/Feakster/qdiabetes")
@@ -4591,12 +4615,12 @@ algorithms derived by @code{ClinRisk}'.")
   (package
     (name "r-qdcomparison")
     (version "3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "QDComparison" version))
-              (sha256
-               (base32
-                "0y4494r3ixkyh58xr9md7c6xgcj1hgbjzfybvqqdbawjxvy5p38i"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QDComparison" version))
+       (sha256
+        (base32 "0y4494r3ixkyh58xr9md7c6xgcj1hgbjzfybvqqdbawjxvy5p38i"))))
     (properties `((upstream-name . "QDComparison")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=QDComparison")
@@ -4614,12 +4638,12 @@ statistics.  The primary reference is Jungreis, D. (2019, Technical Report).")
   (package
     (name "r-qdaptools")
     (version "1.3.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qdapTools" version))
-              (sha256
-               (base32
-                "1cf42lxzqha2ah0yjl144pch50imfr5rf6g0b59xr5jf9x96dsjp"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qdapTools" version))
+       (sha256
+        (base32 "1cf42lxzqha2ah0yjl144pch50imfr5rf6g0b59xr5jf9x96dsjp"))))
     (properties `((upstream-name . "qdapTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml r-rcurl r-data-table r-chron))
@@ -4634,12 +4658,12 @@ that may be useful outside of the context of text analysis.")
   (package
     (name "r-qdapdictionaries")
     (version "1.0.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qdapDictionaries" version))
-              (sha256
-               (base32
-                "0jdx7bxmvc4p41jb4fhaagg5jsbsi7gva870cmyia72li52grhyn"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qdapDictionaries" version))
+       (sha256
+        (base32 "0jdx7bxmvc4p41jb4fhaagg5jsbsi7gva870cmyia72li52grhyn"))))
     (properties `((upstream-name . "qdapDictionaries")))
     (build-system r-build-system)
     (home-page "http://trinker.github.com/qdapDictionaries/")
@@ -4653,12 +4677,12 @@ for use with the qdap package.")
   (package
     (name "r-qdap")
     (version "2.4.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qdap" version))
-              (sha256
-               (base32
-                "1dr48b0187w003v98qckzi4zxb6r0yi3jh8f6krknv4c4qasfn9n"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qdap" version))
+       (sha256
+        (base32 "1dr48b0187w003v98qckzi4zxb6r0yi3jh8f6krknv4c4qasfn9n"))))
     (properties `((upstream-name . "qdap")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
@@ -4704,12 +4728,12 @@ Language Processing.")
   (package
     (name "r-qcv")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qcv" version))
-              (sha256
-               (base32
-                "0hf02l9c1cpzs02mfn9swfc8l635qsvh6xrhj21g19h5rxaf8jwg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qcv" version))
+       (sha256
+        (base32 "0hf02l9c1cpzs02mfn9swfc8l635qsvh6xrhj21g19h5rxaf8jwg"))))
     (properties `((upstream-name . "qcv")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=qcv")
@@ -4726,12 +4750,12 @@ package provide useful ancillary information related to the QCV procedure.")
   (package
     (name "r-qcsis")
     (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "QCSIS" version))
-              (sha256
-               (base32
-                "0ibh3060jxf426svdfxiryvfhr8pwk991xs653d50ip4f9290y3a"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QCSIS" version))
+       (sha256
+        (base32 "0ibh3060jxf426svdfxiryvfhr8pwk991xs653d50ip4f9290y3a"))))
     (properties `((upstream-name . "QCSIS")))
     (build-system r-build-system)
     (home-page "http://www.r-project.org")
@@ -4747,12 +4771,12 @@ data.")
   (package
     (name "r-qcsimulator")
     (version "0.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "QCSimulator" version))
-              (sha256
-               (base32
-                "1ff7xagnzibhrwrmkqyky4ik3kx7rrlajrs1ypm210sl1d73jwvs"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QCSimulator" version))
+       (sha256
+        (base32 "1ff7xagnzibhrwrmkqyky4ik3kx7rrlajrs1ypm210sl1d73jwvs"))))
     (properties `((upstream-name . "QCSimulator")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))
@@ -4767,12 +4791,12 @@ qubit quantum gates.")
   (package
     (name "r-qcr")
     (version "1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qcr" version))
-              (sha256
-               (base32
-                "14nilw60p2kcabh9w5k8bvdjqx4lm5lj79qiigg3i372byq5gb7r"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qcr" version))
+       (sha256
+        (base32 "14nilw60p2kcabh9w5k8bvdjqx4lm5lj79qiigg3i372byq5gb7r"))))
     (properties `((upstream-name . "qcr")))
     (build-system r-build-system)
     (propagated-inputs (list r-qcc r-mvtnorm r-mass r-fda-usc))
@@ -4799,12 +4823,12 @@ capability plots.  See Flores et al. (2021) <doi:10.32614/RJ-2021-034>.")
   (package
     (name "r-qcqpcr")
     (version "1.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qcQpcr" version))
-              (sha256
-               (base32
-                "1298zla8z5w9z4idc07v3ca9rc1afx853y7iz3jmqnqnv8mr0s48"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qcQpcr" version))
+       (sha256
+        (base32 "1298zla8z5w9z4idc07v3ca9rc1afx853y7iz3jmqnqnv8mr0s48"))))
     (properties `((upstream-name . "qcQpcr")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))
@@ -4824,12 +4848,12 @@ International Human Epigenomic Consortium (IHEC).")
   (package
     (name "r-qcpm")
     (version "0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qcpm" version))
-              (sha256
-               (base32
-                "0k440xi951v6jaknwz0x0rwkin1r034l2i93cchlglf0r9a0l8yc"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qcpm" version))
+       (sha256
+        (base32 "0k440xi951v6jaknwz0x0rwkin1r034l2i93cchlglf0r9a0l8yc"))))
     (properties `((upstream-name . "qcpm")))
     (build-system r-build-system)
     (propagated-inputs (list r-quantreg r-csem r-broom))
@@ -4849,12 +4873,12 @@ among constructs and between constructs and observed variables.")
   (package
     (name "r-qch")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qch" version))
-              (sha256
-               (base32
-                "1kizr319kjr6xsgz7n0dhgp8rxr4j1x4bcr5cnifkp6z2zh92vka"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qch" version))
+       (sha256
+        (base32 "1kizr319kjr6xsgz7n0dhgp8rxr4j1x4bcr5cnifkp6z2zh92vka"))))
     (properties `((upstream-name . "qch")))
     (build-system r-build-system)
     (propagated-inputs (list r-mclust r-ks))
@@ -4878,12 +4902,12 @@ null distribution and testing the null hypothesis).")
   (package
     (name "r-qcgwas")
     (version "1.0-9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "QCGWAS" version))
-              (sha256
-               (base32
-                "1ds129gvp5pvvm3v6ys5102d5g59mb6cb074zmz9fb3q3p4yknvd"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QCGWAS" version))
+       (sha256
+        (base32 "1ds129gvp5pvvm3v6ys5102d5g59mb6cb074zmz9fb3q3p4yknvd"))))
     (properties `((upstream-name . "QCGWAS")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=QCGWAS")
@@ -4897,12 +4921,12 @@ results of Genome Wide Association Studies.")
   (package
     (name "r-qcewas")
     (version "1.2-3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "QCEWAS" version))
-              (sha256
-               (base32
-                "02xl3ydh1mlf3jaixhm5wm5ndcbfhyqkagb4ywi46vs8dj2jl7q3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QCEWAS" version))
+       (sha256
+        (base32 "02xl3ydh1mlf3jaixhm5wm5ndcbfhyqkagb4ywi46vs8dj2jl7q3"))))
     (properties `((upstream-name . "QCEWAS")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=QCEWAS")
@@ -4916,12 +4940,12 @@ results of Epigenome-Wide Association Studies.")
   (package
     (name "r-qccrs")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qccrs" version))
-              (sha256
-               (base32
-                "0lwrmf2809zzdj5f25bb1psh57ibyw90ra41fy2i9vjmgph9wgiq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qccrs" version))
+       (sha256
+        (base32 "0lwrmf2809zzdj5f25bb1psh57ibyw90ra41fy2i9vjmgph9wgiq"))))
     (properties `((upstream-name . "qccrs")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-purrr r-magrittr r-dplyr))
@@ -4938,12 +4962,12 @@ under repetitive sampling as given in Aslam et al. (2014)
   (package
     (name "r-qcc")
     (version "2.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qcc" version))
-              (sha256
-               (base32
-                "0lc26w7p3d023lfr8v6v75m2vwqg9vi9pdipap19l4vbdq29l4zz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qcc" version))
+       (sha256
+        (base32 "0lc26w7p3d023lfr8v6v75m2vwqg9vi9pdipap19l4vbdq29l4zz"))))
     (properties `((upstream-name . "qcc")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -4960,12 +4984,12 @@ and EWMA charts.  Operating characteristic curves.  Process capability analysis.
   (package
     (name "r-qcba")
     (version "0.5.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qCBA" version))
-              (sha256
-               (base32
-                "1r9khpmdxjcnlbx4ccg26vsyp3wdc06bvlx9yl9zm4kwfi68aj9y"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qCBA" version))
+       (sha256
+        (base32 "1r9khpmdxjcnlbx4ccg26vsyp3wdc06bvlx9yl9zm4kwfi68aj9y"))))
     (properties `((upstream-name . "qCBA")))
     (build-system r-build-system)
     (inputs (list openjdk))
@@ -4984,12 +5008,12 @@ from <https://github.com/cran/sbrl>.")
   (package
     (name "r-qcatools")
     (version "0.2.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "QCAtools" version))
-              (sha256
-               (base32
-                "1q49l2mf02hqvz2ahqjdx7i3yxniy7dn2s74xjl9l6zdq8bypfw2"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QCAtools" version))
+       (sha256
+        (base32 "1q49l2mf02hqvz2ahqjdx7i3yxniy7dn2s74xjl9l6zdq8bypfw2"))))
     (properties `((upstream-name . "QCAtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-qca r-ggplot2 r-directlabels))
@@ -5005,12 +5029,12 @@ and coverage measures.")
   (package
     (name "r-qcapro")
     (version "1.1-2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "QCApro" version))
-              (sha256
-               (base32
-                "1glfb1x1h05cs07nq5glqvlil58wp3c0kaxi1l7k94y797i8r7hq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QCApro" version))
+       (sha256
+        (base32 "1glfb1x1h05cs07nq5glqvlil58wp3c0kaxi1l7k94y797i8r7hq"))))
     (properties `((upstream-name . "QCApro")))
     (build-system r-build-system)
     (propagated-inputs (list r-lpsolve))
@@ -5028,12 +5052,12 @@ sensitivity diagnostics and methodological evaluations of QCA.")
   (package
     (name "r-qcapower")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qcapower" version))
-              (sha256
-               (base32
-                "14vszidjvyi8namwv5k0hpgdw1dpns5ilvxfwa920ivdg35709ki"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qcapower" version))
+       (sha256
+        (base32 "14vszidjvyi8namwv5k0hpgdw1dpns5ilvxfwa920ivdg35709ki"))))
     (properties `((upstream-name . "qcapower")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2 r-ggforce r-devtools))
@@ -5055,12 +5079,12 @@ introducing power estimation for QCA is: Rohlfing, Ingo (2018)
   (package
     (name "r-qcacluster")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "QCAcluster" version))
-              (sha256
-               (base32
-                "094p11c9arry793zibr8x3xhpbrym9bfky95nds53g3yliprdd63"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QCAcluster" version))
+       (sha256
+        (base32 "094p11c9arry793zibr8x3xhpbrym9bfky95nds53g3yliprdd63"))))
     (properties `((upstream-name . "QCAcluster")))
     (build-system r-build-system)
     (propagated-inputs (list r-upsetr
@@ -5092,12 +5116,12 @@ diversity of the cases under analysis within and across partitions (see
   (package
     (name "r-qca")
     (version "3.21")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "QCA" version))
-              (sha256
-               (base32
-                "1z5jpgnpxkbpac85k1hz6vxc1ycl0z6z171i7k0p8jaj15rh616x"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QCA" version))
+       (sha256
+        (base32 "1z5jpgnpxkbpac85k1hz6vxc1ycl0z6z171i7k0p8jaj15rh616x"))))
     (properties `((upstream-name . "QCA")))
     (build-system r-build-system)
     (propagated-inputs (list r-venn r-shiny r-lpsolve r-admisc))
@@ -5117,12 +5141,12 @@ minimal causal configuration associated with a given phenomenon.")
   (package
     (name "r-qbr")
     (version "1.2.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qbr" version))
-              (sha256
-               (base32
-                "0d6rhzi1kcd0q7vfnwdrvywyxavc97kmkbfza82srz3n91zjkjrb"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qbr" version))
+       (sha256
+        (base32 "0d6rhzi1kcd0q7vfnwdrvywyxavc97kmkbfza82srz3n91zjkjrb"))))
     (properties `((upstream-name . "qbr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -5147,12 +5171,12 @@ follow tidyverse philosophy.")
   (package
     (name "r-qboxplot")
     (version "0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qboxplot" version))
-              (sha256
-               (base32
-                "07f05n7zxgwyxg2r5fz691ra64m218w9v874xfzjx6671c40y1q2"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qboxplot" version))
+       (sha256
+        (base32 "07f05n7zxgwyxg2r5fz691ra64m218w9v874xfzjx6671c40y1q2"))))
     (properties `((upstream-name . "qboxplot")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=qboxplot")
@@ -5164,12 +5188,12 @@ follow tidyverse philosophy.")
   (package
     (name "r-qbms")
     (version "0.9.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "QBMS" version))
-              (sha256
-               (base32
-                "0b8q8z1jgzy2jd1rm7hfqf2j2rdq9las4sjqfy9cn8d5aahzvqm7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QBMS" version))
+       (sha256
+        (base32 "0b8q8z1jgzy2jd1rm7hfqf2j2rdq9las4sjqfy9cn8d5aahzvqm7"))))
     (properties `((upstream-name . "QBMS")))
     (build-system r-build-system)
     (propagated-inputs (list r-rnetcdf r-jsonlite r-httr))
@@ -5189,12 +5213,12 @@ genotypic data directly into their analyzing pipelines.")
   (package
     (name "r-qbld")
     (version "1.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qbld" version))
-              (sha256
-               (base32
-                "0zz2n8f4cn03k80wakfgjhablxhbr8hxj5ydl4m7zlya4kdkl5md"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qbld" version))
+       (sha256
+        (base32 "0zz2n8f4cn03k80wakfgjhablxhbr8hxj5ydl4m7zlya4kdkl5md"))))
     (properties `((upstream-name . "qbld")))
     (build-system r-build-system)
     (propagated-inputs (list r-stablegr
@@ -5219,12 +5243,12 @@ posterior inference.")
   (package
     (name "r-qardl")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Qardl" version))
-              (sha256
-               (base32
-                "1sb6xp8hm4rh30dfnw9n5x10hr3sd9p0cv98fr31kdaiqji0vglw"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Qardl" version))
+       (sha256
+        (base32 "1sb6xp8hm4rh30dfnw9n5x10hr3sd9p0cv98fr31kdaiqji0vglw"))))
     (properties `((upstream-name . "Qardl")))
     (build-system r-build-system)
     (propagated-inputs (list r-quantreg r-pbapply r-matrix r-mass r-dplyr))
@@ -5240,12 +5264,12 @@ short and long-run wald tests.")
   (package
     (name "r-qapprox")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Qapprox" version))
-              (sha256
-               (base32
-                "0mv3xfy847lqh95mpccjiw5jjbml7dwrna7i16532sdqcxaq4m02"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Qapprox" version))
+       (sha256
+        (base32 "0mv3xfy847lqh95mpccjiw5jjbml7dwrna7i16532sdqcxaq4m02"))))
     (properties `((upstream-name . "Qapprox")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=Qapprox")
@@ -5262,12 +5286,12 @@ Hong Zhang, Judong Shen and Zheyang Wu (2020) <@code{arXiv:2005.00905>}.")
   (package
     (name "r-qape")
     (version "2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qape" version))
-              (sha256
-               (base32
-                "18ryi0mxpm6rcfqj8dl4rvmkcpkch4yv001lwkbsipdm206704ys"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qape" version))
+       (sha256
+        (base32 "18ryi0mxpm6rcfqj8dl4rvmkcpkch4yv001lwkbsipdm206704ys"))))
     (properties `((upstream-name . "qape")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2
@@ -5290,12 +5314,12 @@ bootstrap is used.  The test of normality using Cholesky decomposition is added.
   (package
     (name "r-qaig")
     (version "0.1.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "QAIG" version))
-              (sha256
-               (base32
-                "04ygizvplvrzhf1p0vwj75x7k8sl0ym5zbrsvn63y983awih2p6i"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QAIG" version))
+       (sha256
+        (base32 "04ygizvplvrzhf1p0vwj75x7k8sl0ym5zbrsvn63y983awih2p6i"))))
     (properties `((upstream-name . "QAIG")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-formula))
@@ -5315,12 +5339,12 @@ multiple-choice type of items (see Embretson, Kingston (2018)
   (package
     (name "r-qad")
     (version "1.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qad" version))
-              (sha256
-               (base32
-                "1pvdm6h5zilvrpggvy5qq5lhxxblslkjvjjfdj1f5zaick2hmf3s"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qad" version))
+       (sha256
+        (base32 "1pvdm6h5zilvrpggvy5qq5lhxxblslkjvjjfdj1f5zaick2hmf3s"))))
     (properties `((upstream-name . "qad")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -5346,12 +5370,12 @@ the paper by Junker, Griessenberger & Trutschnig (2021,
   (package
     (name "r-qacbase")
     (version "1.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qacBase" version))
-              (sha256
-               (base32
-                "0rmxmaaa162w1qrbkcm2fd2rnrp2kqjjh6mpszpv1lpfdaq7p4yq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qacBase" version))
+       (sha256
+        (base32 "0rmxmaaa162w1qrbkcm2fd2rnrp2kqjjh6mpszpv1lpfdaq7p4yq"))))
     (properties `((upstream-name . "qacBase")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -5378,12 +5402,12 @@ data visualization.")
   (package
     (name "r-q7")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Q7" version))
-              (sha256
-               (base32
-                "09jhqraajvlm7iiri4f7xlllkcx8q5h3sg472ishj47wg5qf2rym"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Q7" version))
+       (sha256
+        (base32 "09jhqraajvlm7iiri4f7xlllkcx8q5h3sg472ishj47wg5qf2rym"))))
     (properties `((upstream-name . "Q7")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr))
@@ -5401,12 +5425,12 @@ to R6, Q7 is simpler and more flexible, and is more friendly in syntax.")
   (package
     (name "r-q2q")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Q2q" version))
-              (sha256
-               (base32
-                "1n97axhcq64fg92cbndqw70c8awknjap91bh2h6i5cvd0c80pb85"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Q2q" version))
+       (sha256
+        (base32 "1n97axhcq64fg92cbndqw70c8awknjap91bh2h6i5cvd0c80pb85"))))
     (properties `((upstream-name . "Q2q")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=Q2q")

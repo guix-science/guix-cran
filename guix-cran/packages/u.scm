@@ -44,12 +44,12 @@
   (package
     (name "r-uxr")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "uxr" version))
-              (sha256
-               (base32
-                "0zq89xjbmbc4pmzb3w8frnrqafpxbj2s8lhgj7kvmf6k0yqvpyd3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "uxr" version))
+       (sha256
+        (base32 "0zq89xjbmbc4pmzb3w8frnrqafpxbj2s8lhgj7kvmf6k0yqvpyd3"))))
     (properties `((upstream-name . "uxr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -76,12 +76,12 @@ research.")
   (package
     (name "r-uwham")
     (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "UWHAM" version))
-              (sha256
-               (base32
-                "162manvbmlvf8pqhcda9wx17nrdcwscb88ny2r7cvag3j04yxl54"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "UWHAM" version))
+       (sha256
+        (base32 "162manvbmlvf8pqhcda9wx17nrdcwscb88ny2r7cvag3j04yxl54"))))
     (properties `((upstream-name . "UWHAM")))
     (build-system r-build-system)
     (propagated-inputs (list r-trust))
@@ -97,12 +97,12 @@ generalized ensembles).")
   (package
     (name "r-uwedragon")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "uwedragon" version))
-              (sha256
-               (base32
-                "00rrklym9ms74ad58cbn4xkibp8k5d12kcrnb68x7b27grvgfnqf"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "uwedragon" version))
+       (sha256
+        (base32 "00rrklym9ms74ad58cbn4xkibp8k5d12kcrnb68x7b27grvgfnqf"))))
     (properties `((upstream-name . "uwedragon")))
     (build-system r-build-system)
     (propagated-inputs (list r-gtools))
@@ -118,12 +118,12 @@ reporting summary statistics.")
   (package
     (name "r-utr-annotation")
     (version "1.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "utr.annotation" version))
-              (sha256
-               (base32
-                "0lldkd5fw86qxngjfvigmkdzynz0712wsk9p51xliqlavivvnpny"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "utr.annotation" version))
+       (sha256
+        (base32 "0lldkd5fw86qxngjfvigmkdzynz0712wsk9p51xliqlavivvnpny"))))
     (properties `((upstream-name . "utr.annotation")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -159,12 +159,12 @@ species.  Y Liu, JD Dougherty (2021) <doi:10.1101/2021.06.23.449510>.")
   (package
     (name "r-utiml")
     (version "0.1.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "utiml" version))
-              (sha256
-               (base32
-                "16l64scyipj7plwyv6whv3h040sgvzxx43jhjxyhrcdci4pqwh94"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "utiml" version))
+       (sha256
+        (base32 "16l64scyipj7plwyv6whv3h040sgvzxx43jhjxyhrcdci4pqwh94"))))
     (properties `((upstream-name . "utiml")))
     (build-system r-build-system)
     (propagated-inputs (list r-rocr r-mldr))
@@ -184,12 +184,12 @@ and Gibaja, E. and Ventura, S. (2015) A Tutorial on Multi-label Learning.")
   (package
     (name "r-utilsipea")
     (version "0.0.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "utilsIPEA" version))
-              (sha256
-               (base32
-                "07avc0j6qkzqmznbydn0zdg743g7g7kn2bcx5n03m3wg0fqyggr7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "utilsIPEA" version))
+       (sha256
+        (base32 "07avc0j6qkzqmznbydn0zdg743g7g7kn2bcx5n03m3wg0fqyggr7"))))
     (properties `((upstream-name . "utilsIPEA")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-stringdist r-rcurl r-dplyr
@@ -206,12 +206,12 @@ name, extract prepositions or extract the first name.")
   (package
     (name "r-utilityfunctiontools")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "utilityFunctionTools" version))
-              (sha256
-               (base32
-                "1225nl83yka31j0adm1210kc89vs3hi9i2pqrykax109sgk0nw97"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "utilityFunctionTools" version))
+       (sha256
+        (base32 "1225nl83yka31j0adm1210kc89vs3hi9i2pqrykax109sgk0nw97"))))
     (properties `((upstream-name . "utilityFunctionTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-geom))
@@ -229,12 +229,12 @@ Schneider (2017) <http://hdl.handle.net/21.11130/00-1735-0000-002E-E306-0>.")
   (package
     (name "r-utilityfrailtyph12")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "UtilityFrailtyPH12" version))
-              (sha256
-               (base32
-                "06f5gmwwk1r14ab6v5jcxz0pmdph7ffi4y57mjg9byn7pjnibflk"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "UtilityFrailtyPH12" version))
+       (sha256
+        (base32 "06f5gmwwk1r14ab6v5jcxz0pmdph7ffi4y57mjg9byn7pjnibflk"))))
     (properties `((upstream-name . "UtilityFrailtyPH12")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-phase123 r-mvtnorm
@@ -253,12 +253,12 @@ EFF-TOX trial are found in the package Phase123'.")
   (package
     (name "r-utility")
     (version "1.4.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "utility" version))
-              (sha256
-               (base32
-                "0785pyapq03kyk9lwxyqvs2fdagay1dg71fjqikr6hidbid5fqr3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "utility" version))
+       (sha256
+        (base32 "0785pyapq03kyk9lwxyqvs2fdagay1dg71fjqikr6hidbid5fqr3"))))
     (properties `((upstream-name . "utility")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=utility")
@@ -276,12 +276,12 @@ processing.")
   (package
     (name "r-utilities")
     (version "0.6.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "utilities" version))
-              (sha256
-               (base32
-                "0wcw9gcxd66vhr7vb24y94bgqckfkwvg1rcsxdqaz5r06qn2p9nf"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "utilities" version))
+       (sha256
+        (base32 "0wcw9gcxd66vhr7vb24y94bgqckfkwvg1rcsxdqaz5r06qn2p9nf"))))
     (properties `((upstream-name . "utilities")))
     (build-system r-build-system)
     (home-page "https://github.com/ben-oneill/utilities/")
@@ -297,12 +297,12 @@ and other variables in a data set.")
   (package
     (name "r-utile-visuals")
     (version "0.3.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "utile.visuals" version))
-              (sha256
-               (base32
-                "1f5zhbsx3iaayh9a92w3hlz8nxbfahdk1j8x62r84yp3aw1skbvz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "utile.visuals" version))
+       (sha256
+        (base32 "1f5zhbsx3iaayh9a92w3hlz8nxbfahdk1j8x62r84yp3aw1skbvz"))))
     (properties `((upstream-name . "utile.visuals")))
     (build-system r-build-system)
     (propagated-inputs (list r-purrr r-gridextra r-ggplot2 r-dplyr))
@@ -317,12 +317,12 @@ ggplot2.")
   (package
     (name "r-utile-tools")
     (version "0.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "utile.tools" version))
-              (sha256
-               (base32
-                "0qxslz6wi4gss9g16p7q6w99pds81pcp9nkffi8b5wrjxj0z2igq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "utile.tools" version))
+       (sha256
+        (base32 "0qxslz6wi4gss9g16p7q6w99pds81pcp9nkffi8b5wrjxj0z2igq"))))
     (properties `((upstream-name . "utile.tools")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs r-purrr r-lubridate))
@@ -337,12 +337,12 @@ research.")
   (package
     (name "r-utile-tables")
     (version "0.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "utile.tables" version))
-              (sha256
-               (base32
-                "0lsfv5mhyzf1mw2mlyp7xqdin7nhbw473gbibsk1anwmhlvwkipy"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "utile.tables" version))
+       (sha256
+        (base32 "0lsfv5mhyzf1mw2mlyp7xqdin7nhbw473gbibsk1anwmhlvwkipy"))))
     (properties `((upstream-name . "utile.tables")))
     (build-system r-build-system)
     (propagated-inputs (list r-utile-tools r-tidyselect r-rlang r-purrr
@@ -358,12 +358,12 @@ for publication.")
   (package
     (name "r-utc")
     (version "0.1.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "utc" version))
-              (sha256
-               (base32
-                "1lhm5rhr78cxp3cz5n6j2zkhjphj7csk026xvvhkjqdi39rrq6i4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "utc" version))
+       (sha256
+        (base32 "1lhm5rhr78cxp3cz5n6j2zkhjphj7csk026xvvhkjqdi39rrq6i4"))))
     (properties `((upstream-name . "utc")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=utc")
@@ -378,12 +378,12 @@ UTC. %h+% operator is also provided it adds hours to a time.")
   (package
     (name "r-ustyc")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ustyc" version))
-              (sha256
-               (base32
-                "1267bng2dz3229cbbq47w22i2yq2ydpw26ngqa1nbi3ma6hwqsv4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ustyc" version))
+       (sha256
+        (base32 "1267bng2dz3229cbbq47w22i2yq2ydpw26ngqa1nbi3ma6hwqsv4"))))
     (properties `((upstream-name . "ustyc")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml r-plyr))
@@ -407,12 +407,12 @@ the update date from the service.")
   (package
     (name "r-ustfd")
     (version "0.4.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ustfd" version))
-              (sha256
-               (base32
-                "1pc5yggffy3y4hg3qpiih9fyw4rzc65s5n650ng05k5xdfjmm7n2"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ustfd" version))
+       (sha256
+        (base32 "1pc5yggffy3y4hg3qpiih9fyw4rzc65s5n650ng05k5xdfjmm7n2"))))
     (properties `((upstream-name . "ustfd")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -435,12 +435,12 @@ the update date from the service.")
   (package
     (name "r-ustatbookabsc")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "UStatBookABSC" version))
-              (sha256
-               (base32
-                "16r6clhfaalfsg5hmvzm8a128zygxax5hyc0vr1q9bsw9hj7cs0c"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "UStatBookABSC" version))
+       (sha256
+        (base32 "16r6clhfaalfsg5hmvzm8a128zygxax5hyc0vr1q9bsw9hj7cs0c"))))
     (properties `((upstream-name . "UStatBookABSC")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=UStatBookABSC")
@@ -460,12 +460,12 @@ Chatterjee, to appear in 2017 as part of the \"Texts and Readings in Mathematics
   (package
     (name "r-ussherr")
     (version "1.10")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ussherR" version))
-              (sha256
-               (base32
-                "0awhric6xrhgv4wb9saq7jyikd3h74i6vlq3aqip4i1m9j3ym3k1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ussherR" version))
+       (sha256
+        (base32 "0awhric6xrhgv4wb9saq7jyikd3h74i6vlq3aqip4i1m9j3ym3k1"))))
     (properties `((upstream-name . "ussherR")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=ussherR")
@@ -489,12 +489,12 @@ can also be called using \"usshraw\", as described in: Ussher, J. (1658)
   (package
     (name "r-uspopcenters")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "USpopcenters" version))
-              (sha256
-               (base32
-                "0x3908g399zp03l78d53490rmciq66k8v85hyqircf4z0hfbaxja"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "USpopcenters" version))
+       (sha256
+        (base32 "0x3908g399zp03l78d53490rmciq66k8v85hyqircf4z0hfbaxja"))))
     (properties `((upstream-name . "USpopcenters")))
     (build-system r-build-system)
     (home-page
@@ -508,12 +508,12 @@ can also be called using \"usshraw\", as described in: Ussher, J. (1658)
   (package
     (name "r-usp")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "USP" version))
-              (sha256
-               (base32
-                "1fngs82r1xbym8qa1lj9jv1i57r3nx9rr093nfpjl82f7r0kr3sn"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "USP" version))
+       (sha256
+        (base32 "1fngs82r1xbym8qa1lj9jv1i57r3nx9rr093nfpjl82f7r0kr3sn"))))
     (properties `((upstream-name . "USP")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack))
@@ -533,12 +533,12 @@ non-asymptotic Type I error control at the nominal level.")
   (package
     (name "r-usmapdata")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "usmapdata" version))
-              (sha256
-               (base32
-                "13a4bj6ixqzfwm60r2c3i9zy96mr2hk77n720zs5i0i16acfnxav"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "usmapdata" version))
+       (sha256
+        (base32 "13a4bj6ixqzfwm60r2c3i9zy96mr2hk77n720zs5i0i16acfnxav"))))
     (properties `((upstream-name . "usmapdata")))
     (build-system r-build-system)
     (home-page "https://usmap.dev")
@@ -555,12 +555,12 @@ Census bureau.")
   (package
     (name "r-usmap")
     (version "0.6.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "usmap" version))
-              (sha256
-               (base32
-                "0d0j3q55ja0lm2dm8rans0v7gklywddxx79c6q2p99py80w2y73n"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "usmap" version))
+       (sha256
+        (base32 "0d0j3q55ja0lm2dm8rans0v7gklywddxx79c6q2p99py80w2y73n"))))
     (properties `((upstream-name . "usmap")))
     (build-system r-build-system)
     (propagated-inputs (list r-usmapdata r-rlang))
@@ -578,12 +578,12 @@ for plotting choropleths and working with FIPS codes are also provided.")
   (package
     (name "r-usl")
     (version "3.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "usl" version))
-              (sha256
-               (base32
-                "0hql4bc40xa62r465lm4x14yf8dbhsl046i5k8xlq1qr93cw6pnx"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "usl" version))
+       (sha256
+        (base32 "0hql4bc40xa62r465lm4x14yf8dbhsl046i5k8xlq1qr93cw6pnx"))))
     (properties `((upstream-name . "usl")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlsr))
@@ -600,12 +600,12 @@ as a function of load to forecast the scalability for the system.")
   (package
     (name "r-uskewfactors")
     (version "2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "uskewFactors" version))
-              (sha256
-               (base32
-                "0ndi5987ak8sa7krgiglsibfg0k7z9j8fg47hg1m8ar0sq4r1yj6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "uskewFactors" version))
+       (sha256
+        (base32 "0ndi5987ak8sa7krgiglsibfg0k7z9j8fg47hg1m8ar0sq4r1yj6"))))
     (properties `((upstream-name . "uskewFactors")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmvtnorm r-mvtnorm r-mcmcpack r-mass))
@@ -621,12 +621,12 @@ via the EM algorithm.")
   (package
     (name "r-usingr")
     (version "2.0-7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "UsingR" version))
-              (sha256
-               (base32
-                "17ljllslhfmi80yj1336lx9pmzy2i8zdb6byky5yay1lry7s1g30"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "UsingR" version))
+       (sha256
+        (base32 "17ljllslhfmi80yj1336lx9pmzy2i8zdb6byky5yay1lry7s1g30"))))
     (properties `((upstream-name . "UsingR")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-hmisc r-histdata))
@@ -642,12 +642,12 @@ R for Introductory Statistics,\" second edition.")
   (package
     (name "r-usincometaxes")
     (version "0.7.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "usincometaxes" version))
-              (sha256
-               (base32
-                "018hc48l58p8ybdvdshh2kkl0pm6b8wsqgc0qjcq60z6v8s4sqx4"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "usincometaxes" version))
+       (sha256
+        (base32 "018hc48l58p8ybdvdshh2kkl0pm6b8wsqgc0qjcq60z6v8s4sqx4"))))
     (properties `((upstream-name . "usincometaxes")))
     (build-system r-build-system)
     (propagated-inputs (list r-vroom r-v8 r-tibble))
@@ -667,12 +667,12 @@ with the Web Assembly file, retrieves the data, and places it into a data frame.
   (package
     (name "r-ushr")
     (version "0.2.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ushr" version))
-              (sha256
-               (base32
-                "1ygyqgxw849165lpk81f114kgx9015b9a9dngavjy3ffqzrbb41k"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ushr" version))
+       (sha256
+        (base32 "1ygyqgxw849165lpk81f114kgx9015b9a9dngavjy3ffqzrbb41k"))))
     (properties `((upstream-name . "ushr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-ggplot2 r-dplyr))
@@ -693,12 +693,12 @@ of model results.")
   (package
     (name "r-usgrid")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "USgrid" version))
-              (sha256
-               (base32
-                "0babwjnbdyfa2cf65gn08nzy1bs92i56lnhpx558yn0dyk75cz5s"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "USgrid" version))
+       (sha256
+        (base32 "0babwjnbdyfa2cf65gn08nzy1bs92i56lnhpx558yn0dyk75cz5s"))))
     (properties `((upstream-name . "USgrid")))
     (build-system r-build-system)
     (propagated-inputs (list r-tsibble))
@@ -715,12 +715,12 @@ Information Administration (Dec 2019) <https://www.eia.gov/>.")
   (package
     (name "r-usgas")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "USgas" version))
-              (sha256
-               (base32
-                "13aqwwigscvnvp55pmbx2z2ypqgw2ph35c4r6chwcqzsgz32zihq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "USgas" version))
+       (sha256
+        (base32 "13aqwwigscvnvp55pmbx2z2ypqgw2ph35c4r6chwcqzsgz32zihq"))))
     (properties `((upstream-name . "USgas")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -736,12 +736,12 @@ state and country level.  Data source: US Energy Information Administration
   (package
     (name "r-usfertilizer")
     (version "0.1.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "usfertilizer" version))
-              (sha256
-               (base32
-                "05zjn39hqjjzzp4v4b1zbqq59205s7k0kikms951h57kbyvjz6vk"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "usfertilizer" version))
+       (sha256
+        (base32 "05zjn39hqjjzzp4v4b1zbqq59205s7k0kikms951h57kbyvjz6vk"))))
     (properties `((upstream-name . "usfertilizer")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyverse))
@@ -764,12 +764,12 @@ available for now.")
   (package
     (name "r-usemodels")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "usemodels" version))
-              (sha256
-               (base32
-                "1dc74v4dnbj532cdphskm0y7sqgq1q4yzq634dbvq2bjpqdzf3si"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "usemodels" version))
+       (sha256
+        (base32 "1dc74v4dnbj532cdphskm0y7sqgq1q4yzq634dbvq2bjpqdzf3si"))))
     (properties `((upstream-name . "usemodels")))
     (build-system r-build-system)
     (propagated-inputs (list r-tune
@@ -791,12 +791,12 @@ for a given data set.")
   (package
     (name "r-usefun")
     (version "0.5.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "usefun" version))
-              (sha256
-               (base32
-                "1gpyix8xpn4jmfjrycan6r1qvp7z7mhcngp02fcws6k2hvd7jajr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "usefun" version))
+       (sha256
+        (base32 "1gpyix8xpn4jmfjrycan6r1qvp7z7mhcngp02fcws6k2hvd7jajr"))))
     (properties `((upstream-name . "usefun")))
     (build-system r-build-system)
     (propagated-inputs (list r-prroc r-dplyr))
@@ -812,12 +812,12 @@ matrices and vectors, ROC and PR statistics.")
   (package
     (name "r-usedthese")
     (version "0.3.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "usedthese" version))
-              (sha256
-               (base32
-                "0frdjwqhxkvhahm22vvcyfr464i3mi10y1ynm3k98zypcgp0lkdx"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "usedthese" version))
+       (sha256
+        (base32 "0frdjwqhxkvhahm22vvcyfr464i3mi10y1ynm3k98zypcgp0lkdx"))))
     (properties `((upstream-name . "usedthese")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -847,12 +847,12 @@ across a Quarto website.  Learn more about usedthese at
   (package
     (name "r-usdoj")
     (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "usdoj" version))
-              (sha256
-               (base32
-                "0ddvp3qh1ynzzpzq8rgblkb1z5j5jwyzkfgd9xyzdkcby90k7zya"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "usdoj" version))
+       (sha256
+        (base32 "0ddvp3qh1ynzzpzq8rgblkb1z5j5jwyzkfgd9xyzdkcby90k7zya"))))
     (properties `((upstream-name . "usdoj")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -875,12 +875,12 @@ analysis and returned in a dataframe.")
   (package
     (name "r-usdm")
     (version "2.1-6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "usdm" version))
-              (sha256
-               (base32
-                "1kr11yxvcb7mjdfw0432sf9280r29c02xcwbx6xggr7f18b0cq5h"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "usdm" version))
+       (sha256
+        (base32 "1kr11yxvcb7mjdfw0432sf9280r29c02xcwbx6xggr7f18b0cq5h"))))
     (properties `((upstream-name . "usdm")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-raster))
@@ -896,12 +896,12 @@ performance of species distribution models (SDMs).)")
   (package
     (name "r-usdata")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "usdata" version))
-              (sha256
-               (base32
-                "1gnd662v6vcmjvj18c1p61q8lxahkyxnk5dbvf26j6z4jvbhk975"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "usdata" version))
+       (sha256
+        (base32 "1gnd662v6vcmjvj18c1p61q8lxahkyxnk5dbvf26j6z4jvbhk975"))))
     (properties `((upstream-name . "usdata")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble))
@@ -916,12 +916,12 @@ multiple years.")
   (package
     (name "r-usdarnass")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "usdarnass" version))
-              (sha256
-               (base32
-                "10fh9anpmbb7i70q3hjxbplrkqa1q86zgh8nldsf2i526p62hpm1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "usdarnass" version))
+       (sha256
+        (base32 "10fh9anpmbb7i70q3hjxbplrkqa1q86zgh8nldsf2i526p62hpm1"))))
     (properties `((upstream-name . "usdarnass")))
     (build-system r-build-system)
     (propagated-inputs (list r-readr r-jsonlite r-httr))
@@ -938,12 +938,12 @@ for an API token from the mentioned website in order for this package to work.")
   (package
     (name "r-usdampr")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "usdampr" version))
-              (sha256
-               (base32
-                "0x84hzsylg22jhvhn4xhkzv4g8j17g73cpj274n7f8cwzcmpj9sx"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "usdampr" version))
+       (sha256
+        (base32 "0x84hzsylg22jhvhn4xhkzv4g8j17g73cpj274n7f8cwzcmpj9sx"))))
     (properties `((upstream-name . "usdampr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-jsonlite r-httr r-dplyr))
@@ -961,12 +961,12 @@ the input variables needed for sending the data inquiry.")
   (package
     (name "r-uscoauditlog")
     (version "1.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "uscoauditlog" version))
-              (sha256
-               (base32
-                "156by8lans2jk8kjll88ljc6z5idgvqwkvrgdwjkr4l4xnsz0sif"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "uscoauditlog" version))
+       (sha256
+        (base32 "156by8lans2jk8kjll88ljc6z5idgvqwkvrgdwjkr4l4xnsz0sif"))))
     (properties `((upstream-name . "uscoauditlog")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-readxl r-openxlsx))
@@ -1002,12 +1002,12 @@ Office SR Audit Data online database.")
   (package
     (name "r-uscensus2010")
     (version "0.20.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "UScensus2010" version))
-              (sha256
-               (base32
-                "0dby532dmmhaz7gisihg4dn70jyx5llfvm2zl2h0pxyqrxvm69d2"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "UScensus2010" version))
+       (sha256
+        (base32 "0dby532dmmhaz7gisihg4dn70jyx5llfvm2zl2h0pxyqrxvm69d2"))))
     (properties `((upstream-name . "UScensus2010")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-maptools r-foreign))
@@ -1024,12 +1024,12 @@ packages.")
   (package
     (name "r-usa-state-boundaries")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "USA.state.boundaries" version))
-              (sha256
-               (base32
-                "0pdqnfpijs9n1vxkngs3mm5q9dwqfmlkm60jq8isxcd9fiadsig6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "USA.state.boundaries" version))
+       (sha256
+        (base32 "0pdqnfpijs9n1vxkngs3mm5q9dwqfmlkm60jq8isxcd9fiadsig6"))))
     (properties `((upstream-name . "USA.state.boundaries")))
     (build-system r-build-system)
     (home-page "https://gitlab.com/iembry/usa.state.boundaries")
@@ -1049,12 +1049,12 @@ install that data package, please follow the instructions at
   (package
     (name "r-usa")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "usa" version))
-              (sha256
-               (base32
-                "0scdrd6b48n019f7qp77rrkqgmapnrknalq0hml1cy7m43llqf6d"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "usa" version))
+       (sha256
+        (base32 "0scdrd6b48n019f7qp77rrkqgmapnrknalq0hml1cy7m43llqf6d"))))
     (properties `((upstream-name . "usa")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble))
@@ -1071,12 +1071,12 @@ agency.")
   (package
     (name "r-us-census-geoheader")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "us.census.geoheader" version))
-              (sha256
-               (base32
-                "17mss1ggaqkd0ac7g9chgqdrpi5xlbfkxsm1jvj48rp2jfwpp4jw"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "us.census.geoheader" version))
+       (sha256
+        (base32 "17mss1ggaqkd0ac7g9chgqdrpi5xlbfkxsm1jvj48rp2jfwpp4jw"))))
     (properties `((upstream-name . "us.census.geoheader")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble))
@@ -1102,12 +1102,12 @@ itself.")
   (package
     (name "r-ursa")
     (version "3.9.11")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ursa" version))
-              (sha256
-               (base32
-                "0ffv7q1xvq4xdwk0jhiyx60057bsdrah4hlz7f16266wc9vf1jds"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ursa" version))
+       (sha256
+        (base32 "0ffv7q1xvq4xdwk0jhiyx60057bsdrah4hlz7f16266wc9vf1jds"))))
     (properties `((upstream-name . "ursa")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgdal r-png r-jpeg))
@@ -1123,12 +1123,12 @@ reading/writing, processing, multi-panel visualization.  SWU.")
   (package
     (name "r-urootab")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "URooTab" version))
-              (sha256
-               (base32
-                "0455ssqi0byi6absaxh5xvvyw9isn2fw3rjvyhmd7h9r5w3a1yd6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "URooTab" version))
+       (sha256
+        (base32 "0455ssqi0byi6absaxh5xvvyw9isn2fw3rjvyhmd7h9r5w3a1yd6"))))
     (properties `((upstream-name . "URooTab")))
     (build-system r-build-system)
     (inputs (list))
@@ -1146,12 +1146,12 @@ econometrics.")
   (package
     (name "r-uroot")
     (version "2.1-2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "uroot" version))
-              (sha256
-               (base32
-                "0dsb1vdr2bwy64v889svhvkadg5jl9cl77mfiw79vl18b7ixjzxx"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "uroot" version))
+       (sha256
+        (base32 "0dsb1vdr2bwy64v889svhvkadg5jl9cl77mfiw79vl18b7ixjzxx"))))
     (properties `((upstream-name . "uroot")))
     (build-system r-build-system)
     (home-page "https://geobosh.github.io/uroot/")
@@ -1166,12 +1166,12 @@ are available for seasonal unit root tests.")
   (package
     (name "r-urlshortener")
     (version "1.5.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "urlshorteneR" version))
-              (sha256
-               (base32
-                "0zfvcwcy2ykvkbnqgxhzxf99shcby81cx8fjbmy6b07rj9407arj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "urlshorteneR" version))
+       (sha256
+        (base32 "0zfvcwcy2ykvkbnqgxhzxf99shcby81cx8fjbmy6b07rj9407arj"))))
     (properties `((upstream-name . "urlshorteneR")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -1197,12 +1197,12 @@ analytic functions.  Specifically developed for Bit.ly (which requires OAuth
   (package
     (name "r-urbin")
     (version "0.1-12")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "urbin" version))
-              (sha256
-               (base32
-                "18zskhpcngpw0zanya88l8znhbac5f7a89kq231w59yml9ll7y52"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "urbin" version))
+       (sha256
+        (base32 "18zskhpcngpw0zanya88l8znhbac5f7a89kq231w59yml9ll7y52"))))
     (properties `((upstream-name . "urbin")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -1231,12 +1231,12 @@ Studies with Binary Dependent Variables\" that is included in this package.")
   (package
     (name "r-ura")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ura" version))
-              (sha256
-               (base32
-                "18gs49hcmii951f995ch1sbk69lpf458halff539l8birv26q70d"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ura" version))
+       (sha256
+        (base32 "18gs49hcmii951f995ch1sbk69lpf458halff539l8birv26q70d"))))
     (properties `((upstream-name . "ura")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -1263,12 +1263,12 @@ the team.")
   (package
     (name "r-uptimerobot")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "uptimeRobot" version))
-              (sha256
-               (base32
-                "1sbr0vs6jqcyxjbs7q45bsfdnp3bc59phw0h3fwajqq1cxjgzdww"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "uptimeRobot" version))
+       (sha256
+        (base32 "1sbr0vs6jqcyxjbs7q45bsfdnp3bc59phw0h3fwajqq1cxjgzdww"))))
     (properties `((upstream-name . "uptimeRobot")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjson r-rcurl r-plyr))
@@ -1284,12 +1284,12 @@ which includes various kind of ping, keep-alive and speed tests.  See
   (package
     (name "r-uptasticsearch")
     (version "0.4.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "uptasticsearch" version))
-              (sha256
-               (base32
-                "19sf3zdj424pz4ms0xg4asplf2bczvhl8p22y13jna1g51xyv92a"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "uptasticsearch" version))
+       (sha256
+        (base32 "19sf3zdj424pz4ms0xg4asplf2bczvhl8p22y13jna1g51xyv92a"))))
     (properties `((upstream-name . "uptasticsearch")))
     (build-system r-build-system)
     (propagated-inputs (list r-uuid
@@ -1318,12 +1318,12 @@ easy and fun.")
   (package
     (name "r-upsvarapprox")
     (version "0.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "UPSvarApprox" version))
-              (sha256
-               (base32
-                "14hj8yv366qix30x7hq1sfzrcrsx4ckfa010azi1ihzp307hfkbz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "UPSvarApprox" version))
+       (sha256
+        (base32 "14hj8yv366qix30x7hq1sfzrcrsx4ckfa010azi1ihzp307hfkbz"))))
     (properties `((upstream-name . "UPSvarApprox")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=UPSvarApprox")
@@ -1339,12 +1339,12 @@ and @code{TillÃ©} (2005) and Haziza, Mecatti and Rao (2008) for details.")
   (package
     (name "r-upstartr")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "upstartr" version))
-              (sha256
-               (base32
-                "09xzj423v0x4qvqfgyqpxyg63p8f1n5ppjc8swpyv1747ll5zmg8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "upstartr" version))
+       (sha256
+        (base32 "09xzj423v0x4qvqfgyqpxyg63p8f1n5ppjc8swpyv1747ll5zmg8"))))
     (properties `((upstream-name . "upstartr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidytext
@@ -1380,12 +1380,12 @@ such as reading and writing files, producing graphics and cleaning up datasets."
   (package
     (name "r-upsetvp")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "UpSetVP" version))
-              (sha256
-               (base32
-                "1v6djfwaix978vzfjnj0vd3r0m3svfqkn9aqnf9qz2xsjk43m9zr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "UpSetVP" version))
+       (sha256
+        (base32 "1v6djfwaix978vzfjnj0vd3r0m3svfqkn9aqnf9qz2xsjk43m9zr"))))
     (properties `((upstream-name . "UpSetVP")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdacca-hp r-patchwork r-ggplot2))
@@ -1407,12 +1407,12 @@ rdacca.hp R package.Methods in Ecology and Evolution, 13: 782-788
   (package
     (name "r-upsetjs")
     (version "1.11.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "upsetjs" version))
-              (sha256
-               (base32
-                "0flpamy4wfjz1b0wi338rcim2zsh33jpskrq6g8jvljlc4asr485"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "upsetjs" version))
+       (sha256
+        (base32 "0flpamy4wfjz1b0wi338rcim2zsh33jpskrq6g8jvljlc4asr485"))))
     (properties `((upstream-name . "upsetjs")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-htmlwidgets))
@@ -1431,12 +1431,12 @@ around the @code{JavaScript} library @code{UpSet.js}'.")
   (package
     (name "r-upndown")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "upndown" version))
-              (sha256
-               (base32
-                "0yri819zib1m7cj669x007183x9062xgz0pmhghbh6mfaz6rbclj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "upndown" version))
+       (sha256
+        (base32 "0yri819zib1m7cj669x007183x9062xgz0pmhghbh6mfaz6rbclj"))))
     (properties `((upstream-name . "upndown")))
     (build-system r-build-system)
     (propagated-inputs (list r-numbers r-expm r-cir))
@@ -1454,12 +1454,12 @@ Up-and-Down, see Oron et al. (2022) <doi:10.1097/ALN.0000000000004282>.")
   (package
     (name "r-upmask")
     (version "1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "UPMASK" version))
-              (sha256
-               (base32
-                "160rsb0nbndf61khcs3s8xv9nj7ln8zl6l11157ywdcjqd2q5qnq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "UPMASK" version))
+       (sha256
+        (base32 "160rsb0nbndf61khcs3s8xv9nj7ln8zl6l11157ywdcjqd2q5qnq"))))
     (properties `((upstream-name . "UPMASK")))
     (build-system r-build-system)
     (propagated-inputs (list r-rsqlite r-mass r-loe r-dimred r-dbi))
@@ -1481,12 +1481,12 @@ estimation.")
   (package
     (name "r-upg")
     (version "0.3.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "UPG" version))
-              (sha256
-               (base32
-                "0j27135akpkn9qsllfr871fcz7hynmxzjac35b8zm65pr6ygjcap"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "UPG" version))
+       (sha256
+        (base32 "0j27135akpkn9qsllfr871fcz7hynmxzjac35b8zm65pr6ygjcap"))))
     (properties `((upstream-name . "UPG")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm
@@ -1513,12 +1513,12 @@ Fr<fc>hwirth-Schnatter S., Wagner H. (2020) <@code{arXiv:2011.06898>}.")
   (package
     (name "r-updown")
     (version "1.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "UpDown" version))
-              (sha256
-               (base32
-                "0c1mi43mkadhpalrd3wlp94ri1sp9ii5wcn44pgz35ki7nngrnaj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "UpDown" version))
+       (sha256
+        (base32 "0c1mi43mkadhpalrd3wlp94ri1sp9ii5wcn44pgz35ki7nngrnaj"))))
     (properties `((upstream-name . "UpDown")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny
@@ -1544,12 +1544,12 @@ disturbances simulated according to Le et al.(2022)
   (package
     (name "r-updog")
     (version "2.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "updog" version))
-              (sha256
-               (base32
-                "1i7dc8msky5g658iwcvdvda2m0ya9cnbzm9d565l01lf184dfhhk"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "updog" version))
+       (sha256
+        (base32 "1i7dc8msky5g658iwcvdvda2m0ya9cnbzm9d565l01lf184dfhhk"))))
     (properties `((upstream-name . "updog")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2
@@ -1585,12 +1585,12 @@ implemented methods.")
   (package
     (name "r-updater")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "updater" version))
-              (sha256
-               (base32
-                "1grf0wv1z8n8fabrj4f5mj9vn9fngkqhniqngspbfkxkgws0rilf"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "updater" version))
+       (sha256
+        (base32 "1grf0wv1z8n8fabrj4f5mj9vn9fngkqhniqngspbfkxkgws0rilf"))))
     (properties `((upstream-name . "updater")))
     (build-system r-build-system)
     (propagated-inputs (list r-renv r-cli))
@@ -1607,12 +1607,12 @@ install; immediately replenishing your renv package cache.")
   (package
     (name "r-upcm")
     (version "0.0-3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "UPCM" version))
-              (sha256
-               (base32
-                "1apah04qdgvxxf6q6xr53716pcrmds86sn8f7ykxj93ggg8k0bvl"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "UPCM" version))
+       (sha256
+        (base32 "1apah04qdgvxxf6q6xr53716pcrmds86sn8f7ykxj93ggg8k0bvl"))))
     (properties `((upstream-name . "UPCM")))
     (build-system r-build-system)
     (propagated-inputs (list r-statmod
@@ -1635,12 +1635,12 @@ by Tutz and Schauberger (2020) <doi:10.1177/0146621620920932>.")
   (package
     (name "r-uotm")
     (version "0.1.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "uotm" version))
-              (sha256
-               (base32
-                "0f8mkamgkyn97n6795hi385lakws6nm8aqwrccpdxhpj1ymmrjv7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "uotm" version))
+       (sha256
+        (base32 "0f8mkamgkyn97n6795hi385lakws6nm8aqwrccpdxhpj1ymmrjv7"))))
     (properties `((upstream-name . "uotm")))
     (build-system r-build-system)
     (propagated-inputs (list r-hash r-ggplot2 r-forecast r-boot))
@@ -1676,12 +1676,12 @@ information.")
   (package
     (name "r-unvotes")
     (version "0.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "unvotes" version))
-              (sha256
-               (base32
-                "1vfyvwqfbxp29x2a0sqng6l5pkp2hc3hadp95ysnpannnsd6x0jw"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "unvotes" version))
+       (sha256
+        (base32 "1vfyvwqfbxp29x2a0sqng6l5pkp2hc3hadp95ysnpannnsd6x0jw"))))
     (properties `((upstream-name . "unvotes")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -1697,12 +1697,12 @@ classifications for each vote.")
   (package
     (name "r-unusualprofile")
     (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "unusualprofile" version))
-              (sha256
-               (base32
-                "06z44hkmylp29vdb3l99zai58kvvrgxdji6x0cpiv6cx9216lcp3"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "unusualprofile" version))
+       (sha256
+        (base32 "06z44hkmylp29vdb3l99zai58kvvrgxdji6x0cpiv6cx9216lcp3"))))
     (properties `((upstream-name . "unusualprofile")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -1729,12 +1729,12 @@ which elements of a profile are unusual after controlling for the predictors.")
   (package
     (name "r-unsystation")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "unsystation" version))
-              (sha256
-               (base32
-                "02da7wzzk5bwd475i67v5x04ay2bn5yd5xffl1asqcqxcc5sy0m8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "unsystation" version))
+       (sha256
+        (base32 "02da7wzzk5bwd475i67v5x04ay2bn5yd5xffl1asqcqxcc5sy0m8"))))
     (properties `((upstream-name . "unsystation")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-iterators r-foreach
@@ -1750,12 +1750,12 @@ on unsystematic sub-samples.")
   (package
     (name "r-unstruwwel")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "unstruwwel" version))
-              (sha256
-               (base32
-                "1s8vfmh1lafb244r0bwp4m0r9x5la95lglxqvhb4sq9wmah04ka7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "unstruwwel" version))
+       (sha256
+        (base32 "1s8vfmh1lafb244r0bwp4m0r9x5la95lglxqvhb4sq9wmah04ka7"))))
     (properties `((upstream-name . "unstruwwel")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -1782,12 +1782,12 @@ Informations-, Dokumentations- und Administrations-System'), see
   (package
     (name "r-unrtf")
     (version "1.4.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "unrtf" version))
-              (sha256
-               (base32
-                "1jm2rwik6vxbvzal98h8631csln7plwk5jcaaw4yvgwssmp141mk"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "unrtf" version))
+       (sha256
+        (base32 "1jm2rwik6vxbvzal98h8631csln7plwk5jcaaw4yvgwssmp141mk"))))
     (properties `((upstream-name . "unrtf")))
     (build-system r-build-system)
     (inputs (list pcre2))
@@ -1805,12 +1805,12 @@ converting between character encodings.")
   (package
     (name "r-unrepx")
     (version "1.0-2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "unrepx" version))
-              (sha256
-               (base32
-                "1v27r1lap282zjykki377ni2mmimng81fwmpgs1q6kszvpq8fby6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "unrepx" version))
+       (sha256
+        (base32 "1v27r1lap282zjykki377ni2mmimng81fwmpgs1q6kszvpq8fby6"))))
     (properties `((upstream-name . "unrepx")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -1830,12 +1830,12 @@ integrated in one package.")
   (package
     (name "r-unpivotr")
     (version "0.6.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "unpivotr" version))
-              (sha256
-               (base32
-                "0j3vlh9g0zkm4gql4myisbmkhpvyqa0sb1dkc0xvvqczs93pzzax"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "unpivotr" version))
+       (sha256
+        (base32 "0j3vlh9g0zkm4gql4myisbmkhpvyqa0sb1dkc0xvvqczs93pzzax"))))
     (properties `((upstream-name . "unpivotr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -1865,12 +1865,12 @@ for data frames and HTML tables are provided.")
   (package
     (name "r-unpac")
     (version "1.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "UNPaC" version))
-              (sha256
-               (base32
-                "1dqli7fanh0gk2bfbcykrrswyjrl9g4rbplxjxgjri7kkmf03cd0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "UNPaC" version))
+       (sha256
+        (base32 "1dqli7fanh0gk2bfbcykrrswyjrl9g4rbplxjxgjri7kkmf03cd0"))))
     (properties `((upstream-name . "UNPaC")))
     (build-system r-build-system)
     (propagated-inputs (list r-pdsce r-huge))
@@ -1892,12 +1892,12 @@ method is described in Helgeson, Vock, and Bair (2021) <doi:10.1111/biom.13376>.
   (package
     (name "r-unnest")
     (version "0.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "unnest" version))
-              (sha256
-               (base32
-                "1ajap4r3f4sbp9lnpk1c2if0g30lg4ds9l2l222mxrl45ysrknxa"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "unnest" version))
+       (sha256
+        (base32 "1ajap4r3f4sbp9lnpk1c2if0g30lg4ds9l2l222mxrl45ysrknxa"))))
     (properties `((upstream-name . "unnest")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -1912,12 +1912,12 @@ data.frames with a flexible spec language.")
   (package
     (name "r-unmarked")
     (version "1.3.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "unmarked" version))
-              (sha256
-               (base32
-                "10zq1hqrpr9js1sfdwnai64ymh2pjkh15k26jvh1jx32r0cidlm1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "unmarked" version))
+       (sha256
+        (base32 "10zq1hqrpr9js1sfdwnai64ymh2pjkh15k26jvh1jx32r0cidlm1"))))
     (properties `((upstream-name . "unmarked")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb
@@ -1945,12 +1945,12 @@ Chandler (2011) <doi:10.18637/jss.v043.i10>.")
   (package
     (name "r-unjoin")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "unjoin" version))
-              (sha256
-               (base32
-                "1hp9fxkb59z0cpnwxpaf5whglrljg2nrmsygdb98klxsama9gr5z"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "unjoin" version))
+       (sha256
+        (base32 "1hp9fxkb59z0cpnwxpaf5whglrljg2nrmsygdb98klxsama9gr5z"))))
     (properties `((upstream-name . "unjoin")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-rlang r-dplyr))
@@ -1969,12 +1969,12 @@ building block for workflows within more applied projects.")
   (package
     (name "r-unix")
     (version "1.5.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "unix" version))
-              (sha256
-               (base32
-                "1js3i1h2arral5x5cm6zl0qnidwjqlp8aqwd0vcj0bp0z5zvks1k"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "unix" version))
+       (sha256
+        (base32 "1js3i1h2arral5x5cm6zl0qnidwjqlp8aqwd0vcj0bp0z5zvks1k"))))
     (properties `((upstream-name . "unix")))
     (build-system r-build-system)
     (inputs (list apparmor))
@@ -1990,12 +1990,12 @@ which are not part of the Standard C Library.")
   (package
     (name "r-univrng")
     (version "1.2.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "UnivRNG" version))
-              (sha256
-               (base32
-                "14z2yqv14sv16ycf7jf2kkp8pqn12d9lq4l568vmdm10qrl5x39d"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "UnivRNG" version))
+       (sha256
+        (base32 "14z2yqv14sv16ycf7jf2kkp8pqn12d9lq4l568vmdm10qrl5x39d"))))
     (properties `((upstream-name . "UnivRNG")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=UnivRNG")
@@ -2009,12 +2009,12 @@ Demirtas. (2005) <DOI:10.22237/jmasm/1114907220>.")
   (package
     (name "r-universals")
     (version "0.0.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "universals" version))
-              (sha256
-               (base32
-                "1038x1ymzyiim7gdz09hrs8i0qdzya0p0c5l7y3kgw1a4if2zhmj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "universals" version))
+       (sha256
+        (base32 "1038x1ymzyiim7gdz09hrs8i0qdzya0p0c5l7y3kgw1a4if2zhmj"))))
     (properties `((upstream-name . "universals")))
     (build-system r-build-system)
     (home-page "https://poissonconsulting.github.io/universals/")
@@ -2030,12 +2030,12 @@ nlist package implements many of the methods for its nlist class.")
   (package
     (name "r-univariateml")
     (version "1.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "univariateML" version))
-              (sha256
-               (base32
-                "0a4h19hmw0k2x5yqs92xp48r2srycv4sax97p7gci8hahjw8qzdf"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "univariateML" version))
+       (sha256
+        (base32 "0a4h19hmw0k2x5yqs92xp48r2srycv4sax97p7gci8hahjw8qzdf"))))
     (properties `((upstream-name . "univariateML")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -2056,12 +2056,12 @@ nlist package implements many of the methods for its nlist class.")
   (package
     (name "r-unival")
     (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "unival" version))
-              (sha256
-               (base32
-                "0j7fl77my2273k72s8k9v5pcb85swxfipjxmk4vw487i7aq8b1nq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "unival" version))
+       (sha256
+        (base32 "0j7fl77my2273k72s8k9v5pcb85swxfipjxmk4vw487i7aq8b1nq"))))
     (properties `((upstream-name . "unival")))
     (build-system r-build-system)
     (propagated-inputs (list r-psych))
@@ -2080,12 +2080,12 @@ general factor.")
   (package
     (name "r-unittest")
     (version "1.6-0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "unittest" version))
-              (sha256
-               (base32
-                "10k1lx4pzl884m00mx191h5hxcgcsiz9486dbyjvsyhh0hv2xi0v"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "unittest" version))
+       (sha256
+        (base32 "10k1lx4pzl884m00mx191h5hxcgcsiz9486dbyjvsyhh0hv2xi0v"))))
     (properties `((upstream-name . "unittest")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -2100,12 +2100,12 @@ tests can be run using CMD check with minimal implementation overhead.")
   (package
     (name "r-unitstat")
     (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "UnitStat" version))
-              (sha256
-               (base32
-                "185ivm4kg6hzqx3srk1shvpd5vlc0akn1sbg3wqcdsk2i2x6vhhm"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "UnitStat" version))
+       (sha256
+        (base32 "185ivm4kg6hzqx3srk1shvpd5vlc0akn1sbg3wqcdsk2i2x6vhhm"))))
     (properties `((upstream-name . "UnitStat")))
     (build-system r-build-system)
     (propagated-inputs (list r-lmtest))
@@ -2127,12 +2127,12 @@ same.")
   (package
     (name "r-unitquantreg")
     (version "0.0.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "unitquantreg" version))
-              (sha256
-               (base32
-                "087d4v5fpiznl37frjg6c01bfgvx3vx0yw8cnbm3wsdj9dak94ym"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "unitquantreg" version))
+       (sha256
+        (base32 "087d4v5fpiznl37frjg6c01bfgvx3vx0yw8cnbm3wsdj9dak94ym"))))
     (properties `((upstream-name . "unitquantreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp
@@ -2159,12 +2159,12 @@ hessian functions are written in C++.  For further details see Mazucheli et.  al
   (package
     (name "r-unitizer")
     (version "1.4.19")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "unitizer" version))
-              (sha256
-               (base32
-                "1dx9wlx27mwqkr3vmxdgvyjp7k8pbq718r8x1ri3akxigp4rbjcx"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "unitizer" version))
+       (sha256
+        (base32 "1dx9wlx27mwqkr3vmxdgvyjp7k8pbq718r8x1ri3akxigp4rbjcx"))))
     (properties `((upstream-name . "unitizer")))
     (build-system r-build-system)
     (propagated-inputs (list r-diffobj r-crayon))
@@ -2182,12 +2182,12 @@ tests can be reviewed through the provided interactive environment.")
   (package
     (name "r-unitedr")
     (version "0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "unitedR" version))
-              (sha256
-               (base32
-                "0h4i814awb8419693jz3x5cyhs2x6y5flmz339bg6ivmg13d9h3s"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "unitedR" version))
+       (sha256
+        (base32 "0h4i814awb8419693jz3x5cyhs2x6y5flmz339bg6ivmg13d9h3s"))))
     (properties `((upstream-name . "unitedR")))
     (build-system r-build-system)
     (propagated-inputs (list r-plyr))
@@ -2208,12 +2208,12 @@ optimal usage of hardness in a game.")
   (package
     (name "r-unitcircle")
     (version "0.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "UnitCircle" version))
-              (sha256
-               (base32
-                "0z5ssps8l5ka4aw4984qml15scw4pfssara5dls82afhfhpkszsr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "UnitCircle" version))
+       (sha256
+        (base32 "0z5ssps8l5ka4aw4984qml15scw4pfssara5dls82afhfhpkszsr"))))
     (properties `((upstream-name . "UnitCircle")))
     (build-system r-build-system)
     (home-page "https://github.com/BerriJ/UnitCircle")
@@ -2227,12 +2227,12 @@ outside the Unit circle.  You can also easily draw an unit circle.")
   (package
     (name "r-uniswapper")
     (version "0.6.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "uniswappeR" version))
-              (sha256
-               (base32
-                "0vsw2jvp3gndjrl7v9fndpaqx4kryf4szsz1si1cx1rxhqvlsf92"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "uniswappeR" version))
+       (sha256
+        (base32 "0vsw2jvp3gndjrl7v9fndpaqx4kryf4szsz1si1cx1rxhqvlsf92"))))
     (properties `((upstream-name . "uniswappeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -2259,12 +2259,12 @@ related to the platform and analyse some aspects.")
   (package
     (name "r-uniset")
     (version "0.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "uniset" version))
-              (sha256
-               (base32
-                "1lpwsx1l6x186aj7wl5kvfmc5mp4g95p5h69alg8dn1sns84zqjs"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "uniset" version))
+       (sha256
+        (base32 "1lpwsx1l6x186aj7wl5kvfmc5mp4g95p5h69alg8dn1sns84zqjs"))))
     (properties `((upstream-name . "uniset")))
     (build-system r-build-system)
     (propagated-inputs (list r-easycsv))
@@ -2284,12 +2284,12 @@ is updated or re-installed.")
   (package
     (name "r-unisensr")
     (version "0.3.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "unisensR" version))
-              (sha256
-               (base32
-                "1pqfb8i3rj64l9hh1bn9mm78wlfqphgrlp7zrydznqy88f4jwgvy"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "unisensR" version))
+       (sha256
+        (base32 "1pqfb8i3rj64l9hh1bn9mm78wlfqphgrlp7zrydznqy88f4jwgvy"))))
     (properties `((upstream-name . "unisensR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml r-vroom r-hexview))
@@ -2304,12 +2304,12 @@ universal data format for multi sensor data.")
   (package
     (name "r-unireg")
     (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "uniReg" version))
-              (sha256
-               (base32
-                "0wjc7pgaisvk26j7grxp2ypsabb5my9wg6c9i5w9zhh5jdx1fdab"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "uniReg" version))
+       (sha256
+        (base32 "0wjc7pgaisvk26j7grxp2ypsabb5my9wg6c9i5w9zhh5jdx1fdab"))))
     (properties `((upstream-name . "uniReg")))
     (build-system r-build-system)
     (propagated-inputs (list r-sel r-quadprog r-mvtnorm r-mass r-dosefinding))
@@ -2325,12 +2325,12 @@ coefficients.")
   (package
     (name "r-uniqtag")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "uniqtag" version))
-              (sha256
-               (base32
-                "0vmd5w4p2qvpg6djddl92q9d3c6kiq0rjv6hq6j7x1b1zwqhgfi5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "uniqtag" version))
+       (sha256
+        (base32 "0vmd5w4p2qvpg6djddl92q9d3c6kiq0rjv6hq6j7x1b1zwqhgfi5"))))
     (properties `((upstream-name . "uniqtag")))
     (build-system r-build-system)
     (home-page "https://github.com/sjackman/uniqtag")
@@ -2348,12 +2348,12 @@ that string.")
   (package
     (name "r-uniprotr")
     (version "2.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "UniprotR" version))
-              (sha256
-               (base32
-                "0zrhfcc58vizk4rb3acibcrn2xxp6mlbyxs0pk66crfiz0qn9pd8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "UniprotR" version))
+       (sha256
+        (base32 "0zrhfcc58vizk4rb3acibcrn2xxp6mlbyxs0pk66crfiz0qn9pd8"))))
     (properties `((upstream-name . "UniprotR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyverse
@@ -2389,12 +2389,12 @@ information, For detailed information kindly read the publication
   (package
     (name "r-unine")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "unine" version))
-              (sha256
-               (base32
-                "051dk8fss19h4d9815a7994krr1s3n5q0pxq9gir6zns0vvn05pw"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "unine" version))
+       (sha256
+        (base32 "051dk8fss19h4d9815a7994krr1s3n5q0pxq9gir6zns0vvn05pw"))))
     (properties `((upstream-name . "unine")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -2415,12 +2415,12 @@ nouns and adjectives.  The stemming procedure for French is described in (Savoy,
   (package
     (name "r-unikn")
     (version "0.9.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "unikn" version))
-              (sha256
-               (base32
-                "040wqf8hnbvij8b044q7akzhd9dkb6k4fcv1dfn9cahqpmlgb02l"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "unikn" version))
+       (sha256
+        (base32 "040wqf8hnbvij8b044q7akzhd9dkb6k4fcv1dfn9cahqpmlgb02l"))))
     (properties `((upstream-name . "unikn")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2 r-cli))
@@ -2443,12 +2443,12 @@ purposes or institutions.")
   (package
     (name "r-uniisoregression")
     (version "0.0-0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "UniIsoRegression" version))
-              (sha256
-               (base32
-                "0lmrmb9sbk41ak7sbcrzhfnijb1skgb4lqg9m9imc98lcp69h7z0"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "UniIsoRegression" version))
+       (sha256
+        (base32 "0lmrmb9sbk41ak7sbcrzhfnijb1skgb4lqg9m9imc98lcp69h7z0"))))
     (properties `((upstream-name . "UniIsoRegression")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -2468,12 +2468,12 @@ input vector.  Reference: Quentin F. Stout (2008)
   (package
     (name "r-uniformly")
     (version "0.5.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "uniformly" version))
-              (sha256
-               (base32
-                "05zhx5a3ka3xa3h2j2dc17q7alq3zcnahvzbngyrz5ri0q3w1l5l"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "uniformly" version))
+       (sha256
+        (base32 "05zhx5a3ka3xa3h2j2dc17q7alq3zcnahvzbngyrz5ri0q3w1l5l"))))
     (properties `((upstream-name . "uniformly")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgl r-pgnorm r-abind))
@@ -2489,12 +2489,12 @@ simplices.")
   (package
     (name "r-unifir")
     (version "0.2.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "unifir" version))
-              (sha256
-               (base32
-                "1l563qxym1srjj5xzcz8jks3577jpk33k1gb95lcyg7r9bh35j85"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "unifir" version))
+       (sha256
+        (base32 "1l563qxym1srjj5xzcz8jks3577jpk33k1gb95lcyg7r9bh35j85"))))
     (properties `((upstream-name . "unifir")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-proceduralnames r-glue))
@@ -2512,12 +2512,12 @@ as well as scene management.")
   (package
     (name "r-unifieddosefinding")
     (version "0.1.10")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "UnifiedDoseFinding" version))
-              (sha256
-               (base32
-                "07yppm6zazqgvsv6h8kwknrbi5dfa1fivh3kb22mc2y156k7kjjz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "UnifiedDoseFinding" version))
+       (sha256
+        (base32 "07yppm6zazqgvsv6h8kwknrbi5dfa1fivh3kb22mc2y156k7kjjz"))))
     (properties `((upstream-name . "UnifiedDoseFinding")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=UnifiedDoseFinding")
@@ -2547,12 +2547,12 @@ score, and incorporate safety and/or stopping rules.")
   (package
     (name "r-unifed")
     (version "1.1.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "unifed" version))
-              (sha256
-               (base32
-                "0wy2hasgkzw08l50qq30wb62i1q4skc3zccipv8pm911qlldk3sr"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "unifed" version))
+       (sha256
+        (base32 "0wy2hasgkzw08l50qq30wb62i1q4skc3zccipv8pm911qlldk3sr"))))
     (properties `((upstream-name . "unifed")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -2567,12 +2567,12 @@ unifed distribution (Quijano Xacur, 2019; <doi:10.1186/s40488-019-0102-6>).")
   (package
     (name "r-unifdag")
     (version "1.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "unifDAG" version))
-              (sha256
-               (base32
-                "052qjrnj04imhj6i62k8jdx9rs8r70n0qrmd2z45x4fimn5py6j5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "unifDAG" version))
+       (sha256
+        (base32 "052qjrnj04imhj6i62k8jdx9rs8r70n0qrmd2z45x4fimn5py6j5"))))
     (properties `((upstream-name . "unifDAG")))
     (build-system r-build-system)
     (propagated-inputs (list r-graph r-gmp))
@@ -2590,12 +2590,12 @@ then to a composition of integers as suggested by Kuipers, J. and Moffa, G.
   (package
     (name "r-unicol")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "unicol" version))
-              (sha256
-               (base32
-                "0fxndcj3x60nv934xkxkc10ws7lah5rv8r264inqs1fbhqjrrln6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "unicol" version))
+       (sha256
+        (base32 "0fxndcj3x60nv934xkxkc10ws7lah5rv8r264inqs1fbhqjrrln6"))))
     (properties `((upstream-name . "unicol")))
     (build-system r-build-system)
     (propagated-inputs (list r-unikn))
@@ -2613,12 +2613,12 @@ diverse range of color palettes for creating scientific visualizations.")
   (package
     (name "r-unicode")
     (version "15.0.0-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Unicode" version))
-              (sha256
-               (base32
-                "071cnap6kpwhvvz1rzhh771dlm8ndqk03ca94wnxfiwrwx4da4ky"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Unicode" version))
+       (sha256
+        (base32 "071cnap6kpwhvvz1rzhh771dlm8ndqk03ca94wnxfiwrwx4da4ky"))))
     (properties `((upstream-name . "Unicode")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=Unicode")
@@ -2630,12 +2630,12 @@ diverse range of color palettes for creating scientific visualizations.")
   (package
     (name "r-uniah")
     (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "uniah" version))
-              (sha256
-               (base32
-                "0yjjn08aizqq6j5f9pnsjwdfqdmqrj1s8vjja97gzisfy1xscwfa"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "uniah" version))
+       (sha256
+        (base32 "0yjjn08aizqq6j5f9pnsjwdfqdmqrj1s8vjja97gzisfy1xscwfa"))))
     (properties `((upstream-name . "uniah")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-iso r-ahaz))
@@ -2650,12 +2650,12 @@ additive hazards model.")
   (package
     (name "r-uni-survival-tree")
     (version "1.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "uni.survival.tree" version))
-              (sha256
-               (base32
-                "1brkppsk7likpffzz0ykhqxw99qin57zzcjcib2fcdn3n8gpwq7w"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "uni.survival.tree" version))
+       (sha256
+        (base32 "1brkppsk7likpffzz0ykhqxw99qin57zzcjcib2fcdn3n8gpwq7w"))))
     (properties `((upstream-name . "uni.survival.tree")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-compound-cox))
@@ -2677,12 +2677,12 @@ This tree construction algorithm is proposed by Emura et al. (2021, in review)."
   (package
     (name "r-unheadr")
     (version "0.3.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "unheadr" version))
-              (sha256
-               (base32
-                "1870nn28d7yf9ag31hvhvq00jms4fywjddsk3yd645dhvkr4afcs"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "unheadr" version))
+       (sha256
+        (base32 "1870nn28d7yf9ag31hvhvq00jms4fywjddsk3yd645dhvkr4afcs"))))
     (properties `((upstream-name . "unheadr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyxl
@@ -2708,12 +2708,12 @@ in spreadsheet files.")
   (package
     (name "r-ungroup")
     (version "1.4.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ungroup" version))
-              (sha256
-               (base32
-                "0rdh5h1jfc0nv6alf648vd93gfiqc10l0jgfd4i2v2b7jnypwf4q"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ungroup" version))
+       (sha256
+        (base32 "0rdh5h1jfc0nv6alf648vd93gfiqc10l0jgfd4i2v2b7jnypwf4q"))))
     (properties `((upstream-name . "ungroup")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-rcppeigen r-rcpp r-pbapply r-matrix))
@@ -2742,12 +2742,12 @@ detailed description of the method and applications see Rizzi et al. (2015)
   (package
     (name "r-understandbpmn")
     (version "1.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "understandBPMN" version))
-              (sha256
-               (base32
-                "04wnyxplrn5c6jb76dw25pawwcvvn5xq80lqn5imsf31nbwybpm5"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "understandBPMN" version))
+       (sha256
+        (base32 "04wnyxplrn5c6jb76dw25pawwcvvn5xq80lqn5imsf31nbwybpm5"))))
     (properties `((upstream-name . "understandBPMN")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
@@ -2776,12 +2776,12 @@ in this package for more information concerning the metrics.")
   (package
     (name "r-uncover")
     (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "UNCOVER" version))
-              (sha256
-               (base32
-                "0x5ggwnzca6wz3ikpsa3aq8b715w8drkpchqp3jsg0g9imiw5y3m"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "UNCOVER" version))
+       (sha256
+        (base32 "0x5ggwnzca6wz3ikpsa3aq8b715w8drkpchqp3jsg0g9imiw5y3m"))))
     (properties `((upstream-name . "UNCOVER")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -2814,12 +2814,12 @@ function.")
   (package
     (name "r-uncorbets")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "uncorbets" version))
-              (sha256
-               (base32
-                "19awl797accbqv1l0g1inrxvfvvkrskfv3j9czq2p465ac4qhbgw"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "uncorbets" version))
+       (sha256
+        (base32 "19awl797accbqv1l0g1inrxvfvvkrskfv3j9czq2p465ac4qhbgw"))))
     (properties `((upstream-name . "uncorbets")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlcoptim r-assertthat))
@@ -2834,12 +2834,12 @@ described in Meucci, Attilio (2013) <doi:10.2139/ssrn.2276632>.")
   (package
     (name "r-uncmbb")
     (version "0.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "uncmbb" version))
-              (sha256
-               (base32
-                "0szlz52p0ywl8526mhm0i0pk1vx72kc3474cx0w47xxig83a1j9b"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "uncmbb" version))
+       (sha256
+        (base32 "0szlz52p0ywl8526mhm0i0pk1vx72kc3474cx0w47xxig83a1j9b"))))
     (properties `((upstream-name . "uncmbb")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-dplyr))
@@ -2854,12 +2854,12 @@ for UNC men's basketball team.")
   (package
     (name "r-uncles")
     (version "2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "UNCLES" version))
-              (sha256
-               (base32
-                "0c61sm09dh0yfrjrjjnizg7qrf8xgc1zdldwhjh64kq8k8g5wa69"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "UNCLES" version))
+       (sha256
+        (base32 "0c61sm09dh0yfrjrjjnizg7qrf8xgc1zdldwhjh64kq8k8g5wa69"))))
     (properties `((upstream-name . "UNCLES")))
     (build-system r-build-system)
     (propagated-inputs (list r-pdist r-kohonen r-class))
@@ -2875,12 +2875,12 @@ datasets using external specifications.")
   (package
     (name "r-uncertainty")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "uncertainty" version))
-              (sha256
-               (base32
-                "1mq14ny7l3gy3wjsqijnm37azavyapxszjnckd861h4hgcpdcdjz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "uncertainty" version))
+       (sha256
+        (base32 "1mq14ny7l3gy3wjsqijnm37azavyapxszjnckd861h4hgcpdcdjz"))))
     (properties `((upstream-name . "uncertainty")))
     (build-system r-build-system)
     (propagated-inputs (list r-triangle r-mvtnorm))
@@ -2896,12 +2896,12 @@ estimation and analysis.")
   (package
     (name "r-uncdecomp")
     (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "UncDecomp" version))
-              (sha256
-               (base32
-                "1m44pgk7nffay09m4gkwb0khq0qjd7bq1p72blsmib46wmnwqfsa"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "UncDecomp" version))
+       (sha256
+        (base32 "1m44pgk7nffay09m4gkwb0khq0qjd7bq1p72blsmib46wmnwqfsa"))))
     (properties `((upstream-name . "UncDecomp")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2 r-dplyr))
@@ -2921,12 +2921,12 @@ accessible via the URL below.")
   (package
     (name "r-unbalhaar")
     (version "2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "unbalhaar" version))
-              (sha256
-               (base32
-                "0fgnvl9ammawgm5nf2icw64yzivqw7sl07dpvrsb5rypvrm8d040"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "unbalhaar" version))
+       (sha256
+        (base32 "0fgnvl9ammawgm5nf2icw64yzivqw7sl07dpvrsb5rypvrm8d040"))))
     (properties `((upstream-name . "unbalhaar")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=unbalhaar")
@@ -2940,12 +2940,12 @@ Gaussian noise using Unbalanced Haar wavelets.")
   (package
     (name "r-umx")
     (version "4.16.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "umx" version))
-              (sha256
-               (base32
-                "04kjmcc9nf3x2ma2a5diajxr0qmssfd6axhdjq38qp7sgpwappxk"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "umx" version))
+       (sha256
+        (base32 "04kjmcc9nf3x2ma2a5diajxr0qmssfd6axhdjq38qp7sgpwappxk"))))
     (properties `((upstream-name . "umx")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -2981,12 +2981,12 @@ Equation and Twin Modelling in R. Twin Research and Human Genetics, 22, 27-41.
   (package
     (name "r-umr")
     (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "UMR" version))
-              (sha256
-               (base32
-                "05g2gk7bmhzyill6fgq396yk0yi7qz4mdcy3cfzzx5nyr11rc8a7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "UMR" version))
+       (sha256
+        (base32 "05g2gk7bmhzyill6fgq396yk0yi7qz4mdcy3cfzzx5nyr11rc8a7"))))
     (properties `((upstream-name . "UMR")))
     (build-system r-build-system)
     (propagated-inputs (list r-trust r-distr r-decon))
@@ -3006,12 +3006,12 @@ and Durot (2021).  The main method is an active-set-trust-region-based method.")
   (package
     (name "r-umpire")
     (version "2.0.10")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Umpire" version))
-              (sha256
-               (base32
-                "1bhz1yfvpszqz4nal2wwjgllbq0hj6y0jf2bja3nfb7amj2m10gg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Umpire" version))
+       (sha256
+        (base32 "1bhz1yfvpszqz4nal2wwjgllbq0hj6y0jf2bja3nfb7amj2m10gg"))))
     (properties `((upstream-name . "Umpire")))
     (build-system r-build-system)
     (propagated-inputs (list r-mc2d r-bimodalindex))
@@ -3030,12 +3030,12 @@ realistic mixed-typed clinical data.")
   (package
     (name "r-ump")
     (version "0.5-8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ump" version))
-              (sha256
-               (base32
-                "1sg226caq9y41cwl7wr5s9z3bpq2j5p6rj6fy2pasbzimgzw0byx"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ump" version))
+       (sha256
+        (base32 "1sg226caq9y41cwl7wr5s9z3bpq2j5p6rj6fy2pasbzimgzw0byx"))))
     (properties `((upstream-name . "ump")))
     (build-system r-build-system)
     (home-page "http://www.stat.umn.edu/geyer/fuzz/")
@@ -3052,12 +3052,12 @@ procedures based on UMP test and two-tailed procedures based on UMPU test).")
   (package
     (name "r-umoments")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Umoments" version))
-              (sha256
-               (base32
-                "089d0xmsp0419mxjp6fs0s1palvdkr0i5dzqckcn6r2kjqj7izjg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Umoments" version))
+       (sha256
+        (base32 "089d0xmsp0419mxjp6fs0s1palvdkr0i5dzqckcn6r2kjqj7izjg"))))
     (properties `((upstream-name . "Umoments")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -3076,12 +3076,12 @@ sample moments and their powers and products.  Gerlovina and Hubbard (2019)
   (package
     (name "r-umianalyzer")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "umiAnalyzer" version))
-              (sha256
-               (base32
-                "147x48mr9mj0njwbz39876795rninvk89zm9immkppdm4s5g1ghf"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "umiAnalyzer" version))
+       (sha256
+        (base32 "147x48mr9mj0njwbz39876795rninvk89zm9immkppdm4s5g1ghf"))))
     (properties `((upstream-name . "umiAnalyzer")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -3118,12 +3118,12 @@ molecular identifiers generated by UMI@code{ErrorCorrect}
   (package
     (name "r-umbridge")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "umbridge" version))
-              (sha256
-               (base32
-                "0p49mwi8qy90vb5xbv6w97sjv373cmp26vkk5y1nacqx6g6yvc5f"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "umbridge" version))
+       (sha256
+        (base32 "0p49mwi8qy90vb5xbv6w97sjv373cmp26vkk5y1nacqx6g6yvc5f"))))
     (properties `((upstream-name . "umbridge")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-jsonlite r-httr2))
@@ -3141,12 +3141,12 @@ Jacobian actions etc.")
   (package
     (name "r-umatrix")
     (version "3.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Umatrix" version))
-              (sha256
-               (base32
-                "1gsfk1vk19nf2bqndiiw700x8qv2cfg9k4330wbm6i31p0hr00wz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Umatrix" version))
+       (sha256
+        (base32 "1gsfk1vk19nf2bqndiiw700x8qv2cfg9k4330wbm6i31p0hr00wz"))))
     (properties `((upstream-name . "Umatrix")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinyjs
@@ -3180,12 +3180,12 @@ user interfaces implemented in shiny'.")
   (package
     (name "r-ultimixt")
     (version "2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Ultimixt" version))
-              (sha256
-               (base32
-                "0fh2qpm7qpv1170jzbmzqhvwsn69lblizzisgasswy2nix2jjz4y"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Ultimixt" version))
+       (sha256
+        (base32 "0fh2qpm7qpv1170jzbmzqhvwsn69lblizzisgasswy2nix2jjz4y"))))
     (properties `((upstream-name . "Ultimixt")))
     (build-system r-build-system)
     (propagated-inputs (list r-gtools r-coda))
@@ -3206,12 +3206,12 @@ simplex.")
   (package
     (name "r-ulid")
     (version "0.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ulid" version))
-              (sha256
-               (base32
-                "0xxkqrnlz3pkb3s1gacfzqav54w97gc0w8rh0fn1qy5rkmg2bplv"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ulid" version))
+       (sha256
+        (base32 "0xxkqrnlz3pkb3s1gacfzqav54w97gc0w8rh0fn1qy5rkmg2bplv"))))
     (properties `((upstream-name . "ulid")))
     (build-system r-build-system)
     (inputs (list zlib))
@@ -3240,12 +3240,12 @@ detects and handles the same millisecond).")
   (package
     (name "r-ukpolice")
     (version "0.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ukpolice" version))
-              (sha256
-               (base32
-                "1dwwixhiarlpdss7rhiamzcsl1k2yphgmjzh7wn2my4vxj06817l"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ukpolice" version))
+       (sha256
+        (base32 "1dwwixhiarlpdss7rhiamzcsl1k2yphgmjzh7wn2my4vxj06817l"))))
     (properties `((upstream-name . "ukpolice")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-snakecase r-purrr r-jsonlite r-httr))
@@ -3262,12 +3262,12 @@ police force areas, crime reports, and the use of stop-and-search powers.")
   (package
     (name "r-uklr")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "uklr" version))
-              (sha256
-               (base32
-                "1x5lfzb0a64k84dscdj61kcibww8mizf9w62anmb207f8dggj7lg"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "uklr" version))
+       (sha256
+        (base32 "1x5lfzb0a64k84dscdj61kcibww8mizf9w62anmb207f8dggj7lg"))))
     (properties `((upstream-name . "uklr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-jsonlite r-httr r-curl))
@@ -3284,12 +3284,12 @@ price paid data.")
   (package
     (name "r-ukgrid")
     (version "0.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "UKgrid" version))
-              (sha256
-               (base32
-                "1x44iry2j5qbvd8ac9rv9dmg60hbhry2v4jj9hmm49bx10iwl9h2"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "UKgrid" version))
+       (sha256
+        (base32 "1x44iry2j5qbvd8ac9rv9dmg60hbhry2v4jj9hmm49bx10iwl9h2"))))
     (properties `((upstream-name . "UKgrid")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -3310,12 +3310,12 @@ electric power transmission network) in the UK since 2011.")
   (package
     (name "r-ukgasapi")
     (version "0.21")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ukgasapi" version))
-              (sha256
-               (base32
-                "1acl04bm8f2hgi26mpmzcwp44yv9zxarzw4r4k20b367k8g9rh8a"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ukgasapi" version))
+       (sha256
+        (base32 "1acl04bm8f2hgi26mpmzcwp44yv9zxarzw4r4k20b367k8g9rh8a"))))
     (properties `((upstream-name . "ukgasapi")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml r-httr))
@@ -3330,12 +3330,12 @@ electric power transmission network) in the UK since 2011.")
   (package
     (name "r-ukfe")
     (version "0.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "UKFE" version))
-              (sha256
-               (base32
-                "1yrjg99sywixriq7ibdfbz33ikwc6k2nb802prkjmiwlxhqcw10n"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "UKFE" version))
+       (sha256
+        (base32 "1yrjg99sywixriq7ibdfbz33ikwc6k2nb802prkjmiwlxhqcw10n"))))
     (properties `((upstream-name . "UKFE")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2))
@@ -3369,12 +3369,12 @@ and conditions: <https://nrfa.ceh.ac.uk/costs-terms-and-conditions>).")
   (package
     (name "r-ukbtools")
     (version "0.11.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ukbtools" version))
-              (sha256
-               (base32
-                "1j5p9ypn3s781582all64kvywih1ry0lqsh1zirr35g7r46fy783"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ukbtools" version))
+       (sha256
+        (base32 "1j5p9ypn3s781582all64kvywih1ry0lqsh1zirr35g7r46fy783"))))
     (properties `((upstream-name . "ukbtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
@@ -3405,12 +3405,12 @@ analyses.")
   (package
     (name "r-ukbnmr")
     (version "2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ukbnmr" version))
-              (sha256
-               (base32
-                "05bcsz74aayi5rk9nv7izj4xz9mmf1yw933syvvp2g0ly6z8l66w"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ukbnmr" version))
+       (sha256
+        (base32 "05bcsz74aayi5rk9nv7izj4xz9mmf1yw933syvvp2g0ly6z8l66w"))))
     (properties `((upstream-name . "ukbnmr")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-data-table r-bit64))
@@ -3434,12 +3434,12 @@ Data (2023) <doi:10.1038/s41597-023-01949-y>.")
   (package
     (name "r-ukbabynames")
     (version "0.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ukbabynames" version))
-              (sha256
-               (base32
-                "1akmg1sj5438nsbjp2xqlrkgsw772j1a1shnn1jqh25d1q3lb0nz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ukbabynames" version))
+       (sha256
+        (base32 "1akmg1sj5438nsbjp2xqlrkgsw772j1a1shnn1jqh25d1q3lb0nz"))))
     (properties `((upstream-name . "ukbabynames")))
     (build-system r-build-system)
     (home-page "https://mine-cetinkaya-rundel.github.io/ukbabynames/")
@@ -3453,12 +3453,12 @@ Data (2023) <doi:10.1038/s41597-023-01949-y>.")
   (package
     (name "r-ukb-covid19")
     (version "0.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "UKB.COVID19" version))
-              (sha256
-               (base32
-                "053hsdaa7xnzk95bdp0i1jr6pzq50zvfn1m5sm0znsrk59m5xhgm"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "UKB.COVID19" version))
+       (sha256
+        (base32 "053hsdaa7xnzk95bdp0i1jr6pzq50zvfn1m5sm0znsrk59m5xhgm"))))
     (properties `((upstream-name . "UKB.COVID19")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyverse
@@ -3481,12 +3481,12 @@ co-morbidity association tests.  Wang et al. (2021)
   (package
     (name "r-uk2us")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "uk2us" version))
-              (sha256
-               (base32
-                "1iskjfifksx9gh94zwh4kk7l984804fidzg4j1k2ww9a4j63rk19"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "uk2us" version))
+       (sha256
+        (base32 "1iskjfifksx9gh94zwh4kk7l984804fidzg4j1k2ww9a4j63rk19"))))
     (properties `((upstream-name . "uk2us")))
     (build-system r-build-system)
     (home-page "https://github.com/bldavies/uk2us")
@@ -3500,12 +3500,12 @@ English words.")
   (package
     (name "r-uiucthemes")
     (version "0.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "uiucthemes" version))
-              (sha256
-               (base32
-                "1faggg8hiqw4pblq5r3m9wi3x5m6kbjq0flf88mqa993v9rpdrf6"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "uiucthemes" version))
+       (sha256
+        (base32 "1faggg8hiqw4pblq5r3m9wi3x5m6kbjq0flf88mqa993v9rpdrf6"))))
     (properties `((upstream-name . "uiucthemes")))
     (build-system r-build-system)
     (propagated-inputs (list r-xaringan r-rmarkdown))
@@ -3522,12 +3522,12 @@ scheme and identity standards.")
   (package
     (name "r-ui")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ui" version))
-              (sha256
-               (base32
-                "15hcdzaj75ip6j7yglx8rqhp4y3yf3aw5cpbjgk1mjr4cya7lvzi"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ui" version))
+       (sha256
+        (base32 "15hcdzaj75ip6j7yglx8rqhp4y3yf3aw5cpbjgk1mjr4cya7lvzi"))))
     (properties `((upstream-name . "ui")))
     (build-system r-build-system)
     (propagated-inputs (list r-numderiv r-mvtnorm r-maxlik r-matrix))
@@ -3549,12 +3549,12 @@ Luna, X. (2018) <doi:10.1111/biom.13001>.")
   (package
     (name "r-uhmm")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "uHMM" version))
-              (sha256
-               (base32
-                "1516ipadxi7rc1dbinr5rva2fbcr5i2zg3rlli5wy7r6naf8fzzl"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "uHMM" version))
+       (sha256
+        (base32 "1516ipadxi7rc1dbinr5rva2fbcr5i2zg3rlli5wy7r6naf8fzzl"))))
     (properties `((upstream-name . "uHMM")))
     (build-system r-build-system)
     (propagated-inputs (list r-tkrplot
@@ -3577,12 +3577,12 @@ classification.")
   (package
     (name "r-ugomquantreg")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ugomquantreg" version))
-              (sha256
-               (base32
-                "1a5vc1qgy3kp1by5bp296w980lkxcghzzxibhap2jg06jnzjfcq8"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ugomquantreg" version))
+       (sha256
+        (base32 "1a5vc1qgy3kp1by5bp296w980lkxcghzzxibhap2jg06jnzjfcq8"))))
     (properties `((upstream-name . "ugomquantreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-pracma r-gamlss-dist r-gamlss))
@@ -3599,12 +3599,12 @@ Shape.")
   (package
     (name "r-ugmar")
     (version "3.4.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "uGMAR" version))
-              (sha256
-               (base32
-                "01zs919b24qb102qf9m19x0zzyg7yx8v8w674awzfk4lvm27d2aq"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "uGMAR" version))
+       (sha256
+        (base32 "01zs919b24qb102qf9m19x0zzyg7yx8v8w674awzfk4lvm27d2aq"))))
     (properties `((upstream-name . "uGMAR")))
     (build-system r-build-system)
     (propagated-inputs (list r-pbapply r-gsl r-brobdingnag))
@@ -3627,12 +3627,12 @@ G-@code{StMAR} processes.  Leena Kalliovirta, Mika Meitz, Pentti Saikkonen
   (package
     (name "r-ugatsdb")
     (version "0.2.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ugatsdb" version))
-              (sha256
-               (base32
-                "098dzh6slaxj22730nm9g6b5653600ms2ahxr87iblh5xq0dcidl"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ugatsdb" version))
+       (sha256
+        (base32 "098dzh6slaxj22730nm9g6b5653600ms2ahxr87iblh5xq0dcidl"))))
     (properties `((upstream-name . "ugatsdb")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl r-rmysql r-dbi r-data-table r-collapse))
@@ -3652,12 +3652,12 @@ month.")
   (package
     (name "r-ufs")
     (version "0.5.10")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ufs" version))
-              (sha256
-               (base32
-                "09nrm8p95i8lksqyxxb2gqmyx650i05pv7a4gvgz4pbpsivxf9id"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ufs" version))
+       (sha256
+        (base32 "09nrm8p95i8lksqyxxb2gqmyx650i05pv7a4gvgz4pbpsivxf9id"))))
     (properties `((upstream-name . "ufs")))
     (build-system r-build-system)
     (propagated-inputs (list r-suppdists
@@ -3697,12 +3697,12 @@ basic operations such as (dis)attenuate effect size estimates.")
   (package
     (name "r-ufrisk")
     (version "1.0.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ufRisk" version))
-              (sha256
-               (base32
-                "190rjqhmm7r9yy4f5gyk2p8k250xnnkkssi3nfgv79w62z2hv2qh"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ufRisk" version))
+       (sha256
+        (base32 "190rjqhmm7r9yy4f5gyk2p8k250xnnkkssi3nfgv79w62z2hv2qh"))))
     (properties `((upstream-name . "ufRisk")))
     (build-system r-build-system)
     (propagated-inputs (list r-smoots r-rugarch r-fracdiff r-esemifar))
@@ -3725,12 +3725,12 @@ and Uhde A. (2021) <https://ideas.repec.org/p/pdn/ciepap/141.html>.")
   (package
     (name "r-udpipe")
     (version "0.8.11")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "udpipe" version))
-              (sha256
-               (base32
-                "0crjcfrpb0m7f58w7ksz7kvglvmc45axy9kbbvqz9w6i4kg00aaj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "udpipe" version))
+       (sha256
+        (base32 "0crjcfrpb0m7f58w7ksz7kvglvmc45axy9kbbvqz9w6i4kg00aaj"))))
     (properties `((upstream-name . "udpipe")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-matrix r-data-table))
@@ -3759,12 +3759,12 @@ sentiment scoring and semantic similarity analysis.")
   (package
     (name "r-udderquarterinfectiondata")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "UdderQuarterInfectionData" version))
-              (sha256
-               (base32
-                "084bq5ai1ccp4www64z0ipic74zkd8j1ygv0py900164a25wdr9b"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "UdderQuarterInfectionData" version))
+       (sha256
+        (base32 "084bq5ai1ccp4www64z0ipic74zkd8j1ygv0py900164a25wdr9b"))))
     (properties `((upstream-name . "UdderQuarterInfectionData")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=UdderQuarterInfectionData")
@@ -3789,12 +3789,12 @@ list.")
   (package
     (name "r-ucscxenatools")
     (version "1.4.8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "UCSCXenaTools" version))
-              (sha256
-               (base32
-                "0w0rps6jsiw67k6h8j1g0nqzwwhl1kb2by90xd4w61i71vk0fda7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "UCSCXenaTools" version))
+       (sha256
+        (base32 "0w0rps6jsiw67k6h8j1g0nqzwwhl1kb2by90xd4w61i71vk0fda7"))))
     (properties `((upstream-name . "UCSCXenaTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -3818,12 +3818,12 @@ explored and downloaded.")
   (package
     (name "r-ucscxenashiny")
     (version "1.1.10")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "UCSCXenaShiny" version))
-              (sha256
-               (base32
-                "1jnmi3d1h31fx50lrsb1nl49p50jrx0vxmjsg6q6wdhwjnfxizd9"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "UCSCXenaShiny" version))
+       (sha256
+        (base32 "1jnmi3d1h31fx50lrsb1nl49p50jrx0vxmjsg6q6wdhwjnfxizd9"))))
     (properties `((upstream-name . "UCSCXenaShiny")))
     (build-system r-build-system)
     (propagated-inputs (list r-ucscxenatools
@@ -3854,12 +3854,12 @@ TARGET, GTEx, CCLE, and others.")
   (package
     (name "r-ucr-columnnames")
     (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "UCR.ColumnNames" version))
-              (sha256
-               (base32
-                "1nwwq93f60r9aik51l7mzckg81f81nz5kgzynyzp5sm4y2wmpzwn"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "UCR.ColumnNames" version))
+       (sha256
+        (base32 "1nwwq93f60r9aik51l7mzckg81f81nz5kgzynyzp5sm4y2wmpzwn"))))
     (properties `((upstream-name . "UCR.ColumnNames")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=UCR.ColumnNames")
@@ -3875,12 +3875,12 @@ datasets from 1998-2014.")
   (package
     (name "r-ucomp")
     (version "4.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "UComp" version))
-              (sha256
-               (base32
-                "0k89palrdifgrz45ar3dcnrwpxwb01nqsg9k1qkwrilhyj9c254k"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "UComp" version))
+       (sha256
+        (base32 "0k89palrdifgrz45ar3dcnrwpxwb01nqsg9k1qkwrilhyj9c254k"))))
     (properties `((upstream-name . "UComp")))
     (build-system r-build-system)
     (propagated-inputs (list r-tsoutliers
@@ -3905,12 +3905,12 @@ JK, and Snyder RD (2008) <doi:10.1007/978-3-540-71918-2>.")
   (package
     (name "r-uclust")
     (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "uclust" version))
-              (sha256
-               (base32
-                "10i78fc81sy635mi8nn1gmryvcbqq7f99ws6byqlnhwyw79qmvb1"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "uclust" version))
+       (sha256
+        (base32 "10i78fc81sy635mi8nn1gmryvcbqq7f99ws6byqlnhwyw79qmvb1"))))
     (properties `((upstream-name . "uclust")))
     (build-system r-build-system)
     (propagated-inputs (list r-robcor r-dendextend))
@@ -3932,12 +3932,12 @@ and Gabriela B. Cybis (2021) <@code{arXiv:2106.09115>}.")
   (package
     (name "r-ucie")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ucie" version))
-              (sha256
-               (base32
-                "032anlli29a0iwzmn35afrcs4if5kipplpn8n4qpy1g14hc5zgvd"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ucie" version))
+       (sha256
+        (base32 "032anlli29a0iwzmn35afrcs4if5kipplpn8n4qpy1g14hc5zgvd"))))
     (properties `((upstream-name . "ucie")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgl
@@ -3962,12 +3962,12 @@ capture much of the structure of the original data.")
   (package
     (name "r-uci")
     (version "0.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "uci" version))
-              (sha256
-               (base32
-                "0bqyj69xplr8hbc1b9rpjxvzmnhwkqy2xdyd4my53niq2gm55750"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "uci" version))
+       (sha256
+        (base32 "0bqyj69xplr8hbc1b9rpjxvzmnhwkqy2xdyd4my53niq2gm55750"))))
     (properties `((upstream-name . "uci")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdep
@@ -3995,12 +3995,12 @@ form.")
   (package
     (name "r-ucarechemsuitecli")
     (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "uCAREChemSuiteCLI" version))
-              (sha256
-               (base32
-                "1nccgkxv57inhgvgmhwm4fr8cp28sj8n83za5gam9xx1f42mzsqk"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "uCAREChemSuiteCLI" version))
+       (sha256
+        (base32 "1nccgkxv57inhgvgmhwm4fr8cp28sj8n83za5gam9xx1f42mzsqk"))))
     (properties `((upstream-name . "uCAREChemSuiteCLI")))
     (build-system r-build-system)
     (propagated-inputs (list r-usethis r-chemminer))
@@ -4018,12 +4018,12 @@ Pseudomonas aeruginosa for the drug class is fetched from the database.")
   (package
     (name "r-ubms")
     (version "1.2.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ubms" version))
-              (sha256
-               (base32
-                "10jr2nb8pq0rxx1h0zci4zybbj108maa5kdzgf9bj87pzsrxhda7"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ubms" version))
+       (sha256
+        (base32 "10jr2nb8pq0rxx1h0zci4zybbj108maa5kdzgf9bj87pzsrxhda7"))))
     (properties `((upstream-name . "ubms")))
     (build-system r-build-system)
     (propagated-inputs (list r-unmarked
@@ -4061,12 +4061,12 @@ random slope and intercept terms.  References: Carpenter et al. (2017)
   (package
     (name "r-ubl")
     (version "0.0.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "UBL" version))
-              (sha256
-               (base32
-                "1zppc8mgmj4ymxfdvhqiirlf80wh65y58wqm92fgjdn7s06v5skf"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "UBL" version))
+       (sha256
+        (base32 "1zppc8mgmj4ymxfdvhqiirlf80wh65y58wqm92fgjdn7s06v5skf"))))
     (properties `((upstream-name . "UBL")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-randomforest r-mba r-gstat r-automap))
@@ -4085,12 +4085,12 @@ modify the original data set biasing it towards the user preferences.")
   (package
     (name "r-ubiquity")
     (version "2.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ubiquity" version))
-              (sha256
-               (base32
-                "1zjjwpl8zkpr4zvrhsbsj6vpiwy08vs2sw1rpx7aq940v37dvmbz"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ubiquity" version))
+       (sha256
+        (base32 "1zjjwpl8zkpr4zvrhsbsj6vpiwy08vs2sw1rpx7aq940v37dvmbz"))))
     (properties `((upstream-name . "ubiquity")))
     (build-system r-build-system)
     (inputs (list perl))
@@ -4132,12 +4132,12 @@ reporting with @code{PowerPoint} and Word'.")
   (package
     (name "r-ubcrm")
     (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "UBCRM" version))
-              (sha256
-               (base32
-                "0cfdgarlks0hkx4fnlm0i2fwpl057vxq58n3xfv718w3cs2nx9wc"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "UBCRM" version))
+       (sha256
+        (base32 "0cfdgarlks0hkx4fnlm0i2fwpl057vxq58n3xfv718w3cs2nx9wc"))))
     (properties `((upstream-name . "UBCRM")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=UBCRM")
@@ -4154,12 +4154,12 @@ options.")
   (package
     (name "r-ubayfs")
     (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "UBayFS" version))
-              (sha256
-               (base32
-                "1aj627f8w30wfnf313adza85jffnp1yq34ri8cfaz5v0jzs1bfib"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "UBayFS" version))
+       (sha256
+        (base32 "1aj627f8w30wfnf313adza85jffnp1yq34ri8cfaz5v0jzs1bfib"))))
     (properties `((upstream-name . "UBayFS")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny
@@ -4189,12 +4189,12 @@ block feature selection.")
   (package
     (name "r-uavrmp")
     (version "0.6.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "uavRmp" version))
-              (sha256
-               (base32
-                "0jv0ls8wbxciv6lhr7qvzarg4s3gckkc1n4w833sfpr0sk4gakaj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "uavRmp" version))
+       (sha256
+        (base32 "0jv0ls8wbxciv6lhr7qvzarg4s3gckkc1n4w833sfpr0sk4gakaj"))))
     (properties `((upstream-name . "uavRmp")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -4226,12 +4226,12 @@ data manipulation.")
   (package
     (name "r-uaparserjs")
     (version "0.3.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "uaparserjs" version))
-              (sha256
-               (base32
-                "0v24smgsz1p2wa23mc2llx7dycwmgf7zyxdhwxgwplabpmy3xzhl"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "uaparserjs" version))
+       (sha256
+        (base32 "0v24smgsz1p2wa23mc2llx7dycwmgf7zyxdhwxgwplabpmy3xzhl"))))
     (properties `((upstream-name . "uaparserjs")))
     (build-system r-build-system)
     (propagated-inputs (list r-v8 r-progress))
@@ -4251,12 +4251,12 @@ ua-parser project <https://github.com/ua-parser>.")
   (package
     (name "r-u5mr")
     (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "u5mr" version))
-              (sha256
-               (base32
-                "16znlmxanhg1m6fq28z62jv033fxgr4njzz50hgskprvgvx8svkj"))))
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "u5mr" version))
+       (sha256
+        (base32 "16znlmxanhg1m6fq28z62jv033fxgr4njzz50hgskprvgvx8svkj"))))
     (properties `((upstream-name . "u5mr")))
     (build-system r-build-system)
     (propagated-inputs (list r-lifecycle))
