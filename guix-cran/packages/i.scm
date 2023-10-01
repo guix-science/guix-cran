@@ -1003,13 +1003,13 @@ and refined from the iterators', itertools', and itertools2 packages.")
 (define-public r-iterlap
   (package
     (name "r-iterlap")
-    (version "1.1-3")
+    (version "1.1-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iterLap" version))
        (sha256
-        (base32 "079d4hxf1ha8pgibzb4r1yk7xqpzndd7hjbp8294qb26jvvcnd8q"))))
+        (base32 "1kjydl6wgcdjj4c0y2vpv57mpisk5c58vn96ik91m7rhfr2im1b0"))))
     (properties `((upstream-name . "iterLap")))
     (build-system r-build-system)
     (propagated-inputs (list r-randtoolbox r-quadprog))
@@ -1753,13 +1753,13 @@ normal profiles.")
 (define-public r-isoplotrgui
   (package
     (name "r-isoplotrgui")
-    (version "5.4")
+    (version "5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IsoplotRgui" version))
        (sha256
-        (base32 "1s2kmsjk0pnn4vyrxrgg8860ayvc9a122dvrx63rrkck7dshniav"))))
+        (base32 "13kavzp938kpa6n8nz1wkrbav0hxm87zcl2hlzqppmb4pcxklqd5"))))
     (properties `((upstream-name . "IsoplotRgui")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinylight r-isoplotr))
@@ -1776,13 +1776,13 @@ either be used offline, or hosted on a server to provide online access to the
 (define-public r-isoplotr
   (package
     (name "r-isoplotr")
-    (version "5.4")
+    (version "5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IsoplotR" version))
        (sha256
-        (base32 "1scv8l2k6hw43w9bfl2v3anhsggfyvsaykysmbixysg8gj76yb7n"))))
+        (base32 "04s8yfpp5mvfpx9crgg6yadvw8jrcnkjpl4v9ac01psmkzc4yk4p"))))
     (properties `((upstream-name . "IsoplotR")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -2988,13 +2988,13 @@ referring to the Pi(), Ji(), and Ii() functions of the @code{catR} package
 (define-public r-irtpwr
   (package
     (name "r-irtpwr")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "irtpwr" version))
        (sha256
-        (base32 "12ypvfqirqniszxwx01h9hcp3pdk7yd379j42pys13rd8m05ii4m"))))
+        (base32 "1h4p0w29q9ksbyjsl7wqyc5id09nicv3x3dq2li20lkqvmwlmzsh"))))
     (properties `((upstream-name . "irtpwr")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-random r-mirt r-ggplot2 r-digest
@@ -7997,13 +7997,13 @@ vectors, matrices, and lists.")
 (define-public r-ino
   (package
     (name "r-ino")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ino" version))
        (sha256
-        (base32 "1h47hlfxhxs14ms7wq7js4ygmq76d5i8f88ghhh5g2l6fdszfi90"))))
+        (base32 "18pl1scg8lxz0x1r2ksvrlpr7qvwp88bxvwiz4j4w3if5w0i0qhk"))))
     (properties `((upstream-name . "ino")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales

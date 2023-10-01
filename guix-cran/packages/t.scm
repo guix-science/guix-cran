@@ -2386,13 +2386,13 @@ forecasting.")
 (define-public r-tsss
   (package
     (name "r-tsss")
-    (version "1.3.4-4")
+    (version "1.3.4-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TSSS" version))
        (sha256
-        (base32 "08j3hzyd4wzp8a3190anyn410ffcp1dq09whir25kb2vvv3vw4fx"))))
+        (base32 "13d58fkjll08hznpawl1ln93vz5sy65k8j92kxz4kkpw2jdg690h"))))
     (properties `((upstream-name . "TSSS")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -6246,16 +6246,16 @@ Methods for Statistical Learning in R\" <doi:10.1201/9781003089032>.")
 (define-public r-treemapify
   (package
     (name "r-treemapify")
-    (version "2.5.5")
+    (version "2.5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "treemapify" version))
        (sha256
-        (base32 "0g6bwchyn13iksv8vyc4d0c7n1zpy26x1bd6vkrm8ail98y2ia2m"))))
+        (base32 "1w15y842rp2zg5whf3x4fahsi0mvnk92w9rgnsgqivdamzrnd9qg"))))
     (properties `((upstream-name . "treemapify")))
     (build-system r-build-system)
-    (propagated-inputs (list r-ggplot2 r-ggfittext))
+    (propagated-inputs (list r-ggplot2 r-ggfittext r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://wilkox.org/treemapify/")
     (synopsis "Draw Treemaps in 'ggplot2'")
@@ -7697,6 +7697,40 @@ tools, and functions for extracting the most frequent event subsequences and
 identifying the most discriminating ones among them.  A user's guide can be
 found on the @code{TraMineR} web page.")
     (license license:gpl2+)))
+
+(define-public r-tramicp
+  (package
+    (name "r-tramicp")
+    (version "0.0-1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tramicp" version))
+       (sha256
+        (base32 "1i6j9iqrwfq3y6b8vf90s8bgnzcl1g39lrcbspxrndvz4mgdbavv"))))
+    (properties `((upstream-name . "tramicp")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-variables
+                             r-tram
+                             r-survival
+                             r-sandwich
+                             r-ranger
+                             r-multcomp
+                             r-mlt
+                             r-mass
+                             r-dhsic
+                             r-cotram
+                             r-coin
+                             r-basefun))
+    (home-page "https://cran.r-project.org/package=tramicp")
+    (synopsis
+     "Model-Based Causal Feature Selection for General Response Types")
+    (description
+     "Extends invariant causal prediction (Peters et al., 2016,
+<doi:10.1111/rssb.12167>) to generalized linear and transformation models
+(Hothorn et al., 2018, <doi:10.1111/sjos.12291>).  The methodology is described
+in Kook et al. (2023, <doi:10.48550/@code{arXiv.2309.12833>}).")
+    (license license:gpl3)))
 
 (define-public r-tram
   (package
@@ -12166,13 +12200,13 @@ arbitrary distributions with piecewise twice differentiable densities.")
 (define-public r-timsac
   (package
     (name "r-timsac")
-    (version "1.3.8-3")
+    (version "1.3.8-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "timsac" version))
        (sha256
-        (base32 "0whhggz749xcmdgqzql0n4r3hbm3bl2yjl2infmhpbhrfr1lqp3x"))))
+        (base32 "0gmqncz114gar0j7lahvcsasmdva2dbl2ka420hlf63f51c2dkjk"))))
     (properties `((upstream-name . "timsac")))
     (build-system r-build-system)
     (native-inputs (list gfortran))

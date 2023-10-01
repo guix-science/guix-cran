@@ -1015,6 +1015,38 @@ used in soil science.  It has new models for water retention and characteristic
 curves.")
     (license license:gpl2+)))
 
+(define-public r-hydroloom
+  (package
+    (name "r-hydroloom")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hydroloom" version))
+       (sha256
+        (base32 "0yl1npcb52i64kihxl8nwsapkr80ix7wsxn1c66bbzmd3hwb2n34"))))
+    (properties `((upstream-name . "hydroloom")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-units
+                             r-tidyr
+                             r-sf
+                             r-rlang
+                             r-rann
+                             r-pbapply
+                             r-fastmap
+                             r-dplyr
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/DOI-USGS/hydroloom")
+    (synopsis "Utilities to Weave Hydrologic Fabrics")
+    (description
+     "This package provides a collection of utilities that support creation of network
+attributes for hydrologic networks.  Methods and algorithms implemented are
+documented in Moore et al. (2019) <doi:10.3133/ofr20191096>), Cormen and
+Leiserson (2022) <ISBN:9780262046305> and Verdin and Verdin (1999)
+<doi:10.1016/S0022-1694(99)00011-6>.")
+    (license license:cc0)))
+
 (define-public r-hydrogof
   (package
     (name "r-hydrogof")
@@ -2610,13 +2642,13 @@ information.")
 (define-public r-hstats
   (package
     (name "r-hstats")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hstats" version))
        (sha256
-        (base32 "1zhan6hfd7yag2af4b1jrqjpb1c2rj8dfr0jwv99xcywf7yrwzw4"))))
+        (base32 "0kmzgmkibzlwwfakprk7j4rzy759b1f4myb1g1hvavx285mgygpa"))))
     (properties `((upstream-name . "hstats")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))
@@ -12389,6 +12421,28 @@ out cycle-spinning.  Main reference: Fryzlewicz, P. and Nason, G.P. (2004) \"A
 Haar-Fisz algorithm for Poisson intensity estimation.\" Journal of Computational
 and Graphical Statistics, 13, 621-638. <doi:10.1198/106186004X2697>.")
     (license license:gpl2+)))
+
+(define-public r-h3r
+  (package
+    (name "r-h3r")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "h3r" version))
+       (sha256
+        (base32 "18smkkvdb8kpr5k9y64ww23da7lr9g9fnb5gbwgjh3ddzll8973w"))))
+    (properties `((upstream-name . "h3r")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-h3lib))
+    (home-page "https://symbolixau.github.io/h3r/")
+    (synopsis "Hexagonal Hierarchical Geospatial Indexing System")
+    (description
+     "This package provides access to Uber's H3 geospatial indexing system via h3lib
+<https://CRAN.R-project.org/package=h3lib>.  h3r is designed to mimic the H3
+Application Programming Interface (API) <https://h3geo.org/docs/api/indexing/>,
+so that any function in the API is also available in h3r'.")
+    (license license:expat)))
 
 (define-public r-h3lib
   (package

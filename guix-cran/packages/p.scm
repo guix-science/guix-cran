@@ -7711,13 +7711,13 @@ prediction, and ranking of predictors in ensembles\" <@code{arXiv:2108.05129>}."
 (define-public r-primme
   (package
     (name "r-primme")
-    (version "3.2-4")
+    (version "3.2-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PRIMME" version))
        (sha256
-        (base32 "18xb9sznbahw13zy2x8qzl7qalk5md5vpjyfnq6y8a93pb9arzfv"))))
+        (base32 "01wdj270a6j9j2mvmvxd8rc9m70qfjmvf2w9sm7fqmiyvz555r0w"))))
     (properties `((upstream-name . "PRIMME")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-matrix))
@@ -8948,13 +8948,13 @@ rendered HTML doc.")
 (define-public r-prefmod
   (package
     (name "r-prefmod")
-    (version "0.8-35")
+    (version "0.8-36")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "prefmod" version))
        (sha256
-        (base32 "0h86lfm1wg936xvxhgaiqxbq7fbrxzxl7v380plwag78g3kp1w5k"))))
+        (base32 "1xac3x07yrhrk5j4aq798yk3hf0ig5p84n40cw85i75k3qxddk6f"))))
     (properties `((upstream-name . "prefmod")))
     (build-system r-build-system)
     (propagated-inputs (list r-gnm r-colorspace))
@@ -9234,17 +9234,17 @@ vector machines (SVMs).  For method details see Keller et al. (2017)
 (define-public r-predint
   (package
     (name "r-predint")
-    (version "2.0.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "predint" version))
        (sha256
-        (base32 "18bgh6iri2s9jd981prbskp5fhcspkrmhnr25dl0rd9s0dvpx8m1"))))
+        (base32 "1q6z1a3sak8xz4v3sqxcz7zhs8822iiyj750qq9gqgx848h94i1i"))))
     (properties `((upstream-name . "predint")))
     (build-system r-build-system)
-    (propagated-inputs (list r-lme4 r-ggplot2))
-    (home-page "https://cran.r-project.org/package=predint")
+    (propagated-inputs (list r-mass r-lme4 r-ggplot2))
+    (home-page "https://github.com/MaxMenssen/predint")
     (synopsis "Prediction Intervals")
     (description
      "An implementation of prediction intervals for overdispersed count data, for
@@ -18504,6 +18504,27 @@ throughput field phenotyping using RGB imagery captured by unmanned aerial
 vehicles.")
     (license license:gpl3+)))
 
+(define-public r-plgraphics
+  (package
+    (name "r-plgraphics")
+    (version "1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "plgraphics" version))
+       (sha256
+        (base32 "04i79hrsqqygiq64n7bqzfvrhl1c3k2j3y58zzbqq79v9vshjy7p"))))
+    (properties `((upstream-name . "plgraphics")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival r-mass r-lme4 r-chron))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=plgraphics")
+    (synopsis "User Oriented Plotting Functions")
+    (description
+     "Plots with high flexibility and easy handling, including informative regression
+diagnostics for many models.")
+    (license license:gpl2)))
+
 (define-public r-plgp
   (package
     (name "r-plgp")
@@ -20594,13 +20615,13 @@ by OECD (2020) <https://www.oecd.org/pisa/data/2018database/>.")
 (define-public r-pirouette
   (package
     (name "r-pirouette")
-    (version "1.6.7")
+    (version "1.6.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pirouette" version))
        (sha256
-        (base32 "0bkiayjml195m52lpm3cq0pg2bzgwr7axhl1lcf2jk6dsrjgndrn"))))
+        (base32 "1n823rmjbra19h4c1sss4g8l613lmrbvq1cp2ih2sxax8wqzm1w3"))))
     (properties `((upstream-name . "pirouette")))
     (build-system r-build-system)
     (inputs (list))
@@ -21660,6 +21681,39 @@ and data under a range of models, for randomly or non-randomly attaching species
 or clades to a tree, as well as for a wide range of other manipulations and
 analyses that phylogenetic biologists might find useful in their research.")
     (license license:gpl2+)))
+
+(define-public r-phytoclass
+  (package
+    (name "r-phytoclass")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "phytoclass" version))
+       (sha256
+        (base32 "0ci2xzhxzg8fmdjr1ij8r551mm5gzwcxbq328qnzkx8hyph7fbgf"))))
+    (properties `((upstream-name . "phytoclass")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-rcppml
+                             r-metrics
+                             r-ggplot2
+                             r-dynamictreecut
+                             r-dplyr
+                             r-bestnormalize))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=phytoclass")
+    (synopsis "Estimate Chla Biomass of Phytoplankton Groups")
+    (description
+     "Determine the chlorophyll a (Chl a) biomass of different phytoplankton groups
+based on their pigment biomarkers.  The method uses non-negative matrix
+factorisation and simulated annealing to minimise error between the observed and
+estimated values of pigment concentrations (Hayward et al. (2023)
+<doi:10.1002/lom3.10541>).  The approach is similar to the widely used CHEMTAX
+program (Mackey et al.  1996) <doi:10.3354/meps144265>, but is more
+straightforward, accurate, and not reliant on initial guesses for the pigment to
+Chl a ratios for each phytoplankton group.")
+    (license license:expat)))
 
 (define-public r-physortr
   (package
@@ -33030,6 +33084,39 @@ close to 100%.  There is a lack of R package for PPV CI calculation.  we
 developed a publicly available R package along with this shiny app to implement
 the proposed approach and some other existing methods.")
     (license license:gpl3)))
+
+(define-public r-papaja
+  (package
+    (name "r-papaja")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "papaja" version))
+       (sha256
+        (base32 "08ydk9fws5x37q120cdjdx1dsib0y2g9bp826vxzxcaymlwx3dl7"))))
+    (properties `((upstream-name . "papaja")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zip
+                             r-yaml
+                             r-tinylabels
+                             r-rmdfiltr
+                             r-rmarkdown
+                             r-knitr
+                             r-glue
+                             r-broom
+                             r-bookdown))
+    (native-inputs (list r-r-rsp r-knitr))
+    (home-page "https://github.com/crsh/papaja")
+    (synopsis
+     "Prepare American Psychological Association Journal Articles with R Markdown")
+    (description
+     "This package provides tools to create dynamic, submission-ready manuscripts,
+which conform to American Psychological Association manuscript guidelines.  We
+provide R Markdown document formats for manuscripts (PDF and Word) and revision
+letters (PDF).  Helper functions facilitate reporting statistical analyses or
+create publication-ready tables and plots.")
+    (license license:expat)))
 
 (define-public r-pantarhei
   (package

@@ -6750,13 +6750,13 @@ included in this package as a vignette; see citation(\"errors\") for details.")
 (define-public r-errorlocate
   (package
     (name "r-errorlocate")
-    (version "1.1")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "errorlocate" version))
        (sha256
-        (base32 "1p9a5nc0ckbdapahf5nkxnsgwvqh2llv3kc2wzwawn131rdaj1qi"))))
+        (base32 "1qml2qd63iqswb0zvnx9m3ia0zq7q20ycllhds3bwa4fwg25pfsp"))))
     (properties `((upstream-name . "errorlocate")))
     (build-system r-build-system)
     (propagated-inputs (list r-validate r-lpsolveapi))
@@ -14601,13 +14601,13 @@ Error (NMSE).")
 (define-public r-eha
   (package
     (name "r-eha")
-    (version "2.11.0")
+    (version "2.11.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eha" version))
        (sha256
-        (base32 "1wgl51m5li6m73z4f7lnjffcnnfb5libakrib4rrh4plpqj010gg"))))
+        (base32 "1fhs31qk5sh4f6nrxrbrv1f29rkzawjj6v8kid894ji5ifd7qv3l"))))
     (properties `((upstream-name . "eha")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival))

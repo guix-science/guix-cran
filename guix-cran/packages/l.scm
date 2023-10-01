@@ -4153,13 +4153,13 @@ variety of kernels.  It follows the methods described in Jones, Nguyen and
 (define-public r-logitr
   (package
     (name "r-logitr")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "logitr" version))
        (sha256
-        (base32 "0sk93j5mbpmll2vgl7s86siy1960wp9dj945dgc90ndbwmq2gj62"))))
+        (base32 "0w12rpvyxvmqdlbp8j7394x4c0m0yhv0li7rr4jliygzp4xnh8lz"))))
     (properties `((upstream-name . "logitr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-randtoolbox r-nloptr r-mass r-generics))
@@ -5360,47 +5360,6 @@ allows the implementation of the methodology and the replication of the results
 in @code{ElÃ­as}, A., @code{JimÃ©nez}, R. and Yukich, J. (2020)
 <@code{arXiv:2007.16059>}.")
     (license license:gpl3)))
-
-(define-public r-localcontrolstrategy
-  (package
-    (name "r-localcontrolstrategy")
-    (version "1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "LocalControlStrategy" version))
-       (sha256
-        (base32 "1slkhgac7izkmp5g203lhzvh991mnqf2qz1m0nd1k89084wvkv7b"))))
-    (properties `((upstream-name . "LocalControlStrategy")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-lattice r-cluster))
-    (home-page "https://www.R-project.org")
-    (synopsis
-     "Local Control Strategy for Robust Analysis of Cross-Sectional Data")
-    (description
-     "Especially when cross-sectional data are observational, effects of treatment
-selection bias and confounding are revealed by using the Nonparametric and
-Unsupervised \"preprocessing\" methods central to Local Control (LC) Strategy.
-The LC objective is to estimate the \"effect-size distribution\" that best
-quantifies a potentially causal relationship between a numeric y-Outcome
-variable and a t-Treatment or e-Exposure variable.  Treatment variables are
-binary {either 1 = \"new\" or 0 = \"control\"}, while Exposure variables vary
-continuously over a finite range.  LC Strategy starts by CLUSTERING experimental
-units (individual patients, US Counties, etc.) on their X-confounder
-characteristics.  Clusters represent exclusive and exhaustive BLOCKS of
-relatively well-matched units.  The implicit statistical model for LC is thus
-simple one-way ANOVA. Within-Block measures of effect-size are Local Rank
-Correlations (LRCs) when Exposure is numeric with (many) more than two levels.
-Otherwise, Treatment choice is Nested within BLOCKS, and effect-sizes are LOCAL
-Treatment Differences (LTDs) between Within-Cluster y-Outcome Means [\"new\" minus
-\"control\"].  An Instrumental Variable (IV) method is also provided so that Local
-Average y-Outcomes (LAOs) within BLOCKS may also contribute information for
-effect-size inferences ...assuming that X-Covariates influence only Treatment
-choice or Exposure level and otherwise have no direct effects on y-Outcome.
-Finally, a \"Most-Like-Me\" function provides histograms of effect-size
-distributions to aid Doctor-Patient or Researcher-Society communications about
-Heterogeneous Outcomes.")
-    (license license:gpl2)))
 
 (define-public r-localcontrol
   (package
@@ -7244,13 +7203,13 @@ default values to be inherited from another list.")
 (define-public r-listviewer
   (package
     (name "r-listviewer")
-    (version "3.0.0")
+    (version "4.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "listviewer" version))
        (sha256
-        (base32 "0zirxdj58h43062f68h6nqcgmpnvdglxx3kjbs4i4k0z9wvqhx8r"))))
+        (base32 "0hffp82mdk4rp34l3l50ph540mv0pdq6x9racmlcvis5lfpjicby"))))
     (properties `((upstream-name . "listviewer")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-htmlwidgets r-htmltools))
@@ -10507,22 +10466,22 @@ examine other relationships within a lexicon.  Preprint:
 (define-public r-levitate
   (package
     (name "r-levitate")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "levitate" version))
        (sha256
-        (base32 "1v55fdsf4ss5wb2zr7wppbr7dab6k5z7igpd8i5nk9fk1haq3aa1"))))
+        (base32 "1mrpgq5505qs31vw2wif1cz4iqbqnj6mvfk60i5sg6p9nnn328wr"))))
     (properties `((upstream-name . "levitate")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringr r-stringdist r-rlang r-glue r-cli))
+    (propagated-inputs (list r-stringdist r-rlang))
     (native-inputs (list r-knitr))
-    (home-page "https://lewinfox.github.io/levitate/")
+    (home-page "https://github.com/lewinfox/levitate/")
     (synopsis "Fuzzy String Comparison")
     (description
      "This package provides string similarity calculations inspired by the Python
-fuzzywuzzy package.  Compare strings by edit distance, similarity ratio, best
+thefuzz package.  Compare strings by edit distance, similarity ratio, best
 matching substring, ordered token matching and set-based token matching.  A
 range of edit distance measures are available thanks to the stringdist package.")
     (license license:gpl3)))
@@ -15080,13 +15039,13 @@ observed variables and multiple	group models.")
 (define-public r-lambdr
   (package
     (name "r-lambdr")
-    (version "1.2.2")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lambdr" version))
        (sha256
-        (base32 "0b1w84k24sy6lw454adc67r5q0sndkfqabsp1f0v8j7axvbzym3m"))))
+        (base32 "0fqprf5n5gc61zyj56lypgbh5hggxnldgkim1zj1h681fhkgimy5"))))
     (properties `((upstream-name . "lambdr")))
     (build-system r-build-system)
     (propagated-inputs (list r-logger r-jsonlite r-httr))

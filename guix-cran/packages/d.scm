@@ -886,29 +886,29 @@ visualizations in video format.")
 (define-public r-dynarer
   (package
     (name "r-dynarer")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DynareR" version))
        (sha256
-        (base32 "06n0gsbn8gphsirj3l1izd84dnjnik6n5l4vkp8flkzynccx3rps"))))
+        (base32 "0ph57kwinv9nqla82glg0bj1iaqrnw2y8a8invq1qy9yabldl798"))))
     (properties `((upstream-name . "DynareR")))
     (build-system r-build-system)
     (inputs (list octave))
-    (propagated-inputs (list r-magrittr r-knitr r-kableextra))
+    (propagated-inputs (list r-magrittr r-knitr))
     (native-inputs (list r-knitr))
     (home-page "https://CRAN.R-project.org/package=DynareR")
-    (synopsis "Seamless Integration of 'R' and 'Dynare'")
+    (synopsis
+     "Bringing the Power of 'Dynare' to 'R', 'R Markdown', and 'Quarto'")
     (description
-     "It allows running Dynare program from base R and R Markdown.  Dynare is a
-software platform for handling a wide class of economic models, in particular
+     "It allows running Dynare program from base R, R Markdown and Quarto.  Dynare is
+a software platform for handling a wide class of economic models, in particular
 dynamic stochastic general equilibrium ('DSGE') and overlapping generations
 ('OLG') models.  This package does not only integrate R and Dynare but also
 serves as a Dynare Knit-Engine for knitr package.  The package requires Dynare
-(<https://www.dynare.org/>) and Octave
-(<https://www.gnu.org/software/octave/download.html>).  Write all your Dynare
-commands in R or R Markdown chunk.")
+(<https://www.dynare.org/>) and Octave (<https://www.octave.org/download.html>).
+ Write all your Dynare commands in R or R Markdown chunk.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-dynarankr
@@ -10703,28 +10703,6 @@ model, as found in Gourieroux, C. (2000) <doi:10.1017/CBO9780511805608> and
 Maddala, G. (1983) <doi:10.1017/CBO9780511810176>.  The parameters are estimated
 with maximum likelihood.")
     (license license:gpl3)))
-
-(define-public r-diseasemapping
-  (package
-    (name "r-diseasemapping")
-    (version "2.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "diseasemapping" version))
-       (sha256
-        (base32 "0hpf6q754kg1ycjar9vlip7xv57khd83r14s6x0zfh6yc8gwwwfw"))))
-    (properties `((upstream-name . "diseasemapping")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-terra))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=diseasemapping")
-    (synopsis "Modelling Spatial Variation in Disease Risk for Areal Data")
-    (description
-     "Formatting of population and case data, calculation of Standardized Incidence
-Ratios, and fitting the BYM model using INLA'.  For details see Brown (2015)
-<doi:10.18637/jss.v063.i12>.")
-    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-disdat
   (package

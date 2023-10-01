@@ -3356,13 +3356,13 @@ metrics.")
 (define-public r-survlong
   (package
     (name "r-survlong")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SurvLong" version))
        (sha256
-        (base32 "15a92lj29ggxwyn52iiq1ns7jp8l8grk17wapffv109fypwhdnh1"))))
+        (base32 "07qxiym9vkv7wgmjs44jc6662yipb8ry6n9b90n4lwj5vasmn0x6"))))
     (properties `((upstream-name . "SurvLong")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=SurvLong")
@@ -16395,17 +16395,23 @@ modeling, such as ecological niche modeling.")
 (define-public r-spte2m
   (package
     (name "r-spte2m")
-    (version "1.0.1")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SpTe2M" version))
        (sha256
-        (base32 "1qcjxr25v5m0nab3xq4bgzilmx2vgibgxnax5bhybfdaskgflhz5"))))
+        (base32 "1xykmbgwwnvl7c9mf0aam3s55xmq2pxdy5wkkz9nzj1c74m0bxqf"))))
     (properties `((upstream-name . "SpTe2M")))
     (build-system r-build-system)
-    (propagated-inputs (list r-mass r-glmnet))
-    (native-inputs (list gfortran))
+    (propagated-inputs (list r-rmarkdown
+                             r-mass
+                             r-maps
+                             r-mapproj
+                             r-knitr
+                             r-glmnet
+                             r-ggplot2))
+    (native-inputs (list r-rmarkdown r-knitr gfortran))
     (home-page "https://cran.r-project.org/package=SpTe2M")
     (synopsis "Nonparametric Modeling and Monitoring of Spatio-Temporal Data")
     (description
@@ -16422,7 +16428,7 @@ spatio-temporal mean and covariance functions suggested by Yang and Qiu (2022)
 <doi:10.1007/s10463-021-00787-2>, the spatio-temporal disease surveillance
 method discussed in Qiu and Yang (2021) <doi:10.1002/sim.9150> that can
 accommodate the covariate effect, the spatial-LASSO-based process monitoring
-method proposed by Qiu and Yang (2022) <doi:10.1080/00224065.2022.2081104>, and
+method proposed by Qiu and Yang (2023) <doi:10.1080/00224065.2022.2081104>, and
 the online spatio-temporal disease surveillance method described in Yang and Qiu
 (2020) <doi:10.1080/24725854.2019.1696496>.")
     (license license:gpl3+)))
@@ -24865,13 +24871,13 @@ package).  For more information, please see Rocha and Romano (2021) and check
 (define-public r-soundgen
   (package
     (name "r-soundgen")
-    (version "2.6.0")
+    (version "2.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "soundgen" version))
        (sha256
-        (base32 "18chlzynbkfvqc4dipdxdlk90kz0wqd6qwcax0qg7rc85ghfx8hh"))))
+        (base32 "005b9l99yfl6n2sn6s90zzi77jpnsv0g4brd0302rdcz7lnqf9yz"))))
     (properties `((upstream-name . "soundgen")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -24886,7 +24892,8 @@ package).  For more information, please see Rocha and Romano (2021) and check
                              r-mvtnorm
                              r-foreach
                              r-dtw
-                             r-doparallel))
+                             r-doparallel
+                             r-data-table))
     (home-page "http://cogsci.se/soundgen.html")
     (synopsis "Sound Synthesis and Acoustic Analysis")
     (description
@@ -27982,19 +27989,18 @@ Agresti and Barbara Finlay.")
 (define-public r-smsroc
   (package
     (name "r-smsroc")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sMSROC" version))
        (sha256
-        (base32 "16fllr09mjxqwjm4rq9bc89bl1hz1kq6bs6m75qwwwm73j0xk40h"))))
+        (base32 "18dai7v16w6jj8h2r1qz689fngh5sawlky4068sjhw4shfignd3k"))))
     (properties `((upstream-name . "sMSROC")))
     (build-system r-build-system)
     (propagated-inputs (list r-thregi
                              r-survival
                              r-rms
-                             r-risca
                              r-plotroc
                              r-icenreg
                              r-ggplot2

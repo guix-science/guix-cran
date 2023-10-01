@@ -2570,13 +2570,13 @@ time series such as moving averages or stochastic oscillators.")
 (define-public r-ftextra
   (package
     (name "r-ftextra")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ftExtra" version))
        (sha256
-        (base32 "1g1w62lkwdhc99ij8q39m61ya8dscc0bilabp5x3bypd9xd02hwv"))))
+        (base32 "102afklfr6lz4vby9ify8ix19y6q4hqbl36ksal6cgx10jasn6pg"))))
     (properties `((upstream-name . "ftExtra")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -7575,13 +7575,13 @@ intersections in the scan path.  For more detailed descriptions, see Mark et al.
 (define-public r-foqat
   (package
     (name "r-foqat")
-    (version "2.0.7.1")
+    (version "2.0.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "foqat" version))
        (sha256
-        (base32 "0ngk7qad57aklj0i4nzgxz8ndrwjyab7vzy7syf277ykhkxsiapd"))))
+        (base32 "0401100lx03p6pa7n6z3lfn9gxs7m7d43ycn788wpn3iykv9b3x4"))))
     (properties `((upstream-name . "foqat")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -7610,7 +7610,7 @@ Some functions of time series are also applicable to other fields.  For detail
 please view homepage<https://github.com/tianshu129/foqat>.  Scientific
 Reference: 1.  The Hydroxyl Radical (OH) Reactivity: Roger Atkinson and Janet
 Arey (2003) <doi:10.1021/cr0206420>.  2.  Ozone Formation Potential (OFP):
-<https://ww2.arb.ca.gov/sites/default/files/classic/regact/2009/mir2009/mir10.pdf>,
+<http://ww2.arb.ca.gov/sites/default/files/barcu/regact/2009/mir2009/mir10.pdf>,
 Zhang et al.(2021) <doi:10.5194/acp-21-11053-2021>.  3.  Aerosol Formation
 Potential (AFP): Wenjing Wu et al. (2016) <doi:10.1016/j.jes.2016.03.025>.  4.
 TUV model:
@@ -8158,15 +8158,16 @@ of Skew Heavy-Tailed Errors.")
 (define-public r-fmritools
   (package
     (name "r-fmritools")
-    (version "0.3.1")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fMRItools" version))
        (sha256
-        (base32 "1gh0p1d7nwv71i18aigfg59hvgicjg9csxd5l0bfckjq0r27kb5p"))))
+        (base32 "0hbl01hzp503qr2bh1hrgnc3akf0a9lw8ny56vlagb055jsprpdx"))))
     (properties `((upstream-name . "fMRItools")))
     (build-system r-build-system)
+    (propagated-inputs (list r-matrixstats))
     (home-page "https://github.com/mandymejia/fMRItools")
     (synopsis "Routines for Common fMRI Processing Tasks")
     (description
@@ -9784,44 +9785,46 @@ proportional and non linear effects are described in Remontet, L. et al. (2007)
 (define-public r-flexreg
   (package
     (name "r-flexreg")
-    (version "1.2")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FlexReg" version))
        (sha256
-        (base32 "17cpaap1h05ccksrp41bqarg6hmq50634v89dnsbxk24h7da2vik"))))
+        (base32 "15vl2wfvplydjgdgcb4gla02n6hx9lljnw20r5rvhw4ll6ahr110"))))
     (properties `((upstream-name . "FlexReg")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
                              r-rstantools
                              r-rstan
+                             r-rcppparallel
                              r-rcppeigen
                              r-rcpp
                              r-loo
                              r-ggplot2
                              r-formula
-                             r-faraway
                              r-bh
                              r-bayesplot))
     (home-page "https://cran.r-project.org/package=FlexReg")
-    (synopsis "Regression Models for Bounded and Binomial Responses")
+    (synopsis
+     "Regression Models for Bounded Continuous and Discrete Responses")
     (description
-     "This package provides functions to fit regression models for bounded (e.g.,
-proportions and rates) and binomial responses.  In case of bounded responses,
-available models are the flexible beta (Migliorati, S., Di Brisco, A. M.,
-Ongaro, A. (2018) <doi:10.1214/17-BA1079>), the variance-inflated beta (Di
-Brisco, A. M., Migliorati, S., Ongaro, A. (2020)
+     "This package provides functions to fit regression models for bounded continuous
+and discrete responses.  In case of bounded continuous responses (e.g.,
+proportions and rates), available models are the flexible beta (Migliorati, S.,
+Di Brisco, A. M., Ongaro, A. (2018) <doi:10.1214/17-BA1079>), the
+variance-inflated beta (Di Brisco, A. M., Migliorati, S., Ongaro, A. (2020)
 <doi:10.1177/1471082X18821213>), the beta (Ferrari, S.L.P., Cribari-Neto, F.
 (2004) <doi:10.1080/0266476042000214501>), and their augmented versions to
 handle the presence of zero/one values (Di Brisco, A. M., Migliorati, S. (2020)
-<doi:10.1002/sim.8406>).  In case of binomial responses, available models are
-the flexible beta-binomial (Ascari, R., Migliorati, S. (2021)
-<doi:10.1002/sim.9005>), the beta-binomial, and the binomial.  Inference is
-dealt with a Bayesian approach based on the Hamiltonian Monte Carlo (HMC)
-algorithm (Gelman, A., Carlin, J. B., Stern, H. S., Rubin, D. B. (2014)
+<doi:10.1002/sim.8406>) are implemented.  In case of bounded discrete responses
+(e.g., bounded counts, such as the number of successes in n trials), available
+models are the flexible beta-binomial (Ascari, R., Migliorati, S. (2021)
+<doi:10.1002/sim.9005>), the beta-binomial, and the binomial are implemented.
+Inference is dealt with a Bayesian approach based on the Hamiltonian Monte Carlo
+(HMC) algorithm (Gelman, A., Carlin, J. B., Stern, H. S., Rubin, D. B. (2014)
 <doi:10.1201/b16018>).  Besides, functions to compute residuals, posterior
-predictives, goodness-of-fit measures, convergence diagnostics, and graphical
+predictives, goodness of fit measures, convergence diagnostics, and graphical
 representations are provided.")
     (license license:gpl2+)))
 
@@ -15752,6 +15755,34 @@ Wang, J.L., Chiou, J., MÃ¼ller, H.G. (2016)
 <doi:10.1146/annurev-statistics-041715-033624>; Chen, K., Zhang, X., Petersen,
 A., MÃ¼ller, H.G. (2017) <doi:10.1007/s12561-015-9137-5>.")
     (license license:bsd-3)))
+
+(define-public r-fdaoutlier
+  (package
+    (name "r-fdaoutlier")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fdaoutlier" version))
+       (sha256
+        (base32 "0jxq46ch0sddl08n2i71zwx2d6qdxayb012qkrc8pki2rvkcqy77"))))
+    (properties `((upstream-name . "fdaoutlier")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mass))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/otsegun/fdaoutlier")
+    (synopsis "Outlier Detection Tools for Functional Data Analysis")
+    (description
+     "This package provides a collection of functions for outlier detection in
+functional data analysis.  Methods implemented include directional outlyingness
+by Dai and Genton (2019) <doi:10.1016/j.csda.2018.03.017>, MS-plot by Dai and
+Genton (2018) <doi:10.1080/10618600.2018.1473781>, total variation depth and
+modified shape similarity index by Huang and Sun (2019)
+<doi:10.1080/00401706.2019.1574241>, and sequential transformations by Dai et
+al. (2020) <doi:10.1016/j.csda.2020.106960 among others.  Additional outlier
+detection tools and depths for functional data like functional boxplot,
+(modified) band depth etc., are also available.")
+    (license license:gpl3)))
 
 (define-public r-fdanova
   (package

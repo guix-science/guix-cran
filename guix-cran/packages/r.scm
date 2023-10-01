@@ -3032,23 +3032,18 @@ by Datta et al (2016) <doi:10.1080/01621459.2015.1044091>.")
 (define-public r-rts
   (package
     (name "r-rts")
-    (version "1.1-8")
+    (version "1.1-14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rts" version))
        (sha256
-        (base32 "17ghnpbmnjk7gmnir1897w8ib1dmyw59f23nj85g7k0pji3p8psb"))))
+        (base32 "07rnpn8bz9r7p6xymzmbynrg2xq8wfpzh50j7i578v6rmyhm2fl8"))))
     (properties `((upstream-name . "rts")))
     (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-xts
-                             r-terra
-                             r-sp
-                             r-rcurl
-                             r-raster))
+    (propagated-inputs (list r-zoo r-xts r-terra r-rcurl r-raster))
     (native-inputs (list r-r-rsp))
-    (home-page "http://r-gis.net")
+    (home-page "https://r-gis.net/")
     (synopsis "Raster Time Series Analysis")
     (description
      "This framework aims to provide classes and methods for manipulating and
@@ -27942,13 +27937,13 @@ Also retrieve and process result sets as either a ragged or flattened tibble'.")
 (define-public r-reporter
   (package
     (name "r-reporter")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reporter" version))
        (sha256
-        (base32 "1vpqb0s86p8dh7l3his31cjidhm7vxzfgqsjap3rfb6sq7hblzx6"))))
+        (base32 "1rym8kmmxw8fgjz1nl2mjzybmbjm8w4jj6bffihhq0v7jxihk3pa"))))
     (properties `((upstream-name . "reporter")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -30620,6 +30615,31 @@ Regression and Modeling with R by Adam Petrie, Cognella Publishers, ISBN:
 <https://titles.cognella.com/introduction-to-regression-and-modeling-with-r-9781631892509>.")
     (license license:gpl2+)))
 
+(define-public r-regcensus
+  (package
+    (name "r-regcensus")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "regcensus" version))
+       (sha256
+        (base32 "102sq60ab2d1qf3kn32hh7z47cyll7ar7fffa1gda1k36b4wj6bc"))))
+    (properties `((upstream-name . "regcensus")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyverse r-stringr r-jsonlite r-httr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/QuantGov/regcensus-api-client-R")
+    (synopsis "Accessing Data from the 'RegCensusAPI'")
+    (description
+     "Allowing users to access data from the @code{RegCensusAPI}'.  The
+@code{RegCensusAPI} is an API client that connects to the @code{RegData}
+regulatory restrictions data by the Mercatus Center at George Mason University'.
+@code{RegData} uses machine learning algorithms to quantify the number of
+regulatory restrictions in a jurisdiction.  You can find out more about
+@code{RegData} from @code{QuantGov} website <https://www.quantgov.org>.")
+    (license license:expat)))
+
 (define-public r-regassure
   (package
     (name "r-regassure")
@@ -31690,13 +31710,13 @@ default reports are generated as vignettes in the resulting package.")
 (define-public r-redcapdm
   (package
     (name "r-redcapdm")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "REDCapDM" version))
        (sha256
-        (base32 "0p04k6wpkvx06h80gbf87qv83npglka5m1iiggcx19gc6fxlvh3d"))))
+        (base32 "1i1p40yklhmv53nn59znf3v51p6xbdrlnk5kc8b540i5q7c1i2hc"))))
     (properties `((upstream-name . "REDCapDM")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -40190,13 +40210,13 @@ operations are encoded in C with multi-thread support.")
 (define-public r-rbioapi
   (package
     (name "r-rbioapi")
-    (version "0.7.9")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rbioapi" version))
        (sha256
-        (base32 "05fi705pn2lfzdn8s7465c9239fffnbllbk6b3mi7vam9ivw3ixr"))))
+        (base32 "0dxd58y0a5pd5zw3agd405xb6325z629n7lg9ps7hqc66jy59pba"))))
     (properties `((upstream-name . "rbioapi")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-httr))
@@ -44967,13 +44987,13 @@ abbreviation of R @code{agGrid}'.")
 (define-public r-rage
   (package
     (name "r-rage")
-    (version "1.5.1")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rage" version))
        (sha256
-        (base32 "1qrcysi5c829v0frz8dh5l3nmf06xzivlha2sq6lvkff7dz5iby7"))))
+        (base32 "0scpig0glh1ajc5fp7xrdb0b5f11x1f5ls43wb6b9kjif4fi25cl"))))
     (properties `((upstream-name . "Rage")))
     (build-system r-build-system)
     (propagated-inputs (list r-popdemo r-mass r-expm r-diagrammer))

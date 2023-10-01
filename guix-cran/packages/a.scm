@@ -9016,16 +9016,16 @@ S4 package aod.")
 (define-public r-ao
   (package
     (name "r-ao")
-    (version "0.2.6")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ao" version))
        (sha256
-        (base32 "02il04c8c5pykwzm1dfrn1vj2w38sg5lqg7v92vg209mxd11azry"))))
+        (base32 "1lmvq1np3b9pg3n2xnlscrnnjnqj4aada2mkgmv3z32sbfak77lk"))))
     (properties `((upstream-name . "ao")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlang r-optimizer r-ggplot2))
+    (propagated-inputs (list r-optimizer r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://loelschlaeger.de/ao/")
     (synopsis "Alternating Optimization")
@@ -10251,26 +10251,25 @@ preparation).")
 (define-public r-animalekf
   (package
     (name "r-animalekf")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "animalEKF" version))
        (sha256
-        (base32 "0bq2d2iza0c971731b915cd1k2f7gq2x1k7xv4z91sy73v0jngl5"))))
+        (base32 "1qhmgwmg9nw8hcsd8gkvk0h8rmk82zkqjyd94a1d79cwmryxls9b"))))
     (properties `((upstream-name . "animalEKF")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp
                              r-shiny
-                             r-rgeos
-                             r-rgdal
+                             r-sf
+                             r-rlang
                              r-png
                              r-plyr
                              r-mvtnorm
                              r-mcmcpack
                              r-matrix
                              r-mass
-                             r-maptools
                              r-hdinterval
                              r-ggplot2
                              r-ellipse
@@ -10941,13 +10940,13 @@ distribution across split samples, and to filter the false positive reads.")
 (define-public r-ample
   (package
     (name "r-ample")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AMPLE" version))
        (sha256
-        (base32 "1bi39liky0lmv56rxcrf4m9vc3s4xi1z2wcigfkpvsap4gy67qph"))))
+        (base32 "019r60rcx3biyicmyc4i1806d31i2hp107ba2l0mgh08fx3lfwhj"))))
     (properties `((upstream-name . "AMPLE")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinyscreenshot
@@ -13431,13 +13430,13 @@ also available.")
 (define-public r-alakazam
   (package
     (name "r-alakazam")
-    (version "1.2.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "alakazam" version))
        (sha256
-        (base32 "1m4482haxw5cxkh5c39cr4smh9ldmv2anygnfswa4zc58slqf70n"))))
+        (base32 "01alngdynigvycmpqa71ccndw6v91hmrs3c2ah0r148rxdgbw58v"))))
     (properties `((upstream-name . "alakazam")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

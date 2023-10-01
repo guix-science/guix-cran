@@ -10216,30 +10216,31 @@ Rate calculation procedures, see Schmid et al. (2019) <doi:10.1111/ecog.04025>."
 (define-public r-birdring
   (package
     (name "r-birdring")
-    (version "1.4")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "birdring" version))
        (sha256
-        (base32 "0rskrf0r5nrzfcac0zvc60vabvs9dws2zx1rxssvw6xmwyiiy1z6"))))
+        (base32 "09h4376myh694r9b97vrhnw27bmjyzjrmp7xfm4hlrxzp9fngmwv"))))
     (properties `((upstream-name . "birdring")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp
+                             r-sfheaders
+                             r-sf
                              r-rworldxtra
                              r-rworldmap
-                             r-rgeos
-                             r-rgdal
                              r-raster
+                             r-maps
                              r-lazydata
                              r-ks
-                             r-geosphere))
+                             r-geosphere
+                             r-basemaps))
     (home-page "https://cran.r-project.org/package=birdring")
     (synopsis "Methods to Analyse Ring Re-Encounter Data")
     (description
      "R functions to read EURING data and analyse re-encounter data of birds marked by
-metal rings.  For a tutorial, go to
-<http://www.tandfonline.com/doi/full/10.1080/03078698.2014.933053>.")
+metal rings.  For a tutorial, go to <doi:10.1080/03078698.2014.933053>.")
     (license license:gpl2)))
 
 (define-public r-birankr
@@ -11217,17 +11218,17 @@ file for local installation/updating (see <https://asreml.kb.vsni.co.uk/>).")
 (define-public r-biomass
   (package
     (name "r-biomass")
-    (version "2.1.10")
+    (version "2.1.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BIOMASS" version))
        (sha256
-        (base32 "09v1b9klxkrrdp62xnjqnlns8qgxby34sm3zpd0q69f0mqrnlyg3"))))
+        (base32 "1qbx7hxzzwnwp00rdvdwqxawm54chn1pcql3009cwdydc249v0dh"))))
     (properties `((upstream-name . "BIOMASS")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp
-                             r-raster
+    (propagated-inputs (list r-terra
+                             r-sf
                              r-rappdirs
                              r-proj4
                              r-minpack-lm
@@ -16080,16 +16081,20 @@ are presented in Pesigan, Sun, and Cheung (2023)
 (define-public r-betaclust
   (package
     (name "r-betaclust")
-    (version "1.0.0")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "betaclust" version))
        (sha256
-        (base32 "1h3fcvs22spxhphcfg7zl75cpa5yycyl2yy0bgyy0hwkwh8cwpza"))))
+        (base32 "1w76c7yxgnc98p6lwh5mxrrgv1kk5dgjgp12g0vs25l4fb7advqp"))))
     (properties `((upstream-name . "betaclust")))
     (build-system r-build-system)
-    (propagated-inputs (list r-scales r-plotly r-ggplot2 r-foreach
+    (propagated-inputs (list r-scales
+                             r-proc
+                             r-plotly
+                             r-ggplot2
+                             r-foreach
                              r-doparallel))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=betaclust")
@@ -22848,13 +22853,13 @@ common frequentist hypothesis test such as the t-test and chi-sq test.")
 (define-public r-bayes4psy
   (package
     (name "r-bayes4psy")
-    (version "1.2.11")
+    (version "1.2.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayes4psy" version))
        (sha256
-        (base32 "1qbsqbskl5qkw97mrbygrdz0r9nkk0zfg0f2gjw2lja6zyy0fz11"))))
+        (base32 "1i6yc871bbygj6sw2v2l0diiz03n3n4mw46n905fsjkpdrx8rfhj"))))
     (properties `((upstream-name . "bayes4psy")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders

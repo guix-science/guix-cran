@@ -3252,13 +3252,13 @@ and computational biology for the benefit of understanding HIV dynamics.")
 (define-public r-viralmodels
   (package
     (name "r-viralmodels")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "viralmodels" version))
        (sha256
-        (base32 "1sjy2xwn4ga7di8n8lvivj5vnhlrl7frrqwymgb9q5jky2b5qv9w"))))
+        (base32 "0k5hmg52zkmqvf8wk0hiyykvm179a29w4969ajjnf4qrsgiiaia0"))))
     (properties `((upstream-name . "viralmodels")))
     (build-system r-build-system)
     (propagated-inputs (list r-workflowsets
@@ -3270,6 +3270,7 @@ and computational biology for the benefit of understanding HIV dynamics.")
                              r-recipes
                              r-parsnip
                              r-nnet
+                             r-kernlab
                              r-earth
                              r-dplyr))
     (home-page "https://cran.r-project.org/package=viralmodels")
@@ -7122,13 +7123,13 @@ testing: valid inference and practical considerations\",
 (define-public r-validatetools
   (package
     (name "r-validatetools")
-    (version "0.5.0")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "validatetools" version))
        (sha256
-        (base32 "10wardp2c70zx5ii940sjql3xh5p3vqxv4ayyifhhlr8vzvr5cj0"))))
+        (base32 "16pgqk96daz0dgsq2r9kfl6mkc4fffkai0ir1sh2js9v6d5c74k0"))))
     (properties `((upstream-name . "validatetools")))
     (build-system r-build-system)
     (propagated-inputs (list r-validate r-lpsolveapi))

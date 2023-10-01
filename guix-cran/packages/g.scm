@@ -4412,13 +4412,13 @@ points on curves, tangents to curves, and normals to curves.")
 (define-public r-grf
   (package
     (name "r-grf")
-    (version "2.3.0")
+    (version "2.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grf" version))
        (sha256
-        (base32 "0k9g53rhjv69bklvq4b7g54hl80dvfqpd075y34j7xmal4x5rbf4"))))
+        (base32 "0z0wbfy69zddm75z9imc9dycdrlly5s94a9473z1dmcr99r7h60m"))))
     (properties `((upstream-name . "grf")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich
@@ -19421,13 +19421,13 @@ Markdown HTML documents.")
 (define-public r-get
   (package
     (name "r-get")
-    (version "0.4")
+    (version "0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GET" version))
        (sha256
-        (base32 "0fvssxwwcdaqa6hir7z4cp4yabrc1afzyc3ib4nqdv6mpkhmzdxq"))))
+        (base32 "0x9cwn0qi79l1z4mk555gjds4f29i5w2garpah39y06dlvqcidfq"))))
     (properties `((upstream-name . "GET")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite r-gridextra r-ggplot2 r-cluster))
@@ -24760,18 +24760,19 @@ visualization of results.")
 (define-public r-gdelttools
   (package
     (name "r-gdelttools")
-    (version "1.6")
+    (version "1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GDELTtools" version))
        (sha256
-        (base32 "1dz2m6pzb9pd1kq8wcwsjqv0c01klwbmdcndw4pf736xav03b4f8"))))
+        (base32 "0v368chcgqnrfy2isy8z7gl0xizafhxlcd29gr89iblhrzwmssid"))))
     (properties `((upstream-name . "GDELTtools")))
     (build-system r-build-system)
-    (propagated-inputs (list r-plyr r-dplyr r-datetimeutils))
+    (propagated-inputs (list r-stringr r-plyr r-dplyr r-datetimeutils))
     (home-page "https://cran.r-project.org/package=GDELTtools")
-    (synopsis "Download, Slice, and Normalize GDELT V1 Data")
+    (synopsis
+     "Download, Slice, and Normalize GDELT V1 Event and Sentiment API Data")
     (description
      "The GDELT V1 Event data set is over 41 GB now and growing 250 MB a month.  The
 number of source articles has increased over time and unevenly across countries.

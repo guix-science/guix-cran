@@ -950,13 +950,13 @@ Wasserstein autoregressive models.")
 (define-public r-wrgraph
   (package
     (name "r-wrgraph")
-    (version "1.3.4")
+    (version "1.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wrGraph" version))
        (sha256
-        (base32 "0v1p0akfmq0r68n28fblmh5gzgpakkd4vbjjlg3gmb51cqcs0hi2"))))
+        (base32 "1yay60418hyg35bp0f9id7zsmyq1yfj10021n5pc7jx4rsayibs6"))))
     (properties `((upstream-name . "wrGraph")))
     (build-system r-build-system)
     (propagated-inputs (list r-wrmisc r-rcolorbrewer r-lattice))
@@ -4371,13 +4371,13 @@ available at <https://imai.fas.harvard.edu/research/FEmatch.html>.")
 (define-public r-weyl
   (package
     (name "r-weyl")
-    (version "0.0-3")
+    (version "0.0-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "weyl" version))
        (sha256
-        (base32 "17qfr4rdyn4apxpzfmn1kc2msqgi2vsd9d2vxcb9x13cczq48n5a"))))
+        (base32 "1i6kzadw37l2bj8n6z2c9j7h7jk2gjhx7lizwlgpjn8sycm2rkqr"))))
     (properties `((upstream-name . "weyl")))
     (build-system r-build-system)
     (propagated-inputs (list r-spray r-mathjaxr r-freealg r-disordr))

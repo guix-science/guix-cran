@@ -1457,6 +1457,26 @@ class predictions offer the possibility to dynamically determine cutoff values
 for transforming real-valued probability predictions into class predictions.")
     (license license:gpl2+)))
 
+(define-public r-customderivative
+  (package
+    (name "r-customderivative")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CustomDerivative" version))
+       (sha256
+        (base32 "05jfv968mnbamzspvdd51pbwz5xpn3jhj3pwq2piwk18br824rn2"))))
+    (properties `((upstream-name . "CustomDerivative")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-r6))
+    (home-page "https://cran.r-project.org/package=CustomDerivative")
+    (synopsis "Pricing Various Types of Custom Derivatives")
+    (description
+     "This package provides a versatile R package for creating and pricing custom
+derivatives to suit your financial needs.")
+    (license license:expat)))
+
 (define-public r-custom-gauss-quad
   (package
     (name "r-custom-gauss-quad")
@@ -4938,13 +4958,13 @@ high-dimensional) set of surrogate markers.")
 (define-public r-crosstalkr
   (package
     (name "r-crosstalkr")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crosstalkr" version))
        (sha256
-        (base32 "1flmgzn4zw6nch6wx17nx37g51x6xy1qd90zmrsd4n0k7g55jgpg"))))
+        (base32 "0vb0p455s2gp0nm1hxm9iikxr4mal52mbkq6nv6zxr78wwsxcwa1"))))
     (properties `((upstream-name . "crosstalkr")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -10830,13 +10850,13 @@ and Wallace (2018) <doi:10.1093/bioinformatics/bty898>.")
 (define-public r-corrbin
   (package
     (name "r-corrbin")
-    (version "1.6")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CorrBin" version))
        (sha256
-        (base32 "0iwad5qf7hqii02s5f85155c5s7v8ghnac4l6l3c45dshrpapp2m"))))
+        (base32 "07nxara80zjpvaqjfjpwi2aw909wp1jj0v42dd0s06w00v502438"))))
     (properties `((upstream-name . "CorrBin")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-geepack r-dirmult r-combinat r-boot))
@@ -10847,7 +10867,9 @@ and Wallace (2018) <doi:10.1093/bioinformatics/bty898>.")
 multinomial data.  The elements of the cluster are assumed exchangeable, and
 identical joint distribution (also known as marginal compatibility, or
 reproducibility) is assumed for clusters of different sizes.  A trend test based
-on stochastic ordering is implemented.")
+on stochastic ordering is implemented.  Szabo A, George EO. (2010)
+<doi:10.1093/biomet/asp077>; George EO, Cheon K, Yuan Y, Szabo A (2016)
+<doi:10.1093/biomet/asw009>.")
     (license license:gpl2+)))
 
 (define-public r-corrarray
@@ -15072,13 +15094,13 @@ manipulating confounded and fractional factorial designs.")
 (define-public r-conf
   (package
     (name "r-conf")
-    (version "1.8.2")
+    (version "1.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "conf" version))
        (sha256
-        (base32 "1hz8ljs11myb9jfl9i68an4nlylkmcy7qhpgr51mcyyxg2m3fyix"))))
+        (base32 "1gl9y4ci3x86xmggwr2jc9skzcqrk5nky3b0dvflw1lhscgr9998"))))
     (properties `((upstream-name . "conf")))
     (build-system r-build-system)
     (propagated-inputs (list r-statmod r-rootsolve r-pracma r-fitdistrplus))
@@ -18103,46 +18125,6 @@ API, which offers color inspiration and color palettes.")
 palette of the most frequent colours used in the image.  Also provides some
 custom colour palettes.")
     (license license:gpl2+)))
-
-(define-public r-colossus
-  (package
-    (name "r-colossus")
-    (version "0.9.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Colossus" version))
-       (sha256
-        (base32 "1h3aimby9d7i6mx16sklx1vxi2jqp85phkqd7icj0fysawm712cn"))))
-    (properties `((upstream-name . "Colossus")))
-    (build-system r-build-system)
-    (inputs (list))
-    (propagated-inputs (list r-testthat
-                             r-rlang
-                             r-rcppeigen
-                             r-rcpp
-                             r-ggplot2
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ericgiunta/Colossus")
-    (synopsis
-     "Risk Model Regression and Analysis with Complex Non-Linear Models")
-    (description
-     "This package performs survival analysis using general non-linear models.  Risk
-models can be the sum or product of terms.  Each term is the product of
-exponential/linear functions of covariates.  Additionally sub-terms can be
-defined as a sum of exponential, linear threshold, and step functions.  Cox
-Proportional hazards <https://en.wikipedia.org/wiki/Proportional_hazards_model>,
-Poisson <https://en.wikipedia.org/wiki/Poisson_regression>, and Fine-Grey
-competing risks
-<https://www.publichealth.columbia.edu/research/population-health-methods/competing-risk-analysis>
-regression are supported.  This work was sponsored by NASA Grant 80NSSC19M0161
-through a subcontract from the National Council on Radiation Protection and
-Measurements (NCRP).  The computing for this project was performed on the Beocat
-Research Cluster at Kansas State University, which is funded in part by NSF
-grants CNS-1006860, EPS-1006860, EPS-0919443, ACI-1440548, CHE-1726332, and NIH
-P20GM113109.")
-    (license license:gpl3+)))
 
 (define-public r-colorspec
   (package
@@ -32098,13 +32080,13 @@ fitting a bivariate copula.")
 (define-public r-censobr
   (package
     (name "r-censobr")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "censobr" version))
        (sha256
-        (base32 "0z4mfz3irqyvgyp1cdr3hfjva0p6a93c6cg85jzkf3vc6ipc9l9d"))))
+        (base32 "0xfgp1shw4c42mhan3q4kcbkr84vry7ks612qih2p1vjnsyc22zi"))))
     (properties `((upstream-name . "censobr")))
     (build-system r-build-system)
     (propagated-inputs (list r-httr r-dplyr r-checkmate r-arrow))
@@ -34816,13 +34798,13 @@ the package documentation on @code{GitHub}
 (define-public r-causalgps
   (package
     (name "r-causalgps")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CausalGPS" version))
        (sha256
-        (base32 "0bibrdqgnzbsai18v7x89vmjnrlgd27fzdrn219fiz41jyra40jn"))))
+        (base32 "0qawlwd5a6xryw0688wx04s55gahchxb3xxs0jpiqqrm9rp3y687"))))
     (properties `((upstream-name . "CausalGPS")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -34839,7 +34821,8 @@ the package documentation on @code{GitHub}
                              r-ggplot2
                              r-gam
                              r-ecume
-                             r-data-table))
+                             r-data-table
+                             r-cowplot))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/NSAPH-Software/CausalGPS")
     (synopsis

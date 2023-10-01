@@ -874,13 +874,13 @@ analysis and returned in a dataframe.")
 (define-public r-usdm
   (package
     (name "r-usdm")
-    (version "2.1-6")
+    (version "2.1-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "usdm" version))
        (sha256
-        (base32 "1kr11yxvcb7mjdfw0432sf9280r29c02xcwbx6xggr7f18b0cq5h"))))
+        (base32 "1mr728wmi37kj8m47wjlkc23ifv4rk2fyypyj8rqkpwml5nwjprh"))))
     (properties `((upstream-name . "usdm")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-raster))

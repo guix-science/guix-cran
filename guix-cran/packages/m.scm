@@ -9556,16 +9556,17 @@ Aerobic Plate Count (APC) for similar microbial enumeration experiments.")
 (define-public r-mpmsim
   (package
     (name "r-mpmsim")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mpmsim" version))
        (sha256
-        (base32 "0mwrq794qcsrm0r2p8c2vahm1jlh9q35jjzf7r963xrd70kplmvp"))))
+        (base32 "1ya15dx58nnid2p56w6fk5syjg5v7hgnkjq50hazgi153iwzdr6c"))))
     (properties `((upstream-name . "mpmsim")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape
+                             r-rcompadre
                              r-popdemo
                              r-popbio
                              r-mcmcpack
@@ -14936,16 +14937,21 @@ Public Release; Distribution Unlimited.")
 (define-public r-mmstat4
   (package
     (name "r-mmstat4")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mmstat4" version))
        (sha256
-        (base32 "0frs18r0ycp8z1cszpim9bvbmz0gsgjw8ypfbbfcx0j3w8hp9rcg"))))
+        (base32 "0glbf5s0d0l52by6iygnmr9yz6gw1mycgypfkfciixys4zii9ylj"))))
     (properties `((upstream-name . "mmstat4")))
     (build-system r-build-system)
-    (propagated-inputs (list r-shiny r-rstudioapi r-rio r-rappdirs r-digest))
+    (propagated-inputs (list r-shiny
+                             r-rstudioapi
+                             r-rio
+                             r-rappdirs
+                             r-httr
+                             r-digest))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=mmstat4")
     (synopsis "Access to Teaching Materials from a ZIP File or GitHub")
@@ -16616,31 +16622,31 @@ and prediction are supported for packages terra', raster and stars'.")
 (define-public r-mlr3shiny
   (package
     (name "r-mlr3shiny")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3shiny" version))
        (sha256
-        (base32 "0s581aqi3a3kg35db0gnsmmg62zwl5bij4vbszjhc63i3xg0ayiz"))))
+        (base32 "0rv5ybg6l1n7j6gq8wmvl1gd1mdmqd52vl91hkpv9k1l1w8m8mph"))))
     (properties `((upstream-name . "mlr3shiny")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
                              r-shinywidgets
-                             r-shinythemes
                              r-shinyjs
                              r-shinydashboard
                              r-shinyalert
                              r-shiny
-                             r-readxl
-                             r-ranger
                              r-purrr
                              r-plyr
+                             r-patchwork
+                             r-mlr3pipelines
                              r-mlr3measures
                              r-mlr3learners
                              r-mlr3
-                             r-e1071
+                             r-metrics
                              r-dt
+                             r-dplyr
                              r-data-table))
     (home-page "https://cran.r-project.org/package=mlr3shiny")
     (synopsis "Machine Learning in 'shiny' with 'mlr3'")
@@ -24860,13 +24866,13 @@ for the analysis of mass spectrometry data.\"")
 (define-public r-mgmm
   (package
     (name "r-mgmm")
-    (version "1.0.1")
+    (version "1.0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MGMM" version))
        (sha256
-        (base32 "0xi9a10pfdr43f1qc0mvlgh3gpq3w23ax3s06w5cz25cj6kbv8xs"))))
+        (base32 "090qzgy8fdi3asri8kyin52whf3w02yi9713gawbrl8gdiqp4l0b"))))
     (properties `((upstream-name . "MGMM")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-plyr r-mvnfast r-cluster))
