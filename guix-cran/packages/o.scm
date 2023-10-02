@@ -6985,16 +6985,16 @@ nonassociative.  See the package vignette for more details.")
 (define-public r-onewaytests
   (package
     (name "r-onewaytests")
-    (version "2.7")
+    (version "3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "onewaytests" version))
        (sha256
-        (base32 "1434ra36rmkjiw8q5d7cbzkhy7kvq5bnx6s1pfy319p6zcy083nd"))))
+        (base32 "0qmzgg869pdj3sfi8znd02z62px9n04fxl1psrfw8mxl4ainp0v7"))))
     (properties `((upstream-name . "onewaytests")))
     (build-system r-build-system)
-    (propagated-inputs (list r-nortest r-moments r-ggplot2 r-car))
+    (propagated-inputs (list r-wesanderson r-nortest r-moments r-ggplot2 r-car))
     (home-page "https://cran.r-project.org/package=onewaytests")
     (synopsis "One-Way Tests in Independent Groups Designs")
     (description
@@ -7002,9 +7002,12 @@ nonassociative.  See the package vignette for more details.")
 homoscedastic and heteroscedastic tests.  These are one-way analysis of variance
 (ANOVA), Welch's heteroscedastic F test, Welch's heteroscedastic F test with
 trimmed means and Winsorized variances, Brown-Forsythe test, Alexander-Govern
-test, James second order test, Kruskal-Wallis test, Scott-Smith test, Box F test
-and Johansen F test, Generalized tests equivalent to Parametric Bootstrap and
-Fiducial tests.  The package performs pairwise comparisons and graphical
+test, James second order test, Kruskal-Wallis test, Scott-Smith test, Box F
+test, Johansen F test, Generalized tests equivalent to Parametric Bootstrap and
+Fiducial tests, Alvandi's F test, Alvandi's generalized p-value, approximate F
+test, B square test, Cochran test, Weerahandi's generalized F test, modified
+Brown-Forsythe test, adjusted Welch's heteroscedastic F test, Welch-Aspin test,
+Permutation F test.  The package performs pairwise comparisons and graphical
 approaches.  Also, the package includes Student's t test, Welch's t test and
 Mann-Whitney U test for two samples.  Moreover, it assesses variance homogeneity
 and normality of data in each group via tests and plots (Dag et al., 2018,
@@ -9834,16 +9837,16 @@ be manipulated and provides features such as selection, filtering and ordering."
 (define-public r-od
   (package
     (name "r-od")
-    (version "0.4.0")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "od" version))
        (sha256
-        (base32 "1mnf2dl3zj7zamibnv8ai0z2wbbwplzvjbzq3mswj6jc7386ja43"))))
+        (base32 "07qfpl4nm9s1ixpi87riwq9kj1v3p1qmcfyvmw2v14v04hzg9c22"))))
     (properties `((upstream-name . "od")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sfheaders))
+    (propagated-inputs (list r-vctrs r-sfheaders))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/itsleeds/od")
     (synopsis "Manipulate and Map Origin-Destination Data")

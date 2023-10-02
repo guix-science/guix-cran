@@ -6694,13 +6694,13 @@ package.")
 (define-public r-domir
   (package
     (name "r-domir")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "domir" version))
        (sha256
-        (base32 "0wi2dx5pqgyn3wy2hm2jd4rd9b084wh2l80lpch7950ws2w51vz0"))))
+        (base32 "01qn62xnykgbk6857i6d5xv7zcxd63g1hakry5qxgdczivkpy4m6"))))
     (properties `((upstream-name . "domir")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -19235,13 +19235,13 @@ can also make it easier for designs to be shared, replicated, and critiqued.")
 (define-public r-declared
   (package
     (name "r-declared")
-    (version "0.22")
+    (version "0.23")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "declared" version))
        (sha256
-        (base32 "0r0mcxr4yb2widig1xhsx72rdamd02lkl66qcgsfjxw9bba5zwh9"))))
+        (base32 "0y01xa9vw6v8dw1sm2ijvxhwfx54iwggy0qicamp9ljs5bcgvz6h"))))
     (properties `((upstream-name . "declared")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -20038,13 +20038,13 @@ in <@code{arXiv:2004.03758>}.")
 (define-public r-ddiwr
   (package
     (name "r-ddiwr")
-    (version "0.15")
+    (version "0.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DDIwR" version))
        (sha256
-        (base32 "0vwzbr70nn8ij96434hpp3qvqj306pwiklwimyib67y2cx7ghvs0"))))
+        (base32 "1d88sj0hz5wvfa1kx9sd320nmd9j6g0g7x4wl0883k5i19p3azy7"))))
     (properties `((upstream-name . "DDIwR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

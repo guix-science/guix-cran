@@ -398,13 +398,13 @@ and application examples, see Hill, T.D. and S.C. Anisfeld (2021)
 (define-public r-vuer
   (package
     (name "r-vuer")
-    (version "0.5.3")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vueR" version))
        (sha256
-        (base32 "0am4iwgadi9c9f7zm5zx3nrzyhy7w1qgp9rkyypzwb6bicjjb9cz"))))
+        (base32 "07l1q5dgwplcfcp1ipbcx2i4d54f7fn4rclb71yb7ms2g98lq1gw"))))
     (properties `((upstream-name . "vueR")))
     (build-system r-build-system)
     (propagated-inputs (list r-htmlwidgets r-htmltools))

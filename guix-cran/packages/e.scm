@@ -8948,6 +8948,29 @@ the coursera Epidemics Massive Online Open Course
 methodology of Gressani et al. (2022) <doi:10.1371/journal.pcbi.1010618>.")
     (license license:gpl3)))
 
+(define-public r-epilogi
+  (package
+    (name "r-epilogi")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "epilogi" version))
+       (sha256
+        (base32 "0p5aidj9xmlw6lyb4bscb7xkjkfs4jmc4ax844bhsgl6v2y91n6b"))))
+    (properties `((upstream-name . "epilogi")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rfast))
+    (home-page "https://cran.r-project.org/package=epilogi")
+    (synopsis "The 'epilogi' Variable Selection Algorithm for Continuous Data")
+    (description
+     "The epilogi variable selection algorithm is implemented for the case of
+continuous response and predictor variables.  The relevant paper is: Lakiotaki
+K., Papadovasilakis Z., Lagani V., Fafalios S., Charonyktakis P., Tsagris M. and
+Tsamardinos I. (2023). \"Automated machine learning for Genome Wide Association
+Studies\".  Bioinformatics. <doi:10.1002/sim.4780120902>.")
+    (license license:gpl2+)))
+
 (define-public r-epikit
   (package
     (name "r-epikit")

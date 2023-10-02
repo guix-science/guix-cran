@@ -9015,6 +9015,33 @@ data applications considered in @code{GarcÃ­a-PortuguÃ©s},
 <doi:10.1111/sjos.12486>.")
     (license license:gpl3)))
 
+(define-public r-gofedf
+  (package
+    (name "r-gofedf")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gofedf" version))
+       (sha256
+        (base32 "12y6lhrpldj46adn3a7jz4snx79y9xdrzbgr5qa4gjl00w3nx6cn"))))
+    (properties `((upstream-name . "gofedf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-statmod r-mass r-glm2 r-compquadform))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/pnickchi/gofedf")
+    (synopsis
+     "Goodness of Fit Tests Based on Empirical Distribution Functions")
+    (description
+     "Routines that allow the user to run goodness of fit tests based on empirical
+distribution functions for formal model evaluation in a general likelihood
+model.  In addition, functions are provided to test a sample against Normal or
+Gamma distributions, validate the normality assumptions in a linear model, and
+examine the appropriateness of a Gamma distribution in generalized linear models
+with various link functions.  Michael Arthur Stephens (1976)
+<http://www.jstor.org/stable/2958206>.")
+    (license license:gpl3+)))
+
 (define-public r-gofcopula
   (package
     (name "r-gofcopula")
@@ -16186,13 +16213,13 @@ a data matrix.")
 (define-public r-ggmridge
   (package
     (name "r-ggmridge")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GGMridge" version))
        (sha256
-        (base32 "1bv6k9krkb6mx6p4kx24cgyix1jnpk0257a59i59h7chij9y7nf7"))))
+        (base32 "0aaah07n4nq2acvwikgwdqymchf7b1l9nkifwl7wxnr88pazcb4y"))))
     (properties `((upstream-name . "GGMridge")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-mass))

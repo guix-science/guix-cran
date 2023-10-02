@@ -2437,13 +2437,13 @@ data type, item scoring, special data codes, and variable label.")
 (define-public r-jmdesign
   (package
     (name "r-jmdesign")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JMdesign" version))
        (sha256
-        (base32 "0pa0j4hw5r3j94p2hhlb0qnsh1mvr1fdllqpkr50gci607ckv0g3"))))
+        (base32 "04nlxym4b339l70m0fd0r04m9lb6c7l8ajswhmy7dmix0sk99d3c"))))
     (properties `((upstream-name . "JMdesign")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=JMdesign")

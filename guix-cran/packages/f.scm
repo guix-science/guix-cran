@@ -5194,35 +5194,6 @@ The underlying mathematical structure is the Free Abelian group, hence the name.
  To cite in publications please use Hankin (2023) <arxiv:2307:13184>.")
     (license license:gpl2+)))
 
-(define-public r-fqar
-  (package
-    (name "r-fqar")
-    (version "0.4.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fqar" version))
-       (sha256
-        (base32 "0kwa40sm1c2gi3nhl0xfcqa9rh14rzv8w9jgji8217gk9mfrwbg8"))))
-    (properties `((upstream-name . "fqar")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-rlang
-                             r-memoise
-                             r-jsonlite
-                             r-httr
-                             r-ggplot2
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/equitable-equations/fqar/")
-    (synopsis "Floristic Quality Assessment Tools for R")
-    (description
-     "This package provides tools for downloading and analyzing floristic quality
-assessment data.  See Freyman et al. (2015) <doi:10.1111/2041-210X.12491> for
-more information about floristic quality assessment and the associated database.")
-    (license license:expat)))
-
 (define-public r-fqadata
   (package
     (name "r-fqadata")

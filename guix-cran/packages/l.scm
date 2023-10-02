@@ -1796,16 +1796,16 @@ based on the likelihood ratio
 (define-public r-lrstat
   (package
     (name "r-lrstat")
-    (version "0.1.15")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lrstat" version))
        (sha256
-        (base32 "1q7fgrid7va93pk99rpd0rqh3hrjgfdzkvi0bpx6gqwxv6y9yca6"))))
+        (base32 "1pfg053w8y0ljld0c2cjjr1xrhbq1wx4khabfqjb07vayhqr3m32"))))
     (properties `((upstream-name . "lrstat")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
+    (propagated-inputs (list r-rcpp r-mvtnorm))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=lrstat")
     (synopsis "Power and Sample Size Calculation for Non-Proportional Hazards")
@@ -10489,13 +10489,13 @@ range of edit distance measures are available thanks to the stringdist package."
 (define-public r-lettervalue
   (package
     (name "r-lettervalue")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lettervalue" version))
        (sha256
-        (base32 "1wjvv1nr6i53nvmvpcpjdq5ycdhv4bl8b7pg280qm1hchak36lj0"))))
+        (base32 "1jqzh718xzhjb88nzxzjx2y501g1srs26xqah1byksz2aj4sn3g5"))))
     (properties `((upstream-name . "lettervalue")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-purrr r-glue))

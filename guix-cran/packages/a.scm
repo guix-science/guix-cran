@@ -18259,6 +18259,28 @@ Ormerod, J., Liu, W., Ma, C., Zomaya, A., Yang, J. (2018)
 <doi:10.1109/TCYB.2018.2816984>.")
     (license license:gpl3)))
 
+(define-public r-adar
+  (package
+    (name "r-adar")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "adaR" version))
+       (sha256
+        (base32 "0pissrdkc4c729q0si68w5pk5sxvyhj7is0p7larxz7q3r3vkljk"))))
+    (properties `((upstream-name . "adaR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-triebeard r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://schochastics.github.io/adaR/")
+    (synopsis "Fast 'WHATWG' Compliant URL Parser")
+    (description
+     "This package provides a wrapper for ada-url', a WHATWG compliant and fast URL
+parser written in modern C++'.  Also contains auxiliary functions such as a
+public suffix extractor.")
+    (license license:expat)))
+
 (define-public r-adapttest
   (package
     (name "r-adapttest")
@@ -19677,6 +19699,26 @@ as straight desire lines in the sf Simple Features class system, into JSON files
 that can be directly imported into A/B Street <https://www.abstreet.org>, a free
 and open source tool for simulating urban transport systems and scenarios of
 change <doi:10.1007/s10109-020-00342-2>.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
+(define-public r-abseil
+  (package
+    (name "r-abseil")
+    (version "2023.8.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "abseil" version))
+       (sha256
+        (base32 "1a65zwkrxqidbcfpin9k119zip8vb0vnl87akimjn3xnynb3i5br"))))
+    (properties `((upstream-name . "abseil")))
+    (build-system r-build-system)
+    (home-page "https://abseil.xingchi.li")
+    (synopsis "'C++' Header Files from 'Abseil'")
+    (description
+     "Wraps the Abseil C++ library for use by R packages.  Original files are from
+<https://github.com/abseil/abseil-cpp>.  Patches are located at
+<https://github.com/doccstat/abseil-r/tree/main/local/patches>.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-abmr

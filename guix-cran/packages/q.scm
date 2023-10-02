@@ -654,16 +654,16 @@ does not require that the data be in geographic coordinates.")
 (define-public r-quickcode
   (package
     (name "r-quickcode")
-    (version "0.3")
+    (version "0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quickcode" version))
        (sha256
-        (base32 "0asa68jk43za5ya9kc0yxc1f1ya8rawdann39fwy4hp6r47q4s7p"))))
+        (base32 "0f4y3kf9aq81qbb4pj9mwjy7ccx0z33cm50h9i5gqb8yg75v2gjy"))))
     (properties `((upstream-name . "quickcode")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rstudioapi r-rlang))
+    (propagated-inputs (list r-rstudioapi r-rlang r-polychrome))
     (native-inputs (list r-knitr))
     (home-page "https://quickcode.obi.obianom.com")
     (synopsis "Compilation of Some Frequently Used R Functions")

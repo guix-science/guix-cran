@@ -5680,16 +5680,20 @@ Computational Harmonic Analysis, 44, 558-585 <doi:10.1016/j.acha.2016.06.006>.")
 (define-public r-bootwar
   (package
     (name "r-bootwar")
-    (version "0.1.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bootwar" version))
        (sha256
-        (base32 "01n57w3jpa8wjz0mh2ndkm3ha5lcsg42c1r2fngm37limsdwybvb"))))
+        (base32 "0cvwdi8qvm737qsnyr87wpsfmyzcdr7sga4zbkal8y5bj73h9y63"))))
     (properties `((upstream-name . "bootwar")))
     (build-system r-build-system)
-    (propagated-inputs (list r-shinythemes r-shinyjs r-shiny r-npboottprm
+    (propagated-inputs (list r-shinythemes
+                             r-shinyjs
+                             r-shiny
+                             r-npboottprm
+                             r-mmcards
                              r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mightymetrika/bootwar")
@@ -5702,19 +5706,16 @@ outlined in Dwivedi, Mallawaarachchi, and Alvarado (2017)
 non-normal data, especially for small sample size studies.  However, many
 researchers are unfamiliar with these methods.  The bootwar package bridges this
 gap by enabling users to grasp the concepts of nbpr via Boot War, a variation of
-the card game War designed for small samples.  With the shuffle_cards()
-function, players can engage in Boot War using a standard 52-card deck, a custom
-deck created via an anonymous function, or interleaved custom decks where each
-player has their distinct deck.  The package further provides functions like
-deal_card(), score_keeper(), and play_round() to streamline gameplay and
-scoring.  Once a predetermined number of rounds concludes, users can employ the
-analyze_game() function to derive game results.  This function leverages the
-npboottprm package's nonparboot() to report nbpr results and, for comparative
-analysis, also reports results from the stats package's t.test() function.
-Additionally, bootwar features an interactive shiny web application, bootwar().
-This offers a user-centric interface to experience Boot War, enhancing
-understanding of nbpr methods across various distributions, sample sizes, number
-of bootstrap resamples, and confidence intervals.")
+the card game War designed for small samples.  The package provides functions
+like score_keeper() and play_round() to streamline gameplay and scoring.  Once a
+predetermined number of rounds concludes, users can employ the analyze_game()
+function to derive game results.  This function leverages the npboottprm
+package's nonparboot() to report nbpr results and, for comparative analysis,
+also reports results from the stats package's t.test() function.  Additionally,
+bootwar features an interactive shiny web application, bootwar().  This offers a
+user-centric interface to experience Boot War, enhancing understanding of nbpr
+methods across various distributions, sample sizes, number of bootstrap
+resamples, and confidence intervals.")
     (license license:expat)))
 
 (define-public r-bootur
@@ -21097,6 +21098,27 @@ due to presence of two Weibull components in the hazard function.")
      "Fits finite mixture models of univariate Gaussian distributions using JAGS
 within a Bayesian framework.")
     (license (list license:gpl2 license:gpl3))))
+
+(define-public r-bayesmig
+  (package
+    (name "r-bayesmig")
+    (version "0.4-6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bayesMig" version))
+       (sha256
+        (base32 "1b4pxg22fx898s529gigdfcdsmzlrpqhpnq96lghvsvmv5802z4n"))))
+    (properties `((upstream-name . "bayesMig")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-wpp2019 r-truncnorm r-coda r-bayestfr))
+    (home-page "http://bayespop.csss.washington.edu")
+    (synopsis "Bayesian Projection of Migration")
+    (description
+     "Producing probabilistic projections of net migration rate for all countries of
+the world or for subnational units using a Bayesian hierarchical model by Azose
+an Raftery (2015) <doi:10.1007/s13524-015-0415-0>.")
+    (license license:gpl2+)))
 
 (define-public r-bayesmfsurv
   (package

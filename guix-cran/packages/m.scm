@@ -22262,6 +22262,40 @@ Linear Mixed Model.  The package follows the approach of Datta, Day and Basawa
 (1999) <doi:10.1016/S0378-3758(98)00147-5>.")
     (license (license:fsdg-compatible "EUPL"))))
 
+(define-public r-minb
+  (package
+    (name "r-minb")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "minb" version))
+       (sha256
+        (base32 "1ay1l58b0jhk27sajrvj4p7kkx4hs2va0am9c76pwbng6vg264mh"))))
+    (properties `((upstream-name . "minb")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-pscl r-mass))
+    (home-page "https://cran.r-project.org/package=minb")
+    (synopsis "Multiple-Inflated Negative Binomial Model")
+    (description
+     "Count data is prevalent and informative, with widespread application in many
+fields such as social psychology, personality, and public health.  Classical
+statistical methods for the analysis of count outcomes are commonly variants of
+the log-linear model, including Poisson regression and Negative Binomial
+regression.  However, a typical problem with count data modeling is inflation,
+in the sense that the counts are evidently accumulated on some integers.  Such
+an inflation problem could distort the distribution of the observed counts,
+further bias estimation and increase error, making the classic methods
+infeasible.  Traditional inflated value selection methods based on histogram
+inspection are easy to neglect true points and computationally expensive in
+addition.  Therefore, we propose a multiple-inflated negative binomial model to
+handle count data modeling with multiple inflated values, achieving data-driven
+inflated value selection.  The proposed approach provides simultaneous
+identification of important regression predictors on the target count response
+as well.  More details about the proposed method are described in Li, Y., Wu,
+M., Wu, M., & Ma, S. (2023) <@code{arXiv:2309.15585>}.")
+    (license license:gpl3)))
+
 (define-public r-mimsy
   (package
     (name "r-mimsy")

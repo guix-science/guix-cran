@@ -1725,6 +1725,31 @@ estimate under maximal publication bias obtained simply by conducting a standard
 meta-analysis of only the negative and \"nonsignificant\" studies.")
     (license license:gpl2)))
 
+(define-public r-public-ctn0094data
+  (package
+    (name "r-public-ctn0094data")
+    (version "1.0.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "public.ctn0094data" version))
+       (sha256
+        (base32 "105v4if9fqbqfrgkvcc6ws2cggn67fp3nh9y41absd7jvmzsb49h"))))
+    (properties `((upstream-name . "public.ctn0094data")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://ctn-0094.github.io/public.ctn0094data/")
+    (synopsis "De-Identified Data from CTN-0094")
+    (description
+     "These are harmonized datasets produced as part of the Clinical Trials Network
+(CTN) protocol number 0094.  This is a US National Institute of Drug Abuse
+(NIDA) funded project; to learn more go to
+<https://ctnlibrary.org/protocol/ctn0094/>.  These are datasets which have the
+data harmonized from CTN-0027 (<https://ctnlibrary.org/protocol/ctn0027/>),
+CTN-0030 (<https://ctnlibrary.org/protocol/ctn0030/>), and CTN-0051
+(<https://ctnlibrary.org/protocol/ctn0051/>).")
+    (license license:expat)))
+
 (define-public r-pubh
   (package
     (name "r-pubh")
@@ -15847,13 +15872,13 @@ aim is to record, collect, and generate useful information on data tables.")
 (define-public r-point
   (package
     (name "r-point")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "POINT" version))
        (sha256
-        (base32 "0b97ish2xxvp7xy0qqbg68hy0nvdvhi8zpgd4wvczn5r8586qk6g"))))
+        (base32 "11xxmz3ncgnbs8yn7d53y1bc0g9rrlgz0d1ixjrxh4wh9qlyfzq6"))))
     (properties `((upstream-name . "POINT")))
     (build-system r-build-system)
     (propagated-inputs (list r-rarpack r-matrix r-compquadform))
@@ -20457,13 +20482,13 @@ The result is a tibble.")
 (define-public r-pivottabler
   (package
     (name "r-pivottabler")
-    (version "1.5.4")
+    (version "1.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pivottabler" version))
        (sha256
-        (base32 "1ri6fc88lmnl1795yx3m973ybd85cvn3d4zcwkm5sfivlccd83yi"))))
+        (base32 "1kf9z2ashfvgjl0sviryx2r9b9k1k9j9b9nzivr1nxm0d9x9n3yn"))))
     (properties `((upstream-name . "pivottabler")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-htmlwidgets r-htmltools r-dplyr

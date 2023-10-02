@@ -20483,13 +20483,13 @@ samples to obtain bias-free, inter-dataset corrected data.")
 (define-public r-coconots
   (package
     (name "r-coconots")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coconots" version))
        (sha256
-        (base32 "016pq8vsab334sjrl150zczlhwgv2m0q09y3spbi7qlzrcarq8sl"))))
+        (base32 "1mymq7rsmawnh6m3m7c39kg8mp829f7kyjnj3hll4jsw6q1sz2fi"))))
     (properties `((upstream-name . "coconots")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -36864,13 +36864,13 @@ associations between row and column categories on the basis of positive
 (define-public r-careless
   (package
     (name "r-careless")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "careless" version))
        (sha256
-        (base32 "1zlkzrc9fw926knj6w7flv4q0w29k4aichawvprk94rk1bnrvdz5"))))
+        (base32 "1ncfcz5zznchcj4ndfhk9lb72l766yzsiicq5ry0m4djn74d9lva"))))
     (properties `((upstream-name . "careless")))
     (build-system r-build-system)
     (propagated-inputs (list r-psych))

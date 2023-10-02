@@ -1170,13 +1170,13 @@ systems with a set number of time steps.")
 (define-public r-tvgarch
   (package
     (name "r-tvgarch")
-    (version "2.4")
+    (version "2.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tvgarch" version))
        (sha256
-        (base32 "1k6i6xfwjyhbj7mga46kzx2fwf7lx2jkax59qvc19v46y4rhidlb"))))
+        (base32 "17cnk855c4y5bxxnhhi05vjrppw5bbarnrhkasza3ygbnm77cmsd"))))
     (properties `((upstream-name . "tvgarch")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-numderiv r-garchx))
@@ -6122,6 +6122,30 @@ function sim.genespeciestree() simulates coalescent gene trees within
 birth-death species trees, and sim.genetree() simulates coalescent gene trees.")
     (license license:gpl2)))
 
+(define-public r-treeshap
+  (package
+    (name "r-treeshap")
+    (version "0.2.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "treeshap" version))
+       (sha256
+        (base32 "05pxfdjcjdihdf28ca7ybai9xypcsgc6pa1fq86sywiwb0w0vpss"))))
+    (properties `((upstream-name . "treeshap")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp r-ggplot2 r-data-table))
+    (home-page "https://modeloriented.github.io/treeshap/")
+    (synopsis
+     "Compute SHAP Values for Your Tree-Based Models Using the 'TreeSHAP' Algorithm")
+    (description
+     "An efficient implementation of the @code{TreeSHAP} algorithm introduced by
+Lundberg et al., (2020) <doi:10.1038/s42256-019-0138-9>.  It is capable of
+calculating SHAP (SHapley Additive @code{exPlanations}) values for tree-based
+models in polynomial time.  Currently supported models include gbm',
+@code{randomForest}', ranger', xgboost', lightgbm'.")
+    (license license:gpl3)))
+
 (define-public r-treesearch
   (package
     (name "r-treesearch")
@@ -7067,6 +7091,30 @@ auxiliary domains are present, benefiting from the carefully designed
 data-adaptive weights.  Reference: Ren, M., Zhen Y., and Wang J. (2022).
 \"Transfer learning for tensor graphical models\" <@code{arXiv:2211.09391>}.")
     (license license:gpl2)))
+
+(define-public r-transreg
+  (package
+    (name "r-transreg")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "transreg" version))
+       (sha256
+        (base32 "0691gn80fwlkf48m9mrjj76ylllayn3aj03lr48y361bf4qpg56c"))))
+    (properties `((upstream-name . "transreg")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-starnet r-joinet r-glmnet))
+    (native-inputs (list r-knitr))
+    (home-page "https://lcsb-bds.github.io/transreg/")
+    (synopsis "Penalised Regression with Multiple Sets of Prior Effects")
+    (description
+     "Improves the predictive performance of ridge and lasso regression exploiting one
+or more sources of prior information on the importance and direction of effects
+(Rauschenberger and others 2023, <doi:10.48550/@code{arXiv.2212.08581>}).  For
+running the vignette, install fwelnet from @code{GitHub}
+<https://github.com/kjytay/fwelnet>.")
+    (license license:gpl3)))
 
 (define-public r-transport
   (package

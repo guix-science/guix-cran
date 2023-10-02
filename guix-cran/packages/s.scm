@@ -4607,13 +4607,13 @@ process.")
 (define-public r-surrogateregression
   (package
     (name "r-surrogateregression")
-    (version "0.6.0")
+    (version "0.6.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SurrogateRegression" version))
        (sha256
-        (base32 "0815zskr4g960wm6jcjn0ykmc0db8fg6vzfw97lfgm5m9bjd4h5c"))))
+        (base32 "0cjw780wzvxp6q4q8m57d3qzv7ivk884h6s6n9walnd8rvrfj414"))))
     (properties `((upstream-name . "SurrogateRegression")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -46219,6 +46219,39 @@ to remotely instruct the behaviour of web browsers.  It is detailed at
 R client implementing the W3C specification.")
     (license license:gpl3)))
 
+(define-public r-selenider
+  (package
+    (name "r-selenider")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "selenider" version))
+       (sha256
+        (base32 "1h0w8y0sqx9q9df64qik04sklgrpc1a0kjkqjr8isdy4bf6zpcxg"))))
+    (properties `((upstream-name . "selenider")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-withr
+                             r-vctrs
+                             r-rlang
+                             r-processx
+                             r-prettyunits
+                             r-lifecycle
+                             r-curl
+                             r-coro
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ashbythorpe/selenider")
+    (synopsis
+     "Concise, Lazy and Reliable Wrapper for 'chromote' and 'RSelenium'")
+    (description
+     "This package provides a user-friendly wrapper for web automation, using either
+chromote or RSelenium'.  Provides a simple and consistent API to make web
+scraping and testing scripts easy to write and understand.  Elements are lazy,
+and automatically wait for the website to be valid, resulting in reliable and
+reproducible code, with no visible impact on the experience of the programmer.")
+    (license license:expat)))
+
 (define-public r-selemix
   (package
     (name "r-selemix")
@@ -47517,52 +47550,6 @@ Garcia-Huidobro (1982) <doi:10.1093/jxb/33.2.288>.  Allows to fit models to
 grouped datasets, i.e.  datasets containing multiple species, seedlots or
 experiments.")
     (license license:gpl3)))
-
-(define-public r-seedmatchr
-  (package
-    (name "r-seedmatchr")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SeedMatchR" version))
-       (sha256
-        (base32 "0azrlma0p1g342yqyxb1wj9shc0sy2p0ml555h554apasxf020v6"))))
-    (properties `((upstream-name . "SeedMatchR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-twosamples
-                             r-testit
-                             r-stringr
-                             r-msa
-                             r-lifecycle
-                             r-ggplot2
-                             r-genomicfeatures
-                             r-genomeinfodb
-                             r-dplyr
-                             r-deseq2
-                             r-cowplot
-                             r-biostrings
-                             r-annotationhub))
-    (native-inputs (list r-knitr))
-    (home-page "https://tacazares.github.io/SeedMatchR/")
-    (synopsis "Find Matches to Canonical SiRNA Seeds in Genomic Features")
-    (description
-     "On-target gene knockdown using @code{siRNA} ideally results from binding fully
-complementary regions in @code{mRNA} transcripts to induce cleavage.  Off-target
-@code{siRNA} gene knockdown can occur through several modes, one being a
-seed-mediated mechanism mimicking @code{miRNA} gene regulation.  Seed-mediated
-off-target effects occur when the ~8 nucleotides at the 5â end of the guide
-strand, called a seed region, bind the 3â untranslated regions of @code{mRNA},
-causing reduced translation.  Experiments using @code{siRNA} knockdown paired
-with RNA-seq can be used to detect @code{siRNA} sequences with potential
-off-target effects driven by the seed region. @code{SeedMatchR} provides tools
-for exploring and detecting potential seed-mediated off-target effects of
-@code{siRNA} in RNA-seq experiments. @code{SeedMatchR} is designed to extend
-current differential expression analysis tools, such as DESeq2', by annotating
-results with predicted seed matches.  Using publicly available data, we
-demonstrate the ability of @code{SeedMatchR} to detect cumulative changes in
-differential gene expression attributed to @code{siRNA} seed regions.")
-    (license license:expat)))
 
 (define-public r-seededlda
   (package
