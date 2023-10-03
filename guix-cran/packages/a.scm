@@ -4344,13 +4344,13 @@ Galli, and Murray (2022)
 (define-public r-asremlplus
   (package
     (name "r-asremlplus")
-    (version "4.4.13")
+    (version "4.4.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "asremlPlus" version))
        (sha256
-        (base32 "1fmbl7kdrs7mv5ia6i09mf560nn84bb4gn74cvfxrcaqqdxgpn6w"))))
+        (base32 "0yvfazsf5jh21kiippsbxfq3wv9j84wnq2659y6zhsn1svn0bs6i"))))
     (properties `((upstream-name . "asremlPlus")))
     (build-system r-build-system)
     (inputs (list))

@@ -5698,13 +5698,13 @@ costs of invasive alien species (<doi:10.1111/2041-210X.13929>).")
 (define-public r-intsvy
   (package
     (name "r-intsvy")
-    (version "2.7")
+    (version "2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "intsvy" version))
        (sha256
-        (base32 "1q9phc6051r3vhv55wac1xkl9xzw9c7sw4xidsf6k1lymmhdn064"))))
+        (base32 "1b1mwh9bc0gdqlffscr93amghaxclphzm2c453jjqy3pnrrivfg3"))))
     (properties `((upstream-name . "intsvy")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape

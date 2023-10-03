@@ -6392,13 +6392,13 @@ your system so that other packages can link against it.")
 (define-public r-boolnet
   (package
     (name "r-boolnet")
-    (version "2.1.8")
+    (version "2.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BoolNet" version))
        (sha256
-        (base32 "1njp9x7x6agdr8i2ilj8f98mw2b7hjqln00w95xinsv5zb6x0182"))))
+        (base32 "19xnmz5dq8lvk1va8zi931xkawkwfcfjf4vh0dsg5n8zhy4p321f"))))
     (properties `((upstream-name . "BoolNet")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml r-igraph))
@@ -9866,6 +9866,26 @@ read/write several more bitmap font formats using an embedded version of
 monobit'.")
     (license license:expat)))
 
+(define-public r-bitrina
+  (package
+    (name "r-bitrina")
+    (version "1.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BiTrinA" version))
+       (sha256
+        (base32 "09x3w3njdm7pgjjcqc1g3lp8nj31qkq3hmn21dqgvq7acyblan08"))))
+    (properties `((upstream-name . "BiTrinA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-diptest))
+    (home-page "https://cran.r-project.org/package=BiTrinA")
+    (synopsis "Binarization and Trinarization of One-Dimensional Data")
+    (description
+     "This package provides methods for the binarization and trinarization of
+one-dimensional data and some visualization functions.")
+    (license license:artistic2.0)))
+
 (define-public r-bitmexr
   (package
     (name "r-bitmexr")
@@ -12294,24 +12314,24 @@ whether a feature is selected more often than by random chance.")
 (define-public r-binomci
   (package
     (name "r-binomci")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "binomCI" version))
        (sha256
-        (base32 "187pbc94carpgwlz419rlbn6y332xxypgjzx43zz2z36gkryzymz"))))
+        (base32 "078qghb8svz7jfnmdc5j2npg2lvb00j4lal3ghszysarmw21nia1"))))
     (properties `((upstream-name . "binomCI")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=binomCI")
     (synopsis "Confidence Intervals for a Binomial Proportion")
     (description
-     "12 confidence intervals for one binomial proportion or a vector of binomial
+     "Twelve confidence intervals for one binomial proportion or a vector of binomial
 proportions are computed.  The confidence intervals are: Jeffreys, Wald, Wald
 corrected, Wald, Blyth and Still, Agresti and Coull, Wilson, Score, Score
 corrected, Wald logit, Wald logit corrected, Arcsine and Exact binomial.
-References include, among others: Vollset, S. E. (1993).  Confidence intervals
-for a binomial proportion.  Statistics in Medicine, 12(9): 809-824.
+References include, among others: Vollset, S. E. (1993). \"Confidence intervals
+for a binomial proportion\".  Statistics in Medicine, 12(9): 809-824.
 <doi:10.1002/sim.4780120902>.")
     (license license:gpl2+)))
 

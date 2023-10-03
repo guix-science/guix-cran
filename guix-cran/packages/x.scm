@@ -862,13 +862,13 @@ occurred.")
 (define-public r-xmpdf
   (package
     (name "r-xmpdf")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xmpdf" version))
        (sha256
-        (base32 "140h6dymap3dh5a68z2mdij6163fzqix4md9mfynghz4ckj1cfbq"))))
+        (base32 "0hqk40zwwxkx0zhw2a1phm49lwlwsbphhb3g87b1vvy3xsxilph6"))))
     (properties `((upstream-name . "xmpdf")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-r6 r-purrr r-jsonlite r-datetimeoffset))

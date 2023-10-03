@@ -8080,13 +8080,13 @@ datasets.")
 (define-public r-nhdplustools
   (package
     (name "r-nhdplustools")
-    (version "0.7.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nhdplusTools" version))
        (sha256
-        (base32 "0yp17kpgv4sw3ghfm5fmi2zj6glf0l6syrkvvh0m384is9f20dxa"))))
+        (base32 "109gipkpmszipljm19c1f9mrjpf647vk9kyz7dwcpwlra7x21ay3"))))
     (properties `((upstream-name . "nhdplusTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -8094,14 +8094,13 @@ datasets.")
                              r-units
                              r-tidyr
                              r-sf
-                             r-rosm
-                             r-rlang
-                             r-rann
                              r-r-utils
-                             r-prettymapr
                              r-pbapply
+                             r-maptiles
+                             r-mapsf
                              r-magrittr
                              r-jsonlite
+                             r-hydroloom
                              r-httr
                              r-fst
                              r-dplyr

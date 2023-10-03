@@ -24529,18 +24529,18 @@ distribution of p values as a way to detect the true signals in the data.")
 (define-public r-mhmmbayes
   (package
     (name "r-mhmmbayes")
-    (version "0.2.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mHMMbayes" version))
        (sha256
-        (base32 "1yn7xxah1pwvfdvn49kkk0jyl3iph8fis87b9g6by5kavnylrwvy"))))
+        (base32 "19zqqq0dz3fscch5vxy1lfyq4hfmdbvzfqqm123l5snbdk52l4li"))))
     (properties `((upstream-name . "mHMMbayes")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-rcpp r-mvtnorm r-mcmcpack))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/emmekeaarts/mHMMbayes")
+    (home-page "https://CRAN.R-project.org/package=mHMMbayes")
     (synopsis "Multilevel Hidden Markov Models Using Bayesian Estimation")
     (description
      "An implementation of the multilevel (also known as mixed or random effects)
@@ -24552,10 +24552,11 @@ simultaneously, see e.g., de Haan-Rietdijk et al.
 <doi:10.1080/00273171.2017.1370364>.  Using a multilevel framework, we allow for
 heterogeneity in the model parameters (transition probability matrix and
 conditional distribution), while estimating one overall HMM. The model can be
-fitted on multivariate data with a categorical distribution, and include
-individual level covariates (allowing for e.g., group comparisons on model
-parameters).  Parameters are estimated using Bayesian estimation utilizing the
-forward-backward recursion within a hybrid Metropolis within Gibbs sampler.  The
+fitted on multivariate data with either a categorical or Normal distribution,
+and include individual level covariates (allowing for e.g., group comparisons on
+model parameters).  Parameters are estimated using Bayesian estimation utilizing
+the forward-backward recursion within a hybrid Metropolis within Gibbs sampler.
+Missing data (NA) in the dependent variables is accommodated assuming MAR. The
 package also includes various visualization options, a function to simulate
 data, and a function to obtain the most likely hidden state sequence for each
 individual using the Viterbi algorithm.")
@@ -34527,28 +34528,6 @@ weighted and unweighted methods.  Jorjani, H., et al. (2003)
 <doi:10.3168/jds.S0022-0302(03)73646-7>.  Schaeffer, L. R. (2014)
 <http://animalbiosciences.uoguelph.ca/~lrs/ELARES/PDforce.pdf>.")
     (license license:gpl3)))
-
-(define-public r-mbclusterwise
-  (package
-    (name "r-mbclusterwise")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mbclusterwise" version))
-       (sha256
-        (base32 "1ilqaxcxf1k3ck910s0xqwnp88w8ag5rn1dpvaa1i7jlcldsbnhp"))))
-    (properties `((upstream-name . "mbclusterwise")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-kknn r-foreach r-doparallel r-ade4))
-    (home-page "https://cran.r-project.org/package=mbclusterwise")
-    (synopsis "Clusterwise Multiblock Analyses")
-    (description
-     "Perform clusterwise multiblock analyses (clusterwise multiblock Partial Least
-Squares, clusterwise multiblock Redundancy Analysis or a regularized method
-between the two latter ones) associated with a F-fold cross-validation procedure
-to select the optimal number of clusters and dimensions.")
-    (license license:gpl2+)))
 
 (define-public r-mbcbook
   (package

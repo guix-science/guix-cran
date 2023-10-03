@@ -1774,13 +1774,13 @@ images, see Taylor et al (2014) <doi:10.1080/00401706.2013.823890>.")
 (define-public r-lrtester
   (package
     (name "r-lrtester")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LRTesteR" version))
        (sha256
-        (base32 "0wq4kjldrvc5m035qfmgpvfqlk50iji7ckgilnxqqiws8mmxjyic"))))
+        (base32 "00p9mnlnj2md14c7vhhfs6bq0f2dwhb7r4dxjv6d1b62vfr2v4iv"))))
     (properties `((upstream-name . "LRTesteR")))
     (build-system r-build-system)
     (propagated-inputs (list r-statmod r-rlang))

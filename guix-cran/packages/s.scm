@@ -4209,13 +4209,13 @@ phenomena is given by Meyer et al. (2017) <doi:10.18637/jss.v077.i11>.")
 (define-public r-surveil
   (package
     (name "r-surveil")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "surveil" version))
        (sha256
-        (base32 "1b7nwp3rmvbnaw6l2pjhfia864cirpfhn2smib5c4zl2h9282rjk"))))
+        (base32 "1bk048mjnviwrls2s25wqrrm3iwi6qjkjlhnpb0i7wjm9cckzz7j"))))
     (properties `((upstream-name . "surveil")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -21250,13 +21250,13 @@ appearance.")
 (define-public r-spatsurv
   (package
     (name "r-spatsurv")
-    (version "1.8-2")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spatsurv" version))
        (sha256
-        (base32 "0v6l1vxcvy6bdg6inszcz4rryb99v9ixxcmh4a3381s4md9h6z4v"))))
+        (base32 "1v0b11mlds8k1jx6qgcqalkzkw7j5bwh3j1v70qknkg3p4xsqzp3"))))
     (properties `((upstream-name . "spatsurv")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -21265,7 +21265,7 @@ appearance.")
                              r-spatstat-geom
                              r-spatstat-explore
                              r-sp
-                             r-rgeos
+                             r-sf
                              r-rcolorbrewer
                              r-raster
                              r-matrix
@@ -22251,30 +22251,6 @@ Analysis, 167, 15-30.")
      "This package provides methods and data for cluster detection and disease
 mapping.")
     (license license:gpl2)))
-
-(define-public r-spatialeco
-  (package
-    (name "r-spatialeco")
-    (version "2.0-1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "spatialEco" version))
-       (sha256
-        (base32 "1iyym2cb6i7p2wxy8q1yasvlhrl2991mjsnhrv387zjd93lf5kyh"))))
-    (properties `((upstream-name . "spatialEco")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-terra r-sf))
-    (home-page "https://github.com/jeffreyevans/spatialEco")
-    (synopsis "Spatial Analysis and Modelling Utilities")
-    (description
-     "Utilities to support spatial data manipulation, query, sampling and modelling in
-ecological applications.  Functions include models for species population
-density, spatial smoothing, multivariate separability, point process model for
-creating pseudo- absences and sub-sampling, Quadrant-based sampling and
-analysis, auto-logistic modeling, sampling models, cluster optimization,
-statistical exploratory tools and raster-based metrics.")
-    (license license:gpl3)))
 
 (define-public r-spatialddls
   (package
@@ -29392,22 +29368,38 @@ user specified substantive model.")
 (define-public r-smccnet
   (package
     (name "r-smccnet")
-    (version "0.99.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SmCCNet" version))
        (sha256
-        (base32 "0ixvh1pd1gzbscwg4xjlcgxq5c9vqahil0fysfjc3fnba3wiidzx"))))
+        (base32 "18zshqd9hkc7xw4sn4rx4703mask29j15v384zgn1y0x1q0wx81h"))))
     (properties `((upstream-name . "SmCCNet")))
     (build-system r-build-system)
-    (propagated-inputs (list r-pma r-pbapply r-matrix r-igraph))
+    (propagated-inputs (list r-spls
+                             r-rlist
+                             r-purrr
+                             r-proc
+                             r-pracma
+                             r-pma
+                             r-pbapply
+                             r-matrix
+                             r-magrittr
+                             r-igraph
+                             r-future
+                             r-furrr
+                             r-envstats))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/KechrisLab/SmCCNet")
     (synopsis "Sparse Multiple Canonical Correlation Network Analysis Tool")
     (description
-     "This package provides a canonical correlation based framework for constructing
-phenotype-specific multi-omics networks by integrating multiple omics data types
-and a quantitative phenotype of interest.")
+     "This package provides a canonical correlation based framework (@code{SmCCNet})
+designed for the construction of phenotype-specific multi-omics networks.  This
+framework adeptly integrates single or multiple omics data types along with a
+quantitative or binary phenotype of interest.  It offers a streamlined setup
+process that can be tailored manually or configured automatically, ensuring a
+flexible and user-friendly experience.")
     (license license:gpl3)))
 
 (define-public r-smbinning
@@ -35036,13 +35028,13 @@ networks.")
 (define-public r-simmr
   (package
     (name "r-simmr")
-    (version "0.5.1.213")
+    (version "0.5.1.214")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simmr" version))
        (sha256
-        (base32 "18x67qgbr703lrx8hcplvk1vgm4yjki70sy40bih3mx1ra1cy5zb"))))
+        (base32 "1i3v96i98wik0dzj4p5bnp425dcrh1hhghqg6hmyixycy1r4mw6w"))))
     (properties `((upstream-name . "simmr")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -41282,13 +41274,13 @@ employing multiple threads to achieve significant runtime reduction.  Uses
 (define-public r-shazam
   (package
     (name "r-shazam")
-    (version "1.1.2")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shazam" version))
        (sha256
-        (base32 "08zz5sr8vpnibpi6n3s16grcl0vhg2gw27p79h9mkqvz1d5hy7ql"))))
+        (base32 "16bkwm903v4hv6ng6ncfzax2s5x8qfa4ldlwzclry7iggniq7dzh"))))
     (properties `((upstream-name . "shazam")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -41590,13 +41582,13 @@ clustering.")
 (define-public r-shar
   (package
     (name "r-shar")
-    (version "2.0.4")
+    (version "2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shar" version))
        (sha256
-        (base32 "1ylsx5gdl7cal8357z8km3hwa5x2pl04bs2pvv2dix5inmcv2syl"))))
+        (base32 "10y7zkllxyahkxix5w2ijz9c3h7w79kx2pmhi57nmpxhmp338pzf"))))
     (properties `((upstream-name . "shar")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -51859,6 +51851,43 @@ between colour spaces.")
      "Fast and regularized version of GWR for large dataset, detailed in Murakami,
 Tsutsumida, Yoshida, Nakaya, and Lu (2019) <@code{arXiv:1905.00266>}.")
     (license license:gpl2+)))
+
+(define-public r-scgoclust
+  (package
+    (name "r-scgoclust")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "scGOclust" version))
+       (sha256
+        (base32 "0776fp7z4kcdyaa2xk7ycjp6x7x5mcf6wnqghphry2g18ag9r5m9"))))
+    (properties `((upstream-name . "scGOclust")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-slanter
+                             r-seurat
+                             r-networkd3
+                             r-matrix
+                             r-magrittr
+                             r-limma
+                             r-dplyr
+                             r-biomart))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Functional-Genomics/scGOclust")
+    (synopsis
+     "Measuring Cell Type Similarity with Gene Ontology in Single-Cell RNA-Seq")
+    (description
+     "Traditional methods for analyzing single cell RNA-seq datasets focus solely on
+gene expression, but this package introduces a novel approach that goes beyond
+this limitation.  Using Gene Ontology terms as features, the package allows for
+the functional profile of cell populations, and comparison within and between
+datasets from the same or different species.  Our approach enables the discovery
+of previously unrecognized functional similarities and differences between cell
+types and has demonstrated success in identifying cell types functional
+correspondence even between evolutionarily distant species.")
+    (license license:gpl3+)))
 
 (define-public r-scglr
   (package

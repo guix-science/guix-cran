@@ -8004,13 +8004,13 @@ generate and take coefficient modulo are provided.")
 (define-public r-hetgp
   (package
     (name "r-hetgp")
-    (version "1.1.5")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hetGP" version))
        (sha256
-        (base32 "0cdhqv9jy28hdbx3rd10zl1a0awv8y8wkhfbh4nfrz26y1329qc4"))))
+        (base32 "1rw8ss67d2zglnc0vl2kvmkgglks1666d1ps0bpqgn1f8mdwv2kr"))))
     (properties `((upstream-name . "hetGP")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-mass r-dicedesign))

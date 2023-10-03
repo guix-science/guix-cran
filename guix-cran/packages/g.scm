@@ -1317,31 +1317,6 @@ pre-post transitions.  For details of the latent class model, see
 <http://gsood.com/research/papers/guess.pdf>.")
     (license license:expat)))
 
-(define-public r-guerry
-  (package
-    (name "r-guerry")
-    (version "1.8.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Guerry" version))
-       (sha256
-        (base32 "1pci00b69sk9qlgpkbmvcijlbh48xdmshh57xgi84m85j16i4rlw"))))
-    (properties `((upstream-name . "Guerry")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sp))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/friendly/Guerry")
-    (synopsis
-     "Maps, Data and Methods Related to Guerry (1833) \"Moral Statistics of France\"")
-    (description
-     "Maps of France in 1830, multivariate datasets from A.-M. Guerry and others, and
-statistical and graphic methods related to Guerry's \"Moral Statistics of
-France\".  The goal is to facilitate the exploration and development of
-statistical and graphic methods for multivariate data in a geospatial context of
-historical interest.")
-    (license (list license:gpl2+ license:gpl3+))))
-
 (define-public r-guardianapi
   (package
     (name "r-guardianapi")
@@ -4163,13 +4138,13 @@ Details of the method can be found in Dufey (2017) <@code{arXiv:1703.00070>}.")
 (define-public r-grim
   (package
     (name "r-grim")
-    (version "0.2.11")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gRim" version))
        (sha256
-        (base32 "03f0scpxmjrkihvfbhzg9b00q4gq1vak826b8d5ywf550pn1gjyx"))))
+        (base32 "1iimjfqy2sdxxy2lvsaywxap8zik2qikjy2ib06mqjxrv711fx2a"))))
     (properties `((upstream-name . "gRim")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen
@@ -7645,13 +7620,13 @@ Griffing, B. (1956) <https://www.publish.csiro.au/bi/pdf/BI9560463>.")
 (define-public r-gpboost
   (package
     (name "r-gpboost")
-    (version "1.2.3")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gpboost" version))
        (sha256
-        (base32 "0fn3qlsxf31zqndnr2058hijy64m5bfn7iyh4qfm2z2vnxmkhn83"))))
+        (base32 "1v0v3kilyl168i90did8flbj30cvr4w1sd2zkiyj9f8f9hg5h7al"))))
     (properties `((upstream-name . "gpboost")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjsonio r-r6 r-matrix r-data-table))

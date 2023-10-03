@@ -4876,13 +4876,13 @@ crosswalks to other habitat typologies.")
 (define-public r-eummd
   (package
     (name "r-eummd")
-    (version "0.1.1")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eummd" version))
        (sha256
-        (base32 "0m9bm8iyw1q0bkr9aa1yp5gsc12sn5l9nadcm0gjkywlb2g8wwhk"))))
+        (base32 "1g0h9b7d89kj7yh45flygmnc76dgjgwr8x8h1kvqq4bvgbwg51ry"))))
     (properties `((upstream-name . "eummd")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))

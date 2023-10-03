@@ -1946,6 +1946,29 @@ increase reproducibility and correctness.")
 and plots.")
     (license license:gpl3)))
 
+(define-public r-wordpuzzler
+  (package
+    (name "r-wordpuzzler")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "wordPuzzleR" version))
+       (sha256
+        (base32 "147038i7rr1nr0ippvm7q7brjk9jvyv5pgafsqm3s4hcy1dgh43w"))))
+    (properties `((upstream-name . "wordPuzzleR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr r-scales r-purrr))
+    (home-page "https://cran.r-project.org/package=wordPuzzleR")
+    (synopsis "Word Puzzle Game")
+    (description
+     "The word puzzle game requires you to find out the letters in a word within a
+limited number of guesses.  In each round, if your guess hit any letters in the
+word, they reveal themselves.  If all letters are revealed before your guesses
+run out, you win this game; otherwise you fail.  You may run multiple games to
+guess different words.")
+    (license license:expat)))
+
 (define-public r-wordpredictor
   (package
     (name "r-wordpredictor")
@@ -4097,6 +4120,29 @@ testing.")
 run or source location of a command.  This can be from the RScript'/R terminal
 commands or RStudio console, source editor, Rmarkdown document and a Shiny
 application.")
+    (license license:expat)))
+
+(define-public r-whatthreewords
+  (package
+    (name "r-whatthreewords")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "whatthreewords" version))
+       (sha256
+        (base32 "1shr4d1q2vallz251s6h0m2ncbx7lh0i194pm416q32ha0cz8ska"))))
+    (properties `((upstream-name . "whatthreewords")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-httr2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://davidasmith.github.io/whatthreewords/")
+    (synopsis "Work with the 'what3words' API for Easy Location Referencing")
+    (description
+     "Use the what3words API <https://developer.what3words.com/public-api> to return
+three words which uniquely identify every 3m x 3m square on Earth.  It is also
+possible to return coordinates from any valid three words location.  Supports
+multiple languages.")
     (license license:expat)))
 
 (define-public r-whatsr

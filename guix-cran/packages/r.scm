@@ -19654,13 +19654,13 @@ force of mortality.")
 (define-public r-rkin
   (package
     (name "r-rkin")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rKIN" version))
        (sha256
-        (base32 "0y9m3kxx2d43p6krq37fsy5hbrby1hbp4b11gw1ck62ywdcmbs6x"))))
+        (base32 "0dp8m7x5a9glz7yvbv207j3l0226xjxmgf0k2x6rv7zwg9v6y5qk"))))
     (properties `((upstream-name . "rKIN")))
     (build-system r-build-system)
     (propagated-inputs (list r-shades
@@ -23519,26 +23519,27 @@ utilizes a Parsing Expression Grammar specifically for scientific names.")
 (define-public r-rgnoisefilt
   (package
     (name "r-rgnoisefilt")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rgnoisefilt" version))
        (sha256
-        (base32 "0w9xif0f2k5q5xvn37rc7b9ql1fz77kjjjmimnkmcg9ab1786j3z"))))
+        (base32 "0rdjbxws1bimpnwfv46yycafvwjc2lcqgdf993f5mm2sg2fxv2da"))))
     (properties `((upstream-name . "rgnoisefilt")))
     (build-system r-build-system)
-    (propagated-inputs (list r-ubl
-                             r-rpart
+    (propagated-inputs (list r-rpart
                              r-randomforest
                              r-nnet
                              r-modelr
+                             r-kknn
                              r-infotheo
                              r-ggplot2
                              r-gbm
                              r-fnn
                              r-entropy
                              r-e1071
+                             r-class
                              r-arules))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/juanmartinsantos/rgnoisefilt")

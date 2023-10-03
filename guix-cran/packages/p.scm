@@ -4029,6 +4029,32 @@ borrowing using an integrated approach described in Lewis et al., (2019)
 dynamic borrowing methods.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
+(define-public r-psbcspeedup
+  (package
+    (name "r-psbcspeedup")
+    (version "2.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "psbcSpeedUp" version))
+       (sha256
+        (base32 "09pkp61m1wmg59khwgvhsahagnjxwpg58gzlczlai7qvkb3y530i"))))
+    (properties `((upstream-name . "psbcSpeedUp")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-mass
+                             r-ggplot2
+                             r-ggally))
+    (home-page "https://github.com/ocbe-uio/psbcSpeedUp")
+    (synopsis "Penalized Semiparametric Bayesian Survival Models")
+    (description
+     "Algorithms to speed up the Bayesian Lasso Cox model (Lee et al., Int J Biostat,
+2011 <doi:10.2202/1557-4679.1301>) and the Bayesian Lasso Cox with mandatory
+variables (Zucknick et al.  Biometrical J, 2015 <doi:10.1002/bimj.201400160>).")
+    (license license:gpl3)))
+
 (define-public r-psbcgroup
   (package
     (name "r-psbcgroup")
@@ -16818,13 +16844,13 @@ are supported.  See Van Calster et al. (2016)
 (define-public r-pmc
   (package
     (name "r-pmc")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pmc" version))
        (sha256
-        (base32 "1v3x1h1hnxvg3qfkridsvz4f652yfs3fgl0kysnkkshxj9fl862q"))))
+        (base32 "1j2qiabq2qd4i8y28s87k0jxbbvv2yhjxmxsvvh9i8gzar17p5g7"))))
     (properties `((upstream-name . "pmc")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -27249,13 +27275,13 @@ server of the Peer Models Network.")
 (define-public r-pedtools
   (package
     (name "r-pedtools")
-    (version "2.3.1")
+    (version "2.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pedtools" version))
        (sha256
-        (base32 "0pdpf9fx5k88aq798vzpyvgczfr3gr6p5bcnqvvdxg3xagll4ql2"))))
+        (base32 "0hd993g377i0hxsy5abklm6ajcpizfps9lp9qb8bcslzclh06h5v"))))
     (properties `((upstream-name . "pedtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-pedmut r-kinship2))

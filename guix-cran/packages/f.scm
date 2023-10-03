@@ -300,13 +300,13 @@ applying it in different contexts (parametric or non-parametric).")
 (define-public r-fwb
   (package
     (name "r-fwb")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fwb" version))
        (sha256
-        (base32 "0hgbzmlbj1hhckpxv9zhchk8x8lq0ahcpvhcyibybkwxydii3dd4"))))
+        (base32 "1h6ydh9rzs44xr89995bj4z91n4vc2xa1gjkh3nfhzjk6cgnja02"))))
     (properties `((upstream-name . "fwb")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-pbapply r-chk))
@@ -6507,13 +6507,13 @@ Latent Class Discrete Weibull Models.This package is based on Fader and Hardie
 (define-public r-foresttools
   (package
     (name "r-foresttools")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ForestTools" version))
        (sha256
-        (base32 "1az5rw91xakn4ja1lljizgdkfkbdps4zh2l00jp4i09gl9bkx50s"))))
+        (base32 "0ghj411sg8054zxipjbbkhsbx7q98ji98p9wk0xzx8mzrdsi04qy"))))
     (properties `((upstream-name . "ForestTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -9537,26 +9537,26 @@ domestic flights within the country.")
 (define-public r-flightr
   (package
     (name "r-flightr")
-    (version "0.5.3")
+    (version "0.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FLightR" version))
        (sha256
-        (base32 "19ci9gw314sj4lyvw84mgg5ni5zbgq35glcwd4ry0rkkr9vikm28"))))
+        (base32 "1lbdh4m0s12617s7sarqhlj88j3rn8zaiiwz361rx83map4vvhad"))))
     (properties `((upstream-name . "FLightR")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm
-                             r-sp
-                             r-rgeos
-                             r-rgdal
+                             r-suntools
+                             r-sf
                              r-rcpparmadillo
                              r-nlme
                              r-mgcv
-                             r-maptools
+                             r-maps
                              r-ggsn
                              r-ggplot2
                              r-ggmap
+                             r-geosphere
                              r-fields
                              r-circular
                              r-circstats

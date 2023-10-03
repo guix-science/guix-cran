@@ -1432,13 +1432,13 @@ ranger and @code{mlrMBO}'.")
 (define-public r-tunepareto
   (package
     (name "r-tunepareto")
-    (version "2.5.2")
+    (version "2.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TunePareto" version))
        (sha256
-        (base32 "1zv467ddy8fsyj4473jyj5cwm7gx3n30py2y7wlqgwbxpfsgxn09"))))
+        (base32 "097rawf1mjam6gbh7ng0x8hcjv18zp9h0hvm62r6nfzyfzlakf7g"))))
     (properties `((upstream-name . "TunePareto")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=TunePareto")
@@ -7335,13 +7335,13 @@ inheritance to handle dialect differences.")
 (define-public r-transfr
   (package
     (name "r-transfr")
-    (version "1.0.7")
+    (version "1.0.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "transfR" version))
        (sha256
-        (base32 "0digc0i3cr3hfdlcz3myj7kwlkcspsd4wn82laswxb07nvbbi6sv"))))
+        (base32 "1qmkqn0gl4d6c0j1f07nmlv1gxh6in7d21dlp80ilmnaqyhb1fnj"))))
     (properties `((upstream-name . "transfR")))
     (build-system r-build-system)
     (propagated-inputs (list r-units
@@ -13744,6 +13744,46 @@ and most efficient data storage.")
 calculate standardized mean differences for variables in a data frame, returning
 the results in a tidy format.")
     (license license:expat)))
+
+(define-public r-tidyseurat
+  (package
+    (name "r-tidyseurat")
+    (version "0.7.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidyseurat" version))
+       (sha256
+        (base32 "1mpb57xsaia9gdjnm8gy4kcpfdxrmw5xm0af15mzd96pg39918pm"))))
+    (properties `((upstream-name . "tidyseurat")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs
+                             r-ttservice
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-seuratobject
+                             r-seurat
+                             r-rlang
+                             r-purrr
+                             r-plotly
+                             r-pillar
+                             r-matrix
+                             r-magrittr
+                             r-lifecycle
+                             r-ggplot2
+                             r-fansi
+                             r-ellipsis
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/stemangiola/tidyseurat")
+    (synopsis "Brings Seurat to the Tidyverse")
+    (description
+     "It creates an invisible layer that allow to see the Seurat object as tibble and
+interact seamlessly with the tidyverse.")
+    (license license:gpl3)))
 
 (define-public r-tidysem
   (package

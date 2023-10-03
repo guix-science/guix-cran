@@ -4687,13 +4687,13 @@ and the MBN-type bias correction by Morel, Bokossa, and Neerchal (2003)
 (define-public r-crqa
   (package
     (name "r-crqa")
-    (version "2.0.3")
+    (version "2.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crqa" version))
        (sha256
-        (base32 "02cz52gmq4x9xhzsv26babp4z1z6dcy7j8az7xbr6m0d8f09kq9s"))))
+        (base32 "1sr185afy81c8nb8bmn56ddv9xncrjpis49xp24395i508ay740x"))))
     (properties `((upstream-name . "crqa")))
     (build-system r-build-system)
     (propagated-inputs (list r-tserieschaos
@@ -4701,20 +4701,20 @@ and the MBN-type bias correction by Morel, Bokossa, and Neerchal (2003)
                              r-pracma
                              r-plot3d
                              r-matrix
-                             r-gplots
-                             r-fsa))
+                             r-gplots))
     (native-inputs (list r-knitr gfortran))
     (home-page "https://cran.r-project.org/package=crqa")
     (synopsis
-     "Recurrence Quantification Analysis for Categorical and Continuous Time-Series")
+     "Unidimensional and Multidimensional Methods for Recurrence Quantification Analysis")
     (description
      "Auto, Cross and Multi-dimensional recurrence quantification analysis.  Different
-methods for computing recurrence, cross vs. multidimensional or profile it -only
-looking at the diagonal recurrent points- as well as functions for optimization
-and plotting are proposed.  in-depth measures of the whole cross-recurrence
-plot, Please refer to Coco and Dale (2014) <doi:10.3389/fpsyg.2014.00510> and
-Wallot (2018) <doi:10.1080/00273171.2018.1512846> for further details about the
-method.")
+methods for computing recurrence, cross vs. multidimensional or profile iti.e.,
+only looking at the diagonal recurrent points, as well as functions for
+optimization and plotting are proposed.  in-depth measures of the whole
+cross-recurrence plot, Please refer to Coco and others (2021)
+<doi:10.32614/RJ-2021-062>, Coco and Dale (2014) <doi:10.3389/fpsyg.2014.00510>
+and Wallot (2018) <doi: 10.1080/00273171.2018.1512846> for further details about
+the method.")
     (license license:gpl2+)))
 
 (define-public r-crplyr
@@ -12823,13 +12823,13 @@ Bioconductor.")
 (define-public r-cookies
   (package
     (name "r-cookies")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cookies" version))
        (sha256
-        (base32 "024xccsx463hhmy4j56n4bxysp2yinfy78rvnvlvx2dzq70xamyv"))))
+        (base32 "1dpil57grnqn34b682fakzsrh2xghc566nhqdgnrjd7ly59v0z3x"))))
     (properties `((upstream-name . "cookies")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs

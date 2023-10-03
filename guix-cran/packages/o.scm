@@ -1761,13 +1761,13 @@ code was developed in the Biological Information Processing Group at the
 (define-public r-oscar
   (package
     (name "r-oscar")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oscar" version))
        (sha256
-        (base32 "1fr7hwy7bnqz160vqlq84xzyfvhgsnjphqkcrfi0qc5lfbwlpm06"))))
+        (base32 "1khyl3y8rpyn0skn45wcl1saa713fh48fv6vh3hfgyf46j8ibgra"))))
     (properties `((upstream-name . "oscar")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-proc r-matrix r-hamlet))
@@ -5436,13 +5436,13 @@ network).")
 (define-public r-openspecy
   (package
     (name "r-openspecy")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OpenSpecy" version))
        (sha256
-        (base32 "1dsxaqi1z2mjl5wd3zd844gxkcx8x8sp5wr71mmmh0whb0d79zbh"))))
+        (base32 "0hzfzmy8251im31h3l5lvd9hc5qqqx38rlg82w51nxk4z7yar043"))))
     (properties `((upstream-name . "OpenSpecy")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -9391,13 +9391,13 @@ submission_url'.")
 (define-public r-odin
   (package
     (name "r-odin")
-    (version "1.2.4")
+    (version "1.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "odin" version))
        (sha256
-        (base32 "0m8afhbpjdcdscgw7ngsdr7n8qpxicn3pqjrsjbwi4hrk5aii7ry"))))
+        (base32 "1fczgf3x35inlyhkw1h4mf8j9alrv4w98b9jfmbc2a9q29gi161p"))))
     (properties `((upstream-name . "odin")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr

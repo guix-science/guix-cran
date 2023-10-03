@@ -1933,13 +1933,13 @@ the underlying norm.")
 (define-public r-dual
   (package
     (name "r-dual")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dual" version))
        (sha256
-        (base32 "0ssdq9gjys9iskwpkllp0m2ig2s7j6jmyq1b5j5lkns5f5aqa7j6"))))
+        (base32 "08r2qz5rvsc3pjrc8rsks6r39w52n621mfg77yfnk4lc1vqn4y8d"))))
     (properties `((upstream-name . "dual")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=dual")
@@ -8717,13 +8717,13 @@ parameter by AIC, BIC, GIC and GIC.")
 (define-public r-dlagm
   (package
     (name "r-dlagm")
-    (version "1.1.12")
+    (version "1.1.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dLagM" version))
        (sha256
-        (base32 "0j0jllwhbx4kjb10y3lxxf37108alnydndxf54hqlwp67q9vy5pm"))))
+        (base32 "0wn09qdmnahn0imi17yq4flcnr69cms832si1z03l9xwcjkfjxfm"))))
     (properties `((upstream-name . "dLagM")))
     (build-system r-build-system)
     (propagated-inputs (list r-wavethresh
@@ -17140,6 +17140,37 @@ shift adaptation.  The implemented methods are @code{uLSIF} (Hido et al. (2011)
 brain networks using partial correlation.")
     (license license:gpl2)))
 
+(define-public r-densityarea
+  (package
+    (name "r-densityarea")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "densityarea" version))
+       (sha256
+        (base32 "0blcpclwa6507vna9j8ysj0rs57r15f9vhp78d8fnl1436zlm217"))))
+    (properties `((upstream-name . "densityarea")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs
+                             r-tibble
+                             r-sfheaders
+                             r-sf
+                             r-rlang
+                             r-purrr
+                             r-isoband
+                             r-ggdensity
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/JoFrhwld/densityarea")
+    (synopsis "Polygons of Bivariate Density Distributions")
+    (description
+     "With bivariate data, it is possible to calculate 2-dimensional kernel density
+estimates that return polygons at given levels of probability.  densityarea
+returns these polygons for analysis, including for calculating their area.")
+    (license license:gpl3+)))
+
 (define-public r-densitr
   (package
     (name "r-densitr")
@@ -24859,6 +24890,29 @@ of functionalities for data science, promoting ease of use, extensibility, and
 integration with various tools and libraries.  Information on Experiment Line is
 based on Ogasawara et al. (2009) <doi:10.1007/978-3-642-02279-1_20>.")
     (license license:expat)))
+
+(define-public r-dalsm
+  (package
+    (name "r-dalsm")
+    (version "0.9.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DALSM" version))
+       (sha256
+        (base32 "00v3h9np8nfhiyiz6r4bs5gzqqw3qfx275ab1byvjsr42zx11qpr"))))
+    (properties `((upstream-name . "DALSM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-plyr r-mass r-cubicbsplines))
+    (home-page "<https://github.com/plambertULiege/DALSM>")
+    (synopsis "Nonparametric Double Additive Location-Scale Model (DALSM)")
+    (description
+     "Fit of a double additive location-scale model with a nonparametric error
+distribution from possibly right- or interval censored data.  The additive terms
+in the location and dispersion submodels, as well as the unknown error
+distribution in the location-scale model, are estimated using Laplace P-splines.
+ For more details, see Lambert (2021) <doi:10.1016/j.csda.2021.107250>.")
+    (license license:gpl3)))
 
 (define-public r-dalextra
   (package
