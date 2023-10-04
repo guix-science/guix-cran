@@ -454,6 +454,31 @@ comparison for the unit exposed to the intervention than any comparison unit
 alone.")
     (license license:gpl2+)))
 
+(define-public r-syntenyplotter
+  (package
+    (name "r-syntenyplotter")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "syntenyPlotteR" version))
+       (sha256
+        (base32 "00w380hcw7zfsr4lgzlp57l7rcl280n3y5m8xsp7n2f5csf8kq5q"))))
+    (properties `((upstream-name . "syntenyPlotteR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=syntenyPlotteR")
+    (synopsis "Genome Synteny Visualization")
+    (description
+     "Draw syntenic relationships between genome assemblies.  There are 3 functions
+which take a tab delimited file containing alignment data for syntenic blocks
+between genomes to produce either a linear alignment plot, an evolution highway
+style plot, or a painted ideogram representing syntenic relationships.  There is
+also a function to convert alignment data in the DESCHRAMBLER/@code{inferCAR}
+format to the required data structure.")
+    (license license:expat)))
+
 (define-public r-syntaxr
   (package
     (name "r-syntaxr")
@@ -19396,13 +19421,13 @@ Stewart Fotheringham.")
 (define-public r-spgs
   (package
     (name "r-spgs")
-    (version "1.0-3")
+    (version "1.0-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spgs" version))
        (sha256
-        (base32 "0a7zqih8q4imi49in8d2j9wa82savp7d2g4xy4wlwblwf6f2ggsh"))))
+        (base32 "0ln0fhxiavzwp5qlz5akk5896dyznwbz23f816vkjnxmw7pi4p70"))))
     (properties `((upstream-name . "spgs")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=spgs")
@@ -22515,13 +22540,13 @@ works with the updated spatstat package (>= 3.0-2).")
 (define-public r-spate
   (package
     (name "r-spate")
-    (version "1.7.4")
+    (version "1.7.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spate" version))
        (sha256
-        (base32 "0fc09y54g1h9pmc0rfwbrlzsck27kxhsynzwyxydysmda133spdf"))))
+        (base32 "114amd3rh9ns6pyh92c5n991904mfwd6vi5cljzm2w3rhyf9vjci"))))
     (properties `((upstream-name . "spate")))
     (build-system r-build-system)
     (inputs (list fftw))
@@ -29368,13 +29393,13 @@ user specified substantive model.")
 (define-public r-smccnet
   (package
     (name "r-smccnet")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SmCCNet" version))
        (sha256
-        (base32 "18zshqd9hkc7xw4sn4rx4703mask29j15v384zgn1y0x1q0wx81h"))))
+        (base32 "0xwmhkipibc5pd1ipjnpjy5p9ijkvxrnz9mzi588d1s0vy6bgrc5"))))
     (properties `((upstream-name . "SmCCNet")))
     (build-system r-build-system)
     (propagated-inputs (list r-spls
@@ -53812,6 +53837,29 @@ names are provided for each census tract using data from NCI', the HUD crossover
 tables (Tract to Zip code) as of December, 2013, the USPS Zip code 5 database
 for 1999, and manual look ups on the USPS.gov web site.")
     (license license:gpl2+)))
+
+(define-public r-satres
+  (package
+    (name "r-satres")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "satres" version))
+       (sha256
+        (base32 "1kxpb15xbl4f3m9gqmvrad9dqcw0m9l6dxcvbqar743aakwh10sc"))))
+    (properties `((upstream-name . "satres")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra))
+    (native-inputs (list r-knitr))
+    (home-page "https://josesamos.github.io/satres/")
+    (synopsis "Grouping Satellite Bands by Spectral and Spatial Resolution")
+    (description
+     "Given raster files directly downloaded from various websites, it generates a
+raster structure where it merges them if they are tiles of the same scene and
+classifies them according to their spectral and spatial resolution for easy
+access by name.")
+    (license license:expat)))
 
 (define-public r-satin
   (package

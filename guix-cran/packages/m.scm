@@ -272,16 +272,16 @@ chosen alpha level of 0.05.")
 (define-public r-mxsem
   (package
     (name "r-mxsem")
-    (version "0.0.5")
+    (version "0.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mxsem" version))
        (sha256
-        (base32 "0s84f7hfrclg61qplggjzx7z0vm3fva36744q3pgx847m3q2b2fx"))))
+        (base32 "1a1fg5463vrcqgjz2yr5r26s937jdg1i3pq27kp0zwsa9fa3i5na"))))
     (properties `((upstream-name . "mxsem")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-openmx))
+    (propagated-inputs (list r-rcpp r-openmx r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://jhorzek.github.io/mxsem/")
     (synopsis "Specify 'OpenMx' Models with a 'lavaan'-Style Syntax")
@@ -1594,6 +1594,25 @@ hat-values (leverages), generalized Cook's distance, and generalized squared
 studentized residuals.  Several types of plots to detect influential
 observations are provided.")
     (license license:gpl2)))
+
+(define-public r-mvhist
+  (package
+    (name "r-mvhist")
+    (version "1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mvhist" version))
+       (sha256
+        (base32 "057yhkivcfjm9yazx0x8rn2xysgyc6y7nlcxpjl00yfi7wcjpmlh"))))
+    (properties `((upstream-name . "mvhist")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-simplicialcubature r-rgl r-rcdd r-mvmesh))
+    (home-page "https://cran.r-project.org/package=mvhist")
+    (synopsis "Multivariate Histograms")
+    (description
+     "Tabulate and plot directional and other multivariate histograms.")
+    (license license:gpl3+)))
 
 (define-public r-mvgps
   (package
@@ -24813,13 +24832,13 @@ canonical vectors in the p>>N setting, JASA <doi:10.1080/01621459.2015.1034318>.
 (define-public r-mgpstreamingsdk
   (package
     (name "r-mgpstreamingsdk")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mgpStreamingSDK" version))
        (sha256
-        (base32 "0mj0lljc5rbjsbq93y74m2jhh7shc03avv02xd5jgxxssxmxjrv0"))))
+        (base32 "1fgcca0jca0jw6gpcqjb5wrcl9x3r2hfhf1xwiwv2w1m7bhc3mkp"))))
     (properties `((upstream-name . "mgpStreamingSDK")))
     (build-system r-build-system)
     (propagated-inputs (list r-reticulate r-r6))

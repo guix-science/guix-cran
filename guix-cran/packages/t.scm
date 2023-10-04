@@ -4766,6 +4766,45 @@ then computed, thus providing a particular instance of diversity to measure.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-triptych
+  (package
+    (name "r-triptych")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "triptych" version))
+       (sha256
+        (base32 "171wf85hjjdqv5m78galsrqwjri6j62l0kh5ixgrjvglwvlz15iz"))))
+    (properties `((upstream-name . "triptych")))
+    (build-system r-build-system)
+    (inputs (list))
+    (propagated-inputs (list r-vctrs
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-scales
+                             r-rlang
+                             r-purrr
+                             r-proc
+                             r-patchwork
+                             r-monotone
+                             r-ggrepel
+                             r-ggplot2
+                             r-geomtextpath
+                             r-dplyr
+                             r-cpp11
+                             r-class))
+    (home-page "https://github.com/aijordan/triptych/")
+    (synopsis "Diagnostic Graphics to Evaluate Forecast Performance")
+    (description
+     "Overall predictive performance is measured by a mean score (or loss), which
+decomposes into miscalibration, discrimination, and uncertainty components.  The
+main focus is visualization of these distinct and complementary aspects in joint
+displays.  See Dimitriadis, Gneiting, Jordan, Vogel (2023)
+<@code{arXiv:2301.10803>}.")
+    (license license:expat)))
+
 (define-public r-tripsanddipr
   (package
     (name "r-tripsanddipr")
@@ -16684,13 +16723,13 @@ website.")
 (define-public r-theft
   (package
     (name "r-theft")
-    (version "0.5.3")
+    (version "0.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "theft" version))
        (sha256
-        (base32 "16imqrjhrp55y4z99xv7dzl2nfdjrj9y53wj7bkxqwykrdnydkvs"))))
+        (base32 "1kgz19rp62r0wsr6p3ihmxwywxh1zf4cxl356lg4b79zvlxkaqf6"))))
     (properties `((upstream-name . "theft")))
     (build-system r-build-system)
     (propagated-inputs (list r-tsibble

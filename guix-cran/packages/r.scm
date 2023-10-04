@@ -17472,13 +17472,13 @@ to facilitate the analysis of @code{MixtComp} output.")
 (define-public r-rmixtcompio
   (package
     (name "r-rmixtcompio")
-    (version "4.0.10")
+    (version "4.0.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RMixtCompIO" version))
        (sha256
-        (base32 "1hrhysdz6j487masw116yibg86gcvwfb5rdzfhi6cq4xqj9svngm"))))
+        (base32 "1y2m5fb8a2xc0ydrjl2l1a6vfabndvrighwz5yi288wqgih70gqz"))))
     (properties `((upstream-name . "RMixtCompIO")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-foreach r-doparallel r-bh))
@@ -30619,18 +30619,18 @@ Regression and Modeling with R by Adam Petrie, Cognella Publishers, ISBN:
 (define-public r-regcensus
   (package
     (name "r-regcensus")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "regcensus" version))
        (sha256
-        (base32 "102sq60ab2d1qf3kn32hh7z47cyll7ar7fffa1gda1k36b4wj6bc"))))
+        (base32 "0sab5pwbnc06vds23nzcargk8igfngsyqhvnh0q40g95b55fm0c8"))))
     (properties `((upstream-name . "regcensus")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyverse r-stringr r-jsonlite r-httr r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/QuantGov/regcensus-api-client-R")
+    (home-page "https://github.com/QuantGov/regcensus-api-R")
     (synopsis "Accessing Data from the 'RegCensusAPI'")
     (description
      "Allowing users to access data from the @code{RegCensusAPI}'.  The
@@ -31231,16 +31231,16 @@ multiview embedding described in Ye & Sugihara (2016)
 (define-public r-redlistr
   (package
     (name "r-redlistr")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "redlistr" version))
        (sha256
-        (base32 "003jxfmj1gryw77vnrvaxmpvjbshlq53wgcrj02mcywfcqzg4jcr"))))
+        (base32 "1m5dphcqcqy52l4r0pqiq80vl8nkh6vgv46qnjc02qjl7i1aipn5"))))
     (properties `((upstream-name . "redlistr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp r-rgeos r-raster r-plyr))
+    (propagated-inputs (list r-terra r-sp r-sf r-raster r-plyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/red-list-ecosystem/redlistr")
     (synopsis "Tools for the IUCN Red List of Ecosystems and Species")
@@ -47201,13 +47201,13 @@ calculate a frequency distribution.")
 (define-public r-r2country
   (package
     (name "r-r2country")
-    (version "2.0.2.3.0")
+    (version "2.0.2.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r2country" version))
        (sha256
-        (base32 "01mr3k1d872y9g2rn1xs44jcvkxsq51k6mmbc6h3km9yy9zskrjl"))))
+        (base32 "02xz9an51qd3b92s8fask5rgmv227di21yv6xzgkz9ccabp12lq7"))))
     (properties `((upstream-name . "r2country")))
     (build-system r-build-system)
     (propagated-inputs (list r-quickcode))

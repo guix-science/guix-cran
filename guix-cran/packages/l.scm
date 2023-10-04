@@ -9964,25 +9964,24 @@ periodical model validation.")
 (define-public r-lgcp
   (package
     (name "r-lgcp")
-    (version "1.8-2")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lgcp" version))
        (sha256
-        (base32 "0q7w95gpvdzlli60dgpixl0rn05f4707xwyw215dsrc1z8znyk73"))))
+        (base32 "0f7s53sypj5l6ry437albypf1j2g3vxh137vfjfx3n84r0bmp5mw"))))
     (properties `((upstream-name . "lgcp")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-utils
                              r-spatstat-geom
                              r-spatstat-explore
                              r-sp
+                             r-sf
                              r-rpanel
-                             r-rgeos
                              r-raster
                              r-ncdf4
                              r-matrix
-                             r-maptools
                              r-iterators
                              r-fields))
     (home-page "https://cran.r-project.org/package=lgcp")
@@ -14785,20 +14784,19 @@ are raster dataset exportable to any common GIS format.")
 (define-public r-landscapemetrics
   (package
     (name "r-landscapemetrics")
-    (version "1.5.7")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "landscapemetrics" version))
        (sha256
-        (base32 "1f9qp36dhkmz3cpymw18x31glcsdmjlz5dwrw8drb8ismxyhmzj7"))))
+        (base32 "0c7h6s9xsqf9jgwlkh4bpzmdg2hrzs16jrdpzn45n849bsv86g7n"))))
     (properties `((upstream-name . "landscapemetrics")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
-                             r-sp
+                             r-terra
                              r-rcpparmadillo
                              r-rcpp
-                             r-raster
                              r-ggplot2
                              r-cli))
     (native-inputs (list r-knitr))
@@ -14807,12 +14805,10 @@ are raster dataset exportable to any common GIS format.")
     (description
      "Calculates landscape metrics for categorical landscape patterns in a tidy
 workflow.  landscapemetrics reimplements the most common metrics from FRAGSTATS
-(<https://www.umass.edu/landeco/>) and new ones from the current literature on
-landscape metrics.  This package supports raster spatial objects and takes
-@code{RasterLayer}, @code{RasterStacks}, @code{RasterBricks} or lists of
-@code{RasterLayer} from the raster package as input arguments.  It further
-provides utility functions to visualize patches, select metrics and building
-blocks to develop new metrics.")
+(<https://www.fragstats.org/>) and new ones from the current literature on
+landscape metrics.  This package supports terra @code{SpatRaster} objects as
+input arguments.  It further provides utility functions to visualize patches,
+select metrics and building blocks to develop new metrics.")
     (license license:gpl3)))
 
 (define-public r-landsat8

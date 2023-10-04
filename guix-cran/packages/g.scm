@@ -140,13 +140,13 @@ returned by the @code{BinaryDosage::getbdinfo}() routine.")
 (define-public r-gxeprs
   (package
     (name "r-gxeprs")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GxEprs" version))
        (sha256
-        (base32 "0zy7yxhn2lwgccg4q9mrw3qvpbghj2m9adny4i94bzys8dp5dasr"))))
+        (base32 "1ylggdh0rzjz5ms107lg4jzayl0rsnqqzzmmg94j483yij7bm89f"))))
     (properties `((upstream-name . "GxEprs")))
     (build-system r-build-system)
     (home-page "https://github.com/DoviniJ/GxEprs")
@@ -872,13 +872,13 @@ package is implementation of method proposed in Xu et al (2019)
 (define-public r-gwalkr
   (package
     (name "r-gwalkr")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GWalkR" version))
        (sha256
-        (base32 "1fgqlr2s9i2ili14k3v3na9ir71j6lvfqd5j5aj5z9ih0z3b646q"))))
+        (base32 "0njga2h721vmz900z69sabf5vlzpws3fjawqrasj7y2w5hbcc4zk"))))
     (properties `((upstream-name . "GWalkR")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-openssl r-jsonlite r-htmlwidgets))
@@ -5777,13 +5777,13 @@ expression data to test the performance of genomic analyses.")
 (define-public r-graphseg
   (package
     (name "r-graphseg")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "graphseg" version))
        (sha256
-        (base32 "108i6yrwg505ndgm7j48shxs8wd2ciwm486a2nq267wpk4jrkdrz"))))
+        (base32 "0rgr9k0imif79prw5kkcnkpw3hx8ndzh1bvd0wxgqga8f9vr1cgk"))))
     (properties `((upstream-name . "graphseg")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-matrix r-magrittr r-igraph r-flsa))
@@ -5792,11 +5792,11 @@ expression data to test the performance of genomic analyses.")
     (description
      "Perform segmentation of graph-based signals.  Assume a noisy observation of a
 signal two values correspond to vertices on a graph.  Assume the true value of
-the signal is piece-wise constant (where each \\italic{piece} is a connected
-subgraph).  The main function, agraph(), computes the segmentation of the
-signal.  The package also includes a wrapper around the competing method flsa()
-(from package flsa').  More information about this method in Goepp and van de
-Kassteele (2022) \"Graph-Based Spatial Segmentation of Health-Related Areal Data\"
+the signal is piece-wise constant (where each piece is a connected subgraph).
+The main function, agraph(), computes the segmentation of the signal.  The
+package also includes a wrapper around the competing method flsa() (from package
+flsa').  More information about this method in Goepp and van de Kassteele (2022)
+\"Graph-Based Spatial Segmentation of Health-Related Areal Data\"
 <doi:10.48550/@code{arXiv.2206.06752>}.")
     (license license:gpl3+)))
 
@@ -21965,13 +21965,13 @@ allows running the hybrid multi-group approach (Lamberti (2021)
 (define-public r-genotriplo
   (package
     (name "r-genotriplo")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GenoTriplo" version))
        (sha256
-        (base32 "0dbx5zc3zynvz9grc5p0ynl1hrkcnjrfjh0b6vx3nn1q3ndj413s"))))
+        (base32 "11cycy2ans4l6jilr8ga9z6a1r2j0spsmdb5xrxrnwbbwl85czyk"))))
     (properties `((upstream-name . "GenoTriplo")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

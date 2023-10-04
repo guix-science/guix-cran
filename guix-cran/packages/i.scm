@@ -2553,13 +2553,13 @@ the stability of network states, as well as visualizing the simulation process."
 (define-public r-isingfit
   (package
     (name "r-isingfit")
-    (version "0.3.1")
+    (version "0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IsingFit" version))
        (sha256
-        (base32 "1prdzzp15klkdy72379bjksdgxr15nk16pqm35w95341cddxchc7"))))
+        (base32 "1pxpa3ji447csg1dp17x1y1071djjydl21c3zz2d3j3g6s6nmaqq"))))
     (properties `((upstream-name . "IsingFit")))
     (build-system r-build-system)
     (propagated-inputs (list r-qgraph r-matrix r-glmnet))

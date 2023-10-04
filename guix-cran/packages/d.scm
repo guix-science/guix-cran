@@ -1557,17 +1557,17 @@ offline and online monitoring.See in Danilo Marcondes Filho and Marcio Valk
 (define-public r-dvir
   (package
     (name "r-dvir")
-    (version "3.0.1")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dvir" version))
        (sha256
-        (base32 "0r6dg1kdcy8ryy6rk8vfpbav9k8wgjbbqgr3zmjk14rbmwmp8xd9"))))
+        (base32 "0xbdl80zsb1278h08klln9iwwlc6nn38325pmvmfn2k4gq8rqqgp"))))
     (properties `((upstream-name . "dvir")))
     (build-system r-build-system)
     (propagated-inputs (list r-pedtools r-pedprobr r-forrel))
-    (home-page "https://github.com/thoree/dvir")
+    (home-page "https://github.com/magnusdv/dvir")
     (synopsis "Disaster Victim Identification")
     (description
      "Joint DNA-based disaster victim identification (DVI), as described in Vigeland

@@ -2663,13 +2663,13 @@ package \"psychotree\".")
 (define-public r-psychonetrics
   (package
     (name "r-psychonetrics")
-    (version "0.11")
+    (version "0.11.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psychonetrics" version))
        (sha256
-        (base32 "03ikv5m9cqh9ixg5w3x13bxg7sqxnbpw157vijsmf1v7szggjary"))))
+        (base32 "0syfnjmkwlzfjpl6wpqrbrww1wmddj0l9vwjll1mg0v3as69m28b"))))
     (properties `((upstream-name . "psychonetrics")))
     (build-system r-build-system)
     (propagated-inputs (list r-vca
@@ -7038,13 +7038,13 @@ fluorescence in situ hybridization and next generation sequence experiments.")
 (define-public r-probbreed
   (package
     (name "r-probbreed")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ProbBreed" version))
        (sha256
-        (base32 "0n26gm6z0zwr00rpg8r5h9zzz9xkrqjvgnzjjddnz82kqpb39dq1"))))
+        (base32 "1m8zlqnrszzjv2c8dpzvihjaw7wrw04xgbqg6a0nr6lzqn8wdjs0"))))
     (properties `((upstream-name . "ProbBreed")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstan r-rlang r-lifecycle r-ggplot2))
@@ -8001,13 +8001,13 @@ Westendorp 1976, isbn:9789283100386).")
 (define-public r-pricer
   (package
     (name "r-pricer")
-    (version "0.1.67")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "priceR" version))
        (sha256
-        (base32 "0wxspa6ac7lpgdb4p75daipid3q3b3l8k44i6819v9w49z6y2dpi"))))
+        (base32 "0snxh5njl50jix0qwlgg3pcj6n8vynskw9x0ri5kkwc3nvws6zgq"))))
     (properties `((upstream-name . "priceR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -8017,8 +8017,7 @@ Westendorp 1976, isbn:9789283100386).")
                              r-lubridate
                              r-jsonlite
                              r-gsubfn
-                             r-dplyr
-                             r-curl))
+                             r-dplyr))
     (home-page "https://github.com/stevecondylios/priceR")
     (synopsis "Economics and Pricing Tools")
     (description

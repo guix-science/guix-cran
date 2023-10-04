@@ -9453,13 +9453,13 @@ surpluses of consumers, producers and sectors.")
 (define-public r-antareseditobject
   (package
     (name "r-antareseditobject")
-    (version "0.5.1")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "antaresEditObject" version))
        (sha256
-        (base32 "05zawrma7li2pqlsvs1y866a3l7qrpkb2mb0n9l883lfb4gw9q8q"))))
+        (base32 "1bj49sgnygkriqw7i6fqkf6d3piplxa58bgllrbzk29ngp2z1zdz"))))
     (properties `((upstream-name . "antaresEditObject")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -15433,13 +15433,13 @@ Bayesian Inference: the aghq Package\" <@code{arXiv:2101.04468>}.")
 (define-public r-aghmatrix
   (package
     (name "r-aghmatrix")
-    (version "2.1.3")
+    (version "2.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AGHmatrix" version))
        (sha256
-        (base32 "07939b25y421r1djhazxgmkaib4rh60q8wsvhmhbnhixl5byvdql"))))
+        (base32 "1ji022h11ijfjicbvc5hgxpf6rfs7mm07nxrjlk7lrl699gi1xh2"))))
     (properties `((upstream-name . "AGHmatrix")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-matrix))

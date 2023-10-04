@@ -12492,21 +12492,21 @@ used.  There are also functions for dimension reduction and other approaches.")
 (define-public r-embc
   (package
     (name "r-embc")
-    (version "2.0.3")
+    (version "2.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EMbC" version))
        (sha256
-        (base32 "0ns6jmshblf00n4harhls03q9c6h1wvgvjzn8jvr3kf4gm2iz2jd"))))
+        (base32 "03vsyzq4zgv64yzazplj1sm3kgw0pdildcvi8w88b3d0rkjnhn5m"))))
     (properties `((upstream-name . "EMbC")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp
+    (propagated-inputs (list r-suntools
+                             r-sp
                              r-rcpparmadillo
                              r-rcpp
                              r-rcolorbrewer
-                             r-mnormt
-                             r-maptools))
+                             r-mnormt))
     (native-inputs (list r-knitr))
     (home-page "<doi:10.1371/journal.pone.0151984>")
     (synopsis "Expectation-Maximization Binary Clustering")

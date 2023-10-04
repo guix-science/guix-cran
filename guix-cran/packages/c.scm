@@ -12623,23 +12623,20 @@ coordinated users along with related information.")
 (define-public r-coordinatecleaner
   (package
     (name "r-coordinatecleaner")
-    (version "2.0-20")
+    (version "3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CoordinateCleaner" version))
        (sha256
-        (base32 "1n1k97imcg3n8nvl9759nqbzirxs011micx4qj2sf1d0bvnlrzs1"))))
+        (base32 "1jxcg1afmczrs88aj5lv5igypr8nlz9flf3b65lxqzk5p0wfgxfq"))))
     (properties `((upstream-name . "CoordinateCleaner")))
     (build-system r-build-system)
     (inputs (list gdal))
     (propagated-inputs (list r-tidyselect
-                             r-sp
+                             r-terra
                              r-rnaturalearth
-                             r-rgeos
-                             r-rgdal
                              r-rgbif
-                             r-raster
                              r-ggplot2
                              r-geosphere
                              r-dplyr))
@@ -18675,13 +18672,13 @@ the default ranges of values are different for the two functions.")
 (define-public r-coloc
   (package
     (name "r-coloc")
-    (version "5.2.2")
+    (version "5.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coloc" version))
        (sha256
-        (base32 "0358y5ifpyldylqcqkipmdsysg98l9f12ss5pklz3zia3ja4wc2a"))))
+        (base32 "0l318ad8sn151fjibgfvy082ar29f8c6x3qlmmhal2fq2fbbv795"))))
     (properties `((upstream-name . "coloc")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis r-susier r-ggplot2 r-data-table))
@@ -37012,13 +37009,13 @@ Halberg (2014) <doi:10.1080/09291010600903692>.")
 (define-public r-carcass
   (package
     (name "r-carcass")
-    (version "1.6")
+    (version "1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "carcass" version))
        (sha256
-        (base32 "0nhp35nxjqqmy15rf9vc0qyymy7d0v8mc84570b9nc62g5xac8xy"))))
+        (base32 "09l9yk7knfjhrcpwfwmgla9ghnpg1b10aljmdl70j5kxdiafkfn7"))))
     (properties `((upstream-name . "carcass")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-mass r-lme4 r-expm r-arm))

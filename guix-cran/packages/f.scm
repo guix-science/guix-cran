@@ -5902,23 +5902,25 @@ unstructured datasets, and more <https://www.palantir.com/platforms/foundry/>.")
 (define-public r-foto
   (package
     (name "r-foto")
-    (version "1.0.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "foto" version))
        (sha256
-        (base32 "10mfxgg5f1r85cwr0jjnsa4csp1afcrjvyjvp31060nm638clcgh"))))
+        (base32 "0z1r903i4hc2m7kkph8l1ncjvx20dv800n7j6zcg8vdsi3qycw13"))))
     (properties `((upstream-name . "foto")))
     (build-system r-build-system)
-    (propagated-inputs (list r-raster))
+    (propagated-inputs (list r-terra))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/khufkens/foto")
+    (home-page "https://github.com/bluegreen-labs/foto")
     (synopsis "Fourier Transform Textural Ordination")
     (description
-     "The Fourier Transform Textural Ordination method uses a principal component
-analysis on radially averaged two dimensional Fourier spectra to characterize
-image texture.")
+     "This package provides a tool to use a principal component analysis on radially
+averaged two dimensional Fourier spectra to characterize image texture.  The
+method within the context of ecology was first described by Couteron et al.
+(2005) <doi:10.1111/j.1365-2664.2005.01097.x> and expanded upon by Solorzano et
+al. (2018) <doi:10.1117/1.JRS.12.036006> using a moving window approach.")
     (license license:agpl3)))
 
 (define-public r-fossilsimshiny
@@ -14757,13 +14759,13 @@ these three matches via the tier matching function.")
 (define-public r-feddata
   (package
     (name "r-feddata")
-    (version "3.0.4")
+    (version "4.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FedData" version))
        (sha256
-        (base32 "0qwfayp99nngwjl043y1snfsljnvm1vgdl6vd04hinr0gsrc330m"))))
+        (base32 "15cvrph6020m6xinyvnyjmsppz59q911rk9rhlwy107fs54mdlnx"))))
     (properties `((upstream-name . "FedData")))
     (build-system r-build-system)
     (inputs (list gdal))
@@ -14772,20 +14774,16 @@ these three matches via the tier matching function.")
                              r-tibble
                              r-terra
                              r-stringr
-                             r-sp
                              r-sf
                              r-readr
-                             r-raster
                              r-purrr
                              r-progress
                              r-magrittr
                              r-lubridate
                              r-lifecycle
-                             r-jsonlite
                              r-igraph
                              r-httr
                              r-dplyr
-                             r-data-table
                              r-curl))
     (home-page "https://docs.ropensci.org/FedData/")
     (synopsis
@@ -20803,16 +20801,17 @@ regression coefficients by Hoff and Yu <DOI:10.1214/18-EJS1517>.")
 (define-public r-f1datar
   (package
     (name "r-f1datar")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "f1dataR" version))
        (sha256
-        (base32 "0w3csdrmaalsgvw9msgzczcjgs7ssyh092axgzya3nh5lw2v798n"))))
+        (base32 "1azh0ij9a8szgkbsz00nyg5gijk1q1bpd9lphyv3kkg65sap7r8i"))))
     (properties `((upstream-name . "f1dataR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-withr
+                             r-tidyr
                              r-tibble
                              r-rlang
                              r-reticulate
