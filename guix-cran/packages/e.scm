@@ -1739,13 +1739,13 @@ expression analysis of RNA-seq data, it is only applicable to hybrid offspring
 (define-public r-expertsurv
   (package
     (name "r-expertsurv")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "expertsurv" version))
        (sha256
-        (base32 "0yr461vrdmci418jhq6xacgy0cfrkp25nd7p5cd8fn3rqbfl97i4"))))
+        (base32 "0m8p902528z3ih0mzgds0jg8iv885279mmdpv0zhf2wc3hd99ri7"))))
     (properties `((upstream-name . "expertsurv")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -13866,32 +13866,25 @@ algorithm within Gibbs sampler based on the Bayesian framework.")
 (define-public r-eixport
   (package
     (name "r-eixport")
-    (version "0.5.4")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eixport" version))
        (sha256
-        (base32 "0q6djpp6x0hzzk2sh36rfgzch3n6v4af9knvwv0fnlh72n2cj0b8"))))
+        (base32 "18jybscxh051h5y31gb7ywr9n5a471l6krcl95wznfvc2ba1k8pc"))))
     (properties `((upstream-name . "eixport")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp
-                             r-sf
-                             r-rgdal
-                             r-raster
-                             r-ncdf4
-                             r-data-table
-                             r-cptcity))
+    (propagated-inputs (list r-sf r-raster r-ncdf4 r-data-table r-cptcity))
     (home-page "https://atmoschem.github.io/eixport/")
     (synopsis "Export Emissions to Atmospheric Models")
     (description
      "Emissions are the mass of pollutants released into the atmosphere.  Air quality
 models need emissions data, with spatial and temporal distribution, to represent
-air pollutant concentrations.  This package, eixport', creates inputs for the
-air quality models WRF-Chem Grell et al (2005)
-<doi:10.1016/j.atmosenv.2005.04.027>, MUNICH Kim et al (2018)
-<doi:10.5194/gmd-11-611-2018> , BRAMS-SPM Freitas et al (2005)
-<doi:10.1016/j.atmosenv.2005.07.017> and RLINE Snyder et al (2013)
+air pollutant concentrations.  This package, eixport, creates inputs for the air
+quality models WRF-Chem Grell et al (2005) <doi:10.1016/j.atmosenv.2005.04.027>,
+MUNICH Kim et al (2018) <doi:10.5194/gmd-11-611-2018> , BRAMS-SPM Freitas et al
+(2005) <doi:10.1016/j.atmosenv.2005.07.017> and RLINE Snyder et al (2013)
 <doi:10.1016/j.atmosenv.2013.05.074>.  See the eixport website
 (<https://atmoschem.github.io/eixport/>) for more information, documentations
 and examples.  More details in Ibarra-Espinosa et al (2018)

@@ -2231,6 +2231,29 @@ global environment as data.frame objects with a column of type date and a column
 of type numeric.  Interactive charts are produced using plotly package.")
     (license license:expat)))
 
+(define-public r-tsvio
+  (package
+    (name "r-tsvio")
+    (version "1.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tsvio" version))
+       (sha256
+        (base32 "18acapx4dwdxdq8pdv9vdzcc4g3k8x1c7b78814fmc7w940cya2b"))))
+    (properties `((upstream-name . "tsvio")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/MD-Anderson-Bioinformatics/tsvio")
+    (synopsis "Simple Utilities for Tab-Separated-Value (TSV) Files")
+    (description
+     "Utilities for rapidly loading specified rows and/or columns of data from large
+tab-separated value (tsv) files (large: e.g. 1 GB file of 10000 x 10000 matrix).
+ tsvio is an R wrapper to C code that creates an index file for the rows of the
+tsv file, and uses that index file to collect rows and/or columns from the tsv
+file without reading the whole file into memory.")
+    (license license:gpl3+)))
+
 (define-public r-tsvc
   (package
     (name "r-tsvc")
@@ -13628,13 +13651,13 @@ Twitter'.")
 (define-public r-tidytable
   (package
     (name "r-tidytable")
-    (version "0.10.1")
+    (version "0.10.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidytable" version))
        (sha256
-        (base32 "1szyzfh0679i3q87j9c2bdsal6lg7fpis5jwasqvgig8zyi20ild"))))
+        (base32 "1jl89sbsn5xzb6khrhq1kk84mvnqd2lpiyvsiq6kl6i0lwxpjicn"))))
     (properties `((upstream-name . "tidytable")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -19386,13 +19409,13 @@ approximations for probability integrals.\" <doi:10.1016/0266-8920(89)90024-6>."
 (define-public r-terrainr
   (package
     (name "r-terrainr")
-    (version "0.7.4")
+    (version "0.7.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "terrainr" version))
        (sha256
-        (base32 "0qgr38shvdl9c6mcrvj9h6kydfnp7wp93n2qac9za96pbij4js7d"))))
+        (base32 "1bxwv94pkd4yskhqcwg891caiknipgr2lwcmy54znr8gchsm5527"))))
     (properties `((upstream-name . "terrainr")))
     (build-system r-build-system)
     (propagated-inputs (list r-units

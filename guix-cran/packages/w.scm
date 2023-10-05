@@ -2194,13 +2194,13 @@ given parallel corpus.")
 (define-public r-worcs
   (package
     (name "r-worcs")
-    (version "0.1.12")
+    (version "0.1.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "worcs" version))
        (sha256
-        (base32 "1n04c9pd7w99h2xbz71pskbqmpqci1g7292c5m7by9jybi8v77b2"))))
+        (base32 "12qb32vcbc18acj19m5dsrwrb645ca42v9jfsqb8hrr4lzml3hdi"))))
     (properties `((upstream-name . "worcs")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -5794,13 +5794,13 @@ NIST Chemistry @code{WebBook}, OPSIN, @code{PubChem}, SRS, Wikidata.")
 (define-public r-webanalytics
   (package
     (name "r-webanalytics")
-    (version "0.9.8")
+    (version "0.9.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WebAnalytics" version))
        (sha256
-        (base32 "0vdd4zc9aj7573fjsz4mclydj3h7p0av9kpgd1flppzsiscc94m4"))))
+        (base32 "031gyndk605841ns33pifhfwlasa39jhrmvigw84iqc2dgxqqpgl"))))
     (properties `((upstream-name . "WebAnalytics")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable

@@ -38416,13 +38416,13 @@ applications.  Give your applications a unique and colorful style !")
 (define-public r-shinyvalidate
   (package
     (name "r-shinyvalidate")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyvalidate" version))
        (sha256
-        (base32 "0mps6a1rkadbxf11lcxx4njfwbgpzyx63wndhlwb0dzyz5d02la7"))))
+        (base32 "01qlqzp0g6782maj73yygmwlchhv4xcnlc7j0w3lp6dcj7qkzz68"))))
     (properties `((upstream-name . "shinyvalidate")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-rlang r-htmltools r-glue))

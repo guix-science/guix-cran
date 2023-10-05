@@ -22791,13 +22791,13 @@ Perederiy, V. (2017) <@code{arXiv:1708.00062>}.")
 (define-public r-migraph
   (package
     (name "r-migraph")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "migraph" version))
        (sha256
-        (base32 "0v19b70xg46s30sfsg2x8l2wn07cgarqaqzp7mnwhp4xix4gfw49"))))
+        (base32 "09ldp1xk9yfm9l8x7dkr3nh845102whmqmgjib5wksgby19v8alw"))))
     (properties `((upstream-name . "migraph")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -39926,28 +39926,31 @@ normalized words.")
 (define-public r-malariaatlas
   (package
     (name "r-malariaatlas")
-    (version "1.2.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "malariaAtlas" version))
        (sha256
-        (base32 "0mddrnw8g0hjnh9zv2ldfall7789szk6pkz215s3w6vnm5x20psp"))))
+        (base32 "07dwmnfzx2883yxy3klwyv9gyglgjf976w34bb8x2qna2aw9hhz4"))))
     (properties `((upstream-name . "malariaAtlas")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
                              r-tidyterra
                              r-tidyr
                              r-terra
-                             r-stringi
+                             r-stringr
                              r-sf
                              r-rlang
+                             r-ows4r
+                             r-lubridate
                              r-lifecycle
+                             r-jsonlite
                              r-httr
                              r-gridextra
                              r-ggplot2
-                             r-dplyr
-                             r-curl))
+                             r-future-apply
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/malaria-atlas-project/malariaAtlas")
     (synopsis

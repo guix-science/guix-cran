@@ -5922,13 +5922,13 @@ al.  2021, Frontiers in Applied Mathematics and Statistics', accepted.).")
 (define-public r-bootnet
   (package
     (name "r-bootnet")
-    (version "1.5.5")
+    (version "1.5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bootnet" version))
        (sha256
-        (base32 "1m0jwhdk6nl0vb1m0sp3kkyv376f0pwgvbbpab3dygghv8qi7m21"))))
+        (base32 "1lkk237ps4sgljsy3m17119ggyglai1kb1sz2shjwg7a38zb2278"))))
     (properties `((upstream-name . "bootnet")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -8994,13 +8994,13 @@ longer needed.  Details of the forward search functions may be found in
 (define-public r-blindrecalc
   (package
     (name "r-blindrecalc")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "blindrecalc" version))
        (sha256
-        (base32 "0ymcmakk8wwg72rcwj1nankw3bbdp29mr5vymaw04padwsrmbf20"))))
+        (base32 "126mh5p1js4mm9sq3w6hs2vlx4baa6gzm9b9jybllfi751jsgjw5"))))
     (properties `((upstream-name . "blindrecalc")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -21229,13 +21229,13 @@ selection.  Marginal likelihood is approximated by methods in Chib S (1995)
 (define-public r-bayesmallows
   (package
     (name "r-bayesmallows")
-    (version "1.3.2")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesMallows" version))
        (sha256
-        (base32 "1qpj4qiikx8yv103qslafvwia1kjxqpj9fgwsjnvd87vr0gbja71"))))
+        (base32 "1irplamvggsds8jdb0pcz2wh8chdhkrgk22n2hgwl4yb1ysdqi3z"))))
     (properties `((upstream-name . "BayesMallows")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat
@@ -21256,7 +21256,9 @@ selection.  Marginal likelihood is approximated by methods in Chib S (1995)
      "An implementation of the Bayesian version of the Mallows rank model (Vitelli et
 al., Journal of Machine Learning Research, 2018
 <https://jmlr.org/papers/v18/15-481.html>; Crispino et al., Annals of Applied
-Statistics, 2019 <doi:10.1214/18-AOAS1203>).  Both Metropolis-Hastings and
+Statistics, 2019 <doi:10.1214/18-AOAS1203>; Sorensen et al., R Journal, 2020
+<doi:10.32614/RJ-2020-026>; Stein, @code{PhD} Thesis, 2023
+<https://eprints.lancs.ac.uk/id/eprint/195759>).  Both Metropolis-Hastings and
 sequential Monte Carlo algorithms for estimating the models are available.
 Cayley, footrule, Hamming, Kendall, Spearman, and Ulam distances are supported
 in the models.  The rank data to be analyzed can be in the form of complete

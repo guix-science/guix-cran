@@ -72,6 +72,41 @@
     (description "Read and write @code{GraphPad} Prism .pzfx files in R.")
     (license license:expat)))
 
+(define-public r-pysparklyr
+  (package
+    (name "r-pysparklyr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pysparklyr" version))
+       (sha256
+        (base32 "0gs0v8a0niqvd120m31vbgp62abvygs73150pdds9lnal16wy2ip"))))
+    (properties `((upstream-name . "pysparklyr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs
+                             r-tidyselect
+                             r-tidyr
+                             r-sparklyr
+                             r-rlang
+                             r-reticulate
+                             r-purrr
+                             r-processx
+                             r-magrittr
+                             r-httr2
+                             r-glue
+                             r-fs
+                             r-dplyr
+                             r-dbplyr
+                             r-dbi
+                             r-cli))
+    (home-page "https://github.com/mlverse/pysparklyr")
+    (synopsis "Provides a 'PySpark' Back-End for the 'sparklyr' Package")
+    (description
+     "It enables sparklyr to integrate with Spark Connect', and Databricks Connect by
+providing a wrapper over the @code{PySpark} python library.")
+    (license license:expat)))
+
 (define-public r-pysd2r
   (package
     (name "r-pysd2r")
@@ -33701,6 +33736,49 @@ drugs.  The methods are described in detail in Ulgen E, Ozisik O, Sezerman OU.
 2023.  PANACEA: network-based methods for pharmacotherapy prioritization in
 personalized oncology.  Bioinformatics <doi:10.1093/bioinformatics/btad022>.")
     (license license:expat)))
+
+(define-public r-pamscapes
+  (package
+    (name "r-pamscapes")
+    (version "0.5.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PAMscapes" version))
+       (sha256
+        (base32 "1r3p352mb0zqgqs6xp717j7in8s883l6rq82cyc8mi63a6cp99dp"))))
+    (properties `((upstream-name . "PAMscapes")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tdigest
+                             r-sf
+                             r-scales
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-pammisc
+                             r-ncdf4
+                             r-magrittr
+                             r-lubridate
+                             r-httr
+                             r-hoardr
+                             r-ggplot2
+                             r-geosphere
+                             r-dplyr
+                             r-data-table))
+    (home-page "https://cran.r-project.org/package=PAMscapes")
+    (synopsis "Tools for Summarising and Analysing Soundscape Data")
+    (description
+     "This package provides a variety of tools relevant to the analysis of marine
+soundscape data.  There are tools for downloading AIS (automatic identification
+system) data from Marine Cadastre <https://marinecadastre.gov/ais/>, connecting
+AIS data to GPS coordinates, plotting summaries of various soundscape
+measurements, and downloading relevant environmental variables (wind, swell
+height) from the National Center for Atmospheric Research data server
+<https://rda.ucar.edu/datasets/ds084.1/>.  Most tools were developed to work
+well with output from Triton software, but can be adapted to work with any
+similar measurements.")
+    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-pampe
   (package

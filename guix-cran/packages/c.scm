@@ -2476,13 +2476,13 @@ could benefit from the general framework provided by ctsfeatures'.")
 (define-public r-ctsemomx
   (package
     (name "r-ctsemomx")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ctsemOMX" version))
        (sha256
-        (base32 "1sjsm573alsg3dvj58rwknqapcydx77zbs0b8hcf59qbbhfa3djv"))))
+        (base32 "0fshc00q0fyybl6kybpf57wn898c8v1d7k0x3n8avsyrkg6addhx"))))
     (properties `((upstream-name . "ctsemOMX")))
     (build-system r-build-system)
     (propagated-inputs (list r-plyr r-openmx r-matrix r-ctsem))
@@ -13063,17 +13063,18 @@ regression trees.")
 (define-public r-convertid
   (package
     (name "r-convertid")
-    (version "0.1.3")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "convertid" version))
        (sha256
-        (base32 "00mi1jwb5b07j182zf68fqasb9ggkbk4c8dd1i0wlad7az2rz494"))))
+        (base32 "1q8dpy4ixhw52p0189s5r8haq0sa9hnfspgxjv4r352qbgb14hcc"))))
     (properties `((upstream-name . "convertid")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
                              r-stringr
+                             r-rappdirs
                              r-plyr
                              r-org-mm-eg-db
                              r-org-hs-eg-db
@@ -24686,6 +24687,33 @@ the statistical models.  Details are given in Paciorek, Stone, and Wehner (2018)
 <doi:10.1016/j.wace.2018.01.002>.")
     (license license:bsd-3)))
 
+(define-public r-climetrics
+  (package
+    (name "r-climetrics")
+    (version "1.0-12")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "climetrics" version))
+       (sha256
+        (base32 "0mvs1k0fld1rrqnvjjdnhz9m1dgp8j636ij8wwnb12pz8fp6gvg1"))))
+    (properties `((upstream-name . "climetrics")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-yaimpute
+                             r-xts
+                             r-terra
+                             r-rts
+                             r-raster))
+    (native-inputs (list r-r-rsp))
+    (home-page "https://r-gis.net/")
+    (synopsis "Climate Change Metrics")
+    (description
+     "This package provides a framework that facilitates spatio-temporal analysis of
+climate dynamics through exploring and measuring different dimensions of climate
+change in space and time.")
+    (license license:gpl3+)))
+
 (define-public r-clime
   (package
     (name "r-clime")
@@ -31788,13 +31816,13 @@ and gene-set analysis procedure. <doi:10.1093/bioinformatics/btt008>.")
 (define-public r-ceoptim
   (package
     (name "r-ceoptim")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CEoptim" version))
        (sha256
-        (base32 "0bbjrhl63cbx1rsr5gclbqhjpnjid8ynk2ygaf1chf8z381n7650"))))
+        (base32 "0b39q2imxgqwa836gzq6l93g0fsf8kdj2wjl4if8a8lw5inx7zgw"))))
     (properties `((upstream-name . "CEoptim")))
     (build-system r-build-system)
     (propagated-inputs (list r-sna r-msm r-mass))
@@ -37888,13 +37916,13 @@ and can be further refined as needed by the user.")
 (define-public r-cancensus
   (package
     (name "r-cancensus")
-    (version "0.5.5")
+    (version "0.5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cancensus" version))
        (sha256
-        (base32 "1cvb7v2v4hsy97m67369xxscb5a9igszsvif9b4d60ngh4j51a0z"))))
+        (base32 "0alvwl6jy86rqqw77j0wq0xvw9c52k7w6lxa7f79l5zc87ql6709"))))
     (properties `((upstream-name . "cancensus")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-jsonlite r-httr r-dplyr r-digest))

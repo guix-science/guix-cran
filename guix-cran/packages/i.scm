@@ -15960,17 +15960,17 @@ and predicts the @code{iC10} group.")
 (define-public r-ic-infer
   (package
     (name "r-ic-infer")
-    (version "1.1-6")
+    (version "1.1-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ic.infer" version))
        (sha256
-        (base32 "14vcwx5592br4zky9mq82akwk8pfiz7p1rx2jvyb48prrs2mm9gy"))))
+        (base32 "0gr17nsv0kbw5278p4wccyvaiyj5dwndx3m5919apfdkivk2jlq5"))))
     (properties `((upstream-name . "ic.infer")))
     (build-system r-build-system)
     (propagated-inputs (list r-quadprog r-mvtnorm r-kappalab r-boot))
-    (home-page "http://prof.beuth-hochschule.de/groemping/")
+    (home-page "https://prof.bht-berlin.de/groemping/")
     (synopsis "Inequality Constrained Inference in Linear Normal Situations")
     (description
      "This package implements inequality constrained inference.  This includes

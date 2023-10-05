@@ -19902,13 +19902,13 @@ package.")
 (define-public r-rjwsacruncher
   (package
     (name "r-rjwsacruncher")
-    (version "0.1.3")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rjwsacruncher" version))
        (sha256
-        (base32 "0g9wbcgj97pn2z6b9lbh10pr54c3qaam5cxghvn2ppzd8ccwkkbb"))))
+        (base32 "14yg801mxj0kvg3aswxvhbncs6mh63ddk0mnfawm39ycgwc19g3d"))))
     (properties `((upstream-name . "rjwsacruncher")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml))
@@ -20129,33 +20129,35 @@ combinations, fast transformations, and more...")
 (define-public r-rjdqa
   (package
     (name "r-rjdqa")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rjdqa" version))
        (sha256
-        (base32 "0d7jv3a2a7p7h6jnr5znln06x6m4mksb6cy44xdxir1pwcd1z6br"))))
+        (base32 "1pxdavk9806zmc5l201ir753sngg3djm7knsl34jnjqbdys621h5"))))
     (properties `((upstream-name . "rjdqa")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xlconnect r-rjdemetra r-plotrix))
+    (inputs (list openjdk))
+    (propagated-inputs (list r-rjdemetra r-plotrix r-ggdemetra))
     (home-page "https://github.com/AQLT/rjdqa")
     (synopsis "Quality Assessment for Seasonal Adjustment")
     (description
      "Add-in to the RJDemetra package on seasonal adjustments.  It allows to produce
-quality assessments outputs (dashboards, quality report matrix, etc.).")
+dashboards to summarise models and quickly check the quality of the seasonal
+adjustment.")
     (license (license:fsdg-compatible "EUPL"))))
 
 (define-public r-rjdmarkdown
   (package
     (name "r-rjdmarkdown")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rjdmarkdown" version))
        (sha256
-        (base32 "1ls2zcq28yajb14g6zqdlyb4nliyq1905cpyrc8g8xv0b90k7gj6"))))
+        (base32 "1g1r11zi8agifndlnayrh1vbz570s2x535kn89yz1llrk378v9c5"))))
     (properties `((upstream-name . "rjdmarkdown")))
     (build-system r-build-system)
     (inputs (list openjdk))
@@ -26244,6 +26246,36 @@ from Names\" by Fangzhou Xie (2021) <@code{arXiv:2109.09228>}.")
      "Using a CSV, @code{LaTeX} and R to easily build attractive resumes.")
     (license license:bsd-3)))
 
+(define-public r-restriktor
+  (package
+    (name "r-restriktor")
+    (version "0.5-30")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "restriktor" version))
+       (sha256
+        (base32 "1qlb892rx2i42mlidl5dm20a848j8cca8zq1d100la2829g9k49g"))))
+    (properties `((upstream-name . "restriktor")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-quadprog
+                             r-norm
+                             r-mvtnorm
+                             r-mass
+                             r-lavaan
+                             r-ic-infer
+                             r-ggplot2
+                             r-boot))
+    (native-inputs (list r-knitr))
+    (home-page "https://restriktor.org")
+    (synopsis
+     "Restricted Statistical Estimation and Inference for Linear Models")
+    (description
+     "Allow for easy-to-use testing or evaluating of linear equality and inequality
+restrictions about parameters and effects in (generalized) linear statistical
+models.")
+    (license license:gpl2+)))
+
 (define-public r-restorepoint
   (package
     (name "r-restorepoint")
@@ -28093,27 +28125,6 @@ different models, data.frames and tables and exporting them to different
 formats.")
     (license license:gpl2+)))
 
-(define-public r-repmis
-  (package
-    (name "r-repmis")
-    (version "0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "repmis" version))
-       (sha256
-        (base32 "0z5mjbsl24yjbl0aawr35grcal44rf2xbwv1hy7bdkms94ix79b5"))))
-    (properties `((upstream-name . "repmis")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-r-cache r-plyr r-httr r-digest r-data-table))
-    (home-page "http://cran.r-project.org/package=repmis")
-    (synopsis "Miscellaneous Tools for Reproducible Research")
-    (description
-     "This package provides tools to load R packages and automatically generate
-@code{BibTeX} files citing them as well as load and cache plain-text and Excel
-formatted data stored on @code{GitHub}', and from other sources.")
-    (license license:gpl3+)))
-
 (define-public r-repliscope
   (package
     (name "r-repliscope")
@@ -29534,13 +29545,13 @@ duplicate mappings.")
 (define-public r-relaimpo
   (package
     (name "r-relaimpo")
-    (version "2.2-6")
+    (version "2.2-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "relaimpo" version))
        (sha256
-        (base32 "1v2zvakzrnc89dshhpkrikfwa7l786sk5vnz4khil5f53biahm4r"))))
+        (base32 "1430p6kxh582k0saagns6mxz7qp6myf6n66hp1p02isl61w3w6sa"))))
     (properties `((upstream-name . "relaimpo")))
     (build-system r-build-system)
     (propagated-inputs (list r-survey r-mitools r-mass r-corpcor r-boot))

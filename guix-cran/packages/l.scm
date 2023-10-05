@@ -14939,13 +14939,13 @@ regression.  To find out more about the methods in this package, please see
 (define-public r-landform
   (package
     (name "r-landform")
-    (version "0.1")
+    (version "0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "landform" version))
        (sha256
-        (base32 "1g1c5iw2b798q304jfkk38qjr7780swq8pxs0m6526a8lfx517iw"))))
+        (base32 "0i99glylj0nz3r5i0p22ng9aygmjkh7q2ynw02z7jm3bfpw0wmv0"))))
     (properties `((upstream-name . "landform")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra))

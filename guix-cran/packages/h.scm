@@ -6612,13 +6612,13 @@ you're documenting your data analysis or creating interactive shiny apps.")
 (define-public r-highfrequency
   (package
     (name "r-highfrequency")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "highfrequency" version))
        (sha256
-        (base32 "1qx121y90g3cgvxpvjx54lg06arjc79m8hcl7k1m9hr10lhhyi1a"))))
+        (base32 "0jxkmgd3sfipz1z37w9flwy8i94q6vxwlxyaflfbprwlskmlnakd"))))
     (properties `((upstream-name . "highfrequency")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -6638,12 +6638,9 @@ you're documenting your data analysis or creating interactive shiny apps.")
      "Provide functionality to manage, clean and match highfrequency trades and quotes
 data, calculate various liquidity measures, estimate and forecast volatility,
 detect price jumps and investigate microstructure noise and intraday
-periodicity.  A detailed vignette can be found in the paper \"Analyzing Intraday
-Financial Data in R: The highfrequency Package\" by Boudt, Kleen, and Sjoerup
-(2022, <doi:10.18637/jss.v104.i08>).  The DOI in the CITATION is for a new
-Journal of Statistical Software publication that will be registered after
-publication on CRAN. A working paper version can be found on SSRN:
-<doi:10.2139/ssrn.3917548>.")
+periodicity.  A detailed vignette can be found in the open-access paper
+\"Analyzing Intraday Financial Data in R: The highfrequency Package\" by Boudt,
+Kleen, and Sjoerup (2022, <doi:10.18637/jss.v104.i08>).")
     (license license:gpl2+)))
 
 (define-public r-highestmedianrules

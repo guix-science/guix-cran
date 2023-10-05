@@ -1887,13 +1887,13 @@ prevent writing protected elements.")
 (define-public r-dualtrees
   (package
     (name "r-dualtrees")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dualtrees" version))
        (sha256
-        (base32 "05mxwiwnv48jf6ya5qmfc7g2w8wkzhk56k9g0gr2m4cpfab7d5h2"))))
+        (base32 "02zwfvz4vb8ppyjggkn5483p7b12l3ah1swpgc7g3p94ii5hr0vy"))))
     (properties `((upstream-name . "dualtrees")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -15165,13 +15165,13 @@ rates are supposed to increase with both agents.")
 (define-public r-dfadjust
   (package
     (name "r-dfadjust")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dfadjust" version))
        (sha256
-        (base32 "1a8xvk26rrhgi44f12yfbnjs7vp0llgdvmw2crwb696469df8gb6"))))
+        (base32 "0x44alfb0ryd7m0y2gqq7sqhyf6yzk4pcwb129d2qazhwya6p2y5"))))
     (properties `((upstream-name . "dfadjust")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -25681,13 +25681,13 @@ population/community structure inference.")
 (define-public r-d4talink-light
   (package
     (name "r-d4talink-light")
-    (version "2.1.11")
+    (version "2.1.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "D4TAlink.light" version))
        (sha256
-        (base32 "0app56g8kws30q9a91ipcxmgnfihcx1q6678s4hfxc1w3dq2pq82"))))
+        (base32 "1cpvi5jzlyvwygyzv4smi3qcr3gx85s7bfjspsfkz9011aqb1aci"))))
     (properties `((upstream-name . "D4TAlink.light")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmarkdown r-openssl r-jsonlite))

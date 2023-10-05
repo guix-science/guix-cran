@@ -7620,13 +7620,13 @@ Griffing, B. (1956) <https://www.publish.csiro.au/bi/pdf/BI9560463>.")
 (define-public r-gpboost
   (package
     (name "r-gpboost")
-    (version "1.2.4")
+    (version "1.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gpboost" version))
        (sha256
-        (base32 "1v0v3kilyl168i90did8flbj30cvr4w1sd2zkiyj9f8f9hg5h7al"))))
+        (base32 "025vx2ws8zw4mndq7sz1wgsk9yh39gk5d3nn9a9v3bb1qjzi5m9q"))))
     (properties `((upstream-name . "gpboost")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjsonio r-r6 r-matrix r-data-table))
@@ -17604,13 +17604,13 @@ regions instead of the traditional height of the estimated density surface.")
 (define-public r-ggdemetra
   (package
     (name "r-ggdemetra")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggdemetra" version))
        (sha256
-        (base32 "1ww22lx1viy7r0nldjzzaskbh3wzzp90nyi2dxigzinb0cm7000v"))))
+        (base32 "0faxbb05wl3075n21nr3b6jqjyh332fy05r4vk3jy0w9qs15ih0p"))))
     (properties `((upstream-name . "ggdemetra")))
     (build-system r-build-system)
     (inputs (list openjdk))
@@ -20042,13 +20042,13 @@ Theoretical background and worked examples are available at
 (define-public r-geostan
   (package
     (name "r-geostan")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geostan" version))
        (sha256
-        (base32 "14ys4bgcjgyh1zgnwdvw74ksciwy5j0qq1xxma0larbk6pm52h25"))))
+        (base32 "12jw7v4c5amrh8f6vb7c3vv1zvr591krvz7bz55kwa7p1972zbnz"))))
     (properties `((upstream-name . "geostan")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm
@@ -20241,13 +20241,13 @@ midpoint, bearing and more are derived from <https://www.movable-type.co.uk>.")
 (define-public r-geosapi
   (package
     (name "r-geosapi")
-    (version "0.6-6")
+    (version "0.6-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geosapi" version))
        (sha256
-        (base32 "1bmlizqid6i6wna1faxdlabv0bc054mfwx00pgkn18icc0qpxds9"))))
+        (base32 "1cxjg9zg4ayli18rx0wdr709fi67xvqg56z41r3j13235qbnrqjb"))))
     (properties `((upstream-name . "geosapi")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml

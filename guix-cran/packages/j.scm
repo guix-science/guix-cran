@@ -3053,13 +3053,13 @@ Bacon (2004) <DOI:10.1002/9781119206309>.")
 (define-public r-jfa
   (package
     (name "r-jfa")
-    (version "0.6.7")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jfa" version))
        (sha256
-        (base32 "0ayir29lxj4kvqs7p78cma2ll46irkgf0x2j03iijv60pga2h0rb"))))
+        (base32 "156pg721prpy8rvahpczrfwihx1wj1qihqzhgal8kj91259ccj57"))))
     (properties `((upstream-name . "jfa")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncdist
@@ -3081,13 +3081,14 @@ Bacon (2004) <DOI:10.1002/9781119206309>.")
 for Audit (Derks et al., 2021 <doi:10.21105/joss.02733>).  First, the package
 makes it easy for an auditor to plan a statistical sample, select the sample
 from the population, and evaluate the misstatement in the sample compliant with
-international auditing standards.  Next to classical audit sampling methodology,
-the package implements Bayesian equivalents of these methods whose statistical
+international auditing standards.  Second, the package provides statistical
+methods for auditing data, including tests of digit distributions and repeated
+values.  Finally, the package includes methods for auditing algorithms on the
+aspect of fairness and bias.  Next to classical statistical methodology, the
+package implements Bayesian equivalents of these methods whose statistical
 underpinnings are described in Derks et al. (2021) <doi:10.1111/ijau.12240>,
 Derks et al. (2021) <doi:10.31234/osf.io/kzqp5>, and Derks et al. (2022)
-<doi:10.31234/osf.io/8nf3e>.  Second, the package provides statistical methods
-for auditing data, including (Bayesian) tests of digit distributions and tests
-for repeated values.")
+<doi:10.31234/osf.io/8nf3e>.")
     (license license:gpl3+)))
 
 (define-public r-jewel
