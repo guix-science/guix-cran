@@ -45,18 +45,19 @@
 (define-public r-jwileymisc
   (package
     (name "r-jwileymisc")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JWileymisc" version))
        (sha256
-        (base32 "1bgkhfda7p5alh8h2y804x5wvhksigg06hym9safxx15kmv1yxcn"))))
+        (base32 "0anchmlgp4nwgr59k5ryi05fcq63d5b2aqs3nmnvr3p3rma16xq7"))))
     (properties `((upstream-name . "JWileymisc")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam
                              r-robustbase
                              r-rms
+                             r-rlang
                              r-quantreg
                              r-psych
                              r-multcompview
@@ -2221,13 +2222,13 @@ and continuous moderators.  Allows correcting for phylogenetic relatedness.")
 (define-public r-jmvreadwrite
   (package
     (name "r-jmvreadwrite")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jmvReadWrite" version))
        (sha256
-        (base32 "08039hh1nc1586kad2fx6nnghayklfrfyy5na5hsjqqn9db37h9w"))))
+        (base32 "1s7ps4xam6xp161ds6l1dq37kbxha2wvydfzh7d34hrhk0zfwigd"))))
     (properties `((upstream-name . "jmvReadWrite")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip r-jsonlite))
@@ -2286,6 +2287,51 @@ jamovi platform (see <https://www.jamovi.org> for more information).")
     (description
      "This package provides methods to access data sets from the jamovi statistical
 spreadsheet (see <https://www.jamovi.org> for more information) from R.")
+    (license license:gpl2+)))
+
+(define-public r-jmv
+  (package
+    (name "r-jmv")
+    (version "2.4.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jmv" version))
+       (sha256
+        (base32 "1vnim9nn0agn2iq4h8kxkk2vbdxzgc2000vwr16x4pw390l65al5"))))
+    (properties `((upstream-name . "jmv")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vcdextra
+                             r-vcd
+                             r-rocr
+                             r-r6
+                             r-psych
+                             r-pmcmr
+                             r-nnet
+                             r-mvnormtest
+                             r-multcomp
+                             r-mass
+                             r-magrittr
+                             r-lavaan
+                             r-jmvcore
+                             r-gparotation
+                             r-ggridges
+                             r-ggrepel
+                             r-ggplot2
+                             r-ggally
+                             r-emmeans
+                             r-dplyr
+                             r-car
+                             r-bayesfactor
+                             r-afex))
+    (home-page "https://cran.r-project.org/package=jmv")
+    (synopsis "The 'jamovi' Analyses")
+    (description
+     "This package provides a suite of common statistical methods such as
+descriptives, t-tests, ANOVAs, regression, correlation matrices, proportion
+tests, contingency tables, and factor analysis.  This package is also useable
+from the jamovi statistical spreadsheet (see <https://www.jamovi.org> for more
+information).")
     (license license:gpl2+)))
 
 (define-public r-jmuoutlier

@@ -9431,13 +9431,13 @@ convert between coding schemes, and assign region descriptors.")
 (define-public r-countries
   (package
     (name "r-countries")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "countries" version))
        (sha256
-        (base32 "0bqq7ygmnhdb0cfrfvg3m42kmvw9aa499khmqpyc5lq18mc8hjc2"))))
+        (base32 "18dbax73xq379v63vmnn64qxiil83wvzkm05kqv18jq8q2wgwm69"))))
     (properties `((upstream-name . "countries")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -14770,6 +14770,31 @@ guarantee) and efficiency (width guarantee).  To learn how to use it, check the
 vignettes for a quick tutorial.  The package is based on the work by Yang Y.,
 Kuchibhotla A.,(2021) <arxiv:2104.13871>.")
     (license license:gpl3+)))
+
+(define-public r-conformalpvalue
+  (package
+    (name "r-conformalpvalue")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "conformalpvalue" version))
+       (sha256
+        (base32 "1hhx305jl75alp3fp2h7nwp4y80jyg8npbfmns774bnxgp2gwab8"))))
+    (properties `((upstream-name . "conformalpvalue")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-e1071))
+    (home-page "https://cran.r-project.org/package=conformalpvalue")
+    (synopsis "Computes Conformal p-Values")
+    (description
+     "Computes marginal conformal p-values using conformal prediction in binary
+classification tasks.  Conformal prediction is a framework that augments machine
+learning algorithms with a measure of uncertainty, in the form of prediction
+regions that attain a user-specified level of confidence.  This package
+specifically focuses on providing conformal p-values that can be used to assess
+the confidence of the classification predictions.  For more details, see Tyagi
+and Guo (2023) <https://proceedings.mlr.press/v204/tyagi23a.html>.")
+    (license license:expat)))
 
 (define-public r-conformalinference-multi
   (package
@@ -34246,13 +34271,13 @@ nonlinear systems.  For details, see Watson & Silva (2022)
 (define-public r-cbioportalr
   (package
     (name "r-cbioportalr")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cbioportalR" version))
        (sha256
-        (base32 "01gfzghfww4dfc6sliy4vfxjghncchlyn1f37prbjbvfx921v7xp"))))
+        (base32 "0vr8sjp2fkz24zcws6i46kmswf30yj147y3108i6sk7ncc2mavr5"))))
     (properties `((upstream-name . "cbioportalR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -38752,13 +38777,13 @@ additional parameters unlocking extra functionality.")
 (define-public r-calendr
   (package
     (name "r-calendr")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "calendR" version))
        (sha256
-        (base32 "1gji7ns35swdgg7bzq3vrzi4hnb98c5iw6r1j0k7nn2fdx7kbffp"))))
+        (base32 "1fkzsibjawshb4i5q941bjjn4yxkj8wcblw5ckmig3s31sjrb1yc"))))
     (properties `((upstream-name . "calendR")))
     (build-system r-build-system)
     (propagated-inputs (list r-suncalc

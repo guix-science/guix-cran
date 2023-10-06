@@ -7554,13 +7554,13 @@ simple, value-based choice.\" Neuroimage, 214, 116764.")
 (define-public r-nieve
   (package
     (name "r-nieve")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nieve" version))
        (sha256
-        (base32 "019ql8qzmp4qi7ayx26jgcnbsjmq6sigmv07x30macnsq7s7n2gi"))))
+        (base32 "0r1acnb771wvxnpjzgrvxfs8fc6xibgggxk4smhq62nnyjlp0big"))))
     (properties `((upstream-name . "nieve")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

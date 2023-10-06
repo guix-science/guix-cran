@@ -8523,13 +8523,13 @@ Events API, and Helsinki Region Infoshare statistics API.")
 (define-public r-helpersmg
   (package
     (name "r-helpersmg")
-    (version "6.0")
+    (version "6.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HelpersMG" version))
        (sha256
-        (base32 "08rnjklka04d30gs4qms9i3wl8a8qkgvd8x6dsbad8zcr7q4ncbp"))))
+        (base32 "1k8b4zlhipc91a0g81q0l5fjg45yvl51vhcv331yjcrjr9blb74m"))))
     (properties `((upstream-name . "HelpersMG")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-matrix r-mass r-ggplot2 r-coda))

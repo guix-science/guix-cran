@@ -13773,13 +13773,13 @@ the meta-analysis methods are developed by Noma et al. (2022) <forthcoming>.")
 (define-public r-robustlmm
   (package
     (name "r-robustlmm")
-    (version "3.2-2")
+    (version "3.2-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "robustlmm" version))
        (sha256
-        (base32 "00wx6f32zkb58nrd6snc6qkhnqv2ngsjcpb5fysl2m35sk547c0w"))))
+        (base32 "1jk4gf1066xsnnx1zsi2fz8bai3dkmyrm2dfdslrpasnmn6661d4"))))
     (properties `((upstream-name . "robustlmm")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -38320,6 +38320,30 @@ Carson and Hanemann (2005) <doi:10.1016/S1574-0099(05)02017-6> for DCCV.")
     (description
      "Rcmdr GUI extension plug-in for coin package (Conditional Inference Procedures
 in a Permutation Test Framework).")
+    (license license:gpl2+)))
+
+(define-public r-rcmdrplugin-bws3
+  (package
+    (name "r-rcmdrplugin-bws3")
+    (version "0.1-0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RcmdrPlugin.BWS3" version))
+       (sha256
+        (base32 "0qysk8800pslkc3lf7nkxc6xwsbc0516h3rkqgdb9x7l0557vbpx"))))
+    (properties `((upstream-name . "RcmdrPlugin.BWS3")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival r-support-ces r-support-bws3 r-rcmdr))
+    (home-page "https://cran.r-project.org/package=RcmdrPlugin.BWS3")
+    (synopsis "R Commander Plug-in for Case 3 Best-Worst Scaling")
+    (description
+     "Adds menu items for case 3 (multi-profile) best-worst scaling (BWS3) to the R
+Commander.  BWS3 is a question-based survey method that designs various
+combinations of attribute levels (profiles), asks respondents to select the best
+and worst profiles in each choice set, and then measures preferences for the
+attribute levels by analyzing the responses.  For details on BWS3, refer to
+Louviere et al. (2015) <doi:10.1017/CBO9781107337855>.")
     (license license:gpl2+)))
 
 (define-public r-rcmdrplugin-bws2

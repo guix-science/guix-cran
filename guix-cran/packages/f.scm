@@ -3851,13 +3851,13 @@ efficient implementation of the generic magging estimator.")
 (define-public r-fresa-cad
   (package
     (name "r-fresa-cad")
-    (version "3.4.5")
+    (version "3.4.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FRESA.CAD" version))
        (sha256
-        (base32 "1w0h3rz2fid39bipdvgv0sw75x9gvlvwzhj21984w87rym0pfnlb"))))
+        (base32 "17bx8r6a2d74y83zya347hag035ypdmphz710xwq2islgzlvlv9l"))))
     (properties `((upstream-name . "FRESA.CAD")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -5948,16 +5948,16 @@ speciation, preservation and sampling.")
 (define-public r-fossilsim
   (package
     (name "r-fossilsim")
-    (version "2.3.1")
+    (version "2.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FossilSim" version))
        (sha256
-        (base32 "110r1797cbzym2d96h8gchk47kaqf4h6xyma9v1g9jyxnq8zxyiw"))))
+        (base32 "0wirvjs6gvmgwxwixf1fld7xzq5hyyzfh3fhpglpah8hm744b6hf"))))
     (properties `((upstream-name . "FossilSim")))
     (build-system r-build-system)
-    (propagated-inputs (list r-treesim r-ape))
+    (propagated-inputs (list r-ape))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=FossilSim")
     (synopsis "Simulation of Fossil and Taxonomy Data")
@@ -15562,13 +15562,13 @@ of functional data through phase and amplitude separation.")
 (define-public r-fdasp
   (package
     (name "r-fdasp")
-    (version "1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fdaSP" version))
        (sha256
-        (base32 "0c8mlw0q3f0qa5inj6bxdshfl04hx6jpfqhwn2nk87y2y9239m4y"))))
+        (base32 "1vhnrw2shxnpd2vnqkjq8lqx344p3z488x8wzpkb8hxnxzmfp08w"))))
     (properties `((upstream-name . "fdaSP")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack

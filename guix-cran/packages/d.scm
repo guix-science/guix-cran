@@ -14156,6 +14156,29 @@ independence criterion and several hypothesis tests based on it, as described in
 Pfister et al. (2017) <doi:10.1111/rssb.12235>.")
     (license license:gpl3)))
 
+(define-public r-dhsage
+  (package
+    (name "r-dhsage")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dhsage" version))
+       (sha256
+        (base32 "1p239fsay49rvakxgkgnghra7p4nzyvfird8mc4i4lz4w133x1jd"))))
+    (properties `((upstream-name . "dhsage")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=dhsage")
+    (synopsis
+     "Reproductive Age Female Data of Various Demographic Health Surveys")
+    (description
+     "We provide 70 data sets of females of reproductive age from 19 Asian countries,
+ranging in age from 15 to 49.  The data sets are extracted from demographic and
+health surveys that were conducted over an extended period of time.  Moreover,
+the functions also provide Whippleâs index as well as age reporting quality
+such as very rough, rough, approximate, accurate, and highly accurate.")
+    (license license:gpl2+)))
+
 (define-public r-dhs-rates
   (package
     (name "r-dhs-rates")
@@ -16479,13 +16502,13 @@ different graphical interface.")
 (define-public r-descriptio
   (package
     (name "r-descriptio")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "descriptio" version))
        (sha256
-        (base32 "14dwvahafcx1j2zx3ikva94qj5h92lbd678qmmysfmjkkwq0ia6j"))))
+        (base32 "140zaj10q1cbwjc4d0vmh0vbqh8617b61ys9hdsndhafkc0d02ia"))))
     (properties `((upstream-name . "descriptio")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-mass r-ggplot2))
@@ -19324,13 +19347,13 @@ supports basemaps from mapbox <https://www.mapbox.com/> via mapbox-gl-js
 (define-public r-decisionsupport
   (package
     (name "r-decisionsupport")
-    (version "1.111")
+    (version "1.113")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "decisionSupport" version))
        (sha256
-        (base32 "0san25jhn025lbmjnvqpdkid9rpsr94p8511k4c1iia7ljczbgmp"))))
+        (base32 "0gxhxjpn9nzn1s7xm9cy9g82b68g8dg6654dbj4qr4aj3cfk14w8"))))
     (properties `((upstream-name . "decisionSupport")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -19346,6 +19369,7 @@ supports basemaps from mapbox <https://www.mapbox.com/> via mapbox-gl-js
                              r-ggplot2
                              r-fancova
                              r-dplyr
+                             r-class
                              r-chillr
                              r-assertthat))
     (native-inputs (list r-knitr))
@@ -22948,13 +22972,13 @@ and ANCOVA.")
 (define-public r-dataretrieval
   (package
     (name "r-dataretrieval")
-    (version "2.7.13")
+    (version "2.7.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dataRetrieval" version))
        (sha256
-        (base32 "0w6n3qa50js2qlaif6njs7qw4xf7vl6a270wb67v6bxhwixficix"))))
+        (base32 "0wk939w72ndfb9v1bkcc229hdk2l6q4yxjzxii5zdkvmwgm1rmfc"))))
     (properties `((upstream-name . "dataRetrieval")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

@@ -20589,6 +20589,37 @@ automatically calculate the number of clusters if this information is not
 available.")
     (license license:gpl3)))
 
+(define-public r-speccurvier
+  (package
+    (name "r-speccurvier")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "speccurvieR" version))
+       (sha256
+        (base32 "0sf992nmvfw2f3izb3p43jpnh6x9shvmas4cxx5gmsfbf597si3h"))))
+    (properties `((upstream-name . "speccurvieR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-pbapply
+                             r-magrittr
+                             r-lfe
+                             r-ggplot2
+                             r-dplyr
+                             r-combinat))
+    (home-page "https://cran.r-project.org/package=speccurvieR")
+    (synopsis "Easy, Fast, and Pretty Specification Curve Analysis")
+    (description
+     "Making specification curve analysis easy, fast, and pretty.  It improves upon
+existing offerings with additional features and tidyverse integration.  Users
+can easily visualize and evaluate how their models behave under different
+specifications with a high degree of customization.  For a description and
+applications of specification curve analysis see Simonsohn, Simmons, and Nelson
+(2020) <doi:10.1038/s41562-020-0912-z>.")
+    (license license:expat)))
+
 (define-public r-spec
   (package
     (name "r-spec")
@@ -22507,13 +22538,13 @@ version, please check <https://github.com/leeshawn/SPAtest>.")
 (define-public r-spatentropy
   (package
     (name "r-spatentropy")
-    (version "2.2-1")
+    (version "2.2-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SpatEntropy" version))
        (sha256
-        (base32 "08x59njg4x1hf578pg8xhcb00072gi5zf9iyxp75vz8rw89yqajn"))))
+        (base32 "0z371h504xxbgsnznl82xgky51hs9sz3k64p0w0nmpxyyxh9z0dy"))))
     (properties `((upstream-name . "SpatEntropy")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-random r-spatstat-geom r-spatstat))
@@ -42174,13 +42205,13 @@ rates based on second-generation p-value inference.")
 (define-public r-sgpls
   (package
     (name "r-sgpls")
-    (version "1.7")
+    (version "1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sgPLS" version))
        (sha256
-        (base32 "1jk2j1zn5vq82rcjflnk7g6y2q0v5jl14k804dmigqg013gbykql"))))
+        (base32 "16cjhrla1f4pf2gqfnbi5n1ai69nbr80crwn1f29ldk483d6hjc5"))))
     (properties `((upstream-name . "sgPLS")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-mixomics))

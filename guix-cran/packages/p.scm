@@ -8456,13 +8456,13 @@ added to @code{JavaScript} code when they are missing.")
 (define-public r-pressure
   (package
     (name "r-pressure")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pressuRe" version))
        (sha256
-        (base32 "12824rpi1211mzq5p4qb55wfp11zanda23l3qw5fdmm9nj53qa79"))))
+        (base32 "1i73706wpa06zaz5zdb25dshpzwdfyxl160s8nr4pjx5bczaigsh"))))
     (properties `((upstream-name . "pressuRe")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

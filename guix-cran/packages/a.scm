@@ -5976,6 +5976,34 @@ model for time series forecasting.For method details see Zhang, GP (2003)
 <doi:10.1016/S0925-2312(01)00702-0>.")
     (license license:gpl3)))
 
+(define-public r-arima2
+  (package
+    (name "r-arima2")
+    (version "3.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "arima2" version))
+       (sha256
+        (base32 "1q3b11dgky67c4la19hcd07w05dswz67yydgfdm09lgs54f52iwy"))))
+    (properties `((upstream-name . "arima2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ggplot2))
+    (home-page "https://cran.r-project.org/package=arima2")
+    (synopsis "Likelihood Based Inference for ARIMA Modeling")
+    (description
+     "Estimating and analyzing auto regressive integrated moving average (ARIMA)
+models.  The primary function in this package is arima(), which fits an ARIMA
+model to univariate time series data using a random restart algorithm.  This
+approach frequently leads to models that have model likelihood greater than or
+equal to that of the likelihood obtained by fitting the same model using the
+arima() function from the stats package.  This package enables proper
+optimization of model likelihoods, which is a necessary condition for performing
+likelihood ratio tests.  This package relies heavily on the source code of the
+arima() function of the stats package.  For more information, please see Jesse
+Wheeler and Edward L. Ionides (2023) <@code{arXiv:2310.01198>}.")
+    (license license:gpl3+)))
+
 (define-public r-arigamyannsvr
   (package
     (name "r-arigamyannsvr")

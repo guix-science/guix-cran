@@ -11179,6 +11179,49 @@ list; the R package quanteda'; the marimo repository; the Perseus project; and
 A. Berra's list of stop words for Ancient Greek and Latin.")
     (license license:expat)))
 
+(define-public r-moreparty
+  (package
+    (name "r-moreparty")
+    (version "0.3.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "moreparty" version))
+       (sha256
+        (base32 "1kjj4qaj4yfqqdwqiwaac2cj7l09ksxgk8lhmi3rcv62b47cc57y"))))
+    (properties `((upstream-name . "moreparty")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vip
+                             r-varimp
+                             r-shinywidgets
+                             r-shiny
+                             r-rlang
+                             r-rclipboard
+                             r-plyr
+                             r-phosphoricons
+                             r-pdp
+                             r-partykit
+                             r-party
+                             r-measures
+                             r-mass
+                             r-iml
+                             r-ggplot2
+                             r-foreach
+                             r-dt
+                             r-datamods))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=moreparty")
+    (synopsis "Toolbox for Conditional Inference Trees and Random Forests")
+    (description
+     "Additions to party and partykit packages : tools for the interpretation of
+forests (surrogate trees, prototypes, etc.), feature selection (see Gregorutti
+et al (2017) <@code{arXiv:1310.5726>}, Hapfelmeier and Ulm (2013)
+<doi:10.1016/j.csda.2012.09.020>, Altmann et al (2010)
+<doi:10.1093/bioinformatics/btq134>) and parallelized versions of conditional
+forest and variable importance functions.  Also modules and a shiny app for
+conditional inference trees.")
+    (license license:gpl2+)))
+
 (define-public r-moranajp
   (package
     (name "r-moranajp")
@@ -35510,13 +35553,13 @@ name.\"")
 (define-public r-matrixtests
   (package
     (name "r-matrixtests")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "matrixTests" version))
        (sha256
-        (base32 "0xgmgcs1awzh1h3j8sfb44gazgfrh9m2ngz3ziq43m84lv7vxn5r"))))
+        (base32 "0d7i00cxzszfdnjm8q5b72ildic8nig6fbw7rba6acdnllpp7sza"))))
     (properties `((upstream-name . "matrixTests")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrixstats))

@@ -1590,13 +1590,13 @@ cluster certain effects and to reduce the complexity of the models.")
 (define-public r-btergm
   (package
     (name "r-btergm")
-    (version "1.10.10")
+    (version "1.10.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "btergm" version))
        (sha256
-        (base32 "1vh0jivl521mdjz3cb6fnazgqm9pc6wr515n7sbwvvyvn96ps6ax"))))
+        (base32 "1xyjy5ig5hf45h8axp2ykyh3n56ls47h1bjsa85k992rk0lsc4dg"))))
     (properties `((upstream-name . "btergm")))
     (build-system r-build-system)
     (propagated-inputs (list r-statnet-common
@@ -1617,9 +1617,7 @@ pseudolikelihood with bootstrapped confidence intervals or Markov Chain Monte
 Carlo maximum likelihood.  Goodness of fit assessment for ERGMs, TERGMs, and
 SAOMs. Micro-level interpretation of ERGMs and TERGMs. The methods are described
 in Leifeld, Cranmer and Desmarais (2018), J@code{StatSoft}
-<doi:10.18637/jss.v083.i06>.  If the suggested speedglm cannot be found on CRAN,
-you can find an old version in the @code{GitHub} mirror of CRAN at
-<https://github.com/cran/speedglm>.")
+<doi:10.18637/jss.v083.i06>.")
     (license license:gpl2+)))
 
 (define-public r-btdecaylasso
@@ -2780,32 +2778,6 @@ Brunner-Munzel test, which enable to use formula, matrix, and table as argument.
 Neubert and Brunner (2007) <doi:10.1016/j.csda.2006.05.024>, and are written
 with FORTRAN.")
     (license (list license:gpl2 license:gpl3))))
-
-(define-public r-brundle
-  (package
-    (name "r-brundle")
-    (version "1.0.9")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Brundle" version))
-       (sha256
-        (base32 "0z17wgmi272738n8pn6r60v5gbg8cbmwhc94s8f3vipa44h690bc"))))
-    (properties `((upstream-name . "Brundle")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rsamtools r-lattice r-diffbind r-deseq2))
-    (home-page "https://cran.r-project.org/package=Brundle")
-    (synopsis
-     "Normalisation Tools for Inter-Condition Variability of ChIP-Seq Data")
-    (description
-     "Inter-sample condition variability is a key challenge of normalising
-@code{ChIP-seq} data.  This implementation uses either spike-in or a second
-factor as a control for normalisation.  Input can either be from @code{DiffBind}
-or a matrix formatted for DESeq2'.  The output is either a @code{DiffBind}
-object or the default DESeq2 output.  Either can then be processed as normal.
-Supporting manuscript Guertin, Markowetz and Holding (2017)
-<doi:10.1101/182261>.")
-    (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-brulee
   (package
@@ -21590,35 +21562,39 @@ F., Hoijtink, H. & Gu, X. (2019) <doi:10.31219/osf.io/d5kf3>.")
 (define-public r-bayesianplatformdesigntimetrend
   (package
     (name "r-bayesianplatformdesigntimetrend")
-    (version "1.1.3")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesianPlatformDesignTimeTrend" version))
        (sha256
-        (base32 "1v4cvalyn2v1r1jbdhniw9gnh44nl2m64g7xp2bmqprx9fxb12md"))))
+        (base32 "1n48772g2fjy8z7rddsp2l6v99g9ffgi0nkzga8pz75apzkb3hji"))))
     (properties `((upstream-name . "BayesianPlatformDesignTimeTrend")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
                              r-stanheaders
                              r-rstantools
                              r-rstan
+                             r-reshape2
                              r-reshape
                              r-rcppparallel
                              r-rcppeigen
                              r-rcpp
+                             r-rcolorbrewer
                              r-matrixstats
                              r-lhs
                              r-lagp
                              r-iterators
+                             r-ggpubr
                              r-ggplot2
                              r-foreach
                              r-doparallel
+                             r-directlabels
                              r-boot
                              r-biocmanager
                              r-bh))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/ZXW834/PlatFormDesignTime")
+    (home-page "https://github.com/ZXW834/BayesianPlatformDesignTimeTrend")
     (synopsis "Simulate and Analyse Bayesian Platform Trial with Time Trend")
     (description
      "Simulating the sequential multi-arm multi-stage or platform trial with Bayesian

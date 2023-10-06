@@ -21213,32 +21213,26 @@ geospatial objects.")
 (define-public r-geodiv
   (package
     (name "r-geodiv")
-    (version "1.0.5")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geodiv" version))
        (sha256
-        (base32 "15aq2pr7j7bbzqlkk13j4xph4r47xq2lcv0rb64b02qnivb77s1m"))))
+        (base32 "0580q71m71xd0kn9z8l536ypl31gx4fyw6cn1nc03sazrdilkz8r"))))
     (properties `((upstream-name . "geodiv")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
-                             r-tibble
+                             r-terra
                              r-spatial
-                             r-sp
-                             r-snow
                              r-sf
-                             r-rgeos
-                             r-rgdal
+                             r-rlang
                              r-rcpparmadillo
                              r-rcpp
-                             r-raster
                              r-pracma
-                             r-phontools
-                             r-landscapemetrics
                              r-e1071
                              r-dplyr))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/bioXgeo/geodiv")
     (synopsis "Methods for Calculating Gradient Surface Metrics")
     (description
@@ -21275,27 +21269,24 @@ matrices of pairwise distances, or vectors of sequential distances.")
 (define-public r-geodimension
   (package
     (name "r-geodimension")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geodimension" version))
        (sha256
-        (base32 "0mh16cdac7vi8zv98g3s06109fpadan441zd80x9yfsypx75sdz0"))))
+        (base32 "0gg6xwkbfmmlaqc08ismg9d0yhif9167x6y2zbhsim9pdp01b4q9"))))
     (properties `((upstream-name . "geodimension")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
-                             r-tidyr
                              r-tibble
+                             r-snakecase
                              r-sf
                              r-rlang
-                             r-readr
-                             r-pander
-                             r-magrittr
                              r-generics
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=geodimension")
+    (home-page "https://josesamos.github.io/geodimension/")
     (synopsis "Definition of Geographic Dimensions")
     (description
      "The geographic dimension plays a fundamental role in multidimensional systems.

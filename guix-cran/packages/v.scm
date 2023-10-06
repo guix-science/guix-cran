@@ -2574,13 +2574,13 @@ associated inner nodes.")
 (define-public r-vistla
   (package
     (name "r-vistla")
-    (version "1.1.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vistla" version))
        (sha256
-        (base32 "117gng2kp3ngmi9w6h3qcradqc0dmb2alm1j41zpygkby6v8b1jw"))))
+        (base32 "1c6mk5wx0zj43m8k67cjlkzwb4jqnszjwmpkcmk7qgiqkfn1brmn"))))
     (properties `((upstream-name . "vistla")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=vistla")
