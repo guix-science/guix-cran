@@ -2985,13 +2985,13 @@ analysis as described in Diniz et.  al (2021)<doi:10.1186/s12874-021-01368-w>.")
 (define-public r-visachartr
   (package
     (name "r-visachartr")
-    (version "3.1.0")
+    (version "3.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "visachartR" version))
        (sha256
-        (base32 "0jwhb5ad6n9pcxx2ss6jzxj9gzi448x2ssw07h3igs7bxjh47lp1"))))
+        (base32 "19pg6r8gix0017q629cq5bmpk4hamw62sr3l1qqbx55naj7aawfr"))))
     (properties `((upstream-name . "visachartR")))
     (build-system r-build-system)
     (propagated-inputs (list r-htmlwidgets))
@@ -3295,13 +3295,13 @@ populations.")
 (define-public r-viraldomain
   (package
     (name "r-viraldomain")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "viraldomain" version))
        (sha256
-        (base32 "184hhd3k2sq984cs4hv938biwawx4wkwm8qgwvaks142fdb5phdm"))))
+        (base32 "0wcardcv3r0v9v80c93wmkkmqr3abb60cn1yny4vv0ls41a08g14"))))
     (properties `((upstream-name . "viraldomain")))
     (build-system r-build-system)
     (propagated-inputs (list r-workflows
@@ -3582,13 +3582,13 @@ fit researcher needs.")
 (define-public r-viking
   (package
     (name "r-viking")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "viking" version))
        (sha256
-        (base32 "1wrkv044646756fmc4bmij06pbmzyi8jydbpisngs3pa4wnixcvw"))))
+        (base32 "145xrfifdqnzclzx2c7aj89yw5sd8f34jijpia595dy30lssywwi"))))
     (properties `((upstream-name . "viking")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=viking")
@@ -7139,6 +7139,28 @@ testing: valid inference and practical considerations\",
      "Rule sets with validation rules may contain redundancies or contradictions.
 Functions for finding redundancies and problematic rules are provided, given a
 set a rules formulated with validate'.")
+    (license license:expat)))
+
+(define-public r-validatesuggest
+  (package
+    (name "r-validatesuggest")
+    (version "0.3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "validatesuggest" version))
+       (sha256
+        (base32 "0pp2zan5ri3bh4ianqdzgylwbq53n7zcd3pxk85rrqx0jxyj3fy9"))))
+    (properties `((upstream-name . "validatesuggest")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-whisker r-validate r-rpart))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/data-cleaning/validatesuggest")
+    (synopsis "Generate Suggestions for Validation Rules")
+    (description
+     "Generate suggestions for validation rules from a reference data set, which can
+be used as a starting point for domain specific rules to be checked with package
+validate'.")
     (license license:expat)))
 
 (define-public r-validaters

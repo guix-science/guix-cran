@@ -1174,6 +1174,24 @@ adopted to to update the model parameters and draw imputations of the coarse
 data.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-mvnggrad
+  (package
+    (name "r-mvnggrad")
+    (version "0.1.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mvngGrAd" version))
+       (sha256
+        (base32 "17pzrppbl3ijkqmzlca321q3ngnjrkn0kn647gdfxmd84qkbcq8s"))))
+    (properties `((upstream-name . "mvngGrAd")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=mvngGrAd")
+    (synopsis "Moving Grid Adjustment in Plant Breeding Field Trials")
+    (description
+     "Package for moving grid adjustment in plant breeding field trials.")
+    (license license:gpl2+)))
+
 (define-public r-mvnfast
   (package
     (name "r-mvnfast")
@@ -5088,13 +5106,13 @@ attenuate the results to the null or by a given amount?")
 (define-public r-multibias
   (package
     (name "r-multibias")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multibias" version))
        (sha256
-        (base32 "0j247sk272k11na20bspv38fz9imkyr25rbhl8mba0xad9k3gim2"))))
+        (base32 "1xwxvd3w4pak55kkfkncyc6lcmggdkp226vfzmb5www6kcqrgnzl"))))
     (properties `((upstream-name . "multibias")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-magrittr r-dplyr))
@@ -6080,16 +6098,16 @@ DNA Haplogroups.  Based on formulae by Samuels et al.  AJHG, 2006.
 (define-public r-mtest
   (package
     (name "r-mtest")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MTest" version))
        (sha256
-        (base32 "0lx9z20q4r5rzn8c96kiiwif6vchyz40mi82xqhyzw4b535c93fb"))))
+        (base32 "19sz6s5hbrvm4jv54hv8g3d2ixf9pk72ch5j9418skal4dawh1yn"))))
     (properties `((upstream-name . "MTest")))
     (build-system r-build-system)
-    (propagated-inputs (list r-car))
+    (propagated-inputs (list r-plotly r-ggplot2 r-car))
     (home-page "https://github.com/vmoprojs/MTest")
     (synopsis "Procedure for Multicollinearity Testing using Bootstrap")
     (description
@@ -8627,13 +8645,13 @@ algorithm, described in Bresler (2015) <doi:10.1145/2746539.2746631).")
 (define-public r-mrfdepth
   (package
     (name "r-mrfdepth")
-    (version "1.0.14")
+    (version "1.0.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mrfDepth" version))
        (sha256
-        (base32 "1jh6n12rgjg9gr1d81sjfnn6fx49pzr75ipngy3v6ngf7iaixcl7"))))
+        (base32 "08dc5xq3spv1zb5yfqmwldiw7sflq1nfpkn0cqapw4i4csx31qsl"))))
     (properties `((upstream-name . "mrfDepth")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2
@@ -8645,7 +8663,7 @@ algorithm, described in Bresler (2015) <doi:10.1145/2746539.2746631).")
                              r-geometry
                              r-abind))
     (native-inputs (list gfortran))
-    (home-page "https://github.com/PSegaert/mrfDepth")
+    (home-page "https://cran.r-project.org/package=mrfDepth")
     (synopsis
      "Depth Measures in Multivariate, Regression and Functional Settings")
     (description
@@ -11026,20 +11044,18 @@ defined by shape metrics.")
 (define-public r-morphomap
   (package
     (name "r-morphomap")
-    (version "1.4")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "morphomap" version))
        (sha256
-        (base32 "16lc3iydnsmc4jq2x2mqxhmaknjfvxgv94wxd6znf34hn4486iyl"))))
+        (base32 "0kin6jvg3vlsbga0zr34nnq1zixicw7vsphiw45aifyfbnwiw0av"))))
     (properties `((upstream-name . "morphomap")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp
                              r-rvcg
                              r-rgl
-                             r-rgdal
-                             r-raster
                              r-oce
                              r-morpho
                              r-mgcv
@@ -21157,22 +21173,23 @@ Models with time dependent misclassification may also be fitted.")
 (define-public r-miscfuncs
   (package
     (name "r-miscfuncs")
-    (version "1.5-4")
+    (version "1.5-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "miscFuncs" version))
        (sha256
-        (base32 "12y7j4w0kakikwfc5j60qcp0z9661smjfdqhxqyh8whqm1zbbami"))))
+        (base32 "1mcn3sbi1rl4vm22qp31c8vrhzr6ffrqm3qhr6rp05bdlp99blpn"))))
     (properties `((upstream-name . "miscFuncs")))
     (build-system r-build-system)
     (propagated-inputs (list r-roxygen2 r-mvtnorm))
     (home-page "https://cran.r-project.org/package=miscFuncs")
     (synopsis
-     "Miscellaneous Useful Functions Including LaTeX Tables, Kalman Filtering and Development Tools")
+     "Miscellaneous Useful Functions Including LaTeX Tables, Kalman Filtering, QQplots with Simulation-Based Confidence Intervals and Development Tools")
     (description
      "Implementing various things including functions for @code{LaTeX} tables, the
-Kalman filter, web scraping, development tools, relative risk and odds ratio.")
+Kalman filter, QQ-plots with simulation-based confidence intervals, web
+scraping, development tools, relative risk and odds ratio.")
     (license license:gpl3)))
 
 (define-public r-miscf
@@ -21647,16 +21664,17 @@ Sievert, Schloerke, Xie, Allen, @code{McPherson}, Dipert and Borges (2022)
 (define-public r-mirai
   (package
     (name "r-mirai")
-    (version "0.10.0")
+    (version "0.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mirai" version))
        (sha256
-        (base32 "1mjwdjz2v982vk0f8sckim8p0bzs78nbrzzx0f9q8bmpznkq9rdy"))))
+        (base32 "0d19pazgh16zcyssfha23csb98yhn9sz8xd7cbyqdf547n6yb0xn"))))
     (properties `((upstream-name . "mirai")))
     (build-system r-build-system)
     (propagated-inputs (list r-nanonext))
+    (native-inputs (list r-knitr))
     (home-page "https://shikokuchuo.net/mirai/")
     (synopsis "Minimalist Async Evaluation Framework for R")
     (description
@@ -22174,6 +22192,38 @@ packages from this repository directly, rather than from CRAN. This is useful in
 production settings, e.g. server behind a firewall, or remote locations with
 slow (or zero) Internet access.")
     (license license:gpl2)))
+
+(define-public r-minesweepr
+  (package
+    (name "r-minesweepr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mineSweepR" version))
+       (sha256
+        (base32 "0cvq8cwmyszyyckf2p9p5balvkzqrmrl7br1xlf1jaa35icpchdj"))))
+    (properties `((upstream-name . "mineSweepR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang
+                             r-pals
+                             r-mmand
+                             r-mgc
+                             r-hms
+                             r-gsignal
+                             r-dplyr
+                             r-complexheatmap))
+    (home-page "https://cran.r-project.org/package=mineSweepR")
+    (synopsis "Mine Sweeper Game")
+    (description
+     "This is the very popular mine sweeper game! The game requires you to find out
+tiles that contain mines through clues from unmasking neighboring tiles.  Each
+tile that does not contain a mine shows the number of mines in its adjacent
+tiles.  If you unmask all tiles that do not contain mines, you win the game; if
+you unmask any tile that contains a mine, you lose the game.  For further game
+instructions, please run `help(run_game)` and check details.  This game runs in
+X11-compatible devices with `@code{grDevices::x11()`}.")
+    (license license:expat)))
 
 (define-public r-minerva
   (package
@@ -25226,13 +25276,13 @@ CRISPR homing dynamics in Marshall et al. (2017)
 (define-public r-mgcviz
   (package
     (name "r-mgcviz")
-    (version "0.1.9")
+    (version "0.1.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mgcViz" version))
        (sha256
-        (base32 "09n18ypjdwcca38i2v636ijgnzwalv7wh55z82a0pfrbzabiynn1"))))
+        (base32 "14n9l10rcr9nar71lyw1qmk9xar2zixcx4s9rdnz5dr4jr7330y3"))))
     (properties `((upstream-name . "mgcViz")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -36659,13 +36709,13 @@ used to infer seed production by each individual plant.")
 (define-public r-masswater
   (package
     (name "r-masswater")
-    (version "2.1.1")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MassWateR" version))
        (sha256
-        (base32 "06q2fgg7d7jya4sgzwh2hkp0844cbqasig4cn833fqvbiq6d71jz"))))
+        (base32 "0r5ngshvsj2bhhpsrzrlarm3fwv2f6zlxbrx83crciqspvkird68"))))
     (properties `((upstream-name . "MassWateR")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
@@ -38001,13 +38051,13 @@ autoregressive models.")
 (define-public r-maq
   (package
     (name "r-maq")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maq" version))
        (sha256
-        (base32 "1ikmpg75knbzw8dlqnwbw3n66b7mx02266n13xifsz7qjk2zv61y"))))
+        (base32 "1b835hw79kkmvmpln7mszczdhhqh5q371f2jviqabjl58b6wcsyd"))))
     (properties `((upstream-name . "maq")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -39142,13 +39192,13 @@ visualizing networks with sensible defaults.")
 (define-public r-manymome
   (package
     (name "r-manymome")
-    (version "0.1.12")
+    (version "0.1.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "manymome" version))
        (sha256
-        (base32 "0va5xxl46pgpwp335cf5a1h81jz1vmpqcs7nmqqf547xzw1d9rfj"))))
+        (base32 "1izyi7hx266f7zj4rlpm9ijwj3yajlqrvdnc9899nvzl6g2whgqc"))))
     (properties `((upstream-name . "manymome")))
     (build-system r-build-system)
     (propagated-inputs (list r-pbapply
@@ -39164,14 +39214,15 @@ visualizing networks with sensible defaults.")
     (description
      "Computes indirect effects, conditional effects, and conditional indirect effects
 in a structural equation model or path model after model fitting, with no need
-to define any user parameters or label any paths in the model syntax.  Can also
-form bootstrap confidence intervals by doing bootstrapping only once and reusing
-the bootstrap estimates in all subsequent computations.  Supports bootstrap
-confidence intervals for standardized (partially or completely) indirect
-effects, conditional effects, and conditional indirect effects as described in
-Cheung (2009) <doi:10.3758/BRM.41.2.425> and Cheung, Cheung, Lau, Hui, and Vong
-(2022) <doi:10.1037/hea0001188>.  Model fitting can be done by structural
-equation modeling using lavaan() or regression using lm().")
+to define any user parameters or label any paths in the model syntax, using the
+approach presented in Cheung and Cheung (2023) <doi:10.3758/s13428-023-02224-z>.
+ Can also form bootstrap confidence intervals by doing bootstrapping only once
+and reusing the bootstrap estimates in all subsequent computations.  Supports
+bootstrap confidence intervals for standardized (partially or completely)
+indirect effects, conditional effects, and conditional indirect effects as
+described in Cheung (2009) <doi:10.3758/BRM.41.2.425> and Cheung, Cheung, Lau,
+Hui, and Vong (2022) <doi:10.1037/hea0001188>.  Model fitting can be done by
+structural equation modeling using lavaan() or regression using lm().")
     (license license:gpl3+)))
 
 (define-public r-manymodelr
@@ -40968,24 +41019,25 @@ settings can be modified.")
 (define-public r-madshapr
   (package
     (name "r-madshapr")
-    (version "1.0.0")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "madshapR" version))
        (sha256
-        (base32 "189hwvfzddib6d8p2mjp4idb973i5bc6shkvlmzmkxsj026bckw6"))))
+        (base32 "04nigwlvx56fd22l6rs1jhyh270flj173w6wrspsq3gmnl9k468s"))))
     (properties `((upstream-name . "madshapR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xfun
-                             r-tidytext
+    (propagated-inputs (list r-tidytext
                              r-tidyr
                              r-stringr
                              r-rlang
                              r-readr
                              r-lubridate
+                             r-lifecycle
                              r-knitr
                              r-janitor
+                             r-haven
                              r-ggplot2
                              r-fs
                              r-forcats
@@ -40995,7 +41047,7 @@ settings can be modified.")
                              r-crayon
                              r-bookdown))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/maelstrom-research/madshapR/")
+    (home-page "https://github.com/maelstrom-research/madshapR")
     (synopsis
      "Support Technical Processes Following 'Maelstrom Research' Standards")
     (description

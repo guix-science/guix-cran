@@ -2341,13 +2341,13 @@ and thus keeping memory usage constant.")
 (define-public r-exgaussestim
   (package
     (name "r-exgaussestim")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ExGaussEstim" version))
        (sha256
-        (base32 "0f466dr0k8fzcv65jdlhp3z21zl7whavrh9h5hdrd2c5qpc2i23i"))))
+        (base32 "070q94c9qblmcarpmpabhawc2y1lz98s6vv2x8wj8fhgah6pdhvf"))))
     (properties `((upstream-name . "ExGaussEstim")))
     (build-system r-build-system)
     (propagated-inputs (list r-pracma
@@ -10038,13 +10038,13 @@ generation of trees based on these distance matrices.")
 (define-public r-envnicher
   (package
     (name "r-envnicher")
-    (version "1.4")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EnvNicheR" version))
        (sha256
-        (base32 "0hxx9wmzlw0clvdgdsy8msc78nvm81j3naxr57i7lqqa360sjy3a"))))
+        (base32 "1zg59w5ynhrl74z0y8f656rfqsicwc0sp6awgg655yr68c6xa0jp"))))
     (properties `((upstream-name . "EnvNicheR")))
     (build-system r-build-system)
     (propagated-inputs (list r-idpmisc))
@@ -17291,13 +17291,13 @@ metrics to relate pairs of trajectories (dissimilarity and convergence).")
 (define-public r-ecotoxr
   (package
     (name "r-ecotoxr")
-    (version "1.0.3")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ECOTOXr" version))
        (sha256
-        (base32 "0i4ghmdqxiqrrlpzccdfsaa1kb3i5c629dci9ix5z94fy0ls611m"))))
+        (base32 "0xah3kw58sm6j8vnpfsmw0lmrqqwbri2yqm6hph92qzq0a6rfsxg"))))
     (properties `((upstream-name . "ECOTOXr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -18654,27 +18654,6 @@ clusters using echelon scan method proposed by Kurihara (2003)
 <doi:10.20551/jscswabun.15.2_171>.")
     (license license:gpl3)))
 
-(define-public r-echarty
-  (package
-    (name "r-echarty")
-    (version "1.6.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "echarty" version))
-       (sha256
-        (base32 "1yj01aa3gkwhvg3v5z44xlf5zvq7651v55kldx73ak2lsirc0r49"))))
-    (properties `((upstream-name . "echarty")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-htmlwidgets r-dplyr r-data-tree))
-    (native-inputs (list esbuild))
-    (home-page "https://github.com/helgasoft/echarty")
-    (synopsis "Minimal R/Shiny Interface to JavaScript Library 'ECharts'")
-    (description
-     "Deliver the full functionality of ECharts with minimal overhead.  echarty users
-build R lists for ECharts API. Lean set of powerful commands.")
-    (license license:asl2.0)))
-
 (define-public r-echarts4r
   (package
     (name "r-echarts4r")
@@ -18951,13 +18930,13 @@ modified rejection sampling or uniformization.")
 (define-public r-ecce
   (package
     (name "r-ecce")
-    (version "2.0.5")
+    (version "2.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecce" version))
        (sha256
-        (base32 "0p3icfp9b2ri84q79df40ws4nswl2jw39g9vvksr4g2y8l463w8p"))))
+        (base32 "185b6vdf5fqfm6xfg1h90gglicy3p73pk6mqfpp8n4sbywydqd31"))))
     (properties `((upstream-name . "ecce")))
     (build-system r-build-system)
     (propagated-inputs (list r-uuid r-jsonlite r-httr r-digest r-curl))
@@ -20380,6 +20359,38 @@ time-consuming.  This package takes the pain out of that process by providing
 functions to quickly locate variables and download labeled tables from the
 Census APIs (<https://www.census.gov/data/developers/data-sets.html>).")
     (license license:expat)))
+
+(define-public r-easybgm
+  (package
+    (name "r-easybgm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "easybgm" version))
+       (sha256
+        (base32 "077j8l04cix4vh2jzvmrzmq17j36npsz68qig7gvfvf9lcm3aq1q"))))
+    (properties `((upstream-name . "easybgm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-qgraph
+                             r-igraph
+                             r-hdinterval
+                             r-ggplot2
+                             r-dplyr
+                             r-bgms
+                             r-bggm
+                             r-bdgraph))
+    (home-page "https://cran.r-project.org/package=easybgm")
+    (synopsis "Extracting and Visualizing Bayesian Graphical Models")
+    (description
+     "Fit and visualize the results of a Bayesian analysis of networks commonly found
+in psychology.  The package supports fitting cross-sectional network models
+fitted using the packages BDgraph', bgms and BGGM'.  The package provides the
+parameter estimates, posterior inclusion probabilities, inclusion Bayes factor,
+and the posterior density of the parameters.  In addition, for BDgraph and bgms
+it allows to assess the posterior structure space.  Furthermore, the package
+comes with an extensive suite for visualizing results.")
+    (license license:gpl2+)))
 
 (define-public r-easyanova
   (package

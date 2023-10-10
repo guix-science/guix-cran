@@ -481,6 +481,27 @@ objects more naturally and write the resulting YAML to your clipboard or to YAML
 files related to your project.")
     (license license:expat)))
 
+(define-public r-ymd
+  (package
+    (name "r-ymd")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ymd" version))
+       (sha256
+        (base32 "18ivf09r7df4jq60pm0gdagcvpb4pz9a19y7dfb096h1yk7rqfa4"))))
+    (properties `((upstream-name . "ymd")))
+    (build-system r-build-system)
+    (inputs (list))
+    (home-page "https://shrektan.github.io/ymd/")
+    (synopsis "Parse 'YMD' Format Number or String to Date")
+    (description
+     "Convert YMD format number or string to Date efficiently, using Rust's standard
+library.  It also provides helper functions to handle Date, e.g., quick finding
+the beginning or end of the given period, adding months to Date, etc.")
+    (license license:expat)))
+
 (define-public r-yll
   (package
     (name "r-yll")
@@ -794,13 +815,13 @@ packages taxlist and vegtable'.")
 (define-public r-yamlet
   (package
     (name "r-yamlet")
-    (version "0.10.32")
+    (version "0.10.33")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "yamlet" version))
        (sha256
-        (base32 "0nab4zc86alsnvm63mlf3dkwsra8mmvvf1cif4vw8ab625l7151q"))))
+        (base32 "1ynb7p5n8piinill37gxg83p2k6qijj32vnyz6fx5ddfp8958rb5"))))
     (properties `((upstream-name . "yamlet")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml

@@ -486,13 +486,13 @@ submit events.")
 (define-public r-azlogr
   (package
     (name "r-azlogr")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "azlogr" version))
        (sha256
-        (base32 "1bpvqwhvw2a2g0np1z485jds21a69h1hqc9xa0360rbinbygnqyk"))))
+        (base32 "0lkzxx8qhaqj7g55xfqvm3ydhlfwqbzy9fsjfq6b8v1m2h1zgdlw"))))
     (properties `((upstream-name . "azlogr")))
     (build-system r-build-system)
     (propagated-inputs (list r-logger r-jsonlite r-httr r-digest r-catools))
@@ -3238,18 +3238,18 @@ Effects by Pooling Limited Information across Observations,\"
 (define-public r-atakrig
   (package
     (name "r-atakrig")
-    (version "0.9.8")
+    (version "0.9.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "atakrig" version))
        (sha256
-        (base32 "14li2lpb2bksrfdhvnhs4k22jw4r4x9rm6lq9kn9hzif7gsibwr9"))))
+        (base32 "0dzqghs2358hqyklvfblil5ww9d5nmx406invlx5fgqy4k0zcyzf"))))
     (properties `((upstream-name . "atakrig")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp
+    (propagated-inputs (list r-terra
                              r-snow
-                             r-rgeos
+                             r-sf
                              r-rcpp
                              r-mass
                              r-gstat
@@ -8769,6 +8769,35 @@ frames.")
      "R interface for Apache Sedona based on sparklyr (<https://sedona.apache.org>).")
     (license license:asl2.0)))
 
+(define-public r-apa
+  (package
+    (name "r-apa")
+    (version "0.3.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "apa" version))
+       (sha256
+        (base32 "0w4cqb9fviz6k4b9cj31sgizqmrkxjr9hjdb8ap32ylzr9dw6gy0"))))
+    (properties `((upstream-name . "apa")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-rmarkdown
+                             r-purrr
+                             r-mbess
+                             r-magrittr
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/dgromer/apa")
+    (synopsis
+     "Format Outputs of Statistical Tests According to APA Guidelines")
+    (description
+     "Formatter functions in the apa package take the return value of a statistical
+test function, e.g. a call to chisq.test() and return a string formatted
+according to the guidelines of the APA (American Psychological Association).")
+    (license license:gpl3+)))
+
 (define-public r-aovbay
   (package
     (name "r-aovbay")
@@ -12798,13 +12827,13 @@ all_glm(), and Cox proportional hazards regression: all_cox().")
 (define-public r-allelicseries
   (package
     (name "r-allelicseries")
-    (version "0.0.3.0")
+    (version "0.0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AllelicSeries" version))
        (sha256
-        (base32 "1wh9nkq67n7ldipf7wl43j1w8w42izlimx3baxh1a3a07mahf2pz"))))
+        (base32 "1i9p2hzi61mvl5gxcs7rlavcl70pvjscnqjlxms35n4ziq3hzrk0"))))
     (properties `((upstream-name . "AllelicSeries")))
     (build-system r-build-system)
     (propagated-inputs (list r-skat r-rnomni r-rcpparmadillo r-rcpp))
@@ -12819,9 +12848,9 @@ the benign missense variants (BMVs), deleterious missense variants (DMVs), and
 protein truncating variants (PTVs) within a gene.  COAST uses a set of
 adjustable weights that tailor the test towards rejecting the null hypothesis
 for genes where the average magnitude of effect increases monotonically from
-BMVs to DMVs to PTVs.  See @code{McCaw} ZR, Somineni H, Bereket M, Klein C,
-Karaletsos T, Casale FP, Koller D, Soare TW. (2022) \"An allelic series rare
-variant association test for candidate gene discovery\"
+BMVs to DMVs to PTVs.  See @code{McCaw} ZR, OâDushlaine C, Somineni H, Bereket
+M, Klein C, Karaletsos T, Casale FP, Koller D, Soare TW. (2022) \"An allelic
+series rare variant association test for candidate gene discovery\"
 <doi:10.1101/2022.12.23.521658>.")
     (license license:bsd-3)))
 
@@ -12911,21 +12940,20 @@ deterministically calculated.")
 (define-public r-allcontributors
   (package
     (name "r-allcontributors")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "allcontributors" version))
        (sha256
-        (base32 "1lvm6r4k4z4v2pl1nb6v2ql1cakyi48b3vp4zdf0p5rvmv7sndz6"))))
+        (base32 "0s8az7wz8rx74i6rlinl8l0l90hzql10hxqlxm281irsczhjm7ga"))))
     (properties `((upstream-name . "allcontributors")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr
-                             r-jsonlite
-                             r-httr
+                             r-httr2
                              r-gitcreds
-                             r-git2r
-                             r-ghql
+                             r-gh
+                             r-gert
                              r-curl
                              r-clipr
                              r-cli))
@@ -17170,13 +17198,13 @@ the admiral package.")
 (define-public r-admiral
   (package
     (name "r-admiral")
-    (version "0.12.1")
+    (version "0.12.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admiral" version))
        (sha256
-        (base32 "1079v2fl0cwjk2918cijx02d92z3w9ixzlfw4gzfs8s2bsgbzb2a"))))
+        (base32 "1n9wdv5fwb8gydz67xb5nd7yxp1vl5b8iqv2mknfzv5mhsncbygs"))))
     (properties `((upstream-name . "admiral")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -17200,8 +17228,7 @@ datasets in R. A@code{DaM} datasets are a mandatory part of any New Drug or
 Biologics License Application submitted to the United States Food and Drug
 Administration (FDA).  Analysis derivations are implemented in accordance with
 the \"Analysis Data Model Implementation Guide\" (CDISC Analysis Data Model Team,
-2021,
-<https://www.cdisc.org/standards/foundational/adam/adamig-v1-3-release-package>).")
+2021, <https://www.cdisc.org/standards/foundational/adam>).")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-adlift
@@ -17742,6 +17769,30 @@ provided as a stand-alone application that can be launched from any local
 machine on which the data is stored.")
     (license license:gpl3)))
 
+(define-public r-adephylo
+  (package
+    (name "r-adephylo")
+    (version "1.1-16")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "adephylo" version))
+       (sha256
+        (base32 "0n6f2v287gkbdrfxq50b1lbya4znqg50lrah0v540vmydgi5vkmm"))))
+    (properties `((upstream-name . "adephylo")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-phylobase r-ape r-adegenet r-ade4))
+    (home-page "https://cran.r-project.org/package=adephylo")
+    (synopsis "Exploratory Analyses for the Phylogenetic Comparative Method")
+    (description
+     "Multivariate tools to analyze comparative data, i.e.  a phylogeny and some
+traits measured for each taxa.  The package contains functions to represent
+comparative data, compute phylogenetic proximities, perform multivariate
+analysis with phylogenetic constraints and test for the presence of phylogenetic
+autocorrelation.  The package is described in Jombart et al (2010)
+<doi:10.1093/bioinformatics/btq292>.")
+    (license license:gpl2+)))
+
 (define-public r-adehabitatma
   (package
     (name "r-adehabitatma")
@@ -18243,13 +18294,13 @@ parameters.")
 (define-public r-adbcdrivermanager
   (package
     (name "r-adbcdrivermanager")
-    (version "0.7.0")
+    (version "0.7.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adbcdrivermanager" version))
        (sha256
-        (base32 "1v9ywcq624k1cmamprdaj0dhbq71d9d74l73qx1md5xgvirqj0qm"))))
+        (base32 "0qg6jjxn4jp4629xsxd47f5y6n9x5wj6jypdapl9g9dn2ackydqd"))))
     (properties `((upstream-name . "adbcdrivermanager")))
     (build-system r-build-system)
     (propagated-inputs (list r-nanoarrow))
@@ -18312,13 +18363,13 @@ public suffix extractor.")
 (define-public r-adapttest
   (package
     (name "r-adapttest")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adaptTest" version))
        (sha256
-        (base32 "1qfhb3c64a5pl23vk7z6a3h46yb69cvzp1bpxnpybhxs42s80l5q"))))
+        (base32 "0wb21mac5h683qgjdic29kpncr22ri93iwq8w4b7hywaxkv0zj2p"))))
     (properties `((upstream-name . "adaptTest")))
     (build-system r-build-system)
     (propagated-inputs (list r-lattice))

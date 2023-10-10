@@ -501,13 +501,13 @@ the @code{FuzzyNumbers} package.")
 (define-public r-fuzzysim
   (package
     (name "r-fuzzysim")
-    (version "4.9.9")
+    (version "4.10.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fuzzySim" version))
        (sha256
-        (base32 "1lh60myr49lp25kkd6snpm8sy5vjcfh537mjh4wmyhx1hq0py7qs"))))
+        (base32 "1mqsy5mhq61yzpwbqawxgx58rv2ypi1acl56sn7xqkasrlcywgkq"))))
     (properties `((upstream-name . "fuzzySim")))
     (build-system r-build-system)
     (propagated-inputs (list r-modeva))
@@ -2420,13 +2420,13 @@ models, Technical report.")
 (define-public r-fude
   (package
     (name "r-fude")
-    (version "0.3.4")
+    (version "0.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fude" version))
        (sha256
-        (base32 "0pc0pwcndgdkswivlwzna9m7h7438p44mbfr66p08lxslbj1rrh1"))))
+        (base32 "11gzmgq7rknrhcskfs751f4snh4qcv3hfkqn6b95iv9zkcpar4gm"))))
     (properties `((upstream-name . "fude")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -3759,13 +3759,13 @@ modified generalized weights is computed.  Ibrahim et al. (2022)
 (define-public r-frf2-catlg128
   (package
     (name "r-frf2-catlg128")
-    (version "1.2-2")
+    (version "1.2-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FrF2.catlg128" version))
        (sha256
-        (base32 "0r5v3922gsrsyrdin5dwdygnj9i23gwa67p7kll6ac6xxp8gig4w"))))
+        (base32 "0jlp3qfikzc01qzlqnwnp96iylhzk0a1fazk6lankplkvxnv0zpc"))))
     (properties `((upstream-name . "FrF2.catlg128")))
     (build-system r-build-system)
     (propagated-inputs (list r-frf2))
@@ -5193,6 +5193,35 @@ c(b=3,a=-1) will return c(b=5,c=3).  Uses @code{disordR} discipline (Hankin,
 The underlying mathematical structure is the Free Abelian group, hence the name.
  To cite in publications please use Hankin (2023) <arxiv:2307:13184>.")
     (license license:gpl2+)))
+
+(define-public r-fqar
+  (package
+    (name "r-fqar")
+    (version "0.4.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fqar" version))
+       (sha256
+        (base32 "18llpbdjwscnbx9n94nc5x42mr3vsbf35s3br7w30s8mf48c3s3y"))))
+    (properties `((upstream-name . "fqar")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-rlang
+                             r-memoise
+                             r-jsonlite
+                             r-httr
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/equitable-equations/fqar/")
+    (synopsis "Floristic Quality Assessment Tools for R")
+    (description
+     "This package provides tools for downloading and analyzing floristic quality
+assessment data.  See Freyman et al. (2015) <doi:10.1111/2041-210X.12491> for
+more information about floristic quality assessment and the associated database.")
+    (license license:expat)))
 
 (define-public r-fqadata
   (package
@@ -9056,6 +9085,59 @@ mind the needs of bioinformatics workflows.  However, it is easily extendable to
 any field where a series of steps (shell commands) are to be executed in a
 (work)flow.")
     (license license:expat)))
+
+(define-public r-flowml
+  (package
+    (name "r-flowml")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "flowml" version))
+       (sha256
+        (base32 "1fssgx06fz4bvprghl9kf8x80jg3g8w04hhdgvml86w4vhi1vz0v"))))
+    (properties `((upstream-name . "flowml")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vip
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rsample
+                             r-rlang
+                             r-rjson
+                             r-readr
+                             r-r6
+                             r-purrr
+                             r-optparse
+                             r-magrittr
+                             r-future
+                             r-furrr
+                             r-fastshap
+                             r-dplyr
+                             r-data-table
+                             r-caret
+                             r-abcanalysis))
+    (home-page "https://github.com/Boehringer-Ingelheim/flowml")
+    (synopsis
+     "Backend for a 'nextflow' Pipeline that Performs Machine-Learning-Based Modeling of Biomedical Data")
+    (description
+     "This package provides functionality to perform machine-learning-based modeling
+in a computation pipeline.  Its functions contain the basic steps of
+machine-learning-based knowledge discovery workflows, including model training
+and optimization, model evaluation, and model testing.  To perform these tasks,
+the package builds heavily on existing machine-learning packages, such as caret
+<https://github.com/topepo/caret/> and associated packages.  The package can
+train multiple models, optimize model hyperparameters by performing a grid
+search or a random search, and evaluates model performance by different metrics.
+ Models can be validated either on a test data set, or in case of a small sample
+size by k-fold cross validation or repeated bootstrapping.  It also allows for
+0-Hypotheses generation by performing permutation experiments.  Additionally, it
+offers methods of model interpretation and item categorization to identify the
+most informative features from a high dimensional data space.  The functions of
+this package can easily be integrated into computation pipelines (e.g. nextflow
+<https://www.nextflow.io/>) and hereby improve scalability, standardization, and
+re-producibility in the context of machine-learning.")
+    (license license:gpl3+)))
 
 (define-public r-flow
   (package
@@ -15527,13 +15609,13 @@ the plot of the functional data.")
 (define-public r-fdasrvf
   (package
     (name "r-fdasrvf")
-    (version "2.0.2")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fdasrvf" version))
        (sha256
-        (base32 "1q7zk9cic1lbpsgv52gpz0y8ifb4ac0654n7imfv2nj4d2vnz0lb"))))
+        (base32 "1m9wn9lbpg7ib3clqydcnrclrjw4yany0cmhmvvkar1dk8r0qar9"))))
     (properties `((upstream-name . "fdasrvf")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
@@ -19664,6 +19746,37 @@ extension of the methodology proposed by \"Santos & Heras (2020)
 created for numerous tools common in the field in order to make the metadata
 more Findable, Accessible, Interoperable, and Reproducible.")
     (license license:bsd-3)))
+
+(define-public r-fairadapt
+  (package
+    (name "r-fairadapt")
+    (version "0.2.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fairadapt" version))
+       (sha256
+        (base32 "19jagj8kva94kfvg9c5aqr0vm5swjq79j3ny307wacgb9g8hkhvm"))))
+    (properties `((upstream-name . "fairadapt")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scales
+                             r-ranger
+                             r-quantreg
+                             r-qrnn
+                             r-igraph
+                             r-ggplot2
+                             r-cowplot
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/dplecko/fairadapt")
+    (synopsis "Fair Data Adaptation with Quantile Preservation")
+    (description
+     "An implementation of the fair data adaptation with quantile preservation
+described in Plecko & Meinshausen (2019) <@code{arXiv:1911.06685>}.  The
+adaptation procedure uses the specified causal graph to pre-process the given
+training and testing data in such a way to remove the bias caused by the
+protected attribute.  The procedure uses tree ensembles for quantile regression.")
+    (license license:gpl3+)))
 
 (define-public r-fahrmeir
   (package

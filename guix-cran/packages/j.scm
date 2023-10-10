@@ -2653,13 +2653,13 @@ data using MCMC; Dimitris Rizopoulos (2016) <doi:10.18637/jss.v072.i07>.")
 (define-public r-jmatrix
   (package
     (name "r-jmatrix")
-    (version "1.4")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jmatrix" version))
        (sha256
-        (base32 "0ydy93bfgci11dam45lqpskj4pdlwjk4qq57g1f4352558nh9hkp"))))
+        (base32 "1kcz2zvi044aqp9v057x686jbmirc3p2s995vrb0cym1jvw53crh"))))
     (properties `((upstream-name . "jmatrix")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-memuse))
@@ -2750,16 +2750,17 @@ data.")
 (define-public r-jlpm
   (package
     (name "r-jlpm")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JLPM" version))
        (sha256
-        (base32 "0k63vi44vfb0k9nkqyhh3iymrca7p47xf2h4x2c4fi50v6bs3v2l"))))
+        (base32 "0xagw84mgbqrdyz9h8d9fw2yibx7k9cp5y1pd8v835n4s10m8wx2"))))
     (properties `((upstream-name . "JLPM")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survival r-stringr r-randtoolbox r-marqlevalg))
+    (propagated-inputs (list r-survival r-stringr r-randtoolbox r-marqlevalg
+                             r-lcmm))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=JLPM")
     (synopsis "Joint Latent Process Models")
@@ -2768,19 +2769,19 @@ data.")
 data are handled in latent process models for continuous (Gaussian or
 curvilinear) and ordinal outcomes while proportional hazard models are used for
 the survival part.  We propose a frequentist approach using maximum likelihood
-estimation.  See Saulnier et al, 2021 <@code{arXiv:2110.02612>}.")
+estimation.  See Saulnier et al, 2022 <doi:10.1016/j.ymeth.2022.03.003>.")
     (license license:gpl2+)))
 
 (define-public r-jlmerclusterperm
   (package
     (name "r-jlmerclusterperm")
-    (version "1.0.6")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jlmerclusterperm" version))
        (sha256
-        (base32 "07kihrzjilqwig6sj93hd9gjhafkns93ag9w7ma6dxwvjq45bplb"))))
+        (base32 "0qymlx8b1038znadwam9jhcp8h94g7gyqfzmarz49hps8ssfgiqp"))))
     (properties `((upstream-name . "jlmerclusterperm")))
     (build-system r-build-system)
     (inputs (list julia))

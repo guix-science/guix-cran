@@ -5470,13 +5470,13 @@ shape.")
 (define-public r-loadings
   (package
     (name "r-loadings")
-    (version "0.3.1")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "loadings" version))
        (sha256
-        (base32 "1b6i7dvzwpkqw1ak5slbgb6n27algl4x66y6ifr611bid090vd91"))))
+        (base32 "1ig9wz27mc5jdkah4z9ngdpanl5xcay2d27vdbfhannsw5i0lcdy"))))
     (properties `((upstream-name . "loadings")))
     (build-system r-build-system)
     (propagated-inputs (list r-geigen))
@@ -5484,13 +5484,17 @@ shape.")
     (synopsis
      "Loadings for Principal Component Analysis and Partial Least Squares")
     (description
-     "Computing statistical hypothesis testing for principal component (PC) loading
-(Yamamoto, H. et al. (2014)), orthogonal smoothed PC (OS-PC) loading (Yamamoto,
-H. et al. (2021) <doi:10.3390/metabo11030149>), one-sided kernel PC loading
-(Yamamoto, H. (2023) <doi:10.51094/jxiv.262>) , partial least squares (PLS)
-loading (Yamamoto, H. (2017) <doi:10.1002/cem.2883>), PLS with rank order of
-groups (PLS-ROG) loading (Yamamoto, H. (2017), multiset PLS and PLS-ROG loading
-(Yamamoto, H. (2022) <doi:10.1101/2022.08.30.505949>).")
+     "Computing statistical hypothesis testing for loading in principal component
+analysis (PCA) (Yamamoto, H. et al. (2014) <doi:10.1186/1471-2105-15-51>),
+orthogonal smoothed PCA (OS-PCA) (Yamamoto, H. et al. (2021)
+<doi:10.3390/metabo11030149>), one-sided kernel PCA (Yamamoto, H. (2023)
+<doi:10.51094/jxiv.262>), partial least squares (PLS) and PLS discriminant
+analysis (PLS-DA) (Yamamoto, H. et al. (2009)
+<doi:10.1016/j.chemolab.2009.05.006>), PLS with rank order of groups (PLS-ROG)
+(Yamamoto, H. (2017) <doi:10.1002/cem.2883>), regularized canonical correlation
+analysis discriminant analysis (RCCA-DA) (Yamamoto, H. et al. (2008)
+<doi:10.1016/j.bej.2007.12.009>), multiset PLS and PLS-ROG (Yamamoto, H. (2022)
+<doi:10.1101/2022.08.30.505949>).")
     (license license:lgpl3)))
 
 (define-public r-loader
@@ -11109,24 +11113,22 @@ Beancount'.")
 (define-public r-leastcostpath
   (package
     (name "r-leastcostpath")
-    (version "1.8.7")
+    (version "2.0.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "leastcostpath" version))
        (sha256
-        (base32 "0ivj15g3npwm0wpz6xaa8dj1am9diyvhyhnki8a3qfwsa7qv2n53"))))
+        (base32 "0nkahghj9vvhcsq8h39y8kvcpgglwhnb0wcdhvkqzwnsparl58kd"))))
     (properties `((upstream-name . "leastcostpath")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp
-                             r-rgeos
-                             r-rgdal
-                             r-raster
-                             r-pbapply
+    (propagated-inputs (list r-terra
+                             r-sf
                              r-matrix
+                             r-igraph
                              r-gstat
-                             r-gdistance))
-    (native-inputs (list r-knitr))
+                             r-foreach
+                             r-doparallel))
     (home-page "https://cran.r-project.org/package=leastcostpath")
     (synopsis "Modelling Pathways and Movement Potential Within a Landscape")
     (description
@@ -12563,6 +12565,33 @@ multiple heuristics based on the test statistic, and parallelized exhaustive
 search.")
     (license license:expat)))
 
+(define-public r-ldacoop
+  (package
+    (name "r-ldacoop")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LDAcoop" version))
+       (sha256
+        (base32 "1a2935kqd7pxdpgc1v6inx9z963dd33scc9viwdfbd0s6vlj8lq8"))))
+    (properties `((upstream-name . "LDAcoop")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-hmisc))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ZytoHMGU/LDAcoop")
+    (synopsis
+     "Analysis of Data from Limiting Dilution Assay (LDA) with or without Cellular Cooperation")
+    (description
+     "Cellular cooperation compromises the established method of calculating
+clonogenic activity from limiting dilution assay (LDA) data.  This tool provides
+functions that enable robust analysis in presence or absence of cellular
+cooperation.  The implemented method incorporates the same cooperativity module
+to model the non-linearity associated with cellular cooperation as known from
+the colony formation assay (Brix et al. (2021) <doi:10.1038/s41596-021-00615-0>:
+\"Analysis of clonogenic growth in vitro.\" Nature protocols).")
+    (license license:gpl3)))
+
 (define-public r-ldabiplots
   (package
     (name "r-ldabiplots")
@@ -12873,26 +12902,31 @@ results from internal standards or known metabolites.")
 (define-public r-lcmm
   (package
     (name "r-lcmm")
-    (version "2.0.2")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lcmm" version))
        (sha256
-        (base32 "0jyg8i3df6nj9nkim3va8marg4224zjx55lj3iw7ypbs4hgp8v09"))))
+        (base32 "159hdi4800b7r25fqx2b4rlr4n7837f75hpmfp1qx85wyl5198nd"))))
     (properties `((upstream-name . "lcmm")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survival r-randtoolbox r-nlme r-mvtnorm
-                             r-marqlevalg))
+    (propagated-inputs (list r-survival
+                             r-randtoolbox
+                             r-numderiv
+                             r-nlme
+                             r-mvtnorm
+                             r-marqlevalg
+                             r-doparallel))
     (native-inputs (list r-knitr gfortran))
     (home-page "https://cecileproust-lima.github.io/lcmm/")
     (synopsis
      "Extended Mixed Models Using Latent Classes and Latent Processes")
     (description
      "Estimation of various extensions of the mixed models including latent class
-mixed models, joint latent latent class mixed models, mixed models for
-curvilinear outcomes, mixed models for multivariate longitudinal outcomes using
-a maximum likelihood estimation method (Proust-Lima, Philipps, Liquet (2017)
+mixed models, joint latent class mixed models, mixed models for curvilinear
+outcomes, mixed models for multivariate longitudinal outcomes using a maximum
+likelihood estimation method (Proust-Lima, Philipps, Liquet (2017)
 <doi:10.18637/jss.v078.i02>).")
     (license license:gpl2+)))
 

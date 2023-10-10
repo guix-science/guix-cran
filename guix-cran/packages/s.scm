@@ -6166,20 +6166,22 @@ Japanese morphological analyzer.  This is a port of what is available in Python.
 (define-public r-success
   (package
     (name "r-success")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "success" version))
        (sha256
-        (base32 "12i2124wm38bl5vz0fsk6k77v0zym4d17il8ci9wxrbcmkhmnspk"))))
+        (base32 "0imwba2p50da9ymyj1pkg2dbn1ramzahabdnic0k0dmcn9g74d64"))))
     (properties `((upstream-name . "success")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
                              r-rfast
-                             r-rcolorbrewer
                              r-plotly
                              r-pbapply
+                             r-matrixcalc
+                             r-matrix
+                             r-ggrepel
                              r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/d-gomon/success")
@@ -6189,8 +6191,8 @@ Japanese morphological analyzer.  This is a port of what is available in Python.
 Continuous Time Generalized Rapid Response CUSUM (CGR-CUSUM)
 <doi:10.1093/biostatistics/kxac041>, the Biswas & Kalbfleisch (2008)
 <doi:10.1002/sim.3216> CUSUM, the Bernoulli CUSUM and the risk-adjusted funnel
-plot for survival data.  These procedures can be used to monitor survival
-processes for a change in the failure rate.")
+plot for survival data <doi:10.1002/sim.1970>.  These procedures can be used to
+monitor survival processes for a change in the failure rate.")
     (license license:gpl3+)))
 
 (define-public r-subvis
@@ -7705,13 +7707,13 @@ equations.")
 (define-public r-streamdag
   (package
     (name "r-streamdag")
-    (version "1.4-5")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "streamDAG" version))
        (sha256
-        (base32 "0l17mfsdlk54pghwkk96zbjxkls1p2d5zmf2y31br017j0hkil1p"))))
+        (base32 "1zzpjp1k0x0kh4jja8x0yjv35pygp5qb8ivqqg7wc7dr5plv87y5"))))
     (properties `((upstream-name . "streamDAG")))
     (build-system r-build-system)
     (propagated-inputs (list r-plotrix r-igraph r-asbio))
@@ -16026,13 +16028,13 @@ including the model's response function.")
 (define-public r-sqlrender
   (package
     (name "r-sqlrender")
-    (version "1.16.0")
+    (version "1.16.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SqlRender" version))
        (sha256
-        (base32 "0d0862hznrj1l1g8rpjrn3dn2dqyscbqkir19n4s8k5whrpb5l5l"))))
+        (base32 "0p98m6622zhdz0v66248icbq48icpy7p0acfr8hvx4ip99dxmfkv"))))
     (properties `((upstream-name . "SqlRender")))
     (build-system r-build-system)
     (inputs (list openjdk))
@@ -19971,13 +19973,13 @@ intervention of a single legislator.")
 (define-public r-spedinstabr
   (package
     (name "r-spedinstabr")
-    (version "1.9")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SPEDInstabR" version))
        (sha256
-        (base32 "0z27h9yl5lyayqa1wqj700kxrgyi1h13bqm3bbq8zml91dyq209c"))))
+        (base32 "1mzl55ji2w3l33mwdzhmlkfj4dlpqxfzad1pyqd1c5q2xxw0hhbf"))))
     (properties `((upstream-name . "SPEDInstabR")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=SPEDInstabR")
@@ -24823,47 +24825,6 @@ response functions, historical decompositions, and forecast error variance
 decompositions.")
     (license license:gpl3)))
 
-(define-public r-sourceset
-  (package
-    (name "r-sourceset")
-    (version "0.1.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SourceSet" version))
-       (sha256
-        (base32 "17dbxdqm9jkhyip6xdwrxsqqyncs5skclbi9drjbdcw745p7c6lh"))))
-    (properties `((upstream-name . "SourceSet")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-scales
-                             r-reshape2
-                             r-progress
-                             r-plyr
-                             r-igraph
-                             r-gtools
-                             r-grbase
-                             r-graph))
-    (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://cran.r-project.org/package=SourceSet")
-    (synopsis
-     "Graphical Model Approach to Identify Primary Genes in Perturbed Biological Pathways")
-    (description
-     "The algorithm pursues the identification of the set of variables driving the
-differences in two different experimental conditions (i.e., the primary genes)
-within a graphical model context.  It uses the idea of simultaneously looking
-for the differences between two multivariate normal distributions in all
-marginal and conditional distributions associated with a decomposable graph,
-which represents the pathway under exam.  The implementation accommodates
-genomics specific issues (low sample size and multiple testing issues) and
-provides a number of functions offering numerical and visual summaries to help
-the user interpret the obtained results.  In order to use the (optional)
-Cytoscape functionalities, the suggested r2cytoscape package must be installed
-from the @code{GitHub} repository
-('devtools::install_github('cytoscape/r2cytoscape')').  More details in Salviato
-et al., (2020) <doi:10.1371/journal.pcbi.1007357> and Djordjilovic et al.,
-(2022) <doi:10.1016/j.jmva.2022.104973>.")
-    (license license:agpl3)))
-
 (define-public r-soundshape
   (package
     (name "r-soundshape")
@@ -28069,15 +28030,16 @@ Diaz-Coto et al. (2020) <doi:10.1080/00949655.2020.1736071>).")
 (define-public r-smr
   (package
     (name "r-smr")
-    (version "2.0.2")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SMR" version))
        (sha256
-        (base32 "1lds6sp9szlrzkfxp3q24g4y4hd75qp4439hrn2k4hzsz84s7g3y"))))
+        (base32 "0gg3al3qpcvw3k5zm4j36kbd2ar7pqgxxx0jngcg76j1sjhz9g9m"))))
     (properties `((upstream-name . "SMR")))
     (build-system r-build-system)
+    (propagated-inputs (list r-rcpp))
     (home-page "https://bendeivide.github.io/SMR/")
     (synopsis "Externally Studentized Midrange Distribution")
     (description
@@ -34895,37 +34857,6 @@ stratified survival curves from Cox Proportional Hazard models.  It also
 simulates and plots marginal effects for multiplicative interactions.  Methods
 described in Gandrud (2015) <doi:10.18637/jss.v065.i03>.")
     (license license:gpl3)))
-
-(define-public r-simpathy
-  (package
-    (name "r-simpathy")
-    (version "0.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "simPATHy" version))
-       (sha256
-        (base32 "0xiqcrdnn7pcbhykkjabfym6hqq9hrnjigav8nshs143s9wflw1q"))))
-    (properties `((upstream-name . "simPATHy")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-shinydashboard
-                             r-shiny
-                             r-r-utils
-                             r-mvtnorm
-                             r-igraph
-                             r-htmlwidgets
-                             r-grbase
-                             r-graph
-                             r-ggm))
-    (native-inputs (list r-knitr esbuild))
-    (home-page "https://cran.r-project.org/package=simPATHy")
-    (synopsis "Method for Simulating Data from Perturbed Biological Pathways")
-    (description
-     "Simulate data from a Gaussian graphical model or a Gaussian Bayesian network in
-two conditions.  Given a covariance matrix of a reference condition simulate
-plausible disregulations.  See Salviato et al. (2017)
-<doi:10.1093/bioinformatics/btw642>.")
-    (license license:agpl3)))
 
 (define-public r-simodels
   (package
@@ -51060,13 +50991,13 @@ vitro clusters <https://github.com/@code{ScialdoneLab>}.")
 (define-public r-scoper
   (package
     (name "r-scoper")
-    (version "1.2.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scoper" version))
        (sha256
-        (base32 "1f9bdw7w7zgbjhxxxpld8jss7kbr4k9ksxwzr94wzvapgg06v10p"))))
+        (base32 "0y0bqdxr4g929paddrgs8qqxzp0pwsc62kxl6lbzp4l2xmg3j2j2"))))
     (properties `((upstream-name . "scoper")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -52616,13 +52547,13 @@ means, feature variances, or more general differences.")
 (define-public r-scatterdensity
   (package
     (name "r-scatterdensity")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ScatterDensity" version))
        (sha256
-        (base32 "022l266nx2y8lwlaq0kjj2khy1kqy764xll2c3v8qrf9cc0pwpzl"))))
+        (base32 "126jvjgfja6vyjadl3a7ahpb8z99hazijai4ymvnr1g1wcnx1z19"))))
     (properties `((upstream-name . "ScatterDensity")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-pracma))

@@ -3286,6 +3286,41 @@ approximation, based on the techniques of Bickel and Doksum (1973,
 ISBN:013850363X).")
     (license license:gpl2)))
 
+(define-public r-wikkitidy
+  (package
+    (name "r-wikkitidy")
+    (version "0.1.10")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "wikkitidy" version))
+       (sha256
+        (base32 "1q64qn0bbdmmwgn5my3f2p6sdcpbxi1g3qb1qgz6hkc01x2h3wn3"))))
+    (properties `((upstream-name . "wikkitidy")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-pillar
+                             r-openssl
+                             r-magrittr
+                             r-lubridate
+                             r-httr2
+                             r-glue
+                             r-dplyr
+                             r-cli))
+    (home-page "https://wikihistories.github.io/wikkitidy/")
+    (synopsis "Tidy Analysis of Wikipedia")
+    (description
+     "Access Wikipedia through the several @code{MediaWiki} APIs
+(<https://www.mediawiki.org/wiki/API>), as well as through the XTools API
+(<https://www.mediawiki.org/wiki/XTools/API>).  Ensure your API calls are
+correct, and receive results in tidy tibbles.")
+    (license license:expat)))
+
 (define-public r-wikitools
   (package
     (name "r-wikitools")
@@ -5757,40 +5792,6 @@ create HTML pages, and offers other utility functions for common tasks related
 to web development.")
     (license license:gpl2+)))
 
-(define-public r-webchem
-  (package
-    (name "r-webchem")
-    (version "1.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "webchem" version))
-       (sha256
-        (base32 "06b9i9jipg564zyw4gkgiidz7501rlp40hxm4z3k5mzy148lr5vq"))))
-    (properties `((upstream-name . "webchem")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-tibble
-                             r-stringr
-                             r-rvest
-                             r-rlang
-                             r-purrr
-                             r-jsonlite
-                             r-httr
-                             r-dplyr
-                             r-data-tree
-                             r-base64enc))
-    (native-inputs (list r-knitr))
-    (home-page "https://docs.ropensci.org/webchem/")
-    (synopsis "Chemical Information from the Web")
-    (description
-     "Chemical information from around the web.  This package interacts with a suite
-of web services for chemical information.  Sources include: Alan Wood's
-Compendium of Pesticide Common Names, Chemical Identifier Resolver,
-@code{ChEBI}, Chemical Translation Service, @code{ChemSpider}, ETOX, Flavornet,
-NIST Chemistry @code{WebBook}, OPSIN, @code{PubChem}, SRS, Wikidata.")
-    (license license:expat)))
-
 (define-public r-webanalytics
   (package
     (name "r-webanalytics")
@@ -8055,13 +8056,13 @@ Vihola, Helske, Franks (2020, <doi:10.1111/sjos.12492>).")
 (define-public r-walkboutr
   (package
     (name "r-walkboutr")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "walkboutr" version))
        (sha256
-        (base32 "0n6gk07bk0grqvd76w31di27spx4av3n8cgl4gzipxwjirkkmxky"))))
+        (base32 "0lvr5ckvn1xrzg9ki18m26kncwxl2qpidsd7i3p7yybzxa275r4r"))))
     (properties `((upstream-name . "walkboutr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

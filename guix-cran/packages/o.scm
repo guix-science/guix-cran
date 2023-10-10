@@ -1162,13 +1162,13 @@ matrix, Brier scores, etc.  are also returned for the test data.")
 (define-public r-otclust
   (package
     (name "r-otclust")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OTclust" version))
        (sha256
-        (base32 "0nr8vjiarkr55iddwxigd6zaz7c41y845qy33wb2rly22r41jzgp"))))
+        (base32 "00609z2fp3ijqid7yjgh045xz038h5jl7i1k2kww3kfpcf40mhzs"))))
     (properties `((upstream-name . "OTclust")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-rcolorbrewer r-magrittr r-ggplot2
@@ -1182,7 +1182,9 @@ matrix, Brier scores, etc.  are also returned for the test data.")
 alignment(OTA), uncertainty measures for both partition-wise and cluster-wise
 assessment and multiple visualization functions to show uncertainty, for
 instance, membership heat map and plot of covering point set.  A partition
-refers to an overall clustering result.")
+refers to an overall clustering result.  Jia Li, Beomseok Seo, and Lin Lin
+(2019) <doi:10.1002/sam.11418>.  Lixiang Zhang, Lin Lin, and Jia Li (2020)
+<doi:10.1093/bioinformatics/btaa165>.")
     (license license:gpl2+)))
 
 (define-public r-otargen
@@ -6202,13 +6204,13 @@ and air mass trajectories.")
 (define-public r-openair
   (package
     (name "r-openair")
-    (version "2.17-0")
+    (version "2.18-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openair" version))
        (sha256
-        (base32 "1bvwi6avr25bxxdinh918jqjfvxja8njd069lcabk7fwfm0g675q"))))
+        (base32 "1hvwb6p5skwpi1i5gvag3kxzvzxi9f4mph53y3gr6r0s8azfnvz0"))))
     (properties `((upstream-name . "openair")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -6313,16 +6315,22 @@ philosophy of the package is described in Guo G. (2018)
 (define-public r-opalr
   (package
     (name "r-opalr")
-    (version "3.3.1")
+    (version "3.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "opalr" version))
        (sha256
-        (base32 "194ljy4d7id7q5nif6llh34fxpx6s3x5i3m2grixy3i512apqsm0"))))
+        (base32 "0gc677px1kwvwhkgqpwgg18nwi4hl76c98a2das404966x320dk3"))))
     (properties `((upstream-name . "opalr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-progress r-mime r-labelled r-jsonlite r-httr))
+    (propagated-inputs (list r-tibble
+                             r-readr
+                             r-progress
+                             r-mime
+                             r-labelled
+                             r-jsonlite
+                             r-httr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/obiba/opalr/")
     (synopsis "'Opal' Data Repository Client and 'DataSHIELD' Utils")
@@ -7323,30 +7331,31 @@ time-to-event data.")
 (define-public r-onearm2stage
   (package
     (name "r-onearm2stage")
-    (version "1.1.5")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OneArm2stage" version))
        (sha256
-        (base32 "14vrf3x625c0xad18pajbgb4d4l57f1gqhy4y2l3wg1m1i2kiyns"))))
+        (base32 "040yv2bl6s7b1bgma7z1hgrsj8iynzayjc77ncp401nd1ng5wmw5"))))
     (properties `((upstream-name . "OneArm2stage")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-ipdfromkm r-flexsurv))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=OneArm2stage")
     (synopsis
-     "Optimal One-Arm Two-Stage Phase II Design with Survival Endpoint")
+     "Phase II Single-Arm Two-Stage Designs with Time-to-Event Outcomes")
     (description
-     "The proposed two-stage design can be used for single-arm phase II trial designs
-with time-to-event endpoints, which is desirable for clinical trials on
-immunotherapies among cancer patients.  There're two advantages of the proposed
-approach: 1) It provides flexible choices of four underlying survival
-distributions and 2) the power of the design is more accurately calculated using
-exact variance in one-sample log-rank test.  The package can be used for 1)
-planning the sample size; 2) conducting the interim and final analyses for the
-Go/No-go decisions.  More details about the design method can be found in the
-paper: Wu, J, Chen L, Wei J, Weiss H, Chauhan A. (2020). <doi:10.1002/pst.1983>.")
+     "Two-stage design for single-arm phase II trials with time-to-event endpoints
+(e.g., clinical trials on immunotherapies among cancer patients) can be
+calculated using this package.  Two notable advantages of the package: 1) It
+provides flexible choices from three design methods (optimal, minmax, and
+admissible), and 2) the power of the design is more accurately calculated using
+the exact variance in the one-sample log-rank test.  The package can be used for
+1) planning the sample sizes and other design parameters, and 2) conducting the
+interim and final analyses for the Go/No-go decisions.  More details about the
+design method can be found in: Wu, J, Chen L, Wei J, Weiss H, Chauhan A. (2020).
+<doi:10.1002/pst.1983>.")
     (license license:gpl3+)))
 
 (define-public r-ondisc

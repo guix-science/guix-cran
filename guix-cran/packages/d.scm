@@ -9965,13 +9965,13 @@ Saarinen, Jasjeet S. Sekhon, Simon Walter.")
 (define-public r-distill
   (package
     (name "r-distill")
-    (version "1.5")
+    (version "1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "distill" version))
        (sha256
-        (base32 "1hfl4pki06fwpybfx4mp4bxq693alm9vs7z1jv4v5bdxq90zd2sl"))))
+        (base32 "15lx82dyxxlp2w6lnfs3kvd9pq6pjhjhpv0v1y218lg9y5k6h3s6"))))
     (properties `((upstream-name . "distill")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -11365,16 +11365,17 @@ hazard function.")
 (define-public r-discbio
   (package
     (name "r-discbio")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DIscBIO" version))
        (sha256
-        (base32 "1m1c9ivblk3sir6lfq0msx2vlrx37dd5v7y6003k6fmsgrfpi9fs"))))
+        (base32 "152sh5g3vgcsyr93xmh3046fmpvy0vma45v4dplircpazxl33pji"))))
     (properties `((upstream-name . "DIscBIO")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tsne
+    (propagated-inputs (list r-withr
+                             r-tsne
                              r-statmod
                              r-singlecellexperiment
                              r-rweka
@@ -11392,7 +11393,6 @@ hazard function.")
                              r-ggplot2
                              r-fpc
                              r-cluster
-                             r-boot
                              r-annotationdbi))
     (home-page "https://github.com/ocbe-uio/DIscBIO")
     (synopsis
@@ -11544,13 +11544,13 @@ indicator matrices.")
 (define-public r-disaggr
   (package
     (name "r-disaggr")
-    (version "1.0.5")
+    (version "1.0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "disaggR" version))
        (sha256
-        (base32 "0j8p53hy23fpk4wdm5lbg0963dmpc6g1hsymfawxmssfdzdvv24y"))))
+        (base32 "1ac25lp7kp5hf4h57g1w84byw8b3bk6x965w5iny09qkri3li859"))))
     (properties `((upstream-name . "disaggR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcolorbrewer))
@@ -12253,13 +12253,13 @@ model parameters using the Gibbs sampler described by Culpepper (2015)
 (define-public r-dimora
   (package
     (name "r-dimora")
-    (version "0.3.5")
+    (version "0.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DIMORA" version))
        (sha256
-        (base32 "0x289f8yppvl90c8j8w96m5bgb8khxnc8agxn77wkfisx4cczy1k"))))
+        (base32 "1qdi3nvr4p31kdfqs43xlfcryni182imp67bf03dma3pfnqxgwqj"))))
     (properties `((upstream-name . "DIMORA")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2 r-numderiv r-minpack-lm r-forecast
@@ -14556,18 +14556,18 @@ specified response and a second GLM to fit the deviance of the first model.")
 (define-public r-dglars
   (package
     (name "r-dglars")
-    (version "2.1.6")
+    (version "2.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dglars" version))
        (sha256
-        (base32 "13bnvinqgpmkisjri0sjsyzsh9nqplpry3n3galkv8dqhgpncq4w"))))
+        (base32 "0nr18ry5jzjm77xc3z85szx6sij7a4faa1c47bkswsjiijpljjx2"))))
     (properties `((upstream-name . "dglars")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix))
     (native-inputs (list gfortran))
-    (home-page "http://www.jstatsoft.org/v59/i08/.")
+    (home-page "https://www.jstatsoft.org/v59/i08/.")
     (synopsis "Differential Geometric Least Angle Regression")
     (description
      "Differential geometric least angle regression method for fitting sparse
@@ -19610,16 +19610,16 @@ methods for solution localisation and curve continuation are based on the book
 (define-public r-debiasinfer
   (package
     (name "r-debiasinfer")
-    (version "0.1")
+    (version "0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DebiasInfer" version))
        (sha256
-        (base32 "1dbjf83mwhq0w8cfav64qjyvn05f1br8ffvyk18170ah00agpdm9"))))
+        (base32 "02r1pc5s1vwnvz6cxb2gkc3x4x9vw8nb2zw1z8hyyxp5n8n8d2mf"))))
     (properties `((upstream-name . "DebiasInfer")))
     (build-system r-build-system)
-    (propagated-inputs (list r-scalreg r-cvxr r-caret))
+    (propagated-inputs (list r-cvxr r-caret))
     (home-page "https://github.com/zhangyk8/Debias-Infer/")
     (synopsis
      "Efficient Inference on High-Dimensional Linear Model with Missing Outcomes")
@@ -25363,6 +25363,28 @@ from Mexican government.  You can use the vms_download() function to download
 raw data, or you can use the sample_dataset provided within the package.  You
 can follow the tutorial in the vignette available at
 <https://cbmc-gcmp.github.io/dafishr/index.html>.")
+    (license license:expat)))
+
+(define-public r-daff
+  (package
+    (name "r-daff")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "daff" version))
+       (sha256
+        (base32 "0lii8ijahfjxyqq1vqyz3axl6sca27dn05q2l2303klz6l9gss57"))))
+    (properties `((upstream-name . "daff")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-v8 r-jsonlite))
+    (home-page "https://github.com/edwindj/daff")
+    (synopsis "Diff, Patch and Merge for Data.frames")
+    (description
+     "Diff, patch and merge for data frames.  Document changes in data sets and use
+them to apply patches.  Changes to data can be made visible by using
+render_diff().  The V8 package is used to wrap the daff.js @code{JavaScript}
+library which is included in the package.")
     (license license:expat)))
 
 (define-public r-daewr

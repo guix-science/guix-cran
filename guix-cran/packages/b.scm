@@ -856,13 +856,13 @@ restore it for use in new settings.")
 (define-public r-bundesbank
   (package
     (name "r-bundesbank")
-    (version "0.1-9")
+    (version "0.1-11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bundesbank" version))
        (sha256
-        (base32 "05sc6m2v8bfgdka7v28rxhq5a8c88gsxkv0zjk08rpw8k8zql0dk"))))
+        (base32 "1kgc8868vmsmg03yzg3lqpfync4q6xglr2x7ksj5ywddk74axxx0"))))
     (properties `((upstream-name . "bundesbank")))
     (build-system r-build-system)
     (home-page "http://enricoschumann.net/R/packages/bundesbank/index.htm")
@@ -6981,39 +6981,6 @@ generating and using bootstrap samples, imputed data, inference.")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file://LICENSE")))))
 
-(define-public r-bnspatial
-  (package
-    (name "r-bnspatial")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bnspatial" version))
-       (sha256
-        (base32 "1drm9ia4lr80wahbbn9xrw658ppmgxm4iadwv77jz1x786dda2n1"))))
-    (properties `((upstream-name . "bnspatial")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sf
-                             r-rgdal
-                             r-raster
-                             r-grbase
-                             r-grain
-                             r-foreach
-                             r-doparallel))
-    (native-inputs (list r-knitr))
-    (home-page "http://github.com/dariomasante/bnspatial")
-    (synopsis "Spatial Implementation of Bayesian Networks and Mapping")
-    (description
-     "Allows spatial implementation of Bayesian networks and mapping in geographical
-space.  It makes maps of expected value (or most likely state) given known and
-unknown conditions, maps of uncertainty measured as coefficient of variation or
-Shannon index (entropy), maps of probability associated to any states of any
-node of the network.  Some additional features are provided as well: parallel
-processing options, data discretization routines and function wrappers designed
-for users with minimal knowledge of the R language.  Outputs can be exported to
-any common GIS format.")
-    (license license:gpl3)))
-
 (define-public r-bnsp
   (package
     (name "r-bnsp")
@@ -10166,24 +10133,24 @@ using statistics not available with base R and manipulate objects for analyses."
 (define-public r-birdscanr
   (package
     (name "r-birdscanr")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "birdscanR" version))
        (sha256
-        (base32 "0118i48mp5wvz8w74awwqr2460r8jmhiqpfpi1m190gy0nhj1573"))))
+        (base32 "0vbvf9512214sgah3jsn7cdy8abkyr9pvaqaivqjrhyfpv9fvbr1"))))
     (properties `((upstream-name . "birdscanR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-tibble
+                             r-suntools
                              r-sp
                              r-rstudioapi
                              r-rpostgresql
                              r-rodbc
                              r-reshape2
                              r-modi
-                             r-maptools
                              r-magrittr
                              r-ggplot2
                              r-dplyr
@@ -10209,26 +10176,16 @@ Rate calculation procedures, see Schmid et al. (2019) <doi:10.1111/ecog.04025>."
 (define-public r-birdring
   (package
     (name "r-birdring")
-    (version "1.5")
+    (version "1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "birdring" version))
        (sha256
-        (base32 "09h4376myh694r9b97vrhnw27bmjyzjrmp7xfm4hlrxzp9fngmwv"))))
+        (base32 "17f6hlvz6k4ya82nai7j474k55w3is8if4vckbwqq1c4lj9zfm6r"))))
     (properties `((upstream-name . "birdring")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp
-                             r-sfheaders
-                             r-sf
-                             r-rworldxtra
-                             r-rworldmap
-                             r-raster
-                             r-maps
-                             r-lazydata
-                             r-ks
-                             r-geosphere
-                             r-basemaps))
+    (propagated-inputs (list r-raster r-lazydata r-ks r-geosphere))
     (home-page "https://cran.r-project.org/package=birdring")
     (synopsis "Methods to Analyse Ring Re-Encounter Data")
     (description
@@ -17114,13 +17071,13 @@ financial support.")
 (define-public r-beebdc
   (package
     (name "r-beebdc")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BeeBDC" version))
        (sha256
-        (base32 "1p2i0jaywi9p04zkqszlscfym1ldck04gplmly4iz3s8rzwqf02d"))))
+        (base32 "1zkf53smlqd1rzf9l7ibf45yws6n379bv3kqs6f2szai3npip5bw"))))
     (properties `((upstream-name . "BeeBDC")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -17140,7 +17097,6 @@ financial support.")
                              r-dplyr
                              r-cowplot
                              r-coordinatecleaner
-                             r-complexheatmap
                              r-circlize))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=BeeBDC")
@@ -17314,13 +17270,13 @@ BEAST use by other R packages using CRAN.")
 (define-public r-beastier
   (package
     (name "r-beastier")
-    (version "2.4.11")
+    (version "2.4.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "beastier" version))
        (sha256
-        (base32 "0y9fl731gkxznrm3slffmz0haa9cpmly13zbs9jydbhndf2npirn"))))
+        (base32 "14pph5cqnpb450wl5i8nbnh2gs67y4g3snzfwm8d8s0vgcqj4k98"))))
     (properties `((upstream-name . "beastier")))
     (build-system r-build-system)
     (inputs (list))
@@ -18862,33 +18818,6 @@ government organization.  View metadata directly in R, download many data
 formats, and query geospatial data available via the B.C. government Web Feature
 Service ('WFS') using dplyr syntax.")
     (license license:asl2.0)))
-
-(define-public r-bcdag
-  (package
-    (name "r-bcdag")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "BCDAG" version))
-       (sha256
-        (base32 "1a4ylby1hm2pfdf22qvw1qpgs742y77kpvmymikx8pc1vnhmwjih"))))
-    (properties `((upstream-name . "BCDAG")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-mvtnorm r-lattice r-grbase))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=BCDAG")
-    (synopsis
-     "Bayesian Structure and Causal Learning of Gaussian Directed Graphs")
-    (description
-     "This package provides a collection of functions for structure learning of causal
-networks and estimation of joint causal effects from observational Gaussian
-data.  Main algorithm consists of a Markov chain Monte Carlo scheme for
-posterior inference of causal structures, parameters and causal effects between
-variables.  References: F. Castelletti and A. Mascaro (2021)
-<doi:10.1007/s10260-021-00579-1>, F. Castelletti and A. Mascaro (2022)
-<@code{arXiv:2201.12003>}.")
-    (license license:expat)))
 
 (define-public r-bccp
   (package
@@ -22061,13 +21990,13 @@ the factors, are not fixed a priori but determined during MCMC sampling.")
 (define-public r-bayesfluxr
   (package
     (name "r-bayesfluxr")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesFluxR" version))
        (sha256
-        (base32 "1yak79py211070kmlxsq0c48accpg64nqzkhnpx2yz1c8dsj4kcg"))))
+        (base32 "1wl1wbncw6klf95zcarwy55dssl5a48v4m7j2k1cpp1f4dx2pb4r"))))
     (properties `((upstream-name . "BayesFluxR")))
     (build-system r-build-system)
     (propagated-inputs (list r-juliacall))

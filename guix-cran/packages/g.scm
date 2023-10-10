@@ -1874,13 +1874,13 @@ as Kendall tau correlation or sensitivity.")
 (define-public r-gt
   (package
     (name "r-gt")
-    (version "0.9.0")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gt" version))
        (sha256
-        (base32 "0l60f38r7wnd2dh4c5il9axabxzqd0zdzlhkp1cibdp14zi7xr9y"))))
+        (base32 "0gkfqy7n0pv1cz4vrshl2w07c0ykipi5rvp46nyvlcd17qq5z2kh"))))
     (properties `((upstream-name . "gt")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -1903,7 +1903,7 @@ as Kendall tau correlation or sensitivity.")
                              r-bitops
                              r-bigd
                              r-base64enc))
-    (home-page "https://gt.rstudio.com/")
+    (home-page "https://gt.rstudio.com")
     (synopsis "Easily Create Presentation-Ready Display Tables")
     (description
      "Build display tables from tabular data with an easy-to-use set of functions.
@@ -4059,13 +4059,13 @@ GRMs, with twin-research-based SEM techniques, St Pourcain et al. (2017)
 (define-public r-grizbayr
   (package
     (name "r-grizbayr")
-    (version "1.3.3")
+    (version "1.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grizbayr" version))
        (sha256
-        (base32 "1gimywjhgpc5xsxq0s0l4bfval4rqki36c3pa1kw5yq6xazy3iwx"))))
+        (base32 "04gka7q0wy1w4qg3wm4vnzc1q0g4zgvrvra1la2w1sggc5asdh32"))))
     (properties `((upstream-name . "grizbayr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -4075,7 +4075,7 @@ GRMs, with twin-research-based SEM techniques, St Pourcain et al. (2017)
                              r-magrittr
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=grizbayr")
+    (home-page "https://github.com/rangi513/grizbayr")
     (synopsis "Bayesian Inference for A|B and Bandit Marketing Tests")
     (description
      "Uses simple Bayesian conjugate prior update rules to calculate the win
@@ -6071,13 +6071,13 @@ weights.")
 (define-public r-grapher
   (package
     (name "r-grapher")
-    (version "1.9-86-3")
+    (version "1.9-86-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GrapheR" version))
        (sha256
-        (base32 "0wpq7w4lclkzj9ffmqwk2qp5r6kwggh7by47lvhmai4j8g2ha56c"))))
+        (base32 "0bmwzgc9nzqp1vkybhhc7mxdzsa3l96i42iahvwkzv10ac3nfd5l"))))
     (properties `((upstream-name . "GrapheR")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=GrapheR")
@@ -6556,13 +6556,13 @@ information: <doi:10.5117/CCR2023.1.003.CHAN>.")
 (define-public r-grafify
   (package
     (name "r-grafify")
-    (version "3.2.0")
+    (version "4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grafify" version))
        (sha256
-        (base32 "184ci2myn2x80l3zaan9bsyrq34ag0gqs14awh83khacxlkk7my8"))))
+        (base32 "00sgaqdglwnqb18i4bqfrj5km0wxy4a47mjk34s3a61ac8bbllmd"))))
     (properties `((upstream-name . "grafify")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -9975,18 +9975,17 @@ by Bayes rule.")
 (define-public r-gmmat
   (package
     (name "r-gmmat")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GMMAT" version))
        (sha256
-        (base32 "0gb6h5qkx708l3dnmvnsl6nbdqi6szimr5227yhi7ysahy71fv1r"))))
+        (base32 "0zyxnch7k4c5vm1wk769lxaqa2sdgj4lrsimzwi94bpmdrvpda44"))))
     (properties `((upstream-name . "GMMAT")))
     (build-system r-build-system)
     (inputs (list zlib))
-    (propagated-inputs (list r-seqarray
-                             r-rcpparmadillo
+    (propagated-inputs (list r-rcpparmadillo
                              r-rcpp
                              r-matrix
                              r-foreach
@@ -15068,16 +15067,16 @@ the correlation between the predictors and the outcome.")
 (define-public r-ggridge
   (package
     (name "r-ggridge")
-    (version "0.1.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GGRidge" version))
        (sha256
-        (base32 "1q5lgnzbhczfylkj2p07r2a088i0d2xgmggilwlg6b0gc9qg7xf8"))))
+        (base32 "08gj61ahk7ilvsz93xcdv7yknkmfz2spbym6c2c62gq8cva9zg86"))))
     (properties `((upstream-name . "GGRidge")))
     (build-system r-build-system)
-    (propagated-inputs (list r-mass r-grbase r-graph r-cvglasso))
+    (propagated-inputs (list r-mass r-grbase r-cvglasso))
     (home-page "https://cran.r-project.org/package=GGRidge")
     (synopsis "Graphical Group Ridge")
     (description
@@ -15088,7 +15087,8 @@ combines the ridge regression method with the graphical model for
 high-dimensional data (i.e.  the number of predictors exceeds the number of
 cases) or ill-conditioned data (e.g. in the presence of multicollinearity among
 predictors).  The package reduces the mean square errors and the extent of
-over-shrinking of predictors as compared to the ridge method.")
+over-shrinking of predictors as compared to the ridge method.Aldahmani, S. and
+Zoubeidi, T. (2020) <DOI:10.1080/00949655.2020.1803320>.")
     (license license:gpl2)))
 
 (define-public r-ggresidpanel
@@ -18763,13 +18763,13 @@ Gradient Boosting (Werner, Tino (2020) \"Gradient-Free Gradient Boosting\", URL
 (define-public r-gfa
   (package
     (name "r-gfa")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GFA" version))
        (sha256
-        (base32 "10sivsqxliwcrp0ay3n2my28zki6f8vpv8i9lbld8qinx1iv2mq3"))))
+        (base32 "09h9q4r8xrgzn2l61dwbfjawrmj6z9vcm426rnxgkg5qlxb3cbz6"))))
     (properties `((upstream-name . "GFA")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=GFA")
@@ -19582,6 +19582,33 @@ main-effect-before-interaction hierarchical structure for the joint selection of
 interaction terms in a regularized regression model.  For details see
 Zemlianskaia et al. (2021) <arxiv:2103.13510>.")
     (license license:expat)))
+
+(define-public r-geslar
+  (package
+    (name "r-geslar")
+    (version "1.0-1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geslaR" version))
+       (sha256
+        (base32 "05dswf8c10vwhswsgdpzkqlhbazrw8bd62ndk768lw31fj1n0cab"))))
+    (properties `((upstream-name . "geslaR")))
+    (build-system r-build-system)
+    (inputs (list))
+    (propagated-inputs (list r-dplyr r-cli r-arrow))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/EireExtremes/geslaR")
+    (synopsis "Get and Manipulate the GESLA Dataset")
+    (description
+     "Promote access to the GESLA <https://gesla787883612.wordpress.com> (Global
+Extreme Sea Level Analysis) dataset, a higher-frequency sea-level record data
+from all over the world.  It provides functions to download it entirely, or
+query subsets directly into R, without the need of downloading the full dataset.
+ Also, it provides a built-in web-application, so that users can apply basic
+filters to select the data of interest, generating informative plots, and
+showing the selected sites.")
+    (license license:gpl3+)))
 
 (define-public r-gesisdata
   (package
@@ -20436,6 +20463,40 @@ queries, including administrative area hierarchies, city locations and some
 country postal code queries.  A (free) username is required and rate limits
 exist.")
     (license license:gpl3)))
+
+(define-public r-geomultistar
+  (package
+    (name "r-geomultistar")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geomultistar" version))
+       (sha256
+        (base32 "1zxh7iv4qrkyj6wqd3fd709fvycsa3bjmpyy8kqvd44blm78bx2n"))))
+    (properties `((upstream-name . "geomultistar")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-starschemar
+                             r-sf
+                             r-rsqlite
+                             r-rlang
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://josesamos.github.io/geomultistar/")
+    (synopsis "Multidimensional Queries Enriched with Geographic Data")
+    (description
+     "Multidimensional systems allow complex queries to be carried out in an easy way.
+ The geographical dimension, together with the temporal dimension, plays a
+fundamental role in multidimensional systems.  Through this package, vector
+layers can be associated to the attributes of geographic dimensions, so that the
+results of multidimensional queries can be obtained directly as vector layers.
+The multidimensional structures on which we can define the queries can be
+created from a flat table or imported directly using functions from this
+package.")
+    (license license:expat)))
 
 (define-public r-geomtextpath
   (package
@@ -23090,13 +23151,13 @@ multinomial and ordinal logistic models.  Included are the Hosmer-Lemeshow tests
 (define-public r-generalcorr
   (package
     (name "r-generalcorr")
-    (version "1.2.4")
+    (version "1.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "generalCorr" version))
        (sha256
-        (base32 "08h7bl21clpxf489vp2a7wj68vhsm1495sws604nfjl0vra1kv7d"))))
+        (base32 "19yqhzz3xpgb7aixpj214mfkviz0iwap8hh758xyx25jqf4w4h5a"))))
     (properties `((upstream-name . "generalCorr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable r-psych r-np r-meboot r-lattice))
@@ -23104,30 +23165,31 @@ multinomial and ordinal logistic models.  Included are the Hosmer-Lemeshow tests
     (home-page "https://cran.r-project.org/package=generalCorr")
     (synopsis "Generalized Correlations, Causal Paths and Portfolio Selection")
     (description
-     "Since causal paths from data are important for all sciences, the package
-provides many sophisticated functions. @code{causeSummBlk}() and
-@code{causeSum2Blk}() give easy-to-interpret causal paths.  Let Z denote control
-variables and compare two flipped kernel regressions: X=f(Y, Z)+e1 and
-Y=g(X,Z)+e2.  Our criterion Cr1 says that if |e1*Y|>|e2*X| then variation in X
-is more \"exogenous or independent\" than in Y and causal path is X to Y.
-Criterion Cr2 requires |e2|<|e1|.  These inequalities between many absolute
-values are quantified by four orders of stochastic dominance.  Our third
-criterion Cr3 for the causal path X to Y requires new generalized partial
-correlations to satisfy |r*(x|y,z)|< |r*(y|x,z)|.  The function
-@code{parcorVec}() reports generalized partials between the first variable and
-all others.  The package provides several R functions including get0outliers()
-for outlier detection, bigfp() for numerical integration by the trapezoidal
-rule, stochdom2() for stochastic dominance, pillar3D() for 3D charts,
-@code{canonRho}() for generalized canonical correlations, @code{depMeas}()
-measures nonlinear dependence, and @code{causeSummary(mtx}) reports summary of
-causal paths among matrix columns is easiest to use.  Portfolio selection:
-@code{decileVote}(), @code{momentVote}(), dif4mtx(), @code{exactSdMtx}() can
-rank several stocks.  Several functions whose names begin with boot provide
-bootstrap statistical inference including a new @code{bootGcRsq}() test for
-\"Granger-causality\" allowing nonlinear relations.  A new tool for evaluation of
-out-of-sample portfolio performance is @code{outOFsamp}().  Panel data
-implementation is now included.  See seven vignettes of the package for theory
-and usage tips.  See Vinod (2019) \\doi{10.1080/03610918.2015.1122048}.")
+     "Function gmcmtx0() computes a more reliable (general) correlation matrix.  Since
+causal paths from data are important for all sciences, the package provides many
+sophisticated functions. @code{causeSummBlk}() and @code{causeSum2Blk}() give
+easy-to-interpret causal paths.  Let Z denote control variables and compare two
+flipped kernel regressions: X=f(Y, Z)+e1 and Y=g(X, Z)+e2.  Our criterion Cr1
+says that if |e1*Y|>|e2*X| then variation in X is more \"exogenous or
+independent\" than in Y, and the causal path is X to Y. Criterion Cr2 requires
+|e2|<|e1|.  These inequalities between many absolute values are quantified by
+four orders of stochastic dominance.  Our third criterion Cr3, for the causal
+path X to Y, requires new generalized partial correlations to satisfy
+|r*(x|y,z)|< |r*(y|x,z)|.  The function @code{parcorVec}() reports generalized
+partials between the first variable and all others.  The package provides
+several R functions including get0outliers() for outlier detection, bigfp() for
+numerical integration by the trapezoidal rule, stochdom2() for stochastic
+dominance, pillar3D() for 3D charts, @code{canonRho}() for generalized canonical
+correlations, @code{depMeas}() measures nonlinear dependence, and
+@code{causeSummary(mtx}) reports summary of causal paths among matrix columns.
+Portfolio selection: @code{decileVote}(), @code{momentVote}(), dif4mtx(),
+@code{exactSdMtx}() can rank several stocks.  Functions whose names begin with
+boot provide bootstrap statistical inference, including a new @code{bootGcRsq}()
+test for \"Granger-causality\" allowing nonlinear relations.  A new tool for
+evaluation of out-of-sample portfolio performance is @code{outOFsamp}().  Panel
+data implementation is now included.  See eight vignettes of the package for
+theory, examples, and usage tips.  See Vinod (2019)
+\\doi{10.1080/03610918.2015.1122048}.")
     (license license:gpl2+)))
 
 (define-public r-genepop
@@ -24832,13 +24894,13 @@ Information Facility (GBIF - <https://www.gbif.org/>) using a Shiny interface.")
 (define-public r-gdatools
   (package
     (name "r-gdatools")
-    (version "2.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GDAtools" version))
        (sha256
-        (base32 "0d7gvfgcips4m37j29djjv05zcw75smgiy4dpy8nlvajq6lk24s0"))))
+        (base32 "0xl7i9ajl77kg0v427h1bba0h4vmincvkg4g05jlv9s18zr1ksni"))))
     (properties `((upstream-name . "GDAtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-ggrepel r-ggplot2 r-factominer
@@ -27303,13 +27365,13 @@ discrete GAMLSS family distribution.")
 (define-public r-gamlss-cens
   (package
     (name "r-gamlss-cens")
-    (version "5.0-5")
+    (version "5.0-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gamlss.cens" version))
        (sha256
-        (base32 "18f1b3wyaad9gflm1mnjqjqb0lz89hm6vav7kyfxf5zfgrpvln8j"))))
+        (base32 "1l2g0gn794jyyjxvphfk1l8h4qwf6sk1akcf0c08xqx3kgillnjl"))))
     (properties `((upstream-name . "gamlss.cens")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-gamlss-dist r-gamlss))
@@ -27787,6 +27849,43 @@ others.")
  This packages allows you loading data from ads account and manage your ads
 materials.")
     (license license:expat)))
+
+(define-public r-galamm
+  (package
+    (name "r-galamm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "galamm" version))
+       (sha256
+        (base32 "1522r8psph4zj4w1j5yx18gj7hasma5jxr0417mmg513k44132kf"))))
+    (properties `((upstream-name . "galamm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rdpack
+                             r-rcppeigen
+                             r-rcpp
+                             r-nlme
+                             r-mgcv
+                             r-memoise
+                             r-matrix
+                             r-lme4))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/LCBC-UiO/galamm")
+    (synopsis "Generalized Additive Latent and Mixed Models")
+    (description
+     "Estimates generalized additive latent and mixed models using maximum marginal
+likelihood, as defined in Sorensen et al. (2023)
+<doi:10.1007/s11336-023-09910-z>, which is an extension of Rabe-Hesketh and
+Skrondal (2004)'s unifying framework for multilevel latent variable modeling
+<doi:10.1007/BF02295939>.  Efficient computation is done using sparse matrix
+methods, Laplace approximation, and automatic differentiation.  The framework
+includes generalized multilevel models with heteroscedastic residuals, mixed
+response types, factor loadings, smoothing splines, crossed random effects, and
+combinations thereof.  Syntax for model formulation is close to lme4 (Bates et
+al. (2015) <doi:10.18637/jss.v067.i01>) and PLmixed (Rockwood and Jeon (2019)
+<doi:10.1080/00273171.2018.1516541>).")
+    (license license:gpl3+)))
 
 (define-public r-galah
   (package

@@ -298,13 +298,13 @@ Hediger & Michel & Naef (2020) <@code{arXiv:1903.06287>}.")
 (define-public r-hypetools
   (package
     (name "r-hypetools")
-    (version "1.5.1")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HYPEtools" version))
        (sha256
-        (base32 "1706lkinwmplmv7s4j1ggax9b1xif45j30k1cnzaw6d1vrssl3yf"))))
+        (base32 "02iqzzkc3wm189bnf5330m7id67q2y6ds5w0npwyx0qazjfcwp19"))))
     (properties `((upstream-name . "HYPEtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -316,6 +316,7 @@ Hediger & Michel & Naef (2020) <@code{arXiv:1903.06287>}.")
                              r-pbapply
                              r-patchwork
                              r-ncdf4
+                             r-lubridate
                              r-hydrogof
                              r-ggrepel
                              r-ggpubr
@@ -9466,13 +9467,13 @@ summary and its standard errors, as described in Liang and Heagerty (2016)
 (define-public r-hdrfa
   (package
     (name "r-hdrfa")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HDRFA" version))
        (sha256
-        (base32 "1vgxcm9lk83qhn0dwj1i3b1a7x9pl1f2hlwjfnskgwmcvzlyh12l"))))
+        (base32 "0jm0lv4kgg908h34zx875f468ignl6dxmjn4mxjck5fg1w17rjvi"))))
     (properties `((upstream-name . "HDRFA")))
     (build-system r-build-system)
     (propagated-inputs (list r-quantreg r-pracma))
@@ -11564,6 +11565,39 @@ relative frequencies.")
      "Simulate haplotypes through meioses.  Allows specification of population
 parameters.")
     (license license:gpl2+)))
+
+(define-public r-haplor
+  (package
+    (name "r-haplor")
+    (version "4.0.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "haploR" version))
+       (sha256
+        (base32 "1s8f556d9x5h76gyl4wggcx01f4qrx0fp5mz46yk2x9qmwiir89v"))))
+    (properties `((upstream-name . "haploR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml
+                             r-tibble
+                             r-runit
+                             r-rjsonio
+                             r-rcurl
+                             r-plyr
+                             r-httr
+                             r-dt))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=haploR")
+    (synopsis "Query 'HaploReg', 'RegulomeDB'")
+    (description
+     "This package provides a set of utilities for querying @code{HaploReg}
+<https://pubs.broadinstitute.org/mammals/haploreg/haploreg.php>,
+@code{RegulomeDB} <https://www.regulomedb.org/regulome-search/> web-based tools.
+ The package connects to @code{HaploReg}', @code{RegulomeDB} searches and
+downloads results, without opening web pages, directly from R environment.
+Results are stored in a data frame that can be directly used in various kinds of
+downstream analyses.")
+    (license license:gpl3)))
 
 (define-public r-haplocatcher
   (package

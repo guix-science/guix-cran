@@ -681,53 +681,6 @@ methods in detecting the most interesting signal patterns in pharmacogenetics
 Judong Shen (2022) <doi:10.13140/RG.2.2.28323.53280>.")
     (license license:gpl2)))
 
-(define-public r-cwbtools
-  (package
-    (name "r-cwbtools")
-    (version "0.3.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cwbtools" version))
-       (sha256
-        (base32 "1v7pan3d00km7yq03ym3xdvlqhwrlxg5w8y2dl34dlsm67xysxh1"))))
-    (properties `((upstream-name . "cwbtools")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zen4r
-                             r-xml2
-                             r-stringi
-                             r-rstudioapi
-                             r-rcppcwb
-                             r-r6
-                             r-pbapply
-                             r-lifecycle
-                             r-jsonlite
-                             r-httr
-                             r-fs
-                             r-data-table
-                             r-curl
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/PolMine/cwbtools")
-    (synopsis "Tools to Create, Modify and Manage 'CWB' Corpora")
-    (description
-     "The Corpus Workbench ('CWB', <https://cwb.sourceforge.io/>) offers a classic and
-mature approach for working with large, linguistically and structurally
-annotated corpora.  The CWB is memory efficient and its design makes running
-queries fast, see Evert (2011) <https://eprints.lancs.ac.uk/id/eprint/62721>.
-The cwbtools package offers pure R tools to create indexed corpus files as well
-as high-level wrappers for the original C implementation of CWB as exposed by
-the @code{RcppCWB} package
-(<https://CRAN.R-project.org/package=@code{RcppCWB>}).  Additional functionality
-to add and modify annotations of corpora from within R makes working with CWB
-indexed corpora much more flexible and convenient.  The cwbtools package in
-combination with the R packages @code{RcppCWB}
-(<https://CRAN.R-project.org/package=@code{RcppCWB>}) and @code{polmineR}
-(<https://CRAN.R-project.org/package=@code{polmineR>}) offers a lightweight
-infrastructure to support the combination of quantitative and qualitative
-approaches for working with textual data.")
-    (license license:gpl3)))
-
 (define-public r-cvwrapr
   (package
     (name "r-cvwrapr")
@@ -7598,16 +7551,17 @@ sites.")
 (define-public r-cpfa
   (package
     (name "r-cpfa")
-    (version "1.0-6")
+    (version "1.0-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cpfa" version))
        (sha256
-        (base32 "1az6hpg8p45wlc9syym244060f4q9h29plfypd7fll0nx1i19cgy"))))
+        (base32 "03jwcrsa5vnlgfcbh6lx91n507aywrmxl03jz01gd7dxnf8za5fg"))))
     (properties `((upstream-name . "cpfa")))
     (build-system r-build-system)
-    (propagated-inputs (list r-randomforest
+    (propagated-inputs (list r-rda
+                             r-randomforest
                              r-nnet
                              r-multiway
                              r-glmnet
@@ -7619,15 +7573,16 @@ sites.")
     (description
      "Classification using Richard A. Harshman's Parallel Factor Analysis-1 (Parafac)
 model or Parallel Factor Analysis-2 (Parafac2) model fit to a three-way or
-four-way data array/tensor.  See Harshman and Lundy (1994):
+four-way data tensor/array.  See Harshman and Lundy (1994):
 <doi:10.1016/0167-9473(94)90132-5>.  Uses component weights from one mode of the
 Parafac or Parafac2 model as features to tune parameters for one or more
-classification methods via a k-fold cross-validation procedure.  Supports
-penalized logistic regression, support vector machine, random forest, and
-feed-forward neural network.  Supports binary and multiclass classification.
-Predicts class labels or class probabilities and calculates multiple
-classification performance measures.  Parallel computing is implemented via the
-parallel and @code{doParallel} packages.")
+classification methods via a k-fold cross-validation procedure.  Allows for
+constraints on different tensor modes.  Supports penalized logistic regression,
+support vector machine, random forest, feed-forward neural network, and
+regularized discriminant analysis.  Supports binary and multiclass
+classification.  Predicts class labels or class probabilities and calculates
+multiple classification performance measures.  Implements parallel computing via
+the parallel and @code{doParallel} packages.")
     (license license:gpl2+)))
 
 (define-public r-cpe
@@ -8992,51 +8947,6 @@ COVID-19 possible treatment.")
 municipalities, states, region and Brazil.  Data source: Sistema Unico de Saude
 - SUS.")
     (license license:expat)))
-
-(define-public r-covid19-analytics
-  (package
-    (name "r-covid19-analytics")
-    (version "2.1.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "covid19.analytics" version))
-       (sha256
-        (base32 "120ska2iyiihqb1mml5s28sav4d6cbs3lad5rfj6zi8lblli8ini"))))
-    (properties `((upstream-name . "covid19.analytics")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-shinydashboard
-                             r-shinycssloaders
-                             r-shiny
-                             r-rentrez
-                             r-readxl
-                             r-plotly
-                             r-pheatmap
-                             r-htmlwidgets
-                             r-gplots
-                             r-dt
-                             r-dplyr
-                             r-desolve
-                             r-collapsibletree
-                             r-ape))
-    (native-inputs (list r-knitr))
-    (home-page "https://mponce0.github.io/covid19.analytics/")
-    (synopsis "Load and Analyze Live Data from the COVID-19 Pandemic")
-    (description
-     "Load and analyze updated time series worldwide data of reported cases for the
-Novel Coronavirus Disease (COVID-19) from different sources, including the Johns
-Hopkins University Center for Systems Science and Engineering (JHU CSSE) data
-repository <https://github.com/CSSEGI@code{SandData/COVID-19>}, \"Our World in
-Data\" <https://github.com/owid/> among several others.  The datasets reporting
-the COVID-19 cases are available in two main modalities, as a time series
-sequences and aggregated data for the last day with greater spatial resolution.
-Several analysis, visualization and modelling functions are available in the
-package that will allow the user to compute and visualize total number of cases,
-total number of changes and growth rate globally or for an specific geographical
-location, while at the same time generating models using these trends; generate
-interactive visualizations and generate Susceptible-Infected-Recovered (SIR)
-model for the disease spread.")
-    (license license:gpl2+)))
 
 (define-public r-covid19
   (package
@@ -13063,13 +12973,13 @@ regression trees.")
 (define-public r-convertid
   (package
     (name "r-convertid")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "convertid" version))
        (sha256
-        (base32 "1q8dpy4ixhw52p0189s5r8haq0sa9hnfspgxjv4r352qbgb14hcc"))))
+        (base32 "1ys3yi2g3m69zwc5qca8szhawgvk1wxny4sv2z6cly0cb119fpz5"))))
     (properties `((upstream-name . "convertid")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -13079,6 +12989,7 @@ regression trees.")
                              r-org-mm-eg-db
                              r-org-hs-eg-db
                              r-biomart
+                             r-assertthat
                              r-annotationdbi))
     (home-page "https://cran.r-project.org/package=convertid")
     (synopsis
@@ -13523,17 +13434,17 @@ non-regular canvas.")
 (define-public r-contingencytables
   (package
     (name "r-contingencytables")
-    (version "2.1.1")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "contingencytables" version))
        (sha256
-        (base32 "0dd37i6ibj9r9bbb7h9bd64x2finv46p8dg5ljyrm14ylhvz5g10"))))
+        (base32 "0001pmkdhccymk8i8igmxi09zxiy556qvwgw5b0x5fk7jg5bjlg4"))))
     (properties `((upstream-name . "contingencytables")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-boot))
-    (home-page "https://contingencytables.com/")
+    (home-page "https://cran.r-project.org/package=contingencytables")
     (synopsis "Statistical Analysis of Contingency Tables")
     (description
      "This package provides functions to perform statistical inference of data
@@ -15585,13 +15496,13 @@ assumption for the length of the censored gap time.")
 (define-public r-condformat
   (package
     (name "r-condformat")
-    (version "0.10.0")
+    (version "0.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "condformat" version))
        (sha256
-        (base32 "1iyvghcz5x9kg4jbh4fl97rcwcvi8rcp6rngvgqiyzdg8sbfxkr6"))))
+        (base32 "0nyl2wa9vfi65g0v54a4zpppw5yz7rlh2x6l2v9dgvwg533hkf72"))))
     (properties `((upstream-name . "condformat")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -15608,7 +15519,7 @@ assumption for the length of the censored gap time.")
                              r-gridextra
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://condformat.sergioller.com")
+    (home-page "https://zeehio.github.io/condformat/")
     (synopsis "Conditional Formatting in Data Frames")
     (description
      "Apply and visualize conditional formatting to data frames in R. It renders a
@@ -17902,6 +17813,34 @@ the purpose of combination p-values.  All methods used can referenced here:
 Heard & Rubin-Delanchy (2017) <@code{arXiv:1707.06897>}.")
     (license license:expat)))
 
+(define-public r-combat-enigma
+  (package
+    (name "r-combat-enigma")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "combat.enigma" version))
+       (sha256
+        (base32 "1hz1fbjfsmz5m6mzhq7pyvx2pdm0v6f3afpzjnz0xnz30ckfgshr"))))
+    (properties `((upstream-name . "combat.enigma")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=combat.enigma")
+    (synopsis "Fit and Apply ComBat Harmonization for ENIGMA")
+    (description
+     "Fit and apply @code{ComBat} to harmonize magnetic resonance imaging (MRI) data
+from different sites.  Briefly, @code{ComBat} is a batch adjustment method that
+removes additive and multiplicative differences between sites due to the use of
+different scanning devices.  As detailed in the manual, the original function
+was first modified for the harmonization of MRI data (Fortin et al. (2017)
+<doi:10.1016/j.neuroimage.2017.11.024>) and then modified again to create
+separate functions for fitting and applying the harmonization and allow missing
+values and constant rows for its use within the Enhancing Neuro Imaging Genetics
+through Meta-Analysis (ENIGMA) Consortium (Radua et al. (2020)
+<doi:10.1016/j.neuroimage.2017.11.024>).  This package includes the latter
+version.")
+    (license (license:fsdg-compatible "Artistic License 2.0"))))
+
 (define-public r-combat
   (package
     (name "r-combat")
@@ -19092,13 +19031,13 @@ and plotting methods for a clear presentation of the results.")
 (define-public r-coinr
   (package
     (name "r-coinr")
-    (version "1.1.2")
+    (version "1.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "COINr" version))
        (sha256
-        (base32 "162936aqypgxr59nnyk4nsmd0nbkdxddkwvwdw7ag7wp8zdkphx6"))))
+        (base32 "0yvaqm2f4ny0afqyis0fna2h3cngwpb7xaw9kpr9nsbfdigj3d47"))))
     (properties `((upstream-name . "COINr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-readxl r-openxlsx r-ggplot2))
@@ -20029,13 +19968,13 @@ utilities to generate this metadata with a minimum of dependencies.")
 (define-public r-codelistgenerator
   (package
     (name "r-codelistgenerator")
-    (version "1.7.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CodelistGenerator" version))
        (sha256
-        (base32 "0ajndqc0y89l1vv9k8gz4fdlx83hnw9jgg1yis6r442d27d3mcq0"))))
+        (base32 "1pb56361jj9mwyx5b22ibygpql7ycyvhijv96727l6fg2mjg0s8g"))))
     (properties `((upstream-name . "CodelistGenerator")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -21020,13 +20959,13 @@ genomic regions where the copy number differs from the norm.")
 (define-public r-cnorm
   (package
     (name "r-cnorm")
-    (version "3.0.3")
+    (version "3.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cNORM" version))
        (sha256
-        (base32 "0bdhddg7gfa3lxyyi8a970rg3msa90p2kpspmw3kksbiq26i4h3w"))))
+        (base32 "1qhp59hz9k2yq7rb60v9zv0bfnrfz99dk74v5fbip1wadzcbyrnp"))))
     (properties `((upstream-name . "cNORM")))
     (build-system r-build-system)
     (propagated-inputs (list r-leaps r-latticeextra r-lattice))
@@ -21833,13 +21772,13 @@ Non-Parametric ANOVA. The package also contains the data sets used in that text.
 (define-public r-cmhc
   (package
     (name "r-cmhc")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cmhc" version))
        (sha256
-        (base32 "0igspwg6lkgqg69mvzwlxbq30gd1h3gkz8bq7awqfn0v735hay7z"))))
+        (base32 "0cm2p3hvingygpxh67q8xjg2c2iy8ddz3hkb3jc4yyijjhxhkima"))))
     (properties `((upstream-name . "cmhc")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -23680,6 +23619,27 @@ segment, the position, orientation and length of which guide where the
 respective points are placed.  This package is described in Fachada & de Andrade
 (2023) <doi:10.1016/j.knosys.2023.110836>.")
     (license license:expat)))
+
+(define-public r-clubpro
+  (package
+    (name "r-clubpro")
+    (version "0.5.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "clubpro" version))
+       (sha256
+        (base32 "1iady5hvjkiiwbjpyyv0m8pc5jbyb0ra7vsywfbl4vhvw4v4sxvz"))))
+    (properties `((upstream-name . "clubpro")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-lattice))
+    (home-page "https://github.com/timbeechey/clubpro")
+    (synopsis "Classification Using Binary Procrustes Rotation")
+    (description
+     "This package implements a classification method described by Grice (2011,
+ISBN:978-0-12-385194-9) using binary procrustes rotation; a simplified version
+of procrustes rotation.")
+    (license license:gpl3+)))
 
 (define-public r-clttools
   (package
@@ -26505,18 +26465,25 @@ failure time models.")
 (define-public r-cito
   (package
     (name "r-cito")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cito" version))
        (sha256
-        (base32 "0j1h8l50kkhrpnpynxw0hhm41k0rhd4f4i9aiv7bbhbkfh71xk7n"))))
+        (base32 "0va645fzccyzalmlglxdfn3a6crpgly4j59js2gk5fmxz7kmkfh6"))))
     (properties `((upstream-name . "cito")))
     (build-system r-build-system)
-    (propagated-inputs (list r-torch r-gridextra r-coro r-checkmate))
+    (propagated-inputs (list r-torch
+                             r-progress
+                             r-parabar
+                             r-gridextra
+                             r-coro
+                             r-cli
+                             r-checkmate
+                             r-abind))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=cito")
+    (home-page "https://citoverse.github.io/cito/")
     (synopsis "Building and Training Neural Networks")
     (description
      "Building and training custom neural networks in the typical R syntax.  The torch
@@ -30950,17 +30917,17 @@ displays of results are emphasized.")
 (define-public r-cftime
   (package
     (name "r-cftime")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CFtime" version))
        (sha256
-        (base32 "1af9p0bs1zmqb093pdmjkb0ag6nrh93dcg2g3hxm0rxhl401ixvh"))))
+        (base32 "1lrzx3rxipfyjbfjic9c80pmbgfldbgyhz823v04761h6jplpp9i"))))
     (properties `((upstream-name . "CFtime")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=CFtime")
+    (home-page "https://github.com/pvanlaake/CFtime")
     (synopsis "Using CF-Compliant Calendars with Climate Projection Data")
     (description
      "Support for all calendars as specified in the Climate and Forecast (CF) Metadata
@@ -31226,13 +31193,13 @@ or and with any mediator (any variable type and distribution).  See Sudharsanan
 (define-public r-cfda
   (package
     (name "r-cfda")
-    (version "0.10.1")
+    (version "0.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cfda" version))
        (sha256
-        (base32 "0v81wgqkp48gf11nxpg1dfj93qk55n8d7mfc1cyymkkhxzzdar44"))))
+        (base32 "03w2vfgjf29qn40slqfpd54dmvzql53lc9j7n51ggg7bjchrg2x0"))))
     (properties `((upstream-name . "cfda")))
     (build-system r-build-system)
     (propagated-inputs (list r-pbapply
@@ -32821,6 +32788,26 @@ select the best vine (based on information criteria) among those which allow for
 such a conditional sampling.  The package includes a function to compare
 scatterplot matrices and pair-dependencies of two multivariate datasets.")
     (license license:gpl2+)))
+
+(define-public r-cdss
+  (package
+    (name "r-cdss")
+    (version "0.2-0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CDSS" version))
+       (sha256
+        (base32 "13p5vg07lv1vbwpsd33x4mc8pvwf6s6yqikrbyakrfsjlznzw5gj"))))
+    (properties `((upstream-name . "CDSS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-readods r-openxlsx))
+    (home-page "https://cran.r-project.org/package=CDSS")
+    (synopsis "Course-Dependent Skill Structures")
+    (description
+     "Deriving skill structures from skill assignment data for courses (sets of
+learning objects).")
+    (license license:gpl3)))
 
 (define-public r-cds
   (package
@@ -36995,13 +36982,13 @@ coefficients.  Both shrinkage as well as empirical estimators are available.")
 (define-public r-cardidates
   (package
     (name "r-cardidates")
-    (version "0.4.8")
+    (version "0.4.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cardidates" version))
        (sha256
-        (base32 "1mfd5sgzswhs9rln2bgxx8c54z69xp8l5dfmx7jfh8jl43qkzpjf"))))
+        (base32 "0b52cmg870s6icq53c6v6zjgz6w1pv02p83r8k4q0sksq5fy0ik4"))))
     (properties `((upstream-name . "cardidates")))
     (build-system r-build-system)
     (propagated-inputs (list r-pastecs r-lattice r-boot))

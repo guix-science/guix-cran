@@ -705,13 +705,13 @@ CMCC-@code{BioClimInd} (see Noce, S., Caporaso, L. and Santini, M. (2020)
 (define-public r-itscalledsoccer
   (package
     (name "r-itscalledsoccer")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "itscalledsoccer" version))
        (sha256
-        (base32 "0ykkp75r5irkcdhk0p2ymhsyw2ns08ni5ifzydqq4gjdmjba8rkj"))))
+        (base32 "1xyfs9y60mrmmrpx5rhm2xg3ysgc75wfb62vb63rr7nlv6sfisgl"))))
     (properties `((upstream-name . "itscalledsoccer")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -3475,13 +3475,13 @@ rate of green (IRG) according to methods described in Bischoff et al. (2012)
 (define-public r-irexamples
   (package
     (name "r-irexamples")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IRexamples" version))
        (sha256
-        (base32 "0g9ncq280nsdkgpisy7gk2fd0daqjzrrqyx7dgdknanxzyyvb4xn"))))
+        (base32 "0x44gq6ik73r8zy5cjsdjr3k9xdf47lyrwldbgnfllja7kzxclfm"))))
     (properties `((upstream-name . "IRexamples")))
     (build-system r-build-system)
     (propagated-inputs (list r-twang
@@ -4315,24 +4315,24 @@ the composite performance of an individual.")
 (define-public r-ipkg
   (package
     (name "r-ipkg")
-    (version "1.0.8")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ipkg" version))
        (sha256
-        (base32 "0cm2hvdi5rbd7jnas0iishhld3m32gjs3xh1fq25zwn14spagngg"))))
+        (base32 "0n2p63mi6qfp0mr723cdkfsnbgykjrwzn1kyinqcydw5znwblz4x"))))
     (properties `((upstream-name . "ipkg")))
     (build-system r-build-system)
-    (propagated-inputs (list r-remotes))
+    (propagated-inputs (list r-remotes r-httr))
     (home-page "https://gitlab.com/chuxinyuan/ipkg")
     (synopsis
-     "Install R Packages or Download File from GitHub via the Proxy Site Https://Ghproxy.com")
+     "Install R Packages or Download File from GitHub via the Proxy Site")
     (description
-     "When you want to install R packages or download file from @code{GitHub}, but you
+     "When you want to install R package or download file from @code{GitHub}, but you
 can't access @code{GitHub}, this package helps you install R packages or
-download file from @code{GitHub} via the proxy website <https://ghproxy.com/>,
-which is in real-time sync with @code{GitHub}.")
+download file from @code{GitHub} via the proxy website <https://ghproxy.com/> or
+<https://gh-proxy.com/>, which is in real-time sync with @code{GitHub}.")
     (license license:expat)))
 
 (define-public r-ipft
@@ -10154,6 +10154,30 @@ methods like PCA and PLS.")
 multinomial data following the work of Schafer 1997 <ISBN: 978-0-412-04061-0>.")
     (license license:gpl3)))
 
+(define-public r-imputelongicovs
+  (package
+    (name "r-imputelongicovs")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ImputeLongiCovs" version))
+       (sha256
+        (base32 "16paj3fq06dsh4hq4mv0wvrprzhw6mv3ysnf3iakgjb93bfbhr6p"))))
+    (properties `((upstream-name . "ImputeLongiCovs")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-nnet))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ImputeLongiCovs")
+    (synopsis
+     "Longitudinal Imputation of Categorical Variables via a Joint Transition Model")
+    (description
+     "Imputation of longitudinal categorical covariates.  We use a methodological
+framework which ensures that the plausibility of transitions is preserved,
+overfitting and colinearity issues are resolved, and confounders can be
+utilized.  See Mamouris (2023) <doi:10.1002/sim.9919> for an overview.")
+    (license license:gpl2)))
+
 (define-public r-imputelcmd
   (package
     (name "r-imputelcmd")
@@ -12032,13 +12056,13 @@ smoothing bootstrap resampling.")
 (define-public r-ijtiff
   (package
     (name "r-ijtiff")
-    (version "2.3.2")
+    (version "2.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ijtiff" version))
        (sha256
-        (base32 "0isqrxpb2xb60h5nm2aycj5kccy77h3b8xx4c11nhhisagpr42z7"))))
+        (base32 "0iv04g2ciz38ndrx1x5n5yy94zgk7h7qn35f9drynw19w1pxd95y"))))
     (properties `((upstream-name . "ijtiff")))
     (build-system r-build-system)
     (inputs (list zlib zlib libtiff libjpeg-turbo))

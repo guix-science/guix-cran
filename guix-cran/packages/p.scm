@@ -3320,13 +3320,13 @@ models with penalized basis splines (P-Splines).  See
 (define-public r-pspatreg
   (package
     (name "r-pspatreg")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pspatreg" version))
        (sha256
-        (base32 "006wdg689b0xn54g45nchw5n1hjh5mr3bzyhraavzvxx6sjfhwq5"))))
+        (base32 "0giaxz7zdwik6qw9xlgipxwksdia044y2h64ik2bz03hi21w5n2i"))))
     (properties `((upstream-name . "pspatreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -4370,13 +4370,13 @@ run the tests in parallel.")
 (define-public r-prqlr
   (package
     (name "r-prqlr")
-    (version "0.5.3")
+    (version "0.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "prqlr" version))
        (sha256
-        (base32 "0xagxc1077943jy3s2yi0ywxlf67wg0qfxr7h0f1d7clf3f5rx22"))))
+        (base32 "123dyjq7gbwj15s47dbqcgicx9a2wrbqqzailhr3l828j5zi7679"))))
     (properties `((upstream-name . "prqlr")))
     (build-system r-build-system)
     (inputs (list))
@@ -5463,13 +5463,13 @@ applications.")
 (define-public r-propclust
   (package
     (name "r-propclust")
-    (version "1.4-6")
+    (version "1.4-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PropClust" version))
        (sha256
-        (base32 "1p15n98b6qprphgbhdqgnsxy9d9kik19h6j9f2dy6x1hkinrzsfa"))))
+        (base32 "1xwm8a6m5j5rdry4gqjl2c6dx2kkzjz29nzmg4bjnk3y9xpcn8xn"))))
     (properties `((upstream-name . "PropClust")))
     (build-system r-build-system)
     (propagated-inputs (list r-fastcluster r-dynamictreecut))
@@ -7825,13 +7825,13 @@ citation(\"PRIMME\") for details.")
 (define-public r-primes
   (package
     (name "r-primes")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "primes" version))
        (sha256
-        (base32 "01ybqnfxsd8d913nxqwni5q14p5kzlwk94d3x7znz9w9n3lw5fjd"))))
+        (base32 "0wgisbialsv24gchwzm1nx1r1186lb36v80qk9gac3xmq45z6vdv"))))
     (properties `((upstream-name . "primes")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -16066,6 +16066,54 @@ regression models using spike and slab priors.")
 principal orthogonal complements.")
     (license license:gpl2)))
 
+(define-public r-poems
+  (package
+    (name "r-poems")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "poems" version))
+       (sha256
+        (base32 "123sq2ixm8qzj6jc95skwl6rr4hiy7dcf34x4mrhqv5sf7k41yzs"))))
+    (properties `((upstream-name . "poems")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-trend
+                             r-raster
+                             r-r6
+                             r-metrology
+                             r-lhs
+                             r-geosphere
+                             r-gdistance
+                             r-foreach
+                             r-doparallel
+                             r-abc))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/GlobalEcologyLab/poems")
+    (synopsis "Pattern-Oriented Ensemble Modeling System")
+    (description
+     "This package provides a framework of interoperable R6 classes (Chang, 2020,
+<https://CRAN.R-project.org/package=R6>) for building ensembles of viable models
+via the pattern-oriented modeling (POM) approach (Grimm et al., 2005,
+<doi:10.1126/science.1116681>).  The package includes classes for encapsulating
+and generating model parameters, and managing the POM workflow.  The workflow
+includes: model setup; generating model parameters via Latin hyper-cube sampling
+(Iman & Conover, 1980, <doi:10.1080/03610928008827996>); running multiple
+sampled model simulations; collating summary results; and validating and
+selecting an ensemble of models that best match known patterns.  By default,
+model validation and selection utilizes an approximate Bayesian computation
+(ABC) approach (Beaumont et al., 2002, <doi:10.1093/genetics/162.4.2025>),
+although alternative user-defined functionality could be employed.  The package
+includes a spatially explicit demographic population model simulation engine,
+which incorporates default functionality for density dependence, correlated
+environmental stochasticity, stage-based transitions, and distance-based
+dispersal.  The user may customize the simulator by defining functionality for
+translocations, harvesting, mortality, and other processes, as well as defining
+the sequence order for the simulator processes.  The framework could also be
+adapted for use with other model simulators by utilizing its extendable
+(inheritable) base classes.")
+    (license license:gpl3)))
+
 (define-public r-podcleaner
   (package
     (name "r-podcleaner")
@@ -16283,13 +16331,13 @@ survey'.")
 (define-public r-pnar
   (package
     (name "r-pnar")
-    (version "1.5")
+    (version "1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PNAR" version))
        (sha256
-        (base32 "02a8bg0kj9gbixq4g3vg55pf0vx7czsv3xqnkrpmfg9gzxybl34r"))))
+        (base32 "18nq5g2vsc8xy4l1km710l2v8frw3wwpn4yx23s3xczqd8hj9wfw"))))
     (properties `((upstream-name . "PNAR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rfast2
@@ -17000,6 +17048,42 @@ forms of English words along with tools to augment the built-in rules to fit
 specialized needs.  Core functionality is based on a @code{JavaScript} library,
 <https://github.com/blakeembrey/pluralize>.")
     (license license:expat)))
+
+(define-public r-plume
+  (package
+    (name "r-plume")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "plume" version))
+       (sha256
+        (base32 "02fqwjppjah0pqfvgv02kmsbf2lcwwxp9k9v74l28nybnx9pmmwp"))))
+    (properties `((upstream-name . "plume")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yaml
+                             r-vctrs
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-readr
+                             r-r6
+                             r-purrr
+                             r-knitr
+                             r-jsonlite
+                             r-glue
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/arnaudgallou/plume")
+    (synopsis "Simple Author Handler for Scientific Writing")
+    (description
+     "Handles and formats author information in scientific writing in R Markdown and
+Quarto'.  plume provides easy-to-use and flexible tools for injecting author
+metadata in YAML headers as well as generating author and contribution lists
+(among others) as strings from tabular data.")
+    (license license:gpl3+)))
 
 (define-public r-plumbr
   (package
@@ -20700,13 +20784,13 @@ by OECD (2020) <https://www.oecd.org/pisa/data/2018database/>.")
 (define-public r-pirouette
   (package
     (name "r-pirouette")
-    (version "1.6.8")
+    (version "1.6.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pirouette" version))
        (sha256
-        (base32 "1n823rmjbra19h4c1sss4g8l613lmrbvq1cp2ih2sxax8wqzm1w3"))))
+        (base32 "1khcfic386pyhxxyzv3c28krc6rpy334cdk1adawx7c87pyvsp16"))))
     (properties `((upstream-name . "pirouette")))
     (build-system r-build-system)
     (inputs (list))
@@ -22038,13 +22122,13 @@ detail in Callahan et al. (2016) <doi:10.12688/f1000research.8986.1>.")
 (define-public r-phylosem
   (package
     (name "r-phylosem")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phylosem" version))
        (sha256
-        (base32 "05g8bqh51xqf1dc2gdhxn0k0kj5wcqjrkqgxfsq2wiyd45wkwln3"))))
+        (base32 "1j9cpfaylnsmrzxq43sqh94zvwd2ppd9w7yq52hkikxgldrsvi8q"))))
     (properties `((upstream-name . "phylosem")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb
@@ -22064,7 +22148,7 @@ set of features, to allow users to easily read all of the documentation and
 source code.  PCM using SEM includes phylogenetic linear models and structural
 equation models as nested submodels, but also allows imputation of missing
 values.  Features and comparison with other packages are described in Thorson
-and van der Bijl (In revisions).")
+and van der Bijl (In press).")
     (license license:gpl3)))
 
 (define-public r-phylosamp
@@ -22135,24 +22219,24 @@ global endangerment, as well as compositional turnover (e.g., beta diversity).")
 (define-public r-phylopath
   (package
     (name "r-phylopath")
-    (version "1.1.3")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phylopath" version))
        (sha256
-        (base32 "1j0gqd5027zd7xw6c8gkdqxwzqf0gw73m709gxqzk91xscnshg6q"))))
+        (base32 "1bmsnxkr9cd7v84rkdxy5f9bwh4siwggkq0g23y8pcpl8v9vs8ph"))))
     (properties `((upstream-name . "phylopath")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
                              r-purrr
                              r-phylolm
-                             r-pbapply
                              r-mumin
                              r-igraph
                              r-ggraph
                              r-ggplot2
                              r-ggm
+                             r-future-apply
                              r-ape))
     (native-inputs (list r-knitr))
     (home-page "https://Ax3man.github.io/phylopath/")
@@ -27069,6 +27153,27 @@ that manages many of the quality control, unit handling and data archiving
 issues that can hinder efforts to standardise PEMS research.")
     (license license:gpl2+)))
 
+(define-public r-pempi
+  (package
+    (name "r-pempi")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pempi" version))
+       (sha256
+        (base32 "1hvqszfnqwbya73fs36d8mqz277nfbgrwga5z9jfxdnkalxw5bxq"))))
+    (properties `((upstream-name . "pempi")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/stephaneguerrier/pempi")
+    (synopsis "Proportion Estimation with Marginal Proxy Information")
+    (description
+     "This package provides a system contains easy-to-use tools for the conditional
+estimation of the prevalence of an emerging or rare infectious diseases using
+the methods proposed in Guerrier et al. (2023) <@code{arXiv:2012.10745>}.")
+    (license license:agpl3)))
+
 (define-public r-pema
   (package
     (name "r-pema")
@@ -30990,13 +31095,13 @@ patient profile report(s) or can be embedded in custom report(s).")
 (define-public r-patientprofiles
   (package
     (name "r-patientprofiles")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PatientProfiles" version))
        (sha256
-        (base32 "1gdmq0rm0wqqqj74s3vg6cf917vg8yxs56wazcs0s1p9y6y529y3"))))
+        (base32 "0ya7zk9a6v1hkai5vjdbf0jc86wxvxz8aqpzp2i1h5i0i89k6y2n"))))
     (properties `((upstream-name . "PatientProfiles")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -31005,6 +31110,7 @@ patient profile report(s) or can be embedded in custom report(s).")
                              r-pillar
                              r-magrittr
                              r-lubridate
+                             r-gt
                              r-dplyr
                              r-dbi
                              r-cli
@@ -31222,13 +31328,13 @@ data related to gene sets and example input/output data.")
 (define-public r-pathfindr
   (package
     (name "r-pathfindr")
-    (version "2.2.0")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pathfindR" version))
        (sha256
-        (base32 "1h421mj6r0k2zgjkp3f5jkmlzpipn7p9zzgi9cssilz3h1p762ps"))))
+        (base32 "06r8cxgp1bypvls5g7q56kr18in6z878givwn5daz44qhl84zz77"))))
     (properties `((upstream-name . "pathfindR")))
     (build-system r-build-system)
     (inputs (list openjdk))
@@ -32913,13 +33019,13 @@ that of the pcalg package but will be much more efficient.")
 (define-public r-parallelpam
   (package
     (name "r-parallelpam")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "parallelpam" version))
        (sha256
-        (base32 "14s305v2wkpi8la1xi19fs857d7xhzpjahdlcbr3x9hidvbwl03z"))))
+        (base32 "0iv11jqr9040rnw7hkfdj4vq4s7lhzz6as7f0zcy6jm36b3hllh2"))))
     (properties `((upstream-name . "parallelpam")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-memuse))

@@ -1101,22 +1101,22 @@ itself.")
 (define-public r-ursa
   (package
     (name "r-ursa")
-    (version "3.9.11")
+    (version "3.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ursa" version))
        (sha256
-        (base32 "0ffv7q1xvq4xdwk0jhiyx60057bsdrah4hlz7f16266wc9vf1jds"))))
+        (base32 "0mfylj40vxlp36mql5h8ig6r12v3jbgbi2nha3jxf8s1z4923zjn"))))
     (properties `((upstream-name . "ursa")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rgdal r-png r-jpeg))
+    (propagated-inputs (list r-sf r-png))
     (home-page "https://github.com/nplatonov/ursa")
     (synopsis
      "Non-Interactive Spatial Tools for Raster Processing and Visualization")
     (description
      "S3 classes and methods for manipulation with georeferenced raster data:
-reading/writing, processing, multi-panel visualization.  SWU.")
+reading/writing, processing, multi-panel visualization.")
     (license license:gpl2+)))
 
 (define-public r-urootab
@@ -2201,13 +2201,13 @@ hessian functions are written in C++.  For further details see Mazucheli et.  al
 (define-public r-unitizer
   (package
     (name "r-unitizer")
-    (version "1.4.19")
+    (version "1.4.20")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "unitizer" version))
        (sha256
-        (base32 "1dx9wlx27mwqkr3vmxdgvyjp7k8pbq718r8x1ri3akxigp4rbjcx"))))
+        (base32 "0s2jgvxdlz95ykdz3mwy6l5iry74qyv716d6fz18jxnixcx6vyss"))))
     (properties `((upstream-name . "unitizer")))
     (build-system r-build-system)
     (propagated-inputs (list r-diffobj r-crayon))
@@ -2628,6 +2628,29 @@ relating each DAG to a sequence of outpoints (nodes with no incoming edges) and
 then to a composition of integers as suggested by Kuipers, J. and Moffa, G.
 (2015) <doi:10.1007/s11222-013-9428-y>.")
     (license license:gpl2+)))
+
+(define-public r-uniexactfuntest
+  (package
+    (name "r-uniexactfuntest")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "UniExactFunTest" version))
+       (sha256
+        (base32 "03gnn36m735kycac526qrz5rkjhqcw9dp77x71z6qryy7i718qwv"))))
+    (properties `((upstream-name . "UniExactFunTest")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=UniExactFunTest")
+    (synopsis "Uniform Exact Functional Tests for Contingency Tables")
+    (description
+     "Testing whether two discrete variables have a functional relationship under null
+distributions where the two variables are statistically independent with fixed
+marginal counts.  The fast enumeration algorithm was based on (Nguyen et al.
+2020) <doi:10.24963/ijcai.2020/372>.")
+    (license license:lgpl3+)))
 
 (define-public r-unicol
   (package
@@ -4103,13 +4126,13 @@ random slope and intercept terms.  References: Carpenter et al. (2017)
 (define-public r-ubl
   (package
     (name "r-ubl")
-    (version "0.0.7")
+    (version "0.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "UBL" version))
        (sha256
-        (base32 "1zppc8mgmj4ymxfdvhqiirlf80wh65y58wqm92fgjdn7s06v5skf"))))
+        (base32 "1jpm41la5210a9shak01fsgq2yw8l1cz5zbb5zlas2nc2jg7hslh"))))
     (properties `((upstream-name . "UBL")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-randomforest r-mba r-gstat r-automap))

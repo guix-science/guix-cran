@@ -710,13 +710,13 @@ Time Series Analysis\" by Ruey S. Tsay and Rong Chen, John Wiley & Sons, 2018
 (define-public r-ntdr
   (package
     (name "r-ntdr")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ntdr" version))
        (sha256
-        (base32 "12gb5rndmqmmx6gvsyllp31fqrpx8z55rx947h3xva20hr57p9j1"))))
+        (base32 "1v8lwsp9c81pg0i140fc9zfng6cf4a0p0jyc2k8gdg7hsl9dwks1"))))
     (properties `((upstream-name . "ntdr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -1775,22 +1775,20 @@ variables and regarding factor levels.")
 (define-public r-npmr
   (package
     (name "r-npmr")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "npmr" version))
        (sha256
-        (base32 "073i9zcnyp8l5fxblx2sfyn0b4lr6i595q6kl6ispvzmylwqj8na"))))
+        (base32 "1h5cqbkmmswnmaf0b67akiybab9zpi1nvjj5wkdxiwiss7n1an7z"))))
     (properties `((upstream-name . "npmr")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=npmr")
     (synopsis "Nuclear Penalized Multinomial Regression")
     (description
      "Fit multinomial logistic regression with a penalty on the nuclear norm of the
-estimated regression coefficient matrix, using proximal gradient descent.
-Reference: Powers S, Hastie T and Tibshirani R (2018)
-<doi:10.1177/1471082X18777669>.")
+estimated regression coefficient matrix, using proximal gradient descent.")
     (license license:gpl2)))
 
 (define-public r-npmlreg
@@ -6486,13 +6484,13 @@ covariate selection.")
 (define-public r-nlmixr2est
   (package
     (name "r-nlmixr2est")
-    (version "2.1.7")
+    (version "2.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmixr2est" version))
        (sha256
-        (base32 "1yqcf5afg577rfpmiqp506n3sdfrfvvvkp6vrx6b4jqrwbhvdaz7"))))
+        (base32 "1lxlma1yij9mnycgsbqdz6mp5fvvjs69x198gs1qdg12g5n2wb5x"))))
     (properties `((upstream-name . "nlmixr2est")))
     (build-system r-build-system)
     (propagated-inputs (list r-symengine
@@ -8770,13 +8768,13 @@ of the limit product model of Pena (2001) <doi:10.1198/016214501753381922>.")
 (define-public r-newsmap
   (package
     (name "r-newsmap")
-    (version "0.8.2")
+    (version "0.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "newsmap" version))
        (sha256
-        (base32 "1kvf2q0wdn5ilw10cyd9pbigh26fm9qr4sghbaln28x5f96f1fva"))))
+        (base32 "08gdjszasfc62yz7q4s6a5971v0c0ddncryyfq1blpi6qqikjyhj"))))
     (properties `((upstream-name . "newsmap")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi r-quanteda-textstats r-quanteda

@@ -1229,6 +1229,27 @@ WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
 PARTICULAR PURPOSE. See the GNU General Public License for more details.")
     (license license:gpl2+)))
 
+(define-public r-tv
+  (package
+    (name "r-tv")
+    (version "1.7.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tv" version))
+       (sha256
+        (base32 "16s87nx7716pn75r27las759vibc3g9xik10rssyhf9ngy5j07ak"))))
+    (properties `((upstream-name . "tv")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-magrittr r-lubridate r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=tv")
+    (synopsis "Tools for Creating Time-Varying Datasets")
+    (description
+     "Create a time-varying dataset using features, exposure, and look back
+specifications.")
+    (license license:gpl2+)))
+
 (define-public r-tuwmodel
   (package
     (name "r-tuwmodel")
@@ -3984,13 +4005,13 @@ cluster evaluation metrics.")
 (define-public r-tsci
   (package
     (name "r-tsci")
-    (version "3.0.0")
+    (version "3.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TSCI" version))
        (sha256
-        (base32 "12601z7w6rcv4hl7dj4h23r0hf6q3dgsqbb6msqnvh3i2i9zidgb"))))
+        (base32 "01r09q1bvy8q28xmk28rmd3cx2y1kv9wgvrdmn3l08arjs83qv9g"))))
     (properties `((upstream-name . "TSCI")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost r-rfast r-ranger r-fastdummies))
@@ -8133,13 +8154,13 @@ on their analyses.  For more details visit
 (define-public r-trainer
   (package
     (name "r-trainer")
-    (version "2.0.4")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "traineR" version))
        (sha256
-        (base32 "11amknr1vsqbahfhaj0pxwqviiyh57jll4j3f5ihd1qzk2wxr9jz"))))
+        (base32 "0bk7hrz9bfn9j3hj05zhq6zm9q2nrw5pcrq8yd54ys2135hhqwaj"))))
     (properties `((upstream-name . "traineR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -8158,7 +8179,7 @@ on their analyses.  For more details visit
                              r-dplyr
                              r-adabag
                              r-ada))
-    (home-page "https://www.promidat.com")
+    (home-page "https://promidat.website/")
     (synopsis "Predictive (Classification and Regression) Models Homologator")
     (description
      "This package provides methods to unify the different ways of creating predictive
@@ -13244,6 +13265,30 @@ the package is used alongside of package mosaic', @code{mosaicData} and abd',
 which are therefore listed as dependencies.")
     (license license:gpl3+)))
 
+(define-public r-tigers
+  (package
+    (name "r-tigers")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tigers" version))
+       (sha256
+        (base32 "1g9h5rb5rb60cs6s1gbhqpiiq1f9fc7y3hlxjqrbv2gn306vw7ry"))))
+    (properties `((upstream-name . "tigers")))
+    (build-system r-build-system)
+    (home-page "https://github.com/emmanuelparadis/tigers")
+    (synopsis "Integration of Geography, Environment, and Remote Sensing")
+    (description
+     "Handling and manipulation polygons, coordinates, and other geographical objects.
+ The tools include: polygon areas (Chamberlain and Duquette, 2007,
+<doi:2014/41271>), barycentric and trilinear coordinates (Hormann and Floater,
+2006, <doi:10.1145/1183287.1183295>), convex hull for polygons (Graham and Yao,
+1983, <doi:10.1016/0196-6774(83)90013-5>), polygon triangulation (Toussaint,
+1991, <doi:10.1007/BF01905693>), great circle and geodesic distances, Hausdorff
+distance, and reduced major axis.")
+    (license license:gpl3)))
+
 (define-public r-tigerr
   (package
     (name "r-tigerr")
@@ -16746,13 +16791,13 @@ website.")
 (define-public r-theft
   (package
     (name "r-theft")
-    (version "0.5.4")
+    (version "0.5.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "theft" version))
        (sha256
-        (base32 "1kgz19rp62r0wsr6p3ihmxwywxh1zf4cxl356lg4b79zvlxkaqf6"))))
+        (base32 "0knm636wx8ljdacd7cb4ny450pkh79lxx09vnpssbz4x0hgm9j64"))))
     (properties `((upstream-name . "theft")))
     (build-system r-build-system)
     (propagated-inputs (list r-tsibble
@@ -21551,13 +21596,13 @@ concentration) value.")
 (define-public r-tcpl
   (package
     (name "r-tcpl")
-    (version "3.0.1")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tcpl" version))
        (sha256
-        (base32 "1xsw532xdf4xksrggsszwbh7rj818hvi9xmndhdhdk6wq6bg7xh4"))))
+        (base32 "0s35j9ky49d2f58hg93a47l6j855vm95a3qzwq3i8wd0p2zh1x7b"))))
     (properties `((upstream-name . "tcpl")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -21650,6 +21695,64 @@ arising from the simulation approach is analytically derived by using the delta
 method.  Draxler, C., & Alexandrowicz, R. W. (2015),
 <doi:10.1007/s11336-015-9472-y>.")
     (license license:gpl2)))
+
+(define-public r-tciu
+  (package
+    (name "r-tciu")
+    (version "1.2.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TCIU" version))
+       (sha256
+        (base32 "0is0y0123pvwvkwzghd58chbiy1862qy8q3377j1nj1k81whj0cn"))))
+    (properties `((upstream-name . "TCIU")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-tidyr
+                             r-spatstat-geom
+                             r-spatstat-explore
+                             r-scales
+                             r-rrcov
+                             r-reshape2
+                             r-rcolorbrewer
+                             r-pracma
+                             r-plotly
+                             r-multiwayregression
+                             r-icsnp
+                             r-gridextra
+                             r-ggpubr
+                             r-ggplot2
+                             r-geometry
+                             r-forecast
+                             r-foreach
+                             r-fmri
+                             r-fancycut
+                             r-extradistr
+                             r-dt
+                             r-dplyr
+                             r-doparallel
+                             r-cubature))
+    (native-inputs (list r-knitr gfortran))
+    (home-page "https://github.com/SOCR/TCIU")
+    (synopsis
+     "Spacekime Analytics, Time Complexity and Inferential Uncertainty")
+    (description
+     "Provide the core functionality to transform longitudinal data to complex-time
+(kime) data using analytic and numerical techniques, visualize the original
+time-series and reconstructed kime-surfaces, perform model based (e.g.,
+tensor-linear regression) and model-free classification and clustering methods
+in the book Dinov, ID and Velev, MV. (2021) \"Data Science: Time Complexity,
+Inferential Uncertainty, and Spacekime Analytics\", De Gruyter STEM Series, ISBN
+978-3-11-069780-3. <https://www.degruyter.com/view/title/576646>.  The package
+includes 18 core functions which can be separated into three groups.  1) draw
+longitudinal data, such as Functional magnetic resonance imaging(@code{fMRI})
+time-series, and forecast or transform the time-series data.  2) simulate
+real-valued time-series data, e.g., @code{fMRI} time-courses, detect the
+activated areas, report the corresponding p-values, and visualize the p-values
+in the 3D brain space.  3) Laplace transform and kimesurface reconstructions of
+the @code{fMRI} data.")
+    (license license:gpl3)))
 
 (define-public r-tciapathfinder
   (package
