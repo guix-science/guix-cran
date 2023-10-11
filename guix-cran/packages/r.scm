@@ -9912,13 +9912,13 @@ in @code{JavaScript} by Nicolas Kruchten.  Aligned to pivottable v2.19.0.")
 (define-public r-rphylopic
   (package
     (name "r-rphylopic")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rphylopic" version))
        (sha256
-        (base32 "1863rq8rq7g4p51f83nd7nc2wqrx52i3y18i3hl45wlskv5531x5"))))
+        (base32 "0b33ixhlwh3lkm01sh5isrirj5dlff04szdb2hmjyipgmfa0w1k4"))))
     (properties `((upstream-name . "rphylopic")))
     (build-system r-build-system)
     (propagated-inputs (list r-rsvg
@@ -25555,35 +25555,6 @@ functions to create R packages that use Rust code.  Under the hood, the Rust
 crate extendr is used to do all the heavy lifting.")
     (license license:expat)))
 
-(define-public r-rexpokit
-  (package
-    (name "r-rexpokit")
-    (version "0.26.6.9")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rexpokit" version))
-       (sha256
-        (base32 "0ayh4nn031j702sgx3bh9j4psqf80ai4rf3fnmkfp62bxfffci8l"))))
-    (properties `((upstream-name . "rexpokit")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
-    (native-inputs (list gfortran))
-    (home-page "http://phylo.wikidot.com/rexpokit")
-    (synopsis "R Wrappers for EXPOKIT; Other Matrix Functions")
-    (description
-     "Wraps some of the matrix exponentiation utilities from EXPOKIT
-(<http://www.maths.uq.edu.au/expokit/>), a FORTRAN library that is widely
-recommended for matrix exponentiation (Sidje RB, 1998. \"Expokit: A Software
-Package for Computing Matrix Exponentials.\" ACM Trans.  Math.  Softw.  24(1):
-130-156).  EXPOKIT includes functions for exponentiating both small, dense
-matrices, and large, sparse matrices (in sparse matrices, most of the cells have
-value 0).  Rapid matrix exponentiation is useful in phylogenetics when we have a
-large number of states (as we do when we are inferring the history of
-transitions between the possible geographic ranges of a species), but is
-probably useful in other ways as well.")
-    (license license:gpl2+)))
-
 (define-public r-rexperigen
   (package
     (name "r-rexperigen")
@@ -28610,13 +28581,13 @@ the current session.")
 (define-public r-renvlp
   (package
     (name "r-renvlp")
-    (version "3.4")
+    (version "3.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Renvlp" version))
        (sha256
-        (base32 "1lnjx33yhqjdbq9lx0b1ag45xyhg0j1gjfaplv14kn9jicx6ddnm"))))
+        (base32 "1af1hjv66kxjljrx1ryr4c8w969jjvdd284nxsh1b7rms80iw16r"))))
     (properties `((upstream-name . "Renvlp")))
     (build-system r-build-system)
     (propagated-inputs (list r-rsolnp r-pls r-orthogonalsplinebasis
@@ -35042,18 +35013,19 @@ Repertoire Dissimilarity Index.  Citation: Bolen and Rubelt, et al (2017)
 (define-public r-rdhs
   (package
     (name "r-rdhs")
-    (version "0.7.6")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rdhs" version))
        (sha256
-        (base32 "1ikh2hq5jb9fifpp496y88xzgqy7k0axg1c70a03wm48nr93xc0y"))))
+        (base32 "0zp5h7m7rd4d622rv4xqk4q4ycgzwlw7cwjsl4rvimqfvr69m8zv"))))
     (properties `((upstream-name . "rdhs")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
                              r-storr
-                             r-rgdal
+                             r-sf
+                             r-rlang
                              r-rappdirs
                              r-r6
                              r-qdapregex
@@ -35065,6 +35037,7 @@ Repertoire Dissimilarity Index.  Citation: Bolen and Rubelt, et al (2017)
                              r-getpass
                              r-foreign
                              r-digest
+                             r-cli
                              r-brio))
     (native-inputs (list r-knitr))
     (home-page "https://docs.ropensci.org/rdhs/")

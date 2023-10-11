@@ -11148,13 +11148,13 @@ relevant paper is available on @code{arXiv}: <@code{arXiv:2105.14328>}.")
 (define-public r-glmtoolbox
   (package
     (name "r-glmtoolbox")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmtoolbox" version))
        (sha256
-        (base32 "1vp4xwyw9xz674r1w1b5prid1kr1fk3yx0h374r12n574sp8izws"))))
+        (base32 "115ygmhcfzkks7dlph5c2w7ijpmvd6avvz9955jfqwfapwy1r358"))))
     (properties `((upstream-name . "glmtoolbox")))
     (build-system r-build-system)
     (propagated-inputs (list r-statmod r-rfast r-numderiv r-mass r-formula))
@@ -15967,28 +15967,27 @@ that draw from the same source ggpacket layers.")
 (define-public r-ggoutlier
   (package
     (name "r-ggoutlier")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GGoutlieR" version))
        (sha256
-        (base32 "19n0mn8lz5xzz4dg2cqhxq59wk9691hz7ar0n9mbbqxjzfws3hv6"))))
+        (base32 "0vck9f2lcqk8cql2p8ngys9hnd3xr8lagy07bidkhr043prd3zgz"))))
     (properties `((upstream-name . "GGoutlieR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp
+    (propagated-inputs (list r-tidyr
+                             r-sf
                              r-scales
-                             r-rworldxtra
-                             r-rworldmap
+                             r-rnaturalearth
+                             r-rlang
                              r-rcolorbrewer
-                             r-plotrix
-                             r-mapplots
-                             r-iterators
-                             r-geosphere
+                             r-ggplot2
+                             r-ggforce
                              r-foreach
                              r-fastknn
                              r-doparallel
-                             r-dichromat))
+                             r-cowplot))
     (home-page "https://cran.r-project.org/package=GGoutlieR")
     (synopsis "Identify Individuals with Unusual Geo-Genetic Patterns")
     (description
@@ -20143,13 +20142,13 @@ coordinates of a new individual from Gower's distance.")
 (define-public r-geospt
   (package
     (name "r-geospt")
-    (version "1.0-2")
+    (version "1.0-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geospt" version))
        (sha256
-        (base32 "1814nn0naxvbn0bqfndpmizjbqcs6rm87g2s378axkn6qpii4bh8"))))
+        (base32 "1ap7fcxh95si8mifcykxfk2q2bnpdr397w9gj0inm2zqzv616rib"))))
     (properties `((upstream-name . "geospt")))
     (build-system r-build-system)
     (propagated-inputs (list r-teachingdemos
@@ -20163,7 +20162,7 @@ coordinates of a new individual from Gower's distance.")
                              r-gsl
                              r-genalg
                              r-fields))
-    (home-page "https://cran.r-project.org/package=geospt")
+    (home-page "https://github.com/amsantac/geospt")
     (synopsis
      "Geostatistical Analysis and Design of Optimal Spatial Sampling Networks")
     (description

@@ -11438,13 +11438,13 @@ of our methods.")
 (define-public r-statquotes
   (package
     (name "r-statquotes")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statquotes" version))
        (sha256
-        (base32 "08xvnqbh0ax261hhgq1pkmcpvdcy44nhhmsxaapy9q8ppfvn7vi1"))))
+        (base32 "0y805alr98zz306jjnikggdd02c3yrp5izzwhh457bsb85i22yri"))))
     (properties `((upstream-name . "statquotes")))
     (build-system r-build-system)
     (propagated-inputs (list r-wordcloud r-tidytext r-stringr))
@@ -11452,9 +11452,10 @@ of our methods.")
     (home-page "https://github.com/friendly/statquotes/")
     (synopsis "Quotes on Statistics, Data Visualization and Science")
     (description
-     "Generates a random quotation from a data base of quotes on topics in statistics,
+     "Generates a random quotation from a database of quotes on topics in statistics,
 data visualization and science.  Other functions allow searching the quotes
-database by key term tags, or authors or creating a word cloud.")
+database by key term tags, or authors or creating a word cloud.  The output is
+designed to be suitable for use at the console, in Rmarkdown and @code{LaTeX}.")
     (license license:gpl2+)))
 
 (define-public r-statpsych
@@ -29134,13 +29135,13 @@ timestamp is standardized to UTC time.")
 (define-public r-smerc
   (package
     (name "r-smerc")
-    (version "1.8.2")
+    (version "1.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smerc" version))
        (sha256
-        (base32 "0qdnary5jj361vyfs9z6difaa17dvb8jkpssw399nc8glz5k8xyd"))))
+        (base32 "181av1l1r327iszxrihilvfiqbc4m4496g94i5r9vhhamvgk8cwm"))))
     (properties `((upstream-name . "smerc")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppprogress r-rcpp r-pbapply))
@@ -35211,6 +35212,33 @@ Smeets & Azcorra (2019, <doi:10.18637/jss.v090.i02>), and the paper by Ucar,
 @code{HernÃ¡ndez}, Serrano & Azcorra (2018, <doi:10.1109/MCOM.2018.1700960>);
 see citation(\"simmer\") for details.")
     (license license:gpl2+)))
+
+(define-public r-simle
+  (package
+    (name "r-simle")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SIMle" version))
+       (sha256
+        (base32 "1lwi9dxv93f6fnc3j0lkl7kvf806z5f5s8flxzm2km3j5fl0bp2j"))))
+    (properties `((upstream-name . "SIMle")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-sie2nts
+                             r-rcurl
+                             r-plotly
+                             r-matrix
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=SIMle")
+    (synopsis "Estimation and Inference for General Time Series Regression")
+    (description
+     "We provide functions for estimation and inference of nonlinear and
+non-stationary time series regression using the sieve methods and bootstrapping
+procedure.")
+    (license license:expat)))
 
 (define-public r-simlandr
   (package
@@ -54689,6 +54717,34 @@ combinations to R for easy use in data visualizations.  This package honors 60
 of Wada's color combinations: 20 duos, 20 trios, and 20 quads.")
     (license license:gpl3)))
 
+(define-public r-sanvi
+  (package
+    (name "r-sanvi")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SANvi" version))
+       (sha256
+        (base32 "1rcg5j8gvcz1wi2qzhsblb7ml8l6hiimyzpk2bkl6hicrgjrzi66"))))
+    (properties `((upstream-name . "SANvi")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scales r-rcpparmadillo r-rcpp r-rcolorbrewer
+                             r-matrixstats))
+    (home-page "https://github.com/fradenti/SANvi")
+    (synopsis "Fitting Shared Atoms Nested Models via Variational Bayes")
+    (description
+     "An efficient tool for fitting the nested common and shared atoms models using
+variational Bayes approximate inference for fast computation.  Specifically, the
+package implements the common atoms model (Denti et al., 2023), its finite
+version (D'Angelo et al., 2023), and a hybrid finite-infinite model.  All models
+use Gaussian mixtures with a normal-inverse-gamma prior distribution on the
+parameters.  Additional functions are provided to help analyze the results of
+the fitting procedure.  References: Denti, Camerlenghi, Guindani, Mira (2023)
+<doi:10.1080/01621459.2021.1933499>, DâAngelo, Canale, Yu, Guindani (2023)
+<doi:10.1111/biom.13626>.")
+    (license license:expat)))
+
 (define-public r-santoku
   (package
     (name "r-santoku")
@@ -54784,6 +54840,38 @@ algorithm ('SANSA'), which, in contrast to other solutions, introduces a novel
 manifestation of the imbalance.  More information about the algorithm's
 parameters can be found at Nasir et al. (2022) <https://murtaza.cc/SANSA/>.")
     (license license:gpl3+)))
+
+(define-public r-sanple
+  (package
+    (name "r-sanple")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SANple" version))
+       (sha256
+        (base32 "1ss9p8pw5k1rp8xap98bd587xfhr006xwbf85c1az3rc1p4rji77"))))
+    (properties `((upstream-name . "SANple")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scales
+                             r-salso
+                             r-rcppprogress
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-rcolorbrewer))
+    (home-page "https://github.com/laura-dangelo/SANple")
+    (synopsis
+     "Fitting Shared Atoms Nested Models via Markov Chains Monte Carlo")
+    (description
+     "Estimate Bayesian nested mixture models via Markov Chain Monte Carlo methods.
+Specifically, the package implements the common atoms model (Denti et al.,
+2023), its finite version (D'Angelo et al., 2023), and a hybrid finite-infinite
+model.  All models use Gaussian mixtures with a normal-inverse-gamma prior
+distribution on the parameters.  Additional functions are provided to help
+analyzing the results of the fitting procedure.  References: Denti, Camerlenghi,
+Guindani, Mira (2023) <doi:10.1080/01621459.2021.1933499>, DâAngelo, Canale,
+Yu, Guindani (2023) <doi:10.1111/biom.13626>.")
+    (license license:expat)))
 
 (define-public r-sanon
   (package
@@ -55509,6 +55597,34 @@ approaches are provided.  For reference see Joseph L. and BÃ©lisle P. (1997)
      "To determine sample size or power for case-control studies to be analyzed using
 logistic regression.")
     (license license:gpl2)))
+
+(define-public r-samplesizeestimator
+  (package
+    (name "r-samplesizeestimator")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "samplesizeestimator" version))
+       (sha256
+        (base32 "0s783s2hcb9hndhsw5vdss240bkvb0a634fl6wrq42fc8fd95ixc"))))
+    (properties `((upstream-name . "samplesizeestimator")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringi))
+    (home-page "https://cran.r-project.org/package=samplesizeestimator")
+    (synopsis "Calculate Sample Size for Various Scenarios")
+    (description
+     "Calculates sample size for various scenarios, such as sample size to estimate
+population proportion with stated absolute or relative precision, testing a
+single proportion with a reference value, to estimate the population mean with
+stated absolute or relative precision, testing single mean with a reference
+value and sample size for comparing two unpaired or independent means, comparing
+two paired means, the sample size For case control studies, estimating the odds
+ratio with stated precision, testing the odds ratio with a reference value,
+estimating relative risk with stated precision, testing relative risk with a
+reference value, testing a correlation coefficient with a specified value, etc.
+<https://www.academia.edu/39511442/Adequacy_of_Sample_Size_in_Health_Studies#:~:text=Determining%20the%20sample%20size%20for,may%20yield%20statistically%20inconclusive%20results.>.")
+    (license license:gpl2+)))
 
 (define-public r-samplesizecmh
   (package

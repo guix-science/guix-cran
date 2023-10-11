@@ -12570,38 +12570,6 @@ basis.  Thus timeseriesdb is optimized to handle updates caused by data revision
 as well as elaborate, multi-lingual meta information.")
     (license license:gpl3)))
 
-(define-public r-timeseries-obeu
-  (package
-    (name "r-timeseries-obeu")
-    (version "1.2.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "TimeSeries.OBeu" version))
-       (sha256
-        (base32 "0ihigrbdkfbqqjxqfx3y5q8ii8n60301s7190jr50a88l1xzgmh8"))))
-    (properties `((upstream-name . "TimeSeries.OBeu")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tseries r-trend r-locfit r-jsonlite r-forecast))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/okgreece/TimeSeries.OBeu")
-    (synopsis "Time Series Analysis 'OpenBudgets.eu'")
-    (description
-     "Estimate and return the needed parameters for visualizations designed for
-@code{OpenBudgets.eu} <http://openbudgets.eu/> time series data.  Calculate time
-series model and forecast parameters in budget time series data of
-municipalities across Europe, according to the @code{OpenBudgets.eu} data model.
- There are functions for measuring deterministic and stochastic trend of the
-input time series data with ACF', PACF', Phillips Perron test, Augmented Dickey
-Fuller (ADF) test, Kwiatkowski-Phillips-Schmidt-Shin (KPSS) test, Mann Kendall
-test for monotonic trend and Cox and Stuart trend test, decomposing with local
-regression models or stl decomposition, fitting the appropriate arima model and
-provide forecasts for the input @code{OpenBudgets.eu} time series fiscal data.
-Also, can be used generally to extract visualization parameters convert them to
-JSON format and use them as input in a different graphical interface.")
-    (license (list license:gpl2
-                   (license:fsdg-compatible "file://LICENSE")))))
-
 (define-public r-timeseq
   (package
     (name "r-timeseq")
@@ -13198,13 +13166,13 @@ browser is available at <https://github.com/PROBIC/@code{tigreBrowser>}.")
 (define-public r-tigger
   (package
     (name "r-tigger")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tigger" version))
        (sha256
-        (base32 "130iwg2ds4j56a9ndg1p7qv4s6qbbahmm9fwmy6iak02ds1r0zyl"))))
+        (base32 "02q5ggyl4iy4xx07v0mikf9hkbac0iwbd02rkzafrgjbxfm8mvfa"))))
     (properties `((upstream-name . "tigger")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -13227,7 +13195,7 @@ browser is available at <https://github.com/PROBIC/@code{tigreBrowser>}.")
 repertoire sequencing data (AIRR-Seq, Rep-Seq).  Includes detection of any novel
 alleles.  This information is then used to correct existing V allele calls from
 among the sample sequences.  Citations: Gadala-Maria, et al (2015)
-<doi:10.1073/pnas.1417683112>.  Gadala-Maria, et al (2019)
+<doi:10.1073/pnas.1417683112>, Gadala-Maria, et al (2019)
 <doi:10.3389/fimmu.2019.00129>.")
     (license license:agpl3)))
 
@@ -13895,19 +13863,20 @@ interact seamlessly with the tidyverse.")
 (define-public r-tidysem
   (package
     (name "r-tidysem")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidySEM" version))
        (sha256
-        (base32 "13zm3i54ricxrrvvz8cdbbn7lykxm20f2gi19mvqvvpri57kzhcp"))))
+        (base32 "10q1ahcg52vyzjiz94rlhhlgn0pb0cjh7avbsmdg6qha9wkfphgn"))))
     (properties `((upstream-name . "tidySEM")))
     (build-system r-build-system)
     (propagated-inputs (list r-rann
                              r-psych
                              r-progressr
                              r-openmx
+                             r-nonnest2
                              r-mplusautomation
                              r-matrix
                              r-lavaan
@@ -13916,6 +13885,7 @@ interact seamlessly with the tidyverse.")
                              r-ggplot2
                              r-future-apply
                              r-dbscan
+                             r-dagitty
                              r-car
                              r-blavaan
                              r-bain))
@@ -13926,7 +13896,8 @@ interact seamlessly with the tidyverse.")
      "This package provides a tidy workflow for generating, estimating, reporting, and
 plotting structural equation models using lavaan', @code{OpenMx}', or Mplus'.
 Throughout this workflow, elements of syntax, results, and graphs are
-represented as tidy data, making them easy to customize.")
+represented as tidy data, making them easy to customize.  Includes functionality
+to estimate latent class analyses.")
     (license license:gpl3+)))
 
 (define-public r-tidyrules
@@ -20839,6 +20810,36 @@ Unsworth (2013, ISBN:9780123869104), Nobel (2009, ISBN:9780123741431), and
 Okajima et al. (2012) <doi:10.1007/s11284-011-0905-5>.")
     (license license:expat)))
 
+(define-public r-teal-widgets
+  (package
+    (name "r-teal-widgets")
+    (version "0.4.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "teal.widgets" version))
+       (sha256
+        (base32 "06qbwy3bwfl1x2lqggzqjz4skb0n11vnvgyl7pr8pvwv97zlalpr"))))
+    (properties `((upstream-name . "teal.widgets")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-styler
+                             r-shinywidgets
+                             r-shinyjs
+                             r-shiny
+                             r-rtables
+                             r-lifecycle
+                             r-htmltools
+                             r-ggplot2
+                             r-checkmate
+                             r-bslib))
+    (native-inputs (list r-knitr))
+    (home-page "https://insightsengineering.github.io/teal.widgets/")
+    (synopsis "'shiny' Widgets for 'teal' Applications")
+    (description
+     "Collection of shiny widgets to support teal applications.  Enables the
+manipulation of application layout and plot or table settings.")
+    (license license:asl2.0)))
+
 (define-public r-teal-reporter
   (package
     (name "r-teal-reporter")
@@ -21571,13 +21572,13 @@ API key for free-but-capped access to the data.")
 (define-public r-tcplfit2
   (package
     (name "r-tcplfit2")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tcplfit2" version))
        (sha256
-        (base32 "1illbx2ifq63ki8yn97gs0lpl4hzdcl2sbwq7id3pgd8pmfka68w"))))
+        (base32 "1znhma87nyy36m3viyh80m6gygqh4iwwh1xj0nw6wh88qal4935p"))))
     (properties `((upstream-name . "tcplfit2")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-rcolorbrewer r-numderiv))

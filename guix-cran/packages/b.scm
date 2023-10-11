@@ -5469,13 +5469,13 @@ Least Squares Regression\", <@code{arXiv:1911.10191>}.")
 (define-public r-bosonsampling
   (package
     (name "r-bosonsampling")
-    (version "0.1.3")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BosonSampling" version))
        (sha256
-        (base32 "0dxvjdvzv2b3763x4wrkw02q57l42286w9bg2xhcngmcpdhnkg51"))))
+        (base32 "059g4sl7c2cns729sssv1syj0zx8rs8wbjfsc761fxl435ca7hqk"))))
     (properties `((upstream-name . "BosonSampling")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -18658,13 +18658,13 @@ Ripatti and Palmgren (2000) <doi:10.1111/j.0006-341X.2000.01016.x>.")
 (define-public r-bcee
   (package
     (name "r-bcee")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BCEE" version))
        (sha256
-        (base32 "0ys7gbxjwk28ajxa4pa7wyfc97dwlmysbvpsza1wrf661hjrdn6z"))))
+        (base32 "181khl93rsrqjm8cmn14a6bb7s47dp3xc31gm9rk088ixfjadq7h"))))
     (properties `((upstream-name . "BCEE")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-leaps r-boot r-bma))
@@ -18674,8 +18674,8 @@ Ripatti and Palmgren (2000) <doi:10.1111/j.0006-341X.2000.01016.x>.")
      "This package provides a Bayesian model averaging approach to causal effect
 estimation based on the BCEE algorithm.  Currently supports binary or continuous
 exposures and outcomes.  For more details, see Talbot et al. (2015)
-<doi:10.1515/jci-2014-0035> Talbot and Beaudoin (2020)
-<@code{arXiv:2003.11588>}.")
+<doi:10.1515/jci-2014-0035> Talbot and Beaudoin (2022)
+<doi:10.1515/jci-2021-0023>.")
     (license license:gpl2+)))
 
 (define-public r-bcea
@@ -23324,17 +23324,18 @@ that will install Github starred R packages whether available on CRAN or not.")
 (define-public r-bat
   (package
     (name "r-bat")
-    (version "2.9.3")
+    (version "2.9.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BAT" version))
        (sha256
-        (base32 "1dhz8n3n79jdvnhyrzzqvnyd0d1lyhy71wjncxv0q2b3l00164xm"))))
+        (base32 "0jrid2bmwplnam70y9vgm7dn32bvi80r81c5zrmpsmq4ywj7yfrf"))))
     (properties `((upstream-name . "BAT")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
                              r-terra
+                             r-phytools
                              r-nls2
                              r-mass
                              r-hypervolume
@@ -25597,13 +25598,13 @@ Confounding (BAC) algorithm.")
 (define-public r-bacprior
   (package
     (name "r-bacprior")
-    (version "2.1")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BACprior" version))
        (sha256
-        (base32 "0kdbz4fv5k77q5c05inqaqyxj0lpljh8yiyzh0hjm0wd0wif9rih"))))
+        (base32 "1z5wxkik8ziqsgiq6arxsp772scz9jfsa1kz9wz07gpfvv1pl53z"))))
     (properties `((upstream-name . "BACprior")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-leaps r-boot))

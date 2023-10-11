@@ -15820,13 +15820,13 @@ point forecast.")
 (define-public r-pointedsdms
   (package
     (name "r-pointedsdms")
-    (version "1.3")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PointedSDMs" version))
        (sha256
-        (base32 "1h36hxhx0alqd9q56949fxmi0qgnxjj5wfrsp3zg0qn7xh3h3pwv"))))
+        (base32 "110il94xy36wiylfq7d3bh24508ca90j88c66k2a50x26y4n31y5"))))
     (properties `((upstream-name . "PointedSDMs")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -20470,13 +20470,13 @@ and comparing PK values in R.")
 (define-public r-pixiedust
   (package
     (name "r-pixiedust")
-    (version "0.9.1")
+    (version "0.9.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pixiedust" version))
        (sha256
-        (base32 "1jy3xr4wpfs8j3giyia1kwrb5nlmqjbjwvj9qpax6izmcdk4srz2"))))
+        (base32 "17gaahjzmjgqdkjqjpa7rh3wj1wx55v032ylijqaqklpfnbn7jkq"))))
     (properties `((upstream-name . "pixiedust")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -35761,13 +35761,13 @@ for analyzing package usage.")
 (define-public r-packagerank
   (package
     (name "r-packagerank")
-    (version "0.8.1")
+    (version "0.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "packageRank" version))
        (sha256
-        (base32 "11kchs0vcvynx9rxn2cx0vky7616a19rdpdlx2v0b8myp3gs7riv"))))
+        (base32 "1gg2qv9g5lr6sfc2ds4mnr95mw39idvsjhf8afsv2k2r73hb2aya"))))
     (properties `((upstream-name . "packageRank")))
     (build-system r-build-system)
     (propagated-inputs (list r-sugrrants

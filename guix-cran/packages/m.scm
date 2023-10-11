@@ -28977,13 +28977,13 @@ test set and inference is mainly based on resampling and permutations technique.
 (define-public r-metabolic
   (package
     (name "r-metabolic")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metabolic" version))
        (sha256
-        (base32 "0rq4yi2r0l0ghn22pj2gmmhwqjykaxznbd185fjr5r1gzvlh45rv"))))
+        (base32 "01jzv35zf2zk5gdjd2f2ql187krxh4m7fg87dy9iv6z0h0vxnxgn"))))
     (properties `((upstream-name . "metabolic")))
     (build-system r-build-system)
     (propagated-inputs (list r-usethis
@@ -33059,13 +33059,13 @@ plotting Monte Carlo estimates versus sample size.")
 (define-public r-mcmcsae
   (package
     (name "r-mcmcsae")
-    (version "0.7.4")
+    (version "0.7.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mcmcsae" version))
        (sha256
-        (base32 "0r4p93s4pan4zzhan84igxnswfczz4gn4dqjiza2cq7bba67fi2f"))))
+        (base32 "0zivassh708hysq43dhj1v78hglvvz308hyg7r0rm1pydzb4f0zi"))))
     (properties `((upstream-name . "mcmcsae")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen
@@ -39345,13 +39345,13 @@ aggregation of biological data across diverse databases.")
 (define-public r-manta
   (package
     (name "r-manta")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "manta" version))
        (sha256
-        (base32 "0bz56x636wz3pnipg6m1w71pkirwfr2s4p6cwa8g0i66pf08msfj"))))
+        (base32 "1qlmpg4afplhi4m3maws0njx11am28f7hry9rb3k9mxlvss6cr66"))))
     (properties `((upstream-name . "manta")))
     (build-system r-build-system)
     (home-page "https://github.com/dgarrimar/manta")

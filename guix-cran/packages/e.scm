@@ -7,7 +7,6 @@
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages cran)
   #:use-module (gnu packages bioconductor)
-  #:use-module (gnu packages gcc)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages web)
   #:use-module (gnu packages bioinformatics)
@@ -15,6 +14,7 @@
   #:use-module (gnu packages maths)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages java)
+  #:use-module (gnu packages gcc)
   #:use-module (gnu packages mpi)
   #:use-module (gnu packages pkg-config)
   #:use-module (guix-cran packages z)
@@ -222,28 +222,6 @@ function can be chosen by the users (see the documentation of
 Easy-to-Interpret Gaussian Process Models for Computer Experiments with Both
 Quantitative and Qualitative Factors\" by Qian Xiao, Abhyuday Mandal, C. Devon
 Lin, and Xinwei Deng (2022) <doi:10.1137/19M1288462>.")
-    (license license:gpl2)))
-
-(define-public r-ezglm
-  (package
-    (name "r-ezglm")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ezglm" version))
-       (sha256
-        (base32 "0x7ffk3ipzbdr9ddqzv0skmpj5zwazkabibhs74faxnld7pcxhps"))))
-    (properties `((upstream-name . "ezglm")))
-    (build-system r-build-system)
-    (native-inputs (list gfortran))
-    (home-page "http://code.google.com/p/ezglm/")
-    (synopsis
-     "selects significant non-additive interaction between two variables using fast GLM implementation")
-    (description
-     "This package implements a simplified version of least squares, and logistic
-regression for efficiently selecting the significant non-additive interactions
-between two variables.")
     (license license:gpl2)))
 
 (define-public r-ezeda
@@ -1547,6 +1525,51 @@ remove as much redundant typing as possible.")
 set of tidy functions for exploratory data analysis.  Introduces three main
 verbs.  explore() to graphically explore a variable or table, describe() to
 describe a variable or table and report() to create an automated report.")
+    (license license:gpl3)))
+
+(define-public r-exploratory
+  (package
+    (name "r-exploratory")
+    (version "0.3.31")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "exploratory" version))
+       (sha256
+        (base32 "0m8visp57v2bgfbi3n6ywz2z7djd6bnd19hcz0jl2fjw9w5sw3hy"))))
+    (properties `((upstream-name . "exploratory")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-weights
+                             r-shinydashboard
+                             r-shiny
+                             r-remotes
+                             r-mediation
+                             r-lm-beta
+                             r-lemon
+                             r-ggridges
+                             r-ggplot2
+                             r-dt
+                             r-data-table))
+    (home-page "https://exploratoryonly.com")
+    (synopsis "Tool for Large-Scale Exploratory Analyses")
+    (description
+     "Conduct numerous exploratory analyses in an instant with a point-and-click
+interface.  With one simple command, this tool launches a Shiny App on the local
+machine.  Drag and drop variables in a data set to categorize them as possible
+independent, dependent, moderating, or mediating variables.  Then run dozens (or
+hundreds) of analyses instantly to uncover any statistically significant
+relationships among variables.  Any relationship thus uncovered should be tested
+in follow-up studies.  This tool is designed only to facilitate exploratory
+analyses and should NEVER be used for p-hacking.  Many of the functions used in
+this package are previous versions of functions in the R Packages kim and ezr'.
+Selected References: Chang et al. (2021)
+<https://CRAN.R-project.org/package=shiny>.  Dowle et al. (2021)
+<https://CRAN.R-project.org/package=data.table>.  Kim (2023)
+<https://jinkim.science/docs/kim.pdf>.  Kim (2021) <doi:10.5281/zenodo.4619237>.
+ Kim (2020) <https://CRAN.R-project.org/package=ezr>.  Simmons et al. (2011)
+<doi:10.1177/0956797611417632> Tingley et al. (2019)
+<https://CRAN.R-project.org/package=mediation>.  Wickham et al. (2020)
+<https://CRAN.R-project.org/package=ggplot2>.")
     (license license:gpl3)))
 
 (define-public r-explor
@@ -16296,13 +16319,13 @@ pyndl <https://pyndl.readthedocs.io/en/latest/> for that purpose.)")
 (define-public r-ediutils
   (package
     (name "r-ediutils")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EDIutils" version))
        (sha256
-        (base32 "1yfn26js5sdr7k07s45mqxla6apzb4ykwa5pa634zgivqs6g9jry"))))
+        (base32 "1rgk2bpfb98nd0zv4kabskm0zk9dz52swwf95h46vc2yb0kwapkw"))))
     (properties `((upstream-name . "EDIutils")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-jsonlite r-httr r-curl))

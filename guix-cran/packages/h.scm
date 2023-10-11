@@ -5492,6 +5492,29 @@ Hadoop, the Hadoop Distributed File System (HDFS), and Hadoop Streaming is
 provided.")
     (license license:gpl3)))
 
+(define-public r-hivdata
+  (package
+    (name "r-hivdata")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hivdata" version))
+       (sha256
+        (base32 "1rscr91hgrbpgip0knv5wp7nv3bvzr4rrfg8fpch364g99sbbqrq"))))
+    (properties `((upstream-name . "hivdata")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=hivdata")
+    (synopsis "Six-Year Chronological Data of HIV and ART Cases in Pakistan")
+    (description
+     "We provide the monthly number of HIV and antiretroviral therapy (ART) cases of
+male, female, children and transgender as well as for the whole of Pakistan
+reported at various treatment centers in Pakistan from January 2016 to December
+2021.  Related works include: a) Imran, M., Nasir, J. A., & Riaz, S. (2018).
+Regional pattern of HIV cases in Pakistan.  Journal of Postgraduate Medical
+Institute, 32(1), 9-13. <https://jpmi.org.pk/index.php/jpmi/article/view/2108>.")
+    (license license:gpl2+)))
+
 (define-public r-hitandrun
   (package
     (name "r-hitandrun")

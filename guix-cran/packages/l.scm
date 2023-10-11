@@ -88,43 +88,6 @@
 regression, as per Gennings et al (2020) <doi:10.1016/j.envres.2020.109529>.")
     (license license:gpl2+)))
 
-(define-public r-lwfbrook90r
-  (package
-    (name "r-lwfbrook90r")
-    (version "0.5.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "LWFBrook90R" version))
-       (sha256
-        (base32 "1n6jmp3dfx97gzr0kl29ljdcv3s4d9j4i2azqqhvfja2azgv2w86"))))
-    (properties `((upstream-name . "LWFBrook90R")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vegperiod
-                             r-progressr
-                             r-parallelly
-                             r-iterators
-                             r-future
-                             r-foreach
-                             r-dofuture
-                             r-data-table))
-    (native-inputs (list r-knitr gfortran))
-    (home-page "https://pschmidtwalter.github.io/LWFBrook90R/")
-    (synopsis
-     "Simulate Evapotranspiration and Soil Moisture with the SVAT Model LWF-Brook90")
-    (description
-     "This package provides a flexible and easy-to use interface for the soil
-vegetation atmosphere transport (SVAT) model LWF-BROOK90, written in Fortran.
-The model simulates daily transpiration, interception, soil and snow
-evaporation, streamflow and soil water fluxes through a soil profile covered
-with vegetation, as described in Hammel & Kennel (2001, ISBN:978-3-933506-16-0)
-and Federer et al. (2003)
-<doi:10.1175/1525-7541(2003)004%3C1276:SOAETS%3E2.0.CO;2>.  A set of high-level
-functions for model set up, execution and parallelization provides easy access
-to plot-level SVAT simulations, as well as multi-run and large-scale
-applications.")
-    (license license:gpl3)))
-
 (define-public r-lw1949
   (package
     (name "r-lw1949")
@@ -15844,22 +15807,16 @@ to suggest the closest ISCO occupation.")
 (define-public r-labourmarketareas
   (package
     (name "r-labourmarketareas")
-    (version "3.3.1")
+    (version "3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LabourMarketAreas" version))
        (sha256
-        (base32 "1wdfcqjzjc0vwgzv85dfny2r3gsi26wmk85s75bz6hbnwp836sav"))))
+        (base32 "0cifbfijrb80q8xsj7jc6klv78k7sf820d2g5ag2i1lk1vxahwc4"))))
     (properties `((upstream-name . "LabourMarketAreas")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tmap
-                             r-spdep
-                             r-sp
-                             r-rgeos
-                             r-rgdal
-                             r-maptools
-                             r-data-table))
+    (propagated-inputs (list r-tmap r-spdep r-sp r-sf r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=LabourMarketAreas")
     (synopsis

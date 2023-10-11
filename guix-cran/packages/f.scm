@@ -7023,16 +7023,16 @@ feature selection.")
 (define-public r-forestat
   (package
     (name "r-forestat")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "forestat" version))
        (sha256
-        (base32 "0vi6z74ikv5dkx5g6g673b7gwk26gib25j0j38qvj4gdplkpvs3v"))))
+        (base32 "0bw6kkdq65d1jwhim80iwq6lcdfyawf8xfg1kc86qdhvrg2zf4wm"))))
     (properties `((upstream-name . "forestat")))
     (build-system r-build-system)
-    (propagated-inputs (list r-nlme r-ggplot2 r-dplyr))
+    (propagated-inputs (list r-rlang r-nlme r-ggplot2 r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/caf-ifrit/forestat")
     (synopsis
@@ -18028,16 +18028,17 @@ computing to reduce overall processing time.")
 (define-public r-fastjm
   (package
     (name "r-fastjm")
-    (version "1.3.1")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FastJM" version))
        (sha256
-        (base32 "1cg79j3lg34gwl6j3bjdnf9x5a17dg95zh80ff8zjc0s4pq3r3vz"))))
+        (base32 "0k53hlwz00qp4242dy8wrk0xhq89dlrzh5a340aw2j134qrh42lk"))))
     (properties `((upstream-name . "FastJM")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survival
+    (propagated-inputs (list r-timeroc
+                             r-survival
                              r-statmod
                              r-rcppeigen
                              r-rcpp

@@ -2620,16 +2620,21 @@ Wickham et al (2019) <doi:10.21105/joss.01686>.")
 (define-public r-ordpens
   (package
     (name "r-ordpens")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ordPens" version))
        (sha256
-        (base32 "1q6v3xkaahpzkycjnn75a62narwj4g86ha9m786nfp941ql44vlr"))))
+        (base32 "1837d2rz42y71yq9rzzkc5pkywvyc4zbk7s4kg4kwrvxysg0y6p1"))))
     (properties `((upstream-name . "ordPens")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlrsim r-quadprog r-mgcv r-grplasso r-glmpath))
+    (propagated-inputs (list r-rlrsim
+                             r-quadprog
+                             r-ordinalnet
+                             r-mgcv
+                             r-grplasso
+                             r-glmpath))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ordPens")
     (synopsis

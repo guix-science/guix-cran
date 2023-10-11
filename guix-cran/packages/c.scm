@@ -5225,16 +5225,16 @@ repeated measurements in cross-over designs\". <doi:10.1177/09622802231158736>."
 (define-public r-cropzoning
   (package
     (name "r-cropzoning")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cropZoning" version))
        (sha256
-        (base32 "134spdw7qfp0f7xsjyz35xfmabqdbx37z8isf5mfg6q8rqnjhc9y"))))
+        (base32 "0i9pglcfcrhw8i1731hhrc2v130dq7kr8w57yg9fmwdr46arnk24"))))
     (properties `((upstream-name . "cropZoning")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr r-rgdal r-raster r-ncdf4 r-ggplot2))
+    (propagated-inputs (list r-tidyr r-terra r-sf r-ncdf4 r-ggplot2))
     (home-page "https://cran.r-project.org/package=cropZoning")
     (synopsis "Climate Crop Zoning Based in Air Temperature for Brazil")
     (description
@@ -8947,6 +8947,51 @@ COVID-19 possible treatment.")
 municipalities, states, region and Brazil.  Data source: Sistema Unico de Saude
 - SUS.")
     (license license:expat)))
+
+(define-public r-covid19-analytics
+  (package
+    (name "r-covid19-analytics")
+    (version "2.1.3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "covid19.analytics" version))
+       (sha256
+        (base32 "10hi572da7nqzpd8f58v4l41ksq9jw9j4rk1x3l88xr1piim1mv4"))))
+    (properties `((upstream-name . "covid19.analytics")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shinydashboard
+                             r-shinycssloaders
+                             r-shiny
+                             r-rentrez
+                             r-readxl
+                             r-plotly
+                             r-pheatmap
+                             r-htmlwidgets
+                             r-gplots
+                             r-dt
+                             r-dplyr
+                             r-desolve
+                             r-collapsibletree
+                             r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://mponce0.github.io/covid19.analytics/")
+    (synopsis "Load and Analyze Live Data from the COVID-19 Pandemic")
+    (description
+     "Load and analyze updated time series worldwide data of reported cases for the
+Novel Coronavirus Disease (COVID-19) from different sources, including the Johns
+Hopkins University Center for Systems Science and Engineering (JHU CSSE) data
+repository <https://github.com/CSSEGI@code{SandData/COVID-19>}, \"Our World in
+Data\" <https://github.com/owid/> among several others.  The datasets reporting
+the COVID-19 cases are available in two main modalities, as a time series
+sequences and aggregated data for the last day with greater spatial resolution.
+Several analysis, visualization and modelling functions are available in the
+package that will allow the user to compute and visualize total number of cases,
+total number of changes and growth rate globally or for an specific geographical
+location, while at the same time generating models using these trends; generate
+interactive visualizations and generate Susceptible-Infected-Recovered (SIR)
+model for the disease spread.")
+    (license license:gpl2+)))
 
 (define-public r-covid19
   (package
@@ -17518,13 +17563,13 @@ to absolute humidity and evaluates the performance of comfort indices.")
 (define-public r-cometr
   (package
     (name "r-cometr")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cometr" version))
        (sha256
-        (base32 "0fbg1lfw0q4lfk4svflfwjfmwxbrdvmrvxry90xp39i7g8zd2ahd"))))
+        (base32 "1dl4yfsrzpsr69lzv2k9gbaa4ms1mnnk9bcgxjdqx89bgmq6wn1m"))))
     (properties `((upstream-name . "cometr")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -17539,7 +17584,7 @@ to absolute humidity and evaluates the performance of comfort indices.")
      "This package provides a convenient R wrapper to the Comet API, which is a cloud
 platform allowing you to track, compare, explain and optimize machine learning
 experiments and models.  Experiments can be viewed on the Comet online dashboard
-at <https://www.comet.ml>.")
+at <https://www.comet.com>.")
     (license license:expat)))
 
 (define-public r-cometexacttest
@@ -22809,40 +22854,6 @@ on the paper referenced below.")
 clustered data, especially useful for clusters having informative cluster size
 and intra-cluster group size.")
     (license (list license:gpl2 license:gpl3))))
-
-(define-public r-clusterpower
-  (package
-    (name "r-clusterpower")
-    (version "0.7.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "clusterPower" version))
-       (sha256
-        (base32 "1ha7iz1afmgccxhxsl3y1fd9rbf35nrzp6bsz4c4zl0931xbazfb"))))
-    (properties `((upstream-name . "clusterPower")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-shiny
-                             r-r-utils
-                             r-progress
-                             r-nlme
-                             r-mathjaxr
-                             r-lmertest
-                             r-lme4
-                             r-foreach
-                             r-dplyr
-                             r-car))
-    (native-inputs (list r-knitr gfortran))
-    (home-page "https://cran.r-project.org/package=clusterPower")
-    (synopsis
-     "Power Calculations for Cluster-Randomized and Cluster-Randomized Crossover Trials")
-    (description
-     "Calculate power for cluster randomized trials (CRTs) including multi-arm trials,
-individually randomized group treatment trials (IGRTTs), stepped wedge trials
-(SWTs) and others using closed-form (analytic) solutions, and estimates power
-using Monte Carlo methods.")
-    (license license:gpl2+)))
 
 (define-public r-clusternomics
   (package
@@ -37673,13 +37684,13 @@ and produce the resulting merge by time period and geographical region.")
 (define-public r-cansim
   (package
     (name "r-cansim")
-    (version "0.3.14")
+    (version "0.3.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cansim" version))
        (sha256
-        (base32 "070mgphg2hvfccqqnkimfgf2j81b3vd6cn2ymanfm4n8gd6bwjjs"))))
+        (base32 "1311yikp636r1681vkcn0phmpx3a773i9d7yp748z8845r4jdcy3"))))
     (properties `((upstream-name . "cansim")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -38814,31 +38825,6 @@ entities that they represent. @code{iCalendar} is an open standard for
 exchanging calendar and scheduling information between users and computers,
 described at <https://icalendar.org/>.")
     (license license:asl2.0)))
-
-(define-public r-calcwoi
-  (package
-    (name "r-calcwoi")
-    (version "1.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "calcWOI" version))
-       (sha256
-        (base32 "1bxsn9b99hnb365qvlzr0ymwavamlyhs5sm9s2fdjh4zv3f32n3l"))))
-    (properties `((upstream-name . "calcWOI")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-wavethresh r-ls2w r-dualtrees))
-    (native-inputs (list gfortran))
-    (home-page "https://cran.r-project.org/package=calcWOI")
-    (synopsis "Calculates the Wavelet-Based Organization Index")
-    (description
-     "Calculates the wavelet-based organization index following Brune et al (2018)
-(<doi:10.1002/qj.3409>), the modified wavelet-based organization index and the
-local wavelet-based organization index of an arbitrary 2D array using Wavelet
-Transforms of the LS2W package by Eckley et al (2010)
-(<doi:10.1111/j.1467-9876.2009.00721.x>) and Eckley and Nason (2011)
-(<doi:10.18637/jss.v043.i03>).  In Version 1.0.3 the calculation of LW is added.")
-    (license license:gpl3)))
 
 (define-public r-calcunique
   (package

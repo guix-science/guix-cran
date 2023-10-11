@@ -14226,26 +14226,21 @@ to illustrate methods, not to draw substantive conclusions.")
 (define-public r-aifeducation
   (package
     (name "r-aifeducation")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aifeducation" version))
        (sha256
-        (base32 "1v2z0mzfag9pfa13dbfcxvkh098vgvz3wji8cws2q9c3dz1xjxqn"))))
+        (base32 "0lxnpq6ais28gmps01q41b8nhkz7kmv3wxzm3llf51490798hv83"))))
     (properties `((upstream-name . "aifeducation")))
     (build-system r-build-system)
-    (propagated-inputs (list r-udpipe
-                             r-topicmodels
-                             r-tidytext
-                             r-text2vec
-                             r-stringr
+    (propagated-inputs (list r-stringr
                              r-smotefamily
                              r-reticulate
                              r-reshape2
                              r-rcpparmadillo
                              r-rcpp
-                             r-quanteda
                              r-irrcac
                              r-irr
                              r-iotarelr
@@ -14253,7 +14248,7 @@ to illustrate methods, not to draw substantive conclusions.")
                              r-doparallel
                              r-abind))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=aifeducation")
+    (home-page "https://fberding.github.io/aifeducation/")
     (synopsis "Artificial Intelligence for Education")
     (description
      "In social and educational settings, the use of Artificial Intelligence (AI) is a
@@ -14262,10 +14257,10 @@ the use of data is restricted by privacy policies, often leading to small data
 sets.  Furthermore, data in the educational and social sciences is often
 unbalanced in terms of frequencies.  To support educators as well as educational
 and social researchers in using the potentials of AI for their work, this
-package provides a unified interface for neural nets in keras and tensorflow to
-deal with natural language problems.  The tools integrate existing mathematical
-and statistical methods for dealing with small data sets via pseudo-labeling
-(e.g. Lee (2013)
+package provides a unified interface for neural nets in keras', tensorflow', and
+pytorch to deal with natural language problems.  The tools integrate existing
+mathematical and statistical methods for dealing with small data sets via
+pseudo-labeling (e.g. Lee (2013)
 <https://www.researchgate.net/publication/280581078_Pseudo-Label_The_Simple_and_Efficient_Semi-Supervised_Learning_Method_for_Deep_Neural_Networks>,
 Cascante-Bonilla et al. (2020) <doi:10.48550/@code{arXiv.2001.06001>}) and
 imbalanced data via the creation of synthetic cases (e.g. Bunkhumpornpat et al.

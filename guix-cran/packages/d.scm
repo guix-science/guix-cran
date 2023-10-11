@@ -8967,13 +8967,13 @@ data frames with a tidyselect based workflow.")
 (define-public r-divraster
   (package
     (name "r-divraster")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "divraster" version))
        (sha256
-        (base32 "0cqnsihygl7ja72i9b1ll5gyrzi7b5xwy0k1vbn2741mdgzzx5wn"))))
+        (base32 "0w603c5czvzqj0ydbmmxy9xn8p0r25c6i5m90219p6jv4nb1afrz"))))
     (properties `((upstream-name . "divraster")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-sesraster r-bat))
@@ -15123,6 +15123,30 @@ which contains two indexes, with potentially a nesting structure.")
      "Implementation of automatically computing derivatives of functions (see Mailund
 Thomas (2017) <doi:10.1007/978-1-4842-2881-4>).  Moreover, calculating
 gradients, Hessian and Jacobian matrices is possible.")
+    (license license:gpl3)))
+
+(define-public r-dfd
+  (package
+    (name "r-dfd")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DFD" version))
+       (sha256
+        (base32 "1msyfzcxrqz9wq675ml00sigsyg94wl36yw4759fkr1q99iggxcc"))))
+    (properties `((upstream-name . "DFD")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr r-gprofiler2))
+    (home-page "https://github.com/MohmedSoudy/DFD")
+    (synopsis
+     "Extract Drugs from Differential Expression Data from LINCS Database")
+    (description
+     "Get Drug information from given differential expression profile.  The package
+search for the bioactive compounds from reference databases such as LINCS
+containing the genome-wide gene expression signature (GES) from tens of
+thousands of drug and genetic perturbations (Subramanian et al. (2017)
+<DOI:10.1016/j.cell.2017.10.049>).")
     (license license:gpl3)))
 
 (define-public r-dfcrm
@@ -22483,13 +22507,13 @@ to illustrate paired data sets (such as before-after, male-female).")
 (define-public r-datavisualizations
   (package
     (name "r-datavisualizations")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DataVisualizations" version))
        (sha256
-        (base32 "1cxgb43pcmz49q4ysqrajwg3b0p951gc2akxyngchcc9fwz8b27l"))))
+        (base32 "0y8mwgnh3cjapb97a0i4f16nrdhmkd80f6j7z0ivykgfka7jlbqr"))))
     (properties `((upstream-name . "DataVisualizations")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp
