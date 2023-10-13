@@ -3663,13 +3663,13 @@ all LEGO since through the end of 2022.")
 (define-public r-brglm2
   (package
     (name "r-brglm2")
-    (version "0.9")
+    (version "0.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "brglm2" version))
        (sha256
-        (base32 "1c8j0lbz8k2j5ksdar6sjlpiw09lhncny911rn8jynz9iisbs3r6"))))
+        (base32 "0islmx4kdy22qn2cq7lpzqq6lc6mci5qly645nfdhad9001jmhsa"))))
     (properties `((upstream-name . "brglm2")))
     (build-system r-build-system)
     (propagated-inputs (list r-numderiv r-nnet r-matrix r-mass r-enrichwith))
@@ -6719,6 +6719,35 @@ estimation through the bootstrap', <@code{arXiv:0804.1302>}.")
     (description
      "This package provides an interface to Bank of Japan <https://www.boj.or.jp>
 statistics.")
+    (license license:expat)))
+
+(define-public r-boiwsa
+  (package
+    (name "r-boiwsa")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "boiwsa" version))
+       (sha256
+        (base32 "1lcswyy9cm4bwmsfinkrxqzb0ca704y3k8g5acm9b6b1sjkkz5r6"))))
+    (properties `((upstream-name . "boiwsa")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-rlang
+                             r-mumin
+                             r-lubridate
+                             r-hmisc
+                             r-dplyr))
+    (home-page "https://github.com/timginker/boiwsa")
+    (synopsis "Seasonal Adjustment of Weekly Data")
+    (description
+     "Perform seasonal adjustment of weekly data.  The package offers a user-friendly
+interface for computing seasonally adjusted estimates of weekly data and also
+includes diagnostic tools to assess the quality of the adjustments.
+Furthermore, it incorporates tools uniquely tailored to the specific
+characteristics of Israeli data.  The method is described in more detail in
+Ginker (2023) <DOI:10.13140/RG.2.2.12221.44000>.")
     (license license:expat)))
 
 (define-public r-boinet
@@ -21491,20 +21520,19 @@ F., Hoijtink, H. & Gu, X. (2019) <doi:10.31219/osf.io/d5kf3>.")
 (define-public r-bayesianplatformdesigntimetrend
   (package
     (name "r-bayesianplatformdesigntimetrend")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesianPlatformDesignTimeTrend" version))
        (sha256
-        (base32 "1n48772g2fjy8z7rddsp2l6v99g9ffgi0nkzga8pz75apzkb3hji"))))
+        (base32 "1yvgav1fc4mr74jgbcyqigh1y70vs1fwvcfcw03kip8rs5dfjxb5"))))
     (properties `((upstream-name . "BayesianPlatformDesignTimeTrend")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
                              r-stanheaders
                              r-rstantools
                              r-rstan
-                             r-reshape2
                              r-reshape
                              r-rcppparallel
                              r-rcppeigen
@@ -21518,7 +21546,6 @@ F., Hoijtink, H. & Gu, X. (2019) <doi:10.31219/osf.io/d5kf3>.")
                              r-ggplot2
                              r-foreach
                              r-doparallel
-                             r-directlabels
                              r-boot
                              r-biocmanager
                              r-bh))
@@ -22182,13 +22209,13 @@ Sabo RT (2014) <doi:10.1080/10543406.2014.888441>.")
 (define-public r-bayesdfa
   (package
     (name "r-bayesdfa")
-    (version "1.2.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesdfa" version))
        (sha256
-        (base32 "0bj9x21bmpbag2y5lh2l8j9cbsir0133sg7a5lsp3q9vpzvx28hk"))))
+        (base32 "1qdgq74ia0bs5jhv0fq4p3ihkjs74cp1hm6l4v4j59xy0jy1d0n8"))))
     (properties `((upstream-name . "bayesdfa")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite

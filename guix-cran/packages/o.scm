@@ -5387,17 +5387,17 @@ peer-reviewed by @code{rOpenSci} (v.  0.2.0.0).")
 (define-public r-openstreetmap
   (package
     (name "r-openstreetmap")
-    (version "0.3.4")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OpenStreetMap" version))
        (sha256
-        (base32 "0kyv14lxi86n6aba4jqmsfpmn075k0ki34q6gkkvhq8yv48wg831"))))
+        (base32 "0iq3y3331rjppc8nfx9krrrfybyn1spwfp15hf3vz8mnmcg86dkf"))))
     (properties `((upstream-name . "OpenStreetMap")))
     (build-system r-build-system)
     (inputs (list openjdk))
-    (propagated-inputs (list r-sp r-rjava r-rgdal r-raster r-ggplot2))
+    (propagated-inputs (list r-sp r-rjava r-raster r-ggplot2))
     (home-page "https://cran.r-project.org/package=OpenStreetMap")
     (synopsis "Access to Open Street Map Raster Images")
     (description
@@ -6896,13 +6896,13 @@ low-rank incremental methods, and stochastic optimization methods.")
 (define-public r-onlineforecast
   (package
     (name "r-onlineforecast")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "onlineforecast" version))
        (sha256
-        (base32 "0cpwb6bx1qcf05rbi5ycdpgmfb0c5lvhki1c77kzhds5bn3gw5k4"))))
+        (base32 "0qj9943hmcf584b7czf877zg5rxz8byg97dkk3gnb57q5ar60f3z"))))
     (properties `((upstream-name . "onlineforecast")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-r6 r-pbs r-digest))
@@ -6914,9 +6914,9 @@ low-rank incremental methods, and stochastic optimization methods.")
 Provides a way to use forecasts as input to models, e.g. weather forecasts for
 energy related forecasting.  The models can be fitted recursively and can easily
 be setup for updating parameters when new data arrives.  See the included
-vignettes, the website <https://onlineforecasting.org> and the pre-print paper
+vignettes, the website <https://onlineforecasting.org> and the paper
 \"onlineforecast: An R package for adaptive and recursive forecasting\"
-<@code{arXiv:2109.12915>}.")
+<https://journal.r-project.org/articles/RJ-2023-031/>.")
     (license license:gpl3)))
 
 (define-public r-onlinecov

@@ -3895,13 +3895,13 @@ Medical Outcomes Partnership (OMOP) common data model.")
 (define-public r-drquality
   (package
     (name "r-drquality")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DRquality" version))
        (sha256
-        (base32 "098y3s7xraix95mi2qydmn8j0rx3y23a5pp9xkn6d6m4krkpkdfp"))))
+        (base32 "1rr9341y6nf8qdaabfwzbjgwmsb7z1i514cz4x2z5hj9qxyjiy4c"))))
     (properties `((upstream-name . "DRquality")))
     (build-system r-build-system)
     (propagated-inputs (list r-databionicswarm))
@@ -3910,7 +3910,10 @@ Medical Outcomes Partnership (OMOP) common data model.")
     (description
      "Several quality measurements for investigating the performance of dimensionality
 reduction methods are provided here.  In addition a new quality measurement
-called Gabriel classification error is made accessible.")
+called Gabriel classification error is made accessible, which was published in
+Thrun, M. C., MÃ¤rte, J., & Stier, Q: \"Analyzing Quality Measurements for
+Dimensionality Reduction\" (2023), Machine Learning and Knowledge Extraction
+(MAKE), <DOI:10.3390/make5030056>.")
     (license license:gpl3)))
 
 (define-public r-drpop
@@ -9928,6 +9931,26 @@ replacement and other utilities.  Currently, in-memory dist object backend is
 supported.")
     (license license:gpl3)))
 
+(define-public r-distinctiveness
+  (package
+    (name "r-distinctiveness")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "distinctiveness" version))
+       (sha256
+        (base32 "00wi5lvw5398lzzrhs884yx0i2njj2nkdmjk8ra7zba8hrhvbahb"))))
+    (properties `((upstream-name . "distinctiveness")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-igraph))
+    (home-page "https://github.com/iandreafc/distinctiveness-R")
+    (synopsis "Distinctiveness Centrality")
+    (description
+     "Calculates Distinctiveness Centrality in social networks.  For formulas and
+descriptions, see: <doi:10.1371/journal.pone.0233276>.")
+    (license license:expat)))
+
 (define-public r-distillml
   (package
     (name "r-distillml")
@@ -11744,13 +11767,13 @@ a node, the corresponding text is displayed as a tooltip.")
 (define-public r-directional
   (package
     (name "r-directional")
-    (version "6.2")
+    (version "6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Directional" version))
        (sha256
-        (base32 "02q8ldp7xphxs87i8dsfi18ziidda23zdc7a158mbwrb19vvkwjx"))))
+        (base32 "0h9iqynmrifymv7jkd94nzxivp1s5yh55fysxd7i74i6lcwpx4rm"))))
     (properties `((upstream-name . "Directional")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf
@@ -11772,21 +11795,21 @@ massive data, with millions of observations) analysis.  Hypothesis testing,
 discriminant and regression analysis, MLE of distributions and more are
 included.  The standard textbook for such data is the \"Directional Statistics\"
 by Mardia, K. V. and Jupp, P. E. (2000).  Other references include a) Phillip J.
-Paine, Simon P. Preston Michail Tsagris and Andrew T. A. Wood (2018).  An
-elliptically symmetric angular Gaussian distribution.  Statistics and Computing
+Paine, Simon P. Preston Michail Tsagris and Andrew T. A. Wood (2018). \"An
+elliptically symmetric angular Gaussian distribution\".  Statistics and Computing
 28(3): 689-697. <doi:10.1007/s11222-017-9756-4>.  b) Tsagris M. and Alenazi A.
-(2019).  Comparison of discriminant analysis methods on the sphere.
+(2019). \"Comparison of discriminant analysis methods on the sphere\".
 Communications in Statistics: Case Studies, Data Analysis and Applications
 5(4):467--491. <doi:10.1080/23737484.2019.1684854>.  c) P. J. Paine, S. P.
-Preston, M. Tsagris and Andrew T. A. Wood (2020).  Spherical regression models
-with general covariates and anisotropic errors.  Statistics and Computing 30(1):
-153--165. <doi:10.1007/s11222-019-09872-2>.  d) Tsagris M. and Alenazi A.
-(2022).  An investigation of hypothesis testing procedures for circular and
-spherical mean vectors.  Communications in Statistics-Simulation and Computation
-(Accepted for publication). <doi:10.1080/03610918.2022.2045499>.  e) Tsagris M.
-and Alzeley O. (2023).  Circular and spherical projected Cauchy distributions: A
-Novel Framework for Circular and Directional Data Modeling.
-<@code{arXiv:2302.02468>}.")
+Preston, M. Tsagris and Andrew T. A. Wood (2020). \"Spherical regression models
+with general covariates and anisotropic errors\".  Statistics and Computing
+30(1): 153--165. <doi:10.1007/s11222-019-09872-2>.  d) Tsagris M. and Alenazi A.
+(2022). \"An investigation of hypothesis testing procedures for circular and
+spherical mean vectors\".  Communications in Statistics-Simulation and
+Computation (Accepted for publication). <doi:10.1080/03610918.2022.2045499>.  e)
+Tsagris M. and Alzeley O. (2023). \"Circular and spherical projected Cauchy
+distributions: A Novel Framework for Circular and Directional Data Modeling\".
+<doi:10.48550/@code{arXiv.2302.02468>}.")
     (license license:gpl2+)))
 
 (define-public r-directeffects

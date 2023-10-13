@@ -2954,13 +2954,13 @@ based on error metrics.  Chen et al.(2017) <doi:10.1007/s00216-017-0218-9>.")
 (define-public r-windex
   (package
     (name "r-windex")
-    (version "2.0.5")
+    (version "2.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "windex" version))
        (sha256
-        (base32 "1anhpq9zhfin9wli7pkxf5iz547806kl18rjsd1k82jqc1rr62al"))))
+        (base32 "1qpvq9ikv5jvd3qplhlw4404gggrkimcshxb6k0jp7mjz20b1iah"))))
     (properties `((upstream-name . "windex")))
     (build-system r-build-system)
     (propagated-inputs (list r-scatterplot3d r-phytools r-phangorn r-geiger

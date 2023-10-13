@@ -9,6 +9,7 @@
   #:use-module (gnu packages python)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages java)
+  #:use-module (gnu packages maths)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages image-processing)
@@ -3584,6 +3585,31 @@ and cumulants over running fixed length windows can be computed, as well as over
 time-based windows.  Moment computations are via a generalization of Welford's
 method, as described by Bennett et. (2009) <doi:10.1109/CLUSTR.2009.5289161>.")
     (license license:lgpl3)))
+
+(define-public r-frlr
+  (package
+    (name "r-frlr")
+    (version "1.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fRLR" version))
+       (sha256
+        (base32 "0kmv3qi3lvbxlqhbmagqqbi4bvd5lf9023hck51vjw265s7yz9m8"))))
+    (properties `((upstream-name . "fRLR")))
+    (build-system r-build-system)
+    (inputs (list gsl))
+    (propagated-inputs (list r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/szcf-weiya/fRLR")
+    (synopsis "Fit Repeated Linear Regressions")
+    (description
+     "When fitting a set of linear regressions which have some same variables, we can
+separate the matrix and reduce the computation cost.  This package aims to fit a
+set of repeated linear regressions faster.  More details can be found in this
+blog Lijun Wang (2017)
+<https://stats.hohoweiya.xyz/regression/2017/09/26/An-R-Package-Fit-Repeated-Linear-Regressions/>.")
+    (license license:gpl2+)))
 
 (define-public r-frk
   (package
@@ -13467,13 +13493,13 @@ equations (Smalian, Newton and Huber) as well stacking factor and form")
 (define-public r-fhmm
   (package
     (name "r-fhmm")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fHMM" version))
        (sha256
-        (base32 "0facq4hp670ydkgfli8r0k9k987gc41rvzxyyjpjy9xphcy4yilk"))))
+        (base32 "141fvg32fqfn4c6d0sq90pcrynjpfpsdyvd5a1nj870dzqq3369v"))))
     (properties `((upstream-name . "fHMM")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
@@ -14136,6 +14162,34 @@ scale changes and that common pitfalls are avoided.")
      "Format the raw data from the ESPN fantasy football API
 <https://fantasy.espn.com/apis/v3/games/ffl/> as data frames.  Retrieve data on
 public leagues, rosters, athletes, and matches.")
+    (license license:expat)))
+
+(define-public r-ffdownload
+  (package
+    (name "r-ffdownload")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FFdownload" version))
+       (sha256
+        (base32 "1xhjp2zk5w7gryfhr7qlzhdgfnfy3c7ivslayy0fhy7r7jdxr847"))))
+    (properties `((upstream-name . "FFdownload")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-xts
+                             r-xml2
+                             r-timetk
+                             r-rvest
+                             r-plyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/sstoeckl/ffdownload")
+    (synopsis "Download Data from Kenneth French's Website")
+    (description
+     "Downloads all the datasets (you can exclude the daily ones or specify a list of
+those you are targeting specifically) from Kenneth French's Website at
+<https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html>,
+process them and convert them to list of xts (time series).")
     (license license:expat)))
 
 (define-public r-ffd
@@ -17243,20 +17297,19 @@ Bojanowski, Matthijs Douze, Herve Jegou, Tomas Mikolov, 2016,
 (define-public r-faststepgraph
   (package
     (name "r-faststepgraph")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FastStepGraph" version))
        (sha256
-        (base32 "0b1mf7dykcgzy246jkj8qm146lk4ni5dkgf9i950bc4c2y3kaipf"))))
+        (base32 "0f05cyhdz1530vhwv6r76lpcj7lqq5xrvhmpjfv716v0c4j2i72s"))))
     (properties `((upstream-name . "FastStepGraph")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-foreach r-doparallel))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/juancolonna/FastStepGraph")
-    (synopsis
-     "Fast Step Graph: A Fast Sparse Precision Matrix Estimation Algorithm")
+    (synopsis "Fast Algorithm for Sparse Precision Matrix Estimation")
     (description
      "It implements an improved and computationally faster version of the original
 Stepwise Gaussian Graphical Algorithm for estimating the Omega precision matrix
@@ -17719,13 +17772,13 @@ extend it to tackle datasets in metric spaces.")
 (define-public r-fastmatrix
   (package
     (name "r-fastmatrix")
-    (version "0.5")
+    (version "0.5-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastmatrix" version))
        (sha256
-        (base32 "04izdin7qv04mc1ssjj7n5am4wi6abwyvdxvvgln2la2k0d2apzv"))))
+        (base32 "1c60fzk3wz4nigbws9gwzvnlip9vkg14lmazh043xbp6rjpn3dnw"))))
     (properties `((upstream-name . "fastmatrix")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -17742,11 +17795,12 @@ available.  In addition, the package includes a number of common statistical
 procedures such as the sweep operator, weighted mean and covariance matrix using
 an online algorithm, linear regression (using Cholesky, QR, SVD, sweep operator
 and conjugate gradients methods), ridge regression (with optimal selection of
-the ridge parameter considering several procedures), functions to compute the
-multivariate skewness, kurtosis, Mahalanobis distance (checking the positive
-defineteness) and the Wilson-Hilferty transformation of chi squared variables.
-Furthermore, the package provides interfaces to C code callable by another C
-code from other R packages.")
+the ridge parameter considering several procedures), omnibus tests for
+univariate normality, functions to compute the multivariate skewness, kurtosis,
+the Mahalanobis distance (checking the positive defineteness), and the
+Wilson-Hilferty transformation of chi squared variables.  Furthermore, the
+package provides interfaces to C code callable by another C code from other R
+packages.")
     (license license:gpl3)))
 
 (define-public r-fastmarching
@@ -20081,6 +20135,32 @@ factories, those techniques can be confusing.  This package is designed to make
 it easier to construct function factories.")
     (license license:expat)))
 
+(define-public r-factorstochvol
+  (package
+    (name "r-factorstochvol")
+    (version "1.0.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "factorstochvol" version))
+       (sha256
+        (base32 "1f22qxskk4hgsx9ic7v89rvjv1pdsijpakw0j4x2wya10dfrj9rp"))))
+    (properties `((upstream-name . "factorstochvol")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stochvol r-rcpparmadillo r-rcpp r-gigrvg
+                             r-corrplot))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=factorstochvol")
+    (synopsis
+     "Bayesian Estimation of (Sparse) Latent Factor Stochastic Volatility Models")
+    (description
+     "Markov chain Monte Carlo (MCMC) sampler for fully Bayesian estimation of latent
+factor stochastic volatility models with interweaving
+<doi:10.1080/10618600.2017.1322091>.  Sparsity can be achieved through the usage
+of Normal-Gamma priors on the factor loading matrix
+<doi:10.1016/j.jeconom.2018.11.007>.")
+    (license license:gpl2+)))
+
 (define-public r-factorsr
   (package
     (name "r-factorsr")
@@ -20686,13 +20766,13 @@ Representatives algorithm (Papastamoulis and Iliopoulos (2010)
 (define-public r-fabletools
   (package
     (name "r-fabletools")
-    (version "0.3.3")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fabletools" version))
        (sha256
-        (base32 "1ami14vhm6g1dgcdka6y8qfx5hi0bb6h46sm50lyr6ypzz1yg8zk"))))
+        (base32 "01pjwkxn9v9jgxi3vw5fgl5j74yp2gh5vj7a6vg31ivlgd014jy5"))))
     (properties `((upstream-name . "fabletools")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs

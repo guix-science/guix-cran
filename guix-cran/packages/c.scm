@@ -6100,13 +6100,13 @@ Surmann (2017). <doi:10.21105/joss.00135>.")
 (define-public r-crew
   (package
     (name "r-crew")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crew" version))
        (sha256
-        (base32 "0jcsxq6qcs704fa8b7shx4gbphfcb76h72v8sxddpkn47r7siwz2"))))
+        (base32 "0b19z7y1n3l968npn9ggdxh1vfzw854wbpkrw2sk0h3fj7r49hsf"))))
     (properties `((upstream-name . "crew")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -9241,6 +9241,44 @@ selecting a class of space-time covariance functions
 state-space models.  The functionality can also be used from C++ based model
 builder tools such as Rcpp'/'inline', TMB', or JAGS'.")
     (license license:bsd-2)))
+
+(define-public r-coursekata
+  (package
+    (name "r-coursekata")
+    (version "0.14.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "coursekata" version))
+       (sha256
+        (base32 "17ad24xipyx6dcqflrv1gbia38dsk62w8a3hjydz7aw426spqkx5"))))
+    (properties `((upstream-name . "coursekata")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yesno
+                             r-viridislite
+                             r-vctrs
+                             r-supernova
+                             r-rlang
+                             r-purrr
+                             r-palmerpenguins
+                             r-pak
+                             r-mosaic
+                             r-metrics
+                             r-lsr
+                             r-lock5withr
+                             r-glue
+                             r-ggplot2
+                             r-ggformula
+                             r-dslabs
+                             r-cli))
+    (home-page "https://github.com/coursekata/coursekata-r")
+    (synopsis "Packages and Functions for 'CourseKata' Courses")
+    (description
+     "Easily install and load all packages and functions used in @code{CourseKata}
+courses.  Aid teaching with helper functions and augment generic functions to
+provide cohesion between the network of packages.  Learn more about
+@code{CourseKata} at <https://coursekata.org>.")
+    (license license:agpl3+)))
 
 (define-public r-counttransformers
   (package
@@ -16457,30 +16495,6 @@ methods are available for the compositional as well as for standard robust
 regression estimates.  This allows for direct comparison between them.")
     (license license:gpl2+)))
 
-(define-public r-complexupset
-  (package
-    (name "r-complexupset")
-    (version "1.3.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ComplexUpset" version))
-       (sha256
-        (base32 "1sk4v5kc2wkgfaws0hjlp30mngm907r5gz1iglf68j46lfs9jbsv"))))
-    (properties `((upstream-name . "ComplexUpset")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-scales r-patchwork r-ggplot2 r-colorspace))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/krassowski/complex-upset")
-    (synopsis "Create Complex UpSet Plots Using 'ggplot2' Components")
-    (description
-     "@code{UpSet} plots are an improvement over Venn Diagram for set overlap
-visualizations.  Striving to bring the best of the @code{UpSetR} and ggplot2',
-this package offers a way to create complex overlap visualisations, using simple
-and familiar tools, i.e.  geoms of ggplot2'.  For introduction to @code{UpSet}
-concept, see Lex et al. (2014) <doi:10.1109/TVCG.2014.2346248>.")
-    (license license:expat)))
-
 (define-public r-complexnet
   (package
     (name "r-complexnet")
@@ -16988,13 +17002,13 @@ pages, including providing new figure components.")
 (define-public r-comparegroups
   (package
     (name "r-comparegroups")
-    (version "4.7.1")
+    (version "4.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "compareGroups" version))
        (sha256
-        (base32 "1hlz2r4dvrrgs8jq7zj4mhjcsz0pq8jhfkn9j0v18fzv05zqp8sa"))))
+        (base32 "16vpfa3h01k5mcdz6ymprc8sdvpvy6lvrjv7x3w28g78v163wgx8"))))
     (properties `((upstream-name . "compareGroups")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
@@ -20692,20 +20706,19 @@ for differences in method agreement.")
 (define-public r-coastlinefd
   (package
     (name "r-coastlinefd")
-    (version "0.1.6")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CoastlineFD" version))
        (sha256
-        (base32 "1932c2af75fwvckwpbkgzl35j7k7295kfnz0z2qhp1ryja21n9px"))))
+        (base32 "006bl6gpjlmfayfl9116mx3qmvxgv1p811gbnk0rglpy0185lxlq"))))
     (properties `((upstream-name . "CoastlineFD")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
                              r-tidyr
-                             r-sp
+                             r-sfheaders
                              r-sf
-                             r-rgdal
                              r-readxl
                              r-progress
                              r-ggplot2
@@ -24436,17 +24449,17 @@ of it to make your results publication ready as proposed by Jacobson et al.,
 (define-public r-clinfun
   (package
     (name "r-clinfun")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clinfun" version))
        (sha256
-        (base32 "1ysvvyqshicx31inga8dbyd6qcdlvycqqimq3217y634xgh650dm"))))
+        (base32 "1p2izblvd5pcfwyg44z32b4war7mdk77yq4mq6k06hrlnlxkw2c0"))))
     (properties `((upstream-name . "clinfun")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm))
-    (native-inputs (list gfortran))
+    (native-inputs (list r-knitr gfortran))
     (home-page "https://cran.r-project.org/package=clinfun")
     (synopsis "Clinical Trial Design and Data Analysis Functions")
     (description
@@ -38108,13 +38121,13 @@ and to create an account, please see
 (define-public r-campsismod
   (package
     (name "r-campsismod")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "campsismod" version))
        (sha256
-        (base32 "0xjy9hri319flbz5c8rsy34c12g5nn3v8casqjl22z1bi3f4r0fz"))))
+        (base32 "0f3pw5v9mjqgf7l9hnwas3w5mh8cx6f8ayiyxwyffh833a7j43dp"))))
     (properties `((upstream-name . "campsismod")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble

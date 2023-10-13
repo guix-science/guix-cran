@@ -14028,48 +14028,6 @@ properties.  The latter is again asymptotically equivalent to the first and was
 introduced in Rufibach and Walther (2010).")
     (license license:gpl2+)))
 
-(define-public r-modchart
-  (package
-    (name "r-modchart")
-    (version "0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "modchart" version))
-       (sha256
-        (base32 "1mn8zywqhxhvy0k6mn0jsn90g9yb6sxyv34syzzxrxs2kdzx5szg"))))
-    (properties `((upstream-name . "modchart")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-treemap
-                             r-sunburstr
-                             r-sparkline
-                             r-sp
-                             r-shinydashboardplus
-                             r-shinydashboard
-                             r-shinybs
-                             r-shiny
-                             r-rgdal
-                             r-rcolorbrewer
-                             r-plotly
-                             r-networkd3
-                             r-magrittr
-                             r-leaflet
-                             r-lazyeval
-                             r-jsonlite
-                             r-htmlwidgets
-                             r-highcharter
-                             r-dygraphs
-                             r-dt
-                             r-dplyr
-                             r-collapsibletree))
-    (home-page "https://cran.r-project.org/package=modchart")
-    (synopsis "'shiny' Module for Creating Charts of Various Types")
-    (description
-     "This is a shiny module that encapsulates various charting options available in
-htmlwidgets', and provides options for each type of chart, a crosstalk like
-interface for aggregate reports between DT and other chart types.")
-    (license license:expat)))
-
 (define-public r-modalclust
   (package
     (name "r-modalclust")
@@ -15374,6 +15332,36 @@ simulation tools for Markov-modulated linear regression (for academical/research
 purposes).  Research project No.  1.1.1.2/VIAA/1/16/075.")
     (license license:gpl2+)))
 
+(define-public r-mmirestriktor
+  (package
+    (name "r-mmirestriktor")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mmirestriktor" version))
+       (sha256
+        (base32 "0l5ncw2g5b9yzw8zdk1x07f38xxxvf5ngqz427zhnrkcc20zhy2z"))))
+    (properties `((upstream-name . "mmirestriktor")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shinythemes r-shiny r-restriktor r-mmcards
+                             r-mass))
+    (home-page "https://github.com/mightymetrika/mmirestriktor")
+    (synopsis "Informative Hypothesis Testing Web Applications")
+    (description
+     "Offering enhanced statistical power compared to traditional hypothesis testing
+methods, informative hypothesis testing allows researchers to explicitly model
+their expectations regarding the relationships among parameters.  An important
+software tool for this framework is restriktor'.  The mmirestriktor package
+provides shiny web applications to implement some of the basic functionality of
+restriktor'.  The mmirestriktor() function launches a shiny application for
+fitting and analyzing models with constraints.  The @code{FbarCards}() function
+launches a card game application which can help build intuition about
+informative hypothesis testing.  The iht_interpreter() helps interpret
+informative hypothesis testing results based on guidelines in Vanbrabant and
+Rosseel (2020) <doi:10.4324/9780429273872-14>.")
+    (license license:expat)))
+
 (define-public r-mminp
   (package
     (name "r-mminp")
@@ -16415,6 +16403,40 @@ provides R6-based survival learners for the following algorithms: glmnet
 <https://CRAN.R-project.org/package=rpart>.  These can be used directly with the
 mlexperiments R package.")
     (license license:gpl3+)))
+
+(define-public r-mlstropalr
+  (package
+    (name "r-mlstropalr")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mlstrOpalr" version))
+       (sha256
+        (base32 "0lifas5irjhyrys6ykbm1pji7rnhr4mg1f0asi26i8pk3048ri25"))))
+    (properties `((upstream-name . "mlstrOpalr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-opalr
+                             r-madshapr
+                             r-fabr
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/maelstrom-research/mlstrOpalr")
+    (synopsis
+     "Support Compatibility Between 'Maelstrom' R Packages and 'Opal' Environment")
+    (description
+     "This package provides functions to support compatibility between Maelstrom R
+packages and Opal environment.  Opal is the O@code{BiBa} core database
+application for biobanks.  It is used to build data repositories that integrates
+data collected from multiple sources.  Opal Maelstrom is a specific
+implementation of this software.  This Opal client is specifically designed to
+interact with Opal Maelstrom distributions to perform operations on the R server
+side.  The user must have adequate credentials.  Please see
+<https://opaldoc.obiba.org/> for complete documentation.")
+    (license license:gpl3)))
 
 (define-public r-mlsjunkgen
   (package
@@ -23917,6 +23939,54 @@ taxonomic classification based on 16S @code{rRNA} sequence data.")
      "This package provides functions for assigning 16S sequence data to a taxonomic
 level in the tree-of-life for prokaryotes.")
     (license license:gpl2+)))
+
+(define-public r-microbiomesurv
+  (package
+    (name "r-microbiomesurv")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MicrobiomeSurv" version))
+       (sha256
+        (base32 "00wx8vdbkxcn6cp243vbxyzx52hpcxpvxx8hq44gykc7238qcvhv"))))
+    (properties `((upstream-name . "MicrobiomeSurv")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-survminer
+                             r-survival
+                             r-superpc
+                             r-pls
+                             r-microbiome
+                             r-lmtest
+                             r-gplots
+                             r-glmnet
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/N-T-Huyen/MicrobiomeSurv")
+    (synopsis
+     "Biomarker Validation for Microbiome-Based Survival Classification and Prediction")
+    (description
+     "An approach to identify microbiome biomarker for time to event data by
+discovering microbiome for predicting survival and classifying subjects into
+risk groups.  Classifiers are constructed as a linear combination of important
+microbiome and treatment effects if necessary.  Several methods were implemented
+to estimate the microbiome risk score such as the LASSO method by Robert
+Tibshirani (1998)
+<doi:10.1002/(SICI)1097-0258(19970228)16:4%3C385::AID-SIM380%3E3.0.CO;2-3>,
+Elastic net approach by Hui Zou and Trevor Hastie (2005)
+<doi:10.1111/j.1467-9868.2005.00503.x>, supervised principle component analysis
+of Wold Svante et al. (1987) <doi:10.1016/0169-7439(87)80084-9>, and supervised
+partial least squares analysis by Inge S. Helland
+<https://www.jstor.org/stable/4616159>.  Sensitivity analysis on the quantile
+used for the classification can also be accessed to check the deviation of the
+classification group based on the quantile specified.  Large scale cross
+validation can be performed in order to investigate the mostly selected
+microbiome and for internal validation.  During the evaluation process,
+validation is accessed using the hazard ratios (HR) distribution of the test set
+and inference is mainly based on resampling and permutations technique.")
+    (license license:gpl3)))
 
 (define-public r-microbial
   (package
@@ -32542,6 +32612,69 @@ The rethinking package requires installing rstan', which is onerous to install,
 while also not adding capabilities to this function.")
     (license license:agpl3+)))
 
+(define-public r-mcradds
+  (package
+    (name "r-mcradds")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mcradds" version))
+       (sha256
+        (base32 "1cq6z8ia2dr43cgxgzpag2aydcsl8shj91sw53ysg865wncirmh6"))))
+    (properties `((upstream-name . "mcradds")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vca
+                             r-purrr
+                             r-proc
+                             r-magrittr
+                             r-lifecycle
+                             r-ggplot2
+                             r-desctools
+                             r-checkmate
+                             r-boot))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/kaigu1990/mcradds")
+    (synopsis "Processing and Analyzing of Diagnostics Trials")
+    (description
+     "This package provides methods and functions to analyze the quantitative or
+qualitative performance for diagnostic assays, and outliers detection, reader
+precision and reference range are discussed.  Most of the methods and algorithms
+refer to CLSI (Clinical & Laboratory Standards Institute) recommendations and
+NMPA (National Medical Products Administration) guidelines.  In additional,
+relevant plots are constructed by ggplot2'.")
+    (license license:gpl3+)))
+
+(define-public r-mcr
+  (package
+    (name "r-mcr")
+    (version "1.3.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mcr" version))
+       (sha256
+        (base32 "1blaswdd1754fg6xdznkqq1igj6i6x8r3r9vdn3jpfq41qba5d40"))))
+    (properties `((upstream-name . "mcr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-robslopes))
+    (native-inputs (list gfortran))
+    (home-page "https://cran.r-project.org/package=mcr")
+    (synopsis "Method Comparison Regression")
+    (description
+     "Regression methods to quantify the relation between two measurement methods are
+provided by this package.  In particular it addresses regression problems with
+errors in both variables and without repeated measurements.  It implements the
+CLSI recommendations (see J. A. Budd et al. (2018,
+<https://clsi.org/standards/products/method-evaluation/documents/ep09/>) for
+analytical method comparison and bias estimation using patient samples.
+Furthermore, algorithms for Theil-Sen and equivariant Passing-Bablok estimators
+are implemented, see F. Dufey (2020, <doi:10.1515/ijb-2019-0157>) and J.
+Raymaekers and F. Dufey (2022, <@code{arXiv:2202:08060>}).  A comprehensive
+overview over the implemented methods and references can be found in the manual
+pages \"mcr-package\" and \"mcreg\".")
+    (license license:gpl3+)))
+
 (define-public r-mcptests
   (package
     (name "r-mcptests")
@@ -40919,18 +41052,17 @@ Gaussian process Inference) of Yang, Wong, and Kou (2021)
 (define-public r-magee
   (package
     (name "r-magee")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MAGEE" version))
        (sha256
-        (base32 "0zgzns4vjr70p1wczar28dmkx8yms74z7vq1c4k30prjfsi1335r"))))
+        (base32 "0b7shd8yx1zzv7ry3qd71zazkzpdqjgc5q3n8ql96k64avp4628f"))))
     (properties `((upstream-name . "MAGEE")))
     (build-system r-build-system)
     (inputs (list zlib))
-    (propagated-inputs (list r-seqarray
-                             r-rcpparmadillo
+    (propagated-inputs (list r-rcpparmadillo
                              r-rcpp
                              r-matrix
                              r-mass

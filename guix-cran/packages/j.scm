@@ -2292,13 +2292,13 @@ spreadsheet (see <https://www.jamovi.org> for more information) from R.")
 (define-public r-jmv
   (package
     (name "r-jmv")
-    (version "2.4.9")
+    (version "2.4.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jmv" version))
        (sha256
-        (base32 "1vnim9nn0agn2iq4h8kxkk2vbdxzgc2000vwr16x4pw390l65al5"))))
+        (base32 "02iaasl3crg924y3dipv7pjq67nj9lf2i2j53pa4ccwz22nrpsbw"))))
     (properties `((upstream-name . "jmv")))
     (build-system r-build-system)
     (propagated-inputs (list r-vcdextra
@@ -3489,13 +3489,13 @@ Simple AWT and Swing implementations are included.")
 (define-public r-jatsdecoder
   (package
     (name "r-jatsdecoder")
-    (version "1.1.2")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JATSdecoder" version))
        (sha256
-        (base32 "0422liy1qyih0nrwmd1vmzlsk94axmvnraxgwyp4j87ip7qvxaak"))))
+        (base32 "01nqj3w690gn4iqy35v215451agfx1dfgc5vbmmc5wp5r2rk2p09"))))
     (properties `((upstream-name . "JATSdecoder")))
     (build-system r-build-system)
     (propagated-inputs (list r-opennlp r-nlp))

@@ -11383,13 +11383,13 @@ measures (Anova & Multiple Regression). - Clinical Assay.")
 (define-public r-stats19
   (package
     (name "r-stats19")
-    (version "2.0.1")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stats19" version))
        (sha256
-        (base32 "1qjf0q952qffphia6h7haff764k9iiwm9lyw9h5jcga03q733myb"))))
+        (base32 "1lki2rcpp66kk3a1zwsyjczxjrid2skvdah3srbvz481vzq95zs9"))))
     (properties `((upstream-name . "stats19")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-readr))
@@ -18646,13 +18646,13 @@ by users to match their experiences.  Reference: Avanzi B, Taylor G, Wang M
 (define-public r-spldv
   (package
     (name "r-spldv")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spldv" version))
        (sha256
-        (base32 "0n58rzzypr869b7i7jkbykqk5nk6y3238p5l42kqfl9kg4730g1c"))))
+        (base32 "10bvx4z2b0kl2dl91dvr611cfp28dvch41vj9z1k1qlw03ybqpr8"))))
     (properties `((upstream-name . "spldv")))
     (build-system r-build-system)
     (propagated-inputs (list r-sphet
@@ -18668,11 +18668,13 @@ by users to match their experiences.  Reference: Avanzi B, Taylor G, Wang M
     (synopsis "Spatial Models for Limited Dependent Variables")
     (description
      "The current version of this package estimates spatial autoregressive models for
-binary dependent variables using GMM estimators.  It supports one-step (Pinkse
-and Slade, 1998) <doi:10.1016/S0304-4076(97)00097-3> and two-step GMM estimator
-along with the linearized GMM estimator proposed by Klier and @code{McMillen}
-(2008) <doi:10.1198/073500107000000188>.  It also allows for either Probit or
-Logit model and compute the average marginal effects.")
+binary dependent variables using GMM estimators <doi:10.18637/jss.v107.i08>.  It
+supports one-step (Pinkse and Slade, 1998) <doi:10.1016/S0304-4076(97)00097-3>
+and two-step GMM estimator along with the linearized GMM estimator proposed by
+Klier and @code{McMillen} (2008) <doi:10.1198/073500107000000188>.  It also
+allows for either Probit or Logit model and compute the average marginal
+effects.  All these models are presented in Sarrias and Piras (2023)
+<doi:10.1016/j.jocm.2023.100432>.")
     (license license:gpl2+)))
 
 (define-public r-splash
@@ -26169,13 +26171,13 @@ Subgroup.")
 (define-public r-soilr
   (package
     (name "r-soilr")
-    (version "1.2.105")
+    (version "1.2.106")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SoilR" version))
        (sha256
-        (base32 "0liygb46900i6x4y6vhav7w7g4jw5chi4372jwdhn1kxp2g8zgfa"))))
+        (base32 "1q5m475s0gx0x76ds35m8siakhjq5aqj5saqvyjnaan6pvz1p6j9"))))
     (properties `((upstream-name . "SoilR")))
     (build-system r-build-system)
     (propagated-inputs (list r-sets
@@ -26189,7 +26191,11 @@ Subgroup.")
     (synopsis "Models of Soil Organic Matter Decomposition")
     (description
      "This package provides functions for modeling Soil Organic Matter decomposition
-in terrestrial ecosystems with linear and nonlinear models.")
+in terrestrial ecosystems with linear and nonlinear systems of differential
+equations.  The package implements models according to the compartmental system
+representation described in Sierra and others (2012)
+<doi:10.5194/gmd-5-1045-2012> and Sierra and others (2014)
+<doi:10.5194/gmd-7-1919-2014>.")
     (license license:gpl3)))
 
 (define-public r-soilphysics
@@ -30919,13 +30925,13 @@ Binary Data described by Chen, Y., Culpepper, S. A., and Liang, F. (2020)
 (define-public r-slcare
   (package
     (name "r-slcare")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SLCARE" version))
        (sha256
-        (base32 "1bbniprjvylc6s7zfc8h8z8bz123k1rs8889q4n31mmy400g8rq3"))))
+        (base32 "0gvvfhdf1ihgwgwx4pqqpm8nb2b914qphf3mr26lk741r5rm4ylc"))))
     (properties `((upstream-name . "SLCARE")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-rereg r-nnet r-ggplot2 r-dplyr))
@@ -35928,21 +35934,21 @@ shape constraints including different smoothness conditions.")
 (define-public r-simer
   (package
     (name "r-simer")
-    (version "0.9.0.2")
+    (version "0.9.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simer" version))
        (sha256
-        (base32 "1i435631s65bsivcm7a1vmw8m2b4zb5s39yf0m64qinyvx1smyi7"))))
+        (base32 "060vaaqwvq4dpizwc8jh6712s9aa3cl1ys08bydi85laf22x7zqb"))))
     (properties `((upstream-name . "simer")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rjson
-                             r-rcppprogress
+    (propagated-inputs (list r-rcppprogress
                              r-rcpparmadillo
                              r-rcpp
                              r-matrix
                              r-mass
+                             r-jsonlite
                              r-igraph
                              r-bigmemory
                              r-bh))
@@ -39599,6 +39605,38 @@ number of users.  Provides facilities for recording shiny application sessions,
 playing recorded sessions against a target server at load, and analyzing the
 resulting metrics.")
     (license license:gpl3)))
+
+(define-public r-shinylive
+  (package
+    (name "r-shinylive")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "shinylive" version))
+       (sha256
+        (base32 "041qkhr3ynz1haxqv7ndlvygckixj3kj28m8y0laixqvmjdk0lcg"))))
+    (properties `((upstream-name . "shinylive")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang
+                             r-rappdirs
+                             r-progress
+                             r-jsonlite
+                             r-fs
+                             r-brio
+                             r-archive))
+    (home-page "https://posit-dev.github.io/r-shinylive/")
+    (synopsis "Run 'shiny' Applications in the Browser")
+    (description
+     "Exporting shiny applications with shinylive allows you to run them entirely in a
+web browser, without the need for a separate R server.  The traditional way of
+deploying shiny applications involves in a separate server and client: the
+server runs R and shiny', and clients connect via the web browser.  When an
+application is deployed with shinylive', R and shiny run in the web browser (via
+@code{webR}'): the browser is effectively both the client and server for the
+application.  This allows for your shiny application exported by shinylive to be
+hosted by a static web server.")
+    (license license:expat)))
 
 (define-public r-shinylink
   (package
@@ -49674,6 +49712,47 @@ impact of the gene knockout and reveal the geneâs function in the analyzed
 cells.")
     (license license:gpl2+)))
 
+(define-public r-scspatialsim
+  (package
+    (name "r-scspatialsim")
+    (version "0.1.3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "scSpatialSIM" version))
+       (sha256
+        (base32 "04pwzpp92w8fldyr11lycygpali4pa8v8xbssgsipn6fk991xkam"))))
+    (properties `((upstream-name . "scSpatialSIM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-spatstat-random
+                             r-spatstat-geom
+                             r-proxy
+                             r-pbmcapply
+                             r-magrittr
+                             r-ggpubr
+                             r-ggplot2
+                             r-dplyr
+                             r-crayon))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/FridleyLab/scSpatialSIM")
+    (synopsis "Point Pattern Simulator for Spatial Cellular Data")
+    (description
+     "Single cell resolution data has been valuable in learning about tissue
+microenvironments and interactions between cells or spots.  This package allows
+for the simulation of this level of data, be it single cell or âspotsâ, in
+both a univariate (single metric or cell type) and bivariate (2 or more metrics
+or cell types) ways.  As more technologies come to marker, more methods will be
+developed to derive spatial metrics from the data which will require a way to
+benchmark methods against each other.  Additionally, as the field currently
+stands, there is not a gold standard method to be compared against.  We set out
+to develop an R package that will allow users to simulate point patterns that
+can be biologically informed from different tissue domains, holes, and varying
+degrees of clustering/colocalization.  The data can be exported as spatial files
+and a summary file (like HALO').
+<https://github.com/@code{FridleyLab/scSpatialSIM/>}.")
+    (license license:expat)))
+
 (define-public r-scsorter
   (package
     (name "r-scsorter")
@@ -50297,13 +50376,13 @@ assumptions.  Methods developed in Hazlett (2019) <doi:10.1002/sim.8717>.")
 (define-public r-scpubr
   (package
     (name "r-scpubr")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SCpubr" version))
        (sha256
-        (base32 "0kivnshwcpw6iy0924w5z7hyqjzdav7dp6zf4fbi36gpw29zrghy"))))
+        (base32 "121q8f823rcmn56sz17d2khismvf9hnr3d7dwmjavxwy25bhb76b"))))
     (properties `((upstream-name . "SCpubr")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -54748,13 +54827,13 @@ the fitting procedure.  References: Denti, Camerlenghi, Guindani, Mira (2023)
 (define-public r-santoku
   (package
     (name "r-santoku")
-    (version "0.9.1")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "santoku" version))
        (sha256
-        (base32 "1d3m38jscg48h3r8fc44xpscaqx8bnakl375by46k0znn47v43y9"))))
+        (base32 "09zm2m3wcn3gzixmq8b9n1j11pca95sg4yw5zxm91cm7fd7f33cd"))))
     (properties `((upstream-name . "santoku")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -57580,13 +57659,13 @@ forecasting.  To find more details, see the review paper Manubens, N.et al.
 (define-public r-s2dv
   (package
     (name "r-s2dv")
-    (version "1.4.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "s2dv" version))
        (sha256
-        (base32 "06gqkdddqi86zl38bai6xsx882f9ds0arvxpihfzgbkpakdljlwg"))))
+        (base32 "0lgkdb1gphqsggqnyrl1hlfx1x5zxbhb9msr6xyj4hhp03m16z9x"))))
     (properties `((upstream-name . "s2dv")))
     (build-system r-build-system)
     (inputs (list cdo))

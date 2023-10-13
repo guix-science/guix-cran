@@ -297,16 +297,16 @@ and Zamar (2019) <arxiv:1906.08198>).")
 (define-public r-kstmatrix
   (package
     (name "r-kstmatrix")
-    (version "0.1-5")
+    (version "0.2-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kstMatrix" version))
        (sha256
-        (base32 "0h4r46y56ql260dj8bkc81v23ngcjdhpqi7pnr4f6p46a1n1fdxn"))))
+        (base32 "1fwjvwnyb2ldpxrsv2bsgv4b8jqq04h58nxmxlkjcn9f7ih3q6db"))))
     (properties `((upstream-name . "kstMatrix")))
     (build-system r-build-system)
-    (propagated-inputs (list r-igraph))
+    (propagated-inputs (list r-sets r-pks r-igraph))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=kstMatrix")
     (synopsis

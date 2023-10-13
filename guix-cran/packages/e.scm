@@ -1491,41 +1491,37 @@ remove as much redundant typing as possible.")
 (define-public r-explore
   (package
     (name "r-explore")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "explore" version))
        (sha256
-        (base32 "11h3a6npnimaidfr8dx1yq872131hd9nyc4igcb49ibrxnhcnc8f"))))
+        (base32 "02ki798jzcnb7vg99m6fzw2wwmvy2gmsk62cdhh6gr0n2gxw4khy"))))
     (properties `((upstream-name . "explore")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
+    (propagated-inputs (list r-tibble
                              r-stringr
                              r-shiny
                              r-rpart-plot
                              r-rpart
                              r-rmarkdown
                              r-rlang
-                             r-mass
+                             r-palmerpenguins
                              r-magrittr
                              r-gridextra
                              r-ggplot2
                              r-forcats
                              r-dt
-                             r-dplyr
-                             r-broom
-                             r-assertthat))
+                             r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/rolkra/explore/")
+    (home-page "https://rolkra.github.io/explore/")
     (synopsis "Simplifies Exploratory Data Analysis")
     (description
-     "Interactive data exploration with one line of code or use an easy to remember
-set of tidy functions for exploratory data analysis.  Introduces three main
-verbs.  explore() to graphically explore a variable or table, describe() to
-describe a variable or table and report() to create an automated report.")
-    (license license:gpl3)))
+     "Interactive data exploration with one line of code, automated reporting or use
+an easy to remember set of tidy functions for low code exploratory data
+analysis.")
+    (license license:expat)))
 
 (define-public r-exploratory
   (package
@@ -5283,13 +5279,13 @@ function for re-coding vectors.")
 (define-public r-etl
   (package
     (name "r-etl")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "etl" version))
        (sha256
-        (base32 "0ccixl881kxljnz47c78r96wrj2l7mdxs2rxqf0psbkfwybd1pb4"))))
+        (base32 "1msc5mpnw4wd5f798q8rjdxyky6b2bqn6vncgq40jscab83hk9hi"))))
     (properties `((upstream-name . "etl")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -5303,6 +5299,7 @@ function for re-coding vectors.")
                              r-fs
                              r-dplyr
                              r-downloader
+                             r-dbplyr
                              r-dbi))
     (native-inputs (list r-rmarkdown r-knitr r-ggplot2 r-dplyr r-dbplyr))
     (home-page "https://github.com/beanumber/etl")
@@ -12317,22 +12314,27 @@ Gaussian and exponential distribution.")
 (define-public r-emdsvrhybrid
   (package
     (name "r-emdsvrhybrid")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EMDSVRhybrid" version))
        (sha256
-        (base32 "0wis8dh4xd5xldrrfzfr625pix2fvp139q6kj9ff2m6p5wafiabw"))))
+        (base32 "1vjr7aslvykbyz8aw2z5aqlqx1v3nv63hym6knygflkkpr9zsr30"))))
     (properties `((upstream-name . "EMDSVRhybrid")))
     (build-system r-build-system)
     (propagated-inputs (list r-emd r-e1071))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=EMDSVRhybrid")
-    (synopsis "Hybrid Machine Learning Model")
+    (synopsis
+     "Empirical Mode Decomposition Based Support Vector Regression Model")
     (description
-     "Researchers can fit Empirical Mode Decomposition and Support Vector Regression
-based hybrid model for nonlinear and non stationary time series data using this
-package.")
+     "Description: Application of empirical mode decomposition based support vector
+regression model for nonlinear and non stationary univariate time series
+forecasting.  For method details see (i) Choudhury (2019)
+<http://krishi.icar.gov.in/jspui/handle/123456789/44873>; (ii) Das (2020)
+<http://krishi.icar.gov.in/jspui/handle/123456789/43174>; (iii) Das (2023)
+<http://krishi.icar.gov.in/jspui/handle/123456789/77772>.")
     (license license:gpl3)))
 
 (define-public r-emdi
@@ -18677,6 +18679,27 @@ clusters using echelon scan method proposed by Kurihara (2003)
 <doi:10.20551/jscswabun.15.2_171>.")
     (license license:gpl3)))
 
+(define-public r-echarty
+  (package
+    (name "r-echarty")
+    (version "1.6.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "echarty" version))
+       (sha256
+        (base32 "1xqphjdvs5xyr9sr7bf1ywmrdqmn8fkki7kszikf0834yc4kmrd9"))))
+    (properties `((upstream-name . "echarty")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-htmlwidgets r-dplyr r-data-tree))
+    (native-inputs (list r-knitr esbuild))
+    (home-page "https://github.com/helgasoft/echarty")
+    (synopsis "Minimal R/Shiny Interface to JavaScript Library 'ECharts'")
+    (description
+     "Deliver the full functionality of ECharts with minimal overhead.  echarty users
+build R lists for ECharts API. Lean set of powerful commands.")
+    (license license:asl2.0)))
+
 (define-public r-echarts4r
   (package
     (name "r-echarts4r")
@@ -19083,6 +19106,44 @@ about the drc package is available in Ritz C, Baty F, Streibig JC, Gerhard D
 (2015) <doi:10.1371/journal.pone.0146021>.")
     (license license:expat)))
 
+(define-public r-ebvcube
+  (package
+    (name "r-ebvcube")
+    (version "0.1.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ebvcube" version))
+       (sha256
+        (base32 "0fllc0z671g56pnym8vr60bk1fk3f60p8apwdrzplkg7mk9680bj"))))
+    (properties `((upstream-name . "ebvcube")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-withr
+                             r-tidyterra
+                             r-terra
+                             r-stringr
+                             r-rhdf5
+                             r-reshape2
+                             r-ncmeta
+                             r-ncdf4
+                             r-memuse
+                             r-jsonlite
+                             r-hdf5array
+                             r-ggplot2
+                             r-delayedarray
+                             r-curl
+                             r-checkmate))
+    (home-page "https://github.com/LuiseQuoss/ebvcube")
+    (synopsis "Working with netCDF for Essential Biodiversity Variables")
+    (description
+     "The concept of Essential Biodiversity Variables (EBV,
+<https://geobon.org/ebvs/what-are-ebvs/>) comes with a data structure based on
+the Network Common Data Form (@code{netCDF}).  The ebvcube R package provides
+functionality to easily create, access and visualise this data.  The EBV
+@code{netCDFs} can be downloaded from the EBV Data Portal: Christian Langer/
+@code{iDiv} (2020) <https://portal.geobon.org/>.")
+    (license license:gpl3+)))
+
 (define-public r-ebtobit
   (package
     (name "r-ebtobit")
@@ -19217,13 +19278,13 @@ presentation of the method.")
 (define-public r-ebnm
   (package
     (name "r-ebnm")
-    (version "1.0-9")
+    (version "1.1-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ebnm" version))
        (sha256
-        (base32 "0izzfylcmq6zajngjyw85kbr8jys49qcgsadqkj85v2k1hg2jw7q"))))
+        (base32 "14ql990pgwwb8aakg4ikj7p3ijbfaqjrsvrrjwlma3halqs3cy19"))))
     (properties `((upstream-name . "ebnm")))
     (build-system r-build-system)
     (propagated-inputs (list r-trust
@@ -19236,13 +19297,14 @@ presentation of the method.")
                              r-dplyr
                              r-deconvolver
                              r-ashr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/stephenslab/ebnm")
     (synopsis "Solve the Empirical Bayes Normal Means Problem")
     (description
      "This package provides simple, fast, and stable functions to fit the normal means
 model using empirical Bayes.  For available models and details, see function
-ebnm().  A comprehensive introduction to the package is provided by
-Willwerscheid and Stephens (2021) <@code{arXiv:2110.00152>}.")
+ebnm().  A detailed introduction to the package is provided by Willwerscheid and
+Stephens (2021) <@code{arXiv:2110.00152>}.")
     (license license:gpl3+)))
 
 (define-public r-ebmc

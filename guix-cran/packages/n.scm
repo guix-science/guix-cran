@@ -1662,17 +1662,17 @@ methodologies used in the package can be found in Sharma, A., Mehrotra, R.
 (define-public r-npphen
   (package
     (name "r-npphen")
-    (version "1.5.2")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "npphen" version))
        (sha256
-        (base32 "1d585rz07ldmmfcsrb11nl2f7jry2p0cc5dm8vlwr1jv7ag0r9y5"))))
+        (base32 "17q9zhh7abpsddb25km1y6kyijlf6lh8j43lqv58jsjig98rrk6w"))))
     (properties `((upstream-name . "npphen")))
     (build-system r-build-system)
-    (propagated-inputs (list r-snow r-rgdal r-raster r-lubridate r-ks))
-    (home-page "https://cran.r-project.org/package=npphen")
+    (propagated-inputs (list r-terra r-lubridate r-ks))
+    (home-page "https://github.com/labGRS/npphen")
     (synopsis
      "Vegetation Phenological Cycle and Anomaly Detection using Remote Sensing Data")
     (description
@@ -1681,8 +1681,8 @@ applied to time series of vegetation indices derived from remote sensing data or
 field measurements.  The package implements basic and high-level functions for
 manipulating vector data (numerical series) and raster data (satellite derived
 products).  Processing of very large raster files is supported.  For more
-information, please check the following paper: Estay, S., @code{ChÃ¡vez}, R.O.
-(2018) <doi:10.1101/301143>.")
+information, please check the following paper: @code{ChÃ¡vez} et al. (2023)
+<doi:10.3390/rs15010073>.")
     (license license:gpl3+)))
 
 (define-public r-nppbib

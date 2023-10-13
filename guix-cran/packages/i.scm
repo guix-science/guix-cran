@@ -5252,17 +5252,16 @@ Seasonal-Trend Decomposition Procedure Based on Loess\".")
 (define-public r-inzighttools
   (package
     (name "r-inzighttools")
-    (version "1.13.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iNZightTools" version))
        (sha256
-        (base32 "1cla8s690wf219q33qw8s5zzlpjgq7k27i9am4wxl59ycgn4p7n3"))))
+        (base32 "0qmpj8hwg4gmbyhp4r1li3rrq2f5743kg04r7s7ii0j9gwsw3y0s"))))
     (properties `((upstream-name . "iNZightTools")))
     (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-units
+    (propagated-inputs (list r-units
                              r-tidyr
                              r-tibble
                              r-survey
@@ -5272,11 +5271,9 @@ Seasonal-Trend Decomposition Procedure Based on Loess\".")
                              r-readr
                              r-purrr
                              r-magrittr
-                             r-lubridate
                              r-glue
                              r-forcats
                              r-dplyr
-                             r-dbplyr
                              r-dbi))
     (home-page "https://inzight.nz")
     (synopsis "Tools for 'iNZight'")
@@ -5751,13 +5748,13 @@ models proposed by Asano and Hirakawa (2017)
 (define-public r-intsdm
   (package
     (name "r-intsdm")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "intSDM" version))
        (sha256
-        (base32 "1w7rsfbq1x32r961szqlap25wbxgvp9b8w56sfz0p8x90z1qkk89"))))
+        (base32 "1412nxr2z6nczm5yvwly786pzd3xsi7gz2v12ick9nllbiw8rsx6"))))
     (properties `((upstream-name . "intSDM")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyterra
@@ -8909,6 +8906,39 @@ package is based on methods described in Sasieni (2003) <doi:
 10.1002/sim.4334>.")
     (license license:gpl2+)))
 
+(define-public r-infercsn
+  (package
+    (name "r-infercsn")
+    (version "0.99.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "inferCSN" version))
+       (sha256
+        (base32 "0ij283mkqi6l1q8hdqsdbn3q3q0mzahvswq93cn3sx7ndwqcpfv5"))))
+    (properties `((upstream-name . "inferCSN")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo
+                             r-rcpp
+                             r-purrr
+                             r-progress
+                             r-patchwork
+                             r-matrix
+                             r-ggraph
+                             r-ggplot2
+                             r-ggnetwork
+                             r-foreach
+                             r-dplyr
+                             r-doparallel
+                             r-data-table
+                             r-complexheatmap))
+    (home-page "https://mengxu98.github.io/inferCSN/")
+    (synopsis "Inferring Cell-Specific Gene Regulatory Network")
+    (description
+     "This package provides a method for inferring cell-specific gene regulatory
+network from single-cell sequencing data.")
+    (license license:expat)))
+
 (define-public r-inext
   (package
     (name "r-inext")
@@ -10391,17 +10421,17 @@ further generalization are also illustrated.")
 (define-public r-importinegi
   (package
     (name "r-importinegi")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "importinegi" version))
        (sha256
-        (base32 "1m9415ymjvymr73z8cjb1kdycf93pykl4yngqp2h06wppwn7506a"))))
+        (base32 "0l5a3lcpjphgl6w8mh4g2j7wkrlkzbbc1lpv42k6p87dbhp3mavx"))))
     (properties `((upstream-name . "importinegi")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rio
-                             r-rgdal
+    (propagated-inputs (list r-sf
+                             r-rio
                              r-haven
                              r-foreign
                              r-dplyr
@@ -10796,6 +10826,31 @@ interactively (as Shiny Apps).")
      "Allows easy creation of CSS layouts (grid and flexbox) directly from R without
 added CSS.")
     (license license:expat)))
+
+(define-public r-imnn
+  (package
+    (name "r-imnn")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ImNN" version))
+       (sha256
+        (base32 "1xs5pfq4wfd26d8vdhl0zjynrjkzjmnyqx3gprn7dxk1i41r3bg1"))))
+    (properties `((upstream-name . "ImNN")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-neuralnet r-mlmetrics r-ggplot2))
+    (home-page "https://cran.r-project.org/package=ImNN")
+    (synopsis "Neural Networks for Predicting Volume of Forest Trees")
+    (description
+     "Neural network has potential in forestry modelling.  This package is designed to
+create and assess Artificial Intelligence based Neural Networks with varying
+architectures for prediction of volume of forest trees using two input features:
+height and diameter at breast height, as they are the key factors in predicting
+volume, therefore development and validation of efficient volume prediction
+neural network model is necessary.  This package has been developed using the
+algorithm of Tabassum et al. (2022) <doi:10.18805/ag.D-5555>.")
+    (license license:gpl3)))
 
 (define-public r-immunesim
   (package

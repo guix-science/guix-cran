@@ -12184,6 +12184,31 @@ project template for Rstudio'.")
 dependency-free.")
     (license license:expat)))
 
+(define-public r-tinycodet
+  (package
+    (name "r-tinycodet")
+    (version "0.1.0.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tinycodet" version))
+       (sha256
+        (base32 "0458kjvmid6cjj83srb81agwmq4vcd2r4pfnpdpkvvw3n0bbc698"))))
+    (properties `((upstream-name . "tinycodet")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringi))
+    (home-page "https://github.com/tony-aw/tinycodet/")
+    (synopsis "Few Functions to Help in your Coding Etiquette")
+    (description
+     "Adds a few functions to help in your coding etiquette.  tinycodet primarily
+focuses on 4 aspects.  1) Safer decimal (in)equality testing, safer atomic
+conversions, and other functions for safer coding.  2) A new package import
+system, that attempts to combine the benefits of using a package without
+attaching, with the benefits of attaching a package.  3) Extending the string
+manipulation capabilities of the stringi R package.  4) Reducing repetitive
+code.  tinycodet has only one dependency, namely stringi'.")
+    (license license:expat)))
+
 (define-public r-tinyarray
   (package
     (name "r-tinyarray")
@@ -24653,13 +24678,13 @@ exposition to cluster analysis.")
 (define-public r-t2qv
   (package
     (name "r-t2qv")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "T2Qv" version))
        (sha256
-        (base32 "1zx7r0axa7b83pynilp0rmw6apilzsqjacn426q4i4jlsvr1ba3k"))))
+        (base32 "1dvr8k2wifl2jl4rpc1gbi5d5shmrhnhfmj9kfqlwsbsrrnh493p"))))
     (properties `((upstream-name . "T2Qv")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

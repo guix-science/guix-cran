@@ -273,6 +273,44 @@ Azure Machine Learning visit the website:
 <https://docs.microsoft.com/en-us/azure/machine-learning/service/overview-what-is-azure-ml>.")
     (license license:expat)))
 
+(define-public r-azurekusto
+  (package
+    (name "r-azurekusto")
+    (version "1.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AzureKusto" version))
+       (sha256
+        (base32 "0n0bkaj9gsg2xcczpbg8nm62ipgh4s6a8lvnaiylh8q3w1z6aqfl"))))
+    (properties `((upstream-name . "AzureKusto")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-r6
+                             r-openssl
+                             r-jsonlite
+                             r-httr
+                             r-dplyr
+                             r-dbi
+                             r-azurermr
+                             r-azureauth))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=AzureKusto")
+    (synopsis "Interface to 'Kusto'/'Azure Data Explorer'")
+    (description
+     "An interface to Azure Data Explorer', also known as Kusto', a fast, distributed
+data exploration service from Microsoft:
+<https://azure.microsoft.com/en-us/products/data-explorer/>.  Includes DBI and
+dplyr interfaces, with the latter modelled after the dbplyr package, whereby
+queries are translated from R into the native KQL query language and executed
+lazily.  On the admin side, the package extends the object framework provided by
+@code{AzureRMR} to support creation and deletion of databases, and management of
+database principals.  Part of the @code{AzureR} family of packages.")
+    (license license:expat)))
+
 (define-public r-azurekeyvault
   (package
     (name "r-azurekeyvault")
@@ -8020,13 +8058,13 @@ to analysis ready earth observation data in R.")
 (define-public r-apollo
   (package
     (name "r-apollo")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "apollo" version))
        (sha256
-        (base32 "0k561m2ypywiw0lzk5yy1z48d8x0rs99grz20hh28lp5b7zzip9a"))))
+        (base32 "0in0d0af3pr61zfd9fvych4vakmsz66clw4zywvy4pqj8v8q3axa"))))
     (properties `((upstream-name . "apollo")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -8638,6 +8676,40 @@ all possible comparisons (APC) methodology developed by Miller (2005)
 <doi:10.1198/004017004000000608>.")
     (license license:gpl3)))
 
+(define-public r-apcalign
+  (package
+    (name "r-apcalign")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "APCalign" version))
+       (sha256
+        (base32 "0r1zn629dcaa2fwnh0a26yjgamnz9agsy39frzv1lc3yw5r44m66"))))
+    (properties `((upstream-name . "APCalign")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-stringi
+                             r-readr
+                             r-purrr
+                             r-gh
+                             r-forcats
+                             r-dplyr
+                             r-crayon
+                             r-contentid
+                             r-arrow))
+    (native-inputs (list r-knitr))
+    (home-page "https://traitecoevo.github.io/APCalign/")
+    (synopsis "Resolving Plant Taxon Names Using the Australian Plant Census")
+    (description
+     "The process of resolving taxon names is necessary when working with biodiversity
+data.  APCalign uses the Australian Plant Census (APC) and the Australian Plant
+Name Index (APNI) to align and update plant taxon names to current, accepted
+standards.  APCalign also supplies information about the established status of
+plant taxa across different states/territories.")
+    (license license:expat)))
+
 (define-public r-apc
   (package
     (name "r-apc")
@@ -8753,13 +8825,13 @@ frames.")
 (define-public r-apache-sedona
   (package
     (name "r-apache-sedona")
-    (version "1.4.1")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "apache.sedona" version))
        (sha256
-        (base32 "1pfkkxilc8ggw9q44rk27ic97i8zqprf5gfnvr9dwk7q5icf3dnw"))))
+        (base32 "1jhxag774s2gyv6w9111xg1l1ackzxnl6g906d520g7yxdl5wgm2"))))
     (properties `((upstream-name . "apache.sedona")))
     (build-system r-build-system)
     (propagated-inputs (list r-sparklyr r-rlang r-lifecycle r-dbplyr r-cli))
@@ -15726,16 +15798,16 @@ contains a some varieties of reference tables, especially for The Netherlands.")
 (define-public r-ag5tools
   (package
     (name "r-ag5tools")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ag5Tools" version))
        (sha256
-        (base32 "1390acslndzvvhdc6pk9cfvhval1wqgiic353f03qv0rvhxbyzad"))))
+        (base32 "0kqya0iaxcz7m1i69ckcm0z3g3q31x2jasxlip7jpp7czdi9rr07"))))
     (properties `((upstream-name . "ag5Tools")))
     (build-system r-build-system)
-    (propagated-inputs (list r-terra r-reticulate r-fs))
+    (propagated-inputs (list r-terra r-reticulate r-fs r-foreach r-doparallel))
     (native-inputs (list r-knitr))
     (home-page "https://agrdatasci.github.io/ag5Tools/")
     (synopsis "Toolbox for Downloading and Extracting Copernicus AgERA5 Data")
@@ -17638,6 +17710,38 @@ implemented estimators on real datasets, and it implements methods to calculate
 p-values.")
     (license license:gpl2+)))
 
+(define-public r-adespatial
+  (package
+    (name "r-adespatial")
+    (version "0.3-22")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "adespatial" version))
+       (sha256
+        (base32 "1i05v5vy4lwck21n6cf3yp7932ima2k49f5graacwsmaf4kvvk8m"))))
+    (properties `((upstream-name . "adespatial")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vegan
+                             r-spdep
+                             r-sp
+                             r-shiny
+                             r-mass
+                             r-lattice
+                             r-adephylo
+                             r-adegraphics
+                             r-ade4))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/sdray/adespatial")
+    (synopsis "Multivariate Multiscale Spatial Analysis")
+    (description
+     "This package provides tools for the multiscale spatial analysis of multivariate
+data.  Several methods are based on the use of a spatial weighting matrix and
+its eigenvector decomposition (Moran's Eigenvectors Maps, MEM).  Several
+approaches are described in the review Dray et al (2012)
+<doi:10.1890/11-1183.1>.")
+    (license license:gpl2+)))
+
 (define-public r-ader
   (package
     (name "r-ader")
@@ -18265,13 +18369,13 @@ algorithms are described and reviewed in Zhang and Ball (2017)
 (define-public r-adbcsqlite
   (package
     (name "r-adbcsqlite")
-    (version "0.6.0")
+    (version "0.7.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adbcsqlite" version))
        (sha256
-        (base32 "1l86g2c0129m8dbhlfh6wpiw65hhimpddlj5k7kd9q88wyimlgdc"))))
+        (base32 "0pzpx1fajp8h6pmg6bzsg4gpdmqwqh03ngf3kvq3g293z9ck7xm1"))))
     (properties `((upstream-name . "adbcsqlite")))
     (build-system r-build-system)
     (inputs (list sqlite))

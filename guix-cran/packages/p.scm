@@ -4067,13 +4067,13 @@ dynamic borrowing methods.")
 (define-public r-psbcspeedup
   (package
     (name "r-psbcspeedup")
-    (version "2.0.3")
+    (version "2.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psbcSpeedUp" version))
        (sha256
-        (base32 "09pkp61m1wmg59khwgvhsahagnjxwpg58gzlczlai7qvkb3y530i"))))
+        (base32 "170jgsy4wbfr98hcml4dxd4al8q2c0dk9d5k40vcfpab377pnllg"))))
     (properties `((upstream-name . "psbcSpeedUp")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -4083,7 +4083,7 @@ dynamic borrowing methods.")
                              r-ggplot2
                              r-ggally))
     (home-page "https://github.com/ocbe-uio/psbcSpeedUp")
-    (synopsis "Penalized Semiparametric Bayesian Survival Models")
+    (synopsis "Penalized Semiparametric Bayesian Cox Models")
     (description
      "Algorithms to speed up the Bayesian Lasso Cox model (Lee et al., Int J Biostat,
 2011 <doi:10.2202/1557-4679.1301>) and the Bayesian Lasso Cox with mandatory
@@ -6012,13 +6012,13 @@ printing and plotting methods.")
 (define-public r-projectionbasedclustering
   (package
     (name "r-projectionbasedclustering")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ProjectionBasedClustering" version))
        (sha256
-        (base32 "1la2rmmywpmqk63ncw25w5wnwz6fa78pvwwaacqanar2pj31ddvg"))))
+        (base32 "1l8j3n7d9vc7d5lb2fizq0aw8xh3ikh4ka4r3wwswk9a0mspjily"))))
     (properties `((upstream-name . "ProjectionBasedClustering")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -6047,7 +6047,8 @@ result in a visualization in which mountains surround each cluster.  The number
 of clusters can be determined by counting valleys on the topographic map.  Most
 projection methods are wrappers for already available methods in R. By contrast,
 the neighbor retrieval visualizer (@code{NeRV}) is based on C++ source code of
-the dredviz software package, and the Curvilinear Component Analysis (CCA) is
+the dredviz software package, the t-SNE multicore version is based on C++ source
+code of Dmitry Ulyanov, and the Curvilinear Component Analysis (CCA) is
 translated from MATLAB ('SOM Toolbox 2.0) to R.")
     (license license:gpl3)))
 
@@ -9363,13 +9364,13 @@ covariates to predict outcomes under treatment and control.")
 (define-public r-predicts
   (package
     (name "r-predicts")
-    (version "0.1-8")
+    (version "0.1-11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "predicts" version))
        (sha256
-        (base32 "1nlgb1hrsvxcbv52vf4ba61rf0ijdrr2mn1g1f2z889jslx914yy"))))
+        (base32 "1jvaayy7qwi2l8q8m8r42b6rj3945z9vrpgdds6dz8qz35clrpir"))))
     (properties `((upstream-name . "predicts")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra))
@@ -13265,21 +13266,20 @@ generalized FST (Wright's fixation index).  Method described in Ochoa and Storey
 (define-public r-popgenreport
   (package
     (name "r-popgenreport")
-    (version "3.0.7")
+    (version "3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PopGenReport" version))
        (sha256
-        (base32 "0drf3yaxrcypl3b6qdl4kkn8zw31hrnkp49lxpisfjsaybj5lk40"))))
+        (base32 "19df1178kznrrzfkhaaf0lkmfk6kasl0x39k3zv3b5w6k7697igs"))))
     (properties `((upstream-name . "PopGenReport")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
                              r-vegan
                              r-sp
                              r-rgooglemaps
-                             r-rgdal
-                             r-reshape
+                             r-reshape2
                              r-raster
                              r-r-utils
                              r-plyr
@@ -22094,6 +22094,37 @@ of phylogenetic trees.")
 trees in NEXUS and Newick formats, while preserving annotations.")
     (license license:expat)))
 
+(define-public r-phylosignal
+  (package
+    (name "r-phylosignal")
+    (version "1.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "phylosignal" version))
+       (sha256
+        (base32 "13gahqnxvqzvyr4x1aq3cq08832ljizsa5c71hf44175dfmdz5cd"))))
+    (properties `((upstream-name . "phylosignal")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo
+                             r-rcpp
+                             r-phylobase
+                             r-igraph
+                             r-dbi
+                             r-boot
+                             r-ape
+                             r-adephylo))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=phylosignal")
+    (synopsis "Exploring the Phylogenetic Signal in Continuous Traits")
+    (description
+     "This package provides a collection of tools to explore the phylogenetic signal
+in univariate and multivariate data.  The package provides functions to plot
+traits data against a phylogenetic tree, different measures and tests for the
+phylogenetic signal, methods to describe where the signal is located and a
+phylogenetic clustering method.")
+    (license license:gpl3)))
+
 (define-public r-phyloseqgraphtest
   (package
     (name "r-phyloseqgraphtest")
@@ -23404,27 +23435,21 @@ depict greenness index trajectories and extract relevant phenological stages.")
 (define-public r-phenomap
   (package
     (name "r-phenomap")
-    (version "1.2.1")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phenomap" version))
        (sha256
-        (base32 "0kpngxqrbahild5nblfvgx2kna43hqqldx5q3b127dnqwzbhfvbb"))))
+        (base32 "12yzp1801csbhq7b0341rg641wf040mj2p2mgabs2b400pm7h4sr"))))
     (properties `((upstream-name . "phenomap")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringr
-                             r-rgdal
-                             r-raster
-                             r-plyr
-                             r-phenex
-                             r-dplyr
-                             r-doparallel))
+    (propagated-inputs (list r-terra r-stringr r-plyr r-phenex r-doparallel))
     (home-page "https://github.com/JepsonNomad/phenomap")
     (synopsis "Projecting Satellite-Derived Phenology in Space")
     (description
-     "This tool projects annual phenology metrics and long-term phenology trends,
-following methodologies described in John (2016)
+     "This takes in a series of multi-layer raster files and returns a phenology
+projection raster, following methodologies described in John (2016)
 <https://etda.libraries.psu.edu/catalog/13521clj5135>.")
     (license license:gpl3)))
 
@@ -34402,6 +34427,30 @@ standard time-scaled phylogenies or unscaled cladograms that reflect the
 relationships among taxon units.")
     (license license:cc0)))
 
+(define-public r-paleopop
+  (package
+    (name "r-paleopop")
+    (version "2.1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "paleopop" version))
+       (sha256
+        (base32 "1mq7skw5k3b9gc2jkjsdq96ih3qwywwdsq1948101cl0ryh3aadn"))))
+    (properties `((upstream-name . "paleopop")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-trend r-sf r-r6 r-poems))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/GlobalEcologyLab/paleopop/")
+    (synopsis
+     "Pattern-Oriented Modeling Framework for Coupled Niche-Population Paleo-Climatic Models")
+    (description
+     "This extension of the poems pattern-oriented modeling (POM) framework provides a
+collection of modules and functions customized for paleontological time-scales,
+and optimized for single-generation transitions and large populations, across
+multiple generations.")
+    (license license:gpl3+)))
+
 (define-public r-paleomorph
   (package
     (name "r-paleomorph")
@@ -35420,13 +35469,13 @@ imputing records where observations were absent (pad).")
 (define-public r-pade
   (package
     (name "r-pade")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Pade" version))
        (sha256
-        (base32 "1m22zr64vgb57rfhg2nsrsmi3mv68hlmf7hq6phhnnzpz3my58zm"))))
+        (base32 "0bjkr3yh1kxymyrfzi9amjznxgqc2xx69zhs2immn4sk1w3xzvzp"))))
     (properties `((upstream-name . "Pade")))
     (build-system r-build-system)
     (home-page "https://github.com/aadler/Pade")

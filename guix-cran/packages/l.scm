@@ -3617,6 +3617,28 @@ definitions are set by the user, with default standard options.  Outputs include
 graphics, datasets, and formal statistical tests.")
     (license license:expat)))
 
+(define-public r-longitudinalanal
+  (package
+    (name "r-longitudinalanal")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "longitudinalANAL" version))
+       (sha256
+        (base32 "0q26zawc9d5d25z6bazyyljvcdmahk8wradppcpi8iy43iavflkg"))))
+    (properties `((upstream-name . "longitudinalANAL")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble r-mass r-dplyr r-dlm))
+    (home-page "https://cran.r-project.org/package=longitudinalANAL")
+    (synopsis "Longitudinal Data Analysis")
+    (description
+     "Regression analysis of mixed sparse synchronous and asynchronous longitudinal
+covariates.  Please cite the manuscripts corresponding to this package: Sun, Z.
+et al. (2023) <@code{arXiv:2305.17715>} and Liu, C. et al. (2023)
+<@code{arXiv:2305.17662>}.")
+    (license license:gpl3)))
+
 (define-public r-longit
   (package
     (name "r-longit")
@@ -8014,13 +8036,13 @@ Implements forms of Language Style Matching (Ireland & Pennebaker, 2010)
 (define-public r-lingglosses
   (package
     (name "r-lingglosses")
-    (version "0.0.6")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lingglosses" version))
        (sha256
-        (base32 "1sgf0rag150cc1qsvinbjags9pxj8pxxvq1qfhxm3wb93bqc86l3"))))
+        (base32 "0qa42bjx9mszdfnzgmi7i23czrqnz8vbdaj0vq5sx8rn547dhymx"))))
     (properties `((upstream-name . "lingglosses")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmarkdown r-knitr r-kableextra r-htmltools))
@@ -8032,6 +8054,37 @@ Implements forms of Language Style Matching (Ireland & Pennebaker, 2010)
 documents and then semi-automatically compiles the list of glosses at the end of
 the document.  It also provides a database of linguistic glosses.")
     (license license:gpl3+)))
+
+(define-public r-lingdist
+  (package
+    (name "r-lingdist")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lingdist" version))
+       (sha256
+        (base32 "17mcr487bb7brmjzbiq71snxxaxnfg33ml3dqdfldv13i8nv3shi"))))
+    (properties `((upstream-name . "lingdist")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppthread r-rcpp))
+    (home-page "https://github.com/fncokg/lingdist")
+    (synopsis "Fast Linguistic Distance and Alignment Computation")
+    (description
+     "This package provides a fast generalized edit distance and string alignment
+computation mainly for linguistic aims.  As a generalization to the classic edit
+distance algorithms, the package allows users to define custom cost for every
+symbol's insertion, deletion, and substitution.  The package also allows
+character combinations in any length to be seen as a single symbol which is very
+useful for International Phonetic Alphabet (IPA) transcriptions with diacritics.
+ In addition to edit distance result, users can get detailed alignment
+information such as all possible alignment scenarios between two strings which
+is useful for testing, illustration or any further usage.  Either the distance
+matrix or its long table form can be obtained and tools to do such conversions
+are provided.  All functions in the package are implemented in C++ and the
+distance matrix computation is parallelized leveraging the @code{RcppThread}
+package.")
+    (license license:gpl2+)))
 
 (define-public r-lineupjs
   (package

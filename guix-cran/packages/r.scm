@@ -9538,16 +9538,22 @@ in Lafaye de Micheaux et al. (2014) <doi:10.1080/10543406.2013.860156>.")
 (define-public r-rpostgis
   (package
     (name "r-rpostgis")
-    (version "1.4.4")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rpostgis" version))
        (sha256
-        (base32 "1x5s6wayvxmrg84j700kq8zvqsksxglwlfaanpipgqf2sjhr52vj"))))
+        (base32 "1m7xhib3nbngqa2vnygnyp5m502wn3r3yyfp08grsz8xi8ipbcgz"))))
     (properties `((upstream-name . "rpostgis")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp r-rpostgresql r-rgeos r-raster r-dbi))
+    (propagated-inputs (list r-terra
+                             r-sp
+                             r-sf
+                             r-rpostgresql
+                             r-raster
+                             r-purrr
+                             r-dbi))
     (home-page "https://mablab.org/rpostgis/")
     (synopsis "R Interface to a 'PostGIS' Database")
     (description
@@ -10845,13 +10851,13 @@ demo.")
 (define-public r-round
   (package
     (name "r-round")
-    (version "0.20-0")
+    (version "0.21-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "round" version))
        (sha256
-        (base32 "1c403i57fwfh3pz6ksg5ws2fydq8zf2fk4x6r9d0xqn0fs7px7j4"))))
+        (base32 "1c3hp4lh18q1h0sk0j6vgj659f6hv5bgliypzhra6zxgs8w41953"))))
     (properties `((upstream-name . "round")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -17685,29 +17691,32 @@ first version.")
 (define-public r-rmidas
   (package
     (name "r-rmidas")
-    (version "0.5.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rMIDAS" version))
        (sha256
-        (base32 "0pxqkg6qm7y3ra0z0hnvjx68lhh6xq142cclgy3nmiplhbx4z493"))))
+        (base32 "18z9fkbvyz290qcv0nmsrk8hchr5niwmhaj7gx3gh7m1ldw53asw"))))
     (properties `((upstream-name . "rMIDAS")))
     (build-system r-build-system)
     (inputs (list python))
-    (propagated-inputs (list r-reticulate r-rappdirs r-mltools r-data-table))
+    (propagated-inputs (list r-reticulate r-rdpack r-rappdirs r-mltools
+                             r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/MIDASverse/rMIDAS")
     (synopsis "Multiple Imputation with Denoising Autoencoders")
     (description
      "This package provides a tool for multiply imputing missing data using MIDAS', a
-deep learning method based on denoising autoencoder neural networks.  This
-algorithm offers significant accuracy and efficiency advantages over other
-multiple imputation strategies, particularly when applied to large datasets with
-complex features.  Alongside interfacing with Python to run the core algorithm,
-this package contains functions for processing data before and after model
-training, running imputation model diagnostics, generating multiple completed
-datasets, and estimating regression models on these datasets.")
+deep learning method based on denoising autoencoder neural networks (see Lall
+and Robinson, 2022; <doi:10.1017/pan.2020.49>).  This algorithm offers
+significant accuracy and efficiency advantages over other multiple imputation
+strategies, particularly when applied to large datasets with complex features.
+Alongside interfacing with Python to run the core algorithm, this package
+contains functions for processing data before and after model training, running
+imputation model diagnostics, generating multiple completed datasets, and
+estimating regression models on these datasets.  For more information see Lall
+and Robinson (2023) <doi:10.18637/jss.v107.i09>.")
     (license license:asl2.0)))
 
 (define-public r-rmi
@@ -33868,13 +33877,13 @@ porous media, in estuaries, and in bodies with variable shape.")
 (define-public r-reactr
   (package
     (name "r-reactr")
-    (version "0.4.4")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reactR" version))
        (sha256
-        (base32 "15c0ij3xglsdavkpzgnkbyl5yb39jrn6zhlrdjiwp1m9cnrqzf2w"))))
+        (base32 "14pi2wc25qa9q0hp8jby07798l53phyj1zifj46fg2pjq8vkz7p7"))))
     (properties `((upstream-name . "reactR")))
     (build-system r-build-system)
     (propagated-inputs (list r-htmltools))
@@ -40766,13 +40775,13 @@ multivariate T2 control chart.  Plot and summary functions.  Kosztyan et.  al.
 (define-public r-rbcb
   (package
     (name "r-rbcb")
-    (version "0.1.12")
+    (version "0.1.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rbcb" version))
        (sha256
-        (base32 "170dhymiz76svb6f7zy96a62y2apqv5mbsamda5s4d7hhap32m06"))))
+        (base32 "1a2afcghpf7qy79azrisxi6rq4b2lw6sbl1g65sn256zk68w0gr3"))))
     (properties `((upstream-name . "rbcb")))
     (build-system r-build-system)
     (propagated-inputs (list r-xts

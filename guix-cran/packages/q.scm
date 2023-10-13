@@ -675,13 +675,13 @@ Shorthand code to save memory usage.")
 (define-public r-quickcheck
   (package
     (name "r-quickcheck")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quickcheck" version))
        (sha256
-        (base32 "060pas64vzgqr038d1ab36h69z6rk6xaqf6kydwcs2phhir67zyc"))))
+        (base32 "0rm3pvhyqg1px8fp31cmbmv0zk9mvqhzl8qx9gm51kih2zfrksqy"))))
     (properties `((upstream-name . "quickcheck")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble

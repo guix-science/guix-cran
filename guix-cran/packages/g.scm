@@ -984,13 +984,13 @@ di Mauro, Pesaran and Smith (2007) <DOI:10.1002/jae.932>.")
 (define-public r-guts
   (package
     (name "r-guts")
-    (version "1.2.3")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GUTS" version))
        (sha256
-        (base32 "1hmd8i21v81k798la5gdmfah1jqb3v891vxm22s41vvxcz0iw1j0"))))
+        (base32 "0ddpl6bn5wn76hpbzsib8f6711disgf7nhyh3fr74rfgi474kki9"))))
     (properties `((upstream-name . "GUTS")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -6864,37 +6864,6 @@ mixed models with teachers modeled as \"G-side\" effects and students modeled wi
 either \"G-side\" or \"R-side\" effects.")
     (license license:gpl2)))
 
-(define-public r-gpumatrix
-  (package
-    (name "r-gpumatrix")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GPUmatrix" version))
-       (sha256
-        (base32 "1zl8rbb50dlsnyym11p6k2l2ybq9lz6kbzb5b0bjsbcvigcvckwp"))))
-    (properties `((upstream-name . "GPUmatrix")))
-    (build-system r-build-system)
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=GPUmatrix")
-    (synopsis "Basic Linear Algebra with GPU")
-    (description
-     "Motivation: GPU power is a great resource for computational biology specifically
-in statistics and linear algebra.  Unfortunately, very few packages connect R
-with the GPU and none of them are transparent enough to perform the computations
-on the GPU without substantial changes to the code.  Most of them lack proper
-maintenance: several of the previous attempts were removed from the
-corresponding repositories.  It would be desirable to have an R package,
-properly maintained, that exploits the use of the GPU with minimal changes in
-the existing code.  Results: We have developed the GPUMatrix package.  GPUMatrix
-mimics the behavior of the Matrix package and extends R to use the GPU for
-computations.  It is easy to learn and very few changes in the code are required
-to work on the GPU. GPUMatrix relies on either Tensorflow or Torch R packages to
-perform the GPU operations.  Its vignette shows some toy examples on
-non-negative factorization and other factorization used in bioinformatics'.")
-    (license license:artistic2.0)))
-
 (define-public r-gptzeror
   (package
     (name "r-gptzeror")
@@ -7967,13 +7936,13 @@ design and analysis.")
 (define-public r-gorica
   (package
     (name "r-gorica")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gorica" version))
        (sha256
-        (base32 "0xvsdy5l3q4avsbz1qc853fz88mpq98lrsczzxgnwj4yaqp87g9k"))))
+        (base32 "1r8dg9wcqxd53zm27mf0554x2zlsclbfmqqwjbkywa3np6gi358y"))))
     (properties `((upstream-name . "gorica")))
     (build-system r-build-system)
     (propagated-inputs (list r-quadprog
@@ -16630,16 +16599,16 @@ regression curves.")
 (define-public r-ggirread
   (package
     (name "r-ggirread")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GGIRread" version))
        (sha256
-        (base32 "07r8syc3m117jcxbn4iw5lzwzq9svld8gdph9kr255vh96q4bvi0"))))
+        (base32 "1basg24y3p08q6crk67q43pzpsbjmg627knn1sma0y1g17ksn4ga"))))
     (properties `((upstream-name . "GGIRread")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tuner r-rcpp r-matlab r-bitops))
+    (propagated-inputs (list r-rcpp r-matlab r-bitops))
     (home-page "https://github.com/wadpac/GGIRread/")
     (synopsis "Wearable Accelerometer Data File Readers")
     (description
@@ -16649,7 +16618,7 @@ GENEActiv <https://activinsights.com/>, binary data from GENEA devices (not for
 sale), and .cwa-format and .wav-format data from Axivity <https://axivity.com>.
 Primarily designed to complement R package GGIR
 <https://CRAN.R-project.org/package=GGIR>.")
-    (license (license:fsdg-compatible "LGPL (>= 2.0, < 3)"))))
+    (license license:asl2.0)))
 
 (define-public r-ggiraphextra
   (package
@@ -18704,19 +18673,18 @@ Friedrich et al. (2017) <doi:10.18637/jss.v079.c01>.")
 (define-public r-gfcanalysis
   (package
     (name "r-gfcanalysis")
-    (version "1.6.0")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gfcanalysis" version))
        (sha256
-        (base32 "0w0r4w570dp7n5ixm7qv3x1pw478dghqbyfvfxfi99f5453jdma1"))))
+        (base32 "0j13y90nyd3qczrkzxwi1wpf5xlh7c0nlsyn8p7z1b4y93v63byc"))))
     (properties `((upstream-name . "gfcanalysis")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringr
-                             r-sp
-                             r-rgeos
-                             r-rgdal
+    (propagated-inputs (list r-terra
+                             r-stringr
+                             r-sf
                              r-rcurl
                              r-rastervis
                              r-raster
@@ -21065,6 +21033,45 @@ polygons to the new grid using the Hungarian algorithm, Kuhn (1955)
 (<doi:10.1007/978-3-540-68279-0_2>).  This prevents the need for manual
 generation of hexagonal grids or regular grids that are supposed to reflect
 existing geography.")
+    (license license:expat)))
+
+(define-public r-geogenr
+  (package
+    (name "r-geogenr")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geogenr" version))
+       (sha256
+        (base32 "1ji542incj05602iic9wzmrw8v122zxnpvvkvm1vax2j5ryj644j"))))
+    (properties `((upstream-name . "geogenr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tm
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-starschemar
+                             r-snakecase
+                             r-sf
+                             r-httr
+                             r-geomultistar
+                             r-dplyr
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://josesamos.github.io/geogenr/")
+    (synopsis
+     "'geomultistar' Object Generator from American Community Survey Geodatabases")
+    (description
+     "The American Community Survey (ACS)
+<https://www.census.gov/programs-surveys/acs> offers geodatabases with
+geographic information and associated data of interest to researchers in the
+area.  The goal of this package is to generate geomultistar
+<https://CRAN.R-project.org/package=geomultistar> objects from those
+geodatabases automatically, once the focus of attention is selected.
+Multidimensional queries with geographic information can be easily defined on
+these objects.")
     (license license:expat)))
 
 (define-public r-geofourierfda
@@ -26156,13 +26163,13 @@ L2-distance, the Chi-square divergence and the Hellinger Coefficient.")
 (define-public r-gausscov
   (package
     (name "r-gausscov")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gausscov" version))
        (sha256
-        (base32 "16nyq7379cnpr6hkzkmrgw2r3rl0fy6sfpc5gszf4l115f7ig4cc"))))
+        (base32 "0j9cnj2bpmv5vma7c2ihc5fa1ly5n7ll13fi1bqlvivjm981zss0"))))
     (properties `((upstream-name . "gausscov")))
     (build-system r-build-system)
     (native-inputs (list gfortran))

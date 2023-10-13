@@ -1619,13 +1619,13 @@ one-liners to print data to a new document.")
 (define-public r-hutilscpp
   (package
     (name "r-hutilscpp")
-    (version "0.9.3")
+    (version "0.10.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hutilscpp" version))
        (sha256
-        (base32 "0sh7s1y8wxwrbhdf8kz3x7myzk5jxv0h1yz1lrh345bvw1jdqb9i"))))
+        (base32 "1hh42cady784ld6d7m9axvh4lwlpb6ffpyvc8shfa7dkfhz703ra"))))
     (properties `((upstream-name . "hutilscpp")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-hutils r-data-table))
@@ -4609,6 +4609,33 @@ Xu, and Xin Gao (2022)
 attribute named start that specifies the system time when the timer was started.
  The elapsed time is the value of the scalar plus the difference between the
 current system time and the system time when the timer was started.")
+    (license license:expat)))
+
+(define-public r-hmsr
+  (package
+    (name "r-hmsr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hmsr" version))
+       (sha256
+        (base32 "171zfs27v0kznj28cbizq72i1fan5gz1s5r42kv90jylhxdv8mbc"))))
+    (properties `((upstream-name . "hmsr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-uuid r-msm r-ga))
+    (home-page "https://wojtacht.github.io/hms/")
+    (synopsis "Multipopulation Evolutionary Strategy HMS")
+    (description
+     "The HMS (Hierarchic Memetic Strategy) is a composite global optimization
+strategy consisting of a multi-population evolutionary strategy and some
+auxiliary methods.  The HMS makes use of a dynamically-evolving data structure
+that provides an organization among the component populations.  It is a tree
+with a fixed maximal height and variable internal node degree.  Each component
+population is governed by a particular evolutionary engine.  This package
+provides a simple R implementation with examples of using different genetic
+algorithms as the population engines.  References: J. Sawicki, M. Å@code{oÅ},
+M. @code{SmoÅka}, J. Alvarez-Aramberri (2022) <doi:10.1007/s11047-020-09836-w>.")
     (license license:expat)))
 
 (define-public r-hmsc
@@ -8086,16 +8113,16 @@ implements the methodological developments found in Hermes et al. (2022)
 (define-public r-heteroggm
   (package
     (name "r-heteroggm")
-    (version "0.1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HeteroGGM" version))
        (sha256
-        (base32 "0cfzqhbnsy2254m1n6vbpcxlmiqw7cs26v81f5wyawlyyvdydmxi"))))
+        (base32 "1yz4rwlfhq0lk9zpc1p7yc35d1n1gr0pfdfhlm57kcsi5a8pzlk1"))))
     (properties `((upstream-name . "HeteroGGM")))
     (build-system r-build-system)
-    (propagated-inputs (list r-matrix r-mass r-igraph))
+    (propagated-inputs (list r-matrix r-mass r-igraph r-huge))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=HeteroGGM")
     (synopsis "Gaussian Graphical Model-Based Heterogeneity Analysis")
@@ -8104,17 +8131,17 @@ implements the methodological developments found in Hermes et al. (2022)
 model-based heterogeneity analysis.  Recently, several Gaussian graphical
 model-based heterogeneity analysis techniques have been developed.  A common
 methodological limitation is that the number of subgroups is assumed to be known
-a priori, which is not realistic.  In a very recent study (Ren et al., 2021), a
+a priori, which is not realistic.  In a very recent study (Ren et al., 2022), a
 novel approach based on the penalized fusion technique is developed to fully
 data-dependently determine the number and structure of subgroups in Gaussian
 graphical model-based heterogeneity analysis.  It opens the door for utilizing
 the Gaussian graphical model technique in more practical settings.  Beyond Ren
-et al. (2021), more estimations and functions are added, so that the package is
-self-contained and more comprehensive and can provide \"more direct\" insights to
+et al. (2022), more estimations and functions are added, so that the package is
+self-contained and more comprehensive and can provide ``more direct insights to
 practitioners (with the visualization function).  Reference: Ren, M., Zhang S.,
-Zhang Q. and Ma S. (2021).  Gaussian Graphical Model-based Heterogeneity
-Analysis via Penalized Fusion.  Biometrics, <doi:10.1111/biom.13426>.")
-    (license license:gpl3)))
+Zhang Q. and Ma S. (2022).  Gaussian Graphical Model-based Heterogeneity
+Analysis via Penalized Fusion.  Biometrics, 78 (2), 524-535.")
+    (license license:gpl2)))
 
 (define-public r-heterogen
   (package
@@ -8607,13 +8634,13 @@ geographic location.")
 (define-public r-hellorust
   (package
     (name "r-hellorust")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hellorust" version))
        (sha256
-        (base32 "075wb9yhkmmcgrwp65795whwl55s939gy2j4sdilgyxp853x9175"))))
+        (base32 "0x2lnbrii9z4kyd810rphcip9wpx7ibqx9b4fs5c5msrqa03amk3"))))
     (properties `((upstream-name . "hellorust")))
     (build-system r-build-system)
     (inputs (list))
@@ -9519,13 +9546,13 @@ Analysis (QFA) method by Chen et al. (2021) and He et al. (2023).")
 (define-public r-hdpglm
   (package
     (name "r-hdpglm")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hdpGLM" version))
        (sha256
-        (base32 "1kan4nm4kd40xqagkly4pvahra0xsdlr5wyxgm567c22fzwp7khg"))))
+        (base32 "1hh0d0dmnqxzsfar86bd0cqjj5jljyhw073zi59bmjyg4m0rjyyn"))))
     (properties `((upstream-name . "hdpGLM")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyverse
@@ -9537,6 +9564,7 @@ Analysis (QFA) method by Chen et al. (2021) and He et al. (2023).")
                              r-rcpp
                              r-questionr
                              r-purrr
+                             r-png
                              r-mvtnorm
                              r-mcmcpack
                              r-mass
@@ -9559,7 +9587,7 @@ Analysis (QFA) method by Chen et al. (2021) and He et al. (2023).")
      "Implementation of MCMC algorithms to estimate the Hierarchical Dirichlet Process
 Generalized Linear Model (@code{hdpGLM}) presented in the paper Ferrari (2020)
 Modeling Context-Dependent Latent Heterogeneity, Political Analysis
-<DOI:10.1017/pan.2019.13>.")
+<DOI:10.1017/pan.2019.13> and <doi:10.18637/jss.v107.i10>.")
     (license license:expat)))
 
 (define-public r-hdpca
@@ -12501,13 +12529,13 @@ so that any function in the API is also available in h3r'.")
 (define-public r-h3lib
   (package
     (name "r-h3lib")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "h3lib" version))
        (sha256
-        (base32 "1drpsj8i42hmxr1spscbar6zhk230pypw8b5s689rs0d25nscd2g"))))
+        (base32 "1lm89ngdhcgi9i2fx17fk38acpyv343m2djk38fzs7aipn95qyli"))))
     (properties `((upstream-name . "h3lib")))
     (build-system r-build-system)
     (home-page "https://github.com/symbolixau/h3lib")
