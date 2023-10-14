@@ -3566,13 +3566,13 @@ also the possibility to suppress single process completion times.")
 (define-public r-rtmb
   (package
     (name "r-rtmb")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RTMB" version))
        (sha256
-        (base32 "10j5v7ydgl4c1kpysrwszajrjnj0wk86dbdmh8bf54ga2qvxl80r"))))
+        (base32 "0w1pxqzp7793xm1qd1wg3q56sg13qq17njyy9lc4xcz4grm0cba4"))))
     (properties `((upstream-name . "RTMB")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb r-rcppeigen r-rcpp r-matrix r-mass))
@@ -42956,16 +42956,17 @@ Distances Method, under a Brownian Motion Model.  See Peng et al. (2021)
 (define-public r-rapidopgs
   (package
     (name "r-rapidopgs")
-    (version "2.2.0")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RapidoPGS" version))
        (sha256
-        (base32 "0p19jc7cn2s8nnc0nblbl7k42srgm1risxggzb2rd1ngr93z757p"))))
+        (base32 "0jks5v9822gk4gip7027m2l26gccrm81iazn1006n1a0871caf98"))))
     (properties `((upstream-name . "RapidoPGS")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcurl
+                             r-magrittr
                              r-iranges
                              r-genomicranges
                              r-dplyr
@@ -42979,10 +42980,10 @@ Distances Method, under a Brownian Motion Model.  See Peng et al. (2021)
     (synopsis "Fast and Light Package to Compute Polygenic Risk Scores")
     (description
      "Quickly computes polygenic scores from GWAS summary statistics of either
-case-control or quantitative traits, without LD matrix computation or parameter
-tuning.  Reales,G., Vigorito, E., Kelemen,M., Wallace,C. (2021)
-<doi:10.1101/2020.07.24.220392> \"RÃ¡@code{pidoPGS}: A rapid polygenic score
-calculator for summary GWAS data without a test dataset\".")
+case-control or quantitative traits without parameter tuning.  Reales,G.,
+Vigorito, E., Kelemen,M., Wallace,C. (2021) <doi:10.1101/2020.07.24.220392>
+\"RÃ¡@code{pidoPGS}: A rapid polygenic score calculator for summary GWAS data
+without a test dataset\".")
     (license license:gpl3)))
 
 (define-public r-rapidoc

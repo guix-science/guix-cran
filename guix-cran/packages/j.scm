@@ -1864,13 +1864,13 @@ Hornstein, Fan, Shedden, and Zhou (2018) <doi:10.1080/01621459.2018.1429275>.")
 (define-public r-jointfpm
   (package
     (name "r-jointfpm")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JointFPM" version))
        (sha256
-        (base32 "1fgh5jzn8ygbgc54nji8bfgwl4947k5vcnjmh45hh1pryjvqywnk"))))
+        (base32 "01am0vsc1lqd9p81zlyliadghxlwjkpa11i2ksa7ymv20iyrcyja"))))
     (properties `((upstream-name . "JointFPM")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival

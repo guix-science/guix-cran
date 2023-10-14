@@ -3620,13 +3620,13 @@ graphics, datasets, and formal statistical tests.")
 (define-public r-longitudinalanal
   (package
     (name "r-longitudinalanal")
-    (version "0.1")
+    (version "0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "longitudinalANAL" version))
        (sha256
-        (base32 "0q26zawc9d5d25z6bazyyljvcdmahk8wradppcpi8iy43iavflkg"))))
+        (base32 "1mvagvjmycnmk3bp02194k7qpwgj94lxzvv30dm0c8jmrhznyh4c"))))
     (properties `((upstream-name . "longitudinalANAL")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-mass r-dplyr r-dlm))
@@ -11022,13 +11022,13 @@ ETS and simulation function for VES.")
 (define-public r-lefko3
   (package
     (name "r-lefko3")
-    (version "6.1.0")
+    (version "6.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lefko3" version))
        (sha256
-        (base32 "1skcdx9px79nsbgsicfmqp0jabwadvq99binxc7sd43abblsbjjb"))))
+        (base32 "1mjrhs1nr6r7ribnzlpw4klk4zvx7x4dml07mkndw4vs9ybx5jn1"))))
     (properties `((upstream-name . "lefko3")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam
@@ -14166,40 +14166,6 @@ Chandrasekaran, V., Parrilo, P. A. & Willsky, A. S. (2012)
 <doi:10.1214/11-AOS949>; (3) Tan, K. M., Ning, Y., Witten, D. M. & Liu, H.
 (2016) <doi:10.1093/biomet/asw050>.")
     (license license:gpl3)))
-
-(define-public r-latentfactor
-  (package
-    (name "r-latentfactor")
-    (version "0.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "latentFactoR" version))
-       (sha256
-        (base32 "0kgzgympcfp6l4jysccrlxrbmqasz1v95wkmfsw8qgi7dzfsgywc"))))
-    (properties `((upstream-name . "latentFactoR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xgboost
-                             r-rstudioapi
-                             r-qgraph
-                             r-psych
-                             r-mvtnorm
-                             r-mlr
-                             r-matrix
-                             r-ineq
-                             r-googledrive
-                             r-fspe
-                             r-eganet
-                             r-bbmisc))
-    (home-page "https://cran.r-project.org/package=latentFactoR")
-    (synopsis "Data Simulation Based on Latent Factors")
-    (description
-     "Generates data based on latent factor models.  Data can be continuous,
-polytomous, dichotomous, or mixed.  Skews, cross-loadings, wording effects,
-population errors, and local dependencies can be added.  All parameters can be
-manipulated.  Data categorization is based on Garrido, Abad, and Ponsoda (2011)
-<doi:10.1177/0013164410389489>.")
-    (license license:gpl3+)))
 
 (define-public r-latentcor
   (package

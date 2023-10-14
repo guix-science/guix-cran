@@ -5338,18 +5338,18 @@ freely available under the Creative Commons 4.0 licence.")
 (define-public r-cropdemand
   (package
     (name "r-cropdemand")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cropDemand" version))
        (sha256
-        (base32 "0fffrwwk91gzhb2gn8m0nlnv3gmhdv2srzjblysgkh4bnqmrjvq2"))))
+        (base32 "14frz3pdb3z8w513r64k0w8p6fs0gv04dazpwvjw6ky384wcd3w6"))))
     (properties `((upstream-name . "cropDemand")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
-                             r-rgdal
-                             r-raster
+                             r-terra
+                             r-sf
                              r-ncdf4
                              r-ggplot2
                              r-dplyr))
@@ -34669,13 +34669,13 @@ effects.")
 (define-public r-causalqueries
   (package
     (name "r-causalqueries")
-    (version "0.1.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CausalQueries" version))
        (sha256
-        (base32 "1bmlay8ybr6wjmhk4rdi4xfmycra9f419xi2n7y9x11vri9zwjhc"))))
+        (base32 "1a4v3qxbjs6whgw4fyg4vzll998k84bqdzs7iq49zyd5ypzrnbzb"))))
     (properties `((upstream-name . "CausalQueries")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -36547,13 +36547,13 @@ High-Dimensional Variable Selection, <@code{arXiv:1802.08178>}.")
 (define-public r-carrot
   (package
     (name "r-carrot")
-    (version "3.0.1")
+    (version "3.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CARRoT" version))
        (sha256
-        (base32 "1i8g0q4b27ak58chpp2vzi3ffrvzzdy2gml92jja7a8lx0bsi6fn"))))
+        (base32 "1himmzsshhr2f5hljr60p7w3wq5ybdsb0f9kiga56hpppg352l3f"))))
     (properties `((upstream-name . "CARRoT")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-nnet r-foreach r-doparallel))
@@ -38157,13 +38157,13 @@ mrgsolve'.")
 (define-public r-campsis
   (package
     (name "r-campsis")
-    (version "1.4.1")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "campsis" version))
        (sha256
-        (base32 "1bazp26czp1xpbydcj8slkx819655wg8yhvppmmzsl04vhibkk9n"))))
+        (base32 "1ipdlp1034qlz3iyiw0fshjfqcg0rxc5vjbqxln3w8pyg862s2mf"))))
     (properties `((upstream-name . "campsis")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

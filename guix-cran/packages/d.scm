@@ -1822,13 +1822,13 @@ S3 file system also generalizes to any list of http URLs.")
 (define-public r-duckdb
   (package
     (name "r-duckdb")
-    (version "0.8.1-3")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "duckdb" version))
        (sha256
-        (base32 "0pppqskp3dvr29iypbcz6g0qzw14mccinw2x1hacy1wkx9176ygf"))))
+        (base32 "1a5x31xnspcxw66l35d0fyvj8bmvjc2sw3kbz4dmm00cwq3lz9zr"))))
     (properties `((upstream-name . "duckdb")))
     (build-system r-build-system)
     (propagated-inputs (list r-dbi))
@@ -22862,13 +22862,13 @@ in some case studies throughout the text.")
 (define-public r-datasetjson
   (package
     (name "r-datasetjson")
-    (version "0.0.1")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datasetjson" version))
        (sha256
-        (base32 "0fn17d5qg108v4f0gyg93ihzf1b817ic1qxd5vw7iw6jqpzkh20s"))))
+        (base32 "0srxp0layarikjz4nwc2hvgrjj9k019p1iaidarmrfgc9q96lxaa"))))
     (properties `((upstream-name . "datasetjson")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonvalidate r-jsonlite))
@@ -23989,13 +23989,13 @@ extra layer of validation around input and output data.")
 (define-public r-databionicswarm
   (package
     (name "r-databionicswarm")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DatabionicSwarm" version))
        (sha256
-        (base32 "1x9i25wlp0gy1r4ilbkfj3f6c8hd67y8d8xj4alxmsin36nkm585"))))
+        (base32 "1qdm4na1s4wc8s7j9vp8g8l9lmhqlpzyafkjmm9jzl7wqlgz5ibr"))))
     (properties `((upstream-name . "DatabionicSwarm")))
     (build-system r-build-system)
     (inputs (list pandoc))
@@ -25625,33 +25625,31 @@ tables.")
 (define-public r-dabestr
   (package
     (name "r-dabestr")
-    (version "0.3.0")
+    (version "2023.9.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dabestr" version))
        (sha256
-        (base32 "0gzyg38n1sra8xa0kxn0b0yq7p111vsra3lwqijqwd6xwn7h2011"))))
+        (base32 "0fm6gk1q86nkls2y3zcklszqb570jcll9hfn2mpd4b4qj2vl2d4x"))))
     (properties `((upstream-name . "dabestr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
-                             r-simpleboot
+                             r-scales
                              r-rlang
-                             r-rcolorbrewer
-                             r-plyr
                              r-magrittr
+                             r-ggsci
                              r-ggplot2
-                             r-ggforce
                              r-ggbeeswarm
-                             r-forcats
-                             r-ellipsis
                              r-effsize
                              r-dplyr
                              r-cowplot
+                             r-cli
+                             r-brunnermunzel
                              r-boot))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr r-kableextra))
     (home-page "https://github.com/ACCLAB/dabestr")
     (synopsis "Data Analysis using Bootstrap-Coupled Estimation")
     (description
@@ -25665,8 +25663,8 @@ point to display the underlying distribution.  2.  It presents the effect size
 as a bootstrap 95% confidence interval on a separate but aligned axes.
 Estimation plots are introduced in Ho et al., Nature Methods 2019, 1548-7105.
 <doi:10.1038/s41592-019-0470-3>.  The free-to-view PDF is located at
-<https://rdcu.be/@code{bHhJ4>}.")
-    (license (license:fsdg-compatible "file://LICENSE"))))
+<https://www.nature.com/articles/s41592-019-0470-3.epdf?author_access_token=Euy6API@code{TxsYA3huBKOFBvNRgN0jAjWel9jnR3ZoTv0Pr6zJiJ3AA5aH4989gOJS_dajtNr1Wt17D0fh-t4GFcvqwMYN03qb8C33na_UrCUcGrt-Z0J9aPL6TPSbOxIC-pbHWKUDo2XsUOr3hQmlRew%3D%3D>}.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-daarem
   (package

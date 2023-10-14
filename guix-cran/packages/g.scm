@@ -3868,13 +3868,13 @@ of the grouping regarding an outcome of interest, as described in Becker et.  al
 (define-public r-groundhog
   (package
     (name "r-groundhog")
-    (version "3.1.1")
+    (version "3.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "groundhog" version))
        (sha256
-        (base32 "1cmzfwlccyp3wx5sx9lm09arvh7pnb233g42v2bak66dj7db60vn"))))
+        (base32 "17zav0fdblmwp3zq4hd1dkgidmm25gjs39z106r7cvm80h5hd9iy"))))
     (properties `((upstream-name . "groundhog")))
     (build-system r-build-system)
     (home-page "https://groundhogr.com/")
@@ -21431,13 +21431,13 @@ everything related to geosciences.")
 (define-public r-geodata
   (package
     (name "r-geodata")
-    (version "0.5-8")
+    (version "0.5-9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geodata" version))
        (sha256
-        (base32 "1d6kaqfnk9dh4r69002bnq3hdg7mnjsi12b35lk38fq2hpd868dx"))))
+        (base32 "052gwxl3b0xb93s2b8755cmyxsyk0gy8c25v0hj81cwypnfykbhs"))))
     (properties `((upstream-name . "geodata")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra))
@@ -22770,20 +22770,20 @@ specifically developed for this kind of data ('Arciniegas-@code{AlarcÃ³n} 2014
 (define-public r-genesysr
   (package
     (name "r-genesysr")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "genesysr" version))
        (sha256
-        (base32 "1ravpagqj64s8zhdb32l0dl434vsyc2m0lk36i0k9h0dqi53z7dn"))))
+        (base32 "0x09cyf4cgd6m79gn63brq0km3y4ki0z0raly4psi8f1zgv21g1s"))))
     (properties `((upstream-name . "genesysr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-readr
-                             r-later
+    (propagated-inputs (list r-tidyselect
+                             r-readr
+                             r-magrittr
                              r-jsonlite
-                             r-httr
-                             r-httpuv
+                             r-httr2
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://gitlab.croptrust.org/genesys-pgr/genesysr")
@@ -25438,6 +25438,29 @@ etc.) as well as publications informations.  Since 4.0.0 the GCD mirrors the
 online SQL database at <http://paleofire.org>.")
     (license license:gpl2+)))
 
+(define-public r-gccfactor
+  (package
+    (name "r-gccfactor")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GCCfactor" version))
+       (sha256
+        (base32 "0ymqzkh1iaiib2lqqx54rckzia56kxphnb1bzbdim5d3m2hhi80y"))))
+    (properties `((upstream-name . "GCCfactor")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr r-sandwich))
+    (home-page "https://cran.r-project.org/package=GCCfactor")
+    (synopsis "GCC Estimation of the Multilevel Factor Model")
+    (description
+     "This package provides methods for model selection, estimation, bootstrap
+inference, and simulation for the multilevel factor model, based on the
+principal component estimation and generalised canonical correlation approach.
+Details can be found in \"Generalised Canonical Correlation Estimation of the
+Multilevel Factor Model.\" Lin and Shin (2023) <doi:10.2139/ssrn.4295429>.")
+    (license license:gpl3+)))
+
 (define-public r-gcbd
   (package
     (name "r-gcbd")
@@ -27859,13 +27882,13 @@ materials.")
 (define-public r-galamm
   (package
     (name "r-galamm")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "galamm" version))
        (sha256
-        (base32 "1522r8psph4zj4w1j5yx18gj7hasma5jxr0417mmg513k44132kf"))))
+        (base32 "0iyszijnlg9bsh8234qm1vdrvcbnas18ylks9v4jg32mxnai6vpq"))))
     (properties `((upstream-name . "galamm")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack

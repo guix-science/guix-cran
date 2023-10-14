@@ -15038,13 +15038,13 @@ Nieto-Barajas (2003), Nieto-Barajas & Walker (2007) and Nieto-Barajas & Yin
 (define-public r-bgms
   (package
     (name "r-bgms")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bgms" version))
        (sha256
-        (base32 "131ir1s9wpbggxky68dr6sxypchbavig4yabcnpvcfx940dw3ndb"))))
+        (base32 "1zycs2zp27kcf2q34s6am8i4hxqkj7vdb13blla7qr64l0085y8v"))))
     (properties `((upstream-name . "bgms")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-rcppprogress r-rcpp))
@@ -15170,46 +15170,6 @@ post-processing and parameter estimation functions, and plotting utilities for
 the generalized graded unfolding model of Roberts, Donoghue, and Laughlin (2000)
 <doi:10.1177/01466216000241001>.")
     (license license:gpl2+)))
-
-(define-public r-bggm
-  (package
-    (name "r-bggm")
-    (version "2.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "BGGM" version))
-       (sha256
-        (base32 "0676viahmid0n89jhs93ci8l7rxpam7rn75mdbshgx7f1q3wqiih"))))
-    (properties `((upstream-name . "BGGM")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sna
-                             r-reshape
-                             r-rdpack
-                             r-rcppprogress
-                             r-rcppdist
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-network
-                             r-mvnfast
-                             r-mass
-                             r-ggridges
-                             r-ggplot2
-                             r-ggally
-                             r-bfpack))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=BGGM")
-    (synopsis "Bayesian Gaussian Graphical Models")
-    (description
-     "Fit Bayesian Gaussian graphical models.  The methods are separated into two
-Bayesian approaches for inference: hypothesis testing and estimation.  There are
-extensions for confirmatory hypothesis testing, comparing Gaussian graphical
-models, and node wise predictability.  These methods were recently introduced in
-the Gaussian graphical model literature, including Williams (2019)
-<doi:10.31234/osf.io/x8dpr>, Williams and Mulder (2019)
-<doi:10.31234/osf.io/ypxd8>, Williams, Rast, Pericchi, and Mulder (2019)
-<doi:10.31234/osf.io/yt386>.")
-    (license license:gpl2)))
 
 (define-public r-bgge
   (package
@@ -15475,53 +15435,6 @@ the bfsl solution.")
      "Search and download data from the Swiss Federal Statistical Office (BFS) APIs
 <https://www.bfs.admin.ch/>.")
     (license license:expat)))
-
-(define-public r-bfpack
-  (package
-    (name "r-bfpack")
-    (version "1.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "BFpack" version))
-       (sha256
-        (base32 "19g304rb7dvf936kfj6a23dl4fcmm2rzix49cq3195ijj8cfsxs6"))))
-    (properties `((upstream-name . "BFpack")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sandwich
-                             r-pracma
-                             r-mvtnorm
-                             r-matrix
-                             r-mass
-                             r-lme4
-                             r-extradistr
-                             r-ergm
-                             r-bergm
-                             r-bain))
-    (native-inputs (list r-knitr gfortran))
-    (home-page "https://github.com/jomulder/BFpack")
-    (synopsis "Flexible Bayes Factor Testing of Scientific Expectations")
-    (description
-     "Implementation of various default Bayes factors for testing statistical
-hypotheses.  The package is intended for applied quantitative researchers in the
-social and behavioral sciences, medical research, and related fields.  The Bayes
-factor tests can be executed for statistical models such as univariate and
-multivariate normal linear models, generalized linear models, special cases of
-linear mixed models, survival models, relational event models.  Parameters that
-can be tested are location parameters (e.g., group means, regression
-coefficients), variances (e.g., group variances), and measures of association
-(e.g,.  bivariate correlations), among others.  The statistical underpinnings
-are described in Mulder and Xin (2019) <DOI:10.1080/00273171.2021.1904809>,
-Mulder and Gelissen (2019) <DOI:10.1080/02664763.2021.1992360>, Mulder (2016)
-<DOI:10.1016/j.jmp.2014.09.004>, Mulder and Fox (2019) <DOI:10.1214/18-BA1115>,
-Mulder and Fox (2013) <DOI:10.1007/s11222-011-9295-3>, Boeing-Messing, van
-Assen, Hofman, Hoijtink, and Mulder (2017) <DOI:10.1037/met0000116>, Hoijtink,
-Mulder, van Lissa, and Gu, (2018) <DOI:10.31234/osf.io/v3shc>, Gu, Mulder, and
-Hoijtink, (2018) <DOI:10.1111/bmsp.12110>, Hoijtink, Gu, and Mulder, (2018)
-<DOI:10.1111/bmsp.12145>, and Hoijtink, Gu, Mulder, and Rosseel, (2018)
-<DOI:10.1037/met0000187>.  When using the packages, please refer to Mulder et
-al. (2021) <DOI:10.18637/jss.v100.i18>.")
-    (license license:gpl3+)))
 
 (define-public r-bfp
   (package
@@ -18152,13 +18065,13 @@ for the methodology is Bruno et al. (2022) <doi:10.1111/2041-210X.13868>.")
 (define-public r-bda
   (package
     (name "r-bda")
-    (version "16.1.3")
+    (version "17.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bda" version))
        (sha256
-        (base32 "0qa4xdsri44flldvfz6gjl7d0sgbzcwghbihl0gnqm7jgvfzha33"))))
+        (base32 "1rs7ipmwkhvbryga11nqvjf0cygvmcqzis5jvgdbxyi0v0japbl2"))))
     (properties `((upstream-name . "bda")))
     (build-system r-build-system)
     (propagated-inputs (list r-boot))

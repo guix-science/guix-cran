@@ -863,6 +863,30 @@ calculating conditional and unconditional expectations, and calculating marginal
 effects on conditional and unconditional expectations.")
     (license license:gpl2+)))
 
+(define-public r-mvpot
+  (package
+    (name "r-mvpot")
+    (version "0.1.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mvPot" version))
+       (sha256
+        (base32 "18cx02wg6nkgmh2ba2gp37z838xr70w354wbkfgl5jnyirl5g9xz"))))
+    (properties `((upstream-name . "mvPot")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-numbers r-mass r-gmp r-evd))
+    (home-page "https://github.com/r-fndv/mvPot")
+    (synopsis
+     "Multivariate Peaks-over-Threshold Modelling for Spatial Extreme Events")
+    (description
+     "This package provides tools for high-dimensional peaks-over-threshold inference
+and simulation of spatial extremal processes.  Key references include de
+Fondeville and Davison (2018) <doi:10.1093/biomet/asy026>, Thibaud and Opitz
+(2015) <doi:10.1093/biomet/asv045>, Wadsworth and Tawn
+<doi:10.1093/biomet/ast042>.")
+    (license license:gpl2)))
+
 (define-public r-mvpd
   (package
     (name "r-mvpd")
@@ -12966,13 +12990,13 @@ from Stata.")
 (define-public r-modistsp
   (package
     (name "r-modistsp")
-    (version "2.0.10")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MODIStsp" version))
        (sha256
-        (base32 "1s5jkih6jv4i702awdswj9hwajmk2kw1kd0nxbz386ia20y7k805"))))
+        (base32 "1nlzfshxzbk848xj4cprb6pm4j4jqxmaa2zmb5qsxx7s68mby5ll"))))
     (properties `((upstream-name . "MODIStsp")))
     (build-system r-build-system)
     (inputs (list))
@@ -22063,13 +22087,13 @@ distance of a design.")
 (define-public r-minimaxapprox
   (package
     (name "r-minimaxapprox")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "minimaxApprox" version))
        (sha256
-        (base32 "178qkgbqi3bjvvqmmkm88hsvmip8a9m2ln3gpfdj4diz6b1ir6v4"))))
+        (base32 "11yky5v76x690cbpi4fxpfazymi9v0h4ix18d4vcccg3pgzvjrn3"))))
     (properties `((upstream-name . "minimaxApprox")))
     (build-system r-build-system)
     (home-page "https://github.com/aadler/MiniMaxApprox")
@@ -36569,13 +36593,13 @@ matching and linear regression for causal inference in observational studies.")
 (define-public r-matchit
   (package
     (name "r-matchit")
-    (version "4.5.4")
+    (version "4.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MatchIt" version))
        (sha256
-        (base32 "17hszkxpdfajb6k5lc96jfi2mfcflav60sjk2jm1b08i898977cv"))))
+        (base32 "17l5b6i4bmg3gjjhzagy451zcv2i5xj4j6zzxgiqf955sgywlfdf"))))
     (properties `((upstream-name . "MatchIt")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-rcppprogress r-rcpp r-chk r-backports))
@@ -38205,17 +38229,16 @@ Qini curves as proposed in Sverdrup, Wu, Athey, and Wager (2023)
 (define-public r-mapview
   (package
     (name "r-mapview")
-    (version "2.11.0")
+    (version "2.11.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapview" version))
        (sha256
-        (base32 "02nkyh3m2l3jblii25c7p2yjjx7lka5l6hx7h882060959bczy47"))))
+        (base32 "1c18fc8r5anc9wn541dzhchys2pmxc7pp797bq065brs5drpyka1"))))
     (properties `((upstream-name . "mapview")))
     (build-system r-build-system)
-    (propagated-inputs (list r-webshot
-                             r-sp
+    (propagated-inputs (list r-sp
                              r-sf
                              r-servr
                              r-scales
@@ -40266,26 +40289,6 @@ multiple approximate kernel learning (MAKL) models that are fast, scalable and
 interpretable.")
     (license license:gpl3+)))
 
-(define-public r-makeyourpalette
-  (package
-    (name "r-makeyourpalette")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MakeYourPalette" version))
-       (sha256
-        (base32 "0snawchc2rkxglmcg093gik3gwasn4pxqsvz6rm2r1gkbwbazmh4"))))
-    (properties `((upstream-name . "MakeYourPalette")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rgdal r-raster r-prismatic))
-    (home-page "https://github.com/musajajorge/MakeYourPalette")
-    (synopsis "Make Your Palette")
-    (description
-     "This package provides functions that allow you to create your own color palette
-from an image, using the KMeans algorithm.")
-    (license license:gpl3)))
-
 (define-public r-makeunique
   (package
     (name "r-makeunique")
@@ -41288,13 +41291,13 @@ outcome model be within a specified, possibly large, class of models.")
 (define-public r-madpop
   (package
     (name "r-madpop")
-    (version "1.1.5")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MADPop" version))
        (sha256
-        (base32 "0r2yicpzcahx1bw93j0z601hzkcyknvf3657qm76lxsw0lb4lj1r"))))
+        (base32 "136x5shddix3qzr841hx5q5qc1cnm63j4d35h3km5ydw3qki9cyd"))))
     (properties `((upstream-name . "MADPop")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders

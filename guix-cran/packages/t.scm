@@ -18823,13 +18823,13 @@ plenty of choices for the model types are available, which can be found in the
 (define-public r-testgardener
   (package
     (name "r-testgardener")
-    (version "3.2.5")
+    (version "3.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TestGardener" version))
        (sha256
-        (base32 "11zs9aqznjaa40hmxmhpybzr8j36wzm8kn65m4cvj4jvc4ar2sd8"))))
+        (base32 "1i8xrxzadgxkmxv2wcy7hw90kawm18qv9mfxm9czf08jl1bx1ydx"))))
     (properties `((upstream-name . "TestGardener")))
     (build-system r-build-system)
     (propagated-inputs (list r-utf8

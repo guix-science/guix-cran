@@ -2294,13 +2294,13 @@ causality for pairs of phenotypes in system genetics.  Genetics 193 : 1003-1013.
 (define-public r-qtlemm
   (package
     (name "r-qtlemm")
-    (version "1.3.1")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "QTLEMM" version))
        (sha256
-        (base32 "1s0rk0lsn9ci0i8b9lm19v7fs0n9n6zg6hkmacdgdhhkfak0g5bm"))))
+        (base32 "0priafgrmi8li98nbpzc1zj2cd38apn0fhcbm2k7qx6sn17rrvir"))))
     (properties `((upstream-name . "QTLEMM")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm))
@@ -3033,6 +3033,48 @@ inference results for the fixed-effects and variance components.  It also
 provides graphical summaries for assessing the algorithm convergence and fitting
 results.")
     (license license:gpl2+)))
+
+(define-public r-qrlabelr
+  (package
+    (name "r-qrlabelr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qrlabelr" version))
+       (sha256
+        (base32 "128h5jg9hizagh9qa33nb4hjl0ypxpli65p3hwbs9qgxxgwymj17"))))
+    (properties `((upstream-name . "qrlabelr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-uuid
+                             r-shinywidgets
+                             r-shinyjs
+                             r-shinycssloaders
+                             r-shinybs
+                             r-shiny
+                             r-readxl
+                             r-reactable
+                             r-raster
+                             r-qrencoder
+                             r-purrr
+                             r-ggplot2
+                             r-dplyr
+                             r-desplot
+                             r-bslib
+                             r-assertthat
+                             r-argonr
+                             r-argondash))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=qrlabelr")
+    (synopsis
+     "Generate Machine- And Human-Readable Plot Labels for Experiments")
+    (description
+     "This package provides a no-frills open-source solution for designing plot labels
+affixed with QR codes.  It features @code{EasyQrlabelr}', a shiny app that
+simplifies the process of plot label design for non-R users.  This software
+builds on the methods described by Wu et al. (2020)
+<doi:10.1111/2041-210X.13405>.")
+    (license license:gpl3+)))
 
 (define-public r-qrjoint
   (package

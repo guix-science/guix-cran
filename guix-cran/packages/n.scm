@@ -7614,17 +7614,17 @@ al. (1999) <doi:10.1126/science.285.5431.1265>, @code{SoberÃ³n} and Peterson
 (define-public r-nicherover
   (package
     (name "r-nicherover")
-    (version "1.1.0")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nicheROVER" version))
        (sha256
-        (base32 "0chg2bnz929mq17qylf3f57g6bg4ih6w20019yh7vkz7mwjnvi3p"))))
+        (base32 "03xal1bm4wfvq6943v1n3d0782yxcmlqjwxj4i0dgr3yi72759x2"))))
     (properties `((upstream-name . "nicheROVER")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=nicheROVER")
+    (home-page "https://github.com/mlysy/nicheROVER")
     (synopsis
      "Niche Region and Niche Overlap Metrics for Multidimensional Ecological Niches")
     (description
@@ -7637,9 +7637,9 @@ is accounted for in a Bayesian framework, and the method can be extended to
 three or more indicator dimensions.  It provides directional estimates of niche
 overlap, accounts for species-specific distributions in multivariate niche
 space, and produces unique and consistent bivariate projections of the
-multivariate niche region.  The article by Swanson et al. (Ecology, 2015)
-provides a detailed description of the methodology.  See the package vignette
-for a worked example using fish stable isotope data.")
+multivariate niche region.  The article by Swanson et al. (2015)
+<doi:10.1890/14-0235.1> provides a detailed description of the methodology.  See
+the package vignette for a worked example using fish stable isotope data.")
     (license license:gpl3)))
 
 (define-public r-nichebarcoding

@@ -2167,6 +2167,40 @@ wordcloud2.js'.  wordcloud2.js is a @code{JavaScript} library to create wordle
 presentation on 2D canvas or HTML <https://timdream.org/wordcloud2.js/>.")
     (license license:gpl2)))
 
+(define-public r-wordbankr
+  (package
+    (name "r-wordbankr")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "wordbankr" version))
+       (sha256
+        (base32 "042y7zmy7x8kw9baxi131s5jilq6qdwa1s29r2mrklbadk8qgzf7"))))
+    (properties `((upstream-name . "wordbankr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-robustbase
+                             r-rmysql
+                             r-rlang
+                             r-quantreggrowth
+                             r-purrr
+                             r-lifecycle
+                             r-jsonlite
+                             r-glue
+                             r-dplyr
+                             r-dbplyr
+                             r-dbi
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://langcog.github.io/wordbankr/")
+    (synopsis "Accessing the Wordbank Database")
+    (description
+     "Connecting to Wordbank, an open repository for developmental vocabulary data.
+For more information on the underlying data, see <http://wordbank.stanford.edu>.")
+    (license license:gpl3)))
+
 (define-public r-word-alignment
   (package
     (name "r-word-alignment")
@@ -5536,13 +5570,13 @@ statistic for the object of class htest'.")
 (define-public r-webpower
   (package
     (name "r-webpower")
-    (version "0.9.3")
+    (version "0.9.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WebPower" version))
        (sha256
-        (base32 "1530jz99dvp79bk57mfyyd0iam7wf0pjz8d5msyy852zcqym5hrp"))))
+        (base32 "0idfm9mr4sffyzyihggy5kmsklx178g8c5ikp34kxz74jkz0rzn5"))))
     (properties `((upstream-name . "WebPower")))
     (build-system r-build-system)
     (propagated-inputs (list r-pearsonds r-mass r-lme4 r-lavaan r-dplyr))
@@ -8056,13 +8090,13 @@ Vihola, Helske, Franks (2020, <doi:10.1111/sjos.12492>).")
 (define-public r-walkboutr
   (package
     (name "r-walkboutr")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "walkboutr" version))
        (sha256
-        (base32 "0lvr5ckvn1xrzg9ki18m26kncwxl2qpidsd7i3p7yybzxa275r4r"))))
+        (base32 "0w1fav70w9y44p9d32qfsyihzlprmcxwcrbjg0v9fdm31w498qgj"))))
     (properties `((upstream-name . "walkboutr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

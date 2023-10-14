@@ -2322,13 +2322,13 @@ probing (HR-SIP), multi-window high resolution stable isotope probing
 (define-public r-htsr
   (package
     (name "r-htsr")
-    (version "2.1.1")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "htsr" version))
        (sha256
-        (base32 "1gnjvkn6m0bfgw32afpvhvlsrlc672f3zb9fhrq57y3asc190jkx"))))
+        (base32 "1pd9s54rxmgihxrrhbdz99rkpqq8hbswc96wy6kdzk400bmxrl36"))))
     (properties `((upstream-name . "htsr")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexls
@@ -11906,32 +11906,39 @@ format.  It mainly includes the following sections: @code{ReformatDataframe}
 (define-public r-handwriter
   (package
     (name "r-handwriter")
-    (version "1.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "handwriter" version))
        (sha256
-        (base32 "1jq65dzvjpjrvhw76asmh8qghdzfgisvdn43hc0hmkj90nj6aaap"))))
+        (base32 "0l3vg76kwqwxzhn62y4sbl8nap219yppk9rak36w04hryxdahdf1"))))
     (properties `((upstream-name . "handwriter")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringr
-                             r-shiny
-                             r-rjson
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-rjags
+                             r-rfast
                              r-reshape2
                              r-rcpparmadillo
                              r-rcpp
-                             r-randomforest
+                             r-purrr
                              r-png
+                             r-mc2d
                              r-magick
+                             r-lpsolve
                              r-igraph
-                             r-ggplot2))
-    (home-page "https://cran.r-project.org/package=handwriter")
+                             r-ggplot2
+                             r-futile-logger
+                             r-foreach
+                             r-dplyr
+                             r-doparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/CSAFE-ISU/handwriter")
     (synopsis "Handwriting Analysis in R")
     (description
-     "Process handwriting document into letters, words, and lines.  Provides
-measurements at all levels.  Webpage provided at:
-<https://csafe-isu.github.io/handwriter/index.html>.")
+     "Perform statistical writership analysis of scanned handwritten documents.
+Webpage provided at: <https://csafe-isu.github.io/handwriter/index.html>.")
     (license license:gpl3)))
 
 (define-public r-handtill2001

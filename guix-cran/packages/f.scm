@@ -16459,6 +16459,35 @@ for modeling and simulating dynamic systems.")
 validity and visualizing fuzzy clustering results.")
     (license license:gpl2+)))
 
+(define-public r-fcl
+  (package
+    (name "r-fcl")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fcl" version))
+       (sha256
+        (base32 "0rskl9q7z5k5q17m3c5w4pdc96m6fdag7nkkjmyyh43wbm4bjb0a"))))
+    (properties `((upstream-name . "fcl")))
+    (build-system r-build-system)
+    (inputs (list))
+    (propagated-inputs (list r-ymd r-xts))
+    (home-page "https://github.com/shrektan/fcl")
+    (synopsis "Financial Calculator")
+    (description
+     "This package provides a financial calculator that provides very fast
+implementations of common financial indicators using Rust code.  It includes
+functions for bond-related indicators, such as yield to maturity ('YTM'),
+modified duration, and Macaulay duration, as well as functions for calculating
+time-weighted and money-weighted rates of return (using Modified Dietz method)
+for multiple portfolios, given their market values and profit and loss
+('@code{PnL}') data.  fcl is designed to be efficient and accurate for financial
+analysis and computation.  The methods used in this package are based on the
+following references: <https://en.wikipedia.org/wiki/Modified_Dietz_method>,
+<https://en.wikipedia.org/wiki/Time-weighted_return>.")
+    (license license:expat)))
+
 (define-public r-fcirt
   (package
     (name "r-fcirt")

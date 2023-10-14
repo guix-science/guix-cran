@@ -14903,53 +14903,6 @@ is able to fetch closing prices of securities from Yahoo.  A variety of unit
 root tests are supported, and an improved unit root test is included.")
     (license (list license:gpl2 license:gpl3))))
 
-(define-public r-eganet
-  (package
-    (name "r-eganet")
-    (version "2.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "EGAnet" version))
-       (sha256
-        (base32 "09m589sji3l7kdgg5mqsmpjk0adn0kzi0vpqqks02x3pf81k5gqr"))))
-    (properties `((upstream-name . "EGAnet")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sna
-                             r-semplot
-                             r-qgraph
-                             r-progressr
-                             r-network
-                             r-matrix
-                             r-lavaan
-                             r-igraph
-                             r-gparotation
-                             r-glasso
-                             r-ggpubr
-                             r-ggplot2
-                             r-ggdendro
-                             r-ggally
-                             r-future-apply
-                             r-future
-                             r-bggm))
-    (home-page "https://github.com/hfgolino/EGAnet")
-    (synopsis
-     "Exploratory Graph Analysis â a Framework for Estimating the Number of Dimensions in Multivariate Data using Network Psychometrics")
-    (description
-     "This package implements the Exploratory Graph Analysis (EGA) framework for
-dimensionality and psychometric assessment.  EGA estimates the number of
-dimensions in psychological data using network estimation methods and community
-detection algorithms.  A bootstrap method is provided to assess the stability of
-dimensions and items.  Fit is evaluated using the Entropy Fit family of indices.
- Unique Variable Analysis evaluates the extent to which items are locally
-dependent (or redundant).  Network loadings provide similar information to
-factor loadings and can be used to compute network scores.  A bootstrap and
-permutation approach are available to assess configural and metric invariance.
-Hierarchical structures can be detected using Hierarchical EGA. Time series and
-intensive longitudinal data can be analyzed using Dynamic EGA, supporting
-individual, group, and population level assessments.")
-    (license license:gpl3+)))
-
 (define-public r-ega
   (package
     (name "r-ega")
@@ -16406,13 +16359,13 @@ modules are intended for reuse across applications.")
 (define-public r-editbl
   (package
     (name "r-editbl")
-    (version "0.9.6")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "editbl" version))
        (sha256
-        (base32 "0anbfsj669igxhbf0d2cfjr9j4l08yhwr48yp2lcyh20pb8hcbip"))))
+        (base32 "0lzq7whmyw0kk8bhka2rg0sg7m21sr5yzh3508cd3r3xyvzil0j0"))))
     (properties `((upstream-name . "editbl")))
     (build-system r-build-system)
     (propagated-inputs (list r-uuid
@@ -18051,16 +18004,16 @@ in the papers: Lorena et al. (2019) <doi:10.1145/3347711> and Lorena et al.
 (define-public r-ecoindr
   (package
     (name "r-ecoindr")
-    (version "1.8")
+    (version "1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EcoIndR" version))
        (sha256
-        (base32 "008wgp9zc8a8knz9ighgavrdm0yf37m5jahnq5kndjhld0359z6h"))))
+        (base32 "09d7gka9h700fyryvkrb6jlk7ci341mwvvyd3hfy0nzx21jcpckb"))))
     (properties `((upstream-name . "EcoIndR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rgeos))
+    (propagated-inputs (list r-vegan r-splancs r-rarity r-picante r-fd))
     (home-page "https://cran.r-project.org/package=EcoIndR")
     (synopsis "Ecological Indicators")
     (description
@@ -20444,38 +20397,6 @@ time-consuming.  This package takes the pain out of that process by providing
 functions to quickly locate variables and download labeled tables from the
 Census APIs (<https://www.census.gov/data/developers/data-sets.html>).")
     (license license:expat)))
-
-(define-public r-easybgm
-  (package
-    (name "r-easybgm")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "easybgm" version))
-       (sha256
-        (base32 "077j8l04cix4vh2jzvmrzmq17j36npsz68qig7gvfvf9lcm3aq1q"))))
-    (properties `((upstream-name . "easybgm")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-qgraph
-                             r-igraph
-                             r-hdinterval
-                             r-ggplot2
-                             r-dplyr
-                             r-bgms
-                             r-bggm
-                             r-bdgraph))
-    (home-page "https://cran.r-project.org/package=easybgm")
-    (synopsis "Extracting and Visualizing Bayesian Graphical Models")
-    (description
-     "Fit and visualize the results of a Bayesian analysis of networks commonly found
-in psychology.  The package supports fitting cross-sectional network models
-fitted using the packages BDgraph', bgms and BGGM'.  The package provides the
-parameter estimates, posterior inclusion probabilities, inclusion Bayes factor,
-and the posterior density of the parameters.  In addition, for BDgraph and bgms
-it allows to assess the posterior structure space.  Furthermore, the package
-comes with an extensive suite for visualizing results.")
-    (license license:gpl2+)))
 
 (define-public r-easyanova
   (package

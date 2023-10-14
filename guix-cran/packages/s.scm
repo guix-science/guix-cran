@@ -26171,13 +26171,13 @@ Subgroup.")
 (define-public r-soilr
   (package
     (name "r-soilr")
-    (version "1.2.106")
+    (version "1.2.107")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SoilR" version))
        (sha256
-        (base32 "1q5m475s0gx0x76ds35m8siakhjq5aqj5saqvyjnaan6pvz1p6j9"))))
+        (base32 "1j2p5rr8a62fsf77akksk8533ilcx8a7319wq4gjz680va8glp5h"))))
     (properties `((upstream-name . "SoilR")))
     (build-system r-build-system)
     (propagated-inputs (list r-sets
@@ -35022,13 +35022,13 @@ networks.")
 (define-public r-simmr
   (package
     (name "r-simmr")
-    (version "0.5.1.214")
+    (version "0.5.1.215")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simmr" version))
        (sha256
-        (base32 "1i3v96i98wik0dzj4p5bnp425dcrh1hhghqg6hmyixycy1r4mw6w"))))
+        (base32 "1aaxfc16941fwaiab6zn5ra23ld64nq62bpi8mvnm78rpfy3879w"))))
     (properties `((upstream-name . "simmr")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -52189,13 +52189,13 @@ in Studies of Herd Animals.\" <doi:10.1111/arcm.12432>.")
 (define-public r-scellpam
   (package
     (name "r-scellpam")
-    (version "1.4.4")
+    (version "1.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scellpam" version))
        (sha256
-        (base32 "0859g5lsjxv5l68dn1p2cilq2ayyvbdnyvsrdyig1vfsf1lbrrgg"))))
+        (base32 "0sgwqpmjwnwvs8s3l4x264kndjsh3k7h5mpxyl0za9s4na3y6s9j"))))
     (properties `((upstream-name . "scellpam")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-memuse r-cluster))

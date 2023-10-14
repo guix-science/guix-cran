@@ -1413,16 +1413,16 @@ Factorization\" which will be submitted to BBRC.")
 (define-public r-osmscale
   (package
     (name "r-osmscale")
-    (version "0.5.1")
+    (version "0.5.20")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OSMscale" version))
        (sha256
-        (base32 "0rjhyhh1iafgd9h1pbd2clyg2sh0gg7y1aqmiislqyn6h6jrvgqn"))))
+        (base32 "14n5574j083xllj0xs87cl8szc0favb8wp3v10bbdljbk35qvmbm"))))
     (properties `((upstream-name . "OSMscale")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp r-openstreetmap r-berryfunctions))
+    (propagated-inputs (list r-sf r-pbapply r-openstreetmap r-berryfunctions))
     (home-page "https://github.com/brry/OSMscale")
     (synopsis "Add a Scale Bar to 'OpenStreetMap' Plots")
     (description
@@ -10049,6 +10049,38 @@ vector (non-negative values that sum up to one and are ordered from the largest
 to the smallest).  Parameters are estimated in the Bayesian framework using MCMC
 methods.")
     (license license:gpl2+)))
+
+(define-public r-ocnet
+  (package
+    (name "r-ocnet")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OCNet" version))
+       (sha256
+        (base32 "1rkvx62aigms959fx1iw0kshqlzpix20r0r3pn5csjipwjbjj7ym"))))
+    (properties `((upstream-name . "OCNet")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-spdep
+                             r-spam
+                             r-rgl
+                             r-rcpp
+                             r-igraph
+                             r-fields
+                             r-adespatial))
+    (native-inputs (list r-knitr gfortran))
+    (home-page "https://lucarraro.github.io/OCNet/")
+    (synopsis "Optimal Channel Networks")
+    (description
+     "Generate and analyze Optimal Channel Networks (OCNs): oriented spanning trees
+reproducing all scaling features characteristic of real, natural river networks.
+ As such, they can be used in a variety of numerical experiments in the fields
+of hydrology, ecology and epidemiology.  See Carraro et al. (2020)
+<doi:10.1002/ece3.6479> for a presentation of the package; Rinaldo et al. (2014)
+<doi:10.1073/pnas.1322700111> for a theoretical overview on the OCN concept;
+Furrer and Sain (2010) <doi:10.18637/jss.v036.i10> for the construct used.")
+    (license license:gpl3)))
 
 (define-public r-oclust
   (package

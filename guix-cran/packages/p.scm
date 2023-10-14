@@ -20116,13 +20116,13 @@ information.")
 (define-public r-pkgndep
   (package
     (name "r-pkgndep")
-    (version "1.99.2")
+    (version "1.99.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pkgndep" version))
        (sha256
-        (base32 "1x2cd3hhbq3fi1hgwyh7yxk0hq8rq9wq15i7739d0z0vgs9m4kwp"))))
+        (base32 "1llpizr2wkhfgygr9fd79qxym0xcrxfvz8w5n0kwvkvlq3iqid44"))))
     (properties `((upstream-name . "pkgndep")))
     (build-system r-build-system)
     (propagated-inputs (list r-hash

@@ -8972,13 +8972,13 @@ library.")
 (define-public r-aorsf
   (package
     (name "r-aorsf")
-    (version "0.0.7")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aorsf" version))
        (sha256
-        (base32 "1shx7i6qf0w9w2ir5p7mdjh1kva2xqxm6qm9blqwp7s418ykvk6b"))))
+        (base32 "0rwxqxs2jhi8a6przsxnrx1a6zax7i25qli8a83jxxibswhx0j05"))))
     (properties `((upstream-name . "aorsf")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-data-table r-collapse))
@@ -8991,7 +8991,7 @@ Oblique decision trees are notoriously slow compared to their axis based
 counterparts, but aorsf runs as fast or faster than axis-based decision tree
 algorithms for right-censored time-to-event outcomes.  Methods to accelerate and
 interpret the oblique random survival forest are described in Jaeger et al.,
-(2022) <@code{arXiv:2208.01129>}.")
+(2023) <DOI:10.1080/10618600.2023.2231048>.")
     (license license:expat)))
 
 (define-public r-aoristic
@@ -17978,13 +17978,13 @@ range.")
 (define-public r-adegraphics
   (package
     (name "r-adegraphics")
-    (version "1.0-18")
+    (version "1.0-21")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adegraphics" version))
        (sha256
-        (base32 "0g2n9n72k8wj4qibd0v68ispgq5kzpkfhbnyk3h1g69yyz07zq4g"))))
+        (base32 "1a7bz9j06sc09kvynzss71dxffp40vsl35azj0gzs81jl2rr4ap0"))))
     (properties `((upstream-name . "adegraphics")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp
@@ -19509,32 +19509,6 @@ interface directly with an instance of ACE search engine and facilitates API
 queries and data dumps.  Prerequisite is a good knowledge of the temporal
 language to be able to efficiently construct a query.  More information
 available at <https://shahlab.stanford.edu/start>.")
-    (license license:expat)))
-
-(define-public r-acep
-  (package
-    (name "r-acep")
-    (version "0.0.21")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ACEP" version))
-       (sha256
-        (base32 "1c3krdxfpdmpj8z3bwi6gqq621n1hvna593bhcmrzkyv2jkc0k7a"))))
-    (properties `((upstream-name . "ACEP")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-httr))
-    (home-page "https://github.com/agusnieto77/ACEP")
-    (synopsis "Analisis Computacional de Eventos de Protesta")
-    (description
-     "La libreria ACEP contiene funciones especificas para desarrollar analisis
-computacional de eventos de protesta.  Asimismo, contiene base de datos con
-colecciones de notas sobre protestas y diccionarios de palabras conflictivas.
-Coleccion de diccionarios que reune diccionarios de diferentes origenes.  The
-ACEP library contains specific functions to perform computational analysis of
-protest events.  It also contains a database with collections of notes on
-protests and dictionaries of conflicting words.  Collection of dictionaries that
-brings together dictionaries from different sources.")
     (license license:expat)))
 
 (define-public r-aceeditor
