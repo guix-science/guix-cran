@@ -8938,13 +8938,13 @@ the gamma law are implemented using the method of Bhattacharya (2001)
 (define-public r-goffda
   (package
     (name "r-goffda")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "goffda" version))
        (sha256
-        (base32 "07mmvmmcqg5wx6xj9frridflakbsdfkrhyrnmp239w8ppw6vdy29"))))
+        (base32 "0d4w2rz7024j4vky1nynqfanfgp8rvgivl2p6b8l2ws98brlhy24"))))
     (properties `((upstream-name . "goffda")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-ks r-glmnet r-fda-usc))
@@ -27919,13 +27919,13 @@ al. (2015) <doi:10.18637/jss.v067.i01>) and PLmixed (Rockwood and Jeon (2019)
 (define-public r-galah
   (package
     (name "r-galah")
-    (version "1.5.3")
+    (version "1.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "galah" version))
        (sha256
-        (base32 "108qwi7ambnzvw47q3inpvik2qbaz0fpcic9dnc5vnk6dflc76n8"))))
+        (base32 "0x1xds6m6zn2mjw83na4dpjazsdpmlc4py3jnf04l9jk1sav6prd"))))
     (properties `((upstream-name . "galah")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

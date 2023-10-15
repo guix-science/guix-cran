@@ -9074,13 +9074,13 @@ easy to install and load multiple healthyverse packages in a single step.")
 (define-public r-healthyr-ts
   (package
     (name "r-healthyr-ts")
-    (version "0.2.10")
+    (version "0.2.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "healthyR.ts" version))
        (sha256
-        (base32 "1vn9czpf3byq5mgsyvrasvf063n5r3rn50kvj2hdn23c0dn5jg6l"))))
+        (base32 "1pyrrx6hy9kgiaqcy4sb7gr89zcyd586h1b12j7h32f2faaggi03"))))
     (properties `((upstream-name . "healthyR.ts")))
     (build-system r-build-system)
     (propagated-inputs (list r-workflowsets
@@ -12510,28 +12510,6 @@ out cycle-spinning.  Main reference: Fryzlewicz, P. and Nason, G.P. (2004) \"A
 Haar-Fisz algorithm for Poisson intensity estimation.\" Journal of Computational
 and Graphical Statistics, 13, 621-638. <doi:10.1198/106186004X2697>.")
     (license license:gpl2+)))
-
-(define-public r-h3r
-  (package
-    (name "r-h3r")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "h3r" version))
-       (sha256
-        (base32 "18smkkvdb8kpr5k9y64ww23da7lr9g9fnb5gbwgjh3ddzll8973w"))))
-    (properties `((upstream-name . "h3r")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-h3lib))
-    (home-page "https://symbolixau.github.io/h3r/")
-    (synopsis "Hexagonal Hierarchical Geospatial Indexing System")
-    (description
-     "This package provides access to Uber's H3 geospatial indexing system via h3lib
-<https://CRAN.R-project.org/package=h3lib>.  h3r is designed to mimic the H3
-Application Programming Interface (API) <https://h3geo.org/docs/api/indexing/>,
-so that any function in the API is also available in h3r'.")
-    (license license:expat)))
 
 (define-public r-h3lib
   (package

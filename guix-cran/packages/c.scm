@@ -18929,13 +18929,13 @@ problems.")
 (define-public r-collapse
   (package
     (name "r-collapse")
-    (version "1.9.6")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "collapse" version))
        (sha256
-        (base32 "07mmmynkx0pz476vf16if5nwwjp1zp3nhzjlw0hmvkiiwdr590rg"))))
+        (base32 "1dklk93lrphvvnxxpslb8968cdpm3y5lika0mhljig73vv7qwvpl"))))
     (properties `((upstream-name . "collapse")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -18944,21 +18944,20 @@ problems.")
     (synopsis "Advanced and Fast Data Transformation")
     (description
      "This package provides a C/C++ based package for advanced data transformation and
-statistical computing in R that is extremely fast, class-agnostic, and
-programmer friendly through a flexible and robust API. Core functionality
-includes a rich set of S3 generic grouped and weighted statistical functions for
-vectors, matrices and data frames, which provide efficient low-level
-vectorizations, @code{OpenMP} multithreading, and skip missing values by
-default.  These are integrated with fast grouping and ordering algorithms (also
-callable from C), and efficient data manipulation functions.  The package also
-provides a flexible and rigorous approach to time series and panel data in R. It
-further includes fast functions for common statistical procedures, detailed
-(grouped, weighted) summary statistics, powerful tools to work with nested data,
-fast data object conversions, functions for memory efficient R programming, and
-helpers to effectively deal with variable labels, attributes, and missing data.
-It is well integrated with basic R, dplyr'/'tibble', data.table', sf', plm
-(panel-series and data frames), and accommodates, by virtue of smart internal
-attribute handling, many other classes (like ts', xts'/'zoo or tsibble').")
+statistical computing in R that is extremely fast, class-agnostic, robust and
+programmer friendly.  Core functionality includes a rich set of S3 generic
+grouped and weighted statistical functions for vectors, matrices and data
+frames, which provide efficient low-level vectorizations, @code{OpenMP}
+multithreading, and skip missing values by default.  These are integrated with
+fast grouping and ordering algorithms (also callable from C), and efficient data
+manipulation functions.  The package also provides a flexible and rigorous
+approach to time series and panel data in R. It further includes fast functions
+for common statistical procedures, detailed (grouped, weighted) summary
+statistics, powerful tools to work with nested data, fast data object
+conversions, functions for memory efficient R programming, and helpers to
+effectively deal with variable labels, attributes, and missing data.  It is well
+integrated with base R classes, dplyr'/'tibble', data.table', sf', plm
+(panel-series and data frames), and xts'/'zoo'.")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -22487,13 +22486,13 @@ Theodoridis, and Schult (2006)<doi:10.1145/1150402.1150491> .")
 (define-public r-clustra
   (package
     (name "r-clustra")
-    (version "0.1.6")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clustra" version))
        (sha256
-        (base32 "06cv9fwrkykmdyw4qx85kww7hwa3nk5hpjrsrhzyj9ws623ind3a"))))
+        (base32 "1lgqy791l9bx7bx9jydpfsjych7yyw2sblw1qnspgmw0qs1pw5js"))))
     (properties `((upstream-name . "clustra")))
     (build-system r-build-system)
     (propagated-inputs (list r-mixsim r-mgcv r-data-table))
@@ -29070,6 +29069,43 @@ logistic regression, negative binomial regression, Cox proportional hazards
 model and conditional logistic regression.")
     (license license:gpl2)))
 
+(define-public r-chessboard
+  (package
+    (name "r-chessboard")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "chessboard" version))
+       (sha256
+        (base32 "0w58zbiz9gw18ixcp3j23ys52xx5i4wrjhixiy4brc5b5h1i8mdi"))))
+    (properties `((upstream-name . "chessboard")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-sf
+                             r-rlang
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/frbcesab/chessboard")
+    (synopsis "Create Network Connections Based on Chess Moves")
+    (description
+     "This package provides functions to work with directed (asymmetric) and
+undirected (symmetric) spatial networks.  It makes the creation of connectivity
+matrices easier, i.e.  a binary matrix of dimension n x n, where n is the number
+of nodes (sampling units) indicating the presence (1) or the absence (0) of an
+edge (link) between pairs of nodes.  Different network objects can be produced
+by chessboard': node list, neighbor list, edge list, connectivity matrix.  It
+can also produce objects that will be used later in Moran's Eigenvector Maps
+(Dray et al. (2006) <doi:10.1016/j.ecolmodel.2006.02.015>) and Asymetric
+Eigenvector Maps (Blanchet et al. (2008) <doi:10.1016/j.ecolmodel.2008.04.001>),
+methods available in the package adespatial (Dray et al. (2023)
+<https://CRAN.R-project.org/package=adespatial>).  This work is part of the
+FRB-CESAB working group Bridge
+<https://www.fondationbiodiversite.fr/en/the-frb-in-action/programs-and-projects/le-cesab/bridge/>.")
+    (license license:gpl2+)))
+
 (define-public r-chess
   (package
     (name "r-chess")
@@ -32996,13 +33032,13 @@ Q-matrix generation and detection of complete/identified Q-matrices.")
 (define-public r-cdmconnector
   (package
     (name "r-cdmconnector")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CDMConnector" version))
        (sha256
-        (base32 "0iz2yyvpp43cvrgb0xd721d7xjclr36zk8b59shsp326b3bjmj5b"))))
+        (base32 "1iya1hjf2mgx5g313nwrr3l2cnih6p7iarb0qyj7mp09kk2d6fz1"))))
     (properties `((upstream-name . "CDMConnector")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr

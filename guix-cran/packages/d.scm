@@ -3474,6 +3474,28 @@ and gsed conversion keys.  The user can calculate DAZ using phase1 (default),
 gcdg and dutch age-conditional references.")
     (license license:agpl3)))
 
+(define-public r-dsbayes
+  (package
+    (name "r-dsbayes")
+    (version "2023.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DSBayes" version))
+       (sha256
+        (base32 "0sk5xfs13jxy4n3qgifh75bry1b53mm9gk1x14mpy2vw359cbqx4"))))
+    (properties `((upstream-name . "DSBayes")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bb))
+    (home-page "https://cran.r-project.org/package=DSBayes")
+    (synopsis "Bayesian Subgroup Analysis in Clinical Trials")
+    (description
+     "Calculate posterior modes and credible intervals of parameters of the
+Dixon-Simon model for subgroup analysis (with binary covariates) in clinical
+trials.  For details of the methodology, please refer to D.O. Dixon and R. Simon
+(1991), Biometrics, 47: 871-881.")
+    (license license:gpl2+)))
+
 (define-public r-dsb
   (package
     (name "r-dsb")
@@ -9255,16 +9277,16 @@ also provided.")
 (define-public r-dive
   (package
     (name "r-dive")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DivE" version))
        (sha256
-        (base32 "1czj89ljvpgl03471cknki2lc64swdqdpf5wsgicad35kgmlrwlh"))))
+        (base32 "1nab00wkq2986sxi8z5hmhadxyzhy181akhzj8vc6bfznrcrnbig"))))
     (properties `((upstream-name . "DivE")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp r-rgeos r-fme r-desolve))
+    (propagated-inputs (list r-sp r-fme r-desolve))
     (home-page "https://cran.r-project.org/package=DivE")
     (synopsis "Diversity Estimator")
     (description

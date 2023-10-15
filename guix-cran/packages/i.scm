@@ -5320,13 +5320,13 @@ available in both desktop and online versions.")
 (define-public r-inzightplots
   (package
     (name "r-inzightplots")
-    (version "2.15.1")
+    (version "2.15.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iNZightPlots" version))
        (sha256
-        (base32 "0h4s7wgia8knkksjvidjkkyzvwmr4w7qhc36f6ppjhlyzik0dmkp"))))
+        (base32 "0pc1z7ikh3c2l5s1dljdzaqk83m6i5p64p771waz5frkyyf3bg4r"))))
     (properties `((upstream-name . "iNZightPlots")))
     (build-system r-build-system)
     (propagated-inputs (list r-units

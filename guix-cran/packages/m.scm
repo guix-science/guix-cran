@@ -18571,13 +18571,13 @@ visualization by volcano and Bland-Altman plots (Bland and Altman (1986),
 (define-public r-mkin
   (package
     (name "r-mkin")
-    (version "1.2.5")
+    (version "1.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mkin" version))
        (sha256
-        (base32 "0jvv1vagq902rm2pc8hm85lbzjclqzpl622arcqdaaagz49sl2in"))))
+        (base32 "1k90z1kqk57rib0f7rm23qmcvk942b0rggbjfyc7jzrba3v65qpb"))))
     (properties `((upstream-name . "mkin")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -26892,29 +26892,41 @@ detection of fronts based on the thermic front parameter [Hewson, 1998,
 (define-public r-meteo
   (package
     (name "r-meteo")
-    (version "0.1-5")
+    (version "2.0-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "meteo" version))
        (sha256
-        (base32 "0n37plka9vsxwd03lca3h6m8dcz3f1bi46jn3bz7vyilnkq9hcdk"))))
+        (base32 "18aiy133527cxa3qj2mjwik6d7w6kgs7qmb5zywsbvb2bc3hmn5v"))))
     (properties `((upstream-name . "meteo")))
     (build-system r-build-system)
-    (propagated-inputs (list r-spacetime
+    (propagated-inputs (list r-units
+                             r-terra
+                             r-spacetime
                              r-sp
                              r-snowfall
-                             r-rgdal
+                             r-sftime
+                             r-sf
                              r-raster
+                             r-ranger
                              r-plyr
-                             r-gstat))
-    (home-page "http://meteo.r-forge.r-project.org/")
+                             r-nabor
+                             r-gstat
+                             r-foreach
+                             r-dplyr
+                             r-doparallel
+                             r-desctools
+                             r-data-table
+                             r-cast
+                             r-caret))
+    (home-page "https://www.r-pkg.org/pkg/meteo")
     (synopsis
-     "Spatio-Temporal Analysis and Mapping of Meteorological Observations")
+     "RFSI and Spatio-Temporal Geostatistical Interpolation for Meteorological and Other Environmental Variables")
     (description
-     "Spatio-temporal geostatistical mapping of meteorological data.  Global
-spatio-temporal models calculated using publicly available data are stored in
-package.")
+     "RFSI and spatio-temporal geostatistical interpolation for meteorological and
+other environmental variables.  Global spatio-temporal models calculated using
+publicly available data are stored in package.")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file LICENCE")))))
 
@@ -34499,13 +34511,13 @@ the annual flow.  The method is described in Nguyen et al (2020)
 (define-public r-mbnmatime
   (package
     (name "r-mbnmatime")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MBNMAtime" version))
        (sha256
-        (base32 "0i4bgfzdxy4xap3yalphkbsq5pz0yl407nvkns6q3f0y90maq29r"))))
+        (base32 "1ny438dy62zrafyf7nng2hq5v311l1zc5xd39452fgq6ij0rnrni"))))
     (properties `((upstream-name . "MBNMAtime")))
     (build-system r-build-system)
     (inputs (list jags))

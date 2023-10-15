@@ -16614,13 +16614,13 @@ associated metadata.")
 (define-public r-edgar
   (package
     (name "r-edgar")
-    (version "2.0.6")
+    (version "2.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "edgar" version))
        (sha256
-        (base32 "0b4lqbm2i6756qcz63pjk6l3n7bs8554fdwap0hcp0lrm6832n45"))))
+        (base32 "1lzcs78cncz4ira1nnzyip1ap1iva75kfx8ynqqv79pmj8g4nms3"))))
     (properties `((upstream-name . "edgar")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml

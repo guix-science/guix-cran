@@ -16144,13 +16144,13 @@ transforming data into useful formats.")
 (define-public r-sqlhelpers
   (package
     (name "r-sqlhelpers")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sqlHelpers" version))
        (sha256
-        (base32 "0h4i3304fyr1rbjcaflqa43sywi9fz9aqqb6gxfpkhp0npsgwyx8"))))
+        (base32 "1r46sak65ipfnflmd7w7ac6p62ihx7l9lpi8cjrx3c5xb6gaaxqx"))))
     (properties `((upstream-name . "sqlHelpers")))
     (build-system r-build-system)
     (propagated-inputs (list r-toolbox r-stringi r-odbc r-dbi r-data-table))
@@ -33074,16 +33074,17 @@ improve feature extraction.  Benjamin B.Risk, Irina Gaynanova (2021)
 (define-public r-singlercapture
   (package
     (name "r-singlercapture")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "singleRcapture" version))
        (sha256
-        (base32 "18wvh5v8zx7n9g4l1y6dghmiygpxhck1pyz9k4h2i8dcd6ipbv1c"))))
+        (base32 "08i28ycf70m8klc3cnx6l3gnm58fx9sywrx7a91yz2zxmn2z84cz"))))
     (properties `((upstream-name . "singleRcapture")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sandwich r-rootsolve r-mathjaxr r-lamw))
+    (propagated-inputs (list r-sandwich r-mathjaxr r-lamw r-foreach
+                             r-doparallel))
     (home-page "https://github.com/ncn-foreigners/singleRcapture")
     (synopsis "Single-Source Capture-Recapture Models")
     (description
@@ -33093,9 +33094,9 @@ one-inflated Poisson, Geometric and Negative Binomial regression as well as
 Zelterman's and Chao's regression.  Package includes point and interval
 estimators for the population size with variances estimated using analytical or
 bootstrap method.  Details can be found in: van der Heijden et all. (2003)
-<doi:10.1191/1471082X03st057oa>, B{\\\"o}hning and van der Heijden (2019)
-<doi:10.1214/18-AOAS1232>, B{\\\"o}hning et al. (2020) Capture-Recapture Methods
-for the Social and Medical Sciences or B{\\\"o}hning and Friedl (2021)
+<doi:10.1191/1471082X03st057oa>, BÃ¶hning and van der Heijden (2019)
+<doi:10.1214/18-AOAS1232>, BÃ¶hning et al. (2020) Capture-Recapture Methods for
+the Social and Medical Sciences or BÃ¶hning and Friedl (2021)
 <doi:10.1007/s10260-021-00556-8>.")
     (license license:expat)))
 
@@ -41665,13 +41666,13 @@ al. (2001) <doi:10.1111/j.1365-2745.2001.00615.x>.")
 (define-public r-shapviz
   (package
     (name "r-shapviz")
-    (version "0.9.1")
+    (version "0.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shapviz" version))
        (sha256
-        (base32 "1lbkfdfflm18mcmsq95ylihmmy3dypvh1w6c10xglhc4g1434sva"))))
+        (base32 "1wb61zmwx9nzxgn8y71h1j66xd3q78l31x9qd395d4m6g4xiry0c"))))
     (properties `((upstream-name . "shapviz")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -41689,12 +41690,12 @@ al. (2001) <doi:10.1111/j.1365-2745.2001.00615.x>.")
 waterfall plots, force plots, various types of importance plots, dependence
 plots, and interaction plots.  These plots act on a shapviz object created from
 a matrix of SHAP values and a corresponding feature dataset.  Wrappers for the R
-packages xgboost', lightgbm', fastshap', shapr', h2o', treeshap', DALEX', and
-kernelshap are added for convenience.  By separating visualization and
-computation, it is possible to display factor variables in graphs, even if the
-SHAP values are calculated by a model that requires numerical features.  The
-plots are inspired by those provided by the shap package in Python, but there is
-no dependency on it.")
+packages xgboost', lightgbm', fastshap', shapr', h2o', treeshap', DALEX',
+kernelshap', and permshap are added for convenience.  By separating
+visualization and computation, it is possible to display factor variables in
+graphs, even if the SHAP values are calculated by a model that requires
+numerical features.  The plots are inspired by those provided by the shap
+package in Python, but there is no dependency on it.")
     (license license:gpl2+)))
 
 (define-public r-shapr
@@ -45672,13 +45673,13 @@ different omics expressions for different platforms.")
 (define-public r-semmcci
   (package
     (name "r-semmcci")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "semmcci" version))
        (sha256
-        (base32 "18r41p4x73zpmsjc5j92wj9pdcji7y7p0gvqs7g7m8ndi0yi98kz"))))
+        (base32 "18q67mynvms3gxhsm5r0ypb06s059yy5qn1ygnll1qzqcd94wyx2"))))
     (properties `((upstream-name . "semmcci")))
     (build-system r-build-system)
     (propagated-inputs (list r-mice r-lavaan))

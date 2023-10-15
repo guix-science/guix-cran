@@ -24653,13 +24653,13 @@ in: <http://forsys.sefs.uw.edu/fusion/fusionlatest.html>).")
 (define-public r-rfssa
   (package
     (name "r-rfssa")
-    (version "2.1.0")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rfssa" version))
        (sha256
-        (base32 "0ww4s5vhqhdw9rr8maqgzwx6kvj196z339maxd3xx29qxgp6j1ml"))))
+        (base32 "0iysbxrzbafs5vmc42ajki17ypx92zmvpna1igdl4lnxjh6mrbwj"))))
     (properties `((upstream-name . "Rfssa")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -24669,11 +24669,12 @@ in: <http://forsys.sefs.uw.edu/fusion/fusionlatest.html>).")
                              r-rcppeigen
                              r-rcpparmadillo
                              r-rcpp
+                             r-rainbow
                              r-plotly
                              r-markdown
                              r-lattice
-                             r-httr
                              r-ggplot2
+                             r-ftsa
                              r-fda
                              r-dplyr))
     (home-page "https://github.com/haghbinh/Rfssa")
@@ -24681,7 +24682,7 @@ in: <http://forsys.sefs.uw.edu/fusion/fusionlatest.html>).")
     (description
      "This package provides methods and tools for implementing functional singular
 spectrum analysis and related techniques.")
-    (license license:gpl2+)))
+    (license license:gpl3)))
 
 (define-public r-rfsa
   (package
@@ -45010,13 +45011,13 @@ implemented methods.")
 (define-public r-rags2ridges
   (package
     (name "r-rags2ridges")
-    (version "2.2.6")
+    (version "2.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rags2ridges" version))
        (sha256
-        (base32 "1bidnjykiqiz83x98gk2y3sxsskk9fiap6grr7fb7a7h9mjhq0lw"))))
+        (base32 "09dp04y8wl7cws5y94k9j2rlrmm2ci1lk8y77cb17lxr0i1yv6gb"))))
     (properties `((upstream-name . "rags2ridges")))
     (build-system r-build-system)
     (propagated-inputs (list r-snowfall

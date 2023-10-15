@@ -18649,16 +18649,21 @@ plots, information plots, and comparison plots for examining parameter drift.")
 (define-public r-pliman
   (package
     (name "r-pliman")
-    (version "2.0.1")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pliman" version))
        (sha256
-        (base32 "12kfj7vqrav2gkij1brm8lzsbgivmxflxvjigb5kp5c00spax8y7"))))
+        (base32 "0pgv7ayb78k481yd071hjvympikhdw6q8wqb9d5fazp9avmjlfz7"))))
     (properties `((upstream-name . "pliman")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-raster r-foreach
+    (propagated-inputs (list r-terra
+                             r-stars
+                             r-sf
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-foreach
                              r-doparallel))
     (home-page "https://github.com/TiagoOlivoto/pliman")
     (synopsis "Tools for Plant Image Analysis")
