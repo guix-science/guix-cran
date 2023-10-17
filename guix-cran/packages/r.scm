@@ -95,13 +95,13 @@ decoding.  The method is fully described in Druet and Gautier (2017)
 (define-public r-rzmq
   (package
     (name "r-rzmq")
-    (version "0.9.10")
+    (version "0.9.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rzmq" version))
        (sha256
-        (base32 "1bw32wbcmsw79im0lkxj70lls4g7savgznrvw1w6nq08461qdm3p"))))
+        (base32 "16h0x54fq54dl5h4nd5qfxd4frmy4zs25ysijxkyiq4vffyaqpri"))))
     (properties `((upstream-name . "rzmq")))
     (build-system r-build-system)
     (inputs (list zlib))
@@ -4733,13 +4733,13 @@ summarizing model outputs.  rsyncrosim requires @code{SyncroSim} 2.3.5 or higher
 (define-public r-rswipl
   (package
     (name "r-rswipl")
-    (version "9.1.16")
+    (version "9.1.17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rswipl" version))
        (sha256
-        (base32 "1a5sz8z8lyvsf3af8z57ici3zkz0pcv2jqyjxac64rdj8704dgvb"))))
+        (base32 "1933ag3wzch7qlpp2rfbxdqkx4p0h5znq6v5qh4kifh94v72pl13"))))
     (properties `((upstream-name . "rswipl")))
     (build-system r-build-system)
     (inputs (list zstd
@@ -4752,7 +4752,7 @@ summarizing model outputs.  rsyncrosim requires @code{SyncroSim} 2.3.5 or higher
                   expat
                   cmake))
     (propagated-inputs (list r-rcpp))
-    (native-inputs (list pkg-config esbuild))
+    (native-inputs (list esbuild))
     (home-page "https://github.com/mgondan/rswipl")
     (synopsis "Embed 'SWI'-'Prolog'")
     (description
@@ -6281,28 +6281,6 @@ population mean and variance on samples drawn by r-size biased sampling schemes.
 V1.4 (<https://api.omniture.com/admin/1.4/rest/>).")
     (license license:expat)))
 
-(define-public r-rsip
-  (package
-    (name "r-rsip")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RSIP" version))
-       (sha256
-        (base32 "1yddqbnz0av69l53y83m7rnznc42qz66fc3qrispzaajs7p9n8d7"))))
-    (properties `((upstream-name . "RSIP")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sp r-rgdal r-rastervis r-raster r-ncdf4))
-    (home-page "https://cran.r-project.org/package=RSIP")
-    (synopsis "Remote Sensing and Image Processing")
-    (description
-     "Makes operations with raster images, such as map viewing in time series, export
-values in time series for specific, total or limited within a polygon locations.
- Makes data processing of remote sensing of climatic variables distributed in
-the space (maps 2D) and the time (time series).")
-    (license license:gpl2)))
-
 (define-public r-rsinaica
   (package
     (name "r-rsinaica")
@@ -7367,12 +7345,7 @@ performance.")
         (base32 "1hp0v2vkj9ixiv541d53kyl0ph3jsdc5w98r81gv5ck5ixrp6bxp"))))
     (properties `((upstream-name . "RSAlgaeR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-plyr
-                             r-mblm
-                             r-lubridate
-                             r-hydrogof
-                             r-ggplot2
-                             r-cvtools))
+    (propagated-inputs (list r-plyr r-mblm r-lubridate r-ggplot2 r-cvtools))
     (home-page "http://github.com/cahhansen/RSAlgae")
     (synopsis
      "Builds Empirical Remote Sensing Models of Water Quality Variables and Analyzes Long-Term Trends")
@@ -7386,13 +7359,13 @@ chl-a) and climate conditions using the Theil-Sen estimator.")
 (define-public r-rsagacmd
   (package
     (name "r-rsagacmd")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rsagacmd" version))
        (sha256
-        (base32 "0625wrxd5x226gag7d9v7clr2890bmdcvknivlxc9ahm1jcfagr5"))))
+        (base32 "08xj6dinqnr9ir0ljz0ybyh3wqsbw5hdp27xfvcmc8vi48gf4rlj"))))
     (properties `((upstream-name . "Rsagacmd")))
     (build-system r-build-system)
     (inputs (list))
@@ -7428,7 +7401,7 @@ statement.  SAGA-GIS is available under a GPLv2 / LGPLv2 licence from
 <https://sourceforge.net/projects/saga-gis/> including Windows x86/x64 and
 @code{macOS} binaries.  SAGA-GIS is also included in Debian/Ubuntu default
 software repositories.  Rsagacmd has currently been tested on SAGA-GIS versions
-from 2.3.1 to 9.0.1 on Windows, Linux and @code{macOS}.")
+from 2.3.1 to 9.2 on Windows, Linux and @code{macOS}.")
     (license license:gpl3)))
 
 (define-public r-rsaga
@@ -12243,13 +12216,13 @@ time-series data.")
 (define-public r-rolap
   (package
     (name "r-rolap")
-    (version "2.2.0")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rolap" version))
        (sha256
-        (base32 "0mh6gdkyy1x1jdqlbydcvf8i4hwzjvy34h14lxi8km953flabm0b"))))
+        (base32 "0n45zp3ni593qssyaxvpj2wijh6bd0naqkpj1x2fabjibka346y9"))))
     (properties `((upstream-name . "rolap")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -12777,13 +12750,13 @@ rogue detection (Smith 2022) <doi:10.1093/sysbio/syab099>, and an interface to
 (define-public r-roger
   (package
     (name "r-roger")
-    (version "1.4-0")
+    (version "1.5-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "roger" version))
        (sha256
-        (base32 "15gglqh50m69547jah7lrrlrwv6cdclkxsqlw4999mjdapwqq9f0"))))
+        (base32 "1b19wkxiw447w16239ssxv52xlxi923mhy5fnwh0v11v2nqnp9ni"))))
     (properties `((upstream-name . "roger")))
     (build-system r-build-system)
     (inputs (list))
@@ -19068,36 +19041,6 @@ jobs, share updates with their network, and create group discussions.  For more
 information about using the API please visit <https://developer.linkedin.com/>.")
     (license license:gpl2)))
 
-(define-public r-rlidar
-  (package
-    (name "r-rlidar")
-    (version "0.1.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rLiDAR" version))
-       (sha256
-        (base32 "0sw79zr7hdwprlwijlg6qmn7pmpcnhxfr7ycdz09058c0kd815h8"))))
-    (properties `((upstream-name . "rLiDAR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-spatstat-geom
-                             r-sp
-                             r-rgl
-                             r-rgeos
-                             r-raster
-                             r-plyr
-                             r-geometry
-                             r-deldir
-                             r-bitops))
-    (home-page "https://github.com/carlos-alberto-silva/rLiDAR")
-    (synopsis "LiDAR Data Processing and Visualization")
-    (description
-     "Set of tools for reading, processing and visualizing small set of @code{LiDAR}
-(Light Detection and Ranging) data for forest inventory applications.  More
-details were published in Silva et al. (2016)
-<doi:10.1080/07038992.2016.1196582>.")
-    (license license:gpl2+)))
-
 (define-public r-rlibeemd
   (package
     (name "r-rlibeemd")
@@ -20391,6 +20334,41 @@ flow computations (e.g. flood wave routing) as described in Koohafkan MC, Younis
 BA (2015). \"Open-channel computation with R.\" The R Journal, 7(2), 249â262.
 <doi: 10.32614/RJ-2015-034>.")
     (license license:gpl3+)))
+
+(define-public r-rivnet
+  (package
+    (name "r-rivnet")
+    (version "0.3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rivnet" version))
+       (sha256
+        (base32 "020167ssaw7a5fsf1snydrf1n0cr2ivqspjywzv8xc14mlhvrb8c"))))
+    (properties `((upstream-name . "rivnet")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-traudem
+                             r-terra
+                             r-spam
+                             r-sf
+                             r-rcpp
+                             r-raster
+                             r-ocnet
+                             r-fields
+                             r-elevatr
+                             r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://lucarraro.github.io/rivnet/")
+    (synopsis "Extract and Analyze Rivers from Elevation Data")
+    (description
+     "Seamless extraction of river networks from digital elevation models data.  The
+package allows analysis of digital elevation models that can be either
+externally provided or downloaded from open source repositories (thus
+interfacing with the elevatr package).  Extraction is performed via the D8 flow
+direction algorithm of @code{TauDEM} (Terrain Analysis Using Digital Elevation
+Models), thus interfacing with the traudem package.  Resulting river networks
+are compatible with functions from the OCNet package.")
+    (license license:expat)))
 
 (define-public r-rivivc
   (package
@@ -23200,30 +23178,6 @@ utilities are included for formatting the input data.")
 open-source parallel database.  This is an extension of the RPostgres package
 <https://github.com/r-dbi/RPostgres>.")
     (license license:gpl2)))
-
-(define-public r-rgrass7
-  (package
-    (name "r-rgrass7")
-    (version "0.2-13")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rgrass7" version))
-       (sha256
-        (base32 "03h62c8bv0c6xhlkscq00gaq0a3i43cpbj7d93803fq5y5x8vvxr"))))
-    (properties `((upstream-name . "rgrass7")))
-    (build-system r-build-system)
-    (inputs (list grass))
-    (propagated-inputs (list r-xml))
-    (home-page "https://grass.osgeo.org/")
-    (synopsis
-     "Deprecated Interface Between GRASS Geographical Information System and R")
-    (description
-     "This package will be archived in October 2023 together with rgdal'.  Deprecated
-interpreted interface between GRASS geographical information system and R.
-Transition to new package rgrass
-<https://grass.osgeo.org/news/2023_06_05_retirement_of_rgrass7/>.")
-    (license license:gpl2+)))
 
 (define-public r-rgrass
   (package
@@ -30571,13 +30525,13 @@ expectation-maximization algorithm.")
 (define-public r-regcombin
   (package
     (name "r-regcombin")
-    (version "0.3.1")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RegCombin" version))
        (sha256
-        (base32 "0xvxdr1bj2yv8hy7makv14pksiyy6pc7qkh6668zbngviiqrvm3z"))))
+        (base32 "14vb46d8m5w5vik7kfhsj97yil3sc6qnmyp3c6myadlsw9k3x4lj"))))
     (properties `((upstream-name . "RegCombin")))
     (build-system r-build-system)
     (propagated-inputs (list r-snowfall
@@ -37697,13 +37651,13 @@ Factiva', @code{LexisNexis}', Europresse and Alceste files.")
 (define-public r-rcmdrplugin-teachstat
   (package
     (name "r-rcmdrplugin-teachstat")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcmdrPlugin.TeachStat" version))
        (sha256
-        (base32 "1bl024sh7sg4v77ivx195bx0j2zw7gxd2a9qzc35898xxgfgas8q"))))
+        (base32 "04b933icpf6lzzbd1z0p0qzy0w2d4p9rv6zs16gx5l89vagvg4wh"))))
     (properties `((upstream-name . "RcmdrPlugin.TeachStat")))
     (build-system r-build-system)
     (propagated-inputs (list r-tseries
@@ -38858,48 +38812,6 @@ random parameters for cross-sectional and longitudinal data as presented in
 Sarrias (2016) <doi:10.18637/jss.v074.i10>.")
     (license license:gpl2+)))
 
-(define-public r-rchivaltag
-  (package
-    (name "r-rchivaltag")
-    (version "0.1.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RchivalTag" version))
-       (sha256
-        (base32 "175d2ihf0f9hsp6v0hirngw5lnsw9fc7lwbj1ivlb4bjcwaj19m6"))))
-    (properties `((upstream-name . "RchivalTag")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xts
-                             r-suntools
-                             r-stringr
-                             r-sp
-                             r-shiny
-                             r-sf
-                             r-readr
-                             r-raster
-                             r-pracma
-                             r-plyr
-                             r-plotly
-                             r-oceanmap
-                             r-ncdf4
-                             r-maps
-                             r-lubridate
-                             r-leaflet-extras2
-                             r-leaflet
-                             r-htmlwidgets
-                             r-ggplot2
-                             r-ggedit
-                             r-dygraphs
-                             r-cleangeo))
-    (home-page "https://cran.r-project.org/package=RchivalTag")
-    (synopsis
-     "Analyzing and Interactive Visualization of Archival Tagging Data")
-    (description
-     "This package provides a set of functions to generate, access and analyze
-standard data products from archival tagging data.")
-    (license license:gpl3+)))
-
 (define-public r-rchest
   (package
     (name "r-rchest")
@@ -39526,29 +39438,6 @@ and continuous treatment settings.  A description of the methods is given in Liu
 pattern detection, classification, and regression applications in the feature
 space as proposed by Lubba et al. (2019) <doi:10.1007/s10618-019-00647-x>.")
     (license license:gpl3)))
-
-(define-public r-rcat
-  (package
-    (name "r-rcat")
-    (version "0.1.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rCAT" version))
-       (sha256
-        (base32 "09jyjjbhpm44wrism3zgg56m01yimlcm3xks8g0cq36lsrclcigp"))))
-    (properties `((upstream-name . "rCAT")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sp r-rgdal r-pracma))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=rCAT")
-    (synopsis "Conservation Assessment Tools")
-    (description
-     "This package provides a set of tools and functions to help with species
-conservation assessments (Red List threat assessments).  Includes Extent of
-occurrence, Area of Occupancy, Minimum Enclosing Rectangle, a geographic
-Projection Wizard and Species batch processing.")
-    (license license:expat)))
 
 (define-public r-rcartocolor
   (package
@@ -43456,47 +43345,6 @@ Users can also list all the palette choices.  And last but not least, users can
 see the photo that inspired a particular palette.")
     (license license:gpl2)))
 
-(define-public r-rangemodelmetadata
-  (package
-    (name "r-rangemodelmetadata")
-    (version "0.1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rangeModelMetadata" version))
-       (sha256
-        (base32 "102z7ysbw0i1mbnwg0v3h0i094ksw91q84a53qyxndq4m6f557aj"))))
-    (properties `((upstream-name . "rangeModelMetadata")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-spthin
-                             r-spocc
-                             r-spatstat
-                             r-sp
-                             r-shiny
-                             r-rgeos
-                             r-rgdal
-                             r-rgbif
-                             r-raster
-                             r-mass
-                             r-jsonlite
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=rangeModelMetadata")
-    (synopsis
-     "Provides Templates for Metadata Files Associated with Species Range Models")
-    (description
-     "Range Modeling Metadata Standards (RMMS) address three challenges: they (i) are
-designed for convenience to encourage use, (ii) accommodate a wide variety of
-applications, and (iii) are extensible to allow the community of range modelers
-to steer it as needed.  RMMS are based on a data dictionary that specifies a
-hierarchical structure to catalog different aspects of the range modeling
-process.  The dictionary balances a constrained, minimalist vocabulary to
-improve standardization with flexibility for users to provide their own values.
-Merow et al. (2019) <DOI:10.1111/geb.12993> describe the standards in more
-detail.  Note that users who prefer to use the R package ecospat can obtain it
-from <https://github.com/ecospat/ecospat>.")
-    (license license:gpl3+)))
-
 (define-public r-rangemapper
   (package
     (name "r-rangemapper")
@@ -45403,13 +45251,13 @@ functionality in radiant.data'.")
 (define-public r-radiant-model
   (package
     (name "r-radiant-model")
-    (version "1.6.0")
+    (version "1.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "radiant.model" version))
        (sha256
-        (base32 "07vrdf9jdf7yzl9bnyd72fv4xvlixs50s65jwkd80wzx10mpl0z2"))))
+        (base32 "182w8wj3zh2ynhxscy9d4wrfc3n3yj89569w7102l1rxyrssi755"))))
     (properties `((upstream-name . "radiant.model")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml

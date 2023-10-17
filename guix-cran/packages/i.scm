@@ -1986,30 +1986,6 @@ binary response variables and partially ordered covariates.  See Henzi, Ziegel,
 Gneiting (2020) <@code{arXiv:1909.03725>}.")
     (license license:gpl2+)))
 
-(define-public r-isocorr
-  (package
-    (name "r-isocorr")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "IsoCorr" version))
-       (sha256
-        (base32 "0rhbclbpfd9d0dawbwwprlzx2j9k59gsmrb11yabiv5305b7vpx8"))))
-    (properties `((upstream-name . "IsoCorr")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=IsoCorr")
-    (synopsis
-     "Correcting Drift and Carry-over in Continuous Isotopic Measurements")
-    (description
-     "This package provides a series of functions that allow an easy and fast
-correction for drift and carry-over in continuous isotopic measurements.  This
-implementation provides queries allowing users to perform the implemented
-corrections according to their needs.  These functions further enable the
-processing of large datasets and can provides apt visualizations of the
-corrections performed.")
-    (license license:artistic2.0)))
-
 (define-public r-isocor
   (package
     (name "r-isocor")
@@ -2659,37 +2635,6 @@ length ASCII character strings, with most fields optional.  Included are tools
 for parsing entire files, or individual lines of data.")
     (license license:expat)))
 
-(define-public r-isdm
-  (package
-    (name "r-isdm")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "iSDM" version))
-       (sha256
-        (base32 "1hzs187mwv3k2wx6dpvkizjhkcx63mznd06wiw6047lf5jrlif0a"))))
-    (properties `((upstream-name . "iSDM")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-virtualspecies
-                             r-sp
-                             r-rgl
-                             r-rgdal
-                             r-raster
-                             r-pdist
-                             r-mass
-                             r-maptools
-                             r-geosphere
-                             r-geometry
-                             r-colorramps
-                             r-ade4))
-    (home-page "https://cran.r-project.org/package=iSDM")
-    (synopsis "Invasive Species Distribution Modelling")
-    (description
-     "This package provides functions for predicting and mapping potential and
-realized distributions of invasive species within the invaded range.")
-    (license license:gpl3)))
-
 (define-public r-isdals
   (package
     (name "r-isdals")
@@ -3046,16 +2991,16 @@ Interface.")
 (define-public r-irtest
   (package
     (name "r-irtest")
-    (version "1.11.0")
+    (version "1.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IRTest" version))
        (sha256
-        (base32 "0wy0ai2mxpsag7psnzdicv7h299x8g00zkys7jr8h0kqbsx1llyz"))))
+        (base32 "1hljw4b73hq1998h9b008nxyai3py9da8j82c8paiq90sp6ahs26"))))
     (properties `((upstream-name . "IRTest")))
     (build-system r-build-system)
-    (propagated-inputs (list r-ggplot2 r-dcurver r-betafunctions))
+    (propagated-inputs (list r-usethis r-ggplot2 r-dcurver r-betafunctions))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/SeewooLi/IRTest")
     (synopsis
@@ -3064,11 +3009,10 @@ Interface.")
      "Item response theory (IRT) parameter estimation using marginal maximum
 likelihood and expectation-maximization algorithm (Bock & Aitkin, 1981
 <doi:10.1007/BF02293801>).  Within parameter estimation algorithm, several
-methods for latent distribution estimation are available (Li, 2022
-<http://www.riss.kr/link?id=T16374105>).  Reflecting some features of the true
-latent distribution, these latent distribution estimation methods can possibly
-enhance the estimation accuracy and free the normality assumption on the latent
-distribution.")
+methods for latent distribution estimation are available.  Reflecting some
+features of the true latent distribution, these latent distribution estimation
+methods can possibly enhance the estimation accuracy and free the normality
+assumption on the latent distribution.")
     (license license:gpl3+)))
 
 (define-public r-irtdemo
@@ -7075,32 +7019,6 @@ following research: Eckardt and Mateu (2018)
 <doi:10.1080/10618600.2017.1391695>.  Eckardt and Mateu (2021)
 <doi:10.1007/s11749-020-00720-4>.")
     (license license:gpl3)))
-
-(define-public r-intensity-analysis
-  (package
-    (name "r-intensity-analysis")
-    (version "0.1.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "intensity.analysis" version))
-       (sha256
-        (base32 "1ydmn7njqk6i2667zaha8mvfndss4im39czadg1f3z6sndp2lsji"))))
-    (properties `((upstream-name . "intensity.analysis")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rgdal r-reshape2 r-raster r-ggplot2 r-differ))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=intensity.analysis")
-    (synopsis
-     "Intensity of Change for Comparing Categorical Maps from Sequential Intervals")
-    (description
-     "Calculate metrics of change intensity for category, transition and interval
-levels in categorical maps from sequential intervals.  For more information
-please consult: Aldwaik,Safaa Zakaria and Robert Gilmore Pontius Jr. (2012).
-\"Intensity analysis to unify measurements of size and stationarity of land
-changes by interval, category, and transition\".  Landscape and Urban Planning.
-106, 103-114. <doi:10.1016/j.landurbplan.2012.02.010>.")
-    (license license:gpl2+)))
 
 (define-public r-intensegrid
   (package
@@ -14655,29 +14573,6 @@ grids can be calculated.  Additional functions are provided that allow plotting
 of the grids and associated data, the interaction of the grids with other raster
 and vector objects, and treating the grids as a graphs.")
     (license license:gpl3)))
-
-(define-public r-iconr
-  (package
-    (name "r-iconr")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "iconr" version))
-       (sha256
-        (base32 "17q7zj92yrj49slmrpwkxkjd0imrl9ildms9zj8qx7yc7dcv4c1s"))))
-    (properties `((upstream-name . "iconr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rgdal r-magick r-igraph))
-    (native-inputs (list r-knitr))
-    (home-page "https://zoometh.github.io/iconr/")
-    (synopsis "Graphical and Spatial Analysis for Prehistoric Iconography")
-    (description
-     "Set of formal methods for studying archaeological iconographic datasets
-(rock-art, pottery decoration, stelae, etc.) using network and spatial analysis
-(Alexander 2008 <doi:10.11588/propylaeumdok.00000512>; Huet 2018
-<https://hal.archives-ouvertes.fr/hal-02913656>).")
-    (license license:gpl2)))
 
 (define-public r-icods
   (package

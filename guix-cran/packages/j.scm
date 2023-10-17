@@ -3857,13 +3857,13 @@ Mainly as a programming example for teaching purposes.")
 (define-public r-jacobi
   (package
     (name "r-jacobi")
-    (version "2.3.1")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jacobi" version))
        (sha256
-        (base32 "1l2cmnd2z5a5308d5ri1bviyh8w41x2sg1gi8f79xghxwvf7djbp"))))
+        (base32 "13a7jnfmjk1ssdawipk2gcvmr5bj8bl30miab456nhg89r52nqj5"))))
     (properties `((upstream-name . "jacobi")))
     (build-system r-build-system)
     (propagated-inputs (list r-rvcg r-rgl r-rcpp r-carlson))
@@ -4003,13 +4003,13 @@ estimators.")
 (define-public r-jackalope
   (package
     (name "r-jackalope")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jackalope" version))
        (sha256
-        (base32 "1cslrl2cvcpi2kisb2plkz8c3wfxkbkf816nnyb06k4mv3gy4r5d"))))
+        (base32 "0bdv3hj7zaa3jxg1rshzgg7y93802kr1nfhh0hg1zgawn1hrpyki"))))
     (properties `((upstream-name . "jackalope")))
     (build-system r-build-system)
     (inputs (list zlib))

@@ -1212,7 +1212,6 @@ document, and scores for multiple documents are computed in parallel via
                              r-magrittr
                              r-lubridate
                              r-jsonlite
-                             r-hydrotsm
                              r-httr
                              r-ggplot2
                              r-ggmap
@@ -5078,13 +5077,13 @@ and Aizaki and Fogarty (2023) <doi:10.1016/j.jocm.2022.100394> for the package."
 (define-public r-suppdata
   (package
     (name "r-suppdata")
-    (version "1.1-8")
+    (version "1.1-9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "suppdata" version))
        (sha256
-        (base32 "0npbr1zvn30vh6qccyxld2xzdflh6armj6d807d9qbkjqd81kkyn"))))
+        (base32 "0h8yl68x61r8dwz6jdx0mss9n2d6nxcxhacbmfkjfmxlyb7rsgd6"))))
     (properties `((upstream-name . "suppdata")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-rcrossref r-jsonlite r-httr))
@@ -6852,53 +6851,6 @@ calculation.  Fractional surplus allocation and the Hare quota are available as
 options.")
     (license license:lgpl3)))
 
-(define-public r-stupscales
-  (package
-    (name "r-stupscales")
-    (version "1.0.3.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "stUPscales" version))
-       (sha256
-        (base32 "1jsir7p9gwlmndrryc3rl78ysv6q6p97apwgwv4ykkk2kv7jk8m6"))))
-    (properties `((upstream-name . "stUPscales")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-xts
-                             r-msm
-                             r-moments
-                             r-mar
-                             r-lmom
-                             r-lattice
-                             r-hydrogof
-                             r-ggplot2
-                             r-foreach
-                             r-emistatr
-                             r-doparallel
-                             r-data-table))
-    (home-page "https://cran.r-project.org/package=stUPscales")
-    (synopsis "Spatio-Temporal Uncertainty Propagation Across Multiple Scales")
-    (description
-     "Integrated environmental modelling requires coupling sub-models at different
-spatial and temporal scales, thus accounting for change of support procedures
-(aggregation and disaggregation).  We contribute to state-of-the-art open source
-tools that support uncertainty propagation analysis in temporal and
-spatio-temporal domains.  We implement the tool for uncertainty propagation in
-environmental modelling, with examples in the urban water domain.  The
-functionalities of the class setup and the methods and functions MC.setup,
-MC.sim, MC.analysis, MC.analysis_generic and Agg.t are contained, which are used
-for setting up, running and analysing Monte Carlo uncertainty propagation
-simulations, and for spatio-temporal aggregation.  We also implement
-functionalities to model and predict variables that vary in space and time.
-@code{stUPscales} takes uncertainty characterisation and propagation a step
-further by including temporal and spatio-temporal auto- and cross-correlation,
-resulting in more realistic (spatio-)temporal series of environmental variables.
- Due to its modularity, the package allows the implementation of additional
-methods and functions for spatio-temporal disaggregation of model inputs and
-outputs, when linking models across multiple space-time scales.")
-    (license license:gpl3+)))
-
 (define-public r-studystrap
   (package
     (name "r-studystrap")
@@ -7653,26 +7605,6 @@ Online Analysis) framework (Albert Bifet, Geoff Holmes, Richard Kirkby, Bernhard
 Pfahringer (2010).  MOA: Massive Online Analysis, Journal of Machine Learning
 Research 11: 1601-1604).")
     (license license:gpl3)))
-
-(define-public r-streammetabolism
-  (package
-    (name "r-streammetabolism")
-    (version "1.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "StreamMetabolism" version))
-       (sha256
-        (base32 "1sv30i7armk7jhxg5x9lh0r9qq3xixn1k2h0q89halkh1yraal8a"))))
-    (properties `((upstream-name . "StreamMetabolism")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo r-maptools r-chron))
-    (home-page "https://github.com/ssefick/StreamMetabolism")
-    (synopsis "Calculate Single Station Metabolism from Diurnal Oxygen Curves")
-    (description
-     "I provide functions to calculate Gross Primary Productivity, Net Ecosystem
-Production, and Ecosystem Respiration from single station diurnal Oxygen curves.")
-    (license license:gpl3+)))
 
 (define-public r-streamdepletr
   (package
@@ -9656,32 +9588,6 @@ and logistic regression models.  A function that works through PLINK software
 (Purcell et al.  2007 <DOI:10.1086/519795>, Chang et al.  2015
 <DOI:10.1186/s13742-015-0047-8>) <https://www.cog-genomics.org/plink2> is
 provided.  Covariates can be included in regression model.")
-    (license license:gpl2+)))
-
-(define-public r-stmedianpolish
-  (package
-    (name "r-stmedianpolish")
-    (version "0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "STMedianPolish" version))
-       (sha256
-        (base32 "0jzgcfhm09cccg2nwbvrmnkah1psbnmg26rc2n7lz26n4b20p3l2"))))
-    (properties `((upstream-name . "STMedianPolish")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-spacetime
-                             r-sp
-                             r-reshape2
-                             r-nabor
-                             r-maptools
-                             r-gstat))
-    (home-page "https://github.com/WilliamAMartinez/STMedianPolish")
-    (synopsis "Spatio-Temporal Median Polish")
-    (description
-     "Analyses spatio-temporal data, decomposing data in n-dimensional arrays and
-using the median polish technique.")
     (license license:gpl2+)))
 
 (define-public r-stmcorrviz
@@ -13405,25 +13311,6 @@ improve predictive performance in a variety of settings.  stacks implements a
 grammar for tidymodels'-aligned model stacking.")
     (license license:expat)))
 
-(define-public r-stackoverflow
-  (package
-    (name "r-stackoverflow")
-    (version "0.7.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "stackoverflow" version))
-       (sha256
-        (base32 "0zv8bxzw4pgaa5ra8wsb9p7g8bwffdhc6gqsfrcs61zva7v9izc2"))))
-    (properties `((upstream-name . "stackoverflow")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=stackoverflow")
-    (synopsis "Stack Overflow's Greatest Hits")
-    (description
-     "Helper functions collected from @code{StackOverflow.com}, a question and answer
-site for professional and enthusiast programmers.")
-    (license license:cc-by-sa4.0)))
-
 (define-public r-stacking
   (package
     (name "r-stacking")
@@ -14275,7 +14162,7 @@ hinge loss, squared-hinge loss, and logistic loss.")
         (base32 "0y5n9c9a6kd53ijai18arpsm09jp3v3f31zgg22y0pz6i3y24hm3"))))
     (properties `((upstream-name . "SSNbayes")))
     (build-system r-build-system)
-    (propagated-inputs (list r-ssn r-rstan r-plyr r-dplyr))
+    (propagated-inputs (list r-rstan r-plyr r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/EdgarSantos-Fernandez/SSNbayes")
     (synopsis "Bayesian Spatio-Temporal Analysis in Stream Networks")
@@ -14286,39 +14173,6 @@ spatio-temporal models for stream networks\" <@code{arXiv:2103.03538>}.  In thes
 models, spatial dependence is captured using stream distance and flow
 connectivity, while temporal autocorrelation is modelled using vector
 autoregression methods.")
-    (license license:gpl2)))
-
-(define-public r-ssn
-  (package
-    (name "r-ssn")
-    (version "1.1.17")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SSN" version))
-       (sha256
-        (base32 "10jkpsccp8bm9ksyi6zbzp4p93g88kx68qjky9bkk3bvszfs55ni"))))
-    (properties `((upstream-name . "SSN")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sp
-                             r-rsqlite
-                             r-rgeos
-                             r-rgdal
-                             r-matrix
-                             r-mass
-                             r-maptools
-                             r-lattice
-                             r-igraph
-                             r-bh))
-    (home-page "https://cran.r-project.org/package=SSN")
-    (synopsis "Spatial Modeling on Stream Networks")
-    (description
-     "Spatial statistical modeling and prediction for data on stream networks,
-including models based on in-stream distance (Ver Hoef, J.M. and Peterson, E.E.,
-2010. <DOI:10.1198/jasa.2009.ap08248>.) Models are created using moving average
-constructions.  Spatial linear models, including explanatory variables, can be
-fit with (restricted) maximum likelihood.  Mapping and other graphical functions
-are included.")
     (license license:gpl2)))
 
 (define-public r-ssmsn
@@ -14794,13 +14648,13 @@ analyzes the allele frequency data described by Solberg et al. (2008)
 (define-public r-ssh
   (package
     (name "r-ssh")
-    (version "0.9.0")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ssh" version))
        (sha256
-        (base32 "1m67h0zfr86cmaff5gd5v7dn4cv9xpb20jdmqi03r9qsmsm9j620"))))
+        (base32 "1jb9mvy16zj7g62n1b4j1jfydvs526zn372knm8yy1x1zpljwn6h"))))
     (properties `((upstream-name . "ssh")))
     (build-system r-build-system)
     (inputs (list zlib openssl openssh))
@@ -16808,13 +16662,13 @@ Shiny apps, do not hesitate to try this package.")
 (define-public r-sps
   (package
     (name "r-sps")
-    (version "0.5.2")
+    (version "0.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sps" version))
        (sha256
-        (base32 "1j3dlsslfn9vicx2d681i9j374ylkhc4vl54ddbxkn32gvv4qvyh"))))
+        (base32 "1946yjbvpamg9sc62avcj5c9ghih0xckrv8xna5149i3iwrn421a"))))
     (properties `((upstream-name . "sps")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -22231,36 +22085,6 @@ well as the posterior predictive distributions at different spatial locations.
 Methods for fitting this class of models are described in Chen, Ramezan, and
 Lysy (2021) <@code{arXiv:2110.07051>}.")
     (license license:gpl3)))
-
-(define-public r-spatialfusion
-  (package
-    (name "r-spatialfusion")
-    (version "0.6-6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "spatialfusion" version))
-       (sha256
-        (base32 "14qccp9ca7b7v9w4fj04a99mx6qchfs8588fl16qfdmfbazwnfra"))))
-    (properties `((upstream-name . "spatialfusion")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-spam
-                             r-sp
-                             r-rstan
-                             r-rgeos
-                             r-rcpp
-                             r-fields
-                             r-deldir))
-    (native-inputs (list r-r-rsp))
-    (home-page "https://cran.r-project.org/package=spatialfusion")
-    (synopsis
-     "Multivariate Analysis of Spatial Data Using a Unifying Spatial Fusion Framework")
-    (description
-     "Multivariate modelling of geostatistical (point), lattice (areal) and point
-pattern data in a unifying spatial fusion framework.  Details are given in Wang
-and Furrer (2021) <doi:10.1016/j.csda.2021.107240>.  Model inference is done
-using either Stan <https://mc-stan.org/> or INLA <https://www.r-inla.org/>.")
-    (license license:gpl3+)))
 
 (define-public r-spatialfdar
   (package
@@ -28636,7 +28460,7 @@ built in C++, and the complementary methods are written in R.")
         (base32 "17zv02f1g86s55g81anhqrxfgy2biamsw606byxwh9kdc5l4vfv6"))))
     (properties `((upstream-name . "smnet")))
     (build-system r-build-system)
-    (propagated-inputs (list r-ssn r-spam r-rsqlite))
+    (propagated-inputs (list r-spam r-rsqlite))
     (home-page "https://github.com/alastairrushworth/smnet/")
     (synopsis "Smoothing for Stream Network Data")
     (description
@@ -32408,7 +32232,6 @@ matching, @code{sitepickR} uses the @code{MatchIt} R package
     (propagated-inputs (list r-solar
                              r-rcolorbrewer
                              r-hyfo
-                             r-hydrogof
                              r-glmulti
                              r-ggpubr
                              r-ggplot2))
@@ -38076,27 +37899,6 @@ resampling-based shrinkage factor estimation based on DFBETA residuals can be
 applied.  Global, parameterwise and joint shrinkage for models fitted by lm(),
 glm(), coxph(), or mfp() is available.")
     (license license:gpl3)))
-
-(define-public r-shp2graph
-  (package
-    (name "r-shp2graph")
-    (version "0-5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "shp2graph" version))
-       (sha256
-        (base32 "1l9mg98hkb0bvr5dzd2p26g8mw5hqjxrym2gmbm10kyapvccfk56"))))
-    (properties `((upstream-name . "shp2graph")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sp r-maptools r-igraph))
-    (home-page "https://cran.r-project.org/package=shp2graph")
-    (synopsis
-     "Convert a SpatialLinesDataFrame Object to an 'igraph'-Class Object")
-    (description
-     "This package provides functions for converting network data from a
-@code{SpatialLinesDataFrame} object to an igraph'-Class object.")
-    (license license:gpl2+)))
 
 (define-public r-showimage
   (package
@@ -45458,16 +45260,16 @@ associated R code, which provided the base for the development of this package."
 (define-public r-semptools
   (package
     (name "r-semptools")
-    (version "0.2.9.11")
+    (version "0.2.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "semptools" version))
        (sha256
-        (base32 "15bc9xdfff0zcip1g92285xxfbrgvay9m2c9xr7d7c5sxsdj293b"))))
+        (base32 "15rzkavr3njaln9mgn93ypbxw93prskvxw1s0865xqp58mh14k8y"))))
     (properties `((upstream-name . "semptools")))
     (build-system r-build-system)
-    (propagated-inputs (list r-semplot r-rlang r-lavaan r-dplyr))
+    (propagated-inputs (list r-semplot r-rlang r-lavaan))
     (native-inputs (list r-knitr))
     (home-page "https://sfcheung.github.io/semptools/")
     (synopsis "Customizing Structural Equation Modelling Plots")
@@ -47301,57 +47103,6 @@ with the @code{SeerMapper} package.  The data contained in this package is
 derived from U.S. Census data and is in public domain.")
     (license license:gpl2+)))
 
-(define-public r-seermapper
-  (package
-    (name "r-seermapper")
-    (version "1.2.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SeerMapper" version))
-       (sha256
-        (base32 "1sjg0a5mvyvgzwpmbr3avm76cb9a45qdwvic665v4hhhsmf2x8xk"))))
-    (properties `((upstream-name . "SeerMapper")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr
-                             r-sp
-                             r-seermapperwest
-                             r-seermapperregs
-                             r-seermappereast
-                             r-seermapper2010west
-                             r-seermapper2010regs
-                             r-seermapper2010east
-                             r-rgdal
-                             r-rcolorbrewer
-                             r-maptools))
-    (home-page "https://cran.r-project.org/package=SeerMapper")
-    (synopsis
-     "Quick Way to Map U.S. Rates and Data of U.S. States, Counties, Census Tracts, or Seer Registries using 2000 and 2010 U.S. Census Boundaries")
-    (description
-     "This package provides an easy way to map seer registry area rate data on a U.S.
-map.  The U.S. data may be mapped at the state or state/county.  U.S. Seer
-registry data may be mapped at the Seer registry area, Seer Registry area/county
-or Seer Registry area/county/census tract level.  The function uses a calculated
-default categorization breakpoint list for 5 categories, when not breakpoint
-list is provided or the number of categories is specified by the user.  A user
-provided break point list is limited to containing 5 values.  The number of
-calculated categories may be from 3 to 11.  The user provide the p-value for
-each area and request hatching over any areas with a p-value > 0.05.  Other
-types of comparisons can be specified.  If states or state/counties are used,
-the area identifier is the U.S. FIPS codes for states and counties, 2 digits and
-5 digits respectfully.  If the data is for U.S. Seer Registry areas, the Seer
-Registry area identifier used to link the data to the geographical area is a
-Seer Registry area abbreviation.  See documentation for the list of acceptable
-Seer Registry area names and abbreviations.  The state boundaries are overlaid
-all rate maps.  The package contains the boundary data for state, county, Seer
-Registry areas, and census tracts for counties within a Seer registry area.  The
-package support boundary data from the 2000 and 2010 U.S. Census.  The
-@code{SeerMapper} package version contains the U.S. Census 2000 and 2010
-boundary data for the regional, state, Seer Registry, and county levels.  Six
-supplement packages contain the census tract boundary data.  Copyrighted 2014,
-2015, 2016, 2017, 2018 and 2019 by Pearson and Pickle.")
-    (license license:gpl2+)))
-
 (define-public r-seerabomb
   (package
     (name "r-seerabomb")
@@ -48646,37 +48397,6 @@ SDT was introduced by Deci and Ryan (1985) <doi:10.1007/978-1-4899-2271-7>.  See
 package?SDT for an overview.")
     (license license:gpl2+)))
 
-(define-public r-sdstaf
-  (package
-    (name "r-sdstaf")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "sdStaf" version))
-       (sha256
-        (base32 "0r7lqj30r3f0b18kpahi63zsdizcw2zjf1vvvs04s4cg1djjbcp3"))))
-    (properties `((upstream-name . "sdStaf")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-sp
-                             r-rgeos
-                             r-rgdal
-                             r-rastervis
-                             r-raster
-                             r-ggplot2
-                             r-dplyr
-                             r-dismo))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=sdStaf")
-    (synopsis "Species Distribution and Stability Future Models")
-    (description
-     "This package provides functions for post processing the outcomes of ecological
-niche models.  It further include methods to build stability maps based on
-species distribution models under climate change projections and to reduce
-environmental data.")
-    (license license:gpl2)))
-
 (define-public r-sdpt3r
   (package
     (name "r-sdpt3r")
@@ -49067,11 +48787,9 @@ Araujo, M.B. (2016) <doi:10.1111/ecog.01881>.")
     (propagated-inputs (list r-stars
                              r-sf
                              r-pracma
-                             r-plotkml
                              r-maps
                              r-lubridate
                              r-gridextra
-                             r-ggsn
                              r-ggplot2
                              r-ggmap
                              r-geosphere
@@ -49902,13 +49620,13 @@ animations are activated using the scrollrevealjs library.  See
 (define-public r-scrobbler
   (package
     (name "r-scrobbler")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scrobbler" version))
        (sha256
-        (base32 "14nnqcjrcc5xcdn2swwj0j2jsw5maayd9ba06s6d5i88png2xhv5"))))
+        (base32 "1f8vcx79yzhy2698xgr7a863hqhqad1kx1zc9xy83bigghsjq1py"))))
     (properties `((upstream-name . "scrobbler")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-httr))
@@ -53871,43 +53589,6 @@ Inference and learning in stochastic automata was by Karl-Heinz Zimmermann(2017)
      "Bayesian inference of graphical model structures using spanning trees.")
     (license license:gpl2)))
 
-(define-public r-satscanmapper
-  (package
-    (name "r-satscanmapper")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "satscanMapper" version))
-       (sha256
-        (base32 "12vx1gr2z942wrjn6ks4lq9rb9ycnfg2rnl18scglqjqzlbsn9al"))))
-    (properties `((upstream-name . "satscanMapper")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr r-sp r-seermapper r-rcolorbrewer
-                             r-foreign))
-    (home-page "https://cran.r-project.org/package=satscanMapper")
-    (synopsis "'SaTScan' (TM) Results Mapper")
-    (description
-     "Supports the generation of maps based on the results from @code{SaTScan} (TM)
-cluster analysis.  The package handles mapping of Spatial and Spatial-Time
-analysis using the discrete Poisson, Bernoulli, and exponential models of case
-data generating cluster and location ('GIS') records containing observed,
-expected and observed/expected ratio for U. S. states (and DC), counties or
-census tracts of individual states based on the U. S. FIPS codes for state,
-county and census tracts (locations) using 2000 or 2010 Census areas, FIPS
-codes, and boundary data. @code{satscanMapper} uses the @code{SeerMapper}
-package for the boundary data and mapping of locations.  Not all of the
-@code{SaTScan} (TM) analysis and models generate the observed, expected and
-observed/expected ratio values for the clusters and locations.  The user can map
-the observed/expected ratios for locations (states, counties, or census tracts)
-for each cluster with a p-value less than 0.05 or a user specified p-value.  The
-locations are categorized and colored based on either the cluster's
-Observed/Expected ratio or the locations Observed/Expected ratio.  The place
-names are provided for each census tract using data from NCI', the HUD crossover
-tables (Tract to Zip code) as of December, 2013, the USPS Zip code 5 database
-for 1999, and manual look ups on the USPS.gov web site.")
-    (license license:gpl2+)))
-
 (define-public r-satres
   (package
     (name "r-satres")
@@ -54529,39 +54210,6 @@ remotes::install_github(\"cran/@code{FitARMA}\") if necessary but is no longer
 needed in normal use.")
     (license license:gpl2+)))
 
-(define-public r-sara4r
-  (package
-    (name "r-sara4r")
-    (version "0.0.9")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "sara4r" version))
-       (sha256
-        (base32 "1vfaz4fs0yayf01w0smsnviwhvjz10krfagp4vhy4lmdcs99s00h"))))
-    (properties `((upstream-name . "sara4r")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tcltk2 r-sp r-rgdal r-raster))
-    (native-inputs (list r-knitr))
-    (home-page "http://hydro-geomatic-lab.com/")
-    (synopsis
-     "An R-GUI for Spatial Analysis of Surface Runoff using the NRCS-CN Method")
-    (description
-     "This package provides a Graphical user interface to calculate the
-rainfall-runoff relation using the Natural Resources Conservation Service -
-Curve Number method (NRCS-CN method) but include modifications by Hawkins et
-al., (2002) about the Initial Abstraction.  This GUI follows the programming
-logic of a previously published software (Hernandez-Guzman et al.,
-2011)<doi:10.1016/j.envsoft.2011.07.006>.  It is a raster-based GIS tool that
-outputs runoff estimates from Land use/land cover and hydrologic soil group
-maps.  This package has already been published in Journal of Hydroinformatics
-(Hernandez-Guzman et al., 2021)<doi:10.2166/hydro.2020.087> but it is under
-constant development at the Institute about Natural Resources Research (INIRENA)
-from the Universidad Michoacana de San Nicolas de Hidalgo and represents a
-collaborative effort between the Hydro-Geomatic Lab (INIRENA) with the
-Environmental Management Lab (CIAD, A.C.).")
-    (license license:gpl3+)))
-
 (define-public r-sar
   (package
     (name "r-sar")
@@ -55177,7 +54825,6 @@ raw data can be downloaded.  See
                              r-lwgeom
                              r-gridextra
                              r-ggplot2
-                             r-geodetector
                              r-dplyr
                              r-caret))
     (native-inputs (list r-knitr))
@@ -56968,6 +56615,29 @@ Model-based estimators involves the HB estimators which include the mean and the
 variation of mean.")
     (license license:gpl3)))
 
+(define-public r-saehb-unit
+  (package
+    (name "r-saehb-unit")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "saeHB.unit" version))
+       (sha256
+        (base32 "0z1p41aa398qgysm3yp7siz38any3z3rjw8hn4hrj9zxx9zn2lcy"))))
+    (properties `((upstream-name . "saeHB.unit")))
+    (build-system r-build-system)
+    (inputs (list jags))
+    (propagated-inputs (list r-rjags r-dplyr r-coda r-cli))
+    (home-page "https://github.com/Alfrzlp/saeHB.unit")
+    (synopsis "Basic Unit Level Model using Hierarchical Bayesian Approach")
+    (description
+     "Small area estimation unit level models (Battese-Harter-Fuller model) with a
+Bayesian Hierarchical approach.  See also Rao & Molina (2015,
+ISBN:978-1-118-73578-7) and Battese et al. (1988)
+<doi:10.1080/01621459.1988.10478561>.")
+    (license license:expat)))
+
 (define-public r-saehb-panel-beta
   (package
     (name "r-saehb-panel-beta")
@@ -57177,6 +56847,40 @@ I. Molina (2015, ISBN:9781118735787), J.N.K. Rao and M. Yu (1994)
 <doi:10.2307/3315407>, and R.E. Fay and R.A. Herriot (1979)
 <doi:10.1080/01621459.1979.10482505>.")
     (license license:gpl2)))
+
+(define-public r-sae-prop
+  (package
+    (name "r-sae-prop")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sae.prop" version))
+       (sha256
+        (base32 "19q86xjpvr3s3paspkzsr40zvff60mxxh57xpz0fnxldivynh6ia"))))
+    (properties `((upstream-name . "sae.prop")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-progress r-mass r-magic r-fpc r-corpcor))
+    (home-page "https://github.com/mrijalussholihin/sae.prop")
+    (synopsis
+     "Small Area Estimation using Fay-Herriot Models with Additive Logistic Transformation")
+    (description
+     "This package implements Additive Logistic Transformation (alr) for Small Area
+Estimation under Fay Herriot Model.  Small Area Estimation is used to borrow
+strength from auxiliary variables to improve the effectiveness of a domain
+sample size.  This package uses Empirical Best Linear Unbiased Prediction
+(EBLUP).  The Additive Logistic Transformation (alr) are based on transformation
+by Aitchison J (1986).  The covariance matrix for multivariate application is
+based on covariance matrix used by Esteban M, @code{LombardÃ­a} M,
+LÃ³pez-@code{VizcaÃ­no} E, Morales D, and PÃ©rez A
+<doi:10.1007/s11749-019-00688-w>.  The non-sampled models are modified
+area-level models based on models proposed by Anisa R, Kurnia A, and Indahwati I
+<doi:10.9790/5728-10121519>, with univariate model using model-3, and
+multivariate model using model-1.  The MSE are estimated using Parametric
+Bootstrap approach.  For non-sampled cases, MSE are estimated using modified
+approach proposed by Haris F and Ubaidillah A
+<doi:10.4108/eai.2-8-2019.2290339>.")
+    (license license:gpl3)))
 
 (define-public r-sae
   (package

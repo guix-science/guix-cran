@@ -8285,67 +8285,6 @@ Furthermore, @code{epiworldR} is ideal for simulation studies featuring large
 populations.")
     (license license:expat)))
 
-(define-public r-epitweetr
-  (package
-    (name "r-epitweetr")
-    (version "2.2.13")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "epitweetr" version))
-       (sha256
-        (base32 "0vv4y1c8nfcdv2hmv6vvi5jh6ykrbvna2p2gwpcl9q4j7b4wp9jc"))))
-    (properties `((upstream-name . "epitweetr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xtable
-                             r-xml2
-                             r-tokenizers
-                             r-tidyverse
-                             r-tidytext
-                             r-tibble
-                             r-stringr
-                             r-sp
-                             r-shiny
-                             r-rtweet
-                             r-rnaturalearthdata
-                             r-rmarkdown
-                             r-rlang
-                             r-rgdal
-                             r-readxl
-                             r-processx
-                             r-plyr
-                             r-plotly
-                             r-openxlsx
-                             r-magrittr
-                             r-lifecycle
-                             r-knitr
-                             r-keyring
-                             r-jsonlite
-                             r-janitor
-                             r-httr
-                             r-httpuv
-                             r-htmltools
-                             r-ggplot2
-                             r-future
-                             r-emayili
-                             r-dt
-                             r-dplyr
-                             r-curl
-                             r-crul
-                             r-bit64))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/EU-ECDC/epitweetr")
-    (synopsis "Early Detection of Public Health Threats from 'Twitter' Data")
-    (description
-     "It allows you to automatically monitor trends of tweets by time, place and topic
-aiming at detecting public health threats early through the detection of signals
-(e.g. an unusual increase in the number of tweets).  It was designed to focus on
-infectious diseases, and it can be extended to all hazards or other fields of
-study by modifying the topics and keywords.  More information is available in
-the epitweetr peer-review publication
-(<https://www.eurosurveillance.org/content/10.2807/1560-7917.ES.2022.27.39.2200177>).")
-    (license (license:fsdg-compatible "EUPL"))))
-
 (define-public r-epitrix
   (package
     (name "r-epitrix")
@@ -9720,42 +9659,6 @@ Cox regression model.  Various cross-validation and other modeling schema are
 provided for constructing novel model objects.")
     (license license:gpl2+)))
 
-(define-public r-epcc
-  (package
-    (name "r-epcc")
-    (version "1.4.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "epcc" version))
-       (sha256
-        (base32 "0j4cb17gvwsaacmhvm8qp5chr384kl7gj6089gjrc2hqi6kjr0rx"))))
-    (properties `((upstream-name . "epcc")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sp
-                             r-rlang
-                             r-rgdal
-                             r-readxl
-                             r-raster
-                             r-proto
-                             r-nls2
-                             r-httr
-                             r-ggplot2
-                             r-formattable
-                             r-desolve
-                             r-cowplot))
-    (home-page "https://github.com/Victor-Saldana/epcc")
-    (synopsis "Simulating Populations of Ectotherms under Global Warming")
-    (description
-     "This package provides several functions that allow model and simulate the
-effects of thermal sensitivity and the exposition to different trends in
-environmental temperature on the abundance dynamics of ectotherms populations.
-It allows an easy implementation of the possible consequences of warming at
-global and local scales, constituting a useful tool for understanding the
-extinction risk of populations. (VÃ­ctor @code{SaldaÃ±a-NÃºÃ±ez}, Fernando
-CÃ³rdova-Lepe, & Felipe N. Moreno-GÃ³mez, 2021) <doi:10.5281/zenodo.5034087>.")
-    (license license:gpl3)))
-
 (define-public r-epca
   (package
     (name "r-epca")
@@ -10261,36 +10164,6 @@ about kernel density estimation can be found in J. F. Bithell (1990)
 using kernel density estimation can be found in J. F. Bithell (1991)
 <doi:10.1002/sim.4780101112>.")
     (license license:asl2.0)))
-
-(define-public r-envexpind
-  (package
-    (name "r-envexpind")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "EnvExpInd" version))
-       (sha256
-        (base32 "063f3c10a7k9j3f85xilj1s6dd9ky5sw8sbvhzkhg5hg92c9dpns"))))
-    (properties `((upstream-name . "EnvExpInd")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-stringi
-                             r-sp
-                             r-rcurl
-                             r-maptools
-                             r-gstat
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/Spatial-R/EnvExpInd")
-    (synopsis "Environmental Exposure on the Individual Level")
-    (description
-     "This package provides tools for the assessment of the environmental exposure.
-The package provides three methods (nearest monitoring site, inverse distance
-weighted as described in Li Wu (2017) <doi:10.1016/j.envint.2016.11.013>,and
-ordinary kriging) to calculate the environmental exposure (e.g. air pollution)
-on the individual level.")
-    (license license:gpl3)))
 
 (define-public r-enveomics-r
   (package
@@ -11003,7 +10876,6 @@ objects and coordinate reference systems.")
     (propagated-inputs (list r-tidyr
                              r-rlang
                              r-raster
-                             r-rangemodelmetadata
                              r-maxnet
                              r-magrittr
                              r-glmnet
@@ -14843,13 +14715,13 @@ semi-variogram fitting process.")
 (define-public r-eggcounts
   (package
     (name "r-eggcounts")
-    (version "2.3-4")
+    (version "2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eggCounts" version))
        (sha256
-        (base32 "09zp5xvclxjc9w01v2650sm43dm2maig71f28mqhq2zmrjwm62hy"))))
+        (base32 "089psh98w8kcy52h8vv3z8n0sigp46far0a0w4wfsyv2ijzc2l2p"))))
     (properties `((upstream-name . "eggCounts")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -15754,46 +15626,6 @@ trials.  This package can be used to evaluate other intervention designs using
 Frequentist and Bayesian multilevel models.")
     (license license:agpl3+)))
 
-(define-public r-eechidna
-  (package
-    (name "r-eechidna")
-    (version "1.4.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "eechidna" version))
-       (sha256
-        (base32 "1p8vj371i7zglw7898akzj4hd5j7zk35is91jylxalldjab88v9c"))))
-    (properties `((upstream-name . "eechidna")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-stringi
-                             r-sp
-                             r-shiny
-                             r-rgeos
-                             r-rgdal
-                             r-purrr
-                             r-plotly
-                             r-magrittr
-                             r-ggthemes
-                             r-ggplot2
-                             r-dplyr
-                             r-colourpicker))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/jforbes14/eechidna/")
-    (synopsis
-     "Exploring Election and Census Highly Informative Data Nationally for Australia")
-    (description
-     "Data from the seven Australian Federal Elections (House of Representatives)
-between 2001 and 2019, and from the four Australian Censuses over the same
-period.  Includes tools for visualizing and analysing the data, as well as
-imputing Census data for years in which a Census does not occur.  This package
-incorporates data that is copyright Commonwealth of Australia (Australian
-Electoral Commission and Australian Bureau of Statistics) 2019.")
-    (license license:gpl2+)))
-
 (define-public r-eeaaq
   (package
     (name "r-eeaaq")
@@ -16323,6 +16155,43 @@ feasibility checks and more.  Data can be tested against the rules and erroneous
 fields can be found based on Fellegi and Holt's generalized principle.  Rules
 dependencies can be visualized with using the igraph package.")
     (license license:gpl3)))
+
+(define-public r-edith
+  (package
+    (name "r-edith")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "eDITH" version))
+       (sha256
+        (base32 "04xq7s46qf4gmrj0gza021ra5yqdx9mjncp8p0qrbnalwj6xqm3y"))))
+    (properties `((upstream-name . "eDITH")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra
+                             r-rivnet
+                             r-rcpp
+                             r-ocnet
+                             r-laplacesdemon
+                             r-fields
+                             r-dharma
+                             r-bayesiantools))
+    (native-inputs (list r-knitr))
+    (home-page "https://lucarraro.github.io/eDITH/")
+    (synopsis "Model Transport of Environmental DNA in River Networks")
+    (description
+     "Runs the @code{eDITH} (environmental DNA Integrating Transport and Hydrology)
+model, which implements a mass balance of environmental DNA (@code{eDNA})
+transport at a river network scale coupled with a species distribution model to
+obtain maps of species distribution. @code{eDITH} can work with both @code{eDNA}
+concentration (e.g., obtained via quantitative polymerase chain reaction) or
+metabarcoding (read count) data.  Parameter estimation can be performed via
+Bayesian techniques (via the @code{BayesianTools} package) or optimization
+algorithms.  An interface to the DHARMa package for posterior predictive checks
+is provided.  See Carraro et al. (2018) <doi:10.1073/pnas.1813843115> and
+Carraro et al. (2020) <doi:10.1038/s41467-020-17337-8> for methodological
+details.")
+    (license license:expat)))
 
 (define-public r-editdata
   (package
@@ -17457,55 +17326,6 @@ multivariate linear models.  Datasets mentioned in the package are included here
 text with solutions to exercises.")
     (license license:lgpl2.1+)))
 
-(define-public r-ecospat
-  (package
-    (name "r-ecospat")
-    (version "3.5.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ecospat" version))
-       (sha256
-        (base32 "15vqwpglhg94f29la7aw29755nn1qbdspk7a1i3clbdncf25r1qb"))))
-    (properties `((upstream-name . "ecospat")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vegan
-                             r-terra
-                             r-sp
-                             r-raster
-                             r-randomforest
-                             r-presenceabsence
-                             r-poibin
-                             r-nabor
-                             r-matrixstats
-                             r-maptools
-                             r-ks
-                             r-hmisc
-                             r-gtools
-                             r-gbm
-                             r-foreach
-                             r-ecodist
-                             r-dismo
-                             r-classint
-                             r-biomod2
-                             r-ape
-                             r-adehabitatma
-                             r-adehabitathr
-                             r-ade4))
-    (native-inputs (list r-knitr))
-    (home-page
-     "http://www.unil.ch/ecospat/home/menuguid/ecospat-resources/tools.html")
-    (synopsis "Spatial Ecology Miscellaneous Methods")
-    (description
-     "Collection of R functions and data sets for the support of spatial ecology
-analyses with a focus on pre, core and post modelling analyses of species
-distribution, niche quantification and community assembly.  Written by current
-and former members and collaborators of the ecospat group of Antoine Guisan,
-Department of Ecology and Evolution (DEE) and Institute of Earth Surface
-Dynamics (IDYST), University of Lausanne, Switzerland.  Read Di Cola et al.
-(2016) <doi:10.1111/ecog.02671> for details.")
-    (license (list license:gpl2+ license:gpl3+))))
-
 (define-public r-ecospace
   (package
     (name "r-ecospace")
@@ -18635,13 +18455,13 @@ clusters using echelon scan method proposed by Kurihara (2003)
 (define-public r-echarty
   (package
     (name "r-echarty")
-    (version "1.6.1")
+    (version "1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "echarty" version))
        (sha256
-        (base32 "1xqphjdvs5xyr9sr7bf1ywmrdqmn8fkki7kszikf0834yc4kmrd9"))))
+        (base32 "1q217d2h4a6s9vw9q4y9sd69ffh40wzad7cx7gb10ny4cg080n6x"))))
     (properties `((upstream-name . "echarty")))
     (build-system r-build-system)
     (propagated-inputs (list r-htmlwidgets r-dplyr r-data-tree))

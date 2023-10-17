@@ -1269,6 +1269,29 @@ the null interval), and a test of the global null based on the number of
 rejections.")
     (license license:gpl2)))
 
+(define-public r-nregression
+  (package
+    (name "r-nregression")
+    (version "0.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nRegression" version))
+       (sha256
+        (base32 "04w1fz0cc1bxm8mqnp7wyqh1wbn5cn8k6wpga4ikh3vn666rlpkw"))))
+    (properties `((upstream-name . "nRegression")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-simitation r-data-table r-covr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=nRegression")
+    (synopsis
+     "Simulation-Based Calculations of Sample Size for Linear and Logistic Regression")
+    (description
+     "This package provides a function designed to estimate the minimal sample size
+required to attain a specific statistical power in the context of linear
+regression and logistic regression models through simulations.")
+    (license license:gpl3)))
+
 (define-public r-nrba
   (package
     (name "r-nrba")
@@ -6815,28 +6838,6 @@ nonlinear equality and inequality constraints are allowed.  It accepts the input
 parameters as a constrained matrix.")
     (license license:gpl3)))
 
-(define-public r-nlar
-  (package
-    (name "r-nlar")
-    (version "0.4.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "nlaR" version))
-       (sha256
-        (base32 "11f2ka3fi74bkf0izzc17w2h8v3ngdxhy6m0fjv1wjrbby2cqh8g"))))
-    (properties `((upstream-name . "nlaR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rappdirs))
-    (native-inputs (list r-r-rsp r-knitr))
-    (home-page "https://github.com/jsta/nlaR")
-    (synopsis "Interface to the National Lakes Assessment")
-    (description
-     "Client for programmatic access to the 2007 and 2012 National Lakes Assessment
-database <https://www.epa.gov/national-aquatic-resource-surveys/nla> containing
-data for hundreds of lakes in the lower 48 states of the contiguous US.")
-    (license (list license:gpl2+ license:gpl3+))))
-
 (define-public r-njtr1
   (package
     (name "r-njtr1")
@@ -7475,37 +7476,6 @@ and unbounded knapsack problems; 0-1, bounded and unbounded subset sum problems;
 additive partitioning of natural numbers; and one-dimensional bin-packing
 problem.")
     (license license:gpl2+)))
-
-(define-public r-nightmares
-  (package
-    (name "r-nightmares")
-    (version "0.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "nightmares" version))
-       (sha256
-        (base32 "1dmqrb17ncwazy1nb0zzfy7fq51ah7rz0xmhmmx6d30paaix2vc7"))))
-    (properties `((upstream-name . "nightmares")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sp r-rgdal r-raster))
-    (native-inputs (list r-knitr))
-    (home-page "http://hydro-geomatic-lab.com/")
-    (synopsis "Common Analysis with Remote Sensing Data")
-    (description
-     "This package provides a collection of functions used in remote sensing analysis
-(e.g., conversion from digital numbers to radiance, reflectance, and
-temperature).  It includes several algorithms to calculate the albedo: Liang
-(2000) <doi:10.1016/S0034-4257(00)00205-4>, Silva et al. (2016)
-<doi:10.32614/RJ-2016-051>, Tasumi et al. (2008)
-<doi:10.1061/(ASCE)1084-0699(2008)13:2(51)>, among others; and include functions
-to derive several spectral indices.  Although the current version implements
-basic functions, it will be expandable to a more robust tool for water cycle
-modeling (e.g., to include surface runoff and evapotranspiration calculations)
-in the near future.  This package is under development at the Institute about
-Natural Resources Research (INIRENA) from the Universidad Michoacana de San
-Nicolas de Hidalgo.")
-    (license license:gpl3+)))
 
 (define-public r-nightday
   (package

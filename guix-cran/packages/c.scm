@@ -4291,6 +4291,41 @@ Importantly, this allows technical researchers to collaborate naturally with
 team members, managers, and clients who prefer a point-and-click interface.")
     (license license:lgpl3+)))
 
+(define-public r-crtspat
+  (package
+    (name "r-crtspat")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CRTspat" version))
+       (sha256
+        (base32 "02am3jr538dbgky00d2sli7w4yl8ij59ijcs0akb9gqn0nffq251"))))
+    (properties `((upstream-name . "CRTspat")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tsp
+                             r-tidyr
+                             r-spatstat-random
+                             r-spatstat-geom
+                             r-sf
+                             r-oor
+                             r-matrix
+                             r-mass
+                             r-magrittr
+                             r-lme4
+                             r-jagsui
+                             r-ggplot2
+                             r-geepack
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=CRTspat")
+    (synopsis "Workflow for Cluster Randomised Trials with Spillover")
+    (description
+     "Design, workflow and statistical analysis of Cluster Randomised Trials of
+(health) interventions where there may be geographical contamination between the
+arms (see <https://thomasasmith.github.io/articles/CRTspat.html>).")
+    (license license:expat)))
+
 (define-public r-crtsize
   (package
     (name "r-crtsize")
@@ -7551,13 +7586,13 @@ sites.")
 (define-public r-cpfa
   (package
     (name "r-cpfa")
-    (version "1.0-7")
+    (version "1.0-8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cpfa" version))
        (sha256
-        (base32 "03jwcrsa5vnlgfcbh6lx91n507aywrmxl03jz01gd7dxnf8za5fg"))))
+        (base32 "1rpdgy7h6kg52d8j2x99ihs44ahgdk5qd2951cizrl0h6lx1ba6s"))))
     (properties `((upstream-name . "cpfa")))
     (build-system r-build-system)
     (propagated-inputs (list r-rda
@@ -8948,16 +8983,45 @@ municipalities, states, region and Brazil.  Data source: Sistema Unico de Saude
 - SUS.")
     (license license:expat)))
 
+(define-public r-covid19br
+  (package
+    (name "r-covid19br")
+    (version "0.1.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "covid19br" version))
+       (sha256
+        (base32 "1jcxwyxc2rdarniy7bqkx7m300i1i0lvqdvzvkr9synvhpgcv4b0"))))
+    (properties `((upstream-name . "covid19br")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-sf
+                             r-rlang
+                             r-httr
+                             r-dplyr
+                             r-data-table
+                             r-curl))
+    (home-page "https://fndemarqui.github.io/covid19br/")
+    (synopsis "Brazilian COVID-19 Pandemic Data")
+    (description
+     "Set of functions to import COVID-19 pandemic data into R. The Brazilian COVID-19
+data, obtained from the official Brazilian repository at
+<https://covid.saude.gov.br/>, is available at country, region, state, and
+city-levels.  The package also downloads the world-level COVID-19 data from the
+John Hopkins University's repository.")
+    (license license:expat)))
+
 (define-public r-covid19-analytics
   (package
     (name "r-covid19-analytics")
-    (version "2.1.3.2")
+    (version "2.1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "covid19.analytics" version))
        (sha256
-        (base32 "10hi572da7nqzpd8f58v4l41ksq9jw9j4rk1x3l88xr1piim1mv4"))))
+        (base32 "009cqf1xnhkw11vi1z0c0zm8ld3ifgricn0rlik5gycvz8ygwprn"))))
     (properties `((upstream-name . "covid19.analytics")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinydashboard
@@ -8972,6 +9036,7 @@ municipalities, states, region and Brazil.  Data source: Sistema Unico de Saude
                              r-dt
                              r-dplyr
                              r-desolve
+                             r-curl
                              r-collapsibletree
                              r-ape))
     (native-inputs (list r-knitr))
@@ -14059,40 +14124,6 @@ supports neural text to speech voices, which support specific languages and
 dialects that are identified by locale.")
     (license license:expat)))
 
-(define-public r-conr
-  (package
-    (name "r-conr")
-    (version "1.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ConR" version))
-       (sha256
-        (base32 "1q93x2b7a2jgkybazk24x8gvwvjjvkhi1gy5zx1sc2f4arm73myq"))))
-    (properties `((upstream-name . "ConR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-writexl
-                             r-tibble
-                             r-sp
-                             r-snow
-                             r-sf
-                             r-rnaturalearth
-                             r-rgeos
-                             r-rgdal
-                             r-raster
-                             r-geosphere
-                             r-foreach
-                             r-fields
-                             r-dosnow))
-    (home-page "https://gdauby.github.io/ConR/")
-    (synopsis
-     "Computation of Parameters Used in Preliminary Assessment of Conservation Status")
-    (description
-     "Multi-species estimation of geographical range parameters for preliminary
-assessment of conservation status following Criterion B of the International
-Union for Conservation of Nature (IUCN, see <http://www.iucnredlist.org>).")
-    (license license:gpl2)))
-
 (define-public r-conquestr
   (package
     (name "r-conquestr")
@@ -15173,13 +15204,13 @@ km.pmf().")
 (define-public r-coneproj
   (package
     (name "r-coneproj")
-    (version "1.16")
+    (version "1.17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coneproj" version))
        (sha256
-        (base32 "06injsc860hcgn5wh81i9lw4nmrc1bmv3dksk5pnp62x1yykhnnh"))))
+        (base32 "1lxxap6zd6h35w0kkxdnnbi8a4j5c78wcfslm5823dx9apg28q0s"))))
     (properties `((upstream-name . "coneproj")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -29629,28 +29660,6 @@ eye.  Additionally, the checkthat package is optimized to work within tidyverse
 data manipulation pipelines.")
     (license license:expat)))
 
-(define-public r-checkr
-  (package
-    (name "r-checkr")
-    (version "0.5.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "checkr" version))
-       (sha256
-        (base32 "14hkpfbw5ibdwz2jygir2f2bb2qgrj62gn3449n4dif31nswaj2f"))))
-    (properties `((upstream-name . "checkr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-err))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/poissonconsulting/checkr")
-    (synopsis "Check the Properties of Common R Objects")
-    (description
-     "Expressive, assertive, pipe-friendly functions to check the properties of common
-R objects.  In the case of failure the functions issue informative error
-messages.")
-    (license license:expat)))
-
 (define-public r-checkpoint
   (package
     (name "r-checkpoint")
@@ -30110,42 +30119,6 @@ customer journey data.  The package also contains three heuristic algorithms
 algorithms are implemented in C++.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
-
-(define-public r-changeranger
-  (package
-    (name "r-changeranger")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "changeRangeR" version))
-       (sha256
-        (base32 "06i4r6ylwq551lm2l7mg2av1l04ijwrj2d8y0avdf1c83spir7dy"))))
-    (properties `((upstream-name . "changeRangeR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sp
-                             r-sf
-                             r-rgeos
-                             r-raster
-                             r-rangemodelmetadata
-                             r-phylobase
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=changeRangeR")
-    (synopsis "Change Metrics for Species Geographic Ranges")
-    (description
-     "Facilitates workflows to reproducibly transform estimates of speciesâ
-distributions into metrics relevant for conservation.  For example, combining
-predictions from species distribution models with other maps of environmental
-data to characterize the proportion of a speciesâ range that is under
-protection, calculating metrics used under the IUCN Criteria A and B guidelines
-(Area of Occupancy and Extent of Occurrence), and calculating more general
-metrics such as taxonomic and phylogenetic diversity, as well as endemism.  Also
-facilitates temporal comparisons among biodiversity metrics to inform efforts
-towards complementarity and consideration of future scenarios in conservation
-decisions. @code{changeRangeR} also provides tools to determine the effects of
-modeling decisions through sensitivity tests.")
-    (license license:gpl3)))
 
 (define-public r-changer
   (package
@@ -31169,37 +31142,6 @@ diagram.")
 and machine readable file format which provides citation metadata for software.
 This package provides core utilities to generate and validate this metadata.")
     (license license:gpl3+)))
-
-(define-public r-cffdrs
-  (package
-    (name "r-cffdrs")
-    (version "1.8.20")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cffdrs" version))
-       (sha256
-        (base32 "0x2gzqcif79hkrchx50j5yvxwwpgv8g8bxisfsa1xd7sja609hw7"))))
-    (properties `((upstream-name . "cffdrs")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rgdal
-                             r-raster
-                             r-geosphere
-                             r-foreach
-                             r-doparallel
-                             r-data-table))
-    (home-page "https://r-forge.r-project.org/projects/cffdrs/")
-    (synopsis "Canadian Forest Fire Danger Rating System")
-    (description
-     "This project provides a group of new functions to calculate the outputs of the
-two main components of the Canadian Forest Fire Danger Rating System (CFFDRS)
-Van Wagner and Pickett (1985) <https://cfs.nrcan.gc.ca/publications?id=19973>)
-at various time scales: the Fire Weather Index (FWI) System Wan Wagner (1985)
-<https://cfs.nrcan.gc.ca/publications?id=19927> and the Fire Behaviour
-Prediction (FBP) System Forestry Canada Fire Danger Group (1992)
-<https://cfs.nrcan.gc.ca/pubwarehouse/pdfs/10068.pdf>.  Some functions have two
-versions, table and raster based.")
-    (license license:gpl2)))
 
 (define-public r-cff
   (package
@@ -36526,38 +36468,6 @@ flow based cartogram (Gastner, Seguy & More (2018)
 (1985) <doi:10.1111/j.0033-0124.1985.00075.x>).")
     (license license:expat)))
 
-(define-public r-cartograflow
-  (package
-    (name "r-cartograflow")
-    (version "1.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cartograflow" version))
-       (sha256
-        (base32 "09n3pgm70frrx9li1djrwkf4lzcq9c1xjs037vmsb1as0xvd19a1"))))
-    (properties `((upstream-name . "cartograflow")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sp
-                             r-sf
-                             r-rlang
-                             r-rgeos
-                             r-reshape2
-                             r-plotly
-                             r-maptools
-                             r-igraph
-                             r-ggplot2
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/fbahoken/cartogRaflow")
-    (synopsis "Filtering Matrix for Flow Mapping")
-    (description
-     "This package provides functions to prepare and filter an origin-destination
-matrix for thematic flow mapping purposes.  This comes after Bahoken, Francoise
-(2016), Mapping flow matrix a contribution, @code{PhD} in Geography -
-Territorial sciences.  See Bahoken (2017) <doi:10.4000/netcom.2565>.")
-    (license license:gpl3)))
-
 (define-public r-carsurv
   (package
     (name "r-carsurv")
@@ -38232,42 +38142,6 @@ the package is in charge of preparing the simulation, calling rxode2',
 @code{RxODE} or mrgsolve (at the user's choice) and returning the results, for
 the given model, dataset and desired simulation settings.")
     (license license:gpl3+)))
-
-(define-public r-campfin
-  (package
-    (name "r-campfin")
-    (version "1.0.10")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "campfin" version))
-       (sha256
-        (base32 "0abz6lc83hkpb9y54wyw8rj0qc84lbf9zqrna58ip37lkkm890r7"))))
-    (properties `((upstream-name . "campfin")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble
-                             r-stringr
-                             r-stringdist
-                             r-scales
-                             r-rlang
-                             r-readr
-                             r-purrr
-                             r-magrittr
-                             r-lubridate
-                             r-httr
-                             r-glue
-                             r-ggplot2
-                             r-fs
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/irworkshop/campfin")
-    (synopsis "Wrangle Campaign Finance Data")
-    (description
-     "Explore and normalize American campaign finance data.  Created by the
-Investigative Reporting Workshop to facilitate work on The Accountability
-Project, an effort to collect public data into a central, standard database that
-is more easily searched: <https://publicaccountability.org/>.")
-    (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-campaignmanager
   (package

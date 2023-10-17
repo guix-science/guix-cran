@@ -2307,16 +2307,17 @@ computation of evaluation criteria.")
 (define-public r-visvow
   (package
     (name "r-visvow")
-    (version "1.3.9")
+    (version "1.3.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "visvow" version))
        (sha256
-        (base32 "08cbh2hqvxmd1j1y6p3aigmj6f6fdpw3ffda09j3himmfnxaw1y3"))))
+        (base32 "0c5gwc8p3kb36kcfswn7k6v8bvm2d9dw4hxd61gvq28s1j2f1492"))))
     (properties `((upstream-name . "visvow")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexls
+                             r-vegan
                              r-tikzdevice
                              r-tidyr
                              r-svglite
@@ -4995,13 +4996,13 @@ analyses.")
 (define-public r-vectorcoder
   (package
     (name "r-vectorcoder")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VectorCodeR" version))
        (sha256
-        (base32 "0qakd219a1955iqmp28vbhi3h7wpvayfcgv2dmxi5qsslw1ws21b"))))
+        (base32 "005nd55syn2f2a54ilbw3mi8r51gn5qfw4rdnkygpbgfngza01f8"))))
     (properties `((upstream-name . "VectorCodeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyverse r-tidyr r-readxl r-ggplot2 r-dplyr))
@@ -5017,7 +5018,8 @@ patterns within and between limbs during various motor tasks.  Needham, R.,
 Naemi, R., & Chockalingam, N. (2014) <doi:10.1016/j.jbiomech.2013.12.032>.
 Needham, R., Naemi, R., & Chockalingam, N. (2015)
 <doi:10.1016/j.jbiomech.2015.07.023>.  Tepavac, D., & Field-Fote, E. C. (2001)
-<doi:10.1123/jab.17.3.259>.")
+<doi:10.1123/jab.17.3.259>.  Park, J.H., Lee, H., Cho, Js.  et al. (2021)
+<doi:10.1038/s41598-020-80237-w>.")
     (license license:gpl3)))
 
 (define-public r-vecsets

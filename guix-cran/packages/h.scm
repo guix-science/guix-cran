@@ -317,7 +317,6 @@ Hediger & Michel & Naef (2020) <@code{arXiv:1903.06287>}.")
                              r-patchwork
                              r-ncdf4
                              r-lubridate
-                             r-hydrogof
                              r-ggrepel
                              r-ggpubr
                              r-ggplot2
@@ -570,35 +569,6 @@ remove.selection()), drilling down (add.aggregation()), and rolling up
 (remove.aggregation()).")
     (license license:gpl3)))
 
-(define-public r-hyperbrick
-  (package
-    (name "r-hyperbrick")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "hyperbrick" version))
-       (sha256
-        (base32 "1a6l6dlylqm1dxz573rz5zqxn1nk85hcbfdxk0qwkr7z3yzl13c8"))))
-    (properties `((upstream-name . "hyperbrick")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rgdal
-                             r-raster
-                             r-pbapply
-                             r-openimager
-                             r-dfoptim
-                             r-catools))
-    (home-page "https://github.com/arsilva87/hyperbrick")
-    (synopsis "Accessory Tools for Preprocessing Hyper-Spectral Images")
-    (description
-     "Read and execute preprocessing procedures on hyper-spectral images.  These type
-of sensor data are usually recorded in a raw format.  This package contains some
-easy-to-use functions to promptly build the image with some basic radiometric
-calibrations, setting up the geographic information.  Geometric correction can
-be done with band-to-band registration (translation and rotation).  Further
-functionalities allow to compute sliding windows statistics over the image.")
-    (license license:gpl2+)))
-
 (define-public r-hyperbolicdist
   (package
     (name "r-hyperbolicdist")
@@ -714,41 +684,6 @@ flexible time series plot, and spatial map generation.  It is a good pre-
 processing and post-processing tool for hydrological and hydraulic modellers.")
     (license license:gpl2)))
 
-(define-public r-hydrotsm
-  (package
-    (name "r-hydrotsm")
-    (version "0.6-0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "hydroTSM" version))
-       (sha256
-        (base32 "1msavd2k05apsky88zkk1l3c6y3v95fwhmr6xmwsap70bj25krsv"))))
-    (properties `((upstream-name . "hydroTSM")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-xts
-                             r-sp
-                             r-maptools
-                             r-lattice
-                             r-gstat
-                             r-e1071
-                             r-automap))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/hzambran/hydroTSM")
-    (synopsis
-     "Time Series Management, Analysis and Interpolation for Hydrological Modelling")
-    (description
-     "S3 functions for management, analysis, interpolation and plotting of time series
-used in hydrology and related environmental sciences.  In particular, this
-package is highly oriented to hydrological modelling tasks.  The focus of this
-package has been put in providing a collection of tools useful for the daily
-work of hydrologists (although an effort was made to optimise each function as
-much as possible, functionality has had priority over speed).  Bugs / comments /
-questions / collaboration of any kind are very welcomed, and in particular,
-datasets that can be included in this package for academic purposes.")
-    (license license:gpl2+)))
-
 (define-public r-hydrotoolkit
   (package
     (name "r-hydrotoolkit")
@@ -856,52 +791,6 @@ plant-specific model.  The approach is proposed and validated in Greimel et al.
 on the event detection implemented in hydropeak'.")
     (license license:gpl2)))
 
-(define-public r-hydropso
-  (package
-    (name "r-hydropso")
-    (version "0.5-1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "hydroPSO" version))
-       (sha256
-        (base32 "16gdv19yqla80s9fjmvahfn21jv62zivirzs5ch4zm9db54g6bry"))))
-    (properties `((upstream-name . "hydroPSO")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-vioplot
-                             r-sp
-                             r-scatterplot3d
-                             r-lhs
-                             r-lattice
-                             r-hydrotsm
-                             r-hydrogof
-                             r-hmisc
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/hzambran/hydroPSO")
-    (synopsis
-     "Particle Swarm Optimisation, with Focus on Environmental Models")
-    (description
-     "State-of-the-art version of the Particle Swarm Optimisation (PSO) algorithm
-(SPSO-2011 and SPSO-2007 capable). @code{hydroPSO} can be used as a replacement
-of the optim R function for (global) optimization of non-smooth and non-linear
-functions.  However, the main focus of @code{hydroPSO} is the calibration of
-environmental and other real-world models that need to be executed from the
-system console. @code{hydroPSO} is model-independent, allowing the user to
-easily interface any computer simulation model with the calibration engine
-(PSO). @code{hydroPSO} communicates with the model through the model's own input
-and output files, without requiring access to the model's source code.  Several
-PSO variants and controlling options are included to fine-tune the performance
-of the calibration engine to different calibration problems.  An advanced
-sensitivity analysis function together with user-friendly plotting summaries
-facilitate the interpretation and assessment of the calibration results.
-@code{hydroPSO} is parallel-capable, to alleviate the computational burden of
-complex models with \"long\" execution time.  Bugs reports/comments/questions are
-very welcomed (in English, Spanish or Italian).  See Zambrano-Bigiarini and
-Rojas (2013) <doi:10.1016/j.envsoft.2013.01.004> for more details.")
-    (license license:gpl2+)))
-
 (define-public r-hydroportailstats
   (package
     (name "r-hydroportailstats")
@@ -957,42 +846,6 @@ along the longitudinal flow path as proposed and validated in Greimel et al.
 (2022).")
     (license license:gpl2)))
 
-(define-public r-hydromopso
-  (package
-    (name "r-hydromopso")
-    (version "0.1-3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "hydroMOPSO" version))
-       (sha256
-        (base32 "14yvsxzlzpisn5hqyqcq1fmqsbj96pqcgyhnj414mj366x6w5qxp"))))
-    (properties `((upstream-name . "hydroMOPSO")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo r-xts r-randtoolbox r-lhs r-hydrotsm))
-    (home-page "https://gitlab.com/rmarinao/hydroMOPSO")
-    (synopsis "Multi-Objective Calibration of Hydrological Models using MOPSO")
-    (description
-     "State-of-the-art Multi-Objective Particle Swarm Optimiser (MOPSO), based on the
-algorithm developed by Lin et al. (2018) <doi:10.1109/TEVC.2016.2631279> with
-improvements described by Marinao-Rivas & Zambrano-Bigiarini (2020)
-<doi:10.1109/LA-CCI48322.2021.9769844>.  This package is inspired by and closely
-follows the philosophy of the single objective @code{hydroPSO} R package
-((Zambrano-Bigiarini & Rojas, 2013) <doi:10.1016/j.envsoft.2013.01.004>), and
-can be used for global optimisation of non-smooth and non-linear R functions and
-R-base models (e.g., TUWmodel', GR4J', GR6J').  However, the main focus of
-@code{hydroMOPSO} is optimising environmental and other real-world models that
-need to be run from the system console (e.g., SWAT+'). @code{hydroMOPSO}
-communicates with the model to be optimised through its input and output files,
-without requiring modifying its source code.  Thanks to its flexible design and
-the availability of several fine-tuning options, @code{hydroMOPSO} can tackle a
-wide range of multi-objective optimisation problems (e.g., multi-objective
-functions, multiple model variables, multiple periods).  Finally,
-@code{hydroMOPSO} is designed to run on multi-core machines or network clusters,
-to alleviate the computational burden of complex models with long execution
-time.")
-    (license license:gpl2+)))
-
 (define-public r-hydrome
   (package
     (name "r-hydrome")
@@ -1047,32 +900,6 @@ documented in Moore et al. (2019) <doi:10.3133/ofr20191096>), Cormen and
 Leiserson (2022) <ISBN:9780262046305> and Verdin and Verdin (1999)
 <doi:10.1016/S0022-1694(99)00011-6>.")
     (license license:cc0)))
-
-(define-public r-hydrogof
-  (package
-    (name "r-hydrogof")
-    (version "0.4-0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "hydroGOF" version))
-       (sha256
-        (base32 "0fw8b66k7gdkdjxgmdpp3lk9d8p0wmlvhq2rkcvajjb5wd09f43a"))))
-    (properties `((upstream-name . "hydroGOF")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo r-xts r-hydrotsm))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/hzambran/hydroGOF")
-    (synopsis
-     "Goodness-of-Fit Functions for Comparison of Simulated and Observed Hydrological Time Series")
-    (description
-     "S3 functions implementing both statistical and graphical goodness-of-fit
-measures between observed and simulated values, mainly oriented to be used
-during the calibration, validation, and application of hydrological models.
-Missing values in observed and/or simulated values can be removed before
-computations.  Comments / questions / collaboration of any kind are very
-welcomed.")
-    (license license:gpl2+)))
 
 (define-public r-hydrogeo
   (package
@@ -10492,41 +10319,6 @@ described in Cho and Fryzlewicz (2014) <doi:10.1111/rssb.12079> and Cho (2016)
      "This package provides functions to perform dimensionality reduction for
 classification if the covariance matrices of the classes are unequal.")
     (license license:gpl2+)))
-
-(define-public r-hcv
-  (package
-    (name "r-hcv")
-    (version "1.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "HCV" version))
-       (sha256
-        (base32 "00ry36w2v4h3vkf2jq3djcma23xflr7fx7icy2vzwk9ffnmzvpxd"))))
-    (properties `((upstream-name . "HCV")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sp
-                             r-rgeos
-                             r-matrix
-                             r-mass
-                             r-m3c
-                             r-geometry
-                             r-cluster
-                             r-blsm))
-    (home-page "https://cran.r-project.org/package=HCV")
-    (synopsis "Hierarchical Clustering from Vertex-Links")
-    (description
-     "Hierarchical clustering for spatial data, which requires clustering results not
-only homogeneous in non-geographical features among samples but also
-geographically close to each other within a cluster.  It modified typically used
-hierarchical agglomerative clustering algorithms for introducing the spatial
-homogeneity, by considering geographical locations as vertices and converting
-spatial adjacency into whether a shared edge exists between a pair of vertices
-(Tzeng & Hsu, 2022) <@code{arXiv:2201.08302>}.  The constraints of the vertex
-links automatically enforce the spatial contiguity property at each step of
-iterations.  In addition, methods to find an appropriate number of clusters and
-to report cluster members are also provided.")
-    (license license:lgpl3)))
 
 (define-public r-hctrial
   (package

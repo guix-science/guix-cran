@@ -4633,45 +4633,6 @@ bias) in estimating the treatment effect in a proportional hazard model, as
 described in Williamson et al. (2022) <doi:10.1158/1078-0432.ccr-21-2468>.")
     (license license:gpl3+)))
 
-(define-public r-bracatus
-  (package
-    (name "r-bracatus")
-    (version "1.0.11")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bRacatus" version))
-       (sha256
-        (base32 "0mj9bqgvmss9jdaphc4rgmxp4909lnwgi3c86pr6yfsd9zcjgd74"))))
-    (properties `((upstream-name . "bRacatus")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sp
-                             r-rworldmap
-                             r-rgeos
-                             r-rgdal
-                             r-rgbif
-                             r-raster
-                             r-plotfunctions
-                             r-maptools
-                             r-jsonlite
-                             r-geojsonio
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/EduardoArle/bRacatus")
-    (synopsis
-     "Method to Estimate the Accuracy and Biogeographical Status of Georeferenced Biological Data")
-    (description
-     "Automated assessment of accuracy and geographical status of georeferenced
-biological data.  The methods rely on reference regions, namely checklists and
-range maps.  Includes functions to obtain data from the Global Biodiversity
-Information Facility <https://www.gbif.org/> and from the Global Inventory of
-Floras and Traits <https://gift.uni-goettingen.de/home>.  Alternatively, the
-user can input their own data.  Furthermore, provides easy visualisation of the
-data and the results through the plotting functions.  Especially suited for
-large datasets.  The reference for the methodology is: @code{ArlÃ©} et al.
-(under review).")
-    (license license:gpl2+)))
-
 (define-public r-bqror
   (package
     (name "r-bqror")
@@ -9767,30 +9728,6 @@ by the standard bivariate mixture cure fraction model.  The package also
 computes the estimators based on the method of moments.")
     (license license:gpl2+)))
 
-(define-public r-bivariatemaps
-  (package
-    (name "r-bivariatemaps")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bivariatemaps" version))
-       (sha256
-        (base32 "0ciyqf3swr86l98yfjwcnr507k5xjapk1v6iq9vnpkgrc9w3j5m9"))))
-    (properties `((upstream-name . "bivariatemaps")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sp r-rgeos r-raster r-classint))
-    (home-page "https://cran.r-project.org/package=bivariatemaps")
-    (synopsis "Creates Bivariate Maps")
-    (description
-     "This package contains functions to plot bivariate maps and to generate grids
-from shapefiles based on area coverage.  For more info, see: Hidasi-Neto, J
-(2015)
-<https://rfunctions.blogspot.com/2015/03/bivariate-maps-bivariatemap-function.html>,
-Hidasi-Neto, J (2014)
-<https://rfunctions.blogspot.com/2014/12/gridfilter-intersect-grid-with-shape.html>.")
-    (license license:gpl3)))
-
 (define-public r-bivariate-pareto
   (package
     (name "r-bivariate-pareto")
@@ -11518,29 +11455,6 @@ outlines, and provides information with important ecological and evolutionary
 implications for the growth and form of living organisms.  Please see Shi et al.
 (2022) <doi:10.1111/nyas.14862> for details.")
     (license license:gpl2+)))
-
-(define-public r-biogeo
-  (package
-    (name "r-biogeo")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "biogeo" version))
-       (sha256
-        (base32 "14sqgg8b06gp5dajxvyj9s3ndsk7jpkfr0mkyl2l61kgp6qx53rh"))))
-    (properties `((upstream-name . "biogeo")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vegan r-stringr r-sp r-raster r-maptools))
-    (home-page
-     "http://onlinelibrary.wiley.com/doi/10.1111/ecog.02118/abstract")
-    (synopsis "Point Data Quality Assessment and Coordinate Conversion")
-    (description
-     "This package provides functions for error detection and correction in point data
-quality datasets that are used in species distribution modelling.  Includes
-functions for parsing and converting coordinates into decimal degrees from
-various formats.")
-    (license license:gpl3+)))
 
 (define-public r-biogas
   (package
@@ -15741,13 +15655,13 @@ with leverage (one-component, two-component, skewed versions).")
 (define-public r-betasandwich
   (package
     (name "r-betasandwich")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "betaSandwich" version))
        (sha256
-        (base32 "0abxm1wr77517n7yza0mnhjyksc2f3xng8gr4xfgcvyd2ckmckkv"))))
+        (base32 "06jjcl4ajhd1g0n9w2p3wn6pvdwxkv4rwrzbllhr8zggdbnh2j5r"))))
     (properties `((upstream-name . "betaSandwich")))
     (build-system r-build-system)
     (home-page "https://github.com/jeksterslab/betaSandwich")
@@ -15870,13 +15784,13 @@ functional and phylogenetic beta diversity.")
 (define-public r-betanb
   (package
     (name "r-betanb")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "betaNB" version))
        (sha256
-        (base32 "1bdprp0g12dm53023k49wdh4r28c02h2b4zdxa977jsn22753fvh"))))
+        (base32 "0smjygh6z91r798b9sx7mxj1ksm66wf356jw0pfkgwmr7nxk66a7"))))
     (properties `((upstream-name . "betaNB")))
     (build-system r-build-system)
     (home-page "https://github.com/jeksterslab/betaNB")
@@ -15892,13 +15806,13 @@ differences in standardized regression coefficients, for models fitted by lm()."
 (define-public r-betamc
   (package
     (name "r-betamc")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "betaMC" version))
        (sha256
-        (base32 "0g1qkm3w344570q0j10avbs4ly3jpib1k4c4bbz5q53inbmh4jns"))))
+        (base32 "0wiccdiaqmza4fgcnyf9z833rnqzrm7shb0xvajcfa8d3vpp92z0"))))
     (properties `((upstream-name . "betaMC")))
     (build-system r-build-system)
     (home-page "https://github.com/jeksterslab/betaMC")
@@ -15950,13 +15864,13 @@ function.  Livingston and Lewis (1995) <doi:10.1111/j.1745-3984.1995.tb00462.x>.
 (define-public r-betadelta
   (package
     (name "r-betadelta")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "betaDelta" version))
        (sha256
-        (base32 "0zsaw5c9x9dw3vhsp0jmk07m4i5d58z3mpk1fkd6wjd78qjmz5ac"))))
+        (base32 "05sraiyfr9pncmxgm1qirxsg3qwbmcqj4z838rii274nmqsrsx58"))))
     (properties `((upstream-name . "betaDelta")))
     (build-system r-build-system)
     (home-page "https://github.com/jeksterslab/betaDelta")
@@ -17586,37 +17500,6 @@ Laplace (Lasso), Gaussian (ridge), Uniform, Cauchy and customized priors like a
 mixture of priors.  An extensive visual toolbox is included to check the
 validity of the results as well as several measures of goodness-of-fit.")
     (license license:lgpl2.0+)))
-
-(define-public r-bdvis
-  (package
-    (name "r-bdvis")
-    (version "0.2.33")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bdvis" version))
-       (sha256
-        (base32 "0gcc41pbvx245pcdrm9wxn3clg0iczpqvgrhzmy8c0dz2jfbzc9j"))))
-    (properties `((upstream-name . "bdvis")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-treemap
-                             r-taxize
-                             r-sqldf
-                             r-rgdal
-                             r-plyr
-                             r-plotrix
-                             r-maps
-                             r-lattice
-                             r-ggplot2
-                             r-chron))
-    (home-page "https://cran.r-project.org/package=bdvis")
-    (synopsis "Biodiversity Data Visualizations")
-    (description
-     "This package provides a set of functions to create basic visualizations to
-quickly preview different aspects of biodiversity information such as inventory
-completeness, extent of coverage (taxonomic, temporal and geographic), gaps and
-biases.  Barve & Otegui (2016) <DOI:10.1093/bioinformatics/btw333>.")
-    (license license:gpl3)))
 
 (define-public r-bdscale
   (package
@@ -23887,46 +23770,6 @@ project, query our tables, save data to disk and memory, all from R.")
 Outsourcing data import, renaming and type casting to a *.csv.  Manipulating
 imputed datasets and fitting models on them.  Summarizing models.")
     (license license:gpl3+)))
-
-(define-public r-baseballr
-  (package
-    (name "r-baseballr")
-    (version "1.5.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "baseballr" version))
-       (sha256
-        (base32 "0n6ajc846cddi7617pgkm2ywkl7147m2gnhwx8wm4jyj7g3snsw3"))))
-    (properties `((upstream-name . "baseballr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rvest
-                             r-rlang
-                             r-rcppparallel
-                             r-rcpp
-                             r-purrr
-                             r-magrittr
-                             r-lubridate
-                             r-jsonlite
-                             r-janitor
-                             r-httr
-                             r-glue
-                             r-ggplot2
-                             r-dplyr
-                             r-data-table
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://billpetti.github.io/baseballr/")
-    (synopsis "Acquiring and Analyzing Baseball Data")
-    (description
-     "This package provides numerous utilities for acquiring and analyzing baseball
-data from online sources such as Baseball Reference
-<https://www.baseball-reference.com/>, @code{FanGraphs}
-<https://www.fangraphs.com/>, and the MLB Stats API <https://www.mlb.com/>.")
-    (license license:expat)))
 
 (define-public r-baseballdbr
   (package

@@ -5130,13 +5130,13 @@ attenuate the results to the null or by a given amount?")
 (define-public r-multibias
   (package
     (name "r-multibias")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multibias" version))
        (sha256
-        (base32 "1xwxvd3w4pak55kkfkncyc6lcmggdkp226vfzmb5www6kcqrgnzl"))))
+        (base32 "0zgjh37sakws8fyisc736ck1y49xpmh0yksr01hc4kmvp6k34jav"))))
     (properties `((upstream-name . "multibias")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-magrittr r-dplyr))
@@ -5653,47 +5653,6 @@ are also several sample data sets.")
      "This package provides a simple tool allowing users to easily and dynamically
 explore or document a data set using a tree structure.")
     (license license:gpl2+)))
-
-(define-public r-muhvt
-  (package
-    (name "r-muhvt")
-    (version "3.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "muHVT" version))
-       (sha256
-        (base32 "0a963dhzzirv03pq9hlzyq5alcj224ci55jyn7bsmn06lpl13gk3"))))
-    (properties `((upstream-name . "muHVT")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-splancs
-                             r-sp
-                             r-scales
-                             r-rgeos
-                             r-reshape2
-                             r-purrr
-                             r-polyclip
-                             r-plyr
-                             r-mass
-                             r-magrittr
-                             r-hmisc
-                             r-ggplot2
-                             r-dplyr
-                             r-deldir
-                             r-conf-design
-                             r-cluster))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/Mu-Sigma/muHVT")
-    (synopsis
-     "Constructing Hierarchical Voronoi Tessellations and Overlay Heatmap for Data Analysis")
-    (description
-     "The @code{muHVT} package is a collection of R functions to facilitate building
-topology preserving maps for rich multivariate data.See
-<https://en.wikipedia.org/wiki/Voronoi_diagram> for more information.  Credits
-to Mu Sigma for their continuous support throughout the development of the
-package.")
-    (license license:asl2.0)))
 
 (define-public r-muerelativerisk
   (package
@@ -11735,36 +11694,6 @@ and student-t errors (from Geweke) is also provided.")
 impute non-monotonic data that is outside of a prespecified range.")
     (license license:gpl3)))
 
-(define-public r-monographar
-  (package
-    (name "r-monographar")
-    (version "1.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "monographaR" version))
-       (sha256
-        (base32 "09fkcw13h7dx7j5vyp48fk6yzv9n64568zf2zvmm2c008jw3gkbm"))))
-    (properties `((upstream-name . "monographaR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sp
-                             r-rmarkdown
-                             r-raster
-                             r-png
-                             r-maptools
-                             r-circular))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=monographaR")
-    (synopsis "Taxonomic Monographs Tools")
-    (description
-     "This package contains functions intended to facilitate the production of plant
-taxonomic monographs.  The package includes functions to convert tables into
-taxonomic descriptions, lists of collectors, examined specimens, and can
-generate a monograph skeleton.  Additionally, wrapper functions to batch the
-production of phenology charts and distributional and diversity maps are also
-available.")
-    (license license:gpl2+)))
-
 (define-public r-monoclust
   (package
     (name "r-monoclust")
@@ -12143,45 +12072,6 @@ unified skew-normal (SUN), extended skew-normal (ESN), skew-normal (SN), and
 symmetric normal (N) are also included.  Density, probabilities and random
 deviates are also offered for these members.")
     (license license:gpl2+)))
-
-(define-public r-momocs
-  (package
-    (name "r-momocs")
-    (version "1.4.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Momocs" version))
-       (sha256
-        (base32 "08p2kjgfq7h7pwn4lqsfcy4d7rml6n0s1fb90l0iy1a88brbd3br"))))
-    (properties `((upstream-name . "Momocs")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vegan
-                             r-tibble
-                             r-sp
-                             r-rgeos
-                             r-rcolorbrewer
-                             r-progress
-                             r-mass
-                             r-magrittr
-                             r-jpeg
-                             r-ggplot2
-                             r-geomorph
-                             r-geometry
-                             r-dplyr
-                             r-dendextend
-                             r-cluster))
-    (home-page "https://github.com/MomX/Momocs/")
-    (synopsis "Morphometrics using R")
-    (description
-     "The goal of Momocs is to provide a complete, convenient, reproducible and
-open-source toolkit for 2D morphometrics.  It includes most common 2D
-morphometrics approaches on outlines, open outlines, configurations of
-landmarks, traditional morphometrics, and facilities for data preparation,
-manipulation and visualization with a consistent grammar throughout.  It allows
-reproducible, complex morphometrics analyses and other morphometrics approaches
-should be easy to plug in, or develop from, on top of this canvas.")
-    (license (list license:gpl2 license:gpl3))))
 
 (define-public r-momentuhmm
   (package
@@ -13553,13 +13443,13 @@ objects.")
 (define-public r-modelsummary
   (package
     (name "r-modelsummary")
-    (version "1.4.2")
+    (version "1.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modelsummary" version))
        (sha256
-        (base32 "08z6xk6az4my8j91db7vkrrnp0cq9093zxpakss98aladwvdpn44"))))
+        (base32 "0sm4d7rgq1dl04gi0qsws7lyh4mczm05d04cd5yd8nva24z5lbla"))))
     (properties `((upstream-name . "modelsummary")))
     (build-system r-build-system)
     (propagated-inputs (list r-tables
@@ -13571,7 +13461,7 @@ objects.")
                              r-generics
                              r-data-table
                              r-checkmate))
-    (home-page "https://vincentarelbundock.github.io/modelsummary/")
+    (home-page "https://modelsummary.com")
     (synopsis
      "Summary Tables and Plots for Statistical Models and Data: Beautiful, Customizable, and Publication-Ready")
     (description
@@ -30729,35 +30619,6 @@ manually viewing the medicinal plant repository available at
 repository of leaf images of 1099 medicinal plants in Sri Lanka.")
     (license license:gpl3)))
 
-(define-public r-medits
-  (package
-    (name "r-medits")
-    (version "0.1.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MEDITS" version))
-       (sha256
-        (base32 "0n3llnvpxd4bs1vslhmsahvl9vm0pmbmc94gijss16linpskxxkj"))))
-    (properties `((upstream-name . "MEDITS")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vegan
-                             r-tibble
-                             r-sp
-                             r-rgeos
-                             r-rgdal
-                             r-raster
-                             r-hms
-                             r-ggplot2))
-    (home-page "https://cran.r-project.org/package=MEDITS")
-    (synopsis "Analysis of MEDITS-Like Survey Data")
-    (description
-     "Set of functions working with survey data in the format of the MEDITS project
-<https://www.sibm.it/SITO%20MEDITS/principaleprogramme.htm>.  In this version,
-functions use TA, TB and TC tables respectively containing haul, catch and
-aggregated biological data.")
-    (license license:gpl3)))
-
 (define-public r-meditations
   (package
     (name "r-meditations")
@@ -38490,65 +38351,6 @@ locations based on the Geocode API, returned as sf objects, either points or
 bounds; (4) map images using the Maps Static API, returned as stars objects.")
     (license license:expat)))
 
-(define-public r-mapreasy
-  (package
-    (name "r-mapreasy")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mapReasy" version))
-       (sha256
-        (base32 "13va0z967ckwxnnianki5aj66km0x6r37nj4mz9qd3b0bps4g2kj"))))
-    (properties `((upstream-name . "mapReasy")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sp r-rgdal r-hmisc))
-    (home-page "https://cran.r-project.org/package=mapReasy")
-    (synopsis
-     "Producing Administrative Boundary Map with Additional Features Embedded")
-    (description
-     "Produce administrative boundary map, visualize and compare different factors on
-map, tracking latitude and longitude, bubble plot.  The package provides some
-handy functions to produce different administrative maps easily.  Functions to
-obtain colorful visualization of different regions of interest and
-sub-divisional administrative map at different levels are included.  This csn be
-used to increase feasibility of mapping disease pattern across different regions
-(disease mapping) with appropriate colors having intensity coherent with
-magnitude of prevalence.  In many surveys, information on location of sample are
-collected.  Sometimes it is of interest to quick look at the spreadness of the
-collected sample, check if any observation falls outside of the survey area and
-identify them.  The package provides unique function to perform these tasks
-easily.  Besides, some additional features have been added to make ad-lib
-comparison of different factors across the region through these maps.  Visual
-presentation of two different variables on a particular map using two way bubble
-plot is also provided.  Simple bar chart and pie chart can be produced on map to
-compare several factors.This package will be helpful to researchers-both
-statistician and non-statistician, to create geographic location wise plotting
-of different indicators.  These types of maps are used in different research
-areas such public health, economics, environment, journalism etc.  It provides
-functions that will also be helpful to users to create map using two indicators
-at a time (for example, shade on a map will give the information of one
-indicator variable, bar/pie/bubble chart will give the information on another
-indicator).  Users only need to select the indicator's value and country wise
-region specific shapefile and run the functions to find their graphs quickly.The
-distinguishable features of the functions in this package are they are easy to
-understand to new R users who are searching some ad-lib functions to produce
-administrative map with different features and easy to use for those who are
-unfamiliar with file format of spatial data or geographic location data.
-Functions in this package adopt, compile and implement functions from some
-well-known packages on handling spatial data to make an user friendly
-functionality.  So users do not need any additional knowledge about spatial
-statistics or geographic location data.  All the examples presented in this
-package use shapefile of country Bangladesh downloaded from
-<http://www.gadm.org>.  Users are requested to visit <http://www.gadm.org>, then
-select Download, then choose country and shapefile from country and File format
-dropdown menu.  After downloading the shapefile of any particular country as
-compressed file, unzip the file and keep them in a known directory or working
-directory.  Shapefiles of respective countries will be required to produce
-corresponding country maps.  Use shapefile of corresponding country to produce
-all types of maps available in this package.")
-    (license license:gpl2)))
-
 (define-public r-mappp
   (package
     (name "r-mappp")
@@ -39063,13 +38865,13 @@ the R console, in R Markdown documents and in Shiny apps.")
 (define-public r-mapboxapi
   (package
     (name "r-mapboxapi")
-    (version "0.5")
+    (version "0.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapboxapi" version))
        (sha256
-        (base32 "051g0wwsgj1pfsknbyfr5dsc0793rb5m9y0l4qzzg9ii84xz7yly"))))
+        (base32 "0xb75j7k2pl0c726wamv15ask5xqajmwxf0b0ssy6y1xjb46frar"))))
     (properties `((upstream-name . "mapboxapi")))
     (build-system r-build-system)
     (propagated-inputs (list r-units

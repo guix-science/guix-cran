@@ -621,36 +621,6 @@ made with large data sets in mind and derives matches more than an order of
 magnitude quicker than other methods.")
     (license license:gpl3+)))
 
-(define-public r-quickmapr
-  (package
-    (name "r-quickmapr")
-    (version "0.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "quickmapr" version))
-       (sha256
-        (base32 "0962qm8ak0wpqld8nrb8rvvb78743zfrfsq2xrwdlql681j2nv8c"))))
-    (properties `((upstream-name . "quickmapr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sp
-                             r-sf
-                             r-rgeos
-                             r-rgdal
-                             r-raster
-                             r-httr))
-    (home-page "https://www.github.com/jhollist/quickmapr")
-    (synopsis "Quickly Map and Explore Spatial Data")
-    (description
-     "While analyzing geospatial data, easy visualization is often needed that allows
-for quick plotting, and simple, but easy interactivity.  Additionally,
-visualizing geospatial data in projected coordinates is also desirable.  The
-quickmapr package provides a simple method to visualize sp', sf (via coercion to
-sp'), and raster objects, allows for basic zooming, panning,
-identifying,labeling, selecting, and measuring spatial objects.  Importantly, it
-does not require that the data be in geographic coordinates.")
-    (license license:cc0)))
-
 (define-public r-quickcode
   (package
     (name "r-quickcode")
@@ -1431,13 +1401,13 @@ and as close as possible to p[2]% of restaurants receive the second top grade.")
 (define-public r-quantilegh
   (package
     (name "r-quantilegh")
-    (version "0.1.3")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "QuantileGH" version))
        (sha256
-        (base32 "0nb30qg7znld8sqwywb7phwnb7h2dwamilq0bjn96bw0yviywjqa"))))
+        (base32 "18qdrrlqhjlqnxvinf9kwizbpd06pvgniy5wjq74x1l63d7n2k6z"))))
     (properties `((upstream-name . "QuantileGH")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam
@@ -2799,13 +2769,13 @@ Preschool Q-set (Baumrind, 1968 revised by Wanda Bronson,
 (define-public r-qsimulatr
   (package
     (name "r-qsimulatr")
-    (version "1.1")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qsimulatR" version))
        (sha256
-        (base32 "1h1pfr9cdramkr0ph7hmbvz585zwa964fd8z1hzc00pyr36ypf3k"))))
+        (base32 "00022yyfwpv7f28isbnqy8001nm6xvxnfb2sbjckl8vbv0sjvs9n"))))
     (properties `((upstream-name . "qsimulatR")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

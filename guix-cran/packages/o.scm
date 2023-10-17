@@ -14,7 +14,6 @@
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages bioinformatics)
-  #:use-module (gnu packages imagemagick)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -5410,36 +5409,6 @@ graphics, or ggplot2.  This package is not affiliated with the
     (license (list license:gpl2
                    (license:fsdg-compatible "file LICENCE")))))
 
-(define-public r-openstars
-  (package
-    (name "r-openstars")
-    (version "1.2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "openSTARS" version))
-       (sha256
-        (base32 "1xpba5bagq16n1k94izshdizqyx99mad1nx2w77ljznmx5qrpqa6"))))
-    (properties `((upstream-name . "openSTARS")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-ssn
-                             r-sp
-                             r-rgrass7
-                             r-rgdal
-                             r-raster
-                             r-progress
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/MiKatt/openSTARS")
-    (synopsis "An Open Source Implementation of the 'ArcGIS' Toolbox 'STARS'")
-    (description
-     "An open source implementation of the STARS toolbox (Peterson & Ver Hoef, 2014,
-<doi:10.18637/jss.v056.i02>) using R and GRASS GIS'.  It prepares the *.ssn
-object needed for the SSN package.  A Digital Elevation Model (DEM) is used to
-derive stream networks (in contrast to STARS that can clean an existing stream
-network).")
-    (license license:expat)))
-
 (define-public r-openspecy
   (package
     (name "r-openspecy")
@@ -5998,13 +5967,13 @@ the JSON file.")
 (define-public r-opencv
   (package
     (name "r-opencv")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "opencv" version))
        (sha256
-        (base32 "056qf318fisd051q40di7ipya3xdi30zmlmksrfgjf4hx09g52vd"))))
+        (base32 "1za5smc5c9zaqi5xwlpj53f990szhw9mqhh6qcmfnr1yddp43cgi"))))
     (properties `((upstream-name . "opencv")))
     (build-system r-build-system)
     (inputs (list zlib))
@@ -10246,43 +10215,6 @@ Waterway, Port, Coastal, and Ocean Division, Vol 105, pp 457-459.")
 (oceanographic) data and model output.")
     (license license:gpl3+)))
 
-(define-public r-oceanmap
-  (package
-    (name "r-oceanmap")
-    (version "0.1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "oceanmap" version))
-       (sha256
-        (base32 "1z80dsyk1r3xg8ag8ka74y0z7m608hpppjn62rclzy0nilyyx45q"))))
-    (properties `((upstream-name . "oceanmap")))
-    (build-system r-build-system)
-    (inputs (list imagemagick))
-    (propagated-inputs (list r-sp
-                             r-sf
-                             r-reshape2
-                             r-raster
-                             r-plotrix
-                             r-plotly
-                             r-ncdf4
-                             r-maptools
-                             r-maps
-                             r-mapdata
-                             r-lubridate
-                             r-ggplot2
-                             r-ggedit
-                             r-fields
-                             r-extrafont
-                             r-abind))
-    (home-page "https://cran.r-project.org/package=oceanmap")
-    (synopsis "Plotting Toolbox for 2D Oceanographic Data")
-    (description
-     "Plotting toolbox for 2D oceanographic data (satellite data, sea surface
-temperature, chlorophyll, ocean fronts & bathymetry).  Recognized classes and
-formats include netcdf, Raster, .nc and .gz files.")
-    (license license:gpl3+)))
-
 (define-public r-oceanis
   (package
     (name "r-oceanis")
@@ -10354,13 +10286,13 @@ refer to Flanders Marine Institute (2020) <doi:10.14284/403>.")
 (define-public r-oceanexplorer
   (package
     (name "r-oceanexplorer")
-    (version "0.0.2")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oceanexplorer" version))
        (sha256
-        (base32 "1n8lxhnq7asfjlpgjs3xwngnc9dyk4q5yb2jn0kpb87i214z68hs"))))
+        (base32 "07l2la7nrqj8bsyv0flyjs08wishlvq6v2hx5n1g9kag4bcfl6vz"))))
     (properties `((upstream-name . "oceanexplorer")))
     (build-system r-build-system)
     (propagated-inputs (list r-waiter
@@ -10384,7 +10316,7 @@ refer to Flanders Marine Institute (2020) <doi:10.14284/403>.")
                              r-dplyr
                              r-bslib))
     (native-inputs (list r-knitr))
-    (home-page "https://utrechtuniversity.github.io/oceanexplorer/")
+    (home-page "https://martinschobben.github.io/oceanexplorer/")
     (synopsis "Explore Our Planet's Oceans with NOAA")
     (description
      "This package provides tools for easy exploration of the world ocean atlas of the
@@ -10499,38 +10431,6 @@ random variates, and calculating the first four central moments of the
 distributions are implemented as described in OâNeill (2019)
 <doi:10.1080/00031305.2019.1699445>.")
     (license license:expat)))
-
-(define-public r-occuncertain
-  (package
-    (name "r-occuncertain")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "occUncertain" version))
-       (sha256
-        (base32 "0rlcwiy45kx9168g7bf1hkz9rkbpfgn7b085lzksg97f05hij52z"))))
-    (properties `((upstream-name . "occUncertain")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rgdal r-knitr r-conr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=occUncertain")
-    (synopsis
-     "Addressing Occurrence Point Uncertainty When Calculating Spatial Metrics")
-    (description
-     "Repeatable processing of species occurrence datasets that makes it easier to
-propagate georeferencing imprecisions and data input mistakes to downstream
-analyses, allowing analysts to assess the impacts of these imprecisions in
-quantifying range of occurrence (EOO) or area of occupancy (AOO) .  Users can
-use the software to: (a) change each coordinate record's uncertainty from meters
-to decimal degrees, The formula for converting from meters to decimal degrees is
-in part based on information from the ESRI @code{ArcUser} magazine \"Measuring in
-Arc-Seconds\" at this site<https://www.esri.com/news/arcuser/0400/wdside.html>
-(b) deal with records that don't have uncertainty values in multiple ways, (c)
-create a new random location for each occurrence using a uniform distribution
-with a defined interval within the occurrence location uncertainty, and (d) use
-repetitions to quantify EOO and AOO with attribute uncertainty.")
-    (license license:gpl3)))
 
 (define-public r-occumb
   (package

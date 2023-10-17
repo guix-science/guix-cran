@@ -998,28 +998,6 @@ into a new excel and text file according to the format from the U.S. Copyright
 Office SR Audit Data online database.")
     (license license:gpl2+)))
 
-(define-public r-uscensus2010
-  (package
-    (name "r-uscensus2010")
-    (version "0.20.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "UScensus2010" version))
-       (sha256
-        (base32 "0dby532dmmhaz7gisihg4dn70jyx5llfvm2zl2h0pxyqrxvm69d2"))))
-    (properties `((upstream-name . "UScensus2010")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sp r-maptools r-foreign))
-    (home-page "https://github.com/zalmquist/UScensus2010")
-    (synopsis "US Census 2010 Suite of R Packages")
-    (description
-     "US Census 2010 shape files and additional demographic data from the SF1 100
-percent files.  This package contains a number of helper functions for the
-UScensus2010blk, UScensus2010blkgrp, UScensus2010tract, UScensus2010cdp
-packages.")
-    (license license:gpl2+)))
-
 (define-public r-usa-state-boundaries
   (package
     (name "r-usa-state-boundaries")
@@ -3042,31 +3020,6 @@ Michael C. Neale, Hermine H. Maes, (2019).  umx: A library for Structural
 Equation and Twin Modelling in R. Twin Research and Human Genetics, 22, 27-41.
 <doi:10.1017/thg.2019.2>.")
     (license license:gpl3)))
-
-(define-public r-umr
-  (package
-    (name "r-umr")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "UMR" version))
-       (sha256
-        (base32 "05g2gk7bmhzyill6fgq396yk0yi7qz4mdcy3cfzzx5nyr11rc8a7"))))
-    (properties `((upstream-name . "UMR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-trust r-distr r-decon))
-    (home-page "https://cran.r-project.org/package=UMR")
-    (synopsis "Unmatched Monotone Regression")
-    (description
-     "Unmatched regression refers to the regression setting where covariates and
-predictors are collected separately/independently and so are not paired
-together, as in the usual regression setting.  Balabdaoui, Doss, and Durot
-(2021) <@code{arXiv:2007.00830>} study the unmatched regression setting where
-the univariate regression function is known to be monotone.  This package
-implements methods for computing the estimator developed in Balabdaoui, Doss,
-and Durot (2021).  The main method is an active-set-trust-region-based method.")
-    (license license:gpl3+)))
 
 (define-public r-umpire
   (package

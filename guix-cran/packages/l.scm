@@ -88,6 +88,43 @@
 regression, as per Gennings et al (2020) <doi:10.1016/j.envres.2020.109529>.")
     (license license:gpl2+)))
 
+(define-public r-lwfbrook90r
+  (package
+    (name "r-lwfbrook90r")
+    (version "0.5.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LWFBrook90R" version))
+       (sha256
+        (base32 "10fr3p6lgym5dlz92867yq1drv2ygx4nq8zkap5756khv0drf8za"))))
+    (properties `((upstream-name . "LWFBrook90R")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vegperiod
+                             r-progressr
+                             r-parallelly
+                             r-iterators
+                             r-future
+                             r-foreach
+                             r-dofuture
+                             r-data-table))
+    (native-inputs (list r-knitr gfortran))
+    (home-page "https://pschmidtwalter.github.io/LWFBrook90R/")
+    (synopsis
+     "Simulate Evapotranspiration and Soil Moisture with the SVAT Model LWF-Brook90")
+    (description
+     "This package provides a flexible and easy-to use interface for the soil
+vegetation atmosphere transport (SVAT) model LWF-BROOK90, written in Fortran.
+The model simulates daily transpiration, interception, soil and snow
+evaporation, streamflow and soil water fluxes through a soil profile covered
+with vegetation, as described in Hammel & Kennel (2001, ISBN:978-3-933506-16-0)
+and Federer et al. (2003)
+<doi:10.1175/1525-7541(2003)004%3C1276:SOAETS%3E2.0.CO;2>.  A set of high-level
+functions for model set up, execution and parallelization provides easy access
+to plot-level SVAT simulations, as well as multi-run and large-scale
+applications.")
+    (license license:gpl3)))
+
 (define-public r-lw1949
   (package
     (name "r-lw1949")
@@ -2460,20 +2497,16 @@ Mukhopadhyay, S. and Wang, K. (2018, Technical Report).")
 (define-public r-lpdynr
   (package
     (name "r-lpdynr")
-    (version "1.0.2")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LPDynR" version))
        (sha256
-        (base32 "0vlrx4dbv62b89xbmsp24iyn4wiq3695szbli18baf2qj2nbmnym"))))
+        (base32 "1ghiy5cc3s4bc2vrl2kxhpa9hvcp37hbdx56mligggk504w6mphy"))))
     (properties `((upstream-name . "LPDynR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-virtualspecies
-                             r-rgdal
-                             r-raster
-                             r-magrittr
-                             r-dplyr
+    (propagated-inputs (list r-virtualspecies r-terra r-magrittr r-dplyr
                              r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/xavi-rp/LPDynR")
@@ -2485,8 +2518,8 @@ assess ecosystem dynamics and change, which eventually might drive to land
 degradation.  The final result of the Land Productivity Dynamics indicator is a
 categorical map with 5 classes of land productivity dynamics, ranging from
 declining to increasing productivity.  See
-<https://eartharxiv.org/repository/view/2294/> for a description of the methods
-used in the package to calculate the indicator.")
+<https://www.sciencedirect.com/science/article/pii/S1470160X21010517/> for a
+description of the methods used in the package to calculate the indicator.")
     (license license:gpl3)))
 
 (define-public r-lpdensity
@@ -5519,38 +5552,6 @@ analysis discriminant analysis (RCCA-DA) (Yamamoto, H. et al. (2008)
 graphical interface.  It allows renaming, transforming, ordering and removing
 variables.  It includes basic exploratory methods such as the mean, median,
 mode, normality test, histogram and correlation.")
-    (license license:gpl2+)))
-
-(define-public r-loa
-  (package
-    (name "r-loa")
-    (version "0.2.48.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "loa" version))
-       (sha256
-        (base32 "0685xhswhmn05jxn5q11g1h767vv7l0f9wmlqqrk6wvnagf3nbdn"))))
-    (properties `((upstream-name . "loa")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sp
-                             r-rgooglemaps
-                             r-rgdal
-                             r-rcolorbrewer
-                             r-png
-                             r-plyr
-                             r-openstreetmap
-                             r-mgcv
-                             r-mass
-                             r-lattice))
-    (home-page "http://loa.r-forge.r-project.org/loa.intro.html")
-    (synopsis "Lattice Options and Add-Ins")
-    (description
-     "Various plots and functions that make use of the lattice/trellis plotting
-framework.  The plots, which include @code{loaPlot}(), @code{RgoogleMapsPlot}()
-and @code{trianglePlot}(), use @code{panelPal}(), a function that extends
-lattice and hexbin package methods to automate plot subscript and panel-to-panel
-and panel-to-key synchronization/management.")
     (license license:gpl2+)))
 
 (define-public r-lnpar
@@ -11682,32 +11683,6 @@ Provides control over options to e.g. prevent self-intersection of polygons and
 lines or to enable/disable snapping to align shapes.")
     (license license:expat)))
 
-(define-public r-leafletcn
-  (package
-    (name "r-leafletcn")
-    (version "0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "leafletCN" version))
-       (sha256
-        (base32 "1rg39n4bjacwss9nbdnz8y2zh8hxlc7a5ygndhjbmzajnbxfh09b"))))
-    (properties `((upstream-name . "leafletCN")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sp
-                             r-rgeos
-                             r-magrittr
-                             r-leaflet
-                             r-jsonlite
-                             r-htmltools))
-    (home-page "https://cran.r-project.org/package=leafletCN")
-    (synopsis
-     "An R Gallery for China and Other Geojson Choropleth Map in Leaflet")
-    (description
-     "An R gallery for China and other geojson choropleth map in leaflet.  Contains
-the geojson data for provinces, cities in China.")
-    (license license:gpl2)))
-
 (define-public r-leaflet-minicharts
   (package
     (name "r-leaflet-minicharts")
@@ -13839,13 +13814,13 @@ lavaan path model without having to write the DOT language graph specification."
 (define-public r-lavaanextra
   (package
     (name "r-lavaanextra")
-    (version "0.1.8")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lavaanExtra" version))
        (sha256
-        (base32 "1363cyvq5kdz3gvg4amiazd122fmbx4vygic0zsmi32306lf2wpk"))))
+        (base32 "0q443wx983vy2i4bn39psw2nwaqzjncdpm7lpwsj7bifjnsic5sb"))))
     (properties `((upstream-name . "lavaanExtra")))
     (build-system r-build-system)
     (propagated-inputs (list r-lavaan r-insight))
@@ -14826,29 +14801,6 @@ landscape metrics.  This package supports terra @code{SpatRaster} objects as
 input arguments.  It further provides utility functions to visualize patches,
 select metrics and building blocks to develop new metrics.")
     (license license:gpl3)))
-
-(define-public r-landsat8
-  (package
-    (name "r-landsat8")
-    (version "0.1-10")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "landsat8" version))
-       (sha256
-        (base32 "169b5ka98ka9chbmksz6syaygc9wgl8i2gz1h2xkxj3lk9jcg01r"))))
-    (properties `((upstream-name . "landsat8")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sp r-rgdal))
-    (home-page "https://cran.r-project.org/package=landsat8")
-    (synopsis
-     "Landsat 8 Imagery Rescaled to Reflectance, Radiance and/or Temperature")
-    (description
-     "This package provides functions for converted Landsat 8 multispectral satellite
-imagery rescaled to the top of atmosphere (TOA) reflectance, radiance and/or at
-satellite brightness temperature using radiometric rescaling coefficients
-provided in the metadata file (MTL file).")
-    (license license:gpl2)))
 
 (define-public r-landsat
   (package

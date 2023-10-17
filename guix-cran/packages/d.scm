@@ -1267,7 +1267,6 @@ proposed by Gottwald and Melbourne (2004) <DOI:10.1137/080718851>.")
                              r-r-utils
                              r-ncdf4
                              r-lubridate
-                             r-hydrogof
                              r-ggplot2
                              r-dplyr))
     (home-page "https://github.com/SongyanYu/dycdtools")
@@ -1495,36 +1494,6 @@ method.  See Lam, X.Y., Marron, J.S., Sun, D.F., and Toh, K.C. (2018)
 <@code{arXiv:1604.05473>} for more details.")
     (license license:gpl2)))
 
-(define-public r-dwbmodelun
-  (package
-    (name "r-dwbmodelun")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DWBmodelUN" version))
-       (sha256
-        (base32 "1m71fx9l2rq27d2q5hiqxiyljvf5wjcfkcblqw19rpiixrinv4va"))))
-    (properties `((upstream-name . "DWBmodelUN")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rgdal r-raster r-ncdf4 r-htmltools r-dygraphs))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=DWBmodelUN")
-    (synopsis "Dynamic Water Balance a Hydrological Model")
-    (description
-     "This package provides a tool to hydrologic modelling using the Budyko framework
-and the Dynamic Water Balance model with Dynamical Dimension Search algorithm to
-calibrate the model and analyze the outputs from interactive graphics.  It
-allows to calculate the water availability in basins and also some water fluxes
-represented by the structure of the model.  See Zhang, L., N., Potter, K.,
-Hickel, Y., Zhang, Q., Shao (2008) <DOI:10.1016/j.jhydrol.2008.07.021> \"Water
-balance modeling over variable time scales based on the Budyko framework - Model
-development and testing\", Journal of Hydrology, 360, 117â131.  See Tolson, B.,
-C., Shoemaker (2007) <DOI:10.1029/2005WR004723> \"Dynamically dimensioned search
-algorithm for computationally efficient watershed model calibration\", Water
-Resources Research, 43, 1â16.")
-    (license license:gpl2)))
-
 (define-public r-dvqcc
   (package
     (name "r-dvqcc")
@@ -1557,16 +1526,16 @@ offline and online monitoring.See in Danilo Marcondes Filho and Marcio Valk
 (define-public r-dvir
   (package
     (name "r-dvir")
-    (version "3.1.0")
+    (version "3.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dvir" version))
        (sha256
-        (base32 "0xbdl80zsb1278h08klln9iwwlc6nn38325pmvmfn2k4gq8rqqgp"))))
+        (base32 "09fcqhzy53bfkzlff2jpq76d9sygj6vcs85k70n06p633ldvayap"))))
     (properties `((upstream-name . "dvir")))
     (build-system r-build-system)
-    (propagated-inputs (list r-pedtools r-pedprobr r-forrel))
+    (propagated-inputs (list r-ribd r-pedtools r-pedprobr r-forrel))
     (home-page "https://github.com/magnusdv/dvir")
     (synopsis "Disaster Victim Identification")
     (description
@@ -1748,13 +1717,13 @@ friendly way.")
 (define-public r-duckplyr
   (package
     (name "r-duckplyr")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "duckplyr" version))
        (sha256
-        (base32 "0vy4llb30x19y68h4kyza6k555zvm1rmk8bzamgn5m7ag8qy8qwq"))))
+        (base32 "1yzqflpijnrg7dn87iz9b4z3z8ssl55jhva1n4vn3g6d85ls4ipv"))))
     (properties `((upstream-name . "duckplyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -3889,19 +3858,20 @@ prescriptions.  Based on Pye et al (2018) <doi:10.1002/pds.4440>.")
 (define-public r-drugexposurediagnostics
   (package
     (name "r-drugexposurediagnostics")
-    (version "0.4.6")
+    (version "0.4.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DrugExposureDiagnostics" version))
        (sha256
-        (base32 "18ny4aa8m6hi2dc5k508jpymxbalp9w36vz2h57wmwlz1a5bc9k5"))))
+        (base32 "0s2wbf5i4awnw3ncs5pp6gwsgpqqdfl3a209vvgad7xnfhp9m0gh"))))
     (properties `((upstream-name . "DrugExposureDiagnostics")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-rlang
                              r-magrittr
+                             r-lifecycle
                              r-glue
                              r-dplyr
                              r-checkmate
@@ -5854,38 +5824,6 @@ Citations: Hoehn et al (2022) <doi:10.1371/journal.pcbi.1009885>, Hoehn et al
     (description
      "Toggles the test and production versions of a large data analysis project.")
     (license license:gpl3+)))
-
-(define-public r-downscaledl
-  (package
-    (name "r-downscaledl")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "downscaledl" version))
-       (sha256
-        (base32 "0lqxngzpxj65b48j5w0n8dg6fp4lgg5zpgxc2wj6d9wh5f97l71b"))))
-    (properties `((upstream-name . "downscaledl")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tensorflow
-                             r-sp
-                             r-rstack
-                             r-rgdal
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-raster
-                             r-magrittr
-                             r-keras
-                             r-dplyr))
-    (home-page "https://cran.r-project.org/package=downscaledl")
-    (synopsis "Downscale of RS Images using Deep Learning")
-    (description
-     "Downscaling the coarse-resolution remote sensing images into fined-resolution
-images is important for preprocessing.  This package provides the functions for
-this with high accuracy.  Currently, the resautonet is used as the deep learning
-algorithm for downscaling.  This work was done based on this paper, Lianfa Li
-(2019) <doi:10.3390/rs11111378>.")
-    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-downscale
   (package
@@ -9956,13 +9894,13 @@ supported.")
 (define-public r-distinctiveness
   (package
     (name "r-distinctiveness")
-    (version "1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "distinctiveness" version))
        (sha256
-        (base32 "00wi5lvw5398lzzrhs884yx0i2njj2nkdmjk8ra7zba8hrhvbahb"))))
+        (base32 "0ckwxj1xsyfrpbj87gw2b3x1qnzf7a7i31zmg5ccfhi4z7vx13mz"))))
     (properties `((upstream-name . "distinctiveness")))
     (build-system r-build-system)
     (propagated-inputs (list r-igraph))
@@ -9970,7 +9908,8 @@ supported.")
     (synopsis "Distinctiveness Centrality")
     (description
      "Calculates Distinctiveness Centrality in social networks.  For formulas and
-descriptions, see: <doi:10.1371/journal.pone.0233276>.")
+descriptions, see Fronzetti Colladon and Naldi (2020)
+<doi:10.1371/journal.pone.0233276>.")
     (license license:expat)))
 
 (define-public r-distillml
@@ -13941,13 +13880,13 @@ frame with many numeric columns and a factor column.")
 (define-public r-dialr
   (package
     (name "r-dialr")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dialr" version))
        (sha256
-        (base32 "01vry39wc9ssmzkpp07szzbkigazj3l23bgrva3qmpbn5jjdi2ba"))))
+        (base32 "16lpb93shwr0gw7pk3q629kgsvh9csgxyy344m9za7qx9m2vjnnb"))))
     (properties `((upstream-name . "dialr")))
     (build-system r-build-system)
     (inputs (list openjdk))
@@ -17903,35 +17842,6 @@ Andreev, Shkolnikov and Begun (2002) <doi:10.4054/@code{DemRes.2002.7.14>}.")
 regression functions.")
     (license license:lgpl2.0+)))
 
-(define-public r-demcon
-  (package
-    (name "r-demcon")
-    (version "0.4.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "demcon" version))
-       (sha256
-        (base32 "1lwsvw40gmrcc38f2j231f7k7q9536pwgnfz1045dhs0cw1amlhx"))))
-    (properties `((upstream-name . "demcon")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr r-rlang r-httr r-data-table
-                             r-countrycode))
-    (native-inputs (list r-knitr))
-    (home-page "https://dante-sttr.gitlab.io/demcon/index.html")
-    (synopsis
-     "Interfacing with Popular Polity, Institutional, and Constitutional Datasets")
-    (description
-     "An open-source toolkit developed by ISciences, LLC and the DANTE Project that is
-intended for learning, accessing, pre-processing, and visualizing popular
-political, institutional, and constitutional datasets.  âdemcon aims to reduce
-barriers to entry in political science research by automating common acquisition
-and pre-processing procedures.  This package particularly focuses on the V-Dem
-dataset (<https://www.v-dem.net/vdemds.html>), and provides adaptations of
-methods presented in Fjelde, H., Knutsen, C. H. & @code{NygÃ¥rd}, H. M. 2021,
-<doi:10.1093/isq/sqaa076>.")
-    (license license:gpl3+)))
-
 (define-public r-dematel
   (package
     (name "r-dematel")
@@ -20421,44 +20331,6 @@ curves can be used for relaxing normality assumption in statistical applications
 (Zhang & Davidian, 2001) <doi:10.1111/j.0006-341X.2001.00795.x>.  This package
 provides the density function, the gradient of the loglikelihood and a random
 generator for Davidian curves.")
-    (license license:gpl3)))
-
-(define-public r-dcur
-  (package
-    (name "r-dcur")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dCUR" version))
-       (sha256
-        (base32 "12i2qcjq9i1ycs6z6g3yr1imv7v4g19kdhf1vg9xkvh43pagb6h7"))))
-    (properties `((upstream-name . "dCUR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stackoverflow
-                             r-rdpack
-                             r-ppcor
-                             r-mclust
-                             r-mass
-                             r-magrittr
-                             r-ggplot2
-                             r-dplyr))
-    (home-page "https://www.cesargamboasanabria.com")
-    (synopsis "Dimension Reduction with Dynamic CUR")
-    (description
-     "Dynamic CUR (@code{dCUR}) boosts the CUR decomposition (Mahoney MW., Drineas P.
-(2009) <doi:10.1073/pnas.0803205106>) varying the k, the number of columns and
-rows used, and its final purposes to help find the stage, which minimizes the
-relative error to reduce matrix dimension.  The goal of CUR Decomposition is to
-give a better interpretation of the matrix decomposition employing proper
-variable selection in the data matrix, in a way that yields a simplified
-structure.  Its origins come from analysis in genetics.  The goal of this
-package is to show an alternative to variable selection (columns) or individuals
-(rows).  The idea proposed consists of adjusting the probability distributions
-to the leverage scores and selecting the best columns and rows that minimize the
-reconstruction error of the matrix approximation ||A-CUR||.  It also includes a
-method that recalibrates the relative importance of the leverage scores
-according to an external variable of the user's interest.")
     (license license:gpl3)))
 
 (define-public r-dctensor

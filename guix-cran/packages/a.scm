@@ -1143,13 +1143,13 @@ Checks for unintended meanings by querying Wiktionary and Wikipedia.")
 (define-public r-av
   (package
     (name "r-av")
-    (version "0.8.5")
+    (version "0.8.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "av" version))
        (sha256
-        (base32 "0xnzf91jw3sx50x6lyzbm3g7a3rn9ad0k39xgp3vpdgj8w6v1324"))))
+        (base32 "071ahvb2z4in16b98aj2gl0qrsfnqprn67zf5ilj7bj4c1b6pmrx"))))
     (properties `((upstream-name . "av")))
     (build-system r-build-system)
     (inputs (list zlib))
@@ -4704,41 +4704,6 @@ models; see Bischl et al. (2016) <doi:10.1016/j.artint.2016.04.003>.")
 @code{OpenAI} (<https://platform.openai.com/>) to answer questions (about R).")
     (license license:gpl3+)))
 
-(define-public r-asip
-  (package
-    (name "r-asip")
-    (version "0.4.9")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ASIP" version))
-       (sha256
-        (base32 "06f1nvy920vyx3bmdi77mwvfsn32xsfxaslhagnf1zh652vfkbwi"))))
-    (properties `((upstream-name . "ASIP")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr r-rgdal r-raster))
-    (home-page "https://cran.r-project.org/package=ASIP")
-    (synopsis "Automated Satellite Image Processing")
-    (description
-     "Efficiently perform complex satellite image processes automatically with minimum
-inputs.  Functions are providing more control on the user to specify how the
-function needs to be executed by offering more customization options and
-facilitate more functionalities.  The functions are designed to identify the
-type of input satellite images and perform accordingly.  Also, some functions
-are giving options to perform multiple satellite data (even from different
-types) in single run.  Package currently supports satellite images from most
-widely used Landsat 4,5,7 and 8 and Sentinel-2 MSI data.  The primary
-applications of this package are given below.  1.  Conversion of optical bands
-to top of atmosphere reflectance.  2.  Conversion of thermal bands to
-corresponding temperature images.  3.  Derive application oriented products
-directly from source satellite image bands.  4.  Compute user defined equation
-and produce corresponding image product.  5.  Other basic tools for satellite
-image processing.  REFERENCES. i.  Chander and Markham (2003)
-<doi:10.1109/TGRS.2003.818464>.  ii.  Roy et.al, (2014)
-<doi:10.1016/j.rse.2014.02.001>.  iii.  Abrams (2000)
-<doi:10.1080/014311600210326>.")
-    (license license:gpl3)))
-
 (define-public r-asioheaders
   (package
     (name "r-asioheaders")
@@ -7568,7 +7533,6 @@ that available in other commercial software and subscription online calculators.
                              r-openair
                              r-mgcv
                              r-lubridate
-                             r-loa
                              r-ggtext
                              r-ggplot2
                              r-dplyr))
@@ -10297,52 +10261,6 @@ GIF images / MP4 videos, as Shiny apps (with interactivity) or as HTML documents
 through embedding into R Markdown documents.")
     (license license:expat)))
 
-(define-public r-animaltracker
-  (package
-    (name "r-animaltracker")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "animaltracker" version))
-       (sha256
-        (base32 "1zv2nj4wfskz1lxfgw8l4gyrlv418drk8zl4cw55i5na6a39shcv"))))
-    (properties `((upstream-name . "animaltracker")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-tidyr
-                             r-tibble
-                             r-sp
-                             r-shinywidgets
-                             r-shinythemes
-                             r-shinyjs
-                             r-shinycssloaders
-                             r-shinybs
-                             r-shiny
-                             r-scales
-                             r-rgdal
-                             r-raster
-                             r-maptools
-                             r-lubridate
-                             r-leaflet-extras
-                             r-leaflet
-                             r-httr
-                             r-ggplot2
-                             r-geosphere
-                             r-forcats
-                             r-dplyr))
-    (home-page "https://cran.r-project.org/package=animaltracker")
-    (synopsis "Animal Tracker")
-    (description
-     "Utilities for spatial-temporal analysis and visualization of animal (e.g.
-cattle) tracking data.  The core feature is a shiny web application for
-customized processing of GPS logs, including features for data augmentation
-(e.g. elevation lookup), data selection, export, plotting, and statistical
-summaries.  A data validation application allows for side-by-side comparison via
-time series plots and extreme value detection described by J.P. van Brakel
-<https://stackoverflow.com/questions/22583391/peak-signal-detection-in-realtime-timeseries-data/>.")
-    (license license:gpl3)))
-
 (define-public r-animalhabitatnetwork
   (package
     (name "r-animalhabitatnetwork")
@@ -11749,27 +11667,6 @@ generation of perlin, simplex, worley, cubic, value, and white noise with
 optional perturbation in either 2, 3, or 4 (in case of simplex and white noise)
 dimensions.")
     (license license:expat)))
-
-(define-public r-ambhasgw
-  (package
-    (name "r-ambhasgw")
-    (version "0.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ambhasGW" version))
-       (sha256
-        (base32 "0v517i4whip45pk6bwlwval9pz367pcgzz62b2z22mrwgi6m6bck"))))
-    (properties `((upstream-name . "ambhasGW")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-yaml r-rgdal r-raster))
-    (home-page "https://cran.r-project.org/package=ambhasGW")
-    (synopsis "Ground Water Modelling")
-    (description
-     "This package implements distributed transient groundwater modelling.  The model
-is based on the groundwater flow equation solved numerically using the finite
-difference explicit scheme.")
-    (license license:gpl3+)))
 
 (define-public r-amazonspr
   (package
@@ -18440,13 +18337,13 @@ Ormerod, J., Liu, W., Ma, C., Zomaya, A., Yang, J. (2018)
 (define-public r-adar
   (package
     (name "r-adar")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adaR" version))
        (sha256
-        (base32 "0pissrdkc4c729q0si68w5pk5sxvyhj7is0p7larxz7q3r3vkljk"))))
+        (base32 "1jfr1di0infrqlfjnr8429889pw5pqggpv30g4r910614fk1fzr0"))))
     (properties `((upstream-name . "adaR")))
     (build-system r-build-system)
     (propagated-inputs (list r-triebeard r-rcpp))

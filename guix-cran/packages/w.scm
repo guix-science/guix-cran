@@ -5080,13 +5080,13 @@ analysis.")
 (define-public r-weibullr-plotly
   (package
     (name "r-weibullr-plotly")
-    (version "0.1.5")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WeibullR.plotly" version))
        (sha256
-        (base32 "1g16jkigzd8kmsdfzbz57sz5n8f9s1r3mhl059w76fsyvrc23cin"))))
+        (base32 "1ymggxqhn2bc6r25vzp4vlr18pcw9vnn24ylwspk8vq8j00pn197"))))
     (properties `((upstream-name . "WeibullR.plotly")))
     (build-system r-build-system)
     (propagated-inputs (list r-weibullr r-plotly))
@@ -5291,41 +5291,6 @@ index for a particular area.  Additionally it also calculates rasters of KBA's
 Evolutionary Distinctiveness (ED) and Extinction risk (ER).  Farooq, H.,
 Azevedo, J., Belluardo F., Nanvonamuquitxo, C., Bennett, D., Moat, J., Soares,
 A., Faurby, S. & Antonelli, A. (2020) <doi:10.1101/2020.01.17.910299>.")
-    (license license:expat)))
-
-(define-public r-weed
-  (package
-    (name "r-weed")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "weed" version))
-       (sha256
-        (base32 "18kz10c580a25cxcghvp81irwqncvhjan3y5gnzy8gxm894q3p7m"))))
-    (properties `((upstream-name . "weed")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidytext
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-sf
-                             r-rgeos
-                             r-readxl
-                             r-purrr
-                             r-magrittr
-                             r-here
-                             r-ggplot2
-                             r-geonames
-                             r-forcats
-                             r-dplyr
-                             r-countrycode))
-    (home-page "https://github.com/rammkripa/weed")
-    (synopsis "Wrangler for Emergency Events Database")
-    (description
-     "Makes research involving EMDAT and related datasets easier.  These Datasets are
-manually filled and have several formatting and compatibility issues.  Weed aims
-to resolve these with its functions.")
     (license license:expat)))
 
 (define-public r-wec
@@ -6463,13 +6428,13 @@ to Beguin and Hulliger (2008)
 (define-public r-waywiser
   (package
     (name "r-waywiser")
-    (version "0.4.2")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "waywiser" version))
        (sha256
-        (base32 "0gi7488pza1syv58v33b1bq9yws3m799ilx95bch2bqnjjzapp1l"))))
+        (base32 "00bw02p6ylwm4hmgrlrd69gbbhhy8mzlkgzxchsjvjs696arypvk"))))
     (properties `((upstream-name . "waywiser")))
     (build-system r-build-system)
     (propagated-inputs (list r-yardstick
@@ -7329,27 +7294,6 @@ measured unimpaired runoff (in million acre-feet).  Data is provided by
 California Department of Water Resources and subject to revision.")
     (license license:expat)))
 
-(define-public r-watersheds
-  (package
-    (name "r-watersheds")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Watersheds" version))
-       (sha256
-        (base32 "1gn52nl0rr29pqq94gjasc4fi1kjxlrpjdkgm2x56j5jbd162drk"))))
-    (properties `((upstream-name . "Watersheds")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-splancs r-sp r-rgeos r-maptools r-lattice))
-    (home-page "https://cran.r-project.org/package=Watersheds")
-    (synopsis
-     "Spatial Watershed Aggregation and Spatial Drainage Network Analysis")
-    (description
-     "This package provides methods for watersheds aggregation and spatial drainage
-network analysis.")
-    (license license:gpl2+)))
-
 (define-public r-waterquality
   (package
     (name "r-waterquality")
@@ -7948,53 +7892,6 @@ of the model plant Arabidopsis thaliana exposed to two temperature growth
 conditions.  Exploratory and integrative analyses of these data are presented in
 Durufle et al (2020) <doi:10.1093/bib/bbaa166> and Durufle et al (2020)
 <doi:10.3390/cells9102249>.")
-    (license license:gpl3)))
-
-(define-public r-wallace
-  (package
-    (name "r-wallace")
-    (version "2.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "wallace" version))
-       (sha256
-        (base32 "0gql7pwpwdhnqrrqh6qv0zyl8r1pgf5hh3h64rdnap4fhn1id5b9"))))
-    (properties `((upstream-name . "wallace")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zip
-                             r-spthin
-                             r-spocc
-                             r-shinywidgets
-                             r-shinyjs
-                             r-shinyalert
-                             r-shiny
-                             r-sf
-                             r-rmarkdown
-                             r-rlang
-                             r-rjava
-                             r-rcolorbrewer
-                             r-magrittr
-                             r-leaflet-extras
-                             r-leaflet
-                             r-leafem
-                             r-knitcitations
-                             r-enmeval
-                             r-ecospat
-                             r-dt
-                             r-dplyr))
-    (home-page "http://wallaceecomod.github.io/wallace/")
-    (synopsis
-     "Modular Platform for Reproducible Modeling of Species Niches and Distributions")
-    (description
-     "The shiny application Wallace is a modular platform for reproducible modeling of
-species niches and distributions.  Wallace guides users through a complete
-analysis, from the acquisition of species occurrence and environmental data to
-visualizing model predictions on an interactive map, thus bundling complex
-workflows into a single, streamlined interface.  An extensive vignette, which
-guides users through most package functionality can be found on the package's
-@code{GitHub} Pages website:
-<https://wallaceecomod.github.io/wallace/articles/tutorial-v2.html>.")
     (license license:gpl3)))
 
 (define-public r-walkscoreapi

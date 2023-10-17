@@ -4628,37 +4628,6 @@ permutations, combinations and subsets of objects taken from a vector.
 Simplifies working with structures commonly encountered in combinatorics.")
     (license license:gpl3)))
 
-(define-public r-trophicposition
-  (package
-    (name "r-trophicposition")
-    (version "0.8.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tRophicPosition" version))
-       (sha256
-        (base32 "0ap7j15qfywilyx8zsnq061mis69yja16hjnla5grlqc0mcrdd7d"))))
-    (properties `((upstream-name . "tRophicPosition")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rjags
-                             r-rcolorbrewer
-                             r-plyr
-                             r-mcmcglmm
-                             r-hdrcde
-                             r-gridextra
-                             r-ggplot2
-                             r-data-table
-                             r-coda))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/clquezada/tRophicPosition")
-    (synopsis "Bayesian Trophic Position Estimation with Stable Isotopes")
-    (description
-     "Estimates the trophic position of a consumer relative to a baseline species.  It
-implements a Bayesian approach which combines an interface to the JAGS MCMC
-library of rjags and stable isotopes.  Users are encouraged to test the package
-and send bugs and/or errors to trophicposition-support@@googlegroups.com.")
-    (license license:gpl2+)))
-
 (define-public r-tropfishr
   (package
     (name "r-tropfishr")
@@ -5963,41 +5932,6 @@ functions for generating customized palettes that are on theme.  The package
 also offers functions for applying the palettes to plots made using the ggplot2
 package.")
     (license license:expat)))
-
-(define-public r-treetop
-  (package
-    (name "r-treetop")
-    (version "0.0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "treetop" version))
-       (sha256
-        (base32 "11lyg0izlzzvds8vig8ryicg94ydapr0wgfk5rj2shxqk9mxzfiz"))))
-    (properties `((upstream-name . "treetop")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stars
-                             r-spatstat-geom
-                             r-spatstat-explore
-                             r-sp
-                             r-shiny
-                             r-sf
-                             r-rgl
-                             r-rgdal
-                             r-rcolorbrewer
-                             r-rastervis
-                             r-raster
-                             r-pryr
-                             r-lidr
-                             r-geometry))
-    (home-page "https://github.com/carlos-alberto-silva/weblidar-treetop")
-    (synopsis
-     "Shiny-Based Application for Extracting Forest Information from LiDAR Data")
-    (description
-     "Set of tools implemented into a shiny-based application for extracting and
-analyzing individual tree forest attributes from @code{LiDAR} (Light Detection
-and Ranging) data.")
-    (license license:gpl3)))
 
 (define-public r-treetools
   (package
@@ -7978,33 +7912,6 @@ different entities in collections of Tracks.  Methods include selection,
 generalization, aggregation, intersection, simulation, and plotting.")
     (license license:gpl2+)))
 
-(define-public r-trajdatamining
-  (package
-    (name "r-trajdatamining")
-    (version "0.1.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "TrajDataMining" version))
-       (sha256
-        (base32 "1n5qcyc1kb8rdrqaji7pp63l2gyr6jim8spm8ydb4lnqfcnrin9g"))))
-    (properties `((upstream-name . "TrajDataMining")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xts
-                             r-trajectories
-                             r-spacetime
-                             r-sp
-                             r-rpostgresql
-                             r-rgdal
-                             r-geosphere))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/INPEtrajectories/TrajDataMining")
-    (synopsis "Trajectories Data Mining")
-    (description
-     "This package contains a set of methods for trajectory data preparation, such as
-filtering, compressing and clustering, and for trajectory pattern discovery.")
-    (license license:expat)))
-
 (define-public r-traj
   (package
     (name "r-traj")
@@ -8378,7 +8285,6 @@ Froeb et al. (2003) <doi:10.1016/S0304-4076(02)00166-5>.")
                              r-raster
                              r-plyr
                              r-pastecs
-                             r-momocs
                              r-jpeg
                              r-ggplot2
                              r-features
@@ -12691,6 +12597,38 @@ can create @code{timeR} objects and use them to record all timings, and extract
 recordings as data frame for later use.")
     (license (list license:asl2.0
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-timeplyr
+  (package
+    (name "r-timeplyr")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "timeplyr" version))
+       (sha256
+        (base32 "1pdvs21c3bqpyrks6smdlxmg92n04csnja7kbg6w3fyvxkifj2fq"))))
+    (properties `((upstream-name . "timeplyr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs
+                             r-timechange
+                             r-tidyselect
+                             r-stringr
+                             r-rlang
+                             r-rcpp
+                             r-pillar
+                             r-lubridate
+                             r-ggplot2
+                             r-dplyr
+                             r-data-table
+                             r-collapse))
+    (home-page "https://cran.r-project.org/package=timeplyr")
+    (synopsis "Fast Tidy Tools for Date and Date-Time Manipulation")
+    (description
+     "This package provides a set of fast tidy functions for wrangling, completing and
+summarising date and date-time data.  It combines tidyverse syntax with the
+efficiency of data.table and speed of collapse'.")
+    (license license:gpl2+)))
 
 (define-public r-timeperiodsr
   (package
@@ -17302,6 +17240,31 @@ utilities use the tframe package which provides a programming kernel for time
 series.  Extensions to tframe provided in @code{tframePlus} can also be used.
 See the Guide vignette for examples.")
     (license license:gpl2)))
+
+(define-public r-tfneuralode
+  (package
+    (name "r-tfneuralode")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tfNeuralODE" version))
+       (sha256
+        (base32 "1wspn1i5dvxly9ggbi07npv314krvb7472kx3crqalcxgjjfzfjl"))))
+    (properties `((upstream-name . "tfNeuralODE")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tensorflow r-reticulate r-keras r-desolve))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/semran9/tfNeuralODE")
+    (synopsis
+     "Create Neural Ordinary Differential Equations with 'tensorflow'")
+    (description
+     "This package provides a framework for the creation and use of Neural ordinary
+differential equations with the tensorflow and keras packages.  The idea of
+Neural ordinary differential equations comes from Chen et al. (2018)
+<doi:10.48550/@code{arXiv.1806.07366>}, and presents a novel way of learning and
+solving differential systems.")
+    (license license:expat)))
 
 (define-public r-tfio
   (package

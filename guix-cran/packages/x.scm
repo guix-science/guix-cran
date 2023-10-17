@@ -308,53 +308,6 @@ chart, meanwhile the we_rules() function detects non random patterns in sample."
 form described in package XR and in the book \"Extending R\".")
     (license license:gpl2+)))
 
-(define-public r-xroi
-  (package
-    (name "r-xroi")
-    (version "0.9.20")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "xROI" version))
-       (sha256
-        (base32 "0xa12qsw5xbbfqyv60apr4f9gx7q6rad4ywayvw8l2zla2wnhq5h"))))
-    (properties `((upstream-name . "xROI")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tiff
-                             r-stringr
-                             r-sp
-                             r-shinyjs
-                             r-shiny
-                             r-rjson
-                             r-rgdal
-                             r-rcurl
-                             r-raster
-                             r-moments
-                             r-lubridate
-                             r-jpeg
-                             r-data-table
-                             r-colourpicker))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=xROI")
-    (synopsis
-     "Delineate Region of Interests (ROI's) and Extract Time-Series Data from Digital Repeat Photography Images")
-    (description
-     "Digital repeat photography and near-surface remote sensing have been used by
-environmental scientists to study the environmental change for nearly a decade.
-However, a user-friendly, reliable, and robust platform to extract color-based
-statistics and time-series from a large stack of images is still lacking.  Here,
-we present an interactive open-source toolkit, called @code{xROI}', that
-facilitate the process time-series extraction and improve the quality of the
-final data. @code{xROI} provides a responsive environment for scientists to
-interactively a) delineate regions of interest (ROI), b) handle field of view
-(FOV) shifts, and c) extract and export time series data characterizing image
-color (i.e.  red, green and blue channel digital numbers for the defined ROI).
-Using @code{xROI}', user can detect FOV shifts without minimal difficulty.  The
-software gives user the opportunity to readjust the mask files or redraw new
-ones every time an FOV shift occurs. @code{xROI} helps to significantly improve
-data accuracy and continuity.")
-    (license license:agpl3)))
-
 (define-public r-xrnet
   (package
     (name "r-xrnet")

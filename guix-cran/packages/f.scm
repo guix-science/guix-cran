@@ -209,6 +209,28 @@ Neural Network, and Support Vector Regression) to determine the plant's fresh
 weight.")
     (license license:gpl3)))
 
+(define-public r-fwlplot
+  (package
+    (name "r-fwlplot")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fwlplot" version))
+       (sha256
+        (base32 "1fi2ijfkpxfbwxfcyc5mk2c7mpj6z7lrwm8wlilk2g04y6jmw84l"))))
+    (properties `((upstream-name . "fwlplot")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ggplot2 r-fixest r-data-table))
+    (home-page "https://cran.r-project.org/package=fwlplot")
+    (synopsis "Scatter Plot After Residualizing Using 'fixest' Package")
+    (description
+     "This package creates a scatter plot after residualizing using a set of
+covariates.  The residuals are calculated using the fixest package which allows
+very fast estimation that scales.  Details of the (Yule-)Frisch-Waugh-Lovell
+theorem is given in Basu (2023) <@code{arXiv:2307.00369>}.")
+    (license license:expat)))
+
 (define-public r-fwildclusterboot
   (package
     (name "r-fwildclusterboot")
@@ -9644,47 +9666,6 @@ airfares and on every international flight to and from Brazil, as well as
 domestic flights within the country.")
     (license license:expat)))
 
-(define-public r-flightr
-  (package
-    (name "r-flightr")
-    (version "0.5.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "FLightR" version))
-       (sha256
-        (base32 "1lbdh4m0s12617s7sarqhlj88j3rn8zaiiwz361rx83map4vvhad"))))
-    (properties `((upstream-name . "FLightR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-truncnorm
-                             r-suntools
-                             r-sf
-                             r-rcpparmadillo
-                             r-nlme
-                             r-mgcv
-                             r-maps
-                             r-ggsn
-                             r-ggplot2
-                             r-ggmap
-                             r-geosphere
-                             r-fields
-                             r-circular
-                             r-circstats
-                             r-bit))
-    (native-inputs (list r-knitr))
-    (home-page "https://CRAN.R-project.org/package=FLightR")
-    (synopsis "Reconstruct Animal Paths from Solar Geolocation Loggers Data")
-    (description
-     "Spatio-temporal locations of an animal are computed from annotated data with a
-hidden Markov model via particle filter algorithm.  The package is relatively
-robust to varying degrees of shading.  The hidden Markov model is described in
-Movement Ecology (Rakhimberdiev et al., 2015) <doi:10.1186/s40462-015-0062-5>,
-general package description is in the Methods in Ecology and Evolution
-(Rakhimberdiev et al., 2017) <doi:10.1111/2041-210X.12765> and package accuracy
-assessed in the Journal of Avian Biology (Rakhimberdiev et al.  2016)
-<doi:10.1111/jav.00891>.")
-    (license license:gpl3)))
-
 (define-public r-flightplot
   (package
     (name "r-flightplot")
@@ -13876,13 +13857,13 @@ accepts fundamental items and digital elevation models.")
 (define-public r-fgarch
   (package
     (name "r-fgarch")
-    (version "4022.89")
+    (version "4031.90")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fGarch" version))
        (sha256
-        (base32 "1v60k30lsdhpilpqwl9yl6mifr6aanwd8bq9byhl9wfmv5xp5a5l"))))
+        (base32 "06ilj6nkmc7d4dhbh3zd9f5nyiq4x9win9qkyvcgm5yc8qslnw5z"))))
     (properties `((upstream-name . "fGarch")))
     (build-system r-build-system)
     (propagated-inputs (list r-timeseries
@@ -17831,30 +17812,6 @@ Wilson-Hilferty transformation of chi squared variables.  Furthermore, the
 package provides interfaces to C code callable by another C code from other R
 packages.")
     (license license:gpl3)))
-
-(define-public r-fastmarching
-  (package
-    (name "r-fastmarching")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fastmaRching" version))
-       (sha256
-        (base32 "085xr5i6h6vwl1flzbkwqsm8d815s0p02p0mir60jqjvy0s7haip"))))
-    (properties `((upstream-name . "fastmaRching")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sp r-rgdal r-raster))
-    (home-page "https://cran.r-project.org/package=fastmaRching")
-    (synopsis "Fast Marching Method for Modelling Evolving Boundaries")
-    (description
-     "Fast Marching Method (FMM) first developed by Sethian (1996)
-<http://www.pnas.org/content/93/4/1591.short>, and further extended by including
-a second-order approximation, the first-arrival rule, additive weights, and
-non-homogeneous domains following Silva and Steele (2012)
-<doi:10.1142/S0219525911003293> and Silva and Steele (2014)
-<doi:10.1016/j.jas.2014.04.021>.")
-    (license license:gpl2+)))
 
 (define-public r-fastm
   (package

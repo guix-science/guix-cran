@@ -597,36 +597,6 @@ the generalized dispersion index (GDI) with its marginal one (MDI) and the
 generalized variation index (GVI) with its marginal one (MVI) too.")
     (license license:gpl3)))
 
-(define-public r-gwer
-  (package
-    (name "r-gwer")
-    (version "3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gwer" version))
-       (sha256
-        (base32 "0jiq5v37mbn6y7vl5gs8qahb796jrfqj0m54sd38vim8yhhjwfy8"))))
-    (properties `((upstream-name . "gwer")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-spgwr
-                             r-spdep
-                             r-spdata
-                             r-sp
-                             r-matrix
-                             r-maptools
-                             r-gwmodel
-                             r-glogis
-                             r-assertthat))
-    (home-page "https://cran.r-project.org/package=gwer")
-    (synopsis "Geographically Weighted Elliptical Regression")
-    (description
-     "Computes a elliptical regression model or a geographically weighted regression
-model with elliptical errors using Fisher's score algorithm.  Provides
-diagnostic measures, residuals and analysis of variance.  Cysneiros, F. J. A.,
-Paula, G. A., and Galea, M. (2007) <doi:10.1016/j.spl.2007.01.012>.")
-    (license license:gpl2+)))
-
 (define-public r-gwbr
   (package
     (name "r-gwbr")
@@ -1095,7 +1065,6 @@ different units: m/s, mol/m^2/s, and umol/m^2/s/Pa.")
                              r-reshape2
                              r-ncdf4
                              r-lubridate
-                             r-hydrogof
                              r-ggplot2
                              r-dplyr))
     (native-inputs (list r-knitr))
@@ -3514,6 +3483,35 @@ and elliptically-contoured repeated measurements models with ARMA and random
 effects dependence.")
     (license license:gpl2+)))
 
+(define-public r-growr
+  (package
+    (name "r-growr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "growR" version))
+       (sha256
+        (base32 "0xk0wwfvvj7gw2pfzrila6zadmzax2gsdc3skj9r00wxcj6dsanf"))))
+    (properties `((upstream-name . "growR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-rdpack r-r6))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/kuadrat/growR")
+    (synopsis "Implementation of the Vegetation Model ModVege")
+    (description
+     "Run grass growth simulations using a grass growth model based on @code{ModVege}
+(Jouven, M., P. @code{CarrÃ¨re}, and R. Baumont \"Model Predicting Dynamics of
+Biomass, Structure and Digestibility of Herbage in Managed Permanent Pastures.
+1.  Model Description.\" (2006) <doi:10.1111/j.1365-2494.2006.00515.x>).  The
+implementation in this package contains a few additions to the above cited
+version of @code{ModVege}, such as simulations of management decisions, and
+influences of snow cover.  As such, the model is fit to simulate grass growth in
+mountainous regions, such as the Swiss Alps.  The package also contains routines
+for calibrating the model and helpful tools for analysing model outputs and
+performance.")
+    (license license:expat)))
+
 (define-public r-growfunctions
   (package
     (name "r-growfunctions")
@@ -4903,7 +4901,6 @@ Cox regressions.")
                              r-parallelly
                              r-networkd3
                              r-magrittr
-                             r-hydrogof
                              r-gridextra
                              r-ggplot2
                              r-fme
@@ -5017,13 +5014,13 @@ Tree Method is implemented, as is presented in Hull, J. C. (2017).")
 (define-public r-greekletters
   (package
     (name "r-greekletters")
-    (version "0.0.7")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "greekLetters" version))
        (sha256
-        (base32 "0r6c4y6dnd3mm5i7y5cy7xz3w2j7qkfkkvxg9ig138has6115gjj"))))
+        (base32 "0c52lfpm0awd3hc6ggnjqz5ymcbbm74qlj9iznkd5gln85q29vqc"))))
     (properties `((upstream-name . "greekLetters")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-assertthat))
@@ -5046,7 +5043,7 @@ swirlify package.  Another utility of this package is to create new summary
 functions that contain the functional form of the model adjusted with the Greek
 letters, thus making the transition from statistical theory to practice easier.
 In addition, it is a natural extension of the clisymbols package.")
-    (license license:gpl3+)))
+    (license license:gpl2+)))
 
 (define-public r-greedyexperimentaldesignjars
   (package
@@ -6863,6 +6860,37 @@ al. (2010) <doi:10.3102/1076998609346967>.  These are multiple-membership linear
 mixed models with teachers modeled as \"G-side\" effects and students modeled with
 either \"G-side\" or \"R-side\" effects.")
     (license license:gpl2)))
+
+(define-public r-gpumatrix
+  (package
+    (name "r-gpumatrix")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GPUmatrix" version))
+       (sha256
+        (base32 "1yhz6gsqjgzy7gcshpb8mx8fxjn4pfwph08bkks7k7aw77byf01m"))))
+    (properties `((upstream-name . "GPUmatrix")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=GPUmatrix")
+    (synopsis "Basic Linear Algebra with GPU")
+    (description
+     "Motivation: GPU power is a great resource for computational biology specifically
+in statistics and linear algebra.  Unfortunately, very few packages connect R
+with the GPU and none of them are transparent enough to perform the computations
+on the GPU without substantial changes to the code.  Most of them lack proper
+maintenance: several of the previous attempts were removed from the
+corresponding repositories.  It would be desirable to have an R package,
+properly maintained, that exploits the use of the GPU with minimal changes in
+the existing code.  Results: We have developed the GPUMatrix package.  GPUMatrix
+mimics the behavior of the Matrix package and extends R to use the GPU for
+computations.  It is easy to learn and very few changes in the code are required
+to work on the GPU. GPUMatrix relies on either Tensorflow or Torch R packages to
+perform the GPU operations.  Its vignette shows some toy examples on
+non-negative factorization and other factorization used in bioinformatics'.")
+    (license license:artistic2.0)))
 
 (define-public r-gptzeror
   (package
@@ -9898,13 +9926,13 @@ model.")
 (define-public r-gmmsslm
   (package
     (name "r-gmmsslm")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gmmsslm" version))
        (sha256
-        (base32 "1zhrcfs68r58qn0xkvvb3bnwavycy957v32pw0mh87pi5yw9n3iy"))))
+        (base32 "1cbpgl5w4zkgci77lbx2ji73z3hvzj6kyr6bi79a8l65d303fblk"))))
     (properties `((upstream-name . "gmmsslm")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm))
@@ -14185,31 +14213,6 @@ that they do not overlap as in ggrepel'.  The algorithm used is a variation
 around the one of wordcloud2.js'.")
     (license license:gpl3)))
 
-(define-public r-ggvoronoi
-  (package
-    (name "r-ggvoronoi")
-    (version "0.8.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ggvoronoi" version))
-       (sha256
-        (base32 "0q02r0nql64am6ixjq59fjn2kzsj2is22ys1j1rzscwkh9f6f17m"))))
-    (properties `((upstream-name . "ggvoronoi")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sp r-rgeos r-raster r-ggplot2 r-deldir))
-    (native-inputs (list r-mapproj r-knitr r-ggmap))
-    (home-page "https://github.com/garretrc/ggvoronoi/")
-    (synopsis "Voronoi Diagrams and Heatmaps with 'ggplot2'")
-    (description
-     "Easy creation and manipulation of Voronoi diagrams using deldir with
-visualization in ggplot2'.  Convenient functions are provided to create nearest
-neighbor diagrams and heatmaps.  Diagrams are computed with deldir and processed
-to work with the sp framework.  Results are provided in a convenient spatial
-data structure and displayed with ggplot2'.  An outline can be provided by the
-user to specify the spatial domain of interest.")
-    (license license:expat)))
-
 (define-public r-ggversa
   (package
     (name "r-ggversa")
@@ -14734,28 +14737,6 @@ elegantly displaying and exploring soccer event data with ggplot2'.  Providing
 extensible layers and themes, it is designed to work smoothly with a variety of
 popular sports data providers.")
     (license license:expat)))
-
-(define-public r-ggsn
-  (package
-    (name "r-ggsn")
-    (version "0.5.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ggsn" version))
-       (sha256
-        (base32 "04vnap83w06hbqqi5kgxmrdb3a13n5mcdk5lllymv6nrzvl84f2x"))))
-    (properties `((upstream-name . "ggsn")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sf r-png r-maptools r-ggplot2 r-ggmap))
-    (home-page "https://github.com/oswaldosantos/ggsn")
-    (synopsis
-     "North Symbols and Scale Bars for Maps Created with 'ggplot2' or 'ggmap'")
-    (description
-     "Adds north symbols (18 options) and scale bars in kilometers, meters, nautical
-miles, or statue miles, to maps in geographic or metric coordinates created with
-ggplot2 or ggmap'.")
-    (license license:gpl2+)))
 
 (define-public r-ggshadow
   (package
@@ -15936,13 +15917,13 @@ that draw from the same source ggpacket layers.")
 (define-public r-ggoutlier
   (package
     (name "r-ggoutlier")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GGoutlieR" version))
        (sha256
-        (base32 "0vck9f2lcqk8cql2p8ngys9hnd3xr8lagy07bidkhr043prd3zgz"))))
+        (base32 "18ass4fxdsvcn9j103dixar0grrh5w3nh6icydh1w5myrd455z9l"))))
     (properties `((upstream-name . "GGoutlieR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -16689,13 +16670,13 @@ ggiraph'.")
 (define-public r-ggir
   (package
     (name "r-ggir")
-    (version "2.10-1")
+    (version "3.0-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GGIR" version))
        (sha256
-        (base32 "08zcxm4lvc60qsq7wm5vczsqqcy0kdlzm39yyl20jd3khvp06zsh"))))
+        (base32 "1c9qkl6sppans204xl4kxr01qzm95kg229h88xa8mwixxicy8wkw"))))
     (properties `((upstream-name . "GGIR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -21366,68 +21347,6 @@ makes it easy to define relationships between layers and obtain the necessary
 data from them.")
     (license license:expat)))
 
-(define-public r-geodetector
-  (package
-    (name "r-geodetector")
-    (version "1.0-4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "geodetector" version))
-       (sha256
-        (base32 "00zyx68jjl4mldah8mxfvwvv5yfkd4f1s2rlx6fsw6h8y2cwzj3l"))))
-    (properties `((upstream-name . "geodetector")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sp r-rgeos r-rgdal r-maptools))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=geodetector")
-    (synopsis
-     "Stratified Heterogeneity Measure, Dominant Driving Force Detection, Interaction Relationship Investigation")
-    (description
-     "Spatial stratified heterogeneity (SSH), referring to the within strata are more
-similar than the between strata, a model with global parameters would be
-confounded if input data is SSH. Note that the \"spatial\" here can be either
-geospatial or the space in mathematical meaning.  Geographical detector is a
-novel tool to investigate SSH: (1) measure and find SSH of a variable Y; (2)
-test the power of determinant X of a dependent variable Y according to the
-consistency between their spatial distributions; and (3) investigate the
-interaction between two explanatory variables X1 and X2 to a dependent variable
-Y (Wang et al 2014 <doi:10.1080/13658810802443457>, Wang, Zhang, and Fu 2016
-<doi:10.1016/j.ecolind.2016.02.052>).")
-    (license license:gpl2+)))
-
-(define-public r-geodesicl
-  (package
-    (name "r-geodesicl")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GeodesiCL" version))
-       (sha256
-        (base32 "1i3i6vlh3nnb7z6qzh2cd6cqka78bfdly952x5ryl7cb2590a4pc"))))
-    (properties `((upstream-name . "GeodesiCL")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble
-                             r-sp
-                             r-rgdal
-                             r-readr
-                             r-profvis
-                             r-mapview
-                             r-magrittr
-                             r-leafpop
-                             r-leaflet
-                             r-htmltools
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/diegoalarc/GeodesiCL")
-    (synopsis "Geometric Geodesy Functions")
-    (description
-     "Geometric geodesy functions applied to most common ellipsoids.  This package was
-created to streamline and facilitate their work for surveyors, geographers, and
-everything related to geosciences.")
-    (license license:gpl3)))
-
 (define-public r-geodata
   (package
     (name "r-geodata")
@@ -24841,27 +24760,6 @@ number of source articles has increased over time and unevenly across countries.
 that data to facilitate valid time series analysis.")
     (license license:expat)))
 
-(define-public r-gdefrag
-  (package
-    (name "r-gdefrag")
-    (version "0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gDefrag" version))
-       (sha256
-        (base32 "016vpj03drygxsa06jin225rfgjvjm938x65990ms15xcwrgv8nb"))))
-    (properties `((upstream-name . "gDefrag")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sp r-rgeos r-rgdal r-maptools r-igraph))
-    (home-page "https://cran.r-project.org/package=gDefrag")
-    (synopsis "Graph-Based Landscape De-Fragmentation")
-    (description
-     "This package provides a set of tools to help the de-fragmentation process.  It
-works by prioritizing the different sections of linear infrastructures (e.g.
-roads, power-lines) to increase the available amount of a given resource.")
-    (license license:gpl2+)))
-
 (define-public r-gde
   (package
     (name "r-gde")
@@ -27237,17 +27135,17 @@ distribution.")
 (define-public r-gamlss-spatial
   (package
     (name "r-gamlss-spatial")
-    (version "2.0.0")
+    (version "3.0-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gamlss.spatial" version))
        (sha256
-        (base32 "1pgmlc6i7p5mjb1pc7b861yjl2gwr37bbzj3j2dl0qzybrs742mx"))))
+        (base32 "1v1mwi0k38b1b6bwf9gw46fkx83gzfxfqcyykx6kzpc7shkvy8f8"))))
     (properties `((upstream-name . "gamlss.spatial")))
     (build-system r-build-system)
     (propagated-inputs (list r-spam r-mgcv r-gamlss-dist r-gamlss-add r-gamlss))
-    (home-page "http://www.gamlss.org/")
+    (home-page "https://www.gamlss.com/")
     (synopsis
      "Spatial Terms in Generalized Additive Models for Location Scale and Shape Models")
     (description

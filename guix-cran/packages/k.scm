@@ -112,7 +112,7 @@ publication-ready tables to latex files, and running Monte Carlo experiments.")
         (base32 "1rlm7i95yw66asgkag93phig2y9lic4xl2fv3cbnr3v751f6a59m"))))
     (properties `((upstream-name . "kwb.hantush")))
     (build-system r-build-system)
-    (propagated-inputs (list r-lattice r-hydrogof))
+    (propagated-inputs (list r-lattice))
     (native-inputs (list r-knitr))
     (home-page "https://kwb-r.github.io/kwb.hantush")
     (synopsis
@@ -193,13 +193,13 @@ method are (1).  Kuiper, N. H. (1960). <DOI:10.1016/S1385-7258(60)50006-0> and
 (define-public r-ktweedie
   (package
     (name "r-ktweedie")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ktweedie" version))
        (sha256
-        (base32 "1jvcm34bszdqzpbskazabd560ah218yr2yzbzcpbvdbdsvyy4gw5"))))
+        (base32 "02agl1wc37wvsfn4lm59jn2jbc09ixh2g178x3s3li98z78ykv5z"))))
     (properties `((upstream-name . "ktweedie")))
     (build-system r-build-system)
     (native-inputs (list r-knitr gfortran))
@@ -3936,43 +3936,6 @@ is used.  The package plays well together with meta-learning packages like
 tidymodels', caret or mlr3'.  Visualizations can be done using the R package
 shapviz'.")
     (license license:gpl2+)))
-
-(define-public r-kernelphil
-  (package
-    (name "r-kernelphil")
-    (version "0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "kernelPhil" version))
-       (sha256
-        (base32 "0pzsknb0ibm3v0ibfaklb4g2mx7zrva4m29356cirwd29nmd8bqw"))))
-    (properties `((upstream-name . "kernelPhil")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-wordspace
-                             r-rgdal
-                             r-reshape2
-                             r-pbapply
-                             r-hmisc
-                             r-gridextra
-                             r-ggplot2
-                             r-dplyr
-                             r-directlabels
-                             r-benchmarkme))
-    (home-page "http://www.icge.co.uk/")
-    (synopsis
-     "Kernel Smoothing Tools for Philology and Historical Dialectology")
-    (description
-     "This package contains kernel smoothing tools designed for use by historical
-dialectologists and philologists for exploring spatial and temporal patterns in
-noisy historical language data, such as that obtained from historical texts.
-The main way in which these might differ from other implementations of kernel
-smoothing is that they assume that the function (linguistic variable) being
-explored has the form of the relative frequency of a series of discrete
-possibilities (linguistic variants).  This package also offers a way of
-exploring distributions in 2-dimensional space and in time with separate
-kernels, and tools for identifying appropriate bandwidths for these.")
-    (license license:gpl3+)))
 
 (define-public r-kernelknn
   (package
