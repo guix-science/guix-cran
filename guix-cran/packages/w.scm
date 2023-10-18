@@ -5293,6 +5293,40 @@ Azevedo, J., Belluardo F., Nanvonamuquitxo, C., Bennett, D., Moat, J., Soares,
 A., Faurby, S. & Antonelli, A. (2020) <doi:10.1101/2020.01.17.910299>.")
     (license license:expat)))
 
+(define-public r-weed
+  (package
+    (name "r-weed")
+    (version "1.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "weed" version))
+       (sha256
+        (base32 "1i44v0swnlpgmicjllha3sk64cq55gygsphhi27yszg4jpd0sjqm"))))
+    (properties `((upstream-name . "weed")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidytext
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-sf
+                             r-readxl
+                             r-purrr
+                             r-magrittr
+                             r-here
+                             r-ggplot2
+                             r-geonames
+                             r-forcats
+                             r-dplyr
+                             r-countrycode))
+    (home-page "https://github.com/rammkripa/weed")
+    (synopsis "Wrangler for Emergency Events Database")
+    (description
+     "Makes research involving EMDAT and related datasets easier.  These Datasets are
+manually filled and have several formatting and compatibility issues.  Weed aims
+to resolve these with its functions.")
+    (license license:expat)))
+
 (define-public r-wec
   (package
     (name "r-wec")

@@ -16874,13 +16874,13 @@ joint tuning of machine learning algorithms and debiasing methods.")
 (define-public r-mlr3db
   (package
     (name "r-mlr3db")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3db" version))
        (sha256
-        (base32 "0gvmn85sqn3klziy8nd726nim28cvfgdaddp4ilbq3v0jr745giz"))))
+        (base32 "00zg5skc7l5i84djmq3v5f1ln0959jx24gfazx49vpyxbcs0p5dg"))))
     (properties `((upstream-name . "mlr3db")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6
@@ -18855,6 +18855,29 @@ sub-Gaussian stable distributions developed by Teimouri (2022)
 distribution within the Bayesian framework.")
     (license license:gpl2+)))
 
+(define-public r-mixspe
+  (package
+    (name "r-mixspe")
+    (version "0.9.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mixSPE" version))
+       (sha256
+        (base32 "1fcafsvnv9hgh0cnjqwfj09y4fw3scm888fnnax3pjialklzmxh7"))))
+    (properties `((upstream-name . "mixSPE")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mvtnorm))
+    (home-page "https://cran.r-project.org/package=mixSPE")
+    (synopsis
+     "Mixtures of Power Exponential and Skew Power Exponential Distributions for Use in Model-Based Clustering and Classification")
+    (description
+     "Mixtures of skewed and elliptical distributions are implemented using mixtures
+of multivariate skew power exponential and power exponential distributions,
+respectively.  A generalized expectation-maximization framework is used for
+parameter estimation.  See citation() for how to cite.")
+    (license license:gpl2+)))
+
 (define-public r-mixsmsn
   (package
     (name "r-mixsmsn")
@@ -20468,6 +20491,42 @@ missing observation.  Methods for this process are as described in
 A.M.Gun,M.K.Gupta and B.Dasgupta(2019,ISBN:81-87567-81-3).")
     (license license:gpl3)))
 
+(define-public r-misspi
+  (package
+    (name "r-misspi")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "misspi" version))
+       (sha256
+        (base32 "0rbkwfq3b7gvq3qwn3acbrdv4npvm5ixz6y7877alraqd0qjg1c8"))))
+    (properties `((upstream-name . "misspi")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sis
+                             r-plotly
+                             r-lightgbm
+                             r-glmnet
+                             r-ggplot2
+                             r-foreach
+                             r-dosnow
+                             r-doparallel))
+    (home-page "https://cran.r-project.org/package=misspi")
+    (synopsis "Missing Value Imputation in Parallel")
+    (description
+     "This package provides a framework that boosts the imputation of
+@code{missForest} by Stekhoven, D.J. and BÃ¼hlmann, P. (2012)
+<doi:10.1093/bioinformatics/btr597> by harnessing parallel processing and
+through the fast Gradient Boosted Decision Trees (GBDT) implementation
+@code{LightGBM} by Ke, Guolin et al.(2017)
+<https://papers.nips.cc/paper/6907-lightgbm-a-highly-efficient-gradient-boosting-decision>.
+ misspi has the following main advantages: 1.  Allows embrassingly parallel
+imputation on large scale data.  2.  Accepts a variety of machine learning
+models as methods with friendly user portal.  3.  Supports multiple
+initializations methods.  4.  Supports early stopping that prohibits unnecessary
+iterations.")
+    (license license:gpl2)))
+
 (define-public r-missonet
   (package
     (name "r-missonet")
@@ -21109,13 +21168,13 @@ Models with time dependent misclassification may also be fitted.")
 (define-public r-miscfuncs
   (package
     (name "r-miscfuncs")
-    (version "1.5-5")
+    (version "1.5-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "miscFuncs" version))
        (sha256
-        (base32 "1mcn3sbi1rl4vm22qp31c8vrhzr6ffrqm3qhr6rp05bdlp99blpn"))))
+        (base32 "0v0ipq2fshjrpkl3mfy8wyf3vq7wmcxf1kppdbm500q9jan7r85i"))))
     (properties `((upstream-name . "miscFuncs")))
     (build-system r-build-system)
     (propagated-inputs (list r-roxygen2 r-mvtnorm))
@@ -21250,13 +21309,13 @@ Association, <doi: 10.1080/01621459.2019.1635485>.")
 (define-public r-mirtcat
   (package
     (name "r-mirtcat")
-    (version "1.12.2")
+    (version "1.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mirtCAT" version))
        (sha256
-        (base32 "0xxbja9d1n9r633isa7jzz1b46ins97q18hvlq2p1dal1hzxxh16"))))
+        (base32 "1vlv93wjwj3ajf0mqjz38bi9fdk1sl0wqyqr7kjhhdj4znhrprbs"))))
     (properties `((upstream-name . "mirtCAT")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny
@@ -21272,28 +21331,27 @@ Association, <doi: 10.1080/01621459.2019.1635485>.")
     (synopsis
      "Computerized Adaptive Testing with Multidimensional Item Response Theory")
     (description
-     "This package provides tools to generate an HTML interface for creating adaptive
-and non-adaptive educational and psychological tests using the shiny package
-(Chalmers (2016) <doi:10.18637/jss.v071.i05>).  Suitable for applying
-unidimensional and multidimensional computerized adaptive tests (CAT) using item
-response theory methodology and for creating simple questionnaires forms to
-collect response data directly in R. Additionally, optimal test designs (e.g.,
-\"shadow testing\") are supported for tests which contain a large number of item
-selection constraints.  Finally, package contains tools useful for performing
-Monte Carlo simulations for studying the behavior of computerized adaptive test
-banks.")
+     "This package provides tools to generate HTML interfaces for adaptive and
+non-adaptive tests using the shiny package (Chalmers (2016)
+<doi:10.18637/jss.v071.i05>).  Suitable for applying unidimensional and
+multidimensional computerized adaptive tests (CAT) using item response theory
+methodology and for creating simple questionnaires forms to collect response
+data directly in R. Additionally, optimal test designs (e.g., \"shadow testing\")
+are supported for tests that contain a large number of item selection
+constraints.  Finally, package contains tools useful for performing Monte Carlo
+simulations for studying test item banks.")
     (license license:gpl3+)))
 
 (define-public r-mirt
   (package
     (name "r-mirt")
-    (version "1.40")
+    (version "1.41")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mirt" version))
        (sha256
-        (base32 "0c4zziy38a4ibnb4iiy893qxn582l8d2qn114rwxbbypyh7djjbi"))))
+        (base32 "0qx8qr4zd5jliamsmpr0c321g3k9ks1ki4fvy5lia3xgihp2s6yh"))))
     (properties `((upstream-name . "mirt")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -21311,16 +21369,16 @@ banks.")
     (home-page "https://github.com/philchalmers/mirt")
     (synopsis "Multidimensional Item Response Theory")
     (description
-     "Analysis of dichotomous and polytomous response data using unidimensional and
-multidimensional latent trait models under the Item Response Theory paradigm
-(Chalmers (2012) <doi:10.18637/jss.v048.i06>).  Exploratory and confirmatory
-models can be estimated with quadrature (EM) or stochastic (MHRM) methods.
-Confirmatory bi-factor and two-tier analyses are available for modeling item
-testlets.  Multiple group analysis and mixed effects designs also are available
-for detecting differential item and test functioning as well as modeling item
-and person covariates.  Finally, latent class models such as the DINA, DINO,
-multidimensional latent class, and several other discrete latent variable
-models, including mixture and zero-inflated response models, are supported.")
+     "Analysis of discrete response data using unidimensional and multidimensional
+item analysis models under the Item Response Theory paradigm (Chalmers (2012)
+<doi:10.18637/jss.v048.i06>).  Exploratory and confirmatory item factor analysis
+models are estimated with quadrature (EM) or stochastic (MHRM) methods.
+Confirmatory bi-factor and two-tier models are available for modeling item
+testlets using dimension reduction EM algorithms, while multiple group analyses
+and mixed effects designs are included for detecting differential item, bundle,
+and test functioning, and for modeling item and person covariates.  Finally,
+latent class models such as the DINA, DINO, multidimensional latent class,
+mixture, and zero-inflated response models are supported.")
     (license license:gpl3+)))
 
 (define-public r-mirsea

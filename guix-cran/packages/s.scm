@@ -18,6 +18,7 @@
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages autotools)
   #:use-module (gnu packages algebra)
+  #:use-module (gnu packages compression)
   #:use-module (gnu packages java)
   #:use-module (gnu packages docker)
   #:use-module (gnu packages tbb)
@@ -25,7 +26,6 @@
   #:use-module (gnu packages geo)
   #:use-module (gnu packages ssh)
   #:use-module (gnu packages tls)
-  #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages video)
   #:use-module (gnu packages sqlite)
@@ -4489,6 +4489,42 @@ covariate adjustment procedures (i.e., regression and augmentation) for
 inference of the metrics based on RMST are also included.")
     (license license:gpl2)))
 
+(define-public r-surtvep
+  (package
+    (name "r-surtvep")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "surtvep" version))
+       (sha256
+        (base32 "0mmpyjv8cyayqpkkr7lh31s7bascv6i3h3774sfc015lzjpwl22f"))))
+    (properties `((upstream-name . "surtvep")))
+    (build-system r-build-system)
+    (inputs (list zlib))
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-ggpubr
+                             r-ggplot2))
+    (native-inputs (list pkg-config))
+    (home-page "https://github.com/UM-KevinHe/surtvep")
+    (synopsis
+     "Cox Non-Proportional Hazards Model with Time-Varying Coefficients")
+    (description
+     "Fit Cox non-proportional hazards models with time-varying coefficients.  Both
+unpenalized procedures (Newton and proximal Newton) and penalized procedures
+(P-splines and smoothing splines) are included using B-spline basis functions
+for estimating time-varying coefficients.  For penalized procedures, cross
+validations, @code{mAIC}, TIC or GIC are implemented to select tuning
+parameters.  Utilities for carrying out post-estimation visualization,
+summarization, point-wise confidence interval and hypothesis testing are also
+provided.  For more information, see Wu et al. (2022) <doi:
+10.1007/s10985-021-09544-2> and Luo et al. (2023)
+<doi:10.1177/09622802231181471>.")
+    (license license:gpl3)))
+
 (define-public r-surtex
   (package
     (name "r-surtex")
@@ -7605,6 +7641,26 @@ Online Analysis) framework (Albert Bifet, Geoff Holmes, Richard Kirkby, Bernhard
 Pfahringer (2010).  MOA: Massive Online Analysis, Journal of Machine Learning
 Research 11: 1601-1604).")
     (license license:gpl3)))
+
+(define-public r-streammetabolism
+  (package
+    (name "r-streammetabolism")
+    (version "1.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "StreamMetabolism" version))
+       (sha256
+        (base32 "13f5z4d04pq5jb8gpk8rh79i2f5b6bqma1p3a3zqcw74wxdhk8hg"))))
+    (properties `((upstream-name . "StreamMetabolism")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo r-suntools r-chron))
+    (home-page "https://github.com/ssefick/StreamMetabolism")
+    (synopsis "Calculate Single Station Metabolism from Diurnal Oxygen Curves")
+    (description
+     "I provide functions to calculate Gross Primary Productivity, Net Ecosystem
+Production, and Ecosystem Respiration from single station diurnal Oxygen curves.")
+    (license license:gpl3+)))
 
 (define-public r-streamdepletr
   (package
@@ -24155,13 +24211,13 @@ quasi-likelihood and other variants discussed in the h-likelihood literature
 (define-public r-spam64
   (package
     (name "r-spam64")
-    (version "2.9-0")
+    (version "2.10-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spam64" version))
        (sha256
-        (base32 "1k2ah76l38xwzn7c541b7nip2yx8n8yh6p9j80rpkc3jdni2n9dq"))))
+        (base32 "0kb7jz12xb0i45b70x3p785md01s7wbwl8lgisq4i83jvlz016ln"))))
     (properties `((upstream-name . "spam64")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -28447,27 +28503,6 @@ implemented by combining the iterative shrinkage-thresholding algorithm and the
 alternating direction method of multipliers algorithms.  The main method is
 built in C++, and the complementary methods are written in R.")
     (license license:gpl2+)))
-
-(define-public r-smnet
-  (package
-    (name "r-smnet")
-    (version "2.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "smnet" version))
-       (sha256
-        (base32 "17zv02f1g86s55g81anhqrxfgy2biamsw606byxwh9kdc5l4vfv6"))))
-    (properties `((upstream-name . "smnet")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-spam r-rsqlite))
-    (home-page "https://github.com/alastairrushworth/smnet/")
-    (synopsis "Smoothing for Stream Network Data")
-    (description
-     "Fits flexible additive models to data on stream networks, taking account of
-flow-connectivity of the network.  Models are fitted using penalised least
-squares.")
-    (license license:gpl2)))
 
 (define-public r-smncensreg
   (package
@@ -35810,34 +35845,6 @@ environments.See full documentation at
 <https://avi-kenny.github.io/@code{SimEngine/>}.")
     (license license:gpl3)))
 
-(define-public r-simed
-  (package
-    (name "r-simed")
-    (version "2.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "simEd" version))
-       (sha256
-        (base32 "0rsagk77qgxfjjkqrg2kv88cg9z3gnjff7k1558psvbvc50d3cmg"))))
-    (properties `((upstream-name . "simEd")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-shape r-rstream))
-    (home-page "https://cran.r-project.org/package=simEd")
-    (synopsis "Simulation Education")
-    (description
-     "This package contains various functions to be used for simulation education,
-including simple Monte Carlo simulation functions, queueing simulation
-functions, variate generation functions capable of producing independent streams
-and antithetic variates, functions for illustrating random variate generation
-for various discrete and continuous distributions, and functions to compute
-time-persistent statistics.  Also contains functions for visualizing:
-event-driven details of a single-server queue model; a Lehmer random number
-generator; variate generation via acceptance-rejection; and of generating a
-non-homogeneous Poisson process via thinning.  Also contains two queueing data
-sets (one fabricated, one real-world) to facilitate input modeling.")
-    (license license:gpl2+)))
-
 (define-public r-simecol
   (package
     (name "r-simecol")
@@ -35939,13 +35946,13 @@ al. (2018) <doi:10.1002/sim.7689> for details.")
 (define-public r-simdesign
   (package
     (name "r-simdesign")
-    (version "2.12")
+    (version "2.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SimDesign" version))
        (sha256
-        (base32 "0dhbh76vkzlpicvn7hsqkwalqk88j14jxhw7jqnlxfnm835fx1qf"))))
+        (base32 "1wg6npbg1avgf948n2sw4q2q3022528rqfqzbjn67bayn7l8dfk6"))))
     (properties `((upstream-name . "SimDesign")))
     (build-system r-build-system)
     (propagated-inputs (list r-sessioninfo
@@ -46963,146 +46970,6 @@ O'Sullivan's set of spatial segregation measures (2004)
 <doi:10.1111/j.0081-1750.2004.00150.x>.")
     (license license:gpl3+)))
 
-(define-public r-seermapperwest
-  (package
-    (name "r-seermapperwest")
-    (version "1.2.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SeerMapperWest" version))
-       (sha256
-        (base32 "1v5ql5z1sv13lgmla03nzpdxzbxqw73zc3az6xf75vqb042c4wxq"))))
-    (properties `((upstream-name . "SeerMapperWest")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sp))
-    (home-page "https://cran.r-project.org/package=SeerMapperWest")
-    (synopsis
-     "Supplemental U.S. 2000 Census Tract Boundaries for 13 Western States without Seer Registries for 'SeerMapper'")
-    (description
-     "This package provides supplemental 2000 census tract boundaries for the 13
-states without Seer Registries that are west of the Mississippi river for use
-with the @code{SeerMapper} package.  The data contained in this package is
-derived from U.S. 2000 Census data and is in the public domain.  Updated to
-Alber Equal Area projection.")
-    (license license:gpl2+)))
-
-(define-public r-seermapperregs
-  (package
-    (name "r-seermapperregs")
-    (version "1.2.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SeerMapperRegs" version))
-       (sha256
-        (base32 "1di7l6804gi2rsdbwb9naymqzidb8bqf62a6w32jfkl67175cg0c"))))
-    (properties `((upstream-name . "SeerMapperRegs")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sp))
-    (home-page "https://cran.r-project.org/package=SeerMapperRegs")
-    (synopsis
-     "Supplemental U.S. 2000 Census Tract Boundaries for 19 States with Seer Registries for 'SeerMapper'")
-    (description
-     "This package provides supplemental 2000 census tract boundaries for the 19
-states containing Seer Registries for use with the @code{SeerMapper} package.
-The data contained in this package is derived from U.S. Census data and is in
-the public domain.")
-    (license license:gpl2+)))
-
-(define-public r-seermappereast
-  (package
-    (name "r-seermappereast")
-    (version "1.2.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SeerMapperEast" version))
-       (sha256
-        (base32 "1jfllxnqiwrnp416xmn7rzmizwj26skadpj9jvxkv70x053ijmjn"))))
-    (properties `((upstream-name . "SeerMapperEast")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sp))
-    (home-page "https://cran.r-project.org/package=SeerMapperEast")
-    (synopsis
-     "Supplemental U.S. 2000 Census Tract Boundaries for 20 States, District and Territory without Seer Registries that are East of the Mississippi River for Use with 'SeerMapper' Package")
-    (description
-     "This package provides supplemental 2000 census tract boundaries for the 20
-states, district and territory without Seer Registries that are east of the
-Mississippi river for use with the @code{SeerMapper} package.  The data
-contained in this package is derived from U.S. Census data and is in the public
-domain.")
-    (license license:gpl2+)))
-
-(define-public r-seermapper2010west
-  (package
-    (name "r-seermapper2010west")
-    (version "1.2.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SeerMapper2010West" version))
-       (sha256
-        (base32 "1vc1j9hh9yr69dz9fnqfh17xrad3f16kcb63sybdkg02ss5y5ppr"))))
-    (properties `((upstream-name . "SeerMapper2010West")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sp))
-    (home-page "https://cran.r-project.org/package=SeerMapper2010West")
-    (synopsis
-     "Supplemental U.S. 2010 Census Tract Boundaries for 13 Western States without Seer Registries for 'SeerMapper'")
-    (description
-     "This package provides supplemental 2010 census tract boundaries for the 13
-states without Seer Registries that are west of the Mississippi river for use
-with the @code{SeerMapper} package.  The data contained in this package is
-derived from U.S. 2010 Census data and is in public domain.")
-    (license license:gpl2+)))
-
-(define-public r-seermapper2010regs
-  (package
-    (name "r-seermapper2010regs")
-    (version "1.2.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SeerMapper2010Regs" version))
-       (sha256
-        (base32 "1v8vnvkmh3wqinanm5aap3vw36zriqh8xw2im2ncw0rdhf9ccbl5"))))
-    (properties `((upstream-name . "SeerMapper2010Regs")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sp))
-    (home-page "https://cran.r-project.org/package=SeerMapper2010Regs")
-    (synopsis
-     "Supplemental U.S. 2010 Census Tract Boundaries for 19 States with Seer Registries for 'SeerMapper'")
-    (description
-     "This package provides supplemental 2010 census tract boundaries of the 19 states
-containing Seer Registries for use with the @code{SeerMapper} package.  The data
-contained in this package is derived from U.S. 2010 Census data and is in public
-domain.")
-    (license license:gpl2+)))
-
-(define-public r-seermapper2010east
-  (package
-    (name "r-seermapper2010east")
-    (version "1.2.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SeerMapper2010East" version))
-       (sha256
-        (base32 "0v3cslshg5qjmjnxw4xprdnqwdwnyamyljdyi9nwixjc2nm9inbx"))))
-    (properties `((upstream-name . "SeerMapper2010East")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sp))
-    (home-page "https://cran.r-project.org/package=SeerMapper2010East")
-    (synopsis
-     "Supplemental U.S. 2010 Census Tract Boundaries for 20 Eastern States (including DC and PR) without Registries for 'SeerMapper'")
-    (description
-     "This package provides supplemental 2010 census tract boundary package for 20
-states without Seer Registries that are east of the Mississippi river for use
-with the @code{SeerMapper} package.  The data contained in this package is
-derived from U.S. Census data and is in public domain.")
-    (license license:gpl2+)))
-
 (define-public r-seerabomb
   (package
     (name "r-seerabomb")
@@ -47633,13 +47500,13 @@ concealed trait.  See Herrera-Alsina et al. (2019) <doi:10.1093/sysbio/syy057>."
 (define-public r-secrlinear
   (package
     (name "r-secrlinear")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "secrlinear" version))
        (sha256
-        (base32 "0bb8wy9rmlznlpcv2ffv1pgxv9lnsn1ppy3z6zqbnr82c57dk44v"))))
+        (base32 "1ivhl5imc7ic72h4v5276d2n02s39j78lcdr0rcx3dqycf3yyqag"))))
     (properties `((upstream-name . "secrlinear")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-sf r-secr r-mass r-igraph))
@@ -47731,13 +47598,13 @@ detector spacing.")
 (define-public r-secr
   (package
     (name "r-secr")
-    (version "4.6.1")
+    (version "4.6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "secr" version))
        (sha256
-        (base32 "1nx05nnx7gx93fmwcd4l8kvb8jqriadrzqvi9hq6y00x1i5dzyhd"))))
+        (base32 "1c5nrilm2f2dj6byxkssr7y47rlb16i0934vnvmw53i2zh8ab3a4"))))
     (properties `((upstream-name . "secr")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra

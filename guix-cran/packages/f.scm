@@ -10306,6 +10306,36 @@ weights and allow for stratified analysis.  Furthermore, multiple flashlights
 can be combined and analyzed together.")
     (license license:gpl2+)))
 
+(define-public r-flashier
+  (package
+    (name "r-flashier")
+    (version "1.0.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "flashier" version))
+       (sha256
+        (base32 "08m5nmfzxg8ikswqz3w4fmiw0qixjy5hdwkxkm8nxflf4nkfgx06"))))
+    (properties `((upstream-name . "flashier")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-softimpute
+                             r-matrix
+                             r-magrittr
+                             r-irlba
+                             r-ggplot2
+                             r-ebnm
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/willwerscheid/flashier")
+    (synopsis "Empirical Bayes Matrix Factorization")
+    (description
+     "This package provides methods for matrix factorization based on Wang and
+Stephens (2021) <https://jmlr.org/papers/v22/20-589.html>.")
+    (license license:bsd-3)))
+
 (define-public r-flashcard
   (package
     (name "r-flashcard")

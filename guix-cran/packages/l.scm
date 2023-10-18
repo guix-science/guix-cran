@@ -358,28 +358,28 @@ al. (2015) and @code{PyTorch} Lightning by Falcon et al. (2019)
 (define-public r-lutz
   (package
     (name "r-lutz")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lutz" version))
        (sha256
-        (base32 "15b8gzwykxyqycjba319jpsbny07j8ny9y4lnrg8mcf488ycz57y"))))
+        (base32 "19p41pz2q5abqi6ba4l6fzww90g11lscjz2223ml0gkcryxn3447"))))
     (properties `((upstream-name . "lutz")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-lubridate))
-    (home-page "https://andyteucher.ca/lutz")
+    (home-page "https://andyteucher.ca/lutz/")
     (synopsis "Look Up Time Zones of Point Coordinates")
     (description
      "Input latitude and longitude values or an sf/sfc POINT object and get back the
 time zone in which they exist.  Two methods are implemented.  One is very fast
 and uses Rcpp in conjunction with data from the Javascript library
-(<https://github.com/darkskyapp/tz-lookup/>).  This method also works outside of
-countries borders and in international waters, however speed comes at the cost
-of accuracy - near time zone borders away from populated centres there is a
-chance that it will return the incorrect time zone.  The other method is slower
-but more accurate - it uses the sf package to intersect points with a detailed
-map of time zones from here:
+(<https://github.com/darkskyapp/tz-lookup-oss/>).  This method also works
+outside of countries borders and in international waters, however speed comes at
+the cost of accuracy - near time zone borders away from populated centres there
+is a chance that it will return the incorrect time zone.  The other method is
+slower but more accurate - it uses the sf package to intersect points with a
+detailed map of time zones from here:
 <https://github.com/evansiroky/timezone-boundary-builder/>.  The package also
 contains several utility functions for helping to understand and visualize time
 zones, such as listing of world time zones, including information about daylight
@@ -3951,13 +3951,13 @@ selection.")
 (define-public r-logrx
   (package
     (name "r-logrx")
-    (version "0.2.2")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "logrx" version))
        (sha256
-        (base32 "1bdqnvwjg2c5q3dpa1pb4kipg4hmb9ahm7r6910hgkz7my7vvgqk"))))
+        (base32 "1qqy4hm0l6fijkzlxrzj1i65bdi3lf1p3mwd7jwm66yi9ynwkkbz"))))
     (properties `((upstream-name . "logrx")))
     (build-system r-build-system)
     (propagated-inputs (list r-waiter
@@ -3972,7 +3972,7 @@ selection.")
                              r-purrr
                              r-miniui
                              r-magrittr
-                             r-lintr
+                             r-lifecycle
                              r-dplyr
                              r-digest))
     (native-inputs (list r-knitr))

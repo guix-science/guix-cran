@@ -5721,13 +5721,13 @@ metrics of their own.")
 (define-public r-openmeteo
   (package
     (name "r-openmeteo")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openmeteo" version))
        (sha256
-        (base32 "0cr1r173xkaqm4hnd4fxzn5gb56mz8xpp2ciymnpviyw3h02828r"))))
+        (base32 "0fzl1cb5pzdg5gs2fz60i04mkinrgvjclybgfyjz5zf8i86z9fgl"))))
     (properties `((upstream-name . "openmeteo")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -7744,13 +7744,13 @@ Keith @code{McNulty} (2021).")
 (define-public r-omu
   (package
     (name "r-omu")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "omu" version))
        (sha256
-        (base32 "1ha1x0df5wb4lajid3w6ab52w1jhhflfp1kp88gjhg9h2kch7prl"))))
+        (base32 "0hkm6m6jbzbbh0ksnzkwjf6fvyzx64mixwq4rjbj0n2a1rl3mc4d"))))
     (properties `((upstream-name . "omu")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

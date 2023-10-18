@@ -1079,13 +1079,13 @@ itself.")
 (define-public r-ursa
   (package
     (name "r-ursa")
-    (version "3.10.1")
+    (version "3.10.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ursa" version))
        (sha256
-        (base32 "0mfylj40vxlp36mql5h8ig6r12v3jbgbi2nha3jxf8s1z4923zjn"))))
+        (base32 "01linzsfarvpnzgjsc2zq07z3dvw3wwddd1da5jkfmd086774580"))))
     (properties `((upstream-name . "ursa")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-png))

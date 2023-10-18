@@ -6212,13 +6212,13 @@ predominantly of low-quality.")
 (define-public r-argofloats
   (package
     (name "r-argofloats")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "argoFloats" version))
        (sha256
-        (base32 "1ldnqg5zwczv3sfdy3s06gyri1a05l6qfgwab68ns0d24b69yrlk"))))
+        (base32 "10pqxd8yflfhsf03235xgvy9w64ybsmfm61cl428zkh43z7lyjf8"))))
     (properties `((upstream-name . "argoFloats")))
     (build-system r-build-system)
     (propagated-inputs (list r-oce))

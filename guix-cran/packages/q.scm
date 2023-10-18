@@ -2066,13 +2066,13 @@ customization.")
 (define-public r-qtools
   (package
     (name "r-qtools")
-    (version "1.5.7")
+    (version "1.5.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Qtools" version))
        (sha256
-        (base32 "18shsapws7gq44i9kimdln08a4xkb15674q4b88is1504bgkafip"))))
+        (base32 "0h5812q5w71840lrsidr5hpx11ypzwq2jq684xyr7y8g63kwzvrr"))))
     (properties `((upstream-name . "Qtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
@@ -3899,21 +3899,16 @@ embedding, sammon's mapping and t-Distributed stochastic neighbor embedding.")
 (define-public r-qindex
   (package
     (name "r-qindex")
-    (version "0.1.3")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Qindex" version))
        (sha256
-        (base32 "15xwnyimylixhv5p0y386ll2lj8b5l9pawfpnjahcf2j2mbkhmbn"))))
+        (base32 "1186k9yapq6ax2y6pyk3pjhsdsnzifwv94mawgzw8fcsz7wq83q7"))))
     (properties `((upstream-name . "Qindex")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survival
-                             r-rpart
-                             r-pracma
-                             r-mgcv
-                             r-matrixstats
-                             r-boot))
+    (propagated-inputs (list r-survival r-rpart r-pracma r-mgcv r-matrixstats))
     (home-page "https://cran.r-project.org/package=Qindex")
     (synopsis
      "Continuous and Dichotomized Index Predictors Based on Distribution Quantiles")

@@ -566,6 +566,29 @@ sparse nature of metagenomic data into account and handles compositional data
 efficiently.")
     (license license:gpl2+)))
 
+(define-public r-zibr
+  (package
+    (name "r-zibr")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ZIBR" version))
+       (sha256
+        (base32 "0c24g3s946nmm8m22wvmhdgh2ph9f9hmslfyx1s3cq139793grrz"))))
+    (properties `((upstream-name . "ZIBR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-statmod))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/PennChopMicrobiomeProgram/ZIBR")
+    (synopsis "Zero-Inflated Beta Random Effect Model")
+    (description
+     "This package provides a two-part zero-inflated Beta regression model with random
+effects (ZIBR) for testing the association between microbial abundance and
+clinical covariates for longitudinal microbiome data.  Eric Z. Chen and Hongzhe
+Li (2016) <doi:10.1093/bioinformatics/btw308>.")
+    (license license:expat)))
+
 (define-public r-zfit
   (package
     (name "r-zfit")

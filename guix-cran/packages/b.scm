@@ -13673,13 +13673,13 @@ back/forwardsolve, crossproduct, and matrix multiplication.")
 (define-public r-bigdm
   (package
     (name "r-bigdm")
-    (version "0.5.2")
+    (version "0.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bigDM" version))
        (sha256
-        (base32 "1792g2w33xs6iaky12jr0s11mbfx9bbag0llslpxiac80x54pg72"))))
+        (base32 "1hav79f5lw1yh4651j7ag6x9kag1dzpb6damz0xfmqrbpgdbq63a"))))
     (properties `((upstream-name . "bigDM")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdep
@@ -13690,6 +13690,7 @@ back/forwardsolve, crossproduct, and matrix multiplication.")
                              r-rcolorbrewer
                              r-matrix
                              r-mass
+                             r-geos
                              r-future-apply
                              r-future
                              r-foreach
@@ -18242,13 +18243,13 @@ by Maruo et al. (2017) <doi:10.1002/sim.7279>.")
 (define-public r-bcmaps
   (package
     (name "r-bcmaps")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bcmaps" version))
        (sha256
-        (base32 "1wnm2k7rcxfxqqffb9sn5l5kv0x3pdqsz7hvqdgb2z439ywbkdjj"))))
+        (base32 "017d9bip8vv8n385h4pxd2bnl8yg8dymzkfav94gzdamrlnmcfn6"))))
     (properties `((upstream-name . "bcmaps")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

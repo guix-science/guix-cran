@@ -11747,13 +11747,13 @@ Yu (2018) <@code{arXiv:1805.08423v1>}.")
 (define-public r-glmmadaptive
   (package
     (name "r-glmmadaptive")
-    (version "0.9-0")
+    (version "0.9-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GLMMadaptive" version))
        (sha256
-        (base32 "0hsh4zn0q55vqp9s5hr9rwkil7x22x4vmy3fiaddxgxngrahqfr3"))))
+        (base32 "1gzm61a7qy4mvw1zaa4n01a5si7vawq2w0ppwk6pfsd06ffh5g2r"))))
     (properties `((upstream-name . "GLMMadaptive")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlme r-matrixstats r-mass))

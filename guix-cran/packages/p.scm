@@ -5106,13 +5106,13 @@ Choi, Schalet, Cook, & Cella (2014) <doi:10.1037/a0035768>.")
 (define-public r-proscorertools
   (package
     (name "r-proscorertools")
-    (version "0.0.2")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PROscorerTools" version))
        (sha256
-        (base32 "0fd50c54afa7w687nzw6gpnpn63pjv8brsivrgsv93b1iz8762k4"))))
+        (base32 "0d4igzviz7j62cmnpv6xk01zw2f4yqj532y8i0h22ibdx950qj60"))))
     (properties `((upstream-name . "PROscorerTools")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -5146,13 +5146,13 @@ scoring and describing PRO-like measures in research.")
 (define-public r-proscorer
   (package
     (name "r-proscorer")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PROscorer" version))
        (sha256
-        (base32 "1wmv3yg1njgjc7vr3nkmq4643xfyxinrgjsfkkpahp5xbyyqb222"))))
+        (base32 "0l88hsyg5rmw8vyyqa959aa7zgw4brc4gxyx13qqdkxisxy18aqz"))))
     (properties `((upstream-name . "PROscorer")))
     (build-system r-build-system)
     (propagated-inputs (list r-proscorertools))
@@ -5167,15 +5167,15 @@ psychometric and psychological measures.  PROscorer', together with the
 PR@code{OscorerTools} package, is a system to facilitate the incorporation of
 PRO measures into research studies and clinical settings in a scientifically
 rigorous and reproducible manner.  These packages and their vignettes are
-intended to help establish and promote \"best practices\" to improve the planning,
-scoring, and reporting of PRO-like measures in research.  The PROscorer
-\"Instrument Descriptions\" vignette contains descriptions of each instrument
-scored by PROscorer', complete with references.  These instrument descriptions
-are suitable for inclusion in formal study protocol documents, grant proposals,
-and manuscript Method sections.  Each PROscorer function is composed of helper
-functions from the PR@code{OscorerTools} package, and users are encouraged to
-contribute new functions to PROscorer'.  More scoring functions are currently in
-development and will be added in future updates.")
+intended to help establish and promote best practices for scoring PRO and
+PRO-like measures in research.  The PROscorer Instrument Descriptions vignette
+contains descriptions of each instrument scored by PROscorer', complete with
+references.  These instrument descriptions are suitable for inclusion in formal
+study protocol documents, grant proposals, and manuscript Method sections.  Each
+PROscorer function is composed of helper functions from the
+PR@code{OscorerTools} package, and users are encouraged to contribute new
+functions to PROscorer'.  More scoring functions are currently in development
+and will be added in future updates.")
     (license license:expat)))
 
 (define-public r-proreg
@@ -17926,13 +17926,13 @@ available @code{mapDK} package by Sebastian Barfort.")
 (define-public r-plotdap
   (package
     (name "r-plotdap")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plotdap" version))
        (sha256
-        (base32 "0v9rjz4fbglxcl66wwiipk1jqwm279fqcv0cyqhx3kqxizd2lm2b"))))
+        (base32 "151vaz61ycm95sazbn7d03wr7hcmvcmbz12rjls334lp38735954"))))
     (properties `((upstream-name . "plotdap")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -17942,6 +17942,7 @@ available @code{mapDK} package by Sebastian Barfort.")
                              r-rerddap
                              r-raster
                              r-maps
+                             r-mapdata
                              r-magrittr
                              r-lubridate
                              r-lazyeval
@@ -25180,13 +25181,13 @@ properties given access to the Pesticide properties database (Lewis et al.,
 (define-public r-pesel
   (package
     (name "r-pesel")
-    (version "0.7.3")
+    (version "0.7.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pesel" version))
        (sha256
-        (base32 "125rgbar1aiw7x3ywfb09s3gh3k0zal0p44h4928d854mn4m986s"))))
+        (base32 "06d10yzarnfifvdx6lch4fpag5qignjpij513kip1d9afrs3gm73"))))
     (properties `((upstream-name . "pesel")))
     (build-system r-build-system)
     (home-page "https://github.com/psobczyk/pesel")
@@ -25194,8 +25195,8 @@ properties given access to the Pesticide properties database (Lewis et al.,
     (description
      "Automatic estimation of number of principal components in PCA with PEnalized
 SEmi-integrated Likelihood (PESEL).  See Piotr Sobczyk, Malgorzata Bogdan, Julie
-Josse Bayesian dimensionality reduction with PCA using penalized semi-integrated
-likelihood (2017) <doi:10.1080/10618600.2017.1340302>.")
+Josse \"Bayesian dimensionality reduction with PCA using penalized
+semi-integrated likelihood\" (2017) <doi:10.1080/10618600.2017.1340302>.")
     (license license:gpl3)))
 
 (define-public r-perutimber

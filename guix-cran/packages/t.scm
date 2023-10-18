@@ -2278,13 +2278,13 @@ file without reading the whole file into memory.")
 (define-public r-tsvc
   (package
     (name "r-tsvc")
-    (version "1.2.2")
+    (version "1.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TSVC" version))
        (sha256
-        (base32 "0c2dwsb17al6vfgk38xlbzww08xa1i2lji1bhzc3zlp7nb4mkxy8"))))
+        (base32 "1cfl6rzxkqjilhl44izd1746yilammbsrpm92bp2gs4a2kka8i9y"))))
     (properties `((upstream-name . "TSVC")))
     (build-system r-build-system)
     (propagated-inputs (list r-plotrix r-mgcv))
@@ -13726,6 +13726,34 @@ of the stringdist package.")
 a way consistent across all the languages supported.  The generated lists are
 based on the morphological tagset from the Universal Dependencies.")
     (license license:gpl3+)))
+
+(define-public r-tidystats
+  (package
+    (name "r-tidystats")
+    (version "0.6.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidystats" version))
+       (sha256
+        (base32 "1hlybkzx940nrl9pgvcdvvz95kn4pn6y8dpamj91fjx41blyjcsp"))))
+    (properties `((upstream-name . "tidystats")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-readr
+                             r-purrr
+                             r-jsonlite
+                             r-dplyr
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://willemsleegers.github.io/tidystats/")
+    (synopsis "Save Output of Statistical Tests")
+    (description
+     "Save the output of statistical tests in an organized file that can be shared
+with others or used to report statistics in scientific papers.")
+    (license license:expat)))
 
 (define-public r-tidysq
   (package

@@ -9125,6 +9125,33 @@ Inspiration thanks to:
 <https://codegolf.stackexchange.com/questions/123685/covfefify-a-string>.")
     (license license:gpl3)))
 
+(define-public r-cover2
+  (package
+    (name "r-cover2")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "coveR2" version))
+       (sha256
+        (base32 "00jldj11f7chnvf4mv4wshr9g1yxpy24g31z4r9h4mhvhn9i304i"))))
+    (properties `((upstream-name . "coveR2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-terra
+                             r-mgc
+                             r-lubridate
+                             r-jpeg
+                             r-dplyr
+                             r-autothresholdr))
+    (home-page "https://cran.r-project.org/package=coveR2")
+    (synopsis "Process Digital Cover Photography Images of Tree Crowns")
+    (description
+     "Process Digital Cover Photography images of tree canopies to get canopy
+attributes like Foliage Cover and Leaf Area Index.  Detailed description of the
+methods in Chianucci et al. (2022) <doi:10.1007/s00468-018-1666-3>.")
+    (license license:expat)))
+
 (define-public r-covequal
   (package
     (name "r-covequal")
@@ -12620,13 +12647,13 @@ marginal likelihood, and distributional transform), for three types of outcomes
 (define-public r-copbasic
   (package
     (name "r-copbasic")
-    (version "2.2.0")
+    (version "2.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "copBasic" version))
        (sha256
-        (base32 "1n1y35rciapnxc8d20mqp1gk0m463farp06dah075kw6yprcx4p6"))))
+        (base32 "0klqvgnrhi9lxiq57ingbp3w3mv8gvhrmlbxnydkya2vmz9rcqk0"))))
     (properties `((upstream-name . "copBasic")))
     (build-system r-build-system)
     (propagated-inputs (list r-randtoolbox r-lmomco))
@@ -16288,6 +16315,29 @@ basis of a mixture distribution approach.  The number of classes can be tested
 by the use of Monte Carlo simulations.  This package deals also with
 multi-criteria paired comparison data.")
     (license license:gpl2)))
+
+(define-public r-comppareto
+  (package
+    (name "r-comppareto")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CompPareto" version))
+       (sha256
+        (base32 "1g2cas8pld75wjsvs73knpxyjlaggq5vrzb63hcv3bi29wcwjlzz"))))
+    (properties `((upstream-name . "CompPareto")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-actuar))
+    (home-page "https://cran.r-project.org/package=CompPareto")
+    (synopsis "Discrete Composite Distributions with Pareto Tails")
+    (description
+     "This package contains the probability density function, cumulative distribution
+function, quantile function, and random number generator for composite and
+discrete composite distributions with Pareto tails.  The detailed description of
+the methods and the applications of the methods can be found in Bowen Liu,
+Malwane M.A. Ananda (2023) <@code{arXiv:2309.16443>}.")
+    (license license:gpl3)))
 
 (define-public r-compoundevents
   (package
@@ -23602,13 +23652,13 @@ in Soale and Tsyawo (2019) <doi:10.13140/RG.2.2.32355.81441>.")
 (define-public r-clusboot
   (package
     (name "r-clusboot")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ClusBoot" version))
        (sha256
-        (base32 "16984llpm28vfk7k16szg2qphkix9c36m5i3hcq5398kdq7dlwvx"))))
+        (base32 "03xch4s8xlvl17vbpm3jk0a6faa57hq0amyg91d9kjr4d6bb4km1"))))
     (properties `((upstream-name . "ClusBoot")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=ClusBoot")
@@ -37251,13 +37301,13 @@ parameter vectors archiving management by epsilon-dominance (Reed and Devireddy
 (define-public r-caracas
   (package
     (name "r-caracas")
-    (version "2.0.1")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "caracas" version))
        (sha256
-        (base32 "1wribsfmzzpnq619hdlbynwliqkvrk2x0ij7iasnidmv89rz3mfk"))))
+        (base32 "07dka3j34k0sdvfnga0vv2cb1qvrp5j6d48ngy6cdbnxlmh34k48"))))
     (properties `((upstream-name . "caracas")))
     (build-system r-build-system)
     (inputs (list python))

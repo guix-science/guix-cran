@@ -11541,25 +11541,20 @@ protein-protein interaction network.")
 (define-public r-nephro
   (package
     (name "r-nephro")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nephro" version))
        (sha256
-        (base32 "08gryzr53cd5gc8ks7v9jicgk4lxcwcr7zd8vzsqvy04sh3scw9i"))))
+        (base32 "12rrc46dniw09a6402ns868h9c6f0grpsk3wv29z4l92338waiwb"))))
     (properties `((upstream-name . "nephro")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=nephro")
     (synopsis "Utilities for Nephrology")
     (description
      "Set of functions to estimate kidney function and other phenotypes of interest in
-nephrology based on different biomechimal traits.  MDRD, CKD-EPI, and Virga
-equations are compared in Pattaro (2013) <doi:10.1159/000351043>, where the
-respective references are given.  In addition, the software includes Stevens
-(2008) <doi:10.1053/j.ajkd.2007.11.018> and Cockroft (1976)
-<doi:10.1159/000180580> formulas.  The race-free CKD-EPI equations (2021)
-<doi:10.1056/NEJMoa2102953> are also implemented from ver.1.3.")
+nephrology based on different biomechimal traits.")
     (license license:gpl3+)))
 
 (define-public r-neotoma2

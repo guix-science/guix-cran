@@ -5218,13 +5218,13 @@ stack may contain arbitrary objects.")
 (define-public r-rstac
   (package
     (name "r-rstac")
-    (version "0.9.2-4")
+    (version "0.9.2-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rstac" version))
        (sha256
-        (base32 "0jimlrzw7mcsndd9qlzmk5yx0frhmxgbfmj625xj9fxc707dn2n5"))))
+        (base32 "06wq2ck99i4fg6jli04968nqzjh9z8sb18yn2d734gibxf229a42"))))
     (properties `((upstream-name . "rstac")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-lifecycle r-jsonlite r-httr r-crayon))
@@ -6002,13 +6002,13 @@ et al (1977) <doi:10.4141/cjas77-001> in dairy.")
 (define-public r-rsmlx
   (package
     (name "r-rsmlx")
-    (version "2023.1.1")
+    (version "2023.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rsmlx" version))
        (sha256
-        (base32 "07dhqapbsp2ijgyshqa6csj6ma76xfj655cdy9ns4z5fj0jniqfm"))))
+        (base32 "1fb4dqnrbdvqbsfk2hnkfwdaiprpyj39kwxz49ywj7h9k4g9lgcw"))))
     (properties `((upstream-name . "Rsmlx")))
     (build-system r-build-system)
     (inputs (list))
@@ -6390,13 +6390,13 @@ extensive manual, scripts, and much further information is at the Siena website
 (define-public r-rshift
   (package
     (name "r-rshift")
-    (version "2.2.2")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rshift" version))
        (sha256
-        (base32 "0bmgya908b5rnq8b5pjwdfj4sg0g1syc7cxl01sqzbpb0605ckrh"))))
+        (base32 "0w82dqya4qmcdpin1d7pg2cri69qjsm1qhjn2gfpbs6wkd7m7mic"))))
     (properties `((upstream-name . "rshift")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-ggplot2 r-dplyr))
@@ -6411,7 +6411,8 @@ of paleoecological data.  Citations: Rodionov() from Rodionov (2004)
 Hellinger_trans from Numerical Ecology, Legendre & Legendre (ISBN 9780444538680)
 rolling_autoc from Liu, Gao & Wang (2018) <doi:10.1016/j.scitotenv.2018.06.276>
 Sample data sets lake_data & lake_RSI processed from Bush, Silman & Urrego
-(2004) <doi:10.1126/science.1090795>.")
+(2004) <doi:10.1126/science.1090795> Sample data set January_PDO from NOAA:
+<https://www.ncei.noaa.gov/access/monitoring/pdo/>.")
     (license license:expat)))
 
 (define-public r-rshape
@@ -18493,13 +18494,13 @@ the contour(s) at a given level.")
 (define-public r-rmapzen
   (package
     (name "r-rmapzen")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rmapzen" version))
        (sha256
-        (base32 "00dv9q5yzw82hm89dzy96zj50zzhz79ps1wg7b9pz9gr6xix7xi9"))))
+        (base32 "17nphlsck1fjkhfjbwdxzyxxn23z626wy49gpkf2jvan4lg7bb84"))))
     (properties `((upstream-name . "rmapzen")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -24148,24 +24149,6 @@ objects, extraction of time series, interactive map display, assets management
 interface, and metadata display.  See <https://r-spatial.github.io/rgee/> for
 further details.")
     (license license:asl2.0)))
-
-(define-public r-rgeckoboard
-  (package
-    (name "r-rgeckoboard")
-    (version "0.1-5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RGeckoboard" version))
-       (sha256
-        (base32 "0h7x3kdmlba9siwcnf313ajmz2jsmyhl7pndzs7qaqina3hkl46r"))))
-    (properties `((upstream-name . "RGeckoboard")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-jsonlite r-httr))
-    (home-page "https://github.com/ploner/RGeckoboard")
-    (synopsis "R API for Geckoboard")
-    (description "This package provides an interface to Geckoboard.")
-    (license license:expat)))
 
 (define-public r-rge
   (package
@@ -43344,6 +43327,36 @@ cherry-pick their own custom colors.  Users can view up to 3 palettes together.
 Users can also list all the palette choices.  And last but not least, users can
 see the photo that inspired a particular palette.")
     (license license:gpl2)))
+
+(define-public r-rangemodelmetadata
+  (package
+    (name "r-rangemodelmetadata")
+    (version "0.1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rangeModelMetadata" version))
+       (sha256
+        (base32 "0yv4w8vy7yjmkg8gkmgy05khmvw2h7v8ag5hzfm8km120m8215i8"))))
+    (properties `((upstream-name . "rangeModelMetadata")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra r-spocc r-shiny r-bien))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=rangeModelMetadata")
+    (synopsis
+     "Provides Templates for Metadata Files Associated with Species Range Models")
+    (description
+     "Range Modeling Metadata Standards (RMMS) address three challenges: they (i) are
+designed for convenience to encourage use, (ii) accommodate a wide variety of
+applications, and (iii) are extensible to allow the community of range modelers
+to steer it as needed.  RMMS are based on a data dictionary that specifies a
+hierarchical structure to catalog different aspects of the range modeling
+process.  The dictionary balances a constrained, minimalist vocabulary to
+improve standardization with flexibility for users to provide their own values.
+Merow et al. (2019) <DOI:10.1111/geb.12993> describe the standards in more
+detail.  Note that users who prefer to use the R package ecospat can obtain it
+from <https://github.com/ecospat/ecospat>.")
+    (license license:gpl3+)))
 
 (define-public r-rangemapper
   (package

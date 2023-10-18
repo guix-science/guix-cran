@@ -10876,6 +10876,7 @@ objects and coordinate reference systems.")
     (propagated-inputs (list r-tidyr
                              r-rlang
                              r-raster
+                             r-rangemodelmetadata
                              r-maxnet
                              r-magrittr
                              r-glmnet
@@ -20289,13 +20290,13 @@ coupled-to-MCMC schemes are implemented.")
 (define-public r-easy-utils
   (package
     (name "r-easy-utils")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "easy.utils" version))
        (sha256
-        (base32 "0gmjh8f542hi2w9gi57kxpfd6ykrn3iick9rsr3qjyxc442xkgnv"))))
+        (base32 "14igypzhqd9fc47jhsyv86a5rgpfvikkig4vb07k00rw00h3ijbg"))))
     (properties `((upstream-name . "easy.utils")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-rlang r-polychrome r-fastmatch r-dplyr))
