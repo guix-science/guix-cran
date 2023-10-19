@@ -11933,13 +11933,13 @@ tensors.")
 (define-public r-tinytiger
   (package
     (name "r-tinytiger")
-    (version "0.0.4")
+    (version "0.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinytiger" version))
        (sha256
-        (base32 "17j5lxlbg6jyw5zpbgaxjhnydiiyrl2d010s5wq8p7jx16sji0w1"))))
+        (base32 "1ixbq9qfv0jlwqca8anng2z9dykpsv46vyrkc7p82a55mx1x8vbg"))))
     (properties `((upstream-name . "tinytiger")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-rlang r-glue r-curl r-cli))
@@ -13492,13 +13492,13 @@ documentation here for more detail: <https://gtfs.org/>.")
 (define-public r-tidytlg
   (package
     (name "r-tidytlg")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidytlg" version))
        (sha256
-        (base32 "1m6f0mbaikgxkbh6q7z4fxhmqlywrmclvv4hhbq2hnhc6bajadrp"))))
+        (base32 "0di871am8zplavhkh2kjqazc3nv3cn5dzzff0sgj4hxwhfla1f12"))))
     (properties `((upstream-name . "tidytlg")))
     (build-system r-build-system)
     (propagated-inputs (list r-usethis
@@ -16837,6 +16837,30 @@ classification procedures, and the production of statistical graphics.")
 package library and maybe say thank you'.")
     (license license:expat)))
 
+(define-public r-thames
+  (package
+    (name "r-thames")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "thames" version))
+       (sha256
+        (base32 "1dbrnfp3li8dwqfzbhpcxydh8spfw40f8rv54hpjllh9jhlpzvis"))))
+    (properties `((upstream-name . "thames")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-uniformly))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=thames")
+    (synopsis "Truncated Harmonic Mean Estimator of the Marginal Likelihood")
+    (description
+     "This package implements the truncated harmonic mean estimator (THAMES) of the
+reciprocal marginal likelihood using posterior samples and unnormalized log
+posterior values via reciprocal importance sampling.  Metodiev,
+Perrot-@code{DockÃ¨s}, Ouadah, Irons, & Raftery (2023)
+<@code{arXiv:2305.08952>}.")
+    (license license:gpl3+)))
+
 (define-public r-thaipdf
   (package
     (name "r-thaipdf")
@@ -17152,13 +17176,13 @@ import, modify, and export tables and templates with little to no code.")
 (define-public r-tfrmt
   (package
     (name "r-tfrmt")
-    (version "0.0.3")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tfrmt" version))
        (sha256
-        (base32 "1fs0s49aly8gfnahv7in22x289xa1c506mmq4cdrm7lhb8hgvmdc"))))
+        (base32 "0jrgggb2pwnrwwkajnp8wlpzjblzr4d1vlngik5g4sbj6kmpgvvc"))))
     (properties `((upstream-name . "tfrmt")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -17171,6 +17195,7 @@ import, modify, and export tables and templates with little to no code.")
                              r-magrittr
                              r-jsonlite
                              r-gt
+                             r-glue
                              r-ggplot2
                              r-forcats
                              r-dplyr))
@@ -19325,21 +19350,21 @@ tune the detection algorithms and obtain the best possible results.")
 (define-public r-tesselle
   (package
     (name "r-tesselle")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tesselle" version))
        (sha256
-        (base32 "1kbz26rinxwd8h3kazdalkb32l1hl623r9f3x072j857g2x9v5my"))))
+        (base32 "0lyc82jib1k1k1dg5nc0g3plcjrw05n586rakf47j4rka2pfpi70"))))
     (properties `((upstream-name . "tesselle")))
     (build-system r-build-system)
     (propagated-inputs (list r-tabula
                              r-khroma
                              r-kairos
+                             r-isopleuros
                              r-folio
-                             r-dimensio
-                             r-arkhe))
+                             r-dimensio))
     (home-page "https://github.com/tesselle/tesselle")
     (synopsis "Easily Install and Load 'tesselle' Packages")
     (description

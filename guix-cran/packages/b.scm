@@ -15726,13 +15726,13 @@ ecology, as explained in Cayuela et al. (2011)
 (define-public r-betapass
   (package
     (name "r-betapass")
-    (version "1.1-1")
+    (version "1.1-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BetaPASS" version))
        (sha256
-        (base32 "17q1bfmijv38zyaj5fxlylf5zmkqry4ca9wm5km6zpksgsg2kjjq"))))
+        (base32 "1vx2wn2bj3xl430aw4zlv2j3m39nkmg7mfkm1pmilvpqszfx078g"))))
     (properties `((upstream-name . "BetaPASS")))
     (build-system r-build-system)
     (propagated-inputs (list r-pbapply r-ggplot2 r-betareg))
@@ -19676,13 +19676,13 @@ distribution functions.")
 (define-public r-bayestfr
   (package
     (name "r-bayestfr")
-    (version "7.4-0")
+    (version "7.4-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesTFR" version))
        (sha256
-        (base32 "0226157x56zfsmgacl15wrj035i0jvj7nnhwg38fgxa7jww8vbqh"))))
+        (base32 "09fbyc4656dil6mqfzx7nlxxp0b95fmc73ibci60jbbzggafb51s"))))
     (properties `((upstream-name . "bayesTFR")))
     (build-system r-build-system)
     (propagated-inputs (list r-wpp2019

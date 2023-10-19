@@ -1272,13 +1272,13 @@ rejections.")
 (define-public r-nregression
   (package
     (name "r-nregression")
-    (version "0.0.5")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nRegression" version))
        (sha256
-        (base32 "04w1fz0cc1bxm8mqnp7wyqh1wbn5cn8k6wpga4ikh3vn666rlpkw"))))
+        (base32 "0d02zgb25g67vgbilwvx7qqqaznzbhqfnllp41fn4rr5ysrc01l0"))))
     (properties `((upstream-name . "nRegression")))
     (build-system r-build-system)
     (propagated-inputs (list r-simitation r-data-table r-covr))
@@ -8998,13 +8998,13 @@ model fits.  See Williams et al 2016 <doi:10.1038/ng.3489> and Williams et al
 (define-public r-neurosim
   (package
     (name "r-neurosim")
-    (version "0.2-13")
+    (version "0.2-14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "neuRosim" version))
        (sha256
-        (base32 "0jxpkrb7rqmcmcl1gdmg9jjk09nl8czafc2ggdwmnc5hb805xx5n"))))
+        (base32 "1ndgpx748q7flqbb0bbjzdnynd5vp85k6wi4karxgvgihsxn9hkz"))))
     (properties `((upstream-name . "neuRosim")))
     (build-system r-build-system)
     (propagated-inputs (list r-desolve))
@@ -11598,13 +11598,13 @@ nephrology based on different biomechimal traits.")
 (define-public r-neonutilities
   (package
     (name "r-neonutilities")
-    (version "2.3.0")
+    (version "2.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "neonUtilities" version))
        (sha256
-        (base32 "1zd1kkavi69z5snhblxlm2algmdhrkwygabh9r6hldy6018kfa3y"))))
+        (base32 "00f7zqr0jh4g31v1c8zv5n3pwfxqrx9m93rl59fwi276ivgcx60h"))))
     (properties `((upstream-name . "neonUtilities")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

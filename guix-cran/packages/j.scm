@@ -650,13 +650,13 @@ full-texts delivered by Data for Research by JSTOR.")
 (define-public r-jstable
   (package
     (name "r-jstable")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jstable" version))
        (sha256
-        (base32 "10lggan0rf9r0p8cf8blpz7plqq4dzwkvfm2dqrha5hparl6gka4"))))
+        (base32 "1ar9zp9adag6d806l79y5pnf44hqdd4wrrcx7nvglxdyn7ma9xp9"))))
     (properties `((upstream-name . "jstable")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -878,13 +878,13 @@ available at the following URL:
 (define-public r-jsmodule
   (package
     (name "r-jsmodule")
-    (version "1.4.2")
+    (version "1.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jsmodule" version))
        (sha256
-        (base32 "13hc2ppmbn0l9iyj9si639j8f6ayrjkvr2dymiy0i8ys3510h8jx"))))
+        (base32 "1wjs01dg0k47jnb5f03w2ryns9b57v73pzh4bx576qpl2fgzvzbb"))))
     (properties `((upstream-name . "jsmodule")))
     (build-system r-build-system)
     (propagated-inputs (list r-timeroc

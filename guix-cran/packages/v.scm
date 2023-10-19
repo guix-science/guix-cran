@@ -770,6 +770,31 @@ groups.")
      "This package provides a shim command for survival analysis graphic generation.")
     (license license:expat)))
 
+(define-public r-vscc
+  (package
+    (name "r-vscc")
+    (version "0.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vscc" version))
+       (sha256
+        (base32 "082jxk8fw4rplal9672bi6rr1jwpb5h6clrdlv9jj4ffvlbg6vaz"))))
+    (properties `((upstream-name . "vscc")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-teigen r-mixghd r-mclust r-manlymix))
+    (home-page "https://cran.r-project.org/package=vscc")
+    (synopsis "Variable Selection for Clustering and Classification")
+    (description
+     "This package performs variable selection/feature reduction under a clustering or
+classification framework.  In particular, it can be used in an automated fashion
+using mixture model-based methods ('teigen and mclust are currently supported).
+Can account for mixtures of non-Gaussian distributions via Manly transform (via
+@code{ManlyMix}').  See Andrews and @code{McNicholas} (2014)
+<doi:10.1007/s00357-013-9139-2> and Neal and @code{McNicholas} (2023)
+<doi:10.48550/@code{arXiv.2305.16464>}.")
+    (license license:gpl2+)))
+
 (define-public r-vrtest
   (package
     (name "r-vrtest")

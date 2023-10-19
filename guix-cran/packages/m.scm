@@ -26653,13 +26653,13 @@ Ecology (METE).")
 (define-public r-meteospain
   (package
     (name "r-meteospain")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "meteospain" version))
        (sha256
-        (base32 "1yz5v6zrkz09ia0cwq23fshhxl5j1fmn63cj8m8n5ishb2pcg23l"))))
+        (base32 "0zfrbrij7mq44pj87frwfj0zi6bicr73nnrizyjqqbwf542lzvx4"))))
     (properties `((upstream-name . "meteospain")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -32105,13 +32105,13 @@ using NVIDIA GPGPUs.  R. Piliszek et al. (2019) <doi:10.32614/RJ-2019-019>.")
 (define-public r-mdendro
   (package
     (name "r-mdendro")
-    (version "2.1.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mdendro" version))
        (sha256
-        (base32 "1hpm7aqfg340nrrn8m962kwaw67myvcrkv9yihdrxh5gmcjdbhxf"))))
+        (base32 "19da8q31s8d8452bb3qcmrn81z663fy2wf4apbywq0dal9s63rrv"))))
     (properties `((upstream-name . "mdendro")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -33065,13 +33065,13 @@ tree problems.")
 (define-public r-mcmcvis
   (package
     (name "r-mcmcvis")
-    (version "0.16.2")
+    (version "0.16.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MCMCvis" version))
        (sha256
-        (base32 "09ij85rb36m8nd2w09b0ynwf9p1qys8as550hjdcp23a2rd56siw"))))
+        (base32 "06a4dp5b33sqmrm6x64qaz6v7hn5lhqqygrx62gzpqj6v3yvcbhf"))))
     (properties `((upstream-name . "MCMCvis")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstan r-overlapping r-colorspace r-coda))
@@ -36982,13 +36982,13 @@ generate thresholds for binary masks.")
 (define-public r-mashr
   (package
     (name "r-mashr")
-    (version "0.2.69")
+    (version "0.2.79")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mashr" version))
        (sha256
-        (base32 "1m52bdyfni193fh8xhq6z372zj0cqc8x6wb8cwyls4qjwx3x263c"))))
+        (base32 "11pqhnzp1svhs565hm0v15ip1pgnl609ssm4d0qzl8vm4xq3d2qm"))))
     (properties `((upstream-name . "mashr")))
     (build-system r-build-system)
     (propagated-inputs (list r-softimpute
@@ -38567,6 +38567,27 @@ primary use case of the package is to support evidence based reporting of an
 organization's effort to protect biodiversity areas under threat and to identify
 regions were intervention is most duly needed.")
     (license license:gpl3+)))
+
+(define-public r-maplegend
+  (package
+    (name "r-maplegend")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "maplegend" version))
+       (sha256
+        (base32 "1jngbampps5gn3xdy292466qq4nhx0k7c08mams84xmmb9jbq0h0"))))
+    (properties `((upstream-name . "maplegend")))
+    (build-system r-build-system)
+    (home-page "https://github.com/riatelab/maplegend/")
+    (synopsis "Legends for Maps")
+    (description
+     "Create legends for maps and other graphics.  Thematic maps need to be
+accompanied by legible legends to be fully comprehensible.  This package offers
+a wide range of legends useful for cartography, some of which may also be useful
+for other types of graphics.")
+    (license license:gpl3)))
 
 (define-public r-mapitr
   (package

@@ -298,16 +298,17 @@ Hediger & Michel & Naef (2020) <@code{arXiv:1903.06287>}.")
 (define-public r-hypetools
   (package
     (name "r-hypetools")
-    (version "1.5.2")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HYPEtools" version))
        (sha256
-        (base32 "02iqzzkc3wm189bnf5330m7id67q2y6ds5w0npwyx0qazjfcwp19"))))
+        (base32 "0iyai28gqx6d92h59g314rsr5l6y9l7zywyxdlqpzf0plnh0w6hi"))))
     (properties `((upstream-name . "HYPEtools")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyselect
+    (propagated-inputs (list r-zoo
+                             r-tidyselect
                              r-tidyr
                              r-stringr
                              r-scales
@@ -11783,13 +11784,13 @@ for both read and write.")
 (define-public r-handcoder
   (package
     (name "r-handcoder")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "handcodeR" version))
        (sha256
-        (base32 "01cc088i9dw4xy7iqy551mmprrm3s0pvkzr4xr78406pkbbzijfa"))))
+        (base32 "1q9pdlkjsl2p15c3k2hhnksbc45sh4clm4zvfjs7yca6d37q1vjh"))))
     (properties `((upstream-name . "handcodeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinywidgets r-shiny))

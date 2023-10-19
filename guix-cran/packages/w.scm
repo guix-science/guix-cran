@@ -5057,17 +5057,17 @@ bounds to existing plots are supported.")
 (define-public r-weibullr-shiny
   (package
     (name "r-weibullr-shiny")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WeibullR.shiny" version))
        (sha256
-        (base32 "0vmz005qpra66frb9ljrn58ag5rczi8prb3v3y09ikfb0zbz6jn4"))))
+        (base32 "0qzwn967p54j03h9nmzljx547iqgnyq3xzfri5k0i5lpvxsdp7hs"))))
     (properties `((upstream-name . "WeibullR.shiny")))
     (build-system r-build-system)
     (propagated-inputs (list r-weibullr-plotly r-weibullr r-shinydashboard
-                             r-shiny r-rhandsontable))
+                             r-shiny))
     (home-page "https://paulgovan.github.io/WeibullR.shiny/")
     (synopsis "'Shiny' App for Weibull Analysis from 'WeibullR'")
     (description

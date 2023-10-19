@@ -2257,13 +2257,13 @@ Gul, Dost Muhammad Khan, Saeed Aldahmani, Zardad Khan (2022)
 (define-public r-exiftoolr
   (package
     (name "r-exiftoolr")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "exiftoolr" version))
        (sha256
-        (base32 "108zma98zz47gjdm88l0nisgqsizrksd8s0grpxk5m8754rnpmsn"))))
+        (base32 "085lgv8nfmlg180ym36r1zyfaka61zzsjs9y60yl4y6a14k81wfs"))))
     (properties `((upstream-name . "exiftoolr")))
     (build-system r-build-system)
     (inputs (list perl))
@@ -17326,6 +17326,50 @@ multivariate linear models.  Datasets mentioned in the package are included here
 (where not available elsewhere) and there is a vignette for each chapter of the
 text with solutions to exercises.")
     (license license:lgpl2.1+)))
+
+(define-public r-ecospat
+  (package
+    (name "r-ecospat")
+    (version "4.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ecospat" version))
+       (sha256
+        (base32 "0m3rdyx70q5am654islrz0m3sniwfvlss99bj1yjhx49i54pdh38"))))
+    (properties `((upstream-name . "ecospat")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vegan
+                             r-terra
+                             r-presenceabsence
+                             r-poibin
+                             r-nabor
+                             r-matrixstats
+                             r-ks
+                             r-hmisc
+                             r-gtools
+                             r-gbm
+                             r-foreach
+                             r-ecodist
+                             r-dismo
+                             r-classint
+                             r-biomod2
+                             r-adehabitatma
+                             r-adehabitathr
+                             r-ade4))
+    (native-inputs (list r-knitr))
+    (home-page
+     "http://www.unil.ch/ecospat/home/menuguid/ecospat-resources/tools.html")
+    (synopsis "Spatial Ecology Miscellaneous Methods")
+    (description
+     "Collection of R functions and data sets for the support of spatial ecology
+analyses with a focus on pre, core and post modelling analyses of species
+distribution, niche quantification and community assembly.  Written by current
+and former members and collaborators of the ecospat group of Antoine Guisan,
+Department of Ecology and Evolution (DEE) and Institute of Earth Surface
+Dynamics (IDYST), University of Lausanne, Switzerland.  Read Di Cola et al.
+(2016) <doi:10.1111/ecog.02671> for details.")
+    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-ecospace
   (package

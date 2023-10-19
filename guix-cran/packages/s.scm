@@ -520,43 +520,6 @@ the R environment.")
 classify participant data as valid or invalid.")
     (license license:expat)))
 
-(define-public r-synoptreg
-  (package
-    (name "r-synoptreg")
-    (version "1.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "synoptReg" version))
-       (sha256
-        (base32 "1v282ag4275p5lm6yvzwkpndrf4cnrpn0rw3v6mh5hxnb2pbmjl5"))))
-    (properties `((upstream-name . "synoptReg")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-sf
-                             r-rncep
-                             r-rnaturalearthdata
-                             r-rnaturalearth
-                             r-raster
-                             r-metr
-                             r-magrittr
-                             r-lubridate
-                             r-kohonen
-                             r-ggplot2
-                             r-dplyr))
-    (home-page "<https://lemuscanovas.github.io/synoptreg/>")
-    (synopsis
-     "Synoptic Climate Classification and Spatial Regionalization of Environmental Data")
-    (description
-     "Set of functions to compute different types of synoptic classification methods
-and for analysing their effect on environmental variables.  More information
-about the methods used in Lemus-Canovas et al.  2019
-<DOI:10.1016/j.atmosres.2019.01.018>, Martin-Vide et al.  2008
-<DOI:10.5194/asr-2-99-2008>, Jenkinson and Collison 1977.")
-    (license license:gpl3+)))
-
 (define-public r-synmicrodata
   (package
     (name "r-synmicrodata")
@@ -22423,13 +22386,13 @@ version, please check <https://github.com/leeshawn/SPAtest>.")
 (define-public r-spatentropy
   (package
     (name "r-spatentropy")
-    (version "2.2-2")
+    (version "2.2-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SpatEntropy" version))
        (sha256
-        (base32 "0z371h504xxbgsnznl82xgky51hs9sz3k64p0w0nmpxyyxh9z0dy"))))
+        (base32 "03v322jkz41r0navlqxgdfp9v9c79cqb5rx743xa5xvlyw9wb8rv"))))
     (properties `((upstream-name . "SpatEntropy")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-random r-spatstat-geom r-spatstat))
@@ -22444,7 +22407,8 @@ They include the traditional version of Shannon's entropy (Shannon, 1948
 <doi:10.1111/j.1538-4632.1974.tb01014.x>), O'Neill's entropy (O'Neill et al.,
 1998 <doi:10.1007/BF00162741>), Li and Reynolds contagion index (Li and
 Reynolds, 1993 <doi:10.1007/BF00125347>), Karlstrom and Ceccato's entropy
-(Karlstrom and Ceccato, 2002 <urn:nbn:se:kth:diva-61351>), Leibovici's entropy
+(Karlstrom and Ceccato, 2002
+<https://urn.kb.se/resolve?urn=urn:nbn:se:kth:diva-61351>), Leibovici's entropy
 (Leibovici, 2009 <doi:10.1007/978-3-642-03832-7_24>), Parresol and Edwards
 entropy (Parresol and Edwards, 2014 <doi:10.3390/e16041842>) and Altieri's
 entropy (Altieri et al., 2018, <doi:10.1007/s10651-017-0383-1>).  Full
@@ -26648,18 +26612,17 @@ Tahar Allouche, Bruno Escoffier, Stefano Moretti and Meltem Ã@code{ztÃ¼rk}
 (define-public r-socialmixr
   (package
     (name "r-socialmixr")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "socialmixr" version))
        (sha256
-        (base32 "0mdsj0dqgn1wckxm9imkhswmbcy391kfqwv42yp1g9y1rcdkvjp4"))))
+        (base32 "0whhpjsbhwnjbv6mvr227g347k52ak2jmdp2kll87m8phh48qd0s"))))
     (properties `((upstream-name . "socialmixr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
                              r-wpp2017
-                             r-stringr
                              r-oai
                              r-lubridate
                              r-jsonlite
@@ -42035,13 +41998,13 @@ also provided.")
 (define-public r-sgpdata
   (package
     (name "r-sgpdata")
-    (version "26.0-0.0")
+    (version "27.0-0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SGPdata" version))
        (sha256
-        (base32 "1l0d9l25nzmiwmwh0b3cm7c854h56ir0qmb70mi8jawnirmilpp2"))))
+        (base32 "0d6lwxqp9ajzinfg258gaqr2k537v32f1gfn7565vsdrlp9miki3"))))
     (properties `((upstream-name . "SGPdata")))
     (build-system r-build-system)
     (propagated-inputs (list r-data-table r-crayon))

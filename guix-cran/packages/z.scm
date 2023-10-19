@@ -169,13 +169,13 @@ and aggregation.")
 (define-public r-zlib
   (package
     (name "r-zlib")
-    (version "1.0.1")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "zlib" version))
        (sha256
-        (base32 "0x6jawql116lsjgs7zi7hpfas85lzgm31flqz8gq5mg6z24qv8g7"))))
+        (base32 "0fnx9dgcdgamh7a2grkrkzxsdpsj2zh6xvfh499fca97cbmpxs14"))))
     (properties `((upstream-name . "zlib")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))

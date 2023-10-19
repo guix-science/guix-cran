@@ -3163,16 +3163,17 @@ details.")
 (define-public r-cstools
   (package
     (name "r-cstools")
-    (version "5.0.1")
+    (version "5.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CSTools" version))
        (sha256
-        (base32 "1c9lwa9mkkkw23yzcg0b74y4y3153z9n0bpzzgp772whxw0l0vx8"))))
+        (base32 "1fga6v3n1d0890908v7l8rckzjhc9b2viyr7r6gvzxkxlrl3pg4q"))))
     (properties `((upstream-name . "CSTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-verification
+                             r-startr
                              r-scales
                              r-s2dv
                              r-reshape2
@@ -6106,13 +6107,13 @@ discrete data with pairwise and unary potentials.")
 (define-public r-crew-cluster
   (package
     (name "r-crew-cluster")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crew.cluster" version))
        (sha256
-        (base32 "1dbm26qmpngcjffym6f1zr3c2qnc2lsil44wabx5h7wc0zl8lkfz"))))
+        (base32 "04v7fajfanap564lvw8izg5srhq9mf415z05rim41k1038f93pav"))))
     (properties `((upstream-name . "crew.cluster")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-r6 r-lifecycle r-crew))
@@ -19010,13 +19011,13 @@ problems.")
 (define-public r-collapse
   (package
     (name "r-collapse")
-    (version "2.0.2")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "collapse" version))
        (sha256
-        (base32 "1dklk93lrphvvnxxpslb8968cdpm3y5lika0mhljig73vv7qwvpl"))))
+        (base32 "16y4qxqr4k04690xn8s6c9fr3igpk34pgxygxkc41gc1na0ym37v"))))
     (properties `((upstream-name . "collapse")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -23935,6 +23936,36 @@ navigate Cloudstor from R.")
 <https://cloud.google.com/ml-engine>, which provides cloud tools for training
 machine learning models.")
     (license license:asl2.0)))
+
+(define-public r-cloudfs
+  (package
+    (name "r-cloudfs")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cloudfs" version))
+       (sha256
+        (base32 "1zl7l7q35hzayf2lc0nh5zcb377q9cvhvxzz53ydv7xza6qy9g7s"))))
+    (properties `((upstream-name . "cloudfs")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang
+                             r-httr
+                             r-googledrive
+                             r-glue
+                             r-dplyr
+                             r-desc
+                             r-cli
+                             r-aws-s3))
+    (native-inputs (list r-knitr))
+    (home-page "https://g6t.github.io/cloudfs/")
+    (synopsis "Streamlined Interface to Interact with Cloud Storage Platforms")
+    (description
+     "This package provides a unified interface for simplifying cloud storage
+interactions, including uploading, downloading, reading, and writing files, with
+functions for both Google Drive (<https://www.google.com/drive/>) and Amazon S3
+(<https://aws.amazon.com/s3/>).")
+    (license license:expat)))
 
 (define-public r-clordr
   (package
@@ -36518,6 +36549,35 @@ flow based cartogram (Gastner, Seguy & More (2018)
 (1985) <doi:10.1111/j.0033-0124.1985.00075.x>).")
     (license license:expat)))
 
+(define-public r-cartograflow
+  (package
+    (name "r-cartograflow")
+    (version "1.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cartograflow" version))
+       (sha256
+        (base32 "0bfw04wjd7bghw08ynnfc43yh80vhg9vpmd8qsx328860f1q5vw6"))))
+    (properties `((upstream-name . "cartograflow")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sf
+                             r-rlang
+                             r-reshape2
+                             r-plotly
+                             r-igraph
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/fbahoken/cartogRaflow")
+    (synopsis "Filtering Matrix for Flow Mapping")
+    (description
+     "This package provides functions to prepare and filter an origin-destination
+matrix for thematic flow mapping purposes.  This comes after Bahoken, Francoise
+(2016), Mapping flow matrix a contribution, @code{PhD} in Geography -
+Territorial sciences.  See Bahoken (2017) <doi:10.4000/netcom.2565>.")
+    (license license:gpl3)))
+
 (define-public r-carsurv
   (package
     (name "r-carsurv")
@@ -37789,13 +37849,13 @@ outputs all configurations along with their confidence assessment.")
 (define-public r-canek
   (package
     (name "r-canek")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Canek" version))
        (sha256
-        (base32 "1hjgn6f5dxh7yw2l0fmpxdypfb9hrlh7lbgkq8g7nw2vgxspgr55"))))
+        (base32 "1x6lyzmcgfwl9469j3f6csv7d1zaq5yn0nvxs5xvrplp02j8614b"))))
     (properties `((upstream-name . "Canek")))
     (build-system r-build-system)
     (propagated-inputs (list r-numbers

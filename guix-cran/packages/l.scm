@@ -11055,28 +11055,6 @@ of historical and standard ahistorical matrices.  It also estimates
 function-based age-by-stage matrices and raw and function-based Leslie matrices.")
     (license license:gpl2+)))
 
-(define-public r-leersiecyl
-  (package
-    (name "r-leersiecyl")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "leerSIECyL" version))
-       (sha256
-        (base32 "1zx28gpnys9mmhq7wwljfnq92wj1h1vxgqiirnfmn36z942nvmxl"))))
-    (properties `((upstream-name . "leerSIECyL")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcurl))
-    (home-page "https://cran.r-project.org/package=leerSIECyL")
-    (synopsis "Read Data from the SIE")
-    (description
-     "This package provides functions to download data from the SIE, which is the
-Statistical Information System (Sistema de Información Estadística) in the
-Statistical Portal of the Government of Castilla y León (Spain)
-<https://estadistica.jcyl.es>.")
-    (license license:gpl2)))
-
 (define-public r-leem
   (package
     (name "r-leem")

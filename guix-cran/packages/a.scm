@@ -9890,18 +9890,18 @@ et al. (2017) <doi:10.1007/978-3-319-54819-7_16>.  Cruz Rambaud et al. (2015)
 (define-public r-annotator
   (package
     (name "r-annotator")
-    (version "0.0.3")
+    (version "0.0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "annotator" version))
        (sha256
-        (base32 "0d0lkizdafinyqjg7xzgn375b6m8gfkhsdf6c73hm9r8h2kik2sq"))))
+        (base32 "17jbr414wamxczsnxldz3la4n15d0b4lbhlhk8na9hniidin4f9b"))))
     (properties `((upstream-name . "annotator")))
     (build-system r-build-system)
     (propagated-inputs (list r-xfun r-shiny r-htmlwidgets))
     (native-inputs (list esbuild))
-    (home-page "https://github.com/cran/annotator")
+    (home-page "https://github.com/valcu/annotator")
     (synopsis "Image Annotation and Polygon Outlining using Free Drawing")
     (description
      "This package provides functions to create image annotations through polygon
@@ -17162,13 +17162,13 @@ the admiral package.")
 (define-public r-admiral
   (package
     (name "r-admiral")
-    (version "0.12.2")
+    (version "0.12.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admiral" version))
        (sha256
-        (base32 "1n9wdv5fwb8gydz67xb5nd7yxp1vl5b8iqv2mknfzv5mhsncbygs"))))
+        (base32 "0b4sgk4h9gnrvcml264aibhkwsd9wzki6r302fi7lm9zxk6gf4q4"))))
     (properties `((upstream-name . "admiral")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -17610,13 +17610,13 @@ p-values.")
 (define-public r-adespatial
   (package
     (name "r-adespatial")
-    (version "0.3-22")
+    (version "0.3-23")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adespatial" version))
        (sha256
-        (base32 "1i05v5vy4lwck21n6cf3yp7932ima2k49f5graacwsmaf4kvvk8m"))))
+        (base32 "0cszq382vpd8alc98hnrzqj1wyp8bcfbvqpi1d2rqbr12f5qgq3h"))))
     (properties `((upstream-name . "adespatial")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan

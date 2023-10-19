@@ -481,6 +481,26 @@ objects more naturally and write the resulting YAML to your clipboard or to YAML
 files related to your project.")
     (license license:expat)))
 
+(define-public r-ymisc
+  (package
+    (name "r-ymisc")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Ymisc" version))
+       (sha256
+        (base32 "0mw430a0qdi9lddxlzc8vdk2yhm57c2mblj0yyy3g6icf5m7pppn"))))
+    (properties `((upstream-name . "Ymisc")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=Ymisc")
+    (synopsis "Miscellaneous Functions")
+    (description
+     "The Author's personal R Package that contains miscellaneous functions.  The
+current version of package contains miscellaneous functions for brain data to
+compute Asymmetry Index (AI) and bilateral (L+R) measures and reshape the data.")
+    (license license:gpl2+)))
+
 (define-public r-ymd
   (package
     (name "r-ymd")

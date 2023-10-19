@@ -7996,16 +7996,16 @@ Gradient'.")
 (define-public r-inlinedocs
   (package
     (name "r-inlinedocs")
-    (version "2019.12.5")
+    (version "2023.9.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inlinedocs" version))
        (sha256
-        (base32 "11d8cnrzgq95w7hn234rcwrr1mmrv63f69807pnzxizxbgnp7wz3"))))
+        (base32 "115mng6fmjacb2mqa85mdqz79yfpgn08rshigsqcb2h234k0wnk3"))))
     (properties `((upstream-name . "inlinedocs")))
     (build-system r-build-system)
-    (home-page "http://github.com/tdhock/inlinedocs")
+    (home-page "https://github.com/tdhock/inlinedocs")
     (synopsis "Convert Inline Comments to Documentation")
     (description
      "Generates Rd files from R source code with comments.  The main features of the
@@ -9559,13 +9559,13 @@ delay distribution.")
 (define-public r-incidenceprevalence
   (package
     (name "r-incidenceprevalence")
-    (version "0.4.1")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IncidencePrevalence" version))
        (sha256
-        (base32 "1h94ihbc1xz9zpbimc3kdljbh1man79qajqxf2bfww8n1scikiad"))))
+        (base32 "0idzkhfy53p7b8c8j08m3qyg9s9ci3w21yxy9cm0dxli0kb4bmr0"))))
     (properties `((upstream-name . "IncidencePrevalence")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip

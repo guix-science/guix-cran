@@ -972,13 +972,13 @@ tutorial of the package, see (Tikka and Helske, 2023) <arxiv:2302.01607>.")
 (define-public r-dynamicsdm
   (package
     (name "r-dynamicsdm")
-    (version "1.3.2")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dynamicSDM" version))
        (sha256
-        (base32 "1wvvzfhzg72mlhky93zapns1rn6r3w88nxwfm4xvjnc0ss9il9iy"))))
+        (base32 "08kv5bp8yqlrxxlr4fz4zzzcgh3sc6y9dg934gh97p5vxmwjravq"))))
     (properties `((upstream-name . "dynamicSDM")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -4892,13 +4892,13 @@ behind it are described in Reiter et al. (2017) <doi:10.18420/in2017_119>.")
 (define-public r-drake
   (package
     (name "r-drake")
-    (version "7.13.5")
+    (version "7.13.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "drake" version))
        (sha256
-        (base32 "0sb46bnf4svs8gp0m846nij6ki8cfaiypjxy3y32lq3xnzgw622k"))))
+        (base32 "1qn6h22l0giz6w6bsi77d5skxp0y5dgmhb7xl8a5nyjajlxm7hd2"))))
     (properties `((upstream-name . "drake")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -6944,13 +6944,13 @@ functionality in the stump CRAN R package Rmosek'.")
 (define-public r-doe-base
   (package
     (name "r-doe-base")
-    (version "1.2-2")
+    (version "1.2-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DoE.base" version))
        (sha256
-        (base32 "105i16pdhrbhc79czcpnfsx6cwvznscnrgl8i28c6gx2br5j37v9"))))
+        (base32 "1m1vizrsmwcb6vwhbnrp9zm881pc1qqkkpb8k47nvj3f0j8pbf1m"))))
     (properties `((upstream-name . "DoE.base")))
     (build-system r-build-system)
     (propagated-inputs (list r-vcd
@@ -15088,6 +15088,29 @@ post-hoc power calculations (Cervantes, 2017, <doi:10.18637/jss.v076.i05>).")
 which contains two indexes, with potentially a nesting structure.")
     (license license:gpl2+)))
 
+(define-public r-dfexpand
+  (package
+    (name "r-dfexpand")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dfexpand" version))
+       (sha256
+        (base32 "0rskd4bs9y56g5fh8dym11kj764pvlnx5lll5idybi67pjgv7b79"))))
+    (properties `((upstream-name . "dfexpand")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr))
+    (home-page "https://github.com/jlpainter/dfexpand")
+    (synopsis
+     "Automatically Expand Delimited Column Values into Multiple Binary Columns with 'dfexpand'")
+    (description
+     "This package implements an algorithm to effortlessly split a column in an R data
+frame filled with multiple values separated by delimiters.  This automates the
+process of creating separate columns for each unique value, transforming them
+into binary outcomes.")
+    (license license:gpl3+)))
+
 (define-public r-dfdr
   (package
     (name "r-dfdr")
@@ -20333,6 +20356,43 @@ provides the density function, the gradient of the loglikelihood and a random
 generator for Davidian curves.")
     (license license:gpl3)))
 
+(define-public r-dcur
+  (package
+    (name "r-dcur")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dCUR" version))
+       (sha256
+        (base32 "1blrxgf911b1y2pcp3hsv6cigpnclscjadlf5656kldblzj5w5m1"))))
+    (properties `((upstream-name . "dCUR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rdpack
+                             r-ppcor
+                             r-mclust
+                             r-mass
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://www.cesargamboasanabria.com")
+    (synopsis "Dimension Reduction with Dynamic CUR")
+    (description
+     "Dynamic CUR (@code{dCUR}) boosts the CUR decomposition (Mahoney MW., Drineas P.
+(2009) <doi:10.1073/pnas.0803205106>) varying the k, the number of columns and
+rows used, and its final purposes to help find the stage, which minimizes the
+relative error to reduce matrix dimension.  The goal of CUR Decomposition is to
+give a better interpretation of the matrix decomposition employing proper
+variable selection in the data matrix, in a way that yields a simplified
+structure.  Its origins come from analysis in genetics.  The goal of this
+package is to show an alternative to variable selection (columns) or individuals
+(rows).  The idea proposed consists of adjusting the probability distributions
+to the leverage scores and selecting the best columns and rows that minimize the
+reconstruction error of the matrix approximation ||A-CUR||.  It also includes a
+method that recalibrates the relative importance of the leverage scores
+according to an external variable of the user's interest.")
+    (license license:gpl3)))
+
 (define-public r-dctensor
   (package
     (name "r-dctensor")
@@ -20479,6 +20539,34 @@ See @code{SzÃ©kely} et al.(2007) <doi:10.1214/009053607000000505>;
 @code{SzÃ©kely} and Rizzo (2014) <doi:10.1214/14-AOS1255>; Huo and
 @code{SzÃ©kely} (2016) <doi:10.1080/00401706.2015.1054435>.")
     (license license:gpl2)))
+
+(define-public r-dcorvs
+  (package
+    (name "r-dcorvs")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dcorVS" version))
+       (sha256
+        (base32 "1gawk22mv5ppbiqqm4k2pjjknsp7zxnnr0lk24l6phrvnszfaxlw"))))
+    (properties `((upstream-name . "dcorVS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rfast r-dcov))
+    (home-page "https://cran.r-project.org/package=dcorVS")
+    (synopsis "Variable Selection Algorithms Using the Distance Correlation")
+    (description
+     "The FBED and mmpc variable selection algorithms have been implemented using the
+distance correlation.  The references include: Tsamardinos I., Aliferis C. F.
+and Statnikov A. (2003). \"Time and sample efficient discovery of Markovblankets
+and direct causal relations\".  In Proceedings of the ninth ACM SIGKDD
+international Conference. <doi:10.1145/956750.956838>.  Borboudakis G. and
+Tsamardinos I. (2019). \"Forward-backward selection with early dropping\".
+Journal of Machine Learning Research, 20(8): 1--39.
+<doi:10.48550/@code{arXiv.1705.10770>}.  Huo X. and Szekely G.J. (2016). \"Fast
+computing for distance covariance\".  Technometrics, 58(4): 435--447.
+<doi:10.1080/00401706.2015.1054435>.")
+    (license license:gpl2+)))
 
 (define-public r-dcortools
   (package
@@ -24552,13 +24640,13 @@ package implements dann and sub_dann from Hastie (1996)
 (define-public r-danielbiostatistics10th
   (package
     (name "r-danielbiostatistics10th")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DanielBiostatistics10th" version))
        (sha256
-        (base32 "1wg8x074q6j5j2l5xw4l68inh5in36zxy1ix94dp1755kskgzjmf"))))
+        (base32 "1jf7k79q5a0nqy5abbnn9bdj7fnly4kfwm84n5mxng6s7lxfqzb3"))))
     (properties `((upstream-name . "DanielBiostatistics10th")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales

@@ -1052,13 +1052,13 @@ different units: m/s, mol/m^2/s, and umol/m^2/s/Pa.")
 (define-public r-gumboot
   (package
     (name "r-gumboot")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gumboot" version))
        (sha256
-        (base32 "0c31rxkq08wzycwiwii7q166pzwfbdg35259rymwy0g38pnjnjp6"))))
+        (base32 "12lbnhgcc6l76g6s3bcj46p1s4ddqazwspmkn97ybwcydma44x7m"))))
     (properties `((upstream-name . "gumboot")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -5924,13 +5924,13 @@ and (4) the Weisfeiler-Lehman graph kernel (state-of-the-art).")
 (define-public r-graphicalvar
   (package
     (name "r-graphicalvar")
-    (version "0.3.1")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "graphicalVAR" version))
        (sha256
-        (base32 "1196h506lgp3ydm589j2r7356p6qidaffxc5qfhlkn7lnry0iil2"))))
+        (base32 "1wpw92bbjf37rps9qdkd7nklr74639493kdqb2nw335k132hrs6a"))))
     (properties `((upstream-name . "graphicalVAR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -9266,25 +9266,26 @@ to bigq format without loss of precision.")
 (define-public r-gnumeric
   (package
     (name "r-gnumeric")
-    (version "0.7-8")
+    (version "0.7-10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gnumeric" version))
        (sha256
-        (base32 "0iwl00mzsg8h8q67bjp6485idjlmj24362b1rbmkifckss8hrc98"))))
+        (base32 "0x8w35wj81yx7ri2jvkafkmg8d68il6m5fl6gh97g9rg5w0xkz7n"))))
     (properties `((upstream-name . "gnumeric")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=gnumeric")
     (synopsis "Read Data from Files Readable by 'gnumeric'")
     (description
      "Read data files readable by gnumeric into R'.  Can read whole sheet or a range,
 from several file formats, including the native format of gnumeric'.  Reading is
 done by using ssconvert (a file converter utility included in the gnumeric
-distribution <http://projects.gnome.org/gnumeric/>) to convert the requested
-part to CSV. From gnumeric files (but not other formats) can list sheet names
-and sheet sizes or read all sheets.")
+distribution <http://www.gnumeric.org>) to convert the requested part to CSV.
+From gnumeric files (but not other formats) can list sheet names and sheet sizes
+or read all sheets.")
     (license license:gpl2+)))
 
 (define-public r-gnssseg
@@ -13456,6 +13457,41 @@ of both basic and advanced options.  It will expand to include a variety of
 tools for navigating output.")
     (license license:gpl2)))
 
+(define-public r-gimmemyplot
+  (package
+    (name "r-gimmemyplot")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GimmeMyPlot" version))
+       (sha256
+        (base32 "18k3z6ynzpmdg029sspl8as0bkifqf8ff6hf9l2yblls7sb64id0"))))
+    (properties `((upstream-name . "GimmeMyPlot")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-scales
+                             r-rstatix
+                             r-rcolorbrewer
+                             r-magrittr
+                             r-ggpubr
+                             r-ggplot2
+                             r-ggforce
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=GimmeMyPlot")
+    (synopsis "Graphical Utilities for Visualizing and Exploring Data")
+    (description
+     "Simplifies the process of creating essential visualizations in R, offering a
+range of plotting functions for common chart types like violin plots, pie
+charts, and histograms.  With an intuitive interface, users can effortlessly
+customize colors, labels, and styles, making it an ideal tool for both beginners
+and experienced data analysts.  Whether exploring datasets or producing quick
+visual summaries, this package provides a streamlined solution for fundamental
+graphics in R.")
+    (license license:gpl3)))
+
 (define-public r-gimme
   (package
     (name "r-gimme")
@@ -14194,16 +14230,21 @@ font size and such), which then are translated into valid ggplot2 commands.")
 (define-public r-ggwordcloud
   (package
     (name "r-ggwordcloud")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggwordcloud" version))
        (sha256
-        (base32 "0mr92738s3j9wm6mkr5hd2flqsqw3vfjifv3fajsygysbwrl8dn8"))))
+        (base32 "1plrlp4f4qdsn7512syv34ql9vb0i80dhq5zm10y9a19bhkml2yz"))))
     (properties `((upstream-name . "ggwordcloud")))
     (build-system r-build-system)
-    (propagated-inputs (list r-scales r-rcpp r-png r-ggplot2 r-colorspace))
+    (propagated-inputs (list r-scales
+                             r-rcpp
+                             r-png
+                             r-gridtext
+                             r-ggplot2
+                             r-colorspace))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/lepennec/ggwordcloud")
     (synopsis "Word Cloud Geom for 'ggplot2'")
@@ -19620,16 +19661,16 @@ at <http://scholar.harvard.edu/dqiao/gese>.")
 (define-public r-gescilivis
   (package
     (name "r-gescilivis")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeSciLiVis" version))
        (sha256
-        (base32 "1kx258kx77vl67hxvj9zml7capm75yncjs0478ckwjr6g69x1ka7"))))
+        (base32 "052aws057h8j36c8k6ls9b3qd1kn69x84lvcxx45dfbb7z4jgfnr"))))
     (properties `((upstream-name . "GeSciLiVis")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rentrez r-biomartr r-biomart))
+    (propagated-inputs (list r-rentrez r-biomartr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=GeSciLiVis")
     (synopsis "Gene-Based Publication Activity Visualiser")
@@ -22487,13 +22528,13 @@ genotype data.")
 (define-public r-genieclust
   (package
     (name "r-genieclust")
-    (version "1.1.3")
+    (version "1.1.5-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "genieclust" version))
        (sha256
-        (base32 "0vhx1hfa778p3n3d8fgf9jl62raygyv84dnnhmvhkwdbqg1a7dpy"))))
+        (base32 "0n8r3wvync041ppf72gd3yx1yj9b4fdbcb4gw3lhvsxx1gxwym0k"))))
     (properties `((upstream-name . "genieclust")))
     (build-system r-build-system)
     (inputs (list))
@@ -22511,10 +22552,10 @@ ones takes only 1-2 minutes.  Allows clustering with respect to mutual
 reachability distances so that it can act as a noise point detector or a
 robustified version of HDBSCAN* (that is able to detect a predefined number of
 clusters and hence it does not dependent on the somewhat fragile eps parameter).
- The package also features an implementation of economic inequity indices (the
-Gini, Bonferroni index), external cluster validity measures (e.g., the adjusted
-asymmetric accuracy and partition similarity scores such as the adjusted Rand,
-Fowlkes-Mallows, adjusted mutual information, and pair sets indices), and
+ The package also features an implementation of inequality indices (the Gini,
+Bonferroni index), external cluster validity measures (e.g., the normalised
+clustering accuracy and partition similarity scores such as the adjusted Rand,
+Fowlkes-Mallows, adjusted mutual information, and the pair sets index), and
 internal cluster validity indices (e.g., the Calinski-Harabasz, Davies-Bouldin,
 Ball-Hall, Silhouette, and generalised Dunn indices).  See also the Python
 version of genieclust available on @code{PyPI}', which supports sparse data,
@@ -26174,38 +26215,6 @@ R6 object and can be easily updated with new data.  There are options to run in
 parallel, and Rcpp has been used to speed up calculations.  For more info about
 Gaussian process software, see Erickson et al. (2018)
 <doi:10.1016/j.ejor.2017.10.002>.")
-    (license license:gpl3)))
-
-(define-public r-gators
-  (package
-    (name "r-gators")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gatoRs" version))
-       (sha256
-        (base32 "1637mx80fr89w205qzp47fjgh6ms5r173c6schjh30vyf9xdljm6"))))
-    (properties `((upstream-name . "gatoRs")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr
-                             r-spthin
-                             r-spatstat-geom
-                             r-ridigbio
-                             r-rgbif
-                             r-raster
-                             r-parsedate
-                             r-magrittr
-                             r-leaflet
-                             r-dplyr
-                             r-coordinatecleaner))
-    (native-inputs (list r-knitr))
-    (home-page "https://nataliepatten.github.io/gatoRs/")
-    (synopsis "Geographic and Taxonomic Occurrence R-Based Scrubbing")
-    (description
-     "Streamlines downloading and cleaning biodiversity data from Integrated Digitized
-Biocollections (@code{iDigBio}) and the Global Biodiversity Information Facility
-(GBIF).")
     (license license:gpl3)))
 
 (define-public r-gater

@@ -20124,13 +20124,13 @@ and trading day adjustment models made with RJDemetra'.")
 (define-public r-rjdemetra
   (package
     (name "r-rjdemetra")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RJDemetra" version))
        (sha256
-        (base32 "0hh4ry2xmbawyqz148s1gsi06j28xz28qjbi5g452h94a0c8klcv"))))
+        (base32 "168if9s8zwmfcaj3mw7r2ksk0ri12cxqxfljs5ficcnxrm65vfn6"))))
     (properties `((upstream-name . "RJDemetra")))
     (build-system r-build-system)
     (inputs (list openjdk))
@@ -26946,13 +26946,13 @@ sample gene set testing based on randomized reduced rank reconstruction error\"
 (define-public r-reservr
   (package
     (name "r-reservr")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reservr" version))
        (sha256
-        (base32 "1p6k561hj4127g1mi5xwic8zmnj3mvklpc4a38ki5cgvw84kb6xa"))))
+        (base32 "0w6bax0ycmix46mm5jmr49vl7l3rnvwg4vv6xq78hdczspdbc0g7"))))
     (properties `((upstream-name . "reservr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -27233,13 +27233,13 @@ forms for both the recurrent event process and the terminal event.")
 (define-public r-rerddapxtracto
   (package
     (name "r-rerddapxtracto")
-    (version "1.1.6")
+    (version "1.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rerddapXtracto" version))
        (sha256
-        (base32 "0qn95gkpyndk8843rb735r3wvp3ds8h9xzngy77ps8smpfw0w4d8"))))
+        (base32 "0zyzzia8sxb2gxbr0ag8ipryn94pvdgpwsl5kmafmil42rv8y054"))))
     (properties `((upstream-name . "rerddapXtracto")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp
@@ -27608,13 +27608,13 @@ between users.  Several advanced options are available, see
 (define-public r-reproducer
   (package
     (name "r-reproducer")
-    (version "0.5.2")
+    (version "0.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reproducer" version))
        (sha256
-        (base32 "1pi8nhg5cvxzirxrw252wid0zflzcybvfqfkw7zd55fc93fzdd4p"))))
+        (base32 "0nm8x1bwigbvkz7bbr313fmxb9ypk6dw2yl9g1cppdws2c6rq1mr"))))
     (properties `((upstream-name . "reproducer")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -33016,6 +33016,35 @@ presented by Karl, Yang, and Lohr (2013) <DOI:10.1016/j.csda.2012.10.004>.  This
 material is based upon work supported by the National Science Foundation under
 grants DRL-1336027 and DRL-1336265.")
     (license license:gpl2)))
+
+(define-public r-realtimeloads
+  (package
+    (name "r-realtimeloads")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "realTimeloads" version))
+       (sha256
+        (base32 "0ragbi8sczhs8hsbgxl4gmb8lwbmhnxiz88almpml2slsmx7nrrq"))))
+    (properties `((upstream-name . "realTimeloads")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tideharmonics r-signal r-mice r-imputets
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=realTimeloads")
+    (synopsis
+     "Analyte Flux and Load from Estimates of Concentration and Discharge")
+    (description
+     "Flux (mass per unit time) and Load (mass) are computed from timeseries estimates
+of analyte concentration and discharge.  Concentration timeseries are computed
+from regression between surrogate and user-provided analyte.  Uncertainty in
+calculations is estimated using bootstrap resampling.  Code for the processing
+of acoustic backscatter from horizontally profiling acoustic Doppler current
+profilers is provided.  All methods detailed in Livsey et al (2020)
+<doi:10.1007/s12237-020-00734-z>, Livsey et al (2023)
+<doi:10.1029/2022WR033982>, and references therein.")
+    (license license:gpl3+)))
 
 (define-public r-realtest
   (package
@@ -47007,13 +47036,13 @@ financial portfolio aligns with climate goals.")
 (define-public r-r2dii-data
   (package
     (name "r-r2dii-data")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r2dii.data" version))
        (sha256
-        (base32 "00a1flpqak862yf0x98kap1jalz3485mwhps3ywi1i5b9g3g2x4q"))))
+        (base32 "1jsrdrymdcb4hxi35dn6mpvhikbjzbgm9ycqdh3cfq75c22q600b"))))
     (properties `((upstream-name . "r2dii.data")))
     (build-system r-build-system)
     (propagated-inputs (list r-lifecycle))

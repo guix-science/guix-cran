@@ -3636,13 +3636,13 @@ blog Lijun Wang (2017)
 (define-public r-frk
   (package
     (name "r-frk")
-    (version "2.1.5")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FRK" version))
        (sha256
-        (base32 "1ykl3qkl8hf9pn4a3fb2axci62x90civcy1skxf1g4b0nzzcsnkn"))))
+        (base32 "1jwsmrc4hqask0bls4rd8bssgddpy17l615w6p19iiayd3xlir55"))))
     (properties `((upstream-name . "FRK")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb
@@ -3662,7 +3662,7 @@ blog Lijun Wang (2017)
                              r-dplyr
                              r-digest))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=FRK")
+    (home-page "https://andrewzm.github.io/FRK/")
     (synopsis "Fixed Rank Kriging")
     (description
      "This package provides a tool for spatial/spatio-temporal modelling and
@@ -8417,13 +8417,13 @@ up the calculation of distances between observations.")
 (define-public r-fmesher
   (package
     (name "r-fmesher")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fmesher" version))
        (sha256
-        (base32 "1x5affplbda5fs2a3fagpw2jzdmb787vgql5f6b7bi5prxn270qw"))))
+        (base32 "0kmsahgjqbsshw27mgcjx4crli8d67kkagzyc7xap95ivlcdqpgd"))))
     (properties `((upstream-name . "fmesher")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -14127,13 +14127,13 @@ scenario analysis as described in Meucci, Attilio (2008) and Meucci, Attilio
 (define-public r-ffmanova
   (package
     (name "r-ffmanova")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ffmanova" version))
        (sha256
-        (base32 "19kdlcslqnwcsdjxx0n86is5cjz21sn8vpylyq8s4i7q7nrlyxwp"))))
+        (base32 "08paiz94vhyiqaihpg3y9z3cbk9k5mlwwv8f1fs9mis3rv8wabvc"))))
     (properties `((upstream-name . "ffmanova")))
     (build-system r-build-system)
     (home-page "https://github.com/olangsrud/ffmanova")

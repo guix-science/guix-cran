@@ -2884,6 +2884,38 @@ Davidian (2004) <DOI:10.1002/sim.1903>, Li and Greene (2013)
 <DOI:10.1080/01621459.2016.1260466>.")
     (license license:gpl2+)))
 
+(define-public r-pstrata
+  (package
+    (name "r-pstrata")
+    (version "0.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PStrata" version))
+       (sha256
+        (base32 "05f63nqjn2140dhycq05d5hrw7d1c065lpg6js6plsx235jwmga8"))))
+    (properties `((upstream-name . "PStrata")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-rstan
+                             r-purrr
+                             r-lme4
+                             r-ggplot2
+                             r-dplyr
+                             r-abind))
+    (home-page "https://cran.r-project.org/package=PStrata")
+    (synopsis "Principal Stratification Analysis in R")
+    (description
+     "Estimating causal effects in the presence of post-treatment confounding using
+principal stratification.  PStrata allows for customized monotonicity
+assumptions and exclusion restriction assumptions, with automatic full Bayesian
+inference supported by Stan'.  The main function to use in this package is
+PStrata(), which provides posterior estimates of principal causal effect with
+uncertainty quantification.  Visualization tools are also provided for diagnosis
+and interpretation.  See Liu and Li (2023) <@code{arXiv:2304.02740>} for
+details.")
+    (license license:gpl2+)))
+
 (define-public r-pstest
   (package
     (name "r-pstest")
@@ -7395,21 +7427,19 @@ the performance in 2007-2020.")
 (define-public r-prism
   (package
     (name "r-prism")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "prism" version))
        (sha256
-        (base32 "0gl6qmpgfdxn90aw10z4xj4ijcwj9mr0s9ahm28niinr9y89gzxk"))))
+        (base32 "1fgmv58igvkp11n8jgqvxd2qpccpv3s6xwzm2678ikrgc3hynj0x"))))
     (properties `((upstream-name . "prism")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
                              r-readr
                              r-raster
-                             r-purrr
                              r-magrittr
-                             r-lubridate
                              r-httr
                              r-ggplot2
                              r-dplyr))
@@ -12270,17 +12300,17 @@ randomized objective functions\" <@code{arXiv:1806.11544>}.")
 (define-public r-postdoc
   (package
     (name "r-postdoc")
-    (version "1.2.0")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "postdoc" version))
        (sha256
-        (base32 "1jgqx1k24dg379lzvviyvmzr37kmdqzlv1j85himyi8h7mvli9n1"))))
+        (base32 "1d9d82z72jh2g777pzxfnav7nq14c4q93jiwcsp3plvgfkj0sfl8"))))
     (properties `((upstream-name . "postdoc")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xml2 r-prismjs r-katex r-jsonlite))
-    (home-page "https://github.com/ropensci/postdoc")
+    (propagated-inputs (list r-xml2 r-prismjs r-katex r-jsonlite r-curl))
+    (home-page "https://cran.r-project.org/package=postdoc")
     (synopsis "Minimal and Uncluttered Package Documentation")
     (description
      "Generates simple and beautiful one-page HTML reference manuals with package
@@ -13001,6 +13031,51 @@ based on Hyndman, R J and Mesgaran, M B and Cousens, R D (2015)
     (description
      "This package provides functions to estimate and plot smooth or linear population
 trends, or population indices, from animal or plant count survey data.")
+    (license license:gpl3)))
+
+(define-public r-popstudy
+  (package
+    (name "r-popstudy")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "popstudy" version))
+       (sha256
+        (base32 "09lavka4hr4f8m2j8wqvd4pqxbxhclac1p2f2vq15xk7n4xfbhw3"))))
+    (properties `((upstream-name . "popstudy")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-scales
+                             r-rdpack
+                             r-rcompanion
+                             r-rainbow
+                             r-moments
+                             r-magrittr
+                             r-lubridate
+                             r-hmisc
+                             r-here
+                             r-ggpubr
+                             r-ggplot2
+                             r-forecast
+                             r-dplyr
+                             r-desctools
+                             r-demography
+                             r-corrr
+                             r-corrplot
+                             r-correlation))
+    (home-page "https://www.cesargamboasanabria.com")
+    (synopsis "Applied Techniques to Demographic and Time Series Analysis")
+    (description
+     "The use of overparameterization is proposed with combinatorial analysis to test
+a broader spectrum of possible ARIMA models.  In the selection of ARIMA models,
+the most traditional methods such as correlograms or others, do not usually
+cover many alternatives to define the number of coefficients to be estimated in
+the model, which represents an estimation method that is not the best.  The
+popstudy package contains several tools for statistical analysis in demography
+and time series based in Shryock research (Shryock et.  al. (1980)
+<https://books.google.co.cr/books?id=8Oo6AQAAMAAJ>).")
     (license license:gpl3)))
 
 (define-public r-popreconstruct
@@ -20350,13 +20425,13 @@ shifting rows.")
 (define-public r-pixelclasser
   (package
     (name "r-pixelclasser")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pixelclasser" version))
        (sha256
-        (base32 "18jm122b8rd5idij8l6q4qgs64p54yvha8n1qb3ihr9h3q2g72a4"))))
+        (base32 "0nkym141dmyy8783nv78pps3lyfpk31fdziq990j45napv8kiamy"))))
     (properties `((upstream-name . "pixelclasser")))
     (build-system r-build-system)
     (propagated-inputs (list r-tiff r-jpeg))
