@@ -762,6 +762,31 @@ data.  The LTRC trees can also be used to fit survival tree with time-varying
 covariates.")
     (license license:gpl3)))
 
+(define-public r-ltrcforests
+  (package
+    (name "r-ltrcforests")
+    (version "0.6.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LTRCforests" version))
+       (sha256
+        (base32 "0mrl70pgkihxa62g5fldszy6hwqc4vkg3mwxqhh4cin9h0930zxd"))))
+    (properties `((upstream-name . "LTRCforests")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival r-prodlim r-partykit r-ipred))
+    (home-page "https://cran.r-project.org/package=LTRCforests")
+    (synopsis
+     "Ensemble Methods for Survival Data with Time-Varying Covariates")
+    (description
+     "This package implements the conditional inference forest and relative risk
+forest algorithm to modeling left-truncated right-censored data with
+time-invariant covariates, and (left-truncated) right-censored survival data
+with time-varying covariates.  It also provides functions to tune the parameters
+and evaluate the model fit.  See Yao et al. (2022)
+<doi:10.1177/09622802221111549>.")
+    (license license:gpl2+)))
+
 (define-public r-ltpdvar
   (package
     (name "r-ltpdvar")
@@ -8202,18 +8227,18 @@ frame for linemap().")
 (define-public r-linelist
   (package
     (name "r-linelist")
-    (version "0.0.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "linelist" version))
        (sha256
-        (base32 "182dsc5sm4ac0wpbcs29sfdvjqz0mpfk34j2qapbi5cn194x7rj9"))))
+        (base32 "0bq2j5gw2arv6v83k1mhidp52rq3wk00lx6fxn42zy09ji2fdiv9"))))
     (properties `((upstream-name . "linelist")))
     (build-system r-build-system)
-    (propagated-inputs (list r-checkmate))
+    (propagated-inputs (list r-tidyselect r-lifecycle r-dplyr r-checkmate))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/epiverse-trace/linelist")
+    (home-page "https://epiverse-trace.github.io/linelist/")
     (synopsis "Tagging and Validating Epidemiological Data")
     (description
      "This package provides tools to help storing and handling case line list data.

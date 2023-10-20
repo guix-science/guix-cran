@@ -7103,32 +7103,35 @@ evaluation.  Reference: Lei X, Fu L, Li H, et al (2018)
 (define-public r-foresight
   (package
     (name "r-foresight")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "foreSIGHT" version))
        (sha256
-        (base32 "0a018hc8pavb8sqizc5922gmiwsdlq3hgwkx29pzpajjlhrybgpj"))))
+        (base32 "1nw93xs10qfj489i9xlamjrk8rf73b7511gdsg49vvbgjp4945mr"))))
     (properties `((upstream-name . "foreSIGHT")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
+                             r-soilhyp
                              r-scales
                              r-rlang
+                             r-rgn
                              r-rcpp
                              r-rcorpora
-                             r-rcolorbrewer
                              r-progress
                              r-mvtnorm
                              r-moments
+                             r-matrix
                              r-lattice
                              r-jsonlite
                              r-ggplot2
                              r-ga
                              r-fields
-                             r-doparallel
                              r-directlabels
-                             r-cowplot))
+                             r-dfoptim
+                             r-cowplot
+                             r-cmaes))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=foreSIGHT")
     (synopsis "Systems Insights from Generation of Hydroclimatic Timeseries")
@@ -13286,13 +13289,13 @@ package @code{AlphaSimR}'.")
 (define-public r-fieldhub
   (package
     (name "r-fieldhub")
-    (version "1.3.1")
+    (version "1.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FielDHub" version))
        (sha256
-        (base32 "1kmzrf73a72sc96y5pv51n02lj98qgxv31yfsj09ls2z4fsh536v"))))
+        (base32 "08s9snwcvnhrhcqm4csl2pnsp3vxa5vmckmkjhhs4ima51d13f0y"))))
     (properties `((upstream-name . "FielDHub")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -16316,13 +16319,13 @@ Medicine, <doi:10.1002/sim.7582>.")
 (define-public r-fcps
   (package
     (name "r-fcps")
-    (version "1.3.3")
+    (version "1.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FCPS" version))
        (sha256
-        (base32 "1zawlzyznmp5fk2c0p86ivgj8b3pfc97i0vrzm6zalgdin0lcvgr"))))
+        (base32 "15xsqwnn5liqjbwg8qpj7prqdiykfxczdw9fyllya7x801ky1rfi"))))
     (properties `((upstream-name . "FCPS")))
     (build-system r-build-system)
     (inputs (list pandoc))
@@ -18356,13 +18359,13 @@ and discussed in the preprint available from Researchgate by Simone R. (2020)
 (define-public r-fastcpd
   (package
     (name "r-fastcpd")
-    (version "0.7.2")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastcpd" version))
        (sha256
-        (base32 "0vgs3kmmg11saz0va2qig60qv2d0xhwg07dqi05j9y09n28d0xzb"))))
+        (base32 "0i68411h1cdh4jpz8a7fg0ns1zvwdn7zpbarciy0swldq8v43xi1"))))
     (properties `((upstream-name . "fastcpd")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat
@@ -20010,13 +20013,13 @@ algorithms.")
 (define-public r-factset-protobuf-stachextensions
   (package
     (name "r-factset-protobuf-stachextensions")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "factset.protobuf.stachextensions" version))
        (sha256
-        (base32 "1v1sizb95x2h6zcxzi0ib5nbbfiki8qsj4lp41ap6xp6qr6fwn0f"))))
+        (base32 "1bs39wylva1zpa8m3b0sdrdszqqxszl1rlwyli400a9zcm7xpwvq"))))
     (properties `((upstream-name . "factset.protobuf.stachextensions")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-r6 r-jsonlite))

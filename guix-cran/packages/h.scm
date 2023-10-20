@@ -11129,13 +11129,13 @@ easier to plot with ggplot2 and to manipulate using tidyverse tools.")
 (define-public r-harmonydata
   (package
     (name "r-harmonydata")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "harmonydata" version))
        (sha256
-        (base32 "14cv91yhsybficcv5sqha078bnl6f7npjf425lf8p183078fcivr"))))
+        (base32 "1n90zm31himxwaaan92fbar0nqvxgn41i38vshv42wa77641lr1m"))))
     (properties `((upstream-name . "harmonydata")))
     (build-system r-build-system)
     (propagated-inputs (list r-uuid r-jsonlite r-httr r-base64enc))

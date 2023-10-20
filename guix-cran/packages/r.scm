@@ -9379,13 +9379,13 @@ for model selection can be constructed relatively quickly.")
 (define-public r-rppaspace
   (package
     (name "r-rppaspace")
-    (version "1.0.9")
+    (version "1.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RPPASPACE" version))
        (sha256
-        (base32 "0i68amjsxmkph9wf30vyvi30ddg46nac4cws0pwvhi5pdv1spbzh"))))
+        (base32 "0k9z02qpzxqqcdq5kqrrlc9k9bqcrl69ik6l30fa0rd7ywaqwsbc"))))
     (properties `((upstream-name . "RPPASPACE")))
     (build-system r-build-system)
     (propagated-inputs (list r-timedate
@@ -9396,7 +9396,6 @@ for model selection can be constructed relatively quickly.")
                              r-png
                              r-nlme
                              r-mgcv
-                             r-mass
                              r-jpeg
                              r-iterators
                              r-imager
@@ -9405,25 +9404,26 @@ for model selection can be constructed relatively quickly.")
                              r-cobs
                              r-bmp))
     (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://github.com/MD-Anderson-Bioinformatics/rppaspace")
+    (home-page "https://pubmed.ncbi.nlm.nih.gov/36205581")
     (synopsis
      "Reverse-Phase Protein Array Super Position and Concentration Evaluation")
     (description
      "This package provides tools for the analysis of reverse-phase protein arrays
-(RPPAs), which are also known as \"tissue lysate arrays\" or simply \"lysate
-arrays\".  The package's primary purpose is to input a set of quantification
-files representing dilution series of samples and control points taken from
-scanned RPPA slides and determine a relative log concentration value for each
-valid dilution series present in each slide and provide graphical visualization
-of the input and output data and their relationships.  Other optional features
-include generation of quality control scores for judging the quality of the
-input data, spatial adjustment of sample points based on controls added to the
-slides, and various types of normalization of calculated values across a set of
-slides.  The package was derived from a previous package named
-@code{SuperCurve}.  For a detailed description of data inputs and outputs, usage
-information, and a list of related papers describing methods used in the package
-please review the vignette \"Guide_to_RPPASPACE\".  Hu (2007)
-<doi:10.1093/bioinformatics/btm283>.")
+(RPPAs), which are also known as tissue lysate arrays or simply lysate arrays'.
+The package's primary purpose is to input a set of quantification files
+representing dilution series of samples and control points taken from scanned
+RPPA slides and determine a relative log concentration value for each valid
+dilution series present in each slide and provide graphical visualization of the
+input and output data and their relationships.  Other optional features include
+generation of quality control scores for judging the quality of the input data,
+spatial adjustment of sample points based on controls added to the slides, and
+various types of normalization of calculated values across a set of slides.  The
+package was derived from a previous package named @code{SuperCurve}.  For a
+detailed description of data inputs and outputs, usage information, and a list
+of related papers describing methods used in the package please review the
+vignette Guide_to_RPPASPACE'.  RPPA SPACE: an R package for normalization and
+quantitation of Reverse-Phase Protein Array data'.  Bioinformatics Nov
+15;38(22):5131-5133. <doi: 10.1093/bioinformatics/btac665>.")
     (license license:artistic2.0)))
 
 (define-public r-rppanalyzer
@@ -21230,13 +21230,13 @@ tidy format.")
 (define-public r-rioja
   (package
     (name "r-rioja")
-    (version "1.0-5")
+    (version "1.0-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rioja" version))
        (sha256
-        (base32 "1xggjapks2hipn946r65drq45xb7shhbac56r0njh0fm4wwmdzrj"))))
+        (base32 "029p70d3ih5prnjxrk60rnqnfky1xkajmq6ldf6sz8bq6idkn2d3"))))
     (properties `((upstream-name . "rioja")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan r-mgcv))

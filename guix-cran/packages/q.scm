@@ -624,16 +624,16 @@ magnitude quicker than other methods.")
 (define-public r-quickcode
   (package
     (name "r-quickcode")
-    (version "0.4")
+    (version "0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quickcode" version))
        (sha256
-        (base32 "0f4y3kf9aq81qbb4pj9mwjy7ccx0z33cm50h9i5gqb8yg75v2gjy"))))
+        (base32 "0m4x315k431wjb4nv2z615nwcp4np1ad68kwrxfk6acpa6ynr5ah"))))
     (properties `((upstream-name . "quickcode")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rstudioapi r-rlang r-polychrome))
+    (propagated-inputs (list r-rstudioapi r-polychrome))
     (native-inputs (list r-knitr))
     (home-page "https://quickcode.obi.obianom.com")
     (synopsis "Compilation of Some Frequently Used R Functions")
@@ -5011,6 +5011,29 @@ quantitative (numerical) attributes.  Article describing QCBA is published in
 Tomas Kliegr (2017) <@code{arXiv:1711.10166>}.  The package can also postprocess
 results of the SBRL package, which is no longer in CRAN, but can be obtained
 from <https://github.com/cran/sbrl>.")
+    (license license:gpl3)))
+
+(define-public r-qcauchyreg
+  (package
+    (name "r-qcauchyreg")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qcauchyreg" version))
+       (sha256
+        (base32 "1jry8xg6q4d9bxznrw8jxlbivnf5y944xdzv320fv4milk22g30x"))))
+    (properties `((upstream-name . "qcauchyreg")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-quantreg))
+    (home-page "<https://www.r-project.org>")
+    (synopsis "Quantile Regression Quasi-Cauchy")
+    (description
+     "Quasi-Cauchy quantile regression, proposed by de Oliveira, Ospina, Leiva,
+Figueroa-Zuniga and Castro (2023) <doi:10.3390/fractalfract7090667>.  This
+regression model is useful for the case where you want to model data of a nature
+limited to the intervals [0,1], (0,1], [0,1) or (0,1) and you want to use a
+quantile approach.")
     (license license:gpl3)))
 
 (define-public r-qcatools

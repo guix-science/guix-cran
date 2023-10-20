@@ -5342,13 +5342,13 @@ the updating process.  See e.g. @code{TomÃ©} et al (2015)
 (define-public r-nmdata
   (package
     (name "r-nmdata")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMdata" version))
        (sha256
-        (base32 "1ildwg1r7sa2xr0b0yl2x1dcd8rv6y3l5dm7wxq3wjjxi5bzazcg"))))
+        (base32 "0r9rzq4qi2i49b03ap8s2cqx5vbbrdsh3xmqancq62r8fiydvzbd"))))
     (properties `((upstream-name . "NMdata")))
     (build-system r-build-system)
     (propagated-inputs (list r-fst r-data-table))

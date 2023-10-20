@@ -9683,6 +9683,33 @@ assess equivalence in method comparison studies,
 event data analysis.  Includes non-parametric and semi-parametric methods.")
     (license license:gpl3)))
 
+(define-public r-bivpois
+  (package
+    (name "r-bivpois")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bivpois" version))
+       (sha256
+        (base32 "1pajy04wy11nxzy9dvpg6zpp99fb6splfv0nn8hg76kk8j3zn844"))))
+    (properties `((upstream-name . "bivpois")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rfast))
+    (home-page "https://cran.r-project.org/package=bivpois")
+    (synopsis "Bivariate Poisson Distribution")
+    (description
+     "Maximum likelihood estimation, random values generation, density computation and
+other functions for the bivariate Poisson distribution.  References include:
+Kawamura K. (1984). \"Direct calculation of maximum likelihood estimator for the
+bivariate Poisson distribution\".  Kodai Mathematical Journal, 7(2): 211--221.
+<doi:10.2996/kmj/1138036908>.  Kocherlakota S. and Kocherlakota K. (1992).
+\"Bivariate discrete distributions\".  CRC Press. <doi:10.1201/9781315138480>.
+Karlis D. and Ntzoufras I. (2003). \"Analysis of sports data by using bivariate
+Poisson models\".  Journal of the Royal Statistical Society: Series D (The
+Statistician), 52(3): 381--393. <doi:10.1111/1467-9884.00366>.")
+    (license license:gpl2+)))
+
 (define-public r-bivgeom
   (package
     (name "r-bivgeom")
@@ -25089,13 +25116,13 @@ from Wikipedia <https://en.wikipedia.org/wiki/The_Great_British_Bake_Off>.")
 (define-public r-baizer
   (package
     (name "r-baizer")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "baizer" version))
        (sha256
-        (base32 "0rwhhkbgmcwj6lnsw5jd0nqydw0a1kbh31hyw6gmzadqcr0m55vn"))))
+        (base32 "06f7g71pzc4y2vnc3fj33s1xl6plxrkd2y73xi24pk81lm5wgf9a"))))
     (properties `((upstream-name . "baizer")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -25103,8 +25130,11 @@ from Wikipedia <https://en.wikipedia.org/wiki/The_Great_British_Bake_Off>.")
                              r-tibble
                              r-stringr
                              r-seriation
+                             r-rmarkdown
                              r-rlang
                              r-rematch2
+                             r-readxl
+                             r-readr
                              r-purrr
                              r-openxlsx
                              r-magrittr

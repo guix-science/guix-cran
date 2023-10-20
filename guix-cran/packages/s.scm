@@ -21184,13 +21184,13 @@ appearance.")
 (define-public r-spatsurv
   (package
     (name "r-spatsurv")
-    (version "2.0")
+    (version "2.0-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spatsurv" version))
        (sha256
-        (base32 "1v0b11mlds8k1jx6qgcqalkzkw7j5bwh3j1v70qknkg3p4xsqzp3"))))
+        (base32 "17s88w8ikrazhjbilvwcw1i1r9b77ci7f69jgr8lni7dd7l0b0hy"))))
     (properties `((upstream-name . "spatsurv")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -37304,13 +37304,13 @@ estimation and inferential results.")
 (define-public r-sieve
   (package
     (name "r-sieve")
-    (version "2.0")
+    (version "2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Sieve" version))
        (sha256
-        (base32 "1vrnyv7a5q9ijb3z0s7sq4ijfmg7anhv31rlhqjw4pzdmpvs5xzd"))))
+        (base32 "1smsr073zl91jxdrawy12rn2ygs2zhj79npb20c98zs7npp5yrj6"))))
     (properties `((upstream-name . "Sieve")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-mass r-glmnet r-combinat))
@@ -37323,8 +37323,8 @@ moderate high-dimensional features (dimension < 100).  The l1-penalized sieve
 estimator, a nonparametric generalization of Lasso, is adaptive to the feature
 dimension with provable theoretical guarantees.  We also include a nonparametric
 stochastic gradient descent estimator, Sieve-SGD, for online or large scale
-batch problems.  Details of the methods and model assumptions can be found in:
-<@code{arXiv:2206.02994>} <@code{arXiv:2104.00846>}.")
+batch problems.  Details of the methods can be found in:
+<@code{arXiv:2206.02994>} <@code{arXiv:2104.00846><arXiv:2310.12140>}.")
     (license license:gpl2)))
 
 (define-public r-sier
@@ -37558,13 +37558,13 @@ See Tong et al. (2013) <doi:10.1093/bioinformatics/bts713>.")
 (define-public r-siber
   (package
     (name "r-siber")
-    (version "2.1.8")
+    (version "2.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SIBER" version))
        (sha256
-        (base32 "17iqsnjv3bgi2f89xjkp993fmgxrahqf7lbrhi421llxs2pss0l5"))))
+        (base32 "00sr2h0fry102z2jdzsf20jav04gfskdcznzfpkjr4y5h4vv62cb"))))
     (properties `((upstream-name . "SIBER")))
     (build-system r-build-system)
     (inputs (list jags))
@@ -41272,21 +41272,21 @@ Alham Saadat, Li Wang, Melina Claussnitzer, Manolis Kellis (2017)
 (define-public r-sharppen
   (package
     (name "r-sharppen")
-    (version "1.8")
+    (version "1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sharpPen" version))
        (sha256
-        (base32 "11pvah41gi3xhb1n30k8ql28m3f47nnsd37z3mcjs0pv1lbacps2"))))
+        (base32 "0ra1iq6bfiy87arj7nb4s4adiji3pcp7vrjhsfbm2agfw05k4zj4"))))
     (properties `((upstream-name . "sharpPen")))
     (build-system r-build-system)
-    (propagated-inputs (list r-np r-matrix r-mass r-kernsmooth r-glmnet))
+    (propagated-inputs (list r-np r-matrix r-locpol r-kernsmooth r-glmnet))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=sharpPen")
     (synopsis "Penalized Data Sharpening for Local Polynomial Regression")
     (description
-     "This package provides functions and data sets for penalized data sharpening.
+     "This package provides functions and data sets for data sharpening.
 Nonparametric regressions are computed subject to smoothness and other kinds of
 penalties.")
     (license (license:fsdg-compatible "Unlimited"))))
@@ -52383,6 +52383,39 @@ and, more generally, of geographic features into computer representations
 user-defined rules taking into account spatial data as well as spatial
 relationships among different classes and objects.")
     (license license:gpl3+)))
+
+(define-public r-scaper
+  (package
+    (name "r-scaper")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "scaper" version))
+       (sha256
+        (base32 "0ygh5lhbpgxc0mbyvc2cv0m3g405aiappysb7msw7r7g2f4x0w6s"))))
+    (properties `((upstream-name . "scaper")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-vam
+                             r-stringr
+                             r-seuratobject
+                             r-seurat
+                             r-magrittr
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=scaper")
+    (synopsis
+     "Single Cell Transcriptomics-Level Cytokine Activity Prediction and Estimation")
+    (description
+     "Generates cell-level cytokine activity estimates using relevant information from
+gene sets constructed with the @code{CytoSig} and the Reactome databases and
+scored using the modified Variance-adjusted Mahalanobis (VAM) framework for
+single-cell RNA-sequencing (@code{scRNA-seq}) data. @code{CytoSig} database is
+described in: Jiang at al., (2021) <doi:10.1038/s41592-021-01274-5>.  Reactome
+database is described in: Gillespie et al., (2021) <doi:10.1093/nar/gkab1028>.
+The VAM method is outlined in: Frost (2020) <doi:10.1093/nar/gkaa582>.")
+    (license license:gpl2+)))
 
 (define-public r-scape
   (package

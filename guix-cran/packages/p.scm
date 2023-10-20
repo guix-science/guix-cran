@@ -8396,6 +8396,26 @@ while the Prettify addins also modify the code, e.g. trailing semi-colons are
 added to @code{JavaScript} code when they are missing.")
     (license license:gpl3)))
 
+(define-public r-pretest
+  (package
+    (name "r-pretest")
+    (version "0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pretest" version))
+       (sha256
+        (base32 "11q90wf2sis0km20xnpx5wr7h7p80vl2bpah5m1a56qixswql5cm"))))
+    (properties `((upstream-name . "pretest")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=pretest")
+    (synopsis
+     "Novel Approach to Predictive Accuracy Testing in Nested Environments")
+    (description
+     "This repository contains the codes for using the predictive accuracy comparison
+tests developed in Pitarakis, J. (2023) <doi:10.1017/S0266466623000154>.")
+    (license license:gpl3)))
+
 (define-public r-pressure
   (package
     (name "r-pressure")
@@ -10679,13 +10699,13 @@ privacy-preserving techniques.")
 (define-public r-pprep
   (package
     (name "r-pprep")
-    (version "0.42.1")
+    (version "0.42.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ppRep" version))
        (sha256
-        (base32 "1gginxn2kj7y5rc63rjfb2m25lvzxq3fdp4an0gs0ig73vq6v2jg"))))
+        (base32 "1s4izrqw2rmipdr385nivg8av711q3q1ri59qnqw774iwwni8cwb"))))
     (properties `((upstream-name . "ppRep")))
     (build-system r-build-system)
     (propagated-inputs (list r-hypergeo))
@@ -10693,8 +10713,8 @@ privacy-preserving techniques.")
     (synopsis "Analysis of Replication Studies using Power Priors")
     (description
      "This package provides functionality for Bayesian analysis of replication studies
-using power prior approaches (Pawel et al., 2022)
-<doi:10.48550/@code{arXiv.2207.14720>}.")
+using power prior approaches (Pawel et al., 2023)
+<doi:10.1007/s11749-023-00888-5>.")
     (license license:gpl3)))
 
 (define-public r-ppqplan
@@ -16443,13 +16463,13 @@ for various modeling and simulation software platforms.")
 (define-public r-pmwr
   (package
     (name "r-pmwr")
-    (version "0.19-1")
+    (version "0.19-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PMwR" version))
        (sha256
-        (base32 "0a50khv6pv596vg4x1zpc3c564wf3zhnmn1131r24s6das2645lc"))))
+        (base32 "11pmhhyk39wc9qcgy16gavyqrrh5wkzvnk85jb9mnr9g673ljgfi"))))
     (properties `((upstream-name . "PMwR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

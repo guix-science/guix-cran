@@ -10788,13 +10788,13 @@ Lee-Carter and related methods as described in Sevcikova et al. (2016)
 (define-public r-mortalitytables
   (package
     (name "r-mortalitytables")
-    (version "2.0.3")
+    (version "2.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MortalityTables" version))
        (sha256
-        (base32 "0ldj8gq5xpbxkjcvdysrcq7a0xv7caz1rc8v6bpn5hkr866lqnmw"))))
+        (base32 "0bf5z8bynadccf0gn61zj2rcqmskf6vhjznxnxk11303p6a11phc"))))
     (properties `((upstream-name . "MortalityTables")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-pracma r-ggplot2))
@@ -13195,13 +13195,13 @@ into R and the Tidyverse\" available at <https://moderndive.com/>.")
 (define-public r-moderate-mediation
   (package
     (name "r-moderate-mediation")
-    (version "0.0.5")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "moderate.mediation" version))
        (sha256
-        (base32 "0daxbg26cm10rzx43jc4n76jjli6br962zcd0fhdjc68g9rza1m0"))))
+        (base32 "1nlv2v31h7h6isyv7nv5b7mb2v8c645rhrwabjykjamhh1d9llgj"))))
     (properties `((upstream-name . "moderate.mediation")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -13217,16 +13217,17 @@ into R and the Tidyverse\" available at <https://moderndive.com/>.")
     (synopsis "Causal Moderated Mediation Analysis")
     (description
      "Causal moderated mediation analysis using the methods proposed by Qin and Wang
-(2022).  Causal moderated mediation analysis is crucial for investigating how,
-for whom, and where a treatment is effective by assessing the heterogeneity of
-mediation mechanism across individuals and contexts.  This package enables
-researchers to estimate and test the conditional and moderated mediation
-effects, assess their sensitivity to unmeasured pre-treatment confounding, and
-visualize the results.  The package is built based on the quasi-Bayesian Monte
-Carlo method, because it has relatively better performance at small sample
-sizes, and its running speed is the fastest.  The package is applicable to a
-treatment of any scale, a binary or continuous mediator, a binary or continuous
-outcome, and one or more moderators of any scale.")
+(2023) <doi:10.3758/s13428-023-02095-4>.  Causal moderated mediation analysis is
+crucial for investigating how, for whom, and where a treatment is effective by
+assessing the heterogeneity of mediation mechanism across individuals and
+contexts.  This package enables researchers to estimate and test the conditional
+and moderated mediation effects, assess their sensitivity to unmeasured
+pre-treatment confounding, and visualize the results.  The package is built
+based on the quasi-Bayesian Monte Carlo method, because it has relatively better
+performance at small sample sizes, and its running speed is the fastest.  The
+package is applicable to a treatment of any scale, a binary or continuous
+mediator, a binary or continuous outcome, and one or more moderators of any
+scale.")
     (license license:gpl2)))
 
 (define-public r-moder
@@ -35660,13 +35661,13 @@ data frame and expand a data frame of matrices into a tidy data frame.")
 (define-public r-matsbyname
   (package
     (name "r-matsbyname")
-    (version "0.6.5")
+    (version "0.6.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "matsbyname" version))
        (sha256
-        (base32 "16zp6n8g0ils49y91ssl84i4qwbhp1ascz7mlpnnrvgkrddpzgbv"))))
+        (base32 "1vz5i82mif1b1640l86ly4k91k756dj30bkhxlgxvycapl9b0lg9"))))
     (properties `((upstream-name . "matsbyname")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -37656,13 +37657,13 @@ combining prior marker information with bulk transcriptome data.")
 (define-public r-marked
   (package
     (name "r-marked")
-    (version "1.2.6")
+    (version "1.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "marked" version))
        (sha256
-        (base32 "0k367sjyac1w894rndz5m0drmbd56nzyx5mr7mvhsqzq3gnv4dw5"))))
+        (base32 "1i5vay60g6ddqnnqdj89yhsqxdcw9yzqpwq9gv7qc1psb8f77052"))))
     (properties `((upstream-name . "marked")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm
@@ -37831,13 +37832,13 @@ a conditional risk model.")
 (define-public r-marginaleffects
   (package
     (name "r-marginaleffects")
-    (version "0.15.1")
+    (version "0.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "marginaleffects" version))
        (sha256
-        (base32 "0964xbxz84iz7hc7lbr2sfwfy918mi3bpypx817vgzd3s58hvr2p"))))
+        (base32 "0w83n68fr3igjilqp35w96pf0srcz17q5j6ii7r34y7zjgrn46md"))))
     (properties `((upstream-name . "marginaleffects")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -37852,10 +37853,10 @@ a conditional risk model.")
      "Predictions, Comparisons, Slopes, Marginal Means, and Hypothesis Tests")
     (description
      "Compute and plot predictions, slopes, marginal means, and comparisons
-(contrasts, risk ratios, odds, etc.) for over 80 classes of statistical models
-in R. Conduct linear and non-linear hypothesis tests, or equivalence tests.
-Calculate uncertainty estimates using the delta method, bootstrapping, or
-simulation-based inference.")
+(contrasts, risk ratios, odds, etc.) for over 100 classes of statistical and
+machine learning models in R. Conduct linear and non-linear hypothesis tests, or
+equivalence tests.  Calculate uncertainty estimates using the delta method,
+bootstrapping, or simulation-based inference.")
     (license license:gpl3+)))
 
 (define-public r-margcond
@@ -38499,6 +38500,54 @@ and Mollinari et al. (2020) <doi:10.1534/g3.119.400620>.")
      "Easily create functions to map between different sets of values, such as for
 re-labelling categorical variables.")
     (license license:gpl3)))
+
+(define-public r-mapping
+  (package
+    (name "r-mapping")
+    (version "1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mapping" version))
+       (sha256
+        (base32 "1d8w6gzibbw3sqwgqcj7ww6bw95mlivpncz60fhn130qlmg1d0p4"))))
+    (properties `((upstream-name . "mapping")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-viridislite
+                             r-tmaptools
+                             r-tmap
+                             r-stringr
+                             r-stringi
+                             r-sf
+                             r-s2
+                             r-mapview
+                             r-leafsync
+                             r-leafpop
+                             r-leaflet
+                             r-jsonlite
+                             r-httr
+                             r-htmltools
+                             r-ggplot2
+                             r-geojsonio
+                             r-dplyr
+                             r-curl
+                             r-cartography))
+    (home-page "https://github.com/serafinialessio/mapping")
+    (synopsis "Automatic Download, Linking, Manipulating Coordinates for Maps")
+    (description
+     "Maps are an important tool to visualise variables distribution across different
+spatial objects.  The mapping process requires to link the data with coordinates
+and then generate the correspondent map.  This package provide coordinates,
+linking and mapping functions for an automatic, flexible and easy approach of
+external functions.  The package provides an easy, flexible and automatic unit.
+Geographical coordinates are provided in the package and automatically linked
+with the input data to generate maps with internal provided functions or
+external functions.  Provide an easy, flexible and automatic approach to
+potentially download updated coordinates, to link statistical units with
+coordinates and to aggregate variables based on the spatial hierarchy of units.
+The object returned from the package can be used for thematic maps with the
+build-in functions provided in mapping or with other packages already available.")
+    (license license:gpl2+)))
 
 (define-public r-mapmisc
   (package

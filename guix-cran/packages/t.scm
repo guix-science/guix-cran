@@ -7349,6 +7349,61 @@ inheritance to handle dialect differences.")
 (2010) <doi:10.1177/0759106309352586>.")
     (license license:gpl2+)))
 
+(define-public r-transgraph
+  (package
+    (name "r-transgraph")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TransGraph" version))
+       (sha256
+        (base32 "0fr038zd4gg3cjlsjl6jz6a73bp0rfbxmgphnbv0ambbm62i9w3h"))))
+    (properties `((upstream-name . "TransGraph")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tlasso
+                             r-rtensor
+                             r-mass
+                             r-huge
+                             r-heteroggm
+                             r-glasso
+                             r-expm
+                             r-evaluationmeasures
+                             r-doparallel
+                             r-dcov
+                             r-clime))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://cran.r-project.org/package=TransGraph")
+    (synopsis "Transfer Graph Learning")
+    (description
+     "Transfer learning, aiming to use auxiliary domains to help improve learning of
+the target domain of interest when multiple heterogeneous datasets are
+available, has always been a hot topic in statistical machine learning.  The
+recent transfer learning methods with statistical guarantees mainly focus on the
+overall parameter transfer for supervised models in the ideal case with the
+informative auxiliary domains with overall similarity.  In contrast, transfer
+learning for unsupervised graph learning is in its infancy and largely follows
+the idea of overall parameter transfer as for supervised learning.  In this
+package, the transfer learning for several complex graphical models is
+implemented, including Tensor Gaussian graphical models, non-Gaussian directed
+acyclic graph (DAG), and Gaussian graphical mixture models.  Notably, this
+package promotes local transfer at node-level and subgroup-level in DAG
+structural learning and Gaussian graphical mixture models, respectively, which
+are more flexible and robust than the existing overall parameter transfer.  As
+by-products, transfer learning for undirected graphical model (precision matrix)
+via D-trace loss, transfer learning for mean vector estimation, and single
+non-Gaussian learning via topological layer method are also included in this
+package.  Moreover, the aggregation of auxiliary information is an important
+issue in transfer learning, and this package provides multiple user-friendly
+aggregation methods, including sample weighting, similarity weighting, and most
+informative selection.  Reference: Ren, M., Zhen Y., and Wang J. (2022)
+<@code{arXiv:2211.09391>} \"Transfer learning for tensor graphical models\".  Ren,
+M., He X., and Wang J. (2023) <@code{arXiv:2310.10239>} \"Structural transfer
+learning of non-Gaussian DAG\".  Zhao, R., He X., and Wang J. (2022)
+<https://jmlr.org/papers/v23/21-1173.html> \"Learning linear non-Gaussian
+directed acyclic graph with diverging number of nodes\".")
+    (license license:gpl2)))
+
 (define-public r-transfr
   (package
     (name "r-transfr")
@@ -13199,13 +13254,13 @@ which are therefore listed as dependencies.")
 (define-public r-tigers
   (package
     (name "r-tigers")
-    (version "0.1")
+    (version "0.1-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tigers" version))
        (sha256
-        (base32 "1g9h5rb5rb60cs6s1gbhqpiiq1f9fc7y3hlxjqrbv2gn306vw7ry"))))
+        (base32 "1skwg878zwi1j2k70m0m9njq8zpj799y4526kvqmd17xin5yxggk"))))
     (properties `((upstream-name . "tigers")))
     (build-system r-build-system)
     (home-page "https://github.com/emmanuelparadis/tigers")

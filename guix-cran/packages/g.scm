@@ -18982,13 +18982,13 @@ documentation and examples <https://magosil86.github.io/getspres/>.")
 (define-public r-getspanel
   (package
     (name "r-getspanel")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "getspanel" version))
        (sha256
-        (base32 "18lgcaz8vqzp2pjld9cc2gkq42nk8216rgqsda8wdynsxc697wr2"))))
+        (base32 "0g02iapl0p14s9s7zan47j0g4kays43r01f65i2zgkidfwnvhlbr"))))
     (properties `((upstream-name . "getspanel")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-matrix r-ggplot2 r-gets r-fastdummies))
@@ -25741,16 +25741,16 @@ Please see the vignette for a quickstart guide or the paper at
 (define-public r-gbifdb
   (package
     (name "r-gbifdb")
-    (version "0.1.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gbifdb" version))
        (sha256
-        (base32 "1im2lsd7gnxbpf2s0i5kx9g34ryvnxdz51lq0ww7dd2wjqcngqfn"))))
+        (base32 "0lcwi7bx2giwcgr0dw6y1isj9bszs9d5yv4lby6gn0z4cmv6qzcb"))))
     (properties `((upstream-name . "gbifdb")))
     (build-system r-build-system)
-    (propagated-inputs (list r-duckdb r-dplyr r-dbi r-arrow))
+    (propagated-inputs (list r-duckdbfs r-dplyr r-arrow))
     (native-inputs (list r-knitr))
     (home-page "https://docs.ropensci.org/gbifdb/")
     (synopsis "High Performance Interface to 'GBIF'")

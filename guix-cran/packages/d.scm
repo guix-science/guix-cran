@@ -1769,13 +1769,13 @@ implementer's interface for the high-level user interface of dplyr'.")
 (define-public r-duckdbfs
   (package
     (name "r-duckdbfs")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "duckdbfs" version))
        (sha256
-        (base32 "1rap9363q475msan20xlyarlrj2aisgcfpq1zdj9lxrhl0zf3w3r"))))
+        (base32 "1fvcq4a1r5las5xip28f7wcqnijd6r79s4bbp5c5yxd2xgccwvsa"))))
     (properties `((upstream-name . "duckdbfs")))
     (build-system r-build-system)
     (propagated-inputs (list r-duckdb r-dplyr r-dbplyr r-dbi))
@@ -12320,16 +12320,15 @@ Digital Science Dimensions using DSL API
 (define-public r-dimensio
   (package
     (name "r-dimensio")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dimensio" version))
        (sha256
-        (base32 "1p7i3qbykxwxz9ag1pw2pn8l1kvxyfr0nalai9sb32nm397fqvir"))))
+        (base32 "1bq4c8903pwzk3ibz4fkyf7m6advihwjnzzxmgpw64183w7qwnh2"))))
     (properties `((upstream-name . "dimensio")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlang r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://packages.tesselle.org/dimensio/")
     (synopsis "Multivariate Data Analysis")
@@ -18242,6 +18241,31 @@ insect development.")
      "Numerical quadrature of functions of one variable over a finite or infinite
 interval with double exponential formulas.")
     (license license:expat)))
+
+(define-public r-deform
+  (package
+    (name "r-deform")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "deform" version))
+       (sha256
+        (base32 "0crnwp5z3wy2zx273a7lchvyv5k5fyclhqrb9q0qhhv56drgvm0y"))))
+    (properties `((upstream-name . "deform")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-mass))
+    (home-page "https://cran.r-project.org/package=deform")
+    (synopsis "Spatial Deformation and Dimension Expansion Gaussian Processes")
+    (description
+     "This package provides methods for fitting nonstationary Gaussian process models
+by spatial deformation, as introduced by Sampson and Guttorp (1992)
+<doi:10.1080/01621459.1992.10475181>, and by dimension expansion, as introduced
+by Bornn et al. (2012) <doi:10.1080/01621459.2011.646919>.  Low-rank thin-plate
+regression splines, as developed in Wood, S.N. (2003)
+<doi:10.1111/1467-9868.00374>, are used to either transform co-ordinates or
+create new latent dimensions.")
+    (license license:gpl3)))
 
 (define-public r-deforestable
   (package

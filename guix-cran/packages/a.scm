@@ -13266,22 +13266,25 @@ Dependence (PD) plots, given a fitted supervised learning model.")
 (define-public r-ale
   (package
     (name "r-ale")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ale" version))
        (sha256
-        (base32 "075ln0ad9wn3hjgv89hpxwl3ypjkv5qxkrhvmgl3415di9b7x36x"))))
+        (base32 "0h06vr023qv4s55yvn4ffgg4g3f6d8y4yv3391lpi6y5j1cnlfmi"))))
     (properties `((upstream-name . "ale")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaimpute
                              r-tidyr
                              r-stringr
                              r-purrr
+                             r-labeling
                              r-ggplot2
+                             r-ellipsis
                              r-dplyr
-                             r-broom))
+                             r-broom
+                             r-assertthat))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Tripartio/ale")
     (synopsis
@@ -13289,18 +13292,18 @@ Dependence (PD) plots, given a fitted supervised learning model.")
     (description
      "Accumulated Local Effects (ALE) were initially developed as a model-agnostic
 approach for global explanations of the results of black-box machine learning
-algorithms. (Apley, Daniel W., and Jingyu Zhu. \"Visualizing the effects of
-predictor variables in black box supervised learning models.\" Journal of the
-Royal Statistical Society Series B: Statistical Methodology 82.4 (2020):
-1059-1086 <doi:10.1111/rssb.12377>.) ALE has two primary advantages over other
-approaches like partial dependency plots (PDP) and SHapley Additive
-@code{exPlanations} (SHAP): its values are not affected by the presence of
-interactions among variables in a model and its computation is relatively rapid.
- This package rewrites the original code from the ALEPlot package for
-calculating ALE data and it completely reimplements the plotting of ALE values.
-Future versions hope to extend the original ALE concept beyond global
-explanations with ALE-based measures that can be used for statistical inference
-as well as an ALE-based approach for local explanations.")
+algorithms.  ALE has a key advantage over other approaches like partial
+dependency plots (PDP) and SHapley Additive @code{exPlanations} (SHAP): its
+values represent a clean functional decomposition of the model.  As such, ALE
+values are not affected by the presence or absence of interactions among
+variables in a mode.  Moreover, its computation is relatively rapid.  This
+package rewrites the original code from the ALEPlot package for calculating ALE
+data and it completely reimplements the plotting of ALE values.  It also extends
+the original ALE concept to add bootstrap-based confidence intervals and
+ALE-based statistics that can be used for statistical inference.  For more
+details, see Okoli, Chitu.  2023.  âStatistical Inference Using Machine
+Learning and Classical Techniques Based on Accumulated Local Effects (ALE).â
+@code{arXiv}. <@code{arXiv:2310.09877>}. <doi:10.48550/@code{arXiv.2310.09877>}.")
     (license license:gpl2)))
 
 (define-public r-aldvmm
@@ -19140,13 +19143,13 @@ flexible approach to handle different sampling frequencies.")
 (define-public r-actel
   (package
     (name "r-actel")
-    (version "1.2.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "actel" version))
        (sha256
-        (base32 "10gv6vc921ma6ckck9807j3j7z0m8kalwv5aj8xg6i2yqnia2zgs"))))
+        (base32 "0hd1mkshywszswnllcx1lvlghnfk92438r57v6r7w8p5i9m04z9x"))))
     (properties `((upstream-name . "actel")))
     (build-system r-build-system)
     (propagated-inputs (list r-svglite
@@ -19406,6 +19409,32 @@ interface directly with an instance of ACE search engine and facilitates API
 queries and data dumps.  Prerequisite is a good knowledge of the temporal
 language to be able to efficiently construct a query.  More information
 available at <https://shahlab.stanford.edu/start>.")
+    (license license:expat)))
+
+(define-public r-acep
+  (package
+    (name "r-acep")
+    (version "0.0.22")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ACEP" version))
+       (sha256
+        (base32 "0n47vchi2kwm1czjfbdbcg1lg17bysw7fcca7j0q0n46c6w8rf49"))))
+    (properties `((upstream-name . "ACEP")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-httr))
+    (home-page "https://github.com/agusnieto77/ACEP")
+    (synopsis "Analisis Computacional de Eventos de Protesta")
+    (description
+     "La libreria ACEP contiene funciones especificas para desarrollar analisis
+computacional de eventos de protesta.  Asimismo, contiene base de datos con
+colecciones de notas sobre protestas y diccionarios de palabras conflictivas.
+Coleccion de diccionarios que reune diccionarios de diferentes origenes.  The
+ACEP library contains specific functions to perform computational analysis of
+protest events.  It also contains a database with collections of notes on
+protests and dictionaries of conflicting words.  Collection of dictionaries that
+brings together dictionaries from different sources.")
     (license license:expat)))
 
 (define-public r-aceeditor

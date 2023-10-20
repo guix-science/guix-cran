@@ -14,6 +14,7 @@
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages bioinformatics)
+  #:use-module (gnu packages imagemagick)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -10215,6 +10216,42 @@ Waterway, Port, Coastal, and Ocean Division, Vol 105, pp 457-459.")
 (oceanographic) data and model output.")
     (license license:gpl3+)))
 
+(define-public r-oceanmap
+  (package
+    (name "r-oceanmap")
+    (version "0.1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oceanmap" version))
+       (sha256
+        (base32 "1g2d1irs1dki25p33lrhlnpaf77p91m3jsmc1hwznd7f876ggfh7"))))
+    (properties `((upstream-name . "oceanmap")))
+    (build-system r-build-system)
+    (inputs (list imagemagick))
+    (propagated-inputs (list r-sp
+                             r-sf
+                             r-reshape2
+                             r-raster
+                             r-plotrix
+                             r-plotly
+                             r-ncdf4
+                             r-maps
+                             r-mapdata
+                             r-lubridate
+                             r-ggplot2
+                             r-ggedit
+                             r-fields
+                             r-extrafont
+                             r-abind))
+    (home-page "https://cran.r-project.org/package=oceanmap")
+    (synopsis "Plotting Toolbox for 2D Oceanographic Data")
+    (description
+     "Plotting toolbox for 2D oceanographic data (satellite data, sea surface
+temperature, chlorophyll, ocean fronts & bathymetry).  Recognized classes and
+formats include netcdf, Raster, .nc and .gz files.")
+    (license license:gpl3+)))
+
 (define-public r-oceanis
   (package
     (name "r-oceanis")
@@ -10435,13 +10472,13 @@ distributions are implemented as described in OâNeill (2019)
 (define-public r-occumb
   (package
     (name "r-occumb")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "occumb" version))
        (sha256
-        (base32 "112ysm4z19cickg3idsqwrv0jbhx5azy2gjkl4ga18shmzxk4339"))))
+        (base32 "1q4vfk9i3wk9hjm297rj3xw051ny6vqdx6zl32i7c9n7gyyk1dwm"))))
     (properties `((upstream-name . "occumb")))
     (build-system r-build-system)
     (inputs (list jags))
@@ -10455,7 +10492,7 @@ collected using spatially-replicated survey design.  Model fitting results can
 be used to evaluate and compare the effectiveness of species detection to find
 an efficient survey design.  Reference: Fukaya et al. (2022)
 <doi:10.1111/2041-210X.13732>.")
-    (license license:expat)))
+    (license license:gpl3+)))
 
 (define-public r-occcite
   (package
@@ -10839,13 +10876,13 @@ defining enumerated types, as well as other bounded types, as S4 classes.")
 (define-public r-obic
   (package
     (name "r-obic")
-    (version "2.0.1")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OBIC" version))
        (sha256
-        (base32 "0yrgnrhxn5nv0gbhzj2psskr12yaygv7bns64al1cgk18dlrsgb0"))))
+        (base32 "12153khmqp88kxrbdkhbwwxhcp3nmi64xa1rmq6b702qp4c5m534"))))
     (properties `((upstream-name . "OBIC")))
     (build-system r-build-system)
     (propagated-inputs (list r-data-table r-checkmate))
@@ -10860,7 +10897,7 @@ physical, biological and management, which consist of more than 21 indicators.
 By providing results of a soil analysis and management info the OBIC package can
 be use to calculate he scores, indicators and derivatives that are used by the
 OBI. More information about the Open Bodem Index can be found at
-<https://www.openbodemindex.nl/>.")
+<https://openbodemindex.nl/>.")
     (license license:gpl3)))
 
 (define-public r-obfuscator

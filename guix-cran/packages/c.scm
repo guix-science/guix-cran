@@ -4183,6 +4183,33 @@ References: D. G. Waterman, J. Foadi, G. Evans (2011)
 reference group.")
     (license license:gpl3)))
 
+(define-public r-crwbmetareg
+  (package
+    (name "r-crwbmetareg")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "crwbmetareg" version))
+       (sha256
+        (base32 "0faksz2hp1ya4j9hlpc091b1mgwz6396fc15f4f20fixcidv1jg8"))))
+    (properties `((upstream-name . "crwbmetareg")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sandwich r-rfast2 r-lmtest))
+    (home-page "https://cran.r-project.org/package=crwbmetareg")
+    (synopsis "Cluster Robust Wild Bootstrap Meta Regression")
+    (description
+     "In meta regression sometimes the studies have multiple effects that are
+correlated.  For this reason cluster robust standard errors must be computed.
+However, since the clusters are unbalanced the wild bootstrap is suggested.  See
+Oczkowski E. and Doucouliagos H. (2015). \"Wine prices and quality ratings: a
+meta-regression analysis\".  American Journal of Agricultural Economics, 97(1):
+103--121. <doi:10.1093/ajae/aau057> and Cameron A. C., Gelbach J. B. and Miller
+D. L. (2008). \"Bootstrap-based improvements for inference with clustered
+errors\".  The Review of Economics and Statistics, 90(3): 414--427.
+<doi:10.1162/rest.90.3.414>.")
+    (license license:gpl2+)))
+
 (define-public r-cruzplot
   (package
     (name "r-cruzplot")
@@ -17659,13 +17686,13 @@ to absolute humidity and evaluates the performance of comfort indices.")
 (define-public r-cometr
   (package
     (name "r-cometr")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cometr" version))
        (sha256
-        (base32 "1dl4yfsrzpsr69lzv2k9gbaa4ms1mnnk9bcgxjdqx89bgmq6wn1m"))))
+        (base32 "022fz7b94xl56ss1773n3g9zwfjm8mqfqds68ngvfq5498npd9z5"))))
     (properties `((upstream-name . "cometr")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -17673,6 +17700,7 @@ to absolute humidity and evaluates the performance of comfort indices.")
                              r-r-utils
                              r-jsonlite
                              r-httr
+                             r-digest
                              r-callr))
     (home-page "https://github.com/comet-ml/cometr")
     (synopsis "'Comet' API for R")
@@ -24560,13 +24588,13 @@ of it to make your results publication ready as proposed by Jacobson et al.,
 (define-public r-clinfun
   (package
     (name "r-clinfun")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clinfun" version))
        (sha256
-        (base32 "1p2izblvd5pcfwyg44z32b4war7mdk77yq4mq6k06hrlnlxkw2c0"))))
+        (base32 "0dsbgj29s7c9pv6p2j3nvksnckym0gyb8hwqvks53mvy2pg9j1ni"))))
     (properties `((upstream-name . "clinfun")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm))
@@ -34601,13 +34629,13 @@ k-medoids clustering methods.  The method is Dahl, Andros, Carter (2022+)
 (define-public r-cavariants
   (package
     (name "r-cavariants")
-    (version "5.9")
+    (version "6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CAvariants" version))
        (sha256
-        (base32 "1vjwc9484mcgx9syac93cz5mmq2d9zx5m81f9qmaghb4qdlcvdvv"))))
+        (base32 "02m2kq0ggj7g0c2x8pdvasc881prbbyrs92rfy61qmbm8kxiy8js"))))
     (properties `((upstream-name . "CAvariants")))
     (build-system r-build-system)
     (propagated-inputs (list r-plotly r-gridextra r-ggrepel r-ggplot2
@@ -34728,13 +34756,13 @@ effects.")
 (define-public r-causalqueries
   (package
     (name "r-causalqueries")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CausalQueries" version))
        (sha256
-        (base32 "1a4v3qxbjs6whgw4fyg4vzll998k84bqdzs7iq49zyd5ypzrnbzb"))))
+        (base32 "120247m3dfgwv71gg7hkrfw4yhdkk88c2qqvl2ri8hbp4w8k5gzg"))))
     (properties `((upstream-name . "CausalQueries")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr

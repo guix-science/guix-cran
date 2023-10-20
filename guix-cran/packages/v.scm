@@ -2416,23 +2416,22 @@ teaching purposes, but it has also many practical uses.")
 (define-public r-visualizesimon2stage
   (package
     (name "r-visualizesimon2stage")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VisualizeSimon2Stage" version))
        (sha256
-        (base32 "1xb001jdhf0z96zg51pkg9jng4nb4f7asqip7s5kx46fmzd1343s"))))
+        (base32 "12sanfik9ijq4gld2ry0gligixkixkqqm504zqc96r0yfmkq9hv9"))))
     (properties `((upstream-name . "VisualizeSimon2Stage")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))
     (home-page "https://cran.r-project.org/package=VisualizeSimon2Stage")
     (synopsis "Visualize Simon's Two-Stage Design")
     (description
-     "This package provides functions for visualizing the probabilities of early
-termination, fail and success of Simon's two-stage design.  Functions for
-evaluating and visualizing the operating characteristics of Simon's two-stage
-design.")
+     "To visualize the probabilities of early termination, fail and success of Simon's
+two-stage design.  To evaluate and visualize the operating characteristics of
+Simon's two-stage design.")
     (license license:gpl2)))
 
 (define-public r-visualize-cran-downloads

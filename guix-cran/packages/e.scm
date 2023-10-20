@@ -4101,13 +4101,13 @@ classified using a partial-observations-classifier (Kandanaarachchi et al.
 (define-public r-eventpred
   (package
     (name "r-eventpred")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eventPred" version))
        (sha256
-        (base32 "1jzq2y59r94mwdl9fs2kndiqbpzh95g1axds9gkxnvlvfzwvx78d"))))
+        (base32 "0za034b2ypf9ll11j1ykhpn64il3nzi2a276qd2ay44vr98jkhgi"))))
     (properties `((upstream-name . "eventPred")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmvtnsim
@@ -14713,6 +14713,29 @@ covariates by fitting a linear regression in a preliminary step before the
 semi-variogram fitting process.")
     (license license:expat)))
 
+(define-public r-eglhmm
+  (package
+    (name "r-eglhmm")
+    (version "0.0-23")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "eglhmm" version))
+       (sha256
+        (base32 "1id1x11fwrv658f555a7jzqvq12v7jxmwpl8avi99gn17lwmwq1g"))))
+    (properties `((upstream-name . "eglhmm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-nnet r-dbd))
+    (native-inputs (list r-r-rsp gfortran))
+    (home-page "https://cran.r-project.org/package=eglhmm")
+    (synopsis "Extended Generalised Linear Hidden Markov Models")
+    (description
+     "Fits a variety of hidden Markov models, structured in an extended generalized
+linear model framework.  See T. Rolf Turner, Murray A. Cameron, and Peter J.
+Thomson (1998) <doi:10.2307/3315677>, and Rolf Turner (2008)
+<doi:10.1016/j.csda.2008.01.029> and the references cited therein.")
+    (license license:gpl2+)))
+
 (define-public r-eggcounts
   (package
     (name "r-eggcounts")
@@ -20266,13 +20289,13 @@ Census APIs (<https://www.census.gov/data/developers/data-sets.html>).")
 (define-public r-easyanova
   (package
     (name "r-easyanova")
-    (version "9.0")
+    (version "10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "easyanova" version))
        (sha256
-        (base32 "0xlp2v7bx6ian5mg4nq2vbi4421yl5h24jzyzay60p9r76579k3x"))))
+        (base32 "0r8qyfhbipyj4j13g1h3p3gag3i3mmpxq2zzq0cighamqbcbmvaf"))))
     (properties `((upstream-name . "easyanova")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlme))
