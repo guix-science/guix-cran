@@ -3723,6 +3723,29 @@ Using R and @code{OpenBUGS}\" by Bhattacharjee A (2020)
 <doi:10.1201/9780429329449-14>.")
     (license license:gpl3)))
 
+(define-public r-longclust
+  (package
+    (name "r-longclust")
+    (version "1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "longclust" version))
+       (sha256
+        (base32 "0j7imbdz9wir3rb7lkjnqhfsq8zlr8li31p865dmb4l6kfrl4qg4"))))
+    (properties `((upstream-name . "longclust")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=longclust")
+    (synopsis
+     "Model-Based Clustering and Classification for Longitudinal Data")
+    (description
+     "Clustering or classification of longitudinal data based on a mixture of
+multivariate t or Gaussian distributions with a Cholesky-decomposed covariance
+structure.  Details in @code{McNicholas} and Murphy (2010)
+<doi:10.1002/cjs.10047> and @code{McNicholas} and Subedi (2012)
+<doi:10.1016/j.jspi.2011.11.026>.")
+    (license license:gpl2+)))
+
 (define-public r-longcateda
   (package
     (name "r-longcateda")
@@ -5577,6 +5600,37 @@ analysis discriminant analysis (RCCA-DA) (Yamamoto, H. et al. (2008)
 graphical interface.  It allows renaming, transforming, ordering and removing
 variables.  It includes basic exploratory methods such as the mean, median,
 mode, normality test, histogram and correlation.")
+    (license license:gpl2+)))
+
+(define-public r-loa
+  (package
+    (name "r-loa")
+    (version "0.2.48.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "loa" version))
+       (sha256
+        (base32 "1fa1yxpsydx2kjbnj00vn9zv4dw9awng4lxrcllcgzkir9bikgq0"))))
+    (properties `((upstream-name . "loa")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sp
+                             r-rgooglemaps
+                             r-rcolorbrewer
+                             r-png
+                             r-plyr
+                             r-openstreetmap
+                             r-mgcv
+                             r-mass
+                             r-lattice))
+    (home-page "http://loa.r-forge.r-project.org/loa.intro.html")
+    (synopsis "Lattice Options and Add-Ins")
+    (description
+     "Various plots and functions that make use of the lattice/trellis plotting
+framework.  The plots, which include @code{loaPlot}(), @code{RgoogleMapsPlot}()
+and @code{trianglePlot}(), use @code{panelPal}(), a function that extends
+lattice and hexbin package methods to automate plot subscript and panel-to-panel
+and panel-to-key synchronization/management.")
     (license license:gpl2+)))
 
 (define-public r-lnpar

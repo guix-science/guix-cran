@@ -17192,13 +17192,13 @@ and showing in-use connections.")
 (define-public r-tfrmtbuilder
   (package
     (name "r-tfrmtbuilder")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tfrmtbuilder" version))
        (sha256
-        (base32 "0zbsnvn6f22vybz7ix0k2l4wksn5ssdsflrqavjcsrya6nfjq9rc"))))
+        (base32 "0zm2z607vi8chrqcfm4yx3xic6cq7ws0r3fqy6p66nyn3h7zndbx"))))
     (properties `((upstream-name . "tfrmtbuilder")))
     (build-system r-build-system)
     (propagated-inputs (list r-webshot2
@@ -17221,7 +17221,7 @@ and showing in-use connections.")
                              r-dt
                              r-dplyr
                              r-bslib))
-    (home-page "https://cran.r-project.org/package=tfrmtbuilder")
+    (home-page "https://gsk-biostatistics.github.io/tfrmtbuilder/")
     (synopsis "'shiny' App Companion to the 'tfrmt' Package")
     (description
      "This package provides an interactive interface to the tfrmt package.  Users can
@@ -17845,13 +17845,13 @@ feature space consisting of all possible phrases.")
 (define-public r-textrecipes
   (package
     (name "r-textrecipes")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "textrecipes" version))
        (sha256
-        (base32 "1bv3wsp5653apga3i43nh28pg72aa6c5jbl74vnig8fyikxflm4q"))))
+        (base32 "17cglg8zgx2fj66i8sx0njmf0h084cc178hc62f3fshlp5yl751z"))))
     (properties `((upstream-name . "textrecipes")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs

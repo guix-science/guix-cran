@@ -205,13 +205,13 @@ Vanderwaal and Herbert Ssegane (2013) <doi:10.1111/jawr.12089>.")
 (define-public r-hypr
   (package
     (name "r-hypr")
-    (version "0.2.4")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hypr" version))
        (sha256
-        (base32 "05lm56c845rcx5rfq8czbxavvl0jvy7j2gdmdnjdl2glkcnpid69"))))
+        (base32 "1fqy8qcl1sq770a1m7aw5s46bvf41gm46iwm8cg01yc3lf9849hm"))))
     (properties `((upstream-name . "hypr")))
     (build-system r-build-system)
     (propagated-inputs (list r-pracma r-matrix r-mass r-magrittr r-cli))
@@ -4201,13 +4201,13 @@ the package to build on previous lab members code.")
 (define-public r-hockeystick
   (package
     (name "r-hockeystick")
-    (version "0.8.1")
+    (version "0.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hockeystick" version))
        (sha256
-        (base32 "1p7c16zj8jwsl0pn44dl97vbax1qadpn3vy5rlnr1rgw7bxk9166"))))
+        (base32 "0h332wcrkxgz0c0brxqj0yz9r9k8qgk52i4vq9x5w858sdkwm19b"))))
     (properties `((upstream-name . "hockeystick")))
     (build-system r-build-system)
     (propagated-inputs (list r-treemapify

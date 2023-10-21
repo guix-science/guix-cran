@@ -7533,6 +7533,7 @@ that available in other commercial software and subscription online calculators.
                              r-openair
                              r-mgcv
                              r-lubridate
+                             r-loa
                              r-ggtext
                              r-ggplot2
                              r-dplyr))
@@ -19503,6 +19504,27 @@ PRISM raster.  See the examples, testing versions and more details from:
 <https://github.com/ysd2004/@code{acdcR>}.")
     (license license:gpl2+)))
 
+(define-public r-acdcquery
+  (package
+    (name "r-acdcquery")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "acdcquery" version))
+       (sha256
+        (base32 "03ip3fvc1qcq0vmcidv1rbih85v3dxhx08047vjlf21kfcr9cizk"))))
+    (properties `((upstream-name . "acdcquery")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rsqlite r-dbi))
+    (home-page "https://github.com/SLesche/acdc-query")
+    (synopsis "Query the Attentional Control Data Collection")
+    (description
+     "Interact with the Attentional Control Data Collection (ACDC).  Connect to the
+database via connect_to_db(), set filter arguments via add_argument() and query
+the database via query_db().")
+    (license license:gpl3+)))
+
 (define-public r-accumulate
   (package
     (name "r-accumulate")
@@ -19614,13 +19636,13 @@ for screen reader users.")
 (define-public r-accessibility
   (package
     (name "r-accessibility")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "accessibility" version))
        (sha256
-        (base32 "1p0xc5smz0ja1q29ysbswirdakwq6cgda194aff1cjm62kfj81bz"))))
+        (base32 "1jbfzw2p6a9wqd4qs06nnnkfzpwlkhsaay3nyx8a0xqjrncwv12l"))))
     (properties `((upstream-name . "accessibility")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-hmisc r-data-table r-checkmate))

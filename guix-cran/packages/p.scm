@@ -614,16 +614,16 @@ Generalised Least Squares approach.  For details see Veiga et al.(2014)
 (define-public r-pwir
   (package
     (name "r-pwir")
-    (version "0.0.1")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PWIR" version))
        (sha256
-        (base32 "1sxfbddpfcybi9hjwbgibqd5wn7hryda0w8yi6k0n9jf04lgnqiw"))))
+        (base32 "05f4mj8id8ikfz63c8c1lkbxl7s1b2q5xri8iicn1xv2m3w89p2v"))))
     (properties `((upstream-name . "PWIR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-igraph r-bibliometrix))
+    (propagated-inputs (list r-progressr r-igraph r-bibliometrix))
     (home-page "https://cran.r-project.org/package=PWIR")
     (synopsis
      "Provides a Function to Calculate Prize Winner Indices Based on Bibliometric Data")
@@ -9442,13 +9442,13 @@ Net Monetary Benefit.  Details can be viewed in Parsons et al. (2023)
 (define-public r-predictmeans
   (package
     (name "r-predictmeans")
-    (version "1.0.8")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "predictmeans" version))
        (sha256
-        (base32 "1w5kszqqqg4xx1zq6y4a93b00aa67riqsb1dq21xqpscvyiz5nv9"))))
+        (base32 "0dfmdwqlxzsksidynw0lqg88i9jwvcfh5b3kn296isx6a3bg98cx"))))
     (properties `((upstream-name . "predictmeans")))
     (build-system r-build-system)
     (propagated-inputs (list r-splines2
@@ -9464,15 +9464,16 @@ Net Monetary Benefit.  Details can be viewed in Parsons et al. (2023)
                              r-lmeinfo
                              r-lme4
                              r-hrw
+                             r-glmmtmb
                              r-ggplot2
                              r-car))
     (home-page "https://CRAN.R-project.org/package=predictmeans")
-    (synopsis "Predicted Means for Linear and Semi Parametric Models")
+    (synopsis "Predicted Means for Linear and Semiparametric Models")
     (description
      "Providing functions to diagnose and make inferences from various linear models,
-such as those obtained from aov', lm', glm', gls', lme', lmer and semireg'.
-Inferences include predicted means and standard errors, contrasts, multiple
-comparisons, permutation tests and graphs.")
+such as those obtained from aov', lm', glm', gls', lme', lmer', @code{glmmTMB}
+and semireg'.  Inferences include predicted means and standard errors,
+contrasts, multiple comparisons, permutation tests and graphs.")
     (license license:gpl2+)))
 
 (define-public r-predictme
@@ -23112,13 +23113,13 @@ series.")
 (define-public r-phevis
   (package
     (name "r-phevis")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PheVis" version))
        (sha256
-        (base32 "0gan84wn8bpzys8zricf5iv59az3sw30avnnf8hxgj24s6n363iz"))))
+        (base32 "1anj079vdpfbkilbvk0b2b78qk87gc7lmivzl8syq6lb3dxkja2l"))))
     (properties `((upstream-name . "PheVis")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -27065,6 +27066,7 @@ results, which is described in Tian et al. (2023) <@code{arXiv:2302.02310>}.")
     (propagated-inputs (list r-rlang
                              r-rcpp
                              r-rcolorbrewer
+                             r-loa
                              r-latticeextra
                              r-lattice
                              r-ggplot2
@@ -34051,6 +34053,28 @@ all groups.  Details about the method can be found in Seibold, Hothorn, Zeileis
 (2016) <@code{arXiv:1612.07498>}.  The package offers coef(), @code{logLik}(),
 plot(), and predict() functions for PALM trees.")
     (license (list license:gpl2 license:gpl3))))
+
+(define-public r-palmr
+  (package
+    (name "r-palmr")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PaLMr" version))
+       (sha256
+        (base32 "0aj8c2w27plcp3vj70ci742slqlkr0rirfz4hp2fb5bldwhhdcw1"))))
+    (properties `((upstream-name . "PaLMr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-jsonlite r-httr))
+    (home-page "https://palmr.r.ly.gd.edu.kg/")
+    (synopsis "Interface for 'Google Pathways Language Model (PaLM)'")
+    (description
+     "Google's @code{PaLM} <https://developers.generativeai.google/> as a coding and
+writing assistant designed for R and RStudio.  With a range of functions,
+including natural language processing and coding optimization, to assist R
+developers in simplifying tedious coding tasks and content searching.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-palm
   (package

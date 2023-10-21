@@ -3163,13 +3163,13 @@ details.")
 (define-public r-cstools
   (package
     (name "r-cstools")
-    (version "5.1.0")
+    (version "5.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CSTools" version))
        (sha256
-        (base32 "1fga6v3n1d0890908v7l8rckzjhc9b2viyr7r6gvzxkxlrl3pg4q"))))
+        (base32 "0mh50wz0c7x00mi5a5h474v5l5pimgpijdywkh1rsix7a0gj8fzj"))))
     (properties `((upstream-name . "CSTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-verification
@@ -27806,25 +27806,26 @@ curves.  Details are given in Schomaker, @code{McIlleron}, Denti, Diaz (2023)
 (define-public r-ciccr
   (package
     (name "r-ciccr")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ciccr" version))
        (sha256
-        (base32 "0xmjqwlw2xq332pyagrn8ay6ipyvmxw1q7zf4cza4ly2mz9mf1ws"))))
+        (base32 "0zhhb6dq9js2wx18hq41pdqawc4pccg7wpxii1447c5sj0lmgahf"))))
     (properties `((upstream-name . "ciccr")))
     (build-system r-build-system)
+    (propagated-inputs (list r-glmnet))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/sokbae/ciccr/")
-    (synopsis "Causal Inference in Case-Control Studies")
+    (synopsis "Causal Inference in Case-Control and Case-Population Studies")
     (description
      "Estimation and inference methods for causal relative and attributable risk in
-case-control and case-population studies.  Semiparametrically efficient
-estimation of the aggregated (log) odds ratio and causal inference procedures
-for relative and attributable risk.  For more details, see the paper by Jun and
-Lee (2020), \"Causal Inference in Case-Control Studies,\" <@code{arXiv:2004.08318}
-[econ.EM]>.")
+case-control and case-population studies under the monotone treatment response
+and monotone treatment selection assumptions.  For more details, see the paper
+by Jun and Lee (2023), \"Causal Inference under Outcome-Based Sampling with
+Monotonicity Assumptions,\" <@code{arXiv:2004.08318} [econ.EM]>, accepted for
+publication in Journal of Business & Economic Statistics.")
     (license license:gpl3)))
 
 (define-public r-cicalibrate
@@ -30581,13 +30582,13 @@ function can extract coefficients from polynomials.")
 (define-public r-cgwtools
   (package
     (name "r-cgwtools")
-    (version "4.0")
+    (version "4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cgwtools" version))
        (sha256
-        (base32 "0zklwpwhmx7qqq6rcfvia69564pvx7g23a31466l1giiwiyjklbq"))))
+        (base32 "0nw9zmbx3d7jqvw0yjqnqxnk16fay5pg4hws6qk341ipixwfmcbf"))))
     (properties `((upstream-name . "cgwtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-gmp))
@@ -30777,13 +30778,13 @@ for analyzing continuous glucose monitoring studies'.")
 (define-public r-cgmanalysis
   (package
     (name "r-cgmanalysis")
-    (version "2.7.6")
+    (version "2.7.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cgmanalysis" version))
        (sha256
-        (base32 "0vs7n77p4midyfm8ng0sjanalvb9b7qgzhn6gazh51wjzczg759n"))))
+        (base32 "19kvxbg4vs7bfs3y1bfvhklwr22kba46aiwsns58g7h9b88m4kw7"))))
     (properties `((upstream-name . "cgmanalysis")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -33083,13 +33084,13 @@ Q-matrix generation and detection of complete/identified Q-matrices.")
 (define-public r-cdmconnector
   (package
     (name "r-cdmconnector")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CDMConnector" version))
        (sha256
-        (base32 "1iya1hjf2mgx5g313nwrr3l2cnih6p7iarb0qyj7mp09kk2d6fz1"))))
+        (base32 "1xsajmg4k526dr4nkrrhvgi9shd8j8b1s0fkbn4lc797ljyv6gka"))))
     (properties `((upstream-name . "CDMConnector")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -38280,6 +38281,42 @@ the package is in charge of preparing the simulation, calling rxode2',
 @code{RxODE} or mrgsolve (at the user's choice) and returning the results, for
 the given model, dataset and desired simulation settings.")
     (license license:gpl3+)))
+
+(define-public r-campfin
+  (package
+    (name "r-campfin")
+    (version "1.0.11")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "campfin" version))
+       (sha256
+        (base32 "10mry0zn9h6dx79vqxpifn5bnxc9h500x7m3yh1vx4jshbvmgvnk"))))
+    (properties `((upstream-name . "campfin")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-stringdist
+                             r-scales
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-httr
+                             r-glue
+                             r-ggplot2
+                             r-fs
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/irworkshop/campfin")
+    (synopsis "Wrangle Campaign Finance Data")
+    (description
+     "Explore and normalize American campaign finance data.  Created by the
+Investigative Reporting Workshop to facilitate work on The Accountability
+Project, an effort to collect public data into a central, standard database that
+is more easily searched: <https://publicaccountability.org/>.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-campaignmanager
   (package

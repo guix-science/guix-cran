@@ -691,13 +691,13 @@ mass-spectrometry data.")
 (define-public r-wrtdstidal
   (package
     (name "r-wrtdstidal")
-    (version "1.1.2")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WRTDStidal" version))
        (sha256
-        (base32 "1ssrqqf2hypif4nnfyl4lq03glyyg9ry9s14llf1njxamhjggfgg"))))
+        (base32 "1clv6gd0qlkykllki5jkmhd1znrccyg1mv6w69wz8fj65b2466zd"))))
     (properties `((upstream-name . "WRTDStidal")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -719,7 +719,8 @@ mass-spectrometry data.")
      "Weighted Regression for Water Quality Evaluation in Tidal Waters")
     (description
      "An adaptation for estuaries (tidal waters) of weighted regression on time,
-discharge, and season to evaluate trends in water quality time series.")
+discharge, and season to evaluate trends in water quality time series.  Please
+see Beck and Hagy (2015) <doi:10.1007/s10666-015-9452-8> for details.")
     (license license:cc0)))
 
 (define-public r-wrswor
@@ -950,13 +951,13 @@ Wasserstein autoregressive models.")
 (define-public r-wrgraph
   (package
     (name "r-wrgraph")
-    (version "1.3.5")
+    (version "1.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wrGraph" version))
        (sha256
-        (base32 "1yay60418hyg35bp0f9id7zsmyq1yfj10021n5pc7jx4rsayibs6"))))
+        (base32 "0ssqwxlhy92646d311ay014czzxsjj1170crlpyx3q9c9qyds9s5"))))
     (properties `((upstream-name . "wrGraph")))
     (build-system r-build-system)
     (propagated-inputs (list r-wrmisc r-rcolorbrewer r-lattice))
@@ -3323,13 +3324,13 @@ ISBN:013850363X).")
 (define-public r-wikkitidy
   (package
     (name "r-wikkitidy")
-    (version "0.1.10")
+    (version "0.1.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wikkitidy" version))
        (sha256
-        (base32 "1q64qn0bbdmmwgn5my3f2p6sdcpbxi1g3qb1qgz6hkc01x2h3wn3"))))
+        (base32 "150zhpdwfvmai9nczmb64vkwcxg1sja84by4nxk2kwb4cv66dxpn"))))
     (properties `((upstream-name . "wikkitidy")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs

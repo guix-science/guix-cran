@@ -954,13 +954,13 @@ di Mauro, Pesaran and Smith (2007) <DOI:10.1002/jae.932>.")
 (define-public r-guts
   (package
     (name "r-guts")
-    (version "1.2.4")
+    (version "1.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GUTS" version))
        (sha256
-        (base32 "0ddpl6bn5wn76hpbzsib8f6711disgf7nhyh3fr74rfgi474kki9"))))
+        (base32 "1dx760bvc5nkdfhknj8ilqqrxwllzqg03rvg0ghd61xadmb3m64x"))))
     (properties `((upstream-name . "GUTS")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -1605,13 +1605,13 @@ nominated start station to all other stations.")
 (define-public r-gtfsio
   (package
     (name "r-gtfsio")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gtfsio" version))
        (sha256
-        (base32 "08s9p6r18axf9rh91qqqh4bkn4l39vs7hhws1502zlxkjaqbypdz"))))
+        (base32 "06kw2r00y277a822qqgjifmrz0l6gfq1dx8znrc2yhrk0ynadsjz"))))
     (properties `((upstream-name . "gtfsio")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip r-data-table))
@@ -11678,13 +11678,13 @@ heterogeneity.")
 (define-public r-glmmfields
   (package
     (name "r-glmmfields")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmmfields" version))
        (sha256
-        (base32 "1pplks32zww2cqxiraxwlbi7772d0l53w5hrz7s9fkm8yl9nbn29"))))
+        (base32 "0nn328dn7fbh3h0wnl4kahwrbq9ddr3hyqq7930raa0abimg8ykq"))))
     (properties `((upstream-name . "glmmfields")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -12898,6 +12898,26 @@ or used on <https://about.gitlab.com>.")
      "Simple interface to query gitignore.io to fetch gitignore templates that can be
 included in the .gitignore file.  More than 450 templates are currently
 available.")
+    (license license:gpl3)))
+
+(define-public r-githubr
+  (package
+    (name "r-githubr")
+    (version "0.9.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "githubr" version))
+       (sha256
+        (base32 "1h3yaz2snrlibl707rnv2l5y5r879dsprcr0a0vc8aliwdsmydvi"))))
+    (properties `((upstream-name . "githubr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-magrittr r-httr r-gitcreds r-gh r-dplyr))
+    (home-page "https://github.com/fhdsl/githubr")
+    (synopsis "Easier to Use API Wrapper for 'GitHub'")
+    (description
+     "This is a @code{GitHub} API wrapper for R. <https://docs.github.com/en/rest> It
+uses the gh package but has things wrapped up for convenient use cases.")
     (license license:gpl3)))
 
 (define-public r-githubinstall
@@ -20719,17 +20739,19 @@ also a facility to check the validity of ISO 19139 XML encoded metadata.")
 (define-public r-geomerge
   (package
     (name "r-geomerge")
-    (version "0.3.3")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geomerge" version))
        (sha256
-        (base32 "043dg8q9jjfql4wlya17zqz33wg6c6crvxbsq3srlp7mppvapylh"))))
+        (base32 "1isap50gbkcrbpg0wmzvxxa45vaa9szsxf9k9z3j2jjmv2gbg5mk"))))
     (properties `((upstream-name . "geomerge")))
     (build-system r-build-system)
-    (propagated-inputs (list r-spdep
+    (propagated-inputs (list r-terra
+                             r-spdep
                              r-sp
+                             r-sf
                              r-scales
                              r-raster
                              r-lubridate
@@ -21031,6 +21053,62 @@ coordinate system, including API for interacting with other common R GIS
 libraries.")
     (license (list (license:fsdg-compatible "MPL-2.0")
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-geohabnet
+  (package
+    (name "r-geohabnet")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geohabnet" version))
+       (sha256
+        (base32 "1qd40043x64505slv6w6lcl955awi62gkg2csld0ckyzrr5ykbc4"))))
+    (properties `((upstream-name . "geohabnet")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yaml
+                             r-viridislite
+                             r-terra
+                             r-stringr
+                             r-rnaturalearth
+                             r-rlang
+                             r-memoise
+                             r-igraph
+                             r-geosphere
+                             r-geodata
+                             r-easycsv
+                             r-config
+                             r-beepr))
+    (native-inputs (list r-knitr))
+    (home-page "https://garrettlab.github.io/CroplandConnectivity/")
+    (synopsis "Analysis of Cropland Connectivity")
+    (description
+     "Geographical spatial analysis of cropland connectivity.  Allows users to
+visualize risk index plots for a given set of crops.  The functions are
+developed as an extension to analysis from Xing et al (2021)
+<doi:10.1093/biosci/biaa067>.  The primary function is sean() and is indicative
+of how sensitive analysis is to parameters using kernel models.  The Package
+currently supports crops sourced from Monfreda, C., N. Ramankutty, and J. A.
+Foley (2008) <doi:10.1029/2007gb002947> \"Farming the planet: 2.  Geographic
+distribution of crop areas, yields, physiological types, and net primary
+production in the year 2000, Global Biogeochem.  Cycles, 22, GB1022\" and
+International Food Policy Research Institute (2019) <doi:10.7910/DVN/PRFF8V>
+\"Global Spatially-Disaggregated Crop Production Statistics Data for 2010 Version
+2.0, Harvard Dataverse, V4\".  This analysis produces 3 maps - mean, variance,
+and difference for the crop risk index.  It applies distance functions and graph
+operations on a network to calculate risk index.  There are multiple ways in
+which functions can be used - generate final outcome and then the intermediate
+outcomes for more sophisticated use cases.  Refer to vignettes.  sean() will set
+some global variables which can be accessed using $ prefix.  These values are
+propagated to other functions for performing operations such as distance matrix
+calculation.  parameters.yaml stores the parameters and values and can be
+accessed using get_parameters().  Refer it's usage.  The objective of this
+package is to support risk analysis using cropland connectivity on 10 parameters
+- host crops, density threshold, aggregation and distance method, resolution,
+geographic extent, link threshold, kernel models, network metrics and maps.
+These parameters serves as an input and are used different phases of analysis
+workflow.")
+    (license license:gpl3)))
 
 (define-public r-geogrid
   (package

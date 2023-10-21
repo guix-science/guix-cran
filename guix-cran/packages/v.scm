@@ -7686,26 +7686,28 @@ paper \"The Future of Data Analysis\", Tukey, John W. (1962)
 (define-public r-vaccine
   (package
     (name "r-vaccine")
-    (version "0.1.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vaccine" version))
        (sha256
-        (base32 "03kc9pgpqzfsd2xjkf5zvkbfzdffbpx26g1ispd5yn2y7mbliyjb"))))
+        (base32 "19mg2kiv8m3w8x2b2ran4x8bfq73bg9rijvqs66jqv2zhi6siwkl"))))
     (properties `((upstream-name . "vaccine")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm
+                             r-survml
                              r-survival
                              r-superlearner
                              r-simest
                              r-rsolnp
                              r-rlang
-                             r-memoise
-                             r-iso
+                             r-glmnet
                              r-ggpubr
                              r-ggplot2
                              r-fdrtool
+                             r-earth
+                             r-e1071
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=vaccine")

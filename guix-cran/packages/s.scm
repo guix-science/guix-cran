@@ -6026,13 +6026,13 @@ X., Yao, J. and Xue, L. (2022) <doi:10.1080/07350015.2020.1813589>.")
 (define-public r-suessr
   (package
     (name "r-suessr")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SuessR" version))
        (sha256
-        (base32 "068s4w8ihi30ang04r58zf1h07q3da4ix53ppq30al8zahgjyway"))))
+        (base32 "1rh792x7dyfnhnw6g0f6hb5wqw58j6j11k9xib11ba256qrnvwgc"))))
     (properties `((upstream-name . "SuessR")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=SuessR")
@@ -6040,7 +6040,7 @@ X., Yao, J. and Xue, L. (2022) <doi:10.1080/07350015.2020.1813589>.")
      "Suess and Laws Corrections for Marine Stable Carbon Isotope Data")
     (description
      "Generates region-specific Suess and Laws corrections for stable carbon isotope
-data from marine organisms collected between 1850 and 2021.  Version 0.1.4 of
+data from marine organisms collected between 1850 and 2022.  Version 0.1.5 of
 @code{SuessR} contains four built-in regions: the Bering Sea ('Bering Sea'), the
 Aleutian archipelago ('Aleutian Islands'), the Gulf of Alaska ('Gulf of
 Alaska'), and the subpolar North Atlantic ('Subpolar North Atlantic').  Users
@@ -24488,6 +24488,42 @@ summary statistics for simulated networks and provides simple to use plotting
 methods for its classes that return plots which can be further refined with the
 ggplot2 package.")
     (license license:expat)))
+
+(define-public r-spabundance
+  (package
+    (name "r-spabundance")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spAbundance" version))
+       (sha256
+        (base32 "1sklcbbk82ikgcvbkzr6cy8cw1hbq22acnlqz4avp277pmp514gc"))))
+    (properties `((upstream-name . "spAbundance")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rann
+                             r-lme4
+                             r-foreach
+                             r-doparallel
+                             r-coda
+                             r-abind))
+    (home-page "https://www.jeffdoser.com/files/spabundance-web")
+    (synopsis
+     "Univariate and Multivariate Spatial Modeling of Species Abundance")
+    (description
+     "Fits single-species (univariate) and multi-species (multivariate) non-spatial
+and spatial abundance models in a Bayesian framework using Markov Chain Monte
+Carlo (MCMC).  Spatial models are fit using Nearest Neighbor Gaussian Processes
+(NNGPs).  Details on NNGP models are given in Datta, Banerjee, Finley, and
+Gelfand (2016) <doi:10.1080/01621459.2015.1044091> and Finley, Datta, and
+Banerjee (2020) <@code{arXiv:2001.09111>}.  Fits single-species and
+multi-species spatial and non-spatial versions of generalized linear mixed
+models (Gaussian, Poisson, Negative Binomial), N-mixture models (Royle 2004
+<doi:10.1111/j.0006-341X.2004.00142.x>) and hierarchical distance sampling
+models (Royle, Dawson, Bates (2004) <doi:10.1890/03-3127>).  Multi-species
+spatial models are fit using a spatial factor modeling approach with NNGPs for
+computational efficiency.")
+    (license license:gpl3+)))
 
 (define-public r-spaa
   (package
@@ -48456,13 +48492,13 @@ viewer pane during their execution.")
 (define-public r-sdmtmb
   (package
     (name "r-sdmtmb")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sdmTMB" version))
        (sha256
-        (base32 "1zfsw5g9dssxnrg8lajm2cmxqg8rx2i8r5zyyb0q50mhx7bkhilp"))))
+        (base32 "00qlbwybdnxk48sfw7s56xzr3jrnh6ysjn9fyfpm8ry1h4rya55n"))))
     (properties `((upstream-name . "sdmTMB")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb
@@ -48472,9 +48508,10 @@ viewer pane during their execution.")
                              r-mvtnorm
                              r-mgcv
                              r-matrix
+                             r-lme4
                              r-lifecycle
-                             r-glmmtmb
                              r-generics
+                             r-fmesher
                              r-fishmod
                              r-clisymbols
                              r-cli
@@ -48483,12 +48520,11 @@ viewer pane during their execution.")
     (home-page "https://pbs-assess.github.io/sdmTMB/index.html")
     (synopsis "Spatial and Spatiotemporal SPDE-Based GLMMs with 'TMB'")
     (description
-     "This package implements spatial and spatiotemporal predictive-process GLMMs
-(Generalized Linear Mixed Effect Models) using TMB', INLA', and the SPDE
-(Stochastic Partial Differential Equation) approximation to Gaussian random
-fields.  One common application is for spatially explicit (and optionally
-dynamic) species distribution models (SDMs).  See Anderson et al. (2022)
-<doi:10.1101/2022.03.24.485545>.")
+     "This package implements spatial and spatiotemporal GLMMs (Generalized Linear
+Mixed Effect Models) using TMB', INLA', and the SPDE (Stochastic Partial
+Differential Equation) approximation to Gaussian random fields.  One common
+application is for spatially explicit species distribution models (SDMs).  See
+Anderson et al. (2022) <doi:10.1101/2022.03.24.485545>.")
     (license license:gpl3)))
 
 (define-public r-sdmpredictors

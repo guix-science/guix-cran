@@ -1637,6 +1637,28 @@ studentized residuals.  Several types of plots to detect influential
 observations are provided.")
     (license license:gpl2)))
 
+(define-public r-mvhtests
+  (package
+    (name "r-mvhtests")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mvhtests" version))
+       (sha256
+        (base32 "1820d8gd2rmszqp3kd5d01c5v2znxm1l6dm7cjr4mn51v1rxzhhk"))))
+    (properties `((upstream-name . "mvhtests")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rfast2 r-rfast r-foreach r-emplik r-doparallel))
+    (home-page "https://cran.r-project.org/package=mvhtests")
+    (synopsis "Multivariate Hypothesis Tests")
+    (description
+     "Hypothesis tests for multivariate data.  Tests for one and two mean vectors,
+multivariate analysis of variance, tests for one, two or more covariance
+matrices.  References include: Mardia K.V., Kent J.T. and Bibby J.M. (1979).
+Multivariate Analysis.  ISBN: 978-0124712522.  London: Academic Press.")
+    (license license:gpl2+)))
+
 (define-public r-mvhist
   (package
     (name "r-mvhist")
@@ -20444,13 +20466,13 @@ various missing data conditions, as described in Tabouy, Barbillon and Chiquet
 (define-public r-missranger
   (package
     (name "r-missranger")
-    (version "2.2.1")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "missRanger" version))
        (sha256
-        (base32 "05k74gkllsaqvf9prixg5dsjfvjjz1m60ing8iaznnka1nx7qqrg"))))
+        (base32 "0vnr0l019xmilv297kydpkn4f19amqc2hlrkcbaxg4wh69svmcyf"))))
     (properties `((upstream-name . "missRanger")))
     (build-system r-build-system)
     (propagated-inputs (list r-ranger r-fnn))
@@ -28439,13 +28461,13 @@ marginal relationship between moderators and effect size.")
 (define-public r-metafolio
   (package
     (name "r-metafolio")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metafolio" version))
        (sha256
-        (base32 "1bnlmh1pwwg5hjmsqnswn4d4phjdpsiyg7pwl8nbxyx0g2hw3p5v"))))
+        (base32 "11y2igvwwkr4dj7v8ip66w1psi9wzb8q3sy018lhaxb42s1lspbh"))))
     (properties `((upstream-name . "metafolio")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-plyr r-mass r-colorspace))

@@ -1806,13 +1806,13 @@ to build expressions in a chain-like fashion.")
 (define-public r-rveg
   (package
     (name "r-rveg")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rveg" version))
        (sha256
-        (base32 "02bybiam93yafzwmxl4v34wv2bb60fwl9n053f9h7q1s4bs7y54m"))))
+        (base32 "1sr208v2i46nk8qqk1cwa47bq9pv76hkzvc010498ahl4m7w01mx"))))
     (properties `((upstream-name . "Rveg")))
     (build-system r-build-system)
     (propagated-inputs (list r-dplyr))
@@ -4987,28 +4987,28 @@ numbers from different sources.")
 (define-public r-rstrava
   (package
     (name "r-rstrava")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rStrava" version))
        (sha256
-        (base32 "069k20pjxrgm8gri2cslcvf69mflalfgf7q58a52b1043vflj136"))))
+        (base32 "0k2nz17s4rlb86gmr0c4r56abw4j7dqshjk599kqy28jqmf2nkyy"))))
     (properties `((upstream-name . "rStrava")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
                              r-xml
-                             r-v8
                              r-tidyr
                              r-tibble
                              r-rvest
                              r-rcurl
                              r-purrr
+                             r-prettymapr
                              r-plyr
                              r-magrittr
                              r-httr
                              r-googleway
-                             r-ggrepel
+                             r-ggspatial
                              r-ggplot2
                              r-geosphere
                              r-dplyr))
@@ -19208,21 +19208,21 @@ LEMON version is 1.3.1.")
 (define-public r-rleafmap
   (package
     (name "r-rleafmap")
-    (version "0.2")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rleafmap" version))
        (sha256
-        (base32 "1i2qczipg7lr6fl35lcl896r54jia7libxx83darrfzc1hd9sdcq"))))
+        (base32 "19ad38pqwv8ayyzb1aln9gn7rfn3gam0dbw93pl37nb9vnl81002"))))
     (properties `((upstream-name . "rleafmap")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-raster r-knitr))
     (home-page "http://www.francoiskeck.fr/rleafmap/")
     (synopsis "Interactive Maps with R and Leaflet")
     (description
-     "Display spatial data with interactive maps powered by the open-source
-@code{JavaScript} library Leaflet (see <http://leafletjs.com/>).  Maps can be
+     "Display spatial data with interactive maps powered by the open- source
+@code{JavaScript} library Leaflet (see <https://leafletjs.com/>).  Maps can be
 rendered in a web browser or displayed in the HTML viewer pane of RStudio'.
 This package is designed to be easy to use and can create complex maps with
 vector and raster data, web served map tiles and interface elements.")
@@ -22313,13 +22313,13 @@ coefficients.  Many features of ribd are available through the online app
 (define-public r-rib
   (package
     (name "r-rib")
-    (version "0.19.0")
+    (version "0.19.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rib" version))
        (sha256
-        (base32 "09nnf1v1xg5r8qpxv6f9jg96vfvmk5s9ybkksxqi9f4xzri1izps"))))
+        (base32 "1ysrkgk6rjg2q4dwz3rbbvkdd4nv2c20c1b8sa8rj98mjvs0ch2m"))))
     (properties `((upstream-name . "rib")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6))
@@ -38824,6 +38824,49 @@ random parameters for cross-sectional and longitudinal data as presented in
 Sarrias (2016) <doi:10.18637/jss.v074.i10>.")
     (license license:gpl2+)))
 
+(define-public r-rchivaltag
+  (package
+    (name "r-rchivaltag")
+    (version "0.1.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RchivalTag" version))
+       (sha256
+        (base32 "14pv7a2qsqxp28sb59dh9s554yy55x7i9129mrgk0fxv5c64lq8m"))))
+    (properties `((upstream-name . "RchivalTag")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xts
+                             r-suntools
+                             r-stringr
+                             r-sp
+                             r-shiny
+                             r-sf
+                             r-readr
+                             r-raster
+                             r-pracma
+                             r-plyr
+                             r-plotly
+                             r-oceanmap
+                             r-ncdf4
+                             r-maps
+                             r-mapdata
+                             r-lubridate
+                             r-leaflet-extras2
+                             r-leaflet
+                             r-htmlwidgets
+                             r-ggplot2
+                             r-ggedit
+                             r-dygraphs
+                             r-cleangeo))
+    (home-page "https://cran.r-project.org/package=RchivalTag")
+    (synopsis
+     "Analyzing and Interactive Visualization of Archival Tagging Data")
+    (description
+     "This package provides a set of functions to generate, access and analyze
+standard data products from archival tagging data.")
+    (license license:gpl3+)))
+
 (define-public r-rchest
   (package
     (name "r-rchest")
@@ -44353,6 +44396,39 @@ from R or the corresponding C++ header files can be easily linked to other R
 packages.")
     (license license:gpl2+)))
 
+(define-public r-ramclustr
+  (package
+    (name "r-ramclustr")
+    (version "1.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RAMClustR" version))
+       (sha256
+        (base32 "0mlizk0rga6mprp4n2ff12yamvfsfk9v46d94ra6ld0i2jxm84fd"))))
+    (properties `((upstream-name . "RAMClustR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-webchem
+                             r-stringr
+                             r-pcamethods
+                             r-jsonlite
+                             r-httr
+                             r-gplots
+                             r-ggplot2
+                             r-fastcluster
+                             r-e1071
+                             r-dynamictreecut))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/cbroeckl/RAMClustR")
+    (synopsis
+     "Mass Spectrometry Metabolomics Feature Clustering and Interpretation")
+    (description
+     "This package provides a feature clustering algorithm for non-targeted mass
+spectrometric metabolomics data.  This method is compatible with gas and liquid
+chromatography coupled mass spectrometry, including indiscriminant tandem mass
+spectrometry data <DOI: 10.1021/ac501530d>.")
+    (license license:gpl2+)))
+
 (define-public r-ramchoice
   (package
     (name "r-ramchoice")
@@ -47223,13 +47299,13 @@ installed from <https://github.com/@code{DiegoZardetto/ReGenesees>}.")
 (define-public r-r2bayesx
   (package
     (name "r-r2bayesx")
-    (version "1.1-4")
+    (version "1.1-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "R2BayesX" version))
        (sha256
-        (base32 "0mq71r4w1y7mxrrzm51k00am788ln49hsjcv3ywlkvjw63yiql9a"))))
+        (base32 "1x3hv0dfkh4ywi47qkmk6wvfz07rp5riwnxcnn32jflwcdzscqva"))))
     (properties `((upstream-name . "R2BayesX")))
     (build-system r-build-system)
     (propagated-inputs (list r-mgcv r-colorspace r-bayesxsrc))

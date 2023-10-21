@@ -3759,13 +3759,13 @@ drum patterns.")
 (define-public r-drugutilisation
   (package
     (name "r-drugutilisation")
-    (version "0.3.3")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DrugUtilisation" version))
        (sha256
-        (base32 "140wiqq1g1cizmsd3sky4x1igsnb8mh5fillgka2pqljq0r6vi7a"))))
+        (base32 "107wisld0ps4q3acx3x09lr7kc10b6sryqlj2vp9di5wyiwq3gdf"))))
     (properties `((upstream-name . "DrugUtilisation")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -5593,37 +5593,6 @@ manipulation.")
     (description
      "Perform tree-ring analyses such as detrending, chronology building, and cross
 dating.  Read and write standard file formats used in dendrochronology.")
-    (license license:gpl2+)))
-
-(define-public r-dplbnde
-  (package
-    (name "r-dplbnde")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dplbnDE" version))
-       (sha256
-        (base32 "1dqdsy5195mbkibxmfmh6qb4m26sa6h04l8lkcy4b3a0w7j2bmgn"))))
-    (properties `((upstream-name . "dplbnDE")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-bnclassify))
-    (home-page "https://cran.r-project.org/package=dplbnDE")
-    (synopsis
-     "Discriminative Parameter Learning of Bayesian Networks by Differential Evolution")
-    (description
-     "This package implements Differential Evolution (DE) to train parameters of
-Bayesian Networks for optimizing the Conditional Log-Likelihood (Discriminative
-Learning) instead of the log-likelihood (Generative Learning).  Any given
-Bayesian Network structure encodes assumptions about conditional independencies
-among the attributes and will result in an error if they do not hold in the
-data.  Such an error includes the classification dimension.  The main goal of
-Discriminative learning is to minimize this type of error.  This package
-provides main variants of differential evolution described in Price & Storn
-(1996) <doi:10.1109/ICEC.1996.542711> and recent ones, described in Tanabe &
-Fukunaga (2014) <doi:10.1109/CEC.2014.6900380> and Zhang & Sanderson (2009)
-<doi:10.1109/TEVC.2009.2014613> with adaptation mechanism for factor mutarion
-and crossover rate.")
     (license license:gpl2+)))
 
 (define-public r-dpit
@@ -12996,13 +12965,13 @@ representing real or categorical variables at original and multiple resolutions.
 (define-public r-diffeqr
   (package
     (name "r-diffeqr")
-    (version "1.1.3")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "diffeqr" version))
        (sha256
-        (base32 "0b8aq1chpvfzxmlfhgr9fav1wmhw03k5msnzbk9aq46064q9ybdl"))))
+        (base32 "1362wrpxcg9wc92qadah0fc0shbz9sds98jdfw6nnxjg2pvjxha4"))))
     (properties `((upstream-name . "diffeqr")))
     (build-system r-build-system)
     (inputs (list julia))
@@ -13017,9 +12986,11 @@ solving ordinary differential equations (ODE), stochastic differential equations
 (SDE), delay differential equations (DDE), differential-algebraic equations
 (DAE), and more.  Much of the functionality, including features like adaptive
 time stepping in SDEs, are unique and allow for multiple orders of magnitude
-speedup over more common methods.  diffeqr attaches an R interface onto the
-package, allowing seamless use of this tooling by R users.  For more
-information, see Rackauckas and Nie (2017) <doi:10.5334/jors.151>.")
+speedup over more common methods.  Supports GPUs, with support for CUDA
+(NVIDIA), AMD GPUs, Intel @code{oneAPI} GPUs, and Apple's Metal (M-series chip
+GPUs).  diffeqr attaches an R interface onto the package, allowing seamless use
+of this tooling by R users.  For more information, see Rackauckas and Nie (2017)
+<doi:10.5334/jors.151>.")
     (license license:expat)))
 
 (define-public r-diffenrich
@@ -25323,41 +25294,6 @@ models, and includes a simple facility for data simulation.")
 with data on population, age and gender from Statistics Denmark
 <https://www.dst.dk/da/>.")
     (license license:expat)))
-
-(define-public r-daghmm
-  (package
-    (name "r-daghmm")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dagHMM" version))
-       (sha256
-        (base32 "1dw4clv2x71km1sqz1mydscwyj6y9yqx06v3rkmdz13qqcacfmhi"))))
-    (properties `((upstream-name . "dagHMM")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-prroc
-                             r-matrixstats
-                             r-gtools
-                             r-future
-                             r-bnlearn
-                             r-bnclassify))
-    (home-page "https://cran.r-project.org/package=dagHMM")
-    (synopsis "Directed Acyclic Graph HMM with TAN Structured Emissions")
-    (description
-     "Hidden Markov models (HMMs) are a formal foundation for making probabilistic
-models of linear sequence.  They provide a conceptual toolkit for building
-complex models just by drawing an intuitive picture.  They are at the heart of a
-diverse range of programs, including genefinding, profile searches, multiple
-sequence alignment and regulatory site identification.  HMMs are the Legos of
-computational sequence analysis.  In graph theory, a tree is an undirected graph
-in which any two vertices are connected by exactly one path, or equivalently a
-connected acyclic undirected graph.  Tree represents the nodes connected by
-edges.  It is a non-linear data structure.  A poly-tree is simply a directed
-acyclic graph whose underlying undirected graph is a tree.  The model proposed
-in this package is the same as an HMM but where the states are linked via a
-polytree structure rather than a simple path.")
-    (license (license:fsdg-compatible "GPL (>= 2.0.0)"))))
 
 (define-public r-dafs
   (package

@@ -3917,13 +3917,13 @@ Stieger, & Reips (2019) <doi:10.1177/2059799119884283>.")
 (define-public r-ipumsr
   (package
     (name "r-ipumsr")
-    (version "0.6.3")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ipumsr" version))
        (sha256
-        (base32 "0rmg23y0am45vk77l27q1fyfbr7560m26f3bcp5j6qxcb97fya7j"))))
+        (base32 "1sdy0gvwpa4gwaj7yzn9hbk47sai8nifrhdfdaq6rrpansjgjjv3"))))
     (properties `((upstream-name . "ipumsr")))
     (build-system r-build-system)
     (propagated-inputs (list r-zeallot
@@ -5692,13 +5692,13 @@ models proposed by Asano and Hirakawa (2017)
 (define-public r-intsdm
   (package
     (name "r-intsdm")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "intSDM" version))
        (sha256
-        (base32 "1412nxr2z6nczm5yvwly786pzd3xsi7gz2v12ick9nllbiw8rsx6"))))
+        (base32 "01gsq853vxkch69pmgypd4h5yfq1fnawa7qlamxglcxy6zmn3269"))))
     (properties `((upstream-name . "intSDM")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyterra
@@ -12505,13 +12505,13 @@ Project <https://correlatesofwar.org/>.  See also Pevehouse, J. C. et al.
 (define-public r-iglu
   (package
     (name "r-iglu")
-    (version "3.4.2")
+    (version "3.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iglu" version))
        (sha256
-        (base32 "0ilfkmwmh3xshd67y45v9kvyd69xgf8wmxcw3hxi9zpsb0r4vmsb"))))
+        (base32 "0nxdr09c3sb3fr970nakdh0vygn0g96w3wvgd1c064zr0ylprahz"))))
     (properties `((upstream-name . "iglu")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -12519,6 +12519,8 @@ Project <https://correlatesofwar.org/>.  See also Pevehouse, J. C. et al.
                              r-tibble
                              r-shiny
                              r-scales
+                             r-plotly
+                             r-pheatmap
                              r-patchwork
                              r-magrittr
                              r-lubridate
@@ -12527,6 +12529,7 @@ Project <https://correlatesofwar.org/>.  See also Pevehouse, J. C. et al.
                              r-gridextra
                              r-ggpubr
                              r-ggplot2
+                             r-dt
                              r-dplyr
                              r-catools))
     (native-inputs (list r-knitr))

@@ -5161,16 +5161,16 @@ workflows by users to help with analyzing and interpreting NMR data.")
 (define-public r-nmof
   (package
     (name "r-nmof")
-    (version "2.7-1")
+    (version "2.8-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMOF" version))
        (sha256
-        (base32 "08sfckjglrii0hn9ka5pdbx3k5y6s4f1w5wa1jcb0gsvyffk0gmh"))))
+        (base32 "12n2dsgng39q9jn8m6q7bx2va389ham869yb5ydkwrqywjdkmibd"))))
     (properties `((upstream-name . "NMOF")))
     (build-system r-build-system)
-    (home-page "https://gitlab.com/NMOF")
+    (home-page "http://enricoschumann.net/NMOF.htm")
     (synopsis "Numerical Methods and Optimization in Finance")
     (description
      "Functions, examples and data from the first and the second edition of \"Numerical
@@ -8500,13 +8500,13 @@ analysis in ggplot2'.")
 (define-public r-nflfastr
   (package
     (name "r-nflfastr")
-    (version "4.5.1")
+    (version "4.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nflfastR" version))
        (sha256
-        (base32 "0416bc4b40ydc842yg3y9safbrwgqlc431qxdzrh8zp4vcmg3lac"))))
+        (base32 "1zbl8khwhf9g4bw5fbcr73wa17g8jia6w23ziqq5pvsc1ygabyga"))))
     (properties `((upstream-name . "nflfastR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -14898,13 +14898,13 @@ trained on the test set and impute test data).")
 (define-public r-nada2
   (package
     (name "r-nada2")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NADA2" version))
        (sha256
-        (base32 "13mxxc3cyrvmnjakq4g3yi97xlj53x76fyzxvp6p1f2f1vi0zvl5"))))
+        (base32 "15jv7pr36l5n3anf772vz5w5aj0lxx6fswsyj59rh54ap8a77jxb"))))
     (properties `((upstream-name . "NADA2")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan

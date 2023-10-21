@@ -7408,34 +7408,6 @@ number of clusters.  References: P. Suter et al. (2021)
 <doi:10.1038/s41467-018-06867-x>.")
     (license license:gpl3)))
 
-(define-public r-bnclassify
-  (package
-    (name "r-bnclassify")
-    (version "0.4.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bnclassify" version))
-       (sha256
-        (base32 "010447r21i5r2nk843v8dmfncqgmp4yf71ahcrppqv8vxfywcg6i"))))
-    (properties `((upstream-name . "bnclassify")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rpart
-                             r-rcpp
-                             r-matrixstats
-                             r-entropy
-                             r-bh
-                             r-assertthat))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/bmihaljevic/bnclassify")
-    (synopsis "Learning Discrete Bayesian Network Classifiers from Data")
-    (description
-     "State-of-the art algorithms for learning discrete Bayesian network classifiers
-from data, including a number of those described in Bielza & Larranaga (2014)
-<doi:10.1145/2576868>, with functions for prediction, model evaluation and
-inspection.")
-    (license license:gpl2+)))
-
 (define-public r-bmtar
   (package
     (name "r-bmtar")
@@ -9421,6 +9393,40 @@ the response is based on ordinary Kriging (with residual error) of the input.
 Estimation of smoothing parameters is performed by generalized cross-validation.")
     (license (license:fsdg-compatible "CeCILL-2"))))
 
+(define-public r-bktr
+  (package
+    (name "r-bktr")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BKTR" version))
+       (sha256
+        (base32 "07qq6jxrwyvid6j54vzvf7a28ryk478kscn3z7dk9ic2y9c5ljj0"))))
+    (properties `((upstream-name . "BKTR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-torch
+                             r-r6p
+                             r-r6
+                             r-ggplot2
+                             r-ggmap
+                             r-data-table))
+    (native-inputs (list r-rmarkdown r-r-rsp r-knitr))
+    (home-page "https://cran.r-project.org/package=BKTR")
+    (synopsis "Bayesian Kernelized Tensor Regression")
+    (description
+     "Facilitates scalable spatiotemporally varying coefficient modelling with
+Bayesian kernelized tensor regression.  The important features of this package
+are: (a) Enabling local temporal and spatial modeling of the relationship
+between the response variable and covariates. (b) Implementing the model
+described by Lei et al. (2023) <doi:10.48550/@code{arXiv.2109.00046>}. (c) Using
+a Bayesian Markov Chain Monte Carlo (MCMC) algorithm to sample from the
+posterior distribution of the model parameters. (d) Employing a tensor
+decomposition to reduce the number of estimated parameters. (e) Accelerating
+tensor operations and enabling graphics processing unit (GPU) acceleration with
+the torch package.")
+    (license license:expat)))
+
 (define-public r-bkmrhat
   (package
     (name "r-bkmrhat")
@@ -10888,13 +10894,13 @@ non-hierarchical clustering algorithms (Kreft & Jetz (2010)
 (define-public r-biorad
   (package
     (name "r-biorad")
-    (version "0.7.2")
+    (version "0.7.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bioRad" version))
        (sha256
-        (base32 "0x96lhmw9s8b2icqcr93r8ghiywi5hh0dpg5c8vizbl66kj3a8j6"))))
+        (base32 "0gschmraqc76yiqdn48cg1qnd0p7b6x7h2gr54a84pb4ivbn6vyy"))))
     (properties `((upstream-name . "bioRad")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
@@ -11447,41 +11453,6 @@ ISBN:978-1-4614-5519-6)).")
 Contains @code{QuiPT} (quick permutation test) for fast feature-filtering of the
 n-gram data.")
     (license license:gpl3)))
-
-(define-public r-biogeom
-  (package
-    (name "r-biogeom")
-    (version "1.3.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "biogeom" version))
-       (sha256
-        (base32 "1biwv0nnph8xrxx46g08gdgdi99k79nq7bf2iqidji826spz0xbv"))))
-    (properties `((upstream-name . "biogeom")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-spatstat-geom))
-    (home-page "https://cran.r-project.org/package=biogeom")
-    (synopsis "Biological Geometries")
-    (description
-     "Is used to simulate and fit biological geometries.  biogeom incorporates several
-novel universal parametric equations that can generate the profiles of bird
-eggs, flowers, linear and lanceolate leaves, seeds, starfish, and tree-rings
-(Gielis (2003) <doi:10.3732/ajb.90.3.333>; Shi et al. (2020)
-<doi:10.3390/sym12040645>), three growth-rate curves representing the
-ontogenetic growth trajectories of animals and plants against time, and the
-axially symmetrical and integral forms of all these functions (Shi et al. (2017)
-<doi:10.1016/j.ecolmodel.2017.01.012>; Shi et al. (2021)
-<doi:10.3390/sym13081524>).  The optimization method proposed by Nelder and Mead
-(1965) <doi:10.1093/comjnl/7.4.308> was used to estimate model parameters.
-biogeom includes several real data sets of the boundary coordinates of natural
-shapes, including avian eggs, fruit, lanceolate and ovate leaves, tree rings,
-seeds, and sea stars,and can be potentially applied to other natural shapes.
-biogeom can quantify the conspecific or interspecific similarity of natural
-outlines, and provides information with important ecological and evolutionary
-implications for the growth and form of living organisms.  Please see Shi et al.
-(2022) <doi:10.1111/nyas.14862> for details.")
-    (license license:gpl2+)))
 
 (define-public r-biogas
   (package
@@ -15377,6 +15348,55 @@ the bfsl solution.")
      "Search and download data from the Swiss Federal Statistical Office (BFS) APIs
 <https://www.bfs.admin.ch/>.")
     (license license:expat)))
+
+(define-public r-bfpack
+  (package
+    (name "r-bfpack")
+    (version "1.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BFpack" version))
+       (sha256
+        (base32 "1bji697998qkb56gid8jd6bp9gqwxkls73d8vk55z838r60irlla"))))
+    (properties `((upstream-name . "BFpack")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sandwich
+                             r-qrm
+                             r-pracma
+                             r-mvtnorm
+                             r-mass
+                             r-lme4
+                             r-extradistr
+                             r-ergm
+                             r-bergm
+                             r-bain))
+    (native-inputs (list r-knitr gfortran))
+    (home-page "https://github.com/jomulder/BFpack")
+    (synopsis "Flexible Bayes Factor Testing of Scientific Expectations")
+    (description
+     "Implementation of default Bayes factors for testing statistical hypotheses under
+various statistical models.  The package is intended for applied quantitative
+researchers in the social and behavioral sciences, medical research, and related
+fields.  The Bayes factor tests can be executed for statistical models such as
+univariate and multivariate normal linear models, correlation analysis,
+generalized linear models, special cases of linear mixed models, survival
+models, relational event models.  Parameters that can be tested are location
+parameters (e.g., group means, regression coefficients), variances (e.g., group
+variances), and measures of association (e.g,.
+polychoric/polyserial/biserial/tetrachoric/product moments correlations), among
+others.  The statistical underpinnings are described in Mulder and Xin (2019)
+<DOI:10.1080/00273171.2021.1904809>, Mulder and Gelissen (2019)
+<DOI:10.1080/02664763.2021.1992360>, Mulder (2016)
+<DOI:10.1016/j.jmp.2014.09.004>, Mulder and Fox (2019) <DOI:10.1214/18-BA1115>,
+Mulder and Fox (2013) <DOI:10.1007/s11222-011-9295-3>, Boeing-Messing, van
+Assen, Hofman, Hoijtink, and Mulder (2017) <DOI:10.1037/met0000116>, Hoijtink,
+Mulder, van Lissa, and Gu, (2018) <DOI:10.31234/osf.io/v3shc>, Gu, Mulder, and
+Hoijtink, (2018) <DOI:10.1111/bmsp.12110>, Hoijtink, Gu, and Mulder, (2018)
+<DOI:10.1111/bmsp.12145>, and Hoijtink, Gu, Mulder, and Rosseel, (2018)
+<DOI:10.1037/met0000187>.  When using the packages, please refer to Mulder et
+al. (2021) <DOI:10.18637/jss.v100.i18>.")
+    (license license:gpl3+)))
 
 (define-public r-bfp
   (package
@@ -19516,13 +19536,13 @@ in package R2@code{BayesX}.")
 (define-public r-bayesx
   (package
     (name "r-bayesx")
-    (version "0.3-2")
+    (version "0.3-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesX" version))
        (sha256
-        (base32 "0yjk9jpp9mnmlwm3xywzhyzb36vgf6yi897mr8cw31zin3wcprb4"))))
+        (base32 "1yxj13nyzhwl2ak9y4y7cdcrrrfb78wdynggs6v76n94pghc9dgp"))))
     (properties `((upstream-name . "BayesX")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp

@@ -20180,31 +20180,6 @@ of Normal-Gamma priors on the factor loading matrix
 <doi:10.1016/j.jeconom.2018.11.007>.")
     (license license:gpl2+)))
 
-(define-public r-factorsr
-  (package
-    (name "r-factorsr")
-    (version "1.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "FactorsR" version))
-       (sha256
-        (base32 "1rla44g75hrqalrblr1yaawmyixmivlacn50marqgd9fjh8blgcd"))))
-    (properties `((upstream-name . "FactorsR")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=FactorsR")
-    (synopsis "Identification of the Factors Affecting Species Richness")
-    (description
-     "It identifies the factors significantly related to species richness, and their
-relative contribution, using multiple regressions and support vector machine
-models.  It uses an output file of @code{ModestR} with data of richness of the
-species and environmental variables in a cell size defined by the user.  The
-residuals of the support vector machine model are shown on a map.  Negative
-residuals may be potential areas with undiscovered and/or unregistered species,
-or areas with decreased species richness due to the negative effect of
-anthropogenic factors.")
-    (license license:gpl2+)))
-
 (define-public r-factormodel
   (package
     (name "r-factormodel")
