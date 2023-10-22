@@ -3669,13 +3669,13 @@ Xie, Y (2014) <ISBN: 978-1-482-20353-0>.")
 (define-public r-rtl
   (package
     (name "r-rtl")
-    (version "1.3.3")
+    (version "1.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RTL" version))
        (sha256
-        (base32 "123xl52n8vm22qnf4h0dsyjhq1pwvjvf17vx2qk1x1mi1csbihcz"))))
+        (base32 "08wk1zd4nrp9zvmqbf9dw5s8mv2ggz4gbxz24blpaphwr045annj"))))
     (properties `((upstream-name . "RTL")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -3689,7 +3689,6 @@ Xie, Y (2014) <ISBN: 978-1-482-20353-0>.")
                              r-stringr
                              r-rlang
                              r-readr
-                             r-rcurl
                              r-rcpp
                              r-purrr
                              r-plotly
@@ -23439,13 +23438,13 @@ function for authorization and loading reports.")
 (define-public r-rgof
   (package
     (name "r-rgof")
-    (version "1.1.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rgof" version))
        (sha256
-        (base32 "11lmi0zkrdgbp38py84bnxi7yb75abad8rw20pip48nnvrdjzrs4"))))
+        (base32 "0n2ddwhx0qibczx8im39gjdmh8alng5w6f7hbvvx3p7sm6xxp0q7"))))
     (properties `((upstream-name . "Rgof")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-ggplot2))
@@ -36837,13 +36836,13 @@ listed as authors of this package.  To achieve cross-platform portability
 (define-public r-rcppcolors
   (package
     (name "r-rcppcolors")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppColors" version))
        (sha256
-        (base32 "11gdlr7dd68rd5wn489810b4n1cpz621zixjyww5f4x414sbr7a1"))))
+        (base32 "0aacr00sjilh5smh3hxlmgjdf1w6vjm788kr6r1gigm7nj3w2sjy"))))
     (properties `((upstream-name . "RcppColors")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -38593,16 +38592,16 @@ al. (2013) <doi:10.1007/978-3-642-35638-4_21>.")
 (define-public r-rclipboard
   (package
     (name "r-rclipboard")
-    (version "0.1.6")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rclipboard" version))
        (sha256
-        (base32 "0sb28shhfkpflik78h31736li80gjfzim62911iy3vk9b0szd0vy"))))
+        (base32 "1sm3x134brhi0qxa1bp20z4k0dlpa044qg8zsbgjr00w8yc3rr47"))))
     (properties `((upstream-name . "rclipboard")))
     (build-system r-build-system)
-    (propagated-inputs (list r-shiny))
+    (propagated-inputs (list r-shiny r-bslib))
     (native-inputs (list esbuild))
     (home-page "https://github.com/sbihorel/rclipboard/")
     (synopsis "Shiny/R Wrapper for 'clipboard.js'")

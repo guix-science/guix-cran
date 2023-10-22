@@ -254,13 +254,13 @@ repository <https://forgemia.inra.fr/umr-gdec/bwgs> and modified as a R package.
 (define-public r-bwgr
   (package
     (name "r-bwgr")
-    (version "2.2.2")
+    (version "2.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bWGR" version))
        (sha256
-        (base32 "03cfz1gn0xda2z9n3hwnbp0d03zs82vgb3skkynvr5w5iwh251ip"))))
+        (base32 "0cwl7vaal3mmgcwly353lpyl82avjggxrlf18sv3imfva5w63l3s"))))
     (properties `((upstream-name . "bWGR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-matrix))
@@ -5323,13 +5323,13 @@ expansion, following the article Derumigny, Girard, Guyonvarch (2021)
 (define-public r-boundarystats
   (package
     (name "r-boundarystats")
-    (version "2.0.1")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BoundaryStats" version))
        (sha256
-        (base32 "0vfcd8d1il134mxk1pb3r7ahir4zyzjv7nmfqbnhskdzh7ahd8hh"))))
+        (base32 "06kz1d5fwiilqidiz2iry0fg7c5265fc40yrdgddd0aia75cf9jv"))))
     (properties `((upstream-name . "BoundaryStats")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble

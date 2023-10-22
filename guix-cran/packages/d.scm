@@ -11432,42 +11432,6 @@ as prevalence.  The methods are described in Jackson et al. (2023)
 <doi:10.1093/jrsssa/qnac015>.")
     (license license:gpl3)))
 
-(define-public r-disaggregation
-  (package
-    (name "r-disaggregation")
-    (version "0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "disaggregation" version))
-       (sha256
-        (base32 "0v7wqx84bawl6kw6izy530kqhr3g7bzbnma17s691b7dzz4f5cnf"))))
-    (properties `((upstream-name . "disaggregation")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tmb
-                             r-splancs
-                             r-sparsemvn
-                             r-sp
-                             r-sf
-                             r-rcppeigen
-                             r-raster
-                             r-matrix
-                             r-ggplot2
-                             r-foreach
-                             r-dplyr
-                             r-doparallel
-                             r-cowplot))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=disaggregation")
-    (synopsis "Disaggregation Modelling")
-    (description
-     "Fits disaggregation regression models using TMB ('Template Model Builder').
-When the response data are aggregated to polygon level but the predictor
-variables are at a higher resolution, these models can be useful.  Regression
-models with spatial random fields.  The package is described in detail in Nandi
-et al. (2023) <doi:10.18637/jss.v106.i11>.")
-    (license license:expat)))
-
 (define-public r-disaggregatets
   (package
     (name "r-disaggregatets")

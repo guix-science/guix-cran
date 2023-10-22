@@ -3841,13 +3841,13 @@ regression model is assumed for propensity score model.")
 (define-public r-ipwboxplot
   (package
     (name "r-ipwboxplot")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IPWboxplot" version))
        (sha256
-        (base32 "07qvdflwmyy0406xkkgja31cggfv4pak2hhnhh8fwggj2zkj9z8n"))))
+        (base32 "0l6z64whpb50pxipv4mw0s1hki9kh1nnrcl2kzf83g9x9lbmwxk0"))))
     (properties `((upstream-name . "IPWboxplot")))
     (build-system r-build-system)
     (propagated-inputs (list r-isotone))

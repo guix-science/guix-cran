@@ -4387,13 +4387,13 @@ A.M.Gun,M.K.Gupta and B.Dasgupta(2019,ISBN:81-87567-81-3).")
 (define-public r-logistic4p
   (package
     (name "r-logistic4p")
-    (version "1.5")
+    (version "1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "logistic4p" version))
        (sha256
-        (base32 "0h0dxyklqc95ykyril1a3d2bdnszj5l9dqbxzh2wbfmk06prvh8b"))))
+        (base32 "1gyg6wmv15l9kn30icrbh3zny0h419la6722nynv80ls0r2b495g"))))
     (properties `((upstream-name . "logistic4p")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -12011,17 +12011,16 @@ general (not R specific) information on the algorithm Leabra see
 (define-public r-ldt
   (package
     (name "r-ldt")
-    (version "0.3.2.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ldt" version))
        (sha256
-        (base32 "1mp68m72r3158nx4x39h9d2zszv5jkq0kgdzr5gnwmpwqm3jvd0d"))))
+        (base32 "00zm1i73d9ivpgf1h7mr45dpbn3ks5lrixa3h07k94767iaini6c"))))
     (properties `((upstream-name . "ldt")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tdata r-rcpp r-bh))
-    (native-inputs (list r-knitr))
+    (propagated-inputs (list r-tdata r-rdpack r-rcpp r-mass r-bh))
     (home-page "https://github.com/rmojab63/LDT")
     (synopsis "Automated Uncertainty Analysis")
     (description

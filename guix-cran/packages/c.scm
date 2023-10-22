@@ -29903,13 +29903,13 @@ been applied.")
 (define-public r-checkdown
   (package
     (name "r-checkdown")
-    (version "0.0.10")
+    (version "0.0.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "checkdown" version))
        (sha256
-        (base32 "0c43nbzfrwwnmw8xaa6ckz7zc4q5jdxn05yz74jps9h19sla5vm9"))))
+        (base32 "1yg3718za5qzbya3yycwmz59w4g6a88nkhdxf7s60shh5isks8w9"))))
     (properties `((upstream-name . "checkdown")))
     (build-system r-build-system)
     (propagated-inputs (list r-markdown r-htmltools r-glue))

@@ -18772,13 +18772,13 @@ Gradient Boosting (Werner, Tino (2020) \"Gradient-Free Gradient Boosting\", URL
 (define-public r-gfa
   (package
     (name "r-gfa")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GFA" version))
        (sha256
-        (base32 "09h9q4r8xrgzn2l61dwbfjawrmj6z9vcm426rnxgkg5qlxb3cbz6"))))
+        (base32 "1ldpa12awb5d8mn25wn34nclqc4fyq690siq0wdq4c8fzgpv2xad"))))
     (properties `((upstream-name . "GFA")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=GFA")
@@ -20586,13 +20586,13 @@ classes and functions.")
 (define-public r-geomodels
   (package
     (name "r-geomodels")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeoModels" version))
        (sha256
-        (base32 "0j8jb0k1k5dzw06rfz8962c2cagkd2s17lg5pvrs4kpphyvbyq2p"))))
+        (base32 "063ggs9i946q836yk3m4jpf20kpa0l3p7r658vv8i9zzibcfkcgq"))))
     (properties `((upstream-name . "GeoModels")))
     (build-system r-build-system)
     (propagated-inputs (list r-zipfr
@@ -20638,11 +20638,11 @@ Weibull, Gamma, Log-Gaussian, Binomial, Negative Binomial and Poisson.  See the
 URL for the papers associated with this package, as for instance, Bevilacqua and
 Gaetan (2015) <doi:10.1007/s11222-014-9460-6>, Bevilacqua et al. (2016)
 <doi:10.1007/s13253-016-0256-3>, Vallejos et al. (2020)
-<doi:10.1007/978-3-030-56681-4>, Bevilacqua et al. (2022)
-<doi:10.1016/j.jmva.2022.104949>, Bevilacqua et al. (2022)
-<doi:10.1007/s11749-021-00797-5>, Blasi et al. (2022)
-<doi:10.1016/j.spasta.2022.100596>, Morales-Navarrete et al. (2022)
-<@code{arXiv:2105.03734>}, and a large class of examples and tutorials.")
+<doi:10.1007/978-3-030-56681-4>, Bevilacqua et.  al (2020)
+<doi:10.1002/env.2632>, Bevilacqua et.  al (2021) <doi:10.1111/sjos.12447>,
+Bevilacqua et al. (2022) <doi:10.1016/j.jmva.2022.104949>, Morales-Navarrete et
+al. (2023) <doi:10.1080/01621459.2022.2140053>, and a large class of examples
+and tutorials.")
     (license license:gpl3+)))
 
 (define-public r-geomod
@@ -21035,13 +21035,13 @@ format.")
 (define-public r-geohashtools
   (package
     (name "r-geohashtools")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geohashTools" version))
        (sha256
-        (base32 "04xn0512b36rn473a8j025x5dqwi8kc45rr3iap5ai4wdcrb712z"))))
+        (base32 "04hvlxq5fm4mcrlbx09j079522qhlyg4jg6dymwkmqxrwdibcnqq"))))
     (properties `((upstream-name . "geohashTools")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

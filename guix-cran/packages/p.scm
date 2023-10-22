@@ -4923,19 +4923,20 @@ al. (2015) <DOI:10.1109/tnb.2015.2457906> and Saini et al. (2015)
 (define-public r-proteus
   (package
     (name "r-proteus")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "proteus" version))
        (sha256
-        (base32 "1zmn2svlixbi0657rq6pcfs7cpp7d5r035j75lwpmx0n4pf0hg03"))))
+        (base32 "1i8h07k5pdsywpw5g8d06xgl5gk06g5q93jimfwkbry9ykagh1cw"))))
     (properties `((upstream-name . "proteus")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam
                              r-torch
                              r-tictoc
                              r-stringr
+                             r-sn
                              r-scales
                              r-readr
                              r-purrr
@@ -22795,13 +22796,13 @@ materials.  Part of the r4photobiology suite, Aphalo P. J. (2015)
 (define-public r-photobiology
   (package
     (name "r-photobiology")
-    (version "0.10.17")
+    (version "0.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "photobiology" version))
        (sha256
-        (base32 "1anrs6182wrcndnyfrdgyxh67xap0xxqzsl58fhiw611xbky5rw6"))))
+        (base32 "15x6nzl2pgs1bz37z5zn9gphi93c1gibps7gjf10v9rw0ll4gj8q"))))
     (properties `((upstream-name . "photobiology")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

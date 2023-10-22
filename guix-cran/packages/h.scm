@@ -1057,7 +1057,7 @@ Keller-Ressel and Nargang (2019), see <@code{arXiv:1903.08977>}.")
         (base32 "1g74gxarn3f8q0pnwwz802jrryry0w72py7agckaqwzwybfsklsc"))))
     (properties `((upstream-name . "hydflood")))
     (build-system r-build-system)
-    (propagated-inputs (list r-terra r-sf r-rdpack r-raster r-hyd1d))
+    (propagated-inputs (list r-terra r-sf r-rdpack r-raster))
     (native-inputs (list r-knitr))
     (home-page "https://hydflood.bafg.de")
     (synopsis "Flood Extents and Durations along the Rivers Elbe and Rhine")
@@ -1071,34 +1071,6 @@ GIS approach for flood extent and duration modelling.  Computationally demanding
 annual flood durations have been computed already and data products were
 published by Weber (2022) <doi:10.1594/PANGAEA.948042>.")
     (license license:gpl2)))
-
-(define-public r-hyd1d
-  (package
-    (name "r-hyd1d")
-    (version "0.4.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "hyd1d" version))
-       (sha256
-        (base32 "0ikznysqbfx9rrxa87is3ycixf3q6fcvqqzih6d9khsqqz0xc5i4"))))
-    (properties `((upstream-name . "hyd1d")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rjsonio r-rdpack r-plotrix))
-    (native-inputs (list r-knitr))
-    (home-page "https://hyd1d.bafg.de")
-    (synopsis "1d Water Level Interpolation along the Rivers Elbe and Rhine")
-    (description
-     "An S4 class and several functions which utilize internally stored datasets and
-gauging data enable 1d water level interpolation.  The S4 class
-(@code{WaterLevelDataFrame}) structures the computation and visualisation of 1d
-water level information along the German federal waterways Elbe and Rhine.
-hyd1d delivers 1d water level data - extracted from the FLYS database - and
-validated gauging data - extracted from the hydrological database @code{HyDaBa}
-- package-internally.  For computations near real time gauging data are queried
-externally from the PEGELONLINE REST API
-<https://pegelonline.wsv.de/webservice/@code{dokuRestapi>}.")
-    (license license:gpl2+)))
 
 (define-public r-hybridts
   (package
@@ -2471,13 +2443,13 @@ information.")
 (define-public r-hstats
   (package
     (name "r-hstats")
-    (version "0.3.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hstats" version))
        (sha256
-        (base32 "0kmzgmkibzlwwfakprk7j4rzy759b1f4myb1g1hvavx285mgygpa"))))
+        (base32 "1izl6jab013849rm4276p04vy4b2lngs1a5lg4q3vvdhf8wmkscv"))))
     (properties `((upstream-name . "hstats")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))
