@@ -5635,13 +5635,13 @@ grouped date classes.  This package is part of the RECON
 (define-public r-grateful
   (package
     (name "r-grateful")
-    (version "0.2.0")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grateful" version))
        (sha256
-        (base32 "02wwidgf3i26lkn0b4vw33zibqcv1gd93fjlkm4igcb76nlbq1cp"))))
+        (base32 "0g1xn8chm4if31xfd012w6zj6gl7s19yifp1pyp6v0frpslcks4b"))))
     (properties `((upstream-name . "grateful")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstudioapi r-rmarkdown r-renv r-remotes r-knitr))
@@ -7787,13 +7787,13 @@ categorical and quantitative variables.  Emerson et al. (2013)
 (define-public r-gp
   (package
     (name "r-gp")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gp" version))
        (sha256
-        (base32 "1av0kk6z6mvbwi3arqx3r1nj8kvdjshgzbn2msbcaw7kqii8kzrf"))))
+        (base32 "0w5wcjzgjajfx29whqkn3xv3v9bn4q0almmmsb7qw79dnbv5c16s"))))
     (properties `((upstream-name . "gp")))
     (build-system r-build-system)
     (propagated-inputs (list r-rngforgpd r-rfast))
@@ -14661,13 +14661,13 @@ draw the scatter plot.")
 (define-public r-ggspectra
   (package
     (name "r-ggspectra")
-    (version "0.3.11")
+    (version "0.3.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggspectra" version))
        (sha256
-        (base32 "19mmjcifafb6xfn33q2i1aghqy6axc35g6942759j49izd7wm8lz"))))
+        (base32 "0kq029w14w3z7qscrasxv289iizcxc7lvkbn5ysiz4jgrvgyc55g"))))
     (properties `((upstream-name . "ggspectra")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -24375,13 +24375,13 @@ fraction.  A reference is Yi Niu and Yingwei Peng (2014)
 (define-public r-geecrt
   (package
     (name "r-geecrt")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geeCRT" version))
        (sha256
-        (base32 "1zp9b56g3w3sjwffw00sjl50659mv7iyprlni7qp7d8w0wmkfsww"))))
+        (base32 "0gqwyf6r3cyzfr6rcl5id5x937asllyc61vrs6416j1awb6d2yn3"))))
     (properties `((upstream-name . "geeCRT")))
     (build-system r-build-system)
     (propagated-inputs (list r-rootsolve r-mvtnorm r-mass))
@@ -26241,13 +26241,13 @@ Failure of Modelling\", 2022, <@code{arXiv:2112.08738>}.")
 (define-public r-gauser
   (package
     (name "r-gauser")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gauseR" version))
        (sha256
-        (base32 "0jlbaylglyza6hlf62g3z0n349zlzlhx6g4jwdzg8b2sh4c3c9yn"))))
+        (base32 "1rvw7dbrsxqqch2dgslabc47llb64ljakc60m47gql5n9br7akbd"))))
     (properties `((upstream-name . "gauseR")))
     (build-system r-build-system)
     (propagated-inputs (list r-desolve))

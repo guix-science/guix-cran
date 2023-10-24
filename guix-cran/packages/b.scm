@@ -11454,6 +11454,41 @@ Contains @code{QuiPT} (quick permutation test) for fast feature-filtering of the
 n-gram data.")
     (license license:gpl3)))
 
+(define-public r-biogeom
+  (package
+    (name "r-biogeom")
+    (version "1.3.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "biogeom" version))
+       (sha256
+        (base32 "1gg1ca7iwpyb2i5vyv725ai49ycgai1hr5960295xmx571pzh6mp"))))
+    (properties `((upstream-name . "biogeom")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-spatstat-geom))
+    (home-page "https://cran.r-project.org/package=biogeom")
+    (synopsis "Biological Geometries")
+    (description
+     "Is used to simulate and fit biological geometries.  biogeom incorporates several
+novel universal parametric equations that can generate the profiles of bird
+eggs, flowers, linear and lanceolate leaves, seeds, starfish, and tree-rings
+(Gielis (2003) <doi:10.3732/ajb.90.3.333>; Shi et al. (2020)
+<doi:10.3390/sym12040645>), three growth-rate curves representing the
+ontogenetic growth trajectories of animals and plants against time, and the
+axially symmetrical and integral forms of all these functions (Shi et al. (2017)
+<doi:10.1016/j.ecolmodel.2017.01.012>; Shi et al. (2021)
+<doi:10.3390/sym13081524>).  The optimization method proposed by Nelder and Mead
+(1965) <doi:10.1093/comjnl/7.4.308> was used to estimate model parameters.
+biogeom includes several real data sets of the boundary coordinates of natural
+shapes, including avian eggs, fruit, lanceolate and ovate leaves, tree rings,
+seeds, and sea stars,and can be potentially applied to other natural shapes.
+biogeom can quantify the conspecific or interspecific similarity of natural
+outlines, and provides information with important ecological and evolutionary
+implications for the growth and form of living organisms.  Please see Shi et al.
+(2022) <doi:10.1111/nyas.14862> for details.")
+    (license license:gpl2+)))
+
 (define-public r-biogas
   (package
     (name "r-biogas")
@@ -11555,13 +11590,13 @@ calculations needed by Biological Dosimetry Laboratories.")
 (define-public r-biodiversityr
   (package
     (name "r-biodiversityr")
-    (version "2.15-3")
+    (version "2.15-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BiodiversityR" version))
        (sha256
-        (base32 "1yif3169ywjaxq33i1mlqj0xw41hj61yjkn4qqdn2y2ziz30pspz"))))
+        (base32 "0k8wx07rskc3m9zvksh45df4nsy545wfp32chfvpr1sjgpc98hcb"))))
     (properties `((upstream-name . "BiodiversityR")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan r-rcmdr r-ggplot2))
@@ -19560,6 +19595,44 @@ regression models (<https://www.uni-goettingen.de/de/bayesx/550513.html>).  In
 addition, functions that allow to read, write and manipulate map objects that
 are required in spatial analyses performed with @code{BayesX}.")
     (license (list license:gpl2 license:gpl3))))
+
+(define-public r-bayeswatch
+  (package
+    (name "r-bayeswatch")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bayesWatch" version))
+       (sha256
+        (base32 "1hivlzsrm5kxv11xfz5hni4dvs3104bz65syypksa7zss9qb1sqk"))))
+    (properties `((upstream-name . "bayesWatch")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppeigen
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-matrix
+                             r-mass
+                             r-hotelling
+                             r-gridextra
+                             r-ggplot2
+                             r-ess
+                             r-cholwishart
+                             r-bdgraph))
+    (home-page "https://cran.r-project.org/package=bayesWatch")
+    (synopsis
+     "Bayesian Change-Point Detection for Process Monitoring with Fault Detection")
+    (description
+     "Bayes Watch fits an array of Gaussian Graphical Mixture Models to groupings of
+homogeneous data in time, called regimes, which are modeled as the observed
+states of a Markov process with unknown transition probabilities.  In doing so,
+Bayes Watch defines a posterior distribution on a vector of regime assignments,
+which gives meaningful expressions on the probability of every possible
+change-point.  Bayes Watch also allows for an effective and efficient fault
+detection system that assesses what features in the data where the most
+responsible for a given change-point.  For further details, see: Alexander C.
+Murph et al. (2023) <@code{arXiv:2310.02940>}.")
+    (license license:gpl3)))
 
 (define-public r-bayesvl
   (package

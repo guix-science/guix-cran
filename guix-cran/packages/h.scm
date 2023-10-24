@@ -7021,13 +7021,13 @@ associated with the package: Waggoner, Philip D. (2018)
 (define-public r-hhh4contacts
   (package
     (name "r-hhh4contacts")
-    (version "0.13.1")
+    (version "0.13.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hhh4contacts" version))
        (sha256
-        (base32 "1cqwn09iqgh6131cm4b5j0kx7k5vil0ak42v064g4maayj0yqy7p"))))
+        (base32 "171ghvnjfm1bvz75ggxpl7w1ai8nsrdi7sy2szmc8wpzc8a1wb48"))))
     (properties `((upstream-name . "hhh4contacts")))
     (build-system r-build-system)
     (propagated-inputs (list r-surveillance))

@@ -554,13 +554,13 @@ Census bureau.")
 (define-public r-usmap
   (package
     (name "r-usmap")
-    (version "0.6.2")
+    (version "0.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "usmap" version))
        (sha256
-        (base32 "0d0j3q55ja0lm2dm8rans0v7gklywddxx79c6q2p99py80w2y73n"))))
+        (base32 "0rhg1llarlbsin1dixbwrnb28xjzsbf5b30i5ijkfr2qjv5nrn2p"))))
     (properties `((upstream-name . "usmap")))
     (build-system r-build-system)
     (propagated-inputs (list r-usmapdata r-rlang))
@@ -3715,13 +3715,13 @@ basic operations such as (dis)attenuate effect size estimates.")
 (define-public r-ufrisk
   (package
     (name "r-ufrisk")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ufRisk" version))
        (sha256
-        (base32 "190rjqhmm7r9yy4f5gyk2p8k250xnnkkssi3nfgv79w62z2hv2qh"))))
+        (base32 "1cqx416kb8pfaxx2hidv6vyackbps7azrkgkqzwyycrbi177riwb"))))
     (properties `((upstream-name . "ufRisk")))
     (build-system r-build-system)
     (propagated-inputs (list r-smoots r-rugarch r-fracdiff r-esemifar))

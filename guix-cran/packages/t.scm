@@ -4867,6 +4867,40 @@ for any predictive machine learning models.  Find more details in Biecek (2018)
 <@code{arXiv:1806.08915>}.")
     (license license:gpl3)))
 
+(define-public r-triplesmatch
+  (package
+    (name "r-triplesmatch")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "triplesmatch" version))
+       (sha256
+        (base32 "1qjwnyijk3yf9dl18baww806xz2w1jhxcnaw3nlb27g24m28j2dq"))))
+    (properties `((upstream-name . "triplesmatch")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlemon r-rlang r-rcbalance r-optmatch r-mass))
+    (home-page "https://cran.r-project.org/package=triplesmatch")
+    (synopsis
+     "Match Triples Consisting of Two Controls and a Treated Unit or Vice Versa")
+    (description
+     "Attain excellent covariate balance by matching two treated units and one control
+unit or vice versa within strata.  Using such triples, as opposed to also
+allowing pairs of treated and control units, allows easier interpretation of the
+two possible weights of observations and better insensitivity to unmeasured bias
+in the test statistic.  Using triples instead of matching in a fixed 1:2 or 2:1
+ratio allows for the match to be feasible in more situations.  The rrelaxiv
+package, which provides an alternative solver for the underlying network flow
+problems, carries an academic license and is not available on CRAN, but may be
+downloaded from @code{GitHub} at <https://github.com/josherrickson/rrelaxiv/>.
+The Gurobi commercial optimization software is required to use the two functions
+[infsentrip()] and [@code{triplesIP}()].  These functions are not essential to
+the main purpose of this package.  A free academic license can be obtained at
+<https://www.gurobi.com/features/academic-named-user-license/>.  The gurobi R
+package can then be installed following the instructions at
+<https://www.gurobi.com/documentation/9.1/refman/ins_the_r_package.html>.")
+    (license license:gpl3)))
+
 (define-public r-tripler
   (package
     (name "r-tripler")

@@ -5158,6 +5158,35 @@ calculations.  This package can be easily inserted into existing analysis
 workflows by users to help with analyzing and interpreting NMR data.")
     (license license:expat)))
 
+(define-public r-nmrphasing
+  (package
+    (name "r-nmrphasing")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NMRphasing" version))
+       (sha256
+        (base32 "007xxgpq9nw646x1vim0j2ci7r077iww7z6n1g7gm3p5928x9l99"))))
+    (properties `((upstream-name . "NMRphasing")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-massspecwavelet r-baseline))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=NMRphasing")
+    (synopsis
+     "Phase Error Correction and Baseline Correction for One Dimensional ('1D') 'NMR' Data")
+    (description
+     "There are three distinct approaches for phase error correction, they are: a
+single linear model with a choice of optimization functions, multiple linear
+models with optimization function choices and a shrinkage-based method.  The
+methodology is based on our new algorithms and various references (Binczyk et
+al. (2015) <doi:10.1186/1475-925X-14-S2-S5>,Chen et al. (2002)
+<doi:10.1016/S1090-7807(02)00069-1>, de Brouwer (2009)
+<doi:10.1016/j.jmr.2009.09.017>, DÅ¾akula (2000) <doi:10.1006/jmre.2000.2123>,
+Ernst (1969) <doi:10.1016/0022-2364(69)90003-1>, Liland et al. (2010)
+<doi:10.1366/000370210792434350>).")
+    (license license:expat)))
+
 (define-public r-nmof
   (package
     (name "r-nmof")

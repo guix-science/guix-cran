@@ -2492,17 +2492,17 @@ methods implemented by this package are described in Wu et al. (2022)
 (define-public r-excursions
   (package
     (name "r-excursions")
-    (version "2.5.5")
+    (version "2.5.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "excursions" version))
        (sha256
-        (base32 "1ylkjj9hg6rgg6q5k46mrp90g3g8snxkrddlz5czj857lqwdir8j"))))
+        (base32 "02pd02c962wzj2lks33yyq4k9knxg3p41sa7chyqj0j6nrr306xp"))))
     (properties `((upstream-name . "excursions")))
     (build-system r-build-system)
     (inputs (list gsl))
-    (propagated-inputs (list r-withr r-sp r-matrix))
+    (propagated-inputs (list r-withr r-sp r-matrix r-fmesher))
     (home-page "https://github.com/davidbolin/excursions")
     (synopsis
      "Excursion Sets and Contour Credibility Regions for Random Fields")
@@ -6259,13 +6259,13 @@ xxx_@code{PriceDistribution}() methods to get asset prices.")
 (define-public r-esemifar
   (package
     (name "r-esemifar")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "esemifar" version))
        (sha256
-        (base32 "1fj6hdz4kvign9whxclgriafqc8m1yibvwqprvyn861v31kmlc55"))))
+        (base32 "1v6iw5r54ny08xfi0ynacl8l3jain0adplcrwma5gg5p0k799aaw"))))
     (properties `((upstream-name . "esemifar")))
     (build-system r-build-system)
     (propagated-inputs (list r-smoots r-fracdiff))
@@ -17298,13 +17298,13 @@ synthetic ecological datasets are also provided.")
 (define-public r-ecostatscale
   (package
     (name "r-ecostatscale")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecostatscale" version))
        (sha256
-        (base32 "14i5wg5qxqn3qzycgqda6blb0imkckq23gl3c3whfa72a3a8y30q"))))
+        (base32 "040y610c1v7l5phy8lmimafjh466s1zdhk81cfcarwhf0l1hzzpr"))))
     (properties `((upstream-name . "ecostatscale")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-desolve))

@@ -99,25 +99,16 @@ these models.")
 (define-public r-ixpopdymod
   (package
     (name "r-ixpopdymod")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IxPopDyMod" version))
        (sha256
-        (base32 "0qnxf9a0d9lmvna5rzmddp5gsq9scpk9aw0kamhbmrxbxaxm4q9l"))))
+        (base32 "1wg6m1sf8h157xi7nzml10k014dvnhcf0qyprqvasghiad7c2dc9"))))
     (properties `((upstream-name . "IxPopDyMod")))
     (build-system r-build-system)
-    (propagated-inputs (list r-yaml
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-readr
-                             r-magrittr
-                             r-igraph
-                             r-ggplot2
-                             r-dplyr))
+    (propagated-inputs (list r-magrittr r-checkmate))
     (home-page "https://github.com/dallenmidd/IxPopDyMod")
     (synopsis "Framework for Tick Population and Infection Modeling")
     (description

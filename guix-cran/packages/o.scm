@@ -5262,13 +5262,13 @@ Lugosi (2006) <doi:10.1017/CBO9780511546921> for an overview.")
 (define-public r-openxlsx2
   (package
     (name "r-openxlsx2")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openxlsx2" version))
        (sha256
-        (base32 "0lv1jacknsqx1r56bcwsjpa0nzf6r9igg5iy8lqalfzimy2h4khr"))))
+        (base32 "07hlilx98ma0hms84pwcmz9hzga8kx5488lmizhzvlg6ldh7xfnl"))))
     (properties `((upstream-name . "openxlsx2")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip r-stringi r-rcpp r-r6 r-magrittr))
@@ -9116,6 +9116,37 @@ allows for out of memory fitting.  A description of the underlying methods and
 code interface is described in Huling and Chien (2022)
 <doi:10.18637/jss.v104.i06>.")
     (license license:gpl2+)))
+
+(define-public r-oeli
+  (package
+    (name "r-oeli")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oeli" version))
+       (sha256
+        (base32 "16aw16gv9i6yy3hz9kidy2wrg0pwdq99wkqcn7q9skm8dvvi9yhd"))))
+    (properties `((upstream-name . "oeli")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-usethis
+                             r-testthat
+                             r-sysfonts
+                             r-showtext
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-hexsticker
+                             r-ggplot2
+                             r-cli
+                             r-checkmate))
+    (home-page "https://github.com/loelschlaeger/oeli")
+    (synopsis "Utilities for Developing Data Science Software")
+    (description
+     "Some general utilities that I and maybe others find useful when developing data
+science software.  Functionality includes argument validation, density
+calculation and sampling, dealing with Cholesky roots, matrix printing and
+indexing, user interaction, and more.")
+    (license license:gpl3+)))
 
 (define-public r-oefpil
   (package

@@ -10517,16 +10517,16 @@ to manipulate the data in an efficient manner.")
 (define-public r-andrews
   (package
     (name "r-andrews")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "andrews" version))
        (sha256
-        (base32 "0ziww4gxnp3sprjsgvv7hi2sfysapbgdsim5jgmrw8g2fn82jwkg"))))
+        (base32 "18z8g1g5kx3cmgx4rc4rd35d557yl30xxmr2g2nkdd714w2asqra"))))
     (properties `((upstream-name . "andrews")))
     (build-system r-build-system)
-    (propagated-inputs (list r-primes))
+    (propagated-inputs (list r-gmp))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/sigbertklinke/andrews")
     (synopsis "Various Andrews Curves")
@@ -10935,13 +10935,13 @@ simulation of space-use from fitted step-selection functions.")
 (define-public r-amr
   (package
     (name "r-amr")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AMR" version))
        (sha256
-        (base32 "0iwwgb55saw1irk8ln1zl44cm30dnwvl6y5vqx9kxyr346gacbf4"))))
+        (base32 "0dgql8s7jzk3cmjnvn09rsymz1zwzk2983rvcccl5z00x9d7yg7k"))))
     (properties `((upstream-name . "AMR")))
     (build-system r-build-system)
     (native-inputs (list r-rmarkdown r-knitr))
@@ -15278,16 +15278,16 @@ extensions.")
 (define-public r-agricolae
   (package
     (name "r-agricolae")
-    (version "1.3-6")
+    (version "1.3-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "agricolae" version))
        (sha256
-        (base32 "0jnv4mii2r01prj08q75hbxss2y8v2acmkfc5dr3vl5bdmpinvy5"))))
+        (base32 "0zaanfhvlx7c0s9y550hqn9bsffbykchcd7940fxx69jw87fkbf5"))))
     (properties `((upstream-name . "agricolae")))
     (build-system r-build-system)
-    (propagated-inputs (list r-nlme r-mass r-klar r-cluster r-algdesign))
+    (propagated-inputs (list r-nlme r-mass r-cluster r-algdesign))
     (home-page "https://cran.r-project.org/package=agricolae")
     (synopsis "Statistical Procedures for Agricultural Research")
     (description

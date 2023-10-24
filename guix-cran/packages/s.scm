@@ -16527,17 +16527,17 @@ models can be found in next references Minguez, R., Lopez, F.A., and Mur, J.
 (define-public r-spsp
   (package
     (name "r-spsp")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SPSP" version))
        (sha256
-        (base32 "0bzlgjijwp5y6lk9hjqc2p8b1i6mp8jd7j7gsl47whc3lavr1nn8"))))
+        (base32 "0gf5cw2fnssl198ccpvnma4bcqi33whl6ihc1s9i2lw6xg4qvb33"))))
     (properties `((upstream-name . "SPSP")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-lars r-glmnet))
-    (home-page "https://github.com/XiaoruiZhu/SPSP")
+    (propagated-inputs (list r-rcpp r-ncvreg r-matrix r-lars r-glmnet))
+    (home-page "https://xiaorui.site/SPSP/")
     (synopsis "Selection by Partitioning the Solution Paths")
     (description
      "An implementation of the feature Selection procedure by Partitioning the entire
@@ -24041,13 +24041,13 @@ of the American Statistical Association 105(490): 713-726.")
 (define-public r-spant
   (package
     (name "r-spant")
-    (version "2.15.0")
+    (version "2.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spant" version))
        (sha256
-        (base32 "0xl807fgh33w2rx4ys9yyla1gmgavk503jfhp6naydrx5c8i920p"))))
+        (base32 "19n2mnvrd9p0kwgnhh7q2pz01xs22qx2zqw1k4l0gvagb8kjz9pi"))))
     (properties `((upstream-name . "spant")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -26320,13 +26320,13 @@ implementation of Ye, C., Yang, Y., and Yang, Y. (2017+).")
 (define-public r-sohpie
   (package
     (name "r-sohpie")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SOHPIE" version))
        (sha256
-        (base32 "0grwzl4nn5rcir2q13qdd30q4l670f6gz3lqj8qh41pjx9lfchvi"))))
+        (base32 "034q69zc6wfcxbaj8l095xcwjlh1iq0rgvsvd2czahxzls2nqsn7"))))
     (properties `((upstream-name . "SOHPIE")))
     (build-system r-build-system)
     (propagated-inputs (list r-robustbase r-gtools r-fdrtool r-dplyr))
@@ -32931,13 +32931,13 @@ improve feature extraction.  Benjamin B.Risk, Irina Gaynanova (2021)
 (define-public r-singlercapture
   (package
     (name "r-singlercapture")
-    (version "0.2.1")
+    (version "0.2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "singleRcapture" version))
        (sha256
-        (base32 "08i28ycf70m8klc3cnx6l3gnm58fx9sywrx7a91yz2zxmn2z84cz"))))
+        (base32 "184kvkjjhm3ak58yg0sdzkjnw0jzsm22pxlx3nq5a4jv6ckaxrix"))))
     (properties `((upstream-name . "singleRcapture")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich r-mathjaxr r-lamw r-foreach
@@ -41406,13 +41406,13 @@ illustrate function usage.")
 (define-public r-sharp
   (package
     (name "r-sharp")
-    (version "1.4.3")
+    (version "1.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sharp" version))
        (sha256
-        (base32 "045k8252wfms08gdg10rdaj22ycfv2hr8ccrk6wxrd1gs973qfl9"))))
+        (base32 "1472ax8aq5la2c4lga967r6c25jdhvs80q636r9p73iwyl0x36sz"))))
     (properties `((upstream-name . "sharp")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -41434,7 +41434,7 @@ illustrate function usage.")
 the reliability of the results.  In this package, hyper-parameters are
 calibrated by maximising model stability, which is measured under the null
 hypothesis that all selection (or co-membership) probabilities are identical (B
-Bodinier et al (2021) <@code{arXiv:2106.02521>}).  Functions are readily
+Bodinier et al (2023) <doi:10.1093/jrsssc/qlad058>).  Functions are readily
 implemented for the use of LASSO regression, sparse PCA, sparse (group) PLS or
 graphical LASSO in stability selection, and hierarchical clustering,
 partitioning around medoids, K means or Gaussian mixture models in consensus
@@ -41444,13 +41444,13 @@ clustering.")
 (define-public r-shar
   (package
     (name "r-shar")
-    (version "2.1")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shar" version))
        (sha256
-        (base32 "10y7zkllxyahkxix5w2ijz9c3h7w79kx2pmhi57nmpxhmp338pzf"))))
+        (base32 "08bzx1vd86i5nl97i3rqdh0m62xr5zs2j6zvc4pqxg1b9ms1kklk"))))
     (properties `((upstream-name . "shar")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -42056,16 +42056,17 @@ own student growth percentiles (SGP) analyses.")
 (define-public r-sgp
   (package
     (name "r-sgp")
-    (version "2.0-0.0")
+    (version "2.1-0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SGP" version))
        (sha256
-        (base32 "0hkpn5pab9yfvly80fa8dlsz8xk32xrn3f2k1d29l2zfx3hdl9sg"))))
+        (base32 "1msz3ccgmmwwla70gwwichgzjhzym942wa6hw0imr5cgkm4hk0kq"))))
     (properties `((upstream-name . "SGP")))
     (build-system r-build-system)
     (propagated-inputs (list r-toordinal
+                             r-svglite
                              r-sn
                              r-rsqlite
                              r-rngtools
@@ -42079,7 +42080,6 @@ own student growth percentiles (SGP) analyses.")
                              r-gridbase
                              r-foreach
                              r-equate
-                             r-dorng
                              r-doparallel
                              r-digest
                              r-data-table
@@ -47466,17 +47466,16 @@ primary data export the package works with is a standard non-rectangular export.
 (define-public r-secsse
   (package
     (name "r-secsse")
-    (version "2.6.0")
+    (version "3.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "secsse" version))
        (sha256
-        (base32 "1q4aqhjw4yzm0qiysh0nn7vc8bqllgaij4xjikfy2smpxzi6lwc8"))))
+        (base32 "08rb3s40jj7jyi7294ba7pm9qgycdpk1lp18krh464jbr0iim62h"))))
     (properties `((upstream-name . "secsse")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
-                             r-stringr
                              r-rlang
                              r-rcppparallel
                              r-rcpp
@@ -47486,7 +47485,7 @@ primary data export the package works with is a standard non-rectangular export.
                              r-bh
                              r-ape))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/rsetienne/secsse")
+    (home-page "https://rsetienne.github.io/secsse/")
     (synopsis
      "Several Examined and Concealed States-Dependent Speciation and Extinction")
     (description
@@ -48239,6 +48238,48 @@ path with the L1, the elastic-net, and the adaptive elastic-net penalties.  More
 details about the methodology SDWD is seen on Wang and Zou (2016)
 (<doi:10.1080/10618600.2015.1049700>).")
     (license license:gpl2)))
+
+(define-public r-sdtmval
+  (package
+    (name "r-sdtmval")
+    (version "0.4.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sdtmval" version))
+       (sha256
+        (base32 "1alwjknkgbabmivn1wrrbd0wyrs0hxpvx47ibdn7zl7ksfbhlsld"))))
+    (properties `((upstream-name . "sdtmval")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-readxl
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-knitr
+                             r-haven
+                             r-glue
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/skgithub14/sdtmval")
+    (synopsis "Validate SDTM Domains")
+    (description
+     "This package provides a set of tools to assist statistical programmers in
+validating Study Data Tabulation Model (SDTM) domain data sets.  Statistical
+programmers are required to validate that a SDTM data set domain has been
+programmed correctly, per the SDTM Implementation Guide (SDTMIG) by CDISC
+(<https://www.cdisc.org/standards/foundational/sdtmig>), study specification,
+and study protocol using a process called double programming.  Double
+programming involves two different programmers independently converting the raw
+electronic data cut (EDC) data into a SDTM domain data table and comparing their
+results to ensure accurate standardization of the data.  One of these attempts
+is termed production and the other validation'.  Generally, production runs are
+the official programs for submittals and these are written in SAS'.  Validation
+runs can be programmed in another language, in this case R'.")
+    (license license:expat)))
 
 (define-public r-sdt
   (package
@@ -49776,13 +49817,13 @@ Zappia et al. (2017)
 (define-public r-scribe
   (package
     (name "r-scribe")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scribe" version))
        (sha256
-        (base32 "1xkzyfxgnh0725aya6v3jxc2sxhd2xlw9lzff7dif32ih2055vrl"))))
+        (base32 "02gwv7c107vaphkpr3giz2lqbaabk32fg6yf6zi0sirkp8dph93d"))))
     (properties `((upstream-name . "scribe")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -57118,13 +57159,13 @@ object and thus all methods of the biclust package can be applied.")
 (define-public r-s3fs
   (package
     (name "r-s3fs")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "s3fs" version))
        (sha256
-        (base32 "0ahadn252mnh3wvi510lrzglh20mln4dz50yszm4p221mb4b3kff"))))
+        (base32 "12y92npqk78gghi91ad4av57vf89pccrp04qw7p0dw96021wb8kw"))))
     (properties `((upstream-name . "s3fs")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6

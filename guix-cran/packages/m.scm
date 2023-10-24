@@ -2895,13 +2895,13 @@ ISBN:9783030813925), \"Multivariate Statistical Methods\".")
 (define-public r-multispatialccm
   (package
     (name "r-multispatialccm")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multispatialCCM" version))
        (sha256
-        (base32 "168shygdy2x7ww365hdb0f5pkq0b5w3gwcwpgnlzncj4jxd6pf4c"))))
+        (base32 "044spqh37yz4b40bx6h2dz8lzjz4jf505mgagxxg1bn1spxk9bi2"))))
     (properties `((upstream-name . "multispatialCCM")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=multispatialCCM")
@@ -4120,13 +4120,13 @@ python'.")
 (define-public r-multilevlca
   (package
     (name "r-multilevlca")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multilevLCA" version))
        (sha256
-        (base32 "1rb2prdgxyh4zxxffpgl96n508425r74hjl603pzqigwdyk2i40m"))))
+        (base32 "0isq02h0q5ggmsyv0fdrg2732s1f8vd2i8rhh6sbhqdwsin52bxm"))))
     (properties `((upstream-name . "multilevLCA")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -5152,16 +5152,17 @@ attenuate the results to the null or by a given amount?")
 (define-public r-multibias
   (package
     (name "r-multibias")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multibias" version))
        (sha256
-        (base32 "0zgjh37sakws8fyisc736ck1y49xpmh0yksr01hc4kmvp6k34jav"))))
+        (base32 "0cd9hyz1jgnylklgnwppmy7kla73mmn8qi0gxh67lr0l1pjnpnlk"))))
     (properties `((upstream-name . "multibias")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-magrittr r-dplyr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/pcbrendel/multibias")
     (synopsis "Simultaneous Multi-Bias Adjustment")
     (description
@@ -10261,13 +10262,13 @@ Move helps addressing movement ecology questions.")
 (define-public r-mousetrap
   (package
     (name "r-mousetrap")
-    (version "3.2.1")
+    (version "3.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mousetrap" version))
        (sha256
-        (base32 "12vlb5fhq9m2f3c073xzdqk98gdq7jk2rwj6kcckxx6x7wg20fyd"))))
+        (base32 "13qggxq650blx21bbdy3ljmsbmv32039zhims8nh3lk3pzxckf5p"))))
     (properties `((upstream-name . "mousetrap")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -10293,8 +10294,8 @@ a method that is becoming increasingly popular in the cognitive sciences.  The
 mousetrap package offers functions for importing, preprocessing, analyzing,
 aggregating, and visualizing mouse-tracking data.  An introduction into
 mouse-tracking analyses using mousetrap can be found in Wulff, Kieslich,
-Henninger, Haslbeck, & Schulte-Mecklenbeck (2021) <doi:10.31234/osf.io/v685r>
-(preprint: <https://psyarxiv.com/v685r>).")
+Henninger, Haslbeck, & Schulte-Mecklenbeck (2023) <doi:10.31234/osf.io/v685r>
+(preprint: <https://osf.io/preprints/psyarxiv/v685r>).")
     (license license:gpl3)))
 
 (define-public r-mousetrajectory
@@ -37738,16 +37739,16 @@ inspired by the \"comment\" window of <https://github.com/>.")
 (define-public r-mark
   (package
     (name "r-mark")
-    (version "0.6.1")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mark" version))
        (sha256
-        (base32 "1hhy2k2kmnh2nc5qvvqbbyn38c9bpvldcdgczdb0f3xipcnanji8"))))
+        (base32 "0zbzp4y7gh6bq20ymfpmfihxn0z8gl0xn5fcshikh59ikqrm0mff"))))
     (properties `((upstream-name . "mark")))
     (build-system r-build-system)
-    (propagated-inputs (list r-magrittr r-fuj))
+    (propagated-inputs (list r-rlang r-magrittr r-fuj r-fs r-cli))
     (home-page "https://github.com/jmbarbone/mark")
     (synopsis "Miscellaneous, Analytic R Kernels")
     (description

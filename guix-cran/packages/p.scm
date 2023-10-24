@@ -1909,13 +1909,13 @@ stops, routes, disruptions, departures, and more.")
 (define-public r-pttstability
   (package
     (name "r-pttstability")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pttstability" version))
        (sha256
-        (base32 "1k6la75f4195ld9dndzxc6v49381r56djmc7ir1wzwvhxjchp8pa"))))
+        (base32 "12a1pj8zrf6ir6szh51mlg6mlpqkqdb8p5656wg27lxf90nwvgj7"))))
     (properties `((upstream-name . "pttstability")))
     (build-system r-build-system)
     (propagated-inputs (list r-redm))
@@ -4104,6 +4104,45 @@ stratum, loess.psa that provides a graphic and loess based effect size estimate,
 and various balance functions that provide measures of the balance achieved via
 a PSA in a categorical covariate.")
     (license license:gpl2+)))
+
+(define-public r-psaboot
+  (package
+    (name "r-psaboot")
+    (version "1.3.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PSAboot" version))
+       (sha256
+        (base32 "1y0d5gglmzcnd0yvq33k1canjzhl62df9abgw1w08azm94arfh1q"))))
+    (properties `((upstream-name . "PSAboot")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-trimatch
+                             r-rpart
+                             r-reshape2
+                             r-psych
+                             r-psagraphics
+                             r-party
+                             r-modeltools
+                             r-matchit
+                             r-matching
+                             r-ggthemes
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jbryer/PSAboot")
+    (synopsis "Bootstrapping for Propensity Score Analysis")
+    (description
+     "It is often advantageous to test a hypothesis more than once in the context of
+propensity score analysis (Rosenbaum, 2012) <doi:10.1093/biomet/ass032>.  The
+functions in this package facilitate bootstrapping for propensity score analysis
+(PSA).  By default, bootstrapping using two classification tree methods (using
+rpart and ctree functions), two matching methods (using Matching and
+@code{MatchIt} packages), and stratification with logistic regression.  A
+framework is described for users to implement additional propensity score
+methods.  Visualizations are emphasized for diagnosing balance; exploring the
+correlation relationships between bootstrap samples and methods; and to
+summarize results.")
+    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-przewodnik
   (package
@@ -7980,13 +8019,13 @@ Westendorp 1976, isbn:9789283100386).")
 (define-public r-pricer
   (package
     (name "r-pricer")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "priceR" version))
        (sha256
-        (base32 "0snxh5njl50jix0qwlgg3pcj6n8vynskw9x0ri5kkwc3nvws6zgq"))))
+        (base32 "0yf7hgvbm8a0ks2c8wnim8b9kqk7dljnaahw7faq2lzn67751dqc"))))
     (properties `((upstream-name . "priceR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

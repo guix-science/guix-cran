@@ -3884,6 +3884,46 @@ prescriptions.  Based on Pye et al (2018) <doi:10.1002/pds.4440>.")
 Medical Outcomes Partnership (OMOP) common data model.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
+(define-public r-drugdemand
+  (package
+    (name "r-drugdemand")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "drugDemand" version))
+       (sha256
+        (base32 "0gipkxa07l569vw3h90k571ckabw1q5c2yyj621jr1svlzv1dr09"))))
+    (properties `((upstream-name . "drugDemand")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tictoc
+                             r-survival
+                             r-rlang
+                             r-rcpp
+                             r-purrr
+                             r-pscl
+                             r-plotly
+                             r-nlme
+                             r-mvtnorm
+                             r-icenreg
+                             r-foreach
+                             r-eventpred
+                             r-erify
+                             r-dplyr
+                             r-dorng
+                             r-doparallel))
+    (home-page "https://cran.r-project.org/package=drugDemand")
+    (synopsis "Drug Demand Forecasting")
+    (description
+     "This package performs drug demand forecasting by modeling drug dispensing data
+while taking into account predicted enrollment and treatment discontinuation
+dates.  The number of skipped visits and the number of dispensed doses are
+modeled using zero-inflated Poisson or zero-inflated negative binomial
+distributions (Zeileis, Kleiber & Jackman (2008) <doi:10.18637/jss.v027.i08>)
+and a linear mixed-effects model (@code{McCulloch} & Searle (2001,
+ISBN:0-471-19364-X)), respectively.")
+    (license license:gpl2+)))
+
 (define-public r-drquality
   (package
     (name "r-drquality")
@@ -16464,6 +16504,32 @@ different graphical interface.")
     (license (list license:gpl2
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-descriptiverepresentationcalculator
+  (package
+    (name "r-descriptiverepresentationcalculator")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DescriptiveRepresentationCalculator" version))
+       (sha256
+        (base32 "0p0n5zjaxhr0rba93ikaw30lrf8zgx35yfjimwlg2375ns0zpmr6"))))
+    (properties `((upstream-name . "DescriptiveRepresentationCalculator")))
+    (build-system r-build-system)
+    (home-page
+     "https://github.com/cjerzak/DescriptiveRepresentationCalculator-software/")
+    (synopsis
+     "Descriptive Representation Calculator: Characterizing Observed and Expected Representation")
+    (description
+     "This package provides a system for analyzing descriptive representation,
+especially for comparing the composition of a political body to the population
+it represents.  Users can compute the expected degree of representation for a
+body under a random sampling model, the expected degree of representation
+variability, as well as representation scores from observed political bodies.
+The package is based on Gerring, Jerzak, and Oncel (2023)
+<doi:10.1017/S0003055423000680>.")
+    (license license:gpl3)))
+
 (define-public r-descriptio
   (package
     (name "r-descriptio")
@@ -25010,13 +25076,13 @@ extract the separate island colonists and store them.")
 (define-public r-daisie
   (package
     (name "r-daisie")
-    (version "4.4.0")
+    (version "4.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DAISIE" version))
        (sha256
-        (base32 "0f9b361l591b5454lmzbhihv1wmk9rwbb90csax4xwrg9yq26i3v"))))
+        (base32 "0f1ym3k49m2wdilsg7vwsb7m4ccdg87pnaksmbqv9smcxn5v8rn2"))))
     (properties `((upstream-name . "DAISIE")))
     (build-system r-build-system)
     (propagated-inputs (list r-testit

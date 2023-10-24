@@ -13820,16 +13820,17 @@ and Liao (2017) <doi:10.1214/16-AOS1434>.")
 (define-public r-lavacreg
   (package
     (name "r-lavacreg")
-    (version "0.1-2")
+    (version "0.2-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lavacreg" version))
        (sha256
-        (base32 "15108y1bxlimcc57c4655wgll23s9dk8zj3j2sqg7rnn3i9kbjc6"))))
+        (base32 "0wxf1kyga1xx9f3cys3gl9h50fivwjp44jdr4n93wmpnm9rcaljf"))))
     (properties `((upstream-name . "lavacreg")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sparsegrid r-rcpp r-pracma r-fastghquad))
+    (propagated-inputs (list r-sparsegrid r-rcpparmadillo r-rcpp r-pracma
+                             r-fastghquad))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/chkiefer/lavacreg")
     (synopsis "Latent Variable Count Regression Models")

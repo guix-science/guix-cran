@@ -2264,16 +2264,16 @@ causality for pairs of phenotypes in system genetics.  Genetics 193 : 1003-1013.
 (define-public r-qtlemm
   (package
     (name "r-qtlemm")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "QTLEMM" version))
        (sha256
-        (base32 "0priafgrmi8li98nbpzc1zj2cd38apn0fhcbm2k7qx6sn17rrvir"))))
+        (base32 "1d95zdqsdman9qb24p48safhdj9np9x6fzispgkv1igldb7302jc"))))
     (properties `((upstream-name . "QTLEMM")))
     (build-system r-build-system)
-    (propagated-inputs (list r-mvtnorm))
+    (propagated-inputs (list r-mvtnorm r-gtools))
     (home-page "https://github.com/py-chung/QTLEMM")
     (synopsis "QTL Mapping and Hotspots Detection")
     (description

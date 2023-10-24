@@ -295,13 +295,13 @@ academic year.")
 (define-public r-vvcanvas
   (package
     (name "r-vvcanvas")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vvcanvas" version))
        (sha256
-        (base32 "1f5xmgz08sx4a9mgc6id4y1jqnh5jf828vyd439gpbzr52b67dmm"))))
+        (base32 "1dm8d9zammsgl7rq07m0a2brrb2vxinyqpwcmvlpls2aphgsg077"))))
     (properties `((upstream-name . "vvcanvas")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -3423,13 +3423,13 @@ function evaluation, and simulation.")
 (define-public r-vinereg
   (package
     (name "r-vinereg")
-    (version "0.8.3")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vinereg" version))
        (sha256
-        (base32 "0d1ibrhjsbjaaz2cd9lg76cjplkys716i689khzaiv4sgbjhwdh1"))))
+        (base32 "11k20h2kldlpf880znkjw3afxg9sr5zl7ssll5agl0kxcxi82fwx"))))
     (properties `((upstream-name . "vinereg")))
     (build-system r-build-system)
     (propagated-inputs (list r-wdm

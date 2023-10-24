@@ -1143,13 +1143,13 @@ Wei Xu (2019) <doi:10.1177/0962280219859037>.")
 (define-public r-xlcutter
   (package
     (name "r-xlcutter")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xlcutter" version))
        (sha256
-        (base32 "0c1d8v7ald8ngq0jglr38bk04r2hs5w0kn57r69isvv2washbaw2"))))
+        (base32 "07gjsz8jab5f2c1v7rcfv9pva8hikdl94nzvixvg6v0a7sq7qa6h"))))
     (properties `((upstream-name . "xlcutter")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyxl))

@@ -1806,13 +1806,13 @@ to build expressions in a chain-like fashion.")
 (define-public r-rveg
   (package
     (name "r-rveg")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rveg" version))
        (sha256
-        (base32 "1sr208v2i46nk8qqk1cwa47bq9pv76hkzvc010498ahl4m7w01mx"))))
+        (base32 "0r4q5iyfi9f95kzmhjgy1jdiv85wr16m5yhgq9zz36sjs4miif2m"))))
     (properties `((upstream-name . "Rveg")))
     (build-system r-build-system)
     (propagated-inputs (list r-dplyr))
@@ -10475,16 +10475,16 @@ geographic extent.")
 (define-public r-rpaex
   (package
     (name "r-rpaex")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rPAex" version))
        (sha256
-        (base32 "04fxiryv463dilaz4hcvv9a3jxib4zmai80pi27xv2ndch64qk54"))))
+        (base32 "08r3j1m4dcmxdzsxjalbvi7nvca91ma0v06vy2pki6pp8f91pbdg"))))
     (properties `((upstream-name . "rPAex")))
     (build-system r-build-system)
-    (propagated-inputs (list r-raster r-agricolae))
+    (propagated-inputs (list r-terra r-agricolae))
     (home-page "https://cran.r-project.org/package=rPAex")
     (synopsis
      "Automatic Detection of Experimental Unit in Precision Agriculture")
@@ -16141,13 +16141,13 @@ to the @code{NetLogo} Mathematica Link
 (define-public r-rnetcdf
   (package
     (name "r-rnetcdf")
-    (version "2.7-1")
+    (version "2.8-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RNetCDF" version))
        (sha256
-        (base32 "02vdfpf4wnflchyrqlq91ipk2nnqzy16fl0ldxy80xwhh9r62ql0"))))
+        (base32 "0gjilz2nzwzb8izzcfl6sq5i2nf9gvsn9np4bla5ja17gv5lh0b6"))))
     (properties `((upstream-name . "RNetCDF")))
     (build-system r-build-system)
     (inputs (list udunits netcdf))
@@ -18441,13 +18441,13 @@ properties of all detected events and exceedances.")
 (define-public r-rmargint
   (package
     (name "r-rmargint")
-    (version "2.0.2")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rmargint" version))
        (sha256
-        (base32 "0irq5114dd8pngl6k13r2rrsivijiqfldm6mby0q5a9wrj2vmwc9"))))
+        (base32 "1z76wz067jnd8zg343gkmn4ac4zyzxyafpndkhdrrh5h33y2whjs"))))
     (properties `((upstream-name . "rmargint")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=rmargint")
@@ -19040,6 +19040,45 @@ used when displaying large datasets in that context.")
 jobs, share updates with their network, and create group discussions.  For more
 information about using the API please visit <https://developer.linkedin.com/>.")
     (license license:gpl2)))
+
+(define-public r-rlibkdv
+  (package
+    (name "r-rlibkdv")
+    (version "1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Rlibkdv" version))
+       (sha256
+        (base32 "1lcmnc50bfnrnw03bs3lsxdsj2n3qylfw51w6kvnz9x1qmr9p54p"))))
+    (properties `((upstream-name . "Rlibkdv")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sf r-rcpp r-raster r-magrittr r-leaflet))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/bojianzhu/Rlibkdv")
+    (synopsis
+     "Versatile Kernel Density Visualization Library for Geospatial Analytics (Heatmap)")
+    (description
+     "Unlock the power of large-scale geospatial analysis, quickly generate
+high-resolution kernel density visualizations, supporting advanced analysis
+tasks such as bandwidth-tuning and spatiotemporal analysis.  Regardless of the
+size of your dataset, our library delivers efficient and accurate results.  Tsz
+Nam Chan, Leong Hou U, Byron Choi, Jianliang Xu, Reynold Cheng (2023)
+<doi:10.1145/3555041.3589401>.  Tsz Nam Chan, Rui Zang, Pak Lon Ip, Leong Hou U,
+Jianliang Xu (2023) <doi:10.1145/3555041.3589711>.  Tsz Nam Chan, Leong Hou U,
+Byron Choi, Jianliang Xu (2022) <doi:10.1145/3514221.3517823>.  Tsz Nam Chan,
+Pak Lon Ip, Kaiyan Zhao, Leong Hou U, Byron Choi, Jianliang Xu (2022)
+<doi:10.14778/3554821.3554855>.  Tsz Nam Chan, Pak Lon Ip, Leong Hou U, Byron
+Choi, Jianliang Xu (2022) <doi:10.14778/3503585.3503591>.  Tsz Nam Chan, Pak Lon
+Ip, Leong Hou U, Byron Choi, Jianliang Xu (2022) <doi:10.14778/3494124.3494135>.
+ Tsz Nam Chan, Pak Lon Ip, Leong Hou U, Weng Hou Tong, Shivansh Mittal, Ye Li,
+Reynold Cheng (2021) <doi:10.14778/3476311.3476312>.  Tsz Nam Chan, Zhe Li,
+Leong Hou U, Jianliang Xu, Reynold Cheng (2021) <doi:10.14778/3461535.3461540>.
+Tsz Nam Chan, Reynold Cheng, Man Lung Yiu (2020) <doi:10.1145/3318464.3380561>.
+Tsz Nam Chan, Leong Hou U, Reynold Cheng, Man Lung Yiu, Shivansh Mittal (2020)
+<doi:10.1109/TKDE.2020.3018376>.  Tsz Nam Chan, Man Lung Yiu, Leong Hou U (2019)
+<doi:10.1109/ICDE.2019.00055>.")
+    (license license:expat)))
 
 (define-public r-rlibeemd
   (package
@@ -24589,13 +24628,13 @@ in: <http://forsys.sefs.uw.edu/fusion/fusionlatest.html>).")
 (define-public r-rfssa
   (package
     (name "r-rfssa")
-    (version "3.0.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rfssa" version))
        (sha256
-        (base32 "0iysbxrzbafs5vmc42ajki17ypx92zmvpna1igdl4lnxjh6mrbwj"))))
+        (base32 "0nxn0lq28vl0bnr1cmbr3pgivmxs0a23wh2bg4z2knvzw00lg2nn"))))
     (properties `((upstream-name . "Rfssa")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -28649,39 +28688,6 @@ sweeping changes were introduced which greatly improve functionality and
 usability but break backwards compatibility.")
     (license license:gpl3)))
 
-(define-public r-renderthis
-  (package
-    (name "r-renderthis")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "renderthis" version))
-       (sha256
-        (base32 "1hvqwq2w30j29pwjm498mza9zxg8ga5bizm795hmdbz1k30m4j3p"))))
-    (properties `((upstream-name . "renderthis")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zip
-                             r-xaringan
-                             r-withr
-                             r-rmarkdown
-                             r-quarto
-                             r-progress
-                             r-pagedown
-                             r-magick
-                             r-jsonlite
-                             r-fs
-                             r-digest
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://jhelvy.github.io/renderthis/")
-    (synopsis "Render Slides to Different Formats")
-    (description
-     "Render slides to different formats, including html', pdf', png', gif', pptx',
-and mp4', as well as a social output, a png of the first slide re-sized for
-sharing on social media.")
-    (license license:expat)))
-
 (define-public r-rena
   (package
     (name "r-rena")
@@ -31153,13 +31159,13 @@ of several Microsoft(r) products.  Forked from R@code{ColorBrewer} v1.1-2.")
 (define-public r-redm
   (package
     (name "r-redm")
-    (version "1.14.3")
+    (version "1.15.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rEDM" version))
        (sha256
-        (base32 "1cfimbixmijqfrw0sjh3f7hj12rzp2079ircchi5bnlbjpkgsrls"))))
+        (base32 "1mbnawfqlinj5djkgr1hmaas0qjiiywxx15p4qlw7wxk36kjf4lf"))))
     (properties `((upstream-name . "rEDM")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppthread r-rcpp))
@@ -34395,6 +34401,35 @@ at the 	cutoff in Sharp, Fuzzy and Kink RD settings, rdbwselect() to perform
 bandwidth selection for the different procedures implemented, and rdplot() to
 conduct exploratory data analysis (RD plots).")
     (license license:gpl2)))
+
+(define-public r-rdracor
+  (package
+    (name "r-rdracor")
+    (version "0.7.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rdracor" version))
+       (sha256
+        (base32 "1zjd5w2kmpqbnm4j4w72r8bdy3hnvbvvckv3azdjsarbhnpqyfvw"))))
+    (properties `((upstream-name . "rdracor")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rdpack
+                             r-purrr
+                             r-jsonlite
+                             r-igraph
+                             r-httr
+                             r-data-table))
+    (home-page "https://github.com/dracor-org/rdracor")
+    (synopsis "Access to the 'DraCor' API")
+    (description
+     "Provide an interface for Drama Corpora Project ('@code{DraCor}') API:
+<https://dracor.org/documentation/api>.")
+    (license license:gpl3+)))
 
 (define-public r-rdpower
   (package
@@ -47072,13 +47107,13 @@ mitigation goals.")
 (define-public r-r2dii-match
   (package
     (name "r-r2dii-match")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r2dii.match" version))
        (sha256
-        (base32 "19k6g7pa7jdsbpclkvppj3m08vji79jnijywzplwy01c84by5gf8"))))
+        (base32 "1nb0yik39wdcc22c0clszg9j3xk5sm5i9rzzcyj7zij55pcak7np"))))
     (properties `((upstream-name . "r2dii.match")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -47138,13 +47173,13 @@ development and use of PACTA in R.")
 (define-public r-r2dii-analysis
   (package
     (name "r-r2dii-analysis")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r2dii.analysis" version))
        (sha256
-        (base32 "0408r5vlq5kgd0b653sywi62rkfw1sg3m4via072c5bdr207bj8d"))))
+        (base32 "11bhhwigybrcr8nbrdwbv6a9rk944la5apnn5y3ahvr457jqdjsv"))))
     (properties `((upstream-name . "r2dii.analysis")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

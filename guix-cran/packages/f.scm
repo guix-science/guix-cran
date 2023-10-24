@@ -2358,13 +2358,13 @@ models.  There are now six vignettes containing detailed examples.")
 (define-public r-fuj
   (package
     (name "r-fuj")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fuj" version))
        (sha256
-        (base32 "14bmk915xv50h51rmyq5y9gixaw4a1nzc08264c95jl0lvbnx28q"))))
+        (base32 "1mw4cl6w2nl8f5sfxbvzhbzz2di6msfrdiz8vylqq12z4gzr6l11"))))
     (properties `((upstream-name . "fuj")))
     (build-system r-build-system)
     (home-page "https://jmbarbone.github.io/fuj/")
@@ -8233,13 +8233,13 @@ al. (2014) <doi:10.1016/j.neuroimage.2014.03.028>).")
 (define-public r-fmriscrub
   (package
     (name "r-fmriscrub")
-    (version "0.13.0")
+    (version "0.14.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fMRIscrub" version))
        (sha256
-        (base32 "1vmnk9i7wk66q28zp0sxn13vz7n40vm1p3h0pdi7vi1amzaksac9"))))
+        (base32 "039aiwigsp1gxyrqnpqxf9qhmlq4vzh40ca55hc1dpjas541w4wi"))))
     (properties `((upstream-name . "fMRIscrub")))
     (build-system r-build-system)
     (propagated-inputs (list r-robustbase
