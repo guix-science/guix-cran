@@ -1286,6 +1286,31 @@ pre-post transitions.  For details of the latent class model, see
 <http://gsood.com/research/papers/guess.pdf>.")
     (license license:expat)))
 
+(define-public r-guerry
+  (package
+    (name "r-guerry")
+    (version "1.8.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Guerry" version))
+       (sha256
+        (base32 "01crjdgq7srn8a22a8cm4cbkxd4b0m7pm4fy5r5839ljy2k4dfs7"))))
+    (properties `((upstream-name . "Guerry")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sp))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/friendly/Guerry")
+    (synopsis
+     "Maps, Data and Methods Related to Guerry (1833) \"Moral Statistics of France\"")
+    (description
+     "Maps of France in 1830, multivariate datasets from A.-M. Guerry and others, and
+statistical and graphic methods related to Guerry's \"Moral Statistics of
+France\".  The goal is to facilitate the exploration and development of
+statistical and graphic methods for multivariate data in a geospatial context of
+historical interest.")
+    (license (list license:gpl2+ license:gpl3+))))
+
 (define-public r-guardianapi
   (package
     (name "r-guardianapi")
@@ -3347,13 +3372,13 @@ growth curves) at isolated time points.")
 (define-public r-growthpheno
   (package
     (name "r-growthpheno")
-    (version "2.1.21")
+    (version "2.1.23")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "growthPheno" version))
        (sha256
-        (base32 "01xsmkl9hywxz1ykghys7i6451iwq78n6pjbjsh505lqnzg5prv5"))))
+        (base32 "12am1q374ckkz0cp31473i0zqjp7z78bywjb191hwaksrv8cpp5c"))))
     (properties `((upstream-name . "growthPheno")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi
@@ -7617,13 +7642,13 @@ Griffing, B. (1956) <https://www.publish.csiro.au/bi/pdf/BI9560463>.")
 (define-public r-gpboost
   (package
     (name "r-gpboost")
-    (version "1.2.5")
+    (version "1.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gpboost" version))
        (sha256
-        (base32 "025vx2ws8zw4mndq7sz1wgsk9yh39gk5d3nn9a9v3bb1qjzi5m9q"))))
+        (base32 "0gvccvm2xw011n1yvvqirwl6a0szb8j891yq71yr27r9bjwf1lhy"))))
     (properties `((upstream-name . "gpboost")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjsonio r-r6 r-matrix r-data-table))
@@ -24508,6 +24533,32 @@ ecology and conservation science studies, allowing processing of both point and
 raster data.  Future versions will integrate species threat datasets developed
 by the authors.")
     (license license:gpl2)))
+
+(define-public r-gec
+  (package
+    (name "r-gec")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GEC" version))
+       (sha256
+        (base32 "1kcczyih3lg1cc6nppxbpz1zkq9priy8xwapd6kvkzmyw8npback"))))
+    (properties `((upstream-name . "GEC")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mistr))
+    (home-page "https://cran.r-project.org/package=GEC")
+    (synopsis "Generalized Exponentiated Composite Distributions")
+    (description
+     "This package contains the framework of the estimation, sampling, and hypotheses
+testing for two special distributions (Exponentiated Exponential-Pareto and
+Exponentiated Inverse Gamma-Pareto) within the family of Generalized
+Exponentiated Composite distributions.  The detailed explanation and the
+applications of these two distributions were introduced in Bowen Liu, Malwane
+M.A. Ananda (2022) <doi:10.1080/03610926.2022.2050399>, Bowen Liu, Malwane M.A.
+Ananda (2022) <doi:10.3390/math10111895>, and Bowen Liu, Malwane M.A. Ananda
+(2022) <doi:10.3390/app13010645>.")
+    (license license:gpl3)))
 
 (define-public r-gear
   (package

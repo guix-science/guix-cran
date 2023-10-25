@@ -16896,39 +16896,6 @@ part of the RECON (<https://www.repidemicsconsortium.org/>) toolkit for outbreak
 analysis (<https://www.reconverse.org/).")
     (license license:expat)))
 
-(define-public r-i2dash
-  (package
-    (name "r-i2dash")
-    (version "0.2.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "i2dash" version))
-       (sha256
-        (base32 "0silwp4pasry7z1yjhzyw06xpa8021v9bkhinc73i7dzr720ld5v"))))
-    (properties `((upstream-name . "i2dash")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-ymlthis
-                             r-xfun
-                             r-stringr
-                             r-stringi
-                             r-rmarkdown
-                             r-magrittr
-                             r-knitr
-                             r-htmltools
-                             r-glue
-                             r-flexdashboard
-                             r-assertive-types
-                             r-assertive-sets))
-    (native-inputs (list r-knitr))
-    (home-page "https://loosolab.github.io/i2dash/")
-    (synopsis "Iterative and Interactive Dashboards")
-    (description
-     "Create customized, web-based dashboards for data presentation, exploration and
-sharing.  i2dash integrates easily into existing data analysis pipelines and can
-organize scientific findings thematically across different pages and layouts.")
-    (license license:expat)))
-
 (define-public r-i18n
   (package
     (name "r-i18n")

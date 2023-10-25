@@ -1045,33 +1045,6 @@ hyperbolic space.  This uses the strain-minimizing hyperbolic embedding of
 Keller-Ressel and Nargang (2019), see <@code{arXiv:1903.08977>}.")
     (license license:gpl2)))
 
-(define-public r-hydflood
-  (package
-    (name "r-hydflood")
-    (version "0.5.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "hydflood" version))
-       (sha256
-        (base32 "1g74gxarn3f8q0pnwwz802jrryry0w72py7agckaqwzwybfsklsc"))))
-    (properties `((upstream-name . "hydflood")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-terra r-sf r-rdpack r-raster))
-    (native-inputs (list r-knitr))
-    (home-page "https://hydflood.bafg.de")
-    (synopsis "Flood Extents and Durations along the Rivers Elbe and Rhine")
-    (description
-     "Raster based flood modelling internally using hyd1d', an R package to
-interpolate 1d water level and gauging data.  The package computes flood extent
-and durations through strategies originally developed for INFORM', an
-@code{ArcGIS'-based} hydro-ecological modelling framework.  It does not provide
-a full, physical hydraulic modelling algorithm, but a simplified, near real time
-GIS approach for flood extent and duration modelling.  Computationally demanding
-annual flood durations have been computed already and data products were
-published by Weber (2022) <doi:10.1594/PANGAEA.948042>.")
-    (license license:gpl2)))
-
 (define-public r-hybridts
   (package
     (name "r-hybridts")
@@ -4554,13 +4527,13 @@ experiments.")
 (define-public r-hmmtmb
   (package
     (name "r-hmmtmb")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hmmTMB" version))
        (sha256
-        (base32 "0iy0n4hy33a4lj62xz953a80lg1pkghw32x0mk5bx8fb7z8hq4n8"))))
+        (base32 "1vrjkq5vv70wjvg588w2q7sd8qhnp4iz3swx8yc3x8w7zpwkf0hn"))))
     (properties `((upstream-name . "hmmTMB")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmbstan
@@ -8276,24 +8249,22 @@ space when there are more than a few response variables.")
 (define-public r-hemispher
   (package
     (name "r-hemispher")
-    (version "0.2.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hemispheR" version))
        (sha256
-        (base32 "1cmh166jzq6vflirvwf4mvy76x3j8x9q6r1h1p6jbkm0b2hck7ci"))))
+        (base32 "1rf1w3hnb26vw7imzr4w71agicwrp1cpn3r9knypvrilq8g49xj1"))))
     (properties `((upstream-name . "hemispheR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
-                             r-sp
+                             r-terra
+                             r-sf
                              r-scales
-                             r-rlang
-                             r-raster
-                             r-plotrix
-                             r-magrittr
                              r-jpeg
                              r-dplyr
+                             r-dismo
                              r-autothresholdr))
     (home-page "https://cran.r-project.org/package=hemispheR")
     (synopsis "Processing Hemispherical Canopy Images")
@@ -11756,13 +11727,13 @@ for both read and write.")
 (define-public r-handcoder
   (package
     (name "r-handcoder")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "handcodeR" version))
        (sha256
-        (base32 "1q9pdlkjsl2p15c3k2hhnksbc45sh4clm4zvfjs7yca6d37q1vjh"))))
+        (base32 "1icr2474y2q2jnax7ps9lmh13hkrpq4z2yacffc1scm2cpg18y6a"))))
     (properties `((upstream-name . "handcodeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinywidgets r-shiny))

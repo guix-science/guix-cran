@@ -7281,13 +7281,13 @@ Send and retrieve files from @code{SauceLabs} and manage tunnels associated with
 (define-public r-rsatscan
   (package
     (name "r-rsatscan")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rsatscan" version))
        (sha256
-        (base32 "19jizazyba32cdz5n65mmr7k4wgv04hxz92z0lrmkqarjci863m9"))))
+        (base32 "14q568xyigjsq8g98y393ln7m45bnrf3sy201mi7432wzxjl6ia8"))))
     (properties `((upstream-name . "rsatscan")))
     (build-system r-build-system)
     (propagated-inputs (list r-foreign))
@@ -8626,13 +8626,13 @@ reasoning and checking.")
 (define-public r-rquefts
   (package
     (name "r-rquefts")
-    (version "1.2-1")
+    (version "1.2-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rquefts" version))
        (sha256
-        (base32 "1v548wys8fd6xqz4hfvqkckl6szjf6zr383n1x0kc6f2pfrc6jnf"))))
+        (base32 "14p9g0bqkaslr3164a58crhj024xphp9ig24mvs2ad8vxvf1gsf0"))))
     (properties `((upstream-name . "Rquefts")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-meteor))
@@ -12750,13 +12750,13 @@ rogue detection (Smith 2022) <doi:10.1093/sysbio/syab099>, and an interface to
 (define-public r-roger
   (package
     (name "r-roger")
-    (version "1.5-0")
+    (version "1.5-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "roger" version))
        (sha256
-        (base32 "1b19wkxiw447w16239ssxv52xlxi923mhy5fnwh0v11v2nqnp9ni"))))
+        (base32 "1k00xbc0iprcfjx6lgg5y910y76is8f984mcp4g6711zi16ljf5j"))))
     (properties `((upstream-name . "roger")))
     (build-system r-build-system)
     (inputs (list))
@@ -20377,13 +20377,13 @@ BA (2015). \"Open-channel computation with R.\" The R Journal, 7(2), 249â26
 (define-public r-rivnet
   (package
     (name "r-rivnet")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rivnet" version))
        (sha256
-        (base32 "020167ssaw7a5fsf1snydrf1n0cr2ivqspjywzv8xc14mlhvrb8c"))))
+        (base32 "1sq7a8h4qa8gkqx0giyj1bw8zpcrsidlvprcjwyklzr2p0diim5b"))))
     (properties `((upstream-name . "rivnet")))
     (build-system r-build-system)
     (propagated-inputs (list r-traudem
@@ -20406,7 +20406,8 @@ externally provided or downloaded from open source repositories (thus
 interfacing with the elevatr package).  Extraction is performed via the D8 flow
 direction algorithm of @code{TauDEM} (Terrain Analysis Using Digital Elevation
 Models), thus interfacing with the traudem package.  Resulting river networks
-are compatible with functions from the OCNet package.")
+are compatible with functions from the OCNet package.  See Carraro (2023)
+<doi:10.5194/hess-27-3733-2023> for a presentation of the package.")
     (license license:expat)))
 
 (define-public r-rivivc
@@ -31041,13 +31042,13 @@ prior on a vector of spatial random effects.")
 (define-public r-reemtree
   (package
     (name "r-reemtree")
-    (version "0.90.4")
+    (version "0.90.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "REEMtree" version))
        (sha256
-        (base32 "11m9k6xli3gqw2f9vwa9abpwsnxawi675zmi916yq2shws49m8xn"))))
+        (base32 "1iapqwhis2vz19c3mivmwpj0nlgzb8fm3j2w060ypydwzmar0qmj"))))
     (properties `((upstream-name . "REEMtree")))
     (build-system r-build-system)
     (propagated-inputs (list r-rpart r-nlme))
@@ -34347,33 +34348,6 @@ used for astronomical data analyses; see the details in the manual.  Also see Hu
 and Tak (2020) <@code{arXiv:2005.08049>}.")
     (license license:gpl2)))
 
-(define-public r-rdrop2
-  (package
-    (name "r-rdrop2")
-    (version "0.8.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rdrop2" version))
-       (sha256
-        (base32 "02rhcq1vn349ddjkqamxb0wjb3z3m4wzkvin1mprcz4fzrjxgbdr"))))
-    (properties `((upstream-name . "rdrop2")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-purrr
-                             r-magrittr
-                             r-jsonlite
-                             r-httr
-                             r-dplyr
-                             r-digest
-                             r-assertive))
-    (home-page "https://cran.r-project.org/package=rdrop2")
-    (synopsis "Programmatic Interface to the 'Dropbox' API")
-    (description
-     "This package provides full programmatic access to the Dropbox file hosting
-platform <https://dropbox.com>, including support for all standard file
-operations.")
-    (license license:expat)))
-
 (define-public r-rdrobust
   (package
     (name "r-rdrobust")
@@ -37377,13 +37351,13 @@ be substituted.")
 (define-public r-rcompendium
   (package
     (name "r-rcompendium")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rcompendium" version))
        (sha256
-        (base32 "1fjdm26x01qla660mprs2pi8slbhvmw9m2smhprg66lxvs44g71l"))))
+        (base32 "1ka0lzkvl9qipnjwk75n904ksfd1bg9bps2d4046fpbhw3wz7sa5"))))
     (properties `((upstream-name . "rcompendium")))
     (build-system r-build-system)
     (propagated-inputs (list r-xfun
@@ -37397,7 +37371,8 @@ be substituted.")
                              r-gert
                              r-devtools
                              r-crayon
-                             r-clisymbols))
+                             r-clisymbols
+                             r-cffr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/FRBCesab/rcompendium")
     (synopsis "Create a Package or Research Compendium Structure")
@@ -38092,13 +38067,13 @@ menu items for functions we use in our introductory courses.")
 (define-public r-rcmdrplugin-ezr
   (package
     (name "r-rcmdrplugin-ezr")
-    (version "1.61")
+    (version "1.62")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcmdrPlugin.EZR" version))
        (sha256
-        (base32 "1d97lans5w14scfn4z0nxpgfdlmspbzq2c6vl02pf5z3rrqfnbrq"))))
+        (base32 "0pv8k7ml8agw5qampms8dm4wfbl8daq9kkzqpzbqgv3k0l1xizfp"))))
     (properties `((upstream-name . "RcmdrPlugin.EZR")))
     (build-system r-build-system)
     (propagated-inputs (list r-readstata13 r-rcmdr))
@@ -38115,7 +38090,7 @@ Ohmsha, ISBN: 978-4-274-22632-8), but an report that introduced the
 investigation of EZR was published in Bone Marrow Transplantation (Nature
 Publishing Group) as an Open article.  This report can be used as a simple
 manual.  It can be freely downloaded from the journal website as shown below.
-This report has been cited in more than 3,000 scientific articles.")
+This report has been cited in approximately 10,000 scientific articles.")
     (license license:gpl2+)))
 
 (define-public r-rcmdrplugin-export

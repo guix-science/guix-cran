@@ -635,16 +635,16 @@ available in @code{GarcÃ­a-Callejas}, D., Godoy, O., and Bartomeus, I. (2020)
 (define-public r-cxhull
   (package
     (name "r-cxhull")
-    (version "0.7.3")
+    (version "0.7.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cxhull" version))
        (sha256
-        (base32 "0k68da3sa3bn17aj525m0axk9yqzi6i966z6h95d727phg865rld"))))
+        (base32 "0jxr1fz7cyarcq50jkkc2f3f1zwmbljpdpl56hfcilb43z2rkzkj"))))
     (properties `((upstream-name . "cxhull")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rvcg r-rgl r-morpho r-data-table))
+    (propagated-inputs (list r-rvcg r-rgl r-data-table))
     (home-page "https://github.com/stla/cxhull")
     (synopsis "Convex Hull")
     (description
@@ -2404,13 +2404,13 @@ function as well as at <https://kartikeyab.shinyapps.io/CTShiny/>.")
 (define-public r-ctsfeatures
   (package
     (name "r-ctsfeatures")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ctsfeatures" version))
        (sha256
-        (base32 "0jplrnbgvrc1650qasp8r5r319fdwrl24p2607yl0k45xjn82rq6"))))
+        (base32 "0ws1s5qssk2kgr2n6da6ix49s3p068spl4c6x8pfdqkhfbanz5z8"))))
     (properties `((upstream-name . "ctsfeatures")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-latex2exp r-ggplot2 r-bolstad2 r-astsa))
@@ -2935,6 +2935,29 @@ text means the data is human readable and familiar to programmers, unlike
 specialized binary formats.  CTF is faster than row oriented formats like CSV
 when loading a subset of the columns in a table.  This package provides
 functions to read and write CTF data from R.")
+    (license license:expat)))
+
+(define-public r-ctd
+  (package
+    (name "r-ctd")
+    (version "1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CTD" version))
+       (sha256
+        (base32 "1zigym3cy5p3wgw2b2rji72qgy4fmpcscc9281x5m5qndsl5gyy5"))))
+    (properties `((upstream-name . "CTD")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-igraph))
+    (home-page "https://cran.r-project.org/package=CTD")
+    (synopsis "Method for 'Connecting The Dots' in Weighted Graphs")
+    (description
+     "This package provides a method for pattern discovery in weighted graphs as
+outlined in Thistlethwaite et al. (2021) <doi:10.1371/journal.pcbi.1008550>.
+Two use cases are achieved: 1) Given a weighted graph and a subset of its nodes,
+do the nodes show significant connectedness? 2) Given a weighted graph and two
+subsets of its nodes, are the subsets close neighbors or distant?")
     (license license:expat)))
 
 (define-public r-ctbi
@@ -3985,6 +4008,44 @@ regression model.")
 public health surveillance data.  The primary analysis method is based upon a
 published analytics strategy by Benedetti (2019) <doi:10.5588/pha.19.0002>.")
     (license license:expat)))
+
+(define-public r-csa
+  (package
+    (name "r-csa")
+    (version "0.7.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "csa" version))
+       (sha256
+        (base32 "1mjvyl1l80xxyj1nafjgl6jhclyahybi47zxcrkpb78ldiwsf1hl"))))
+    (properties `((upstream-name . "csa")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scales
+                             r-reshape2
+                             r-raster
+                             r-moments
+                             r-lmoments
+                             r-ggpubr
+                             r-ggplot2
+                             r-foreach
+                             r-doparallel
+                             r-data-table))
+    (home-page "https://github.com/imarkonis/csa")
+    (synopsis
+     "Cross-Scale Analysis Tool for Model-Observation Visualization and Integration")
+    (description
+     "Integration of Earth system data from various sources is a challenging task.
+Except for their qualitative heterogeneity, different data records exist for
+describing similar Earth system process at different spatio-temporal scales.
+Data inter-comparison and validation are usually performed at a single spatial
+or temporal scale, which could hamper the identification of potential
+discrepancies in other scales.  csa package offers a simple, yet efficient,
+graphical method for synthesizing and comparing observed and modelled data
+across a range of spatio-temporal scales.  Instead of focusing at specific
+scales, such as annual means or original grid resolution, we examine how their
+statistical properties change across spatio-temporal continuum.")
+    (license license:gpl2)))
 
 (define-public r-cryst
   (package
@@ -6832,13 +6893,13 @@ instruments in R.")
 (define-public r-crabs
   (package
     (name "r-crabs")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CRABS" version))
        (sha256
-        (base32 "0vvywgxhik9bw3bk5yjq9rhfkwmjb67wz4yh61kp8zdijwv6mb6d"))))
+        (base32 "062nxmidji9qcp1v5hdh1806r99hkxqq5d9cay7xwby0h5qzl75x"))))
     (properties `((upstream-name . "CRABS")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -12736,13 +12797,13 @@ coordinated users along with related information.")
 (define-public r-coordinatecleaner
   (package
     (name "r-coordinatecleaner")
-    (version "3.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CoordinateCleaner" version))
        (sha256
-        (base32 "1jxcg1afmczrs88aj5lv5igypr8nlz9flf3b65lxqzk5p0wfgxfq"))))
+        (base32 "0bs1vr145ab42i7x0jcsin6sfaxy05ly2i4qcrlvyvz303ynj0rf"))))
     (properties `((upstream-name . "CoordinateCleaner")))
     (build-system r-build-system)
     (inputs (list gdal))
@@ -18910,6 +18971,33 @@ discrete-time stochastic processes.  They provide model-based smoothing,
 gradient-matching, generalized profiling and forwards prediction error methods.")
     (license license:gpl2+)))
 
+(define-public r-collinear
+  (package
+    (name "r-collinear")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "collinear" version))
+       (sha256
+        (base32 "0v3n59v2p9lfph21f18wdnrs2w1i1d3f8sqbxvfvifcmp0gkfk43"))))
+    (properties `((upstream-name . "collinear")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-dplyr))
+    (home-page "https://blasbenito.github.io/collinear/")
+    (synopsis
+     "Seamless Multicollinearity Management for Categorical and Numeric Variables")
+    (description
+     "System for seamless management of multicollinearity in data frames with numeric
+and/or categorical variables for statistical analysis and machine learning
+modeling.  The package combines bivariate correlation (Pearson, Spearman, and
+Cramer's V) with variance inflation factor analysis, target encoding to
+transform categorical variables into numeric (Micci-Barreca, D. 2001
+<DOI:10.1145/507533.507538>), and a flexible feature prioritization method, to
+deliver a comprehensive multicollinearity management tool covering a wide range
+of use cases.")
+    (license license:gpl3+)))
+
 (define-public r-collin
   (package
     (name "r-collin")
@@ -21203,13 +21291,13 @@ smoothing irregularly sampled signals, see Hamilton et al (2018)
 (define-public r-cnid
   (package
     (name "r-cnid")
-    (version "1.3")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CNID" version))
        (sha256
-        (base32 "1apqfaym4kd38k1dadn94hb7gchqxycdl12k1v4k4pcgw7jdqrpb"))))
+        (base32 "0lg3lw34jcgpnp311wqpq75vb0985c1x8mvb5x3hcirsy6vlq8v8"))))
     (properties `((upstream-name . "CNID")))
     (build-system r-build-system)
     (home-page "https://gitlab.com/chuxinyuan/cnid")
@@ -28400,6 +28488,32 @@ the ratio between the largest and the smallest weights after resampling.")
 some positive but many zero responses (see Follmann, Fay, and Proschan
 <DOI:10.1111/j.1541-0420.2008.01131.x>).")
     (license license:gpl3)))
+
+(define-public r-choosepc
+  (package
+    (name "r-choosepc")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "choosepc" version))
+       (sha256
+        (base32 "0a8xvgpgaxxlb102ix5j98zd8wvi1xzs0cg7im8g2ly1h0mv1rxy"))))
+    (properties `((upstream-name . "choosepc")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rfast2))
+    (home-page "https://cran.r-project.org/package=choosepc")
+    (synopsis
+     "Choose the Number of Principal Components via Recistruction Error")
+    (description
+     "One way to choose the number of principal components is via the reconstruction
+error.  This package is designed mainly for this purpose.  Graphical
+representation is also supported, plus some other principal component analysis
+related functions.  References include: Jolliffe I.T. (2002).  Principal
+Component Analysis. <doi:10.1007/b98835> and Mardia K.V., Kent J.T. and Bibby
+J.M. (1979).  Multivariate Analysis.  ISBN: 978-0124712522.  London: Academic
+Press.")
+    (license license:gpl2+)))
 
 (define-public r-cholwishart
   (package

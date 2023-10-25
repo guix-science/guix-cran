@@ -3532,39 +3532,6 @@ breakpoints.  In addition, it provides a graphical illustration of the result.")
 multiple phenotypes (separately or in joint model).")
     (license license:gpl2)))
 
-(define-public r-multipanelfigure
-  (package
-    (name "r-multipanelfigure")
-    (version "2.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "multipanelfigure" version))
-       (sha256
-        (base32 "0cm5bd7k0fx6d3gybcll6vvh14byanyk6dj4civqij7psa48iagc"))))
-    (properties `((upstream-name . "multipanelfigure")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringi
-                             r-magrittr
-                             r-magick
-                             r-gtable
-                             r-gridgraphics
-                             r-ggplot2
-                             r-assertive-types
-                             r-assertive-properties
-                             r-assertive-numbers
-                             r-assertive-files
-                             r-assertive-base))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=multipanelfigure")
-    (synopsis "Infrastructure to Assemble Multi-Panel Figures (from Grobs)")
-    (description
-     "This package provides tools to create a layout for figures made of multiple
-panels, and to fill the panels with base, lattice', ggplot2 and
-@code{ComplexHeatmap} plots, grobs, as well as content from all image formats
-supported by @code{ImageMagick} (accessed through magick').")
-    (license license:gpl3+)))
-
 (define-public r-multiord
   (package
     (name "r-multiord")
@@ -4342,31 +4309,6 @@ et al., 2002 <doi:10.1007/978-1-4615-0851-9_4>) and Minimum spanning tree (Hill,
 fixed-base and chained indexes, and their growth rates, can also be derived
 using the Paasche, Laspeyres, Fisher and Tornqvist formulas.")
     (license license:gpl3)))
-
-(define-public r-multilateral
-  (package
-    (name "r-multilateral")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "multilateral" version))
-       (sha256
-        (base32 "13zp2357vqaj09m6af8gzjgf74983icikbnn11z18r8c3wb5kngy"))))
-    (properties `((upstream-name . "multilateral")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-yaml r-matrixmodels r-fastmatch r-data-table
-                             r-assertive))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/MjStansfi/multilateral")
-    (synopsis
-     "Generalised Function to Calculate a Variety of Multilateral Price Index Methods")
-    (description
-     "This package provides a flexible, efficient implementation of multilateral price
-index calculations.  Includes common methods focused on time product dummy
-regression and GEKS variations.  Allows for extension of the methods through
-automatic window splicing.  See Krsinich (2016) <doi: 10.1515/jos-2016-0021>.")
-    (license license:gpl3+)))
 
 (define-public r-multikink
   (package
@@ -5879,37 +5821,6 @@ cubic spline or generalized additive models with exogenous covariates.  This
 algorithm is specially tailored for climate data with missing measurements from
 several monitors along a given region.")
     (license license:gpl2+)))
-
-(define-public r-mtscr
-  (package
-    (name "r-mtscr")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mtscr" version))
-       (sha256
-        (base32 "17iy815kbz3d9mgscalijc4y0nlywqg5wdq62i3amci1jyirddkm"))))
-    (properties `((upstream-name . "mtscr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble
-                             r-stringr
-                             r-rlang
-                             r-readr
-                             r-purrr
-                             r-lifecycle
-                             r-glue
-                             r-glmmtmb
-                             r-dplyr
-                             r-cli
-                             r-broom-mixed))
-    (home-page "https://cran.r-project.org/package=mtscr")
-    (synopsis "Multidimensional Top Scoring for Creativity Research")
-    (description
-     "Implementation of Multidimensional Top Scoring method for creativity assessment
-proposed in Boris Forthmann, Maciej Karwowski, Roger E. Beaty (2023)
-<doi:10.1037/aca0000571>.")
-    (license license:expat)))
 
 (define-public r-mts
   (package
@@ -16603,13 +16514,13 @@ for a wide range of data sets.")
 (define-public r-mlr3spatiotempcv
   (package
     (name "r-mlr3spatiotempcv")
-    (version "2.1.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3spatiotempcv" version))
        (sha256
-        (base32 "1dk8n0jw5461ngnv3iazm3dhnlsj53ymn19lnh346mwyk7g5vr06"))))
+        (base32 "0iv8jj96csnkd4ghk1qivmkqjz0f72qlkvikqp4qv0z703962km5"))))
     (properties `((upstream-name . "mlr3spatiotempcv")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6
@@ -20430,13 +20341,13 @@ Duveau, T. Rebafka (2022) <@code{arXiv:2202.07963>}.")
 (define-public r-misssbm
   (package
     (name "r-misssbm")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "missSBM" version))
        (sha256
-        (base32 "16krbmi085zxrwliwz9r6x5hmkaf9w9ds384y50dnapi91232diw"))))
+        (base32 "1gw485bn7mddj5i555clp3saxas77r9r4970ahf1y3vpk43wjj02"))))
     (properties `((upstream-name . "missSBM")))
     (build-system r-build-system)
     (propagated-inputs (list r-sbm
@@ -34016,39 +33927,6 @@ developed for logic expressions resulting from a logic regression analysis, i.e.
 implicants are typically composed of a maximum of 4 or 5 literals.")
     (license license:lgpl2.0+)))
 
-(define-public r-mcbette
-  (package
-    (name "r-mcbette")
-    (version "1.15.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mcbette" version))
-       (sha256
-        (base32 "1ckbz9i3zmm8r4y7cx0n9d2jqzx8lmf497ywqmx8bq3mprqxnb5p"))))
-    (properties `((upstream-name . "mcbette")))
-    (build-system r-build-system)
-    (inputs (list))
-    (propagated-inputs (list r-txtplot
-                             r-testit
-                             r-rmpfr
-                             r-mauricer
-                             r-devtools
-                             r-curl
-                             r-beautier
-                             r-beastier
-                             r-babette))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ropensci/mcbette/")
-    (synopsis "Model Comparison Using 'babette'")
-    (description
-     "BEAST2 (<https://www.beast2.org>) is a widely used Bayesian phylogenetic tool,
-that uses DNA/RNA/protein data and many model priors to create a posterior of
-jointly estimated phylogenies and parameters.  mcbette allows to do a Bayesian
-model comparison over some site and clock models, using babette
-(<https://github.com/ropensci/babette/>).")
-    (license license:gpl3)))
-
 (define-public r-mcbackscattering
   (package
     (name "r-mcbackscattering")
@@ -34833,13 +34711,13 @@ to fit the distribution to empirical data.  See, e.g., Bernegger (1997)
 (define-public r-mbanalysis
   (package
     (name "r-mbanalysis")
-    (version "0.1.0")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MBAnalysis" version))
        (sha256
-        (base32 "1hgx6lgyjbiq6y5cw720mnavll6mfrarwvhsm7pbr25q1d37jmg8"))))
+        (base32 "1b1s7s1qa82y8054f3mdpq7s13lk7dks900li5k0gr7sqfqdg1fz"))))
     (properties `((upstream-name . "MBAnalysis")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggrepel r-ggplot2))
@@ -34847,14 +34725,8 @@ to fit the distribution to empirical data.  See, e.g., Bernegger (1997)
     (synopsis "Multiblock Exploratory and Predictive Data Analysis")
     (description
      "Exploratory and predictive methods for the analysis of several blocks of
-variables measured on the same individuals.  The methods included are:
-Multiblock Principal Components Analysis (MB-PCA), Common Dimensions analysis
-(@code{ComDim}), Multiblock Partial Least Squares (MB-PLS) regression and
-Multiblock Weighted Covariate analysis (MB-WCov).  E. Tchandao Mangamana, V.
-Cariou, E. Vigneau, R. @code{GlÃ¨lÃ¨} @code{KakaÃ¯}, E.M. Qannari (2019)
-<doi:10.1016/j.chemolab.2019.103856>; E. Tchandao Mangamana, R. @code{GlÃ¨lÃ¨}
-@code{KakaÃ¯}, E.M. Qannari (2021) <doi:10.1016/j.chemolab.2021.104388>.")
-    (license license:gpl3)))
+variables measured on the same individuals.")
+    (license license:gpl3+)))
 
 (define-public r-mba
   (package
@@ -35519,32 +35391,6 @@ inverse regression of kernel version).  Methods for selecting the best dimension
 are also included.  Xia (2002) <doi:10.1111/1467-9868.03411>; Xia (2007)
 <doi:10.1214/009053607000000352>; Wang (2008) <doi:10.1198/016214508000000418>.")
     (license license:gpl2+)))
-
-(define-public r-mauricer
-  (package
-    (name "r-mauricer")
-    (version "2.5.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mauricer" version))
-       (sha256
-        (base32 "1zd68dzbbcck0y7bk6dw3yp6v9rh824cp3f0vza6y7lav40q1p2v"))))
-    (properties `((upstream-name . "mauricer")))
-    (build-system r-build-system)
-    (inputs (list))
-    (propagated-inputs (list r-stringr r-beastier))
-    (native-inputs (list r-knitr))
-    (home-page
-     "https://docs.ropensci.org/mauricer/https://github.com/ropensci/mauricer/")
-    (synopsis "Work with 'BEAST2' Packages")
-    (description
-     "BEAST2 (<https://www.beast2.org>) is a widely used Bayesian phylogenetic tool,
-that uses DNA/RNA/protein data and many model priors to create a posterior of
-jointly estimated phylogenies and parameters.  BEAST2 is commonly accompanied by
-BEAUti 2 (<https://www.beast2.org>), which, among others, allows one to install
-BEAST2 package.  This package allows to work with BEAST2 packages from R'.")
-    (license license:gpl3)))
 
 (define-public r-mau
   (package
@@ -38097,13 +37943,13 @@ developed in C++'.")
 (define-public r-maraca
   (package
     (name "r-maraca")
-    (version "0.5.1")
+    (version "0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maraca" version))
        (sha256
-        (base32 "0ibbv36nhm37w5l1jvghkkcc662w9wfpfvz6nydlwrkdqiwk4g54"))))
+        (base32 "1x3v3rm2gmshnrvqs29qgay41j56qwzzbxrjflybb0l6n4a8ys6h"))))
     (properties `((upstream-name . "maraca")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-hce r-ggplot2 r-dplyr r-checkmate))

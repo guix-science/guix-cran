@@ -6384,13 +6384,13 @@ seismic data, and generate reports of the processing history.")
 (define-public r-esdm
   (package
     (name "r-esdm")
-    (version "0.3.7")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eSDM" version))
        (sha256
-        (base32 "0rv5hhjsdkq0837822d52xfvfbj9qx1kjmqj8wyny335gv631205"))))
+        (base32 "1416pd8z9nydsh7x3w9fm66dn2d0r9r6apri6hgg4fjjil9w07np"))))
     (properties `((upstream-name . "eSDM")))
     (build-system r-build-system)
     (propagated-inputs (list r-units
@@ -12333,13 +12333,13 @@ in both of unsupervised and semi-supervised learning.")
 (define-public r-embryogrowth
   (package
     (name "r-embryogrowth")
-    (version "8.7")
+    (version "9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "embryogrowth" version))
        (sha256
-        (base32 "1fayl1wxpw9903psrjichrbf6rx38d7shnsjpxdwljw67g6pr5g7"))))
+        (base32 "0c7ggpa2i9j17zzknx9h5w6sibk5pdy81484gl6sb5s88wmn16qm"))))
     (properties `((upstream-name . "embryogrowth")))
     (build-system r-build-system)
     (propagated-inputs (list r-optimx r-numderiv r-helpersmg r-desolve))
@@ -16183,13 +16183,13 @@ dependencies can be visualized with using the igraph package.")
 (define-public r-edith
   (package
     (name "r-edith")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eDITH" version))
        (sha256
-        (base32 "04xq7s46qf4gmrj0gza021ra5yqdx9mjncp8p0qrbnalwj6xqm3y"))))
+        (base32 "1kyhph768agzxii40p2fhknivhppy1cfclljid49vf3aphicj1v1"))))
     (properties `((upstream-name . "eDITH")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -20009,22 +20009,24 @@ extended structural equation modeling package, @code{OpenMx}'.")
 (define-public r-easylabel
   (package
     (name "r-easylabel")
-    (version "0.2.4")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "easylabel" version))
        (sha256
-        (base32 "1pqdaymcrqjdqj0fhb1q7i1i8p7r7iwzcn08mcq5wlwr52kcpvfy"))))
+        (base32 "1r5s1nrydz2r07d4my6j00g01yy8cfvhzpxniscjy9kw1qs85yfw"))))
     (properties `((upstream-name . "easylabel")))
     (build-system r-build-system)
     (propagated-inputs (list r-splus2r
                              r-shinycssloaders
                              r-shinybusy
                              r-shiny
+                             r-rlang
                              r-rcolorbrewer
                              r-plotly
                              r-gtools
+                             r-ggplot2
                              r-dt))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=easylabel")

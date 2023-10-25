@@ -1689,13 +1689,13 @@ on the package itself go to <https://www.quandl.com/tools/r>.")
 (define-public r-qualypso
   (package
     (name "r-qualypso")
-    (version "2.2")
+    (version "2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "QUALYPSO" version))
        (sha256
-        (base32 "1836gl90021m47vs7ckb5s9sg1xzrdnwbrha8acrnwjsp17iyydv"))))
+        (base32 "1nbkbc5lcglrpp4k3jphdzqr9xl5kgdv6sg05ibdcwidn6bk3y5l"))))
     (properties `((upstream-name . "QUALYPSO")))
     (build-system r-build-system)
     (propagated-inputs (list r-rfast r-mass r-expm))

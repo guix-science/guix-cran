@@ -5242,35 +5242,6 @@ The underlying mathematical structure is the Free Abelian group, hence the name.
  To cite in publications please use Hankin (2023) <arxiv:2307:13184>.")
     (license license:gpl2+)))
 
-(define-public r-fqar
-  (package
-    (name "r-fqar")
-    (version "0.4.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fqar" version))
-       (sha256
-        (base32 "18llpbdjwscnbx9n94nc5x42mr3vsbf35s3br7w30s8mf48c3s3y"))))
-    (properties `((upstream-name . "fqar")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-rlang
-                             r-memoise
-                             r-jsonlite
-                             r-httr
-                             r-ggplot2
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/equitable-equations/fqar/")
-    (synopsis "Floristic Quality Assessment Tools for R")
-    (description
-     "This package provides tools for downloading and analyzing floristic quality
-assessment data.  See Freyman et al. (2015) <doi:10.1111/2041-210X.12491> for
-more information about floristic quality assessment and the associated database.")
-    (license license:expat)))
-
 (define-public r-fqadata
   (package
     (name "r-fqadata")
@@ -9444,48 +9415,6 @@ and, in some cases, ignored nuisance variables.  See Hemerik, Goeman and Finos
 as point estimation, confidence intervals or hypothesis testing, on any kind of
 data, be it univariate, multivariate, or more complex such as network-valued
 data, topological data, functional data or density-valued data.")
-    (license license:gpl3+)))
-
-(define-public r-flippant
-  (package
-    (name "r-flippant")
-    (version "1.5.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "flippant" version))
-       (sha256
-        (base32 "1d1rrmnhbbixkwscw2gqk6pm8jvvgikyrd4hzrpif4qd5xj833dj"))))
-    (properties `((upstream-name . "flippant")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-withr
-                             r-stringi
-                             r-pracma
-                             r-plyr
-                             r-minpack-lm
-                             r-magrittr
-                             r-ggplot2
-                             r-data-table
-                             r-assertive-types
-                             r-assertive-strings
-                             r-assertive-properties
-                             r-assertive-numbers
-                             r-assertive-files
-                             r-assertive-base))
-    (home-page "https://cran.r-project.org/package=flippant")
-    (synopsis "Dithionite Scramblase Assay Analysis")
-    (description
-     "The lipid scrambling activity of protein extracts and purified scramblases is
-often determined using a fluorescence-based assay involving many manual steps.
-flippant offers an integrated solution for the analysis and publication-grade
-graphical presentation of dithionite scramblase assays, as well as a platform
-for review, dissemination and extension of the strategies it employs.  The
-package's name derives from a play on the fact that lipid scrambling is also
-sometimes referred to as flipping'.  The package is originally published as
-Cotton, R.J., Ploier, B., Goren, M.A., Menon, A.K., and Graumann, J. (2017).
-flippantâAn R package for the automated analysis of fluorescence-based
-scramblase assays.  BMC Bioinformatics 18, 146. <DOI:
-10.1186/s12859-017-1542-y>.")
     (license license:gpl3+)))
 
 (define-public r-flipdownwidgets

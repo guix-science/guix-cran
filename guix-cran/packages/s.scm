@@ -4088,13 +4088,13 @@ Rao and Wu (1988) <doi:10.1080/01621459.1988.10478591>.")
 (define-public r-survex
   (package
     (name "r-survex")
-    (version "1.1.3")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "survex" version))
        (sha256
-        (base32 "1rjq4y1l2f3lyqv6zk4szylnxrpb559p1fq5kycicxv91vvq4f37"))))
+        (base32 "09kksjpfikw96njblplgqn33lhfvbpqzsid35cs3wmxhi2xv5fbf"))))
     (properties `((upstream-name . "survex")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -10775,13 +10775,13 @@ Includes tools for isochrones construction and tracks interpolation.")
 (define-public r-stelfi
   (package
     (name "r-stelfi")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stelfi" version))
        (sha256
-        (base32 "0fj9zg7jgfrripqagyj6ylhzz8vrsiagh3qrq596jr2z58ap54xa"))))
+        (base32 "06sj1az5803xh1ikkawdrp0c8yc1kh8iqky6vazxr516hc3b0f9w"))))
     (properties `((upstream-name . "stelfi")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb
@@ -14902,20 +14902,20 @@ concentrations and proportions are produced by parametric bootstrapping.")
 (define-public r-ssdm
   (package
     (name "r-ssdm")
-    (version "0.2.8")
+    (version "0.2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SSDM" version))
        (sha256
-        (base32 "19l78dkjk76ababkd7xsfn0fy99khfa4i502q4vllpvch4cjz51c"))))
+        (base32 "03w1rkzpkhhz251pcy57fmyq0jdf4cplv3ns0h7j76fs2v9pfn3x"))))
     (properties `((upstream-name . "SSDM")))
     (build-system r-build-system)
     (propagated-inputs (list r-spthin
-                             r-sp
-                             r-shinyfiles
                              r-shinydashboard
                              r-shiny
+                             r-sf
+                             r-sdm
                              r-scales
                              r-rpart
                              r-reshape2
@@ -14924,10 +14924,16 @@ concentrations and proportions are produced by parametric bootstrapping.")
                              r-poibin
                              r-nnet
                              r-mgcv
+                             r-magrittr
+                             r-leaflet
+                             r-itertools
+                             r-iterators
                              r-ggplot2
                              r-gbm
+                             r-foreach
                              r-earth
                              r-e1071
+                             r-doparallel
                              r-dismo))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/sylvainschmitt/SSDM")
@@ -38046,13 +38052,13 @@ within a R script and returns all valid arguments of a selected function.")
 (define-public r-shoredate
   (package
     (name "r-shoredate")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shoredate" version))
        (sha256
-        (base32 "0kivbaka0zwhh6i1lyz3xq20g3ay0ppq77qmsn8pfqnxxdax29cs"))))
+        (base32 "1zhfaj2wqpmi3ar71czbss32k00sqv1inj6rvj9kqhzshsi0w3zv"))))
     (properties `((upstream-name . "shoredate")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -42564,34 +42570,6 @@ Houpt, Blaha, @code{McIntire}, Havig, and Townsend (2013)
 Factorial Technology along with examples using the sft R package.")
     (license license:gpl2+)))
 
-(define-public r-sfsi
-  (package
-    (name "r-sfsi")
-    (version "1.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SFSI" version))
-       (sha256
-        (base32 "0mfi0x4abivg0l398m58qzg5hrsscf36d3l7aq3zfghrf20qzd76"))))
-    (properties `((upstream-name . "SFSI")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-float))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=SFSI")
-    (synopsis "Sparse Family and Selection Index")
-    (description
-     "Here we provide tools for the estimation of coefficients in penalized
-regressions when the (co)variance matrix of predictors and the covariance vector
-between predictors and response, are provided.  These methods are extended to
-the context of a Selection Index (commonly used for breeding value prediction).
-The approaches offer opportunities such as the integration of high-throughput
-traits in genetic evaluations ('Lopez-Cruz et al., 2020')
-<doi:10.1038/s41598-020-65011-2> and solutions for training set optimization in
-Genomic Prediction ('Lopez-Cruz & de los Campos, 2021')
-<doi:10.1093/genetics/iyab030>.")
-    (license license:gpl3)))
-
 (define-public r-sfs
   (package
     (name "r-sfs")
@@ -44187,6 +44165,32 @@ double separability for variance-covariance structures, two procedures.
 References: Dutilleul P. (1999) <doi:10.1080/00949659908811970>, Manceur AM,
 Dutilleul P. (2013) <doi:10.1016/j.cam.2012.09.017>, and Manceur AM, Dutilleul
 P. (2013) <doi:10.1016/j.spl.2012.10.020>.")
+    (license license:expat)))
+
+(define-public r-sepals
+  (package
+    (name "r-sepals")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SEPaLS" version))
+       (sha256
+        (base32 "13bdrbx08whjw0i0dir6nvb1brfa6rrdhpr0b9qlr3bixafhak03"))))
+    (properties `((upstream-name . "SEPaLS")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=SEPaLS")
+    (synopsis "Shrinkage for Extreme Partial Least-Squares (SEPaLS)")
+    (description
+     "Regression context for the Partial Least Squares framework for Extreme values.
+Estimations of the Shrinkage for Extreme Partial Least-Squares (SE@code{PaLS})
+estimators, an adaptation of the original Partial Least Squares (PLS) method
+tailored to the extreme-value framework.  The SE@code{PaLS} project is a joint
+work by Stephane Girard, Hadrien Lorenzo and Julyan Arbel.  R code to replicate
+the results of the paper is available at
+<https://github.com/hlorenzo/SE@code{PaLS_simus>}.  Extremes within PLS was
+already studied by one of the authors, see M Bousebeta, G Enjolras, S Girard
+(2023) <doi:10.1016/j.jmva.2022.105101>.")
     (license license:expat)))
 
 (define-public r-seofm
@@ -47213,6 +47217,50 @@ Garcia-Huidobro (1982) <doi:10.1093/jxb/33.2.288>.  Allows to fit models to
 grouped datasets, i.e.  datasets containing multiple species, seedlots or
 experiments.")
     (license license:gpl3)))
+
+(define-public r-seedmatchr
+  (package
+    (name "r-seedmatchr")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SeedMatchR" version))
+       (sha256
+        (base32 "138chb0z1gyhvl56g3a7zf4nash1v3v5l3qfxiqai2kxvladmz9y"))))
+    (properties `((upstream-name . "SeedMatchR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-testit
+                             r-stringr
+                             r-msa
+                             r-lifecycle
+                             r-ggplot2
+                             r-genomicfeatures
+                             r-genomeinfodb
+                             r-dplyr
+                             r-cowplot
+                             r-biostrings
+                             r-annotationhub))
+    (native-inputs (list r-knitr))
+    (home-page "https://tacazares.github.io/SeedMatchR/")
+    (synopsis "Find Matches to Canonical SiRNA Seeds in Genomic Features")
+    (description
+     "On-target gene knockdown using @code{siRNA} ideally results from binding fully
+complementary regions in @code{mRNA} transcripts to induce cleavage.  Off-target
+@code{siRNA} gene knockdown can occur through several modes, one being a
+seed-mediated mechanism mimicking @code{miRNA} gene regulation.  Seed-mediated
+off-target effects occur when the ~8 nucleotides at the 5â end of the guide
+strand, called a seed region, bind the 3â untranslated regions of @code{mRNA},
+causing reduced translation.  Experiments using @code{siRNA} knockdown paired
+with RNA-seq can be used to detect @code{siRNA} sequences with potential
+off-target effects driven by the seed region. @code{SeedMatchR} provides tools
+for exploring and detecting potential seed-mediated off-target effects of
+@code{siRNA} in RNA-seq experiments. @code{SeedMatchR} is designed to extend
+current differential expression analysis tools, such as DESeq2', by annotating
+results with predicted seed matches.  Using publicly available data, we
+demonstrate the ability of @code{SeedMatchR} to detect cumulative changes in
+differential gene expression attributed to @code{siRNA} seed regions.")
+    (license license:expat)))
 
 (define-public r-seededlda
   (package

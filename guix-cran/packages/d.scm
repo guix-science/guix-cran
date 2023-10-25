@@ -8350,13 +8350,13 @@ as given in Barnett, W. A. (1980) (<DOI:10.1016/0304-4076(80)90070-6>).")
 (define-public r-dm
   (package
     (name "r-dm")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dm" version))
        (sha256
-        (base32 "0d6b2ckwp7097x7fjb8337s287fm10c6mmslkvdxph4iirz04vpd"))))
+        (base32 "00vp5nvlcnmmyahljdbk1g0l3dblx7a73g1fiv6m005bsd4nxc7z"))))
     (properties `((upstream-name . "dm")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -8365,14 +8365,11 @@ as given in Barnett, W. A. (1980) (<DOI:10.1016/0304-4076(80)90070-6>).")
                              r-tibble
                              r-rlang
                              r-purrr
-                             r-pillar
                              r-memoise
-                             r-magrittr
                              r-lifecycle
                              r-igraph
                              r-glue
                              r-dplyr
-                             r-dbi
                              r-cli
                              r-backports))
     (native-inputs (list r-knitr esbuild))
@@ -23991,6 +23988,41 @@ data.  Decide whether violations of these expectations should throw an error or
 a warning.  This package is useful for validating data within R processes which
 pull from dynamic data sources such as databases and web APIs to provide an
 extra layer of validation around input and output data.")
+    (license license:expat)))
+
+(define-public r-databraryr
+  (package
+    (name "r-databraryr")
+    (version "0.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "databraryr" version))
+       (sha256
+        (base32 "0zcvvydhywyzf6sldl5p60jixp73b7q7fqziz7l4c10f8cz07w1k"))))
+    (properties `((upstream-name . "databraryr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rvest
+                             r-purrr
+                             r-plyr
+                             r-magick
+                             r-lifecycle
+                             r-keyring
+                             r-jsonlite
+                             r-httr
+                             r-getpass
+                             r-dplyr
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/databrary/databraryr")
+    (synopsis "Interact with the 'Databrary.org' API")
+    (description
+     "Databrary.org is a restricted access repository for research data, especially
+video and audio.  This package provides commands to interact with the data
+stored on Databrary.org'.")
     (license license:expat)))
 
 (define-public r-databionicswarm

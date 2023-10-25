@@ -1909,13 +1909,13 @@ stops, routes, disruptions, departures, and more.")
 (define-public r-pttstability
   (package
     (name "r-pttstability")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pttstability" version))
        (sha256
-        (base32 "12a1pj8zrf6ir6szh51mlg6mlpqkqdb8p5656wg27lxf90nwvgj7"))))
+        (base32 "1wx8j5pap6nr4h1a3dprvl9dm81kl0k8yz1lmnb43bd6irm3m0mi"))))
     (properties `((upstream-name . "pttstability")))
     (build-system r-build-system)
     (propagated-inputs (list r-redm))
@@ -15710,39 +15710,6 @@ Poisson distribution.  The details of the method are explained in Amatya et al.
 (2015) <DOI:10.1080/00949655.2014.953534>.")
     (license (list license:gpl2 license:gpl3))))
 
-(define-public r-poio
-  (package
-    (name "r-poio")
-    (version "0.0-4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "poio" version))
-       (sha256
-        (base32 "12d47hn9rsx2n0fl107dpswfklnh8nkm0kspcxf7yfljayvxr474"))))
-    (properties `((upstream-name . "poio")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-whoami
-                             r-tibble
-                             r-stringi
-                             r-r6
-                             r-purrr
-                             r-magrittr
-                             r-dplyr
-                             r-digest
-                             r-devtools
-                             r-assertive-types
-                             r-assertive-strings
-                             r-assertive-sets
-                             r-assertive-properties
-                             r-assertive-files
-                             r-assertive-base))
-    (home-page "https://github.com/RL10N/poio")
-    (synopsis
-     "Input/Output Functionality for \"PO\" and \"POT\" Message Translation Files")
-    (description "Read and write PO and POT files, for package translations.")
-    (license license:gpl3)))
-
 (define-public r-pointres
   (package
     (name "r-pointres")
@@ -20720,53 +20687,6 @@ strike-zone plots using the ggplot2 package.")
 by OECD (2020) <https://www.oecd.org/pisa/data/2018database/>.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
-(define-public r-pirouette
-  (package
-    (name "r-pirouette")
-    (version "1.6.9")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "pirouette" version))
-       (sha256
-        (base32 "1khcfic386pyhxxyzv3c28krc6rpy334cdk1adawx7c87pyvsp16"))))
-    (properties `((upstream-name . "pirouette")))
-    (build-system r-build-system)
-    (inputs (list))
-    (propagated-inputs (list r-xtable
-                             r-tracerer
-                             r-tidyr
-                             r-tibble
-                             r-tess
-                             r-stringr
-                             r-readr
-                             r-pryr
-                             r-plyr
-                             r-phytools
-                             r-phangorn
-                             r-nodesub
-                             r-mcbette
-                             r-mauricer
-                             r-magrittr
-                             r-forcats
-                             r-ddd
-                             r-beautier
-                             r-beastier
-                             r-babette
-                             r-ape))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/richelbilderbeek/pirouette/")
-    (synopsis "Create a Bayesian Posterior from a Phylogeny")
-    (description
-     "Theoretical biologists are interested in measuring the extent at which we can
-measure the truth.  This package allows to create a Bayesian posterior from a
-phylogeny that depicts the true evolutionary relationships.  The given and true
-phylogeny can than be compared to the posterior phylogenies. @code{RichÃ¨l} J.
-C. Bilderbeek, Giovanni Laudanno, Rampal S. Etienne (2020) \"Quantifying the
-impact of an inference model in Bayesian phylogenetics\"
-<doi:10.1111/2041-210X.13514>.")
-    (license license:gpl3)))
-
 (define-public r-pirf
   (package
     (name "r-pirf")
@@ -22633,13 +22553,13 @@ used for the final data analysis.")
 (define-public r-photobiologywavebands
   (package
     (name "r-photobiologywavebands")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "photobiologyWavebands" version))
        (sha256
-        (base32 "0ckfs0kc14478fab35ayilmmvq72ph5bpdhbbb1kmwv3lf40lnc8"))))
+        (base32 "0p4as2kpcjy0mc38pmjjlpngbf4568zn5rpz9rhrlc0ynarrgnzj"))))
     (properties `((upstream-name . "photobiologyWavebands")))
     (build-system r-build-system)
     (propagated-inputs (list r-photobiology))
@@ -22680,25 +22600,26 @@ P. J. (2015) <doi:10.19232/uv4pb.2015.1.14>.")
 (define-public r-photobiologysensors
   (package
     (name "r-photobiologysensors")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "photobiologySensors" version))
        (sha256
-        (base32 "122cfy6nsxngd8hnbq5frkgnzrb9fxw83l7mfwk0wy6gx7zsfx5s"))))
+        (base32 "0jc801c8fm5fdbs67nc8d5cga9c2cfdfrjh6i6qf60g7kxddsnsf"))))
     (properties `((upstream-name . "photobiologySensors")))
     (build-system r-build-system)
     (propagated-inputs (list r-photobiology))
     (native-inputs (list r-knitr))
     (home-page "https://www.r4photobiology.info")
-    (synopsis "Spectral Response Data for Light Sensors")
+    (synopsis "Response Data for Light Sensors")
     (description
      "Spectral response data for broadband ultraviolet and visible radiation sensors.
-Different data sources were used: author-supplied data from scientific research
-papers, sensor-manufacturer supplied data, and published sensor specifications.
-Part of the r4photobiology suite Aphalo P. J. (2015)
-<doi:10.19232/uv4pb.2015.1.14>.")
+Angular response data for broadband ultraviolet and visible radiation sensors
+and diffusers used as entrance optics.  Data obtained from multiple sources were
+used: author-supplied data from scientific research papers, sensor-manufacturer
+supplied data, and published sensor specifications.  Part of the r4photobiology
+suite Aphalo P. J. (2015) <doi:10.19232/uv4pb.2015.1.14>.")
     (license license:gpl2+)))
 
 (define-public r-photobiologyplants
@@ -22750,13 +22671,13 @@ as electronic components.  Part of the r4photobiology suite, Aphalo P. J. (2015)
 (define-public r-photobiologylamps
   (package
     (name "r-photobiologylamps")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "photobiologyLamps" version))
        (sha256
-        (base32 "0np62vs5ad0h9mdbcia22gxndy20nrs377hs2hd80f3pqqppbmxa"))))
+        (base32 "1sl6340zblq6j3djdygqydf9x0bh5jm0mir8j1jjw2snbppy6dfl"))))
     (properties `((upstream-name . "photobiologyLamps")))
     (build-system r-build-system)
     (propagated-inputs (list r-photobiology))
@@ -26283,26 +26204,6 @@ Guttman errors.")
 test association in a genomic region based on the reconstructed partitions.
 Charith B Karunarathna and Jinko Graham (2019) <@code{bioRxiv:10.1101/674523>}.")
     (license (list license:gpl2+ license:gpl3+))))
-
-(define-public r-percentiles
-  (package
-    (name "r-percentiles")
-    (version "0.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "percentiles" version))
-       (sha256
-        (base32 "08gzl2qq0856nj20bdxl3r0a7p5f4cjmvxkaqkjvq4n275ghvskq"))))
-    (properties `((upstream-name . "percentiles")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-r6 r-dplyr r-assertthat r-assertive-types))
-    (home-page "https://cran.r-project.org/package=percentiles")
-    (synopsis "Calculate (Stratified) Percentiles")
-    (description
-     "Calculate (stratified) percentiles on a data.frame Stratification will split the
-data.frame into subgroups and calculate percentiles for each independently.")
-    (license license:gpl3)))
 
 (define-public r-perccalc
   (package

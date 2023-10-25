@@ -2621,37 +2621,6 @@ higher-order nature, vistla can handle multi-modality and assign multiple roles
 to a single feature.")
     (license license:gpl3+)))
 
-(define-public r-vistime
-  (package
-    (name "r-vistime")
-    (version "1.2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "vistime" version))
-       (sha256
-        (base32 "18gqx71mpjsccfnab11j3g8wl11x2sk7bbjbcpi23qsk5d7sy112"))))
-    (properties `((upstream-name . "vistime")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rlang
-                             r-rcolorbrewer
-                             r-plotly
-                             r-ggrepel
-                             r-ggplot2
-                             r-assertive-types))
-    (native-inputs (list r-knitr))
-    (home-page "https://shosaco.github.io/vistime/")
-    (synopsis "Pretty Timelines in R")
-    (description
-     "This package provides a library for creating time based charts, like Gantt or
-timelines.  Possible outputs include ggplot2 diagrams, plotly.js graphs,
-Highcharts.js widgets and data.frames.  Results can be used in the RStudio
-viewer pane, in RMarkdown documents or in Shiny apps.  In the interactive
-outputs created by vistime() and hc_vistime(), you can interact with the plot
-using mouse hover or zoom.")
-    (license (list license:gpl3
-                   (license:fsdg-compatible "file://LICENSE")))))
-
 (define-public r-visstatistics
   (package
     (name "r-visstatistics")

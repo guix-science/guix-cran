@@ -9741,40 +9741,6 @@ using rmarkdown and shiny packages.  Runtime examples are provided in the
 package function as well as at <https://tinyurl.com/ANOVA@code{StatsTool>}.")
     (license license:gpl2)))
 
-(define-public r-anomaly
-  (package
-    (name "r-anomaly")
-    (version "4.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "anomaly" version))
-       (sha256
-        (base32 "1dlq82nxrvg6ydcgk74axssg71zhfilb54h244abwrzj782286cf"))))
-    (properties `((upstream-name . "anomaly")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-xts
-                             r-tidyr
-                             r-rdpack
-                             r-rcpp
-                             r-ggplot2
-                             r-dplyr
-                             r-bh
-                             r-assertive))
-    (home-page "https://cran.r-project.org/package=anomaly")
-    (synopsis "Detecting Anomalies in Data")
-    (description
-     "This package implements Collective And Point Anomaly (CAPA) Fisch, Eckley, and
-Fearnhead (2022) <doi:10.1002/sam.11586>, Multi-Variate Collective And Point
-Anomaly (MVCAPA) Fisch, Eckley, and Fearnhead (2021)
-<doi:10.1080/10618600.2021.1987257>, Proportion Adaptive Segment Selection
-(PASS) Jeng, Cai, and Li (2012) <doi:10.1093/biomet/ass059>, and Bayesian
-Abnormal Region Detector (BARD) Bardwell and Fearnhead (2015)
-<@code{arXiv:1412.5565>}.  These methods are for the detection of anomalies in
-time series data.")
-    (license (list license:gpl2+ license:gpl3+))))
-
 (define-public r-anomalize
   (package
     (name "r-anomalize")
@@ -13928,13 +13894,13 @@ hydrographs and models internal variables.")
 (define-public r-airgriwrm
   (package
     (name "r-airgriwrm")
-    (version "0.6.1")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "airGRiwrm" version))
        (sha256
-        (base32 "1dr7xg8a6xfdihmf4x03wm268iz78lks15fx9hmpw6sp15xv5kdj"))))
+        (base32 "09hcs5qhs3mykdarznqwiqd2vjdc5fqmp8lvfpmf4s2b3yqvydax"))))
     (properties `((upstream-name . "airGRiwrm")))
     (build-system r-build-system)
     (propagated-inputs (list r-dplyr r-diagrammer r-airgr))

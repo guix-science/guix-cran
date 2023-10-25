@@ -1771,30 +1771,6 @@ gives the probability of an algorithm A finds a solution at least as good as a
 given target value in smaller computation time than algorithm B.")
     (license license:gpl2+)))
 
-(define-public r-tttensor
-  (package
-    (name "r-tttensor")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ttTensor" version))
-       (sha256
-        (base32 "0ryfxx4chnc10cl5h5cb4hnvzf2cm64k8m36l4qbjz4f1vkw0a36"))))
-    (properties `((upstream-name . "ttTensor")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tensorr r-rtensor r-ptak r-matrix))
-    (home-page "https://github.com/rikenbit/ttTensor")
-    (synopsis "Tensor-Train Decomposition")
-    (description
-     "Tensor-train is a compact representation for higher-order tensors.  Some
-algorithms for performing tensor-train decomposition are available such as
-TT-SVD, TT-WOPT, and TT-Cross.  For the details of the algorithms, see I. V.
-Oseledets (2011) <doi:10.1137/090752286>, Yuan Longao, et al (2017)
-<@code{arXiv:1709.02641>}, I. V. Oseledets (2010)
-<doi:10.1016/j.laa.2009.07.024>.")
-    (license license:artistic2.0)))
-
 (define-public r-ttt
   (package
     (name "r-ttt")
@@ -6176,13 +6152,13 @@ birth-death species trees, and sim.genetree() simulates coalescent gene trees.")
 (define-public r-treeshap
   (package
     (name "r-treeshap")
-    (version "0.2.5")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "treeshap" version))
        (sha256
-        (base32 "05pxfdjcjdihdf28ca7ybai9xypcsgc6pa1fq86sywiwb0w0vpss"))))
+        (base32 "0d9c48ypsysgra2zn43x8c30g6njina0zva8kv4w8fjlgmidip9a"))))
     (properties `((upstream-name . "treeshap")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-ggplot2 r-data-table))
@@ -9065,6 +9041,29 @@ under receiver operating characteristic curves (two-way @code{pAUC}), partial
 area under receiver operating characteristic curves (@code{pAUC}), and partial
 area under ordinal dominance curves (@code{pODC}).  Methods includes
 Mann-Whitney statistic and Jackknife, etc.")
+    (license license:gpl2+)))
+
+(define-public r-tpacdata
+  (package
+    (name "r-tpacdata")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TPACData" version))
+       (sha256
+        (base32 "0csx3d2sgw350ar5ky7hdzvcn7mlfwn67khxfb6xkwxqdiva282j"))))
+    (properties `((upstream-name . "TPACData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-data-table))
+    (home-page "https://cran.r-project.org/package=TPACData")
+    (synopsis
+     "Human Protein Atlas Data for Tissue-Adjusted Pathway Analysis of Cancer (TPAC)")
+    (description
+     "This package contains summary data on gene expression in normal human tissues
+from the Human Protein Atlas for use with the Tissue-Adjusted Pathway Analysis
+of cancer (TPAC) method.  Frost, H. Robert (2023) \"Tissue-adjusted pathway
+analysis of cancer (TPAC)\" <doi:10.1101/2022.03.17.484779>.")
     (license license:gpl2+)))
 
 (define-public r-tp-idm
@@ -13943,13 +13942,13 @@ interact seamlessly with the tidyverse.")
 (define-public r-tidysem
   (package
     (name "r-tidysem")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidySEM" version))
        (sha256
-        (base32 "10q1ahcg52vyzjiz94rlhhlgn0pb0cjh7avbsmdg6qha9wkfphgn"))))
+        (base32 "0vsk4z1mpzmyg618c5sqmblv8c8pzhwbrbxwdq4cpg7sl6agbhb0"))))
     (properties `((upstream-name . "tidySEM")))
     (build-system r-build-system)
     (propagated-inputs (list r-rann
@@ -13965,7 +13964,6 @@ interact seamlessly with the tidyverse.")
                              r-ggplot2
                              r-future-apply
                              r-dbscan
-                             r-dagitty
                              r-car
                              r-blavaan
                              r-bain))
@@ -19956,29 +19954,6 @@ features on multiple modes.\" Journal of Computational and Graphical Statistics,
 Vol.  31, No.  1, 204-218, 2022 <doi:10.1080/10618600.2021.1978471>.")
     (license license:gpl2+)))
 
-(define-public r-tensorr
-  (package
-    (name "r-tensorr")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tensorr" version))
-       (sha256
-        (base32 "18xdvp328h96jn8y1iayxh7cyz2s8j5nn43nq18pyaxq271hkfyh"))))
-    (properties `((upstream-name . "tensorr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-purrr r-matrix r-assertive-types
-                             r-assertive-properties r-assertive-base))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/zamorarr/tensorr")
-    (synopsis "Sparse Tensors in R")
-    (description
-     "This package provides methods to manipulate and store sparse tensors.  Tensors
-are multidimensional generalizations of matrices (two dimensional) and vectors
-(one dimensional).")
-    (license license:gpl3)))
-
 (define-public r-tensorpreave
   (package
     (name "r-tensorpreave")
@@ -20182,13 +20157,13 @@ significance and temporal aspects of adverse events in clinical trials\" - JAMIA
 (define-public r-tempstable
   (package
     (name "r-tempstable")
-    (version "0.2.0")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TempStable" version))
        (sha256
-        (base32 "1mvxl82q104899vaw44jdy5q7g76xb961zhcwvps1j9x3h27fyss"))))
+        (base32 "0z432kpblx6v2krsxi92bpa4k19yqja09idqbka4nghcj7sgrsjr"))))
     (properties `((upstream-name . "TempStable")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam
@@ -20202,8 +20177,7 @@ significance and temporal aspects of adverse events in clinical trials\" - JAMIA
                              r-foreach
                              r-doparallel
                              r-copula))
-    (native-inputs (list r-knitr))
-    (home-page "https://cedricjuessen.github.io/TempStable/")
+    (home-page "https://github.com/TMoek/TempStable")
     (synopsis
      "Collection of Methods to Estimate Parameters of Different Tempered Stable Distributions")
     (description

@@ -1744,16 +1744,17 @@ model under linear inequality constraints.")
 (define-public r-bsvars
   (package
     (name "r-bsvars")
-    (version "1.0.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bsvars" version))
        (sha256
-        (base32 "0d5c8fjnigm4zsfzhki1vsdgc310dba716sdiag8vqq7m1r3g2yc"))))
+        (base32 "1hv05ja0g024g51569k5aqgx3z5zivajhwwcwpd33v6bz9fii3nl"))))
     (properties `((upstream-name . "bsvars")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpptn
+    (propagated-inputs (list r-stochvol
+                             r-rcpptn
                              r-rcppprogress
                              r-rcpparmadillo
                              r-rcpp
@@ -2950,13 +2951,13 @@ model, using the semi-conjugate family of prior distributions.")
 (define-public r-brpop
   (package
     (name "r-brpop")
-    (version "0.1.5")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "brpop" version))
        (sha256
-        (base32 "12ngmyqbrqv1hwyh9y8wf9dyr816fxan8vqw0r2jgymsir9c5k6s"))))
+        (base32 "0wbs0r775g185q0zrlyskj5zrdkf6dbivi7lrychj9dpidl9i61i"))))
     (properties `((upstream-name . "brpop")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-multidplyr r-magrittr r-future r-dplyr))
@@ -2966,9 +2967,7 @@ model, using the semi-conjugate family of prior distributions.")
      "Datasets with yearly (2000 to 2021) Brazilian population estimates from
 @code{DataSUS/Brazilian} Health Ministry, aggregated by state, municipality,
 sex, and age groups.  The data in this package is manually downloaded from the
-@code{DataSUS} website
-(<http://tabnet.datasus.gov.br/cgi/deftohtm.exe?popsvs/cnv/popbr.def>) and
-converted to tibbles.")
+@code{DataSUS} website and converted to tibbles.")
     (license license:expat)))
 
 (define-public r-browndog
@@ -4774,45 +4773,6 @@ and Notation) diagrams, using overlays, style customization and interactions,
 with the bpmn-visualization @code{TypeScript} library.")
     (license (license:fsdg-compatible "Apache License (== 2)"))))
 
-(define-public r-bpmnr
-  (package
-    (name "r-bpmnr")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bpmnR" version))
-       (sha256
-        (base32 "1nrdy8szpinzv1whp627sf8khmnr911d878rn0kmp515iixnl6zr"))))
-    (properties `((upstream-name . "bpmnR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-uuid
-                             r-tidyr
-                             r-stringr
-                             r-rvest
-                             r-rlang
-                             r-readr
-                             r-purrr
-                             r-knitr
-                             r-huxtable
-                             r-htmlwidgets
-                             r-htmltools
-                             r-glue
-                             r-dt
-                             r-dplyr
-                             r-diagrammersvg
-                             r-diagrammer
-                             r-assertive))
-    (native-inputs (list r-knitr esbuild))
-    (home-page "https://cran.r-project.org/package=bpmnR")
-    (synopsis "Support for BPMN (Business Process Management Notation) Models")
-    (description
-     "Creating, rendering and writing BPMN diagrams <https://www.bpmn.org/>.
-Functionalities can be used to visualize and export BPMN diagrams created using
-the pm4py and @code{bupaRminer} packages.  Part of the @code{bupaR} ecosystem.")
-    (license license:expat)))
-
 (define-public r-bpm
   (package
     (name "r-bpm")
@@ -5114,16 +5074,17 @@ package is based on the following publications: Rousseeuw (1987)
 (define-public r-boxly
   (package
     (name "r-boxly")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "boxly" version))
        (sha256
-        (base32 "09k1yvlhiabsc0g07rjnw416xiglsxasrvfzhpc3k522n5p3026c"))))
+        (base32 "0fvk95f2nn06aaxn2qq7jxr2yvsnc40806xkamryhrnmrwiphia9"))))
     (properties `((upstream-name . "boxly")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlang
+    (propagated-inputs (list r-uuid
+                             r-rlang
                              r-plotly
                              r-metalite
                              r-htmlwidgets
@@ -5190,13 +5151,13 @@ projects via a flexible, declarative dependency loading syntax.")
 (define-public r-boutroslab-plotting-general
   (package
     (name "r-boutroslab-plotting-general")
-    (version "7.0.8")
+    (version "7.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BoutrosLab.plotting.general" version))
        (sha256
-        (base32 "1za211paw4k586z6s92rwh2z7vjn3aqgja43b2zd5z6swg3ibhsv"))))
+        (base32 "00c423xbrn1yr6p293lxf07yjqmkcx5cjqpb4ivipn4ivnmvs4hd"))))
     (properties `((upstream-name . "BoutrosLab.plotting.general")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass
@@ -5209,7 +5170,7 @@ projects via a flexible, declarative dependency loading syntax.")
                              r-cluster))
     (native-inputs (list r-knitr))
     (home-page
-     "https://github.com/uclahs-cds/public-R-BoutrosLab-plotting-general")
+     "https://github.com/uclahs-cds/package-BoutrosLab-plotting-general")
     (synopsis "Functions to Create Publication-Quality Plots")
     (description
      "This package contains several plotting functions such as barplots, scatterplots,
@@ -9202,32 +9163,6 @@ Laplace-P-spline methodology can also be implemented for inference in
 (generalized) additive models (Gressani, O. and Lambert, P. (2021)
 <doi:10.1016/j.csda.2020.107088>).  See the associated website for more
 information and examples.")
-    (license license:gpl3)))
-
-(define-public r-blanketstatsments
-  (package
-    (name "r-blanketstatsments")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "BlanketStatsments" version))
-       (sha256
-        (base32 "00zh3ivqrzlz6wz0nalmdqp8pfki3kkxm9idh2ri6sfxsb6kfdp6"))))
-    (properties `((upstream-name . "BlanketStatsments")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-survival
-                             r-survauc
-                             r-hmisc
-                             r-desctools
-                             r-basecamb
-                             r-assertive-types))
-    (home-page "https://github.com/p-mq/BlanketStatsments")
-    (synopsis "Build and Compare Statistical Models")
-    (description
-     "Build and compare nested statistical models with sets of equal and different
-independent variables.  An analysis using this package is Marquardt et al.
-(2021) <https://github.com/p-mq/Percentile_based_averaging>.")
     (license license:gpl3)))
 
 (define-public r-blandr
@@ -15457,31 +15392,38 @@ and Held, L. (2011) <doi:10.1007/s11222-010-9170-7>.")
 (define-public r-bff
   (package
     (name "r-bff")
-    (version "1.0.0")
+    (version "2.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BFF" version))
        (sha256
-        (base32 "1kbji9fh7d0ww5klwvlxgljflidkh2rywgb8xwj5j1j0y21lipfx"))))
+        (base32 "06c9npdahy01hx5yf9w775rh84xigs0ihh0ymjhx7a7xd4vi4jjm"))))
     (properties `((upstream-name . "BFF")))
     (build-system r-build-system)
-    (propagated-inputs (list r-bsda))
+    (propagated-inputs (list r-matrix r-hypergeo r-gsl r-ggplot2 r-bsda))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=BFF")
     (synopsis "Bayes Factor Functions")
     (description
      "Bayes factors represent the ratio of probabilities assigned to data by competing
-scientific hypotheses.  Drawbacks of Bayes factors are their dependence on prior
-specifications that define null and alternative hypotheses and difficulties
-encountered in their computation.  To address these problems we define Bayes
-factor functions (BFF) directly from common test statistics.  BFFs depend on a
-single non-centrality parameter that can be expressed as a function of
-standardized effect sizes, and plots of BFFs versus effect size provide
-informative summaries of hypothesis tests that can be easily aggregated across
-studies.  Such summaries eliminate the need for arbitrary bright-line thresholds
-to determine âstatistical significance.â BFFs are available in closed form
-and can be computed easily from z, t, chi^2, and F statistics.")
+scientific hypotheses.  However, one drawback of Bayes factors is their
+dependence on prior specifications that define null and alternative hypotheses.
+Additionally, there are challenges in their computation.  To address these
+issues, we define Bayes factor functions (BFFs) directly from common test
+statistics.  BFFs express Bayes factors as a function of the prior densities
+used to define the alternative hypotheses.  These prior densities are centered
+on standardized effects, which serve as indices for the BFF. Therefore, BFFs
+offer a summary of evidence in favor of alternative hypotheses that correspond
+to a range of scientifically interesting effect sizes.  Such summaries remove
+the need for arbitrary thresholds to determine \"statistical significance.\" BFFs
+are available in closed form and can be easily computed from z, t, chi-squared,
+and F statistics.  They depend on hyperparameters \"r\" and \"tau^2\", which
+determine the shape and scale of the prior distributions defining the
+alternative hypotheses.  For replicated designs, the \"r\" parameter in each
+function can be adjusted to be greater than 1.  Plots of BFFs versus effect size
+provide informative summaries of hypothesis tests that can be easily aggregated
+across studies.")
     (license license:gpl2+)))
 
 (define-public r-bfast
@@ -17147,38 +17089,6 @@ ready to use database is provided as a Docker image
 by Godard and van Eyll (2018) <doi:10.12688/f1000research.13925.3>.")
     (license license:gpl3)))
 
-(define-public r-beautier
-  (package
-    (name "r-beautier")
-    (version "2.6.9")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "beautier" version))
-       (sha256
-        (base32 "1z6awfw5sz30fdgjl1g0fq2amwjw0xnb5kamhfrf4xyl6hj2h60y"))))
-    (properties `((upstream-name . "beautier")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-testit
-                             r-stringr
-                             r-seqinr
-                             r-rappdirs
-                             r-pryr
-                             r-assertive
-                             r-ape))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ropensci/beautier/")
-    (synopsis "'BEAUti' from R")
-    (description
-     "BEAST2 (<https://www.beast2.org>) is a widely used Bayesian phylogenetic tool,
-that uses DNA/RNA/protein data and many model priors to create a posterior of
-jointly estimated phylogenies and parameters.  BEAUti 2 (which is part of
-BEAST2') is a GUI tool that allows users to specify the many possible setups and
-generates the XML file BEAST2 needs to run.  This package provides a way to
-create BEAST2 input files without active user input, but using R function calls
-instead.")
-    (license license:gpl3)))
-
 (define-public r-beastjar
   (package
     (name "r-beastjar")
@@ -17205,41 +17115,6 @@ phylogenetic statistical models using high performance computing.  By placing
 the BEAST JAR in this package, we offer an efficient distribution system for
 BEAST use by other R packages using CRAN.")
     (license license:asl2.0)))
-
-(define-public r-beastier
-  (package
-    (name "r-beastier")
-    (version "2.4.12")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "beastier" version))
-       (sha256
-        (base32 "14pph5cqnpb450wl5i8nbnh2gs67y4g3snzfwm8d8s0vgcqj4k98"))))
-    (properties `((upstream-name . "beastier")))
-    (build-system r-build-system)
-    (inputs (list))
-    (propagated-inputs (list r-xml2
-                             r-tibble
-                             r-stringr
-                             r-rjava
-                             r-readr
-                             r-rappdirs
-                             r-phangorn
-                             r-devtools
-                             r-beautier
-                             r-assertive
-                             r-ape))
-    (native-inputs (list r-knitr))
-    (home-page
-     "https://docs.ropensci.org/beastier/https://github.com/ropensci/beastier/")
-    (synopsis "Call 'BEAST2'")
-    (description
-     "BEAST2 (<https://www.beast2.org>) is a widely used Bayesian phylogenetic tool,
-that uses DNA/RNA/protein data and many model priors to create a posterior of
-jointly estimated phylogenies and parameters.  BEAST2 is a command-line tool.
-This package provides a way to call BEAST2 from an R function call.")
-    (license license:gpl3)))
 
 (define-public r-beast
   (package
@@ -23864,34 +23739,6 @@ sources such as @code{OpenStreetMap}', Carto', Mapbox and others in R.")
 project, query our tables, save data to disk and memory, all from R.")
     (license license:expat)))
 
-(define-public r-basecamb
-  (package
-    (name "r-basecamb")
-    (version "1.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "basecamb" version))
-       (sha256
-        (base32 "01zigv4wp19vmp645dzvbr26nrvhv4jxpqssvfc480v0dj3mavva"))))
-    (properties `((upstream-name . "basecamb")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-survival
-                             r-purrr
-                             r-mice
-                             r-hmisc
-                             r-dplyr
-                             r-assertthat
-                             r-assertive-types))
-    (home-page "https://CRAN.R-project.org/package=basecamb")
-    (synopsis
-     "Utilities for Streamlined Data Import, Imputation and Modelling")
-    (description
-     "This package provides functions streamlining the data analysis workflow:
-Outsourcing data import, renaming and type casting to a *.csv.  Manipulating
-imputed datasets and fitting models on them.  Summarizing models.")
-    (license license:gpl3+)))
-
 (define-public r-baseballdbr
   (package
     (name "r-baseballdbr")
@@ -25812,40 +25659,6 @@ optimization using SPOT'.  Ucar I, Smeets B, Azcorra A (2019)
 (2005) <doi:10.1109/CEC.2005.1554761>.  Lawton T, @code{McCooe} M (2019)
 <doi:10.7861/futurehosp.6-1-17>.")
     (license license:gpl2+)))
-
-(define-public r-babette
-  (package
-    (name "r-babette")
-    (version "2.3.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "babette" version))
-       (sha256
-        (base32 "0c9v6dm3n9bnr5x4nln9a51dff557vrhxdfji9xikwnz0vv8656v"))))
-    (properties `((upstream-name . "babette")))
-    (build-system r-build-system)
-    (inputs (list))
-    (propagated-inputs (list r-xml2
-                             r-tracerer
-                             r-stringr
-                             r-remotes
-                             r-phangorn
-                             r-mauricer
-                             r-beautier
-                             r-beastier))
-    (native-inputs (list r-knitr))
-    (home-page
-     "https://docs.ropensci.org/babette/https://github.com/ropensci/babette/")
-    (synopsis "Control 'BEAST2'")
-    (description
-     "BEAST2 (<https://www.beast2.org>) is a widely used Bayesian phylogenetic tool,
-that uses DNA/RNA/protein data and many model priors to create a posterior of
-jointly estimated phylogenies and parameters.  BEAST2 is commonly accompanied by
-BEAUti 2', Tracer and @code{DensiTree}'.  babette provides for an alternative
-workflow of using all these tools separately.  This allows doing complex
-Bayesian phylogenetics easily and reproducibly from R'.")
-    (license license:gpl3)))
 
 (define-public r-babelmixr2
   (package

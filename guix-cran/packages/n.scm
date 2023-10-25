@@ -4356,49 +4356,6 @@ divergence have occurred.  The distributional divergence for these nodes is
 mapped.")
     (license license:expat)))
 
-(define-public r-nodesub
-  (package
-    (name "r-nodesub")
-    (version "1.2.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "nodeSub" version))
-       (sha256
-        (base32 "08ai25fkvnc026hif096f2389m553xqrcz08fkp2yjgavv5rrai6"))))
-    (properties `((upstream-name . "nodeSub")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tracerer
-                             r-tibble
-                             r-testit
-                             r-stringr
-                             r-rmpfr
-                             r-rcpp
-                             r-rappdirs
-                             r-phylobase
-                             r-phangorn
-                             r-pbapply
-                             r-mauricer
-                             r-lifecycle
-                             r-geiger
-                             r-ddd
-                             r-beautier
-                             r-beastier
-                             r-babette
-                             r-ape))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/thijsjanzen/nodeSub")
-    (synopsis "Simulate DNA Alignments Using Node Substitutions")
-    (description
-     "Simulate DNA sequences for the node substitution model.  In the node
-substitution model, substitutions accumulate additionally during a speciation
-event, providing a potential mechanistic explanation for substitution rate
-variation.  This package provides tools to simulate such a process, simulate a
-reference process with only substitutions along the branches, and provides tools
-to infer phylogenies from alignments.  More information can be found in Janzen
-(2021) <doi:10.1093/sysbio/syab085>.")
-    (license license:gpl3)))
-
 (define-public r-node2vec
   (package
     (name "r-node2vec")
@@ -10037,16 +9994,17 @@ website (2017)
 (define-public r-netsimr
   (package
     (name "r-netsimr")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NetSimR" version))
        (sha256
-        (base32 "10rplfz94kj0lhlzv7nl0lsiwgimfjgcwz03rwhdixxwnlyj03gp"))))
+        (base32 "1w2mhmjpzlzy86250wlmwvcl7p3qasdfabhysfrcnkp0ndff966y"))))
     (properties `((upstream-name . "NetSimR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-shinyjs
+    (propagated-inputs (list r-shinywidgets
+                             r-shinyjs
                              r-shinybusy
                              r-shiny
                              r-scales
@@ -10056,8 +10014,10 @@ website (2017)
                              r-rmysql
                              r-rmarkdown
                              r-plotly
+                             r-mass
                              r-future-apply
                              r-future
+                             r-fitdistrplus
                              r-dbi))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=NetSimR")
@@ -10072,8 +10032,15 @@ increased limit factor curves (ILFs) for @code{LogNormal}, Gamma, Pareto, Sliced
 probability density function (pdf), cumulative probability function (cdf) and
 inverse cumulative probability function for Sliced @code{LogNormal-Pareto} and
 Sliced Gamma-Pareto distributions.  Includes calculating pure IBNR exposure with
-@code{LogNormal} and Gamma distribution for reporting delay.  Includes a shiny
-tool to simulate insurance claims.")
+@code{LogNormal} and Gamma distribution for reporting delay.  Includes three
+shiny tools, one to simulate insurance claims applying reinsurance structures,
+fit generalised linear models and fit claims frequency or severity
+distributions.  Methods used in the package refer to Free for All by Yiannis
+Parizas (2023) <https://www.theactuary.com/2023/03/02/free-all>; Escaping the
+triangle by Yiannis Parizas (2019)
+<https://www.theactuary.com/features/2019/06/2019/06/05/escaping-triangle>; Take
+to excess by Yiannis Parizas (2019)
+<https://www.theactuary.com/features/2019/03/2019/03/06/taken-excess>.")
     (license license:gpl3)))
 
 (define-public r-netshiny
@@ -10428,41 +10395,6 @@ and Imai (2019) Dynamic Stochastic Blockmodel Regression for Social Networks:
 Application to International Conflicts', available at
 <https://www.santiagoolivella.info/pdfs/socnet.pdf>.")
     (license license:gpl2+)))
-
-(define-public r-netmhc2pan
-  (package
-    (name "r-netmhc2pan")
-    (version "1.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "netmhc2pan" version))
-       (sha256
-        (base32 "0q98rar7iglwxmf1274wrjcr7kp544ayrjhd286x68jmf51cqyrg"))))
-    (properties `((upstream-name . "netmhc2pan")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble
-                             r-testit
-                             r-stringr
-                             r-seqinr
-                             r-readr
-                             r-rappdirs
-                             r-dplyr
-                             r-devtools
-                             r-assertive))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/richelbilderbeek/netmhc2pan/")
-    (synopsis "Interface to 'NetMHCIIpan'")
-    (description
-     "The field of immunology benefits from software that can predict which peptide
-sequences trigger an immune response. @code{NetMHCIIpan} is a such a tool: it
-predicts the binding strength of a short peptide to a Major Histocompatibility
-Complex class II (MHC-II) molecule. @code{NetMHCIIpan} can be used from a web
-server at
-<https://services.healthtech.dtu.dk/service.php?@code{NetMHCIIpan-3.2/>} or from
-the command-line, using a local installation.  This package allows to call
-@code{NetMHCIIpan} from R.")
-    (license license:gpl3)))
 
 (define-public r-netmeta
   (package
