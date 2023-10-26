@@ -4525,13 +4525,13 @@ handsontable is also provided to enter the input predictor values.")
 (define-public r-kcprs
   (package
     (name "r-kcprs")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kcpRS" version))
        (sha256
-        (base32 "0ijhzzzqk3yxpdm4vb1h7igrpb3wli17kxbidx4kzjga54pbik41"))))
+        (base32 "0drqw521bi2fnlapjd7hhir6vcy2aqz8jj35qdygnjkj1p3701c7"))))
     (properties `((upstream-name . "kcpRS")))
     (build-system r-build-system)
     (propagated-inputs (list r-roll r-rcpp r-rcolorbrewer r-foreach

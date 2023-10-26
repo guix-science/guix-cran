@@ -9288,13 +9288,13 @@ simulate the effects of mergers under different competitive regimes.")
 (define-public r-anticlust
   (package
     (name "r-anticlust")
-    (version "0.8.0")
+    (version "0.8.0-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "anticlust" version))
        (sha256
-        (base32 "0mns6d11i3p8vbm7cfxgqvln043ii5h1lxzwvdnpz9rqy90dj85r"))))
+        (base32 "1sf1nfbcyx6hbvs3ipww1r09m7q2k0iq8pdngqg7h286ydd3yj0d"))))
     (properties `((upstream-name . "anticlust")))
     (build-system r-build-system)
     (propagated-inputs (list r-rann r-matrix))

@@ -2229,16 +2229,17 @@ given parallel corpus.")
 (define-public r-worcs
   (package
     (name "r-worcs")
-    (version "0.1.13")
+    (version "0.1.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "worcs" version))
        (sha256
-        (base32 "12qb32vcbc18acj19m5dsrwrb645ca42v9jfsqb8hrr4lzml3hdi"))))
+        (base32 "1l18xf9lhp1ba36an46ii3gdcaf01xm6c2v70cswsyf05x61kzsy"))))
     (properties `((upstream-name . "worcs")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
+                             r-xfun
                              r-usethis
                              r-tinytex
                              r-rticles
@@ -6037,22 +6038,16 @@ package, see Hanson (2022) <doi:10.21105/joss.04594>.")
 (define-public r-wdnr-gis
   (package
     (name "r-wdnr-gis")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wdnr.gis" version))
        (sha256
-        (base32 "071mjqk117xidqva5qp9xqnca91c5i28j4pv5k0ccfcz6mlj9sbm"))))
+        (base32 "00s1lly2rsgvldchiimxz48nn1gnidff131jj3gixir0bfdkl6fp"))))
     (properties `((upstream-name . "wdnr.gis")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sf
-                             r-rlang
-                             r-jsonlite
-                             r-httr
-                             r-ggplot2
-                             r-dplyr
-                             r-arcpullr))
+    (propagated-inputs (list r-sf r-rlang r-ggplot2 r-dplyr r-arcpullr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=wdnr.gis")
     (synopsis "Pull Spatial Layers from 'WDNR ArcGIS REST API'")

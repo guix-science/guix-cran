@@ -18,7 +18,6 @@
   #:use-module (gnu packages maths)
   #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages machine-learning)
-  #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages photo)
   #:use-module (guix-cran packages z)
@@ -1554,22 +1553,22 @@ procedures can be found at Konietschke, Gel, and Brunner (2014)
 (define-public r-curtailment
   (package
     (name "r-curtailment")
-    (version "0.2.0")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "curtailment" version))
        (sha256
-        (base32 "1pk3vx9lbmvc1sj9n4n9vgbpx3xj71by0pl82ii10g69qwfllmph"))))
+        (base32 "0fdm619c7v0rik603hf44alw5lfr7fjphm5lady4cq21vwdakyac"))))
     (properties `((upstream-name . "curtailment")))
     (build-system r-build-system)
     (propagated-inputs (list r-pkgcond r-gridextra r-ggthemes r-ggplot2
                              r-data-table))
-    (home-page "https://cran.r-project.org/package=curtailment")
+    (home-page "https://github.com/martinlaw/curtailment")
     (synopsis "Finds Binary Outcome Designs Using Stochastic Curtailment")
     (description
      "Finds single- and two-arm designs using stochastic curtailment, as described by
-Law et al. (2019) <@code{arXiv:1909.03017>} and Law et al. (2021)
+Law et al. (2022) <doi:10.1080/10543406.2021.2009498> and Law et al. (2021)
 <doi:10.1002/pst.2067> respectively.  Designs can be single-stage or
 multi-stage.  Non-stochastic curtailment is possible as a special case.  Desired
 error-rates, maximum sample size and lower and upper anticipated response rates
@@ -12549,6 +12548,39 @@ mentioned.")
     (license (list license:gpl2
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-cophescan
+  (package
+    (name "r-cophescan")
+    (version "1.3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cophescan" version))
+       (sha256
+        (base32 "047ariqgbpnpiaw5pnl105i62nxdw9aqvaz3a1d5d5j0sdww96ij"))))
+    (properties `((upstream-name . "cophescan")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-viridis
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-pheatmap
+                             r-matrixstats
+                             r-magrittr
+                             r-ggrepel
+                             r-ggplot2
+                             r-dplyr
+                             r-data-table
+                             r-coloc))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ichcha-m/cophescan")
+    (synopsis "Adaptation of the Coloc Method for PheWAS")
+    (description
+     "This package provides a Bayesian method for conducting Phenome-wide association
+studies (@code{PheWAS}) that simultaneously identifies causal associations
+between genetic variants and confounding due to linkage disequilibrium.  For
+details see Manipur et al (2023) <doi:10.1101/2023.06.29.546856>.")
+    (license license:gpl3)))
+
 (define-public r-copernicusmarine
   (package
     (name "r-copernicusmarine")
@@ -17547,13 +17579,13 @@ for details under the FGM and general copulas, respectively.")
 (define-public r-common
   (package
     (name "r-common")
-    (version "1.0.9")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "common" version))
        (sha256
-        (base32 "1qizisg38kmmszm0g8vj7ipkjadg6s95n56wlf63gq3plnkjnibv"))))
+        (base32 "0y4riskxpvqcrsg8g1374nxzy99yghbpj9mjy676pzr3g29myghq"))))
     (properties `((upstream-name . "common")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -23086,31 +23118,6 @@ and intra-cluster group size.")
 Identifies local clustering structures in related datasets, and a global
 clusters that exist across the datasets.")
     (license license:expat)))
-
-(define-public r-clustermq
-  (package
-    (name "r-clustermq")
-    (version "0.9.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "clustermq" version))
-       (sha256
-        (base32 "0xajyycwc3029yrg5yrvff9lp8rhw3sgjf6rv1alp6wv8gd8gqy1"))))
-    (properties `((upstream-name . "clustermq")))
-    (build-system r-build-system)
-    (inputs (list zlib))
-    (propagated-inputs (list r-rcpp r-r6 r-progress r-narray))
-    (native-inputs (list r-knitr pkg-config))
-    (home-page "https://mschubert.github.io/clustermq/")
-    (synopsis
-     "Evaluate Function Calls on HPC Schedulers (LSF, SGE, SLURM, PBS/Torque)")
-    (description
-     "Evaluate arbitrary function calls using workers on HPC schedulers in single line
-of code.  All processing is done on the network without accessing the file
-system.  Remote schedulers are supported via SSH.")
-    (license (list license:asl2.0
-                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-clustermole
   (package
@@ -32618,13 +32625,13 @@ Iacus, King, Porro (2012) <DOI:10.1093/pan/mpr013> and Iacus, King, Porro (2019)
 (define-public r-cellwise
   (package
     (name "r-cellwise")
-    (version "2.5.2")
+    (version "2.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cellWise" version))
        (sha256
-        (base32 "1yi0l4fwsjvbqaka5dlk1vb88i243w83ywn5qr2xm26nipk7b5cf"))))
+        (base32 "0asimy253lxm9yf47pynhxc7sfd3v5rkvnyf1sby7s4qkz06bh49"))))
     (properties `((upstream-name . "cellWise")))
     (build-system r-build-system)
     (propagated-inputs (list r-svd
@@ -32651,7 +32658,7 @@ algorithms described in Rousseeuw and Van den Bossche (2018)
 Rousseeuw (2021) <doi:10.1007/s10994-021-05960-5> (open access), Raymaekers and
 Rousseeuw (2021) <doi:10.52933/jdssv.v1i3.18> (open access), Raymaekers and
 Rousseeuw (2022) <@code{arXiv:2207.13493>} (open access) Rousseeuw (2022)
-<@code{arXiv:2209.12697>} (open access).  Examples can be found in the
+<doi:10.1016/j.ecosta.2023.01.007> (open access).  Examples can be found in the
 vignettes: \"DDC_examples\", \"@code{MacroPCA_examples}\", \"wrap_examples\",
 \"transfo_examples\", \"DI_examples\", \"@code{cellMCD_examples}\" ,
 \"Correspondence_analysis_examples\", and \"cellwise_weights_examples\".")

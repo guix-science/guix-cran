@@ -7433,13 +7433,13 @@ Valection: Design Optimization for Validation and Verification Studies; Biorxiv
 (define-public r-valaddin
   (package
     (name "r-valaddin")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "valaddin" version))
        (sha256
-        (base32 "15j1zkmxf11706hrjhn6vh2h9zmlcdihrxqyxflp3kah9an0hldm"))))
+        (base32 "03l4c6vbzaxcrzc0ykx52h420r8cp3vrqxzl8jzxq8c8a9ms1xsi"))))
     (properties `((upstream-name . "valaddin")))
     (build-system r-build-system)
     (propagated-inputs (list r-lazyeval))

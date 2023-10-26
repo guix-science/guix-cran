@@ -1276,13 +1276,13 @@ anywhere anytime.")
 (define-public r-buildmer
   (package
     (name "r-buildmer")
-    (version "2.10.1")
+    (version "2.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "buildmer" version))
        (sha256
-        (base32 "1wil9gg6n6d6lwr8q0r4z18w73s7l557c2c94mm4lxk75yz7wnbk"))))
+        (base32 "0lmgzvi2jz92nps1z7cxla28ymxp5vnagikzk6dma94hycb7x2b4"))))
     (properties `((upstream-name . "buildmer")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlme r-mgcv r-lme4))
@@ -11157,30 +11157,33 @@ under perturbation, and the other on higher criticism.")
 (define-public r-biom2
   (package
     (name "r-biom2")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BioM2" version))
        (sha256
-        (base32 "06fcn3pizw0jp4m195ac9gf3d1jr8sp3r2fiq68lwmv7vi6ngcxs"))))
+        (base32 "065k0z1wgg1yf0xvcp3n0zpbfnlpi9pd4g34k3sk63z3l2s54hym"))))
     (properties `((upstream-name . "BioM2")))
     (build-system r-build-system)
     (propagated-inputs (list r-wordcloud2
                              r-wgcna
                              r-webshot
+                             r-viridis
                              r-uwot
-                             r-tm
                              r-rocr
                              r-rcolorbrewer
                              r-mlr3verse
                              r-mlr3
                              r-jiebar
+                             r-intergraph
+                             r-igraph
                              r-htmlwidgets
                              r-ggthemes
+                             r-ggstatsplot
                              r-ggpubr
                              r-ggplot2
-                             r-dplyr
+                             r-ggnetwork
                              r-cmplot
                              r-caret))
     (home-page "https://cran.r-project.org/package=BioM2")
@@ -11193,7 +11196,7 @@ patterns from high-dimensional omics data is a critical factor in understanding
 the risk mechanism of complex disease.  As such, explainable machine learning
 can offer biological insight in addition to personalized risk scoring.In this
 process, a feature space of biological pathways will be generated, and the
-feature space can also be subsequently analyzed using WGCNA-based (Described in
+feature space can also be subsequently analyzed using WGCNA (Described in
 Horvath and Zhang (2005) <doi:10.2202/1544-6115.1128> and Langfelder and Horvath
 (2008) <doi:10.1186/1471-2105-9-559> ) methods.")
     (license license:expat)))
@@ -20797,6 +20800,30 @@ Lee, R. D., & Carter, L. R. (1992) <doi:10.1080/01621459.1992.10475265> and
 Pedroza, C. (2006) <doi:10.1093/biostatistics/kxj024>.")
     (license license:gpl3)))
 
+(define-public r-bayesmlogit
+  (package
+    (name "r-bayesmlogit")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bayesmlogit" version))
+       (sha256
+        (base32 "1ssrhn64cz7qzma0cs86vpgzc60bch9j6zyazkf51bf554jz13i0"))))
+    (properties `((upstream-name . "bayesmlogit")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-magrittr r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=bayesmlogit")
+    (synopsis
+     "Multistate Life Table (MSLT) Methodology Based on Bayesian Approach")
+    (description
+     "Create life tables with a Bayesian approach, which can be very useful for
+modelling a complex health process when considering multiple predisposing
+factors and multiple coexisting health conditions.  Details for this method can
+be found in: Zang, Emma, et al., (2022) <doi:10.1093/geronb/gbab149>.")
+    (license license:gpl3+)))
+
 (define-public r-bayesmixsurv
   (package
     (name "r-bayesmixsurv")
@@ -24680,19 +24707,18 @@ results of observational studies (OS).")
 (define-public r-bamboohr
   (package
     (name "r-bamboohr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bambooHR" version))
        (sha256
-        (base32 "1m9kzr698lgcilmr5w5zs6q9rgpcdvqiavrhh6c4ar6ii07n274s"))))
+        (base32 "0d4jw8ymrgi20il0ipszs18a7x7q7xb3jpqmp1zrb5gigvabb9x2"))))
     (properties `((upstream-name . "bambooHR")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
                              r-tidyr
                              r-tibble
-                             r-testthat
                              r-stringr
                              r-rlang
                              r-purrr
@@ -24702,7 +24728,6 @@ results of observational studies (OS).")
                              r-janitor
                              r-httr
                              r-glue
-                             r-fs
                              r-dplyr
                              r-curl
                              r-cli))

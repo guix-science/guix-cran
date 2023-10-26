@@ -9878,6 +9878,38 @@ paper: Yaofang Hu, Wanjie Wang and Yi Yu (2020) <@code{arXiv:2006.03284>}.")
 polynomials with rational coefficients.")
     (license license:gpl3)))
 
+(define-public r-gmotree
+  (package
+    (name "r-gmotree")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gmoTree" version))
+       (sha256
+        (base32 "11fyachzqr4nkf23l5l5f8qdmj7xvlf526p4zf5inc51xdf27dyl"))))
+    (properties `((upstream-name . "gmoTree")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-rlist
+                             r-rlang
+                             r-plyr
+                             r-openxlsx
+                             r-dplyr
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://zauchnerp.github.io/gmoTree/")
+    (synopsis "Get and Modify 'oTree' Data")
+    (description
+     "Manage data from @code{oTree} experiments.  Import @code{oTree} data and clean
+them up by using functions to deal with messy data, dropouts, and other
+problematic cases.  Create IDs, calculate the time, transfer variables between
+app data frames, and delete sensitive information.  You can also check your
+experimental data before running the experiment.  Information on @code{oTree} is
+found in Chen, D. L., Schonger, M., & Wickens, C. (2016) <doi:
+10.1016/j.jbef.2015.12.001>.")
+    (license license:gpl3+)))
+
 (define-public r-gmoip
   (package
     (name "r-gmoip")
@@ -17563,51 +17595,6 @@ projections of a latin hypercube design.")
 time models, using the population-based Markov Chain Monte Carlo.")
     (license license:gpl2)))
 
-(define-public r-ggdist
-  (package
-    (name "r-ggdist")
-    (version "3.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ggdist" version))
-       (sha256
-        (base32 "0b15b972wrllsvqqn0nc2c81fd9jl618fvqsfi50hjxwwpdach8l"))))
-    (properties `((upstream-name . "ggdist")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-withr
-                             r-vctrs
-                             r-tidyselect
-                             r-tibble
-                             r-scales
-                             r-rlang
-                             r-quadprog
-                             r-numderiv
-                             r-glue
-                             r-ggplot2
-                             r-dplyr
-                             r-distributional
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://mjskay.github.io/ggdist/")
-    (synopsis "Visualizations of Distributions and Uncertainty")
-    (description
-     "This package provides primitives for visualizing distributions using ggplot2
-that are particularly tuned for visualizing uncertainty in either a frequentist
-or Bayesian mode.  Both analytical distributions (such as frequentist confidence
-distributions or Bayesian priors) and distributions represented as samples (such
-as bootstrap distributions or Bayesian posterior samples) are easily visualized.
- Visualization primitives include but are not limited to: points with multiple
-uncertainty intervals, eye plots (Spiegelhalter D., 1999)
-<https://ideas.repec.org/a/bla/jorssa/v162y1999i1p45-58.html>, density plots,
-gradient plots, dot plots (Wilkinson L., 1999)
-<doi:10.1080/00031305.1999.10474474>, quantile dot plots (Kay M., Kola T.,
-Hullman J., Munson S., 2016) <doi:10.1145/2858036.2858558>, complementary
-cumulative distribution function barplots (Fernandes M., Walls L., Munson S.,
-Hullman J., Kay M., 2018) <doi:10.1145/3173574.3173718>, and fit curves with
-multiple uncertainty ribbons.")
-    (license license:gpl3+)))
-
 (define-public r-ggdensity
   (package
     (name "r-ggdensity")
@@ -18617,13 +18604,13 @@ identification and environmental data visualization.")
 (define-public r-gfe
   (package
     (name "r-gfe")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GFE" version))
        (sha256
-        (base32 "0ywrg23z13kp8ggw4wbm4jvr2rvb6kra7ma0mgfj8xzkrxs6vi6m"))))
+        (base32 "1mhlvp7i8g4b3mj4qwfnk0vl7af9sflgi6zgsjjp16kdsv42zkwn"))))
     (properties `((upstream-name . "GFE")))
     (build-system r-build-system)
     (propagated-inputs (list r-teachingsampling r-dplyr r-data-table))
@@ -18631,7 +18618,7 @@ identification and environmental data visualization.")
     (synopsis "Gross Flows Estimation under Complex Surveys")
     (description
      "The philosophy in the package is described in Stasny (1988)
-<doi:10.2307/1391558> and Gutiérrez, A., Trujillo, L. & Silva, N. (2014),
+<doi:10.2307/1391558> and Gutierrez, A., Trujillo, L. & Silva, N. (2014),
 <ISSN:1492-0921> to estimate the gross flows under complex surveys using a
 Markov chain approach with non response.")
     (license license:gpl2+)))

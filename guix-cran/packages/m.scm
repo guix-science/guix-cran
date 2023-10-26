@@ -2864,6 +2864,48 @@ for the course Multivariate analysis and for the course Computer intensive
 methods at the masters program of Applied Statistics at University of Ljubljana.")
     (license license:gpl2+)))
 
+(define-public r-multitool
+  (package
+    (name "r-multitool")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "multitool" version))
+       (sha256
+        (base32 "15162y6dbpjgpx3y5fys3bb3c60lxzf4vfn2pw31z5rswi4b3km8"))))
+    (properties `((upstream-name . "multitool")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-performance
+                             r-parameters
+                             r-moments
+                             r-lme4
+                             r-glue
+                             r-ggplot2
+                             r-ggdist
+                             r-future
+                             r-furrr
+                             r-flextable
+                             r-dplyr
+                             r-diagrammer
+                             r-correlation
+                             r-clipr))
+    (native-inputs (list r-knitr))
+    (home-page "https://ethan-young.github.io/multitool/")
+    (synopsis "Run Multiverse Style Analyses")
+    (description
+     "Run the same analysis over a range of arbitrary data processing decisions.
+multitool provides an interface for creating alternative analysis pipelines and
+turning them into a grid of all possible pipelines.  Using this grid as a
+blueprint, you can model your data across all possible pipelines and summarize
+the results.")
+    (license license:expat)))
+
 (define-public r-multistatm
   (package
     (name "r-multistatm")
@@ -39923,13 +39965,13 @@ different file formats of mass spectrometry data into/from MALDIquant objects.")
 (define-public r-maldipickr
   (package
     (name "r-maldipickr")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maldipickr" version))
        (sha256
-        (base32 "16ra6li4b725cpnqmm5bgmr8r38x0jnjrsc836v83h5lr8yjz3l3"))))
+        (base32 "0p3dpsjd1xwblacbq09ls2wq3jc6fn3x77qdg3a4zld7lpvib073"))))
     (properties `((upstream-name . "maldipickr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

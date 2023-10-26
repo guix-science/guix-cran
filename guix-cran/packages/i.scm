@@ -295,29 +295,6 @@ in this package were inspired by James Allen's interval algebra, Allen (1983)
 <doi:10.1145/182.358434>.")
     (license license:expat)))
 
-(define-public r-ivregex
-  (package
-    (name "r-ivregex")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ivregEX" version))
-       (sha256
-        (base32 "0zh3rqvhn8ald6lxv9kywy2v1p0nr9ijv6plhpbxc6k51zzsgyl8"))))
-    (properties `((upstream-name . "ivregEX")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sandwich r-lmtest r-formula r-aer))
-    (home-page "https://cran.r-project.org/package=ivregEX")
-    (synopsis
-     "Create Independent Evidence in IV Analyses and Do Sensitivity Analysis in Regression and IV Analysis")
-    (description
-     "Allows you to create an evidence factor (EX analysis) in an instrumental
-variables regression model.  Additionally, performs Sensitivity analysis for OLS
-analysis, 2SLS analysis and EX analysis with interpretable plotting and printing
-features.")
-    (license license:gpl2+)))
-
 (define-public r-ivreg
   (package
     (name "r-ivreg")

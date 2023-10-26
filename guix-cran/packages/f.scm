@@ -1411,6 +1411,40 @@ approaches proposed by Chakraborty and Chaudhuri (2015)
 procedures to run test result comparisons and power analysis using simulations.")
     (license license:agpl3+)))
 
+(define-public r-funspotr
+  (package
+    (name "r-funspotr")
+    (version "0.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "funspotr" version))
+       (sha256
+        (base32 "12kzir5s6dr39skmb4c20bprbm57qcbdkdwxb9708kfbwkgwc9m8"))))
+    (properties `((upstream-name . "funspotr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-readr
+                             r-purrr
+                             r-lifecycle
+                             r-knitr
+                             r-import
+                             r-httr
+                             r-here
+                             r-glue
+                             r-fs
+                             r-formatr
+                             r-dplyr
+                             r-callr))
+    (home-page "https://brshallo.github.io/funspotr/")
+    (synopsis "Spot R Functions & Packages")
+    (description
+     "Helpers for parsing out the R functions and packages used in R scripts and
+notebooks.")
+    (license license:expat)))
+
 (define-public r-funspace
   (package
     (name "r-funspace")
@@ -8204,13 +8238,13 @@ al. (2014) <doi:10.1016/j.neuroimage.2014.03.028>).")
 (define-public r-fmriscrub
   (package
     (name "r-fmriscrub")
-    (version "0.14.4")
+    (version "0.14.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fMRIscrub" version))
        (sha256
-        (base32 "039aiwigsp1gxyrqnpqxf9qhmlq4vzh40ca55hc1dpjas541w4wi"))))
+        (base32 "1k0ixg82sgngmpbpl2b57lhamm19bfgcxszrwpf5qkvrh83ab3gs"))))
     (properties `((upstream-name . "fMRIscrub")))
     (build-system r-build-system)
     (propagated-inputs (list r-robustbase

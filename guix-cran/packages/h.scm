@@ -1704,13 +1704,13 @@ Beffa, Junxi Wang, Jialiang Li, Frank Pessler, Frank Klawonn (2014)
 (define-public r-huito
   (package
     (name "r-huito")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "huito" version))
        (sha256
-        (base32 "1abq0jpihim04rmk4v5i24407ll1hjgmb6pwxjlz886bzbhrwhzq"))))
+        (base32 "0i7wxgddgdk72r6a2zmfi8b84ism0551f9n0hz8jx6aj21wqkx4r"))))
     (properties `((upstream-name . "huito")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -4387,13 +4387,13 @@ current system time and the system time when the timer was started.")
 (define-public r-hmsr
   (package
     (name "r-hmsr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hmsr" version))
        (sha256
-        (base32 "171zfs27v0kznj28cbizq72i1fan5gz1s5r42kv90jylhxdv8mbc"))))
+        (base32 "0zznji4cxkgbww7cyxad68bxmqf18y76wkyw9y03d97871jr0sny"))))
     (properties `((upstream-name . "hmsr")))
     (build-system r-build-system)
     (propagated-inputs (list r-uuid r-msm r-ga))
@@ -5402,51 +5402,6 @@ vectors.")
      "These sample data sets are intended for historians learning R. They include
 population, institutional, religious, military, and prosopographical data
 suitable for mapping, quantitative analysis, and network analysis.")
-    (license license:expat)))
-
-(define-public r-historicalborrowlong
-  (package
-    (name "r-historicalborrowlong")
-    (version "0.0.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "historicalborrowlong" version))
-       (sha256
-        (base32 "0ynf6sb850i01fwxj1pnha8q8n1qmmf7r0jkmz4azm5pblf12fg0"))))
-    (properties `((upstream-name . "historicalborrowlong")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-withr
-                             r-trialr
-                             r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-stanheaders
-                             r-rstantools
-                             r-rstan
-                             r-rlang
-                             r-rcppparallel
-                             r-rcppeigen
-                             r-rcpp
-                             r-posterior
-                             r-matrix
-                             r-mass
-                             r-ggplot2
-                             r-dplyr
-                             r-clustermq
-                             r-bh))
-    (native-inputs (list r-knitr))
-    (home-page "https://wlandau.github.io/historicalborrowlong/")
-    (synopsis "Longitudinal Bayesian Historical Borrowing Models")
-    (description
-     "Historical borrowing in clinical trials can improve precision and operating
-characteristics.  This package supports a longitudinal hierarchical model to
-borrow historical control data from other studies to better characterize the
-control response of the current study.  It also quantifies the amount of
-borrowing through longitudinal benchmark models (independent and pooled).  The
-hierarchical model approach to historical borrowing is discussed by Viele et al.
-(2013) <doi:10.1002/pst.1589>.")
     (license license:expat)))
 
 (define-public r-historicalborrow
@@ -11949,6 +11904,40 @@ algorithm was described by Hejazi, Coyle, and van der Laan (2020)
      "Initializes a class that obtains API credentials and provides a method to use
 those credentials to make GET requests to the Hakai API server.  Usage
 instructions are documented at <https://hakaiinstitute.github.io/hakai-api/>.")
+    (license license:expat)))
+
+(define-public r-hahmmr
+  (package
+    (name "r-hahmmr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hahmmr" version))
+       (sha256
+        (base32 "19bds84pkimr71dy1365b71k7ihn7x86yalgcmagvkxgygpg3409"))))
+    (properties `((upstream-name . "hahmmr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-tibble
+                             r-stringr
+                             r-roptim
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-patchwork
+                             r-iranges
+                             r-glue
+                             r-ggplot2
+                             r-genomicranges
+                             r-dplyr
+                             r-data-table))
+    (home-page "https://cran.r-project.org/package=hahmmr")
+    (synopsis "Haplotype-Aware Hidden Markov Model for RNA")
+    (description
+     "Haplotype-aware Hidden Markov Model for RNA (@code{HaHMMR}) is a method for
+detecting copy number variations (CNVs) from bulk RNA-seq data.  Additional
+examples, documentations, and details on the method are available at
+<https://github.com/kharchenkolab/hahmmr/>.")
     (license license:expat)))
 
 (define-public r-hagis

@@ -8409,13 +8409,13 @@ rationality.")
 (define-public r-epistats
   (package
     (name "r-epistats")
-    (version "1.6-1")
+    (version "1.6-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EpiStats" version))
        (sha256
-        (base32 "02pp2b78hznm5n2ngk4bvgc7amwi32406fxvn52mbbvlpb8pjm0d"))))
+        (base32 "1smzy6hvpiiysz9b9dxswmhdx36fy3cfbqpd2hyh24vxvr11ynlr"))))
     (properties `((upstream-name . "EpiStats")))
     (build-system r-build-system)
     (propagated-inputs (list r-epir r-dplyr))
@@ -8429,7 +8429,18 @@ studies and cohort studies.  It may be particularly useful for outbreak
 investigations including univariable analysis and stratified analysis.  The
 functions for cohort studies include the CS(), CSTable() and CSInter() commands.
  The functions for case control studies include the CC(), CCTable() and
-CCInter() commands.")
+CCInter() commands.  References - Cornfield, J. 1956.  A statistical problem
+arising from retrospective studies.  In Vol.  4 of Proceedings of the Third
+Berkeley Symposium, ed.  J. Neyman, 135-148.  Berkeley, CA - University of
+California Press.  Woolf, B. 1955.  On estimating the relation between blood
+group disease.  Annals of Human Genetics 19 251-253.  Reprinted in Evolution of
+Epidemiologic Ideas Annotated Readings on Concepts and Methods, ed.  S.
+Greenland, pp.  108-110.  Newton Lower Falls, MA Epidemiology Resources.  Gilles
+Desve & Peter Makary, 2007.  CSTABLE Stata module to calculate summary table for
+cohort study Statistical Software Components S456879, Boston College Department
+of Economics.  Gilles Desve & Peter Makary, 2007.  CCTABLE Stata module to
+calculate summary table for case-control study Statistical Software Components
+S456878, Boston College Department of Economics.")
     (license license:lgpl3)))
 
 (define-public r-episignaldetection
@@ -9868,6 +9879,28 @@ even when zero carcasses have been found in searches, following Huso et al.
 (2015) <doi:10.1890/14-0764.1>, Dalthorp et al. (2017) <doi:10.3133/ds1055>, and
 Dalthorp and Huso (2015) <doi:10.3133/ofr20151227>.")
     (license license:gpl2)))
+
+(define-public r-envvar
+  (package
+    (name "r-envvar")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "envvar" version))
+       (sha256
+        (base32 "0qj1aaxkvrjy6wyds38b956zfpp438pw0p4cw00h0i8ww9ljyrs4"))))
+    (properties `((upstream-name . "envvar")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-lubridate r-fs r-cli))
+    (home-page "https://github.com/briandconnelly/envvar")
+    (synopsis
+     "Make Working with Environment Variables Easier and More Consistent")
+    (description
+     "This package provides a collection of functions that allows for easy and
+consistent use of environment variables.  This includes setting, checking,
+retrieving, transforming, and validating values stored in environment variables.")
+    (license license:expat)))
 
 (define-public r-envstat
   (package
@@ -14798,6 +14831,52 @@ pairs of securities.  Summary and plot functions are provided, and the package
 is able to fetch closing prices of securities from Yahoo.  A variety of unit
 root tests are supported, and an improved unit root test is included.")
     (license (list license:gpl2 license:gpl3))))
+
+(define-public r-eganet
+  (package
+    (name "r-eganet")
+    (version "2.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EGAnet" version))
+       (sha256
+        (base32 "1jaqdygcgfgdq357xvmvzrcn8n0cmvmxccynym65q4iqbz538qlf"))))
+    (properties `((upstream-name . "EGAnet")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sna
+                             r-semplot
+                             r-qgraph
+                             r-progressr
+                             r-network
+                             r-matrix
+                             r-lavaan
+                             r-igraph
+                             r-gparotation
+                             r-glasso
+                             r-ggpubr
+                             r-ggplot2
+                             r-ggdendro
+                             r-ggally
+                             r-future-apply
+                             r-future))
+    (home-page "https://r-ega.net")
+    (synopsis
+     "Exploratory Graph Analysis â a Framework for Estimating the Number of Dimensions in Multivariate Data using Network Psychometrics")
+    (description
+     "This package implements the Exploratory Graph Analysis (EGA) framework for
+dimensionality and psychometric assessment.  EGA estimates the number of
+dimensions in psychological data using network estimation methods and community
+detection algorithms.  A bootstrap method is provided to assess the stability of
+dimensions and items.  Fit is evaluated using the Entropy Fit family of indices.
+ Unique Variable Analysis evaluates the extent to which items are locally
+dependent (or redundant).  Network loadings provide similar information to
+factor loadings and can be used to compute network scores.  A bootstrap and
+permutation approach are available to assess configural and metric invariance.
+Hierarchical structures can be detected using Hierarchical EGA. Time series and
+intensive longitudinal data can be analyzed using Dynamic EGA, supporting
+individual, group, and population level assessments.")
+    (license license:gpl3+)))
 
 (define-public r-ega
   (package

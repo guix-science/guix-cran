@@ -14689,13 +14689,13 @@ text.  Functions send requests to translation services online.")
 (define-public r-polycub
   (package
     (name "r-polycub")
-    (version "0.8.1")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "polyCub" version))
        (sha256
-        (base32 "09a4n69f9m5y57wkxlhwn5xfhzpqrcyzfc6n5zywn5jkj5h7wijl"))))
+        (base32 "0rdcb0jdfjxj09vrhsgf7jy65fffldi2dp32gh04c0mhbi38bhx9"))))
     (properties `((upstream-name . "polyCub")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp))
@@ -14707,11 +14707,10 @@ text.  Functions send requests to translation services online.")
 simple closed polygonal domains.  The following cubature methods are
 implemented: product Gauss cubature (Sommariva and Vianello, 2007,
 <doi:10.1007/s10543-007-0131-2>), the simple two-dimensional midpoint rule
-(wrapping spatstat.geom functions), adaptive cubature for radially symmetric
+(wrapping spatstat.geom functions), and adaptive cubature for radially symmetric
 functions via line integrate() along the polygon boundary (Meyer and Held, 2014,
-<doi:10.1214/14-AOAS743>, Supplement B), and integration of the bivariate
-Gaussian density based on polygon triangulation.  For simple integration along
-the axes, the cubature package is more appropriate.")
+<doi:10.1214/14-AOAS743>, Supplement B).  For simple integration along the axes,
+the cubature package is more appropriate.")
     (license license:gpl2)))
 
 (define-public r-polycrossdesigns
@@ -16771,13 +16770,13 @@ learning to them on your own.")
 (define-public r-pmetar
   (package
     (name "r-pmetar")
-    (version "0.4.1")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pmetar" version))
        (sha256
-        (base32 "03jh7x1nj3fgr9rl9f886sml2a14m7jlwad7vm1sw0pc7dqd04cd"))))
+        (base32 "14vz227mq1kjrmhb0gknx4alk0krl6aaj7rss3mm2hf832kr5724"))))
     (properties `((upstream-name . "pmetar")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -16795,7 +16794,7 @@ learning to them on your own.")
      "Allows to download current and historical METAR weather reports extract and
 parse basic parameters and present main weather information.  Current reports
 are downloaded from Aviation Weather Center
-<https://www.aviationweather.gov/metar> and historical reports from Iowa
+<https://aviationweather.gov/data/metar/> and historical reports from Iowa
 Environmental Mesonet web page of Iowa State University ASOS-AWOS-METAR
 <http://mesonet.agron.iastate.edu/AWOS/>.")
     (license license:gpl3+)))
@@ -25798,13 +25797,13 @@ updated dabestr functions.")
 (define-public r-perms
   (package
     (name "r-perms")
-    (version "1.11")
+    (version "1.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "perms" version))
        (sha256
-        (base32 "027npxl4213nfzkpaigb015djbqsssfvb5lwfs17qrzvp5qqw53m"))))
+        (base32 "0zi7a8pai7j2i9ckfn87f2g5nm3r54631cib0lz0xdzczad2j2nr"))))
     (properties `((upstream-name . "perms")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-mclust r-mass r-foreach r-doparallel))
@@ -25812,7 +25811,8 @@ updated dabestr functions.")
     (synopsis "Fast Permutation Computation")
     (description
      "This package implements the algorithm of Christensen (2023)
-<doi:10.1214/22-BA1353> for computing permanents of block rectangular matrices.")
+<doi:10.1214/22-BA1353> for estimating marginal likelihoods via permutation
+counting.")
     (license license:bsd-2)))
 
 (define-public r-permpath
@@ -27595,6 +27595,29 @@ pedigree structure ('Vazquez et al., 2010') <doi:10.2527/jas.2009-1952>.")
      "Gene-level variant association tests with disease status for pedigree data:
 kernel and burden association statistics.")
     (license license:gpl2+)))
+
+(define-public r-pedfamilias
+  (package
+    (name "r-pedfamilias")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pedFamilias" version))
+       (sha256
+        (base32 "026i67p3y60r393hklxh7cjv6apbjyf4h1xba96bn11yhkqrhsw6"))))
+    (properties `((upstream-name . "pedFamilias")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-pedtools r-pedmut))
+    (home-page "https://github.com/magnusdv/pedFamilias")
+    (synopsis "Import and Export 'Familias' Files")
+    (description
+     "This package provides tools for exchanging pedigree data between the pedsuite
+packages and the Familias software for forensic kinship computations (Egeland et
+al. (2000) <doi:10.1016/s0379-0738(00)00147-x>).  These functions were split out
+from the forrel package to streamline maintenance and provide a lightweight
+alternative for packages otherwise independent of forrel'.")
+    (license license:gpl3+)))
 
 (define-public r-pedbuildr
   (package

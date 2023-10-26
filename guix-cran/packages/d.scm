@@ -3858,13 +3858,13 @@ prescriptions.  Based on Pye et al (2018) <doi:10.1002/pds.4440>.")
 (define-public r-drugexposurediagnostics
   (package
     (name "r-drugexposurediagnostics")
-    (version "0.4.7")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DrugExposureDiagnostics" version))
        (sha256
-        (base32 "0s2wbf5i4awnw3ncs5pp6gwsgpqqdfl3a209vvgad7xnfhp9m0gh"))))
+        (base32 "0ix33wwxpl86yiqm5fys894793jgbbzxbfnssd4f6vydy2v36rl3"))))
     (properties `((upstream-name . "DrugExposureDiagnostics")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -17841,27 +17841,6 @@ decomposition proposed by Horiuchi, Wilmoth, and Pletcher (2008)
 Andreev, Shkolnikov and Begun (2002) <doi:10.4054/@code{DemRes.2002.7.14>}.")
     (license license:gpl3)))
 
-(define-public r-deming
-  (package
-    (name "r-deming")
-    (version "1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "deming" version))
-       (sha256
-        (base32 "1yx3qrbik6jpqgsi0gqgc7y2cra13qlisg2gq8rvnv57nvcvb421"))))
-    (properties `((upstream-name . "deming")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-boot))
-    (home-page "https://cran.r-project.org/package=deming")
-    (synopsis
-     "Deming, Theil-Sen, Passing-Bablock and Total Least Squares Regression")
-    (description
-     "Generalized Deming regression, Theil-Sen regression and Passing-Bablock
-regression functions.")
-    (license license:lgpl2.0+)))
-
 (define-public r-dematel
   (package
     (name "r-dematel")
@@ -18952,6 +18931,27 @@ treat observations (rows) connected by duplicated data as one observation, e.g.
 companies can belong to one family (and thus: be one company) by sharing some
 telephone numbers.  This package allows to find connected rows based on data on
 chosen columns and collapse it into one row.")
+    (license license:expat)))
+
+(define-public r-deduped
+  (package
+    (name "r-deduped")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "deduped" version))
+       (sha256
+        (base32 "1jpb0ivqmnq4zz365myc62j1x9mhnxcjhlc3yyll3dl0xkm1r1ni"))))
+    (properties `((upstream-name . "deduped")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-fastmatch r-collapse))
+    (home-page "https://cran.r-project.org/package=deduped")
+    (synopsis "Making \"Deduplicated\" Functions")
+    (description
+     "This package contains one main function deduped() that returns a function that
+acts on the unique values of the first input and expands the results back.  This
+can significantly speed up certain slow iterative functions.")
     (license license:expat)))
 
 (define-public r-deductiver
@@ -24958,13 +24958,13 @@ stochastic disability-adjusted life year (DALY) calculation.")
 (define-public r-daltoolbox
   (package
     (name "r-daltoolbox")
-    (version "1.0.717")
+    (version "1.0.727")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "daltoolbox" version))
        (sha256
-        (base32 "1fxkbd821pp7qriqj0c0q5njn3xyibf3b3npx8gsiv186ss17dms"))))
+        (base32 "0ycbbqcdkk9yhwrrln5xh4j5xfsga4hcn0jc7fgczpjdgv07g8w8"))))
     (properties `((upstream-name . "daltoolbox")))
     (build-system r-build-system)
     (propagated-inputs (list r-tree

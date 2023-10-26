@@ -1687,6 +1687,30 @@ For additional detail see: Haneuse S, Saegusa T and Lumley T
 (2011)<doi:10.18637/jss.v043.i11>.")
     (license license:gpl3+)))
 
+(define-public r-osdatahub
+  (package
+    (name "r-osdatahub")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "osdatahub" version))
+       (sha256
+        (base32 "00pk0c9v3r0kdgin4gg4hk3hhf0274pw283919pr9kg926nddc3r"))))
+    (properties `((upstream-name . "osdatahub")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-jsonlite r-httr r-geos r-geojsonsf))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=osdatahub")
+    (synopsis "Easier Interaction with the Ordnance Survey Data Hub")
+    (description
+     "Ordnance Survey ('OS') is the national mapping agency for Great Britain and
+produces a large variety of mapping and geospatial products.  Much of OS's data
+is available via the OS Data Hub <https://osdatahub.os.uk/>, a platform that
+hosts both free and premium data products.  osdatahub provides a user-friendly
+way to access, query, and download these data.")
+    (license license:expat)))
+
 (define-public r-osd
   (package
     (name "r-osd")
@@ -5722,13 +5746,13 @@ metrics of their own.")
 (define-public r-openmeteo
   (package
     (name "r-openmeteo")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openmeteo" version))
        (sha256
-        (base32 "0fzl1cb5pzdg5gs2fz60i04mkinrgvjclybgfyjz5zf8i86z9fgl"))))
+        (base32 "147zc2mn9ma6rkdz5czkmq8pp9slkvz44vf00mi64jkq2gp9kfpx"))))
     (properties `((upstream-name . "openmeteo")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml

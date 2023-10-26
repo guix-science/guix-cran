@@ -24740,16 +24740,16 @@ prediction intervals with random forests (RFPI) proposed by Roy and Larocque
 (define-public r-rfpm
   (package
     (name "r-rfpm")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RFPM" version))
        (sha256
-        (base32 "1rhi1nn1xxc5qvxk2vwd96325pqwz45b2bvaq994glvlxniki3c1"))))
+        (base32 "0qj51z772v1lr1x9mb2akvzbw20fn87w10c6gmw5qv845mg360kj"))))
     (properties `((upstream-name . "RFPM")))
     (build-system r-build-system)
-    (propagated-inputs (list r-reshape2 r-lawstat r-dplyr))
+    (propagated-inputs (list r-tidyr r-lawstat r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=RFPM")
     (synopsis "Floating Percentile Model")
@@ -26407,13 +26407,13 @@ information regarding the web services this package invokes can be found at
 (define-public r-restez
   (package
     (name "r-restez")
-    (version "2.1.3")
+    (version "2.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "restez" version))
        (sha256
-        (base32 "1q008ykk75h19zqnkv339qx7zb7vmab8f9ywvr8qb7l1n3yxah76"))))
+        (base32 "1jzffv1lsxwa2dvkqx48ldwffghkg91vz99d9l3kjdxmg9gb8y9k"))))
     (properties `((upstream-name . "restez")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi
@@ -46746,13 +46746,13 @@ plot_power() draws the corresponding power graphs.")
 (define-public r-r2rtf
   (package
     (name "r-r2rtf")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r2rtf" version))
        (sha256
-        (base32 "0a9lx311qb4yrs68271di8dmy8dgjqd1mv4pibwavkb2x86jxsrp"))))
+        (base32 "0lhz6ay2f250hqalz96h4x8pshg8v8zljzz3x9lvrdsygcc8hjyn"))))
     (properties `((upstream-name . "r2rtf")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

@@ -6369,13 +6369,13 @@ data.")
 (define-public r-treedist
   (package
     (name "r-treedist")
-    (version "2.6.3")
+    (version "2.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TreeDist" version))
        (sha256
-        (base32 "165535fzmrafps9lvzdnlgxz510x34rr6aqy56hv0qhaq0h13j9j"))))
+        (base32 "1x92z0ipk3rk94hxc3al76y51pzha2csry3vrflll7sgshkbr5rj"))))
     (properties `((upstream-name . "TreeDist")))
     (build-system r-build-system)
     (propagated-inputs (list r-treetools
@@ -13455,13 +13455,13 @@ Estimated Scatterplot Smoothing (LOESS) prediction correction.")
 (define-public r-tidyusda
   (package
     (name "r-tidyusda")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyUSDA" version))
        (sha256
-        (base32 "0wbhrhb87zrk93b1nhll6pqhh4gpxf3x3j28m09vgzdggxhk9w5y"))))
+        (base32 "1llqz8xs6zkg0vqz6hks6jghxsfyp35k3n4882qg3w6lr080ir8b"))))
     (properties `((upstream-name . "tidyUSDA")))
     (build-system r-build-system)
     (propagated-inputs (list r-tigris

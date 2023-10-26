@@ -10118,13 +10118,13 @@ return values are checked in order to make them type stable.")
 (define-public r-stevedata
   (package
     (name "r-stevedata")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stevedata" version))
        (sha256
-        (base32 "18d6by3qb6xrlxs70hzfln5y5wxhd0zjvnc3rc7a2cz9qc2cln0w"))))
+        (base32 "0pb5w0jzyf4igi76n9cr97zxk5l8m7mjjjn18bd71w3mbpnsig7r"))))
     (properties `((upstream-name . "stevedata")))
     (build-system r-build-system)
     (home-page "http://svmiller.com/stevedata/")
@@ -17831,13 +17831,13 @@ coefficients.  For details see Murakami (2021) <@code{arXiv:1703.04467>}.")
 (define-public r-spmodel
   (package
     (name "r-spmodel")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spmodel" version))
        (sha256
-        (base32 "0viv56fk4qq16grzhjx9fviyykwh2rki5q1fs92fnjpghnhjfwv7"))))
+        (base32 "0v3hcdi7kx2kf7ngs587wmk3lnhj29n1hw11p2ggxla8wv9dassb"))))
     (properties `((upstream-name . "spmodel")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-sf r-matrix r-generics))
@@ -32631,13 +32631,13 @@ the 2013-2014 and 2014-2015 seasons\" <doi:10.1002/sim.9181>.")
 (define-public r-siren
   (package
     (name "r-siren")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "siren" version))
        (sha256
-        (base32 "02j3lbphx1mmmzrhjhk97029fnn9v10989mn69vlzp3k72k2m9z7"))))
+        (base32 "1w4a1dkhph0ai5faxvgmvf0phnpqapmp6wlax5r38ry5p11s0ljq"))))
     (properties `((upstream-name . "siren")))
     (build-system r-build-system)
     (propagated-inputs (list r-psych r-lavaan r-efa-mrfa))
@@ -39336,13 +39336,13 @@ design.  See <https://material.io/guidelines/> for more information.")
 (define-public r-shinylp
   (package
     (name "r-shinylp")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyLP" version))
        (sha256
-        (base32 "1sjcll10ciq6pj9h8c6ybjqp8763wc423hddlalcblxxpajf6avz"))))
+        (base32 "1cdi9dbaz1q71c0wb5a910xz3rspqgqxdk14ibhh06lb0hs9n4nc"))))
     (properties `((upstream-name . "shinyLP")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny))
