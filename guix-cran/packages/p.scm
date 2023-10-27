@@ -14634,6 +14634,32 @@ probabilistic genotypes are acceptable input; for more details on the latter see
 Liao et al. (2021) <doi:10.1007/s00122-021-03834-x>.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-polyhedralcubature
+  (package
+    (name "r-polyhedralcubature")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "polyhedralCubature" version))
+       (sha256
+        (base32 "0nbypc8l762jalqa31kcwh7f0vb82308dp3m6c5irpm4sn3bziyf"))))
+    (properties `((upstream-name . "polyhedralCubature")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tessellation
+                             r-spray
+                             r-simplicialcubature
+                             r-rcdd
+                             r-qspray
+                             r-gmp))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/stla/polyhedralCubature")
+    (synopsis "Multiple Integration over Convex Polyhedra")
+    (description
+     "Evaluation of multiple integrals over convex polyhedra.  This is useful when the
+bounds of the integrals are some linear combinations of the variables.")
+    (license license:gpl3)))
+
 (define-public r-polyhaplotyper
   (package
     (name "r-polyhaplotyper")
@@ -29141,13 +29167,13 @@ and Benjamin M. Bolker. (2021) <@code{arXiv:2102.02297>}.")
 (define-public r-pcovr
   (package
     (name "r-pcovr")
-    (version "2.7.1")
+    (version "2.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PCovR" version))
        (sha256
-        (base32 "1lvj3kf4pnvbr7lk3kzvh72akga49zx25b3w7nq24925s129sqx1"))))
+        (base32 "0fzs071wnrf84fah0nzzavjiqvch031xjsmlj6nj7cjrmy7p7mv1"))))
     (properties `((upstream-name . "PCovR")))
     (build-system r-build-system)
     (propagated-inputs (list r-threeway r-matrix r-mass r-gparotation))

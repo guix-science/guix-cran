@@ -8937,13 +8937,13 @@ library.")
 (define-public r-aorsf
   (package
     (name "r-aorsf")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aorsf" version))
        (sha256
-        (base32 "0rwxqxs2jhi8a6przsxnrx1a6zax7i25qli8a83jxxibswhx0j05"))))
+        (base32 "1xrhd0p2m5bhm34kkm5v5j5fxflh7rdl2brap7j6qcg67s9fibls"))))
     (properties `((upstream-name . "aorsf")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-data-table r-collapse))
@@ -9288,13 +9288,13 @@ simulate the effects of mergers under different competitive regimes.")
 (define-public r-anticlust
   (package
     (name "r-anticlust")
-    (version "0.8.0-1")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "anticlust" version))
        (sha256
-        (base32 "1sf1nfbcyx6hbvs3ipww1r09m7q2k0iq8pdngqg7h286ydd3yj0d"))))
+        (base32 "1dsb9bvbg78gxrpxiddnm8diym8k0fsdgykk35icf6ww6krzzymx"))))
     (properties `((upstream-name . "anticlust")))
     (build-system r-build-system)
     (propagated-inputs (list r-rann r-matrix))
@@ -13962,13 +13962,13 @@ catchments for use by the @code{airGR} packages.")
 (define-public r-airgr
   (package
     (name "r-airgr")
-    (version "1.7.4")
+    (version "1.7.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "airGR" version))
        (sha256
-        (base32 "1klf064lm6iyvlmy89amf097yvcyqsz9m2h6mjxqv6n737bvlzfa"))))
+        (base32 "0kxa3p659sh72x54qhbxr4ni781czj4g2k6x3zs30y2zgmljrwqa"))))
     (properties `((upstream-name . "airGR")))
     (build-system r-build-system)
     (native-inputs (list r-knitr gfortran))
@@ -14051,13 +14051,13 @@ Visit: <https://yqzhong7.github.io/AIPW/> for more information.")
 (define-public r-aion
   (package
     (name "r-aion")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aion" version))
        (sha256
-        (base32 "0m6l67nhip8ln875cxsbjghk27p890yb9xs5v18mrg5gjnjgmas7"))))
+        (base32 "01h7w39gz03wydxsk2ikikbhi9nw46qq2wl3nksvi91zydyls5zf"))))
     (properties `((upstream-name . "aion")))
     (build-system r-build-system)
     (propagated-inputs (list r-arkhe))
@@ -14216,13 +14216,13 @@ other people.")
 (define-public r-aides
   (package
     (name "r-aides")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aides" version))
        (sha256
-        (base32 "0yqn15ddwq3mvssfkl0sac2scj3j9ghr47r1q3afvmas00p095qg"))))
+        (base32 "15lf1w808a6gb4fiwljj8yr6vy788jp97zxpi9chi3c0fd0nb19p"))))
     (properties `((upstream-name . "aides")))
     (build-system r-build-system)
     (propagated-inputs (list r-meta r-boot))

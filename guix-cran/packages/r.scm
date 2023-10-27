@@ -18413,13 +18413,13 @@ properties of all detected events and exceedances.")
 (define-public r-rmariadb
   (package
     (name "r-rmariadb")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RMariaDB" version))
        (sha256
-        (base32 "080pxl29q9fm5a3n8jp5dmwlwcc2snrz40zjdqyfkfb0m81zprih"))))
+        (base32 "0a39n1pgpxhq095bz689fxar68vvy5hypxym1d1ric0s8vs2l6vd"))))
     (properties `((upstream-name . "RMariaDB")))
     (build-system r-build-system)
     (inputs (list zlib openssl))
@@ -24629,13 +24629,13 @@ in: <http://forsys.sefs.uw.edu/fusion/fusionlatest.html>).")
 (define-public r-rfssa
   (package
     (name "r-rfssa")
-    (version "3.0.1")
+    (version "3.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rfssa" version))
        (sha256
-        (base32 "0nxn0lq28vl0bnr1cmbr3pgivmxs0a23wh2bg4z2knvzw00lg2nn"))))
+        (base32 "1fa9j7rcsf5pz8l4h88l9mz4qf8vlrzg53c99176wmj5a39n2abp"))))
     (properties `((upstream-name . "Rfssa")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -26782,13 +26782,13 @@ their inclusion in the statistical models.")
 (define-public r-reslife
   (package
     (name "r-reslife")
-    (version "0.1.2")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reslife" version))
        (sha256
-        (base32 "0k9a8g9iv3vspcai7z00755l9d7nn5753k3ysd0pm3blsmyq2zpk"))))
+        (base32 "17n9p0kj5sx0zhdyfs4s15rwjkcx9hmly8m51xyv2y70vr1nl4cc"))))
     (properties `((upstream-name . "reslife")))
     (build-system r-build-system)
     (propagated-inputs (list r-pracma r-gsl r-flexsurv))
@@ -30686,13 +30686,13 @@ Some of the functions are applicable to image data.")
 (define-public r-refugees
   (package
     (name "r-refugees")
-    (version "2022.12.1")
+    (version "2023.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "refugees" version))
        (sha256
-        (base32 "1fkdrm2ryjsdwsn0x0j3kly2yn5v3gq4g3hn4wdvps1kwrl31vng"))))
+        (base32 "1sy93zg4vjv02ga96vzhdjvgnwmv3gmd3m7w2fplah7d49i3z85v"))))
     (properties `((upstream-name . "refugees")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble))
@@ -37351,13 +37351,13 @@ be substituted.")
 (define-public r-rcompendium
   (package
     (name "r-rcompendium")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rcompendium" version))
        (sha256
-        (base32 "1ka0lzkvl9qipnjwk75n904ksfd1bg9bps2d4046fpbhw3wz7sa5"))))
+        (base32 "10df6lr776qr2lhc4phpkl53par60f35c694knzfx4s81mprd842"))))
     (properties `((upstream-name . "rcompendium")))
     (build-system r-build-system)
     (propagated-inputs (list r-xfun
@@ -44588,13 +44588,13 @@ several spectra of plastic colorants.")
 (define-public r-ralsa
   (package
     (name "r-ralsa")
-    (version "1.3.5")
+    (version "1.3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RALSA" version))
        (sha256
-        (base32 "16zq764qks8qbj5adzfdp0agg8p33q7znyn4png0qb3ighn751yg"))))
+        (base32 "0jjvdawl6p07qc6s363pgfxjrzj565gdmws467070qylsh4rglm3"))))
     (properties `((upstream-name . "RALSA")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -44613,7 +44613,7 @@ several spectra of plastic colorants.")
                              r-foreign
                              r-dt
                              r-data-table))
-    (home-page "http://ralsa.ineri.org/")
+    (home-page "https://ralsa.ineri.org/")
     (synopsis "R Analyzer for Large-Scale Assessments")
     (description
      "Prepare and analyze data from large-scale assessments and surveys with complex

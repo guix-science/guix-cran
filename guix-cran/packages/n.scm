@@ -11335,13 +11335,13 @@ ISBN 1452205663.")
 (define-public r-nestedcv
   (package
     (name "r-nestedcv")
-    (version "0.6.9")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nestedcv" version))
        (sha256
-        (base32 "02lm4naf3gkgj8l1ffqprq49jmxqj0y0i8f0riywcsmkrcllhlkp"))))
+        (base32 "0jpg4il1niyizfq8kkk391x7anhp2s38mrfypa86skr08ca46zss"))))
     (properties `((upstream-name . "nestedcv")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang

@@ -4910,13 +4910,13 @@ training methodology in each line.  Reference: Marzouka & Eriksson (2021)
 (define-public r-multichull
   (package
     (name "r-multichull")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multichull" version))
        (sha256
-        (base32 "1gc7kxxlbanc6rmmbf6h85jf7kj0a78h23m5vwwqqliv018qsv2n"))))
+        (base32 "1ghkyypp7pij62iz33di6af27hkvy5rfrh6hpms21v4a43z2ljb7"))))
     (properties `((upstream-name . "multichull")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinythemes r-shiny r-plotly r-igraph))
@@ -8800,13 +8800,13 @@ mapping variation among different regions, and more.")
 (define-public r-mreg
   (package
     (name "r-mreg")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mreg" version))
        (sha256
-        (base32 "1gz19d4l0q3xd1w72ip6mhv20w8fgaaczkkdv40bflwabpxdy420"))))
+        (base32 "1j958jkibjlvjh0nwbwmqk7imcv3srhnzg28gs9j5p8xhyx12i0f"))))
     (properties `((upstream-name . "mreg")))
     (build-system r-build-system)
     (home-page "https://github.com/shug0131/mreg")
@@ -36709,13 +36709,13 @@ used to infer seed production by each individual plant.")
 (define-public r-masswater
   (package
     (name "r-masswater")
-    (version "2.1.2")
+    (version "2.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MassWateR" version))
        (sha256
-        (base32 "0r5ngshvsj2bhhpsrzrlarm3fwv2f6zlxbrx83crciqspvkird68"))))
+        (base32 "1069fnwcsv4s4mhanczscdmpysl5y53nwjanzxbb9wflm4vm0wpc"))))
     (properties `((upstream-name . "MassWateR")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
@@ -36726,12 +36726,13 @@ used to infer seed production by each individual plant.")
                              r-rmarkdown
                              r-readxl
                              r-rcolorbrewer
+                             r-raster
+                             r-prettymapr
                              r-lubridate
                              r-httr
                              r-ggspatial
                              r-ggrepel
                              r-ggplot2
-                             r-ggmap
                              r-flextable
                              r-dplyr
                              r-curl))

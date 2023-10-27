@@ -8904,6 +8904,35 @@ analysis of nearest neighbour counts following Dixon (2002)
 the original dixon2002() function of the ecespa package to improve speed.")
     (license license:gpl2+)))
 
+(define-public r-divvy
+  (package
+    (name "r-divvy")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "divvy" version))
+       (sha256
+        (base32 "03s76pkywxcx6kkdq7dpa0l2rvhwibzp48sb9mqbbhf713a621pi"))))
+    (properties `((upstream-name . "divvy")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vegan
+                             r-units
+                             r-terra
+                             r-sf
+                             r-rdpack
+                             r-inext))
+    (native-inputs (list r-knitr))
+    (home-page "https://gawainantell.github.io/divvy/")
+    (synopsis "Spatial Subsampling of Biodiversity Occurrence Data")
+    (description
+     "Divide taxonomic occurrence data into geographic regions of fair comparison,
+with three customisable methods to standardise area and extent.  Calculate
+common biodiversity and range-size metrics on subsampled data.  Background
+theory and practical considerations for the methods are described in Antell and
+others (2023) <doi:10.31223/X5997Z>.")
+    (license license:gpl3+)))
+
 (define-public r-divseg
   (package
     (name "r-divseg")
@@ -11821,19 +11850,20 @@ data with weak signals.  The Annals of Applied Statistics.  7(3) 1334-1361.
 (define-public r-dire
   (package
     (name "r-dire")
-    (version "2.1.1")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Dire" version))
        (sha256
-        (base32 "1ccy1g600196qc4chnjcd6gffbhj6mzhc5kszpyb0w4szxmdag55"))))
+        (base32 "140qqpp0vhqw0vmzff58sx51nj21x61z063j4j23nrdrl3ylamcv"))))
     (properties `((upstream-name . "Dire")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
                              r-rcpp
                              r-matrix
                              r-mass
+                             r-lbfgs
                              r-iterators
                              r-haven
                              r-foreach))
@@ -15836,6 +15866,28 @@ data separation.")
 two methods: sliding windows (Purcell et al (2007) <doi:10.1086/519795>) and
 consecutive runs (Marras et al (2015) <doi:10.1111/age.12259>).")
     (license license:gpl3)))
+
+(define-public r-detectors
+  (package
+    (name "r-detectors")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "detectors" version))
+       (sha256
+        (base32 "0bi14jv2za3a5xanqchzs7qpm71syaw5j1lcs5q2fc5hbyfp0lvw"))))
+    (properties `((upstream-name . "detectors")))
+    (build-system r-build-system)
+    (home-page "https://simonpcouch.github.io/detectors/")
+    (synopsis "Prediction Data from GPT Detectors")
+    (description
+     "Researchers carried out a series of experiments passing a number of essays to
+different GPT detection models.  Juxtaposing detector predictions for papers
+written by native and non-native English writers, the authors argue that GPT
+detectors disproportionately classify real writing from non-native English
+writers as AI-generated.")
+    (license license:expat)))
 
 (define-public r-detector
   (package
@@ -23358,16 +23410,16 @@ ability to get this data from supported sources.")
 (define-public r-datanugget
   (package
     (name "r-datanugget")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datanugget" version))
        (sha256
-        (base32 "1zvhbkpc1akzdfaz7jzgfmb287s88b8a5icgqkaq5zvlik6drw0q"))))
+        (base32 "0d5azw92za46hnb0im2fgzamyfslxl4ss8sxvxzqz9ss4yz46qj2"))))
     (properties `((upstream-name . "datanugget")))
     (build-system r-build-system)
-    (propagated-inputs (list r-foreach r-dosnow))
+    (propagated-inputs (list r-rfast r-foreach r-dosnow))
     (home-page "https://cran.r-project.org/package=datanugget")
     (synopsis "Create, and Refine Data Nuggets")
     (description
@@ -23383,7 +23435,13 @@ the trace of the covariance matrix of the observations contained within a data
 nugget divided by the dimension of the dataset.  Data nuggets are refined by
 splitting data nuggets which have scales or shapes (defined as the ratio of the
 two largest eigenvalues of the covariance matrix of the observations contained
-within the data nugget) deemed too large.")
+within the data nugget) Reference paper: [1] Cherasia, K. E., Cabrera, J.,
+Fernholz, L. T., & Fernholz, R. (2022).  Data Nuggets in Supervised Learning.
+\\emph{In Robust and Multivariate Statistical Methods: Festschrift in Honor of
+David E. Tyler} (pp.  429-449).  Cham: Springer International Publishing. [2]
+Beavers, T., Cheng, G., Duan, Y., Cabrera, J., Lubomirski, M., Amaratunga, D.,
+Teigler, J. (2023).  Data Nuggets: A Method for Reducing Big Data While
+Preserving Data Structure (Submitted for Publication).")
     (license license:gpl2)))
 
 (define-public r-datana

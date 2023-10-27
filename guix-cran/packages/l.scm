@@ -13820,13 +13820,13 @@ and Liao (2017) <doi:10.1214/16-AOS1434>.")
 (define-public r-lavacreg
   (package
     (name "r-lavacreg")
-    (version "0.2-0")
+    (version "0.2-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lavacreg" version))
        (sha256
-        (base32 "0wxf1kyga1xx9f3cys3gl9h50fivwjp44jdr4n93wmpnm9rcaljf"))))
+        (base32 "0hfkwsgkws1h910b3dgp7ka1mqmb5dnikrdjcsn99vfm61mq0rxk"))))
     (properties `((upstream-name . "lavacreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-sparsegrid r-rcpparmadillo r-rcpp r-pracma

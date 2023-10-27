@@ -12331,13 +12331,13 @@ standard spherical harmonic representation of the Earth's main field.")
 (define-public r-igraphmatch
   (package
     (name "r-igraphmatch")
-    (version "2.0.2")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iGraphMatch" version))
        (sha256
-        (base32 "13rc8bi2p8gh238jxyqphah89dlpvmjwialzaha3ikdnmfgr41f4"))))
+        (base32 "1fp3x8xikc1992jgba5d5snjzgsczp5iy87m9qinbv7f9a94sfnq"))))
     (properties `((upstream-name . "iGraphMatch")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-matrix r-irlba r-igraph r-clue))

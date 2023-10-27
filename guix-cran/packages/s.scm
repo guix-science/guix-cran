@@ -18046,27 +18046,6 @@ equally sized groups, and the unnesting of data.frames within fully named lists.
 <doi:10.1111/j.1467-9868.2009.00723.x>).")
     (license license:gpl2+)))
 
-(define-public r-splot
-  (package
-    (name "r-splot")
-    (version "0.5.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "splot" version))
-       (sha256
-        (base32 "15z12qjfrxh1r1xcrn7r53cpahzbk5gh3gnvndsmwks5lk97gfxg"))))
-    (properties `((upstream-name . "splot")))
-    (build-system r-build-system)
-    (home-page "https://miserman.github.io/splot/")
-    (synopsis "Split Plot")
-    (description
-     "Automates common plotting tasks to ease data exploration.  Makes density plots
-(potentially overlaid on histograms), scatter plots with prediction lines, or
-bar or line plots with error bars.  For each type, y, or x and y variables can
-be plotted at levels of other variables, all with minimal specification.")
-    (license license:gpl2+)))
-
 (define-public r-splmm
   (package
     (name "r-splmm")
@@ -26654,13 +26633,13 @@ Tahar Allouche, Bruno Escoffier, Stefano Moretti and Meltem Ã@code{ztÃ¼rk}
 (define-public r-socialmixr
   (package
     (name "r-socialmixr")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "socialmixr" version))
        (sha256
-        (base32 "0whhpjsbhwnjbv6mvr227g347k52ak2jmdp2kll87m8phh48qd0s"))))
+        (base32 "1idkc4gsf5jnirgvnrcj9ciaz11r1kqkh7167jfly7wm5r31r3y3"))))
     (properties `((upstream-name . "socialmixr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -35830,13 +35809,13 @@ Ripley (1987) <ISBN:9780470009604>.")
 (define-public r-simengine
   (package
     (name "r-simengine")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SimEngine" version))
        (sha256
-        (base32 "1jga2iqdn0n9pym93addwhn3swn61dm1gh282isw2ssbqchh7arl"))))
+        (base32 "0vijcdgm7lmwx4gq170965q4mrshpdwqffv1afmjrn1zrkxifnpi"))))
     (properties `((upstream-name . "SimEngine")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-pbapply r-magrittr r-dplyr r-data-table))
@@ -43488,13 +43467,13 @@ outcome misclassification in data.")
 (define-public r-sequential
   (package
     (name "r-sequential")
-    (version "4.3")
+    (version "4.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Sequential" version))
        (sha256
-        (base32 "00901m3c5jnf58p394ndbkjiagqfzcnn25k4279df7wyahfc46gl"))))
+        (base32 "1msssr982xag6avb2si5z65gakqkpyzylrqykkplmvslj26vxrim"))))
     (properties `((upstream-name . "Sequential")))
     (build-system r-build-system)
     (propagated-inputs (list r-boot))
@@ -51095,6 +51074,29 @@ S., Hannachi, A., Trendafilov, N. T., & Jolliffe, I. T. (2011)
 <doi:10.2478/v10175-012-0051-4>.")
     (license license:gpl3)))
 
+(define-public r-scitb
+  (package
+    (name "r-scitb")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "scitb" version))
+       (sha256
+        (base32 "1ffz2zh5dr5w2w179ifyp4z9flryx052rfs39vg1n90qacymgshk"))))
+    (properties `((upstream-name . "scitb")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=scitb")
+    (synopsis "Provides Some Useful Functions for Making Statistical Tables")
+    (description
+     "You can use the functions provided by the package to make various statistical
+tables, such as baseline data tables.  Creates Table 1', i.e., a description of
+the baseline patient characteristics, which is essential in every medical
+research.  Supports both continuous and categorical variables, as well as
+p-values and standardized mean differences.  This method was described by Mary L
+@code{McHugh} (2013) <doi:10.11613/bm.2013.018>.")
+    (license license:gpl3)))
+
 (define-public r-scisr
   (package
     (name "r-scisr")
@@ -54198,6 +54200,39 @@ remotes::install_github(\"cran/@code{FitARMA}\") if necessary but is no longer
 needed in normal use.")
     (license license:gpl2+)))
 
+(define-public r-sara4r
+  (package
+    (name "r-sara4r")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sara4r" version))
+       (sha256
+        (base32 "1z112s7z9hcafmags76bazkyrmrrwykhf58g6z637w516nbgn314"))))
+    (properties `((upstream-name . "sara4r")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra r-tcltk2))
+    (native-inputs (list r-knitr))
+    (home-page "https://hydro-geomatic-lab.com/")
+    (synopsis
+     "An R-GUI for Spatial Analysis of Surface Runoff using the NRCS-CN Method")
+    (description
+     "This package provides a Graphical user interface to calculate the
+rainfall-runoff relation using the Natural Resources Conservation Service -
+Curve Number method (NRCS-CN method) but include modifications by Hawkins et
+al., (2002) about the Initial Abstraction.  This GUI follows the programming
+logic of a previously published software (Hernandez-Guzman et al.,
+2011)<doi:10.1016/j.envsoft.2011.07.006>.  It is a raster-based GIS tool that
+outputs runoff estimates from Land use/land cover and hydrologic soil group
+maps.  This package has already been published in Journal of Hydroinformatics
+(Hernandez-Guzman et al., 2021)<doi:10.2166/hydro.2020.087> but it is under
+constant development at the Institute about Natural Resources Research (INIRENA)
+from the Universidad Michoacana de San Nicolas de Hidalgo and represents a
+collaborative effort between the Hydro-Geomatic Lab (INIRENA) with the
+Environmental Management Lab (CIAD, A.C.).")
+    (license license:gpl3+)))
+
 (define-public r-sar
   (package
     (name "r-sar")
@@ -54961,13 +54996,13 @@ cancer data <@code{arXiv:2012.06093>}.")
 (define-public r-samtool
   (package
     (name "r-samtool")
-    (version "1.6.1")
+    (version "1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SAMtool" version))
        (sha256
-        (base32 "1higcy821apya9a1c73dqc7661knjp14cax9wm3023dz8n92z0dg"))))
+        (base32 "1nwvxn4x8a6j7ayiacx4nkfmnmd83ch6ji5sl7lhc6wnqrn5x47h"))))
     (properties `((upstream-name . "SAMtool")))
     (build-system r-build-system)
     (propagated-inputs (list r-vars
@@ -55484,6 +55519,36 @@ a random sample, missing by strata, duplicated within a dataset; and perform
 data analysis, including proportions, margins of error and upper and lower
 bounds for simple, stratified and cluster sample designs.")
     (license license:expat)))
+
+(define-public r-samon
+  (package
+    (name "r-samon")
+    (version "4.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "samon" version))
+       (sha256
+        (base32 "1gv3kvl2jf6x6fcy52k61frcnsnz6xafyfhwq1n08pyzbynlsf08"))))
+    (properties `((upstream-name . "samon")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=samon")
+    (synopsis "Sensitivity Analysis for Missing Data")
+    (description
+     "In a clinical trial with repeated measures designs, outcomes are often taken
+from subjects at fixed time-points.  The focus of the trial may be to compare
+the mean outcome in two or more groups at some pre-specified time after
+enrollment.  In the presence of missing data auxiliary assumptions are necessary
+to perform such comparisons.  One commonly employed assumption is the missing at
+random assumption (MAR).  The samon package allows the user to perform a
+(parameterized) sensitivity analysis of this assumption.  In particular it can
+be used to examine the sensitivity of tests in the difference in outcomes to
+violations of the MAR assumption.  The sensitivity analysis can be performed
+under two scenarios, a) where the data exhibit a monotone missing data pattern
+(see the samon() function), and, b) where in addition to a monotone missing data
+pattern the data exhibit intermittent missing values (see the @code{samonIM}()
+function).")
+    (license license:gpl2)))
 
 (define-public r-samm
   (package

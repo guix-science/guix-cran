@@ -605,16 +605,16 @@ sessions.")
 (define-public r-cxr
   (package
     (name "r-cxr")
-    (version "1.0.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cxr" version))
        (sha256
-        (base32 "12rx7hna3h84a2xb2ir43xgb3zfmh0fhn5wcdjklk2g94dmwid28"))))
+        (base32 "197xbphvnhg05dwcs0p7iwg6j6bi223cxxqfvibx7yp2bnfsllm2"))))
     (properties `((upstream-name . "cxr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-optimx r-mvtnorm))
+    (propagated-inputs (list r-optimx r-mvtnorm r-matrix))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/RadicalCommEcol/cxr")
     (synopsis "Toolbox for Modelling Species Coexistence in R")
@@ -628,7 +628,8 @@ modelling interaction effects between species, and calculate fitness and niche
 differences.  The functions are flexible, may accept covariates, and different
 fitting algorithms can be used.  A full description of the underlying methods is
 available in @code{GarcÃ­a-Callejas}, D., Godoy, O., and Bartomeus, I. (2020)
-<doi:10.1111/2041-210X.13443>.")
+<doi:10.1111/2041-210X.13443>.  Furthermore, the package provides a series of
+functions to calculate dynamics for stage-structured populations across sites.")
     (license license:expat)))
 
 (define-public r-cxhull
@@ -34168,13 +34169,13 @@ and discriminant analysis (CCDA).  Environmental Modelling & Software.
 (define-public r-cccrm
   (package
     (name "r-cccrm")
-    (version "2.1.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cccrm" version))
        (sha256
-        (base32 "0yi11jkh6a9zikm5xrzmsizv5l9qxck2rc0l3fcprnnz6prlbca1"))))
+        (base32 "099rpcxvz2hj9x361w7dnjvbl39hckr3b60am29jyqfv57qcikck"))))
     (properties `((upstream-name . "cccrm")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect r-nlme r-dplyr r-deriv))

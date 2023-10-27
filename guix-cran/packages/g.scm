@@ -14307,13 +14307,13 @@ font size and such), which then are translated into valid ggplot2 commands.")
 (define-public r-ggwordcloud
   (package
     (name "r-ggwordcloud")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggwordcloud" version))
        (sha256
-        (base32 "1plrlp4f4qdsn7512syv34ql9vb0i80dhq5zm10y9a19bhkml2yz"))))
+        (base32 "1fbxpvylz0b911a4xg0ywqsgryfrshxlp18fvjg53xplxw1brfxp"))))
     (properties `((upstream-name . "ggwordcloud")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -22047,13 +22047,13 @@ Human Genetics.  October 2018, San Diego.")
 (define-public r-genpathmox
   (package
     (name "r-genpathmox")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "genpathmox" version))
        (sha256
-        (base32 "0yxxaylcqscymhydrjcxd8gi11ih2p100j6qsdxdcifwc4sr1qi0"))))
+        (base32 "1pjg3irjlw9gbp2cwqrl5d7nvfhncds3bmxp0878y5yf35sl4smk"))))
     (properties `((upstream-name . "genpathmox")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrixcalc r-diagram r-csem))
@@ -26428,13 +26428,13 @@ computes derived parameters such as t50 and AUC.")
 (define-public r-gasper
   (package
     (name "r-gasper")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gasper" version))
        (sha256
-        (base32 "1r0hhn7rk2a1pdq02y3ih8f77b2zna2001pb5lyrp59klmda1d09"))))
+        (base32 "0ds0lsv3wy4mb8y3pld0dhl9k6fcn85z1ij7cswfqafm7gv72bhr"))))
     (properties `((upstream-name . "gasper")))
     (build-system r-build-system)
     (propagated-inputs (list r-rspectra

@@ -535,13 +535,13 @@ levels (levels seen during application, but not during training).  Reference:
 (define-public r-vtable
   (package
     (name "r-vtable")
-    (version "1.4.5")
+    (version "1.4.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vtable" version))
        (sha256
-        (base32 "158sywrzqkiy0n7g7zk5d8k51lsc6x1886g5sbr8n0khvdhpnfs6"))))
+        (base32 "1via6iz6ykw02wh5aagr9vqbzlqjvc5iyzfjr13yzyxarpi8zpdr"))))
     (properties `((upstream-name . "vtable")))
     (build-system r-build-system)
     (propagated-inputs (list r-sjlabelled r-rstudioapi r-knitr r-kableextra

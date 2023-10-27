@@ -16854,6 +16854,31 @@ Stanley K. Smith: A Practitioner's Guide to State and Local Population
 Projections.  2013. <doi:10.1007/978-94-007-7551-0>.")
     (license license:gpl3)))
 
+(define-public r-beezdiscounting
+  (package
+    (name "r-beezdiscounting")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "beezdiscounting" version))
+       (sha256
+        (base32 "1kbyb3d8aq9csqp3n0s9gnjf12js0j5civm1sr9skgvcknc2l0b8"))))
+    (properties `((upstream-name . "beezdiscounting")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-stringr r-magrittr r-gtools r-dplyr))
+    (home-page "https://github.com/brentkaplan/beezdiscounting")
+    (synopsis "Behavioral Economic Easy Discounting")
+    (description
+     "Facilitates some of the analyses performed in studies of behavioral economic
+discounting.  The package supports scoring of the 27-Item Monetary Choice
+Questionnaire (see Kaplan et al., 2016; <doi:10.1007/s40614-016-0070-9>) and
+scoring of the minute discounting task (see Koffarnus & Bickel, 2014;
+<doi:10.1037/a0035973>) using the Qualtrics 5-trial discounting template (see
+the Qualtrics Minute Discounting User Guide; <doi:10.13140/RG.2.2.26495.79527>),
+which is also available as a .qsf file in this package.")
+    (license license:gpl2+)))
+
 (define-public r-beezdemand
   (package
     (name "r-beezdemand")

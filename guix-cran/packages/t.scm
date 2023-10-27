@@ -9066,6 +9066,28 @@ of cancer (TPAC) method.  Frost, H. Robert (2023) \"Tissue-adjusted pathway
 analysis of cancer (TPAC)\" <doi:10.1101/2022.03.17.484779>.")
     (license license:gpl2+)))
 
+(define-public r-tpac
+  (package
+    (name "r-tpac")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TPAC" version))
+       (sha256
+        (base32 "1k3nd3yrv1kxidjwaff4q9aqf7yqqwa6946a154y2h3k21kfmwcc"))))
+    (properties `((upstream-name . "TPAC")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tpacdata r-mass r-data-table))
+    (home-page "https://cran.r-project.org/package=TPAC")
+    (synopsis "Tissue-Adjusted Pathway Analysis of Cancer (TPAC)")
+    (description
+     "This package contains logic for single sample gene set testing of cancer
+transcriptomic data with adjustment for normal tissue-specificity.  Frost, H.
+Robert (2023) \"Tissue-adjusted pathway analysis of cancer (TPAC)\"
+<doi:10.1101/2022.03.17.484779>.")
+    (license license:gpl2+)))
+
 (define-public r-tp-idm
   (package
     (name "r-tp-idm")
