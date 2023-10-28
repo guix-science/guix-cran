@@ -2385,13 +2385,13 @@ reproducible research is that uses this data.")
 (define-public r-ausplotsr
   (package
     (name "r-ausplotsr")
-    (version "2.0.3")
+    (version "2.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ausplotsR" version))
        (sha256
-        (base32 "15bf6bxz1193q7wf729v2wg6vy3w2ml8zfznw9kgpmjqmcyhyhvk"))))
+        (base32 "0r80ky1lhxq70wm8crrx26glcjrp73qnfvihnci7xb3zf1jw3g6r"))))
     (properties `((upstream-name . "ausplotsR")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan

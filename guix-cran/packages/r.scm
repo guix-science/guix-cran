@@ -61,13 +61,13 @@
 (define-public r-rzooroh
   (package
     (name "r-rzooroh")
-    (version "0.3.2")
+    (version "0.3.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RZooRoH" version))
        (sha256
-        (base32 "047j86kvhd9mama3lgyqyij6b7y4v23pycx63xnfh590drr8mnym"))))
+        (base32 "02sz2hgddgws4qwwvqgcd470r7ffyzs88r90mnhjl3889a5ixkml"))))
     (properties `((upstream-name . "RZooRoH")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcolorbrewer r-iterators r-foreach r-doparallel
@@ -8943,13 +8943,13 @@ significance of individual variables in high-dimensional linear regression.")
 (define-public r-rpsftm
   (package
     (name "r-rpsftm")
-    (version "1.2.7")
+    (version "1.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rpsftm" version))
        (sha256
-        (base32 "0ncf9ci39pd7p048cgvhl6phhk975xwyjm4aqs1b4hjy1nml4iz2"))))
+        (base32 "0smwr4cm6vpl90k3s4j9k4bpqc69n4mxcqypr4hav1pdg74rknkh"))))
     (properties `((upstream-name . "rpsftm")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-ggplot2))
@@ -25010,6 +25010,28 @@ indices; - Generate landscape raster from landscape structures.")
 from RFLP-analysis) and standalone BLAST report files (i.e.  DNA sequence
 analysis).")
     (license license:lgpl3)))
+
+(define-public r-rflocalfdr-data
+  (package
+    (name "r-rflocalfdr-data")
+    (version "0.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RFlocalfdr.data" version))
+       (sha256
+        (base32 "0pc3qgs1mjvrlr7c40p0nkiyc19p9z1j8jbcbdrbsvqz16sikcgw"))))
+    (properties `((upstream-name . "RFlocalfdr.data")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=RFlocalfdr.data")
+    (synopsis "Data for the Vignette and Examples in 'RFlocalfdr'")
+    (description
+     "Data for the vignette and examples in RFlocalfdr'.  Contains a dataset of
+1103547 importance values, and the table of variables used in the random forest
+splits.  The data is Chromosome 22 taken from Auton et al. (2015)
+<doi:10.1038/nature15393>.  It also contains a 51 samples by 22283 genes data
+set taken from Spira et al. (2004) <doi:10.1165/rcmb.2004-0273OC>.")
+    (license license:gpl3+)))
 
 (define-public r-rflexscan
   (package

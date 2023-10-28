@@ -1966,13 +1966,13 @@ distributions.")
 (define-public r-bssm
   (package
     (name "r-bssm")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bssm" version))
        (sha256
-        (base32 "19ii7hs4plgq31yiyr0258y22xckd5dv7k5dp2cwkzrr3h544ylz"))))
+        (base32 "121fb12n5z3w97xpj5ga1985drv3h4g7b0xy5yk9sfqfaqf92yyn"))))
     (properties `((upstream-name . "bssm")))
     (build-system r-build-system)
     (inputs (list pandoc))
@@ -1983,11 +1983,11 @@ distributions.")
                              r-rcpp
                              r-ramcmc
                              r-posterior
-                             r-magrittr
                              r-dplyr
                              r-diagis
                              r-coda
-                             r-checkmate))
+                             r-checkmate
+                             r-bayesplot))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/helske/bssm")
     (synopsis
@@ -10526,13 +10526,13 @@ The package also includes 19 datasets which are used in the tutorials.")
 (define-public r-biostat3
   (package
     (name "r-biostat3")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biostat3" version))
        (sha256
-        (base32 "19qsg42nyisqfxl5y9ayd6hj82plnnqvryqkwdd6nfascn0zw44y"))))
+        (base32 "1pq8w7xh4l1f6z9k9k022a3szhkhsyhrkzdmqqfjhwx2cymcxalp"))))
     (properties `((upstream-name . "biostat3")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-muhaz r-mass))

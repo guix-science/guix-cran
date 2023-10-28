@@ -3772,6 +3772,33 @@ applied.  It is possible to estimate nonlinear error correction models.  The
 Granger causality test performed using nonlinear models can also be applied.")
     (license license:gpl2+)))
 
+(define-public r-nonlinearrdd
+  (package
+    (name "r-nonlinearrdd")
+    (version "0.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NonlinearRDD" version))
+       (sha256
+        (base32 "14pkbg531pg9ny1v1lcgg5ygkahjqnz7j35zy623r4my5aqj0yh7"))))
+    (properties `((upstream-name . "NonlinearRDD")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rfast
+                             r-rdrobust
+                             r-rddensity
+                             r-quantreg
+                             r-lpdensity
+                             r-lpcde
+                             r-copula))
+    (home-page "https://cran.r-project.org/package=NonlinearRDD")
+    (synopsis "Nonlinear Regression Discontinuity Design")
+    (description
+     "Estimation of the possibly nonlinear and non separable structural function in
+regression discontinuity designs with a continuous treatment variable.  The
+method is based on Xie (2022) <@code{arXiv:2204.08168>}.")
+    (license license:gpl3)))
+
 (define-public r-nonlinearicp
   (package
     (name "r-nonlinearicp")

@@ -9426,17 +9426,16 @@ builder tools such as Rcpp'/'inline', TMB', or JAGS'.")
 (define-public r-coursekata
   (package
     (name "r-coursekata")
-    (version "0.14.0")
+    (version "0.14.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coursekata" version))
        (sha256
-        (base32 "17ad24xipyx6dcqflrv1gbia38dsk62w8a3hjydz7aw426spqkx5"))))
+        (base32 "0fyvsd0b9wh1vak6hkc22f5hx3sbj30nhbzqnys6f1mh5h0y7hcd"))))
     (properties `((upstream-name . "coursekata")))
     (build-system r-build-system)
-    (propagated-inputs (list r-yesno
-                             r-viridislite
+    (propagated-inputs (list r-viridislite
                              r-vctrs
                              r-supernova
                              r-rlang
@@ -10735,6 +10734,29 @@ Included panel functions can display points, shading, ellipses, and correlation
 values with confidence intervals.  See Friendly (2002)
 <doi:10.1198/000313002533>.")
     (license license:gpl3)))
+
+(define-public r-corrfuns
+  (package
+    (name "r-corrfuns")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "corrfuns" version))
+       (sha256
+        (base32 "07d15qyp7nbnr5qzvkhfrm0a7rl7asiqkv2s8q0wd4jwiml1v3lj"))))
+    (properties `((upstream-name . "corrfuns")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rfast))
+    (home-page "https://cran.r-project.org/package=corrfuns")
+    (synopsis "Correlation Coefficient Related Functions")
+    (description
+     "Many correlation coefficient related functions are offered, such as
+correlations, partial correlations and hypothesis testing using asymptotic tests
+and computer intensive methods (bootstrap and permutation).  References include
+Mardia K.V., Kent J.T. and Bibby J.M. (1979). \"Multivariate Analysis\".  ISBN:
+978-0124712522.  London: Academic Press.")
+    (license license:gpl2+)))
 
 (define-public r-correspondencetables
   (package
@@ -30025,13 +30047,13 @@ been applied.")
 (define-public r-checkdown
   (package
     (name "r-checkdown")
-    (version "0.0.11")
+    (version "0.0.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "checkdown" version))
        (sha256
-        (base32 "1yg3718za5qzbya3yycwmz59w4g6a88nkhdxf7s60shh5isks8w9"))))
+        (base32 "0yn7casmsqcrc31b9g06sjdrwxjyw5cbg3pwwdn5s7gaal881rh1"))))
     (properties `((upstream-name . "checkdown")))
     (build-system r-build-system)
     (propagated-inputs (list r-markdown r-htmltools r-glue))

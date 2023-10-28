@@ -16949,13 +16949,13 @@ package library and maybe say thank you'.")
 (define-public r-thames
   (package
     (name "r-thames")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "thames" version))
        (sha256
-        (base32 "1dbrnfp3li8dwqfzbhpcxydh8spfw40f8rv54hpjllh9jhlpzvis"))))
+        (base32 "09k4ygi865115c98mgzpvx7ab4kbghasg3fvnmd3c1nhs6h7szmn"))))
     (properties `((upstream-name . "thames")))
     (build-system r-build-system)
     (propagated-inputs (list r-uniformly))
@@ -19361,13 +19361,13 @@ finding the optimal argument combinations with respect to each diagnostic.")
 (define-public r-testanaapp
   (package
     (name "r-testanaapp")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TestAnaAPP" version))
        (sha256
-        (base32 "0d3mas93lrqppl6padvfrssw0z36lpfnr82s33jl0d1dh66jbj5q"))))
+        (base32 "1jwi1qm8x7jbrp9h4w0a9hmh03qia9nkd38ii3v91rc9m3sz3a1l"))))
     (properties `((upstream-name . "TestAnaAPP")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidysem
@@ -21146,13 +21146,13 @@ development easier and faster by nesting apps together.")
 (define-public r-teachhist
   (package
     (name "r-teachhist")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TeachHist" version))
        (sha256
-        (base32 "0sfs93y88c2j9nd1nbdvhs1rf20jab0akj3flxwp5fnqzdz8irg5"))))
+        (base32 "109gbp5anm4nh7drmyjv9nd8zmnrakgv70mw2dyxwv50j514jmwd"))))
     (properties `((upstream-name . "TeachHist")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2 r-dplyr))

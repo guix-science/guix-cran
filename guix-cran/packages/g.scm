@@ -2899,13 +2899,13 @@ allows to identify the most sensitive parameter or parameters of a model.")
 (define-public r-grwat
   (package
     (name "r-grwat")
-    (version "0.0.2")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grwat" version))
        (sha256
-        (base32 "1aaiv6q9aiw7j4fdmcgwbwv7wb6hw396h1k5ch0kl8arg6bn2s26"))))
+        (base32 "10sv1kzf9z1c27d99rvxvx1gmhga6rj1mcyfkvyg93gd8i1jwxg9"))))
     (properties `((upstream-name . "grwat")))
     (build-system r-build-system)
     (inputs (list pandoc))
@@ -2913,37 +2913,26 @@ allows to identify the most sensitive parameter or parameters of a model.")
                              r-trend
                              r-tidyr
                              r-stringr
-                             r-rmarkdown
                              r-rlang
                              r-rcpp
-                             r-progress
+                             r-r-utils
                              r-mblm
                              r-magrittr
                              r-lubridate
-                             r-knitr
-                             r-kableextra
                              r-ggplot2
                              r-dplyr
-                             r-crayon))
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/tsamsonov/grwat")
     (synopsis "River Hydrograph Separation and Analysis")
     (description
      "River hydrograph separation and daily runoff time series analysis.  Provides
-various filters to separate baseflow and quickflow using methods by Lyne and
-Hollick (1979)
-<https://www.researchgate.net/publication/272491803_Stochastic_Time-Variable_Rainfall-Runoff_Modeling>,
-Chapman (1991) <doi:10.1029/91WR01007>, Boughton (1993)
-<https://cir.nii.ac.jp/crid/1572543026556977024>, Jakeman and Hornberger (1993)
-<doi:10.1029/93WR00877>, Chapman and Maxwell (1996)
-<https://search.informit.org/doi/10.3316/informit.360361071346753>, and Kudelin
-(1960)
-<https://www.worldcat.org/title/printsipy-regionalnoi-otsenki-estestvennykh-resursov-podzemnykh-vod/>.
- Implements advanced separation technique by Rets et al. (2022)
-<doi:10.1134/S0097807822010146> which involves meteorological data to reveal
-genetic components of the runoff: ground, rain, thaw and spring (seasonal thaw).
- High-performance C++17 computation, annually aggregated variables, statistical
-testing and numerous plotting functions for high-quality visualization.")
+various filters to separate baseflow and quickflow.  Implements advanced
+separation technique by Rets et al. (2022) <doi:10.1134/S0097807822010146> which
+involves meteorological data to reveal genetic components of the runoff: ground,
+rain, thaw and spring (seasonal thaw).  High-performance C++17 computation,
+annually aggregated variables, statistical testing and numerous plotting
+functions for high-quality visualization.")
     (license license:expat)))
 
 (define-public r-grto
@@ -25011,13 +25000,13 @@ function arguments introduced in GDAL version 3.5.2 or earlier are supported.")
 (define-public r-gdalraster
   (package
     (name "r-gdalraster")
-    (version "1.5.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gdalraster" version))
        (sha256
-        (base32 "14zxvc2w0n2qbjkjikny5dpcsf0anql0fq4rqq7l9739yrazm7q7"))))
+        (base32 "19b9k3wz7lhrjaxaj8ncvf80s46vgx7jwkmssbm7f70fym149xp8"))))
     (properties `((upstream-name . "gdalraster")))
     (build-system r-build-system)
     (inputs (list zlib
@@ -25028,7 +25017,7 @@ function arguments introduced in GDAL version 3.5.2 or earlier are supported.")
                   openssh
                   gdal
                   curl))
-    (propagated-inputs (list r-rcpp))
+    (propagated-inputs (list r-xml2 r-rcpp))
     (native-inputs (list r-knitr pkg-config))
     (home-page "https://usdaforestservice.github.io/gdalraster/")
     (synopsis

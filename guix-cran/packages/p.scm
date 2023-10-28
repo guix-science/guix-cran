@@ -17003,6 +17003,44 @@ matching will make the differences in the baseline data smaller.  This method
 was described by Alvaro Fuentes (2022) <doi:10.1080/00273171.2021.1925521>.")
     (license license:gpl3)))
 
+(define-public r-plutor
+  (package
+    (name "r-plutor")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "plutor" version))
+       (sha256
+        (base32 "09wwv47rigjl61q2c7bhq5qa2gghklzia5pqm4vwp66v3j7nb1pn"))))
+    (properties `((upstream-name . "plutor")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-scales
+                             r-rlang
+                             r-repr
+                             r-rcolorbrewer
+                             r-purrr
+                             r-magrittr
+                             r-ggsci
+                             r-ggplot2
+                             r-ggh4x
+                             r-dplyr
+                             r-cli
+                             r-baizer))
+    (home-page "https://github.com/william-swl/plutor")
+    (synopsis "Useful Functions for Visualization")
+    (description
+     "In ancient Roman mythology, Pluto was the ruler of the underworld and presides
+over the afterlife.  Pluto was frequently conflated with Plutus', the god of
+wealth, because mineral wealth was found underground.  When plotting with R, you
+try once, twice, practice again and again, and finally you get a pretty figure
+you want.  It's a plot tour', a tour about repetition and reward.  Hope plutor
+helps you on the tour!")
+    (license license:expat)))
+
 (define-public r-pluscode
   (package
     (name "r-pluscode")
@@ -26816,13 +26854,13 @@ penalization methods is provided.")
 (define-public r-pencal
   (package
     (name "r-pencal")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pencal" version))
        (sha256
-        (base32 "03mvrrwzpxrxwfd3sh0h7sb2b5kjrddl6wqcvq3kijqm6hs2rv4k"))))
+        (base32 "1ddiyygd6mv6qbr4z7i445hp8j0x0slxy56xz54vvdbv8l1gxlvg"))))
     (properties `((upstream-name . "pencal")))
     (build-system r-build-system)
     (propagated-inputs (list r-survivalroc
@@ -26844,9 +26882,10 @@ penalization methods is provided.")
     (synopsis
      "Penalized Regression Calibration (PRC) for the Dynamic Prediction of Survival")
     (description
-     "Computes penalized regression calibration (PRC), a statistical method that
-allows to predict survival from high-dimensional longitudinal predictors.  PRC
-is described in Signorelli et al. (2021) <doi:10.1002/sim.9178>.")
+     "Computes penalized regression calibration (PRC), a statistical method for the
+dynamic prediction of survival when many longitudinal predictors are available.
+PRC is described in Signorelli et al. (2021) <doi:10.1002/sim.9178> and
+Signorelli (2023) <doi:10.48550/@code{arXiv.2309.15600>}.")
     (license license:gpl3+)))
 
 (define-public r-penaltylearning

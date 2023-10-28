@@ -5864,6 +5864,37 @@ algorithm is specially tailored for climate data with missing measurements from
 several monitors along a given region.")
     (license license:gpl2+)))
 
+(define-public r-mtscr
+  (package
+    (name "r-mtscr")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mtscr" version))
+       (sha256
+        (base32 "1cx2j10v89n2i4pml0m82xlx77pid5sw3737h09ak0hhr1l0p4x4"))))
+    (properties `((upstream-name . "mtscr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-lifecycle
+                             r-glue
+                             r-glmmtmb
+                             r-dplyr
+                             r-cli
+                             r-broom-mixed))
+    (home-page "https://cran.r-project.org/package=mtscr")
+    (synopsis "Multidimensional Top Scoring for Creativity Research")
+    (description
+     "Implementation of Multidimensional Top Scoring method for creativity assessment
+proposed in Boris Forthmann, Maciej Karwowski, Roger E. Beaty (2023)
+<doi:10.1037/aca0000571>.")
+    (license license:expat)))
+
 (define-public r-mts
   (package
     (name "r-mts")
@@ -7489,13 +7520,13 @@ Allman, Banos, and Rhodes (2019) <@code{arXiv:1908.01424>}.")
 (define-public r-mscquartets
   (package
     (name "r-mscquartets")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MSCquartets" version))
        (sha256
-        (base32 "1nma7x0qz2i2xkp2ggya6hqpdg967hcdpk6s8cjlgm5nmjz7ndcs"))))
+        (base32 "1lgj188xxccq2nwcci2j0ih6p839v6xzwhgc5mvc7k1xz0r1d2q5"))))
     (properties `((upstream-name . "MSCquartets")))
     (build-system r-build-system)
     (propagated-inputs (list r-zipfr
@@ -10764,13 +10795,13 @@ Lee-Carter and related methods as described in Sevcikova et al. (2016)
 (define-public r-mortalitytables
   (package
     (name "r-mortalitytables")
-    (version "2.0.4")
+    (version "2.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MortalityTables" version))
        (sha256
-        (base32 "0bf5z8bynadccf0gn61zj2rcqmskf6vhjznxnxk11303p6a11phc"))))
+        (base32 "1vk69smq4px796xsk4j4zfzrddndwns86jr2qi56aqqg6mix341p"))))
     (properties `((upstream-name . "MortalityTables")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-pracma r-ggplot2))
@@ -10778,11 +10809,12 @@ Lee-Carter and related methods as described in Sevcikova et al. (2016)
     (home-page "https://gitlab.open-tools.net/R/r-mortality-tables")
     (synopsis "Framework for Various Types of Mortality / Life Tables")
     (description
-     "This package provides classes to implement and plot cohort life tables for
-actuarial calculations.  In particular, birth-year dependent mortality tables
-using a yearly trend to extrapolate from a base year are implemented, as well as
+     "This package provides classes to implement, analyze and plot cohort life tables
+for actuarial calculations.  Birth-year dependent cohort mortality tables using
+a yearly trend to extrapolate from a base year are implemented, as well as
 period life table, cohort life tables using an age shift, and merged life
-tables.")
+tables.  Additionally, several data sets from various countries are included to
+provide widely-used tables out of the box.")
     (license license:gpl2+)))
 
 (define-public r-mortalitylaws
@@ -11196,39 +11228,6 @@ et al (2017) <@code{arXiv:1310.5726>}, Hapfelmeier and Ulm (2013)
 forest and variable importance functions.  Also modules and a shiny app for
 conditional inference trees.")
     (license license:gpl2+)))
-
-(define-public r-moranajp
-  (package
-    (name "r-moranajp")
-    (version "0.9.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "moranajp" version))
-       (sha256
-        (base32 "1w28fzwxgrmf12l40f4wl2h8qflbsii7g3wiqxxxg0v6njp49ws1"))))
-    (properties `((upstream-name . "moranajp")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-stringi
-                             r-rvest
-                             r-rlang
-                             r-purrr
-                             r-magrittr
-                             r-igraph
-                             r-ggraph
-                             r-ggplot2
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=moranajp")
-    (synopsis "Morphological Analysis for Japanese")
-    (description
-     "Supports morphological analysis for Japanese by using @code{MeCab}'.  Can input
-data.frame and obtain all results of @code{MeCab} and row number of original
-data.frame as a text id.")
-    (license license:expat)))
 
 (define-public r-moqa
   (package
@@ -12276,16 +12275,24 @@ Used by MOLGENIS packages.")
 (define-public r-molgenisarmadillo
   (package
     (name "r-molgenisarmadillo")
-    (version "2.0.0")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MolgenisArmadillo" version))
        (sha256
-        (base32 "12pzdppkxv3x8xjizhkm8iii64jxyi3zblyghvxv7gkmgxlzsf7h"))))
+        (base32 "1q7sbs3djmyi54izmqlvhjx1b2l558i869a97jwpjqv6xy94wy9m"))))
     (properties `((upstream-name . "MolgenisArmadillo")))
     (build-system r-build-system)
-    (propagated-inputs (list r-urltools r-molgenisauth r-httr r-base64enc
+    (propagated-inputs (list r-urltools
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-purrr
+                             r-molgenisauth
+                             r-httr
+                             r-dplyr
+                             r-base64enc
                              r-arrow))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/molgenis/molgenis-r-armadillo/")
@@ -27945,6 +27952,28 @@ longitudinal studies (Metwally AA, et al., Microbiome, 2018
 <doi:10.1186/s40168-018-0402-y>).")
     (license license:expat)))
 
+(define-public r-metalite-table1
+  (package
+    (name "r-metalite-table1")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "metalite.table1" version))
+       (sha256
+        (base32 "09mzgg72642rhrr6dv6n78vn6q757ffx7grdym273y3wwm8bxyv1"))))
+    (properties `((upstream-name . "metalite.table1")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-reactable r-metalite r-htmltools))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=metalite.table1")
+    (synopsis "Interactive Table of Descriptive Statistics in HTML")
+    (description
+     "Create an interactive table of descriptive statistics in HTML. This table is
+typically used for exploratory analysis in a clinical study (referred to as
+Table 1').")
+    (license license:gpl3+)))
+
 (define-public r-metalite-ae
   (package
     (name "r-metalite-ae")
@@ -28895,28 +28924,25 @@ acquired in a certain period of time.  At least three QC per day are required.")
 (define-public r-metabolomicsbasics
   (package
     (name "r-metabolomicsbasics")
-    (version "1.4")
+    (version "1.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MetabolomicsBasics" version))
        (sha256
-        (base32 "0d4hfmr6m5dnw4f2374ih5q6av0f0z6vq28cd66zpmyrdvhxp9w0"))))
+        (base32 "10myw7fc4r9ly4nyi62v5qhfjbjaja6i3v124bv7h8dsd3qdsvzp"))))
     (properties `((upstream-name . "MetabolomicsBasics")))
     (build-system r-build-system)
     (propagated-inputs (list r-webchem
                              r-rpart
                              r-rlang
-                             r-rdisop
                              r-plyr
                              r-pcamethods
-                             r-mixomics
                              r-interpretmsspectrum
                              r-e1071
                              r-caret
                              r-c50))
-    (home-page
-     "https://link.springer.com/protocol/10.1007/978-1-4939-7819-9_20")
+    (home-page "https://github.com/janlisec/MetabolomicsBasics")
     (synopsis "Basic Functions to Investigate Metabolomics Data Matrices")
     (description
      "This package provides a set of functions to investigate raw data from
@@ -28924,7 +28950,7 @@ acquired in a certain period of time.  At least three QC per day are required.")
 following peak picking and signal deconvolution.  Functions can be used to
 normalize data, detect biomarkers and perform sample classification.  A detailed
 description of best practice usage may be found in the publication
-<https://link.springer.com/protocol/10.1007/978-1-4939-7819-9_20>.")
+<doi:10.1007/978-1-4939-7819-9_20>.")
     (license license:gpl3)))
 
 (define-public r-metabolicsyndrome
@@ -40030,13 +40056,13 @@ normalized words.")
 (define-public r-malariaatlas
   (package
     (name "r-malariaatlas")
-    (version "1.5.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "malariaAtlas" version))
        (sha256
-        (base32 "07dwmnfzx2883yxy3klwyv9gyglgjf976w34bb8x2qna2aw9hhz4"))))
+        (base32 "1fr1dwlv6q8fb0m0jccd2hymi4m62kgjxbkras07zmsk8sci5zmn"))))
     (properties `((upstream-name . "malariaAtlas")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -40296,22 +40322,23 @@ components in the latent Gaussian model.")
 (define-public r-makeit
   (package
     (name "r-makeit")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "makeit" version))
        (sha256
-        (base32 "11v8dd1c3gw2vrnqwxr2q90vdws46bsja9fh89pn5a3qh6p09vz7"))))
+        (base32 "1x0dwffzz1i88h9mqcigihm52fi47439jmd1v9712sf3h7hf5iiy"))))
     (properties `((upstream-name . "makeit")))
     (build-system r-build-system)
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/arni-magnusson/makeit")
     (synopsis "Run R Scripts if Needed")
     (description
-     "This package provides a simple make-like utility to run R scripts if needed,
-based on last modified time.  Implemented in base R with no additional software
-requirements, organizational overhead, or structural requirements.  In short:
-run an R script if underlying files have changed, otherwise do nothing.")
+     "Automation tool to run R scripts if needed, based on last modified time.
+Implemented in base R with no additional software requirements, organizational
+overhead, or structural requirements.  In short: run an R script if underlying
+files have changed, otherwise do nothing.")
     (license license:gpl3)))
 
 (define-public r-makeflow

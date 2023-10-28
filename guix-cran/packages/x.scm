@@ -1076,17 +1076,18 @@ other's coefficients unrealistically.")
 (define-public r-xllim
   (package
     (name "r-xllim")
-    (version "2.2.1")
+    (version "2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xLLiM" version))
        (sha256
-        (base32 "0wamfc7r6b4wgr386yf9q5ci3r1dnym41qw23rs1rdxjc4lbl3rx"))))
+        (base32 "08v6acn6vpn8asn61ldqdryjz0xk5zyd2v63aqrc5xximpqwrp7d"))))
     (properties `((upstream-name . "xLLiM")))
     (build-system r-build-system)
     (propagated-inputs (list r-randomforest
                              r-progress
+                             r-mixomics
                              r-mda
                              r-matrix
                              r-mass

@@ -18046,6 +18046,27 @@ equally sized groups, and the unnesting of data.frames within fully named lists.
 <doi:10.1111/j.1467-9868.2009.00723.x>).")
     (license license:gpl2+)))
 
+(define-public r-splot
+  (package
+    (name "r-splot")
+    (version "0.5.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "splot" version))
+       (sha256
+        (base32 "14x2fsf41izlb99pxypgy3f4yaj33j04a68nan0f9545fjl78v4x"))))
+    (properties `((upstream-name . "splot")))
+    (build-system r-build-system)
+    (home-page "https://miserman.github.io/splot/")
+    (synopsis "Simplified Plotting for Data Exploration")
+    (description
+     "Automates common plotting tasks to ease data exploration.  Makes density plots
+(potentially overlaid on histograms), scatter plots with prediction lines, or
+bar or line plots with error bars.  For each type, y, or x and y variables can
+be plotted at levels of other variables, all with minimal specification.")
+    (license license:gpl2+)))
+
 (define-public r-splmm
   (package
     (name "r-splmm")
@@ -34865,13 +34886,13 @@ networks.")
 (define-public r-simmr
   (package
     (name "r-simmr")
-    (version "0.5.1.215")
+    (version "0.5.1.216")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simmr" version))
        (sha256
-        (base32 "1aaxfc16941fwaiab6zn5ra23ld64nq62bpi8mvnm78rpfy3879w"))))
+        (base32 "0rvf6b0x6iivgp1czj98972p8gr1g96sc3g55p30gnw08b48i1x5"))))
     (properties `((upstream-name . "simmr")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -50789,18 +50810,18 @@ same V gene, J gene and junction length.  Nouri N and Kleinstein SH (2018) <doi:
 (define-public r-scontomatch
   (package
     (name "r-scontomatch")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scOntoMatch" version))
        (sha256
-        (base32 "16yw415jbzk28nq050b0xw0rhv35192vnm7ihhi1gpa69aqc0v9y"))))
+        (base32 "1x08qm492yjkbi0srbx6l2z92cd7740iajrvv34hzfdbgjvx289s"))))
     (properties `((upstream-name . "scOntoMatch")))
     (build-system r-build-system)
     (propagated-inputs (list r-purrr r-ontologyplot r-ontologyindex))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/YY-SONG0718/scOntoMatch")
+    (home-page "https://github.com/Papatheodorou-Group/scOntoMatch")
     (synopsis
      "Aligning Ontology Annotation Across Single Cell Datasets with 'scOntoMatch'")
     (description

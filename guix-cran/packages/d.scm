@@ -268,28 +268,6 @@ proposed by Peng and Huang (2007) <doi:10.1093/biomet/asm058>.")
      "Dynamic simulations and graphical depictions of autoregressive relationships.")
     (license license:gpl3)))
 
-(define-public r-dynsbm
-  (package
-    (name "r-dynsbm")
-    (version "0.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dynsbm" version))
-       (sha256
-        (base32 "169yk539vynjbn89q6vs3l3fx7hk8n3i1msa4jws5vypgljc2rir"))))
-    (properties `((upstream-name . "dynsbm")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-riverplot r-rcpp r-rcolorbrewer))
-    (home-page "http://lbbe.univ-lyon1.fr/dynsbm")
-    (synopsis "Dynamic Stochastic Block Models")
-    (description
-     "Dynamic stochastic block model that combines a stochastic block model (SBM) for
-its static part with independent Markov chains for the evolution of the nodes
-groups through time, developed in Matias and Miele (2016)
-<doi:10.1111/rssb.12200>.")
-    (license license:gpl3)))
-
 (define-public r-dynrb
   (package
     (name "r-dynrb")
@@ -9760,13 +9738,13 @@ package distr').")
 (define-public r-distreg-vis
   (package
     (name "r-distreg-vis")
-    (version "1.7.4")
+    (version "1.7.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "distreg.vis" version))
        (sha256
-        (base32 "1wz1vfjcnsn1nd5hqw010is39nn2k0226hczg006jvgfr400hx4y"))))
+        (base32 "1phl1nj1l69l6aj9hsv0yqllvhh6msv2ss9la8zikl3m2s0f6ymw"))))
     (properties `((upstream-name . "distreg.vis")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny

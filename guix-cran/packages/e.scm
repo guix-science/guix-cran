@@ -15857,13 +15857,13 @@ Data API <https://educationdata.urban.org/> into a data.frame for analysis.")
 (define-public r-edsurvey
   (package
     (name "r-edsurvey")
-    (version "4.0.1")
+    (version "4.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EdSurvey" version))
        (sha256
-        (base32 "0cwd0mnikm31drjzg1jr2jshlp71jc1xcpi3yyw0rkbx8f3wna3v"))))
+        (base32 "1qp2mj9x8jk3za9m86890h1261vc7z621myv2i1kjyli3afmbm3p"))))
     (properties `((upstream-name . "EdSurvey")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable

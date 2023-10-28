@@ -6112,13 +6112,13 @@ wrappers to functions in the gstat and sp packages.")
 (define-public r-inti
   (package
     (name "r-inti")
-    (version "0.6.2")
+    (version "0.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inti" version))
        (sha256
-        (base32 "1lmm0v76c4ksvp9zrh163cb55c52d112wfvslyxm1vapvpcdmvk7"))))
+        (base32 "0bhayfhzlrx9rxxrg704ddvfdazj6wckf1zh7rpdr5sclj88kj31"))))
     (properties `((upstream-name . "inti")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -8795,13 +8795,13 @@ package is based on methods described in Sasieni (2003) <doi:
 (define-public r-infercsn
   (package
     (name "r-infercsn")
-    (version "0.99.0")
+    (version "0.99.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inferCSN" version))
        (sha256
-        (base32 "0ij283mkqi6l1q8hdqsdbn3q3q0mzahvswq93cn3sx7ndwqcpfv5"))))
+        (base32 "0gifq7gqm3x9dzrqz5ychqw7wv81vg8p5yhgp6f92a5cbs8539rs"))))
     (properties `((upstream-name . "inferCSN")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
