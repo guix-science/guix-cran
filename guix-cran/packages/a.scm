@@ -13276,17 +13276,17 @@ Learning and Classical Techniques Based on Accumulated Local Effects (ALE).â�
 (define-public r-aldvmm
   (package
     (name "r-aldvmm")
-    (version "0.8.7")
+    (version "0.8.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aldvmm" version))
        (sha256
-        (base32 "1v3qbk4pm8lk37bjkzcfn8rlcszxix690mjrf5k5w8kk7r6i8zpc"))))
+        (base32 "1qqfhfrhqlzlmfdf84sq9v17d6jrnn4w7yilskbrg74zvbcbc3k8"))))
     (properties `((upstream-name . "aldvmm")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich
-                             r-optimr
+                             r-optimx
                              r-numderiv
                              r-lmtest
                              r-formula

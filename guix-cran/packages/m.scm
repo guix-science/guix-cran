@@ -18615,13 +18615,13 @@ solvers hold up quite well for higher-dimensional problems.")
 (define-public r-mixvlmc
   (package
     (name "r-mixvlmc")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mixvlmc" version))
        (sha256
-        (base32 "04g56kqzbm0gjdn0jnxh6cpjpvz764ir6333szymwz3z7dlk0h6x"))))
+        (base32 "01yv1hv505kg46icd5yndb487b3n5n8j5n5bfykgb0ikh5h1b10n"))))
     (properties `((upstream-name . "mixvlmc")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -18631,6 +18631,7 @@ solvers hold up quite well for higher-dimensional problems.")
                              r-rcpp
                              r-proc
                              r-nnet
+                             r-ggplot2
                              r-butcher
                              r-assertthat))
     (native-inputs (list r-knitr))
@@ -26192,13 +26193,13 @@ inter-laboratory metrology comparison studies.")
 (define-public r-metro
   (package
     (name "r-metro")
-    (version "0.9.1")
+    (version "0.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metro" version))
        (sha256
-        (base32 "0agmwvbwhpn5nzzkyz20pspbv6i80i636fhf9sqydgl1fskknrf2"))))
+        (base32 "0w9h7hdnkw7bv85z8cvy7pgxs96sf4nn1ri6bz7knyb6kgvhfqq1"))))
     (properties `((upstream-name . "metro")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-jsonlite r-httr r-hms r-geodist))
@@ -35112,13 +35113,13 @@ at stationary sites.")
 (define-public r-mazamacoreutils
   (package
     (name "r-mazamacoreutils")
-    (version "0.4.16")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MazamaCoreUtils" version))
        (sha256
-        (base32 "021wrll07xrx9vk4vv0h7rmh5bll10gyywa5qyvd7sdpnvnrw3l3"))))
+        (base32 "0y44f56iq5j4yjrigwsj3nchnhzwfdisnq79k4rk2wr4gxza16r1"))))
     (properties `((upstream-name . "MazamaCoreUtils")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

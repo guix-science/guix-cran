@@ -9935,13 +9935,13 @@ consumption data.")
 (define-public r-octopus
   (package
     (name "r-octopus")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "octopus" version))
        (sha256
-        (base32 "1b71xjnjksz21v4dp0fwq90hsv09ab1wifz4x903qbgvbiv4ig8i"))))
+        (base32 "1g15waiv5abynf8iq07nvz7irzz315895m0xr7rzgcjkxj8zxkd0"))))
     (properties `((upstream-name . "octopus")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinyjs
@@ -9954,6 +9954,7 @@ consumption data.")
                              r-dt
                              r-dplyr
                              r-dbi
+                             r-data-table
                              r-bslib))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/MCodrescu/octopus")

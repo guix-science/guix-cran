@@ -8020,6 +8020,28 @@ Gaussian Mixture Model for modeling the M-value pairs of each individual locus."
 results.")
     (license license:expat)))
 
+(define-public r-dmq
+  (package
+    (name "r-dmq")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DMQ" version))
+       (sha256
+        (base32 "1ygaqznvblzr3r1x7zl1l8sazh3sbs1zgagawwlwl42g8sdl57az"))))
+    (properties `((upstream-name . "DMQ")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rsolnp r-rcpparmadillo r-rcpp r-mass r-deoptim))
+    (home-page "https://cran.r-project.org/package=DMQ")
+    (synopsis "Dynamic Multiple Quantile (DMQ) Model")
+    (description
+     "Perform estimation, prediction, and simulations using the Dynamic Multiple
+Quantile model of Catania and Luati (2023) <doi:10.1016/j.jeconom.2022.11.002>.
+Can be used to estimate a set of conditional time-varying quantiles of a time
+series that do not cross.")
+    (license license:gpl3)))
+
 (define-public r-dmod
   (package
     (name "r-dmod")
@@ -18429,6 +18451,27 @@ parameters of ODEs up to second order, and can also apply to multilevel systems.
 on spreadsheet metadata.  Can also help create metadata and generate HTML data
 explorer.")
     (license license:cc0)))
+
+(define-public r-defineoptions
+  (package
+    (name "r-defineoptions")
+    (version "0.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "defineOptions" version))
+       (sha256
+        (base32 "1al08lqiy8x6jc1mrxm785pqqlfqlhzxbr2lwnixj6mqmkqlwp6g"))))
+    (properties `((upstream-name . "defineOptions")))
+    (build-system r-build-system)
+    (home-page "https://github.com/niceume/defineOptions")
+    (synopsis "Define and Parse Command Line Options")
+    (description
+     "Parses command line arguments and supplies values to scripts.  Users can specify
+names to which parsed inputs are assigned, value types into which inputs are
+cast, long options or short options, input splitters and callbacks that define
+how options should be specified and how input values are supplied.")
+    (license license:gpl3+)))
 
 (define-public r-default
   (package

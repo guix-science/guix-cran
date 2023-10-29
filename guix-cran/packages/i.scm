@@ -8030,6 +8030,34 @@ Lindgren et.  al. (2023) <@code{arXiv:2006.04917>}.  Details are provided in the
 available vignettes and from the URL bellow.")
     (license license:gpl2+)))
 
+(define-public r-inlajoint
+  (package
+    (name "r-inlajoint")
+    (version "23.10.28")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "INLAjoint" version))
+       (sha256
+        (base32 "1h1xwd968c60bl7mkpf2cvq9i19xb32ms95kfi0r6pks3rq0ghzd"))))
+    (properties `((upstream-name . "INLAjoint")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-numderiv r-lme4 r-ggplot2))
+    (native-inputs (list r-r-rsp))
+    (home-page "https://github.com/DenisRustand/INLAjoint")
+    (synopsis
+     "Multivariate Joint Modeling for Longitudinal and Time-to-Event Outcomes with 'INLA'")
+    (description
+     "Estimation of joint models for multivariate longitudinal markers (with various
+distributions available) and survival outcomes (possibly accounting for
+competing risks) with Integrated Nested Laplace Approximations (INLA).  The
+flexible and user friendly function joint() facilitates the use of the fast and
+reliable inference technique implemented in the INLA package for joint modeling.
+ More details are given in the help page of the joint() function (accessible via
+?joint in the R console) and the vignette associated to the joint() function
+(accessible via vignette(\"INLAjoint\") in the R console).")
+    (license license:gpl3)))
+
 (define-public r-inlabru
   (package
     (name "r-inlabru")
@@ -14630,13 +14658,13 @@ financial-economic time series data.")
 (define-public r-ichimoku
   (package
     (name "r-ichimoku")
-    (version "1.4.9")
+    (version "1.4.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ichimoku" version))
        (sha256
-        (base32 "1fp8rwh6qgx4g10ia4aykc8jqnhm2agy727ad1hw0qi50armcam6"))))
+        (base32 "1zmk9vjz7qp9r6hvk76s0vgjiibsl5c9mrhwxyky0kjplbl2cyyb"))))
     (properties `((upstream-name . "ichimoku")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

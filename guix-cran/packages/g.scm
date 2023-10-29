@@ -6512,13 +6512,13 @@ Doctolero (2020) <doi:10.1111/2041-210X.13350>).")
 (define-public r-grain
   (package
     (name "r-grain")
-    (version "1.3.14")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gRain" version))
        (sha256
-        (base32 "1w6fmbq6ik0c0aj7xv53nrg96gw1kfk8vhqp57rhmq42m8i4k0i8"))))
+        (base32 "144nn35vn7srcm6bwnkryiivwdxgk7d2g6dhlsp83y7z90sd7k60"))))
     (properties `((upstream-name . "gRain")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen
@@ -10686,18 +10686,18 @@ Care, 2017 <doi:10.2337/dc17-1600>.")
 (define-public r-gluedown
   (package
     (name "r-gluedown")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gluedown" version))
        (sha256
-        (base32 "1rvkgfsjlp9zrpgb0kvr2n6wfja5j1yz62sc9kmbizbph6yvrins"))))
+        (base32 "05l7cjlvfbx6vk82509ijcb3vf8biif30wplyv6d92k6cy6bvhcy"))))
     (properties `((upstream-name . "gluedown")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-glue))
     (native-inputs (list r-knitr))
-    (home-page "https://kiernann.com/gluedown/")
+    (home-page "https://kiernann.github.io/gluedown/")
     (synopsis "Wrap Vectors in Markdown Formatting")
     (description
      "Ease the transition between R vectors and markdown text.  With gluedown and

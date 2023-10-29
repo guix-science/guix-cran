@@ -9891,13 +9891,13 @@ in @code{JavaScript} by Nicolas Kruchten.  Aligned to pivottable v2.19.0.")
 (define-public r-rphylopic
   (package
     (name "r-rphylopic")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rphylopic" version))
        (sha256
-        (base32 "0b33ixhlwh3lkm01sh5isrirj5dlff04szdb2hmjyipgmfa0w1k4"))))
+        (base32 "1wjcw8llk84g3pkaswwzfni6rg4wkx9g2qn3mzfhnyx24gnpasbk"))))
     (properties `((upstream-name . "rphylopic")))
     (build-system r-build-system)
     (propagated-inputs (list r-rsvg
@@ -44960,49 +44960,6 @@ the paper by Takahashi, Kobayashi, and Nakagawa (2001)
 <doi:10.3905/jfi.2001.319302>.  We use ideas and techniques from Andersen and
 Buffum (2002) <doi:10.2139/ssrn.355308> and Linetsky (2006)
 <doi:10.1111/j.1467-9965.2006.00271.x>.")
-    (license license:gpl2+)))
-
-(define-public r-ragt2ridges
-  (package
-    (name "r-ragt2ridges")
-    (version "0.3.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ragt2ridges" version))
-       (sha256
-        (base32 "17i3z0p3a4dqa0bch5l1r830w5nlxhdg71y82jipp6cfiwli588z"))))
-    (properties `((upstream-name . "ragt2ridges")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo
-                             r-rcpp
-                             r-rags2ridges
-                             r-mvtnorm
-                             r-matrix
-                             r-mass
-                             r-igraph
-                             r-fdrtool
-                             r-expm
-                             r-cghbase
-                             r-biobase
-                             r-abind))
-    (home-page "https://github.com/wvanwie/ragt2ridges")
-    (synopsis "Ridge Estimation of Vector Auto-Regressive (VAR) Processes")
-    (description
-     "The ragt2ridges-package provides ridge maximum likelihood estimation of vector
-auto-regressive processes: the VAR(1), VAR(2) and VARX(1) model (more to be
-added).  Prior knowledge may be incorporated in the estimation through a)
-specification of the edges believed to be absent in the time series chain graph,
-and b) a shrinkage target towards which the parameter estimate is shrunken for
-large penalty parameter values.  Estimation functionality is accompanied by
-methodology for penalty parameter selection.  In addition, the package offers
-supporting functionality for the exploitation of estimated models.  Among
-others, i) a procedure to infer the support of the non-sparse ridge estimate
-(and thereby of the time series chain graph) is implemented, ii) a table of
-node-wise network summary statistics, iii) mutual information analysis, and iv)
-impulse response analysis.  Cf.  Miok et al. (2017) <DOI:10.1002/bimj.201500269>
-and Miok et al. (2019) <DOI:10.1002/bimj.201700195> for details on the
-implemented methods.")
     (license license:gpl2+)))
 
 (define-public r-rags2ridges

@@ -2066,13 +2066,13 @@ customization.")
 (define-public r-qtools
   (package
     (name "r-qtools")
-    (version "1.5.8")
+    (version "1.5.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Qtools" version))
        (sha256
-        (base32 "0h5812q5w71840lrsidr5hpx11ypzwq2jq684xyr7y8g63kwzvrr"))))
+        (base32 "167c8mfj0if4j9m3rjbi1gnhwypq5ky297zyb437p42b3856qagi"))))
     (properties `((upstream-name . "Qtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo

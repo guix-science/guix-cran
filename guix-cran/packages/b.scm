@@ -5151,13 +5151,13 @@ projects via a flexible, declarative dependency loading syntax.")
 (define-public r-boutroslab-plotting-general
   (package
     (name "r-boutroslab-plotting-general")
-    (version "7.0.10")
+    (version "7.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BoutrosLab.plotting.general" version))
        (sha256
-        (base32 "00c423xbrn1yr6p293lxf07yjqmkcx5cjqpb4ivipn4ivnmvs4hd"))))
+        (base32 "1rmd050sla0d3m2q4cadw84v7p9v05v0ifcbzind771sibr3vcji"))))
     (properties `((upstream-name . "BoutrosLab.plotting.general")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass

@@ -29423,6 +29423,36 @@ arbitrary SMART design.  Please see Artman (2018)
 <doi:10.1093/biostatistics/kxy064> for more details.")
     (license license:gpl3)))
 
+(define-public r-smartsheetr
+  (package
+    (name "r-smartsheetr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "smartsheetr" version))
+       (sha256
+        (base32 "1331fiapyvf6jbj6hgasascfy9alix5ylcy7nh99z1qcdl2asck7"))))
+    (properties `((upstream-name . "smartsheetr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-purrr
+                             r-memoise
+                             r-jsonlite
+                             r-httr
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=smartsheetr")
+    (synopsis
+     "Access and Write 'Smartsheet' Data using the 'Smartsheet' API 2.0")
+    (description
+     "Interact with the Smartsheet platform through the Smartsheet API 2.0.
+<https://smartsheet.redoc.ly/>.  API is an acronym for application programming
+interface; the Smartsheet API allows users to interact with Smartsheet sheets
+directly within R.")
+    (license license:expat)))
+
 (define-public r-smartp
   (package
     (name "r-smartp")
@@ -32018,13 +32048,13 @@ in order to shrink down the feature space into a small and yet robust set.")
 (define-public r-sits
   (package
     (name "r-sits")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sits" version))
        (sha256
-        (base32 "035aq68k68vpwbib81ym4byb6m31z4h6b4hgx49qcjc3bbb6irlc"))))
+        (base32 "0z80qxm95glzijjznxszxvw8i7rb079828wgv14vmy2ap5w8v1nn"))))
     (properties `((upstream-name . "sits")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -32032,7 +32062,9 @@ in order to shrink down the feature space into a small and yet robust set.")
                              r-tidyr
                              r-tibble
                              r-terra
+                             r-sysfonts
                              r-slider
+                             r-showtext
                              r-sf
                              r-rstac
                              r-rcpparmadillo
@@ -46076,6 +46108,34 @@ to remotely instruct the behaviour of web browsers.  It is detailed at
 <https://w3c.github.io/webdriver/webdriver-spec.html>.  This package provides an
 R client implementing the W3C specification.")
     (license license:gpl3)))
+
+(define-public r-selenium
+  (package
+    (name "r-selenium")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "selenium" version))
+       (sha256
+        (base32 "1zb5akhbnlcacs6fqfi160bvrij3brjiz23i7xshczh1h4m9v0x1"))))
+    (properties `((upstream-name . "selenium")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang
+                             r-rappdirs
+                             r-r6
+                             r-processx
+                             r-lifecycle
+                             r-jsonlite
+                             r-httr2))
+    (home-page "https://ashbythorpe.github.io/selenium-r/")
+    (synopsis "Low-Level Browser Automation Interface")
+    (description
+     "An implementation of W3C @code{WebDriver} 2.0
+(<https://w3c.github.io/webdriver/>), allowing interaction with a Selenium
+Server (<https://www.selenium.dev/documentation/grid/>) instance from R'.
+Allows a web browser to be automated from R'.")
+    (license license:expat)))
 
 (define-public r-selenider
   (package

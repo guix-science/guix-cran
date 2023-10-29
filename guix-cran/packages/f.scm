@@ -8425,13 +8425,13 @@ up the calculation of distances between observations.")
 (define-public r-fmesher
   (package
     (name "r-fmesher")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fmesher" version))
        (sha256
-        (base32 "0kmsahgjqbsshw27mgcjx4crli8d67kkagzyc7xap95ivlcdqpgd"))))
+        (base32 "16av562sj0rzflwbb9sbp8dw7cs8l1sqwzrvkxv8nyphwlg27ci7"))))
     (properties `((upstream-name . "fmesher")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
