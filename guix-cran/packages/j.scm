@@ -2552,13 +2552,13 @@ algebra and @code{RcppArmadillo} glue.")
 (define-public r-jmbig
   (package
     (name "r-jmbig")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jmBIG" version))
        (sha256
-        (base32 "129b39ax1flw9d4aar0v6640axm934myipag524vh5dfzc2dsrdr"))))
+        (base32 "0fijdgw5nkk1lwbjj3hq04lgi1irwk4k62qhgqznlc8byzzpzh5s"))))
     (properties `((upstream-name . "jmBIG")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -2582,7 +2582,7 @@ important to be able to predict how a patient's health status may change over
 time.  Overall, this package provides a comprehensive set of tools for joint
 modeling of BIG data obtained as survival and longitudinal outcomes with both
 Bayesian and non-Bayesian approaches.  Its versatility and flexibility make it a
-valuable resource for researchers in many different fields,particularly in the
+valuable resource for researchers in many different fields, particularly in the
 medical and health sciences.")
     (license license:gpl3)))
 

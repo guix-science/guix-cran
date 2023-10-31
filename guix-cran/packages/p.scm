@@ -4796,13 +4796,13 @@ legacy of @code{ProTracker} and the Commodore Amiga alive.")
 (define-public r-protr
   (package
     (name "r-protr")
-    (version "1.6-3")
+    (version "1.7-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "protr" version))
        (sha256
-        (base32 "0jdx868dprp3yv66zprni6k2zj3zx7qy2qjmrbzgj1z9647x7vnk"))))
+        (base32 "0hb7pixd2qa48bsv86ygdxs6v8sd0hksq99xpzr9d50nprzjmhj4"))))
     (properties `((upstream-name . "protr")))
     (build-system r-build-system)
     (inputs (list))
@@ -4814,8 +4814,8 @@ legacy of @code{ProTracker} and the Commodore Amiga alive.")
      "Comprehensive toolkit for generating various numerical features of protein
 sequences described in Xiao et al. (2015) <DOI:10.1093/bioinformatics/btv042>.
 For full functionality, the software ncbi-blast+ is needed, see
-<https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=@code{BlastDocs&DOC_TYPE=Download>}
-for more information.")
+<https://blast.ncbi.nlm.nih.gov/doc/blast-help/downloadblastdata.html> for more
+information.")
     (license license:bsd-3)))
 
 (define-public r-prototest
@@ -12013,17 +12013,17 @@ Lindsay, 1988, <doi:10.1090/conm/080>).")
 (define-public r-potools
   (package
     (name "r-potools")
-    (version "0.2.2")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "potools" version))
        (sha256
-        (base32 "1vn99kh9cpicljs3caz3pw12azm19sx8q9nybk0xfffrldmz6r2q"))))
+        (base32 "0bfjqkl387s262m1xxq3li2s894mz8nfa3m9v8dcrf20gq40as6q"))))
     (properties `((upstream-name . "potools")))
     (build-system r-build-system)
     (inputs (list gnu-gettext))
-    (propagated-inputs (list r-data-table))
+    (propagated-inputs (list r-glue r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/MichaelChirico/potools")
     (synopsis "Tools for Internationalization and Portability in R Packages")
@@ -14687,16 +14687,17 @@ based on bi-allelic marker dosage data.  Submitted to BMC Bioinformatics (2021).
 (define-public r-polyglotr
   (package
     (name "r-polyglotr")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "polyglotr" version))
        (sha256
-        (base32 "0r4n8y7wqfgxnq8jyyidrdslmffwyap671wrxqbnpm5jn7m6m07q"))))
+        (base32 "0c997bym4mz7qkfb51p6iqhfn3z28qpwqb84jmf6lxg9vgdv7fam"))))
     (properties `((upstream-name . "polyglotr")))
     (build-system r-build-system)
     (propagated-inputs (list r-urltools
+                             r-tibble
                              r-stringr
                              r-rvest
                              r-rlang
@@ -14816,13 +14817,13 @@ Burden (2014) <@code{arXiv:1406.2780>}.")
 (define-public r-polminer
   (package
     (name "r-polminer")
-    (version "0.8.8")
+    (version "0.8.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "polmineR" version))
        (sha256
-        (base32 "1ih1llbj7grr8rxzrjbkyx1sxncy94gvsjnblzs7waaqdn44nsm2"))))
+        (base32 "0cxjy3w4k52kdjf66yysvd1yd96rv5xrzqjrkdvl4wrhxvla3202"))))
     (properties `((upstream-name . "polmineR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -17668,13 +17669,13 @@ color space based tools to modify colors or palettes.")
 (define-public r-plottools
   (package
     (name "r-plottools")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PlotTools" version))
        (sha256
-        (base32 "0gmi5bx2cgikk8plccpzh5miyc719afkriiqncdcbxf7aqrlvw4c"))))
+        (base32 "1mm3cs1bgs4xscmk1k8nxq9zxddzj486fx4xnsmrc5mbr34ikgkg"))))
     (properties `((upstream-name . "PlotTools")))
     (build-system r-build-system)
     (home-page "https://ms609.github.io/PlotTools/")
@@ -22915,41 +22916,6 @@ functions for normalization and plotting of vowels.")
 Metaphone, NYSIIS, Caverphone, and others.  The package is documented in
 <doi:10.18637/jss.v095.i08>.")
     (license license:bsd-2)))
-
-(define-public r-phonfieldwork
-  (package
-    (name "r-phonfieldwork")
-    (version "0.0.11")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "phonfieldwork" version))
-       (sha256
-        (base32 "0a5qnl1r8g0h1nsp22awp6hy0lkdi6adc729grpz8mbniz4vdlkc"))))
-    (properties `((upstream-name . "phonfieldwork")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2 r-uchardet r-tuner r-rmarkdown r-phontools))
-    (native-inputs (list r-knitr))
-    (home-page "https://CRAN.R-project.org/package=phonfieldwork")
-    (synopsis "Linguistic Phonetic Fieldwork Tools")
-    (description
-     "There are a lot of different typical tasks that have to be solved during
-phonetic research and experiments.  This includes creating a presentation that
-will contain all stimuli, renaming and concatenating multiple sound files
-recorded during a session, automatic annotation in Praat @code{TextGrids} (this
-is one of the sound annotation standards provided by Praat software, see Boersma
-& Weenink 2020 <https://www.fon.hum.uva.nl/praat/>), creating an html table with
-annotations and spectrograms, and converting multiple formats ('Praat
-@code{TextGrid}, ELAN', EXMA@code{RaLDA}', Audacity', subtitles .srt', and FLEx
-flextext).  All of these tasks can be solved by a mixture of different tools
-(any programming language has programs for automatic renaming, and Praat
-contains scripts for concatenating and renaming files, etc.).  phonfieldwork
-provides a functionality that will make it easier to solve those tasks
-independently of any additional tools.  You can also compare the functionality
-with other packages: @code{rPraat}
-<https://CRAN.R-project.org/package=@code{rPraat>}, @code{textgRid}
-<https://CRAN.R-project.org/package=@code{textgRid>}.")
-    (license license:gpl2+)))
 
 (define-public r-phonenumber
   (package

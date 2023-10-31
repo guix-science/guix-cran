@@ -5155,6 +5155,50 @@ located on hilltops so still serve as a useful navigational aid for walkers and
 hikers today.")
     (license license:expat)))
 
+(define-public r-trigon
+  (package
+    (name "r-trigon")
+    (version "0.3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tRigon" version))
+       (sha256
+        (base32 "1qnvg06dgny2q4lfsbnjn5c664ibm332mr8rfwv5lzgr56d44nnk"))))
+    (properties `((upstream-name . "tRigon")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-writexl
+                             r-simpleboot
+                             r-shinywidgets
+                             r-shinydashboardplus
+                             r-shinydashboard
+                             r-shiny
+                             r-sessioninfo
+                             r-readxl
+                             r-rcolorbrewer
+                             r-randomforest
+                             r-patchwork
+                             r-markdown
+                             r-ggridges
+                             r-ggpubr
+                             r-ggplot2
+                             r-ggcorrplot
+                             r-factoextra
+                             r-dt
+                             r-dplyr
+                             r-data-table
+                             r-caret
+                             r-boot))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=tRigon")
+    (synopsis "Toolbox for Integrative Pathomics Analysis")
+    (description
+     "Processing and analysis of pathomics, omics and other medical datasets.
+@code{tRigon} serves as a toolbox for descriptive and statistical analysis,
+correlations, plotting and many other methods for exploratory analysis of
+high-dimensional datasets.")
+    (license license:gpl3+)))
+
 (define-public r-triggerstrategy
   (package
     (name "r-triggerstrategy")
@@ -5221,31 +5265,6 @@ computation of LOO and WAIC information criteria (Vehtari A, Gelman A, Gabry J
 (2017) <doi:10.1007/s11222-016-9696-4>) as well as Bayesian R-squared (Gelman A,
 Goodrich B, Gabry J, and Vehtari A (2018) <doi:10.1080/00031305.2018.1549100>).")
     (license license:gpl3)))
-
-(define-public r-tribe
-  (package
-    (name "r-tribe")
-    (version "0.1.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tribe" version))
-       (sha256
-        (base32 "01z1b9k3j4xi5fp9pkpr991yr7x8vk8vysipy7iwdmdr7xg4w4p0"))))
-    (properties `((upstream-name . "tribe")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rstudioapi r-rlang r-magrittr r-lazyeval
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/paulponcet/tribe")
-    (synopsis "Play with the Tribe of Attributes")
-    (description
-     "This package provides functions to make manipulation of object attributes
-easier.  It also contains a few functions that extend the dplyr package for data
-manipulation, and it provides new pipe operators, including the pipe %@@>%
-similar to the magrittr %>%', but with the additional functionality to enable
-attributes propagation.")
-    (license license:expat)))
 
 (define-public r-triangulr
   (package
@@ -13383,13 +13402,13 @@ analysis.")
 (define-public r-tidyxl
   (package
     (name "r-tidyxl")
-    (version "1.0.8")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyxl" version))
        (sha256
-        (base32 "05hkjwlv88ln0psqk5r8p2i4j6g3c3yfw2wmm73wcylcv33lh79h"))))
+        (base32 "1wj156qxgghd415yc27gq5adg3gdixb3kj9wc6v0lw0r91p58cjn"))))
     (properties `((upstream-name . "tidyxl")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-piton))
@@ -13400,7 +13419,7 @@ analysis.")
      "Imports non-tabular from Excel files into R. Exposes cell content, position and
 formatting in a tidy structure for further manipulation.  Tokenizes Excel
 formulas.  Supports .xlsx and .xlsm via the embedded @code{RapidXML} C++ library
-<http://rapidxml.sourceforge.net>.  Does not support .xlsb or .xls'.")
+<https://rapidxml.sourceforge.net>.  Does not support .xlsb or .xls'.")
     (license license:expat)))
 
 (define-public r-tidywikidatar
@@ -13445,13 +13464,13 @@ get tidy data frames in response, and cache data in a local database.")
 (define-public r-tidyvpc
   (package
     (name "r-tidyvpc")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyvpc" version))
        (sha256
-        (base32 "1gcid4n21nkm7z6a91vnj08rzjhzvi9r4nvrgawad6s1grika8q9"))))
+        (base32 "1rxac4zbv3ar3s1kv54zf61nnna32mahhml88yb1h6w3r3yyyzqz"))))
     (properties `((upstream-name . "tidyvpc")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -13460,6 +13479,7 @@ get tidy data frames in response, and cache data in a local database.")
                              r-magrittr
                              r-ggplot2
                              r-fastdummies
+                             r-egg
                              r-data-table
                              r-classint))
     (native-inputs (list r-knitr))
@@ -15074,13 +15094,13 @@ dice.  Experiments can be combined with the pipe-operator.")
 (define-public r-tidydensity
   (package
     (name "r-tidydensity")
-    (version "1.2.5")
+    (version "1.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TidyDensity" version))
        (sha256
-        (base32 "1r55yjclnf0n88scscivhixymibiz6d5mki9si04nn50bjv9qp2n"))))
+        (base32 "12lgx1ng76fhn7nx9a4j6msdn9srrd0fb2fw983wjlykk6imfki9"))))
     (properties `((upstream-name . "TidyDensity")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -15279,13 +15299,13 @@ Additionally, it facilitates code classification via included lexicons.")
 (define-public r-tidycmprsk
   (package
     (name "r-tidycmprsk")
-    (version "0.2.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidycmprsk" version))
        (sha256
-        (base32 "1smcjicx7xz07iagzv2a87kc9q0j2sgpnakhv7dc18zw2ndpls1q"))))
+        (base32 "15a3v0lmqnqf3zc0mdjrxpvm02r20fbmh7ma3y1myl00gs7swv8l"))))
     (properties `((upstream-name . "tidycmprsk")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -16444,13 +16464,13 @@ University and Thomas Jefferson University Hospital, Philadelphia, PA.")
 (define-public r-this-path
   (package
     (name "r-this-path")
-    (version "2.1.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "this.path" version))
        (sha256
-        (base32 "1qq1la2725m5kgbwizhh62a06ywlh9qgsygh5f9zv1v5fxksxi9y"))))
+        (base32 "1dmmnzpkip49zaiz0nnr4k0ssnx5ghc877i3m832900j0qfqhvhn"))))
     (properties `((upstream-name . "this.path")))
     (build-system r-build-system)
     (home-page "https://github.com/ArcadeAntics/this.path")
@@ -16459,8 +16479,9 @@ University and Thomas Jefferson University Hospital, Philadelphia, PA.")
      "Determine the path of the executing script.  Compatible with a few popular GUIs:
 Rgui', RStudio', VSCode', Jupyter', and Rscript (shell).  Compatible with
 several functions and packages: source()', sys.source()', @code{debugSource}()
-in RStudio', testthat::source_file()', knitr::knit()', compiler::loadcmp()',
-box::use()', shiny::@code{runApp}()', and plumber::plumb()'.")
+in RStudio', compiler::loadcmp()', box::use()', knitr::knit()',
+plumber::plumb()', shiny::@code{runApp}()', package:targets', and
+testthat::source_file()'.")
     (license license:expat)))
 
 (define-public r-thinkr
@@ -18157,33 +18178,6 @@ time-varying dictionary using supervised machine learning techniques as lasso
 and elastic net.")
     (license license:gpl3)))
 
-(define-public r-textfeatures
-  (package
-    (name "r-textfeatures")
-    (version "0.3.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "textfeatures" version))
-       (sha256
-        (base32 "0x67kms7ipsadymc9jwja7wymav8y9kc5sbmp2vw4n4l89n32raa"))))
-    (properties `((upstream-name . "textfeatures")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tokenizers
-                             r-tibble
-                             r-tfse
-                             r-text2vec
-                             r-rlang
-                             r-purrr
-                             r-dplyr))
-    (home-page "https://github.com/mkearney/textfeatures")
-    (synopsis "Extracts Features from Text")
-    (description
-     "This package provides a tool for extracting some generic features (e.g., number
-of words, line breaks, characters per word, URLs, lower case, upper case,
-commas, periods, exclamation points, etc.) from strings of text.")
-    (license license:expat)))
-
 (define-public r-texter
   (package
     (name "r-texter")
@@ -19490,25 +19484,25 @@ about tesselle at <https://www.tesselle.org>.")
 (define-public r-tessellation
   (package
     (name "r-tessellation")
-    (version "2.1.3")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tessellation" version))
        (sha256
-        (base32 "0ahf48h38gdrp9cdqdrhwia2xh9b972rmmgk8r1ca1mlqkis72zc"))))
+        (base32 "02d8fq3w0myxw0dc4ih4rsw0w60r2qqy90n6id3j5cxfd1wj8qpx"))))
     (properties `((upstream-name . "tessellation")))
     (build-system r-build-system)
     (propagated-inputs (list r-sets
                              r-scales
                              r-rvcg
                              r-rgl
-                             r-randomcolor
                              r-r6
-                             r-interp
+                             r-polychrome
                              r-hash
                              r-english
-                             r-cxhull))
+                             r-cxhull
+                             r-colorsgen))
     (home-page "https://github.com/stla/tessellation")
     (synopsis "Delaunay and VoronoÃ¯ Tessellations")
     (description
@@ -23571,23 +23565,23 @@ Einmahl, J.H.J., Kiriliouk, A., and Segers, J. (2018)
 (define-public r-tailclassifier
   (package
     (name "r-tailclassifier")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TailClassifier" version))
        (sha256
-        (base32 "1m9a2x837v6s7gsv8g5ll6s2h1lk0jjfig2qvkqzg97xp7v9b8in"))))
+        (base32 "10hf6lhc8vpx4bkyzgiyawgv0qgbkwdfgjjn3l7rx4vl24g3jlxy"))))
     (properties `((upstream-name . "TailClassifier")))
     (build-system r-build-system)
-    (propagated-inputs (list r-readr))
+    (propagated-inputs (list r-scales r-ggplot2 r-cowplot))
     (home-page "https://cran.r-project.org/package=TailClassifier")
-    (synopsis "Tail Classifier for Thick-Tailed Discrete Data")
+    (synopsis "Tail Classifier")
     (description
-     "Function @code{TailClassifier}() in this package is a Tail-Classifier function.
-The function suggests one of the following types of tail for your discrete data:
-1) Power decaying tail; 2) Sub-exponential decaying tail; and 3)
-Near-exponential decaying tail.")
+     "The function @code{TailClassifier}() suggests one of the following types of tail
+for your discrete data: 1) Power decaying tail; 2) Sub-exponential decaying
+tail; and 3) Near-exponential decaying tail.  The function also provides an
+estimate of the parameter for the classified-distribution as a reference.")
     (license license:gpl3)))
 
 (define-public r-tagtools

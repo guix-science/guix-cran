@@ -5127,6 +5127,30 @@ series.\" Journal of the Royal Statistical Society, Series B, 75, 879-904.
 <doi:10.1111/rssb.12015>.")
     (license license:gpl2+)))
 
+(define-public r-locatt
+  (package
+    (name "r-locatt")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LocaTT" version))
+       (sha256
+        (base32 "0wbzyw0h6mz5kh9k5x45vffzp6wa76y9qz5s534vvnmgcic2vqnm"))))
+    (properties `((upstream-name . "LocaTT")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-taxize))
+    (home-page "https://github.com/Urodelan/LocaTT")
+    (synopsis
+     "Geographically-Conscious Taxonomic Assignment for Metabarcoding")
+    (description
+     "This package provides a bioinformatics pipeline for performing taxonomic
+assignment of DNA metabarcoding sequence data while considering geographic
+location.  A detailed tutorial is available at
+<https://urodelan.github.io/Local_Taxa_Tool_Tutorial/>.  A manuscript describing
+these methods is in preparation.")
+    (license license:gpl3+)))
+
 (define-public r-locationgamer
   (package
     (name "r-locationgamer")
@@ -6360,6 +6384,31 @@ Calderhead (2011) <doi:10.1111/j.1467-9868.2010.00765.x> and Nesterov (2009)
 <doi:10.1007/s10107-007-0149-x>), a parametric bootstrap algorithm, and
 diagnostic plots for the model class.")
     (license license:expat)))
+
+(define-public r-lmhelprs
+  (package
+    (name "r-lmhelprs")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lmhelprs" version))
+       (sha256
+        (base32 "03fxj1kkxahc8x1mnavgvdxjhy5kq2v75kns8g3qdhqpxcagx6qb"))))
+    (properties `((upstream-name . "lmhelprs")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://sfcheung.github.io/lmhelprs/")
+    (synopsis "Helper Functions for Linear Model Analysis")
+    (description
+     "This package provides a collection of helper functions for multiple regression
+models fitted by lm().  Most of them are simple functions for simple tasks which
+can be done with coding, but may not be easy for occasional users of R. Most of
+the tasks addressed are those sometimes needed when using the manymome package
+(Cheung and Cheung, 2023, <doi:10.3758/s13428-023-02224-z>) and stdmod package
+(Cheung, Cheung, Lau, Hui, and Vong, 2022, <doi:10.1037/hea0001188>).  However,
+they can also be used in other scenarios.")
+    (license license:gpl3+)))
 
 (define-public r-lmforc
   (package
@@ -8001,16 +8050,17 @@ allows to visualize the clustering results returned by the server.")
 (define-public r-link2gi
   (package
     (name "r-link2gi")
-    (version "0.5-2")
+    (version "0.5-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "link2GI" version))
        (sha256
-        (base32 "0a05ahkrg7587l9kpfky7hjvwry1xiiw9dmzqmhg31bc6js6hg61"))))
+        (base32 "192f3cilra1lq8wg2hn41z2a7ag4m9svkc6smw0rf7np2xv9b2a6"))))
     (properties `((upstream-name . "link2GI")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
+                             r-xfun
                              r-terra
                              r-stringr
                              r-sf
@@ -12011,13 +12061,13 @@ general (not R specific) information on the algorithm Leabra see
 (define-public r-ldt
   (package
     (name "r-ldt")
-    (version "0.4.2")
+    (version "0.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ldt" version))
        (sha256
-        (base32 "00zm1i73d9ivpgf1h7mr45dpbn3ks5lrixa3h07k94767iaini6c"))))
+        (base32 "1l6vllahssy3xd4y7cnlqyg4f0piyqv6py7rqqwqvn4fhj4zp3d9"))))
     (properties `((upstream-name . "ldt")))
     (build-system r-build-system)
     (propagated-inputs (list r-tdata r-rdpack r-rcpp r-mass r-bh))
@@ -13646,6 +13696,26 @@ automatically adjusts the bandwidth on a query-by-query basis through a
 leave-one-out cross-validation.")
     (license license:gpl2+)))
 
+(define-public r-lay
+  (package
+    (name "r-lay")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lay" version))
+       (sha256
+        (base32 "0cg3sxbphmfyzdbqrgij5nm8xvhp5dizbjx82pl0xx1ms5p40b0r"))))
+    (properties `((upstream-name . "lay")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs r-tibble r-rlang r-purrr))
+    (home-page "https://courtiol.github.io/lay/")
+    (synopsis "Simple but Efficient Rowwise Jobs")
+    (description
+     "Creating efficiently new column(s) in a data frame (including tibble) by
+applying a function one row at a time.")
+    (license license:expat)))
+
 (define-public r-lax
   (package
     (name "r-lax")
@@ -13983,37 +14053,6 @@ sphere packing designs proposed in Xu He (2017)
 projections designs proposed in Xu He (2020) <doi:10.1093/biomet/asaa057> and Xu
 He (2018) <@code{arXiv:1709.02062v2>}.")
     (license license:lgpl2.1)))
-
-(define-public r-latticedensity
-  (package
-    (name "r-latticedensity")
-    (version "1.2.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "latticeDensity" version))
-       (sha256
-        (base32 "0l9ypdpy09nnmanj2gvaxzj79s8d9iqwy6rv0rig5fwbqv1y6135"))))
-    (properties `((upstream-name . "latticeDensity")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-splancs
-                             r-spdep
-                             r-spatstat-geom
-                             r-spatstat
-                             r-spatialreg
-                             r-spam
-                             r-sp
-                             r-sf))
-    (native-inputs (list r-knitr))
-    (home-page "www.r-project.org")
-    (synopsis
-     "Density Estimation and Nonparametric Regression on Irregular Regions")
-    (description
-     "This package provides functions that compute the lattice-based density estimator
-of Barry and @code{McIntyre}, which accounts for point processes in
-two-dimensional regions with irregular boundaries and holes.  The package also
-implements two-dimensional non-parametric regression for similar regions.")
-    (license license:gpl2)))
 
 (define-public r-latte
   (package

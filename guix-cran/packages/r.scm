@@ -1472,26 +1472,6 @@ Shapley regression, but with a significant advantage on computational
 performance.")
     (license license:gpl3)))
 
-(define-public r-rvmmin
-  (package
-    (name "r-rvmmin")
-    (version "2018-4.17.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Rvmmin" version))
-       (sha256
-        (base32 "0kl1h4mlvb1bngb40r3dhrjkpnh3lsqddis65hbjzm2pzz20l02m"))))
-    (properties `((upstream-name . "Rvmmin")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-optextras))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=Rvmmin")
-    (synopsis "Variable Metric Nonlinear Function Minimization")
-    (description
-     "Variable metric nonlinear function minimization with bounds constraints.")
-    (license license:gpl2+)))
-
 (define-public r-rvmf
   (package
     (name "r-rvmf")
@@ -3411,13 +3391,13 @@ performing calculations in CPUs as well as GPUs to accelerate tensor operations.
 (define-public r-rtop
   (package
     (name "r-rtop")
-    (version "0.6-6")
+    (version "0.6-8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtop" version))
        (sha256
-        (base32 "0s5kqz7ah5182k5j1r72hqrv05mlns8b67m57a0mn9gfzjhval6p"))))
+        (base32 "0ryha7sxw14z6msrg10xp7ajjpcn9w78y8j08448h84iybr9girk"))))
     (properties `((upstream-name . "rtop")))
     (build-system r-build-system)
     (propagated-inputs (list r-units r-sp r-sf r-gstat))
@@ -5925,6 +5905,37 @@ database when the data are required.")
      "Downloads Southern Oscillation Index, Oceanic Nino Index, North Pacific Gyre
 Oscillation data, North Atlantic Oscillation and Arctic Oscillation.  Data
 sources are described in the help files for each function.")
+    (license license:gpl3)))
+
+(define-public r-rsofun
+  (package
+    (name "r-rsofun")
+    (version "4.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rsofun" version))
+       (sha256
+        (base32 "1vq5hrjqq3ppki5rxd2gl3219p3cxg5ajgr14ynxkyg9sdbmnsb0"))))
+    (properties `((upstream-name . "rsofun")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-purrr
+                             r-multidplyr
+                             r-magrittr
+                             r-gensa
+                             r-dplyr
+                             r-bayesiantools))
+    (native-inputs (list r-knitr gfortran))
+    (home-page "https://github.com/geco-bern/rsofun")
+    (synopsis "The P-Model and BiomeE Modelling Framework")
+    (description
+     "This package implements the Simulating Optimal FUNctioning framework for
+site-scale simulations of ecosystem processes, including model calibration.  It
+contains Fortran 90 modules for the P-model (Stocker et al. (2020)
+<doi:10.5194/gmd-13-1545-2020>), SPLASH (Davis et al. (2017)
+<doi:10.5194/gmd-10-689-2017>) and @code{BiomeE} (Weng et al. (2015)
+<doi:10.5194/bg-12-2655-2015>).")
     (license license:gpl3)))
 
 (define-public r-rsocrata
@@ -16676,13 +16687,13 @@ and Feng Tian (2014) <DOI:10.1371/journal.pone.0107684>), and HE regression
 (define-public r-rmvl
   (package
     (name "r-rmvl")
-    (version "0.0.4.4")
+    (version "0.0.4.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RMVL" version))
        (sha256
-        (base32 "01w649iw62kpyp4a3lyrqcfb8iqcd0v8zwz6aq1cnxhw04hz0c1w"))))
+        (base32 "08pkfgxicy3s498qh1nl3jnw4wh12f5fb1w1mw22jfbzymnj2n7d"))))
     (properties `((upstream-name . "RMVL")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=RMVL")
@@ -23478,13 +23489,13 @@ function for authorization and loading reports.")
 (define-public r-rgof
   (package
     (name "r-rgof")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rgof" version))
        (sha256
-        (base32 "0n2ddwhx0qibczx8im39gjdmh8alng5w6f7hbvvx3p7sm6xxp0q7"))))
+        (base32 "0csya8lkjj3w1pwr6g0avs17na07rfnfpx5z9s01vcql92v8aii0"))))
     (properties `((upstream-name . "Rgof")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-ggplot2))
@@ -25562,6 +25573,35 @@ how Rcpp or cpp11 allow easy interfacing with C++ code.  Also provides helper
 functions to create R packages that use Rust code.  Under the hood, the Rust
 crate extendr is used to do all the heavy lifting.")
     (license license:expat)))
+
+(define-public r-rexpokit
+  (package
+    (name "r-rexpokit")
+    (version "0.26.6.12")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rexpokit" version))
+       (sha256
+        (base32 "0c1lsjyaf7lsh5qbg7hdzb85v7zxprx773mv211q6m5mm01p9331"))))
+    (properties `((upstream-name . "rexpokit")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp))
+    (native-inputs (list gfortran))
+    (home-page "http://phylo.wikidot.com/rexpokit")
+    (synopsis "R Wrappers for EXPOKIT; Other Matrix Functions")
+    (description
+     "Wraps some of the matrix exponentiation utilities from EXPOKIT
+(<http://www.maths.uq.edu.au/expokit/>), a FORTRAN library that is widely
+recommended for matrix exponentiation (Sidje RB, 1998. \"Expokit: A Software
+Package for Computing Matrix Exponentials.\" ACM Trans.  Math.  Softw.  24(1):
+130-156).  EXPOKIT includes functions for exponentiating both small, dense
+matrices, and large, sparse matrices (in sparse matrices, most of the cells have
+value 0).  Rapid matrix exponentiation is useful in phylogenetics when we have a
+large number of states (as we do when we are inferring the history of
+transitions between the possible geographic ranges of a species), but is
+probably useful in other ways as well.")
+    (license license:gpl2+)))
 
 (define-public r-rexperigen
   (package
@@ -27970,13 +28010,13 @@ Also retrieve and process result sets as either a ragged or flattened tibble'.")
 (define-public r-reporter
   (package
     (name "r-reporter")
-    (version "1.4.2")
+    (version "1.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reporter" version))
        (sha256
-        (base32 "1rym8kmmxw8fgjz1nl2mjzybmbjm8w4jj6bffihhq0v7jxihk3pa"))))
+        (base32 "1ss757ijdhjvjjrbd6zc934vlyvmwgpfbcf0d51w2b10xgif25ap"))))
     (properties `((upstream-name . "reporter")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -31933,28 +31973,6 @@ according to the IUCN (International Union for Conservation of Nature, see
 <https://www.iucn.org/> for more information) red list criteria.")
     (license license:gpl3)))
 
-(define-public r-recurse
-  (package
-    (name "r-recurse")
-    (version "1.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "recurse" version))
-       (sha256
-        (base32 "0bdm2nd8cq64dwz9b2hnbjv6c3fwpy7gnmbfi6p49nf285p8y632"))))
-    (properties `((upstream-name . "recurse")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=recurse")
-    (synopsis "Computes Revisitation Metrics for Trajectory Data")
-    (description
-     "Computes revisitation metrics for trajectory data, such as the number of
-revisitations for each location as well as the time spent for that visit and the
-time since the previous visit.  Also includes functions to plot data.")
-    (license license:expat)))
-
 (define-public r-recurrentpseudo
   (package
     (name "r-recurrentpseudo")
@@ -35602,19 +35620,19 @@ manual.")
 (define-public r-rczechia
   (package
     (name "r-rczechia")
-    (version "1.11.1")
+    (version "1.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RCzechia" version))
        (sha256
-        (base32 "0s5flqqvkp00hkhyvhw2gy44xjvimhm0bjzcq0yh40rdcpswd00z"))))
+        (base32 "1yvwnxab3h1ai2nr8aaw5hbp13a4ayq4cq2f5sbzx1x8szq97sni"))))
     (properties `((upstream-name . "RCzechia")))
     (build-system r-build-system)
     (inputs (list proj geos gdal))
     (propagated-inputs (list r-sf r-magrittr r-jsonlite r-httr r-curl))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/jlacko/RCzechia")
+    (home-page "https://rczechia.jla-data.net")
     (synopsis "Spatial Objects of the Czech Republic")
     (description
      "Administrative regions and other spatial objects of the Czech Republic.")
@@ -39021,27 +39039,6 @@ and Dropbox <https://www.dropbox.com/>.  It requires no network configuration,
 does not depend on external platforms like e.g. Kaggle <https://www.kaggle.com/>
 and can be easily installed on a personal computer.")
     (license license:gpl2)))
-
-(define-public r-rcgmin
-  (package
-    (name "r-rcgmin")
-    (version "2022-4.30")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Rcgmin" version))
-       (sha256
-        (base32 "04dr5w8ss004fk0w814x4hb78i7l3h1q5r00pjps43cpzgkvi116"))))
-    (properties `((upstream-name . "Rcgmin")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-optextras))
-    (home-page "https://cran.r-project.org/package=Rcgmin")
-    (synopsis
-     "Conjugate Gradient Minimization of Nonlinear Functions with Box Constraints")
-    (description
-     "Conjugate gradient minimization of nonlinear functions with box constraints
-using Dai/Yuan update.")
-    (license license:gpl2+)))
 
 (define-public r-rcgls
   (package

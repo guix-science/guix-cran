@@ -6670,13 +6670,13 @@ Mixed-Effects Models: A Step-by-Step Approach by Galecki and Burzykowski (2013).
 (define-public r-nlive
   (package
     (name "r-nlive")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlive" version))
        (sha256
-        (base32 "03nxazkb0ndriafh28dfqmyrzcpxa0fqflnlpbkjaa83g4im75j3"))))
+        (base32 "15h55ck0xha905wjg89rf8gcz49c3kpd5sqb2xxxkg9z4mlbn1q8"))))
     (properties `((upstream-name . "nlive")))
     (build-system r-build-system)
     (propagated-inputs (list r-sqldf
@@ -10645,51 +10645,6 @@ implements the methodological developments in Behrouzi and Wit (2017)
 <doi:10.1111/rssc.12287> and Behrouzi and Wit (2017)
 <doi:10.1093/bioinformatics/bty777>.")
     (license license:gpl3)))
-
-(define-public r-netgsa
-  (package
-    (name "r-netgsa")
-    (version "4.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "netgsa" version))
-       (sha256
-        (base32 "02127r3vskcksrd893qrs1wqwkbw3b8p33ybgvbwd9j4lxgifmr2"))))
-    (properties `((upstream-name . "netgsa")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rlang
-                             r-reshape2
-                             r-rcppeigen
-                             r-rcpp
-                             r-quadprog
-                             r-org-hs-eg-db
-                             r-msigdbr
-                             r-matrix
-                             r-magrittr
-                             r-jsonlite
-                             r-igraph
-                             r-httr
-                             r-graphite
-                             r-graph
-                             r-glmnet
-                             r-glassofast
-                             r-genefilter
-                             r-dplyr
-                             r-data-table
-                             r-corpcor
-                             r-annotationdbi))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/mikehellstern/netgsa")
-    (synopsis "Network-Based Gene Set Analysis")
-    (description
-     "Carry out network-based gene set analysis by incorporating external information
-about interactions among genes, as well as novel interactions learned from data.
- Implements methods described in Shojaie A, Michailidis G (2010)
-<doi:10.1093/biomet/asq038>, Shojaie A, Michailidis G (2009)
-<doi:10.1089/cmb.2008.0081>, and Ma J, Shojaie A, Michailidis G (2016)
-<doi:10.1093/bioinformatics/btw410>.")
-    (license license:gpl3+)))
 
 (define-public r-netgen
   (package

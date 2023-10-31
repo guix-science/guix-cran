@@ -4142,13 +4142,13 @@ possibility of crossings or alternative orderings among the survival functions."
 (define-public r-surveillance
   (package
     (name "r-surveillance")
-    (version "1.21.1")
+    (version "1.22.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "surveillance" version))
        (sha256
-        (base32 "1a33n91pp53rdfdr96d9sim00xr3bp6diaiqbc97zvri6ib35j8z"))))
+        (base32 "0ixd5xdcbdwqa8pcahfv12lmj0sslvd8mpi04c48yycj81qincj8"))))
     (properties `((upstream-name . "surveillance")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -6636,48 +6636,6 @@ analysis based on subsets by incorporating gene-environment interactions into
 the testing procedure.")
     (license license:gpl3)))
 
-(define-public r-subgrplots
-  (package
-    (name "r-subgrplots")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SubgrPlots" version))
-       (sha256
-        (base32 "1bi5zndkpgvyk563i0jdfrw73kkpa6zi3yx922dv90w6bdb9kvl2"))))
-    (properties `((upstream-name . "SubgrPlots")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-venndiagram
-                             r-upsetr
-                             r-survrm2
-                             r-survival
-                             r-sp
-                             r-shape
-                             r-scales
-                             r-polyclip
-                             r-plyr
-                             r-gridextra
-                             r-gridbase
-                             r-ggrepel
-                             r-ggplot2
-                             r-dplyr
-                             r-diagram
-                             r-colorspace
-                             r-circlize
-                             r-alluvial))
-    (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://cran.r-project.org/package=SubgrPlots")
-    (synopsis "Graphical Displays for Subgroup Analysis in Clinical Trials")
-    (description
-     "This package provides functions for obtaining a variety of graphical displays
-that may be useful in the subgroup analysis setting.  An example with a prostate
-cancer dataset is provided.  The graphical techniques considered include level
-plots, mosaic plots, contour plots, bar charts, Venn diagrams, tree plots,
-forest plots, Galbraith plots, L'@code{AbbÃ©} plots, the subpopulation treatment
-effect pattern plot, alluvial plots, circle plots and @code{UpSet} plots.")
-    (license license:expat)))
-
 (define-public r-subgroup
   (package
     (name "r-subgroup")
@@ -8511,13 +8469,13 @@ components.  The methods can be used for forecasting.")
 (define-public r-stppsim
   (package
     (name "r-stppsim")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stppSim" version))
        (sha256
-        (base32 "0hpy6kxr9m5hmkgnpfs3r1mp5nn9hy52sxb3i1hs9d437mxmhjx6"))))
+        (base32 "00wxbahfamxf4y2fmscq48n5j81qx4xsnh8har2mhhnqvaiikbvz"))))
     (properties `((upstream-name . "stppSim")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -23859,13 +23817,13 @@ with nested data.")
 (define-public r-sparklyr
   (package
     (name "r-sparklyr")
-    (version "1.8.3")
+    (version "1.8.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sparklyr" version))
        (sha256
-        (base32 "1bzvkzb38l3c9r0agkygkjjv7x94f9m6f3p2cf9i305jd8s9qjg9"))))
+        (base32 "0xc38xq8izpg0fh4kjb5f223jvhrczs66aydw32kyk6mx07c43ch"))))
     (properties `((upstream-name . "sparklyr")))
     (build-system r-build-system)
     (inputs (list))
@@ -23886,13 +23844,10 @@ with nested data.")
                              r-glue
                              r-globals
                              r-generics
-                             r-ellipsis
                              r-dplyr
-                             r-digest
                              r-dbplyr
                              r-dbi
-                             r-config
-                             r-base64enc))
+                             r-config))
     (home-page "https://spark.rstudio.com/")
     (synopsis "R Interface to Apache Spark")
     (description
@@ -31470,34 +31425,6 @@ centre.  To assess goodness of fit, there are functions to generate a Q-Q plot,
 a P-P plot and a tail plot.")
     (license license:gpl2+)))
 
-(define-public r-skewedf
-  (package
-    (name "r-skewedf")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SkeweDF" version))
-       (sha256
-        (base32 "11i6zbjhkcrr6g848sms21l1ixk401vd50cia74j78d4nvl8d8zc"))))
-    (properties `((upstream-name . "SkeweDF")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zipfr
-                             r-stringr
-                             r-rcpp
-                             r-purrr
-                             r-optimr
-                             r-matrixstats
-                             r-dplyr))
-    (home-page "https://cran.r-project.org/package=SkeweDF")
-    (synopsis
-     "Optimization of Skewed Distributions with Birth-Death Processes")
-    (description
-     "Implementations of models which follow the Kolmogorov Birth-Death process
-framework and functions which utilize these Kolmogorov Birth-Death process
-models for analysis of skewed distribution functions.")
-    (license license:gpl3)))
-
 (define-public r-sketchy
   (package
     (name "r-sketchy")
@@ -36021,13 +35948,13 @@ package and its design philosophy see Chalmers and Adkins (2020)
 (define-public r-simdd
   (package
     (name "r-simdd")
-    (version "1.1-1")
+    (version "1.1-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simdd" version))
        (sha256
-        (base32 "141jap036w1nfmxgi87wlw455yr8jdrwr8h8ww3351l17h37zsb6"))))
+        (base32 "05ngayian2klvi8mirpy3pvzzk737wbld31d8v4338mflk5prnqq"))))
     (properties `((upstream-name . "simdd")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=simdd")
@@ -36037,13 +35964,13 @@ package and its design philosophy see Chalmers and Adkins (2020)
      "Simulation methods for the Fisher Bingham distribution on the unit sphere, the
 matrix Bingham distribution on a Grassmann manifold, the matrix Fisher
 distribution on SO(3), and the bivariate von Mises sine model on the torus.  The
-methods use the first ever general purpose acceptance/rejection simulation
-algorithm for the Bingham distribution and are described fully by Kent, Ganeiber
-and Mardia (2018) <doi:10.1080/10618600.2017.1390468>.  These methods superseded
-earlier MCMC simulation methods and are more general than earlier simulation
-methods.  The methods can be slower in specific situations where there are
-existing non-MCMC simulation methods (see Section 8 of Kent, Ganeiber and Mardia
-(2018) <doi:10.1080/10618600.2017.1390468> for further details).")
+methods use an acceptance/rejection simulation algorithm for the Bingham
+distribution and are described fully by Kent, Ganeiber and Mardia (2018)
+<doi:10.1080/10618600.2017.1390468>.  These methods supersede earlier MCMC
+simulation methods and are more general than earlier simulation methods.  The
+methods can be slower in specific situations where there are existing non-MCMC
+simulation methods (see Section 8 of Kent, Ganeiber and Mardia (2018)
+<doi:10.1080/10618600.2017.1390468> for further details).")
     (license license:gpl2)))
 
 (define-public r-simdag
@@ -40368,13 +40295,13 @@ apps and build dynamic user interfaces from user information.")
 (define-public r-shinyanimate
   (package
     (name "r-shinyanimate")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyanimate" version))
        (sha256
-        (base32 "0vshid5mfq006cprjj61d0g7ajyc3plc66x55c5jjmijwbp6pw7a"))))
+        (base32 "1n8nf42imw0qcgdh1h0yhqid2g688cxrp22npj3z1mnynmjvsxp9"))))
     (properties `((upstream-name . "shinyanimate")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny))
@@ -53663,16 +53590,16 @@ Inference and learning in stochastic automata was by Karl-Heinz Zimmermann(2017)
 (define-public r-satres
   (package
     (name "r-satres")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "satres" version))
        (sha256
-        (base32 "1kxpb15xbl4f3m9gqmvrad9dqcw0m9l6dxcvbqar743aakwh10sc"))))
+        (base32 "0qflcpg5k1m1wps0grdfz9s61nl0gxcm0ybgqa08cachr5wy8cqw"))))
     (properties `((upstream-name . "satres")))
     (build-system r-build-system)
-    (propagated-inputs (list r-terra))
+    (propagated-inputs (list r-terra r-snakecase r-sf))
     (native-inputs (list r-knitr))
     (home-page "https://josesamos.github.io/satres/")
     (synopsis "Grouping Satellite Bands by Spectral and Spatial Resolution")

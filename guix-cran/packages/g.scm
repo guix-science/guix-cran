@@ -57,13 +57,13 @@
 (define-public r-gyro
   (package
     (name "r-gyro")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gyro" version))
        (sha256
-        (base32 "01ddkr5f7xqccl2vqwqyv4d91y0008vyzbw211zii2x2c48l4r24"))))
+        (base32 "0zgzqgfd97bxb4crijlc9byak4dl5zrhp6ynch8yda8m3rx1gz92"))))
     (properties `((upstream-name . "gyro")))
     (build-system r-build-system)
     (propagated-inputs (list r-rvcg
@@ -71,11 +71,12 @@
                              r-rgl
                              r-rcpp
                              r-rcdt
-                             r-randomcolor
                              r-purrr
+                             r-polychrome
                              r-plotrix
                              r-morpho
                              r-cxhull
+                             r-colorsgen
                              r-clipr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/stla/gyro")
@@ -2980,13 +2981,13 @@ experiments based on the General Recognition Theory.")
 (define-public r-grsxe
   (package
     (name "r-grsxe")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GRSxE" version))
        (sha256
-        (base32 "1mfsfkfgz12vm99jsln8fimmy852dx20xfnj6ibqrjhjpniv8x5d"))))
+        (base32 "0wzaddhqxygw7p81ni2dl2fwr5kwb4qjar126n9mq8n6bkbvq2yk"))))
     (properties `((upstream-name . "GRSxE")))
     (build-system r-build-system)
     (propagated-inputs (list r-ranger r-glmnet))
@@ -2997,9 +2998,10 @@ experiments based on the General Recognition Theory.")
      "Statistical testing procedures for detecting @code{GxE} (gene-environment)
 interactions.  The main focus lies on GR@code{SxE} interaction tests that aim at
 detecting @code{GxE} interactions through GRS (genetic risk scores).  Moreover,
-a novel testing procedure based on bagging and OOB predictions is implemented
-for incorporating all available observations at both GRS construction and
-@code{GxE} testing.")
+a novel testing procedure based on bagging and OOB (out-of-bag) predictions is
+implemented for incorporating all available observations at both GRS
+construction and @code{GxE} testing (Lau et al., 2023,
+<doi:10.1038/s41598-023-28172-4>).")
     (license license:expat)))
 
 (define-public r-grshiny
@@ -13212,16 +13214,16 @@ primarily related to network analysis on the Norwegian road network.")
 (define-public r-giscor
   (package
     (name "r-giscor")
-    (version "0.3.5")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "giscoR" version))
        (sha256
-        (base32 "1sbdpljrznzgqakqmdrn3lxr4ipp8b70zddh0ffwql8knl9lxvdm"))))
+        (base32 "04iprw9jrab1cpw0flb8whldcyr9safm9p7k78fbaa4yaccd9051"))))
     (properties `((upstream-name . "giscoR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sf r-rappdirs r-geojsonsf r-countrycode))
+    (propagated-inputs (list r-sf r-rappdirs r-httr r-geojsonsf r-countrycode))
     (native-inputs (list r-knitr))
     (home-page "https://ropengov.github.io/giscoR/")
     (synopsis "Download Map Data from GISCO API - Eurostat")
@@ -25485,13 +25487,13 @@ online SQL database at <http://paleofire.org>.")
 (define-public r-gccfactor
   (package
     (name "r-gccfactor")
-    (version "1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GCCfactor" version))
        (sha256
-        (base32 "0ymqzkh1iaiib2lqqx54rckzia56kxphnb1bzbdim5d3m2hhi80y"))))
+        (base32 "1rxn0v4msfr5rwqc91ypafnvwa23n5574s8lhqmdqq53rs32ff89"))))
     (properties `((upstream-name . "GCCfactor")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-sandwich))

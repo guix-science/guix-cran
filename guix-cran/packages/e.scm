@@ -12387,13 +12387,13 @@ thermal reaction norms.  See <doi:10.7717/peerj.8451> for tsd functions; see
 (define-public r-embed
   (package
     (name "r-embed")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "embed" version))
        (sha256
-        (base32 "093fd33fpnjqai4gicjrf2snqgayzfcgkak3a5fs6qxzgvvfp12s"))))
+        (base32 "1aagf1qyvawyg4g9a8s1k73vvk5xzpgxpxm7sb1l0hm5ji8ka906"))))
     (properties `((upstream-name . "embed")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -16331,13 +16331,13 @@ modules are intended for reuse across applications.")
 (define-public r-editbl
   (package
     (name "r-editbl")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "editbl" version))
        (sha256
-        (base32 "0lzq7whmyw0kk8bhka2rg0sg7m21sr5yzh3508cd3r3xyvzil0j0"))))
+        (base32 "17wdp5n3y99ik7j7k6mhgx151khw1gg7jshagbyqm2cnkbz15l5v"))))
     (properties `((upstream-name . "editbl")))
     (build-system r-build-system)
     (propagated-inputs (list r-uuid
@@ -17215,27 +17215,28 @@ functions.")
 (define-public r-ecotraj
   (package
     (name "r-ecotraj")
-    (version "0.0.3")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecotraj" version))
        (sha256
-        (base32 "0mfvyh25xjhfd8k8b84d3vi9nf69g2lg82x6j3nsyhxy1kax9py8"))))
+        (base32 "1qsp67y07xrqq0szlq8ks5i7w6aa42kmai9m5pjpfifs9hz5wnrz"))))
     (properties `((upstream-name . "ecotraj")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-mass r-kendall))
-    (native-inputs (list r-knitr))
     (home-page "https://emf-creaf.github.io/ecotraj/")
     (synopsis "Ecological Trajectory Analysis")
     (description
      "Assists ecologists in the analysis of temporal changes of ecosystems, defined as
 trajectories on a chosen multivariate space, by providing a set of trajectory
-metrics and visual representations (see De Caceres et al. (2019)
-<doi:10.1002/ecm.1350> and Sturbois et al. (2021)
-<doi:10.1016/j.ecolmodel.2020.109400>).  Includes functions to estimate metrics
+metrics and visual representations [De Caceres et al. (2019)
+<doi:10.1002/ecm.1350>; and Sturbois et al. (2021)
+<doi:10.1016/j.ecolmodel.2020.109400>].  Includes functions to estimate metrics
 for individual trajectories (length, directionality, angles, ...) as well as
-metrics to relate pairs of trajectories (dissimilarity and convergence).")
+metrics to relate pairs of trajectories (dissimilarity and convergence).
+Functions are also provided to estimate the ecological quality of ecosystem with
+respect to reference conditions [Sturbois et al. (2023) ].")
     (license license:gpl2+)))
 
 (define-public r-ecotoxr
@@ -18045,23 +18046,24 @@ general framework for combining ecosystem models\"<doi:10.1111/faf.12310>.")
 (define-public r-ecodist
   (package
     (name "r-ecodist")
-    (version "2.0.9")
+    (version "2.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecodist" version))
        (sha256
-        (base32 "1m78bgbr7xjlc01q4n921y3aq2nkdbdkv9qpppfarw0d77pqpsdf"))))
+        (base32 "161xyjx004aqx1l64fd6wqz7m3fqq61ijc4k00dx2lkifanpx8p0"))))
     (properties `((upstream-name . "ecodist")))
     (build-system r-build-system)
+    (propagated-inputs (list r-igraph))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ecodist")
     (synopsis "Dissimilarity-Based Functions for Ecological Analysis")
     (description
      "Dissimilarity-based analysis functions including ordination and Mantel test
-functions, intended for use with spatial and community data.  The original
-package description is in Goslee and Urban (2007) <doi:10.18637/jss.v022.i07>,
-with further statistical detail in Goslee (2010)
+functions, intended for use with spatial and community ecological data.  The
+original package description is in Goslee and Urban (2007)
+<doi:10.18637/jss.v022.i07>, with further statistical detail in Goslee (2010)
 <doi:10.1007/s11258-009-9641-0>.")
     (license license:gpl2+)))
 

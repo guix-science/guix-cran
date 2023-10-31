@@ -2459,13 +2459,13 @@ the number of individuals is large.  For the main ctsem package, see
 (define-public r-ctsem
   (package
     (name "r-ctsem")
-    (version "3.9.0")
+    (version "3.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ctsem" version))
        (sha256
-        (base32 "1622b1mgf0dxp53n1957y00hdbwic3mvixb213270sh59k21bzfl"))))
+        (base32 "1npdxd4z8vafjcjhy1i16r27wqmilc7b42hml21cggl9ynvh7pn7"))))
     (properties `((upstream-name . "ctsem")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -11447,38 +11447,6 @@ Cornerstone 7.1.1 on @code{camLineTV} @code{YouTube} channel
 (<https://www.youtube.com/watch?v=HEQHwq_@code{laXU>}) (available in German).")
     (license license:gpl3)))
 
-(define-public r-corncob
-  (package
-    (name "r-corncob")
-    (version "0.3.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "corncob" version))
-       (sha256
-        (base32 "0ipcs9crwlvi1gxqj87318dxx2hv4xrvcinci262z2zq8br1s3ps"))))
-    (properties `((upstream-name . "corncob")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vgam
-                             r-trust
-                             r-scales
-                             r-phyloseq
-                             r-optimr
-                             r-numderiv
-                             r-magrittr
-                             r-ggplot2
-                             r-dplyr
-                             r-detectseparation))
-    (native-inputs (list r-r-rsp r-knitr))
-    (home-page "https://github.com/bryandmartin/corncob")
-    (synopsis
-     "Count Regression for Correlated Observations with the Beta-Binomial")
-    (description
-     "Statistical modeling for correlated count data using the beta-binomial
-distribution, described in Martin et al. (2020) <doi:10.1214/19-AOAS1283>.  It
-allows for both mean and overdispersion covariates.")
-    (license license:gpl2+)))
-
 (define-public r-cormid
   (package
     (name "r-cormid")
@@ -14191,29 +14159,6 @@ Function outputs fits and various types of inference.")
      "Shiny app for creating interactive consort flow diagrams and other types of flow
 diagrams, see Moher, Schulz and Altman (2001)
 <doi:10.1016/S0140-6736(00)04337-3>.")
-    (license license:expat)))
-
-(define-public r-consort
-  (package
-    (name "r-consort")
-    (version "1.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "consort" version))
-       (sha256
-        (base32 "03xkypy4r84mdif6m331c27haxnyi1s87vvj2f83xxw0m0s5im5j"))))
-    (properties `((upstream-name . "consort")))
-    (build-system r-build-system)
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/adayim/consort/")
-    (synopsis "Create Consort Diagram")
-    (description
-     "To make it easy to create CONSORT diagrams for the transparent reporting of
-participant allocation in randomized, controlled clinical trials.  This is done
-by creating a standardized disposition data, and using this data as the source
-for the creation a standard CONSORT diagram.  Human effort by supplying text
-labels on the node can also be achieved.")
     (license license:expat)))
 
 (define-public r-consolechoice
@@ -18250,6 +18195,29 @@ Besides the common palette types (categorical, sequential, and diverging) it
 also includes bivariate color palettes.  Furthermore, a color for missing values
 is assigned to each palette.")
     (license license:gpl3)))
+
+(define-public r-cols
+  (package
+    (name "r-cols")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cols" version))
+       (sha256
+        (base32 "0ra1zi9bw8s6f1wr0alz7i972kjajlydjb22ws404nvx9g4l594l"))))
+    (properties `((upstream-name . "cols")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rfast2 r-quadprog))
+    (home-page "https://cran.r-project.org/package=cols")
+    (synopsis "Constrained Ordinary Least Squares")
+    (description
+     "Constrained ordinary least squares is performed.  One constraint is that all
+beta coefficients (including the constant) cannot be negative.  They can be
+either 0 or strictly positive.  Another constraint is that the sum ob the beta
+coefficients sum to a constant.  References: Hansen, B. E. (2022).
+Econometrics, Princeton University Press. <ISBN:9780691235899>.")
+    (license license:gpl2+)))
 
 (define-public r-colp
   (package
@@ -27770,13 +27738,13 @@ medical imaging data in the form of CIFTI files
 (define-public r-cifinder
   (package
     (name "r-cifinder")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CIfinder" version))
        (sha256
-        (base32 "0h3f78rfrsqwgcfhpn1sbwjawnna55i05gdfbrgawxhzp8gxv4fm"))))
+        (base32 "0if3jsg5gr3dxz0ggg0zhk682h3c7hqv76xc4shgknh8vqc2njv8"))))
     (properties `((upstream-name . "CIfinder")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-ratesci r-kableextra))
@@ -31835,17 +31803,17 @@ on expression of @code{ceRNA} ternary pair.")
 (define-public r-ceriolioutlierdetection
   (package
     (name "r-ceriolioutlierdetection")
-    (version "1.1.9")
+    (version "1.1.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CerioliOutlierDetection" version))
        (sha256
-        (base32 "0s3pd4y165v69m4wmg9jlc7dl4gz64la9yic67l3n4242wa84p19"))))
+        (base32 "1m1mj5cf0sfdfci05ayc86wfx3cj12dfn98pi7cqxcf5nbn3h3n5"))))
     (properties `((upstream-name . "CerioliOutlierDetection")))
     (build-system r-build-system)
     (propagated-inputs (list r-robustbase))
-    (home-page "http://christopherggreen.github.io/CerioliOutlierDetection/")
+    (home-page "https://christopherggreen.github.io/CerioliOutlierDetection/")
     (synopsis
      "Outlier Detection Using the Iterated RMCD Method of Cerioli (2010)")
     (description
@@ -37379,13 +37347,13 @@ carbon.js'<https://carbon.now.sh/about>.")
 (define-public r-carbayesst
   (package
     (name "r-carbayesst")
-    (version "3.3.1")
+    (version "4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CARBayesST" version))
        (sha256
-        (base32 "1qv5781f8bbwka86ypdfjc4ywg1x4zx8i58bx6lw2hbw42lq6ajy"))))
+        (base32 "0wrxpx4zrlndyp74iwrr6bny2l31a333a6nmk3dzi7j3skaj7zf5"))))
     (properties `((upstream-name . "CARBayesST")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm

@@ -5461,50 +5461,6 @@ not intended to be used directly.  Influx was published here: Sokol et al.
 (2012) <doi:10.1093/bioinformatics/btr716>.")
     (license license:gpl2+)))
 
-(define-public r-multbiplotr
-  (package
-    (name "r-multbiplotr")
-    (version "1.3.30")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MultBiplotR" version))
-       (sha256
-        (base32 "0cnn8m4yd2w0izbsvrlqgxif41554nq3hj7m169lxwxrb0csybcf"))))
-    (properties `((upstream-name . "MultBiplotR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xtable
-                             r-scales
-                             r-rgl
-                             r-polycor
-                             r-optimr
-                             r-mvtnorm
-                             r-mirt
-                             r-mass
-                             r-lattice
-                             r-hmisc
-                             r-gplots
-                             r-gparotation
-                             r-geometry
-                             r-dunn-test
-                             r-deldir
-                             r-dae
-                             r-car))
-    (home-page "https://cran.r-project.org/package=MultBiplotR")
-    (synopsis "Multivariate Analysis Using Biplots in R")
-    (description
-     "Several multivariate techniques from a biplot perspective.  It is the
-translation (with many improvements) into R of the previous package developed in
-Matlab'.  The package contains some of the main developments of my team during
-the last 30 years together with some more standard techniques.  Package
-includes: Classical Biplots, HJ-Biplot, Canonical Biplots, MANOVA Biplots,
-Correspondence Analysis, Canonical Correspondence Analysis, Canonical
-STATIS-ACT, Logistic Biplots for binary and ordinal data, Multidimensional
-Unfolding, External Biplots for Principal Coordinates Analysis or
-Multidimensional Scaling, among many others.  References can be found in the
-help of each procedure.")
-    (license license:gpl2+)))
-
 (define-public r-multalloc
   (package
     (name "r-multalloc")
@@ -21153,13 +21109,13 @@ Models with time dependent misclassification may also be fitted.")
 (define-public r-miscfuncs
   (package
     (name "r-miscfuncs")
-    (version "1.5-6")
+    (version "1.5-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "miscFuncs" version))
        (sha256
-        (base32 "0v0ipq2fshjrpkl3mfy8wyf3vq7wmcxf1kppdbm500q9jan7r85i"))))
+        (base32 "02kv44nyrigvr2ha3cn2bq83gpvjb3rg8b6czaf8qvzfcvi4whyp"))))
     (properties `((upstream-name . "miscFuncs")))
     (build-system r-build-system)
     (propagated-inputs (list r-roxygen2 r-mvtnorm))
@@ -26370,13 +26326,13 @@ visit the vignettes <https://adriancorrendo.github.io/metrica/>.")
 (define-public r-metr
   (package
     (name "r-metr")
-    (version "0.14.0")
+    (version "0.14.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metR" version))
        (sha256
-        (base32 "09xyg4xx6fkq39dlkkm6g91nc8lc5p463rxpa30lrlhzybgr01vy"))))
+        (base32 "1scp7camgip7dcjvw68dch7cf3d05rhbvsrq3jr1860pb2cbwi8l"))))
     (properties `((upstream-name . "metR")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -26395,7 +26351,7 @@ visit the vignettes <https://adriancorrendo.github.io/metrica/>.")
                              r-data-table
                              r-checkmate))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/eliocamp/metR")
+    (home-page "https://eliocamp.github.io/metR/")
     (synopsis "Tools for Easier Analysis of Meteorological Fields")
     (description
      "Many useful functions and extensions for dealing with meteorological data in the
@@ -31218,13 +31174,13 @@ D, Stefanski LA & Crainiceanu CM (2006, ISBN:1584886331).")
 (define-public r-meconetcomp
   (package
     (name "r-meconetcomp")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "meconetcomp" version))
        (sha256
-        (base32 "14gnlpskkaav9lqas6diaphssccdpaf7qmi4bd46637fmz1iy2iw"))))
+        (base32 "1icablsk8j8yf7wzrsbvc6yk9bfwf1684wa68j2rz1fl2n8qmckd"))))
     (properties `((upstream-name . "meconetcomp")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2
@@ -31233,6 +31189,7 @@ D, Stefanski LA & Crainiceanu CM (2006, ISBN:1584886331).")
                              r-magrittr
                              r-igraph
                              r-ggpubr
+                             r-ggplot2
                              r-dplyr))
     (home-page "https://github.com/ChiLiubio/meconetcomp")
     (synopsis
@@ -35078,13 +35035,13 @@ of data processing systems for environmental time series.")
 (define-public r-mazamalocationutils
   (package
     (name "r-mazamalocationutils")
-    (version "0.3.11")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MazamaLocationUtils" version))
        (sha256
-        (base32 "0xd8c53avwz4dxd2p8lncn20dnq910y3ry9y74i253dl2bwpk347"))))
+        (base32 "0p3brfsbjlpzi2dnvd8iyg9w19hgyj4ipvm5jcabrq0wdb142bli"))))
     (properties `((upstream-name . "MazamaLocationUtils")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidygeocoder
@@ -35099,7 +35056,8 @@ of data processing systems for environmental time series.")
                              r-jsonlite
                              r-httr
                              r-geodist
-                             r-dplyr))
+                             r-dplyr
+                             r-cluster))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/MazamaScience/MazamaLocationUtils")
     (synopsis "Manage Spatial Metadata for Known Locations")
@@ -38801,7 +38759,6 @@ data.")
                              r-nortest
                              r-mvnormtest
                              r-mvn
-                             r-multbiplotr
                              r-moments
                              r-manova-rm
                              r-htmltools

@@ -1620,30 +1620,6 @@ in Leifeld, Cranmer and Desmarais (2018), J@code{StatSoft}
 <doi:10.18637/jss.v083.i06>.")
     (license license:gpl2+)))
 
-(define-public r-btdecaylasso
-  (package
-    (name "r-btdecaylasso")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "BTdecayLasso" version))
-       (sha256
-        (base32 "0x1s2zvv3vnapk5wp8582zwflsqvgc8khkvl5ch9i70v739jxp15"))))
-    (properties `((upstream-name . "BTdecayLasso")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-optimr r-ggplot2))
-    (home-page "https://cran.r-project.org/package=BTdecayLasso")
-    (synopsis
-     "Bradley-Terry Model with Exponential Time Decayed Log-Likelihood and Adaptive Lasso")
-    (description
-     "We apply Bradley-Terry Model to estimate teams ability in paired comparison
-data.  Exponential Decayed Log-likelihood function is applied for dynamic
-approximation of current rankings and Lasso penalty is applied for variance
-reduction and grouping.  The main algorithm applies the Augmented Lagrangian
-Method described by Masarotto and Varin (2012) <doi:10.1214/12-AOAS581>.")
-    (license license:gpl2+)))
-
 (define-public r-btb
   (package
     (name "r-btb")
@@ -7433,49 +7409,6 @@ using maximum product of spacing estimation and minimum quantile distance
 estimation is also included.")
     (license license:gpl2+)))
 
-(define-public r-bmstdr
-  (package
-    (name "r-bmstdr")
-    (version "0.4.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bmstdr" version))
-       (sha256
-        (base32 "16d60sk56cfychhxfkpl0m38kl1s7lhljmvfd5j1k88k8z85pabk"))))
-    (properties `((upstream-name . "bmstdr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stanheaders
-                             r-sptimer
-                             r-sptdyn
-                             r-spbayes
-                             r-rstantools
-                             r-rstan
-                             r-rdpack
-                             r-rcppparallel
-                             r-rcppeigen
-                             r-rcpp
-                             r-mnormt
-                             r-mcmcpack
-                             r-inlabru
-                             r-ggpubr
-                             r-ggplot2
-                             r-carbayesst
-                             r-carbayes
-                             r-bh))
-    (native-inputs (list r-knitr))
-    (home-page "https://www.sujitsahu.com")
-    (synopsis "Bayesian Modeling of Spatio-Temporal Data with R")
-    (description
-     "Fits, validates and compares a number of Bayesian models for spatial and space
-time point referenced and areal unit data.  Model fitting is done using several
-packages: rstan', INLA', @code{spBayes}', @code{spTimer}', @code{spTDyn}',
-CARBayes and CAR@code{BayesST}'.  Model comparison is performed using the DIC
-and WAIC, and K-fold cross-validation where the user is free to select their own
-subset of data rows for validation.  Sahu (2022) <doi:10.1201/9780429318443>
-describes the methods in detail.")
-    (license license:gpl2)))
-
 (define-public r-bmscstan
   (package
     (name "r-bmscstan")
@@ -10154,63 +10087,6 @@ two-mode graphs to one-mode, and for converting edgelists and matrices to
 directly with common formats of network data including edgelists (class
 data.frame, data.table, or tbl_df) and adjacency matrices (class matrix or
 @code{dgCMatrix}).")
-    (license license:expat)))
-
-(define-public r-biprobitpartial
-  (package
-    (name "r-biprobitpartial")
-    (version "1.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "BiProbitPartial" version))
-       (sha256
-        (base32 "0y19b8bkwr7rpygmj03013slmfbyd7aj6714hm14w5rdbnckymw3"))))
-    (properties `((upstream-name . "BiProbitPartial")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpptn
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-pbivnorm
-                             r-optimr
-                             r-numderiv
-                             r-mvtnorm
-                             r-formula
-                             r-coda))
-    (home-page "https://cran.r-project.org/package=BiProbitPartial")
-    (synopsis "Bivariate Probit with Partial Observability")
-    (description
-     "This package provides a suite of functions to estimate, summarize and perform
-predictions with the bivariate probit subject to partial observability.  The
-frequentist and Bayesian probabilistic philosophies are both supported.  The
-frequentist method is estimated with maximum likelihood and the Bayesian method
-is estimated with a Markov Chain Monte Carlo (MCMC) algorithm developed by
-Rajbanhdari, A (2014) <doi:10.1002/9781118771051.ch13>.")
-    (license license:gpl3)))
-
-(define-public r-biplotml
-  (package
-    (name "r-biplotml")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "BiplotML" version))
-       (sha256
-        (base32 "1wrn3bz3lwh05fs97m4zq12xy7vgkwb9kn4xvx5kfiipps1kqw8s"))))
-    (properties `((upstream-name . "BiplotML")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-shapes r-optimx r-optimr))
-    (home-page "https://github.com/jgbabativam/BiplotML")
-    (synopsis "Biplots Estimation with Algorithms ML")
-    (description
-     "Logistic Biplot is a method that allows representing multivariate binary data on
-a subspace of low dimension, where each individual is represented by a point and
-each variable as vectors directed through the origin.  The orthogonal projection
-of individuals onto these vectors predicts the expected probability that the
-characteristic occurs.  The package contains new techniques to estimate the
-model parameters and constructs in each case the Logistic-Biplot'.  References
-can be found in the help of each procedure.")
     (license license:expat)))
 
 (define-public r-biplotgui
@@ -17931,6 +17807,27 @@ for making data quality assessment transparent and reproducible.  The reference
 for the methodology is Bruno et al. (2022) <doi:10.1111/2041-210X.13868>.")
     (license license:gpl3+)))
 
+(define-public r-bdalgo
+  (package
+    (name "r-bdalgo")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BDAlgo" version))
+       (sha256
+        (base32 "0f7aqbyfwyfq18z8ygjna3i38dnx2bm4wpkgvdsqwbiby9swqr6d"))))
+    (properties `((upstream-name . "BDAlgo")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-inflection))
+    (home-page "https://cran.r-project.org/package=BDAlgo")
+    (synopsis "Bloom Detecting Algorithm")
+    (description
+     "The Bloom Detecting Algorithm enables the detection of blooms within a time
+series of species abundance and extracts 22 phenological variables.  For
+details, see Karasiewicz et al. (2022) <doi:10.3390/jmse10020174>.")
+    (license license:gpl2+)))
+
 (define-public r-bda
   (package
     (name "r-bda")
@@ -24667,13 +24564,13 @@ background of the package can be found in @code{SoberÃ³n} and Osorio-Olvera
 (define-public r-bamlss
   (package
     (name "r-bamlss")
-    (version "1.2-1")
+    (version "1.2-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bamlss" version))
        (sha256
-        (base32 "1iip433vbiynw3fiys0134r9z184krc5i5y2mhb0zvz17y3zln9p"))))
+        (base32 "0kbv2wsyd2r1bcylqcp4apwlgcd3v7kw5f0pgiwqz7jjaqgcahzd"))))
     (properties `((upstream-name . "bamlss")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival

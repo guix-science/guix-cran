@@ -4414,13 +4414,13 @@ considering their options, and securing admission into their school of choice.")
 (define-public r-ipec
   (package
     (name "r-ipec")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IPEC" version))
        (sha256
-        (base32 "1ij9g8w5550nxbf65yd3gs8cc15d3yk2x94fmmzk7i8rfjvfzzjq"))))
+        (base32 "08sgsrljz77dh99nmp3962fnp73wgkymwngsw2fznf7zqkbxm1pa"))))
     (properties `((upstream-name . "IPEC")))
     (build-system r-build-system)
     (propagated-inputs (list r-numderiv r-mass))
@@ -7250,16 +7250,44 @@ functions to copy the curves into memory, and to plot the curves and their
 underlying data, as well as functions to calibrate radiocarbon dates.")
     (license license:gpl2+)))
 
+(define-public r-intamapinteractive
+  (package
+    (name "r-intamapinteractive")
+    (version "1.2-6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "intamapInteractive" version))
+       (sha256
+        (base32 "0mdn4fmc7skmf61pshyyc6g3xlxa2friyy0kzhn5d6q5ni3fm7rb"))))
+    (properties `((upstream-name . "intamapInteractive")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-spcosa
+                             r-spatstat-geom
+                             r-sp
+                             r-sf
+                             r-intamap
+                             r-gstat
+                             r-automap))
+    (home-page "https://cran.r-project.org/package=intamapInteractive")
+    (synopsis "Interactive Add-on Functionality for 'intamap'")
+    (description
+     "The methods in this package adds to the functionality of the intamap package,
+such as bias correction and network optimization.  Pebesma et al (2010) gives an
+overview of the methods behind and possible usage
+<doi:10.1016/j.cageo.2010.03.019>.")
+    (license license:gpl2+)))
+
 (define-public r-intamap
   (package
     (name "r-intamap")
-    (version "1.5-6")
+    (version "1.5-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "intamap" version))
        (sha256
-        (base32 "1d269rg1wf431v6p9blxspnnps8lyzcc8wid5qgy6hj3wrya0a37"))))
+        (base32 "1rvjqv58bfsya6sc9kbqkln3f9zw3cvqhqsdxfsksvjybnmychxq"))))
     (properties `((upstream-name . "intamap")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp
@@ -8061,13 +8089,13 @@ reliable inference technique implemented in the INLA package for joint modeling.
 (define-public r-inlabru
   (package
     (name "r-inlabru")
-    (version "2.9.0")
+    (version "2.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inlabru" version))
        (sha256
-        (base32 "198amkx9s9lsdd3kwglmr62kvs8qlf3kw606dpmw83kip2v6gxwp"))))
+        (base32 "1246nqnz8p9kknf99nqf9fm1nzq2knfif3icl1xddb23p4hafkmx"))))
     (properties `((upstream-name . "inlabru")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -8621,36 +8649,6 @@ Estimator (EDE) to identify the inflection point of a curve .  Christopoulos, DT
 Christopoulos, DT (2016) <doi:10.2139/ssrn.3043076> .")
     (license license:gpl2+)))
 
-(define-public r-inflect
-  (package
-    (name "r-inflect")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Inflect" version))
-       (sha256
-        (base32 "09904nn33libjv29n74n5nq1hj6ka8a4h3jllwpbxk9hsmnlmf9h"))))
-    (properties `((upstream-name . "Inflect")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-writexl
-                             r-upsetr
-                             r-tidyr
-                             r-readxl
-                             r-plotrix
-                             r-optimr
-                             r-ggplot2
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=Inflect")
-    (synopsis "Melt Curve Fitting and Melt Shift Analysis")
-    (description
-     "This program analyzes raw abundance data from a cellular thermal shift
-experiment and calculates melt temperatures and melt shifts for each protein in
-the experiment.  Reference to software development can be found at
-<doi:10.1021/acs.jproteome.0c00872>.")
-    (license license:gpl2)))
-
 (define-public r-inflation
   (package
     (name "r-inflation")
@@ -8823,13 +8821,13 @@ package is based on methods described in Sasieni (2003) <doi:
 (define-public r-infercsn
   (package
     (name "r-infercsn")
-    (version "0.99.6")
+    (version "0.99.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inferCSN" version))
        (sha256
-        (base32 "0gifq7gqm3x9dzrqz5ychqw7wv81vg8p5yhgp6f92a5cbs8539rs"))))
+        (base32 "048v2xip9i599ij5pi2rhp1ry999d67v9ixpjppyhczhwwf0za66"))))
     (properties `((upstream-name . "inferCSN")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
@@ -16079,13 +16077,13 @@ splines, Duchon splines or low rank splines.")
 (define-public r-ibmsunburst
   (package
     (name "r-ibmsunburst")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ibmsunburst" version))
        (sha256
-        (base32 "165fgz5fhfzn2cyr2y6caf980a5r50g2p6qrj0ssxyzlqspipjhn"))))
+        (base32 "09gdd72nvmwv65gfblv038wgfslapkkwrj5m72bjahipf3acgg51"))))
     (properties `((upstream-name . "ibmsunburst")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-htmlwidgets))

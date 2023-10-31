@@ -252,6 +252,33 @@ supplies tools to tidy up fetched data (for fast and simple access) and to show
 it on leaflet maps.")
     (license license:expat)))
 
+(define-public r-owidr
+  (package
+    (name "r-owidr")
+    (version "1.4.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "owidR" version))
+       (sha256
+        (base32 "07l2398xlm2w8pi2az11wvahiq2sy7wpidmvcwplxb10c8pj29gy"))))
+    (properties `((upstream-name . "owidR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-rvest
+                             r-purrr
+                             r-magrittr
+                             r-jsonlite
+                             r-httr
+                             r-data-table
+                             r-curl))
+    (home-page "<https://github.com/piersyork/owidR>")
+    (synopsis "Import Data from Our World in Data")
+    (description
+     "Import data from Our World in Data', an organisation which publishes research
+and data on global economic and social issues.")
+    (license license:expat)))
+
 (define-public r-owenq
   (package
     (name "r-owenq")
@@ -4137,29 +4164,6 @@ methods: the simplex method of Spendley et al. (1962)
 (1989) <https://www.cs.wm.edu/~va/research/thesis.pdf>, etc...")
     (license (license:fsdg-compatible "CeCILL-2"))))
 
-(define-public r-optimr
-  (package
-    (name "r-optimr")
-    (version "2019-12.16")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "optimr" version))
-       (sha256
-        (base32 "003wz9r3xdi47ad22l4dkhp0dalknb2s9fp82yamjx7x1xbfvcbk"))))
-    (properties `((upstream-name . "optimr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-setrng r-rvmmin r-rcgmin r-optextras r-numderiv))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=optimr")
-    (synopsis "Replacement and Extension of the 'optim' Function")
-    (description
-     "This package provides a test of replacement and extension of the optim()
-function to unify and streamline optimization capabilities in R for smooth,
-possibly box constrained functions of several or many parameters.  This version
-has a reduced set of methods and is intended to be on CRAN.")
-    (license license:gpl2)))
-
 (define-public r-optimparallel
   (package
     (name "r-optimparallel")
@@ -5992,13 +5996,13 @@ the JSON file.")
 (define-public r-opencv
   (package
     (name "r-opencv")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "opencv" version))
        (sha256
-        (base32 "1za5smc5c9zaqi5xwlpj53f990szhw9mqhh6qcmfnr1yddp43cgi"))))
+        (base32 "0bplljn5qpgb3yp3jlmr99vrffqr53q8hlznbzpmj78kn5f1j71y"))))
     (properties `((upstream-name . "opencv")))
     (build-system r-build-system)
     (inputs (list zlib))
@@ -6008,8 +6012,9 @@ the JSON file.")
     (synopsis "Bindings to 'OpenCV' Computer Vision Library")
     (description
      "Exposes some of the available @code{OpenCV} <https://opencv.org/> algorithms,
-such as edge, body or face detection.  These can either be applied to analyze
-static images, or to filter live video footage from a camera device.")
+such as a QR code scanner, and edge, body or face detection.  These can either
+be applied to analyze static images, or to filter live video footage from a
+camera device.")
     (license license:expat)))
 
 (define-public r-opencr

@@ -2621,6 +2621,37 @@ higher-order nature, vistla can handle multi-modality and assign multiple roles
 to a single feature.")
     (license license:gpl3+)))
 
+(define-public r-vistime
+  (package
+    (name "r-vistime")
+    (version "1.2.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vistime" version))
+       (sha256
+        (base32 "14nm2p8yyl0zcf4al31cvnji4a9fi6zs1hvcjpa7dcyjdxd6yfyi"))))
+    (properties `((upstream-name . "vistime")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang
+                             r-rcolorbrewer
+                             r-plotly
+                             r-ggrepel
+                             r-ggplot2
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://shosaco.github.io/vistime/")
+    (synopsis "Pretty Timelines in R")
+    (description
+     "This package provides a library for creating time based charts, like Gantt or
+timelines.  Possible outputs include ggplot2 diagrams, plotly.js graphs,
+Highcharts.js widgets and data.frames.  Results can be used in the RStudio
+viewer pane, in RMarkdown documents or in Shiny apps.  In the interactive
+outputs created by vistime() and hc_vistime(), you can interact with the plot
+using mouse hover or zoom.")
+    (license (list license:gpl3
+                   (license:fsdg-compatible "file://LICENSE")))))
+
 (define-public r-visstatistics
   (package
     (name "r-visstatistics")
@@ -4073,13 +4104,13 @@ the approximation using marginal augmentation.  Goplerud (2022)
 (define-public r-vgamextra
   (package
     (name "r-vgamextra")
-    (version "0.0-5")
+    (version "0.0-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VGAMextra" version))
        (sha256
-        (base32 "11s7s2dm2yf5s9qbwbyavz01l9fk86grp4mlhrh8hd6lfmxxxcxm"))))
+        (base32 "061mlhiqdncgjzyflpjjhmssjp7z33k9xrz7dmcgsrw37fb97jrs"))))
     (properties `((upstream-name . "VGAMextra")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam))

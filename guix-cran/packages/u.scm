@@ -406,13 +406,13 @@ the update date from the service.")
 (define-public r-ustfd
   (package
     (name "r-ustfd")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ustfd" version))
        (sha256
-        (base32 "1pc5yggffy3y4hg3qpiih9fyw4rzc65s5n650ng05k5xdfjmm7n2"))))
+        (base32 "0z6zrh30nfhx29j1l6z5nq94bhgp26c2dimk3yy1pzy0ga3fm4l4"))))
     (properties `((upstream-name . "ustfd")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -4103,13 +4103,13 @@ modify the original data set biasing it towards the user preferences.")
 (define-public r-ubiquity
   (package
     (name "r-ubiquity")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ubiquity" version))
        (sha256
-        (base32 "1zjjwpl8zkpr4zvrhsbsj6vpiwy08vs2sw1rpx7aq940v37dvmbz"))))
+        (base32 "1jy1jgzwnzynakzhb50gm6q1f97h0fhzg7qxvar7hl7068cbrc40"))))
     (properties `((upstream-name . "ubiquity")))
     (build-system r-build-system)
     (inputs (list perl))
@@ -4132,7 +4132,8 @@ modify the original data set biasing it towards the user preferences.")
                              r-dplyr
                              r-doparallel
                              r-digest
-                             r-desolve))
+                             r-desolve
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://ubiquity.tools/rworkflow")
     (synopsis "PKPD, PBPK, and Systems Pharmacology Modeling Tools")

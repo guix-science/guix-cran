@@ -1769,13 +1769,13 @@ S3 file system also generalizes to any list of http URLs.")
 (define-public r-duckdb
   (package
     (name "r-duckdb")
-    (version "0.9.1")
+    (version "0.9.1-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "duckdb" version))
        (sha256
-        (base32 "1a5x31xnspcxw66l35d0fyvj8bmvjc2sw3kbz4dmm00cwq3lz9zr"))))
+        (base32 "0rqr2ijiqvq2lhzrw7fy8mfyw99gcgf8q0yhwwjkmzskc9270s8y"))))
     (properties `((upstream-name . "duckdb")))
     (build-system r-build-system)
     (propagated-inputs (list r-dbi))
@@ -3053,13 +3053,13 @@ reference implementation of the @code{DataSHIELD} infrastructure.")
 (define-public r-dsmolgenisarmadillo
   (package
     (name "r-dsmolgenisarmadillo")
-    (version "2.0.0")
+    (version "2.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DSMolgenisArmadillo" version))
        (sha256
-        (base32 "1py0xyrggm4clgczj270182dsq7cidvhfd3c3q1j4a7n4gy8fh3x"))))
+        (base32 "0bz0gkymd49sswwkj9hq9b6d0dcny74r70fsbpr2s189j5kx98ns"))))
     (properties `((upstream-name . "DSMolgenisArmadillo")))
     (build-system r-build-system)
     (propagated-inputs (list r-urltools
@@ -6155,6 +6155,38 @@ Gruttola & Stephen W. Lagakos (1989) <doi:10.2307/2532030>] [Jianguo Sun (1995)
     (description "Quick and easy dot-and-whisker plots of regression results.")
     (license license:expat)))
 
+(define-public r-dotsviolin
+  (package
+    (name "r-dotsviolin")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dotsViolin" version))
+       (sha256
+        (base32 "0pyxs899429qsyhnm1n36n06wxwrk1i20qd9pyz62n4n6x706ajq"))))
+    (properties `((upstream-name . "dotsViolin")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-stringr
+                             r-scales
+                             r-rlang
+                             r-magrittr
+                             r-lazyeval
+                             r-gtools
+                             r-gridextra
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=dotsViolin")
+    (synopsis "Dot Plots Mimicking Violin Plots")
+    (description
+     "Modifies dot plots to have different sizes of dots mimicking violin plots and
+identifies modes or peaks for them based on frequency and kernel density
+estimates (Rosenblatt, 1956) <doi:10.1214/aoms/1177728190> (Parzen, 1962)
+<doi:10.1214/aoms/1177704472>.")
+    (license license:gpl2+)))
+
 (define-public r-dots
   (package
     (name "r-dots")
@@ -7306,6 +7338,30 @@ rendering can be sometimes different from the original documents.")
     (description
      "Gives you the ability to use arbitrary Docker images (including custom ones) to
 process Rmarkdown code chunks.")
+    (license license:expat)))
+
+(define-public r-docket
+  (package
+    (name "r-docket")
+    (version "1.11")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "docket" version))
+       (sha256
+        (base32 "0irnarwqk8c1v4crx551092c3kp0xjmj9i761m2mjx67iyfd76kv"))))
+    (properties `((upstream-name . "docket")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zip r-xml2 r-xml r-stringr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/JonathanConrad98/docket")
+    (synopsis "Automated Document Template Processing")
+    (description
+     "Populate data from an R environment into .doc and .docx templates.  Create a
+template document in a program such as Word', and add strings encased in
+guillemet characters to create flags (Â«@code{exampleÂ}»).  Use
+@code{getDictionary}() to create a dictionary of flags and replacement values,
+then call docket() to generate a populated document.")
     (license license:expat)))
 
 (define-public r-dockerparallel
@@ -8851,34 +8907,6 @@ avoid redundancy.")
 inside the data integration centers ('DIZ') to standardize and facilitate
 repetitive tasks such as setting up a database connection or issuing
 notification messages and to avoid redundancy.")
-    (license license:gpl3)))
-
-(define-public r-diyar
-  (package
-    (name "r-diyar")
-    (version "0.4.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "diyar" version))
-       (sha256
-        (base32 "1c7nq3z3p282a75mgv8w2y4dyhbny26nazs0dmnj233l4mf507pz"))))
-    (properties `((upstream-name . "diyar")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rlang r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://olisansonwu.github.io/diyar/index.html")
-    (synopsis "Record Linkage and Epidemiological Case Definitions in R")
-    (description
-     "An R package for record linkage and implementing epidemiological case
-definitions in R. Record linkage is implemented either through a multistage
-deterministic approach or a probabilistic approach.  Matching records are
-assigned to unique groups.  There are mechanisms to address missing data and
-conflicting matches across linkage stages.  Track and assign events (e.g. sample
-collection) and periods (e.g. hospital admission) to unique groups based on a
-case definition.  The tracking process permits several options such as episode
-lengths and recurrence.  Duplicate events or records can then be identified for
-removal or further analyses.")
     (license license:gpl3)))
 
 (define-public r-dixon
@@ -10699,29 +10727,6 @@ expression in bulk tumor sample is modeled by a log-normal distribution with the
 location parameter structured as a linear combination of the component-specific
 gene expressions.")
     (license license:gpl2)))
-
-(define-public r-disequilibrium
-  (package
-    (name "r-disequilibrium")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Disequilibrium" version))
-       (sha256
-        (base32 "1jm5n01ih4rnga13058yh939zp2lvjn5pgb6rrwp5fdlk5kqsgb0"))))
-    (properties `((upstream-name . "Disequilibrium")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-optimr r-numderiv r-formula))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=Disequilibrium")
-    (synopsis "Disequilibrium Models")
-    (description
-     "Estimate, summarize, and perform predictions with the market in disequilibrium
-model, as found in Gourieroux, C. (2000) <doi:10.1017/CBO9780511805608> and
-Maddala, G. (1983) <doi:10.1017/CBO9780511810176>.  The parameters are estimated
-with maximum likelihood.")
-    (license license:gpl3)))
 
 (define-public r-disdat
   (package
@@ -13165,13 +13170,13 @@ variables (e.g., genes and metabolites) between 2 experimental conditions.")
 (define-public r-diffcor
   (package
     (name "r-diffcor")
-    (version "0.8.0")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "diffcor" version))
        (sha256
-        (base32 "1dwr6ygh70rvmbs0pg6sqwxvzr3cvkp1rj69x7dnq753b7v2s3j6"))))
+        (base32 "14m19ngrxxckx4idh5954a517bn2i01mbdm3s7jff5vicd9y6q6l"))))
     (properties `((upstream-name . "diffcor")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))

@@ -2686,13 +2686,13 @@ hyper-parameter tuning via Bayesian Optimization or Random Search.")
 (define-public r-auditor
   (package
     (name "r-auditor")
-    (version "1.3.3")
+    (version "1.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "auditor" version))
        (sha256
-        (base32 "1y6qpbc78yv2w1y9p0mczv69s661i9n2y0x09c5p3hdka7km662w"))))
+        (base32 "04fhgz04gl0hjw2vjymhi9pirc82pshlpv8nif8l3zclpgl795lq"))))
     (properties `((upstream-name . "auditor")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -9741,6 +9741,40 @@ using rmarkdown and shiny packages.  Runtime examples are provided in the
 package function as well as at <https://tinyurl.com/ANOVA@code{StatsTool>}.")
     (license license:gpl2)))
 
+(define-public r-anomaly
+  (package
+    (name "r-anomaly")
+    (version "4.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "anomaly" version))
+       (sha256
+        (base32 "159swzcyfd27370lcy20js5vfi2khvarb2258cdhjhsgnx89ps3m"))))
+    (properties `((upstream-name . "anomaly")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-xts
+                             r-tidyr
+                             r-rdpack
+                             r-rcpp
+                             r-ggplot2
+                             r-dplyr
+                             r-cowplot
+                             r-bh))
+    (home-page "https://cran.r-project.org/package=anomaly")
+    (synopsis "Detecting Anomalies in Data")
+    (description
+     "This package implements Collective And Point Anomaly (CAPA) Fisch, Eckley, and
+Fearnhead (2022) <doi:10.1002/sam.11586>, Multi-Variate Collective And Point
+Anomaly (MVCAPA) Fisch, Eckley, and Fearnhead (2021)
+<doi:10.1080/10618600.2021.1987257>, Proportion Adaptive Segment Selection
+(PASS) Jeng, Cai, and Li (2012) <doi:10.1093/biomet/ass059>, and Bayesian
+Abnormal Region Detector (BARD) Bardwell and Fearnhead (2015)
+<@code{arXiv:1412.5565>}.  These methods are for the detection of anomalies in
+time series data.")
+    (license (list license:gpl2+ license:gpl3+))))
+
 (define-public r-anomalize
   (package
     (name "r-anomalize")
@@ -12790,6 +12824,36 @@ series rare variant association test for candidate gene discovery\"
 <doi:10.1101/2022.12.23.521658>.")
     (license license:bsd-3)))
 
+(define-public r-alleleshift
+  (package
+    (name "r-alleleshift")
+    (version "1.1-2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AlleleShift" version))
+       (sha256
+        (base32 "1lv7ap40bc6l1wp68lbxyavl9dky1mz09zbdjg9kyf1b9ca5siqx"))))
+    (properties `((upstream-name . "AlleleShift")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vegan r-biodiversityr r-adegenet))
+    (home-page "https://cran.r-project.org/package=AlleleShift")
+    (synopsis
+     "Predict and Visualize Population-Level Changes in Allele Frequencies in Response to Climate Change")
+    (description
+     "This package provides methods (<doi:10.7717/peerj.11534>) are provided of
+calibrating and predicting shifts in allele frequencies through redundancy
+analysis ('vegan::rda()') and generalized additive models ('mgcv::gam()').
+Visualization functions for predicted changes in allele frequencies include
+shift.dot.ggplot()', shift.pie.ggplot()', shift.moon.ggplot()',
+shift.waffle.ggplot() and shift.surf.ggplot() that are made with input data sets
+that are prepared by helper functions for each visualization method.  Examples
+in the documentation show how to prepare animated climate change graphics
+through a time series with the gganimate package.  Function amova.rda() shows
+how Analysis of Molecular Variance can be directly conducted with the results
+from redundancy analysis.")
+    (license license:gpl3)))
+
 (define-public r-alleleretain
   (package
     (name "r-alleleretain")
@@ -15831,25 +15895,22 @@ Institute for the World Economy <https://www.ifw-kiel.de/>.")
 (define-public r-afr
   (package
     (name "r-afr")
-    (version "0.3.4")
+    (version "0.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AFR" version))
        (sha256
-        (base32 "07s32s5vdpg3gxp7ixr4gx0hx66jadiqm2x4mp1f2b2njan2z31h"))))
+        (base32 "0ismghsl2qi2q81c5ipgdxs6s6rw3kk8sz9yx16g6scnbyisa41y"))))
     (properties `((upstream-name . "AFR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
                              r-xts
-                             r-writexl
                              r-tseries
                              r-rlang
-                             r-regclass
                              r-olsrr
                              r-nortest
                              r-nlme
-                             r-mfilter
                              r-lmtest
                              r-gridextra
                              r-goftest

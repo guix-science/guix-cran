@@ -5359,21 +5359,21 @@ significance level is evaluated by a fuzzy ranking method in this package.")
 (define-public r-fptdapprox
   (package
     (name "r-fptdapprox")
-    (version "2.4")
+    (version "2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fptdApprox" version))
        (sha256
-        (base32 "0ql52rx5wc7h5vxl567i065lmj4ygai3xpjwp7qrndl16x1j4k9l"))))
+        (base32 "013wspkb7n3lcn5z1pfsqwfgzm0rjfswski9550indy2vv4n4qni"))))
     (properties `((upstream-name . "fptdApprox")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=fptdApprox")
     (synopsis
      "Approximation of First-Passage-Time Densities for Diffusion Processes")
     (description
-     "Efficient approximation of first-passage-time densities for diffusion processes
-based on the First-Passage-Time Location (FPTL) function.")
+     "Efficient approximation of first passage time densities for diffusion processes
+based on the First Passage Time Location (FPTL) function.")
     (license license:gpl2)))
 
 (define-public r-fpp3

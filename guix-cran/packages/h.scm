@@ -1045,6 +1045,34 @@ hyperbolic space.  This uses the strain-minimizing hyperbolic embedding of
 Keller-Ressel and Nargang (2019), see <@code{arXiv:1903.08977>}.")
     (license license:gpl2)))
 
+(define-public r-hyd1d
+  (package
+    (name "r-hyd1d")
+    (version "0.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hyd1d" version))
+       (sha256
+        (base32 "0ywab4ifnma7lih4qjjmjqz7p09xi2xvzbfaci6r5pbhsfyb042y"))))
+    (properties `((upstream-name . "hyd1d")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rdpack r-plotrix r-httr2 r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://hyd1d.bafg.de")
+    (synopsis "1d Water Level Interpolation along the Rivers Elbe and Rhine")
+    (description
+     "An S4 class and several functions which utilize internally stored datasets and
+gauging data enable 1d water level interpolation.  The S4 class
+(@code{WaterLevelDataFrame}) structures the computation and visualisation of 1d
+water level information along the German federal waterways Elbe and Rhine.
+hyd1d delivers 1d water level data - extracted from the FLYS database - and
+validated gauging data - extracted from the hydrological database @code{HyDaBa}
+- package-internally.  For computations near real time gauging data are queried
+externally from the PEGELONLINE REST API
+<https://pegelonline.wsv.de/webservice/@code{dokuRestapi>}.")
+    (license license:gpl2+)))
+
 (define-public r-hybridts
   (package
     (name "r-hybridts")
