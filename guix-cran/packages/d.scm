@@ -1228,34 +1228,6 @@ for details.")
 proposed by Gottwald and Melbourne (2004) <DOI:10.1137/080718851>.")
     (license license:gpl3)))
 
-(define-public r-dycdtools
-  (package
-    (name "r-dycdtools")
-    (version "0.4.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dycdtools" version))
-       (sha256
-        (base32 "06hm00mfkkg5yxpf30xb4i21bna0hpa0g86vx9qz9vf7f7cvdwjx"))))
-    (properties `((upstream-name . "dycdtools")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-rcolorbrewer
-                             r-r-utils
-                             r-ncdf4
-                             r-lubridate
-                             r-ggplot2
-                             r-dplyr))
-    (home-page "https://github.com/SongyanYu/dycdtools")
-    (synopsis
-     "Tools for DYRESM-CAEDYM Model Development: Calibration Assistant and Post-Processing")
-    (description
-     "This package provides tools for DYRESM-CAEDYM model development, including
-assisting with calibrating selected model parameters and visualising model
-output through time series plot, profile plot, contour plot, and scatter plot.")
-    (license license:expat)))
-
 (define-public r-dyads
   (package
     (name "r-dyads")
@@ -1938,44 +1910,6 @@ over all the sequences componing the input multivariate signal.  However, for
 better consistency, large gaps at the same location over all sequences should be
 avoided.")
     (license license:gpl2+)))
-
-(define-public r-dtwsat
-  (package
-    (name "r-dtwsat")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dtwSat" version))
-       (sha256
-        (base32 "04bmic5qxz8ka6gn7npixcgky1vyf4jaq48i6h4cc34n9wwhzi4a"))))
-    (properties `((upstream-name . "dtwSat")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-twdtw
-                             r-tidyr
-                             r-stars
-                             r-sf
-                             r-proxy
-                             r-mgcv
-                             r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/vwmaus/dtwSat/")
-    (synopsis
-     "Time-Weighted Dynamic Time Warping for Satellite Image Time Series Analysis")
-    (description
-     "This package provides a robust approach to land use mapping using
-multi-dimensional (multi-band) satellite image time series.  By leveraging the
-Time-Weighted Dynamic Time Warping (TWDTW) distance metric in tandem with a 1
-Nearest-Neighbor (1-NN) Classifier, this package offers functions to produce
-land use maps based on distinct seasonality patterns, commonly observed in the
-phenological cycles of vegetation.  The approach is described in Maus et al.
-(2016) <doi:10.1109/JSTARS.2016.2517118> and Maus et al. (2019)
-<doi:10.18637/jss.v088.i05>.  A primary advantage of TWDTW is its capability to
-handle irregularly sampled and noisy time series, while also requiring minimal
-training sets.  The package includes tools for training the 1-NN-TWDTW model,
-visualizing temporal patterns, producing land use maps, and visualizing the
-results.")
-    (license license:gpl3+)))
 
 (define-public r-dtwrappers
   (package
@@ -3865,13 +3799,13 @@ Medical Outcomes Partnership (OMOP) common data model.")
 (define-public r-drugdemand
   (package
     (name "r-drugdemand")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "drugDemand" version))
        (sha256
-        (base32 "0gipkxa07l569vw3h90k571ckabw1q5c2yyj621jr1svlzv1dr09"))))
+        (base32 "06x740yh6i0m83b9zafwbj60djpdsyya24ap9l15fmhhhfb6345i"))))
     (properties `((upstream-name . "drugDemand")))
     (build-system r-build-system)
     (propagated-inputs (list r-tictoc
@@ -3883,6 +3817,7 @@ Medical Outcomes Partnership (OMOP) common data model.")
                              r-plotly
                              r-nlme
                              r-mvtnorm
+                             r-mass
                              r-icenreg
                              r-foreach
                              r-eventpred
@@ -3895,11 +3830,15 @@ Medical Outcomes Partnership (OMOP) common data model.")
     (description
      "This package performs drug demand forecasting by modeling drug dispensing data
 while taking into account predicted enrollment and treatment discontinuation
-dates.  The number of skipped visits and the number of dispensed doses are
-modeled using zero-inflated Poisson or zero-inflated negative binomial
-distributions (Zeileis, Kleiber & Jackman (2008) <doi:10.18637/jss.v027.i08>)
-and a linear mixed-effects model (@code{McCulloch} & Searle (2001,
-ISBN:0-471-19364-X)), respectively.")
+dates.  The gap time between randomization and the first drug dispensing visit
+is modeled using interval-censored exponential, Weibull, log-logistic, or
+log-normal distributions (Anderson-Bergman (2017) <doi:10.18637/jss.v081.i12>).
+The number of skipped visits is modeled using Poisson, zero-inflated Poisson, or
+negative binomial distributions (Zeileis, Kleiber & Jackman (2008)
+<doi:10.18637/jss.v027.i08>).  The gap time between two consecutive drug
+dispensing visits is modeled using linear regression given the number of skipped
+visits.  The number of dispensed doses is modeled using linear or linear
+mixed-effects models (@code{McCulloch} & Searle (2001, ISBN:0-471-19364-X)).")
     (license license:gpl2+)))
 
 (define-public r-drquality
@@ -7343,13 +7282,13 @@ process Rmarkdown code chunks.")
 (define-public r-docket
   (package
     (name "r-docket")
-    (version "1.11")
+    (version "1.20")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "docket" version))
        (sha256
-        (base32 "0irnarwqk8c1v4crx551092c3kp0xjmj9i761m2mjx67iyfd76kv"))))
+        (base32 "104v18dqhw1npxyhrmpwvvnlmv9n67gh0pfv4983gmzalbka9xk9"))))
     (properties `((upstream-name . "docket")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip r-xml2 r-xml r-stringr))

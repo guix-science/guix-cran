@@ -9862,13 +9862,13 @@ more information, see the reference manual
 (define-public r-hdflex
   (package
     (name "r-hdflex")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hdflex" version))
        (sha256
-        (base32 "0423grfw56pwjh3km4ib55vgrzl5kk23j3g8f9d96jyjzkkxnbmi"))))
+        (base32 "1kq11mfx5npxhakfkb3iyf9xxdr2nsa5p770fw0fz1si5bgzb5js"))))
     (properties `((upstream-name . "hdflex")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -10482,13 +10482,13 @@ Nine-dotted line, South Tibet, Hong Kong, Macao and Taiwan.")
 (define-public r-hce
   (package
     (name "r-hce")
-    (version "0.5.8")
+    (version "0.5.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hce" version))
        (sha256
-        (base32 "15a7hbra5ian5bs60x675qsf2qgvaxl04nn5m6np11iswkb31dm1"))))
+        (base32 "076y9ic49slxqxzv3i4rjfnmmsvna7yv86jnp7w41lnn4743jl2l"))))
     (properties `((upstream-name . "hce")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -10496,7 +10496,9 @@ Nine-dotted line, South Tibet, Hong Kong, Macao and Taiwan.")
     (synopsis "Design and Analysis of Hierarchical Composite Endpoints")
     (description
      "Simulate and analyze hierarchical composite endpoints.  Win odds is the main
-analysis method.  See Gasparyan SB et al (2022)
+analysis method.  See Gasparyan SB et al (2022) \"Design and Analysis of Studies
+Based on Hierarchical Composite Endpoints: Insights from the DARE-19 Trial.\"
+Therapeutic Innovation & Regulatory Science 56: 785â794.
 <doi:10.1007/s43441-022-00420-1>.")
     (license license:expat)))
 

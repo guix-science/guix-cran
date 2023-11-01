@@ -11,13 +11,13 @@
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages algebra)
-  #:use-module (gnu packages video)
   #:use-module (gnu packages photo)
   #:use-module (gnu packages python)
   #:use-module (gnu packages tcl)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages pcre)
   #:use-module (gnu packages compression)
+  #:use-module (gnu packages video)
   #:use-module (gnu packages imagemagick)
   #:use-module (gnu packages perl)
   #:use-module (gnu packages machine-learning)
@@ -1232,13 +1232,13 @@ PARTICULAR PURPOSE. See the GNU General Public License for more details.")
 (define-public r-tv
   (package
     (name "r-tv")
-    (version "1.7.3")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tv" version))
        (sha256
-        (base32 "16s87nx7716pn75r27las759vibc3g9xik10rssyhf9ngy5j07ak"))))
+        (base32 "01b8rzjixy0byxrjs408rlvn96akszmgjgnfs967m6n3fix4lvwl"))))
     (properties `((upstream-name . "tv")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-magrittr r-lubridate r-dplyr))
@@ -7141,13 +7141,13 @@ data-adaptive weights.  Reference: Ren, M., Zhen Y., and Wang J. (2022).
 (define-public r-transreg
   (package
     (name "r-transreg")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "transreg" version))
        (sha256
-        (base32 "0691gn80fwlkf48m9mrjj76ylllayn3aj03lr48y361bf4qpg56c"))))
+        (base32 "1rblzmaq5sij0wfirm68f46khr6ipnl4afk87xl1pmihz8f2gjkr"))))
     (properties `((upstream-name . "transreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-starnet r-joinet r-glmnet))
@@ -8351,37 +8351,6 @@ effects of tariffs and quotas under different competitive regimes.  These tools
 are derived from Anderson et al. (2001) <doi:10.1016/S0047-2727(00)00085-2> and
 Froeb et al. (2003) <doi:10.1016/S0304-4076(02)00166-5>.")
     (license license:cc0)))
-
-(define-public r-trackter
-  (package
-    (name "r-trackter")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "trackter" version))
-       (sha256
-        (base32 "11rk53w0y9p0az6ydiq3vy50j1pj4p4cml5dqabrpcgfz4icjkrs"))))
-    (properties `((upstream-name . "trackter")))
-    (build-system r-build-system)
-    (inputs (list ffmpeg))
-    (propagated-inputs (list r-zoo
-                             r-raster
-                             r-plyr
-                             r-pastecs
-                             r-jpeg
-                             r-ggplot2
-                             r-features
-                             r-ebimage
-                             r-dplyr
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=trackter")
-    (synopsis "Automated Kinematic Analysis of Image Data")
-    (description
-     "Analysis of shape and contours in regions of interest (ROIs) in image sequences
-and extracting midline and other kinematic data.")
-    (license license:gpl2+)))
 
 (define-public r-trackreconstruction
   (package
@@ -12558,23 +12527,21 @@ regular time base).")
 (define-public r-timetk
   (package
     (name "r-timetk")
-    (version "2.8.4")
+    (version "2.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "timetk" version))
        (sha256
-        (base32 "1ww5nhyvb4ysv0pbbhx8hlalm631gfyv2dvgz4f8f1926h6zy3k6"))))
+        (base32 "1f6v6gipxi0ydj6fcckk6hgxdx8cfj0f1fyyf092lqx9a7flfp3g"))))
     (properties `((upstream-name . "timetk")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
                              r-xts
                              r-tsfeatures
-                             r-timeseries
                              r-timedate
                              r-tidyselect
                              r-tidyr
-                             r-tidymodels
                              r-tibble
                              r-stringr
                              r-stringi
@@ -12593,7 +12560,6 @@ regular time base).")
                              r-forecast
                              r-forcats
                              r-dplyr
-                             r-assertthat
                              r-anytime))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/business-science/timetk")
@@ -12730,13 +12696,13 @@ recordings as data frame for later use.")
 (define-public r-timeplyr
   (package
     (name "r-timeplyr")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "timeplyr" version))
        (sha256
-        (base32 "1pdvs21c3bqpyrks6smdlxmg92n04csnja7kbg6w3fyvxkifj2fq"))))
+        (base32 "00dx1w5i7v5azfsaxpvm699b5vd98krdfamdmjlb2iiqqcpk4iwi"))))
     (properties `((upstream-name . "timeplyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs

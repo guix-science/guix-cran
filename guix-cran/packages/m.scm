@@ -6193,13 +6193,13 @@ Shen, J., Zhang, H., Chhibber, A. Mehrotra, D.V., Tang, Z., 2019 (submitted).")
 (define-public r-mta
   (package
     (name "r-mta")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MTA" version))
        (sha256
-        (base32 "13h50frxgp0cznw27z797ri8sfv2xxirsw167g51gx3v7np1vc4i"))))
+        (base32 "0fsn3plw2hh4hbdrzgpjbb7hnfxfxcjz9wgzpn9jy3w910cxv5jj"))))
     (properties `((upstream-name . "MTA")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-igraph))
@@ -11759,6 +11759,36 @@ are treated separately from so-called complete cases.")
      "Train and make predictions from a multi-layer perceptron neural network with
 optional partial monotonicity constraints.")
     (license license:gpl2)))
+
+(define-public r-monitos
+  (package
+    (name "r-monitos")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "monitOS" version))
+       (sha256
+        (base32 "0i88z6r166h6azgydsin8xn93mv92gbl8fx6fcnhd9n0lshl1jnj"))))
+    (properties `((upstream-name . "monitOS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shinydashboard r-shiny r-glue))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=monitOS")
+    (synopsis
+     "Monitoring Overall Survival in Pivotal Trials in Indolent Cancers")
+    (description
+     "These guidelines are meant to provide a pragmatic, yet rigorous, help to drug
+developers and decision makers, since they are shaped by three fundamental
+ingredients: the clinically determined margin of detriment on OS that is
+unacceptably high (delta null); the benefit on OS that is plausible given the
+mechanism of action of the novel intervention (delta alt); and the quantity of
+information (i.e.  survival events) it is feasible to accrue given the clinical
+and drug development setting.  The proposed guidelines facilitate transparent
+discussions between stakeholders focusing on the risks of erroneous decisions
+and what might be an acceptable trade-off between power and the false positive
+error rate.")
+    (license license:gpl3+)))
 
 (define-public r-monitor
   (package
@@ -18571,13 +18601,13 @@ solvers hold up quite well for higher-dimensional problems.")
 (define-public r-mixvlmc
   (package
     (name "r-mixvlmc")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mixvlmc" version))
        (sha256
-        (base32 "01yv1hv505kg46icd5yndb487b3n5n8j5n5bfykgb0ikh5h1b10n"))))
+        (base32 "1bx9qvdi5fq69bwa25l9sqcdyihswjhmqrsslmnqfq7wzfxy3d3q"))))
     (properties `((upstream-name . "mixvlmc")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -33665,6 +33695,30 @@ verses within chain approach of the Gelman and Rubin MCMC convergence
 diagnostic.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-mcgf
+  (package
+    (name "r-mcgf")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mcgf" version))
+       (sha256
+        (base32 "1c5qvww12b8w54a48dsjygqd6chiimn7d9s18hkl2k1gm88nq2jd"))))
+    (properties `((upstream-name . "mcgf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sp r-mass))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/tianxia-jia/mcgf")
+    (synopsis
+     "Markov Chain Gaussian Fields Simulation and Parameter Estimation")
+    (description
+     "Simulating and estimating (regime-switching) Markov chain Gaussian fields with
+covariance functions of the Gneiting class.  It supports parameter estimation by
+weighted least squares and maximum likelihood methods, and produces Kriging
+forecasts and intervals (Cressie 1993) <doi:10.1002/9781119115151>.")
+    (license license:expat)))
+
 (define-public r-mcga
   (package
     (name "r-mcga")
@@ -35972,6 +36026,34 @@ and the Eurozone are available to allow testing of the Adrian et al (2019)
 model.  This package constitutes a useful toolbox (data and functions) for
 private practitioners, scholars as well as policymakers.")
     (license license:gpl3)))
+
+(define-public r-matriks
+  (package
+    (name "r-matriks")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "matRiks" version))
+       (sha256
+        (base32 "0wcj3rq9v67qydy8d1lg4s76fqdkhlbi8h2s9v1l670r1100i0xr"))))
+    (properties `((upstream-name . "matRiks")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-desctools))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=matRiks")
+    (synopsis "Generates Raven-Like Matrices According to Rules")
+    (description
+     "Generates Raven like matrices according to different rules and the response list
+associated to the matrix.  The package can generate matrices composed of 4 or 9
+cells, along with a response list of 11 elements (the correct response + 10
+incorrect responses).  The matrices can be generated according to both logical
+rules (i.e., the relationships between the elements in the matrix are
+manipulated to create the matrix) and visual-spatial rules (i.e., the visual or
+spatial characteristics of the elements are manipulated to generate the matrix).
+ The graphical elements of this package are based on the @code{DescTools}
+package.")
+    (license license:expat)))
 
 (define-public r-matricks
   (package
@@ -40833,33 +40915,6 @@ More information about @code{WeMo} Switch can be found at
     (synopsis "Magic Functions to Obtain Results from for Loops")
     (description "Magic functions to obtain results from for loops.")
     (license license:expat)))
-
-(define-public r-magicaxis
-  (package
-    (name "r-magicaxis")
-    (version "2.2.14")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "magicaxis" version))
-       (sha256
-        (base32 "1gqnivn6qjmf7axdi0pff6a40clklbipcr6qvm6ivzqbqhpbcb7v"))))
-    (properties `((upstream-name . "magicaxis")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sm
-                             r-rann
-                             r-plotrix
-                             r-mass
-                             r-mapproj
-                             r-celestial))
-    (home-page "https://cran.r-project.org/package=magicaxis")
-    (synopsis
-     "Pretty Scientific Plotting with Minor-Tick and Log Minor-Tick Support")
-    (description
-     "This package provides functions to make useful (and pretty) plots for scientific
-plotting.  Additional plotting features are added for base plotting, with
-particular emphasis on making attractive log axis plots.")
-    (license license:gpl3)))
 
 (define-public r-magi
   (package

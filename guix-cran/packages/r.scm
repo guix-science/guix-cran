@@ -4712,13 +4712,13 @@ summarizing model outputs.  rsyncrosim requires @code{SyncroSim} 2.3.5 or higher
 (define-public r-rswipl
   (package
     (name "r-rswipl")
-    (version "9.1.17")
+    (version "9.1.17.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rswipl" version))
        (sha256
-        (base32 "1933ag3wzch7qlpp2rfbxdqkx4p0h5znq6v5qh4kifh94v72pl13"))))
+        (base32 "01q3b8mlgy4qf56ql808yi18msq9c4qafmnzmvq1jc8lfqkqszqp"))))
     (properties `((upstream-name . "rswipl")))
     (build-system r-build-system)
     (inputs (list zstd
@@ -7344,29 +7344,6 @@ R for teaching purposes.  Keeping the original workflow is favored over
 performance.")
     (license license:gpl2)))
 
-(define-public r-rsalgaer
-  (package
-    (name "r-rsalgaer")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RSAlgaeR" version))
-       (sha256
-        (base32 "1hp0v2vkj9ixiv541d53kyl0ph3jsdc5w98r81gv5ck5ixrp6bxp"))))
-    (properties `((upstream-name . "RSAlgaeR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-plyr r-mblm r-lubridate r-ggplot2 r-cvtools))
-    (home-page "http://github.com/cahhansen/RSAlgae")
-    (synopsis
-     "Builds Empirical Remote Sensing Models of Water Quality Variables and Analyzes Long-Term Trends")
-    (description
-     "Assists in processing reflectance data, developing empirical models using
-stepwise regression and a generalized linear modeling approach, cross-
-validation, and analysis of trends in water quality conditions (specifically
-chl-a) and climate conditions using the Theil-Sen estimator.")
-    (license license:gpl2)))
-
 (define-public r-rsagacmd
   (package
     (name "r-rsagacmd")
@@ -9243,16 +9220,17 @@ extended with Monte Carlo simulations following the method of Crouch et al
 (define-public r-rpresto
   (package
     (name "r-rpresto")
-    (version "1.4.5")
+    (version "1.4.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RPresto" version))
        (sha256
-        (base32 "1yf5kbmc73ff2kl9s6jmdrpkc7i4118n0wnpdfpz1p4qkm8s4pas"))))
+        (base32 "1q8c3h328iwscnayxj8qc71s2hkqdqwnpf38kn3zz3ks66qzjf8c"))))
     (properties `((upstream-name . "RPresto")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tibble
+    (propagated-inputs (list r-vctrs
+                             r-tibble
                              r-stringi
                              r-rlang
                              r-purrr
@@ -11653,13 +11631,13 @@ authorized to a free, registered account.")
 (define-public r-ropencvlite
   (package
     (name "r-ropencvlite")
-    (version "4.80.0")
+    (version "4.80.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ROpenCVLite" version))
        (sha256
-        (base32 "0dvvn3yh9629xih7f5ywgrrxzg3am4i79z6z76ndnh14pvwlk1kg"))))
+        (base32 "0jk0p6ws8maip83k9bn0my8dmf7s1djdhkv85hln27jdl69hr7yy"))))
     (properties `((upstream-name . "ROpenCVLite")))
     (build-system r-build-system)
     (inputs (list cmake))
@@ -16544,6 +16522,29 @@ be used for the inference and the Stability Approach for Regularization
 Selection (@code{StARS}) is implemented to drive the selection of the
 regularization parameter.  The method is fully described in
 <doi:10.1093/bioinformatics/btx819>.")
+    (license license:gpl3+)))
+
+(define-public r-rnanoflann
+  (package
+    (name "r-rnanoflann")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Rnanoflann" version))
+       (sha256
+        (base32 "1168bnl2c4mrslv6gbnmgfmks7yiksj0h5r7gznm45y3vq7b2kgk"))))
+    (properties `((upstream-name . "Rnanoflann")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (home-page "https://github.com/ManosPapadakis95/Rnanoflann")
+    (synopsis "Extremely Fast Nearest Neighbor Search")
+    (description
+     "Finds the k nearest neighbours for every point in a given dataset using Jose
+Luis nanoflann library.  There is support for exact searches, fixed radius
+searches with kd trees and two distances, the Euclidean and Manhattan'.  For
+more information see <https://github.com/jlblancoc/nanoflann>.  Also, the
+nanoflann library is exported and ready to be used via the linking to mechanism.")
     (license license:gpl3+)))
 
 (define-public r-rmzqc
@@ -29481,27 +29482,6 @@ using Generalized Additive Models for Location, Scale and Shape, aka GAMLSS by
 Rigby & Stasinopoulos (2005) <doi:10.1111/j.1467-9876.2005.00510.x>.")
     (license license:gpl3)))
 
-(define-public r-relations
-  (package
-    (name "r-relations")
-    (version "0.6-13")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "relations" version))
-       (sha256
-        (base32 "1nnr0kcr3whbwzi36sg7wn46jp7r0hfkvcwlybvjsjhczcvc6ngq"))))
-    (properties `((upstream-name . "relations")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-slam r-sets r-cluster))
-    (home-page "https://cran.r-project.org/package=relations")
-    (synopsis "Data Structures and Algorithms for Relations")
-    (description
-     "Data structures and algorithms for k-ary relations with arbitrary domains,
-featuring relational algebra, predicate functions, and fitters for consensus
-relations.")
-    (license license:gpl2)))
-
 (define-public r-relatedness
   (package
     (name "r-relatedness")
@@ -39135,21 +39115,22 @@ of time-consuming functions.")
 (define-public r-rcdt
   (package
     (name "r-rcdt")
-    (version "1.2.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RCDT" version))
        (sha256
-        (base32 "0lp8d5h25kwp66849lwk1c1wc75wx7rrrvhiw42xcwxp66z2aycd"))))
+        (base32 "1k27kydqzxqdhjbygq5a8mdhwlvbc32j1hg4vr223rwwc94864w6"))))
     (properties `((upstream-name . "RCDT")))
     (build-system r-build-system)
     (propagated-inputs (list r-rvcg
                              r-rgl
                              r-rcpparmadillo
                              r-rcpp
-                             r-randomcolor
+                             r-polychrome
                              r-gplots
+                             r-colorsgen
                              r-bh))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/stla/RCDT")

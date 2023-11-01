@@ -100,30 +100,6 @@ Transforms.")
 publication-ready tables to latex files, and running Monte Carlo experiments.")
     (license license:gpl2+)))
 
-(define-public r-kwb-hantush
-  (package
-    (name "r-kwb-hantush")
-    (version "0.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "kwb.hantush" version))
-       (sha256
-        (base32 "1rlm7i95yw66asgkag93phig2y9lic4xl2fv3cbnr3v751f6a59m"))))
-    (properties `((upstream-name . "kwb.hantush")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-lattice))
-    (native-inputs (list r-knitr))
-    (home-page "https://kwb-r.github.io/kwb.hantush")
-    (synopsis
-     "Calculation of Groundwater Mounding Beneath an Infiltration Basin")
-    (description
-     "Calculation groundwater mounding beneath an infiltration basin based on the
-Hantush (1967) equation (<doi:10.1029/WR003i001p00227>).  The correct
-implementation is shown with a verification example based on a USGS report (page
-25, <https://pubs.usgs.gov/sir/2010/5102/support/sir2010-5102.pdf#page=35>).")
-    (license license:expat)))
-
 (define-public r-kvh
   (package
     (name "r-kvh")

@@ -1149,46 +1149,6 @@ document, and scores for multiple documents are computed in parallel via
 @code{OpenMP}'.")
     (license (license:fsdg-compatible "BSD 2-clause License + file LICENSE"))))
 
-(define-public r-swtools
-  (package
-    (name "r-swtools")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SWTools" version))
-       (sha256
-        (base32 "0mdkbzph4q989wi66xawkxca0zvpnnisk5wxbb91ylb05r84qpzf"))))
-    (properties `((upstream-name . "SWTools")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-sp
-                             r-sf
-                             r-segmented
-                             r-rmarkdown
-                             r-rlang
-                             r-reshape2
-                             r-readr
-                             r-magrittr
-                             r-lubridate
-                             r-jsonlite
-                             r-httr
-                             r-ggplot2
-                             r-ggmap
-                             r-forcats
-                             r-dplyr))
-    (home-page "https://github.com/matt-s-gibbs/SWTools")
-    (synopsis "Helper Tools for Australian Hydrologists")
-    (description
-     "This package provides functions to speed up work flow for hydrological analysis.
- Focused on Australian climate data (SILO climate data), hydrological models
-(@code{eWater} Source) and in particular South Australia
-(<https://water.data.sa.gov.au> hydrological data).")
-    (license license:gpl3)))
-
 (define-public r-swmprextension
   (package
     (name "r-swmprextension")
@@ -2944,6 +2904,37 @@ Nonparametric Estimation of Spearman's Rank Correlation with Bivariate Survival
 Data, Biometrics (under revision).  The package also provides functions that
 visualize bivariate survival data and bivariate probability mass function.")
     (license license:gpl2+)))
+
+(define-public r-survsparse
+  (package
+    (name "r-survsparse")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SurvSparse" version))
+       (sha256
+        (base32 "14v0319w2k6b5cmpfrcxc2h3558lrpf101mhbpkqy0k4ahsb0sax"))))
+    (properties `((upstream-name . "SurvSparse")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-purrr
+                             r-nloptr
+                             r-nleqslv
+                             r-mass
+                             r-gaussquad
+                             r-foreach
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=SurvSparse")
+    (synopsis "Survival Analysis with Sparse Longitudinal Covariates")
+    (description
+     "Survival analysis with sparse longitudinal covariates under right censoring
+scheme.  Different hazards models are involved.  Please cite the manuscripts
+corresponding to this package: Sun, Z. et al. (2022)
+<doi:10.1007/s10985-022-09548-6>, Sun, Z. and Cao, H. (2023)
+<@code{arXiv:2310.15877>} and Sun, D. et al. (2023) <@code{arXiv:2308.15549>}.")
+    (license license:gpl3)))
 
 (define-public r-survsnp
   (package
@@ -14126,31 +14117,6 @@ Nguyen, Jones & @code{McLachlan(2018)<doi:10.1007/s42081-018-0001-y>}.  This
 package utilizes the SMM framework to provide functions for training SVMs with
 hinge loss, squared-hinge loss, and logistic loss.")
     (license license:gpl3)))
-
-(define-public r-ssnbayes
-  (package
-    (name "r-ssnbayes")
-    (version "0.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SSNbayes" version))
-       (sha256
-        (base32 "0y5n9c9a6kd53ijai18arpsm09jp3v3f31zgg22y0pz6i3y24hm3"))))
-    (properties `((upstream-name . "SSNbayes")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rstan r-plyr r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/EdgarSantos-Fernandez/SSNbayes")
-    (synopsis "Bayesian Spatio-Temporal Analysis in Stream Networks")
-    (description
-     "Fits Bayesian spatio-temporal models and makes predictions on stream networks
-using the approach by Santos-Fernandez, Edgar, et al. (2021).\"Bayesian
-spatio-temporal models for stream networks\" <@code{arXiv:2103.03538>}.  In these
-models, spatial dependence is captured using stream distance and flow
-connectivity, while temporal autocorrelation is modelled using vector
-autoregression methods.")
-    (license license:gpl2)))
 
 (define-public r-ssmsn
   (package
@@ -31952,13 +31918,13 @@ Control with R\" [ISBN 978-3-319-24046-6], are also included in the package.")
 (define-public r-sivs
   (package
     (name "r-sivs")
-    (version "0.2.9")
+    (version "0.2.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sivs" version))
        (sha256
-        (base32 "0g5gw2szsnm3k71zjw0174qnznr6abnyk2nh5afhyappki4yqaia"))))
+        (base32 "1mf881yy1f6s4f6bx4p5010f45pg09lww3npkkp1s11zpawgmdjq"))))
     (properties `((upstream-name . "sivs")))
     (build-system r-build-system)
     (propagated-inputs (list r-varhandle r-proc r-glmnet r-foreach
@@ -32215,34 +32181,6 @@ programs (see Fay & Olsen (2021, under review).  To implement the cube method,
 matching, @code{sitepickR} uses the @code{MatchIt} R package
 <https://cran.r-project.org/package=@code{MatchIt>}.")
     (license license:gpl3+)))
-
-(define-public r-siteadapt
-  (package
-    (name "r-siteadapt")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SiteAdapt" version))
-       (sha256
-        (base32 "1k79j29d92a8m578xj61iavljikksdmjr2vlzwmdvxpa6rp1i2ff"))))
-    (properties `((upstream-name . "SiteAdapt")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-solar
-                             r-rcolorbrewer
-                             r-hyfo
-                             r-glmulti
-                             r-ggpubr
-                             r-ggplot2))
-    (home-page "https://cran.r-project.org/package=SiteAdapt")
-    (synopsis "Site Adaptation of Solar Irradiance Modeled Series")
-    (description
-     "The @code{SiteAdapt} procedure improves the accuracy of modeled solar irradiance
-series through site-adaptation with coincident ground-based measurements relying
-on the use of a regression preprocessing followed by an empirical quantile
-mapping (@code{eQM}) correction.  Fernandez-Peruchena et al (2020)
-<doi:10.3390/rs12132127>.")
-    (license license:gpl3)))
 
 (define-public r-sit
   (package
@@ -33837,6 +33775,31 @@ dispersal/connectivity).  The package should be relevant to explore a broad
 spectrum of ecological phenomena, such as those at the interface of animal
 behaviour, management, landscape and movement ecology, disease and invasive
 species spread, and population dynamics.")
+    (license license:gpl2+)))
+
+(define-public r-simrestore
+  (package
+    (name "r-simrestore")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "simRestore" version))
+       (sha256
+        (base32 "10xm19j1sz1srqhc4w8ipz174a1cafz23iffwx2b0z9lsddb93an"))))
+    (properties `((upstream-name . "simRestore")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble r-subplex r-shiny r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=simRestore")
+    (synopsis
+     "Simulate the Effect of Management Policies on Restoration Efforts")
+    (description
+     "Simulation methods to study the effect of management policies on efforts to
+restore populations back to their original genetic composition.  Allows for
+single-scenario simulation and for optimization of specific chosen scenarios.
+Further information can be found in Hernandez, Janzen and Lavretsky (2023)
+<doi:10.1111/1755-0998.13892>.")
     (license license:gpl2+)))
 
 (define-public r-simrel
@@ -37842,18 +37805,18 @@ the number of variables is larger than the sample size.")
 (define-public r-shrink
   (package
     (name "r-shrink")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shrink" version))
        (sha256
-        (base32 "0d80a0qqrsb9ybzqvg3m6a9r16ky7hqchq0hjvj8ipk430mmxdjm"))))
+        (base32 "0f66m6w2wh0g38g3s2fj3mj90gpdffjffj74cbg4nbl6mdb0lqaf"))))
     (properties `((upstream-name . "shrink")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rms r-mfp r-mass))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=shrink")
+    (home-page "https://github.com/biometrician/shrink")
     (synopsis "Global, Parameterwise and Joint Shrinkage Factor Estimation")
     (description
      "The predictive value of a statistical model can often be improved by applying
@@ -44461,6 +44424,31 @@ Methods and Applications\", Springer.  Sources for individual data files are mor
 fully documented in the book.")
     (license license:gpl2+)))
 
+(define-public r-sensr
+  (package
+    (name "r-sensr")
+    (version "1.5-3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sensR" version))
+       (sha256
+        (base32 "0lmy7ivjm4plb7n6mf8ycv44ir34f82s3a7wamxj3w6v1n653ji6"))))
+    (properties `((upstream-name . "sensR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-numderiv r-multcomp r-mass))
+    (home-page "https://github.com/aigorahub/sensR")
+    (synopsis "Thurstonian Models for Sensory Discrimination")
+    (description
+     "This package provides methods for sensory discrimination methods; duotrio,
+tetrad, triangle, 2-AFC, 3-AFC, A-not A, same-different, 2-AC and
+degree-of-difference.  This enables the calculation of d-primes, standard errors
+of d-primes, sample size and power computations, and comparisons of different
+d-primes.  Methods for profile likelihood confidence intervals and plotting are
+included.  Most methods are described in Brockhoff, P.B. and Christensen, R.H.B.
+(2010) <doi:10.1016/j.foodqual.2009.04.003>.")
+    (license (list license:gpl2 license:gpl3))))
+
 (define-public r-senspe
   (package
     (name "r-senspe")
@@ -45472,13 +45460,13 @@ presented in Pesigan and Cheung (2023) <doi:10.3758/s13428-023-02114-4>.")
 (define-public r-semlbci
   (package
     (name "r-semlbci")
-    (version "0.10.3")
+    (version "0.10.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "semlbci" version))
        (sha256
-        (base32 "0s85i82yfa305j7az775n41qn17z197invgas06nj09yk0v87jni"))))
+        (base32 "07qm89a0hcbp0w6mly6gs0212pczai22bfjy61c4b1q8i3a3bj8x"))))
     (properties `((upstream-name . "semlbci")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -48713,45 +48701,6 @@ evaluate the models, and predict species potential distributions in space and
 time.  For more information, please check the following paper: Naimi, B.,
 Araujo, M.B. (2016) <doi:10.1111/ecog.01881>.")
     (license license:gpl3+)))
-
-(define-public r-sdlfilter
-  (package
-    (name "r-sdlfilter")
-    (version "2.3.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SDLfilter" version))
-       (sha256
-        (base32 "197y4kvjn07c3jnx3ayr496h70r87r7f4c7r0swcdkj9ir93dz4g"))))
-    (properties `((upstream-name . "SDLfilter")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stars
-                             r-sf
-                             r-pracma
-                             r-maps
-                             r-lubridate
-                             r-gridextra
-                             r-ggplot2
-                             r-ggmap
-                             r-geosphere
-                             r-emmeans
-                             r-dplyr
-                             r-data-table))
-    (home-page "https://github.com/TakahiroShimada/SDLfilter")
-    (synopsis "Filtering and Assessing the Sample Size of Tracking Data")
-    (description
-     "This package provides functions to filter GPS/Argos locations, as well as
-assessing the sample size for the analysis of animal distributions.  The filters
-remove temporal and spatial duplicates, fixes located at a given height from
-estimated high tide line, and locations with high error as described in Shimada
-et al. (2012) <doi:10.3354/meps09747> and Shimada et al. (2016)
-<doi:10.1007/s00227-015-2771-0>.  Sample size for the analysis of animal
-distributions can be assessed by the conventional area-based approach or the
-alternative probability-based approach as described in Shimada et al. (2021)
-<doi:10.1111/2041-210X.13506>.")
-    (license (list license:gpl2
-                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-sdgdetector
   (package
@@ -54839,37 +54788,6 @@ Quality Monitoring Program data.  Data sets can be downloaded per beach, or the
 raw data can be downloaded.  See
 <https://sfwater.org/cfapps/lims/beachmain1.cfm>.")
     (license license:expat)))
-
-(define-public r-sandwichr
-  (package
-    (name "r-sandwichr")
-    (version "1.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "sandwichr" version))
-       (sha256
-        (base32 "1g5jg8x4a9qdvcrsali2z1zrbrh628nsings1v02gpvfw2qbdb45"))))
-    (properties `((upstream-name . "sandwichr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sf
-                             r-lwgeom
-                             r-gridextra
-                             r-ggplot2
-                             r-dplyr
-                             r-caret))
-    (native-inputs (list r-knitr))
-    (home-page
-     "https://github.com/linyuehzzz/sandwich_spatial_interpolator/tree/master/r/sandwichr")
-    (synopsis "Spatial Prediction Based on Spatial Stratified Heterogeneity")
-    (description
-     "Spatial prediction is a common practice in social and environmental science.
-This package enables the implementation of SSH-based spatial prediction proposed
-by Wang et al. (2013) <doi:10.1068/a44710>.  It provides functions to (1)
-evaluate stratification schemes, (2) interpolate sampling data over user-defined
-reporting units, (3) assess prediction uncertainties, and (4) evaluate overall
-accuracy using the k-fold cross-validation estimate.")
-    (license license:gpl2+)))
 
 (define-public r-sandbox
   (package

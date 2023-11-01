@@ -7002,26 +7002,6 @@ offer an examination of nitrogen uptake and allocation in two salt marsh plant
 species.")
     (license license:gpl3)))
 
-(define-public r-nistunits
-  (package
-    (name "r-nistunits")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "NISTunits" version))
-       (sha256
-        (base32 "0km9l3k9p35sb1qrhrz4ijjsdihvsp6j7cz5kh46lgf7nn6xdk7a"))))
-    (properties `((upstream-name . "NISTunits")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=NISTunits")
-    (synopsis "Fundamental Physical Constants and Unit Conversions from NIST")
-    (description
-     "Fundamental physical constants (Quantity, Value, Uncertainty, Unit) for SI
-(International System of Units) and non-SI units, plus unit conversions Based on
-the data from NIST (National Institute of Standards and Technology, USA)")
-    (license license:gpl3+)))
-
 (define-public r-nistnls
   (package
     (name "r-nistnls")

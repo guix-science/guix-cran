@@ -10844,36 +10844,6 @@ which can have both practical and ethical advantages.  This package is a tool to
 help evaluate biomarkers for prognostic enrichment of clinical trials.")
     (license license:gpl2+)))
 
-(define-public r-biooed
-  (package
-    (name "r-biooed")
-    (version "0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bioOED" version))
-       (sha256
-        (base32 "0wx58bngpzlrbbcnx8l1lqhsg51y98wcym1238p87drf64x2mj1n"))))
-    (properties `((upstream-name . "bioOED")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyverse
-                             r-tidyselect
-                             r-tidyr
-                             r-rlang
-                             r-ggplot2
-                             r-fme
-                             r-dplyr
-                             r-corrplot
-                             r-bioinactivation))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=bioOED")
-    (synopsis
-     "Sensitivity Analysis and Optimum Experiment Design for Microbial Inactivation")
-    (description
-     "Extends the bioinactivation package with functions for Sensitivity Analysis and
-Optimum Experiment Design.")
-    (license license:gpl3)))
-
 (define-public r-bionetdata
   (package
     (name "r-bionetdata")
@@ -11530,13 +11500,13 @@ schemes.")
 (define-public r-bioclim
   (package
     (name "r-bioclim")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bioclim" version))
        (sha256
-        (base32 "1qiz7bwy44xlgj52cy46bg762fg3llgzzn9a2bclyx42v12z8p6q"))))
+        (base32 "15a2v5l4ydn2zsnbwkrwpfvcj5xzhwj1diqrr9vp1i42w9ci55h2"))))
     (properties `((upstream-name . "bioclim")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-rmarkdown r-reshape2 r-ggplot2
@@ -16507,26 +16477,6 @@ functions and generators for samples as well as additional information on
 features of the densities.  Also contains the 4 histogram densities used in
 Rozenholc/Mildenberger/Gather (2010) <doi:10.1016/j.csda.2010.04.021>.")
     (license license:gpl2+)))
-
-(define-public r-bench
-  (package
-    (name "r-bench")
-    (version "1.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bench" version))
-       (sha256
-        (base32 "05zky7l6103gabv9y0g3qlx8sgkq1sn9yl9jd3x8834cmlh67bmz"))))
-    (properties `((upstream-name . "bench")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble r-rlang r-profmem r-pillar r-glue))
-    (home-page "https://bench.r-lib.org/")
-    (synopsis "High Precision Timing of R Expressions")
-    (description
-     "This package provides tools to accurately benchmark and analyze execution times
-for R expressions.")
-    (license license:expat)))
 
 (define-public r-bellreg
   (package

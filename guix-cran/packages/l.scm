@@ -543,35 +543,38 @@ Hejblum, Weber, Palmer, Churchill, Szolovits, Murphy, Liao, Kohane & Cai (2021)
 (define-public r-lucidus
   (package
     (name "r-lucidus")
-    (version "2.2.1")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LUCIDus" version))
        (sha256
-        (base32 "00qzx94hwkhm5yszkx1wkj592img5n504ybld272x0wps2bk6snp"))))
+        (base32 "0y8l82q5qzc9k88cc7afqnlixrnfamm58j2fxz22x37yxaad20j1"))))
     (properties `((upstream-name . "LUCIDus")))
     (build-system r-build-system)
     (propagated-inputs (list r-progress
                              r-nnet
                              r-networkd3
-                             r-mix
                              r-mclust
                              r-jsonlite
                              r-glmnet
                              r-glasso
                              r-boot))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/USCbiostats/LUCIDus")
-    (synopsis "Latent Unknown Clustering Integrating Multi-View Data")
+    (home-page "https://cran.r-project.org/package=LUCIDus")
+    (synopsis "LUCID with Multiple Omics Data")
     (description
-     "An implementation of the LUCID model (Peng (2019)
+     "An implementation of estimating the Latent Unknown Clusters By Integrating
+Multi-omics Data (LUCID) model (Peng (2019)
 <doi:10.1093/bioinformatics/btz667>).  LUCID conducts integrated clustering
-using exposures, omics data (and outcome as an option).  An EM algorithm is
-implemented to estimate MLE of the LUCID model.  LUCIDus features integrated
-variable selection, incorporation of missing omics data, bootstrap inference,
-prediction and visualization of the model.")
-    (license license:gpl3)))
+using exposures, omics data (and outcome as an option).  This is a major update
+from the last version while conserving all the previous features.  This package
+implements three different integration strategies for multiple omics data
+analysis within the LUCID framework: LUCID early integration (the original LUCID
+model), LUCID in parallel (intermediate), and LUCID in serial (late).  Automated
+model selection for each LUCID model is available to obtain the optimal number
+of latent clusters, and an integrated imputation approach is implemented to
+handle sporadic and list-wise missing multiple omics data.")
+    (license license:expat)))
 
 (define-public r-lucid
   (package

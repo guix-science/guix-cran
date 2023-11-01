@@ -14305,24 +14305,22 @@ registration at <https://www.eia.gov/opendata/>.")
 (define-public r-eia
   (package
     (name "r-eia")
-    (version "0.3.7")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eia" version))
        (sha256
-        (base32 "1af9m5qrchxcrhyasx0hkrzjr6z4vixxmq4q9q33bkscy263q9fg"))))
+        (base32 "1nkykbd3p2p7z1g6nqzhrn08z8cbyg6jayl3hd78vxcmryd1wzgx"))))
     (properties `((upstream-name . "eia")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
                              r-readxl
                              r-purrr
                              r-memoise
-                             r-magrittr
                              r-lubridate
                              r-jsonlite
-                             r-httr
-                             r-dplyr))
+                             r-httr))
     (native-inputs (list r-knitr))
     (home-page "https://docs.ropensci.org/eia/https://github.com/ropensci/eia")
     (synopsis

@@ -9778,13 +9778,13 @@ time series data.")
 (define-public r-anomalize
   (package
     (name "r-anomalize")
-    (version "0.2.4")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "anomalize" version))
        (sha256
-        (base32 "0i5vlhh9m00rqgk3wvy39fpzw9jxp38h3sxjqa74i54jy8maqdm6"))))
+        (base32 "133gibw7wwvf4g6msgnw19pnnhlf02kp8c3jzgzdw5bbl6nb2225"))))
     (properties `((upstream-name . "anomalize")))
     (build-system r-build-system)
     (propagated-inputs (list r-timetk

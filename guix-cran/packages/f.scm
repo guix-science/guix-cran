@@ -695,13 +695,13 @@ et al. (2020, <doi:10.1101/2020.08.12.247502>).")
 (define-public r-fuzzypovertyr
   (package
     (name "r-fuzzypovertyr")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FuzzyPovertyR" version))
        (sha256
-        (base32 "1fhgvjy83806l74bn2i8d1lslgbb38phhjfql65s98jbbckh98qp"))))
+        (base32 "0cs11xqnayvpqhy4srdmj9hl8rwz8360cbzb48mkcjrx8ah6njaw"))))
     (properties `((upstream-name . "FuzzyPovertyR")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2 r-ecp r-dplyr))

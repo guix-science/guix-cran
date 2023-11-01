@@ -435,13 +435,13 @@ modular functions and modular curves.")
 (define-public r-cyclops
   (package
     (name "r-cyclops")
-    (version "3.3.1")
+    (version "3.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Cyclops" version))
        (sha256
-        (base32 "17njl7vz9gkwfnxhs95vqn1mfcklmdqg5wwsgjbm3px120b7c8mf"))))
+        (base32 "0rys8fcz96zy0kx2b3k0j48nj0ysr6pcvya9grb8c3wj9s12m752"))))
     (properties `((upstream-name . "Cyclops")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -451,7 +451,6 @@ modular functions and modular curves.")
                              r-matrix
                              r-dplyr
                              r-bit64
-                             r-bh
                              r-andromeda))
     (home-page "https://github.com/ohdsi/cyclops")
     (synopsis
@@ -1180,6 +1179,40 @@ Census Bureau
 interface to processed data.  Implements a very basic approach to estimate block
 level citizen voting age population from block group data.")
     (license license:expat)))
+
+(define-public r-cv
+  (package
+    (name "r-cv")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cv" version))
+       (sha256
+        (base32 "0jy7dp31j3kn053b5bcx3yha4g3rsia48ayxa6zlfgkspxh7i5fa"))))
+    (properties `((upstream-name . "cv")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-nlme
+                             r-mass
+                             r-lme4
+                             r-insight
+                             r-foreach
+                             r-doparallel
+                             r-car))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://gmonette.github.io/cv/")
+    (synopsis "Cross-Validation of Regression Models")
+    (description
+     "Cross-validation methods of regression models that exploit features of various
+modeling functions to improve speed.  Some of the methods implemented in the
+package are novel, as described in the package vignettes; for general
+introductions to cross-validation, see, for example, Gareth James, Daniela
+Witten, Trevor Hastie, and Robert Tibshirani (2021, ISBN 978-1-0716-1417-4,
+Secs.  5.1, 5.3), \"An Introduction to Statistical Learning with Applications in
+R, Second Edition\", and Trevor Hastie, Robert Tibshirani, and Jerome Friedman
+(2009, ISBN 978-0-387-84857-0, Sec.  7.10), \"The Elements of Statistical
+Learning, Second Edition\".")
+    (license license:gpl2+)))
 
 (define-public r-cutpointsoehr
   (package
@@ -18408,6 +18441,29 @@ diagrams.  Color indices, color differences, and spectral data
 conversion/analysis.")
     (license license:gpl3+)))
 
+(define-public r-colors3d
+  (package
+    (name "r-colors3d")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "colors3d" version))
+       (sha256
+        (base32 "0d78y5v329fhaqhw0a0cgkpiajmqb91vl9809fiwnvl2b4x3j51r"))))
+    (properties `((upstream-name . "colors3d")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scales r-plyr r-fnn r-combinat))
+    (home-page "https://github.com/matthewkling/colors3d")
+    (synopsis "Generate 2D and 3D Color Palettes")
+    (description
+     "Generate multivariate color palettes to represent two-dimensional or
+three-dimensional data in graphics (in contrast to standard color palettes that
+represent just one variable).  You tell colors3d how to map color space onto
+your data, and it gives you a color for each data point.  You can then use these
+colors to make plots in base R', ggplot2', or other graphics frameworks.")
+    (license license:expat)))
+
 (define-public r-colorramp2
   (package
     (name "r-colorramp2")
@@ -32837,30 +32893,6 @@ which was extended and enhanced by Giessing and Tent (2019)
 <https://unece.org/fileadmin/DAM/stats/documents/ece/ces/ge.46/2019/mtg1/SDC2019_S2_Germany_Giessing_Tent_AD.pdf>.")
     (license license:gpl2)))
 
-(define-public r-celestial
-  (package
-    (name "r-celestial")
-    (version "1.4.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "celestial" version))
-       (sha256
-        (base32 "1gls0qvr8mxz79lsmk76v253f747g0cqys8p8wjmpijs8r0pyr4z"))))
-    (properties `((upstream-name . "celestial")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rann r-pracma r-nistunits))
-    (home-page "https://cran.r-project.org/package=celestial")
-    (synopsis
-     "Collection of Common Astronomical Conversion Routines and Functions")
-    (description
-     "This package contains a number of common astronomy conversion routines,
-particularly the HMS and degrees schemes, which can be fiddly to convert between
-on mass due to the textural nature of the former.  It allows users to coordinate
-match datasets quickly.  It also contains functions for various cosmological
-calculations.")
-    (license license:gpl3)))
-
 (define-public r-cego
   (package
     (name "r-cego")
@@ -33217,13 +33249,13 @@ Q-matrix generation and detection of complete/identified Q-matrices.")
 (define-public r-cdmconnector
   (package
     (name "r-cdmconnector")
-    (version "1.1.4")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CDMConnector" version))
        (sha256
-        (base32 "1xsajmg4k526dr4nkrrhvgi9shd8j8b1s0fkbn4lc797ljyv6gka"))))
+        (base32 "1sx3n6vbps0843a00wzqfmjl9qhxn51saxsk75lqn8gaxas40823"))))
     (properties `((upstream-name . "CDMConnector")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -34967,13 +34999,13 @@ plot format.")
 (define-public r-causaloptim
   (package
     (name "r-causaloptim")
-    (version "0.9.7")
+    (version "0.9.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "causaloptim" version))
        (sha256
-        (base32 "1p6qmxlyr907w7iwqarghwzir0am7w4wk1c9i8sgzy02yqssmagj"))))
+        (base32 "0daghglhk4jngv242s1vdi8l1dwcp23gn47vacrs55in5mmpqraj"))))
     (properties `((upstream-name . "causaloptim")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-rcpp r-rcdd r-igraph))

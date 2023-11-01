@@ -129,13 +129,13 @@ for details.")
 (define-public r-vvtableau
   (package
     (name "r-vvtableau")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vvtableau" version))
        (sha256
-        (base32 "0vlqp8m8ygknf1dak35w0kdzhsinazzwqp92488l9f447r8r7gz8"))))
+        (base32 "1pqw15wm5hmnclm2r0qgqy80a1i8w6p35qky2ccaxcbwci4grgk4"))))
     (properties `((upstream-name . "vvtableau")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

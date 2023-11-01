@@ -1949,13 +1949,13 @@ method.")
 (define-public r-gsympoint
   (package
     (name "r-gsympoint")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GsymPoint" version))
        (sha256
-        (base32 "1fg8vqd86kcpciphmlcxlm0rk01iza7md5y8kcxp9i732n4zn7r8"))))
+        (base32 "0wifxgfj67wf1ax56a6j40vckrydrkw5qj7bk875gr0w0ah03a3g"))))
     (properties `((upstream-name . "GsymPoint")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm r-rsolnp r-rocr))
@@ -4898,43 +4898,6 @@ functions for time-splitting a dataset when modeling non-proportional hazards in
 Cox regressions.")
     (license license:gpl3+)))
 
-(define-public r-greener
-  (package
-    (name "r-greener")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GREENeR" version))
-       (sha256
-        (base32 "1clrpzic95hyyf1xknyhpf9ls92zd9sf5ykylhbq7lmjc709kk61"))))
-    (properties `((upstream-name . "GREENeR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tmap
-                             r-tidyselect
-                             r-sf
-                             r-reshape2
-                             r-parallelly
-                             r-networkd3
-                             r-magrittr
-                             r-gridextra
-                             r-ggplot2
-                             r-fme
-                             r-dplyr
-                             r-data-table
-                             r-classint))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/calfarog/GREENeR")
-    (synopsis
-     "Geospatial Regression Equation for European Nutrient Losses (GREEN)")
-    (description
-     "This package provides tools and methods to apply the model Geospatial Regression
-Equation for European Nutrient losses (GREEN); Grizzetti et al. (2005)
-<doi:10.1016/j.jhydrol.2004.07.036>; Grizzetti et al. (2008); Grizzetti et al.
-(2012) <doi:10.1111/j.1365-2486.2011.02576.x>; Grizzetti et al. (2021)
-<doi:10.1016/j.gloenvcha.2021.102281>.")
-    (license license:gpl3)))
-
 (define-public r-greencrab-toolkit
   (package
     (name "r-greencrab-toolkit")
@@ -7609,13 +7572,13 @@ preprint <@code{arXiv:2105.03454>}.")
 (define-public r-gpbstat
   (package
     (name "r-gpbstat")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gpbStat" version))
        (sha256
-        (base32 "02sb9npwd1x8fnjl7999q4vlap23pn4692bhzp0vqwy1kbr0j7da"))))
+        (base32 "06fylxgzqhm8wf38kkzzk4ay80874wad2rg0xhl41piyav3rslw7"))))
     (properties `((upstream-name . "gpbStat")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-tibble r-purrr r-magrittr r-dplyr))
@@ -14547,13 +14510,13 @@ the swiss federal statistical office.")
 (define-public r-ggsurvfit
   (package
     (name "r-ggsurvfit")
-    (version "0.3.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggsurvfit" version))
        (sha256
-        (base32 "1krkkmbl54227i2gwl8nwg8r3aghxb6cqvxvi0z791n1vr0zn7xy"))))
+        (base32 "1gb7plyg49zv1y2v1bwvk8afziqjr34d1ilwwiazls3pgcnm8si3"))))
     (properties `((upstream-name . "ggsurvfit")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -19684,13 +19647,13 @@ at <http://scholar.harvard.edu/dqiao/gese>.")
 (define-public r-gescilivis
   (package
     (name "r-gescilivis")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeSciLiVis" version))
        (sha256
-        (base32 "052aws057h8j36c8k6ls9b3qd1kn69x84lvcxx45dfbb7z4jgfnr"))))
+        (base32 "1zb2zy5gmb9zwpxcpam1b8bh0vjhzdg99xardr1vlm83383gxcjb"))))
     (properties `((upstream-name . "GeSciLiVis")))
     (build-system r-build-system)
     (propagated-inputs (list r-rentrez r-biomartr))
@@ -21060,13 +21023,13 @@ libraries.")
 (define-public r-geohabnet
   (package
     (name "r-geohabnet")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geohabnet" version))
        (sha256
-        (base32 "1qd40043x64505slv6w6lcl955awi62gkg2csld0ckyzrr5ykbc4"))))
+        (base32 "1xms1w8qlw54cgb65hnspyzvb8j4ixl67clqav1bwv18a72idgr6"))))
     (properties `((upstream-name . "geohabnet")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -21090,11 +21053,11 @@ libraries.")
 visualize risk index plots for a given set of crops.  The functions are
 developed as an extension to analysis from Xing et al (2021)
 <doi:10.1093/biosci/biaa067>.  The primary function is sean() and is indicative
-of how sensitive analysis is to parameters using kernel models.  The Package
-currently supports crops sourced from Monfreda, C., N. Ramankutty, and J. A.
-Foley (2008) <doi:10.1029/2007gb002947> \"Farming the planet: 2.  Geographic
-distribution of crop areas, yields, physiological types, and net primary
-production in the year 2000, Global Biogeochem.  Cycles, 22, GB1022\" and
+of how sensitive the risk analysis is to parameters using kernel models.  The
+Package currently supports crops sourced from Monfreda, C., N. Ramankutty, and
+J. A. Foley (2008) <doi:10.1029/2007gb002947> \"Farming the planet: 2.
+Geographic distribution of crop areas, yields, physiological types, and net
+primary production in the year 2000, Global Biogeochem.  Cycles, 22, GB1022\" and
 International Food Policy Research Institute (2019) <doi:10.7910/DVN/PRFF8V>
 \"Global Spatially-Disaggregated Crop Production Statistics Data for 2010 Version
 2.0, Harvard Dataverse, V4\".  This analysis produces 3 maps - mean, variance,
@@ -21222,34 +21185,6 @@ curves in the functional dataset are smoothed using Fourier series.  The
 functional Kriging of this package is a modification of the method proposed by
 Giraldo (2011) <doi:10.1007/s10651-010-0143-y>.")
     (license license:expat)))
-
-(define-public r-geofi
-  (package
-    (name "r-geofi")
-    (version "1.0.9")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "geofi" version))
-       (sha256
-        (base32 "0z5cisrfq18arsq8n4p8xiqc8z2wn8riz8l9s5lzihc50s87kh9p"))))
-    (properties `((upstream-name . "geofi")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-yaml
-                             r-xml2
-                             r-sf
-                             r-rlang
-                             r-purrr
-                             r-httr
-                             r-httpcache
-                             r-dplyr
-                             r-curl))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/rOpenGov/geofi")
-    (synopsis "Access Finnish Geospatial Data")
-    (description
-     "This package provides tools for reading Finnish open geospatial data in R.")
-    (license license:bsd-2)))
 
 (define-public r-geofd
   (package

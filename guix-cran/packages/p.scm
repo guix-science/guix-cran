@@ -6217,28 +6217,6 @@ plot() and print() are available for convenience.  This package utilizes the
 optim C++ library for numeric optimization <https://github.com/kthohr/optim>.")
     (license license:gpl3+)))
 
-(define-public r-profmem
-  (package
-    (name "r-profmem")
-    (version "0.6.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "profmem" version))
-       (sha256
-        (base32 "0gg6ja0ifwn9jj42rw1gnyil55sl9r2y5rjb6yjcvqwd5arajp3l"))))
-    (properties `((upstream-name . "profmem")))
-    (build-system r-build-system)
-    (native-inputs (list r-r-rsp))
-    (home-page "https://github.com/HenrikBengtsson/profmem")
-    (synopsis "Simple Memory Profiling for R")
-    (description
-     "This package provides a simple and light-weight API for memory profiling of R
-expressions.  The profiling is built on top of R's built-in memory profiler
-('utils::Rprofmem()'), which records every memory allocation done by R (also
-native code).")
-    (license license:lgpl2.1+)))
-
 (define-public r-profiler
   (package
     (name "r-profiler")
@@ -7053,6 +7031,37 @@ temperature value calculated by R package @code{TmCalculator}
 from Beliveau, B. J.,(2018) <doi:10.1073/pnas.1714530115>, and those
 hybridization probes can be used to capture specific target regions in
 fluorescence in situ hybridization and next generation sequence experiments.")
+    (license license:gpl2+)))
+
+(define-public r-probe
+  (package
+    (name "r-probe")
+    (version "1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "probe" version))
+       (sha256
+        (base32 "1bgkbsx8aa0r5dpnr1nv2q9p6af40dfzl3g333wmdg1dd6d2zp4n"))))
+    (properties `((upstream-name . "probe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-glmnet))
+    (home-page "https://cran.r-project.org/package=probe")
+    (synopsis "Sparse High-Dimensional Linear Regression with PROBE")
+    (description
+     "This package implements an efficient and powerful Bayesian approach for sparse
+high-dimensional linear regression.  It uses minimal prior assumptions on the
+parameters through plug-in empirical Bayes estimates of hyperparameters.  An
+efficient Parameter-Expanded Expectation-Conditional-Maximization (PX-ECM)
+algorithm estimates maximum a posteriori (MAP) values of regression parameters
+and variable selection probabilities.  The PX-ECM results in a robust
+computationally efficient coordinate-wise optimization, which adjusts for the
+impact of other predictor variables.  The E-step is motivated by the popular
+two-group approach to multiple testing.  The result is a @code{PaRtitiOned}
+empirical Bayes Ecm (PROBE) algorithm applied to sparse high-dimensional linear
+regression, implemented using one-at-a-time or all-at-once type optimization.
+More information can be found in @code{McLain}, Zgodic, and Bondell (2022)
+<@code{arXiv:2209.08139>}.")
     (license license:gpl2+)))
 
 (define-public r-probbreed
@@ -11822,49 +11831,6 @@ family of power and reversal power distributions.")
     (description "Fast exponentiation when the exponent is an integer.")
     (license license:gpl3+)))
 
-(define-public r-povmap
-  (package
-    (name "r-povmap")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "povmap" version))
-       (sha256
-        (base32 "0nqb3ispvljpdb05ps7jwds33n4db2hw4ym5b4ipc20rhdj3g4mr"))))
-    (properties `((upstream-name . "povmap")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-survey
-                             r-stringr
-                             r-spdep
-                             r-saerobust
-                             r-reshape2
-                             r-readods
-                             r-parallelmap
-                             r-openxlsx
-                             r-nlme
-                             r-mumin
-                             r-moments
-                             r-mass
-                             r-hlmdiag
-                             r-gridextra
-                             r-ggplot2
-                             r-formula-tools
-                             r-boot
-                             r-bestnormalize))
-    (native-inputs (list r-r-rsp))
-    (home-page "https://github.com/SSA-Statistical-Team-Projects/povmap")
-    (synopsis "Extension to the 'emdi' Package")
-    (description
-     "The R package povmap supports small area estimation of means and poverty
-headcount rates.  It adds several new features to the emdi package (see \"The R
-Package emdi for Estimating and Mapping Regionally Disaggregated Indicators\" by
-Kreutzmann et al. (2019) <doi:10.18637/jss.v091.i07>).  These include new
-options for incorporating survey weights, ex-post benchmarking of estimates, two
-additional transformations, several new convenient functions to assist with
-reporting results, and a wrapper function to facilitate access from Stata'.")
-    (license license:gpl2)))
-
 (define-public r-pov
   (package
     (name "r-pov")
@@ -12655,6 +12621,26 @@ studied in Ando and Mallory (2012) <doi:10.1073/pnas.1114653109>.  See the
 examples, testing versions, and more details from:
 <https://github.com/ysd2004/portn>.")
     (license license:gpl2+)))
+
+(define-public r-portion
+  (package
+    (name "r-portion")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "portion" version))
+       (sha256
+        (base32 "0sqmv5f0jsbm4p9l02cm2zf8jbjxxyb9hb0cmry65jlnhy4axbm3"))))
+    (properties `((upstream-name . "portion")))
+    (build-system r-build-system)
+    (home-page "https://github.com/loelschlaeger/portion")
+    (synopsis "Extracting a Data Portion")
+    (description
+     "This package provides a simple method to extract portions of a vector, matrix,
+or data.frame.  The relative portion size and the way the portion is selected
+can be chosen.")
+    (license license:gpl3+)))
 
 (define-public r-portfoliooptim
   (package
