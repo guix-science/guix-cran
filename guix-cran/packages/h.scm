@@ -14,8 +14,8 @@
   #:use-module (gnu packages image)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages web)
-  #:use-module (gnu packages gcc)
   #:use-module (gnu packages haskell-xyz)
+  #:use-module (gnu packages gcc)
   #:use-module (gnu packages bash)
   #:use-module (gnu packages cmake)
   #:use-module (gnu packages java)
@@ -2414,31 +2414,6 @@ H., and Datta, S. (2017) <doi:10.1002/sim.7288> Dutta, S. and Datta, S. (2015)
 <doi:10.1002/sim.4368>, Datta, S. and Satten, G. (2008)
 <doi:10.1111/j.1541-0420.2007.00923.x>, Datta, S. and Satten, G. (2005)
 <doi:10.1198/016214504000001583>.")
-    (license license:expat)))
-
-(define-public r-htdp
-  (package
-    (name "r-htdp")
-    (version "0.1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "htdp" version))
-       (sha256
-        (base32 "0w579qp0p544xryb5r08m1nhqf7rmgv9q0lyx6my4av62l70ka5w"))))
-    (properties `((upstream-name . "htdp")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
-    (native-inputs (list gfortran))
-    (home-page "https://github.com/jbuonagurio/RHTDP")
-    (synopsis "Horizontal Time Dependent Positioning")
-    (description
-     "This package provides bindings to the National Geodetic Survey (NGS) Horizontal
-Time Dependent Positioning (HTDP) utility, v3.2.5, written by Richard Snay,
-Chris Pearson, and Jarir Saleh of NGS. HTDP is a utility that allows users to
-transform positional coordinates across time and between spatial reference
-frames.  See <https://www.ngs.noaa.gov/TOOLS/Htdp/Htdp.shtml> for more
-information.")
     (license license:expat)))
 
 (define-public r-hstats
@@ -8232,13 +8207,13 @@ space when there are more than a few response variables.")
 (define-public r-hemispher
   (package
     (name "r-hemispher")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hemispheR" version))
        (sha256
-        (base32 "1rf1w3hnb26vw7imzr4w71agicwrp1cpn3r9knypvrilq8g49xj1"))))
+        (base32 "0212x610zc6h01gk4qwsbdfs952ql5186bblz204lxf8a27arhqj"))))
     (properties `((upstream-name . "hemispheR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

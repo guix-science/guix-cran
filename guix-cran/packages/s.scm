@@ -377,13 +377,13 @@ standard way, and allows merging and deduplication of the resulting dataset.")
 (define-public r-synthesis
   (package
     (name "r-synthesis")
-    (version "1.2.3")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "synthesis" version))
        (sha256
-        (base32 "0nhnpqhs1h7iz49h852ns8pgmcl8via506idyp19dp778wbmxkn1"))))
+        (base32 "1yb0z4klz4hd7ab83j3h4x8v2yp2glmnnvz64g76iclx5mcgl6az"))))
     (properties `((upstream-name . "synthesis")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -398,7 +398,7 @@ found in Jiang, Z., Sharma, A., & Johnson, F. (2019)
 (2020) <doi:10.1029/2019WR026962> associated with an open-source tool by Jiang,
 Z., Rashid, M. M., Johnson, F., & Sharma, A. (2020)
 <doi:10.1016/j.envsoft.2020.104907>.")
-    (license license:gpl2+)))
+    (license license:gpl3+)))
 
 (define-public r-synthacs
   (package
@@ -9387,18 +9387,19 @@ traditional logit model.")
 (define-public r-stmr
   (package
     (name "r-stmr")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "STMr" version))
        (sha256
-        (base32 "1wz88y1fr2z7jwmni063j4rk1smbpbmgz6aw9cgfivz7gsps879n"))))
+        (base32 "0xkjlp51985pjld7ra8alcifbbmf4j7kdyg8hrcwqbc15b6m5qmg"))))
     (properties `((upstream-name . "STMr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-quantreg
                              r-nlme
+                             r-minpack-lm
                              r-magrittr
                              r-ggplot2
                              r-ggfittext
@@ -17498,13 +17499,13 @@ completely show them when clicking on them.")
 (define-public r-spoccupancy
   (package
     (name "r-spoccupancy")
-    (version "0.7.1")
+    (version "0.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spOccupancy" version))
        (sha256
-        (base32 "1xlb9j81va9sz9paskf26q60s36cb0vv22c1rwwvp94xf04v2j85"))))
+        (base32 "13zqdiwk692y1spqwi3wj9rmvy6v3165f162l1y37hg24m0000j0"))))
     (properties `((upstream-name . "spOccupancy")))
     (build-system r-build-system)
     (propagated-inputs (list r-rann
@@ -31941,13 +31942,13 @@ in order to shrink down the feature space into a small and yet robust set.")
 (define-public r-sits
   (package
     (name "r-sits")
-    (version "1.4.2")
+    (version "1.4.2-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sits" version))
        (sha256
-        (base32 "0z80qxm95glzijjznxszxvw8i7rb079828wgv14vmy2ap5w8v1nn"))))
+        (base32 "135qk50vbnyxnl2bkxwz00j4z36ynhiidm1yyfjvssxq3i3m6878"))))
     (properties `((upstream-name . "sits")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -37910,6 +37911,43 @@ Hill AV, Parkinson JL (1927) <doi: 10.1098/rspb.1927.0035>, Greene PR. (1986)
 <doi: 10.1016/0025-5564(86)90063-5>, Samozino P. and Peyrot N., et al (2022)
 <doi: 10.1111/sms.14097>, and Samozino P. (2018) <doi:
 10.1007/978-3-319-05633-3_11>.")
+    (license license:expat)))
+
+(define-public r-shortirt
+  (package
+    (name "r-shortirt")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "shortIRT" version))
+       (sha256
+        (base32 "06a4q3szhfbbnh3jzcs809m7zxx4gxfgw5wracccsq338in4l5yw"))))
+    (properties `((upstream-name . "shortIRT")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tam r-ggplot2 r-dplyr))
+    (home-page "https://cran.r-project.org/package=shortIRT")
+    (synopsis
+     "Procedures Based on Item Response Theory Models for the Development of Short Test Forms")
+    (description
+     "Implement different Item Response Theory (IRT) based procedures for the
+development of static short test forms (STFs) from a test.  Two main procedures
+are considered, specifically the typical IRT-based procedure for the development
+of STF, and a recently introduced procedure (Epifania, Anselmi & Robusto, 2022
+<doi:10.1007/978-3-031-27781-8_7>).  The procedures differ in how the most
+informative items are selected for the inclusion in the STF, either by
+considering their item information functions without considering any specific
+level of the latent trait (typical procedure) or by considering their
+informativeness with respect to specific levels of the latent trait, denoted as
+theta targets (the newly introduced procedure).  Regarding the latter procedure,
+three methods are implemented for the definition of the theta targets: (i) theta
+targets are defined by segmenting the latent trait in equal intervals and
+considering the midpoint of each interval (equal interval procedure, eip), (ii)
+by clustering the latent trait to obtain unequal intervals and considering the
+centroids of the clusters as the theta targets (unequal intervals procedure,
+uip), and (iii) by letting the user set the specific theta targets of interest
+(user-defined procedure, udp).  For further details on the procedure, please
+refer to Epifania, Anselmi & Robusto (2022) <doi:10.1007/978-3-031-27781-8_7>.")
     (license license:expat)))
 
 (define-public r-shortform
@@ -50098,13 +50136,13 @@ sequencing) data <https://github.com/fumi-github/@code{scPloidy>}.")
 (define-public r-scpi
   (package
     (name "r-scpi")
-    (version "2.2.4")
+    (version "2.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scpi" version))
        (sha256
-        (base32 "0yvxwq429qwf2v0shci8dk6w7rqcz15060ykrpv3wac42jw8qjzz"))))
+        (base32 "12wr7kk57qv28kypk5czr0gv2xfib040m8k5047kdgd4fj3i6fhr"))))
     (properties `((upstream-name . "scpi")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -50133,7 +50171,11 @@ sequencing) data <https://github.com/fumi-github/@code{scPloidy>}.")
 methods using least square, lasso, ridge, or simplex-type constraints.
 Uncertainty is quantified with prediction intervals as developed in Cattaneo,
 Feng, and Titiunik (2021)
-<https://mdcattaneo.github.io/papers/Cattaneo-Feng-Titiunik_2021_JASA.pdf>.")
+<https://nppackages.github.io/references/Cattaneo-Feng-Titiunik_2021_JASA.pdf>
+for a single treated unit and in Cattaneo, Feng, Palomba, and Titiunik (2023)
+<@code{arXiv:2210.05026>} for multiple treated units and staggered adoption.
+More details about the software implementation can be found in Cattaneo, Feng,
+Palomba, and Titiunik (2022) <@code{arXiv:2202.05984>}.")
     (license license:gpl2)))
 
 (define-public r-scperturbr
@@ -51034,15 +51076,16 @@ S., Hannachi, A., Trendafilov, N. T., & Jolliffe, I. T. (2011)
 (define-public r-scitb
   (package
     (name "r-scitb")
-    (version "0.1.0")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scitb" version))
        (sha256
-        (base32 "1ffz2zh5dr5w2w179ifyp4z9flryx052rfs39vg1n90qacymgshk"))))
+        (base32 "1hwggda7379wbqd4hzg7aa77md44gprb4bdzzfxwrlb8k498kr4k"))))
     (properties `((upstream-name . "scitb")))
     (build-system r-build-system)
+    (propagated-inputs (list r-stringi))
     (home-page "https://cran.r-project.org/package=scitb")
     (synopsis "Provides Some Useful Functions for Making Statistical Tables")
     (description

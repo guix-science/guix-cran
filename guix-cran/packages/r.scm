@@ -816,13 +816,13 @@ be plotted in rworldmap.")
 (define-public r-rworkflows
   (package
     (name "r-rworkflows")
-    (version "0.99.13")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rworkflows" version))
        (sha256
-        (base32 "17n0qcy8gj7l3vpzy3grnimazqfsmralpakr4mivm614rrl86yzd"))))
+        (base32 "1y7r8fyxqj8yfy86wj7h3axpyg59ina5hvbf8156vax11nv3pa4f"))))
     (properties `((upstream-name . "rworkflows")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -6178,33 +6178,6 @@ version of the package is documented in Journal of Statistical Software
 <DOI:10.1109/SPIRE.2001.10024>.")
     (license license:expat)))
 
-(define-public r-rsleep
-  (package
-    (name "r-rsleep")
-    (version "1.0.9")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rsleep" version))
-       (sha256
-        (base32 "1yrpshyfjyp02qc8qys9h7sv0q6dvq7sj4jccwk5v9q69wpgdgzq"))))
-    (properties `((upstream-name . "rsleep")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-signal
-                             r-psd
-                             r-jsonlite
-                             r-ggplot2
-                             r-edfreader
-                             r-abind))
-    (native-inputs (list r-knitr))
-    (home-page "https://rsleep.org/")
-    (synopsis "Analysis of Sleep Data")
-    (description
-     "This package provides a toolbox for sleep data processing, visualization and
-analysis.  Tools for state of the art automatic sleep stages scoring.")
-    (license license:expat)))
-
 (define-public r-rskey
   (package
     (name "r-rskey")
@@ -6370,17 +6343,17 @@ input (image and tiles) or output (mosaic transformed image).")
 (define-public r-rsiena
   (package
     (name "r-rsiena")
-    (version "1.3.14.4")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RSiena" version))
        (sha256
-        (base32 "1nl0qz3mvg8851lxh3xmq0hr4fs97yd8jv01lczvwzjzhmapv08j"))))
+        (base32 "1ysxy6kikyxklvfa95mn61wr0ny7wc849qw4wxadxg8wdx98z53x"))))
     (properties `((upstream-name . "RSiena")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable r-matrix r-mass r-lattice))
-    (home-page "http://www.stats.ox.ac.uk/~snijders/siena/")
+    (home-page "https://www.stats.ox.ac.uk/~snijders/siena/")
     (synopsis
      "Siena - Simulation Investigation for Empirical Network Analysis")
     (description
@@ -6389,11 +6362,8 @@ stochastic actor-oriented models for longitudinal network data collected as
 panel data.  Dependent variables can be single or multivariate networks, which
 can be directed, non-directed, or two-mode; and associated actor variables.
 There are also functions for testing parameters and checking goodness of fit.
-An overview of these models is given in Tom A.B. Snijders (2017), Stochastic
-Actor-Oriented Models for Network Dynamics, Annual Review of Statistics and Its
-Application, 4, 343-363 <doi: 10.1146/annurev-statistics-060116-054035>.  An
-extensive manual, scripts, and much further information is at the Siena website
-<http://www.stats.ox.ac.uk/~snijders/siena/>.")
+An overview of these models is given in Snijders (2017),
+<doi:10.1146/annurev-statistics-060116-054035>.")
     (license (list license:gpl2 license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -9020,20 +8990,20 @@ projects.  Includes customized templates and accepts your own as JSON files.")
 (define-public r-rprofile
   (package
     (name "r-rprofile")
-    (version "0.2.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rprofile" version))
        (sha256
-        (base32 "0j8xyi01095x9vmk98x97qzsm5zgkpp1if0p4k80qp6cvh1ycy1g"))))
+        (base32 "0vikr77qk6y1ci1k2l843prlmndk61rvbbw9gv40lzwr9q5pdivb"))))
     (properties `((upstream-name . "rprofile")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=rprofile")
     (synopsis
      "Load Both User-Global and Project-Specific R Profile Configurations")
     (description
-     "Use rprofile::init() inside a project .Rprofile file to ensure that the
+     "Use rprofile::load() inside a project .Rprofile file to ensure that the
 user-global .Rprofile is loaded correctly regardless of its location, and other
 common resources (in particular renv') are also set up correctly.")
     (license license:expat)))
@@ -10464,13 +10434,13 @@ geographic extent.")
 (define-public r-rpaex
   (package
     (name "r-rpaex")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rPAex" version))
        (sha256
-        (base32 "08r3j1m4dcmxdzsxjalbvi7nvca91ma0v06vy2pki6pp8f91pbdg"))))
+        (base32 "1gx0hgyizhkv6wkdi4wrfc5vl2j548x418gff0ysq2nmifm5lpcy"))))
     (properties `((upstream-name . "rPAex")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-agricolae))
@@ -21200,13 +21170,13 @@ graded response model.  The full documentation and tutorials are at
 (define-public r-rirods
   (package
     (name "r-rirods")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rirods" version))
        (sha256
-        (base32 "0sgwxl0grkxb4g9mzsxshspdpciys0p5fi4kq3ihiglxrp3gl9aw"))))
+        (base32 "1960204g9iinhfizpn9blmw5qp633s5n090hmh9yq4azf9calrpx"))))
     (properties `((upstream-name . "rirods")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr r-rappdirs r-httr2 r-base64enc r-askpass))
@@ -24427,13 +24397,13 @@ highlighted in Mareschal et al (2014) <doi:10.1093/bioinformatics/btu185>.")
 (define-public r-rgap
   (package
     (name "r-rgap")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RGAP" version))
        (sha256
-        (base32 "0mc0cwwl6nlrjsgsqpbzzry8rx00fdj26a3g3wa9cw0n8nvh0p54"))))
+        (base32 "1gskz1zsr9v30f7w67a7d3fm66cnlafj329zq110ddgbp3agd2ll"))))
     (properties `((upstream-name . "RGAP")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -24900,6 +24870,27 @@ Proceedings of the 24th ACM SIGKDD International Conference on Knowledge
 Discovery Data Mining, pp.  2210-2218.  ACM, 2018.
 <doi:10.1145/3219819.3219994>.")
     (license license:gpl3)))
+
+(define-public r-rfold
+  (package
+    (name "r-rfold")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rfold" version))
+       (sha256
+        (base32 "037vpnqvxfnfpiskyv43v7iv2k6w5aaas3kmajsjrs0axjv711fm"))))
+    (properties `((upstream-name . "rfold")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-usethis r-here r-fs r-cli))
+    (home-page "https://cran.r-project.org/package=rfold")
+    (synopsis "Working with many R Folders Within an R Package")
+    (description
+     "Allows developers to work with many R folders inside a package.  It offers
+functionalities to transfer R scripts (saved outside the R folder) into the R
+folder while making additional checks.")
+    (license license:expat)))
 
 (define-public r-rfoc
   (package
@@ -35746,13 +35737,13 @@ unknown.")
 (define-public r-rctrep
   (package
     (name "r-rctrep")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RCTrep" version))
        (sha256
-        (base32 "0wg2rn2965yljfzqyjfdap8wkhz7f55yqan8krpw4ybf5v5acfas"))))
+        (base32 "1miqidpn8a3wv6pd4xqsnk9gzdsvdwdzsm656ass67jgyzzh2c9h"))))
     (properties `((upstream-name . "RCTrep")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -35786,7 +35777,7 @@ RCTrep offers a generic protocol for treatment effect validation based on four
 simple steps, namely, set-selection, estimation, diagnosis, and validation.
 RCTrep provides a simple dashboard to review the obtained results.  The
 validation approach is introduced by Shen, L., Geleijnse, G. and Kaptein, M.
-(2023) <doi:10.21203/rs.3.rs-2559287/v1>.")
+(2023) <doi:10.21203/rs.3.rs-2559287/v2>.")
     (license license:expat)))
 
 (define-public r-rct3
@@ -45668,55 +45659,6 @@ data analysis and visualization can be done easily.")
 <https://developers.activecampaign.com/reference>.  Provide functions for
 getting data by deals, contacts, accounts, campaigns and messages.")
     (license license:expat)))
-
-(define-public r-racmacs
-  (package
-    (name "r-racmacs")
-    (version "1.2.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Racmacs" version))
-       (sha256
-        (base32 "01grlw91s9pbi6b65y134b5qsv55y7j6m8fgj0gqpigxjqi7ryq5"))))
-    (properties `((upstream-name . "Racmacs")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vctrs
-                             r-shinyjs
-                             r-shinyfiles
-                             r-shiny
-                             r-shape
-                             r-rmarchingcubes
-                             r-rlang
-                             r-rcppprogress
-                             r-rcppensmallen
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-rapidjsonr
-                             r-mass
-                             r-magrittr
-                             r-ks
-                             r-jsonlite
-                             r-igraph
-                             r-htmlwidgets
-                             r-htmltools
-                             r-ggplot2
-                             r-ellipsis
-                             r-dplyr
-                             r-brotli))
-    (native-inputs (list r-knitr esbuild))
-    (home-page "https://acorg.github.io/Racmacs/")
-    (synopsis "Antigenic Cartography Macros")
-    (description
-     "This package provides a toolkit for making antigenic maps from immunological
-assay data, in order to quantify and visualize antigenic differences between
-different pathogen strains as described in Smith et al. (2004)
-<doi:10.1126/science.1097211> and used in the World Health Organization
-influenza vaccine strain selection process.  Additional functions allow for the
-diagnostic evaluation of antigenic maps and an interactive viewer is provided to
-explore antigenic relationships amongst several strains and incorporate the
-visualization of associated genetic information.")
-    (license license:agpl3)))
 
 (define-public r-racir
   (package

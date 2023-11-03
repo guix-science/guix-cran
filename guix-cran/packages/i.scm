@@ -4227,13 +4227,13 @@ the composite performance of an individual.")
 (define-public r-ipkg
   (package
     (name "r-ipkg")
-    (version "1.0.9")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ipkg" version))
        (sha256
-        (base32 "0n2p63mi6qfp0mr723cdkfsnbgykjrwzn1kyinqcydw5znwblz4x"))))
+        (base32 "1ldr4kf5mif3jwfrjk6flgcvfrg5mwz9c3zmwqzj3hwhwknwmb1d"))))
     (properties `((upstream-name . "ipkg")))
     (build-system r-build-system)
     (propagated-inputs (list r-remotes r-httr))
@@ -4354,13 +4354,13 @@ generated from the input data.")
 (define-public r-ipedsuploadables
   (package
     (name "r-ipedsuploadables")
-    (version "2.8.5")
+    (version "2.8.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IPEDSuploadables" version))
        (sha256
-        (base32 "0za69wfhqpmr6hl64kvpmw2sjhys74bnfab21zlwbxq8palhpmxh"))))
+        (base32 "0v168v83b5aj86rahlz80ggb7x99npq8gx30szcp0vxicz8a0nyk"))))
     (properties `((upstream-name . "IPEDSuploadables")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -9155,6 +9155,28 @@ of sites [De Caceres & Legendre (2009) <doi:10.1890/08-1823.1>].  Also includes
 functions to measure species niche breadth using resource categories [De Caceres
 et al. (2011) <doi:10.1111/J.1600-0706.2011.19679.x>].")
     (license license:gpl2+)))
+
+(define-public r-india
+  (package
+    (name "r-india")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "india" version))
+       (sha256
+        (base32 "1xk617s5njwdl6sz2vgprxbikv71azx9d79rmkvbdiraj740jsz5"))))
+    (properties `((upstream-name . "india")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-l1pack r-fastmatrix))
+    (home-page "https://cran.r-project.org/package=india")
+    (synopsis "Influence Diagnostics in Statistical Models")
+    (description
+     "Set of routines for influence diagnostics by using case-deletion in ordinary
+least squares, ridge estimation [Walker and Birch (1988).
+<doi:10.1080/00401706.1988.10488370>] and least absolute deviations (LAD)
+regression [Sun and Wei (2004). <doi:10.1016/j.spl.2003.08.018>].")
+    (license license:gpl3)))
 
 (define-public r-indgenerrors
   (package
@@ -15380,13 +15402,13 @@ by the icd package for finding comorbidities.")
 (define-public r-icctraj
   (package
     (name "r-icctraj")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iccTraj" version))
        (sha256
-        (base32 "0c6ia3h7a16d8qsrkgrs2sy8xslc4qib6gq636ckbjxlja3pzln7"))))
+        (base32 "0chac68jsxnmy0whm7ajnlv68xdplwzy5xa7pdybyp3zlxyj35ss"))))
     (properties `((upstream-name . "iccTraj")))
     (build-system r-build-system)
     (propagated-inputs (list r-trajectories

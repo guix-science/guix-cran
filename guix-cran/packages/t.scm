@@ -1794,16 +1794,16 @@ given target value in smaller computation time than algorithm B.")
 (define-public r-ttservice
   (package
     (name "r-ttservice")
-    (version "0.3.8")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ttservice" version))
        (sha256
-        (base32 "1gkkr6vhj0kd16c3wvl35marlykqx80fkny5r7ymrn4vvb2zkm94"))))
+        (base32 "1qqf6vrp9bx72wzy4z6js2svglix3xpn367k5rh4kqi7k860g8fp"))))
     (properties `((upstream-name . "ttservice")))
     (build-system r-build-system)
-    (propagated-inputs (list r-matrix r-dplyr))
+    (propagated-inputs (list r-plotly r-matrix r-dplyr))
     (home-page "https://cran.r-project.org/package=ttservice")
     (synopsis "Service for Tidy Transcriptomics Software Suite")
     (description
@@ -2649,19 +2649,21 @@ GPH estimator proposed by Reisen et al. (2017) <doi:10.1016/j.jspi.2017.02.008>.
 (define-public r-tspredit
   (package
     (name "r-tspredit")
-    (version "1.0.707")
+    (version "1.0.727")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tspredit" version))
        (sha256
-        (base32 "1ycpmi8ywl3p9mkf41y76bxfbwphrmwlh67n71bv6qz6vw8r5klb"))))
+        (base32 "0igr673zyy63m36wrjgcdax18ap6djq3n6hhxsi5knvcg5xyaqb7"))))
     (properties `((upstream-name . "tspredit")))
     (build-system r-build-system)
     (propagated-inputs (list r-smotefamily
+                             r-mfilter
                              r-leaps
                              r-glmnet
                              r-fselector
+                             r-forecast
                              r-dplyr
                              r-doby
                              r-daltoolbox))
@@ -12191,20 +12193,20 @@ dependency-free.")
 (define-public r-tinycodet
   (package
     (name "r-tinycodet")
-    (version "0.1.0.6")
+    (version "0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinycodet" version))
        (sha256
-        (base32 "0458kjvmid6cjj83srb81agwmq4vcd2r4pfnpdpkvvw3n0bbc698"))))
+        (base32 "10hz4zmc5prn76hx62hja3bqhcragz5bxdymprf8kdgamrljqm83"))))
     (properties `((upstream-name . "tinycodet")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi))
     (home-page "https://github.com/tony-aw/tinycodet/")
-    (synopsis "Few Functions to Help in your Coding Etiquette")
+    (synopsis "Functions to Help in your Coding Etiquette")
     (description
-     "Adds a few functions to help in your coding etiquette.  tinycodet primarily
+     "Adds some functions to help in your coding etiquette.  tinycodet primarily
 focuses on 4 aspects.  1) Safer decimal (in)equality testing, safer atomic
 conversions, and other functions for safer coding.  2) A new package import
 system, that attempts to combine the benefits of using a package without
@@ -20754,19 +20756,21 @@ been published.")
 (define-public r-tectonicr
   (package
     (name "r-tectonicr")
-    (version "0.2.93")
+    (version "0.2.95")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tectonicr" version))
        (sha256
-        (base32 "0a5lxjk4ghjxyhmprh3ay8922dzp59affnkppl2s7zfbz5cnmxz0"))))
+        (base32 "0ywq3iq6p4gfrdrmhh4fxw4gkw2ff1h55zlad6c579yc138yq5an"))))
     (properties `((upstream-name . "tectonicr")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
                              r-viridis
                              r-tidyr
                              r-terra
+                             r-spatstat-utils
+                             r-spatstat-geom
                              r-spatstat-explore
                              r-smoothr
                              r-sf
@@ -23889,13 +23893,13 @@ geospatial, it corrects for differences in visibility between areas.")
 (define-public r-tabularaster
   (package
     (name "r-tabularaster")
-    (version "0.7.1")
+    (version "0.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tabularaster" version))
        (sha256
-        (base32 "0b8jl3bf7q0302mlnqh720qs7rllkgyg127n1h25snb34k1wc3pm"))))
+        (base32 "1v64cdh098nmlaj8g3dbyssxrwizaqhabsb7djvz60g2x3z2d20k"))))
     (properties `((upstream-name . "tabularaster")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble

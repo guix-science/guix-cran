@@ -2166,13 +2166,13 @@ Functions in vivaldi primarily operate on vcf files.")
 (define-public r-vivainsights
   (package
     (name "r-vivainsights")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vivainsights" version))
        (sha256
-        (base32 "16iynrx9jk8zk8592fzbhbr42ppgpb159y38vx7sql901pxrfpj5"))))
+        (base32 "03i3y2yhdsmb7axjq54g9k7iqykgapc93zyjqi33bagnh1fbljc1"))))
     (properties `((upstream-name . "vivainsights")))
     (build-system r-build-system)
     (propagated-inputs (list r-wpa
@@ -3423,13 +3423,13 @@ function evaluation, and simulation.")
 (define-public r-vinereg
   (package
     (name "r-vinereg")
-    (version "0.9.1")
+    (version "0.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vinereg" version))
        (sha256
-        (base32 "11k20h2kldlpf880znkjw3afxg9sr5zl7ssll5agl0kxcxi82fwx"))))
+        (base32 "1abfshyg61faar7hk2357wic7hy4m39g7f7zwccil2h0ihr3dngv"))))
     (properties `((upstream-name . "vinereg")))
     (build-system r-build-system)
     (propagated-inputs (list r-wdm

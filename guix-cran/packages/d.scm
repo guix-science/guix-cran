@@ -6314,13 +6314,13 @@ and intervals from English-language prescriptions.  Based on Karystianis et al.
 (define-public r-dosefinding
   (package
     (name "r-dosefinding")
-    (version "1.0-5")
+    (version "1.1-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DoseFinding" version))
        (sha256
-        (base32 "0sccgwk4h9s5l1pw8yp8p55ad1w9q4n4mmqmkc8kgkjy39k2mrrc"))))
+        (base32 "052ic1d7qlcvcglzskdv97v7dnbi2lh8xpkbxf9srqn3sgs812n3"))))
     (properties `((upstream-name . "DoseFinding")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-lattice r-ggplot2))
@@ -8345,13 +8345,13 @@ as given in Barnett, W. A. (1980) (<DOI:10.1016/0304-4076(80)90070-6>).")
 (define-public r-dm
   (package
     (name "r-dm")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dm" version))
        (sha256
-        (base32 "00vp5nvlcnmmyahljdbk1g0l3dblx7a73g1fiv6m005bsd4nxc7z"))))
+        (base32 "0cwmmpw8w4wvxn44gfqk06rqhznigdcf24faiyqrh5k048xpf3sk"))))
     (properties `((upstream-name . "dm")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -22999,13 +22999,13 @@ manipulation.  The package uses libsailr (C/C++ library) for its
 (define-public r-datarobot
   (package
     (name "r-datarobot")
-    (version "2.18.4")
+    (version "2.18.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datarobot" version))
        (sha256
-        (base32 "015hb7srndwgl0wxw5601hjqyy2hy9dm5nzlwx2hdbpc4cmcgvrm"))))
+        (base32 "0ivnx5pwz4mv4csyclf0h69hywvvqwyb1n2r8m43yvv0mlpnq7gb"))))
     (properties `((upstream-name . "datarobot")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml r-jsonlite r-httr))
@@ -23642,26 +23642,6 @@ processes by simulating data with agent-based models and correctly deriving the
 underlying decision models for multiple agent models and degrees of
 stochasticity.")
     (license license:expat)))
-
-(define-public r-dataframes2xls
-  (package
-    (name "r-dataframes2xls")
-    (version "0.4.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dataframes2xls" version))
-       (sha256
-        (base32 "10krlv0l5w021z0qd7rj93pzfjjmcjlda4xz4vq470bxbjmn1bss"))))
-    (properties `((upstream-name . "dataframes2xls")))
-    (build-system r-build-system)
-    (inputs (list python))
-    (home-page "https://cran.r-project.org/package=dataframes2xls")
-    (synopsis "Write Data Frames to Xls Files")
-    (description
-     "Writes data frames to xls files.  It supports multiple sheets and basic
-formatting.")
-    (license license:bsd-3)))
 
 (define-public r-dataframeexplorer
   (package

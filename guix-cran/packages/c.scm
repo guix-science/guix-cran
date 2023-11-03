@@ -400,17 +400,17 @@ provided in the package code.")
 (define-public r-cyclotomic
   (package
     (name "r-cyclotomic")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cyclotomic" version))
        (sha256
-        (base32 "0n4xgfyjbnxqpy4w8x2gw8m3fg11klywlxn4v05lrhf7r4paggk0"))))
+        (base32 "1r2z21d2fylifw39ascx73k4rlfa3b1zg2pdbm2j7hg7g7rsr8w5"))))
     (properties `((upstream-name . "cyclotomic")))
     (build-system r-build-system)
     (propagated-inputs (list r-verylargeintegers
-                             r-primes
+                             r-numbers
                              r-memoise
                              r-maybe
                              r-intmap
@@ -2856,13 +2856,13 @@ the existence of change point, for the paper, \"Feipeng Zhang and Qunhua Li
 (define-public r-cthist
   (package
     (name "r-cthist")
-    (version "2.1.0")
+    (version "2.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cthist" version))
        (sha256
-        (base32 "12z24kw3m203vjswbq63kqx0jbpy3scyvc158kd0x4w083r466f8"))))
+        (base32 "01zq7avxqzifcm1hm75kji59ds3ib506ccg1587ldlwm7iwcfr9g"))))
     (properties `((upstream-name . "cthist")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -8364,13 +8364,13 @@ Diego.; Luo & Xu (2022) <doi:10.48550/@code{arXiv.2206.02296>}; Rava (2021)
 (define-public r-cowsay
   (package
     (name "r-cowsay")
-    (version "0.8.2")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cowsay" version))
        (sha256
-        (base32 "1c1dawk3w9wipbbllf2408wdvasj7c49sv310nn5w3i56sind5zx"))))
+        (base32 "18jr8v0c4vvwvixklcl3kggwzhq1xnpi3brdjiby48zh873b2chd"))))
     (properties `((upstream-name . "cowsay")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmsfact r-fortunes r-crayon))
@@ -10618,13 +10618,13 @@ Vardar-Acar, C. (2017) <DOI:10.1007/978-981-10-3307-0_4>.")
 (define-public r-corrtable
   (package
     (name "r-corrtable")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "corrtable" version))
        (sha256
-        (base32 "1bkv3yb5xhqj046mdbbfccn070ln9pmdallmz3bg5lliyjm0aaf6"))))
+        (base32 "0l1kvr62lgixzn0hl5xqzpddksw6w8iwrqg4vycbl0gsgvyhm302"))))
     (properties `((upstream-name . "corrtable")))
     (build-system r-build-system)
     (propagated-inputs (list r-hmisc))
@@ -16366,6 +16366,46 @@ G. M. (2016).  Compounding of distributions: a survey and new generalized
 classes.  Journal of Statistical Distributions and Applications, 3, 1-35.
 <doi:10.1186/s40488-016-0052-1>.")
     (license license:gpl2+)))
+
+(define-public r-comradesoo
+  (package
+    (name "r-comradesoo")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "comradesOO" version))
+       (sha256
+        (base32 "00qdp4n5kqhmsd51z08lj1n6l284kr4g9giz644pcklp6brwnj0l"))))
+    (properties `((upstream-name . "comradesOO")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-topdom
+                             r-tidyverse
+                             r-seqinr
+                             r-s4vectors
+                             r-rrna
+                             r-reshape2
+                             r-rcolorbrewer
+                             r-r4rna
+                             r-mixtools
+                             r-mass
+                             r-iranges
+                             r-igraph
+                             r-heatmap3
+                             r-ggrepel
+                             r-ggplot2
+                             r-genomicranges
+                             r-foreach
+                             r-doparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=comradesOO")
+    (synopsis
+     "Analysis of COMRADES (Cross-Linking Matched RNA and Deep Sequencing) Data")
+    (description
+     "Analysis of RNA crosslinking data for RNA structure prediction.  The package is
+suitable for the analysis of RNA structure cross-linking data and chemical
+probing data.")
+    (license license:gpl3)))
 
 (define-public r-compute-es
   (package
@@ -25025,6 +25065,51 @@ climate dynamics through exploring and measuring different dimensions of climate
 change in space and time.")
     (license license:gpl3+)))
 
+(define-public r-climenv
+  (package
+    (name "r-climenv")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "climenv" version))
+       (sha256
+        (base32 "0w1pz725b6sw854pinypgi57vb2xjis3xx53b4mggwpdghck6mk7"))))
+    (properties `((upstream-name . "climenv")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra
+                             r-ternary
+                             r-sp
+                             r-sf
+                             r-randomforest
+                             r-plyr
+                             r-glue
+                             r-geodata
+                             r-exactextractr
+                             r-elevatr
+                             r-dplyr
+                             r-dismo
+                             r-climaemet))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jamestsakalos/climenv")
+    (synopsis "Download, Extract and Visualise Climate and Elevation Data")
+    (description
+     "Grants access to three widely recognised modelled data sets, namely Global
+Climate Data (@code{WorldClim} 2), Climatologies at high resolution for the
+earth's land surface areas (CHELSA), and National Aeronautics and Space
+Administration's (NASA) Shuttle Radar Topography Mission (SRTM).  It handles
+both multi and single geospatial polygon and point data, extracts outputs that
+can serve as covariates in various ecological studies.  Provides two common
+graphic options â the Walter-Lieth (1960)
+<https://donum.uliege.be/bitstream/2268.1/7079/1/Walter-Lieth_Klimadiagramm-Weltatlas.pdf>
+climate diagram and the Holdridge (1967)
+<https://reddcr.go.cr/sites/default/files/centro-de-documentacion/holdridge_1966_-_life_zone_ecology.pdf>
+life zone classification scheme.  Provides one new graphic scheme of our own
+design which incorporates aspects of both Walter-Leigh and Holdridge.  Provides
+user-friendly access and extraction of globally recognisable data sets to
+enhance their usability across a broad spectrum of applications.")
+    (license license:gpl3)))
+
 (define-public r-clime
   (package
     (name "r-clime")
@@ -31249,13 +31334,13 @@ displays of results are emphasized.")
 (define-public r-cftime
   (package
     (name "r-cftime")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CFtime" version))
        (sha256
-        (base32 "1lrzx3rxipfyjbfjic9c80pmbgfldbgyhz823v04761h6jplpp9i"))))
+        (base32 "0ywqps6p53nyy5x4qvyki94gmk5ax30b3qpcjrby4aixdr8ns85h"))))
     (properties `((upstream-name . "CFtime")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -36547,20 +36632,20 @@ in community detection tasks.")
 (define-public r-caschrono
   (package
     (name "r-caschrono")
-    (version "2.3")
+    (version "2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "caschrono" version))
        (sha256
-        (base32 "06q327cqa0hb0q60zyyj6r7ydcw9big597nwmmhb8px9j9d4pxdr"))))
+        (base32 "1z5hpmyqila2d1ils4jxq87s4x6xfskpd0xixk2fn1qalk5x2gh3"))))
     (properties `((upstream-name . "caschrono")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-hmisc))
-    (home-page "http://www.seriestemporelles.com")
-    (synopsis "S<e9>ries Temporelles Avec R")
+    (home-page "https://cran.r-project.org/package=caschrono")
+    (synopsis "Series Temporelles Avec R")
     (description
-     "Functions, data sets and exercises solutions for the book Séries Temporelles
+     "Functions, data sets and exercises solutions for the book Series Temporelles
 Avec R (Yves Aragon, edp sciences, 2016).  For all chapters, a vignette is
 available with some additional material and exercises solutions.")
     (license license:gpl2+)))

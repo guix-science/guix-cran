@@ -13737,13 +13737,13 @@ University of Technology, Faculty of Mathematics and Information Science.")
 (define-public r-modeldb
   (package
     (name "r-modeldb")
-    (version "0.2.3")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modeldb" version))
        (sha256
-        (base32 "1drmcs46l77ihi4j4qr7j09bnf9n1488zy5954gqahq7ab80ag3g"))))
+        (base32 "109ggy93ikcc5mv8jx8z8kx41pzzbz96mgqzwf8z7175ir6bql6z"))))
     (properties `((upstream-name . "modeldb")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidypredict
@@ -13752,7 +13752,8 @@ University of Technology, Faculty of Mathematics and Information Science.")
                              r-purrr
                              r-progress
                              r-ggplot2
-                             r-dplyr))
+                             r-dplyr
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://modeldb.tidymodels.org")
     (synopsis "Fits Models Inside the Database")
@@ -22849,13 +22850,13 @@ Perederiy, V. (2017) <@code{arXiv:1708.00062>}.")
 (define-public r-migraph
   (package
     (name "r-migraph")
-    (version "1.1.0")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "migraph" version))
        (sha256
-        (base32 "09ldp1xk9yfm9l8x7dkr3nh845102whmqmgjib5wksgby19v8alw"))))
+        (base32 "0qn2cadan3hwav2yp3p86ll3y8nqbwnmx7c9pcnd0gfs7ff97y2p"))))
     (properties `((upstream-name . "migraph")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -22872,7 +22873,7 @@ Perederiy, V. (2017) <@code{arXiv:1708.00062>}.")
                              r-future
                              r-furrr
                              r-dplyr))
-    (home-page "https://github.com/snlab-ch/migraph")
+    (home-page "https://snlab-ch.github.io/migraph/")
     (synopsis "Multimodal Network Analysis and More")
     (description
      "This package provides a set of tools for analysing multimodal networks.  It
@@ -23832,6 +23833,29 @@ analysis, machine learning, environmental data analysis and functional analysis.
     (description
      "This package provides utilities for reading and processing microdata from
 Spanish official statistics with R.")
+    (license license:gpl3)))
+
+(define-public r-microcran
+  (package
+    (name "r-microcran")
+    (version "0.9.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "microCRAN" version))
+       (sha256
+        (base32 "1s1chzmrn9bk09bwgwkzid5bqd8a0248vkl1hglgd29c5lc9jf61"))))
+    (properties `((upstream-name . "microCRAN")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xtable r-rlang r-plumber r-mime r-assertthat))
+    (home-page "https://cran.r-project.org/package=microCRAN")
+    (synopsis "Hosting an Independent CRAN Repository")
+    (description
+     "Stand-alone HTTP capable R-package repository, that fully supports R's
+install.packages() and available.packages().  It also contains API endpoints for
+end-users to add/update packages.  This package can supplement @code{miniCRAN}',
+which has functions for maintaining a local (partial) copy of CRAN'.  Current
+version is bare-minimum without any access-control or much security.")
     (license license:gpl3)))
 
 (define-public r-microcontax
@@ -25814,13 +25838,13 @@ storing fisheries data and aggregating ready for use within a Gadget
 (define-public r-mfd
   (package
     (name "r-mfd")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mFD" version))
        (sha256
-        (base32 "12m40ggz47bmccvpch21swrq2lddi4zvb199waw2csjlhixr60md"))))
+        (base32 "1n5jli7q2a6b1ncnj9ppwh5yfviq7jlhf5f53r5hgw7xhipazxr2"))))
     (properties `((upstream-name . "mFD")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -35639,29 +35663,6 @@ data frame and expand a data frame of matrices into a tidy data frame.")
 name.\"")
     (license license:expat)))
 
-(define-public r-matrixtests
-  (package
-    (name "r-matrixtests")
-    (version "0.2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "matrixTests" version))
-       (sha256
-        (base32 "0d7i00cxzszfdnjm8q5b72ildic8nig6fbw7rba6acdnllpp7sza"))))
-    (properties `((upstream-name . "matrixTests")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-matrixstats))
-    (home-page "https://github.com/karoliskoncevicius/matrixTests")
-    (synopsis
-     "Fast Statistical Hypothesis Tests on Rows and Columns of Matrices")
-    (description
-     "This package provides functions to perform fast statistical hypothesis tests on
-rows/columns of matrices.  The main goals are: 1) speed via vectorization, 2)
-output that is detailed and easy to use, 3) compatibility with tests implemented
-in R (like those available in the stats package).")
-    (license license:gpl2)))
-
 (define-public r-matrixstructest
   (package
     (name "r-matrixstructest")
@@ -39238,13 +39239,13 @@ Huband, et al. (2005) <doi:10.1109/TEVC.2005.861417>.")
 (define-public r-manynet
   (package
     (name "r-manynet")
-    (version "0.2.3")
+    (version "0.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "manynet" version))
        (sha256
-        (base32 "0kc567jc0mc4v71c0ymny5zhraja6xnrcviqgm75pvzyhs13q605"))))
+        (base32 "0jbmra7xyss13y7hki7xhn248jym3bi9si29dgslcf7g6yx8xvvx"))))
     (properties `((upstream-name . "manynet")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidygraph

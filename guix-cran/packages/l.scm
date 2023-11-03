@@ -4954,6 +4954,41 @@ limit of detection.")
 package has no external dependencies.")
     (license (license:fsdg-compatible "BSD_3_clause + file LICENCE"))))
 
+(define-public r-locuszoomr
+  (package
+    (name "r-locuszoomr")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "locuszoomr" version))
+       (sha256
+        (base32 "13dh0p064zaj2z9rl4vajkc7vil86sf64vhfb73b2m5m7hq04ql6"))))
+    (properties `((upstream-name . "locuszoomr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang
+                             r-plotly
+                             r-memoise
+                             r-ldlinkr
+                             r-gtable
+                             r-ggplot2
+                             r-genomeinfodb
+                             r-ensembldb
+                             r-biocgenerics
+                             r-annotationfilter))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/myles-lewis/locuszoomr")
+    (synopsis "Gene Locus Plot with Gene Annotations")
+    (description
+     "Publication-ready regional gene locus plots similar to those produced by the web
+interface @code{LocusZoom} <https://my.locuszoom.org>, but running locally in R.
+Genetic or genomic data with gene annotation tracks are plotted via R base
+graphics system, ggplot2 or plotly', allowing flexibility and easy customisation
+including laying out multiple locus plots on the same page.  It uses the LDlink
+API <https://ldlink.nih.gov/?tab=apiaccess> to query linkage disequilibrium data
+from the 1000 Genomes Project and can overlay this on plots.")
+    (license license:artistic2.0)))
+
 (define-public r-locus
   (package
     (name "r-locus")
@@ -5287,13 +5322,13 @@ Economics (http://www.sgh.waw.pl/en/).")
 (define-public r-localscore
   (package
     (name "r-localscore")
-    (version "1.0.8")
+    (version "1.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "localScore" version))
        (sha256
-        (base32 "0sb4azqcrn3k87wb998bgxysr5g26x8nwk269rv65567ahi9gjv5"))))
+        (base32 "0bzbw03gvlpc3xirwq83fybgshcqlqcb8asbk0vdk351m41pwk3m"))))
     (properties `((upstream-name . "localScore")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -5303,12 +5338,11 @@ Economics (http://www.sgh.waw.pl/en/).")
     (description
      "Functionalities for calculating the local score and calculating statistical
 relevance (p-value) to find a local Score in a sequence of given distribution
-(S. Mercier and J.-J. Daudin (2001)
-<https://hal.archives-ouvertes.fr/hal-00714174>) ; S. Karlin and S. Altschul
-(1990) <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC53667/> ; S. Mercier, D.
-Cellier and F. Charlot (2003) <https://hal.archives-ouvertes.fr/hal-00937529v1>
-; A. Lagnoux, S. Mercier and P. Valois (2017)
-<doi:10.1093/bioinformatics/btw699> ).")
+(S. Mercier and J.-J. Daudin (2001) <https://hal.science/hal-00714174/>) ; S.
+Karlin and S. Altschul (1990)
+<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC53667/> ; S. Mercier, D. Cellier
+and F. Charlot (2003) <https://hal.science/hal-00937529v1/> ; A. Lagnoux, S.
+Mercier and P. Valois (2017) <doi:10.1093/bioinformatics/btw699> ).")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -7017,13 +7051,13 @@ in R.")
 (define-public r-liver
   (package
     (name "r-liver")
-    (version "1.14")
+    (version "1.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "liver" version))
        (sha256
-        (base32 "1rbj8cjd1ir7qzs4981g3z648a9kaaq8bz0wggrmd38gpbvc2f8p"))))
+        (base32 "0b786f9r3i2cskshzqgwkb2wx33xv82kl2rxfy047jda2y938lhc"))))
     (properties `((upstream-name . "liver")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2 r-class))
@@ -7031,17 +7065,16 @@ in R.")
     (home-page "https://www.uva.nl/profile/a.mohammadi")
     (synopsis "\"Eating the Liver of Data Science\"")
     (description
-     "This package provides a collection of helper functions that make various
-techniques from data science more user-friendly for non-experts.  In this way,
-our aim is to allow non-experts to become familiar with the techniques with only
-a minimal level of coding knowledge.  Indeed, following an ancient Persian
-idiom, we refer to this as \"eating the liver of data science\" which could be
-interpreted as \"getting intimately close with data science\".  Examples of
-procedures we include are: data partitioning for out-of-sample testing,
-computing Mean Squared Error (MSE) for quantifying prediction accuracy, and data
-transformation (z-score and min-max).  Besides such helper functions, the
-package also includes several interesting datasets that are useful for
-multivariate analysis.")
+     "Offers a suite of helper functions to simplify various data science techniques
+for non-experts.  This package aims to enable individuals with only a minimal
+level of coding knowledge to become acquainted with these techniques in an
+accessible manner.  Inspired by an ancient Persian idiom, we liken this process
+to \"eating the liver of data science,\" suggesting a deep and intimate engagement
+with the field of data science.  This package includes functions for tasks such
+as data partitioning for out-of-sample testing, calculating Mean Squared Error
+(MSE) to assess prediction accuracy, and data transformations (z-score and
+min-max).  In addition to these helper functions, the liver package also
+features several intriguing datasets valuable for multivariate analysis.")
     (license license:gpl2+)))
 
 (define-public r-live
@@ -14610,32 +14643,6 @@ History of Labour Relations.  The package also allows for visualisation of
 labour relations according to the Collaboratory's format.")
     (license license:gpl3)))
 
-(define-public r-laplacedeconv
-  (package
-    (name "r-laplacedeconv")
-    (version "1.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "LaplaceDeconv" version))
-       (sha256
-        (base32 "0n56cmrb536j1vmfizzag1x8wm68c2znpclwbdl8qraqzp8rmffx"))))
-    (properties `((upstream-name . "LaplaceDeconv")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-polynom r-orthopolynom))
-    (home-page "https://cran.r-project.org/package=LaplaceDeconv")
-    (synopsis
-     "Laplace Deconvolution with Noisy Discrete Non-Equally Spaced Observations on a Finite Time Interval")
-    (description
-     "Solves the problem of Laplace deconvolution with noisy discrete non-equally
-spaced observations on a finite time interval based on expansions of the
-convolution kernel, the unknown function and the observed signal over Laguerre
-functions basis.  It implements the methodology proposed in the paper \"Laplace
-deconvolution on the basis of time domain data and its application to Dynamic
-Contrast Enhanced imaging\" by F. Comte, C-A. Cuenod, M. Pensky and Y. Rozenholc
-in @code{ArXiv} (http://arxiv.org/abs/1405.7107).")
-    (license license:expat)))
-
 (define-public r-lans2r
   (package
     (name "r-lans2r")
@@ -15509,13 +15516,13 @@ Additional information is provided in Chianucci and Cesaretti (2022)
 (define-public r-lacunaritycovariance
   (package
     (name "r-lacunaritycovariance")
-    (version "1.1-5")
+    (version "1.1-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lacunaritycovariance" version))
        (sha256
-        (base32 "15jyn0ambpknzzh2lblsf20va5rw8vxa29gimjql069qlvaavq00"))))
+        (base32 "10l5q4plnh1nnbcb3zh68mglrilcmlxsviznli8w8vzj2h5yfnhm"))))
     (properties `((upstream-name . "lacunaritycovariance")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-random r-spatstat-geom

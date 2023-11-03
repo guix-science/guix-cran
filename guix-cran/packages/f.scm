@@ -6008,13 +6008,13 @@ al. (2018) <doi:10.1117/1.JRS.12.036006> using a moving window approach.")
 (define-public r-fossilsimshiny
   (package
     (name "r-fossilsimshiny")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FossilSimShiny" version))
        (sha256
-        (base32 "0dvf0rszlj1bs0qyi2fy80709wq7qhk50fcgr79265p5w8sq4kfs"))))
+        (base32 "09qhydwcsvaiczgz61p0fxy0gl31cmfhidhbhaxxlf0ic3gaa2sv"))))
     (properties `((upstream-name . "FossilSimShiny")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-fossilsim))
@@ -17808,6 +17808,29 @@ Wilson-Hilferty transformation of chi squared variables.  Furthermore, the
 package provides interfaces to C code callable by another C code from other R
 packages.")
     (license license:gpl3)))
+
+(define-public r-fastmatmr
+  (package
+    (name "r-fastmatmr")
+    (version "1.2.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fastMatMR" version))
+       (sha256
+        (base32 "0sdgq08wq7zws3j6pg67kw0g0zxqj42y73qw3736fcg57ljhhh7x"))))
+    (properties `((upstream-name . "fastMatMR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-cpp11))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ropensci/fastMatMR")
+    (synopsis "High-Performance Matrix Market File Operations")
+    (description
+     "An interface to the fast_matrix_market C++ library, this package offers
+efficient read and write operations for Matrix Market files in R. It supports
+both sparse and dense matrix formats.  Peer-reviewed at R@code{OpenSci}
+(<https://github.com/ropensci/software-review/issues/606>).")
+    (license license:expat)))
 
 (define-public r-fastm
   (package

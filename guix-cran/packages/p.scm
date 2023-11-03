@@ -2432,16 +2432,17 @@ polytomous and dichotomous data.")
 (define-public r-psycmodel
   (package
     (name "r-psycmodel")
-    (version "0.4.1")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psycModel" version))
        (sha256
-        (base32 "0b6kamy2c6a6krs4i1mzzmiacxybyqvyl9kajc9l0ykj1hilixp8"))))
+        (base32 "08n2vc5mjzv28qxayzw7b20y5ci4vgh0ppks4mpyx0a97hnnz24r"))))
     (properties `((upstream-name . "psycModel")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
                              r-tibble
                              r-stringr
                              r-rlang
@@ -17720,28 +17721,6 @@ support grid graphics such as lattice and ggplot.  See \"example('devsize')\" an
 \"vignette('plotscale')\".")
     (license license:gpl3)))
 
-(define-public r-plotrr
-  (package
-    (name "r-plotrr")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "plotrr" version))
-       (sha256
-        (base32 "07ilqpa3ypqb2gpnq23r9v4kkfxz06mcak9si9adr9sf6c7gqwxz"))))
-    (properties `((upstream-name . "plotrr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-ggplot2 r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=plotrr")
-    (synopsis
-     "Making Visual Exploratory Data Analysis with Nested Data Easier")
-    (description
-     "This package provides functions for making visual exploratory data analysis with
-nested data easier.")
-    (license license:expat)))
-
 (define-public r-plotrcs
   (package
     (name "r-plotrcs")
@@ -21335,51 +21314,6 @@ Pijavski method, which was published in Pijavski (1972)
 <DOI:10.1016/0041-5553(72)90115-2>.")
     (license license:lgpl3)))
 
-(define-public r-piglet
-  (package
-    (name "r-piglet")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "piglet" version))
-       (sha256
-        (base32 "09l2qj8naalk8ywkmx0wmk82jllyd60g373jvy619kz7ad9dc1xp"))))
-    (properties `((upstream-name . "piglet")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zen4r
-                             r-tigger
-                             r-splitstackshape
-                             r-rlang
-                             r-rcolorbrewer
-                             r-r6
-                             r-magrittr
-                             r-jsonlite
-                             r-ggplot2
-                             r-dplyr
-                             r-dendextend
-                             r-decipher
-                             r-data-table
-                             r-complexheatmap
-                             r-circlize
-                             r-biostrings
-                             r-alakazam))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=piglet")
-    (synopsis
-     "Program for Inferring Ig Allele Similarity Clusters and Genotypes")
-    (description
-     "Improves genotype inference and downstream AIRR-seq data analysis.  Inference of
-allele similarity clusters, an alternative naming scheme and genotype inference
-for IGH repertoires.  The main tools are allele similarity clusters (ASC), and
-allele based genotype.  The first tool is designed to reduce the ambiguity
-within the IGHV alleles.  The ambiguity is caused by duplicated or similar
-alleles which are shared among different genes.  The second tool is an allele
-based genotype, that determined the presence of an allele based on a threshold
-derived from a naive population.  Citation: Peres, et al (2022)
-<doi:10.1101/2022.12.26.521922>.")
-    (license (license:fsdg-compatible "CC BY 4.0"))))
-
 (define-public r-piggyback
   (package
     (name "r-piggyback")
@@ -22699,13 +22633,13 @@ properties of plants.  Part of the r4photobiology suite, Aphalo P. J. (2015)
 (define-public r-photobiologyleds
   (package
     (name "r-photobiologyleds")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "photobiologyLEDs" version))
        (sha256
-        (base32 "1wlf8n7g9scnnz3gimbpfn1klqd88ff5yddvcsas6qb8bn7ia3aa"))))
+        (base32 "0868ja97wy0cj3nia31xp646yni0q56na87rz63pb33spkw36r6p"))))
     (properties `((upstream-name . "photobiologyLEDs")))
     (build-system r-build-system)
     (propagated-inputs (list r-photobiology))
@@ -31469,16 +31403,16 @@ an example in the roxygen block.")
 (define-public r-pastclim
   (package
     (name "r-pastclim")
-    (version "1.2.4")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pastclim" version))
        (sha256
-        (base32 "0izfnafqxn874xbb6phybb8l5hpcpzhnrhp0dvmmfqhmf68z5r7d"))))
+        (base32 "00zkf6flv4f5ljn0difpa8j3n221gvflsjnfdhfjbxnnw80qbyrp"))))
     (properties `((upstream-name . "pastclim")))
     (build-system r-build-system)
-    (propagated-inputs (list r-terra r-ncdf4 r-curl))
+    (propagated-inputs (list r-terra r-ncdf4 r-lubridate r-curl))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/EvolEcolGroup/pastclim")
     (synopsis "Manipulate Time Series of Palaeoclimate Reconstructions")

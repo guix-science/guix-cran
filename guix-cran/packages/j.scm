@@ -2872,13 +2872,13 @@ probabilities of a general sampling design as in Fattorini (2006)
 (define-public r-jinjar
   (package
     (name "r-jinjar")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jinjar" version))
        (sha256
-        (base32 "10lilj98ppy3cpimn5pzsfkvm5chz4bw1rx3a3frgy56nmapnmsv"))))
+        (base32 "0d65a85pain2h642h4dd7sry58jkn2rkmaavzwiixp63j0gmixn8"))))
     (properties `((upstream-name . "jinjar")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-jsonlite r-fs r-cpp11 r-cli))
@@ -3026,28 +3026,6 @@ covariance matrices to be similar across classes, and the Group Graphical Lasso
 recommended over GGL for most applications.  Reference: Danaher P, Wang P,
 Witten DM. (2013) <doi:10.1111/rssb.12033>.")
     (license license:gpl2)))
-
-(define-public r-jgcricolors
-  (package
-    (name "r-jgcricolors")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "jgcricolors" version))
-       (sha256
-        (base32 "1lg6yzqly5y2cf396b6rvfqplnfyz9v9ay2g4q9m110mng5ln96l"))))
-    (properties `((upstream-name . "jgcricolors")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr r-rcolorbrewer r-markdown r-knitr
-                             r-ggplot2))
-    (native-inputs (list r-rcolorbrewer r-knitr r-ggplot2))
-    (home-page "https://github.com/JGCRI/jgcricolors")
-    (synopsis "Manage 'JGCRI' Color Palettes")
-    (description
-     "Color palettes used by the Pacific Northwest National Laboratory - Joint Global
-Change Research Institute for maps and charts.")
-    (license license:bsd-2)))
 
 (define-public r-jfm
   (package

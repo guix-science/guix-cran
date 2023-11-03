@@ -1469,13 +1469,13 @@ balance approach and the conditional expectations method.")
 (define-public r-quanteda-textstats
   (package
     (name "r-quanteda-textstats")
-    (version "0.96.3")
+    (version "0.96.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quanteda.textstats" version))
        (sha256
-        (base32 "1nx716fvdpwac67m8ld0nhqvv34a2hfk2c7kf1b2l1n60x285cr2"))))
+        (base32 "0x0b3zk1lmy0mxjpfnw7nshc9vp1i45gkd53g838ks207sdr8q4l"))))
     (properties `((upstream-name . "quanteda.textstats")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi
@@ -3571,23 +3571,18 @@ constraints.  The method used is outlined in D. Goldfarb, and A. Idnani (1983)
 (define-public r-qpcrtools
   (package
     (name "r-qpcrtools")
-    (version "0.2.1")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qPCRtools" version))
        (sha256
-        (base32 "1z5yha37w4zgf0yzkrrap34s4f2ngblvh698d7m0dfdchgai63qp"))))
+        (base32 "1m9niwqva1b7spkk8xn4n6f7xnfv9zmh1ardahaq10wr7c0x11sy"))))
     (properties `((upstream-name . "qPCRtools")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xlsx
-                             r-tidyr
+    (propagated-inputs (list r-tidyr
                              r-tibble
-                             r-stringr
-                             r-sjmisc
                              r-rstatix
-                             r-reshape2
-                             r-readxl
                              r-multcomp
                              r-magrittr
                              r-kableextra
@@ -3595,18 +3590,10 @@ constraints.  The method used is outlined in D. Goldfarb, and A. Idnani (1983)
                              r-ggpmisc
                              r-ggplot2
                              r-dplyr
-                             r-data-table
                              r-broom))
-    (native-inputs (list r-knitr))
     (home-page "https://github.com/lixiang117423/qPCRtools")
     (synopsis "Tools for qPCR")
-    (description
-     "RT-@code{qPCR} is a widely used method to detect the expression level of genes
-in biological research.  A crucial step in processing @code{qPCR} data is to
-calculate the amplification efficiency of genes to determine which method should
-be used to calculate expression level of genes.  This Package can do it easily.
-In addition to that, this package can calculate the expression level of genes
-based on three methods.")
+    (description "PKG_DESC.")
     (license license:expat)))
 
 (define-public r-qpcrhelper

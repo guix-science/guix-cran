@@ -3229,6 +3229,26 @@ Wallis, W. D. (1978) \"Hadamard matrices and their applications.  The Annals of
 Statistics, 1184-1238.\" <doi:10.1214/aos/1176344370>.")
     (license license:gpl2+)))
 
+(define-public r-normalize
+  (package
+    (name "r-normalize")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "normalize" version))
+       (sha256
+        (base32 "0c0vmq54mrj0h95q7hdvi9m7c1gdbiyhik5y3gbban8k6fzav0y7"))))
+    (properties `((upstream-name . "normalize")))
+    (build-system r-build-system)
+    (home-page "https://github.com/loelschlaeger/normalize")
+    (synopsis "Centering and Scaling of Numeric Data")
+    (description
+     "This package provides a simple method for centering and scaling of numeric data.
+ Certain columns or rows can be ignored when normalizing or be normalized
+jointly.")
+    (license license:gpl3+)))
+
 (define-public r-normalityassessment
   (package
     (name "r-normalityassessment")
@@ -5145,13 +5165,13 @@ workflows by users to help with analyzing and interpreting NMR data.")
 (define-public r-nmrphasing
   (package
     (name "r-nmrphasing")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMRphasing" version))
        (sha256
-        (base32 "007xxgpq9nw646x1vim0j2ci7r077iww7z6n1g7gm3p5928x9l99"))))
+        (base32 "1fp0jy657478dh3r878ss5j0xzxq4kv85dap86k46qnnm2d1jjv7"))))
     (properties `((upstream-name . "NMRphasing")))
     (build-system r-build-system)
     (propagated-inputs (list r-massspecwavelet r-baseline))
@@ -7908,16 +7928,17 @@ order 1 only.  Most functions of the package handle missing values.")
 (define-public r-nhm
   (package
     (name "r-nhm")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nhm" version))
        (sha256
-        (base32 "1yf9hnbmfb7xj8mbhnq40wvd0pd88x9qspy1jr3x0n8nb75i3jlp"))))
+        (base32 "1xc2kfc4g9f9nmsgm2fk5qhvlghgcyqiz9b5vr34a1x73cs9g0b8"))))
     (properties `((upstream-name . "nhm")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-maxlik r-desolve))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=nhm")
     (synopsis "Non-Homogeneous Markov and Hidden Markov Multistate Models")
     (description
@@ -11294,45 +11315,6 @@ model which compares response categories to a reference level.  See: J. Fox
 ISBN 1452205663.")
     (license license:gpl2+)))
 
-(define-public r-nestedcv
-  (package
-    (name "r-nestedcv")
-    (version "0.7.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "nestedcv" version))
-       (sha256
-        (base32 "0jpg4il1niyizfq8kkk391x7anhp2s38mrfypa86skr08ca46zss"))))
-    (properties `((upstream-name . "nestedcv")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rlang
-                             r-rfast
-                             r-proc
-                             r-matrixtests
-                             r-matrixstats
-                             r-glmnet
-                             r-ggplot2
-                             r-foreach
-                             r-doparallel
-                             r-data-table
-                             r-caret))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/myles-lewis/nestedcv")
-    (synopsis "Nested Cross-Validation with 'glmnet' and 'caret'")
-    (description
-     "This package implements nested k*l-fold cross-validation for lasso and
-elastic-net regularised linear models via the glmnet package and other machine
-learning models via the caret package.  Cross-validation of glmnet alpha mixing
-parameter and embedded fast filter functions for feature selection are provided.
- Described as double cross-validation by Stone (1977)
-<doi:10.1111/j.2517-6161.1977.tb01603.x>.  Also implemented is a method using
-outer CV to measure unbiased model performance metrics when fitting Bayesian
-linear and logistic regression shrinkage models using the horseshoe prior over
-parameters to encourage a sparse model as described by Piironen & Vehtari (2017)
-<doi:10.1214/17-EJS1337SI>.")
-    (license license:expat)))
-
 (define-public r-nestedcategbayesimpute
   (package
     (name "r-nestedcategbayesimpute")
@@ -12628,13 +12610,13 @@ of correlated data, and more.")
 (define-public r-ncmeta
   (package
     (name "r-ncmeta")
-    (version "0.3.5")
+    (version "0.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ncmeta" version))
        (sha256
-        (base32 "1w47dn04brqac98k5s8a88nh6d6qnkcilq3w4pfczbdff1rv2xlk"))))
+        (base32 "0pk5wn0hmf5n1bgx96xighpmr2kkka3fgl6was9z2rsr0k981mc2"))))
     (properties `((upstream-name . "ncmeta")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-tibble r-rnetcdf r-rlang r-dplyr))

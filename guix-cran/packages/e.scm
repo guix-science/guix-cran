@@ -9717,13 +9717,13 @@ systems.")
 (define-public r-epanet2toolkit
   (package
     (name "r-epanet2toolkit")
-    (version "0.7.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epanet2toolkit" version))
        (sha256
-        (base32 "0fcr3awbbsp4ihzw0b9z27glsp0h659g4ihmcxp5qgi1xkh4cc8r"))))
+        (base32 "0pzkljq2dd7vzgjv1n5jsj36a4rq7m1pb1l7sz4lbgakiznj7aj7"))))
     (properties `((upstream-name . "epanet2toolkit")))
     (build-system r-build-system)
     (home-page "https://github.com/bradleyjeck/epanet2toolkit")
@@ -9847,6 +9847,28 @@ without GUI support, the package also provide function to easily write out
 figures to lots of different type of formats.  Now this package provide function
 to extract colors from all types of figures and pdf files.")
     (license license:gpl2)))
+
+(define-public r-eodhd
+  (package
+    (name "r-eodhd")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "eodhd" version))
+       (sha256
+        (base32 "058rdl3a2bwbx4j27bwznrgrj7l2pdvmybwiyc82kb9kfavik107"))))
+    (properties `((upstream-name . "eodhd")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-httr))
+    (home-page
+     "https://github.com/EodHistoricalData/EODHD-APIs-R-Financial-Library")
+    (synopsis "Official 'eodhd' API R Financial Library")
+    (description
+     "Official eodhd API R Library.  It helps to get and work with financial data,
+historical data and etc.  API reference available at
+<https://eodhd.com/financial-apis/>.")
+    (license license:expat)))
 
 (define-public r-eoa3
   (package
@@ -14747,13 +14769,13 @@ semi-variogram fitting process.")
 (define-public r-eglhmm
   (package
     (name "r-eglhmm")
-    (version "0.0-23")
+    (version "0.1-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eglhmm" version))
        (sha256
-        (base32 "1id1x11fwrv658f555a7jzqvq12v7jxmwpl8avi99gn17lwmwq1g"))))
+        (base32 "1dwz36aq095pbhh9iklv4iizwg27pri3zh7klmnh3rxqkl9xng3h"))))
     (properties `((upstream-name . "eglhmm")))
     (build-system r-build-system)
     (propagated-inputs (list r-nnet r-dbd))

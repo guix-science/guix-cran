@@ -3348,13 +3348,13 @@ electric power transmission network) in the UK since 2011.")
 (define-public r-ukfe
   (package
     (name "r-ukfe")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "UKFE" version))
        (sha256
-        (base32 "1yrjg99sywixriq7ibdfbz33ikwc6k2nb802prkjmiwlxhqcw10n"))))
+        (base32 "0gnawmjjrsx24kk114kgxvzzmpski3gas68ri6igglip3nicy7ir"))))
     (properties `((upstream-name . "UKFE")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2))

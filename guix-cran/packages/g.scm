@@ -7020,13 +7020,13 @@ elevation difference and azimuth.(PLAZA, J. et al., 2022)
 (define-public r-gps
   (package
     (name "r-gps")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gps" version))
        (sha256
-        (base32 "1n6llhl8vjy6lzw7icpizc5pcg0xm6547n57dydv8asz4hxs68jy"))))
+        (base32 "06vz0vs95z7cbmgsf71114d2gaqx7bn4zl6m33qg22aflna4shsr"))))
     (properties `((upstream-name . "gps")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix))
@@ -14111,6 +14111,31 @@ file.  For more details see Reza Rawassizadeh (2019)
 enjoyment.")
     (license license:expat)))
 
+(define-public r-ghcm
+  (package
+    (name "r-ghcm")
+    (version "3.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ghcm" version))
+       (sha256
+        (base32 "18cp82bniz1mdrkfi6y6mrrjxz5jhkz4w21939c5wsz9mlp9d2bj"))))
+    (properties `((upstream-name . "ghcm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp r-compquadform))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/arlundborg/ghcm")
+    (synopsis "Functional Conditional Independence Testing with the GHCM")
+    (description
+     "This package provides a statistical hypothesis test for conditional
+independence.  Given residuals from a sufficiently powerful regression, it tests
+whether the covariance of the residuals is vanishing.  It can be applied to both
+discretely-observed functional data and multivariate data.  Details of the
+method can be found in Anton Rask Lundborg, Rajen D. Shah and Jonas Peters
+(2022) <doi:10.1111/rssb.12544>.")
+    (license license:expat)))
+
 (define-public r-ghclass
   (package
     (name "r-ghclass")
@@ -21185,6 +21210,40 @@ curves in the functional dataset are smoothed using Fourier series.  The
 functional Kriging of this package is a modification of the method proposed by
 Giraldo (2011) <doi:10.1007/s10651-010-0143-y>.")
     (license license:expat)))
+
+(define-public r-geofi
+  (package
+    (name "r-geofi")
+    (version "1.0.10")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geofi" version))
+       (sha256
+        (base32 "18qjgkwjn435hjbbq3iaysxzlzpb50248qmssb7yzximsp3idcnh"))))
+    (properties `((upstream-name . "geofi")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yaml
+                             r-xml2
+                             r-sf
+                             r-rlang
+                             r-purrr
+                             r-httr
+                             r-httpcache
+                             r-dplyr
+                             r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/rOpenGov/geofi")
+    (synopsis "Access Finnish Geospatial Data")
+    (description
+     "Designed to simplify geospatial data access from the Statistics Finland Web
+Feature Service API <http://geo.stat.fi/geoserver/wfs>, the geofi package offers
+researchers and analysts a set of tools to obtain and harmonize administrative
+spatial data for a wide range of applications, from urban planning to
+environmental research.  The package contains annually updated time series of
+municipality key datasets that can be used for data aggregation and language
+translations.")
+    (license license:bsd-2)))
 
 (define-public r-geofd
   (package

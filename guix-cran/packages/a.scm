@@ -12244,13 +12244,13 @@ symmetric stable and mixture of Cauchy distributions.")
 (define-public r-alphasimr
   (package
     (name "r-alphasimr")
-    (version "1.4.2")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AlphaSimR" version))
        (sha256
-        (base32 "0qbb5wdwprjr21nh1khnzaspvg96hqynh277gjkryrwpc8nak16s"))))
+        (base32 "0ky1kclyppsiqnxdl28np050mdi6d7x48ijs7d7fkrjza5rwdkdb"))))
     (properties `((upstream-name . "AlphaSimR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-rcpparmadillo r-rcpp r-r6 r-bh))
@@ -14561,26 +14561,27 @@ Solution - with two normalizations).  This method is described in Souza et al.
 (define-public r-ahptools
   (package
     (name "r-ahptools")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AHPtools" version))
        (sha256
-        (base32 "0fdmihxd04bsan0kpplggqh1f409n59k5lx26ld2qcbxplq0lp9w"))))
+        (base32 "1bmk7mcg3ma0d4a3gy5s3zkkw49nfbg6rh5ji9qvi99rj6ksfcry"))))
     (properties `((upstream-name . "AHPtools")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
     (home-page "https://CRAN.R-project.org/package=AHPtools")
     (synopsis "Consistency in the Analytic Hierarchy Process")
     (description
-     "This package provides a Swiss Army knife of utility functions for AHP users
-which will help you assess the consistency of a PCM as well as improve the
-consistency ratio, compute the sensitivity of a PCM, create a logical, not a
-random PCM, from the preferences you provide for the alternatives, and a
-function that helps evaluate the actual consistency of a PCM based on objective,
-fair bench marking.  The toolkit additionally allows a user to specify only the
-upper triangular comparison ratios of the PCM and performs its assigned task.")
+     "This package provides a Swiss Army knife of utility functions for users of the
+Analytic Hierarchy Process (AHP) which will help you to assess the consistency
+of a PCM as well as to improve its consistency ratio, to compute the sensitivity
+of a PCM, create a logical, not a random PCM, from the preferences you provide
+for the alternatives, and a function that helps evaluate the actual consistency
+of a PCM based on objective, fair bench marking.  The various functions in the
+toolkit additionally provide the flexibility to users to specify only the upper
+triangular comparison ratios of the PCM in order to performs its assigned task.")
     (license license:gpl3)))
 
 (define-public r-ahpsurvey

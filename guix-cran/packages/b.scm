@@ -10170,6 +10170,30 @@ Biplot.  This GUI is also aimed for estimate any numerical data matrix using the
 Clustering and Disjoint Principal component (CDPCA) methodology.")
     (license license:gpl2+)))
 
+(define-public r-bipl5
+  (package
+    (name "r-bipl5")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bipl5" version))
+       (sha256
+        (base32 "0anir5fgvac9ka5y9wfar7pbwdqd0qwx6hynlmr6jwhna57linly"))))
+    (properties `((upstream-name . "bipl5")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-plotly r-knitr r-htmlwidgets r-crayon r-cluster))
+    (home-page "https://cran.r-project.org/package=bipl5")
+    (synopsis "Construct Reactive Calibrated Axes Biplots")
+    (description
+     "This package provides a modern view on the principal component analysis biplot
+with calibrated axes.  Create principal component analysis biplots rendered in
+HTML with significant reactivity embedded within the plot.  Furthermore, the
+traditional biplot view is enhanced by translated axes with inter-class kernel
+densities superimposed.  For more information on biplots, see Gower, J.C.,
+Lubbe, S. and le Roux, N.J. (2011, ISBN: 978-0-470-01255-0).")
+    (license license:expat)))
+
 (define-public r-bipd
   (package
     (name "r-bipd")
@@ -11564,6 +11588,28 @@ Moreover it can be integrated in R Markdown documents and Shiny applications.")
     (description
      "Download stats reported from the @code{BioConductor.org} stats website.")
     (license license:gpl2+)))
+
+(define-public r-biobricks
+  (package
+    (name "r-biobricks")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "biobricks" version))
+       (sha256
+        (base32 "0xa6pd7c4sdq4wzn8053drr063cjll7lpg5k3k146zz0z6rczg30"))))
+    (properties `((upstream-name . "biobricks")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=biobricks")
+    (synopsis "Access Data Dependencies Installed Through 'Biobricks.ai'")
+    (description
+     "This package provides an integrated data management solution for assets
+installed via the Biobricks.ai platform.  Streamlines the process of loading and
+interacting with diverse datasets in a consistent manner.  A list of bricks is
+available at <https://status.biobricks.ai>.  Documentation for Biobricks.ai is
+available at <https://docs.biobricks.ai>.")
+    (license license:expat)))
 
 (define-public r-bioassays
   (package
@@ -16683,16 +16729,21 @@ Projections.  2013. <doi:10.1007/978-94-007-7551-0>.")
 (define-public r-beezdiscounting
   (package
     (name "r-beezdiscounting")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "beezdiscounting" version))
        (sha256
-        (base32 "1kbyb3d8aq9csqp3n0s9gnjf12js0j5civm1sr9skgvcknc2l0b8"))))
+        (base32 "0kv5dciila798a1lxa53jw5jja7s59whcxvx2dglz68s7dfhkkd1"))))
     (properties `((upstream-name . "beezdiscounting")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr r-stringr r-magrittr r-gtools r-dplyr))
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-psych
+                             r-magrittr
+                             r-gtools
+                             r-dplyr))
     (home-page "https://github.com/brentkaplan/beezdiscounting")
     (synopsis "Behavioral Economic Easy Discounting")
     (description
@@ -16941,6 +16992,37 @@ different organisms should be possible using gene orthologs information.  A
 ready to use database is provided as a Docker image
 <https://hub.docker.com/r/patzaw/bed-ucb-human/>.  The method has been published
 by Godard and van Eyll (2018) <doi:10.12688/f1000research.13925.3>.")
+    (license license:gpl3)))
+
+(define-public r-beautier
+  (package
+    (name "r-beautier")
+    (version "2.6.11")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "beautier" version))
+       (sha256
+        (base32 "1gn6hwlk58sg9jjiqccqaqv8vs0xpk87h4l02kb9j51n3jj5sg38"))))
+    (properties `((upstream-name . "beautier")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-seqinr
+                             r-rlang
+                             r-rappdirs
+                             r-purrr
+                             r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://docs.ropensci.org/beautier/")
+    (synopsis "'BEAUti' from R")
+    (description
+     "BEAST2 (<https://www.beast2.org>) is a widely used Bayesian phylogenetic tool,
+that uses DNA/RNA/protein data and many model priors to create a posterior of
+jointly estimated phylogenies and parameters.  BEAUti 2 (which is part of
+BEAST2') is a GUI tool that allows users to specify the many possible setups and
+generates the XML file BEAST2 needs to run.  This package provides a way to
+create BEAST2 input files without active user input, but using R function calls
+instead.")
     (license license:gpl3)))
 
 (define-public r-beastjar
@@ -20675,13 +20757,13 @@ Pedroza, C. (2006) <doi:10.1093/biostatistics/kxj024>.")
 (define-public r-bayesmlogit
   (package
     (name "r-bayesmlogit")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesmlogit" version))
        (sha256
-        (base32 "1ssrhn64cz7qzma0cs86vpgzc60bch9j6zyazkf51bf554jz13i0"))))
+        (base32 "1958kyagp41ji9xlwr03g6yv4jrd68kzc7g2hm0wgjdrksifmwp8"))))
     (properties `((upstream-name . "bayesmlogit")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-ggplot2 r-dplyr))
@@ -20693,7 +20775,8 @@ Pedroza, C. (2006) <doi:10.1093/biostatistics/kxj024>.")
      "Create life tables with a Bayesian approach, which can be very useful for
 modelling a complex health process when considering multiple predisposing
 factors and multiple coexisting health conditions.  Details for this method can
-be found in: Zang, Emma, et al., (2022) <doi:10.1093/geronb/gbab149>.")
+be found in: Lynch, Scott, et al., (2022) <doi:10.1177/00811750221112398>; Zang,
+Emma, et al., (2022) <doi:10.1093/geronb/gbab149>.")
     (license license:gpl3+)))
 
 (define-public r-bayesmixsurv
@@ -21393,6 +21476,47 @@ parameter associated to the mean.  And calculates different adjustment
 statistics such as the Akaike information criterion and Bayesian information
 criterion.")
     (license license:gpl2+)))
+
+(define-public r-bayesianfactorzoo
+  (package
+    (name "r-bayesianfactorzoo")
+    (version "0.0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BayesianFactorZoo" version))
+       (sha256
+        (base32 "10i811h6sl7wf8mk58hzb08jm6ifag01zaj5ni020414cxx8xiyr"))))
+    (properties `((upstream-name . "BayesianFactorZoo")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-timeseries
+                             r-reshape2
+                             r-rdpack
+                             r-nse
+                             r-mvtnorm
+                             r-mcmcpack
+                             r-matrixcalc
+                             r-matrix
+                             r-mass
+                             r-ggplot2
+                             r-coda))
+    (home-page "https://cran.r-project.org/package=BayesianFactorZoo")
+    (synopsis
+     "Bayesian Solutions for the Factor Zoo: We Just Ran Two Quadrillion Models")
+    (description
+     "This package contains the functions to use the econometric methods in the paper
+Bryzgalova, Huang, and Julliard (2023) <doi:10.1111/jofi.13197>.  In this
+package, we provide a novel Bayesian framework for analyzing linear asset
+pricing models: simple, robust, and applicable to high-dimensional problems.
+For a stand-alone model, we provide functions including @code{BayesianFM}() and
+@code{BayesianSDF}() to deliver reliable price of risk estimates for both
+tradable and nontradable factors.  For competing factors and possibly nonnested
+models, we provide functions including continuous_ss_sdf(),
+continuous_ss_sdf_v2(), and dirac_ss_sdf_pvalue() to analyze high-dimensional
+models.  If you use this package, please cite the paper.  We are thankful to
+Jingtong Zhang for his research assistance.  Any errors or omissions are the
+responsibility of the authors.")
+    (license license:gpl3)))
 
 (define-public r-bayesianetas
   (package
