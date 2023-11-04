@@ -2796,6 +2796,26 @@ corrections for range variation, and more.  Bugs can be reported to
 <https://github.com/psychmeta/psychmeta/issues> or <issues@@psychmeta.com>.")
     (license license:gpl3+)))
 
+(define-public r-psyccleaning
+  (package
+    (name "r-psyccleaning")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "psycCleaning" version))
+       (sha256
+        (base32 "0wkysnvb1q9iw84qq6wm1a3d2jwb7aln15aldxkrv5l2j8v7dyc4"))))
+    (properties `((upstream-name . "psycCleaning")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-tibble r-rlang r-dplyr r-data-table))
+    (home-page "https://jasonmoy28.github.io/psycCleaning/")
+    (synopsis "Data Cleaning for Psychological Analyses")
+    (description
+     "Useful for preparing and cleaning data.  It includes functions to center data,
+reverse coding, dummy code and effect code data, and more.")
+    (license license:gpl3+)))
+
 (define-public r-psy
   (package
     (name "r-psy")
@@ -22406,6 +22426,39 @@ Adam, T. and Beumer, L.T. (2021): Flexible estimation of the state dwell-time
 distribution in hidden semi-Markov models. <@code{arXiv:2101.09197>}.")
     (license license:gpl3)))
 
+(define-public r-phsmethods
+  (package
+    (name "r-phsmethods")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "phsmethods" version))
+       (sha256
+        (base32 "17m4kp2iiaqmqif191qn107fsjn8jylfni09wmp6yd5cn9xqsvgg"))))
+    (properties `((upstream-name . "phsmethods")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-scales
+                             r-rlang
+                             r-readr
+                             r-magrittr
+                             r-lubridate
+                             r-lifecycle
+                             r-dplyr
+                             r-cli))
+    (home-page "https://github.com/Public-Health-Scotland/phsmethods")
+    (synopsis "Standard Methods for Use in Public Health Scotland")
+    (description
+     "This package provides a collection of methods for commonly undertaken analytical
+tasks, primarily developed for Public Health Scotland (PHS) analysts, but the
+package is also generally useful to others working in the healthcare space,
+particularly since it has functions for working with Community Health Index
+(CHI) numbers.  The package can help to make data manipulation and analysis more
+efficient and reproducible.")
+    (license license:gpl2+)))
+
 (define-public r-phreeqc
   (package
     (name "r-phreeqc")
@@ -35264,35 +35317,6 @@ imputing records where observations were absent (pad).")
 function returns the numerator and denominator coefficients for the @code{PadÃ©}
 approximant of appropriate order (Baker, 1975) <ISBN:9780120748556>.")
     (license (list license:gpl2+ license:bsd-2))))
-
-(define-public r-pacvr
-  (package
-    (name "r-pacvr")
-    (version "0.9.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PACVr" version))
-       (sha256
-        (base32 "0sj5ibqaw452lncxxbm6xkgmmh9ny6hx4b9hppzwglpgk6vvb5f3"))))
-    (properties `((upstream-name . "PACVr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcircos
-                             r-optparse
-                             r-iranges
-                             r-genomicranges
-                             r-genomicalignments
-                             r-biostrings
-                             r-biocgenerics))
-    (home-page "https://cran.r-project.org/package=PACVr")
-    (synopsis "Plastome Assembly Coverage Visualization")
-    (description
-     "Visualizes the coverage depth of a complete plastid genome as well as the
-equality of its inverted repeat regions in relation to the circular,
-quadripartite genome structure and the location of individual genes.  For more
-information, please see Gruenstaeudl and Jenke (2020)
-<doi:10.1186/s12859-020-3475-0>.")
-    (license (license:fsdg-compatible "BSD 3-clause License + file LICENSE"))))
 
 (define-public r-pacviz
   (package

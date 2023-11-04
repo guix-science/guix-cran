@@ -278,27 +278,6 @@ for instrumental variable models (based on models of type ivreg() from package
 ivreg') and hypotheses with q > 1.")
     (license license:gpl3)))
 
-(define-public r-fwi-fbp
-  (package
-    (name "r-fwi-fbp")
-    (version "1.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fwi.fbp" version))
-       (sha256
-        (base32 "1wk9cr0kk6zkbf111bv87n7b1wwx1qrsbjxydvbjvy8bgz0nfa62"))))
-    (properties `((upstream-name . "fwi.fbp")))
-    (build-system r-build-system)
-    (home-page "https://r-forge.r-project.org/projects/fwi-fbp/")
-    (synopsis
-     "Fire Weather Index System and Fire Behaviour Prediction System Calculations")
-    (description
-     "This package provides three functions to calculate the outputs of the two main
-components of the Canadian Forest Fire Danger Rating System (CFFDRS): the Fire
-Weather Index (FWI) System and the Fire Behaviour Prediction (FBP) System.")
-    (license license:gpl2)))
-
 (define-public r-fwdselect
   (package
     (name "r-fwdselect")
@@ -9016,13 +8995,13 @@ Approximator.  For more details see the help files or the article by Hoefling
 (define-public r-flps
   (package
     (name "r-flps")
-    (version "0.1.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flps" version))
        (sha256
-        (base32 "0kcxc425xg4y44j2rd1h6w5wf7dq11j9vvlf0jcs3irbr49q7y3g"))))
+        (base32 "0l4maf51psfmf3wq86r2zpvcm29car4z7jn7xh2mp8kllb7ii59d"))))
     (properties `((upstream-name . "flps")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstan
@@ -9030,13 +9009,16 @@ Approximator.  For more details see the help files or the article by Hoefling
                              r-mvtnorm
                              r-mirt
                              r-mass
+                             r-glue
                              r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://sooyongl.github.io/flps/")
     (synopsis "Fully-Latent Principal Stratification")
     (description
      "Simulation and analysis of Fully-Latent Principal Stratification (FLPS) with
-measurement models.  Sales & Pane (2019). <doi:10.1214/18-AOAS1196>.")
+measurement models.  Sales & Pane (2019). <doi:10.1214/18-AOAS1196>.  This
+package is supported by the Institute of Education Sciences, U.S. Department of
+Education, through Grant R305D210036.")
     (license license:gpl3)))
 
 (define-public r-flowtracer
@@ -13222,13 +13204,13 @@ create your web app the way you want.")
 (define-public r-fieldsimr
   (package
     (name "r-fieldsimr")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FieldSimR" version))
        (sha256
-        (base32 "10cnyig18gs97mmnl0bj1i5j2fdazynfr25c5cia9prcl01a9q0f"))))
+        (base32 "1nqdbm93cicvfr757bg5r226swbsy6abg52z7n3jysrkqlicf278"))))
     (properties `((upstream-name . "FieldSimR")))
     (build-system r-build-system)
     (propagated-inputs (list r-mbend r-matrixcalc r-lattice r-interp r-ggplot2))
@@ -17812,13 +17794,13 @@ packages.")
 (define-public r-fastmatmr
   (package
     (name "r-fastmatmr")
-    (version "1.2.4")
+    (version "1.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastMatMR" version))
        (sha256
-        (base32 "0sdgq08wq7zws3j6pg67kw0g0zxqj42y73qw3736fcg57ljhhh7x"))))
+        (base32 "0lh2nrfj8pbhl56pg0icw0ln2bg411sjdkjb76lar3rsb67ifxvb"))))
     (properties `((upstream-name . "fastMatMR")))
     (build-system r-build-system)
     (propagated-inputs (list r-cpp11))
@@ -19137,30 +19119,6 @@ and Andros (2022+) <doi:10.48550/@code{arXiv.2207.13824>}.")
 mix left open and right open intervals with point values, intervals that are
 closed on both ends and intervals that are open on both ends.")
     (license license:cc0)))
-
-(define-public r-fancova
-  (package
-    (name "r-fancova")
-    (version "0.6-1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fANCOVA" version))
-       (sha256
-        (base32 "04mw0blgpwdk6wdg8llrig43psgc0vb42cbimvzbnym8v503dsn3"))))
-    (properties `((upstream-name . "fANCOVA")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=fANCOVA")
-    (synopsis "Nonparametric Analysis of Covariance")
-    (description
-     "This package provides a collection of R functions to perform nonparametric
-analysis of covariance for regression curves or surfaces.  Testing the equality
-or parallelism of nonparametric curves or surfaces is equivalent to analysis of
-variance (ANOVA) or analysis of covariance (ANCOVA) for one-sample functional
-data.  Three different testing methods are available in the package, including
-one based on L-2 distance, one based on an ANOVA statistic, and one based on
-variance estimators.")
-    (license license:gpl3)))
 
 (define-public r-fanc
   (package
@@ -20657,13 +20615,13 @@ with data.table and mvnfast installed.")
 (define-public r-fabr
   (package
     (name "r-fabr")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fabR" version))
        (sha256
-        (base32 "0m0hj5mpyhy5kqnx9vkr8gf1p5l1aji286yasg8vvczpfyw3hlvp"))))
+        (base32 "16qmd77g3sf55q9zd01mknic4616yjjl9l6k0nfsp00nkpi8gbb0"))))
     (properties `((upstream-name . "fabR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xfun

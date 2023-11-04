@@ -15,8 +15,8 @@
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages maths)
   #:use-module (gnu packages bioinformatics)
+  #:use-module (gnu packages maths)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages photo)
@@ -19263,41 +19263,6 @@ response rates.  The functions provided only work for binary classification
 problems.")
     (license license:gpl2)))
 
-(define-public r-collapse
-  (package
-    (name "r-collapse")
-    (version "2.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "collapse" version))
-       (sha256
-        (base32 "16y4qxqr4k04690xn8s6c9fr3igpk34pgxygxkc41gc1na0ym37v"))))
-    (properties `((upstream-name . "collapse")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
-    (native-inputs (list r-knitr))
-    (home-page "https://sebkrantz.github.io/collapse/")
-    (synopsis "Advanced and Fast Data Transformation")
-    (description
-     "This package provides a C/C++ based package for advanced data transformation and
-statistical computing in R that is extremely fast, class-agnostic, robust and
-programmer friendly.  Core functionality includes a rich set of S3 generic
-grouped and weighted statistical functions for vectors, matrices and data
-frames, which provide efficient low-level vectorizations, @code{OpenMP}
-multithreading, and skip missing values by default.  These are integrated with
-fast grouping and ordering algorithms (also callable from C), and efficient data
-manipulation functions.  The package also provides a flexible and rigorous
-approach to time series and panel data in R. It further includes fast functions
-for common statistical procedures, detailed (grouped, weighted) summary
-statistics, powerful tools to work with nested data, fast data object
-conversions, functions for memory efficient R programming, and helpers to
-effectively deal with variable labels, attributes, and missing data.  It is well
-integrated with base R classes, dplyr'/'tibble', data.table', sf', plm
-(panel-series and data frames), and xts'/'zoo'.")
-    (license (list license:gpl2+
-                   (license:fsdg-compatible "file://LICENSE")))))
-
 (define-public r-colf
   (package
     (name "r-colf")
@@ -28961,13 +28926,13 @@ posterior', cmdstanr', and bayesplot'.")
 (define-public r-chisquare
   (package
     (name "r-chisquare")
-    (version "0.6")
+    (version "0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chisquare" version))
        (sha256
-        (base32 "0jzn0xxmgswpfmyk25gx4cyf2xa4i68k78say1ni1qxm673rfl37"))))
+        (base32 "1v5qyccz05ynha35j2vpgpfffww9mjssgd7dfdcsm3ngwisg5j6h"))))
     (properties `((upstream-name . "chisquare")))
     (build-system r-build-system)
     (propagated-inputs (list r-gt))
@@ -29156,13 +29121,13 @@ Some convenient tools are also supplied.")
 (define-public r-chillr
   (package
     (name "r-chillr")
-    (version "0.73.1")
+    (version "0.74")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chillR" version))
        (sha256
-        (base32 "1cbz13m4fa58amkkbfnysraz39fml3srhshiwbmhnnmv21nal86n"))))
+        (base32 "0nkwqpcis6s1vgz9gblclk10ghnlmkpdzivbsq21xivbabzr7dzz"))))
     (properties `((upstream-name . "chillR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
@@ -29178,17 +29143,21 @@ Some convenient tools are also supplied.")
                              r-rcpp
                              r-raster
                              r-r-utils
+                             r-purrr
                              r-progress
                              r-plyr
                              r-pls
                              r-patchwork
                              r-metr
+                             r-magrittr
+                             r-lubridate
                              r-kendall
                              r-jsonlite
                              r-httr
                              r-ggplot2
                              r-gensa
                              r-fields
+                             r-ecmwfr
                              r-dplyr
                              r-assertthat))
     (native-inputs (list r-knitr))
@@ -37988,13 +37957,13 @@ Arias-Pulido H et al. (2008) <doi:10.1002/gcc.20577>.  Davis S, Meltzer PS
 (define-public r-canvasxpress
   (package
     (name "r-canvasxpress")
-    (version "1.45.4")
+    (version "1.46.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "canvasXpress" version))
        (sha256
-        (base32 "1a67zz85c9k8ypyjlbzaz4p36lrb20c6vav453pka676p7ff7s5p"))))
+        (base32 "16b9j05as67qsyanzqr8h9hd65vp9wkhhh8fzx94xy47f54bnfp6"))))
     (properties `((upstream-name . "canvasXpress")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-httr r-htmlwidgets r-htmltools))

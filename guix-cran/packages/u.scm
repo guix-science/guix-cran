@@ -4010,29 +4010,6 @@ polycentric patterns and values closer to 1 indicate a more monocentric urban
 form.")
     (license license:expat)))
 
-(define-public r-ucarechemsuitecli
-  (package
-    (name "r-ucarechemsuitecli")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "uCAREChemSuiteCLI" version))
-       (sha256
-        (base32 "1nccgkxv57inhgvgmhwm4fr8cp28sj8n83za5gam9xx1f42mzsqk"))))
-    (properties `((upstream-name . "uCAREChemSuiteCLI")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-usethis r-chemminer))
-    (home-page "https://cran.r-project.org/package=uCAREChemSuiteCLI")
-    (synopsis "Resistome Predicter")
-    (description
-     "This suite of packages is developed to predicts resistome for unknown chemical
-compounds.  It utilizes two algorithms viz.  deterministic model and stochastic
-model (manuscript under preparation) for the prediction of drug class.  Once the
-drug class is predicted, the resistome profile of Escherichia coli and
-Pseudomonas aeruginosa for the drug class is fetched from the database.")
-    (license license:expat)))
-
 (define-public r-ubms
   (package
     (name "r-ubms")

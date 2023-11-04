@@ -5369,13 +5369,13 @@ history in R sessions and dynamic documents.")
 (define-public r-histoslider
   (package
     (name "r-histoslider")
-    (version "0.1")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "histoslider" version))
        (sha256
-        (base32 "1458bh7by00izx4q9idl479f08i3gk2g59mmzfvh945vbf399km0"))))
+        (base32 "1ssniz6lm5zwsqzplidsdjk92d3723kxxpvxb43hgydwbhlq7rd4"))))
     (properties `((upstream-name . "histoslider")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-rlang r-reactr r-htmltools))

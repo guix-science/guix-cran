@@ -4541,23 +4541,16 @@ cases and controls can be calculated and plotted.")
 (define-public r-wemix
   (package
     (name "r-wemix")
-    (version "4.0.0")
+    (version "4.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WeMix" version))
        (sha256
-        (base32 "19f655crg6zqbrlrcj7skp1qrxkn6fjahirvniy1b3xxikg84wvg"))))
+        (base32 "1ykg7sphnm15a3dlkkhv18ycsclaw363yldfsyc83hf01vlghf77"))))
     (properties `((upstream-name . "WeMix")))
     (build-system r-build-system)
-    (propagated-inputs (list r-statmod
-                             r-rmpfr
-                             r-numderiv
-                             r-npflow
-                             r-minqa
-                             r-matrixstats
-                             r-matrix
-                             r-lme4))
+    (propagated-inputs (list r-numderiv r-minqa r-matrixstats r-matrix r-lme4))
     (native-inputs (list r-knitr))
     (home-page "https://american-institutes-for-research.github.io/WeMix/")
     (synopsis
@@ -7790,27 +7783,27 @@ Experimental and Computer Laboratory at ETH Zurich, Switzerland.")
 (define-public r-wals
   (package
     (name "r-wals")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WALS" version))
        (sha256
-        (base32 "1sz55yw8cmnssyjvvr3xvjks3i2gn3cgalra7hkx24v18lp47ksc"))))
+        (base32 "0pqvmdvgxrf05avkgynx2hwqp6k3a3vhhiis5vwijz9ccjgac0kz"))))
     (properties `((upstream-name . "WALS")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-mass r-formula))
     (home-page "https://github.com/kevhuy/WALS")
     (synopsis "Weighted-Average Least Squares Model Averaging")
     (description
-     "This package implements the Weighted-Average Least Squares method for model
-averaging of negative binomial regression models of Huynh (2023) (mimeo),
-generalized linear models of De Luca, Magnus, Peracchi (2018)
-<doi:10.1016/j.jeconom.2017.12.007> and linear regression models of Magnus,
-Powell, Pruefer (2010) <doi:10.1016/j.jeconom.2009.07.004>, see also Magnus, De
-Luca (2016) <doi:10.1111/joes.12094>.  Weighted-Average Least Squares for the
-linear regression model is based on the original MATLAB code by Magnus and De
-Luca <https://www.janmagnus.nl/items/WALS.pdf>, see also Kumar, Magnus (2013)
+     "This package implements Weighted-Average Least Squares model averaging for
+negative binomial regression models of Huynh (2023) (mimeo), generalized linear
+models of De Luca, Magnus, Peracchi (2018) <doi:10.1016/j.jeconom.2017.12.007>
+and linear regression models of Magnus, Powell, Pruefer (2010)
+<doi:10.1016/j.jeconom.2009.07.004>, see also Magnus, De Luca (2016)
+<doi:10.1111/joes.12094>.  Weighted-Average Least Squares for the linear
+regression model is based on the original MATLAB code by Magnus and De Luca
+<https://www.janmagnus.nl/items/WALS.pdf>, see also Kumar, Magnus (2013)
 <doi:10.1007/s13571-013-0060-9> and De Luca, Magnus (2011)
 <doi:10.1177/1536867X1201100402>.")
     (license (list license:gpl2 license:gpl3))))

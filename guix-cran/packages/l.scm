@@ -411,13 +411,13 @@ environmental covariates.")
 (define-public r-luminescence
   (package
     (name "r-luminescence")
-    (version "0.9.22")
+    (version "0.9.23")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Luminescence" version))
        (sha256
-        (base32 "1j7wj6mm38dfdjrqsha9qrar2jclcxa6d7mrs7kx495g1pkbgn1y"))))
+        (base32 "1qjmsi2y2wa0yj0zh36hbfa2939q2865s670vnn9p2nd8iz8wyl5"))))
     (properties `((upstream-name . "Luminescence")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -426,11 +426,11 @@ environmental covariates.")
                              r-readxl
                              r-rcpparmadillo
                              r-rcpp
-                             r-plotrix
                              r-minpack-lm
                              r-mclust
                              r-matrixstats
                              r-lamw
+                             r-interp
                              r-httr
                              r-deoptim
                              r-data-table
@@ -5322,13 +5322,13 @@ Economics (http://www.sgh.waw.pl/en/).")
 (define-public r-localscore
   (package
     (name "r-localscore")
-    (version "1.0.10")
+    (version "1.0.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "localScore" version))
        (sha256
-        (base32 "0bzbw03gvlpc3xirwq83fybgshcqlqcb8asbk0vdk351m41pwk3m"))))
+        (base32 "1m3bd6vh6xcd614b6jmnijiywrjdf44i7iwl5qp09n50831s8881"))))
     (properties `((upstream-name . "localScore")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))

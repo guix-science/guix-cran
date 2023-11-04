@@ -2195,16 +2195,16 @@ sample for individualized treatment recommendations or DTR evaluation.")
 (define-public r-dtrkernsmooth
   (package
     (name "r-dtrkernsmooth")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DTRKernSmooth" version))
        (sha256
-        (base32 "0faya9crhzw3z8r5va08g7nir9ga2g308lrxf4zbj6c84fkyfiwx"))))
+        (base32 "0ikq9rj7harlc00gj6wqc62pyj25ap9ajfh622b5cj5zkdrc8qy1"))))
     (properties `((upstream-name . "DTRKernSmooth")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcppeigen r-rcpparmadillo r-rcpp))
+    (propagated-inputs (list r-rcppeigen r-rcpp))
     (home-page "https://cran.r-project.org/package=DTRKernSmooth")
     (synopsis
      "Estimate and Make Inference About Optimal Treatment Regimes via Smoothed Methods")
@@ -5355,13 +5355,13 @@ the Rmpfr package and hence the underlying MPFR and GMP C libraries.")
 (define-public r-dpq
   (package
     (name "r-dpq")
-    (version "0.5-6")
+    (version "0.5-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DPQ" version))
        (sha256
-        (base32 "0vvxsca8w7mzscqqfaq5sfxqyfh8c9ja3499i6gf4q46aa1w215j"))))
+        (base32 "1ziwika4vl534mkiw5smnvjlzl104lgfkybc9ns7z2hqm0f7drdg"))))
     (properties `((upstream-name . "DPQ")))
     (build-system r-build-system)
     (propagated-inputs (list r-sfsmisc))

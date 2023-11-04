@@ -6165,20 +6165,41 @@ API.")
 @code{OpenAlex} database using API <https://docs.openalex.org>.")
     (license license:expat)))
 
+(define-public r-openaistream
+  (package
+    (name "r-openaistream")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "openaistream" version))
+       (sha256
+        (base32 "0aa3rnivmvds2v5ciky74b0ych3wmp4s0mxqk3cvdakrfxsxdr06"))))
+    (properties `((upstream-name . "openaistream")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-r6 r-jsonlite r-iterators r-httr2 r-curl))
+    (home-page "https://cran.r-project.org/package=openaistream")
+    (synopsis "Streaming Capabilities for 'OpenAI API' Interactions")
+    (description
+     "Based on the httr2 framework, the @code{OpenAI} interface supports streaming
+calls and model training.  For more details on the API methods implemented, see
+the @code{OpenAI} platform documentation at
+<https://platform.openai.com/docs/api-reference>.")
+    (license license:expat)))
+
 (define-public r-openairmaps
   (package
     (name "r-openairmaps")
-    (version "0.8.0")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openairmaps" version))
        (sha256
-        (base32 "18acrnb57cmq7z4sxnyjaa1nc8l52wa9fijgcb30garz8lhlldab"))))
+        (base32 "14jb8a3i5ywzfqlqgy6smcfrj7lrq4fzamvcwdp9za5cxk9yi8cj"))))
     (properties `((upstream-name . "openairmaps")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
+    (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
                              r-sf
@@ -8363,13 +8384,13 @@ different authors in the recent years.  See Alizadeh (2019)
 (define-public r-olinkanalyze
   (package
     (name "r-olinkanalyze")
-    (version "3.5.1")
+    (version "3.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OlinkAnalyze" version))
        (sha256
-        (base32 "0zykprc6z8z8j08yk3jxr2i4bf5zkl0aab7y0dg0g1m3cnzf40vf"))))
+        (base32 "0nf8ni1i3qdmvwz0qalm8qsjb31s361b573n45y3qjf4g5hssg87"))))
     (properties `((upstream-name . "OlinkAnalyze")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -9149,13 +9170,13 @@ code interface is described in Huling and Chien (2022)
 (define-public r-oeli
   (package
     (name "r-oeli")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oeli" version))
        (sha256
-        (base32 "16aw16gv9i6yy3hz9kidy2wrg0pwdq99wkqcn7q9skm8dvvi9yhd"))))
+        (base32 "0famqarmlnz8bfpgywvz2jh4k1jav875vxbjx73lc48b69qyqhay"))))
     (properties `((upstream-name . "oeli")))
     (build-system r-build-system)
     (propagated-inputs (list r-usethis
@@ -9171,10 +9192,10 @@ code interface is described in Huling and Chien (2022)
     (home-page "https://github.com/loelschlaeger/oeli")
     (synopsis "Utilities for Developing Data Science Software")
     (description
-     "Some general utilities that I and maybe others find useful when developing data
-science software.  Functionality includes argument validation, density
-calculation and sampling, dealing with Cholesky roots, matrix printing and
-indexing, user interaction, and more.")
+     "Some general utilities (helper functions) that I and maybe others find useful
+when developing data science software.  Functionality includes argument
+validation, density calculation and sampling, matrix printing and indexing, user
+interaction, and more.")
     (license license:gpl3+)))
 
 (define-public r-oefpil

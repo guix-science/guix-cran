@@ -364,13 +364,13 @@ computer algebra system (<http://www.yacas.org/>).")
 (define-public r-rxylib
   (package
     (name "r-rxylib")
-    (version "0.2.11")
+    (version "0.2.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rxylib" version))
        (sha256
-        (base32 "1g5vrw6hb7i19vdg6gl62hn6mn37b5vl6jjr0nsry2880sxybjvq"))))
+        (base32 "1drmizyvbhza6p5gdqn2ahkppa99z1xvc1w7s4mbxjh15x3c633g"))))
     (properties `((upstream-name . "rxylib")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-bh))
@@ -20331,6 +20331,45 @@ others discovered during ongoing testing and code simplification.")
 implemented with @code{JavaScript} for node and browsers.")
     (license license:expat)))
 
+(define-public r-rivretrieve
+  (package
+    (name "r-rivretrieve")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RivRetrieve" version))
+       (sha256
+        (base32 "1g227j5qz3ca863pz8ry5nj13cdd206irqbkxsb84pp25vxjzqr0"))))
+    (properties `((upstream-name . "RivRetrieve")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tidyhydat
+                             r-tibble
+                             r-stringr
+                             r-rvest
+                             r-rselenium
+                             r-rlist
+                             r-rlang
+                             r-readr
+                             r-lubridate
+                             r-jsonlite
+                             r-httr
+                             r-dplyr
+                             r-devtools
+                             r-dataretrieval))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Ryan-Riggs/RivRetrieve")
+    (synopsis "Retrieve Global River Gauge Data")
+    (description
+     "This package provides access to global river gauge data from a variety of
+national-level river agencies.  The package interfaces with the national-level
+agency websites to provide access to river gauge locations, river discharge, and
+river stage.  Currently, the package is available for the following countries:
+Australia, Brazil, Canada, Chile, France, Japan, South Africa, the United
+Kingdom, and the United States.")
+    (license license:expat)))
+
 (define-public r-rivr
   (package
     (name "r-rivr")
@@ -26195,6 +26234,37 @@ labels, including missing values, and documenting the data transformations, with
 the help of comprehensive s3 classes.")
     (license license:gpl3)))
 
+(define-public r-retrodesign
+  (package
+    (name "r-retrodesign")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "retrodesign" version))
+       (sha256
+        (base32 "19bhfmbhd2q4zlkgxm0v563rr4r30d79hsxr3micnzql4hgar2zp"))))
+    (properties `((upstream-name . "retrodesign")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/andytimm/retrodesign")
+    (synopsis "Tools for Type S (Sign) and Type M (Magnitude) Errors")
+    (description
+     "This package provides tools for working with Type S (Sign) and Type M
+(Magnitude) errors, as proposed in Gelman and Tuerlinckx (2000)
+<doi:10.1007/s001800000040> and Gelman & Carlin (2014)
+<doi:10.1177/1745691614551642>.  In addition to simply calculating the
+probability of Type S/M error, the package includes functions for calculating
+these errors across a variety of effect sizes for comparison, and recommended
+sample size given \"tolerances\" for Type S/M errors.  To improve the speed of
+these calculations, closed forms solutions for the probability of a Type S/M
+error from Lu, Qiu, and Deng (2018) <doi:10.1111/bmsp.12132> are implemented.
+As of 1.0.0, this includes support only for simple research designs.  See the
+package vignette for a fuller exposition on how Type S/M errors arise in
+research, and how to analyze them using the type of design analysis proposed in
+the above papers.")
+    (license license:expat)))
+
 (define-public r-retriever
   (package
     (name "r-retriever")
@@ -27784,6 +27854,32 @@ which may pass data from one step to another.")
 <doi:10.1080/00031305.2022.2041482> that creates representative records for use
 in downstream tasks after entity resolution is performed.  Multiple methods for
 creating the representative records (data sets) are provided.")
+    (license license:gpl3)))
+
+(define-public r-represent
+  (package
+    (name "r-represent")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "represent" version))
+       (sha256
+        (base32 "1n1gc363a07zgjxyzkdf75yks1agayzzmlqvr2h2n6l0g89m4gnz"))))
+    (properties `((upstream-name . "represent")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=represent")
+    (synopsis
+     "Determine How Representative Two Multidimensional Data Sets are")
+    (description
+     "Compute the values of various parameters evaluating how similar two
+multidimensional datasets structures are in multidimensional space, as described
+in: Jouan-Rimbaud, D., Massart, D. L., Saby, C. A., Puel, C. (1998),
+<doi:10.1016/S0169-7439(98)00005-7>.  The computed parameters evaluate three
+properties, namely, the direction of the data sets, the variance-covariance of
+the data points, and the location of the data sets centroids.  The package
+contains workhorse function jrparams(), as well as two helper functions
+Mboxtest() and J@code{RsMahaldist}(), and four example data sets.")
     (license license:gpl3)))
 
 (define-public r-repplabshiny
@@ -29596,13 +29692,13 @@ Treaty Reinsurance\" by Munich Re (2010)
 (define-public r-reins
   (package
     (name "r-reins")
-    (version "1.0.13")
+    (version "1.0.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ReIns" version))
        (sha256
-        (base32 "1fdz80wbvmhh1vs796cz69wza0cpj5xv08hn5prygnl5vgp7d737"))))
+        (base32 "1qqgphlc7wl541nx7qrkbc66414gy0l2pi164h03ndw0s7x7k4g7"))))
     (properties `((upstream-name . "ReIns")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rcpp r-foreach r-doparallel))
@@ -34362,13 +34458,13 @@ and Tak (2020) <@code{arXiv:2005.08049>}.")
 (define-public r-rdrobust
   (package
     (name "r-rdrobust")
-    (version "2.1.1")
+    (version "2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rdrobust" version))
        (sha256
-        (base32 "18345w89w3phkfp4s59k10iha2ywgnrgdm61f8a9ixvhd3vv2qr0"))))
+        (base32 "1p9k8gd39090r5ml1sk30k3hvfns2v6laysbaswsn9i2ka70zj42"))))
     (properties `((upstream-name . "rdrobust")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-ggplot2))

@@ -2381,13 +2381,13 @@ based on Matsuoka et al. (2012) <doi:10.1525/auk.2012.11190>, Solymos et al.
 (define-public r-bsicons
   (package
     (name "r-bsicons")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bsicons" version))
        (sha256
-        (base32 "138rwpklmkfgzhnj42wrjai6mykg5ncxzwk5jwvgwvpwhg4cfy19"))))
+        (base32 "1ifxb6qvm5m824n924pwa3f2ck33mzzbjq77jzdl36ikx4z0x47a"))))
     (properties `((upstream-name . "bsicons")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-htmltools r-cli))
@@ -12738,13 +12738,13 @@ features of a lot of the songs and lyrics for several of the songs as well.")
 (define-public r-bild
   (package
     (name "r-bild")
-    (version "1.2-0")
+    (version "1.2-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bild" version))
        (sha256
-        (base32 "0aygx77fn2w249q6ghpxclhm9xb2ngdzrirldr3lpidg6ivc443v"))))
+        (base32 "18fcfaavqdhx0n5l4mhg5ibg9wp01amxj1qin25immsx6pwmp9gb"))))
     (properties `((upstream-name . "bild")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -12755,7 +12755,7 @@ features of a lot of the songs and lyrics for several of the songs as well.")
 for serial dependence among observations from a given individual and a random
 intercept term.  Estimation is via maximization of the exact likelihood of a
 suitably defined model.  Missing values and unbalanced data are allowed, with
-some restrictions.  M. Helena Gonçalves et al.(2007) <DOI:
+some restrictions.  M. Helena Goncalves et al.(2007) <DOI:
 10.18637/jss.v046.i09>.")
     (license license:gpl2+)))
 
@@ -15784,15 +15784,16 @@ function.  Livingston and Lewis (1995) <doi:10.1111/j.1745-3984.1995.tb00462.x>.
 (define-public r-betadelta
   (package
     (name "r-betadelta")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "betaDelta" version))
        (sha256
-        (base32 "05sraiyfr9pncmxgm1qirxsg3qwbmcqj4z838rii274nmqsrsx58"))))
+        (base32 "1590lxqalqg30k9zilmbddp9snig93kjxr8zvba7hlpr2zb1jayy"))))
     (properties `((upstream-name . "betaDelta")))
     (build-system r-build-system)
+    (propagated-inputs (list r-numderiv))
     (home-page "https://github.com/jeksterslab/betaDelta")
     (synopsis "Confidence Intervals for Standardized Regression Coefficients")
     (description

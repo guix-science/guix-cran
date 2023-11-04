@@ -14214,26 +14214,27 @@ form of Reporter Code Count (RCC) files.")
 (define-public r-nanonext
   (package
     (name "r-nanonext")
-    (version "0.10.2")
+    (version "0.10.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nanonext" version))
        (sha256
-        (base32 "1fcgxbin1sx9cahc6575x3b883fslqckgsli0r1dlc3bk7sx2fxk"))))
+        (base32 "1zzzjpi6nj7wslpprssv39mczznrfxnm8hv66p1yn6whyag27ajz"))))
     (properties `((upstream-name . "nanonext")))
     (build-system r-build-system)
     (home-page "https://shikokuchuo.net/nanonext/")
     (synopsis "NNG (Nanomsg Next Gen) Lightweight Messaging Library")
     (description
      "R binding for NNG (Nanomsg Next Gen), a successor to @code{ZeroMQ}.  NNG is a
-socket library providing high-performance scalability protocols, a
-cross-platform standard for messaging and communications.  Serves as a
-concurrency framework for building distributed applications, utilising aio
-objects which resolve automatically upon completion of asynchronous operations.
-Implements connections with transport layer security, and synchronisation
-primitives, which allow R execution to wait upon events being signalled by
-concurrent messaging threads.")
+socket library implementing Scalability Protocols', a reliable, high-performance
+standard for common communications patterns including publish/subscribe,
+request/reply and service discovery, over in-process, IPC, TCP, @code{WebSocket}
+and secure TLS transports.  As its own threaded concurrency framework, provides
+a toolkit for asynchronous programming and distributed computing, with intuitive
+aio objects which resolve automatically upon completion of asynchronous
+operations, and synchronisation primitives allowing R to wait upon events
+signalled by concurrent threads.")
     (license license:gpl3+)))
 
 (define-public r-nanoarrow

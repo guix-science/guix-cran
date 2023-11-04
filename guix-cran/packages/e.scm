@@ -11384,13 +11384,13 @@ character vectors with various encodings.")
 (define-public r-emur
   (package
     (name "r-emur")
-    (version "2.4.1")
+    (version "2.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "emuR" version))
        (sha256
-        (base32 "1qfdfgxfvdp9i9hyl2f461pw1bcbsz5znd6q4kqfi42m2dpz2dpv"))))
+        (base32 "1v8zjdd3w9vplnpx1bxy7zdxpk6k297bzazz0ic9nyb449ldvl8w"))))
     (properties `((upstream-name . "emuR")))
     (build-system r-build-system)
     (propagated-inputs (list r-wrassp

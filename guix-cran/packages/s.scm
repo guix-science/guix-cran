@@ -4971,13 +4971,13 @@ not large enough in scope to warrant an ecosystem of interdependent functions.")
 (define-public r-support-ces
   (package
     (name "r-support-ces")
-    (version "0.6-0")
+    (version "0.7-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "support.CEs" version))
        (sha256
-        (base32 "0j2gg101vnn1jrc0bajrgj14nl22rdq3hy4h6wimrvzqxj35f42c"))))
+        (base32 "09snvzvskjhw0l6g1gm5jl7c7idmincmqld1bqhcdinsqiq15h1d"))))
     (properties `((upstream-name . "support.CEs")))
     (build-system r-build-system)
     (propagated-inputs (list r-simex r-mass r-doe-base))
@@ -11651,13 +11651,13 @@ Tang et al. (2017) <doi:10.1080/10618600.2016.1193505>, Ghoshdastidar et al.
 (define-public r-statgensta
   (package
     (name "r-statgensta")
-    (version "1.0.11")
+    (version "1.0.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statgenSTA" version))
        (sha256
-        (base32 "0lashqhahmb0n01a1cy6clv95z5ypm5kgmdiwhvdvdq1l50cz92z"))))
+        (base32 "17svv7193wlmgsslcghr2gpbzhn8v1c5pwmk1ksh7l5imn792z21"))))
     (properties `((upstream-name . "statgenSTA")))
     (build-system r-build-system)
     (inputs (list))
@@ -21512,13 +21512,13 @@ Wilson et al. <doi:10.1101/2021.04.27.21256104>.")
 (define-public r-spatialsample
   (package
     (name "r-spatialsample")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spatialsample" version))
        (sha256
-        (base32 "1f44zzga5df5vqxzvc40sbivdhzx4x62qbqx5vkw9rxw5yrm9d2d"))))
+        (base32 "0y7mhy1lwznbzik1cwyvpqk264qd3h1pn8128v8ar8bb5dllvkw2"))))
     (properties `((upstream-name . "spatialsample")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -33896,31 +33896,6 @@ time model with risk-free intervals and possibly a competing event.  Possibility
 to cut the data to an interim data set.  Data can be plotted.  Details about the
 method can be found in Jahn-Eimermacher, A. et al. (2015)
 <doi:10.1186/s12874-015-0005-2>.")
-    (license license:gpl2)))
-
-(define-public r-simrad
-  (package
-    (name "r-simrad")
-    (version "0.96")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SimRAD" version))
-       (sha256
-        (base32 "0ivvd3k04v1akbblxcjhlyc315z3ig7wjs0g3b37lvlfp54ppbrg"))))
-    (properties `((upstream-name . "SimRAD")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zlibbioc r-shortread r-biostrings))
-    (home-page "https://cran.r-project.org/package=SimRAD")
-    (synopsis "Simulations to Predict the Number of RAD and GBS Loci")
-    (description
-     "This package provides a number of functions to simulate restriction enzyme
-digestion, library construction and fragments size selection to predict the
-number of loci expected from most of the Restriction site Associated DNA (RAD)
-and Genotyping By Sequencing (GBS) approaches. @code{SimRAD} estimates the
-number of loci expected from a particular genome depending on the protocol type
-and parameters allowing to assess feasibility, multiplexing capacity and the
-amount of sequencing required.")
     (license license:gpl2)))
 
 (define-public r-simputation
@@ -47419,13 +47394,13 @@ easy-to-use dataframe format manipulable in standard R functions.")
 (define-public r-see
   (package
     (name "r-see")
-    (version "0.8.0")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "see" version))
        (sha256
-        (base32 "1vdxhv00drnbg6azbrk7g8r4j45dbzb8h8zgzra5mqbbc7k8pdk2"))))
+        (base32 "1br3a28cjsr214ms5ij8rr9an0wp0151i2wa8a4h2hjcjjqcrz7m"))))
     (properties `((upstream-name . "see")))
     (build-system r-build-system)
     (propagated-inputs (list r-performance
@@ -47445,7 +47420,7 @@ ecosystem (<https://github.com/easystats/easystats>) and some extra themes,
 geoms, and scales for ggplot2'.  Color scales are based on
 <https://materialui.co/colors>.  References: LÃ¼decke et al. (2021)
 <doi:10.21105/joss.03393>.")
-    (license license:gpl3)))
+    (license license:expat)))
 
 (define-public r-sedproxy
   (package
@@ -48594,13 +48569,13 @@ viewer pane during their execution.")
 (define-public r-sdmtmb
   (package
     (name "r-sdmtmb")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sdmTMB" version))
        (sha256
-        (base32 "00qlbwybdnxk48sfw7s56xzr3jrnh6ysjn9fyfpm8ry1h4rya55n"))))
+        (base32 "19d7ddvy4gk7s5ngg3qd99hqx5mi0wxv9yfk8rs15hlapb8vy4a9"))))
     (properties `((upstream-name . "sdmTMB")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb
@@ -48619,14 +48594,15 @@ viewer pane during their execution.")
                              r-cli
                              r-assertthat))
     (native-inputs (list r-knitr))
-    (home-page "https://pbs-assess.github.io/sdmTMB/index.html")
+    (home-page "https://pbs-assess.github.io/sdmTMB/")
     (synopsis "Spatial and Spatiotemporal SPDE-Based GLMMs with 'TMB'")
     (description
      "This package implements spatial and spatiotemporal GLMMs (Generalized Linear
-Mixed Effect Models) using TMB', INLA', and the SPDE (Stochastic Partial
-Differential Equation) approximation to Gaussian random fields.  One common
-application is for spatially explicit species distribution models (SDMs).  See
-Anderson et al. (2022) <doi:10.1101/2022.03.24.485545>.")
+Mixed Effect Models) using TMB', fmesher', and the SPDE (Stochastic Partial
+Differential Equation) Gaussian Markov random field approximation to Gaussian
+random fields.  One common application is for spatially explicit species
+distribution models (SDMs).  See Anderson et al. (2022)
+<doi:10.1101/2022.03.24.485545>.")
     (license license:gpl3)))
 
 (define-public r-sdmpredictors
@@ -51918,13 +51894,13 @@ used.")
 (define-public r-scdiffcom
   (package
     (name "r-scdiffcom")
-    (version "0.1.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scDiffCom" version))
        (sha256
-        (base32 "1xgrsfrh06n8hzyqv3j99kjk6l85khg099vjdsf7kx9f5p92iixd"))))
+        (base32 "17scb8hhx2d67cbhzxd0l2hzy4sj22x5j9rvc71ba2d958wk4ysa"))))
     (properties `((upstream-name . "scDiffCom")))
     (build-system r-build-system)
     (propagated-inputs (list r-seurat
@@ -51941,11 +51917,11 @@ used.")
 @code{scRNA-seq} data.  Using a Seurat object as input, the package infers which
 cell-cell interactions are present in the dataset and how these interactions
 change between two conditions of interest (e.g. young vs old).  It relies on an
-internal database of ligand-receptor interactions (available for both human and
-mouse) that have been gathered from several published studies.  Detection and
+internal database of ligand-receptor interactions (available for human, mouse
+and rat) that have been gathered from several published studies.  Detection and
 differential analyses rely on permutation tests.  The package also contains
 several tools to perform over-representation analysis and visualize the results.
- See Lagger, C. et al. (2021) <doi:10.1101/2021.08.13.456238> for a full
+ See Lagger, C. et al. (2023) <doi:10.1038/s43587-023-00514-x> for a full
 description of the methodology.")
     (license license:expat)))
 

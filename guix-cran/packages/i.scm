@@ -1867,6 +1867,28 @@ for species with greater weight and cluster medoids.")
 spectrometer.  Hilkert et al. (2021) <doi:10.1021/acs.analchem.1c00944>.")
     (license license:expat)))
 
+(define-public r-isomemo
+  (package
+    (name "r-isomemo")
+    (version "23.10.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IsoMemo" version))
+       (sha256
+        (base32 "0im0h5av752gy8gl48m9hclsclz7cg47k1qi9ndip66k6dinp6df"))))
+    (properties `((upstream-name . "IsoMemo")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-modules r-jsonlite r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=IsoMemo")
+    (synopsis "Retrieve Data using the 'IsoMemo' API")
+    (description
+     "API wrapper that contains functions to retrieve data from the @code{IsoMemo}
+partnership databases.  Web services for API:
+<https://isomemodb.com/api/v1/iso-data>.")
+    (license license:gpl3+)))
+
 (define-public r-isokernel
   (package
     (name "r-isokernel")

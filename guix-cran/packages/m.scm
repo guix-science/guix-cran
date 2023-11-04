@@ -616,13 +616,13 @@ multivariate meta-analysis.")
 (define-public r-mvtests
   (package
     (name "r-mvtests")
-    (version "2.1.1")
+    (version "2.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MVTests" version))
        (sha256
-        (base32 "10zybrcwyq37z8pk0ck4bravbrryx705vd7v4mb4c2vavnshxfq3"))))
+        (base32 "02rl7f249cis4jxqpszwmxr9fc483yhrni0rdyiwamv5q5j1bifz"))))
     (properties `((upstream-name . "MVTests")))
     (build-system r-build-system)
     (propagated-inputs (list r-rrcov r-robustbase r-mvtnorm))
@@ -7289,13 +7289,13 @@ identification\" <doi:10.1038/s41592-021-01331-z>.")
 (define-public r-mseapca
   (package
     (name "r-mseapca")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mseapca" version))
        (sha256
-        (base32 "1izbai3d9199a5dpyg882hnc1d7fz0x9gjd5if79i50hhc3lwqyr"))))
+        (base32 "1hyggnwsh0da094mdy24lijpvjrg3sdhlm0xph50j5iz01zic4f0"))))
     (properties `((upstream-name . "mseapca")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml r-loadings))
@@ -23838,13 +23838,13 @@ Spanish official statistics with R.")
 (define-public r-microcran
   (package
     (name "r-microcran")
-    (version "0.9.0")
+    (version "0.9.0-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "microCRAN" version))
        (sha256
-        (base32 "1s1chzmrn9bk09bwgwkzid5bqd8a0248vkl1hglgd29c5lc9jf61"))))
+        (base32 "08aygif352awrqy1js8n09vng0f085p27nxbqkiibrrgk2nyk62l"))))
     (properties `((upstream-name . "microCRAN")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable r-rlang r-plumber r-mime r-assertthat))

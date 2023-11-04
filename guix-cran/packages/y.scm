@@ -426,13 +426,13 @@ from Cricsheet <https://cricsheet.org/>.")
 (define-public r-ympes
   (package
     (name "r-ympes")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ympes" version))
        (sha256
-        (base32 "1vxyq148m7kaj9f4lgr5jlnd31rn1wh8cbjn0j2s22kip1p57aaf"))))
+        (base32 "1z7hbv8sl8sdkczrfqjxdalxcpgfhpb2cx4bpmjh7y98a5xn2g6s"))))
     (properties `((upstream-name . "ympes")))
     (build-system r-build-system)
     (home-page "https://github.com/TimTaylor/ympes")

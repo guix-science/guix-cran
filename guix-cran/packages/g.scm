@@ -4954,13 +4954,13 @@ Additional functions are provided for automatic cutting and diagnostic plotting.
 (define-public r-greeks
   (package
     (name "r-greeks")
-    (version "1.3")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "greeks" version))
        (sha256
-        (base32 "0danj3nllcxzv9gf9b5sjcjn8qafmaas3nx54r0b447d3sqdl95f"))))
+        (base32 "08mflxga4gkb2nhs7rqcg74jjyq1ips70bq33i8pv2bzqvi3crl2"))))
     (properties `((upstream-name . "greeks")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -4974,7 +4974,7 @@ Additional functions are provided for automatic cutting and diagnostic plotting.
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=greeks")
     (synopsis
-     "Sensitivities of Prices of Financial Options and Implied Volatilites")
+     "Sensitivities of Prices of Financial Options and Implied Volatilities")
     (description
      "This package provides methods to calculate sensitivities of financial option
 prices for European, geometric and arithmetic Asian, and American options, with
@@ -7815,13 +7815,13 @@ pandoc and pandoc-citeproc first (<https://pandoc.org/>).")
 (define-public r-goxplorer
   (package
     (name "r-goxplorer")
-    (version "1.2.6")
+    (version "1.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GOxploreR" version))
        (sha256
-        (base32 "1s2f0ns09vvk6q7fd9fgdw7mcr7qib8mvia1xp9dw4rnq0i6ca1k"))))
+        (base32 "0878czn9fyjh52a8qwmffl47x1jy8pw4m35wzicxj7k7ck58ws9k"))))
     (properties `((upstream-name . "GOxploreR")))
     (build-system r-build-system)
     (propagated-inputs (list r-network
@@ -17966,26 +17966,6 @@ without overlapping.  This is implemented as a position_surround() function for
 ggplot2'.")
     (license license:lgpl3+)))
 
-(define-public r-ggbreak
-  (package
-    (name "r-ggbreak")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ggbreak" version))
-       (sha256
-        (base32 "14rx16v66xd0fjlywi89dq9dbw41zn7hpq14wgvf0178cxdp2fw4"))))
-    (properties `((upstream-name . "ggbreak")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rlang r-ggplotify r-ggplot2 r-ggfun r-aplot))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/YuLab-SMU/ggbreak")
-    (synopsis "Set Axis Break for 'ggplot2'")
-    (description
-     "An implementation of scale functions for setting axis breaks of a gg plot.")
-    (license license:artistic2.0)))
-
 (define-public r-ggbrain
   (package
     (name "r-ggbrain")
@@ -25205,13 +25185,13 @@ to quantify model sensitivities.")
 (define-public r-gcplyr
   (package
     (name "r-gcplyr")
-    (version "1.6.0")
+    (version "1.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gcplyr" version))
        (sha256
-        (base32 "01qhk9f8rjabs4vi5rfd9crmb2dwv7xflj3ci5abn04b9wykbmjf"))))
+        (base32 "0ff07m7pddw494p7xj7d3hvvwyd3k0cqwyfmyidnv37il6ap9iir"))))
     (properties `((upstream-name . "gcplyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-dplyr))
