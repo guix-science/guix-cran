@@ -14618,13 +14618,13 @@ Pages 69-92) <doi:10.1016/0304-3975(95)00090-9>.")
 (define-public r-polymapr
   (package
     (name "r-polymapr")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "polymapR" version))
        (sha256
-        (base32 "0j7f5rdkkwc0y15jjgik9bhkrwypafmm34h7kjkwa806dzgq8xsv"))))
+        (base32 "0m6k54j0x1hjcjchiasvm69rsbj8x1g1f6ab10bmyl2d693v2bv1"))))
     (properties `((upstream-name . "polymapR")))
     (build-system r-build-system)
     (propagated-inputs (list r-mdsmap r-knitr r-igraph r-foreach r-doparallel))
@@ -30244,13 +30244,13 @@ effectively.")
 (define-public r-pbsmapping
   (package
     (name "r-pbsmapping")
-    (version "2.73.2")
+    (version "2.73.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PBSmapping" version))
        (sha256
-        (base32 "0glkqcgykhcnh0si0j3f12kapb2w1fglgfll0jrnjikajwvj3fpm"))))
+        (base32 "1g4gnqwjq45xfrymmyn89zn2gry1l142cc084qp5pv2f400qfmnc"))))
     (properties `((upstream-name . "PBSmapping")))
     (build-system r-build-system)
     (home-page "https://github.com/pbs-software/pbs-mapping")

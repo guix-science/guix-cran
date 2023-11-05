@@ -3611,32 +3611,6 @@ phylogenetic tree, and statistical distribution Shiny interactive simulations
 for use in teaching.")
     (license license:gpl2+)))
 
-(define-public r-evmix
-  (package
-    (name "r-evmix")
-    (version "2.12")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "evmix" version))
-       (sha256
-        (base32 "02rabc9snci00s1x7h0svfr66lmw1wjcdg0149wc52mnccsdaivf"))))
-    (properties `((upstream-name . "evmix")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sparsem r-mass r-gsl))
-    (home-page "http://www.math.canterbury.ac.nz/~c.scarrott/evmix")
-    (synopsis
-     "Extreme Value Mixture Modelling, Threshold Estimation and Boundary Corrected Kernel Density Estimation")
-    (description
-     "The usual distribution functions, maximum likelihood inference and model
-diagnostics for univariate stationary extreme value mixture models are provided.
- Kernel density estimation including various boundary corrected kernel density
-estimation methods and a wide choice of kernels, with cross-validation
-likelihood based bandwidth estimator.  Reasonable consistency with the base
-functions in the evd package is provided, so that users can safely interchange
-most code.")
-    (license license:gpl3)))
-
 (define-public r-evir
   (package
     (name "r-evir")
@@ -4287,27 +4261,6 @@ uninformative and informed prior distributions for common statistical models
 applied to extreme event data, including the generalized extreme value
 distribution.")
     (license license:gpl2+)))
-
-(define-public r-evd
-  (package
-    (name "r-evd")
-    (version "2.3-6.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "evd" version))
-       (sha256
-        (base32 "0wc95hfj0gwkyghipdrhwd3s6q2agh9x2wy6y7dr6mjw7wnmjb36"))))
-    (properties `((upstream-name . "evd")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=evd")
-    (synopsis "Functions for Extreme Value Distributions")
-    (description
-     "Extends simulation, distribution, quantile and density functions to univariate
-and multivariate parametric extreme value distributions, and provides fitting
-functions which calculate maximum likelihood estimates for univariate and
-bivariate maxima models, and for univariate and bivariate threshold models.")
-    (license license:gpl3)))
 
 (define-public r-evcombr
   (package

@@ -7289,13 +7289,13 @@ identification\" <doi:10.1038/s41592-021-01331-z>.")
 (define-public r-mseapca
   (package
     (name "r-mseapca")
-    (version "2.0.2")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mseapca" version))
        (sha256
-        (base32 "1hyggnwsh0da094mdy24lijpvjrg3sdhlm0xph50j5iz01zic4f0"))))
+        (base32 "0kmli8dmkv7dacb52dz84plhr4ncagch2kzh61amhga4chwqhwzq"))))
     (properties `((upstream-name . "mseapca")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml r-loadings))
@@ -16845,13 +16845,13 @@ joint tuning of machine learning algorithms and debiasing methods.")
 (define-public r-mlr3db
   (package
     (name "r-mlr3db")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3db" version))
        (sha256
-        (base32 "00zg5skc7l5i84djmq3v5f1ln0959jx24gfazx49vpyxbcs0p5dg"))))
+        (base32 "1cq22h9yj27ighh4clyak1xwx2wb5v4803hd7lrhnlgzs85dmhj2"))))
     (properties `((upstream-name . "mlr3db")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6
@@ -21630,13 +21630,13 @@ Sievert, Schloerke, Xie, Allen, @code{McPherson}, Dipert and Borges (2022)
 (define-public r-mirai
   (package
     (name "r-mirai")
-    (version "0.11.0")
+    (version "0.11.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mirai" version))
        (sha256
-        (base32 "0d19pazgh16zcyssfha23csb98yhn9sz8xd7cbyqdf547n6yb0xn"))))
+        (base32 "1n0hjqz8h0754wsnbml72cp6hwdfd0wzsfl95x6pvp2i83yz2i1h"))))
     (properties `((upstream-name . "mirai")))
     (build-system r-build-system)
     (propagated-inputs (list r-nanonext))
@@ -34606,27 +34606,6 @@ real-time isothermal Amplification).  Further information are described in
 detail in two publications in The R Journal [
 <https://journal.r-project.org/archive/2013-2/roediger-bohm-schimke.pdf>;
 <https://journal.r-project.org/archive/2015-1/RJ-2015-1.pdf>].")
-    (license license:gpl2+)))
-
-(define-public r-mblm
-  (package
-    (name "r-mblm")
-    (version "0.12.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mblm" version))
-       (sha256
-        (base32 "1fipb3bryaimr30lcxsxrn0ymv24z39swca7s4z7p9xcfg3ban1b"))))
-    (properties `((upstream-name . "mblm")))
-    (build-system r-build-system)
-    (home-page "https://www.r-project.org")
-    (synopsis "Median-Based Linear Models")
-    (description
-     "This package provides linear models based on Theil-Sen single median and Siegel
-repeated medians.  They are very robust (29 or 50 percent breakdown point,
-respectively), and if no outliers are present, the estimators are very similar
-to OLS.")
     (license license:gpl2+)))
 
 (define-public r-mbir

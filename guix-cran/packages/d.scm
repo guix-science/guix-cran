@@ -5689,6 +5689,26 @@ function, which works on most OSes and is mainly for grammar testing.  The
 fastest parsing, of course, occurs at the C level, and is suggested.")
     (license license:bsd-3)))
 
+(define-public r-doypacolors
+  (package
+    (name "r-doypacolors")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DOYPAColors" version))
+       (sha256
+        (base32 "0d8xsnl910hmcvd38mqbdnl7nvx3y9f065y90dqq36pcqvrd57h1"))))
+    (properties `((upstream-name . "DOYPAColors")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ggplot2))
+    (home-page "https://github.com/jmestret/DOYPAColors")
+    (synopsis "Don't Overthink Your Palette of Colors")
+    (description
+     "Access diverse ggplot2'-compatible color palettes for simplified data
+visualization.")
+    (license license:expat)))
+
 (define-public r-dowser
   (package
     (name "r-dowser")

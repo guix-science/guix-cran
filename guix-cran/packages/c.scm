@@ -15,8 +15,8 @@
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages maths)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages photo)
@@ -2856,13 +2856,13 @@ the existence of change point, for the paper, \"Feipeng Zhang and Qunhua Li
 (define-public r-cthist
   (package
     (name "r-cthist")
-    (version "2.1.3")
+    (version "2.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cthist" version))
        (sha256
-        (base32 "01zq7avxqzifcm1hm75kji59ds3ib506ccg1587ldlwm7iwcfr9g"))))
+        (base32 "0z37xf0fbdfm077d8i3r7sb4vp8vp34gp6nlab8512g7p42rang9"))))
     (properties `((upstream-name . "cthist")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -13293,13 +13293,13 @@ regression trees.")
 (define-public r-convertid
   (package
     (name "r-convertid")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "convertid" version))
        (sha256
-        (base32 "1ys3yi2g3m69zwc5qca8szhawgvk1wxny4sv2z6cly0cb119fpz5"))))
+        (base32 "0q3r8fasx8p2kgj3icfy6ynnmvan9w89kg4a3s3w0vns932gwvi9"))))
     (properties `((upstream-name . "convertid")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -13308,7 +13308,9 @@ regression trees.")
                              r-plyr
                              r-org-mm-eg-db
                              r-org-hs-eg-db
+                             r-httr
                              r-biomart
+                             r-biocfilecache
                              r-assertthat
                              r-annotationdbi))
     (home-page "https://cran.r-project.org/package=convertid")

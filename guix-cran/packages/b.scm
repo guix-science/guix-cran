@@ -15287,13 +15287,13 @@ and Held, L. (2011) <doi:10.1007/s11222-010-9170-7>.")
 (define-public r-bff
   (package
     (name "r-bff")
-    (version "2.7.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BFF" version))
        (sha256
-        (base32 "06c9npdahy01hx5yf9w775rh84xigs0ihh0ymjhx7a7xd4vi4jjm"))))
+        (base32 "1sya6ww8jwi56zb3i2rjhk1qd52n5s9sqlzndyk812zyxj6h5zim"))))
     (properties `((upstream-name . "BFF")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-hypergeo r-gsl r-ggplot2 r-bsda))

@@ -52,13 +52,13 @@
 (define-public r-tzupdater
   (package
     (name "r-tzupdater")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tzupdater" version))
        (sha256
-        (base32 "0s1simvn76m569iq24qb3w6xli0202cjf1jr3a4qy58fs4sda2kv"))))
+        (base32 "0fyxbpjv3vyw2rg3qpr1a4wnjd62cwcvg4mkvbvvrsczm1adg61s"))))
     (properties `((upstream-name . "tzupdater")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=tzupdater")
@@ -4308,31 +4308,6 @@ offer richer output containing, for example, the distribution parameters.  It
 also provides functions to retrieve the original distribution parameters from a
 truncated sample by maximum-likelihood estimation.")
     (license license:gpl3)))
-
-(define-public r-truncdist
-  (package
-    (name "r-truncdist")
-    (version "1.0-2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "truncdist" version))
-       (sha256
-        (base32 "02ihw4ixhadwr3sqm6r264i8vpcaz8pn69vkzabd8fwqvn5vcj5q"))))
-    (properties `((upstream-name . "truncdist")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-evd))
-    (home-page "https://cran.r-project.org/package=truncdist")
-    (synopsis "Truncated Random Variables")
-    (description
-     "This package provides a collection of tools to evaluate probability density
-functions, cumulative distribution functions, quantile functions and random
-numbers for truncated random variables.  These functions are provided to also
-compute the expected value and variance.  Nadarajah and Kotz (2006) developed
-most of the functions.  QQ plots can be produced.  All the probability functions
-in the stats, stats4 and evd packages are automatically available for
-truncation..")
-    (license license:gpl2+)))
 
 (define-public r-truncatednormal
   (package
@@ -16799,13 +16774,13 @@ majority cases using @code{NearMiss} 2003
 (define-public r-thematic
   (package
     (name "r-thematic")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "thematic" version))
        (sha256
-        (base32 "01i3qxqil7a1r0cim5whs0glmpkhwgzxn2jc5m0acgrfk9z9rwpf"))))
+        (base32 "10p4fk6ljwcyy5xs2wffdx27pjmmgwasb5jj24c1chqsf5cwrhvf"))))
     (properties `((upstream-name . "thematic")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales

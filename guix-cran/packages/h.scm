@@ -11134,13 +11134,13 @@ rate only in the weak sense, rather than the strong sense as intended.")
 (define-public r-harbinger
   (package
     (name "r-harbinger")
-    (version "1.0.707")
+    (version "1.0.727")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "harbinger" version))
        (sha256
-        (base32 "0ddpr6m4y09driqbbvrhdfmqfmrfbszbcf08bpk9ykxd6wrh55zz"))))
+        (base32 "1y3qy7miwgqlgarnhlijn16rj9q9knxfm15alnpk9mirfx8mm8s2"))))
     (properties `((upstream-name . "harbinger")))
     (build-system r-build-system)
     (propagated-inputs (list r-tspred

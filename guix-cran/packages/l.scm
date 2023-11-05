@@ -14584,13 +14584,13 @@ visualization tools.")
 (define-public r-lares
   (package
     (name "r-lares")
-    (version "5.2.2")
+    (version "5.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lares" version))
        (sha256
-        (base32 "0fcdwx8hgrlh7ghgvnp9i4hqr9n79sr1s9r4h7yssf1cyajc6x39"))))
+        (base32 "1gzm4j19fjnnvdfcv6w0jsmz5h8nr3ncivdxn4aq0v5j9vml2jwf"))))
     (properties `((upstream-name . "lares")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml

@@ -5252,13 +5252,13 @@ by high-throughput technologies.")
 (define-public r-supernova
   (package
     (name "r-supernova")
-    (version "2.5.7")
+    (version "2.5.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "supernova" version))
        (sha256
-        (base32 "167q33ad0rqzccnlir96692kzsw1n07msgpy9w8939yaiv6div5g"))))
+        (base32 "0cahgyn9z5nkr21a83j6vps39qp5vas78c0w6ybsp6hs4l3nqhjf"))))
     (properties `((upstream-name . "supernova")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -30995,13 +30995,13 @@ Bureau of Transport Statistics (BTS) in the United States
 (define-public r-skylight
   (package
     (name "r-skylight")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "skylight" version))
        (sha256
-        (base32 "06snpj5jdr5wzv87587izvkxnxn24xl11jm7l2x2sj6s6rw16p9w"))))
+        (base32 "1yh3hk1z4c25pkb9gzyc16a68jd1za4h9z4l9xh5avkg68ixff5j"))))
     (properties `((upstream-name . "skylight")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

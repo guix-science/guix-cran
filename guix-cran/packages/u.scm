@@ -1458,13 +1458,13 @@ estimation.")
 (define-public r-upg
   (package
     (name "r-upg")
-    (version "0.3.3")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "UPG" version))
        (sha256
-        (base32 "0j27135akpkn9qsllfr871fcz7hynmxzjac35b8zm65pr6ygjcap"))))
+        (base32 "0yyyyjxrw9833w0iwnp2c3y853h8c5kj8rbkalg5rsmxk5m0fjgn"))))
     (properties `((upstream-name . "UPG")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm
@@ -1483,8 +1483,11 @@ estimation.")
 binomial logit models.  Functions for plotting and tabulating the estimation
 output are available as well.  Estimation is based on Gibbs sampling where the
 Markov chain Monte Carlo algorithms are based on the latent variable
-representations and marginal data augmentation algorithms outlined in Zens G.,
-Fr<fc>hwirth-Schnatter S., Wagner H. (2020) <@code{arXiv:2011.06898>}.")
+representations and marginal data augmentation algorithms described in \"Gregor
+Zens, Sylvia @code{FrÃ¼hwirth-Schnatter} & Helga Wagner (2023).  Ultimate PÃ³lya
+Gamma Samplers â Efficient MCMC for possibly imbalanced binary and categorical
+data, Journal of the American Statistical Association
+<doi:10.1080/01621459.2023.2259030>\".")
     (license license:gpl3)))
 
 (define-public r-updown
