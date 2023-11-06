@@ -4355,29 +4355,33 @@ using the Paasche, Laspeyres, Fisher and Tornqvist formulas.")
 (define-public r-multikink
   (package
     (name "r-multikink")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MultiKink" version))
        (sha256
-        (base32 "0vi629mjmyrh03g3kx4vl47s52bggdxbq2wrdcf892g7xasbmv2b"))))
+        (base32 "14npzvidqiy25ldg2g4vyj6bbrmi9vbpswbm9ah9hc4sdjdq344h"))))
     (properties `((upstream-name . "MultiKink")))
     (build-system r-build-system)
-    (propagated-inputs (list r-quantreg r-mass))
+    (propagated-inputs (list r-quantreg r-pracma r-matrix r-gam))
     (home-page "https://cran.r-project.org/package=MultiKink")
     (synopsis "Estimation and Inference for Multi-Kink Quantile Regression")
     (description
-     "Estimation and inference for multiple kink quantile regression.  A bootstrap
-restarting iterative segmented quantile algorithm is proposed to estimate the
-multiple kink quantile regression model conditional on a given number of change
-points.  The number of kinks is also allowed to be unknown.  In such case, the
-backward elimination algorithm and the bootstrap restarting iterative segmented
-quantile algorithm are combined to select the number of change points based on a
-quantile BIC. A score-type based test statistic is also developed for testing
-the existence of kink effect.  The package is based on the paper, \"Wei Zhong,
-Chuang Wan and Wenyang Zhang (2020).  Estimation and inference for multi-kink
-quantile regression, submitted\".")
+     "Estimation and inference for multiple kink quantile regression for longitudinal
+data and the i.i.d data.  A bootstrap restarting iterative segmented quantile
+algorithm is proposed to estimate the multiple kink quantile regression model
+conditional on a given number of change points.  The number of kinks is also
+allowed to be unknown.  In such case, the backward elimination algorithm and the
+bootstrap restarting iterative segmented quantile algorithm are combined to
+select the number of change points based on a quantile BIC. For longitudinal
+data, we also develop the GEE estimator to incorporate the within-subject
+correlations.  A score-type based test statistic is also developed for testing
+the existence of kink effect.  The package is based on the paper, ``Wei Zhong,
+Chuang Wan and Wenyang Zhang (2022).  Estimation and inference for multikink
+quantile regression, JBES and ``Chuang Wan, Wei Zhong, Wenyang Zhang and
+Changliang Zou (2022).  Multi-kink quantile regression for longitudinal data
+with application to progesterone data analysis, Biometrics\".")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-multijoin
@@ -10138,13 +10142,13 @@ user.  It just requires a Digital Terrain Model, a start location and
 (define-public r-move2
   (package
     (name "r-move2")
-    (version "0.2.2")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "move2" version))
        (sha256
-        (base32 "1girhkf2d4rjcsd6rp14vcfv9c2kxwnrbjcmzhjj965yzai9gffb"))))
+        (base32 "19ggsr3i6s4gm69w87c6dq11xkfs7ljcaziymk2s0bhy71l3gi4a"))))
     (properties `((upstream-name . "move2")))
     (build-system r-build-system)
     (propagated-inputs (list r-vroom
@@ -17681,13 +17685,13 @@ increments (BAI) was described by @code{JevÅ¡enak} and Skudnik (2021)
 (define-public r-mlflow
   (package
     (name "r-mlflow")
-    (version "2.7.1")
+    (version "2.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlflow" version))
        (sha256
-        (base32 "1ydf452xhmapshxxza5phsgn44adxivhwmv2wh6a3d30mzm9zk9f"))))
+        (base32 "1x8dwyhak19pbrh8bd5irzi413x34n3zxcwjrfd35cqvdqpf2pjn"))))
     (properties `((upstream-name . "mlflow")))
     (build-system r-build-system)
     (propagated-inputs (list r-zeallot
@@ -21604,16 +21608,16 @@ imputation of the number of previous episodes.  See @code{HernÃ¡ndez-Herrera} 
 (define-public r-mirai-promises
   (package
     (name "r-mirai-promises")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mirai.promises" version))
        (sha256
-        (base32 "17jdri470qvxp88h97zgblvbrb0pj1msym96sxlg93gmq2xd0ap8"))))
+        (base32 "0fk897nw87ppz2bmx6i25q4r0xqk8j9m993ahwgaccqbppay5fj7"))))
     (properties `((upstream-name . "mirai.promises")))
     (build-system r-build-system)
-    (propagated-inputs (list r-promises r-mirai r-later))
+    (propagated-inputs (list r-promises r-nanonext r-later))
     (home-page "https://shikokuchuo.net/mirai.promises/")
     (synopsis "Make 'Mirai' 'Promises'")
     (description
@@ -28684,26 +28688,6 @@ community by interacting with the Metaculus API, currently located at
 enabling programming activities and functionality of other packages within the
 clinical programming workflow.")
     (license license:expat)))
-
-(define-public r-metacor
-  (package
-    (name "r-metacor")
-    (version "1.0-2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "metacor" version))
-       (sha256
-        (base32 "0y3z7jbhw5c2dbn9fx9wlw1311irjc2xvnm5hnaixbbj53qz24n0"))))
-    (properties `((upstream-name . "metacor")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rmeta r-gsl))
-    (home-page "https://cran.r-project.org/package=metacor")
-    (synopsis "Meta-Analysis of Correlation Coefficients")
-    (description
-     "Implement the @code{DerSimonian-Laird} (DSL) and Olkin-Pratt (OP)
-meta-analytical approaches with correlation coefficients as effect sizes.")
-    (license license:gpl2)))
 
 (define-public r-metaconfoundr
   (package

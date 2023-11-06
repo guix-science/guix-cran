@@ -3351,13 +3351,13 @@ electric power transmission network) in the UK since 2011.")
 (define-public r-ukfe
   (package
     (name "r-ukfe")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "UKFE" version))
        (sha256
-        (base32 "0gnawmjjrsx24kk114kgxvzzmpski3gas68ri6igglip3nicy7ir"))))
+        (base32 "07g73jbamm70x3j3fgzjqbi78xqaf46sqvnrhcmq6rf0y5cdxj8c"))))
     (properties `((upstream-name . "UKFE")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2))
@@ -3366,7 +3366,7 @@ electric power transmission network) in the UK since 2011.")
     (description
      "This package provides functions to implement the methods of the Flood Estimation
 Handbook (FEH), associated updates and the revitalised flood hydrograph model
-(@code{ReFH}).  Currently the package uses NRFA peak flow dataset version 12.
+(@code{ReFH}).  Currently the package uses NRFA peak flow dataset version 12.1.
 Aside from FEH functionality, further hydrological functions are available.
 Most of the methods implemented in this package are described in one or more of
 the following: \"Flood Estimation Handbook\", Centre for Ecology & Hydrology

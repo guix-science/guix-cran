@@ -2708,24 +2708,22 @@ psychomix') for details on the Rasch mixture models.")
 (define-public r-psychometric
   (package
     (name "r-psychometric")
-    (version "2.3")
+    (version "2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psychometric" version))
        (sha256
-        (base32 "0yn1k1z9mf3bmlgygwiwb6y04c52rpx47n2v2x8lac5zds5yb4xl"))))
+        (base32 "1mlggzw80pb7kfykva1s4ic726l8dckrgik2519njh32ycvk9x1s"))))
     (properties `((upstream-name . "psychometric")))
     (build-system r-build-system)
     (propagated-inputs (list r-purrr r-nlme r-multilevel r-dplyr))
     (home-page "https://cran.r-project.org/package=psychometric")
     (synopsis "Applied Psychometric Theory")
     (description
-     "This package provides tools useful for measurement theory (Allen & Yen
-2001)<ISBN: 157766230X>, meta-analysis (validity-generalization) (Schmidt &
-Hunter)<doi:10.4135/9781483398105>, reliability, item analysis, inter-rater
-reliability, classical utility, and correlation analysis (Cohen et.  al.
-2003)<doi:10.4324/9780203774441>.")
+     "This package contains functions useful for correlation theory, meta-analysis
+(validity-generalization), reliability, item analysis, inter-rater reliability,
+and classical utility.")
     (license license:gpl2+)))
 
 (define-public r-psycho
@@ -2799,13 +2797,13 @@ corrections for range variation, and more.  Bugs can be reported to
 (define-public r-psyccleaning
   (package
     (name "r-psyccleaning")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psycCleaning" version))
        (sha256
-        (base32 "0wkysnvb1q9iw84qq6wm1a3d2jwb7aln15aldxkrv5l2j8v7dyc4"))))
+        (base32 "1xpywbf77ayx56mvcgxjch1fm6cw0al1sr7vqn3di5c56gmxn7p3"))))
     (properties `((upstream-name . "psycCleaning")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-tibble r-rlang r-dplyr r-data-table))
@@ -27289,13 +27287,13 @@ server of the Peer Models Network.")
 (define-public r-pedtools
   (package
     (name "r-pedtools")
-    (version "2.4.0")
+    (version "2.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pedtools" version))
        (sha256
-        (base32 "0hd993g377i0hxsy5abklm6ajcpizfps9lp9qb8bcslzclh06h5v"))))
+        (base32 "0nlabc5q90qzm506a9ys0nfpr89w42p50w3vxvp8s2sxin9xfngl"))))
     (properties `((upstream-name . "pedtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-pedmut r-kinship2))
@@ -27309,9 +27307,9 @@ be read from text files or created on the fly with built-in functions.  A range
 of utilities enable modifications like adding or removing individuals, breaking
 loops, and merging pedigrees.  An online tool for creating pedigrees
 interactively, based on pedtools', is available at
-<https://magnusdv.shinyapps.io/quickped>.  pedtools is the hub of the ped
-suite', a collection of packages for pedigree analysis.  A detailed presentation
-of the ped suite is given in the book Pedigree Analysis in R (Vigeland, 2021,
+<https://magnusdv.shinyapps.io/quickped>.  pedtools is the hub of the pedsuite',
+a collection of packages for pedigree analysis.  A detailed presentation of the
+pedsuite is given in the book Pedigree Analysis in R (Vigeland, 2021,
 ISBN:9780128244302).")
     (license license:gpl3)))
 
@@ -27467,13 +27465,13 @@ from the CRAN archive <https://cran.r-project.org/src/contrib/Archive/>.")
 (define-public r-pedmut
   (package
     (name "r-pedmut")
-    (version "0.6.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pedmut" version))
        (sha256
-        (base32 "0zgkgmzzw8kmiacvfjdfqc04gwiv04g5p71b4rkndgb8d68v0f6m"))))
+        (base32 "1wjz0mqwwvxn44lyrdnns0zsadglfs50np8sy6b0w07bpr6izlii"))))
     (properties `((upstream-name . "pedmut")))
     (build-system r-build-system)
     (home-page "https://github.com/magnusdv/pedmut")
@@ -27603,13 +27601,13 @@ kernel and burden association statistics.")
 (define-public r-pedfamilias
   (package
     (name "r-pedfamilias")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pedFamilias" version))
        (sha256
-        (base32 "026i67p3y60r393hklxh7cjv6apbjyf4h1xba96bn11yhkqrhsw6"))))
+        (base32 "1zlnm6pj1x9wb5cjl5dzyzlqyxh5k82s86b1mg7kg5q7qhhmpj9s"))))
     (properties `((upstream-name . "pedFamilias")))
     (build-system r-build-system)
     (propagated-inputs (list r-pedtools r-pedmut))

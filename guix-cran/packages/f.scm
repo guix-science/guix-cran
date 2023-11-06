@@ -14582,16 +14582,17 @@ Methods, World Scientific, Singapore.
 (define-public r-feltr
   (package
     (name "r-feltr")
-    (version "0.0.2")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "feltr" version))
        (sha256
-        (base32 "1vi0dz25pnn0im5bgp5swfdyavq75ywi6j0ivwplbvcj25nny55f"))))
+        (base32 "1cn6kwkvcy91ng5d67x2hs853k5dqhlap6yym1xfw741f11dx1zy"))))
     (properties `((upstream-name . "feltr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tibble
+    (propagated-inputs (list r-tidyr
+                             r-tibble
                              r-stringr
                              r-sf
                              r-rlang
@@ -14602,7 +14603,7 @@ Methods, World Scientific, Singapore.
                              r-fs
                              r-curl
                              r-cli))
-    (home-page "http://christophertkenny.com/feltr/")
+    (home-page "https://github.com/christopherkenny/feltr")
     (synopsis "Access the Felt API")
     (description
      "Upload, download, and edit internet maps with the Felt API
@@ -15291,26 +15292,6 @@ Mustapha, K. B. (2018).  Finite Element Computations in Mechanics with R. [ISBN
 DÃ¶hler and Roquain (2019) <@code{arXiv:1912.04607v1>}.  The main algorithms of
 the paper are available as continuous, discrete and weighted versions.")
     (license license:gpl3)))
-
-(define-public r-fdth
-  (package
-    (name "r-fdth")
-    (version "1.2-6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fdth" version))
-       (sha256
-        (base32 "179qkmdr18nx5hrx78sh64r76h7n3v00rxyg2d7l0n8kzbbi9q1v"))))
-    (properties `((upstream-name . "fdth")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xtable))
-    (home-page "https://cran.r-project.org/package=fdth")
-    (synopsis "Frequency Distribution Tables, Histograms and Polygons")
-    (description
-     "Perform frequency distribution tables, associated histograms and polygons from
-vector, data.frame and matrix objects for numerical and categorical variables.")
-    (license license:gpl2+)))
 
 (define-public r-fdrsampsize
   (package

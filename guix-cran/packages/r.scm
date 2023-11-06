@@ -3414,13 +3414,13 @@ by @code{SkÃ¸ien} et al (2014) <doi:10.1016/j.cageo.2014.02.009>.")
 (define-public r-rtoot
   (package
     (name "r-rtoot")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtoot" version))
        (sha256
-        (base32 "1ifqx2q7ial6qsidgkm8jqgy762s27scdl5m6dgi13v5yzi01xjj"))))
+        (base32 "1glx3ds5lg0y6z0z72jrr32fjvd0dip4qqbbzrnpk7skjxkwfis2"))))
     (properties `((upstream-name . "rtoot")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -3430,7 +3430,7 @@ by @code{SkÃ¸ien} et al (2014) <doi:10.1016/j.cageo.2014.02.009>.")
                              r-curl
                              r-clipr))
     (native-inputs (list r-knitr))
-    (home-page "https://schochastics.github.io/rtoot/")
+    (home-page "https://gesistsa.github.io/rtoot/")
     (synopsis "Collecting and Analyzing Mastodon Data")
     (description
      "An implementation of calls designed to collect and organize Mastodon data via
@@ -5678,17 +5678,17 @@ Modularity.")
 (define-public r-rspde
   (package
     (name "r-rspde")
-    (version "2.3.2")
+    (version "2.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rSPDE" version))
        (sha256
-        (base32 "1f0q2qykhdawbdldp1kvjqlxyrnq4zxa6vmizdy1l6jk1xcawgds"))))
+        (base32 "1l03rd8knh9mws1fbagspvpyli1sdgijslc0axwwbfjqxcpqg6yq"))))
     (properties `((upstream-name . "rSPDE")))
     (build-system r-build-system)
-    (propagated-inputs (list r-matrix))
-    (native-inputs (list r-r-rsp))
+    (propagated-inputs (list r-matrix r-lifecycle r-fmesher r-broom))
+    (native-inputs (list r-knitr))
     (home-page "https://davidbolin.github.io/rSPDE/")
     (synopsis
      "Rational Approximations of Fractional Stochastic Partial Differential Equations")
@@ -6176,6 +6176,33 @@ version of the package is documented in Journal of Statistical Software
     (description
      "This package implements the \"Stemming Algorithm for the Portuguese Language\"
 <DOI:10.1109/SPIRE.2001.10024>.")
+    (license license:expat)))
+
+(define-public r-rsleep
+  (package
+    (name "r-rsleep")
+    (version "1.0.10")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rsleep" version))
+       (sha256
+        (base32 "14j28zrm0hag63s5i1asf6cpfziqy9z2zznh2qm26iqx44n165pw"))))
+    (properties `((upstream-name . "rsleep")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-signal
+                             r-psd
+                             r-jsonlite
+                             r-ggplot2
+                             r-edfreader
+                             r-abind))
+    (native-inputs (list r-knitr))
+    (home-page "https://rsleep.org/")
+    (synopsis "Analysis of Sleep Data")
+    (description
+     "This package provides a toolbox for sleep data processing, visualization and
+analysis.  Tools for state of the art automatic sleep stages scoring.")
     (license license:expat)))
 
 (define-public r-rskey

@@ -8165,36 +8165,6 @@ penalized likelihood confidence intervals which were proved to outperform Wald
 confidence intervals.")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-coxmeg
-  (package
-    (name "r-coxmeg")
-    (version "1.1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "coxmeg" version))
-       (sha256
-        (base32 "10g4l33iwv09lm9j32kh1i003b3351v9ss3wrd6a497xgz20krhr"))))
-    (properties `((upstream-name . "coxmeg")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-snprelate
-                             r-seqarray
-                             r-rcppeigen
-                             r-rcpp
-                             r-rarpack
-                             r-nloptr
-                             r-microbenchmark
-                             r-matrix
-                             r-mass))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=coxmeg")
-    (synopsis "Cox Mixed-Effects Models for Genome-Wide Association Studies")
-    (description
-     "Fast algorithms for fitting a Cox mixed-effects model for e.g., genome-wide
-association studies.  See Liang He and Alexander Kulminski (2020) <doi:
-10.1534/genetics.119.302940>.")
-    (license (list license:gpl2+ license:gpl3+))))
-
 (define-public r-coxme
   (package
     (name "r-coxme")
@@ -38100,13 +38070,13 @@ outputs all configurations along with their confidence assessment.")
 (define-public r-canek
   (package
     (name "r-canek")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Canek" version))
        (sha256
-        (base32 "1x6lyzmcgfwl9469j3f6csv7d1zaq5yn0nvxs5xvrplp02j8614b"))))
+        (base32 "1w1sv7sw29d1kb8lcs37y34x7pj6nprciicfvw34ixy2ylsi26wa"))))
     (properties `((upstream-name . "Canek")))
     (build-system r-build-system)
     (propagated-inputs (list r-numbers

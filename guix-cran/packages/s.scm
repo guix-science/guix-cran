@@ -11258,13 +11258,13 @@ measures (Anova & Multiple Regression). - Clinical Assay.")
 (define-public r-stats19
   (package
     (name "r-stats19")
-    (version "3.0.0")
+    (version "3.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stats19" version))
        (sha256
-        (base32 "1lki2rcpp66kk3a1zwsyjczxjrid2skvdah3srbvz481vzq95zs9"))))
+        (base32 "1v02mlpk513jakvljwf0a1qjlaij1w37abs4la2isjlvfdsjc9i8"))))
     (properties `((upstream-name . "stats19")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-readr))
@@ -11273,15 +11273,22 @@ measures (Anova & Multiple Regression). - Clinical Assay.")
     (synopsis "Work with Open Road Traffic Casualty Data from Great Britain")
     (description
      "This package provides tools to help download, process and analyse the UK road
-collision data collected using the STATS19 form.  The data are provided as CSV
-files with detailed road safety data about the circumstances of car crashes and
-other incidents on the roads resulting in casualties in Great Britain from 1979,
-the types (including make and model) of vehicles involved and the consequential
-casualties.  The statistics relate only to personal casualties on public roads
-that are reported to the police, and subsequently recorded, using the STATS19
-accident reporting form.  See the Department for Transport website
+collision data collected using the STATS19 form.  The datasets are provided as
+CSV files with detailed road safety information about the circumstances of car
+crashes and other incidents on the roads resulting in casualties in Great
+Britain from 1979 to present.  Tables are available on colissions with the
+circumstances (e.g. speed limit of road), information about vehicles involved
+(e.g. type of vehicle), and casualties (e.g. age).  The statistics relate only
+to events on public roads that were reported to the police, and subsequently
+recorded, using the STATS19 accident reporting form.  See the Department for
+Transport website
 <https://www.data.gov.uk/dataset/cb7ae6f0-4be6-4935-9277-47e5ce24a11f/road-safety-data>
-for more information on these data.")
+for more information on these datasets.  The package is described in a paper in
+the Journal of Open Source Software (Lovelace et al.  2019)
+<doi:10.21105/joss.01181>.  See Gilardi et al. (2022) <doi:10.1111/rssa.12823>,
+Vidal-Tortosa et al. (2021) <doi:10.1016/j.jth.2021.101291>, and Tait et al.
+(2023) <doi:10.1016/j.aap.2022.106895> for examples of how the data can be used
+for methodological and empirical road safety research.")
     (license license:gpl3)))
 
 (define-public r-statrank

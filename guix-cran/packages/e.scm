@@ -12221,18 +12221,19 @@ forecasting.  For method details see (i) Choudhury (2019)
 (define-public r-emdi
   (package
     (name "r-emdi")
-    (version "2.2.0")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "emdi" version))
        (sha256
-        (base32 "10ivwjs0fgf706fscn5z0ip19py25pzcw81j16hlyahc5ajcgjyr"))))
+        (base32 "0wx8mrq07nl1djf7fcb0xg9vx64i9d3p6v7lyr1bb8hvqs47qc7g"))))
     (properties `((upstream-name . "emdi")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
                              r-spdep
                              r-saerobust
+                             r-rlang
                              r-reshape2
                              r-readods
                              r-parallelmap
@@ -19786,13 +19787,13 @@ output SVG elements into a SVG file.")
 (define-public r-easystats
   (package
     (name "r-easystats")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "easystats" version))
        (sha256
-        (base32 "09a2gshg0h01w79g3zq66v5h0vbkrz9pgj3dijmccix28bmmqar3"))))
+        (base32 "1flk1x1szn8hp8yhp9dxcd8xfdnnny6acpbb2mkh5lc6ydv0ayw5"))))
     (properties `((upstream-name . "easystats")))
     (build-system r-build-system)
     (propagated-inputs (list r-see
@@ -19817,7 +19818,7 @@ reporting.  Additionally, it provides articles targeted at instructors for
 teaching easystats', and a dashboard targeted at new R users for easily
 conducting statistical analysis by accessing summary results, model fit indices,
 and visualizations with minimal programming.")
-    (license license:gpl3)))
+    (license license:expat)))
 
 (define-public r-easysdctable
   (package

@@ -17484,28 +17484,6 @@ predictive values in binary diagnostic tests in case-control studies.
 Experimental design for hypothesis tests on predictive values.")
     (license license:gpl2+)))
 
-(define-public r-bdpopt
-  (package
-    (name "r-bdpopt")
-    (version "1.0-1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bdpopt" version))
-       (sha256
-        (base32 "1z7mdqklw3frsdzyhvx8s8wvblwm28fr1gca2yrivqjng0r47lx4"))))
-    (properties `((upstream-name . "bdpopt")))
-    (build-system r-build-system)
-    (inputs (list jags))
-    (propagated-inputs (list r-rjags r-coda))
-    (home-page "https://cran.r-project.org/package=bdpopt")
-    (synopsis "Optimisation of Bayesian Decision Problems")
-    (description
-     "Optimisation of the expected utility in single-stage and multi-stage Bayesian
-decision problems.  The expected utility is estimated by simulation.  For
-single-stage problems, JAGS is used to draw MCMC samples.")
-    (license license:gpl2)))
-
 (define-public r-bdpar
   (package
     (name "r-bdpar")
@@ -19432,13 +19410,13 @@ are required in spatial analyses performed with @code{BayesX}.")
 (define-public r-bayeswatch
   (package
     (name "r-bayeswatch")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesWatch" version))
        (sha256
-        (base32 "1hivlzsrm5kxv11xfz5hni4dvs3104bz65syypksa7zss9qb1sqk"))))
+        (base32 "1384h1dr5i8xwsbr9hx212vc96jyhzp6j703lk4j5yrzjb7m534r"))))
     (properties `((upstream-name . "bayesWatch")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen

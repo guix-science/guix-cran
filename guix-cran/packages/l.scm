@@ -1849,36 +1849,6 @@ using the recursive integration algorithm described in Christopher Jennison and
 Bruce W. Turnbull (2000, ISBN:0849303168).")
     (license license:gpl2+)))
 
-(define-public r-lrqmm
-  (package
-    (name "r-lrqmm")
-    (version "1.2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "LRQMM" version))
-       (sha256
-        (base32 "149z6wggyz9p39vanw5m2iw5v69spxdj8ciarrswj5ddvkli7940"))))
-    (properties `((upstream-name . "LRQMM")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sparsesvd
-                             r-sparsem
-                             r-rsvd
-                             r-r-matlab
-                             r-quantreg
-                             r-mcmcglmm
-                             r-matrix
-                             r-kinship2))
-    (home-page "https://cran.r-project.org/package=LRQMM")
-    (synopsis
-     "Fitting Linear Quantile Regression Mixed Models with Relationship Matrix")
-    (description
-     "Fit a quantile regression mixed model involved Relationship Matrix using a
-sparse implementation of the Frisch-Newton interior-point algorithm as described
-in Portnoy and Koenker (1977, Statistical Science)
-<https://www.jstor.org/stable/2246216>.")
-    (license (list license:gpl2 license:gpl3))))
-
 (define-public r-lrmf3
   (package
     (name "r-lrmf3")

@@ -8868,6 +8868,35 @@ repetitive tasks such as setting up a database connection or issuing
 notification messages and to avoid redundancy.")
     (license license:gpl3)))
 
+(define-public r-diyar
+  (package
+    (name "r-diyar")
+    (version "0.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "diyar" version))
+       (sha256
+        (base32 "00shi5vz8qgyvd5xkxxvr5xdcqzx64c7c1flihbg95nnf3yqg557"))))
+    (properties `((upstream-name . "diyar")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://olisansonwu.github.io/diyar/index.html")
+    (synopsis "Record Linkage and Epidemiological Case Definitions in 'R'")
+    (description
+     "An R package for iterative and batched record linkage, and applying
+epidemiological case definitions.  diyar can be used for deterministic and
+probabilistic record linkage, or multistage record linkage combining both
+approaches.  It features the implementation of nested match criteria, and
+mechanisms to address missing data and conflicting matches during stepwise
+record linkage.  Case definitions are implemented by assigning records to groups
+based on match criteria such as person or place, and overlapping time or
+duration of events e.g. sample collection dates or periods of hospital stays.
+Matching records are assigned a unique group ID. Index and duplicate records are
+removed or further analyses as required.")
+    (license license:gpl3)))
+
 (define-public r-dixon
   (package
     (name "r-dixon")

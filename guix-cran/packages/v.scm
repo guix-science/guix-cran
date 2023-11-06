@@ -6943,13 +6943,13 @@ large variable annuities.  The main valuation methodology was proposed by Gan
 (define-public r-vam
   (package
     (name "r-vam")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VAM" version))
        (sha256
-        (base32 "04lq8i4zwdc9a4n4hvabdyv4a4cmmqbf534cdnnck7jc0dk5rphr"))))
+        (base32 "1nl4kzp3j424cy6m5p8n9lf742vls2aw60ywy6dig4963nl4jdkh"))))
     (properties `((upstream-name . "VAM")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-mass))

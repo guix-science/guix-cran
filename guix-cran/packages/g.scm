@@ -15193,16 +15193,16 @@ for easy label generation and placement, automatic map coloring, and themes.")
 (define-public r-ggrcs
   (package
     (name "r-ggrcs")
-    (version "0.3.0")
+    (version "0.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggrcs" version))
        (sha256
-        (base32 "1j4pqcsacsnca6aj20kppparzff4wrbfs55vq66igmhcd43ry3rd"))))
+        (base32 "1p58i8a0n1pgp08mss0l4y27fwcihafhza66zssr7x9lmfkiqyhk"))))
     (properties `((upstream-name . "ggrcs")))
     (build-system r-build-system)
-    (propagated-inputs (list r-scales r-rms r-ggplot2))
+    (propagated-inputs (list r-scales r-rms r-ggplot2 r-cowplot))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ggrcs")
     (synopsis "Draw Histograms and Restricted Cubic Splines (RCS)")
@@ -21109,40 +21109,34 @@ existing geography.")
 (define-public r-geogenr
   (package
     (name "r-geogenr")
-    (version "1.0.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geogenr" version))
        (sha256
-        (base32 "1ji542incj05602iic9wzmrw8v122zxnpvvkvm1vax2j5ryj644j"))))
+        (base32 "068ww0mqly3gwgaynmm98v06ccw5rjzdxrrsnf52297i98vyvlsm"))))
     (properties `((upstream-name . "geogenr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tm
-                             r-tidyselect
+    (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
                              r-stringr
-                             r-starschemar
-                             r-snakecase
                              r-sf
+                             r-rolap
+                             r-readr
                              r-httr
-                             r-geomultistar
-                             r-dplyr
-                             r-data-table))
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://josesamos.github.io/geogenr/")
-    (synopsis
-     "'geomultistar' Object Generator from American Community Survey Geodatabases")
+    (synopsis "Generator from American Community Survey Geodatabases")
     (description
      "The American Community Survey (ACS)
 <https://www.census.gov/programs-surveys/acs> offers geodatabases with
 geographic information and associated data of interest to researchers in the
-area.  The goal of this package is to generate geomultistar
-<https://CRAN.R-project.org/package=geomultistar> objects from those
-geodatabases automatically, once the focus of attention is selected.
-Multidimensional queries with geographic information can be easily defined on
-these objects.")
+area.  The goal of this package is to generate objects that allow us to access
+and consult the information available in various formats, such as in
+@code{GeoPackage} format or in multidimensional ROLAP star format.")
     (license license:expat)))
 
 (define-public r-geofourierfda
