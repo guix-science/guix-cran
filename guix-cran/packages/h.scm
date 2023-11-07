@@ -6952,16 +6952,16 @@ associated with the package: Waggoner, Philip D. (2018)
 (define-public r-hhh4contacts
   (package
     (name "r-hhh4contacts")
-    (version "0.13.2")
+    (version "0.13.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hhh4contacts" version))
        (sha256
-        (base32 "171ghvnjfm1bvz75ggxpl7w1ai8nsrdi7sy2szmc8wpzc8a1wb48"))))
+        (base32 "1hxdf8mkcaimglpq6z2gk523w7xh3ih0c2m9mlqbgrgnysb22biy"))))
     (properties `((upstream-name . "hhh4contacts")))
     (build-system r-build-system)
-    (propagated-inputs (list r-surveillance))
+    (propagated-inputs (list r-surveillance r-sp))
     (home-page "https://cran.r-project.org/package=hhh4contacts")
     (synopsis
      "Age-Structured Spatio-Temporal Models for Infectious Disease Counts")
@@ -9867,13 +9867,13 @@ forecast.  The methods are explained in detail in Adaemmer et al. (2023)
 (define-public r-hdf5r-extra
   (package
     (name "r-hdf5r-extra")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hdf5r.Extra" version))
        (sha256
-        (base32 "0fpkgq845k2z63i0yl160hvnv7x857k81likdgasbw1x85rlihaf"))))
+        (base32 "0dzh81l27i1vcx403l7rny9lrp9pbh47wv94hwvzh6k8gibzxml4"))))
     (properties `((upstream-name . "hdf5r.Extra")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang

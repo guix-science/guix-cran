@@ -192,13 +192,13 @@ permutation on only a small proportion of the whole genome.")
 (define-public r-gwsdat
   (package
     (name "r-gwsdat")
-    (version "3.1.1")
+    (version "3.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GWSDAT" version))
        (sha256
-        (base32 "0z35ywf33lpbsv0fkdqq5d17nfq1cp0za8pq4lb1ckbkv3w974ls"))))
+        (base32 "0a9pmlr7r8axamk2vjmi8f1j16bd8zkax2k42mlb1cb0w722m2gb"))))
     (properties `((upstream-name . "GWSDAT")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -3619,6 +3619,38 @@ The procedure controls the false discovery rate (FDR) at a user-specified
 threshold.")
     (license license:expat)))
 
+(define-public r-grouptesting
+  (package
+    (name "r-grouptesting")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "groupTesting" version))
+       (sha256
+        (base32 "06cd6w5ysh0bi7mkvra4mzlfdpfqa40im8f5krp4cbd3nkjskdif"))))
+    (properties `((upstream-name . "groupTesting")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-pracma))
+    (native-inputs (list gfortran))
+    (home-page "https://cran.r-project.org/package=groupTesting")
+    (synopsis "Simulating and Modeling Group (Pooled) Testing Data")
+    (description
+     "This package provides an expectation-maximization (EM) algorithm using the
+approach introduced in Warasi (2021) <doi:10.1080/03610918.2021.2009867>.  The
+EM algorithm can be used to estimate the prevalence (overall proportion) of a
+disease and to estimate a binary regression model from among the class of
+generalized linear models based on group testing data.  The estimation framework
+we consider offers a flexible and general approach; i.e., its application is not
+limited to any specific group testing protocol.  Consequently, the EM algorithm
+can model data arising from simple pooling as well as advanced pooling such as
+hierarchical testing, array testing, and quality control pooling.  Also,
+provided are functions that can be used to conduct the Wald tests described in
+Buse (1982) <doi:10.1080/00031305.1982.10482817> and to simulate the group
+testing data described in Kim et al. (2007)
+<doi:10.1111/j.1541-0420.2007.00817.x>.")
+    (license license:gpl3)))
+
 (define-public r-grouptest
   (package
     (name "r-grouptest")
@@ -6047,13 +6079,13 @@ weights.")
 (define-public r-grapher
   (package
     (name "r-grapher")
-    (version "1.9-86-4")
+    (version "1.9-86-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GrapheR" version))
        (sha256
-        (base32 "0bmwzgc9nzqp1vkybhhc7mxdzsa3l96i42iahvwkzv10ac3nfd5l"))))
+        (base32 "1cjll41857dh5r1jb3zkbxpkqj2qj9s7867nwfdn0h3ws52fb304"))))
     (properties `((upstream-name . "GrapheR")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=GrapheR")

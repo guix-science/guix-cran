@@ -1861,20 +1861,19 @@ placed in the top r-fraction of units.")
 (define-public r-rvaidememoire
   (package
     (name "r-rvaidememoire")
-    (version "0.9-83-3")
+    (version "0.9-83-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RVAideMemoire" version))
        (sha256
-        (base32 "1jmfj2gql95l6ln55gbgm62z1x4g7jlfyysq0dyab1jjqsz5izip"))))
+        (base32 "1ix6v1m4h1wffvgmzhrzdgj5268z54bnd02wqivrjf32pi7s9vn5"))))
     (properties `((upstream-name . "RVAideMemoire")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
                              r-pspearman
                              r-pls
                              r-nnet
-                             r-mixomics
                              r-mass
                              r-lme4
                              r-factominer
@@ -17001,6 +17000,30 @@ collection in the GNU Octave function fact() which was aggregated by Jordi
 (which is accessible only via <http://archive.org>).")
     (license license:gpl3)))
 
+(define-public r-rmsd
+  (package
+    (name "r-rmsd")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RMSD" version))
+       (sha256
+        (base32 "0n6qcy8biswjsqhhcmahbn09xmnlgaa4hjlngh3kqran91p7c3i0"))))
+    (properties `((upstream-name . "RMSD")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=RMSD")
+    (synopsis
+     "Refined Modified Stahel-Donoho Estimators for Outlier Detection")
+    (description
+     "This package provides a function for multivariate outlier detection named
+Modified Stahel-Donoho (MSD) estimators is contained.  The function is for
+elliptically distributed datasets and recognizes outliers based on Mahalanobis
+distance.  The function is called the single core version in Wada & Tsubaki
+(2013) <doi:10.1109/CLOUDCOM-ASIA.2013.86> and evaluated with other methods in
+Wada, Kawano & Tsubaki (2020) <doi:10.17713/ajs.v49i2.872>.")
+    (license license:gpl3+)))
+
 (define-public r-rmsb
   (package
     (name "r-rmsb")
@@ -30666,6 +30689,36 @@ parameters in item response theory (IRT) models (Belzak & Bauer, 2020)
 <https://pubmed.ncbi.nlm.nih.gov/31916799/> using a penalized
 expectation-maximization algorithm.")
     (license license:expat)))
+
+(define-public r-regda
+  (package
+    (name "r-regda")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "regda" version))
+       (sha256
+        (base32 "0zdipzkf8yil1cf142g66cls9d2yabzag9k4nm9nab0nyfidkdcw"))))
+    (properties `((upstream-name . "regda")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rfast2 r-rfast r-foreach r-doparallel))
+    (home-page "https://cran.r-project.org/package=regda")
+    (synopsis "Regularised Discriminant Analysis")
+    (description
+     "Regularised discriminant analysis functions.  The classical regularised
+discriminant analysis proposed by Friedman in 1989, including cross-validation,
+of which the linear and quadratic discriminant analyses are special cases.
+Further, the regularised maximum likelihood linear discriminant analysis,
+including cross-validation.  References: Friedman J.H. (1989): \"Regularized
+Discriminant Analysis\".  Journal of the American Statistical Association
+84(405): 165--175. <doi:10.2307/2289860>.  Friedman J., Hastie T. and Tibshirani
+R. (2009). \"The elements of statistical learning\", 2nd edition.  Springer,
+Berlin. <doi:10.1007/978-0-387-84858-7>.  Tsagris M., Preston S. and Wood A.T.A.
+(2016). \"Improved classification for compositional data using the
+alpha-transformation\".  Journal of Classification, 33(2): 243--261.
+<doi:10.1007/s00357-016-9207-5>.")
+    (license license:gpl2+)))
 
 (define-public r-regcombin
   (package

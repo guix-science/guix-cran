@@ -22295,13 +22295,13 @@ applied to both experimental and observational data.")
 (define-public r-taylor
   (package
     (name "r-taylor")
-    (version "2.0.1")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "taylor" version))
        (sha256
-        (base32 "0vav10v4lprdpa1c3y360gdnwxh491q85lc215plqq5hvzm7sr81"))))
+        (base32 "0qxy0kvqylpy3bcp2va4c3453x160zf8kaw34jydg78mibmjlghr"))))
     (properties `((upstream-name . "taylor")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs

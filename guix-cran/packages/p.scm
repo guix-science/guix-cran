@@ -7833,33 +7833,6 @@ methods are provided in the papers Stathopoulos (2010,
 citation(\"PRIMME\") for details.")
     (license license:gpl3)))
 
-(define-public r-primes
-  (package
-    (name "r-primes")
-    (version "1.5.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "primes" version))
-       (sha256
-        (base32 "0wgisbialsv24gchwzm1nx1r1186lb36v80qk9gac3xmq45z6vdv"))))
-    (properties `((upstream-name . "primes")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://github.com/ironholds/primes")
-    (synopsis "Fast Functions for Prime Numbers")
-    (description
-     "Fast functions for dealing with prime numbers, such as testing whether a number
-is prime and generating a sequence prime numbers.  Additional functions include
-finding prime factors and Ruth-Aaron pairs, finding next and previous prime
-numbers in the series, finding or estimating the nth prime, estimating the
-number of primes less than or equal to an arbitrary number, computing
-primorials, prime k-tuples (e.g., twin primes), finding the greatest common
-divisor and smallest (least) common multiple, testing whether two numbers are
-coprime, and computing Euler's totient function.  Most functions are vectorized
-for speed and convenience.")
-    (license license:expat)))
-
 (define-public r-primertree
   (package
     (name "r-primertree")
@@ -10028,13 +10001,13 @@ anomaly.")
 (define-public r-precast
   (package
     (name "r-precast")
-    (version "1.6.2")
+    (version "1.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PRECAST" version))
        (sha256
-        (base32 "1v8qajxfk6ry40d3hq2k3xgxbibpcq1nxagjdhr7k8znpim5m5c2"))))
+        (base32 "14mvvxx2780l7sl0kwsldgvzi9xpn9vbq0kdnqr5x0b8qk8mwg8m"))))
     (properties `((upstream-name . "PRECAST")))
     (build-system r-build-system)
     (propagated-inputs (list r-seurat
@@ -26030,13 +26003,13 @@ developers experience when building and maintaining applications.")
 (define-public r-periscope
   (package
     (name "r-periscope")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "periscope" version))
        (sha256
-        (base32 "1llni5xs5fpnls3zysx0wrp4hc40qc6ll9vdpmffs6v2irnz43bz"))))
+        (base32 "0w7p8clpaa605jcyvlkj86w8l92pgvilifwnagqj3x1nqaxgyhw3"))))
     (properties `((upstream-name . "periscope")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -33978,13 +33951,13 @@ Michael Oswald.")
 (define-public r-palr
   (package
     (name "r-palr")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "palr" version))
        (sha256
-        (base32 "0xb2k4vhlczg4ys1haybrlcpmwhpbfivqg8cfj6mbiir452mb507"))))
+        (base32 "1day74mapad08x95vpdd56qg74yizfna6rdap3y7rwbk3yk3spf6"))))
     (properties `((upstream-name . "palr")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

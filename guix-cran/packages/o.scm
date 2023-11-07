@@ -6168,13 +6168,13 @@ API.")
 (define-public r-openaistream
   (package
     (name "r-openaistream")
-    (version "0.1.4")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openaistream" version))
        (sha256
-        (base32 "0aa3rnivmvds2v5ciky74b0ych3wmp4s0mxqk3cvdakrfxsxdr06"))))
+        (base32 "0vm57waqdxvl4p1p1l9ndizip773pcysyf2x06i36zy9xak4chiz"))))
     (properties `((upstream-name . "openaistream")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-jsonlite r-iterators r-httr2 r-curl))

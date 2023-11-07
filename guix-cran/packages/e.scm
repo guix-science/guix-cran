@@ -9670,13 +9670,13 @@ systems.")
 (define-public r-epanet2toolkit
   (package
     (name "r-epanet2toolkit")
-    (version "1.0.0")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epanet2toolkit" version))
        (sha256
-        (base32 "0pzkljq2dd7vzgjv1n5jsj36a4rq7m1pb1l7sz4lbgakiznj7aj7"))))
+        (base32 "0xmaifvj9r3q634rb9rbpvrn4klsxf14scbv8150s1s6dvvb0f5i"))))
     (properties `((upstream-name . "epanet2toolkit")))
     (build-system r-build-system)
     (home-page "https://github.com/bradleyjeck/epanet2toolkit")
@@ -10437,35 +10437,6 @@ selecting lambda via cross validation but no automated methods for selection of
 alpha.  Elastic Net @code{SearcheR} automates the simultaneous selection of both
 lambda and alpha.  Developed, in part, with support by NICHD R03 HD094912.")
     (license license:gpl2)))
-
-(define-public r-ensemblqueryr
-  (package
-    (name "r-ensemblqueryr")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ensemblQueryR" version))
-       (sha256
-        (base32 "0yz7c8lvy9hivm60brx72iph36jrx5d11i9fbdhbl2l3gi4w0fbd"))))
-    (properties `((upstream-name . "ensemblQueryR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-vroom
-                             r-tidyr
-                             r-tibble
-                             r-rlang
-                             r-purrr
-                             r-magrittr
-                             r-jsonlite
-                             r-httr
-                             r-dplyr))
-    (home-page "https://cran.r-project.org/package=ensemblQueryR")
-    (synopsis "Simple, Fast and Efficient Querying of the 'Ensembl' API")
-    (description
-     "Suite of tools to enable fast, efficient, high-throughput, R workflow integrable
-querying of Ensembl REST API endpoints (<https://rest.ensembl.org/>).")
-    (license license:expat)))
 
 (define-public r-ensembletax
   (package

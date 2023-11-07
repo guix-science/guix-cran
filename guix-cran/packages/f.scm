@@ -6215,13 +6215,13 @@ packages such as dplyr and tidyr'.")
 (define-public r-forsearch
   (package
     (name "r-forsearch")
-    (version "4.1.0")
+    (version "4.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "forsearch" version))
        (sha256
-        (base32 "10r48all8db7s5v4q5xmcmhwz46q00hbvp2lgf9g6jsfqnplq5rb"))))
+        (base32 "06pbizb69hrjk32ivlkkl95c54fc4gdyyacm96lkfq4nax79zfhy"))))
     (properties `((upstream-name . "forsearch")))
     (build-system r-build-system)
     (inputs (list gmp))

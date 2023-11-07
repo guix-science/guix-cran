@@ -27046,13 +27046,13 @@ for re-analysis (scrape_meta, parse_CI_string, ci_to_var).")
 (define-public r-metaumbrella
   (package
     (name "r-metaumbrella")
-    (version "1.0.8")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metaumbrella" version))
        (sha256
-        (base32 "01iq2p1g3m4jlraaix7d3fkxsr558m7xzgl517ijgdsa5bvmqypa"))))
+        (base32 "1sly9ivzjyrp0d2rha7ry3xlk6l5m69scyacjsx6yqfyrbf5w3kx"))))
     (properties `((upstream-name . "metaumbrella")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -36222,6 +36222,29 @@ their original counterparts, with more to come as this package grows.")
     (synopsis "'MATLAB' Emulation Package")
     (description "Emulate MATLAB code using R'.")
     (license license:artistic2.0)))
+
+(define-public r-mathpix
+  (package
+    (name "r-mathpix")
+    (version "0.6.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mathpix" version))
+       (sha256
+        (base32 "0zzzgz94cmm0gh007mb5jviqcm93ynac9gdkhikza2rp626wnj3x"))))
+    (properties `((upstream-name . "mathpix")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rstudioapi r-purrr r-magick r-httr r-base64enc))
+    (home-page "https://github.com/jonocarroll/mathpix")
+    (synopsis "Support for the 'Mathpix' API (Image to 'LaTeX')")
+    (description
+     "Given an image of a formula (typeset or handwritten) this package provides calls
+to the Mathpix service to produce the @code{LaTeX} code which should generate
+that image, and pastes it into a (e.g. an rmarkdown') document.  See
+<https://docs.mathpix.com/> for full details.  Mathpix is an external service
+and use of the API is subject to their terms and conditions.")
+    (license license:gpl3+)))
 
 (define-public r-mathml
   (package

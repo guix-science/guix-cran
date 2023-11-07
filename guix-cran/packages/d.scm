@@ -3770,13 +3770,13 @@ prescriptions.  Based on Pye et al (2018) <doi:10.1002/pds.4440>.")
 (define-public r-drugexposurediagnostics
   (package
     (name "r-drugexposurediagnostics")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DrugExposureDiagnostics" version))
        (sha256
-        (base32 "0ix33wwxpl86yiqm5fys894793jgbbzxbfnssd4f6vydy2v36rl3"))))
+        (base32 "0jda2clyamj88q0882z8mzymxadrq73f5cp4bv6d1ng5c6w0majh"))))
     (properties `((upstream-name . "DrugExposureDiagnostics")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -4849,13 +4849,13 @@ behind it are described in Reiter et al. (2017) <doi:10.18420/in2017_119>.")
 (define-public r-drake
   (package
     (name "r-drake")
-    (version "7.13.6")
+    (version "7.13.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "drake" version))
        (sha256
-        (base32 "1qn6h22l0giz6w6bsi77d5skxp0y5dgmhb7xl8a5nyjajlxm7hd2"))))
+        (base32 "0ijhr4wn06nr10l5x3d0my1wdlhcr4gbr4dq6swqjdgc8kylzanl"))))
     (properties `((upstream-name . "drake")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -11377,16 +11377,17 @@ hazard function.")
 (define-public r-discbio
   (package
     (name "r-discbio")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DIscBIO" version))
        (sha256
-        (base32 "152sh5g3vgcsyr93xmh3046fmpvy0vma45v4dplircpazxl33pji"))))
+        (base32 "0zr1lpfqn8q3xhh27aa59j5xq70fxhzkwqaqfi34zfsiqzb7cy6a"))))
     (properties `((upstream-name . "DIscBIO")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
+                             r-vegan
                              r-tsne
                              r-statmod
                              r-singlecellexperiment
@@ -11395,7 +11396,6 @@ hazard function.")
                              r-rpart
                              r-rcolorbrewer
                              r-png
-                             r-philentropy
                              r-org-hs-eg-db
                              r-netindices
                              r-mclust

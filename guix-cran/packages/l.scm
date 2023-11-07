@@ -9398,6 +9398,49 @@ etc.) from multiple sources (fitbit, Apple Health), creating visualizations, and
 experimenting on onself.")
     (license license:gpl2+)))
 
+(define-public r-lifeinsurer
+  (package
+    (name "r-lifeinsurer")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LifeInsureR" version))
+       (sha256
+        (base32 "120pf97hp9rp9ncykpk93xxkrmilz74hksjrylh9vdnmmk1dgwbv"))))
+    (properties `((upstream-name . "LifeInsureR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-scales
+                             r-rmarkdown
+                             r-rlang
+                             r-r6
+                             r-pander
+                             r-openxlsx
+                             r-objectproperties
+                             r-mortalitytables
+                             r-lubridate
+                             r-kableextra
+                             r-dplyr
+                             r-abind))
+    (native-inputs (list r-knitr))
+    (home-page "https://gitlab.open-tools.net/R/LifeInsureR")
+    (synopsis "Modelling Traditional Life Insurance Contracts")
+    (description
+     "R6 classes to model traditional life insurance contracts like annuities, whole
+life insurances or endowments.  Such life insurance contracts provide a
+guaranteed interest and are not directly linked to the performance of a
+particular investment vehicle, but they typically provide (discretionary) profit
+participation.  This package provides a framework to model such contracts in a
+very generic (cash-flow-based) way and includes modelling profit participation
+schemes, dynamic increases or more general contract layers, as well as contract
+changes (like sum increases or premium waivers).  All relevant quantities like
+premium decomposition, reserves and benefits over the whole contract period are
+calculated and potentially exported to Excel'.  Mortality rates are given using
+the @code{MortalityTables} package.")
+    (license license:gpl2+)))
+
 (define-public r-lifeinsurancecontracts
   (package
     (name "r-lifeinsurancecontracts")
@@ -10441,13 +10484,13 @@ in Erhard & Zimmer (2015) <doi:10.1093/nar/gkv696> and Erhard (2018)
 (define-public r-lfapp
   (package
     (name "r-lfapp")
-    (version "1.3.1")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LFApp" version))
        (sha256
-        (base32 "1vvlf3bwxkyl9gyzswc4wd201pav1q2hfbhwmiic4j4d8azsd2r8"))))
+        (base32 "1pxblh8v63n2gcsz1wbxv66aylaz2q61zw2w3l3r9z515kgmid77"))))
     (properties `((upstream-name . "LFApp")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinythemes

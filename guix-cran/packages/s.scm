@@ -10006,13 +10006,13 @@ Markdown for things like your CV or your articles and manuscripts.")
 (define-public r-stevemisc
   (package
     (name "r-stevemisc")
-    (version "1.6.0")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stevemisc" version))
        (sha256
-        (base32 "0d1c9sad267pblyk108z7ip8l2z87fbmzrnglzhzrv6cmmfv6jrd"))))
+        (base32 "1xngshwsqd3z0zygrzxwnmr3jwha2kbw7fcf0vc0yngqg62gzrvn"))))
     (properties `((upstream-name . "stevemisc")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -13249,13 +13249,13 @@ This version is available in French and English.  See
 (define-public r-stacks
   (package
     (name "r-stacks")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stacks" version))
        (sha256
-        (base32 "179jcgvsydkrg37yz01wj4x9fhvakpmmw2yl18m3aj2llf67ily8"))))
+        (base32 "0vfpskdk77hrzsiml39d2hlgr92i6ig4q9rdb0hhrfs0hdq9w9q4"))))
     (properties `((upstream-name . "stacks")))
     (build-system r-build-system)
     (propagated-inputs (list r-yardstick
@@ -51671,13 +51671,13 @@ themes.")
 (define-public r-scgate
   (package
     (name "r-scgate")
-    (version "1.4.1")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scGate" version))
        (sha256
-        (base32 "04m9vwdvwylxndyrkq8h5v0w9py5xvznd35arfg1h6y0l4dskwpz"))))
+        (base32 "0h12d36zjc6fvxbhkxrzbpvw49z9fgyn1jc941q70ajw1yqi2hhh"))))
     (properties `((upstream-name . "scGate")))
     (build-system r-build-system)
     (propagated-inputs (list r-ucell
