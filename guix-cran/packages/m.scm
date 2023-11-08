@@ -663,6 +663,29 @@ Wilson-Hilferty transformation, QQ-plots with envelopes and random variate
 generation.")
     (license license:gpl3)))
 
+(define-public r-mvsusy
+  (package
+    (name "r-mvsusy")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mvSUSY" version))
+       (sha256
+        (base32 "1yvgx439m37ifdviaiykhpxrfw7k43dnvpxc56532w7vwxbvpcd7"))))
+    (properties `((upstream-name . "mvSUSY")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppalgos r-ggsci r-ggplot2 r-data-table))
+    (home-page "https://wtschacher.github.io/mvSUSY/")
+    (synopsis "Multivariate Surrogate Synchrony")
+    (description
+     "Multivariate Surrogate Synchrony ('@code{mvSUSY}') estimates the synchrony
+within datasets that contain more than two time series. @code{mvSUSY} was
+developed from Surrogate Synchrony ('SUSY') with respect to implementing
+surrogate controls, and extends synchrony estimation to multivariate data.
+@code{mvSUSY} works as described in Meier & Tschacher (2021).")
+    (license license:gpl2)))
+
 (define-public r-mvslouch
   (package
     (name "r-mvslouch")
@@ -17303,13 +17326,13 @@ well-known data sets from the multilevel modelling literature.")
 (define-public r-mlmpower
   (package
     (name "r-mlmpower")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlmpower" version))
        (sha256
-        (base32 "1773cbkby7ll0dpv9ymqg63sq7b2ladxlh0wlswj7ks7rrn07z05"))))
+        (base32 "1l46i98xv78dv05vmr09xx1lscdg3w2zw4x5f691wg69prri4j4z"))))
     (properties `((upstream-name . "mlmpower")))
     (build-system r-build-system)
     (propagated-inputs (list r-vartestnlme r-lmertest r-lme4 r-cli))
@@ -21886,34 +21909,34 @@ groups and any allocation ratios by minimization algorithms.")
 (define-public r-minipch
   (package
     (name "r-minipch")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "miniPCH" version))
        (sha256
-        (base32 "1nji8w5wifdhjnvlpxirj83lgh10z6xvsmb9lfk7yjadw55bcqg3"))))
+        (base32 "1jyciw2nrqqcrvrdsn1626fl1q482rd48a9rn3lx4pyl52zg7b5i"))))
     (properties `((upstream-name . "miniPCH")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-checkmate))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-checkmate))
     (home-page "https://simnph.github.io/miniPCH/")
     (synopsis "Survival Distributions with Piece-Wise Constant Hazards")
     (description
      "Density, distribution function, ...  hazard function, cumulative hazard
 function, survival function for survival distributions with piece-wise constant
-hazards.")
+hazards and multiple states.")
     (license license:gpl3+)))
 
 (define-public r-minioclient
   (package
     (name "r-minioclient")
-    (version "0.0.5")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "minioclient" version))
        (sha256
-        (base32 "02bax8ld39z3nqsqzx0nlqydxyg5mp9r22s5dlcdh5041fgbhl5r"))))
+        (base32 "1caqigfjlga5vv5nk7k0jmzhiakj4xrbvpf43n0byygqqfpxd6i8"))))
     (properties `((upstream-name . "minioclient")))
     (build-system r-build-system)
     (propagated-inputs (list r-processx r-jsonlite r-glue r-fs))
@@ -26300,16 +26323,18 @@ and region annotations.")
 (define-public r-metricgraph
   (package
     (name "r-metricgraph")
-    (version "1.1.2")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MetricGraph" version))
        (sha256
-        (base32 "05pzhvj3av8lrq77q2c34k0iz0amjzggcf2vzc7apjg5slvg02bf"))))
+        (base32 "0zccshl9vlaqgqmdmmicp0lnzhngiarbymf2wq8b49qr35iwgwb3"))))
     (properties `((upstream-name . "MetricGraph")))
     (build-system r-build-system)
-    (propagated-inputs (list r-viridis
+    (propagated-inputs (list r-zoo
+                             r-viridis
+                             r-tidyr
                              r-sp
                              r-sf
                              r-rspde
@@ -26317,8 +26342,12 @@ and region annotations.")
                              r-rcpp
                              r-r6
                              r-matrix
+                             r-magrittr
+                             r-lifecycle
                              r-igraph
-                             r-ggplot2))
+                             r-ggplot2
+                             r-dplyr
+                             r-broom))
     (native-inputs (list r-knitr))
     (home-page "https://davidbolin.github.io/MetricGraph/")
     (synopsis "Random Fields on Metric Graphs")
@@ -27907,35 +27936,6 @@ difference of medians across groups.  Additionally, a number of methods (e.g.,
      "Combination of either p-values or modified effect sizes from different studies
 to find differentially expressed genes.")
     (license (list license:gpl2+ license:gpl3+))))
-
-(define-public r-metalyzer
-  (package
-    (name "r-metalyzer")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MetAlyzer" version))
-       (sha256
-        (base32 "1mqc2037q71n1k7ncym52vn0cc5ndsxq4r87k492lp1b3i7h1wi3"))))
-    (properties `((upstream-name . "MetAlyzer")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-rlang
-                             r-openxlsx
-                             r-dplyr
-                             r-agricolae))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=MetAlyzer")
-    (synopsis "Read and Analyze 'MetIDQ&trade;' Software Output Files")
-    (description
-     "The @code{MetAlyzer} S4 object provides methods to read and reformat
-metabolomics data for convenient data handling, statistics and downstream
-analysis.  The resulting format corresponds to input data of the Shiny app
-@code{MetaboExtract}
-(<https://www.metaboextract.shiny.dkfz.de/@code{MetaboExtract/>}).")
-    (license license:gpl3)))
 
 (define-public r-metalonda
   (package

@@ -406,13 +406,13 @@ the update date from the service.")
 (define-public r-ustfd
   (package
     (name "r-ustfd")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ustfd" version))
        (sha256
-        (base32 "0z6zrh30nfhx29j1l6z5nq94bhgp26c2dimk3yy1pzy0ga3fm4l4"))))
+        (base32 "1ipzy6vc8p71hw3gwwzwy38bigpyca4iskirkr9qmpydar0fnphg"))))
     (properties `((upstream-name . "ustfd")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble

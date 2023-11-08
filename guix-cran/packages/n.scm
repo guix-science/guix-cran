@@ -8902,6 +8902,37 @@ truncated-exponential skew-symmetric G distributions, modified beta G
 distributions, and exponentiated exponential Poisson G distributions.")
     (license license:gpl2+)))
 
+(define-public r-new-dist
+  (package
+    (name "r-new-dist")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "new.dist" version))
+       (sha256
+        (base32 "0gan4qzp4w35sld113938hx0wvsah8063k415hd6j4sp101ggc54"))))
+    (properties `((upstream-name . "new.dist")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vgam r-pracma r-expint))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/akmn35/new.dist")
+    (synopsis "Alternative Continuous and Discrete Distributions")
+    (description
+     "The aim is to develop an R package, which is the new.dist package, for the
+probability (density) function, the distribution function, the quantile function
+and the associated random number generation function for discrete and continuous
+distributions, which have recently been proposed in the literature.  This
+package implements the following distributions: The Power Muth Distribution, a
+Bimodal Weibull Distribution, the Discrete Lindley Distribution, The Gamma-Lomax
+Distribution, Weighted Geometric Distribution, a Power Log-Dagum Distribution,
+Kumaraswamy Distribution, Lindley Distribution, the Unit-Inverse Gaussian
+Distribution, EP Distribution, Akash Distribution, Ishita Distribution, Maxwell
+Distribution, the Standard Omega Distribution, Slashed Generalized Rayleigh
+Distribution, Two-Parameter Rayleigh Distribution, Muth Distribution,
+Uniform-Geometric Distribution, Discrete Weibull Distribution.")
+    (license license:gpl3)))
+
 (define-public r-neverhpfilter
   (package
     (name "r-neverhpfilter")

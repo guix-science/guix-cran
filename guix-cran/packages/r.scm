@@ -1475,13 +1475,13 @@ performance.")
 (define-public r-rvmf
   (package
     (name "r-rvmf")
-    (version "0.0.7")
+    (version "0.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rvMF" version))
        (sha256
-        (base32 "0h0d710sfxmf0gk4k5nmx5m4b04zkazrzf7c8kh3pcmc2xp3ml82"))))
+        (base32 "1386206s3i8a58fk3vsc7zg323hnmq5sc5p9yhcim6qbabsfnljc"))))
     (properties `((upstream-name . "rvMF")))
     (build-system r-build-system)
     (propagated-inputs (list r-scmodels r-rfast r-rcpp r-bessel))
@@ -19451,13 +19451,13 @@ thermocline depth, lake number, Wedderburn number, Schmidt stability and others.
 (define-public r-rlabkey
   (package
     (name "r-rlabkey")
-    (version "2.12.0")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rlabkey" version))
        (sha256
-        (base32 "0rzm81q22brxzvqdany7xjs4782my2pbmdlp7bayn4ls2frwvv46"))))
+        (base32 "049k68fiklcjfxwna1nv5hbz0nfkf229ay0c4nckb2jis54ig8m7"))))
     (properties `((upstream-name . "Rlabkey")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-jsonlite r-httr))
@@ -29163,6 +29163,35 @@ information of the object and as simple manual \"tooltips\" for users, among oth
 things.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-remify
+  (package
+    (name "r-remify")
+    (version "3.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "remify" version))
+       (sha256
+        (base32 "1ifr8b8mlwxr7i4pgsccgqy206l7wyxjklmn0nn2qgqvmnkmbmh1"))))
+    (properties `((upstream-name . "remify")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-igraph))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/TilburgNetworkGroup/remify")
+    (synopsis "Processing and Transforming Relational Event History Data")
+    (description
+     "Efficiently processes relational event history data and transforms them into
+formats suitable for other packages.  The primary objective of this package is
+to convert event history data into a format that integrates with the packages in
+remverse and is compatible with various analytical tools (e.g., computing
+network statistics, estimating tie-oriented or actor-oriented social network
+models).  Second, it can also transform the data into formats compatible with
+other packages out of remverse'.  The package processes the data for two types
+of temporal social network models: tie-oriented modeling framework (Butts, C.,
+2008, <doi:10.1111/j.1467-9531.2008.00203.x>) and actor-oriented modeling
+framework (Stadtfeld, C., & Block, P., 2017, <doi:10.15195/v4.a14>).")
+    (license license:expat)))
+
 (define-public r-remfpca
   (package
     (name "r-remfpca")
@@ -38425,13 +38454,13 @@ the DS and TAD methods.")
 (define-public r-rcmdrplugin-dce
   (package
     (name "r-rcmdrplugin-dce")
-    (version "0.1-3")
+    (version "0.2-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcmdrPlugin.DCE" version))
        (sha256
-        (base32 "0mlm3avhfvdzaxfiiy67r2p3h5409qqy1wm05263i4kmvxvbxazy"))))
+        (base32 "1a73ksh98bzcqc4v8pid4c9n4rgz8553q82h70hhbam58922y65r"))))
     (properties `((upstream-name . "RcmdrPlugin.DCE")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-support-ces r-rcmdr))

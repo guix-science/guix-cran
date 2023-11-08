@@ -4881,13 +4881,13 @@ multinomial outcomes and two through six raters.")
 (define-public r-kappalab
   (package
     (name "r-kappalab")
-    (version "0.4-10")
+    (version "0.4-12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kappalab" version))
        (sha256
-        (base32 "14yxfkagjmvg1z0vsdx64lngcr02sqpbbgpqy2ww02wvwnn9hpg9"))))
+        (base32 "130k24wzan7slgvfld3yi12x8h9ybvwddfzdcvj3xvn7ijhjj25k"))))
     (properties `((upstream-name . "kappalab")))
     (build-system r-build-system)
     (propagated-inputs (list r-quadprog r-lpsolve r-kernlab))
@@ -4901,7 +4901,7 @@ several non-additive integrals: the Choquet integral, the Sugeno integral, and
 the symmetric and asymmetric Choquet integrals.  An analysis of capacities in
 terms of decision behavior can be performed through the computation of various
 indices such as the Shapley value, the interaction index, the orness degree,
-etc.  The well-known Möbius transform, as well as other equivalent
+etc.  The well-known MÃ¶bius transform, as well as other equivalent
 representations of set functions can also be computed.  Kappalab further
 contains seven capacity identification routines: three least squares based
 approaches, a method based on linear programming, a maximum entropy like method

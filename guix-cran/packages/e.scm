@@ -627,6 +627,29 @@ periodically-collapsing bubble processes.  Details can be found in Vasilopoulos
 et al. (2022) <doi:10.18637/jss.v103.i10>.")
     (license license:gpl3)))
 
+(define-public r-extrpatt
+  (package
+    (name "r-extrpatt")
+    (version "0.1-4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ExtrPatt" version))
+       (sha256
+        (base32 "0azmr5j1icac4apc4w5s2rx1ngzr634hm9n2gjyb6xx2ikwc7sy8"))))
+    (properties `((upstream-name . "ExtrPatt")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-matrix r-mass r-foreach r-doparallel))
+    (home-page "https://cran.r-project.org/package=ExtrPatt")
+    (synopsis "Spatial Dependencies and Indices for Extremes")
+    (description
+     "An implementation of 1) the tail pairwise dependence matrix (TPDM) as described
+in Jiang & Cooley (2020) <doi:10.1175/JCLI-D-19-0413.1> 2) the extremal pattern
+index (EPI) as described in Szemkus & Friederichs ('Spatial patterns and indices
+for heatwave and droughts over Europe using a decomposition of extremal
+dependency'; submitted to ASCMO 2023).")
+    (license license:expat)))
+
 (define-public r-extremogram
   (package
     (name "r-extremogram")
@@ -3136,6 +3159,47 @@ power at a specified alternative.  For more information, see âExact samples
 sizes for clinical trials subject to size and power constraintsâ by Lloyd,
 C.J. (2022) Preprint <doi:10.13140/RG.2.2.11828.94085>.")
     (license license:gpl2)))
+
+(define-public r-ewsmethods
+  (package
+    (name "r-ewsmethods")
+    (version "1.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EWSmethods" version))
+       (sha256
+        (base32 "0019n55534xcmkn78bsvdwjkk44qz8dmbljlswmmxnp685i9qir4"))))
+    (properties `((upstream-name . "EWSmethods")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-tidyr
+                             r-seasonal
+                             r-scales
+                             r-reticulate
+                             r-redm
+                             r-moments
+                             r-mar
+                             r-infotheo
+                             r-gtools
+                             r-ggplot2
+                             r-forecast
+                             r-foreach
+                             r-egg
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/duncanobrien/EWSmethods")
+    (synopsis "Forecasting Tipping Points at the Community Level")
+    (description
+     "Rolling and expanding window approaches to assessing abundance based early
+warning signals, non-equilibrium resilience measures, and machine learning.  See
+Dakos et al. (2012) <doi:10.1371/journal.pone.0041010>, Deb et al. (2022)
+<doi:10.1098/rsos.211475>, Drake and Griffen (2010) <doi:10.1038/nature09389>,
+Ushio et al. (2018) <doi:10.1038/nature25504> and Weinans et al. (2021)
+<doi:10.1038/s41598-021-87839-y> for methodological details.  Graphical
+presentation of the outputs are also provided for clear and publishable figures.
+ Visit the EWSmethods website for more information, and tutorials.")
+    (license license:expat)))
 
 (define-public r-ews
   (package
@@ -12401,13 +12465,13 @@ eventually with solar position covariate as a daytime indicator,
 (define-public r-embayes
   (package
     (name "r-embayes")
-    (version "0.1.2")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "emBayes" version))
        (sha256
-        (base32 "1yn21275ry9qz25dip6sii464lhk8q4i06gqqaqqqzlnp964hn6k"))))
+        (base32 "18j50i0px9wgv9w5h015k276ia9ls5fjlj9gvjp6l3b3nr5nr2xq"))))
     (properties `((upstream-name . "emBayes")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-glmnet))
@@ -17917,13 +17981,13 @@ in the papers: Lorena et al. (2019) <doi:10.1145/3347711> and Lorena et al.
 (define-public r-ecoindr
   (package
     (name "r-ecoindr")
-    (version "1.9")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EcoIndR" version))
        (sha256
-        (base32 "09d7gka9h700fyryvkrb6jlk7ci341mwvvyd3hfy0nzx21jcpckb"))))
+        (base32 "0wsr3lmmg6rph6mlq6mrwlal4ph65ps5vyqkglbzb67xz7kc1hz5"))))
     (properties `((upstream-name . "EcoIndR")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan r-splancs r-rarity r-picante r-fd))

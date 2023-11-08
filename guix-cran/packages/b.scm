@@ -14164,6 +14164,41 @@ performed in the free software CRExplorer (see <http://crexplorer.net>).
 Further extension to more plot variants is planned.")
     (license (license:fsdg-compatible "EUPL"))))
 
+(define-public r-biblioverlap
+  (package
+    (name "r-biblioverlap")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "biblioverlap" version))
+       (sha256
+        (base32 "03mpw4h7z33dnmf7ain085xnlb6wjzj8vsrlr2jhm0h6fpx9880y"))))
+    (properties `((upstream-name . "biblioverlap")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-uuid
+                             r-upsetr
+                             r-stringdist
+                             r-shiny
+                             r-rlang
+                             r-matrix
+                             r-magrittr
+                             r-ggvenndiagram
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://github.com/gavieira/biblioverlap")
+    (synopsis "Document-Level Matching Between Bibliographic Datasets")
+    (description
+     "Identifies and visualizes document overlap in any number of bibliographic
+datasets.  This package implements the identification of overlapping documents
+through the exact match of a unique identifier (e.g. Digital Object Identifier -
+DOI) and, for records where the identifier is absent, through a score calculated
+from a set of fields commonly found in bibliographic datasets (Title, Source,
+Authors and Publication Year).  Additionally, it provides functions to visualize
+the results of the document matching through a Venn diagram and/or @code{UpSet}
+plot, as well as a summary of the matching procedure.")
+    (license license:gpl3+)))
+
 (define-public r-biblionetwork
   (package
     (name "r-biblionetwork")
@@ -17052,6 +17087,41 @@ phylogenetic statistical models using high performance computing.  By placing
 the BEAST JAR in this package, we offer an efficient distribution system for
 BEAST use by other R packages using CRAN.")
     (license license:asl2.0)))
+
+(define-public r-beastier
+  (package
+    (name "r-beastier")
+    (version "2.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "beastier" version))
+       (sha256
+        (base32 "0inycswavvp0cpgj86j95djc58fa07kg9n8f281grncjzmj8980b"))))
+    (properties `((upstream-name . "beastier")))
+    (build-system r-build-system)
+    (inputs (list))
+    (propagated-inputs (list r-xml2
+                             r-tibble
+                             r-stringr
+                             r-sessioninfo
+                             r-rlang
+                             r-rjava
+                             r-readr
+                             r-rappdirs
+                             r-phangorn
+                             r-beautier
+                             r-ape))
+    (native-inputs (list r-knitr))
+    (home-page
+     "https://docs.ropensci.org/beastier/https://github.com/ropensci/beastier/")
+    (synopsis "Call 'BEAST2'")
+    (description
+     "BEAST2 (<https://www.beast2.org>) is a widely used Bayesian phylogenetic tool,
+that uses DNA/RNA/protein data and many model priors to create a posterior of
+jointly estimated phylogenies and parameters.  BEAST2 is a command-line tool.
+This package provides a way to call BEAST2 from an R function call.")
+    (license license:gpl3)))
 
 (define-public r-beast
   (package

@@ -1773,13 +1773,13 @@ data frames with sw_sweep'.")
 (define-public r-sweater
   (package
     (name "r-sweater")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sweater" version))
        (sha256
-        (base32 "03fq3vbcvbv8fwdp6smxyzb5gj8qp03qf88l99f2na9bax302sr3"))))
+        (base32 "045cyhdsnrhkcpgpgv7s209wn2pa9plj7pnlmmnfiz7dy67ikkr3"))))
     (properties `((upstream-name . "sweater")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp
@@ -1790,7 +1790,7 @@ data frames with sw_sweep'.")
                              r-data-table
                              r-combinat
                              r-cli))
-    (home-page "https://github.com/chainsawriot/sweater")
+    (home-page "https://github.com/gesistsa/sweater")
     (synopsis "Speedy Word Embedding Association Test and Extras Using R")
     (description
      "Conduct various tests for evaluating implicit biases in word embeddings: Word
@@ -16039,43 +16039,6 @@ Parkin (1994) <doi:10.1016/j.geoderma.2008.08.007>
 Antonio Prohias.")
     (license license:lgpl3)))
 
-(define-public r-sputnik
-  (package
-    (name "r-sputnik")
-    (version "1.4.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SPUTNIK" version))
-       (sha256
-        (base32 "0446qh43q09l7kvcgsp4gkp7p9v9448xx0xwngxgghnnmwh8fa4p"))))
-    (properties `((upstream-name . "SPUTNIK")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-viridis
-                             r-spatstat-geom
-                             r-spatstat-explore
-                             r-reshape
-                             r-irlba
-                             r-infotheo
-                             r-imager
-                             r-ggplot2
-                             r-foreach
-                             r-edger
-                             r-e1071
-                             r-dosnow))
-    (home-page "https://github.com/paoloinglese/SPUTNIK")
-    (synopsis "SPatially aUTomatic deNoising for Ims toolKit")
-    (description
-     "This package provides a set of tools for the peak filtering of mass spectrometry
-imaging data (MSI or IMS) based on spatial distribution of signal.  Given a
-region-of-interest (ROI), representing the spatial region where the informative
-signal is expected to be localized, a series of filters determine which peak
-signals are characterized by an implausible spatial distribution.  The filters
-reduce the dataset dimensionality and increase its information vs noise ratio,
-improving the quality of the unsupervised analysis results, reducing data
-dimensionality and simplifying the chemical interpretation.")
-    (license license:gpl3+)))
-
 (define-public r-spurs
   (package
     (name "r-spurs")
@@ -19787,13 +19750,13 @@ intervention of a single legislator.")
 (define-public r-spedinstabr
   (package
     (name "r-spedinstabr")
-    (version "2.0")
+    (version "2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SPEDInstabR" version))
        (sha256
-        (base32 "1mzl55ji2w3l33mwdzhmlkfj4dlpqxfzad1pyqd1c5q2xxw0hhbf"))))
+        (base32 "1jzsv53yzgg3k7mbm62hxswpsirk59yajy82b87mkhvar93gpmwl"))))
     (properties `((upstream-name . "SPEDInstabR")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=SPEDInstabR")
@@ -21519,13 +21482,13 @@ Wilson et al. <doi:10.1101/2021.04.27.21256104>.")
 (define-public r-spatialsample
   (package
     (name "r-spatialsample")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spatialsample" version))
        (sha256
-        (base32 "0y7mhy1lwznbzik1cwyvpqk264qd3h1pn8128v8ar8bb5dllvkw2"))))
+        (base32 "0pcwf15ani4r8j3zgqz093jkimazzwi0218qx18xglymk180hhcp"))))
     (properties `((upstream-name . "spatialsample")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -21903,16 +21866,16 @@ and signed ranks.  For details, see Oja and Randles (2004)
 (define-public r-spatialml
   (package
     (name "r-spatialml")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SpatialML" version))
        (sha256
-        (base32 "13didlxl9fn5h48fyz29f2vh3vi8g2fisbnaraqlgwn5fbsg3ihd"))))
+        (base32 "133iwzbxy8ix2kfa1w6ic6sfip2jkrkw22h3acvh55fcwia7pk08"))))
     (properties `((upstream-name . "SpatialML")))
     (build-system r-build-system)
-    (propagated-inputs (list r-ranger r-caret))
+    (propagated-inputs (list r-ranger r-randomforest r-caret))
     (home-page "http://lctools.science/")
     (synopsis "Spatial Machine Learning")
     (description
@@ -41568,6 +41531,56 @@ variables in linear regression with avoiding the collinearity.")
 impute cellwise outliers.  Includes implementations of methods described in
 Mayrhofer and Filzmoser (2022) <doi:10.48550/ARXIV.2210.10063>.")
     (license license:gpl3)))
+
+(define-public r-shapley
+  (package
+    (name "r-shapley")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "shapley" version))
+       (sha256
+        (base32 "0x8fdl1kg027gl48ki9r1xlihqfhqvlaqkwjjrrw51k85r4ly1kb"))))
+    (properties `((upstream-name . "shapley")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-waffle r-h2o r-ggplot2 r-curl))
+    (home-page "https://github.com/haghish/shapley")
+    (synopsis
+     "Weighted Mean SHAP for Feature Selection in ML Grid and Ensemble")
+    (description
+     "This R package introduces an innovative method for calculating SHapley Additive
+@code{exPlanations} (SHAP) values for a grid of fine-tuned base-learner machine
+learning models as well as stacked ensembles, a method not previously available
+due to the common reliance on single best-performing models.  By integrating the
+weighted mean SHAP values from individual base-learners comprising the ensemble
+or individual base-learners in a tuning grid search, the package weights SHAP
+contributions according to each model's performance, assessed by the Area Under
+the Precision-Recall Curve (AUCPR) for binary classifiers (currently
+implemented).  It further extends this framework to implement weighted
+confidence intervals for weighted mean SHAP values, offering a more
+comprehensive and robust feature importance evaluation over a grid of machine
+learning models, instead of solely computing SHAP values for the best-performing
+model.  This methodology is particularly beneficial for addressing the severe
+class imbalance (class rarity) problem by providing a transparent, generalized
+measure of feature importance that mitigates the risk of reporting SHAP values
+for an overfitted or biased model and maintains robustness under severe class
+imbalance, where there is no universal criteria of identifying the absolute best
+model.  Furthermore, the package implements hypothesis testing to ascertain the
+statistical significance of SHAP values for individual features, as well as
+comparative significance testing of SHAP contributions between features.
+Additionally, it tackles a critical gap in feature selection literature by
+presenting criteria for the automatic feature selection of the most important
+features across a grid of models or stacked ensembles, eliminating the need for
+arbitrary determination of the number of top features to be extracted.  This
+utility is invaluable for researchers analyzing feature significance,
+particularly within severely imbalanced outcomes where conventional methods fall
+short.  In addition, it is also expected to report democratic feature importance
+across a grid of models, resulting in a more comprehensive and generalizable
+feature selection.  The package further implements a novel method for
+visualizing SHAP values both at subject level and feature level as well as a
+plot for feature selection based on the weighted mean SHAP ratios.")
+    (license license:expat)))
 
 (define-public r-shapeselectforest
   (package

@@ -24906,27 +24906,26 @@ details on the c++ library pf', see Brown (2020) <doi:10.21105/joss.02599>.")
 (define-public r-pfim
   (package
     (name "r-pfim")
-    (version "5.0")
+    (version "6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PFIM" version))
        (sha256
-        (base32 "0qamdsavbz27zs3m98bpn6680wq8528r5hi1w6f4b49nfl1sbmdx"))))
+        (base32 "012fiynf0bw72p0app31gw96ypqpq15f5yrims8n5cz5dpl2h5ag"))))
     (properties `((upstream-name . "PFIM")))
     (build-system r-build-system)
-    (propagated-inputs (list r-scales
+    (propagated-inputs (list r-stringr
+                             r-scales
                              r-rmarkdown
                              r-rcpp
                              r-pracma
                              r-matrix
-                             r-markdown
                              r-knitr
                              r-kableextra
-                             r-gtable
+                             r-inline
                              r-ggplot2
-                             r-ggbreak
-                             r-filesstrings
+                             r-devtools
                              r-desolve
                              r-deriv))
     (native-inputs (list r-knitr))
@@ -25864,15 +25863,16 @@ imputation-permutation methods when the censoring distributions are different.")
 (define-public r-permchacko
   (package
     (name "r-permchacko")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "permChacko" version))
        (sha256
-        (base32 "0in292c8yclmhbzkdcv4abqh1gh2xwjlbd7k54mqhjj1m51y1l6p"))))
+        (base32 "1jcgg0v7a70sw02qw6kxyc58kn4rczcrvgwsjpg9sj4ybgax42s9"))))
     (properties `((upstream-name . "permChacko")))
     (build-system r-build-system)
+    (native-inputs (list r-knitr))
     (home-page "https://ocbe-uio.github.io/permChacko/")
     (synopsis "Chacko Test for Order-Restriction with Permutation")
     (description

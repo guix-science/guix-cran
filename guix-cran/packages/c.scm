@@ -15,8 +15,8 @@
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages maths)
   #:use-module (gnu packages bioinformatics)
+  #:use-module (gnu packages maths)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages photo)
@@ -9607,13 +9607,13 @@ convert between coding schemes, and assign region descriptors.")
 (define-public r-countries
   (package
     (name "r-countries")
-    (version "1.0.5")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "countries" version))
        (sha256
-        (base32 "18dbax73xq379v63vmnn64qxiil83wvzkm05kqv18jq8q2wgwm69"))))
+        (base32 "0swmg7vp6ma1ih66rjb84i3p4l34jn0018ria3dwvjasd1i1jva4"))))
     (properties `((upstream-name . "countries")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis

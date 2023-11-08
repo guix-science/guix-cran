@@ -6504,6 +6504,27 @@ Caruana, Yin Lou, Johannes Gehrke, Paul Koch, Marc Sturm, and Noemie Elhadad
 (2015, <doi:10.1145/2783258.2788613>).")
     (license license:expat)))
 
+(define-public r-interpolators
+  (package
+    (name "r-interpolators")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "interpolators" version))
+       (sha256
+        (base32 "05b5r61zqz37n6sv60kzwk6qkj52dlsb9092crp49zncgzkbh02h"))))
+    (properties `((upstream-name . "interpolators")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp r-bh))
+    (home-page "https://github.com/stla/interpolators")
+    (synopsis "Some Interpolation Methods")
+    (description
+     "Some interpolation methods taken from Boost': barycentric rational
+interpolation, modified Akima interpolation, PCHIP (piecewise cubic Hermite
+interpolating polynomial) interpolation, and Catmull-Rom splines.")
+    (license license:gpl3)))
+
 (define-public r-interplot
   (package
     (name "r-interplot")
@@ -11273,6 +11294,34 @@ algorithm of Huang et al. (1992) <doi:10.1139/x92-172> and Zeide et al. (1993)
 <doi:10.1093/forestscience/39.3.594>.")
     (license license:gpl3)))
 
+(define-public r-imf-data
+  (package
+    (name "r-imf-data")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "imf.data" version))
+       (sha256
+        (base32 "15bwca1vsa76im4grhq7cdmgbi8vsf93wkwi7f49wzhxnvij6795"))))
+    (properties `((upstream-name . "imf.data")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-jsonlite r-curl))
+    (home-page "https://pedrobtz.github.io/imf.data/")
+    (synopsis
+     "An Interface to IMF (International Monetary Fund) Data JSON API")
+    (description
+     "This package provides a straightforward interface for accessing the IMF
+(International Monetary Fund) data JSON API, available at
+<https://data.imf.org/>.  This package offers direct access to the primary API
+endpoints: Dataflow, @code{DataStructure}, and @code{CompactData}.  And, it
+provides an intuitive interface for exploring available dimensions and
+attributes, as well as querying individual time-series datasets.  Additionally,
+the package implements a rate limit on API calls to reduce the chances of
+exceeding service limits (limited to 10 calls every 5 seconds) and encountering
+response errors.")
+    (license license:expat)))
+
 (define-public r-imediate
   (package
     (name "r-imediate")
@@ -11371,6 +11420,30 @@ on data from
  The IMD package also provides the composite UK index developed by
 <https://github.com/mysociety/composite_uk_imd>.")
     (license license:expat)))
+
+(define-public r-imcluster
+  (package
+    (name "r-imcluster")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ImCluster" version))
+       (sha256
+        (base32 "1ynsgadyfx6c8j27v8ylgbgn8gqm02129xcq3b1ya8b6zp4jm3ry"))))
+    (properties `((upstream-name . "ImCluster")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-dplyr))
+    (home-page "https://cran.r-project.org/package=ImCluster")
+    (synopsis "Efficiency of Cluster Sampling for Crop Surveys")
+    (description
+     "Cluster sampling is a valuable approach when constructing a comprehensive list
+of individual units is challenging.  It provides operational and cost
+advantages.  This package is designed to test the efficiency of cluster sampling
+in terms cluster variance and design effect in context to crop surveys.  This
+package has been developed using the algorithm of Iqbal et al. (2018)
+<doi:10.19080/BBOAJ.2018.05.555673>.")
+    (license license:gpl3)))
 
 (define-public r-imcexperiment
   (package

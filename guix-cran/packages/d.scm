@@ -18815,13 +18815,13 @@ There are also functions for graphical representation of clusters obtained.")
 (define-public r-deeplr
   (package
     (name "r-deeplr")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "deeplr" version))
        (sha256
-        (base32 "189kfcsd3cr0397krbfqh56x7h0v6i27s5jbfwr5zrf3jazllall"))))
+        (base32 "0xzhycw3yylq6hvaba3dv2wpmfaj9z6v6mzli8r4dbbzzaaa8214"))))
     (properties `((upstream-name . "deeplr")))
     (build-system r-build-system)
     (propagated-inputs (list r-utf8 r-tokenizers r-tibble r-purrr r-httr))
@@ -18831,8 +18831,8 @@ There are also functions for graphical representation of clusters obtained.")
      "This package provides a wrapper for the @code{DeepL} Pro API
 <https://www.deepl.com/docs-api>, a web service for translating texts between
 different languages.  A @code{DeepL} API developer account is required to use
-the service (see <https://www.deepl.com/pro#developer).")
-    (license license:gpl2+)))
+the service (see <https://www.deepl.com/pro#developer>).")
+    (license license:expat)))
 
 (define-public r-deepgp
   (package
@@ -19002,22 +19002,22 @@ chosen columns and collapse it into one row.")
 (define-public r-deduped
   (package
     (name "r-deduped")
-    (version "0.1.4")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "deduped" version))
        (sha256
-        (base32 "1jpb0ivqmnq4zz365myc62j1x9mhnxcjhlc3yyll3dl0xkm1r1ni"))))
+        (base32 "0qb9g8fpb0ggkwhvp2l5y0lp0pgkfyxzcnmaq2ln9y2z1zgmh866"))))
     (properties `((upstream-name . "deduped")))
     (build-system r-build-system)
     (propagated-inputs (list r-fastmatch r-collapse))
-    (home-page "https://cran.r-project.org/package=deduped")
+    (home-page "https://github.com/orgadish/deduped")
     (synopsis "Making \"Deduplicated\" Functions")
     (description
-     "This package contains one main function deduped() that returns a function that
-acts on the unique values of the first input and expands the results back.  This
-can significantly speed up certain slow iterative functions.")
+     "This package contains one main function deduped() which speeds up slow,
+vectorized functions by only performing computations on the unique values of the
+input and expanding the results at the end.")
     (license license:expat)))
 
 (define-public r-deductiver
@@ -22293,13 +22293,13 @@ one data frame column.")
 (define-public r-datetimeutils
   (package
     (name "r-datetimeutils")
-    (version "0.6-2")
+    (version "0.6-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datetimeutils" version))
        (sha256
-        (base32 "0cw6aii5lr3k4af75ijklvfwgb5h3x0xk5n2kxzpvmdmmg3x97cd"))))
+        (base32 "0k75r9bvh8wb45mrqk9vbyig8xk623g9cnrk7s6zbcx85ymxmmk6"))))
     (properties `((upstream-name . "datetimeutils")))
     (build-system r-build-system)
     (home-page "http://enricoschumann.net/R/packages/datetimeutils/")

@@ -12447,6 +12447,33 @@ the visualization into R. Based on the vis.js Timeline @code{JavaScript}
 library.")
     (license license:expat)))
 
+(define-public r-timevarcorr
+  (package
+    (name "r-timevarcorr")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "timevarcorr" version))
+       (sha256
+        (base32 "1i17p351y1jma0gp2lp6y4j1mxyg9fv5cyx0fvcpvk1lynfalflv"))))
+    (properties `((upstream-name . "timevarcorr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-lpridge))
+    (home-page "https://courtiol.github.io/timevarcorr/")
+    (synopsis "Time Varying Correlation")
+    (description
+     "Computes how the correlation between 2 time-series changes over time.  To do so,
+the package follows the method from Choi & Shin (2021)
+<doi:10.1007/s42952-020-00073-6>.  It performs a non-parametric kernel smoothing
+(using a common bandwidth) of all underlying components required for the
+computation of a correlation coefficient (i.e., x, y, x^2, y^2, xy).  An
+automatic selection procedure for the bandwidth parameter is implemented.
+Alternative kernels can be used (Epanechnikov, box and normal).  Both Pearson
+and Spearman correlation coefficients can be estimated and change in correlation
+over time can be tested.")
+    (license license:expat)))
+
 (define-public r-timevarconcurrentmodel
   (package
     (name "r-timevarconcurrentmodel")
@@ -21454,16 +21481,16 @@ rejection sampling, as employed by Diaconis, Holmes, and Shahshahani (2013)
 (define-public r-tdata
   (package
     (name "r-tdata")
-    (version "0.2.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tdata" version))
        (sha256
-        (base32 "03p068gsjnf0m6i1bf5dnck9qq6igqig24hn7ahlrkd426f3mj8z"))))
+        (base32 "1plgqd4pllj06rc3cvyaqs0c23r3c688fg5h8fzfkbhrrxfpwdn8"))))
     (properties `((upstream-name . "tdata")))
     (build-system r-build-system)
-    (propagated-inputs (list r-readxl r-rcpp r-bh))
+    (propagated-inputs (list r-rcpp r-bh))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/rmojab63/LDT")
     (synopsis "Prepare Your Time-Series Data for Further Analysis")

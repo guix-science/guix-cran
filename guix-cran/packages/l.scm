@@ -9444,44 +9444,20 @@ the @code{MortalityTables} package.")
 (define-public r-lifeinsurancecontracts
   (package
     (name "r-lifeinsurancecontracts")
-    (version "0.0.4")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LifeInsuranceContracts" version))
        (sha256
-        (base32 "02mk8n9rpnbbcgsq7j4b7arm28q1cnwwsswbf7cicahqi1gm3m4z"))))
+        (base32 "1i202lzrr496s2kgpzw5zd1lzcl4ng1aymx7paj42vnxv2j5152c"))))
     (properties `((upstream-name . "LifeInsuranceContracts")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-stringr
-                             r-scales
-                             r-rmarkdown
-                             r-rlang
-                             r-r6
-                             r-pander
-                             r-openxlsx
-                             r-objectproperties
-                             r-mortalitytables
-                             r-lubridate
-                             r-kableextra
-                             r-dplyr
-                             r-abind))
-    (native-inputs (list r-knitr))
-    (home-page "https://gitlab.open-tools.net/R/r-life-insurance-contracts")
+    (propagated-inputs (list r-lifeinsurer))
+    (home-page "https://gitlab.open-tools.net/R/LifeInsureR")
     (synopsis "Framework for Traditional Life Insurance Contracts")
     (description
-     "R6 classes to model traditional life insurance contracts like annuities, whole
-life insurances or endowments.  Such life insurance contracts provide a
-guaranteed interest and are not directly linked to the performance of a
-particular investment vehicle.  However, they typically provide (discretionary)
-profit participation.  This package provides a framework to model such contracts
-in a very generic (cash-flow-based) way and includes modelling profit
-participation schemes, dynamic increases or more general contract layers, as
-well as contract changes (like sum increases or premium waivers).  All relevant
-quantities like premium decomposition, reserves and benefits over the whole
-contract period are calculated and potentially exported to excel.  Mortalities
-are given using the @code{MortalityTables} package.")
+     "Use of this package is deprecated.  It has been renamed to @code{LifeInsureR}'.")
     (license license:gpl2+)))
 
 (define-public r-lifehist
@@ -12110,16 +12086,17 @@ general (not R specific) information on the algorithm Leabra see
 (define-public r-ldt
   (package
     (name "r-ldt")
-    (version "0.4.5")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ldt" version))
        (sha256
-        (base32 "1l6vllahssy3xd4y7cnlqyg4f0piyqv6py7rqqwqvn4fhj4zp3d9"))))
+        (base32 "1874a9n5w8l4ljwwqr2bf9habhc5azakvrn94jn1chx2fhkbn7s9"))))
     (properties `((upstream-name . "ldt")))
     (build-system r-build-system)
     (propagated-inputs (list r-tdata r-rdpack r-rcpp r-mass r-bh))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/rmojab63/LDT")
     (synopsis "Automated Uncertainty Analysis")
     (description

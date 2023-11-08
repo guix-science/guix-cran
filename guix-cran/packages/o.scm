@@ -5177,13 +5177,13 @@ data.  Further examples can be found in the vignette of the package.")
 (define-public r-opi
   (package
     (name "r-opi")
-    (version "2.11.0")
+    (version "2.11.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OPI" version))
        (sha256
-        (base32 "1y0z6kcvc8v1rk6fbi3j6sknd6wkfddlby49vapkp112xqjcmjkw"))))
+        (base32 "0dddfnhzd10yn6n9s1kzzlzad0bgg3jkh6mh8dvdi3c5ps1pz4p0"))))
     (properties `((upstream-name . "OPI")))
     (build-system r-build-system)
     (propagated-inputs (list r-rfast r-abind))
@@ -9961,13 +9961,13 @@ consumption data.")
 (define-public r-octopus
   (package
     (name "r-octopus")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "octopus" version))
        (sha256
-        (base32 "1g15waiv5abynf8iq07nvz7irzz315895m0xr7rzgcjkxj8zxkd0"))))
+        (base32 "0b1cyn8pj8i5dxjdm5qz4r3zly6v6cqg7dljfynsn6f4sdcc619a"))))
     (properties `((upstream-name . "octopus")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinyjs

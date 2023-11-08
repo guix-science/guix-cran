@@ -557,13 +557,13 @@ the Golden Section Search Method for Numerical Optimization\",
 (define-public r-jstreer
   (package
     (name "r-jstreer")
-    (version "2.3.3")
+    (version "2.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jsTreeR" version))
        (sha256
-        (base32 "1xlvd3npdcg63pisrgbg65di01w1h8hksbqndj0crn3jbhy7qjyd"))))
+        (base32 "1sskjpq484b7wlymfvlp5xv2q9j32qw72h22a47qg2qisqzk0h8d"))))
     (properties `((upstream-name . "jsTreeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinyace

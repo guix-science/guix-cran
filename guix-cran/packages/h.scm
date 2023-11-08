@@ -1837,13 +1837,13 @@ French National APIs on water <https://hubeau.eaufrance.fr/>.")
 (define-public r-httptest2
   (package
     (name "r-httptest2")
-    (version "0.1.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "httptest2" version))
        (sha256
-        (base32 "18i4lzqkmhd500rjfkh24drcqvw8ric3disddcl7bm3rddwn4bvh"))))
+        (base32 "0qgkw93a1cv1n81jvwp8i64snaac84rbr76mg8c5b4a2f4fhysi1"))))
     (properties `((upstream-name . "httptest2")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat r-rlang r-jsonlite r-httr2 r-digest))
@@ -9246,13 +9246,13 @@ summary and its standard errors, as described in Liang and Heagerty (2016)
 (define-public r-hdrfa
   (package
     (name "r-hdrfa")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HDRFA" version))
        (sha256
-        (base32 "0jm0lv4kgg908h34zx875f468ignl6dxmjn4mxjck5fg1w17rjvi"))))
+        (base32 "1dwys28vj5icv33x9zy4r62dslvwr1ajv29gs9lkalrc2wjh2qx2"))))
     (properties `((upstream-name . "HDRFA")))
     (build-system r-build-system)
     (propagated-inputs (list r-quantreg r-pracma))

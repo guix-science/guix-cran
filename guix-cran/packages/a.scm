@@ -12016,13 +12016,13 @@ tested condition.")
 (define-public r-altdoc
   (package
     (name "r-altdoc")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "altdoc" version))
        (sha256
-        (base32 "0icvzxkmjnssiz4cpphm69drz3mla15i54j4gqfav4jxmz7166z0"))))
+        (base32 "0bxb08pmpgbbqchsdmvgcvcp93ln3mly14vhwqlqfnr318iv93k3"))))
     (properties `((upstream-name . "altdoc")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -12670,13 +12670,13 @@ Thorpe (1976) <doi:10.1111/j.1469-185X.1976.tb01063.x>.")
 (define-public r-allometric
   (package
     (name "r-allometric")
-    (version "1.4.1")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "allometric" version))
        (sha256
-        (base32 "04d1k0vnkc13i0d4b3id15nnxflvmfp0fdmrf16lcf0przx4nwz7"))))
+        (base32 "15g9xyyiipg602s465kc082h7mlpwjfg6p9g2ba6n9ahhvcrhma7"))))
     (properties `((upstream-name . "allometric")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -12690,8 +12690,8 @@ Thorpe (1976) <doi:10.1111/j.1469-185X.1976.tb01063.x>.")
                              r-progress
                              r-openssl
                              r-magrittr
+                             r-jsonlite
                              r-isocodes
-                             r-gh
                              r-dplyr
                              r-curl))
     (home-page "https://cran.r-project.org/package=allometric")
@@ -16351,6 +16351,40 @@ analysis.\"Adverse event enrichment tests using VAERS\" Shuoran Li, Lili Zhao
 (2020) <@code{arXiv:2007.02266>}.")
     (license license:gpl2)))
 
+(define-public r-aedseo
+  (package
+    (name "r-aedseo")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "aedseo" version))
+       (sha256
+        (base32 "12dj74lhnmn7kpynpvrn6axx6vzvv0illlag1r2nli6lph3wf594"))))
+    (properties `((upstream-name . "aedseo")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-lifecycle
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ssi-dk/aedseo")
+    (synopsis "Automated and Early Detection of Seasonal Epidemic Onset")
+    (description
+     "This package provides a powerful tool for automating the early detection of
+seasonal epidemic onsets in time series data.  It offers the ability to estimate
+growth rates for consecutive time intervals and calculate the sum of cases
+(@code{SoC}) within those intervals.  It is particularly useful for
+epidemiologists, public health professionals, and researchers seeking to
+identify and respond to seasonal epidemics in a timely fashion.  For reference
+on growth rate estimation, see Walling and Lipstich (2007)
+<doi:10.1098/rspb.2006.3754> and Obadia et al. (2012)
+<doi:10.1186/1472-6947-12-147>.")
+    (license license:expat)))
+
 (define-public r-aedforecasting
   (package
     (name "r-aedforecasting")
@@ -16654,6 +16688,36 @@ with a prefixed significance level.  The required assumptions for the stage-wise
 test statistics are independent and stationary increments and normality.
 Predetermination of adaptation rule is not required.")
     (license license:gpl2+)))
+
+(define-public r-adproclus
+  (package
+    (name "r-adproclus")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "adproclus" version))
+       (sha256
+        (base32 "1c3mxfaqjlccmxbm4z4xlqdpzczjzw3jsqzrxnpsa2gx6wnfwfij"))))
+    (properties `((upstream-name . "adproclus")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-withr
+                             r-qgraph
+                             r-nmfn
+                             r-igraph
+                             r-gtools
+                             r-corrplot
+                             r-checkmate))
+    (home-page "https://cran.r-project.org/package=adproclus")
+    (synopsis "Additive Profile Clustering Algorithms")
+    (description
+     "Obtain overlapping clustering models for object-by-variable data matrices using
+the Additive Profile Clustering (ADPROCLUS) method.  Also contains the low
+dimensional ADPROCLUS method for simultaneous dimension reduction and
+overlapping clustering.  For reference see Depril, Van Mechelen, Mirkin (2008)
+<doi:10.1016/j.csda.2008.04.014> and Depril, Van Mechelen, Wilderjans (2012)
+<doi:10.1007/s00357-012-9112-5>.")
+    (license license:gpl3+)))
 
 (define-public r-adpf
   (package

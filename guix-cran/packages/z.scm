@@ -717,16 +717,16 @@ to the Bootstrap\" Efron (1983) <0-412-04231-2>.")
 (define-public r-zenplots
   (package
     (name "r-zenplots")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "zenplots" version))
        (sha256
-        (base32 "1zhxjql49hbwrim9y8qyyrkqwq09dv84vbini18xjkfv0z0lfmd2"))))
+        (base32 "0rf690qip2x7w037cbq51cfzqmla398a6x857wpz8cy9fd26ns7p"))))
     (properties `((upstream-name . "zenplots")))
     (build-system r-build-system)
-    (propagated-inputs (list r-pairviz r-mass r-loon r-graph))
+    (propagated-inputs (list r-pairviz r-mass r-graph))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/great-northern-diver/zenplots")
     (synopsis "Zigzag Expanded Navigation Plots")
