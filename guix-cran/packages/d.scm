@@ -1667,13 +1667,13 @@ friendly way.")
 (define-public r-duckplyr
   (package
     (name "r-duckplyr")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "duckplyr" version))
        (sha256
-        (base32 "1yzqflpijnrg7dn87iz9b4z3z8ssl55jhva1n4vn3g6d85ls4ipv"))))
+        (base32 "0cx30w1r8ha8wpryqg1mvg2243yp2n8an4vzv62pn64p894x8nya"))))
     (properties `((upstream-name . "duckplyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -2856,19 +2856,18 @@ splines.")
 (define-public r-dssat
   (package
     (name "r-dssat")
-    (version "0.0.7")
+    (version "0.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DSSAT" version))
        (sha256
-        (base32 "182x5v9zfyq43kgysmb5qkr6zrmnrvvd1mfi25shcm488p982qfh"))))
+        (base32 "04s4k7rbnk2xi73jiss8zaz777zz1bvirr8y4jbb72qvhi1jrrna"))))
     (properties `((upstream-name . "DSSAT")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
-                             r-testthat
                              r-stringr
                              r-rlang
                              r-readr
@@ -11491,6 +11490,41 @@ as prevalence.  The methods are described in Jackson et al. (2023)
 <doi:10.1093/jrsssa/qnac015>.")
     (license license:gpl3)))
 
+(define-public r-disaggregation
+  (package
+    (name "r-disaggregation")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "disaggregation" version))
+       (sha256
+        (base32 "052l1bky89a9cb6bh22lcksijbri9wdv3pw4wh51c7a8ah9zdqbr"))))
+    (properties `((upstream-name . "disaggregation")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tmb
+                             r-tidyterra
+                             r-terra
+                             r-splancs
+                             r-sparsemvn
+                             r-sf
+                             r-rcppeigen
+                             r-matrix
+                             r-ggplot2
+                             r-fmesher
+                             r-dplyr
+                             r-cowplot))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=disaggregation")
+    (synopsis "Disaggregation Modelling")
+    (description
+     "Fits disaggregation regression models using TMB ('Template Model Builder').
+When the response data are aggregated to polygon level but the predictor
+variables are at a higher resolution, these models can be useful.  Regression
+models with spatial random fields.  The package is described in detail in Nandi
+et al. (2023) <doi:10.18637/jss.v106.i11>.")
+    (license license:expat)))
+
 (define-public r-disaggregatets
   (package
     (name "r-disaggregatets")
@@ -16289,6 +16323,48 @@ effect, which can guide the realistic clinical trials.")
      "Here, a function has been developed to generate parameters of the input designs,
 as well as incidence matrices.  This is a general function that can be used to
 investigate the characterization properties of any block design.")
+    (license license:gpl3)))
+
+(define-public r-deseats
+  (package
+    (name "r-deseats")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "deseats" version))
+       (sha256
+        (base32 "144906bjb4hxv5m3cf8cjpp35548icnjfzxlqj17g2sc62wx6ngl"))))
+    (properties `((upstream-name . "deseats")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-shiny
+                             r-rlang
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-purrr
+                             r-progressr
+                             r-ggplot2
+                             r-future-apply
+                             r-future
+                             r-furrr
+                             r-animation))
+    (home-page "https://cran.r-project.org/package=deseats")
+    (synopsis
+     "Data-Driven Locally Weighted Regression for Trend and Seasonality in TS")
+    (description
+     "Various methods for the identification of trend and seasonal components in time
+series (TS) are provided.  Among them is a data-driven locally weighted
+regression approach with automatically selected bandwidth for equidistant
+short-memory time series.  The approach is a combination / extension of the
+algorithms by Feng (2013) <doi:10.1080/02664763.2012.740626> and Feng, Y.,
+Gries, T., and Fritz, M. (2020) <doi:10.1080/10485252.2020.1759598> and a brief
+description of this new method is provided in the package documentation.
+Furthermore, the package allows its users to apply the base model of the Berlin
+procedure, version 4.1, as described in Speth (2004)
+<https://www.destatis.de/DE/Methoden/Saisonbereinigung/BV41-methodenbericht-Heft3_2004.pdf?__blob=@code{publicationFile>}.
+ Permission to include this procedure was kindly provided by the Federal
+Statistical Office of Germany.")
     (license license:gpl3)))
 
 (define-public r-desctoolsaddins
@@ -24143,13 +24219,13 @@ package.")
 (define-public r-databaseconnector
   (package
     (name "r-databaseconnector")
-    (version "6.2.4")
+    (version "6.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DatabaseConnector" version))
        (sha256
-        (base32 "1y37rrq8h7w7g9dxx26d21bf8c5y5qhcpvhlr31h5ja3vm624aaa"))))
+        (base32 "18ci46i1m9bnb1affz7n57lpdmzpx2y46a3bdz5im3lccday2q1f"))))
     (properties `((upstream-name . "DatabaseConnector")))
     (build-system r-build-system)
     (inputs (list openjdk))

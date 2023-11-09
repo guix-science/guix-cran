@@ -383,6 +383,44 @@ from Incomplete Data via the EM Algorithm\".")
 bounded-variable least squares")
     (license license:gpl2+)))
 
+(define-public r-bvhar
+  (package
+    (name "r-bvhar")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bvhar" version))
+       (sha256
+        (base32 "12kaayh5kxwbb9nfr5csyhppcn1y75asllqk1kiq3cdh3xxs469j"))))
+    (properties `((upstream-name . "bvhar")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rcppprogress
+                             r-rcppeigen
+                             r-rcpp
+                             r-purrr
+                             r-posterior
+                             r-optimparallel
+                             r-magrittr
+                             r-lifecycle
+                             r-ggplot2
+                             r-foreach
+                             r-forcats
+                             r-dplyr
+                             r-dorng
+                             r-bayesplot))
+    (native-inputs (list r-knitr))
+    (home-page "https://ygeunkim.github.io/package/bvhar/")
+    (synopsis "Bayesian Vector Heterogeneous Autoregressive Modeling")
+    (description
+     "This package provides tools to research Bayesian Vector heterogeneous
+autoregressive (VHAR) model, referring to Kim & Baek (2023+)
+(<doi:10.1080/00949655.2023.2281644>).  bvhar can model Vector Autoregressive
+(VAR), VHAR, Bayesian VAR (BVAR), and Bayesian VHAR (BVHAR) models.")
+    (license license:expat)))
+
 (define-public r-bvarverse
   (package
     (name "r-bvarverse")

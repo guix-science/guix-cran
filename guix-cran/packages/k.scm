@@ -3543,6 +3543,26 @@ in an Emacs shell buffer or in R Studio'.  In these cases keypress stops with an
 error message.")
     (license license:expat)))
 
+(define-public r-keyplayer
+  (package
+    (name "r-keyplayer")
+    (version "1.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "keyplayer" version))
+       (sha256
+        (base32 "17l45yj97d7n1lf32ck1zw84sv1gcd7i0f1j9pq7r673gb2sbvmi"))))
+    (properties `((upstream-name . "keyplayer")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sna r-matpow r-igraph))
+    (home-page "https://cran.r-project.org/package=keyplayer")
+    (synopsis "Locating Key Players in Social Networks")
+    (description
+     "Computes group centrality scores and identifies the most central group of
+players in a network.")
+    (license license:gpl3+)))
+
 (define-public r-keyperm
   (package
     (name "r-keyperm")

@@ -10455,6 +10455,39 @@ Application to International Conflicts', available at
 <https://www.santiagoolivella.info/pdfs/socnet.pdf>.")
     (license license:gpl2+)))
 
+(define-public r-netmhc2pan
+  (package
+    (name "r-netmhc2pan")
+    (version "1.3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "netmhc2pan" version))
+       (sha256
+        (base32 "1hjmcimnj8m4ay5km3qrk1x0sgkpg89wrgs9pqlcd12f2b2aj7vn"))))
+    (properties `((upstream-name . "netmhc2pan")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-testit
+                             r-stringr
+                             r-seqinr
+                             r-readr
+                             r-rappdirs
+                             r-dplyr
+                             r-devtools))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/richelbilderbeek/netmhc2pan/")
+    (synopsis "Interface to 'NetMHCIIpan'")
+    (description
+     "The field of immunology benefits from software that can predict which peptide
+sequences trigger an immune response. @code{NetMHCIIpan} is a such a tool: it
+predicts the binding strength of a short peptide to a Major Histocompatibility
+Complex class II (MHC-II) molecule. @code{NetMHCIIpan} can be used from a web
+server at <https://services.healthtech.dtu.dk/services/@code{NetMHCIIpan-3.2/>}
+or from the command-line, using a local installation.  This package allows to
+call @code{NetMHCIIpan} from R.")
+    (license license:gpl3)))
+
 (define-public r-netmeta
   (package
     (name "r-netmeta")

@@ -6249,6 +6249,41 @@ package.  For calculating the VIMP regarding the measures accuracy and AUC two
 extra functions exist (@code{varImpACC} and @code{varImpAUC}).")
     (license license:gpl3)))
 
+(define-public r-variationaldcm
+  (package
+    (name "r-variationaldcm")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "variationalDCM" version))
+       (sha256
+        (base32 "1afl53g7k8adf9cjwqx7x6nh26c6ym3h87wgg1q767k93n5jvvfj"))))
+    (properties `((upstream-name . "variationalDCM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mvtnorm))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/khijikata/variationalDCM")
+    (synopsis
+     "Variational Bayesian Estimation for Diagnostic Classification Models")
+    (description
+     "Enables computationally efficient parameters-estimation by variational Bayesian
+methods for various diagnostic classification models (DCMs).  DCMs are a class
+of discrete latent variable models for classifying respondents into latent
+classes that typically represent distinct combinations of skills they possess.
+Recently, to meet the growing need of large-scale diagnostic measurement in the
+field of educational, psychological, and psychiatric measurements, variational
+Bayesian inference has been developed as a computationally efficient alternative
+to the Markov chain Monte Carlo methods e.g., Yamaguchi and Okada (2020a)
+<doi:10.1007/s11336-020-09739-w>, Yamaguchi and Okada (2020b)
+<doi:10.3102/1076998620911934>, Yamaguchi (2020)
+<doi:10.1007/s41237-020-00104-w>, Oka and Okada (2023)
+<doi:10.1007/s11336-022-09884-4>, and Yamaguchi and Martinez (2023)
+<doi:10.1111/bmsp.12308>.  To facilitate their applications,
+@code{variationalDCM} is developed to provide a collection of recently-proposed
+variational Bayesian estimation methods for various DCMs.")
+    (license license:gpl3)))
+
 (define-public r-variantspark
   (package
     (name "r-variantspark")

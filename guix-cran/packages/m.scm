@@ -15299,6 +15299,46 @@ for modeling, and the trained model can be applied to predict metabolites of
 analogous environments using new microbial feature abundances.")
     (license license:gpl3+)))
 
+(define-public r-mmibain
+  (package
+    (name "r-mmibain")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mmibain" version))
+       (sha256
+        (base32 "0m7ivz6ms06s9zh2696jz04cb1p8xhpippygvil9f16259a8yvrw"))))
+    (properties `((upstream-name . "mmibain")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shinythemes
+                             r-shiny
+                             r-psych
+                             r-mmcards
+                             r-lavaan
+                             r-igraph
+                             r-e1071
+                             r-car
+                             r-broom
+                             r-bain))
+    (home-page "https://github.com/mightymetrika/mmibain")
+    (synopsis "Bayesian Informative Hypotheses Evaluation Web Applications")
+    (description
+     "Researchers often have expectations about the relations between means of
+different groups or standardized regression coefficients; using informative
+hypothesis testing to incorporate these expectations into the analysis through
+order constraints increases statistical power Vanbrabant and Rosseel (2020)
+<doi:10.4324/9780429273872-14>.  Another valuable tool, the Bayes factor, can
+evaluate evidence for multiple hypotheses without concerns about multiple
+testing, and can be used in Bayesian updating Hoijtink, Mulder, van Lissa & Gu
+(2019) <doi:10.1037/met0000201>.  The bain R package enables informative
+hypothesis testing using the Bayes factor.  The mmibain package provides shiny
+web applications based on bain'.  The @code{RepliCrisis}() function launches a
+shiny card game to simulate the evaluation of replication studies while the
+mmibain() function launches a shiny application to fit Bayesian informative
+hypotheses evaluation models from bain'.")
+    (license license:expat)))
+
 (define-public r-mmeta
   (package
     (name "r-mmeta")
@@ -16394,6 +16434,36 @@ assume symmetric, non-reflexive graphs (no self-loops) with unweighted, binary
 edges.  Data are input as a symmetric binary adjacency matrix (SBMs), or list of
 such matrices (MLSBMs).")
     (license license:gpl2+)))
+
+(define-public r-mlrv
+  (package
+    (name "r-mlrv")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mlrv" version))
+       (sha256
+        (base32 "1d4g99hafx6326fiz3mw7ngwl7gj963hy78gyzrhwimchh27icjl"))))
+    (properties `((upstream-name . "mlrv")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xtable
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-numderiv
+                             r-mathjaxr
+                             r-magrittr
+                             r-foreach
+                             r-doparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=mlrv")
+    (synopsis "Long-Run Variance Estimation in Time Series Regression")
+    (description
+     "Plug-in and difference-based long-run covariance matrix estimation for time
+series regression.  Two applications of hypothesis testing are also provided.
+The first one is for testing for structural stability in coefficient functions.
+The second one is aimed at detecting long memory in time series regression.")
+    (license license:expat)))
 
 (define-public r-mlrpro
   (package
@@ -23809,13 +23879,13 @@ curation of microhaplotypes from short read sequences.")
 (define-public r-microeco
   (package
     (name "r-microeco")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "microeco" version))
        (sha256
-        (base32 "12igd4kij7pwd0s40kyvx67bjn94gflnqn3dndn49gna4rhdjpq4"))))
+        (base32 "1v0371wxxy95s30vs9jl02006anmkmgh588bgqmrka54fmpx375r"))))
     (properties `((upstream-name . "microeco")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -39251,6 +39321,27 @@ for importing and exporting, creating and generating networks, molding and
 manipulating networks and node and tie attributes, and describing and
 visualizing networks with sensible defaults.")
     (license license:expat)))
+
+(define-public r-manymome-table
+  (package
+    (name "r-manymome-table")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "manymome.table" version))
+       (sha256
+        (base32 "1rdlm95j6k490dwma6nsy7qawg03k7bfcidq2yllvn47n1bd96ya"))))
+    (properties `((upstream-name . "manymome.table")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-manymome r-flextable))
+    (native-inputs (list r-knitr))
+    (home-page "https://sfcheung.github.io/manymome.table/")
+    (synopsis "Publication-Ready Tables for 'manymome' Results")
+    (description
+     "Converts results from the manymome package, presented in Cheung and Cheung
+(2023) <doi:10.3758/s13428-023-02224-z>, to publication-ready tables.")
+    (license license:gpl3+)))
 
 (define-public r-manymome
   (package

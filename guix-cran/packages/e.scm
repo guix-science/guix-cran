@@ -3141,15 +3141,16 @@ Hunsberger (2021, <DOI:10.1214/21-SS131>).")
 (define-public r-exact-n
   (package
     (name "r-exact-n")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "exact.n" version))
        (sha256
-        (base32 "0sjiv55455274d2gfhkkdwbpq15wka947ajn9gyypfyc4fmzbqcn"))))
+        (base32 "0nj6i4djfr9khcj89mds2ks2v0jviaj9kal20havf6ncvjl7ssg2"))))
     (properties `((upstream-name . "exact.n")))
     (build-system r-build-system)
+    (propagated-inputs (list r-httr))
     (home-page "https://cran.r-project.org/package=exact.n")
     (synopsis
      "Exact Samples Sizes and Inference for Clinical Trials with Binary Endpoint")

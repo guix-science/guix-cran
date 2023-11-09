@@ -1808,6 +1808,34 @@ ISSN:00327786).  Hennekens, and @code{SchaminÃ©e} (2001) <doi:10.2307/3237010>
 <https://CRAN.R-project.org/package=dplyr>.")
     (license license:gpl3+)))
 
+(define-public r-rvec
+  (package
+    (name "r-rvec")
+    (version "0.0.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rvec" version))
+       (sha256
+        (base32 "15wwpkhnzib5nnyv15mdv8avxrzwc57xrpk7xr6qx440ibsg60x9"))))
+    (properties `((upstream-name . "rvec")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs
+                             r-tidyselect
+                             r-tibble
+                             r-rlang
+                             r-matrixstats
+                             r-glue
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://bayesiandemography.github.io/rvec/")
+    (synopsis "Vector Representing a Random Variable")
+    (description
+     "Random vectors, called rvecs.  An rvec holds multiple draws, but tries to behave
+like a standard R vector, including working well in data frames.  Rvecs are
+useful for working with output from a simulation or a Bayesian analysis.")
+    (license license:expat)))
+
 (define-public r-rvcompare
   (package
     (name "r-rvcompare")
@@ -13709,13 +13737,13 @@ sample location test, also known as the Fligner-Policello test.")
 (define-public r-robustmeta
   (package
     (name "r-robustmeta")
-    (version "1.1-1")
+    (version "1.2-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "robustmeta" version))
        (sha256
-        (base32 "0f7qj3c01wxhcx86hwjr2gik041vjvnzg444kyn72v7b7fr3nlyz"))))
+        (base32 "0i1i2pxsppyppayr911q87ll2nrmsvc8avkf4mlxm472k5dffh3k"))))
     (properties `((upstream-name . "robustmeta")))
     (build-system r-build-system)
     (propagated-inputs (list r-metafor))
@@ -17163,13 +17191,13 @@ Bayesian nonparametric mixtures of rounded kernels as in Canale and Dunson
 (define-public r-rmost
   (package
     (name "r-rmost")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rMOST" version))
        (sha256
-        (base32 "1g8g7hl937884l96cyz9wj486qgfm7lla47q8lmzn20fx1izjddr"))))
+        (base32 "0lhf7cnnasnhainxh6s73379c7bwcsiqqv5vwgy9r3l2dyn97a2h"))))
     (properties `((upstream-name . "rMOST")))
     (build-system r-build-system)
     (propagated-inputs (list r-nloptr))
@@ -17186,7 +17214,7 @@ predictors.  Maximum 2 objectives could be adverse impact objectives.  Partially
 modeled after De Corte (2006) TROFSS Fortran program
 <https://users.ugent.be/~wdecorte/trofss.pdf> and updated from @code{ParetoR}
 package described in Song et al. (2017) <doi:10.1037/apl0000240>.  For details,
-see Study 3 of Zhang et al. (in press).")
+see Study 3 of Zhang et al. (2023).")
     (license license:expat)))
 
 (define-public r-rmosek
@@ -31813,13 +31841,13 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
 (define-public r-redcaptidier
   (package
     (name "r-redcaptidier")
-    (version "0.4.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "REDCapTidieR" version))
        (sha256
-        (base32 "0c2b8ihjjzwl1g6jnrbp3c5blyqjrxpn0dkfnkk1v4vg8swrwh75"))))
+        (base32 "0mv9llh0xgyzh1iqa57i83vq1ijglcmnymk0m4zy34b01q4yjkha"))))
     (properties `((upstream-name . "REDCapTidieR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -32148,6 +32176,28 @@ model with spline rate function following Fu, et al. (2016)
 according to the IUCN (International Union for Conservation of Nature, see
 <https://www.iucn.org/> for more information) red list criteria.")
     (license license:gpl3)))
+
+(define-public r-recurse
+  (package
+    (name "r-recurse")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "recurse" version))
+       (sha256
+        (base32 "01l30ypwaj7i2cwb0dy2sapp7mvvkm1k99sib5bdxpyww4zkpiqm"))))
+    (properties `((upstream-name . "recurse")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=recurse")
+    (synopsis "Computes Revisitation Metrics for Trajectory Data")
+    (description
+     "Computes revisitation metrics for trajectory data, such as the number of
+revisitations for each location as well as the time spent for that visit and the
+time since the previous visit.  Also includes functions to plot data.")
+    (license license:expat)))
 
 (define-public r-recurrentpseudo
   (package
@@ -37291,22 +37341,24 @@ object (but this needs recompilation with a #define set).")
 (define-public r-rcpparray
   (package
     (name "r-rcpparray")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppArray" version))
        (sha256
-        (base32 "1a8gjvzad38d234vp5a4ca5hb1cdyijlwb0l6hgwpr04h9bm539v"))))
+        (base32 "0n32nqqa2cdx0lams95yhdij837asbs6kmaahnf2hm6q0pnwbj43"))))
     (properties `((upstream-name . "RcppArray")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
     (home-page "https://github.com/jonclayden/RcppArray")
     (synopsis "'Rcpp' Meets 'C++' Arrays")
     (description
-     "Interoperability between Rcpp and the C++11 array type.  Linking to this package
-allows fixed-length std::array objects to be converted to and from equivalent R
-vectors via the as() and wrap() functions.")
+     "Interoperability between Rcpp and the C++11 array and tuple types.  Linking to
+this package allows fixed-length std::array objects to be converted to and from
+equivalent R vectors, and std::tuple objects converted to lists, via the as()
+and wrap() functions.  There is also experimental support for std::span from
+C++20'.")
     (license license:gpl2)))
 
 (define-public r-rcppapt
@@ -39147,20 +39199,20 @@ Game notations.")
 (define-public r-rcheology
   (package
     (name "r-rcheology")
-    (version "4.3.1.0")
+    (version "4.3.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rcheology" version))
        (sha256
-        (base32 "0hsv11ynqfphzyvkqxs207l6k0x4f61z1cqg6xf1iw22p4b24v9x"))))
+        (base32 "1crn0s4ldgqpm1invjjc19z6fdqz6v0hfgv0bjvhplxhfyfmxiab"))))
     (properties `((upstream-name . "rcheology")))
     (build-system r-build-system)
     (home-page "https://github.com/hughjonesd/rcheology")
     (synopsis "Data on Base Packages for Current and Previous Versions of R")
     (description
      "This package provides a dataset of functions in all base packages of R versions
-1.0.1 onwards.")
+0.62.3 onwards.")
     (license license:cc0)))
 
 (define-public r-rchemo
@@ -39535,13 +39587,13 @@ license and is not available on CRAN, but may be downloaded from Github at
 (define-public r-rcbr
   (package
     (name "r-rcbr")
-    (version "0.5.9")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RCBR" version))
        (sha256
-        (base32 "1nxaf485jfg1kr80bxwczf27xz5ab7yz61c5l3bg9192jdf432ql"))))
+        (base32 "08rcnvdbavcww2cpl052ca93lbzkza7q6jlr4namdpzmf22z7bma"))))
     (properties `((upstream-name . "RCBR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmosek

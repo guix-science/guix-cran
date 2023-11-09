@@ -4249,13 +4249,13 @@ the composite performance of an individual.")
 (define-public r-ipkg
   (package
     (name "r-ipkg")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ipkg" version))
        (sha256
-        (base32 "1ldr4kf5mif3jwfrjk6flgcvfrg5mwz9c3zmwqzj3hwhwknwmb1d"))))
+        (base32 "118k5kc3bn3h6yih1wmi1zh8cy2qn78xh12h9b8alwiag12r3486"))))
     (properties `((upstream-name . "ipkg")))
     (build-system r-build-system)
     (propagated-inputs (list r-remotes r-httr))
@@ -4265,8 +4265,9 @@ the composite performance of an individual.")
     (description
      "When you want to install R package or download file from @code{GitHub}, but you
 can't access @code{GitHub}, this package helps you install R packages or
-download file from @code{GitHub} via the proxy website <https://ghproxy.com/> or
-<https://gh-proxy.com/>, which is in real-time sync with @code{GitHub}.")
+download file from @code{GitHub} via the proxy website
+<https://mirror.ghproxy.com/> or <https://gh-proxy.com/>, which is in real-time
+sync with @code{GitHub}.")
     (license license:expat)))
 
 (define-public r-ipft
@@ -4703,6 +4704,34 @@ tasks, and interrupting async tasks based on user input.")
      "An R client for the ipbase.com IP Geolocation API. The API requires registration
 of an API key.  Basic features are free, some require a paid subscription.  You
 can find the full API documentation at <https://ipbase.com/docs> .")
+    (license license:expat)))
+
+(define-public r-ipanema
+  (package
+    (name "r-ipanema")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ipanema" version))
+       (sha256
+        (base32 "1g8chd0nvsskiyl2i53yc6zwhsv56p5v4lh92cv9ivyicra7as77"))))
+    (properties `((upstream-name . "ipanema")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rmysql
+                             r-magrittr
+                             r-jsonlite
+                             r-httr
+                             r-dplyr
+                             r-dbi
+                             r-base64enc))
+    (home-page "https://gitlab.com/REDS1736/ipanema")
+    (synopsis "Read Data from 'LimeSurvey'")
+    (description
+     "Read data from @code{LimeSurvey} (<https://www.limesurvey.org/>) in a
+comfortable way.  Heavily inspired by limer
+(<https://github.com/cloudyr/limer/>), which lacked a few comfort features for
+me.")
     (license license:expat)))
 
 (define-public r-ipadmixture

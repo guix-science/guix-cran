@@ -9112,13 +9112,13 @@ S4 package aod.")
 (define-public r-ao
   (package
     (name "r-ao")
-    (version "0.2.7")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ao" version))
        (sha256
-        (base32 "1lmvq1np3b9pg3n2xnlscrnnjnqj4aada2mkgmv3z32sbfak77lk"))))
+        (base32 "0707j2lwaiy60s5zc35irmf4dnxv7wcfvngacpri7fazd6b6sd97"))))
     (properties `((upstream-name . "ao")))
     (build-system r-build-system)
     (propagated-inputs (list r-optimizer r-checkmate))
@@ -18000,17 +18000,24 @@ complete re-implementation of the functions available in the ade4 package.")
 (define-public r-adea
   (package
     (name "r-adea")
-    (version "1.3.1")
+    (version "1.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adea" version))
        (sha256
-        (base32 "0jvxgqwfga4gsn5jcdklfq2qci3xyvmkdfjappjwf72swb2rkv0n"))))
+        (base32 "11lwz21fdnlracgighbams8giv2pg1g47fj1pb28vv9nnm08prfc"))))
     (properties `((upstream-name . "adea")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rmarkdown r-lpsolveapi r-knitr r-combinat
-                             r-benchmarking))
+    (propagated-inputs (list r-slam
+                             r-roi-plugin-symphony
+                             r-roi-plugin-lpsolve
+                             r-roi-plugin-glpk
+                             r-roi
+                             r-rmarkdown
+                             r-lpsolveapi
+                             r-knitr
+                             r-combinat))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=adea")
     (synopsis "Alternate DEA Package")

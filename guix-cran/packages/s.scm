@@ -14126,6 +14126,36 @@ package utilizes the SMM framework to provide functions for training SVMs with
 hinge loss, squared-hinge loss, and logistic loss.")
     (license license:gpl3)))
 
+(define-public r-ssn2
+  (package
+    (name "r-ssn2")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SSN2" version))
+       (sha256
+        (base32 "1r9izkcib7a4l1sq611ily82zncl01r4yr43cr8blffldsyvpl1f"))))
+    (properties `((upstream-name . "SSN2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-spmodel
+                             r-sf
+                             r-rsqlite
+                             r-matrix
+                             r-generics))
+    (native-inputs (list r-knitr))
+    (home-page "https://usepa.github.io/SSN2/")
+    (synopsis "Spatial Modeling on Stream Networks")
+    (description
+     "Spatial statistical modeling and prediction for data on stream networks,
+including models based on in-stream distance (Ver Hoef, J.M. and Peterson, E.E.,
+(2010) <DOI:10.1198/jasa.2009.ap08248>.) Models are created using moving average
+constructions.  Spatial linear models, including explanatory variables, can be
+fit with (restricted) maximum likelihood.  Mapping and other graphical functions
+are included.")
+    (license license:gpl3)))
+
 (define-public r-ssmsn
   (package
     (name "r-ssmsn")
@@ -33136,13 +33166,13 @@ Engine to Streamline Simulations,\" which is available at
 (define-public r-simulariatools
   (package
     (name "r-simulariatools")
-    (version "2.5.0")
+    (version "2.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simulariatools" version))
        (sha256
-        (base32 "09204rvpyg20gsn8gdrf9mxcz50yff8kwc51c8gz87v6kb8xyhws"))))
+        (base32 "0zzghs44yll5181mw5nqm49k4q01hzm88fqjq8fjfzza1gplrkf7"))))
     (properties `((upstream-name . "simulariatools")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -36372,6 +36402,27 @@ center (Boukhetala K, 1996) ISBN:1-56252-342-2.")
 described by Zhang, X., and Cheng, G. (2017)
 <doi:10.1080/01621459.2016.1166114>.")
     (license license:gpl3)))
+
+(define-public r-sillyputty
+  (package
+    (name "r-sillyputty")
+    (version "0.3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SillyPutty" version))
+       (sha256
+        (base32 "1mb35y5w5nhn9n1lgqa1nyjapn0bn8fwagc8lszkppj1lmkak7zv"))))
+    (properties `((upstream-name . "SillyPutty")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-thresher r-polychrome r-oompabase r-cluster))
+    (native-inputs (list r-knitr))
+    (home-page "http://oompa.r-forge.r-project.org/")
+    (synopsis "Silly Putty Clustering")
+    (description
+     "This package implements a simple, novel clustering algorithm based on optimizing
+the silhouette width.")
+    (license license:asl2.0)))
 
 (define-public r-silicate
   (package
@@ -39774,13 +39825,13 @@ popovers or tooltips.")
 (define-public r-shinyexprportal
   (package
     (name "r-shinyexprportal")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyExprPortal" version))
        (sha256
-        (base32 "0vicgrz0l115za2zvjwqmmxbwppq37xmsmd5rrkarqrpv7vwpg7y"))))
+        (base32 "0kf53k6p87nh2pa3fjh22j1cblfw88rkh1049lirpak3zw30vwh9"))))
     (properties `((upstream-name . "shinyExprPortal")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -42733,13 +42784,13 @@ Technometrics, <doi:10.1080/00401706.2015.1108233>).")
 (define-public r-sfdct
   (package
     (name "r-sfdct")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sfdct" version))
        (sha256
-        (base32 "0p3ipp6x8vnsi94078n098yk9wglnawvzh19imcgk2c1l5lazwgf"))))
+        (base32 "0nvrcaif83qlrhx15srv2yvsrvxz05arz6h03jj07j5i8iv1hpjd"))))
     (properties `((upstream-name . "sfdct")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-sp r-sf r-rtriangle r-dplyr))
@@ -42747,14 +42798,17 @@ Technometrics, <doi:10.1080/00401706.2015.1108233>).")
     (home-page "https://github.com/hypertidy/sfdct")
     (synopsis "Constrained Triangulation for Simple Features")
     (description
-     "Build a constrained Delaunay triangulation from simple features objects,
-applying constraints based on input line segments, and triangle properties
-including maximum area, minimum internal angle.  The triangulation code in
-RTriangle uses the method of Cheng, Dey and Shewchuk (2012, ISBN:9781584887300).
- For a low-dependency alternative with low-quality path-based constrained
-triangulation see <https://CRAN.R-project.org/package=decido> and for
-high-quality configurable triangulation see
-<https://CRAN.R-project.org/package=anglr>.")
+     "Build a constrained high quality Delaunay triangulation from simple features
+objects, applying constraints based on input line segments, and triangle
+properties including maximum area, minimum internal angle.  The triangulation
+code in RTriangle uses the method of Cheng, Dey and Shewchuk (2012,
+ISBN:9781584887300).  For a low-dependency alternative with low-quality
+path-based constrained triangulation see
+<https://CRAN.R-project.org/package=decido> and for high-quality configurable
+triangulation see <https://github.com/hypertidy/anglr>.  Also consider
+comparison with the GEOS lib which since version 3.10.0 includes a low quality
+polygon triangulation method that starts with ear clipping and refines to
+Delaunay.")
     (license (license:fsdg-compatible "CC BY-NC-SA 4.0"))))
 
 (define-public r-sfcr
@@ -47813,6 +47867,39 @@ streamflow (Q) and other ancillary variables.  See Ryberg and York, 2020,
 <doi:10.3133/ofr20201082>.")
     (license (list (license:fsdg-compatible "Unlimited")
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-seaval
+  (package
+    (name "r-seaval")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SeaVal" version))
+       (sha256
+        (base32 "0xdi0ya3msrszwqi54xmav717fylp976547dck10qifcr90nrjm9"))))
+    (properties `((upstream-name . "SeaVal")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scales
+                             r-rcolorbrewer
+                             r-patchwork
+                             r-ncdf4
+                             r-maps
+                             r-ggplotify
+                             r-ggplot2
+                             r-data-table))
+    (home-page "http://files.nr.no/samba/CONFER/SeaVal/")
+    (synopsis "Validation of Seasonal Weather Forecasts")
+    (description
+     "This package provides tools for processing and evaluating seasonal weather
+forecasts, with an emphasis on tercile forecasts.  We follow the World
+Meteorological Organization's \"Guidance on Verification of Operational Seasonal
+Climate Forecasts\", S.J.Mason (2018, ISBN:978-92-63-11220-0,
+URL:<https://library.wmo.int/idurl/4/56227>).  The development was supported by
+the European Unionâs Horizon 2020 research and innovation programme under
+grant agreement no.  869730 (CONFER).  A comprehensive online tutorial is
+available at <http://files.nr.no/samba/CONFER/@code{SeaVal/>}.")
+    (license license:gpl3+)))
 
 (define-public r-seastests
   (package
@@ -56758,6 +56845,38 @@ when auxiliary variable measured with error.  The rjags package is employed to
 obtain parameter estimates.  For the references, see Rao and Molina (2015)
 <doi:10.1002/9781118735855>, Ybarra and Lohr (2008) <doi:10.1093/biomet/asn048>,
 and Ntzoufras (2009, ISBN-10: 1118210352).")
+    (license license:gpl3)))
+
+(define-public r-saehb
+  (package
+    (name "r-saehb")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "saeHB" version))
+       (sha256
+        (base32 "1wv9b656s93r9vnm6j0j10gd1q92vbawhy5ijjzvzsn9drzzwzsc"))))
+    (properties `((upstream-name . "saeHB")))
+    (build-system r-build-system)
+    (inputs (list jags))
+    (propagated-inputs (list r-stringr
+                             r-rjags
+                             r-nimble
+                             r-mass
+                             r-coda
+                             r-carbayesdata))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/zazaperwira/saeHB")
+    (synopsis "Small Area Estimation using Hierarchical Bayesian Method")
+    (description
+     "This package provides several functions for area level of small area estimation
+using hierarchical Bayesian (HB) methods with several univariate distributions
+for variables of interest.  The dataset that is used in every function is
+generated accordingly in the Example.  The rjags package is employed to obtain
+parameter estimates.  Model-based estimators involve the HB estimators which
+include the mean and the variation of mean.  For the reference, see Rao and
+Molina (2015) <doi:10.1002/9781118735855>.")
     (license license:gpl3)))
 
 (define-public r-saeeb

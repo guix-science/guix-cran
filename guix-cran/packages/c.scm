@@ -15,8 +15,8 @@
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages maths)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages photo)
@@ -6068,20 +6068,20 @@ and graph the data.")
 (define-public r-crimedata
   (package
     (name "r-crimedata")
-    (version "0.3.1")
+    (version "0.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crimedata" version))
        (sha256
-        (base32 "16xccfh64qza617d7k9swahchij57skh8wwnj7gxlpasknx11wwf"))))
+        (base32 "16b413drkxccxcq269spl6rwfmy61pwl7xq237g018nih439ym7d"))))
     (properties `((upstream-name . "crimedata")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
                              r-sf
                              r-rlang
                              r-purrr
-                             r-httr
+                             r-osfr
                              r-dplyr
                              r-digest))
     (native-inputs (list r-knitr))
@@ -7373,6 +7373,26 @@ Averages, Frank-Wolfe algorithm (M. Fukushima (1984)
 algorithms (M. Mitradjieva, P. O. Lindberg (2012) <doi:10.1287/trsc.1120.0409>),
 Algorithm-B (R. B. Dial (2006) <doi:10.1016/j.trb.2006.02.008>).")
     (license license:gpl2+)))
+
+(define-public r-cppdoubles
+  (package
+    (name "r-cppdoubles")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cppdoubles" version))
+       (sha256
+        (base32 "14f1i2hn59gj8r3kj167sk68crs4p1rzbh3gjwmxnrxy0wrdin9m"))))
+    (properties `((upstream-name . "cppdoubles")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-cpp11))
+    (home-page "https://cran.r-project.org/package=cppdoubles")
+    (synopsis "Fast Relative Comparisons of Floating Point Numbers in 'C++'")
+    (description
+     "Compare double-precision floating point vectors using relative differences.  All
+equality operations are calculated using cpp11'.")
+    (license license:expat)))
 
 (define-public r-cppcheckr
   (package
@@ -29905,13 +29925,13 @@ are motivated by the functional programming concept.")
 (define-public r-cheem
   (package
     (name "r-cheem")
-    (version "0.3.0")
+    (version "0.4.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cheem" version))
        (sha256
-        (base32 "0l3arxxkg6rzkilklcmn61rl1j33yxcgbikj6mk5laqhhii3rqqp"))))
+        (base32 "1b6gf2ax30rhpkmawvpar4cria4gkrcrzgyrvlrhcaialx40sjlz"))))
     (properties `((upstream-name . "cheem")))
     (build-system r-build-system)
     (propagated-inputs (list r-spinifex
@@ -29927,15 +29947,13 @@ are motivated by the functional programming concept.")
     (home-page "https://github.com/nspyrison/cheem/")
     (synopsis "Interactively Explore Local Explanations with the Radial Tour")
     (description
-     "Given a tree-based machine learning model, calculate the tree SHAP
-<@code{arXiv:1802.03888>}; <https://github.com/@code{ModelOriented/treeshap>}
-local explanation of every observation.  View the data space, explanation space,
-and model residuals as ensemble graphic interactive on a shiny application.
-After an observation of interest is identified, the normalized variable
-importance of the local explanation is used as a 1D projection basis.  The
-support of the local explanation is then explored by changing the basis with the
-use of the radial tour <doi:10.32614/RJ-2020-027>;
-<doi:10.1080/10618600.1997.10474754>.")
+     "Given a non-linear model, calculate the local explanation.  We purpose view the
+data space, explanation space, and model residuals as ensemble graphic
+interactive on a shiny application.  After an observation of interest is
+identified, the normalized variable importance of the local explanation is used
+as a 1D projection basis.  The support of the local explanation is then explored
+by changing the basis with the use of the radial tour
+<doi:10.32614/RJ-2020-027>; <doi:10.1080/10618600.1997.10474754>.")
     (license license:expat)))
 
 (define-public r-cheddar
@@ -37929,13 +37947,13 @@ Arias-Pulido H et al. (2008) <doi:10.1002/gcc.20577>.  Davis S, Meltzer PS
 (define-public r-canvasxpress
   (package
     (name "r-canvasxpress")
-    (version "1.46.9")
+    (version "1.46.9-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "canvasXpress" version))
        (sha256
-        (base32 "16b9j05as67qsyanzqr8h9hd65vp9wkhhh8fzx94xy47f54bnfp6"))))
+        (base32 "0zb6cgpxzd9245jzabvw9x09ziihkfjc3gx1qclpqkvdbyq85qx6"))))
     (properties `((upstream-name . "canvasXpress")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-httr r-htmlwidgets r-htmltools))

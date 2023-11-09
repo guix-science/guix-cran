@@ -598,6 +598,42 @@ the generalized dispersion index (GDI) with its marginal one (MDI) and the
 generalized variation index (GVI) with its marginal one (MVI) too.")
     (license license:gpl3)))
 
+(define-public r-gwex
+  (package
+    (name "r-gwex")
+    (version "1.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GWEX" version))
+       (sha256
+        (base32 "0klwiknlngdxyp42wvxiph965pa90qn97rf2bra1y7bn063r7lns"))))
+    (properties `((upstream-name . "GWEX")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-renext
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-nleqslv
+                             r-mvtnorm
+                             r-mass
+                             r-lmomco
+                             r-foreach
+                             r-fgarch
+                             r-envstats
+                             r-doparallel
+                             r-abind))
+    (home-page "https://cran.r-project.org/package=GWEX")
+    (synopsis
+     "Multi-Site Stochastic Models for Daily Precipitation and Temperature")
+    (description
+     "Application of multi-site models for daily precipitation and temperature data.
+This package is designed for an application to 105 precipitation and 26
+temperature gauges located in Switzerland.  It applies fitting procedures and
+provides weather generators described in the following references: - Evin, G.,
+A.-C. Favre, and B. Hingray. (2018) <doi:10.5194/hess-22-655-2018>. - Evin, G.,
+A.-C. Favre, and B. Hingray. (2018) <doi:10.1007/s00704-018-2404-x>.")
+    (license license:gpl3)))
+
 (define-public r-gwbr
   (package
     (name "r-gwbr")
@@ -10361,13 +10397,13 @@ easy interface for accessing it is provided in this package.")
 (define-public r-gmcplite
   (package
     (name "r-gmcplite")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gMCPLite" version))
        (sha256
-        (base32 "1v5nzzyxwjlrrn6qqi0jgd5z4zzyq5abjhd38cvr6rhyjjj9hlxi"))))
+        (base32 "1y9pfvrxmp3gybn1cl3hhmdvp1v2cl1gqclg6lbz0ikzja9bfwjg"))))
     (properties `((upstream-name . "gMCPLite")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-mass r-ggplot2))
@@ -24563,13 +24599,13 @@ and Gotway (2004, <ISBN:9781584883227>) and Waller and Gotway (2004,
 (define-public r-ge
   (package
     (name "r-ge")
-    (version "0.3.9")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GE" version))
        (sha256
-        (base32 "1wq7za5wi39qsd5x1986myasf4pz3a5mh0fkzbpbklmcsahadrm5"))))
+        (base32 "0ggpbkcgikk15mjn8x4hs4kkw7pr1d854xxziry8v4lbcj2xs9cy"))))
     (properties `((upstream-name . "GE")))
     (build-system r-build-system)
     (propagated-inputs (list r-diagrammer r-data-tree r-cge))

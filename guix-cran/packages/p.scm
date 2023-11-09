@@ -7833,6 +7833,33 @@ methods are provided in the papers Stathopoulos (2010,
 citation(\"PRIMME\") for details.")
     (license license:gpl3)))
 
+(define-public r-primes
+  (package
+    (name "r-primes")
+    (version "1.5.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "primes" version))
+       (sha256
+        (base32 "0k1hbi6ziidb02p48y70wx450nzqgd7rghpg63hawlvq4il3jgn3"))))
+    (properties `((upstream-name . "primes")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://github.com/ironholds/primes")
+    (synopsis "Fast Functions for Prime Numbers")
+    (description
+     "Fast functions for dealing with prime numbers, such as testing whether a number
+is prime and generating a sequence prime numbers.  Additional functions include
+finding prime factors and Ruth-Aaron pairs, finding next and previous prime
+numbers in the series, finding or estimating the nth prime, estimating the
+number of primes less than or equal to an arbitrary number, computing
+primorials, prime k-tuples (e.g., twin primes), finding the greatest common
+divisor and smallest (least) common multiple, testing whether two numbers are
+coprime, and computing Euler's totient function.  Most functions are vectorized
+for speed and convenience.")
+    (license license:expat)))
+
 (define-public r-primertree
   (package
     (name "r-primertree")

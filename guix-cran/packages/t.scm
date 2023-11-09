@@ -16023,13 +16023,13 @@ observations is considered.")
 (define-public r-thresholdrocsurvival
   (package
     (name "r-thresholdrocsurvival")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ThresholdROCsurvival" version))
        (sha256
-        (base32 "10bgjs0ybd4h4hhgh7mj0sk4xwwf49dp48gvqwhvdrm11k3b52vs"))))
+        (base32 "0zvcfysfaj45vdylsyanllfk25vwz7fs6qxbpkrr9qma0nxpnc2f"))))
     (properties `((upstream-name . "ThresholdROCsurvival")))
     (build-system r-build-system)
     (propagated-inputs (list r-thresholdroc
@@ -16045,8 +16045,8 @@ observations is considered.")
      "We focus on the diagnostic ability assessment of medical tests when the outcome
 of interest is the status (alive or dead) of the subjects at a certain
 time-point t.  This binary status is determined by right-censored times to event
-and it is missing for those subjects censored before t.  Here we provide three
-methods (missing exclusion, imputation of censored times and using
+and it is unknown for those subjects censored before t.  Here we provide three
+methods (unknown status exclusion, imputation of censored times and using
 time-dependent ROC curves) to evaluate the diagnostic ability of binary and
 continuous tests in this context.  Two references for the methods used here are
 Skaltsa et al. (2010) <doi:10.1002/bimj.200900294> and Heagerty et al. (2000)

@@ -6192,16 +6192,17 @@ dependence structures.")
 (define-public r-lmmstar
   (package
     (name "r-lmmstar")
-    (version "0.9.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LMMstar" version))
        (sha256
-        (base32 "137lvwy2sm7ldi62jmhnlxa788636q35g7i68qnn9v6gnjd7q9v3"))))
+        (base32 "0r33k7jyi39a13kwly1qyjai5q67vb6kj803f9yrcxw3g15nfbgd"))))
     (properties `((upstream-name . "LMMstar")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sandwich
+    (propagated-inputs (list r-scales
+                             r-sandwich
                              r-rlang
                              r-pbapply
                              r-numderiv
@@ -6210,7 +6211,9 @@ dependence structures.")
                              r-matrix
                              r-lava
                              r-ggplot2
+                             r-foreach
                              r-emmeans
+                             r-doparallel
                              r-copula))
     (native-inputs (list r-r-rsp))
     (home-page "https://github.com/bozenne/LMMstar")

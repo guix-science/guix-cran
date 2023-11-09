@@ -4243,21 +4243,23 @@ the portfolio performance as presented by Gosling et al. (2020)
 (define-public r-optimizer
   (package
     (name "r-optimizer")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "optimizeR" version))
        (sha256
-        (base32 "0dj61lwy5kqh3xpsgyld66iqllgsilwvw8kbhwvyj01viwkaz8fl"))))
+        (base32 "06ad7hcsmhhvv2w0yd8w1vqjg6ns95f81spixx2nw8gkwj6lfq1g"))))
     (properties `((upstream-name . "optimizeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-testfunctions r-r6 r-oeli r-cli r-checkmate))
     (home-page "https://loelschlaeger.de/optimizeR/")
     (synopsis "Unified Framework for Numerical Optimizers")
     (description
-     "This package provides a unified framework for numerical optimizers in R,
-particularly for their inputs and outputs.")
+     "This package provides a unified object-oriented framework for numerical
+optimizers in R. Allows for both minimization and maximization with any
+optimizer, optimization over more than one function argument, measuring of
+computation time, setting a time limit for long optimization tasks.")
     (license license:gpl3+)))
 
 (define-public r-optimization

@@ -15943,13 +15943,13 @@ Wasserstein metric of optimal transport.")
 (define-public r-fdaconcur
   (package
     (name "r-fdaconcur")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fdaconcur" version))
        (sha256
-        (base32 "0i0wvaplcfl021hjh6f6qlimx0hrsxq18l8v4j2bvrnsr3allj60"))))
+        (base32 "1ajmm8lrd9lnl8smkjrnnsnfjmb0dnbhrglg1gdcajvr937rhjsa"))))
     (properties `((upstream-name . "fdaconcur")))
     (build-system r-build-system)
     (propagated-inputs (list r-fdapace))
