@@ -2649,18 +2649,19 @@ GPH estimator proposed by Reisen et al. (2017) <doi:10.1016/j.jspi.2017.02.008>.
 (define-public r-tspredit
   (package
     (name "r-tspredit")
-    (version "1.0.727")
+    (version "1.0.737")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tspredit" version))
        (sha256
-        (base32 "0igr673zyy63m36wrjgcdax18ap6djq3n6hhxsi5knvcg5xyaqb7"))))
+        (base32 "0w9qlghrggc7gydq2ksgdjs6dg98bzlrcvir0fp5czbdafz288dl"))))
     (properties `((upstream-name . "tspredit")))
     (build-system r-build-system)
     (propagated-inputs (list r-smotefamily
                              r-mfilter
                              r-leaps
+                             r-kfas
                              r-glmnet
                              r-fselector
                              r-forecast
@@ -8122,13 +8123,13 @@ on their analyses.  For more details visit
 (define-public r-trainer
   (package
     (name "r-trainer")
-    (version "2.1.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "traineR" version))
        (sha256
-        (base32 "0bk7hrz9bfn9j3hj05zhq6zm9q2nrw5pcrq8yd54ys2135hhqwaj"))))
+        (base32 "0a07l38k18x97yzqh8qcaza4fac0r2ngf3588v3nrvhcm3wz70az"))))
     (properties `((upstream-name . "traineR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -18508,13 +18509,13 @@ according to various dimensions etc.  For more information see
 (define-public r-texreg
   (package
     (name "r-texreg")
-    (version "1.38.6")
+    (version "1.39.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "texreg" version))
        (sha256
-        (base32 "1z8j9whybvzjcrvivk3jhh8clfrbwdb7ss6mhqp0dlhbq2vn7gb8"))))
+        (base32 "0kbdnxfgdin4vydrw84xzbw9xldvn8paikij9ya8976la6gpf6il"))))
     (properties `((upstream-name . "texreg")))
     (build-system r-build-system)
     (inputs (list texlive-booktabs))

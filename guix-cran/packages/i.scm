@@ -15,7 +15,6 @@
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages java)
   #:use-module (gnu packages pdf)
-  #:use-module (gnu packages tbb)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages algebra)
   #:use-module (gnu packages image)
@@ -1844,27 +1843,31 @@ for species with greater weight and cluster medoids.")
 (define-public r-isoorbi
   (package
     (name "r-isoorbi")
-    (version "1.1.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "isoorbi" version))
        (sha256
-        (base32 "0f098y43iiwyf6gv1gaq9r22gwk9lbki86vj0pqrvgcdyk4w6azj"))))
+        (base32 "1n0mga4djak8qsfjjaaqd2wfw842qp4vqfq3n3lrimlrn8l52l0j"))))
     (properties `((upstream-name . "isoorbi")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
                              r-tidyr
+                             r-scales
                              r-rlang
                              r-readr
+                             r-purrr
+                             r-openxlsx
                              r-lifecycle
+                             r-ggplot2
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/isoverse/isoorbi")
     (synopsis "Process Orbitrap Isotopocule Data")
     (description
      "Read and process isotopocule data from an Orbitrap Isotope Solutions mass
-spectrometer.  Hilkert et al. (2021) <doi:10.1021/acs.analchem.1c00944>.")
+spectrometer.  Citation: Kantnerova et al. (in review).")
     (license license:expat)))
 
 (define-public r-isomemo
@@ -11847,16 +11850,16 @@ data set.")
 (define-public r-image-textlinedetector
   (package
     (name "r-image-textlinedetector")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "image.textlinedetector" version))
        (sha256
-        (base32 "0zbixw0j241il357n9mljcw4lvq6f1ddadx2a0ahykdf1w0vplyx"))))
+        (base32 "0cymn7swlrmqlkjs3cih8l53xqgjhiimnmlnagzzwd72ijikz1ll"))))
     (properties `((upstream-name . "image.textlinedetector")))
     (build-system r-build-system)
-    (inputs (list zlib tbb))
+    (inputs (list zlib))
     (propagated-inputs (list r-rcpp r-magick))
     (native-inputs (list pkg-config))
     (home-page "https://github.com/DIGI-VUB/image.textlinedetector")
@@ -13584,6 +13587,40 @@ entry by containing multiple infectious disease models, providing a consistent
 framework for simulation and visualisation, and signposting towards other, more
 research focussed, resources.")
     (license license:gpl3)))
+
+(define-public r-idmir
+  (package
+    (name "r-idmir")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IDMIR" version))
+       (sha256
+        (base32 "0871ibdpnhqbf0ighyl9254ad8wy52gyi7i2nry19is1kr7av40s"))))
+    (properties `((upstream-name . "IDMIR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survminer
+                             r-survival
+                             r-pheatmap
+                             r-igraph
+                             r-ggplot2
+                             r-forestplot
+                             r-fastmatch
+                             r-egg))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=IDMIR")
+    (synopsis
+     "Identification of Dysregulated MiRNAs Based on MiRNA-MiRNA Interaction Network")
+    (description
+     "This package provides a systematic biology tool was developed to identify
+dysregulated @code{miRNAs} via a @code{miRNA-miRNA} interaction network.  IDMIR
+first constructed a weighted @code{miRNA} interaction network through
+integrating @code{miRNA-target} interaction information, molecular function data
+from Gene Ontology (GO) database and gene transcriptomic data in
+specific-disease context, and then, it used a network propagation algorithm on
+the network to identify significantly dysregulated @code{miRNAs}.")
+    (license license:gpl2+)))
 
 (define-public r-idmining
   (package

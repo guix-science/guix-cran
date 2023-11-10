@@ -205,13 +205,13 @@ Vanderwaal and Herbert Ssegane (2013) <doi:10.1111/jawr.12089>.")
 (define-public r-hypr
   (package
     (name "r-hypr")
-    (version "0.2.7")
+    (version "0.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hypr" version))
        (sha256
-        (base32 "1fqy8qcl1sq770a1m7aw5s46bvf41gm46iwm8cg01yc3lf9849hm"))))
+        (base32 "1l5vfjifnnf711wr3n9zprf78jkq7s2pjvw3vz47jr3234glsrjx"))))
     (properties `((upstream-name . "hypr")))
     (build-system r-build-system)
     (propagated-inputs (list r-pracma r-matrix r-mass r-magrittr r-cli))

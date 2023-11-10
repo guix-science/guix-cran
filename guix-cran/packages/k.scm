@@ -2255,22 +2255,23 @@ vignette.")
 (define-public r-klink
   (package
     (name "r-klink")
-    (version "0.6.1")
+    (version "0.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "KLINK" version))
        (sha256
-        (base32 "0l0l9rncj0lqwmf0w7aisilqvj721gwx0lb5wh1ailxlznd6kp06"))))
+        (base32 "03aqpjwb0iqw7papvzx0vz2811rgang1p8sy7zr0qkrlcn7i3fw2"))))
     (properties `((upstream-name . "KLINK")))
     (build-system r-build-system)
-    (propagated-inputs (list r-verbalisr
+    (propagated-inputs (list r-zip
+                             r-verbalisr
                              r-shinydashboard
                              r-shiny
-                             r-pkgload
                              r-pedtools
                              r-pedprobr
                              r-pedmut
+                             r-pedfamilias
                              r-openxlsx
                              r-gt
                              r-forrel))

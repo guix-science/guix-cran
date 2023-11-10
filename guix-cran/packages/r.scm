@@ -25153,6 +25153,35 @@ splits.  The data is Chromosome 22 taken from Auton et al. (2015)
 set taken from Spira et al. (2004) <doi:10.1165/rcmb.2004-0273OC>.")
     (license license:gpl3+)))
 
+(define-public r-rflocalfdr
+  (package
+    (name "r-rflocalfdr")
+    (version "0.8.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RFlocalfdr" version))
+       (sha256
+        (base32 "0vp2zblx5419jhs1l6wg18k3wdf4kaslmrys4xml8432pkqmnja0"))))
+    (properties `((upstream-name . "RFlocalfdr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vita
+                             r-sn
+                             r-rflocalfdr-data
+                             r-ranger
+                             r-randomforest
+                             r-minpack-lm
+                             r-fitdistrplus))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=RFlocalfdr")
+    (synopsis
+     "Significance Level for Random Forest Impurity Importance Scores")
+    (description
+     "Sets a significance level for Random Forest MDI (Mean Decrease in Impurity, Gini
+or sum of squares) variable importance scores, using an empirical Bayes
+approach.  See Dunne et al. (2022) <doi:10.1101/2022.04.06.487300>.")
+    (license license:gpl3+)))
+
 (define-public r-rflexscan
   (package
     (name "r-rflexscan")
@@ -27816,16 +27845,20 @@ PROJ library is available at <https://proj.org/>.")
 (define-public r-reproducible
   (package
     (name "r-reproducible")
-    (version "2.0.8")
+    (version "2.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reproducible" version))
        (sha256
-        (base32 "01rximynm0n3xj04y4fw1dwdya1vcka6z6zncvsxcybnak6725qp"))))
+        (base32 "168n3d31mcimgkgj631lng4ik7l756dk8dgbvyi1ic75a31f865q"))))
     (properties `((upstream-name . "reproducible")))
     (build-system r-build-system)
-    (propagated-inputs (list r-lobstr r-fpcompare r-filelock r-digest
+    (propagated-inputs (list r-lobstr
+                             r-fs
+                             r-fpcompare
+                             r-filelock
+                             r-digest
                              r-data-table))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://reproducible.predictiveecology.org")
@@ -42396,13 +42429,13 @@ described in Rocchini, Marcantonio and Ricotta (2017)
 (define-public r-rasterbc
   (package
     (name "r-rasterbc")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rasterbc" version))
        (sha256
-        (base32 "17knrhvy2qkdz5bvhnllfkv8w4cm5gjjninwh66pk1xfrqkd4skg"))))
+        (base32 "1fdaakn8d68s3wnqwv2lj89q8lg5p7fgqcl51qrhgxihzz21fl99"))))
     (properties `((upstream-name . "rasterbc")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-sf))

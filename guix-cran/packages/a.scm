@@ -6687,6 +6687,27 @@ to retrieve data.  Simple Feature (sf) objects are utilized to perform spatial
 queries.  This package was neither produced nor is maintained by Esri.")
     (license license:gpl3)))
 
+(define-public r-arcpbf
+  (package
+    (name "r-arcpbf")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "arcpbf" version))
+       (sha256
+        (base32 "0mmr5q5j4i9qq8m7ybgjz6m40g0qq0z24cznygrsi01kas11s8qd"))))
+    (properties `((upstream-name . "arcpbf")))
+    (build-system r-build-system)
+    (inputs (list))
+    (propagated-inputs (list r-rlang))
+    (home-page "https://r.esri.com/arcpbf/")
+    (synopsis "Process ArcGIS Protocol Buffer FeatureCollections")
+    (description
+     "Fast processing of @code{ArcGIS} @code{FeatureCollection} protocol buffers in R.
+It is designed to work seamlessly with httr2 and integrates with sf'.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-arcokrig
   (package
     (name "r-arcokrig")
@@ -16818,18 +16839,17 @@ Kislev (2020) <doi:10.5539/ijms.v12n4p63>.")
 (define-public r-adobeanalyticsr
   (package
     (name "r-adobeanalyticsr")
-    (version "0.3.3")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adobeanalyticsr" version))
        (sha256
-        (base32 "1x1mkprp42xyfgiyffkj9lwzfv79dfwdg9alxfcpmgcvcrnbxcwi"))))
+        (base32 "1cbr86ssnd0bl6pvqziz16nvh3gzmd170pkk8wr2rkhm0rryh2l4"))))
     (properties `((upstream-name . "adobeanalyticsr")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
                              r-tidyr
-                             r-tibble
                              r-stringr
                              r-scales
                              r-rlang

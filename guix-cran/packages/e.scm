@@ -3395,13 +3395,13 @@ estimators are implemented.")
 (define-public r-evreg
   (package
     (name "r-evreg")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "evreg" version))
        (sha256
-        (base32 "0fbrbd60f8fvby369a2ffmg29xq2rrjfgrb3xp8b9wn13mvk0vzr"))))
+        (base32 "0abcs1r48jbiqwnw14yw6hqda4angl7cnl3gnlfj4jx09wpqassw"))))
     (properties `((upstream-name . "evreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-evclust))
@@ -4348,13 +4348,13 @@ distribution.")
 (define-public r-evclust
   (package
     (name "r-evclust")
-    (version "2.0.2")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "evclust" version))
        (sha256
-        (base32 "107x61vmkfmy3bmcaywz96qj35bmz4nydd0zn9amm2xnbb37lg31"))))
+        (base32 "0z707x770rp7y3sii4w0xk61is2ib79mix14x48n942vb11mc91b"))))
     (properties `((upstream-name . "evclust")))
     (build-system r-build-system)
     (propagated-inputs (list r-r-utils
@@ -4381,13 +4381,13 @@ Neural-Network-based Evidential Clustering.")
 (define-public r-evclass
   (package
     (name "r-evclass")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "evclass" version))
        (sha256
-        (base32 "1v5qnv5nah633s4ibpsigqbd6ydxpr6l8mqwprwjr7khrnckrli4"))))
+        (base32 "0khiifgfag8a6nsznnjr7h1vj5v2nzidv0qrkxlg12i42bg3xqpj"))))
     (properties `((upstream-name . "evclass")))
     (build-system r-build-system)
     (propagated-inputs (list r-r-utils r-ibelief r-fnn))

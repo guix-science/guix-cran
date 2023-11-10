@@ -1675,13 +1675,13 @@ switch between different funnel types, like first-first and last-firstafter.")
 (define-public r-funmediation
   (package
     (name "r-funmediation")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "funmediation" version))
        (sha256
-        (base32 "1h4jic73f7ywk2g1mkg188q0bq6x8sn9sm7jhr8gvrnmh167ajw7"))))
+        (base32 "13sa284xmi4bjsdkmcd69sn2vw8ncfn5kpk0aznjl9gi6j33cmi8"))))
     (properties `((upstream-name . "funmediation")))
     (build-system r-build-system)
     (propagated-inputs (list r-tvem r-refund r-boot))
@@ -1693,16 +1693,16 @@ switch between different funnel types, like first-first and last-firstafter.")
 described in detail by Coffman, Dziak, Litson, Chakraborti, Piper & Li (2021)
 <@code{arXiv:2112.03960>}.  The model is similar to that of Lindquist (2012)
 <doi:10.1080/01621459.2012.695640> although allowing a binary outcome as an
-alternative to a numerical outcome.  The development of this package was part of
-a research project supported by National Institutes of Health grants P50
-DA039838 from the National Institute of Drug Abuse and 1R01 CA229542-01 from the
-National Cancer Institute and the NIH Office of Behavioral and Social Science
-Research.  Content is solely the responsibility of the authors and does not
-necessarily represent the official views of the funding institutions mentioned
-above.  This software is distributed in the hope that it will be useful, but
-WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
-FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
-details.")
+alternative to a numerical outcome.  The current version is a minor bug fix in
+the vignette.  The development of this package was part of a research project
+supported by National Institutes of Health grants P50 DA039838 from the National
+Institute of Drug Abuse and 1R01 CA229542-01 from the National Cancer Institute
+and the NIH Office of Behavioral and Social Science Research.  Content is solely
+the responsibility of the authors and does not necessarily represent the
+official views of the funding institutions mentioned above.  This software is
+distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+PURPOSE. See the GNU General Public License for more details.")
     (license license:gpl2+)))
 
 (define-public r-funlbm
@@ -12896,6 +12896,36 @@ tags and proper file extensions.")
     (description "Simple key-value database using SQLite as the back end.")
     (license license:gpl2+)))
 
+(define-public r-filecacher
+  (package
+    (name "r-filecacher")
+    (version "0.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "filecacher" version))
+       (sha256
+        (base32 "060py01jc8yzv1gy27yvw5z5ipqp75vig1sv0h3nafy11s3i8bd9"))))
+    (properties `((upstream-name . "filecacher")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs
+                             r-rlang
+                             r-purrr
+                             r-here
+                             r-glue
+                             r-cachem))
+    (home-page "https://github.com/orgadish/filecacher")
+    (synopsis "File Cacher")
+    (description
+     "The main functions in this package are with_cache() and cached_read().  The
+former is a simple way to cache an R object into a file on disk, using cachem'.
+The latter is a wrapper around any standard read function, but caches both the
+output and the file list info.  If the input file list info hasn't changed, the
+cache is used; otherwise, the original files are re-read.  This can save time if
+the original operation requires reading from many files, and/or involves lots of
+processing.")
+    (license license:expat)))
+
 (define-public r-filebin
   (package
     (name "r-filebin")
@@ -17500,13 +17530,13 @@ multivariable linear regression model and outliers detection.")
 (define-public r-fastr2
   (package
     (name "r-fastr2")
-    (version "1.2.2")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastR2" version))
        (sha256
-        (base32 "0s0nff8j0lxby3v8wr388dgry3kais58p8dbygfy15zppcnixkh6"))))
+        (base32 "1bmqsjqa13i4dm2pblrwsj1wa80mpi71mpmznc1i199kd4afscgz"))))
     (properties `((upstream-name . "fastR2")))
     (build-system r-build-system)
     (propagated-inputs (list r-numderiv
@@ -20395,6 +20425,47 @@ methods presented are based on iml', a R Package for Interpretable Machine
 Learning by Christoph Molnar, Giuseppe Casalicchio, and Bernd Bischl (2018)
 <doi:10.21105/joss.00786>.")
     (license license:lgpl3)))
+
+(define-public r-facmodts
+  (package
+    (name "r-facmodts")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "facmodTS" version))
+       (sha256
+        (base32 "1c58w3my7zxcx04h8b284999r3jkd6l0sgwdzkjrkzm42lzw0dhm"))))
+    (properties `((upstream-name . "facmodTS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-xts
+                             r-sn
+                             r-sandwich
+                             r-robustbase
+                             r-robstattm
+                             r-r-cache
+                             r-quadprog
+                             r-portfolioanalytics
+                             r-performanceanalytics
+                             r-leaps
+                             r-lattice
+                             r-lars
+                             r-data-table
+                             r-corpcor
+                             r-boot))
+    (home-page "https://github.com/robustport/facmodTS")
+    (synopsis "Time Series Factor Models for Asset Returns")
+    (description
+     "Supports teaching methods of estimating and testing time series factor models
+for use in robust portfolio construction and analysis.  Unique in providing not
+only classical least squares, but also modern robust model fitting methods which
+are not much influenced by outliers.  Includes returns and risk decompositions,
+with user choice of standard deviation, value-at-risk, and expected shortfall
+risk measures. \"Robust Statistics Theory and Methods (with R)\", R. A. Maronna,
+R. D. Martin, V. J. Yohai, M. Salibian-Barrera (2019)
+<doi:10.1002/9781119214656>.")
+    (license license:gpl2)))
 
 (define-public r-facmodcs
   (package

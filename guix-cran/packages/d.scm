@@ -1828,6 +1828,42 @@ undecimated version and spectral bias correction described in Nelson et al.
 Python library.")
     (license license:expat)))
 
+(define-public r-dualscale
+  (package
+    (name "r-dualscale")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dualScale" version))
+       (sha256
+        (base32 "0dw8vknkvb9qzmxw2xmwnpa1dlrqhx70j32q6dm5j1sxjyw2zx37"))))
+    (properties `((upstream-name . "dualScale")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcolorbrewer
+                             r-matrixcalc
+                             r-matrix
+                             r-glue
+                             r-ggrepel
+                             r-ggplot2
+                             r-ff
+                             r-eba))
+    (home-page "https://cran.r-project.org/package=dualScale")
+    (synopsis "Dual Scaling Analysis of Data")
+    (description
+     "Dual Scaling, developed by Professor Shizuhiko Nishisato (1994, ISBN:
+0-9691785-3-6), is a fundamental technique in multivariate analysis used for
+data scaling and correspondence analysis.  Its utility lies in its ability to
+represent multidimensional data in a lower-dimensional space, making it easier
+to visualize and understand underlying patterns in complex data.  This technique
+has been implemented to handle various types of data, including Contingency and
+Frequency data (CF), Multiple-Choice data (MC), Sorting data (SO),
+Paired-Comparison data (PC), and Rank-Order data (RO), providing users with a
+powerful tool to explore relationships between variables and observations in
+various fields, from sociology to ecology, enabling deeper and more efficient
+analysis of multivariate datasets.")
+    (license license:agpl3+)))
+
 (define-public r-dual-spls
   (package
     (name "r-dual-spls")
@@ -5796,13 +5832,13 @@ modelling.  See Marsh et.  al. (2018) <doi:10.18637/jss.v086.c03>.")
 (define-public r-downloadthis
   (package
     (name "r-downloadthis")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "downloadthis" version))
        (sha256
-        (base32 "121rhn6806i2067wi6indny74r11dwgv7vvm6cfpcg6bklrfx2v7"))))
+        (base32 "14c85cradmm187jzwf3njgshmzq53xr4dla39dkxmhnw07mgdw4l"))))
     (properties `((upstream-name . "downloadthis")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip

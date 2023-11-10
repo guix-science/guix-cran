@@ -15,8 +15,8 @@
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages maths)
   #:use-module (gnu packages bioinformatics)
+  #:use-module (gnu packages maths)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages photo)
@@ -12598,13 +12598,13 @@ details see Manipur et al (2023) <doi:10.1101/2023.06.29.546856>.")
 (define-public r-copernicusmarine
   (package
     (name "r-copernicusmarine")
-    (version "0.0.9")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CopernicusMarine" version))
        (sha256
-        (base32 "01nzjm8fyv1kd7y8c4qj4al80kq96a16w4k0df9kss0m0cz86mls"))))
+        (base32 "1sw1yrprgzb8gjzga6p5jp5svgwych0sdlxzdjm002l5m0w2j4kr"))))
     (properties `((upstream-name . "CopernicusMarine")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -24913,16 +24913,16 @@ combined to construct new indices.")
 (define-public r-climmobtools
   (package
     (name "r-climmobtools")
-    (version "0.6")
+    (version "1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ClimMobTools" version))
        (sha256
-        (base32 "0v9cm3xn42rd6bkad94ivzm92zjvpfmchingccvn670kiahb41kz"))))
+        (base32 "0zj6v9a48jb0yh8gijq9chgs2ca75vi89kdljflk5v3zb5hy5c70"))))
     (properties `((upstream-name . "ClimMobTools")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rspectra r-matrix r-jsonlite r-httr))
+    (propagated-inputs (list r-rspectra r-matrix r-lpsolve r-jsonlite r-httr))
     (native-inputs (list r-knitr))
     (home-page "https://agrdatasci.github.io/ClimMobTools/")
     (synopsis "API Client for the 'ClimMob' Platform")
@@ -36903,13 +36903,13 @@ research, such as basic characteristic tables or descriptive statistics.")
 (define-public r-caroline
   (package
     (name "r-caroline")
-    (version "0.9.0")
+    (version "0.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "caroline" version))
        (sha256
-        (base32 "1j1s4jli3pjl815fhmhz063y8aimz1qr14gacf9rvs7hyandlcbj"))))
+        (base32 "15q2cqfrfvy934cdfg886sp6lzmfp1bqddjpkv0bhqzpnmscbpq4"))))
     (properties `((upstream-name . "caroline")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=caroline")
@@ -36920,10 +36920,10 @@ research, such as basic characteristic tables or descriptive statistics.")
 migration (@code{dbWriteTable2}), database style joins & aggregation (nerge,
 @code{groupBy} & @code{bestBy}), data structure conversion (nv, tab2df), legend
 table making (sstable & leghead), plot annotation (labsegs & mvlabs), data
-visualization (pies, distro dots, & @code{raPlot}), character string
-manipulation (m & pad), file I/O (write.delim), batch scripting and more.  The
-package's greatest contributions lie in the database style merge, aggregation
-and interface functions as well as in it's extensive use and propagation of row,
+visualization (pies, sparge, & @code{raPlot}), character string manipulation (m
+& pad), file I/O (write.delim), batch scripting and more.  The package's
+greatest contributions lie in the database style merge, aggregation and
+interface functions as well as in it's extensive use and propagation of row,
 column and vector names in most functions.")
     (license license:artistic2.0)))
 
@@ -39340,6 +39340,27 @@ information in generalized mixed-effect models fitted with (g)lmer() from lme4',
 lme() from nlme and gamm() from mgcv'.  For a manual on how to use
 @code{cAIC4}', see Saefken et al. (2021) <doi:10.18637/jss.v099.i08>.")
     (license license:gpl2+)))
+
+(define-public r-cagr
+  (package
+    (name "r-cagr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CAGR" version))
+       (sha256
+        (base32 "1b01kzs36q6i0l47qy5krlc2whxqlq8xhdllghw7sff560ikng7d"))))
+    (properties `((upstream-name . "CAGR")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=CAGR")
+    (synopsis "Compound Annual Growth Rate")
+    (description
+     "This package provides a time series usually does not have a uniform growth rate.
+ Compound Annual Growth Rate measures the average annual growth over a given
+period.  More details can be found in Bardhan et al. (2022)
+<DOI:10.18805/ag.D-5418>.")
+    (license license:gpl3)))
 
 (define-public r-caffsim
   (package

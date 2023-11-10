@@ -18126,16 +18126,16 @@ Kindlmann and Scheidegger (2014) <doi:10.1109/TVCG.2014.2346325>.")
 (define-public r-ggblanket
   (package
     (name "r-ggblanket")
-    (version "5.1.0")
+    (version "5.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggblanket" version))
        (sha256
-        (base32 "1dj9gri6h0fy5izr8g128ghx4lsbknflfflmpv3z1a4y6g962yb1"))))
+        (base32 "1rkbh5gf8wynhsn4x8jhw78ppsiyvmwim7pjpa46vd5iwhqiynyq"))))
     (properties `((upstream-name . "ggblanket")))
     (build-system r-build-system)
-    (propagated-inputs (list r-viridis
+    (propagated-inputs (list r-viridislite
                              r-tidyselect
                              r-tidyr
                              r-stringr

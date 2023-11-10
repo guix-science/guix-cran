@@ -67,22 +67,16 @@ precision of LAPACK library (version 3.10.0 or later).")
 (define-public r-qwraps2
   (package
     (name "r-qwraps2")
-    (version "0.5.2")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qwraps2" version))
        (sha256
-        (base32 "1ars25aa50fn6m4v423pzs4rkplxhpi26qi3aq7f39bgmqpnpy83"))))
+        (base32 "06i3h6ydjfvy7qrhzznsb272r843fgvykfsgaviq83gi8k5c5i00"))))
     (properties `((upstream-name . "qwraps2")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xfun
-                             r-rlang
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-knitr
-                             r-ggplot2
-                             r-dplyr))
+    (propagated-inputs (list r-xfun r-rcpparmadillo r-rcpp r-knitr r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/dewittpe/qwraps2/")
     (synopsis "Quick Wraps 2")
@@ -96,7 +90,7 @@ was never submitted to CRAN but can be found at
 <https://github.com/dewittpe/qwraps/>.  The implementation and limited scope of
 the functions within qwraps2 <https://github.com/dewittpe/qwraps2/> is
 fundamentally different from qwraps'.")
-    (license license:gpl2)))
+    (license license:gpl3+)))
 
 (define-public r-qwdap
   (package
@@ -4563,6 +4557,40 @@ distribution, using its quantile function.  Q-estimators are usually more robust
 than standard maximum likelihood estimators.  The method is described in:
 Sottile G. and Frumento P. (2022).  Robust estimation and regression with
 parametric quantile functions. <doi:10.1016/j.csda.2022.107471>.")
+    (license license:gpl2+)))
+
+(define-public r-qeml
+  (package
+    (name "r-qeml")
+    (version "1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qeML" version))
+       (sha256
+        (base32 "1pgrzahn1wlk5c8zy1zvfg07xqmmn5ky4y1ksgj48gvilzgjqjwk"))))
+    (properties `((upstream-name . "qeML")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tufte
+                             r-toweranna
+                             r-tm
+                             r-rpart-plot
+                             r-rpart
+                             r-rmarkdown
+                             r-regtools
+                             r-partools
+                             r-gtools
+                             r-grf
+                             r-gbm
+                             r-foci))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/matloff/qeML")
+    (synopsis "Quick and Easy Machine Learning Tools")
+    (description
+     "The letters qe in the package title stand for \"quick and easy,\" alluding to the
+convenience goal of the package.  We bring together a variety of machine
+learning (ML) tools from standard R packages, providing wrappers with a simple,
+convenient, and uniform interface.")
     (license license:gpl2+)))
 
 (define-public r-qdm

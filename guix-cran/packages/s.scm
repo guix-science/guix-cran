@@ -19872,6 +19872,68 @@ stand-alone.  Binary (application) part is installed separately using
 @code{spnInstallApp}() from spectrino package.")
     (license license:gpl2+)))
 
+(define-public r-spectran
+  (package
+    (name "r-spectran")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Spectran" version))
+       (sha256
+        (base32 "1ylw4klxvklrgpanp4lz4q6kvrg0n51xrnxz0nw1s782ag1c5ndg"))))
+    (properties `((upstream-name . "Spectran")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-withr
+                             r-webshot2
+                             r-waiter
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-spscomps
+                             r-spacesxyz
+                             r-shinywidgets
+                             r-shinyjs
+                             r-shinyfeedback
+                             r-shinydashboard
+                             r-shinyalert
+                             r-shiny
+                             r-scales
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-png
+                             r-patchwork
+                             r-pagedown
+                             r-openxlsx
+                             r-magrittr
+                             r-htmltools
+                             r-gt
+                             r-ggtext
+                             r-ggridges
+                             r-ggrepel
+                             r-ggplot2
+                             r-gghighlight
+                             r-dplyr
+                             r-cowplot
+                             r-colorspec
+                             r-chromote))
+    (home-page "https://github.com/LiTGde/Spectran")
+    (synopsis "Visual and Non-Visual Spectral Analysis of Light")
+    (description
+     "Analyse light spectra for visual and non-visual (often called melanopic) needs,
+wrapped up in a Shiny App.  Spectran allows for the import of spectra in various
+CSV forms but also provides a wide range of example spectra and even the
+creation of own spectral power distributions.  The goal of the app is to provide
+easy access and a visual overview of the spectral calculations underlying common
+parameters used in the field.  It is thus ideal for educational purposes or the
+creation of presentation ready graphs in lighting research and application.
+Spectran uses equations and action spectra described in CIE S026 (2018)
+<doi:10.25039/S026.2018>, DIN/TS 5031-100 (2021) <doi:10.31030/3287213>, and
+ISO/CIE 23539 (2023) <doi:10.25039/IS0.CIE.23539.2023>.")
+    (license license:expat)))
+
 (define-public r-spectralr
   (package
     (name "r-spectralr")
@@ -22582,13 +22644,13 @@ additional information about SVMlight format see
 (define-public r-sparsevfc
   (package
     (name "r-sparsevfc")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SparseVFC" version))
        (sha256
-        (base32 "1g5i3r447f1zcrlcamfci1f96silqmm43dabm5yhhwzsj8ak6jpv"))))
+        (base32 "0d4394jg5fk4cgpds014xl3dhf7wlx5i99bnxpj5xcbvfdqzvwvl"))))
     (properties `((upstream-name . "SparseVFC")))
     (build-system r-build-system)
     (propagated-inputs (list r-purrr r-pdist))
@@ -28905,17 +28967,17 @@ manifold.")
 (define-public r-smetlite
   (package
     (name "r-smetlite")
-    (version "0.2.9")
+    (version "0.2.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smetlite" version))
        (sha256
-        (base32 "1rhadp3yddw6pnyqjk8g3rzidb1kfb8r0za7yra2fyryjwiaajz8"))))
+        (base32 "1q7fqfdd6m7jv5waajmmsc7ql16lcyy6z2k41mz6gvdqz914gg16"))))
     (properties `((upstream-name . "smetlite")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-readr))
-    (home-page "https://baselr.github.io/smetlite/")
+    (home-page "https://github.com/BaselDataScience/smetlite")
     (synopsis "Read and Write SMET Files")
     (description
      "Simple class to hold contents of a SMET file as specified in Bavay (2021)
@@ -34679,6 +34741,48 @@ parameter estimates for nonlinear least squares optimization.  Dattner & Yaari
 <doi:10.1098/rsif.2016.0525>.  Dattner & Klaassen (2015)
 <doi:10.1214/15-EJS1053>.")
     (license license:gpl2+)))
+
+(define-public r-simnph
+  (package
+    (name "r-simnph")
+    (version "0.5.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SimNPH" version))
+       (sha256
+        (base32 "1120qd7ckk5l84j0bdvarf2zahjsqr8vnfgn6k5k7253kmm30lba"))))
+    (properties `((upstream-name . "SimNPH")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-survival
+                             r-stringr
+                             r-simdesign
+                             r-rlang
+                             r-purrr
+                             r-nphrct
+                             r-nph
+                             r-minipch
+                             r-dplyr
+                             r-car))
+    (native-inputs (list r-r-rsp))
+    (home-page "https://simnph.github.io/SimNPH/")
+    (synopsis "Simulate Non-Proportional Hazards")
+    (description
+     "This package provides a toolkit for simulation studies concerning time-to-event
+endpoints with non-proportional hazards. @code{SimNPH} encompasses functions for
+simulating time-to-event data in various scenarios, simulating different trial
+designs like fixed-followup, event-driven, and group sequential designs.  The
+package provides functions to calculate the true values of common summary
+statistics for the implemented scenarios and offers common analysis methods for
+time-to-event data.  Helper functions for running simulations with the
+@code{SimDesign} package and for aggregating and presenting the results are also
+included.  Results of the conducted simulation study are available as preprint:
+\"A neutral comparison of statistical methods for time-to-event analyses under
+non-proportional hazards\", Klinglmueller et al. (2023)
+<doi:10.48550/ARXIV.2310.05622>.")
+    (license (license:fsdg-compatible "BSL-1.0"))))
 
 (define-public r-simmulticorrdata
   (package
@@ -51159,16 +51263,16 @@ S., Hannachi, A., Trendafilov, N. T., & Jolliffe, I. T. (2011)
 (define-public r-scitb
   (package
     (name "r-scitb")
-    (version "0.1.2")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scitb" version))
        (sha256
-        (base32 "1hwggda7379wbqd4hzg7aa77md44gprb4bdzzfxwrlb8k498kr4k"))))
+        (base32 "09yy2an8z22fnxs8si0fbykjz08d7gw7rfnki9d590bdlb9ggdcs"))))
     (properties `((upstream-name . "scitb")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringi))
+    (propagated-inputs (list r-stringi r-nortest))
     (home-page "https://cran.r-project.org/package=scitb")
     (synopsis "Provides Some Useful Functions for Making Statistical Tables")
     (description

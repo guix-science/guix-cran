@@ -8798,13 +8798,13 @@ vignette.  LICENSE: GPL-3 + file license.")
 (define-public r-blindreview
   (package
     (name "r-blindreview")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "blindreview" version))
        (sha256
-        (base32 "0cjnl16limzxvs7rg17c4kx011yxvyxqqkjzglck8r1ii0dajhnv"))))
+        (base32 "16jyrsxdmf80vil35djdm8rl4q1k5a34fy5zxymmnmqw42kjc8db"))))
     (properties `((upstream-name . "blindreview")))
     (build-system r-build-system)
     (inputs (list gmp))
@@ -8814,14 +8814,14 @@ vignette.  LICENSE: GPL-3 + file license.")
     (description
      "Randomly assigns identification to one of the variables of the dataset, say
 Treatment, and assigns random numbers to all the observations of the dataset.
-Centers each treatment at the grand mean to further mask the treatment.
-Reorders the database according to the random numbers, and then runs the
+Reorders the observations according to the random numbers, and then runs the
 appropriate forward search function on the blinded dataset.  A file is created
 from which the user can identify any outliers using the graphics function in
-this package.  An unmasking function is provided so that the user can identify
-the potential outliers in terms of their original values when blinding is no
-longer needed.  Details of the forward search functions may be found in
-<https://CRAN.R-project.org/package=forsearch>.")
+this package.  Centers each fixed coefficient at the grand mean prior to
+graphing in order to further mask the treatment.  An unmasking function is
+provided so that the user can identify the potential outliers in terms of their
+original values when blinding is no longer needed.  Details of the forward
+search functions may be found in <https://CRAN.R-project.org/package=forsearch>.")
     (license license:gpl3+)))
 
 (define-public r-blindrecalc
@@ -16312,6 +16312,30 @@ Kalogeropoulos, K., and Ntzoufras, I. (2022) <@code{arXiv:2211.15229>}.")
      "Bayesian analysis for exponential random graph models using advanced
 computational algorithms.  More information can be found at:
 <https://acaimo.github.io/Bergm/>.")
+    (license license:gpl2+)))
+
+(define-public r-bequt
+  (package
+    (name "r-bequt")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BeQut" version))
+       (sha256
+        (base32 "065hjpz4162j2ykcwnri25j4mkqf7yl5bf9ja3xn7yvszif0pjh9"))))
+    (properties `((upstream-name . "BeQut")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival r-mass r-lqmm r-jagsui))
+    (home-page "https://cran.r-project.org/package=BeQut")
+    (synopsis "Bayesian Estimation for Quantile Regression Mixed Models")
+    (description
+     "Using a Bayesian estimation procedure, this package fits linear quantile
+regression models such as linear quantile models, linear quantile mixed models,
+quantile regression joint models for time-to-event and longitudinal data.  The
+estimation procedure is based on the asymmetric Laplace distribution and the
+JAGS software is used to get posterior samples (Yang, Luo, @code{DeSantis}
+(2019) <doi:10.1177/0962280218784757>).")
     (license license:gpl2+)))
 
 (define-public r-benthos

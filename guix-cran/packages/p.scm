@@ -75,19 +75,20 @@
 (define-public r-pysparklyr
   (package
     (name "r-pysparklyr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pysparklyr" version))
        (sha256
-        (base32 "0gs0v8a0niqvd120m31vbgp62abvygs73150pdds9lnal16wy2ip"))))
+        (base32 "048r4l88dwqm0y0hs31mji7dak7jgcbjqx4h99b3ij6vr39r7iya"))))
     (properties `((upstream-name . "pysparklyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
                              r-tidyselect
                              r-tidyr
                              r-sparklyr
+                             r-rstudioapi
                              r-rlang
                              r-reticulate
                              r-purrr
@@ -10300,13 +10301,13 @@ attained.")
 (define-public r-practools
   (package
     (name "r-practools")
-    (version "1.4")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PracTools" version))
        (sha256
-        (base32 "1am672g4nqd8bpy1597hn945j36yphddscq2237np9nfv7rh8yx0"))))
+        (base32 "1p7bmkbd2q36ip5zz7bkn82w6dv3amxwrm9v7v03cci54c8n2rlv"))))
     (properties `((upstream-name . "PracTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-usmap r-ggplot2 r-geosphere r-dplyr))
@@ -21086,13 +21087,13 @@ et al. (2019) <DOI: 10.1093/bioinformatics/bty1049>, Nguyen et al. (2017)<DOI:
 (define-public r-pins
   (package
     (name "r-pins")
-    (version "1.2.2")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pins" version))
        (sha256
-        (base32 "0pmik7ixnyvjdc0r91hnmkhm5xh1ckw7s32x1p75cpyapb3bbarz"))))
+        (base32 "1jbry96ac19i2g61pdb2r997b450bgi98szi3dgwgvnhfq4sidjp"))))
     (properties `((upstream-name . "pins")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -21666,17 +21667,16 @@ for bilateral price indexes.")
 (define-public r-phytools
   (package
     (name "r-phytools")
-    (version "1.9-16")
+    (version "2.0-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phytools" version))
        (sha256
-        (base32 "175jg56g6ag1q5p4isjprlgzc9ximlkanh7zxyc9jrqp59r0p00v"))))
+        (base32 "0bp84c5zfq4zh1kd5v0jwcp88y3q1k84q3mqw748spqxm3mmq3x1"))))
     (properties `((upstream-name . "phytools")))
     (build-system r-build-system)
     (propagated-inputs (list r-scatterplot3d
-                             r-plotrix
                              r-phangorn
                              r-optimparallel
                              r-numderiv
@@ -30215,13 +30215,13 @@ matrices, average variance factors and canonical efficiency factors.")
 (define-public r-pbsmodelling
   (package
     (name "r-pbsmodelling")
-    (version "2.68.8")
+    (version "2.69.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PBSmodelling" version))
        (sha256
-        (base32 "07qaqb6sd1idmryxlz0gxb4d3apzql9vp4b16nazba08ksx0y7wf"))))
+        (base32 "117xsm1p6cynbax9p6mcz5y5jzzcxfrfbvkzcb7i5gdlqnw5mpp2"))))
     (properties `((upstream-name . "PBSmodelling")))
     (build-system r-build-system)
     (inputs (list))
@@ -35611,13 +35611,13 @@ for analyzing package usage.")
 (define-public r-packagerank
   (package
     (name "r-packagerank")
-    (version "0.8.2")
+    (version "0.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "packageRank" version))
        (sha256
-        (base32 "1gg2qv9g5lr6sfc2ds4mnr95mw39idvsjhf8afsv2k2r73hb2aya"))))
+        (base32 "04hr4ygpb4wxairlsr4z4knqs5797jspj2mpisd2ci233b6k4y0s"))))
     (properties `((upstream-name . "packageRank")))
     (build-system r-build-system)
     (propagated-inputs (list r-sugrrants
@@ -35636,7 +35636,7 @@ for analyzing package usage.")
      "Computation and Visualization of Package Download Counts and Percentiles")
     (description
      "Compute and visualize the cross-sectional and longitudinal number and rank
-percentile of package downloads from RStudio's CRAN mirror.")
+percentile of package downloads from Posit/RStudio's CRAN mirror.")
     (license license:gpl2+)))
 
 (define-public r-packager

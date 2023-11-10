@@ -4027,13 +4027,13 @@ Regression models.")
 (define-public r-logr
   (package
     (name "r-logr")
-    (version "1.3.4")
+    (version "1.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "logr" version))
        (sha256
-        (base32 "041byyak5glk4wmbajfqckq5mrhjny4b2vflhlq3w6jhfp5j4lls"))))
+        (base32 "0h7a2pp1kar2l2qpga1f31sd7x4kidfjp0y478np9ban9nrxqrlm"))))
     (properties `((upstream-name . "logr")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr r-common))

@@ -2166,13 +2166,13 @@ Functions in vivaldi primarily operate on vcf files.")
 (define-public r-vivainsights
   (package
     (name "r-vivainsights")
-    (version "0.4.3")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vivainsights" version))
        (sha256
-        (base32 "03i3y2yhdsmb7axjq54g9k7iqykgapc93zyjqi33bagnh1fbljc1"))))
+        (base32 "11b6289ikc12ncgh71ynmx242l43cqi0v8hn3r86pipxipd6q156"))))
     (properties `((upstream-name . "vivainsights")))
     (build-system r-build-system)
     (propagated-inputs (list r-wpa
@@ -4528,6 +4528,40 @@ paper <DOI:10.1103/@code{PhysRevE.73.026120>}.")
 forms.  No strong dependencies guaranteed.")
     (license license:gpl3+)))
 
+(define-public r-versioning
+  (package
+    (name "r-versioning")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "versioning" version))
+       (sha256
+        (base32 "0r4ffd1s9warfan7ldcd6sn98qimsllf77dhxfygblr8spxcl7h5"))))
+    (properties `((upstream-name . "versioning")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yaml
+                             r-terra
+                             r-sf
+                             r-r6
+                             r-haven
+                             r-glue
+                             r-foreign
+                             r-data-table
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=versioning")
+    (synopsis "Settings and File I/O using a Configuration YAML File")
+    (description
+     "R data pipelines commonly require reading and writing data to versioned
+directories.  Each directory might correspond to one step of a multi-step
+process, where that version corresponds to particular settings for that step and
+a chain of previous steps that each have their own versions.  This package
+creates a configuration object that makes it easy to read and write versioned
+data, based on YAML configuration files loaded and saved to each versioned
+folder.")
+    (license license:expat)))
+
 (define-public r-vermeulen
   (package
     (name "r-vermeulen")
@@ -5694,13 +5728,13 @@ inference and is computationally efficient.")
 (define-public r-vaultr
   (package
     (name "r-vaultr")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vaultr" version))
        (sha256
-        (base32 "1ahn79ixwmnglib3cllha941pvhg1jgk89qcxq4gi7ip8zj0v7sj"))))
+        (base32 "1dbwr50jsx8m615wdlk437ac23y4dk9iqcihlbnail470hfdq5gw"))))
     (properties `((upstream-name . "vaultr")))
     (build-system r-build-system)
     (inputs (list))
