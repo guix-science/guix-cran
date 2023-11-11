@@ -7377,13 +7377,13 @@ Algorithm-B (R. B. Dial (2006) <doi:10.1016/j.trb.2006.02.008>).")
 (define-public r-cppdoubles
   (package
     (name "r-cppdoubles")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cppdoubles" version))
        (sha256
-        (base32 "14f1i2hn59gj8r3kj167sk68crs4p1rzbh3gjwmxnrxy0wrdin9m"))))
+        (base32 "0ggm9nah0cwzgzxb10gflpdbrgpzz5xk1ifiq0k5jk8zlg8slcpx"))))
     (properties `((upstream-name . "cppdoubles")))
     (build-system r-build-system)
     (propagated-inputs (list r-cpp11))
@@ -16362,13 +16362,13 @@ classes.  Journal of Statistical Distributions and Applications, 3, 1-35.
 (define-public r-comradesoo
   (package
     (name "r-comradesoo")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "comradesOO" version))
        (sha256
-        (base32 "00qdp4n5kqhmsd51z08lj1n6l284kr4g9giz644pcklp6brwnj0l"))))
+        (base32 "0x0y3c4ihfss6rxdd9fws506vip9rr11485icxq41rp4x8zm2rk9"))))
     (properties `((upstream-name . "comradesOO")))
     (build-system r-build-system)
     (propagated-inputs (list r-topdom
@@ -23953,6 +23953,28 @@ of procrustes rotation.")
 include generating theoretical sample space, corresponding probability, and
 simulated results as well.")
     (license license:gpl2)))
+
+(define-public r-clsiep15
+  (package
+    (name "r-clsiep15")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CLSIEP15" version))
+       (sha256
+        (base32 "0qh9rlw89sjjmidhb84cb4jawxj6x2nhrgbwhrzw5qyx570dgwgb"))))
+    (properties `((upstream-name . "CLSIEP15")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=CLSIEP15")
+    (synopsis
+     "Clinical and Laboratory Standards Institute (CLSI) EP15-A3 Calculations")
+    (description
+     "Calculations of \"EP15-A3 document.  A manual for user verification of precision
+and estimation of bias\" CLSI (2014, ISBN:1-56238-966-1).")
+    (license license:expat)))
 
 (define-public r-clr
   (package
@@ -34883,13 +34905,13 @@ updating of the in-control parameter estimates.  See Capizzi and Masarotto
 (define-public r-causcor
   (package
     (name "r-causcor")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CausCor" version))
        (sha256
-        (base32 "1m41i4knqh4hddz3s3p62qhx2dmdypm8gfdwlczlja89llx9737b"))))
+        (base32 "0hqzzy6wmxws90q4p7d2k0781zmkqq344l352zj9lcqh23ci4p8i"))))
     (properties `((upstream-name . "CausCor")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexls r-magrittr r-ggplot2 r-dplyr r-cowplot))
@@ -37019,13 +37041,13 @@ Analysis.<doi:10.1016/j.csda.2022.107642>.")
 (define-public r-carlson
   (package
     (name "r-carlson")
-    (version "2.1.0")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Carlson" version))
        (sha256
-        (base32 "1b1jrkyjj2ygvdphzayrmnirdzmyddrjp6sgiqf6404kly50ff0w"))))
+        (base32 "19z4b74kjqpgbb87ddd5sx0ydjnaa54mqrc1yz4wdl8md7d1anbq"))))
     (properties `((upstream-name . "Carlson")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))

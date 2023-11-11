@@ -13924,13 +13924,13 @@ frame with many numeric columns and a factor column.")
 (define-public r-dialrjars
   (package
     (name "r-dialrjars")
-    (version "8.13.2")
+    (version "8.13.25")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dialrjars" version))
        (sha256
-        (base32 "1h9b2mvjbsxyclklc8lx8mymkbq8c5p06j5dxnxgk4mkpiazgr7i"))))
+        (base32 "1dy7s4ssa1xkw6m663h0hf79jf09cd98r009cp6s3gggpylfi7bm"))))
     (properties `((upstream-name . "dialrjars")))
     (build-system r-build-system)
     (inputs (list openjdk))
@@ -23024,13 +23024,13 @@ in some case studies throughout the text.")
 (define-public r-datasets-load
   (package
     (name "r-datasets-load")
-    (version "2.2.0")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datasets.load" version))
        (sha256
-        (base32 "187a1z0ljws5fvk91ap94cxm0yw6l47v0f4nhbq71jrk285zm1qr"))))
+        (base32 "1gbc4pc4gq3fgkv1ib83h08s7daim3gnkna07a2yikdsi12w95xw"))))
     (properties `((upstream-name . "datasets.load")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-miniui r-dt))

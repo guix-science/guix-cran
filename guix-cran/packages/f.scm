@@ -8100,13 +8100,13 @@ multivariate data sets of financial returns.")
 (define-public r-fmtr
   (package
     (name "r-fmtr")
-    (version "1.6.0")
+    (version "1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fmtr" version))
        (sha256
-        (base32 "1294qzarkj5v4kcjw4px763c34gywgm1q4v7py8sh7ik2c2sg86g"))))
+        (base32 "1p543jpjpfw7r7g20jkyswnnv61ka2cjk5k8rgm1d7i9xnzhv0hg"))))
     (properties `((upstream-name . "fmtr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-rcpp r-crayon r-common))
@@ -8115,7 +8115,7 @@ multivariate data sets of financial returns.")
     (synopsis "Easily Apply Formats to Data")
     (description
      "This package contains a set of functions that can be used to apply formats to
-data frames or vectors.  The package aims to provide to functionality similar to
+data frames or vectors.  The package aims to provide functionality similar to
 that of SASÂ® formats.  Formats are assigned to the format attribute on data
 frame columns.  Then when the fdata() function is called, a new data frame is
 created with the column data formatted as specified.  The package also contains
@@ -12899,13 +12899,13 @@ tags and proper file extensions.")
 (define-public r-filecacher
   (package
     (name "r-filecacher")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "filecacher" version))
        (sha256
-        (base32 "060py01jc8yzv1gy27yvw5z5ipqp75vig1sv0h3nafy11s3i8bd9"))))
+        (base32 "050mvi5z8gmfbshx7fcy6d67n0mswzcsnwa97hyzl67mk3bwy8dr"))))
     (properties `((upstream-name . "filecacher")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -12979,13 +12979,13 @@ complex, integer, logical, and raw).")
 (define-public r-file2meco
   (package
     (name "r-file2meco")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "file2meco" version))
        (sha256
-        (base32 "02kbpyfzr98ra55mbw7l9d1haz8p97fwbn5knglz7875b5knqx4b"))))
+        (base32 "1m1kp0hkhyql55ac84i7mcfihpc97ypvrhvnvy3yv86kyj8b4gzn"))))
     (properties `((upstream-name . "file2meco")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml

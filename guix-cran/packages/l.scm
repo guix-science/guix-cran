@@ -14948,6 +14948,31 @@ with discrete markers.  Biometrical Journal 53.2 (2011): 294-307,
 <doi:10.1002/bimj.201000150>.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-landmulti
+  (package
+    (name "r-landmulti")
+    (version "0.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "landmulti" version))
+       (sha256
+        (base32 "1wqkrx4pxi1zzllm802y6wfhfpam7g3nbzgwj71ragk2psxa351a"))))
+    (properties `((upstream-name . "landmulti")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival r-snow r-nmof r-landpred r-emdbook))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=landmulti")
+    (synopsis "Landmark Prediction with Multiple Short-Term Events")
+    (description
+     "This package contains functions for a flexible varying-coefficient landmark
+model by incorporating multiple short-term events into the prediction of
+long-term survival probability.  For more information about landmark prediction
+please see Li, W., Ning, J., Zhang, J., Li, Z., Savitz, S.I., Tahanan, A.,
+Rahbar.M.H., (2023+). \"Enhancing Long-term Survival Prediction with Multiple
+Short-term Events: Landmarking with A Flexible Varying Coefficient Model\".")
+    (license license:gpl3)))
+
 (define-public r-landmix
   (package
     (name "r-landmix")

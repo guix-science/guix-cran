@@ -386,13 +386,13 @@ bounded-variable least squares")
 (define-public r-bvhar
   (package
     (name "r-bvhar")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bvhar" version))
        (sha256
-        (base32 "12kaayh5kxwbb9nfr5csyhppcn1y75asllqk1kiq3cdh3xxs469j"))))
+        (base32 "0iavx4dnz9kii74rdar2vxc0jj9pq5xqi71ilhp7mhw6745jij83"))))
     (properties `((upstream-name . "bvhar")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -2390,6 +2390,38 @@ Extensions to this package are planned.  For a journal article describing how to
 use this package, see An et al. (2022) <doi:10.18637/jss.v101.i11>.")
     (license license:gpl2+)))
 
+(define-public r-bskyr
+  (package
+    (name "r-bskyr")
+    (version "0.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bskyr" version))
+       (sha256
+        (base32 "1n2dv0h5i7rnbbrahmy4f1mrxsn1skdz9hfp5pyfgxdcxv2svn57"))))
+    (properties `((upstream-name . "bskyr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-lubridate
+                             r-httr2
+                             r-dplyr
+                             r-cli))
+    (home-page "https://github.com/christopherkenny/bskyr")
+    (synopsis "Interact with 'Bluesky' Social")
+    (description
+     "Collect data from and make posts on Bluesky Social via the Hypertext Transfer
+Protocol (HTTP) Application Programming Interface (API), as documented at
+<https://atproto.com/specs/xrpc>.  This further supports broader queries to the
+Authenticated Transfer (AT) Protocol <https://atproto.com/> which Bluesky Social
+relies on.  Data is returned in a tidy format and posts can be made using a
+simple interface.")
+    (license license:expat)))
+
 (define-public r-bsims
   (package
     (name "r-bsims")
@@ -3188,13 +3220,13 @@ al (2020) <doi:10.1002/sim.8438> and Li et al (2021)
 (define-public r-brnn
   (package
     (name "r-brnn")
-    (version "0.9.2")
+    (version "0.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "brnn" version))
        (sha256
-        (base32 "17vsvncilisjp3sjblwg0knn8l4984p4ndql6rbq3wg8n677sy9x"))))
+        (base32 "14gqbsrmv9r5kbp4c5swrpclympchyg4fw5f0b6g767y6mm22h7m"))))
     (properties `((upstream-name . "brnn")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm r-formula))
@@ -19154,33 +19186,6 @@ For the sake of convenience, the package includes the monthly and daily data on
 the prices (not adjusted for dividends) of the S&P 500 stock market index.")
     (license license:gpl3)))
 
-(define-public r-bbcor
-  (package
-    (name "r-bbcor")
-    (version "1.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "BBcor" version))
-       (sha256
-        (base32 "160d34an9837i9myw9m0yxplh1z2cmhx2wc7m59dlld5zap4glag"))))
-    (properties `((upstream-name . "BBcor")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-wdm
-                             r-rdpack
-                             r-psych
-                             r-pbapply
-                             r-ggplot2
-                             r-bayeslincom))
-    (home-page "https://cran.r-project.org/package=BBcor")
-    (synopsis "Bayesian Bootstrapping Correlations")
-    (description
-     "Efficiently draw samples from the posterior distribution of various correlation
-coefficients with the Bayesian bootstrap described in Rubin (1981)
-<doi:10.1214/aos/1176345338>.  There are six correlation coefficients, including
-Pearson, Kendall, Spearman, Gaussian Rank, Blomqvist, and polychoric.")
-    (license license:gpl2)))
-
 (define-public r-bb
   (package
     (name "r-bb")
@@ -21187,28 +21192,6 @@ and conditional) are provided.")
 He and Lopes (2018) <@code{arXiv:1806.05738>}.")
     (license license:lgpl2.0+)))
 
-(define-public r-bayeslincom
-  (package
-    (name "r-bayeslincom")
-    (version "1.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bayeslincom" version))
-       (sha256
-        (base32 "0gk2ybp0m717kv986j91n5amfc282gdpcrjkq46gwzn0zhyxg8b8"))))
-    (properties `((upstream-name . "bayeslincom")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-ggplot2))
-    (home-page "https://cran.r-project.org/package=bayeslincom")
-    (synopsis "Linear Combinations of Bayesian Posterior Samples")
-    (description
-     "Computes point estimates, standard deviations, and credible intervals for linear
-combinations of posterior samples.  Optionally performs region practical
-equivalence (ROPE) tests as described in Kruschke and Liddell (2018)
-<doi:10.3758/s13423-016-1221-4>.")
-    (license license:gpl2)))
-
 (define-public r-bayeslife
   (package
     (name "r-bayeslife")
@@ -21750,6 +21733,36 @@ executes macro- and micro-inference.  Primary reference is Mukhopadhyay, S. and
 Fletcher, D. 2018 paper \"Generalized Empirical Bayes via Frequentist Goodness of
 Fit\" (<https://www.nature.com/articles/s41598-018-28130-5 >).")
     (license license:gpl2)))
+
+(define-public r-bayesgmed
+  (package
+    (name "r-bayesgmed")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BayesGmed" version))
+       (sha256
+        (base32 "0clyjdp0306wgj1jbrh2bzhzzyn8wp56m3j4pphyxn15z7j9pmy9"))))
+    (properties `((upstream-name . "BayesGmed")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stanheaders
+                             r-rstantools
+                             r-rstan
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=BayesGmed")
+    (synopsis "Bayesian Causal Mediation Analysis using 'Stan'")
+    (description
+     "This package performs parametric mediation analysis using the Bayesian g-formula
+approach for binary and continuous outcomes.  The methodology is based on
+Comment (2018) <doi:10.5281/zenodo.1285275> and a demonstration of its
+application can be found at Yimer et al. (2022)
+<doi:10.48550/@code{arXiv.2210.08499>}.")
+    (license license:expat)))
 
 (define-public r-bayesgarch
   (package

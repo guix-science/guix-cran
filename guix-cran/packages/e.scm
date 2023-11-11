@@ -12594,6 +12594,41 @@ please see the following references: Tingley, D. (2014)
 Rosseel, D. (2012) <doi:10.18637/jss.v048.i02>.")
     (license license:gpl3)))
 
+(define-public r-emar
+  (package
+    (name "r-emar")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EMAR" version))
+       (sha256
+        (base32 "1i0jmxp1fckqvah6a08pgvn92dwg052bra3vp5wmwakk56cbyqih"))))
+    (properties `((upstream-name . "EMAR")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=EMAR")
+    (synopsis "Empirical Model Assessment")
+    (description
+     "This package provides a tool that allows users to generate various indices for
+evaluating statistical models.  The fitstat() function computes indices based on
+the fitting data.  The valstat() function computes indices based on the
+validation data set.  Both fitstat() and valstat() will return 16 indices SSR:
+residual sum of squares, TRE: total relative error, Bias: mean bias, MRB: mean
+relative bias, MAB: mean absolute bias, MAPE: mean absolute percentage error,
+MSE: mean squared	error, RMSE: root mean square error, Percent.RMSE: percentage
+root mean squared error, R2: coefficient of determination, R2adj: adjusted
+coefficient of determination, APC: Amemiya's prediction criterion, @code{logL}:
+Log-likelihood, AIC: Akaike information criterion, AICc: corrected Akaike
+information criterion, BIC: Bayesian information criterion, HQC: Hannan-Quin
+information criterion.  The	lower the better for the SSR, TRE, Bias, MRB, MAB,
+MAPE, MSE, RMSE, Percent.RMSE, APC, AIC, AICc, BIC and HQC indices.  The higher
+the better for R2 and R2adj indices.  Petre Stoica, P., @code{SelÃ©n}, Y. (2004)
+<doi:10.1109/MSP.2004.1311138>\\n Zhou et al. (2023)
+<doi:10.3389/fpls.2023.1186250>\\n Ogana, F.N., Ercanli, I. (2021)
+<doi:10.1007/s11676-021-01373-1>\\n Musabbikhah et al. (2019)
+<doi:10.1088/1742-6596/1175/1/012270>.")
+    (license license:gpl3+)))
+
 (define-public r-emailvalidation
   (package
     (name "r-emailvalidation")
@@ -19278,13 +19313,13 @@ Khoshgoftaar, Jason Van Hulse, and Amri Napolitano (2010)
 (define-public r-ebmaforecast
   (package
     (name "r-ebmaforecast")
-    (version "1.0.3")
+    (version "1.0.31")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EBMAforecast" version))
        (sha256
-        (base32 "01v7v40h7pmm5h1rl63m7n0jfbb208qvzn5w563kfhlyamh84zm2"))))
+        (base32 "01z4giwyx4ar7cfhgb5407pr1c9lrznj9rsx2y5x95g4hc35d3p9"))))
     (properties `((upstream-name . "EBMAforecast")))
     (build-system r-build-system)
     (propagated-inputs (list r-separationplot
@@ -19292,8 +19327,9 @@ Khoshgoftaar, Jason Van Hulse, and Amri Napolitano (2010)
                              r-plyr
                              r-hmisc
                              r-gtools
+                             r-glue
                              r-abind))
-    (home-page "<https://github.com/fhollenbach/EBMA/>")
+    (home-page "https://github.com/fhollenbach/EBMA/")
     (synopsis
      "Estimate Ensemble Bayesian Model Averaging Forecasts using Gibbs Sampling or EM-Algorithms")
     (description

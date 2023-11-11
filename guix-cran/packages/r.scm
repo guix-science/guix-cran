@@ -2302,13 +2302,13 @@ equally and unequally spaced time series.")
 (define-public r-runmcmcbtadjust
   (package
     (name "r-runmcmcbtadjust")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "runMCMCbtadjust" version))
        (sha256
-        (base32 "1wiv9zacm30v8yk0p6qmqi1yp7ns29wqdl2ykr2afm39y00agcxi"))))
+        (base32 "1ccn6h23qhfp5y05ks0v3iir0jk96qahzkn1zwlfsj640zypgc60"))))
     (properties `((upstream-name . "runMCMCbtadjust")))
     (build-system r-build-system)
     (propagated-inputs (list r-coda))
@@ -6943,16 +6943,17 @@ Drawing functions for depth bags are also provided.")
 (define-public r-rsda
   (package
     (name "r-rsda")
-    (version "3.1.0")
+    (version "3.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RSDA" version))
        (sha256
-        (base32 "0xps9ivqgh64z26gbnsqr6cqr8q5ddc2dkfgl3bk6yrrlwp5fl0n"))))
+        (base32 "10dx9ds7i738wydljkfw5jvggixsysbg2674hrw4z4lccgijjmrc"))))
     (properties `((upstream-name . "RSDA")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xml
+    (propagated-inputs (list r-xtable
+                             r-xml
                              r-vctrs
                              r-umap
                              r-tidyselect
@@ -6968,11 +6969,13 @@ Drawing functions for depth bags are also provided.")
                              r-randomcolor
                              r-purrr
                              r-princurve
+                             r-plotly
                              r-nloptr
                              r-neuralnet
                              r-magrittr
                              r-kknn
                              r-glmnet
+                             r-ggrepel
                              r-ggpolypath
                              r-ggplot2
                              r-gbm
@@ -11084,6 +11087,36 @@ in @code{GarcÃ­a-PortuguÃ©s}, Paindaveine and Verdebout (2020)
 distributions on the hypersphere, based on the tangent-normal decomposition, and
 allows for the replication of the data application considered in the paper.")
     (license license:gpl3)))
+
+(define-public r-rosv
+  (package
+    (name "r-rosv")
+    (version "0.4.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rosv" version))
+       (sha256
+        (base32 "1b3lid3ndihb6yacr6szv0c4pq6xcrdcmx89y7wpvy8sxlcxbswc"))))
+    (properties `((upstream-name . "rosv")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-purrr
+                             r-memoise
+                             r-jsonlite
+                             r-httr2
+                             r-furrr
+                             r-digest))
+    (native-inputs (list r-knitr))
+    (home-page "https://al-obrien.github.io/rosv/")
+    (synopsis
+     "Client to Access and Operate on the 'Open Source Vulnerability' API")
+    (description
+     "Connect, query, and operate on information available from the Open Source
+Vulnerability database <https://osv.dev/>.  Although CRAN has vulnerabilities
+listed, these are few compared to projects such as @code{PyPI}'.  With tighter
+integration between R and Python', having an R specific package to access
+details about vulnerabilities from various sources is a worthwhile enterprise.")
+    (license license:expat)))
 
 (define-public r-rospca
   (package
@@ -19078,6 +19111,38 @@ regarding homoscedastic framework.")
 settings.  We provide a framework for the specific formatting features often
 used when displaying large datasets in that context.")
     (license license:asl2.0)))
+
+(define-public r-rlinkedinads
+  (package
+    (name "r-rlinkedinads")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rlinkedinads" version))
+       (sha256
+        (base32 "0s9ji49rr221vqw0w2hyzhymxfpmbkv3gm7fmlfza96g0xrr6lka"))))
+    (properties `((upstream-name . "rlinkedinads")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-urltools
+                             r-tidyr
+                             r-stringr
+                             r-snakecase
+                             r-rlang
+                             r-rappdirs
+                             r-pbapply
+                             r-httr2
+                             r-dplyr
+                             r-cli))
+    (home-page "https://cran.r-project.org/package=rlinkedinads")
+    (synopsis "Load Data from 'Linkedin Advertising API'")
+    (description
+     "Get data from Linkedin Advertising API
+<https://learn.microsoft.com/en-us/linkedin/marketing/overview?view=li-lms-2023-10>.
+ You can load ad account hierarchy (accounts, users, campaign groups, campaigns
+and creatives) and also you can load ad analytics data from your Linkedin Ad
+account.")
+    (license license:expat)))
 
 (define-public r-rlinkedin
   (package
@@ -31459,13 +31524,13 @@ of several Microsoft(r) products.  Forked from R@code{ColorBrewer} v1.1-2.")
 (define-public r-redm
   (package
     (name "r-redm")
-    (version "1.15.0")
+    (version "1.15.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rEDM" version))
        (sha256
-        (base32 "1mbnawfqlinj5djkgr1hmaas0qjiiywxx15p4qlw7wxk36kjf4lf"))))
+        (base32 "01j4pjxjj5g13hnnvfgkja68qy1cwdiaghziz5i963i8gvw19sil"))))
     (properties `((upstream-name . "rEDM")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppthread r-rcpp))
@@ -39137,13 +39202,13 @@ Sarrias (2016) <doi:10.18637/jss.v074.i10>.")
 (define-public r-rchivaltag
   (package
     (name "r-rchivaltag")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RchivalTag" version))
        (sha256
-        (base32 "14pv7a2qsqxp28sb59dh9s554yy55x7i9129mrgk0fxv5c64lq8m"))))
+        (base32 "0sz6hmcpsgp5am5g89q15was8im6wr2c18fjsychjxngj6ii0cy0"))))
     (properties `((upstream-name . "RchivalTag")))
     (build-system r-build-system)
     (propagated-inputs (list r-xts

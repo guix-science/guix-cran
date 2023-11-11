@@ -8686,13 +8686,13 @@ described in Clark et al. (2018) <doi:10.1002/ecy.2221>.")
 (define-public r-mrfa
   (package
     (name "r-mrfa")
-    (version "0.4")
+    (version "0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MRFA" version))
        (sha256
-        (base32 "1ivzyp3q2nb6h5mhykina75ak7ajfw62rh23yr4pljma7gmr1hhm"))))
+        (base32 "0j4ij0w0crwcbxhgsnr3pi52lpzlz9s23df5k05w8580p412s3a3"))))
     (properties `((upstream-name . "MRFA")))
     (build-system r-build-system)
     (propagated-inputs (list r-randtoolbox
@@ -8705,11 +8705,11 @@ described in Clark et al. (2018) <doi:10.1002/ecy.2221>.")
     (synopsis
      "Fitting and Predicting Large-Scale Nonlinear Regression Problems using Multi-Resolution Functional ANOVA (MRFA) Approach")
     (description
-     "This package performs the MRFA approach proposed by Sung et al. (2019+)
-<@code{arXiv:1709.07064>} to fit and predict nonlinear regression problems,
-particularly for large-scale and high-dimensional problems.  The application
-includes deterministic or stochastic computer experiments, spatial datasets, and
-so on.")
+     "This package performs the MRFA approach proposed by Sung et al. (2020)
+<doi:10.1080/01621459.2019.1595630> to fit and predict nonlinear regression
+problems, particularly for large-scale and high-dimensional problems.  The
+application includes deterministic or stochastic computer experiments, spatial
+datasets, and so on.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-mrf2d
@@ -11501,6 +11501,32 @@ proposed results with extant alternatives such as t-tests, Bonferroni bounds,
 and multivariate inequality tests through empirical applications and
 simulations.")
     (license license:bsd-3)))
+
+(define-public r-monotonehazardratio
+  (package
+    (name "r-monotonehazardratio")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MonotoneHazardRatio" version))
+       (sha256
+        (base32 "0y6hfm5la8lq9dvjl6r5zjzbm1nmpkhbkza5w7fi6saxywnfig71"))))
+    (properties `((upstream-name . "MonotoneHazardRatio")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-twostagete r-survival r-kernsmooth r-fdrtool))
+    (home-page "https://cran.r-project.org/package=MonotoneHazardRatio")
+    (synopsis
+     "Nonparametric Estimation and Inference of a Monotone Hazard Ratio Function")
+    (description
+     "This package provides a tool for nonparametric estimation and inference of a
+non-decreasing monotone hazard ratio from a right censored survival dataset.
+The estimator is based on a generalized Grenander typed estimator, and the
+inference procedure relies on direct plugin estimation of a first order
+derivative.  More details please refer to the paper \"Nonparametric inference
+under a monotone hazard ratio order\" by Y. Wu and T. Westling (2022)
+<@code{arXiv:2205.01745>}.")
+    (license license:expat)))
 
 (define-public r-monotone
   (package
@@ -38273,6 +38299,35 @@ parallelization, uncomment the relevant flags in src/MAKEVARS before compiling."
 a large number of providers (e.g. @code{OpenStreetMap}', Stamen', Esri', CARTO',
 or Thunderforest').")
     (license license:gpl3)))
+
+(define-public r-mapstats
+  (package
+    (name "r-mapstats")
+    (version "3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mapStats" version))
+       (sha256
+        (base32 "1jf5dgf9i9339xzk9fbipy9b2fkwdv6sy1ciif921snwj176zck9"))))
+    (properties `((upstream-name . "mapStats")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ttutils
+                             r-survey
+                             r-sp
+                             r-sf
+                             r-reshape2
+                             r-rcolorbrewer
+                             r-lattice
+                             r-hmisc
+                             r-colorspace
+                             r-classint))
+    (home-page "https://cran.r-project.org/package=mapStats")
+    (synopsis "Geographic Display of Survey Data Statistics")
+    (description
+     "Automated calculation and visualization of survey data statistics on a
+color-coded (choropleth) map.")
+    (license license:gpl2+)))
 
 (define-public r-mapsrinteractive
   (package

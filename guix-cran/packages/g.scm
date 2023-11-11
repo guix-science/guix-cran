@@ -12362,13 +12362,13 @@ model\"<doi:10.1080/10543406.2021.1934854>.")
 (define-public r-glcmtextures
   (package
     (name "r-glcmtextures")
-    (version "0.3.8")
+    (version "0.3.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GLCMTextures" version))
        (sha256
-        (base32 "1qh0djskfc6407527kdxzi0yfrnqn4kjf8723gp92kq1kaqjishj"))))
+        (base32 "1f073m3mh3prgigd3knkr6796zgmkfd1sna0zsswa0msqr5qskw6"))))
     (properties `((upstream-name . "GLCMTextures")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-rcpparmadillo r-rcpp r-raster))
@@ -15829,13 +15829,13 @@ reliably.")
 (define-public r-ggplate
   (package
     (name "r-ggplate")
-    (version "0.0.1")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggplate" version))
        (sha256
-        (base32 "0jn23hmh68hfz1i2h4vz80avzdrn05w6c9ifxfj8jhgh7dj974hf"))))
+        (base32 "0i9vdqsjrjxn6v3hda7w96mwb5did37ix0cahf81hb00lmxa22m1"))))
     (properties `((upstream-name . "ggplate")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

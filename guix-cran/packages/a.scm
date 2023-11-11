@@ -2882,13 +2882,13 @@ methods described in Moss (2019, <arxiv:1911.01576>).")
 (define-public r-attention
   (package
     (name "r-attention")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "attention" version))
        (sha256
-        (base32 "0fnh0chdr9zbng6jan9hhgjqzk71cyh5nqv7325w8layqzld095k"))))
+        (base32 "09c83dqdrnwxqzh3cbnyyf3y4a2qnj0lvm66iishhg58zdrz92q3"))))
     (properties `((upstream-name . "attention")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -13459,13 +13459,13 @@ age-structured population dynamics models described in Erguler and others (2016)
 (define-public r-albatross
   (package
     (name "r-albatross")
-    (version "0.3-6")
+    (version "0.3-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "albatross" version))
        (sha256
-        (base32 "0n4ndaa3a57k698xjrvgq091l6pvpgcmqan52g30la2qsrr109d5"))))
+        (base32 "0hs5i4wzm4kf7k9x4a5l18h1gx0zdq33fi21571x48bi5ic1294w"))))
     (properties `((upstream-name . "albatross")))
     (build-system r-build-system)
     (propagated-inputs (list r-pracma r-multiway r-matrix r-lattice r-cmls))
@@ -16713,13 +16713,13 @@ Predetermination of adaptation rule is not required.")
 (define-public r-adproclus
   (package
     (name "r-adproclus")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adproclus" version))
        (sha256
-        (base32 "1c3mxfaqjlccmxbm4z4xlqdpzczjzw3jsqzrxnpsa2gx6wnfwfij"))))
+        (base32 "1aj9bb86fmgq6ln39pmkws0bp07wf02k3fahgsv3hq86yflgac8q"))))
     (properties `((upstream-name . "adproclus")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -16729,7 +16729,7 @@ Predetermination of adaptation rule is not required.")
                              r-gtools
                              r-corrplot
                              r-checkmate))
-    (home-page "https://cran.r-project.org/package=adproclus")
+    (home-page "https://github.com/henry-heppe/adproclus")
     (synopsis "Additive Profile Clustering Algorithms")
     (description
      "Obtain overlapping clustering models for object-by-variable data matrices using
@@ -18391,13 +18391,13 @@ algorithms are described and reviewed in Zhang and Ball (2017)
 (define-public r-adbcsqlite
   (package
     (name "r-adbcsqlite")
-    (version "0.7.0.1")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adbcsqlite" version))
        (sha256
-        (base32 "0pzpx1fajp8h6pmg6bzsg4gpdmqwqh03ngf3kvq3g293z9ck7xm1"))))
+        (base32 "1a9mpdcyz9bihkv308vf1ramw4097jyabmwh26572bl0mwjq6a63"))))
     (properties `((upstream-name . "adbcsqlite")))
     (build-system r-build-system)
     (inputs (list sqlite))
@@ -18415,13 +18415,13 @@ parameters.")
 (define-public r-adbcdrivermanager
   (package
     (name "r-adbcdrivermanager")
-    (version "0.7.0.1")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adbcdrivermanager" version))
        (sha256
-        (base32 "0qg6jjxn4jp4629xsxd47f5y6n9x5wj6jypdapl9g9dn2ackydqd"))))
+        (base32 "0agi2wy00ssi6p1k0gb3b7gm7cbp6qx746sysnvyglkxwjpydmb2"))))
     (properties `((upstream-name . "adbcdrivermanager")))
     (build-system r-build-system)
     (propagated-inputs (list r-nanoarrow))

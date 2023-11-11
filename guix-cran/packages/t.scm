@@ -7495,13 +7495,13 @@ necessity is described in: Babak Naderi, Sebastian MÃ¶ller (2020)
 (define-public r-transformer
   (package
     (name "r-transformer")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "transformer" version))
        (sha256
-        (base32 "0nvgcw72mcmj3wy3bf72zahyzs3ir5f154hz03ybk9dydgfkxj8w"))))
+        (base32 "0zypj0dnbknr3mcl5iv4z1cw0mb5463n6rd8ahly6nwnfiwxbqvi"))))
     (properties `((upstream-name . "transformer")))
     (build-system r-build-system)
     (propagated-inputs (list r-attention))
@@ -15938,13 +15938,13 @@ modeling for paired comparison and ranking data.; Maydeu-Olivares & BÃ¶ckenhol
 (define-public r-thunder
   (package
     (name "r-thunder")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "thunder" version))
        (sha256
-        (base32 "10ii36qflc4wrvv0xgvvvbc12l3zai15njibsmlfvi8z89ai0jkl"))))
+        (base32 "0gn4kkpagh5blhp1zpgilkpa8mwfz8w05qlri5ca4wwcy7xkmn41"))))
     (properties `((upstream-name . "thunder")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-httr r-dplyr r-curl r-airthermo))
@@ -19017,13 +19017,13 @@ on 9 hypothesis tests for dependence.")
 (define-public r-testequavar
   (package
     (name "r-testequavar")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "testequavar" version))
        (sha256
-        (base32 "1cz7ffcnznd7pd7f0kd9ay0ym46g2hbdv9sq5wngis2p4srf0ykj"))))
+        (base32 "1b8xrv7y3502wb7d2mj20lfdpignc7bs80zbrjy8w3f5qjxlalyc"))))
     (properties `((upstream-name . "testequavar")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=testequavar")

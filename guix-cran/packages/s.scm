@@ -31,8 +31,6 @@
   #:use-module (gnu packages sqlite)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages perl)
-  #:use-module (gnu packages gtk)
-  #:use-module (gnu packages curl)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -15917,13 +15915,13 @@ formatting SQL statements.")
 (define-public r-sqlove
   (package
     (name "r-sqlove")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SQLove" version))
        (sha256
-        (base32 "0r0jl56a75n6mqfaplihjrr5v4rfnc2z548phli3y2vhvzd74yb7"))))
+        (base32 "0jmvhyqj1lb05ah4y5z2nmd8ml9f0i6kpig4vzsgv9h042awxi43"))))
     (properties `((upstream-name . "SQLove")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjdbc r-readr r-dbi))
@@ -24210,13 +24208,13 @@ computational experiments testing the performance of such methods.")
 (define-public r-spades-tools
   (package
     (name "r-spades-tools")
-    (version "2.0.4")
+    (version "2.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SpaDES.tools" version))
        (sha256
-        (base32 "03n6asn0f0s63aynwlwibpqnpl650l1blvcb8sfgl1ypp7gyxz3r"))))
+        (base32 "0b598s3rblc3x97f7ikaf10xdy0v34h4dzv12l576ldmzpc9hjzq"))))
     (properties `((upstream-name . "SpaDES.tools")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -24242,13 +24240,13 @@ suggested package NLMR can be installed from the following repository:
 (define-public r-spades-core
   (package
     (name "r-spades-core")
-    (version "2.0.2")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SpaDES.core" version))
        (sha256
-        (base32 "11symn8awz23fgzg2fnxkrznwq4arbd0zwjws0bdxbni58d8g2b7"))))
+        (base32 "0lvs0jqlca4hcvn5d9f7ay4prqnk2lzddkq9gw295jm2plzk6a4l"))))
     (properties `((upstream-name . "SpaDES.core")))
     (build-system r-build-system)
     (propagated-inputs (list r-whisker
@@ -24259,6 +24257,7 @@ suggested package NLMR can be installed from the following repository:
                              r-qs
                              r-lobstr
                              r-igraph
+                             r-fs
                              r-data-table
                              r-crayon))
     (native-inputs (list r-rmarkdown r-knitr))
@@ -45213,23 +45212,15 @@ Microscopic findings.  These database types are supported: SQLite and Oracle'.")
 (define-public r-sen2r
   (package
     (name "r-sen2r")
-    (version "1.5.5")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sen2r" version))
        (sha256
-        (base32 "0j5khff3hix6zm1ybiaj9vhjs2fzbljzcz2q7h1pi9ysrwwdrw3i"))))
+        (base32 "1vs4bzf618h5iv3wbn802gdziy55d5p6z9v0cpm07368fhqskxvg"))))
     (properties `((upstream-name . "sen2r")))
     (build-system r-build-system)
-    (inputs (list proj
-                  openssl
-                  netcdf
-                  jq
-                  geos
-                  gdal
-                  curl
-                  cairo))
     (propagated-inputs (list r-xml
                              r-stars
                              r-sf
@@ -48926,6 +48917,46 @@ evaluate the models, and predict species potential distributions in space and
 time.  For more information, please check the following paper: Naimi, B.,
 Araujo, M.B. (2016) <doi:10.1111/ecog.01881>.")
     (license license:gpl3+)))
+
+(define-public r-sdlfilter
+  (package
+    (name "r-sdlfilter")
+    (version "2.3.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SDLfilter" version))
+       (sha256
+        (base32 "0f565626kbi5rigsla5843rczmfi0hwmrwn2410smfhjvhywmlqy"))))
+    (properties `((upstream-name . "SDLfilter")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stars
+                             r-sf
+                             r-pracma
+                             r-maps
+                             r-lubridate
+                             r-gridextra
+                             r-ggspatial
+                             r-ggplot2
+                             r-ggmap
+                             r-geosphere
+                             r-emmeans
+                             r-dplyr
+                             r-data-table))
+    (home-page "https://github.com/TakahiroShimada/SDLfilter")
+    (synopsis "Filtering and Assessing the Sample Size of Tracking Data")
+    (description
+     "This package provides functions to filter GPS/Argos locations, as well as
+assessing the sample size for the analysis of animal distributions.  The filters
+remove temporal and spatial duplicates, fixes located at a given height from
+estimated high tide line, and locations with high error as described in Shimada
+et al. (2012) <doi:10.3354/meps09747> and Shimada et al. (2016)
+<doi:10.1007/s00227-015-2771-0>.  Sample size for the analysis of animal
+distributions can be assessed by the conventional area-based approach or the
+alternative probability-based approach as described in Shimada et al. (2021)
+<doi:10.1111/2041-210X.13506>.")
+    (license (list license:gpl2
+                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-sdgdetector
   (package

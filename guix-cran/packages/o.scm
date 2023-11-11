@@ -10303,13 +10303,13 @@ Waterway, Port, Coastal, and Ocean Division, Vol 105, pp 457-459.")
 (define-public r-oceanmap
   (package
     (name "r-oceanmap")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oceanmap" version))
        (sha256
-        (base32 "1g2d1irs1dki25p33lrhlnpaf77p91m3jsmc1hwznd7f876ggfh7"))))
+        (base32 "12ppcqk2s14p7hg0a6b3hgnz90dxn3kagfgkpykz6ks93vjy8pd7"))))
     (properties `((upstream-name . "oceanmap")))
     (build-system r-build-system)
     (inputs (list imagemagick))

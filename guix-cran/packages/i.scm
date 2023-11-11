@@ -1720,13 +1720,13 @@ normal profiles.")
 (define-public r-isoplotrgui
   (package
     (name "r-isoplotrgui")
-    (version "5.5")
+    (version "5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IsoplotRgui" version))
        (sha256
-        (base32 "13kavzp938kpa6n8nz1wkrbav0hxm87zcl2hlzqppmb4pcxklqd5"))))
+        (base32 "00zhg6c9gv9n9hgzpdqr3jdj4cd1rifcimjrcnkwgfff6d5cy1cp"))))
     (properties `((upstream-name . "IsoplotRgui")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinylight r-isoplotr))
@@ -1743,13 +1743,13 @@ either be used offline, or hosted on a server to provide online access to the
 (define-public r-isoplotr
   (package
     (name "r-isoplotr")
-    (version "5.5")
+    (version "5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IsoplotR" version))
        (sha256
-        (base32 "04s8yfpp5mvfpx9crgg6yadvw8jrcnkjpl4v9ac01psmkzc4yk4p"))))
+        (base32 "0w3jrvxqvnm6bc81r9n99ycj9xhfcc28a8r4qnhisv3crpmqzv7s"))))
     (properties `((upstream-name . "IsoplotR")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -6539,13 +6539,13 @@ Caruana, Yin Lou, Johannes Gehrke, Paul Koch, Marc Sturm, and Noemie Elhadad
 (define-public r-interpolators
   (package
     (name "r-interpolators")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "interpolators" version))
        (sha256
-        (base32 "05b5r61zqz37n6sv60kzwk6qkj52dlsb9092crp49zncgzkbh02h"))))
+        (base32 "17gq06lwypzbr23rp92cdlwcrkc2fwf0p1pj3g01bg4vv6i807ac"))))
     (properties `((upstream-name . "interpolators")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-bh))

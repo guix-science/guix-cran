@@ -20238,13 +20238,13 @@ base of multiple R packages.")
 (define-public r-pkgdepends
   (package
     (name "r-pkgdepends")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pkgdepends" version))
        (sha256
-        (base32 "196a15mx7gkzw3sqax8zplvscdjwal1ss03xpw95v86ijvvfgmpv"))))
+        (base32 "0ph2y9h4imagz5kdxbfjk0qqvsqyfcxlmyn877v0slc01grkw66a"))))
     (properties `((upstream-name . "pkgdepends")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -27681,13 +27681,13 @@ source comes from Martin et.al. (2022) <doi:10.1542/hpeds.2021-005998>.")
 (define-public r-pedalfast-data
   (package
     (name "r-pedalfast-data")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pedalfast.data" version))
        (sha256
-        (base32 "02s6igrybcfs8nyxr50iiwclhrwnq3x2x5w886imrlp2wbkf13m4"))))
+        (base32 "027npj067r4cv0mdgd26x6ilrfz9a0hd0yagkkl3b06nx292pba5"))))
     (properties `((upstream-name . "pedalfast.data")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -30295,13 +30295,13 @@ close association with other PBS packages, particularly PBSmodelling'.")
 (define-public r-pbsadmb
   (package
     (name "r-pbsadmb")
-    (version "1.1.4")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PBSadmb" version))
        (sha256
-        (base32 "11dxy6rdhwairymigwqxd51hxz82011sx0gzzphcs6i4gr0c54c3"))))
+        (base32 "1745j4rli5j5sml5rfb0wr93xm2hflg2bwlzch5yx2smrh0wysbb"))))
     (properties `((upstream-name . "PBSadmb")))
     (build-system r-build-system)
     (propagated-inputs (list r-pbsmodelling))

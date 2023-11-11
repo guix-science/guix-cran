@@ -3912,13 +3912,13 @@ for right-censored data including methods of bandwidth selection.")
 (define-public r-kernelshap
   (package
     (name "r-kernelshap")
-    (version "0.3.8")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kernelshap" version))
        (sha256
-        (base32 "0sbvgikq01275pab9zv13d65vf6fmnyssdrjvrdnbhp1xg2rscxf"))))
+        (base32 "09pv61nc3r0l33jsyw3fqp2d4znafnbfpys09ipfalk2dv19vvia"))))
     (properties `((upstream-name . "kernelshap")))
     (build-system r-build-system)
     (propagated-inputs (list r-foreach))
@@ -3926,12 +3926,10 @@ for right-censored data including methods of bandwidth selection.")
     (synopsis "Kernel SHAP")
     (description
      "Efficient implementation of Kernel SHAP, see Lundberg and Lee (2017), and Covert
-and Lee (2021) <http://proceedings.mlr.press/v130/covert21a>.  For models with
-up to eight features, the results are exact regarding the selected background
-data.  Otherwise, an almost exact hybrid algorithm involving iterative sampling
-is used.  The package plays well together with meta-learning packages like
-tidymodels', caret or mlr3'.  Visualizations can be done using the R package
-shapviz'.")
+and Lee (2021) <http://proceedings.mlr.press/v130/covert21a>.  Furthermore, for
+up to 14 features, exact permutation SHAP values can be calculated.  The package
+plays well together with meta-learning packages like tidymodels', caret or
+mlr3'.  Visualizations can be done using the R package shapviz'.")
     (license license:gpl2+)))
 
 (define-public r-kernelknn
