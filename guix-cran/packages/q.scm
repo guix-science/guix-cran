@@ -3244,19 +3244,23 @@ time series.  The Annals of Statistics, 46(3), 1138-1166.")
 (define-public r-qrcode
   (package
     (name "r-qrcode")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qrcode" version))
        (sha256
-        (base32 "1sxaqyp35k8cj5ilrrkifnf4icsm306arsfk2xq2vbx4qzxv96hq"))))
+        (base32 "07dkvga60532ngqg77icdfzv1wmx1qdn02js7pwyjf55xgim3fvn"))))
     (properties `((upstream-name . "qrcode")))
     (build-system r-build-system)
     (propagated-inputs (list r-assertthat))
     (home-page "https://thierryo.github.io/qrcode/")
     (synopsis "Generate QRcodes with R")
-    (description "Create QRcode in R.")
+    (description
+     "Create static QR codes in R. The content of the QR code is exactly what the user
+defines.  We don't add a redirect URL, making it impossible for us to track the
+usage of the QR code.  This allows to generate fast, free to use and privacy
+friendly QR codes.")
     (license license:gpl3)))
 
 (define-public r-qrcmnp

@@ -22604,6 +22604,29 @@ methodology has been published: Kolossvary et al.  Circ: Cardiovascular Imaging.
  2017;10(12):e006843 <doi: 10.1161/CIRCIMAGING.117.006843>.")
     (license license:agpl3)))
 
+(define-public r-ri2by2
+  (package
+    (name "r-ri2by2")
+    (version "1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RI2by2" version))
+       (sha256
+        (base32 "1kaphphc21jxizm3h6kfh0ky17pyq3ykh30v7b582d7km00hivg8"))))
+    (properties `((upstream-name . "RI2by2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp r-gtools))
+    (home-page "https://cran.r-project.org/package=RI2by2")
+    (synopsis
+     "Randomization Inference for Treatment Effects on a Binary Outcome")
+    (description
+     "Computes attributable effects based confidence interval, permutation test
+confidence interval, or asymptotic confidence interval for the average treatment
+effect on a binary outcome.  Methods outlined in further detail in Rigdon and
+Hudgens (2015) <doi:10.1002/sim.6384>.")
+    (license license:gpl3+)))
+
 (define-public r-ri2
   (package
     (name "r-ri2")

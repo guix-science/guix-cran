@@ -20515,22 +20515,23 @@ exist.")
 (define-public r-geomultistar
   (package
     (name "r-geomultistar")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geomultistar" version))
        (sha256
-        (base32 "1zxh7iv4qrkyj6wqd3fd709fvycsa3bjmpyy8kqvd44blm78bx2n"))))
+        (base32 "0sgz78b6ar1a9bb2jzi3rc3qvhisbaj98hhhl61mnfpmi2bnha3g"))))
     (properties `((upstream-name . "geomultistar")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
-                             r-starschemar
                              r-sf
                              r-rsqlite
                              r-rlang
+                             r-purrr
+                             r-generics
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://josesamos.github.io/geomultistar/")
@@ -20539,11 +20540,11 @@ exist.")
      "Multidimensional systems allow complex queries to be carried out in an easy way.
  The geographical dimension, together with the temporal dimension, plays a
 fundamental role in multidimensional systems.  Through this package, vector
-layers can be associated to the attributes of geographic dimensions, so that the
-results of multidimensional queries can be obtained directly as vector layers.
-The multidimensional structures on which we can define the queries can be
-created from a flat table or imported directly using functions from this
-package.")
+geographic data layers can be associated to the attributes of geographic
+dimensions, so that the results of multidimensional queries can be obtained
+directly as vector layers.  The multidimensional structures on which we can
+define the queries can be created from a flat table or imported directly using
+functions from this package.")
     (license license:expat)))
 
 (define-public r-geomtextpath
@@ -27031,13 +27032,13 @@ Weidong Tian and Hongbin Ji (2012) <doi:10.1038/cr.2011.149>.")
 (define-public r-gangenerativedata
   (package
     (name "r-gangenerativedata")
-    (version "1.4.3")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ganGenerativeData" version))
        (sha256
-        (base32 "0fsdzjhawkdc997f3w73da81h00a4ar8aljmfypy311nsg8nda7c"))))
+        (base32 "0j4aq1l9g42qahhgbwj40h5rymjw4426d79nhzwkphayj2wj6jsy"))))
     (properties `((upstream-name . "ganGenerativeData")))
     (build-system r-build-system)
     (inputs (list tensorflow))
@@ -27046,10 +27047,11 @@ Weidong Tian and Hongbin Ji (2012) <doi:10.1038/cr.2011.149>.")
     (synopsis "Generate Generative Data for a Data Source")
     (description
      "Generative Adversarial Networks are applied to generate generative data for a
-data source.  In iterative training steps the distribution of generated data
-converges to that of the data source.  Direct applications of generative data
-are the created functions for data classifying and missing data completion.
-Reference: Goodfellow et al. (2014) <@code{arXiv:1406.2661v1>}.")
+data source.  A generative model consisting of a generator and a discriminator
+network is trained.  In iterative training steps the distribution of generated
+data converges to that of the data source.  Direct applications of generative
+data are the created functions for data classifying and missing data completion.
+ Reference: Goodfellow et al. (2014) <@code{arXiv:1406.2661v1>}.")
     (license license:gpl2+)))
 
 (define-public r-gandatamodel

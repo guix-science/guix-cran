@@ -22924,6 +22924,32 @@ et al.  P@code{LoS} Comp.  Bio.  2017 <doi:10.1371/journal.pcbi.1005662>.")
 imputation and the analysis of completed data.")
     (license license:gpl2+)))
 
+(define-public r-migrationdetectr
+  (package
+    (name "r-migrationdetectr")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MigrationDetectR" version))
+       (sha256
+        (base32 "0qq5xac4j8bm1705rmjvbcxhdhrq0pfqzrlb9vgbnsfm4l0iy84w"))))
+    (properties `((upstream-name . "MigrationDetectR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-lubridate
+                             r-lifecycle
+                             r-dplyr
+                             r-assertthat))
+    (home-page "https://cran.r-project.org/package=MigrationDetectR")
+    (synopsis "Segment-Based Migration Detection Algorithm")
+    (description
+     "Detection of migration events and segments of continuous residence based on
+irregular time series of location data as published in Chi et al. (2020)
+<doi:10.1371/journal.pone.0239408>.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-migration-indices
   (package
     (name "r-migration-indices")

@@ -3822,16 +3822,16 @@ data for themselves.")
 (define-public r-homomorphicencryption
   (package
     (name "r-homomorphicencryption")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HomomorphicEncryption" version))
        (sha256
-        (base32 "1agw7s9ccj4hi74scqqs8v65gsavxb5c3217rw0kk9cibq7bma2v"))))
+        (base32 "1f8hp5gnjsbjqv1zhgjy8sfzkzlygj7gxpg7f2xq4k0w7a2apdk2"))))
     (properties `((upstream-name . "HomomorphicEncryption")))
     (build-system r-build-system)
-    (propagated-inputs (list r-polynom))
+    (propagated-inputs (list r-polynom r-hetools))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=HomomorphicEncryption")
     (synopsis "BFV, BGV, CKKS Schema for Fully Homomorphic Encryption")
@@ -7758,13 +7758,13 @@ and Louis (1998) <doi:10.1111/1467-9868.00135>.")
 (define-public r-hetools
   (package
     (name "r-hetools")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HEtools" version))
        (sha256
-        (base32 "02mm6vy6iicl4jazcpg60slcnjgsdr1cd5j82dmjwzbm8b81az5m"))))
+        (base32 "0m62x945x5mgswwph8g788lp7yzjdmcjlbsffiqfs68m4al6mzqh"))))
     (properties `((upstream-name . "HEtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-polynom))
@@ -7775,7 +7775,7 @@ and Louis (1998) <doi:10.1111/1467-9868.00135>.")
 <doi:10.1137/120868669>) using Ring Learning with Errors (Lyubashevsky et al.
 (2012) <https://eprint.iacr.org/2012/230>) is a form of Learning with Errors
 (Regev (2005) <doi:10.1145/1060590.1060603>) using polynomial rings over finite
-fields.  Functions to generate the required polynomials (using \"polynom\"), with
+fields.  Functions to generate the required polynomials (using polynom'), with
 various distributions of coefficients are provided.  Additionally, functions to
 generate and take coefficient modulo are provided.")
     (license license:expat)))
@@ -11134,17 +11134,18 @@ rate only in the weak sense, rather than the strong sense as intended.")
 (define-public r-harbinger
   (package
     (name "r-harbinger")
-    (version "1.0.727")
+    (version "1.0.737")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "harbinger" version))
        (sha256
-        (base32 "1y3qy7miwgqlgarnhlijn16rj9q9knxfm15alnpk9mirfx8mm8s2"))))
+        (base32 "0amqpx3pfvnx30dknxs4759b7c4qd4839zkrwf4ayg5klc06v7zd"))))
     (properties `((upstream-name . "harbinger")))
     (build-system r-build-system)
     (propagated-inputs (list r-tspred
                              r-tsmp
+                             r-strucchange
                              r-stringr
                              r-rugarch
                              r-reticulate
@@ -11152,7 +11153,8 @@ rate only in the weak sense, rather than the strong sense as intended.")
                              r-forecast
                              r-dtwclust
                              r-dplyr
-                             r-daltoolbox))
+                             r-daltoolbox
+                             r-changepoint))
     (home-page "https://github.com/cefet-rj-dal/harbinger")
     (synopsis "An Unified Time Series Event Detection Framework")
     (description

@@ -7119,13 +7119,13 @@ data-adaptive weights.  Reference: Ren, M., Zhen Y., and Wang J. (2022).
 (define-public r-transreg
   (package
     (name "r-transreg")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "transreg" version))
        (sha256
-        (base32 "1rblzmaq5sij0wfirm68f46khr6ipnl4afk87xl1pmihz8f2gjkr"))))
+        (base32 "1kh106kgnjliw84p219g317img4aaas8s2bm5x6pakvswqf2qjxw"))))
     (properties `((upstream-name . "transreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-starnet r-joinet r-glmnet))
@@ -7135,7 +7135,7 @@ data-adaptive weights.  Reference: Ren, M., Zhen Y., and Wang J. (2022).
     (description
      "Improves the predictive performance of ridge and lasso regression exploiting one
 or more sources of prior information on the importance and direction of effects
-(Rauschenberger and others 2023, <doi:10.48550/@code{arXiv.2212.08581>}).  For
+(Rauschenberger and others 2023, <doi:10.1093/bioinformatics/btad680>).  For
 running the vignette, install fwelnet from @code{GitHub}
 <https://github.com/kjytay/fwelnet>.")
     (license license:gpl3)))

@@ -1798,15 +1798,16 @@ variables and regarding factor levels.")
 (define-public r-npmr
   (package
     (name "r-npmr")
-    (version "1.3")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "npmr" version))
        (sha256
-        (base32 "1h5cqbkmmswnmaf0b67akiybab9zpi1nvjj5wkdxiwiss7n1an7z"))))
+        (base32 "0g6lrmsm62vkjax8jmsvlh9zhgwrjyydz79xiw0p7cw77f1c7jjf"))))
     (properties `((upstream-name . "npmr")))
     (build-system r-build-system)
+    (propagated-inputs (list r-matrix))
     (home-page "https://cran.r-project.org/package=npmr")
     (synopsis "Nuclear Penalized Multinomial Regression")
     (description
@@ -3062,21 +3063,33 @@ estimated on the normalized scores are also provided.  See Philipps et al (2014)
 (define-public r-normfluodbf
   (package
     (name "r-normfluodbf")
-    (version "1.4.3")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "normfluodbf" version))
        (sha256
-        (base32 "0slmkqpqi3c3mrjd0ybg2bij1cgrn03ixs6mizjq048r3qbxgipq"))))
+        (base32 "18jk1yim4wap23ik9l9dwhrdprmvfgy91jdscqx7v756j9na4hnj"))))
     (properties `((upstream-name . "normfluodbf")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr r-tibble r-foreign r-data-table))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rio
+                             r-ggthemes
+                             r-ggplot2
+                             r-foreign
+                             r-emojifont
+                             r-dplyr
+                             r-data-table
+                             r-badger))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/AlphaPrime7/normfluodbf")
-    (synopsis "Cleans and Normalizes 'FLUOstar' 'DBF' Files")
+    (synopsis "Cleans and Normalizes FLUOstar DBF and DAT Files")
     (description
-     "Converts a FLUOstar DBF File into a Normalized Data Frame, Ready for Analysis.")
+     "Cleans and Normalizes FLUOstar DBF and DAT Files obtained from liposome flux
+assays.  Users should verify extended usage of the package on files from other
+assay types.")
     (license license:expat)))
 
 (define-public r-normexpression
@@ -5116,13 +5129,13 @@ functions based on the NMSLIB <https://github.com/nmslib/nmslib> Python Library.
 (define-public r-nmsim
   (package
     (name "r-nmsim")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMsim" version))
        (sha256
-        (base32 "1k6ifkkjl2dzravj2l0nfhf4aycy4hwk2gpvhl4jxfapbcr083vb"))))
+        (base32 "18jvvyzf4bdb73sj1ws517z7zcy17g4dhmwk8y6id7r0nih71rra"))))
     (properties `((upstream-name . "NMsim")))
     (build-system r-build-system)
     (propagated-inputs (list r-r-utils r-nmdata r-mass r-data-table))
@@ -5165,13 +5178,13 @@ workflows by users to help with analyzing and interpreting NMR data.")
 (define-public r-nmrphasing
   (package
     (name "r-nmrphasing")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMRphasing" version))
        (sha256
-        (base32 "1fp0jy657478dh3r878ss5j0xzxq4kv85dap86k46qnnm2d1jjv7"))))
+        (base32 "0c0hg4zamr33qll6la55gi97gh4ri1zy0hln3cmj221yimj6h9f4"))))
     (properties `((upstream-name . "NMRphasing")))
     (build-system r-build-system)
     (propagated-inputs (list r-massspecwavelet r-baseline))
@@ -5375,13 +5388,13 @@ the updating process.  See e.g. @code{TomÃ©} et al (2015)
 (define-public r-nmdata
   (package
     (name "r-nmdata")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMdata" version))
        (sha256
-        (base32 "0r9rzq4qi2i49b03ap8s2cqx5vbbrdsh3xmqancq62r8fiydvzbd"))))
+        (base32 "1xvc8cyl7jlmcp8xb54mw7jdfs3fi0amlv4y23d8g3xhnhr44wlx"))))
     (properties `((upstream-name . "NMdata")))
     (build-system r-build-system)
     (propagated-inputs (list r-fst r-data-table))
@@ -11975,13 +11988,13 @@ uncertainty.")
 (define-public r-negligible
   (package
     (name "r-negligible")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "negligible" version))
        (sha256
-        (base32 "131bgvac2dk8alnmjymdx6l7cgmz2cncsyg62zgc6asfrh90nrqc"))))
+        (base32 "0gz3zn52cbxydphgyqkh84iyi6dsb079y3x27h8a6k35wyavnr4k"))))
     (properties `((upstream-name . "negligible")))
     (build-system r-build-system)
     (propagated-inputs (list r-wrs2
@@ -11992,6 +12005,7 @@ uncertainty.")
                              r-lavaan
                              r-ggplot2
                              r-fungible
+                             r-e1071
                              r-dplyr
                              r-desctools))
     (home-page "https://cran.r-project.org/package=negligible")
@@ -12002,9 +12016,9 @@ uncertainty.")
 among variables.  The negligible package provides functions that are useful for
 conducting negligible effect testing (also called equivalence testing).  For
 example, there are functions for evaluating the equivalence of means or the
-presence of a negligible association (correlation/ regression).  Beribisky, N.,
-Mara, C., & Cribbie, R. A. (2020) <doi:10.20982/tqmp.16.4.p424>.  Beribisky, N.,
-Davidson, H., Cribbie, R. A. (2019) <doi:10.7717/peerj.6853>.  Shiskina, T.,
+presence of a negligible association (correlation or regression).  Beribisky,
+N., Mara, C., & Cribbie, R. A. (2020) <doi:10.20982/tqmp.16.4.p424>.  Beribisky,
+N., Davidson, H., Cribbie, R. A. (2019) <doi:10.7717/peerj.6853>.  Shiskina, T.,
 Farmus, L., & Cribbie, R. A. (2018) <doi:10.20982/tqmp.14.3.p167>.  Mara, C. &
 Cribbie, R. A. (2017) <doi:10.1080/00220973.2017.1301356>.  Counsell, A. &
 Cribbie, R. A. (2015) <doi:10.1111/bmsp.12045>.  van Wieringen, K. & Cribbie, R.

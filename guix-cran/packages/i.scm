@@ -9305,13 +9305,13 @@ S., Pook, T. Geibel, J. and Reimer, C. (2023) <doi:10.1186/s12711-023-00807-0>."
 (define-public r-indexnumr
   (package
     (name "r-indexnumr")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IndexNumR" version))
        (sha256
-        (base32 "15rjhzwygs4an51lxn66jlfww4j361b1jw4a6q3dz31bmlc9i5pg"))))
+        (base32 "02ga1airmzaqb0kabg9ipq3jrwsfdafj729bwj8y5pccpks60fjl"))))
     (properties `((upstream-name . "IndexNumR")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

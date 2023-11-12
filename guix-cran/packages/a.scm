@@ -10644,13 +10644,13 @@ microarray data and local False Discovery Rate.")
 (define-public r-ananseseurat
   (package
     (name "r-ananseseurat")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AnanseSeurat" version))
        (sha256
-        (base32 "0f487qbn8a3hghpa0ly2kn5cb7s9wjb5f59f6zkrpgx4rwhjvfgp"))))
+        (base32 "12r6bxh0cvh94nb91lzdj7sa7na1ljc5gdmdfx6dwilhpdafn0a3"))))
     (properties `((upstream-name . "AnanseSeurat")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr

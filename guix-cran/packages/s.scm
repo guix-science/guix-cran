@@ -5436,13 +5436,13 @@ U.S. National Science Foundation (NSF) grant CMMI-1921646.")
 (define-public r-supercells
   (package
     (name "r-supercells")
-    (version "0.9.1")
+    (version "0.9.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "supercells" version))
        (sha256
-        (base32 "0dl9039ymzckrn8nlfpb93yfmcza46qjhk0f8pr5m0ydf4qbdds0"))))
+        (base32 "1695dsd6l3mxa7wpzmxarpll1rm70cq9l5vkbz4gyf1238vqlqjz"))))
     (properties `((upstream-name . "supercells")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-sf r-philentropy r-future-apply r-cpp11))
@@ -12576,13 +12576,13 @@ Convergence Index, (5) calculating topographic aspect and topographic slope.")
 (define-public r-starschemar
   (package
     (name "r-starschemar")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "starschemar" version))
        (sha256
-        (base32 "0988kzdf4082yppmph918rnrrb6ss6bqayalffdxjs4dw2h0nlc3"))))
+        (base32 "03zvjlja2rr5h2awwv1xr7apqync2z6rq5nqffg0hp7pd0wz8rhd"))))
     (properties `((upstream-name . "starschemar")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -14914,13 +14914,13 @@ distribution.  The SSDM package also provides a user-friendly interface.")
 (define-public r-ssdforr
   (package
     (name "r-ssdforr")
-    (version "1.5.31")
+    (version "1.5.32")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SSDforR" version))
        (sha256
-        (base32 "1l66n5x7m90jw1r9cspb7i9k3wbc1xad4wc027bss40k9jwgqypw"))))
+        (base32 "0dzs6jrqbh0kdmrwnzx63ccm6alimjry0zgqjhxl9c4r48gqkqhm"))))
     (properties `((upstream-name . "SSDforR")))
     (build-system r-build-system)
     (propagated-inputs (list r-ttr

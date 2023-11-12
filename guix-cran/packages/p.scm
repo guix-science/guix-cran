@@ -18628,6 +18628,28 @@ and observed score equating, and plotting item response curves/surfaces, vector
 plots, information plots, and comparison plots for examining parameter drift.")
     (license license:gpl2+)))
 
+(define-public r-plindleyroc
+  (package
+    (name "r-plindleyroc")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PLindleyROC" version))
+       (sha256
+        (base32 "0k7vkk6c6y0larvp5bm0f8dzafjs7g1s2m7kla6h612jhkqpngwl"))))
+    (properties `((upstream-name . "PLindleyROC")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ErtanSU/PLindleyROC")
+    (synopsis
+     "Receiver Operating Characteristic for Power Lindley Distribution")
+    (description
+     "Receiver operating characteristic (ROC) analysis is carried out from the Power
+Lindley distribution.  Specificity, sensitivity, area under the curve, and ROC
+curve are evaluated.")
+    (license license:gpl3)))
+
 (define-public r-pliman
   (package
     (name "r-pliman")

@@ -19424,27 +19424,27 @@ export, application of age models and palaeodose model.")
 (define-public r-baygel
   (package
     (name "r-baygel")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "baygel" version))
        (sha256
-        (base32 "13fbhigv8xy3fdi02d5hdbm5qfw47kssm5z0hrvmrchmdnhb6y0n"))))
+        (base32 "05s9wnsk4fi6pczjd4jg803dwss71m7yng3ck54n3b0pm27c37yd"))))
     (properties `((upstream-name . "baygel")))
     (build-system r-build-system)
-    (propagated-inputs (list r-statmod r-rcppprogress r-rcpparmadillo r-rcpp
-                             r-pracma))
+    (propagated-inputs (list r-rcppprogress r-rcpparmadillo r-rcpp))
     (home-page "https://github.com/Jarod-Smithy/baygel")
-    (synopsis "Bayesian Estimators for Gaussian Graphical Models")
+    (synopsis
+     "Bayesian Shrinkage Estimators for Precision Matrices in Gaussian Graphical Models")
     (description
-     "This R package offers a Bayesian graphical ridge and a @code{naÃ¯ve} Bayesian
-adaptive graphical elastic net data-augmented block Gibbs sampler.  These
-samplers facilitate the simulation of the posterior distribution of precision
-matrices for Gaussian distributed data.  These samplers were originally proposed
-in two separate studies, both detailing their methodologies and applications:
-Smith, Arashi, and Bekker (2022) <doi:10.48550/@code{arXiv.2210.16290>} and
-Smith, Bekker, and Arashi (2023) <doi:10.48550/@code{arXiv.2306.14199>}.")
+     "This R package offers block Gibbs samplers for the Bayesian (adaptive) graphical
+lasso, ridge, and naive elastic net priors.  These samplers facilitate the
+simulation of the posterior distribution of precision matrices for Gaussian
+distributed data and were originally proposed by: Wang (2012)
+<doi:10.1214/12-BA729>; Smith et al. (2022)
+<doi:10.48550/@code{arXiv.2210.16290>} and Smith et al. (2023)
+<doi:10.48550/@code{arXiv.2306.14199>}, respectively.")
     (license license:gpl3+)))
 
 (define-public r-bayfoxr
