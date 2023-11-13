@@ -3696,6 +3696,37 @@ Using R and @code{OpenBUGS}\" by Bhattacharjee A (2020)
 <doi:10.1201/9780429329449-14>.")
     (license license:gpl3)))
 
+(define-public r-longevity
+  (package
+    (name "r-longevity")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "longevity" version))
+       (sha256
+        (base32 "01apxwslkyk8v6zqwaf0hl391mcgqi7nmkw3wal757d8dawvdnaj"))))
+    (properties `((upstream-name . "longevity")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rsolnp r-rlang r-rcpparmadillo r-rcpp
+                             r-numderiv))
+    (native-inputs (list r-knitr))
+    (home-page "https://lbelzile.github.io/longevity/")
+    (synopsis "Statistical Methods for the Analysis of Excess Lifetimes")
+    (description
+     "This package provides a collection of parametric and nonparametric methods for
+the analysis of survival data.  Parametric families implemented include
+Gompertz-Makeham, exponential and generalized Pareto models and extended models.
+ The package includes an implementation of the nonparametric maximum likelihood
+estimator for arbitrary truncation and censoring pattern based on Turnbull
+(1976) <doi:10.1111/j.2517-6161.1976.tb01597.x>, along with graphical
+goodness-of-fit diagnostics.  Parametric models for positive random variables
+and peaks over threshold models based on extreme value theory are described in
+@code{RootzÃ©n} and Zholud (2017) <doi:10.1007/s10687-017-0305-5>; Belzile et
+al. (2021) <doi:10.1098/rsos.202097> and Belzile et al. (2022)
+<doi:10.1146/annurev-statistics-040120-025426>.")
+    (license license:gpl3)))
+
 (define-public r-longclust
   (package
     (name "r-longclust")
@@ -8933,61 +8964,6 @@ method are available in Plana-Ripoll et al. (2020)
 <doi:10.1371/journal.pone.0228073> and Andersen (2017) <doi:10.1002/sim.7357>.")
     (license license:expat)))
 
-(define-public r-lilikoi
-  (package
-    (name "r-lilikoi")
-    (version "2.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "lilikoi" version))
-       (sha256
-        (base32 "14bz7a1wcgr5fsf6mpsibxa7ks302a1lwnjdjzwh72z490fz8gaw"))))
-    (properties `((upstream-name . "lilikoi")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-survminer
-                             r-survival
-                             r-stringr
-                             r-scales
-                             r-rweka
-                             r-reticulate
-                             r-reshape
-                             r-proc
-                             r-princurve
-                             r-preprocesscore
-                             r-plyr
-                             r-pathview
-                             r-mlmetrics
-                             r-metrics
-                             r-m3c
-                             r-limma
-                             r-infotheo
-                             r-impute
-                             r-h2o
-                             r-glmnet
-                             r-ggplot2
-                             r-gbm
-                             r-dplyr
-                             r-caret
-                             r-car))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=lilikoi")
-    (synopsis "Metabolomics Personalized Pathway Analysis Tool")
-    (description
-     "This package provides a comprehensive analysis tool for metabolomics data.  It
-consists a variety of functional modules, including several new modules: a
-pre-processing module for normalization and imputation, an exploratory data
-analysis module for dimension reduction and source of variation analysis, a
-classification module with the new deep-learning method and other
-machine-learning methods, a prognosis module with cox-PH and neural-network
-based Cox-nnet methods, and pathway analysis module to visualize the pathway and
-interpret metabolite-pathway relationships.  References: H. Paul Benton
-<http://www.metabolomics-forum.com/index.php?topic=281.0> Jeff Xia
-<https://github.com/cangfengzhe/Metabo/blob/master/@code{MetaboAnalyst/website/name_match.R>}
-Travers Ching, Xun Zhu, Lana X. Garmire (2018)
-<doi:10.1371/journal.pcbi.1006076>.")
-    (license license:gpl2)))
-
 (define-public r-likertmaker
   (package
     (name "r-likertmaker")
@@ -10764,13 +10740,13 @@ package is heavily inspired by the
 (define-public r-lessr
   (package
     (name "r-lessr")
-    (version "4.2.9")
+    (version "4.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lessR" version))
        (sha256
-        (base32 "0xl26bbp4ksqqp769vgc591rvw9h9ivvm94cwk0nq06vy8v4fgxp"))))
+        (base32 "16nnnswv7d0dz4bw8fvys1i7zd6c56l419fyk9bv0k37vhdnrini"))))
     (properties `((upstream-name . "lessR")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny
@@ -10796,7 +10772,7 @@ variable, bar chart, histogram, box plot, density curves, calibrated power
 curve, reading multiple data formats with the same function call, variable
 labels, color themes, and Trellis graphics.  Also includes a confirmatory factor
 analysis of multiple indicator measurement models, pedagogical routines for data
-simulation such as for the Central Limit Theorem, generation and rendering o
+simulation such as for the Central Limit Theorem, generation and rendering of
 regression instructions for interpretative output, and interactive
 visualizations.")
     (license license:gpl2+)))

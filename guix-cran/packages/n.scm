@@ -8699,24 +8699,24 @@ error of the regression coeffcient (sescree); 8.  Nelson R2; 9.  Bartlett khi-2;
 (define-public r-nextgenshinyapps
   (package
     (name "r-nextgenshinyapps")
-    (version "1.6")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nextGenShinyApps" version))
        (sha256
-        (base32 "0yvjchdxd8zxilq05x5ihjh10wzn9cz8cp6sr6jrnxgkiyrgh46q"))))
+        (base32 "0994y5qnhxp23c6m08mgr9pp44jcm277qwxzq4fnsdy0gndcjrcw"))))
     (properties `((upstream-name . "nextGenShinyApps")))
     (build-system r-build-system)
-    (propagated-inputs (list r-shiny r-htmltools))
+    (propagated-inputs (list r-shiny r-quickcode r-htmltools))
     (native-inputs (list r-knitr))
     (home-page "https://nextgenshinyapps.obi.obianom.com")
     (synopsis
-     "Advanced Tools for Building the Next Generation of 'Shiny' Applications and Dashboards")
+     "Craft Exceptional 'R Shiny' Applications and Dashboards with Novel Responsive Tools")
     (description
-     "Responsive tools for designing and developing Shiny dashboards and applications.
- The scripts and style sheets are based on @code{jQuery} <https://jquery.com/>
-and Bootstrap <https://getbootstrap.com/>.")
+     "Nove responsive tools for designing and developing Shiny dashboards and
+applications.  The scripts and style sheets are based on @code{jQuery}
+<https://jquery.com/> and Bootstrap <https://getbootstrap.com/>.")
     (license license:expat)))
 
 (define-public r-newtestsurvrec

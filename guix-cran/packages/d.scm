@@ -24754,30 +24754,6 @@ outliers,...), or focus on the relation amongst several activity log entries
 (e.g. batch registrations, violations of the expected activity order,...).")
     (license license:expat)))
 
-(define-public r-dapr
-  (package
-    (name "r-dapr")
-    (version "0.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dapr" version))
-       (sha256
-        (base32 "136chxijyxrl5sbiggxf56zga26zqds647z1z2igwn5mdff1wxyb"))))
-    (properties `((upstream-name . "dapr")))
-    (build-system r-build-system)
-    (home-page "https://github.com/mkearney/dapr")
-    (synopsis "'purrr'-Like Apply Functions Over Input Elements")
-    (description
-     "An easy-to-use, dependency-free set of functions for iterating over elements of
-various input objects.  Functions are wrappers around base
-apply()/lapply()/vapply() functions but designed to have similar functionality
-to the mapping functions in the purrr package <https://purrr.tidyverse.org/>.
-Specifically, function names more explicitly communicate the expected class of
-the output and functions also allow for the convenient shortcut of ~ .x instead
-of the more verbose function(.x) .x'.")
-    (license license:gpl3)))
-
 (define-public r-dap
   (package
     (name "r-dap")

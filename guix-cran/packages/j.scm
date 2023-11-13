@@ -501,13 +501,13 @@ the Lauritzen-Spiegelhalter scheme; S. L. Lauritzen and D. J. Spiegelhalter
 (define-public r-jtdm
   (package
     (name "r-jtdm")
-    (version "0.1-1")
+    (version "0.1-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jtdm" version))
        (sha256
-        (base32 "11x4zm5npgcbmvrir2maf7zr54mvg0ppckb145cckmqns94nk25j"))))
+        (base32 "034hajlqz7mypnia77nm1fihhc5sjwaxvrk83qj1miqd5yilygvx"))))
     (properties `((upstream-name . "jtdm")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2
@@ -2960,13 +2960,13 @@ cross-validation function to perform hyperparameter tuning.")
 (define-public r-jgsbook
   (package
     (name "r-jgsbook")
-    (version "1.0.2")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jgsbook" version))
        (sha256
-        (base32 "0q2k2fff6qzn9mgf629arpc055xjhych0bj412kq9yp68kgmzr46"))))
+        (base32 "14rjs7ja2aj6rrq1xfv4r8zisnw4mkxiiwr7l8x7cai484adfqbf"))))
     (properties `((upstream-name . "jgsbook")))
     (build-system r-build-system)
     (propagated-inputs (list r-statip r-jsonlite r-httr r-curl))

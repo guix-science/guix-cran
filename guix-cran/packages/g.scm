@@ -1012,6 +1012,37 @@ of the corresponding likelihood (see Albert, C., Vogel, S. and Ashauer, R.
 (2016) <doi:10.1371/journal.pcbi.1004978>).")
     (license license:gpl2+)))
 
+(define-public r-gutenbergr
+  (package
+    (name "r-gutenbergr")
+    (version "0.2.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gutenbergr" version))
+       (sha256
+        (base32 "0hx9mrykkc7jqf5pl3k9y5i7pv8v9pwija8swv6s5p1gbmg56vg6"))))
+    (properties `((upstream-name . "gutenbergr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-urltools
+                             r-stringr
+                             r-readr
+                             r-purrr
+                             r-magrittr
+                             r-lazyeval
+                             r-glue
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://docs.ropensci.org/gutenbergr/")
+    (synopsis
+     "Download and Process Public Domain Works from Project Gutenberg")
+    (description
+     "Download and process public domain works in the Project Gutenberg collection
+<https://www.gutenberg.org/>.  Includes metadata for all Project Gutenberg
+works, so that they can be searched and retrieved.")
+    (license license:gpl2)))
+
 (define-public r-gustave
   (package
     (name "r-gustave")
@@ -2656,19 +2687,20 @@ logrank tests in Yung and Liu (2019) <doi:10.1111/biom.13196>, and
 (define-public r-gsdesign
   (package
     (name "r-gsdesign")
-    (version "3.5.0")
+    (version "3.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gsDesign" version))
        (sha256
-        (base32 "06m4l1p7pwhs9lxnzjivg5xaygb3lfp0zdfvwzw7m6ngx12saglg"))))
+        (base32 "0jydax7gmhn2qx51w0d4ykyx4vl0klnz2dccl3d0cas7kkpfbj1y"))))
     (properties `((upstream-name . "gsDesign")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
                              r-tidyr
                              r-tibble
                              r-rlang
+                             r-r2rtf
                              r-magrittr
                              r-gt
                              r-ggplot2

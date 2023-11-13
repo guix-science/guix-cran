@@ -13057,13 +13057,13 @@ resulting sheet(s) as a vector and data in dataframe(s).")
 (define-public r-modeva
   (package
     (name "r-modeva")
-    (version "3.9.3")
+    (version "3.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modEvA" version))
        (sha256
-        (base32 "0ycq9gqj9v6j4v1b0ivhdmzpkyhjxy2bszdgk2ad9rp2030m5rnd"))))
+        (base32 "1qqk3rjhaxdsjcwhcg81dcdkrmd3nh3bfamfgq0fvyn68sa7y20b"))))
     (properties `((upstream-name . "modEvA")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra))
@@ -23804,13 +23804,13 @@ incorporated and updated over a discrete time step.")
 (define-public r-micromapst
   (package
     (name "r-micromapst")
-    (version "3.0.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "micromapST" version))
        (sha256
-        (base32 "1gkjkqhribj9c512f2marv511lqn9vfwv8nziyrjmhfs1alijzzw"))))
+        (base32 "0ap8pk8gw3lkbv8xq6ghi68abm8gj8rsalxgcf6wan8vrg7d3iw7"))))
     (properties `((upstream-name . "micromapST")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
@@ -37168,20 +37168,20 @@ regression estimator.")
 (define-public r-mas
   (package
     (name "r-mas")
-    (version "0.2")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mas" version))
        (sha256
-        (base32 "0iksx2339nwbcg7c8vfkhr3yaxm6z98w61wwv9zwmgrr18ifg4n5"))))
+        (base32 "1c62fa1r36nymf2s6lxa6zg0j9zl527szn1gh3m0mcs1nx36lal5"))))
     (properties `((upstream-name . "mas")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncdist r-rcppeigen r-rcpp))
     (home-page "https://cran.r-project.org/package=mas")
     (synopsis "Membership Association Studies")
     (description
-     "Genome-wide association analysis that accomodate membership information,
+     "Genome-wide association analysis that accommodate membership information,
 variance adjustment, and correlated responses.")
     (license license:gpl3)))
 

@@ -7065,16 +7065,23 @@ functions for hazard calculation and timing calibration.")
 (define-public r-ergmargins
   (package
     (name "r-ergmargins")
-    (version "0.1.3.1")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ergMargins" version))
        (sha256
-        (base32 "18axdfg7nf2dcbm2hbpjkx821nrg8c97jn5nny2110cja9vi0qgw"))))
+        (base32 "0p5pcbl4l6z58lkqhbynyzvcbina6457i2x97vpck41mrzhji8jh"))))
     (properties `((upstream-name . "ergMargins")))
     (build-system r-build-system)
-    (propagated-inputs (list r-numderiv r-network r-matrix r-ergm r-btergm))
+    (propagated-inputs (list r-sna
+                             r-sampling
+                             r-numderiv
+                             r-network
+                             r-matrix
+                             r-ergm
+                             r-dplyr
+                             r-btergm))
     (home-page "https://cran.r-project.org/package=ergMargins")
     (synopsis "Process Analysis for Exponential Random Graph Models")
     (description
@@ -7088,7 +7095,8 @@ moderation analyses and to diagnose multicollinearity.  URL:
 Karlson, Kristian Bernt, Anders Holm, and Richard Breen (2012)
 <doi:10.1177/0081175012444861>.  Duxbury, Scott W (2018)
 <doi:10.1177/0049124118782543>.  Duxbury, Scott W, Jenna Wertsching (2023)
-<doi:10.1016/j.socnet.2023.02.003>.")
+<doi:10.1016/j.socnet.2023.02.003>.  Huang, Peng, Carter Butts (2023)
+<doi:10.1016/j.socnet.2023.07.001>.")
     (license license:gpl2+)))
 
 (define-public r-ergm-rank
@@ -9869,13 +9877,13 @@ to extract colors from all types of figures and pdf files.")
 (define-public r-eodhd
   (package
     (name "r-eodhd")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eodhd" version))
        (sha256
-        (base32 "058rdl3a2bwbx4j27bwznrgrj7l2pdvmybwiyc82kb9kfavik107"))))
+        (base32 "1ssilpy8zsvs5d3a7511qmpmwm0z10iqm8qkjna39zrs1y6i9h88"))))
     (properties `((upstream-name . "eodhd")))
     (build-system r-build-system)
     (propagated-inputs (list r-httr))
@@ -16480,13 +16488,13 @@ agriculture.  Methods are described by Pueyo-Ros, Comas & Corominas (2023)
 (define-public r-edibble
   (package
     (name "r-edibble")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "edibble" version))
        (sha256
-        (base32 "11ybx488vmglnwz82lddfndafd664akwq5vg2mqmbdhb530fxj89"))))
+        (base32 "01d6d5vv8i2hrx8nw7mv248v562fsr1p1jn6kqsxh7qcx5angnp6"))))
     (properties `((upstream-name . "edibble")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -16497,17 +16505,19 @@ agriculture.  Methods are described by Pueyo-Ros, Comas & Corominas (2023)
                              r-pillar
                              r-nestr
                              r-magrittr
+                             r-lifecycle
                              r-dae
                              r-cli
                              r-algdesign))
     (home-page "https://edibble.emitanaka.org/")
-    (synopsis "Designing Comparative Experiments")
+    (synopsis "Encapsulating Elements of Experimental Design")
     (description
      "This package provides a system to facilitate designing comparative experiments
 using the grammar of experimental designs <https://emitanaka.org/edibble-book/>.
  An experimental design is treated as an intermediate, mutable object that is
 built progressively by fundamental experimental components like units,
-treatments, and their relation.")
+treatments, and their relation.  The system aids in experimental planning,
+management and workflow.")
     (license license:expat)))
 
 (define-public r-edgedata

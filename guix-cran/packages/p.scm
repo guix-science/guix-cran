@@ -11207,28 +11207,6 @@ point process model.")
 package @code{PakPC2017}'.")
     (license license:gpl3)))
 
-(define-public r-ppcong
-  (package
-    (name "r-ppcong")
-    (version "0.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ppcong" version))
-       (sha256
-        (base32 "0k34ibzyxak2a8xhsf4jdp50w8k8dsd1nn3gcdcakx8s2rgymq7v"))))
-    (properties `((upstream-name . "ppcong")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble r-tfse r-jsonlite r-curl))
-    (home-page "https://github.com/mkearney/ppcong")
-    (synopsis "Interfacing with ProPublica's 'Congress' API")
-    (description
-     "This package provides a simple interface for interacting with
-@code{ProPublica's} Congress API, which provides data about current and former
-members of both chambers of the U.S. Congress and can be found at the following
-URL: <https://projects.propublica.org/api-docs/congress-api/>.")
-    (license license:expat)))
-
 (define-public r-ppclust
   (package
     (name "r-ppclust")
@@ -15012,13 +14990,13 @@ Hanby (1971) <doi:10.1017/S000712340000925X>; Gallagher (1991)
 (define-public r-politeness
   (package
     (name "r-politeness")
-    (version "0.9.2")
+    (version "0.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "politeness" version))
        (sha256
-        (base32 "0lj5jgw9ldnidkbbg8k9ma2xxg3hcaaiq6dcmp8rc2mqp204irff"))))
+        (base32 "1p3d7xyyx79cq3w5qg49fc25i7v2qhfqsr938jmrnvrx5ds42i40"))))
     (properties `((upstream-name . "politeness")))
     (build-system r-build-system)
     (propagated-inputs (list r-tm
@@ -25197,6 +25175,46 @@ these PE tests are presented in Yu, Li, and Xue (2022)
 <doi:10.1080/01621459.2022.2126781>; Yu, Li, Xue, and Li (2022)
 <doi:10.1080/01621459.2022.2061354>.")
     (license license:gpl3+)))
+
+(define-public r-petersen
+  (package
+    (name "r-petersen")
+    (version "2023.12.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Petersen" version))
+       (sha256
+        (base32 "0wn3m34qr9nr0v3pp0yqi2z2hpnivgfn2dw5ajd4l32n136psv1h"))))
+    (properties `((upstream-name . "Petersen")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-spas
+                             r-rlang
+                             r-reshape2
+                             r-plyr
+                             r-numderiv
+                             r-msm
+                             r-matrix
+                             r-mass
+                             r-ggplot2
+                             r-formula-tools
+                             r-btspas
+                             r-bbmle
+                             r-aiccmodavg))
+    (native-inputs (list r-rmarkdown r-r-rsp r-knitr))
+    (home-page "https://github.com/cschwarz-stat-sfu-ca/Petersen")
+    (synopsis "Estimators for Two-Sample Capture-Recapture Studies")
+    (description
+     "This package provides a comprehensive implementation of Petersen-type estimators
+and its many variants for two-sample capture-recapture studies.  A conditional
+likelihood approach is used that allows for tag loss; non reporting of tags;
+reward tags; categorical, geographical and temporal stratification; partial
+stratification; reverse capture-recapture; and continuous variables in modeling
+the probability of capture.  Many examples from fisheries management are
+presented.")
+    (license license:gpl2)))
 
 (define-public r-pestr
   (package

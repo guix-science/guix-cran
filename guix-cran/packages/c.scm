@@ -5135,13 +5135,13 @@ ISBN:978-1-118-14640-8).")
 (define-public r-crosstable
   (package
     (name "r-crosstable")
-    (version "0.6.2")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crosstable" version))
        (sha256
-        (base32 "1i8ij5vzzjrxvbnbfxkdm37yl53y154l6csfi4d7i285x8k4bp9b"))))
+        (base32 "1xghynjnrk89952sa9i6rxjqnnw2w2bdf722n91k1jgcg15gkvy9"))))
     (properties `((upstream-name . "crosstable")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

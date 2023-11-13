@@ -4509,6 +4509,31 @@ the method stated by E. A. Leicht, Petter Holme, AND M. E. J. Newman in their
 paper <DOI:10.1103/@code{PhysRevE.73.026120>}.")
     (license license:gpl2)))
 
+(define-public r-versus
+  (package
+    (name "r-versus")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "versus" version))
+       (sha256
+        (base32 "0wb45v0psqlywfw97n7b9ncw8w83shg14gras3v102rc8s2vx1m4"))))
+    (properties `((upstream-name . "versus")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs
+                             r-tidyselect
+                             r-tibble
+                             r-rlang
+                             r-glue
+                             r-dplyr))
+    (home-page "https://eutwt.github.io/versus/")
+    (synopsis "Compare Data Frames")
+    (description
+     "An interactive toolset for interactively exploring the differences between two
+data frames.")
+    (license license:expat)))
+
 (define-public r-versionsort
   (package
     (name "r-versionsort")

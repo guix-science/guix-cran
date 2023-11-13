@@ -52,13 +52,13 @@
 (define-public r-tzupdater
   (package
     (name "r-tzupdater")
-    (version "0.1.3")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tzupdater" version))
        (sha256
-        (base32 "0fyxbpjv3vyw2rg3qpr1a4wnjd62cwcvg4mkvbvvrsczm1adg61s"))))
+        (base32 "0fmg5zm18bq48jwhb1szv4hb8lvbxzlp7mjcirczlzpz7a2rhlv9"))))
     (properties `((upstream-name . "tzupdater")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=tzupdater")
@@ -17207,33 +17207,6 @@ t-distributions for robust groups.  T@code{FunHDDC} can cluster univariate or
 multivariate data produced by the fda package for data using a b-splines or
 Fourier basis.")
     (license license:gpl3)))
-
-(define-public r-tfse
-  (package
-    (name "r-tfse")
-    (version "0.5.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tfse" version))
-       (sha256
-        (base32 "05q75xsiy955xwgchagk7l7725y6mylp5lj5284xm7y2xh197zp3"))))
-    (properties `((upstream-name . "tfse")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-magrittr r-dapr))
-    (home-page "https://tfse.mikewk.com")
-    (synopsis "Tools for Script Editing")
-    (description
-     "This package provides a collection of useful tools for programming and
-writing-scripts.  Several functions are simple wrappers around base R functions
-that extend their functionality while also providing some convenient
-propertiesâregular expression functions that automatically detect look-ahead
-and look-behind statements, a read-line function that suppresses
-incomplete-final-line warnings and automatically opens and closes connections, a
-version of substrings that starts from the end of strings, etc.  Other functions
-are useful for checking whether packages are installed, omitting missing data,
-and showing in-use connections.")
-    (license license:expat)))
 
 (define-public r-tfrmtbuilder
   (package

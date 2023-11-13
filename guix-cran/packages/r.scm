@@ -31250,13 +31250,13 @@ measurement error modelling using MCEM, see the RMarkdown vignette:
 (define-public r-refinr
   (package
     (name "r-refinr")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "refinr" version))
        (sha256
-        (base32 "05jz3hgwghkbdi7r4977scifzcy5vrqmasjayq2mavada6dzj45l"))))
+        (base32 "05shfsif1s2pyyxxrrjg8qlr1bdp3yxviw2jjll3p5r65nn3gnh1"))))
     (properties `((upstream-name . "refinr")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi r-stringdist r-rcpp))
@@ -31269,7 +31269,7 @@ values, and then merge clusters together so their values become identical.  The
 functions are an implementation of the key collision and ngram fingerprint
 algorithms from the open source tool Open Refine <https://openrefine.org/>.
 More info on key collision and ngram fingerprint can be found here
-<https://docs.openrefine.org/next/technical-reference/clustering-in-depth/>.")
+<https://openrefine.org/docs/technical-reference/clustering-in-depth>.")
     (license license:gpl3)))
 
 (define-public r-refiner
@@ -37578,52 +37578,6 @@ objects from the Matrix package class hierarchy.")
 Edwards (Forthcoming 2022)<https://edge.sagepub.com/pollock>, \"An R Companion to
 Political Analysis, 3rd Edition,\" Thousand Oaks, CA: Sage Publications.")
     (license license:cc0)))
-
-(define-public r-rcpa
-  (package
-    (name "r-rcpa")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RCPA" version))
-       (sha256
-        (base32 "0gjrk6nysj2i9zkg4n305g7nh1y2m4cd8mjf3bsl7bxsi695l147"))))
-    (properties `((upstream-name . "RCPA")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-summarizedexperiment
-                             r-stringr
-                             r-scales
-                             r-robustrankaggreg
-                             r-rlang
-                             r-limma
-                             r-httr
-                             r-graph
-                             r-ggrepel
-                             r-ggplot2
-                             r-ggpattern
-                             r-ggnewscale
-                             r-geoquery
-                             r-edger
-                             r-dplyr
-                             r-deseq2
-                             r-biocmanager
-                             r-biobase
-                             r-annotationdbi))
-    (home-page "https://cran.r-project.org/package=RCPA")
-    (synopsis "Consensus Pathway Analysis")
-    (description
-     "Consensus Pathway Analysis provides a set of functions to perform pathway
-analysis and meta analysis from multiple gene expression datasets, as well as
-visualization of the results.  The package is wrapper of packages listed below.
-Ritchie et al'. (2015) <doi:10.1093/nar/gkv007>.  Love et al'. (2014)
-<doi:10.1186/s13059-014-0550-8>.  Robinson et al'. (2010)
-<doi:10.1093/bioinformatics/btp616>.  Korotkevich et al'. (2016)
-<arxiv:10.1101/060012>.  Efron et al'. (2015)
-<https://CRAN.R-project.org/package=GSA>.  Gu, Z'. (2012)
-<https://CRAN.R-project.org/package=@code{CePa>}.")
-    (license license:gpl3)))
 
 (define-public r-rcorpora
   (package
