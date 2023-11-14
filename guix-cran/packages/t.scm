@@ -6850,27 +6850,25 @@ details.")
 (define-public r-treatmentpatterns
   (package
     (name "r-treatmentpatterns")
-    (version "2.5.2")
+    (version "2.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TreatmentPatterns" version))
        (sha256
-        (base32 "12nm3acb0ksky59mpns5hrrcqc9hcwz12k9s1wkc8xp6w1xfkhg2"))))
+        (base32 "0dapwdw0gsv90naykls3ldqf46ll4r5y6gvyjjj2mj40xcy21xyp"))))
     (properties `((upstream-name . "TreatmentPatterns")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
+                             r-sunburstr
                              r-stringr
                              r-stringi
-                             r-sqlrender
                              r-rjson
                              r-r6
+                             r-networkd3
+                             r-htmlwidgets
                              r-googlevis
-                             r-glue
-                             r-fs
                              r-dplyr
-                             r-databaseconnector
-                             r-data-table
                              r-checkmate
                              r-andromeda))
     (native-inputs (list r-knitr))
@@ -12701,13 +12699,13 @@ recordings as data frame for later use.")
 (define-public r-timeplyr
   (package
     (name "r-timeplyr")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "timeplyr" version))
        (sha256
-        (base32 "00dx1w5i7v5azfsaxpvm699b5vd98krdfamdmjlb2iiqqcpk4iwi"))))
+        (base32 "1y7vhim1yd8as57s0c98fykd8kzkqk926nw76qykbh392752ybbz"))))
     (properties `((upstream-name . "timeplyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -12715,12 +12713,13 @@ recordings as data frame for later use.")
                              r-tidyselect
                              r-stringr
                              r-rlang
-                             r-rcpp
                              r-pillar
                              r-lubridate
                              r-ggplot2
                              r-dplyr
                              r-data-table
+                             r-cppdoubles
+                             r-cpp11
                              r-collapse))
     (home-page "https://cran.r-project.org/package=timeplyr")
     (synopsis "Fast Tidy Tools for Date and Date-Time Manipulation")
@@ -13990,6 +13989,52 @@ Throughout this workflow, elements of syntax, results, and graphs are
 represented as tidy data, making them easy to customize.  Includes functionality
 to estimate latent class analyses.")
     (license license:gpl3+)))
+
+(define-public r-tidysdm
+  (package
+    (name "r-tidysdm")
+    (version "0.9.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidysdm" version))
+       (sha256
+        (base32 "1c0mc35r4qmqfdic9kx6dvah6d9698x8f6n5lasn6irqrrs45jqk"))))
+    (properties `((upstream-name . "tidysdm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yardstick
+                             r-workflowsets
+                             r-workflows
+                             r-tune
+                             r-tidymodels
+                             r-tibble
+                             r-terra
+                             r-spatialsample
+                             r-sf
+                             r-rsample
+                             r-rlang
+                             r-recipes
+                             r-patchwork
+                             r-parsnip
+                             r-maxnet
+                             r-magrittr
+                             r-lubridate
+                             r-ggplot2
+                             r-dplyr
+                             r-dials
+                             r-dalextra
+                             r-dalex))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/EvolEcolGroup/tidysdm")
+    (synopsis "Species Distribution Models with Tidymodels")
+    (description
+     "Fit species distribution models (SDMs) using the tidymodels framework, which
+provides a standardised interface to define models and process their outputs.
+tidysdm expands tidymodels by providing methods for spatial objects, as well as
+a number of specialised functions to process presences and pseudoabsences for
+contemporary and palaeo datasets.  The full functionalities of the package are
+described in Leonardi et al. (2023) <doi:10.1101/2023.07.24.550358>.")
+    (license license:agpl3+)))
 
 (define-public r-tidyrules
   (package
@@ -17859,41 +17904,6 @@ the Smith-Waterman local alignment algorithm suitable for natural language.")
     (description
      "Function for sparse regression on raw text, regressing a labeling vector onto a
 feature space consisting of all possible phrases.")
-    (license license:expat)))
-
-(define-public r-textrecipes
-  (package
-    (name "r-textrecipes")
-    (version "1.0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "textrecipes" version))
-       (sha256
-        (base32 "17cglg8zgx2fj66i8sx0njmf0h084cc178hc62f3fshlp5yl751z"))))
-    (properties `((upstream-name . "textrecipes")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vctrs
-                             r-tokenizers
-                             r-tibble
-                             r-snowballc
-                             r-rlang
-                             r-recipes
-                             r-purrr
-                             r-matrix
-                             r-magrittr
-                             r-lifecycle
-                             r-glue
-                             r-generics
-                             r-dplyr
-                             r-cpp11))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/tidymodels/textrecipes")
-    (synopsis "Extra 'Recipes' for Text Processing")
-    (description
-     "Converting text to numerical features requires specifically created procedures,
-which are implemented as steps according to the recipes package.  These steps
-allows for tokenization, filtering, counting (tf and tfidf) and feature hashing.")
     (license license:expat)))
 
 (define-public r-textrank

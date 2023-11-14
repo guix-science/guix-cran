@@ -413,6 +413,35 @@ package, ov_sim.  The method is demonstrated in Griffin et al. (2020)
 <doi:10.1016/j.jsat.2020.108075>.")
     (license license:gpl3)))
 
+(define-public r-ovl-ci
+  (package
+    (name "r-ovl-ci")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OVL.CI" version))
+       (sha256
+        (base32 "17ksnsj68snxwm5ibjq3zchmybs7a3zq9ack0blhi4cbsx7xd5ds"))))
+    (properties `((upstream-name . "OVL.CI")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ks))
+    (home-page "https://cran.r-project.org/package=OVL.CI")
+    (synopsis
+     "Inference on the Overlap Coefficient: The Binormal Approach and Alternatives")
+    (description
+     "This package provides functions to construct confidence intervals for the
+Overlap Coefficient (OVL).  OVL measures the similarity between two
+distributions through the overlapping area of their distribution functions.
+Given its intuitive description and ease of visual representation by the
+straightforward depiction of the amount of overlap between the two corresponding
+histograms based on samples of measurements from each one of the two
+distributions, the development of accurate methods for confidence interval
+construction can be useful for applied researchers.  Implements methods based on
+the work of Franco-Pereira, A.M., Nakas, C.T., Reiser, B., and Pardo, M.C.
+(2021) <doi:10.1177/09622802211046386>.")
+    (license license:gpl2)))
+
 (define-public r-overviewr
   (package
     (name "r-overviewr")

@@ -6217,6 +6217,37 @@ Analysis of Rare-Variant Association Summary Statistics using MTAR\" by Luo, L.,
 Shen, J., Zhang, H., Chhibber, A. Mehrotra, D.V., Tang, Z., 2019 (submitted).")
     (license license:gpl2+)))
 
+(define-public r-mtaft
+  (package
+    (name "r-mtaft")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MTAFT" version))
+       (sha256
+        (base32 "0fpvfl19dmp4b6mn55xn42n1v5qml18bxfisa7a1xb5nxdflpxr4"))))
+    (properties `((upstream-name . "MTAFT")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-grpreg))
+    (home-page "https://cran.r-project.org/package=MTAFT")
+    (synopsis
+     "Data-Driven Estimation for Multi-Threshold Accelerate Failure Time Model")
+    (description
+     "Developed a data-driven estimation framework for the multi-threshold accelerate
+failure time (MTAFT) model.  The MTAFT model features different linear forms in
+different subdomains, and one of the major challenges is determining the number
+of threshold effects.  The package introduces a data-driven approach that
+utilizes a Schwarz information criterion, which demonstrates consistency under
+mild conditions.  Additionally, a cross-validation (CV) criterion with an
+order-preserved sample-splitting scheme is proposed to achieve consistent
+estimation, without the need for additional parameters.  The package establishes
+the asymptotic properties of the parameter estimates and includes an efficient
+score-type test to examine the existence of threshold effects.  The
+methodologies are supported by numerical experiments and theoretical results,
+showcasing their reliable performance in finite-sample cases.")
+    (license license:gpl3)))
+
 (define-public r-mta
   (package
     (name "r-mta")
@@ -6992,30 +7023,28 @@ signatures. @code{mSigTools} stands for mutational Signature analysis Tools.")
 (define-public r-msigseg
   (package
     (name "r-msigseg")
-    (version "0.1.3")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MSigSeg" version))
        (sha256
-        (base32 "1wxjhby18sj6ixh0y4cd5v0yrbypd3jlzl069c4bzpazqq03s1jz"))))
+        (base32 "0675nkv5lqw3y19i6bcqhc1jc9qjmyf0x01224d098kfwl74lxiw"))))
     (properties `((upstream-name . "MSigSeg")))
     (build-system r-build-system)
-    (propagated-inputs (list r-mass))
+    (propagated-inputs (list r-mass r-ggpubr r-ggplot2))
     (home-page "https://cran.r-project.org/package=MSigSeg")
-    (synopsis "Common Change Points Detection for Multiple Signals")
+    (synopsis "Multiple SIGnal SEGmentation")
     (description
-     "Traditional change points detection methods do not have ability in detecting
-optimal common change points for multi-signal.  This package implements common
-change points detection for multiple signals, can be used in bioinformatics,
-economics and many other fields.  Unlike detecting single signals independently,
-this package can detect optimal common change points with more sensitivity and
-specificity.  After receiving the collected signal, this method selects the
-number of change points and the original matrix according to the actual
-situation, solves the minimization optimization problem based on different input
-parameters, obtains the position of change points and processed signal.  The
-fun_segmentation_PELT(), fun_lambda_estimator() functions are the main functions
-of this package.")
+     "Traditional methods typically detect breakpoints from individual signals, which
+means that when applied separately to multiple signals, the breakpoints are not
+aligned.  However, this package implements a common breakpoint detection
+approach for multiple piecewise constant signals, resulting in increased
+detection sensitivity and specificity.  By employing various techniques, optimal
+performance is ensured, and computation is accelerated.  We hope that this
+package will be beneficial for researchers in signal processing, bioinformatics,
+economy, and other related fields.  The segmentation(), lambda_estimator()
+functions are the main functions of this package.")
     (license license:gpl3)))
 
 (define-public r-msig
@@ -7583,13 +7612,13 @@ delete this entity in the less sensible mode and combine both matrices.")
 (define-public r-mscmt
   (package
     (name "r-mscmt")
-    (version "1.3.7")
+    (version "1.3.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MSCMT" version))
        (sha256
-        (base32 "1h9g6n7wjh8zx7y1lj7inkn9hz5jbf8q5lhf13m2r9qlw122rlri"))))
+        (base32 "0d9mwhgnbqw5783idh9isx4hng287c8ca5fz5zixz3v0i86hcp0x"))))
     (properties `((upstream-name . "MSCMT")))
     (build-system r-build-system)
     (propagated-inputs (list r-rglpk r-rdpack r-lpsolveapi r-lpsolve r-ggplot2))
@@ -12086,6 +12115,45 @@ unified skew-normal (SUN), extended skew-normal (ESN), skew-normal (SN), and
 symmetric normal (N) are also included.  Density, probabilities and random
 deviates are also offered for these members.")
     (license license:gpl2+)))
+
+(define-public r-momocs
+  (package
+    (name "r-momocs")
+    (version "1.4.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Momocs" version))
+       (sha256
+        (base32 "0g8mxk62pdif47p96pzqzfjdjarqwyk71zw9avsgy160mz8mpd81"))))
+    (properties `((upstream-name . "Momocs")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vegan
+                             r-tibble
+                             r-sp
+                             r-sf
+                             r-rcolorbrewer
+                             r-progress
+                             r-mass
+                             r-magrittr
+                             r-jpeg
+                             r-ggplot2
+                             r-geomorph
+                             r-geometry
+                             r-dplyr
+                             r-dendextend
+                             r-cluster))
+    (home-page "https://github.com/MomX/Momocs/")
+    (synopsis "Morphometrics using R")
+    (description
+     "The goal of Momocs is to provide a complete, convenient, reproducible and
+open-source toolkit for 2D morphometrics.  It includes most common 2D
+morphometrics approaches on outlines, open outlines, configurations of
+landmarks, traditional morphometrics, and facilities for data preparation,
+manipulation and visualization with a consistent grammar throughout.  It allows
+reproducible, complex morphometrics analyses and other morphometrics approaches
+should be easy to plug in, or develop from, on top of this canvas.")
+    (license (list license:gpl2 license:gpl3))))
 
 (define-public r-momentuhmm
   (package
@@ -35234,13 +35302,13 @@ at stationary sites.")
 (define-public r-mazamacoreutils
   (package
     (name "r-mazamacoreutils")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MazamaCoreUtils" version))
        (sha256
-        (base32 "0y44f56iq5j4yjrigwsj3nchnhzwfdisnq79k4rk2wr4gxza16r1"))))
+        (base32 "0c0z9wbfcr2climkap97bxwqb5qpi6svkjw42gdzq56mgqng3asl"))))
     (properties `((upstream-name . "MazamaCoreUtils")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

@@ -542,6 +542,45 @@ null plots using permutation and simulation.  Calculate distance metrics for a
 lineup, and examine the distributions of metrics.")
     (license license:gpl2+)))
 
+(define-public r-nueton
+  (package
+    (name "r-nueton")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NUETON" version))
+       (sha256
+        (base32 "0sqd2pcsy2c2s77aivi5s4mnb7xkzja9hnc4cgdgx4hdisdwvgdj"))))
+    (properties `((upstream-name . "NUETON")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=NUETON")
+    (synopsis "Nitrogen Use Efficiency Toolkit on Numerics")
+    (description
+     "Comprehensive R package designed to facilitate the calculation of Nitrogen Use
+Efficiency (NUE) indicators using experimentally derived data.  The package
+incorporates 23 parameters categorized into six fertilizer-based, four
+plant-based, three soil-based, three isotope-based, two ecology-based, and four
+system-based indicators, providing a versatile platform for NUE assessment.  As
+of the current version, NUETON serves as a starting point for users to compute
+NUE indicators from their experimental data.  Future updates are planned to
+enhance the package's capabilities, including robust data visualization tools
+and error margin consideration in calculations.  Additionally, statistical
+methods will be integrated to ensure the accuracy and reliability of the
+calculated indicators.  All formulae used in NUETON are thoroughly referenced
+within the source code, and the package is released as open source software.
+Users are encouraged to provide feedback and contribute to the improvement of
+this package.  It is important to note that the current version of NUETON is not
+intended for rigorous research purposes, and users are responsible for
+validating their results.  The package developers do not assume liability for
+any inaccuracies in calculations.  This package includes content from Congreves
+KA, Otchere O, Ferland D, Farzadfar S, Williams S and Arcand MM (2021) Nitrogen
+Use Efficiency Definitions of Today and Tomorrow.  Front.  Plant Sci.
+12:637108. <doi:10.3389/fpls.2021.637108>.  The article is available under the
+Creative Commons Attribution License (CC BY) C. 2021 Congreves, Otchere,
+Ferland, Farzadfar, Williams and Arcand.")
+    (license license:gpl3)))
+
 (define-public r-nucombog
   (package
     (name "r-nucombog")
@@ -840,6 +879,34 @@ beta diversity, used by Ning et al (2020) <doi:10.1038/s41467-020-18560-z>.")
 dependent and independent data, estimating the cumulative-dynamic ROC curve in
 presence of censored data, and performing meta-analysis studies, among others.")
     (license license:gpl3+)))
+
+(define-public r-nsrfa
+  (package
+    (name "r-nsrfa")
+    (version "0.7-16")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nsRFA" version))
+       (sha256
+        (base32 "1l6072fqpqlzpp5350mg98vsv0w58mcn8masvyivfqqw9v5h4bzn"))))
+    (properties `((upstream-name . "nsRFA")))
+    (build-system r-build-system)
+    (native-inputs (list gfortran))
+    (home-page "https://cran.r-project.org/package=nsRFA")
+    (synopsis "Non-Supervised Regional Frequency Analysis")
+    (description
+     "This package provides a collection of statistical tools for objective
+(non-supervised) applications of the Regional Frequency Analysis methods in
+hydrology.  The package refers to the index-value method and, more precisely,
+helps the hydrologist to: (1) regionalize the index-value; (2) form homogeneous
+regions with similar growth curves; (3) fit distribution functions to the
+empirical regional growth curves.  Most of the methods are those described in
+the Flood Estimation Handbook (Centre for Ecology & Hydrology, 1999,
+ISBN:9781906698003).  Homogeneity tests from Hosking and Wallis (1993)
+<doi:10.1029/92WR01980> and Viglione et al. (2007) <doi:10.1029/2006WR005095>
+are available.")
+    (license license:gpl2+)))
 
 (define-public r-nspmix
   (package
@@ -2371,13 +2438,13 @@ multivariate observations.")
 (define-public r-npcox
   (package
     (name "r-npcox")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NPCox" version))
        (sha256
-        (base32 "09cyaj2xlad8277bw5nbdi51imhw5dr78zqks0cz3513igc262sa"))))
+        (base32 "0l3nrs7mqcpbh8qjzn6ckr6r12zzawb6jsmqb52ljhamrvskmg9j"))))
     (properties `((upstream-name . "NPCox")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=NPCox")

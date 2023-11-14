@@ -15,8 +15,8 @@
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages maths)
   #:use-module (gnu packages bioinformatics)
+  #:use-module (gnu packages maths)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages photo)
@@ -13070,6 +13070,33 @@ apps, in part by wrapping the js-cookie @code{JavaScript} library
 <https://github.com/js-cookie/js-cookie>.")
     (license license:expat)))
 
+(define-public r-cookiemonster
+  (package
+    (name "r-cookiemonster")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cookiemonster" version))
+       (sha256
+        (base32 "1440f757hg6sgzp33pgs9hn752fnvndjhkqcdszik52vj3nhb10z"))))
+    (properties `((upstream-name . "cookiemonster")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs
+                             r-urltools
+                             r-tibble
+                             r-stringi
+                             r-rappdirs
+                             r-openssl
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=cookiemonster")
+    (synopsis "Your Friendly Solution to Managing Browser Cookies")
+    (description
+     "This package provides a convenient tool to store and format browser cookies and
+use them in HTTP requests (for example, through httr2', httr or curl').")
+    (license license:gpl3+)))
+
 (define-public r-cookiecutter
   (package
     (name "r-cookiecutter")
@@ -13944,17 +13971,16 @@ research.")
 (define-public r-constructive
   (package
     (name "r-constructive")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "constructive" version))
        (sha256
-        (base32 "0rvj9c8vzw0c8yqm5v2j8bnnbwzlz43ga2gd3617q2bw455s4hx9"))))
+        (base32 "1k9mzlbjfcqs2a5cm86p6fdcflj2dv17m1rxz3jh0fqpiqy5lp8d"))))
     (properties `((upstream-name . "constructive")))
     (build-system r-build-system)
     (propagated-inputs (list r-waldo
-                             r-styler
                              r-roxygen2
                              r-rlang
                              r-ellipsis
@@ -31465,13 +31491,13 @@ composed of recommendation and database manipulation functions.  See Aggarwal
 (define-public r-cfid
   (package
     (name "r-cfid")
-    (version "0.1.4")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cfid" version))
        (sha256
-        (base32 "1jd66vy71b5y4ng4k5ln08cm0pa1xrzd9in1l4d1qq4cnw5qa724"))))
+        (base32 "05liqg4m4rya15b9m2xdfwrbjvmlm26bqfrma0zj17x9rdvk24bz"))))
     (properties `((upstream-name . "cfid")))
     (build-system r-build-system)
     (home-page "https://github.com/santikka/cfid")
@@ -31483,7 +31509,8 @@ models via the ID* and IDC* algorithms by Shpitser, I. and Pearl, J. (2007,
 Provides a simple interface for defining causal diagrams and counterfactual
 conjunctions.  Construction of parallel worlds graphs and counterfactual graphs
 is carried out automatically based on the counterfactual query and the causal
-diagram.")
+diagram.  See Tikka, S. (2023) <doi:10.32614/RJ-2023-053> for a tutorial of the
+package.")
     (license license:gpl3+)))
 
 (define-public r-cffr
@@ -38574,13 +38601,13 @@ is more easily searched: <https://publicaccountability.org/>.")
 (define-public r-camml
   (package
     (name "r-camml")
-    (version "0.2.3")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CAMML" version))
        (sha256
-        (base32 "0qzp5hmsrq89jvizsvjrp1q01f9nc3fbn7ka964xp75f6pvckph6"))))
+        (base32 "0h2wfbafgcci1rrdq6qc634nf0d1h47ccajziifg1fhk7m8s56i7"))))
     (properties `((upstream-name . "CAMML")))
     (build-system r-build-system)
     (propagated-inputs (list r-vam

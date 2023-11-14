@@ -2459,16 +2459,16 @@ RStudio CRAN mirror.")
 (define-public r-visualize
   (package
     (name "r-visualize")
-    (version "4.4.0")
+    (version "4.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "visualize" version))
        (sha256
-        (base32 "1k3jpvj1yysxc4g1a1w3m1y91104aqxqv8jh9qdd23gwy7a29525"))))
+        (base32 "0bsdyqakidgdgxhzyl6w0pg3mnkj84550c4s7dwcwjjqqjsr9bj1"))))
     (properties `((upstream-name . "visualize")))
     (build-system r-build-system)
-    (home-page "https://github.com/coatless/visualize")
+    (home-page "https://github.com/coatless-rpkg/visualize")
     (synopsis
      "Graph Probability Distributions with User Supplied Parameters and Statistics")
     (description

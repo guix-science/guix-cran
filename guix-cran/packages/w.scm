@@ -3254,13 +3254,13 @@ examined in Joshi, Pustejovsky, and Beretvas (2022) <DOI:10.1002/jrsm.1554>.")
 (define-public r-wildlifedi
   (package
     (name "r-wildlifedi")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wildlifeDI" version))
        (sha256
-        (base32 "0rpbrnclj07pdcsrkc2bin52msh1k2a38454227jk6wfb372gprg"))))
+        (base32 "0z2zw3q4kapfw7h998mc33l3210f6b7jr3fzcmvw6dc9lkzl49wj"))))
     (properties `((upstream-name . "wildlifeDI")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-sf r-dplyr r-adehabitatlt))

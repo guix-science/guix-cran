@@ -5934,37 +5934,6 @@ Oscillation data, North Atlantic Oscillation and Arctic Oscillation.  Data
 sources are described in the help files for each function.")
     (license license:gpl3)))
 
-(define-public r-rsofun
-  (package
-    (name "r-rsofun")
-    (version "4.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rsofun" version))
-       (sha256
-        (base32 "1vq5hrjqq3ppki5rxd2gl3219p3cxg5ajgr14ynxkyg9sdbmnsb0"))))
-    (properties `((upstream-name . "rsofun")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-purrr
-                             r-multidplyr
-                             r-magrittr
-                             r-gensa
-                             r-dplyr
-                             r-bayesiantools))
-    (native-inputs (list r-knitr gfortran))
-    (home-page "https://github.com/geco-bern/rsofun")
-    (synopsis "The P-Model and BiomeE Modelling Framework")
-    (description
-     "This package implements the Simulating Optimal FUNctioning framework for
-site-scale simulations of ecosystem processes, including model calibration.  It
-contains Fortran 90 modules for the P-model (Stocker et al. (2020)
-<doi:10.5194/gmd-13-1545-2020>), SPLASH (Davis et al. (2017)
-<doi:10.5194/gmd-10-689-2017>) and @code{BiomeE} (Weng et al. (2015)
-<doi:10.5194/bg-12-2655-2015>).")
-    (license license:gpl3)))
-
 (define-public r-rsocrata
   (package
     (name "r-rsocrata")
@@ -25800,35 +25769,6 @@ functions to create R packages that use Rust code.  Under the hood, the Rust
 crate extendr is used to do all the heavy lifting.")
     (license license:expat)))
 
-(define-public r-rexpokit
-  (package
-    (name "r-rexpokit")
-    (version "0.26.6.12")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rexpokit" version))
-       (sha256
-        (base32 "0c1lsjyaf7lsh5qbg7hdzb85v7zxprx773mv211q6m5mm01p9331"))))
-    (properties `((upstream-name . "rexpokit")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
-    (native-inputs (list gfortran))
-    (home-page "http://phylo.wikidot.com/rexpokit")
-    (synopsis "R Wrappers for EXPOKIT; Other Matrix Functions")
-    (description
-     "Wraps some of the matrix exponentiation utilities from EXPOKIT
-(<http://www.maths.uq.edu.au/expokit/>), a FORTRAN library that is widely
-recommended for matrix exponentiation (Sidje RB, 1998. \"Expokit: A Software
-Package for Computing Matrix Exponentials.\" ACM Trans.  Math.  Softw.  24(1):
-130-156).  EXPOKIT includes functions for exponentiating both small, dense
-matrices, and large, sparse matrices (in sparse matrices, most of the cells have
-value 0).  Rapid matrix exponentiation is useful in phylogenetics when we have a
-large number of states (as we do when we are inferring the history of
-transitions between the possible geographic ranges of a species), but is
-probably useful in other ways as well.")
-    (license license:gpl2+)))
-
 (define-public r-rexperigen
   (package
     (name "r-rexperigen")
@@ -33603,13 +33543,13 @@ to factors in the same order as exported from @code{SurveyXact}'.")
 (define-public r-readsparse
   (package
     (name "r-readsparse")
-    (version "0.1.5-3")
+    (version "0.1.5-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "readsparse" version))
        (sha256
-        (base32 "1xqagkpapi1pqv30baa2dcglrywr69vajfp4y29smbmk26b1sas6"))))
+        (base32 "0r6gk7r6dy5ibb3gf4dzr3891vq950dsi31rm8ffp69ki7wjyxnd"))))
     (properties `((upstream-name . "readsparse")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-matrix))
@@ -37135,41 +37075,6 @@ sample fitting applications.  Also supplies additional custom coders for the
 vtreat package.")
     (license (list license:gpl2 license:gpl3))))
 
-(define-public r-rcppdist
-  (package
-    (name "r-rcppdist")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RcppDist" version))
-       (sha256
-        (base32 "02g57xwfipdcljv06krhm02dbqn9kfyj2km6rdg0a7vq9prwdz1x"))))
-    (properties `((upstream-name . "RcppDist")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/duckmayr/RcppDist")
-    (synopsis "'Rcpp' Integration of Additional Probability Distributions")
-    (description
-     "The Rcpp package provides a C++ library to make it easier to use C++ with R. R
-and Rcpp provide functions for a variety of statistical distributions.  Several
-R packages make functions available to R for additional statistical
-distributions.  However, to access these functions from C++ code, a costly call
-to the R functions must be made. @code{RcppDist} provides a header-only C++
-library with functions for additional statistical distributions that can be
-called from C++ when writing code using Rcpp or @code{RcppArmadillo}'.
-Functions are available that return a @code{NumericVector} as well as doubles,
-and for multivariate or matrix distributions, Armadillo vectors and matrices.
-@code{RcppDist} provides functions for the following distributions: the four
-parameter beta distribution; the location- scale t distribution; the truncated
-normal distribution; the truncated t distribution; a truncated location-scale t
-distribution; the triangle distribution; the multivariate normal distribution*;
-the multivariate t distribution*; the Wishart distribution*; and the inverse
-Wishart distribution*.  Distributions marked with an asterisk rely on
-@code{RcppArmadillo}'.")
-    (license license:gpl2+)))
-
 (define-public r-rcppdate
   (package
     (name "r-rcppdate")
@@ -38178,13 +38083,13 @@ outcome using BUGS code from Bristol University (Lu and Ades).")
 (define-public r-rcmdrplugin-riskdemo
   (package
     (name "r-rcmdrplugin-riskdemo")
-    (version "3.0")
+    (version "3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcmdrPlugin.RiskDemo" version))
        (sha256
-        (base32 "1l065hqcd84vl0147yyysyyh7k45rypzlrfrn16c9486ynjkbc45"))))
+        (base32 "03mqjb5jnpnbvbrliv6bk7kmlwbbhgf3fpbmb8vhncpld19lfsgp"))))
     (properties `((upstream-name . "RcmdrPlugin.RiskDemo")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -47352,13 +47257,13 @@ financial portfolio aligns with climate goals.")
 (define-public r-r2dii-data
   (package
     (name "r-r2dii-data")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r2dii.data" version))
        (sha256
-        (base32 "1jsrdrymdcb4hxi35dn6mpvhikbjzbgm9ycqdh3cfq75c22q600b"))))
+        (base32 "1sf8jyzn9ly8hn1fdph440pl666hcgpjds51h8apprqivn3ky9cv"))))
     (properties `((upstream-name . "r2dii.data")))
     (build-system r-build-system)
     (propagated-inputs (list r-lifecycle))

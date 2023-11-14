@@ -2419,13 +2419,13 @@ H., and Datta, S. (2017) <doi:10.1002/sim.7288> Dutta, S. and Datta, S. (2015)
 (define-public r-hstats
   (package
     (name "r-hstats")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hstats" version))
        (sha256
-        (base32 "1izl6jab013849rm4276p04vy4b2lngs1a5lg4q3vvdhf8wmkscv"))))
+        (base32 "0bs9ymciry8xsm7ql6m47bfgapxpacgjizyqij690q9ynn52hd8i"))))
     (properties `((upstream-name . "hstats")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))

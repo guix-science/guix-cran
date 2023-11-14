@@ -6034,13 +6034,13 @@ regularization.  See also Epskamp, Waldorp, Mottus & Borsboom (2018)
 (define-public r-graphicalextremes
   (package
     (name "r-graphicalextremes")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "graphicalExtremes" version))
        (sha256
-        (base32 "00nfm6dkmx9cv9j6462vvkd72x72r4yyibg5hh9jifnss9p7smjh"))))
+        (base32 "17jiwiq2qang1mnsz9347cwfvg4jf732rczsjidwwr0646vihrqf"))))
     (properties `((upstream-name . "graphicalExtremes")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack

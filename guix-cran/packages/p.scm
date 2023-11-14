@@ -9001,13 +9001,13 @@ Quebec between 1980 and 2020.")
 (define-public r-premium
   (package
     (name "r-premium")
-    (version "3.2.10")
+    (version "3.2.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PReMiuM" version))
        (sha256
-        (base32 "000v6fqmh0v9747yvd8vfbfmic6jhpd5k9pj7yc0a8b0yw89xydp"))))
+        (base32 "0jxx7wcn790jvmxq3f82c28pykqvxwa6wgmvdkn7c20mmjlgh93l"))))
     (properties `((upstream-name . "PReMiuM")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdep
@@ -31000,13 +31000,13 @@ patient profile report(s) or can be embedded in custom report(s).")
 (define-public r-patientprofiles
   (package
     (name "r-patientprofiles")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PatientProfiles" version))
        (sha256
-        (base32 "0ya7zk9a6v1hkai5vjdbf0jc86wxvxz8aqpzp2i1h5i0i89k6y2n"))))
+        (base32 "1g815fgzn555r9r6pzka84h0japnyy4zfd3r12cv53ljrxzvyidc"))))
     (properties `((upstream-name . "PatientProfiles")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -35071,6 +35071,27 @@ information that is difficult to detect with the ggplot2 default and even
 supposedly \"good\" colormaps like viridis.  This library let's you use the
 Painbow in your own ggplot graphs.")
     (license license:expat)))
+
+(define-public r-paice
+  (package
+    (name "r-paice")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PAICE" version))
+       (sha256
+        (base32 "1qnyg5p62xryifjnbc2z5yxy4s5fszxf713cgaisds96wjqvzx8a"))))
+    (properties `((upstream-name . "PAICE")))
+    (build-system r-build-system)
+    (home-page "<https://github.com/PAICEcode/PAICE>")
+    (synopsis "Phylogeographic Analysis of Island Colonization Events")
+    (description
+     "Estimation of the number of colonization events between islands of the same
+archipelago for a species.  It uses rarefaction curves to control for both field
+and genetic sample sizes as it was described in Coello et al. (2022)
+<doi:10.1111/jbi.14341>.")
+    (license license:gpl2)))
 
 (define-public r-pagwas
   (package

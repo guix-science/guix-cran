@@ -19186,30 +19186,6 @@ For the sake of convenience, the package includes the monthly and daily data on
 the prices (not adjusted for dividends) of the S&P 500 stock market index.")
     (license license:gpl3)))
 
-(define-public r-bb
-  (package
-    (name "r-bb")
-    (version "2019.10-1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "BB" version))
-       (sha256
-        (base32 "0kf9sfsm3n036a8a8gjfpc9qdryvadb019kqjh80n1szdv7bdl04"))))
-    (properties `((upstream-name . "BB")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-quadprog))
-    (home-page
-     "http://www.jhsph.edu/agingandhealth/People/Faculty_personal_pages/Varadhan.html")
-    (synopsis "Solving and Optimizing Large-Scale Nonlinear Systems")
-    (description
-     "Barzilai-Borwein spectral methods for solving nonlinear system of equations, and
-for optimizing nonlinear objective functions subject to simple constraints.  A
-tutorial style introduction to this package is available in a vignette on the
-CRAN download page or, when the package is loaded in an R session, with
-vignette(\"BB\").")
-    (license license:gpl3)))
-
 (define-public r-bazar
   (package
     (name "r-bazar")

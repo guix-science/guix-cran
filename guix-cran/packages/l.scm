@@ -8964,6 +8964,61 @@ method are available in Plana-Ripoll et al. (2020)
 <doi:10.1371/journal.pone.0228073> and Andersen (2017) <doi:10.1002/sim.7357>.")
     (license license:expat)))
 
+(define-public r-lilikoi
+  (package
+    (name "r-lilikoi")
+    (version "2.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lilikoi" version))
+       (sha256
+        (base32 "14bz7a1wcgr5fsf6mpsibxa7ks302a1lwnjdjzwh72z490fz8gaw"))))
+    (properties `((upstream-name . "lilikoi")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survminer
+                             r-survival
+                             r-stringr
+                             r-scales
+                             r-rweka
+                             r-reticulate
+                             r-reshape
+                             r-proc
+                             r-princurve
+                             r-preprocesscore
+                             r-plyr
+                             r-pathview
+                             r-mlmetrics
+                             r-metrics
+                             r-m3c
+                             r-limma
+                             r-infotheo
+                             r-impute
+                             r-h2o
+                             r-glmnet
+                             r-ggplot2
+                             r-gbm
+                             r-dplyr
+                             r-caret
+                             r-car))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=lilikoi")
+    (synopsis "Metabolomics Personalized Pathway Analysis Tool")
+    (description
+     "This package provides a comprehensive analysis tool for metabolomics data.  It
+consists a variety of functional modules, including several new modules: a
+pre-processing module for normalization and imputation, an exploratory data
+analysis module for dimension reduction and source of variation analysis, a
+classification module with the new deep-learning method and other
+machine-learning methods, a prognosis module with cox-PH and neural-network
+based Cox-nnet methods, and pathway analysis module to visualize the pathway and
+interpret metabolite-pathway relationships.  References: H. Paul Benton
+<http://www.metabolomics-forum.com/index.php?topic=281.0> Jeff Xia
+<https://github.com/cangfengzhe/Metabo/blob/master/@code{MetaboAnalyst/website/name_match.R>}
+Travers Ching, Xun Zhu, Lana X. Garmire (2018)
+<doi:10.1371/journal.pcbi.1006076>.")
+    (license license:gpl2)))
+
 (define-public r-likertmaker
   (package
     (name "r-likertmaker")

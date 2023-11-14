@@ -3835,13 +3835,13 @@ Mainly as a programming example for teaching purposes.")
 (define-public r-jacobi
   (package
     (name "r-jacobi")
-    (version "3.0.0")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jacobi" version))
        (sha256
-        (base32 "13a7jnfmjk1ssdawipk2gcvmr5bj8bl30miab456nhg89r52nqj5"))))
+        (base32 "0bmkycis7kydgpybybv3s6ib6cxp65jh0krc67z6bglfxnbv7pqk"))))
     (properties `((upstream-name . "jacobi")))
     (build-system r-build-system)
     (propagated-inputs (list r-rvcg r-rgl r-rcpp r-carlson))
@@ -3852,8 +3852,8 @@ Mainly as a programming example for teaching purposes.")
 elliptic function, Weierstrass sigma function, Weierstrass zeta function, Klein
 j-function, Dedekind eta function, lambda modular function, Jacobi elliptic
 functions, Neville theta functions, Eisenstein series, lemniscate elliptic
-functions, and Dixon elliptic functions.  Complex values of the variable are
-supported.")
+functions, elliptic alpha function, Rogers-Ramanujan continued fractions, and
+Dixon elliptic functions.  Complex values of the variable are supported.")
     (license license:gpl3)))
 
 (define-public r-jackstraw

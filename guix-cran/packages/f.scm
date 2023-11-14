@@ -10568,13 +10568,13 @@ visualization of the state vector and graphical diagnostics of the residuals.")
 (define-public r-fjordlight
   (package
     (name "r-fjordlight")
-    (version "0.6")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FjordLight" version))
        (sha256
-        (base32 "1w3l4b9zajz8w2iimmpaklgv2acf0ym3x53rrbdjiy7ck644pvn1"))))
+        (base32 "1s9kw93c8mx9n2l566df32hp70zcmjjnlkmrg3qpfkicg92dbqij"))))
     (properties `((upstream-name . "FjordLight")))
     (build-system r-build-system)
     (propagated-inputs (list r-raster r-ncdf4 r-curl))
@@ -12924,13 +12924,13 @@ tags and proper file extensions.")
 (define-public r-filecacher
   (package
     (name "r-filecacher")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "filecacher" version))
        (sha256
-        (base32 "050mvi5z8gmfbshx7fcy6d67n0mswzcsnwa97hyzl67mk3bwy8dr"))))
+        (base32 "15v8wklny6sb9s309im6i9ibkrvnrbvyw8gckb2vxxyvx971qcg0"))))
     (properties `((upstream-name . "filecacher")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -21010,13 +21010,13 @@ regression coefficients by Hoff and Yu <DOI:10.1214/18-EJS1517>.")
 (define-public r-f1datar
   (package
     (name "r-f1datar")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "f1dataR" version))
        (sha256
-        (base32 "1azh0ij9a8szgkbsz00nyg5gijk1q1bpd9lphyv3kkg65sap7r8i"))))
+        (base32 "0ky84g4s454inl0px9x6qr3ki0z8cwhalrhikvv77q9kgv0fnzxz"))))
     (properties `((upstream-name . "f1dataR")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr

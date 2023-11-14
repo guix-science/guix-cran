@@ -7387,21 +7387,21 @@ container.")
 (define-public r-dockerfiler
   (package
     (name "r-dockerfiler")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dockerfiler" version))
        (sha256
-        (base32 "0nmxm73djmrg22iyzylj9wng1hsg56pnr87vspywf8jv4q2vpjvp"))))
+        (base32 "0j5j93hbqgc9qscadldk8j2knx87q2l91fwsjhh792jflvwxgfzi"))))
     (properties `((upstream-name . "dockerfiler")))
     (build-system r-build-system)
     (propagated-inputs (list r-usethis
-                             r-renv
                              r-remotes
                              r-r6
                              r-pkgbuild
                              r-pak
+                             r-memoise
                              r-jsonlite
                              r-glue
                              r-fs
@@ -8906,13 +8906,13 @@ notification messages and to avoid redundancy.")
 (define-public r-diyar
   (package
     (name "r-diyar")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "diyar" version))
        (sha256
-        (base32 "00shi5vz8qgyvd5xkxxvr5xdcqzx64c7c1flihbg95nnf3yqg557"))))
+        (base32 "0md7hrjcla4z3ck9kb387x4cmf8ca7sm9qw4a9mby9xj6abkd8id"))))
     (properties `((upstream-name . "diyar")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-ggplot2))

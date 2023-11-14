@@ -10263,13 +10263,13 @@ criteria are available for variable selection.")
 (define-public r-stepr
   (package
     (name "r-stepr")
-    (version "2.1-8")
+    (version "2.1-9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stepR" version))
        (sha256
-        (base32 "0gvlxxl82190ra99qwnwxx7q81w228m04x9c687hrihpmldlqjpp"))))
+        (base32 "1dw402p49j2m076b7ybmnfhxhxb4i8fnalqqblxq2ax7rl69i2vz"))))
     (properties `((upstream-name . "stepR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-r-cache r-lowpassfilter r-digest))
@@ -15915,13 +15915,13 @@ formatting SQL statements.")
 (define-public r-sqlove
   (package
     (name "r-sqlove")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SQLove" version))
        (sha256
-        (base32 "0jmvhyqj1lb05ah4y5z2nmd8ml9f0i6kpig4vzsgv9h042awxi43"))))
+        (base32 "0k746spnhi07rdw8lbblsxgabqlzr3h368svxhs7987r333wlsyh"))))
     (properties `((upstream-name . "SQLove")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjdbc r-readr r-dbi))
@@ -21380,6 +21380,30 @@ include filtering and inference methods in Park and Ionides (2020)
 <@code{arXiv:2101.01157>}.")
     (license license:gpl3)))
 
+(define-public r-spatpca
+  (package
+    (name "r-spatpca")
+    (version "1.3.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SpatPCA" version))
+       (sha256
+        (base32 "1lx429glr6273ssy1in192jx4iynqidkfmj9iibwiij3fk9y0sa5"))))
+    (properties `((upstream-name . "SpatPCA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppparallel r-rcpparmadillo r-rcpp r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/egpivo/SpatPCA")
+    (synopsis "Regularized Principal Component Analysis for Spatial Data")
+    (description
+     "Provide regularized principal component analysis incorporating smoothness,
+sparseness and orthogonality of eigen-functions by using the alternating
+direction method of multipliers algorithm (Wang and Huang, 2017,
+<DOI:10.1080/10618600.2016.1157483>).  The method can be applied to either
+regularly or irregularly spaced data, including 1D, 2D, and 3D.")
+    (license license:gpl3)))
+
 (define-public r-spatialwidget
   (package
     (name "r-spatialwidget")
@@ -25450,13 +25474,13 @@ information and an example of implementation can be found in Markonis and Strnad
 (define-public r-sommer
   (package
     (name "r-sommer")
-    (version "4.3.2")
+    (version "4.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sommer" version))
        (sha256
-        (base32 "040gvhmhkqc0d5rq54h2avfhd924q570vshc7lxkljnljlc0izly"))))
+        (base32 "1kprflzhfq63jzf37v9wd0nigp19nxb5f7py35p7h70v4kcdv27c"))))
     (properties `((upstream-name . "sommer")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppprogress
@@ -49926,6 +49950,26 @@ Covenants, and the Pearl of Great Price.")
      "This package provides a small set of functions wrapping up the call stack and
 command line inspection needed to determine a running script's filename from
 within the script itself.")
+    (license license:expat)))
+
+(define-public r-scriptmapr
+  (package
+    (name "r-scriptmapr")
+    (version "0.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ScriptMapR" version))
+       (sha256
+        (base32 "18pd23yqn3ai1yfl149081n42hbh0d57hm71s2lhm1z7a5ccjkmf"))))
+    (properties `((upstream-name . "ScriptMapR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr r-formatr r-dplyr))
+    (home-page "https://cran.r-project.org/package=ScriptMapR")
+    (synopsis "R Script Visualization in Cytoscape")
+    (description
+     "Displays the content of a R script into the Cytoscape network-visualization app
+<https://cytoscape.org/>.")
     (license license:expat)))
 
 (define-public r-scriptloc
