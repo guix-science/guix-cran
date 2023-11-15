@@ -3126,13 +3126,13 @@ directly sampling from the order statistic distribution.")
 (define-public r-orders
   (package
     (name "r-orders")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "orders" version))
        (sha256
-        (base32 "1rn5pjfshinv4nqja9aw8cl3y33vgdd3xgn20q72h8gii5isrfps"))))
+        (base32 "05fq8mvqjvm4dir7zc7dxri3n6ar08afvrg49x8hbf920yqxkmq1"))))
     (properties `((upstream-name . "orders")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam r-newdistns r-gamlss-dist r-actuar))
@@ -8775,43 +8775,6 @@ Diagnostic Model (OHOEGDM) for Polytomous Data described by Culpepper, S. A. and
 Balamuta, J. J. (In Press) <doi:10.1080/00273171.2021.1985949>.")
     (license license:gpl2+)))
 
-(define-public r-ohmmed
-  (package
-    (name "r-ohmmed")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "oHMMed" version))
-       (sha256
-        (base32 "114azwvl40rbkfir9ypgnsivjymlrfn72cwnqah7plwhq22llqvf"))))
-    (properties `((upstream-name . "oHMMed")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vcd
-                             r-scales
-                             r-mistr
-                             r-gridextra
-                             r-ggplot2
-                             r-ggmcmc
-                             r-cvms))
-    (home-page "https://github.com/LynetteCaitlin/oHMMed")
-    (synopsis "HMMs with Ordered Hidden States and Emission Densities")
-    (description
-     "Inference using a class of Hidden Markov models (HMMs) called
-@code{oHMMed'(ordered} HMM with emission densities
-<doi:10.1101/2023.06.26.546495>): The @code{oHMMed} algorithms identify the
-number of comparably homogeneous regions within observed sequences with
-autocorrelation patterns.  These are modelled as discrete hidden states; the
-observed data points are then realisations of continuous probability
-distributions with state-specific means that enable ordering of these
-distributions.  The observed sequence is labelled according to the hidden
-states, permitting only neighbouring states that are also neighbours within the
-ordering of their associated distributions.  The parameters that characterise
-these state-specific distributions are then inferred.  Relevant for application
-to genomic sequences, time series, or any other sequence data with serial
-autocorrelation.")
-    (license license:gpl3)))
-
 (define-public r-ohit
   (package
     (name "r-ohit")
@@ -10738,6 +10701,28 @@ to see how much of a relationship needs to exist with the unmeasured variable
 before the conclusions change.  This package provides tools for doing a
 sensitivity analysis for regression (linear, logistic, and cox) style models.")
     (license license:gpl2)))
+
+(define-public r-obsmd
+  (package
+    (name "r-obsmd")
+    (version "11.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OBsMD" version))
+       (sha256
+        (base32 "0gxx3ja4ii5ql1ss43g23jrbwzg3193wchqmrdm0iq7g33mmd16y"))))
+    (properties `((upstream-name . "OBsMD")))
+    (build-system r-build-system)
+    (native-inputs (list gfortran))
+    (home-page "https://cran.r-project.org/package=OBsMD")
+    (synopsis "Objective Bayesian Model Discrimination in Follow-Up Designs")
+    (description
+     "This package implements the objective Bayesian methodology proposed in Consonni
+and Deldossi in order to choose the optimal experiment that better discriminate
+between competing models, see Deldossi and Nai Ruscone (2020)
+<doi:10.18637/jss.v094.i02>.")
+    (license license:gpl2+)))
 
 (define-public r-observer
   (package

@@ -10004,42 +10004,6 @@ P-spline is used while the covariate effects are estimated based on a modified
 Fisher-Scoring algorithm.  Overall the estimation relies on the mgcv'-package.")
     (license license:gpl2)))
 
-(define-public r-flexdotplot
-  (package
-    (name "r-flexdotplot")
-    (version "0.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "FlexDotPlot" version))
-       (sha256
-        (base32 "0526cnbq4a34k96b99x8i1pcdn1a70fvc9lagq7yd7bsq6fv2gvs"))))
-    (properties `((upstream-name . "FlexDotPlot")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sisal
-                             r-shinywidgets
-                             r-shinydashboard
-                             r-shiny
-                             r-scales
-                             r-reshape2
-                             r-magrittr
-                             r-htmltools
-                             r-grimport2
-                             r-gridextra
-                             r-ggplot2
-                             r-ggforce
-                             r-ggdendro
-                             r-factominer
-                             r-dt
-                             r-dendextend
-                             r-colourpicker
-                             r-bsplus))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/Simon-Leonard/FlexDotPlot")
-    (synopsis "Flexible Dot Plot")
-    (description "Flexible Dotplot and Pacman plot for multimodal data.")
-    (license license:gpl3)))
-
 (define-public r-flexdir
   (package
     (name "r-flexdir")
@@ -18284,6 +18248,43 @@ algorithm.  It allows for the cases with or without a noise.  See the reference:
 Mengyang Gu and Yanxun Xu (2017), <@code{arXiv:1711.11501>}.")
     (license license:gpl2+)))
 
+(define-public r-fastfmm
+  (package
+    (name "r-fastfmm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fastFMM" version))
+       (sha256
+        (base32 "0yfh09v8syifa5xnyp5z6ba13y8b9v24r7f298a4kx8gzykbxpdi"))))
+    (properties `((upstream-name . "fastFMM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-rfast
+                             r-refund
+                             r-progress
+                             r-mvtnorm
+                             r-mgcv
+                             r-matrix
+                             r-mass
+                             r-magrittr
+                             r-lsei
+                             r-lmeresampler
+                             r-lme4
+                             r-gridextra
+                             r-ggplot2
+                             r-dplyr
+                             r-caic4))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=fastFMM")
+    (synopsis "Fast Functional Mixed Models using Fast Univariate Inference")
+    (description
+     "Implementation of the fast univariate inference approach (Cui et al. (2022)
+<doi:10.1080/10618600.2021.1950006>, Loewinger et al. (2023)
+<doi:10.1101/2023.11.06.565896>) for fitting functional mixed models.")
+    (license license:gpl3+)))
+
 (define-public r-fasterelasticnet
   (package
     (name "r-fasterelasticnet")
@@ -19044,13 +19045,13 @@ some harmonization operations.")
 (define-public r-fao56
   (package
     (name "r-fao56")
-    (version "0.1.0")
+    (version "1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FAO56" version))
        (sha256
-        (base32 "0dl56gdsmx3ixxakz2xqrirss5xxbz62mvp7jdrgaizrn8xd802i"))))
+        (base32 "0qckfkka487sdvynjk1pl49scqykg7a2hrcyp00xzyl7x9nvim15"))))
     (properties `((upstream-name . "FAO56")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=FAO56")

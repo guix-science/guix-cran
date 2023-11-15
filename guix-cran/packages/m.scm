@@ -9191,13 +9191,13 @@ the book's many practical examples.")
 (define-public r-mpwr
   (package
     (name "r-mpwr")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mpwR" version))
        (sha256
-        (base32 "0s18dg39ff4llppjkriyz23xni22p59v7lfxpq917zsijghk4iad"))))
+        (base32 "16j81a4minl8710fl32k05g4xcpii7r3jqzypkmvxyhrb1mdvc1q"))))
     (properties `((upstream-name . "mpwR")))
     (build-system r-build-system)
     (propagated-inputs (list r-upsetr
@@ -14223,13 +14223,13 @@ deprecated testthat::with_mock() and testthat::local_mock()'.")
 (define-public r-mocha
   (package
     (name "r-mocha")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MOCHA" version))
        (sha256
-        (base32 "0rwdb4a58craah2rcnaz16v4m9a3d0vlkc3vn5bjjkqppgdafcc7"))))
+        (base32 "04rq58chdaj25dfky1dxhz594q4bj5i997zsgj3rz2gmsjdknw9i"))))
     (properties `((upstream-name . "MOCHA")))
     (build-system r-build-system)
     (propagated-inputs (list r-wcorr
@@ -14249,6 +14249,7 @@ deprecated testthat::with_mock() and testthat::local_mock()'.")
                              r-multiassayexperiment
                              r-matrixstats
                              r-magrittr
+                             r-lifecycle
                              r-iranges
                              r-ggridges
                              r-ggrepel
@@ -20426,13 +20427,13 @@ DNA Heteroplasmy calculated from single-cell datasets
 (define-public r-misty
   (package
     (name "r-misty")
-    (version "0.5.3")
+    (version "0.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "misty" version))
        (sha256
-        (base32 "05rb9pvklcxqypy35iba5rdkwsh7n0892ln3ycf4qx00hm79akcx"))))
+        (base32 "0gv3ax0wj70had5q4wfh8przmv6pfzm8amlrbbaby7m6h7x8i42m"))))
     (properties `((upstream-name . "misty")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
@@ -25841,6 +25842,35 @@ of data implemented in the package @code{funData}'.  For more details on the
 general concepts of both packages and a case study, see Happ-Kurz (2020)
 <doi:10.18637/jss.v093.i05>.")
     (license license:gpl2)))
+
+(define-public r-mfp2
+  (package
+    (name "r-mfp2")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mfp2" version))
+       (sha256
+        (base32 "03xv7zjdcsnyrawwpjgfw5g59h7miwh68wkmbvfkd8wxnfcdmmmv"))))
+    (properties `((upstream-name . "mfp2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/EdwinKipruto/mfp2")
+    (synopsis "Multivariable Fractional Polynomial Models with Extensions")
+    (description
+     "Multivariable fractional polynomial algorithm simultaneously selects variables
+and functional forms in both generalized linear models and Cox proportional
+hazard models.  Key references for this algorithm are Royston and Altman
+(1994)<doi:10.2307/2986270> and Sauerbrei and Royston (2008,
+ISBN:978-0-470-02842-1).  In addition, it can model a sigmoid relationship
+between variable x and an outcome variable y using the approximate cumulative
+distribution transformation proposed by Royston (2014)
+<doi:10.1177/1536867X1401400206>.  This feature distinguishes it from a standard
+fractional polynomial function, which lacks the ability to achieve such
+modeling.")
+    (license license:gpl3)))
 
 (define-public r-mfp
   (package
@@ -38734,28 +38764,6 @@ The object returned from the package can be used for thematic maps with the
 build-in functions provided in mapping or with other packages already available.")
     (license license:gpl2+)))
 
-(define-public r-mapmisc
-  (package
-    (name "r-mapmisc")
-    (version "2.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mapmisc" version))
-       (sha256
-        (base32 "0rj972xsl5jv7pa5q3nnqply0ivrdk7myfdxsw3hhqfsvjc8nk43"))))
-    (properties `((upstream-name . "mapmisc")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-terra r-geosphere))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=mapmisc")
-    (synopsis "Utilities for Producing Maps")
-    (description
-     "This package provides a minimal, light-weight set of tools for producing nice
-looking maps in R, with support for map projections.  See Brown (2016)
-<doi:10.32614/RJ-2016-005>.")
-    (license (list license:gpl2+ license:gpl3+))))
-
 (define-public r-mapme-biodiversity
   (package
     (name "r-mapme-biodiversity")
@@ -39014,59 +39022,6 @@ Horvath and Okamura (2013) <doi:10.1007/978-3-642-40725-3_10>, Okamura and Dohi
     (description
      "Suite of interactive functions and helpers for selecting and editing geospatial
 data.")
-    (license license:expat)))
-
-(define-public r-mapebay
-  (package
-    (name "r-mapebay")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MapeBay" version))
-       (sha256
-        (base32 "1w1lpnm8fd5gmv4ggrlmkaaj45wyx3yclx3fb2mdrp7iyg4rx34c"))))
-    (properties `((upstream-name . "MapeBay")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-waiter
-                             r-vegan
-                             r-tibble
-                             r-stringr
-                             r-stanheaders
-                             r-shinydashboardplus
-                             r-shinydashboard
-                             r-shinycssloaders
-                             r-shiny
-                             r-rstantools
-                             r-rstan
-                             r-reshape
-                             r-rcppparallel
-                             r-rcppeigen
-                             r-rcpp
-                             r-purrr
-                             r-nortest
-                             r-mvnormtest
-                             r-mvn
-                             r-moments
-                             r-manova-rm
-                             r-htmltools
-                             r-highcharter
-                             r-heplots
-                             r-dt
-                             r-dplyr
-                             r-car
-                             r-broom
-                             r-bh))
-    (home-page "https://cran.r-project.org/package=MapeBay")
-    (synopsis
-     "Multivariate Analysis of Variance Panel, PERMANOVA and Bayesian")
-    (description
-     "It covers approaches to multivariate analysis of variance, PERMANOVA and a
-Bayesian analysis, presenting an assumption test section together with a
-decision diagram that will allow selecting the appropriate technique for the
-analysis.  The presentation of results is through an interactive panel, in which
-you can view automatic conclusions based on the tests, dynamic graphics through
-Highchart', also the package uses Stan for Bayesian analysis.")
     (license license:expat)))
 
 (define-public r-mapdeck
@@ -41670,31 +41625,32 @@ and Stribling, J.B. (1999).")
 (define-public r-macrosyntr
   (package
     (name "r-macrosyntr")
-    (version "0.2.19")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "macrosyntR" version))
        (sha256
-        (base32 "1lydhr7rnh8kyj0pz9bfpjczsnxpy0z8gzphi7qc0s639nw1z8ay"))))
+        (base32 "1q9fbm36059r007cd80hlg662gwqfy17hqdakgbv6lgv9gy6ymif"))))
     (properties `((upstream-name . "macrosyntR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-stringr
+                             r-rlang
                              r-reshape2
                              r-igraph
-                             r-ggthemes
                              r-ggplot2
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/SamiLhll/macrosyntR")
-    (synopsis "Draw Ordered Oxford Grids")
+    (synopsis "Draw Ordered Oxford Grids and Chord Diagrams")
     (description
      "Use standard genomics file format (BED) and a table of orthologs to illustrate
-pair-wise synteny conservation at the genome-wide scale.  Significantly
-conserved linkage groups are identified as described in Simakov et al. (2020)
+synteny conservation at the genome-wide scale.  Significantly conserved linkage
+groups are identified as described in Simakov et al. (2020)
 <doi:10.1038/s41559-020-1156-z> and displayed on an Oxford Grid (Edwards (1991)
-<doi:10.1111/j.1469-1809.1991.tb00394.x>).  The package provides a function that
+<doi:10.1111/j.1469-1809.1991.tb00394.x>) or a chord diagram as in Simakov et
+al. (2022) <doi:10.1126/sciadv.abi5884>.  The package provides a function that
 uses a network-based greedy algorithm to find communities (Clauset et al. (2004)
 <doi:10.1103/@code{PhysRevE.70.066111>}) and so automatically order the
 chromosomes on the plot to improve interpretability.")

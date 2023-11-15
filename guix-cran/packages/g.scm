@@ -9745,13 +9745,13 @@ maximisation algorithm.  Bernhardt (2015) <doi:10.1016/j.csda.2014.11.011>.")
 (define-public r-gmvarkit
   (package
     (name "r-gmvarkit")
-    (version "2.0.10")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gmvarkit" version))
        (sha256
-        (base32 "095f35p7vvw4c3v332mjd8yzg6qrz8hx3zdq70xvv389yv7z4lsd"))))
+        (base32 "07i8arny0kvdd3j0q88v80is8jpiq6d2d3an3bp6b1hy8mz15dqi"))))
     (properties `((upstream-name . "gmvarkit")))
     (build-system r-build-system)
     (propagated-inputs (list r-pbapply r-mvnfast r-gsl r-brobdingnag))
@@ -14738,40 +14738,6 @@ probability density function of the t-distribution.")
 magnitude trends over time.")
     (license license:expat)))
 
-(define-public r-ggstats
-  (package
-    (name "r-ggstats")
-    (version "0.5.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ggstats" version))
-       (sha256
-        (base32 "1a3pbz07cbngcix450xqwfvr94r16m451d668szjsmrijqbbd1k6"))))
-    (properties `((upstream-name . "ggstats")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-stringr
-                             r-scales
-                             r-rlang
-                             r-purrr
-                             r-patchwork
-                             r-magrittr
-                             r-lifecycle
-                             r-ggplot2
-                             r-forcats
-                             r-dplyr
-                             r-cli
-                             r-broom-helpers))
-    (native-inputs (list r-knitr))
-    (home-page "https://larmarange.github.io/ggstats/")
-    (synopsis "Extension to 'ggplot2' for Plotting Stats")
-    (description
-     "This package provides new statistics, new geometries and new positions for
-ggplot2 and a suite of functions to facilitate the creation of statistical
-plots.")
-    (license license:gpl3+)))
-
 (define-public r-ggstar
   (package
     (name "r-ggstar")
@@ -17478,35 +17444,6 @@ with multiple plot which can be adjusted by more general and flexible input
 arguments.  It also provides a function to transform the classical data to
 symbolic data by both clustering algorithm and customized method.")
     (license license:gpl2+)))
-
-(define-public r-ggenealogy
-  (package
-    (name "r-ggenealogy")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ggenealogy" version))
-       (sha256
-        (base32 "19six9ln1yaqv268abm9qvb61nl8zdz3gghwr8hmwsa94xwhzhkq"))))
-    (properties `((upstream-name . "ggenealogy")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble
-                             r-reshape2
-                             r-plyr
-                             r-plotly
-                             r-igraph
-                             r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ggenealogy")
-    (synopsis "Visualization Tools for Genealogical Data")
-    (description
-     "This package provides methods for searching through genealogical data and
-displaying the results.  Plotting algorithms assist with data exploration and
-publication-quality image generation.  Includes interactive genealogy
-visualization tools.  Provides parsing and calculation methods for variables in
-descendant branches of interest.  Uses the Grammar of Graphics.")
-    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-ggedit
   (package
@@ -20658,13 +20595,13 @@ classes and functions.")
 (define-public r-geomodels
   (package
     (name "r-geomodels")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeoModels" version))
        (sha256
-        (base32 "063ggs9i946q836yk3m4jpf20kpa0l3p7r658vv8i9zzibcfkcgq"))))
+        (base32 "13zwclvwilygzvyqpiarj5g6wgjy7rkb4m0bahd6r638sy6ys13z"))))
     (properties `((upstream-name . "GeoModels")))
     (build-system r-build-system)
     (propagated-inputs (list r-zipfr
@@ -21239,6 +21176,35 @@ area.  The goal of this package is to generate objects that allow us to access
 and consult the information available in various formats, such as in
 @code{GeoPackage} format or in multidimensional ROLAP star format.")
     (license license:expat)))
+
+(define-public r-geogam
+  (package
+    (name "r-geogam")
+    (version "0.1-3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geoGAM" version))
+       (sha256
+        (base32 "080rls4rbac809hd4ddjsj2ndb2hv6fvwdnh4yl7j1hnfm1xwv64"))))
+    (properties `((upstream-name . "geoGAM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mgcv r-mboost r-mass r-grpreg))
+    (home-page "https://cran.r-project.org/package=geoGAM")
+    (synopsis "Select Sparse Geoadditive Models for Spatial Prediction")
+    (description
+     "This package provides a model building procedure to build parsimonious
+geoadditive model from a large number of covariates.  Continuous, binary and
+ordered categorical responses are supported.  The model building is based on
+component wise gradient boosting with linear effects, smoothing splines and a
+smooth spatial surface to model spatial autocorrelation.  The resulting
+covariate set after gradient boosting is further reduced through backward
+elimination and aggregation of factor levels.  The package provides a model
+based bootstrap method to simulate prediction intervals for point predictions.
+A test data set of a soil mapping case study in Berne (Switzerland) is provided.
+ Nussbaum, M., Walthert, L., Fraefel, M., Greiner, L., and Papritz, A. (2017)
+<doi:10.5194/soil-3-191-2017>.")
+    (license license:gpl2+)))
 
 (define-public r-geofourierfda
   (package
@@ -23954,40 +23920,6 @@ for customized analysis.  It contains Boltzmann fitting for general kinetic
 analysis.  See <https://www.github.com/@code{yanxianUCSB/gen5helper>} for more
 information, documentation and examples.")
     (license license:expat)))
-
-(define-public r-gen3sis
-  (package
-    (name "r-gen3sis")
-    (version "1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gen3sis" version))
-       (sha256
-        (base32 "00zfxgvh204x759p2bjdi7wwxwp7c9gvl0p8v9c7zh8gkg2767pz"))))
-    (properties `((upstream-name . "gen3sis")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr
-                             r-sp
-                             r-rcpp
-                             r-raster
-                             r-matrix
-                             r-gdistance
-                             r-bh))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/project-Gen3sis/R-package")
-    (synopsis "General Engine for Eco-Evolutionary Simulations")
-    (description
-     "This package contains an engine for spatially-explicit eco-evolutionary
-mechanistic models with a modular implementation and several support functions.
-It allows exploring the consequences of ecological and macroevolutionary
-processes across realistic or theoretical spatio-temporal landscapes on
-biodiversity patterns as a general term.  Reference: Oskar Hagen, Benjamin
-Flueck, Fabian Fopp, Juliano S. Cabral, Florian Hartig, Mikael Pontarp, Thiago
-F. Rangel, Loic Pellissier (2021) \"gen3sis: A general engine for
-eco-evolutionary simulations of the processes that shape Earth's biodiversity\"
-<doi:10.1371/journal.pbio.3001340>.")
-    (license license:gpl3)))
 
 (define-public r-gen2stage
   (package
@@ -27249,31 +27181,6 @@ Statistics, 60, 279-330 <DOI:10.1111/ANZS.12241>.")
      "This package performs Gamma regression, where both mean and shape parameters
 follows lineal regression structures.")
     (license license:gpl2+)))
-
-(define-public r-gamma
-  (package
-    (name "r-gamma")
-    (version "1.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gamma" version))
-       (sha256
-        (base32 "02qdv1kzz1pw07zksxl97ra4wd15xgdzfaq9qfwfcci67xmx88ap"))))
-    (properties `((upstream-name . "gamma")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rxylib r-rlang r-isoplotr r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://crp2a.github.io/gamma/")
-    (synopsis
-     "Dose Rate Estimation from in-Situ Gamma-Ray Spectrometry Measurements")
-    (description
-     "Process in-situ Gamma-Ray Spectrometry for Luminescence Dating.  This package
-allows to import, inspect and correct the energy shifts of Gamma-ray spectra.
-It provides methods for estimating the gamma dose rate by the use of a
-calibration curve as described in Mercier and @code{FalguÃ¨res} (2007).  The
-package only supports Canberra CNF and TKA files.")
-    (license license:gpl3)))
 
 (define-public r-gamlssbssn
   (package

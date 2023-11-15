@@ -1729,19 +1729,18 @@ CTN-0030 (<https://ctnlibrary.org/protocol/ctn0030/>), and CTN-0051
 (define-public r-pubh
   (package
     (name "r-pubh")
-    (version "1.2.7")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pubh" version))
        (sha256
-        (base32 "0l87x8mnjssvbcwsm48gsn2mmidkhk7gzy5x2v6qrcxcxw32pm68"))))
+        (base32 "0gz34r77vbvc7jvp0q6i3b0i0apz2cm1wsklcx4m9rn0rn08j51s"))))
     (properties `((upstream-name . "pubh")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
                              r-tibble
                              r-survival
-                             r-sjplot
                              r-sjmisc
                              r-sjlabelled
                              r-sandwich
@@ -1749,7 +1748,6 @@ CTN-0030 (<https://ctnlibrary.org/protocol/ctn0030/>), and CTN-0051
                              r-magrittr
                              r-lmtest
                              r-huxtable
-                             r-hmisc
                              r-gtsummary
                              r-ggplot2
                              r-ggformula
@@ -4373,13 +4371,13 @@ run the tests in parallel.")
 (define-public r-prqlr
   (package
     (name "r-prqlr")
-    (version "0.5.4")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "prqlr" version))
        (sha256
-        (base32 "123dyjq7gbwj15s47dbqcgicx9a2wrbqqzailhr3l828j5zi7679"))))
+        (base32 "07jm4d2448r6bc8z8cqd86zxyr82a0h9dv78ypjiknv4nlkcv71i"))))
     (properties `((upstream-name . "prqlr")))
     (build-system r-build-system)
     (inputs (list))
@@ -15282,27 +15280,6 @@ many languages.  Mehlhaff (2022)
 <https://imehlhaff.net/files/Polarization%20and%20Democracy.pdf>.")
     (license license:cc0)))
 
-(define-public r-poker
-  (package
-    (name "r-poker")
-    (version "0.8.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "poker" version))
-       (sha256
-        (base32 "14ik77440z22k4kwq0p1fn7adzi0p8mh8j8hd7ayinvrab4b5r85"))))
-    (properties `((upstream-name . "poker")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=poker")
-    (synopsis "Play Texas Hold Em Poker")
-    (description
-     "Type @code{testRoundOfPoker}() to demonstrate the game of Texas Hold âEm
-poker.  Rotate the dealer button, deal cards, rank each hand, compare ranks,
-break ties (if necessary), determine the winner, output a textual summary, and
-output a graphical user interface.")
-    (license license:gpl2)))
-
 (define-public r-pokemon
   (package
     (name "r-pokemon")
@@ -17717,28 +17694,6 @@ material, giving consistent proportions for plot elements.  Default methods
 support grid graphics such as lattice and ggplot.  See \"example('devsize')\" and
 \"vignette('plotscale')\".")
     (license license:gpl3)))
-
-(define-public r-plotrcs
-  (package
-    (name "r-plotrcs")
-    (version "0.1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "plotRCS" version))
-       (sha256
-        (base32 "1n5xsbm97i8hfyslv1cfvp3hvkr23yvxfq8rxkryzxyfyklv86is"))))
-    (properties `((upstream-name . "plotRCS")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rms r-ggplot2))
-    (home-page "https://github.com/KunHuo/plotRCS")
-    (synopsis "Plot Restricted Cubic Splines Curves")
-    (description
-     "Simple drawing of restricted cubic spline (RCS) curves through ggplot2 package
-from a linear regression model, a logistic regression model or a Cox
-proportional hazards regression model.  This method was described by Harrell FE
-(2015) <doi:10.1007/978-3-319-19425-7>.")
-    (license license:gpl3+)))
 
 (define-public r-plotprotein
   (package
@@ -24410,13 +24365,13 @@ outcome based on posterior probability (Thall and Simon (1994)
 (define-public r-ph1xbar
   (package
     (name "r-ph1xbar")
-    (version "0.10.1")
+    (version "0.11.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PH1XBAR" version))
        (sha256
-        (base32 "0b9g2mz0vcaqmbpm0cisr6c9l2bk5y3bn0s9096dl5fq9hyma7na"))))
+        (base32 "08dvcbzvb80zcfxlp6xdps2wg5wmjq9p14ybi1wy9fk82b6gqp0d"))))
     (properties `((upstream-name . "PH1XBAR")))
     (build-system r-build-system)
     (propagated-inputs (list r-pracma r-mvtnorm r-forecast))
@@ -24429,65 +24384,6 @@ and individual data.  More details can be found: Yao and Chakraborti (2020)
 <doi: 10.1002/qre.2793>, and Yao and Chakraborti (2021) <doi:
 10.1080/08982112.2021.1878220>.")
     (license license:gpl3)))
-
-(define-public r-pguimp
-  (package
-    (name "r-pguimp")
-    (version "0.0.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "pguIMP" version))
-       (sha256
-        (base32 "1kdwpykyxxd1zy531smijdd1n74a12pkxc9ld4pa3jcxih71xl0y"))))
-    (properties `((upstream-name . "pguIMP")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-writexl
-                             r-vim
-                             r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-shinywidgets
-                             r-shinyjs
-                             r-shinydashboard
-                             r-shiny
-                             r-rweka
-                             r-robust
-                             r-rmarkdown
-                             r-rlang
-                             r-rjava
-                             r-readxl
-                             r-readr
-                             r-rcompanion
-                             r-r6
-                             r-purrr
-                             r-psych
-                             r-plotly
-                             r-outliers
-                             r-nortest
-                             r-mice
-                             r-mass
-                             r-magrittr
-                             r-hmisc
-                             r-gridextra
-                             r-ggthemes
-                             r-ggplot2
-                             r-finalfit
-                             r-e1071
-                             r-dt
-                             r-dplyr
-                             r-dbscan
-                             r-datavisualizations
-                             r-bbmle))
-    (native-inputs (list esbuild))
-    (home-page "https://github.com/SMLMS/pguIMP")
-    (synopsis "'pguIMP'")
-    (description
-     "Reproducible cleaning of bio-medical laboratory data using methods of
-visualization,error correction and transformation implemented as interactive
-R-notebooks.")
-    (license license:gpl3+)))
 
 (define-public r-pgtools
   (package
@@ -26036,19 +25932,21 @@ Barden R. and Kasprzyk-Hordern B. (2022)
 (define-public r-periscope2
   (package
     (name "r-periscope2")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "periscope2" version))
        (sha256
-        (base32 "16w730jy6viqvzvn1lvbjxfy4jqlf6wmpz957lf98kpy0g94hjg0"))))
+        (base32 "1k49h8m6ff0wapf7c9a0ncz38pg3qd92kz80yvkb1rg8na0kj8qw"))))
     (properties `((upstream-name . "periscope2")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
                              r-writexl
                              r-shinywidgets
+                             r-shinyfeedback
                              r-shiny
+                             r-miniui
                              r-lubridate
                              r-fresh
                              r-dt

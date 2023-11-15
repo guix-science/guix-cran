@@ -4289,17 +4289,18 @@ package additionally allows for a doubly truncated normal distribution.")
 (define-public r-truncexpfam
   (package
     (name "r-truncexpfam")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TruncExpFam" version))
        (sha256
-        (base32 "11i28jqxy2isfqalf1b32x39d3g443kw86ci3nsb1nlzyrw6lis5"))))
+        (base32 "1mc2ykcm3cfajln55prik6nc9r1i17klrn2arnixp56cp2y98wf3"))))
     (properties `((upstream-name . "TruncExpFam")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmutil r-invgamma))
-    (home-page "https://github.com/ocbe-uio/TruncExpFam")
+    (native-inputs (list r-knitr))
+    (home-page "https://ocbe-uio.github.io/TruncExpFam/")
     (synopsis "Truncated Exponential Family")
     (description
      "Handles truncated members from the exponential family of probability
@@ -11699,13 +11700,13 @@ machine learing.")
 (define-public r-titan2
   (package
     (name "r-titan2")
-    (version "2.4.2")
+    (version "2.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TITAN2" version))
        (sha256
-        (base32 "0g7iklmc8hlx0iv6n7z5hdhzmayndix2lr2y7n8c5dnahh19rl4c"))))
+        (base32 "0lnkgfa3dq38ad0rpyzwq12kv4vb19wzx17sw8f1vfzpkgf5v4qa"))))
     (properties `((upstream-name . "TITAN2")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -11714,7 +11715,8 @@ machine learing.")
                              r-ggridges
                              r-ggplot2
                              r-dplyr
-                             r-cowplot))
+                             r-cowplot
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=TITAN2")
     (synopsis "Threshold Indicator Taxa Analysis")
@@ -11722,13 +11724,9 @@ machine learing.")
      "Uses indicator species scores across binary partitions of a sample set to detect
 congruence in taxon-specific changes of abundance and occurrence frequency along
 an environmental gradient as evidence of an ecological community threshold.
-Relevant references include: Baker, ME and RS King.  2010.  A new method for
-detecting and interpreting biodiversity and ecological community thresholds.
-Methods in Ecology and Evolution 1(1): 25:37.  King, RS and ME Baker.  2010.
-Considerations for identifying and interpreting ecological community thresholds.
- Journal of the North American Benthological Association 29(3):998-1008.  Baker
-ME and RS King.  2013.  Of TITAN and straw men: an appeal for greater
-understanding of community data.  Freshwater Science 32(2):489-506.")
+Relevant references include Baker and King (2010)
+<doi:10.1111/j.2041-210X.2009.00007.x>, King and Baker (2010)
+<doi:10.1899/09-144.1>, and Baker and King (2013) <doi:10.1899/12-142.1>.")
     (license license:gpl2)))
 
 (define-public r-tis
@@ -19956,6 +19954,28 @@ information from the projected data.  See Chen and Lam (2023)
 <@code{arXiv:2208.04012>} for more details.")
     (license license:gpl3)))
 
+(define-public r-tensorevd
+  (package
+    (name "r-tensorevd")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tensorEVD" version))
+       (sha256
+        (base32 "0jh32siw83czgn5k330c8srmn5pa2jwsyi2nrn3vpl10n607xay2"))))
+    (properties `((upstream-name . "tensorEVD")))
+    (build-system r-build-system)
+    (native-inputs (list r-rmarkdown))
+    (home-page "https://cran.r-project.org/package=tensorEVD")
+    (synopsis
+     "Fast Algorithm to Factorize High-Dimensional Tensor Product Matrices")
+    (description
+     "Here we provide tools for the computation and factorization of high-dimensional
+tensor products that are formed by smaller matrices.  The methods are based on
+properties of Kronecker products (Searle 1982, p.  265, ISBN-10: 0470009616).")
+    (license license:gpl3)))
+
 (define-public r-tensorcomplete
   (package
     (name "r-tensorcomplete")
@@ -24431,13 +24451,13 @@ analysis.")
 (define-public r-tablecompare
   (package
     (name "r-tablecompare")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tablecompare" version))
        (sha256
-        (base32 "0cf557yi0h2y4idk8qwv0gk468pn0fhyndiy2jx28gdsz33h5p3a"))))
+        (base32 "1n5qykpsn43w9x030ymspryx69k5wd3vlkw471wxpf3cqkxqbkdg"))))
     (properties `((upstream-name . "tablecompare")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -24449,10 +24469,8 @@ analysis.")
     (home-page "https://github.com/eutwt/tablecompare")
     (synopsis "Compare Data Frames")
     (description
-     "This package provides a toolbox for comparing two data frames with the aim of
-quick and simple functionality.  Using a key-column common to both tables, see
-which rows are common and highlight differing values by column.  Also included
-are functions validating keys and uniqueness of in-group values.")
+     "This package provides a toolbox for comparing two data frames.  This package is
+defunct.  I recommend you use the \"versus\" package instead.")
     (license license:expat)))
 
 (define-public r-table1heatmap

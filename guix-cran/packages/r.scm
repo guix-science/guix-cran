@@ -12,7 +12,6 @@
   #:use-module (gnu packages java)
   #:use-module (gnu packages image)
   #:use-module (gnu packages bioconductor)
-  #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages web)
   #:use-module (gnu packages cmake)
@@ -2054,32 +2053,6 @@ Rutifier allows to validate if a RUT exist or not and change between the
 different formats a RUT can have.")
     (license license:expat)))
 
-(define-public r-ruta
-  (package
-    (name "r-ruta")
-    (version "1.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ruta" version))
-       (sha256
-        (base32 "0nycvy38aci3flrnqns3ppyxph9f57gdpxkpj7jfv871lzd3bkqw"))))
-    (properties `((upstream-name . "ruta")))
-    (build-system r-build-system)
-    (inputs (list tensorflow))
-    (propagated-inputs (list r-tensorflow r-r-utils r-purrr r-keras))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/fdavidcl/ruta")
-    (synopsis "Implementation of Unsupervised Neural Architectures")
-    (description
-     "Implementation of several unsupervised neural networks, from building their
-architecture to their training and evaluation.  Available networks are
-auto-encoders including their main variants: sparse, contractive, denoising,
-robust and variational, as described in Charte et al. (2018)
-<doi:10.1016/j.inffus.2017.12.007>.")
-    (license (list license:gpl3+
-                   (license:fsdg-compatible "file://LICENSE")))))
-
 (define-public r-rust
   (package
     (name "r-rust")
@@ -2964,37 +2937,6 @@ are detected.  This package supports following data provides: Yahoo
 (finance.yahoo.com), FRED (fred.stlouisfed.org), Quandl (data.nasdaq.com),
 @code{AlphaVantage} (www.alphavantage.co), Tiingo (www.tiingo.com).")
     (license license:expat)))
-
-(define-public r-rtsa
-  (package
-    (name "r-rtsa")
-    (version "0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RTSA" version))
-       (sha256
-        (base32 "19w521mww2byciw7gq9f1knyqmzwm93pmpwa1vf3hnsr65zgixw3"))))
-    (properties `((upstream-name . "RTSA")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-scales r-rcpp r-metafor r-ggplot2))
-    (native-inputs (list r-knitr r-bookdown))
-    (home-page "https://github.com/AnneLyng/RTSA")
-    (synopsis
-     "'Trial Sequential Analysis' for Error Control and Inference in Sequential Meta-Analyses")
-    (description
-     "Frequentist sequential meta-analysis based on Trial Sequential Analysis (TSA) in
-programmed in Java by the Copenhagen Trial Unit (CTU).  The primary function is
-the calculation of group sequential designs for meta-analysis to be used for
-planning and analysis of both prospective and retrospective sequential
-meta-analyses to preserve type-I-error control under sequential testing.  RTSA
-includes tools for sample size and trial size calculation for meta-analysis and
-core meta-analyses methods such as fixed-effect and random-effects models and
-forest plots.  TSA is described in Wetterslev et.  al (2008)
-<doi:10.1016/j.jclinepi.2007.03.013>.  The methods for deriving the group
-sequential designs are based on Jennison and Turnbull (1999,
-ISBN:9780849303166).")
-    (license license:gpl2+)))
 
 (define-public r-rts2
   (package
@@ -5469,6 +5411,36 @@ analysis about the cross-validation process see Sziklai, Baranyi and HÃ©berger
 (2021) <@code{arXiv:2105.11939>}.  The package offers a wide array of features
 related to SRD including the computation of the SRD scores, validation options,
 input preprocessing and plotting tools.")
+    (license license:gpl3)))
+
+(define-public r-rsqmed
+  (package
+    (name "r-rsqmed")
+    (version "1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RsqMed" version))
+       (sha256
+        (base32 "10iszj6mgpvrg1lqm4k0bk27vz0jcdkaswm4wjjq8zffra34czkj"))))
+    (properties `((upstream-name . "RsqMed")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sis r-gmmat))
+    (home-page "https://cran.r-project.org/package=RsqMed")
+    (synopsis
+     "Total Mediation Effect Size Measure for High-Dimensional Mediators")
+    (description
+     "An implementation of calculating the R-squared measure as a total mediation
+effect size measure and its confidence interval for moderate- or
+high-dimensional mediator models.  It gives an option to filter out
+non-mediators using variable selection methods.  The original R package is
+directly related to the paper Yang et al (2021) \"Estimation of mediation effect
+for high-dimensional omics mediators with application to the Framingham Heart
+Study\" <doi:10.1101/774877>.  The new version contains a choice of using
+cross-fitting, which is computationally faster.  The details of the
+cross-fitting method are available in the paper Xu et al (2023) \"Speeding up
+interval estimation for R2-based mediation effect of high-dimensional mediators
+via cross-fitting\" <doi:10.1101/2023.02.06.527391>.")
     (license license:gpl3)))
 
 (define-public r-rsqlparser
@@ -12231,16 +12203,17 @@ time-series data.")
 (define-public r-rolap
   (package
     (name "r-rolap")
-    (version "2.3.0")
+    (version "2.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rolap" version))
        (sha256
-        (base32 "0n45zp3ni593qssyaxvpj2wijh6bd0naqkpj1x2fabjibka346y9"))))
+        (base32 "0vlhj3p1qnb2gagsfr16k3zz4p6h0mklc47xk01v9635g9nj6jrn"))))
     (properties `((upstream-name . "rolap")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyselect
+    (propagated-inputs (list r-xlsx
+                             r-tidyselect
                              r-tidyr
                              r-tibble
                              r-snakecase
@@ -13765,13 +13738,13 @@ the meta-analysis methods are developed by Noma et al. (2022) <forthcoming>.")
 (define-public r-robustlmm
   (package
     (name "r-robustlmm")
-    (version "3.2-3")
+    (version "3.2-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "robustlmm" version))
        (sha256
-        (base32 "1jk4gf1066xsnnx1zsi2fz8bai3dkmyrm2dfdslrpasnmn6661d4"))))
+        (base32 "01va1jx1h2pilgkwmrcgd8mp7yg61x4qb7qwqsqyw146dbbcb7w8"))))
     (properties `((upstream-name . "robustlmm")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -20446,13 +20419,13 @@ implemented with @code{JavaScript} for node and browsers.")
 (define-public r-rivretrieve
   (package
     (name "r-rivretrieve")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RivRetrieve" version))
        (sha256
-        (base32 "1g227j5qz3ca863pz8ry5nj13cdd206irqbkxsb84pp25vxjzqr0"))))
+        (base32 "12h7d5xgwsh4798khh6sa9a6ysqxpwy6ygymwdls4pg45g3c6621"))))
     (properties `((upstream-name . "RivRetrieve")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -20469,7 +20442,8 @@ implemented with @code{JavaScript} for node and browsers.")
                              r-httr
                              r-dplyr
                              r-devtools
-                             r-dataretrieval))
+                             r-dataretrieval
+                             r-bbmisc))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Ryan-Riggs/RivRetrieve")
     (synopsis "Retrieve Global River Gauge Data")
@@ -25368,37 +25342,6 @@ package is part of the @code{rOpenSci} suite (http://ropensci.org).")
 <https://github.com/@code{LingDong-/fishdraw>}, including @code{JavaScript} code
 for dynamic generation of fish drawings.")
     (license license:artistic2.0)))
-
-(define-public r-rfishbc
-  (package
-    (name "r-rfishbc")
-    (version "0.2.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RFishBC" version))
-       (sha256
-        (base32 "1nrfznkh2k7r8kzxr4k5ncp4rk3y21snbf0fjsm8ag9bhqzhcl3f"))))
-    (properties `((upstream-name . "RFishBC")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-withr
-                             r-tidyr
-                             r-stringr
-                             r-settings
-                             r-rlang
-                             r-readbitmap
-                             r-crayon
-                             r-clisymbols
-                             r-cli))
-    (home-page "https://fishr-core-team.github.io/RFishBC/")
-    (synopsis "Back-Calculation of Fish Length")
-    (description
-     "Helps fisheries scientists collect measurements from calcified structures and
-back-calculate estimated lengths at previous ages using standard procedures and
-models.  This is intended to replace much of the functionality provided by the
-now out-dated @code{fishBC} software
-(<https://fisheries.org/bookstore/all-titles/software/70317/>).")
-    (license license:gpl3)))
 
 (define-public r-rfishbase
   (package
@@ -30979,13 +30922,13 @@ object-specific set of plots based on the object class using S3.")
 (define-public r-refund
   (package
     (name "r-refund")
-    (version "0.1-32")
+    (version "0.1-33")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "refund" version))
        (sha256
-        (base32 "0c1y1l1jf2swjbjm02ivvxm1y8rklfbwbaacqcbs5bykmmajpjka"))))
+        (base32 "02wgvi31zlc77sbwcijzyq302sj3d8cxzxqayqi3ls55kszc1f12"))))
     (properties `((upstream-name . "refund")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlrsim
@@ -31215,13 +31158,13 @@ More info on key collision and ngram fingerprint can be found here
 (define-public r-refiner
   (package
     (name "r-refiner")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "refineR" version))
        (sha256
-        (base32 "0fcpbhwfk5qp7jyqifdrmbqsf7yrapix2nqg8pb0biiwl1bi7v59"))))
+        (base32 "1bwafqcvsvmb6svdcr4ri31wvyzws33xfxrf42g4dzx03q0wwkin"))))
     (properties `((upstream-name . "refineR")))
     (build-system r-build-system)
     (propagated-inputs (list r-future-apply r-future r-ash))
@@ -31237,10 +31180,9 @@ non-pathological samples.  This distribution can then be used to derive
 reference intervals.  Furthermore, the package offers functions for printing and
 plotting the results of the algorithm.  See ?@code{refineR} for a more
 comprehensive description of the features.  Version 1.0 of the algorithm is
-described in detail in Ammer T., Schuetzenmeister A., Prokosch H.-U., Rauh M.,
-Rank C.M., Zierk J. \"@code{refineR}: A Novel Algorithm for Reference Interval
-Estimation from Real-World Data\".  Scientific Reports (2021)
-<doi:10.1038/s41598-021-95301-2>.")
+described in detail in Ammer et al. (2021) <doi:10.1038/s41598-021-95301-2>.
+Additional guidance on the usage of the algorithm is given in Ammer et al.
+(2023) <doi:10.1093/jalm/jfac101>.")
     (license license:gpl3+)))
 
 (define-public r-referenceintervals
@@ -37920,13 +37862,13 @@ Factiva', @code{LexisNexis}', Europresse and Alceste files.")
 (define-public r-rcmdrplugin-teachstat
   (package
     (name "r-rcmdrplugin-teachstat")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcmdrPlugin.TeachStat" version))
        (sha256
-        (base32 "04b933icpf6lzzbd1z0p0qzy0w2d4p9rv6zs16gx5l89vagvg4wh"))))
+        (base32 "1l73zpy94av30x31rskzggaf6bmj7wfx1k6mksmpjmy47hk07qlg"))))
     (properties `((upstream-name . "RcmdrPlugin.TeachStat")))
     (build-system r-build-system)
     (propagated-inputs (list r-tseries
@@ -39147,35 +39089,6 @@ even in the presence of long-range dependencies.  Knowledge of the number of
 change-points is not required.  The code is written in Go and interfaced with R.")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-rchess
-  (package
-    (name "r-rchess")
-    (version "0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rchess" version))
-       (sha256
-        (base32 "0qnvvvwcl02rmqra9m7qnhy40cbavswbq6i0jm47x6njmr1gpfhy"))))
-    (properties `((upstream-name . "rchess")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-v8
-                             r-r6
-                             r-plyr
-                             r-htmlwidgets
-                             r-ggplot2
-                             r-dplyr
-                             r-assertthat))
-    (native-inputs (list esbuild))
-    (home-page "https://github.com/jbkunst/rchess")
-    (synopsis
-     "Chess Move, Generation/Validation, Piece Placement/ Movement, and Check/Checkmate/Stalemate Detection")
-    (description
-     "R package for chess validations, pieces movements and check detection.  Also
-integrates functions to plot chess boards given a Forsyth Edwards and Portable
-Game notations.")
-    (license license:expat)))
-
 (define-public r-rcheology
   (package
     (name "r-rcheology")
@@ -39904,13 +39817,13 @@ Tan (2020b) <doi:10.1214/19-AOS1824> and Sun and Tan (2020)
 (define-public r-rcaiman
   (package
     (name "r-rcaiman")
-    (version "1.1.2")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rcaiman" version))
        (sha256
-        (base32 "0qjbkfp571qv2i4z50vk48wrc9k0gayil88a3z85aa9k033y6kk8"))))
+        (base32 "1zhs56my1229826ilxfdm5vdgw2n8vql3flmj64604fsyjsnv833"))))
     (properties `((upstream-name . "rcaiman")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat
@@ -43405,21 +43318,21 @@ Overall Ranking of Populations\" by Klein, Wright, and Wieczorek (2020)
 (define-public r-rankicc
   (package
     (name "r-rankicc")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rankICC" version))
        (sha256
-        (base32 "0rr9vncd6168nijxg8i8xcwsx94vc687ayksqbq6lp4vnz4kflmw"))))
+        (base32 "1qky7g1g0zjpjwpmh6c5qaki2c6r5vzgl63klmc4myz9d3fh6sb3"))))
     (properties `((upstream-name . "rankICC")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=rankICC")
     (synopsis "Rank Intraclass Correlation for Clustered Data")
     (description
      "Estimates the rank intraclass correlation coefficient (ICC) for clustered
-continuous, ordinal, binary, and count data
-<https://github.com/shengxintu/@code{rankICC>}.")
+continuous and ordinal data.  See Tu et al. (2023) <DOI:10.1002/sim.9864> for
+details.")
     (license license:gpl2+)))
 
 (define-public r-rankhazard

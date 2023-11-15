@@ -2073,13 +2073,13 @@ and reference).")
 (define-public r-dttr2
   (package
     (name "r-dttr2")
-    (version "0.4.2")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dttr2" version))
        (sha256
-        (base32 "1fjddr7rqvslhy9ni53jbgvsg8ffp09mna5vazbw9l3126lp55ks"))))
+        (base32 "0fniydls6c541xhd902a6gczmhigprg0kh74cfmcx8hgknp7fm42"))))
     (properties `((upstream-name . "dttr2")))
     (build-system r-build-system)
     (propagated-inputs (list r-lifecycle r-hms r-chk))
@@ -6957,13 +6957,13 @@ functionality in the stump CRAN R package Rmosek'.")
 (define-public r-doe-base
   (package
     (name "r-doe-base")
-    (version "1.2-3")
+    (version "1.2-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DoE.base" version))
        (sha256
-        (base32 "1m1vizrsmwcb6vwhbnrp9zm881pc1qqkkpb8k47nvj3f0j8pbf1m"))))
+        (base32 "0lz0ilz145lhymb42b9yk4ysvm5zlbigc7ba600736cwnlgc0wn0"))))
     (properties `((upstream-name . "DoE.base")))
     (build-system r-build-system)
     (propagated-inputs (list r-vcd

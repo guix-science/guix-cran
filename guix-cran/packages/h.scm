@@ -11856,13 +11856,13 @@ efficiency bound.")
 (define-public r-hal9001
   (package
     (name "r-hal9001")
-    (version "0.4.3")
+    (version "0.4.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hal9001" version))
        (sha256
-        (base32 "132qnrk6rm2qc5gw17iw61plx1ghnyzi7km8bp36vnqn19x9wj7j"))))
+        (base32 "1p88rpm4alkr56w4cjl8sxj6ylq991dsny11njcdx5rzc25jh8qi"))))
     (properties `((upstream-name . "hal9001")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr

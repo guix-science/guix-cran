@@ -33302,13 +33302,13 @@ adjustments.")
 (define-public r-cdmtools
   (package
     (name "r-cdmtools")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cdmTools" version))
        (sha256
-        (base32 "05h0kz939ig0dxizij07r0xbjm668sk0744ji9k16090xcgz25hh"))))
+        (base32 "1fi2h6dd9h7if393rrxyf36b22h8l2lch0kx6byzgqr7x4cs453y"))))
     (properties `((upstream-name . "cdmTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-sirt
@@ -33316,6 +33316,7 @@ adjustments.")
                              r-gparotation
                              r-ggplot2
                              r-gdina
+                             r-fungible
                              r-foreach
                              r-dosnow
                              r-combinat))
@@ -33330,13 +33331,13 @@ Ding, 2018, <doi:10.1007/978-3-319-77249-3_29>).  It also contains
 dimensionality assessment procedures for CDM, including parallel analysis and
 automated fit comparison as explored in NÃ¡jera, Abad, and Sorrel (2021,
 <doi:10.3389/fpsyg.2021.614470>).  Other relevant methods and features for CDM
-applications, such as the restricted DINA model (NÃ¡jera et al., 2023), the
-general nonparametric classification method (Chiu et al., 2018;
-<doi:10.1007/s11336-017-9595-4>), and corrected estimation of the classification
-accuracy via multiple imputation (Kreitchmann et al., 2022;
-<doi:10.3758/s13428-022-01967-5>) are also available.  Lastly, the package
-provides some useful functions for CDM simulation studies, such as random
-Q-matrix generation and detection of complete/identified Q-matrices.")
+applications, such as the restricted DINA model (NÃ¡jera et al., 2023;
+<doi:10.3102/10769986231158829>), the general nonparametric classification
+method (Chiu et al., 2018; <doi:10.1007/s11336-017-9595-4>), and corrected
+estimation of the classification accuracy via multiple imputation (Kreitchmann
+et al., 2022; <doi:10.3758/s13428-022-01967-5>) are also available.  Lastly, the
+package provides some useful functions for CDM simulation studies, such as
+random Q-matrix generation and detection of complete/identified Q-matrices.")
     (license license:gpl3)))
 
 (define-public r-cdmconnector

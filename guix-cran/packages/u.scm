@@ -272,27 +272,6 @@ numerical results of the evaluations in standard R data types for further
 processing.")
     (license license:gpl3)))
 
-(define-public r-utilities
-  (package
-    (name "r-utilities")
-    (version "0.6.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "utilities" version))
-       (sha256
-        (base32 "0wcw9gcxd66vhr7vb24y94bgqckfkwvg1rcsxdqaz5r06qn2p9nf"))))
-    (properties `((upstream-name . "utilities")))
-    (build-system r-build-system)
-    (home-page "https://github.com/ben-oneill/utilities/")
-    (synopsis "Data Utility Functions")
-    (description
-     "Data utility functions for use in probability and statistics.  Includes
-functions for computing higher-moments for samples and their decompositions.
-Also includes utilities to examine functional mappings between factor variables
-and other variables in a data set.")
-    (license license:expat)))
-
 (define-public r-utile-visuals
   (package
     (name "r-utile-visuals")
@@ -2982,47 +2961,6 @@ accessible via the URL below.")
      "Top-down and bottom-up algorithms for nonparametric function estimation in
 Gaussian noise using Unbalanced Haar wavelets.")
     (license license:gpl2)))
-
-(define-public r-umx
-  (package
-    (name "r-umx")
-    (version "4.16.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "umx" version))
-       (sha256
-        (base32 "04kjmcc9nf3x2ma2a5diajxr0qmssfd6axhdjq38qp7sgpwappxk"))))
-    (properties `((upstream-name . "umx")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xtable
-                             r-scales
-                             r-rsvg
-                             r-rcurl
-                             r-r2html
-                             r-polycor
-                             r-openmx
-                             r-nlme
-                             r-mvtnorm
-                             r-mumin
-                             r-matrix
-                             r-mass
-                             r-lavaan
-                             r-knitr
-                             r-kableextra
-                             r-ggplot2
-                             r-diagrammersvg
-                             r-diagrammer
-                             r-cowplot))
-    (home-page "https://github.com/tbates/umx#readme")
-    (synopsis "Structural Equation Modeling and Twin Modeling in R")
-    (description
-     "Quickly create, run, and report structural equation models, and twin models.
-See ?umx for help, and umx_open_CRAN_page(\"umx\") for NEWS. Timothy C. Bates,
-Michael C. Neale, Hermine H. Maes, (2019).  umx: A library for Structural
-Equation and Twin Modelling in R. Twin Research and Human Genetics, 22, 27-41.
-<doi:10.1017/thg.2019.2>.")
-    (license license:gpl3)))
 
 (define-public r-umpire
   (package

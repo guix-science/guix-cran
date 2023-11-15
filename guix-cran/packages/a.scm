@@ -1505,13 +1505,13 @@ minimum distance estimator of the parameters in the model.")
 (define-public r-autoreg
   (package
     (name "r-autoreg")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "autoReg" version))
        (sha256
-        (base32 "1isj04xphzf3r35bgzr9x1f2ra17jjw08dyjxgy8dfdmqhz2l2kh"))))
+        (base32 "0r26h2ik6cx21dlilpcx9a60dj1fw3zq06f2prmxw7ybk1ix19zm"))))
     (properties `((upstream-name . "autoReg")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -2497,13 +2497,13 @@ derivatives.")
 (define-public r-auk
   (package
     (name "r-auk")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "auk" version))
        (sha256
-        (base32 "1l37izfjsypq2pbbifajilhi00fpbjdkpp6ahy3nxfsc7v22ldwr"))))
+        (base32 "055blr0pbhjy0c20xh21pl1cndvxy742hmn4nlddzvd1phknfkzz"))))
     (properties `((upstream-name . "auk")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -13697,6 +13697,31 @@ solve other tasks in text mining as well.")
 @code{JavaScript}.  See <http://epoberezkin.github.io/ajv/> for details.")
     (license license:gpl2)))
 
+(define-public r-aiuq
+  (package
+    (name "r-aiuq")
+    (version "0.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AIUQ" version))
+       (sha256
+        (base32 "12nb5zgq62qx5am0q26xjr6hfpjzqh0s1sd02alxkd4c6dmbsjsq"))))
+    (properties `((upstream-name . "AIUQ")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-supergauss r-plot3d r-fftwtools))
+    (home-page "https://cran.r-project.org/package=AIUQ")
+    (synopsis "Ab Initio Uncertainty Quantification")
+    (description
+     "Uncertainty quantification and inverse estimation by probabilistic generative
+models from the beginning of the data analysis.  An example is a Fourier basis
+method for inverse estimation in scattering analysis of microscopy videos.  It
+does not require specifying a certain range of Fourier bases and it
+substantially reduces computational cost via the generalized Schur algorithm.
+See the reference: Mengyang Gu, Yue He, Xubo Liu and Yimin Luo (2023),
+<@code{arXiv:2309.02468>}.")
+    (license license:gpl3+)))
+
 (define-public r-aisoph
   (package
     (name "r-aisoph")
@@ -16425,6 +16450,41 @@ on growth rate estimation, see Walling and Lipstich (2007)
     (description
      "Package to incorporate change point analysis in ARIMA forecasting.")
     (license license:gpl3)))
+
+(define-public r-aeddo
+  (package
+    (name "r-aeddo")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "aeddo" version))
+       (sha256
+        (base32 "1rrgsiyl3b56mcbx39gpkibx96mdi10wcy629sznhs87k6zzda5c"))))
+    (properties `((upstream-name . "aeddo")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-lifecycle
+                             r-ggplot2
+                             r-dplyr
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://ssi-dk.github.io/aeddo/")
+    (synopsis "Automated and Early Detection of Disease Outbreaks")
+    (description
+     "This package provides a powerful tool for automating the early detection of
+disease outbreaks in time series data.  aeddo employs advanced statistical
+methods, including hierarchical models, in an innovative manner to effectively
+characterize outbreak signals.  It is particularly useful for epidemiologists,
+public health professionals, and researchers seeking to identify and respond to
+disease outbreaks in a timely fashion.  For a detailed reference on hierarchical
+models, consult Henrik Madsen and Poul Thyregod's book (2011), ISBN:
+9781420091557.")
+    (license license:expat)))
 
 (define-public r-adwordsr
   (package

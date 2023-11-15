@@ -6810,18 +6810,18 @@ validate'.  See also Van der Loo and De Jonge (2018)
 (define-public r-errorist
   (package
     (name "r-errorist")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "errorist" version))
        (sha256
-        (base32 "0rsiyqpr7nw4mz2bccymp83lbqwyigyy7pqgxc1wkmshzdqhvjgh"))))
+        (base32 "195c8bbxi22l9qyhj4ndjmwhcmk2b019vxcggsp2iaas48y4v6wi"))))
     (properties `((upstream-name . "errorist")))
     (build-system r-build-system)
     (propagated-inputs (list r-searcher))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/r-assist/errorist")
+    (home-page "https://github.com/coatless-rpkg/errorist")
     (synopsis "Automatically Search Errors or Warnings")
     (description
      "This package provides environment hooks that obtain errors and warnings which
@@ -9583,30 +9583,6 @@ data.  The implemented methods are based on INDEC (2016)
 main audience is from this country, the documentation was written in Spanish.")
     (license license:expat)))
 
-(define-public r-epgmr
-  (package
-    (name "r-epgmr")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "EPGMr" version))
-       (sha256
-        (base32 "1ii4lccv4hyydy3sd5l7c22pgx27x3mdml20sfbdj85pmpyab6q9"))))
-    (properties `((upstream-name . "EPGMr")))
-    (build-system r-build-system)
-    (home-page "https://github.com/swampthingpaul/EPGMr")
-    (synopsis "Implementation of the Everglades Phosphorus Gradient Model")
-    (description
-     "Everglades Phosphorus Gradient Model predicts variations in water-column P
-concentration, peat accretion rate, and soil P concentration along a horizontal
-gradient imposed by an external phosphorus load and sheet-flow conditions.
-Potential biological responses are expressed in terms of marsh surface area
-exceeding threshold criteria for water-column and soil phosphorus
-concentrations.  More information of the model can be found at
-<http://www.wwwalker.net/epgm/>.")
-    (license license:gpl3)))
-
 (define-public r-epe4md
   (package
     (name "r-epe4md")
@@ -11474,27 +11450,28 @@ high-dimensional problems.")
 (define-public r-emstreer
   (package
     (name "r-emstreer")
-    (version "3.0.0")
+    (version "3.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "emstreeR" version))
        (sha256
-        (base32 "1rfgw9inkxg81ky31r51a8fc5nvwalrjp2nkx4p24l5k622fwmjb"))))
+        (base32 "1l85pn8y463fn09cpm737kzal6k3ydiri38s90bhfw3i1gvzqggf"))))
     (properties `((upstream-name . "emstreeR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-scatterplot3d r-mlpack r-ggplot2 r-bbmisc))
+    (propagated-inputs (list r-sf r-scatterplot3d r-mlpack r-ggplot2))
     (home-page "https://cran.r-project.org/package=emstreeR")
     (synopsis
-     "Tools for Fast Computing and Plotting Euclidean Minimum Spanning Trees")
+     "Tools for Fast Computing and Visualizing Euclidean Minimum Spanning Trees")
     (description
      "Fast and easily computes an Euclidean Minimum Spanning Tree (EMST) from data,
 relying on the R API for mlpack - the C++ Machine Learning Library (Curtin et.
 al., 2013). @code{emstreeR} uses the Dual-Tree Boruvka (March, Ram, Gray, 2010,
 <doi:10.1145/1835804.1835882>), which is theoretically and empirically the
 fastest algorithm for computing an EMST. This package also provides functions
-and an S3 method for readily plotting Minimum Spanning Trees (MST) using either
-the style of the base', scatterplot3d', or ggplot2 libraries.")
+and an S3 method for readily visualizing Minimum Spanning Trees (MST) using
+either the style of the base', scatterplot3d', or ggplot2 libraries; and
+functions to export the MST output to shapefiles.")
     (license license:bsd-3)))
 
 (define-public r-emss

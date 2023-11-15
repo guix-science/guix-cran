@@ -2950,32 +2950,6 @@ agglomerative clustering can be performed and the silhouette method is used to
 identify an optimal number of clusters.")
     (license license:gpl2+)))
 
-(define-public r-brr
-  (package
-    (name "r-brr")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "brr" version))
-       (sha256
-        (base32 "050ivnqcaxiyypd1sxfpy6ianhzzmvs6c77ga40g3440cvfigkgw"))))
-    (properties `((upstream-name . "brr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-teachingdemos
-                             r-suppdists
-                             r-stringr
-                             r-pander
-                             r-hypergeo
-                             r-gsl))
-    (native-inputs (list r-r-rsp))
-    (home-page "https://cran.r-project.org/package=brr")
-    (synopsis "Bayesian Inference on the Ratio of Two Poisson Rates")
-    (description
-     "Implementation of the Bayesian inference for the two independent Poisson samples
-model, using the semi-conjugate family of prior distributions.")
-    (license license:gpl2)))
-
 (define-public r-brq
   (package
     (name "r-brq")
@@ -12291,13 +12265,13 @@ functions to obtain boundary crossing probabilities given the design.")
 (define-public r-bingroup2
   (package
     (name "r-bingroup2")
-    (version "1.2.4")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "binGroup2" version))
        (sha256
-        (base32 "1qq04i8fji8mp763afxrqlradfdxlzd3ph5d18dabfj813yxx6kz"))))
+        (base32 "000a8vci2sfxgbw412i0wajmnwgpx54zalcv4xhvyckh69i1z1db"))))
     (properties `((upstream-name . "binGroup2")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -12307,6 +12281,7 @@ functions to obtain boundary crossing probabilities given the design.")
                              r-rbeta2009
                              r-partitions
                              r-ggplot2))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=binGroup2")
     (synopsis "Identification and Estimation using Group Testing")
     (description
@@ -16859,13 +16834,13 @@ Projections.  2013. <doi:10.1007/978-94-007-7551-0>.")
 (define-public r-beezdiscounting
   (package
     (name "r-beezdiscounting")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "beezdiscounting" version))
        (sha256
-        (base32 "0kv5dciila798a1lxa53jw5jja7s59whcxvx2dglz68s7dfhkkd1"))))
+        (base32 "0k5zbv5vk26awb682j7ndixq6rvx6z2ii8vky3mg18lqpx8czql9"))))
     (properties `((upstream-name . "beezdiscounting")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -21308,22 +21283,27 @@ filter.")
 (define-public r-bayesianreasoning
   (package
     (name "r-bayesianreasoning")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesianReasoning" version))
        (sha256
-        (base32 "0j8fzn6xza3vg7qbfxwhjncll9yx985660dr75y9qhhz84jis3dv"))))
+        (base32 "0bl0crj9z0grgfsqzc403jd74f411ib827gkfqis0hbdi5y57gyw"))))
     (properties `((upstream-name . "BayesianReasoning")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-tibble
+                             r-scales
                              r-reshape2
+                             r-png
                              r-magrittr
+                             r-gt
+                             r-ggtext
                              r-ggplot2
                              r-ggforce
-                             r-dplyr))
+                             r-dplyr
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/gorkang/BayesianReasoning")
     (synopsis "Plot Positive and Negative Predictive Values for Medical Tests")
@@ -21550,13 +21530,13 @@ criterion.")
 (define-public r-bayesianfactorzoo
   (package
     (name "r-bayesianfactorzoo")
-    (version "0.0.0.1")
+    (version "0.0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesianFactorZoo" version))
        (sha256
-        (base32 "10i811h6sl7wf8mk58hzb08jm6ifag01zaj5ni020414cxx8xiyr"))))
+        (base32 "1w06hizaj4vxrhxv4jgr0s5ak1w0rr3j2zcdz7cf0mnrbg600dfd"))))
     (properties `((upstream-name . "BayesianFactorZoo")))
     (build-system r-build-system)
     (propagated-inputs (list r-timeseries
@@ -21584,8 +21564,8 @@ tradable and nontradable factors.  For competing factors and possibly nonnested
 models, we provide functions including continuous_ss_sdf(),
 continuous_ss_sdf_v2(), and dirac_ss_sdf_pvalue() to analyze high-dimensional
 models.  If you use this package, please cite the paper.  We are thankful to
-Jingtong Zhang for his research assistance.  Any errors or omissions are the
-responsibility of the authors.")
+Yunan Ding and Jingtong Zhang for their research assistance.  Any errors or
+omissions are the responsibility of the authors.")
     (license license:gpl3)))
 
 (define-public r-bayesianetas
@@ -22891,13 +22871,13 @@ implemented in this package are described in Roman-Palacios et al. (2021)
 (define-public r-bawir
   (package
     (name "r-bawir")
-    (version "1.3")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BAwiR" version))
        (sha256
-        (base32 "1avqylrvsshhmvf4fd612949ymyx2i7m7k6w29pcnrawai1qw54c"))))
+        (base32 "151sybx7plfxhrs5gq6r6fn0mjvryw03g86bv08scn7wyv99mliw"))))
     (properties `((upstream-name . "BAwiR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -22915,7 +22895,6 @@ implemented in this package are described in Roman-Palacios et al. (2021)
                              r-magrittr
                              r-lubridate
                              r-httr
-                             r-ggthemes
                              r-ggplot2
                              r-dplyr
                              r-anthropometry))

@@ -32585,32 +32585,6 @@ Hildebrandt, Luedtke, Robitzsch, Sommer & Wilhelm, 2016,
 <doi:10.1080/00273171.2016.1142856>).")
     (license license:gpl2+)))
 
-(define-public r-sirmcmc
-  (package
-    (name "r-sirmcmc")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SIRmcmc" version))
-       (sha256
-        (base32 "1dqcp0mrddw0zl3zx0z077vd1x0p3q1j5cv8hxln9blmiv1lggx1"))))
-    (properties `((upstream-name . "SIRmcmc")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://cran.r-project.org/package=SIRmcmc")
-    (synopsis
-     "Compartmental Susceptible-Infectious-Recovered (SIR) Model of Community and Household Infection")
-    (description
-     "We build an Susceptible-Infectious-Recovered (SIR) model where the rate of
-infection is the sum of the household rate and the community rate.  We estimate
-the posterior distribution of the parameters using the Metropolis algorithm.
-Further details may be found in: F Scott Dahlgren, Ivo M Foppa, Melissa S
-Stockwell, Celibell Y Vargas, Philip @code{LaRussa}, Carrie Reed (2021)
-\"Household transmission of influenza A and B within a prospective cohort during
-the 2013-2014 and 2014-2015 seasons\" <doi:10.1002/sim.9181>.")
-    (license license:gpl2+)))
-
 (define-public r-siren
   (package
     (name "r-siren")
@@ -45445,13 +45419,13 @@ the functions to be chained by a pipe operator.")
 (define-public r-sempower
   (package
     (name "r-sempower")
-    (version "2.0.1")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "semPower" version))
        (sha256
-        (base32 "0i2lzkg4j3igm249y0mpdbd9ff9b33lwgy0n015h43jjy9qmgp78"))))
+        (base32 "17smfaslw1nnps3ibkqjqdklwd1k7ckvl4zqngvv78r40jcmq6xv"))))
     (properties `((upstream-name . "semPower")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -46753,6 +46727,31 @@ its popularity given the observed history.  See
 negative rate and symptom based administration of diagnostic tests.
 <doi:10.1101/2020.09.24.20200238>.")
     (license license:gpl2)))
+
+(define-public r-sei
+  (package
+    (name "r-sei")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SEI" version))
+       (sha256
+        (base32 "0wb2r98m8h2z0pa6d8k20bjdg4y4y6zg0b0ppqf8jfm9vn8m4fdc"))))
+    (properties `((upstream-name . "SEI")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo r-xts r-ggplot2 r-fitdistrplus))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/noeliaof/SEI")
+    (synopsis "Calculating Standardised Indices")
+    (description
+     "Convert a time series of observations to a time series of standardised indices
+that can be used to monitor variables on a common and probabilistically
+interpretable scale.  The indices can be aggregated and rescaled to different
+time scales, visualised using plot capabilities, and calculated using a range of
+distributions.  This includes flexible non- and semi-parametric methods, as
+suggested by Allen and Otero (2023) <doi:10.1016/j.renene.2023.119206>.")
+    (license license:gpl2+)))
 
 (define-public r-sehrnett
   (package
