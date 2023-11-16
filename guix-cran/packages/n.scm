@@ -4062,13 +4062,13 @@ that there are only Compliers and Never Takers in the population.")
 (define-public r-noncompart
   (package
     (name "r-noncompart")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NonCompart" version))
        (sha256
-        (base32 "0cda8rd45irx8q33zs9hcfhsanq09hnx3fpkpa9173pn0j6iw0zv"))))
+        (base32 "1cisq051azpybkj4wmg9k1xb4danyhl523cmjjvlqvvyxrkmp6pf"))))
     (properties `((upstream-name . "NonCompart")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=NonCompart")
@@ -4272,22 +4272,30 @@ negative and non-integer numbers.")
 (define-public r-nolock
   (package
     (name "r-nolock")
-    (version "1.0.4")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nolock" version))
        (sha256
-        (base32 "1n62fjnscfflvxya4j2km2vbg352gw3irlh8p2mrfil8k157vpnp"))))
+        (base32 "1d909qq6091rbsmnls2lc8l64iy7cam281s4854v4iar8l4dxh77"))))
     (properties `((upstream-name . "nolock")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringr r-rstudioapi r-pacman r-crayon))
+    (propagated-inputs (list r-stringr r-rstudioapi r-ncmisc r-crayon))
     (home-page "https://cran.r-project.org/package=nolock")
-    (synopsis "Append 'WITH (NOLOCK)' to 'SQL' Queries")
+    (synopsis
+     "Append 'WITH (NOLOCK)' to 'SQL' Queries, Get Packages in Active Script")
     (description
-     "Automatically appends WITH (nolock) to all tables in SQL queries using a utility
-function.  This facilitates reading from databases in scenarios where
-non-blocking reads are preferable, such as in high-transaction environments.")
+     "This package provides a suite of tools that can assist in enhancing the
+processing efficiency of SQL and R scripts. - The libr_unused() retrieves a
+vector of package names that are called within an R script but are never
+actually used in the script. - The libr_used() retrieves a vector of package
+names actively utilized within an R script; packages loaded using library() but
+not actually used in the script will not be included. - The libr_called()
+retrieves a vector of all package names which are called within an R script. -
+nolock() appends WITH (nolock) to all tables in SQL queries.  This facilitates
+reading from databases in scenarios where non-blocking reads are preferable,
+such as in high-transaction environments.")
     (license license:gpl3)))
 
 (define-public r-noisysbm
@@ -5007,13 +5015,13 @@ penalized initial estimators extension as proposed by Yuan and Lin (2007)
 (define-public r-nnfor
   (package
     (name "r-nnfor")
-    (version "0.9.8")
+    (version "0.9.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nnfor" version))
        (sha256
-        (base32 "0333c7h8lx1r9brw4dabyd28hyqvsr14hpsykbgx646k0xfkhrkr"))))
+        (base32 "0jrp840vr5jyk76808l0d1r46hhvz0l0vimwdc82wilfh8sb5sz5"))))
     (properties `((upstream-name . "nnfor")))
     (build-system r-build-system)
     (propagated-inputs (list r-uroot

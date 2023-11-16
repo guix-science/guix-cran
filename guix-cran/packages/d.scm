@@ -24443,13 +24443,13 @@ individuals (samples).  For more information visit the @code{GitHub} pages
 (define-public r-dartr-spatial
   (package
     (name "r-dartr-spatial")
-    (version "0.76")
+    (version "0.78")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dartR.spatial" version))
        (sha256
-        (base32 "0m65y04h9lljpv4g5y0vnzd70pqmzdw538qb7kwksv41lkxlqnvf"))))
+        (base32 "1fjajinsc2ikvhz4igjyldvfd5skdqhnay5209dzx4xjpnkik5vv"))))
     (properties `((upstream-name . "dartR.spatial")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan

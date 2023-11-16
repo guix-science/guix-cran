@@ -8311,6 +8311,65 @@ Furthermore, @code{epiworldR} is ideal for simulation studies featuring large
 populations.")
     (license license:expat)))
 
+(define-public r-epitweetr
+  (package
+    (name "r-epitweetr")
+    (version "2.2.16")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "epitweetr" version))
+       (sha256
+        (base32 "0xniwd6r1jyn2ifw8y4d9c3dl4maik6p4lw0nghb9z9q9xigjlak"))))
+    (properties `((upstream-name . "epitweetr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xtable
+                             r-xml2
+                             r-tidyverse
+                             r-tidytext
+                             r-tibble
+                             r-stringr
+                             r-sp
+                             r-shiny
+                             r-rtweet
+                             r-rnaturalearthdata
+                             r-rmarkdown
+                             r-rlang
+                             r-readxl
+                             r-processx
+                             r-plyr
+                             r-plotly
+                             r-openxlsx
+                             r-magrittr
+                             r-lifecycle
+                             r-knitr
+                             r-keyring
+                             r-jsonlite
+                             r-janitor
+                             r-httr
+                             r-httpuv
+                             r-htmltools
+                             r-ggplot2
+                             r-future
+                             r-emayili
+                             r-dt
+                             r-dplyr
+                             r-curl
+                             r-crul
+                             r-bit64))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/EU-ECDC/epitweetr")
+    (synopsis "Early Detection of Public Health Threats from 'Twitter' Data")
+    (description
+     "It allows you to automatically monitor trends of tweets by time, place and topic
+aiming at detecting public health threats early through the detection of signals
+(e.g. an unusual increase in the number of tweets).  It was designed to focus on
+infectious diseases, and it can be extended to all hazards or other fields of
+study by modifying the topics and keywords.  More information is available in
+the epitweetr peer-review publication
+(doi:10.2807/1560-7917.ES.2022.27.39.2200177).")
+    (license (license:fsdg-compatible "EUPL"))))
+
 (define-public r-epitrix
   (package
     (name "r-epitrix")
@@ -19331,39 +19390,35 @@ methods in this package are Montgomery, Hollenbach, and Ward (2015)
 (define-public r-ebirdst
   (package
     (name "r-ebirdst")
-    (version "2.2021.3")
+    (version "3.2022.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ebirdst" version))
        (sha256
-        (base32 "1brd9awy43cl45jv7ndkvv21zrrd0fx1llwwxy1mqncdbwbnn65j"))))
+        (base32 "1kpqy90vs104fy6714v3vxxhl3jsg3v4z1qf5kwpr6yj65wq341s"))))
     (properties `((upstream-name . "ebirdst")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
-                             r-tidyr
                              r-terra
                              r-stringr
                              r-sf
-                             r-rsqlite
                              r-rlang
+                             r-rcolorbrewer
                              r-magrittr
                              r-jsonlite
-                             r-gridextra
-                             r-ggplot2
                              r-dplyr
-                             r-dbi))
+                             r-arrow))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ebird/ebirdst")
-    (synopsis "Access and Analyze eBird Status and Trends Data")
+    (synopsis "Access and Analyze eBird Status and Trends Data Products")
     (description
-     "This package provides tools to download, load, plot, and analyze @code{eBird}
-Status and Trends Data Products
-(<https://science.ebird.org/en/status-and-trends>). @code{eBird}
-(<https://ebird.org/home>) is a global database of bird observations collected
-by member of the public. @code{eBird} Status and Trends uses these data to model
-global bird abundances, range boundaries, and habitat associations at a high
-spatial and temporal resolution.")
+     "This package provides tools for accessing and analyzing @code{eBird} Status and
+Trends Data Products (<https://science.ebird.org/en/status-and-trends>).
+@code{eBird} (<https://ebird.org/home>) is a global database of bird
+observations collected by member of the public. @code{eBird} Status and Trends
+uses these data to model global bird distributions, abundances, and population
+trends at a high spatial and temporal resolution.")
     (license license:gpl3)))
 
 (define-public r-ebglmnet
@@ -20402,6 +20457,37 @@ functions to quickly locate variables and download labeled tables from the
 Census APIs (<https://www.census.gov/data/developers/data-sets.html>).")
     (license license:expat)))
 
+(define-public r-easybgm
+  (package
+    (name "r-easybgm")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "easybgm" version))
+       (sha256
+        (base32 "08pkr75l252k3pzbrqhfyi1f8vr66fw7mffxlfyhilgr8p7mgqnm"))))
+    (properties `((upstream-name . "easybgm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-qgraph
+                             r-igraph
+                             r-hdinterval
+                             r-ggplot2
+                             r-dplyr
+                             r-bgms
+                             r-bdgraph))
+    (home-page "https://cran.r-project.org/package=easybgm")
+    (synopsis "Extracting and Visualizing Bayesian Graphical Models")
+    (description
+     "Fit and visualize the results of a Bayesian analysis of networks commonly found
+in psychology.  The package supports fitting cross-sectional network models
+fitted using the packages BDgraph', bgms and BGGM'.  The package provides the
+parameter estimates, posterior inclusion probabilities, inclusion Bayes factor,
+and the posterior density of the parameters.  In addition, for BDgraph and bgms
+it allows to assess the posterior structure space.  Furthermore, the package
+comes with an extensive suite for visualizing results.")
+    (license license:gpl2+)))
+
 (define-public r-easyanova
   (package
     (name "r-easyanova")
@@ -20542,6 +20628,31 @@ uniform color space, runs one of a few different clustering algorithms on the
 colors in the image searching for a user-supplied number of colors, and returns
 the resulting color palette.")
     (license license:expat)))
+
+(define-public r-earthtide
+  (package
+    (name "r-earthtide")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "earthtide" version))
+       (sha256
+        (base32 "02l84019zpnpdb3j94dx6hq8c2is1819skmfrwa5vg9dvwzbqii4"))))
+    (properties `((upstream-name . "earthtide")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppthread r-rcppeigen r-rcpp r-r6))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jkennel/earthtide")
+    (synopsis
+     "Parallel Implementation of 'ETERNA 3.40' for Prediction and Analysis of Earth Tides")
+    (description
+     "This is a port of Fortran ETERNA 3.4
+<http://igets.u-strasbg.fr/soft_and_tool.php> by H.G. Wenzel for calculating
+synthetic Earth tides using the Hartmann and Wenzel (1994)
+<doi:10.1029/95GL03324> or Kudryavtsev (2004) <doi:10.1007/s00190-003-0361-2>
+tidal catalogs.")
+    (license license:gpl3)))
 
 (define-public r-earth
   (package

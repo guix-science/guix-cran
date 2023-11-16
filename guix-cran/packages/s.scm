@@ -33837,31 +33837,6 @@ behaviour, management, landscape and movement ecology, disease and invasive
 species spread, and population dynamics.")
     (license license:gpl2+)))
 
-(define-public r-simrestore
-  (package
-    (name "r-simrestore")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "simRestore" version))
-       (sha256
-        (base32 "10xm19j1sz1srqhc4w8ipz174a1cafz23iffwx2b0z9lsddb93an"))))
-    (properties `((upstream-name . "simRestore")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble r-subplex r-shiny r-rcpp))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=simRestore")
-    (synopsis
-     "Simulate the Effect of Management Policies on Restoration Efforts")
-    (description
-     "Simulation methods to study the effect of management policies on efforts to
-restore populations back to their original genetic composition.  Allows for
-single-scenario simulation and for optimization of specific chosen scenarios.
-Further information can be found in Hernandez, Janzen and Lavretsky (2023)
-<doi:10.1111/1755-0998.13892>.")
-    (license license:gpl2+)))
-
 (define-public r-simrel
   (package
     (name "r-simrel")

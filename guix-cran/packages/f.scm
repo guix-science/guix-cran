@@ -10529,31 +10529,6 @@ datasets becomes possible.  This package also contains a plot function for the
 visualization of the state vector and graphical diagnostics of the residuals.")
     (license license:gpl2+)))
 
-(define-public r-fjordlight
-  (package
-    (name "r-fjordlight")
-    (version "0.6.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "FjordLight" version))
-       (sha256
-        (base32 "1s9kw93c8mx9n2l566df32hp70zcmjjnlkmrg3qpfkicg92dbqij"))))
-    (properties `((upstream-name . "FjordLight")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-raster r-ncdf4 r-curl))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/FACE-IT-project/FjordLight")
-    (synopsis
-     "Available Light Within the Water Column and Seafloor of Arctic Fjords")
-    (description
-     "Satellite data collected between 2003 and 2022, in conjunction with gridded
-bathymetric data (50-150 m resolution), are used to estimate the irradiance
-reaching the bottom of a series of representative EU Arctic fjords.  An Earth
-System Science Data (ESSD) manuscript, Schlegel et al. (2023, in review), that
-provides a detailed explanation of the methodology is currently in review.")
-    (license license:expat)))
-
 (define-public r-fizzbuzzr
   (package
     (name "r-fizzbuzzr")

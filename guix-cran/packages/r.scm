@@ -38792,13 +38792,13 @@ al. (2013) <doi:10.1007/978-3-642-35638-4_21>.")
 (define-public r-rclipboard
   (package
     (name "r-rclipboard")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rclipboard" version))
        (sha256
-        (base32 "1sm3x134brhi0qxa1bp20z4k0dlpa044qg8zsbgjr00w8yc3rr47"))))
+        (base32 "18dj35vi5xdg0yhdm58vdgklwyl2zsjkvz01jcvwy7nvhkqm6c82"))))
     (properties `((upstream-name . "rclipboard")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-bslib))

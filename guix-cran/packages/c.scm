@@ -16908,13 +16908,13 @@ the analysed objects.")
 (define-public r-compind
   (package
     (name "r-compind")
-    (version "2.8")
+    (version "2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Compind" version))
        (sha256
-        (base32 "0h5kklflxdaf3i3iksblhfhyfsa44hrj9aniz83pyf62730lzjxx"))))
+        (base32 "0cqj757530slbihs8wn2apq1a3lvcsc1qg3nv3s6aq1djsj22wjd"))))
     (properties `((upstream-name . "Compind")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdep
@@ -16926,6 +16926,7 @@ the analysed objects.")
                              r-lpsolve
                              r-hmisc
                              r-gparotation
+                             r-factominer
                              r-boot
                              r-benchmarking))
     (native-inputs (list r-r-rsp))
@@ -16936,7 +16937,7 @@ the analysed objects.")
 Indicators methods, focusing, in particular, on the normalisation and
 weighting-aggregation steps, as described in OECD Handbook on constructing
 composite indicators: methodology and user guide
-<https://www.oecd.org/els/soc/handbookonconstructingcompositeindicatorsmethodologyanduserguide.htm>,
+<https://www.oecd-ilibrary.org/economics/handbook-on-constructing-composite-indicators-methodology-and-user-guide_9789264043466-en>,
 Vidoli and Fusco and Mazziotta <doi:10.1007/s11205-014-0710-y>, Mazziotta and
 Pareto (2016) <doi:10.1007/s11205-015-0998-2>, Van Puyenbroeck and Rogge
 <doi:10.1016/j.ejor.2016.07.038> and other authors.")
@@ -23938,6 +23939,30 @@ segment, the position, orientation and length of which guide where the
 respective points are placed.  This package is described in Fachada & de Andrade
 (2023) <doi:10.1016/j.knosys.2023.110836>.")
     (license license:expat)))
+
+(define-public r-cluer
+  (package
+    (name "r-cluer")
+    (version "1.4.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ClueR" version))
+       (sha256
+        (base32 "0zj75q4aqkf6l7720cc38rjx51lmqfp6gmgxp7pkk2ixdlpmh3sy"))))
+    (properties `((upstream-name . "ClueR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-e1071))
+    (home-page "https://cran.r-project.org/package=ClueR")
+    (synopsis "Cluster Evaluation")
+    (description
+     "CLUster Evaluation (CLUE) is a computational method for identifying optimal
+number of clusters in a given time-course dataset clustered by cmeans or kmeans
+algorithms and subsequently identify key kinases or pathways from each cluster.
+Its implementation in R is called @code{ClueR}.  See README on
+<https://github.com/P@code{YangLab/ClueR>} for more details.  P Yang et al.
+(2015) <doi:10.1371/journal.pcbi.1004403>.")
+    (license license:gpl3)))
 
 (define-public r-clubpro
   (package

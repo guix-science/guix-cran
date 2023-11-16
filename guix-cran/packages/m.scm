@@ -21822,13 +21822,13 @@ Sievert, Schloerke, Xie, Allen, @code{McPherson}, Dipert and Borges (2022)
 (define-public r-mirai
   (package
     (name "r-mirai")
-    (version "0.11.1")
+    (version "0.11.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mirai" version))
        (sha256
-        (base32 "1n0hjqz8h0754wsnbml72cp6hwdfd0wzsfl95x6pvp2i83yz2i1h"))))
+        (base32 "0fp5y4qpbznbbcnhf99biciddr4caxjc28zbgiq3s0xwyybgnlsc"))))
     (properties `((upstream-name . "mirai")))
     (build-system r-build-system)
     (propagated-inputs (list r-nanonext))

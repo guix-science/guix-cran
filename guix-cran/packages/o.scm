@@ -3770,13 +3770,13 @@ are also included.")
 (define-public r-optmatch
   (package
     (name "r-optmatch")
-    (version "0.10.6")
+    (version "0.10.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "optmatch" version))
        (sha256
-        (base32 "0d8xrq6b2dkr78dk25rikmsypfd2vsvv8y9pmsfv7gfzgxb62xib"))))
+        (base32 "07bx6bs5kk9pv0a2nsvq5y4bq4z17sa5f54kpxpim476xd8w43rk"))))
     (properties `((upstream-name . "optmatch")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-rlemon r-rcpp r-dplyr))
@@ -6927,13 +6927,13 @@ the donor's permission, Dr. Daqing Chen.")
 (define-public r-onlinepca
   (package
     (name "r-onlinepca")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "onlinePCA" version))
        (sha256
-        (base32 "08qivsfnwz5vp089lv9czsaz3nfi42kn9yhgzf27dji18y2xscic"))))
+        (base32 "1xc9kjqvpspymywzaykw4nw14y43fi4ydwj4jfhvx5ws51f7y9i8"))))
     (properties `((upstream-name . "onlinePCA")))
     (build-system r-build-system)
     (propagated-inputs (list r-rspectra r-rcpparmadillo r-rcpp))
@@ -8651,38 +8651,6 @@ useful for general data analysis and especially for analysis of categorical and
 ordinal data.")
     (license license:expat)))
 
-(define-public r-ohun
-  (package
-    (name "r-ohun")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ohun" version))
-       (sha256
-        (base32 "09rx31ij775si18b4pfl11djfzzrpf1j324kbldhdq94kz18mf8f"))))
-    (properties `((upstream-name . "ohun")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-warbler
-                             r-tuner
-                             r-sf
-                             r-seewave
-                             r-rlang
-                             r-igraph
-                             r-ggplot2
-                             r-fftw
-                             r-cli
-                             r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://docs.ropensci.org/ohun/")
-    (synopsis "Optimizing Acoustic Signal Detection")
-    (description
-     "Facilitates the automatic detection of acoustic signals, providing functions to
-diagnose and optimize the performance of detection routines.  Detections from
-other software can also be explored and optimized.  Araya-Salas et al. (2022)
-<doi:10.1101/2022.12.13.520253>.")
-    (license license:gpl2+)))
-
 (define-public r-ohtadstats
   (package
     (name "r-ohtadstats")
@@ -9896,13 +9864,13 @@ be manipulated and provides features such as selection, filtering and ordering."
 (define-public r-od
   (package
     (name "r-od")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "od" version))
        (sha256
-        (base32 "07qfpl4nm9s1ixpi87riwq9kj1v3p1qmcfyvmw2v14v04hzg9c22"))))
+        (base32 "1aw3nb12a5wdkz1728238gsjff2l11ypcr7jpgzk3ns8yps8f1mw"))))
     (properties `((upstream-name . "od")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs r-sfheaders))

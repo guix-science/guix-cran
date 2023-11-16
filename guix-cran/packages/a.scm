@@ -18080,13 +18080,13 @@ complete re-implementation of the functions available in the ade4 package.")
 (define-public r-adea
   (package
     (name "r-adea")
-    (version "1.4.4")
+    (version "1.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adea" version))
        (sha256
-        (base32 "11lwz21fdnlracgighbams8giv2pg1g47fj1pb28vv9nnm08prfc"))))
+        (base32 "0r046r401rzzinikkhm6f8vbksx2xy151s149kcsym2gv356ivsp"))))
     (properties `((upstream-name . "adea")))
     (build-system r-build-system)
     (propagated-inputs (list r-slam

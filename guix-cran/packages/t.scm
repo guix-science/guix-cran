@@ -2276,13 +2276,13 @@ they are present.")
 (define-public r-tsutils
   (package
     (name "r-tsutils")
-    (version "0.9.3")
+    (version "0.9.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tsutils" version))
        (sha256
-        (base32 "1r77j13vsd0p6s2c3bva5ayhapiswsr6vfacb3i448h5vh551kgq"))))
+        (base32 "1jf37asxg4nfm1jhf6q6fjs8dljlqs1r57kr4q38dnz11hz1jsm4"))))
     (properties `((upstream-name . "tsutils")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcolorbrewer r-plotrix r-mapa r-forecast))
@@ -17902,6 +17902,41 @@ the Smith-Waterman local alignment algorithm suitable for natural language.")
     (description
      "Function for sparse regression on raw text, regressing a labeling vector onto a
 feature space consisting of all possible phrases.")
+    (license license:expat)))
+
+(define-public r-textrecipes
+  (package
+    (name "r-textrecipes")
+    (version "1.0.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "textrecipes" version))
+       (sha256
+        (base32 "0c4l54vqawnwl1341mk5jvqwj1r0dwdprbp2fh362493c8fy04iv"))))
+    (properties `((upstream-name . "textrecipes")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs
+                             r-tokenizers
+                             r-tibble
+                             r-snowballc
+                             r-rlang
+                             r-recipes
+                             r-purrr
+                             r-matrix
+                             r-magrittr
+                             r-lifecycle
+                             r-glue
+                             r-generics
+                             r-dplyr
+                             r-cpp11))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/tidymodels/textrecipes")
+    (synopsis "Extra 'Recipes' for Text Processing")
+    (description
+     "Converting text to numerical features requires specifically created procedures,
+which are implemented as steps according to the recipes package.  These steps
+allows for tokenization, filtering, counting (tf and tfidf) and feature hashing.")
     (license license:expat)))
 
 (define-public r-textrank
