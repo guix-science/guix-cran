@@ -5887,13 +5887,13 @@ database when the data are required.")
 (define-public r-rsoi
   (package
     (name "r-rsoi")
-    (version "0.5.5")
+    (version "0.5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rsoi" version))
        (sha256
-        (base32 "13afk5rf2gdnikd36x00513kafkcfh0q9hqzsn331fqggxr1nfyi"))))
+        (base32 "0x22mh27bsjrpc90dss59ycib6qlpvk9vb9p07fxlk6b68vdfi06"))))
     (properties `((upstream-name . "rsoi")))
     (build-system r-build-system)
     (propagated-inputs (list r-memoise r-curl))
@@ -13397,13 +13397,13 @@ problems.")
 (define-public r-rocbc
   (package
     (name "r-rocbc")
-    (version "1.1.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rocbc" version))
        (sha256
-        (base32 "08vj9nq4yysz32hwyqhs6miqznf4w5zi2isd2p4a12bccjzn6df4"))))
+        (base32 "18p7ydnaayia072dhpxlb184ib4rv0zmm8zymcry76znny2milm6"))))
     (properties `((upstream-name . "rocbc")))
     (build-system r-build-system)
     (propagated-inputs (list r-splancs r-pracma r-mvtnorm r-formattable
@@ -17002,6 +17002,32 @@ collection in the GNU Octave function fact() which was aggregated by Jordi
 @code{GutiÃ©rrez} Hermoso based on the (now defunct) site stallmanfacts.com
 (which is accessible only via <http://archive.org>).")
     (license license:gpl3)))
+
+(define-public r-rmsdp
+  (package
+    (name "r-rmsdp")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RMSDp" version))
+       (sha256
+        (base32 "12yfjs66w9d1i9yir731nk7038rg7b77m05fjs9x7a5cs9001azg"))))
+    (properties `((upstream-name . "RMSDp")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-foreach r-doparallel))
+    (home-page "https://cran.r-project.org/package=RMSDp")
+    (synopsis
+     "Refined Modified Stahel-Donoho (MSD) Estimators for Outlier Detection (Parallel Version)")
+    (description
+     "This package provides a parallel function for multivariate outlier detection
+named modified Stahel-Donoho estimators is contained in this package.  The
+function RMSDp() is for elliptically distributed datasets and recognizes
+outliers based on Mahalanobis distance.  This function is for higher dimensional
+datasets that cannot be handled by a single core function RMSD() included in
+RMSD package.  See Wada and Tsubaki (2013) <doi:10.1109/CLOUDCOM-ASIA.2013.86>
+for the detail of the algorithm.")
+    (license license:gpl3+)))
 
 (define-public r-rmsd
   (package
@@ -25959,13 +25985,13 @@ documentation, and examples.")
 (define-public r-revgadgets
   (package
     (name "r-revgadgets")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RevGadgets" version))
        (sha256
-        (base32 "0vs6wcapckyy2i2g1699sha963gwfy68swvd2xxphxnlsa8hfr3f"))))
+        (base32 "1p4daj3nsxkrqhvlv6mavag41a0a904khinff8ss370rmr9jga5y"))))
     (properties `((upstream-name . "RevGadgets")))
     (build-system r-build-system)
     (propagated-inputs (list r-treeio
@@ -25977,7 +26003,6 @@ documentation, and examples.")
                              r-png
                              r-phytools
                              r-ggtree
-                             r-ggthemes
                              r-ggpp
                              r-ggplotify
                              r-ggplot2
@@ -26746,13 +26771,13 @@ http://www.auriq.com/documentation/source/install/index.html.")
 (define-public r-respr
   (package
     (name "r-respr")
-    (version "2.3.1")
+    (version "2.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "respR" version))
        (sha256
-        (base32 "0y8s000071m9n1v64xgxyl09biih92v347332afsmak582nk6i6b"))))
+        (base32 "1nywhy50zbk4lvygm9vlkdya3pz1x3mkv8560r2nbcd8yd4w4y71"))))
     (properties `((upstream-name . "respR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -28056,13 +28081,13 @@ ratio), NLR (negative likelihood ratio), PPV (positive predictive value), NPV
 (define-public r-reportrmd
   (package
     (name "r-reportrmd")
-    (version "0.0.2")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reportRmd" version))
        (sha256
-        (base32 "07vk3wmcr47bfjnldfrs2j3dhq5yw9h6l14jahn7hzz5ap2zj0jq"))))
+        (base32 "0z0k6g0dxxni78x9z6h29ybgdj38cyb8ywn1b1lbjqb1nkjc9phs"))))
     (properties `((upstream-name . "reportRmd")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -28072,12 +28097,14 @@ ratio), NLR (negative likelihood ratio), PPV (positive predictive value), NPV
                              r-plyr
                              r-pander
                              r-mass
+                             r-lifecycle
                              r-knitr
                              r-kableextra
                              r-gridextra
                              r-ggpubr
                              r-ggplot2
                              r-geepack
+                             r-cowplot
                              r-cmprsk
                              r-aod))
     (native-inputs (list r-rmarkdown r-knitr esbuild))
@@ -40648,39 +40675,6 @@ Neuenschwander et al. (2010) <doi:10.1177/1740774509356002> and Schmidli et al.
 (2014) <doi:10.1111/biom.12242> explain details on the methodology.")
     (license license:gpl3+)))
 
-(define-public r-rbenvo
-  (package
-    (name "r-rbenvo")
-    (version "1.0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rbenvo" version))
-       (sha256
-        (base32 "0clg2cxyi60yz2mdp95v0hd5gqhk8h2xgmx68852jcpbjf76xasa"))))
-    (properties `((upstream-name . "rbenvo")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-stringr
-                             r-sf
-                             r-rlang
-                             r-purrr
-                             r-matrix
-                             r-magrittr
-                             r-lubridate
-                             r-lme4
-                             r-ggplot2
-                             r-forcats
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/apeterson91/rbenvo")
-    (synopsis "Built Environment Objects")
-    (description
-     "This package provides S3 class objects and methods for built environment data to
-ease the use of working with these data and facilitate other packages that make
-use of this data structure.")
-    (license license:expat)))
-
 (define-public r-rbent
   (package
     (name "r-rbent")
@@ -43425,6 +43419,28 @@ distance, Hamming distance, Weighted-tau distance and Weighted Kendall distance.
 signed-rank test which produces consistent and meaningful results for ordinal or
 monotonically-transformed data.")
     (license license:expat)))
+
+(define-public r-rankcorr
+  (package
+    (name "r-rankcorr")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rankCorr" version))
+       (sha256
+        (base32 "0if7kp3f4dz164kw4lj7s4fq9qfjxgm6vz2i9p93hnipc8cg3azb"))))
+    (properties `((upstream-name . "rankCorr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rms r-rankicc))
+    (home-page "https://cran.r-project.org/package=rankCorr")
+    (synopsis
+     "Total, Between-, and Within-Cluster Spearman Rank Correlations for Clustered Data")
+    (description
+     "Estimates the total, between-, and within-cluster Spearman rank correlations for
+continuous and ordinal clustered data.
+<https://github.com/shengxintu/@code{rankCorr>}.")
+    (license license:gpl2+)))
 
 (define-public r-rankcluster
   (package

@@ -21855,25 +21855,6 @@ external GIS software ensures replicability and raises the standard for spatial
 RDDs.")
     (license license:gpl3)))
 
-(define-public r-spatialprobit
-  (package
-    (name "r-spatialprobit")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "spatialprobit" version))
-       (sha256
-        (base32 "1r8pn6pmd2aqy7xia2b0935n69zkr4h0dwp6z418jxgbfc7198yl"))))
-    (properties `((upstream-name . "spatialprobit")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tmvtnorm r-spdep r-spatialreg r-mvtnorm
-                             r-matrix))
-    (home-page "https://www.r-project.org")
-    (synopsis "Spatial Probit Models")
-    (description "Bayesian Estimation of Spatial Probit and Tobit Models.")
-    (license license:gpl2+)))
-
 (define-public r-spatialposition
   (package
     (name "r-spatialposition")
@@ -26034,13 +26015,13 @@ Collaborative Research on Sustainable Intensification (SIIL) projects.")
 (define-public r-soiltaxonomy
   (package
     (name "r-soiltaxonomy")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SoilTaxonomy" version))
        (sha256
-        (base32 "0gp9h32fikavxy6ds0vlc0fkb3gdrwvr1z5flpdmjqijjyr0frcc"))))
+        (base32 "19rm7gmp6ya1fq1plmajjp8w8hf5q0j0va5flvpj39i2by3w3xrc"))))
     (properties `((upstream-name . "SoilTaxonomy")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-data-table))
@@ -26220,13 +26201,13 @@ decomposition experiments.")
 (define-public r-soildb
   (package
     (name "r-soildb")
-    (version "2.7.8")
+    (version "2.7.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "soilDB" version))
        (sha256
-        (base32 "1n6yf0zl3l7g0i4nra4i5as3v7f1g6n93fib6a97cc1cnjkqhh2d"))))
+        (base32 "1fzaf9naj0fgk85wwzrk0illbgnsa5x526bvch5v8li7w2knl479"))))
     (properties `((upstream-name . "soilDB")))
     (build-system r-build-system)
     (propagated-inputs (list r-dbi r-data-table r-curl r-aqp))
@@ -27737,13 +27718,13 @@ plotting of the game played.")
 (define-public r-snahelper
   (package
     (name "r-snahelper")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "snahelper" version))
        (sha256
-        (base32 "1krmaynhvbbdvyy55h2b1h9w9pw1gjkd2ha4prhcm836rmvyb6av"))))
+        (base32 "04l6ad4rj45kr7p98nbpsqbqppv2bgp71n6zph0aqm6b13hp0jyy"))))
     (properties `((upstream-name . "snahelper")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny
@@ -35604,13 +35585,13 @@ format for pedigrees.  Described in Yao and Ochoa (2022)
 (define-public r-simexboost
   (package
     (name "r-simexboost")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SIMEXBoost" version))
        (sha256
-        (base32 "0gxw8xb2hvsizawfd863c268q5wq1cdsmdsand5iys2b9gry1pmq"))))
+        (base32 "1w7r4rw4zbfk3ks3iinsvv0fcmc15xlq8ybb6bhfafki298kingi"))))
     (properties `((upstream-name . "SIMEXBoost")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -35618,11 +35599,13 @@ format for pedigrees.  Described in Yao and Ochoa (2022)
     (synopsis "Boosting Method for High-Dimensional Error-Prone Data")
     (description
      "Implementation of the boosting procedure with the simulation and extrapolation
-approach to address variable selection and estimation for
-(ultra)high-dimensional data subject to measurement error in predictors.  Some
-relevant references include Chen, L.-P. and Yi, G. Y. (2021)
-<doi:10.1111/biom.13331>, Hastie, T., Tibshirani, R. and Friedman, J. (2008,
-ISBN:978-0387848570), and Yi, G. Y. (2017, ISBN:978-1493966387).")
+approach to address variable selection and estimation for high-dimensional data
+subject to measurement error in predictors.  It can be used to address
+generalized linear models (GLM) in Chen (2023) <doi: 10.1007/s11222-023-10209-3>
+and the accelerated failure time (AFT) model in Chen and Qiu (2023) <doi:
+10.1111/biom.13898>.  Some relevant references include Chen and Yi (2021)
+<doi:10.1111/biom.13331> and Hastie, Tibshirani, and Friedman (2008,
+ISBN:978-0387848570).")
     (license license:gpl2)))
 
 (define-public r-simexam
@@ -40454,13 +40437,13 @@ that it does not freeze your Shiny app.")
 (define-public r-shiny-telemetry
   (package
     (name "r-shiny-telemetry")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shiny.telemetry" version))
        (sha256
-        (base32 "10iwpj0pfhf6sq9fw7vr33f94w7sz2x1v4l7j5g8iqixhcq2953d"))))
+        (base32 "0kp0wb3rh501bg7y8r90bwy1bbz5skmlvfjsqxj3nc1gpanndbjs"))))
     (properties `((upstream-name . "shiny.telemetry")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -42466,6 +42449,37 @@ flexibility that allows simple incorporation of Generalized Estimating
 Equations; see Vaughan, G., Aseltine, R., Chen, K., Yan, J., (2017)
 <doi:10.1111/biom.12669> for details.")
     (license license:gpl3+)))
+
+(define-public r-sgdinference
+  (package
+    (name "r-sgdinference")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SGDinference" version))
+       (sha256
+        (base32 "13sqchniiq5d8k0rkilmn33lhl5lrqkswwny3zzk6d6alh6x7jh8"))))
+    (properties `((upstream-name . "SGDinference")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/SGDinference-Lab/SGDinference/")
+    (synopsis "Inference with Stochastic Gradient Descent")
+    (description
+     "Estimation and inference methods for large-scale mean and quantile regression
+models via stochastic (sub-)gradient descent (S-@code{subGD}) algorithms.  The
+inference procedure handles cross-sectional data sequentially: (i) updating the
+parameter estimate with each incoming \"new observation\", (ii) aggregating it as
+a Polyak-Ruppert average, and (iii) computing an asymptotically pivotal
+statistic for inference through random scaling.  The methodology used in the
+SGDinference package is described in detail in the following papers: (i) Lee,
+S., Liao, Y., Seo, M.H. and Shin, Y. (2022) <doi:10.1609/aaai.v36i7.20701> \"Fast
+and robust online inference with stochastic gradient descent via random
+scaling\". (ii) Lee, S., Liao, Y., Seo, M.H. and Shin, Y. (2023)
+<@code{arXiv:2209.14502>} \"Fast Inference for Quantile Regression with Tens of
+Millions of Observations\".")
+    (license license:gpl3)))
 
 (define-public r-sgd
   (package

@@ -1131,13 +1131,13 @@ which identifies the groove locations.")
 (define-public r-bulkreadr
   (package
     (name "r-bulkreadr")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bulkreadr" version))
        (sha256
-        (base32 "0qbh3wsyafdixvwcbff0qajmy2ss6swq5m9kjzcsjai4cxahwbci"))))
+        (base32 "067j95cbf22zi5rrih6i46l6kdy49ak3zal69q3r98cnhv9l2cl0"))))
     (properties `((upstream-name . "bulkreadr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -1149,6 +1149,7 @@ which identifies the groove locations.")
                              r-openxlsx
                              r-magrittr
                              r-lubridate
+                             r-labelled
                              r-inspectdf
                              r-haven
                              r-googlesheets4
@@ -1160,13 +1161,14 @@ which identifies the groove locations.")
     (synopsis "The Ultimate Tool for Reading Data in Bulk")
     (description
      "Designed to simplify and streamline the process of reading and processing large
-volumes of data in R. With a collection of functions tailored for bulk data
-operations, the package allows users to efficiently read multiple sheets from
-Microsoft Excel'/'Google Sheets workbooks and multiple CSV files from a
-directory.  It returns the data as organized data frames, making it convenient
-for further analysis and manipulation.  Whether dealing with extensive data sets
-or batch processing tasks, bulkreadr empowers users to effortlessly handle data
-in bulk, saving time and effort in data preparation workflows.")
+volumes of data in R, this package offers a collection of functions tailored for
+bulk data operations.  It enables users to efficiently read multiple sheets from
+Microsoft Excel and Google Sheets workbooks, as well as various CSV files from a
+directory.  The data is returned as organized data frames, facilitating further
+analysis and manipulation.  Ideal for handling extensive data sets or batch
+processing tasks, bulkreadr empowers users to manage data in bulk effortlessly,
+saving time and effort in data preparation workflows.  Additionally, the package
+seamlessly works with labelled data from SPSS and Stata.")
     (license license:expat)))
 
 (define-public r-bulkanalyser
@@ -16834,13 +16836,13 @@ Projections.  2013. <doi:10.1007/978-94-007-7551-0>.")
 (define-public r-beezdiscounting
   (package
     (name "r-beezdiscounting")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "beezdiscounting" version))
        (sha256
-        (base32 "0k5zbv5vk26awb682j7ndixq6rvx6z2ii8vky3mg18lqpx8czql9"))))
+        (base32 "07m1mjswrjcq7573drq511vzpgcj8gp8jwzzxvnc6bl4a58wh8y0"))))
     (properties `((upstream-name . "beezdiscounting")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

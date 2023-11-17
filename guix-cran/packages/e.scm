@@ -8739,6 +8739,34 @@ surveillance system sensitivity and functions to support scenario tree modelling
 analyses.")
     (license license:gpl2+)))
 
+(define-public r-epiphy
+  (package
+    (name "r-epiphy")
+    (version "0.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "epiphy" version))
+       (sha256
+        (base32 "08jvbmj6l90102cpf00h5dzq7a700zwvy31wz7d5lxfn91x83gb9"))))
+    (properties `((upstream-name . "epiphy")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-transport r-rcpp r-pbapply r-msm r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/chgigot/epiphy")
+    (synopsis "Analysis of Plant Disease Epidemics")
+    (description
+     "This package provides a toolbox to make it easy to analyze plant disease
+epidemics.  It provides a common framework for plant disease intensity data
+recorded over time and/or space.  Implemented statistical methods are currently
+mainly focused on spatial pattern analysis (e.g., aggregation indices, Taylor
+and binary power laws, distribution fitting, SADIE and mapcomp methods).  See
+Laurence V. Madden, Gareth Hughes, Franck van den Bosch (2007)
+<doi:10.1094/9780890545058> for further information on these methods.  Several
+data sets that were mainly published in plant disease epidemiology literature
+are also included in this package.")
+    (license license:expat)))
+
 (define-public r-epiomics
   (package
     (name "r-epiomics")
@@ -20653,6 +20681,40 @@ synthetic Earth tides using the Hartmann and Wenzel (1994)
 <doi:10.1029/95GL03324> or Kudryavtsev (2004) <doi:10.1007/s00190-003-0361-2>
 tidal catalogs.")
     (license license:gpl3)))
+
+(define-public r-earthdatalogin
+  (package
+    (name "r-earthdatalogin")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "earthdatalogin" version))
+       (sha256
+        (base32 "09vrwc4r4ap30n3mr5vdclhqygma6m8yzvpzw6s57gvifchig2d6"))))
+    (properties `((upstream-name . "earthdatalogin")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-purrr r-openssl r-httr))
+    (native-inputs (list r-knitr))
+    (home-page "https://boettiger-lab.github.io/earthdatalogin/")
+    (synopsis "NASA 'EarthData' Login Utilities")
+    (description
+     "Providing easy, portable access to NASA @code{EarthData} products through the
+use of bearer tokens.  Much of NASA's public data catalogs hosted and maintained
+by its 12 Distributed Active Archive Centers ('DAACs') are now made available on
+the Amazon Web Services S3 storage.  However, accessing this data through the
+standard S3 API is restricted to only to compute resources running inside
+us-west-2 Data Center in Portland, Oregon, which allows NASA to avoid being
+charged data egress rates.  This package provides public access to the data from
+any networked device by using the @code{EarthData} login application programming
+interface (API),
+<https://www.earthdata.nasa.gov/eosdis/science-system-description/eosdis-components/earthdata-login>,
+providing convenient authentication and access to cloud-hosted NASA
+@code{EarthData} products.  This makes access to a wide range of earth
+observation data from any location straight forward and compatible with R
+packages that are widely used with cloud native earth observation data (such as
+terra', sf', etc.)")
+    (license license:expat)))
 
 (define-public r-earth
   (package

@@ -2905,13 +2905,13 @@ Davidian (2004) <DOI:10.1002/sim.1903>, Li and Greene (2013)
 (define-public r-pstrata
   (package
     (name "r-pstrata")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PStrata" version))
        (sha256
-        (base32 "05f63nqjn2140dhycq05d5hrw7d1c065lpg6js6plsx235jwmga8"))))
+        (base32 "06k50w07rin41p31ifn6dsap6z655g8bgg2s0qqiw6npqj2b83nk"))))
     (properties `((upstream-name . "PStrata")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -6234,6 +6234,28 @@ to the loss of the forecast combination.  Methods like predict(), update(),
 plot() and print() are available for convenience.  This package utilizes the
 optim C++ library for numeric optimization <https://github.com/kthohr/optim>.")
     (license license:gpl3+)))
+
+(define-public r-profiplots
+  (package
+    (name "r-profiplots")
+    (version "0.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "profiplots" version))
+       (sha256
+        (base32 "0b2i1m9x7aqhlizv059q1gv8m15myim4q0s81gaskqf9rid83apz"))))
+    (properties `((upstream-name . "profiplots")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://profinit.eu")
+    (synopsis "Profinit Plotting Theme")
+    (description
+     "Help unify visual output of R analyses in the Profinit EU company.  So far,
+there are color and fill scales for ggplot2', plotting theme for ggplot2', color
+palettes and utils to make the tools default choices.")
+    (license license:expat)))
 
 (define-public r-profiler
   (package
@@ -16510,6 +16532,27 @@ Gunawan, D., Hawkins, G. E., Tran, M. N., Kohn, R., & Brown, S. D. (2020)
 package is available at <https://newcastlecl.github.io/@code{samplerDoc/>} and
 includes several detailed examples, some background and troubleshooting steps.")
     (license license:gpl3)))
+
+(define-public r-pmvalsampsize
+  (package
+    (name "r-pmvalsampsize")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pmvalsampsize" version))
+       (sha256
+        (base32 "1wrdid3rcl7h7sdgm2gxkmcb4vdzg0krkmb09bh50y7nnrq70i22"))))
+    (properties `((upstream-name . "pmvalsampsize")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-proc))
+    (home-page "https://cran.r-project.org/package=pmvalsampsize")
+    (synopsis "Sample Size for External Validation of a Prediction Model")
+    (description
+     "Computes the minimum sample size required for the external validation of an
+existing multivariable prediction model using the criteria proposed by Archer
+(2020) <doi:10.1002/sim.8766> and Riley (2021) <doi:10.1002/sim.9025>.")
+    (license license:gpl3+)))
 
 (define-public r-pmultinom
   (package

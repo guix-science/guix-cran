@@ -5618,13 +5618,13 @@ subsamples.  For more details, please refer to Wang, Stapleton, and Chen (2018)
 (define-public r-trendtm
   (package
     (name "r-trendtm")
-    (version "2.0.14")
+    (version "2.0.19")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TrendTM" version))
        (sha256
-        (base32 "1sm2mcjwh1y3bw5gp67mlqayzy6sin6azlmycff58k6pwy88fqzf"))))
+        (base32 "00m8ahzfldvncn9p35f7qya890chqwizal02748nlfk4wfxjbgw7"))))
     (properties `((upstream-name . "TrendTM")))
     (build-system r-build-system)
     (propagated-inputs (list r-softimpute r-fda r-capushe))
@@ -14601,6 +14601,40 @@ unpublished research.")
     (home-page "https://github.com/colearendt/tidyjson")
     (synopsis "Tidy Complex 'JSON'")
     (description "Turn complex JSON data into tidy data frames.")
+    (license license:expat)))
+
+(define-public r-tidyindex
+  (package
+    (name "r-tidyindex")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidyindex" version))
+       (sha256
+        (base32 "1ziiycfldcy94bsl65mf9c6iav7xn2wamncdkz41d76bsxrjzbnx"))))
+    (properties `((upstream-name . "tidyindex")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs
+                             r-tsibble
+                             r-tidyselect
+                             r-tidyr
+                             r-rlang
+                             r-purrr
+                             r-glue
+                             r-ggplot2
+                             r-generics
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/huizezhang-sherry/tidyindex")
+    (synopsis "Tidy Data Pipeline to Construct, Compare, and Analyse Indexes")
+    (description
+     "Construct and analyse indexes in a pipeline tidy workflow.  tidyindex contains
+modules for transforming variables, aggregating variables across time, reducing
+data dimension through weighting, and fitting distributions.  A manuscript
+describing the methodology can be found at
+<https://github.com/huizezhang-sherry/paper-tidyindex>.")
     (license license:expat)))
 
 (define-public r-tidyhydat

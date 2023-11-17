@@ -15712,13 +15712,13 @@ F-value (F) based on F-ratio test.")
 (define-public r-lactater
   (package
     (name "r-lactater")
-    (version "0.1.4")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lactater" version))
        (sha256
-        (base32 "1siyf2hqrxhri1gadvkg9dji7pg28l11h109frksc0lwgy6z7rhk"))))
+        (base32 "11wv998mapys2hgwwdgvgllcjsd4y7g7p19kg419xlx3py0c077p"))))
     (properties `((upstream-name . "lactater")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -15747,7 +15747,7 @@ Heck H, Mader A, Hess G, MÃ¼cke S, MÃ¼ller R, Hollmann W (1985)
 <doi:10.1055/s-2008-1025824>.  Kindermann W, Simon G, Keul J (1979)
 <doi:10.1007/BF00421101>.  Skinner JS, Mclellan TH (1980)
 <doi:10.1080/02701367.1980.10609285>.  Berg A, Jakob E, Lehmann M, Dickhuth HH,
-Huber G, Keul J (1990) <PMID:2408033>.  Zoladz JA, Rademaker AC, Sargeant AJ
+Huber G, Keul J (1990) PMID 2408033.  Zoladz JA, Rademaker AC, Sargeant AJ
 (1995) <doi:10.1113/jphysiol.1995.sp020959>.  Cheng B, Kuipers H, Snyder A,
 Keizer H, Jeukendrup A, Hesselink M (1992) <doi:10.1055/s-2007-1021309>.  Bishop
 D, Jenkins DG, Mackinnon LT (1998) <doi:10.1097/00005768-199808000-00014>.

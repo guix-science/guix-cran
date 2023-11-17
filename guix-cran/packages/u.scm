@@ -2962,6 +2962,54 @@ accessible via the URL below.")
 Gaussian noise using Unbalanced Haar wavelets.")
     (license license:gpl2)))
 
+(define-public r-umx
+  (package
+    (name "r-umx")
+    (version "4.19.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "umx" version))
+       (sha256
+        (base32 "0cp482g025ivhkxsj9zdyp3abcn4nyiy5psh0w4vvspgb5lvghs5"))))
+    (properties `((upstream-name . "umx")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xtable
+                             r-scales
+                             r-rmarkdown
+                             r-rcurl
+                             r-r2html
+                             r-pwr
+                             r-psychtools
+                             r-psych
+                             r-polycor
+                             r-paran
+                             r-openxlsx
+                             r-openmx
+                             r-nlme
+                             r-mvtnorm
+                             r-mumin
+                             r-matrix
+                             r-mass
+                             r-lavaan
+                             r-knitr
+                             r-kableextra
+                             r-hrbrthemes
+                             r-ggplot2
+                             r-gert
+                             r-foreign
+                             r-diagrammer
+                             r-cowplot))
+    (home-page "https://github.com/tbates/umx#readme")
+    (synopsis "Structural Equation Modeling and Twin Modeling in R")
+    (description
+     "Quickly create, run, and report structural equation models, and twin models.
+See ?umx for help, and umx_open_CRAN_page(\"umx\") for NEWS. Timothy C. Bates,
+Michael C. Neale, Hermine H. Maes, (2019).  umx: A library for Structural
+Equation and Twin Modelling in R. Twin Research and Human Genetics, 22, 27-41.
+<doi:10.1017/thg.2019.2>.")
+    (license license:gpl3)))
+
 (define-public r-umpire
   (package
     (name "r-umpire")

@@ -6178,13 +6178,13 @@ API.")
 (define-public r-openalexr
   (package
     (name "r-openalexr")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openalexR" version))
        (sha256
-        (base32 "0f8kdw25428rw6rgcng0vy4paw08mqzlnk11p8c5gi9f7bx40vw6"))))
+        (base32 "1ww45blq54lq55ypassmanabnfs8lv2p72gh6qlmha45mnhkwh51"))))
     (properties `((upstream-name . "openalexR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-progress r-jsonlite r-httr))

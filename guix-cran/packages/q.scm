@@ -4443,13 +4443,13 @@ Please refer to the vignette for additional details and references.")
 (define-public r-qfasa
   (package
     (name "r-qfasa")
-    (version "1.1.2")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "QFASA" version))
        (sha256
-        (base32 "1f61mm2wmpnzcr4c77gbpp41gf8lrfydar93zr9r95py9ds1p1h6"))))
+        (base32 "1dhnfr4f5ij3irkragyllfjqisgm27phk40c9i539vm6046sc2w2"))))
     (properties `((upstream-name . "QFASA")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan

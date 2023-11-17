@@ -4380,13 +4380,13 @@ requirements, and auto-composing error messages when they do not.")
 (define-public r-vetiver
   (package
     (name "r-vetiver")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vetiver" version))
        (sha256
-        (base32 "19yz8p4w3rqyzsr2xb8ryav566b2321zy3h34gaxlz0am0wsryw3"))))
+        (base32 "04gpr4h4vzr0xkgf4x8drpkg1j8f1w84h4ndc4ry15n7ayim4s0b"))))
     (properties `((upstream-name . "vetiver")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr

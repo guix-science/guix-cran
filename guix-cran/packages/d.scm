@@ -2839,13 +2839,13 @@ density) and random generation for discrete stable random variables.")
 (define-public r-dst
   (package
     (name "r-dst")
-    (version "1.5.1")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dst" version))
        (sha256
-        (base32 "08cw09hf5jx1qfmrqmhm4713gzq21p0ss3nx7qrs92mpsvprq3yc"))))
+        (base32 "1ivbc6k3ynl7ikc1yddxykqrgzz7dazf6bc71xllsh9x16fy8dqk"))))
     (properties `((upstream-name . "dst")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -11745,13 +11745,13 @@ dataset.")
 (define-public r-directpa
   (package
     (name "r-directpa")
-    (version "1.5")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "directPA" version))
        (sha256
-        (base32 "0k66x64fi26zlm82v59ya7x6l7ba3hpa5v9dq2ykb20a8zl6spla"))))
+        (base32 "0q6g18rwz5bfg73f144lzfp0apc4jf2gibh8h3vci0fnmwfvs7gz"))))
     (properties `((upstream-name . "directPA")))
     (build-system r-build-system)
     (propagated-inputs (list r-plotly r-calibrate))

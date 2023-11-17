@@ -12611,13 +12611,13 @@ disease, as discussed in Miller (2012) <doi:10.1007/s11538-012-9749-6>.")
 (define-public r-finalfit
   (package
     (name "r-finalfit")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "finalfit" version))
        (sha256
-        (base32 "16jbmzs5hx328vvggk5g3q5rmyaf82dmxgifjv28w2lb80ryjay1"))))
+        (base32 "04nskvkqd999wjxy7lkanrd4iyfn8xljagyafw1ai7mfiqxgmfag"))))
     (properties `((upstream-name . "finalfit")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -13096,13 +13096,13 @@ work with convenient functions at a package level.")
 (define-public r-fiestautils
   (package
     (name "r-fiestautils")
-    (version "1.1.8")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FIESTAutils" version))
        (sha256
-        (base32 "0md6wm3v6hmcq7difysxvf7l7rka0l7n3c6daqimkmvr03ncxahg"))))
+        (base32 "1c1pwabvgn4h7gmk1m4vslbaqp7qklvandy285947k911hixrdlq"))))
     (properties `((upstream-name . "FIESTAutils")))
     (build-system r-build-system)
     (propagated-inputs (list r-units

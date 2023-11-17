@@ -336,13 +336,13 @@ patterns and large datasets with multiple predictor variables.")
 (define-public r-gwqs
   (package
     (name "r-gwqs")
-    (version "3.0.4")
+    (version "3.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gWQS" version))
        (sha256
-        (base32 "1yhbcmznii3n2sbw0z2rw1sdn0zlk5v2z7ww3nl7rn005g4q04hi"))))
+        (base32 "11qs7vxal3br7rg379b5v2w06nvsipk7465c9l5lpifr8g0g561r"))))
     (properties `((upstream-name . "gWQS")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlist
@@ -358,17 +358,19 @@ patterns and large datasets with multiple predictor variables.")
                              r-ggplot2
                              r-future-apply
                              r-future
-                             r-dplyr
                              r-cowplot
-                             r-broom))
+                             r-car
+                             r-broom
+                             r-bookdown))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=gWQS")
     (synopsis "Generalized Weighted Quantile Sum Regression")
     (description
      "Fits Weighted Quantile Sum (WQS) regression (Carrico et al. (2014)
 <doi:10.1007/s13253-014-0180-3>), a random subset implementation of WQS (Curtin
-et al. (2019) <doi:10.1080/03610918.2019.1577971>) and a repeated holdout
-validation WQS (Tanner et al. (2019) <doi:10.1016/j.mex.2019.11.008>) for
+et al. (2019) <doi:10.1080/03610918.2019.1577971>), a repeated holdout
+validation WQS (Tanner et al. (2019) <doi:10.1016/j.mex.2019.11.008>) and a WQS
+with 2 indices (Renzetti et al. (2023) <doi:10.3389/fpubh.2023.1289579>) for
 continuous, binomial, multinomial, Poisson, quasi-Poisson and negative binomial
 outcomes.")
     (license license:gpl2+)))
@@ -4998,6 +5000,43 @@ functions for time-splitting a dataset when modeling non-proportional hazards in
 Cox regressions.")
     (license license:gpl3+)))
 
+(define-public r-greener
+  (package
+    (name "r-greener")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GREENeR" version))
+       (sha256
+        (base32 "0194cggs12bm2s9dzxy2f81r3ply9pi63vmkxaxn8fz96bba0kqj"))))
+    (properties `((upstream-name . "GREENeR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tmap
+                             r-tidyselect
+                             r-sf
+                             r-reshape2
+                             r-parallelly
+                             r-networkd3
+                             r-magrittr
+                             r-gridextra
+                             r-ggplot2
+                             r-fme
+                             r-dplyr
+                             r-data-table
+                             r-classint))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/calfarog/GREENeR")
+    (synopsis
+     "Geospatial Regression Equation for European Nutrient Losses (GREEN)")
+    (description
+     "This package provides tools and methods to apply the model Geospatial Regression
+Equation for European Nutrient losses (GREEN); Grizzetti et al. (2005)
+<doi:10.1016/j.jhydrol.2004.07.036>; Grizzetti et al. (2008); Grizzetti et al.
+(2012) <doi:10.1111/j.1365-2486.2011.02576.x>; Grizzetti et al. (2021)
+<doi:10.1016/j.gloenvcha.2021.102281>.")
+    (license license:gpl3)))
+
 (define-public r-greencrab-toolkit
   (package
     (name "r-greencrab-toolkit")
@@ -7764,13 +7803,13 @@ implementation to allow easy specification of various GPs'.")
 (define-public r-gparotation
   (package
     (name "r-gparotation")
-    (version "2023.8-1")
+    (version "2023.11-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GPArotation" version))
        (sha256
-        (base32 "1syg3snv95dv3pas5y5kqsm2hrmg1pdzgmy1m8nx9qkpwiwx8ig4"))))
+        (base32 "0gsb6n23iwvnxqak6rnc003bzj2xbnz9k05m8jgc6vb9whp1rmz2"))))
     (properties `((upstream-name . "GPArotation")))
     (build-system r-build-system)
     (home-page "https://optimizer.r-forge.r-project.org/GPArotation_www/")
@@ -17726,50 +17765,6 @@ of dagitty', an R package that uses the DAGitty web tool (<http://dagitty.net>)
 for creating and analyzing DAGs.  ggdag makes it easy to tidy and plot dagitty
 objects using ggplot2 and ggraph', as well as common analytic and graphical
 functions, such as determining adjustment sets and node relationships.")
-    (license license:expat)))
-
-(define-public r-ggcoverage
-  (package
-    (name "r-ggcoverage")
-    (version "0.7.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ggcoverage" version))
-       (sha256
-        (base32 "088gyc6054d8xx3k3pg5i40cnvyryyq4k6rn214li0yslj3fphyi"))))
-    (properties `((upstream-name . "ggcoverage")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-seqinr
-                             r-scales
-                             r-s4vectors
-                             r-rtracklayer
-                             r-rsamtools
-                             r-rlang
-                             r-reshape2
-                             r-rcolorbrewer
-                             r-patchwork
-                             r-magrittr
-                             r-iranges
-                             r-ggrepel
-                             r-ggplot2
-                             r-ggh4x
-                             r-ggbio
-                             r-genomicranges
-                             r-genomicalignments
-                             r-genomeinfodb
-                             r-dplyr
-                             r-bsgenome
-                             r-biostrings))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ggcoverage")
-    (synopsis "Visualize Genome Coverage with Various Annotations")
-    (description
-     "The goal of ggcoverage is to simplify the process of visualizing genome
-coverage.  It contains functions to load data from BAM, @code{BigWig} or
-@code{BedGraph} files, create genome coverage plot, add various annotations to
-the coverage plot, including base and amino acid annotation, GC annotation, gene
-annotation, transcript annotation, ideogram annotation and peak annotation.")
     (license license:expat)))
 
 (define-public r-ggcorset

@@ -189,27 +189,28 @@ of this package.")
 (define-public r-myclim
   (package
     (name "r-myclim")
-    (version "1.0.1")
+    (version "1.0.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "myClim" version))
        (sha256
-        (base32 "0qr312ixvhp7bspwh3i9sqabcdsgjqajr07r66bpq02xs9qpv1lc"))))
+        (base32 "1ygv7y2rh2jnksn7shjvz86dsjfw5bqyrsl6qnmhscrad4ld5ajr"))))
     (properties `((upstream-name . "myClim")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
+                             r-vroom
                              r-viridis
                              r-tidyr
                              r-tibble
                              r-stringr
-                             r-runner
                              r-purrr
                              r-plotly
                              r-lubridate
                              r-ggplot2
                              r-ggforce
-                             r-dplyr))
+                             r-dplyr
+                             r-data-table))
     (native-inputs (list r-knitr))
     (home-page "http://labgis.ibot.cas.cz/myclim/index.html")
     (synopsis "Microclimatic Data Processing")
@@ -3424,13 +3425,13 @@ datasets for calculating efficiency and cross efficiency.")
 (define-public r-multiplex
   (package
     (name "r-multiplex")
-    (version "3.1.0")
+    (version "3.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multiplex" version))
        (sha256
-        (base32 "0nr6pfb80y1jyr7mbb0jwkpl66xrmahwma2wv45bp4nqrax3gscl"))))
+        (base32 "0y7bcqdma20ca4a7f20kwrhji7mc1rris31kqfb3ps7zwj9bkp3h"))))
     (properties `((upstream-name . "multiplex")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -26493,13 +26494,13 @@ analysis.")
 (define-public r-metricsweighted
   (package
     (name "r-metricsweighted")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MetricsWeighted" version))
        (sha256
-        (base32 "1112j7fyqa1bvmhj8l264kwzigqr6f7s3xb7x2dviyapbhx7nv9l"))))
+        (base32 "084zvfh66daz9g7cwn4bzx3cvydzwf83r2lzy6xga7qd4d89q0j6"))))
     (properties `((upstream-name . "MetricsWeighted")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -37204,20 +37205,23 @@ model fitting and posterior computation.")
 (define-public r-mase
   (package
     (name "r-mase")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mase" version))
        (sha256
-        (base32 "0qfffkq4dvp7hrfgvbdzmk732iac4qf56ccyialyhnhjg581v5xi"))))
+        (base32 "0rad57gx1kwv4ci8mnpbmrgphr82dz2r174jvwnxhcz3zg6han04"))))
     (properties `((upstream-name . "mase")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-survey
                              r-rpms
                              r-rdpack
+                             r-rcppeigen
+                             r-rcpp
                              r-glmnet
+                             r-ellipsis
                              r-dplyr
                              r-boot))
     (home-page "https://cran.r-project.org/package=mase")
@@ -39226,13 +39230,13 @@ published in Olofsson et al. (2014) <doi:10.1016/j.rse.2014.02.015> and Stehman
 (define-public r-mapa
   (package
     (name "r-mapa")
-    (version "2.0.5")
+    (version "2.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MAPA" version))
        (sha256
-        (base32 "09szm5ilxfg893smh72yhbv306lwr3cy1jq7pghg0mipha6wgdxp"))))
+        (base32 "12mk086yg8sgfc2c213sskv8kr1nyqamhagixs18b1cc99dg43hc"))))
     (properties `((upstream-name . "MAPA")))
     (build-system r-build-system)
     (propagated-inputs (list r-smooth r-rcolorbrewer r-forecast))

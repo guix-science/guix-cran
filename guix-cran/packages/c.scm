@@ -15,8 +15,8 @@
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages maths)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages photo)
@@ -24787,35 +24787,35 @@ Yang (2018, <doi:10.1002/sim.7676>).")
 (define-public r-clinicalsignificance
   (package
     (name "r-clinicalsignificance")
-    (version "1.2.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clinicalsignificance" version))
        (sha256
-        (base32 "017myylm3hh256zqis80f3y7y44p706wzkf8klw4d0frai7mrfwv"))))
+        (base32 "132zwgzrc9gf10x2ldr7mjbj8k83h87y7py9b34yv9s7jmciy62x"))))
     (properties `((upstream-name . "clinicalsignificance")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-rlang
                              r-purrr
-                             r-magrittr
                              r-lme4
                              r-insight
                              r-ggplot2
                              r-dplyr
-                             r-crayon
-                             r-checkmate))
+                             r-cli
+                             r-bayestestr
+                             r-bayesfactor))
     (native-inputs (list r-knitr))
     (home-page "https://pedscience.github.io/clinicalsignificance/")
-    (synopsis "Determine the Clinical Significance in Clinical Trials")
+    (synopsis
+     "Toolbox for Clinical Significance Analyses in Intervention Studies")
     (description
      "This package provides a clinical significance analysis can be used to determine
 if an intervention has a meaningful or practical effect for patients.  You
 provide a tidy data set plus a few more metrics and this package will take care
-of it to make your results publication ready as proposed by Jacobson et al.,
-(1984) <doi:10.1016/S0005-7894(84)80002-7>.")
+of it to make your results publication ready.")
     (license license:gpl3+)))
 
 (define-public r-clinfun
@@ -25777,13 +25777,13 @@ instead.")
 (define-public r-cleannlp
   (package
     (name "r-cleannlp")
-    (version "3.0.4")
+    (version "3.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cleanNLP" version))
        (sha256
-        (base32 "13qsvcgw6lyxinmb4ky5qxxbql4mzsgsylkzbyg0pljq29yv9j0x"))))
+        (base32 "0zkfc7m7afmljr5rflx9mfplfamv6c30qaw0ckalj14s9xdrxa44"))))
     (properties `((upstream-name . "cleanNLP")))
     (build-system r-build-system)
     (inputs (list python))
@@ -37346,6 +37346,43 @@ The API wrapper provides access to recall summary information searched using
 make, model, and year range, as well as detailed recall information searched
 using recall number.")
     (license license:expat)))
+
+(define-public r-care4cmodel
+  (package
+    (name "r-care4cmodel")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "care4cmodel" version))
+       (sha256
+        (base32 "1c6giyg0d7fy0g1ny6yypgjpxlamakh30ghfk75r7nrlbw64cnx6"))))
+    (properties `((upstream-name . "care4cmodel")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-rdpack
+                             r-purrr
+                             r-ggplot2
+                             r-dplyr
+                             r-desolve))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=care4cmodel")
+    (synopsis "Carbon-Related Assessment of Silvicultural Concepts")
+    (description
+     "This package provides a simulation model and accompanying functions that support
+assessing silvicultural concepts on the forest estate level with a focus on the
+CO2 uptake by wood growth and CO2 emissions by forest operations.  For achieving
+this, a virtual forest estate area is split into the areas covered by typical
+phases of the silvicultural concept of interest.  Given initial area shares of
+these phases, the dynamics of these areas is simulated.  The typical carbon
+stocks and flows which are known for all phases are attributed post-hoc to the
+areas and upscaled to the estate level.  CO2 emissions by forest operations are
+estimated based on the amounts and dimensions of the harvested timber.
+Probabilities of damage events are taken into account.")
+    (license license:gpl3+)))
 
 (define-public r-care
   (package

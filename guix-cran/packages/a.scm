@@ -5984,13 +5984,13 @@ model for time series forecasting.For method details see Zhang, GP (2003)
 (define-public r-arima2
   (package
     (name "r-arima2")
-    (version "3.0.1")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arima2" version))
        (sha256
-        (base32 "1q3b11dgky67c4la19hcd07w05dswz67yydgfdm09lgs54f52iwy"))))
+        (base32 "0sfg7h7rvvrsa2bjmipvm49cr26imnaf3h53czgkprw4knarx8z3"))))
     (properties `((upstream-name . "arima2")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))
@@ -8667,25 +8667,27 @@ all possible comparisons (APC) methodology developed by Miller (2005)
 (define-public r-apcalign
   (package
     (name "r-apcalign")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "APCalign" version))
        (sha256
-        (base32 "0r1zn629dcaa2fwnh0a26yjgamnz9agsy39frzv1lc3yw5r44m66"))))
+        (base32 "1kbkwpf7lzg7lznl0ysnwwilmklqyqd02qc1vl0pfbd407pqlyyv"))))
     (properties `((upstream-name . "APCalign")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
                              r-stringr
                              r-stringi
+                             r-rlang
                              r-readr
                              r-purrr
-                             r-gh
+                             r-jsonlite
+                             r-httr
                              r-forcats
                              r-dplyr
+                             r-curl
                              r-crayon
-                             r-contentid
                              r-arrow))
     (native-inputs (list r-knitr))
     (home-page "https://traitecoevo.github.io/APCalign/")
@@ -14436,13 +14438,13 @@ approach described by Burnham, K. P. and Anderson, D. R. (2002)
 (define-public r-aiccmodavg
   (package
     (name "r-aiccmodavg")
-    (version "2.3-2")
+    (version "2.3-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AICcmodavg" version))
        (sha256
-        (base32 "0lzk6xq6pfb7jxk61vlkcl60k4g9vqrdxdq19lc1ihjq13dmx7l9"))))
+        (base32 "0ylzd6fz5p86fdb8yily2v8bn8xz5mm6w19ch6gpp48jzkqvama0"))))
     (properties `((upstream-name . "AICcmodavg")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -16400,13 +16402,13 @@ analysis.\"Adverse event enrichment tests using VAERS\" Shuoran Li, Lili Zhao
 (define-public r-aedseo
   (package
     (name "r-aedseo")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aedseo" version))
        (sha256
-        (base32 "12dj74lhnmn7kpynpvrn6axx6vzvv0illlag1r2nli6lph3wf594"))))
+        (base32 "1dkh8i12vwdqgx829ji0l6naj9g3djzng023pn0a4a52yzsybj7n"))))
     (properties `((upstream-name . "aedseo")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -18522,18 +18524,18 @@ Ormerod, J., Liu, W., Ma, C., Zomaya, A., Yang, J. (2018)
 (define-public r-adar
   (package
     (name "r-adar")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adaR" version))
        (sha256
-        (base32 "1jfr1di0infrqlfjnr8429889pw5pqggpv30g4r910614fk1fzr0"))))
+        (base32 "057pynwvs921s2q74rx4cirszbpz1cl15sh07b7sx1l8dj5m88a6"))))
     (properties `((upstream-name . "adaR")))
     (build-system r-build-system)
     (propagated-inputs (list r-triebeard r-rcpp))
     (native-inputs (list r-knitr))
-    (home-page "https://schochastics.github.io/adaR/")
+    (home-page "https://gesistsa.github.io/adaR/")
     (synopsis "Fast 'WHATWG' Compliant URL Parser")
     (description
      "This package provides a wrapper for ada-url', a WHATWG compliant and fast URL
@@ -19147,6 +19149,32 @@ model with a generalized linear model or a Tweedie generalized linear mixed
 model.  See Campo, B.D.C. and Antonio, K. (2023)
 <doi:10.1080/03461238.2022.2161413>.")
     (license license:gpl3+)))
+
+(define-public r-actlifer
+  (package
+    (name "r-actlifer")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "actLifer" version))
+       (sha256
+        (base32 "1nqlsdywrfvq94zi2xk90m9m768x18fk6p6jrds8mpv63w2y3frc"))))
+    (properties `((upstream-name . "actLifer")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=actLifer")
+    (synopsis "Creating Actuarial Life Tables")
+    (description
+     "This package contains data and functions that can be used to make actuarial life
+tables.  Each function adds a column to the inputted dataset for each
+intermediate calculation between mortality rate and life expectancy.  Users can
+run any of our functions to complete the life table until that step, or run
+lifetable() to output a full life table that can be customized to remove
+optional columns.  Methods for creating lifetables are as described in
+Zedstatistics (2021) <https://www.youtube.com/watch?v=Dfe59@code{glNXAQ>}.")
+    (license license:expat)))
 
 (define-public r-activitygcmm
   (package

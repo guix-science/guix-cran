@@ -4216,50 +4216,6 @@ possible to return coordinates from any valid three words location.  Supports
 multiple languages.")
     (license license:expat)))
 
-(define-public r-whatsr
-  (package
-    (name "r-whatsr")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "WhatsR" version))
-       (sha256
-        (base32 "12pddpf84miq7693ifv00z41w555fqw110d4ldlgcb7vxyx0rh8m"))))
-    (properties `((upstream-name . "WhatsR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-xml
-                             r-visnetwork
-                             r-tokenizers
-                             r-stringi
-                             r-rvest
-                             r-readr
-                             r-ragg
-                             r-qdapregex
-                             r-qdap
-                             r-mgsub
-                             r-lubridate
-                             r-ggwordcloud
-                             r-ggplot2
-                             r-ggmap
-                             r-dplyr
-                             r-data-table
-                             r-checkmate
-                             r-anytime))
-    (home-page "https://cran.r-project.org/package=WhatsR")
-    (synopsis
-     "Parsing, Anonymizing and Visualizing Exported 'WhatsApp' Chat Logs")
-    (description
-     "Imports @code{WhatsApp} chat logs and parses them into a usable dataframe
-object.  The parser works on chats exported from Android or @code{iOS} phones
-and on Linux, @code{MacOS} and Windows.  The parser has multiple options for
-extracting smilies and emojis from the messages, extracting urls and domains
-from the messages, extracting names and types of sent media files from the
-messages, extracting timestamps from messages, extracting and anonymizing author
-names from messages.  Can be used to create anonymized versions of data.")
-    (license license:gpl3)))
-
 (define-public r-whatif
   (package
     (name "r-whatif")
