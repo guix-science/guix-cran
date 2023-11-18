@@ -1741,13 +1741,13 @@ S3 file system also generalizes to any list of http URLs.")
 (define-public r-duckdb
   (package
     (name "r-duckdb")
-    (version "0.9.1-1")
+    (version "0.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "duckdb" version))
        (sha256
-        (base32 "0rqr2ijiqvq2lhzrw7fy8mfyw99gcgf8q0yhwwjkmzskc9270s8y"))))
+        (base32 "13mi5klr0v33rfy6cg6di54p21w49kw70rbq1n39cgwnqrgmzdar"))))
     (properties `((upstream-name . "duckdb")))
     (build-system r-build-system)
     (propagated-inputs (list r-dbi))
@@ -2888,6 +2888,34 @@ White, D. Sun, P. Speckman (2019) <@code{arXiv:1906.05575>}.  The basic model
 assumes a Gaussian likelihood and derives a spatial prior based on thin-plate
 splines.")
     (license license:gpl3+)))
+
+(define-public r-dssd
+  (package
+    (name "r-dssd")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dssd" version))
+       (sha256
+        (base32 "1nbr8mdva6g7p9mrbbg6g116vrvny07yvkyklgjbw79vrj7lfgy3"))))
+    (properties `((upstream-name . "dssd")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sf r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=dssd")
+    (synopsis "Distance Sampling Survey Design")
+    (description
+     "This package creates survey designs for distance sampling surveys.  These
+designs can be assessed for various effort and coverage statistics.  Once the
+user is satisfied with the design characteristics they can generate a set of
+transects to use in their distance sampling survey.  Many of the designs
+implemented in this R package were first made available in our Distance for
+Windows software and are detailed in Chapter 7 of Advanced Distance Sampling,
+Buckland et.  al. (2008, ISBN-13: 978-0199225873).  Find out more about
+estimating animal/plant abundance with distance sampling at
+<http://distancesampling.org/>.")
+    (license license:gpl2+)))
 
 (define-public r-dssat
   (package
@@ -7332,30 +7360,6 @@ rendering can be sometimes different from the original documents.")
     (description
      "Gives you the ability to use arbitrary Docker images (including custom ones) to
 process Rmarkdown code chunks.")
-    (license license:expat)))
-
-(define-public r-docket
-  (package
-    (name "r-docket")
-    (version "1.20")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "docket" version))
-       (sha256
-        (base32 "104v18dqhw1npxyhrmpwvvnlmv9n67gh0pfv4983gmzalbka9xk9"))))
-    (properties `((upstream-name . "docket")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zip r-xml2 r-xml r-stringr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/JonathanConrad98/docket")
-    (synopsis "Automated Document Template Processing")
-    (description
-     "Populate data from an R environment into .doc and .docx templates.  Create a
-template document in a program such as Word', and add strings encased in
-guillemet characters to create flags (Â«@code{exampleÂ}»).  Use
-@code{getDictionary}() to create a dictionary of flags and replacement values,
-then call docket() to generate a populated document.")
     (license license:expat)))
 
 (define-public r-dockerparallel
@@ -24503,13 +24507,13 @@ examples and demonstration of the functions.")
 (define-public r-dartr-base
   (package
     (name "r-dartr-base")
-    (version "0.49")
+    (version "0.65")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dartR.base" version))
        (sha256
-        (base32 "1jyfwxrr4vcpac277wii11md7rpv5nxcz7g1g6ardj29a690r2vh"))))
+        (base32 "1887ksyszlp65i4z6zhh6j1pihfkkimiwrv6bqav5z7gmw2i0pi7"))))
     (properties `((upstream-name . "dartR.base")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -24519,6 +24523,7 @@ examples and demonstration of the functions.")
                              r-reshape2
                              r-plyr
                              r-patchwork
+                             r-mass
                              r-gridextra
                              r-ggplot2
                              r-foreach

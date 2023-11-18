@@ -1739,13 +1739,13 @@ zur @code{VerfÃ¼gung}.")
 (define-public r-lsafun
   (package
     (name "r-lsafun")
-    (version "0.6.3")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LSAfun" version))
        (sha256
-        (base32 "1jsn3la2qfnvb5z2abx567zp8wrz5122ifgfzibw6fag6s3kl9ym"))))
+        (base32 "1mnma1mq199vl1japv68s1prfwpi85mlfkibrrjl6abkw80cf5bn"))))
     (properties `((upstream-name . "LSAfun")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgl r-lsa))
@@ -9757,13 +9757,13 @@ penalty.")
 (define-public r-libr
   (package
     (name "r-libr")
-    (version "1.2.8")
+    (version "1.2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "libr" version))
        (sha256
-        (base32 "0kqjr327hck9p763wzzvh5skimn4larblfyhfqqyc2323z2g5d11"))))
+        (base32 "1crvizk2llfr08giq5il0rpjjm5vn50sjbk35w57c5lyb611lxk1"))))
     (properties `((upstream-name . "libr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -14761,17 +14761,17 @@ powerful language detection API.")
 (define-public r-langevitour
   (package
     (name "r-langevitour")
-    (version "0.5")
+    (version "0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "langevitour" version))
        (sha256
-        (base32 "0p7k159njgrfvw8adkzm6zma8b6ja2j9wwicrlywcqlbkwhbinbi"))))
+        (base32 "0l63w2y0dfn98nkzf2lhc6wkvg6hrqhcl4p9492pg80kwdsyvz1a"))))
     (properties `((upstream-name . "langevitour")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rann r-htmlwidgets r-assertthat))
-    (native-inputs (list r-knitr esbuild))
+    (propagated-inputs (list r-rann r-htmlwidgets r-crosstalk r-assertthat))
+    (native-inputs (list r-knitr))
     (home-page "https://logarithmic.net/langevitour/")
     (synopsis "Langevin Tour")
     (description
@@ -14779,10 +14779,11 @@ powerful language detection API.")
 walk through projections of the data is shown.  The user can manipulate the plot
 to use specified axes, or turn on Guided Tour mode to find an informative
 projection of the data.  Groups within the data can be hidden or shown, as can
-particular axes.  Known projections of interest can be added as \"extra axes\" and
-also manipulated.  The underlying method to produce the random walk and
-projection pursuit uses Langevin dynamics.  The widget can be used from within
-R, or included in a self-contained Rmarkdown document, or used in a Shiny app.")
+particular axes.  Points can be brushed, and the selection can be linked to
+other widgets using crosstalk.  The underlying method to produce the random walk
+and projection pursuit uses Langevin dynamics.  The widget can be used from
+within R, or included in a self-contained R Markdown or Quarto document or
+presentation, or used in a Shiny app.")
     (license license:expat)))
 
 (define-public r-langevin
@@ -15325,13 +15326,13 @@ models).")
 (define-public r-lair
   (package
     (name "r-lair")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LAIr" version))
        (sha256
-        (base32 "166j095mmqsbcxpyljp18khbrcqnjml1m2sdcjdxycih0s6wycry"))))
+        (base32 "1fd4mfr3xxg6dr8qs9959mg6s97jg7k3qmg5axv1kkk8abda9l5x"))))
     (properties `((upstream-name . "LAIr")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-stringr r-purrr r-dplyr))

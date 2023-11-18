@@ -1048,17 +1048,17 @@ works, so that they can be searched and retrieved.")
 (define-public r-gustave
   (package
     (name "r-gustave")
-    (version "0.4.4")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gustave" version))
        (sha256
-        (base32 "1zr9iy4977b80pn4yfdr890ka258af8khid14xjp6mjj3wczlmvp"))))
+        (base32 "0qja3f0925hhaq19xic0x9yygckjnym0daj2fzp36p7rsb4w0ga6"))))
     (properties `((upstream-name . "gustave")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix))
-    (home-page "https://github.com/martinchevalier/gustave")
+    (home-page "https://github.com/InseeFr/gustave")
     (synopsis
      "User-Oriented Statistical Toolkit for Analytical Variance Estimation")
     (description
@@ -1519,13 +1519,13 @@ geographic representation of the results can be displayed.")
 (define-public r-gtreg
   (package
     (name "r-gtreg")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gtreg" version))
        (sha256
-        (base32 "0ivg1chwn4igy9df5c8dmq5r2ryjwasqvdi8q4xfysjxij97hd6s"))))
+        (base32 "1kvzi16ziy37zyal2ibgfpzbr5qf26z94v1381qsqhiwn382xng9"))))
     (properties `((upstream-name . "gtreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -2240,6 +2240,37 @@ information from users and items which share similar characteristics under the
 singular value decomposition framework.  Refer to paper A Group-Specific
 Recommender System <doi:10.1080/01621459.2016.1219261> for the details.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-gspcr
+  (package
+    (name "r-gspcr")
+    (version "0.9.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gspcr" version))
+       (sha256
+        (base32 "1ai9qd001ir4cqsmwdzxlg4fxdc9bzd9zzwzmkv9rpzb6fffib8z"))))
+    (properties `((upstream-name . "gspcr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang
+                             r-reshape2
+                             r-pcamixdata
+                             r-nnet
+                             r-mlmetrics
+                             r-mass
+                             r-ggplot2
+                             r-factominer
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=gspcr")
+    (synopsis "Generalized Supervised Principal Component Regression")
+    (description
+     "Generalization of supervised principal component regression (SPCR; Bair et al.,
+2006, <doi:10.1198/016214505000000628>) to support continuous, binary, and
+discrete variables as outcomes and predictors (inspired by the superpc R package
+<https://cran.r-project.org/package=superpc>).")
+    (license license:expat)))
 
 (define-public r-gsparo
   (package
@@ -10125,13 +10156,13 @@ by Bayes rule.")
 (define-public r-gmmat
   (package
     (name "r-gmmat")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GMMAT" version))
        (sha256
-        (base32 "0zyxnch7k4c5vm1wk769lxaqa2sdgj4lrsimzwi94bpmdrvpda44"))))
+        (base32 "151bc1mn69kmswkn6i5czmadsnymkw4yvgph8s7z3i6xc66r8s5y"))))
     (properties `((upstream-name . "GMMAT")))
     (build-system r-build-system)
     (inputs (list zlib))
@@ -15445,13 +15476,13 @@ variables.")
 (define-public r-ggquiver
   (package
     (name "r-ggquiver")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggquiver" version))
        (sha256
-        (base32 "1nzqfm9byr0bmj0l6fdf8afymbhc6qjq5iff3wnng7gqqaa9s6dc"))))
+        (base32 "1ywpcbm6rg2f44iiw2j07p7zwfgjrnli6wscrfx93wsqaa55xyfi"))))
     (properties `((upstream-name . "ggquiver")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))

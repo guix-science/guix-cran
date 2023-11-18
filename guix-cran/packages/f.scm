@@ -12863,13 +12863,13 @@ tags and proper file extensions.")
 (define-public r-filecacher
   (package
     (name "r-filecacher")
-    (version "0.2.5")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "filecacher" version))
        (sha256
-        (base32 "15v8wklny6sb9s309im6i9ibkrvnrbvyw8gckb2vxxyvx971qcg0"))))
+        (base32 "00rxbll8gmzcyfyf3dlbahwi4x037cwx3k3dxqg5l1zgapyhddnr"))))
     (properties `((upstream-name . "filecacher")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -15287,6 +15287,26 @@ DÃ¶hler and Roquain (2019) <@code{arXiv:1912.04607v1>}.  The main algorithms o
 the paper are available as continuous, discrete and weighted versions.")
     (license license:gpl3)))
 
+(define-public r-fdth
+  (package
+    (name "r-fdth")
+    (version "1.3-0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fdth" version))
+       (sha256
+        (base32 "00jshwx460rg0p79j9w6grr8zs9lla8mhmfpysvwmxckq8zm4k2w"))))
+    (properties `((upstream-name . "fdth")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xtable))
+    (home-page "https://github.com/jcfaria/fdth")
+    (synopsis "Frequency Distribution Tables, Histograms and Polygons")
+    (description
+     "Perform frequency distribution tables, associated histograms and polygons from
+vector, data.frame and matrix objects for numerical and categorical variables.")
+    (license license:gpl2+)))
+
 (define-public r-fdrsampsize
   (package
     (name "r-fdrsampsize")
@@ -16070,13 +16090,13 @@ classification, unsupervised classification and functional analysis of variance.
 (define-public r-fd
   (package
     (name "r-fd")
-    (version "1.0-12.1")
+    (version "1.0-12.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FD" version))
        (sha256
-        (base32 "18i0wcmi2nslifi395ajkkfy3j6dsdbrj4nl5ni6ndnmxifg7d0f"))))
+        (base32 "0kp4bdm3idza0pi9zv7hbfy483lb6dlx5cximyzyhgw1cp459kwp"))))
     (properties `((upstream-name . "FD")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan r-geometry r-ape r-ade4))
@@ -17887,13 +17907,13 @@ community that consumes inference.")
 (define-public r-fastlink
   (package
     (name "r-fastlink")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastLink" version))
        (sha256
-        (base32 "0xysif0v7l7iwnwpf5ydk7ns9azsgja5sm672wxybfqwrh6nx9xk"))))
+        (base32 "1fjf47c0bpfmrg428p3qgd4m91dpf8500sp758mrp241v5n0lfx9"))))
     (properties `((upstream-name . "fastLink")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -17906,7 +17926,6 @@ community that consumes inference.")
                              r-matrix
                              r-gtools
                              r-foreach
-                             r-factoclass
                              r-dplyr
                              r-doparallel
                              r-data-table
@@ -17921,8 +17940,8 @@ Fellegi-Sunter model using the Expectation-Maximization algorithm.  In addition,
 tools for preparing, adjusting, and summarizing data merges are included.  The
 package implements methods described in Enamorado, Fifield, and Imai (2019)
 Using a Probabilistic Model to Assist Merging of Large-scale Administrative
-Records'', American Political Science Review and is available at
-<http://imai.fas.harvard.edu/research/linkage.html>.")
+Records <doi:10.1017/S0003055418000783> and is available at
+<https://imai.fas.harvard.edu/research/linkage.html>.")
     (license license:gpl3+)))
 
 (define-public r-fastlaplace
@@ -20242,6 +20261,26 @@ of the variables that were removed in each step.  It follows the best practices
 and assumptions according to Hair, Black, Babin & Anderson (2018,
 ISBN:9781473756540).")
     (license license:gpl3)))
+
+(define-public r-factor256
+  (package
+    (name "r-factor256")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "factor256" version))
+       (sha256
+        (base32 "17jmyhi7qm3prgaxa8hn84769czwxhhh3n9sib3cxq9diilri3y6"))))
+    (properties `((upstream-name . "factor256")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=factor256")
+    (synopsis "Use Raw Vectors to Minimize Memory Consumption of Factors")
+    (description
+     "Uses raw vectors to minimize memory consumption of categorical variables with
+fewer than 256 unique values.  Useful for analysis of large datasets involving
+variables such as age, years, states, countries, or education levels.")
+    (license license:gpl2)))
 
 (define-public r-factor-switching
   (package

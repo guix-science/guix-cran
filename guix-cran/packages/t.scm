@@ -19114,13 +19114,13 @@ SOC 4650, SOC 5050, and SOC 5650 at SLU.")
 (define-public r-testdimorph
   (package
     (name "r-testdimorph")
-    (version "0.5.7")
+    (version "0.5.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TestDimorph" version))
        (sha256
-        (base32 "0sim4ph2rkm450gipggdswaw2aykjgfp18i72vyjkbyqh366n125"))))
+        (base32 "1gnjgglb2mnaidlhjhqyg4jk6cvw0n0rzzpxamq55n8yyqd2kkh3"))))
     (properties `((upstream-name . "TestDimorph")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm

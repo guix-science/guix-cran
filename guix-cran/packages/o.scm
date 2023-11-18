@@ -6199,13 +6199,13 @@ API.")
 (define-public r-openaistream
   (package
     (name "r-openaistream")
-    (version "0.1.6")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openaistream" version))
        (sha256
-        (base32 "0vm57waqdxvl4p1p1l9ndizip773pcysyf2x06i36zy9xak4chiz"))))
+        (base32 "0v6bd9rvf84r9win5gvfjjrggxwilgq5hqxvi7p705zv2fd872j0"))))
     (properties `((upstream-name . "openaistream")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-jsonlite r-iterators r-httr2 r-curl))
@@ -8650,6 +8650,38 @@ Internet Institute (OII), University of Oxford, but the functions should be
 useful for general data analysis and especially for analysis of categorical and
 ordinal data.")
     (license license:expat)))
+
+(define-public r-ohun
+  (package
+    (name "r-ohun")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ohun" version))
+       (sha256
+        (base32 "103s9sv70p9hw6q55j98wri5bxqazfn9hxpk1mm39x7navx3qzvp"))))
+    (properties `((upstream-name . "ohun")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-warbler
+                             r-tuner
+                             r-sf
+                             r-seewave
+                             r-rlang
+                             r-igraph
+                             r-ggplot2
+                             r-fftw
+                             r-cli
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://docs.ropensci.org/ohun/")
+    (synopsis "Optimizing Acoustic Signal Detection")
+    (description
+     "Facilitates the automatic detection of acoustic signals, providing functions to
+diagnose and optimize the performance of detection routines.  Detections from
+other software can also be explored and optimized.  Araya-Salas et al. (2022)
+<doi:10.1101/2022.12.13.520253>.")
+    (license license:gpl2+)))
 
 (define-public r-ohtadstats
   (package

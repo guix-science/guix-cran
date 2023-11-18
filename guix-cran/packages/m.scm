@@ -11535,17 +11535,17 @@ simulations.")
 (define-public r-monotonehazardratio
   (package
     (name "r-monotonehazardratio")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MonotoneHazardRatio" version))
        (sha256
-        (base32 "0y6hfm5la8lq9dvjl6r5zjzbm1nmpkhbkza5w7fi6saxywnfig71"))))
+        (base32 "19c3521czz7kdwcc1vg1x17y57w0qh498y93xgbxxlmidzb0p4nk"))))
     (properties `((upstream-name . "MonotoneHazardRatio")))
     (build-system r-build-system)
     (propagated-inputs (list r-twostagete r-survival r-kernsmooth r-fdrtool))
-    (home-page "https://cran.r-project.org/package=MonotoneHazardRatio")
+    (home-page "https://github.com/Yujian-Wu/MonotoneHazardRatio")
     (synopsis
      "Nonparametric Estimation and Inference of a Monotone Hazard Ratio Function")
     (description
@@ -12383,19 +12383,20 @@ Used by MOLGENIS packages.")
 (define-public r-molgenisarmadillo
   (package
     (name "r-molgenisarmadillo")
-    (version "2.1.2")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MolgenisArmadillo" version))
        (sha256
-        (base32 "1q7sbs3djmyi54izmqlvhjx1b2l558i869a97jwpjqv6xy94wy9m"))))
+        (base32 "16b1mplxhy492i1j581lrd0crk1rzcyxcxda9b5dzvzhcjg81376"))))
     (properties `((upstream-name . "MolgenisArmadillo")))
     (build-system r-build-system)
     (propagated-inputs (list r-urltools
                              r-tidyr
                              r-tibble
                              r-stringr
+                             r-rlist
                              r-purrr
                              r-molgenisauth
                              r-httr
@@ -15034,24 +15035,26 @@ Rosenbaum and Rubin (1985).")
 (define-public r-mmrm
   (package
     (name "r-mmrm")
-    (version "0.2.2")
+    (version "0.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mmrm" version))
        (sha256
-        (base32 "1kfrzgl942fcfc0yhjjca2pqc28w37fy1313brfwcg1b9qi60grl"))))
+        (base32 "0alqdy62c56m3a90dbjpz3w74xwaz0pvgz8qk3avfs6m3nih63wb"))))
     (properties `((upstream-name . "mmrm")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb
+                             r-tibble
                              r-testthat
                              r-stringr
                              r-rdpack
                              r-rcppeigen
                              r-rcpp
-                             r-numderiv
                              r-nlme
+                             r-matrix
                              r-lifecycle
+                             r-generics
                              r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://openpharma.github.io/mmrm/")
@@ -15061,7 +15064,7 @@ Rosenbaum and Rubin (1985).")
 longitudinal continuous outcomes in randomized clinical trials and beyond; see
 Cnaan, Laird and Slasor (1997)
 <doi:10.1002/(SICI)1097-0258(19971030)16:20%3C2349::AID-SIM667%3E3.0.CO;2-E> for
-a tutorial and Mallinckrodt, Lane and Schnell (2008)
+a tutorial and Mallinckrodt, Lane, Schnell et al. (2008)
 <doi:10.1177/009286150804200402> for a review.  This package implements MMRM
 based on the marginal linear model without random effects using Template Model
 Builder ('TMB') which enables fast and robust model fitting.  Users can specify
@@ -17139,13 +17142,13 @@ benchmark experiments, for mlr3 and beyond.")
 (define-public r-mlr3batchmark
   (package
     (name "r-mlr3batchmark")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3batchmark" version))
        (sha256
-        (base32 "16r8j5hzx975acs5b91wj2pk9w3hwh070cqv4swlmrj05nbid975"))))
+        (base32 "1qirzjmb17y1rzq69x1lpl56qk5w63zjq30if97vfab3spsd2ilf"))))
     (properties `((upstream-name . "mlr3batchmark")))
     (build-system r-build-system)
     (propagated-inputs (list r-uuid
@@ -20761,13 +20764,13 @@ al. (2019) <doi:10.1177/0013164418805532> and Kim et al. (2005)
 (define-public r-missmda
   (package
     (name "r-missmda")
-    (version "1.18")
+    (version "1.19")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "missMDA" version))
        (sha256
-        (base32 "1s7ph89y0mrksdi73nnjnxl2354401ny8ziijzf036rcsiyvl8m5"))))
+        (base32 "0p76jlzqayhwqwinaxhf69s3c5hxk4hmncvw4dsyybwvha25hrzr"))))
     (properties `((upstream-name . "missMDA")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm
@@ -22835,6 +22838,35 @@ problem speed; the gurobi R package and associated software can be downloaded
 from <https://www.gurobi.com> after obtaining a license.")
     (license license:expat)))
 
+(define-public r-milag
+  (package
+    (name "r-milag")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "miLAG" version))
+       (sha256
+        (base32 "03krcr0l9clafjghpnic0wds1h3zn6ighncip7c2555ql75b0g79"))))
+    (properties `((upstream-name . "miLAG")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-testthat r-nlsmicrobio r-minpack-lm r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=miLAG")
+    (synopsis
+     "Calculates Microbial Lag Duration (on the Population Level) from Provided Growth Curve Data")
+    (description
+     "Microbial growth is often measured by growth curves i.e.  a table of population
+sizes and times of measurements.  This package allows to use such growth curve
+data to determine the duration of \"microbial lag phase\" i.e.  the time needed
+for microbes to restart divisions.  It implements the most commonly used methods
+to calculate the lag duration, these methods are discussed and described in
+Opalek et.al.  2022.  Citation: \"How to determine microbial lag phase
+duration?\", M. Opalek, B. Smug, D. Wloch-Salamon (2022)
+<doi:10.1101/2022.11.16.516631>.")
+    (license license:gpl3)))
+
 (define-public r-mikropml
   (package
     (name "r-mikropml")
@@ -24377,13 +24409,13 @@ as well as being simple to run in parallel.")
 (define-public r-micemd
   (package
     (name "r-micemd")
-    (version "1.9.0")
+    (version "1.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "micemd" version))
        (sha256
-        (base32 "00biwwdqwj5szf969x2gf7ydba8g5d3z410avxcgi2blxdh0rza1"))))
+        (base32 "1rzn4iiv9zml6c0d5j36c4z1kdn03j05m4q03wca7z0k35icsis6"))))
     (properties `((upstream-name . "micemd")))
     (build-system r-build-system)
     (propagated-inputs (list r-pbivnorm
@@ -24398,7 +24430,6 @@ as well as being simple to run in parallel.")
                              r-lme4
                              r-jomo
                              r-gjrm
-                             r-ggplot2
                              r-digest
                              r-abind))
     (home-page "https://cran.r-project.org/package=micemd")
@@ -28191,13 +28222,13 @@ longitudinal studies (Metwally AA, et al., Microbiome, 2018
 (define-public r-metalite-table1
   (package
     (name "r-metalite-table1")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metalite.table1" version))
        (sha256
-        (base32 "09mzgg72642rhrr6dv6n78vn6q757ffx7grdym273y3wwm8bxyv1"))))
+        (base32 "006vcpagm6npq4lgp07pjgz0hsxpnp5vva7ilgr3f1hzfkql338a"))))
     (properties `((upstream-name . "metalite.table1")))
     (build-system r-build-system)
     (propagated-inputs (list r-reactable r-metalite r-htmltools))
@@ -41135,13 +41166,13 @@ Gaussian process Inference) of Yang, Wong, and Kou (2021)
 (define-public r-magee
   (package
     (name "r-magee")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MAGEE" version))
        (sha256
-        (base32 "0b7shd8yx1zzv7ry3qd71zazkzpdqjgc5q3n8ql96k64avp4628f"))))
+        (base32 "0k4dgbs686rchk26d1cvprf46axc1a6klxx1cajwrdcm1l9j7van"))))
     (properties `((upstream-name . "MAGEE")))
     (build-system r-build-system)
     (inputs (list zlib))

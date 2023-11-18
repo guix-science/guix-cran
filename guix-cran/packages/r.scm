@@ -19058,6 +19058,28 @@ heteroscedastic context.  See Wang et al. (2007), <doi:10.1198/106186007X180156>
 regarding homoscedastic framework.")
     (license license:gpl2+)))
 
+(define-public r-rllama
+  (package
+    (name "r-rllama")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rllama" version))
+       (sha256
+        (base32 "1cblmyz1cchbn954mqi77sw7qxhffw12zfad11gfipy2fywcvb9l"))))
+    (properties `((upstream-name . "rllama")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-httr r-data-table))
+    (home-page "https://github.com/AlexTwoR/rllama")
+    (synopsis "Access and Analyze Data from 'DeFiLlama'")
+    (description
+     "This package provides an interface to access and analyze data from
+@code{DeFiLlama'<https://defillama.com>}.  This package simplifies the process
+of fetching and manipulating @code{DeFiLlama} data for further analysis and
+visualization.")
+    (license license:expat)))
+
 (define-public r-rlistings
   (package
     (name "r-rlistings")
@@ -23859,19 +23881,19 @@ provides read and write functions to work with it.")
 (define-public r-rgift
   (package
     (name "r-rgift")
-    (version "0.1-5")
+    (version "0.1-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RGIFT" version))
        (sha256
-        (base32 "1745fs4bq0ss39fiwljspvrmnkgbbpc1fjvhvcrsmp2iizq12sgn"))))
+        (base32 "12kfm2lq5ix0bnd5zqqb30ws105nd23iipim4xlsdapighwp391m"))))
     (properties `((upstream-name . "RGIFT")))
     (build-system r-build-system)
-    (home-page "http://docs.moodle.org/21/en/GIFT_format")
-    (synopsis "Create quizzes in GIFT Format")
+    (home-page "https://docs.moodle.org/21/en/GIFT_format")
+    (synopsis "Create Quizzes in GIFT Format")
     (description
-     "This package provides some functions to create quizzes in the GIFT format.  This
+     "Implementation of some functions to create quizzes in the GIFT format.  This
 format is used by several Virtual Learning Environments such as Moodle.")
     (license license:gpl2+)))
 
@@ -28984,6 +29006,36 @@ Collier, W., & Ruis, A.R. (2016).")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-remstats
+  (package
+    (name "r-remstats")
+    (version "3.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "remstats" version))
+       (sha256
+        (base32 "0s93358y31wpkm3h1cv3icbf2g6srk2n2rlnivgjihd6laq4sx9k"))))
+    (properties `((upstream-name . "remstats")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppprogress r-rcpparmadillo r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/TilburgNetworkGroup/remstats")
+    (synopsis "Computes Statistics for Relational Event History Data")
+    (description
+     "Computes a variety of statistics for relational event models.  Relational event
+models enable researchers to investigate both exogenous and endogenous factors
+influencing the evolution of a time-ordered sequence of events.  These models
+are categorized into tie-oriented models (Butts, C., 2008,
+<doi:10.1111/j.1467-9531.2008.00203.x>), where the probability of a dyad
+interacting next is modeled in a single step, and actor-oriented models
+(Stadtfeld, C., & Block, P., 2017, <doi:10.15195/v4.a14>), which first model the
+probability of a sender initiating an interaction and subsequently the
+probability of the sender's choice of receiver.  The package is designed to
+compute a variety of statistics that summarize exogenous and endogenous
+influences on the event stream for both types of models.")
+    (license license:gpl3+)))
+
 (define-public r-remss
   (package
     (name "r-remss")
@@ -31415,13 +31467,13 @@ other task can be easily plugged into the main function RED'.")
 (define-public r-redoc
   (package
     (name "r-redoc")
-    (version "2.0.0.49")
+    (version "2.0.0.75")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "redoc" version))
        (sha256
-        (base32 "06nfqw6xs0ij21mjbqk9sdvhhh0pqf6fwankvagsbyrv742g7qkx"))))
+        (base32 "1k54hsh7xrlfs0a06yi73fml86ivcfcdxn5k8gx86mnq8mqmfsqh"))))
     (properties `((upstream-name . "redoc")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite))
@@ -31431,7 +31483,7 @@ other task can be easily plugged into the main function RED'.")
     (description
      "This package provides a collection of HTML', @code{JavaScript}', CSS and fonts
 assets that generate Redoc documentation from an @code{OpenAPI} Specification:
-<https://redoc.ly/redoc/>.")
+<https://redocly.com/redoc/>.")
     (license (list license:expat license:asl2.0))))
 
 (define-public r-redmonder
@@ -38266,13 +38318,13 @@ menu items for functions we use in our introductory courses.")
 (define-public r-rcmdrplugin-factominer
   (package
     (name "r-rcmdrplugin-factominer")
-    (version "1.7")
+    (version "1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcmdrPlugin.FactoMineR" version))
        (sha256
-        (base32 "1145rpzhq219sl0j2bg5xa0ihq13lmr7ahcn3db4a8mqlz2fp8zy"))))
+        (base32 "1fr50yfjh1iy65lkvkw992l02q0vgrw2advj707z02806p69bkn1"))))
     (properties `((upstream-name . "RcmdrPlugin.FactoMineR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcmdr r-factominer))
@@ -43078,16 +43130,15 @@ without a test dataset\".")
 (define-public r-rapidoc
   (package
     (name "r-rapidoc")
-    (version "8.4.3")
+    (version "9.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rapidoc" version))
        (sha256
-        (base32 "1i7f122iigbaah1c3g5vfmnypwilcgc1i3d0l3985s5fjj44dnhn"))))
+        (base32 "1nzwf4wx8syl9xpvmqn3mz72nhj80ssnm6wbfwnasg003ccfi43c"))))
     (properties `((upstream-name . "rapidoc")))
     (build-system r-build-system)
-    (propagated-inputs (list r-jsonlite))
     (native-inputs (list esbuild))
     (home-page "https://github.com/meztez/rapidoc")
     (synopsis

@@ -1503,20 +1503,19 @@ disturbances simulated according to Le et al.(2022)
 (define-public r-updog
   (package
     (name "r-updog")
-    (version "2.1.3")
+    (version "2.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "updog" version))
        (sha256
-        (base32 "1i7dc8msky5g658iwcvdvda2m0ya9cnbzm9d565l01lf184dfhhk"))))
+        (base32 "1v2y8a2l8vjabbz7p3k6sh3c5p744z96fjg2fkygp0zrl2vvpra0"))))
     (properties `((upstream-name . "updog")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2
                              r-rcpparmadillo
                              r-rcpp
                              r-iterators
-                             r-ggthemes
                              r-ggplot2
                              r-future
                              r-foreach
@@ -3209,6 +3208,41 @@ There is no need to define priors for scale-location parameters except two
 hyperparameters in which are associated with a Dirichlet prior for weights and a
 simplex.")
     (license license:gpl2+)))
+
+(define-public r-ulrb
+  (package
+    (name "r-ulrb")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ulrb" version))
+       (sha256
+        (base32 "0xwlj8cc7y4p51r0p46bz1ac7klrl2b9h7cr704d0cpvcwy11y7f"))))
+    (properties `((upstream-name . "ulrb")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-rlang
+                             r-purrr
+                             r-gridextra
+                             r-ggplot2
+                             r-dplyr
+                             r-clustersim
+                             r-cluster))
+    (native-inputs (list r-knitr))
+    (home-page "https://pascoalf.github.io/ulrb/")
+    (synopsis
+     "Unsupervised Learning Based Definition of Microbial Rare Biosphere")
+    (description
+     "This package provides a tool to define rare biosphere.  ulrb solves the problem
+of the definition of rarity by replacing human decision with an unsupervised
+machine learning algorithm (partitioning around medoids, or k-medoids).  This
+algorithm works for any type of microbiome data, provided there is an abundance
+score for each phylogenetic unit.  For validation of this method to several
+kinds of molecular data and environments, please see Pascoal et al, 2023 (in
+preparation).  Preliminary data suggest this method also works well for
+non-microbiome data, if there is a species abundance table.")
+    (license license:gpl3+)))
 
 (define-public r-ulid
   (package

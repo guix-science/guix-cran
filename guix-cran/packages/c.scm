@@ -20346,13 +20346,13 @@ utilities to generate this metadata with a minimum of dependencies.")
 (define-public r-codelistgenerator
   (package
     (name "r-codelistgenerator")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CodelistGenerator" version))
        (sha256
-        (base32 "1pb56361jj9mwyx5b22ibygpql7ycyvhijv96727l6fg2mjg0s8g"))))
+        (base32 "04ickjjnq964wysgd5bdwz9k6nnb61m4kvpmxky6x3kdcn2458rg"))))
     (properties `((upstream-name . "CodelistGenerator")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -37606,13 +37606,13 @@ that make up the 2001 definition of the Greater Glasgow and Clyde health board."
 (define-public r-carbayes
   (package
     (name "r-carbayes")
-    (version "6.0")
+    (version "6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CARBayes" version))
        (sha256
-        (base32 "17y97czha0vnn21cwbmci6cfp4r0k453hg7jdhg1n4c1nl5x6r0y"))))
+        (base32 "1c12alvizps18jpwn57h5afny13c0aspawlmc7af4lm58m0i2ya1"))))
     (properties `((upstream-name . "CARBayes")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm
@@ -37624,6 +37624,8 @@ that make up the 2001 definition of the Greater Glasgow and Clyde health board."
                              r-mcmcpack
                              r-mass
                              r-mapview
+                             r-igraph
+                             r-glmnet
                              r-ggally
                              r-dplyr
                              r-coda

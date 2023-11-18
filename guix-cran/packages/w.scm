@@ -822,13 +822,13 @@ heterologous spike-in proteins.")
 (define-public r-wrmisc
   (package
     (name "r-wrmisc")
-    (version "1.13.0")
+    (version "1.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wrMisc" version))
        (sha256
-        (base32 "19plk0yw2djnb08vsia9xh1vhssqbkcgs9m9bn1lsns08nn6cimz"))))
+        (base32 "05b5983xg2lxkx20ngywvyxcflsl4nxsjqrk6nm296qjjymzia05"))))
     (properties `((upstream-name . "wrMisc")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -6184,13 +6184,13 @@ Dr. Prashant K Srivastava to conduct this research work.")
 (define-public r-wcluster
   (package
     (name "r-wcluster")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WCluster" version))
        (sha256
-        (base32 "1crzhg0kldmyamxvj5wf3ik9x36sm1nw9kd6jgpnb0jdqlx2pd2s"))))
+        (base32 "0bv0q05gr1jw1ihamw7fqsvrcpr7qrwa9vry6v32qckacfr594rv"))))
     (properties `((upstream-name . "WCluster")))
     (build-system r-build-system)
     (propagated-inputs (list r-datanugget r-cluster))

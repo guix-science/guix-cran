@@ -14424,13 +14424,13 @@ registration at <https://www.eia.gov/opendata/>.")
 (define-public r-eia
   (package
     (name "r-eia")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eia" version))
        (sha256
-        (base32 "1nkykbd3p2p7z1g6nqzhrn08z8cbyg6jayl3hd78vxcmryd1wzgx"))))
+        (base32 "188vprgj7lzzs7z3qa2pq8lhhsg8h389frxnq1dr295jqzwrwvis"))))
     (properties `((upstream-name . "eia")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -14952,13 +14952,13 @@ root tests are supported, and an improved unit root test is included.")
 (define-public r-eganet
   (package
     (name "r-eganet")
-    (version "2.0.2")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EGAnet" version))
        (sha256
-        (base32 "1jaqdygcgfgdq357xvmvzrcn8n0cmvmxccynym65q4iqbz538qlf"))))
+        (base32 "0dizs77mcmzj44alpafd9jzdcyw1fkq1lqab7cj8a6znbvwndrl8"))))
     (properties `((upstream-name . "EGAnet")))
     (build-system r-build-system)
     (propagated-inputs (list r-sna
@@ -14973,10 +14973,10 @@ root tests are supported, and an improved unit root test is included.")
                              r-glasso
                              r-ggpubr
                              r-ggplot2
-                             r-ggdendro
                              r-ggally
                              r-future-apply
-                             r-future))
+                             r-future
+                             r-dendextend))
     (home-page "https://r-ega.net")
     (synopsis
      "Exploratory Graph Analysis â a Framework for Estimating the Number of Dimensions in Multivariate Data using Network Psychometrics")

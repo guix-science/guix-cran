@@ -7691,13 +7691,13 @@ R21HG005912.  Hahsler et al (2017) <doi:10.18637/jss.v076.i14>.")
 (define-public r-streak
   (package
     (name "r-streak")
-    (version "0.1.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "STREAK" version))
        (sha256
-        (base32 "0y6m7m2wpksymqnp4h1vangg70nz3qk1crd12g69smr02lg3amnk"))))
+        (base32 "1gi228y3rn187pkr74abiydlkdwaahd9b9nn5dn5433y69kwnkw5"))))
     (properties `((upstream-name . "STREAK")))
     (build-system r-build-system)
     (propagated-inputs (list r-vam r-speck r-seurat r-matrix r-ckmeans-1d-dp))
@@ -20343,16 +20343,17 @@ from series of speckle images.")
 (define-public r-speck
   (package
     (name "r-speck")
-    (version "0.1.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SPECK" version))
        (sha256
-        (base32 "0vpnm3gkw77wh2d2znwnyz1fz1lmj0n0zyb8jyzbpjm6rxwhlhh8"))))
+        (base32 "0n67gqwd01klk8x3ds5ik11nwiga0138vdw3yhnrj1pp3pnpnq7k"))))
     (properties `((upstream-name . "SPECK")))
     (build-system r-build-system)
-    (propagated-inputs (list r-seurat r-rsvd r-magrittr r-ckmeans-1d-dp))
+    (propagated-inputs (list r-seurat r-rsvd r-matrix r-magrittr
+                             r-ckmeans-1d-dp))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=SPECK")
     (synopsis
@@ -22152,6 +22153,30 @@ Analysis, 167, 15-30.")
 mapping.")
     (license license:gpl2)))
 
+(define-public r-spatialeco
+  (package
+    (name "r-spatialeco")
+    (version "2.0-2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spatialEco" version))
+       (sha256
+        (base32 "0z5m78x72if7bbhfjb92xv2qg4i7vh5hq9w5djd615piin9qwfsk"))))
+    (properties `((upstream-name . "spatialEco")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra r-sf))
+    (home-page "https://github.com/jeffreyevans/spatialEco")
+    (synopsis "Spatial Analysis and Modelling Utilities")
+    (description
+     "Utilities to support spatial data manipulation, query, sampling and modelling in
+ecological applications.  Functions include models for species population
+density, spatial smoothing, multivariate separability, point process model for
+creating pseudo- absences and sub-sampling, Quadrant-based sampling and
+analysis, auto-logistic modeling, sampling models, cluster optimization,
+statistical exploratory tools and raster-based metrics.")
+    (license license:gpl3)))
+
 (define-public r-spatialddls
   (package
     (name "r-spatialddls")
@@ -22382,13 +22407,13 @@ version, please check <https://github.com/leeshawn/SPAtest>.")
 (define-public r-spatentropy
   (package
     (name "r-spatentropy")
-    (version "2.2-3")
+    (version "2.2-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SpatEntropy" version))
        (sha256
-        (base32 "03v322jkz41r0navlqxgdfp9v9c79cqb5rx743xa5xvlyw9wb8rv"))))
+        (base32 "0krcyymvwdcckiji1dlm9pyc2x82k5dfkvglfchv8w5kf6y2qmbh"))))
     (properties `((upstream-name . "SpatEntropy")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-random r-spatstat-geom r-spatstat))
@@ -33569,6 +33594,29 @@ sets can represent data from randomized control trials, repeated measure
 generated using various mechanisms (MCAR, MAR, NMAR).")
     (license license:gpl3)))
 
+(define-public r-simstatespace
+  (package
+    (name "r-simstatespace")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "simStateSpace" version))
+       (sha256
+        (base32 "1xxacb6r1zx15lybixbd8188kcyw4gzh677pn9sfhzsq6hkkd4g3"))))
+    (properties `((upstream-name . "simStateSpace")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (home-page "https://github.com/jeksterslab/simStateSpace")
+    (synopsis "Simulate Data from State Space Models")
+    (description
+     "This package provides a streamlined and user-friendly framework for simulating
+data in state space models, particularly when the number of subjects/units (n)
+exceeds one, a scenario commonly encountered in social and behavioral sciences.
+For an introduction to state space models in social and behavioral sciences,
+refer to Chow, Ho, Hamaker, and Dolan (2010) <doi:10.1080/10705511003661553>.")
+    (license license:gpl3+)))
+
 (define-public r-simstandard
   (package
     (name "r-simstandard")
@@ -33816,6 +33864,31 @@ dispersal/connectivity).  The package should be relevant to explore a broad
 spectrum of ecological phenomena, such as those at the interface of animal
 behaviour, management, landscape and movement ecology, disease and invasive
 species spread, and population dynamics.")
+    (license license:gpl2+)))
+
+(define-public r-simrestore
+  (package
+    (name "r-simrestore")
+    (version "1.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "simRestore" version))
+       (sha256
+        (base32 "1psw58k5i7vj7a49cski28dxwryi6qk167w2v003ja209pdpbfx8"))))
+    (properties `((upstream-name . "simRestore")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble r-subplex r-shiny r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=simRestore")
+    (synopsis
+     "Simulate the Effect of Management Policies on Restoration Efforts")
+    (description
+     "Simulation methods to study the effect of management policies on efforts to
+restore populations back to their original genetic composition.  Allows for
+single-scenario simulation and for optimization of specific chosen scenarios.
+Further information can be found in Hernandez, Janzen and Lavretsky (2023)
+<doi:10.1111/1755-0998.13892>.")
     (license license:gpl2+)))
 
 (define-public r-simrel
@@ -46121,6 +46194,25 @@ proximity values between pairs of observations.")
      "It offers functions for creating dashboard with Fomantic UI.")
     (license license:expat)))
 
+(define-public r-semantic-assets
+  (package
+    (name "r-semantic-assets")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "semantic.assets" version))
+       (sha256
+        (base32 "0jmrz73x4qqmr7vibqfx83d4r4snf5anm9gd3c5xg6wm170vq1qs"))))
+    (properties `((upstream-name . "semantic.assets")))
+    (build-system r-build-system)
+    (native-inputs (list esbuild))
+    (home-page "https://github.com/Appsilon/semantic.assets")
+    (synopsis "Assets for 'shiny.semantic'")
+    (description
+     "Style sheets and @code{JavaScript} assets for shiny.semantic package.")
+    (license license:lgpl3)))
+
 (define-public r-selfingtree
   (package
     (name "r-selfingtree")
@@ -49461,13 +49553,13 @@ trend.")
 (define-public r-scutr
   (package
     (name "r-scutr")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scutr" version))
        (sha256
-        (base32 "0wq20zvn839iws9qzaknfisr9r2pipdcvxfjvqmk1bw9irfgj3gm"))))
+        (base32 "0n3lsj6cmkzwg6rc7s75vh54xaddxdin7p3v6269kb0v1brmkbi3"))))
     (properties `((upstream-name . "scutr")))
     (build-system r-build-system)
     (propagated-inputs (list r-smotefamily r-mclust))
@@ -49872,6 +49964,30 @@ Pericyte, Smooth muscle cells) to visualize the Seurat clusters, to facilitate
 labeling them by biological names.  Once users named each cluster, they can
 evaluate the quality of them again and find the de novo marker genes also.")
     (license license:agpl3+)))
+
+(define-public r-scrnaimm
+  (package
+    (name "r-scrnaimm")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ScRNAIMM" version))
+       (sha256
+        (base32 "0r69nbmpd42j547li34psj9kbkf5wckayzs9mz0ybjpzi92wx99y"))))
+    (properties `((upstream-name . "ScRNAIMM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scdha r-nortest r-mclust r-magrittr r-dplyr))
+    (home-page "https://cran.r-project.org/package=ScRNAIMM")
+    (synopsis
+     "Performing Single-Cell RNA-Seq Imputation by Using Mean/Median Imputation")
+    (description
+     "Performing single-cell imputation in a way that preserves the biological
+variations in the data.  The package clusters the input data to do imputation
+for each cluster, and do a distribution check using the Anderson-Darling
+normality test to impute dropouts using mean or median (Yazici, B., & Yolacan,
+S. (2007) <DOI:10.1080/10629360600678310>).")
+    (license license:gpl3)))
 
 (define-public r-scrm
   (package

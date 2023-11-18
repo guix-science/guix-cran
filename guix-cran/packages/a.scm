@@ -2385,19 +2385,20 @@ reproducible research is that uses this data.")
 (define-public r-ausplotsr
   (package
     (name "r-ausplotsr")
-    (version "2.0.4")
+    (version "2.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ausplotsR" version))
        (sha256
-        (base32 "0r80ky1lhxq70wm8crrx26glcjrp73qnfvihnci7xb3zf1jw3g6r"))))
+        (base32 "0zxzxzhhdmzcvn2kvvmkgrizyx73h4wc7daysjsp54zv8krlh4x9"))))
     (properties `((upstream-name . "ausplotsR")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
                              r-stringr
                              r-r2r
                              r-r-utils
+                             r-progress
                              r-plyr
                              r-mapdata
                              r-jsonlite
@@ -5916,13 +5917,13 @@ treatment.  2018. <https://hal.archives-ouvertes.fr/hal-01939694>.")
 (define-public r-arkhe
   (package
     (name "r-arkhe")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arkhe" version))
        (sha256
-        (base32 "1mya1c8dzpwkag0r0wrj45x0wwi296m4mmhgbhyk7cyaqyl7wka8"))))
+        (base32 "05ghvcqyb5l1x718hnza60ybi3pc4jvpxf5z1hk8062vpb6cgn8x"))))
     (properties `((upstream-name . "arkhe")))
     (build-system r-build-system)
     (home-page "https://packages.tesselle.org/arkhe/")
@@ -7376,6 +7377,43 @@ management.  With *aquodom* (short for aquo domaintables) it is easy to exploit
 the API (<https://www.aquo.nl/index.php/Hoofdpagina>) to download domaintables
 of the Aquo Standard and use them in R.")
     (license license:expat)))
+
+(define-public r-aquaticlifehistory
+  (package
+    (name "r-aquaticlifehistory")
+    (version "1.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AquaticLifeHistory" version))
+       (sha256
+        (base32 "0h6q0ajw2k2f1p0k8j6772p7i78a13amwxzj4ffrykqgwi3pr22v"))))
+    (properties `((upstream-name . "AquaticLifeHistory")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-rlist
+                             r-readr
+                             r-plyr
+                             r-mumin
+                             r-minpack-lm
+                             r-mass
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr
+                             r-broom))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jonathansmart/AquaticLifeHistory")
+    (synopsis "Life History Analysis Tools")
+    (description
+     "Estimate aquatic species life history using robust techniques.  This package
+supports users undertaking two types of analysis: 1) Growth from length-at-age
+data, and 2) maturity analyses for length and/or age data.  Maturity analyses
+are performed using generalised linear model approaches incorporating either a
+binomial or quasibinomial distribution.  Growth modelling is performed using the
+multimodel approach presented by Smart et al. (2016) \"Multimodel approaches in
+shark and ray growth studies: strengths, weaknesses and the future\"
+<doi:10.1111/faf.12154>.")
+    (license license:gpl3)))
 
 (define-public r-aquaenv
   (package
@@ -9864,6 +9902,38 @@ results from multiple comparisons with the grand mean (obtained with multcomp',
 intervals as input and produces ANOM decision charts that illustrate which group
 means deviate significantly from the grand mean.")
     (license license:gpl2+)))
+
+(define-public r-anofa
+  (package
+    (name "r-anofa")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ANOFA" version))
+       (sha256
+        (base32 "06dkzddk7z0xn87d3q2hy5ja6vkg2kn37vfnxpf405lh52l03h47"))))
+    (properties `((upstream-name . "ANOFA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-superb r-rrapply r-rdpack r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://dcousin3.github.io/ANOFA/")
+    (synopsis "Analyses of Frequency Data")
+    (description
+     "Analyses of frequencies can be performed using an alternative test based on the
+G statistic.  The test has similar type-I error rates and power as the
+chi-square test.  However, it is based on a total statistic that can be
+decomposed in an additive fashion into interaction effects, main effects, simple
+effects, contrast effects, etc., mimicking precisely the logic of ANOVA. We call
+this set of tools ANOFA (Analysis of Frequency data) to highlight its
+similarities with ANOVA. This framework also renders plots of frequencies along
+with confidence intervals.  Finally, effect sizes and planning statistical power
+are easily done under this framework.  The ANOFA is a tool that assesses the
+significance of effects instead of the significance of parameters; as such, it
+is more intuitive to most researchers than alternative approaches based on
+generalized linear models.  See Laurencelle and Cousineau (2023)
+<doi:10.20982/tqmp.19.2.p173>.")
+    (license license:gpl3)))
 
 (define-public r-anocva
   (package
@@ -14130,6 +14200,29 @@ geographic zones in the Mexico City metro area.  The package also includes the
 locations of each of the stations and zones.  See <http://aire.cdmx.gob.mx/> for
 more information.")
     (license license:bsd-3)))
+
+(define-public r-air
+  (package
+    (name "r-air")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "air" version))
+       (sha256
+        (base32 "0r54kq6iiad3g07sz69napw5qx6qp9sx2qp6jy7frynh8s60bss9"))))
+    (properties `((upstream-name . "air")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rjson r-keyring r-httr))
+    (home-page "https://github.com/soumyaray/air")
+    (synopsis "AI Assistant to Write and Understand R Code")
+    (description
+     "An R console utility that lets you ask R related questions to the @code{OpenAI}
+large language model.  It can answer how-to() questions by providing code, and
+whatis() questions by explaining what given code does.  You must provision your
+own key for the @code{OpenAI} API
+<https://platform.openai.com/docs/api-reference>.")
+    (license license:expat)))
 
 (define-public r-aipw
   (package

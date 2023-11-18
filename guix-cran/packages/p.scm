@@ -27,6 +27,7 @@
   #:use-module (gnu packages maths)
   #:use-module (gnu packages pdf)
   #:use-module (gnu packages java)
+  #:use-module (gnu packages ssh)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -11067,19 +11068,18 @@ have been extracted from documentation of the PPI found at
 (define-public r-ppgmmga
   (package
     (name "r-ppgmmga")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ppgmmga" version))
        (sha256
-        (base32 "1dq0p3xna5r1kiyhiziz3wc78dfqh362qhna5hmkjzhljawr9jg0"))))
+        (base32 "0ms6pqhdvws6dp27mgvwdm039h6z3psgbdmy2k6wq1wqr5jbsiz1"))))
     (properties `((upstream-name . "ppgmmga")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
                              r-rcpp
                              r-mclust
-                             r-ggthemes
                              r-ggplot2
                              r-ga
                              r-crayon
@@ -26232,6 +26232,41 @@ percentiles while the other returns the values for every percentile from 1 to
 considered.")
     (license license:gpl2+)))
 
+(define-public r-perarma
+  (package
+    (name "r-perarma")
+    (version "1.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "perARMA" version))
+       (sha256
+        (base32 "1d3gg5yb2gj3mfmk72lps40hkiaf65wv7zhhgxf918kqyqi5zhs2"))))
+    (properties `((upstream-name . "perARMA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-signal r-matrix r-matlab r-gnm r-corpcor))
+    (home-page "https://cran.r-project.org/package=perARMA")
+    (synopsis "Periodic Time Series Analysis")
+    (description
+     "Identification, model fitting and estimation for time series with periodic
+structure.  Additionally, procedures for simulation of periodic processes and
+real data sets are included.  Hurd, H. L., Miamee, A. G. (2007)
+<doi:10.1002/9780470182833> Box, G. E. P., Jenkins, G. M., Reinsel, G. (1994)
+<doi:10.1111/jtsa.12194> Brockwell, P. J., Davis, R. A. (1991,
+ISBN:978-1-4419-0319-8) Bretz, F., Hothorn, T., Westfall, P. (2010, ISBN:
+9780429139543) Westfall, P. H., Young, S. S. (1993, ISBN:978-0-471-55761-6)
+Bloomfield, P., Hurd, H. L.,Lund, R. (1994)
+<doi:10.1111/j.1467-9892.1994.tb00181.x> Dehay, D., Hurd, H. L. (1994,
+ISBN:0-7803-1023-3) Vecchia, A. (1985) <doi:10.1080/00401706.1985.10488076>
+Vecchia, A. (1985) <doi:10.1111/j.1752-1688.1985.tb00167.x> Jones, R.,
+Brelsford, W. (1967) <doi:10.1093/biomet/54.3-4.403> Makagon, A. (1999)
+<https://www.math.uni.wroc.pl/~pms/files/19.2/Article/19.2.5.pdf> Sakai, H.
+(1989) <doi:10.1111/j.1467-9892.1991.tb00069.x> Gladyshev, E. G. (1961)
+<https://www.mathnet.ru/php/archive.phtml?wshow=paper&jrnid=dan&paperid=24851>
+Ansley (1979) <doi:10.1093/biomet/66.1.59> Hurd, H. L., Gerr, N. L. (1991)
+<doi:10.1111/j.1467-9892.1991.tb00088.x>.")
+    (license license:gpl2+)))
+
 (define-public r-peramo
   (package
     (name "r-peramo")
@@ -33180,6 +33215,28 @@ information).  You can use it to plan astronomical observations, make guidance
 pictures, find magnitudes in five broadband filters (g, r, i, z, y) and more.")
     (license license:expat)))
 
+(define-public r-panprsnext
+  (package
+    (name "r-panprsnext")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PANPRSnext" version))
+       (sha256
+        (base32 "1s9kv58af7hj65qxcnrsfjrh8xfqhm5m4kpg279li5b4g4cpnqx9"))))
+    (properties `((upstream-name . "PANPRSnext")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-gtools))
+    (home-page "https://cran.r-project.org/package=PANPRSnext")
+    (synopsis "Building PRS Models Based on Summary Statistics of GWAs")
+    (description
+     "Shrinkage estimator for polygenic risk prediction (PRS) models based on summary
+statistics of genome-wide association (GWA) studies.  Based upon the methods and
+original PANPRS package as found in: Chen, Chatterjee, Landi, and Shi (2020)
+<doi:10.1080/01621459.2020.1764849>.")
+    (license license:gpl3)))
+
 (define-public r-panjen
   (package
     (name "r-panjen")
@@ -34803,15 +34860,17 @@ Population Census 2017 (<http://www.pbscensus.gov.pk/>).")
 (define-public r-pak
   (package
     (name "r-pak")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pak" version))
        (sha256
-        (base32 "0syp0ci3ip9wq3wrlcwxj5vj2madhazgvv6q362flvk28djml1zd"))))
+        (base32 "12rkqymbbnvcbcb4yn6wd2n5nxsswygmw2bfdlkp3a733rdzyfhs"))))
     (properties `((upstream-name . "pak")))
     (build-system r-build-system)
+    (inputs (list zlib openssl openssh curl))
+    (native-inputs (list pkg-config))
     (home-page "https://pak.r-lib.org/")
     (synopsis "Another Approach to Package Installation")
     (description
