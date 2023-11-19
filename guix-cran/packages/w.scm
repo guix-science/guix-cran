@@ -4082,13 +4082,13 @@ round to round, rounds 3 and 4 should have a vastly reduced field of search.")
 (define-public r-whitebox
   (package
     (name "r-whitebox")
-    (version "2.3.1")
+    (version "2.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "whitebox" version))
        (sha256
-        (base32 "0bb6apb7yw625gw437n567l0w42l21s5819dria07v3apv4wsbjx"))))
+        (base32 "044r2aczhr7l83xx00zwzlhr7mlqs9pwl6ix93j8ch19j2dcrsg5"))))
     (properties `((upstream-name . "whitebox")))
     (build-system r-build-system)
     (inputs (list))

@@ -10277,13 +10277,13 @@ misclassification cost.")
 (define-public r-rpart-lad
   (package
     (name "r-rpart-lad")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rpart.LAD" version))
        (sha256
-        (base32 "1v1arv5b02n0jvyifb5km9w3z3wxg9x9g3g4xck4s319z5g6lp7n"))))
+        (base32 "0qfhd1gbzv3yikmdd98p9nj8xv6k7qlnlvv85g1ipil1d20f6dlc"))))
     (properties `((upstream-name . "rpart.LAD")))
     (build-system r-build-system)
     (propagated-inputs (list r-rpart r-rcpp))
@@ -33877,13 +33877,13 @@ dmna, Scintec Format-1, and Campbell Scientific TOA5 formats.")
 (define-public r-readjdx
   (package
     (name "r-readjdx")
-    (version "0.6.1")
+    (version "0.6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "readJDX" version))
        (sha256
-        (base32 "19aw7jafgg6d6q5xmsphpkyakad6m1x1062h3nxkmfma9xcy4ns4"))))
+        (base32 "16ixrwnmpmq3x358gdyrf3fm1vr8dxjbz3cql3zldz1sfl3f4z76"))))
     (properties `((upstream-name . "readJDX")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr))
@@ -35780,27 +35780,6 @@ interoperable) data used in epidemiological modelling.")
 RESTful search API. The API is backed by Elasticsearch', allowing expressive
 queries, including faceting.")
     (license license:expat)))
-
-(define-public r-rdatacanvas
-  (package
-    (name "r-rdatacanvas")
-    (version "0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RDataCanvas" version))
-       (sha256
-        (base32 "1aw19lmdphxwva5cs3f4fb8hllirzfkk48nqdgrarz32l11y5z5j"))))
-    (properties `((upstream-name . "RDataCanvas")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-jsonlite))
-    (home-page "https://github.com/DataCanvasIO/RDataCanvas")
-    (synopsis "Basic Runtime Support for Datacanvas.io")
-    (description
-     "This package provides basic functionalities for writing a module for
-http://datacanvas.io.  The http://datacanvas.io is a big data analytics platform
-that helps data scientists to build, manage and share data pipelines.")
-    (license license:bsd-3)))
 
 (define-public r-rdaisi
   (package
@@ -46281,20 +46260,22 @@ data structures.")
 (define-public r-r6causal
   (package
     (name "r-r6causal")
-    (version "0.8.0")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "R6causal" version))
        (sha256
-        (base32 "0p6mhni9cy0ap9a701aqzdwl6bmqv646c9c2qc1n0zydnj0lg78h"))))
+        (base32 "1d2sl5jpbyn485l42izal6zabjzzmm3p325264r3nxsv5ghiagim"))))
     (properties `((upstream-name . "R6causal")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6
                              r-mass
                              r-igraph
+                             r-glue
                              r-dosearch
                              r-data-table
+                             r-cfid
                              r-causaleffect))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=R6causal")

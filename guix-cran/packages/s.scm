@@ -1147,57 +1147,6 @@ document, and scores for multiple documents are computed in parallel via
 @code{OpenMP}'.")
     (license (license:fsdg-compatible "BSD 2-clause License + file LICENSE"))))
 
-(define-public r-swmprextension
-  (package
-    (name "r-swmprextension")
-    (version "2.2.4.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SWMPrExtension" version))
-       (sha256
-        (base32 "0vvmpghwrd66y92d9mb93i38siyd0jx6vlafbir1inkmpcpa62a0"))))
-    (properties `((upstream-name . "SWMPrExtension")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-swmpr
-                             r-sf
-                             r-scales
-                             r-rlang
-                             r-rcolorbrewer
-                             r-purrr
-                             r-officer
-                             r-magrittr
-                             r-lubridate
-                             r-ggthemes
-                             r-ggplot2
-                             r-ggimage
-                             r-flextable
-                             r-envstats
-                             r-dplyr
-                             r-broom))
-    (home-page "https://cran.r-project.org/package=SWMPrExtension")
-    (synopsis "Functions for Analyzing and Plotting Estuary Monitoring Data")
-    (description
-     "This package provides tools for performing routine analysis and plotting tasks
-with environmental data from the System Wide Monitoring Program of the National
-Estuarine Research Reserve System <https://cdmo.baruch.sc.edu/>.  This package
-builds on the functionality of the SWMPr package
-<https://cran.r-project.org/package=SWMPr>, which is used to retrieve and
-organize the data.  The combined set of tools address common challenges
-associated with continuous time series data for environmental decision making,
-and are intended for use in annual reporting activities.  References: Beck,
-Marcus W. (2016) <ISSN
-2073-4859><https://journal.r-project.org/archive/2016-1/beck.pdf> Rudis, Bob
-(2014)
-<https://rud.is/b/2014/11/16/moving-the-earth-well-alaska-hawaii-with-r/>.
-United States Environmental Protection Agency (2015)
-<https://cfpub.epa.gov/si/si_public_record_Report.cfm?Lab=OWOW&@code{dirEntryId=327030>}.
- United States Environmental Protection Agency (2012)
-<https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.646.1973&rep=rep1&type=pdf>.")
-    (license license:cc0)))
-
 (define-public r-swmpr
   (package
     (name "r-swmpr")
@@ -42739,6 +42688,39 @@ Houpt, Blaha, @code{McIntire}, Havig, and Townsend (2013)
 Factorial Technology along with examples using the sft R package.")
     (license license:gpl2+)))
 
+(define-public r-sfsi
+  (package
+    (name "r-sfsi")
+    (version "1.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SFSI" version))
+       (sha256
+        (base32 "1h085bihjlbfa1ma63ngcshfw97fx0k879lpxjj82s1dbazagkdg"))))
+    (properties `((upstream-name . "SFSI")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-viridis
+                             r-tensorevd
+                             r-scales
+                             r-reshape2
+                             r-igraph
+                             r-ggplot2))
+    (native-inputs (list r-rmarkdown))
+    (home-page "https://cran.r-project.org/package=SFSI")
+    (synopsis "Sparse Family and Selection Index")
+    (description
+     "Here we provide tools for the estimation of coefficients in penalized
+regressions when the (co)variance matrix of predictors and the covariance vector
+between predictors and response, are provided.  These methods are extended to
+the context of a Selection Index (commonly used for breeding value prediction).
+The approaches offer opportunities such as the integration of high-throughput
+traits in genetic evaluations ('Lopez-Cruz et al., 2020')
+<doi:10.1038/s41598-020-65011-2> and solutions for training set optimization in
+Genomic Prediction ('Lopez-Cruz & de los Campos, 2021')
+<doi:10.1093/genetics/iyab030>.")
+    (license license:gpl3)))
+
 (define-public r-sfs
   (package
     (name "r-sfs")
@@ -55311,13 +55293,13 @@ cancer data <@code{arXiv:2012.06093>}.")
 (define-public r-samtool
   (package
     (name "r-samtool")
-    (version "1.6.2")
+    (version "1.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SAMtool" version))
        (sha256
-        (base32 "1nwvxn4x8a6j7ayiacx4nkfmnmd83ch6ji5sl7lhc6wnqrn5x47h"))))
+        (base32 "06sq9862098mwf2inamhjf3v9qf3w790sahmcsblvlik3mh9qs8f"))))
     (properties `((upstream-name . "SAMtool")))
     (build-system r-build-system)
     (propagated-inputs (list r-vars

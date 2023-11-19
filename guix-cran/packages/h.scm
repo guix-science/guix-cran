@@ -11214,17 +11214,18 @@ including most of the delicious Cantonese cuisine.")
 (define-public r-happign
   (package
     (name "r-happign")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "happign" version))
        (sha256
-        (base32 "1incrlf6frhrb2sb6w0x6fcgdy4vvr9qkcsq3r40pgpkkczdidl4"))))
+        (base32 "058924rr28qg67lwrvwlfxb2jn09bfyc77ki62gn15f3xcm6pbax"))))
     (properties `((upstream-name . "happign")))
     (build-system r-build-system)
     (inputs (list sqlite proj geos gdal))
     (propagated-inputs (list r-xml2
+                             r-units
                              r-terra
                              r-sf
                              r-jsonlite

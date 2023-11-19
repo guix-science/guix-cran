@@ -9906,13 +9906,13 @@ means deviate significantly from the grand mean.")
 (define-public r-anofa
   (package
     (name "r-anofa")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ANOFA" version))
        (sha256
-        (base32 "06dkzddk7z0xn87d3q2hy5ja6vkg2kn37vfnxpf405lh52l03h47"))))
+        (base32 "1ywcn4sq626dc3bb7r3pwddw5064cli4kmx8a9qp2dnxv9i6igjv"))))
     (properties `((upstream-name . "ANOFA")))
     (build-system r-build-system)
     (propagated-inputs (list r-superb r-rrapply r-rdpack r-ggplot2))

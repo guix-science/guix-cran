@@ -22303,6 +22303,29 @@ archives from the network, share your own files, and install packages from the
 network.")
     (license license:gpl3)))
 
+(define-public r-datplot
+  (package
+    (name "r-datplot")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "datplot" version))
+       (sha256
+        (base32 "1m077srzyza7yb2n8v64y2l02kr19zjy8vvpjz7dh3hmd2sq636r"))))
+    (properties `((upstream-name . "datplot")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lsteinmann/datplot")
+    (synopsis
+     "Preparation of Object Dating Ranges for Density Plots (Aoristic Analysis)")
+    (description
+     "Converting date ranges into dating steps eases the visualization of changes in
+e.g. pottery consumption, style and other variables over time.  This package
+provides tools to process and prepare data for visualization and employs the
+concept of aoristic analysis.")
+    (license license:gpl3+)))
+
 (define-public r-datos
   (package
     (name "r-datos")

@@ -822,13 +822,13 @@ for partial matrix correlations and binary data (Aben et al., 2018,
 (define-public r-itol-toolkit
   (package
     (name "r-itol-toolkit")
-    (version "1.1.5")
+    (version "1.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "itol.toolkit" version))
        (sha256
-        (base32 "0akmjzp65vsl8hnh195lhm58f0qs1c3vy8ljd6njmq2f9fvjgxpj"))))
+        (base32 "0p29p8qk03aqcmxdskrf2mjms1isffwwxgh1kr38fxi43f3kc9q0"))))
     (properties `((upstream-name . "itol.toolkit")))
     (build-system r-build-system)
     (propagated-inputs (list r-wesanderson
@@ -844,7 +844,6 @@ for partial matrix correlations and binary data (Aben et al., 2018,
                              r-dplyr
                              r-data-table
                              r-colourpicker
-                             r-biostrings
                              r-ape))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=itol.toolkit")
@@ -4712,13 +4711,13 @@ can find the full API documentation at <https://ipbase.com/docs> .")
 (define-public r-ipanema
   (package
     (name "r-ipanema")
-    (version "0.1.1")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ipanema" version))
        (sha256
-        (base32 "1g8chd0nvsskiyl2i53yc6zwhsv56p5v4lh92cv9ivyicra7as77"))))
+        (base32 "0f7n78jnvyafkkc91s41kw14fx9g9p7a2n8g52pkk2h2zp10bvya"))))
     (properties `((upstream-name . "ipanema")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmysql
@@ -8166,13 +8165,13 @@ Ecology-focused introduction in Bachl, Lindgren, Borchers, and Illian (2019)
 (define-public r-inlabma
   (package
     (name "r-inlabma")
-    (version "0.1-11")
+    (version "0.1-12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "INLABMA" version))
        (sha256
-        (base32 "0wzyb3c7zpksqz198kigi4rpblvk0rjamngmyabw5xdpizxdg6zi"))))
+        (base32 "0dkb5v08ws38cfv33r4asz6shik08zd3535sc71gsgcg6cnj2d3q"))))
     (properties `((upstream-name . "INLABMA")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdep r-sp r-matrix))
@@ -8180,7 +8179,7 @@ Ecology-focused introduction in Bachl, Lindgren, Borchers, and Illian (2019)
     (synopsis "Bayesian Model Averaging with INLA")
     (description
      "Fit Spatial Econometrics models using Bayesian model averaging on models fitted
-with INLA. The INLA package can be obtained from <http://www.r-inla.org>.")
+with INLA. The INLA package can be obtained from <https://www.r-inla.org>.")
     (license license:gpl2+)))
 
 (define-public r-injurytools

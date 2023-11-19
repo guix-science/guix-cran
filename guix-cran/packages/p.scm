@@ -4632,22 +4632,24 @@ R, Informatics, <doi:10.3390/informatics5010012>.")
 (define-public r-proverbs
   (package
     (name "r-proverbs")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "proverbs" version))
        (sha256
-        (base32 "05pqjz83awa7l971vclg3c3f7hj3nfq0dlrzbxmr2zhysnqjnd62"))))
+        (base32 "1ilfzkpw3m8q4cr1ndygzjz363ghv0f1j5n7sw4whrzafhnlbdvg"))))
     (properties `((upstream-name . "proverbs")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
+                             r-rvest
                              r-purrr
-                             r-magrittr
                              r-lubridate
-                             r-httr
+                             r-httr2
+                             r-glue
                              r-crayon
-                             r-cli))
+                             r-cli
+                             r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/bradlindblad/proverbs")
     (synopsis "Print a Daily Bible Proverb to Console")
@@ -15253,23 +15255,16 @@ variables.  Also known as latent structure analysis.")
 (define-public r-polaroid
   (package
     (name "r-polaroid")
-    (version "0.0.1")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "polaroid" version))
        (sha256
-        (base32 "0m3jbiz4n7mgbbdkd28m6dqsclyjcgshpxd6ws8df7zchx7fch07"))))
+        (base32 "11i1xxvj3ik8kjpm8q1ind3qkwrgyhv0sdcynwj4wld2n6i1v2v5"))))
     (properties `((upstream-name . "polaroid")))
     (build-system r-build-system)
-    (propagated-inputs (list r-shinywidgets
-                             r-shiny
-                             r-png
-                             r-hexsticker
-                             r-ggplot2
-                             r-colourpicker
-                             r-argonr
-                             r-argondash))
+    (propagated-inputs (list r-shiny))
     (home-page "https://github.com/jhk0530/polaroid")
     (synopsis "Create Hex Stickers with 'shiny'")
     (description
@@ -16280,13 +16275,13 @@ Knight and Harper (2013) <doi:10.1016/j.ejor.2013.04.003> for more information."
 (define-public r-pnsibge
   (package
     (name "r-pnsibge")
-    (version "0.1.9")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PNSIBGE" version))
        (sha256
-        (base32 "0lh5nkcyn46pgmabm22i44rhcc1b618d50b6qdawyswhcvi41hg0"))))
+        (base32 "1v7i9666613avz0p4ydlwizrwh11mqw7l9dg0sbg44ialr3wza4d"))))
     (properties `((upstream-name . "PNSIBGE")))
     (build-system r-build-system)
     (propagated-inputs (list r-timedate
@@ -16345,13 +16340,13 @@ series. <@code{arXiv:2211.02582>}.")
 (define-public r-pnadcibge
   (package
     (name "r-pnadcibge")
-    (version "0.7.3")
+    (version "0.7.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PNADcIBGE" version))
        (sha256
-        (base32 "0w166p38s1sx7d0dm83iksm7vc56lgxkqcvgg65h43nx3zdgrvvp"))))
+        (base32 "0x23dffl7mjbqqddzby63lcglbh7l07igwlfjwb5lp64fw6lhmai"))))
     (properties `((upstream-name . "PNADcIBGE")))
     (build-system r-build-system)
     (propagated-inputs (list r-timedate

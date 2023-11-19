@@ -3725,13 +3725,13 @@ may depend on packages with priority base').")
 (define-public r-fritools
   (package
     (name "r-fritools")
-    (version "4.1.1")
+    (version "4.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fritools" version))
        (sha256
-        (base32 "1cbh3m0v8vganmsdi2q6ggrfs3rw4wpi4zzsn1vhjkq1dcrb7bsz"))))
+        (base32 "0h0nx5jvp3mnddzl5if0dwdrlhikd70gx09r2zm264y3mnddq8y5"))))
     (properties `((upstream-name . "fritools")))
     (build-system r-build-system)
     (native-inputs (list))
@@ -15617,13 +15617,13 @@ the plot of the functional data.")
 (define-public r-fdasrvf
   (package
     (name "r-fdasrvf")
-    (version "2.0.3")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fdasrvf" version))
        (sha256
-        (base32 "1m9wn9lbpg7ib3clqydcnrclrjw4yany0cmhmvvkar1dk8r0qar9"))))
+        (base32 "0ba4gmn4d894l82bbzxw5hbn4p8a02m3g4fw2zgvwd3a7a9dbx7s"))))
     (properties `((upstream-name . "fdasrvf")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite

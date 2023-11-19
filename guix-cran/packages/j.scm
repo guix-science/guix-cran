@@ -3835,13 +3835,13 @@ Mainly as a programming example for teaching purposes.")
 (define-public r-jacobi
   (package
     (name "r-jacobi")
-    (version "3.1.0")
+    (version "3.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jacobi" version))
        (sha256
-        (base32 "0bmkycis7kydgpybybv3s6ib6cxp65jh0krc67z6bglfxnbv7pqk"))))
+        (base32 "1i2v5sgwlbihavrj46g4mkni2b8p6qb7alrnaab30c8lwblsc8g8"))))
     (properties `((upstream-name . "jacobi")))
     (build-system r-build-system)
     (propagated-inputs (list r-rvcg r-rgl r-rcpp r-carlson))

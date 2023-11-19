@@ -1138,13 +1138,13 @@ control groups.  The exterior match is used to compare the two control groups.")
 (define-public r-extendedfamily
   (package
     (name "r-extendedfamily")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "extendedFamily" version))
        (sha256
-        (base32 "1scv5y60xr7sc77yxlsqqgxccc28bmsac23850x75bw3q2hx1cfy"))))
+        (base32 "07nayhnj1jm2720hgd5hkb5z6x2dslcdqw8cvfv4q7mlfm6b7r1i"))))
     (properties `((upstream-name . "extendedFamily")))
     (build-system r-build-system)
     (propagated-inputs (list r-assertthat))

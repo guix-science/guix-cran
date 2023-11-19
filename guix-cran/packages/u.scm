@@ -822,34 +822,6 @@ across a Quarto website.  Learn more about usedthese at
 <https://cgoo4.github.io/usedthese/>.")
     (license license:expat)))
 
-(define-public r-usdoj
-  (package
-    (name "r-usdoj")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "usdoj" version))
-       (sha256
-        (base32 "0ddvp3qh1ynzzpzq8rgblkb1z5j5jwyzkfgd9xyzdkcby90k7zya"))))
-    (properties `((upstream-name . "usdoj")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble
-                             r-stringr
-                             r-jsonlite
-                             r-httr
-                             r-dplyr
-                             r-anytime))
-    (home-page "https://github.com/ropengov/usdoj")
-    (synopsis "For Accessing U.S. Department of Justice (DOJ) Open Data")
-    (description
-     "Fetch data from the <https://www.justice.gov/developer/api-documentation/api_v1>
-API such as press releases, blog entries, and speeches.  Optional parameters
-allow users to specify the number of results starting from the earliest or
-latest entries, and whether these results contain keywords.  Data is cleaned for
-analysis and returned in a dataframe.")
-    (license license:expat)))
-
 (define-public r-usdm
   (package
     (name "r-usdm")

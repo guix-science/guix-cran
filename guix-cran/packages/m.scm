@@ -5064,13 +5064,13 @@ system.  Bai, Lumsdaine, and Stock (1998) <doi:10.1111/1467-937X.00051>.")
 (define-public r-multiblock
   (package
     (name "r-multiblock")
-    (version "0.8.6")
+    (version "0.8.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multiblock" version))
        (sha256
-        (base32 "1xi9xh6ypf194fdq90hcrir4m1gi4cqlz3mmyxd7prgy7ypg0wr2"))))
+        (base32 "16p168i802w0cr39l5gqsl12kzcgxlr8jpl6sg1xdkngwcy68pfd"))))
     (properties `((upstream-name . "multiblock")))
     (build-system r-build-system)
     (propagated-inputs (list r-ssbtools
@@ -23140,13 +23140,13 @@ one-mode, two-mode (bipartite), and sometimes three-mode networks.")
 (define-public r-migest
   (package
     (name "r-migest")
-    (version "2.0.3")
+    (version "2.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "migest" version))
        (sha256
-        (base32 "0v59yai9xs2yj17lvm7nmw7jzfgglilixwmwy9czi3z4bhb7gknl"))))
+        (base32 "0gksf8f1arpzxmcid1vskkf4s2r6k4n0ss85cag9429lmjpix5h4"))))
     (properties `((upstream-name . "migest")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -24033,13 +24033,13 @@ curation of microhaplotypes from short read sequences.")
 (define-public r-microeco
   (package
     (name "r-microeco")
-    (version "1.2.0")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "microeco" version))
        (sha256
-        (base32 "1v0371wxxy95s30vs9jl02006anmkmgh588bgqmrka54fmpx375r"))))
+        (base32 "1z2vkc7i4nq22xfkaxvi34p8v32i1vij48jql6fpp4hfjgzmhf63"))))
     (properties `((upstream-name . "microeco")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -31464,13 +31464,13 @@ D, Stefanski LA & Crainiceanu CM (2006, ISBN:1584886331).")
 (define-public r-meconetcomp
   (package
     (name "r-meconetcomp")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "meconetcomp" version))
        (sha256
-        (base32 "1icablsk8j8yf7wzrsbvc6yk9bfwf1684wa68j2rz1fl2n8qmckd"))))
+        (base32 "1nq65cb8hzm0wvlp2sm3xbl2s79n7l6fklww20xzyyx0z5z7f1j6"))))
     (properties `((upstream-name . "meconetcomp")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2

@@ -2242,13 +2242,13 @@ structure to separate the recording of time variant/ invariant variables.")
 (define-public r-cubar
   (package
     (name "r-cubar")
-    (version "0.4.0")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cubar" version))
        (sha256
-        (base32 "03hc2ajmqpxbmrfqpr5rw5pyv0rdhsabwam15260w9mq5kmadg6g"))))
+        (base32 "01rcaz0l9l0i3p91gdj2xwi7l2d4kcdrp9kb5fkaz467z031z01z"))))
     (properties `((upstream-name . "cubar")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-iranges r-ggplot2 r-data-table
@@ -8764,13 +8764,13 @@ assays in large-sized samples.  Mercatelli, D. and Giorgi, F. M. (2020)
 (define-public r-covidibge
   (package
     (name "r-covidibge")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "COVIDIBGE" version))
        (sha256
-        (base32 "0k2k3ssw3pjfzxpr77qbl8ghbvkfbrirxi4wzbdw3r6ccn4qvw9b"))))
+        (base32 "06hqkpwbm8hnpr90w93v4dw4fiyvcp3z9nz6qm10h8n2azscd626"))))
     (properties `((upstream-name . "COVIDIBGE")))
     (build-system r-build-system)
     (propagated-inputs (list r-timedate

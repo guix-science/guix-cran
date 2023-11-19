@@ -10165,16 +10165,17 @@ biplots.")
 (define-public r-biplotez
   (package
     (name "r-biplotez")
-    (version "1.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biplotEZ" version))
        (sha256
-        (base32 "1qnidnr4aydb18dz5igqrybbmdsih1pc750l8kwn5nqi65vpbhp3"))))
+        (base32 "01icnl7k8bwc4gvjzcc8f3nc83r1qcrr5jvjyc3l4q461gqx26zs"))))
     (properties `((upstream-name . "biplotEZ")))
     (build-system r-build-system)
-    (propagated-inputs (list r-withr))
+    (propagated-inputs (list r-withr r-ggrepel r-ggplot2))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=biplotEZ")
     (synopsis "EZ-to-Use Biplots")
     (description
