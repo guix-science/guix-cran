@@ -20611,13 +20611,13 @@ various missing data conditions, as described in Tabouy, Barbillon and Chiquet
 (define-public r-missranger
   (package
     (name "r-missranger")
-    (version "2.3.0")
+    (version "2.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "missRanger" version))
        (sha256
-        (base32 "0vnr0l019xmilv297kydpkn4f19amqc2hlrkcbaxg4wh69svmcyf"))))
+        (base32 "1zycbpxqc04f65nqfv0zdi0q5kp9kmaw7s868v959198a4r23lc1"))))
     (properties `((upstream-name . "missRanger")))
     (build-system r-build-system)
     (propagated-inputs (list r-ranger r-fnn))
@@ -21283,13 +21283,13 @@ default values for important parameters.")
 (define-public r-misclassglm
   (package
     (name "r-misclassglm")
-    (version "0.3.2")
+    (version "0.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "misclassGLM" version))
        (sha256
-        (base32 "1b344dy5fm45jkjrqcx16905n9x0iwihr73mq2m0qfq7ay87nsrh"))))
+        (base32 "0iph5nz4hnfgx32xwc8z201ap18b543x8by6hcpkbk8jcbxswhjq"))))
     (properties `((upstream-name . "misclassGLM")))
     (build-system r-build-system)
     (propagated-inputs (list r-ucminf
@@ -21297,8 +21297,7 @@ default values for important parameters.")
                              r-mlogit
                              r-matrix
                              r-mass
-                             r-foreach
-                             r-bigmemory))
+                             r-foreach))
     (home-page "https://cran.r-project.org/package=misclassGLM")
     (synopsis
      "Computation of Generalized Linear Models with Misclassified Covariates Using Side Information")
@@ -21307,7 +21306,8 @@ default values for important parameters.")
 account.  The models require side information from a secondary data set on the
 misclassification process, i.e.  some sort of misclassification probabilities
 conditional on some common covariates.  A detailed description of the algorithm
-can be found in Dlugosz, Mammen and Wilke (2015) <http://www.zew.de/PU70410>.")
+can be found in Dlugosz, Mammen and Wilke (2015)
+<https://www.zew.de/publikationen/generalised-partially-linear-regression-with-misclassified-data-and-an-application-to-labour-market-transitions>.")
     (license license:gpl3)))
 
 (define-public r-miscic
@@ -34950,29 +34950,6 @@ weighted and unweighted methods.  Jorjani, H., et al. (2003)
 <http://animalbiosciences.uoguelph.ca/~lrs/ELARES/PDforce.pdf>.")
     (license license:gpl3)))
 
-(define-public r-mbcbook
-  (package
-    (name "r-mbcbook")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MBCbook" version))
-       (sha256
-        (base32 "0jmvgyzrahnxfkwdn86k3ffk0zfbbd34ya4zmlnsmp2m9xds7lgn"))))
-    (properties `((upstream-name . "MBCbook")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rmixmod r-mvtnorm r-mclust r-mass))
-    (home-page "https://cran.r-project.org/package=MBCbook")
-    (synopsis
-     "Companion Package for the Book \"Model-Based Clustering and Classification for Data Science\" by Bouveyron et al. (2019, ISBN:9781108644181)")
-    (description
-     "The companion package provides all original data sets and functions that are
-used in the book \"Model-Based Clustering and Classification for Data Science\" by
-Charles Bouveyron, Gilles Celeux, T. Brendan Murphy and Adrian E. Raftery (2019,
-ISBN:9781108644181).")
-    (license license:gpl2+)))
-
 (define-public r-mbc
   (package
     (name "r-mbc")
@@ -37015,13 +36992,13 @@ used to infer seed production by each individual plant.")
 (define-public r-masswater
   (package
     (name "r-masswater")
-    (version "2.1.3")
+    (version "2.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MassWateR" version))
        (sha256
-        (base32 "1069fnwcsv4s4mhanczscdmpysl5y53nwjanzxbb9wflm4vm0wpc"))))
+        (base32 "0hfjddm19r53hig48sfxkkjqib4ip651q2asfgp3639w4akn8pzx"))))
     (properties `((upstream-name . "MassWateR")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl

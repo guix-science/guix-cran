@@ -6248,34 +6248,28 @@ descriptive statistics.")
 (define-public r-forrel
   (package
     (name "r-forrel")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "forrel" version))
        (sha256
-        (base32 "0spak2r0i1vk29ppnq991ibck04kl4pygdpwma7yf894hmp07xks"))))
+        (base32 "1xq94rn86nclh0935jqxvlbqjx5qi0mdj9i6b9sb2qbzjjnm1gcl"))))
     (properties `((upstream-name . "forrel")))
     (build-system r-build-system)
-    (propagated-inputs (list r-ribd r-pedtools r-pedprobr r-pedmut r-glue))
+    (propagated-inputs (list r-ribd r-pedtools r-pedprobr r-pedfamilias r-glue))
     (home-page "https://github.com/magnusdv/forrel")
     (synopsis "Forensic Pedigree Analysis and Relatedness Inference")
     (description
      "Forensic applications of pedigree analysis, including likelihood ratios for
 relationship testing, general relatedness inference, marker simulation, and
-power analysis.  General computation of exclusion powers is based on Egeland et
-al. (2014) <doi:10.1016/j.fsigen.2013.05.001>.  Several functions deal
-specifically with family reunion cases, implementing and developing ideas from
-Kling et al. (2017) <doi:10.1016/j.fsigen.2017.08.006>.  A novelty of forrel is
-the ability to model background inbreeding in forensic pedigree computations.
-This can have significant impact in applications, as exemplified in Vigeland and
-Egeland (2019) <doi:10.1016/j.fsigss.2019.10.175>.  forrel is part of the ped
-suite, a collection of packages for pedigree analysis.  In particular, forrel
-imports pedtools for creating and manipulating pedigrees and markers, pedprobr
-for likelihood computations, and pedmut for mutation modelling.  Pedigree data
-may be created from scratch, or loaded from text files.  Data import from the
+power analysis.  forrel is part of the pedsuite', a collection of packages for
+pedigree analysis, further described in the book Pedigree Analysis in R
+(Vigeland, 2021, ISBN:9780128244302).  Several functions deal specifically with
+power analysis in missing person cases, implementing methods described in
+Vigeland et al. (2020) <doi:10.1016/j.fsigen.2020.102376>.  Data import from the
 Familias software (Egeland et al. (2000) <doi:10.1016/S0379-0738(00)00147-X>) is
-supported.")
+supported through the @code{pedFamilias} package.")
     (license license:gpl2+)))
 
 (define-public r-forplo

@@ -12697,13 +12697,13 @@ recordings as data frame for later use.")
 (define-public r-timeplyr
   (package
     (name "r-timeplyr")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "timeplyr" version))
        (sha256
-        (base32 "1y7vhim1yd8as57s0c98fykd8kzkqk926nw76qykbh392752ybbz"))))
+        (base32 "0rhmpm0ab691axp56p90wmdfx4scj89r6c16wmzcidha6q7qr37f"))))
     (properties `((upstream-name . "timeplyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs

@@ -24723,13 +24723,13 @@ exchange rates and international dollars via purchasing power parities.")
 (define-public r-gdpc
   (package
     (name "r-gdpc")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gdpc" version))
        (sha256
-        (base32 "1ba7ma1y4pxvx7byg19fzgpp1zswcihdaifyhb7zdadizxjzyj43"))))
+        (base32 "1m54nm5ikarrmlpjnvl70v2xirk5xaqnv3i3pcwy96796ymk5ars"))))
     (properties `((upstream-name . "gdpc")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -27024,13 +27024,13 @@ Weidong Tian and Hongbin Ji (2012) <doi:10.1038/cr.2011.149>.")
 (define-public r-gangenerativedata
   (package
     (name "r-gangenerativedata")
-    (version "1.5.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ganGenerativeData" version))
        (sha256
-        (base32 "0j4aq1l9g42qahhgbwj40h5rymjw4426d79nhzwkphayj2wj6jsy"))))
+        (base32 "07h3jyzg9009ylsfpf8a2rw51a7ivgna2aflfdh7lqnf7x9blh2v"))))
     (properties `((upstream-name . "ganGenerativeData")))
     (build-system r-build-system)
     (inputs (list tensorflow))
@@ -27041,9 +27041,9 @@ Weidong Tian and Hongbin Ji (2012) <doi:10.1038/cr.2011.149>.")
      "Generative Adversarial Networks are applied to generate generative data for a
 data source.  A generative model consisting of a generator and a discriminator
 network is trained.  In iterative training steps the distribution of generated
-data converges to that of the data source.  Direct applications of generative
-data are the created functions for data classifying and missing data completion.
- Reference: Goodfellow et al. (2014) <@code{arXiv:1406.2661v1>}.")
+data is converging to that of the data source.  Direct applications of
+generative data are the created functions for data classifying and missing data
+completion.  Reference: Goodfellow et al. (2014) <@code{arXiv:1406.2661v1>}.")
     (license license:gpl2+)))
 
 (define-public r-gandatamodel

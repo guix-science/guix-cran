@@ -3453,35 +3453,6 @@ retrieve page text, information about users or the history of pages, and
 elements of the category tree.")
     (license license:expat)))
 
-(define-public r-wikipediatrend
-  (package
-    (name "r-wikipediatrend")
-    (version "2.1.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "wikipediatrend" version))
-       (sha256
-        (base32 "11ng7qsb4954mgsz55ix86z0ynh4xgflcp6dzl0y4zi6zdrj87i7"))))
-    (properties `((upstream-name . "wikipediatrend")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-stringr
-                             r-rvest
-                             r-pageviews
-                             r-httr
-                             r-hellno
-                             r-glue
-                             r-ggplot2))
-    (home-page "https://cran.r-project.org/package=wikipediatrend")
-    (synopsis "Public Subject Attention via Wikipedia Page View Statistics")
-    (description
-     "This package provides a convenience wrapper for the Wikipedia page access
-statistics API binding the pageviews package and using an additional self
-composed data source thus covering a time span from very late 2007 up to the
-present for daily page views.")
-    (license license:gpl2+)))
-
 (define-public r-wikilake
   (package
     (name "r-wikilake")

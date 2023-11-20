@@ -8137,6 +8137,31 @@ at constructing optimal strata with an optimization algorithm based on a global
 optimisation technique called Biased Random Key Genetic Algorithms.")
     (license license:gpl2)))
 
+(define-public r-stratastats
+  (package
+    (name "r-stratastats")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "stratastats" version))
+       (sha256
+        (base32 "0710km923wby6r1fbdgrcn6yxyk3gsqllnhrxbq7x92dynipxbqi"))))
+    (properties `((upstream-name . "stratastats")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-gt r-abind))
+    (home-page "https://cran.r-project.org/package=stratastats")
+    (synopsis "Stratified Analysis of 2x2 Contingency Tables")
+    (description
+     "Offers a comprehensive approach for analysing stratified 2x2 contingency tables.
+ It facilitates the calculation of odds ratios, 95% confidence intervals, and
+conducts chi-squared tests, Cochran-Mantel-Haenszel tests, and
+Breslow-Day-Tarone tests.  The package is particularly useful in fields like
+epidemiology and social sciences where stratified analysis is essential.  The
+package also provides interpretative insights into the results, aiding in the
+understanding of complex statistical outcomes.")
+    (license license:gpl2+)))
+
 (define-public r-stratamatch
   (package
     (name "r-stratamatch")
@@ -23502,23 +23527,24 @@ centers.")
 (define-public r-sparsechol
   (package
     (name "r-sparsechol")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SparseChol" version))
        (sha256
-        (base32 "08ngq51rrrcdd8bd6xyf9vqhqrnqv90iasnlzcmynp7amc5s0avr"))))
+        (base32 "1xfk9cn3lc62w9wpmv1vi10fb79wli3xsslshm75h6psr8szsb1b"))))
     (properties `((upstream-name . "SparseChol")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-matrix))
+    (propagated-inputs (list r-rcppeigen r-rcpp r-matrix))
     (home-page "https://github.com/samuel-watson/SparseChol")
-    (synopsis "Sparse Cholesky LDL Decomposition of Symmetric Matrices")
+    (synopsis
+     "Sparse Matrix C++ Classes Including Sparse Cholesky LDL Decomposition of Symmetric Matrices")
     (description
-     "C++ implementation of sparse LDL decomposition of symmetric matrices and solvers
-described by Timothy A. Davis (2016)
-<https://fossies.org/linux/@code{SuiteSparse/LDL/Doc/ldl_userguide.pdf>}.
-Provides a set of C++ classes for basic sparse matrix specification and linear
+     "C++ classes for sparse matrix methods including implementation of sparse LDL
+decomposition of symmetric matrices and solvers described by Timothy A. Davis
+(2016) <https://fossies.org/linux/@code{SuiteSparse/LDL/Doc/ldl_userguide.pdf>}.
+ Provides a set of C++ classes for basic sparse matrix specification and linear
 algebra, and a class to implement sparse LDL decomposition and solvers.  See
 <https://github.com/samuel-watson/@code{SparseChol>} for details.")
     (license license:gpl2+)))
@@ -28840,13 +28866,13 @@ Statistical Model to Assess Risk for Supporting COVID-19 Quarantine Decisions\"
 (define-public r-smicd
   (package
     (name "r-smicd")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smicd" version))
        (sha256
-        (base32 "1v80sshsp3qlc1y7yz1pl4s2jk6khdsli3z2v0cjxfsv1izfd02x"))))
+        (base32 "070dbi637rk6c938fljmwfhz4lpc4n09gj8lkbvbvdsb7m8bjk73"))))
     (properties `((upstream-name . "smicd")))
     (build-system r-build-system)
     (propagated-inputs (list r-weights
@@ -30540,13 +30566,13 @@ between disparate tools for population genetic simulations and data analysis.")
 (define-public r-slemi
   (package
     (name "r-slemi")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SLEMI" version))
        (sha256
-        (base32 "07bsy0v8grx1l5837jr8mdab08521kxivhwr59q3s0v6f08683yd"))))
+        (base32 "0fpnnzzflgahmiy1hypss215qbmq2wf35ps34r1izhvww5cj8f4r"))))
     (properties `((upstream-name . "SLEMI")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -30554,7 +30580,6 @@ between disparate tools for population genetic simulations and data analysis.")
                              r-nnet
                              r-hmisc
                              r-gridextra
-                             r-ggthemes
                              r-ggplot2
                              r-foreach
                              r-e1071
@@ -30570,7 +30595,7 @@ channel capacity from experimental data by classification procedures (logistic
 regression).  Technically, it allows to estimate information-theoretic measures
 between finite-state input and multivariate, continuous output.  Method
 described in Jetka et al. (2019) <doi:10.1371/journal.pcbi.1007132>.")
-    (license license:lgpl2.0+)))
+    (license license:gpl3+)))
 
 (define-public r-sleev
   (package
@@ -54180,13 +54205,13 @@ designed to load, count, extract, remove, and summarise components of SAS code."
 (define-public r-saslm
   (package
     (name "r-saslm")
-    (version "0.9.12")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sasLM" version))
        (sha256
-        (base32 "03rh64yym31zkfhwaw083839yl76jyrs6aw0vk0jhw82zl7b0z2v"))))
+        (base32 "0n6rprwhbsi9ii4xq2l7ymnbbhk616kn4cp8bk4x2d0saaqzbp66"))))
     (properties `((upstream-name . "sasLM")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm))

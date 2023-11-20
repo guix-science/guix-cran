@@ -9940,13 +9940,13 @@ to extract colors from all types of figures and pdf files.")
 (define-public r-eodhd
   (package
     (name "r-eodhd")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eodhd" version))
        (sha256
-        (base32 "1ssilpy8zsvs5d3a7511qmpmwm0z10iqm8qkjna39zrs1y6i9h88"))))
+        (base32 "15w0zddhi6lfw3nhsikbvifrzfjvrvndyxik8kpzjg0pbk2rdjwm"))))
     (properties `((upstream-name . "eodhd")))
     (build-system r-build-system)
     (propagated-inputs (list r-httr))

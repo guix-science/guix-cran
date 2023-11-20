@@ -2178,25 +2178,25 @@ Holloway, S. T., and Kosorok, M. R. (2020) <@code{arXiv:2012.03294>}.")
 (define-public r-dtrreg
   (package
     (name "r-dtrreg")
-    (version "1.7")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DTRreg" version))
        (sha256
-        (base32 "0fr2c8fg1acs2kk0r67zml5fp71mvxw116ixqf7yq34n9ljd5yph"))))
+        (base32 "0jz8mxfvcj60lkpw15wavlf771wl2knkjhbxpjp77vamnwhmbww8"))))
     (properties `((upstream-name . "DTRreg")))
     (build-system r-build-system)
-    (propagated-inputs (list r-mass r-dplyr))
+    (propagated-inputs (list r-r6 r-nnet))
     (home-page "https://cran.r-project.org/package=DTRreg")
     (synopsis
      "DTR Estimation and Inference via G-Estimation, Dynamic WOLS, Q-Learning, and Dynamic Weighted Survival Modeling (DWSurv)")
     (description
      "Dynamic treatment regime estimation and inference via G-estimation, dynamic
 weighted ordinary least squares (@code{dWOLS}) and Q-learning.  Inference via
-bootstrap and (for G-estimation) recursive sandwich estimation.  Estimation and
-inference for survival outcomes via Dynamic Weighted Survival Modeling (DWSurv).
- Extension to continuous treatment variables (gdwols).  Wallace et al. (2017)
+bootstrap and recursive sandwich estimation.  Estimation and inference for
+survival outcomes via Dynamic Weighted Survival Modeling (DWSurv).  Extension to
+continuous treatment variables.  Wallace et al. (2017)
 <DOI:10.18637/jss.v080.i02>; Simoneau et al. (2020)
 <DOI:10.1080/00949655.2020.1793341>.")
     (license license:gpl2)))

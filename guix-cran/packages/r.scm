@@ -6007,22 +6007,22 @@ mixed effects models.")
 (define-public r-rsmatrix
   (package
     (name "r-rsmatrix")
-    (version "0.2.6")
+    (version "0.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rsmatrix" version))
        (sha256
-        (base32 "08d2qxwkfb3blqdzjq98b42jj6bv0n5dzmk8aqzy1mh8rr9jkps2"))))
+        (base32 "1yc9zhfpzadlk39z7lzxd26qmg9hq24c32md7bkny6yyrhy857sn"))))
     (properties `((upstream-name . "rsmatrix")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix))
-    (home-page "https://github.com/marberts/rsmatrix")
+    (native-inputs (list r-knitr))
+    (home-page "https://marberts.github.io/rsmatrix/")
     (synopsis "Matrices for Repeat-Sales Price Indexes")
     (description
-     "This package provides a small package for calculating the matrices in Shiller
-(1991, <doi:10.1016/S1051-1377(05)80028-2>) that serve as the foundation for
-many repeat-sales price indexes.")
+     "Calculate the matrices in Shiller (1991, <doi:10.1016/S1051-1377(05)80028-2>)
+that serve as the foundation for many repeat-sales price indexes.")
     (license license:expat)))
 
 (define-public r-rsmatch
@@ -31350,6 +31350,32 @@ NCBI @code{GenBank} <https://www.ncbi.nlm.nih.gov/genbank/>.  Designed as an
 environment for semi-automatic and assisted construction of reference databases
 and to improve standardization and repeatability in barcoding and metabarcoding
 studies.")
+    (license license:gpl3)))
+
+(define-public r-refa
+  (package
+    (name "r-refa")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "REFA" version))
+       (sha256
+        (base32 "1h6p8m1nyk6a1j6ffgjrx5sn39r1jaavx1ya367k6lkxjp3skf8w"))))
+    (properties `((upstream-name . "REFA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mvtnorm))
+    (home-page "https://cran.r-project.org/package=REFA")
+    (synopsis "Robust Exponential Factor Analysis")
+    (description
+     "This package provides a robust alternative to the traditional principal
+component estimator is proposed within the framework of factor models, known as
+Robust Exponential Factor Analysis, specifically designed for the modeling of
+high-dimensional datasets with heavy-tailed distributions.  The algorithm
+estimates the latent factors and the loading by minimizing the exponential
+squared loss function.  To determine the appropriate number of factors, we
+propose a modified rank minimization technique, which has been shown to
+significantly enhance finite-sample performance.")
     (license license:gpl3)))
 
 (define-public r-ref-icar

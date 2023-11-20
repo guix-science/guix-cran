@@ -8775,6 +8775,43 @@ Diagnostic Model (OHOEGDM) for Polytomous Data described by Culpepper, S. A. and
 Balamuta, J. J. (In Press) <doi:10.1080/00273171.2021.1985949>.")
     (license license:gpl2+)))
 
+(define-public r-ohmmed
+  (package
+    (name "r-ohmmed")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oHMMed" version))
+       (sha256
+        (base32 "17g74kss72l2isxl5klpdx7prq5fgpbf90cq9as8v6a9pkl75wif"))))
+    (properties `((upstream-name . "oHMMed")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vcd
+                             r-scales
+                             r-mistr
+                             r-gridextra
+                             r-ggplot2
+                             r-ggmcmc
+                             r-cvms))
+    (home-page "https://github.com/LynetteCaitlin/oHMMed")
+    (synopsis "HMMs with Ordered Hidden States and Emission Densities")
+    (description
+     "Inference using a class of Hidden Markov models (HMMs) called
+@code{oHMMed'(ordered} HMM with emission densities
+<doi:10.1101/2023.06.26.546495>): The @code{oHMMed} algorithms identify the
+number of comparably homogeneous regions within observed sequences with
+autocorrelation patterns.  These are modelled as discrete hidden states; the
+observed data points are then realisations of continuous probability
+distributions with state-specific means that enable ordering of these
+distributions.  The observed sequence is labelled according to the hidden
+states, permitting only neighbouring states that are also neighbours within the
+ordering of their associated distributions.  The parameters that characterise
+these state-specific distributions are then inferred.  Relevant for application
+to genomic sequences, time series, or any other sequence data with serial
+autocorrelation.")
+    (license license:gpl3)))
+
 (define-public r-ohit
   (package
     (name "r-ohit")

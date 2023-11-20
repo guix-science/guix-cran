@@ -15,8 +15,8 @@
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages maths)
   #:use-module (gnu packages bioinformatics)
+  #:use-module (gnu packages maths)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages photo)
@@ -7728,13 +7728,13 @@ sites.")
 (define-public r-cpfa
   (package
     (name "r-cpfa")
-    (version "1.0-8")
+    (version "1.0-9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cpfa" version))
        (sha256
-        (base32 "1rpdgy7h6kg52d8j2x99ihs44ahgdk5qd2951cizrl0h6lx1ba6s"))))
+        (base32 "16yh2lba59ngh94n6yi9hnwnd36s1g66pzk713by7cczzivw3ylw"))))
     (properties `((upstream-name . "cpfa")))
     (build-system r-build-system)
     (propagated-inputs (list r-rda
@@ -29186,13 +29186,13 @@ Some convenient tools are also supplied.")
 (define-public r-chillr
   (package
     (name "r-chillr")
-    (version "0.74")
+    (version "0.74.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chillR" version))
        (sha256
-        (base32 "0nkwqpcis6s1vgz9gblclk10ghnlmkpdzivbsq21xivbabzr7dzz"))))
+        (base32 "1vgx735fz65bbq2dnsxbhf5d14hxdla3xkh3709r03v1bgjclz1p"))))
     (properties `((upstream-name . "chillR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml

@@ -1478,13 +1478,13 @@ adapted from Bowen et al. (2018, <doi:10.1007/s00442-018-4192-5>).")
 (define-public r-isotree
   (package
     (name "r-isotree")
-    (version "0.5.22")
+    (version "0.5.24")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "isotree" version))
        (sha256
-        (base32 "1y274hjhxf0jhhmycjd0p4vwlxsqbwnminqdh3qb61jxlz0r74vr"))))
+        (base32 "0w4bf2fp4f5m084wxiaxqc7019hbg8kbp9mygwag1izzsr60kh3b"))))
     (properties `((upstream-name . "isotree")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -8516,13 +8516,13 @@ OSS (<https://portal.influxdata.com/downloads/>) and Cloud
 (define-public r-influential
   (package
     (name "r-influential")
-    (version "2.2.7")
+    (version "2.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "influential" version))
        (sha256
-        (base32 "19ha1hcirvxpp5nfmgk86jhlq0zprb81rzghijcjb8vpz80ldcdm"))))
+        (base32 "1kglswc8aqj76p96y3k0lshczxxwhdwpahxdwyyy19i9qznry5fr"))))
     (properties `((upstream-name . "influential")))
     (build-system r-build-system)
     (propagated-inputs (list r-ranger
@@ -8532,7 +8532,8 @@ OSS (<https://portal.influxdata.com/downloads/>) and Cloud
                              r-foreach
                              r-doparallel
                              r-data-table
-                             r-coop))
+                             r-coop
+                             r-biocmanager))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/asalavaty/influential")
     (synopsis

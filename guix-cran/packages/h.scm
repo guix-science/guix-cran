@@ -1378,6 +1378,46 @@ problems.")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-hvt
+  (package
+    (name "r-hvt")
+    (version "23.11.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HVT" version))
+       (sha256
+        (base32 "0d7zffvphjb0x1756y8806r268zbmvqhm0f9ig3fmz28nj5bn7km"))))
+    (properties `((upstream-name . "HVT")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-splancs
+                             r-sp
+                             r-scales
+                             r-reshape2
+                             r-purrr
+                             r-polyclip
+                             r-plyr
+                             r-mass
+                             r-magrittr
+                             r-hmisc
+                             r-ggplot2
+                             r-dplyr
+                             r-deldir
+                             r-data-table
+                             r-conf-design
+                             r-cluster))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Mu-Sigma/HVT")
+    (synopsis
+     "Constructing Hierarchical Voronoi Tessellations and Overlay Heatmaps for Data Analysis")
+    (description
+     "Facilitates building topology preserving maps for rich multivariate data.  See
+<https://en.wikipedia.org/wiki/Voronoi_diagram> for more information.  Credits
+to Mu Sigma for their continuous support throughout the development of the
+package.")
+    (license license:asl2.0)))
+
 (define-public r-huxtable
   (package
     (name "r-huxtable")
@@ -10093,6 +10133,29 @@ model.")
 bootstrap method to obtain confidence intervals.  Choices for regression models
 are Lasso, Lasso+OLS, Lasso partial ridge, Lasso+OLS partial ridge.")
     (license license:gpl2)))
+
+(define-public r-hdcd
+  (package
+    (name "r-hdcd")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HDCD" version))
+       (sha256
+        (base32 "0yx2c5i2lfsnc9ra09bkhhvbwlfpi2a5r53riqhf2mb0vnxsxjcy"))))
+    (properties `((upstream-name . "HDCD")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rdpack r-mclust))
+    (home-page "https://cran.r-project.org/package=HDCD")
+    (synopsis "High-Dimensional Changepoint Detection")
+    (description
+     "Efficient implementations of the following multiple changepoint detection
+algorithms: Efficient Sparsity Adaptive Change-point estimator by Moen, Glad and
+Tveten (2023) <@code{arXiv:2306.04702>} , Informative Sparse Projection for
+Estimating Changepoints by Wang and Samworth (2017) <doi:10.1111/rssb.12243>,
+and the method of Pilliat et al (2023) <doi:10.1214/23-EJS2126>.")
+    (license license:gpl3)))
 
 (define-public r-hdcate
   (package

@@ -13043,13 +13043,13 @@ Roig et al. (2022) <doi:10.1186/s12874-022-01683-w>, Saville et al. (2022)
 (define-public r-ncar
   (package
     (name "r-ncar")
-    (version "0.4.5")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ncar" version))
        (sha256
-        (base32 "1ymxb3av7vd7vljr8h3ga6v01z6nf5j9mc095z0hi31d1khwrd02"))))
+        (base32 "1cyf06bml2dfdilvyzhal42s56a70fd88wk5zkmrgblckvfyl3cg"))))
     (properties `((upstream-name . "ncar")))
     (build-system r-build-system)
     (propagated-inputs (list r-rtf r-noncompart))

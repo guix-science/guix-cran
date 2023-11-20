@@ -5903,13 +5903,13 @@ projects.")
 (define-public r-projecttemplate
   (package
     (name "r-projecttemplate")
-    (version "0.10.3")
+    (version "0.10.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ProjectTemplate" version))
        (sha256
-        (base32 "0h2szi0sp71s2gh104z2yknfs88b2c7z85q0zliy2qv6b5vj26mn"))))
+        (base32 "08idly6fdxhv2rx5s4309snvzpd9rhd5bq9vq4rw13hnvnbdzyya"))))
     (properties `((upstream-name . "ProjectTemplate")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-digest))
@@ -11451,6 +11451,38 @@ includes a set of functions to calculate power and sample size for testing main
 effect in the survival analysis of randomized clinical trials and conditional
 logistic regression for nested case-control study.")
     (license license:gpl2+)))
+
+(define-public r-powersdi
+  (package
+    (name "r-powersdi")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PowerSDI" version))
+       (sha256
+        (base32 "127pvjyflhyfpvchbwp4hcnk2grvk5xr2m588ysib07nhy37ka0p"))))
+    (properties `((upstream-name . "PowerSDI")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-nasapower r-lubridate r-lmom))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/gabrielblain/PowerSDI")
+    (synopsis "Calculate Standardised Drought Indices Using NASA POWER Data")
+    (description
+     "This package provides a set of functions designed to calculate the standardised
+precipitation and standardised precipitation evapotranspiration indices using
+NASA POWER data as described in Blain et al. (2023) <doi:10.2139/ssrn.4442843>.
+These indices are calculated using a reference data source.  The functions
+verify if the indices estimates meet the assumption of normality and how well
+NASA POWER estimates represent real-world data.  Indices are calculated in a
+routine mode.  Potential evapotranspiration amounts and the difference between
+rainfall and potential evapotranspiration are also calculated.  The functions
+adopt a basic time scale that splits each month into four periods.  Days 1 to 7,
+days 8 to 14, days 15 to 21, and days 22 to 28, 29, 30, or 31, where TS=4
+corresponds to a 1-month length moving window (calculated 4 times per month) and
+TS=48 corresponds to a 12-month length moving window (calculated 4 times per
+month).")
+    (license license:expat)))
 
 (define-public r-powerpkg
   (package
@@ -21631,16 +21663,16 @@ memory-optimized using the sparse matrix output.")
 (define-public r-piar
   (package
     (name "r-piar")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "piar" version))
        (sha256
-        (base32 "1fh35cs73q24fwaxakysbm9jvv9vlmvz7ir2pqd9d1qgkv5a5n48"))))
+        (base32 "1wlz3gk88jnllrai7yjq4kl062q80w835kcs6m824an6g0hjv2k4"))))
     (properties `((upstream-name . "piar")))
     (build-system r-build-system)
-    (propagated-inputs (list r-gpindex))
+    (propagated-inputs (list r-matrix r-gpindex))
     (native-inputs (list r-knitr))
     (home-page "https://marberts.github.io/piar/")
     (synopsis "Price Index Aggregation")
@@ -35153,29 +35185,6 @@ pagoo is intended to facilitate these tasks as much as possible.  For a
 description of the implemented data structure and methods, see Ferres & Iraola
 (2020), <doi:10.1101/2020.07.29.226951>.")
     (license license:gpl3)))
-
-(define-public r-pageviews
-  (package
-    (name "r-pageviews")
-    (version "0.5.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "pageviews" version))
-       (sha256
-        (base32 "1fhlm2y288wx625y0glxybjb0xv9sqvvln35jqlwqq38h3grcpqd"))))
-    (properties `((upstream-name . "pageviews")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-jsonlite r-httr r-curl))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ironholds/pageviews")
-    (synopsis "An API Client for Wikimedia Traffic Data")
-    (description
-     "Pageview data from the Wikimedia sites, such as Wikipedia
-<https://www.wikipedia.org/>, from entire projects to per-article levels of
-granularity, through the new RESTful API and data source
-<https://wikimedia.org/api/rest_v1/?doc>.")
-    (license license:expat)))
 
 (define-public r-pagenum
   (package
