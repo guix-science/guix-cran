@@ -14953,13 +14953,13 @@ from Wickham, Hadley (2019) <doi:10.1201/9781351201315>.")
 (define-public r-tidyfit
   (package
     (name "r-tidyfit")
-    (version "0.6.4")
+    (version "0.6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyfit" version))
        (sha256
-        (base32 "0amqzqnxkv9a6ywmyqkvyqhls1mm7kqdnysg12zjhcx1bk6wg98d"))))
+        (base32 "1vka4j87pgk7hs1z4nj8yqrdzfwcqx74qwvlf0dv8z0xz2f8b78y"))))
     (properties `((upstream-name . "tidyfit")))
     (build-system r-build-system)
     (propagated-inputs (list r-yardstick
@@ -15199,16 +15199,16 @@ Tutor'(<https://tidydatatutor.com/>) web application.")
 (define-public r-tidydann
   (package
     (name "r-tidydann")
-    (version "0.1.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidydann" version))
        (sha256
-        (base32 "1kn21xx5hd0fy8lkgrfsqz3yxg8zfcpr99lwz4vfqyi624dkdn4h"))))
+        (base32 "12j00iw12v68cq4jnpqcp2gidawz75g706y0vsmyqvz99cjzmj97"))))
     (properties `((upstream-name . "tidydann")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tibble r-rlang r-parsnip r-generics r-dials))
+    (propagated-inputs (list r-tibble r-parsnip r-generics r-dials))
     (home-page "https://cran.r-project.org/package=tidydann")
     (synopsis
      "Add the 'dann' Model and the 'sub_dann' Model to the Tidymodels Ecosystem")
@@ -19450,13 +19450,13 @@ nonlinear associations between cognition and demographic variables.")
 (define-public r-tesseract
   (package
     (name "r-tesseract")
-    (version "5.2.0")
+    (version "5.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tesseract" version))
        (sha256
-        (base32 "1wh14s66y6a56jpn8d3iqz9zs5i1lk1ffjp3p8i4iqm8rq1sm18z"))))
+        (base32 "1zhpl6pbi7gwwc9y1d8cd7hb21ljcs561lyysjva4cfmqm0sdazz"))))
     (properties `((upstream-name . "tesseract")))
     (build-system r-build-system)
     (inputs (list zlib))

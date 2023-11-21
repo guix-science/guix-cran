@@ -2925,13 +2925,13 @@ referring to the Pi(), Ji(), and Ii() functions of the @code{catR} package
 (define-public r-irtpwr
   (package
     (name "r-irtpwr")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "irtpwr" version))
        (sha256
-        (base32 "1h4p0w29q9ksbyjsl7wqyc5id09nicv3x3dq2li20lkqvmwlmzsh"))))
+        (base32 "1ak73fndvk584k26cf3h826k6ly93ai90lxh9ymlpmwww3iw83h7"))))
     (properties `((upstream-name . "irtpwr")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-random r-mirt r-ggplot2 r-digest

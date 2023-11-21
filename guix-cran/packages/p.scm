@@ -24899,13 +24899,13 @@ details on the c++ library pf', see Brown (2020) <doi:10.21105/joss.02599>.")
 (define-public r-pfim
   (package
     (name "r-pfim")
-    (version "6.0")
+    (version "6.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PFIM" version))
        (sha256
-        (base32 "012fiynf0bw72p0app31gw96ypqpq15f5yrims8n5cz5dpl2h5ag"))))
+        (base32 "1fp2zz37cb8qy8kqxfkq2l7fg6crcxgab8l26fwy352b91d9vzli"))))
     (properties `((upstream-name . "PFIM")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -24922,7 +24922,7 @@ details on the c++ library pf', see Brown (2020) <doi:10.21105/joss.02599>.")
                              r-desolve
                              r-deriv))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=PFIM")
+    (home-page "http://www.pfim.biostat.fr/")
     (synopsis "Population Fisher Information Matrix")
     (description
      "Evaluate or optimize designs for nonlinear mixed effects models using the Fisher
@@ -28846,13 +28846,13 @@ comparison group.")
 (define-public r-pcts
   (package
     (name "r-pcts")
-    (version "0.15.5")
+    (version "0.15.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pcts" version))
        (sha256
-        (base32 "03iammgirj3vnrwh0fxvy3r08z3da23jbjkb2fzpya1pxfb2rnjq"))))
+        (base32 "10kda4waa9bd2ahf4x2ha4ll91m2dw25dl2wrqxb6nmw3lggy5il"))))
     (properties `((upstream-name . "pcts")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

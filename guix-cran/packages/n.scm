@@ -3155,13 +3155,13 @@ estimated on the normalized scores are also provided.  See Philipps et al (2014)
 (define-public r-normfluodbf
   (package
     (name "r-normfluodbf")
-    (version "1.5.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "normfluodbf" version))
        (sha256
-        (base32 "18jk1yim4wap23ik9l9dwhrdprmvfgy91jdscqx7v756j9na4hnj"))))
+        (base32 "08gj26cnqw7d4rpwgz9xi05jgnk9xl2arywb3dxymnma58jzjgfh"))))
     (properties `((upstream-name . "normfluodbf")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -4156,22 +4156,24 @@ probability corresponding to the total points.")
 (define-public r-nomnoml
   (package
     (name "r-nomnoml")
-    (version "0.2.7")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nomnoml" version))
        (sha256
-        (base32 "0dbn03agq02d28agzgwz92m2lr76c7xzpa7p5bj684fzw7zsks3w"))))
+        (base32 "0akxxc2yjpn0h7xvfpflmazihxnk9hpkn0l3353gbll388qxd620"))))
     (properties `((upstream-name . "nomnoml")))
     (build-system r-build-system)
-    (propagated-inputs (list r-webshot r-rlang r-png r-lifecycle r-htmlwidgets))
-    (home-page "https://github.com/rstudio/nomnoml")
+    (propagated-inputs (list r-webshot2 r-rlang r-png r-lifecycle
+                             r-htmlwidgets))
+    (home-page "https://rstudio.github.io/nomnoml/")
     (synopsis "Sassy 'UML' Diagrams")
     (description
      "This package provides a tool for drawing sassy UML (Unified Modeling Language)
 diagrams based on a simple syntax, see <https://www.nomnoml.com>.  Supports
-styling, R Markdown and exporting diagrams in the PNG format.")
+styling, R Markdown and exporting diagrams in the PNG format.  Note: you need a
+chromium based browser installed on your system.")
     (license license:expat)))
 
 (define-public r-nomisr

@@ -690,13 +690,13 @@ surrogate controls, and extends synchrony estimation to multivariate data.
 (define-public r-mvslouch
   (package
     (name "r-mvslouch")
-    (version "2.7.5")
+    (version "2.7.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mvSLOUCH" version))
        (sha256
-        (base32 "0zvdacgcb42djay6g6ffmpy2ci0x8wzzmxnhnj4xzp5im7za5m2x"))))
+        (base32 "1l11dza28m5l6iam90z2vvmpabp91s3rmnb7b1x78c77ss1r7gig"))))
     (properties `((upstream-name . "mvSLOUCH")))
     (build-system r-build-system)
     (propagated-inputs (list r-pcmbase
@@ -36223,13 +36223,13 @@ private practitioners, scholars as well as policymakers.")
 (define-public r-matriks
   (package
     (name "r-matriks")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "matRiks" version))
        (sha256
-        (base32 "0wcj3rq9v67qydy8d1lg4s76fqdkhlbi8h2s9v1l670r1100i0xr"))))
+        (base32 "1p38ji67j478dkvdgrn3v5p10i3k1ip28ys917jfczxacd2xn05h"))))
     (properties `((upstream-name . "matRiks")))
     (build-system r-build-system)
     (propagated-inputs (list r-desctools))

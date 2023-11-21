@@ -24503,6 +24503,43 @@ belongs to the @code{dartRverse} suit of packages and depends on
 @code{dartR.base} and @code{dartR.data}'.")
     (license license:gpl3+)))
 
+(define-public r-dartr-sim
+  (package
+    (name "r-dartr-sim")
+    (version "0.70")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dartR.sim" version))
+       (sha256
+        (base32 "02l18hvdd1hr9l15frvaw7nikjmr7iyq3wvg5xz8drma4v9r9lwb"))))
+    (properties `((upstream-name . "dartR.sim")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-stringi
+                             r-shinywidgets
+                             r-shinythemes
+                             r-shinyjs
+                             r-shinybs
+                             r-shiny
+                             r-reshape2
+                             r-rcpp
+                             r-hierfstat
+                             r-ggplot2
+                             r-fields
+                             r-data-table
+                             r-dartr-data
+                             r-dartr-base
+                             r-adegenet))
+    (home-page "https://green-striped-gecko.github.io/dartR/")
+    (synopsis "Computer Simulations of 'SNP' Data")
+    (description
+     "Allows to simulate SNP data using genlight objects.  For example, it is straight
+forward to simulate a simple drift scenario with exchange of individuals between
+two populations or create a new genlight object based on allele frequencies of
+an existing genlight object.")
+    (license license:gpl3+)))
+
 (define-public r-dartr-data
   (package
     (name "r-dartr-data")

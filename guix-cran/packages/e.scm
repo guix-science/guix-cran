@@ -2702,13 +2702,13 @@ might be struggling with the program.")
 (define-public r-exceldata
   (package
     (name "r-exceldata")
-    (version "0.1.1.2")
+    (version "0.1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "exceldata" version))
        (sha256
-        (base32 "00vc4bc9nxkfzrzafh3fjvkmwglvbcbzbnj5inf5y1zzan4ppf8q"))))
+        (base32 "10krwc7fq0idmlpm32n4ikjixcmp775lgsnbndpg7pgwkmkqp81k"))))
     (properties `((upstream-name . "exceldata")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-readxl r-lubridate r-ggplot2 r-dplyr))
@@ -7753,13 +7753,13 @@ polynomials).")
 (define-public r-eq5d
   (package
     (name "r-eq5d")
-    (version "0.15.0")
+    (version "0.15.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eq5d" version))
        (sha256
-        (base32 "0v68vvka68mdq8y4mjkkpiarrkdvzgs1zli1l4nyca5h0r322x2r"))))
+        (base32 "1flm66xyq5pa306zc5jpnqnq19d0npzh1a8shg201aqyg9f996jg"))))
     (properties `((upstream-name . "eq5d")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -7780,7 +7780,7 @@ Frequently the scores on these five dimensions are converted to a single utility
 index using country specific value sets, which can be used in the clinical and
 economic evaluation of health care as well as in population health surveys.  The
 eq5d package provides methods to calculate index scores from a subject's
-dimension scores.  29 TTO and 11 VAS EQ-5D-3L value sets including those for
+dimension scores.  30 TTO and 11 VAS EQ-5D-3L value sets including those for
 countries in Szende et al (2007) <doi:10.1007/1-4020-5511-0> and Szende et al
 (2014) <doi:10.1007/978-94-007-7596-1>, 40 EQ-5D-5L EQ-VT value sets, the
 EQ-5D-5L crosswalk value sets developed by van Hout et al. (2012)
@@ -8705,13 +8705,13 @@ vignette.")
 (define-public r-epir
   (package
     (name "r-epir")
-    (version "2.0.65")
+    (version "2.0.66")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epiR" version))
        (sha256
-        (base32 "15kfy9wyadwd0njslb7fhkmf5dmvwbqn7a2v620cl2c87kk0hja5"))))
+        (base32 "08zc8whnlhg4hpz161mijww2h2q45vpvhl5ghc5asnx04amh04z0"))))
     (properties `((upstream-name . "epiR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -18569,13 +18569,13 @@ from <https://echo.epa.gov/>.")
 (define-public r-echoice2
   (package
     (name "r-echoice2")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "echoice2" version))
        (sha256
-        (base32 "1rsa50xfg01a07qnjsba5awr8vi16acqgzxlaw4k03h48ya7q05x"))))
+        (base32 "0dsyr2fk94nvcd1749amk8mvvli5aalapb2mlhr25mj6d2iyrc30"))))
     (properties `((upstream-name . "echoice2")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

@@ -2701,6 +2701,33 @@ rows, relocating embedded grouping values, and to annotate meaningful formatting
 in spreadsheet files.")
     (license license:expat)))
 
+(define-public r-unhcrthemes
+  (package
+    (name "r-unhcrthemes")
+    (version "0.6.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "unhcrthemes" version))
+       (sha256
+        (base32 "1brwcikywalzb7ydv6cyimyvzvdl71x4j43hidmbhfbn5r2fjm8n"))))
+    (properties `((upstream-name . "unhcrthemes")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-systemfonts
+                             r-scales
+                             r-ggtext
+                             r-ggrepel
+                             r-ggplot2
+                             r-extrafont))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/unhcr-dataviz/unhcrthemes")
+    (synopsis "UNHCR 'ggplot2' Theme and Colour Palettes")
+    (description
+     "This package provides a ggplot2 theme and color palettes following the United
+Nations High Commissioner for Refugees (UNHCR) Data Visualization Guidelines
+recommendations.")
+    (license license:expat)))
+
 (define-public r-ungroup
   (package
     (name "r-ungroup")

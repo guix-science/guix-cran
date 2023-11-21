@@ -8379,13 +8379,13 @@ the epidemics.  This package also includes the GMCPIC test.")
 (define-public r-str2str
   (package
     (name "r-str2str")
-    (version "0.2.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "str2str" version))
        (sha256
-        (base32 "180m261hr0qr3mnm8hbvjbw3q44cr1kfrnq97fvkpypigdycd9z4"))))
+        (base32 "1hzi8ns2v9y0mzv59aafh5gq4vyza2qbsmaxpj945nmfi4x3qqwi"))))
     (properties `((upstream-name . "str2str")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape r-plyr r-checkmate r-abind))
@@ -38018,13 +38018,13 @@ Hill AV, Parkinson JL (1927) <doi: 10.1098/rspb.1927.0035>, Greene PR. (1986)
 (define-public r-shortirt
   (package
     (name "r-shortirt")
-    (version "0.1.0")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shortIRT" version))
        (sha256
-        (base32 "06a4q3szhfbbnh3jzcs809m7zxx4gxfgw5wracccsq338in4l5yw"))))
+        (base32 "1z8z3py2f6dd7bbhxgy0skm2lhsla1xniym3si27kkgh4lds9qrc"))))
     (properties `((upstream-name . "shortIRT")))
     (build-system r-build-system)
     (propagated-inputs (list r-tam r-ggplot2 r-dplyr))
@@ -52947,32 +52947,6 @@ methodology.  Focuses on prospective surveillance of data streams, scanning for
 clusters with ongoing anomalies.  Hypothesis testing is made possible by Monte
 Carlo simulation. @code{AllÃ©vius} (2018) <doi:10.21105/joss.00515>.")
     (license license:gpl3+)))
-
-(define-public r-scannotate
-  (package
-    (name "r-scannotate")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "scAnnotate" version))
-       (sha256
-        (base32 "05akid10d1h8636v5pic4kxn0dby3a864yjwbd5rv6zc4wxq1znr"))))
-    (properties `((upstream-name . "scAnnotate")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-seurat r-mtps r-harmony r-glmnet))
-    (native-inputs (list r-knitr))
-    (home-page "https://doi.org/10.1101/2022.02.19.481159")
-    (synopsis
-     "An Automated Cell Type Annotation Tool for Single-Cell RNA-Sequencing Data")
-    (description
-     "An entirely data-driven cell type annotation tools, which requires training data
-to learn the classifier, but not biological knowledge to make subjective
-decisions.  It consists of three steps: preprocessing training and test data,
-model fitting on training data, and cell classification on test data.  See
-Xiangling Ji,Danielle Tsao, Kailun Bai, Min Tsao, Li Xing, Xuekui
-Zhang.(2022)<doi:10.1101/2022.02.19.481159> for more details.")
-    (license license:gpl3)))
 
 (define-public r-scan
   (package

@@ -3611,16 +3611,22 @@ without any geolibraries.")
 (define-public r-csindicators
   (package
     (name "r-csindicators")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CSIndicators" version))
        (sha256
-        (base32 "01x5lyxw5ca8xqndfxdjzj2jak7kwndqwqb9shz53hj6p5z0wld2"))))
+        (base32 "0kqq8fdidp9mynbqk4xg2s199n2b2ylsh5bv5a666c9fvfaq305k"))))
     (properties `((upstream-name . "CSIndicators")))
     (build-system r-build-system)
-    (propagated-inputs (list r-multiapply))
+    (propagated-inputs (list r-zoo
+                             r-spei
+                             r-multiapply
+                             r-lmomco
+                             r-lmom
+                             r-cstools
+                             r-climprojdiags))
     (native-inputs (list r-knitr))
     (home-page "https://earth.bsc.es/gitlab/es/csindicators/")
     (synopsis
@@ -3631,13 +3637,16 @@ indicators defined by the user.  Each method represents a specific mathematical
 approach which is combined with the possibility to select an arbitrary time
 period to define the indicator.  This enables a wide range of possibilities to
 tailor the most suitable indicator for each particular climate service
-application (agriculture, food security, energy, water managementâ¦).  This
+application (agriculture, food security, energy, water management, ...).  This
 package is intended for sub-seasonal, seasonal and decadal climate predictions,
 but its methods are also applicable to other time-scales, provided the
 dimensional structure of the input is maintained.  Additionally, the outputs of
-the functions in this package are compatible with CSTools'.  This package was
-developed in the context of H2020 MED-GOLD (776467) and S2S4E (776787) projects.
-@code{LledÃ³} et al. (2019) <doi:10.1016/j.renene.2019.04.135>.")
+the functions in this package are compatible with CSTools'.  This package is
+described in PÃ©rez-@code{ZanÃ³n} et al. (2023)
+<doi:10.1016/j.cliser.2023.100393> and it was developed in the context of H2020
+MED-GOLD (776467) and S2S4E (776787) projects.  See @code{LledÃ³} et al. (2019)
+<doi:10.1016/j.renene.2019.04.135> and Chou et al., 2023
+<doi:10.1016/j.cliser.2023.100345> for details.")
     (license license:gpl3)))
 
 (define-public r-cshshydrology
@@ -3961,35 +3970,6 @@ correlation\"/2+0.5.  The confidence interval was calculated by using the
 bootstrap method.  The p value was calculated by using the Z testing method.
 Please refer to the article of Peter Ganz et al. (2016)
 <doi:10.1001/jama.2016.5951>.")
-    (license license:gpl3)))
-
-(define-public r-cscdrna
-  (package
-    (name "r-cscdrna")
-    (version "1.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CSCDRNA" version))
-       (sha256
-        (base32 "0ym6bzk8n9kf0pvd3h4dv2hhxmmrr54hvs7vccmxrhxikr8ix5iy"))))
-    (properties `((upstream-name . "CSCDRNA")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-seurat
-                             r-plyr
-                             r-nlshrink
-                             r-mast
-                             r-limsolve
-                             r-bisquerna
-                             r-biobase))
-    (home-page "https://cran.r-project.org/package=CSCDRNA")
-    (synopsis
-     "Covariance Based Single-Cell Decomposition of Bulk Expression Data")
-    (description
-     "This package provides accurate cell type proportion estimation by incorporating
-covariance structure in both single-cell and bulk RNA-seq datasets into the
-analysis.  For more detail, see Karimnezhad, A. (2022)
-<doi:10.1101/2022.05.13.491858>.")
     (license license:gpl3)))
 
 (define-public r-csampling
@@ -16908,13 +16888,13 @@ the analysed objects.")
 (define-public r-compind
   (package
     (name "r-compind")
-    (version "2.9")
+    (version "2.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Compind" version))
        (sha256
-        (base32 "0cqj757530slbihs8wn2apq1a3lvcsc1qg3nv3s6aq1djsj22wjd"))))
+        (base32 "04qg0xrjc4kv215rk4p8mmn3mmxcmbrqmmymrp4vcjld6gx4g5hv"))))
     (properties `((upstream-name . "Compind")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdep
@@ -20346,13 +20326,13 @@ utilities to generate this metadata with a minimum of dependencies.")
 (define-public r-codelistgenerator
   (package
     (name "r-codelistgenerator")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CodelistGenerator" version))
        (sha256
-        (base32 "04ickjjnq964wysgd5bdwz9k6nnb61m4kvpmxky6x3kdcn2458rg"))))
+        (base32 "0wrdg0nywpcl3gncyl5yrziqc3skwwv9li9m7hb0qj7bcdnsz0g2"))))
     (properties `((upstream-name . "CodelistGenerator")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -20965,13 +20945,13 @@ implements two selection criteria in order to select the number of biclusters.")
 (define-public r-cobalt
   (package
     (name "r-cobalt")
-    (version "4.5.1")
+    (version "4.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cobalt" version))
        (sha256
-        (base32 "1h175i01xii07hzqrz6qkqvv0w2n64m8d158ql02ka9ka206i6vr"))))
+        (base32 "1jbff5ran26kc4w7k6b3bcqvj4g4zlda60qn06gxbv1pv09j2npi"))))
     (properties `((upstream-name . "cobalt")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -27999,39 +27979,6 @@ absence of the direct effect.  Additionally, standard multiple regression,
 regression of residuals, and the structural equation modeling approach are
 implemented for comparison.")
     (license license:gpl2)))
-
-(define-public r-cider
-  (package
-    (name "r-cider")
-    (version "0.99.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CIDER" version))
-       (sha256
-        (base32 "0ag2gyrjjyq4r4xssmz05cg1sh8mmq54d5mynhwm5k53zcpk8i8r"))))
-    (properties `((upstream-name . "CIDER")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-viridis
-                             r-seurat
-                             r-pheatmap
-                             r-limma
-                             r-kernlab
-                             r-igraph
-                             r-ggplot2
-                             r-foreach
-                             r-edger
-                             r-doparallel
-                             r-dbscan))
-    (home-page "https://github.com/zhiyhu/CIDER")
-    (synopsis
-     "Meta-Clustering for Single-Cell Data Integration and Evaluation")
-    (description
-     "This package provides a workflow of (a) meta-clustering based on inter-group
-similarity measures and (b) a ground-truth-free test metric to assess the
-biological correctness of integration in real datasets.  See Hu Z, Ahmed A, Yau
-C (2021) <doi:10.1101/2021.03.29.437525> for more details.")
-    (license license:expat)))
 
 (define-public r-cici
   (package

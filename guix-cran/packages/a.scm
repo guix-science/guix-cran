@@ -6390,13 +6390,13 @@ interactively visualize Arena's results.")
 (define-public r-areaplot
   (package
     (name "r-areaplot")
-    (version "2.0.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "areaplot" version))
        (sha256
-        (base32 "15lkdrk9xyhpskvr884a4c8ap6hh3n0c0wmi10vxyafi6p2pdsl0"))))
+        (base32 "11g8r5qccaynbism0imybkcyxs28sz6zm59d7xlkf7y3vppj2pcn"))))
     (properties `((upstream-name . "areaplot")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=areaplot")

@@ -4896,6 +4896,28 @@ survival curve, small sample sizes or heavily censored data.  Includes mid-p
 options.")
     (license license:gpl2+)))
 
+(define-public r-bpca
+  (package
+    (name "r-bpca")
+    (version "1.3-6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bpca" version))
+       (sha256
+        (base32 "13rb6k50527aiaydapkvjyh3c2pk1anmz537y97mx35malfh1kmd"))))
+    (properties `((upstream-name . "bpca")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xtable r-scatterplot3d r-rgl))
+    (home-page "https://cran.r-project.org/package=bpca")
+    (synopsis
+     "Biplot of Multivariate Data Based on Principal Components Analysis")
+    (description
+     "This package implements biplot (2d and 3d) of multivariate data based on
+principal components analysis and diagnostic tools of the quality of the
+reduction.")
+    (license license:gpl2+)))
+
 (define-public r-bpbounds
   (package
     (name "r-bpbounds")
@@ -19056,13 +19078,13 @@ prediction on new data. <doi:10.18637/jss.v101.i05>.")
 (define-public r-bbknnr
   (package
     (name "r-bbknnr")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bbknnR" version))
        (sha256
-        (base32 "018szrk8xskvill181jc3xji9gapn4z6ps1rfh7fgga9334726vs"))))
+        (base32 "10piswg0206vicna7zm3xnpa890rii3x04izkg3p4y7xwip3l2mn"))))
     (properties `((upstream-name . "bbknnR")))
     (build-system r-build-system)
     (propagated-inputs (list r-uwot
@@ -19070,12 +19092,14 @@ prediction on new data. <doi:10.18637/jss.v101.i05>.")
                              r-seuratobject
                              r-seurat
                              r-rtsne
+                             r-rlang
                              r-reticulate
                              r-rcppannoy
                              r-rcpp
                              r-matrix
+                             r-magrittr
                              r-glmnet
-                             r-dplyr))
+                             r-future))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ycli1995/bbknnR")
     (synopsis "Perform Batch Balanced KNN in R")
@@ -19501,13 +19525,13 @@ are required in spatial analyses performed with @code{BayesX}.")
 (define-public r-bayeswatch
   (package
     (name "r-bayeswatch")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesWatch" version))
        (sha256
-        (base32 "1384h1dr5i8xwsbr9hx212vc96jyhzp6j703lk4j5yrzjb7m534r"))))
+        (base32 "0x2jmv46q7prlzbzygzr709mbfj7fz3ay2i1fx0p1vv7nf0k44h8"))))
     (properties `((upstream-name . "bayesWatch")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen

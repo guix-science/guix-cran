@@ -9862,6 +9862,36 @@ are accounted for when identifying anomalies (Kandanaarachchi, Hyndman 2022)
 <@code{arXiv:2210.07407>}.")
     (license license:gpl3+)))
 
+(define-public r-odbr
+  (package
+    (name "r-odbr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "odbr" version))
+       (sha256
+        (base32 "03bdhmya86whrzijc8h6gvd4yzmivdskm42a80n4ryqn4szfyrpd"))))
+    (properties `((upstream-name . "odbr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-usethis
+                             r-sf
+                             r-r-utils
+                             r-piggyback
+                             r-haven
+                             r-fs
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=odbr")
+    (synopsis "Download Data from Brazil's Origin Destination Surveys")
+    (description
+     "Download data from Brazil's Origin Destination Surveys.  The package covers both
+data from household travel surveys, dictionaries of variables, and the spatial
+geometries of surveys conducted in different years and across various urban
+areas in Brazil.  For some cities, the package will include enhanced versions of
+the data sets with variables \"harmonized\" across different years.")
+    (license license:gpl3+)))
+
 (define-public r-odbc
   (package
     (name "r-odbc")

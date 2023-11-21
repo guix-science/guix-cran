@@ -13878,13 +13878,13 @@ imaging data.")
 (define-public r-gift
   (package
     (name "r-gift")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GIFT" version))
        (sha256
-        (base32 "1279pqfkxsmaqhsfkm0hmi5f408iapmckaa47616x28h58pc6rbh"))))
+        (base32 "01hv7ilc2fw9vhy34sblvw727rz7v4dw2ibafwr0xy53via9bfgv"))))
     (properties `((upstream-name . "GIFT")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -15140,6 +15140,31 @@ of how to draw sectors in @code{ComplexHeatmap}'.")
     (description
      "This package provides ggplot2 stats that estimate seasonally adjusted series and
 rolling summaries such as rolling average on the fly for time series.")
+    (license license:gpl3)))
+
+(define-public r-ggscatridges
+  (package
+    (name "r-ggscatridges")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggScatRidges" version))
+       (sha256
+        (base32 "02p9pkfw3jscmc5c836qq73z9jpyxv4fp1ci5ma6mcwyzzzfnjpc"))))
+    (properties `((upstream-name . "ggScatRidges")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-viridis
+                             r-hrbrthemes
+                             r-ggridges
+                             r-ggpubr
+                             r-ggplot2
+                             r-cowplot))
+    (home-page "https://github.com/matbou85/ggScatRidges")
+    (synopsis "Scatter Plot Combined with Ridgelines in 'ggplot2'")
+    (description
+     "The function combines a scatter plot with ridgelines to better visualise the
+distribution between sample groups.  The plot is created with ggplot2'.")
     (license license:gpl3)))
 
 (define-public r-ggrtsy
@@ -27938,42 +27963,42 @@ al. (2015) <doi:10.18637/jss.v067.i01>) and PLmixed (Rockwood and Jeon (2019)
 (define-public r-galah
   (package
     (name "r-galah")
-    (version "1.5.4")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "galah" version))
        (sha256
-        (base32 "0x1xds6m6zn2mjw83na4dpjazsdpmlc4py3jnf04l9jk1sav6prd"))))
+        (base32 "1vh2w3jza5vm7w2j3zix83syrvkm8d3jy77pknsncnv5wljikh84"))))
     (properties `((upstream-name . "galah")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
+                             r-tidyr
                              r-tibble
                              r-stringr
                              r-sf
                              r-rlang
                              r-readr
+                             r-purrr
+                             r-potions
                              r-lifecycle
                              r-jsonlite
-                             r-httr
+                             r-httr2
                              r-glue
                              r-dplyr
-                             r-digest
-                             r-data-tree
-                             r-crul
                              r-crayon
-                             r-assertthat))
+                             r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://galah.ala.org.au")
-    (synopsis "Download Biodiversity Data from the GBIF Node Network")
+    (home-page "https://galah.ala.org.au/R/")
+    (synopsis "Biodiversity Data from the GBIF Node Network")
     (description
-     "The Global Biodiversity Information Facility (GBIF, <https://www.gbif.org>)
+     "The Global Biodiversity Information Facility ('GBIF', <https://www.gbif.org>)
 sources data from an international network of data providers, known as nodes'.
-Several of these nodes - the living atlases (<https://living-atlases.gbif.org>)
-- maintain their own web services using a codebase originally developed by the
-Atlas of Living Australia (ALA, <https://www.ala.org.au>).  galah enables the R
-community to directly access data and resources hosted by GBIF and its partner
-nodes.")
+Several of these nodes - the \"living atlases\"
+(<https://living-atlases.gbif.org>) - maintain their own web services using
+software originally developed by the Atlas of Living Australia ('ALA',
+<https://www.ala.org.au>).  galah enables the R community to directly access
+data and resources hosted by GBIF and its partner nodes.")
     (license (license:fsdg-compatible "MPL-2.0"))))
 
 (define-public r-gaipe

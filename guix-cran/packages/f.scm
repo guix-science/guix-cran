@@ -6591,13 +6591,13 @@ calculating textural metrics.")
 (define-public r-forestry
   (package
     (name "r-forestry")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "forestry" version))
        (sha256
-        (base32 "0q7m0mrig8z2b2z2fng58qlqa6g58xlhfzchil2dvjh6xf3qvsh8"))))
+        (base32 "0bg41sja0aq8fdhxbla676bq1m1xjk2jaybcl0qfj2kc33pdivkx"))))
     (properties `((upstream-name . "forestry")))
     (build-system r-build-system)
     (propagated-inputs (list r-data-tree))
@@ -9677,6 +9677,39 @@ Out), LIFO (Last In First Out), and NINO (Not In or Never Out) stacks in R.")
      "This package provides an interface to the Flickr API
 <https://www.flickr.com/services/api/> and allows R users to download data on
 Flickr.")
+    (license license:gpl3+)))
+
+(define-public r-flexvarjm
+  (package
+    (name "r-flexvarjm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FlexVarJM" version))
+       (sha256
+        (base32 "1gq832bhwjs59blhblj5l3c92sa6mid57r5dkk4lv2pfdbagfj5a"))))
+    (properties `((upstream-name . "FlexVarJM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survminer
+                             r-survival
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-randtoolbox
+                             r-mvtnorm
+                             r-marqlevalg
+                             r-lcmm
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/LeonieCourcoul/FlexVarJM")
+    (synopsis "Estimate Joint Models with Subject-Specific Variance")
+    (description
+     "Estimation of mixed models including a subject-specific variance which can be
+time and covariate dependent.  In the joint model framework, the package handles
+left truncation and allows a flexible dependence structure between the competing
+events and the longitudinal marker.  The estimation is performed under the
+frequentist framework, using the Marquardt-Levenberg algorithm. (Courcoul,
+Tzourio, Woodward, Barbieri, Jacqmin-Gadda (2023) <@code{arXiv:2306.16785>}).")
     (license license:gpl3+)))
 
 (define-public r-flexsurvcure
@@ -20072,13 +20105,13 @@ environmental sensitivities as in Millet et al. (2019)
 (define-public r-factoshiny
   (package
     (name "r-factoshiny")
-    (version "2.4")
+    (version "2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Factoshiny" version))
        (sha256
-        (base32 "0szdpdghaqrfjdx3c9klgww8i09dh69500sls2lyjz6c8gi80vcx"))))
+        (base32 "1am0lycldx1j75c5lm6hp84845fvcwvrvjbkqs2mf17a3i72ir48"))))
     (properties `((upstream-name . "Factoshiny")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinyjqui

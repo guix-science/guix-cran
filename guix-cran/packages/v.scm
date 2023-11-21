@@ -2720,22 +2720,29 @@ glm', coxph', rlm', gam', locfit', lmer', @code{randomForest}', etc.)")
 (define-public r-visr
   (package
     (name "r-visr")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "visR" version))
        (sha256
-        (base32 "0s403njzcasp6l55k1lzh3jmd5ajdfblg312pwl8b5w3zpqp32jg"))))
+        (base32 "0nffasj21yh3yv30l381xn5krs4zn43ic0naxwgnqwax847mxnc3"))))
     (properties `((upstream-name . "visR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
+                             r-tidycmprsk
+                             r-tibble
                              r-survival
                              r-rlang
+                             r-lifecycle
+                             r-knitr
                              r-kableextra
                              r-gtable
+                             r-gt
                              r-gridextra
                              r-ggplot2
+                             r-forcats
+                             r-dt
                              r-dplyr
                              r-cowplot
                              r-broom))

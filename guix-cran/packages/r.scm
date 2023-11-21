@@ -9468,13 +9468,13 @@ in Lafaye de Micheaux et al. (2014) <doi:10.1080/10543406.2013.860156>.")
 (define-public r-rpostgis
   (package
     (name "r-rpostgis")
-    (version "1.5.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rpostgis" version))
        (sha256
-        (base32 "1m7xhib3nbngqa2vnygnyp5m502wn3r3yyfp08grsz8xi8ipbcgz"))))
+        (base32 "1fnizm0xb7div6mrg3s9a4mv8dbm6lrq9azjxi786261jmv3dbvg"))))
     (properties `((upstream-name . "rpostgis")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -9484,7 +9484,7 @@ in Lafaye de Micheaux et al. (2014) <doi:10.1080/10543406.2013.860156>.")
                              r-raster
                              r-purrr
                              r-dbi))
-    (home-page "https://mablab.org/rpostgis/")
+    (home-page "https://cidree.github.io/rpostgis/")
     (synopsis "R Interface to a 'PostGIS' Database")
     (description
      "This package provides an interface between R and @code{PostGIS'-enabled}
@@ -33547,27 +33547,6 @@ and acoustic data.  It stores annotation data in a format called a
 @code{TextGrid}'.  This package provides a way to read these files into R.")
     (license license:gpl3)))
 
-(define-public r-readsx
-  (package
-    (name "r-readsx")
-    (version "0.8.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "readSX" version))
-       (sha256
-        (base32 "0g8nwm1vk8spiffnb93a63vq14q6xm2b9wy708qfkriijrn8n52i"))))
-    (properties `((upstream-name . "readSX")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rlang r-readxl r-cli))
-    (home-page "https://github.com/sda030/readSX")
-    (synopsis "Read 'SurveyXact' Data")
-    (description
-     "Imports data from the @code{SurveyXact} commercial service
-<https://www.surveyxact.com/>, adds variable labels, and converts value labels
-to factors in the same order as exported from @code{SurveyXact}'.")
-    (license license:expat)))
-
 (define-public r-readstata13
   (package
     (name "r-readstata13")
@@ -34147,28 +34126,6 @@ of files contains detailed records of DNA samples (locus, organism, type of
 sequence, source of the sequence...).  An example of record can be found at
 <https://www.ncbi.nlm.nih.gov/nuccore/HE799070>.")
     (license license:gpl3)))
-
-(define-public r-read-dbc
-  (package
-    (name "r-read-dbc")
-    (version "1.0.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "read.dbc" version))
-       (sha256
-        (base32 "0v10fnia615hj6kw3504v455f6k4syy2pilbmvcspk5r6lfs1pcg"))))
-    (properties `((upstream-name . "read.dbc")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-foreign))
-    (home-page "https://github.com/danicat/read.dbc")
-    (synopsis "Read Data Stored in DBC (Compressed DBF) Files")
-    (description
-     "This package provides functions for reading and decompressing the DBC
-(compressed DBF) files.  Please note that this is the file format used by the
-Brazilian Ministry of Health (DATASUS) to publish healthcare datasets.  It is
-not related to the @code{FoxPro} or CANdb DBC file formats.")
-    (license license:agpl3)))
 
 (define-public r-read
   (package
@@ -42794,13 +42751,13 @@ EPA Data Mart API.")
 (define-public r-raqs
   (package
     (name "r-raqs")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "raqs" version))
        (sha256
-        (base32 "1fa5rdqk6ffjyifijw742l1wmywr3wgrdm3aimvazn9i7bfj4z8m"))))
+        (base32 "05q6xldr2q59mfn3v4hx20j8ybpkn3zpnz36rrdv1dq8jimfxfj7"))))
     (properties `((upstream-name . "raqs")))
     (build-system r-build-system)
     (propagated-inputs (list r-httr2 r-cli))
