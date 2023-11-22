@@ -16336,6 +16336,39 @@ The data must be downloaded from the official website
 survey'.")
     (license license:gpl3)))
 
+(define-public r-pndsibge
+  (package
+    (name "r-pndsibge")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PNDSIBGE" version))
+       (sha256
+        (base32 "1v2mvq1ks2lwhr8wqa9sp1lxpvsaiibh01y6zc617zmgscrhwi4k"))))
+    (properties `((upstream-name . "PNDSIBGE")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-timedate
+                             r-tibble
+                             r-survey
+                             r-readxl
+                             r-readr
+                             r-rcurl
+                             r-projmgr
+                             r-magrittr
+                             r-httr
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=PNDSIBGE")
+    (synopsis
+     "Downloading, Reading and Analyzing PNDS Microdata - Package in Development")
+    (description
+     "This package provides tools for downloading, reading and analyzing the PNDS, a
+household survey from Brazilian Institute of Geography and Statistics - IBGE.
+The data must be downloaded from the official website
+<https://www.ibge.gov.br/>.  Further analysis must be made using package
+survey'.")
+    (license license:gpl3)))
+
 (define-public r-pnar
   (package
     (name "r-pnar")
@@ -20704,41 +20737,6 @@ finite mixtures; initializing the centers of the classical k-means algorithm in
 order to obtain a better clustering solution.  For further details see Egidi,
 @code{PappadÃ }, Pauli and Torelli (2018b)<ISBN:9788891910233>.")
     (license license:gpl2)))
-
-(define-public r-pitchrx
-  (package
-    (name "r-pitchrx")
-    (version "1.8.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "pitchRx" version))
-       (sha256
-        (base32 "0lg0xab40r8wzrww986l5q9jkg1m83g4bhsbh0kr7f2rv90av662"))))
-    (properties `((upstream-name . "pitchRx")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2r
-                             r-plyr
-                             r-mgcv
-                             r-mass
-                             r-hexbin
-                             r-ggplot2))
-    (home-page "http://cpsievert.github.com/pitchRx")
-    (synopsis
-     "Tools for Harnessing 'MLBAM' 'Gameday' Data and Visualizing 'pitchfx'")
-    (description
-     "With @code{pitchRx}', one can easily obtain Major League Baseball Advanced
-Media's Gameday data (as well as store it in a remote database).  The Gameday
-website hosts a wealth of data in XML format, but perhaps most interesting is
-pitchfx'.  Among other things, pitchfx data can be used to recreate a baseball's
-flight path from a pitcher's hand to home plate.  With @code{pitchRx}, one can
-easily create animations and interactive 3D scatterplots of the baseball's
-flight path.  pitchfx data is also commonly used to generate a static plot of
-baseball locations at the moment they cross home plate.  These plots, sometimes
-called strike-zone plots, can also refer to a plot of event probabilities over
-the same region. @code{pitchRx} provides an easy and robust way to generate
-strike-zone plots using the ggplot2 package.")
-    (license license:expat)))
 
 (define-public r-pisart
   (package
@@ -26440,6 +26438,31 @@ prioritize these remaining compounds for those most likely contributing to each
 bioactivity data set.")
     (license (license:fsdg-compatible "CC BY-NC-SA 4.0"))))
 
+(define-public r-pepr
+  (package
+    (name "r-pepr")
+    (version "0.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pepr" version))
+       (sha256
+        (base32 "0q2pfsch6g3zhaj6cffg6rzmlrmzwpvny84nls6x5jjljhan4nzz"))))
+    (properties `((upstream-name . "pepr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yaml r-stringr r-rcurl r-pryr r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=pepr")
+    (synopsis "Reading Portable Encapsulated Projects")
+    (description
+     "This package provides a PEP, or Portable Encapsulated Project, is a dataset that
+subscribes to the PEP structure for organizing metadata.  It is written using a
+simple YAML + CSV format, it is your one-stop solution to metadata management
+across data analysis environments.  This package reads this standardized project
+configuration structure into R. Described in Sheffield et al. (2021)
+<doi:10.1093/gigascience/giab077>.")
+    (license license:bsd-2)))
+
 (define-public r-peppm
   (package
     (name "r-peppm")
@@ -31003,13 +31026,13 @@ patient profile report(s) or can be embedded in custom report(s).")
 (define-public r-patientprofiles
   (package
     (name "r-patientprofiles")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PatientProfiles" version))
        (sha256
-        (base32 "1g815fgzn555r9r6pzka84h0japnyy4zfd3r12cv53ljrxzvyidc"))))
+        (base32 "0r1fa2i4l715qj76hl0a2b3ysmk260yh86hbk2fa1mdr8m48545w"))))
     (properties `((upstream-name . "PatientProfiles")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -31168,27 +31191,6 @@ O'Boyle and Williams (2011) <doi:10.1037/a0020539> and Williams, O'Boyle, & Yu
 (2020) <doi:10.1177/1094428117736137>.  Also included are fit indices described
 by Hancock and Mueller (2011) <doi:10.1177/0013164410384856>.")
     (license license:gpl3)))
-
-(define-public r-pathmapping
-  (package
-    (name "r-pathmapping")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "pathmapping" version))
-       (sha256
-        (base32 "0kx4wxf6lhi58sif8fzr5w4wa0i5253fq4v0ynp721fv1hkvmhvz"))))
-    (properties `((upstream-name . "pathmapping")))
-    (build-system r-build-system)
-    (home-page "https://sites.google.com/a/mtu.edu/mapping/")
-    (synopsis "Compute Deviation and Correspondence Between Spatial Paths")
-    (description
-     "This package provides functions to compute and display the area-based deviation
-between spatial paths and to compute a mapping based on minimizing area and
-distance-based cost.  For details, see: Mueller, S. T., Perelman, B. S., &
-Veinott, E. S. (2016) <DOI:10.3758/s13428-015-0562-7>.")
-    (license license:gpl2)))
 
 (define-public r-pathlit
   (package

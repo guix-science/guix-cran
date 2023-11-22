@@ -6898,21 +6898,21 @@ regression context.")
 (define-public r-interactionrcs
   (package
     (name "r-interactionrcs")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "interactionRCS" version))
        (sha256
-        (base32 "07yhcgp9jc0fd29drsvdcpg8hw3zafr3njkx4qa5qhp3jsn0m3pm"))))
+        (base32 "0j9wyhbcj0w0w553k6ba27rx757f4pdxs3qzlzm97hh5xfcffya1"))))
     (properties `((upstream-name . "interactionRCS")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
+                             r-stringr
                              r-rms
                              r-pspline
                              r-pryr
                              r-msm
-                             r-mlbench
                              r-boot))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=interactionRCS")
@@ -14086,13 +14086,13 @@ an evolution algorithm.")
 (define-public r-idcnrba
   (package
     (name "r-idcnrba")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "idcnrba" version))
        (sha256
-        (base32 "12i8g8cfci7aqxqv7ir1ccdlddm1fpxp0j1lh6c2jp01kcf47br1"))))
+        (base32 "0kdsvp263q28fs0qdvrjshp02n6r01zwjj7sj7r24rxppn77xa40"))))
     (properties `((upstream-name . "idcnrba")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble

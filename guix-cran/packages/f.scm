@@ -1393,13 +1393,13 @@ procedures to run test result comparisons and power analysis using simulations."
 (define-public r-funspotr
   (package
     (name "r-funspotr")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "funspotr" version))
        (sha256
-        (base32 "12kzir5s6dr39skmb4c20bprbm57qcbdkdwxb9708kfbwkgwc9m8"))))
+        (base32 "0n437kkv1dnpna32rbyr0r5kl6qhmbygf2kmng7w5ni8p1xjwmh2"))))
     (properties `((upstream-name . "funspotr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -8189,13 +8189,13 @@ of Skew Heavy-Tailed Errors.")
 (define-public r-fmritools
   (package
     (name "r-fmritools")
-    (version "0.3.3")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fMRItools" version))
        (sha256
-        (base32 "0hbl01hzp503qr2bh1hrgnc3akf0a9lw8ny56vlagb055jsprpdx"))))
+        (base32 "0rd77bsi51pgvmp1vyrcyg77yqj9vm5fnb98i9iyngyrx4hzv5m9"))))
     (properties `((upstream-name . "fMRItools")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrixstats))
@@ -13161,13 +13161,13 @@ Forest Service data.")
 (define-public r-fiesta
   (package
     (name "r-fiesta")
-    (version "3.5.4")
+    (version "3.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FIESTA" version))
        (sha256
-        (base32 "1bq292msy0wssc0rysm0w9lw86b70sa3gzya68qb6ik5g0zs8sqh"))))
+        (base32 "0k6qa64zq4v99jqrg6paqprkcdyacihqgvjba4df0nvi0707lfdl"))))
     (properties `((upstream-name . "FIESTA")))
     (build-system r-build-system)
     (propagated-inputs (list r-sqldf
@@ -13178,7 +13178,7 @@ Forest Service data.")
                              r-dbi
                              r-data-table))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=FIESTA")
+    (home-page "https://usdaforestservice.github.io/FIESTA/")
     (synopsis "Forest Inventory Estimation and Analysis")
     (description
      "This package provides a research estimation tool for analysts that work with

@@ -2398,13 +2398,13 @@ essentially the same cost as a single SVM fit.")
 (define-public r-svines
   (package
     (name "r-svines")
-    (version "0.1.4")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "svines" version))
        (sha256
-        (base32 "1piin3nn0z5k9gilcq4lcqj86dqlfm9xqp87cslwypkfkkhn2aia"))))
+        (base32 "00abizr707r9vqz6vz431kz701c26z6gl7mahj2mma19c1gki55i"))))
     (properties `((upstream-name . "svines")))
     (build-system r-build-system)
     (propagated-inputs (list r-wdm
@@ -21379,6 +21379,34 @@ direction method of multipliers algorithm (Wang and Huang, 2017,
 regularly or irregularly spaced data, including 1D, 2D, and 3D.")
     (license license:gpl3)))
 
+(define-public r-spatmca
+  (package
+    (name "r-spatmca")
+    (version "1.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SpatMCA" version))
+       (sha256
+        (base32 "051c6mdij04n7xc256qx0119gsg337w2xly3ykiy47nrd3svdvc3"))))
+    (properties `((upstream-name . "SpatMCA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scales
+                             r-rcppparallel
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-mass
+                             r-ggplot2))
+    (home-page "https://github.com/egpivo/SpatMCA")
+    (synopsis "Regularized Spatial Maximum Covariance Analysis")
+    (description
+     "Provide regularized maximum covariance analysis incorporating smoothness,
+sparseness and orthogonality of couple patterns by using the alternating
+direction method of multipliers algorithm.  The method can be applied to either
+regularly or irregularly spaced data, including 1D, 2D, and 3D (Wang and Huang,
+2017 <doi:10.1002/env.2481>).")
+    (license license:gpl3)))
+
 (define-public r-spatialwidget
   (package
     (name "r-spatialwidget")
@@ -28497,6 +28525,29 @@ alternating direction method of multipliers algorithms.  The main method is
 built in C++, and the complementary methods are written in R.")
     (license license:gpl2+)))
 
+(define-public r-smof
+  (package
+    (name "r-smof")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "smof" version))
+       (sha256
+        (base32 "0b0cwg9s5l0vypwncqbmqq8wj6wqmn09dknm3f5jv1qw2fffs9d5"))))
+    (properties `((upstream-name . "smof")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=smof")
+    (synopsis "Scoring Methodology for Ordered Factors")
+    (description
+     "Starting from a given object representing a fitted model (within a certain set
+of model classes) whose linear predictor includes some ordered factor(s) among
+the explanatory variables, a new model is constructed and fitted where each
+named factor is replaced by a single numeric score, suitably chosen so that the
+new variable produces a fit comparable with the standard methodology based on a
+set of polynomial contrasts.  Reference: Azzalini (2023) <doi:10.1002/sta4.624>.")
+    (license (list license:gpl2 license:gpl3))))
+
 (define-public r-smncensreg
   (package
     (name "r-smncensreg")
@@ -32794,13 +32845,13 @@ for a comprehensive characterization of breath samples.")
 (define-public r-sipdibge
   (package
     (name "r-sipdibge")
-    (version "0.1.9")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SIPDIBGE" version))
        (sha256
-        (base32 "0ns4id5nb64m2i32nfhrwwckrr16896xhwkjr73i5d091wgyl0f3"))))
+        (base32 "1s7mdw00sdmyf9ji9h1ix1mrkzm9v2nxxy2b36zcp76kpxyyxs5n"))))
     (properties `((upstream-name . "SIPDIBGE")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -37988,13 +38039,13 @@ Includes a set of web-based graphical user interfaces.")
 (define-public r-shorts
   (package
     (name "r-shorts")
-    (version "2.4.0")
+    (version "2.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shorts" version))
        (sha256
-        (base32 "00790yv8h3z0m8mf2v6vyy9cjz08r5pjw2zxnhf8ic4qandysxd9"))))
+        (base32 "16k5gl35gybzwaddmwcy6zr3gzqbkjs9brj55slpnip1yfi9qm9i"))))
     (properties `((upstream-name . "shorts")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-purrr r-minpack-lm r-lambertw r-ggplot2))
@@ -41507,6 +41558,39 @@ implemented for the use of LASSO regression, sparse PCA, sparse (group) PLS or
 graphical LASSO in stability selection, and hierarchical clustering,
 partitioning around medoids, K means or Gaussian mixture models in consensus
 clustering.")
+    (license license:gpl3+)))
+
+(define-public r-sharkdemography
+  (package
+    (name "r-sharkdemography")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SharkDemography" version))
+       (sha256
+        (base32 "188qzbixz44qvi1jqr76hmmamkxn43lc9sayrpsvwi3bhkj9ablw"))))
+    (properties `((upstream-name . "SharkDemography")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-readr
+                             r-popbio
+                             r-mass
+                             r-magrittr
+                             r-iterators
+                             r-interp
+                             r-foreach
+                             r-dplyr
+                             r-doparallel
+                             r-dofuture))
+    (home-page "https://github.com/jonathansmart/SharkDemography")
+    (synopsis "Shark Demographic Analyses Using Leslie Matrix Models")
+    (description
+     "Run Leslie Matrix models using Monte Carlo simulations for any specified shark
+species.  This package was developed during the publication of Smart, JJ, White,
+WT, Baje, L, et al. (2020) \"Can multi-species shark longline fisheries be
+managed sustainably using size limits? Theoretically, yes.  Realistically, no\".J
+Appl Ecol.  2020; 57; 1847â1860. <doi:10.1111/1365-2664.13659>.")
     (license license:gpl3+)))
 
 (define-public r-shar
@@ -45837,6 +45921,37 @@ function semislv() supporting the above two methods and numeric derivative
 approximation for unprovided Jacobian matrix.")
     (license license:expat)))
 
+(define-public r-semidist
+  (package
+    (name "r-semidist")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "semidist" version))
+       (sha256
+        (base32 "0bgl7z78psd2b3v4c4fzhq0r8w0zfn408ji21cw1x7h87dg70qr2"))))
+    (properties `((upstream-name . "semidist")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo
+                             r-rcpp
+                             r-purrr
+                             r-furrr
+                             r-fnn
+                             r-energy))
+    (home-page "https://github.com/wzhong41/semidist")
+    (synopsis
+     "Measure Dependence Between Categorical and Continuous Variables")
+    (description
+     "Semi-distance and mean-variance (MV) index are proposed to measure the
+dependence between a categorical random variable and a continuous variable.
+Test of independence and feature screening for classification problems can be
+implemented via the two dependence measures.  For the details of the methods,
+see Zhong et al. (2023) <doi:10.1080/01621459.2023.2284988>; Cui and Zhong
+(2019) <doi:10.1016/j.csda.2019.05.004>; Cui, Li and Zhong (2015)
+<doi:10.1080/01621459.2014.920256>.")
+    (license license:expat)))
+
 (define-public r-semid
   (package
     (name "r-semid")
@@ -48077,13 +48192,13 @@ streamflow (Q) and other ancillary variables.  See Ryberg and York, 2020,
 (define-public r-seaval
   (package
     (name "r-seaval")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SeaVal" version))
        (sha256
-        (base32 "0xdi0ya3msrszwqi54xmav717fylp976547dck10qifcr90nrjm9"))))
+        (base32 "0xbhg8ns6d16j5nlf11y7kgdy4my69wnjx41wga5wf3v717qm58h"))))
     (properties `((upstream-name . "SeaVal")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -48100,11 +48215,11 @@ streamflow (Q) and other ancillary variables.  See Ryberg and York, 2020,
      "This package provides tools for processing and evaluating seasonal weather
 forecasts, with an emphasis on tercile forecasts.  We follow the World
 Meteorological Organization's \"Guidance on Verification of Operational Seasonal
-Climate Forecasts\", S.J.Mason (2018, ISBN:978-92-63-11220-0,
-URL:<https://library.wmo.int/idurl/4/56227>).  The development was supported by
-the European Unionâs Horizon 2020 research and innovation programme under
-grant agreement no.  869730 (CONFER).  A comprehensive online tutorial is
-available at <http://files.nr.no/samba/CONFER/@code{SeaVal/>}.")
+Climate Forecasts\", S.J.Mason (2018, ISBN: 978-92-63-11220-0, URL:
+<https://library.wmo.int/idurl/4/56227>).  The development was supported by the
+European Unionâs Horizon 2020 research and innovation programme under grant
+agreement no.  869730 (CONFER).  A comprehensive online tutorial is available at
+<http://files.nr.no/samba/CONFER/@code{SeaVal/>}.")
     (license license:gpl3+)))
 
 (define-public r-seastests
@@ -51975,43 +52090,6 @@ between colour spaces.")
 Tsutsumida, Yoshida, Nakaya, and Lu (2019) <@code{arXiv:1905.00266>}.")
     (license license:gpl2+)))
 
-(define-public r-scgoclust
-  (package
-    (name "r-scgoclust")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "scGOclust" version))
-       (sha256
-        (base32 "0776fp7z4kcdyaa2xk7ycjp6x7x5mcf6wnqghphry2g18ag9r5m9"))))
-    (properties `((upstream-name . "scGOclust")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-slanter
-                             r-seurat
-                             r-networkd3
-                             r-matrix
-                             r-magrittr
-                             r-limma
-                             r-dplyr
-                             r-biomart))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/Functional-Genomics/scGOclust")
-    (synopsis
-     "Measuring Cell Type Similarity with Gene Ontology in Single-Cell RNA-Seq")
-    (description
-     "Traditional methods for analyzing single cell RNA-seq datasets focus solely on
-gene expression, but this package introduces a novel approach that goes beyond
-this limitation.  Using Gene Ontology terms as features, the package allows for
-the functional profile of cell populations, and comparison within and between
-datasets from the same or different species.  Our approach enables the discovery
-of previously unrecognized functional similarities and differences between cell
-types and has demonstrated success in identifying cell types functional
-correspondence even between evolutionarily distant species.")
-    (license license:gpl3+)))
-
 (define-public r-scglr
   (package
     (name "r-scglr")
@@ -52083,6 +52161,59 @@ to annotate cells as either âpureâ or âimpureâ, with respect
 population of interest.  See the related publication Andreatta et al. (2022)
 <doi:10.1093/bioinformatics/btac141>.")
     (license license:gpl3)))
+
+(define-public r-scfetch
+  (package
+    (name "r-scfetch")
+    (version "0.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "scfetch" version))
+       (sha256
+        (base32 "0qyixanc72vang1zsr6v9yfv2j911iniiylw3fcxvykvfxp9zhmv"))))
+    (properties `((upstream-name . "scfetch")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-summarizedexperiment
+                             r-singlecellexperiment
+                             r-seurat
+                             r-scater
+                             r-rpanglaodb
+                             r-rlang
+                             r-reticulate
+                             r-purrr
+                             r-pbapply
+                             r-openxlsx
+                             r-matrix
+                             r-magrittr
+                             r-jsonlite
+                             r-httr
+                             r-geoquery
+                             r-dplyr
+                             r-data-table
+                             r-curl
+                             r-biobase))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/showteeth/scfetch")
+    (synopsis
+     "Access and Format Single-Cell RNA-Seq Datasets from Public Resources")
+    (description
+     "The goal of scfetch is to access and format single-cell RNA-seq datasets.  It
+can be used to download single-cell RNA-seq datasets from widely used public
+resources, including GEO <https://www.ncbi.nlm.nih.gov/geo/>, Zenodo
+<https://zenodo.org/>, CEL@code{LxGENE} <https://cellxgene.cziscience.com/>,
+Human Cell Atlas <https://www.humancellatlas.org/>, @code{PanglaoDB}
+<https://panglaodb.se/index.html> and UCSC Cell Browser
+<https://cells.ucsc.edu/>.  And, it can also be used to perform object
+conversion between @code{SeuratObject} <https://satijalab.org/seurat/>, loom
+<http://loompy.org/>, h5ad <https://scanpy.readthedocs.io/en/stable/>,
+@code{SingleCellExperiment}
+<https://bioconductor.org/packages/release/bioc/html/scran.html>,
+@code{CellDataSet} <http://cole-trapnell-lab.github.io/monocle-release/> and
+cell_data_set <https://cole-trapnell-lab.github.io/monocle3/>.")
+    (license license:gpl3+)))
 
 (define-public r-scepterbinary
   (package

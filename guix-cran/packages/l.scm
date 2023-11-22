@@ -11057,6 +11057,36 @@ calculating a posterior density that is invariant to interchange and scaling of
 the coordinates.")
     (license license:gpl2+)))
 
+(define-public r-lehdr
+  (package
+    (name "r-lehdr")
+    (version "1.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lehdr" version))
+       (sha256
+        (base32 "0y18wmn967c01fr0y3cfmfhxj0qlilrk5invigzy5h13qs1ad4qf"))))
+    (properties `((upstream-name . "lehdr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-rlang
+                             r-readr
+                             r-httr
+                             r-glue
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jamgreen/lehdr/")
+    (synopsis
+     "Grab Longitudinal Employer-Household Dynamics (LEHD) Flat Files")
+    (description
+     "Designed to query Longitudinal Employer-Household Dynamics (LEHD)
+workplace/residential association and origin-destination flat files and
+optionally aggregate Census block-level data to block group, tract, county, or
+state.  Data comes from the LODES FTP server
+<https://lehd.ces.census.gov/data/lodes/LODES8/>.")
+    (license license:expat)))
+
 (define-public r-legocolors
   (package
     (name "r-legocolors")

@@ -15,9 +15,10 @@
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages maths)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages machine-learning)
+  #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages photo)
   #:use-module (guix-cran packages z)
@@ -6827,13 +6828,13 @@ sorting.")
 (define-public r-crandep
   (package
     (name "r-crandep")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crandep" version))
        (sha256
-        (base32 "16h42s875h90mra346y0cxwqwnahdrcskhb35j8dl3s8389sfai0"))))
+        (base32 "1nphfpwc6xj9mh1gg0rfzkc366vxqrzywd7yj3nm7cbh1d7z6085"))))
     (properties `((upstream-name . "crandep")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -23191,6 +23192,31 @@ Identifies local clustering structures in related datasets, and a global
 clusters that exist across the datasets.")
     (license license:expat)))
 
+(define-public r-clustermq
+  (package
+    (name "r-clustermq")
+    (version "0.9.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "clustermq" version))
+       (sha256
+        (base32 "186r9fwrgygg56qz1i230f9yaddnqzj7617l4rm1rd56kqp6gqd9"))))
+    (properties `((upstream-name . "clustermq")))
+    (build-system r-build-system)
+    (inputs (list zlib))
+    (propagated-inputs (list r-rcpp r-r6 r-progress r-narray))
+    (native-inputs (list r-knitr pkg-config))
+    (home-page "https://mschubert.github.io/clustermq/")
+    (synopsis
+     "Evaluate Function Calls on HPC Schedulers (LSF, SGE, SLURM, PBS/Torque)")
+    (description
+     "Evaluate arbitrary function calls using workers on HPC schedulers in single line
+of code.  All processing is done on the network without accessing the file
+system.  Remote schedulers are supported via SSH.")
+    (license (list license:asl2.0
+                   (license:fsdg-compatible "file://LICENSE")))))
+
 (define-public r-clustermole
   (package
     (name "r-clustermole")
@@ -31374,6 +31400,27 @@ insight.  Web interface for USGS API can be found at
 <http://thredds.northwestknowledge.net:8080/thredds/reacch_climate_CMIP5_aggregated_macav2_catalog.html>.")
     (license license:gpl3+)))
 
+(define-public r-cfr
+  (package
+    (name "r-cfr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cfr" version))
+       (sha256
+        (base32 "1qy25jfzpsk4zfcgjlw188a40vvj478r4g7pwrwxw4ppcqrncxny"))))
+    (properties `((upstream-name . "cfr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/epiverse-trace/cfr")
+    (synopsis "Estimate Disease Severity and Case Ascertainment")
+    (description
+     "Estimate the severity of a disease and ascertainment of cases, as discussed in
+Nishiura et al. (2009) <doi:10.1371/journal.pone.0006852>.")
+    (license license:expat)))
+
 (define-public r-cforward
   (package
     (name "r-cforward")
@@ -36327,13 +36374,13 @@ confidence intervals for common ecological network metrics.")
 (define-public r-casmi
   (package
     (name "r-casmi")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CASMI" version))
        (sha256
-        (base32 "14kg6fs7s3bqmz1a7mmk6dvpfl4nsk7373b4596yi0p7zfgp6lmj"))))
+        (base32 "1mpqjspl5ly0p6qpvcpx77a4x85f3531567blhkrf5iycdygfyvz"))))
     (properties `((upstream-name . "CASMI")))
     (build-system r-build-system)
     (propagated-inputs (list r-entropyestimation r-entropy))
@@ -38285,19 +38332,20 @@ breast cancer genes.  Nature Communications.  5 4828. <doi:10.1038/ncomms5828>."
 (define-public r-cancerevolutionvisualization
   (package
     (name "r-cancerevolutionvisualization")
-    (version "1.0.1")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CancerEvolutionVisualization" version))
        (sha256
-        (base32 "1ldhrqnx5xmshhbjrfbzwbp9p9lgawfnjsmw6vj8jxww9yg2pl7l"))))
+        (base32 "1iizcr43wrmz099341knzn5jd1h1s0nh0hw64g1r18k6d39swcwd"))))
     (properties `((upstream-name . "CancerEvolutionVisualization")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringr r-plyr r-gtable r-gridextra))
+    (propagated-inputs (list r-stringr r-plyr r-gtable r-gridextra
+                             r-boutroslab-plotting-general))
     (native-inputs (list r-knitr))
     (home-page
-     "https://cran.r-project.org/package=CancerEvolutionVisualization")
+     "https://github.com/uclahs-cds/package-CancerEvolutionVisualization")
     (synopsis "Publication Quality Phylogenetic Tree Plots")
     (description
      "Generates tree plots with precise branch lengths, gene annotations, and cellular

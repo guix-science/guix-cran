@@ -254,13 +254,13 @@ repository <https://forgemia.inra.fr/umr-gdec/bwgs> and modified as a R package.
 (define-public r-bwgr
   (package
     (name "r-bwgr")
-    (version "2.2.3")
+    (version "2.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bWGR" version))
        (sha256
-        (base32 "0cwl7vaal3mmgcwly353lpyl82avjggxrlf18sv3imfva5w63l3s"))))
+        (base32 "1cxypw6fdg0myk2idhl9jgx40yfrg5hh9bcciw9fg2d6p337w602"))))
     (properties `((upstream-name . "bWGR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-matrix))
@@ -9696,6 +9696,30 @@ cumulative and survival function assuming the presence of a cure fraction given
 by the standard bivariate mixture cure fraction model.  The package also
 computes the estimators based on the method of moments.")
     (license license:gpl2+)))
+
+(define-public r-bivariatemaps
+  (package
+    (name "r-bivariatemaps")
+    (version "1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bivariatemaps" version))
+       (sha256
+        (base32 "0ig6zf760kz1xy8d8pr3h3ccyxh6q5w1k6vvsqj5cbqbpd6hywv2"))))
+    (properties `((upstream-name . "bivariatemaps")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra r-classint))
+    (home-page "https://cran.r-project.org/package=bivariatemaps")
+    (synopsis "Creates Bivariate Maps")
+    (description
+     "This package contains functions to plot bivariate maps and to generate grids
+from shapefiles based on area coverage.  For more info, see: Hidasi-Neto, J
+(2015)
+<https://rfunctions.blogspot.com/2015/03/bivariate-maps-bivariatemap-function.html>,
+Hidasi-Neto, J (2014)
+<https://rfunctions.blogspot.com/2014/12/gridfilter-intersect-grid-with-shape.html>.")
+    (license license:gpl3)))
 
 (define-public r-bivariate-pareto
   (package
@@ -21371,13 +21395,13 @@ F., Hoijtink, H. & Gu, X. (2019) <doi:10.31219/osf.io/d5kf3>.")
 (define-public r-bayesianplatformdesigntimetrend
   (package
     (name "r-bayesianplatformdesigntimetrend")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesianPlatformDesignTimeTrend" version))
        (sha256
-        (base32 "1yvgav1fc4mr74jgbcyqigh1y70vs1fwvcfcw03kip8rs5dfjxb5"))))
+        (base32 "02xl5primqxkw2s1xrl0znsd3ag79x6g842wdg9wxf2d00fcfm25"))))
     (properties `((upstream-name . "BayesianPlatformDesignTimeTrend")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -21669,6 +21693,45 @@ Carpenter et al. (2017) <doi:10.18637/jss.v076.i01>.")
      "Fits Bayesian grouped weighted quantile sum (BGWQS) regressions for one or more
 chemical groups with binary outcomes.  Wheeler DC et al. (2019)
 <doi:10.1016/j.sste.2019.100286>.")
+    (license license:gpl3)))
+
+(define-public r-bayesgrowth
+  (package
+    (name "r-bayesgrowth")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BayesGrowth" version))
+       (sha256
+        (base32 "0snjl40x8h8v8y6wm8lby4h4wm78qgbaq2jx45s96lz9cmfhdz2c"))))
+    (properties `((upstream-name . "BayesGrowth")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidybayes
+                             r-tibble
+                             r-stanheaders
+                             r-rstantools
+                             r-rstan
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-loo
+                             r-ggplot2
+                             r-dplyr
+                             r-bh
+                             r-bayesplot
+                             r-aquaticlifehistory))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jonathansmart/BayesGrowth")
+    (synopsis "Estimate Fish Growth Using MCMC Analysis")
+    (description
+     "Estimate fish length-at-age models using MCMC analysis with rstan models.  This
+package allows a multimodel approach to growth fitting to be applied to
+length-at-age data and is supported by further analyses to determine model
+selection and result presentation.  The core methods of this package are
+presented in Smart and Grammer (2021) \"Modernising fish and shark growth curves
+with Bayesian length-at-age models\".  PLOS ONE 16(2): e0246734
+<doi:10.1371/journal.pone.0246734>.")
     (license license:gpl3)))
 
 (define-public r-bayesgpfit

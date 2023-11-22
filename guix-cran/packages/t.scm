@@ -2917,6 +2917,30 @@ created by CS-UCR <http://www.cs.ucr.edu/~eamonn/@code{MatrixProfile.html>}.")
 Pearson VII, Slash or Contaminated Normal).")
     (license license:gpl3+)))
 
+(define-public r-tslstmplus
+  (package
+    (name "r-tslstmplus")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TSLSTMplus" version))
+       (sha256
+        (base32 "094wcql92535w5v91yfm1z73d4p0vp00vxbqngr7ca3z3qb9ibjg"))))
+    (properties `((upstream-name . "TSLSTMplus")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tsutils r-tensorflow r-keras))
+    (home-page "https://cran.r-project.org/package=TSLSTMplus")
+    (synopsis "Long-Short Term Memory for Time-Series Forecasting, Enhanced")
+    (description
+     "The LSTM (Long Short-Term Memory) model is a Recurrent Neural Network (RNN)
+based architecture that is widely used for time series forecasting.
+Customizable configurations for the model are allowed, improving the
+capabilities and usability of this model compared to other packages.  This
+package is based on keras and tensorflow modules and the algorithm of Paul and
+Garai (2021) <doi:10.1007/s00500-021-06087-4>.")
+    (license license:gpl3)))
+
 (define-public r-tslstm
   (package
     (name "r-tslstm")
@@ -13665,13 +13689,13 @@ checks, saving to PDF and PNG from a pipe and various small utilities.")
 (define-public r-tidyterra
   (package
     (name "r-tidyterra")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyterra" version))
        (sha256
-        (base32 "02d6cz7w4vj2zsyrzmmv0wcdrlnp9564yk0qiiwl68hl6zrfb15y"))))
+        (base32 "11y7kpg180k7lasayh0nw1fa1fqd92pmkvshbp4fv158yr0z04jx"))))
     (properties `((upstream-name . "tidyterra")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -19376,13 +19400,13 @@ finding the optimal argument combinations with respect to each diagnostic.")
 (define-public r-testanaapp
   (package
     (name "r-testanaapp")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TestAnaAPP" version))
        (sha256
-        (base32 "1jwi1qm8x7jbrp9h4w0a9hmh03qia9nkd38ii3v91rc9m3sz3a1l"))))
+        (base32 "0cnmx0cj2dz5mrd869fnx5phm2pj7ynfkfwa4avwyin15vvhxhpi"))))
     (properties `((upstream-name . "TestAnaAPP")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidysem

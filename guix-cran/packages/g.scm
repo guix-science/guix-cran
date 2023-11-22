@@ -2244,13 +2244,13 @@ Recommender System <doi:10.1080/01621459.2016.1219261> for the details.")
 (define-public r-gspcr
   (package
     (name "r-gspcr")
-    (version "0.9.4")
+    (version "0.9.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gspcr" version))
        (sha256
-        (base32 "1ai9qd001ir4cqsmwdzxlg4fxdc9bzd9zzwzmkv9rpzb6fffib8z"))))
+        (base32 "1ankzsqq1b662831bm3kdlzzdpl6nw05yira5yx36pm0vnhhcn7y"))))
     (properties `((upstream-name . "gspcr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -6647,13 +6647,13 @@ Doctolero (2020) <doi:10.1111/2041-210X.13350>).")
 (define-public r-grain
   (package
     (name "r-grain")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gRain" version))
        (sha256
-        (base32 "144nn35vn7srcm6bwnkryiivwdxgk7d2g6dhlsp83y7z90sd7k60"))))
+        (base32 "11b40ngfzqqx9pgfbgx7qr63ikccxh1hg9snw55anw32hym2dyfr"))))
     (properties `((upstream-name . "gRain")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen
@@ -7482,6 +7482,30 @@ approximations for larger datasets.")
 <https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL2025> to @code{GeneBank}
 Accession and ENTREZID <http://www.ncbi.nlm.nih.gov/gene>.")
     (license license:artistic2.0)))
+
+(define-public r-gpkg
+  (package
+    (name "r-gpkg")
+    (version "0.0.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gpkg" version))
+       (sha256
+        (base32 "0b4dg5jqp6c3bwk3zkfv2bwnnx61mr6pfx8dqb08xf23v0xpkb6i"))))
+    (properties `((upstream-name . "gpkg")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-dbi))
+    (home-page "https://humus.rocks/gpkg/")
+    (synopsis
+     "Utilities for the Open Geospatial Consortium 'GeoPackage' Format")
+    (description
+     "Build Open Geospatial Consortium @code{GeoPackage} files
+(<https://www.geopackage.org/>).  GDAL utilities for reading and writing spatial
+data are provided by the terra package.  Additional @code{GeoPackage} and SQLite
+features for attributes and tabular data are implemented with the RSQLite
+package.")
+    (license license:cc0)))
 
 (define-public r-gpk
   (package
@@ -14809,6 +14833,40 @@ probability density function of the t-distribution.")
      "Make smoothed stacked area charts in ggplot2'.  Stream plots are useful to show
 magnitude trends over time.")
     (license license:expat)))
+
+(define-public r-ggstats
+  (package
+    (name "r-ggstats")
+    (version "0.5.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggstats" version))
+       (sha256
+        (base32 "1jcydapwarl1cxinm80rjmmli8vmlid8alnh6w484bh7nwzmcsic"))))
+    (properties `((upstream-name . "ggstats")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-scales
+                             r-rlang
+                             r-purrr
+                             r-patchwork
+                             r-magrittr
+                             r-lifecycle
+                             r-ggplot2
+                             r-forcats
+                             r-dplyr
+                             r-cli
+                             r-broom-helpers))
+    (native-inputs (list r-knitr))
+    (home-page "https://larmarange.github.io/ggstats/")
+    (synopsis "Extension to 'ggplot2' for Plotting Stats")
+    (description
+     "This package provides new statistics, new geometries and new positions for
+ggplot2 and a suite of functions to facilitate the creation of statistical
+plots.")
+    (license license:gpl3+)))
 
 (define-public r-ggstar
   (package

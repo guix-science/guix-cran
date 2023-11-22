@@ -5752,6 +5752,36 @@ for more information).")
     (license (list license:asl2.0
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-rsparcs
+  (package
+    (name "r-rsparcs")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rSPARCS" version))
+       (sha256
+        (base32 "1693i1jnk2py46d1cngi8gqv8bq3i0fc7invliyv6lfpshwbi388"))))
+    (properties `((upstream-name . "rSPARCS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tigris
+                             r-sp
+                             r-sf
+                             r-raster
+                             r-plyr
+                             r-geosphere
+                             r-dplyr
+                             r-data-table))
+    (home-page "https://cran.r-project.org/package=rSPARCS")
+    (synopsis "Sites, Population, and Records Cleaning Skills")
+    (description
+     "Data cleaning including 1) generating datasets for time-series and
+case-crossover analyses based on raw hospital records, 2) linking individuals to
+an areal map, 3) picking out cases living within a buffer of certain size
+surrounding a site, etc.  For more information, please refer to Zhang W,etc.
+(2018) <doi:10.1016/j.envpol.2018.08.030>.")
+    (license license:gpl3)))
+
 (define-public r-rspa
   (package
     (name "r-rspa")
@@ -12877,13 +12907,13 @@ allows R to connect to any DBMS that has a ODBC driver.")
 (define-public r-rodbc
   (package
     (name "r-rodbc")
-    (version "1.3-21")
+    (version "1.3-22")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RODBC" version))
        (sha256
-        (base32 "16jddw6slr75a3li0rpbfw269syplarhax71fkn32p1w0fql2w56"))))
+        (base32 "1kl3mif0j697zdc33xlgfrq6jg048vf7d6n7m9rcaff08lvwcgzn"))))
     (properties `((upstream-name . "RODBC")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=RODBC")
@@ -16610,13 +16640,13 @@ ads, campaigns, agency clients and statistic from your ads account.")
 (define-public r-rmweather
   (package
     (name "r-rmweather")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rmweather" version))
        (sha256
-        (base32 "18ajzwm0jb6wklrxp8cmifym4wn22y2rw4llhjxrc98fkis3jgk3"))))
+        (base32 "0d76k80b7y3ay2njmanz45qvs5rj8mx076lln89bmi22fzwjarhj"))))
     (properties `((upstream-name . "rmweather")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -16630,17 +16660,22 @@ ads, campaigns, agency clients and statistic from your ads account.")
                              r-magrittr
                              r-lubridate
                              r-ggplot2
-                             r-dplyr))
+                             r-dplyr
+                             r-cli))
     (home-page "https://github.com/skgrange/rmweather")
     (synopsis
-     "Tools to Conduct Meteorological Normalisation on Air Quality Data")
+     "Tools to Conduct Meteorological Normalisation and Counterfactual Modelling for Air Quality Data")
     (description
      "An integrated set of tools to allow data users to conduct meteorological
-normalisation on air quality data.  This meteorological normalisation technique
-uses predictive random forest models to remove variation of pollutant
-concentrations so trends and interventions can be explored in a robust way.  For
-examples, see Grange et al. (2018) <doi:10.5194/acp-18-6223-2018> and Grange and
-Carslaw (2019) <doi:10.1016/j.scitotenv.2018.10.344>.")
+normalisation and counterfactual modelling for air quality data.  The
+meteorological normalisation technique uses predictive random forest models to
+remove variation of pollutant concentrations so trends and interventions can be
+explored in a robust way.  For examples, see Grange et al. (2018)
+<doi:10.5194/acp-18-6223-2018> and Grange and Carslaw (2019)
+<doi:10.1016/j.scitotenv.2018.10.344>.  The random forest models can also be
+used for counterfactual or business as usual (BAU) modelling by using the models
+to predict, from the model's perspective, the future.  For an example, see
+Grange et al. (2021) <doi:10.5194/acp-2020-1171>.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -26473,6 +26508,29 @@ from Names\" by Fangzhou Xie (2021) <@code{arXiv:2109.09228>}.")
      "Using a CSV, @code{LaTeX} and R to easily build attractive resumes.")
     (license license:bsd-3)))
 
+(define-public r-result
+  (package
+    (name "r-result")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "result" version))
+       (sha256
+        (base32 "031vviwvn85k7hl04c4hqxycj8mnr2j00gi2jqpwdxrxjaaf1dzb"))))
+    (properties `((upstream-name . "result")))
+    (build-system r-build-system)
+    (home-page "https://github.com/soumyaray/result")
+    (synopsis
+     "Result Type for Safely Handling Operations that can Succeed or Fail")
+    (description
+     "Allows wrapping values in success() and failure() types to capture the result of
+operations, along with any status codes.  Risky expressions can be wrapped in
+as_result() and functions wrapped in result() to catch errors and assign the
+relevant result types.  Monadic functions can be bound together as pipelines or
+transaction scripts using then_try(), to gracefully handle errors at any step.")
+    (license license:expat)))
+
 (define-public r-restriktor
   (package
     (name "r-restriktor")
@@ -35328,13 +35386,13 @@ Repertoire Dissimilarity Index.  Citation: Bolen and Rubelt, et al (2017)
 (define-public r-rdhs
   (package
     (name "r-rdhs")
-    (version "0.8.0")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rdhs" version))
        (sha256
-        (base32 "0zp5h7m7rd4d622rv4xqk4q4ycgzwlw7cwjsl4rvimqfvr69m8zv"))))
+        (base32 "0i25lbfbi3ikipk7k53bi1b57v2348ab08sh7rh2pqdlxpfkp7b7"))))
     (properties `((upstream-name . "rdhs")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -37466,6 +37524,55 @@ objects from the Matrix package class hierarchy.")
 Edwards (Forthcoming 2022)<https://edge.sagepub.com/pollock>, \"An R Companion to
 Political Analysis, 3rd Edition,\" Thousand Oaks, CA: Sage Publications.")
     (license license:cc0)))
+
+(define-public r-rcpa
+  (package
+    (name "r-rcpa")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RCPA" version))
+       (sha256
+        (base32 "17x4axwc7fib9f2gyvfmrdvrz1kqh2ic1f8aai5dlc8v93mda0dw"))))
+    (properties `((upstream-name . "RCPA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-summarizedexperiment
+                             r-stringr
+                             r-scales
+                             r-robustrankaggreg
+                             r-rlang
+                             r-limma
+                             r-jsonlite
+                             r-irdisplay
+                             r-httr
+                             r-graph
+                             r-ggrepel
+                             r-ggplot2
+                             r-ggpattern
+                             r-ggnewscale
+                             r-geoquery
+                             r-edger
+                             r-dplyr
+                             r-deseq2
+                             r-biocmanager
+                             r-biobase
+                             r-annotationdbi))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://cran.r-project.org/package=RCPA")
+    (synopsis "Consensus Pathway Analysis")
+    (description
+     "This package provides a set of functions to perform pathway analysis and meta
+analysis from multiple gene expression datasets, as well as visualization of the
+results.  The package is a wrapper of the following packages: Ritchie et al.
+(2015) <doi:10.1093/nar/gkv007>, Love et al. (2014)
+<doi:10.1186/s13059-014-0550-8>, Robinson et al. (2010)
+<doi:10.1093/bioinformatics/btp616>, Korotkevich et al. (2016)
+<arxiv:10.1101/060012>, Efron et al. (2015)
+<https://CRAN.R-project.org/package=GSA>, and Gu, Z. (2012)
+<https://CRAN.R-project.org/package=@code{CePa>}.")
+    (license license:gpl3)))
 
 (define-public r-rcorpora
   (package
@@ -42046,13 +42153,13 @@ summarize posterior distributions.")
 (define-public r-ratdat
   (package
     (name "r-ratdat")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ratdat" version))
        (sha256
-        (base32 "1d4ivllasg1yd3i95rsxl3hkyij5r9a3j83scv3ghx6bx7w79aj4"))))
+        (base32 "14p8dnc6a3yj98xqa8i90jb8nbwhr4g9drl3djdyswjwiiz30jlg"))))
     (properties `((upstream-name . "ratdat")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=ratdat")

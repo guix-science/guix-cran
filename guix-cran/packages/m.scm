@@ -1376,13 +1376,13 @@ Clavel et al. (2019) <DOI:10.1093/sysbio/syy045>, and Clavel & Morlon (2020)
 (define-public r-mvmonitoring
   (package
     (name "r-mvmonitoring")
-    (version "0.2.2")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mvMonitoring" version))
        (sha256
-        (base32 "1b9xr5g4jw56d1pm5k6pfh84zzmwwhlwnri9l2b3fw1kkblykv36"))))
+        (base32 "1s8djfn89qdyph3gahh5gsf1pdyn4k07p2a1rs9ajzjqv9dznc4p"))))
     (properties `((upstream-name . "mvMonitoring")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -5487,6 +5487,51 @@ R.S., Preve, D. (2012) <doi:10.1016/j.jeconom.2012.01.014>.")
      "This package contains auxiliary routines for influx software.  This packages is
 not intended to be used directly.  Influx was published here: Sokol et al.
 (2012) <doi:10.1093/bioinformatics/btr716>.")
+    (license license:gpl2+)))
+
+(define-public r-multbiplotr
+  (package
+    (name "r-multbiplotr")
+    (version "23.11.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MultBiplotR" version))
+       (sha256
+        (base32 "0qcf97r9f5l572dckfvi9pjl2gvc6zw36z34pbbfwxha8bnqiyqc"))))
+    (properties `((upstream-name . "MultBiplotR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xtable
+                             r-threeway
+                             r-scales
+                             r-psych
+                             r-polycor
+                             r-mvtnorm
+                             r-mirt
+                             r-mass
+                             r-lattice
+                             r-knitr
+                             r-hmisc
+                             r-gplots
+                             r-gparotation
+                             r-geometry
+                             r-dunn-test
+                             r-deldir
+                             r-dae
+                             r-car))
+    (home-page "https://cran.r-project.org/package=MultBiplotR")
+    (synopsis "Multivariate Analysis Using Biplots in R")
+    (description
+     "Several multivariate techniques from a biplot perspective.  It is the
+translation (with many improvements) into R of the previous package developed in
+Matlab'.  The package contains some of the main developments of my team during
+the last 30 years together with some more standard techniques.  Package
+includes: Classical Biplots, HJ-Biplot, Canonical Biplots, MANOVA Biplots,
+Correspondence Analysis, Canonical Correspondence Analysis, Canonical
+STATIS-ACT, Logistic Biplots for binary and ordinal data, Multidimensional
+Unfolding, External Biplots for Principal Coordinates Analysis or
+Multidimensional Scaling, among many others.  References can be found in the
+help of each procedure.")
     (license license:gpl2+)))
 
 (define-public r-multalloc
@@ -24925,6 +24970,31 @@ functions to detect that change.  We provide a method for using the change in
 distribution of p values as a way to detect the true signals in the data.")
     (license license:gpl3)))
 
+(define-public r-mhorseshoe
+  (package
+    (name "r-mhorseshoe")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Mhorseshoe" version))
+       (sha256
+        (base32 "1qg1kkdlchrz2394h533j58xrz7hclzd1j8g1wycrb92fjiz9345"))))
+    (properties `((upstream-name . "Mhorseshoe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=Mhorseshoe")
+    (synopsis "Approximate Algorithm for Horseshoe Prior")
+    (description
+     "This package provides an approximate algorithm for the horseshoe estimator used
+in Bayesian linear models.  By implementing a sampler with high computational
+cost in the Rcpp package and using an approximate algorithm that reduces matrix
+calculation complexity, parameter estimation speed for high-dimensional sparse
+data is faster.  The approximate algorithm is described in Johndrow et al.
+(2020) <https://www.jmlr.org/papers/v21/19-536.html>.")
+    (license license:expat)))
+
 (define-public r-mhmmbayes
   (package
     (name "r-mhmmbayes")
@@ -37427,6 +37497,28 @@ important variables using MARS and then fits ANN on the extracted important
 variables.")
     (license license:gpl3)))
 
+(define-public r-marradistrees
+  (package
+    (name "r-marradistrees")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "marradistrees" version))
+       (sha256
+        (base32 "1pl7mw354wczyplylk0w6k026ngf741dn4lq7cd87hnjcfifn86i"))))
+    (properties `((upstream-name . "marradistrees")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=marradistrees")
+    (synopsis
+     "Plots a Tree-Like Representation of a Numerical Variable (Marradi's Tree)")
+    (description
+     "This package provides a single function plotting Marradi's trees: a graphical
+representation of a numerical variable for comparing the variable mean and
+standard deviation across subgroups.  See A. Marradi \"L'analisi monovariata\"
+(1993, ISBN: 9788820496876).")
+    (license license:gpl3)))
+
 (define-public r-marqlevalg
   (package
     (name "r-marqlevalg")
@@ -38549,16 +38641,16 @@ plugin and the ability of downloading and processing static tiles.")
 (define-public r-mapsf
   (package
     (name "r-mapsf")
-    (version "0.7.1")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapsf" version))
        (sha256
-        (base32 "0lkzn1nm7rwzag0shik4hqcxvsdsj1xqkfy68l2qgdr1qxgvldc6"))))
+        (base32 "0fj7s180i1pxk0j5ysfxm9zm3pw6j5whpxjyk9dcw8mfiby387gl"))))
     (properties `((upstream-name . "mapsf")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sf r-rcpp r-classint))
+    (propagated-inputs (list r-sf r-s2 r-maplegend r-classint))
     (native-inputs (list r-knitr))
     (home-page "https://riatelab.github.io/mapsf/")
     (synopsis "Thematic Cartography")
@@ -38775,6 +38867,28 @@ coordinates and to aggregate variables based on the spatial hierarchy of units.
 The object returned from the package can be used for thematic maps with the
 build-in functions provided in mapping or with other packages already available.")
     (license license:gpl2+)))
+
+(define-public r-mapmisc
+  (package
+    (name "r-mapmisc")
+    (version "2.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mapmisc" version))
+       (sha256
+        (base32 "0pddmc76lb3wxyq49b7kjipyr2gpfsdix0vz9cj13aibljxy49xw"))))
+    (properties `((upstream-name . "mapmisc")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra r-geosphere))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=mapmisc")
+    (synopsis "Utilities for Producing Maps")
+    (description
+     "This package provides a minimal, light-weight set of tools for producing nice
+looking maps in R, with support for map projections.  See Brown (2016)
+<doi:10.32614/RJ-2016-005>.")
+    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-mapme-biodiversity
   (package

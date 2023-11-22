@@ -1362,16 +1362,23 @@ regression and logistic regression models through simulations.")
 (define-public r-nrba
   (package
     (name "r-nrba")
-    (version "0.2.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nrba" version))
        (sha256
-        (base32 "0vlc0w2x2rpddgwxsr5zi2kgfzpvnkfskznjm2q77svigpb3lpc2"))))
+        (base32 "1d3mgz9riy14a7n7swzizjl8y5qmbk9p9c01ml968nk60ivb6ppv"))))
     (properties `((upstream-name . "nrba")))
     (build-system r-build-system)
-    (propagated-inputs (list r-svrep r-survey r-magrittr r-dplyr r-broom))
+    (propagated-inputs (list r-tidyr
+                             r-svrep
+                             r-survey
+                             r-srvyr
+                             r-rlang
+                             r-magrittr
+                             r-dplyr
+                             r-broom))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=nrba")
     (synopsis "Methods for Conducting Nonresponse Bias Analysis (NRBA)")
@@ -2855,6 +2862,30 @@ user-friendly reports need to be created.")
     (synopsis "The 'noweb' System for R")
     (description "The noweb system for source code, implemented in R.")
     (license license:lgpl2.0)))
+
+(define-public r-novicedeveloperresources
+  (package
+    (name "r-novicedeveloperresources")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NoviceDeveloperResources" version))
+       (sha256
+        (base32 "0gflyws6p868nwjq8wq523mn3k75220ihwp067ckgf805qsq6znb"))))
+    (properties `((upstream-name . "NoviceDeveloperResources")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-devtools))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=NoviceDeveloperResources")
+    (synopsis "Resources to Assist Novice Developers")
+    (description
+     "Assist novice developers when preparing a single package or a set of integrated
+packages to submit to CRAN. Automate the following individual or batch
+processing: check local source packages; build local .tar.gz source files;
+install packages from local .tar.gz files; detect conflicts between function
+names in the environment.")
+    (license license:gpl2+)))
 
 (define-public r-novelqualcodes
   (package
@@ -5555,13 +5586,13 @@ but easily integrated with base and tidyverse'.")
 (define-public r-nmcalc
   (package
     (name "r-nmcalc")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMcalc" version))
        (sha256
-        (base32 "15jf38yvyiasq6bvnv23znp64njag432f1jb9zayghsny63m3dcl"))))
+        (base32 "01lp1cldldx6nhpsqlanfzybswxpqisrc8zncx4za3q85rvbqnjl"))))
     (properties `((upstream-name . "NMcalc")))
     (build-system r-build-system)
     (propagated-inputs (list r-data-table))
