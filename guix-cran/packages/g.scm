@@ -3603,13 +3603,13 @@ effects dependence.")
 (define-public r-growr
   (package
     (name "r-growr")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "growR" version))
        (sha256
-        (base32 "0xk0wwfvvj7gw2pfzrila6zadmzax2gsdc3skj9r00wxcj6dsanf"))))
+        (base32 "08ain1z9k5d1qm6aghsm9np2ksr1ivhyckmsy0j3r10m7mrgz9v9"))))
     (properties `((upstream-name . "growR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-rdpack r-r6))
@@ -4530,6 +4530,30 @@ measures and provides several copula graphics.")
 quadratic and cubic Bezier curves.  There are also functions for calculating
 points on curves, tangents to curves, and normals to curves.")
     (license license:gpl2+)))
+
+(define-public r-grfa
+  (package
+    (name "r-grfa")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GrFA" version))
+       (sha256
+        (base32 "00iya5aqff0f6r0rz0axgfjq41fmxzli5zymz4l7ddnxxp78mxdc"))))
+    (properties `((upstream-name . "GrFA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mvtnorm))
+    (home-page "https://cran.r-project.org/package=GrFA")
+    (synopsis "Group Factor Analysis")
+    (description
+     "Several group factor analysis algorithms are implemented, including Canonical
+Correlation-based Estimation by Choi et al. (2021)
+<doi:10.1016/j.jeconom.2021.09.008> , Generalised Canonical Correlation
+Estimation by Lin and Shin (2022) <doi:10.2139/ssrn.4295429>, Circularly
+Projected Estimation by Chen (2022) <doi:10.1080/07350015.2022.2051520>, and the
+approach we recently proposed, named Weighted Projection Estimation.")
+    (license license:gpl3)))
 
 (define-public r-grf
   (package
@@ -6454,6 +6478,60 @@ three key chemical properties: composition, polarity and molecular volume.  In
 turn, evolutionary distance is used as a proxy for the impact of missense
 mutations.  The higher the distance, the more deleterious the substitution is
 expected to be.")
+    (license license:expat)))
+
+(define-public r-granovagg
+  (package
+    (name "r-granovagg")
+    (version "1.4.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "granovaGG" version))
+       (sha256
+        (base32 "1w75d878p6izdr88j836vc7753c0mkjj5k3s04f09938gxda8a8w"))))
+    (properties `((upstream-name . "granovaGG")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rcolorbrewer
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://github.com/briandk/granovaGG")
+    (synopsis "Graphical Analysis of Variance Using ggplot2")
+    (description
+     "Create what we call Elemental Graphics for display of anova results.  The term
+elemental derives from the fact that each function is aimed at construction of
+graphical displays that afford direct visualizations of data with respect to the
+fundamental questions that drive the particular anova methods.  This package
+represents a modification of the original granova package; the key change is to
+use ggplot2', Hadley Wickham's package based on Grammar of Graphics concepts
+(due to Wilkinson).  The main function is granovagg.1w() (a graphic for one way
+ANOVA); two other functions (granovagg.ds() and granovagg.contr()) are to
+construct graphics for dependent sample analyses and contrast-based analyses
+respectively. (The function granova.2w(), which entails dynamic displays of
+data, is not currently part of @code{granovaGG}'.) The @code{granovaGG}
+functions are to display data for any number of groups, regardless of their
+sizes (however, very large data sets or numbers of groups can be problematic).
+For granovagg.1w() a specialized approach is used to construct data-based
+contrast vectors for which anova data are displayed.  The result is that the
+graphics use a straight line to facilitate clear interpretations while being
+faithful to the standard effect test in anova.  The graphic results are
+complementary to standard summary tables; indeed, numerical summary statistics
+are provided as side effects of the graphic constructions.  granovagg.ds() and
+granovagg.contr() provide graphic displays and numerical outputs for a dependent
+sample and contrast-based analyses.  The graphics based on these functions can
+be especially helpful for learning how the respective methods work to answer the
+basic question(s) that drive the analyses.  This means they can be particularly
+helpful for students and non-statistician analysts.  But these methods can be of
+assistance for work-a-day applications of many kinds, as they can help to
+identify outliers, clusters or patterns, as well as highlight the role of
+non-linear transformations of data.  In the case of granovagg.1w() and
+granovagg.ds() several arguments are provided to facilitate flexibility in the
+construction of graphics that accommodate diverse features of data, according to
+their corresponding display requirements.  See the help files for individual
+functions.")
     (license license:expat)))
 
 (define-public r-granova
@@ -11723,13 +11801,13 @@ Methodology. <doi:10.1027/1614-2241/a000153>.")
 (define-public r-glmmroptim
   (package
     (name "r-glmmroptim")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmmrOptim" version))
        (sha256
-        (base32 "0rs43vv31fdch83fs7ibx1zwwpcsdyqr7ggljfa9c168sgmhxa37"))))
+        (base32 "0i8b9pphsiy9bs43milkn1b2b7a3p2g0fci7l6vr3xp79bbkgk8y"))))
     (properties `((upstream-name . "glmmrOptim")))
     (build-system r-build-system)
     (propagated-inputs (list r-sparsechol
@@ -11757,13 +11835,13 @@ this package can be found in Watson and Pan (2022) <@code{arXiv:2207.09183>}.")
 (define-public r-glmmrbase
   (package
     (name "r-glmmrbase")
-    (version "0.4.6")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmmrBase" version))
        (sha256
-        (base32 "1bpi2z8gf7v4g5w3vwcxbpnx47gmr56sb17m42qp2zy4acjh27c1"))))
+        (base32 "0m1cmg1rnax8i93xrwnlp95jxsrg77d6r52h1a2cnc3ixnldv8zg"))))
     (properties `((upstream-name . "glmmrBase")))
     (build-system r-build-system)
     (propagated-inputs (list r-sparsechol
@@ -20138,31 +20216,6 @@ Endrizzi et al (2014)
     (description "This package provides tools")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-geostatsp
-  (package
-    (name "r-geostatsp")
-    (version "2.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "geostatsp" version))
-       (sha256
-        (base32 "0sd24fc5896xi5wijj3zhmkzq8rspnv9xcf6yc268f4cfzdwpzkc"))))
-    (properties `((upstream-name . "geostatsp")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-terra r-numderiv r-matrix r-abind))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=geostatsp")
-    (synopsis "Geostatistical Modelling with Likelihood and Bayes")
-    (description
-     "Geostatistical modelling facilities using @code{SpatRaster} and
-@code{SpatVector} objects are provided.  Non-Gaussian models are fit using
-INLA', and Gaussian geostatistical models use Maximum Likelihood Estimation.
-For details see Brown (2015) <doi:10.18637/jss.v063.i12>.  The
-@code{RandomFields} package is available at
-<https://www.wim.uni-mannheim.de/schlather/publications/software>.")
-    (license (list license:gpl2+ license:gpl3+))))
-
 (define-public r-geostats
   (package
     (name "r-geostats")
@@ -24032,6 +24085,39 @@ analysis.  See <https://www.github.com/@code{yanxianUCSB/gen5helper>} for more
 information, documentation and examples.")
     (license license:expat)))
 
+(define-public r-gen3sis
+  (package
+    (name "r-gen3sis")
+    (version "1.5.11")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gen3sis" version))
+       (sha256
+        (base32 "07r2x0mwrs1ghsfd0a2zj7m2khwq4pg64xiv3n89zy9w9b6vcyw9"))))
+    (properties `((upstream-name . "gen3sis")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-rcpp
+                             r-raster
+                             r-matrix
+                             r-gdistance
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/project-Gen3sis/R-package")
+    (synopsis "General Engine for Eco-Evolutionary Simulations")
+    (description
+     "This package contains an engine for spatially-explicit eco-evolutionary
+mechanistic models with a modular implementation and several support functions.
+It allows exploring the consequences of ecological and macroevolutionary
+processes across realistic or theoretical spatio-temporal landscapes on
+biodiversity patterns as a general term.  Reference: Oskar Hagen, Benjamin
+Flueck, Fabian Fopp, Juliano S. Cabral, Florian Hartig, Mikael Pontarp, Thiago
+F. Rangel, Loic Pellissier (2021) \"gen3sis: A general engine for
+eco-evolutionary simulations of the processes that shape Earth's biodiversity\"
+<doi:10.1371/journal.pbio.3001340>.")
+    (license license:gpl3)))
+
 (define-public r-gen2stage
   (package
     (name "r-gen2stage")
@@ -24605,16 +24691,21 @@ Kaishev et al. (2016) <doi:10.1007/s00180-015-0621-7> and Dimitrova et al.
 (define-public r-gecko
   (package
     (name "r-gecko")
-    (version "0.1.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gecko" version))
        (sha256
-        (base32 "11zvay16kjs0i60vlfglcvd2ym3yk9wwfa76qql2j5i7y3wmjbjk"))))
+        (base32 "1q0wzg3mkb6z7zs81zynj6x159w99h5an20a6m8wdqbday5sccyc"))))
     (properties `((upstream-name . "gecko")))
     (build-system r-build-system)
-    (propagated-inputs (list r-terra r-sp r-geosphere))
+    (propagated-inputs (list r-terra
+                             r-sp
+                             r-red
+                             r-kernlab
+                             r-geosphere
+                             r-biomod2))
     (home-page "https://cran.r-project.org/package=gecko")
     (synopsis "Geographical Ecology and Conservation Knowledge Online")
     (description

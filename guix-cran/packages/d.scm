@@ -3734,13 +3734,13 @@ drum patterns.")
 (define-public r-drugutilisation
   (package
     (name "r-drugutilisation")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DrugUtilisation" version))
        (sha256
-        (base32 "107wisld0ps4q3acx3x09lr7kc10b6sryqlj2vp9di5wyiwq3gdf"))))
+        (base32 "14mqvd3xkdjn578jcj4ij0nk2lwd7j859fy8dk4p11nrrwcdg6a0"))))
     (properties `((upstream-name . "DrugUtilisation")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -11267,13 +11267,13 @@ knowledge into account, as described by @code{GrÃ¸nneberg} and Foldnes (2022)
 (define-public r-disclosur
   (package
     (name "r-disclosur")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "disclosuR" version))
        (sha256
-        (base32 "1w6fyxwnbad4w172vv62v32ldlpiq7hr1c8qvc0fbwrhdx8ai4gc"))))
+        (base32 "01fx42h6gkygyfqaryaszxmpvf8di9szwrg2lfz3a2qqx3xryia6"))))
     (properties `((upstream-name . "disclosuR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -12336,13 +12336,13 @@ of the competitive or collaborative transition.")
 (define-public r-dimodels
   (package
     (name "r-dimodels")
-    (version "1.2.1")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DImodels" version))
        (sha256
-        (base32 "0w5kjmfiz3idvxrpsfazq4zqzh3sdrz928g2a5r754dk5bx0nai8"))))
+        (base32 "0fkflbv3ayhvwlixh4fpzx9fkz6hd6vzq2zdb3gzbr31nrfcdaxx"))))
     (properties `((upstream-name . "DImodels")))
     (build-system r-build-system)
     (propagated-inputs (list r-rootsolve r-multcomp r-hnp))
@@ -12959,6 +12959,30 @@ exponential mechanism for releasing set elements.  A sensitivity sampler
 non-private function sensitivity; combined with the generic mechanisms, it
 permits turn-key privatization of arbitrary programs.")
     (license license:expat)))
+
+(define-public r-diffnet
+  (package
+    (name "r-diffnet")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DiffNet" version))
+       (sha256
+        (base32 "1hil8p896vckgwmlr8vqkrwswclwh1hs8gxvk648gpahi1na1ssc"))))
+    (properties `((upstream-name . "DiffNet")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mass r-igraph r-assertthat))
+    (home-page "https://cran.r-project.org/package=DiffNet")
+    (synopsis
+     "Identifying Significant Node Scores using Network Diffusion Algorithm")
+    (description
+     "Designed for network analysis, leveraging the personalized @code{PageRank}
+algorithm to calculate node scores in a given graph.  This innovative approach
+allows users to uncover the importance of nodes based on a customized
+perspective, making it particularly useful in fields like bioinformatics, social
+network analysis, and more.")
+    (license license:gpl3+)))
 
 (define-public r-diffmatchpatch
   (package
@@ -24184,13 +24208,13 @@ extra layer of validation around input and output data.")
 (define-public r-databraryr
   (package
     (name "r-databraryr")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "databraryr" version))
        (sha256
-        (base32 "0zcvvydhywyzf6sldl5p60jixp73b7q7fqziz7l4c10f8cz07w1k"))))
+        (base32 "0jnnwzhbyy1mm5mmqdr36p4v4sd16m1g7p4nckffmai2fb70yjgf"))))
     (properties `((upstream-name . "databraryr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

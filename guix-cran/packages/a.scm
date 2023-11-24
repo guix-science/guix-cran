@@ -4042,6 +4042,30 @@ functions for simulating the effects of different rates of error on estimates of
 association strength between individuals using each method.")
     (license license:gpl2)))
 
+(define-public r-assocbin
+  (package
+    (name "r-assocbin")
+    (version "0.1-0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AssocBin" version))
+       (sha256
+        (base32 "0d5jd96mipwgfnc1qys61hly8bk8l8a0xhi4x677zm2sd9gkp6ic"))))
+    (properties `((upstream-name . "AssocBin")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=AssocBin")
+    (synopsis "Measuring Association with Recursive Binning")
+    (description
+     "An iterative implementation of a recursive binary partitioning algorithm to
+measure pairwise dependence with a modular design that allows user specification
+of the splitting logic and stop criteria.  Helper functions provide suggested
+versions of both and support visualization and the computation of summary
+statistics on final binnings.  For a complete description of the functionality
+and algorithm, see Salahub and Oldford (2023) <arxiv:2311.08561>.")
+    (license license:gpl3+)))
+
 (define-public r-assocafc
   (package
     (name "r-assocafc")
@@ -8305,13 +8329,13 @@ exposure/outcome, or both.  See <https://cran.r-project.org/package=episensr>.")
 (define-public r-apis
   (package
     (name "r-apis")
-    (version "2.0.2")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "APIS" version))
        (sha256
-        (base32 "1rqj15h6cyqhs7p3b4xa16jykxhv6ms37xi0b03wldmg9f02h8la"))))
+        (base32 "1bn4d99id4q4kzf7bs4i75w5advyij0hsf996fqsm9fn40hlqiv3"))))
     (properties `((upstream-name . "APIS")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinythemes
@@ -9807,13 +9831,13 @@ package function as well as at <https://tinyurl.com/ANOVA@code{StatsTool>}.")
 (define-public r-anomaly
   (package
     (name "r-anomaly")
-    (version "4.3.1")
+    (version "4.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "anomaly" version))
        (sha256
-        (base32 "159swzcyfd27370lcy20js5vfi2khvarb2258cdhjhsgnx89ps3m"))))
+        (base32 "1w0bc5147rqsakiz3cs37xcd27i2b5ni1dva2kxv8l17ma0519v3"))))
     (properties `((upstream-name . "anomaly")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -15257,13 +15281,13 @@ Zootechnics, Food Science and related areas).")
 (define-public r-agrmt
   (package
     (name "r-agrmt")
-    (version "1.42.8")
+    (version "1.42.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "agrmt" version))
        (sha256
-        (base32 "1czxcyqrmcpjh4h77p9c6gb63aj0mi1b8cdxp3q6r0k7dy8db7ad"))))
+        (base32 "04bq0ya6nxz97bzcclby1rhhz7fdgkh73lmzlpzfnfnfmwjbd2hd"))))
     (properties `((upstream-name . "agrmt")))
     (build-system r-build-system)
     (home-page "http://agrmt.r-forge.r-project.org")

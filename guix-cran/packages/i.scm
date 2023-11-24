@@ -7938,40 +7938,6 @@ subsets, ranges, regular expressions and others.  Implemented operators work on
 vectors, matrices, and lists.")
     (license license:gpl3)))
 
-(define-public r-ino
-  (package
-    (name "r-ino")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ino" version))
-       (sha256
-        (base32 "18pl1scg8lxz0x1r2ksvrlpr7qvwp88bxvwiz4j4w3if5w0i0qhk"))))
-    (properties `((upstream-name . "ino")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-scales
-                             r-rlang
-                             r-reshape2
-                             r-optimizer
-                             r-mvtnorm
-                             r-glue
-                             r-ggplot2
-                             r-foreach
-                             r-forcats
-                             r-dplyr
-                             r-dosnow
-                             r-crayon
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://loelschlaeger.de/ino/")
-    (synopsis "Initialization of Numerical Optimization")
-    (description
-     "Analysis of the initialization for numerical optimization of real-valued
-functions, including likelihood functions of statistical models.  See
-<https://loelschlaeger.de/ino/> for more details.")
-    (license license:gpl3+)))
-
 (define-public r-innsight
   (package
     (name "r-innsight")
@@ -9609,13 +9575,13 @@ delay distribution.")
 (define-public r-incidenceprevalence
   (package
     (name "r-incidenceprevalence")
-    (version "0.5.2")
+    (version "0.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IncidencePrevalence" version))
        (sha256
-        (base32 "0v750qj3yj14bk57ah66hy1v4rxrx3k5ip0f06vbqzrp902lil9c"))))
+        (base32 "1vdnp5cwpsg396y8dqya54lmzsg8k5554h7nxnhw92yahl29qc62"))))
     (properties `((upstream-name . "IncidencePrevalence")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -11288,13 +11254,13 @@ algorithm of Huang et al. (1992) <doi:10.1139/x92-172> and Zeide et al. (1993)
 (define-public r-imf-data
   (package
     (name "r-imf-data")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "imf.data" version))
        (sha256
-        (base32 "1al01a34jd2fmpfy8lx1p74sdmpjx3i7831ays4xybf1jlrzix2n"))))
+        (base32 "1530whjz1p61x9az9g386hab8dn45b7dk267wx25zyrjp89x1b25"))))
     (properties `((upstream-name . "imf.data")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-curl))

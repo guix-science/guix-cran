@@ -10166,16 +10166,17 @@ methods.")
 (define-public r-ocnet
   (package
     (name "r-ocnet")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OCNet" version))
        (sha256
-        (base32 "1rkvx62aigms959fx1iw0kshqlzpix20r0r3pn5csjipwjbjj7ym"))))
+        (base32 "1jd6389g0md8rch21j5sn183mbvwmqyak8pw5p8jxxyp1x4vj87s"))))
     (properties `((upstream-name . "OCNet")))
     (build-system r-build-system)
-    (propagated-inputs (list r-spdep
+    (propagated-inputs (list r-terra
+                             r-spdep
                              r-spam
                              r-rgl
                              r-rcpp

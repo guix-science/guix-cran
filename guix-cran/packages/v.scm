@@ -1658,13 +1658,13 @@ audio in general.")
 (define-public r-voi
   (package
     (name "r-voi")
-    (version "1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "voi" version))
        (sha256
-        (base32 "1ncxlswjh5z239kipb3mq5j0xvxawhrxd4w6jmdz150gq510nccq"))))
+        (base32 "1g3klq78g32inhxa597b85qb5v3kimvw40sc3c4nly0l4aphn244"))))
     (properties `((upstream-name . "voi")))
     (build-system r-build-system)
     (propagated-inputs (list r-progress

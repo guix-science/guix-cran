@@ -13642,13 +13642,13 @@ to be evaluated as successful.")
 (define-public r-contree
   (package
     (name "r-contree")
-    (version "0.3")
+    (version "0.3-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "conTree" version))
        (sha256
-        (base32 "1smbh6bbi2v6fjfyhcl1kk438qcsk98xhgyxiqx5s5zsgfwij4hc"))))
+        (base32 "033rxc0sh4crilqqahypd1yhzcxa1m7q10yg7paj637f9syaxcdh"))))
     (properties `((upstream-name . "conTree")))
     (build-system r-build-system)
     (native-inputs (list r-knitr gfortran))

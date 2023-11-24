@@ -10690,6 +10690,29 @@ Bahia (Brazil).  The approach implemented in the package is presented in the
 textbook of Tukey (1977) <ISBN: 978-0201076165>.")
     (license license:expat)))
 
+(define-public r-letsr
+  (package
+    (name "r-letsr")
+    (version "5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "letsR" version))
+       (sha256
+        (base32 "1snhs3m2jzb5mzkn4a3lhgfzmy385aii73aasxbayscfa10m23vb"))))
+    (properties `((upstream-name . "letsR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra r-sf r-geosphere))
+    (native-inputs (list r-knitr))
+    (home-page
+     "https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.12401")
+    (synopsis "Data Handling and Analysis in Macroecology")
+    (description
+     "Handling, processing, and analyzing geographic data on species distributions and
+environmental variables.  Read Vilela & Villalobos (2015)
+<doi:10.1111/2041-210X.12401> for details.")
+    (license license:gpl2)))
+
 (define-public r-lestat
   (package
     (name "r-lestat")

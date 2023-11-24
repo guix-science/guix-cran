@@ -2222,13 +2222,13 @@ and continuous moderators.  Allows correcting for phylogenetic relatedness.")
 (define-public r-jmvreadwrite
   (package
     (name "r-jmvreadwrite")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jmvReadWrite" version))
        (sha256
-        (base32 "1s7ps4xam6xp161ds6l1dq37kbxha2wvydfzh7d34hrhk0zfwigd"))))
+        (base32 "1anvbgwwgpn0ksiywzfg5qmhq5vnb4q7drrl02awa89fs2bnzxba"))))
     (properties `((upstream-name . "jmvReadWrite")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip r-jsonlite))
@@ -3716,13 +3716,13 @@ methodology, please refer to the documentation of targets
 (define-public r-jagshelper
   (package
     (name "r-jagshelper")
-    (version "0.1.11")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jagshelper" version))
        (sha256
-        (base32 "0n8jzzqy4zpzqx461dkma5sg4hvdr15hz2xg1jy7dhf6gz4yljls"))))
+        (base32 "0xncq9hvalswra687wpm6jzf1iv4fxay7mr1935qs9gcrdy4vi8h"))))
     (properties `((upstream-name . "jagshelper")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-jagsui))

@@ -11043,13 +11043,13 @@ Engineering Experimentation\" (Elsevier, 2003) with sample code.")
 (define-public r-engression
   (package
     (name "r-engression")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "engression" version))
        (sha256
-        (base32 "0x2mfyqpbr1bd73llm69yspw0bp1hfv7gjlwmpslnzym1ry8if1b"))))
+        (base32 "030fcjh7cwjqiydyxjhaa7rsc2wq50ywdyp4wd2cr7glpy1fl346"))))
     (properties `((upstream-name . "engression")))
     (build-system r-build-system)
     (propagated-inputs (list r-torch))
@@ -11062,7 +11062,7 @@ conditional mean, estimation of conditional quantiles, or sampling from the
 fitted distribution.  Training is done full-batch on CPU (the python version
 offers GPU-accelerated stochastic gradient descent).  Based on \"Engression:
 Extrapolation for nonlinear regression?\" by Xinwei Shen and Nicolai Meinshausen
-(2023) <arxiv:2307.00835>.")
+(2023).  Also supports classification (experimental). <arxiv:2307.00835>.")
     (license license:expat)))
 
 (define-public r-enetlts
@@ -19672,13 +19672,13 @@ models (Tversky & Sattath, 1979 <doi:10.1037/0033-295X.86.6.542>).")
 (define-public r-eattools
   (package
     (name "r-eattools")
-    (version "0.7.4")
+    (version "0.7.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eatTools" version))
        (sha256
-        (base32 "0qmbwwvqfkyd4z41hihza0996dvsvqshs3pqblfzdlbzyn7glh5b"))))
+        (base32 "1wn3m3h49j59gvzsnd12m15lwfgrbf6my8xpsij29vmni9p9w6nx"))))
     (properties `((upstream-name . "eatTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-data-table))

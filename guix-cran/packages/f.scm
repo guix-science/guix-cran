@@ -535,13 +535,13 @@ dealing with multicollinearity.  Initially described in Barbosa (2015)
 (define-public r-fuzzyresampling
   (package
     (name "r-fuzzyresampling")
-    (version "0.6.2")
+    (version "0.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FuzzyResampling" version))
        (sha256
-        (base32 "0kx3axm46i0jgv2x09qpggaayy5027yya16g8x1jfgrn9ya62357"))))
+        (base32 "1gic7la5ks7v37f3h4azazz4sv650sp6pl199wk4021blkah5r56"))))
     (properties `((upstream-name . "FuzzyResampling")))
     (build-system r-build-system)
     (home-page "https://github.com/mroman-ibs/FuzzyResampling")
@@ -5255,6 +5255,40 @@ The underlying mathematical structure is the Free Abelian group, hence the name.
  To cite in publications please use Hankin (2023) <arxiv:2307:13184>.")
     (license license:gpl2+)))
 
+(define-public r-fr
+  (package
+    (name "r-fr")
+    (version "0.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fr" version))
+       (sha256
+        (base32 "12p4xpdy2gfjp8ammzznfcnaqriw1brby84a7jjlaknl6r68chwh"))))
+    (properties `((upstream-name . "fr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yaml
+                             r-vroom
+                             r-tidyselect
+                             r-tibble
+                             r-s7
+                             r-rlang
+                             r-purrr
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/cole-brokamp/fr")
+    (synopsis "Frictionless Standards")
+    (description
+     "This package provides a \"tabular-data-resource\"
+(<https://specs.frictionlessdata.io/tabular-data-resource/>) is a simple format
+to describe a singular tabular data resource such as a CSV file.  It includes
+support both for metadata such as author and title and a schema to describe the
+data, for example the types of the fields/columns in the data.  Create a
+tabular-data-resource by providing a data.frame and specifying metadata.  Write
+and read tabular-data-resources to and from disk.")
+    (license license:expat)))
+
 (define-public r-fqadata
   (package
     (name "r-fqadata")
@@ -6720,13 +6754,13 @@ functions such as stats::lm(), stats::glm() and survival::coxph().")
 (define-public r-forestmangr
   (package
     (name "r-forestmangr")
-    (version "0.9.5")
+    (version "0.9.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "forestmangr" version))
        (sha256
-        (base32 "1diywnrvzyvpi7ygqmb26gii6ac741c2v3zc7pk6i0y09j89pgrq"))))
+        (base32 "0l8av1vg8dyrb15m08gby13qfalwcfizfn3jc2avvga8inyag0c5"))))
     (properties `((upstream-name . "forestmangr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

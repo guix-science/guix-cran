@@ -2398,13 +2398,13 @@ essentially the same cost as a single SVM fit.")
 (define-public r-svines
   (package
     (name "r-svines")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "svines" version))
        (sha256
-        (base32 "00abizr707r9vqz6vz431kz701c26z6gl7mahj2mma19c1gki55i"))))
+        (base32 "0zvwjbmy5jjngb25rzyp7phmrwalpfhwi3gdpmfsyfnr86d4xxnf"))))
     (properties `((upstream-name . "svines")))
     (build-system r-build-system)
     (propagated-inputs (list r-wdm
@@ -11900,6 +11900,29 @@ lists of independent states, as well as helper functions for working with state
 panel data and standardizing other data sources to create
 country-year/month/etc.  data.")
     (license license:expat)))
+
+(define-public r-statelevelforest
+  (package
+    (name "r-statelevelforest")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "StateLevelForest" version))
+       (sha256
+        (base32 "1y4y8idp6vq1108bs95h1xd2r8gja3ap56r31hnbi3ckyrhw46al"))))
+    (properties `((upstream-name . "StateLevelForest")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=StateLevelForest")
+    (synopsis "Historical State-Level Forest Cover Data in the United States")
+    (description
+     "This package provides a unique dataset of historical forest cover across all
+states in the United States, spanning from 1907 to 2017, along with 1630 as a
+reference year.  This dataset is important for understanding environmental
+changes and land use trends over time.  It includes functionality for easy
+access of the data.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-statebins
   (package
@@ -21773,13 +21796,13 @@ is linked to a regressive relationship underlying the spatial process.")
 (define-public r-spatialreg
   (package
     (name "r-spatialreg")
-    (version "1.2-9")
+    (version "1.3-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spatialreg" version))
        (sha256
-        (base32 "0gmrrddhhs5fcgfgm8w3rkjk6g6vdndlj92jb8naihbwxkzgkya5"))))
+        (base32 "0j8gw66xgqgq9sni4sjq0m5vyvk8q45wby7ry7aja56bc07x7bjj"))))
     (properties `((upstream-name . "spatialreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdep
@@ -21790,7 +21813,6 @@ is linked to a regressive relationship underlying the spatial process.")
                              r-matrix
                              r-mass
                              r-learnbayes
-                             r-expm
                              r-coda
                              r-boot))
     (native-inputs (list r-knitr))
@@ -33592,19 +33614,20 @@ Lambert (2013) <doi:10.1002/sim.5823>).")
 (define-public r-simstudy
   (package
     (name "r-simstudy")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simstudy" version))
        (sha256
-        (base32 "049f81kl4kbrbk9883bp14n21g3m4ps0izswl7irhamhshj1anzb"))))
+        (base32 "0917x93dy3c83b0kfbsgx7qfilwik0s2fgmjkc6xmj4d7zfbsbyf"))))
     (properties `((upstream-name . "simstudy")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp
                              r-pbv
                              r-mvnfast
                              r-glue
+                             r-fastglm
                              r-data-table
                              r-backports))
     (native-inputs (list r-knitr))
@@ -37877,13 +37900,13 @@ deprecated 2023-05-31.")
 (define-public r-shrinktvp
   (package
     (name "r-shrinktvp")
-    (version "2.0.6")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shrinkTVP" version))
        (sha256
-        (base32 "1p9s4n3dw95ghcma71ik5zidqk54cbsd30csnbqp2w377241lxd3"))))
+        (base32 "1a49g5lcpl27k0j4f15a7gz58332qzbxxq9hsq4adx70dv4hp3ni"))))
     (properties `((upstream-name . "shrinkTVP")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -39755,6 +39778,37 @@ dimensionality assumption, characteristic and information curves under various
 models with a user friendly shiny interface.")
     (license license:gpl3+)))
 
+(define-public r-shinyinvoice
+  (package
+    (name "r-shinyinvoice")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "shinyInvoice" version))
+       (sha256
+        (base32 "0zs9r0lif5cn154xxk76zzzakk2i8grxj6shcmn4a2q1igxj86ym"))))
+    (properties `((upstream-name . "shinyInvoice")))
+    (build-system r-build-system)
+    (inputs (list pandoc))
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-shiny
+                             r-rlang
+                             r-quantmod
+                             r-dplyr))
+    (home-page "https://github.com/fernandoroa/invoice-public")
+    (synopsis "Shiny App - Generate a Pdf Invoice with 'Rmarkdown'")
+    (description
+     "Generate an invoice containing a header with invoice number and businesses
+details.  The invoice table contains any of: salary, one-liner costs, grouped
+costs.  Under the table signature and bank account details appear.  Pages are
+numbered when more than one.  Source .json and .Rmd files are editable in the
+app.  This package includes functions for getting exchange rates between
+currencies based on quantmod (Ryan and Ulrich, 2023
+<https://CRAN.R-project.org/package=quantmod>).")
+    (license license:gpl2+)))
+
 (define-public r-shinyhugeplot
   (package
     (name "r-shinyhugeplot")
@@ -40358,13 +40412,13 @@ colors and size).")
 (define-public r-shinybusy
   (package
     (name "r-shinybusy")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinybusy" version))
        (sha256
-        (base32 "1c87456ipg4qq8sb7xjn3q72dsfr2hl2l73nncj4i87fgvm85mkl"))))
+        (base32 "1myarm2g5j91qikxqjx7b1a2kpdyll3mdcmagw9fr443dm2nnwa6"))))
     (properties `((upstream-name . "shinybusy")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-jsonlite r-htmlwidgets r-htmltools))
@@ -50418,6 +50472,29 @@ procedures, including UPS and GS.")
     (description
      "This package provides a group of functions to scrape data from different
 websites, for academic purposes.")
+    (license license:expat)))
+
+(define-public r-scraper
+  (package
+    (name "r-scraper")
+    (version "0.1.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "scrapeR" version))
+       (sha256
+        (base32 "1zb6v1pxhy8rhqhwwz99fsd38fsw9cdnyp0252m8s7if6in44vrc"))))
+    (properties `((upstream-name . "scrapeR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rvest r-magrittr r-httr))
+    (home-page "https://cran.r-project.org/package=scrapeR")
+    (synopsis
+     "These Functions Fetch and Extract Text Content from Specified Web Pages")
+    (description
+     "The @code{scrapeR} package utilizes functions that fetch and extract text
+content from specified web pages.  It handles HTTP errors and parses HTML
+efficiently.  The package can handle hundreds of websites at a time using the
+@code{scrapeR_in_batches}() command.")
     (license license:expat)))
 
 (define-public r-scraep

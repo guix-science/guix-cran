@@ -2938,6 +2938,37 @@ are detected.  This package supports following data provides: Yahoo
 @code{AlphaVantage} (www.alphavantage.co), Tiingo (www.tiingo.com).")
     (license license:expat)))
 
+(define-public r-rtsa
+  (package
+    (name "r-rtsa")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RTSA" version))
+       (sha256
+        (base32 "1fkr374y7pjv99g2b0cdcr5qhfjnjwl52p39w4fvw7iv4ahvvxs1"))))
+    (properties `((upstream-name . "RTSA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scales r-rcpp r-metafor r-ggplot2))
+    (native-inputs (list r-knitr r-bookdown))
+    (home-page "https://github.com/AnneLyng/RTSA")
+    (synopsis
+     "'Trial Sequential Analysis' for Error Control and Inference in Sequential Meta-Analyses")
+    (description
+     "Frequentist sequential meta-analysis based on Trial Sequential Analysis (TSA) in
+programmed in Java by the Copenhagen Trial Unit (CTU).  The primary function is
+the calculation of group sequential designs for meta-analysis to be used for
+planning and analysis of both prospective and retrospective sequential
+meta-analyses to preserve type-I-error control under sequential testing.  RTSA
+includes tools for sample size and trial size calculation for meta-analysis and
+core meta-analyses methods such as fixed-effect and random-effects models and
+forest plots.  TSA is described in Wetterslev et.  al (2008)
+<doi:10.1016/j.jclinepi.2007.03.013>.  The methods for deriving the group
+sequential designs are based on Jennison and Turnbull (1999,
+ISBN:9780849303166).")
+    (license license:gpl2+)))
+
 (define-public r-rts2
   (package
     (name "r-rts2")
@@ -11062,16 +11093,17 @@ allows for the replication of the data application considered in the paper.")
 (define-public r-rosv
   (package
     (name "r-rosv")
-    (version "0.4.2")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rosv" version))
        (sha256
-        (base32 "1b3lid3ndihb6yacr6szv0c4pq6xcrdcmx89y7wpvy8sxlcxbswc"))))
+        (base32 "0av3p8zcfhi45k70c42xzawv6d7y9krzhhydhwa0wpn7nn2iqvzy"))))
     (properties `((upstream-name . "rosv")))
     (build-system r-build-system)
-    (propagated-inputs (list r-purrr
+    (propagated-inputs (list r-r6
+                             r-purrr
                              r-memoise
                              r-jsonlite
                              r-httr2
@@ -25795,6 +25827,37 @@ functions to create R packages that use Rust code.  Under the hood, the Rust
 crate extendr is used to do all the heavy lifting.")
     (license license:expat)))
 
+(define-public r-rexpokit
+  (package
+    (name "r-rexpokit")
+    (version "0.26.6.14")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rexpokit" version))
+       (sha256
+        (base32 "1fybxxmwm0xw3pwv5lx0vkmi4f215hvnwk3kbwm3031c1vr662l4"))))
+    (properties `((upstream-name . "rexpokit")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp))
+    (native-inputs (list gfortran))
+    (home-page "http://phylo.wikidot.com/rexpokit")
+    (synopsis "R Wrappers for EXPOKIT; Other Matrix Functions")
+    (description
+     "Wraps some of the matrix exponentiation utilities from EXPOKIT
+(<http://www.maths.uq.edu.au/expokit/>), a FORTRAN library that is widely
+recommended for matrix exponentiation (Sidje RB, 1998. \"Expokit: A Software
+Package for Computing Matrix Exponentials.\" ACM Trans.  Math.  Softw.  24(1):
+130-156).  EXPOKIT includes functions for exponentiating both small, dense
+matrices, and large, sparse matrices (in sparse matrices, most of the cells have
+value 0).  Rapid matrix exponentiation is useful in phylogenetics when we have a
+large number of states (as we do when we are inferring the history of
+transitions between the possible geographic ranges of a species), but is
+probably useful in other ways as well.  NOTE: In case FORTRAN checks temporarily
+get rexpokit archived on CRAN, see archived binaries at @code{GitHub} in:
+nmatzke/Matzke_R_binaries (binaries install without compilation of source code).")
+    (license license:gpl2+)))
+
 (define-public r-rexperigen
   (package
     (name "r-rexperigen")
@@ -26074,6 +26137,39 @@ documentation, and examples.")
      "Processes and visualizes the output of complex phylogenetic analyses from the
 @code{RevBayes} phylogenetic graphical modeling software.")
     (license license:gpl3)))
+
+(define-public r-revert
+  (package
+    (name "r-revert")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "revert" version))
+       (sha256
+        (base32 "1x3ykqlyhy9z1rizp4y1p90mkl2wv56k87z2qcz69dznys34z5xy"))))
+    (properties `((upstream-name . "revert")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rsamtools
+                             r-iranges
+                             r-genomicranges
+                             r-bsgenome-hsapiens-ucsc-hg38
+                             r-bsgenome
+                             r-biostrings))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=revert")
+    (synopsis "Reversion Mutation Identifier for Sequencing Data")
+    (description
+     "This package provides a tool for detecting reversions for a given pathogenic
+mutation from next-generation DNA sequencing data.  It analyses reads aligned to
+the locus of the pathogenic mutation and reports reversion events where
+secondary mutations have restored or undone the deleterious effect of the
+original pathogenic mutation, e.g., secondary indels complement to a frameshift
+pathogenic mutation converting the orignal frameshift mutation into inframe
+mutaions, deletions or SNVs that replaced the original pathogenic mutation
+restoring the open reading frame, SNVs changing the stop codon caused by the
+original nonsense SNV into an amino acid, etc.")
+    (license license:gpl2)))
 
 (define-public r-reverser
   (package
@@ -27921,13 +28017,13 @@ PROJ library is available at <https://proj.org/>.")
 (define-public r-reproducible
   (package
     (name "r-reproducible")
-    (version "2.0.9")
+    (version "2.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reproducible" version))
        (sha256
-        (base32 "168n3d31mcimgkgj631lng4ik7l756dk8dgbvyi1ic75a31f865q"))))
+        (base32 "0q0wgbyr2gqjrxb1jwb6ysyqbgpsc0nq6501smqgrmhxfavb0m1d"))))
     (properties `((upstream-name . "reproducible")))
     (build-system r-build-system)
     (propagated-inputs (list r-lobstr
@@ -29335,13 +29431,13 @@ things.")
 (define-public r-remify
   (package
     (name "r-remify")
-    (version "3.2.0")
+    (version "3.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "remify" version))
        (sha256
-        (base32 "1ifr8b8mlwxr7i4pgsccgqy206l7wyxjklmn0nn2qgqvmnkmbmh1"))))
+        (base32 "15c70aqm8hppg22im4yc6n0gyc3hbmp59v8qvja6s7p6avb540nl"))))
     (properties `((upstream-name . "remify")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-igraph))
@@ -34341,6 +34437,35 @@ reproducibility of reactable tables by embedding images from the web directly
 into cells.  Save the final table output as a static image or interactive file.")
     (license license:expat)))
 
+(define-public r-reactable-extras
+  (package
+    (name "r-reactable-extras")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "reactable.extras" version))
+       (sha256
+        (base32 "16cfldbfcz34jp0kfxiaz8l49ri2s9fr1r9kissqzs0xzjrp78in"))))
+    (properties `((upstream-name . "reactable.extras")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shiny
+                             r-rlang
+                             r-rjson
+                             r-reactable
+                             r-purrr
+                             r-htmltools
+                             r-dplyr
+                             r-checkmate))
+    (home-page "https://appsilon.github.io/reactable.extras/")
+    (synopsis "Extra Features for 'reactable' Package")
+    (description
+     "Enhanced functionality for reactable in shiny applications, offering interactive
+and dynamic data table capabilities with ease.  With reactable.extras', easily
+integrate a range of functions and components to enrich your shiny apps and
+facilitate user-friendly data exploration.")
+    (license license:lgpl3)))
+
 (define-public r-reactable
   (package
     (name "r-reactable")
@@ -38663,13 +38788,13 @@ in a Permutation Test Framework).")
 (define-public r-rcmdrplugin-bws3
   (package
     (name "r-rcmdrplugin-bws3")
-    (version "0.1-0")
+    (version "0.2-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcmdrPlugin.BWS3" version))
        (sha256
-        (base32 "0qysk8800pslkc3lf7nkxc6xwsbc0516h3rkqgdb9x7l0557vbpx"))))
+        (base32 "061k89bdi0z16qbgs6p25rsigsk46y08i4dm5cckj4p451l8lmq7"))))
     (properties `((upstream-name . "RcmdrPlugin.BWS3")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-support-ces r-support-bws3 r-rcmdr))
@@ -45945,6 +46070,55 @@ data analysis and visualization can be done easily.")
 <https://developers.activecampaign.com/reference>.  Provide functions for
 getting data by deals, contacts, accounts, campaigns and messages.")
     (license license:expat)))
+
+(define-public r-racmacs
+  (package
+    (name "r-racmacs")
+    (version "1.2.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Racmacs" version))
+       (sha256
+        (base32 "0cp5kak6dy7zllmwz1fxn0cxgj0c7vnih06pav51jj68ywrjcjz4"))))
+    (properties `((upstream-name . "Racmacs")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs
+                             r-shinyjs
+                             r-shinyfiles
+                             r-shiny
+                             r-shape
+                             r-rmarchingcubes
+                             r-rlang
+                             r-rcppprogress
+                             r-rcppensmallen
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-rapidjsonr
+                             r-mass
+                             r-magrittr
+                             r-ks
+                             r-jsonlite
+                             r-igraph
+                             r-htmlwidgets
+                             r-htmltools
+                             r-ggplot2
+                             r-ellipsis
+                             r-dplyr
+                             r-brotli))
+    (native-inputs (list r-knitr esbuild))
+    (home-page "https://acorg.github.io/Racmacs/")
+    (synopsis "Antigenic Cartography Macros")
+    (description
+     "This package provides a toolkit for making antigenic maps from immunological
+assay data, in order to quantify and visualize antigenic differences between
+different pathogen strains as described in Smith et al. (2004)
+<doi:10.1126/science.1097211> and used in the World Health Organization
+influenza vaccine strain selection process.  Additional functions allow for the
+diagnostic evaluation of antigenic maps and an interactive viewer is provided to
+explore antigenic relationships amongst several strains and incorporate the
+visualization of associated genetic information.")
+    (license license:agpl3)))
 
 (define-public r-racir
   (package

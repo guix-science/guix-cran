@@ -3645,13 +3645,13 @@ and Erhardt (2021) \"A spatiotemporal model for multivariate occupancy data\"
 (define-public r-multiobjmatch
   (package
     (name "r-multiobjmatch")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MultiObjMatch" version))
        (sha256
-        (base32 "0bqr1yv4bmxlb8qha0saxkra0x1qch9g0kzp25qia8yz2fs41bpa"))))
+        (base32 "1a20ca8k7plgdz084hrjrlx7p1nm1cl74v3vlk3jk1dwbgq04833"))))
     (properties `((upstream-name . "MultiObjMatch")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlemon
@@ -5216,13 +5216,13 @@ likelihood estimation and Bayesian inference.")
 (define-public r-multiatsm
   (package
     (name "r-multiatsm")
-    (version "0.3.4")
+    (version "0.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MultiATSM" version))
        (sha256
-        (base32 "0cni4926xn0kfny1w0kkjhgwrb0bjqxa8cl4bx04xlch1n5f9692"))))
+        (base32 "0hcmf5hy4rab0kzwzxs15bs5n0czsc68m4f8j3ib4hjf33rd4i1a"))))
     (properties `((upstream-name . "MultiATSM")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-wrapr r-pracma r-hablar r-ggplot2))
@@ -11247,13 +11247,13 @@ A. Berra's list of stop words for Ancient Greek and Latin.")
 (define-public r-moreparty
   (package
     (name "r-moreparty")
-    (version "0.3.3")
+    (version "0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "moreparty" version))
        (sha256
-        (base32 "1kjj4qaj4yfqqdwqiwaac2cj7l09ksxgk8lhmi3rcv62b47cc57y"))))
+        (base32 "0zny9bffj8dfl6i76ylrcgrbfbawk6aksdfkn4vf57zg7qfv0yqh"))))
     (properties `((upstream-name . "moreparty")))
     (build-system r-build-system)
     (propagated-inputs (list r-vip
@@ -13266,13 +13266,13 @@ drug, using a Bayesian decision procedure based on logistic regression.")
 (define-public r-modernva
   (package
     (name "r-modernva")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modernVA" version))
        (sha256
-        (base32 "0kbk1jm39s6q2dyk5s3kn9mcjssqpkm5czr7vc2va92sg19174r9"))))
+        (base32 "0hk98m83gpy12yffj4hl3qjl6fc75hsmw8j2577w4j073aml8x6p"))))
     (properties `((upstream-name . "modernVA")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=modernVA")
@@ -16698,13 +16698,13 @@ composed to form preprocessing pipelines.")
 (define-public r-mlr3viz
   (package
     (name "r-mlr3viz")
-    (version "0.6.1")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3viz" version))
        (sha256
-        (base32 "0vw220kl330ib989hhaqhdyrba90bxc2g2cgnyjhid1flk3wqw73"))))
+        (base32 "0d8n1rq3qz2znk8222n25zk07vi1vmbyazzaahxnyca1igyx2wq6"))))
     (properties `((upstream-name . "mlr3viz")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -17922,13 +17922,13 @@ increments (BAI) was described by @code{JevÅ¡enak} and Skudnik (2021)
 (define-public r-mlflow
   (package
     (name "r-mlflow")
-    (version "2.8.0")
+    (version "2.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlflow" version))
        (sha256
-        (base32 "1x8dwyhak19pbrh8bd5irzi413x34n3zxcwjrfd35cqvdqpf2pjn"))))
+        (base32 "1c4lbn2acff009d2l28nyqdpqh2jjgx3v77l9v21c82cnq1hsw0x"))))
     (properties `((upstream-name . "mlflow")))
     (build-system r-build-system)
     (propagated-inputs (list r-zeallot
@@ -27762,6 +27762,42 @@ detecting inconsistency of signals; - forest plots with the summary of
 replicability analysis results; - Allows Replicability-analysis with or without
 the common-effect assumption.")
     (license license:gpl2+)))
+
+(define-public r-metarange
+  (package
+    (name "r-metarange")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "metaRange" version))
+       (sha256
+        (base32 "0dnxzfhr4m84vspba0ds1vhdbdj1vr2qj87ddvzb57v1mi1gihnn"))))
+    (properties `((upstream-name . "metaRange")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra r-rcpparmadillo r-rcpp r-r6 r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://metaRange.github.io/metaRange/")
+    (synopsis
+     "Framework to Build Mechanistic and Metabolic Constrained Species Distribution Models")
+    (description
+     "Build spatially and temporally explicit process-based species distribution
+models, that can include an arbitrary number of environmental factors, species
+and processes including metabolic constraints and species interactions.  The
+focus of the package is simulating populations of one or multiple species in a
+grid-based landscape and studying the meta-population dynamics and emergent
+patterns that arise from the interaction of species under complex environmental
+conditions.  It provides functions for common ecological processes such as
+negative exponential, kernel-based dispersal (see Nathan et al. (2012)
+<doi:10.1093/acprof:oso/9780199608898.003.0015>), calculation of the
+environmental suitability based on cardinal values ( Yin et al. (1995)
+<doi:10.1016/0168-1923(95)02236-Q>, simplified by Yan and Hunt (1999)
+<doi:10.1006/anbo.1999.0955> see eq: 4), reproduction in form of an Ricker model
+(see Ricker (1954) <doi:10.1139/f54-039> and Cabral and Schurr (2010)
+<doi:10.1111/j.1466-8238.2009.00492.x>), as well as metabolic scaling based on
+the metabolic theory of ecology (see Brown et al. (2004) <doi:10.1890/03-9000>
+and Brown, Sibly and Kodric-Brown (2012) <doi:10.1002/9781119968535.ch>).")
+    (license license:gpl3)))
 
 (define-public r-metaprotr
   (package

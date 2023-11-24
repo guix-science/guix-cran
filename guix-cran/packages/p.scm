@@ -1702,6 +1702,38 @@ estimate under maximal publication bias obtained simply by conducting a standard
 meta-analysis of only the negative and \"nonsignificant\" studies.")
     (license license:gpl2)))
 
+(define-public r-public-ctn0094extra
+  (package
+    (name "r-public-ctn0094extra")
+    (version "1.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "public.ctn0094extra" version))
+       (sha256
+        (base32 "0zmf0nx6skzpbdy8niqm2d7an1q4wy6y30wim53i18mzpm84wys4"))))
+    (properties `((upstream-name . "public.ctn0094extra")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-purrr
+                             r-public-ctn0094data
+                             r-magrittr
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://ctn-0094.github.io/public.ctn0094extra/")
+    (synopsis "Helper Files for the CTN-0094 Relational Database")
+    (description
+     "Engineered features and \"helper\" functions ancillary to the public.ctn0094data
+package, extending this package for ease of use (see
+<https://CRAN.R-project.org/package=public.ctn0094data>).  This
+public.ctn0094data package contains harmonized datasets from some of the
+National Institute of Drug Abuse's Clinical Trials Network (NIDA's CTN)
+projects.  Specifically, the CTN-0094 project is to harmonize and de-identify
+clinical trials data from the CTN-0027, CTN-0030, and CTN-51 studies for opioid
+use disorder.  This current version is built from public.ctn0094data v.  1.0.6.")
+    (license license:expat)))
+
 (define-public r-public-ctn0094data
   (package
     (name "r-public-ctn0094data")
@@ -1770,6 +1802,42 @@ that expand ggplot2 plots and functions relevant for introductory papers in
 Epidemiology or Public Health.  Please note that use of the provided data sets
 is for educational purposes only.")
     (license license:gpl2)))
+
+(define-public r-pubchemr
+  (package
+    (name "r-pubchemr")
+    (version "0.99-1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PubChemR" version))
+       (sha256
+        (base32 "00gq7mqdbw0i7fyhzksnfd0i37535yl9lx0ah7gl32wdlvgfbj73"))))
+    (properties `((upstream-name . "PubChemR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rjsonio
+                             r-rcurl
+                             r-magrittr
+                             r-httr
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=PubChemR")
+    (synopsis
+     "Interface to the 'PubChem' Database for Chemical Data Retrieval")
+    (description
+     "This package provides an R interface to the @code{PubChem} database, which is a
+repository for chemical information and a resource for finding chemical and
+biological data.  The package simplifies the process of retrieving and handling
+chemical compound information from @code{PubChem}'.  Users can search for
+compounds, retrieve standard chemical information, download data in various
+formats, and query the database using the @code{PubChem} Power User Gateway
+(PUG) RESTful API <https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest>.  The package
+aims to facilitate the integration of chemical data in bioinformatics and
+cheminformatics workflows.")
+    (license license:gpl2+)))
 
 (define-public r-ptycho
   (package
@@ -7199,13 +7267,13 @@ models.")
 (define-public r-proae
   (package
     (name "r-proae")
-    (version "0.2.12")
+    (version "0.2.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ProAE" version))
        (sha256
-        (base32 "187p3i6gbcqycdl02n6nw529n8hkwd87qsy4d37bm0jgn21d2adj"))))
+        (base32 "02k8ndqhmqixqprj8jsc41lj4hrgjm13m6nc310057kdrpvi8lhv"))))
     (properties `((upstream-name . "ProAE")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr
@@ -9996,13 +10064,13 @@ on the work of Rothman and Greenland (2018).")
 (define-public r-precipe
   (package
     (name "r-precipe")
-    (version "3.0.1-1")
+    (version "3.0.1-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pRecipe" version))
        (sha256
-        (base32 "066rkdzrkh9s714x1fg5rmjikkwmna2d42fzlzgk1xjnn4ypsngh"))))
+        (base32 "13i8mk7d5zxmym13hbgx60085jcx4rnp9qk2yypbra587p66mdg2"))))
     (properties `((upstream-name . "pRecipe")))
     (build-system r-build-system)
     (inputs (list proj gdal))
@@ -10320,33 +10388,6 @@ recursively estimates the coefficients and the error autocorrelation of the
 specified model until sufficient convergence of the AR(1) coefficient is
 attained.")
     (license license:gpl2)))
-
-(define-public r-practools
-  (package
-    (name "r-practools")
-    (version "1.4.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PracTools" version))
-       (sha256
-        (base32 "1p7bmkbd2q36ip5zz7bkn82w6dv3amxwrm9v7v03cci54c8n2rlv"))))
-    (properties `((upstream-name . "PracTools")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-usmap r-ggplot2 r-geosphere r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=PracTools")
-    (synopsis "Tools for Designing and Weighting Survey Samples")
-    (description
-     "This package provides functions and datasets to support Valliant, Dever, and
-Kreuter, Practical Tools for Designing and Weighting Survey Samples (2nd
-edition, 2018).  Contains functions for sample size calculation for survey
-samples using stratified or clustered one-, two-, and three-stage sample
-designs, and single-stage audit sample designs.  Functions are included that
-will group geographic units accounting for distances apart and measures of size.
- Other functions compute variance components for multistage designs and sample
-sizes in two-phase designs.  A number of example data sets are included.")
-    (license license:gpl3)))
 
 (define-public r-practicalsigni
   (package
@@ -13114,13 +13155,13 @@ based on Hyndman, R J and Mesgaran, M B and Cousens, R D (2015)
 (define-public r-poptrend
   (package
     (name "r-poptrend")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "poptrend" version))
        (sha256
-        (base32 "0hypxpb18azg6q1mqrphbx3x262h9ybwhlkb8fyd6vr7jjb5wn3h"))))
+        (base32 "1vwz6j318x6p92mksnn19jbx8667pqdc7nxgm6qa87kprsrymz6s"))))
     (properties `((upstream-name . "poptrend")))
     (build-system r-build-system)
     (propagated-inputs (list r-mgcv))
@@ -13915,6 +13956,32 @@ calculations used here are based on von Fischer and Hedin (2002)
 <doi:10.1029/2001GB001448> with some modifications.")
     (license license:expat)))
 
+(define-public r-poolbal
+  (package
+    (name "r-poolbal")
+    (version "0.1-0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PoolBal" version))
+       (sha256
+        (base32 "11v615bri2ikdzrriidfzfn732465rfzjdw83rfncpaxgalchy59"))))
+    (properties `((upstream-name . "PoolBal")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=PoolBal")
+    (synopsis "Balancing Central and Marginal Rejection of Pooled p-Values")
+    (description
+     "When using pooled p-values to adjust for multiple testing, there is an inherent
+balance that must be struck between rejection based on weak evidence spread
+among many tests and strong evidence in a few, explored in Salahub and Olford
+(2023) <@code{arXiv:2310.16600>}.  This package provides functionality to
+compute marginal and central rejection levels and the centrality quotient for
+p-value pooling functions and provides implementations of the chi-squared
+quantile pooled p-value (described in Salahub and Oldford (2023)) and a proposal
+from Heard and Rubin-Delanchy (2018) <doi:10.1093/biomet/asx076> to control the
+quotient's value.")
+    (license license:gpl3+)))
+
 (define-public r-poolabc
   (package
     (name "r-poolabc")
@@ -14675,13 +14742,13 @@ Liao et al. (2021) <doi:10.1007/s00122-021-03834-x>.")
 (define-public r-polyhedralcubature
   (package
     (name "r-polyhedralcubature")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "polyhedralCubature" version))
        (sha256
-        (base32 "0nbypc8l762jalqa31kcwh7f0vb82308dp3m6c5irpm4sn3bziyf"))))
+        (base32 "1la8cj261c4vshr4yd3vgplzv1ykrkgvlwrjm49fgzh142rk59gc"))))
     (properties `((upstream-name . "polyhedralCubature")))
     (build-system r-build-system)
     (propagated-inputs (list r-tessellation
@@ -14689,6 +14756,9 @@ Liao et al. (2021) <doi:10.1007/s00122-021-03834-x>.")
                              r-simplicialcubature
                              r-rcdd
                              r-qspray
+                             r-ompr
+                             r-matrix
+                             r-magrittr
                              r-gmp))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/stla/polyhedralCubature")

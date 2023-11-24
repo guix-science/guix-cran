@@ -8139,36 +8139,6 @@ direct numerical solution of the Kolmogorov forward equations to calculate the
 transition probabilities.")
     (license license:gpl2+)))
 
-(define-public r-nhlscrape
-  (package
-    (name "r-nhlscrape")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "nhlscrape" version))
-       (sha256
-        (base32 "0x6y747j6lha3jw4v2wavgd12xw5nx4m8biv9rmq9z0qy53vncjc"))))
-    (properties `((upstream-name . "nhlscrape")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-rvest
-                             r-rsqlite
-                             r-jsonlite
-                             r-httr
-                             r-dbi))
-    (home-page "https://github.com/adamazoulay/nhlscrape")
-    (synopsis "Scrapes the 'NHL' API for Statistical Analysis")
-    (description
-     "Add game events to a database file to use for statistical analysis of hockey
-games.  This means we only call the NHL API once for each game we want to add.
-We will have very fast retrieval of data once games have been added since the
-data is stored locally.  We use the API located at
-<https://statsapi.web.nhl.com/api/v1/teams> with supplemental data from
-<https://www.nhl.com/scores/>.  Other endpoints can be found at
-<https://gitlab.com/dword4/nhlapi>.")
-    (license license:expat)))
-
 (define-public r-nhldata
   (package
     (name "r-nhldata")

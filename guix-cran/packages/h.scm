@@ -650,6 +650,36 @@ any N-1 hyperplane model being fit to a N dimension dataset.  All fits include
 intrinsic scatter in the generative model orthogonal to the hyperplane.")
     (license license:gpl3)))
 
+(define-public r-hymett
+  (package
+    (name "r-hymett")
+    (version "1.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HyMETT" version))
+       (sha256
+        (base32 "0f1gismhkwi8ynnxlbsvpal15ab2d2j4arrvah25bchybwffhqqg"))))
+    (properties `((upstream-name . "HyMETT")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-tibble
+                             r-rlang
+                             r-plyr
+                             r-lubridate
+                             r-lmomco
+                             r-envstats
+                             r-dplyr
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://code.usgs.gov/hymett/hymett")
+    (synopsis "Hydrologic Model Evaluation and Time-Series Tools")
+    (description
+     "Facilitates the analysis and evaluation of hydrologic model output and
+time-series data with functions focused on comparison of modeled (simulated) and
+observed data, period-of-record statistics, and trends.")
+    (license license:cc0)))
+
 (define-public r-hyfo
   (package
     (name "r-hyfo")
