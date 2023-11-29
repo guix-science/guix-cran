@@ -1571,37 +1571,6 @@ Google API authentication which is pain and you must pay for the key, This
 package is free and lightweight.")
     (license license:expat)))
 
-(define-public r-gtop
-  (package
-    (name "r-gtop")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gtop" version))
-       (sha256
-        (base32 "1nvvbf181x0miw3q0r2g0nklz29ljdsd07cazaajfls7pmhi0xw9"))))
-    (properties `((upstream-name . "gtop")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-quadprog r-lassoshooting r-hts))
-    (home-page "https://cran.r-project.org/package=gtop")
-    (synopsis "Game-Theoretically OPtimal (GTOP) Reconciliation Method")
-    (description
-     "In hierarchical time series (HTS) forecasting, the hierarchical relation between
-multiple time series is exploited to make better forecasts.  This hierarchical
-relation implies one or more aggregate consistency constraints that the series
-are known to satisfy.  Many existing approaches, like for example bottom-up or
-top-down forecasting, therefore attempt to achieve this goal in a way that
-guarantees that the forecasts will also be aggregate consistent.  This package
-provides with an implementation of the Game-Theoretically OPtimal (GTOP)
-reconciliation method proposed in van Erven and Cugliari (2015), which is
-guaranteed to only improve any given set of forecasts.  This opens up new
-possibilities for constructing the forecasts.  For example, it is not necessary
-to assume that bottom-level forecasts are unbiased, and aggregate forecasts may
-be constructed by regressing both on bottom-level forecasts and on other
-covariates that may only be available at the aggregate level.")
-    (license (list license:gpl2 license:gpl3))))
-
 (define-public r-gto
   (package
     (name "r-gto")
@@ -5853,36 +5822,6 @@ size optimization for clinical trials using graphical approaches for
 multiplicity adjustment, Technical Report.")
     (license license:gpl3)))
 
-(define-public r-graphx
-  (package
-    (name "r-graphx")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "graphx" version))
-       (sha256
-        (base32 "1k7vq0j58yskmaqknpkhccrc5n1hh8p2fsw7419r7k6a2c3syj8a"))))
-    (properties `((upstream-name . "graphx")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sp
-                             r-raster
-                             r-pracma
-                             r-png
-                             r-plotrix
-                             r-mass
-                             r-magicaxis
-                             r-jpeg
-                             r-docore
-                             r-cubature))
-    (home-page "https://cran.r-project.org/package=graphx")
-    (synopsis "Graphics Routines for Scientific Research")
-    (description
-     "Routines to produce and export publication-ready scientific plots and movies
-(e.g., used in Obreschkow et al. (2020) <doi:10.1093/mnras/staa445>).  These
-include special color scales, projection routines, and bitmap handling routines.")
-    (license license:gpl3)))
-
 (define-public r-graphtweets
   (package
     (name "r-graphtweets")
@@ -7091,32 +7030,36 @@ either \"G-side\" or \"R-side\" effects.")
 (define-public r-gpumatrix
   (package
     (name "r-gpumatrix")
-    (version "0.1.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GPUmatrix" version))
        (sha256
-        (base32 "1yhz6gsqjgzy7gcshpb8mx8fxjn4pfwph08bkks7k7aw77byf01m"))))
+        (base32 "1wd6lbsgkb950kn60crp6qknxbxvrq96qqgi3ji1j0jjp2nix6ya"))))
     (properties `((upstream-name . "GPUmatrix")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=GPUmatrix")
     (synopsis "Basic Linear Algebra with GPU")
     (description
-     "Motivation: GPU power is a great resource for computational biology specifically
-in statistics and linear algebra.  Unfortunately, very few packages connect R
-with the GPU and none of them are transparent enough to perform the computations
-on the GPU without substantial changes to the code.  Most of them lack proper
-maintenance: several of the previous attempts were removed from the
-corresponding repositories.  It would be desirable to have an R package,
-properly maintained, that exploits the use of the GPU with minimal changes in
-the existing code.  Results: We have developed the GPUMatrix package.  GPUMatrix
+     "GPUs are great resources for data analysis, especially in statistics and linear
+algebra.  Unfortunately, very few packages connect R to the GPU, and none of
+them are transparent enough to run the computations on the GPU without
+substantial changes to the code.  The maintenance of these packages is
+cumbersome: several of the earlier attempts have been removed from their
+respective repositories.  It would be desirable to have a properly maintained R
+package that takes advantage of the GPU with minimal changes to the existing
+code.  We have developed the GPUmatrix package (available on CRAN).  GPUmatrix
 mimics the behavior of the Matrix package and extends R to use the GPU for
-computations.  It is easy to learn and very few changes in the code are required
-to work on the GPU. GPUMatrix relies on either Tensorflow or Torch R packages to
-perform the GPU operations.  Its vignette shows some toy examples on
-non-negative factorization and other factorization used in bioinformatics'.")
+computations.  It includes single(FP32) and double(FP64) precision data types,
+and provides support for sparse matrices.  It is easy to learn, and requires
+very few code changes to perform the operations on the GPU. GPUmatrix relies on
+either the Torch or Tensorflow R packages to perform the GPU operations.  We
+have demonstrated its usefulness for several statistical applications and
+machine learning applications: non-negative matrix factorization, logistic
+regression and general linear models.  We have also included a comparison of GPU
+and CPU performance on different matrix operations.")
     (license license:artistic2.0)))
 
 (define-public r-gptzeror
@@ -7957,13 +7900,13 @@ Software for Arbitrary Rotation Criteria in Factor Analysis\".")
 (define-public r-gparotatedf
   (package
     (name "r-gparotatedf")
-    (version "2022.12-1")
+    (version "2023.11-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GPArotateDF" version))
        (sha256
-        (base32 "0j1hi761grjsv6bgvgjigbysk565f3kf8ynf93q7wsx1m38wv4pk"))))
+        (base32 "161mml6pwcqza6asn7315lqkn69k9k1l9rwa59f9m68v427a5lr0"))))
     (properties `((upstream-name . "GPArotateDF")))
     (build-system r-build-system)
     (propagated-inputs (list r-gparotation))
@@ -11835,13 +11778,13 @@ this package can be found in Watson and Pan (2022) <@code{arXiv:2207.09183>}.")
 (define-public r-glmmrbase
   (package
     (name "r-glmmrbase")
-    (version "0.5.2")
+    (version "0.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmmrBase" version))
        (sha256
-        (base32 "0m1cmg1rnax8i93xrwnlp95jxsrg77d6r52h1a2cnc3ixnldv8zg"))))
+        (base32 "1q3pj76iac6dr3hlbjv84zd5nqcl9a8j1z2wvs0nd99bcvh6rhk5"))))
     (properties `((upstream-name . "glmmrBase")))
     (build-system r-build-system)
     (propagated-inputs (list r-sparsechol
@@ -11919,13 +11862,13 @@ LASSO penalties.")
 (define-public r-glmmml
   (package
     (name "r-glmmml")
-    (version "1.1.5")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmmML" version))
        (sha256
-        (base32 "1sfxg6nv5wz40dq0j3fhn8hcrlnqrsjkwif2g93s6fzaxa83vl8p"))))
+        (base32 "0n3r1cpz7rgiighykbjfw1k5s1xgr1vdli960hmaadyy61jza417"))))
     (properties `((upstream-name . "glmmML")))
     (build-system r-build-system)
     (native-inputs (list r-knitr gfortran))
@@ -16533,13 +16476,13 @@ a data matrix.")
 (define-public r-ggmridge
   (package
     (name "r-ggmridge")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GGMridge" version))
        (sha256
-        (base32 "0aaah07n4nq2acvwikgwdqymchf7b1l9nkifwl7wxnr88pazcb4y"))))
+        (base32 "179g82w7vrbkvq0b8bcaakcjhqz1gsyc2qyh70ldglbj0sj5yh4m"))))
     (properties `((upstream-name . "GGMridge")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-mass))
@@ -20250,13 +20193,13 @@ Theoretical background and worked examples are available at
 (define-public r-geostan
   (package
     (name "r-geostan")
-    (version "0.5.2")
+    (version "0.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geostan" version))
        (sha256
-        (base32 "12jw7v4c5amrh8f6vb7c3vv1zvr591krvz7bz55kwa7p1972zbnz"))))
+        (base32 "1h2vrdx43lji2n67dx4r6qcsy0qb30z0dyivmy1bqqw41a0hcf6z"))))
     (properties `((upstream-name . "geostan")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm
@@ -21469,36 +21412,6 @@ translations.")
      "Kriging based methods are used for predicting functional data (curves) with
 spatial dependence.")
     (license license:gpl2)))
-
-(define-public r-geofacet
-  (package
-    (name "r-geofacet")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "geofacet" version))
-       (sha256
-        (base32 "1aylx2hwqk75y73az1zf0s5mjww77d7i9kafbkzw383f0i5qx42w"))))
-    (properties `((upstream-name . "geofacet")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sp
-                             r-sf
-                             r-rnaturalearth
-                             r-imgur
-                             r-gtable
-                             r-gridextra
-                             r-ggrepel
-                             r-ggplot2
-                             r-geogrid))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/hafen/geofacet")
-    (synopsis "'ggplot2' Faceting Utilities for Geographical Data")
-    (description
-     "This package provides geofaceting functionality for ggplot2'.  Geofaceting
-arranges a sequence of plots of data for different geographical entities into a
-grid that preserves some of the geographical orientation.")
-    (license license:expat)))
 
 (define-public r-geoelectrics
   (package
@@ -23322,13 +23235,13 @@ reduction methods is published in <DOI: 10.1016/j.mex.2020.101093>.")
 (define-public r-generalizedhyperbolic
   (package
     (name "r-generalizedhyperbolic")
-    (version "0.8-4")
+    (version "0.8-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeneralizedHyperbolic" version))
        (sha256
-        (base32 "01gqfvmzfslhxdnigzbl3rd55hk6r0kgd8fm9xjl0kb9vmb735lm"))))
+        (base32 "1a9n9hb6cxp9silcpskhp67l7p1azm72y4dngj48nngcavrm8i4r"))))
     (properties `((upstream-name . "GeneralizedHyperbolic")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-distributionutils))
@@ -28455,13 +28368,13 @@ solving the problem.")
 (define-public r-gabb
   (package
     (name "r-gabb")
-    (version "0.3.3")
+    (version "0.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GABB" version))
        (sha256
-        (base32 "18mxfkm2g76r3gp6l2mb6nlkzlr779ql5s14n0iid93226xvwhxp"))))
+        (base32 "0ds9silfsp6q5br7d4vkj38mrrq6407zkfpi361dpx8j69y9svli"))))
     (properties `((upstream-name . "GABB")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -28486,9 +28399,7 @@ objects.  Inputs are : data frame, RDA (package vegan') and PCA (package
 @code{FactoMineR}') objects.  Outputs are : synthesized results of RDA,
 displayed in console and saved in tables ; displayed and saved objects of PCA
 graphic visualization of individuals and variables projections with multiple
-graphic parameters.  Method note : for the RDA output synthesis, several
-functions of the package RV@code{AideMemoire}', developed by Maxime
-@code{HervÃ©}, are exploited.")
+graphic parameters.")
     (license license:expat)))
 
 (define-public r-gaabbreviate

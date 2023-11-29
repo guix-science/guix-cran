@@ -1081,13 +1081,13 @@ Philip D. (2018) <doi:10.1177/1532673X18759644>.")
 (define-public r-purger
   (package
     (name "r-purger")
-    (version "1.8")
+    (version "1.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "purgeR" version))
        (sha256
-        (base32 "00dg6hxv5ld13daph77whzarfwm0ryrwnrs7yc0hqd77k36v336d"))))
+        (base32 "0w3mcij7q5aqbs5phiyqprgr3hvs77fnjmbayp2rwn9qm1sx160a"))))
     (properties `((upstream-name . "purgeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppprogress r-rcpp r-progress r-foreach
@@ -3654,13 +3654,13 @@ terminal node of the tree.")
 (define-public r-psgp
   (package
     (name "r-psgp")
-    (version "0.3-20")
+    (version "0.3-21")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psgp" version))
        (sha256
-        (base32 "058jfjbggf9b3qbg7452zwk51k00y56k3a11zk119620jah518l5"))))
+        (base32 "1pcg6q1g5ipial8kyk20n15zzls4ig0m0sxcc7d3ngryir89cyzs"))))
     (properties `((upstream-name . "psgp")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp
@@ -6240,34 +6240,6 @@ description as well as soil, climate, CO2, Nitrogen deposition, tree-level,
 forest stand-level and remote sensing data.  Moreover, for a subset of 5 sites,
 also time series of carbon fluxes, energy balances and soil water are available.")
     (license license:gpl3)))
-
-(define-public r-profound
-  (package
-    (name "r-profound")
-    (version "1.14.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ProFound" version))
-       (sha256
-        (base32 "1p2mdy0z5p7as1x6vc572wjcl6f0acwgpvb39rmk2273kb1ldwz5"))))
-    (properties `((upstream-name . "ProFound")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp
-                             r-rcolorbrewer
-                             r-magicaxis
-                             r-foreach
-                             r-fitsio
-                             r-data-table
-                             r-celestial))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ProFound")
-    (synopsis "Photometry Tools")
-    (description
-     "Core package containing all the tools for simple and advanced source extraction.
- This is used to create inputs for @code{ProFit}', or for source detection,
-extraction and photometry in its own right.")
-    (license license:lgpl3)))
 
 (define-public r-profoc
   (package
@@ -17623,13 +17595,13 @@ details.")
 (define-public r-plsgenomics
   (package
     (name "r-plsgenomics")
-    (version "1.5-2")
+    (version "1.5-2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plsgenomics" version))
        (sha256
-        (base32 "1pvb50nv6jc99bm2hsxpzazg26y49yi24wwwim5xcjj6j1szbip4"))))
+        (base32 "1cn7ljq3nmvcm5g0ifhghm52sl25fyfalp7v7r8bl4iq9vblj2wa"))))
     (properties `((upstream-name . "plsgenomics")))
     (build-system r-build-system)
     (propagated-inputs (list r-rhpcblasctl
@@ -18681,26 +18653,26 @@ many individuals as possible in the study.")
 (define-public r-plinkfile
   (package
     (name "r-plinkfile")
-    (version "0.1.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plinkFile" version))
        (sha256
-        (base32 "0803hp822v9rqh4h437q2nmab19yamc4dbyi6iimm67ykp0d5xss"))))
+        (base32 "1vbhgwb08bbq4pmagrrn6zl1aw5cqcnfvicajj5c4y5qjm6y7s0m"))))
     (properties `((upstream-name . "plinkFile")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=plinkFile")
     (synopsis "'PLINK' (and 'GCTA') File Helpers")
     (description
-     "Provide function that reads binary genotype produced by PLINK
-<https://www.cog-genomics.org/plink/1.9/input#bed> into a R matrix, or scan the
-genotype one variant at a time like apply(), it also provides functions that
-reads and writes genotype relatedness/kinship matrices created by PLINK
+     "Reads/write binary genotype file compatible with PLINK
+<https://www.cog-genomics.org/plink/1.9/input#bed> into/from a R matrix;
+traverse genotype data one windows of variants at a time, like apply() or a for
+loop; reads/writes genotype relatedness/kinship matrices created by PLINK
 <https://www.cog-genomics.org/plink/1.9/distance#make_rel> or GCTA
-<https://cnsgenomics.com/software/gcta/#@code{MakingaGRM>}.  Currently it does
-not support writing back into PLINK binary, it is best used for bringing data
-produced by PLINK and GCTA into R environment.")
+<https://cnsgenomics.com/software/gcta/#@code{MakingaGRM>} into/from a R square
+matrix.  It is best used for bringing data produced by PLINK and GCTA into R
+workflow.")
     (license license:gpl2+)))
 
 (define-public r-plink
@@ -21675,6 +21647,31 @@ points.  Includes tooltips, labels, a grid overlay, legend, and coupled
 interactions across multiple plots.")
     (license license:expat)))
 
+(define-public r-picclip
+  (package
+    (name "r-picclip")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "picClip" version))
+       (sha256
+        (base32 "1gxl9v39zm2hx04rdfnnbrg6q5rnpzj7aybva6zxh3skfi0dbidr"))))
+    (properties `((upstream-name . "picClip")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-testthat r-stringr r-shiny r-htmltools
+                             r-base64enc))
+    (home-page "https://github.com/deppemj/picClip")
+    (synopsis "Paste Box Input for 'Shiny'")
+    (description
+     "This package provides a Shiny input widget, @code{pasteBoxInput}, that allows
+users to paste images directly into a Shiny application.  The pasted images are
+captured as Base64 encoded strings and can be used within the application for
+various purposes, such as display or further processing.  This package is
+particularly useful for applications that require easy and quick image uploads
+without the need for traditional file selection dialog boxes.")
+    (license license:gpl3)))
+
 (define-public r-picbayes
   (package
     (name "r-picbayes")
@@ -22107,13 +22104,13 @@ detail in Callahan et al. (2016) <doi:10.12688/f1000research.8986.1>.")
 (define-public r-phylosem
   (package
     (name "r-phylosem")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phylosem" version))
        (sha256
-        (base32 "1j9cpfaylnsmrzxq43sqh94zvwd2ppd9w7yq52hkikxgldrsvi8q"))))
+        (base32 "0hwlap8glz32a5a4pp268ni2lx338kki4n9nln3y6ninzrk2403p"))))
     (properties `((upstream-name . "phylosem")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb
@@ -22200,6 +22197,32 @@ efficient functions to compute more standard conservation measures such as
 phylogenetic diversity, phylogenetic endemism, evolutionary distinctiveness and
 global endangerment, as well as compositional turnover (e.g., beta diversity).")
     (license license:agpl3)))
+
+(define-public r-phyloraster
+  (package
+    (name "r-phyloraster")
+    (version "2.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "phyloraster" version))
+       (sha256
+        (base32 "1ac41ik17b2zdrcf5n9v3mg7k99r5m50s9lbb05ggjhpqmx8s5bh"))))
+    (properties `((upstream-name . "phyloraster")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra r-sesraster r-phylobase r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://gabferreira.github.io/phyloraster/")
+    (synopsis "Evolutionary Diversity Metrics for Raster Data")
+    (description
+     "Phylogenetic Diversity (PD, Faith 1992), Evolutionary Distinctiveness (ED, Isaac
+et al.  2007), Phylogenetic Endemism (PE, Rosauer et al.  2009; Laffan et al.
+2016), and Weighted Endemism (WE, Laffan et al.  2016) for presence-absence
+raster.  Faith, D. P. (1992) <doi:10.1016/0006-3207(92)91201-3> Isaac, N. J. et
+al. (2007) <doi:10.1371/journal.pone.0000296> Laffan, S. W. et al. (2016)
+<doi:10.1111/2041-210X.12513> Rosauer, D. et al. (2009)
+<doi:10.1111/j.1365-294X.2009.04311.x>.")
+    (license license:gpl3+)))
 
 (define-public r-phylopath
   (package
@@ -22520,13 +22543,13 @@ distribution in hidden semi-Markov models. <@code{arXiv:2101.09197>}.")
 (define-public r-phsmethods
   (package
     (name "r-phsmethods")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phsmethods" version))
        (sha256
-        (base32 "17m4kp2iiaqmqif191qn107fsjn8jylfni09wmp6yd5cn9xqsvgg"))))
+        (base32 "11gsbsypsdca15sbdsifzf1z432gqg12ldzyd6kjy09mgmd5838v"))))
     (properties `((upstream-name . "phsmethods")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -22539,6 +22562,7 @@ distribution in hidden semi-Markov models. <@code{arXiv:2101.09197>}.")
                              r-lifecycle
                              r-dplyr
                              r-cli))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/Public-Health-Scotland/phsmethods")
     (synopsis "Standard Methods for Use in Public Health Scotland")
     (description
@@ -23056,13 +23080,13 @@ clusters.")
 (define-public r-phinfiniteestimates
   (package
     (name "r-phinfiniteestimates")
-    (version "2.9")
+    (version "2.9.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PHInfiniteEstimates" version))
        (sha256
-        (base32 "19w57m9jz60d5yjzchlwgi3aj8ckxp4jy790z601b6jl2a208qc6"))))
+        (base32 "1j00bb0jk912bkv6yhwnx1f2nr2bw72z9c5y4xby1mphljz059b7"))))
     (properties `((upstream-name . "PHInfiniteEstimates")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rdpack r-nph r-lpsolve r-coxphf))
@@ -24967,13 +24991,13 @@ details on the c++ library pf', see Brown (2020) <doi:10.21105/joss.02599>.")
 (define-public r-pfim
   (package
     (name "r-pfim")
-    (version "6.0.1")
+    (version "6.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PFIM" version))
        (sha256
-        (base32 "1fp2zz37cb8qy8kqxfkq2l7fg6crcxgab8l26fwy352b91d9vzli"))))
+        (base32 "0zwhm4dc8jgrzinsmdjszqq54hp56qhi1y6xdmqmjsqmf7sz1i72"))))
     (properties `((upstream-name . "PFIM")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -27681,18 +27705,18 @@ pedigree structure ('Vazquez et al., 2010') <doi:10.2527/jas.2009-1952>.")
 (define-public r-pedigreemm
   (package
     (name "r-pedigreemm")
-    (version "0.3-3")
+    (version "0.3-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pedigreemm" version))
        (sha256
-        (base32 "1bpkba9nxbaxnivrjarf1p2p9dcz6smf9k2djawis1wq9dhylvsb"))))
+        (base32 "1fy9fq5g94p7v2s0yih1kj4in5gqmip8dd96pls0k9ixbgcqj95v"))))
     (properties `((upstream-name . "pedigreemm")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-lme4))
-    (home-page "http://pedigreemm.r-forge.r-project.org/")
-    (synopsis "Pedigree-based mixed-effects models")
+    (home-page "https://github.com/anainesvs/pedigreemm/")
+    (synopsis "Pedigree-Based Mixed-Effects Models")
     (description "Fit pedigree-based mixed-effects models.")
     (license license:gpl2+)))
 
@@ -28028,13 +28052,13 @@ ICML2015.")
 (define-public r-peaksegdisk
   (package
     (name "r-peaksegdisk")
-    (version "2023.9.4")
+    (version "2023.11.27")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PeakSegDisk" version))
        (sha256
-        (base32 "164s72pmb3h3niwzbfgiyssly46p00mmjg4nv7182a476xgcznj2"))))
+        (base32 "133ig07ah1hxzn3hlxhd3g1j5kizpsxf5z8h5d071gk7f9l3yy9c"))))
     (properties `((upstream-name . "PeakSegDisk")))
     (build-system r-build-system)
     (propagated-inputs (list r-data-table))
@@ -28180,21 +28204,16 @@ transparently in the R programming language.")
 (define-public r-pdynmc
   (package
     (name "r-pdynmc")
-    (version "0.9.9")
+    (version "0.9.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pdynmc" version))
        (sha256
-        (base32 "00wn8v5z5ksy5xvrrnm38cwrzyds20dw0i29d24z7vpvrsj4b0ad"))))
+        (base32 "1zz0q3s7cj3ypqz2hp3x2hy7d0m10130qdlk501l8w9z22f7raxq"))))
     (properties `((upstream-name . "pdynmc")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rdpack
-                             r-qlcmatrix
-                             r-optimx
-                             r-matrix
-                             r-mass
-                             r-data-table))
+    (propagated-inputs (list r-rdpack r-optimx r-matrix r-mass r-data-table))
     (native-inputs (list r-r-rsp))
     (home-page "https://github.com/markusfritsch/pdynmc")
     (synopsis
@@ -28939,13 +28958,13 @@ comparison group.")
 (define-public r-pcts
   (package
     (name "r-pcts")
-    (version "0.15.6")
+    (version "0.15.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pcts" version))
        (sha256
-        (base32 "10kda4waa9bd2ahf4x2ha4ll91m2dw25dl2wrqxb6nmw3lggy5il"))))
+        (base32 "1cr44w561sh05qpi0jyf2ypj4dadwyqkbaqn347v533bywasip2h"))))
     (properties `((upstream-name . "pcts")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -31836,13 +31855,13 @@ completely re-written.")
 (define-public r-party
   (package
     (name "r-party")
-    (version "1.3-13")
+    (version "1.3-14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "party" version))
        (sha256
-        (base32 "0yvyi4djhwa3mln2jlmg39lw5s2syz7jjfdby3nb3war1izmxw6y"))))
+        (base32 "0rq88zd8bqqqavlnmijf2j53livpr4pkmxlxhf5acsl2jxf9fc5w"))))
     (properties `((upstream-name . "party")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -35352,41 +35371,6 @@ cards, resumes, and posters.")
 alignments in the PAF format used by minimap2 and other whole-genome aligners.
 minimap2 is described by Li H. (2018) <doi:10.1093/bioinformatics/bty191>.")
     (license license:expat)))
-
-(define-public r-pafit
-  (package
-    (name "r-pafit")
-    (version "1.2.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PAFit" version))
-       (sha256
-        (base32 "07n27g2yy2lskna7qa4j6am3prdcwfnx98ppvcarsxgzvywz0scv"))))
-    (properties `((upstream-name . "PAFit")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vgam
-                             r-rcpp
-                             r-rcolorbrewer
-                             r-plyr
-                             r-networkdynamic
-                             r-network
-                             r-mass
-                             r-mapproj
-                             r-magicaxis
-                             r-knitr
-                             r-igraph
-                             r-ggplot2))
-    (native-inputs (list r-r-rsp))
-    (home-page "https://github.com/thongphamthe/PAFit")
-    (synopsis "Generative Mechanism Estimation in Temporal Complex Networks")
-    (description
-     "Statistical methods for estimating preferential attachment and node fitness
-generative mechanisms in temporal complex networks are provided.  Thong Pham et
-al. (2015) <doi:10.1371/journal.pone.0137796>.  Thong Pham et al. (2016)
-<doi:10.1038/srep32558>.  Thong Pham et al. (2020) <doi:10.18637/jss.v092.i03>.
-Thong Pham et al. (2021) <doi:10.1093/comnet/cnab024>.")
-    (license license:gpl3)))
 
 (define-public r-pafdr
   (package

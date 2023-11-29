@@ -681,6 +681,53 @@ methods in detecting the most interesting signal patterns in pharmacogenetics
 Judong Shen (2022) <doi:10.13140/RG.2.2.28323.53280>.")
     (license license:gpl2)))
 
+(define-public r-cwbtools
+  (package
+    (name "r-cwbtools")
+    (version "0.3.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cwbtools" version))
+       (sha256
+        (base32 "0hgkm90b7x8w4xn1ajq1bk5bh3jxmjvhs9zz7gsnvy06s78pl75m"))))
+    (properties `((upstream-name . "cwbtools")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zen4r
+                             r-xml2
+                             r-stringi
+                             r-rstudioapi
+                             r-rcppcwb
+                             r-r6
+                             r-pbapply
+                             r-lifecycle
+                             r-jsonlite
+                             r-httr
+                             r-fs
+                             r-data-table
+                             r-curl
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/PolMine/cwbtools")
+    (synopsis "Tools to Create, Modify and Manage 'CWB' Corpora")
+    (description
+     "The Corpus Workbench ('CWB', <https://cwb.sourceforge.io/>) offers a classic and
+mature approach for working with large, linguistically and structurally
+annotated corpora.  The CWB is memory efficient and its design makes running
+queries fast, see Evert (2011) <https://eprints.lancs.ac.uk/id/eprint/62721>.
+The cwbtools package offers pure R tools to create indexed corpus files as well
+as high-level wrappers for the original C implementation of CWB as exposed by
+the @code{RcppCWB} package
+(<https://CRAN.R-project.org/package=@code{RcppCWB>}).  Additional functionality
+to add and modify annotations of corpora from within R makes working with CWB
+indexed corpora much more flexible and convenient.  The cwbtools package in
+combination with the R packages @code{RcppCWB}
+(<https://CRAN.R-project.org/package=@code{RcppCWB>}) and @code{polmineR}
+(<https://CRAN.R-project.org/package=@code{polmineR>}) offers a lightweight
+infrastructure to support the combination of quantitative and qualitative
+approaches for working with textual data.")
+    (license license:gpl3)))
+
 (define-public r-cvwrapr
   (package
     (name "r-cvwrapr")
@@ -1507,6 +1554,37 @@ Behavioral Science, 26(1), 75-78).  Includes a cusp() function for model
 fitting, and several utility functions for plotting, and for comparing the model
 to linear regression and logistic curve models.")
     (license license:gpl2)))
+
+(define-public r-curvir
+  (package
+    (name "r-curvir")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "curvir" version))
+       (sha256
+        (base32 "132cqsya612k8mhrhwl0133nhj30p0fa43q819s7cq0rnwhnna64"))))
+    (properties `((upstream-name . "curvir")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcolorbrewer
+                             r-randomforest
+                             r-quantregforest
+                             r-qgam
+                             r-pso
+                             r-pbapply
+                             r-mgcv
+                             r-cvtools
+                             r-abind))
+    (home-page "https://cran.r-project.org/package=curvir")
+    (synopsis "Specify Reserve Demand Curves")
+    (description
+     "Automatic specification and estimation of reserve demand curves for central bank
+operations.  The package can help to choose the best demand curve and identify
+additional explanatory variables.  Various plot and predict options are
+included.  For more details, see Chen et al. (2023)
+<https://www.imf.org/en/Publications/WP/Issues/2023/09/01/Modeling-the-Reserve-Demand-to-Facilitate-Central-Bank-Operations-538754>.")
+    (license license:gpl3)))
 
 (define-public r-curvhdr
   (package
@@ -2814,13 +2892,13 @@ Chinese document.")
 (define-public r-ctl
   (package
     (name "r-ctl")
-    (version "1.0.0-8")
+    (version "1.0.0-9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ctl" version))
        (sha256
-        (base32 "0af53da5m469mm7pmy1nr3zxcjjg9wrs01scc042nr5rnysjy4l4"))))
+        (base32 "0czkdyf9d4nwkm23sq3kw4n1q07r6zlf6pd4vp09a64lw3kx8viz"))))
     (properties `((upstream-name . "ctl")))
     (build-system r-build-system)
     (propagated-inputs (list r-qtl r-mass))
@@ -4778,13 +4856,13 @@ and the MBN-type bias correction by Morel, Bokossa, and Neerchal (2003)
 (define-public r-crqa
   (package
     (name "r-crqa")
-    (version "2.0.4")
+    (version "2.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crqa" version))
        (sha256
-        (base32 "1sr185afy81c8nb8bmn56ddv9xncrjpis49xp24395i508ay740x"))))
+        (base32 "1nnnzixkv7hxdrhwdxa2ffp139cdzm4njdprh68fl6gv92ssqr6h"))))
     (properties `((upstream-name . "crqa")))
     (build-system r-build-system)
     (propagated-inputs (list r-tserieschaos
@@ -8065,18 +8143,18 @@ events, and time-varying variables.")
 (define-public r-coxphw
   (package
     (name "r-coxphw")
-    (version "4.0.2")
+    (version "4.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coxphw" version))
        (sha256
-        (base32 "08bfl21608i5jkk993qjpnh36xbfsm2xx22rpff0v6ipalj9vmj2"))))
+        (base32 "06fp31amdqsq35glk1028w5v67i0k9k23gxnyqivi8s4fh66lwi6"))))
     (properties `((upstream-name . "coxphw")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival))
     (native-inputs (list r-knitr gfortran))
-    (home-page "https://cran.r-project.org/package=coxphw")
+    (home-page "https://github.com/biometrician/coxphw")
     (synopsis "Weighted Estimation in Cox Regression")
     (description
      "This package implements weighted estimation in Cox regression as proposed by
@@ -9641,13 +9719,13 @@ maps.")
 (define-public r-countr
   (package
     (name "r-countr")
-    (version "3.5.6")
+    (version "3.5.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Countr" version))
        (sha256
-        (base32 "0zmg0hy9h2rjj3a6h05q8xxg0q2q65agmpm0gxk0qjl97wrh1fcy"))))
+        (base32 "04aszf0nsmg62hq7h5k0991pacwkcn667i8nk2wp35xbamlgcpqs"))))
     (properties `((upstream-name . "Countr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -16860,13 +16938,13 @@ method details see Sendhil, R., Jha, A., Kumar, A. and Singh, S. (2018).
 (define-public r-compindexr
   (package
     (name "r-compindexr")
-    (version "0.1.1")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "compindexR" version))
        (sha256
-        (base32 "065a5f406zbxqjy7v6r3bqnybxsnvdlds8rdm3kq62smkch7cf4x"))))
+        (base32 "1glc1y6wa1g7zxj1xwj0fgcfsy118xhd637gi8zsz7l9vxj614cp"))))
     (properties `((upstream-name . "compindexR")))
     (build-system r-build-system)
     (propagated-inputs (list r-pracma r-nlcoptim r-dplyr r-car))
@@ -18202,13 +18280,13 @@ concept maps and concept landscapes (sets of concept maps).")
 (define-public r-comat
   (package
     (name "r-comat")
-    (version "0.9.4")
+    (version "0.9.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "comat" version))
        (sha256
-        (base32 "0wj1j61phc6nxg25pqqf2xapvnxpk5qyigmwk6xi92wnvv5nrd00"))))
+        (base32 "05kvm4wv5m1mk7lkh69vbzb26xqjxdyvx87r9vx2hmz5wv0vhp7y"))))
     (properties `((upstream-name . "comat")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -20668,16 +20746,16 @@ and continuous outcomes.")
 (define-public r-coda-base
   (package
     (name "r-coda-base")
-    (version "0.5.4.3")
+    (version "0.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coda.base" version))
        (sha256
-        (base32 "0makfk7lzx7sbqs553zh2gv5zkhdqjcx96hryj6pmld0y2fkyzdn"))))
+        (base32 "1jjg0akvi9srdwnk1xibf7lr8vp776xy8ai71g7y15vrbmzyqkfb"))))
     (properties `((upstream-name . "coda.base")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix r-jsonlite))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix))
     (native-inputs (list r-knitr))
     (home-page "https://mcomas.net/coda.base/")
     (synopsis "Basic Set of Functions for Compositional Data Analysis")
@@ -22186,13 +22264,13 @@ multiple surrogate markers.  Details are described in Wang et al (2022)
 (define-public r-cmfrec
   (package
     (name "r-cmfrec")
-    (version "3.5.1-1")
+    (version "3.5.1-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cmfrec" version))
        (sha256
-        (base32 "0k3axbc0p5c0rxggp00vv1h5ylnfp57xbb5j3ndgqz0wig2l424z"))))
+        (base32 "0l5nnwljyb3q6ywzrkmixhc20vmmfcyv436c0nh36dg3jifvnjbq"))))
     (properties `((upstream-name . "cmfrec")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -24992,13 +25070,13 @@ combined to construct new indices.")
 (define-public r-climmobtools
   (package
     (name "r-climmobtools")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ClimMobTools" version))
        (sha256
-        (base32 "0zj6v9a48jb0yh8gijq9chgs2ca75vi89kdljflk5v3zb5hy5c70"))))
+        (base32 "05s887c7rywrqhrm7h8ikm70nsagbxjq06ymyjbmcws2bxysas8q"))))
     (properties `((upstream-name . "ClimMobTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-rspectra r-matrix r-lpsolve r-jsonlite r-httr))
@@ -25008,7 +25086,7 @@ combined to construct new indices.")
     (description
      "API client for @code{ClimMob}', an open source software for decentralized
 large-N trials with the tricot approach <https://climmob.net/>.  Developed by
-van Etten et al. (2016) <doi:10.1017/S0014479716000739>, it turns the research
+van Etten et al. (2019) <doi:10.1017/S0014479716000739>, it turns the research
 paradigm on its head; instead of a few researchers designing complicated trials
 to compare several technologies in search of the best solutions for the target
 environment, it enables many participants to carry out reasonably simple
@@ -28840,13 +28918,13 @@ thermodynamic properties of proteins.")
 (define-public r-chngpt
   (package
     (name "r-chngpt")
-    (version "2023.1-30")
+    (version "2023.11-28")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chngpt" version))
        (sha256
-        (base32 "15n82vgqqbvxpdiq42zja352nlj39avwfzv4l0v98jnl8pjwbkzw"))))
+        (base32 "084vn1rvp5zlc7l1ngjr35v1qxmafc8y927r1s51klflrldf4l4l"))))
     (properties `((upstream-name . "chngpt")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -29159,19 +29237,18 @@ Some convenient tools are also supplied.")
 (define-public r-chillr
   (package
     (name "r-chillr")
-    (version "0.74.1")
+    (version "0.75")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chillR" version))
        (sha256
-        (base32 "1vgx735fz65bbq2dnsxbhf5d14hxdla3xkh3709r03v1bgjclz1p"))))
+        (base32 "0b8r8s7vqgpb6jjbqaf24yig2adagfl6rnnppx15mdhz8bmjc5aq"))))
     (properties `((upstream-name . "chillR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
                              r-tidyr
                              r-stringr
-                             r-sp
                              r-scales
                              r-rmawgen
                              r-rlang
@@ -31510,13 +31587,13 @@ composed of recommendation and database manipulation functions.  See Aggarwal
 (define-public r-cfid
   (package
     (name "r-cfid")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cfid" version))
        (sha256
-        (base32 "05liqg4m4rya15b9m2xdfwrbjvmlm26bqfrma0zj17x9rdvk24bz"))))
+        (base32 "03wfzilxgia12hacwkay2ki94mha8b42g62cx66x1rkqqxgcp6n9"))))
     (properties `((upstream-name . "cfid")))
     (build-system r-build-system)
     (home-page "https://github.com/santikka/cfid")
@@ -32969,13 +33046,13 @@ dissection sequencing products.")
 (define-public r-cellkey
   (package
     (name "r-cellkey")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cellKey" version))
        (sha256
-        (base32 "0dglb2a1hvbmld1pv6ysp80lql2hzvm76r748dxj93fj6i7lhmh8"))))
+        (base32 "1brl0747mr9wpk0q299d55z94zhq2783nad1lanm5ia39r0x8i22"))))
     (properties `((upstream-name . "cellKey")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -35108,6 +35185,44 @@ population attributable fractions Ferguson, OâConnell, and OâDonnell (
 <doi:10.1186/s13690-020-00442-x>.  Results are presentable in both table and
 plot format.")
     (license license:gpl2+)))
+
+(define-public r-causalot
+  (package
+    (name "r-causalot")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "causalOT" version))
+       (sha256
+        (base32 "00p77kcykr224jzcvjadmrnyf48id6ixz568blw84pbgai5ywajc"))))
+    (properties `((upstream-name . "causalOT")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-torch
+                             r-sandwich
+                             r-rlang
+                             r-rcppeigen
+                             r-rcpp
+                             r-r6
+                             r-osqp
+                             r-matrixstats
+                             r-matrix
+                             r-loo
+                             r-lbfgsb3c
+                             r-ggplot2
+                             r-cbps
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=causalOT")
+    (synopsis "Optimal Transport Weights for Causal Inference")
+    (description
+     "Uses optimal transport distances to find probabilistic matching estimators for
+causal inference.  These methods are described in Dunipace, Eric (2021)
+<@code{arXiv:2109.01991>}.  The package will build the weights, estimate
+treatment effects, and calculate confidence intervals via the methods described
+in the paper.  The package also supports several other methods as described in
+the help files.")
+    (license (license:fsdg-compatible "GPL (== 3.0)"))))
 
 (define-public r-causaloptim
   (package

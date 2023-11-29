@@ -117,13 +117,13 @@ variables.")
 (define-public r-ezplot
   (package
     (name "r-ezplot")
-    (version "0.7.10")
+    (version "0.7.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ezplot" version))
        (sha256
-        (base32 "1qq47pbwzgyfldiwaz5avxfiplzqjia7vc99m5g5h9y96qm4vxc7"))))
+        (base32 "1ga122wk6iggysbpb8x0dvzlfgdaqg1dsdaa6ksbq18441lirrqs"))))
     (properties `((upstream-name . "ezplot")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-lubridate r-ggplot2 r-forcats r-dplyr))
@@ -3759,13 +3759,13 @@ magnitude of win/loss) are presented as well.")
 (define-public r-eviewsr
   (package
     (name "r-eviewsr")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EviewsR" version))
        (sha256
-        (base32 "0dybfkpg5zr6bh84dh7v4vyxk4xv09v9hv8ijxj0h41mi5zpqap9"))))
+        (base32 "1sdhv9gra2rmp63fil61lq61a2jlfhajxd4nicvag11cnar880js"))))
     (properties `((upstream-name . "EviewsR")))
     (build-system r-build-system)
     (inputs (list))
@@ -3774,11 +3774,12 @@ magnitude of win/loss) are presented as well.")
     (home-page "https://CRAN.R-project.org/package=EviewsR")
     (synopsis "Seamless Integration of 'EViews' and R")
     (description
-     "It allows running EViews'(<https://eviews.com>) program from R, R Markdown and
+     "It allows running EViews (<https://eviews.com>) program from R, R Markdown and
 Quarto documents.  EViews (Econometric Views) is a statistical software for
 Econometric analysis.  This package integrates EViews and R and also serves as
 an EViews Knit-Engine for knitr package.  Write all your EViews commands in R, R
-Markdown or Quarto documents.")
+Markdown or Quarto documents.  For details, please consult our peer-review
+article Mati S., Civcir I. and Abba S.I (2023) <doi:10.32614/RJ-2023-045>.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-evident
@@ -14665,13 +14666,13 @@ Error (NMSE).")
 (define-public r-eha
   (package
     (name "r-eha")
-    (version "2.11.1")
+    (version "2.11.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eha" version))
        (sha256
-        (base32 "1fhs31qk5sh4f6nrxrbrv1f29rkzawjj6v8kid894ji5ifd7qv3l"))))
+        (base32 "14gsv1ryc2vfn8yjx33dfmpxd2zp0m092n0hvsmid6ph4f7qnnd5"))))
     (properties `((upstream-name . "eha")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival))
@@ -20893,13 +20894,13 @@ for the input of data, and for performing genome-wide analysis.")
 (define-public r-eaf
   (package
     (name "r-eaf")
-    (version "2.4.1")
+    (version "2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eaf" version))
        (sha256
-        (base32 "0qp6qq2fqlrpgyrwn1riwcwbjqc0bgbn6i909sclbj5blkc6kl5x"))))
+        (base32 "0krvl6gk44yy9r30sck7mn0k37mi8j7nw90b56klww1zqh0ihs8p"))))
     (properties `((upstream-name . "eaf")))
     (build-system r-build-system)
     (inputs (list gsl))

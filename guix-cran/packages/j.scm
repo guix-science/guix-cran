@@ -260,13 +260,13 @@ manuscript corresponding to this package [Lyu, P. et al., (2023),
 (define-public r-juliaconnector
   (package
     (name "r-juliaconnector")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JuliaConnectoR" version))
        (sha256
-        (base32 "0chbax02l1p3qr0skvnxw1b8g7kf6s7sk2f3gj0ddl5kj6ls1p5n"))))
+        (base32 "11nrj83qhj3xbzgkidi5pd98pg6glx8ajk55yvdcn65byaqpsj27"))))
     (properties `((upstream-name . "JuliaConnectoR")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=JuliaConnectoR")
@@ -650,13 +650,13 @@ full-texts delivered by Data for Research by JSTOR.")
 (define-public r-jstable
   (package
     (name "r-jstable")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jstable" version))
        (sha256
-        (base32 "1ar9zp9adag6d806l79y5pnf44hqdd4wrrcx7nvglxdyn7ma9xp9"))))
+        (base32 "0vfm6c41xy38b212fqha7v8668q6v5964sdvh6jxs7nc279lfr6w"))))
     (properties `((upstream-name . "jstable")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -1864,13 +1864,13 @@ Hornstein, Fan, Shedden, and Zhou (2018) <doi:10.1080/01621459.2018.1429275>.")
 (define-public r-jointfpm
   (package
     (name "r-jointfpm")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JointFPM" version))
        (sha256
-        (base32 "01am0vsc1lqd9p81zlyliadghxlwjkpa11i2ksa7ymv20iyrcyja"))))
+        (base32 "19x39mw7m7a05n7yx42h9dvzgcgxx7nk27n0vvdaw0kqfyj5ng8m"))))
     (properties `((upstream-name . "JointFPM")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -1878,7 +1878,8 @@ Hornstein, Fan, Shedden, and Zhou (2018) <doi:10.1080/01621459.2018.1429275>.")
                              r-rmutil
                              r-rlang
                              r-lifecycle
-                             r-data-table))
+                             r-data-table
+                             r-cli))
     (home-page "https://github.com/entjos/JointFPM")
     (synopsis "Parametric Model for Estimating the Mean Number of Events")
     (description
@@ -2200,13 +2201,13 @@ RStudio Addins can be used to run selected code as a job.")
 (define-public r-jnplots
   (package
     (name "r-jnplots")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JNplots" version))
        (sha256
-        (base32 "0k46y9gi02m9z58qny1r0fa76nriw0llz9dc62x9vvy1x3qayw2j"))))
+        (base32 "0k1jdy5wdzdswzl6kz9d1r6imj3cqcmkyz7ka1d6pcbysjsj9ynn"))))
     (properties `((upstream-name . "JNplots")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-nlme r-ape))
@@ -2483,13 +2484,13 @@ data type, item scoring, special data codes, and variable label.")
 (define-public r-jmdesign
   (package
     (name "r-jmdesign")
-    (version "1.4")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JMdesign" version))
        (sha256
-        (base32 "04nlxym4b339l70m0fd0r04m9lb6c7l8ajswhmy7dmix0sk99d3c"))))
+        (base32 "12y9g9m38qbvibay1pm0s9zyw5hxczdysm1hxcpjqi265z9wr9wd"))))
     (properties `((upstream-name . "JMdesign")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=JMdesign")
@@ -3981,13 +3982,13 @@ estimators.")
 (define-public r-jackalope
   (package
     (name "r-jackalope")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jackalope" version))
        (sha256
-        (base32 "0bdv3hj7zaa3jxg1rshzgg7y93802kr1nfhh0hg1zgawn1hrpyki"))))
+        (base32 "18k130d95k0zd7f88gbh0gnjmc41kyii82phslmrhyigrizhjq82"))))
     (properties `((upstream-name . "jackalope")))
     (build-system r-build-system)
     (inputs (list zlib))

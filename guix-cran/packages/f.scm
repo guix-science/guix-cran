@@ -3520,6 +3520,27 @@ models, as described in Parkkinen and Baumgartner (2021)
 <doi:10.1177/0049124120986200>.")
     (license license:agpl3+)))
 
+(define-public r-froth
+  (package
+    (name "r-froth")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "froth" version))
+       (sha256
+        (base32 "1wi4xphqrwrhbg03w3kp92d9d6z7pyywmb8228mqhzd0gs9anyz8"))))
+    (properties `((upstream-name . "froth")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://www.ahl27.com/froth/")
+    (synopsis "Emulate a 'Forth' Programming Environment")
+    (description
+     "Emulates a Forth programming environment with added features to interface
+between R and Forth'.  Implements most of the functionality described in the
+original \"Starting Forth\" textbook <https://www.forth.com/starting-forth/>.")
+    (license license:gpl3)))
+
 (define-public r-frostr
   (package
     (name "r-frostr")
@@ -3912,13 +3933,13 @@ efficient implementation of the generic magging estimator.")
 (define-public r-fresa-cad
   (package
     (name "r-fresa-cad")
-    (version "3.4.6")
+    (version "3.4.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FRESA.CAD" version))
        (sha256
-        (base32 "17bx8r6a2d74y83zya347hag035ypdmphz710xwq2islgzlvlv9l"))))
+        (base32 "1lczys1pcs15w8bz3i6kxglfhi4gih5ayrs51kg7d3c4la4di57a"))))
     (properties `((upstream-name . "FRESA.CAD")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -4857,6 +4878,72 @@ frailty distributions using a consistent and asymptotically-normal estimator.
 Currently supports: gamma, power variance function, log-normal, and inverse
 Gaussian frailty models.")
     (license license:lgpl2.0)))
+
+(define-public r-frailtypack
+  (package
+    (name "r-frailtypack")
+    (version "3.5.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "frailtypack" version))
+       (sha256
+        (base32 "1q6y1g3a844kflwf6ppl7x0zlwnks8zq98bzx03vlww6n6cicrgz"))))
+    (properties `((upstream-name . "frailtypack")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival
+                             r-survc1
+                             r-statmod
+                             r-shiny
+                             r-rootsolve
+                             r-nlme
+                             r-mass
+                             r-doby
+                             r-boot))
+    (native-inputs (list r-knitr gfortran))
+    (home-page "https://cran.r-project.org/package=frailtypack")
+    (synopsis
+     "Shared, Joint (Generalized) Frailty Models; Surrogate Endpoints")
+    (description
+     "The following several classes of frailty models using a penalized likelihood
+estimation on the hazard function but also a parametric estimation can be fit
+using this R package: 1) A shared frailty model (with gamma or log-normal
+frailty distribution) and Cox proportional hazard model.  Clustered and
+recurrent survival times can be studied.  2) Additive frailty models for
+proportional hazard models with two correlated random effects (intercept random
+effect with random slope).  3) Nested frailty models for hierarchically
+clustered data (with 2 levels of clustering) by including two iid gamma random
+effects.  4) Joint frailty models in the context of the joint modelling for
+recurrent events with terminal event for clustered data or not.  A joint frailty
+model for two semi-competing risks and clustered data is also proposed.  5)
+Joint general frailty models in the context of the joint modelling for recurrent
+events with terminal event data with two independent frailty terms.  6) Joint
+Nested frailty models in the context of the joint modelling for recurrent events
+with terminal event, for hierarchically clustered data (with two levels of
+clustering) by including two iid gamma random effects.  7) Multivariate joint
+frailty models for two types of recurrent events and a terminal event.  8) Joint
+models for longitudinal data and a terminal event.  9) Trivariate joint models
+for longitudinal data, recurrent events and a terminal event.  10) Joint frailty
+models for the validation of surrogate endpoints in multiple randomized clinical
+trials with failure-time endpoints with the possibility to use a mediation
+analysis model.  11) Conditional and Marginal two-part joint models for
+longitudinal semicontinuous data and a terminal event.  12) Joint frailty-copula
+models for the validation of surrogate endpoints in multiple randomized clinical
+trials with failure-time endpoints.  13) Generalized shared and joint frailty
+models for recurrent and terminal events.  Proportional hazards (PH), additive
+hazard (AH), proportional odds (PO) and probit models are available in a fully
+parametric framework.  For PH and AH models, it is possible to consider
+type-varying coefficients and flexible semiparametric hazard function.
+Prediction values are available (for a terminal event or for a new recurrent
+event).  Left-truncated (not for Joint model), right-censored data,
+interval-censored data (only for Cox proportional hazard and shared frailty
+model) and strata are allowed.  In each model, the random effects have the gamma
+or normal distribution.  Now, you can also consider time-varying covariates
+effects in Cox, shared and joint frailty models (1-5).  The package includes
+concordance measures for Cox proportional hazards models and for shared frailty
+models.  Moreover, the package can be used with its shiny application, in a
+local mode or by following the link below.")
+    (license license:gpl2+)))
 
 (define-public r-frailtymmpen
   (package
@@ -6403,13 +6490,13 @@ plugin: <https://github.com/qlands/formshare_sql_plugin> .")
 (define-public r-formods
   (package
     (name "r-formods")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "formods" version))
        (sha256
-        (base32 "0xkb54ww6zksgyfd9cbjws8fg0vsg2pvlnmqp4qk2inkjqi9myv8"))))
+        (base32 "0rb58xja6i0syxb4ibhqdlfgdwq7l0zbqrli6d4dwcpvjv3hlg19"))))
     (properties `((upstream-name . "formods")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -9461,6 +9548,44 @@ data, be it univariate, multivariate, or more complex such as network-valued
 data, topological data, functional data or density-valued data.")
     (license license:gpl3+)))
 
+(define-public r-flippant
+  (package
+    (name "r-flippant")
+    (version "1.5.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "flippant" version))
+       (sha256
+        (base32 "189c7mm56rhwh4d1lrfbp9gn4l4vhi6i0cn9zif6s5c7yryvf3l9"))))
+    (properties `((upstream-name . "flippant")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-withr
+                             r-stringi
+                             r-pracma
+                             r-plyr
+                             r-minpack-lm
+                             r-magrittr
+                             r-ggplot2
+                             r-data-table
+                             r-assertive-numbers
+                             r-assertive-files
+                             r-assertive-base))
+    (home-page "https://cran.r-project.org/package=flippant")
+    (synopsis "Dithionite Scramblase Assay Analysis")
+    (description
+     "The lipid scrambling activity of protein extracts and purified scramblases is
+often determined using a fluorescence-based assay involving many manual steps.
+flippant offers an integrated solution for the analysis and publication-grade
+graphical presentation of dithionite scramblase assays, as well as a platform
+for review, dissemination and extension of the strategies it employs.  The
+package's name derives from a play on the fact that lipid scrambling is also
+sometimes referred to as flipping'.  The package is originally published as
+Cotton, R.J., Ploier, B., Goren, M.A., Menon, A.K., and Graumann, J. (2017).
+\"flippantâAn R package for the automated analysis of fluorescence-based
+scramblase assays.\" BMC Bioinformatics 18, 146. <DOI:10.1186/s12859-017-1542-y>.")
+    (license license:gpl3+)))
+
 (define-public r-flipdownwidgets
   (package
     (name "r-flipdownwidgets")
@@ -10697,13 +10822,13 @@ quality, reliability, and structure.")
 (define-public r-fixest
   (package
     (name "r-fixest")
-    (version "0.11.1")
+    (version "0.11.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fixest" version))
        (sha256
-        (base32 "1q771z9m7sdzq4pbx4fwcz26d4cbjkmqjrdac0wnr9pbv81y3z0k"))))
+        (base32 "0r9b1shiwz4739hq953gacvmnjm9r4sisi9chkfw9rc90qx13vid"))))
     (properties `((upstream-name . "fixest")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich r-rcpp r-numderiv r-nlme r-dreamerr))
@@ -10716,7 +10841,7 @@ fixed-effects.  Includes ordinary least squares (OLS), generalized linear models
 (GLM) and the negative binomial.  The core of the package is based on optimized
 parallel C++ code, scaling especially well for large data sets.  The method to
 obtain the fixed-effects coefficients is based on Berge (2018)
-<https://wwwen.uni.lu/content/download/110162/1299525/file/2018_13>.  Further
+<https://github.com/lrberge/fixest/blob/master/_DOCS/FENmlm_paper.pdf>.  Further
 provides tools to export and view the results of several estimations with
 intuitive design to cluster the standard-errors.")
     (license license:gpl3)))
@@ -15389,6 +15514,29 @@ studies that use the false discovery rate as the final measure of statistical
 significance.")
     (license license:gpl2)))
 
+(define-public r-fdrsamplesize2
+  (package
+    (name "r-fdrsamplesize2")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FDRsamplesize2" version))
+       (sha256
+        (base32 "1rh7ni0ylzr2cyls7i4d39csqdlc9yljv7z49y5n7yg1v4gxxyr2"))))
+    (properties `((upstream-name . "FDRsamplesize2")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=FDRsamplesize2")
+    (synopsis
+     "Computing Power and Sample Size for the False Discovery Rate in Multiple Applications")
+    (description
+     "Defines a collection of functions to compute average power and sample size for
+studies that use the false discovery rate as the final measure of statistical
+significance.  A three-rectangle approximation method of a p-value histogram is
+proposed to derive a formula to compute the statistical power for analyses that
+involve the FDR. The methodology paper of this package is under review.")
+    (license license:expat)))
+
 (define-public r-fdrestimation
   (package
     (name "r-fdrestimation")
@@ -16151,13 +16299,13 @@ classification, unsupervised classification and functional analysis of variance.
 (define-public r-fd
   (package
     (name "r-fd")
-    (version "1.0-12.2")
+    (version "1.0-12.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FD" version))
        (sha256
-        (base32 "0kp4bdm3idza0pi9zv7hbfy483lb6dlx5cximyzyhgw1cp459kwp"))))
+        (base32 "1vky4dmiw3bm2s8zfbywbdmmalyp3ch0i64b6g6600jikvwr2c3f"))))
     (properties `((upstream-name . "FD")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan r-geometry r-ape r-ade4))
@@ -17410,13 +17558,13 @@ strategies based on the properties of the primal and dual variables.")
 (define-public r-fastrweb
   (package
     (name "r-fastrweb")
-    (version "1.2-0")
+    (version "1.2-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FastRWeb" version))
        (sha256
-        (base32 "13w09ic38vzdyyhcdd18as443nbhgbw4baydrlbl7nai0llsk9w9"))))
+        (base32 "1kpj38b08xd2zyas1ac5jj1vfyb2b5q2kai55h5plcjlz3h627lp"))))
     (properties `((upstream-name . "FastRWeb")))
     (build-system r-build-system)
     (propagated-inputs (list r-cairo r-base64enc))
@@ -18500,13 +18648,13 @@ categorical covariates.")
 (define-public r-fastbeta
   (package
     (name "r-fastbeta")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastbeta" version))
        (sha256
-        (base32 "0jbvbdq3hdmp01wz9y1nidfzm80m3d0gdz6p8wi0wm32zxxh4c3q"))))
+        (base32 "17r8lbv3lai82l6d10aqmxp2b0krkmy37fy2n1xxajjdzdpkf2vy"))))
     (properties `((upstream-name . "fastbeta")))
     (build-system r-build-system)
     (propagated-inputs (list r-desolve r-adaptivetau))
@@ -20193,13 +20341,13 @@ it easier to construct function factories.")
 (define-public r-factorstochvol
   (package
     (name "r-factorstochvol")
-    (version "1.0.6")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "factorstochvol" version))
        (sha256
-        (base32 "1f22qxskk4hgsx9ic7v89rvjv1pdsijpakw0j4x2wya10dfrj9rp"))))
+        (base32 "15ki0kaqam97zlm0mgl8pf2swrcqw46d5816aavwmn6jw2banksm"))))
     (properties `((upstream-name . "factorstochvol")))
     (build-system r-build-system)
     (propagated-inputs (list r-stochvol r-rcpparmadillo r-rcpp r-gigrvg
@@ -20396,13 +20544,13 @@ microarray experiments.")
 (define-public r-factoinvestigate
   (package
     (name "r-factoinvestigate")
-    (version "1.8")
+    (version "1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FactoInvestigate" version))
        (sha256
-        (base32 "1m2005yywdh9ir61sdh10ssp1y26d9xgx9rivvilbk9grc9qyjzg"))))
+        (base32 "0kzm57hd2j43kp84x2saz1nj575dw14sx3l9pmqqkr6871jrgjlw"))))
     (properties `((upstream-name . "FactoInvestigate")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmarkdown r-ggplot2 r-factominer))

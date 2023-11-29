@@ -2704,13 +2704,13 @@ in spreadsheet files.")
 (define-public r-unhcrthemes
   (package
     (name "r-unhcrthemes")
-    (version "0.6.1")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "unhcrthemes" version))
        (sha256
-        (base32 "1brwcikywalzb7ydv6cyimyvzvdl71x4j43hidmbhfbn5r2fjm8n"))))
+        (base32 "1qi3clng771mzbaa4j6a80wn6am0fl2gix2xdmy3d6ygrrgkgd7r"))))
     (properties `((upstream-name . "unhcrthemes")))
     (build-system r-build-system)
     (propagated-inputs (list r-systemfonts
@@ -3146,13 +3146,13 @@ Jacobian actions etc.")
 (define-public r-umatrix
   (package
     (name "r-umatrix")
-    (version "3.4")
+    (version "3.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Umatrix" version))
        (sha256
-        (base32 "1gsfk1vk19nf2bqndiiw700x8qv2cfg9k4330wbm6i31p0hr00wz"))))
+        (base32 "1nvc7zg28rwhwminn6hygvdmy0ghaivmqgn53mfdgq39mbf3xi2w"))))
     (properties `((upstream-name . "Umatrix")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinyjs

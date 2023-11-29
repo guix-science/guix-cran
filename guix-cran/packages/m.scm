@@ -3527,6 +3527,39 @@ reuse controls for other endpoints Stoer NC and Samuelsen SO (2016)
 <doi:10.32614/rj-2016-030>.")
     (license license:gpl2)))
 
+(define-public r-multipledl
+  (package
+    (name "r-multipledl")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "multipleDL" version))
+       (sha256
+        (base32 "0b8858w0g45xkhschg742kxicd1cp4xhfacn0q3yh17k2fcif7r3"))))
+    (properties `((upstream-name . "multipleDL")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stanheaders
+                             r-sparsem
+                             r-rstantools
+                             r-rstan
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-bh))
+    (home-page "https://cran.r-project.org/package=multipleDL")
+    (synopsis
+     "Addressing Detection Limits by Cumulative Probability Models (CPMs)")
+    (description
+     "Build CPMs (cumulative probability models, also known as cumulative link models)
+to account for detection limits (both single and multiple detection limits) in
+response variables.  Conditional quantiles and conditional CDFs can be
+calculated based on fitted models.  The package implements methods described in
+Tian, Y., Li, C., Tu, S., James, N. T., Harrell, F. E., & Shepherd, B. E.
+(2022). \"Addressing Detection Limits with Semiparametric Cumulative Probability
+Models\". <@code{arXiv:2207.02815>}.")
+    (license license:gpl2+)))
+
 (define-public r-multiplebubbles
   (package
     (name "r-multiplebubbles")
@@ -3597,6 +3630,37 @@ breakpoints.  In addition, it provides a graphical illustration of the result.")
      "This package performs genetic association tests between SNPs (one-at-a-time) and
 multiple phenotypes (separately or in joint model).")
     (license license:gpl2)))
+
+(define-public r-multipanelfigure
+  (package
+    (name "r-multipanelfigure")
+    (version "2.1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "multipanelfigure" version))
+       (sha256
+        (base32 "1jy23qp49kxn83gnrls6ci247zd430zgbyab1rn7l6ahazzcra72"))))
+    (properties `((upstream-name . "multipanelfigure")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringi
+                             r-magrittr
+                             r-magick
+                             r-gtable
+                             r-gridgraphics
+                             r-ggplot2
+                             r-assertive-numbers
+                             r-assertive-files
+                             r-assertive-base))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=multipanelfigure")
+    (synopsis "Infrastructure to Assemble Multi-Panel Figures (from Grobs)")
+    (description
+     "This package provides tools to create a layout for figures made of multiple
+panels, and to fill the panels with base, lattice', ggplot2 and
+@code{ComplexHeatmap} plots, grobs, as well as content from all image formats
+supported by @code{ImageMagick} (accessed through magick').")
+    (license license:gpl3+)))
 
 (define-public r-multiord
   (package
@@ -11703,13 +11767,13 @@ package to find and visualize monophyly issues.\" Schwery, O. & O'Meara, B.C.
 (define-public r-monomvn
   (package
     (name "r-monomvn")
-    (version "1.9-18")
+    (version "1.9-19")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "monomvn" version))
        (sha256
-        (base32 "16wv8ip6s720d5ksd1y0r25gd2210jwhlfvca5vyzizm768bkrha"))))
+        (base32 "1kfdczpja1z196pj3vf522ysd3k678bwsjmlr3045dm4didsyah2"))))
     (properties `((upstream-name . "monomvn")))
     (build-system r-build-system)
     (propagated-inputs (list r-quadprog r-pls r-mvtnorm r-mass r-lars))
@@ -13172,13 +13236,13 @@ resulting sheet(s) as a vector and data in dataframe(s).")
 (define-public r-modeva
   (package
     (name "r-modeva")
-    (version "3.10")
+    (version "3.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modEvA" version))
        (sha256
-        (base32 "1qqk3rjhaxdsjcwhcg81dcdkrmd3nh3bfamfgq0fvyn68sa7y20b"))))
+        (base32 "0dl8a7lg03ipcjz570id8kb5fp12csy6a4f5qcfwvpb3cjpwc1gc"))))
     (properties `((upstream-name . "modEvA")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra))
@@ -13332,13 +13396,13 @@ into R and the Tidyverse\" available at <https://moderndive.com/>.")
 (define-public r-moderate-mediation
   (package
     (name "r-moderate-mediation")
-    (version "0.0.6")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "moderate.mediation" version))
        (sha256
-        (base32 "1nlv2v31h7h6isyv7nv5b7mb2v8c645rhrwabjykjamhh1d9llgj"))))
+        (base32 "0nlsz84wd3apzsif99zq51k76vdbwflaysdllqrqbxp6vb2rs4hz"))))
     (properties `((upstream-name . "moderate.mediation")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -18785,6 +18849,42 @@ number needed to treat (Porta (2014),
 <doi:10.1093%2Facref%2F9780199976720.001.0001>).")
     (license license:lgpl3)))
 
+(define-public r-mjmbamlss
+  (package
+    (name "r-mjmbamlss")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MJMbamlss" version))
+       (sha256
+        (base32 "03alz38375lks1597646cp5xcfc9vivz3bbz7gwniljn2vznrcfq"))))
+    (properties `((upstream-name . "MJMbamlss")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-statmod
+                             r-sparseflmm
+                             r-refund
+                             r-rcppeigen
+                             r-rcpp
+                             r-mvtnorm
+                             r-mgcv
+                             r-mfpca
+                             r-matrix
+                             r-gamm4
+                             r-fundata
+                             r-foreach
+                             r-fdapace
+                             r-coda
+                             r-bamlss))
+    (home-page "https://cran.r-project.org/package=MJMbamlss")
+    (synopsis "Multivariate Joint Models with 'bamlss'")
+    (description
+     "Multivariate joint models of longitudinal and time-to-event data based on
+functional principal components implemented with bamlss'.  Implementation for
+Volkmann, Umlauf, Greven (2023) <@code{arXiv:2311.06409>}.")
+    (license license:gpl3)))
+
 (define-public r-mizer
   (package
     (name "r-mizer")
@@ -24113,13 +24213,13 @@ analysis, machine learning, environmental data analysis and functional analysis.
 (define-public r-microdatoses
   (package
     (name "r-microdatoses")
-    (version "0.8.14")
+    (version "0.8.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MicroDatosEs" version))
        (sha256
-        (base32 "0ialj1hp4zn0yng0hnm3r2qmcwh44r3f3anq5qq4a4shh014c94y"))))
+        (base32 "0amclp66094g96jlr4ks85l3y88fimlh8ws6jp1p74hpfbmd9ykc"))))
     (properties `((upstream-name . "MicroDatosEs")))
     (build-system r-build-system)
     (propagated-inputs (list r-readr))
@@ -24973,13 +25073,13 @@ distribution of p values as a way to detect the true signals in the data.")
 (define-public r-mhorseshoe
   (package
     (name "r-mhorseshoe")
-    (version "0.1.0")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Mhorseshoe" version))
        (sha256
-        (base32 "1qg1kkdlchrz2394h533j58xrz7hclzd1j8g1wycrb92fjiz9345"))))
+        (base32 "0ra7mswvqjm8vma4d1r3piz0wpsm1d4qwf39h99migri4mn2080y"))))
     (properties `((upstream-name . "Mhorseshoe")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -34088,13 +34188,13 @@ forecasts and intervals (Cressie 1993) <doi:10.1002/9781119115151>.")
 (define-public r-mcga
   (package
     (name "r-mcga")
-    (version "3.0.6")
+    (version "3.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mcga" version))
        (sha256
-        (base32 "1zj1bspw950zl2bh0dhn872f637iabk4gyrs8igrjyhm5calaj07"))))
+        (base32 "16vy5iy4k5i3mqchrrh8r229hyhwq4n2clvvp2mpz1iasvq7qz4f"))))
     (properties `((upstream-name . "mcga")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-ga))
@@ -34160,6 +34260,36 @@ response model.  Currently accommodates the Gaussian and binomial likelihood.")
 Carlo EM. For a description of the algorithm see Brian S. Caffo, Wolfgang Jank
 and Galin L. Jones (2005) <DOI:10.1111/j.1467-9868.2005.00499.x>.")
     (license license:gpl2+)))
+
+(define-public r-mcda
+  (package
+    (name "r-mcda")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MCDA" version))
+       (sha256
+        (base32 "060mqk1cyxh2v68dr8533zr4k3wkz2f4k22400xgj40rwgj9a355"))))
+    (properties `((upstream-name . "MCDA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-triangle
+                             r-rglpk
+                             r-rcolorbrewer
+                             r-plyr
+                             r-glpkapi
+                             r-ggplot2
+                             r-combinat))
+    (home-page "https://github.com/paterijk/MCDA")
+    (synopsis "Support for the Multicriteria Decision Aiding Process")
+    (description
+     "Support for the analyst in a Multicriteria Decision Aiding (MCDA) process with
+algorithms, preference elicitation and data visualisation functions.  SÃ©bastien
+Bigaret, Richard Hodgett, Patrick Meyer, Tatyana Mironova, Alexandru Olteanu
+(2017) Supporting the multi-criteria decision aiding process : R and the MCDA
+package, Euro Journal On Decision Processes, Volume 5, Issue 1 - 4, pages 169 -
+194 <doi:10.1007/s40070-017-0064-1>.")
+    (license (license:fsdg-compatible "EUPL (>= 1.1)"))))
 
 (define-public r-mccr
   (package
@@ -37319,13 +37449,13 @@ model fitting and posterior computation.")
 (define-public r-mase
   (package
     (name "r-mase")
-    (version "0.1.5")
+    (version "0.1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mase" version))
        (sha256
-        (base32 "0rad57gx1kwv4ci8mnpbmrgphr82dz2r174jvwnxhcz3zg6han04"))))
+        (base32 "1arsl4apsmhawi8ykqvf7y24wapimzza1irjmlbyhbinrb8hni7b"))))
     (properties `((upstream-name . "mase")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -40500,13 +40630,13 @@ in cancer networks.")
 (define-public r-malan
   (package
     (name "r-malan")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "malan" version))
        (sha256
-        (base32 "0qwf0r2gwpb93gzvyp8vaw7j6rhghr6nbrfp8xw876n5j5b9jhj3"))))
+        (base32 "1m11rxzmvkdvpkcnhjwwgrhkmbylwjpqnn47zyy5wna66c3zzvr6"))))
     (properties `((upstream-name . "malan")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidygraph
@@ -41434,38 +41564,6 @@ summary reports.  As described in Maelstrom Research guidelines for rigorous
 retrospective data harmonization (Fortier I and al. (2017)
 <doi:10.1093/ije/dyw075>).")
     (license license:gpl3)))
-
-(define-public r-mads
-  (package
-    (name "r-mads")
-    (version "0.1.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mads" version))
-       (sha256
-        (base32 "0nz1fg3gyj72k6dpkjnwqjvps0inv1qgk5vlc8ycj3k720qcsd81"))))
-    (properties `((upstream-name . "mads")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-mrds))
-    (home-page "https://cran.r-project.org/package=mads")
-    (synopsis "Multi-Analysis Distance Sampling")
-    (description
-     "This package performs distance sampling analyses on a number of species at once
-and can account for unidentified sightings, model uncertainty and covariate
-uncertainty.  Unidentified sightings refer to sightings which cannot be
-allocated to a single species but may instead be allocated to a group of
-species.  The abundance of each unidentified group is estimated and then
-prorated to the species estimates.  Model uncertainty should be incorporated
-when multiple models give equally good fit to the data but lead to large
-differences in estimated density / abundance.  Covariate uncertainty should be
-incorporated when covariates cannot be measured accurately, for example this is
-often the case for group size in marine mammal surveys.  Variance estimation for
-these methods is via a non parametric bootstrap.  The methods implemented are
-described in Gerodette T. and Forcada J. (2005) <doi:10.3354/meps291001>
-Non-recovery of two spotted and spinner dolphin populations in the eastern
-tropical Pacific Ocean.")
-    (license license:gpl2+)))
 
 (define-public r-madrat
   (package

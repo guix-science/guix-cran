@@ -1002,13 +1002,13 @@ designed to work in non-stationary environments.")
 (define-public r-otrselect
   (package
     (name "r-otrselect")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OTRselect" version))
        (sha256
-        (base32 "007wnad6ka3d5hx9l537m6cvk9qlf0lirrz54yy665szyprpqy27"))))
+        (base32 "02aslqz8k10jglxwifn8sm1y3cg10vaq6dd5n15s4nrvcfg53180"))))
     (properties `((upstream-name . "OTRselect")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-lars))
@@ -3453,6 +3453,31 @@ Counts orbits of nodes and edges from edge matrix or data frame, or a graph
 object from the graph package.")
     (license license:lgpl3)))
 
+(define-public r-orbweaver
+  (package
+    (name "r-orbweaver")
+    (version "0.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "orbweaver" version))
+       (sha256
+        (base32 "0lmxcjh621nsq5qrhg76h034dnzsybxs7r3sbqr91lifl2mpdnsd"))))
+    (properties `((upstream-name . "orbweaver")))
+    (build-system r-build-system)
+    (inputs (list))
+    (home-page "https://github.com/ixpantia/orbweaver")
+    (synopsis "Fast and Efficient Graph Data Structures")
+    (description
+     "Empower your data analysis with orbweaver', an R package designed for effortless
+construction and analysis of graph data structures.  With orbweaver', you can
+seamlessly build and manipulate graph structures, leveraging its
+high-performance methods for filtering, joining, and mutating data within the R
+environment.  Drawing inspiration from the efficiency of the data.table package,
+orbweaver ensures that mutations and changes to the graph are performed in
+place, streamlining your workflow for optimal productivity.")
+    (license license:expat)))
+
 (define-public r-oralopioids
   (package
     (name "r-oralopioids")
@@ -5472,13 +5497,13 @@ graphics, or ggplot2.  This package is not affiliated with the
 (define-public r-openspecy
   (package
     (name "r-openspecy")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OpenSpecy" version))
        (sha256
-        (base32 "1cz5h8arm0zlycxds1cpygcyl3l2lprvjdvpp226044k58pbrl69"))))
+        (base32 "0wi3rq3lq96936dw7il86wfk6554kfcp2dvx0ma3n8gbx6wz6m0i"))))
     (properties `((upstream-name . "OpenSpecy")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -6051,13 +6076,13 @@ camera device.")
 (define-public r-opencr
   (package
     (name "r-opencr")
-    (version "2.2.5")
+    (version "2.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openCR" version))
        (sha256
-        (base32 "003xhwskxjh0m9mvp8sdkbjmcb0i0wya1s8d8frnzgsbim2ymi22"))))
+        (base32 "08cqv6xxv35hzllab0glb42h54racgqk0x3dvam6lk7c561kbas4"))))
     (properties `((upstream-name . "openCR")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -6199,13 +6224,13 @@ API.")
 (define-public r-openaistream
   (package
     (name "r-openaistream")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openaistream" version))
        (sha256
-        (base32 "0v6bd9rvf84r9win5gvfjjrggxwilgq5hqxvi7p705zv2fd872j0"))))
+        (base32 "16g7l9z2473wwaai7ynl4d6b3cdwizida4kmjnbya3np8chw10kh"))))
     (properties `((upstream-name . "openaistream")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-jsonlite r-iterators r-httr2 r-curl))

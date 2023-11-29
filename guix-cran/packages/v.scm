@@ -1658,13 +1658,13 @@ audio in general.")
 (define-public r-voi
   (package
     (name "r-voi")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "voi" version))
        (sha256
-        (base32 "1g3klq78g32inhxa597b85qb5v3kimvw40sc3c4nly0l4aphn244"))))
+        (base32 "0fxaspvy64791dh9d00slfqi8wwip7353cf68kya0rkm2b12kr4m"))))
     (properties `((upstream-name . "voi")))
     (build-system r-build-system)
     (propagated-inputs (list r-progress
@@ -6381,13 +6381,13 @@ read VCF files, run analyses and return the output in a spark data frame.")
 (define-public r-variancegamma
   (package
     (name "r-variancegamma")
-    (version "0.4-0")
+    (version "0.4-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VarianceGamma" version))
        (sha256
-        (base32 "0n3vmyxfn0sid6zax4n8508li7gnfdd4gghpf3i296dm3w8wn8ip"))))
+        (base32 "1ihzwr8g7cmasicjw79fyksfm6kl9qzx04611a73ql0gp0pmq62y"))))
     (properties `((upstream-name . "VarianceGamma")))
     (build-system r-build-system)
     (propagated-inputs (list r-generalizedhyperbolic r-distributionutils))

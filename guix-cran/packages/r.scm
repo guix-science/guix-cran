@@ -1982,31 +1982,6 @@ vectors, and generating random vectors under a variety of distributions
 following Kerman and Gelman (2007) <doi:10.1007/s11222-007-9020-4>.")
     (license license:gpl2)))
 
-(define-public r-ruviiic
-  (package
-    (name "r-ruviiic")
-    (version "1.0.19")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RUVIIIC" version))
-       (sha256
-        (base32 "1px87p4nmdgkxwarsqyc91kmwr13dy16c1qqqc86qlwm2w46smf6"))))
-    (properties `((upstream-name . "RUVIIIC")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rspectra r-rcppprogress r-rcppeigen r-rcpp
-                             r-progress))
-    (home-page "https://cran.r-project.org/package=RUVIIIC")
-    (synopsis "RUV-III-C")
-    (description
-     "Variations of Remove Unwanted Variation-III (RUV-III) known as RUV-III-C
-(RUV-III Complete).  RUV-III performs normalisation using negative control
-variables and replication.  RUV-III-C extends this method to cases where the
-data contains missing values, by applying RUV-III to complete subsets of the
-data.  Originally designed for SWATH-MS proteomics datasets.  Poulos et al.
-(2020) <doi:10.1038/s41467-020-17641-3>.")
-    (license license:expat)))
-
 (define-public r-rutledge
   (package
     (name "r-rutledge")
@@ -5595,24 +5570,24 @@ format.  See rsppfp website for more information, documentation an examples.")
 (define-public r-rspm
   (package
     (name "r-rspm")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rspm" version))
        (sha256
-        (base32 "0qjjl5k0lfzdwvqa4mjpqp2dkrg5r2gpmninyazaspsdqcydl394"))))
+        (base32 "03wr8m6vk6fbxvpir3hfg3pjv22x5l641b6089zk468iygylg2a4"))))
     (properties `((upstream-name . "rspm")))
     (build-system r-build-system)
-    (home-page "https://enchufa2.github.io/rspm/")
+    (home-page "https://cran4linux.github.io/rspm/")
     (synopsis "'RStudio' Package Manager")
     (description
      "Enables binary package installations on Linux distributions.  Provides access to
-RStudio public repositories at <https://packagemanager.rstudio.com>, and
+RStudio public repositories at <https://packagemanager.posit.co>, and
 transparent management of system requirements without administrative privileges.
  Currently supported distributions are @code{CentOS} / RHEL 7-9, and several
 RHEL derivatives ('Rocky Linux', @code{AlmaLinux}', Oracle Linux', and Amazon
-Linux 2), @code{openSUSE} / SLES 15.3-4, and Ubuntu 18.04, 20.04 and 22.04.")
+Linux 2), @code{openSUSE} / SLES 15.3-4, Debian 11-12, and Ubuntu LTS 18-22.")
     (license (list license:gpl2 license:gpl3 license:expat))))
 
 (define-public r-rspiro
@@ -7097,16 +7072,17 @@ for deployment.")
 (define-public r-rsclient
   (package
     (name "r-rsclient")
-    (version "0.7-9")
+    (version "0.7-10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RSclient" version))
        (sha256
-        (base32 "04xppfz2gxf21jmcz9phxpaxys06kqnw77v1sy9qqd3n0yywzihv"))))
+        (base32 "1s6mpda9y6rhmwsc0i0x5kbafdrn056v80yj2ycvq4kf7kxf1hx5"))))
     (properties `((upstream-name . "RSclient")))
     (build-system r-build-system)
     (inputs (list zlib openssl))
+    (native-inputs (list pkg-config))
     (home-page "http://www.rforge.net/RSclient/")
     (synopsis "Client for Rserve")
     (description
@@ -8065,13 +8041,13 @@ supported by National Institutes of Health grants R37 GM-046255.")
 (define-public r-rrepest
   (package
     (name "r-rrepest")
-    (version "1.0.0.8")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rrepest" version))
        (sha256
-        (base32 "0w7nhdcdzrih55jlz7066fm03rp17w5dig804l75dpflan9wspin"))))
+        (base32 "0j2siwnpp8isgb82qq9s1khjgnhgfygm8487grflw8qniz22cq5f"))))
     (properties `((upstream-name . "Rrepest")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -8669,13 +8645,13 @@ a recent evaluation and improvements.")
 (define-public r-rquantlib
   (package
     (name "r-rquantlib")
-    (version "0.4.19")
+    (version "0.4.20")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RQuantLib" version))
        (sha256
-        (base32 "1wbrfv061pbfkf0wv4aicwparj7ych4bpnf4gd32aj8s32jz63d4"))))
+        (base32 "0pl4ggr09drzr60935j4md597fdp53p6cjd1885knm78syh5ansn"))))
     (properties `((upstream-name . "RQuantLib")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-rcpp))
@@ -11148,6 +11124,31 @@ details about vulnerabilities from various sources is a worthwhile enterprise.")
 (2016) <DOI:10.1080/00401706.2015.1093962>.")
     (license license:gpl2+)))
 
+(define-public r-rosmium
+  (package
+    (name "r-rosmium")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rosmium" version))
+       (sha256
+        (base32 "04ygbjvcp3gz61ac8r5d10jn1ivmwyrrya1lix4cj0g4hwxv6ipz"))))
+    (properties `((upstream-name . "rosmium")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sf r-processx r-geojsonsf r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://ipeagit.github.io/rosmium/")
+    (synopsis "Bindings for 'Osmium Tool'")
+    (description
+     "Allows one to use Osmium Tool (<https://osmcode.org/osmium-tool/>) from R.
+Osmium is a multipurpose command line tool that enables one to manipulate and
+analyze @code{OpenStreetMap} files through several different commands.
+Currently, this package does not aim to offer functions that cover the entire
+Osmium API, instead making available functions that wrap only a very limited set
+of its features.")
+    (license license:expat)))
+
 (define-public r-rosm
   (package
     (name "r-rosm")
@@ -12179,13 +12180,13 @@ nonparticipants.  For more details, please reference Witman et al. (2018)
 (define-public r-rollinglda
   (package
     (name "r-rollinglda")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rollinglda" version))
        (sha256
-        (base32 "09809fs1lykwhird1sl832fbqa9p7850apj7rmb740rxaa27p6wv"))))
+        (base32 "0xnj7p1b737308syqrgjcavjppb11rv8hrmyld31xwvnzkfarw01"))))
     (properties `((upstream-name . "rollinglda")))
     (build-system r-build-system)
     (propagated-inputs (list r-tosca r-lubridate r-ldaprototype r-data-table
@@ -12443,13 +12444,13 @@ for solving nonlinear optimization problems.")
 (define-public r-roi-plugin-neos
   (package
     (name "r-roi-plugin-neos")
-    (version "1.0-1")
+    (version "1.0-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ROI.plugin.neos" version))
        (sha256
-        (base32 "1k6bq95nzispd6c9ylp4gxb1gfigpwyxkhac8z1sd3bav0zagavp"))))
+        (base32 "15234844gnd86liw2a5a3rbfmrypdqi75xlxkjj49dfvsx7ghvd1"))))
     (properties `((upstream-name . "ROI.plugin.neos")))
     (build-system r-build-system)
     (propagated-inputs (list r-xmlrpc2 r-xml2 r-roi))
@@ -12939,13 +12940,13 @@ allows R to connect to any DBMS that has a ODBC driver.")
 (define-public r-rodbc
   (package
     (name "r-rodbc")
-    (version "1.3-22")
+    (version "1.3-23")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RODBC" version))
        (sha256
-        (base32 "1kl3mif0j697zdc33xlgfrq6jg048vf7d6n7m9rcaff08lvwcgzn"))))
+        (base32 "0fqgbs2zanq7xjl252s1fpqivqz4ll23nnf74122kcxgq1dd3k8m"))))
     (properties `((upstream-name . "RODBC")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=RODBC")
@@ -14418,13 +14419,13 @@ ensemble.")
 (define-public r-robstattm
   (package
     (name "r-robstattm")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RobStatTM" version))
        (sha256
-        (base32 "07kman12jc5qvxsamrfy46b5qq80r7jf6c5anw8nvji41viqwlm1"))))
+        (base32 "1qbbh3ykba50ivka1h7b2cyw2km0dk3gl1rgjwaq5rqlmfdwl0nn"))))
     (properties `((upstream-name . "RobStatTM")))
     (build-system r-build-system)
     (propagated-inputs (list r-rrcov r-robustbase r-pyinit))
@@ -15904,6 +15905,29 @@ Metadata Repository ('HOMR') data, NOAA storm data via IB@code{TrACS}', tornado
 data via the NOAA storm prediction center, and more.")
     (license license:expat)))
 
+(define-public r-rnndescent
+  (package
+    (name "r-rnndescent")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rnndescent" version))
+       (sha256
+        (base32 "1qyl2wiyb549f810awk6qddawnyl76i61d016xggl5wvnsycp3jp"))))
+    (properties `((upstream-name . "rnndescent")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sitmo r-rcpp r-matrix r-dqrng r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://jlmelville.github.io/rnndescent/")
+    (synopsis
+     "Nearest Neighbor Descent Method for Approximate Nearest Neighbors")
+    (description
+     "The Nearest Neighbor Descent method for finding approximate nearest neighbors by
+Dong and co-workers (2010) <doi:10.1145/1963405.1963487>.  Based on the Python
+package @code{PyNNDescent} <https://github.com/lmcinnes/pynndescent>.")
+    (license license:gpl3+)))
+
 (define-public r-rnn
   (package
     (name "r-rnn")
@@ -16714,13 +16738,13 @@ Grange et al. (2021) <doi:10.5194/acp-2020-1171>.")
 (define-public r-rmvp
   (package
     (name "r-rmvp")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rMVP" version))
        (sha256
-        (base32 "0n4nffwxllcc81346h57yccqcc535skpnx9girlmskpzbaj14fmb"))))
+        (base32 "1k7n8hmwybbp41iqgckkvzqa75kl0ikl5mpq2c5ynmlfkr244by8"))))
     (properties `((upstream-name . "rMVP")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppprogress
@@ -19128,13 +19152,13 @@ regarding homoscedastic framework.")
 (define-public r-rllama
   (package
     (name "r-rllama")
-    (version "0.2.0")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rllama" version))
        (sha256
-        (base32 "1cblmyz1cchbn954mqi77sw7qxhffw12zfad11gfipy2fywcvb9l"))))
+        (base32 "11r1s34z5ys9fwg19fl80qm2zycmb6i9sc1nmmb48ar2327ymx92"))))
     (properties `((upstream-name . "rllama")))
     (build-system r-build-system)
     (propagated-inputs (list r-httr r-data-table))
@@ -19222,6 +19246,35 @@ account.")
 jobs, share updates with their network, and create group discussions.  For more
 information about using the API please visit <https://developer.linkedin.com/>.")
     (license license:gpl2)))
+
+(define-public r-rlibkriging
+  (package
+    (name "r-rlibkriging")
+    (version "0.8-0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rlibkriging" version))
+       (sha256
+        (base32 "07k0vb21bk83ygvgks4fspfik5zjwlqilwjy2rjzimhikx87srgk"))))
+    (properties `((upstream-name . "rlibkriging")))
+    (build-system r-build-system)
+    (inputs (list hdf5 gfortran gcc cmake))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-dicekriging))
+    (native-inputs (list gfortran))
+    (home-page "https://github.com/libKriging")
+    (synopsis "Kriging Models using the 'libKriging' Library")
+    (description
+     "Interface to @code{libKriging} C++ library
+<https://github.com/@code{libKriging>} that should provide most standard Kriging
+/ Gaussian process regression features (like in @code{DiceKriging}', kergp or
+@code{RobustGaSP} packages). @code{libKriging} relies on Armadillo linear
+algebra library (Apache 2 license) by Conrad Sanderson, lbfgsb_cpp is a C++ port
+around lbfgsb library (BSD-3 license) by Ciyou Zhu, Richard Byrd, Jorge Nocedal
+and Jose Luis Morales used for hyperparameters optimization, and HDF5 features
+coming from HDF Group (see HDF5_LICENSE file) possibly provided by Rhdf5lib by
+Mike Smith (Artistic-2.0 license).")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-rlibkdv
   (package
@@ -20599,13 +20652,13 @@ BA (2015). \"Open-channel computation with R.\" The R Journal, 7(2), 249â26
 (define-public r-rivnet
   (package
     (name "r-rivnet")
-    (version "0.3.3")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rivnet" version))
        (sha256
-        (base32 "1sq7a8h4qa8gkqx0giyj1bw8zpcrsidlvprcjwyklzr2p0diim5b"))))
+        (base32 "0xa55x18ij7k51lmd9f0m1yzddq6jf5bc39w859jhj617i91ma8l"))))
     (properties `((upstream-name . "rivnet")))
     (build-system r-build-system)
     (propagated-inputs (list r-traudem
@@ -22233,13 +22286,13 @@ focused on digitizing and serving museum specimen collections on the web.  See
 (define-public r-ridgregextra
   (package
     (name "r-ridgregextra")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ridgregextra" version))
        (sha256
-        (base32 "08dsh09pcm9s8903lszzk2r3zi9hnvm6hzajwvqc3gkpjcs2q7bp"))))
+        (base32 "1xv6icprb2i5cy80i8aqv72yxpg4ybi6hc5y4hvbhvs6m22ydkiq"))))
     (properties `((upstream-name . "ridgregextra")))
     (build-system r-build-system)
     (propagated-inputs (list r-plotly r-mctest r-isdals))
@@ -23830,13 +23883,13 @@ algorithm details please refer to Qin et.  al. (2018)
 (define-public r-rgmm
   (package
     (name "r-rgmm")
-    (version "1.1.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RGMM" version))
        (sha256
-        (base32 "0x5v16pzg79ria0jah8rkpyqjixkdm4n4xklniy38663d6vqj2sx"))))
+        (base32 "1b0r1scxd40d93s96xa1cc9ls1f7vs2g5g8sjnm0kd562mwj4pxp"))))
     (properties `((upstream-name . "RGMM")))
     (build-system r-build-system)
     (propagated-inputs (list r-rspectra
@@ -23849,7 +23902,8 @@ algorithm details please refer to Qin et.  al. (2018)
                              r-ggplot2
                              r-genieclust
                              r-foreach
-                             r-doparallel))
+                             r-doparallel
+                             r-desctools))
     (home-page "https://cran.r-project.org/package=RGMM")
     (synopsis "Robust Mixture Model")
     (description
@@ -28945,13 +28999,13 @@ mobiles, and tablets.")
 (define-public r-renz
   (package
     (name "r-renz")
-    (version "0.1.1")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "renz" version))
        (sha256
-        (base32 "0xanqqyz8cq8vfxy7vfxcf6fyh8r28bqpc7820fbl77g960cx5jw"))))
+        (base32 "06zj7qkpjvl0zy33d67g4ig9z3mvay66bxz08l0sshgkas9nxbjq"))))
     (properties `((upstream-name . "renz")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam))
@@ -33075,16 +33129,17 @@ subunits and features.  Intended to be part of a 3D visualization workflow.")
 (define-public r-receptiviti
   (package
     (name "r-receptiviti")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "receptiviti" version))
        (sha256
-        (base32 "0j4ypma8kp37q3kjnh9pxlw24mb8vmj0pis56a9gk6slzqivbbfi"))))
+        (base32 "03n9pdr3lsm0yypirlwwf9p9gylm3127jqqbyqfp3mmjjbmfa3dw"))))
     (properties `((upstream-name . "receptiviti")))
     (build-system r-build-system)
-    (propagated-inputs (list r-progressr
+    (propagated-inputs (list r-stringi
+                             r-progressr
                              r-jsonlite
                              r-future-apply
                              r-dplyr
@@ -33723,13 +33778,13 @@ and acoustic data.  It stores annotation data in a format called a
 (define-public r-readsparse
   (package
     (name "r-readsparse")
-    (version "0.1.5-5")
+    (version "0.1.5-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "readsparse" version))
        (sha256
-        (base32 "0r6gk7r6dy5ibb3gf4dzr3891vq950dsi31rm8ffp69ki7wjyxnd"))))
+        (base32 "0njvk51057bi6chd6vqcfwif5b18943k67biyk4gk80rj01ggscc"))))
     (properties `((upstream-name . "readsparse")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-matrix))
@@ -34491,13 +34546,13 @@ documents, Shiny applications, or viewed from an R console.")
 (define-public r-re2
   (package
     (name "r-re2")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "re2" version))
        (sha256
-        (base32 "13cxq6zw66b0wqwv19kkgn8z9kx1p9x1z1fv9cgn1iq7v1br8gm4"))))
+        (base32 "116fnvvg2mm9a7bpi6flh132yffhqbgz2mp0kpq2g84ic51qnwxf"))))
     (properties `((upstream-name . "re2")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -36094,13 +36149,13 @@ manual.")
 (define-public r-rcytogps
   (package
     (name "r-rcytogps")
-    (version "1.2.1")
+    (version "1.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RCytoGPS" version))
        (sha256
-        (base32 "1ppxyrm9h09kk6lnr6yg3n3xl08l9zp4rqliz92k5h42hmgj6f02"))))
+        (base32 "0a5ap6dizxsilsrv0gyg9vjawm9b6r91a8kbmyd66lpssk4mzc1i"))))
     (properties `((upstream-name . "RCytoGPS")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjson))
@@ -36809,13 +36864,13 @@ Further integration and extensions are planned.")
 (define-public r-rcppsimdjson
   (package
     (name "r-rcppsimdjson")
-    (version "0.1.10")
+    (version "0.1.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppSimdJson" version))
        (sha256
-        (base32 "1wfhn4lm1538053hr4nk8mqbx3r9lq4p98fk6vw6b9xv84sxsicl"))))
+        (base32 "1q5gqa1pp71f952wvl1fpw9r2qm92112x5irw1splf3y6k6m4r6h"))))
     (properties `((upstream-name . "RcppSimdJson")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -37188,13 +37243,13 @@ package currently does not cover all the features in the package.  The site
 (define-public r-rcppensmallen
   (package
     (name "r-rcppensmallen")
-    (version "0.2.20.0.1")
+    (version "0.2.21.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppEnsmallen" version))
        (sha256
-        (base32 "0vraa320ymja472fijvxybgj8s1r4blfd1z06ffiw7drn5ch9zbk"))))
+        (base32 "1rmvsysgvjmbasq0nc1vvm9v84yg5jsczb085z9yd9zh70g2zxnv"))))
     (properties `((upstream-name . "RcppEnsmallen")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -37325,13 +37380,13 @@ space for usage in R. HSLuv is a human-friendly alternative to HSL.")
 (define-public r-rcppcnpy
   (package
     (name "r-rcppcnpy")
-    (version "0.2.11")
+    (version "0.2.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppCNPy" version))
        (sha256
-        (base32 "0m9g37hrx33mmxhhzi6qakgiqh6w0c2s624fkgbny9vcabr3dfsx"))))
+        (base32 "16n3c2pfz9i95ngalxc5wvigwd1jfi2qwqm1v605qhidgf2vqvc5"))))
     (properties `((upstream-name . "RcppCNPy")))
     (build-system r-build-system)
     (inputs (list zlib))
@@ -37343,8 +37398,8 @@ space for usage in R. HSLuv is a human-friendly alternative to HSL.")
 files created with (or for) the @code{NumPy} extension for Python'.  Vectors and
 matrices of numeric types can be read or written to and from files as well as
 compressed files.  Support for integer files is available if the package has
-been built with -std=c++11 which should be the default on all platforms since
-the release of R 3.3.0.")
+been built with as C++11 which should be the default on all platforms since the
+release of R 3.3.0.")
     (license license:gpl2+)))
 
 (define-public r-rcppclock
@@ -40427,13 +40482,13 @@ text files and more...")
 (define-public r-rbmi
   (package
     (name "r-rbmi")
-    (version "1.2.5")
+    (version "1.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rbmi" version))
        (sha256
-        (base32 "17r54595yjqbm5800rmq467pp2b26h2az3hq409iq6ka6an9f1mg"))))
+        (base32 "0yy5yz9ld74wvljvpfz4gh7xzq9b60nf9lc97s1zvmwjgrzp77v4"))))
     (properties `((upstream-name . "rbmi")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -41242,13 +41297,13 @@ provided in: Border and Malik (2022) <doi:10.1101/2022.10.13.512132>.")
 (define-public r-rbacon
   (package
     (name "r-rbacon")
-    (version "3.1.1")
+    (version "3.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rbacon" version))
        (sha256
-        (base32 "03c1d6p43h585kklwsp8x4w4vj1lrdm65i69p5gqb6cv35kvphjp"))))
+        (base32 "18d0mcfmslycbsi9sgqkxw1xwm9cgq4rxkwrvlbm67g0ryad86l3"))))
     (properties `((upstream-name . "rbacon")))
     (build-system r-build-system)
     (propagated-inputs (list r-rintcal r-rcpp r-data-table r-coda))
@@ -47128,13 +47183,13 @@ format.")
 (define-public r-r2roc
   (package
     (name "r-r2roc")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "R2ROC" version))
        (sha256
-        (base32 "1yb3fsnvaxbzvk5z61vblsdppkbacfh09c165pd9ryxb5d1yf539"))))
+        (base32 "0xmzsd5rbfidypkxcp8jf9afa7l4r70h627gcz4y4j688n110piw"))))
     (properties `((upstream-name . "R2ROC")))
     (build-system r-build-system)
     (home-page "https://github.com/mommy003/R2ROC")

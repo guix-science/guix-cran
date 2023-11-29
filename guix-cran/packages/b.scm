@@ -2395,22 +2395,25 @@ use this package, see An et al. (2022) <doi:10.18637/jss.v101.i11>.")
 (define-public r-bskyr
   (package
     (name "r-bskyr")
-    (version "0.0.4")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bskyr" version))
        (sha256
-        (base32 "1n2dv0h5i7rnbbrahmy4f1mrxsn1skdz9hfp5pyfgxdcxv2svn57"))))
+        (base32 "0yf1r2379n1x4p4w498ny8pj0nbxlanvrrl7q1pbli8j8kda87qa"))))
     (properties `((upstream-name . "bskyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
+                             r-stringi
                              r-rlang
                              r-purrr
+                             r-mime
                              r-lubridate
                              r-httr2
+                             r-fs
                              r-dplyr
                              r-cli))
     (home-page "https://github.com/christopherkenny/bskyr")
@@ -10211,13 +10214,13 @@ biplots.")
 (define-public r-biplotez
   (package
     (name "r-biplotez")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biplotEZ" version))
        (sha256
-        (base32 "01icnl7k8bwc4gvjzcc8f3nc83r1qcrr5jvjyc3l4q461gqx26zs"))))
+        (base32 "0fhafa00x1vj8lvhjm10daw8an62jsycsiq31skm547ig09fccym"))))
     (properties `((upstream-name . "biplotEZ")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr r-ggrepel r-ggplot2))
@@ -10471,6 +10474,43 @@ variables and spatial gene diversity are implemented.")
      "Calculates a range of UK freshwater invertebrate biotic indices including BMWP,
 Whalley, WHPT, Habitat-specific BMWP, AWIC, LIFE and PSI.")
     (license license:gpl3)))
+
+(define-public r-biostatsuhnplus
+  (package
+    (name "r-biostatsuhnplus")
+    (version "0.0.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BiostatsUHNplus" version))
+       (sha256
+        (base32 "1qq1j54qybrr9jlg85ck0a56aixqwv53lvhasj6b0pvng8w8p6sh"))))
+    (properties `((upstream-name . "BiostatsUHNplus")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-rstatix
+                             r-rlang
+                             r-reportrmd
+                             r-purrr
+                             r-plyr
+                             r-openxlsx
+                             r-modeest
+                             r-mcmcglmm
+                             r-lifecycle
+                             r-ggstance
+                             r-ggplot2
+                             r-ggh4x
+                             r-forcats
+                             r-dplyr
+                             r-cowplot
+                             r-afex))
+    (home-page "https://cran.r-project.org/package=BiostatsUHNplus")
+    (synopsis "Nested Data Summary and Adverse Events")
+    (description
+     "Miscellaneous code snippets and functions with pipes and multiple package
+dependencies used for summarizing nested data and adverse events.")
+    (license license:expat)))
 
 (define-public r-biostatr
   (package
@@ -14183,13 +14223,13 @@ analysis with simultaneous sparse feature selection in Lapanowski and Gaynanova
 (define-public r-bicausality
   (package
     (name "r-bicausality")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BiCausality" version))
        (sha256
-        (base32 "063qf3vfwxn0xp4j7rs4rz4zqhp2al5r3yhkw5lvf1882b3dqmis"))))
+        (base32 "0ryzq77j8sbic5mj8r6bpirnr2vb45wwkkkkkjmv70c15ip5409r"))))
     (properties `((upstream-name . "BiCausality")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -14349,13 +14389,13 @@ They can be used to test the different features of the package bibliometrix
 (define-public r-bibliometrix
   (package
     (name "r-bibliometrix")
-    (version "4.1.3")
+    (version "4.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bibliometrix" version))
        (sha256
-        (base32 "1z6y6v2pa0py3rmd1kcmxlb105sabi1w75hszzjfn1k9hbqfq27y"))))
+        (base32 "1m0bmafpn4mrk8hi39gsnrvfrqm4s5dmwv453rnkrsg98a2yz0n2"))))
     (properties `((upstream-name . "bibliometrix")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidytext
@@ -14370,6 +14410,7 @@ They can be used to test the different features of the package bibliometrix
                              r-pubmedr
                              r-plotly
                              r-openxlsx
+                             r-openalexr
                              r-matrix
                              r-igraph
                              r-ggrepel
@@ -18588,16 +18629,18 @@ exposures and outcomes.  For more details, see Talbot et al. (2015)
 (define-public r-bcea
   (package
     (name "r-bcea")
-    (version "2.4.4")
+    (version "2.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BCEA" version))
        (sha256
-        (base32 "0l67gk8myswf476i6r9kf433z7py2mkabmrx94cizi17q2l39wfx"))))
+        (base32 "04mccrbm35wp2ibjcqyiynwcvdyrnxp0574waljy40kwwrami1mn"))))
     (properties `((upstream-name . "BCEA")))
     (build-system r-build-system)
-    (propagated-inputs (list r-scales
+    (propagated-inputs (list r-voi
+                             r-scales
+                             r-rstan
                              r-rlang
                              r-reshape2
                              r-rdpack
@@ -18975,47 +19018,6 @@ bootstrap to estimate indicators from two-stage cluster sampled surveys.")
      "Posterior sampling for Spike-and-Slab LASSO prior in linear models from Nie and
 Rockova <@code{arXiv:2011.14279>}.")
     (license license:gpl3)))
-
-(define-public r-bbsbayes
-  (package
-    (name "r-bbsbayes")
-    (version "2.5.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bbsBayes" version))
-       (sha256
-        (base32 "0vh7idcj89l5nlgg0kf41pvs1d1lpn5r1p254afcycn0sr06ky6f"))))
-    (properties `((upstream-name . "bbsBayes")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr
-                             r-sf
-                             r-sbtools
-                             r-rappdirs
-                             r-progress
-                             r-mgcv
-                             r-jagsui
-                             r-ggrepel
-                             r-ggplot2
-                             r-geofacet
-                             r-dplyr))
-    (home-page "https://github.com/bbsBayes/bbsBayes")
-    (synopsis "Hierarchical Bayesian Analysis of North American BBS Data")
-    (description
-     "The North American Breeding Bird Survey (BBS) is a long-running program that
-seeks to monitor the status and trends of the breeding birds in North America.
-Since its start in 1966, the BBS has accumulated over 50 years of data for over
-500 species of North American Birds.  Given the temporal and spatial structure
-of the data, hierarchical Bayesian models are used to assess the status and
-trends of these 500+ species of birds. @code{bbsBayes} allows you to perform
-hierarchical Bayesian analysis of BBS data.  You can run a full model analysis
-for one or more species that you choose, or you can take more control and
-specify how the data should be stratified, prepared for JAGS', or modelled.  The
-functions provided here allow you to replicate analyses performed by the United
-State Geological Survey (USGS, see Link and Sauer (2011)
-<doi:10.1525/auk.2010.09220>) and Canadian Wildlife Service (CWS, see Smith and
-Edwards (2020) <doi:10.1101/2020.03.26.010215>).")
-    (license license:expat)))
 
 (define-public r-bbreg
   (package
@@ -20328,13 +20330,13 @@ segmentation wrapper for all algorithms.")
 (define-public r-bayesppd
   (package
     (name "r-bayesppd")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesPPD" version))
        (sha256
-        (base32 "1rkbcz5kx8pxsm1q6rryyyc4j1dn049hysdj3piwk71jpl43b0jj"))))
+        (base32 "0c015l8ih1ck1qb31vvnn95fivf5r3ns58pdlm4x5bf7giprjxf4"))))
     (properties `((upstream-name . "BayesPPD")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppnumerical r-rcppeigen r-rcpparmadillo
@@ -21051,13 +21053,13 @@ selection.  Marginal likelihood is approximated by methods in Chib S (1995)
 (define-public r-bayesmallows
   (package
     (name "r-bayesmallows")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesMallows" version))
        (sha256
-        (base32 "1irplamvggsds8jdb0pcz2wh8chdhkrgk22n2hgwl4yb1ysdqi3z"))))
+        (base32 "07bwfz1ja3cqlpsxplv2xkm99z0xcpdaa4b3lifgds8sigi1kpfl"))))
     (properties `((upstream-name . "BayesMallows")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat
@@ -24007,13 +24009,13 @@ shrinking and diffusing priors studied in Narisetty & He (2014)
 (define-public r-bas
   (package
     (name "r-bas")
-    (version "1.6.4")
+    (version "1.6.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BAS" version))
        (sha256
-        (base32 "1w7y3cp6j1pak2wq6wf9wffas0yvsz716qbva2bx9nln72gr05z5"))))
+        (base32 "0b9mnsj97v4kaa67ba6kdpbrcqwsw02xfr98jzrihyfs4dk1mwpb"))))
     (properties `((upstream-name . "BAS")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

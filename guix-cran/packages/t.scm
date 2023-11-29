@@ -2231,13 +2231,13 @@ of type numeric.  Interactive charts are produced using plotly package.")
 (define-public r-tsvio
   (package
     (name "r-tsvio")
-    (version "1.0.4")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tsvio" version))
        (sha256
-        (base32 "18acapx4dwdxdq8pdv9vdzcc4g3k8x1c7b78814fmc7w940cya2b"))))
+        (base32 "0x1b5wf5n5ljx377s1mgrm1ym6wvcvpq1brrxmfv179rhlm2ifzw"))))
     (properties `((upstream-name . "tsvio")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -2920,13 +2920,13 @@ Pearson VII, Slash or Contaminated Normal).")
 (define-public r-tslstmplus
   (package
     (name "r-tslstmplus")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TSLSTMplus" version))
        (sha256
-        (base32 "094wcql92535w5v91yfm1z73d4p0vp00vxbqngr7ca3z3qb9ibjg"))))
+        (base32 "1ap6k5zd1nh92s99k073jgmd9rxhz185m0cnz1wc2hrcpfgzqdg9"))))
     (properties `((upstream-name . "TSLSTMplus")))
     (build-system r-build-system)
     (propagated-inputs (list r-tsutils r-tensorflow r-keras))
@@ -6848,6 +6848,31 @@ and Mean Decrease Impurity using out-of-bag samples (MDI-oob) feature importance
 measures based on the work of Li et al. (2019) <@code{arXiv:1906.10845>}.")
     (license license:expat)))
 
+(define-public r-treats
+  (package
+    (name "r-treats")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "treats" version))
+       (sha256
+        (base32 "16ahw46wkjhvxhkiy4313ky9vvzjrg2bhxw1pz0j4hasdkd9xq1s"))))
+    (properties `((upstream-name . "treats")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rgl r-mass r-disprity r-ape))
+    (home-page "https://github.com/TGuillerme/treats")
+    (synopsis "Trees and Traits Simulations")
+    (description
+     "This package provides a modular package for simulating phylogenetic trees and
+species traits jointly.  Trees can be simulated using modular birth-death
+parameters (e.g. changing starting parameters or algorithm rules).  Traits can
+be simulated in any way designed by the user.  The growth of the tree and the
+traits can influence each other through modifiers objects providing rules for
+affecting each other.  Finally, events can be created to modify both the tree
+and the traits under specific conditions.")
+    (license license:gpl3)))
+
 (define-public r-treatmentselection
   (package
     (name "r-treatmentselection")
@@ -7977,13 +8002,13 @@ University Press.  and Noel (2022), <https://orbilu.uni.lu/>, thesis.")
 (define-public r-trajectories
   (package
     (name "r-trajectories")
-    (version "0.2-7")
+    (version "0.2-8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "trajectories" version))
        (sha256
-        (base32 "09qz6yc21q54ivjnkh4rpm5m3j81h1vabjvrp9fwrcswj8y8k0y8"))))
+        (base32 "0rs4jlj2w9byvx47kvp4aayh485ck2xra3pkpjl95dyk8b0xpl4d"))))
     (properties `((upstream-name . "trajectories")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-spacetime r-sp r-lattice))
@@ -12189,13 +12214,13 @@ dependency-free.")
 (define-public r-tinycodet
   (package
     (name "r-tinycodet")
-    (version "0.2")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinycodet" version))
        (sha256
-        (base32 "10hz4zmc5prn76hx62hja3bqhcragz5bxdymprf8kdgamrljqm83"))))
+        (base32 "067qg3xj9s464p9xpb58md1ayp6v3yinx413y7mrbxhx2gdhfif3"))))
     (properties `((upstream-name . "tinycodet")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi))
@@ -12721,13 +12746,13 @@ recordings as data frame for later use.")
 (define-public r-timeplyr
   (package
     (name "r-timeplyr")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "timeplyr" version))
        (sha256
-        (base32 "0rhmpm0ab691axp56p90wmdfx4scj89r6c16wmzcidha6q7qr37f"))))
+        (base32 "1ck06wcpncj50346j6f890g7drm7azzdzi40y9x10gbnfvsxysx2"))))
     (properties `((upstream-name . "timeplyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -13936,13 +13961,13 @@ the results in a tidy format.")
 (define-public r-tidyseurat
   (package
     (name "r-tidyseurat")
-    (version "0.7.4")
+    (version "0.7.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyseurat" version))
        (sha256
-        (base32 "1mpb57xsaia9gdjnm8gy4kcpfdxrmw5xm0af15mzd96pg39918pm"))))
+        (base32 "0yyzi395lximy1rn06cph1awa31328wy8vmcjpn5fp6dczq00dms"))))
     (properties `((upstream-name . "tidyseurat")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -18987,13 +19012,13 @@ plenty of choices for the model types are available, which can be found in the
 (define-public r-testgardener
   (package
     (name "r-testgardener")
-    (version "3.2.6")
+    (version "3.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TestGardener" version))
        (sha256
-        (base32 "1i8xrxzadgxkmxv2wcy7hw90kawm18qv9mfxm9czf08jl1bx1ydx"))))
+        (base32 "0rbfglfcjav32xl3mkr6pgvr3j3h8kxgp104blrncphym21ajmw8"))))
     (properties `((upstream-name . "TestGardener")))
     (build-system r-build-system)
     (propagated-inputs (list r-utf8
@@ -19008,9 +19033,8 @@ plenty of choices for the model types are available, which can be found in the
                              r-ggplot2
                              r-fda
                              r-dplyr))
-    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=TestGardener")
-    (synopsis "Optimal Analysis of Test and Rating Scale Data")
+    (synopsis "Information Analysis for Test and Rating Scale Data")
     (description
      "Develop, evaluate, and score multiple choice examinations, psychological scales,
 questionnaires, and similar types of data involving sequences of choices among
@@ -23424,16 +23448,16 @@ that the features selected by TANDEM are more interpretable.")
 (define-public r-tanaka
   (package
     (name "r-tanaka")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tanaka" version))
        (sha256
-        (base32 "0lbwqz6p7kmxadjymqpfmcvz4l6gzimbk94778w4vzh9iay7dqi7"))))
+        (base32 "086xjcl8fsbsk3b0qjn8vx0w5rc5jg30hk9x93zc2mq8d984kh7r"))))
     (properties `((upstream-name . "tanaka")))
     (build-system r-build-system)
-    (propagated-inputs (list r-terra r-sf r-mapiso))
+    (propagated-inputs (list r-terra r-sf r-maplegend r-mapiso))
     (home-page "https://github.com/riatelab/tanaka/")
     (synopsis "Design Shaded Contour Lines (or Tanaka) Maps")
     (description
@@ -24024,13 +24048,13 @@ special handling for the format currently in use.")
 (define-public r-tabula
   (package
     (name "r-tabula")
-    (version "3.0.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tabula" version))
        (sha256
-        (base32 "1jdm37p1sc55xb3ha7rha65wv1jnfg29xxgpcfa4yikpfby1m834"))))
+        (base32 "0w26lp0if0lxkr8hrlw57jf5cwqji4q8yqaay6fasy08z4j9lvhf"))))
     (properties `((upstream-name . "tabula")))
     (build-system r-build-system)
     (propagated-inputs (list r-arkhe))

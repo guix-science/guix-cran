@@ -542,6 +542,41 @@ null plots using permutation and simulation.  Calculate distance metrics for a
 lineup, and examine the distributions of metrics.")
     (license license:gpl2+)))
 
+(define-public r-nuggets
+  (package
+    (name "r-nuggets")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nuggets" version))
+       (sha256
+        (base32 "15jlfkxjyf8b9prg1n2vr4qn9vamh49ilx42y4phwl0q2bixp56m"))))
+    (properties `((upstream-name . "nuggets")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-testthat
+                             r-rlang
+                             r-rcpp
+                             r-cli))
+    (home-page "https://cran.r-project.org/package=nuggets")
+    (synopsis "Extensible Data Pattern Searching Framework")
+    (description
+     "Extensible framework for subgroup discovery (Atzmueller (2015)
+<doi:10.1002/widm.1144>), contrast patterns (Chen (2022)
+<doi:10.48550/@code{arXiv.2209.13556>}), emerging patterns (Dong (1999)
+<doi:10.1145/312129.312191>) and association rules (Agrawal (1994)
+<https://www.vldb.org/conf/1994/P487.PDF>).  Both crisp (binary) and fuzzy data
+are supported.  It generates conditions in the form of elementary conjunctions,
+evaluates them on a dataset and checks the induced sub-data for interesting
+statistical properties.  Currently, the package searches for implicative
+association rules and conditional correlations (HÃ¡jek (1978)
+<doi:10.1007/978-3-642-66943-9>).  A user-defined function may be defined to
+evaluate on each generated condition to search for custom patterns.")
+    (license license:gpl3+)))
+
 (define-public r-nueton
   (package
     (name "r-nueton")
@@ -2626,16 +2661,24 @@ empirical applications and simulated examples.")
 (define-public r-npboottprm
   (package
     (name "r-npboottprm")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "npboottprm" version))
        (sha256
-        (base32 "0a2c846vhvpz8nc4f1ar91px275y9fs570v7k9pdny4dw0kq1zqh"))))
+        (base32 "17ml1m91i95k87h0aijbskah2wz9lybvgp7dc0918j69cm12zp6s"))))
     (properties `((upstream-name . "npboottprm")))
     (build-system r-build-system)
-    (propagated-inputs (list r-shinythemes r-shiny r-ggplot2))
+    (propagated-inputs (list r-sn
+                             r-shinythemes
+                             r-shiny
+                             r-mkinfer
+                             r-mass
+                             r-lmperm
+                             r-ggplot2
+                             r-fgarch
+                             r-dt))
     (home-page "https://github.com/mightymetrika/npboottprm")
     (synopsis "Nonparametric Bootstrap Test with Pooled Resampling")
     (description
@@ -3186,13 +3229,13 @@ estimated on the normalized scores are also provided.  See Philipps et al (2014)
 (define-public r-normfluodbf
   (package
     (name "r-normfluodbf")
-    (version "1.5.1")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "normfluodbf" version))
        (sha256
-        (base32 "08gj26cnqw7d4rpwgz9xi05jgnk9xl2arywb3dxymnma58jzjgfh"))))
+        (base32 "1xhvwrkjhdxdzh9p1wmnxmskn6q5658s0v63p9x67b30g5s2bsca"))))
     (properties `((upstream-name . "normfluodbf")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -3325,23 +3368,22 @@ normalp package.  In Journal of Statistical Software, Vol.  12, Issue 4).")
 (define-public r-normallaplace
   (package
     (name "r-normallaplace")
-    (version "0.3-0")
+    (version "0.3-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NormalLaplace" version))
        (sha256
-        (base32 "0njgjdx2yvvy5jb5zn6zr7jdz5hck5bbkicv15z4ai4ibmckqjmh"))))
+        (base32 "1j113pfi4fynn9jwma6j6habi1xj76sydjbymr3shsagv7jz6pfg"))))
     (properties `((upstream-name . "NormalLaplace")))
     (build-system r-build-system)
     (propagated-inputs (list r-generalizedhyperbolic r-distributionutils))
-    (home-page "https://cran.r-project.org/package=NormalLaplace")
+    (home-page "https://r-forge.r-project.org/projects/rmetrics/")
     (synopsis "The Normal Laplace Distribution")
     (description
-     "This package provides functions for the normal Laplace distribution.  The
-package is under development and provides only limited functionality.  Density,
-distribution and quantile functions, random number generation, and moments are
-provided.")
+     "This package provides functions for the normal Laplace distribution.  Currently,
+it provides limited functionality.  Density, distribution and quantile
+functions, random number generation, and moments are provided.")
     (license license:gpl2+)))
 
 (define-public r-normalizeh
@@ -3931,13 +3973,13 @@ Granger causality test performed using nonlinear models can also be applied.")
 (define-public r-nonlinearrdd
   (package
     (name "r-nonlinearrdd")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NonlinearRDD" version))
        (sha256
-        (base32 "14pkbg531pg9ny1v1lcgg5ygkahjqnz7j35zy623r4my5aqj0yh7"))))
+        (base32 "0jj8s8nvv5jcp74zlid0y5j4b1vl6cg4mxaw6m45wnaxansqfcq3"))))
     (properties `((upstream-name . "NonlinearRDD")))
     (build-system r-build-system)
     (propagated-inputs (list r-rfast
@@ -4890,13 +4932,13 @@ chi-square tests.")
 (define-public r-nns
   (package
     (name "r-nns")
-    (version "10.3")
+    (version "10.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NNS" version))
        (sha256
-        (base32 "0nwahf61dgrj8nzdm55m4ba7jvb0d6a2zkznglzl943dq4wr84qj"))))
+        (base32 "14r2iyvrkmn69frkp9dmx7dznisbwn5ajspl32g8f7lb3dx7q98g"))))
     (properties `((upstream-name . "NNS")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -5303,13 +5345,13 @@ functions based on the NMSLIB <https://github.com/nmslib/nmslib> Python Library.
 (define-public r-nmsim
   (package
     (name "r-nmsim")
-    (version "0.0.5")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMsim" version))
        (sha256
-        (base32 "18jvvyzf4bdb73sj1ws517z7zcy17g4dhmwk8y6id7r0nih71rra"))))
+        (base32 "0byq3yl5x20hnvbvzrkssck5zfb7bwldsaxabqg7pnjzxg7jg5ll"))))
     (properties `((upstream-name . "NMsim")))
     (build-system r-build-system)
     (propagated-inputs (list r-r-utils r-nmdata r-mass r-data-table))
@@ -6562,13 +6604,13 @@ print and summary as of August 28, 2012.")
 (define-public r-nlmm
   (package
     (name "r-nlmm")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmm" version))
        (sha256
-        (base32 "0pmw3a8mqmdli2rx8pgmq8i5l045jvcdidx9a7pgcfyymv9sqfpv"))))
+        (base32 "0mi9nsdzsvaxfb3n3z3rijd8saw4l7x3g2gq8ivzxyilyav5anxb"))))
     (properties `((upstream-name . "nlmm")))
     (build-system r-build-system)
     (propagated-inputs (list r-statmod
@@ -6581,6 +6623,7 @@ print and summary as of August 28, 2012.")
                              r-matrix
                              r-mass
                              r-lqmm
+                             r-gsl
                              r-bh))
     (home-page "https://cran.r-project.org/package=nlmm")
     (synopsis "Generalized Laplace Mixed-Effects Models")
@@ -8500,13 +8543,13 @@ Probabilistic Prediction.")
 (define-public r-nftbart
   (package
     (name "r-nftbart")
-    (version "1.6")
+    (version "2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nftbart" version))
        (sha256
-        (base32 "193507ii4f78g81937dixk7mja23sdicb0fvi0g3ryi0xjh913q0"))))
+        (base32 "1vxmjk5bbxyqmrb3mndafcnpx9n8q9rlxm3d1i6fncs78mqqjsnm"))))
     (properties `((upstream-name . "nftbart")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rcpp r-nnet))
@@ -13371,32 +13414,6 @@ distances between mates; hence, it is referred to as an \"optimal\" matching.  T
 assign.grp() function aids in performing a matched randomization.  Note
 bipartite matching can be performed using the prevent option in gendistance()'.")
     (license license:gpl2+)))
-
-(define-public r-nbody
-  (package
-    (name "r-nbody")
-    (version "1.33")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "nbody" version))
-       (sha256
-        (base32 "1ky07bi830z3c2fvxq0fmicsllm736b510q4zphff4rwljx1awf2"))))
-    (properties `((upstream-name . "nbody")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-magicaxis))
-    (home-page "https://cran.r-project.org/package=nbody")
-    (synopsis "Gravitational N-Body Simulation")
-    (description
-     "This package provides tools to run simple direct gravitational N-body
-simulations.  It can access different external N-body simulators, but also has a
-simple built-in default simulator.  This default simulator uses a variable block
-time step and lets the user choose between a range of integrators, including 4th
-and 6th order integrators for high-accuracy simulations.  Basic top-hat
-smoothing is available as an option.  The code also allows the definition of
-background particles that are fixed or in uniform motion, not subject to
-acceleration by other particles.")
-    (license license:gpl3)))
 
 (define-public r-nblr
   (package

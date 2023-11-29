@@ -172,13 +172,13 @@ annotation.  Saelens et al. (2019) <doi:10.1038/s41587-019-0071-9>.")
 (define-public r-dyntxregime
   (package
     (name "r-dyntxregime")
-    (version "4.14")
+    (version "4.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DynTxRegime" version))
        (sha256
-        (base32 "1mgpy3y2dcv27ph8a870fpcsav72asvh136m8k3d37b5whg4ag1c"))))
+        (base32 "18hk5bc6bsdjdl4736sdk896zblyc8l3ipjii4x2jksngcjvszbb"))))
     (properties `((upstream-name . "DynTxRegime")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgenoud r-modelobj r-kernlab r-dfoptim))
@@ -299,13 +299,13 @@ uses dynamic range boxes to overcome these problems.")
 (define-public r-dynr
   (package
     (name "r-dynr")
-    (version "0.1.16-91")
+    (version "0.1.16-105")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dynr" version))
        (sha256
-        (base32 "0h2mgnqhcq420f0qqbgnkjk1wbgr9x2fk8hrk22j01mzhc4lmsm5"))))
+        (base32 "0s9n62k9cghvqgcpgingcvni3fzq2d9lrnj48i92kb25165446wm"))))
     (properties `((upstream-name . "dynr")))
     (build-system r-build-system)
     (inputs (list gsl))
@@ -335,7 +335,7 @@ multi-subject in nature.  The change functions may also be continuous, or
 continuous but interspersed with periods of discontinuities (i.e., showing
 regime switches).  The package dynr (Dynamic Modeling in R) is an R package that
 implements a set of computationally efficient algorithms for handling a broad
-class of linear and nonlinear discrete- and continuous- time models with
+class of linear and nonlinear discrete- and continuous-time models with
 regime-switching properties under the constraint of linear Gaussian measurement
 functions.  The discrete-time models can generally take on the form of a
 state-space or difference equation model.  The continuous-time models are
@@ -1741,13 +1741,13 @@ S3 file system also generalizes to any list of http URLs.")
 (define-public r-duckdb
   (package
     (name "r-duckdb")
-    (version "0.9.2")
+    (version "0.9.2-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "duckdb" version))
        (sha256
-        (base32 "13mi5klr0v33rfy6cg6di54p21w49kw70rbq1n39cgwnqrgmzdar"))))
+        (base32 "15n71fyg9krggkk1lkny96ag970f172cg8ljfb3dwiqr2kl7n724"))))
     (properties `((upstream-name . "duckdb")))
     (build-system r-build-system)
     (propagated-inputs (list r-dbi))
@@ -10274,13 +10274,13 @@ distance surface.  But the workhorse is distance_to.")
 (define-public r-distances
   (package
     (name "r-distances")
-    (version "0.1.9")
+    (version "0.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "distances" version))
        (sha256
-        (base32 "1gbwi8x2490wliks7q3gm0bz11mgjpkc7q8al77brllg70r3lmaq"))))
+        (base32 "0rni8naaryvhmldk8zflwlb4kdrvjfcmfb0j5nxfm4yndqad557b"))))
     (properties `((upstream-name . "distances")))
     (build-system r-build-system)
     (home-page "https://github.com/fsavje/distances")
@@ -12387,25 +12387,26 @@ Digital Science Dimensions using DSL API
 (define-public r-dimensio
   (package
     (name "r-dimensio")
-    (version "0.4.1")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dimensio" version))
        (sha256
-        (base32 "1bq4c8903pwzk3ibz4fkyf7m6advihwjnzzxmgpw64183w7qwnh2"))))
+        (base32 "1plx27zvddh9amgkvi9y9w0h5mv15bn0ncg3mqbxnwch9gnampyy"))))
     (properties `((upstream-name . "dimensio")))
     (build-system r-build-system)
+    (propagated-inputs (list r-arkhe))
     (native-inputs (list r-knitr))
     (home-page "https://packages.tesselle.org/dimensio/")
     (synopsis "Multivariate Data Analysis")
     (description
-     "Simple Principal Components Analysis (PCA) and Correspondence Analysis (CA)
-based on the Singular Value Decomposition (SVD).  This package provides S4
-classes and methods to compute, extract, summarize and visualize results of
-multivariate data analysis.  It also includes methods for partial bootstrap
-validation described in Greenacre (1984) <isbn:978-0-12-299050-2> and Lebart et
-al. (2006) <isbn:978-2-10-049616-7>.")
+     "Simple Principal Components Analysis (PCA) and (Multiple) Correspondence
+Analysis (CA) based on the Singular Value Decomposition (SVD).  This package
+provides S4 classes and methods to compute, extract, summarize and visualize
+results of multivariate data analysis.  It also includes methods for partial
+bootstrap validation described in Greenacre (1984) <isbn:978-0-12-299050-2> and
+Lebart et al. (2006) <isbn:978-2-10-049616-7>.")
     (license license:gpl3+)))
 
 (define-public r-dime
@@ -14611,13 +14612,13 @@ regression models.")
 (define-public r-dglm
   (package
     (name "r-dglm")
-    (version "1.8.5")
+    (version "1.8.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dglm" version))
        (sha256
-        (base32 "087pvd3r9w4920xml3hrlwa95lknhmffyn8lqbw627y2d1zwsx1c"))))
+        (base32 "1xgvfdlsgi14mv02k71dg0g21yhzzzpaf0dlaq26w6565046m6iy"))))
     (properties `((upstream-name . "dglm")))
     (build-system r-build-system)
     (propagated-inputs (list r-statmod))
@@ -15407,13 +15408,13 @@ column will be converted to the multi-level hierarchy.")
 (define-public r-dextermst
   (package
     (name "r-dextermst")
-    (version "0.9.3")
+    (version "0.9.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dexterMST" version))
        (sha256
-        (base32 "1c30v83lx6p90l8a9kia5p0361j3ymbabyb2r6dkkak8n8zwfydl"))))
+        (base32 "1m44scvrm184m5b3qxlk3mmjgar2dgrc06p7ayajpjchwdlwm92b"))))
     (properties `((upstream-name . "dexterMST")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -15435,7 +15436,7 @@ tests.  Supports polytomous items and incomplete designs with linear as well as
 multistage tests.  Extended Nominal Response and Interaction models, DIF and
 profile analysis.  See Robert J. Zwitser and Gunter Maris
 (2015)<doi:10.1007/s11336-013-9369-6>.")
-    (license license:gpl2+)))
+    (license license:lgpl3)))
 
 (define-public r-dextergui
   (package
@@ -16830,13 +16831,13 @@ MEANS from SAS and ladder', gladder', and pwcorr from Stata'.")
 (define-public r-descr
   (package
     (name "r-descr")
-    (version "1.1.7")
+    (version "1.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "descr" version))
        (sha256
-        (base32 "1wg508l2r14kp4vajidp2i1xg23fmlmicdgf6q4p6wagzgwpapqs"))))
+        (base32 "0yyxh1030pfjriwm8xfx9rp32cq7jfqlxq8mim1qvx06siah545c"))))
     (properties `((upstream-name . "descr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable))
@@ -22264,13 +22265,13 @@ computes several estimations of the true error rate.")
 (define-public r-dauphin
   (package
     (name "r-dauphin")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dauphin" version))
        (sha256
-        (base32 "04r48wld84by8lwqi9pwdypval814wfshjblmm30v5igwl1xcgzc"))))
+        (base32 "0p84hnvipi5pvyzwrgl7a1xv7lmq2vm96l6dfbpd2r9vb4mhbrn7"))))
     (properties `((upstream-name . "dauphin")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=dauphin")
@@ -23587,13 +23588,13 @@ ability to get this data from supported sources.")
 (define-public r-datanugget
   (package
     (name "r-datanugget")
-    (version "1.2.2")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datanugget" version))
        (sha256
-        (base32 "0d5azw92za46hnb0im2fgzamyfslxl4ss8sxvxzqz9ss4yz46qj2"))))
+        (base32 "0r75vc6fzafv2kwq228w9iw0ryhwmly839dhcgf8bqgxyzd9gs16"))))
     (properties `((upstream-name . "datanugget")))
     (build-system r-build-system)
     (propagated-inputs (list r-rfast r-foreach r-dosnow))
@@ -24306,13 +24307,13 @@ package.")
 (define-public r-databaseconnector
   (package
     (name "r-databaseconnector")
-    (version "6.3.0")
+    (version "6.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DatabaseConnector" version))
        (sha256
-        (base32 "18ci46i1m9bnb1affz7n57lpdmzpx2y46a3bdz5im3lccday2q1f"))))
+        (base32 "0vkl6xr4hzxgdl7n0ds3sryfhy07jxirfwzk1qhl83amxp5i03vw"))))
     (properties `((upstream-name . "DatabaseConnector")))
     (build-system r-build-system)
     (inputs (list openjdk))
@@ -24624,6 +24625,36 @@ data in @code{dartR.data} is needed to run the examples provided in the
 @code{dartR} functions.  All available data sets are either based on actual data
 (but reduced in size) and/or simulated data sets to allow the fast execution of
 examples and demonstration of the functions.")
+    (license license:gpl3+)))
+
+(define-public r-dartr-captive
+  (package
+    (name "r-dartr-captive")
+    (version "0.75")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dartR.captive" version))
+       (sha256
+        (base32 "1n6qhn87111ydznmy85lj7sbxkkak4nwiq1kyky3p43x9679b2p9"))))
+    (properties `((upstream-name . "dartR.captive")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-patchwork
+                             r-ggplot2
+                             r-dartr-data
+                             r-dartr-base
+                             r-crayon
+                             r-adegenet))
+    (home-page "https://green-striped-gecko.github.io/dartR/")
+    (synopsis "Analysing 'SNP' Data to Support Captive Breeding")
+    (description
+     "This package provides functions are provided that facilitate the analysis of SNP
+(single nucleotide polymorphism) data to answer questions regarding captive
+breeding and relatedness between individuals. @code{dartR.captive} is part of
+the @code{dartRverse} suit of packages.  Gruber et al. (2018)
+<doi:10.1111/1755-0998.12745>.  Mijangos et al. (2022)
+<doi:10.1111/2041-210X.13918>.")
     (license license:gpl3+)))
 
 (define-public r-dartr-base
@@ -24964,13 +24995,13 @@ package implements dann and sub_dann from Hastie (1996)
 (define-public r-danielbiostatistics10th
   (package
     (name "r-danielbiostatistics10th")
-    (version "0.1.9")
+    (version "0.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DanielBiostatistics10th" version))
        (sha256
-        (base32 "1jf7k79q5a0nqy5abbnn9bdj7fnly4kfwm84n5mxng6s7lxfqzb3"))))
+        (base32 "0adaa1wm079mbikz5dd3f307s356iyckffbm0h3d8jcj335by6pr"))))
     (properties `((upstream-name . "DanielBiostatistics10th")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales

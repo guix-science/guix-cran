@@ -2608,13 +2608,13 @@ The algorithm is implemented following the work of BÃ©gin and Boudreault (2021
 (define-public r-svd
   (package
     (name "r-svd")
-    (version "0.5.4.1")
+    (version "0.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "svd" version))
        (sha256
-        (base32 "0awnv5aqyfikfs23cz5p8w8hifvd43gvvcnxgcp8h5m2zlyny3kb"))))
+        (base32 "1ilcz7qjykawrd0r74k51f7xryy6d30dmf7zzpbwga6i99wkj0g2"))))
     (properties `((upstream-name . "svd")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -4080,13 +4080,13 @@ possibility of crossings or alternative orderings among the survival functions."
 (define-public r-surveillance
   (package
     (name "r-surveillance")
-    (version "1.22.0")
+    (version "1.22.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "surveillance" version))
        (sha256
-        (base32 "0ixd5xdcbdwqa8pcahfv12lmj0sslvd8mpi04c48yycj81qincj8"))))
+        (base32 "1gmpyfrvbq19x056xcryx21131vg8c7mvrnn4wmaw3mvxifp6zs6"))))
     (properties `((upstream-name . "surveillance")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -5698,13 +5698,13 @@ Finos, and Goeman (2020) <@code{arXiv:2102.11759>}.")
 (define-public r-sumr
   (package
     (name "r-sumr")
-    (version "0.4.14")
+    (version "0.4.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sumR" version))
        (sha256
-        (base32 "11r628mlilwbz1yh3qw88il13gyqzdba3s5ky5jcza5b6mpwyvgl"))))
+        (base32 "1s4id6yrwib0b6l1a3pkihmqmishwjkg6pz25mr17aqmb8k400yy"))))
     (properties `((upstream-name . "sumR")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrixstats))
@@ -8192,32 +8192,32 @@ optimal matching of the data set in parallel within strata.")
 (define-public r-stratallo
   (package
     (name "r-stratallo")
-    (version "2.2.0")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stratallo" version))
        (sha256
-        (base32 "0b47yx287283vjvmv16il4q3k8fs8n83ac64ygwgjdq301gdj85z"))))
+        (base32 "0v29c8qva2clmhdyrj7sn4cqx0wq00vjhnlh355iirm8vi9nhky0"))))
     (properties `((upstream-name . "stratallo")))
     (build-system r-build-system)
     (propagated-inputs (list r-lifecycle r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/wwojciech/stratallo")
-    (synopsis "Optimum Sample Allocation in Stratified Sampling Schemes")
+    (synopsis "Optimum Sample Allocation in Stratified Sampling")
     (description
      "This package provides functions in this package provide solution to classical
 problem in survey methodology - an optimum sample allocation in stratified
-sampling.  In this context, the optimal allocation is in the classical
-Tschuprov-Neyman's sense and it satisfies additional lower or upper bounds
+sampling.  In this context, the optimum allocation is in the classical
+Tschuprow-Neyman's sense and it satisfies additional lower or upper bounds
 restrictions imposed on sample sizes in strata.  There are few different
 algorithms available to use, and one them is based on popular sample allocation
 method that applies Neyman allocation to recursively reduced set of strata.
 This package also provides the function that computes a solution to the minimum
-cost allocation problem, which is a minor modification of the classical optimium
+cost allocation problem, which is a minor modification of the classical optimum
 sample allocation.  This problem lies in the determination of a vector of strata
 sample sizes that minimizes total cost of the survey, under assumed fixed level
-of the stratified estimator's variance.  As in the case of the classical optimal
+of the stratified estimator's variance.  As in the case of the classical optimum
 allocation, the problem of minimum cost allocation can be complemented by
 imposing upper-bounds constraints on sample sizes in strata.")
     (license license:gpl2)))
@@ -8767,6 +8767,38 @@ variety of approaches for storing the data.  This package implements the base
 methods and support for file system, in-memory and DBI-based database stores.")
     (license license:expat)))
 
+(define-public r-stormr
+  (package
+    (name "r-stormr")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "StormR" version))
+       (sha256
+        (base32 "02pxdalkls5qyhms0micjx3w4vvqisv4rc4h7dmyszmacki4kn49"))))
+    (properties `((upstream-name . "StormR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-terra
+                             r-stringr
+                             r-sf
+                             r-rworldmap
+                             r-ncdf4
+                             r-maps))
+    (native-inputs (list r-knitr))
+    (home-page "https://umr-amap.github.io/StormR/")
+    (synopsis
+     "Analyzing the Behaviour of Wind Generated by Tropical Storms and Cyclones")
+    (description
+     "Set of functions to quantify and map the behaviour of winds generated by
+tropical storms and cyclones in space and time.  It includes functions to
+compute and analyze fields such as the maximum sustained wind field, power
+dissipation index and duration of exposure to winds above a given threshold.  It
+also includes functions to map the trajectories as well as characteristics of
+the storms.")
+    (license license:gpl3+)))
+
 (define-public r-storm
   (package
     (name "r-storm")
@@ -9178,13 +9210,13 @@ approximation.  The models are fitted via TMB (Template Model Builder)
 (define-public r-stochvol
   (package
     (name "r-stochvol")
-    (version "3.2.1")
+    (version "3.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stochvol" version))
        (sha256
-        (base32 "074paxqjbjsxd22nrwmfqwv0799q5wgknp6vdqy74qp8a5svgdq1"))))
+        (base32 "0h3xjbf2882ga5zy0fyarqgdnd0p71n6ib662sqhifqiadz4dddq"))))
     (properties `((upstream-name . "stochvol")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-coda))
@@ -14911,13 +14943,13 @@ distribution.  The SSDM package also provides a user-friendly interface.")
 (define-public r-ssdforr
   (package
     (name "r-ssdforr")
-    (version "1.5.32")
+    (version "1.5.33")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SSDforR" version))
        (sha256
-        (base32 "0dzs6jrqbh0kdmrwnzx63ccm6alimjry0zgqjhxl9c4r48gqkqhm"))))
+        (base32 "041g55cx5d5yql3lsccq22gn8r27wdymlfngflijccj9rwm0nncc"))))
     (properties `((upstream-name . "SSDforR")))
     (build-system r-build-system)
     (propagated-inputs (list r-ttr
@@ -15996,6 +16028,30 @@ transforming data into useful formats.")
      "Includes functions for interacting with common meta data fields, writing insert
 statements, calling functions, and more for T-SQL and Postgresql'.")
     (license license:gpl3+)))
+
+(define-public r-sqlcaser
+  (package
+    (name "r-sqlcaser")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sqlcaser" version))
+       (sha256
+        (base32 "0bnrgrmirypzcpyyi3ayi9k6b4phh5cjaa4ldizhsk14d8bbhw40"))))
+    (properties `((upstream-name . "sqlcaser")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=sqlcaser")
+    (synopsis "'SQL' Case Statement Generator")
+    (description
+     "Includes built-in methods for generating long SQL CASE statements, and other SQL
+statements that may otherwise be arduous to construct by hand.  The generated
+statement can easily be concatenated to string literals to form queries to
+SQL'-like databases, such as when using the RODBC package.  The current methods
+include casewhen() for building CASE statements, inlist() for building IN
+statements, and updatetable() for building UPDATE statements.")
+    (license license:expat)))
 
 (define-public r-sql
   (package
@@ -22067,6 +22123,30 @@ B. (2008) <doi:10.1111/j.0906-7590.2008.05548.x>, Chainey, S., Tompson, L.,
 Uhlig, S.(2008) <doi:10.1057/palgrave.sj.8350066>.")
     (license license:expat)))
 
+(define-public r-spatialising
+  (package
+    (name "r-spatialising")
+    (version "0.6.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spatialising" version))
+       (sha256
+        (base32 "0q2gj16crhr1s92pazj6zbhr03xjp0pqwdc64qanpxmv4sbm65wq"))))
+    (properties `((upstream-name . "spatialising")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra r-rcpp r-comat))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Nowosad/spatialising")
+    (synopsis "Ising Model for Spatial Data")
+    (description
+     "This package performs simulations of binary spatial raster data using the Ising
+model (Ising (1925) <doi:10.1007/BF02980577>; Onsager (1944)
+<doi:10.1103/@code{PhysRev.65.117>}).  It allows to set a few parameters that
+represent internal and external pressures, and the number of simulations
+(Stepinski and Nowosad (2023) <doi:10.1098/rsos.231005>).")
+    (license license:expat)))
+
 (define-public r-spatialgraph
   (package
     (name "r-spatialgraph")
@@ -24084,13 +24164,13 @@ of the American Statistical Association 105(490): 713-726.")
 (define-public r-spant
   (package
     (name "r-spant")
-    (version "2.16.0")
+    (version "2.17.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spant" version))
        (sha256
-        (base32 "19n2mnvrd9p0kwgnhh7q2pz01xs22qx2zqw1k4l0gvagb8kjz9pi"))))
+        (base32 "0zmk71pqg4j0amqwpyf6l0p3j60fks4snqy9409vvsgxihfj51r4"))))
     (properties `((upstream-name . "spant")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -24140,35 +24220,6 @@ Wilson (2021) <DOI:10.1002/mrm.28385> and spectral alignment: Wilson (2018)
      "Character vector to numerical translation in Euros from Spanish spelled monetary
 quantities.  Reverse translation from integer to Spanish.  Upper limit is up to
 the millions range.  Geocoding via Cadastral web site.")
-    (license license:gpl3)))
-
-(define-public r-spamtree
-  (package
-    (name "r-spamtree")
-    (version "0.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "spamtree" version))
-       (sha256
-        (base32 "1z1dyv6cvcdilqyfpzgl3zr0jmzjn2sznrvypvxx7c8i6qfq8nd0"))))
-    (properties `((upstream-name . "spamtree")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble
-                             r-rlang
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-magrittr
-                             r-fnn
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=spamtree")
-    (synopsis "Spatial Multivariate Trees")
-    (description
-     "Fits multivariate Bayesian spatial regression models for large datasets using
-Spatial Multivariate Trees (@code{SpamTrees}).  The methods in this package are
-detailed in Peruzzi and Dunson (2020) <@code{arXiv:2012.00943>}.  Funded by ERC
-grant 856506 and NIH grant R01ES028804.")
     (license license:gpl3)))
 
 (define-public r-spamm
@@ -30520,13 +30571,13 @@ helpful for interpretation.  The crucial function of this package is SLFPCA().")
 (define-public r-slfm
   (package
     (name "r-slfm")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "slfm" version))
        (sha256
-        (base32 "0s7fdvr4fvsb4789f9ly2x820g4xvabl04wk7k6i8pd5ckj2xjhy"))))
+        (base32 "1xrla1c91x636vi55ajhaiz10293bppxylpm2jqrmfgs9gh2rbrn"))))
     (properties `((upstream-name . "slfm")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-lattice r-coda))
@@ -31508,13 +31559,13 @@ Lachos and Matos (2021) <doi:10.1002/sim.8870>.")
 (define-public r-skewhyperbolic
   (package
     (name "r-skewhyperbolic")
-    (version "0.4-0")
+    (version "0.4-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SkewHyperbolic" version))
        (sha256
-        (base32 "1blxibjrgb738q2ybavp4q3d6yn7hayhg851ysghp118wpl32nwr"))))
+        (base32 "0zhnw9qksm91v9cnlriaqlgr2pd855v6z75xpyqc0ms1qa5m8jp6"))))
     (properties `((upstream-name . "SkewHyperbolic")))
     (build-system r-build-system)
     (propagated-inputs (list r-generalizedhyperbolic r-distributionutils))
@@ -35133,13 +35184,13 @@ trajectories.")
 (define-public r-simmer
   (package
     (name "r-simmer")
-    (version "4.4.6.2")
+    (version "4.4.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simmer" version))
        (sha256
-        (base32 "1kdikdri2gmfi5badxgmbsq4svgqjmsjysjgff86nanwbf85kk08"))))
+        (base32 "03fns5z7qvmx42cj5q9k5mc3klbb3wi23qzwym6rjcik6zrlyasx"))))
     (properties `((upstream-name . "simmer")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-magrittr r-codetools))
@@ -35927,6 +35978,38 @@ statistical simulations on both local and cluster-based computing
 environments.See full documentation at
 <https://avi-kenny.github.io/@code{SimEngine/>}.")
     (license license:gpl3)))
+
+(define-public r-simed
+  (package
+    (name "r-simed")
+    (version "2.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "simEd" version))
+       (sha256
+        (base32 "1r4ahsfkrymhachdcjj7nvdiplxjla0jlsay3bi04n6rrl758rny"))))
+    (properties `((upstream-name . "simEd")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shape r-rstream))
+    (home-page "https://cran.r-project.org/package=simEd")
+    (synopsis "Simulation Education")
+    (description
+     "This package contains various functions to be used for simulation education,
+including simple Monte Carlo simulation functions, queueing simulation
+functions, variate generation functions capable of producing independent streams
+and antithetic variates, functions for illustrating random variate generation
+for various discrete and continuous distributions, and functions to compute
+time-persistent statistics.  Also contains functions for visualizing:
+event-driven details of a single-server queue model; a Lehmer random number
+generator; variate generation via acceptance-rejection; and of generating a
+non-homogeneous Poisson process via thinning.  Also contains two queueing data
+sets (one fabricated, one real-world) to facilitate input modeling.  More
+details on the use of these functions can be found in Lawson and Leemis (2015)
+<doi:10.1109/WSC.2017.8248124>, in Kudlay, Lawson, and Leemis (2020)
+<doi:10.1109/WSC48552.2020.9384010>, and in Lawson and Leemis (2021)
+<doi:10.1109/WSC52266.2021.9715299>.")
+    (license license:expat)))
 
 (define-public r-simecol
   (package
@@ -38573,16 +38656,17 @@ through @code{WebDriver}'.")
 (define-public r-shinytempsignal
   (package
     (name "r-shinytempsignal")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyTempSignal" version))
        (sha256
-        (base32 "0lw59hy3hc6h6262bsfk1yz3zqfjfzc8f6smyq0f7yk5vkkiw359"))))
+        (base32 "0a2wrl67nn385s20az6pi0qi9w3dc9nx1gwrzaw7vx9y165pp1q0"))))
     (properties `((upstream-name . "shinyTempSignal")))
     (build-system r-build-system)
     (propagated-inputs (list r-treeio
+                             r-tidytree
                              r-stringr
                              r-shinyjs
                              r-shinydashboard
@@ -38591,6 +38675,7 @@ through @code{WebDriver}'.")
                              r-ggtree
                              r-ggpubr
                              r-ggprism
+                             r-ggpmisc
                              r-ggplot2
                              r-forecast
                              r-desctools
@@ -44892,13 +44977,13 @@ clustering and imputation simultaneously.")
 (define-public r-sensominer
   (package
     (name "r-sensominer")
-    (version "1.26")
+    (version "1.27")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SensoMineR" version))
        (sha256
-        (base32 "0wa6wq8jnk0h5hmx03f8h8pa1g4dw0f3lxrsi93mgz740xd559yf"))))
+        (base32 "0si7zklv94li8payg4zxcac1a7ivk90q4ckcyak536sqfinihpb3"))))
     (properties `((upstream-name . "SensoMineR")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2
@@ -44913,8 +44998,7 @@ clustering and imputation simultaneously.")
     (synopsis "Sensory Data Analysis")
     (description
      "Statistical Methods to Analyse Sensory Data. @code{SensoMineR}: A package for
-sensory data analysis.  S. Le and F. Husson (2008)
-<DOI:10.1111/j.1745-459X.2007.00137.x>.")
+sensory data analysis.  S. Le and F. Husson (2008).")
     (license license:gpl2+)))
 
 (define-public r-sensobol
@@ -45474,36 +45558,36 @@ object that can handle deciphering and checking versions.")
 (define-public r-semtree
   (package
     (name "r-semtree")
-    (version "0.9.18")
+    (version "0.9.19")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "semtree" version))
        (sha256
-        (base32 "0d3qrv9461kgcgy3m2rsld792him157xzmmv71qrlhkjcs4h5lb6"))))
+        (base32 "0jasb4r07wv030isgxbbnaa9av2sm62qdzi4fljy2pgf94dx2x6l"))))
     (properties `((upstream-name . "semtree")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
                              r-tidyr
                              r-strucchange
                              r-stringr
-                             r-sets
                              r-sandwich
                              r-rpart-plot
                              r-rpart
-                             r-plotrix
                              r-openmx
                              r-lavaan
+                             r-gridbase
                              r-ggplot2
                              r-future-apply
-                             r-digest
+                             r-expm
                              r-data-table
+                             r-ctsemomx
                              r-crayon
                              r-cluster
                              r-clisymbols
                              r-bitops))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=semtree")
+    (home-page "https://github.com/brandmaier/semtree")
     (synopsis "Recursive Partitioning for Structural Equation Models")
     (description
      "SEM Trees and SEM Forests -- an extension of model-based decision trees and
@@ -46464,13 +46548,13 @@ R client implementing the W3C specification.")
 (define-public r-selenium
   (package
     (name "r-selenium")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "selenium" version))
        (sha256
-        (base32 "1zb5akhbnlcacs6fqfi160bvrij3brjiz23i7xshczh1h4m9v0x1"))))
+        (base32 "1v1bh9a1ybzwyzfsy7q82cjjaz2011zi9i80y275ayjwdsw1rfyf"))))
     (properties `((upstream-name . "selenium")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -46835,13 +46919,13 @@ the coefficients of (generalized) linear models.")
 (define-public r-sel
   (package
     (name "r-sel")
-    (version "1.0-3")
+    (version "1.0-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SEL" version))
        (sha256
-        (base32 "0nkr6m4aq4i0vq19v04lfkjmmjii1dfqsj1mfwagwsw6ain1jarr"))))
+        (base32 "1inahd5hajy3cmwas5zz1nlnzzrv7rraf3xb6n0vrk1fxm7s42wj"))))
     (properties `((upstream-name . "SEL")))
     (build-system r-build-system)
     (propagated-inputs (list r-quadprog r-lattice))
@@ -48246,13 +48330,13 @@ streamflow (Q) and other ancillary variables.  See Ryberg and York, 2020,
 (define-public r-seaval
   (package
     (name "r-seaval")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SeaVal" version))
        (sha256
-        (base32 "0xbhg8ns6d16j5nlf11y7kgdy4my69wnjx41wga5wf3v717qm58h"))))
+        (base32 "1ghkq6vqnzzw711s309s5802hrc6q5vxa8ijlp46s579r61ifa3v"))))
     (properties `((upstream-name . "SeaVal")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -48260,6 +48344,7 @@ streamflow (Q) and other ancillary variables.  See Ryberg and York, 2020,
                              r-patchwork
                              r-ncdf4
                              r-maps
+                             r-lifecycle
                              r-ggplotify
                              r-ggplot2
                              r-data-table))
@@ -48330,19 +48415,20 @@ seasonal package.")
 (define-public r-seasonalityplot
   (package
     (name "r-seasonalityplot")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "seasonalityPlot" version))
        (sha256
-        (base32 "0yksbj2va950k5xzpjnpwchh5kdns09s4mh8qdgl8s8gli8hcjq5"))))
+        (base32 "0y8wv8j8r215j53bx3c7nclxbvcg022f96sc3p2j9nysh3ybibk6"))))
     (properties `((upstream-name . "seasonalityPlot")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
                              r-quantmod
                              r-plotrix
                              r-magrittr
+                             r-lubridate
                              r-htmltools
                              r-dygraphs))
     (home-page "https://github.com/kumeS/seasonalityPlot")
@@ -51621,13 +51707,13 @@ S., Hannachi, A., Trendafilov, N. T., & Jolliffe, I. T. (2011)
 (define-public r-scitb
   (package
     (name "r-scitb")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scitb" version))
        (sha256
-        (base32 "09yy2an8z22fnxs8si0fbykjz08d7gw7rfnki9d590bdlb9ggdcs"))))
+        (base32 "0x2hrcdqlymvxp1plkc4062snqkz08my1gwh4d7p73mnhi9xfq3n"))))
     (properties `((upstream-name . "scitb")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi r-nortest))

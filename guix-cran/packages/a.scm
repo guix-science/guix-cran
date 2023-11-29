@@ -3403,13 +3403,13 @@ select items.")
 (define-public r-asynchlong
   (package
     (name "r-asynchlong")
-    (version "2.2")
+    (version "2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AsynchLong" version))
        (sha256
-        (base32 "0b6bx6r8cw0n7r9ynaadh3mdqyjlqizvklsb43af27iqqapl272d"))))
+        (base32 "1fnrx8dgghs579zpckymc0lip9hisn70agv71kbicgi80k8wn62s"))))
     (properties `((upstream-name . "AsynchLong")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=AsynchLong")
@@ -6638,6 +6638,34 @@ successfully replicating the results of Pesaran et al. (2001) in Natsiopoulos
 and Tzeremes (2022) <doi:10.1002/jae.2919>.")
     (license license:gpl3)))
 
+(define-public r-ardeco
+  (package
+    (name "r-ardeco")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ARDECO" version))
+       (sha256
+        (base32 "1csjr6z5frka6qrhkbsysz6xxl8n9895ivp9awjwpk72ydcvh1kq"))))
+    (properties `((upstream-name . "ARDECO")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rjstat r-jsonlite r-httr r-ghql r-dplyr))
+    (home-page "https://cran.r-project.org/package=ARDECO")
+    (synopsis "'ARDECO' Dataset")
+    (description
+     "This package provides a set of functions to access the ARDECO (Annual Regional
+Database of the European Commission) data directly from the official ARDECO
+public repository through the exploitation of the ARDECO APIs.  The APIs are
+completely transparent to the user and the provided functions provide a direct
+access to the ARDECO data.  The ARDECO database is a collection of variables
+related to demography, employment, labour market, domestic product, capital
+formation.  Each variable can be exposed in one or more units of measure as well
+as refers to total values plus economic sectors.  The description of the ARDECO
+database can be found at the following URL
+<https://urban.jrc.ec.europa.eu/ardeco>.")
+    (license license:gpl3)))
+
 (define-public r-ardec
   (package
     (name "r-ardec")
@@ -7524,13 +7552,13 @@ Doorenbos and Pruitt (1975, ISBN:9251002797) Guo et al. (2016)
 (define-public r-aqp
   (package
     (name "r-aqp")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aqp" version))
        (sha256
-        (base32 "1dmwrml1qsaj9x0h8a9d2znpw4rscvlcapbj19chrxszncsr2lwi"))))
+        (base32 "103fbjb60ny5sarp9ixd2d40kp6j57hhn8f7s83jm3frl5vpb64g"))))
     (properties `((upstream-name . "aqp")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -10606,13 +10634,13 @@ evaluation of the outputs.")
 (define-public r-andromeda
   (package
     (name "r-andromeda")
-    (version "0.6.3")
+    (version "0.6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Andromeda" version))
        (sha256
-        (base32 "0ckmrys46haa4j8hjkizw94i8zhljd1zzm3crfq01s8l1jpnxzir"))))
+        (base32 "0z4ajmgahgf07rr0z884i57lbr7miygapzknmjy7ibl317cl975y"))))
     (properties `((upstream-name . "Andromeda")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -12630,6 +12658,26 @@ Fernandez-Val and Weidner (2016) <doi:10.1016/j.jeconom.2015.12.014> and Hinz,
 Stammann, and Wanner (2020) <@code{arXiv:2004.12655>}.")
     (license license:gpl3)))
 
+(define-public r-aloom
+  (package
+    (name "r-aloom")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "aloom" version))
+       (sha256
+        (base32 "184ki2l3zdn8k0dbmm7ywb75dlsvpmy4p96drn3ixrha97ra5x7p"))))
+    (properties `((upstream-name . "aloom")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-randomforest r-glmnet))
+    (home-page "https://cran.r-project.org/package=aloom")
+    (synopsis "All Leave-One-Out Models")
+    (description
+     "This package creates all leave-one-out models and produces predictions for test
+samples.")
+    (license license:gpl2)))
+
 (define-public r-alookr
   (package
     (name "r-alookr")
@@ -12764,13 +12812,13 @@ from multiple classes or atypical values are also identified.")
 (define-public r-allomr
   (package
     (name "r-allomr")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "allomr" version))
        (sha256
-        (base32 "1w0b32ks8mi2n1md91bikz1qca1cck5rjc5j2yf22s69dd9rnhqv"))))
+        (base32 "0bsvg4n8yql7241q6dfgki2lnd5kdivjg31lzllca8xfzrfxcvn1"))))
     (properties `((upstream-name . "allomr")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=allomr")
@@ -16524,13 +16572,13 @@ analysis.\"Adverse event enrichment tests using VAERS\" Shuoran Li, Lili Zhao
 (define-public r-aedseo
   (package
     (name "r-aedseo")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aedseo" version))
        (sha256
-        (base32 "1dkh8i12vwdqgx829ji0l6naj9g3djzng023pn0a4a52yzsybj7n"))))
+        (base32 "1sy3j78lawa10rf22fa3wsbal2mv64hs1k5v7yqf9hx11jib26sz"))))
     (properties `((upstream-name . "aedseo")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -16578,13 +16626,13 @@ on growth rate estimation, see Walling and Lipstich (2007)
 (define-public r-aeddo
   (package
     (name "r-aeddo")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aeddo" version))
        (sha256
-        (base32 "1rrgsiyl3b56mcbx39gpkibx96mdi10wcy629sznhs87k6zzda5c"))))
+        (base32 "005l1cxpk30m1krdkrr62i7d1gp8j1v5f9r8j81v6r3w3iwzr449"))))
     (properties `((upstream-name . "aeddo")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -18204,13 +18252,13 @@ complete re-implementation of the functions available in the ade4 package.")
 (define-public r-adea
   (package
     (name "r-adea")
-    (version "1.4.5")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adea" version))
        (sha256
-        (base32 "0r046r401rzzinikkhm6f8vbksx2xy151s149kcsym2gv356ivsp"))))
+        (base32 "0wjklmd1r5vhp32syn9dpn5j05y9nfb0c8cnrdc2xcdsi8dzdkap"))))
     (properties `((upstream-name . "adea")))
     (build-system r-build-system)
     (propagated-inputs (list r-slam
@@ -18219,6 +18267,7 @@ complete re-implementation of the functions available in the ade4 package.")
                              r-roi-plugin-glpk
                              r-roi
                              r-rmarkdown
+                             r-parallelly
                              r-lpsolveapi
                              r-knitr
                              r-combinat))
@@ -18857,13 +18906,13 @@ the U.S. Food and Drug Administration.")
 (define-public r-adaptivetau
   (package
     (name "r-adaptivetau")
-    (version "2.2-3")
+    (version "2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adaptivetau" version))
        (sha256
-        (base32 "1jficl4yidix35q8yqs3pcv813wq3pg4hpw4ah4dprvg95bl7wwx"))))
+        (base32 "1m82nibsrkwqvc0aq9yrzakpa7k663i1gbis6ikvs7dfxf9mpijx"))))
     (properties `((upstream-name . "adaptivetau")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=adaptivetau")
@@ -19140,13 +19189,13 @@ component, and push it to an Acumos platform.")
 (define-public r-actxps
   (package
     (name "r-actxps")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "actxps" version))
        (sha256
-        (base32 "1cia0xk2xb09y583za6w97ch3pvx4kcdw5vbx8slvnv2r4qkb1pw"))))
+        (base32 "0c0n93zl4ag5mkaw37y2zyg75x9ga4fb5pxz71iidlfj1xblaywa"))))
     (properties `((upstream-name . "actxps")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -19297,41 +19346,6 @@ lifetable() to output a full life table that can be customized to remove
 optional columns.  Methods for creating lifetables are as described in
 Zedstatistics (2021) <https://www.youtube.com/watch?v=Dfe59@code{glNXAQ>}.")
     (license license:expat)))
-
-(define-public r-activitygcmm
-  (package
-    (name "r-activitygcmm")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "activityGCMM" version))
-       (sha256
-        (base32 "0r11z61h8fs5dcm3yfr2njbrbh4pv7xlbqx5zngmrknhv407498z"))))
-    (properties `((upstream-name . "activityGCMM")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-runjags r-overlap r-mclust r-circular))
-    (home-page "https://cran.r-project.org/package=activityGCMM")
-    (synopsis
-     "Circular Mixed Effect Mixture Models of Animal Activity Patterns")
-    (description
-     "Bayesian parametric generalized circular mixed effect mixture models (GCMMs) for
-estimating animal activity patterns from camera trap data and other nested data
-structures using JAGS', including automatic Bayesian k-cluster selection and
-random circular intercepts for nested data.  The GCMM function automatically
-selects the number of components for the mixture model (supporting up to 4
-mixture components) based on a Bayesian linear finite normal mixture model and
-fits a Bayesian parametric circular mixed effect mixture model with one or two
-random effects as random circular intercepts with a a von Mises or wrapped
-Cauchy distribution.  Provides graphs of the combined mixture model or separate
-mixture components.  Functionality is provided to allow quantitative comparisons
-between model parameters.  See Campbell et al. (in press) It's time to expand
-our analyses of animal activity; Campbell et al. (in press) Temporal and
-microspatial niche partitioning; Campbell et al. (in press) A novel approach to
-comparing animal activity patterns.  News, updates, and tutorials will be
-available on www.atlasgoldenwolf.org/stats and
-www.github.com/@code{LizADCampbell} .")
-    (license license:gpl2+)))
 
 (define-public r-activegp
   (package

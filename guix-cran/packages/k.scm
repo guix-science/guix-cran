@@ -82,13 +82,13 @@ Transforms.")
 (define-public r-kyotil
   (package
     (name "r-kyotil")
-    (version "2023.2-2")
+    (version "2023.11-27")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kyotil" version))
        (sha256
-        (base32 "0sx8nw67pwy4flb01d5bhbzvxpc63h2b49ss2qz2abg46f2nnd74"))))
+        (base32 "029hac2sw58raipgwcnza9290ka3vk0f8ccclnzlix8ra4ldsqv6"))))
     (properties `((upstream-name . "kyotil")))
     (build-system r-build-system)
     (native-inputs (list r-r-rsp))
@@ -5159,13 +5159,13 @@ Regime Switching: Classical and Gibbs-Sampling Approaches with Applications\"
 (define-public r-kairos
   (package
     (name "r-kairos")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kairos" version))
        (sha256
-        (base32 "1qb5vrvn1sf4ah2krsnhw1885w90zr2xwvgzb785mhg2mhq9sncs"))))
+        (base32 "0ywn90d7bn159zvlmp70yf9gbkcb9s3gmx180zp0kc6mw43jxp6v"))))
     (properties `((upstream-name . "kairos")))
     (build-system r-build-system)
     (propagated-inputs (list r-extradistr r-dimensio r-arkhe r-aion))

@@ -1478,13 +1478,13 @@ adapted from Bowen et al. (2018, <doi:10.1007/s00442-018-4192-5>).")
 (define-public r-isotree
   (package
     (name "r-isotree")
-    (version "0.5.24")
+    (version "0.5.24-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "isotree" version))
        (sha256
-        (base32 "0w4bf2fp4f5m084wxiaxqc7019hbg8kbp9mygwag1izzsr60kh3b"))))
+        (base32 "193h8mqcs5ybmf041mcbs23m539l8d9gnzfjmzikjhy9wfiqznnk"))))
     (properties `((upstream-name . "isotree")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -4711,13 +4711,13 @@ can find the full API documentation at <https://ipbase.com/docs> .")
 (define-public r-ipanema
   (package
     (name "r-ipanema")
-    (version "0.2.1")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ipanema" version))
        (sha256
-        (base32 "0f7n78jnvyafkkc91s41kw14fx9g9p7a2n8g52pkk2h2zp10bvya"))))
+        (base32 "0gnp08d616kh6qcab5igp7mi18rp3024fxi0amr40fq4invv7pic"))))
     (properties `((upstream-name . "ipanema")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmysql
@@ -11254,13 +11254,13 @@ algorithm of Huang et al. (1992) <doi:10.1139/x92-172> and Zeide et al. (1993)
 (define-public r-imf-data
   (package
     (name "r-imf-data")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "imf.data" version))
        (sha256
-        (base32 "1530whjz1p61x9az9g386hab8dn45b7dk267wx25zyrjp89x1b25"))))
+        (base32 "0cm7jjv3xal81h2qsh24f3y6djga47nksiyzgv8iyyb5fdp1xcpr"))))
     (properties `((upstream-name . "imf.data")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-curl))
@@ -14615,13 +14615,13 @@ techniques.")
 (define-public r-icr
   (package
     (name "r-icr")
-    (version "0.6.3")
+    (version "0.6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "icr" version))
        (sha256
-        (base32 "1g1gx0bbx6s8pqd5y0ckdi0r2kbg3lmr8djbaa7nj15jnf519zcx"))))
+        (base32 "18avxzbnpw53vgidyjfck970k3x77366x0b73xn2b1iczmfi0qj4"))))
     (properties `((upstream-name . "icr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -16239,13 +16239,13 @@ date of death.")
 (define-public r-ibmdbr
   (package
     (name "r-ibmdbr")
-    (version "1.50.0")
+    (version "1.51.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ibmdbR" version))
        (sha256
-        (base32 "151gg05gcy5wpyvyflr4mc0jq1npxzq9pc4spjc81x2igd14c370"))))
+        (base32 "13wlidv15dn1adx59zx30jnqc9wxl8c2xp1nh3g3dcafsfin9lvj"))))
     (properties `((upstream-name . "ibmdbR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rpart-plot
@@ -16253,8 +16253,8 @@ date of death.")
                              r-rodbc
                              r-matrix
                              r-mass
-                             r-ggplot2
                              r-arules))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ibmdbR")
     (synopsis "IBM in-Database Analytics for R")
     (description
@@ -16262,7 +16262,11 @@ date of death.")
 offerings (formerly IBM @code{dashDB(R})) and IBM Db2 for z/OS(R) in conjunction
 with IBM Db2 Analytics Accelerator for z/OS. Many basic and complex R operations
 are pushed down into the database, which removes the main memory boundary of R
-and allows to make full use of parallel processing in the underlying database.")
+and allows to make full use of parallel processing in the underlying database.
+For executing R-functions in a multi-node environment in parallel the
+@code{idaTApply}() function requires the @code{SparkR} package
+(<https://spark.apache.org/docs/latest/sparkr.html>).  The optional ggplot2
+package is needed for the plot.@code{idaLm}() function only.")
     (license license:gpl3)))
 
 (define-public r-ibmcraftr

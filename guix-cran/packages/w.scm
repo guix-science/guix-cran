@@ -5195,13 +5195,13 @@ Algorithms to Aid Software System Users: optimx for R\"
 (define-public r-wehoop
   (package
     (name "r-wehoop")
-    (version "1.5.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wehoop" version))
        (sha256
-        (base32 "0zlmsjw01ca0q9l7myq0sg6qaknc1i91s8jmf5b7v0crnmivd6rd"))))
+        (base32 "031z2lr1sjnmb8awcd3r8ygj20c0p57sjhim9p7ifv5vkv0044g9"))))
     (properties `((upstream-name . "wehoop")))
     (build-system r-build-system)
     (propagated-inputs (list r-usethis
@@ -5214,6 +5214,7 @@ Algorithms to Aid Software System Users: optimx for R\"
                              r-purrr
                              r-progressr
                              r-magrittr
+                             r-lubridate
                              r-jsonlite
                              r-janitor
                              r-glue

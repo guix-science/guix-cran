@@ -573,13 +573,13 @@ remove.selection()), drilling down (add.aggregation()), and rolling up
 (define-public r-hyperbolicdist
   (package
     (name "r-hyperbolicdist")
-    (version "0.6-4")
+    (version "0.6-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HyperbolicDist" version))
        (sha256
-        (base32 "0xsgy995z79qdamwdgs335r8zr2bk5cyw4wijqyvgwx3pqmwvvmr"))))
+        (base32 "10bcqychdc3rrdyqng5sxjbr8a6wljwnqa4gff99dmx8774sdw16"))))
     (properties `((upstream-name . "HyperbolicDist")))
     (build-system r-build-system)
     (home-page "https://www.r-project.org")
@@ -624,31 +624,6 @@ hyperbolic distribution, including fitting of the hyperbolic to data.")
      "This package provides a suite of routines for the hyperdirichlet distribution;
 supersedes the hyperdirichlet package.  Uses @code{disordR} discipline.")
     (license license:gpl2+)))
-
-(define-public r-hyper-fit
-  (package
-    (name "r-hyper-fit")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "hyper.fit" version))
-       (sha256
-        (base32 "1xibiydfkhzsw0yqfc0xfzj4yz8xyxqlvnfpyxg33v5fwp9wap3v"))))
-    (properties `((upstream-name . "hyper.fit")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rgl r-mass r-magicaxis r-laplacesdemon))
-    (home-page "https://cran.r-project.org/package=hyper.fit")
-    (synopsis
-     "Generic N-Dimensional Hyperplane Fitting with Heteroscedastic Covariant Errors and Intrinsic Scatter")
-    (description
-     "Includes two main high level codes for hyperplane fitting (hyper.fit) and
-visualising (hyper.plot2d / hyper.plot3d).  In simple terms this allows the user
-to produce robust 1D linear fits for 2D x vs y type data, and robust 2D plane
-fits to 3D x vs y vs z type data.  This hyperplane fitting works generically for
-any N-1 hyperplane model being fit to a N dimension dataset.  All fits include
-intrinsic scatter in the generative model orthogonal to the hyperplane.")
-    (license license:gpl3)))
 
 (define-public r-hymett
   (package
@@ -3874,13 +3849,13 @@ simulations.  It is also possible to consider random data and ACK probabilities.
 (define-public r-hoopr
   (package
     (name "r-hoopr")
-    (version "1.8.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hoopR" version))
        (sha256
-        (base32 "0rfz3gbsk7kq480bjanznxwqsgk228sj9apmwpb4cp49c4fgjhin"))))
+        (base32 "1m6ffh7slcqzj28jn9f67n5czidal5nkv6c883sk96w13h3lhyam"))))
     (properties `((upstream-name . "hoopR")))
     (build-system r-build-system)
     (inputs (list pandoc pandoc))
@@ -3894,6 +3869,7 @@ simulations.  It is also possible to consider random data and ACK probabilities.
                              r-purrr
                              r-progressr
                              r-magrittr
+                             r-lubridate
                              r-jsonlite
                              r-janitor
                              r-httr
@@ -6884,13 +6860,13 @@ regionalization results, and exporting region map and mean timeseries into
 (define-public r-hibayes
   (package
     (name "r-hibayes")
-    (version "3.0.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hibayes" version))
        (sha256
-        (base32 "1vbad1x0scqq50w3lflgssqnyrhblk2hf6jczjxs4cbb0mny959n"))))
+        (base32 "1hl3p1vhknsdawds65yx95ghpj4rwyfgwhlln8xmxkfaw0rc7ymj"))))
     (properties `((upstream-name . "hibayes")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr

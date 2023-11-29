@@ -698,13 +698,13 @@ matrices, data frames, time series (in ts or zoo format).")
 (define-public r-ltsk
   (package
     (name "r-ltsk")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ltsk" version))
        (sha256
-        (base32 "1gz048yg9hm40xyxganpza48dpmi43dxm5j5myysyxzi07p58l8n"))))
+        (base32 "01f0jvm4fihssgfhb062wlqqvrfdikixycxfz93dkqahjmrjz5dl"))))
     (properties `((upstream-name . "ltsk")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -1824,13 +1824,13 @@ based on the likelihood ratio
 (define-public r-lrstat
   (package
     (name "r-lrstat")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lrstat" version))
        (sha256
-        (base32 "1pfg053w8y0ljld0c2cjjr1xrhbq1wx4khabfqjb07vayhqr3m32"))))
+        (base32 "078a02fksjn2y7z1yv2s61ylz84ir9g4p7pvl5l1np5i7vk7i117"))))
     (properties `((upstream-name . "lrstat")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-mvtnorm))
@@ -2146,13 +2146,13 @@ Gitter (2020) <doi:10.1186/s12859-019-3324-1>.")
 (define-public r-lpsolveapi
   (package
     (name "r-lpsolveapi")
-    (version "5.5.2.0-17.10")
+    (version "5.5.2.0-17.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lpSolveAPI" version))
        (sha256
-        (base32 "1f8hv89iw8vfnc3f5a73575aqmqcmj5qbmamjklsq79cscjyzdsc"))))
+        (base32 "191zjgyap3kcsvh8fygqqyr9p0agbzm160fzynnpaxf19yp6r3dh"))))
     (properties `((upstream-name . "lpSolveAPI")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=lpSolveAPI")
@@ -6266,32 +6266,29 @@ to covariates only or also to outcome values.")
 (define-public r-lmmsolver
   (package
     (name "r-lmmsolver")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LMMsolver" version))
        (sha256
-        (base32 "14ppnj23l7rh71pkw97qcb31las10ra8ydlbpm6s8q18c21lpvm5"))))
+        (base32 "0507xrzsm2v8rakp9zwdzc250p92xkicy8anp72pryvj11lszqcw"))))
     (properties `((upstream-name . "LMMsolver")))
     (build-system r-build-system)
     (propagated-inputs (list r-spam
-                             r-sp
+                             r-sf
                              r-rcpp
                              r-matrix
                              r-maps
                              r-ggplot2
                              r-agridat))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=LMMsolver")
+    (home-page "https://biometris.github.io/LMMsolver/index.html")
     (synopsis "Linear Mixed Model Solver")
     (description
-     "An efficient and flexible system to solve sparse mixed model equations, for
-models that are often used in statistical genetics.  Important applications are
-the use of splines to model spatial or temporal trends.  Another application
-area is mixed model QTL analysis for multiparental populations, allowing for
-heterogeneous residual variance and random design matrices with
-Identity-By-Descent (IBD) probabilities.")
+     "An efficient and flexible system to solve sparse mixed model equations.
+Important applications are the use of splines to model spatial or temporal
+trends as described in Boer (2023). (<doi:10.1177/1471082X231178591>).")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-lmmpar
@@ -8324,23 +8321,21 @@ including several variables and allowing for lagged exposures.")
 (define-public r-linemap
   (package
     (name "r-linemap")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "linemap" version))
        (sha256
-        (base32 "04nb0hmmikksp7ak4vdam9r2dpv7w3r5wkxxbjr7yk9pfq5gjncp"))))
+        (base32 "1fyvab2m742klsl94k2vc5qv0ykwcj0ybm3vv0mdv94nlmcm2gk7"))))
     (properties `((upstream-name . "linemap")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sf))
+    (propagated-inputs (list r-terra))
     (home-page "https://github.com/riatelab/linemap")
     (synopsis "Line Maps")
     (description
-     "Create maps made of lines.  The package contains two functions: linemap() and
-getgrid().  linemap() displays a map made of lines using a data frame of gridded
-data.  getgrid() transforms a set of polygons (sf objects) into a suitable data
-frame for linemap().")
+     "Create maps made of lines.  The package contains one function: linemap().
+linemap() displays a map made of lines using a raster or gridded data.")
     (license license:gpl3)))
 
 (define-public r-linelist
@@ -9317,22 +9312,24 @@ model mortality pattern based on family and level as well as plot the results.")
 (define-public r-lifer
   (package
     (name "r-lifer")
-    (version "0.9.7")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lifeR" version))
        (sha256
-        (base32 "1jhywwb8h2s0wbn14p6516p2bg3b8pbjw30vqz63dmbr51y6wriz"))))
+        (base32 "1bgs8m2a4k4p31lw50kgv9mg0hg7afdaxg9sy6ss1n5s68920h5w"))))
     (properties `((upstream-name . "lifeR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringr
+    (propagated-inputs (list r-tidyterra
+                             r-terra
+                             r-stringr
                              r-rmarkdown
                              r-readr
+                             r-maptiles
                              r-knitr
                              r-jsonlite
                              r-ggplot2
-                             r-ggmap
                              r-dplyr
                              r-curl))
     (native-inputs (list r-knitr))
@@ -11083,19 +11080,20 @@ the coordinates.")
 (define-public r-lehdr
   (package
     (name "r-lehdr")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lehdr" version))
        (sha256
-        (base32 "0y18wmn967c01fr0y3cfmfhxj0qlilrk5invigzy5h13qs1ad4qf"))))
+        (base32 "0jkfnda7dpkhvlam6l4r5b80yrrhnvlx61frxi56qr7mws5z2h1w"))))
     (properties `((upstream-name . "lehdr")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
                              r-rlang
                              r-readr
-                             r-httr
+                             r-magrittr
+                             r-httr2
                              r-glue
                              r-dplyr))
     (native-inputs (list r-knitr))
@@ -13506,18 +13504,18 @@ convergence issues.")
 (define-public r-lbfgsb3c
   (package
     (name "r-lbfgsb3c")
-    (version "2020-3.2")
+    (version "2020-3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lbfgsb3c" version))
        (sha256
-        (base32 "07mhiaxhjjma5c65z3pz7wchgsqn4b19labzyq25ncnmj319fxrg"))))
+        (base32 "0wk3jk94rrdjy5jj5d4a7szyx9xa4pw42s4ycwbcg23b4vas9r30"))))
     (properties `((upstream-name . "lbfgsb3c")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-numderiv))
     (native-inputs (list r-knitr gfortran))
-    (home-page "https://cran.r-project.org/package=lbfgsb3c")
+    (home-page "https://nlmixr2.github.io/lbfgsb3c/")
     (synopsis
      "Limited Memory BFGS Minimizer with Bounds on Parameters with optim() 'C' Interface")
     (description
@@ -14934,13 +14932,13 @@ are raster dataset exportable to any common GIS format.")
 (define-public r-landscapemetrics
   (package
     (name "r-landscapemetrics")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "landscapemetrics" version))
        (sha256
-        (base32 "0c7h6s9xsqf9jgwlkh4bpzmdg2hrzs16jrdpzn45n849bsv86g7n"))))
+        (base32 "0z5hr4ysjydffg5zk41wxbnvz2s30skgacdgz42rs1b49hmpfa7f"))))
     (properties `((upstream-name . "landscapemetrics")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -15187,13 +15185,13 @@ observed variables and multiple	group models.")
 (define-public r-lambdr
   (package
     (name "r-lambdr")
-    (version "1.2.4")
+    (version "1.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lambdr" version))
        (sha256
-        (base32 "0fqprf5n5gc61zyj56lypgbh5hggxnldgkim1zj1h681fhkgimy5"))))
+        (base32 "1vbaxy15a925lmc9a6d0b9yxivw0gd6pw4a89acg797y84fgmyl4"))))
     (properties `((upstream-name . "lambdr")))
     (build-system r-build-system)
     (propagated-inputs (list r-logger r-jsonlite r-httr))
