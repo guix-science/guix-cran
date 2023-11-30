@@ -341,6 +341,34 @@ other standard model tools.")
 Least Squares estimators (Amemiya, Takeshi, (1978) <doi: 10.2307/1911443>).")
     (license license:gpl3)))
 
+(define-public r-ivo-table
+  (package
+    (name "r-ivo-table")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ivo.table" version))
+       (sha256
+        (base32 "1qc22r6gldz1icvgpxfs9ycwfijlljdyq0x9xcp2xljvqcrswflg"))))
+    (properties `((upstream-name . "ivo.table")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-purrr
+                             r-openxlsx
+                             r-officer
+                             r-flextable
+                             r-dplyr
+                             r-checkmate))
+    (home-page "https://cran.r-project.org/package=ivo.table")
+    (synopsis "Pretty Contingency Tables and Frequency Tables")
+    (description
+     "Nicely formatted frequency tables and contingency tables (cross-tables), that
+can easily be exported to HTML or Office documents, including Excel'.  Designed
+to work with pipes.")
+    (license license:expat)))
+
 (define-public r-ivmte
   (package
     (name "r-ivmte")
@@ -2414,13 +2442,13 @@ original paper; see <doi:10.1177/0962280219842890> and discussed in a tutorial
 (define-public r-island
   (package
     (name "r-island")
-    (version "0.2.9")
+    (version "0.2.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "island" version))
        (sha256
-        (base32 "0s76f1i22cnc5c1dzswflq43qgcpssdkb32xc2j0ajy4r8xak7kz"))))
+        (base32 "1g28kgayvh1l4zf504i3mziq5y04xadq603py6x2vy218vdd2gf7"))))
     (properties `((upstream-name . "island")))
     (build-system r-build-system)
     (inputs (list gsl))
@@ -11965,13 +11993,13 @@ algorithm is explained at <doi:10.5201/ipol.2016.175>.")
 (define-public r-image-cannyedges
   (package
     (name "r-image-cannyedges")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "image.CannyEdges" version))
        (sha256
-        (base32 "0c8pvk91xyys6d2i03yy88kylb3jli5jkpq2s069n7p0yl3z7rr1"))))
+        (base32 "04maxzls7rg9kqmv1r5lhg11c18z0fkskn7im7b4plq5larw122y"))))
     (properties `((upstream-name . "image.CannyEdges")))
     (build-system r-build-system)
     (inputs (list libpng fftw))

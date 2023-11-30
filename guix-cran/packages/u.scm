@@ -1475,13 +1475,13 @@ disturbances simulated according to Le et al.(2022)
 (define-public r-updog
   (package
     (name "r-updog")
-    (version "2.1.4")
+    (version "2.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "updog" version))
        (sha256
-        (base32 "1v2y8a2l8vjabbz7p3k6sh3c5p744z96fjg2fkygp0zrl2vvpra0"))))
+        (base32 "118i7z797cc7hhsk0i4w7n0p7znw9szvn7mbymc7d9yqnck4x6d9"))))
     (properties `((upstream-name . "updog")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2

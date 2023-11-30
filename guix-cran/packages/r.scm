@@ -7529,17 +7529,17 @@ robust, or bootstrapped standard errors and confidence intervals for them.")
 (define-public r-rrum
   (package
     (name "r-rrum")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rrum" version))
        (sha256
-        (base32 "0w0f2n14if2b8x7n6v8y8q2vghd8j7xm1xhpxnvy3z50flinwgm7"))))
+        (base32 "047gsyipvbaw4n2i103fsj1dp0rqwvh5dqhjgiclzb9h7vm840gv"))))
     (properties `((upstream-name . "rrum")))
     (build-system r-build-system)
     (propagated-inputs (list r-simcdm r-rgen r-rcpparmadillo r-rcpp))
-    (home-page "https://cran.r-project.org/package=rrum")
+    (home-page "https://tmsalab.github.io/rrum/")
     (synopsis
      "Bayesian Estimation of the Reduced Reparameterized Unified Model with Gibbs Sampling")
     (description
@@ -12766,13 +12766,13 @@ information can be found on the ROI homepage
 (define-public r-rogue
   (package
     (name "r-rogue")
-    (version "2.1.5")
+    (version "2.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rogue" version))
        (sha256
-        (base32 "0qvzpdxszbgkjvbrslizjnysbps9skn22ihvk79mvhi8kshw3pz8"))))
+        (base32 "0wbgl9dj2lr5ffn27q6q06n45vj9lm9qxx07dvd37jniqjxz71v4"))))
     (properties `((upstream-name . "Rogue")))
     (build-system r-build-system)
     (propagated-inputs (list r-treetools
@@ -21748,13 +21748,13 @@ open source software that builds installers for Windows programs
 (define-public r-ring
   (package
     (name "r-ring")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ring" version))
        (sha256
-        (base32 "166ma52axbmarwbzkqqcfcms9q9a4yqmsq9cqbmgpkkwm595ywij"))))
+        (base32 "0mvrmh0axqlrdq3y5qaxydbindhv34gm4jagmq0bchrdvh1db2s4"))))
     (properties `((upstream-name . "ring")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6))
@@ -26159,13 +26159,13 @@ documentation, and examples.")
 (define-public r-revgadgets
   (package
     (name "r-revgadgets")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RevGadgets" version))
        (sha256
-        (base32 "1p4daj3nsxkrqhvlv6mavag41a0a904khinff8ss370rmr9jga5y"))))
+        (base32 "02f4wrm6b99s7dwqn5xlsynlfh5clpcgv6dh4d35xj7x71l2h7cv"))))
     (properties `((upstream-name . "RevGadgets")))
     (build-system r-build-system)
     (propagated-inputs (list r-treeio
@@ -29217,13 +29217,13 @@ Collier, W., & Ruis, A.R. (2016).")
 (define-public r-remstats
   (package
     (name "r-remstats")
-    (version "3.2.0")
+    (version "3.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "remstats" version))
        (sha256
-        (base32 "0s93358y31wpkm3h1cv3icbf2g6srk2n2rlnivgjihd6laq4sx9k"))))
+        (base32 "1n1byjjaj1d87s3289szsr3in67fkx4dqyy2dzy86kijzvx2qinl"))))
     (properties `((upstream-name . "remstats")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppprogress r-rcpparmadillo r-rcpp))
@@ -36912,13 +36912,13 @@ rredis package.")
 (define-public r-rcppquantuccia
   (package
     (name "r-rcppquantuccia")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppQuantuccia" version))
        (sha256
-        (base32 "06ahzp0rvk3wrrj46dmszkmpnybaa5hrpbs2cs5h3jn633k67zj6"))))
+        (base32 "1nih426bcd872vyx6dyinr8nr8hqgbqfzih4v82qqi9b9xlk2mv2"))))
     (properties `((upstream-name . "RcppQuantuccia")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-bh))
@@ -39420,20 +39420,21 @@ change-points is not required.  The code is written in Go and interfaced with R.
 (define-public r-rcheology
   (package
     (name "r-rcheology")
-    (version "4.3.1.1")
+    (version "4.3.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rcheology" version))
        (sha256
-        (base32 "1crn0s4ldgqpm1invjjc19z6fdqz6v0hfgv0bjvhplxhfyfmxiab"))))
+        (base32 "1h51mwigl6jvz4mgn2vf5c9gb2cr94l1li2arpws3020q84yrvhm"))))
     (properties `((upstream-name . "rcheology")))
     (build-system r-build-system)
     (home-page "https://github.com/hughjonesd/rcheology")
-    (synopsis "Data on Base Packages for Current and Previous Versions of R")
+    (synopsis
+     "Data on Base and Recommended Packages for Current and Previous Versions of R")
     (description
-     "This package provides a dataset of functions in all base packages of R versions
-0.62.3 onwards.")
+     "This package provides a dataset of functions in all base and recommended
+packages of R versions 0.50 onwards.")
     (license license:cc0)))
 
 (define-public r-rchemo
@@ -43420,26 +43421,6 @@ import it.  The R Core group is the original author of the code made available
 with slight modifications by this package.")
     (license license:gpl2+)))
 
-(define-public r-rankuncertainty
-  (package
-    (name "r-rankuncertainty")
-    (version "1.0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rankUncertainty" version))
-       (sha256
-        (base32 "0w9b3vdlx2kjviz4790lrmbzb8i1lrckiy1jxzl9kxycp1kjqkwa"))))
-    (properties `((upstream-name . "rankUncertainty")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-magrittr r-cpp11))
-    (home-page "https://cran.r-project.org/package=rankUncertainty")
-    (synopsis "Methods for Working with Uncertainty in Rankings")
-    (description
-     "This package provides methods for measuring and describing uncertainty in
-rankings.  See Rising (2021) <@code{arXiv:2107.03459>} for background.")
-    (license license:expat)))
-
 (define-public r-ranktreeensemble
   (package
     (name "r-ranktreeensemble")
@@ -47226,13 +47207,13 @@ include resize functionality in Markdown', Rmarkdown and Quarto documents.")
 (define-public r-r2redux
   (package
     (name "r-r2redux")
-    (version "1.0.16")
+    (version "1.0.17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r2redux" version))
        (sha256
-        (base32 "013g3zp7h53yfw0lasnp8c6dp3n9mrsapmwb071x2cnlb385sm6v"))))
+        (base32 "07666saxzxy48i2dd0gi0m1x912dn5s78m9rqriwnavnx76ca20i"))))
     (properties `((upstream-name . "r2redux")))
     (build-system r-build-system)
     (home-page "https://github.com/mommy003/r2redux")

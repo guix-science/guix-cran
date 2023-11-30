@@ -545,13 +545,13 @@ lineup, and examine the distributions of metrics.")
 (define-public r-nuggets
   (package
     (name "r-nuggets")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nuggets" version))
        (sha256
-        (base32 "15jlfkxjyf8b9prg1n2vr4qn9vamh49ilx42y4phwl0q2bixp56m"))))
+        (base32 "1y1qamwpz31khq54y62ywras5yznh4g0a9x67x6frsz5pjq4z7vz"))))
     (properties `((upstream-name . "nuggets")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -8886,6 +8886,28 @@ error of the regression coeffcient (sescree); 8.  Nelson R2; 9.  Bartlett khi-2;
 10.  Anderson khi-2; 11.  Lawley khi-2 and 12.  Bentler-Yuan khi-2.")
     (license (license:fsdg-compatible "GPL (>= 3.5.0)"))))
 
+(define-public r-nexus
+  (package
+    (name "r-nexus")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nexus" version))
+       (sha256
+        (base32 "0k0q6jq768gjnc0znnw5zbg98jcvqbjla5bs56zv8z8sgirhakn0"))))
+    (properties `((upstream-name . "nexus")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mass r-isopleuros r-dimensio r-arkhe))
+    (native-inputs (list r-knitr))
+    (home-page "https://packages.tesselle.org/nexus/")
+    (synopsis "Sourcing Archaeological Materials by Chemical Composition")
+    (description
+     "Exploration and analysis of compositional data in the framework of Aitchison
+(1986, ISBN: 978-94-010-8324-9).  This package provides tools for chemical
+fingerprinting and source tracking of ancient materials.")
+    (license license:gpl3+)))
+
 (define-public r-nextgenshinyapps
   (package
     (name "r-nextgenshinyapps")
@@ -12222,13 +12244,13 @@ uncertainty.")
 (define-public r-negligible
   (package
     (name "r-negligible")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "negligible" version))
        (sha256
-        (base32 "0gz3zn52cbxydphgyqkh84iyi6dsb079y3x27h8a6k35wyavnr4k"))))
+        (base32 "0jc08zivay8y6z3lqryjag8kaxni56x7mhwxcmgk1z00qfhv1z1x"))))
     (properties `((upstream-name . "negligible")))
     (build-system r-build-system)
     (propagated-inputs (list r-wrs2

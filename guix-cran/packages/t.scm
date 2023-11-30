@@ -7949,13 +7949,13 @@ transformation models (Siegfried et al, 2023,
 (define-public r-trajr
   (package
     (name "r-trajr")
-    (version "1.5.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "trajr" version))
        (sha256
-        (base32 "0xfgqdck4dll9vc4gh2sql29r6hkdpizwcxwwaixxzvsi12khwf7"))))
+        (base32 "0sc0lyyp6qw71l6p2d6g5iszkcqpps6k2vb4798j76cl72fw5b52"))))
     (properties `((upstream-name . "trajr")))
     (build-system r-build-system)
     (propagated-inputs (list r-signal r-plotrix))
@@ -7963,12 +7963,12 @@ transformation models (Siegfried et al, 2023,
     (home-page "https://github.com/JimMcL/trajr")
     (synopsis "Animal Trajectory Analysis")
     (description
-     "This package provides a toolbox to assist with statistical analysis of
-2-dimensional animal trajectories.  It provides simple access to algorithms for
-calculating and assessing a variety of characteristics such as speed and
-acceleration, as well as multiple measures of straightness or tortuosity.  Some
-support is provided for 3-dimensional trajectories. @code{McLean} & Skowron
-Volponi (2018) <doi:10.1111/eth.12739>.")
+     "This package provides a toolbox to assist with statistical analysis of animal
+trajectories.  It provides simple access to algorithms for calculating and
+assessing a variety of characteristics such as speed and acceleration, as well
+as multiple measures of straightness or tortuosity.  Some support is provided
+for 3-dimensional trajectories. @code{McLean} & Skowron Volponi (2018)
+<doi:10.1111/eth.12739>.")
     (license license:expat)))
 
 (define-public r-trajer
@@ -13160,13 +13160,13 @@ cross-platform C++ library with APIs from several languages, and integrations.")
 (define-public r-tikzdevice
   (package
     (name "r-tikzdevice")
-    (version "0.12.5")
+    (version "0.12.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tikzDevice" version))
        (sha256
-        (base32 "1v2swv6xs8vijwkqd5cjc3s4hyigj7qa31h31wmnrd5yplshq1kx"))))
+        (base32 "1b04a3hmfx0r5iw6836cb9pvqspijb2dz17vc40n9jwsr9ij3nq4"))))
     (properties `((upstream-name . "tikzDevice")))
     (build-system r-build-system)
     (inputs (list))
@@ -15765,13 +15765,13 @@ uncertainty bands.")
 (define-public r-tidyaml
   (package
     (name "r-tidyaml")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyAML" version))
        (sha256
-        (base32 "0939wymf9k4v2nh0yr1anw5jpqpxnrq8b5c5ikdyrdk70zfpd67j"))))
+        (base32 "129y8i2642fvgzf6j0jpiqkxzqsc3j66idnmqimd19rq6316glhb"))))
     (properties `((upstream-name . "tidyAML")))
     (build-system r-build-system)
     (propagated-inputs (list r-workflowsets
@@ -15780,7 +15780,6 @@ uncertainty bands.")
                              r-rlang
                              r-purrr
                              r-parsnip
-                             r-magrittr
                              r-forcats
                              r-dplyr))
     (native-inputs (list r-knitr))
@@ -16517,13 +16516,13 @@ contemplating them.")
 (define-public r-thor
   (package
     (name "r-thor")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "thor" version))
        (sha256
-        (base32 "0y75lnmjdcjxca3a0h9a30c0cll68arbv7rbdxkla92arm3k39vx"))))
+        (base32 "1bpcyzw5xwl4vdld7ysrychcz35lz8g8qhpq0ca3bkkihj62v04r"))))
     (properties `((upstream-name . "thor")))
     (build-system r-build-system)
     (propagated-inputs (list r-storr r-r6))
@@ -22868,13 +22867,13 @@ performances over time.")
 (define-public r-tau
   (package
     (name "r-tau")
-    (version "0.0-24")
+    (version "0.0-25")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tau" version))
        (sha256
-        (base32 "1q8pd7m6rd0899c44plxns5yydifhsccyb51glgw07ni5v4rz3gh"))))
+        (base32 "144fpmxzwr7jn8l6mpma2w835y89vwih476vxkh7jx4m6fkd88pz"))))
     (properties `((upstream-name . "tau")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=tau")

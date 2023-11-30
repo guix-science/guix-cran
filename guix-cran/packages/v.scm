@@ -2226,13 +2226,13 @@ of mortality models.")
 (define-public r-vitae
   (package
     (name "r-vitae")
-    (version "0.5.3")
+    (version "0.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vitae" version))
        (sha256
-        (base32 "19qcympcs9w9klrvhz5ls4p6186dcddv5dv7kn7jkc0js84i9sbv"))))
+        (base32 "11vp146fqxcq10kpsyrxmyc3i2kcwx15swgill61zs6g9l54asky"))))
     (properties `((upstream-name . "vitae")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml

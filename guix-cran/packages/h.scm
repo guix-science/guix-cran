@@ -2425,13 +2425,13 @@ and Yao (2018), Journal of Statistical Computation and Simulation, 88:14,
 (define-public r-htetree
   (package
     (name "r-htetree")
-    (version "0.1.17")
+    (version "0.1.18")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "htetree" version))
        (sha256
-        (base32 "0z7gbpzvj4w5vz8b3zs4mvr70qf8sz295cbypm5x6np0ac2gcdzm"))))
+        (base32 "144jn5b79xqr4h190c06wwpa5679125xa9qmnaxqh371h45263gd"))))
     (properties `((upstream-name . "htetree")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -3318,13 +3318,13 @@ charts.")
 (define-public r-hpa
   (package
     (name "r-hpa")
-    (version "1.3.1")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hpa" version))
        (sha256
-        (base32 "18jjn02a34apd0iyq9h5ziqxqb0pcphprn9k8nnqyvjip8d6v3fz"))))
+        (base32 "1p3bi6syn211wp2xa90mcxsl11gk8w9rpn2axlxasnqc4c3ag64x"))))
     (properties `((upstream-name . "hpa")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppparallel r-rcpparmadillo r-rcpp))
@@ -9642,6 +9642,37 @@ Dantzig Selector for the case of measurement error (Sorensen et al. (2018)
 <doi:10.1080/10618600.2018.1425626>).")
     (license license:gpl3)))
 
+(define-public r-hdmaadmm
+  (package
+    (name "r-hdmaadmm")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HDMAADMM" version))
+       (sha256
+        (base32 "0whcd0315cxn45ilsrh11baylrxvk0w4vcsqk6sps6fcpg4m2ak5"))))
+    (properties `((upstream-name . "HDMAADMM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppeigen r-rcpp r-dqrng))
+    (home-page "https://github.com/psyen0824/HDMAADMM")
+    (synopsis "ADMM for High-Dimensional Mediation Models")
+    (description
+     "We use the Alternating Direction Method of Multipliers (ADMM) for parameter
+estimation in high-dimensional, single-modality mediation models.  To improve
+the sensitivity and specificity of estimated mediation effects, we offer the
+sure independence screening (SIS) function for dimension reduction.  The
+available penalty options include Lasso, Elastic Net, Pathway Lasso, and
+Network-constrained Penalty.  The methods employed in the package are based on
+Boyd, S., Parikh, N., Chu, E., Peleato, B., & Eckstein, J. (2011).
+<doi:10.1561/2200000016>, Fan, J., & Lv, J. (2008)
+<doi:10.1111/j.1467-9868.2008.00674.x>, Li, C., & Li, H. (2008)
+<doi:10.1093/bioinformatics/btn081>, Tibshirani, R. (1996)
+<doi:10.1111/j.2517-6161.1996.tb02080.x>, Zhao, Y., & Luo, X. (2022)
+<doi:10.4310/21-sii673>, and Zou, H., & Hastie, T. (2005)
+<doi:10.1111/j.1467-9868.2005.00503.x>.")
+    (license license:expat)))
+
 (define-public r-hdm
   (package
     (name "r-hdm")
@@ -11310,13 +11341,13 @@ including most of the delicious Cantonese cuisine.")
 (define-public r-happign
   (package
     (name "r-happign")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "happign" version))
        (sha256
-        (base32 "058924rr28qg67lwrvwlfxb2jn09bfyc77ki62gn15f3xcm6pbax"))))
+        (base32 "1nzp41rnc5xjdhl9234gg646qrl86w7w8m3q46zxzdh3r5vvg43z"))))
     (properties `((upstream-name . "happign")))
     (build-system r-build-system)
     (inputs (list sqlite proj geos gdal))
@@ -12069,6 +12100,30 @@ This package is meant to be a direct replacement for Herrmann, LÃ¶wer and
 Schachtel's (1999) <doi:10.1046/j.1365-3059.1999.00325.x> Habgood-Gilmour
 Spreadsheet, @code{HaGiS}', previously used for pathotype analysis.")
     (license license:expat)))
+
+(define-public r-hadibds
+  (package
+    (name "r-hadibds")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HadIBDs" version))
+       (sha256
+        (base32 "1mj6a4cp51kpsw93hz67smz9vc17ss5675wnalbq84wj89p2ma3l"))))
+    (properties `((upstream-name . "HadIBDs")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=HadIBDs")
+    (synopsis "Incomplete Block Designs using Hadamard Matrix (HadIBDs)")
+    (description
+     "Hadamard matrix based statistical designs are of immense importance as the
+resultant designs carry various desirable characterizing properties.
+Constructing Partially Balanced Incomplete Block Designs (PBIBds) using
+Kronecker product of incidence matrices of Balanced Incomplete Block (BIB) and
+Partially Balanced Incomplete Block (PBIB) designs is much evident from
+literature.  Here, we have constructed Incomplete Block Designs (IBDs) based on
+Hadamard matrices and Kronecker product of Hadamard matrices.")
+    (license license:gpl2+)))
 
 (define-public r-hadex
   (package

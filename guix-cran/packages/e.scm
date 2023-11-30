@@ -4424,6 +4424,41 @@ actual evapotranspiration (AET) from 21 different formulations including Penman,
 Penman-Monteith FAO 56, Priestley-Taylor and Morton formulations.")
     (license license:gpl2+)))
 
+(define-public r-evapore
+  (package
+    (name "r-evapore")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "evapoRe" version))
+       (sha256
+        (base32 "1a50pi9vch15cl5c3jb43slfdb7k0aa4s4pdx75va9icg738fiby"))))
+    (properties `((upstream-name . "evapoRe")))
+    (build-system r-build-system)
+    (inputs (list proj gdal))
+    (propagated-inputs (list r-raster
+                             r-precipe
+                             r-lubridate
+                             r-foreach
+                             r-doparallel
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/AkbarR1184/evapoRe")
+    (synopsis "Evapotranspiration R Recipes")
+    (description
+     "An R-based application for exploratory data analysis of global
+@code{EvapoTranspiration} (ET) datasets. @code{evapoRe} enables users to
+download, validate, visualize, and analyze multi-source ET data across various
+spatio-temporal scales.  Also, the package offers calculation methods for
+estimating potential ET (PET), including temperature-based approaches described
+in : Oudin et al., (2005) <doi:10.1016/j.jhydrol.2004.08.026>. @code{evapoRe}
+supports hydrological modeling, climate studies, agricultural research, and
+other data-driven fields by facilitating access to ET data and offering powerful
+analysis capabilities.  Users can seamlessly integrate the package into their
+research applications and explore diverse ET data at different resolutions.")
+    (license license:gpl3)))
+
 (define-public r-evalue
   (package
     (name "r-evalue")
@@ -8879,13 +8914,13 @@ phenotypic output.")
 (define-public r-epinet
   (package
     (name "r-epinet")
-    (version "2.1.8")
+    (version "2.1.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epinet" version))
        (sha256
-        (base32 "10bgq66n99kkz0nhmsz508aypxk57zk19p5l3xrb28n72k4rfgrf"))))
+        (base32 "0qcwmn2p6rfjzh5fhmgrk6jrs1q1409720qgwhzkl8pwcizry2xy"))))
     (properties `((upstream-name . "epinet")))
     (build-system r-build-system)
     (propagated-inputs (list r-network))

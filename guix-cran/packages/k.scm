@@ -2684,6 +2684,26 @@ function that returns several metrics used for model evaluation, the latter can
 be used in ranking results from other packs.")
     (license license:gpl3)))
 
+(define-public r-kinsimu
+  (package
+    (name "r-kinsimu")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "KINSIMU" version))
+       (sha256
+        (base32 "09qmdf4x6irgzv6s8ib4fj5spakzag2cb3lpf9n346yildlfp59d"))))
+    (properties `((upstream-name . "KINSIMU")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=KINSIMU")
+    (synopsis "Panel Evaluation in Forensic Kinship Analysis")
+    (description
+     "Evaluate specific panels in different aspects: i) Simulation tools related to
+pedigree researches; ii) calculation for systemic effectiveness indicators, such
+as probability of exclusion (PE).")
+    (license license:expat)))
+
 (define-public r-kinship2
   (package
     (name "r-kinship2")

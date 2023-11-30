@@ -595,13 +595,13 @@ Simon Fraser University.\".")
 (define-public r-quickmatch
   (package
     (name "r-quickmatch")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quickmatch" version))
        (sha256
-        (base32 "1qfslhjlbjpzigz8n6b7w41g8pwdiwri091ivd5igp1xy5pv8a3w"))))
+        (base32 "0y1yss83q4mpdb5ipldg2080vrnc5725452zrs89gxnsykx1qv6j"))))
     (properties `((upstream-name . "quickmatch")))
     (build-system r-build-system)
     (propagated-inputs (list r-scclust r-sandwich r-distances))
@@ -666,13 +666,13 @@ is designed to seamlessly integrate with testthat'.")
 (define-public r-quickblock
   (package
     (name "r-quickblock")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quickblock" version))
        (sha256
-        (base32 "0ij4ivpnkjzdixbq7pg4g1xkb031qawadr22qhzp0q210qhmhc0m"))))
+        (base32 "1pl3cwb4byz3b4s08rahk20ckkwrl977qr4a7cw0pd09qm0qgcq3"))))
     (properties `((upstream-name . "quickblock")))
     (build-system r-build-system)
     (propagated-inputs (list r-scclust r-distances))
@@ -3835,13 +3835,13 @@ described in work by Strehl, Li, Wiewiora, Langford & Littman (2006)
 (define-public r-qlcal
   (package
     (name "r-qlcal")
-    (version "0.0.8")
+    (version "0.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qlcal" version))
        (sha256
-        (base32 "04bs9kgcdm5s6i62gadb70mrw5x96yq31i6004fxspp41p7flb07"))))
+        (base32 "1pl7bs0v9qh89j0r9nqygfr2g3hq9c285nbvfsmxncxqwvpgcxv3"))))
     (properties `((upstream-name . "qlcal")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-bh))
@@ -4075,31 +4075,6 @@ Kattan MW, Heller G, Brennan MF (2003) <doi:10.1002/sim.1574>.")
 hotspot detection in the genomes that are available on the worldwide web
 including the flanking markers of QTLs.")
     (license license:gpl3+)))
-
-(define-public r-qha
-  (package
-    (name "r-qha")
-    (version "0.0.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "qha" version))
-       (sha256
-        (base32 "0sdf6g6884wn73i237xkwszg2mq8xddhvyy225qzpplh5za4pnhl"))))
-    (properties `((upstream-name . "qha")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-factominer r-factoclass r-ade4))
-    (home-page "https://cran.r-project.org/package=qha")
-    (synopsis "Qualitative Harmonic Analysis")
-    (description
-     "Multivariate description of the state changes of a qualitative variable by
-Correspondence Analysis and Clustering.  See: Deville, J.C., & Saporta, G.
-(1983).  Correspondence analysis, with an extension towards nominal time series.
- Journal of econometrics, 22(1-2), 169-189.  Corrales, M.L., & Pardo, C.E.
-(2015) <doi:10.15332/s2027-3355.2015.0001.01>.  Analisis de datos longitudinales
-cualitativos con analisis de correspondencias y clasificacion.  Comunicaciones
-en Estadistica, 8(1), 11-32.")
-    (license license:gpl2+)))
 
 (define-public r-qgtools
   (package

@@ -7192,13 +7192,13 @@ specific purposes, such as predict[ing], print[ing], summary[izing], etc.")
 (define-public r-stringx
   (package
     (name "r-stringx")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stringx" version))
        (sha256
-        (base32 "0h6j67krpk1yr0qiq76grlw1dwdxzj1h61fvlbah86k444mfg91a"))))
+        (base32 "0n11y2w9gm37kfkg44df95ib1xbjglz7ys9ffw05pbc71ai0njjp"))))
     (properties `((upstream-name . "stringx")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi))
@@ -7579,13 +7579,13 @@ package vignette.")
 (define-public r-streambugs
   (package
     (name "r-streambugs")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "streambugs" version))
        (sha256
-        (base32 "06h7721yjjz1gz8kp32fq96cy0v5a0dhy9q0s20fp3wyycb2jy37"))))
+        (base32 "0j7fi5rvs2apkzgyk9idpdcbxaa7kqj650gycfsq2md23fl75jpw"))))
     (properties `((upstream-name . "streambugs")))
     (build-system r-build-system)
     (propagated-inputs (list r-desolve))
@@ -26713,13 +26713,13 @@ Gottlieb (2018)
 (define-public r-socialranking
   (package
     (name "r-socialranking")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "socialranking" version))
        (sha256
-        (base32 "0vfjhliha69rqa94y6y0g5yx4ni1cnfpsgf2h8nccypq6m3rcgjr"))))
+        (base32 "0mhm1981nixa6vlkjnjsc292pkypjx666sz8p5sxv75zpajxjzfw"))))
     (properties `((upstream-name . "socialranking")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-relations r-rdpack))
@@ -35927,13 +35927,13 @@ shape constraints including different smoothness conditions.")
 (define-public r-simer
   (package
     (name "r-simer")
-    (version "0.9.0.3")
+    (version "0.9.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simer" version))
        (sha256
-        (base32 "060vaaqwvq4dpizwc8jh6712s9aa3cl1ys08bydi85laf22x7zqb"))))
+        (base32 "1mgkmfv1mm4paxvzq43rdxjxf13csxizl8v1gc47y7h21hq2f5sx"))))
     (properties `((upstream-name . "simer")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppprogress
@@ -36222,13 +36222,13 @@ as for their use in multiple testing procedures.")
 (define-public r-simcross
   (package
     (name "r-simcross")
-    (version "0.3-6")
+    (version "0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simcross" version))
        (sha256
-        (base32 "1h0j28ah8dxylqjzwv6lfrisw8qm82a5mc5c7lp274fgvj8kr6jq"))))
+        (base32 "01ch7h2y7ybggxrwg17yx5d7psjnmambzn5zwwi94gwhxmzp987b"))))
     (properties `((upstream-name . "simcross")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -36378,18 +36378,18 @@ or covariance matrices (Hasler, 2014 <doi:10.1515/ijb-2012-0015>).")
 (define-public r-simcdm
   (package
     (name "r-simcdm")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simcdm" version))
        (sha256
-        (base32 "1qzxxpz3nvqf9801k6zgphv6vd8alf2sf6cvzggk7cz6x5jc3w1r"))))
+        (base32 "1pwh1ial7naanqpxhlsn6ij2i35xnj8hwyhvipzc7csd5l5ss5z1"))))
     (properties `((upstream-name . "simcdm")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/tmsalab/simcdm")
+    (home-page "https://tmsalab.github.io/simcdm/")
     (synopsis "Simulate Cognitive Diagnostic Model ('CDM') Data")
     (description
      "This package provides efficient R and C++ routines to simulate cognitive
@@ -51046,13 +51046,13 @@ Robins (1997) <doi:10.2307/2670119>.")
 (define-public r-scoringutils
   (package
     (name "r-scoringutils")
-    (version "1.1.0")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scoringutils" version))
        (sha256
-        (base32 "1a2lvc52x8nvkfa3dgrlh76j27cwz05sbw1cg47kcafv07vjzw2x"))))
+        (base32 "1ylw7ql5ayfn6fcxnmmmr3zpvczax6mhmis28r03kwm8val5q233"))))
     (properties `((upstream-name . "scoringutils")))
     (build-system r-build-system)
     (propagated-inputs (list r-scoringrules
@@ -51062,7 +51062,7 @@ Robins (1997) <doi:10.2307/2670119>.")
                              r-ggdist
                              r-data-table))
     (native-inputs (list r-knitr))
-    (home-page "https://epiforecasts.io/scoringutils/")
+    (home-page "https://doi.org/10.48550/arXiv.2205.07090")
     (synopsis "Utilities for Scoring and Assessing Predictions")
     (description
      "This package provides a collection of metrics and proper scoring rules (Tilmann
@@ -51078,7 +51078,8 @@ forecasts represented by predictive samples or by quantiles of the predictive
 distribution) can be evaluated.  Scoring metrics can be used either through a
 convenient data.frame format, or can be applied as individual functions in a
 vector / matrix format.  All functionality has been implemented with a focus on
-performance and is robustly tested.")
+performance and is robustly tested.  Find more information about the package in
+the accompanying paper (<doi:10.48550/@code{arXiv.2205.07090>}).")
     (license license:expat)))
 
 (define-public r-scoringtools
@@ -52787,13 +52788,13 @@ probability matrix from double-censored data is added.")
 (define-public r-scclust
   (package
     (name "r-scclust")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scclust" version))
        (sha256
-        (base32 "06xwdb0mlfqk5238mla13vqfmh5qwayp018rwsfqn1pwns01lr5s"))))
+        (base32 "0rhr5qnsc0ylgs4gmn3d3d4ah2ijnd24n029vik1f0n4ykszn3np"))))
     (properties `((upstream-name . "scclust")))
     (build-system r-build-system)
     (propagated-inputs (list r-distances))

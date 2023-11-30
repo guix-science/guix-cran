@@ -5419,13 +5419,13 @@ responses in surveys.")
 (define-public r-grc
   (package
     (name "r-grc")
-    (version "0.4.5")
+    (version "0.4.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gRc" version))
        (sha256
-        (base32 "051xypj0mcrmb4xyrbpicz08dj74klrfbzi463hvbgcvxyh75m3c"))))
+        (base32 "0jrskkp8850b3nanlz19iycwnsiyfxpwxi8vy6bvv36lbhslg86l"))))
     (properties `((upstream-name . "gRc")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-mass r-magrittr r-grbase))
@@ -5443,13 +5443,13 @@ Hojsgaard and Lauritzen (2008, <doi:10.1111/j.1467-9868.2008.00666.x>).")
 (define-public r-grbase
   (package
     (name "r-grbase")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gRbase" version))
        (sha256
-        (base32 "0hnrdza3614mgb76br0cfx49kpjg1s0563shljl6jcqhbxhw944v"))))
+        (base32 "1ac1qx219g2p3wlxh57jqhifckxm8jqb3vi3pmlv8m29hm997r0y"))))
     (properties `((upstream-name . "gRbase")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen
@@ -7813,13 +7813,13 @@ Griffing, B. (1956) <https://www.publish.csiro.au/bi/pdf/BI9560463>.")
 (define-public r-gpboost
   (package
     (name "r-gpboost")
-    (version "1.2.6")
+    (version "1.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gpboost" version))
        (sha256
-        (base32 "0gvccvm2xw011n1yvvqirwl6a0szb8j891yq71yr27r9bjwf1lhy"))))
+        (base32 "1cfpdpbsb9h4m4z7zv9vvipxxjif5qmbx3csck5pl6i0knydp0kz"))))
     (properties `((upstream-name . "gpboost")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjsonio r-r6 r-matrix r-data-table))
@@ -10572,13 +10572,13 @@ testing for group sequential design, described in Maurer and Bretz (2013)
 (define-public r-gmcp
   (package
     (name "r-gmcp")
-    (version "0.8-15")
+    (version "0.8-16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gMCP" version))
        (sha256
-        (base32 "01048j9489rrhv9syqrbw4c5i5gsll41ysm27awxw6l1rshbqsqn"))))
+        (base32 "0jkq538xif87asrllmdbcf9hz9z4p5j1xnvf3fp2kc9p48jqdx75"))))
     (properties `((upstream-name . "gMCP")))
     (build-system r-build-system)
     (inputs (list openjdk))
@@ -10592,7 +10592,7 @@ testing for group sequential design, described in Maurer and Bretz (2013)
                              r-javagd
                              r-commonjavajars))
     (native-inputs (list r-knitr))
-    (home-page "http://gsrmtp.r-forge.r-project.org/")
+    (home-page "https://github.com/kornl/gMCP")
     (synopsis "Graph Based Multiple Comparison Procedures")
     (description
      "This package provides functions and a graphical user interface for graphical
@@ -25118,13 +25118,13 @@ function arguments introduced in GDAL version 3.5.2 or earlier are supported.")
 (define-public r-gdalraster
   (package
     (name "r-gdalraster")
-    (version "1.6.0")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gdalraster" version))
        (sha256
-        (base32 "19b9k3wz7lhrjaxaj8ncvf80s46vgx7jwkmssbm7f70fym149xp8"))))
+        (base32 "18a1kw31hs5qa03jj6ddxvv0hpjr6c5g3nbwgrgs48kjrqwbdc6z"))))
     (properties `((upstream-name . "gdalraster")))
     (build-system r-build-system)
     (inputs (list zlib

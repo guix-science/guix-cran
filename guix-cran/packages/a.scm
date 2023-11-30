@@ -9479,13 +9479,13 @@ pair of sampling points.")
 (define-public r-anthropmmd
   (package
     (name "r-anthropmmd")
-    (version "4.0.2")
+    (version "4.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AnthropMMD" version))
        (sha256
-        (base32 "1k8f8xrlgl4l3kpspdpznplydq8ppynkjwij571sb4lkac5fbz55"))))
+        (base32 "03mvlw54a9xz7ggjbfi9yddzq1wv4skjvbv3r4bdrldpbd6scm0b"))))
     (properties `((upstream-name . "AnthropMMD")))
     (build-system r-build-system)
     (propagated-inputs (list r-smacof
@@ -15637,16 +15637,16 @@ contains functions to replicate the analyses of the scientific article entitled
 (define-public r-agop
   (package
     (name "r-agop")
-    (version "0.2-3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "agop" version))
        (sha256
-        (base32 "1z90a07wzn5z4cbafwpfh3l3v1bgq9g89qbdjm51f78zynnb27dk"))))
+        (base32 "1bvmwic2xjl36i994pzc0hhl3k2ghxivrq9i96ykxmklp9drlb7j"))))
     (properties `((upstream-name . "agop")))
     (build-system r-build-system)
-    (home-page "http://www.gagolewski.com/software/")
+    (home-page "https://github.com/gagolews/agop/")
     (synopsis "Aggregation Operators and Preordered Sets")
     (description
      "This package provides tools supporting multi-criteria and group decision making,
@@ -17168,6 +17168,26 @@ for the best selected model.  Details about the method can be found in Timpson
 A., Barberena R., Thomas M. G., Mendez C., Manning K. (2020)
 <doi:10.1098/rstb.2019.0723>.")
     (license license:gpl3)))
+
+(define-public r-admtools
+  (package
+    (name "r-admtools")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "admtools" version))
+       (sha256
+        (base32 "1b421x30zaqxyfiidn5ah5bx757mpvsmja5kwn3gydnih1917rvg"))))
+    (properties `((upstream-name . "admtools")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/MindTheGap-ERC/admtools")
+    (synopsis "Estimate and Manipulate Age-Depth Models")
+    (description
+     "Estimate age-depth models from stratigraphic and sedimentological data, and
+transform data between the time and stratigraphic domain.")
+    (license license:asl2.0)))
 
 (define-public r-admmsigma
   (package

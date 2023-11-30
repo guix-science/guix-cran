@@ -7150,13 +7150,13 @@ More information can be found in @code{McLain}, Zgodic, and Bondell (2022)
 (define-public r-probbreed
   (package
     (name "r-probbreed")
-    (version "1.0.3")
+    (version "1.0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ProbBreed" version))
        (sha256
-        (base32 "1m8zlqnrszzjv2c8dpzvihjaw7wrw04xgbqg6a0nr6lzqn8wdjs0"))))
+        (base32 "04i46n23srds38fz3fxvdpbmf2639902a2p19ixkyk2yab82afdb"))))
     (properties `((upstream-name . "ProbBreed")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstan r-rlang r-lifecycle r-ggplot2))
@@ -15512,19 +15512,19 @@ regression models.")
 (define-public r-poissonbinomial
   (package
     (name "r-poissonbinomial")
-    (version "1.2.5")
+    (version "1.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PoissonBinomial" version))
        (sha256
-        (base32 "00cyrhi72kfbv7mdpmal1d2ws1lc3f6gfnfcxvf9hs74mcixm8jy"))))
+        (base32 "1g77mkz63fl8hr3fhb71l0zywgg20djzjb88sjzpzsng73mz682h"))))
     (properties `((upstream-name . "PoissonBinomial")))
     (build-system r-build-system)
     (inputs (list fftw))
     (propagated-inputs (list r-rcpp))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/DISOhda/PoissonBinomial")
+    (home-page "https://github.com/fj86/PoissonBinomial")
     (synopsis
      "Efficient Computation of Ordinary and Generalized Poisson Binomial Distributions")
     (description
@@ -25111,6 +25111,30 @@ ecological matrices ('fingerprint.regression').  Phylogenetic Generalised Linear
 Mixed Models (PGLMMs; pglmm') following Ives & Helmus (2011) and Rafferty & Ives
 (2013).  Simulation of null assemblages, traits, and phylogenies ('scape',
 sim.meta.comm').")
+    (license license:gpl3)))
+
+(define-public r-pexm
+  (package
+    (name "r-pexm")
+    (version "1.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pexm" version))
+       (sha256
+        (base32 "17wc0qxcs1p282lrv2ji8lj3c8d656b4dl2mjbsywgyq29lzl1lz"))))
+    (properties `((upstream-name . "pexm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rjags r-msm r-coda))
+    (home-page "https://github.com/vdinizm/pexm")
+    (synopsis
+     "Loading a JAGS Module for the Piecewise Exponential Distribution")
+    (description
+     "Load the Just Another Gibbs Sampling (JAGS) module pexm'.  The module provides
+the tools to work with the Piecewise Exponential (PE) distribution in a Bayesian
+model with the corresponding Markov Chain Monte Carlo algorithm (Gibbs Sampling)
+implemented via JAGS. Details about the module implementation can be found in
+Mayrink et al. (2021) <doi:10.18637/jss.v100.i08>.")
     (license license:gpl3)))
 
 (define-public r-pewdata

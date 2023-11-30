@@ -1343,13 +1343,13 @@ transformation (Korkmaz et al, (2014),
 (define-public r-mvmorph
   (package
     (name "r-mvmorph")
-    (version "1.1.7")
+    (version "1.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mvMORPH" version))
        (sha256
-        (base32 "0bjy8pyy47lqbixjs4qrk4mgvznnviahlkmyf3k07x381z6bl8qx"))))
+        (base32 "1fby8f4d120hawqjrki5gayz43cjfyvxwgbidkzyav2085qr6cbi"))))
     (properties `((upstream-name . "mvMORPH")))
     (build-system r-build-system)
     (propagated-inputs (list r-subplex
@@ -7722,13 +7722,13 @@ delete this entity in the less sensible mode and combine both matrices.")
 (define-public r-mscmt
   (package
     (name "r-mscmt")
-    (version "1.3.8")
+    (version "1.3.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MSCMT" version))
        (sha256
-        (base32 "0d9mwhgnbqw5783idh9isx4hng287c8ca5fz5zixz3v0i86hcp0x"))))
+        (base32 "151ql3vxy6vmviv3fr6ln9p68l6sw6dx6qkwn702512z7730wh3a"))))
     (properties `((upstream-name . "MSCMT")))
     (build-system r-build-system)
     (propagated-inputs (list r-rglpk r-rdpack r-lpsolveapi r-lpsolve r-ggplot2))
@@ -14687,13 +14687,13 @@ Journal of Statistical Software, Vol.  14, No.  3 (May), pp.  1-32.
 (define-public r-mnorm
   (package
     (name "r-mnorm")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mnorm" version))
        (sha256
-        (base32 "1g7174hbknriwmj044zb4psc4f2np3qy308xsq2ik3n9fvxz0vyh"))))
+        (base32 "1ivd40cmcp66h4yccbll90fgqmq03pgy3hgklz8wxj0j479r21z0"))))
     (properties `((upstream-name . "mnorm")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-hpa))
@@ -14763,13 +14763,13 @@ Sequence Classification\".")
 (define-public r-mnm
   (package
     (name "r-mnm")
-    (version "1.0-3")
+    (version "1.0-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MNM" version))
        (sha256
-        (base32 "16b2yrm2kn943vzrr38qhk6qq20a842xv7iiln4is02csijxw2b3"))))
+        (base32 "1s5fn1h10swl003pq0sb08i38zh951n4hpw2szf8akw1lawrzxak"))))
     (properties `((upstream-name . "MNM")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatialnp r-icsnp r-ics r-ellipse))
@@ -17385,13 +17385,13 @@ studies.")
 (define-public r-mlpack
   (package
     (name "r-mlpack")
-    (version "4.2.1")
+    (version "4.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlpack" version))
        (sha256
-        (base32 "0d2b6mldv3cnc4pk27d5vcb9bcm835kydxn0n0adalm54c8my74a"))))
+        (base32 "1v631q7n3qn7zrfj6j7dnsmr419qs2in8kx0czwh9gkkms7inwp6"))))
     (properties `((upstream-name . "mlpack")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppensmallen r-rcpparmadillo r-rcpp))
@@ -25285,49 +25285,6 @@ Multivariate Failure Time Data: A Marginal Modeling Approach\", Prentice, R.,
 Zhao, S. (2019, ISBN: 978-1-4822-5657-4), CRC Press.")
     (license license:gpl3)))
 
-(define-public r-mgwrsar
-  (package
-    (name "r-mgwrsar")
-    (version "1.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mgwrsar" version))
-       (sha256
-        (base32 "19rsw5qjcq3bjqajz83dbkjdgh1dazpw7wvkbn4gdcksgmaxm5l2"))))
-    (properties `((upstream-name . "mgwrsar")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-spgwr
-                             r-sp
-                             r-sf
-                             r-rlang
-                             r-rcppeigen
-                             r-rcpp
-                             r-qlcmatrix
-                             r-nabor
-                             r-microbenchmark
-                             r-mgcv
-                             r-mboost
-                             r-matrix
-                             r-mapview
-                             r-leaflet
-                             r-knitr
-                             r-htmltools
-                             r-gridextra
-                             r-ggplot2
-                             r-foreach
-                             r-dplyr
-                             r-doparallel
-                             r-caret))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=mgwrsar")
-    (synopsis "GWR and MGWR with Spatial Autocorrelation")
-    (description
-     "This package provides functions for computing (Mixed) Geographycally Weighted
-Regression with spatial autocorrelation, Geniaux and Martinetti (2017)
-<doi:10.1016/j.regsciurbeco.2017.04.001>.")
-    (license license:gpl2+)))
-
 (define-public r-mgss
   (package
     (name "r-mgss")
@@ -27197,13 +27154,13 @@ modeling, particularly crop and crop disease modeling.")
 (define-public r-meteoland
   (package
     (name "r-meteoland")
-    (version "2.1.0")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "meteoland" version))
        (sha256
-        (base32 "0480g35nl0hs10z9mjq063b130fdqi67bzmclq8b1y4jdlqfzgpr"))))
+        (base32 "1543ka7yd7v1yca7my1114mb5j6wmn7dsj3kcr7gj8z99v8mxadk"))))
     (properties `((upstream-name . "meteoland")))
     (build-system r-build-system)
     (propagated-inputs (list r-units

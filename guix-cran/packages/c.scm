@@ -15,8 +15,8 @@
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages maths)
   #:use-module (gnu packages bioinformatics)
+  #:use-module (gnu packages maths)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
@@ -7369,26 +7369,21 @@ continuous outcome\", BMC Medical Research Methodology.")
 (define-public r-cpr
   (package
     (name "r-cpr")
-    (version "0.2.3")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cpr" version))
        (sha256
-        (base32 "1a2lza1bw74xzrs17a9gr9mnpvnnrykhwd73yqi63wp3k4sm42rb"))))
+        (base32 "1vs9726v1qv099sbsfhny32qhz7w6y3smlrkfm6vnyx648l1d85z"))))
     (properties `((upstream-name . "cpr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-rgl
+    (propagated-inputs (list r-scales
                              r-rcpparmadillo
                              r-rcpp
                              r-plot3d
-                             r-magrittr
                              r-lme4
-                             r-lazyeval
-                             r-ggplot2
-                             r-dplyr))
+                             r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/dewittpe/cpr/")
     (synopsis "Control Polygon Reduction")
@@ -9541,6 +9536,35 @@ courses.  Aid teaching with helper functions and augment generic functions to
 provide cohesion between the network of packages.  Learn more about
 @code{CourseKata} at <https://coursekata.org>.")
     (license license:agpl3+)))
+
+(define-public r-countts
+  (package
+    (name "r-countts")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "countts" version))
+       (sha256
+        (base32 "11pyj5s2vyw209inapiw9pvk0s1aq3r2c1xq0dnc83sz82bxx6c4"))))
+    (properties `((upstream-name . "countts")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-matrixstats r-mass r-ggplot2 r-fastdummies))
+    (home-page "https://cran.r-project.org/package=countts")
+    (synopsis "Thomson Sampling for Zero-Inflated Count Outcomes")
+    (description
+     "This package provides a specialized tool is designed for assessing contextual
+bandit algorithms, particularly those aimed at handling overdispersed and
+zero-inflated count data.  It offers a simulated testing environment that
+includes various models like Poisson, Overdispersed Poisson, Zero-inflated
+Poisson, and Zero-inflated Overdispersed Poisson.  The package is capable of
+executing five specific algorithms: Linear Thompson sampling with log
+transformation on the outcome, Thompson sampling Poisson, Thompson sampling
+Negative Binomial, Thompson sampling Zero-inflated Poisson, and Thompson
+sampling Zero-inflated Negative Binomial.  Additionally, it can generate regret
+plots to evaluate the performance of contextual bandit algorithms.  This package
+is based on the algorithms by Liu et al. (2023) <@code{arXiv:2311.14359>}.")
+    (license license:gpl2+)))
 
 (define-public r-counttransformers
   (package
@@ -13369,13 +13393,13 @@ regression trees.")
 (define-public r-convertid
   (package
     (name "r-convertid")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "convertid" version))
        (sha256
-        (base32 "0q3r8fasx8p2kgj3icfy6ynnmvan9w89kg4a3s3w0vns932gwvi9"))))
+        (base32 "0mprymgh5wbh9x6kn98q4r6c6rp2l108ddmp2g7lh9m635ys6v8m"))))
     (properties `((upstream-name . "convertid")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -16742,13 +16766,13 @@ assessments, making it suitable for various education contexts.")
 (define-public r-compoissonreg
   (package
     (name "r-compoissonreg")
-    (version "0.8.0")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "COMPoissonReg" version))
        (sha256
-        (base32 "0yaq7mfqcdyp077xhmqd3rx0b77y2rg1yz89q4llgiwfg244y6mp"))))
+        (base32 "0a03v9b3mv214y2ky94z8y363x6b97a68kvypvan56m0mg0zzq3d"))))
     (properties `((upstream-name . "COMPoissonReg")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-numderiv))
@@ -19843,13 +19867,13 @@ the Walloon Agricultural Research Centre (project MIMOSA, MOERMAN fund).")
 (define-public r-coga
   (package
     (name "r-coga")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coga" version))
        (sha256
-        (base32 "1hrq31w00a2ix30w1xncmxrkxbwbdizsq05axn2kwcvq5miq10yk"))))
+        (base32 "1ahpq69b46ahm3859pz5rq9r5p4778pvg4h693b7cm772giz58rf"))))
     (properties `((upstream-name . "coga")))
     (build-system r-build-system)
     (inputs (list gsl))
@@ -27655,13 +27679,13 @@ means, based on Nguyen (2009) <doi:10.15760/etd.7798>.")
 (define-public r-cinterpolate
   (package
     (name "r-cinterpolate")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cinterpolate" version))
        (sha256
-        (base32 "1aw6hs41xin2hhgmi4pr5510v4sn6x735lachpc5gpbxch5h3f82"))))
+        (base32 "1viv904x4sbs8q2vz8a0aagamvs7n5i2xkscnxzz5csrdwr4mmai"))))
     (properties `((upstream-name . "cinterpolate")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -35610,13 +35634,13 @@ numpyro python package.")
 (define-public r-cauphy
   (package
     (name "r-cauphy")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cauphy" version))
        (sha256
-        (base32 "1bip2waavlk32waiz5q0f13wnzddhjj6ijhnkbk49nxvzi9m3a87"))))
+        (base32 "1jyw6pq17fzpkp6c68cbc7y5bs1y1xhnvd49j7kkypn7ziglpm9s"))))
     (properties `((upstream-name . "cauphy")))
     (build-system r-build-system)
     (propagated-inputs (list r-robustbase

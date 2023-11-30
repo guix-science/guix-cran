@@ -20565,41 +20565,6 @@ Investigate() function performs all these functions in one, and returns the
 result as a report document (Word, PDF or HTML).")
     (license license:gpl2+)))
 
-(define-public r-factoclass
-  (package
-    (name "r-factoclass")
-    (version "1.2.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "FactoClass" version))
-       (sha256
-        (base32 "0w20nrhaky2lj9z2if59fppim5063962xv2yl76g28xqgc6rmymq"))))
-    (properties `((upstream-name . "FactoClass")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xtable
-                             r-scatterplot3d
-                             r-kernsmooth
-                             r-ggrepel
-                             r-ggplot2
-                             r-ade4))
-    (home-page "https://cran.r-project.org/package=FactoClass")
-    (synopsis "Combination of Factorial Methods and Cluster Analysis")
-    (description
-     "Some functions of ade4 and stats are combined in order to obtain a partition of
-the rows of a data table, with columns representing variables of scales:
-quantitative, qualitative or frequency.  First, a principal axes method is
-performed and then, a combination of Ward agglomerative hierarchical
-classification and K-means is performed, using some of the first coordinates
-obtained from the previous principal axes method.  See, for example: Lebart, L.
-and Piron, M. and Morineau, A. (2006).  Statistique Exploratoire
-Multidimensionnelle, Dunod, Paris.  In order to permit to have different weights
-of the elements to be clustered, the function @code{kmeansW}', programmed in
-C++, is included.  It is a modification of kmeans'.  Some graphical functions
-include the option: gg=FALSE'.  When gg=TRUE', they use the ggplot2 and ggrepel
-packages to avoid the super-position of the labels.")
-    (license license:gpl2+)))
-
 (define-public r-factmle
   (package
     (name "r-factmle")

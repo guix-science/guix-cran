@@ -15581,6 +15581,28 @@ approaches (with the digit.ditr() function).  Finally, it proposes to quantify
 the goodness of fit via Pearson's chi-squared test (with the chi2() function).")
     (license license:gpl2)))
 
+(define-public r-bexy
+  (package
+    (name "r-bexy")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bexy" version))
+       (sha256
+        (base32 "053k7b9ilvsawh6ajh2v794snsw6b5qf9s7bqfl555w5ia6cl6ri"))))
+    (properties `((upstream-name . "bexy")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ternary r-teachingdemos))
+    (home-page "https://cran.r-project.org/package=bexy")
+    (synopsis "Visualize and Parse the Output of 'BeXY'")
+    (description
+     "This package provides functions for summarizing and plotting the output of the
+command-line tool @code{BeXY} (<https://bitbucket.org/wegmannlab/bexy>), a tool
+that performs Bayesian inference of sex chromosome karyotypes and sex-linked
+scaffolds from low-depth sequencing data.")
+    (license license:gpl2)))
+
 (define-public r-bevimed
   (package
     (name "r-bevimed")

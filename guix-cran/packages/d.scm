@@ -220,13 +220,13 @@ consistent with wood formation mechanisms through time.")
 (define-public r-dynsurv
   (package
     (name "r-dynsurv")
-    (version "0.4-5")
+    (version "0.4-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dynsurv" version))
        (sha256
-        (base32 "1cflp9q3364qhz06hy9h42q7q455ylk8k3zldppnhz5cq0n56z2n"))))
+        (base32 "0nxksy8q1r82qak77sb99kpwhq011d4jh4iicc7c0iin04r5nym4"))))
     (properties `((upstream-name . "dynsurv")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -3276,6 +3276,50 @@ implemented based on the DStorage class.")
     (description
      "Dataset containing information about job listings for data science job roles.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
+
+(define-public r-dsims
+  (package
+    (name "r-dsims")
+    (version "1.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dsims" version))
+       (sha256
+        (base32 "0mqnpcs9bijkc0l6x6qssr527rh4j4ignlgvgrqxqgii3ikdx92j"))))
+    (properties `((upstream-name . "dsims")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sf
+                             r-rstudioapi
+                             r-rlang
+                             r-purrr
+                             r-mrds
+                             r-mgcv
+                             r-gridextra
+                             r-ggplot2
+                             r-dssd
+                             r-dplyr
+                             r-distance))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/DistanceDevelopment/dsims")
+    (synopsis "Distance Sampling Simulations")
+    (description
+     "This package performs distance sampling simulations.  dsims repeatedly generates
+instances of a user defined population within a given survey region.  It then
+generates realisations of a survey design and simulates the detection process.
+The data are then analysed so that the results can be compared for accuracy and
+precision across all replications.  This process allows users to optimise survey
+designs for their specific set of survey conditions.  The effects of uncertainty
+in population distribution or parameters can be investigated under a number of
+simulations so that users can be confident that they have achieved a robust
+survey design before deploying vessels into the field.  The distance sampling
+designs used in this package from dssd are detailed in Chapter 7 of Advanced
+Distance Sampling, Buckland et.  al. (2008, ISBN-13: 978-0199225873).  General
+distance sampling methods are detailed in Introduction to Distance Sampling:
+Estimating Abundance of Biological Populations, Buckland et.  al. (2004,
+ISBN-13: 978-0198509271).  Find out more about estimating animal/plant abundance
+with distance sampling at <http://distancesampling.org/>.")
+    (license license:gpl2+)))
 
 (define-public r-dsi
   (package
@@ -8154,16 +8198,16 @@ and sediment budgets from a field or a catchment on a daily basis.")
 (define-public r-dmm
   (package
     (name "r-dmm")
-    (version "2.1-8")
+    (version "2.1-9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dmm" version))
        (sha256
-        (base32 "1iplqxm6qhjf55xzs96534p81z38ancw27s3p621labm21x9s9qr"))))
+        (base32 "1gca90yh3lysp4rqxa8dp7d5mni57n1cj5q99y04j9aly3b4b0gb"))))
     (properties `((upstream-name . "dmm")))
     (build-system r-build-system)
-    (propagated-inputs (list r-robustbase r-pls r-nadiv r-matrix r-mass))
+    (propagated-inputs (list r-robustbase r-pls r-matrix r-mass))
     (home-page "https://cran.r-project.org/package=dmm")
     (synopsis "Dyadic Mixed Model for Pedigree Data")
     (description
@@ -12822,32 +12866,6 @@ package gurobi', can be installed from
 <https://www.gurobi.com/products/gurobi-optimizer/>.  The useful vignette Gurobi
 Installation Guide, from package prioritizr', can be found here:
 <https://prioritizr.net/articles/gurobi_installation_guide.html>.")
-    (license license:gpl3+)))
-
-(define-public r-diffusr
-  (package
-    (name "r-diffusr")
-    (version "0.1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "diffusr" version))
-       (sha256
-        (base32 "1f3h387kblw1xzdnxphwgfl1n7f6i07kk7kfslvbfxkalbish6ii"))))
-    (properties `((upstream-name . "diffusr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcppeigen r-rcpp r-igraph))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/dirmeier/diffusr")
-    (synopsis "Network Diffusion Algorithms")
-    (description
-     "Implementation of network diffusion algorithms such as heat diffusion or Markov
-random walks.  Network diffusion algorithms generally spread information in the
-form of node weights along the edges of a graph to other nodes.  These weights
-can for example be interpreted as temperature, an initial amount of water, the
-activation of neurons in the brain, or the location of a random surfer in the
-internet.  The information (node weights) is iteratively propagated to other
-nodes until a equilibrium state or stop criterion occurs.")
     (license license:gpl3+)))
 
 (define-public r-diffusion

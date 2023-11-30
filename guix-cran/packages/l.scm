@@ -9812,13 +9812,13 @@ compared to other libraries.")
 (define-public r-libgeos
   (package
     (name "r-libgeos")
-    (version "3.11.1-1")
+    (version "3.11.1-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "libgeos" version))
        (sha256
-        (base32 "07zwnwmz5cvg858ykx6pwxd044ivmsvb5g8rrbi1y3qpmkrby0qp"))))
+        (base32 "0d4gfcll0z4f57sv8vax2bbc4fvs4da4510qwisd7wf5ghjhsbb0"))))
     (properties `((upstream-name . "libgeos")))
     (build-system r-build-system)
     (home-page "https://paleolimbot.github.io/libgeos/")
