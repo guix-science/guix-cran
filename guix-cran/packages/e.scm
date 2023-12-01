@@ -2515,13 +2515,13 @@ methods implemented by this package are described in Wu et al. (2022)
 (define-public r-excursions
   (package
     (name "r-excursions")
-    (version "2.5.7")
+    (version "2.5.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "excursions" version))
        (sha256
-        (base32 "02pd02c962wzj2lks33yyq4k9knxg3p41sa7chyqj0j6nrr306xp"))))
+        (base32 "0mirg44xhrb7h30blnb4hdfl5h96k5v28ll1awajrjmnrgwssx6a"))))
     (properties `((upstream-name . "excursions")))
     (build-system r-build-system)
     (inputs (list gsl))

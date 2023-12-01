@@ -13132,13 +13132,13 @@ is proportional to the certain characteristics of the dataset.")
 (define-public r-tiledb
   (package
     (name "r-tiledb")
-    (version "0.21.1")
+    (version "0.22.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tiledb" version))
        (sha256
-        (base32 "0s7m7n41a78n8pgcqdk9zal87212p0f1m79dfwrjrp6i125s5zwm"))))
+        (base32 "09jifc57nkyph14gc84cz8fjkflnn9dgl6i69bvv2a5l6x58ph3k"))))
     (properties `((upstream-name . "tiledb")))
     (build-system r-build-system)
     (inputs (list zlib pcre2))
@@ -13146,14 +13146,14 @@ is proportional to the certain characteristics of the dataset.")
     (native-inputs (list r-simplermarkdown pkg-config))
     (home-page "https://github.com/TileDB-Inc/TileDB-R")
     (synopsis
-     "Universal Storage Engine for Sparse and Dense Multidimensional Arrays")
+     "Modern Database Engine for Multi-Modal Data via Sparse and Dense Multidimensional Arrays")
     (description
-     "The universal storage engine @code{TileDB} introduces a powerful on-disk format
-for multi-dimensional arrays.  It supports dense and sparse arrays, dataframes
-and key-values stores, cloud storage ('S3', GCS', Azure'), chunked arrays,
-multiple compression, encryption and checksum filters, uses a fully
-multi-threaded implementation, supports parallel I/O, data versioning ('time
-travel'), metadata and groups.  It is implemented as an embeddable
+     "The modern database @code{TileDB} introduces a powerful on-disk format for
+multi-modal data based on dimensional arrays.  It supports dense and sparse
+arrays, dataframes and key-values stores, cloud storage ('S3', GCS', Azure'),
+chunked arrays, multiple compression, encryption and checksum filters, uses a
+fully multi-threaded implementation, supports parallel I/O, data versioning
+('time travel'), metadata and groups.  It is implemented as an embeddable
 cross-platform C++ library with APIs from several languages, and integrations.")
     (license license:expat)))
 
@@ -19521,16 +19521,17 @@ tune the detection algorithms and obtain the best possible results.")
 (define-public r-tesselle
   (package
     (name "r-tesselle")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tesselle" version))
        (sha256
-        (base32 "0lyc82jib1k1k1dg5nc0g3plcjrw05n586rakf47j4rka2pfpi70"))))
+        (base32 "10ahssk9qaj7a0x82364cdqigx8af1vrxvnm2z44x7j688mc17cg"))))
     (properties `((upstream-name . "tesselle")))
     (build-system r-build-system)
     (propagated-inputs (list r-tabula
+                             r-nexus
                              r-khroma
                              r-kairos
                              r-isopleuros
@@ -22438,6 +22439,40 @@ applied to both experimental and observational data.")
     (description
      "For when your colors absolutely should not be excluded from the narrative.")
     (license license:expat)))
+
+(define-public r-taylorrussell
+  (package
+    (name "r-taylorrussell")
+    (version "1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TaylorRussell" version))
+       (sha256
+        (base32 "1lwvd1q15b5x3bhbglb0vy08bc825g75c4dmkgv9gn0wfkksnw6i"))))
+    (properties `((upstream-name . "TaylorRussell")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shinywidgets r-shiny r-mvtnorm))
+    (home-page "https://cran.r-project.org/package=TaylorRussell")
+    (synopsis "Taylor-Russell Function for Multiple Predictors")
+    (description
+     "The Taylor Russell model is a widely used method for assessing test validity in
+personnel selections tasks.  The three functions in this package extend this
+model in a number of notable ways.  TR() estimates test validity for a single
+selection test via the original Taylor Russell model.  It extends this model by
+allowing users greater flexibility in argument choice.  For example, users can
+specify any three of the four parameters (base rate, selection ratio, criterion
+validity, and positive predictive value) of the Taylor Russell model and
+estimate the remaining parameter (see the help file for examples).  The
+@code{TaylorRussell}() function generalizes the original Taylor Russell model to
+allow for multiple selection tests (predictors).  To our knowledge, this is the
+first generalization of the Taylor Russell model to allow for three or more
+selection tests (it is also the first to correctly handle models with two
+selection tests).  TRDemo() is a shiny program for illustrating the underlying
+logic of the Taylor Russell model.  Taylor, HC and Russell, JT (1939) \"The
+relationship of validity coefficients to the practical effectiveness of tests in
+selection: Discussion and tables\" <doi:10.1037/h0057079>.")
+    (license license:gpl2+)))
 
 (define-public r-taylor
   (package

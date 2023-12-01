@@ -14314,13 +14314,13 @@ and the Earth Observatory Natural Event Tracker (EONET) webservice.")
 (define-public r-naryn
   (package
     (name "r-naryn")
-    (version "2.6.23")
+    (version "2.6.25")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "naryn" version))
        (sha256
-        (base32 "0b0dgpamm86llk7vxazgzfdby2y7ks95msq3046b2kp524nihmqb"))))
+        (base32 "0ppjiill81j6x28f35apb6pgncfvjwnn4i183drcqqsjn4ys9ghr"))))
     (properties `((upstream-name . "naryn")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml

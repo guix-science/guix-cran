@@ -3486,13 +3486,13 @@ peaks and spectra using the ggplot2 package.")
 (define-public r-rtmpt
   (package
     (name "r-rtmpt")
-    (version "1.0-0")
+    (version "1.0-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtmpt" version))
        (sha256
-        (base32 "0a8q02vhjhm8l8y58kyyjadwm34ddlm5ayhgqmngkhl9f628s1gm"))))
+        (base32 "1nv6ps990rcrliacpalpr2ljwxzgrizvd0s7a0696c57hin3b6b4"))))
     (properties `((upstream-name . "rtmpt")))
     (build-system r-build-system)
     (inputs (list gsl))
@@ -5968,13 +5968,13 @@ by Socrata'.  Users can upload data to Socrata portals directly from R.")
 (define-public r-rsnns
   (package
     (name "r-rsnns")
-    (version "0.4-16")
+    (version "0.4-17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RSNNS" version))
        (sha256
-        (base32 "1n1jl99n59m5zg6qbd8c679qkw3nzxnyda917kmr97m30kdmy88s"))))
+        (base32 "1z2slc2gxr3w7m1ybyd69axx1gi4fadjlkg066gf12b86bbmfia2"))))
     (properties `((upstream-name . "RSNNS")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -7093,13 +7093,13 @@ for deployment.")
 (define-public r-rscelestial
   (package
     (name "r-rscelestial")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RScelestial" version))
        (sha256
-        (base32 "1bxp3xl90s9fblm6d2mmsnws4iv9f3kxj8cs55kmbakz5dq4nqxc"))))
+        (base32 "018bw7rn0p0rg4wjci7ab6pqdmd87b0yp1ixfrjirqb2xgj332ay"))))
     (properties `((upstream-name . "RScelestial")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -27390,13 +27390,13 @@ introduced in Vandekar, Tao, & Blume (2020) <doi:10.1007/s11336-020-09698-2>.")
 (define-public r-resevol
   (package
     (name "r-resevol")
-    (version "0.3.0.1")
+    (version "0.3.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "resevol" version))
        (sha256
-        (base32 "13whjldpidagyaqh2s7isvs8qms6zw82v067h4zyrzfzh6q3xsa8"))))
+        (base32 "0h716h7n11r95sv72j5rqn7x2bfnl7hi4nhhypy534i2cc8v4zr9"))))
     (properties `((upstream-name . "resevol")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -31648,13 +31648,13 @@ data mining approach for longitudinal and clustered data
 (define-public r-redux
   (package
     (name "r-redux")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "redux" version))
        (sha256
-        (base32 "1bbn2aznhfh78gbqq0g2n5lbg1q9aa7v8py3xv9gk97rg27jz49x"))))
+        (base32 "1cbgc39avvjx1lqfrrwyq6fjm751i10gxhsfx67njg8ghj4pq790"))))
     (properties `((upstream-name . "redux")))
     (build-system r-build-system)
     (inputs (list hiredis))
@@ -37325,13 +37325,13 @@ needed.")
 (define-public r-rcppcwb
   (package
     (name "r-rcppcwb")
-    (version "0.6.2")
+    (version "0.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppCWB" version))
        (sha256
-        (base32 "0038vpziiyydbymdi9krs49bwr7h574srdrvsbwvxr8cackzrmiv"))))
+        (base32 "04r66z6xy6m9rsf0vj3yy0aijrgkcnl2r8nznc5fqwvcnx0lgx46"))))
     (properties `((upstream-name . "RcppCWB")))
     (build-system r-build-system)
     (inputs (list pcre2 pcre2))
@@ -37426,17 +37426,17 @@ global environment, and summarize and/or plot the results in R.")
 (define-public r-rcppclassicexamples
   (package
     (name "r-rcppclassicexamples")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppClassicExamples" version))
        (sha256
-        (base32 "0dr2104miy7psr73nicfs84652ai0d5liw6wxcwyrx7fmys3p638"))))
+        (base32 "1pri4m8vs8d0k4d2dr8jqg599b43m6hx58aip7kdmhbsvh0ak9ip"))))
     (properties `((upstream-name . "RcppClassicExamples")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppclassic r-rcpp))
-    (home-page "http://dirk.eddelbuettel.com/code/rcpp.html")
+    (home-page "https://github.com/eddelbuettel/rcppclassicexamples")
     (synopsis "Examples using 'RcppClassic' to Interface R and C++")
     (description
      "The Rcpp package contains a C++ library that facilitates the integration of R
@@ -37708,13 +37708,13 @@ Political Analysis, 3rd Edition,\" Thousand Oaks, CA: Sage Publications.")
 (define-public r-rcpa
   (package
     (name "r-rcpa")
-    (version "0.1.2")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RCPA" version))
        (sha256
-        (base32 "17x4axwc7fib9f2gyvfmrdvrz1kqh2ic1f8aai5dlc8v93mda0dw"))))
+        (base32 "0lb0c4zdksyhx71xs9kzcsi9l69a4g1ig4cd8wyhln86pw0qpdxz"))))
     (properties `((upstream-name . "RCPA")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -46110,13 +46110,13 @@ getting data by deals, contacts, accounts, campaigns and messages.")
 (define-public r-racmacs
   (package
     (name "r-racmacs")
-    (version "1.2.8")
+    (version "1.2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Racmacs" version))
        (sha256
-        (base32 "0cp5kak6dy7zllmwz1fxn0cxgj0c7vnih06pav51jj68ywrjcjz4"))))
+        (base32 "0csrbmri44ykrrx25a21hnqca74w6hvsiza43k7jix26bchysynl"))))
     (properties `((upstream-name . "Racmacs")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs

@@ -4404,6 +4404,28 @@ chosen from a set of optional candidates by cross-validation or alternatively
 generated from the input data.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-iperform
+  (package
+    (name "r-iperform")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iperform" version))
+       (sha256
+        (base32 "12hwgk6nn2y0201ara9rcmln5bky81arphl6rfk3zzid9pqa9q1h"))))
+    (properties `((upstream-name . "iperform")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-matrixstats r-lubridate))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=iperform")
+    (synopsis "Time Series Performance")
+    (description
+     "This package provides a tool to calculate the performance of a time series in a
+specific date or period.  It is more intended for data analysis in the fields of
+finance, banking, telecommunications or operational marketing.")
+    (license license:gpl3)))
+
 (define-public r-ipedsuploadables
   (package
     (name "r-ipedsuploadables")
@@ -5810,31 +5832,42 @@ characteristics â A novel and practical method for estimating the
 (define-public r-intrinsicfrp
   (package
     (name "r-intrinsicfrp")
-    (version "1.0.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "intrinsicFRP" version))
        (sha256
-        (base32 "01hg53fb0xgkmgz3vnv6mf7cqwhlxw7w9pk2i92gsdij5x3cf4xx"))))
+        (base32 "0nr6b6jgh10znpy9d1gal5h20fmrdj5in1rycj3d4pynvb847whx"))))
     (properties `((upstream-name . "intrinsicFRP")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (home-page "https://github.com/a91quaini/intrinsicFRP")
-    (synopsis
-     "Oracle Estimation and Inference for Tradable Factor Risk Premia")
+    (synopsis "An R Package for Factor Model Asset Pricing")
     (description
-     "Tradable factor risk premia are given by the negative factor covariance with the
-Stochastic Discount Factor projection on returns.  This package provides
-efficient computation of tradable and Oracle tradable factor risk premia
-estimators and their standard errors; see A. Quaini, F. Trojani and M. Yuan
-(2023) <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4574683>.  Tradable
-factor risk premia are robust to misspecification or weak identification in
-asset pricing models, and they are zero for any factor weakly correlated with
-returns.  Their Oracle estimator performs as well as if the weak or useless
-factors were known in advance.  This means it not only consistently removes
-useless factors and factors weakly correlated with returns but also gives rise
-to reliable tests of asset pricing models.")
+     "This package provides functions for evaluating and testing asset pricing models,
+including estimation and testing of factor risk premia, selection of \"strong\"
+risk factors (factors having nonzero population correlation with test asset
+returns), heteroskedasticity and autocorrelation robust covariance matrix
+estimation and testing for model misspecification and identification.  The
+functions for estimating and testing factor risk premia implement the
+Fama-@code{MachBeth} (1973) <doi:10.1086/260061> two-pass approach, the
+misspecification-robust approaches of Kan-Robotti-Shanken (2013)
+<doi:10.1111/jofi.12035>, and the approaches based on tradable factor risk
+premia of Quaini-Trojani-Yuan (2023) <doi:10.2139/ssrn.4574683>.  The functions
+for selecting the \"strong\" risk factors are based on the Oracle estimator of
+Quaini-Trojani-Yuan (2023) <doi:10.2139/ssrn.4574683> and the factor screening
+procedure of Gospodinov-Kan-Robotti (2014) <doi:10.2139/ssrn.2579821>.  The
+functions for evaluating model misspecification implement the HJ model
+misspecification distance of Kan-Robotti (2008)
+<doi:10.1016/j.jempfin.2008.03.003>, which is a modification of the prominent
+Hansen-Jagannathan (1997) <doi:10.1111/j.1540-6261.1997.tb04813.x> distance.
+The functions for testing model identification specialize the Kleibergen-Paap
+(2006) <doi:10.1016/j.jeconom.2005.02.011> and the Chen-Fang (2019)
+<doi:10.1111/j.1540-6261.1997.tb04813.x> rank test to the regression coefficient
+matrix of test asset returns on risk factors.  Finally, the function for
+heteroskedasticity and autocorrelation robust covariance estimation implements
+the Newey-West (1994) <doi:10.2307/2297912> covariance estimator.")
     (license license:gpl3+)))
 
 (define-public r-intrinsicdimension

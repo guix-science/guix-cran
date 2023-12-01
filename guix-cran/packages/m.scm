@@ -22223,13 +22223,13 @@ groups and any allocation ratios by minimization algorithms.")
 (define-public r-minipch
   (package
     (name "r-minipch")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "miniPCH" version))
        (sha256
-        (base32 "1jyciw2nrqqcrvrdsn1626fl1q482rd48a9rn3lx4pyl52zg7b5i"))))
+        (base32 "12a3yabgac4xabq518djmlrhwlz440pdh05zabxwgms9xnias557"))))
     (properties `((upstream-name . "miniPCH")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-checkmate))
@@ -25285,6 +25285,48 @@ Multivariate Failure Time Data: A Marginal Modeling Approach\", Prentice, R.,
 Zhao, S. (2019, ISBN: 978-1-4822-5657-4), CRC Press.")
     (license license:gpl3)))
 
+(define-public r-mgwrsar
+  (package
+    (name "r-mgwrsar")
+    (version "1.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mgwrsar" version))
+       (sha256
+        (base32 "0xhxx1x625igm54n5wpl4aavcqg9dx9nmazr330538p334df3z8h"))))
+    (properties `((upstream-name . "mgwrsar")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-spgwr
+                             r-sp
+                             r-sf
+                             r-rlang
+                             r-rcppeigen
+                             r-rcpp
+                             r-nabor
+                             r-microbenchmark
+                             r-mgcv
+                             r-mboost
+                             r-matrix
+                             r-mapview
+                             r-leaflet
+                             r-knitr
+                             r-htmltools
+                             r-gridextra
+                             r-ggplot2
+                             r-foreach
+                             r-dplyr
+                             r-doparallel
+                             r-caret))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=mgwrsar")
+    (synopsis "GWR and MGWR with Spatial Autocorrelation")
+    (description
+     "This package provides functions for computing (Mixed) Geographically Weighted
+Regression with spatial autocorrelation, Geniaux and Martinetti (2017)
+<doi:10.1016/j.regsciurbeco.2017.04.001>.")
+    (license license:gpl2+)))
+
 (define-public r-mgss
   (package
     (name "r-mgss")
@@ -26448,13 +26490,13 @@ using a fixed amount of memory.")
 (define-public r-mev
   (package
     (name "r-mev")
-    (version "1.15")
+    (version "1.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mev" version))
        (sha256
-        (base32 "0ipb61gqwivcqzqsv2p3i96bhwv7wadh50rb8cd1j0pqb5q3s76k"))))
+        (base32 "0kavj6mzzsjxkac2q0fxyhnzwy51pwld4r77fg024ggliiswjmms"))))
     (properties `((upstream-name . "mev")))
     (build-system r-build-system)
     (propagated-inputs (list r-rsolnp r-rcpparmadillo r-rcpp r-nleqslv
@@ -31435,13 +31477,13 @@ Smet, Buysse, Steen and Vansteelandt (2013) <DOI:10.1080/00273171.2013.832132>."
 (define-public r-medfate
   (package
     (name "r-medfate")
-    (version "3.1.4")
+    (version "3.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "medfate" version))
        (sha256
-        (base32 "1j37b0yyr6710ib6xk1i3mvn3alwwf2959ppbqbak1njzza2fvn9"))))
+        (base32 "1g8911izvcicfc7jyrz5n77ra8zsmf6qj4811v3xc0pjck71a0yq"))))
     (properties `((upstream-name . "medfate")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-rcpp r-meteoland r-ggplot2))

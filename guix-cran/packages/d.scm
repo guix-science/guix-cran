@@ -5630,13 +5630,13 @@ manipulation.")
 (define-public r-dplr
   (package
     (name "r-dplr")
-    (version "1.7.5")
+    (version "1.7.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dplR" version))
        (sha256
-        (base32 "0w0ljanw4ayzmm1whga6p50iikyg7ijc02j70m9s7263vybj1n2r"))))
+        (base32 "0p2mld1hymxn7gij4hx62r03kchvnyfcc27ckgdgznznihbf185z"))))
     (properties `((upstream-name . "dplR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml

@@ -5480,6 +5480,51 @@ population, institutional, religious, military, and prosopographical data
 suitable for mapping, quantitative analysis, and network analysis.")
     (license license:expat)))
 
+(define-public r-historicalborrowlong
+  (package
+    (name "r-historicalborrowlong")
+    (version "0.0.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "historicalborrowlong" version))
+       (sha256
+        (base32 "05kk4m80xvmlra9dlkcq2ww5llyg9r8bqhh8p7i8kzma6c31w4qa"))))
+    (properties `((upstream-name . "historicalborrowlong")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-withr
+                             r-trialr
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stanheaders
+                             r-rstantools
+                             r-rstan
+                             r-rlang
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-posterior
+                             r-matrix
+                             r-mass
+                             r-ggplot2
+                             r-dplyr
+                             r-clustermq
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://wlandau.github.io/historicalborrowlong/")
+    (synopsis "Longitudinal Bayesian Historical Borrowing Models")
+    (description
+     "Historical borrowing in clinical trials can improve precision and operating
+characteristics.  This package supports a longitudinal hierarchical model to
+borrow historical control data from other studies to better characterize the
+control response of the current study.  It also quantifies the amount of
+borrowing through longitudinal benchmark models (independent and pooled).  The
+hierarchical model approach to historical borrowing is discussed by Viele et al.
+(2013) <doi:10.1002/pst.1589>.")
+    (license license:expat)))
+
 (define-public r-historicalborrow
   (package
     (name "r-historicalborrow")
@@ -5751,13 +5796,13 @@ described in Hoffmann et al. (2018) <doi:10.1021/acs.analchem.8b00356>.")
 (define-public r-hipread
   (package
     (name "r-hipread")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hipread" version))
        (sha256
-        (base32 "02zqzy7nv5il1da9h2kf9c87yzbnww0kmywbjsbhfp4zp98xki84"))))
+        (base32 "06z20kxswamhs8abjk6ff7xqhisaixw9ygz1831n38nl489vjpip"))))
     (properties `((upstream-name . "hipread")))
     (build-system r-build-system)
     (inputs (list zlib))

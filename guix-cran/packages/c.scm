@@ -15,8 +15,8 @@
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages maths)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
@@ -4475,13 +4475,13 @@ team members, managers, and clients who prefer a point-and-click interface.")
 (define-public r-crtspat
   (package
     (name "r-crtspat")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CRTspat" version))
        (sha256
-        (base32 "02am3jr538dbgky00d2sli7w4yl8ij59ijcs0akb9gqn0nffq251"))))
+        (base32 "0a2pwnfja66gvb10mb84z69xxwcpsm6i0yghs3gn6biywwp4jg5n"))))
     (properties `((upstream-name . "CRTspat")))
     (build-system r-build-system)
     (propagated-inputs (list r-tsp
@@ -4504,7 +4504,7 @@ team members, managers, and clients who prefer a point-and-click interface.")
     (description
      "Design, workflow and statistical analysis of Cluster Randomised Trials of
 (health) interventions where there may be geographical contamination between the
-arms (see <https://thomasasmith.github.io/articles/CRTspat.html>).")
+arms (see <https://thomasasmith.github.io/index.html>).")
     (license license:expat)))
 
 (define-public r-crtsize
@@ -12219,13 +12219,13 @@ and Remillard (2023) <@code{arXiv:2301.13408>}.")
 (define-public r-copulagamm
   (package
     (name "r-copulagamm")
-    (version "0.3.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CopulaGAMM" version))
        (sha256
-        (base32 "02bimr8j8zmpdllr5w7p40cy0y3bxfnr24ns5sg8074jw08dfbrh"))))
+        (base32 "1n5nbmmqz3jynqpv53kwha5s7h9h3br7y7b6798mskadvqc2x90k"))))
     (properties `((upstream-name . "CopulaGAMM")))
     (build-system r-build-system)
     (propagated-inputs (list r-statmod r-matrixstats))
@@ -13156,13 +13156,13 @@ apps, in part by wrapping the js-cookie @code{JavaScript} library
 (define-public r-cookiemonster
   (package
     (name "r-cookiemonster")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cookiemonster" version))
        (sha256
-        (base32 "1440f757hg6sgzp33pgs9hn752fnvndjhkqcdszik52vj3nhb10z"))))
+        (base32 "1fs8a7i2h1v4xvcjnccnvxapiprffyz49pgrdjp67k14r6nk2fha"))))
     (properties `((upstream-name . "cookiemonster")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -19216,19 +19216,18 @@ gradient-matching, generalized profiling and forwards prediction error methods."
 (define-public r-collinear
   (package
     (name "r-collinear")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "collinear" version))
        (sha256
-        (base32 "0v3n59v2p9lfph21f18wdnrs2w1i1d3f8sqbxvfvifcmp0gkfk43"))))
+        (base32 "0nifj3w7s5cq9xpynglfjcpxld2dd4ym1wx6ylxydj1xfm9v5md4"))))
     (properties `((upstream-name . "collinear")))
     (build-system r-build-system)
     (propagated-inputs (list r-dplyr))
     (home-page "https://blasbenito.github.io/collinear/")
-    (synopsis
-     "Seamless Multicollinearity Management for Categorical and Numeric Variables")
+    (synopsis "Seamless Multicollinearity Management")
     (description
      "System for seamless management of multicollinearity in data frames with numeric
 and/or categorical variables for statistical analysis and machine learning
@@ -19238,7 +19237,7 @@ transform categorical variables into numeric (Micci-Barreca, D. 2001
 <DOI:10.1145/507533.507538>), and a flexible feature prioritization method, to
 deliver a comprehensive multicollinearity management tool covering a wide range
 of use cases.")
-    (license license:gpl3+)))
+    (license license:expat)))
 
 (define-public r-collin
   (package
@@ -35213,13 +35212,13 @@ plot format.")
 (define-public r-causalot
   (package
     (name "r-causalot")
-    (version "1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "causalOT" version))
        (sha256
-        (base32 "00p77kcykr224jzcvjadmrnyf48id6ixz568blw84pbgai5ywajc"))))
+        (base32 "0mj3sisj4b2r7dlz7ckl4q91fzyd6qh75ijlavwb56hw8c09k8w0"))))
     (properties `((upstream-name . "causalOT")))
     (build-system r-build-system)
     (propagated-inputs (list r-torch
@@ -37847,13 +37846,13 @@ parameter vectors archiving management by epsilon-dominance (Reed and Devireddy
 (define-public r-caracas
   (package
     (name "r-caracas")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "caracas" version))
        (sha256
-        (base32 "07dka3j34k0sdvfnga0vv2cb1qvrp5j6d48ngy6cdbnxlmh34k48"))))
+        (base32 "0q967hv6hr62sqhqk8vk313g16hg75igwb7idmd8w0zsqaqvac9v"))))
     (properties `((upstream-name . "caracas")))
     (build-system r-build-system)
     (inputs (list python))
@@ -39258,6 +39257,54 @@ implements maximum likelihood estimation methods and automated construction of
 the objective function from simulated model outputs.  See
 <http://roliveros-ramos.github.io/calibrar> for more details.")
     (license license:gpl2)))
+
+(define-public r-calibmsm
+  (package
+    (name "r-calibmsm")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "calibmsm" version))
+       (sha256
+        (base32 "1ys222zm5p1spnmv43af5bqhv9nxvslzzih99n1w936nwl1gvh2i"))))
+    (properties `((upstream-name . "calibmsm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vgam
+                             r-tidyr
+                             r-survival
+                             r-rms
+                             r-mstate
+                             r-magrittr
+                             r-hmisc
+                             r-ggpubr
+                             r-ggplot2
+                             r-dplyr
+                             r-boot))
+    (native-inputs (list r-knitr))
+    (home-page "https://alexpate30.github.io/calibmsm/")
+    (synopsis
+     "Calibration Plots for the Transition Probabilities from Multistate Models")
+    (description
+     "Assess the calibration of an existing (i.e.  previously developed) multistate
+model through calibration plots.  Calibration is assessed using one of three
+methods.  1) Calibration methods for binary logistic regression models applied
+at a fixed time point in conjunction with inverse probability of censoring
+weights.  2) Calibration methods for multinomial logistic regression models
+applied at a fixed time point in conjunction with inverse probability of
+censoring weights.  3) Pseudo-values estimated using the Aalen-Johansen
+estimator of observed risk.  All methods are applied in conjunction with
+landmarking when required.  These calibration plots evaluate the calibration (in
+a validation cohort of interest) of the transition probabilities estimated from
+an existing multistate model.  While package development has focused on
+multistate models, calibration plots can be produced for any model which
+utilises information post baseline to update predictions (e.g. dynamic models);
+competing risks models; or standard single outcome survival models, where
+predictions can be made at any landmark time.  The underpinning methodology is
+currently undergoing peer review; see Pate et al. (2023)
+<@code{arXiv:2308.13394>} and Pate et al. (2023)
+<https://alexpate30.github.io/calibmsm/articles/Overview.html>.")
+    (license license:expat)))
 
 (define-public r-caliberrfimpute
   (package

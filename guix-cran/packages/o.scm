@@ -6104,13 +6104,13 @@ camera device.")
 (define-public r-opencl
   (package
     (name "r-opencl")
-    (version "0.2-2")
+    (version "0.2-9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OpenCL" version))
        (sha256
-        (base32 "0gxzda615f67nbljancb8kixzdzkjsy8i0345mlnmlr8kqv4qyhw"))))
+        (base32 "1sqzkbk4dm27kl47hws3rx6rdgsjjbdd9s596spyqzbwlajhrgyi"))))
     (properties `((upstream-name . "OpenCL")))
     (build-system r-build-system)
     (home-page "http://www.rforge.net/OpenCL/")

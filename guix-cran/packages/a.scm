@@ -6641,13 +6641,13 @@ and Tzeremes (2022) <doi:10.1002/jae.2919>.")
 (define-public r-ardeco
   (package
     (name "r-ardeco")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ARDECO" version))
        (sha256
-        (base32 "1csjr6z5frka6qrhkbsysz6xxl8n9895ivp9awjwpk72ydcvh1kq"))))
+        (base32 "0dw3806ps7yxf193mpvps47s1q9789z3z072ds2ahblnnaci2n74"))))
     (properties `((upstream-name . "ARDECO")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjstat r-jsonlite r-httr r-ghql r-dplyr))
@@ -8357,13 +8357,13 @@ exposure/outcome, or both.  See <https://cran.r-project.org/package=episensr>.")
 (define-public r-apis
   (package
     (name "r-apis")
-    (version "2.0.3")
+    (version "2.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "APIS" version))
        (sha256
-        (base32 "1bn4d99id4q4kzf7bs4i75w5advyij0hsf996fqsm9fn40hlqiv3"))))
+        (base32 "02s7cpzsp53wk3k4cm6l3hpkc3f191zhg22vwbf8va7dni3d24rq"))))
     (properties `((upstream-name . "APIS")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinythemes
@@ -16869,6 +16869,30 @@ the teams, the statistics of the quintets and the statistics of the plays.  For
 more details of the calculations included in the package can be found in the
 book Basketball on Paper written by Dean Oliver.")
     (license license:gpl2+)))
+
+(define-public r-adtsa
+  (package
+    (name "r-adtsa")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ADTSA" version))
+       (sha256
+        (base32 "0298rsjp8ppi5cxavh3f6d689k2zl2grlhz9a1fnkqvw27qnwivi"))))
+    (properties `((upstream-name . "ADTSA")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=ADTSA")
+    (synopsis "Time Series Analysis")
+    (description
+     "Analyzes autocorrelation and partial autocorrelation using surrogate methods and
+bootstrapping, and computes the acceleration constants for the vectorized moving
+block bootstrap provided by this package.  It generates percentile,
+bias-corrected, and accelerated intervals and estimates partial autocorrelations
+using Durbin-Levinson.  This package calculates the autocorrelation power
+spectrum, computes cross-correlations between two time series, computes
+bandwidth for any time series, and performs autocorrelation frequency analysis.")
+    (license license:gpl3)))
 
 (define-public r-adsdatahubr
   (package

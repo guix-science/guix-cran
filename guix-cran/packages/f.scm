@@ -5345,13 +5345,13 @@ The underlying mathematical structure is the Free Abelian group, hence the name.
 (define-public r-fr
   (package
     (name "r-fr")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fr" version))
        (sha256
-        (base32 "12p4xpdy2gfjp8ammzznfcnaqriw1brby84a7jjlaknl6r68chwh"))))
+        (base32 "0kj7qjv6jdrp8wm7ynpi4mjm4sx9b2aqnhqb0pn1xnpbsj9x7557"))))
     (properties `((upstream-name . "fr")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -10234,6 +10234,40 @@ mixtures of regression models with random covariates.  Methods are described in
 Angelo Mazza, Antonio Punzo, Salvatore Ingrassia (2018)
 <doi:10.18637/jss.v086.i02>.")
     (license license:gpl2)))
+
+(define-public r-flevr
+  (package
+    (name "r-flevr")
+    (version "0.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "flevr" version))
+       (sha256
+        (base32 "1h1wnqd1fv6z4mfrchm5rv9x9s48vp67csf3a8gyj7gm3lppgnfm"))))
+    (properties `((upstream-name . "flevr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-superlearner
+                             r-rlang
+                             r-ranger
+                             r-mvtnorm
+                             r-magrittr
+                             r-kernlab
+                             r-dplyr
+                             r-caret))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/bdwilliamson/flevr")
+    (synopsis
+     "Flexible, Ensemble-Based Variable Selection with Potentially Missing Data")
+    (description
+     "Perform variable selection in settings with possibly missing data based on
+extrinsic (algorithm-specific) and intrinsic (population-level) variable
+importance.  Uses a Super Learner ensemble to estimate the underlying prediction
+functions that give rise to estimates of variable importance.  For more
+information about the methods, please see Williamson and Huang (2023+)
+<@code{arXiv:2202.12989>}.")
+    (license license:expat)))
 
 (define-public r-fledge
   (package
@@ -16738,19 +16772,21 @@ p-values.")
 (define-public r-fcar
   (package
     (name "r-fcar")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fcaR" version))
        (sha256
-        (base32 "07p6jvciawx0n11q6vqibqvwp8y1336wvpbw0imisw2ksw6vhdwa"))))
+        (base32 "1vrysvdjqs62hx14kq31jmi2r093k5pcjjbrzvvpdmnllcv1s673"))))
     (properties `((upstream-name . "fcaR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tikzdevice
+                             r-tidyr
                              r-tibble
                              r-stringr
                              r-settings
+                             r-rlang
                              r-registry
                              r-rcpp
                              r-r6
@@ -16759,8 +16795,10 @@ p-values.")
                              r-matrix
                              r-magrittr
                              r-glue
+                             r-ggplot2
                              r-fractional
-                             r-forcats))
+                             r-forcats
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Malaga-FCA-group/fcaR")
     (synopsis "Formal Concept Analysis")

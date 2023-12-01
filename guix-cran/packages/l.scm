@@ -768,13 +768,13 @@ covariates.")
 (define-public r-ltrcforests
   (package
     (name "r-ltrcforests")
-    (version "0.6.5")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LTRCforests" version))
        (sha256
-        (base32 "0mrl70pgkihxa62g5fldszy6hwqc4vkg3mwxqhh4cin9h0930zxd"))))
+        (base32 "13ypp0fyca536bs8mlg1a3f4zp03788vg7g3yyh1xy2r0q66xb4g"))))
     (properties `((upstream-name . "LTRCforests")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-prodlim r-partykit r-ipred))
@@ -11237,13 +11237,13 @@ ETS and simulation function for VES.")
 (define-public r-lefko3
   (package
     (name "r-lefko3")
-    (version "6.1.1")
+    (version "6.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lefko3" version))
        (sha256
-        (base32 "1mjrhs1nr6r7ribnzlpw4klk4zvx7x4dml07mkndw4vs9ybx5jn1"))))
+        (base32 "0mpzwn7sadfa8vscmmf34jagqnldhmhyl0mbhsri0zj4g5mjzflf"))))
     (properties `((upstream-name . "lefko3")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam

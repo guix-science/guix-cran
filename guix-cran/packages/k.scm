@@ -4593,6 +4593,32 @@ populations with arbitrary sizes.  See Yves I. Ngounou Bakam and Denys Pommeret
 (2022) <@code{arXiv:2211.06338>}.")
     (license license:gpl3+)))
 
+(define-public r-kcmeans
+  (package
+    (name "r-kcmeans")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "kcmeans" version))
+       (sha256
+        (base32 "0aqh0g9sa9jigwy6yl0ianlnky6sjs7v65wv77xb0zdifsyyq6bh"))))
+    (properties `((upstream-name . "kcmeans")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-matrix r-mass r-ckmeans-1d-dp))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/thomaswiemann/kcmeans")
+    (synopsis
+     "Conditional Expectation Function Estimation with K-Conditional-Means")
+    (description
+     "Implementation of the KCMeans regression estimator studied by Wiemann (2023)
+<@code{arXiv:2311.17021>} for expectation function estimation conditional on
+categorical variables.  Computation leverages the unconditional KMeans
+implementation in one dimension using dynamic programming algorithm of Wang and
+Song (2011) <doi:10.32614/RJ-2011-015>, allowing for global solutions in time
+polynomial in the number of observed categories.")
+    (license license:gpl3+)))
+
 (define-public r-kbmvtskew
   (package
     (name "r-kbmvtskew")

@@ -2058,25 +2058,25 @@ based in Russia.")
 (define-public r-vizdraws
   (package
     (name "r-vizdraws")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vizdraws" version))
        (sha256
-        (base32 "1r4kn8ki4ymqg87j223fs6fs9vyscc5bsfbnc4v9gvjy96jjxy3h"))))
+        (base32 "015m72s1c086my35lcbxjddagy3qy5dxh1jcsh7vfrjvsyprf5km"))))
     (properties `((upstream-name . "vizdraws")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-magrittr r-htmlwidgets r-dplyr))
     (native-inputs (list r-knitr esbuild))
-    (home-page "https://github.com/ignacio82/vizdraws/")
+    (home-page "https://github.com/ignacio82/vizdraws")
     (synopsis "Visualize Draws from the Prior and Posterior Distributions")
     (description
-     "Interactive visualization for Bayesian prior and posterior distributions.  When
-both distributions are provided the animation shows a transition from prior to
-posterior.  Finally, the animation splits the distribution using the provided
-breaks into bars that show the probability for each region.  If no breaks are
-providers it will use zero by default.")
+     "Interactive visualization for Bayesian prior and posterior distributions.  This
+package facilitates an animated transition between prior and posterior
+distributions.  Additionally, it splits the distribution into bars based on the
+provided breaks, displaying the probability for each region.  If no breaks are
+provided, it defaults to zero.")
     (license license:gpl3)))
 
 (define-public r-vivo

@@ -29775,13 +29775,13 @@ with R. It includes functions to search for, acquire, and extract SMAP data.")
 (define-public r-smam
   (package
     (name "r-smam")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smam" version))
        (sha256
-        (base32 "0xl38rncsfl0rsb560pvvshya22qc9rgpd2r9z86yzwa8mvfgqpx"))))
+        (base32 "1p7rqrbqdqgar5ryij0mx5vxd0ls7rdfc6k73nbxqz8hlx95p0xa"))))
     (properties `((upstream-name . "smam")))
     (build-system r-build-system)
     (inputs (list gsl))
@@ -52254,6 +52254,43 @@ between colour spaces.")
 Tsutsumida, Yoshida, Nakaya, and Lu (2019) <@code{arXiv:1905.00266>}.")
     (license license:gpl2+)))
 
+(define-public r-scgoclust
+  (package
+    (name "r-scgoclust")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "scGOclust" version))
+       (sha256
+        (base32 "1flidrc83bpkpwbj8nck0kdv09nn9j9hl3lxyd0xwwipqkx00n1h"))))
+    (properties `((upstream-name . "scGOclust")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-slanter
+                             r-seurat
+                             r-networkd3
+                             r-matrix
+                             r-magrittr
+                             r-limma
+                             r-dplyr
+                             r-biomart))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Papatheodorou-Group/scGOclust")
+    (synopsis
+     "Measuring Cell Type Similarity with Gene Ontology in Single-Cell RNA-Seq")
+    (description
+     "Traditional methods for analyzing single cell RNA-seq datasets focus solely on
+gene expression, but this package introduces a novel approach that goes beyond
+this limitation.  Using Gene Ontology terms as features, the package allows for
+the functional profile of cell populations, and comparison within and between
+datasets from the same or different species.  Our approach enables the discovery
+of previously unrecognized functional similarities and differences between cell
+types and has demonstrated success in identifying cell types functional
+correspondence even between evolutionarily distant species.")
+    (license license:gpl3+)))
+
 (define-public r-scglr
   (package
     (name "r-scglr")
@@ -52700,13 +52737,13 @@ scdensity() help for for full citations.")
 (define-public r-scdb
   (package
     (name "r-scdb")
-    (version "0.2")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SCDB" version))
        (sha256
-        (base32 "0c9pfs08np4igwl0p8z8v6m0yibvylj7mrzpgp34iaibfd5lqgnr"))))
+        (base32 "00fa3j22xr6c7jyrrb6g0yh1szkcxqpsk4wsk4s77h8vky52xr6f"))))
     (properties `((upstream-name . "SCDB")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyverse

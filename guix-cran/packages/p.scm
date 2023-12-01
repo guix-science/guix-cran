@@ -15395,13 +15395,13 @@ more.")
 (define-public r-poistweedie
   (package
     (name "r-poistweedie")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "poistweedie" version))
        (sha256
-        (base32 "0236cz8fn3la7df8mk1la8hmr0zzjc1majnq8p0c8grma833j6kp"))))
+        (base32 "0afr2rzn1bdbfk2ayzrxp62zwghlpml4lvhv7kixkk8a4raxv4h3"))))
     (properties `((upstream-name . "poistweedie")))
     (build-system r-build-system)
     (home-page "https://CRAN.R-project.org/package=poistweedie")
@@ -17194,13 +17194,13 @@ specialized needs.  Core functionality is based on a @code{JavaScript} library,
 (define-public r-plume
   (package
     (name "r-plume")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plume" version))
        (sha256
-        (base32 "02fqwjppjah0pqfvgv02kmsbf2lcwwxp9k9v74l28nybnx9pmmwp"))))
+        (base32 "1dfpr24wz7ppag38qs3mv16ij8xhfscp18lv9wzj852qizk6c34b"))))
     (properties `((upstream-name . "plume")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -17213,6 +17213,7 @@ specialized needs.  Core functionality is based on a @code{JavaScript} library,
                              r-readr
                              r-r6
                              r-purrr
+                             r-lifecycle
                              r-knitr
                              r-jsonlite
                              r-glue
@@ -30328,13 +30329,13 @@ Principal Component Analysis.  Implements the method described in (Luu, 2016)
 (define-public r-pbv
   (package
     (name "r-pbv")
-    (version "0.4-22")
+    (version "0.5-47")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pbv" version))
        (sha256
-        (base32 "0658k8ql78y756l15wx0i6gpicgkbczwc6g7dg15i81xy1hg49qb"))))
+        (base32 "14n7szbhasw0qly3cbzh4jw8plinbxarzdbj46vilq3am7ph8yp1"))))
     (properties `((upstream-name . "pbv")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))

@@ -6045,21 +6045,23 @@ modelling and multivariate normal distribution.")
 (define-public r-bootct
   (package
     (name "r-bootct")
-    (version "1.1.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bootCT" version))
        (sha256
-        (base32 "172a4a2plvhwqvippwbrshbn2n237qnadl4pwx7f5bfs25ichqn0"))))
+        (base32 "0dpr5l7hpdm06qh02wjlffc2js0k7pk9bkypml0zac8wxxc2c6g6"))))
     (properties `((upstream-name . "bootCT")))
     (build-system r-build-system)
     (propagated-inputs (list r-vars
                              r-usethis
+                             r-urca
                              r-stringr
                              r-rcpparmadillo
                              r-rcpp
                              r-pracma
+                             r-magrittr
                              r-gtools
                              r-dynamac
                              r-dplyr
@@ -10372,13 +10374,13 @@ from examples at <https://bl.ocks.org/N@code{PashaP>} (released under GPL-3).")
 (define-public r-bipartite
   (package
     (name "r-bipartite")
-    (version "2.18")
+    (version "2.19")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bipartite" version))
        (sha256
-        (base32 "1n15vs9zpq1arays1xjicfbam0k7v71afcq64skjnh9qmycyzh4v"))))
+        (base32 "0a4z5hdsr0j38bzgm7wggn4a8m2zf4fp2f82m20wckx55nvjj64z"))))
     (properties `((upstream-name . "bipartite")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -17074,13 +17076,13 @@ financial support.")
 (define-public r-beebdc
   (package
     (name "r-beebdc")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BeeBDC" version))
        (sha256
-        (base32 "1zkf53smlqd1rzf9l7ibf45yws6n379bv3kqs6f2szai3npip5bw"))))
+        (base32 "1x96w5jm8a85pa27nip01rwcrlcw2skv8f66r7bqnd2bnddhrxhq"))))
     (properties `((upstream-name . "BeeBDC")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -19857,13 +19859,13 @@ uncertainty quantification.")
 (define-public r-bayessur
   (package
     (name "r-bayessur")
-    (version "2.1-4")
+    (version "2.1-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesSUR" version))
        (sha256
-        (base32 "193dgx3ih81sg2m8qfpxvx0d2q2bjvf6x2yvf5k8psb04s374g33"))))
+        (base32 "05md6y25jsl4g2l5z4pq5cbrs7m91qcfz9i9ds6i2zrvwxcb7v0j"))))
     (properties `((upstream-name . "BayesSUR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -19880,7 +19882,7 @@ uncertainty quantification.")
 dense/sparse covariance matrix.  The sparse seemingly unrelated regression is
 described in Bottolo et al. (2021) <doi:10.1111/rssc.12490>, the software paper
 is in Zhao et al. (2021) <doi:10.18637/jss.v100.i11>, and the model with random
-effects is described in Zhao et al. (2021) <@code{arXiv:2101.05899>}.")
+effects is described in Zhao et al. (2023) <doi:10.1093/jrsssc/qlad102>.")
     (license license:expat)))
 
 (define-public r-bayesspec

@@ -15815,13 +15815,13 @@ cutting algorithm to a path.")
 (define-public r-ggpmx
   (package
     (name "r-ggpmx")
-    (version "1.2.10")
+    (version "1.2.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggPMX" version))
        (sha256
-        (base32 "1wlix6dr1d631qdckalzk8h6m6c8rbji0dvvr7aghq814mahw1p2"))))
+        (base32 "04381iaa52ljpkbi4sy5xgyiv0vznd2k7vnwvsdyk4qkggxxyqw9"))))
     (properties `((upstream-name . "ggPMX")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -20449,13 +20449,13 @@ Kurnia, A. (2018)<doi:10.21082/jpptp.v2n2.2018.p101-110>.")
 (define-public r-geos
   (package
     (name "r-geos")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geos" version))
        (sha256
-        (base32 "1c4g3gxri1ql3ycfvk70v7zp0hzv9yrd5qdwzb3v0vsc4hcxppq1"))))
+        (base32 "03cxm9rby7qmk9apqk3sh373rnzqcrj23cn6q153gq93lx372b8n"))))
     (properties `((upstream-name . "geos")))
     (build-system r-build-system)
     (propagated-inputs (list r-wk r-libgeos))
@@ -21412,6 +21412,37 @@ translations.")
      "Kriging based methods are used for predicting functional data (curves) with
 spatial dependence.")
     (license license:gpl2)))
+
+(define-public r-geofacet
+  (package
+    (name "r-geofacet")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geofacet" version))
+       (sha256
+        (base32 "1bj201afh7df3smgmllglmgs7bkkc1k1arvjr7kwn1cnn67b3mzj"))))
+    (properties `((upstream-name . "geofacet")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sp
+                             r-rnaturalearth
+                             r-rlang
+                             r-imgur
+                             r-gtable
+                             r-gridextra
+                             r-ggrepel
+                             r-ggplot2
+                             r-geogrid))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/hafen/geofacet")
+    (synopsis "'ggplot2' Faceting Utilities for Geographical Data")
+    (description
+     "This package provides geographical faceting functionality for ggplot2'.
+Geographical faceting arranges a sequence of plots of data for different
+geographical entities into a grid that preserves some of the geographical
+orientation.")
+    (license license:expat)))
 
 (define-public r-geoelectrics
   (package
@@ -26438,6 +26469,38 @@ R6 object and can be easily updated with new data.  There are options to run in
 parallel, and Rcpp has been used to speed up calculations.  For more info about
 Gaussian process software, see Erickson et al. (2018)
 <doi:10.1016/j.ejor.2017.10.002>.")
+    (license license:gpl3)))
+
+(define-public r-gators
+  (package
+    (name "r-gators")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gatoRs" version))
+       (sha256
+        (base32 "0m3hhykyn0yhnhqsyjdvmfk04zjj7g5hp925clfda145rp6khch1"))))
+    (properties `((upstream-name . "gatoRs")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra
+                             r-stringr
+                             r-spthin
+                             r-spatstat-geom
+                             r-ridigbio
+                             r-rgbif
+                             r-parsedate
+                             r-magrittr
+                             r-leaflet
+                             r-dplyr
+                             r-coordinatecleaner))
+    (native-inputs (list r-knitr))
+    (home-page "https://nataliepatten.github.io/gatoRs/")
+    (synopsis "Geographic and Taxonomic Occurrence R-Based Scrubbing")
+    (description
+     "Streamlines downloading and cleaning biodiversity data from Integrated Digitized
+Biocollections (@code{iDigBio}) and the Global Biodiversity Information Facility
+(GBIF).")
     (license license:gpl3)))
 
 (define-public r-gater
