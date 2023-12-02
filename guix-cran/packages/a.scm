@@ -12391,13 +12391,13 @@ symmetric stable and mixture of Cauchy distributions.")
 (define-public r-alphasimr
   (package
     (name "r-alphasimr")
-    (version "1.5.2")
+    (version "1.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AlphaSimR" version))
        (sha256
-        (base32 "0ky1kclyppsiqnxdl28np050mdi6d7x48ijs7d7fkrjza5rwdkdb"))))
+        (base32 "1qv3bfn4xnpkiblzdig1zn3cli5g1h2binnsi4znxzd6z1406sq9"))))
     (properties `((upstream-name . "AlphaSimR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-rcpparmadillo r-rcpp r-r6 r-bh))
@@ -19661,6 +19661,32 @@ by other users.")
      "This package provides a tool for generating acronyms and initialisms from
 arbitrary text input.")
     (license license:gpl3)))
+
+(define-public r-acro
+  (package
+    (name "r-acro")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "acro" version))
+       (sha256
+        (base32 "1jfrv7v7mh0laiiffgcnk0sm3kkan4ycfhnb0r43dc5mrckvk7ml"))))
+    (properties `((upstream-name . "acro")))
+    (build-system r-build-system)
+    (inputs (list python))
+    (propagated-inputs (list r-reticulate r-png r-admiraldev))
+    (home-page "https://cran.r-project.org/package=acro")
+    (synopsis
+     "Tool for Automating the Statistical Disclosure Control of Research Outputs")
+    (description
+     "Assists researchers and output checkers by distinguishing between research
+output that is safe to publish, output that requires further analysis, and
+output that cannot be published because of substantial disclosure risk.  A paper
+about the tool was presented at The United Nations Economic Commission for
+Europe Expert Meeting on Statistical Data Confidentiality
+<https://unece.org/statistics/events/SDC2023><https://uwe-repository.worktribe.com/output/11060964>.")
+    (license license:expat)))
 
 (define-public r-acne
   (package

@@ -5167,13 +5167,13 @@ asked to correct it.")
 (define-public r-etwfe
   (package
     (name "r-etwfe")
-    (version "0.3.4")
+    (version "0.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "etwfe" version))
        (sha256
-        (base32 "0a3q4q27k1rlfbcinxv9kgprxndvrb6sxfz6fc44gm983v926ych"))))
+        (base32 "16zd86b50fv42jxq4dd4ah08avyp62h585852qrkqcjnb82dk761"))))
     (properties `((upstream-name . "etwfe")))
     (build-system r-build-system)
     (propagated-inputs (list r-marginaleffects r-formula r-fixest r-data-table))
@@ -11011,6 +11011,42 @@ splines, and random forests.  To enhance interoperability with other modeling
 packages, no new classes are created.  The package works with PROJ6 geodetic
 objects and coordinate reference systems.")
     (license license:expat)))
+
+(define-public r-enmpa
+  (package
+    (name "r-enmpa")
+    (version "0.1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "enmpa" version))
+       (sha256
+        (base32 "0r7zr3xgx1w9570965bm13rw24647y47kab313lqb01nwd9vn2vn"))))
+    (properties `((upstream-name . "enmpa")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vegan
+                             r-terra
+                             r-snow
+                             r-rcpp
+                             r-mgcv
+                             r-foreach
+                             r-ellipse
+                             r-dosnow))
+    (home-page "https://github.com/Luisagi/enmpa")
+    (synopsis "Ecological Niche Modeling using Presence-Absence Data")
+    (description
+     "This package provides a set of tools to perform Ecological Niche Modeling with
+presence-absence data.  It includes algorithms for data partitioning, model
+fitting, calibration, evaluation, selection, and prediction.  Other functions
+help to explore signals of ecological niche using univariate and multivariate
+analyses, and model features such as variable response curves and variable
+importance.  Unique characteristics of this package are the ability to exclude
+models with concave quadratic responses, and the option to clamp model
+predictions to specific variables.  These tools are implemented following
+principles proposed in Cobos et al., (2022) <doi:10.17161/bi.v17i.15985>, Cobos
+et al., (2019) <doi:10.7717/peerj.6281>, and Peterson et al., (2008)
+<doi:10.1016/j.ecolmodel.2007.11.008>.")
+    (license license:gpl3+)))
 
 (define-public r-enmeval
   (package

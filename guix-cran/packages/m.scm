@@ -32066,13 +32066,13 @@ provided in the package function as well as at
 (define-public r-mdsopt
   (package
     (name "r-mdsopt")
-    (version "0.7-1")
+    (version "0.7-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mdsOpt" version))
        (sha256
-        (base32 "1vsi3whh898djaa0an6r37va1nbdmjsmhnm17m28sgfld9s5nbzk"))))
+        (base32 "1przk2ganrvs2g15rzby4npy58iwlxv1lsqrzan6z65filncqifq"))))
     (properties `((upstream-name . "mdsOpt")))
     (build-system r-build-system)
     (propagated-inputs (list r-symbolicda
@@ -32082,7 +32082,7 @@ provided in the package function as well as at
                              r-clustersim
                              r-animation))
     (native-inputs (list r-r-rsp))
-    (home-page "http://keii.ue.wroc.pl/mdsOpt/")
+    (home-page "https://cran.r-project.org/package=mdsOpt")
     (synopsis
      "Searching for Optimal MDS Procedure for Metric and Interval-Valued Data")
     (description
@@ -32879,6 +32879,33 @@ They do not check other properties of successful samplers such as whether the
 chain can reach all points, i.e.  whether is recurrent.  The tests require the
 ability to sample from the prior and to run steps of the MCMC chain.  The
 methodology is described in Gandy and Scott (2020) <@code{arXiv:2001.06465>}.")
+    (license license:gpl3)))
+
+(define-public r-mctrend
+  (package
+    (name "r-mctrend")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MCTrend" version))
+       (sha256
+        (base32 "0nfiwpd7pynl7a3cy1c8g3iwdc6bfay0726c3skz4ifmjlgp0kg2"))))
+    (properties `((upstream-name . "MCTrend")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-trend
+                             r-reshape2
+                             r-magrittr
+                             r-lmomco
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=MCTrend")
+    (synopsis "Monte Carlo Trend Analysis")
+    (description
+     "Application of a test to rule out that trends detected in hydrological time
+series are explained exclusively by the randomness of the climate.  Based on:
+Ricchetti, (2018) <https://repositorio.uchile.cl/handle/2250/168487>.")
     (license license:gpl3)))
 
 (define-public r-mctq
@@ -36062,13 +36089,13 @@ data frame and expand a data frame of matrices into a tidy data frame.")
 (define-public r-matsbyname
   (package
     (name "r-matsbyname")
-    (version "0.6.6")
+    (version "0.6.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "matsbyname" version))
        (sha256
-        (base32 "1vz5i82mif1b1640l86ly4k91k756dj30bkhxlgxvycapl9b0lg9"))))
+        (base32 "05w1k9yxbgnscsi17gcwiah1fbgl8jqz373pxgwfdwrhsncj3gc5"))))
     (properties `((upstream-name . "matsbyname")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble

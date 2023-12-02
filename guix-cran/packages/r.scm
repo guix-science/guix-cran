@@ -3521,13 +3521,13 @@ also the possibility to suppress single process completion times.")
 (define-public r-rtmb
   (package
     (name "r-rtmb")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RTMB" version))
        (sha256
-        (base32 "0w1pxqzp7793xm1qd1wg3q56sg13qq17njyy9lc4xcz4grm0cba4"))))
+        (base32 "0lbnwjh1bd9ryadsmax2gjbzh4fjjr4mm76g1xydq27b0y0411iz"))))
     (properties `((upstream-name . "RTMB")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb r-rcppeigen r-rcpp r-matrix r-mass))
@@ -9767,13 +9767,13 @@ See Goyal, Handcock, Jackson, Rendall and Yeung (2022)
 (define-public r-rplum
   (package
     (name "r-rplum")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rplum" version))
        (sha256
-        (base32 "1rqyv367hy8b66dnqk0v9hd1bib0mbf1wvw7fskccs5l7ldbkyki"))))
+        (base32 "0fwzfbbg5dv0rg0w8xijn9zjrp5gclzrf8m2m8nla61dzbpn2jsx"))))
     (properties `((upstream-name . "rplum")))
     (build-system r-build-system)
     (propagated-inputs (list r-rintcal r-rbacon))
@@ -17945,6 +17945,29 @@ Keelin (2016) <doi:10.1287/deca.2016.0338>.  This package provides functions to
 build these distributions from raw data.  Resulting metalog objects are then
 useful for exploratory and probabilistic analysis.")
     (license license:expat)))
+
+(define-public r-rmerec
+  (package
+    (name "r-rmerec")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rmerec" version))
+       (sha256
+        (base32 "0kwxddr4ca5i2kvrrnxk41gnjl8qac20afhgagyfv2yrcs08mma4"))))
+    (properties `((upstream-name . "rmerec")))
+    (build-system r-build-system)
+    (home-page "https://github.com/lucassp/rmerec")
+    (synopsis "MEREC - Method Based on the Removal Effects of Criteria")
+    (description
+     "Implementation of the MEthod based on the Removal Effects of Criteria - MEREC- a
+new objective weighting method for determining criteria weights for Multiple
+Criteria Decision Making problems, created by Mehdi Keshavarz-Ghorabaee (2021)
+<doi:10.3390/sym13040525>.  Given a decision matrix, the function return the
+@code{MerecÂ´s} weight vector and all intermediate matrix/vectors used to
+calculate it.")
+    (license license:gpl3+)))
 
 (define-public r-rmediation
   (package
@@ -26386,13 +26409,13 @@ follow Crawford and Pendakur (2012) <doi:10.1111/j.1468-0297.2012.02545.x>.")
 (define-public r-revdbayes
   (package
     (name "r-revdbayes")
-    (version "1.5.2")
+    (version "1.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "revdbayes" version))
        (sha256
-        (base32 "15h1p7q4l0zfa8vpyypkn32b716hwdp5agf7scf91jkhs3bflsbg"))))
+        (base32 "1pcz09zbgpivzykag087b0f2fz82m48idasddn85yh8wpv6ijsah"))))
     (properties `((upstream-name . "revdbayes")))
     (build-system r-build-system)
     (propagated-inputs (list r-rust r-rcpparmadillo r-rcpp r-exdex r-bayesplot))
@@ -39203,13 +39226,13 @@ Clickhouse databases via DBI methods and using dplyr'/'dbplyr idioms.")
 (define-public r-rclabels
   (package
     (name "r-rclabels")
-    (version "0.1.4")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RCLabels" version))
        (sha256
-        (base32 "13d2mr5zflcdlp7h1g05smg5aglk7kj8yr8a5gywp16zwq14i39h"))))
+        (base32 "1xiwawgi8xrchqppisfhssa7fx96zqslgbm6hcksfwm7nrpfnqv7"))))
     (properties `((upstream-name . "RCLabels")))
     (build-system r-build-system)
     (propagated-inputs (list r-purrr r-magrittr r-hmisc r-assertthat))
@@ -41001,13 +41024,13 @@ and Qunhua Li (2016).  Robust bent line regression, submitted.\"")
 (define-public r-rbedrock
   (package
     (name "r-rbedrock")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rbedrock" version))
        (sha256
-        (base32 "019w0rkq0ys7r1dqx9v6izypqrxk5mymfjpz6hny7bp653c3nhwx"))))
+        (base32 "0jyc7cikr86927ax3qhniv8injqwndzhr4bhd4yphh2sliv6ci8c"))))
     (properties `((upstream-name . "rbedrock")))
     (build-system r-build-system)
     (inputs (list zlib zlib cmake))

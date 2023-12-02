@@ -12,22 +12,22 @@
   #:use-module (gnu packages web)
   #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages curl)
+  #:use-module (gnu packages pkg-config)
+  #:use-module (gnu packages ssh)
+  #:use-module (gnu packages tls)
+  #:use-module (gnu packages geo)
+  #:use-module (gnu packages compression)
   #:use-module (gnu packages graphviz)
   #:use-module (gnu packages python)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages version-control)
-  #:use-module (gnu packages geo)
   #:use-module (gnu packages gettext)
   #:use-module (gnu packages sqlite)
-  #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
-  #:use-module (gnu packages pkg-config)
-  #:use-module (gnu packages tls)
   #:use-module (gnu packages code)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages pdf)
   #:use-module (gnu packages java)
-  #:use-module (gnu packages ssh)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -6128,21 +6128,26 @@ translated from MATLAB ('SOM Toolbox 2.0) to R.")
 (define-public r-proj
   (package
     (name "r-proj")
-    (version "0.4.0")
+    (version "0.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PROJ" version))
        (sha256
-        (base32 "1rqw28qqcyzla3ssif9jghvv0nyms9riabj2lxhlx1l3rbz0rsfx"))))
+        (base32 "0iq33v6z0plz1q9vgsaa3lryfdc7xawny34r8bk65kx35a32zvxb"))))
     (properties `((upstream-name . "PROJ")))
     (build-system r-build-system)
-    (native-inputs (list r-knitr))
+    (inputs (list zlib proj openssl openssh curl))
+    (native-inputs (list r-knitr pkg-config))
     (home-page "https://github.com/hypertidy/PROJ")
     (synopsis "Generic Coordinate System Transformations Using 'PROJ'")
     (description
-     "Currently non-operational, a harmless wrapper to allow package reproj to install
-and function while relying on the proj4 package.")
+     "This package provides a wrapper around the generic coordinate transformation
+software PROJ that transforms coordinates from one coordinate reference system
+('CRS') to another.  This includes cartographic projections as well as geodetic
+transformations.  The intention is for this package to be used by user-packages
+such as reproj', and that the older PROJ.4 and version 5 pathways be provided by
+the proj4 package.")
     (license license:gpl3)))
 
 (define-public r-progenyclust
@@ -10364,19 +10369,26 @@ attained.")
 (define-public r-practicalsigni
   (package
     (name "r-practicalsigni")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "practicalSigni" version))
        (sha256
-        (base32 "0hqr0b7yn7l0isr7nmx65fq46pzzix0zfwcap9w4bar9984k7f4b"))))
+        (base32 "1ymq5mkp0y0zjgjvfdq3wx5qig9fiibnff4irgwkrckvp58xc9fn"))))
     (properties `((upstream-name . "practicalSigni")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xtable r-randomforest r-np r-nns r-generalcorr))
+    (propagated-inputs (list r-xtable
+                             r-shapleyvalue
+                             r-randomforest
+                             r-np
+                             r-nns
+                             r-hypergeo
+                             r-generalcorr))
     (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=practicalSigni")
-    (synopsis "Practical Significance Ranking of Regressors")
+    (synopsis
+     "Practical Significance Ranking of Regressors and Exact t Density")
     (description
      "Consider a possibly nonlinear nonparametric regression with p regressors.  We
 provide evaluations by 13 methods to rank regressors by their practical
@@ -10388,7 +10400,8 @@ of psychologists effect size incorporating nonlinearity and many variables.  m8=
 local linear partial (dy/dxi) using the np package for kernel regressions.  m9=
 partial (dy/dxi) using the NNS package.  m10= importance measure using the NNS
 boost function.  m11= Shapley Value measure of importance (cooperative game
-theory).  m12 and m13= two versions of the random forest algorithm.")
+theory).  m12 and m13= two versions of the random forest algorithm.  Taraldsen's
+exact density for sampling distribution of correlations added.")
     (license license:gpl2+)))
 
 (define-public r-practicalequidesign
@@ -16730,13 +16743,13 @@ supported by this package.")
 (define-public r-pmparser
   (package
     (name "r-pmparser")
-    (version "1.0.17")
+    (version "1.0.18")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pmparser" version))
        (sha256
-        (base32 "0yilwy72c4qfk0xs9wjmpggmsm5ng551sdw4531ycw5qb226z7mg"))))
+        (base32 "0ym0810n98hy10agz1qrngz2zxsww9cs2cmmjr29d92ah3mmx8m1"))))
     (properties `((upstream-name . "pmparser")))
     (build-system r-build-system)
     (inputs (list unzip sqlite))
@@ -24239,13 +24252,13 @@ used to interface Python from R.")
 (define-public r-pharmaversesdtm
   (package
     (name "r-pharmaversesdtm")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pharmaversesdtm" version))
        (sha256
-        (base32 "1gbf6b29nls47i0kw4b5xhd4bgqhyza18k93k58rwn7xjy6rfhcy"))))
+        (base32 "1xbpvf3xf4n94q52makvrmfjgsqg8syx0rza0g93srqnsmrka7i1"))))
     (properties `((upstream-name . "pharmaversesdtm")))
     (build-system r-build-system)
     (home-page "https://pharmaverse.github.io/pharmaversesdtm/main/")

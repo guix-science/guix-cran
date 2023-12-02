@@ -11689,13 +11689,13 @@ DLTs, and apply isotonic regression to devise estimates of DLT probability.")
 (define-public r-titegboin
   (package
     (name "r-titegboin")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TITEgBOIN" version))
        (sha256
-        (base32 "0n47lfpnbqirny0lbs3hl3sgd2l6i4wn2xfx1r8nlbnv6s140fzv"))))
+        (base32 "088gc9i5zv6bysbrsmw7y6if6kgj0gz70dmsn2zj1053mq14pnkj"))))
     (properties `((upstream-name . "TITEgBOIN")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=TITEgBOIN")
@@ -14589,13 +14589,13 @@ approach, but an uninformative prior is also available.")
 (define-public r-tidylda
   (package
     (name "r-tidylda")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidylda" version))
        (sha256
-        (base32 "1wf5z6rqffah4m6f6wrb2grr8y0wjvfncy6a2i51bk22ja9hknhc"))))
+        (base32 "0hc2la5fsl0z1svxzkn4ipr1ylabmhmhgdc0jgzafkwrz07dpkn2"))))
     (properties `((upstream-name . "tidylda")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidytext

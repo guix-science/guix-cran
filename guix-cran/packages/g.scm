@@ -5603,13 +5603,13 @@ without access to Hugin to use code written to use RHugin'.")
 (define-public r-grattaninflators
   (package
     (name "r-grattaninflators")
-    (version "0.4.2")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grattanInflators" version))
        (sha256
-        (base32 "0r3c81ld08l9fz2331jhqwrivsm78n97if76grhwn1ic2himvlh5"))))
+        (base32 "0lp000wgl1jkfhbb69kpxlpnarwwybzys6waxppacd5xlimynl12"))))
     (properties `((upstream-name . "grattanInflators")))
     (build-system r-build-system)
     (propagated-inputs (list r-hutils r-fy r-data-table))
@@ -7030,13 +7030,13 @@ either \"G-side\" or \"R-side\" effects.")
 (define-public r-gpumatrix
   (package
     (name "r-gpumatrix")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GPUmatrix" version))
        (sha256
-        (base32 "1wd6lbsgkb950kn60crp6qknxbxvrq96qqgi3ji1j0jjp2nix6ya"))))
+        (base32 "1clcyni54cdfhrnqqjyllc34ilf43yh1yrx2jb4x8m4zk7j42hm8"))))
     (properties `((upstream-name . "GPUmatrix")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -11424,13 +11424,13 @@ written in C++ and highly optimized.")
 (define-public r-glmsimulator
   (package
     (name "r-glmsimulator")
-    (version "0.2.5")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GlmSimulatoR" version))
        (sha256
-        (base32 "114mhhpv7phvrzvzar4s1a9032iyhcvixjx4h7b5vd1p23m9sayz"))))
+        (base32 "1xfbmxsdlgpwlss5bfb4arlnblj4s6pzyn9npy04v5aara1m04na"))))
     (properties `((upstream-name . "GlmSimulatoR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tweedie
@@ -24710,13 +24710,13 @@ and Gotway (2004, <ISBN:9781584883227>) and Waller and Gotway (2004,
 (define-public r-ge
   (package
     (name "r-ge")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GE" version))
        (sha256
-        (base32 "0ggpbkcgikk15mjn8x4hs4kkw7pr1d854xxziry8v4lbcj2xs9cy"))))
+        (base32 "1jwi3zb33f7f8i8rvy3gr7j5cix76h97mkcgsr5fmblzvwrwwhg5"))))
     (properties `((upstream-name . "GE")))
     (build-system r-build-system)
     (propagated-inputs (list r-diagrammer r-data-tree r-cge))

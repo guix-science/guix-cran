@@ -2935,13 +2935,13 @@ the existence of change point, for the paper, \"Feipeng Zhang and Qunhua Li
 (define-public r-cthist
   (package
     (name "r-cthist")
-    (version "2.1.4")
+    (version "2.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cthist" version))
        (sha256
-        (base32 "0z37xf0fbdfm077d8i3r7sb4vp8vp34gp6nlab8512g7p42rang9"))))
+        (base32 "0dn1mghic22s04lg79v9kinxfpd40lsigkda9x6i2bv0wgvwsy06"))))
     (properties `((upstream-name . "cthist")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -2958,7 +2958,7 @@ the existence of change point, for the paper, \"Feipeng Zhang and Qunhua Li
     (description
      "Retrieves historical versions of clinical trial registry entries from
 <https://@code{ClinicalTrials.gov>}.  Package functionality and implementation
-is documented in Carlisle (2022) <DOI:10.1371/journal.pone.0270909>.")
+for v 1.0.0 is documented in Carlisle (2022) <DOI:10.1371/journal.pone.0270909>.")
     (license license:agpl3+)))
 
 (define-public r-ctgt

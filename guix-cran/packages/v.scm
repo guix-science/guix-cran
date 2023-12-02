@@ -6068,13 +6068,13 @@ Sensing, 51, 2632-2645, <DOI:10.1109/TGRS.2012.2216272>.")
 (define-public r-vars
   (package
     (name "r-vars")
-    (version "1.5-9")
+    (version "1.6-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vars" version))
        (sha256
-        (base32 "1b3w2vi0szpps7kzy30s1n8h2iaj4jxg82ym6zrza0z7msgmypi8"))))
+        (base32 "0bc2xh5nka18bvsy9pq3cd93447zsvdxvs1yi2vcpjw7szcywzzd"))))
     (properties `((upstream-name . "vars")))
     (build-system r-build-system)
     (propagated-inputs (list r-urca r-strucchange r-sandwich r-mass r-lmtest))

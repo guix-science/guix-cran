@@ -3177,6 +3177,28 @@ survival data.")
 results to an Excel sheet.")
     (license license:gpl3)))
 
+(define-public r-survobj
+  (package
+    (name "r-survobj")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "survobj" version))
+       (sha256
+        (base32 "191wbkfwdmjlihnyxz66fljzvqsnc2c8jlkhynjn0l9vb4g56z79"))))
+    (properties `((upstream-name . "survobj")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-survival r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://johnaponte.github.io/survobj/")
+    (synopsis "Objects to Simulate Survival Times")
+    (description
+     "Generate objects that simulate survival times.  Random values for the
+distributions are generated using the method described by Bender (2003)
+<https://epub.ub.uni-muenchen.de/id/eprint/1716>.")
+    (license license:gpl3+)))
+
 (define-public r-survml
   (package
     (name "r-survml")
@@ -39866,13 +39888,13 @@ models with a user friendly shiny interface.")
 (define-public r-shinyinvoice
   (package
     (name "r-shinyinvoice")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyInvoice" version))
        (sha256
-        (base32 "0zs9r0lif5cn154xxk76zzzakk2i8grxj6shcmn4a2q1igxj86ym"))))
+        (base32 "0sxk9s63s2himcipliwamk33ffdrr17a0jw6vpm515l46pafg3l6"))))
     (properties `((upstream-name . "shinyInvoice")))
     (build-system r-build-system)
     (inputs (list pandoc))

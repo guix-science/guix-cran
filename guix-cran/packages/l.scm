@@ -12473,13 +12473,13 @@ sample).")
 (define-public r-ldbounds
   (package
     (name "r-ldbounds")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ldbounds" version))
        (sha256
-        (base32 "07da04z2xsbx8m3j14n8vpfvxps7val8slx3z3m1izwyc5mda8qs"))))
+        (base32 "19xx8a4qn9lz8r9hf344xn2rhr177nzscivxgsai9n3gwjc893d9"))))
     (properties `((upstream-name . "ldbounds")))
     (build-system r-build-system)
     (native-inputs (list r-r-rsp))

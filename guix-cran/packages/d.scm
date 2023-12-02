@@ -5462,13 +5462,13 @@ the Rmpfr package and hence the underlying MPFR and GMP C libraries.")
 (define-public r-dpq
   (package
     (name "r-dpq")
-    (version "0.5-7")
+    (version "0.5-8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DPQ" version))
        (sha256
-        (base32 "1ziwika4vl534mkiw5smnvjlzl104lgfkybc9ns7z2hqm0f7drdg"))))
+        (base32 "0wdhx937dp2lmcqzf64jrbg7a20r6rjvdjrpyzn072r94zn2r4dz"))))
     (properties `((upstream-name . "DPQ")))
     (build-system r-build-system)
     (propagated-inputs (list r-sfsmisc))
@@ -14971,18 +14971,18 @@ are proposed by Petit et al, (2016) <doi:10.1177/0962280216671348>.")
 (define-public r-dformula
   (package
     (name "r-dformula")
-    (version "0.1")
+    (version "1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dformula" version))
        (sha256
-        (base32 "0028qm3wsfpjbkpza5nb87pcm8cg0075jclcy6s4wfflizgfs6n4"))))
+        (base32 "1vylfnivkp4gv7wv7pjby918x3v8pnh0qds1hwmw5980na283qif"))))
     (properties `((upstream-name . "dformula")))
     (build-system r-build-system)
     (propagated-inputs (list r-formula-tools))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/dataallaround/dformula")
+    (home-page "https://github.com/serafinialessio/dformula")
     (synopsis "Data Manipulation using Formula")
     (description
      "This package provides a tool for manipulating data using the generic formula.  A
@@ -21424,13 +21424,13 @@ gene networks.")
 (define-public r-dbx
   (package
     (name "r-dbx")
-    (version "0.2.8")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dbx" version))
        (sha256
-        (base32 "0pdf0l9h44666bmfsa43nrmi77ffzygb5mzjfrv7pk99qi7ryw46"))))
+        (base32 "0kkp1adhvnp5wafwzkxrn26wcggzzvgdfsd81wxz5j205q636xmi"))))
     (properties `((upstream-name . "dbx")))
     (build-system r-build-system)
     (propagated-inputs (list r-dbi))
@@ -22453,13 +22453,13 @@ seasonally adjust tabular data.")
 (define-public r-datetoiso
   (package
     (name "r-datetoiso")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datetoiso" version))
        (sha256
-        (base32 "1pxk229gfl2zj1arlgyyll6h4bq8d90d2a2a09r216f5vdxafj0j"))))
+        (base32 "1fg5r7ibdgbk1vbhbv6a2p4acd1mhsyyvrjr79cy37gmn1ka72i3"))))
     (properties `((upstream-name . "datetoiso")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-lubridate))
@@ -24488,13 +24488,13 @@ code by wrapping it into a set of convenient R functions.")
 (define-public r-dartrverse
   (package
     (name "r-dartrverse")
-    (version "0.49")
+    (version "0.51")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dartRverse" version))
        (sha256
-        (base32 "0s0apsz8zjrjz9lgb2xwn5zhh38iha6lif109hzwpmsddbckp3y0"))))
+        (base32 "1j5fgr5priyh9w4ysnx8104yvhq4kysp0i07phqjn2yyj0pk8a15"))))
     (properties `((upstream-name . "dartRverse")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-dartr-data r-dartr-base r-cli))

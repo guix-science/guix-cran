@@ -10537,13 +10537,13 @@ found here: <https://www.ncei.noaa.gov/products/world-ocean-atlas>.")
 (define-public r-oce
   (package
     (name "r-oce")
-    (version "1.8-1")
+    (version "1.8-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oce" version))
        (sha256
-        (base32 "0ryykzrlmqipqnjizxzyq084kibpfxid9m7k287ycfmli1d0m492"))))
+        (base32 "1a9zld3q009v9bvqpkn4fy0qfrsjmcz9j1f0jva75ygi8hdywpyg"))))
     (properties `((upstream-name . "oce")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-gsw))

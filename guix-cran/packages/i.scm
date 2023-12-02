@@ -1506,13 +1506,13 @@ adapted from Bowen et al. (2018, <doi:10.1007/s00442-018-4192-5>).")
 (define-public r-isotree
   (package
     (name "r-isotree")
-    (version "0.5.24-1")
+    (version "0.5.24-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "isotree" version))
        (sha256
-        (base32 "193h8mqcs5ybmf041mcbs23m539l8d9gnzfjmzikjhy9wfiqznnk"))))
+        (base32 "02cnk9y8kc5zc9jzzhhxhgqi2z19yj2glvylbmydiagwli1aqvfl"))))
     (properties `((upstream-name . "isotree")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -4822,13 +4822,13 @@ Sissades Tongsima (2020) <doi:10.1101/2020.03.21.001206>.")
 (define-public r-ipaddress
   (package
     (name "r-ipaddress")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ipaddress" version))
        (sha256
-        (base32 "1b3w2iq3zbfmnch9wi26l0jra4784ykazimxdd4gkkqf972yk4vf"))))
+        (base32 "0dqxyrc2bbqbsxbzdpn9xw76gnqzjqkrzlrc203v6kd4v81npk7w"))))
     (properties `((upstream-name . "ipaddress")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs r-rlang r-rcpp r-cli r-asioheaders))

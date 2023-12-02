@@ -12098,17 +12098,16 @@ EDGAR in an automated and scalable manner.  See
 (define-public r-finnts
   (package
     (name "r-finnts")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "finnts" version))
        (sha256
-        (base32 "01h027inzl56n8h6mqbmnkpy5hia70wdsh0agp7d1k0rkzwh3cia"))))
+        (base32 "1cx9kl6dzkmrxb4i7vlkligx5p1q2jxinybmi1367hlpgafhv6js"))))
     (properties `((upstream-name . "finnts")))
     (build-system r-build-system)
-    (propagated-inputs (list r-yardstick
-                             r-workflows
+    (propagated-inputs (list r-workflows
                              r-vroom
                              r-tune
                              r-timetk
@@ -12134,6 +12133,7 @@ EDGAR in an automated and scalable manner.  See
                              r-generics
                              r-fs
                              r-foreach
+                             r-feasts
                              r-earth
                              r-dplyr
                              r-doparallel
