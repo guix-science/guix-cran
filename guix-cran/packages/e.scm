@@ -2450,13 +2450,13 @@ al (2020) <doi:10.1214/21-AOAS1497>.")
 (define-public r-exdex
   (package
     (name "r-exdex")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "exdex" version))
        (sha256
-        (base32 "1b5w9r2nhvl0i6ja5psx64gj7495mnl1gh4z2dz6309xznlk69nn"))))
+        (base32 "1vmbk52gxay0604jqmiqgm5zffnx1x5f5x3k0dajyxn3qlvqqrp6"))))
     (properties `((upstream-name . "exdex")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpproll r-rcpparmadillo r-rcpp r-chandwich))
@@ -7362,23 +7362,26 @@ Castillo, J, Daoudi, J and Lockhart, R (2014) <doi:10.1111/sjos.12037>.")
 (define-public r-erah
   (package
     (name "r-erah")
-    (version "1.1.2")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "erah" version))
        (sha256
-        (base32 "0dyjb2ja5199z8is11in11a95l2dbhaa2qj42pikh0ydk47qhd6v"))))
+        (base32 "0n6444p3l0dsfpxy8w0xirqivssl3086h3z98lcmh3iq769z8lyw"))))
     (properties `((upstream-name . "erah")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xml
+    (propagated-inputs (list r-tibble
                              r-signal
-                             r-rcpp
                              r-quantreg
-                             r-nnls
-                             r-ncdf4
-                             r-igraph))
-    (home-page "https://scholar.google.es/citations?user=i-0XFxkAAAAJ&hl=en")
+                             r-progress
+                             r-osd
+                             r-igraph
+                             r-hiclimr
+                             r-future
+                             r-furrr))
+    (native-inputs (list r-knitr))
+    (home-page "http://metsyslab.com/")
     (synopsis
      "Automated Spectral Deconvolution, Alignment, and Metabolite Identification in GC/MS-Based Untargeted Metabolomics")
     (description

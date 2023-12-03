@@ -24629,13 +24629,13 @@ calculate the centroids of those areas.")
 (define-public r-bang
   (package
     (name "r-bang")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bang" version))
        (sha256
-        (base32 "1dyvv3hk6p9an2jpg76i2b7mxmdmf01mwdmkhhrk3m4yrp66dqph"))))
+        (base32 "1zgxgpiqszgnmbqb1dd1d3na11bam56fw9qlz1kfxkr0n8pxic0w"))))
     (properties `((upstream-name . "bang")))
     (build-system r-build-system)
     (propagated-inputs (list r-rust r-bayesplot))

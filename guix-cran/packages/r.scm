@@ -2031,13 +2031,13 @@ different formats a RUT can have.")
 (define-public r-rust
   (package
     (name "r-rust")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rust" version))
        (sha256
-        (base32 "022b9g095y9ghgr838vn25ajd8ya41kw0h7xxxq3lr970xlijvrp"))))
+        (base32 "1pp37h27pyjzcwabazyfmlgrma6x0k8hbq3ksfvlgphsk9hac93z"))))
     (properties `((upstream-name . "rust")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -2374,13 +2374,13 @@ any revisions, for all groups within the supplied data.")
 (define-public r-ruminate
   (package
     (name "r-ruminate")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ruminate" version))
        (sha256
-        (base32 "1prkbvbbrwr2hk94dzdkn9qhy0hsf0g0fyhv0ffjbrk51kl591xr"))))
+        (base32 "0r7x0x5s7ff7pn0b7rrhi9ydr3v7msim1h6ix95d8xzzr3mz3gzy"))))
     (properties `((upstream-name . "ruminate")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml

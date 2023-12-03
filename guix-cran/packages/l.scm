@@ -13805,13 +13805,13 @@ applying a function one row at a time.")
 (define-public r-lax
   (package
     (name "r-lax")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lax" version))
        (sha256
-        (base32 "1wlmxkgckc2sqcxxknsmpzb0d3fgc5zb97b2vksyjinz5y2vjc3a"))))
+        (base32 "0s5mzpf4g74mlpsbxrvfkqh1q6zc3ibya9lig4l2vkaar94rb8x5"))))
     (properties `((upstream-name . "lax")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich r-revdbayes r-numderiv r-exdex

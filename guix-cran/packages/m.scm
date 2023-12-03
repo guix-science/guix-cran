@@ -22503,13 +22503,13 @@ slow (or zero) Internet access.")
 (define-public r-minesweepr
   (package
     (name "r-minesweepr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mineSweepR" version))
        (sha256
-        (base32 "0cvq8cwmyszyyckf2p9p5balvkzqrmrl7br1xlf1jaa35icpchdj"))))
+        (base32 "0bnaa0652pspsd80v66b83np58429g8044941bsmr3apgf8660gj"))))
     (properties `((upstream-name . "mineSweepR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -33630,13 +33630,13 @@ plotting Monte Carlo estimates versus sample size.")
 (define-public r-mcmcsae
   (package
     (name "r-mcmcsae")
-    (version "0.7.5")
+    (version "0.7.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mcmcsae" version))
        (sha256
-        (base32 "0zivassh708hysq43dhj1v78hglvvz308hyg7r0rm1pydzb4f0zi"))))
+        (base32 "0zi99lv691f3d5n8qbpjbai3b0g40p3q566gxd5k4rd9wbnsb4i7"))))
     (properties `((upstream-name . "mcmcsae")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen
@@ -36060,13 +36060,13 @@ with a total of 196 variations.")
 (define-public r-matsindf
   (package
     (name "r-matsindf")
-    (version "0.4.4")
+    (version "0.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "matsindf" version))
        (sha256
-        (base32 "1rqhzk271y19i8mrcwcfb1ckdxx9adzs6in9xwlqic4n0yscmji9"))))
+        (base32 "07b4cg0yabfszyklyb48czb682jfdy3xfgdfqbq04kwzjgq84vr3"))))
     (properties `((upstream-name . "matsindf")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -37858,13 +37858,13 @@ Meira-Machado L (2021) <doi:10.1007/s00180-021-01139-7> and Titman AC, Putter H
 (define-public r-markovmix
   (package
     (name "r-markovmix")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "markovmix" version))
        (sha256
-        (base32 "1paqdghzpaxvqashr4lcrgnp7k1821cmwbwszyml8h78bf9ldj9z"))))
+        (base32 "07fzyg7szs4662jww6xpdlvki5wc60g2aw16884ghd8h9ch625yi"))))
     (properties `((upstream-name . "markovmix")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

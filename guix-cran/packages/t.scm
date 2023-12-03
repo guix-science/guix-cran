@@ -15303,13 +15303,13 @@ as HTML files or static images.")
 (define-public r-tidycpp
   (package
     (name "r-tidycpp")
-    (version "0.0.6")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyCpp" version))
        (sha256
-        (base32 "1w6fr4q137ar6557a8x1jpmfmlsga59621jwq0sf37bnn535i4gw"))))
+        (base32 "0h2h0r8v1fp3sl4caf3nkhf4f75zncadkz9axzwncig7a7qvb00z"))))
     (properties `((upstream-name . "tidyCpp")))
     (build-system r-build-system)
     (native-inputs (list r-simplermarkdown))
@@ -16122,13 +16122,13 @@ generation.  To learn more about Thrift go to <https://thrift.apache.org>.")
 (define-public r-threshr
   (package
     (name "r-threshr")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "threshr" version))
        (sha256
-        (base32 "10z0iv8rn78b9mk8sgsknnqp4g726bgw47f3cn7bgc2hg1g9f18a"))))
+        (base32 "0gr5vnb3bc6b2blpa63mvyhgyjkplq8x0p27h7czjnwinzwsrwrg"))))
     (properties `((upstream-name . "threshr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rust r-revdbayes))
@@ -16560,24 +16560,24 @@ University and Thomas Jefferson University Hospital, Philadelphia, PA.")
 (define-public r-this-path
   (package
     (name "r-this-path")
-    (version "2.2.0")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "this.path" version))
        (sha256
-        (base32 "1dmmnzpkip49zaiz0nnr4k0ssnx5ghc877i3m832900j0qfqhvhn"))))
+        (base32 "0labd3wwh2agqsgirab6zik76qlixvjpl18ncvmq3jwlj9jrjxw7"))))
     (properties `((upstream-name . "this.path")))
     (build-system r-build-system)
     (home-page "https://github.com/ArcadeAntics/this.path")
     (synopsis "Get Executing Script's Path")
     (description
      "Determine the path of the executing script.  Compatible with a few popular GUIs:
-Rgui', RStudio', VSCode', Jupyter', and Rscript (shell).  Compatible with
-several functions and packages: source()', sys.source()', @code{debugSource}()
-in RStudio', compiler::loadcmp()', box::use()', knitr::knit()',
-plumber::plumb()', shiny::@code{runApp}()', package:targets', and
-testthat::source_file()'.")
+Rgui', RStudio', VSCode', Jupyter', Emacs', and Rscript (shell).  Compatible
+with several functions and packages: source()', sys.source()',
+@code{debugSource}() in RStudio', compiler::loadcmp()', box::use()',
+knitr::knit()', plumber::plumb()', shiny::@code{runApp}()', package:targets',
+and testthat::source_file()'.")
     (license license:expat)))
 
 (define-public r-thinkr

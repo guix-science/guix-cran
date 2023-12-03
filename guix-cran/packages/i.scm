@@ -794,13 +794,13 @@ transformation.")
 (define-public r-itp
   (package
     (name "r-itp")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "itp" version))
        (sha256
-        (base32 "0vh5rpl88v5b6s2vfv42ahaphlspiapx82xa74ynic4rmc2ffjis"))))
+        (base32 "0nj497zmdgh6y5npf7727gqn9f9pm5rv9bm0xfn8419lb9n3ann3"))))
     (properties `((upstream-name . "itp")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -4489,13 +4489,13 @@ considering their options, and securing admission into their school of choice.")
 (define-public r-ipec
   (package
     (name "r-ipec")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IPEC" version))
        (sha256
-        (base32 "08sgsrljz77dh99nmp3962fnp73wgkymwngsw2fznf7zqkbxm1pa"))))
+        (base32 "0574ya6w2i1h4bqz6r699biayy6hf72l3b3grp2dh4bcv52qd61b"))))
     (properties `((upstream-name . "IPEC")))
     (build-system r-build-system)
     (propagated-inputs (list r-numderiv r-mass))

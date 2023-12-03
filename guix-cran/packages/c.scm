@@ -7782,13 +7782,13 @@ sites.")
 (define-public r-cpfa
   (package
     (name "r-cpfa")
-    (version "1.0-9")
+    (version "1.1-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cpfa" version))
        (sha256
-        (base32 "16yh2lba59ngh94n6yi9hnwnd36s1g66pzk713by7cczzivw3ylw"))))
+        (base32 "1pjycw5l05r8nw4yczm76i1i6dribi14gb3b7k3r5n740a38x387"))))
     (properties `((upstream-name . "cpfa")))
     (build-system r-build-system)
     (propagated-inputs (list r-rda

@@ -28077,13 +28077,13 @@ needed for the different platforms.")
 (define-public r-smovie
   (package
     (name "r-smovie")
-    (version "1.1.5")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smovie" version))
        (sha256
-        (base32 "1pr9aqnwn5f9akrpdf8xx2w502c3zqgjj1gzh7aavqb3irsph5ji"))))
+        (base32 "0a2npwp8bwkqqwpdb99mm993na282qaj63xhwf1s8bwvia4q4npp"))))
     (properties `((upstream-name . "smovie")))
     (build-system r-build-system)
     (propagated-inputs (list r-rpanel))
@@ -46598,13 +46598,13 @@ Allows a web browser to be automated from R'.")
 (define-public r-selenider
   (package
     (name "r-selenider")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "selenider" version))
        (sha256
-        (base32 "1h0w8y0sqx9q9df64qik04sklgrpc1a0kjkqjr8isdy4bf6zpcxg"))))
+        (base32 "1nq61p2vv6d57kqhq3dkl76j12xxbigbiqvxkpkrx0blz7f63ydr"))))
     (properties `((upstream-name . "selenider")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -46619,10 +46619,10 @@ Allows a web browser to be automated from R'.")
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ashbythorpe/selenider")
     (synopsis
-     "Concise, Lazy and Reliable Wrapper for 'chromote' and 'RSelenium'")
+     "Concise, Lazy and Reliable Wrapper for 'chromote' and 'selenium'")
     (description
      "This package provides a user-friendly wrapper for web automation, using either
-chromote or RSelenium'.  Provides a simple and consistent API to make web
+chromote or selenium'.  Provides a simple and consistent API to make web
 scraping and testing scripts easy to write and understand.  Elements are lazy,
 and automatically wait for the website to be valid, resulting in reliable and
 reproducible code, with no visible impact on the experience of the programmer.")
@@ -47173,13 +47173,13 @@ includes specialised pedigree visualisations.")
 (define-public r-segregation
   (package
     (name "r-segregation")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "segregation" version))
        (sha256
-        (base32 "170nikyari6kzzplkp8siv24278bjf4vv3w893yrlmqr0hfvw9gb"))))
+        (base32 "1l2dlqva58l9glpsn1bflbggk0645zhsr3a1n1ydikp7q54wf72m"))))
     (properties `((upstream-name . "segregation")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppprogress r-rcpp r-data-table r-checkmate))

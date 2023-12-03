@@ -14077,13 +14077,13 @@ the sf and sp packages and for types in the trip and silicate packages.")
 (define-public r-gibasa
   (package
     (name "r-gibasa")
-    (version "0.9.5")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gibasa" version))
        (sha256
-        (base32 "06vr2jb4z31shmz95pbjslbp600ib638s9llyz6mhc73lbiv7rdj"))))
+        (base32 "1jmyagh0hi0d0v691v1ycgqsiz4cnqdd0x286asjqc2mjsqlgabv"))))
     (properties `((upstream-name . "gibasa")))
     (build-system r-build-system)
     (inputs (list mecab))
@@ -16003,13 +16003,13 @@ reliably.")
 (define-public r-ggplate
   (package
     (name "r-ggplate")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggplate" version))
        (sha256
-        (base32 "0i9vdqsjrjxn6v3hda7w96mwb5did37ix0cahf81hb00lmxa22m1"))))
+        (base32 "1a6c0f671i5368hpc3ilmzpx2vkdmxrzzgbbxpbhkhpz8cl6z311"))))
     (properties `((upstream-name . "ggplate")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -21582,13 +21582,13 @@ matrices of pairwise distances, or vectors of sequential distances.")
 (define-public r-geodimension
   (package
     (name "r-geodimension")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geodimension" version))
        (sha256
-        (base32 "0gg6xwkbfmmlaqc08ismg9d0yhif9167x6y2zbhsim9pdp01b4q9"))))
+        (base32 "1sxmsn4l81qsgjxkrnp3g28aaq8pg608909xmss81dprpfy0dfgs"))))
     (properties `((upstream-name . "geodimension")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -22413,48 +22413,6 @@ glm() function.")
 ancestry along the genome change after admixture.  Full description can be found
 in Janzen (2021) <doi:10.1111/2041-210X.13612>.")
     (license license:gpl2+)))
-
-(define-public r-genomeadapt
-  (package
-    (name "r-genomeadapt")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GenomeAdapt" version))
-       (sha256
-        (base32 "0jsxqhx62vbsr0hcqk9wrfsg3l3wbnx64pzxx18ps366vg7fxmii"))))
-    (properties `((upstream-name . "GenomeAdapt")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-snprelate r-robust r-qvalue r-gdsfmt))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/xinghuq/GenomeAdapt")
-    (synopsis
-     "Detecting Signatures of Local Adaptation Based on Ancestry Trajectories")
-    (description
-     "Portable, scalable and highly computationally efficient tool for detecting
-signatures of local adaptation based on multidimensional ancestry map ( _n_ X
-_n_ ancestry genetic trajectories, _n_ is the number of individuals).  If n
-samples are included in the analysis, there will be n dimensional spaces that
-represent the common ancestry maps based on the identity-by-descent (IBD).  The
-package calculates the correlations of loci with the common ancestry genetic
-maps adopting the Genomic Data Structure (GDS, Zheng et al., 2012)
-<doi:10.1093/bioinformatics/bts606> and suitable for millions of SNP data.  Loci
-sharing a greater level of most recent common ancestor (MRCA) (large Z-scores)
-indicates a large number of individuals descend from recent common ancestors,
-which signals the rapid increase in frequency of a beneficial allele due to
-recent positive selection.  The rationale underlying this package is somewhat
-analogous to KLFDAPT (Qin, 2021) <doi:10.1101/2021.05.15.444294>
-(<https://xinghuq.github.io/KLFDAPC/articles/Genome_scan_KLFDAPC.html>).  It
-combines the concept of IBD-based genome scan (Albrechtsen et al., 2010)
-<doi:10.1534/genetics.110.113977>, @code{iHS} (Voight, 2006)
-<doi:10.1371/journal.pbio.0040072>, and eigenanalysis of SNP data with an
-identity by descent interpretation (Zheng & Weir, 2016) <doi:
-10.1016/j.tpb.2015.09.004>.  It can also be interpreted as spatial varying
-selection as ancestry genetic maps reflect geographic origins.  Besides the
-detection of local adaptation, this package also estimates the population
-admixtures and plots its geographic genetic structure.")
-    (license license:gpl3)))
 
 (define-public r-genogeographer
   (package
@@ -27174,13 +27132,13 @@ Weidong Tian and Hongbin Ji (2012) <doi:10.1038/cr.2011.149>.")
 (define-public r-gangenerativedata
   (package
     (name "r-gangenerativedata")
-    (version "1.5.1")
+    (version "1.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ganGenerativeData" version))
        (sha256
-        (base32 "07h3jyzg9009ylsfpf8a2rw51a7ivgna2aflfdh7lqnf7x9blh2v"))))
+        (base32 "0k748wj6q59vdi5iliqh6pqy85b7hm4rl01mamwpaivyrqf28kql"))))
     (properties `((upstream-name . "ganGenerativeData")))
     (build-system r-build-system)
     (inputs (list tensorflow))
@@ -27190,7 +27148,7 @@ Weidong Tian and Hongbin Ji (2012) <doi:10.1038/cr.2011.149>.")
     (description
      "Generative Adversarial Networks are applied to generate generative data for a
 data source.  A generative model consisting of a generator and a discriminator
-network is trained.  In iterative training steps the distribution of generated
+network is trained.  In iterated training steps the distribution of generated
 data is converging to that of the data source.  Direct applications of
 generative data are the created functions for data classifying and missing data
 completion.  Reference: Goodfellow et al. (2014) <@code{arXiv:1406.2661v1>}.")

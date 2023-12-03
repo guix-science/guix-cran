@@ -2974,13 +2974,13 @@ Davidian (2004) <DOI:10.1002/sim.1903>, Li and Greene (2013)
 (define-public r-pstrata
   (package
     (name "r-pstrata")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PStrata" version))
        (sha256
-        (base32 "06k50w07rin41p31ifn6dsap6z655g8bgg2s0qqiw6npqj2b83nk"))))
+        (base32 "1nzvspzihxwra0hzyc8cfnml19xz26dam23y2q09794dpg5a7pcf"))))
     (properties `((upstream-name . "PStrata")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -2990,6 +2990,7 @@ Davidian (2004) <DOI:10.1002/sim.1903>, Li and Greene (2013)
                              r-ggplot2
                              r-dplyr
                              r-abind))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=PStrata")
     (synopsis "Principal Stratification Analysis in R")
     (description
@@ -14133,13 +14134,13 @@ ISBN:3540262393).")
 (define-public r-pomp
   (package
     (name "r-pomp")
-    (version "5.4")
+    (version "5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pomp" version))
        (sha256
-        (base32 "1qk540101qs007klwjssddvfcpckbhd4ic2rpial9fb4r4v578z7"))))
+        (base32 "0l7q4xpccnfl2gnxbsnygwig31432y5lal54n8hsx69n1byv96r9"))))
     (properties `((upstream-name . "pomp")))
     (build-system r-build-system)
     (inputs (list))

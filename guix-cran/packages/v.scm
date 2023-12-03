@@ -5115,13 +5115,13 @@ Needham, R., Naemi, R., & Chockalingam, N. (2015)
 (define-public r-vecsets
   (package
     (name "r-vecsets")
-    (version "1.3.1")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vecsets" version))
        (sha256
-        (base32 "1wp5pbjgw6smivmf4rgy0y2gspgbcwb2js8y657jd1spzl5bbvfr"))))
+        (base32 "0v6l8kmshb6ipcvjx9i26mwrc810z7lv4ys8qqyzzpz0wwnlii7m"))))
     (properties `((upstream-name . "vecsets")))
     (build-system r-build-system)
     (propagated-inputs (list r-pracma))

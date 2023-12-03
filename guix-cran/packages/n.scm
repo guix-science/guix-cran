@@ -10278,13 +10278,13 @@ website (2017)
 (define-public r-netsimr
   (package
     (name "r-netsimr")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NetSimR" version))
        (sha256
-        (base32 "1w2mhmjpzlzy86250wlmwvcl7p3qasdfabhysfrcnkp0ndff966y"))))
+        (base32 "1ipxr7wqlxa6qk5hhhbkr274v7f0hb1zjndcjgsk4gmv7cl7w21j"))))
     (properties `((upstream-name . "NetSimR")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinywidgets
@@ -10298,6 +10298,7 @@ website (2017)
                              r-rmysql
                              r-rmarkdown
                              r-plotly
+                             r-pareto
                              r-mass
                              r-future-apply
                              r-future
@@ -12244,13 +12245,13 @@ uncertainty.")
 (define-public r-negligible
   (package
     (name "r-negligible")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "negligible" version))
        (sha256
-        (base32 "0jc08zivay8y6z3lqryjag8kaxni56x7mhwxcmgk1z00qfhv1z1x"))))
+        (base32 "0igx64jfxv2dracfg220dkhds6sanjxjsnn9nmax5kr00hzrgfwx"))))
     (properties `((upstream-name . "negligible")))
     (build-system r-build-system)
     (propagated-inputs (list r-wrs2

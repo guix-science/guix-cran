@@ -9226,32 +9226,35 @@ code interface is described in Huling and Chien (2022)
 (define-public r-oeli
   (package
     (name "r-oeli")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oeli" version))
        (sha256
-        (base32 "0famqarmlnz8bfpgywvz2jh4k1jav875vxbjx73lc48b69qyqhay"))))
+        (base32 "0chzg1dn8s8vvxb5wc9rv2q1cb4lvdg66hyk74w70bqwjmqg6dcp"))))
     (properties `((upstream-name . "oeli")))
     (build-system r-build-system)
     (propagated-inputs (list r-usethis
                              r-testthat
                              r-sysfonts
                              r-showtext
+                             r-rprojroot
                              r-rcpparmadillo
                              r-rcpp
+                             r-latex2exp
                              r-hexsticker
                              r-ggplot2
                              r-cli
                              r-checkmate))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/loelschlaeger/oeli")
-    (synopsis "Utilities for Developing Data Science Software")
+    (synopsis "My Utilities for Developing Data Science Software")
     (description
      "Some general utilities (helper functions) that I and maybe others find useful
 when developing data science software.  Functionality includes argument
-validation, density calculation and sampling, matrix printing and indexing, user
-interaction, and more.")
+validation, density calculation, sampling, matrix printing, user interaction,
+storage helpers and more.  The vignettes illustrate use cases.")
     (license license:gpl3+)))
 
 (define-public r-oefpil

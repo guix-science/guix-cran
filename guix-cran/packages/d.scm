@@ -25061,13 +25061,13 @@ methods described in Quartagno et al. (2019) <@code{arXiv:1905.00241>}.")
 (define-public r-dang
   (package
     (name "r-dang")
-    (version "0.0.15")
+    (version "0.0.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dang" version))
        (sha256
-        (base32 "0zy72rlviisjb3syvj2fq9zliwk02m33kjd7h9q7n3xq3876bi4w"))))
+        (base32 "1h0j2pxwp8dnaw2vrclj069xmd6adwah8ld4vmmh3zm7kwflvcx8"))))
     (properties `((upstream-name . "dang")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidycpp))
