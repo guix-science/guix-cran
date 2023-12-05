@@ -7787,13 +7787,13 @@ paper \"The Future of Data Analysis\", Tukey, John W. (1962)
 (define-public r-vaccine
   (package
     (name "r-vaccine")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vaccine" version))
        (sha256
-        (base32 "19mg2kiv8m3w8x2b2ran4x8bfq73bg9rijvqs66jqv2zhi6siwkl"))))
+        (base32 "17lr8hrxihrg6046zq8zzyp60w0i2kdajyp16y9vc8qkp0n3wp62"))))
     (properties `((upstream-name . "vaccine")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm
@@ -7817,8 +7817,11 @@ paper \"The Future of Data Analysis\", Tukey, John W. (1962)
     (description
      "Various semiparametric and nonparametric statistical tools for immune correlates
 analysis of vaccine clinical trial data.  This includes calculation of summary
-statistics and estimation of risk, vaccine efficacy, controlled risk, and
-controlled vaccine efficacy.  See Gilbert P, Fong Y, Kenny A, and Carone, M
-(2022) <doi:10.1093/biostatistics/kxac24>.")
+statistics and estimation of risk, vaccine efficacy, controlled effects
+(controlled risk and controlled vaccine efficacy), and mediation effects
+(natural direct effect, natural indirect effect, proportion mediated).  See
+Gilbert P, Fong Y, Kenny A, and Carone, M (2022)
+<doi:10.1093/biostatistics/kxac024> and Fay MP and Follmann DA (2023)
+<doi:10.48550/@code{arXiv.2208.06465>}.")
     (license license:gpl3+)))
 

@@ -12987,13 +12987,13 @@ to assess the validity of an externally developed model.")
 (define-public r-gittargets
   (package
     (name "r-gittargets")
-    (version "0.0.6")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gittargets" version))
        (sha256
-        (base32 "1fk32z83qglkmnsziqn9gzv20br0lyv4gll4y4rr4bwl66x81af5"))))
+        (base32 "0kgr3rcy261zlsc4a5sqvar6kwb23wcfdwv2rpjcfwdvghz3afzc"))))
     (properties `((upstream-name . "gittargets")))
     (build-system r-build-system)
     (inputs (list git))
@@ -25342,17 +25342,19 @@ data.  See methods at <https://mikeblazanin.github.io/gcplyr/>.")
 (define-public r-gcpbayes
   (package
     (name "r-gcpbayes")
-    (version "4.0.0")
+    (version "4.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GCPBayes" version))
        (sha256
-        (base32 "1ab0vp948dyj9b6yh5gixlqim2xklhy6gsbgi641knzc30paiwj4"))))
+        (base32 "04z1hip6rbvwdpy6afdz8fzfin8iff1wnja7rycsj7igc8vz3saz"))))
     (properties `((upstream-name . "GCPBayes")))
     (build-system r-build-system)
     (propagated-inputs (list r-wiqid
                              r-truncnorm
+                             r-rcpparmadillo
+                             r-rcpp
                              r-postpack
                              r-mvtnorm
                              r-mass

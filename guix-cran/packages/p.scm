@@ -6196,6 +6196,30 @@ hierarchical clustering, and two example datasets (test and cell) for testing.")
      "This package provides tools for examining Rprof profile output.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-profrep
+  (package
+    (name "r-profrep")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "profrep" version))
+       (sha256
+        (base32 "0p2sd95w8n4l2mxyzjxppynfdqbg6znd69360mgyci3r61za2z6z"))))
+    (properties `((upstream-name . "profrep")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://ubeattie.github.io/profrep/")
+    (synopsis "Profile Repeatability")
+    (description
+     "Calculates profile repeatability for replicate stress response curves, or
+similar time-series data.  Profile repeatability is an individual repeatability
+metric that uses the variances at each timepoint, the maximum variance, the
+number of crossings (lines that cross over each other), and the number of
+replicates to compute the repeatability score.  For more information see Reed et
+al. (2019) <doi:10.1016/j.ygcen.2018.09.015>.")
+    (license license:expat)))
+
 (define-public r-profr
   (package
     (name "r-profr")
@@ -12566,13 +12590,13 @@ in any submodels after performing arbitrary model selection.")
 (define-public r-posetr
   (package
     (name "r-posetr")
-    (version "1.1.1")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "POSetR" version))
        (sha256
-        (base32 "1p1j6zjgpl3018ym7h8k4ih5bffz2n809h5wm073l85bcm9isznr"))))
+        (base32 "00qz9z9mwbgvxh7775il2avrxdn116l8v31z3bksifvy81krw95a"))))
     (properties `((upstream-name . "POSetR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-rcpp r-igraph))
@@ -19201,13 +19225,13 @@ shape.")
 (define-public r-plasso
   (package
     (name "r-plasso")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plasso" version))
        (sha256
-        (base32 "0ilfgc8yd4rgbh4g3536c7pfy6yjf7hl894cnjddqp9g0xk0annn"))))
+        (base32 "09pc210wb98xnhm9wxsqvf217gysj9c2piwwhzxdp3lxb3my533x"))))
     (properties `((upstream-name . "plasso")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-iterators r-glmnet r-foreach
@@ -23164,13 +23188,13 @@ rankings.  For more information on phi delta diagrams, see also Giuliano Armano
 (define-public r-phia
   (package
     (name "r-phia")
-    (version "0.2-1")
+    (version "0.3-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phia" version))
        (sha256
-        (base32 "0rv2akl5a488vax4sd9wnx765mch4vvcmg3iyxyljzl5kpqh5r00"))))
+        (base32 "1dm9piyrnn2p775gyfdkyl3zqhw245j5ja5ggc20bwbh9x6q5z30"))))
     (properties `((upstream-name . "phia")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-car))
@@ -23912,6 +23936,31 @@ improve performance over individual learners.  The pre-processing, training,
 validation, and testing are performed end-to-end to minimize user input and
 simplify the process of classification.")
     (license license:gpl3+)))
+
+(define-public r-phdcocktail
+  (package
+    (name "r-phdcocktail")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "phdcocktail" version))
+       (sha256
+        (base32 "02gsyjqmafl5aw18lzd54ldfy521r9r9iwqlc44yqn70pi0i8rrs"))))
+    (properties `((upstream-name . "phdcocktail")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scales r-rstudioapi r-rcolorbrewer r-here
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://dahhamalsoud.github.io/phdcocktail/")
+    (synopsis "Enhance the Ease of R Experience as an Emerging Researcher")
+    (description
+     "This package provides a toolkit of functions to help: i) effortlessly transform
+collected data into a publication ready format, ii) generate insightful
+visualizations from clinical data, iii) report summary statistics in a
+publication-ready format, iv) efficiently export, save and reload R objects
+within the framework of R projects.")
+    (license license:expat)))
 
 (define-public r-phd
   (package
@@ -28854,13 +28903,13 @@ book.")
 (define-public r-pde
   (package
     (name "r-pde")
-    (version "1.4.3")
+    (version "1.4.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PDE" version))
        (sha256
-        (base32 "1xii4kc5lskgg58grp6qls01xgf5gib5yvxacm1pz6w3lp4hadwd"))))
+        (base32 "02w87p8sh00nqsnvqrjfq6frdqp61dn9qxg6cxfyhqqjg4r7sypr"))))
     (properties `((upstream-name . "PDE")))
     (build-system r-build-system)
     (inputs (list xpdf))

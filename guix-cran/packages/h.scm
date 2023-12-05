@@ -1492,13 +1492,13 @@ one-liners to print data to a new document.")
 (define-public r-hutilscpp
   (package
     (name "r-hutilscpp")
-    (version "0.10.2")
+    (version "0.10.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hutilscpp" version))
        (sha256
-        (base32 "1hh42cady784ld6d7m9axvh4lwlpb6ffpyvc8shfa7dkfhz703ra"))))
+        (base32 "0gjj2808dc4c1s28d94sc1iwb88n61lsplqvhlhn2yab3qa0ljf9"))))
     (properties `((upstream-name . "hutilscpp")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-hutils r-data-table))
@@ -8325,13 +8325,13 @@ space when there are more than a few response variables.")
 (define-public r-hemispher
   (package
     (name "r-hemispher")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hemispheR" version))
        (sha256
-        (base32 "0540fmik72jak6rrqn3xlixad2h13hswxbhdc8v5amns7m73xwvp"))))
+        (base32 "0zxcz6zhj40r46anq0hk6zqa5fah393v91cd1akl8nhp89sv9nwc"))))
     (properties `((upstream-name . "hemispheR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -11904,13 +11904,13 @@ patterns.")
 (define-public r-halk
   (package
     (name "r-halk")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "halk" version))
        (sha256
-        (base32 "1v6b8i1m0sdqk6gfjzfz35b8y1klb97m29m11wgpnshwzqxnfij2"))))
+        (base32 "109xrz7wm0zsl4kkr5fx0igiwcq2lgkxsws4g1m8k1nhnz1aidbn"))))
     (properties `((upstream-name . "halk")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

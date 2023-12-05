@@ -2332,13 +2332,13 @@ administration of the Federal State of Hesse in Germany.")
 (define-public r-woodsimulatr
   (package
     (name "r-woodsimulatr")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WoodSimulatR" version))
        (sha256
-        (base32 "1hd696wc9r65cfsfklh6gv502gx8qp75i8j26291rgc94hb11wlr"))))
+        (base32 "170bakkny7k6j22qwal9z2sycils1a7imajzvlzjbrasjy81m2l7"))))
     (properties `((upstream-name . "WoodSimulatR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -4624,13 +4624,13 @@ broad- and sharp-crested weirs.")
 (define-public r-weightsvm
   (package
     (name "r-weightsvm")
-    (version "1.7-11")
+    (version "1.7-13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WeightSVM" version))
        (sha256
-        (base32 "0sbf81j579k46bg11wv987ax7ncfmp6sy61w6ydk1dr9hcfjv3s9"))))
+        (base32 "19dai6v14h644dwa1054kmkhp4p24qvvkpzf45zz942ki24n2day"))))
     (properties `((upstream-name . "WeightSVM")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

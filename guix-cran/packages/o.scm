@@ -5035,13 +5035,13 @@ microarray data.")
 (define-public r-optbin
   (package
     (name "r-optbin")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "optbin" version))
        (sha256
-        (base32 "08v8dn3jn75p1f04lc963gasyszjf57j7kajwpqv4w20lwjsw17w"))))
+        (base32 "09pdmbvhwj7g13bqcql70x1c6l1islyasbhxcbqdf1cr7r6ylysz"))))
     (properties `((upstream-name . "optbin")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=optbin")

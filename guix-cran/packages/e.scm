@@ -4141,19 +4141,19 @@ classified using a partial-observations-classifier (Kandanaarachchi et al.
 (define-public r-eventpred
   (package
     (name "r-eventpred")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eventPred" version))
        (sha256
-        (base32 "0za034b2ypf9ll11j1ykhpn64il3nzi2a276qd2ay44vr98jkhgi"))))
+        (base32 "0ffkjzp0gjg2jdpdrkgxljm3rh4jpvlv5c95w4gcy56kc2r4zd26"))))
     (properties `((upstream-name . "eventPred")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tmvtnsim
-                             r-survival
+    (propagated-inputs (list r-survival
                              r-rstpm2
                              r-rlang
+                             r-purrr
                              r-plotly
                              r-numderiv
                              r-mvtnorm
@@ -19421,6 +19421,27 @@ presentation of the method.")
 model using empirical Bayes.  For available models and details, see function
 ebnm().  A detailed introduction to the package is provided by Willwerscheid and
 Stephens (2021) <@code{arXiv:2110.00152>}.")
+    (license license:gpl3+)))
+
+(define-public r-ebmstate
+  (package
+    (name "r-ebmstate")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ebmstate" version))
+       (sha256
+        (base32 "1jbkzf7zn844jg10cy9kv3v569n82718iqaz7id4jfbcq31p7l8v"))))
+    (properties `((upstream-name . "ebmstate")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival r-rcpp r-mstate r-hdinterval))
+    (home-page "https://cran.r-project.org/package=ebmstate")
+    (synopsis "Empirical Bayes Multi-State Cox Model")
+    (description
+     "This package implements an empirical Bayes, multi-state Cox model for survival
+analysis.  Run \"?'ebmstate-package'\" for details.  See also Schall (1991)
+<doi:10.1093/biomet/78.4.719>.")
     (license license:gpl3+)))
 
 (define-public r-ebmc

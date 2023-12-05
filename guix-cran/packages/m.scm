@@ -4217,13 +4217,13 @@ python'.")
 (define-public r-multilevlca
   (package
     (name "r-multilevlca")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multilevLCA" version))
        (sha256
-        (base32 "0isq02h0q5ggmsyv0fdrg2732s1f8vd2i8rhh6sbhqdwsin52bxm"))))
+        (base32 "1x0flgzx33nf4nr9599y6y7d7gv3w291m4adbajfycms9w13ap1g"))))
     (properties `((upstream-name . "multilevLCA")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -8136,24 +8136,23 @@ fewer bells and whistles, and less frequent updates.  As described in Yavorska
 (define-public r-mrtsamplesizebinary
   (package
     (name "r-mrtsamplesizebinary")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MRTSampleSizeBinary" version))
        (sha256
-        (base32 "01kg6frglrhi55px2hsadjn9dbfz61hwj1q2m6jrm59b4cws0gcb"))))
+        (base32 "1kb88sdhb8pp4mmvz8fy08drslzxj58fh1ycqaa3da6j7s9x65bn"))))
     (properties `((upstream-name . "MRTSampleSizeBinary")))
     (build-system r-build-system)
-    (propagated-inputs (list r-matrix r-ggplot2 r-dplyr))
+    (propagated-inputs (list r-matrix r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=MRTSampleSizeBinary")
     (synopsis "Sample Size Calculator for MRT with Binary Outcomes")
     (description
      "This package provides a sample size calculator for micro-randomized trials
-(MRTs) with binary outcomes based on methodology developed in Qian et al. (2020)
-<doi:10.1093/biomet/asaa070>.  Also provides a power calculator when the sample
-size is input by the user.")
+(MRTs) with binary outcomes based on Cohn et al. (2023) <doi:10.1002/sim.9748>.
+Also provides a power calculator when the sample size is input by the user.")
     (license license:gpl3)))
 
 (define-public r-mrtsamplesize
@@ -8644,13 +8643,13 @@ Stindl and Chen (2018) <doi:10.1016/j.csda.2018.01.021>.")
 (define-public r-mrgsolve
   (package
     (name "r-mrgsolve")
-    (version "1.1.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mrgsolve" version))
        (sha256
-        (base32 "1dhvrhvprra2q583ibiz3akicb5dz2f7l2aarr9z9m82261pfcz3"))))
+        (base32 "1rzd6angkkmagwid41gwhh8pi6zxzs5wyrj9lq81mna3nym2m7h2"))))
     (properties `((upstream-name . "mrgsolve")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -12027,13 +12026,13 @@ the database.")
 (define-public r-mongolite
   (package
     (name "r-mongolite")
-    (version "2.7.2")
+    (version "2.7.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mongolite" version))
        (sha256
-        (base32 "1x05w1ln1syi0b61q9gjpjdavn3g7bidhcrb82z9icwwxmxwrhaz"))))
+        (base32 "0ddzxqcp756yl9jn690bnzn54cb51i2vg3ciyc88sn1yms1vkfnm"))))
     (properties `((upstream-name . "mongolite")))
     (build-system r-build-system)
     (inputs (list zlib openssl openssl))
@@ -25647,13 +25646,13 @@ Bombrun, Tourneret and Berthoumieu (2013) <doi:10.1109/TSP.2013.2282909>).")
 (define-public r-mgee2
   (package
     (name "r-mgee2")
-    (version "0.4")
+    (version "0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mgee2" version))
        (sha256
-        (base32 "03id3g6zbw06xracwjkwfcll62nx7psppjsd3gj05hzjvalqgwks"))))
+        (base32 "0p4601z2dyg2yjyjdcl0ry7fda89rjl6kilk8977z8p4n7d1kynj"))))
     (properties `((upstream-name . "mgee2")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-ggplot2))
@@ -26571,13 +26570,13 @@ is possible with or without available data from a pilot study.")
 (define-public r-mets
   (package
     (name "r-mets")
-    (version "1.3.2")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mets" version))
        (sha256
-        (base32 "1n117qpwfrq9cmnda635h0845ps3zdxq16xn6w30qrcjiikx32qs"))))
+        (base32 "05shlwm3ay5klsnszlx2j7gyx9chnrzaadcidl0pdbnzdqgqisiz"))))
     (properties `((upstream-name . "mets")))
     (build-system r-build-system)
     (propagated-inputs (list r-timereg
@@ -26594,10 +26593,9 @@ is possible with or without available data from a pilot study.")
      "Implementation of various statistical models for multivariate event history data
 <doi:10.1007/s10985-013-9244-x>.  Including multivariate cumulative incidence
 models <doi:10.1002/sim.6016>, and bivariate random effects probit models
-(Liability models) <doi:10.1016/j.csda.2015.01.014>.  Also contains two-stage
-binomial modelling that can do pairwise odds-ratio dependence modelling based
-marginal logistic regression models.  This is an alternative to the alternating
-logistic regression approach (ALR).")
+(Liability models) <doi:10.1016/j.csda.2015.01.014>.  Modern methods for
+survival analysis, including regression modelling (Cox, Fine-Gray, Ghosh-Lin,
+Binomial regression) with fast computation of influence functions.")
     (license license:gpl2+)))
 
 (define-public r-metropolis
@@ -28427,16 +28425,17 @@ longitudinal studies (Metwally AA, et al., Microbiome, 2018
 (define-public r-metalite-table1
   (package
     (name "r-metalite-table1")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metalite.table1" version))
        (sha256
-        (base32 "006vcpagm6npq4lgp07pjgz0hsxpnp5vva7ilgr3f1hzfkql338a"))))
+        (base32 "042y400x994qhwidw5nadxf8mqd6kkrl081bzi6v1bqa17y8qw6c"))))
     (properties `((upstream-name . "metalite.table1")))
     (build-system r-build-system)
-    (propagated-inputs (list r-reactable r-metalite r-htmltools))
+    (propagated-inputs (list r-reactable r-r2rtf r-metalite r-jsonlite
+                             r-htmltools))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=metalite.table1")
     (synopsis "Interactive Table of Descriptive Statistics in HTML")
@@ -33053,21 +33052,27 @@ while also not adding capabilities to this function.")
 (define-public r-mcradds
   (package
     (name "r-mcradds")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mcradds" version))
        (sha256
-        (base32 "1cq6z8ia2dr43cgxgzpag2aydcsl8shj91sw53ysg865wncirmh6"))))
+        (base32 "11pa8y6q20rqsflxlsnyjq79l6xbfqy1739zvnvdl024mv0jvrw7"))))
     (properties `((upstream-name . "mcradds")))
     (build-system r-build-system)
     (propagated-inputs (list r-vca
+                             r-tidyr
+                             r-tibble
+                             r-rlang
                              r-purrr
                              r-proc
+                             r-mcr
                              r-magrittr
                              r-lifecycle
                              r-ggplot2
+                             r-formatters
+                             r-dplyr
                              r-desctools
                              r-checkmate
                              r-boot))
@@ -33398,13 +33403,13 @@ marginalized zero-inflated Poisson model described in Long et al. (2014)
 (define-public r-mcompanion
   (package
     (name "r-mcompanion")
-    (version "0.5.8")
+    (version "0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mcompanion" version))
        (sha256
-        (base32 "14bv7ljz45x1n2gihbhlwh3zz68bpj7mqz0702k4j9139gra3zk0"))))
+        (base32 "0d4q4rc8qscjw7d9xhpc6lr9v14vy0jxzzpn68lxaxi4qr31jwrg"))))
     (properties `((upstream-name . "mcompanion")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-matrix r-mass r-gbutils))
@@ -37556,6 +37561,39 @@ regression estimator.")
      "Genome-wide association analysis that accommodate membership information,
 variance adjustment, and correlated responses.")
     (license license:gpl3)))
+
+(define-public r-marzic
+  (package
+    (name "r-marzic")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MarZIC" version))
+       (sha256
+        (base32 "16f09s5f95jsafd3s8w01vc9i98nlwm3abrwfdhymaallq4kcban"))))
+    (properties `((upstream-name . "MarZIC")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo
+                             r-rcpp
+                             r-pracma
+                             r-nlcoptim
+                             r-mathjaxr
+                             r-foreach
+                             r-doparallel
+                             r-dirmult
+                             r-betareg))
+    (native-inputs (list r-knitr))
+    (home-page "https://www.mdpi.com/2073-4425/13/6/1049")
+    (synopsis
+     "Marginal Mediation Effects with Zero-Inflated Compositional Mediator")
+    (description
+     "This package provides a way to estimate and test marginal mediation effects for
+zero-inflated compositional mediators.  Estimates of Natural Indirect Effect
+(NIE), Natural Direct Effect (NDE) of each taxon, as well as their standard
+errors and confident intervals, were provided as outputs.  Zeros will not be
+imputed during analysis.  See Wu et al. (2022) <doi:10.3390/genes13061049>.")
+    (license license:gpl2)))
 
 (define-public r-marvel
   (package

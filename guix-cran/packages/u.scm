@@ -1822,13 +1822,13 @@ method is described in Helgeson, Vock, and Bair (2021) <doi:10.1111/biom.13376>.
 (define-public r-unnest
   (package
     (name "r-unnest")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "unnest" version))
        (sha256
-        (base32 "1ajap4r3f4sbp9lnpk1c2if0g30lg4ds9l2l222mxrl45ysrknxa"))))
+        (base32 "188la0g80ihcisb0gwnxbgxy882i74ngjgaa304kx8bq8sn6x4cz"))))
     (properties `((upstream-name . "unnest")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -1899,18 +1899,18 @@ building block for workflows within more applied projects.")
 (define-public r-unix
   (package
     (name "r-unix")
-    (version "1.5.5")
+    (version "1.5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "unix" version))
        (sha256
-        (base32 "1js3i1h2arral5x5cm6zl0qnidwjqlp8aqwd0vcj0bp0z5zvks1k"))))
+        (base32 "1f8rk9davqhbmwxwxdnvmrrmfi76xzf1n4kl6d0lb0jrczb74qap"))))
     (properties `((upstream-name . "unix")))
     (build-system r-build-system)
     (inputs (list apparmor))
     (native-inputs (list pkg-config))
-    (home-page "https://github.com/jeroen/unix")
+    (home-page "https://jeroen.r-universe.dev/unix")
     (synopsis "POSIX System Utilities")
     (description
      "Bindings to system utilities found in most Unix systems such as POSIX functions

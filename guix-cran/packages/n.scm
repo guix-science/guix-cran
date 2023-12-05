@@ -5939,13 +5939,13 @@ additivity.")
 (define-public r-nltm
   (package
     (name "r-nltm")
-    (version "1.4.4")
+    (version "1.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nltm" version))
        (sha256
-        (base32 "0ps6rl0yafg8ajwfk3iqbgjngq354bfbys619p5c94i498bigwcf"))))
+        (base32 "10w8nagb51wcbf5v082lgqw13f1dznhas77cmhsqp9d23iw52waq"))))
     (properties `((upstream-name . "nltm")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival))
@@ -14523,13 +14523,13 @@ form of Reporter Code Count (RCC) files.")
 (define-public r-nanonext
   (package
     (name "r-nanonext")
-    (version "0.10.4")
+    (version "0.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nanonext" version))
        (sha256
-        (base32 "1zzzjpi6nj7wslpprssv39mczznrfxnm8hv66p1yn6whyag27ajz"))))
+        (base32 "0qwirm48ndmda678hk5vd9vkrkfd0f052qyxf943mzi32bsdvks7"))))
     (properties `((upstream-name . "nanonext")))
     (build-system r-build-system)
     (home-page "https://shikokuchuo.net/nanonext/")
@@ -15181,6 +15181,40 @@ performing a quality control.  NACHO does this by visualising quality control
 metrics, expression of control genes, principal components and sample specific
 size factors in an interactive web application.")
     (license license:gpl3)))
+
+(define-public r-nac
+  (package
+    (name "r-nac")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NAC" version))
+       (sha256
+        (base32 "0mjwybnxqxcvkkjkx920n70png1p8pslg5j2v8ya9y9j5nrxjngl"))))
+    (properties `((upstream-name . "NAC")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-pracma))
+    (home-page "https://arxiv.org/abs/2306.15616")
+    (synopsis "Network-Adjusted Covariates for Community Detection")
+    (description
+     "Incorporating node-level covariates for community detection has gained
+increasing attention these years.  This package provides the function for
+implementing the novel community detection algorithm known as Network-Adjusted
+Covariates for Community Detection (NAC), which is designed to detect latent
+community structure in graphs with node-level information, i.e., covariates.
+This algorithm can handle models such as the degree-corrected stochastic block
+model (DCSBM) with covariates.  NAC specifically addresses the discrepancy
+between the community structure inferred from the adjacency information and the
+community structure inferred from the covariates information.  For more detailed
+information, please refer to the reference paper: Yaofang Hu and Wanjie Wang
+(2023) <@code{arXiv:2306.15616>}.  In addition to NAC, this package includes
+several other existing community detection algorithms that are compared to NAC
+in the reference paper.  These algorithms are Spectral Clustering On Ratios-of
+Eigenvectors (SCORE), network-based regularized spectral clustering (Net-based),
+covariate-based spectral clustering (Cov-based), covariate-assisted spectral
+clustering (CAclustering) and semidefinite programming (SDP).")
+    (license license:gpl2)))
 
 (define-public r-naaccr
   (package

@@ -94,13 +94,13 @@ decoding.  The method is fully described in Druet and Gautier (2017)
 (define-public r-rzmq
   (package
     (name "r-rzmq")
-    (version "0.9.11")
+    (version "0.9.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rzmq" version))
        (sha256
-        (base32 "16h0x54fq54dl5h4nd5qfxd4frmy4zs25ysijxkyiq4vffyaqpri"))))
+        (base32 "0033kipyla0sic1sr6wldnq40q0l9865zdkb0lsb5zh50y036vrz"))))
     (properties `((upstream-name . "rzmq")))
     (build-system r-build-system)
     (inputs (list zlib))
@@ -11069,13 +11069,13 @@ allows for the replication of the data application considered in the paper.")
 (define-public r-rosv
   (package
     (name "r-rosv")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rosv" version))
        (sha256
-        (base32 "0av3p8zcfhi45k70c42xzawv6d7y9krzhhydhwa0wpn7nn2iqvzy"))))
+        (base32 "1xgmn2n9iryijp36a7vzyaylc21wmfv2gjqn0qwa57hwy30f1wbw"))))
     (properties `((upstream-name . "rosv")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6
@@ -16778,16 +16778,16 @@ and Feng Tian (2014) <DOI:10.1371/journal.pone.0107684>), and HE regression
 (define-public r-rmvl
   (package
     (name "r-rmvl")
-    (version "0.0.4.9")
+    (version "1.0.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RMVL" version))
        (sha256
-        (base32 "08pkfgxicy3s498qh1nl3jnw4wh12f5fb1w1mw22jfbzymnj2n7d"))))
+        (base32 "199jsf82sbbzh6nn6ykmvqc1ad8wcm36qhfav2ggp1zrdy5vwhmq"))))
     (properties `((upstream-name . "RMVL")))
     (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=RMVL")
+    (home-page "https://academictorrents.com/collection/mvl-datasets")
     (synopsis "Mappable Vector Library for Handling Large Datasets")
     (description
      "Mappable vector library provides convenient way to access large datasets.  Use
@@ -16801,7 +16801,8 @@ data.frames.  The layout of underlying MVL files is optimized for large
 datasets.  The vectors are stored to guarantee alignment for vector intrinsics
 after memory map.  The package is built on top of @code{libMVL}, which can be
 used as a standalone C library. @code{libMVL} has simple C API making it easy to
-interchange datasets with outside programs.")
+interchange datasets with outside programs.  Large MVL datasets are distributed
+via Academic Torrents <https://academictorrents.com/collection/mvl-datasets>.")
     (license license:lgpl2.1)))
 
 (define-public r-rmultinet
@@ -20255,18 +20256,18 @@ power of R and the visualization libraries of @code{JavaScript} in one package."
 (define-public r-rjsoncons
   (package
     (name "r-rjsoncons")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rjsoncons" version))
        (sha256
-        (base32 "1y6gf9w914wnygd41iwzy0vr16c4mwacx4pjqqncd3z9h120chpr"))))
+        (base32 "02nmdwqhm44dgn329cap0195lc7mcap84zz1w20g5dcifr9060pr"))))
     (properties `((upstream-name . "rjsoncons")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-cpp11))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=rjsoncons")
+    (home-page "https://mtmorgan.github.io/rjsoncons/")
     (synopsis "'C++' Header-Only 'jsoncons' Library for 'JSON' Queries")
     (description
      "The jsoncons <https://danielaparker.github.io/jsoncons/> C++ header-only library
@@ -29702,13 +29703,13 @@ Pavlic (2018) <doi:10.18637/jss.v087.i08>.")
 (define-public r-relsim
   (package
     (name "r-relsim")
-    (version "0.3.5")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "relSim" version))
        (sha256
-        (base32 "1wgi1h764cfzfdakmajdhqcz5nldw2arllawsfy6n506ndi4l916"))))
+        (base32 "1f2dz25hkh2ak7cypn3zj9rabj3z7d59q4yhrrq4f6mzdki80d15"))))
     (properties `((upstream-name . "relSim")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -30707,6 +30708,31 @@ variable selection for generalized linear models (Ren et al. (2017)
 Continuous, binary, and survival response are supported.  Robust network-based
 methods are available for continuous and survival responses.")
     (license license:gpl2)))
+
+(define-public r-regmhmm
+  (package
+    (name "r-regmhmm")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "regmhmm" version))
+       (sha256
+        (base32 "19w4r94n67wab3jswh0pdyj7237aijfxhz18s6cr9h4m9bldkvji"))))
+    (properties `((upstream-name . "regmhmm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-mass r-glmnetutils
+                             r-glmnet))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/HenryLeongStat/regmhmm")
+    (synopsis "'regmhmm' Fits Hidden Markov Models with Regularization")
+    (description
+     "Designed for longitudinal data analysis using Hidden Markov Models (HMMs).
+Tailored for applications in healthcare, social sciences, and economics, the
+main emphasis of this package is on regularization techniques for fitting HMMs.
+Additionally, it provides an implementation for fitting HMMs without
+regularization, referencing Zucchini et al. (2017, ISBN:9781315372488).")
+    (license license:gpl3+)))
 
 (define-public r-regmedint
   (package
@@ -38608,13 +38634,13 @@ menu items for functions we use in our introductory courses.")
 (define-public r-rcmdrplugin-ezr
   (package
     (name "r-rcmdrplugin-ezr")
-    (version "1.62")
+    (version "1.63")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcmdrPlugin.EZR" version))
        (sha256
-        (base32 "0pv8k7ml8agw5qampms8dm4wfbl8daq9kkzqpzbqgv3k0l1xizfp"))))
+        (base32 "16bh5dl2mp377kvizsh56bgj4n71wq0fbg9x14g828xfb9qfwpp6"))))
     (properties `((upstream-name . "RcmdrPlugin.EZR")))
     (build-system r-build-system)
     (propagated-inputs (list r-readstata13 r-rcmdr))
@@ -38631,7 +38657,7 @@ Ohmsha, ISBN: 978-4-274-22632-8), but an report that introduced the
 investigation of EZR was published in Bone Marrow Transplantation (Nature
 Publishing Group) as an Open article.  This report can be used as a simple
 manual.  It can be freely downloaded from the journal website as shown below.
-This report has been cited in approximately 10,000 scientific articles.")
+This report has been cited in more than 10,000 scientific articles.")
     (license license:gpl2+)))
 
 (define-public r-rcmdrplugin-export
@@ -38890,13 +38916,13 @@ Louviere et al. (2015) <doi:10.1017/CBO9781107337855>.")
 (define-public r-rcmdrplugin-bws2
   (package
     (name "r-rcmdrplugin-bws2")
-    (version "0.1-0")
+    (version "0.2-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcmdrPlugin.BWS2" version))
        (sha256
-        (base32 "0px17h5i7pgm3pvrsf5rd8cpylsis65fndk1s7341dxxy4b4z7kj"))))
+        (base32 "068ns6580wqjwj3g3hviri87wkslm4fsk4nqblz559s8g1ipikqz"))))
     (properties `((upstream-name . "RcmdrPlugin.BWS2")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-support-ces r-support-bws2 r-rcmdr
@@ -41669,21 +41695,22 @@ routinely.  Finally, there is an R markdown skeleton for basic reserve analysis.
 (define-public r-ravetools
   (package
     (name "r-ravetools")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ravetools" version))
        (sha256
-        (base32 "0pvvgiygdkkbvqinwjv6apbm76676ai20nxhg1pdzzhhkkc5c83z"))))
+        (base32 "145f86yzd492l6q3nqqjvgykr3riw6v86h80wd84ca1xian5lhd3"))))
     (properties `((upstream-name . "ravetools")))
     (build-system r-build-system)
-    (inputs (list fftw))
+    (inputs (list pkg-config fftw))
     (propagated-inputs (list r-waveslim
                              r-signal
                              r-rvcg
                              r-rniftyreg
                              r-rcpp
+                             r-r6
                              r-pracma
                              r-filearray
                              r-digest))
@@ -43231,18 +43258,18 @@ created, rapport templates can be exported to various external formats (HTML,
 (define-public r-rapparmor
   (package
     (name "r-rapparmor")
-    (version "3.2.3")
+    (version "3.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RAppArmor" version))
        (sha256
-        (base32 "04hxqwi75npayd3ghghswxc51k2xb525drixxk1fvp6hrhdkap5h"))))
+        (base32 "1dg9ykmgb2bzqyh08jhfm1wv6zniqg6p49k8mfgxb534sqv5wdn4"))))
     (properties `((upstream-name . "RAppArmor")))
     (build-system r-build-system)
     (inputs (list))
     (native-inputs (list r-r-rsp pkg-config))
-    (home-page "https://www.jstatsoft.org/v55/i07/")
+    (home-page "https://cran.r-project.org/package=RAppArmor")
     (synopsis "Bindings to AppArmor and Security Related Linux Tools")
     (description
      "Bindings to kernel methods for enforcing security restrictions. @code{AppArmor}

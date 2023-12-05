@@ -15,8 +15,8 @@
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages maths)
   #:use-module (gnu packages bioinformatics)
+  #:use-module (gnu packages maths)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
@@ -5613,13 +5613,13 @@ to 2014.")
 (define-public r-cropcircles
   (package
     (name "r-cropcircles")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cropcircles" version))
        (sha256
-        (base32 "1ggiw0qxwv3j36dhiq7fvw4zj0lqqsfcp9756hsr0cb83srfczwb"))))
+        (base32 "16by5gqdzgkd2qycslnxfhphpcil9w31mf9p4am9pzcc1gi06a71"))))
     (properties `((upstream-name . "cropcircles")))
     (build-system r-build-system)
     (propagated-inputs (list r-purrr r-magick r-glue))
@@ -5628,7 +5628,8 @@ to 2014.")
     (description
      "Images are cropped to a circle with a transparent background.  The function
 takes a vector of images, either local or from a link, and circle crops the
-image.  Paths to the cropped image are returned for plotting with ggplot2'.")
+image.  Paths to the cropped image are returned for plotting with ggplot2'.
+Also includes cropping to a hexagon, heart, parallelogram, and square.")
     (license license:expat)))
 
 (define-public r-crop
@@ -24694,25 +24695,28 @@ datasets to demonstrate the package functionalities.")
 (define-public r-clintools
   (package
     (name "r-clintools")
-    (version "0.9.9")
+    (version "0.9.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clintools" version))
        (sha256
-        (base32 "0yay9s8490zmn2fjv3gqh58qmk8cci50phvz0cgab52kslhf0rvq"))))
+        (base32 "1rlzdhcyp6rlp72wa3jm3xn3ndcab6rgsy09xmf18snj58fbvliy"))))
     (properties `((upstream-name . "clintools")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
+                             r-survival
                              r-stringi
                              r-signal
                              r-scales
                              r-proc
                              r-parameters
+                             r-pander
                              r-nlme
                              r-lme4
                              r-irr
-                             r-ggplot2))
+                             r-ggplot2
+                             r-dplyr))
     (home-page "https://github.com/lilleoel/clintools")
     (synopsis "Tools for Clinical Research")
     (description
@@ -25619,13 +25623,13 @@ sequence type data.  Gallaugher, M.P.B and @code{McNicholas}, P.D. (2018)
 (define-public r-clickclust
   (package
     (name "r-clickclust")
-    (version "1.1.5")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ClickClust" version))
        (sha256
-        (base32 "0b46f453mffg4ym6yvmh7g3v05mc9gphwfra75j28y1425s87yvw"))))
+        (base32 "09pb8fpddyzqznwxz1njpvwyqd45ywbaxj9sx5dzg134c7cz1z5j"))))
     (properties `((upstream-name . "ClickClust")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=ClickClust")
@@ -29065,13 +29069,13 @@ posterior', cmdstanr', and bayesplot'.")
 (define-public r-chisquare
   (package
     (name "r-chisquare")
-    (version "0.7")
+    (version "0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chisquare" version))
        (sha256
-        (base32 "1v5qyccz05ynha35j2vpgpfffww9mjssgd7dfdcsm3ngwisg5j6h"))))
+        (base32 "04jr8pfh29zgdj8krf16six71j901mbf38n0xvylg0hi2lkxnjwc"))))
     (properties `((upstream-name . "chisquare")))
     (build-system r-build-system)
     (propagated-inputs (list r-gt))

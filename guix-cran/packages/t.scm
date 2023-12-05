@@ -8025,26 +8025,25 @@ generalization, aggregation, intersection, simulation, and plotting.")
 (define-public r-traj
   (package
     (name "r-traj")
-    (version "1.3.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "traj" version))
        (sha256
-        (base32 "1v6p31q4c9k5ipa0rysqd3xrw5f7ydvp91r1d0jp17zdgz58vfpd"))))
+        (base32 "051cq2rn6n4kf9a3ljbvmcgmhsvrhxjfzxp539y0yl5p6dbxsy3k"))))
     (properties `((upstream-name . "traj")))
     (build-system r-build-system)
-    (propagated-inputs (list r-psych r-pastecs r-nbclust r-cluster))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/tchouangue/traj")
-    (synopsis "Trajectory Analysis")
+    (propagated-inputs (list r-psych r-cluster))
+    (home-page "https://CRAN.R-project.org/package=traj")
+    (synopsis "Clustering of Functional Data Based on Measures of Change")
     (description
      "This package implements the three-step procedure proposed by Leffondree et al.
 (2004) to identify clusters of individual longitudinal trajectories.  The
-procedure involves (1) calculating 24 measures describing the features of the
-trajectories; (2) using factor analysis to select a subset of the 24 measures
-and (3) using cluster analysis to identify clusters of trajectories, and
-classify each individual trajectory in one of the clusters.")
+procedure involves (1) calculating a number of measures of change capturing
+various features of the trajectories; (2) using a Principal Component Analysis
+based dimension reduction algorithm to select a subset of measures and (3) using
+the K-means clustering algorithm to identify clusters of trajectories.")
     (license license:expat)))
 
 (define-public r-traitstrap
@@ -17871,13 +17870,13 @@ as text data formatted as a text.table.")
 (define-public r-texttinyr
   (package
     (name "r-texttinyr")
-    (version "1.1.7")
+    (version "1.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "textTinyR" version))
        (sha256
-        (base32 "17c3vciqx2i0h0jkqsiva8kp6pwcrscwgyxf804sjvdbym0pwc7d"))))
+        (base32 "15yzxxnnkaj9x94dqpsqy67r7mlh7wdqir5fira8sjr4j1fqx3l1"))))
     (properties `((upstream-name . "textTinyR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
@@ -22443,13 +22442,13 @@ applied to both experimental and observational data.")
 (define-public r-taylorrussell
   (package
     (name "r-taylorrussell")
-    (version "1.2")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TaylorRussell" version))
        (sha256
-        (base32 "1lwvd1q15b5x3bhbglb0vy08bc825g75c4dmkgv9gn0wfkksnw6i"))))
+        (base32 "1shcmnlnzp0laaa0zir83iidj6m71yc7nq46frhydnjicanyi9lh"))))
     (properties `((upstream-name . "TaylorRussell")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinywidgets r-shiny r-mvtnorm))
@@ -22457,7 +22456,7 @@ applied to both experimental and observational data.")
     (synopsis "Taylor-Russell Function for Multiple Predictors")
     (description
      "The Taylor Russell model is a widely used method for assessing test validity in
-personnel selections tasks.  The three functions in this package extend this
+personnel selection tasks.  The three functions in this package extend this
 model in a number of notable ways.  TR() estimates test validity for a single
 selection test via the original Taylor Russell model.  It extends this model by
 allowing users greater flexibility in argument choice.  For example, users can

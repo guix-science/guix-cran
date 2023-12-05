@@ -10799,6 +10799,28 @@ location parameter structured as a linear combination of the component-specific
 gene expressions.")
     (license license:gpl2)))
 
+(define-public r-diseasemapping
+  (package
+    (name "r-diseasemapping")
+    (version "2.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "diseasemapping" version))
+       (sha256
+        (base32 "0zn6cp55szrfmkymaml55jf4zzvvzdfjcv1h309xr1vi1488q5yj"))))
+    (properties `((upstream-name . "diseasemapping")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=diseasemapping")
+    (synopsis "Modelling Spatial Variation in Disease Risk for Areal Data")
+    (description
+     "Formatting of population and case data, calculation of Standardized Incidence
+Ratios, and fitting the BYM model using INLA'.  For details see Brown (2015)
+<doi:10.18637/jss.v063.i12>.")
+    (license (list license:gpl2+ license:gpl3+))))
+
 (define-public r-disdat
   (package
     (name "r-disdat")
@@ -11455,6 +11477,26 @@ described by Gasperoni, F., Ieva, F., Paganoni, A. M., Jackson, C. H., Sharples,
 L. (2018) <doi:10.1093/biostatistics/kxy071>.  There are also functions for
 simulating from these models, with a nonparametric or a parametric baseline
 hazard function.")
+    (license license:gpl3)))
+
+(define-public r-discfa
+  (package
+    (name "r-discfa")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "discFA" version))
+       (sha256
+        (base32 "01zwqmkajyz9grqlbha4dykgc6s5xxxpng57ydq5mb5aw44188l9"))))
+    (properties `((upstream-name . "discFA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vgam))
+    (home-page "https://cran.r-project.org/package=discFA")
+    (synopsis "Discrete Factor Analysis")
+    (description
+     "Discrete factor analysis for dependent Poisson and negative binomial models with
+truncation, zero inflation, and zero inflated truncation.")
     (license license:gpl3)))
 
 (define-public r-discbio
@@ -13824,13 +13866,13 @@ infill, and problems with constraints.")
 (define-public r-diceeval
   (package
     (name "r-diceeval")
-    (version "1.5.1")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DiceEval" version))
        (sha256
-        (base32 "0k5z25x0bfvw9j75jwahmda1x89f2aarsxzfcv7pdz25ci8w8mnk"))))
+        (base32 "02ba7cxp9hv983d3br4a1y3ss6krjax72vrpkp5qqy0v9fyshm23"))))
     (properties `((upstream-name . "DiceEval")))
     (build-system r-build-system)
     (propagated-inputs (list r-dicekriging))
@@ -19464,6 +19506,44 @@ Mode Decomposition (EMD) and Ensemble Empirical Mode Decomposition (EEMD)
 methods based hybrid methods.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-decompdl
+  (package
+    (name "r-decompdl")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "decompDL" version))
+       (sha256
+        (base32 "11xbxv2j8m1w4lz933jvwy20wsazqiffnn0awgv7fz6q3ma5cqkh"))))
+    (properties `((upstream-name . "decompDL")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vmdecomp
+                             r-tsutils
+                             r-tsdeeplearning
+                             r-tensorflow
+                             r-rlibeemd
+                             r-reticulate
+                             r-magrittr
+                             r-keras
+                             r-biocgenerics))
+    (home-page "https://cran.r-project.org/package=decompDL")
+    (synopsis
+     "Decomposition Based Deep Learning Models for Time Series Forecasting")
+    (description
+     "Hybrid model is the most promising forecasting method by combining decomposition
+and deep learning techniques to improve the accuracy of time series forecasting.
+ Each decomposition technique decomposes a time series into a set of intrinsic
+mode functions (IMFs), and the obtained IMFs are modelled and forecasted
+separately using the deep learning models.  Finally, the forecasts of all IMFs
+are combined to provide an ensemble output for the time series.  The prediction
+ability of the developed models are calculated using international monthly price
+series of maize in terms of evaluation criteria like root mean squared error,
+mean absolute percentage error and, mean absolute error.  For method details see
+Choudhary, K. et al. (2023).
+<https://ssca.org.in/media/14_SA44052022_R3_SA_21032023_Girish_Jha_FINAL_Finally.pdf>.")
+    (license license:gpl3)))
+
 (define-public r-decoder
   (package
     (name "r-decoder")
@@ -19824,13 +19904,13 @@ of the posterior distributions of model parameters and trajectories.")
 (define-public r-debif
   (package
     (name "r-debif")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "deBif" version))
        (sha256
-        (base32 "1jz5kxhjbsfd2mvy6dhs7h3zx7gp6j2bg2sf9q08wx61q3b6ksq6"))))
+        (base32 "0zy9pn6994bpbfjk4w52qvfckcilq5nz1v21bqc63grkz0lmlgzy"))))
     (properties `((upstream-name . "deBif")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinyjs

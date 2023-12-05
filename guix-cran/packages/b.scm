@@ -10480,13 +10480,13 @@ Whalley, WHPT, Habitat-specific BMWP, AWIC, LIFE and PSI.")
 (define-public r-biostatsuhnplus
   (package
     (name "r-biostatsuhnplus")
-    (version "0.0.8")
+    (version "0.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BiostatsUHNplus" version))
        (sha256
-        (base32 "1qq1j54qybrr9jlg85ck0a56aixqwv53lvhasj6b0pvng8w8p6sh"))))
+        (base32 "0bgclpw0k2bdwrb785qhk490fxcb14r1cbm05zhb41mddw8zbqkk"))))
     (properties `((upstream-name . "BiostatsUHNplus")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -10506,6 +10506,7 @@ Whalley, WHPT, Habitat-specific BMWP, AWIC, LIFE and PSI.")
                              r-forcats
                              r-dplyr
                              r-cowplot
+                             r-coda
                              r-afex))
     (home-page "https://cran.r-project.org/package=BiostatsUHNplus")
     (synopsis "Nested Data Summary and Adverse Events")
@@ -21164,13 +21165,13 @@ Useful for logistic regression.")
 (define-public r-bayesln
   (package
     (name "r-bayesln")
-    (version "0.2.8")
+    (version "0.2.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesLN" version))
        (sha256
-        (base32 "1rgf2j8al7gm8j77b5kjmjpygdv70s994yvdnhxpgg2b1sz8glvw"))))
+        (base32 "0p8g0h4zqz5njr7lkkv2hhq9qas9lvrxamg8xb9hkqrxfxd0d3nn"))))
     (properties `((upstream-name . "BayesLN")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen
@@ -23361,13 +23362,13 @@ that will install Github starred R packages whether available on CRAN or not.")
 (define-public r-bat
   (package
     (name "r-bat")
-    (version "2.9.4")
+    (version "2.9.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BAT" version))
        (sha256
-        (base32 "0jrid2bmwplnam70y9vgm7dn32bvi80r81c5zrmpsmq4ywj7yfrf"))))
+        (base32 "14g0k90061is0p8p4y41m536zf2jdapvvfjnxzni31y2mqd1id2h"))))
     (properties `((upstream-name . "BAT")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -23955,29 +23956,6 @@ sources such as @code{OpenStreetMap}', Carto', Mapbox and others in R.")
      "An R interface to the Base dos Dados API
 <https:basedosdados.github.io/mais/py_reference_api/>).  Authenticate your
 project, query our tables, save data to disk and memory, all from R.")
-    (license license:expat)))
-
-(define-public r-baseballdbr
-  (package
-    (name "r-baseballdbr")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "baseballDBR" version))
-       (sha256
-        (base32 "0w54g1avcqamc12lmvjchlqbqck9jfjccm441k03nsql460mpydq"))))
-    (properties `((upstream-name . "baseballDBR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2 r-rvest r-magrittr r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/keberwein/moneyball")
-    (synopsis "Sabermetrics and Advanced Baseball Statistics")
-    (description
-     "This package provides a tool for gathering and analyzing data from the Baseball
-Databank <http://www.baseball-databank.org/>, which includes player performance
-statistics from major league baseball in the United States beginning in the year
-1871.")
     (license license:expat)))
 
 (define-public r-base-rms

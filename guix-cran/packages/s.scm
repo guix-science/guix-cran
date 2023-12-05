@@ -2398,13 +2398,13 @@ essentially the same cost as a single SVM fit.")
 (define-public r-svines
   (package
     (name "r-svines")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "svines" version))
        (sha256
-        (base32 "0zvwjbmy5jjngb25rzyp7phmrwalpfhwi3gdpmfsyfnr86d4xxnf"))))
+        (base32 "1afhgfdzbp7h29k3jcvc7fv504w9niwnkpkzyijlppk64l5dbrdy"))))
     (properties `((upstream-name . "svines")))
     (build-system r-build-system)
     (propagated-inputs (list r-wdm
@@ -12218,13 +12218,13 @@ lead/lag).")
 (define-public r-statamarkdown
   (package
     (name "r-statamarkdown")
-    (version "0.8.0")
+    (version "0.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Statamarkdown" version))
        (sha256
-        (base32 "0rick3fp8dpnq2i72pyhln1kxr6050vxlqpiji4f3348g72c2j0b"))))
+        (base32 "1ir2qh492q0rn6rwnmvj2cxqsssmsd5hm9vlyg0r7dk22grh19z0"))))
     (properties `((upstream-name . "Statamarkdown")))
     (build-system r-build-system)
     (inputs (list))
@@ -14175,6 +14175,31 @@ package utilizes the SMM framework to provide functions for training SVMs with
 hinge loss, squared-hinge loss, and logistic loss.")
     (license license:gpl3)))
 
+(define-public r-ssnbayes
+  (package
+    (name "r-ssnbayes")
+    (version "0.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SSNbayes" version))
+       (sha256
+        (base32 "1smfd7mas19y8n4jpywphck54crxn15lnc8dpi9s5il50icr2hls"))))
+    (properties `((upstream-name . "SSNbayes")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ssn2 r-sf r-rstan r-plyr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/EdgarSantos-Fernandez/SSNbayes")
+    (synopsis "Bayesian Spatio-Temporal Analysis in Stream Networks")
+    (description
+     "Fits Bayesian spatio-temporal models and makes predictions on stream networks
+using the approach by Santos-Fernandez, Edgar, et al. (2022).\"Bayesian
+spatio-temporal models for stream networks\". <@code{arXiv:2103.03538>}.  In
+these models, spatial dependence is captured using stream distance and flow
+connectivity, while temporal autocorrelation is modelled using vector
+autoregression methods.")
+    (license license:gpl2)))
+
 (define-public r-ssn2
   (package
     (name "r-ssn2")
@@ -15800,13 +15825,13 @@ strictly controlled at a user-specified level.")
 (define-public r-sqrl
   (package
     (name "r-sqrl")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SQRL" version))
        (sha256
-        (base32 "0xn4dywgaxszjinb9ypllmj7s04rx1l7rrir30vd25kj510mramm"))))
+        (base32 "05qyrdvgrkv6r88pgwin8llh7qfzkivnrwz5ba1cwkbqg3pvfjhv"))))
     (properties `((upstream-name . "SQRL")))
     (build-system r-build-system)
     (propagated-inputs (list r-rodbc))
@@ -19123,13 +19148,13 @@ effects of functional variables -Application to agri-environmental issues\"
 (define-public r-sphunif
   (package
     (name "r-sphunif")
-    (version "1.1.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sphunif" version))
        (sha256
-        (base32 "0g2f9r69mkggljbrkfmfxqv9vpqgi2d8zzsm9zvfcf72b06asb9n"))))
+        (base32 "1m4id7h3jd0r8p9j5ip4d5r79lk27j7xk4iwizjapd74i0vm84az"))))
     (properties `((upstream-name . "sphunif")))
     (build-system r-build-system)
     (propagated-inputs (list r-rotasym
@@ -19138,6 +19163,7 @@ effects of functional variables -Application to agri-environmental issues\"
                              r-gsl
                              r-future
                              r-foreach
+                             r-dorng
                              r-dofuture))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/egarpor/sphunif")
@@ -21419,13 +21445,13 @@ two-dimensional Penalised spline (P-spline) models.")
 (define-public r-spatpomp
   (package
     (name "r-spatpomp")
-    (version "0.33.0")
+    (version "0.34.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spatPomp" version))
        (sha256
-        (base32 "1lwrj40mnb6gcpqjh3w6d9lp5n0y8q3pidgypznhgr5akzyn4lcg"))))
+        (base32 "13nrn8c6p31n2hpjrka9f0s3ihw8v4q3agp7bw1vqjc2chi56ap9"))))
     (properties `((upstream-name . "spatPomp")))
     (build-system r-build-system)
     (inputs (list))
@@ -21443,17 +21469,10 @@ two-dimensional Penalised spline (P-spline) models.")
      "Inference for Spatiotemporal Partially Observed Markov Processes")
     (description
      "Inference on panel data using spatiotemporal partially-observed Markov process
-(@code{SpatPOMP}) models.  To do so, it relies on and extends a number of
-facilities that the pomp package provides for inference on time series data
-using partially-observed Markov process (POMP) models.  Implemented methods
-include filtering and inference methods in Park and Ionides (2020)
-<doi:10.1007/s11222-020-09957-3>, Rebeschini and van Handel (2015)
-<doi:10.1214/14-AAP1061>, Evensen and van Leeuwen (1996)
-<doi:10.1029/94JC00572>, Ionides et al. (2021)
-<doi:10.1080/01621459.2021.1974867>, Ionides, Ning and Wheeler (2022)
-<doi:10.5705/ss.202022.0188>, Ning and Ionides (2023) <@code{arXiv:2110.10745>}.
- Pre-print statistical software article: Asfaw et al. (2021)
-<@code{arXiv:2101.01157>}.")
+(@code{SpatPOMP}) models.  The @code{spatPomp} package extends pomp to include
+algorithms taking advantage of the spatial structure in order to assist with
+handling high dimensional processes.  See Asfaw et al. (2023)
+<@code{arXiv:2101.01157>} for further description of the package.")
     (license license:gpl3)))
 
 (define-public r-spatpca
@@ -24864,13 +24883,13 @@ package).  For more information, please see Rocha and Romano (2021) and check
 (define-public r-soundgen
   (package
     (name "r-soundgen")
-    (version "2.6.1")
+    (version "2.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "soundgen" version))
        (sha256
-        (base32 "005b9l99yfl6n2sn6s90zzi77jpnsv0g4brd0302rdcz7lnqf9yz"))))
+        (base32 "15db2zdy90kbc4qx5wcnx90ks9ijc8c1znz4a6rkq16sf12p39jd"))))
     (properties `((upstream-name . "soundgen")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -29860,34 +29879,43 @@ University.")
 (define-public r-smallsets
   (package
     (name "r-smallsets")
-    (version "1.0.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smallsets" version))
        (sha256
-        (base32 "19v4ikfa1fbj9qvhp63vbw13qsgfx879x8j451sfcgl7km1d7xc9"))))
+        (base32 "13w7vdjg6pqq509r1jlmwi3z9qldq6damiy439dmm6wanmp9ybd6"))))
     (properties `((upstream-name . "smallsets")))
     (build-system r-build-system)
-    (propagated-inputs (list r-reticulate
+    (propagated-inputs (list r-rmarkdown
+                             r-reticulate
                              r-plotrix
                              r-patchwork
+                             r-knitr
                              r-ggtext
                              r-ggplot2
                              r-flextable
-                             r-colorspace))
+                             r-colorspace
+                             r-callr))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/lydialucchesi/smallsets")
-    (synopsis "The Smallset Timeline Builder")
+    (home-page "https://lydialucchesi.github.io/smallsets/")
+    (synopsis "Visual Documentation for Data Preprocessing")
     (description
      "Data practitioners regularly use the R and Python programming languages to
-prepare data for analyses.  Thus, they encode data preprocessing decisions in R
-and Python scripts.  The smallsets package subsequently decodes these decisions
-into a Smallset Timeline, a visualisation proposed in Lucchesi et al. (2022)
-<doi:10.1145/3531146.3533175>.  A Smallset Timeline is a series of small data
+prepare data for analyses.  Thus, they encode important data preprocessing
+decisions in R and Python code.  The smallsets package subsequently decodes
+these decisions into a Smallset Timeline, a static, compact visualisation of
+data preprocessing decisions (Lucchesi et al. (2022)
+<doi:10.1145/3531146.3533175>).  The visualisation consists of small data
 snapshots of different preprocessing steps.  The smallsets package builds this
-figure from a user's dataset and R'/'Python preprocessing script, which contains
-structured comments with snapshot instructions.")
+visualisation from a user's dataset and preprocessing code located in an R', R
+Markdown', Python', or Jupyter Notebook file.  Users simply add structured
+comments with snapshot instructions to the preprocessing code.  One optional
+feature in smallsets requires installation of the Gurobi optimisation software
+and gurobi R package, available from <https://www.gurobi.com>.  More information
+regarding the optional feature and gurobi installation can be found in the
+smallsets vignette.")
     (license license:gpl3+)))
 
 (define-public r-smallcountrounding
@@ -39667,19 +39695,20 @@ resulting metrics.")
 (define-public r-shinylive
   (package
     (name "r-shinylive")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinylive" version))
        (sha256
-        (base32 "041qkhr3ynz1haxqv7ndlvygckixj3kj28m8y0laixqvmjdk0lcg"))))
+        (base32 "1hsvcsbzrzv0gb99mfc02sd77mlwcxjqzzr5v2jfr5ajq33q3ffb"))))
     (properties `((upstream-name . "shinylive")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
                              r-rappdirs
                              r-progress
                              r-jsonlite
+                             r-httr2
                              r-fs
                              r-brio
                              r-archive))
@@ -42650,13 +42679,13 @@ devices for diagnostic of the fitted models are offered.")
 (define-public r-sglasso
   (package
     (name "r-sglasso")
-    (version "1.2.5")
+    (version "1.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sglasso" version))
        (sha256
-        (base32 "0z0bm6xq9581hdz5n6fbwa5k6j08knw1hzk2h1qxdzsswxiwsmj7"))))
+        (base32 "01162sh2cndqhcyswk7qprsychxik1yvkk7lr7d5vf25sq85h1k1"))))
     (properties `((upstream-name . "sglasso")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-igraph))
@@ -47600,13 +47629,13 @@ implementation of the FFORMS algorithm.  For more details see our paper at
 (define-public r-seeker
   (package
     (name "r-seeker")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "seeker" version))
        (sha256
-        (base32 "0vq7spb0wdlzgzgljqsrf7ym6in8vbis2607fj2gpxm0643gff3k"))))
+        (base32 "0wnrbzcfg7a32qs7mg9zlgjj72124slirilzjhpp0fsn0qmw2vks"))))
     (properties `((upstream-name . "seeker")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -55831,6 +55860,36 @@ extension to Spatial Sampling\".")
 and getting useful estimators such as total, mean, proportion about its
 population using simple random, stratified, systematic and cluster sampling.")
     (license license:gpl2)))
+
+(define-public r-samplingin
+  (package
+    (name "r-samplingin")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "samplingin" version))
+       (sha256
+        (base32 "0wy5yx5j2qz84j9947vjni4bi1rszp5s95p18d1dgkhfnvhwbnyp"))))
+    (properties `((upstream-name . "samplingin")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-rio
+                             r-magrittr
+                             r-dt
+                             r-dplyr
+                             r-data-table))
+    (home-page "https://cran.r-project.org/package=samplingin")
+    (synopsis "Dynamic Survey Sampling Solutions")
+    (description
+     "This package provides a robust solution employing both systematic and PPS
+(Probability Proportional to Size) sampling methods, ensuring a methodical and
+representative selection of data.  Seamlessly allocate predetermined allocations
+to smaller levels.  Kish, L. (1965)
+<https://books.google.co.id/books?id=@code{xiZmAAAAIAAJ>}.")
+    (license license:expat)))
 
 (define-public r-samplingdatacrt
   (package

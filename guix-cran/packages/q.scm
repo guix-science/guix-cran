@@ -618,13 +618,13 @@ magnitude quicker than other methods.")
 (define-public r-quickcode
   (package
     (name "r-quickcode")
-    (version "0.5")
+    (version "0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quickcode" version))
        (sha256
-        (base32 "0m4x315k431wjb4nv2z615nwcp4np1ad68kwrxfk6acpa6ynr5ah"))))
+        (base32 "0vkpqlf1y5sczjpq539s3rwpqy3wv824nc2lh82rrfcpv7kxgn5m"))))
     (properties `((upstream-name . "quickcode")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstudioapi r-polychrome))
@@ -817,16 +817,27 @@ metadata handling, and several convenience functions.")
 (define-public r-quest
   (package
     (name "r-quest")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quest" version))
        (sha256
-        (base32 "15al3j850v7i59zr9yybxjrb3lnpd14369rp5vnpzwxy80jpy7d9"))))
+        (base32 "0a3slzskacp0pj0whnnqysqiclf6fby5x81i4mjdvckidgdyjprf"))))
     (properties `((upstream-name . "quest")))
     (build-system r-build-system)
-    (propagated-inputs (list r-str2str r-psychtools r-psych r-plyr r-car))
+    (propagated-inputs (list r-str2str
+                             r-psych
+                             r-plyr
+                             r-nlme
+                             r-multilevel
+                             r-mbess
+                             r-lme4
+                             r-lavaan
+                             r-checkmate
+                             r-car
+                             r-boot
+                             r-abind))
     (home-page "https://cran.r-project.org/package=quest")
     (synopsis "Prepare Questionnaire Data for Analysis")
     (description

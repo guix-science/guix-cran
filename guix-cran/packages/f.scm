@@ -9746,13 +9746,13 @@ of the project: <https://metabarcoding.org/flimo>.")
 (define-public r-flightsbr
   (package
     (name "r-flightsbr")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flightsbr" version))
        (sha256
-        (base32 "18csal1jd0998njvf6bwqjhapm5lzgb77zqh44p7cs6pgw4h7xpw"))))
+        (base32 "17i5v7v9ccp4wn9amzw0iv157q0x3nlx2qc8mr3npma4wshf7rvr"))))
     (properties `((upstream-name . "flightsbr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rvest r-pbapply r-parzer r-httr r-data-table))
@@ -14485,13 +14485,13 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
 (define-public r-fetch
   (package
     (name "r-fetch")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fetch" version))
        (sha256
-        (base32 "1q1rwfk4j8fvgxjhjpzdg6d0klcd39g55lcwhaznsj66ixwib84i"))))
+        (base32 "0xkaj5a0fiq0ph3702d6nc5fwjk1phngkkrckdv3v4pshii46a4y"))))
     (properties `((upstream-name . "fetch")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
