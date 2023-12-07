@@ -3595,13 +3595,13 @@ is provided.")
 (define-public r-evolqg
   (package
     (name "r-evolqg")
-    (version "0.3-3")
+    (version "0.3-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "evolqg" version))
        (sha256
-        (base32 "0d0rjpyhwk81r5imbk6836a1qk2q333d0s73zjj6k6cfx31zh7l9"))))
+        (base32 "1h4k2sxp67f3qn1cnmy290rgbmpvvj2zlw7gz5lbcgzbf53lb1bd"))))
     (properties `((upstream-name . "evolqg")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -3930,13 +3930,13 @@ Hodge, S. E., Chiang, T., Pal, D. K., Corey, P. N., & Rohde, C. (2010)
 (define-public r-evi
   (package
     (name "r-evi")
-    (version "0.1.1-4")
+    (version "0.2.0-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EVI" version))
        (sha256
-        (base32 "1lmcz8k88aahqdjw5nw3pgns9nn1dy30hkm505c1ilaiziwpdi6d"))))
+        (base32 "0q910z7xnvl8b0d0gw17hrz5fzxbsx9ij30z98sfdz6xglizg3kx"))))
     (properties `((upstream-name . "EVI")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2 r-cowplot))
@@ -3944,11 +3944,12 @@ Hodge, S. E., Chiang, T., Pal, D. K., Corey, P. N., & Rohde, C. (2010)
     (home-page "https://www.nature.com/articles/s41598-021-02622-3")
     (synopsis "Epidemic Volatility Index as an Early-Warning Tool")
     (description
-     "Implementation of the epidemic volatility index (EVI), as discussed by Kostoulas
-et.  al. (2021).  EVI is a new, conceptually simple, early warning tool for
-oncoming epidemic waves.  EVI is based on the volatility of newly reported cases
-per unit of time, ideally per day, and issues an early warning when the
-volatility change rate exceeds a threshold.")
+     "This is an R package implementing the epidemic volatility index (EVI), as
+discussed by Kostoulas et.  al. (2021) and variations by Pateras et.  al.
+(2023).  EVI is a new, conceptually simple, early warning tool for oncoming
+epidemic waves.  EVI is based on the volatility of newly reported cases per unit
+of time, ideally per day, and issues an early warning when the volatility change
+rate exceeds a threshold.")
     (license license:gpl3+)))
 
 (define-public r-evgam
@@ -6802,17 +6803,17 @@ model (@code{ErRUM}) described by Culpepper and Chen (2018)
 (define-public r-errors
   (package
     (name "r-errors")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "errors" version))
        (sha256
-        (base32 "15hmsyfcsjy33601a7v2r7sfk2kxbm4a8xwkgjppmf84vhpqplbx"))))
+        (base32 "0pyp1adhyp5kak4x9niyj3ncmda1xydsx2sfa7gjbm2fzazyslbh"))))
     (properties `((upstream-name . "errors")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/r-quantities/errors")
+    (home-page "https://r-quantities.github.io/errors/")
     (synopsis "Uncertainty Propagation for R Vectors")
     (description
      "Support for measurement errors in R vectors, matrices and arrays: automatic
@@ -7077,13 +7078,13 @@ attributes.")
 (define-public r-ergmgp
   (package
     (name "r-ergmgp")
-    (version "0.1")
+    (version "0.1-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ergmgp" version))
        (sha256
-        (base32 "0naibi232qg8ppwmp5fc7fshdr6czp4fzpzg80n0i5sv1m6alsk9"))))
+        (base32 "0463wg1g1vd14fwgnvm8aa20vvklvpaqdv4wn6jaybmn8y7kxi16"))))
     (properties `((upstream-name . "ergmgp")))
     (build-system r-build-system)
     (propagated-inputs (list r-statnet-common r-networkdynamic r-network

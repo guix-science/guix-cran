@@ -5440,17 +5440,17 @@ formatting of the numeric cells of a table and renaming column labels.")
 (define-public r-dpqmpfr
   (package
     (name "r-dpqmpfr")
-    (version "0.3-1")
+    (version "0.3-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DPQmpfr" version))
        (sha256
-        (base32 "0f3l6dhiqnlix5vdz65pnxic43hcd4xiz64sh3cp8xs8cbmlnqcw"))))
+        (base32 "0inj9i876bx2d9pvbazl0q1x2anc4raknay4y9iqkqskm72pwkvp"))))
     (properties `((upstream-name . "DPQmpfr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rmpfr r-gmp r-dpq))
-    (home-page "https://cran.r-project.org/package=DPQmpfr")
+    (propagated-inputs (list r-sfsmisc r-rmpfr r-gmp r-dpq))
+    (home-page "https://specfun.r-forge.r-project.org/")
     (synopsis
      "DPQ (Density, Probability, Quantile) Distribution Computations using MPFR")
     (description
@@ -15468,13 +15468,13 @@ column will be converted to the multi-level hierarchy.")
 (define-public r-dextermst
   (package
     (name "r-dextermst")
-    (version "0.9.5")
+    (version "0.9.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dexterMST" version))
        (sha256
-        (base32 "1m44scvrm184m5b3qxlk3mmjgar2dgrc06p7ayajpjchwdlwm92b"))))
+        (base32 "073xx30gavig6nhi6ppll7jdgf7yvci8nv6pyxcy9vl177l1k62b"))))
     (properties `((upstream-name . "dexterMST")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

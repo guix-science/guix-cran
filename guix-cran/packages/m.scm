@@ -8,11 +8,11 @@
   #:use-module (gnu packages cran)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages java)
+  #:use-module (gnu packages maths)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages python)
-  #:use-module (gnu packages maths)
   #:use-module (gnu packages tls)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages web)
@@ -686,6 +686,31 @@ developed from Surrogate Synchrony ('SUSY') with respect to implementing
 surrogate controls, and extends synchrony estimation to multivariate data.
 @code{mvSUSY} works as described in Meier & Tschacher (2021).")
     (license license:gpl2)))
+
+(define-public r-mvst
+  (package
+    (name "r-mvst")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mvst" version))
+       (sha256
+        (base32 "0zfy7lgghmx6ziybxp3w1dar49bhnpzxjmdkzdnkcicrc4yjdl7w"))))
+    (properties `((upstream-name . "mvst")))
+    (build-system r-build-system)
+    (inputs (list gsl))
+    (propagated-inputs (list r-mvtnorm r-mnormt r-mcmcpack))
+    (home-page "https://cran.r-project.org/package=mvst")
+    (synopsis "Bayesian Inference for the Multivariate Skew-t Model")
+    (description
+     "Estimates the multivariate skew-t and nested models, as described in the
+articles Liseo, B., Parisi, A. (2013).  Bayesian inference for the multivariate
+skew-normal model: a population Monte Carlo approach.  Comput.  Statist.  Data
+Anal. <doi:10.1016/j.csda.2013.02.007> and in Parisi, A., Liseo, B. (2017).
+Objective Bayesian analysis for the multivariate skew-t model.  Statistical
+Methods & Applications <doi: 10.1007/s10260-017-0404-0>.")
+    (license license:gpl3)))
 
 (define-public r-mvslouch
   (package
@@ -21944,16 +21969,16 @@ imputation of the number of previous episodes.  See @code{HernÃ¡ndez-Herrera} 
 (define-public r-mirai-promises
   (package
     (name "r-mirai-promises")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mirai.promises" version))
        (sha256
-        (base32 "0fk897nw87ppz2bmx6i25q4r0xqk8j9m993ahwgaccqbppay5fj7"))))
+        (base32 "0yi9ks737b3afdbpj088lh33h2hb9bx993j2ag0klbwsfz2dffmi"))))
     (properties `((upstream-name . "mirai.promises")))
     (build-system r-build-system)
-    (propagated-inputs (list r-promises r-nanonext r-later))
+    (propagated-inputs (list r-promises r-nanonext))
     (home-page "https://shikokuchuo.net/mirai.promises/")
     (synopsis "Make 'Mirai' 'Promises'")
     (description
@@ -27863,13 +27888,13 @@ the common-effect assumption.")
 (define-public r-metarange
   (package
     (name "r-metarange")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metaRange" version))
        (sha256
-        (base32 "0dnxzfhr4m84vspba0ds1vhdbdj1vr2qj87ddvzb57v1mi1gihnn"))))
+        (base32 "002vnnbvnhwy7qs3iqnw57nch342mz30rf05yxmxp6dkiqf3xiyx"))))
     (properties `((upstream-name . "metaRange")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-rcpparmadillo r-rcpp r-r6 r-checkmate))
@@ -41815,6 +41840,48 @@ estimates of GDP per capita for all countries in the world between AD 1 and
 2016.  See <https://www.rug.nl/ggdc/historicaldevelopment/maddison/> for more
 information.")
     (license license:cc0)))
+
+(define-public r-madantext
+  (package
+    (name "r-madantext")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MadanText" version))
+       (sha256
+        (base32 "1sz3mwb74yvj5ijmpm7zdwsgyvhs6rs8fpy1mpw538r5jx4xbzg8"))))
+    (properties `((upstream-name . "MadanText")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xlsx
+                             r-udpipe
+                             r-topicmodels
+                             r-tm
+                             r-tidytext
+                             r-tidyr
+                             r-textminer
+                             r-stringr
+                             r-stringi
+                             r-stopwords
+                             r-shinythemes
+                             r-shiny
+                             r-persianstemmer
+                             r-lattice
+                             r-hwordcloud
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=MadanText")
+    (synopsis
+     "Persian Text Mining Tool for Frequency Analysis, Statistical Analysis, and Word Clouds")
+    (description
+     "This is an open-source software designed specifically for text mining in the
+Persian language.  It allows users to examine word frequencies, download data
+for analysis, and generate word clouds.  This tool is particularly useful for
+researchers and analysts working with Persian language data.  This package
+mainly makes use of the @code{PersianStemmer} (Safshekan, R., et al. (2019).
+<https://CRAN.R-project.org/package=@code{PersianStemmer>}), udpipe (Wijffels,
+J., et al. (2023). <https://CRAN.R-project.org/package=udpipe>), and shiny
+(Chang, W., et al. (2023). <https://CRAN.R-project.org/package=shiny>) packages.")
+    (license license:gpl3)))
 
 (define-public r-mada
   (package

@@ -982,6 +982,28 @@ plots) <doi:10.1093/nar/30.4.e15>, staggered count plots and generation of
 mouse-over interactive html pages.")
     (license license:gpl3)))
 
+(define-public r-wrestimates
+  (package
+    (name "r-wrestimates")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "WRestimates" version))
+       (sha256
+        (base32 "03anhcwq9xlzj3zh7kpqm5n6znqiwvkwnd0w1b82my9rk3gp63gw"))))
+    (properties `((upstream-name . "WRestimates")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=WRestimates")
+    (synopsis "Sample Size, Power and CI for the Win Ratio")
+    (description
+     "Calculates non-parametric estimates of the sample size, power and confidence
+intervals for the win-ratio.  For more detail on the theory behind the
+methodologies implemented see Yu, R. X. and Ganju, J. (2022)
+<doi:10.1002/sim.9297>.")
+    (license license:expat)))
+
 (define-public r-wrensbookshelf
   (package
     (name "r-wrensbookshelf")

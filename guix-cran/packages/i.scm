@@ -344,13 +344,13 @@ Least Squares estimators (Amemiya, Takeshi, (1978) <doi: 10.2307/1911443>).")
 (define-public r-ivo-table
   (package
     (name "r-ivo-table")
-    (version "0.1")
+    (version "0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ivo.table" version))
        (sha256
-        (base32 "1qc22r6gldz1icvgpxfs9ycwfijlljdyq0x9xcp2xljvqcrswflg"))))
+        (base32 "00a4n48cm98c9a7fw4lbq4iirniynpdvfn8f9y2blrgnvq48nfrg"))))
     (properties `((upstream-name . "ivo.table")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -362,11 +362,11 @@ Least Squares estimators (Amemiya, Takeshi, (1978) <doi: 10.2307/1911443>).")
                              r-dplyr
                              r-checkmate))
     (home-page "https://cran.r-project.org/package=ivo.table")
-    (synopsis "Pretty Contingency Tables and Frequency Tables")
+    (synopsis "Nicely Formatted Contingency Tables and Frequency Tables")
     (description
-     "Nicely formatted frequency tables and contingency tables (cross-tables), that
-can easily be exported to HTML or Office documents, including Excel'.  Designed
-to work with pipes.")
+     "Nicely formatted frequency tables and contingency tables (1-way, 2-way, 3-way
+and 4-way tables), that can easily be exported to HTML or Office documents,
+including Excel'.  Designed to work with pipes.")
     (license license:expat)))
 
 (define-public r-ivmte
@@ -1262,13 +1262,13 @@ and similarity calculations.")
 (define-public r-istats
   (package
     (name "r-istats")
-    (version "1.6")
+    (version "1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iSTATS" version))
        (sha256
-        (base32 "0fdicyycwh1d1yzrf9241d3cf03vzqyhchwsy191hiwa5fa6bm7w"))))
+        (base32 "1iay9ncydkhbvpsjla7nqiy74n5lg8w647djp2sfap8jspkdr0gg"))))
     (properties `((upstream-name . "iSTATS")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinywidgets
@@ -3783,13 +3783,13 @@ multivariate cases.")
 (define-public r-iq
   (package
     (name "r-iq")
-    (version "1.9.10")
+    (version "1.9.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iq" version))
        (sha256
-        (base32 "0nklhggsh8z8r7s39ssw22fkiy52wwgggpx2majsi6bmyj2w3arh"))))
+        (base32 "0ka189anzdyfbf1gyhbsq40rsf4b85ragjg84mwfcgwk324y307c"))))
     (properties `((upstream-name . "iq")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp))
@@ -4761,13 +4761,13 @@ can find the full API documentation at <https://ipbase.com/docs> .")
 (define-public r-ipanema
   (package
     (name "r-ipanema")
-    (version "0.3.1")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ipanema" version))
        (sha256
-        (base32 "0gnp08d616kh6qcab5igp7mi18rp3024fxi0amr40fq4invv7pic"))))
+        (base32 "14yj6vj13897fc7axv5n6i68h002qglm0pgjy3rqayvlcclfsxh7"))))
     (properties `((upstream-name . "ipanema")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmysql
@@ -9716,18 +9716,18 @@ cohort.")
 (define-public r-incidence2
   (package
     (name "r-incidence2")
-    (version "2.2.1")
+    (version "2.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "incidence2" version))
        (sha256
-        (base32 "1wd13m46siin6fcjhsk5r836ncplpq22by5f1b1fdpp5my6381ps"))))
+        (base32 "0l8qk8wvwnnjw81gvsm3f4j0qmj7801mka03wbnkhr90ii23f9x6"))))
     (properties `((upstream-name . "incidence2")))
     (build-system r-build-system)
     (propagated-inputs (list r-pillar r-grates r-data-table))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/reconverse/incidence2")
+    (home-page "https://www.reconverse.org/incidence2/")
     (synopsis "Compute, Handle and Plot Incidence of Dated Events")
     (description
      "This package provides functions and classes to compute, handle and visualise

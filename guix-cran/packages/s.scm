@@ -60,13 +60,13 @@
 (define-public r-syt
   (package
     (name "r-syt")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "syt" version))
        (sha256
-        (base32 "1pfl3d6laa075z88fqgjnrsn21lgjsak0bjdws09b9knc0ifgfsz"))))
+        (base32 "19vjqkk0ji35zm3xqrjmlahjawnxapmsh0d6v9klb6h05aamd0gg"))))
     (properties `((upstream-name . "syt")))
     (build-system r-build-system)
     (propagated-inputs (list r-partitions r-matrix))
@@ -75,7 +75,8 @@
     (description
      "Deals with standard Young tableaux (field of combinatorics).  Performs
 enumeration, counting, random generation, the Robinson-Schensted correspondence,
-and conversion to and from paths on the Young lattice.")
+and conversion to and from paths on the Young lattice.  Also performs
+enumeration and counting of semistandard Young tableaux.")
     (license license:gpl3)))
 
 (define-public r-systemicr
@@ -22325,27 +22326,27 @@ statistical exploratory tools and raster-based metrics.")
 (define-public r-spatialddls
   (package
     (name "r-spatialddls")
-    (version "0.1.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SpatialDDLS" version))
        (sha256
-        (base32 "00aan8pkgyay5bcqw2w2nx0jl7z7aqpja285lw34ff2gqy0bbwrh"))))
+        (base32 "0mdkl3395hlfsqr5121l1hka089wxssa11v543idqyjhm30qjzg8"))))
     (properties `((upstream-name . "SpatialDDLS")))
     (build-system r-build-system)
     (inputs (list tensorflow python))
     (propagated-inputs (list r-zinbwave
-                             r-tidyr
                              r-tensorflow
                              r-summarizedexperiment
                              r-spatialexperiment
                              r-singlecellexperiment
+                             r-scuttle
+                             r-scran
                              r-s4vectors
                              r-rlang
                              r-reticulate
                              r-reshape2
-                             r-rcolorbrewer
                              r-pbapply
                              r-matrix
                              r-keras
@@ -22353,6 +22354,7 @@ statistical exploratory tools and raster-based metrics.")
                              r-grr
                              r-ggpubr
                              r-ggplot2
+                             r-fnn
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://diegommcc.github.io/SpatialDDLS/")
@@ -22364,9 +22366,9 @@ on deep neural networks and single-cell RNA-seq data.  These models are able to
 make accurate estimates of the cell composition of spots in spatial
 transcriptomics datasets from the same context using the advances provided by
 deep learning and the meaningful information provided by single-cell RNA-Seq
-data.  See Torroja and Sanchez-Cabo (2019) <doi:10.3389/fgene.2019.00978> to get
-an overview of the method, but its application to spatial transcriptomics data
-will be available soon.")
+data.  See Torroja and Sanchez-Cabo (2019) <doi:10.3389/fgene.2019.00978> and
+@code{MaÃ±anes} et al. (2023) <doi:10.1101/2023.08.31.555677> to get an overview
+of the method and see some examples of its performance.")
     (license license:gpl3)))
 
 (define-public r-spatialcovariance
@@ -23042,13 +23044,13 @@ variable analysis.")
 (define-public r-sparser
   (package
     (name "r-sparser")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sparseR" version))
        (sha256
-        (base32 "0sly1bga1n5nvhbbfwbzy4giyvlhg4mivqibj4nzc46pk8xlyhc3"))))
+        (base32 "1q77n45kl1hqx5a6cr4hschj8zv0ymw8v7yvm748sdplan2dj417"))))
     (properties `((upstream-name . "sparseR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-recipes r-ncvreg r-magrittr r-dplyr))
@@ -26690,13 +26692,13 @@ utility functions for graphs and several sample data sets.  See Healy (2019)
 (define-public r-sociome
   (package
     (name "r-sociome")
-    (version "2.2.1")
+    (version "2.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sociome" version))
        (sha256
-        (base32 "0s9ffh9g5ydjglvrc14zhp6im0dz5mq64yakby2myjx670mwwl9w"))))
+        (base32 "1fyimv1i83ck7hwb7nnbdk46fiasi4kb8h944dni73536mnhc57g"))))
     (properties `((upstream-name . "sociome")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -37752,6 +37754,29 @@ Differential Effect Search\" (SIDES) method proposed by Lipkovich et al. (2011)
 <doi:10.1002/sim.4289>.")
     (license license:gpl3)))
 
+(define-public r-sid
+  (package
+    (name "r-sid")
+    (version "1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SID" version))
+       (sha256
+        (base32 "0wqbv9mlrcf0kjdd8n43vf7fjlhp2nialaaid5dfjsxnlzbf1sl6"))))
+    (properties `((upstream-name . "SID")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rbgl r-pcalg r-matrix r-igraph))
+    (home-page "https://github.com/fkgruber/SID_cran")
+    (synopsis "Structural Intervention Distance")
+    (description
+     "The code computes the structural intervention distance (SID) between a true
+directed acyclic graph (DAG) and an estimated DAG. Definition and details about
+the implementation can be found in J. Peters and P. BÃ¼hlmann: \"Structural
+intervention distance (SID) for evaluating causal graphs\", Neural Computation
+27, pages 771-799, 2015 <doi:10.1162/NECO_a_00708>.")
+    (license (license:fsdg-compatible "FreeBSD"))))
+
 (define-public r-siconvr
   (package
     (name "r-siconvr")
@@ -42857,13 +42882,13 @@ Detailed method is available at Villain L, Ferte T, Thiebaut R and Hejblum BP
 (define-public r-sgb
   (package
     (name "r-sgb")
-    (version "1.0.1")
+    (version "1.0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SGB" version))
        (sha256
-        (base32 "0j48fx9bf2k8k3ykp629jfi1jbs23673nz6rg54rvcrrsl6hb9v3"))))
+        (base32 "0lhb0rqih154lxzczdk8i613my3zwym9479n3r4h9xym9bjq80lr"))))
     (properties `((upstream-name . "SGB")))
     (build-system r-build-system)
     (propagated-inputs (list r-numderiv r-mass r-formula r-alabama))

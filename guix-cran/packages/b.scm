@@ -386,13 +386,13 @@ bounded-variable least squares")
 (define-public r-bvhar
   (package
     (name "r-bvhar")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bvhar" version))
        (sha256
-        (base32 "0iavx4dnz9kii74rdar2vxc0jj9pq5xqi71ilhp7mhw6745jij83"))))
+        (base32 "1flzfblrjbzwg5vv3c13pvf90yn5g47n2h1w6j5ny17ix192acdq"))))
     (properties `((upstream-name . "bvhar")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -419,7 +419,7 @@ bounded-variable least squares")
 autoregressive (VHAR) model, referring to Kim & Baek (2023+)
 (<doi:10.1080/00949655.2023.2281644>).  bvhar can model Vector Autoregressive
 (VAR), VHAR, Bayesian VAR (BVAR), and Bayesian VHAR (BVHAR) models.")
-    (license license:expat)))
+    (license license:gpl3+)))
 
 (define-public r-bvarverse
   (package
@@ -4258,13 +4258,13 @@ and aggregate data for a specified query or query group.")
 (define-public r-branching
   (package
     (name "r-branching")
-    (version "0.9.4")
+    (version "0.9.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Branching" version))
        (sha256
-        (base32 "1c209gdasm7qipv2gg4d1hr0jmhnzz5rddgjxb7xacazc0c2mhff"))))
+        (base32 "0kjinxyryaima4in1jawdp963sf10sxm3qq0jb0z95ycj4x2dls9"))))
     (properties `((upstream-name . "Branching")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=Branching")
@@ -4277,13 +4277,13 @@ processes.")
 (define-public r-branchglm
   (package
     (name "r-branchglm")
-    (version "2.1.2")
+    (version "2.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BranchGLM" version))
        (sha256
-        (base32 "1rg5pylkqbmsq6kwjw710rgydw8xg8l2c3bqhpn5j53lcprclaqs"))))
+        (base32 "04s0r078cfx2wbn0m3blx1krbw9m4nd7jp6fd4dhfyq4grd4y4ny"))))
     (properties `((upstream-name . "BranchGLM")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-bh))
@@ -5091,13 +5091,13 @@ style.  Visualize the effect of factor.")
 (define-public r-boxplotcluster
   (package
     (name "r-boxplotcluster")
-    (version "0.2")
+    (version "0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "boxplotcluster" version))
        (sha256
-        (base32 "1ppsvnkyxpjmv0l1ld73lf9lxca32qgd2hpn7qi5wcjwmsh4zad2"))))
+        (base32 "1c3hy8h780c11hl98vwdn614nprxd2vb3n3rv23qdcl8fld0r16h"))))
     (properties `((upstream-name . "boxplotcluster")))
     (build-system r-build-system)
     (propagated-inputs (list r-cluster))
@@ -7296,15 +7296,16 @@ Includes standard diagnostics and visualization tools to evaluate the results.")
 (define-public r-bnlearn
   (package
     (name "r-bnlearn")
-    (version "4.9")
+    (version "4.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bnlearn" version))
        (sha256
-        (base32 "09wj8ha7ph12s1bvc2a1ld2f9qfqabflna160y1wx1a79c7annai"))))
+        (base32 "027fyphnalbivyysqrkczspcmyi35vccb2qppi1ipys7r45g9qai"))))
     (properties `((upstream-name . "bnlearn")))
     (build-system r-build-system)
+    (inputs (list))
     (home-page "https://www.bnlearn.com/")
     (synopsis
      "Bayesian Network Structure Learning, Parameter Learning and Inference")
@@ -12072,6 +12073,28 @@ as well as for discretization of continuous values, for example, during
 generation of features used in machine learning algorithms.")
     (license license:asl2.0)))
 
+(define-public r-binpackr
+  (package
+    (name "r-binpackr")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "binpackr" version))
+       (sha256
+        (base32 "1kc5cm8apijgxwncpj3vflpm2alxlyz7nj2ifa09rh4n36c17hzm"))))
+    (properties `((upstream-name . "binpackr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-cpp11))
+    (home-page "https://github.com/lschneiderbauer/binpackr")
+    (synopsis "Fast 1d Bin Packing")
+    (description
+     "This package implements the First Fit Decreasing algorithm to achieve one
+dimensional heuristic bin packing.  Runtime is of order O(n log(n)) where n is
+the number of items to pack.  See \"The Art of Computer Programming Vol.  1\" by
+Donald E. Knuth (1997, ISBN: 0201896834) for more details.")
+    (license license:gpl3+)))
+
 (define-public r-binovisualfields
   (package
     (name "r-binovisualfields")
@@ -15439,13 +15462,13 @@ al. (2021) <DOI:10.18637/jss.v100.i18>.")
 (define-public r-bfp
   (package
     (name "r-bfp")
-    (version "0.0-46")
+    (version "0.0-47")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bfp" version))
        (sha256
-        (base32 "129pnd3hkaan26dxjs9qp49yhbq9r7mhmp780x6yzcdn74xzwfnw"))))
+        (base32 "0g6hd82y5kkmiwsqvhcsa3x4j12shkraacpi81lal0ci5w9lfgxi"))))
     (properties `((upstream-name . "bfp")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -16410,13 +16433,13 @@ Kalogeropoulos, K., and Ntzoufras, I. (2022) <@code{arXiv:2211.15229>}.")
 (define-public r-bergm
   (package
     (name "r-bergm")
-    (version "5.0.6")
+    (version "5.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Bergm" version))
        (sha256
-        (base32 "0ibbskkanff7hxk2bcp6p8v0zk5wsb53zw12znmw855xas26spsy"))))
+        (base32 "13wdkbjnqj3dk8fpk8vblkf4z79j87gdszjdzwysq9i10l6yl6ir"))))
     (properties `((upstream-name . "Bergm")))
     (build-system r-build-system)
     (propagated-inputs (list r-statnet-common
@@ -24011,13 +24034,13 @@ shrinking and diffusing priors studied in Narisetty & He (2014)
 (define-public r-bas
   (package
     (name "r-bas")
-    (version "1.6.6")
+    (version "1.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BAS" version))
        (sha256
-        (base32 "0b9mnsj97v4kaa67ba6kdpbrcqwsw02xfr98jzrihyfs4dk1mwpb"))))
+        (base32 "1j76r9wl2limr7adlyr05n22q75sk8n03ar5bblpckcyrrqvpgr8"))))
     (properties `((upstream-name . "BAS")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

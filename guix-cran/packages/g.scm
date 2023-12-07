@@ -6879,6 +6879,30 @@ graph-guided hypothesis tests on the association between the response and the
 predictors.")
     (license license:gpl3)))
 
+(define-public r-grabsvg
+  (package
+    (name "r-grabsvg")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GrabSVG" version))
+       (sha256
+        (base32 "0w53wwaaap90shm17jjkyvcx55cpvpmd9cp9f7cbf36v73n74wjm"))))
+    (properties `((upstream-name . "GrabSVG")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sparsematrixstats r-spam r-rann r-matrix
+                             r-fitdistrplus))
+    (home-page "https://cran.r-project.org/package=GrabSVG")
+    (synopsis "Granularity-Based Spatially Variable Genes Identifications")
+    (description
+     "Identifying spatially variable genes is critical in linking molecular cell
+functions with tissue phenotypes.  This package implemented a granularity-based
+dimension-agnostic tool for the identification of spatially variable genes.  The
+detailed description of this method is available at Wang, J. and Li, J. et al.
+2023 (Wang, J. and Li, J. (2023), <doi:10.1038/s41467-023-43256-5>).")
+    (license license:gpl2+)))
+
 (define-public r-grabsampling
   (package
     (name "r-grabsampling")
@@ -11740,40 +11764,6 @@ Question, Kuk, Crosswise, and Triangular.  Reference: Fox, J-P, Veen, D. and
 Klotzke, K. (2018).  Generalized Linear Mixed Models for Randomized Responses.
 Methodology. <doi:10.1027/1614-2241/a000153>.")
     (license license:gpl3)))
-
-(define-public r-glmmroptim
-  (package
-    (name "r-glmmroptim")
-    (version "0.3.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "glmmrOptim" version))
-       (sha256
-        (base32 "0i8b9pphsiy9bs43milkn1b2b7a3p2g0fci7l6vr3xp79bbkgk8y"))))
-    (properties `((upstream-name . "glmmrOptim")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sparsechol
-                             r-rminqa
-                             r-rcppprogress
-                             r-rcppeigen
-                             r-rcpp
-                             r-matrix
-                             r-glmmrbase
-                             r-digest
-                             r-bh))
-    (home-page "https://github.com/samuel-watson/glmmrOptim")
-    (synopsis
-     "Approximate Optimal Experimental Designs Using Generalised Linear Mixed Models")
-    (description
-     "Optimal design analysis algorithms for any study design that can be represented
-or modelled as a generalised linear mixed model including cluster randomised
-trials, cohort studies, spatial and temporal epidemiological studies, and
-split-plot designs.  See
-<https://github.com/samuel-watson/@code{glmmrBase/blob/master/README.md>} for a
-detailed manual on model specification.  A detailed discussion of the methods in
-this package can be found in Watson and Pan (2022) <@code{arXiv:2207.09183>}.")
-    (license license:gpl2+)))
 
 (define-public r-glmmrbase
   (package
@@ -16919,13 +16909,13 @@ regression curves.")
 (define-public r-ggirread
   (package
     (name "r-ggirread")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GGIRread" version))
        (sha256
-        (base32 "1basg24y3p08q6crk67q43pzpsbjmg627knn1sma0y1g17ksn4ga"))))
+        (base32 "0ml24m0lnh0v4fykzni4q1xhyzfjyyrnancwf9nikywcxbi358fn"))))
     (properties `((upstream-name . "GGIRread")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-matlab r-bitops))
@@ -20157,6 +20147,31 @@ Endrizzi et al (2014)
     (home-page "https://cran.r-project.org/package=geotools")
     (synopsis "Geo tools")
     (description "This package provides tools")
+    (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-geostatsp
+  (package
+    (name "r-geostatsp")
+    (version "2.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geostatsp" version))
+       (sha256
+        (base32 "1xmnc33mw9dy991b4f72jbcd7bvpmw3ngfq7159lcfnbk7lgmhvv"))))
+    (properties `((upstream-name . "geostatsp")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra r-numderiv r-matrix r-abind))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=geostatsp")
+    (synopsis "Geostatistical Modelling with Likelihood and Bayes")
+    (description
+     "Geostatistical modelling facilities using @code{SpatRaster} and
+@code{SpatVector} objects are provided.  Non-Gaussian models are fit using
+INLA', and Gaussian geostatistical models use Maximum Likelihood Estimation.
+For details see Brown (2015) <doi:10.18637/jss.v063.i12>.  The
+@code{RandomFields} package is available at
+<https://www.wim.uni-mannheim.de/schlather/publications/software>.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-geostats
@@ -23813,6 +23828,27 @@ the package documentation.  See Blevins and Mullen (2015)
      "Set of functions to create datasets using a correlation matrix.")
     (license license:gpl3)))
 
+(define-public r-gencountr
+  (package
+    (name "r-gencountr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "genCountR" version))
+       (sha256
+        (base32 "0s5hbvg71vsg02c3z8g2vim431jrc2jfksh28si2ycqi6bz2aj0y"))))
+    (properties `((upstream-name . "genCountR")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://gencounter.app.damoncroberts.com")
+    (synopsis
+     "Interacting with Roberts and Utych's (2019) Gendered Language Dictionary")
+    (description
+     "Allows users to generate a gendered language score according to the gendered
+language dictionary in Roberts and Utych (2019) <doi:10.1177/1065912919874883>.")
+    (license license:expat)))
+
 (define-public r-gencor
   (package
     (name "r-gencor")
@@ -24567,17 +24603,17 @@ pathway level analyses.")
 (define-public r-geds
   (package
     (name "r-geds")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeDS" version))
        (sha256
-        (base32 "1ddq4hnyl3m3s4cchccxiqphi742ljcm86zqpa01a5nrjbnr87x6"))))
+        (base32 "05zmghjcqsnbdyvc2v2hfzj9ymr9m90rhjlryxdf3bdmjarh8l57"))))
     (properties `((upstream-name . "GeDS")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmpfr r-rcpp r-matrix))
-    (home-page "http://github.com/alattuada/GeDS")
+    (home-page "https://github.com/emilioluissaenzguillen/GeDS")
     (synopsis "Geometrically Designed Spline Regression")
     (description
      "Geometrically Designed Spline ('@code{GeDS}') Regression is a non-parametric
@@ -24587,7 +24623,7 @@ models in one or two independent variables, in the context of generalized
 and the order of the spline, assuming the response variable has a distribution
 from the exponential family.  A description of the method can be found in
 Kaishev et al. (2016) <doi:10.1007/s00180-015-0621-7> and Dimitrova et al.
-(2017) <https://openaccess.city.ac.uk/18460>.")
+(2017) <https://openaccess.city.ac.uk/id/eprint/18460/>.")
     (license license:gpl3)))
 
 (define-public r-gecko

@@ -260,13 +260,13 @@ manuscript corresponding to this package [Lyu, P. et al., (2023),
 (define-public r-juliaconnector
   (package
     (name "r-juliaconnector")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JuliaConnectoR" version))
        (sha256
-        (base32 "11nrj83qhj3xbzgkidi5pd98pg6glx8ajk55yvdcn65byaqpsj27"))))
+        (base32 "005l0i06whz6q7vx79pr9p6xbc01h9mngdr01gkkwrz78vi9xns9"))))
     (properties `((upstream-name . "JuliaConnectoR")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=JuliaConnectoR")

@@ -189,6 +189,28 @@ compressing and decompressing data streams, manipulating compressed files, and
 working with gzip', zlib', and deflate formats.")
     (license license:expat)))
 
+(define-public r-zlavian
+  (package
+    (name "r-zlavian")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ZLAvian" version))
+       (sha256
+        (base32 "0ay54al5gr2jxb2v2zj23d0ypnkp8k37vxvg0c0mirb0qd23gqrp"))))
+    (properties `((upstream-name . "ZLAvian")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-performance r-lme4 r-doparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/CDr-er/ZLAvian")
+    (synopsis "Zipf's Law of Abbreviation in Animal Vocalisations")
+    (description
+     "Assesses evidence for Zipf's Law of Abbreviation in animal vocalisation using
+IDs, note class and note duration.  The package also provides a webplot function
+for visualisation.  Davis, M. K., and Chen, G. (2007) <doi:10.2307/2346786>.")
+    (license license:cc-by-sa4.0)))
+
 (define-public r-zipsae
   (package
     (name "r-zipsae")

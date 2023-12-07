@@ -76,13 +76,13 @@
 (define-public r-pysparklyr
   (package
     (name "r-pysparklyr")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pysparklyr" version))
        (sha256
-        (base32 "048r4l88dwqm0y0hs31mji7dak7jgcbjqx4h99b3ij6vr39r7iya"))))
+        (base32 "0bsng2m9sw2iicd35db82r8xlinr600d8s8rzkx83picmcbj02bi"))))
     (properties `((upstream-name . "pysparklyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -10391,6 +10391,33 @@ specified model until sufficient convergence of the AR(1) coefficient is
 attained.")
     (license license:gpl2)))
 
+(define-public r-practools
+  (package
+    (name "r-practools")
+    (version "1.4.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PracTools" version))
+       (sha256
+        (base32 "0swk59q6n4cbmynq5dmwzfz8rbxfhji4snn69g7xfd94c48p7q9g"))))
+    (properties `((upstream-name . "PracTools")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-usmap r-ggplot2 r-geosphere r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=PracTools")
+    (synopsis "Designing and Weighting Survey Samples")
+    (description
+     "This package provides functions and datasets to support Valliant, Dever, and
+Kreuter (2018), <doi:10.1007/978-3-319-93632-1>, \"Practical Tools for Designing
+and Weighting Survey Samples\".  Contains functions for sample size calculation
+for survey samples using stratified or clustered one-, two-, and three-stage
+sample designs, and single-stage audit sample designs.  Functions are included
+that will group geographic units accounting for distances apart and measures of
+size.  Other functions compute variance components for multistage designs and
+sample sizes in two-phase designs.  A number of example data sets are included.")
+    (license license:gpl3)))
+
 (define-public r-practicalsigni
   (package
     (name "r-practicalsigni")
@@ -14805,13 +14832,13 @@ based on bi-allelic marker dosage data.  Submitted to BMC Bioinformatics (2021).
 (define-public r-polyglotr
   (package
     (name "r-polyglotr")
-    (version "1.2.2")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "polyglotr" version))
        (sha256
-        (base32 "0c997bym4mz7qkfb51p6iqhfn3z28qpwqb84jmf6lxg9vgdv7fam"))))
+        (base32 "1m311k771c7pcb6g40zzrl2qrr89ijc47qw84rg84xmcz9vzipdw"))))
     (properties `((upstream-name . "polyglotr")))
     (build-system r-build-system)
     (propagated-inputs (list r-urltools
@@ -14819,6 +14846,7 @@ based on bi-allelic marker dosage data.  Submitted to BMC Bioinformatics (2021).
                              r-stringr
                              r-rvest
                              r-rlang
+                             r-rcurl
                              r-purrr
                              r-magrittr
                              r-httr
@@ -16719,18 +16747,17 @@ Levin (1981) <doi:10.1214/aos/1176345593>.")
 (define-public r-pmsampsize
   (package
     (name "r-pmsampsize")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pmsampsize" version))
        (sha256
-        (base32 "0msbkjpzssgkc4ndx9s1rb8mgg07bx7fdlq48j5s8ak8n1gwdkyk"))))
+        (base32 "0sch7inlg9lvb9y8cf3gqwmgxwn2zi3xw3fp7rnz05978f8fa088"))))
     (properties `((upstream-name . "pmsampsize")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=pmsampsize")
-    (synopsis
-     "Calculates the Minimum Sample Size Required for Developing a Multivariable Prediction Model")
+    (synopsis "Sample Size for Development of a Prediction Model")
     (description
      "Computes the minimum sample size required for the development of a new
 multivariable prediction model using the criteria proposed by Riley et al.
@@ -17092,6 +17119,59 @@ Method described in Carl Boettiger, Graham Coop, Peter Ralph (2012) Is your
 phylogeny informative? Measuring the power of comparative methods, Evolution 66
 (7) 2240-51. <doi:10.1111/j.1558-5646.2011.01574.x>.")
     (license license:cc0)))
+
+(define-public r-pmartr
+  (package
+    (name "r-pmartr")
+    (version "2.4.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pmartR" version))
+       (sha256
+        (base32 "0jdy54ck9b8zxkms66arhgsgi90jm4v34izb1r6y6yinld560brm"))))
+    (properties `((upstream-name . "pmartR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-rrcov
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-rcolorbrewer
+                             r-purrr
+                             r-plotly
+                             r-pcamethods
+                             r-patchwork
+                             r-parallelly
+                             r-mvtnorm
+                             r-magrittr
+                             r-glmpca
+                             r-ggplot2
+                             r-foreach
+                             r-e1071
+                             r-dplyr
+                             r-doparallel
+                             r-data-table
+                             r-bh))
+    (home-page "https://github.com/pmartR/pmartR")
+    (synopsis
+     "Panomics Marketplace - Quality Control and Statistical Analysis for Panomics Data")
+    (description
+     "This package provides functionality for quality control processing and
+statistical analysis of mass spectrometry (MS) omics data, in particular
+proteomic (either at the peptide or the protein level), lipidomic, and
+metabolomic data, as well as RNA-seq based count data and nuclear magnetic
+resonance (NMR) data.  This includes data transformation, specification of
+groups that are to be compared against each other, filtering of features and/or
+samples, data normalization, data summarization (correlation, PCA), and
+statistical comparisons between defined groups.  Implements methods described
+in: Webb-Robertson et al. (2014) <doi:10.1074/mcp.M113.030932>.  Webb-Robertson
+et al. (2011) <doi:10.1002/pmic.201100078>.  Matzke et al. (2011)
+<doi:10.1093/bioinformatics/btr479>.  Matzke et al. (2013)
+<doi:10.1002/pmic.201200269>.  Polpitiya et al. (2008)
+<doi:10.1093/bioinformatics/btn217>.  Webb-Robertson et al. (2010)
+<doi:10.1021/pr1005247>.")
+    (license license:bsd-2)))
 
 (define-public r-pmapscore
   (package
@@ -23209,13 +23289,13 @@ of interaction terms.")
 (define-public r-phi2rho
   (package
     (name "r-phi2rho")
-    (version "1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Phi2rho" version))
        (sha256
-        (base32 "0lphg0hyzsr7mcchrv53rx8vvi0bd7hdbxk78qndjmb1mpy2f8b5"))))
+        (base32 "14bbnpr4jpbmj914hg8782nkqr3mbp3xmywaiicb2w4wn6m6ljm0"))))
     (properties `((upstream-name . "Phi2rho")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmpfr))
@@ -23224,7 +23304,9 @@ of interaction terms.")
     (description
      "Computes the Owen's T function or the bivariate normal integral using one of the
 following: modified Euler's arctangent series, tetrachoric series, or Vasicek's
-series.")
+series.  For the methods, see Komelj, J. (2023) <doi:10.4236/ajcm.2023.134026>
+(or reprint <@code{arXiv:2312.00011>} with better typography) and Vasicek, O. A.
+(1998) <doi:10.21314/JCF.1998.015>.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-phevis
@@ -23316,6 +23398,31 @@ predictive capacity of the proportional hazards model.")
 Mendelian disease and rare genetic variants.  See Bastarache et al.  2018
 <doi:10.1126/science.aal4043>.")
     (license license:gpl2)))
+
+(define-public r-phenthauproc
+  (package
+    (name "r-phenthauproc")
+    (version "0.9.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PHENTHAUproc" version))
+       (sha256
+        (base32 "0xw4smyyx399j1d4mk45c0q1my0847jn67w0lijjy8h4fwz8v599"))))
+    (properties `((upstream-name . "PHENTHAUproc")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra r-rlang r-lubridate))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=PHENTHAUproc")
+    (synopsis "Modelling Phenology of Oak Processionary Moth")
+    (description
+     "This package provides methods to calculate and present PHENTHAUproc', an early
+warning and decision support system for hazard assessment and control of oak
+processionary moth (Thaumetopoea processionea) using local and spatial
+temperature data.  It was created by Halbig et al.  2023 (in submission) at the
+FVA (<https://www.fva-bw.de>) a forest research institute in Baden-Wuerttemberg,
+Germany.")
+    (license license:expat)))
 
 (define-public r-phenotypesimulator
   (package
@@ -33391,35 +33498,6 @@ that same node.  This package, named after the Greek aphorism Panta Rhei
 (everything flows), provides functions to create publication-quality diagrams,
 using data in tables (or spread sheets) and a simple syntax.")
     (license (license:fsdg-compatible "EUPL"))))
-
-(define-public r-panstarrs
-  (package
-    (name "r-panstarrs")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "panstarrs" version))
-       (sha256
-        (base32 "0pnzbw1m1vgy40f7m2wbym9rgdvaa2i9fqkadfnpj4z428b50627"))))
-    (properties `((upstream-name . "panstarrs")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-jsonlite
-                             r-httr
-                             r-data-table
-                             r-curl
-                             r-checkmate
-                             r-bit64))
-    (native-inputs (list r-knitr))
-    (home-page "https://uskovgs.github.io/PanSTARRS/")
-    (synopsis "Interface to the Pan-STARRS API")
-    (description
-     "An interface to the API for Pan-STARRS1', a data archive of the PS1 wide-field
-astronomical survey.  The package allows access to the PS1 catalog and to the
-PS1 images. (see <https://outerspace.stsci.edu/display/PANSTARRS/> for more
-information).  You can use it to plan astronomical observations, make guidance
-pictures, find magnitudes in five broadband filters (g, r, i, z, y) and more.")
-    (license license:expat)))
 
 (define-public r-panprsnext
   (package

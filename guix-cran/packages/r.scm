@@ -15214,17 +15214,17 @@ scalar-on-function linear regression and function-on-function linear regression.
 (define-public r-robfilter
   (package
     (name "r-robfilter")
-    (version "4.1.3")
+    (version "4.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "robfilter" version))
        (sha256
-        (base32 "1r56p25c0624dxbd9lh8vbdqp69m0fzcfbzdx1kg4v0c25106ysw"))))
+        (base32 "10wrfd2ii99vscnajjrd48msn4ka75pn7h9yhgclilc9l9r0q1wn"))))
     (properties `((upstream-name . "robfilter")))
     (build-system r-build-system)
     (propagated-inputs (list r-robustbase r-mass r-lattice))
-    (home-page "http://www.statistik.tu-dortmund.de/fried.html")
+    (home-page "https://msnat.statistik.tu-dortmund.de/en/team/chair/")
     (synopsis "Robust Time Series Filters")
     (description
      "Implementations for several robust procedures that allow for (online) extraction
@@ -16612,13 +16612,13 @@ regularization parameter.  The method is fully described in
 (define-public r-rnanoflann
   (package
     (name "r-rnanoflann")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rnanoflann" version))
        (sha256
-        (base32 "1168bnl2c4mrslv6gbnmgfmks7yiksj0h5r7gznm45y3vq7b2kgk"))))
+        (base32 "1h978qaag2ylcdaxm70lzqcix3wlba64vfccws9nvm3d0ymdj7jl"))))
     (properties `((upstream-name . "Rnanoflann")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -16631,6 +16631,29 @@ searches with kd trees and two distances, the Euclidean and Manhattan'.  For
 more information see <https://github.com/jlblancoc/nanoflann>.  Also, the
 nanoflann library is exported and ready to be used via the linking to mechanism.")
     (license license:gpl3+)))
+
+(define-public r-rnamf
+  (package
+    (name "r-rnamf")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RNAmf" version))
+       (sha256
+        (base32 "07yr31wpbhp3n84cw2i8jhsxhb9sxdwqzrmdr6f8c6f42qmr0n5w"))))
+    (properties `((upstream-name . "RNAmf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-plgp r-lhs r-foreach r-doparallel))
+    (home-page "https://cran.r-project.org/package=RNAmf")
+    (synopsis "Recursive Non-Additive Emulator for Multi-Fidelity Data")
+    (description
+     "This package performs RNA emulation and active learning proposed by Heo and Sung
+(2023+) <@code{arXiv:2309.11772>} for multi-fidelity computer experiments.  The
+RNA emulator is particularly useful when the simulations with different fidelity
+level are nonlinearly correlated.  The hyperparameters in the model are
+estimated by maximum likelihood estimation.")
+    (license license:expat)))
 
 (define-public r-rmzqc
   (package
@@ -19198,13 +19221,13 @@ visualization.")
 (define-public r-rlistings
   (package
     (name "r-rlistings")
-    (version "0.2.4")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rlistings" version))
        (sha256
-        (base32 "138ad4rz6cqh9m04kmv9vmr8kjwj7n9kcpnvha6sl7mawgk8y2ks"))))
+        (base32 "0fbcj4m40gpavf631mya9yjyvzln0nv2v50s35m17y2kzmqyr25k"))))
     (properties `((upstream-name . "rlistings")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-formatters r-checkmate))
@@ -19678,13 +19701,13 @@ thermocline depth, lake number, Wedderburn number, Schmidt stability and others.
 (define-public r-rlabkey
   (package
     (name "r-rlabkey")
-    (version "3.0.0")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rlabkey" version))
        (sha256
-        (base32 "049k68fiklcjfxwna1nv5hbz0nfkf229ay0c4nckb2jis54ig8m7"))))
+        (base32 "1kkv7arnsxwrj8a0fv4ky1r8h9b8i5ycykrhz4cby87fsyhd776w"))))
     (properties `((upstream-name . "Rlabkey")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-jsonlite r-httr))
@@ -20759,13 +20782,13 @@ network and associated properties.")
 (define-public r-riverdist
   (package
     (name "r-riverdist")
-    (version "0.16.1")
+    (version "0.16.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "riverdist" version))
        (sha256
-        (base32 "0n4warz8994zln9x1k1cnqgzn9rh8768p5dw8ywc3qbc2kr10ha9"))))
+        (base32 "0ravdkj2b0fr4v441yvjhr6a46jimb2n7dxr1gv525lysjq2fi5a"))))
     (properties `((upstream-name . "riverdist")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf))
@@ -25706,13 +25729,13 @@ Steve Horvath (2006) <doi:10.1198/106186006X94072> & Monti et al (2003)
 (define-public r-rfcca
   (package
     (name "r-rfcca")
-    (version "1.0.11")
+    (version "1.0.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RFCCA" version))
        (sha256
-        (base32 "1l0igj4wxajq2712ia5rc4l11xqpdg32nx31h1d9dpnab31914wc"))))
+        (base32 "033a2dx8h469rksyjrh2fgxlrpz4n06bixla3rjg024cz10a4pfg"))))
     (properties `((upstream-name . "RFCCA")))
     (build-system r-build-system)
     (propagated-inputs (list r-pma r-cca))
@@ -29509,13 +29532,13 @@ things.")
 (define-public r-remify
   (package
     (name "r-remify")
-    (version "3.2.2")
+    (version "3.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "remify" version))
        (sha256
-        (base32 "15c70aqm8hppg22im4yc6n0gyc3hbmp59v8qvja6s7p6avb540nl"))))
+        (base32 "1dzpgrmmy7ag93prdfiqmhj7d7hlaiiwk897xgrkxzni20r1ck4h"))))
     (properties `((upstream-name . "remify")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-igraph))
@@ -32298,13 +32321,13 @@ default reports are generated as vignettes in the resulting package.")
 (define-public r-redcapdm
   (package
     (name "r-redcapdm")
-    (version "0.8.0")
+    (version "0.8.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "REDCapDM" version))
        (sha256
-        (base32 "1i1p40yklhmv53nn59znf3v51p6xbdrlnk5kc8b540i5q7c1i2hc"))))
+        (base32 "03ic1mrkd4zd3bdvcxb4l4v6knmzgs06k4g16vfsvxkhvcrdjnby"))))
     (properties `((upstream-name . "REDCapDM")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -32319,7 +32342,8 @@ default reports are generated as vignettes in the resulting package.")
                              r-magrittr
                              r-labelled
                              r-janitor
-                             r-dplyr))
+                             r-dplyr
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://ubidi.github.io/REDCapDM/")
     (synopsis "'REDCap' Data Management")
@@ -38805,13 +38829,13 @@ the DS and TAD methods.")
 (define-public r-rcmdrplugin-dce
   (package
     (name "r-rcmdrplugin-dce")
-    (version "0.2-0")
+    (version "0.2-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcmdrPlugin.DCE" version))
        (sha256
-        (base32 "1a73ksh98bzcqc4v8pid4c9n4rgz8553q82h70hhbam58922y65r"))))
+        (base32 "033inak78bsrf3jn1z3bhmjrspsskm54s0bskm9g8vs9avzav8i1"))))
     (properties `((upstream-name . "RcmdrPlugin.DCE")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-support-ces r-rcmdr))
@@ -38829,13 +38853,13 @@ Louviere et al. (2000) <doi:10.1017/CBO9780511753831>.")
 (define-public r-rcmdrplugin-dccv
   (package
     (name "r-rcmdrplugin-dccv")
-    (version "0.1-2")
+    (version "0.1-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcmdrPlugin.DCCV" version))
        (sha256
-        (base32 "1gqjprdz842yzp3n3a4c4zrv6bk7kdqcspmljn234nrzyz08ji6a"))))
+        (base32 "13dl79xkr3y2p2qigmnl7hq1lw4i99f3b03q6dc15yihb593za4i"))))
     (properties `((upstream-name . "RcmdrPlugin.DCCV")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcmdr r-dcchoice))
@@ -38892,13 +38916,13 @@ in a Permutation Test Framework).")
 (define-public r-rcmdrplugin-bws3
   (package
     (name "r-rcmdrplugin-bws3")
-    (version "0.2-0")
+    (version "0.2-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcmdrPlugin.BWS3" version))
        (sha256
-        (base32 "061k89bdi0z16qbgs6p25rsigsk46y08i4dm5cckj4p451l8lmq7"))))
+        (base32 "1hc0chajvpf0vvmwfmj8ps7wvb4bfglkx3zy845jpz9py90dbhdy"))))
     (properties `((upstream-name . "RcmdrPlugin.BWS3")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-support-ces r-support-bws3 r-rcmdr))
@@ -38941,20 +38965,19 @@ Fogarty (2019) <doi:10.1016/j.jocm.2019.100171>.")
 (define-public r-rcmdrplugin-bws1
   (package
     (name "r-rcmdrplugin-bws1")
-    (version "0.1-5")
+    (version "0.2-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcmdrPlugin.BWS1" version))
        (sha256
-        (base32 "1rwfmkpalyhmdfhwszk9q21l362qwq305b3jqh0nrwmmnr09v34w"))))
+        (base32 "0x9myvv21lwrr301kz162l2ifc7s3azkkqznf4izdl9yganq8301"))))
     (properties `((upstream-name . "RcmdrPlugin.BWS1")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-support-ces r-support-bws r-rcmdr
                              r-crossdes))
     (home-page "https://cran.r-project.org/package=RcmdrPlugin.BWS1")
-    (synopsis
-     "R Commander Plug-in for Case 1 (Object Case) Best-Worst Scaling")
+    (synopsis "R Commander Plug-in for Case 1 Best-Worst Scaling")
     (description
      "Adds menu items to the R Commander for implementing case 1 (object case)
 best-worst scaling (BWS1) from designing choice sets to measuring preferences

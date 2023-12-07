@@ -943,13 +943,13 @@ continuous treatments.  Journal of Causal Inference, 3(1), 25-40.
 (define-public r-twang
   (package
     (name "r-twang")
-    (version "2.5")
+    (version "2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "twang" version))
        (sha256
-        (base32 "1raczkxbkikwx9gi4p8nzgazqxa41ilpqvfjc07nwkvyqlkmadgw"))))
+        (base32 "1nvzcrgaspl987ny49rxf3lm3mqiw286kipzrmszdsqwy4m3ha0b"))))
     (properties `((upstream-name . "twang")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -10693,13 +10693,13 @@ distributions based on the algorithms proposed by Yifang Li and Sujit K. Ghosh
 (define-public r-tmvtnorm
   (package
     (name "r-tmvtnorm")
-    (version "1.5")
+    (version "1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tmvtnorm" version))
        (sha256
-        (base32 "1zk0ak71wlk9d0lkwn6q28sdz4y2k7sgx021vdprlcg4vimn0yhw"))))
+        (base32 "1fhvisddn3x4li2q12c3hss0cj735c0iq32c9cw646ni619jr6rd"))))
     (properties `((upstream-name . "tmvtnorm")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-matrix r-gmm))
@@ -13540,39 +13540,6 @@ Estimated Scatterplot Smoothing (LOESS) prediction correction.")
      "This package provides a consistent API to pull United States Department of
 Agriculture census and survey data from the National Agricultural Statistics
 Service (NASS) @code{QuickStats} service.")
-    (license license:expat)))
-
-(define-public r-tidytuesdayr
-  (package
-    (name "r-tidytuesdayr")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tidytuesdayR" version))
-       (sha256
-        (base32 "00xlbmgg8779ypqcrdgn56lyklqknhh3pmqfc49f84xa5hrkyjfs"))))
-    (properties `((upstream-name . "tidytuesdayR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-usethis
-                             r-rvest
-                             r-rstudioapi
-                             r-readxl
-                             r-readr
-                             r-purrr
-                             r-magrittr
-                             r-lubridate
-                             r-jsonlite
-                             r-httr))
-    (home-page "https://github.com/thebioengineer/tidytuesdayR")
-    (synopsis "Access the Weekly 'TidyTuesday' Project Dataset")
-    (description
-     "@code{TidyTuesday} is a project by the R4DS Online Learning Community in which
-they post a weekly dataset onto post a weekly dataset in a public data
-repository (<https://github.com/rfordatascience/tidytuesday>) for people to
-analyze and visualize.  This package provides the tools to easily download this
-data and the description of the source.")
     (license license:expat)))
 
 (define-public r-tidytreatment
@@ -24207,31 +24174,35 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
 (define-public r-tabnet
   (package
     (name "r-tabnet")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tabnet" version))
        (sha256
-        (base32 "1wxarcl68s4v88b1x2qw4vc4ybm66zm10qcinwk892n3srs7isfc"))))
+        (base32 "1myw6qx2h7szp6p0d5y4vy9mw5nsxmj64ybshp2q22whlbiqad7k"))))
     (properties `((upstream-name . "tabnet")))
     (build-system r-build-system)
-    (propagated-inputs (list r-vctrs
+    (propagated-inputs (list r-zeallot
+                             r-vctrs
                              r-torch
+                             r-tidyr
                              r-tibble
                              r-rlang
                              r-progress
                              r-magrittr
                              r-hardhat
-                             r-glue
+                             r-dplyr
                              r-coro))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/mlverse/tabnet")
+    (home-page "https://mlverse.github.io/tabnet/")
     (synopsis "Fit 'TabNet' Models for Classification and Regression")
     (description
      "This package implements the @code{TabNet} model by Sercan O. Arik et al. (2019)
-<@code{arXiv:1908.07442>} and provides a consistent interface for fitting and
-creating predictions.  It's also fully compatible with the tidymodels ecosystem.")
+<@code{arXiv:1908.07442>} with Coherent Hierarchical Multi-label Classification
+Networks by Giunchiglia et al. <@code{arXiv:2010.10151>} and provides a
+consistent interface for fitting and creating predictions.  It's also fully
+compatible with the tidymodels ecosystem.")
     (license license:expat)))
 
 (define-public r-tablexlsx

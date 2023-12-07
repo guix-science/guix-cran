@@ -302,13 +302,13 @@ applying it in different contexts (parametric or non-parametric).")
 (define-public r-fwb
   (package
     (name "r-fwb")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fwb" version))
        (sha256
-        (base32 "1h6ydh9rzs44xr89995bj4z91n4vc2xa1gjkh3nfhzjk6cgnja02"))))
+        (base32 "02r6p2ck56lm3ip105cp0m5q05lifynpq767bl2igf7zsvhjqpak"))))
     (properties `((upstream-name . "fwb")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-pbapply r-chk))
@@ -3308,13 +3308,13 @@ the irrelevant and redundant information as possible.")
 (define-public r-fsdar
   (package
     (name "r-fsdar")
-    (version "0.8-1")
+    (version "0.9-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fsdaR" version))
        (sha256
-        (base32 "1j4q92lkmijap1hwv8grdhzaqr9c739894vh9l9a7vvllqa5n6nq"))))
+        (base32 "1jg8m5rdafzl9xw27knrnhyyq1y7ss4v0azm1q3rgqrxvfnqn7bg"))))
     (properties `((upstream-name . "fsdaR")))
     (build-system r-build-system)
     (inputs (list openjdk))
@@ -6529,13 +6529,13 @@ code to create reproducible analyses.")
 (define-public r-formatters
   (package
     (name "r-formatters")
-    (version "0.5.2")
+    (version "0.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "formatters" version))
        (sha256
-        (base32 "1r6idapw5jz3g81pz4ffl7ifij94mgm0wl3ijg1gwxk8h2fs0w6b"))))
+        (base32 "0ay753n018v3idn3q07i8jv68322ia3x5smpz8gkfv7k892y8a4f"))))
     (properties `((upstream-name . "formatters")))
     (build-system r-build-system)
     (propagated-inputs (list r-htmltools r-checkmate))
@@ -16554,6 +16554,28 @@ should handle when facing real world data, see Thrun, M.C., Ultsch A.:
 \"Clustering Benchmark Datasets Exploiting the Fundamental Clustering Problems\"
 (2020), Data in Brief, <DOI:10.1016/j.dib.2020.105501>.")
     (license license:gpl3)))
+
+(define-public r-fcp
+  (package
+    (name "r-fcp")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fcp" version))
+       (sha256
+        (base32 "18sx6g8g26dqxrd009akpwrngij557nqbwaa4zj2wg7vzkvj571k"))))
+    (properties `((upstream-name . "fcp")))
+    (build-system r-build-system)
+    (home-page "https://github.com/xiaoran831213/R_fun_comp")
+    (synopsis "Function Composition")
+    (description
+     "This package provides a function composition operator to chain a series of calls
+into a single function, mimicking the math notion of (f o g o h)(x) =
+h(g(f(x))).  Inspired by @code{pipeOp} ('|>') since R4.1 and magrittr pipe
+('%>%'), the operator build a pipe without putting data through, which is best
+for anonymous function accepted by utilities such as apply() and lapply().")
+    (license license:gpl2+)))
 
 (define-public r-fcopulae
   (package

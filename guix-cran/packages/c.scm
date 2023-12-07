@@ -15,8 +15,8 @@
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages maths)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
@@ -1829,13 +1829,13 @@ subscription.  You can find the full API documentation at
 (define-public r-cureplots
   (package
     (name "r-cureplots")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cureplots" version))
        (sha256
-        (base32 "0qm0b508ywv65c52jwh7w6v57dv2pc3r2gh4ycwmmw73zkfglndp"))))
+        (base32 "1ikjx4bhazqba9p9sd375mrn0321cwb84d7pj7kk1my6grkd123y"))))
     (properties `((upstream-name . "cureplots")))
     (build-system r-build-system)
     (propagated-inputs (list r-glue r-ggplot2 r-dplyr))
@@ -2541,13 +2541,13 @@ could benefit from the general framework provided by ctsfeatures'.")
 (define-public r-ctsemomx
   (package
     (name "r-ctsemomx")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ctsemOMX" version))
        (sha256
-        (base32 "0fshc00q0fyybl6kybpf57wn898c8v1d7k0x3n8avsyrkg6addhx"))))
+        (base32 "1vr7zpxfhwzj8v54dzgk42hvjb4433y9r8al9069prkrvlv74gx8"))))
     (properties `((upstream-name . "ctsemOMX")))
     (build-system r-build-system)
     (propagated-inputs (list r-plyr r-openmx r-matrix r-ctsem))
@@ -6570,13 +6570,13 @@ in the approach.")
 (define-public r-cre
   (package
     (name "r-cre")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CRE" version))
        (sha256
-        (base32 "1kaydv3pmz2xvhd6ihzw37mc83j6bss0gbkzypkc2sxb9rl34dp3"))))
+        (base32 "124l2pf10gnfm4bhjaqwaj5j0w3fkl56nszpr4skwvkj3f3haggc"))))
     (properties `((upstream-name . "CRE")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -8623,13 +8623,13 @@ neighbor variance estimation (NNVE) method of Wang and Raftery (2002)
 (define-public r-covregrf
   (package
     (name "r-covregrf")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CovRegRF" version))
        (sha256
-        (base32 "0azwxcy9cbk3h5wln24l5dz42w259y5hzz3nfdga0zi915k8m3dg"))))
+        (base32 "0qdaiqq1cwagzcpwziblrd2j0vzxriklxk38nc48fv3gky0ilq7y"))))
     (properties `((upstream-name . "CovRegRF")))
     (build-system r-build-system)
     (propagated-inputs (list r-diagrammer r-data-tree r-data-table))
@@ -9500,6 +9500,31 @@ selecting a class of space-time covariance functions
 state-space models.  The functionality can also be used from C++ based model
 builder tools such as Rcpp'/'inline', TMB', or JAGS'.")
     (license license:bsd-2)))
+
+(define-public r-covadap
+  (package
+    (name "r-covadap")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "covadap" version))
+       (sha256
+        (base32 "14vpd2sm8wc16axfc22f0bfardn60s2l1vc715bf1pbwfi83dfgw"))))
+    (properties `((upstream-name . "covadap")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=covadap")
+    (synopsis "Implement Covariate-Adaptive Randomization")
+    (description
+     "Implementing seven Covariate-Adaptive Randomization to assign patients to two
+treatments.  Three of these procedures can also accommodate quantitative and
+mixed covariates.  Given a set of covariates, the user can generate a single
+sequence of allocations or replicate the design multiple times by simulating the
+patients covariate profiles.  At the end, an extensive assessment of the
+performance of the randomization procedures is provided, calculating several
+imbalance measures.  See Baldi Antognini A, Frieri R, Zagoraiou M and Novelli M
+(2022) <doi:10.1007/s00362-022-01381-1> for details.")
+    (license license:gpl3+)))
 
 (define-public r-coursekata
   (package
@@ -10528,16 +10553,21 @@ with corx'.")
 (define-public r-corto
   (package
     (name "r-corto")
-    (version "1.2.2")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "corto" version))
        (sha256
-        (base32 "0y76nk13si6khc5inlcyshsapw8ljv6x7s5vifh2cq0bla87471x"))))
+        (base32 "1rlr96kdn59vbcsjwys3brlaa8fm0jkg331dnr6fcq1z798snkb3"))))
     (properties `((upstream-name . "corto")))
     (build-system r-build-system)
-    (propagated-inputs (list r-plotrix r-pbapply r-knitr r-gplots r-dplyr))
+    (propagated-inputs (list r-rmarkdown
+                             r-plotrix
+                             r-pbapply
+                             r-knitr
+                             r-gplots
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=corto")
     (synopsis "Inference of Gene Regulatory Networks")
@@ -28575,13 +28605,13 @@ Entab <https://github.com/bovee/entab>, and @code{ThermoRawFileParser}
 (define-public r-christmas
   (package
     (name "r-christmas")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "christmas" version))
        (sha256
-        (base32 "0ir9fn1hdv6if263dlwam8m3gyiw59q7p26hdxav2dil8q8r4f2g"))))
+        (base32 "0gqyxvhx8nvcrjxqrybvxyc3dgwvd3z9ln4fig6q3zamfpdmljb7"))))
     (properties `((upstream-name . "christmas")))
     (build-system r-build-system)
     (propagated-inputs (list r-animation))
@@ -28945,13 +28975,13 @@ thermodynamic properties of proteins.")
 (define-public r-chngpt
   (package
     (name "r-chngpt")
-    (version "2023.11-28")
+    (version "2023.11-29")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chngpt" version))
        (sha256
-        (base32 "084vn1rvp5zlc7l1ngjr35v1qxmafc8y927r1s51klflrldf4l4l"))))
+        (base32 "1zz0wgard6a1y36r78pfp5gqfjm12xlvh5cmdq3297m4d7jvrn34"))))
     (properties `((upstream-name . "chngpt")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -33301,6 +33331,38 @@ scatterplot matrices and pair-dependencies of two multivariate datasets.")
      "Deriving skill structures from skill assignment data for courses (sets of
 learning objects).")
     (license license:gpl3)))
+
+(define-public r-cdse
+  (package
+    (name "r-cdse")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CDSE" version))
+       (sha256
+        (base32 "0pysz1vcmi051qhdmmyp4ynnhpb4lj7qbjb80k16z9xnmd5h58bk"))))
+    (properties `((upstream-name . "CDSE")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra
+                             r-sf
+                             r-lutz
+                             r-lubridate
+                             r-jsonlite
+                             r-httr2
+                             r-geojsonsf))
+    (home-page "https://cran.r-project.org/package=CDSE")
+    (synopsis "'Copernicus Data Space Ecosystem' API Wrapper")
+    (description
+     "This package provides interface to the Copernicus Data Space Ecosystem API
+<https://dataspace.copernicus.eu/analyse/apis>, mainly for searching the catalog
+of available data from Copernicus Sentinel missions and obtaining the images for
+just the area of interest based on selected spectral bands.  The package uses
+the Sentinel Hub REST API interface
+<https://dataspace.copernicus.eu/analyse/apis/sentinel-hub> that provides access
+to various satellite imagery archives.  It allows you to access raw satellite
+data, rendered images, statistical analysis, and other features.")
+    (license license:agpl3)))
 
 (define-public r-cds
   (package

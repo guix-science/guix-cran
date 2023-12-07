@@ -4958,13 +4958,13 @@ package has no external dependencies.")
 (define-public r-locuszoomr
   (package
     (name "r-locuszoomr")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "locuszoomr" version))
        (sha256
-        (base32 "13dh0p064zaj2z9rl4vajkc7vil86sf64vhfb73b2m5m7hq04ql6"))))
+        (base32 "1hbhaqw6n1m5jhh71s3r2izsw6zjjplfy392ikw0k4bxq9cb6mmg"))))
     (properties `((upstream-name . "locuszoomr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -8470,51 +8470,6 @@ proposed method can handle a wide range of models, including change-in-mean
 model, multiple linear regression model, Vector auto-regressive model and
 Gaussian graphical model.")
     (license license:gpl2)))
-
-(define-public r-linea
-  (package
-    (name "r-linea")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "linea" version))
-       (sha256
-        (base32 "1p3wd3m239x37hd4g4gp4nbgf4jlwk9lx0a00781jx7h2gcg32s7"))))
-    (properties `((upstream-name . "linea")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-tis
-                             r-tidyverse
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-sjmisc
-                             r-reshape2
-                             r-readxl
-                             r-readr
-                             r-rcolorbrewer
-                             r-purrr
-                             r-plotly
-                             r-openxlsx
-                             r-magrittr
-                             r-lubridate
-                             r-gtrendsr
-                             r-ggplot2
-                             r-dplyr
-                             r-car))
-    (home-page "https://cran.r-project.org/package=linea")
-    (synopsis "Linear Regression Interface")
-    (description
-     "An interface to accelerate linear regression (Ordinary least squares) modelling,
-which allows users to build models quickly, while automatically generating
-interactive visualizations of the results.  Non-linear models specification
-(e.g. y = b1*x1 + b2*log(x2)) can be easily constructed using user-defined
-transformations.  Functions for testing wide ranges of model specifications
-(e.g. y = b*log(x,10) , y = b*log(x,20) , ...), all at once, are also available.
- Finally, models can be imported and exported as Excel files where all the
-information necessary for re-running the models is stored in separate sheets.")
-    (license license:gpl3)))
 
 (define-public r-lindleypowerseries
   (package
@@ -12999,13 +12954,13 @@ results based on constrained optimization.")
 (define-public r-lcopula
   (package
     (name "r-lcopula")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lcopula" version))
        (sha256
-        (base32 "03qf9skls0h2z88ykm863m0w394n24rkxgg0qdjzxyizhv2arf3l"))))
+        (base32 "1lzk4lvdlqvnacmak75r4fn1mn2fxfzzlyh94k5r8iqgrpq5zsss"))))
     (properties `((upstream-name . "lcopula")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-copula))

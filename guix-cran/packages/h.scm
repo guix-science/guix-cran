@@ -1202,23 +1202,38 @@ information in Fernando S. Marques, Jose H. H. Grisi-Filho, Marcos Amaku et al.
 (define-public r-hybridmicrobiomes
   (package
     (name "r-hybridmicrobiomes")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HybridMicrobiomes" version))
        (sha256
-        (base32 "0qn3pymx47a7r52mjj39n41aclmwmwspmwzlhjmdl84n8yy9c2fg"))))
+        (base32 "05y3hcw18q9v3fpv0i0msmr9v4hnfgk0ni55wk3k786h96m2swsv"))))
     (properties `((upstream-name . "HybridMicrobiomes")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlang r-rgl r-phyloseq r-permanova
-                             r-compositions))
+    (propagated-inputs (list r-vegan
+                             r-stereomorph
+                             r-rlang
+                             r-rgl
+                             r-phyloseq
+                             r-permanova
+                             r-ks
+                             r-geometry
+                             r-compositions
+                             r-ape))
     (home-page "https://cran.r-project.org/package=HybridMicrobiomes")
     (synopsis "Analysis of Host-Associated Microbiomes from Hybrid Organisms")
     (description
-     "This package provides tools to analyze and visualize the relationships between
-host-associated microbiomes of hybrid organisms and those of their progenitor
-species.")
+     "This package provides a set of tools to analyze and visualize the relationships
+between host-associated microbiomes of hybrid organisms and those of their
+progenitor species.  Though not necessary, installing the @code{microViz}
+package is recommended as a check for phyloseq objects.  To install
+@code{microViz} from R Universe use the following command:
+install.packages(\"@code{microViz}\", repos = c(davidbarnett =
+\"https://david-barnett.r-universe.dev\", @code{getOption(\"repos}\"))).  To install
+@code{microViz} from @code{GitHub} use the following commands:
+install.packages(\"devtools\") followed by
+devtools::install_github(\"david-barnett/@code{microViz}\").")
     (license license:gpl2)))
 
 (define-public r-hybriddesign
@@ -2491,13 +2506,13 @@ H., and Datta, S. (2017) <doi:10.1002/sim.7288> Dutta, S. and Datta, S. (2015)
 (define-public r-hstats
   (package
     (name "r-hstats")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hstats" version))
        (sha256
-        (base32 "0bs9ymciry8xsm7ql6m47bfgapxpacgjizyqij690q9ynn52hd8i"))))
+        (base32 "08r9gdgw1z3w9gl0wrzdvw0kxr1slwi03mb9p4mrvvr6gd70w71f"))))
     (properties `((upstream-name . "hstats")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))

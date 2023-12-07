@@ -10378,6 +10378,37 @@ Computational and Graphical Statistics paper,
 <doi:10.1080/10618600.2018.1513367> describes the concepts implemented.")
     (license license:gpl3)))
 
+(define-public r-animbook
+  (package
+    (name "r-animbook")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "animbook" version))
+       (sha256
+        (base32 "0wbzpcqmr1ysk2xcwmjl1dldz7bpaqsdyq36512lipq60hzq1v81"))))
+    (properties `((upstream-name . "animbook")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-rcolorbrewer
+                             r-purrr
+                             r-plotly
+                             r-ggplot2
+                             r-gganimate
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/KrisanatA/animbook")
+    (synopsis
+     "Visualizing Changes in Performance Measures and Demographic Affiliations using Animation")
+    (description
+     "Create an interactive visualization to be used for communication purposes.
+Providing the function for preparing, plotting, and animating the data.")
+    (license license:expat)))
+
 (define-public r-animate
   (package
     (name "r-animate")
@@ -15974,13 +16005,13 @@ reanalysis\"
 (define-public r-afttest
   (package
     (name "r-afttest")
-    (version "4.3.1.1")
+    (version "4.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "afttest" version))
        (sha256
-        (base32 "0w08xhhjnsf4xdg52nfz1ks4n7mbajrnbix9q5mkd3nvsnlank0s"))))
+        (base32 "1ha4k14jrncacc4nksif85gpx2qkxp9flhi00c35ya4pgmy2md3v"))))
     (properties `((upstream-name . "afttest")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -17196,13 +17227,13 @@ A., Barberena R., Thomas M. G., Mendez C., Manning K. (2020)
 (define-public r-admtools
   (package
     (name "r-admtools")
-    (version "0.0.1")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admtools" version))
        (sha256
-        (base32 "1b421x30zaqxyfiidn5ah5bx757mpvsmja5kwn3gydnih1917rvg"))))
+        (base32 "0pnmzkln92dqfjyx8rvs37845anpasfzk0xkqwmpb6w4bghjgywp"))))
     (properties `((upstream-name . "admtools")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
