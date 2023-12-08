@@ -5264,13 +5264,13 @@ reservoirs systems.")
 (define-public r-rssl
   (package
     (name "r-rssl")
-    (version "0.9.6")
+    (version "0.9.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RSSL" version))
        (sha256
-        (base32 "11i6z2kmy0ddl7s8709w5q8aix8wgba4p4lmqlswnwznwaaj26mq"))))
+        (base32 "1am8xv0v5b2z87y8i7m1s41aq55fx30pdnhna5dj87fql5faydqx"))))
     (properties `((upstream-name . "RSSL")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -10818,13 +10818,13 @@ demo.")
 (define-public r-round
   (package
     (name "r-round")
-    (version "0.21-0")
+    (version "0.21-0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "round" version))
        (sha256
-        (base32 "1c3hp4lh18q1h0sk0j6vgj659f6hv5bgliypzhra6zxgs8w41953"))))
+        (base32 "1k245bq0wkh2lwiq009nkr5j100xvx0700q82jf1lxsiyvgbip41"))))
     (properties `((upstream-name . "round")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -10988,13 +10988,13 @@ can be read relative to either axis equally.")
 (define-public r-rotations
   (package
     (name "r-rotations")
-    (version "1.6.4")
+    (version "1.6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rotations" version))
        (sha256
-        (base32 "19d7filrgwm25cklbpjr082cn0h991xa5lvrijjl59whan4axjkg"))))
+        (base32 "1gcwz9aq99w54pq03i164kqa0dnf68rkd3ch3l7m97ndf32lawwk"))))
     (properties `((upstream-name . "rotations")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-gridextra r-ggplot2))
@@ -15908,13 +15908,13 @@ data via the NOAA storm prediction center, and more.")
 (define-public r-rnndescent
   (package
     (name "r-rnndescent")
-    (version "0.1.1")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rnndescent" version))
        (sha256
-        (base32 "1qyl2wiyb549f810awk6qddawnyl76i61d016xggl5wvnsycp3jp"))))
+        (base32 "0wdcw99bmfxxd06ddqgsww8dxmvi516kh1cpm27vg9m3zhw2d51k"))))
     (properties `((upstream-name . "rnndescent")))
     (build-system r-build-system)
     (propagated-inputs (list r-sitmo r-rcpp r-matrix r-dqrng r-bh))
@@ -23625,13 +23625,13 @@ defined in Chapter 8.")
 (define-public r-rgraph6
   (package
     (name "r-rgraph6")
-    (version "2.0-2")
+    (version "2.0-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rgraph6" version))
        (sha256
-        (base32 "136imihzm2x6i9d60a8wbv2mc1v2r9rsswnic8q7kdp7l1625xa6"))))
+        (base32 "148ii731s7r1pgmsvnciinlf1ciabs2b9i77v1xbv58lw2yjahxn"))))
     (properties `((upstream-name . "rgraph6")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -25061,13 +25061,13 @@ see <https://en.wikipedia.org/wiki/FRACTRAN> .")
 (define-public r-rfpredinterval
   (package
     (name "r-rfpredinterval")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RFpredInterval" version))
        (sha256
-        (base32 "1r26pd6dxvkbx2aqcgb4rn9bdwnac3smw4wb1qr4pzzp9nw1ji4h"))))
+        (base32 "08nr4a5nzwb4wdzi87jangv4yfl8dh3bhbwksipal3dhmmiwgzbf"))))
     (properties `((upstream-name . "RFpredInterval")))
     (build-system r-build-system)
     (propagated-inputs (list r-ranger r-hdrcde r-diagrammer r-data-tree
@@ -28519,13 +28519,13 @@ footers, spanning headers, page by variables, and automatic page numbering.")
 (define-public r-report
   (package
     (name "r-report")
-    (version "0.5.7")
+    (version "0.5.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "report" version))
        (sha256
-        (base32 "1g7px87d3gf0ddigmrcq442g9rx6zyzyihvqvd7pmpbrzz10zpka"))))
+        (base32 "0frqqijhr98nqpy157capkx6h93z2jaxsl8r0vl9vk3k2g120wq1"))))
     (properties `((upstream-name . "report")))
     (build-system r-build-system)
     (propagated-inputs (list r-performance
@@ -28542,8 +28542,7 @@ footers, spanning headers, page by variables, and automatic page numbering.")
 formatted results contained in your manuscript.  This package converts
 statistical models and data frames into textual reports suited for publication,
 ensuring standardization and quality in results reporting.")
-    (license (list license:gpl3
-                   (license:fsdg-compatible "file://LICENSE")))))
+    (license license:expat)))
 
 (define-public r-repolr
   (package
@@ -31281,13 +31280,13 @@ object-specific set of plots based on the object class using S3.")
 (define-public r-refund
   (package
     (name "r-refund")
-    (version "0.1-33")
+    (version "0.1-34")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "refund" version))
        (sha256
-        (base32 "02wgvi31zlc77sbwcijzyq302sj3d8cxzxqayqi3ls55kszc1f12"))))
+        (base32 "1210zxd0wsrhlhwv2jypgnskm2y01x021yrjknvmsqc26p6kqrfw"))))
     (properties `((upstream-name . "refund")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlrsim
@@ -34141,6 +34140,27 @@ several data sets in their original form, for example if they are downloaded
 from UCI Machine Learning Repository.  The data are not part of the package and
 have to be downloaded separately.")
     (license license:gpl3)))
+
+(define-public r-readmission
+  (package
+    (name "r-readmission")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "readmission" version))
+       (sha256
+        (base32 "14jdy4w49g7v843hn3hiqgr33nns6hq62a62b0cyainbkvrgrgwk"))))
+    (properties `((upstream-name . "readmission")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=readmission")
+    (synopsis "Hospital Readmission Data for Patients with Diabetes")
+    (description
+     "Clinical care data from 130 U.S. hospitals in the years 1999-2008 adapted from
+the study Strack et al. (2014) <doi:10.1155/2014/781670>.  Each row describes an
+\"encounter\" with a patient with diabetes, including variables on demographics,
+medications, patient history, diagnostics, payment, and readmission.")
+    (license license:expat)))
 
 (define-public r-readmet
   (package
@@ -41166,13 +41186,13 @@ selection.")
 (define-public r-rbdat
   (package
     (name "r-rbdat")
-    (version "0.10.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rBDAT" version))
        (sha256
-        (base32 "1vndnip3rpvlgmnmi91r23nyr59v6dmm8m5i2yxi7pim1l35323r"))))
+        (base32 "02s91p6nvxbm3wflvs75aln3zw0g6535sxrmzkhywcc9k3x63926"))))
     (properties `((upstream-name . "rBDAT")))
     (build-system r-build-system)
     (native-inputs (list r-knitr gfortran))

@@ -878,13 +878,13 @@ available at the following URL:
 (define-public r-jsmodule
   (package
     (name "r-jsmodule")
-    (version "1.4.3")
+    (version "1.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jsmodule" version))
        (sha256
-        (base32 "1wjs01dg0k47jnb5f03w2ryns9b57v73pzh4bx576qpl2fgzvzbb"))))
+        (base32 "0v93667slfc84shnfzv3622xnzgz6jhh74h9kd16wnma949gqw4f"))))
     (properties `((upstream-name . "jsmodule")))
     (build-system r-build-system)
     (propagated-inputs (list r-timeroc

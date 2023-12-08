@@ -18049,13 +18049,13 @@ extend it to tackle datasets in metric spaces.")
 (define-public r-fastmatrix
   (package
     (name "r-fastmatrix")
-    (version "0.5-7")
+    (version "0.5-77")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastmatrix" version))
        (sha256
-        (base32 "1c60fzk3wz4nigbws9gwzvnlip9vkg14lmazh043xbp6rjpn3dnw"))))
+        (base32 "11035qsr4b1dsn73mf4zxq5w1c5p9qgyyimwfi9qs2d0aprsin0d"))))
     (properties `((upstream-name . "fastmatrix")))
     (build-system r-build-system)
     (native-inputs (list gfortran))

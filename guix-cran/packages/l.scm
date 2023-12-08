@@ -2079,21 +2079,22 @@ count responses.")
 (define-public r-lqmix
   (package
     (name "r-lqmix")
-    (version "0.1.0")
+    (version "1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lqmix" version))
        (sha256
-        (base32 "1d3ng7xyb2pf5hbilz44k5gmc91zcwzcr3bqp10c6k7s4mhc2kk5"))))
+        (base32 "1pk156gckprp3nvqbhxbbr77njj2gcfmkd8fh8jmzb3bhkf0nlj2"))))
     (properties `((upstream-name . "lqmix")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rdpack r-quantreg))
+    (propagated-inputs (list r-rdpack r-quantreg r-foreach r-doparallel
+                             r-diagram))
     (home-page "https://cran.r-project.org/package=lqmix")
     (synopsis "Linear Quantile Mixture Models")
     (description
-     "Estimate linear quantile mixtures based on discrete, Time-Constant (TC) and/or
-Time-Varying (TV), random coefficients.")
+     "Estimate linear quantile mixtures based on Time-Constant (TC) and/or
+Time-Varying (TV), discrete, random coefficients.")
     (license license:gpl2+)))
 
 (define-public r-lqg
@@ -3930,13 +3931,13 @@ a range of benchmark simulations and real data applications.")
 (define-public r-lolog
   (package
     (name "r-lolog")
-    (version "1.3")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lolog" version))
        (sha256
-        (base32 "0lfb3d7rxssvzd70gixpmr8r8hcmxplg5yy181hdrvjsdc8w8jn4"))))
+        (base32 "0hc95ff1radpc8q0xnrvhsgbhf902fhhhkjmj51sxds4mn5wdaj3"))))
     (properties `((upstream-name . "lolog")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2
@@ -3981,18 +3982,18 @@ functions has been derived.")
 (define-public r-lokern
   (package
     (name "r-lokern")
-    (version "1.1-10")
+    (version "1.1-10.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lokern" version))
        (sha256
-        (base32 "14prvpzq4qzbbac1vqklkrm60bswwjvm90i14dylsz1pdhy85g00"))))
+        (base32 "0l49ib9qnifpxacifxq5m9kmp3ralz9bdwv37zzazjbkm15zng4d"))))
     (properties `((upstream-name . "lokern")))
     (build-system r-build-system)
     (propagated-inputs (list r-sfsmisc))
     (native-inputs (list gfortran))
-    (home-page "https://cran.r-project.org/package=lokern")
+    (home-page "https://curves-etc.r-forge.r-project.org/")
     (synopsis
      "Kernel Regression Smoothing with Local or Global Plug-in Bandwidth")
     (description
@@ -7735,13 +7736,13 @@ variable ranges implied by linear (in)equalities.")
 (define-public r-linselect
   (package
     (name "r-linselect")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LINselect" version))
        (sha256
-        (base32 "0av5bcg8n92abxfxyc694g5zx4i9j83bvg8p63i155rhid5k9bsp"))))
+        (base32 "0sd2b0wqmf51x7hxpx2mgymsgn1abzwdiaxp66708pg5nskg48ah"))))
     (properties `((upstream-name . "LINselect")))
     (build-system r-build-system)
     (propagated-inputs (list r-randomforest
@@ -14589,13 +14590,13 @@ visualization tools.")
 (define-public r-lares
   (package
     (name "r-lares")
-    (version "5.2.3")
+    (version "5.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lares" version))
        (sha256
-        (base32 "1gzm4j19fjnnvdfcv6w0jsmz5h8nr3ncivdxn4aq0v5j9vml2jwf"))))
+        (base32 "0qyzxg68ihsgp7sd8iyjhsa3jhlvj88hwnnq2kz97znw5gfd6rx2"))))
     (properties `((upstream-name . "lares")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml

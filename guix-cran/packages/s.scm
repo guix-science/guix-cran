@@ -20349,35 +20349,6 @@ for the SPECS FP7 project.  The emphasis is on comparative verification of
 ensemble forecasts of weather and climate.")
     (license license:gpl2+)))
 
-(define-public r-specs
-  (package
-    (name "r-specs")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "specs" version))
-       (sha256
-        (base32 "0x5s7aikj5x1dgxygizh2mcni74hy6dm7084h1pqqbh5ans00c6n"))))
-    (properties `((upstream-name . "specs")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp))
-    (home-page "https://cran.r-project.org/package=specs")
-    (synopsis "Single-Equation Penalized Error-Correction Selector (SPECS)")
-    (description
-     "Implementation of SPECS, your favourite Single-Equation Penalized
-Error-Correction Selector developed in Smeekes and Wijler (2020)
-<@code{arXiv:1809.08889>}.  SPECS provides a fully automated estimation
-procedure for large and potentially (co)integrated datasets.  The dataset in
-levels is converted to a conditional error-correction model, either by the user
-or by means of the functions included in this package, and various specialised
-forms of penalized regression can be applied to the model.  Automated options
-for initializing and selecting a sequence of penalties, as well as the
-construction of penalty weights via an initial estimator, are available.
-Moreover, the user may choose from a number of pre-specified deterministic
-configurations to further simplify the model building process.")
-    (license license:gpl2+)))
-
 (define-public r-specr
   (package
     (name "r-specr")
@@ -28006,13 +27977,13 @@ Agresti and Barbara Finlay.")
 (define-public r-smsroc
   (package
     (name "r-smsroc")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sMSROC" version))
        (sha256
-        (base32 "18dai7v16w6jj8h2r1qz689fngh5sawlky4068sjhw4shfignd3k"))))
+        (base32 "1fnsaww9a1i4wlv0bfyr2cqr5nb4c07badg3y64ja1mnmc5xl3y6"))))
     (properties `((upstream-name . "sMSROC")))
     (build-system r-build-system)
     (propagated-inputs (list r-thregi
@@ -29065,28 +29036,6 @@ iterative kernel density algorithm.  Survey and Organisation for Economic
 Co-operation and Development (OECD) weights can be included into the direct
 estimation (see, Walter, P. (2019) <doi:10.17169/refubium-1621>).")
     (license license:gpl2)))
-
-(define-public r-smfsb
-  (package
-    (name "r-smfsb")
-    (version "1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "smfsb" version))
-       (sha256
-        (base32 "1328w7zpwd3nam6ha4bh14g919jjl87v323ijmbp1j71gc64nn2i"))))
-    (properties `((upstream-name . "smfsb")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-abind))
-    (home-page "https://cran.r-project.org/package=smfsb")
-    (synopsis "Stochastic Modelling for Systems Biology")
-    (description
-     "Code and data for modelling and simulation of stochastic kinetic biochemical
-network models.  It contains the code and data associated with the second and
-third editions of the book Stochastic Modelling for Systems Biology, published
-by Chapman & Hall/CRC Press.")
-    (license license:lgpl3)))
 
 (define-public r-smfishhmrf
   (package
@@ -30693,13 +30642,13 @@ Course in Methods of Data Analysis (2nd ed)\", Duxbury.")
 (define-public r-slendr
   (package
     (name "r-slendr")
-    (version "0.7.2")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "slendr" version))
        (sha256
-        (base32 "12kv49i36fpfpps5kx5x6wvdy7k6zn4ybnsimaa4kqcgd704vq3w"))))
+        (base32 "03zr1s49m630rsw6klr85wk4pfxi72czlhr7plp7jzrf4x06mqq9"))))
     (properties `((upstream-name . "slendr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -31257,36 +31206,32 @@ and @code{DeYoung} (1987) <https://archive.org/details/DTIC_ADA182110>.")
 (define-public r-skpr
   (package
     (name "r-skpr")
-    (version "1.4.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "skpr" version))
        (sha256
-        (base32 "1f5n392w155v9p1slcxl6i0mv1kgi5zn9kjqc6da7c4rafjxzrm3"))))
+        (base32 "12hh7ws15rdiwd2fjl81f5rvfryzhdxnj1rkgj2cwd3mns8izrlq"))))
     (properties `((upstream-name . "skpr")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
                              r-survival
-                             r-shinythemes
-                             r-shinyjs
-                             r-shiny
                              r-scales
-                             r-rintrojs
                              r-rcppeigen
                              r-rcpp
-                             r-promises
+                             r-progressr
                              r-progress
                              r-magrittr
                              r-lmertest
                              r-lme4
                              r-lazyeval
                              r-iterators
-                             r-gt
                              r-future
                              r-foreach
                              r-dorng
                              r-doparallel
+                             r-dofuture
                              r-car))
     (home-page "https://github.com/tylermorganwall/skpr")
     (synopsis
@@ -37489,32 +37434,6 @@ labels, factor levels, and unique values.")
     (description
      "Facilitate extraction of key information from common datasets.")
     (license license:expat)))
-
-(define-public r-sifek
-  (package
-    (name "r-sifek")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SIfEK" version))
-       (sha256
-        (base32 "037ps6yfy7w6i8vm0b78c8w9kdmw312dl5nc2qz86rfk8kjg7w27"))))
-    (properties `((upstream-name . "SIfEK")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-smfsb r-ramcmc r-numderiv r-mass))
-    (home-page "https://cran.r-project.org/package=SIfEK")
-    (synopsis "Statistical Inference for Enzyme Kinetics")
-    (description
-     "This package provides functions for estimating catalytic constant and
-Michaelis-Menten constant (MM constant) of stochastic Michaelis-Menten enzyme
-kinetics model are provided.  The likelihood functions based on stochastic
-simulation approximation (SSA), diffusion approximation (DA), and Gaussian
-processes (GP) are provided to construct posterior functions for the Bayesian
-estimation.  All functions utilize Markov Chain Monte Carlo (MCMC) methods with
-Metropolis- Hastings algorithm with random walk chain and robust adaptive
-Metropolis-Hastings algorithm based on Bayesian framework.")
-    (license license:gpl3)))
 
 (define-public r-sievetest
   (package

@@ -5434,13 +5434,13 @@ dataset from Kerschbaumer et al. (2013) <doi:10.5061/dryad.fc02f>.")
 (define-public r-vctsfr
   (package
     (name "r-vctsfr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vctsfr" version))
        (sha256
-        (base32 "0g436m3dkyli06asjr4kdbhdx7mq0pcclmfpvblb5bsqrh5944i1"))))
+        (base32 "048bkayjhgy6h47pmy0cld9yzmrg93mk3rv5afpn518c42gjsc69"))))
     (properties `((upstream-name . "vctsfr")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-ggplot2))

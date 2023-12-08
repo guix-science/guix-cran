@@ -15479,17 +15479,21 @@ purposes).  Research project No.  1.1.1.2/VIAA/1/16/075.")
 (define-public r-mmirestriktor
   (package
     (name "r-mmirestriktor")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mmirestriktor" version))
        (sha256
-        (base32 "0l5ncw2g5b9yzw8zdk1x07f38xxxvf5ngqz427zhnrkcc20zhy2z"))))
+        (base32 "12ln63dzjljxq5fq34shl5d3h33rax8hpj8as0rbj2829a6nm95k"))))
     (properties `((upstream-name . "mmirestriktor")))
     (build-system r-build-system)
-    (propagated-inputs (list r-shinythemes r-shiny r-restriktor r-mmcards
-                             r-mass))
+    (propagated-inputs (list r-shinythemes
+                             r-shiny
+                             r-restriktor
+                             r-mmcards
+                             r-mass
+                             r-dt))
     (home-page "https://github.com/mightymetrika/mmirestriktor")
     (synopsis "Informative Hypothesis Testing Web Applications")
     (description
@@ -21995,13 +21999,13 @@ Sievert, Schloerke, Xie, Allen, @code{McPherson}, Dipert and Borges (2022)
 (define-public r-mirai
   (package
     (name "r-mirai")
-    (version "0.11.2")
+    (version "0.11.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mirai" version))
        (sha256
-        (base32 "0fp5y4qpbznbbcnhf99biciddr4caxjc28zbgiq3s0xwyybgnlsc"))))
+        (base32 "017z5crnbfzc51gz541d0i7dz435ps41qlir43x2yyfad2ah6c8y"))))
     (properties `((upstream-name . "mirai")))
     (build-system r-build-system)
     (propagated-inputs (list r-nanonext))
@@ -22011,10 +22015,9 @@ Sievert, Schloerke, Xie, Allen, @code{McPherson}, Dipert and Borges (2022)
     (description
      "Lightweight parallel code execution and distributed computing.  Designed for
 simplicity, a mirai evaluates an R expression asynchronously, on local or
-network resources, resolving automatically upon completion.  Features efficient
-task scheduling, fast inter-process communications, and Transport Layer Security
-over TCP/IP for remote connections, courtesy of nanonext and NNG (Nanomsg Next
-Gen).")
+network resources, resolving automatically upon completion.  Efficient
+scheduling over fast inter-process communications or secure TLS connections over
+TCP/IP, built on nanonext and NNG (Nanomsg Next Gen).")
     (license license:gpl3+)))
 
 (define-public r-mipplot
@@ -36515,13 +36518,13 @@ private practitioners, scholars as well as policymakers.")
 (define-public r-matriks
   (package
     (name "r-matriks")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "matRiks" version))
        (sha256
-        (base32 "1p38ji67j478dkvdgrn3v5p10i3k1ip28ys917jfczxacd2xn05h"))))
+        (base32 "1wnsg7ks5dg52xy4nfv6xsqjqc1yhj6z9wjfjc45rs8rwpg960ys"))))
     (properties `((upstream-name . "matRiks")))
     (build-system r-build-system)
     (propagated-inputs (list r-desctools))
@@ -36537,7 +36540,10 @@ rules (i.e., the relationships between the elements in the matrix are
 manipulated to create the matrix) and visual-spatial rules (i.e., the visual or
 spatial characteristics of the elements are manipulated to generate the matrix).
  The graphical elements of this package are based on the @code{DescTools}
-package.")
+package.  This package has been developed within the PRIN2020 Project (Prot.
+20209WKCLL) titled \"Computerized, Adaptive and Personalized Assessment of
+Executive Functions and Fluid Intelligence\" and founded by the Italian Ministry
+of Education and Research.")
     (license license:expat)))
 
 (define-public r-matricks

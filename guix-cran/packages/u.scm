@@ -2609,18 +2609,18 @@ diverse range of color palettes for creating scientific visualizations.")
 (define-public r-unicode
   (package
     (name "r-unicode")
-    (version "15.0.0-1")
+    (version "15.1.0-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Unicode" version))
        (sha256
-        (base32 "071cnap6kpwhvvz1rzhh771dlm8ndqk03ca94wnxfiwrwx4da4ky"))))
+        (base32 "1y4rdvnkmcf9kls28wbbri2mxmrqhm7jy9fb03qhn17xvrxnk12k"))))
     (properties `((upstream-name . "Unicode")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=Unicode")
     (synopsis "Unicode Data and Utilities")
-    (description "Data from Unicode 15.0.0 and related utilities.")
+    (description "Data from Unicode 15.1.0 and related utilities.")
     (license license:gpl2)))
 
 (define-public r-uniah

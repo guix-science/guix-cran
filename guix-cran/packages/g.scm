@@ -4856,30 +4856,6 @@ be in the context of knitr'.  The Hmisc', ggplot2', and lattice packages are
 used by greport for high-level graphics.")
     (license license:gpl2+)))
 
-(define-public r-gren
-  (package
-    (name "r-gren")
-    (version "0.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gren" version))
-       (sha256
-        (base32 "1wb5wwdjxi7q36md7xzmbw5lrggcgghkz3pmxipjpxw8kfv804xp"))))
-    (properties `((upstream-name . "gren")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-proc r-iso r-glmnet))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/magnusmunch/gren/")
-    (synopsis "Adaptive Group-Regularized Logistic Elastic Net Regression")
-    (description
-     "Allows the user to incorporate multiple sources of co-data (e.g., 	previously
-obtained p-values, published gene lists, and annotation) in the	estimation of a
-logistic regression model to enhance predictive performance and 	feature
-selection, as described in MÃ¼nch, Peeters, van der Vaart, and van de Wiel
-	(2018) <@code{arXiv:1805.00389>}.")
-    (license license:gpl2+)))
-
 (define-public r-gremlins
   (package
     (name "r-gremlins")
@@ -7813,13 +7789,13 @@ preprint <@code{arXiv:2105.03454>}.")
 (define-public r-gpbstat
   (package
     (name "r-gpbstat")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gpbStat" version))
        (sha256
-        (base32 "06fylxgzqhm8wf38kkzzk4ay80874wad2rg0xhl41piyav3rslw7"))))
+        (base32 "07zjc033jazpmax7x96zd5g4z1rz9qmmfwzssl7p3d9ff7aiayvx"))))
     (properties `((upstream-name . "gpbStat")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-tibble r-purrr r-magrittr r-dplyr))
@@ -14696,6 +14672,27 @@ with dense datasets that are prone to overplotting.")
      "Annotation of ggplot2 plots with arbitrary @code{TikZ} code, using absolute data
 or relative plot coordinates.")
     (license license:expat)))
+
+(define-public r-ggthemeul
+  (package
+    (name "r-ggthemeul")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggthemeUL" version))
+       (sha256
+        (base32 "0nv11db6ds7xshh7dkpz1agfq0r8a9z3qvgd3m1icqcg3w60as0y"))))
+    (properties `((upstream-name . "ggthemeUL")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ggthemeUL")
+    (synopsis "'ggplot' Theme for University of Ljubljana")
+    (description
+     "Designed to customize ggplot graphics according to the institutional identity of
+the University of Ljubljana.")
+    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-ggtea
   (package
@@ -21922,6 +21919,35 @@ variability between populations (e.g. using Wright's fixations index, Fst, which
 measures variability in subpopulations relative to the total population).")
     (license license:expat)))
 
+(define-public r-gentwoarmstrialsize
+  (package
+    (name "r-gentwoarmstrialsize")
+    (version "0.0.4.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GenTwoArmsTrialSize" version))
+       (sha256
+        (base32 "1bmzrrm0dmg0s5skcrp09l2gkjwz2m6sfjdiminxyv19d68wd66y"))))
+    (properties `((upstream-name . "GenTwoArmsTrialSize")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-trialsize r-hmisc r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=GenTwoArmsTrialSize")
+    (synopsis "Generalized Two Arms Clinical Trial Sample Size Calculation")
+    (description
+     "Two arms clinical trials required sample size is calculated in the comprehensive
+parametric context.  The calculation is based on the type of
+endpoints(continuous/binary/time-to-event/ordinal), design (parallel/crossover),
+hypothesis tests (equality/noninferiority/superiority/equivalence), trial arms
+noncompliance rates and expected loss of follow-up.  Methods are described in:
+Chow SC, Shao J, Wang H, Lokhnygina Y (2017) <doi:10.1201/9781315183084>,
+Wittes, J (2002) <doi:10.1093/epirev/24.1.39>, Sato, T (2000)
+<doi:10.1002/1097-0258(20001015)19:19<2689::aid-sim555>3.0.co;2-0>, Lachin J M,
+Foulkes, M A (1986) <doi:10.2307/2531201>, Whitehead J(1993)
+<doi:10.1002/sim.4780122404>, Julious SA (2023) <doi:10.1201/9780429503658>.")
+    (license license:gpl3)))
+
 (define-public r-gents
   (package
     (name "r-gents")
@@ -28527,6 +28553,31 @@ data using an interactive lollipop diagram in Studio or your browser.")
      "Full descriptive statistics, physical description of sediment, metric or phi
 sieves.")
     (license license:gpl3)))
+
+(define-public r-g-ridge
+  (package
+    (name "r-g-ridge")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "g.ridge" version))
+       (sha256
+        (base32 "1llks14akpdpa3v80kpr8sgmdlmjsvk7hcbilnk0zqlh1xi066km"))))
+    (properties `((upstream-name . "g.ridge")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=g.ridge")
+    (synopsis "Generalized Ridge Regression for Linear Models")
+    (description
+     "Ridge regression due to Hoerl and Kennard
+(1970)<DOI:10.1080/00401706.1970.10488634> and generalized ridge regression due
+to Yang and Emura (2017)<DOI:10.1080/03610918.2016.1193195> with optimized
+tuning parameters.  These ridge regression estimators (the HK estimator and the
+YE estimator) are computed by minimizing the cross-validated mean squared
+errors.  Both the ridge and generalized ridge estimators are applicable for
+high-dimensional regressors (p>n), where p is the number of regressors, and n is
+the sample size.")
+    (license license:gpl2)))
 
 (define-public r-g-data
   (package

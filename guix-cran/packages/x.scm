@@ -162,6 +162,36 @@ of multiple tuning parameters is done using an Empirical Bayes approach.  A
 majorization-minimization algorithm is employed for implementation.")
     (license license:expat)))
 
+(define-public r-xtsum
+  (package
+    (name "r-xtsum")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "xtsum" version))
+       (sha256
+        (base32 "0vq3rm0rwmqyilq7056swlwg2vqq2rpmqsx5apg0imkjq1p26vcb"))))
+    (properties `((upstream-name . "xtsum")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sampleselection
+                             r-rlang
+                             r-plm
+                             r-magrittr
+                             r-knitr
+                             r-kableextra
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Macosso/xtsum")
+    (synopsis "Summary Statistics for Panel Data")
+    (description
+     "Based on STATA xtsum command, it is used to compute summary statistics for a
+panel data set.  It generates overall, between-group, and within-group
+statistics for specified variables in a panel data set, as presented in S.
+Porter (2023) <https://stephenporter.org/files/xtsum_handout.pdf>,
+@code{StataCorp} (2023) <https://www.stata.com/manuals/xtxtsum.pdf>.")
+    (license license:gpl3)))
+
 (define-public r-xtranat
   (package
     (name "r-xtranat")

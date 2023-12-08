@@ -1660,6 +1660,31 @@ in Leifeld, Cranmer and Desmarais (2018), J@code{StatSoft}
 <doi:10.18637/jss.v083.i06>.")
     (license license:gpl2+)))
 
+(define-public r-btdecaylasso
+  (package
+    (name "r-btdecaylasso")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BTdecayLasso" version))
+       (sha256
+        (base32 "0ig1nbhjs1xb9743j3q7ggp01s780hw0b1xjn8spkfkjad1ijsbm"))))
+    (properties `((upstream-name . "BTdecayLasso")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-optimx r-ggplot2))
+    (home-page "https://cran.r-project.org/package=BTdecayLasso")
+    (synopsis
+     "Bradley-Terry Model with Exponential Time Decayed Log-Likelihood and Adaptive Lasso")
+    (description
+     "We utilize the Bradley-Terry Model to estimate the abilities of teams using
+paired comparison data.  For dynamic approximation of current rankings, we
+employ the Exponential Decayed Log-likelihood function, and we also apply the
+Lasso penalty for variance reduction and grouping.  The main algorithm applies
+the Augmented Lagrangian Method described by Masarotto and Varin (2012)
+<doi:10.1214/12-AOAS581>.")
+    (license license:gpl2+)))
+
 (define-public r-btb
   (package
     (name "r-btb")
@@ -17673,6 +17698,37 @@ mixture of priors.  An extensive visual toolbox is included to check the
 validity of the results as well as several measures of goodness-of-fit.")
     (license license:lgpl2.0+)))
 
+(define-public r-bdvis
+  (package
+    (name "r-bdvis")
+    (version "0.2.37")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bdvis" version))
+       (sha256
+        (base32 "0mhvc1lbnkbawx3yj9h8h4l6bwawg1dfgyjvllhknyldxy8a7bjk"))))
+    (properties `((upstream-name . "bdvis")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-treemap
+                             r-taxize
+                             r-sqldf
+                             r-sf
+                             r-plyr
+                             r-plotrix
+                             r-maps
+                             r-lattice
+                             r-ggplot2
+                             r-chron))
+    (home-page "https://cran.r-project.org/package=bdvis")
+    (synopsis "Biodiversity Data Visualizations")
+    (description
+     "This package provides a set of functions to create basic visualizations to
+quickly preview different aspects of biodiversity information such as inventory
+completeness, extent of coverage (taxonomic, temporal and geographic), gaps and
+biases.  Barve & Otegui (2016) <DOI:10.1093/bioinformatics/btw333>.")
+    (license license:gpl3)))
+
 (define-public r-bdscale
   (package
     (name "r-bdscale")
@@ -21445,13 +21501,13 @@ F., Hoijtink, H. & Gu, X. (2019) <doi:10.31219/osf.io/d5kf3>.")
 (define-public r-bayesianplatformdesigntimetrend
   (package
     (name "r-bayesianplatformdesigntimetrend")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesianPlatformDesignTimeTrend" version))
        (sha256
-        (base32 "02xl5primqxkw2s1xrl0znsd3ag79x6g842wdg9wxf2d00fcfm25"))))
+        (base32 "1v06airw3zzkvb5qmn0abyhkdp51wjmax101ljj9ibx01nj01zdv"))))
     (properties `((upstream-name . "BayesianPlatformDesignTimeTrend")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr

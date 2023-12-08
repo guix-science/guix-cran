@@ -15,8 +15,8 @@
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages maths)
   #:use-module (gnu packages bioinformatics)
+  #:use-module (gnu packages maths)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
@@ -4238,6 +4238,27 @@ for a detailed documentation.")
     (description
      "Providing data to quickly visualize and analyze data from several
 cryptocurrencies.")
+    (license license:expat)))
+
+(define-public r-cryptotrackr
+  (package
+    (name "r-cryptotrackr")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cryptotrackr" version))
+       (sha256
+        (base32 "1n7af1d9c0nw3v6s38yj782y9gbbzq1d8w8mrcvhjglzgcs50abd"))))
+    (properties `((upstream-name . "cryptotrackr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringi r-openssl r-jsonlite r-httr r-digest))
+    (home-page "https://cran.r-project.org/package=cryptotrackr")
+    (synopsis "An Interface to Crypto Data Sources")
+    (description
+     "Allows you to connect to data sources across the crypto ecosystem.  This data
+can enable a range of activity such as portfolio tracking, programmatic trading,
+or industry analysis.")
     (license license:expat)))
 
 (define-public r-cryptography
@@ -12480,13 +12501,13 @@ revision).")
 (define-public r-copula
   (package
     (name "r-copula")
-    (version "1.1-2")
+    (version "1.1-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "copula" version))
        (sha256
-        (base32 "1lw72ljkfkynbs1iwfz1ymllfrlfykd5clfav19xzp744m6lbyc8"))))
+        (base32 "19kp6q052jp0wsn2zh6wz6m9hk04nhwlc2pqwrma9ynny6s6q6cv"))))
     (properties `((upstream-name . "copula")))
     (build-system r-build-system)
     (propagated-inputs (list r-stabledist
@@ -19653,6 +19674,43 @@ makes boxes of transition rates between states.  It utilizes Epi package Lexis
 data.")
     (license license:gpl2)))
 
+(define-public r-cohortsurvival
+  (package
+    (name "r-cohortsurvival")
+    (version "0.2.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CohortSurvival" version))
+       (sha256
+        (base32 "0d6k75icfr4k3hb7pliqsvn62ncd446pd7nxfnx4vhgalq6sxdxr"))))
+    (properties `((upstream-name . "CohortSurvival")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-survival
+                             r-stringr
+                             r-scales
+                             r-rlang
+                             r-patientprofiles
+                             r-magrittr
+                             r-lubridate
+                             r-dplyr
+                             r-dbplyr
+                             r-dbi
+                             r-cli
+                             r-checkmate
+                             r-cdmconnector
+                             r-broom))
+    (native-inputs (list r-knitr))
+    (home-page "https://darwin-eu-dev.github.io/CohortSurvival/")
+    (synopsis "Estimate Survival from Common Data Model Cohorts")
+    (description
+     "Estimate survival using data mapped to the Observational Medical Outcomes
+Partnership common data model.  Survival can be estimated based on user-defined
+study cohorts.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-cohorts
   (package
     (name "r-cohorts")
@@ -20495,13 +20553,13 @@ search strategy, a candidate code list will be returned.")
 (define-public r-codecountr
   (package
     (name "r-codecountr")
-    (version "0.0.3.1")
+    (version "0.0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "codecountR" version))
        (sha256
-        (base32 "1m4909dzlsm4jz6fncwlhc6qygrszxh81qzpr9yfk9m310va965q"))))
+        (base32 "0b8qz3lzjc8r9ddjspjhc7azwh0i1v8mx9wrk959fafyracq68fk"))))
     (properties `((upstream-name . "codecountR")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -20514,13 +20572,10 @@ counting and data preparation are necessary phases to carry out the analysis.
 Thus, the analysts will wish to count the codes inserted in a text (tokenization
 and counting of a list of pre-established codes) and to carry out the
 preparation of the data (feature scaling min-max normalization, Zscore, Box and
-Cox transformation, Yeo and Johnson transformation, median absolute deviation).
-For Box and Cox (1964) <https://www.jstor.org/stable/2984418> transformation,
-optimal Lambda is calculated by log-likelihood.  The optimal lambda for Yeo and
-Johnson (2000) <doi:10.1093/biomet/87.4.954> transformation is calculated by
-correlation coefficient test inspired of Lye (1993) <doi:10.1139/l93-101>.
-Median absolute deviation is calculated on the basis of Leys et al (1993)
-<doi:10.1016/j.jesp.2013.03.013>.  Package for educational purposes.")
+Cox transformation, non parametric bootstrap).  For Box and Cox (1964)
+<https://www.jstor.org/stable/2984418> transformation, optimal Lambda is
+calculated by log-likelihood.  Non parametric bootstrap is based on randomly
+sampling data with replacement.  Package for educational purposes.")
     (license license:gpl3)))
 
 (define-public r-codecollection
@@ -23327,13 +23382,13 @@ clusters that exist across the datasets.")
 (define-public r-clustermq
   (package
     (name "r-clustermq")
-    (version "0.9.1")
+    (version "0.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clustermq" version))
        (sha256
-        (base32 "186r9fwrgygg56qz1i230f9yaddnqzj7617l4rm1rd56kqp6gqd9"))))
+        (base32 "05f4ql5zvikaznmds0m8brdidz9qmpxkv3pr6zb8bjcnzaj4qz6x"))))
     (properties `((upstream-name . "clustermq")))
     (build-system r-build-system)
     (inputs (list zlib))
@@ -25019,51 +25074,6 @@ and Heatherington(2017) <doi:10.1177/0962280216684528> are included in the
 package.  The prior distributions for the Bayesian analyses default to the
 posterior predictive distributions derived from these references.")
     (license license:gpl2+)))
-
-(define-public r-clindatareview
-  (package
-    (name "r-clindatareview")
-    (version "1.4.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "clinDataReview" version))
-       (sha256
-        (base32 "0b74ygvwv3ss76y15l9lqg8lwq8vxkdari34i0b6fl12a26ndlh6"))))
-    (properties `((upstream-name . "clinDataReview")))
-    (build-system r-build-system)
-    (inputs (list pandoc))
-    (propagated-inputs (list r-yaml
-                             r-xml2
-                             r-xfun
-                             r-stringr
-                             r-rmarkdown
-                             r-plyr
-                             r-plotly
-                             r-knitr
-                             r-jsonvalidate
-                             r-jsonlite
-                             r-htmlwidgets
-                             r-htmltools
-                             r-haven
-                             r-ggplot2
-                             r-data-table
-                             r-crosstalk
-                             r-clinutils
-                             r-bookdown))
-    (native-inputs (list r-knitr esbuild))
-    (home-page "https://github.com/openanalytics/clinDataReview")
-    (synopsis "Clinical Data Review Tool")
-    (description
-     "Creation of interactive tables, listings and figures ('TLFs') and associated
-report for exploratory analysis of data in a clinical trial, e.g. for clinical
-oversight activities.  Interactive figures include sunburst, treemap,
-scatterplot, line plot and barplot of counts data.  Interactive tables include
-table of summary statistics (as counts of adverse events, enrollment table) and
-listings.  Possibility to compare data (summary table or listing) across two
-data batches/sets.  A clinical data review report is created via study-specific
-configuration files and template R Markdown reports contained in the package.")
-    (license license:expat)))
 
 (define-public r-climwin
   (package
@@ -37041,13 +37051,13 @@ by other packages (or your own code).")
 (define-public r-cartogramr
   (package
     (name "r-cartogramr")
-    (version "1.0-9")
+    (version "1.0-10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cartogramR" version))
        (sha256
-        (base32 "0j8xa11g3m9sp2vcx0z6lk6cpdd8f83r2qx1ibcz28h5s6nmvn69"))))
+        (base32 "1yviplg837pzlyzhalqybd3pjda6rr2947a766g4wvbpj4qf4b64"))))
     (properties `((upstream-name . "cartogramR")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-data-table))

@@ -7911,6 +7911,53 @@ Durufle et al (2020) <doi:10.1093/bib/bbaa166> and Durufle et al (2020)
 <doi:10.3390/cells9102249>.")
     (license license:gpl3)))
 
+(define-public r-wallace
+  (package
+    (name "r-wallace")
+    (version "2.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "wallace" version))
+       (sha256
+        (base32 "03yqm4zxc2hglw8n8ababv5y8nlf9ynj3c9j557s571mf73r00jk"))))
+    (properties `((upstream-name . "wallace")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zip
+                             r-spthin
+                             r-spocc
+                             r-shinywidgets
+                             r-shinyjs
+                             r-shinyalert
+                             r-shiny
+                             r-sf
+                             r-rmarkdown
+                             r-rlang
+                             r-rjava
+                             r-rcolorbrewer
+                             r-magrittr
+                             r-leaflet-extras
+                             r-leaflet
+                             r-leafem
+                             r-knitcitations
+                             r-enmeval
+                             r-ecospat
+                             r-dt
+                             r-dplyr))
+    (home-page "http://wallaceecomod.github.io/wallace/")
+    (synopsis
+     "Modular Platform for Reproducible Modeling of Species Niches and Distributions")
+    (description
+     "The shiny application Wallace is a modular platform for reproducible modeling of
+species niches and distributions.  Wallace guides users through a complete
+analysis, from the acquisition of species occurrence and environmental data to
+visualizing model predictions on an interactive map, thus bundling complex
+workflows into a single, streamlined interface.  An extensive vignette, which
+guides users through most package functionality can be found on the package's
+@code{GitHub} Pages website:
+<https://wallaceecomod.github.io/wallace/articles/tutorial-v2.html>.")
+    (license license:gpl3)))
+
 (define-public r-walkscoreapi
   (package
     (name "r-walkscoreapi")

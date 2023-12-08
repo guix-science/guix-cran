@@ -20635,6 +20635,54 @@ functions are easy to use.  Performs analysis in various designs, with balanced
 and unbalanced data.")
     (license license:gpl2)))
 
+(define-public r-easyalluvial
+  (package
+    (name "r-easyalluvial")
+    (version "0.3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "easyalluvial" version))
+       (sha256
+        (base32 "1jn65b4rfzw3hn6n1bmdaqfv2fb7wq0b8rgbflj230k79kravsxm"))))
+    (properties `((upstream-name . "easyalluvial")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-recipes
+                             r-rcolorbrewer
+                             r-randomforest
+                             r-purrr
+                             r-progressr
+                             r-progress
+                             r-magrittr
+                             r-gridextra
+                             r-ggridges
+                             r-ggplot2
+                             r-ggalluvial
+                             r-forcats
+                             r-dplyr))
+    (home-page "https://github.com/erblast/easyalluvial/")
+    (synopsis "Generate Alluvial Plots with a Single Line of Code")
+    (description
+     "Alluvial plots are similar to sankey diagrams and visualise categorical data
+over multiple dimensions as flows. (Rosvall M, Bergstrom CT (2010) Mapping
+Change in Large Networks.  P@code{LoS} ONE 5(1): e8694.
+<doi:10.1371/journal.pone.0008694> Their graphical grammar however is a bit more
+complex then that of a regular x/y plots.  The ggalluvial package made a great
+job of translating that grammar into ggplot2 syntax and gives you many options
+to tweak the appearance of an alluvial plot, however there still remains a
+multi-layered complexity that makes it difficult to use ggalluvial for
+explorative data analysis.  easyalluvial provides a simple interface to this
+package that allows you to produce a decent alluvial plot from any dataframe in
+either long or wide format from a single line of code while also handling
+continuous data.  It is meant to allow a quick visualisation of entire
+dataframes with a focus on different colouring options that can make alluvial
+plots a great tool for data exploration.")
+    (license license:cc0)))
+
 (define-public r-easyahp
   (package
     (name "r-easyahp")

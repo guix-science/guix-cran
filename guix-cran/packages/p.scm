@@ -638,13 +638,13 @@ Memorial Medal'.  Users can provide recipients of other prizes.")
 (define-public r-pwexp
   (package
     (name "r-pwexp")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PWEXP" version))
        (sha256
-        (base32 "1dw3g8f105hjs2b975c4aijr7spphl3f1f9jfbfvjzh0a0hgph6f"))))
+        (base32 "1hkad8yzxw3f1qgwlsfx68l9qp11byz57497z43fcq34b6xjw1an"))))
     (properties `((upstream-name . "PWEXP")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-segmented r-foreach r-fastmatch
@@ -15527,13 +15527,13 @@ T. Huang, H. Gu (2019) <@code{arXiv:1904.11745>}.")
 (define-public r-poissonmultinomial
   (package
     (name "r-poissonmultinomial")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PoissonMultinomial" version))
        (sha256
-        (base32 "0h8486f5a74yik340ghg6mwb80sj38r02lzjsm0wvv07kb7zq9zp"))))
+        (base32 "0xbbs37i23f2swd15rxrw780q7cck9qz5yc4218knxgbj9p5pn8h"))))
     (properties `((upstream-name . "PoissonMultinomial")))
     (build-system r-build-system)
     (inputs (list fftw))
@@ -15550,7 +15550,7 @@ function of the Poisson-Multinomial distribution.  The normal approximation
 method uses a multivariate normal distribution to approximate the pmf of the
 distribution based on central limit theorem.  The simulation method is based on
 the law of large numbers.  Details about the methods are available in Lin, Wang,
-and Hong (2022) <@code{arXiv:2201.04237>}.")
+and Hong (2022) <DOI:10.1007/s00180-022-01299-0>.")
     (license license:gpl2+)))
 
 (define-public r-poissonmt
@@ -22696,13 +22696,13 @@ efficient and reproducible.")
 (define-public r-phreeqc
   (package
     (name "r-phreeqc")
-    (version "3.7.5")
+    (version "3.7.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phreeqc" version))
        (sha256
-        (base32 "13z1pl2hqv26bm6k3zj9hh69xw0jf1swjimmib82r8n0xjs5dy8m"))))
+        (base32 "086c8lpg6sq57j4q1nazl9gx51mfc5yz22yrw9qz115v8hbmq7w3"))))
     (properties `((upstream-name . "phreeqc")))
     (build-system r-build-system)
     (home-page "https://www.usgs.gov/software/phreeqc-version-3")

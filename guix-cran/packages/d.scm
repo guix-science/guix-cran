@@ -5764,13 +5764,13 @@ can be used for clustering of RNA methylation sequencing data.")
 (define-public r-dparser
   (package
     (name "r-dparser")
-    (version "1.3.1-10")
+    (version "1.3.1-11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dparser" version))
        (sha256
-        (base32 "039yjgfw7hqw56cn799fqyf60if72y9q2pmpjh126a3s47mygifx"))))
+        (base32 "1xb4gfqcb4598wry3i1mfp9a3rjy74z2wy3ga9daaam155vcdbp8"))))
     (properties `((upstream-name . "dparser")))
     (build-system r-build-system)
     (propagated-inputs (list r-digest))
@@ -5784,16 +5784,15 @@ for \"rightmost (derivation)\".  For more information see
 (1987) algorithm. (Paper can be found at
 <https://aclanthology.org/P84-1073.pdf>).  The original dparser package
 documentation can be found at <https://dparser.sourceforge.net/>.  This allows
-you to add mini-languages to R (like @code{RxODE's} ODE mini-language Wang,
-Hallow, and James 2015 <DOI:10.1002/psp4.12052>) or to parse other languages
-like NONMEM to automatically translate them to R code.  To use this in your
-code, add a @code{LinkingTo} dparser in your DESCRIPTION file and instead of
-using #include <dparse.h> use #include <dparser.h>.  This also provides a
-R-based port of the make_dparser
-<https://dparser.sourceforge.net/d/make_dparser.cat> command called mkdparser().
- Additionally you can parse an arbitrary grammar within R using the dparse()
-function, which works on most OSes and is mainly for grammar testing.  The
-fastest parsing, of course, occurs at the C level, and is suggested.")
+you to add mini-languages to R (like rxode2's ODE mini-language Wang, Hallow,
+and James 2015 <DOI:10.1002/psp4.12052>) or to parse other languages like NONMEM
+to automatically translate them to R code.  To use this in your code, add a
+@code{LinkingTo} dparser in your DESCRIPTION file and instead of using #include
+<dparse.h> use #include <dparser.h>.  This also provides a R-based port of the
+make_dparser <https://dparser.sourceforge.net/d/make_dparser.cat> command called
+mkdparser().  Additionally you can parse an arbitrary grammar within R using the
+dparse() function, which works on most OSes and is mainly for grammar testing.
+The fastest parsing, of course, occurs at the C level, and is suggested.")
     (license license:bsd-3)))
 
 (define-public r-doypacolors
@@ -11482,13 +11481,13 @@ hazard function.")
 (define-public r-discfa
   (package
     (name "r-discfa")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "discFA" version))
        (sha256
-        (base32 "01zwqmkajyz9grqlbha4dykgc6s5xxxpng57ydq5mb5aw44188l9"))))
+        (base32 "0z455pymg48j5z8g4z6bpv8qrrwxj6gfw2p2135dpvl37jpgha42"))))
     (properties `((upstream-name . "discFA")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam))
@@ -19618,16 +19617,15 @@ can also make it easier for designs to be shared, replicated, and critiqued.")
 (define-public r-declared
   (package
     (name "r-declared")
-    (version "0.23")
+    (version "0.24")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "declared" version))
        (sha256
-        (base32 "0y01xa9vw6v8dw1sm2ijvxhwfx54iwggy0qicamp9ljs5bcgvz6h"))))
+        (base32 "0zj5rvdj2jcy23nms5dhqjp9w4sd87r7cr4slh6qli15w75ryr50"))))
     (properties `((upstream-name . "declared")))
     (build-system r-build-system)
-    (native-inputs (list r-knitr))
     (home-page "https://github.com/dusadrian/declared")
     (synopsis "Functions for Declared Missing Values")
     (description
@@ -19635,8 +19633,8 @@ can also make it easier for designs to be shared, replicated, and critiqued.")
 labels and missing values, coupled with associated functions to create
 (weighted) tables of frequencies and various other summary measures.  Some of
 the base functions have been rewritten to make use of the specific information
-about the missing values, most importantly to distinguish between empty and
-declared missing values.  Some functions have similar functionality with the
+about the missing values, most importantly to distinguish between empty NA and
+declared NA values.  Some functions have similar functionality with the
 corresponding ones from packages \"haven\" and \"labelled\".  The aim is to ensure
 as much compatibility as possible with these packages, while offering an
 alternative in the objects of class \"declared\".")
@@ -22211,13 +22209,13 @@ classification step.")
 (define-public r-dbarts
   (package
     (name "r-dbarts")
-    (version "0.9-23")
+    (version "0.9-25")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dbarts" version))
        (sha256
-        (base32 "18spfl9wkrhr9vyql0456h8g39fdip6xjxqf9xfqj8f3i7ynbb71"))))
+        (base32 "0w6qh90jn1q9kkxfvh5vghma44l4i2f9apzyi2yr4z6ix8l859rr"))))
     (properties `((upstream-name . "dbarts")))
     (build-system r-build-system)
     (native-inputs (list r-rmarkdown r-knitr))
@@ -25708,22 +25706,22 @@ corresponding data, as described in International Journal of Epidemiology
 (define-public r-dagitty
   (package
     (name "r-dagitty")
-    (version "0.3-1")
+    (version "0.3-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dagitty" version))
        (sha256
-        (base32 "1a78g2nr8i7mzzxyb6mfsqqgjyf3s4hwngvyd9vyygzcb79bai3x"))))
+        (base32 "10iw5ldra7ih3jpp1iaac6cbfgpl62bq09zl30c0z03mzhj18vvr"))))
     (properties `((upstream-name . "dagitty")))
     (build-system r-build-system)
     (propagated-inputs (list r-v8 r-mass r-jsonlite r-boot))
     (native-inputs (list r-knitr))
-    (home-page "http://www.dagitty.net")
+    (home-page "https://www.dagitty.net")
     (synopsis "Graphical Analysis of Structural Causal Models")
     (description
      "This package provides a port of the web-based software DAGitty', available at
-<http://dagitty.net>, for analyzing structural causal models (also known as
+<https://dagitty.net>, for analyzing structural causal models (also known as
 directed acyclic graphs or DAGs).  This package computes covariate adjustment
 sets for estimating causal effects, enumerates instrumental variables, derives
 testable implications (d-separation and vanishing tetrads), generates equivalent

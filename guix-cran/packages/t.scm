@@ -8025,13 +8025,13 @@ generalization, aggregation, intersection, simulation, and plotting.")
 (define-public r-traj
   (package
     (name "r-traj")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "traj" version))
        (sha256
-        (base32 "051cq2rn6n4kf9a3ljbvmcgmhsvrhxjfzxp539y0yl5p6dbxsy3k"))))
+        (base32 "049vllrxsgp1hsjh8w79nybmcl40wlnjp5bxdkjrc0r3yi8mvc0v"))))
     (properties `((upstream-name . "traj")))
     (build-system r-build-system)
     (propagated-inputs (list r-psych r-cluster))
@@ -8813,13 +8813,13 @@ flexible tpn model.")
 (define-public r-tpmsm
   (package
     (name "r-tpmsm")
-    (version "1.2.7")
+    (version "1.2.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TPmsm" version))
        (sha256
-        (base32 "0xh1cmnwn7agd607ns1fdfz7gggms6jmy6ndb1r9icgbiqhy1z5d"))))
+        (base32 "1s3rcz2bxngpi47ils3z5v5drv66k10mnvzhifj47b5671w1rb6k"))))
     (properties `((upstream-name . "TPmsm")))
     (build-system r-build-system)
     (propagated-inputs (list r-kernsmooth))
@@ -13574,13 +13574,13 @@ common support calculations, and plotting useful summaries of these.")
 (define-public r-tidytransit
   (package
     (name "r-tidytransit")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidytransit" version))
        (sha256
-        (base32 "0x3p5vcyj9mzcl7hbnmzwwbbxc8wih7lf0s35i704fj6kbv9rc47"))))
+        (base32 "0n5iy7cpj94r396rf6rzx2n258836rjf7906hrdj58rgc28qhacm"))))
     (properties `((upstream-name . "tidytransit")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf
@@ -21626,39 +21626,35 @@ Wadhwa et al. (2018) <doi:10.21105/joss.00860>.")
 (define-public r-tdapplied
   (package
     (name "r-tdapplied")
-    (version "2.0.4")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TDApplied" version))
        (sha256
-        (base32 "0bq06pzw7w4qp8cqvkxqqhx2qyn03vz7zxsk3f1ykjv846qxf6bb"))))
+        (base32 "0k9pnpg5k9jgqhgaajp57nl42hirv5v3a2q5jnqjcgdj5cnkfnwf"))))
     (properties `((upstream-name . "TDApplied")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdist
+                             r-rcpp
                              r-parallelly
                              r-kernlab
                              r-iterators
                              r-foreach
                              r-doparallel
                              r-clue))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/shaelebrown/TDApplied")
     (synopsis "Machine Learning and Inference for Topological Data Analysis")
     (description
      "Topological data analysis is a powerful tool for finding non-linear global
-structure in whole datasets.  TDApplied aims to bridge topological data analysis
-with data, statistical and machine learning practitioners so that more analyses
-may benefit from the power of topological data analysis.  The main tool of
-topological data analysis is persistent homology, which computes a shape
-descriptor of a dataset, called a persistence diagram.  There are five goals of
-this package: (1) deliver a fast implementation of persistent homology via a
-python interface, (2) convert persistence diagrams computed using the two main R
-packages for topological data analysis into a data frame, (3) implement fast
-versions of both distance and kernel calculations for pairs of persistence
-diagrams, (4) contribute tools for the interpretation of persistence diagrams,
-and (5) provide parallelized methods for machine learning and inference for
-persistence diagrams.")
+structure in whole datasets.  The main tool of topological data analysis is
+persistent homology, which computes a topological shape descriptor of a dataset
+called a persistence diagram.  TDApplied provides useful and efficient methods
+for analyzing groups of persistence diagrams with machine learning and
+statistical inference, and these functions can also interface with other data
+science packages to form flexible and integrated topological data analysis
+pipelines.")
     (license license:gpl3)))
 
 (define-public r-tdakit
