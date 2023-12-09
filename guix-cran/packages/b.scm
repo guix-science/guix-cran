@@ -9081,13 +9081,13 @@ use.  It can be found at the Blat website http://www.blat.net.")
 (define-public r-blatent
   (package
     (name "r-blatent")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "blatent" version))
        (sha256
-        (base32 "1jnf3i7s3mn99ff8yzygxys0w8qf6vrfk16iqgxh7jbivbrczysk"))))
+        (base32 "0vmybbb5xwmlmzgzyaxiiargi4fd2f661sap2wfmjw9rav89zhmv"))))
     (properties `((upstream-name . "blatent")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm
@@ -9272,13 +9272,13 @@ data with ties.")
 (define-public r-blaise
   (package
     (name "r-blaise")
-    (version "1.3.10")
+    (version "1.3.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "blaise" version))
        (sha256
-        (base32 "1ki2na7a7qdzv2l62r4zkcj0wz73ks63piwcisl4xsw1mcc38rhl"))))
+        (base32 "1ll9yqfinc2x5bb90cvgj4mc5bl4gfsmdshi5pimnjdhzwmwa9jc"))))
     (properties `((upstream-name . "blaise")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-stringr r-readr r-dplyr))
@@ -9297,6 +9297,35 @@ format and checked for compatibility.  Supports dataframes, tibbles and
 @code{LaF} objects.  For more information about Blaise', see
 <https://blaise.com/products/general-information>.")
     (license license:gpl3)))
+
+(define-public r-blackmarbler
+  (package
+    (name "r-blackmarbler")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "blackmarbler" version))
+       (sha256
+        (base32 "0z5x56p7g2ypv1zh9bmzxgbkacp26hrr1x8nfydkxyyd47g2c5hw"))))
+    (properties `((upstream-name . "blackmarbler")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-sf
+                             r-readr
+                             r-raster
+                             r-purrr
+                             r-lubridate
+                             r-httr
+                             r-hdf5r
+                             r-exactextractr
+                             r-dplyr))
+    (home-page "https://worldbank.github.io/blackmarbler/")
+    (synopsis "Black Marble Data and Statistics")
+    (description
+     "Geographically referenced data and statistics of nighttime lights from NASA
+Black Marble <https://blackmarble.gsfc.nasa.gov/>.")
+    (license license:expat)))
 
 (define-public r-blackcarbon
   (package
@@ -9323,13 +9352,13 @@ with an option of filter change adjustment.")
 (define-public r-blackbox
   (package
     (name "r-blackbox")
-    (version "1.1.43")
+    (version "1.1.46")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "blackbox" version))
        (sha256
-        (base32 "0q543vz4alg8i1ckh3w029gj9x8dminnq9l92d165w73r8adnalq"))))
+        (base32 "03m93v5nk5zg039axkf02drdj2q165k73xk6waaiyi0b8w0sbl8l"))))
     (properties `((upstream-name . "blackbox")))
     (build-system r-build-system)
     (propagated-inputs (list r-spamm
@@ -14894,13 +14923,13 @@ main requirement is clear citation of the original publication (see above).")
 (define-public r-bgvar
   (package
     (name "r-bgvar")
-    (version "2.5.2")
+    (version "2.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BGVAR" version))
        (sha256
-        (base32 "0nqlzhdg5z8p5c9qiccldi8fy97w9pnna0nrlvl6n9kxm2si2pp0"))))
+        (base32 "0gspcjjq61pjc06qckvmhj9q800qsvh9ygkhmbwrdfh3nvw986m6"))))
     (properties `((upstream-name . "BGVAR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -22502,18 +22531,18 @@ variables.")
 (define-public r-bayescount
   (package
     (name "r-bayescount")
-    (version "0.9.99-8")
+    (version "0.9.99-9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayescount" version))
        (sha256
-        (base32 "1aqj8n0jzayyym1akm2w70fw96i9j1nw4yn47jz75ckwrndjg33k"))))
+        (base32 "1m9rsyxzf76079yzacgg1wqvylqgvmvwag043csaykn1m42kzdm3"))))
     (properties `((upstream-name . "bayescount")))
     (build-system r-build-system)
     (inputs (list jags))
     (propagated-inputs (list r-runjags r-rjags r-coda))
-    (home-page "http://bayescount.sourceforge.net")
+    (home-page "https://bayescount.sourceforge.net")
     (synopsis
      "Power Calculations and Bayesian Analysis of Count Distributions and FECRT Data using MCMC")
     (description

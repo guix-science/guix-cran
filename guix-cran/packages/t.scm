@@ -19707,13 +19707,13 @@ Includes a Shiny user interface for point-and-click ternary plotting.")
 (define-public r-tern
   (package
     (name "r-tern")
-    (version "0.9.0")
+    (version "0.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tern" version))
        (sha256
-        (base32 "1z5xqbf81si3l0rcjgc7lygh49cm0h9irmq4q9d3a03kwlwxh080"))))
+        (base32 "0znhq8sz5v229rlxgqgfzdlzc5vr8fwlz6xccycmqsq5w2c7zjhf"))))
     (properties `((upstream-name . "tern")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

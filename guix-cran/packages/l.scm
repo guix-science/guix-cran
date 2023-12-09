@@ -2225,17 +2225,17 @@ gene expression data are also provided.")
 (define-public r-lpridge
   (package
     (name "r-lpridge")
-    (version "1.0-8")
+    (version "1.1-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lpridge" version))
        (sha256
-        (base32 "0jk4l95z9rcdqkc8lpp4sf1mg2dqj67rhqw1iafrxy5lx4jfaqqx"))))
+        (base32 "1zc0jn7j15yb3qj5sxs0nnj8knrzhm8899kyps6fp10vm2wwdnd1"))))
     (properties `((upstream-name . "lpridge")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
-    (home-page "https://cran.r-project.org/package=lpridge")
+    (home-page "https://curves-etc.r-forge.r-project.org/")
     (synopsis "Local Polynomial (Ridge) Regression")
     (description "Local Polynomial Regression with Ridging.")
     (license license:gpl2+)))
@@ -12102,13 +12102,13 @@ general (not R specific) information on the algorithm Leabra see
 (define-public r-ldt
   (package
     (name "r-ldt")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ldt" version))
        (sha256
-        (base32 "1874a9n5w8l4ljwwqr2bf9habhc5azakvrn94jn1chx2fhkbn7s9"))))
+        (base32 "01pswd6s0xq1jhvys5k7l4mphyvnly8iyn22wr9nl64ybsb2mmhy"))))
     (properties `((upstream-name . "ldt")))
     (build-system r-build-system)
     (propagated-inputs (list r-tdata r-rdpack r-rcpp r-mass r-bh))

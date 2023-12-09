@@ -4099,21 +4099,24 @@ dynamic borrowing methods.")
 (define-public r-psbcspeedup
   (package
     (name "r-psbcspeedup")
-    (version "2.0.4")
+    (version "2.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psbcSpeedUp" version))
        (sha256
-        (base32 "170jgsy4wbfr98hcml4dxd4al8q2c0dk9d5k40vcfpab377pnllg"))))
+        (base32 "090zmx0jz5npl5yw43ipz7b3yz95dz0kl5gwc505102l2gn14ibl"))))
     (properties `((upstream-name . "psbcSpeedUp")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
+                             r-survival
+                             r-riskregression
                              r-rcpparmadillo
                              r-rcpp
                              r-mass
                              r-ggplot2
                              r-ggally))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/ocbe-uio/psbcSpeedUp")
     (synopsis "Penalized Semiparametric Bayesian Cox Models")
     (description
@@ -17430,13 +17433,13 @@ so that R code can be used to power Tableau workbooks.")
 (define-public r-plugdensity
   (package
     (name "r-plugdensity")
-    (version "0.8-4")
+    (version "0.8-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plugdensity" version))
        (sha256
-        (base32 "0kj7vixfyg4nxq05xgmrhsjd56myz2s1jplhbkmq25kf2r9pb89y"))))
+        (base32 "1gxjr6984p4awps5syzknzjyhpnjzqshv9c3cdx4xbkp1ax3xrw9"))))
     (properties `((upstream-name . "plugdensity")))
     (build-system r-build-system)
     (home-page "http://curves-etc.r-forge.r-project.org/")
@@ -25136,13 +25139,13 @@ for the Polya Gamma Distribution using either C++ headers for Rcpp or
 (define-public r-pfr
   (package
     (name "r-pfr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pfr" version))
        (sha256
-        (base32 "00fq3d2np5vvvyj6m2zc4hyjaz79j2fdhyxg7rqg71ibaq02r9cn"))))
+        (base32 "09x8b3qa3bfg4sh0qavzsw72xh64a0qhic7pm3gn03znavg7pzlz"))))
     (properties `((upstream-name . "pfr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstudioapi r-inline))
@@ -35602,6 +35605,36 @@ imputing records where observations were absent (pad).")
 function returns the numerator and denominator coefficients for the @code{PadÃ©}
 approximant of appropriate order (Baker, 1975) <ISBN:9780120748556>.")
     (license (list license:gpl2+ license:bsd-2))))
+
+(define-public r-pacvr
+  (package
+    (name "r-pacvr")
+    (version "1.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PACVr" version))
+       (sha256
+        (base32 "0xkn25qmj64yn9aclfvvpz8zgwc84fy9hcfz62gj4xzv29k5j2j2"))))
+    (properties `((upstream-name . "PACVr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-read-gb
+                             r-rcircos
+                             r-logger
+                             r-iranges
+                             r-genomicranges
+                             r-genomicalignments
+                             r-dplyr
+                             r-biostrings))
+    (home-page "https://cran.r-project.org/package=PACVr")
+    (synopsis "Plastome Assembly Coverage Visualization")
+    (description
+     "Visualizes the coverage depth of a complete plastid genome as well as the
+equality of its inverted repeat regions in relation to the circular,
+quadripartite genome structure and the location of individual genes.  For more
+information, please see Gruenstaeudl and Jenke (2020)
+<doi:10.1186/s12859-020-3475-0>.")
+    (license (license:fsdg-compatible "BSD 3-clause License + file LICENSE"))))
 
 (define-public r-pacviz
   (package

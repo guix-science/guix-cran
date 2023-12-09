@@ -11834,17 +11834,17 @@ and Schuemie et al. (2018) <doi:10.1073/pnas.1708282114>.")
 (define-public r-empichar
   (package
     (name "r-empichar")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "empichar" version))
        (sha256
-        (base32 "1hcl6wbf4saxxp54j2w67csv6nzfgc3f3wdd9lk9grmkxsaab4rx"))))
+        (base32 "0az7qxfnqrmxgd2591h49qs1w7iyzz6i490h4xn9gdzsplhpy1sw"))))
     (properties `((upstream-name . "empichar")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
-    (home-page "https://cran.r-project.org/package=empichar")
+    (home-page "https://github.com/gbasulto/empichar")
     (synopsis
      "Evaluates the Empirical Characteristic Function for Multivariate Samples")
     (description
@@ -19515,13 +19515,13 @@ methods in this package are Montgomery, Hollenbach, and Ward (2015)
 (define-public r-ebirdst
   (package
     (name "r-ebirdst")
-    (version "3.2022.0")
+    (version "3.2022.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ebirdst" version))
        (sha256
-        (base32 "1kpqy90vs104fy6714v3vxxhl3jsg3v4z1qf5kwpr6yj65wq341s"))))
+        (base32 "1zvx5630ka8ik350ikxcmaxqrphs71nh4f86sijxz1csvslqphpm"))))
     (properties `((upstream-name . "ebirdst")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite

@@ -5600,13 +5600,13 @@ about date input quality, performance, or the ABS catalogue.")
 (define-public r-grattan
   (package
     (name "r-grattan")
-    (version "2023.1.1")
+    (version "2023.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grattan" version))
        (sha256
-        (base32 "148j0mf26rv2ads18543lvcf9izh61zr5if2djxn11zm3px3l8v5"))))
+        (base32 "15865w1m1zdgnxwcyglgm8sqvz88v5ific56662x3nrf0vh7pycx"))))
     (properties `((upstream-name . "grattan")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr
@@ -21922,13 +21922,13 @@ measures variability in subpopulations relative to the total population).")
 (define-public r-gentwoarmstrialsize
   (package
     (name "r-gentwoarmstrialsize")
-    (version "0.0.4.3")
+    (version "0.0.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GenTwoArmsTrialSize" version))
        (sha256
-        (base32 "1bmzrrm0dmg0s5skcrp09l2gkjwz2m6sfjdiminxyv19d68wd66y"))))
+        (base32 "13i36hwq3wgsc5bsdz18j74rbr8yijakhmh0kzwky6nx9i03ifm5"))))
     (properties `((upstream-name . "GenTwoArmsTrialSize")))
     (build-system r-build-system)
     (propagated-inputs (list r-trialsize r-hmisc r-dplyr))
@@ -21943,8 +21943,8 @@ hypothesis tests (equality/noninferiority/superiority/equivalence), trial arms
 noncompliance rates and expected loss of follow-up.  Methods are described in:
 Chow SC, Shao J, Wang H, Lokhnygina Y (2017) <doi:10.1201/9781315183084>,
 Wittes, J (2002) <doi:10.1093/epirev/24.1.39>, Sato, T (2000)
-<doi:10.1002/1097-0258(20001015)19:19<2689::aid-sim555>3.0.co;2-0>, Lachin J M,
-Foulkes, M A (1986) <doi:10.2307/2531201>, Whitehead J(1993)
+<doi:10.1002/1097-0258(20001015)19:19%3C2689::aid-sim555%3E3.0.co;2-0>, Lachin J
+M, Foulkes, M A (1986) <doi:10.2307/2531201>, Whitehead J(1993)
 <doi:10.1002/sim.4780122404>, Julious SA (2023) <doi:10.1201/9780429503658>.")
     (license license:gpl3)))
 
@@ -26652,13 +26652,13 @@ benchmarks collected from a wide range of applications.")
 (define-public r-gasp
   (package
     (name "r-gasp")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GaSP" version))
        (sha256
-        (base32 "14wjg5zgas6zj98qlwjdmr32byrn6bazg1dxpjh02n6md5dfysbp"))))
+        (base32 "1xwh8wmvwsqf0d0zra65gadvbra229daiimz0zqnmlrlga2hdfqp"))))
     (properties `((upstream-name . "GaSP")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -28453,18 +28453,17 @@ solving the problem.")
 (define-public r-gabb
   (package
     (name "r-gabb")
-    (version "0.3.5")
+    (version "0.3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GABB" version))
        (sha256
-        (base32 "0ds9silfsp6q5br7d4vkj38mrrq6407zkfpi361dpx8j69y9svli"))))
+        (base32 "1hwk9653y7xw48vqg69kgkmid8yxmx66rirq66s9khd85pllgbg9"))))
     (properties `((upstream-name . "GABB")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
                              r-tidyr
-                             r-rvaidememoire
                              r-pheatmap
                              r-hotelling
                              r-ggrepel

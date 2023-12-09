@@ -6018,18 +6018,18 @@ described by Culpepper (2016) <doi:10.1007/s11336-015-9477-6>.")
 (define-public r-fourierin
   (package
     (name "r-fourierin")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fourierin" version))
        (sha256
-        (base32 "140721p4h5mjr7r25ckv8wfhbj88xw6v47b613r5bpalg8gw650l"))))
+        (base32 "1rl1h433m1kw1jnwb1fqq9vc1qixyz6zd7jzmm4h51xf8mz8r463"))))
     (properties `((upstream-name . "fourierin")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (native-inputs (list r-knitr))
-    (home-page "http://github.com/gbasulto/fourierin")
+    (home-page "https://github.com/gbasulto/fourierin")
     (synopsis "Computes Numeric Fourier Integrals")
     (description
      "Computes Fourier integrals of functions of one and two variables using the Fast
@@ -11699,6 +11699,42 @@ especially for simulating a physical or biological system.")
      "An interface to the Fish Tree of Life API to download taxonomies, phylogenies,
 fossil calibrations, and diversification rate information for ray-finned fishes.")
     (license license:bsd-2)))
+
+(define-public r-fishrman
+  (package
+    (name "r-fishrman")
+    (version "1.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fishRman" version))
+       (sha256
+        (base32 "09kzjcngycf1xvcyszqfsrn6iypn4n86cz0h2cmwv0i6hc8k0jwb"))))
+    (properties `((upstream-name . "fishRman")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-viridis
+                             r-shinywidgets
+                             r-shinyjs
+                             r-shinybs
+                             r-shiny
+                             r-sf
+                             r-maps
+                             r-jsonlite
+                             r-httr
+                             r-golem
+                             r-ggplot2
+                             r-dplyr
+                             r-countrycode
+                             r-config))
+    (home-page "https://github.com/Shyentist/fish-r-man")
+    (synopsis "The Fisheries Scientist's Toolbox")
+    (description
+     "This package provides a bundle of analytics tools for fisheries scientists.
+Data on fishing effort by Global Fishing Watch can be retrieved via the
+package's API <https://fishrman.ddnsfree.com/gfw>, as well as data on Exclusive
+Economic Zones by Marine Regions'.  A shiny R App is included for a no-code
+solution for retrieval, analysis, and visualization.")
+    (license license:agpl3+)))
 
 (define-public r-fishresp
   (package
@@ -17519,13 +17555,13 @@ shortcuts to facilitate operations on very large data.")
 (define-public r-fasttextr
   (package
     (name "r-fasttextr")
-    (version "2.0.1")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastTextR" version))
        (sha256
-        (base32 "1f1b9dsir0dxw2psp721vgpjj6pwrx1xxsd0cqxnfq8mpwswf125"))))
+        (base32 "1hj3cplh0v062q6jm0j3r4spi5aac5bfas7sda9is9glpv6h3sgw"))))
     (properties `((upstream-name . "fastTextR")))
     (build-system r-build-system)
     (propagated-inputs (list r-slam r-rcpp))

@@ -1552,13 +1552,13 @@ background with administrative areas.")
 (define-public r-knockofftrio
   (package
     (name "r-knockofftrio")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "KnockoffTrio" version))
        (sha256
-        (base32 "1xm7hx6c8w305wk4qc6w3awc6pykn7b5v5lakpv9rkikn4c7rkrf"))))
+        (base32 "198sy0ww4cc59yqgf66vg6r5g52wmgpn51v43cm51b3pi7g7klar"))))
     (properties `((upstream-name . "KnockoffTrio")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=KnockoffTrio")

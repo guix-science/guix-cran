@@ -3375,6 +3375,29 @@ distribution.  Estimation via the fast and reliable routines of the mgcv
 package.  For more details see <doi:10.1016/j.csda.2023.107796>.")
     (license license:expat)))
 
+(define-public r-dsem
+  (package
+    (name "r-dsem")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dsem" version))
+       (sha256
+        (base32 "11ba06rj31xqppdci3114nppsbmw86f0fbm5xjndi4iys35ar0s9"))))
+    (properties `((upstream-name . "dsem")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tmb r-sem r-rcppeigen r-matrix r-igraph))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=dsem")
+    (synopsis "Fit Dynamic Structural Equation Models")
+    (description
+     "Applies dynamic structural equation models to time-series data with generic and
+simplified specification for simultaneous and lagged effects.  Methods are
+described in Thorson et al. (In revision) \"Dynamic structural equation models
+synthesize ecosystem dynamics constrained by ecological mechanisms.\"")
+    (license license:gpl3)))
+
 (define-public r-dse
   (package
     (name "r-dse")
@@ -23215,13 +23238,13 @@ Dataset JSON schema file, as described in CDISC (2023)
 (define-public r-dataset
   (package
     (name "r-dataset")
-    (version "0.2.1")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dataset" version))
        (sha256
-        (base32 "1p7f27q3z810kfgcpcz934s3x8g2dl9dhg0y3sbr4z31kdmcaf8q"))))
+        (base32 "0c3cjwpdz6maklsrry6jsxy84dki289s58kc6vx1a68p4n22v5ws"))))
     (properties `((upstream-name . "dataset")))
     (build-system r-build-system)
     (propagated-inputs (list r-isocodes r-assertthat))

@@ -4470,17 +4470,18 @@ computational time.  See Llaberia-Robledillo et al. (2022,
 (define-public r-rtables
   (package
     (name "r-rtables")
-    (version "0.6.3")
+    (version "0.6.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtables" version))
        (sha256
-        (base32 "04s3g436xgnn0j74mkp7j16klrarpw2pq5gqx10n76r554r3j6m5"))))
+        (base32 "003hsjp023gxbidk3m3i78hvak9ixv2c5yv1h7kfjir0jcgjm2gp"))))
     (properties `((upstream-name . "rtables")))
     (build-system r-build-system)
-    (propagated-inputs (list r-magrittr r-htmltools r-formatters))
-    (native-inputs (list r-knitr esbuild))
+    (propagated-inputs (list r-stringi r-magrittr r-htmltools r-formatters
+                             r-checkmate))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/insightsengineering/rtables")
     (synopsis "Reporting Tables")
     (description
@@ -24308,6 +24309,35 @@ data analysis.  The @code{GeoDa} software and its documentation are available at
 <https://geodacenter.github.io>.")
     (license license:gpl2+)))
 
+(define-public r-rgeoboundaries
+  (package
+    (name "r-rgeoboundaries")
+    (version "1.2.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rgeoboundaries" version))
+       (sha256
+        (base32 "1xzh80niwdl9zw8skidfl5g025w3sh66pia65sm7inqvzslszppy"))))
+    (properties `((upstream-name . "rgeoboundaries")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sf
+                             r-memoise
+                             r-lifecycle
+                             r-jsonlite
+                             r-hoardr
+                             r-glue
+                             r-crul
+                             r-countrycode))
+    (home-page "https://github.com/wmgeolab/rgeoboundaries")
+    (synopsis
+     "Client to 'geoBoundaries', a Political Administrative Boundaries Dataset")
+    (description
+     "Client the access data from the @code{geoBoundaries} API
+<https://www.geoboundaries.org/api/current/> who provides country political
+administrative boundaries dataset.")
+    (license license:expat)))
+
 (define-public r-rgenoud
   (package
     (name "r-rgenoud")
@@ -37563,6 +37593,31 @@ facilitates the integration of R and C++.  New projects should use the new Rcpp
 API in the Rcpp package.")
     (license license:gpl2+)))
 
+(define-public r-rcppcgal
+  (package
+    (name "r-rcppcgal")
+    (version "5.6.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RcppCGAL" version))
+       (sha256
+        (base32 "114xwy3z7ca5xiv0dgk9n4qmynj68fdil3kp3w3yhbdqs36sismj"))))
+    (properties `((upstream-name . "RcppCGAL")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ericdunipace/RcppCGAL")
+    (synopsis "'Rcpp' Integration for 'CGAL'")
+    (description
+     "This package creates a header only package to link to the CGAL (Computational
+Geometry Algorithms Library) header files in Rcpp'.  There are a variety of
+potential uses for the software such as Hilbert sorting, K-D Tree nearest
+neighbors, and convex hull algorithms.  For more information about how to use
+the header files, see the CGAL documentation at <https://www.cgal.org>.
+Currently downloads the CGAL version 5.6 stable release.")
+    (license license:gpl3)))
+
 (define-public r-rcppcensspatial
   (package
     (name "r-rcppcensspatial")
@@ -41128,13 +41183,13 @@ Supports the analysis and management of these worlds and game saves.")
 (define-public r-rbeast
   (package
     (name "r-rbeast")
-    (version "0.9.9")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rbeast" version))
        (sha256
-        (base32 "1can7nlh5vg0imgid4p2zvffz507f716aa7krkyqmfpmw2wg9nc1"))))
+        (base32 "1k36rinhm8r6czk60f51p2d895g280k6qrr6qkcqc33l60jl6khi"))))
     (properties `((upstream-name . "Rbeast")))
     (build-system r-build-system)
     (home-page "https://github.com/zhaokg/Rbeast")
@@ -47101,13 +47156,13 @@ of other formats ('SVG', PNG', JPEG') into SWF'.")
 (define-public r-r2sundials
   (package
     (name "r-r2sundials")
-    (version "6.5.0-3")
+    (version "6.5.0-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r2sundials" version))
        (sha256
-        (base32 "15l9a8lhyjrv3ch9c46zlhj6hkx0bnxvq3l1cjny98plwmz2ark6"))))
+        (base32 "03ibv93yh7idjrrrkjdbpsi4pnb3rjd48qdlqa89w0wn99lf5qqd"))))
     (properties `((upstream-name . "r2sundials")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmumps r-rcpparmadillo r-rcpp))

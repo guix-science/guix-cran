@@ -865,13 +865,13 @@ Rcpp package which ensures great performance of the code.")
 (define-public r-symengine
   (package
     (name "r-symengine")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "symengine" version))
        (sha256
-        (base32 "1wjw6fbphkxrha859s27rvzjp0niysssicaamw9sm8895j8k5lfk"))))
+        (base32 "0wpnzs1df4bawi0ibmd0pk3pkvvabj3m2wxrpp4c5l290fvnxhms"))))
     (properties `((upstream-name . "symengine")))
     (build-system r-build-system)
     (inputs (list mpfr gmp cmake))
@@ -13046,13 +13046,13 @@ exact methods are also provided for the lognormal model.  Revised from
 (define-public r-stan4bart
   (package
     (name "r-stan4bart")
-    (version "0.0-6")
+    (version "0.0-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stan4bart" version))
        (sha256
-        (base32 "115mg6mffh0qyxjbd2y2q1j5b002rs23cslvwpgld4mi9ga3ld5s"))))
+        (base32 "08c6s9kg6pzsh411wnv3pg7717r6kyl1sbm3j4vl0b0sssv12z9s"))))
     (properties `((upstream-name . "stan4bart")))
     (build-system r-build-system)
     (inputs (list tbb))

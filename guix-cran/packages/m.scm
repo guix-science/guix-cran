@@ -8697,13 +8697,13 @@ employed in quantitative pharmacology and systems biology.")
 (define-public r-mrgsim-sa
   (package
     (name "r-mrgsim-sa")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mrgsim.sa" version))
        (sha256
-        (base32 "199m6ygwnw6fbld5fqsw1j5jz9x6l1ayrpsc0r51q4fr7nmmpfj2"))))
+        (base32 "1ag6zxfyrcm1lipab6kpjbphvbamgyv3wgz8yf0qdj5dy0ra06hy"))))
     (properties `((upstream-name . "mrgsim.sa")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -8714,9 +8714,11 @@ employed in quantitative pharmacology and systems biology.")
                              r-purrr
                              r-patchwork
                              r-mrgsolve
+                             r-glue
                              r-ggplot2
                              r-dplyr
                              r-assertthat))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/kylebaron/mrgsim.sa")
     (synopsis "Sensitivity Analysis with 'mrgsolve'")
     (description
@@ -15168,13 +15170,13 @@ Rosenbaum and Rubin (1985).")
 (define-public r-mmrm
   (package
     (name "r-mmrm")
-    (version "0.3.6")
+    (version "0.3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mmrm" version))
        (sha256
-        (base32 "0alqdy62c56m3a90dbjpz3w74xwaz0pvgz8qk3avfs6m3nih63wb"))))
+        (base32 "18ka7g55q59cwr0hmdwy9wfi9vclzghqk4r3l0vdxnpb1p78rlr0"))))
     (properties `((upstream-name . "mmrm")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb
@@ -15197,7 +15199,7 @@ Rosenbaum and Rubin (1985).")
 longitudinal continuous outcomes in randomized clinical trials and beyond; see
 Cnaan, Laird and Slasor (1997)
 <doi:10.1002/(SICI)1097-0258(19971030)16:20%3C2349::AID-SIM667%3E3.0.CO;2-E> for
-a tutorial and Mallinckrodt, Lane, Schnell et al. (2008)
+a tutorial and Mallinckrodt, Lane, Schnell, Peng and Mancuso (2008)
 <doi:10.1177/009286150804200402> for a review.  This package implements MMRM
 based on the marginal linear model without random effects using Template Model
 Builder ('TMB') which enables fast and robust model fitting.  Users can specify
@@ -16115,13 +16117,13 @@ characters separated by characters as if it were a simple R(cpp) matrix.")
 (define-public r-mmap
   (package
     (name "r-mmap")
-    (version "0.6-21")
+    (version "0.6-22")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mmap" version))
        (sha256
-        (base32 "0q1hmr9431fl00xqr8008jpna9rlv303dvibz2pr9ifg9vkcw7ab"))))
+        (base32 "0v1qniz0jdp6fay93plv5j200s1pybyyxpfjhgcdjzm7rag8d1jd"))))
     (properties `((upstream-name . "mmap")))
     (build-system r-build-system)
     (native-inputs (list))
@@ -18916,13 +18918,13 @@ Volkmann, Umlauf, Greven (2023) <@code{arXiv:2311.06409>}.")
 (define-public r-mizer
   (package
     (name "r-mizer")
-    (version "2.4.1")
+    (version "2.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mizer" version))
        (sha256
-        (base32 "1y708615jp8cm48yg6rbqjr58kppca09h2pyzqpd6j3hlz8fm9nj"))))
+        (base32 "0j2fyp74zkblf700zys5v4xsj4dyls2y23cbnjq97sgyfblfmbmx"))))
     (properties `((upstream-name . "mizer")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -30176,6 +30178,36 @@ format is used to encode both the aggregated trees and the final consensus tree.
  The method is exact and proven to be O(nqlog(n)), n being the individuals and q
 being the number of trees to aggregate.")
     (license license:gpl2+)))
+
+(define-public r-mergen
+  (package
+    (name "r-mergen")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mergen" version))
+       (sha256
+        (base32 "0nzgqsmbgk4472c64pr1qhmbhdk69qmicb5qni744crxlar92g5x"))))
+    (properties `((upstream-name . "mergen")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rmarkdown
+                             r-openai
+                             r-jsonlite
+                             r-httr
+                             r-biocmanager
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=mergen")
+    (synopsis
+     "AI-Driven Code Generation, Explanation and Execution for Data Analysis")
+    (description
+     "Employing artificial intelligence to convert data analysis questions into
+executable code, explanations, and algorithms.  The self-correction feature
+ensures the generated code is optimized for performance and accuracy.  mergen
+features a user-friendly chat interface, enabling users to interact with the AI
+agent and extract valuable insights from their data effortlessly.")
+    (license license:expat)))
 
 (define-public r-merderiv
   (package
@@ -41846,6 +41878,49 @@ estimates of GDP per capita for all countries in the world between AD 1 and
 2016.  See <https://www.rug.nl/ggdc/historicaldevelopment/maddison/> for more
 information.")
     (license license:cc0)))
+
+(define-public r-madantextnetwork
+  (package
+    (name "r-madantextnetwork")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MadanTextNetwork" version))
+       (sha256
+        (base32 "0691pwsgbmy2fmvcf6adqgasrdf70n5g0cgy6663wfavkdx5nni2"))))
+    (properties `((upstream-name . "MadanTextNetwork")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xlsx
+                             r-visnetwork
+                             r-udpipe
+                             r-topicmodels
+                             r-tm
+                             r-tidytext
+                             r-tidyr
+                             r-textminer
+                             r-stringr
+                             r-stringi
+                             r-stopwords
+                             r-shinythemes
+                             r-shiny
+                             r-persianstemmer
+                             r-ngram
+                             r-lattice
+                             r-igraph
+                             r-hwordcloud
+                             r-glue
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=MadanTextNetwork")
+    (synopsis "Persian Text Mining Tool for Co-Occurrence Network")
+    (description
+     "This package provides an extension to @code{MadanText} for creating and
+analyzing co-occurrence networks in Persian text data.  This package mainly
+makes use of the @code{PersianStemmer} (Safshekan, R., et al. (2019).
+<https://CRAN.R-project.org/package=@code{PersianStemmer>}), udpipe (Wijffels,
+J., et al. (2023). <https://CRAN.R-project.org/package=udpipe>), and shiny
+(Chang, W., et al. (2023). <https://CRAN.R-project.org/package=shiny>) packages.")
+    (license license:gpl3)))
 
 (define-public r-madantext
   (package

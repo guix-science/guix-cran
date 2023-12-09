@@ -7674,13 +7674,13 @@ data with a single line of code.")
 (define-public r-onbrand
   (package
     (name "r-onbrand")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "onbrand" version))
        (sha256
-        (base32 "1kqi84b91vqgsx5h3k690qn6hfxssj8fh72bvsqbk1x819sdk77w"))))
+        (base32 "01wvv7dzjdpwyj4rfks2z442f4nh3y9jl6v9ykcl4jqzj4d0agvv"))))
     (properties `((upstream-name . "onbrand")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -7690,7 +7690,8 @@ data with a single line of code.")
                              r-magrittr
                              r-ggplot2
                              r-flextable
-                             r-dplyr))
+                             r-dplyr
+                             r-digest))
     (native-inputs (list r-knitr))
     (home-page "https://onbrand.ubiquity.tools/")
     (synopsis "Templated Reporting Workflows in Word and PowerPoint")
@@ -7938,13 +7939,13 @@ types of omics data or samples with two types.")
 (define-public r-omnibus
   (package
     (name "r-omnibus")
-    (version "1.2.7")
+    (version "1.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "omnibus" version))
        (sha256
-        (base32 "1wqhizr19w6kx1gb1p34arr23m2272chfyaf5bpb8rqjb9zkswdz"))))
+        (base32 "1hhpy1m8xw0w1nkwr350kfxcdqg0hpcl7n36pl6ic5hwqxp4qf83"))))
     (properties `((upstream-name . "omnibus")))
     (build-system r-build-system)
     (home-page "https://github.com/adamlilith/omnibus")
@@ -9178,13 +9179,13 @@ code interface is described in Huling and Chien (2022)
 (define-public r-oeli
   (package
     (name "r-oeli")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oeli" version))
        (sha256
-        (base32 "0chzg1dn8s8vvxb5wc9rv2q1cb4lvdg66hyk74w70bqwjmqg6dcp"))))
+        (base32 "1wplzkmxpf5lzbmi3gdllrcb5khx16yji58jgbb42kf2v0zfz81k"))))
     (properties `((upstream-name . "oeli")))
     (build-system r-build-system)
     (propagated-inputs (list r-usethis

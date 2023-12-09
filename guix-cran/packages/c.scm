@@ -19268,13 +19268,13 @@ gradient-matching, generalized profiling and forwards prediction error methods."
 (define-public r-collinear
   (package
     (name "r-collinear")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "collinear" version))
        (sha256
-        (base32 "0nifj3w7s5cq9xpynglfjcpxld2dd4ym1wx6ylxydj1xfm9v5md4"))))
+        (base32 "1vflihmpbqhfl9y8a2s5pnj4pjdj9m20mk80lm6lvff1pjwj2sbp"))))
     (properties `((upstream-name . "collinear")))
     (build-system r-build-system)
     (propagated-inputs (list r-dplyr))
@@ -19842,13 +19842,13 @@ multiple filter types and reproducible R code.  Works standalone or with
 (define-public r-cohortalgebra
   (package
     (name "r-cohortalgebra")
-    (version "0.0.4")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortAlgebra" version))
        (sha256
-        (base32 "0zmz6f1ysp4gy6lg15x1x93q7v5zli0znfsk522bki4qbh2h1qq8"))))
+        (base32 "0bpmszbkjmsxbcwryrr229ji59r2m3srajvpkimlay3b7hv7lmrq"))))
     (properties `((upstream-name . "CohortAlgebra")))
     (build-system r-build-system)
     (propagated-inputs (list r-sqlrender
@@ -26935,6 +26935,32 @@ estimate the phenotypic variance explained by genetic markers.")
 Civis Platform API <https://www.civisanalytics.com/platform/>.  Full
 documentation available here <https://civisanalytics.github.io/civis-r/>.")
     (license license:bsd-3)))
+
+(define-public r-civ
+  (package
+    (name "r-civ")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "civ" version))
+       (sha256
+        (base32 "12k8wqv33p3pvvcg5sr8bvgxgnmsyp6nfpnz00x3y43wax35s7h0"))))
+    (properties `((upstream-name . "civ")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-kcmeans r-aer))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/thomaswiemann/civ")
+    (synopsis "Categorical Instrumental Variables")
+    (description
+     "Implementation of the categorical instrumental variable (CIV) estimator proposed
+by Wiemann (2023) <@code{arXiv:2311.17021>}.  CIV allows for optimal
+instrumental variable estimation in settings with relatively few observations
+per category.  To obtain valid inference in these challenging settings, CIV
+leverages a regularization assumption that implies existence of a latent
+categorical variable with fixed finite support achieving the same first stage
+fit as the observed instrument.")
+    (license license:gpl3+)))
 
 (define-public r-ciuupi2
   (package
@@ -38410,13 +38436,13 @@ outputs all configurations along with their confidence assessment.")
 (define-public r-canek
   (package
     (name "r-canek")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Canek" version))
        (sha256
-        (base32 "1w1sv7sw29d1kb8lcs37y34x7pj6nprciicfvw34ixy2ylsi26wa"))))
+        (base32 "1irzdhqgzn6kz79f80ri1iv8zlg8ik95bqcllj14ycma1c1mwzsy"))))
     (properties `((upstream-name . "Canek")))
     (build-system r-build-system)
     (propagated-inputs (list r-numbers

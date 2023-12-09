@@ -4794,13 +4794,13 @@ only have confidence intervals (e.g., @code{prevSeSp}).")
 (define-public r-asgs-foyer
   (package
     (name "r-asgs-foyer")
-    (version "0.3.1")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ASGS.foyer" version))
        (sha256
-        (base32 "089c4vm629rni0dfgg3r2a9s9yisdx1qs2dwssg44qw1w4hf1f50"))))
+        (base32 "1zvps8d20ig863dv3jm1pjj9icy88dk378a9j8f0gcgafz5cxi6g"))))
     (properties `((upstream-name . "ASGS.foyer")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp))

@@ -2092,13 +2092,13 @@ performance.")
 (define-public r-httk
   (package
     (name "r-httk")
-    (version "2.2.2")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "httk" version))
        (sha256
-        (base32 "1ziwlb4nigf0hk3ngmk309m0gmaylvmd00m553sh0qrm9k2dls9q"))))
+        (base32 "1vlv7c1zair8y02y39hmqnnwmmvwb96qcvrhb2bwasi68i15sqm5"))))
     (properties `((upstream-name . "httk")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm
@@ -2108,6 +2108,7 @@ performance.")
                              r-mvtnorm
                              r-msm
                              r-magrittr
+                             r-ggplot2
                              r-desolve
                              r-data-table))
     (native-inputs (list r-r-rsp r-knitr))
@@ -7891,13 +7892,13 @@ and Louis (1998) <doi:10.1111/1467-9868.00135>.")
 (define-public r-hetools
   (package
     (name "r-hetools")
-    (version "0.2.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HEtools" version))
        (sha256
-        (base32 "0m62x945x5mgswwph8g788lp7yzjdmcjlbsffiqfs68m4al6mzqh"))))
+        (base32 "0qfygdpmzrnih0p24xdqpxbgmcqbcgvbdjihh3x4cqspawcsffs5"))))
     (properties `((upstream-name . "HEtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-polynom))
@@ -11792,13 +11793,13 @@ format.  It mainly includes the following sections: @code{ReformatDataframe}
 (define-public r-handwriter
   (package
     (name "r-handwriter")
-    (version "2.0.2")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "handwriter" version))
        (sha256
-        (base32 "0l3vg76kwqwxzhn62y4sbl8nap219yppk9rak36w04hryxdahdf1"))))
+        (base32 "04n773va7drfdj2wi0v95jivzhzz9cy3n8dii069wjsbx24xmsff"))))
     (properties `((upstream-name . "handwriter")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
