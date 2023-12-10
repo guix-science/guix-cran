@@ -4588,21 +4588,25 @@ time series and other data from FRED'.")
 (define-public r-frechet
   (package
     (name "r-frechet")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "frechet" version))
        (sha256
-        (base32 "1006mgy9avwkwy0666maac59xp4j27wq5yy3pwc3h1r05myxw379"))))
+        (base32 "0lxzhkimyhnisbvfgv8l9vv4pzjj6igcy8fyx25is43g2cz35ymq"))))
     (properties `((upstream-name . "frechet")))
     (build-system r-build-system)
-    (propagated-inputs (list r-pracma
+    (propagated-inputs (list r-trust
+                             r-quadprog
+                             r-pracma
                              r-osqp
                              r-matrix
                              r-fdapace
                              r-fdadensity
-                             r-corrplot))
+                             r-e1071
+                             r-corrplot
+                             r-boot))
     (home-page "https://github.com/functionaldata/tFrechet")
     (synopsis "Statistical Analysis for Random Objects and Non-Euclidean Data")
     (description
@@ -4611,9 +4615,9 @@ lying in various metric spaces, which are not necessarily linear spaces.  The
 core of this package is @code{FrÃ©chet} regression for random objects with
 Euclidean predictors, which allows one to perform regression analysis for
 non-Euclidean responses under some mild conditions.  Examples include
-distributions in L^2-Wasserstein space, covariance matrices endowed with power
+distributions in 2-Wasserstein space, covariance matrices endowed with power
 metric (with Frobenius metric as a special case), Cholesky and log-Cholesky
-metrics.  References: Petersen, A., & MÃ¼ller, H.-G. (2019)
+metrics, spherical data.  References: Petersen, A., & MÃ¼ller, H.-G. (2019)
 <doi:10.1214/17-AOS1624>.")
     (license license:bsd-3)))
 

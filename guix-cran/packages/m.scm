@@ -1368,13 +1368,13 @@ transformation (Korkmaz et al, (2014),
 (define-public r-mvmorph
   (package
     (name "r-mvmorph")
-    (version "1.1.8")
+    (version "1.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mvMORPH" version))
        (sha256
-        (base32 "1fby8f4d120hawqjrki5gayz43cjfyvxwgbidkzyav2085qr6cbi"))))
+        (base32 "0061jzmrhgp029a22c53pyjdlc492rlvxhdxrbcd3x0ni2b1nh6x"))))
     (properties `((upstream-name . "mvMORPH")))
     (build-system r-build-system)
     (propagated-inputs (list r-subplex
@@ -8229,13 +8229,13 @@ outcomes is the estimator for marginal excursion effect (EMEE) by Qian et al.
 (define-public r-mrs
   (package
     (name "r-mrs")
-    (version "1.2.4")
+    (version "1.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MRS" version))
        (sha256
-        (base32 "1sksg70zb72ys1b7vi8amjaqarmdh8vf2l1rb0rasrlvrip3z3br"))))
+        (base32 "19dnz9p17lmv11wkhb2zs433m74i1pfcs6za5l92xdy957w883km"))))
     (properties `((upstream-name . "MRS")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-igraph))
@@ -8243,7 +8243,7 @@ outcomes is the estimator for marginal excursion effect (EMEE) by Qian et al.
     (synopsis "Multi-Resolution Scanning for Cross-Sample Differences")
     (description
      "An implementation of the MRS algorithm for comparison across distributions, as
-described in Jacopo Soriano, Li Ma (2016) <doi:10.1111/rssb.12180>.  The model
+described in Jacopo Soriano, Li Ma (2017) <doi:10.1111/rssb.12180>.  The model
 is based on a nonparametric process taking the form of a Markov model that
 transitions between a \"null\" and an \"alternative\" state on a multi-resolution
 partition tree of the sample space.  MRS effectively detects and characterizes a
@@ -38415,13 +38415,13 @@ a conditional risk model.")
 (define-public r-marginaleffects
   (package
     (name "r-marginaleffects")
-    (version "0.16.0")
+    (version "0.17.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "marginaleffects" version))
        (sha256
-        (base32 "0w83n68fr3igjilqp35w96pf0srcz17q5j6ii7r34y7zjgrn46md"))))
+        (base32 "1h5vdd2rqs0d261qdj79h6z1gbz5xhig25wprxvzk6z1lnhdpb2h"))))
     (properties `((upstream-name . "marginaleffects")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang

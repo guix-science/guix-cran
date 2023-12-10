@@ -3260,17 +3260,17 @@ implemented based on the DStorage class.")
 (define-public r-dsjobtracker
   (package
     (name "r-dsjobtracker")
-    (version "0.1.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DSjobtracker" version))
        (sha256
-        (base32 "1vi07n7ygsdjj4830rnx7kvacmnizl146c6bfw2fnby47apg38f9"))))
+        (base32 "09n7gxks3j2gx0yyzdnpxa6ncg2hv48v503z1d3qk3fwvcd6r0s1"))))
     (properties `((upstream-name . "DSjobtracker")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=DSjobtracker")
+    (home-page "https://github.com/thiyangt/DSjobtracker")
     (synopsis
      "What Skills and Qualifications are Required for Data Science Related Jobs?")
     (description
@@ -11902,21 +11902,21 @@ a node, the corresponding text is displayed as a tooltip.")
 (define-public r-directional
   (package
     (name "r-directional")
-    (version "6.3")
+    (version "6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Directional" version))
        (sha256
-        (base32 "0h9iqynmrifymv7jkd94nzxivp1s5yh55fysxd7i74i6lcwpx4rm"))))
+        (base32 "0p22czrl2m9vzls58qvxih0g2pl36ffyqxd5n17wk9ilzj39f02j"))))
     (properties `((upstream-name . "Directional")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf
                              r-rnaturalearth
+                             r-rnanoflann
                              r-rgl
                              r-rfast2
                              r-rfast
-                             r-rann
                              r-magrittr
                              r-ggplot2
                              r-foreach
@@ -20443,20 +20443,22 @@ in <@code{arXiv:2004.03758>}.")
 (define-public r-ddiwr
   (package
     (name "r-ddiwr")
-    (version "0.16")
+    (version "0.17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DDIwR" version))
        (sha256
-        (base32 "1d88sj0hz5wvfa1kx9sd320nmd9j6g0g7x4wl0883k5i19p3azy7"))))
+        (base32 "0ky8gpqb732wc089g4ww5mr3br728jq58kxd2vq79589m81ycq47"))))
     (properties `((upstream-name . "DDIwR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
                              r-writexl
                              r-readxl
                              r-haven
+                             r-digest
                              r-declared
+                             r-base64enc
                              r-admisc))
     (home-page "https://github.com/dusadrian/DDIwR")
     (synopsis "DDI with R")

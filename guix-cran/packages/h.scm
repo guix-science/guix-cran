@@ -1468,13 +1468,13 @@ package.")
 (define-public r-huxtable
   (package
     (name "r-huxtable")
-    (version "5.5.2")
+    (version "5.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "huxtable" version))
        (sha256
-        (base32 "1rpyqkdck6cmh2a7f5j71ypk2v9gzl3jf2b0z9jjlfrv1d1b8x7l"))))
+        (base32 "14ib3rbzkgv100d0p7s6688wyqg8dyn4z647m37n0nf4ncpszpji"))))
     (properties `((upstream-name . "huxtable")))
     (build-system r-build-system)
     (inputs (list calc))
@@ -3911,13 +3911,13 @@ data for themselves.")
 (define-public r-homomorphicencryption
   (package
     (name "r-homomorphicencryption")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HomomorphicEncryption" version))
        (sha256
-        (base32 "1f8hp5gnjsbjqv1zhgjy8sfzkzlygj7gxpg7f2xq4k0w7a2apdk2"))))
+        (base32 "16ls9ps67dxg7xa6zr83gcj5s2a981dpc295lyr6vz09y6m6jcl5"))))
     (properties `((upstream-name . "HomomorphicEncryption")))
     (build-system r-build-system)
     (propagated-inputs (list r-polynom r-hetools))

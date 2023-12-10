@@ -17315,13 +17315,13 @@ specialized needs.  Core functionality is based on a @code{JavaScript} library,
 (define-public r-plume
   (package
     (name "r-plume")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plume" version))
        (sha256
-        (base32 "1dfpr24wz7ppag38qs3mv16ij8xhfscp18lv9wzj852qizk6c34b"))))
+        (base32 "1nrv5gmhwm5fxd81d0smwdi9x35y2l54jlkparmi5hwh87lq2ld9"))))
     (properties `((upstream-name . "plume")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml

@@ -3911,13 +3911,13 @@ There are also random effects versions of these models.")
 (define-public r-ast2ast
   (package
     (name "r-ast2ast")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ast2ast" version))
        (sha256
-        (base32 "1418kvg4jvfn7c4vny87431a8lqkky9a51grkw8qc8sszcp7mlyf"))))
+        (base32 "1vsnd7w0z0wr4185wg6k7xjd4xc8qsm08f4wfgcnyd79x56wczky"))))
     (properties `((upstream-name . "ast2ast")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang

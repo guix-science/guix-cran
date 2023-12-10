@@ -8583,13 +8583,13 @@ OSS (<https://portal.influxdata.com/downloads/>) and Cloud
 (define-public r-influential
   (package
     (name "r-influential")
-    (version "2.2.8")
+    (version "2.2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "influential" version))
        (sha256
-        (base32 "1kglswc8aqj76p96y3k0lshczxxwhdwpahxdwyyy19i9qznry5fr"))))
+        (base32 "0xzmc15xaw68xywsfjxzjf57ncyfvxv9qj8dzflahr5l1jnfcg7g"))))
     (properties `((upstream-name . "influential")))
     (build-system r-build-system)
     (propagated-inputs (list r-ranger

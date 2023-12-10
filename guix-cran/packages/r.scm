@@ -37159,13 +37159,13 @@ to effectively perform tokenization, POS tagging, and lemmatization.")
 (define-public r-rcppint64
   (package
     (name "r-rcppint64")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppInt64" version))
        (sha256
-        (base32 "0drfnsgjaac91g44cjvyrmw1fm75kdz7na8sikglx3k5vq0l1gb9"))))
+        (base32 "1gfd4jsg5dvl2pzyqwi2vk16i06hgcskz2a9v7fw79ch80mcnf1c"))))
     (properties `((upstream-name . "RcppInt64")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -41653,21 +41653,16 @@ Database) files for 3D rendering.")
 (define-public r-rayimage
   (package
     (name "r-rayimage")
-    (version "0.9.1")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rayimage" version))
        (sha256
-        (base32 "1vs47zbdmh8ky5zdw7qvs6fbycp7kypzg6mfli2i0z39pcffz3xl"))))
+        (base32 "1ss1l8cbm0p7d413s81ncqhd7dqhyd22v5z1z48s9a56pxm2lw5l"))))
     (properties `((upstream-name . "rayimage")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo
-                             r-rcpp
-                             r-progress
-                             r-png
-                             r-jpeg
-                             r-gridextra))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-progress r-png r-jpeg))
     (home-page "https://www.rayimage.dev")
     (synopsis "Image Processing for Simulated Cameras")
     (description

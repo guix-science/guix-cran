@@ -9178,13 +9178,13 @@ distributions, and exponentiated exponential Poisson G distributions.")
 (define-public r-new-dist
   (package
     (name "r-new-dist")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "new.dist" version))
        (sha256
-        (base32 "0gan4qzp4w35sld113938hx0wvsah8063k415hd6j4sp101ggc54"))))
+        (base32 "1zkmwqhamrw7g4d1hffsyhcsjf0z0nmmgnixc7wny0qqpmyqlb2n"))))
     (properties `((upstream-name . "new.dist")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam r-pracma r-expint))

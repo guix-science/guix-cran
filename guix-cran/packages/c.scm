@@ -16708,21 +16708,24 @@ sensitivity analyses under dependent censoring (Yeh et al 2023)
 (define-public r-compositional
   (package
     (name "r-compositional")
-    (version "6.5")
+    (version "6.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Compositional" version))
        (sha256
-        (base32 "0m92v0b9lnyyjj0wac6m0qbn5sxzrswwm48vs7cfv60lakwgkgxy"))))
+        (base32 "17mhk1k6v7y3icyd5b0xlmmi98fs8hz4049n2wiabsn8si59z99k"))))
     (properties `((upstream-name . "Compositional")))
     (build-system r-build-system)
     (propagated-inputs (list r-sn
+                             r-rnanoflann
                              r-rfast2
                              r-rfast
-                             r-rann
+                             r-regda
+                             r-quadprog
                              r-pchc
                              r-nnet
+                             r-mvhtests
                              r-mixture
                              r-mda
                              r-mass
@@ -16745,13 +16748,13 @@ compositional data\".  Relevant papers include: a) Tsagris M.T., Preston S. and
 Wood A.T.A. (2011). \"A data-based power transformation for compositional data\".
 Fourth International International Workshop on Compositional Data Analysis.  b)
 Tsagris M. (2014). \"The k-NN algorithm for compositional data: a revised
-approach with and without zero values present\".  Journal of Data Science,
-12(3):519--534.  c) Tsagris M. (2015). \"A novel, divergence based, regression
-for compositional data\".  Proceedings of the 28th Panhellenic Statistics
-Conference, 15-18 April 2015, Athens, Greece, 430--444.  d) Tsagris M. (2015).
-\"Regression analysis with compositional data containing zero values\".  Chilean
-Journal of Statistics, 6(2):47--57.  e) Tsagris M., Preston S. and Wood A.T.A.
-(2016). \"Improved supervised classification for compositional data using the
+approach with and without zero values present\".  Journal of Data Science, 12(3):
+519--534.  c) Tsagris M. (2015). \"A novel, divergence based, regression for
+compositional data\".  Proceedings of the 28th Panhellenic Statistics Conference,
+15-18 April 2015, Athens, Greece, 430--444.  d) Tsagris M. (2015). \"Regression
+analysis with compositional data containing zero values\".  Chilean Journal of
+Statistics, 6(2): 47--57.  e) Tsagris M., Preston S. and Wood A.T.A. (2016).
+\"Improved supervised classification for compositional data using the
 alpha-transformation\".  Journal of Classification, 33(2): 243--261.
 <doi:10.1007/s00357-016-9207-5>.  f) Tsagris M., Preston S. and Wood A.T.A.
 (2017). \"Nonparametric hypothesis testing for equality of means on the simplex\".
@@ -16766,7 +16769,7 @@ C. (2020). \"A folded model for compositional data analysis\".  Australian and N
 Zealand Journal of Statistics, 62(2): 249--277. <doi:10.1111/anzs.12289>.  j)
 Alenazi A. (2021).  Alenazi, A. (2023). \"A review of compositional data analysis
 and recent advances\".  Communications in Statistics--Theory and Methods, 52(16):
-5535--5567. <doi:10.1080/03610926.2021.2014890>.  k) Alenazi, A. A. (2022).
+5535--5567. <doi:10.1080/03610926.2021.2014890>.  k) Alenazi A.A. (2022).
 \"f-divergence regression models for compositional data\".  Pakistan Journal of
 Statistics and Operation Research, 18(4): 867--882.
 <doi:10.18187/pjsor.v18i4.3969>.  l) Tsagris M. and Stewart C. (2022). \"A Review
@@ -16774,7 +16777,7 @@ of Flexible Transformations for Modeling Compositional Data\".  In Advances and
 Innovations in Statistics and Data Science, pp.  225--234.
 <doi:10.1007/978-3-031-08329-7_10>.  m) Tsagris M., Alenazi A. and Stewart C.
 (2023). \"Flexible non-parametric regression models for compositional response
-data with zeros\".  Statistics and Computing, 33(5): 1--17.
+data with zeros\".  Statistics and Computing, 33(106).
 <doi:10.1007/s11222-023-10277-5>.")
     (license license:gpl2+)))
 
@@ -22373,13 +22376,13 @@ multiple surrogate markers.  Details are described in Wang et al (2022)
 (define-public r-cmfrec
   (package
     (name "r-cmfrec")
-    (version "3.5.1-2")
+    (version "3.5.1-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cmfrec" version))
        (sha256
-        (base32 "0l5nnwljyb3q6ywzrkmixhc20vmmfcyv436c0nh36dg3jifvnjbq"))))
+        (base32 "0hlz10zrwdk9p0rybfqn04104bv0d9024d0ca1d6v66ymzy3gwlw"))))
     (properties `((upstream-name . "cmfrec")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -33649,13 +33652,13 @@ removed.  See Adamic, P. (2015)
 (define-public r-cdgd
   (package
     (name "r-cdgd")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cdgd" version))
        (sha256
-        (base32 "04sx3yn4irmsadqripb4qdph6i2p4zy3gjjgvpmwny852li9h6cd"))))
+        (base32 "0bgn6qp56ks346v650lidcxwyrkfj651p32zv8fjn1pg7mf8wahf"))))
     (properties `((upstream-name . "cdgd")))
     (build-system r-build-system)
     (propagated-inputs (list r-caret))
@@ -34554,13 +34557,13 @@ Fleiss (1986) <doi:10.1002/9781118032923> and Carrasco et al. (2013)
 (define-public r-cccp
   (package
     (name "r-cccp")
-    (version "0.2-9")
+    (version "0.3-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cccp" version))
        (sha256
-        (base32 "0nk1r2hvcizjclbd7b5wvmbm5334varaixl6hbbqg95g5kki86k2"))))
+        (base32 "06ds1f954m2g3g85rccpvk1bhxqn544qqxg7wzs4jkb97h590dzn"))))
     (properties `((upstream-name . "cccp")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -34569,7 +34572,7 @@ Fleiss (1986) <doi:10.1002/9781118032923> and Carrasco et al. (2013)
     (description
      "Routines for solving convex optimization problems with cone constraints by means
 of interior-point methods.  The implemented algorithms are partially ported from
-CVXOPT, a Python module for convex optimization (see <http://cvxopt.org> for
+CVXOPT, a Python module for convex optimization (see <https://cvxopt.org> for
 more information).")
     (license license:gpl3+)))
 

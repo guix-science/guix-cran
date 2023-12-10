@@ -16968,13 +16968,13 @@ ggiraph'.")
 (define-public r-ggiraph
   (package
     (name "r-ggiraph")
-    (version "0.8.7")
+    (version "0.8.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggiraph" version))
        (sha256
-        (base32 "0hg4wbgwlrib2zvrahmnsdixnyq2pi13liaz65zc8cg85mn2fr2n"))))
+        (base32 "04waxpsqfmk21s2ibfn00n8zhj6cp6283cggz45n9cn4pwf75gw2"))))
     (properties `((upstream-name . "ggiraph")))
     (build-system r-build-system)
     (inputs (list zlib libpng))

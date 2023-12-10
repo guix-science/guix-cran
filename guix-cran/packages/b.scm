@@ -13984,13 +13984,13 @@ synchronicity'.")
 (define-public r-bigalgebra
   (package
     (name "r-bigalgebra")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bigalgebra" version))
        (sha256
-        (base32 "0d2paa5zl672imn4y1xjr6sbf8w1pja1bx2mzcynm0k4g8l305g5"))))
+        (base32 "07xzgddnqxn8l41p79qqsvvg4rj03qdqlr3jhfpnra6c82wlhspw"))))
     (properties `((upstream-name . "bigalgebra")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-bigmemory r-bh))
@@ -15160,13 +15160,13 @@ information).")
 (define-public r-bglr
   (package
     (name "r-bglr")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BGLR" version))
        (sha256
-        (base32 "19qy8llmagrsm28nb80d029wkvqpv6r12f390zlhid0y8s5bpicp"))))
+        (base32 "1wv29crcq1iqrvak749vq08fjfr2ys82fkni07ipwl99hknsz5sr"))))
     (properties `((upstream-name . "BGLR")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm r-mass))
