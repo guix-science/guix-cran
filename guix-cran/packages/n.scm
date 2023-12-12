@@ -3395,13 +3395,13 @@ kurtosis, and other inferential assessments of normality.")
 (define-public r-normalp
   (package
     (name "r-normalp")
-    (version "0.7.2")
+    (version "0.7.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "normalp" version))
        (sha256
-        (base32 "0fqpz6v9v3xjmyh7mh2yvkjdn3v4d0nk93x7s0gj28kazl7137kz"))))
+        (base32 "150zzv9rxbss1xliv3nd8x8103bijsrsczk17s9q6z39x8v079nc"))))
     (properties `((upstream-name . "normalp")))
     (build-system r-build-system)
     (home-page "https://www.r-project.org")
@@ -8477,13 +8477,13 @@ given sequence of text) tokenizer to be used with the tm package with no
 (define-public r-ngram
   (package
     (name "r-ngram")
-    (version "3.2.2")
+    (version "3.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ngram" version))
        (sha256
-        (base32 "04cafc0i3605vlxmiwfyf91572ppg3wmm0hi50y9x7ai12bznchc"))))
+        (base32 "0dkscnj6v3pafwpw1vabgr7zgx97jh6996ql38pq6bmiikn5pm0h"))))
     (properties `((upstream-name . "ngram")))
     (build-system r-build-system)
     (home-page "https://github.com/wrathematics/ngram")
@@ -9984,13 +9984,13 @@ objects.")
 (define-public r-networkdynamic
   (package
     (name "r-networkdynamic")
-    (version "0.11.3")
+    (version "0.11.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "networkDynamic" version))
        (sha256
-        (base32 "0nwfcis6hxca99kbcqv90g0hrfxgwqc7mml0jh4xq32wv384yric"))))
+        (base32 "0ija33qxka8nw6rikvcz5b6648scmq7mcaayjbzq7wa4lhbf5wvb"))))
     (properties `((upstream-name . "networkDynamic")))
     (build-system r-build-system)
     (propagated-inputs (list r-statnet-common r-networklite r-network))

@@ -438,13 +438,13 @@ study with RNA-seq data.")
 (define-public r-rxode2random
   (package
     (name "r-rxode2random")
-    (version "2.0.11")
+    (version "2.0.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rxode2random" version))
        (sha256
-        (base32 "0rv974j9nxvbl3xdr8x8phlhj54gpkl9km73c25srxi9r0p9mkip"))))
+        (base32 "1fh5231lrns38d4h6qyiyai764g7j57gi56dhdwmjijh5aram1ng"))))
     (properties `((upstream-name . "rxode2random")))
     (build-system r-build-system)
     (propagated-inputs (list r-sitmo
@@ -466,16 +466,17 @@ computational burden of recompiling rxode2'.")
 (define-public r-rxode2parse
   (package
     (name "r-rxode2parse")
-    (version "2.0.16")
+    (version "2.0.17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rxode2parse" version))
        (sha256
-        (base32 "0y0hghvvik7cnh828mrp4mbnffylby3d1g1hrbhszac061n8lbvj"))))
+        (base32 "085wr1l2qksph7kpcwq1i4w7cvnhcvbig4ambjdqkckc04p7rrg0"))))
     (properties `((upstream-name . "rxode2parse")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stanheaders
+    (propagated-inputs (list r-symengine
+                             r-stanheaders
                              r-rex
                              r-rcppeigen
                              r-rcpp
@@ -530,13 +531,13 @@ estimation.")
 (define-public r-rxode2et
   (package
     (name "r-rxode2et")
-    (version "2.0.10")
+    (version "2.0.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rxode2et" version))
        (sha256
-        (base32 "1lzjl7x190zcn9ga6p4q7kfwanhmipjms433pa8zma9r6538ni92"))))
+        (base32 "0vmzqy2qqwlh6kd8jvnh4dllwyfpvv51cd9qv7q1x59jifripi3a"))))
     (properties `((upstream-name . "rxode2et")))
     (build-system r-build-system)
     (propagated-inputs (list r-rxode2random
@@ -559,13 +560,13 @@ burden of recompiling rxode2'.")
 (define-public r-rxode2
   (package
     (name "r-rxode2")
-    (version "2.0.14")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rxode2" version))
        (sha256
-        (base32 "1737f5zkqkmn9a45sk61qi90l116c070fgg4wzdmx0qiay0wsmq0"))))
+        (base32 "0arhagnxgr2v5l28wkyn7iaidah1ggmylqzzdjx5vg7b2rrr88gn"))))
     (properties `((upstream-name . "rxode2")))
     (build-system r-build-system)
     (propagated-inputs (list r-sys
@@ -2374,13 +2375,13 @@ any revisions, for all groups within the supplied data.")
 (define-public r-ruminate
   (package
     (name "r-ruminate")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ruminate" version))
        (sha256
-        (base32 "0r7x0x5s7ff7pn0b7rrhi9ydr3v7msim1h6ix95d8xzzr3mz3gzy"))))
+        (base32 "09iinlp4fljshjfya6mk2j5i0x75w675ks4xgl10v8afpp5q8yha"))))
     (properties `((upstream-name . "ruminate")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -2645,13 +2646,13 @@ fit, forecast, simulation, inference and plotting.")
 (define-public r-rucrdtw
   (package
     (name "r-rucrdtw")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rucrdtw" version))
        (sha256
-        (base32 "0x4y0czfmn3sp8b8dqh4cmnnbqfzf7kgcllv2x80zhk5nyqpyagx"))))
+        (base32 "0qa6jw6g8ax5l2js09px4chy4n0ibvprj0ygdh3iwf1pbskw3kma"))))
     (properties `((upstream-name . "rucrdtw")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -3283,13 +3284,13 @@ the theory part of the vignette.")
 (define-public r-rtrack
   (package
     (name "r-rtrack")
-    (version "2.0.2")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rtrack" version))
        (sha256
-        (base32 "0npshk2ajmzyp11rgjqy1jr3pw3lm2n384zhsimphldvwhi98v6c"))))
+        (base32 "0aq4487vj0c9hcq1vgqcyjr3pzyjx4w008x8lrhimjvsqxd5vngd"))))
     (properties `((upstream-name . "Rtrack")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -8357,13 +8358,13 @@ simulation section of the paper: L2Boost, LADBoost, MBoost (Friedman, J. H.
 (define-public r-rrblup
   (package
     (name "r-rrblup")
-    (version "4.6.2")
+    (version "4.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rrBLUP" version))
        (sha256
-        (base32 "1zxd8nvnrzc2akiaigjp6myyq8lkcyi46rrqgxrvd4wmi0zmw3w6"))))
+        (base32 "1kc01hznr5hq5hwwz48hlpj4sbmnim9rn609zm9g6ll2rdz2aand"))))
     (properties `((upstream-name . "rrBLUP")))
     (build-system r-build-system)
     (home-page "<https://potatobreeding.cals.wisc.edu/software/>")
@@ -12267,13 +12268,13 @@ time-series data.")
 (define-public r-rolap
   (package
     (name "r-rolap")
-    (version "2.4.0")
+    (version "2.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rolap" version))
        (sha256
-        (base32 "0vlhj3p1qnb2gagsfr16k3zz4p6h0mklc47xk01v9635g9nj6jrn"))))
+        (base32 "1iciwf5yb8llga8l59spfzvir4akkw8a17vdmrsc1gjbkcchvnl1"))))
     (properties `((upstream-name . "rolap")))
     (build-system r-build-system)
     (propagated-inputs (list r-xlsx
@@ -12281,6 +12282,7 @@ time-series data.")
                              r-tidyr
                              r-tibble
                              r-snakecase
+                             r-sf
                              r-rlang
                              r-readr
                              r-purrr
@@ -18218,13 +18220,13 @@ of R Markdown templates (e.g., count words or post-process citations).")
 (define-public r-rmdconcord
   (package
     (name "r-rmdconcord")
-    (version "0.2.0")
+    (version "0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RmdConcord" version))
        (sha256
-        (base32 "08yd6g2yawxr4k5awgrvnm720w5jsq9g5q9xqlvdr9pvmv8xnv4c"))))
+        (base32 "0fh1pzpbqsqkh6d6s7d4294nb4kmj71brr145fgil3a8hhbzsmp8"))))
     (properties `((upstream-name . "RmdConcord")))
     (build-system r-build-system)
     (inputs (list))
@@ -19654,13 +19656,13 @@ to other interactive elements with just few lines of code.")
 (define-public r-rlas
   (package
     (name "r-rlas")
-    (version "1.6.3")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rlas" version))
        (sha256
-        (base32 "15jv9plpmymsbzhw518islbcxpxcjbdlrjpvhfwhsnl2qskm4g2x"))))
+        (base32 "0abbzh17cyiamgdln55b23nsywr3p60bk7n3wv70asg945pqnxhi"))))
     (properties `((upstream-name . "rlas")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-data-table r-bh))
@@ -20280,16 +20282,16 @@ power of R and the visualization libraries of @code{JavaScript} in one package."
 (define-public r-rjsoncons
   (package
     (name "r-rjsoncons")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rjsoncons" version))
        (sha256
-        (base32 "02nmdwqhm44dgn329cap0195lc7mcap84zz1w20g5dcifr9060pr"))))
+        (base32 "0l6p38szihl4wv7vag0bgkqqfgyqicnhz7aqd1jdfzfyzi0q77mr"))))
     (properties `((upstream-name . "rjsoncons")))
     (build-system r-build-system)
-    (propagated-inputs (list r-jsonlite r-cpp11))
+    (propagated-inputs (list r-cpp11))
     (native-inputs (list r-knitr))
     (home-page "https://mtmorgan.github.io/rjsoncons/")
     (synopsis "'C++' Header-Only 'jsoncons' Library for 'JSON' Queries")
@@ -24640,13 +24642,13 @@ principal component analysis is incorporated.")
 (define-public r-rgcca
   (package
     (name "r-rgcca")
-    (version "3.0.2")
+    (version "3.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RGCCA" version))
        (sha256
-        (base32 "10rzjnisjhryj6z8qp2wzjvmf3wg7xflskii83llr5gh0v8yjrf9"))))
+        (base32 "00ap665i3vg4nnrs7wasyd05rgvk1mr1gcihrc50awdfkgwjghs8"))))
     (properties `((upstream-name . "RGCCA")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -39350,18 +39352,18 @@ Clickhouse databases via DBI methods and using dplyr'/'dbplyr idioms.")
 (define-public r-rclabels
   (package
     (name "r-rclabels")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RCLabels" version))
        (sha256
-        (base32 "1xiwawgi8xrchqppisfhssa7fx96zqslgbm6hcksfwm7nrpfnqv7"))))
+        (base32 "1kwdblp7zcplhlp2xzxh9rzfnc56f01b9j79clp5k6m5s43rkp94"))))
     (properties `((upstream-name . "RCLabels")))
     (build-system r-build-system)
     (propagated-inputs (list r-purrr r-magrittr r-hmisc r-assertthat))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=RCLabels")
+    (home-page "https://matthewheun.github.io/RCLabels/")
     (synopsis "Manipulate Matrix Row and Column Labels with Ease")
     (description
      "This package provides functions to assist manipulation of matrix row and column
@@ -41506,13 +41508,13 @@ formats and data structures common to data analysis practitioners.")
 (define-public r-rayvertex
   (package
     (name "r-rayvertex")
-    (version "0.7.9")
+    (version "0.10.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rayvertex" version))
        (sha256
-        (base32 "1pmbx8xfpwk44qz8hbrrxrhy6c3jpda9hvgbsp6yclag49f12xja"))))
+        (base32 "1ahk6mi3vkdg5lm8wghk126qp035jslk5rfsicfdfdq29imjfag6"))))
     (properties `((upstream-name . "rayvertex")))
     (build-system r-build-system)
     (propagated-inputs (list r-spacefillr
@@ -41599,18 +41601,19 @@ file export, and the ability to save 3D visualizations to a 3D printable format.
 (define-public r-rayrender
   (package
     (name "r-rayrender")
-    (version "0.29.6")
+    (version "0.31.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rayrender" version))
        (sha256
-        (base32 "19hhi5a9lq0xrwd7j0fvhff36n437n93awhivk8jk7sdddmqnb9c"))))
+        (base32 "1h75skbk9vymiq685cljg6k5xx0nlwr458ncm2az4m1aq128735l"))))
     (properties `((upstream-name . "rayrender")))
     (build-system r-build-system)
     (propagated-inputs (list r-spacefillr
                              r-rcppthread
                              r-rcpp
+                             r-rayvertex
                              r-rayimage
                              r-raster
                              r-purrr

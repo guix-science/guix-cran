@@ -9,10 +9,10 @@
   #:use-module (gnu packages geo)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages python)
+  #:use-module (gnu packages gcc)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages haskell-xyz)
-  #:use-module (gnu packages gcc)
   #:use-module (gnu packages web)
   #:use-module (gnu packages graphviz)
   #:use-module (gnu packages java)
@@ -2413,18 +2413,18 @@ core data for 0-800 ka <doi:10.5194/cp-12-1-2016>.")
 (define-public r-gslnls
   (package
     (name "r-gslnls")
-    (version "1.1.2")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gslnls" version))
        (sha256
-        (base32 "0x71rdjr39my7p6a6p9im343sdbpwqns86x4mryygxllp8zvwcgm"))))
+        (base32 "1nxlxm882nbpyjnjlfbsj5wz03nv3kd0jylda7wpw51nqf1jp0mz"))))
     (properties `((upstream-name . "gslnls")))
     (build-system r-build-system)
     (inputs (list gsl gsl))
     (propagated-inputs (list r-matrix))
-    (native-inputs (list pkg-config))
+    (native-inputs (list pkg-config gfortran))
     (home-page "https://github.com/JorisChau/gslnls")
     (synopsis "GSL Nonlinear Least-Squares Fitting")
     (description
@@ -2432,11 +2432,13 @@ core data for 0-800 ka <doi:10.5194/cp-12-1-2016>.")
 Library (GSL), see M. Galassi et al. (2009, ISBN:0954612078).  The available
 trust region methods include the Levenberg-Marquardt algorithm with and without
 geodesic acceleration, the Steihaug-Toint conjugate gradient algorithm for large
-systems and several variants of Powell's dogleg algorithm.  Bindings are
-provided to tune a number of parameters affecting the low-level aspects of the
-trust region algorithms.  The interface mimics R's nls() function and returns
-model objects inheriting from the same class.")
-    (license license:gpl3)))
+systems and several variants of Powell's dogleg algorithm.  The interface
+includes multi-start optimization using quasi-random samples based on a modified
+version of algorithm in Hickernell and Yuan (1997, OR Transactions).  Bindings
+are provided to tune a number of parameters affecting the low-level aspects of
+the trust region algorithms.  The interface mimics R's nls() function and
+returns model objects inheriting from the same class.")
+    (license license:lgpl3)))
 
 (define-public r-gsisdecoder
   (package
@@ -3365,13 +3367,13 @@ nodes.")
 (define-public r-grpcox
   (package
     (name "r-grpcox")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grpCox" version))
        (sha256
-        (base32 "07l0gv8yc5yqp7zwqawc71kkdab6fsfrb25mp2gynlb7vabh8isy"))))
+        (base32 "02x98zmaa7f73qv62wzr0vyyci7kcx7mmyw7cm3inlyphlkywvlw"))))
     (properties `((upstream-name . "grpCox")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-matrix r-mass r-colorspace))
@@ -3628,13 +3630,13 @@ seasonality.")
 (define-public r-grove
   (package
     (name "r-grove")
-    (version "1.1")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grove" version))
        (sha256
-        (base32 "0fqsj5dx7py7cin3hvfkxglh8v3x0dwj6cxy4h5vbddjl687db5x"))))
+        (base32 "1flqjkmvl4wmz53hckn9j9w4lg4kjrjbx98hzlfkzc9ikkp68d7z"))))
     (properties `((upstream-name . "grove")))
     (build-system r-build-system)
     (propagated-inputs (list r-wavethresh r-rcpparmadillo r-rcpp))
@@ -3642,7 +3644,7 @@ seasonality.")
     (synopsis "Wavelet Functional ANOVA Through Markov Groves")
     (description
      "Functional denoising and functional ANOVA through wavelet-domain Markov groves.
-Fore more details see: Ma L. and Soriano J. (2016) Efficient functional ANOVA
+Fore more details see: Ma L. and Soriano J. (2018) Efficient functional ANOVA
 through wavelet-domain Markov groves. <@code{arXiv:1602.03990v2} [stat.ME]>.")
     (license license:gpl3+)))
 
@@ -12355,13 +12357,13 @@ approach.")
 (define-public r-glinvci
   (package
     (name "r-glinvci")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glinvci" version))
        (sha256
-        (base32 "18ps1cv2fyzsyplv15qaqg5k8a1hwri8sqqfm9fncifpjlgmssvk"))))
+        (base32 "0h8fv30gv4807yflymrla0hiy56sxvdm1530k1ag0gbq067i1sz8"))))
     (properties `((upstream-name . "glinvci")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -19326,13 +19328,13 @@ exported to XML format.")
 (define-public r-getip
   (package
     (name "r-getip")
-    (version "0.1-3")
+    (version "0.1-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "getip" version))
        (sha256
-        (base32 "096cycq9w197didbq0zxmsagrlbl1vgb7rv13n32sgyw15rngh8f"))))
+        (base32 "0qyld6sy1i7kmbvcyg3vdv31qdyj81n54v6gvknb7nrqwwl8bgv3"))))
     (properties `((upstream-name . "getip")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=getip")
@@ -20508,13 +20510,13 @@ degree cells occupied.")
 (define-public r-geor
   (package
     (name "r-geor")
-    (version "1.9-2")
+    (version "1.9-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geoR" version))
        (sha256
-        (base32 "1ndrah1aj996s3pdkixai5438xsfcfxcl21an9qxxa9kd8jzbqvw"))))
+        (base32 "07p0q8q61irbxql7jxi7djklm1l9az6588sk709yjdqlg9npsglr"))))
     (properties `((upstream-name . "geoR")))
     (build-system r-build-system)
     (propagated-inputs (list r-splancs r-sp r-mass))
@@ -21922,13 +21924,13 @@ measures variability in subpopulations relative to the total population).")
 (define-public r-gentwoarmstrialsize
   (package
     (name "r-gentwoarmstrialsize")
-    (version "0.0.4.4")
+    (version "0.0.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GenTwoArmsTrialSize" version))
        (sha256
-        (base32 "13i36hwq3wgsc5bsdz18j74rbr8yijakhmh0kzwky6nx9i03ifm5"))))
+        (base32 "17si0vxha3cx59b2wpnlxzhvq4kkzgv746r3jgp2cfg6jmfinbwc"))))
     (properties `((upstream-name . "GenTwoArmsTrialSize")))
     (build-system r-build-system)
     (propagated-inputs (list r-trialsize r-hmisc r-dplyr))
@@ -23921,13 +23923,13 @@ studies, where failures are tackled by countermeasures.")
 (define-public r-genbarcode
   (package
     (name "r-genbarcode")
-    (version "1.2.6")
+    (version "1.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "genBaRcode" version))
        (sha256
-        (base32 "1w73ybw63swni19vd693gpv6y9l83ifr1vv16jnyxspiwrla33qy"))))
+        (base32 "1rgx0b3bpqfc75y5x4i714m8xbrgckvg4m9gkqxq0464386s53dd"))))
     (properties `((upstream-name . "genBaRcode")))
     (build-system r-build-system)
     (propagated-inputs (list r-visnetwork
@@ -23942,7 +23944,6 @@ studies, where failures are tackled by countermeasures.")
                              r-network
                              r-igraph
                              r-ggtree
-                             r-ggseqlogo
                              r-ggraph
                              r-ggplot2
                              r-ggnetwork
@@ -26738,13 +26739,13 @@ measurements.")
 (define-public r-gaselect
   (package
     (name "r-gaselect")
-    (version "1.0.21")
+    (version "1.0.22")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gaselect" version))
        (sha256
-        (base32 "0grn08w7cy8vsn8cys7j1sp3qy4h90z20f886nva22zmkn1ha9wd"))))
+        (base32 "0hk18dl851z9dnw9vd9836lr7j3wlg3kk31k185p2yyk7l821mqp"))))
     (properties `((upstream-name . "gaselect")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -27196,13 +27197,13 @@ Weidong Tian and Hongbin Ji (2012) <doi:10.1038/cr.2011.149>.")
 (define-public r-gangenerativedata
   (package
     (name "r-gangenerativedata")
-    (version "1.5.3")
+    (version "1.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ganGenerativeData" version))
        (sha256
-        (base32 "0k748wj6q59vdi5iliqh6pqy85b7hm4rl01mamwpaivyrqf28kql"))))
+        (base32 "1jk9d62n757mswhh0kva5x2f0spnvy0w39l5bpgz22i4qzn4ak3f"))))
     (properties `((upstream-name . "ganGenerativeData")))
     (build-system r-build-system)
     (inputs (list tensorflow))

@@ -1537,6 +1537,31 @@ scoring, and plotting for the BG/BB (Fader, Hardie, and Shang 2010
 Lee 2005 <doi:10.1509/jmkr.2005.42.4.415>) models.")
     (license license:gpl3)))
 
+(define-public r-bttest
+  (package
+    (name "r-bttest")
+    (version "0.10")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BTtest" version))
+       (sha256
+        (base32 "1sn49rf338n2ql7bj6x682f5nrskx94lj1isisqpfzwdiydaw5yi"))))
+    (properties `((upstream-name . "BTtest")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (home-page "https://github.com/Paul-Haimerl/BTtest")
+    (synopsis "Estimate the Number of Factors in Large Nonstationary Datasets")
+    (description
+     "Implementation of the Barigozzi and Trapani (2022)
+<doi:10.1080/07350015.2021.1901719> test for the number of common factors in
+large nonstationary panel data sets.  The routine identifies the existence of
+(i) a factor subject to a linear trend, (ii) the number of zero-mean I(1) and
+(iii) zero-mean I(0) factors.  Furthermore, the package includes the Integrated
+Panel Criteria by Bai (2004) <doi:10.1016/j.jeconom.2003.10.022> that provide a
+complementary measure for the number of factors in nonstationary panels.")
+    (license license:expat)))
+
 (define-public r-btsr
   (package
     (name "r-btsr")
@@ -1785,13 +1810,13 @@ model under linear inequality constraints.")
 (define-public r-bsvars
   (package
     (name "r-bsvars")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bsvars" version))
        (sha256
-        (base32 "1hv05ja0g024g51569k5aqgx3z5zivajhwwcwpd33v6bz9fii3nl"))))
+        (base32 "1gnjl27ik6p8zsis8fdqhwdzp2jp0kyqnidil4jgy02fiwdww6c5"))))
     (properties `((upstream-name . "bsvars")))
     (build-system r-build-system)
     (propagated-inputs (list r-stochvol
@@ -1801,7 +1826,7 @@ model under linear inequality constraints.")
                              r-rcpp
                              r-r6
                              r-gigrvg))
-    (home-page "https://cran.r-project.org/package=bsvars")
+    (home-page "https://bsvars.github.io/bsvars/")
     (synopsis "Bayesian Estimation of Structural Vector Autoregressive Models")
     (description
      "Efficient algorithms for Bayesian estimation of Structural Vector Autoregressive
@@ -10297,13 +10322,13 @@ extensive discussion on the topic, see Gower, J.C., Lubbe, S. and le Roux, N.J.
 (define-public r-biplotbootgui
   (package
     (name "r-biplotbootgui")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biplotbootGUI" version))
        (sha256
-        (base32 "07lrs2n6s54h97vjriszszhksdbi14s2i234kwfhg7aq47k6l0jl"))))
+        (base32 "1z2mlfya6c4lh970p6hpf8sqhxz7wjl16d1lx2djv4cr8sj7nhdh"))))
     (properties `((upstream-name . "biplotbootGUI")))
     (build-system r-build-system)
     (propagated-inputs (list r-tkrplot
@@ -13358,13 +13383,13 @@ utilizes a Julia package named Bigsimr.jl for its core routines.")
 (define-public r-bigreg
   (package
     (name "r-bigreg")
-    (version "0.1.2")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bigReg" version))
        (sha256
-        (base32 "1hmvh5j40zpzz6c88hmikphps8rb741yvkg60dxmkfl8gxqsrp3w"))))
+        (base32 "08rpkskvsnmln4583074nxlkjf2qkg61v24c0lbj27rfp2ab0wzw"))))
     (properties `((upstream-name . "bigReg")))
     (build-system r-build-system)
     (propagated-inputs (list r-uuid r-rcpparmadillo r-rcpp r-mass))
@@ -13381,9 +13406,9 @@ file in the same folder.  The data is stored in blocks and GLM regression
 algorithm is modified and carries out a @code{MapReduce}- like algorithm to fit
 the model.  The functions bglm(), and summary() and bglm_predict() are available
 for creating and post-processing of models.  The library requires Armadillo
-installed on your system.  It probably won't function on windows since
-multi-core processing is done using mclapply() which forks R on Unix/Linux type
-operating systems.")
+installed on your system.  It may not function on windows since multi-core
+processing is done using mclapply() which forks R on Unix/Linux type operating
+systems.")
     (license license:gpl2+)))
 
 (define-public r-bigreadr
@@ -14923,13 +14948,13 @@ main requirement is clear citation of the original publication (see above).")
 (define-public r-bgvar
   (package
     (name "r-bgvar")
-    (version "2.5.3")
+    (version "2.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BGVAR" version))
        (sha256
-        (base32 "0gspcjjq61pjc06qckvmhj9q800qsvh9ygkhmbwrdfh3nvw986m6"))))
+        (base32 "0jx72gmykayxssxdvrzw72fs9zdalidqi11x9d3c67ni0ilpnciz"))))
     (properties `((upstream-name . "BGVAR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -22137,13 +22162,13 @@ the factors, are not fixed a priori but determined during MCMC sampling.")
 (define-public r-bayesfluxr
   (package
     (name "r-bayesfluxr")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesFluxR" version))
        (sha256
-        (base32 "1wl1wbncw6klf95zcarwy55dssl5a48v4m7j2k1cpp1f4dx2pb4r"))))
+        (base32 "0kj7hxj39k0k6njf24ldb6w10qdwambd8hm6xpjfa1brb807lwkj"))))
     (properties `((upstream-name . "BayesFluxR")))
     (build-system r-build-system)
     (propagated-inputs (list r-juliacall))

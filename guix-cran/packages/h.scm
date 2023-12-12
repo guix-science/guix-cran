@@ -4548,13 +4548,13 @@ et al. (2020) <doi:10.1111/2041-210X.13345>).")
 (define-public r-hmr
   (package
     (name "r-hmr")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HMR" version))
        (sha256
-        (base32 "1zxfz88sr9m0706r76qizlwcy4il2v49x1lx77nqx40626p4zp7n"))))
+        (base32 "1r0aw3x26a0w1pa02m449bpg6xrp1ikxv44f403snb8k48la9brc"))))
     (properties `((upstream-name . "HMR")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=HMR")

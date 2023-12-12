@@ -1541,6 +1541,34 @@ of the database.")
      "Create a word cloud using the abstract of publications from Pubmed'.")
     (license license:gpl2+)))
 
+(define-public r-pubmedtk
+  (package
+    (name "r-pubmedtk")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pubmedtk" version))
+       (sha256
+        (base32 "0rq6p4ha30dy9x05l7pjhalc428r3hdq8kx40l0n0kiqrwzi7a09"))))
+    (properties `((upstream-name . "pubmedtk")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-stringr
+                             r-rlang
+                             r-magrittr
+                             r-jsonlite
+                             r-httr
+                             r-dplyr
+                             r-assertthat))
+    (home-page "https://github.com/bgcarlisle/pubmedtk")
+    (synopsis "'Pubmed' Toolkit")
+    (description
+     "This package provides various functions for retrieving and interpreting
+information from Pubmed via the API,
+<https://www.ncbi.nlm.nih.gov/home/develop/api/>.")
+    (license license:agpl3+)))
+
 (define-public r-pubmedr
   (package
     (name "r-pubmedr")
@@ -13559,13 +13587,13 @@ systems.  The methods are described in Nyberg et al. (2012)
 (define-public r-popdesign
   (package
     (name "r-popdesign")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PoPdesign" version))
        (sha256
-        (base32 "1xh58196p4ldgkzbs04rd2y4pv2qakik6kqsyddyy844ii2jxy69"))))
+        (base32 "03nskqhc4xc40lww0q2gfd76rs8d5ypc571s9qhaibq7zslmy2h2"))))
     (properties `((upstream-name . "PoPdesign")))
     (build-system r-build-system)
     (propagated-inputs (list r-magick r-knitr r-iso))
@@ -18405,6 +18433,45 @@ graphic using base plot command if it is printed.")
 causal inference modeling process.  Supplements the @code{bartCause} package.")
     (license license:expat)))
 
+(define-public r-plot3logit
+  (package
+    (name "r-plot3logit")
+    (version "3.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "plot3logit" version))
+       (sha256
+        (base32 "176rzqxc5p7688a9dk54zhj6y0494s6p8cybxfsc042j168fbg8k"))))
+    (properties `((upstream-name . "plot3logit")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-ternary
+                             r-stringr
+                             r-rdpack
+                             r-purrr
+                             r-magrittr
+                             r-lifecycle
+                             r-ggtern
+                             r-ggplot2
+                             r-generics
+                             r-forcats
+                             r-ellipse
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://www.flaviosanti.it/software/plot3logit/")
+    (synopsis "Ternary Plots for Trinomial Regression Models")
+    (description
+     "An implementation of the ternary plot for interpreting regression coefficients
+of trinomial regression models, as proposed in Santi, Dickson and Espa (2019)
+<doi:10.1080/00031305.2018.1442368>.  Ternary plots can be drawn using either
+ggtern package (based on ggplot2') or Ternary package (based on standard
+graphics).  The package and its features are illustrated in Santi, Dickson, Espa
+and Giuliani (2022) <doi:10.18637/jss.v103.c01>.")
+    (license license:gpl2+)))
+
 (define-public r-plot3drgl
   (package
     (name "r-plot3drgl")
@@ -19096,18 +19163,18 @@ unbalanced data and plot results.")
 (define-public r-pleio
   (package
     (name "r-pleio")
-    (version "1.6")
+    (version "1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pleio" version))
        (sha256
-        (base32 "0av1sl0fdn2ia7ddalbvidhcnsvs36iq618s1bknjw29y5yyq020"))))
+        (base32 "1p2fksf026wv8cr6scdg9pclzrbamjf9nl1s0bpr7wrggjw67n0q"))))
     (properties `((upstream-name . "pleio")))
     (build-system r-build-system)
     (propagated-inputs (list r-rms r-matrix))
     (native-inputs (list r-r-rsp))
-    (home-page "http://bioinformaticstools.mayo.edu/research/pleio/")
+    (home-page "https://bioinformaticstools.mayo.edu/research/pleio/")
     (synopsis "Pleiotropy Test for Multiple Traits on a Genetic Marker")
     (description
      "Perform tests for pleiotropy of multiple traits of various variable types on
@@ -20214,16 +20281,16 @@ all other CRAN packages.")
 (define-public r-pkgsearch
   (package
     (name "r-pkgsearch")
-    (version "3.1.2")
+    (version "3.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pkgsearch" version))
        (sha256
-        (base32 "0j0rckhv1lcwlc05ng637n1jv9yyxb6iws91i3mz9qnl5wis8061"))))
+        (base32 "0b4w6sk65r77sfkvnyirxk0mpikqladi14pmc9sqhfcjbwvqgjx7"))))
     (properties `((upstream-name . "pkgsearch")))
     (build-system r-build-system)
-    (propagated-inputs (list r-prettyunits r-parsedate r-jsonlite r-curl))
+    (propagated-inputs (list r-jsonlite r-curl))
     (home-page "https://github.com/r-hub/pkgsearch")
     (synopsis "Search and Query CRAN R Packages")
     (description
@@ -20460,26 +20527,23 @@ base of multiple R packages.")
 (define-public r-pkgdepends
   (package
     (name "r-pkgdepends")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pkgdepends" version))
        (sha256
-        (base32 "0ph2y9h4imagz5kdxbfjk0qqvsqyfcxlmyn877v0slc01grkw66a"))))
+        (base32 "1a40gw1njb74hvij08a2dzq7sbnw5pslaxy5h7yfqh418pk0rixx"))))
     (properties `((upstream-name . "pkgdepends")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
-                             r-rprojroot
                              r-r6
                              r-ps
                              r-processx
-                             r-prettyunits
                              r-pkgcache
                              r-pkgbuild
                              r-lpsolve
                              r-jsonlite
-                             r-glue
                              r-filelock
                              r-desc
                              r-curl
@@ -20520,25 +20584,23 @@ on where the error originated.")
 (define-public r-pkgcache
   (package
     (name "r-pkgcache")
-    (version "2.2.0.1")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pkgcache" version))
        (sha256
-        (base32 "11zxq7d90x15hl6ri3z162qd1d5krjjanyzbfb9lcr645hix4c1k"))))
+        (base32 "04g74p50dd2108jc7xll3glk0y4p3ciib8qa11956zfkj4h1bj9x"))))
     (properties `((upstream-name . "pkgcache")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rappdirs
-                             r-r6
+    (propagated-inputs (list r-r6
                              r-processx
-                             r-prettyunits
                              r-jsonlite
                              r-filelock
                              r-curl
                              r-cli
                              r-callr))
-    (home-page "https://github.com/r-lib/pkgcache#readme")
+    (home-page "https://r-lib.github.io/pkgcache/")
     (synopsis "Cache 'CRAN'-Like Metadata and R Packages")
     (description
      "Metadata and package cache for CRAN-like repositories.  This is a utility
@@ -21405,17 +21467,17 @@ The parametric bootstrap and Kenward-Roger-type adjustment by Noma et al. (2022)
 (define-public r-pingr
   (package
     (name "r-pingr")
-    (version "2.0.2")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pingr" version))
        (sha256
-        (base32 "05crkb3fxz0g2vqlydma8jk85adhgb4xmah1zv2kg4fli6phg71c"))))
+        (base32 "0qyqmv3anrdh9416rnq1l0mnhdwfl3x603rcg8kfwgwcb2zc0a9w"))))
     (properties `((upstream-name . "pingr")))
     (build-system r-build-system)
     (propagated-inputs (list r-processx))
-    (home-page "https://github.com/r-lib/pingr#readme")
+    (home-page "https://r-lib.github.io/pingr/")
     (synopsis "Check if a Remote Computer is Up")
     (description
      "Check if a remote computer is up.  It can either just call the system ping
@@ -29013,13 +29075,13 @@ book.")
 (define-public r-pde
   (package
     (name "r-pde")
-    (version "1.4.6")
+    (version "1.4.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PDE" version))
        (sha256
-        (base32 "02w87p8sh00nqsnvqrjfq6frdqp61dn9qxg6cxfyhqqjg4r7sypr"))))
+        (base32 "1nkgvcsg8yix76whcr9kn4glg0yh4n1nkp8kz0x2pzp3lra1fx2b"))))
     (properties `((upstream-name . "PDE")))
     (build-system r-build-system)
     (inputs (list xpdf))
@@ -32940,6 +33002,40 @@ another.")
 \"DNAcopy\", utilizing multi-core computation on host CPU")
     (license license:gpl2)))
 
+(define-public r-parcats
+  (package
+    (name "r-parcats")
+    (version "0.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "parcats" version))
+       (sha256
+        (base32 "1imlifi6zdyv1wnvasw8n7cxwq06hj6rr1g2xc1d8j2ic3dbk4ig"))))
+    (properties `((upstream-name . "parcats")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-purrr
+                             r-magrittr
+                             r-htmlwidgets
+                             r-forcats
+                             r-easyalluvial
+                             r-dplyr))
+    (native-inputs (list esbuild))
+    (home-page "https://erblast.github.io/parcats/")
+    (synopsis "Interactive Parallel Categories Diagrams for 'easyalluvial'")
+    (description
+     "Complex graphical representations of data are best explored using interactive
+elements.  parcats adds interactive graphing capabilities to the easyalluvial
+package.  The plotly.js parallel categories diagrams offer a good framework for
+creating interactive flow graphs that allow manual drag and drop sorting of
+dimensions and categories, highlighting single flows and displaying mouse over
+information.  The plotly.js dependency is quite heavy and therefore is
+outsourced into a separate package.")
+    (license license:expat)))
+
 (define-public r-parbayesianoptimization
   (package
     (name "r-parbayesianoptimization")
@@ -33501,6 +33597,35 @@ that same node.  This package, named after the Greek aphorism Panta Rhei
 (everything flows), provides functions to create publication-quality diagrams,
 using data in tables (or spread sheets) and a simple syntax.")
     (license (license:fsdg-compatible "EUPL"))))
+
+(define-public r-panstarrs
+  (package
+    (name "r-panstarrs")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "panstarrs" version))
+       (sha256
+        (base32 "07i7v8rjvzw3qxidvjdh73q8v8rfl8xs9zg1nzphz663flqhl6sd"))))
+    (properties `((upstream-name . "panstarrs")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-jsonlite
+                             r-httr
+                             r-data-table
+                             r-curl
+                             r-checkmate
+                             r-bit64))
+    (native-inputs (list r-knitr))
+    (home-page "https://uskovgs.github.io/PanSTARRS/")
+    (synopsis "Interface to the Pan-STARRS API")
+    (description
+     "An interface to the API for Pan-STARRS1', a data archive of the PS1 wide-field
+astronomical survey.  The package allows access to the PS1 catalog and to the
+PS1 images. (see <https://outerspace.stsci.edu/display/PANSTARRS/> for more
+information).  You can use it to plan astronomical observations, make guidance
+pictures, find magnitudes in five broadband filters (g, r, i, z, y) and more.")
+    (license license:expat)))
 
 (define-public r-panprsnext
   (package
@@ -35147,13 +35272,13 @@ Population Census 2017 (<http://www.pbscensus.gov.pk/>).")
 (define-public r-pak
   (package
     (name "r-pak")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pak" version))
        (sha256
-        (base32 "12rkqymbbnvcbcb4yn6wd2n5nxsswygmw2bfdlkp3a733rdzyfhs"))))
+        (base32 "0r8rf4a6m3zx880s3brn7mygz42cl6pc040fbfhnwwxdrq2hdrz7"))))
     (properties `((upstream-name . "pak")))
     (build-system r-build-system)
     (inputs (list zlib openssl openssh curl))

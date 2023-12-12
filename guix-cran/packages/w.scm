@@ -5715,13 +5715,13 @@ multiple gene lists.")
 (define-public r-webfakes
   (package
     (name "r-webfakes")
-    (version "1.2.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "webfakes" version))
        (sha256
-        (base32 "14gzvj19d1glxdij43zf68rkgbb4lijjz7hb184fbcix09sd2hka"))))
+        (base32 "1w3ysb5m9pv74wdp75kaa6fzw44pdrij9wiq50mhivvbgh70xsi6"))))
     (properties `((upstream-name . "webfakes")))
     (build-system r-build-system)
     (home-page "https://webfakes.r-lib.org/")

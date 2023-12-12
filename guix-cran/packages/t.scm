@@ -6900,19 +6900,21 @@ details.")
 (define-public r-treatmentpatterns
   (package
     (name "r-treatmentpatterns")
-    (version "2.6.0")
+    (version "2.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TreatmentPatterns" version))
        (sha256
-        (base32 "0dapwdw0gsv90naykls3ldqf46ll4r5y6gvyjjj2mj40xcy21xyp"))))
+        (base32 "0vz3hg7s6si5jq6hlqzm520hc1aicfpqnrcs9wbfq3gaswgbc578"))))
     (properties `((upstream-name . "TreatmentPatterns")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-sunburstr
                              r-stringr
                              r-stringi
+                             r-shinydashboard
+                             r-shiny
                              r-rjson
                              r-r6
                              r-networkd3
@@ -8789,16 +8791,16 @@ seamlessly with the tidyquant package.")
 (define-public r-tpn
   (package
     (name "r-tpn")
-    (version "1.7")
+    (version "1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tpn" version))
        (sha256
-        (base32 "1n172jl4pglp771kir1h8f9rynssw7qqjkvqhg98yk5vrf0x1cca"))))
+        (base32 "1jhddrgkzlwmljqzy4hgday4ydyc76fskk2ahnz9x2abfm21dx7g"))))
     (properties `((upstream-name . "tpn")))
     (build-system r-build-system)
-    (propagated-inputs (list r-vgam r-skewmlrm r-pracma r-moments))
+    (propagated-inputs (list r-vgam r-skewmlrm r-rbe3 r-pracma r-moments))
     (home-page "https://cran.r-project.org/package=tpn")
     (synopsis "Truncated Positive Normal Model and Extensions")
     (description
@@ -12213,13 +12215,13 @@ dependency-free.")
 (define-public r-tinycodet
   (package
     (name "r-tinycodet")
-    (version "0.2.2")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinycodet" version))
        (sha256
-        (base32 "067qg3xj9s464p9xpb58md1ayp6v3yinx413y7mrbxhx2gdhfif3"))))
+        (base32 "0rrmml9mpzdbgy0vshxik33cjsf0hdlcbpjqvwf2nvn2rf9g1vnc"))))
     (properties `((upstream-name . "tinycodet")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi))
@@ -16526,13 +16528,13 @@ University and Thomas Jefferson University Hospital, Philadelphia, PA.")
 (define-public r-this-path
   (package
     (name "r-this-path")
-    (version "2.3.0")
+    (version "2.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "this.path" version))
        (sha256
-        (base32 "0labd3wwh2agqsgirab6zik76qlixvjpl18ncvmq3jwlj9jrjxw7"))))
+        (base32 "0gf1859dgp5z0wj0xbv3ri8pg8bwng4j2nhfzlhy0k7zlhhwrv3p"))))
     (properties `((upstream-name . "this.path")))
     (build-system r-build-system)
     (home-page "https://github.com/ArcadeAntics/this.path")

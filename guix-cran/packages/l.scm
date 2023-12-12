@@ -3731,13 +3731,13 @@ al. (2021) <doi:10.1098/rsos.202097> and Belzile et al. (2022)
 (define-public r-longclust
   (package
     (name "r-longclust")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "longclust" version))
        (sha256
-        (base32 "0j7imbdz9wir3rb7lkjnqhfsq8zlr8li31p865dmb4l6kfrl4qg4"))))
+        (base32 "0n1p93z4r2df004iid5qhr733chvdd1gc2xchypfzia5m8nnncal"))))
     (properties `((upstream-name . "longclust")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=longclust")
@@ -6973,13 +6973,13 @@ models for portfolios.")
 (define-public r-lkt
   (package
     (name "r-lkt")
-    (version "1.5.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LKT" version))
        (sha256
-        (base32 "1hpvg10kj4c8cixpvgyp9wzy7h6fv02y9zf6rbply537lyni2igb"))))
+        (base32 "0a57817ddni9hl916dvs3spsvqpjfnla8dyrl2v8q5y0faqhagml"))))
     (properties `((upstream-name . "LKT")))
     (build-system r-build-system)
     (propagated-inputs (list r-sparsem
@@ -9739,13 +9739,13 @@ supervised learning and data clustering.")
 (define-public r-liblinear
   (package
     (name "r-liblinear")
-    (version "2.10-22")
+    (version "2.10-23")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LiblineaR" version))
        (sha256
-        (base32 "1gkp9q99n8cw8s0qamlpjpnlw597fn71dsr05haiyykkqi2l5h5w"))))
+        (base32 "0c8sj8gyrfycqi75xxf7fpy5kbffbw3aw3xj34x90sj47vg0sr09"))))
     (properties `((upstream-name . "LiblineaR")))
     (build-system r-build-system)
     (home-page "<https://dnalytics.com/software/liblinear/>")
@@ -12337,22 +12337,23 @@ Atherogenic Index of Plasma (AIP) using error propagation and bootstrapping.")
 (define-public r-ldhmm
   (package
     (name "r-ldhmm")
-    (version "0.5.1")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ldhmm" version))
        (sha256
-        (base32 "1jwgxwzz56n6hhpp1qks1x0jsfbrjgfsl6h5sp7498l4d2f279ij"))))
+        (base32 "0br0zx5qiv4q1gg3q4kw8jhm4rwycajgp968fwal87mzid65q3ni"))))
     (properties `((upstream-name . "ldhmm")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
+                             r-yaml
                              r-xts
                              r-scales
                              r-optimx
                              r-moments
-                             r-ggplot2
-                             r-ecd))
+                             r-gnorm
+                             r-ggplot2))
     (home-page "https://cran.r-project.org/package=ldhmm")
     (synopsis
      "Hidden Markov Model for Financial Time-Series Based on Lambda Distribution")

@@ -6873,13 +6873,13 @@ which can be then easily used for further analysis.")
 (define-public r-archive
   (package
     (name "r-archive")
-    (version "1.1.6")
+    (version "1.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "archive" version))
        (sha256
-        (base32 "0jshrkz2bvz9sq8iyij39ih6h3js3sqajzsa9ly5pqqhmmkk7q7c"))))
+        (base32 "0z3xw07164knwcnhvrqs83ilihydhi11lia0nx0ckyyl0a9xdvqi"))))
     (properties `((upstream-name . "archive")))
     (build-system r-build-system)
     (inputs (list zlib openssl libarchive libarchive libarchive))
@@ -16949,13 +16949,13 @@ allows to fetch customer details, submit queries to ADH.")
 (define-public r-ads
   (package
     (name "r-ads")
-    (version "1.5-9")
+    (version "1.5-10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ads" version))
        (sha256
-        (base32 "1zipffv20d83aqrxn9fwavn2hf6qix20ffy8l8mgmg2sckfgfb34"))))
+        (base32 "0arxwjy13fijf5w5491hyr7l4cbmp83aa4hckjxx43zbrdyvvrpz"))))
     (properties `((upstream-name . "ads")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-geom r-ade4))
@@ -18696,6 +18696,30 @@ algorithms are described and reviewed in Zhang and Ball (2017)
 <doi:10.1016/j.jhydrol.2016.12.052>.")
     (license license:gpl3+)))
 
+(define-public r-adbi
+  (package
+    (name "r-adbi")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "adbi" version))
+       (sha256
+        (base32 "0da6r67s64khs9xvk5fbn368fqq56z5d6qw4arniv1x705m9mv0s"))))
+    (properties `((upstream-name . "adbi")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-nanoarrow r-dbi r-adbcdrivermanager))
+    (home-page "https://github.com/r-dbi/adbi")
+    (synopsis "'DBI' Compliant Database Access Using 'ADBC'")
+    (description
+     "In order to make Arrow Database Connectivity ('ADBC
+<https://arrow.apache.org/adbc/>) accessible from R, an interface compliant with
+the DBI package is provided, using driver back-ends that are implemented in the
+adbcdrivermanager framework.  This enables interacting with database systems
+using the Arrow data format, thereby offering an efficient alternative to ODBC
+for analytical applications.")
+    (license license:lgpl2.1+)))
+
 (define-public r-adbcsqlite
   (package
     (name "r-adbcsqlite")
@@ -20105,6 +20129,35 @@ opportunities (using either travel cost cutoffs or intervals), minimum travel
 cost to closest N number of activities, gravity-based (with different decay
 functions) and different floating catchment area methods.")
     (license license:expat)))
+
+(define-public r-accelstab
+  (package
+    (name "r-accelstab")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AccelStab" version))
+       (sha256
+        (base32 "0bjbxnbi809hf57inf09y0635917spw1l0mmpjx89ncrvngvzkxx"))))
+    (properties `((upstream-name . "AccelStab")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mvtnorm r-minpack-lm r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/AccelStab/AccelStab")
+    (synopsis "Accelerated Stability Kinetic Modelling")
+    (description
+     "Estimate the Å @code{estÃ¡kâBerggren} kinetic model (degradation model) from
+experimental data.  A closed-form (analytic) solution to the degradation model
+is implemented as a non-linear fit, allowing for the extrapolation of the
+degradation of a drug product - both in time and temperature (Campa C. et al,
+2021 <doi:10.3390/vaccines9101114>).  Parametric bootstrap, with kinetic
+parameters drawn from the multivariate t-distribution, and analytical formulae
+(the delta method) are available options to calculate the confidence and
+prediction intervals.  The results (modelling, extrapolations and statistical
+intervals) can be visualised with multiple plots.  The examples illustrate the
+accelerated stability modelling in drugs and vaccines development.")
+    (license license:agpl3+)))
 
 (define-public r-acca
   (package

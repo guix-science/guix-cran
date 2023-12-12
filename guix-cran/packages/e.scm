@@ -13636,13 +13636,13 @@ Dirichlet-tree prior distributions.  Everest et al. (2022)
 (define-public r-elections
   (package
     (name "r-elections")
-    (version "1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "elections" version))
        (sha256
-        (base32 "0ig3pd1dw978g2sg4ynzd3p15nk6hx17pxvbxfi5rm131mjdmjdm"))))
+        (base32 "0gp2sadk18j518fj203qd52nwy93m85yw8ks59jr2ry2w28a6z2h"))))
     (properties `((upstream-name . "elections")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=elections")
@@ -13650,7 +13650,7 @@ Dirichlet-tree prior distributions.  Everest et al. (2022)
     (description
      "This includes a dataset on the outcomes of the USA presidential elections since
 1920, and various predictors, as used in
-<http://vanderwalresearch.com/blog/15-elections>.")
+<https://www.vanderwalresearch.com/blog/15-elections>.")
     (license license:gpl2+)))
 
 (define-public r-elect
@@ -16969,16 +16969,16 @@ package @code{bupaR}'.")
 (define-public r-eddington
   (package
     (name "r-eddington")
-    (version "2.1.1")
+    (version "4.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eddington" version))
        (sha256
-        (base32 "0v88v2xmvirnj661jsg2qh7n8afaw71mqks9csnmmz3c16agp7b6"))))
+        (base32 "0drra1rhq74r0xhd0fif9xbxaavadlnazmcph6m62yx6c1bghf9z"))))
     (properties `((upstream-name . "eddington")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
+    (propagated-inputs (list r-xml r-rcpp r-r6))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/pegeler/eddington2")
     (synopsis "Compute a Cyclist's Eddington Number")
@@ -16987,13 +16987,13 @@ package @code{bupaR}'.")
 E over a vector.  A cyclist's Eddington number
 <https://en.wikipedia.org/wiki/Arthur_Eddington#Eddington_number_for_cycling> is
 the maximum number satisfying the condition such that a cyclist has ridden E
-miles or greater in E days.  The algorithm in this package is an improvement
-over the conventional approach because both summary statistics and cumulative
-statistics can be computed in linear time, since it does not require initial
-sorting of the data.  These functions may also be used for computing h-indices
-for authors, a metric described by Hirsch (2005) <doi:10.1073/pnas.0507655102>.
-Both are specific applications of computing the side length of a Durfee square
-<https://en.wikipedia.org/wiki/Durfee_square>.")
+miles or greater on E distinct days.  The algorithm in this package is an
+improvement over the conventional approach because both summary statistics and
+cumulative statistics can be computed in linear time, since it does not require
+initial sorting of the data.  These functions may also be used for computing
+h-indices for authors, a metric described by Hirsch (2005)
+<doi:10.1073/pnas.0507655102>.  Both are specific applications of computing the
+side length of a Durfee square <https://en.wikipedia.org/wiki/Durfee_square>.")
     (license license:gpl2+)))
 
 (define-public r-edcpr
@@ -17015,6 +17015,39 @@ Both are specific applications of computing the side length of a Durfee square
      "This is the course package for the exercise portion of the \"Ecological Data
 Collection and Processing\" course.")
     (license license:expat)))
+
+(define-public r-edcimport
+  (package
+    (name "r-edcimport")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EDCimport" version))
+       (sha256
+        (base32 "1azds290gs413ws8g8kc4953pnxw2yb4zy95ijsk06bnhq1a9c98"))))
+    (properties `((upstream-name . "EDCimport")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-labelled
+                             r-haven
+                             r-glue
+                             r-ggplot2
+                             r-forcats
+                             r-dplyr
+                             r-cli))
+    (home-page "https://github.com/DanChaltiel/EDCimport")
+    (synopsis "Import Data from EDC Software")
+    (description
+     "This package provides a convenient toolbox to import data exported from
+Electronic Data Capture (EDC) software @code{TrialMaster}'.")
+    (license license:gpl3)))
 
 (define-public r-edbuildmapr
   (package
@@ -19028,45 +19061,6 @@ and some multivariate extensions are given.")
     (synopsis "Data Sets for Econometrics")
     (description "Data sets for econometrics, including political science.")
     (license license:gpl2+)))
-
-(define-public r-ecd
-  (package
-    (name "r-ecd")
-    (version "0.9.2.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ecd" version))
-       (sha256
-        (base32 "0cdfdbkjjxs78bvvy5zrax0qgcc5fzhlxl3wqapfxigf5xlxlavh"))))
-    (properties `((upstream-name . "ecd")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-yaml
-                             r-xts
-                             r-xtable
-                             r-stabledist
-                             r-rsqlite
-                             r-rmpfr
-                             r-polynom
-                             r-optimx
-                             r-moments
-                             r-gsl
-                             r-gridextra
-                             r-ggplot2
-                             r-digest))
-    (home-page "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3046732")
-    (synopsis "Elliptic Lambda Distribution and Option Pricing Model")
-    (description
-     "Elliptic lambda distribution and lambda option pricing model have been evolved
-into a framework of stable-law inspired distributions, such as the extended
-stable lambda distribution for asset return, stable count distribution for
-volatility, and Lihn-Laplace process as a leptokurtic extension of Wiener
-process.  This package contains functions for the computation of density,
-probability, quantile, random variable, fitting procedures, option prices,
-volatility smile.  It also comes with sample financial data, and plotting
-routines.")
-    (license license:artistic2.0)))
 
 (define-public r-ecctmc
   (package

@@ -521,13 +521,13 @@ approximation are implemented.  Main references: Nagy and Suzdaleva (2013)
 (define-public r-dynforest
   (package
     (name "r-dynforest")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DynForest" version))
        (sha256
-        (base32 "08rqwhw08aqm1zqjcvma36z8nbp73jjmas1yn23zqv1hb76airsj"))))
+        (base32 "1im9sb74swna27vazk366i4a61db7b0agaw499j9nh1a4pf4nsjl"))))
     (properties `((upstream-name . "DynForest")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -539,6 +539,7 @@ approximation are implemented.  Main references: Nagy and Suzdaleva (2013)
                              r-lcmm
                              r-ggplot2
                              r-foreach
+                             r-dorng
                              r-doparallel
                              r-desctools
                              r-cmprsk))
@@ -549,8 +550,8 @@ approximation are implemented.  Main references: Nagy and Suzdaleva (2013)
      "Based on random forest principle, @code{DynForest} is able to include multiple
 longitudinal predictors to provide individual predictions.  Longitudinal
 predictors are modeled through the random forest.  The methodology is fully
-described for a survival outcome in: Devaux, Helmer, Genuer & Proust-Lima (2022)
-<doi: 10.48550/@code{arXiv.2208.05801>}.")
+described for a survival outcome in: Devaux, Helmer, Genuer & Proust-Lima (2023)
+<doi: 10.1177/09622802231206477>.")
     (license license:lgpl3+)))
 
 (define-public r-dynetnlaresistance
@@ -1667,13 +1668,13 @@ friendly way.")
 (define-public r-duckplyr
   (package
     (name "r-duckplyr")
-    (version "0.2.3")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "duckplyr" version))
        (sha256
-        (base32 "0cx30w1r8ha8wpryqg1mvg2243yp2n8an4vzv62pn64p894x8nya"))))
+        (base32 "1wqw43qpgcq5zpjnwii5765jjqli89ynmj6spvrs2ra4kyhsgss2"))))
     (properties `((upstream-name . "duckplyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -10517,21 +10518,24 @@ implemented.")
 (define-public r-disprity
   (package
     (name "r-disprity")
-    (version "1.7.0")
+    (version "1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dispRity" version))
        (sha256
-        (base32 "0qrmhlmbkg0jr9dhfmx46y8vh7nmydmm0sscnj4zrz7wf7myavrm"))))
+        (base32 "0hng3g5mq75b7rvdypnz816xahbfa4fgyi2n6drxma258qskyd68"))))
     (properties `((upstream-name . "dispRity")))
     (build-system r-build-system)
-    (propagated-inputs (list r-vegan
+    (propagated-inputs (list r-zoo
+                             r-vegan
                              r-scales
+                             r-phylolm
                              r-phyclust
                              r-phangorn
                              r-mnormt
                              r-mass
+                             r-get
                              r-geometry
                              r-ellipse
                              r-claddis
@@ -21527,13 +21531,13 @@ gene networks.")
 (define-public r-dbx
   (package
     (name "r-dbx")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dbx" version))
        (sha256
-        (base32 "0kkp1adhvnp5wafwzkxrn26wcggzzvgdfsd81wxz5j205q636xmi"))))
+        (base32 "15ynl3w92h2bfgf5489qi0la8dkwlmp9hf64h230bvxvip9459hg"))))
     (properties `((upstream-name . "dbx")))
     (build-system r-build-system)
     (propagated-inputs (list r-dbi))
@@ -21771,32 +21775,27 @@ Nagarajan, Scutari and LÃ¨bre (2013) <doi:10.1007/978-1-4614-6446-4>.")
 (define-public r-dbmss
   (package
     (name "r-dbmss")
-    (version "2.8-2")
+    (version "2.9-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dbmss" version))
        (sha256
-        (base32 "1fz1hkzsqf8myii502hniw4pihj4nrj7rck3v7f7vhqm10w6zz0v"))))
+        (base32 "16bmaq8wd7v6vqnycr670sajcyaplkw1g5w5m2ri7ch16ccpqk6j"))))
     (properties `((upstream-name . "dbmss")))
     (build-system r-build-system)
     (inputs (list pandoc))
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-tibble
+    (propagated-inputs (list r-tibble
                              r-spatstat-utils
                              r-spatstat-random
                              r-spatstat-geom
                              r-spatstat-explore
-                             r-sp
                              r-rlang
                              r-reshape2
                              r-rcppparallel
                              r-rcpp
                              r-ggplot2
-                             r-dplyr
-                             r-cubature
-                             r-automap))
+                             r-cubature))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/EricMarcon/dbmss")
     (synopsis "Distance-Based Measures of Spatial Structures")
@@ -22759,13 +22758,13 @@ O'Meara (2012) <doi:10.1093/bioinformatics/bts492>).")
 (define-public r-datefixr
   (package
     (name "r-datefixr")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datefixR" version))
        (sha256
-        (base32 "0kl04yz0dc13vl4717qrmv1183gf3f1nq36h1pqpa73dqa4gpzg7"))))
+        (base32 "1xmrx8djxc05r9yvgfgkvmp19m2pj6n2g1r4siikwkzlssh2x8fz"))))
     (properties `((upstream-name . "datefixR")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-rlang r-rcpp r-lifecycle))
@@ -24428,13 +24427,13 @@ package.")
 (define-public r-databaseconnector
   (package
     (name "r-databaseconnector")
-    (version "6.3.1")
+    (version "6.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DatabaseConnector" version))
        (sha256
-        (base32 "0vkl6xr4hzxgdl7n0ds3sryfhy07jxirfwzk1qhl83amxp5i03vw"))))
+        (base32 "1wl78a2jlyqdbdkq1bhw2ymv6d0dn6d38vym80khhclial76rnzp"))))
     (properties `((upstream-name . "DatabaseConnector")))
     (build-system r-build-system)
     (inputs (list openjdk))
@@ -24490,13 +24489,13 @@ user-inputted query.")
 (define-public r-data-validator
   (package
     (name "r-data-validator")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "data.validator" version))
        (sha256
-        (base32 "0v6blwkaxb87n2zdvfwa9fjil4mablch9gsdxa6sbsryx5s373yw"))))
+        (base32 "118crpyyp2szj0l3rsqmzi1cpcv45lwlvczp25f28z1lgcx6mgcx"))))
     (properties `((upstream-name . "data.validator")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

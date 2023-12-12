@@ -1802,13 +1802,13 @@ as well as 230Th-U evolution plots.")
 (define-public r-isopleuros
   (package
     (name "r-isopleuros")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "isopleuros" version))
        (sha256
-        (base32 "19hn9ydby2wi6aim6vb7wjj93f95md0g8sy41djlhr94m5v9xw3d"))))
+        (base32 "1jwnbxfg9in2bgb2l5w179mi7aci9wyh026ggwnsjnfnqvibcdy2"))))
     (properties `((upstream-name . "isopleuros")))
     (build-system r-build-system)
     (home-page "https://packages.tesselle.org/isopleuros/")
@@ -1843,13 +1843,13 @@ chemical formula.")
 (define-public r-isopam
   (package
     (name "r-isopam")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "isopam" version))
        (sha256
-        (base32 "1ygvpdpn1vjkpfl32sp41kss512r051c839yki288xidqg4j3z0a"))))
+        (base32 "0mq4206v7bmcbms0bpijvfshi97zbsj3kjr0z88cpzhd1w4yv80p"))))
     (properties `((upstream-name . "isopam")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -3885,13 +3885,13 @@ marginal quantiles based on the Inverse Probability Weighting method.")
 (define-public r-ipw
   (package
     (name "r-ipw")
-    (version "1.2")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ipw" version))
        (sha256
-        (base32 "12acf71pc0xxpr5h1vhx8kxjlr5kymyhld97pp4bkikw5jykfl2a"))))
+        (base32 "0xgx9l5s4w71494jfs2jfs1dhch18rb8j7jn68hilh1pzc9hz05k"))))
     (properties `((upstream-name . "ipw")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-nnet r-mass r-geepack))
@@ -6147,48 +6147,6 @@ integers, not necessarily contiguous and possibly negative.  The implementation
 uses a R6 class.  These containers are not faster than lists but their usage can
 be more convenient for certain situations.")
     (license license:gpl3)))
-
-(define-public r-intlim
-  (package
-    (name "r-intlim")
-    (version "2.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "IntLIM" version))
-       (sha256
-        (base32 "04kjmp6akbw9yjg0lr19aripm5vjzm4bk7xqxm38hq9wn9cgli4g"))))
-    (properties `((upstream-name . "IntLIM")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-testthat
-                             r-shinyjs
-                             r-shinyfiles
-                             r-shinydashboard
-                             r-shiny
-                             r-rmarkdown
-                             r-reshape2
-                             r-rcolorbrewer
-                             r-mass
-                             r-margins
-                             r-kernsmooth
-                             r-htmltools
-                             r-highcharter
-                             r-heatmaply
-                             r-ggplot2
-                             r-dt
-                             r-complexheatmap))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=IntLIM")
-    (synopsis "Integration of Omics Data Using Linear Modeling")
-    (description
-     "This workflow takes analyte levels from two different types of analytes (e.g.
-gene expression and metabolite abundance), meta-information on each analyte
-type, and sample outcome and metadata to identify analyte pairs that are
-significantly associated with a continuous or discrete outcome (e.g. drug
-response or tumor type).  The following references describe the methods in this
-package: (1) Jalal K. Siddiqui, et al. (2018) <doi:10.1186/s12859-018-2085-6>,
-(2) Andrew Patt, et al. (2019) <doi:10.1007/978-1-4939-9027-6_23>.")
-    (license license:gpl2)))
 
 (define-public r-intkrige
   (package
@@ -9676,18 +9634,19 @@ delay distribution.")
 (define-public r-incidenceprevalence
   (package
     (name "r-incidenceprevalence")
-    (version "0.5.3")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IncidencePrevalence" version))
        (sha256
-        (base32 "1vdnp5cwpsg396y8dqya54lmzsg8k5554h7nxnhw92yahl29qc62"))))
+        (base32 "0yaq43zkj86csc5xrqfkbggd6f50vbyihc08dgxwqz4f6lkgqdq4"))))
     (properties `((upstream-name . "IncidencePrevalence")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
                              r-tidyselect
                              r-tidyr
+                             r-tibble
                              r-stringr
                              r-scales
                              r-rlang

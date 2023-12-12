@@ -511,13 +511,13 @@ non-asymptotic Type I error control at the nominal level.")
 (define-public r-usmapdata
   (package
     (name "r-usmapdata")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "usmapdata" version))
        (sha256
-        (base32 "1nxxf3s0ldnlg2b662lqg0q5961y20iwb77w5gm4mzb3600das34"))))
+        (base32 "1blhlgsj72zy4a6f30gnqnw6za93jdr0ylpl0i8d3j0xrn3rszb4"))))
     (properties `((upstream-name . "usmapdata")))
     (build-system r-build-system)
     (home-page "https://usmap.dev")
@@ -533,13 +533,13 @@ Census bureau.")
 (define-public r-usmap
   (package
     (name "r-usmap")
-    (version "0.6.3")
+    (version "0.6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "usmap" version))
        (sha256
-        (base32 "0rhg1llarlbsin1dixbwrnb28xjzsbf5b30i5ijkfr2qjv5nrn2p"))))
+        (base32 "0vc8v37j4srjayay3yg2zm1142jcw8b15j7pk04880l66v7nfz2r"))))
     (properties `((upstream-name . "usmap")))
     (build-system r-build-system)
     (propagated-inputs (list r-usmapdata r-rlang))
@@ -1026,27 +1026,6 @@ returns \"the meaning\" of that column (i.e., a \"SUMLEV\" value of 40 means
 \"State\"); without a value, the decode function attempts to describe the column
 itself.")
     (license license:bsd-2)))
-
-(define-public r-ursa
-  (package
-    (name "r-ursa")
-    (version "3.10.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ursa" version))
-       (sha256
-        (base32 "01linzsfarvpnzgjsc2zq07z3dvw3wwddd1da5jkfmd086774580"))))
-    (properties `((upstream-name . "ursa")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sf r-png))
-    (home-page "https://github.com/nplatonov/ursa")
-    (synopsis
-     "Non-Interactive Spatial Tools for Raster Processing and Visualization")
-    (description
-     "S3 classes and methods for manipulation with georeferenced raster data:
-reading/writing, processing, multi-panel visualization.")
-    (license license:gpl2+)))
 
 (define-public r-urootab
   (package

@@ -5253,13 +5253,13 @@ attenuate the results to the null or by a given amount?")
 (define-public r-multibias
   (package
     (name "r-multibias")
-    (version "1.2.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multibias" version))
        (sha256
-        (base32 "0cd9hyz1jgnylklgnwppmy7kla73mmn8qi0gxh67lr0l1pjnpnlk"))))
+        (base32 "1mlc84cpphg9cwd8a1i7jrms6k89ij5szqp5w0l8yqkg7p3pgi3r"))))
     (properties `((upstream-name . "multibias")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-magrittr r-dplyr))
@@ -5269,13 +5269,13 @@ attenuate the results to the null or by a given amount?")
     (description
      "Quantify the causal effect of a binary exposure on a binary outcome with
 adjustment for multiple biases.  The functions can simultaneously adjust for any
-combination of uncontrolled confounding, exposure misclassification, and
+combination of uncontrolled confounding, exposure/outcome misclassification, and
 selection bias.  The underlying method generalizes the concept of combining
 inverse probability of selection weighting with predictive value weighting.
 Simultaneous multi-bias analysis can be used to enhance the validity and
 transparency of real-world evidence obtained from observational, longitudinal
-studies.  Based on the work from Paul Brendel, Aracelis Torres, Onyebuchi Arah
-(2023) <doi:10.1093/ije/dyad001>.")
+studies.  Based on the work from Paul Brendel, Aracelis Torres, and Onyebuchi
+Arah (2023) <doi:10.1093/ije/dyad001>.")
     (license license:expat)))
 
 (define-public r-multibd
@@ -8229,13 +8229,13 @@ outcomes is the estimator for marginal excursion effect (EMEE) by Qian et al.
 (define-public r-mrs
   (package
     (name "r-mrs")
-    (version "1.2.5")
+    (version "1.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MRS" version))
        (sha256
-        (base32 "19dnz9p17lmv11wkhb2zs433m74i1pfcs6za5l92xdy957w883km"))))
+        (base32 "0rw3gmjn35118f1v1i8wa56zmz0cz2qbjahic87ylbyamnfsxz3l"))))
     (properties `((upstream-name . "MRS")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-igraph))
@@ -12777,13 +12777,13 @@ particular security, obtain its profile information and so on.")
 (define-public r-moeclust
   (package
     (name "r-moeclust")
-    (version "1.5.1")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MoEClust" version))
        (sha256
-        (base32 "0kfylrq6079bp1l2pc6qlzqnm6a42xbywj0gi5zi57lh9wx7bslb"))))
+        (base32 "0wixcga2f06kpp7mq1nb32ya2v2wlx5r9h74danjfbhi3nvky903"))))
     (properties `((upstream-name . "MoEClust")))
     (build-system r-build-system)
     (propagated-inputs (list r-vcd
@@ -12808,7 +12808,7 @@ component is also facilitated.  A greedy forward stepwise search algorithm is
 provided for identifying the optimal model in terms of the number of components,
 the GPCM covariance parameterisation, and the subsets of gating/expert network
 covariates.")
-    (license license:gpl2+)))
+    (license license:gpl3+)))
 
 (define-public r-moeadr
   (package
@@ -14356,72 +14356,6 @@ replacement.")
 substitute it for testing.  Designed as a drop-in replacement for the now
 deprecated testthat::with_mock() and testthat::local_mock()'.")
     (license license:gpl3)))
-
-(define-public r-mocha
-  (package
-    (name "r-mocha")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MOCHA" version))
-       (sha256
-        (base32 "04rq58chdaj25dfky1dxhz594q4bj5i997zsgj3rz2gmsjdknw9i"))))
-    (properties `((upstream-name . "MOCHA")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-wcorr
-                             r-tidyselect
-                             r-tidyr
-                             r-summarizedexperiment
-                             r-stringr
-                             r-scales
-                             r-s4vectors
-                             r-rlang
-                             r-raggedexperiment
-                             r-qvalue
-                             r-purrr
-                             r-plyranges
-                             r-pbapply
-                             r-organismdbi
-                             r-multiassayexperiment
-                             r-matrixstats
-                             r-magrittr
-                             r-lifecycle
-                             r-iranges
-                             r-ggridges
-                             r-ggrepel
-                             r-ggplot2
-                             r-ggbio
-                             r-genomicranges
-                             r-genomicfeatures
-                             r-genomeinfodb
-                             r-ensembldb
-                             r-dplyr
-                             r-data-table
-                             r-bsgenome
-                             r-biovizbase
-                             r-biocgenerics
-                             r-assertthat
-                             r-annotationdbi))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=MOCHA")
-    (synopsis "Modeling for Single-Cell Open Chromatin Analysis")
-    (description
-     "This package provides a statistical framework and analysis tool for open
-chromatin analysis designed specifically for single cell ATAC-seq (Assay for
-Transposase-Accessible Chromatin) data, after cell type/cluster identification.
-These novel modules remove unwanted technical variation, identify open
-chromatin, robustly models repeated measures in single cell data, implement
-advanced statistical frameworks to model zero-inflation for differential and
-co-accessibility analyses, and integrate with existing databases and modules for
-downstream analyses to reveal biological insights.  MOCHA provides a statistical
-foundation for complex downstream analysis to help advance the potential of
-single cell ATAC-seq for applied studies.  Methods for zero-inflated statistics
-are as described in: Ghazanfar, S., Lin, Y., Su, X. et al. (2020)
-<doi:10.1038/s41592-020-0885-x>.  Pimentel, Ronald Silva, \"Kendall's Tau and
-Spearman's Rho for Zero-Inflated Data\" (2009)
-<https://scholarworks.wmich.edu/dissertations/721/>.")
-    (license license:gpl3+)))
 
 (define-public r-mocca
   (package
@@ -22927,15 +22861,16 @@ simultaneous parameter estimation and variable selection.")
 (define-public r-milorgwas
   (package
     (name "r-milorgwas")
-    (version "0.3")
+    (version "0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "milorGWAS" version))
        (sha256
-        (base32 "1z44sbs3lmrx32wagk5rr3rc2k8iqq860fz0bi983llmgmhaqdxn"))))
+        (base32 "1gl4lg3m11hkj47g7zqq0xavxzj5z1vjbb88pf03r7200qnb5ff8"))))
     (properties `((upstream-name . "milorGWAS")))
     (build-system r-build-system)
+    (inputs (list zlib))
     (propagated-inputs (list r-rcppeigen r-rcpp r-gaston))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=milorGWAS")
@@ -24207,13 +24142,13 @@ curation of microhaplotypes from short read sequences.")
 (define-public r-microeco
   (package
     (name "r-microeco")
-    (version "1.2.2")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "microeco" version))
        (sha256
-        (base32 "1z2vkc7i4nq22xfkaxvi34p8v32i1vij48jql6fpp4hfjgzmhf63"))))
+        (base32 "16w52vyikcl971mg519jg7g4s2imml5hz904cm6kf0vz65xcls3c"))))
     (properties `((upstream-name . "microeco")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -30513,13 +30448,13 @@ normalization approach in their test statistics.  Betken (2016)
 (define-public r-memo
   (package
     (name "r-memo")
-    (version "1.1")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "memo" version))
        (sha256
-        (base32 "15wqadjwjrkj3vlq19x1j50nddfrm1lvipahxvmiv94lmy71pdlj"))))
+        (base32 "1gqdb8y2khcnd1h2906kz1k7x58lw2ri48s9glfjq6whpj6bzpdk"))))
     (properties `((upstream-name . "memo")))
     (build-system r-build-system)
     (propagated-inputs (list r-digest))
@@ -31970,13 +31905,13 @@ product kernels.")
 (define-public r-meanr
   (package
     (name "r-meanr")
-    (version "0.1-5")
+    (version "0.1-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "meanr" version))
        (sha256
-        (base32 "0db3kjd134f2wbza7py4hpxbbwrbln8dx6rw244my6pi3jifvm5h"))))
+        (base32 "0d8zi0c902dqs5457x2zhcp88gg8wf62wrfcnrn5h769j7zy3vk4"))))
     (properties `((upstream-name . "meanr")))
     (build-system r-build-system)
     (home-page "https://github.com/wrathematics/meanr")
@@ -36125,13 +36060,13 @@ with a total of 196 variations.")
 (define-public r-matsindf
   (package
     (name "r-matsindf")
-    (version "0.4.5")
+    (version "0.4.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "matsindf" version))
        (sha256
-        (base32 "07b4cg0yabfszyklyb48czb682jfdy3xfgdfqbq04kwzjgq84vr3"))))
+        (base32 "1qsvhja4zhblmv1zayqddzif9l3kiwbw20yf0k5hp92pizpq4j3k"))))
     (properties `((upstream-name . "matsindf")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

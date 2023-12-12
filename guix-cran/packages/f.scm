@@ -6494,13 +6494,13 @@ plugin: <https://github.com/qlands/formshare_sql_plugin> .")
 (define-public r-formods
   (package
     (name "r-formods")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "formods" version))
        (sha256
-        (base32 "0rb58xja6i0syxb4ibhqdlfgdwq7l0zbqrli6d4dwcpvjv3hlg19"))))
+        (base32 "1zvriii32s17mr1nyckbqr63g6rf90x2r6fxsbk9sa8imci272iq"))))
     (properties `((upstream-name . "formods")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -9359,6 +9359,28 @@ compositional features.  See Fei and others (2023)
 <doi:10.1101/2023.05.02.538599>.")
     (license license:gpl3+)))
 
+(define-public r-florabr
+  (package
+    (name "r-florabr")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "florabr" version))
+       (sha256
+        (base32 "1mc1mg7s860h4ig40lz3zpr299bq14xz10wi2pviwbbb2dpnndzr"))))
+    (properties `((upstream-name . "florabr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml r-terra r-httr r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://wevertonbio.github.io/florabr/")
+    (synopsis "Explore Brazilian Flora 2020 Database")
+    (description
+     "This package provides a collection of functions designed to retrieve, filter and
+spatialize data from the Brazilian Flora 2020 dataset.  For more information
+about the dataset, please visit <https://floradobrasil.jbrj.gov.br/consulta/>.")
+    (license license:gpl3+)))
+
 (define-public r-flora
   (package
     (name "r-flora")
@@ -10057,17 +10079,17 @@ display the result.")
 (define-public r-flexparamcurve
   (package
     (name "r-flexparamcurve")
-    (version "1.5-5")
+    (version "1.5-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FlexParamCurve" version))
        (sha256
-        (base32 "1404cn3bhcdr3mjhpr072zcyl0wnksarsg2sry5d1scsmrn4xq83"))))
+        (base32 "0p0c949cdb05r6xnjc7k1i47z809g4mda1l94q7f4dikpnl1h2zd"))))
     (properties `((upstream-name . "FlexParamCurve")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlme))
-    (home-page "http://pennstate.academia.edu/SteveOswald")
+    (home-page "https://pennstate.academia.edu:443/SteveOswald")
     (synopsis "Tools to Fit Flexible Parametric Curves")
     (description
      "Model selection tools and @code{selfStart} functions to fit parametric curves in
@@ -18692,22 +18714,25 @@ and discussed in the preprint available from Researchgate by Simone R. (2020)
 (define-public r-fastcpd
   (package
     (name "r-fastcpd")
-    (version "0.9.0")
+    (version "0.9.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastcpd" version))
        (sha256
-        (base32 "0i68411h1cdh4jpz8a7fg0ns1zvwdn7zpbarciy0swldq8v43xi1"))))
+        (base32 "0c1c26sfw84lr2z8yv2x1ycmsxd3723ncv6ysqd1xl9vd0assbgs"))))
     (properties `((upstream-name . "fastcpd")))
     (build-system r-build-system)
-    (propagated-inputs (list r-testthat
+    (propagated-inputs (list r-tseries
+                             r-testthat
                              r-rcpparmadillo
                              r-rcpp
+                             r-progress
                              r-matrix
                              r-glmnet
-                             r-fastglm
-                             r-desctools))
+                             r-forecast
+                             r-fastglm))
+    (native-inputs (list r-knitr))
     (home-page "https://fastcpd.xingchi.li")
     (synopsis "Fast Change Point Detection via Sequential Gradient Descent")
     (description
@@ -18773,13 +18798,13 @@ categorical covariates.")
 (define-public r-fastbeta
   (package
     (name "r-fastbeta")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastbeta" version))
        (sha256
-        (base32 "17r8lbv3lai82l6d10aqmxp2b0krkmy37fy2n1xxajjdzdpkf2vy"))))
+        (base32 "1lcs8zr25bk1gh9b7grpf1y4pkp455glh0c9vaa0gl6ygy2xd558"))))
     (properties `((upstream-name . "fastbeta")))
     (build-system r-build-system)
     (propagated-inputs (list r-desolve r-adaptivetau))

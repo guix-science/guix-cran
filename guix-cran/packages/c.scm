@@ -15,8 +15,8 @@
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages maths)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
@@ -3200,16 +3200,16 @@ names.")
 (define-public r-csvread
   (package
     (name "r-csvread")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "csvread" version))
        (sha256
-        (base32 "1r9jvf7nbkxgl6dycdnb89yh39vacrzy8z04g8qz225rklg5b288"))))
+        (base32 "0cbsdlrbdgq039cyr42isqbg8w65dpia1rdwbfppnv2x0f6x0fwr"))))
     (properties `((upstream-name . "csvread")))
     (build-system r-build-system)
-    (home-page "http://github.com/jabiru/csvread")
+    (home-page "https://github.com/jabiru/csvread")
     (synopsis "Fast Specialized CSV File Loader")
     (description
      "This package provides functions for loading large (10M+ lines) CSV and other
@@ -6309,13 +6309,13 @@ discrete data with pairwise and unary potentials.")
 (define-public r-crew-cluster
   (package
     (name "r-crew-cluster")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crew.cluster" version))
        (sha256
-        (base32 "04v7fajfanap564lvw8izg5srhq9mf415z05rim41k1038f93pav"))))
+        (base32 "0m4zddmfjbrm2mh5r0nar17x6k0p5j8m58fgbb888221xl13dn2q"))))
     (properties `((upstream-name . "crew.cluster")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-r6 r-lifecycle r-crew))
@@ -6338,13 +6338,13 @@ Surmann (2017). <doi:10.21105/joss.00135>.")
 (define-public r-crew
   (package
     (name "r-crew")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crew" version))
        (sha256
-        (base32 "0b19z7y1n3l968npn9ggdxh1vfzw854wbpkrw2sk0h3fj7r49hsf"))))
+        (base32 "0rh7321j81y2xrvkfmxkwx0cswbblldfwzm7hgprqs3q4v09d90d"))))
     (properties `((upstream-name . "crew")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -6356,7 +6356,8 @@ Surmann (2017). <doi:10.21105/joss.00135>.")
                              r-nanonext
                              r-mirai
                              r-getip
-                             r-data-table))
+                             r-data-table
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://wlandau.github.io/crew/")
     (synopsis "Distributed Worker Launcher Framework")
@@ -23084,16 +23085,17 @@ covariate adjustment.")
 (define-public r-clustmixtype
   (package
     (name "r-clustmixtype")
-    (version "0.3-9")
+    (version "0.3-14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clustMixType" version))
        (sha256
-        (base32 "0ijinldyb55chs2llklzk8c7pxxhhfy5cc6ar4fd1gbaasgkadx2"))))
+        (base32 "0i3wlnwa075rlwgv5b2kzgnswv6r7hha7biq84jqsa61hhysjxxw"))))
     (properties `((upstream-name . "clustMixType")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tibble r-rcolorbrewer))
+    (propagated-inputs (list r-tibble r-rlang r-rcolorbrewer r-dplyr
+                             r-combinat))
     (home-page "https://cran.r-project.org/package=clustMixType")
     (synopsis "k-Prototypes Clustering for Mixed Variable-Type Data")
     (description
@@ -24783,13 +24785,13 @@ datasets to demonstrate the package functionalities.")
 (define-public r-clintools
   (package
     (name "r-clintools")
-    (version "0.9.10")
+    (version "0.9.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clintools" version))
        (sha256
-        (base32 "1rlzdhcyp6rlp72wa3jm3xn3ndcab6rgsy09xmf18snj58fbvliy"))))
+        (base32 "0f8y1l3mqij6y87xf07gq7r2frigswcff5p3v119l6rldmkhp4fl"))))
     (properties `((upstream-name . "clintools")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -25077,6 +25079,51 @@ and Heatherington(2017) <doi:10.1177/0962280216684528> are included in the
 package.  The prior distributions for the Bayesian analyses default to the
 posterior predictive distributions derived from these references.")
     (license license:gpl2+)))
+
+(define-public r-clindatareview
+  (package
+    (name "r-clindatareview")
+    (version "1.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "clinDataReview" version))
+       (sha256
+        (base32 "17ffdz410fniiybzw8rka0rgv8jqqsmsmp3b9yzlpsjcpx0z55s9"))))
+    (properties `((upstream-name . "clinDataReview")))
+    (build-system r-build-system)
+    (inputs (list pandoc))
+    (propagated-inputs (list r-yaml
+                             r-xml2
+                             r-xfun
+                             r-stringr
+                             r-rmarkdown
+                             r-plyr
+                             r-plotly
+                             r-knitr
+                             r-jsonvalidate
+                             r-jsonlite
+                             r-htmlwidgets
+                             r-htmltools
+                             r-haven
+                             r-ggplot2
+                             r-data-table
+                             r-crosstalk
+                             r-clinutils
+                             r-bookdown))
+    (native-inputs (list r-knitr esbuild))
+    (home-page "https://github.com/openanalytics/clinDataReview")
+    (synopsis "Clinical Data Review Tool")
+    (description
+     "Creation of interactive tables, listings and figures ('TLFs') and associated
+report for exploratory analysis of data in a clinical trial, e.g. for clinical
+oversight activities.  Interactive figures include sunburst, treemap,
+scatterplot, line plot and barplot of counts data.  Interactive tables include
+table of summary statistics (as counts of adverse events, enrollment table) and
+listings.  Possibility to compare data (summary table or listing) across two
+data batches/sets.  A clinical data review report is created via study-specific
+configuration files and template R Markdown reports contained in the package.")
+    (license license:expat)))
 
 (define-public r-climwin
   (package

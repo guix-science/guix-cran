@@ -3546,13 +3546,13 @@ strings encrypted with the Windows Data Protection API.")
 (define-public r-keypress
   (package
     (name "r-keypress")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "keypress" version))
        (sha256
-        (base32 "0y9zz4q2kmya85j1dr0a3874k65r57wcwqgsbsa0l0az6lyc4v0i"))))
+        (base32 "1jc0l3x2yd4d1q0108vj0iz8nxsrdhdfymkmadzzc0px76gwxci6"))))
     (properties `((upstream-name . "keypress")))
     (build-system r-build-system)
     (home-page "https://github.com/gaborcsardi/keypress#readme")

@@ -865,13 +865,13 @@ Rcpp package which ensures great performance of the code.")
 (define-public r-symengine
   (package
     (name "r-symengine")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "symengine" version))
        (sha256
-        (base32 "0wpnzs1df4bawi0ibmd0pk3pkvvabj3m2wxrpp4c5l290fvnxhms"))))
+        (base32 "1ms8xxh827nailh8zx9kdbhv8bnzqimwksgnx5nx5mh3sw53wdqh"))))
     (properties `((upstream-name . "symengine")))
     (build-system r-build-system)
     (inputs (list mpfr gmp cmake))
@@ -1121,13 +1121,13 @@ statistics.")
 (define-public r-sylcount
   (package
     (name "r-sylcount")
-    (version "0.2-5")
+    (version "0.2-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sylcount" version))
        (sha256
-        (base32 "0934vic6mdrgpralrfvlv7y83kc1h7df7jm37spapy370mzq50lp"))))
+        (base32 "046d76qwiszpkwiljnigbnj8cvfp66b0a8c50g9aww8a8p44mb87"))))
     (properties `((upstream-name . "sylcount")))
     (build-system r-build-system)
     (home-page "https://github.com/wrathematics/sylcount")
@@ -1139,13 +1139,11 @@ readability, we support Flesch Reading Ease and Flesch-Kincaid Grade Level
 <https://stars.library.ucf.edu/cgi/viewcontent.cgi?article=1055&context=istlibrary>,
 Automated Readability Index ('Senter and Smith 1967)
 <https://apps.dtic.mil/sti/citations/AD0667273>, Simple Measure of Gobbledygook
-(@code{McLaughlin} 1969)
-<https://www.semanticscholar.org/paper/SMOG-Grading-A-New-Readability-Formula.-Laughlin/5fccb74c14769762b3de010c5e8a1a7ce700d17a>,
-and Coleman-Liau (Coleman and Liau 1975) <doi:10.1037/h0076540>.  The package
-has been carefully optimized and should be very efficient, both in terms of run
-time performance and memory consumption.  The main methods are vectorized by
-document, and scores for multiple documents are computed in parallel via
-@code{OpenMP}'.")
+(@code{McLaughlin} 1969), and Coleman-Liau (Coleman and Liau 1975)
+<doi:10.1037/h0076540>.  The package has been carefully optimized and should be
+very efficient, both in terms of run time performance and memory consumption.
+The main methods are vectorized by document, and scores for multiple documents
+are computed in parallel via @code{OpenMP}'.")
     (license (license:fsdg-compatible "BSD 2-clause License + file LICENSE"))))
 
 (define-public r-swmpr
@@ -12440,13 +12438,13 @@ constructed from stock market prices or returns, as explained in Andersen et al.
 (define-public r-startup
   (package
     (name "r-startup")
-    (version "0.20.0")
+    (version "0.21.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "startup" version))
        (sha256
-        (base32 "1l03jmlhc32jbf6clxzdfxb0rinwl8sb67hikx6hzbk8k9x2xvc2"))))
+        (base32 "0iwq1nbiv2j78g17mq566qqv5p5msk1gmi0bb0hs1j1xx9vjamnl"))))
     (properties `((upstream-name . "startup")))
     (build-system r-build-system)
     (home-page "https://henrikbengtsson.github.io/startup/")
@@ -12994,6 +12992,33 @@ recalculated.")
 aggregated ecotoxicological test data, which can be used for assessing effects
 and risks of chemical concentrations found in the environment.")
     (license license:expat)))
+
+(define-public r-standardlastprofile
+  (package
+    (name "r-standardlastprofile")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "standardlastprofile" version))
+       (sha256
+        (base32 "0hj4hb2x7j1mfhkr6ccxjl4zkvhy3h0lvs71vzrz4mja3453bs5x"))))
+    (properties `((upstream-name . "standardlastprofile")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/flrd/standardlastprofile")
+    (synopsis "Data Package for BDEW Standard Load Profiles in Electricity")
+    (description
+     "Data on standard load profiles from the German Association of Energy and Water
+Industries (BDEW Bundesverband der Energie- und Wasserwirtschaft e.V.) in a tidy
+format.  The data and methodology are described in VDEW (1999),
+\"@code{ReprÃ¤sentative} VDEW-Lastprofile\",
+<https://www.bdew.de/media/documents/1999_Repraesentative-VDEW-Lastprofile.pdf>.
+ The package also offers an interface for generating a standard load profile
+over a user-defined period.  For the algorithm, see VDEW (2000), \"Anwendung der
+@code{ReprÃ¤sentativen} VDEW-Lastprofile step-by-step\",
+<https://www.bdew.de/media/documents/2000131_Anwendung-repraesentativen_Lastprofile-Step-by-step.pdf>.")
+    (license license:cc0)))
 
 (define-public r-standardize
   (package
@@ -21179,13 +21204,13 @@ Watanabe-Akaike information criterion (WAIC).  See Zhou, Hanson and Zhang (2020)
 (define-public r-spbayes
   (package
     (name "r-spbayes")
-    (version "0.4-6")
+    (version "0.4-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spBayes" version))
        (sha256
-        (base32 "0530fhb832nr1vzhwml696cbvwpphjha35i20q0aixxqg8fd35jw"))))
+        (base32 "18rb4k7yfnz07ilrgdipbl30a78zzl3yaikd999l482v1a95hibr"))))
     (properties `((upstream-name . "spBayes")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-matrix r-magic r-formula r-coda))
@@ -24758,23 +24783,20 @@ analysis.")
 (define-public r-sox
   (package
     (name "r-sox")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sox" version))
        (sha256
-        (base32 "1rg1658jz6sc8dfp5gd8dmnxl747mw02zz24r7231vjmdwc60bl5"))))
+        (base32 "03lnl431k0fr19akhdwzci2dgmcclkqqj30984wp05ldn87drcyy"))))
     (properties `((upstream-name . "sox")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rcpp r-glmnet))
     (home-page "https://cran.r-project.org/package=sox")
     (synopsis "Structured Learning in Time-Dependent Cox Models")
-    (description
-     "Efficient procedures for fitting and cross-validating the
-structurally-regularized time-dependent Cox models.  The penalty term is a
-weighted sum of infinity norms of (overlapping) groups of coefficients, which
-can select variables following a user-specified grouping structure.")
+    (description "Efficient procedures for fitting and cross-validating the
+structurally-regularized time-dependent Cox models.")
     (license license:gpl3+)))
 
 (define-public r-sovereign
@@ -25018,16 +25040,16 @@ to the vignette for further information.  Gibb, R., et al. (2019)
 (define-public r-sound
   (package
     (name "r-sound")
-    (version "1.4.5")
+    (version "1.4.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sound" version))
        (sha256
-        (base32 "1kbbb614d0fmj9l0yjiwf5yqnl7sby4xklp7qwp6rwjvq9bnm0ab"))))
+        (base32 "14jk5lg73v3gvnyvam3bsbcayawprasvlvaxwqryh148brqgfcrd"))))
     (properties `((upstream-name . "sound")))
     (build-system r-build-system)
-    (home-page "http://www.MatthiasHeymann.de")
+    (home-page "https://github.com/langenbergstefan/sound")
     (synopsis "Sound Interface for R")
     (description
      "Basic functions for dealing with wav files and sound samples.")
@@ -33436,6 +33458,38 @@ linked to via the URL below.")
     (license (list license:agpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-simtrial
+  (package
+    (name "r-simtrial")
+    (version "0.3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "simtrial" version))
+       (sha256
+        (base32 "0d0fvrlbpj4zq32ifx7p1wd1h1xg83lkvl3mp92vck1y0ap1yd2f"))))
+    (properties `((upstream-name . "simtrial")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival
+                             r-rcpp
+                             r-mvtnorm
+                             r-future
+                             r-foreach
+                             r-dofuture
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://merck.github.io/simtrial/")
+    (synopsis "Clinical Trial Simulation")
+    (description
+     "This package provides some basic routines for simulating a clinical trial.  The
+primary intent is to provide some tools to generate trial simulations for trials
+with time to event outcomes.  Piecewise exponential failure rates and piecewise
+constant enrollment rates are the underlying mechanism used to simulate a broad
+range of scenarios such as those presented in Lin et al. (2020)
+<doi:10.1080/19466315.2019.1697738>.  However, the basic generation of data is
+done using pipes to allow maximum flexibility for users to meet different needs.")
+    (license license:gpl3)))
+
 (define-public r-simtrait
   (package
     (name "r-simtrait")
@@ -35500,16 +35554,21 @@ plagiarism amongst students assignments.")
 (define-public r-simidm
   (package
     (name "r-simidm")
-    (version "0.0.5")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simIDM" version))
        (sha256
-        (base32 "1fk8slwcm26hnqzrhrv459kq120cwhg38jyxax280g3ynqjss59h"))))
+        (base32 "0iha1daw4jklgqrskflpw5rgmxdhni72kv8bfzid1vb28m7dpydq"))))
     (properties `((upstream-name . "simIDM")))
     (build-system r-build-system)
-    (propagated-inputs (list r-checkmate))
+    (propagated-inputs (list r-survival
+                             r-parallelly
+                             r-mstate
+                             r-future
+                             r-furrr
+                             r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/insightsengineering/simIDM/")
     (synopsis "Simulating Oncology Trials using an Illness-Death Model")
@@ -35519,7 +35578,8 @@ endpoints progression-free survival (PFS) and overall survival (OS) can be
 simulated, see Meller, Beyersmann and Rufibach (2019) <doi:10.1002/sim.8295>.
 The simulation set-up allows for random and event-driven censoring, an arbitrary
 number of treatment arms, staggered study entry and drop-out.  Exponentially,
-Weibull and piecewise exponentially distributed survival times can be generated.")
+Weibull and piecewise exponentially distributed survival times can be generated.
+ The correlation between PFS and OS can be calculated.")
     (license license:asl2.0)))
 
 (define-public r-simico
@@ -40275,6 +40335,38 @@ Source', Shiny Server Pro').  See demo online at
 <https://daattali.com/shiny/shinydisconnect-demo/>.")
     (license license:expat)))
 
+(define-public r-shinydbauth
+  (package
+    (name "r-shinydbauth")
+    (version "1.0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "shinydbauth" version))
+       (sha256
+        (base32 "04f8cq5vismbl05cvkd4kh5h1bzank5fhsgfmxdqwpy3jp68a1kf"))))
+    (properties `((upstream-name . "shinydbauth")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yaml
+                             r-shiny
+                             r-scrypt
+                             r-r6
+                             r-r-utils
+                             r-openssl
+                             r-htmltools
+                             r-glue
+                             r-dt
+                             r-billboarder))
+    (home-page "https://github.com/diegoefe/shinydbauth")
+    (synopsis "Simple Authentification for 'shiny' Applications")
+    (description
+     "This package provides a simple authentification mechanism for single shiny
+applications.  Authentification and password change functionality are performed
+calling user provided functions that typically access some database backend.
+Source code of main applications is protected until authentication is
+successful.")
+    (license license:gpl3)))
+
 (define-public r-shinydatetimepickers
   (package
     (name "r-shinydatetimepickers")
@@ -44882,13 +44974,13 @@ and Gastwirth, Krieger and Rosenbaum (2000), JRSS-B, 62, 545â555
 (define-public r-sensrivastava
   (package
     (name "r-sensrivastava")
-    (version "2015.6.25")
+    (version "2015.6.25.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SenSrivastava" version))
        (sha256
-        (base32 "0r4p6wafnfww07kq19lfcs96ncfi0qrl8n9ncp441ri9ajwj54qk"))))
+        (base32 "101qq84pii8m9naw0nnaqnbqbzjpfvvc2dql4a8hbihjhvyxbjxa"))))
     (properties `((upstream-name . "SenSrivastava")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=SenSrivastava")
@@ -57067,13 +57159,13 @@ evaluation of Small Area estimators.")
 (define-public r-saetrafo
   (package
     (name "r-saetrafo")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "saeTrafo" version))
        (sha256
-        (base32 "0dpz946x1731s3m631hks0y5mwsb7ygfca7ilaa06pnqcyd1zz4j"))))
+        (base32 "1kdd70jq7dm3dfg801wy48fzwkw4xvw18l6sdfx1sfkj20s4nyna"))))
     (properties `((upstream-name . "saeTrafo")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr

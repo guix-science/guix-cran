@@ -1155,13 +1155,13 @@ cartograms and theme them.")
 (define-public r-vote
   (package
     (name "r-vote")
-    (version "2.3-2")
+    (version "2.4-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vote" version))
        (sha256
-        (base32 "12kvz83ncansrsvw4mrws6fafn9fy6c0nvqvknrzl08kv290c9dr"))))
+        (base32 "0mayys5l755a0wdh49llpw37ssp88ifariivjghcd16i2yvpmwxz"))))
     (properties `((upstream-name . "vote")))
     (build-system r-build-system)
     (propagated-inputs (list r-knitr r-formattable r-fields r-data-table))
@@ -1170,8 +1170,8 @@ cartograms and theme them.")
     (description
      "Counting election votes and determining election results by different methods,
 including the single transferable vote or ranked choice, approval, score,
-plurality, condorcet and two-round runoff methods (Raftery et al. (2021)
-<@code{arXiv:2102.05801>}).")
+plurality, condorcet and two-round runoff methods (Raftery et al., 2021
+<doi:10.32614/RJ-2021-086>).")
     (license license:gpl2+)))
 
 (define-public r-voss
@@ -4519,26 +4519,31 @@ paper <DOI:10.1103/@code{PhysRevE.73.026120>}.")
 (define-public r-versus
   (package
     (name "r-versus")
-    (version "0.1.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "versus" version))
        (sha256
-        (base32 "0wb45v0psqlywfw97n7b9ncw8w83shg14gras3v102rc8s2vx1m4"))))
+        (base32 "13yqdacccf5wq0hmn8mm00n5knas1xjdhc0jqh1q0ga5bqps7jaz"))))
     (properties `((upstream-name . "versus")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
                              r-tidyselect
                              r-tibble
                              r-rlang
+                             r-purrr
+                             r-pillar
                              r-glue
-                             r-dplyr))
+                             r-dplyr
+                             r-data-table
+                             r-collapse
+                             r-cli))
     (home-page "https://eutwt.github.io/versus/")
     (synopsis "Compare Data Frames")
     (description
-     "An interactive toolset for interactively exploring the differences between two
-data frames.")
+     "This package provides a toolset for interactively exploring the differences
+between two data frames.")
     (license license:expat)))
 
 (define-public r-versionsort
