@@ -1818,6 +1818,27 @@ method is described in Helgeson, Vock, and Bair (2021) <doi:10.1111/biom.13376>.
 data.frames with a flexible spec language.")
     (license license:gpl2+)))
 
+(define-public r-unmconf
+  (package
+    (name "r-unmconf")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "unmconf" version))
+       (sha256
+        (base32 "1cs9kjyq4s6s48ck1wg7piy9r9f6s27kiawzpv6mb514z09gvgr7"))))
+    (properties `((upstream-name . "unmconf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rjags r-janitor r-glue))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=unmconf")
+    (synopsis "Modeling with Unmeasured Confounding")
+    (description
+     "Fit and assess Bayesian multi-staged regression models that account for
+unmeasured confounders using JAGS.")
+    (license license:expat)))
+
 (define-public r-unmarked
   (package
     (name "r-unmarked")

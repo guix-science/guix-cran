@@ -1246,13 +1246,13 @@ refers to an overall clustering result.  Jia Li, Beomseok Seo, and Lin Lin
 (define-public r-otargen
   (package
     (name "r-otargen")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "otargen" version))
        (sha256
-        (base32 "05h7nsgnb742rix6l4wnlyp87bs6baii6j69phdba5cjss5d6m8c"))))
+        (base32 "0sikcvg1v3sac72fxkd1vxx2rhqi20skw28nll4s8p44k4kpva2j"))))
     (properties `((upstream-name . "otargen")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -11023,13 +11023,13 @@ defining enumerated types, as well as other bounded types, as S4 classes.")
 (define-public r-obic
   (package
     (name "r-obic")
-    (version "3.0.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OBIC" version))
        (sha256
-        (base32 "12153khmqp88kxrbdkhbwwxhcp3nmi64xa1rmq6b702qp4c5m534"))))
+        (base32 "0z2xsyd2x647zv3drzsgrc6sflqyirmd2lkivf7jszxaw49jpa5l"))))
     (properties `((upstream-name . "OBIC")))
     (build-system r-build-system)
     (propagated-inputs (list r-data-table r-checkmate))
@@ -11346,13 +11346,13 @@ specific for each data set separately.")
 (define-public r-o2geosocial
   (package
     (name "r-o2geosocial")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "o2geosocial" version))
        (sha256
-        (base32 "158nbc45h4k677lgx9n976d9kz7hy8fb7z5s2v6pmkmh521jdn2a"))))
+        (base32 "1vsp71c06vyryrbbm44ms57fqqprxidrnwbncqfgjfc1wrii4crw"))))
     (properties `((upstream-name . "o2geosocial")))
     (build-system r-build-system)
     (propagated-inputs (list r-visnetwork

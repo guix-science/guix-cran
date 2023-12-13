@@ -21012,6 +21012,33 @@ weekly conversion is also possible.  More details can be found in Garai and
 others (2023) <doi:10.13140/RG.2.2.11977.42087>.")
     (license license:gpl3)))
 
+(define-public r-missforestpredict
+  (package
+    (name "r-missforestpredict")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "missForestPredict" version))
+       (sha256
+        (base32 "0p9bmphv77f6xxdvnz4zzalbbv8ch3bdyqqy33r78iimg5rnmi5x"))))
+    (properties `((upstream-name . "missForestPredict")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ranger))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/sibipx/missForestPredict")
+    (synopsis
+     "Missing Value Imputation using Random Forest for Prediction Settings")
+    (description
+     "Missing data imputation based on the @code{missForest} algorithm (Stekhoven,
+Daniel J (2012) <doi:10.1093/bioinformatics/btr597>) with adaptations for
+prediction settings.  The function @code{missForest}() is used to impute a
+(training) dataset with missing values and to learn imputation models that can
+be later used for imputing new observations.  The function
+@code{missForestPredict}() is used to impute one or multiple new observations
+(test set) using the models learned on the training data.")
+    (license license:gpl2+)))
+
 (define-public r-missdiag
   (package
     (name "r-missdiag")
@@ -26334,6 +26361,43 @@ estimation for multivariate sparse functional data or longitudinal data proposed
 by Li, Xiao, and Luo (2020) <doi: 10.1002/sta4.245>.")
     (license license:gpl3)))
 
+(define-public r-mf-beta4
+  (package
+    (name "r-mf-beta4")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MF.beta4" version))
+       (sha256
+        (base32 "09phirgr6yv6r10jxzf56c9ai815ykc139qijzpw8nrvk9pwsk83"))))
+    (properties `((upstream-name . "MF.beta4")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyverse
+                             r-tidyr
+                             r-purrr
+                             r-patchwork
+                             r-lmertest
+                             r-lme4
+                             r-ggpubr
+                             r-ggplot2
+                             r-dplyr
+                             r-devtools
+                             r-broom))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/AnneChao/MF.beta4")
+    (synopsis "Measuring Ecosystem Multi-Functionality and Its Decomposition")
+    (description
+     "Provide simple functions to (i) compute a class of multi-functionality measures
+for a single ecosystem for given function weights, (ii) decompose gamma
+multi-functionality for multiple ecosystems into a within-ecosystem component
+(alpha multi-functionality) and an among-ecosystem component (beta
+multi-functionality).  In each case, the correlation between functions can be
+corrected for.  Based on biodiversity and ecosystem function data, this software
+also facilitates graphics for assessing biodiversity-ecosystem functioning
+relationships across scales.")
+    (license license:gpl3+)))
+
 (define-public r-mexplorer
   (package
     (name "r-mexplorer")
@@ -31002,13 +31066,13 @@ in practice, is described in more detail by Kremers WK (2021)
 (define-public r-medseq
   (package
     (name "r-medseq")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MEDseq" version))
        (sha256
-        (base32 "0wx56q99h15s4qqpp355vck03gbk9xcwshcal90w64msrr646bfn"))))
+        (base32 "1w4jgy3fxwmk87r8kc4a6rx20salsk06qxxgx2jd3d22rvrj8crd"))))
     (properties `((upstream-name . "MEDseq")))
     (build-system r-build-system)
     (propagated-inputs (list r-weightedcluster
@@ -31031,7 +31095,7 @@ inclusion of a noise component.  Gating covariates can be supplied in order to
 relate sequences to baseline characteristics and sampling weights are also
 accommodated.  The models are fitted using the EM algorithm and tools for
 visualising the results are also provided.")
-    (license license:gpl2+)))
+    (license license:gpl3+)))
 
 (define-public r-medscan
   (package
@@ -39051,13 +39115,13 @@ re-labelling categorical variables.")
 (define-public r-mapping
   (package
     (name "r-mapping")
-    (version "1.4")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapping" version))
        (sha256
-        (base32 "1d8w6gzibbw3sqwgqcj7ww6bw95mlivpncz60fhn130qlmg1d0p4"))))
+        (base32 "0c1kghgzkbicy35dgwbyw6085glagdnck4dkcj7z89i3mgrjm17s"))))
     (properties `((upstream-name . "mapping")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
@@ -39079,7 +39143,7 @@ re-labelling categorical variables.")
                              r-dplyr
                              r-curl
                              r-cartography))
-    (home-page "https://github.com/serafinialessio/mapping")
+    (home-page "https://mappinguniverse.github.io/mapping/index.html")
     (synopsis "Automatic Download, Linking, Manipulating Coordinates for Maps")
     (description
      "Maps are an important tool to visualise variables distribution across different

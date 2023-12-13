@@ -23848,18 +23848,18 @@ the power of the tests and display them as a power graph.")
 (define-public r-rgnparser
   (package
     (name "r-rgnparser")
-    (version "0.2.6")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rgnparser" version))
        (sha256
-        (base32 "17s08arj7hdzmm2cbmwk4cvdlgrviyjsfm8qpvc5j7sjd6b48sdq"))))
+        (base32 "0fjkbgrglybvjj2cqswkf8wjxqad91h6xv1pf9ly5iggc2z830v1"))))
     (properties `((upstream-name . "rgnparser")))
     (build-system r-build-system)
     (inputs (list))
-    (propagated-inputs (list r-tibble r-sys r-readr r-jsonlite))
-    (home-page "https://ropensci.github.io/rgnparser/")
+    (propagated-inputs (list r-tibble r-sys r-readr r-lifecycle r-jsonlite))
+    (home-page "https://docs.ropensci.org/rgnparser/")
     (synopsis "Parse Scientific Names")
     (description
      "Parse scientific names using gnparser (<https://github.com/gnames/gnparser>),
@@ -28322,13 +28322,13 @@ Fischer, Alain Berro, Klaus Nordhausen & Anne Ruiz-Gazen (2019)
 (define-public r-repplab
   (package
     (name "r-repplab")
-    (version "0.9.4")
+    (version "0.9.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "REPPlab" version))
        (sha256
-        (base32 "1pf8zrjdzziyq2lw31p1ij7cn4j7pf659ygxv8wpfnmcmpaqbc45"))))
+        (base32 "1hiv6fz2s7dwjixnlqckvpa4dns8wannpinjjpxs3fcskgxmkgrz"))))
     (properties `((upstream-name . "REPPlab")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjava r-ldrtools r-lattice))
@@ -28338,8 +28338,7 @@ Fischer, Alain Berro, Klaus Nordhausen & Anne Ruiz-Gazen (2019)
     (description
      "An R Interface to EPP-lab v1.0.  EPP-lab is a Java program for projection
 pursuit using genetic algorithms written by Alain Berro and S. Larabi
-Marie-Sainte and is included in the package.  The EPP-lab sources are available
-under https://github.com/fischuu/EPP-lab.git.")
+Marie-Sainte and is included in the package.")
     (license license:gpl2+)))
 
 (define-public r-reporttools
@@ -31925,18 +31924,20 @@ graph consisting of Statements composed of Subject, Predicate, and Object Nodes.
 (define-public r-redistmetrics
   (package
     (name "r-redistmetrics")
-    (version "1.0.2")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "redistmetrics" version))
        (sha256
-        (base32 "1jq4qz43j7qjzx2pac3i1p2h331pgj8z9zfg4s1dhn56rwscn8f5"))))
+        (base32 "0r9fa0p65bpklgcb5nbbsm2s3vhrcbbp4glciglmw185vfjqg7s2"))))
     (properties `((upstream-name . "redistmetrics")))
     (build-system r-build-system)
     (propagated-inputs (list r-wk
+                             r-vctrs
                              r-sf
                              r-rlang
+                             r-rcppthread
                              r-rcpparmadillo
                              r-rcpp
                              r-magrittr
@@ -31946,7 +31947,7 @@ graph consisting of Statements composed of Subject, Predicate, and Object Nodes.
                              r-doparallel
                              r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://alarm-redist.github.io/redistmetrics/")
+    (home-page "http://alarm-redist.org/redistmetrics/")
     (synopsis "Redistricting Metrics")
     (description
      "Reliable and flexible tools for scoring redistricting plans using common

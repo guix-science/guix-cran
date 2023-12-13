@@ -13458,6 +13458,26 @@ information, and fits the model on the standard fitting algorithm with no
 convergence issues.")
     (license license:gpl2+)))
 
+(define-public r-lbi
+  (package
+    (name "r-lbi")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LBI" version))
+       (sha256
+        (base32 "03s4l90ffwfg4516m1bsyyylzwv1pbaq19xvkyprkzz1mjwmkxqj"))))
+    (properties `((upstream-name . "LBI")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=LBI")
+    (synopsis "Likelihood Based Inference")
+    (description
+     "Maximum likelihood estimation and likelihood ratio test are essential for modern
+statistics.  This package supports in calculating likelihood based inference.
+Reference: Pawitan Y. (2001, ISBN:0-19-850765-8).")
+    (license license:gpl3)))
+
 (define-public r-lbfgsb3c
   (package
     (name "r-lbfgsb3c")

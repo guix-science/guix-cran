@@ -9662,13 +9662,13 @@ surpluses of consumers, producers and sectors.")
 (define-public r-antareseditobject
   (package
     (name "r-antareseditobject")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "antaresEditObject" version))
        (sha256
-        (base32 "1bj49sgnygkriqw7i6fqkf6d3piplxa58bgllrbzk29ngp2z1zdz"))))
+        (base32 "0ll4vql2lnhp3dlhq1i91yzr24cpkzbnlnarqri931h53pb3sa5d"))))
     (properties `((upstream-name . "antaresEditObject")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -18742,6 +18742,31 @@ Connectivity ('ADBC') SQLite driver for the purposes of building high-level
 database interfaces for users.  ADBC <https://arrow.apache.org/adbc/> is an API
 standard for database access libraries that uses Arrow for result sets and query
 parameters.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
+(define-public r-adbcpostgresql
+  (package
+    (name "r-adbcpostgresql")
+    (version "0.8.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "adbcpostgresql" version))
+       (sha256
+        (base32 "1hrd385fkjdbxkvzsrbp30llcrd1ny58ykv2m4y48bshi0753sx4"))))
+    (properties `((upstream-name . "adbcpostgresql")))
+    (build-system r-build-system)
+    (inputs (list zlib openssl))
+    (propagated-inputs (list r-adbcdrivermanager))
+    (native-inputs (list pkg-config))
+    (home-page "https://github.com/apache/arrow-adbc")
+    (synopsis "'Arrow' Database Connectivity ('ADBC') 'PostgreSQL' Driver")
+    (description
+     "This package provides a developer-facing interface to the Arrow Database
+Connectivity ('ADBC') @code{PostgreSQL} driver for the purposes of building
+high-level database interfaces for users.  ADBC <https://arrow.apache.org/adbc/>
+is an API standard for database access libraries that uses Arrow for result sets
+and query parameters.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-adbcdrivermanager

@@ -2985,13 +2985,13 @@ statistics and graphics.")
 (define-public r-brsim
   (package
     (name "r-brsim")
-    (version "0.2")
+    (version "0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "brsim" version))
        (sha256
-        (base32 "1r6rgfh8wcsmz0ba2bz46wpkq12aiqjbmpqy6qj6m53liyad80pk"))))
+        (base32 "15clv6gfvvfclj9wmb6hr4ljfvs28spamq9rqj12nwzz5fihyhi9"))))
     (properties `((upstream-name . "brsim")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcmdrmisc r-corrplot r-cluster))
@@ -3000,9 +3000,11 @@ statistics and graphics.")
     (description
      "This package provides the facility to calculate the Brainerd-Robinson similarity
 coefficient for the rows of an input table, and to calculate the significance of
-each coefficient based on a permutation approach; optionally, hierarchical
+each coefficient based on a permutation approach; a heatmap is produced to
+visually represent the similarity matrix.  Optionally, hierarchical
 agglomerative clustering can be performed and the silhouette method is used to
-identify an optimal number of clusters.")
+identify an optimal number of clusters; the results of the clustering can be
+optionally used to sort the heatmap.")
     (license license:gpl2+)))
 
 (define-public r-brq
@@ -4847,6 +4849,44 @@ provided.  See Cremers, Mulder & Klugkist (2018) <doi:10.1111/bmsp.12108> and
 and Notation) diagrams, using overlays, style customization and interactions,
 with the bpmn-visualization @code{TypeScript} library.")
     (license (license:fsdg-compatible "Apache License (== 2)"))))
+
+(define-public r-bpmnr
+  (package
+    (name "r-bpmnr")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bpmnR" version))
+       (sha256
+        (base32 "0cskqfib5fw34zfqms4dp53cwb7z0cricr452a4cjfw563kjhmqf"))))
+    (properties `((upstream-name . "bpmnR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-uuid
+                             r-tidyr
+                             r-stringr
+                             r-rvest
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-knitr
+                             r-huxtable
+                             r-htmlwidgets
+                             r-htmltools
+                             r-glue
+                             r-dt
+                             r-dplyr
+                             r-diagrammersvg
+                             r-diagrammer))
+    (native-inputs (list r-knitr esbuild))
+    (home-page "https://cran.r-project.org/package=bpmnR")
+    (synopsis "Support for BPMN (Business Process Management Notation) Models")
+    (description
+     "Creating, rendering and writing BPMN diagrams <https://www.bpmn.org/>.
+Functionalities can be used to visualize and export BPMN diagrams created using
+the pm4py and @code{bupaRminer} packages.  Part of the @code{bupaR} ecosystem.")
+    (license license:expat)))
 
 (define-public r-bpm
   (package
@@ -14169,26 +14209,27 @@ the approach by Tobler (1965).")
 (define-public r-bidask
   (package
     (name "r-bidask")
-    (version "1.0.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bidask" version))
        (sha256
-        (base32 "1f5i95bbwb2svx2gcj559x9vydwbaqba2slzsx1w4l9sfm2j79wr"))))
+        (base32 "0gcx1xmcr1wjl4b5h9y114s033894d648i81jh84cy6ihmzs4r32"))))
     (properties `((upstream-name . "bidask")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-xts))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/eguidotti/bidask")
     (synopsis
      "Efficient Estimation of Bid-Ask Spreads from Open, High, Low, and Close Prices")
     (description
-     "This package implements an efficient estimation procedure of bid-ask spreads
-from open, high, low, and close prices as described in Ardia-Guidotti-Kroencke
-<https://www.ssrn.com/abstract=3892335>.  Moreover, it provides an
-implementation of the estimators proposed in Roll (1984)
-<doi:10.1111/j.1540-6261.1984.tb03897.x>, Corwin-Schultz (2012)
-<doi:10.1111/j.1540-6261.2012.01729.x>, and Abdi-Ranaldo (2017)
+     "This package implements an efficient estimator of bid-ask spreads from open,
+high, low, and close prices as described in Ardia, Guidotti, & Kroencke (2021)
+<https://www.ssrn.com/abstract=3892335>.  It also provides an implementation of
+the estimators described in Roll (1984)
+<doi:10.1111/j.1540-6261.1984.tb03897.x>, Corwin & Schultz (2012)
+<doi:10.1111/j.1540-6261.2012.01729.x>, and Abdi & Ranaldo (2017)
 <doi:10.1093/rfs/hhx084>.")
     (license license:gpl3)))
 
@@ -17874,13 +17915,13 @@ Experimental design for hypothesis tests on predictive values.")
 (define-public r-bdpar
   (package
     (name "r-bdpar")
-    (version "3.0.3")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bdpar" version))
        (sha256
-        (base32 "17xrkizwdg1jz2glmmhlk153x75kylfv0pw7dn5x85m6sbah6zb1"))))
+        (base32 "063b4wwc476gx1gsb028b0fr5agf1n9ciagl5h28zx7ap3jnxmph"))))
     (properties `((upstream-name . "bdpar")))
     (build-system r-build-system)
     (inputs (list python))
@@ -17894,7 +17935,7 @@ volumes of information from different sources.  To this end, bdpar allows to (i)
 easily use and create new functionalities and (ii) develop new data source
 extractors according to the user needs.  Additionally, the package provides by
 default a predefined data flow to extract and pre-process the most relevant
-information (tokens, dates, ... ) from some textual sources (SMS, Email, tweets,
+information (tokens, dates, ... ) from some textual sources (SMS, Email,
 @code{YouTube} comments).")
     (license license:gpl3)))
 
@@ -25990,13 +26031,13 @@ optimization using SPOT'.  Ucar I, Smeets B, Azcorra A (2019)
 (define-public r-babelmixr2
   (package
     (name "r-babelmixr2")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "babelmixr2" version))
        (sha256
-        (base32 "1iwi4z4xsa0sv334yjf5cvh88408icgpsw19rj1mp31wa2pdj36h"))))
+        (base32 "0b6xa7hwx9h5n7z8xw4q7shwpzjf7kf9cfrsy68qvm8mhns0j9x1"))))
     (properties `((upstream-name . "babelmixr2")))
     (build-system r-build-system)
     (propagated-inputs (list r-rxode2parse

@@ -11854,18 +11854,19 @@ software, which can be obtained upon purchase from VSN international
 (define-public r-statgengxe
   (package
     (name "r-statgengxe")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statgenGxE" version))
        (sha256
-        (base32 "1kq5bin4k66d8l9l4z2b0gx6s8ick5fim0qcsjayvgip25gkxf5z"))))
+        (base32 "12y722q9hj6ipcl2d8pnl6c3xf0pp1hkv89kxm3np1alid8npc3a"))))
     (properties `((upstream-name . "statgenGxE")))
     (build-system r-build-system)
     (inputs (list))
     (propagated-inputs (list r-xtable
                              r-statgensta
+                             r-rlang
                              r-lme4
                              r-knitr
                              r-gridextra
@@ -27709,6 +27710,29 @@ imposition of monotonicity and concavity constraints on the estimated frontier."
      "Efficient estimation of multivariate skew-normal distribution in closed form.")
     (license license:gpl2+)))
 
+(define-public r-snbdata
+  (package
+    (name "r-snbdata")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SNBdata" version))
+       (sha256
+        (base32 "1066bz4pg27pfg9cl1ykgzvyvdcrqqchcnsjka9yy8wx3fvp018p"))))
+    (properties `((upstream-name . "SNBdata")))
+    (build-system r-build-system)
+    (home-page "http://enricoschumann.net/R/packages/SNBdata/")
+    (synopsis "Download Data from the Swiss National Bank (SNB)")
+    (description
+     "Download data (tables and datasets) from the Swiss National Bank (SNB;
+<https://www.snb.ch/en>), the Swiss central bank.  The package is lightweight
+and comes with few dependencies; suggested packages are used only if data is to
+be transformed into particular data structures, for instance into zoo objects.
+Downloaded data can optionally be cached, to avoid repeated downloads of the
+same files.")
+    (license license:gpl3)))
+
 (define-public r-snapshot
   (package
     (name "r-snapshot")
@@ -37281,13 +37305,13 @@ function, @code{SoftMax} preprocessing and inverse functions.")
 (define-public r-sigminer
   (package
     (name "r-sigminer")
-    (version "2.2.2")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sigminer" version))
        (sha256
-        (base32 "1b495vmijggw2n0lypm0vz7xdrjjz4gbbcdjjpp106wrsmx5risp"))))
+        (base32 "1i6qf5g58gi857szlpiqkcv5rfskh2qv53ywx7bxl3hzgy9178lb"))))
     (properties `((upstream-name . "sigminer")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -38710,17 +38734,16 @@ through @code{WebDriver}'.")
 (define-public r-shinytempsignal
   (package
     (name "r-shinytempsignal")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyTempSignal" version))
        (sha256
-        (base32 "0a2wrl67nn385s20az6pi0qi9w3dc9nx1gwrzaw7vx9y165pp1q0"))))
+        (base32 "19mlk96sk0h8igvbhldmbcq99ima07mqk6adkklrg8byrvhv9bqc"))))
     (properties `((upstream-name . "shinyTempSignal")))
     (build-system r-build-system)
     (propagated-inputs (list r-treeio
-                             r-tidytree
                              r-stringr
                              r-shinyjs
                              r-shinydashboard
@@ -39136,6 +39159,39 @@ provides simple dashboard design to subset the data, perform exploratory data
 analysis and preliminary machine learning (supervised and unsupervised).  It
 also provides filters based on columns of interest.")
     (license license:gpl3)))
+
+(define-public r-shinyquiz
+  (package
+    (name "r-shinyquiz")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "shinyquiz" version))
+       (sha256
+        (base32 "0d4n15dx2kizl37gvmgwc49b0n99x59xp168an8n3k0h8qzdcyd4"))))
+    (properties `((upstream-name . "shinyquiz")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-stringi
+                             r-shinyjs
+                             r-shiny
+                             r-scales
+                             r-reactable
+                             r-purrr
+                             r-htmltools
+                             r-glue
+                             r-fontawesome
+                             r-cli))
+    (home-page "https://priism-center.github.io/shinyquiz/")
+    (synopsis "Create Interactive Quizzes in 'shiny'")
+    (description
+     "Simple and flexible quizzes in shiny'.  Easily create quizzes from various
+pre-built question and choice types or create your own using htmltools and shiny
+packages as building blocks.  Integrates with larger shiny applications.  Ideal
+for non-web-developers such as educators, data scientists, and anyone who wants
+to assess responses interactively in a small form factor.")
+    (license license:expat)))
 
 (define-public r-shinyquickstarter
   (package
@@ -56124,13 +56180,13 @@ reference value, testing a correlation coefficient with a specified value, etc.
 (define-public r-samplesizecmh
   (package
     (name "r-samplesizecmh")
-    (version "0.0.0")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "samplesizeCMH" version))
        (sha256
-        (base32 "0gdywqmylid4fkz5syzf1wgcan71whhm9gjylmsg4p05hlwvpv1d"))))
+        (base32 "16vifm50yxbyd892z9vk32zpj12j2cprc856s74vn6xhvs6bp9b2"))))
     (properties `((upstream-name . "samplesizeCMH")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

@@ -894,13 +894,13 @@ the help page for this function).")
 (define-public r-yaimpute
   (package
     (name "r-yaimpute")
-    (version "1.0-33")
+    (version "1.0-34")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "yaImpute" version))
        (sha256
-        (base32 "0b2i0aymwb150068ji27i574p8lf8566cy6amppgzj8vxdi54naq"))))
+        (base32 "0wwaibplh4p8lwz5ck63jrdg9jaxr1w9q8xwpf048y6abz4rij5l"))))
     (properties `((upstream-name . "yaImpute")))
     (build-system r-build-system)
     (home-page "https://github.com/jeffreyevans/yaImpute")

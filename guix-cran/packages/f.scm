@@ -11894,17 +11894,17 @@ Kirkkojarvi, Finland\".")
 (define-public r-fisheye
   (package
     (name "r-fisheye")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fisheye" version))
        (sha256
-        (base32 "0yrgr0nhnn768q6hc2dsjz7y3n7p7ci0rdfqsickafgv2srdrh83"))))
+        (base32 "0w07mkfdv422drrd80yjd9syicadyzl213n1xm1bkz1zlkhdw4xz"))))
     (properties `((upstream-name . "fisheye")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf))
-    (home-page "https://cran.r-project.org/package=fisheye")
+    (home-page "https://github.com/riatelab/fisheye")
     (synopsis "Transform Base Maps Using Log-Azimuthal Projection")
     (description
      "Base maps are transformed to focus on a specific location using an azimuthal

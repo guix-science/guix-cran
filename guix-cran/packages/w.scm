@@ -6171,6 +6171,38 @@ tetrachoric correlation as a special case of the polychoric and biserial
 correlation as a specific case of the polyserial.")
     (license license:gpl2)))
 
+(define-public r-wconf
+  (package
+    (name "r-wconf")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "wconf" version))
+       (sha256
+        (base32 "1a2h8zzkb1lmk29f0i724df6rr4x9azn5bbkg23i8j7qy23vdsmv"))))
+    (properties `((upstream-name . "wconf")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://www.alexandrumonahov.eu.org/projects")
+    (synopsis "Weighted Confusion Matrix")
+    (description
+     "Allows users to create weighted confusion matrices and accuracy metrics that
+help with the model selection process for classification problems, where
+distance from the correct category is important.  The package includes several
+weighting schemes which can be parameterized, as well as custom configuration
+options.  Furthermore, users can decide whether they wish to positively or
+negatively affect the accuracy score as a result of applying weights to the
+confusion matrix.  wconf integrates well with the caret package, but it can also
+work standalone when provided data in matrix form.  References: Kuhn, M. (2008)
+\"Building Perspective Models in R Using the caret Package\"
+<doi:10.18637/jss.v028.i05> Monahov, A. (2021) \"Model Evaluation with Weighted
+Threshold Optimization (and the mewto R package)\" <doi:10.2139/ssrn.3805911> Van
+de Velden, M., Iodice D'Enza, A., Markos, A., Cavicchia, C. (2023) \"A general
+framework for implementing distances for categorical variables\"
+<@code{arXiv:2301.02190v1>}.")
+    (license license:cc-by-sa4.0)))
+
 (define-public r-wcompo
   (package
     (name "r-wcompo")
@@ -6594,13 +6626,13 @@ sample.  For more details see @code{RaphaÃ«l} Jauslin and Yves @code{TillÃ©}
 (define-public r-waves
   (package
     (name "r-waves")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "waves" version))
        (sha256
-        (base32 "128q1l0ishdgpa33zh77xpi79nvziix8swq1rwyawnznl9ybs29w"))))
+        (base32 "1ggpldwdgc97jp03n3z5s8hw3ib6q09yyinryz78xs798v9l4qdl"))))
     (properties `((upstream-name . "waves")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

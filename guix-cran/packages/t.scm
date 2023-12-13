@@ -10623,6 +10623,28 @@ information on decisions.  Optionally, the package can also be used to parse
 taxonomic names.")
     (license license:expat)))
 
+(define-public r-tnl-test
+  (package
+    (name "r-tnl-test")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tnl.Test" version))
+       (sha256
+        (base32 "13yhxsj33lzbd5mbrwznilim5zsqcnj9y9c1qfh7c3ml2pa3s2vp"))))
+    (properties `((upstream-name . "tnl.Test")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-plyr r-partitions))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ihababusaif/tnl.Test")
+    (synopsis "Non-Parametric Tests for the Two-Sample Problem")
+    (description
+     "Performing the hypothesis tests for the two sample problem based on order
+statistics and power comparisons.  Calculate the test statistic, density,
+distribution function, quantile function, random number generation and others.")
+    (license license:gpl3)))
+
 (define-public r-tnet
   (package
     (name "r-tnet")
@@ -12747,13 +12769,13 @@ recordings as data frame for later use.")
 (define-public r-timeplyr
   (package
     (name "r-timeplyr")
-    (version "0.4.1")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "timeplyr" version))
        (sha256
-        (base32 "1ck06wcpncj50346j6f890g7drm7azzdzi40y9x10gbnfvsxysx2"))))
+        (base32 "11wk68z8jnpff6is2avlwn60xq11a39y7c9jx6qq26sffidh3ihh"))))
     (properties `((upstream-name . "timeplyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -19706,6 +19728,41 @@ An alternative to ggtern', which uses the ggplot2 family of plotting functions.
 Includes a Shiny user interface for point-and-click ternary plotting.")
     (license license:gpl2+)))
 
+(define-public r-tern-gee
+  (package
+    (name "r-tern-gee")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tern.gee" version))
+       (sha256
+        (base32 "1nnficsy1irry6fjx6bdlq2jm6vpgfkl8h9z780y29rhid5jbv4d"))))
+    (properties `((upstream-name . "tern.gee")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tern
+                             r-rtables
+                             r-nlme
+                             r-geepack
+                             r-geeasy
+                             r-formatters
+                             r-emmeans
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/insightsengineering/tern.gee/")
+    (synopsis
+     "Tables and Graphs for Generalized Estimating Equations (GEE) Model Fits")
+    (description
+     "Generalized estimating equations (GEE) are a popular choice for analyzing
+longitudinal binary outcomes.  This package provides an interface for fitting
+GEE, currently for logistic regression, within the tern
+<https://cran.r-project.org/package=tern> framework (Zhu, @code{SabanÃ©s}
+@code{BovÃ©} et al., 2023) and tabulate results easily using rtables
+<https://cran.r-project.org/package=rtables> (Becker, Waddell et al., 2023).  It
+builds on geepack <doi:10.18637/jss.v015.i02> (HÃ¸jsgaard, Halekoh and Yan,
+2006) for the actual GEE model fitting.")
+    (license license:asl2.0)))
+
 (define-public r-tern
   (package
     (name "r-tern")
@@ -22698,6 +22755,42 @@ Classical CA is based on the Euclidean distance.  Taxicab CA is like classical
 CA but is based on the Taxicab or Manhattan distance.  For some tables, Taxicab
 CA gives more informative results than classical CA.")
     (license license:gpl2+)))
+
+(define-public r-taxanorm
+  (package
+    (name "r-taxanorm")
+    (version "2.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TaxaNorm" version))
+       (sha256
+        (base32 "1qlzmq8p90igns5bcl8ll20gbaid8aavzk7rhilzq7069i349idc"))))
+    (properties `((upstream-name . "TaxaNorm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vegan
+                             r-s4vectors
+                             r-pscl
+                             r-phyloseq
+                             r-parallelly
+                             r-microbiome
+                             r-matrixstats
+                             r-mass
+                             r-ggplot2
+                             r-future-apply
+                             r-future
+                             r-biocgenerics))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/wangziyue57/TaxaNorm")
+    (synopsis "Feature-Wise Normalization for Microbiome Sequencing Data")
+    (description
+     "This package provides a novel feature-wise normalization method based on a
+zero-inflated negative binomial model.  This method assumes that the effects of
+sequencing depth vary for each taxon on their mean and also incorporates a
+rational link of zero probability and taxon dispersion as a function of
+sequencing depth.  Ziyue Wang, Dillon Lloyd, Shanshan Zhao, Alison
+Motsinger-Reif (2023) <doi:10.1101/2023.10.31.563648>.")
+    (license license:gpl3)))
 
 (define-public r-taxalight
   (package

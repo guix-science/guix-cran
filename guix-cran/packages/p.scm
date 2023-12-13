@@ -27,6 +27,7 @@
   #:use-module (gnu packages code)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages pdf)
+  #:use-module (gnu packages gtk)
   #:use-module (gnu packages java)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -1834,37 +1835,40 @@ is for educational purposes only.")
 (define-public r-pubchemr
   (package
     (name "r-pubchemr")
-    (version "0.99-1")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PubChemR" version))
        (sha256
-        (base32 "00gq7mqdbw0i7fyhzksnfd0i37535yl9lx0ah7gl32wdlvgfbj73"))))
+        (base32 "0c1j0v9bzh3gfzmhq8y6i0zdja8gfx8vgk71h4lwi00qw3prca0z"))))
     (properties `((upstream-name . "PubChemR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-xml2
+                             r-xml
+                             r-tidyr
                              r-tibble
                              r-stringr
+                             r-rsvg
                              r-rjsonio
                              r-rcurl
+                             r-png
                              r-magrittr
+                             r-magick
+                             r-jsonlite
                              r-httr
                              r-dplyr))
-    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=PubChemR")
     (synopsis
      "Interface to the 'PubChem' Database for Chemical Data Retrieval")
     (description
-     "This package provides an R interface to the @code{PubChem} database, which is a
-repository for chemical information and a resource for finding chemical and
-biological data.  The package simplifies the process of retrieving and handling
-chemical compound information from @code{PubChem}'.  Users can search for
-compounds, retrieve standard chemical information, download data in various
-formats, and query the database using the @code{PubChem} Power User Gateway
-(PUG) RESTful API <https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest>.  The package
-aims to facilitate the integration of chemical data in bioinformatics and
-cheminformatics workflows.")
+     "This package provides an interface to the @code{PubChem} database via the PUG
+REST <https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest> and PUG View
+<https://pubchem.ncbi.nlm.nih.gov/docs/pug-view> services.  This package allows
+users to automatically access chemical and biological data from @code{PubChem}',
+including compounds, substances, assays, and various other data types.
+Functions are available to retrieve data in different formats, perform searches,
+and access detailed annotations.")
     (license license:gpl2+)))
 
 (define-public r-ptycho
@@ -9361,16 +9365,16 @@ Characteristic (@code{mROC}) based on Sadatsafavi et al (2021)
 (define-public r-predrupdate
   (package
     (name "r-predrupdate")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "predRupdate" version))
        (sha256
-        (base32 "0166q1lriqnl74xmawxf4fpl826dc2j8l72k6rrakwjfbdznhgjy"))))
+        (base32 "087jkaw27lssh7400gjbjd9d583aiz7fm6a70cjhxwf5f8s8qpp8"))))
     (properties `((upstream-name . "predRupdate")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survival r-rlang r-proc r-ggplot2 r-ggextra))
+    (propagated-inputs (list r-survival r-rlang r-proc r-ggpubr r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/GlenMartin31/predRupdate")
     (synopsis "Prediction Model Validation and Updating")
@@ -17154,13 +17158,13 @@ phylogeny informative? Measuring the power of comparative methods, Evolution 66
 (define-public r-pmartr
   (package
     (name "r-pmartr")
-    (version "2.4.1")
+    (version "2.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pmartR" version))
        (sha256
-        (base32 "0jdy54ck9b8zxkms66arhgsgi90jm4v34izb1r6y6yinld560brm"))))
+        (base32 "13ss0j5ml8p3i79lz90ysgj3h6fk1cv5rlpzm5y6ddlp9af0i823"))))
     (properties `((upstream-name . "pmartR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -31339,16 +31343,16 @@ reliable, since they follow the DNRY (do not repeat yourself) rule.")
 (define-public r-patientprofilesvis
   (package
     (name "r-patientprofilesvis")
-    (version "2.0.5")
+    (version "2.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "patientProfilesVis" version))
        (sha256
-        (base32 "0kb84jpcmnyakggbb8m96qbbc3a7yj1025k13nhirx4i459d0913"))))
+        (base32 "10bx1g0s6ahx7gb1306izs0cq626b5ql5bvcf9598fb9h18zbqv7"))))
     (properties `((upstream-name . "patientProfilesVis")))
     (build-system r-build-system)
-    (inputs (list))
+    (inputs (list cairo))
     (propagated-inputs (list r-stringr
                              r-scales
                              r-reshape2

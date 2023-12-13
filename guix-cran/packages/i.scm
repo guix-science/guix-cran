@@ -10916,79 +10916,6 @@ functions.  Preprint is available at @code{bioRxiv} (Weber et al., 2019
 <doi:10.1101/759795>).")
     (license license:gpl3)))
 
-(define-public r-immunarch
-  (package
-    (name "r-immunarch")
-    (version "0.9.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "immunarch" version))
-       (sha256
-        (base32 "1yjmr7n352xnkrw9pa122kb716y02bmjr6lw6413gn77bwkxnfpy"))))
-    (properties `((upstream-name . "immunarch")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-uuid
-                             r-upsetr
-                             r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-stringi
-                             r-stringdist
-                             r-shinythemes
-                             r-shiny
-                             r-scales
-                             r-rtsne
-                             r-rlist
-                             r-rlang
-                             r-reshape2
-                             r-readxl
-                             r-readr
-                             r-rcpp
-                             r-purrr
-                             r-plyr
-                             r-pheatmap
-                             r-phangorn
-                             r-patchwork
-                             r-mass
-                             r-magrittr
-                             r-jsonlite
-                             r-igraph
-                             r-glue
-                             r-ggseqlogo
-                             r-ggrepel
-                             r-ggraph
-                             r-ggpubr
-                             r-ggplot2
-                             r-ggalluvial
-                             r-fpc
-                             r-factoextra
-                             r-dtplyr
-                             r-dplyr
-                             r-doparallel
-                             r-data-table
-                             r-circlize
-                             r-ape
-                             r-airr))
-    (native-inputs (list r-knitr))
-    (home-page "https://immunarch.com/")
-    (synopsis
-     "Bioinformatics Analysis of T-Cell and B-Cell Immune Repertoires")
-    (description
-     "This package provides a comprehensive framework for bioinformatics exploratory
-analysis of bulk and single-cell T-cell receptor and antibody repertoires.  It
-provides seamless data loading, analysis and visualisation for AIRR (Adaptive
-Immune Receptor Repertoire) data, both bulk immunosequencing (@code{RepSeq}) and
-single-cell sequencing (@code{scRNAseq}).  Immunarch implements most of the
-widely used AIRR analysis methods, such as: clonality analysis, estimation of
-repertoire similarities in distribution of clonotypes and gene segments,
-repertoire diversity analysis, annotation of clonotypes using external immune
-receptor databases and clonotype tracking in vaccination and cancer studies.  A
-successor to our previously published @code{tcR} immunoinformatics package
-(Nazarov 2015) <doi:10.1186/s12859-015-0613-1>.")
-    (license license:agpl3)))
-
 (define-public r-imml
   (package
     (name "r-imml")
@@ -11168,13 +11095,13 @@ Ziqiao Wang and Peng Wei (2020) <doi:10.1093/bioinformatics/btaa1001>.")
 (define-public r-imifa
   (package
     (name "r-imifa")
-    (version "2.1.10")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IMIFA" version))
        (sha256
-        (base32 "033y5y3i63z0gj7pqhf6d73l3lcfnv2srfs244p3wsal4xv11hg4"))))
+        (base32 "08h53w1axvmvnd4z1nf5bsps5sr6g8a77q6pvg39ss7jcfqm800v"))))
     (properties `((upstream-name . "IMIFA")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
@@ -11198,7 +11125,7 @@ cluster-specific latent factors, mostly via efficient Gibbs updates.
 Model-specific diagnostic tools are also provided, as well as many options for
 plotting results, conducting posterior inference on parameters of interest,
 posterior predictive checking, and quantifying uncertainty.")
-    (license license:gpl2+)))
+    (license license:gpl3+)))
 
 (define-public r-imhd
   (package

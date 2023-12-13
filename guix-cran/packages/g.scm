@@ -3603,13 +3603,13 @@ performance.")
 (define-public r-growfunctions
   (package
     (name "r-growfunctions")
-    (version "0.15")
+    (version "0.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "growfunctions" version))
        (sha256
-        (base32 "0rj0kypjvqj7wlswzq4kxqizhlw56zgaydf37cbfjm5090h43fzi"))))
+        (base32 "1v1sawv9fbb6lw4ynjdkj02z8rv5k8pkw55wmg2ws3jisy3xrcm7"))))
     (properties `((upstream-name . "growfunctions")))
     (build-system r-build-system)
     (propagated-inputs (list r-spam r-reshape2 r-rcpparmadillo r-rcpp
@@ -11199,13 +11199,13 @@ performance of global optimization algorithms")
 (define-public r-globalkinhom
   (package
     (name "r-globalkinhom")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "globalKinhom" version))
        (sha256
-        (base32 "1c80ydhiz47nwkibk6j0vhpydbbqb341s9ys1mrx8w11s59xd4s0"))))
+        (base32 "0xs1s8gp8786w1n69hbxffi7sw9hyhgb8kp3h4q85b1rlrkqsn4p"))))
     (properties `((upstream-name . "globalKinhom")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-random r-spatstat-geom
@@ -13069,13 +13069,13 @@ or used on <https://about.gitlab.com>.")
 (define-public r-gitignore
   (package
     (name "r-gitignore")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gitignore" version))
        (sha256
-        (base32 "1jph54ah4ajb5xakbpnbmp44ddqz5np7c60441vhfn7nxa5b9cpx"))))
+        (base32 "1cjfqbch614w75lxc8pw44aryxgcswbhydd48q10ch128x2gvw5a"))))
     (properties `((upstream-name . "gitignore")))
     (build-system r-build-system)
     (propagated-inputs (list r-xfun
@@ -16506,46 +16506,6 @@ covariance within the predictor, within the response and between the predictor
 and the response is present.  Base on the results published in guide ISO/TS
 28037 (2010) <https://www.iso.org/standard/44473.html>.")
     (license license:gpl2+)))
-
-(define-public r-ggmotif
-  (package
-    (name "r-ggmotif")
-    (version "0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ggmotif" version))
-       (sha256
-        (base32 "1pqkl5zw4v6b81nbxcrpz44sjs4j65iw23j9xiy4d7yqj1bx7604"))))
-    (properties `((upstream-name . "ggmotif")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml
-                             r-universalmotif
-                             r-treeio
-                             r-tidyverse
-                             r-stringr
-                             r-patchwork
-                             r-magrittr
-                             r-ggtree
-                             r-ggseqlogo
-                             r-ggsci
-                             r-ggplot2
-                             r-dplyr
-                             r-data-table
-                             r-cowplot
-                             r-ape))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ggmotif")
-    (synopsis "Extract and Visualize Motif Information from MEME Software")
-    (description
-     "Extract and visualize motif information from XML file from MEME software.  In
-biology, a motif is a nucleotide or amino acid sequence pattern that is
-widespread and usually assumed to be related to specifical biological functions.
- There exist many software was used to discover motif sequences from a set of
-nucleotide or amino acid sequences.  MEME is almost the most used software to
-detect motif.  It's difficult for biologists to extract and visualize the
-location of a motif on sequences from the results from MEME software.")
-    (license license:artistic2.0)))
 
 (define-public r-ggmosaic
   (package
@@ -21373,40 +21333,6 @@ functional Kriging of this package is a modification of the method proposed by
 Giraldo (2011) <doi:10.1007/s10651-010-0143-y>.")
     (license license:expat)))
 
-(define-public r-geofi
-  (package
-    (name "r-geofi")
-    (version "1.0.10")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "geofi" version))
-       (sha256
-        (base32 "18qjgkwjn435hjbbq3iaysxzlzpb50248qmssb7yzximsp3idcnh"))))
-    (properties `((upstream-name . "geofi")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-yaml
-                             r-xml2
-                             r-sf
-                             r-rlang
-                             r-purrr
-                             r-httr
-                             r-httpcache
-                             r-dplyr
-                             r-curl))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/rOpenGov/geofi")
-    (synopsis "Access Finnish Geospatial Data")
-    (description
-     "Designed to simplify geospatial data access from the Statistics Finland Web
-Feature Service API <http://geo.stat.fi/geoserver/wfs>, the geofi package offers
-researchers and analysts a set of tools to obtain and harmonize administrative
-spatial data for a wide range of applications, from urban planning to
-environmental research.  The package contains annually updated time series of
-municipality key datasets that can be used for data aggregation and language
-translations.")
-    (license license:bsd-2)))
-
 (define-public r-geofd
   (package
     (name "r-geofd")
@@ -21824,41 +21750,6 @@ Conjugate priors are assumed on some parameters while inference on the other
 parameters can be done through a full Bayesian analysis of by empirical Bayes
 methods.")
     (license license:gpl2+)))
-
-(define-public r-geoar
-  (package
-    (name "r-geoar")
-    (version "0.0.1.4.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "geoAr" version))
-       (sha256
-        (base32 "1wzhlccscpdzlyx6w9hh7srgrqc3dw56wd99pcrhlqsx0w6b48n0"))))
-    (properties `((upstream-name . "geoAr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-stringr
-                             r-sf
-                             r-magrittr
-                             r-leaflet
-                             r-httr
-                             r-glue
-                             r-dplyr
-                             r-curl
-                             r-attempt
-                             r-assertthat))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/PoliticaArgentina/geoAr")
-    (synopsis "Argentina's Spatial Data Toolbox")
-    (description
-     "Collection of tools that facilitates data access and workflow for spatial
-analysis of Argentina.  Includes historical information from censuses,
-administrative limits at different levels of aggregation, location of human
-settlements, among others.  Since it is expected that the majority of users will
-be Spanish-speaking, the documentation of the package prioritizes this language,
-although an effort is made to also offer annotations in English.")
-    (license license:expat)))
 
 (define-public r-geoadjust
   (package

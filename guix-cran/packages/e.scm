@@ -19914,13 +19914,13 @@ the data as if it was a single spreadsheet.")
 (define-public r-eatata
   (package
     (name "r-eatata")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eatATA" version))
        (sha256
-        (base32 "1pm66hvjqcgjbdkvfwxn3myzb6a458hkwg7cd6lhkp1mmj7anigs"))))
+        (base32 "0ak9722mgy9fgpk43wppgisfxj6v4fzc8qwk4cmd760sq5gw3j88"))))
     (properties `((upstream-name . "eatATA")))
     (build-system r-build-system)
     (propagated-inputs (list r-rglpk r-matrix r-mathjaxr r-lpsolve))

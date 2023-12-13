@@ -1131,13 +1131,13 @@ al. (2002) <doi:10.1109/4235.996017>.")
 (define-public r-nseval
   (package
     (name "r-nseval")
-    (version "0.4.3")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nseval" version))
        (sha256
-        (base32 "07pabn4msb6q50x67z84flb8fpzf43s1dy61cnqd7rn4l7zgc181"))))
+        (base32 "10b9kvvnlgc0jpbjnpkjmrkbl8plbkbggckwzy41kv41ha7rgda2"))))
     (properties `((upstream-name . "nseval")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=nseval")
@@ -1913,13 +1913,13 @@ from partially-balanced incomplete block-design experiments.")
 (define-public r-npp
   (package
     (name "r-npp")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NPP" version))
        (sha256
-        (base32 "1c45gkqx27685am2qfiyq7rnlz809lmyi3jhffgf3jhqcyg9mwm7"))))
+        (base32 "1jyxnblr8ibzlwb78k98idf856m5gnaba3b53qz0pfgxf2k8wdhv"))))
     (properties `((upstream-name . "NPP")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=NPP")
@@ -2705,6 +2705,36 @@ smoothing.  The package also seamlessly allows for Monte Carlo comparisons among
 these different estimation methods.  Its use is illustrated via a number of
 empirical applications and simulated examples.")
     (license license:gpl2+)))
+
+(define-public r-npboottprmfbar
+  (package
+    (name "r-npboottprmfbar")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "npboottprmFBar" version))
+       (sha256
+        (base32 "0qi6jd5xpg27h6hk65xr51hvd1vdy6jhyiq1zl07jc2r2kifr74i"))))
+    (properties `((upstream-name . "npboottprmFBar")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-restriktor r-npboottprm r-lmperm r-fgarch))
+    (home-page "https://github.com/mightymetrika/npboottprmFBar")
+    (synopsis
+     "Informative Nonparametric Bootstrap Test with Pooled Resampling")
+    (description
+     "Sample sizes are often small due to hard to reach target populations, rare
+target events, time constraints, limited budgets, or ethical considerations.
+Two statistical methods with promising performance in small samples are the
+nonparametric bootstrap test with pooled resampling method, which is the focus
+of Dwivedi, Mallawaarachchi, and Alvarado (2017) <doi:10.1002/sim.7263>, and
+informative hypothesis testing, which is implemented in the restriktor package.
+The @code{npboottprmFBar} package uses the nonparametric bootstrap test with
+pooled resampling method to implement informative hypothesis testing.  The
+@code{bootFbar}() function can be used to analyze data with this method and the
+persimon() function can be used to conduct performance simulations on type-one
+error and statistical power.")
+    (license license:expat)))
 
 (define-public r-npboottprm
   (package
@@ -3879,13 +3909,13 @@ nonlinear mixed effects modeling.  See package?nonmemica'.")
 (define-public r-nonmem2rx
   (package
     (name "r-nonmem2rx")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nonmem2rx" version))
        (sha256
-        (base32 "0z4mx08ajnqsq6lqhkvskxsiskpm05c5095mc874774s04qzs8by"))))
+        (base32 "008lxg0n09alrv07i96crs430q6zvg5siasyqrfmaahq7cclsynn"))))
     (properties `((upstream-name . "nonmem2rx")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -6821,13 +6851,13 @@ covariate selection.")
 (define-public r-nlmixr2est
   (package
     (name "r-nlmixr2est")
-    (version "2.1.8")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmixr2est" version))
        (sha256
-        (base32 "1lxlma1yij9mnycgsbqdz6mp5fvvjs69x198gs1qdg12g5n2wb5x"))))
+        (base32 "1a56h5d1914kkh6sxcbvv2rp7s6zf0k8680l02g7ncngab1yxszm"))))
     (properties `((upstream-name . "nlmixr2est")))
     (build-system r-build-system)
     (propagated-inputs (list r-symengine

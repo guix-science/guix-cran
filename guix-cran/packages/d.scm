@@ -2531,6 +2531,38 @@ methods includes simulation and estimation of the parameters.")
 design, i.e.  when each test is applied to each subject in the study.")
     (license license:gpl3+)))
 
+(define-public r-dtcomb
+  (package
+    (name "r-dtcomb")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dtComb" version))
+       (sha256
+        (base32 "1syygvgv05ah6hj2cs22ghb4aszwn0mzibb7b13a6jwjq1sv6plx"))))
+    (properties `((upstream-name . "dtComb")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-proc
+                             r-optimalcutpoints
+                             r-glmnet
+                             r-ggpubr
+                             r-ggplot2
+                             r-gam
+                             r-epir
+                             r-caret))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/gokmenzararsiz/dtComb")
+    (synopsis "Statistical Combination of Diagnostic Tests")
+    (description
+     "This package provides a system for combining two diagnostic tests using various
+approaches that include statistical and machine-learning-based methodologies.
+These approaches are divided into four groups: linear combination methods,
+non-linear combination methods, mathematical operators, and machine learning
+algorithms.  See the <http://biosoft.erciyes.edu.tr/app/@code{dtComb>} website
+for more information, documentation, and examples.")
+    (license license:expat)))
+
 (define-public r-dtbm
   (package
     (name "r-dtbm")
@@ -21212,13 +21244,13 @@ under the Double Chain Ladder framework by Martinez-Miranda, Nielsen and Verrall
 (define-public r-dcifer
   (package
     (name "r-dcifer")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dcifer" version))
        (sha256
-        (base32 "0h7wir2xd2lr6h9hh8wr335lxr5w7grf7gjhqpg3a36ycd8mibbv"))))
+        (base32 "1pibkybr2v1qci2vqbz1sms01y81x0i4r2sq23c5xkgwnwccfy9r"))))
     (properties `((upstream-name . "dcifer")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -22824,13 +22856,13 @@ available on a specific day.")
 (define-public r-datazoom-amazonia
   (package
     (name "r-datazoom-amazonia")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datazoom.amazonia" version))
        (sha256
-        (base32 "07b7wg71lvilb0hcimr4shaskl1rixn75nvc3mfxi85hbdkk56xn"))))
+        (base32 "1c2l42rwj67lr2910i1wdb04sqqwkdv5ycav6bz3snw349j8mycm"))))
     (properties `((upstream-name . "datazoom.amazonia")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
@@ -22845,7 +22877,6 @@ available on a specific day.")
                              r-rcpp
                              r-purrr
                              r-magrittr
-                             r-lubridate
                              r-janitor
                              r-hmisc
                              r-dplyr
