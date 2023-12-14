@@ -15,8 +15,8 @@
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages maths)
   #:use-module (gnu packages bioinformatics)
+  #:use-module (gnu packages maths)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
@@ -103,6 +103,35 @@ Office (CZSO, <https://czso.cz>).")
      "Interface to interest and foreign exchange rates published by the Czech National
 Bank.")
     (license license:expat)))
+
+(define-public r-cytosimplex
+  (package
+    (name "r-cytosimplex")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CytoSimplex" version))
+       (sha256
+        (base32 "06z2rkv18xi782jxx7jx7kwp8jahwjf5s7l3c3z6r6dz2ms9bavd"))))
+    (properties `((upstream-name . "CytoSimplex")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-plot3d
+                             r-matrix
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://welch-lab.github.io/CytoSimplex/")
+    (synopsis
+     "Simplex Visualization of Cell Fate Similarity in Single-Cell Data")
+    (description
+     "Create simplex plots to visualize the similarity between single-cells and
+selected clusters in a 1-/2-/3-simplex space.  Velocity information can be added
+as an additional layer.  See Liu J, Wang Y et al (2023)
+<doi:10.1101/2023.12.07.570655> for more details.")
+    (license license:gpl3)))
 
 (define-public r-cytopt
   (package
@@ -4261,6 +4290,37 @@ can enable a range of activity such as portfolio tracking, programmatic trading,
 or industry analysis.")
     (license license:expat)))
 
+(define-public r-cryptoquotes
+  (package
+    (name "r-cryptoquotes")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cryptoQuotes" version))
+       (sha256
+        (base32 "12xmlnzria533nvfpg9w26kr051d3cn08wdn2fza2jqn9maqaxjz"))))
+    (properties `((upstream-name . "cryptoQuotes")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-xts
+                             r-ttr
+                             r-rlang
+                             r-plotly
+                             r-magrittr
+                             r-lifecycle
+                             r-jsonlite
+                             r-httr
+                             r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://serkor1.github.io/cryptoQuotes/")
+    (synopsis "Access OHLC Market Data from Major Cryptocurrency Exchanges")
+    (description
+     "This package provides a high level library to extract cryptocurrency OHLC market
+data from major centralized exchanges.  The library supports all available
+intervals supported by the exchange API for spot and perpetual futures markets.")
+    (license license:gpl2+)))
+
 (define-public r-cryptography
   (package
     (name "r-cryptography")
@@ -6331,6 +6391,40 @@ traditional high-performance computing systems.  Inspiration also comes from
 packages mirai by Gao (2023) <https://github.com/shikokuchuo/mirai>, future by
 Bengtsson (2021) <doi:10.32614/RJ-2021-048>, rrq by @code{FitzJohn} and Ashton
 (2023) <https://github.com/mrc-ide/rrq>, clustermq by Schubert (2019)
+<doi:10.1093/bioinformatics/btz284>), and batchtools by Lang, Bischl, and
+Surmann (2017). <doi:10.21105/joss.00135>.")
+    (license license:expat)))
+
+(define-public r-crew-aws-batch
+  (package
+    (name "r-crew-aws-batch")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "crew.aws.batch" version))
+       (sha256
+        (base32 "1wswky9wj59p1x3nzbnnfafkbp7b4aii4ycyy2z81gxah5l5kklv"))))
+    (properties `((upstream-name . "crew.aws.batch")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-r6
+                             r-paws-management
+                             r-paws-compute
+                             r-paws-common
+                             r-crew))
+    (home-page "https://wlandau.github.io/crew.aws.batch/")
+    (synopsis "Crew Launcher Plugin for AWS Batch")
+    (description
+     "In computationally demanding analysis projects, statisticians and data
+scientists asynchronously deploy long-running tasks to distributed systems,
+ranging from traditional clusters to cloud services.  The crew.aws.batch package
+extends the mirai'-powered crew package with a worker launcher plugin for AWS
+Batch.  Inspiration also comes from packages mirai by Gao (2023)
+<https://github.com/shikokuchuo/mirai>, future by Bengtsson (2021)
+<doi:10.32614/RJ-2021-048>, rrq by @code{FitzJohn} and Ashton (2023)
+<https://github.com/mrc-ide/rrq>, clustermq by Schubert (2019)
 <doi:10.1093/bioinformatics/btz284>), and batchtools by Lang, Bischl, and
 Surmann (2017). <doi:10.21105/joss.00135>.")
     (license license:expat)))
@@ -22321,13 +22415,13 @@ Non-Parametric ANOVA. The package also contains the data sets used in that text.
 (define-public r-cmhc
   (package
     (name "r-cmhc")
-    (version "0.2.6")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cmhc" version))
        (sha256
-        (base32 "0cm2p3hvingygpxh67q8xjg2c2iy8ddz3hkb3jc4yyijjhxhkima"))))
+        (base32 "1iy7qslr1an5q1dpdx02p9734ghnmwql1cf5jcnl2a8cjhcgyxxn"))))
     (properties `((upstream-name . "cmhc")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble

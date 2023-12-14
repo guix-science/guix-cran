@@ -6402,13 +6402,13 @@ explanation of the Gaussian case.")
 (define-public r-boom
   (package
     (name "r-boom")
-    (version "0.9.11")
+    (version "0.9.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Boom" version))
        (sha256
-        (base32 "17kp3vla2z9kgcqgwcslcp0wl7k1k2rbc8nr3b785hv23gww11bi"))))
+        (base32 "1sh19fww3b0fy6ichirjs1gmhvlxzhmqp9mgya3n9q4r19mx0k7j"))))
     (properties `((upstream-name . "Boom")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -12969,13 +12969,13 @@ al. (2009) <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2730180/>,
 (define-public r-bimets
   (package
     (name "r-bimets")
-    (version "3.0.1")
+    (version "3.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bimets" version))
        (sha256
-        (base32 "03g0vkmg1lcpc6v3a4apj13920iv4lrbag3q0xih0b5d5479yr57"))))
+        (base32 "0cnpx2c2ik9ih5hvgl91abn9xpq1xdvv2dfxsiz77dmhwk9xrpv9"))))
     (properties `((upstream-name . "bimets")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-xts))
@@ -14989,13 +14989,13 @@ main requirement is clear citation of the original publication (see above).")
 (define-public r-bgvar
   (package
     (name "r-bgvar")
-    (version "2.5.4")
+    (version "2.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BGVAR" version))
        (sha256
-        (base32 "0jx72gmykayxssxdvrzw72fs9zdalidqi11x9d3c67ni0ilpnciz"))))
+        (base32 "10cj8lx63jdzmvw674zj4vawvf3mwvyjxjpqicy9ajm6r6gbccj8"))))
     (properties `((upstream-name . "BGVAR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

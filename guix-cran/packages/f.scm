@@ -13753,21 +13753,24 @@ equations (Smalian, Newton and Huber) as well stacking factor and form")
 (define-public r-fhmm
   (package
     (name "r-fhmm")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fHMM" version))
        (sha256
-        (base32 "141fvg32fqfn4c6d0sq90pcrynjpfpsdyvd5a1nj870dzqq3369v"))))
+        (base32 "1i7vmsnvpi05hn9an8babhl2b06wyp24c1l1fr2zjymqwalhwqn3"))))
     (properties `((upstream-name . "fHMM")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
                              r-rcpp
                              r-progress
+                             r-padr
+                             r-oeli
                              r-mass
                              r-foreach
-                             r-cli))
+                             r-cli
+                             r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://loelschlaeger.de/fHMM/")
     (synopsis "Fitting Hidden Markov Models to Financial Data")
@@ -17165,13 +17168,13 @@ manuscript is currently under review.")
 (define-public r-fbati
   (package
     (name "r-fbati")
-    (version "1.0-7")
+    (version "1.0-8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fbati" version))
        (sha256
-        (base32 "1w1yvv93yzvkqhq9w1c05bwqy3kr08b4bxzzvy0x03zdild10bly"))))
+        (base32 "1wgcahd46h2q3ihd8hjav6qvlar7iglxg8njbnl5h7zix7h0q7c6"))))
     (properties `((upstream-name . "fbati")))
     (build-system r-build-system)
     (propagated-inputs (list r-rootsolve r-pbatr r-fgui))
@@ -19131,13 +19134,13 @@ Bogetoft & Otto (2011) <doi:10.1007/978-1-4419-7961-2>.")
 (define-public r-farr
   (package
     (name "r-farr")
-    (version "0.2.30")
+    (version "0.2.39")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "farr" version))
        (sha256
-        (base32 "0bzq9kbqp77m1jdb6sqd5axk783la7zs3y0i68fqydh50s0r3z2g"))))
+        (base32 "0zs74q5a7mikkvfhz3j1m1z5pdhc3pcjlbzrn4saf05rd2w59x07"))))
     (properties `((upstream-name . "farr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -19151,12 +19154,12 @@ Bogetoft & Otto (2011) <doi:10.1007/978-1-4419-7961-2>.")
                              r-dplyr
                              r-dbplyr
                              r-dbi))
-    (home-page "https://cran.r-project.org/package=farr")
+    (home-page "https://github.com/iangow/farr")
     (synopsis "Data and Code for Financial Accounting Research")
     (description
-     "This package provides handy functions and data to support a course book for
-accounting research.  Gow, Ian and Tongqing Ding (2022) \"Accounting Research: An
-Introductory Course\" <https://iangow.github.io/far_book/>.")
+     "Handy functions and data to support a course book for accounting research.  Gow,
+Ian and Tongqing Ding (2022) Accounting Research: An Introductory Course
+<https://iangow.github.io/far_book/>.")
     (license license:expat)))
 
 (define-public r-farmtest

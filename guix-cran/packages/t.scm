@@ -6900,13 +6900,13 @@ details.")
 (define-public r-treatmentpatterns
   (package
     (name "r-treatmentpatterns")
-    (version "2.6.1")
+    (version "2.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TreatmentPatterns" version))
        (sha256
-        (base32 "0vz3hg7s6si5jq6hlqzm520hc1aicfpqnrcs9wbfq3gaswgbc578"))))
+        (base32 "0mighny8r60vg98x0fl3vchnhqx5givjnzlnqygd6slipinmgjcg"))))
     (properties `((upstream-name . "TreatmentPatterns")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -11526,13 +11526,13 @@ trex').  The package is based on the papers Machkour, Muma, and Palomar (2021)
 (define-public r-tlagpropodds
   (package
     (name "r-tlagpropodds")
-    (version "1.8")
+    (version "1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tLagPropOdds" version))
        (sha256
-        (base32 "08ik62hlnbzb5xn159lfs85dwz69w4jnnk9mbc75mxryzw10p6jd"))))
+        (base32 "0bygx77s28izfwdyk6gihcyanch55cha7x52h29kxxp1kaapyf11"))))
     (properties `((upstream-name . "tLagPropOdds")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-r-utils r-dplyr))
@@ -13564,6 +13564,39 @@ Estimated Scatterplot Smoothing (LOESS) prediction correction.")
      "This package provides a consistent API to pull United States Department of
 Agriculture census and survey data from the National Agricultural Statistics
 Service (NASS) @code{QuickStats} service.")
+    (license license:expat)))
+
+(define-public r-tidytuesdayr
+  (package
+    (name "r-tidytuesdayr")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidytuesdayR" version))
+       (sha256
+        (base32 "0n6pl2n3gv3f1idqfgb5w2pr71za551kgc4whxda4dwzl5ylkc0v"))))
+    (properties `((upstream-name . "tidytuesdayR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-usethis
+                             r-rvest
+                             r-rstudioapi
+                             r-readxl
+                             r-readr
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-jsonlite
+                             r-httr))
+    (home-page "https://github.com/thebioengineer/tidytuesdayR")
+    (synopsis "Access the Weekly 'TidyTuesday' Project Dataset")
+    (description
+     "@code{TidyTuesday} is a project by the R4DS Online Learning Community in which
+they post a weekly dataset onto post a weekly dataset in a public data
+repository (<https://github.com/rfordatascience/tidytuesday>) for people to
+analyze and visualize.  This package provides the tools to easily download this
+data and the description of the source.")
     (license license:expat)))
 
 (define-public r-tidytreatment
@@ -21356,23 +21389,29 @@ information about time-dependent sensitivity analysis.")
 (define-public r-tdroc
   (package
     (name "r-tdroc")
-    (version "1.0")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tdROC" version))
        (sha256
-        (base32 "137j1m9pysjcz1gsfcym0438by3c7na21ccjlqf7xfccr1y8k2k6"))))
+        (base32 "0m53a9w2365mb1bq9wlj7gwsabnbh9m4ax8klq22frj2dzvlk7xm"))))
     (properties `((upstream-name . "tdROC")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survival))
+    (propagated-inputs (list r-survival r-rcpp r-magrittr))
     (home-page "https://cran.r-project.org/package=tdROC")
     (synopsis
-     "Nonparametric Estimation of Time-Dependent ROC Curve from Right Censored Survival Data")
+     "Nonparametric Estimation of Time-Dependent ROC, Brier Score, and Survival Difference from Right Censored Time-to-Event Data with or without Competing Risks")
     (description
-     "Compute time-dependent ROC curve from censored survival data using nonparametric
-weight adjustments.")
-    (license license:gpl2+)))
+     "The @code{tdROC} package facilitates the estimation of time-dependent ROC
+(Receiver Operating Characteristic) curves and the Area Under the time-dependent
+ROC Curve (AUC) in the context of survival data, accommodating scenarios with
+right censored data and the option to account for competing risks.  In addition
+to the ROC/AUC estimation, the package also estimates time-dependent Brier score
+and survival difference.  Confidence intervals of various estimated quantities
+can be obtained from bootstrap.  The package also offers plotting functions for
+visualizing time-dependent ROC curves.")
+    (license license:expat)))
 
 (define-public r-tdr
   (package

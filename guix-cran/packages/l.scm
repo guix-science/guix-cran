@@ -3601,17 +3601,17 @@ data.")
 (define-public r-longitudinaldata
   (package
     (name "r-longitudinaldata")
-    (version "2.4.5")
+    (version "2.4.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "longitudinalData" version))
        (sha256
-        (base32 "16jfmzdi6zw2s17iiw7yw3y9h9xz3kz4z9v2qfj0drs57m9dxgp4"))))
+        (base32 "1x7n2jlmils9iw0ynq1hvixvrqzpzh37xi6wx0qawab1wm9igc5m"))))
     (properties `((upstream-name . "longitudinalData")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgl r-misc3d r-clv r-class))
-    (home-page "http:www.r-project.org")
+    (home-page "https://www.r-project.org")
     (synopsis "Longitudinal Data")
     (description
      "This package provides tools for longitudinal data and joint longitudinal data
@@ -13073,13 +13073,13 @@ likelihood estimation method (Proust-Lima, Philipps, Liquet (2017)
 (define-public r-lcmcr
   (package
     (name "r-lcmcr")
-    (version "0.4.13")
+    (version "0.4.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LCMCR" version))
        (sha256
-        (base32 "07gw8djwm352fmcr78mpqab1w4jpwpwb75cr3ay0nhnadzd9wsfg"))))
+        (base32 "12y12w2cdrfd1pqzlk7i7ddh2jypd0r0qm9l8gdb3jq301zi5lay"))))
     (properties `((upstream-name . "LCMCR")))
     (build-system r-build-system)
     (inputs (list gsl))
@@ -15533,6 +15533,53 @@ although the package can also be used to efficiently access files that do fit
 into memory.  Methods are provided to access and process files blockwise.
 Furthermore, an opened file can be accessed as one would an ordinary data.frame.
  The @code{LaF} vignette gives an overview of the functionality provided.")
+    (license license:gpl3)))
+
+(define-public r-ladderfuelsr
+  (package
+    (name "r-ladderfuelsr")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LadderFuelsR" version))
+       (sha256
+        (base32 "0glfyli1cmby4dvl28v558fscrc3ymykqzafy0rr7h10pvkfmp2f"))))
+    (properties `((upstream-name . "LadderFuelsR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-segmented
+                             r-magrittr
+                             r-ggplot2
+                             r-gdata
+                             r-dplyr))
+    (home-page "https://github.com/olgaviedma/LadderFuelsR")
+    (synopsis
+     "Automated Tool for Vertical Fuel Continuity Analysis using Airborne Laser Scanning Data")
+    (description
+     "Set of tools for analyzing vertical fuel continuity at the tree level using
+Airborne Laser Scanning data.  The workflow consisted of: 1) calculating the
+vertical height profiles of each segmented tree; 2) identifying gaps and fuel
+layers; 3) estimating the distance between fuel layers; and 4) retrieving the
+fuel layers base height and depth.  Additionally, other functions recalculate
+previous metrics after considering distances greater than 1 m and calculate the
+canopy base height as the fuel base height located at the largest- and at the
+last-distance.  Moreover, the package calculates: i) the percentage of Leaf Area
+Density comprised in each fuel layer, ii) remove fuel layers with Leaf Area
+Density percentage less than 25, iii) recalculate the distances among the
+reminder ones, and iv) identify the canopy base height as the fuel base height
+with the highest Leaf Area Density percentage.  On the other hand, when there is
+only one fuel layer, it identifies the canopy base height performing a segmented
+linear regression (breaking points) on the cumulative sum of Leaf Area Density
+as a function of height.  Finally, a collection of plotting functions is
+developed to represent: i) the initial gaps and fuel layers; ii) the fuels base
+height, depths and gaps with distances greater than 1 m and, iii) the fuels base
+height and depths after applying the breaking point method over trees with only
+one fuel layer.  The methods implemented in this package are original and have
+not been published elsewhere.")
     (license license:gpl3)))
 
 (define-public r-lad

@@ -11345,13 +11345,13 @@ package @code{PakPC2017}'.")
 (define-public r-ppclust
   (package
     (name "r-ppclust")
-    (version "1.1.0")
+    (version "1.1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ppclust" version))
        (sha256
-        (base32 "0vmgjjy7gin88qailzfcwapndl5s8fm6i8kw9gv6aykg9mr75xlv"))))
+        (base32 "1lrha08i5cp8f6670d6207jp6ad4vnmwq0lxfrlr9vhaxbs5akgi"))))
     (properties `((upstream-name . "ppclust")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-inaparc))
@@ -12276,13 +12276,13 @@ changes in assumptions.")
 (define-public r-postm
   (package
     (name "r-postm")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "POSTm" version))
        (sha256
-        (base32 "1fckd5c4hdviwy1b7cmwv8nqkaipfv838yjfsyacj8hxlzdlwlhj"))))
+        (base32 "0hnphl0lrblhj83z1ivcn7dnx2igvvbwzfkljbjdag59yqyjx7x0"))))
     (properties `((upstream-name . "POSTm")))
     (build-system r-build-system)
     (propagated-inputs (list r-compquadform r-ape))
@@ -26725,13 +26725,13 @@ their use with machine learning.")
 (define-public r-peptides
   (package
     (name "r-peptides")
-    (version "2.4.5")
+    (version "2.4.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Peptides" version))
        (sha256
-        (base32 "1ld2xgrc6az2fqj4ib52z3kd6500mxyqcm5v9b5dz15pjbqgjgf1"))))
+        (base32 "199bbfcdmy8mipjchsyxwxa3jssy60n9n9j7hcsab30kwjyq22zm"))))
     (properties `((upstream-name . "Peptides")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -31566,6 +31566,27 @@ by Hancock and Mueller (2011) <doi:10.1177/0013164410384856>.")
 endpoints require the use of an API key which can be obtained at
 <https://www.pathlit.io/docs/cli/>.")
     (license license:gpl3+)))
+
+(define-public r-pathling
+  (package
+    (name "r-pathling")
+    (version "6.4.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pathling" version))
+       (sha256
+        (base32 "0d8q8kd3crn2z33sv3r1xjfkdjz5645b17v8gxgdf7hjp16y7jaa"))))
+    (properties `((upstream-name . "pathling")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sparklyr r-rlang))
+    (home-page "https://pathling.csiro.au/")
+    (synopsis "Library for using 'Pathling'")
+    (description
+     "R API for Pathling', a tool for querying and transforming electronic health
+record data that is represented using the Fast Healthcare Interoperability
+Resources (FHIR) standard - see <https://pathling.csiro.au/docs>.")
+    (license license:asl2.0)))
 
 (define-public r-pathfindr-data
   (package

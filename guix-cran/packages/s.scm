@@ -3302,13 +3302,13 @@ metrics.")
 (define-public r-survlong
   (package
     (name "r-survlong")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SurvLong" version))
        (sha256
-        (base32 "07qxiym9vkv7wgmjs44jc6662yipb8ry6n9b90n4lwj5vasmn0x6"))))
+        (base32 "004s62c5w4lrp55g883iz8plviaij86m5wiaxcmqxaf5709sbk9g"))))
     (properties `((upstream-name . "SurvLong")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=SurvLong")
@@ -22477,6 +22477,42 @@ tumor progression).  The algorithm for finding the principal path is described
 in: Ferrarotti et al., (2019) <doi:10.1109/TNNLS.2018.2884792>.\"")
     (license license:gpl3)))
 
+(define-public r-spatgrid
+  (package
+    (name "r-spatgrid")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SpatGRID" version))
+       (sha256
+        (base32 "10388v6fzykgxd35mvknrz92mvgby2vnsyw6jb2xi94fj21ybkp9"))))
+    (properties `((upstream-name . "SpatGRID")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sp r-sf r-raster r-qpdf))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=SpatGRID")
+    (synopsis "Spatial Grid Generation from Longitude and Latitude List")
+    (description
+     "The developed function is designed for the generation of spatial grids based on
+user-specified longitude and latitude coordinates.  The function first validates
+the input longitude and latitude values, ensuring they fall within the
+appropriate geographic ranges.  It then creates a polygon from the coordinates
+and determines the appropriate Universal Transverse Mercator zone based on the
+provided hemisphere and longitude values.  Subsequently, transforming the input
+Shapefile to the Universal Transverse Mercator projection when necessary.
+Finally, a spatial grid is generated with the specified interval and saved as a
+Shapefile.  For method details see, Brus,D.J.(2022).<DOI:10.1201/9781003258940>.
+ The function takes into account crucial parameters such as the hemisphere
+(north or south), desired grid interval, and the output Shapefile path.  The
+developed function is an efficient tool, simplifying the process of empty
+spatial grid generation for applications such as, geo-statistical analysis,
+digital soil mapping product generation, etc.  Whether for environmental
+studies, urban planning, or any other geo-spatial analysis, this package caters
+to the diverse needs of users working with spatial data, enhancing the
+accessibility and ease of spatial data processing and visualization.")
+    (license license:gpl2+)))
+
 (define-public r-spatgraphs
   (package
     (name "r-spatgraphs")
@@ -28351,6 +28387,29 @@ several estimates to compute estimates of gamma.  The estimates are based on the
 principle of replacing the order statistics by quantiles of a distribution
 function based on a log--concave density function.  This procedure is justified
 by the fact that the GPD density is log--concave for gamma in [-1,0].")
+    (license license:gpl2+)))
+
+(define-public r-smoothsurv
+  (package
+    (name "r-smoothsurv")
+    (version "2.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "smoothSurv" version))
+       (sha256
+        (base32 "1fw5ibcsr13n3ycs1rkcnd3x08qgxz31hzfra6hpjkzcavcxdlk4"))))
+    (properties `((upstream-name . "smoothSurv")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival))
+    (home-page "https://msekce.karlin.mff.cuni.cz/~komarek/")
+    (synopsis "Survival Regression with Smoothed Error Distribution")
+    (description
+     "Contains, as a main contribution, a function to fit a regression model with
+possibly right, left or interval censored observations and with the error
+distribution expressed as a mixture of G-splines.  Core part of the computation
+is done in compiled C++ written using the Scythe Statistical Library Version
+0.3.")
     (license license:gpl2+)))
 
 (define-public r-smoothroctime
@@ -38290,13 +38349,13 @@ refer to Epifania, Anselmi & Robusto (2022) <doi:10.1007/978-3-031-27781-8_7>.")
 (define-public r-shortform
   (package
     (name "r-shortform")
-    (version "0.5.2")
+    (version "0.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ShortForm" version))
        (sha256
-        (base32 "0qqcmdn3y1bfjrb5n9b19gi5c78avavisb1jm6wbz7y7rf9q0dbh"))))
+        (base32 "1nlpn7rhk94jsdbhqa58rz07pl2gcf9rfc39h3bp4gh674wczn9g"))))
     (properties `((upstream-name . "ShortForm")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -39977,13 +40036,13 @@ models with a user friendly shiny interface.")
 (define-public r-shinyinvoice
   (package
     (name "r-shinyinvoice")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyInvoice" version))
        (sha256
-        (base32 "0sxk9s63s2himcipliwamk33ffdrr17a0jw6vpm515l46pafg3l6"))))
+        (base32 "0lzjxpsrlvbbx10i5ahkr8ny109xzl4cc67h3hk4wjxdqdk8g0ny"))))
     (properties `((upstream-name . "shinyInvoice")))
     (build-system r-build-system)
     (inputs (list pandoc))
@@ -40000,9 +40059,9 @@ models with a user friendly shiny interface.")
 details.  The invoice table contains any of: salary, one-liner costs, grouped
 costs.  Under the table signature and bank account details appear.  Pages are
 numbered when more than one.  Source .json and .Rmd files are editable in the
-app.  This package includes functions for getting exchange rates between
-currencies based on quantmod (Ryan and Ulrich, 2023
-<https://CRAN.R-project.org/package=quantmod>).")
+app.  A .csv file with raw data can be downloaded.  This package includes
+functions for getting exchange rates between currencies based on quantmod (Ryan
+and Ulrich, 2023 <https://CRAN.R-project.org/package=quantmod>).")
     (license license:gpl2+)))
 
 (define-public r-shinyhugeplot

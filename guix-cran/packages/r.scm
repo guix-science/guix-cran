@@ -560,13 +560,13 @@ burden of recompiling rxode2'.")
 (define-public r-rxode2
   (package
     (name "r-rxode2")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rxode2" version))
        (sha256
-        (base32 "0arhagnxgr2v5l28wkyn7iaidah1ggmylqzzdjx5vg7b2rrr88gn"))))
+        (base32 "10dzqln32ap19bsrr3g20wx22bqs6bb5pg2zn9hsvwwqi5c4bn3f"))))
     (properties `((upstream-name . "rxode2")))
     (build-system r-build-system)
     (propagated-inputs (list r-sys
@@ -2251,13 +2251,13 @@ equally and unequally spaced time series.")
 (define-public r-runmcmcbtadjust
   (package
     (name "r-runmcmcbtadjust")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "runMCMCbtadjust" version))
        (sha256
-        (base32 "1ccn6h23qhfp5y05ks0v3iir0jk96qahzkn1zwlfsj640zypgc60"))))
+        (base32 "0lf14704h1a5zfpq8f4h2f5isvsn7j4bj5ks4y5p362hrin07ld0"))))
     (properties `((upstream-name . "runMCMCbtadjust")))
     (build-system r-build-system)
     (propagated-inputs (list r-coda))
@@ -3487,13 +3487,13 @@ peaks and spectra using the ggplot2 package.")
 (define-public r-rtmpt
   (package
     (name "r-rtmpt")
-    (version "1.0-1")
+    (version "2.0-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtmpt" version))
        (sha256
-        (base32 "1nv6ps990rcrliacpalpr2ljwxzgrizvd0s7a0696c57hin3b6b4"))))
+        (base32 "1bmibm83a0p90xk7j1qfybi5yllhs2740nqjkhy1livxp5qizngq"))))
     (properties `((upstream-name . "rtmpt")))
     (build-system r-build-system)
     (inputs (list gsl))
@@ -3505,18 +3505,18 @@ peaks and spectra using the ggplot2 package.")
                              r-coda))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=rtmpt")
-    (synopsis "Fitting RT-MPT Models")
+    (synopsis "Fitting (Exponential/Diffusion) RT-MPT Models")
     (description
-     "Fit response-time extended multinomial processing tree (RT-MPT) models by Klauer
-and Kellen (2018) <doi:10.1016/j.jmp.2017.12.003>.  The RT-MPT class not only
-incorporate frequencies like traditional multinomial processing tree (MPT)
-models, but also latencies.  This enables it to estimate process completion
-times and encoding plus motor execution times next to the process probabilities
-of traditional MPTs.  rtmpt is a Bayesian framework and posterior samples are
-sampled using a Metropolis-Gibbs sampler like the one described in the Klauer
-and Kellen (2018), but with some modifications.  Other than in the original C++
-program we use the free and open source GNU Scientific Library (GSL).  There is
-also the possibility to suppress single process completion times.")
+     "Fit (exponential or diffusion) response-time extended multinomial processing
+tree (RT-MPT) models by Klauer and	Kellen (2018) <doi:10.1016/j.jmp.2017.12.003>
+and Klauer, Hartmann, and Meyer-Grant (submitted).  The RT-MPT class not only
+incorporate	frequencies like traditional multinomial processing tree (MPT)
+models, but also latencies.  This enables it	to estimate process completion
+times and encoding plus motor execution times next to the process
+probabilities	of traditional MPTs.  rtmpt is a hierarchical Bayesian framework
+and posterior samples are sampled using a Metropolis-within-Gibbs sampler (for
+exponential RT-MPTs) or Hamiltonian-within-Gibbs sampler (for diffusion
+RT-MPTs).")
     (license license:gpl2+)))
 
 (define-public r-rtmb
@@ -8981,13 +8981,13 @@ Lindy Hop and West Coast Swing dance contests.")
 (define-public r-rprotobuf
   (package
     (name "r-rprotobuf")
-    (version "0.4.20")
+    (version "0.4.21")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RProtoBuf" version))
        (sha256
-        (base32 "1q5wd586334472584r93whnwxy4yyycn9l891g6m6wh7v0884q76"))))
+        (base32 "0dskki6q5qmd2b53qgqhx4lzlji07g8q46aalkvj52pwisscm2x6"))))
     (properties `((upstream-name . "RProtoBuf")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -14736,13 +14736,13 @@ functions.  See: Oster, E. 2019. <doi:10.1080/07350015.2016.1227711>.")
 (define-public r-robobayes
   (package
     (name "r-robobayes")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "roboBayes" version))
        (sha256
-        (base32 "1aap13b6b026sfmfp0zk5xbr4a65ifjxq67yb7qswan669i6jn0i"))))
+        (base32 "0hk415j98aikl3n3ylr2fjadjd0k40zxk3627c6zg6zs9di6dqmg"))))
     (properties `((upstream-name . "roboBayes")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppdist r-rcpparmadillo r-rcpp))
@@ -17290,13 +17290,13 @@ Space.  It uses a Variation of Pattern Search Technique.  Described in the paper
 (define-public r-rmp
   (package
     (name "r-rmp")
-    (version "2.1")
+    (version "2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rmp" version))
        (sha256
-        (base32 "1y1w7grra1a5r3marm6h1xn2rk5jncanpszgn01risll9npkmzb6"))))
+        (base32 "1993195mdaa0dp7hf4d1bmfxjzx061r71ccmpqdqcr8b54ps8lxw"))))
     (properties `((upstream-name . "rmp")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=rmp")
@@ -17699,13 +17699,13 @@ update profiles.")
 (define-public r-rmixmod
   (package
     (name "r-rmixmod")
-    (version "2.1.9")
+    (version "2.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rmixmod" version))
        (sha256
-        (base32 "0lwll21gkp90m0a06ldwgwr9v0df3k8v78s12510xkhiwqfynznq"))))
+        (base32 "12gi18zkbzi4qb4qk12dbwm1skcyjaydp1g8nm2bfsj5db1r5mcn"))))
     (properties `((upstream-name . "Rmixmod")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp))
@@ -18493,13 +18493,13 @@ monthly time series.")
 (define-public r-rmatio
   (package
     (name "r-rmatio")
-    (version "0.18.0")
+    (version "0.19.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rmatio" version))
        (sha256
-        (base32 "11aaa06rq7pz6ma194bp4j9qy1f8rzl31nk731jmacdf2yvbmn6v"))))
+        (base32 "0640h71vbhasbankasxi24069g1la8b69vhz82ds0j52pf7kn2rb"))))
     (properties `((upstream-name . "rmatio")))
     (build-system r-build-system)
     (inputs (list zlib))
@@ -44793,13 +44793,13 @@ kernel learning.  C. Zhang, Y. Liu, J. Wang and H. Zhu. (2016)
 (define-public r-rams
   (package
     (name "r-rams")
-    (version "1.3.1")
+    (version "1.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RaMS" version))
        (sha256
-        (base32 "1njlgzrsxaawic60v7yk80qrhq73cia8miiafsvfxf9gcldr5alp"))))
+        (base32 "10r59h8dxv39gl432rs3xwasym94xbdpwdclsbzfyxm0cyi2vfmm"))))
     (properties `((upstream-name . "RaMS")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-data-table r-base64enc))

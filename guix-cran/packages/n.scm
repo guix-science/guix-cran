@@ -10725,13 +10725,13 @@ estimation performance analysis and visualization.")
 (define-public r-netmix
   (package
     (name "r-netmix")
-    (version "0.2.0.1")
+    (version "0.2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NetMix" version))
        (sha256
-        (base32 "0363z06y7ildk7bifhj2lmva0hf591nyp10x9ccd6csj387n968p"))))
+        (base32 "1j45zxlirlsph411k76vzawd2zg9bldfp2r9z4pi5zdk129fprb5"))))
     (properties `((upstream-name . "NetMix")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo

@@ -12116,16 +12116,24 @@ smoothing bootstrap resampling.")
 (define-public r-ijtiff
   (package
     (name "r-ijtiff")
-    (version "2.3.3")
+    (version "2.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ijtiff" version))
        (sha256
-        (base32 "0iv04g2ciz38ndrx1x5n5yy94zgk7h7qn35f9drynw19w1pxd95y"))))
+        (base32 "1abidy6fvz0qzxicviggkpvcq434cpbz4rm8nbxbfmyj3ndbadv9"))))
     (properties `((upstream-name . "ijtiff")))
     (build-system r-build-system)
-    (inputs (list zlib zlib libtiff libjpeg-turbo))
+    (inputs (list zstd
+                  zlib
+                  zlib
+                  xz
+                  libwebp
+                  libtiff
+                  libjpeg-turbo
+                  libdeflate
+                  bzip2))
     (propagated-inputs (list r-zeallot
                              r-withr
                              r-stringr
@@ -12147,7 +12155,7 @@ smoothing bootstrap resampling.")
 read and write support for TIFF files with floating point (real-numbered)
 pixels, and the only package that can correctly import TIFF files that were
 saved from @code{ImageJ} and write TIFF files than can be correctly read by
-@code{ImageJ} <https://imagej.nih.gov/ij/>.  Also supports text image I/O.")
+@code{ImageJ} <https://imagej.net/ij/>.  Also supports text image I/O.")
     (license license:gpl3)))
 
 (define-public r-iivpredictor
@@ -13427,13 +13435,13 @@ analysis with right censored data using a prior near-ignorant Dirichlet Process.
 (define-public r-idove
   (package
     (name "r-idove")
-    (version "1.4")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iDOVE" version))
        (sha256
-        (base32 "1ks83ha183mmda9pqhvaa9636gwjlkyr6hrdnhfjv75fks54476f"))))
+        (base32 "14issa46k141hbp8sayzgiskazknkgwjsw16c94w1pwcm69nq1i8"))))
     (properties `((upstream-name . "iDOVE")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -14423,13 +14431,13 @@ required by these approaches.")
 (define-public r-icsoutlier
   (package
     (name "r-icsoutlier")
-    (version "0.3-1")
+    (version "0.4-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ICSOutlier" version))
        (sha256
-        (base32 "00hp24rxqhlm3lxqjqxn2vg5x10ihgz5yvd454rhjg3f2nrbqvm7"))))
+        (base32 "07ngszaq2i0l90fjnqsizw8y2xlb3b0gdsavwcm1l8fh2z1cf1b6"))))
     (properties `((upstream-name . "ICSOutlier")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-moments r-ics))
@@ -14437,7 +14445,12 @@ required by these approaches.")
     (synopsis "Outlier Detection Using Invariant Coordinate Selection")
     (description
      "Multivariate outlier detection is performed using invariant coordinates where
-the package offers different methods to choose the appropriate components.")
+the package offers different methods to choose the appropriate components.  ICS
+is a general multivariate technique with many applications in multivariate
+analysis.  ICSOutlier offers a selection of functions for automated detection of
+outliers in the data based on a fitted ICS object or by specifying the dataset
+and the scatters of interest.  The current implementation targets data sets with
+only a small percentage of outliers.")
     (license license:gpl2+)))
 
 (define-public r-icsnp

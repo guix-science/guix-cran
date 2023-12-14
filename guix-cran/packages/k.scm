@@ -1973,17 +1973,17 @@ finding outliers inexpensively in multidimensional space.")
 (define-public r-kml3d
   (package
     (name "r-kml3d")
-    (version "2.4.6")
+    (version "2.4.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kml3d" version))
        (sha256
-        (base32 "01ib3b56vnqyq4jabzdw5sbldp8bcn77pyc611wnwcqpgm9ym0a7"))))
+        (base32 "1nah82m97kg6s6yh1aqdgypda6dj0cx6r2b2rdcz0mwkh55dqh74"))))
     (properties `((upstream-name . "kml3d")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgl r-misc3d r-longitudinaldata r-kml r-clv))
-    (home-page "http:www.r-project.org")
+    (home-page "https://www.r-project.org")
     (synopsis "K-Means for Joint Longitudinal Data")
     (description
      "An implementation of k-means specifically design to cluster joint trajectories
@@ -1998,17 +1998,17 @@ exported through @code{LaTeX} in a 3D dynamic rotating PDF graph.")
 (define-public r-kml
   (package
     (name "r-kml")
-    (version "2.4.6")
+    (version "2.4.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kml" version))
        (sha256
-        (base32 "1dmai5cvr9sfzqqrwm8bkmalaqbmjxaycxh4iar52bipih8h438j"))))
+        (base32 "01wy3w4bczn5fa22rq5ibys44nif7260flshwsjghpk4hh6qz759"))))
     (properties `((upstream-name . "kml")))
     (build-system r-build-system)
     (propagated-inputs (list r-longitudinaldata r-clv))
-    (home-page "http:www.r-project.org")
+    (home-page "https://www.r-project.org")
     (synopsis "K-Means for Longitudinal Data")
     (description
      "An implementation of k-means specifically design to cluster longitudinal data.
@@ -2435,13 +2435,13 @@ language, hierarchical level and formatting.")
 (define-public r-klar
   (package
     (name "r-klar")
-    (version "1.7-2")
+    (version "1.7-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "klaR" version))
        (sha256
-        (base32 "0qdxripkwdqw5w6dvf9wj7d34z67qygi18nm98c76y95p3nw6dc0"))))
+        (base32 "1rg3p3y984s7k7y14agbh3kxh21rrvan3yzpvfimpnvw04f08v6k"))))
     (properties `((upstream-name . "klaR")))
     (build-system r-build-system)
     (inputs (list))

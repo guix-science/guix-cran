@@ -10330,13 +10330,13 @@ user.  It just requires a Digital Terrain Model, a start location and
 (define-public r-move2
   (package
     (name "r-move2")
-    (version "0.2.6")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "move2" version))
        (sha256
-        (base32 "19ggsr3i6s4gm69w87c6dq11xkfs7ljcaziymk2s0bhy71l3gi4a"))))
+        (base32 "1r6xz7848g3fykm4l4iqf08ylyi9sg25y37h3iwcaj4zsdpj28l4"))))
     (properties `((upstream-name . "move2")))
     (build-system r-build-system)
     (propagated-inputs (list r-vroom

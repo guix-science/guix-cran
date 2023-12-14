@@ -1445,6 +1445,35 @@ method.  See Lam, X.Y., Marron, J.S., Sun, D.F., and Toh, K.C. (2018)
 <@code{arXiv:1604.05473>} for more details.")
     (license license:gpl2)))
 
+(define-public r-dwctaxon
+  (package
+    (name "r-dwctaxon")
+    (version "2.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dwctaxon" version))
+       (sha256
+        (base32 "0ypdfqnf70ylbrd1r8kpb531cd08izmqhsz84yxzw6xfyiqa6657"))))
+    (properties `((upstream-name . "dwctaxon")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-settings
+                             r-rlang
+                             r-purrr
+                             r-glue
+                             r-dplyr
+                             r-digest
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://docs.ropensci.org/dwctaxon/")
+    (synopsis "Edit and Validate Darwin Core Taxon Data")
+    (description
+     "Edit and validate taxonomic data in compliance with Darwin Core standards
+(Darwin Core Taxon class <https://dwc.tdwg.org/terms/#taxon>).")
+    (license license:expat)))
+
 (define-public r-dvqcc
   (package
     (name "r-dvqcc")
@@ -1575,6 +1604,35 @@ methods for combining plots, such as layout()'.  See Khan & @code{McLean} (2023)
      "Identifies code blocks that have a high level of similarity within a set of R
 files.")
     (license license:expat)))
+
+(define-public r-dunlin
+  (package
+    (name "r-dunlin")
+    (version "0.1.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dunlin" version))
+       (sha256
+        (base32 "10xfps9b2dxw4w6c5z5djsp7ssz1rnpccvnai471r1zppyv14hy7"))))
+    (properties `((upstream-name . "dunlin")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yaml
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-magrittr
+                             r-glue
+                             r-forcats
+                             r-dplyr
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://insightsengineering.github.io/dunlin/")
+    (synopsis "Preprocessing Tools for Clinical Trial Data")
+    (description
+     "This package provides a collection of functions to preprocess data and organize
+them in a format amenable to use by chevron.")
+    (license license:asl2.0)))
 
 (define-public r-dundermifflin
   (package
@@ -6021,13 +6079,13 @@ methods.")
 (define-public r-dove
   (package
     (name "r-dove")
-    (version "1.9")
+    (version "1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DOVE" version))
        (sha256
-        (base32 "1cw9p779wqs9sa17zadbibpjmnlqmw027p0hkpf4riwfmvkx6szh"))))
+        (base32 "1n37f0mb95d5r2vszfwwysnvn0xv9m85j3mpz7qzz5cp9fb9k38c"))))
     (properties `((upstream-name . "DOVE")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rcpparmadillo r-rcpp))
@@ -15426,6 +15484,35 @@ deleted records.")
      "Phase I/II adaptive dose-finding design for combination studies where toxicity
 rates are supposed to increase with both agents.")
     (license license:gpl3)))
+
+(define-public r-dfba
+  (package
+    (name "r-dfba")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DFBA" version))
+       (sha256
+        (base32 "12ywksp6zb2xkxvpmnvjpan9wllfzhngvwnsw6813z11jdhrhnpr"))))
+    (properties `((upstream-name . "DFBA")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=DFBA")
+    (synopsis "Distribution-Free Bayesian Analysis")
+    (description
+     "This package provides a set of functions to perform distribution-free Bayesian
+analyses.  Included are Bayesian analogues to the frequentist Mann-Whitney U
+test, the Wilcoxon Signed-Ranks test, Kendall's Tau Rank Correlation
+Coefficient, Goodman and Kruskal's Gamma, @code{McNemar's} Test, the binomial
+test, the sign test, the median test, as well as distribution-free methods for
+testing contrasts among condition and for computing Bayes factors for
+hypotheses.  The package also includes procedures to estimate the power of
+distribution-free Bayesian tests based on data simulations using various
+probability models for the data.  The set of functions provide data analysts
+with a set of Bayesian procedures that avoids requiring parametric assumptions
+about measurement error and is robust to problem of extreme outlier scores.")
+    (license license:gpl2)))
 
 (define-public r-dfadjust
   (package

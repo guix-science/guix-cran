@@ -4291,13 +4291,13 @@ amh', the copula dimension may be larger than 2.")
 (define-public r-vewaningvariant
   (package
     (name "r-vewaningvariant")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VEwaningVariant" version))
        (sha256
-        (base32 "1w0d7z86gg16vjg3bd9flr53q02wjz5hzs0460hx167ixi13m5jv"))))
+        (base32 "1fg44cy2i138b21y610bj64xjwwp96wilngy3rq89vsvkj40rird"))))
     (properties `((upstream-name . "VEwaningVariant")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rcpparmadillo r-rcpp r-ggplot2))
@@ -4318,13 +4318,13 @@ vaccine.")
 (define-public r-vewaning
   (package
     (name "r-vewaning")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VEwaning" version))
        (sha256
-        (base32 "1438j8dlfmn2yacg1haa66fmmv11x49b38qyl03jvw9vcxi1gz4x"))))
+        (base32 "0zg5m7bx1vj9libvg8l3g8wnsnqd565jjsqvwghml62wfsdhghk4"))))
     (properties `((upstream-name . "VEwaning")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-ggplot2))

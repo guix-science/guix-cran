@@ -9370,13 +9370,13 @@ co-sparse factor regression.  Computational Statistics & Data Analysis 157
 (define-public r-goeveg
   (package
     (name "r-goeveg")
-    (version "0.6.5")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "goeveg" version))
        (sha256
-        (base32 "1q4p1169lz5diwzmrpab2yglvr5c08mssivfbs5h13agbwrxyj8f"))))
+        (base32 "1dzfigsx3gx7ixqsx3yqi06jcs9k33rbz4wxjjc7sfffb7l09xby"))))
     (properties `((upstream-name . "goeveg")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan r-mgcv r-hmisc r-fields))
@@ -9385,8 +9385,8 @@ co-sparse factor regression.  Computational Statistics & Data Analysis 157
     (description
      "This package provides a collection of functions useful in (vegetation) community
 analyses and ordinations.  Includes automatic species selection for ordination
-diagrams, NMDS stress/scree plots, species response curves and rank-abundance
-curves as well as calculation and sorting of synoptic tables.")
+diagrams, NMDS stress/scree plots, species response curves, merging of taxa as
+well as calculation and sorting of synoptic tables.")
     (license license:gpl2+)))
 
 (define-public r-gocompare
@@ -16958,18 +16958,20 @@ ggiraph'.")
 (define-public r-ggir
   (package
     (name "r-ggir")
-    (version "3.0-0")
+    (version "3.0-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GGIR" version))
        (sha256
-        (base32 "1c9qkl6sppans204xl4kxr01qzm95kg229h88xa8mwixxicy8wkw"))))
+        (base32 "049fr8fnl7ad1i52i35bzl1lzqdd2rb67ph1w96gyib1dljhz5pf"))))
     (properties `((upstream-name . "GGIR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
                              r-unisensr
                              r-signal
+                             r-psych
+                             r-irr
                              r-ineq
                              r-foreach
                              r-doparallel
@@ -22965,6 +22967,50 @@ of term ID and gene ID. The geneset_name has two columns of terms ID and term
 description.")
     (license license:gpl3)))
 
+(define-public r-geneselectr
+  (package
+    (name "r-geneselectr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GeneSelectR" version))
+       (sha256
+        (base32 "1gwh6yzs7w6vrfli4rcqvapy7pgvab15n6jwd9psplggnwpwa0kv"))))
+    (properties `((upstream-name . "GeneSelectR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tmod
+                             r-tidyr
+                             r-tibble
+                             r-testthat
+                             r-rlang
+                             r-reticulate
+                             r-reshape2
+                             r-rcolorbrewer
+                             r-magrittr
+                             r-glue
+                             r-ggplot2
+                             r-dplyr
+                             r-cowplot))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/dzhakparov/GeneSelectR")
+    (synopsis
+     "'GeneSelectR' - Comprehensive Feature Selection Workflow for Bulk RNAseq Datasets")
+    (description
+     "The workflow is a versatile R package designed for comprehensive feature
+selection in bulk RNAseq datasets.  Its key innovation lies in the seamless
+integration of the Python scikit-learn
+(<https://scikit-learn.org/stable/index.html>) machine learning framework with
+R-based bioinformatics tools. @code{GeneSelectR} performs robust Machine
+Learning-driven (ML) feature selection while leveraging Gene Ontology (GO)
+enrichment analysis as described by Thomas PD et al. (2022)
+<doi:10.1002/pro.4218>, using @code{clusterProfiler} (Wu et al., 2021)
+<doi:10.1016/j.xinn.2021.100141> and semantic similarity analysis powered by
+@code{simplifyEnrichment} (Gu, Huebschmann, 2021)
+<doi:10.1016/j.gpb.2022.04.008>.  This combination of methodologies optimizes
+computational and biological insights for analyzing complex RNAseq datasets.")
+    (license license:expat)))
+
 (define-public r-genescape
   (package
     (name "r-genescape")
@@ -27113,13 +27159,13 @@ completion.  Reference: Goodfellow et al. (2014) <@code{arXiv:1406.2661v1>}.")
 (define-public r-gandatamodel
   (package
     (name "r-gandatamodel")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ganDataModel" version))
        (sha256
-        (base32 "1vpw5ijl0mr1vgzqavsmich0f0vhi94df6d92a7adi915inqvdaz"))))
+        (base32 "0a7y76g693qc6ris8ic28a78p1r2kkz4szj1wd4p8544vwmh4vwz"))))
     (properties `((upstream-name . "ganDataModel")))
     (build-system r-build-system)
     (inputs (list tensorflow))

@@ -987,17 +987,17 @@ Builder) functions.")
 (define-public r-extraoperators
   (package
     (name "r-extraoperators")
-    (version "0.1.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "extraoperators" version))
        (sha256
-        (base32 "1clyp97ssmdq9ggbv3w5yskx7khnlm4ji7ym3k3b4bx1pazcw4q4"))))
+        (base32 "1kv72s5fcaiyp4sa2r4plm6psjhh07cdkl0zd7mdl25r8ixs1k3h"))))
     (properties `((upstream-name . "extraoperators")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
-    (home-page "http://joshuawiley.com/extraoperators")
+    (home-page "https://joshuawiley.com/extraoperators/")
     (synopsis "Extra Binary Relational and Logical Operators")
     (description
      "Speed up common tasks, particularly logical or relational comparisons and

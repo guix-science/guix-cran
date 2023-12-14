@@ -1255,13 +1255,13 @@ parameter to automate the transformation process are proposed in R package
 (define-public r-autothresholdr
   (package
     (name "r-autothresholdr")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "autothresholdr" version))
        (sha256
-        (base32 "1n2rag3aqd716nxp3vnc91rfimi24bg1imsa1aarynfh7mxi5a7a"))))
+        (base32 "1fkny4i1fpy5fkya52cw4bzpdi236smq4qq23q1zdba3srmpyzsl"))))
     (properties `((upstream-name . "autothresholdr")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -8133,6 +8133,39 @@ Analysis Ready Samples services (@code{AppEEARS};
 to analysis ready earth observation data in R.")
     (license license:agpl3)))
 
+(define-public r-apollonius
+  (package
+    (name "r-apollonius")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Apollonius" version))
+       (sha256
+        (base32 "13iz0j2kc3jzzn77jawrm0fg23mqkxh7h7dasfjibmykamvw45nb"))))
+    (properties `((upstream-name . "Apollonius")))
+    (build-system r-build-system)
+    (inputs (list mpfr gmp))
+    (propagated-inputs (list r-rcppeigen
+                             r-rcppcgal
+                             r-rcpp
+                             r-polychrome
+                             r-plotrix
+                             r-gyro
+                             r-colorsgen
+                             r-bh
+                             r-abind))
+    (native-inputs (list pkg-config))
+    (home-page "https://github.com/stla/Apollonius")
+    (synopsis "2D Apollonius Graphs")
+    (description
+     "Computation of the Apollonius diagram of given 2D points and its dual the
+Apollonius graph, also known as the additively weighted @code{VoronoÃ¯} diagram,
+and which is a generalization of the classical @code{VoronoÃ¯} diagram.  For
+references, see the bibliography in the CGAL documentation at
+<https://doc.cgal.org/latest/Apollonius_graph_2/citelist.html>.")
+    (license license:gpl3)))
+
 (define-public r-apollo
   (package
     (name "r-apollo")
@@ -11846,6 +11879,27 @@ generation of perlin, simplex, worley, cubic, value, and white noise with
 optional perturbation in either 2, 3, or 4 (in case of simplex and white noise)
 dimensions.")
     (license license:expat)))
+
+(define-public r-amberr
+  (package
+    (name "r-amberr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "amberr" version))
+       (sha256
+        (base32 "1m9mjxah9kk5d7rw7xanqwyjlwp924f6vw7glbj26n2f8k27ja7g"))))
+    (properties `((upstream-name . "amberr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-jsonlite r-httr r-dplyr))
+    (home-page "https://github.com/obiba/amberr/")
+    (synopsis "'Amber' Electronic Data Capture Client")
+    (description
+     "Amber is a server application for capturing electronic data records.  Rich forms
+are used to collect data.  This Amber client allows to perform data extraction
+for reporting or data transfer at persistent location purposes.")
+    (license license:gpl3)))
 
 (define-public r-amazonspr
   (package

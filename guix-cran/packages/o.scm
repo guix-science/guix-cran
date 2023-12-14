@@ -3436,13 +3436,13 @@ classification.")
 (define-public r-orca
   (package
     (name "r-orca")
-    (version "1.1-1")
+    (version "1.1-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "orca" version))
        (sha256
-        (base32 "1wd5nh2vh6j1rp78hbw17qipi67f0wimrbkiarak8f7k5pfiy1zn"))))
+        (base32 "0nzm0i0ms2l4n10pgs1jg7mb9pd1k3pg7nvyd0w3ivq490g2py79"))))
     (properties `((upstream-name . "orca")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=orca")
@@ -6300,13 +6300,13 @@ subsequent papers.")
 (define-public r-opdisdownsampling
   (package
     (name "r-opdisdownsampling")
-    (version "0.8.2")
+    (version "0.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "opdisDownsampling" version))
        (sha256
-        (base32 "0laf24x2h6xwhd5wwcwi1iqg5gni29bmlfr86yrvpdrdgr7f4cha"))))
+        (base32 "0aq7ghy5syiic0nplnp74qhyw1yxih9bsfc0jgvz45zvcsp4gdwx"))))
     (properties `((upstream-name . "opdisDownsampling")))
     (build-system r-build-system)
     (propagated-inputs (list r-twosamples
