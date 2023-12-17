@@ -542,41 +542,6 @@ null plots using permutation and simulation.  Calculate distance metrics for a
 lineup, and examine the distributions of metrics.")
     (license license:gpl2+)))
 
-(define-public r-nuggets
-  (package
-    (name "r-nuggets")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "nuggets" version))
-       (sha256
-        (base32 "1y1qamwpz31khq54y62ywras5yznh4g0a9x67x6frsz5pjq4z7vz"))))
-    (properties `((upstream-name . "nuggets")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-testthat
-                             r-rlang
-                             r-rcpp
-                             r-cli))
-    (home-page "https://cran.r-project.org/package=nuggets")
-    (synopsis "Extensible Data Pattern Searching Framework")
-    (description
-     "Extensible framework for subgroup discovery (Atzmueller (2015)
-<doi:10.1002/widm.1144>), contrast patterns (Chen (2022)
-<doi:10.48550/@code{arXiv.2209.13556>}), emerging patterns (Dong (1999)
-<doi:10.1145/312129.312191>) and association rules (Agrawal (1994)
-<https://www.vldb.org/conf/1994/P487.PDF>).  Both crisp (binary) and fuzzy data
-are supported.  It generates conditions in the form of elementary conjunctions,
-evaluates them on a dataset and checks the induced sub-data for interesting
-statistical properties.  Currently, the package searches for implicative
-association rules and conditional correlations (HÃ¡jek (1978)
-<doi:10.1007/978-3-642-66943-9>).  A user-defined function may be defined to
-evaluate on each generated condition to search for custom patterns.")
-    (license license:gpl3+)))
-
 (define-public r-nueton
   (package
     (name "r-nueton")
@@ -7969,13 +7934,13 @@ Models.")
 (define-public r-nice
   (package
     (name "r-nice")
-    (version "0.4-1")
+    (version "0.4-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nice" version))
        (sha256
-        (base32 "1p8vmimiq9sbjvbx6c2wqwwkpnzw4kkdvjry6qyadmm3frwhj5qb"))))
+        (base32 "0v4vd66kcblm0mq1ri73hs9vv79h03wmh7h60bj7vj1dlf4yzqj5"))))
     (properties `((upstream-name . "nice")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=nice")
@@ -10621,13 +10586,13 @@ methods, see Marrs, Fosdick, and @code{McCormick} (2017)
 (define-public r-netrankr
   (package
     (name "r-netrankr")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "netrankr" version))
        (sha256
-        (base32 "14r5xy4j7d2vkbfrlylipx17n66kk7fl1n0hipx5hn6na5slxkfi"))))
+        (base32 "1sky7b356vlm7s28a6rw09qwci67a7vjjwkbc3r1v455w11idq6c"))))
     (properties `((upstream-name . "netrankr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix r-igraph))
@@ -13752,16 +13717,15 @@ two conditions in small samples.")
 (define-public r-nbbdesigns
   (package
     (name "r-nbbdesigns")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NBBDesigns" version))
        (sha256
-        (base32 "0fm7i6cvwy7b29d1ig3s7akpb2kqf5xm5nqarhwmy79c1kll9jyb"))))
+        (base32 "0vb7iglzbkk3dvh4z7ia7zjds4i2anw5y50vjg2k0sb9q0zi5hvp"))))
     (properties `((upstream-name . "NBBDesigns")))
     (build-system r-build-system)
-    (propagated-inputs (list r-mass))
     (home-page "https://cran.r-project.org/package=NBBDesigns")
     (synopsis "Neighbour Balanced Block Designs (NBBDesigns)")
     (description

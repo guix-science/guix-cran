@@ -6762,13 +6762,13 @@ values of a moderator.")
 (define-public r-interfaceqpcr
   (package
     (name "r-interfaceqpcr")
-    (version "1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "InterfaceqPCR" version))
        (sha256
-        (base32 "12nmkv6qnzh2dnbhk1656dla6mrznh24gqblmn4xai7wg4p92fbx"))))
+        (base32 "0qvrazikr1i2fmxhn6wsj3ny33bwpi1fxl1mka9i139gbphdmhr1"))))
     (properties `((upstream-name . "InterfaceqPCR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xlsx r-tkrplot r-reshape2 r-plyr))
@@ -13944,13 +13944,13 @@ Vandebroek M (2020) <doi:10.18637/jss.v096.i03>.")
 (define-public r-ideatools
   (package
     (name "r-ideatools")
-    (version "3.5.1")
+    (version "3.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IDEATools" version))
        (sha256
-        (base32 "05amichli11yny5idmvl0k28v910nscf89qgghl5cjpqzcwq9jr4"))))
+        (base32 "0g5wi9mjvcnz0s6x4rnhfa2xkdgja21b3k4z9iz8hszismdzs5sq"))))
     (properties `((upstream-name . "IDEATools")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -14798,13 +14798,13 @@ financial-economic time series data.")
 (define-public r-ichimoku
   (package
     (name "r-ichimoku")
-    (version "1.4.11")
+    (version "1.4.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ichimoku" version))
        (sha256
-        (base32 "0acqx0062df0a50xx4mw1nwyn9ws8d6rz6qr9aslykb18wm5m8kg"))))
+        (base32 "0nv0gfff38x254x1adlbwwfrjb6ws2f2yvinybc62gghaq947hry"))))
     (properties `((upstream-name . "ichimoku")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -14812,6 +14812,7 @@ financial-economic time series data.")
                              r-shiny
                              r-rcppsimdjson
                              r-nanonext
+                             r-mirai
                              r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://shikokuchuo.net/ichimoku/")

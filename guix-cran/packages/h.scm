@@ -10338,6 +10338,28 @@ function fits Bayesian Ridge regression without MCMC, this one uses the SVD or
 QR decomposition for the posterior computation.")
     (license license:gpl2+)))
 
+(define-public r-hdbma
+  (package
+    (name "r-hdbma")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hdbma" version))
+       (sha256
+        (base32 "0dj9hh6x5096znl7naga0qrx2fwr4crgjk7fyk5vxn6v1gl3llrh"))))
+    (properties `((upstream-name . "hdbma")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival r-r2jags r-mass r-lattice r-gplots))
+    (home-page "https://www.r-project.org")
+    (synopsis "Bayesian Mediation Analysis with High-Dimensional Data")
+    (description
+     "Mediation analysis is used to identify and quantify intermediate effects from
+factors that intervene the observed relationship between an exposure/predicting
+variable and an outcome.  We use a Bayesian adaptive lasso method to take care
+of the hierarchical structures and high dimensional exposures or mediators.")
+    (license license:gpl2+)))
+
 (define-public r-hdbm
   (package
     (name "r-hdbm")

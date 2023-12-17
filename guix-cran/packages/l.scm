@@ -13417,16 +13417,22 @@ Kittipong and Sirinapa(2021)<DOI: 10.14456/sjst-psu.2021.89>.")
 (define-public r-lboxcox
   (package
     (name "r-lboxcox")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lboxcox" version))
        (sha256
-        (base32 "1b12zm085mshfqg2pwj0w9k6ngasdjbbw8wkhc3vyw9d2gmn5qp1"))))
+        (base32 "0jklfgw7dwslafsivb9z2q1vgv367kk9gbgjabz04y0kracxaa8q"))))
     (properties `((upstream-name . "lboxcox")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survey r-maxlik r-mass r-foreach r-doparallel))
+    (propagated-inputs (list r-survey
+                             r-r-utils
+                             r-maxlik
+                             r-mass
+                             r-foreach
+                             r-dplyr
+                             r-doparallel))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=lboxcox")
     (synopsis "Implementation of Logistic Box-Cox Regression")

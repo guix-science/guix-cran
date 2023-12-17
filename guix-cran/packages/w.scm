@@ -208,33 +208,6 @@ impacts assessment in the Lower Santa Cruz River Basin, Arizona.\" Fall Meeting
 <https://ui.adsabs.harvard.edu/abs/2019AGUFMGC41G1267G>.")
     (license license:cc0)))
 
-(define-public r-wwr
-  (package
-    (name "r-wwr")
-    (version "1.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "WWR" version))
-       (sha256
-        (base32 "0ia1dd12r1l08s9nhgvk55jmqwv58jawm25gd2ni6wpa3mcmq02g"))))
-    (properties `((upstream-name . "WWR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-inline))
-    (native-inputs (list gfortran))
-    (home-page "https://cran.r-project.org/package=WWR")
-    (synopsis "Weighted Win Loss Statistics and their Variances")
-    (description
-     "Calculate the (weighted) win loss statistics including the win ratio, win
-difference and win product and their variances, with which the p-values are also
-calculated.  The variance estimation is based on Luo et al. (2015)
-<doi:10.1111/biom.12225> and Luo et al. (2017) <doi:10.1002/sim.7284>.  This
-package also calculates general win loss statistics with user-specified win loss
-function with variance estimation based on Bebu and Lachin (2016)
-<doi:10.1093/biostatistics/kxv032>.  This version corrected an error when
-outputting confidence interval for win difference.")
-    (license license:gpl2+)))
-
 (define-public r-wwntests
   (package
     (name "r-wwntests")
@@ -3015,13 +2988,13 @@ based on error metrics.  Chen et al.(2017) <doi:10.1007/s00216-017-0218-9>.")
 (define-public r-windex
   (package
     (name "r-windex")
-    (version "2.0.6")
+    (version "2.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "windex" version))
        (sha256
-        (base32 "1qpvq9ikv5jvd3qplhlw4404gggrkimcshxb6k0jp7mjz20b1iah"))))
+        (base32 "0dhan3wqfr5997kmpl6visijij15a53swc9dcv90ymd5l7minvdr"))))
     (properties `((upstream-name . "windex")))
     (build-system r-build-system)
     (propagated-inputs (list r-scatterplot3d r-phytools r-phangorn r-geiger

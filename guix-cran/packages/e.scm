@@ -1688,6 +1688,40 @@ and illustrated for models from packages @code{randomForest}', nnet', and
 e1071'.")
     (license license:gpl3)))
 
+(define-public r-explainer
+  (package
+    (name "r-explainer")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "explainer" version))
+       (sha256
+        (base32 "10ycixmhjyakb3di5p4v5c6vji6jypkf6za30rqh1c7mzzxbvlah"))))
+    (properties `((upstream-name . "explainer")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-writexl
+                             r-tidyr
+                             r-tibble
+                             r-plotly
+                             r-magrittr
+                             r-ggpubr
+                             r-ggpmisc
+                             r-ggplot2
+                             r-egg
+                             r-dplyr
+                             r-data-table
+                             r-cvms))
+    (home-page "https://persimune.github.io/explainer/")
+    (synopsis "Machine Learning Model Explainer")
+    (description
+     "It enables detailed interpretation of complex classification and regression
+models through Shapley analysis including data-driven characterization of
+subgroups of individuals.  Furthermore, it facilitates multi-measure model
+evaluation, model fairness, and decision curve analysis.  Additionally, it
+offers enhanced visualizations with interactive elements.")
+    (license license:expat)))
+
 (define-public r-expirest
   (package
     (name "r-expirest")
@@ -1717,13 +1751,13 @@ data\" from the International Council for Harmonisation (ICH).")
 (define-public r-expimage
   (package
     (name "r-expimage")
-    (version "0.8.0")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ExpImage" version))
        (sha256
-        (base32 "1c54lgz2206bilqxhy8s7r19vnnkahw3h6bhp8h6bzbx5d7714iv"))))
+        (base32 "1f6pddzfwmpv0gnzbpbkqzg6scafzjmpicblqz3m36nnj87l9pn7"))))
     (properties `((upstream-name . "ExpImage")))
     (build-system r-build-system)
     (propagated-inputs (list r-schemr
@@ -4142,13 +4176,13 @@ classified using a partial-observations-classifier (Kandanaarachchi et al.
 (define-public r-eventpred
   (package
     (name "r-eventpred")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eventPred" version))
        (sha256
-        (base32 "0ffkjzp0gjg2jdpdrkgxljm3rh4jpvlv5c95w4gcy56kc2r4zd26"))))
+        (base32 "1kc8szppic8igmc1sbi922fkngcgrl7mvg1mj3fvcfrk2km9qvmr"))))
     (properties `((upstream-name . "eventPred")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -5697,13 +5731,13 @@ Applied Statistics, 11(2), 967-991, <doi:10.1214/17-AOAS1026> for more details."
 (define-public r-estmeansd
   (package
     (name "r-estmeansd")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "estmeansd" version))
        (sha256
-        (base32 "1jmi78gmddhqpg3n7jywkbsq8amxa641s8rhzzg6jmmh4w09dg9s"))))
+        (base32 "0wshkcqdajysymy765d5gg9z9bxdsy59h2rw0ls19nlf0dbj4z6s"))))
     (properties `((upstream-name . "estmeansd")))
     (build-system r-build-system)
     (propagated-inputs (list r-metablue))
@@ -5717,7 +5751,8 @@ Applied Statistics, 11(2), 967-991, <doi:10.1214/17-AOAS1026> for more details."
 deviation from commonly reported quantiles in meta-analysis.  These methods can
 be applied to studies that report the sample median, sample size, and one or
 both of (i) the sample minimum and maximum values and (ii) the first and third
-quartiles.")
+quartiles.  The corresponding standard error estimators described by
+@code{McGrath} et al. (2023) <doi:10.1177/09622802221139233> are also included.")
     (license license:gpl3+)))
 
 (define-public r-estimraw
@@ -16734,17 +16769,17 @@ linkages between the connected nodes using hierarchical edge bundling via the D3
 (define-public r-edgebundle
   (package
     (name "r-edgebundle")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "edgebundle" version))
        (sha256
-        (base32 "196np22ibvj31f5f45gl5ni5byj1z2h4vyxxcqarny2zfk00qg9j"))))
+        (base32 "138cdhk3p95vh5siwwp05kir6kkrvqjlgbz97dgi149i6jmq656k"))))
     (properties `((upstream-name . "edgebundle")))
     (build-system r-build-system)
     (propagated-inputs (list r-reticulate r-rcpp r-interp r-igraph))
-    (home-page "http://edgebundle.schochastics.net/")
+    (home-page "https://github.com/schochastics/edgebundle")
     (synopsis
      "Algorithms for Bundling Edges in Networks and Visualizing Flow and Metro Maps")
     (description
@@ -20824,13 +20859,13 @@ tidal catalogs.")
 (define-public r-earthdatalogin
   (package
     (name "r-earthdatalogin")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "earthdatalogin" version))
        (sha256
-        (base32 "09vrwc4r4ap30n3mr5vdclhqygma6m8yzvpzw6s57gvifchig2d6"))))
+        (base32 "1g044i4kjl5ica9dlg0y2xnhaiqb3xi9ha81ljcz4w8f5mkj7y46"))))
     (properties `((upstream-name . "earthdatalogin")))
     (build-system r-build-system)
     (propagated-inputs (list r-purrr r-openssl r-httr))

@@ -14,11 +14,11 @@
   #:use-module (gnu packages geo)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages gcc)
-  #:use-module (gnu packages bioinformatics)
-  #:use-module (gnu packages perl)
   #:use-module (gnu packages curl)
   #:use-module (gnu packages ssh)
   #:use-module (gnu packages tls)
+  #:use-module (gnu packages bioinformatics)
+  #:use-module (gnu packages perl)
   #:use-module (gnu packages pcre)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -2058,13 +2058,13 @@ based in Russia.")
 (define-public r-vizdraws
   (package
     (name "r-vizdraws")
-    (version "1.3")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vizdraws" version))
        (sha256
-        (base32 "015m72s1c086my35lcbxjddagy3qy5dxh1jcsh7vfrjvsyprf5km"))))
+        (base32 "03cchq086crwxmapjh35wna8i6ryxshq9736r1m0jgkzh7z23hfj"))))
     (properties `((upstream-name . "vizdraws")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-magrittr r-htmlwidgets r-dplyr))
@@ -2599,13 +2599,13 @@ associated inner nodes.")
 (define-public r-vistla
   (package
     (name "r-vistla")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vistla" version))
        (sha256
-        (base32 "1c6mk5wx0zj43m8k67cjlkzwb4jqnszjwmpkcmk7qgiqkfn1brmn"))))
+        (base32 "0chlmlq6ydkb36dmfx5j4syhm9s3sqhhr20fxyp3jhbhv19c83bj"))))
     (properties `((upstream-name . "vistla")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=vistla")
@@ -5558,6 +5558,32 @@ unrealistic assumptions of the traditional fixed-effect and random-effects
 meta-analysis methods.  For details see: Statistical Methods for Psychologists,
 Volume 5, <https://dgbonett.sites.ucsc.edu/>.")
     (license license:gpl3)))
+
+(define-public r-vcfppr
+  (package
+    (name "r-vcfppr")
+    (version "0.3.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vcfppR" version))
+       (sha256
+        (base32 "1shk4xr1i3azbh5s13ngzny2gysa4mbkfv240ky22yqdcj3qxi37"))))
+    (properties `((upstream-name . "vcfppR")))
+    (build-system r-build-system)
+    (inputs (list zlib openssl openssh curl))
+    (propagated-inputs (list r-rcpp))
+    (native-inputs (list pkg-config))
+    (home-page "https://github.com/Zilong-Li/vcfppR")
+    (synopsis "Rapid Manipulation of the Variant Call Format (VCF)")
+    (description
+     "The vcfpp.h (<https://github.com/Zilong-Li/vcfpp>) provides an easy-to-use C++
+API of htslib', offering full functionality for manipulating Variant Call Format
+(VCF) files.  The @code{vcfppR} package serves as the R bindings of the vcfpp.h
+library, enabling rapid processing of both compressed and uncompressed VCF/BCF
+files.  Explore a range of powerful features for efficient VCF data
+manipulation.")
+    (license license:expat)))
 
 (define-public r-vcdextra
   (package

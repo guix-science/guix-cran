@@ -575,6 +575,38 @@ constructing area-based index with geographical heterogeneities and variable
 selection: An application to gastric cancer screening <doi:10.1038/srep26582>.")
     (license license:expat)))
 
+(define-public r-gwid
+  (package
+    (name "r-gwid")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gwid" version))
+       (sha256
+        (base32 "13r286v6ckp64y36x8av8rlsvwh6ynzvi378l9xxxxfzc26w3zij"))))
+    (properties `((upstream-name . "gwid")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-snprelate
+                             r-rcpproll
+                             r-plotly
+                             r-piggyback
+                             r-matrix
+                             r-ggplot2
+                             r-gdsfmt
+                             r-data-table))
+    (home-page "https://github.com/soroushmdg/gwid")
+    (synopsis "Genome-Wide Identity-by-Descent")
+    (description
+     "This package provides methods and tools for the analysis of Genome Wide
+Identity-by-Descent ('gwid') mapping data, focusing on testing whether there is
+a higher occurrence of Identity-By-Descent (IBD) segments around potential
+causal variants in cases compared to controls, which is crucial for identifying
+rare variants.  To enhance its analytical power, gwid incorporates a Sliding
+Window Approach, allowing for the detection and analysis of signals from
+multiple Single Nucleotide Polymorphisms (SNPs).")
+    (license license:expat)))
+
 (define-public r-gwi
   (package
     (name "r-gwi")
@@ -701,16 +733,17 @@ comids, etc.")
 (define-public r-gwasrapidd
   (package
     (name "r-gwasrapidd")
-    (version "0.99.14")
+    (version "0.99.17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gwasrapidd" version))
        (sha256
-        (base32 "07i71z44gkvwcx2dcbccz0sf68161drrhhd86jvq30nv20wxhmhx"))))
+        (base32 "1fmymw7vm4ana86mwf8figda20l601c7c6nr14444647x8cimlhx"))))
     (properties `((upstream-name . "gwasrapidd")))
     (build-system r-build-system)
-    (propagated-inputs (list r-urltools
+    (propagated-inputs (list r-writexl
+                             r-urltools
                              r-tidyr
                              r-tibble
                              r-testthat
@@ -3574,13 +3607,13 @@ effects dependence.")
 (define-public r-growr
   (package
     (name "r-growr")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "growR" version))
        (sha256
-        (base32 "08ain1z9k5d1qm6aghsm9np2ksr1ivhyckmsy0j3r10m7mrgz9v9"))))
+        (base32 "1sw9sdv008n4xsv41yyrbq4qw9w0swg4ff2jaa41gvn35fax7blj"))))
     (properties `((upstream-name . "growR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-rdpack r-r6))
@@ -12636,6 +12669,36 @@ models.  For further details we refer the reader to the paper Gomtsyan et al.
 (2020), <@code{arXiv:2007.08623v1>}.")
     (license license:gpl2)))
 
+(define-public r-glarmadillo
+  (package
+    (name "r-glarmadillo")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Glarmadillo" version))
+       (sha256
+        (base32 "14k24f6yjx9jlvmd7q1lw6nyajzpsmsbdj8jq3v8ad1kdrip05x7"))))
+    (properties `((upstream-name . "Glarmadillo")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=Glarmadillo")
+    (synopsis "Solve the Graphical Lasso Problem with 'Armadillo'")
+    (description
+     "Efficiently implements the Graphical Lasso algorithm, utilizing the Armadillo
+C++ library for rapid computation.  This algorithm introduces an L1 penalty to
+derive sparse inverse covariance matrices from observations of multivariate
+normal distributions.  Features include the generation of random and structured
+sparse covariance matrices, beneficial for simulations, statistical method
+testing, and educational purposes in graphical modeling.  A unique function for
+regularization parameter selection based on predefined sparsity levels is also
+offered, catering to users with specific sparsity requirements in their models.
+The methodology for sparse inverse covariance estimation implemented in this
+package is based on the work of Friedman, Hastie, and Tibshirani (2008)
+<doi:10.1093/biostatistics/kxm045>.")
+    (license license:gpl3+)))
+
 (define-public r-glarma
   (package
     (name "r-glarma")
@@ -14843,40 +14906,6 @@ probability density function of the t-distribution.")
      "Make smoothed stacked area charts in ggplot2'.  Stream plots are useful to show
 magnitude trends over time.")
     (license license:expat)))
-
-(define-public r-ggstats
-  (package
-    (name "r-ggstats")
-    (version "0.5.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ggstats" version))
-       (sha256
-        (base32 "1jcydapwarl1cxinm80rjmmli8vmlid8alnh6w484bh7nwzmcsic"))))
-    (properties `((upstream-name . "ggstats")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-stringr
-                             r-scales
-                             r-rlang
-                             r-purrr
-                             r-patchwork
-                             r-magrittr
-                             r-lifecycle
-                             r-ggplot2
-                             r-forcats
-                             r-dplyr
-                             r-cli
-                             r-broom-helpers))
-    (native-inputs (list r-knitr))
-    (home-page "https://larmarange.github.io/ggstats/")
-    (synopsis "Extension to 'ggplot2' for Plotting Stats")
-    (description
-     "This package provides new statistics, new geometries and new positions for
-ggplot2 and a suite of functions to facilitate the creation of statistical
-plots.")
-    (license license:gpl3+)))
 
 (define-public r-ggstar
   (package
@@ -17469,6 +17498,35 @@ information.")
      "Flowcharts can be a useful way to visualise complex processes.  This package
 uses the layered grammar of graphics of ggplot2 to create simple flowcharts.")
     (license license:expat)))
+
+(define-public r-ggfixest
+  (package
+    (name "r-ggfixest")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggfixest" version))
+       (sha256
+        (base32 "0i05lvm45kp8l2shxlznlk5yw96rzcilwmm9i9194x0zxz29q5nf"))))
+    (properties `((upstream-name . "ggfixest")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scales
+                             r-marginaleffects
+                             r-ggplot2
+                             r-ggh4x
+                             r-fixest
+                             r-dreamerr))
+    (native-inputs (list r-knitr))
+    (home-page "http://grantmcdermott.com/ggfixest/")
+    (synopsis "Dedicated 'ggplot2' Methods for 'fixest' Objects")
+    (description
+     "This package provides ggplot2 equivalents of fixest::coefplot() and
+fixest::iplot(), for producing nice coefficient plots and interaction plots.
+Enables some additional functionality and convenience features, including
+grouped multi-'fixest object faceting and programmatic updates to existing plots
+(e.g., themes and aesthetics).")
+    (license license:gpl3)))
 
 (define-public r-ggfishplots
   (package
@@ -22035,13 +22093,13 @@ modeling to predict epidemic curves.  The method is described in Peng et al.
 (define-public r-genscore
   (package
     (name "r-genscore")
-    (version "1.0.2.1")
+    (version "1.0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "genscore" version))
        (sha256
-        (base32 "0am6x3bxqgarb47qfsnaqnjy4kl7w2j6wf1pf182mz5qjv82mlxk"))))
+        (base32 "1ffwnxh1c2wlad4wh9lkvixly0a19l8fcgpp0vxxby6iwsd2vshf"))))
     (properties `((upstream-name . "genscore")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmvtnorm r-stringr r-rdpack r-mvtnorm))
@@ -27303,13 +27361,13 @@ Statistics, 60, 279-330 <DOI:10.1111/ANZS.12241>.")
 (define-public r-gammareg
   (package
     (name "r-gammareg")
-    (version "3.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Gammareg" version))
        (sha256
-        (base32 "1wh5k3nazycki0h094m4d0nnign8yksgnrrnrm3yka1s7mqzv781"))))
+        (base32 "0y3iqhrnppznqmx7sfibmwq3yq1l0jd8cfnpv0hch9byllh0syad"))))
     (properties `((upstream-name . "Gammareg")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=Gammareg")

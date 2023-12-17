@@ -1898,13 +1898,13 @@ model for each response.")
 (define-public r-ptxqc
   (package
     (name "r-ptxqc")
-    (version "1.0.17")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PTXQC" version))
        (sha256
-        (base32 "1d47fdsi1fzsrpz6vf6h0crlxsylcjajcscq3lqghq4lsrbypny4"))))
+        (base32 "0wykb4sapnvfhwalbyhwc41058vlmsdb6bxivs3q5c1hji5cc71c"))))
     (properties `((upstream-name . "PTXQC")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -3088,17 +3088,17 @@ linear regressions, Reist standardizations or Aitchison transformation).")
 (define-public r-pst
   (package
     (name "r-pst")
-    (version "0.94")
+    (version "0.94.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PST" version))
        (sha256
-        (base32 "0f28zrnlficbi9iil6wbh51k9mghpkz63hw05lpmlpx1yl5nd0a6"))))
+        (base32 "0rd3mswcckgh5vfb1bpid9dki0yq0ph098jp2awnm21qzvx72va4"))))
     (properties `((upstream-name . "PST")))
     (build-system r-build-system)
     (propagated-inputs (list r-traminer r-rcolorbrewer))
-    (home-page "http://r-forge.r-project.org/projects/pst")
+    (home-page "https://r-forge.r-project.org/projects/pst")
     (synopsis "Probabilistic Suffix Trees and Variable Length Markov Chains")
     (description
      "This package provides a framework for analysing state sequences with
@@ -30750,28 +30750,6 @@ clicking a GUI'.")
     (synopsis "Periodic B Splines")
     (description "Periodic B Splines Basis")
     (license license:gpl2)))
-
-(define-public r-pbrf
-  (package
-    (name "r-pbrf")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PBRF" version))
-       (sha256
-        (base32 "1ibwywgbxnxcb3z2kl2bgh7fz512nhgy2zcdym67asp76c6rkqg6"))))
-    (properties `((upstream-name . "PBRF")))
-    (build-system r-build-system)
-    (native-inputs (list gfortran))
-    (home-page "https://cran.r-project.org/package=PBRF")
-    (synopsis
-     "The Probability of Being in Response Function and Its Variance Estimates")
-    (description
-     "This package provides three ways to estimate the probability of being in
-response function (PBRF) The estimates are presented in Tsai, Luo and Crowley
-(2017) <doi: 10.1007/978-981-10-0126-0_10>.")
-    (license license:gpl2+)))
 
 (define-public r-pbrackets
   (package

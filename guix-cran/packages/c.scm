@@ -20,7 +20,6 @@
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
-  #:use-module (gnu packages photo)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -107,13 +106,13 @@ Bank.")
 (define-public r-cytosimplex
   (package
     (name "r-cytosimplex")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CytoSimplex" version))
        (sha256
-        (base32 "06z2rkv18xi782jxx7jx7kwp8jahwjf5s7l3c3z6r6dz2ms9bavd"))))
+        (base32 "0zknsizsh860hyij5zxpm3izfsiwnp7mshrrnk4fmxsjv9fcxahr"))))
     (properties `((upstream-name . "CytoSimplex")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -3501,16 +3500,16 @@ slice.")
 (define-public r-csranks
   (package
     (name "r-csranks")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "csranks" version))
        (sha256
-        (base32 "1h6g3rn1jv5gdjcbwq7kh2l41b4rdvkb1rf84ikz6ii5r35r30w6"))))
+        (base32 "142kni1c0yfinwjwd9s6lfihwy9s1ss85nqgmkblm7b859l7bmls"))))
     (properties `((upstream-name . "csranks")))
     (build-system r-build-system)
-    (propagated-inputs (list r-scales r-mass r-ggplot2 r-cli))
+    (propagated-inputs (list r-scales r-mass r-lifecycle r-ggplot2 r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/danielwilhelm/R-CS-ranks")
     (synopsis "Statistical Tools for Ranks")
@@ -3519,7 +3518,8 @@ slice.")
 consistently in linear regression with ranked variables.  Construct confidence
 sets of various kinds for positions of populations in a ranking based on values
 of a certain feature and their estimation errors.  Theory based on Mogstad,
-Romano, Shaikh, and Wilhelm (2023)<doi:10.1093/restud/rdad006>.")
+Romano, Shaikh, and Wilhelm (2023)<doi:10.1093/restud/rdad006> and Chetverikov
+and Wilhelm (2023) <@code{arXiv:2310.15512>}.")
     (license license:expat)))
 
 (define-public r-csppdata
@@ -9645,13 +9645,13 @@ imbalance measures.  See Baldi Antognini A, Frieri R, Zagoraiou M and Novelli M
 (define-public r-coursekata
   (package
     (name "r-coursekata")
-    (version "0.14.1")
+    (version "0.15.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coursekata" version))
        (sha256
-        (base32 "0fyvsd0b9wh1vak6hkc22f5hx3sbj30nhbzqnys6f1mh5h0y7hcd"))))
+        (base32 "06w8ql6frbbr41q0d1y3gpjwkhlfkhyv45mjlxpg5q0k8r0ydvwi"))))
     (properties `((upstream-name . "coursekata")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
@@ -10325,13 +10325,13 @@ to multi-species distribution models <@code{arXiv:2201.13095>}.")
 (define-public r-cotima
   (package
     (name "r-cotima")
-    (version "0.6.2")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CoTiMA" version))
        (sha256
-        (base32 "0394a6m1hg9klcgpk4s51rql8k2084cbs6bzpgrsbk3gnvcxy8s3"))))
+        (base32 "1mpinx6wql4fqyfpc94nxw7qav0llg6pyd0kl0wilkfv9vc12yml"))))
     (properties `((upstream-name . "CoTiMA")))
     (build-system r-build-system)
     (propagated-inputs (list r-zcurve
@@ -16217,31 +16217,6 @@ done using the @code{SuperLearner} package, and initial estimation of
 conditional hazards is done using ensembles of Cox regressions from the survival
 package or Coxnet from the glmnet package.")
     (license license:gpl3+)))
-
-(define-public r-concreg
-  (package
-    (name "r-concreg")
-    (version "0.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "concreg" version))
-       (sha256
-        (base32 "0g4my3ra9p797vcky5hsgcicsdbmczgd8fklxrkw2jrgwc0xrkaf"))))
-    (properties `((upstream-name . "concreg")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-survival))
-    (native-inputs (list gfortran))
-    (home-page
-     "https://cemsiis.meduniwien.ac.at/kb/wf/software/statistische-software/concreg/")
-    (synopsis "Concordance Regression")
-    (description
-     "This package implements concordance regression which can be used to estimate
-generalized odds of concordance.  Can be used for non- and semi-parametric
-survival analysis with non-proportional hazards, for binary and for continuous
-outcome data.  The method was introduced by Dunkler, Schemper and Heinze (2010)
-<doi:10.1093/bioinformatics/btq035>.")
-    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-concorr
   (package
@@ -24211,13 +24186,13 @@ data with the artificial panel data generator.  See Sobisek, Stachova, Fojtik
 (define-public r-clugenr
   (package
     (name "r-clugenr")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clugenr" version))
        (sha256
-        (base32 "0bm6wblfcgw9c17g47pz5lhm456kss3dcr43qhwkvradyw7hfs7r"))))
+        (base32 "1xjznvd89cfr43ccnsrwnwv20qghsmrj4ag6l4dksm8212drd628"))))
     (properties `((upstream-name . "clugenr")))
     (build-system r-build-system)
     (propagated-inputs (list r-mathjaxr))
@@ -32163,13 +32138,13 @@ linear coefficients in regression models with grouped data.")
 (define-public r-certara-r
   (package
     (name "r-certara-r")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Certara.R" version))
        (sha256
-        (base32 "0na4411rxxqjyrxjmj27i9b5lrig2jysazk9fnpvrws8c63zl39y"))))
+        (base32 "07k7dj37zywkfbrx85gnl6cvc0a0n1xyvmac0lg74nzqb6qb3i1z"))))
     (properties `((upstream-name . "Certara.R")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -38843,40 +38818,6 @@ subdivisions using the popular ggplot2 package.")
      "Terrestrial maps with simplified topologies for Census Divisions, Agricultural
 Regions, Economic Regions, Federal Electoral Divisions and Provinces.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
-
-(define-public r-camtrapr
-  (package
-    (name "r-camtrapr")
-    (version "2.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "camtrapR" version))
-       (sha256
-        (base32 "12lhw8r1r3xlazm1w3x73fq3krwpvbv6w3rsmlmksaai4nxp2fn8"))))
-    (properties `((upstream-name . "camtrapR")))
-    (build-system r-build-system)
-    (inputs (list perl-image-exiftool))
-    (propagated-inputs (list r-sp
-                             r-sf
-                             r-secr
-                             r-overlap
-                             r-lubridate
-                             r-ggplot2
-                             r-generics
-                             r-data-table))
-    (native-inputs (list r-r-rsp))
-    (home-page "https://github.com/jniedballa/camtrapR")
-    (synopsis
-     "Camera Trap Data Management and Preparation of Occupancy and Spatial Capture-Recapture Analyses")
-    (description
-     "Management of and data extraction from camera trap data in wildlife studies.
-The package provides a workflow for storing and sorting camera trap photos (and
-videos), tabulates records of species and individuals, and creates
-detection/non-detection matrices for occupancy and spatial capture-recapture
-analyses with great flexibility.  In addition, it can visualise species activity
-data and provides simple mapping functions with GIS export.")
-    (license license:gpl2+)))
 
 (define-public r-camsrad
   (package

@@ -1705,13 +1705,13 @@ training set) and deploying them on another (e.g., a test set).")
 (define-public r-duke
   (package
     (name "r-duke")
-    (version "0.0.1")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "duke" version))
        (sha256
-        (base32 "1frnf4kxjjrxbwhc06pcjzmr5zdcdx2ssw5avc2jq54r8d7h3j23"))))
+        (base32 "04z7vcgdljp47grn1ppdj4acfs3gq7xmghyzj96wq1aisnh0777b"))))
     (properties `((upstream-name . "duke")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-ggplot2))
@@ -8710,55 +8710,6 @@ downloading a file if that file does not already exist locally.")
 principal component analysis.  The philosophy of the package is described in Guo
 G. (2020) <doi:10.1080/02331888.2020.1823979>.")
     (license license:expat)))
-
-(define-public r-dlookr
-  (package
-    (name "r-dlookr")
-    (version "0.6.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dlookr" version))
-       (sha256
-        (base32 "1v5wqbhpgh6fvcw68207x36fh4df007shrjwh1g4xpwxd2rhi3xs"))))
-    (properties `((upstream-name . "dlookr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-sysfonts
-                             r-showtext
-                             r-shiny
-                             r-rmarkdown
-                             r-rlang
-                             r-reactable
-                             r-purrr
-                             r-partykit
-                             r-pagedown
-                             r-mice
-                             r-knitr
-                             r-kableextra
-                             r-htmltools
-                             r-hrbrthemes
-                             r-gridextra
-                             r-ggplot2
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/choonghyunryu/dlookr/")
-    (synopsis "Tools for Data Diagnosis, Exploration, Transformation")
-    (description
-     "This package provides a collection of tools that support data diagnosis,
-exploration, and transformation.  Data diagnostics provides information and
-visualization of missing values and outliers and unique and negative values to
-help you understand the distribution and quality of your data.  Data exploration
-provides information and visualization of the descriptive statistics of
-univariate variables, normality tests and outliers, correlation of two
-variables, and relationship between target variable and predictor.  Data
-transformation supports binning for categorizing continuous variables, imputates
-missing values and outliers, resolving skewness.  And it creates automated
-reports that support these three tasks.")
-    (license (list license:gpl2
-                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-dlnm
   (package

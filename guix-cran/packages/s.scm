@@ -1684,6 +1684,34 @@ as personal identity numbers ('personnummer') and organizational identity
 numbers ('organisationsnummer').")
     (license license:bsd-2)))
 
+(define-public r-sweepdiscovery
+  (package
+    (name "r-sweepdiscovery")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SweepDiscovery" version))
+       (sha256
+        (base32 "1302bhkbgb898jjjpmn4gvfj3qid54bbk24d41ssz55cbyaqsimm"))))
+    (properties `((upstream-name . "SweepDiscovery")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-randomforest))
+    (home-page "https://cran.r-project.org/package=SweepDiscovery")
+    (synopsis "Selective Sweep Discovery Tool")
+    (description
+     "Selective sweep is a biological phenomenon in which genetic variation between
+neighboring beneficial mutant alleles is swept away due to the effect of genetic
+hitchhiking.  Detection of selective sweep is not well acquainted as well as it
+is a laborious job.  This package is a user friendly approach for detecting
+selective sweep in genomic regions.  It uses a Random Forest based machine
+learning approach to predict selective sweep from VCF files as an input.  Input
+of this function, train data and new data, can be computed using the project
+<https://github.com/@code{AbhikSarkar1999/SweepDiscovery>} in @code{GitHub}'.
+This package has been developed by using the concept of Pavlidis and Alachiotis
+(2017) <doi:10.1186/s40709-017-0064-0>.")
+    (license license:gpl3)))
+
 (define-public r-sweep
   (package
     (name "r-sweep")
@@ -9739,13 +9767,13 @@ on piecewise rational functions using Stineman's algorithm.")
 (define-public r-stima
   (package
     (name "r-stima")
-    (version "1.2.1")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stima" version))
        (sha256
-        (base32 "091pjjr2pvd93l01szyj5gr9ixv1h90yd18h678nhpn0fncimszv"))))
+        (base32 "0455disf5lpgxns0mwgmqbglyr9ih2v85vqp7hmardq028axwxrk"))))
     (properties `((upstream-name . "stima")))
     (build-system r-build-system)
     (propagated-inputs (list r-rpart))
@@ -14873,6 +14901,26 @@ the population.  Sample sizes and expected rewards for standard t- and z- tests
 are also provided.")
     (license license:gpl3)))
 
+(define-public r-sseparser
+  (package
+    (name "r-sseparser")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SSEparser" version))
+       (sha256
+        (base32 "1qjvrs8cv2m4g2rjcdylwss641z4cchzsdymn0lmmdpfcnfys1vy"))))
+    (properties `((upstream-name . "SSEparser")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr r-rlang r-r6 r-purrr r-magrittr))
+    (home-page "https://github.com/calderonsamuel/SSEparser")
+    (synopsis "Parse Server-Sent Events")
+    (description
+     "Functionality to parse server-sent events with a high-level interface that can
+be extended for custom applications.")
+    (license license:expat)))
+
 (define-public r-sse
   (package
     (name "r-sse")
@@ -15451,6 +15499,40 @@ Swartz, 2001, <doi:10.2307/3316080>; Nestler, 2018,
 <doi:10.3102/1076998617741106>) and least squares estimation is supported (Bond
 & Malloy, 2018, <doi:10.1016/B978-0-12-811967-9.00014-X>).")
     (license license:gpl2+)))
+
+(define-public r-srlts
+  (package
+    (name "r-srlts")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "srlTS" version))
+       (sha256
+        (base32 "1alqywbp36adgnak1s78mcwfg0gcg90a9412nypylsk6bfa7wgsv"))))
+    (properties `((upstream-name . "srlTS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yardstick r-rlang r-rcpproll r-ncvreg r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://petersonr.github.io/srlTS/")
+    (synopsis "Sparsity-Ranked Lasso for Time Series")
+    (description
+     "An implementation of sparsity-ranked lasso for time series data.  This
+methodology is especially useful for large time series with exogenous features
+and/or complex seasonality.  Originally described in Peterson and Cavanaugh
+(2022) <doi:10.1007/s10182-021-00431-7> in the context of variable selection
+with interactions and/or polynomials, ranked sparsity is a philosophy with
+methods useful for variable selection in the presence of prior informational
+asymmetry.  This situation exists for time series data with complex seasonality,
+as shown in Peterson and Cavanaugh (2023+)
+<doi:10.48550/@code{arXiv.2211.01492>}, which also describes this package in
+greater detail.  The Sparsity-Ranked Lasso (SRL) for Time Series implemented in
+@code{srlTS} can fit large/complex/high-frequency time series quickly, even with
+a high-dimensional exogenous feature set.  The SRL is considerably faster than
+its competitors, while often producing more accurate predictions.  Also included
+is a long hourly series of arrivals into the University of Iowa Emergency
+Department with concurrent local temperature.")
+    (license license:gpl3+)))
 
 (define-public r-srlars
   (package
@@ -25299,13 +25381,13 @@ constraints\".  Biometrics, 75, 539-550. <doi:10.1111/biom.12997>.")
 (define-public r-sorcering
   (package
     (name "r-sorcering")
-    (version "0.9.2.3")
+    (version "1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sorcering" version))
        (sha256
-        (base32 "018zrk82qsickxkimm7hbzayixqfzw32fsi080las52rg0i0agin"))))
+        (base32 "0xginf1zd1hsxw57fk62jpvm458iqqm7ba5873jvl2yj73qgy0zw"))))
     (properties `((upstream-name . "sorcering")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-rcpparmadillo r-rcpp r-mathjaxr))
@@ -37146,13 +37228,13 @@ properly by screen readers.")
 (define-public r-signnet
   (package
     (name "r-signnet")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "signnet" version))
        (sha256
-        (base32 "0vp6ja12ipl2cg7sam48ari5civ36fz24yvyvibi4m8ncdnpil6c"))))
+        (base32 "1s7v94jckaml6j8j2zvgjnar89d20k99vv5gq1bn7pwb2p734g1f"))))
     (properties `((upstream-name . "signnet")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix r-igraph))
@@ -43406,6 +43488,28 @@ polygon triangulation method that starts with ear clipping and refines to
 Delaunay.")
     (license (license:fsdg-compatible "CC BY-NC-SA 4.0"))))
 
+(define-public r-sfd
+  (package
+    (name "r-sfd")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sfd" version))
+       (sha256
+        (base32 "0zx0ramfbcq9k21c5a6ynh2wvsa6zfpqd21i6dhawvfw98afplbi"))))
+    (properties `((upstream-name . "sfd")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble r-rlang r-cli))
+    (home-page "https://cran.r-project.org/package=sfd")
+    (synopsis "Space-Filling Design Library")
+    (description
+     "This package provides a collection of pre-optimized space-filling designs, for
+up to ten parameters, is contained here.  Functions are provided to access
+designs described by Husslage et al (2011) <doi:10.1007/s11081-010-9129-8>.  The
+design types included are Audze-Eglais and @code{MaxiMin}.")
+    (license license:expat)))
+
 (define-public r-sfcr
   (package
     (name "r-sfcr")
@@ -44092,13 +44196,13 @@ outcome misclassification in data.")
 (define-public r-sequential
   (package
     (name "r-sequential")
-    (version "4.3.1")
+    (version "4.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Sequential" version))
        (sha256
-        (base32 "1msssr982xag6avb2si5z65gakqkpyzylrqykkplmvslj26vxrim"))))
+        (base32 "1vm9js7lsbhl4y0hwq4z2737xc4kzwf6sj95r64wc1ikan702lxq"))))
     (properties `((upstream-name . "Sequential")))
     (build-system r-build-system)
     (propagated-inputs (list r-boot))
@@ -56015,23 +56119,16 @@ population using simple random, stratified, systematic and cluster sampling.")
 (define-public r-samplingin
   (package
     (name "r-samplingin")
-    (version "1.0.1")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "samplingin" version))
        (sha256
-        (base32 "0wy5yx5j2qz84j9947vjni4bi1rszp5s95p18d1dgkhfnvhwbnyp"))))
+        (base32 "1z3x4f9bqcn0a4ks82176mpcxj4c9pi7cc2d2i1ymj5lriqx17ca"))))
     (properties `((upstream-name . "samplingin")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-stringr
-                             r-rlang
-                             r-rio
-                             r-magrittr
-                             r-dt
-                             r-dplyr
-                             r-data-table))
+    (propagated-inputs (list r-rlang r-magrittr r-dplyr r-data-table))
     (home-page "https://cran.r-project.org/package=samplingin")
     (synopsis "Dynamic Survey Sampling Solutions")
     (description

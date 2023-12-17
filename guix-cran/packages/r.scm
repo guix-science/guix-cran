@@ -3669,13 +3669,13 @@ trading professionals.  Includes functions for API calls to
 (define-public r-rtkore
   (package
     (name "r-rtkore")
-    (version "1.6.7")
+    (version "1.6.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtkore" version))
        (sha256
-        (base32 "0v3p2amkkz137v1vqd1xiv9i1jayd265mwyajjzw56ngm8qpr4jv"))))
+        (base32 "1mdvlqnhp0m79j5ak81i91w5y1jqh43f6qyxajn20a8jryj0f68b"))))
     (properties `((upstream-name . "rtkore")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-inline))
@@ -12850,13 +12850,13 @@ functional data by being robust against the presence of outliers.")
 (define-public r-rodeo
   (package
     (name "r-rodeo")
-    (version "0.7.7")
+    (version "0.7.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rodeo" version))
        (sha256
-        (base32 "1cfsf6sld72bm1343p6fzpfwq7a976basf3fg5fqsj2rcx6b1q7b"))))
+        (base32 "0sqds225bvnw1z6a36f14fck0jnaa0ilz2n8ylkw6j5f7dx1yf0n"))))
     (properties `((upstream-name . "rodeo")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-desolve))
@@ -13804,13 +13804,13 @@ the meta-analysis methods are developed by Noma et al. (2022) <forthcoming>.")
 (define-public r-robustlmm
   (package
     (name "r-robustlmm")
-    (version "3.2-5")
+    (version "3.3-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "robustlmm" version))
        (sha256
-        (base32 "01va1jx1h2pilgkwmrcgd8mp7yg61x4qb7qwqsqyw146dbbcb7w8"))))
+        (base32 "1rv08rxv0s2013hq196p4rnh3hh5gvcv8jw14sbh9lm1hzkj67rg"))))
     (properties `((upstream-name . "robustlmm")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -19628,13 +19628,13 @@ Based on \"Robust Likelihood Cross-Validation for Kernel Density Estimation,\" W
 (define-public r-rlc
   (package
     (name "r-rlc")
-    (version "0.4.1")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rlc" version))
        (sha256
-        (base32 "1znx2749m9af3jq3avxf50amkhzvimr5ybwmk4g9vhwka86c3vqk"))))
+        (base32 "1n13hlspsb118md6nh1w09gww4b58kxqf3lcp8g3zv14hr2dgwkr"))))
     (properties `((upstream-name . "rlc")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -21085,6 +21085,28 @@ SCORE2 working group and ESC Cardiovascular risk collaboration (2021)
 <doi:10.1093/eurheartj/ehab309>.  TIMI described in Antman EM, et al (2000)
 <doi:10.1001/jama.284.7.835>.")
     (license license:expat)))
+
+(define-public r-riskscores
+  (package
+    (name "r-riskscores")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "riskscores" version))
+       (sha256
+        (base32 "068g0dq3cjnfrb09bkcivbm9n62lb59bvmkbh468hnzayp4lli9w"))))
+    (properties `((upstream-name . "riskscores")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-magrittr r-ggplot2 r-foreach r-dplyr))
+    (native-inputs (list r-knitr r-kableextra))
+    (home-page "https://github.com/hjeglinton/riskscores")
+    (synopsis "Optimized Integer Risk Score Models")
+    (description
+     "This package implements an optimized approach to learning risk score models,
+where sparsity and integer constraints are integrated into the model-fitting
+process.")
+    (license license:gpl3+)))
 
 (define-public r-risks
   (package
@@ -24343,13 +24365,13 @@ administrative boundaries dataset.")
 (define-public r-rgenoud
   (package
     (name "r-rgenoud")
-    (version "5.9-0.3")
+    (version "5.9-0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rgenoud" version))
        (sha256
-        (base32 "0pxmisc0vsdchqaaxqcblnhhviizgcwhvsbklr3rq7vrmn6hlmii"))))
+        (base32 "1sfd59lislwcb81j56a5z9b1d62r69hb6gg05g9x4zh919jfwi76"))))
     (properties `((upstream-name . "rgenoud")))
     (build-system r-build-system)
     (home-page "https://github.com/JasjeetSekhon/rgenoud")
@@ -32353,13 +32375,13 @@ default reports are generated as vignettes in the resulting package.")
 (define-public r-redcapdm
   (package
     (name "r-redcapdm")
-    (version "0.8.5")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "REDCapDM" version))
        (sha256
-        (base32 "03ic1mrkd4zd3bdvcxb4l4v6knmzgs06k4g16vfsvxkhvcrdjnby"))))
+        (base32 "00wxlvlgfj91mp6lgls8pf906lsy3vpc3vhh4p3m2jr4drxz8isf"))))
     (properties `((upstream-name . "REDCapDM")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -33983,13 +34005,13 @@ datasets from providers like the Roper Center <https://ropercenter.cornell.edu>.
 (define-public r-readrba
   (package
     (name "r-readrba")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "readrba" version))
        (sha256
-        (base32 "0nb185mmbcc796l9xy5v9p1y9hssd00wypxsm3s2212mczcbpail"))))
+        (base32 "1aywzkcfkhfp913n5yihglj373i6fyvzi0mx293vm5rs8z2kzhdz"))))
     (properties `((upstream-name . "readrba")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -41509,13 +41531,13 @@ formats and data structures common to data analysis practitioners.")
 (define-public r-rayvertex
   (package
     (name "r-rayvertex")
-    (version "0.10.3")
+    (version "0.10.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rayvertex" version))
        (sha256
-        (base32 "1ahk6mi3vkdg5lm8wghk126qp035jslk5rfsicfdfdq29imjfag6"))))
+        (base32 "16rkin3dq648x1gwi9kdpaamb4zsvp326y84pnbwrivny2g9j7q3"))))
     (properties `((upstream-name . "rayvertex")))
     (build-system r-build-system)
     (propagated-inputs (list r-spacefillr
@@ -44279,6 +44301,31 @@ learning.")
 names.  Names are chosen proportionally based upon their probability of
 appearing in a large scale data base of real names.")
     (license license:gpl3)))
+
+(define-public r-randommachines
+  (package
+    (name "r-randommachines")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "randomMachines" version))
+       (sha256
+        (base32 "1b34jwvs2x67kbjmxa5rpxlrqsvghgnyddz250nwpchj2s4lgc17"))))
+    (properties `((upstream-name . "randomMachines")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-kernlab))
+    (home-page "https://cran.r-project.org/package=randomMachines")
+    (synopsis "An Ensemble Modeling using Random Machines")
+    (description
+     "This package provides a novel ensemble method employing Support Vector Machines
+(SVMs) as base learners.  This powerful ensemble model is designed for both
+classification (Ara A., et.  al, 2021) <doi:10.6339/21-JDS1014>, and regression
+(Ara A., et.  al, 2021) <doi:10.1016/j.eswa.2022.117107> problems, offering
+versatility and robust performance across different datasets and compared with
+other consolidated methods as Random Forests (Maia M, et.  al, 2021)
+<doi:10.6339/21-JDS1025>.")
+    (license license:expat)))
 
 (define-public r-randomlca
   (package
@@ -47046,13 +47093,13 @@ the visualization into R. Based on the 3dmol.js and the htmlwidgets R package.")
 (define-public r-r2winbugs
   (package
     (name "r-r2winbugs")
-    (version "2.1-21")
+    (version "2.1-22")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "R2WinBUGS" version))
        (sha256
-        (base32 "0k8k214x712vjj2k1am4zzf6scccs3b98ysiz4lwxpzm818wp1ps"))))
+        (base32 "0yc1s7ccz9vghpavs92mj9q759jmaprap2w277qjqmf4qybl1mxf"))))
     (properties `((upstream-name . "R2WinBUGS")))
     (build-system r-build-system)
     (propagated-inputs (list r-coda r-boot))

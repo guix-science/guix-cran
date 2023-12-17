@@ -3568,13 +3568,13 @@ are distributed under the Norwegian License for Open Data 2.0 (NLOD)
 (define-public r-frontiles
   (package
     (name "r-frontiles")
-    (version "1.3")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "frontiles" version))
        (sha256
-        (base32 "0m4hw4bybahwmpj14ypc5f078j6zpxi5c04ys9qnhks6x4g2a646"))))
+        (base32 "0l9hyd5rmam5xqa717vcr4cj5fxdfxrjgfdfc6q04hnqzw09cg05"))))
     (properties `((upstream-name . "frontiles")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgl r-colorspace))
@@ -12133,17 +12133,17 @@ information about 5-digit or 2-digit US FIPS codes.")
 (define-public r-fints
   (package
     (name "r-fints")
-    (version "0.4-6")
+    (version "0.4-8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FinTS" version))
        (sha256
-        (base32 "1lj1lzyglfphgas17j9isd7ama05m3qr0mkfisyh2w1srgqxi32r"))))
+        (base32 "0wa1jn1qjqsajahkf1ildajzcmwr8rwgnr0v34qvc86nkyhdd8sp"))))
     (properties `((upstream-name . "FinTS")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo))
-    (home-page "https://r-forge.r-project.org/projects/fints/")
+    (home-page "https://geobosh.github.io/FinTSDoc/")
     (synopsis "Companion to Tsay (2005) Analysis of Financial Time Series")
     (description
      "R companion to Tsay (2005) Analysis of Financial Time Series, second edition
@@ -12958,13 +12958,13 @@ Explore models and export directly to PDF and Word using RMarkdown'.")
 (define-public r-fimport
   (package
     (name "r-fimport")
-    (version "4021.86")
+    (version "4032.87")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fImport" version))
        (sha256
-        (base32 "011hrbwxf6v4abxsk4zw26awnh1nxmn3vgsx58awbx2jg6gcc9cj"))))
+        (base32 "1vcfzivsv88k9827dlm93radm0m33cwlhx8vqnz81ib5b65amqsx"))))
     (properties `((upstream-name . "fImport")))
     (build-system r-build-system)
     (propagated-inputs (list r-timeseries r-timedate))
@@ -15950,13 +15950,13 @@ the plot of the functional data.")
 (define-public r-fdasrvf
   (package
     (name "r-fdasrvf")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fdasrvf" version))
        (sha256
-        (base32 "0ba4gmn4d894l82bbzxw5hbn4p8a02m3g4fw2zgvwd3a7a9dbx7s"))))
+        (base32 "12n2wwhks50i9a6rzb05zmiil52qnmis0080zw98bblz6pxxfzqj"))))
     (properties `((upstream-name . "fdasrvf")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
@@ -19418,6 +19418,29 @@ Allen, R. G., Pereira, L. S., Raes, D., Smith, M. (1998, ISBN:92-5-104219-5)
 \"Crop evapotranspiration - Guidelines for computing crop water requirements -
 FAO Irrigation and drainage paper 56\".")
     (license license:gpl2+)))
+
+(define-public r-fanyi
+  (package
+    (name "r-fanyi")
+    (version "0.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fanyi" version))
+       (sha256
+        (base32 "01cx99vmrq9qmpsfnnpw4g4mqlfssrm95swb85m6z34xam3gm0n7"))))
+    (properties `((upstream-name . "fanyi")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-openssl r-jsonlite r-httr))
+    (home-page "https://cran.r-project.org/package=fanyi")
+    (synopsis "Translate Words or Sentences via Online Translators")
+    (description
+     "Useful functions to translate text for multiple languages using online
+translators.  For example, by translating error messages and descriptive
+analysis results into a language familiar to the user, it enables a better
+understanding of the information, thereby reducing the barriers caused by
+language.")
+    (license license:artistic2.0)))
 
 (define-public r-fanplot
   (package

@@ -2477,6 +2477,47 @@ relies on.  Data is returned in a tidy format and posts can be made using a
 simple interface.")
     (license license:expat)))
 
+(define-public r-bsitar
+  (package
+    (name "r-bsitar")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bsitar" version))
+       (sha256
+        (base32 "0hmw0v1qwwlavbbalc56z29f29lx2m27s5m3byqw4rsa9i76bhn1"))))
+    (properties `((upstream-name . "bsitar")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sitar
+                             r-rstan
+                             r-rlang
+                             r-rdpack
+                             r-magrittr
+                             r-loo
+                             r-dplyr
+                             r-brms))
+    (native-inputs (list r-r-rsp r-knitr))
+    (home-page "https://cran.r-project.org/package=bsitar")
+    (synopsis
+     "Bayesian Super Imposition by Translation and Rotation Growth Curve Analysis")
+    (description
+     "The Super Imposition by Translation and Rotation (SITAR) model is a
+shape-invariant nonlinear mixed effect model that fits a natural cubic spline
+mean curve and and then aligns individual-specific growth curves to the mean
+curve via a set of random effects on both effects.  For more details, please see
+Cole (2010) <doi:10.1093/ije/dyq115>.  The non Bayesian version of the SITAR
+model can be fit by using an already available R package sitar'.  However, the
+sitar package allows modelling of a single outcome only.  The bsitar package, in
+addition to fitting SITAR to a single outcome, offers a great flexibility in
+fitting models of varying complexities that include joint modelling of multiple
+outcomes (multivariate model) such as height and weight, and to fit separate
+models defined by sub group such as gender when analyzing a single outcome.
+Furthermore, since the bsitar package is a front-end to the R package brms', it
+offers an excellent support for post-processing of posterior draws which is
+available from the brms package.")
+    (license license:gpl2)))
+
 (define-public r-bsims
   (package
     (name "r-bsims")
@@ -3125,38 +3166,6 @@ coefficients of a regression; augment(), which adds columns to the original data
 such as predictions, residuals and cluster assignments; and glance(), which
 provides a one-row summary of model-level statistics.")
     (license license:gpl3)))
-
-(define-public r-broom-helpers
-  (package
-    (name "r-broom-helpers")
-    (version "1.14.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "broom.helpers" version))
-       (sha256
-        (base32 "14vaqxv12yrvqllp8552nx68wk2qfjcy1iy7bajkspgdpwsjzhfd"))))
-    (properties `((upstream-name . "broom.helpers")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-purrr
-                             r-lifecycle
-                             r-labelled
-                             r-dplyr
-                             r-cli
-                             r-broom))
-    (native-inputs (list r-knitr))
-    (home-page "https://larmarange.github.io/broom.helpers/")
-    (synopsis "Helpers for Model Coefficients Tibbles")
-    (description
-     "This package provides suite of functions to work with regression model
-broom::tidy() tibbles.  The suite includes functions to group regression model
-terms by variable, insert reference and header rows for categorical variables,
-add variable labels, and more.")
-    (license license:gpl3+)))
 
 (define-public r-broman
   (package
@@ -6374,13 +6383,13 @@ the Slacks-Based Measure (SBM).")
 (define-public r-boomspikeslab
   (package
     (name "r-boomspikeslab")
-    (version "1.2.5")
+    (version "1.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BoomSpikeSlab" version))
        (sha256
-        (base32 "1y1bn9490g3qvvjvxk8sc0312hmzwj0n5rg9fsa7k4av0yasv25w"))))
+        (base32 "0gn6fb68hk0kzpa4mp4465rsbk37fkq7nnx6bvd5bhhk1zi25xl7"))))
     (properties `((upstream-name . "BoomSpikeSlab")))
     (build-system r-build-system)
     (propagated-inputs (list r-boom))
@@ -6402,13 +6411,13 @@ explanation of the Gaussian case.")
 (define-public r-boom
   (package
     (name "r-boom")
-    (version "0.9.12")
+    (version "0.9.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Boom" version))
        (sha256
-        (base32 "1sh19fww3b0fy6ichirjs1gmhvlxzhmqp9mgya3n9q4r19mx0k7j"))))
+        (base32 "0giv4d9xa61xmi9glxsm50a8q839hhwj5ccdxhazqar9gpza6kxb"))))
     (properties `((upstream-name . "Boom")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -9869,13 +9878,13 @@ Hidasi-Neto, J (2014)
 (define-public r-bittermelon
   (package
     (name "r-bittermelon")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bittermelon" version))
        (sha256
-        (base32 "15m56fxw0sj5jfl3fn0yvqw518j8iyc9ry63x9ycfs253mc5gam8"))))
+        (base32 "0v1i7pmblin55vz94i68fwih9djp40wqqyibl361dwyz345j3in5"))))
     (properties `((upstream-name . "bittermelon")))
     (build-system r-build-system)
     (propagated-inputs (list r-unicode r-rappdirs r-png r-findpython))
@@ -21475,13 +21484,13 @@ of specific algorithms.")
 (define-public r-bayesiantreg
   (package
     (name "r-bayesiantreg")
-    (version "1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Bayesiantreg" version))
        (sha256
-        (base32 "0m8snwhjskwxdm0a2wsmf1j7d0xxvg4sh0ix64zss71l610wica7"))))
+        (base32 "1bg6dqvpmsx4pnp0bv16m1rpgz68yjmcw8c832xn649fyk5dmanx"))))
     (properties `((upstream-name . "Bayesiantreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-matrix r-mass))

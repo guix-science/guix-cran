@@ -6761,43 +6761,45 @@ species, population, or genes) and the data used to create them.")
 (define-public r-treebalance
   (package
     (name "r-treebalance")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "treebalance" version))
        (sha256
-        (base32 "0wxsd9mx7bcz95vn4a9w1bzqvd8v1qk5qv00p3x58qks7nzxyzdv"))))
+        (base32 "0mj621kx0gsik8ds0gch3g5b7ndbncw4hin2h2jzlgp7hylkmlhi"))))
     (properties `((upstream-name . "treebalance")))
     (build-system r-build-system)
-    (propagated-inputs (list r-memoise r-ape))
+    (propagated-inputs (list r-memoise r-gmp r-ape))
     (home-page "https://cran.r-project.org/package=treebalance")
     (synopsis "Computation of Tree (Im)Balance Indices")
     (description
      "The aim of the R package treebalance is to provide functions for the computation
 of a large variety of (im)balance indices for rooted trees.  The package
-accompanies the manuscript Tree balance indices: a comprehensive survey by M.
-Fischer, L. Herbst, S. Kersting, L. Kuehn and K. Wicke (2021)
-<@code{arXiv:2109.12281>}, which gives a precise definition for the terms
-balance index and imbalance index (Section 3) and provides an overview of the
-terminology in this manual (Section 2).  For further information on (im)balance
+accompanies the book Tree balance indices: a comprehensive survey by M. Fischer,
+L. Herbst, S. Kersting, L. Kuehn and K. Wicke (2023) <ISBN: 978-3-031-39799-8>,
+<doi:10.1007/978-3-031-39800-1>, which gives a precise definition for the terms
+balance index and imbalance index (Chapter 4) and provides an overview of the
+terminology in this manual (Chapter 2).  For further information on (im)balance
 indices, see also Fischer et al. (2021) <https://treebalance.wordpress.com>.
 Considering both established and new (im)balance indices, treebalance provides
-(among others) functions for calculating the following 18 established indices:
-the average leaf depth, the B1 and B2 index, the Colijn-Plazzotta rank, the
-normal, corrected, quadratic and equal weights Colless index, the family of
-Colless-like indices, the family of I-based indices, the Rogers J index, the
-Furnas rank, the rooted quartet index, the s-shape statistic, the Sackin index,
-the symmetry nodes index, the total cophenetic index and the variance of leaf
-depths.  Additionally, we include 5 tree shape statistics that satisfy the
-definition of an (im)balance index but have not been thoroughly analyzed in
-terms of tree balance in the literature yet.  These are: the maximum width, the
-maximum difference in widths, the maximal depth, the stairs1 and the stairs2
-index.  As input, most functions of treebalance require a rooted (phylogenetic)
-tree in phylo format (as introduced in ape 1.9 in November 2006).  phylo is used
-to store (phylogenetic) trees with no vertices of out-degree one.  For further
-information on the format we kindly refer the reader to E. Paradis (2012)
-<http://ape-package.ird.fr/misc/@code{FormatTreeR_24Oct2012.pdf>}.")
+(among others) functions for calculating the following 18 established indices
+and index families: the average leaf depth, the B1 and B2 index, the
+Colijn-Plazzotta rank, the normal, corrected, quadratic and equal weights
+Colless index, the family of Colless-like indices, the family of I-based
+indices, the Rogers J index, the Furnas rank, the rooted quartet index, the
+s-shape statistic, the Sackin index, the symmetry nodes index, the total
+cophenetic index and the variance of leaf depths.  Additionally, we include 9
+tree shape statistics that satisfy the definition of an (im)balance index but
+have not been thoroughly analyzed in terms of tree balance in the literature
+yet.  These are: the total internal path length, the total path length, the
+average vertex depth, the maximum width, the modified maximum difference in
+widths, the maximum depth, the maximum width over maximum depth, the stairs1 and
+the stairs2 index.  As input, most functions of treebalance require a rooted
+(phylogenetic) tree in phylo format (as introduced in ape 1.9 in November 2006).
+ phylo is used to store (phylogenetic) trees with no vertices of out-degree one.
+ For further information on the format we kindly refer the reader to E. Paradis
+(2012) <http://ape-package.ird.fr/misc/@code{FormatTreeR_24Oct2012.pdf>}.")
     (license license:gpl3)))
 
 (define-public r-tree3d
@@ -10956,13 +10958,13 @@ values or a user-supplied regression function are passed in as arguments.")
 (define-public r-tml
   (package
     (name "r-tml")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TML" version))
        (sha256
-        (base32 "0yaqf000dgki3vb3gyr5zzmvnshspliawv8wap21y4iarrv15pl6"))))
+        (base32 "0krnh14mi3vi4msiz84f56kmzq12b1qc246jny37isl1b2wz2zrp"))))
     (properties `((upstream-name . "TML")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -13278,6 +13280,35 @@ Gaussian process models fitted for each gene or other genomic element.  The
 browser is available at <https://github.com/PROBIC/@code{tigreBrowser>}.")
     (license license:agpl3)))
 
+(define-public r-tightenblock
+  (package
+    (name "r-tightenblock")
+    (version "0.1.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tightenBlock" version))
+       (sha256
+        (base32 "0ic4zw6c35sjhcni9x9qlaw03cr48fka64p30kx4j51lkm6ynaxh"))))
+    (properties `((upstream-name . "tightenBlock")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcbalance r-mass))
+    (home-page "https://cran.r-project.org/package=tightenBlock")
+    (synopsis
+     "Tightens an Observational Block Design by Balanced Subset Matching")
+    (description
+     "Tightens an observational block design into a smaller design with either smaller
+or fewer blocks while controlling for covariates.  The method uses fine balance,
+optimal subset matching (Rosenbaum, 2012 <doi:10.1198/jcgs.2011.09219>) and
+two-criteria matching (Zhang et al 2023 <doi:10.1080/01621459.2021.1981337>).
+The main function is tighten().  The suggested rrelaxiv package for solving
+minimum cost flow problems: (i) derives from Bertsekas and Tseng (1988)
+<doi:10.1007/BF02288322>, (ii) is not available on CRAN due to its academic
+license, (iii) may be downloaded from @code{GitHub} at
+<https://github.com/josherrickson/rrelaxiv/>, (iv) is not essential to use the
+package.")
+    (license license:gpl2)))
+
 (define-public r-tightclust
   (package
     (name "r-tightclust")
@@ -13737,13 +13768,13 @@ checks, saving to PDF and PNG from a pipe and various small utilities.")
 (define-public r-tidyterra
   (package
     (name "r-tidyterra")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyterra" version))
        (sha256
-        (base32 "11y7kpg180k7lasayh0nw1fa1fqd92pmkvshbp4fv158yr0z04jx"))))
+        (base32 "0ipn709sd6znjmzg6p0zlzq1ccjy578jhf11j5ln17ih8jsxr973"))))
     (properties `((upstream-name . "tidyterra")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -19761,6 +19792,50 @@ An alternative to ggtern', which uses the ggplot2 family of plotting functions.
 Includes a Shiny user interface for point-and-click ternary plotting.")
     (license license:gpl2+)))
 
+(define-public r-tern-mmrm
+  (package
+    (name "r-tern-mmrm")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tern.mmrm" version))
+       (sha256
+        (base32 "0iiyqcc34dicgfvr2wk499m234cb9nb4zxndgxdb2xnzisx53inq"))))
+    (properties `((upstream-name . "tern.mmrm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tern
+                             r-rtables
+                             r-rlang
+                             r-parallelly
+                             r-mmrm
+                             r-magrittr
+                             r-lifecycle
+                             r-ggplot2
+                             r-generics
+                             r-formatters
+                             r-emmeans
+                             r-dplyr
+                             r-cowplot
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/insightsengineering/tern.mmrm")
+    (synopsis
+     "Tables and Graphs for Mixed Models for Repeated Measures (MMRM)")
+    (description
+     "Mixed models for repeated measures (MMRM) are a popular choice for analyzing
+longitudinal continuous outcomes in randomized clinical trials and beyond; see
+for example Cnaan, Laird and Slasor (1997)
+<doi:10.1002/(SICI)1097-0258(19971030)16:20%3C2349::AID-SIM667%3E3.0.CO;2-E>.
+This package provides an interface for fitting MMRM within the tern
+<https://cran.r-project.org/package=tern> framework by Zhu et al. (2023) and
+tabulate results easily using rtables
+<https://cran.r-project.org/package=rtables> by Becker et al. (2023).  It builds
+on mmrm <https://cran.r-project.org/package=mmrm> by @code{SabanÃ©s}
+@code{BovÃ©} et al. (2023) for the actual MMRM computations.")
+    (license license:asl2.0)))
+
 (define-public r-tern-gee
   (package
     (name "r-tern-gee")
@@ -21084,13 +21159,13 @@ Okajima et al. (2012) <doi:10.1007/s11284-011-0905-5>.")
 (define-public r-teal-widgets
   (package
     (name "r-teal-widgets")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal.widgets" version))
        (sha256
-        (base32 "06qbwy3bwfl1x2lqggzqjz4skb0n11vnvgyl7pr8pvwv97zlalpr"))))
+        (base32 "0qdjc1w1kh0k155vp0w0rs5yh26lmds9i6xv4dhrgnn7h2gaqgv1"))))
     (properties `((upstream-name . "teal.widgets")))
     (build-system r-build-system)
     (propagated-inputs (list r-styler
@@ -22594,36 +22669,16 @@ Integrated Taxonomic Information System ITIS', harvesting names from Wikipedia
 and fuzzy matching.")
     (license license:cc0)))
 
-(define-public r-taxonstand
-  (package
-    (name "r-taxonstand")
-    (version "2.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Taxonstand" version))
-       (sha256
-        (base32 "0zph4618bwjfvx41ap9d2534kknbni216y90nmcvaniskw4ixm7d"))))
-    (properties `((upstream-name . "Taxonstand")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-pbapply))
-    (home-page "https://cran.r-project.org/package=Taxonstand")
-    (synopsis "Taxonomic Standardization of Plant Species Names")
-    (description
-     "Automated standardization of taxonomic names and removal of orthographic errors
-in plant species names using The Plant List website (www.theplantlist.org).")
-    (license license:gpl2+)))
-
 (define-public r-taxonomizr
   (package
     (name "r-taxonomizr")
-    (version "0.10.2")
+    (version "0.10.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "taxonomizr" version))
        (sha256
-        (base32 "1d652945njl8s5q161bbp6yp8a2lylhwsyiqziw1gn58q4152y3n"))))
+        (base32 "1g4r42zc9h6f0x875b0nyg56frzn4q7k5vk1jkwczz6ic5cbwigj"))))
     (properties `((upstream-name . "taxonomizr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rsqlite r-r-utils r-data-table r-curl))

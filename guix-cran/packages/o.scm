@@ -9876,13 +9876,13 @@ the data sets with variables \"harmonized\" across different years.")
 (define-public r-odbc
   (package
     (name "r-odbc")
-    (version "1.3.5")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "odbc" version))
        (sha256
-        (base32 "0mvqf0my25djxvpx809rbm7484f0m6bpf8bqmg0c04avfiqg2c5i"))))
+        (base32 "0wz23f9rzqvmj8qpa9wm4kbxhjz27rwq5w72538pxj1w0kmkfw3h"))))
     (properties `((upstream-name . "odbc")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -9891,7 +9891,7 @@ the data sets with variables \"harmonized\" across different years.")
                              r-dbi
                              r-blob
                              r-bit64))
-    (native-inputs (list pkg-config))
+    (native-inputs (list r-knitr pkg-config))
     (home-page "https://r-dbi.github.io/odbc/")
     (synopsis "Connect to ODBC Compatible Databases (using the DBI Interface)")
     (description

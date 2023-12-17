@@ -1053,13 +1053,13 @@ econometrics.")
 (define-public r-uroot
   (package
     (name "r-uroot")
-    (version "2.1-2")
+    (version "2.1-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "uroot" version))
        (sha256
-        (base32 "0dsb1vdr2bwy64v889svhvkadg5jl9cl77mfiw79vl18b7ixjzxx"))))
+        (base32 "0bscxlpy1jrgabif2kk9xjb1x095x21psmqwr0h81719378j7xih"))))
     (properties `((upstream-name . "uroot")))
     (build-system r-build-system)
     (home-page "https://geobosh.github.io/uroot/")

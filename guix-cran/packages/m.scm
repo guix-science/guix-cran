@@ -2185,6 +2185,33 @@ by Alexandrov LB et al (2013) <doi:10.1016/j.celrep.2012.12.008>.")
 @code{MuToss} Project.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-mutationtypes
+  (package
+    (name "r-mutationtypes")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mutationtypes" version))
+       (sha256
+        (base32 "0yyhx9a1vr2kv38m6spxam39gpysi7a2manil0x1zlzw0fp9x8hw"))))
+    (properties `((upstream-name . "mutationtypes")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-data-table r-cli r-assertions))
+    (home-page "https://github.com/selkamand/mutationtypes")
+    (synopsis
+     "Validate and Convert Mutational Impacts Using Standard Genomic Dictionaries")
+    (description
+     "Check concordance of a vector of mutation impacts with standard dictionaries
+such as Sequence Ontology (SO) <http://www.sequenceontology.org/>, Mutation
+Annotation Format (MAF)
+<https://docs.gdc.cancer.gov/Encyclopedia/pages/Mutation_Annotation_Format_TCGAv2/>
+or Prediction and Annotation of Variant Effects (PAVE)
+<https://github.com/hartwigmedical/hmftools/tree/master/pave>.  It enables
+conversion between SO/PAVE and MAF terms and selection of the most severe
+consequence where multiple ampersand (&) delimited impacts are given.")
+    (license license:lgpl3+)))
+
 (define-public r-mustashe
   (package
     (name "r-mustashe")
@@ -11620,13 +11647,13 @@ simulation output.  Dennis D. Boos and Jason A. Osborne (2015)
 (define-public r-monreg
   (package
     (name "r-monreg")
-    (version "0.1.4")
+    (version "0.1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "monreg" version))
        (sha256
-        (base32 "15qgfhbd8ny05rjd1nn33ynh4i7m7wcy8az53jraghlk760bymwg"))))
+        (base32 "1i0dxv6azb6x2i7yd9w0254b50qgiidccrn5jn6rqvb5y3dj2rn1"))))
     (properties `((upstream-name . "monreg")))
     (build-system r-build-system)
     (home-page "https://gitlab.com/scottkosty/monreg")
@@ -16473,13 +16500,13 @@ mlt.")
 (define-public r-mlt
   (package
     (name "r-mlt")
-    (version "1.4-9")
+    (version "1.5-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlt" version))
        (sha256
-        (base32 "0a5nhm8pkadl26gz285klpj8m6jla2zq230g5r51hkyvm2vxcz74"))))
+        (base32 "0l44l3p3f6px8kamli3fq479jy99wjfy8q8hkqjlwidr261bv6mz"))))
     (properties `((upstream-name . "mlt")))
     (build-system r-build-system)
     (propagated-inputs (list r-variables
@@ -19010,13 +19037,13 @@ separately on two latent parameters.  It reports local false discovery rates
 (define-public r-mixturemissing
   (package
     (name "r-mixturemissing")
-    (version "2.0.0")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MixtureMissing" version))
        (sha256
-        (base32 "0c01i64n53q15n97j7rfayj9h0wj4r64fvs50fid38kkk16wii2i"))))
+        (base32 "1chjmmbw69ab8ibhn9r4iirrmrnrc6qwddncaxzgp12ikk7pi1db"))))
     (properties `((upstream-name . "MixtureMissing")))
     (build-system r-build-system)
     (propagated-inputs (list r-numderiv
@@ -19027,17 +19054,18 @@ separately on two latent parameters.  It reports local false discovery rates
                              r-bessel))
     (home-page "https://cran.r-project.org/package=MixtureMissing")
     (synopsis
-     "Robust Model-Based Clustering for Data Sets with Missing Values at Random")
+     "Robust and Flexible Model-Based Clustering for Data Sets with Missing Values at Random")
     (description
-     "Implementation of robust model-based cluster analysis for data sets with missing
-values at random.  The models used are: Multivariate Contaminated Normal Mixture
-(MCNM, Tong and Tortora, 2022, <doi:10.1007/s11634-021-00476-1>), Multivariate
-Generalized Hyperbolic Mixture (MGHM, Wei et al., 2019,
-<doi:10.1016/j.csda.2018.08.016>), Multivariate Skew's t Mixture (M@code{StM},
-Wei et al., 2019, <doi:10.1016/j.csda.2018.08.016>), Multivariate t Mixture
-(@code{MtM}, Wang et al., 2004, <doi:10.1016/j.patrec.2004.01.010>), and
-Multivariate Normal Mixture (MNM, Ghahramani and Jordan, 1994,
-<doi:10.21236/ADA295618>).")
+     "Implementations of various robust and flexible model-based clustering methods
+for data sets with missing values at random.  Two main models are: Multivariate
+Contaminated Normal Mixture (MCNM, Tong and Tortora, 2022,
+<doi:10.1007/s11634-021-00476-1>) and Multivariate Generalized Hyperbolic
+Mixture (MGHM, Wei et al., 2019, <doi:10.1016/j.csda.2018.08.016>).  Mixtures
+via some special or limiting cases of the multivariate generalized hyperbolic
+distribution are also included: Normal-Inverse Gaussian, Symmetric
+Normal-Inverse Gaussian, Skew-Cauchy, Cauchy, Skew-t, Student's t, Normal,
+Symmetric Generalized Hyperbolic, Hyperbolic Univariate Marginals, Hyperbolic,
+and Symmetric Hyperbolic.")
     (license license:gpl2+)))
 
 (define-public r-mixture
@@ -20357,17 +20385,17 @@ missing values.  This package can be used as an independent alternative to the
 (define-public r-mixak
   (package
     (name "r-mixak")
-    (version "5.6")
+    (version "5.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mixAK" version))
        (sha256
-        (base32 "183bhlp2h3x5rfxfx21gg2wrz3ns458w9ygna9v51iagi5zzc1k5"))))
+        (base32 "08n6shkibidqjmxjpjny48drxk3lmmnylh9l9ad3lrf8i2ixriqp"))))
     (properties `((upstream-name . "mixAK")))
     (build-system r-build-system)
     (propagated-inputs (list r-mnormt r-lme4 r-fastghquad r-colorspace r-coda))
-    (home-page "http://msekce.karlin.mff.cuni.cz/~komarek/")
+    (home-page "https://msekce.karlin.mff.cuni.cz/~komarek/")
     (synopsis
      "Multivariate Normal Mixture Models and Mixtures of Generalized Linear Mixed Models Including Model Based Clustering")
     (description
@@ -26364,13 +26392,13 @@ by Li, Xiao, and Luo (2020) <doi: 10.1002/sta4.245>.")
 (define-public r-mf-beta4
   (package
     (name "r-mf-beta4")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MF.beta4" version))
        (sha256
-        (base32 "09phirgr6yv6r10jxzf56c9ai815ykc139qijzpw8nrvk9pwsk83"))))
+        (base32 "0l3qafpavjshfayvz603141ch9s9a4pl3ly1llfkrmm3rmspb261"))))
     (properties `((upstream-name . "MF.beta4")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyverse
@@ -27862,13 +27890,13 @@ combined effect estimates and their confidence intervals.")
 (define-public r-metarep
   (package
     (name "r-metarep")
-    (version "1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metarep" version))
        (sha256
-        (base32 "0430nc3bqznrbf4gr37jfpihyx6psip9mlcxrx2lwfajfijy46w4"))))
+        (base32 "04xfvdn1yng0bnq91qa9hfsa2y37h6r3ffzvfip27wq2wy0q9sn9"))))
     (properties `((upstream-name . "metarep")))
     (build-system r-build-system)
     (propagated-inputs (list r-meta))
@@ -27877,16 +27905,14 @@ combined effect estimates and their confidence intervals.")
     (synopsis "Replicability-Analysis Tools for Meta-Analysis")
     (description
      "User-friendly package for reporting replicability-analysis methods, affixed to
-meta-analyses summary.  This package implements the methods introduced in
-Jaljuli et.  al. (2022) <doi:10.1080/19466315.2022.2050291>.  The
-replicability-analysis output provides an assessment of the investigated
-intervention, where it offers quantification of effect replicability and
-assessment of the consistency of findings. - Replicability-analysis for
-fixed-effects and random-effect meta analysis: - r(u)-value; - lower bounds on
-the number of studies with replicated positive and\\or negative effect; - Allows
-detecting inconsistency of signals; - forest plots with the summary of
-replicability analysis results; - Allows Replicability-analysis with or without
-the common-effect assumption.")
+meta-analyses summary.  The replicability-analysis output provides an assessment
+of the investigated intervention, where it offers quantification of effect
+replicability and assessment of the consistency of findings. -
+Replicability-analysis for fixed-effects and random-effect meta analysis: -
+r(u)-value; - lower bounds on the number of studies with replicated positive
+and\\or negative effect; - Allows detecting inconsistency of signals; - forest
+plots with the summary of replicability analysis results; - Allows
+Replicability-analysis with or without the common-effect assumption.")
     (license license:gpl2+)))
 
 (define-public r-metarange
@@ -28374,13 +28400,13 @@ iterative algorithm proposed by Matejka & Fitzmaurice (2017)
 (define-public r-metamedian
   (package
     (name "r-metamedian")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metamedian" version))
        (sha256
-        (base32 "0zr0k1dkgqpzg7pc3g8ischh2mg2gy3vdrc7fiaa9m4hc62iqgzj"))))
+        (base32 "17p8npnaddsdikii9c8zhvbwhkpwgncksipzsslrs7d4pz6wlfvf"))))
     (properties `((upstream-name . "metamedian")))
     (build-system r-build-system)
     (propagated-inputs (list r-metafor r-metablue r-hmisc r-estmeansd))
@@ -28398,7 +28424,8 @@ difference of medians across groups.  Additionally, a number of methods (e.g.,
 <doi:10.1177/09622802211047348>, and @code{McGrath} et al. (2023)
 <doi:10.1177/09622802221139233>) are implemented to estimate study-specific
 (difference of) means and their standard errors in order to estimate the pooled
-(difference of) means.")
+(difference of) means.  See @code{McGrath} et al. (in press)
+<doi:10.1002/jrsm.1686> for a detailed guide on using the package.")
     (license license:gpl3+)))
 
 (define-public r-metama
@@ -39817,13 +39844,13 @@ Huband, et al. (2005) <doi:10.1109/TEVC.2005.861417>.")
 (define-public r-manynet
   (package
     (name "r-manynet")
-    (version "0.2.8")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "manynet" version))
        (sha256
-        (base32 "0jbmra7xyss13y7hki7xhn248jym3bi9si29dgslcf7g6yx8xvvx"))))
+        (base32 "1mp8bmangw5bczwhj8rfa6dyky1c6i5dm1d8qnk6vgl36d1iacb8"))))
     (properties `((upstream-name . "manynet")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidygraph
@@ -39833,9 +39860,9 @@ Huband, et al. (2005) <doi:10.1109/TEVC.2005.861417>.")
                              r-ggplot2
                              r-dplyr))
     (home-page "https://snlab-ch.github.io/manynet/")
-    (synopsis "Many Ways to Make, Manipulate, and Map Myriad Networks")
+    (synopsis "Many Ways to Make, Modify, and Map Myriad Networks")
     (description
-     "This package provides a set of tools for making, manipulating, and mapping many
+     "This package provides a set of tools for making, modifying, and mapping many
 different types of networks.  All functions operate with matrices, edge lists,
 and igraph', network', and tidygraph objects, and on one-mode, two-mode
 (bipartite), and sometimes three-mode networks.  The package includes functions
@@ -40632,13 +40659,13 @@ different file formats of mass spectrometry data into/from MALDIquant objects.")
 (define-public r-maldipickr
   (package
     (name "r-maldipickr")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maldipickr" version))
        (sha256
-        (base32 "0p3dpsjd1xwblacbq09ls2wq3jc6fn3x77qdg3a4zld7lpvib073"))))
+        (base32 "1k534c8x3ygf44r7q1nybd8b6gl3pw0h0r6ddwc35jxq1vmxx6qi"))))
     (properties `((upstream-name . "maldipickr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -40648,6 +40675,7 @@ different file formats of mass spectrometry data into/from MALDIquant objects.")
                              r-readbrukerflexdata
                              r-maldiquant
                              r-magrittr
+                             r-lifecycle
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ClavelLab/maldipickr")

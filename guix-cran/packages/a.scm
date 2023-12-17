@@ -3878,13 +3878,13 @@ also generalizes mark-capture-recapture analysis.")
 (define-public r-aster
   (package
     (name "r-aster")
-    (version "1.1-2")
+    (version "1.1-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aster" version))
        (sha256
-        (base32 "0vf1ffkn4a3bz2lgz1gn2hjgp8c2v9ch05d5r1gh2q77zijvry1m"))))
+        (base32 "1piimmrsvhbps8ld6vjjg82kf8pm5nwl91437dglid802p51pwlm"))))
     (properties `((upstream-name . "aster")))
     (build-system r-build-system)
     (propagated-inputs (list r-trust))
@@ -12763,53 +12763,6 @@ Stammann, and Wanner (2020) <@code{arXiv:2004.12655>}.")
 samples.")
     (license license:gpl2)))
 
-(define-public r-alookr
-  (package
-    (name "r-alookr")
-    (version "0.3.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "alookr" version))
-       (sha256
-        (base32 "0sdwphzxjh8y4gi3pnsdddra0x085h30m520j8im25z1bhxp0sq7"))))
-    (properties `((upstream-name . "alookr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xgboost
-                             r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-rpart
-                             r-rocr
-                             r-rlang
-                             r-ranger
-                             r-randomforest
-                             r-purrr
-                             r-party
-                             r-parallelly
-                             r-mlmetrics
-                             r-mass
-                             r-glmnet
-                             r-ggplot2
-                             r-ggmosaic
-                             r-future
-                             r-dplyr
-                             r-dlookr
-                             r-cli
-                             r-catools))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=alookr")
-    (synopsis "Model Classifier for Binary Classification")
-    (description
-     "This package provides a collection of tools that support data splitting,
-predictive modeling, and model evaluation.  A typical function is to split a
-dataset into a training dataset and a test dataset.  Then compare the data
-distribution of the two datasets.  Another feature is to support the development
-of predictive models and to compare the performance of several predictive
-models, helping to select the best model.")
-    (license (list license:gpl2
-                   (license:fsdg-compatible "file://LICENSE")))))
-
 (define-public r-alone
   (package
     (name "r-alone")
@@ -17587,13 +17540,13 @@ Implementation Guide\" (CDISC Analysis Data Model Team (2021),
 (define-public r-admiraldev
   (package
     (name "r-admiraldev")
-    (version "0.5.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admiraldev" version))
        (sha256
-        (base32 "0h4qd7w5icmiw3dgcwmf8mp0lvbc06wcszc8859kv6l6zsihgnfd"))))
+        (base32 "0n944il50mlqwclb6251zck89l9fyki7j711h4pp4fba3hs96s7r"))))
     (properties `((upstream-name . "admiraldev")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -17607,7 +17560,7 @@ Implementation Guide\" (CDISC Analysis Data Model Team (2021),
                              r-hms
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://pharmaverse.github.io/admiraldev/main/")
+    (home-page "https://pharmaverse.github.io/admiraldev/")
     (synopsis
      "Utility Functions and Development Tools for the Admiral Package Family")
     (description
@@ -17641,13 +17594,13 @@ the admiral package.")
 (define-public r-admiral
   (package
     (name "r-admiral")
-    (version "0.12.3")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admiral" version))
        (sha256
-        (base32 "0b4sgk4h9gnrvcml264aibhkwsd9wzki6r302fi7lm9zxk6gf4q4"))))
+        (base32 "0qyvp2q5x0zhb3gq5ycx635ikpmrq6chj73ikgw59cc9jlbyx097"))))
     (properties `((upstream-name . "admiral")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
