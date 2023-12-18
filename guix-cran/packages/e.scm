@@ -1182,6 +1182,35 @@ distributions; decision criteria and selections based on these decision
 criteria.")
     (license license:gpl2+)))
 
+(define-public r-extbatchmarking
+  (package
+    (name "r-extbatchmarking")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "extBatchMarking" version))
+       (sha256
+        (base32 "0nskc1l4s0yf6q1q4zg5a7pa2kygs85jx65avlmxlqx9lc7w7bca"))))
+    (properties `((upstream-name . "extBatchMarking")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-optimbase r-foreach
+                             r-doparallel))
+    (home-page "https://github.com/Olobatuyi/extBatchMarking")
+    (synopsis "Extended Batch Marking Models")
+    (description
+     "This package provides a system for batch-marking data analysis to estimate
+survival probabilities, capture probabilities, and enumerate the population
+abundance for both marked and unmarked individuals.  The estimation of only
+marked individuals can be achieved through the @code{batchMarkOptim}() function.
+ Similarly, the combined marked and unmarked can be achieved through the
+@code{batchMarkUnmarkOptim}() function.  The algorithm was also implemented for
+the hidden Markov model encapsulated in @code{batchMarkUnmarkOptim}() to
+estimate the abundance of both marked and unmarked individuals in the
+population.  The package is based on the paper: \"Hidden Markov Models for
+Extended Batch Data\" of Cowen et al. (2017) <doi:10.1111/biom.12701>.")
+    (license license:agpl3+)))
+
 (define-public r-exrq
   (package
     (name "r-exrq")
@@ -10015,13 +10044,13 @@ to extract colors from all types of figures and pdf files.")
 (define-public r-eodhd
   (package
     (name "r-eodhd")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eodhd" version))
        (sha256
-        (base32 "15w0zddhi6lfw3nhsikbvifrzfjvrvndyxik8kpzjg0pbk2rdjwm"))))
+        (base32 "0rq6xn198l5a0kzygb1mdghvax73v5s815vylmak3khz02lc8i00"))))
     (properties `((upstream-name . "eodhd")))
     (build-system r-build-system)
     (propagated-inputs (list r-httr))
@@ -14624,6 +14653,50 @@ tables using exclusively aggregate results from voting units.  Reference:
      "Software accompanying Gary King's book: A Solution to the Ecological Inference
 Problem. (1997).  Princeton University Press.  ISBN 978-0691012407.")
     (license license:gpl2+)))
+
+(define-public r-ehrtemporalvariability
+  (package
+    (name "r-ehrtemporalvariability")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EHRtemporalVariability" version))
+       (sha256
+        (base32 "1cf2wgw3xxf2b02gpb9jak4r27l52rny7n94icqmn1rkn97xc210"))))
+    (properties `((upstream-name . "EHRtemporalVariability")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-xts
+                             r-viridis
+                             r-scales
+                             r-rcolorbrewer
+                             r-plotly
+                             r-mass
+                             r-lubridate
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/hms-dbmi/EHRtemporalVariability")
+    (synopsis
+     "Delineating Temporal Dataset Shifts in Electronic Health Records")
+    (description
+     "This package provides functions to delineate temporal dataset shifts in
+Electronic Health Records through the projection and visualization of
+dissimilarities among data temporal batches.  This is done through the
+estimation of data statistical distributions over time and their projection in
+non-parametric statistical manifolds, uncovering the patterns of the data latent
+temporal variability.  EH@code{RtemporalVariability} is particularly suitable
+for multi-modal data and categorical variables with a high number of values,
+common features of biomedical data where traditional statistical process control
+or time-series methods may not be appropriate.  EH@code{RtemporalVariability}
+allows you to explore and identify dataset shifts through visual analytics
+formats such as Data Temporal heatmaps and Information Geometric Temporal (IGT)
+plots.  An additional EH@code{RtemporalVariability} Shiny app can be used to
+load and explore the package results and even to allow the use of these
+functions to those users non-experienced in R coding. (SÃ¡ez et al.  2020)
+<doi:10.1093/gigascience/giaa079>.")
+    (license (list license:asl2.0
+                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-ehr
   (package

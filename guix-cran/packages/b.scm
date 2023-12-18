@@ -14218,13 +14218,13 @@ the approach by Tobler (1965).")
 (define-public r-bidask
   (package
     (name "r-bidask")
-    (version "2.0.0")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bidask" version))
        (sha256
-        (base32 "0gcx1xmcr1wjl4b5h9y114s033894d648i81jh84cy6ihmzs4r32"))))
+        (base32 "0pk1gc6wssyssjm7hp52mpmqnsk4s02kv205294qzif4qlvxwvq6"))))
     (properties `((upstream-name . "bidask")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-xts))

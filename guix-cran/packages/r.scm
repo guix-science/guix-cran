@@ -46086,13 +46086,13 @@ in radiant.data'.")
 (define-public r-radiant
   (package
     (name "r-radiant")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "radiant" version))
        (sha256
-        (base32 "1nn17yq530mb0ayx25dv5dn9fr1qvbll7ih1hnyww7gix6rgji9p"))))
+        (base32 "19h0l41n5qjqy0g3ga09a44anj1c429n4fakpxh3glhwv5xy4314"))))
     (properties `((upstream-name . "radiant")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny

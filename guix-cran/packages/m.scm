@@ -8361,13 +8361,13 @@ applying the Then-Test method.")
 (define-public r-mrpostman
   (package
     (name "r-mrpostman")
-    (version "1.1.0")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mRpostman" version))
        (sha256
-        (base32 "18q75hymx13q0vkvfanrqz88j1w482j343sncvhqfljhlyff0m0b"))))
+        (base32 "0ss00mxk0s3lpxrhy3hszx6hmf7qiycl8vdif1fdzxz5yglki4xa"))))
     (properties `((upstream-name . "mRpostman")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -23265,13 +23265,13 @@ Perederiy, V. (2017) <@code{arXiv:1708.00062>}.")
 (define-public r-migraph
   (package
     (name "r-migraph")
-    (version "1.1.5")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "migraph" version))
        (sha256
-        (base32 "0qn2cadan3hwav2yp3p86ll3y8nqbwnmx7c9pcnd0gfs7ff97y2p"))))
+        (base32 "13qalqdik8pqn20s9vj56p1jis8k8jy43ggz311782jn0ysya7nc"))))
     (properties `((upstream-name . "migraph")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

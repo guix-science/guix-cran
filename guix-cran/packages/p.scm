@@ -639,13 +639,13 @@ Memorial Medal'.  Users can provide recipients of other prizes.")
 (define-public r-pwexp
   (package
     (name "r-pwexp")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PWEXP" version))
        (sha256
-        (base32 "1hkad8yzxw3f1qgwlsfx68l9qp11byz57497z43fcq34b6xjw1an"))))
+        (base32 "0nxnshm8mfd2wcgjg8dgjsnnragb3v0xy1nwfi0vnywsp408822r"))))
     (properties `((upstream-name . "PWEXP")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-segmented r-foreach r-fastmatch

@@ -18266,6 +18266,32 @@ Kindlmann and Scheidegger (2014) <doi:10.1109/TVCG.2014.2346325>.")
      "Simplify ggplot2 visualisation with ggblanket wrapper functions.")
     (license license:expat)))
 
+(define-public r-ggbiplot
+  (package
+    (name "r-ggbiplot")
+    (version "0.6.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggbiplot" version))
+       (sha256
+        (base32 "1bbajxnvy5snc9bhknl7ybndz5mc1ags313yki5y2ipzr955ia79"))))
+    (properties `((upstream-name . "ggbiplot")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scales r-ggplot2))
+    (home-page "https://github.com/friendly/ggbiplot")
+    (synopsis "Grammar of Graphics Implementation of Biplots")
+    (description
+     "This package provides a ggplot2 based implementation of biplots, giving a
+representation of a dataset in a two dimensional space accounting for the
+greatest variance, together with variable vectors showing how the data variables
+relate to this space.  It provides a replacement for stats::biplot(), but with
+many enhancements to control the analysis and graphical display.  It implements
+biplot and scree plot methods which can be used with the results of prcomp(),
+princomp(), @code{FactoMineR::PCA}() or MASS::lda() and can be customized using
+ggplot2 techniques.")
+    (license license:gpl2)))
+
 (define-public r-ggautomap
   (package
     (name "r-ggautomap")

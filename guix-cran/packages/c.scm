@@ -15,8 +15,8 @@
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages maths)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
@@ -29160,16 +29160,16 @@ is much greater.  This package is described in Fong, Huang, Gilbert and Permar
 (define-public r-chncapitalstock
   (package
     (name "r-chncapitalstock")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CHNCapitalStock" version))
        (sha256
-        (base32 "1w8abj1rxkpql696dr6w19xsgxjmkm0jwnln7lp48fnxdsa424x8"))))
+        (base32 "0hldv4mbsr0y9r34f7b5zpdr2bl77vnsd2d9lfajd2bqnjqzv38d"))))
     (properties `((upstream-name . "CHNCapitalStock")))
     (build-system r-build-system)
-    (propagated-inputs (list r-magrittr r-dplyr))
+    (propagated-inputs (list r-dplyr))
     (home-page "https://github.com/common2016/CapitalStock")
     (synopsis "Compute Chinese Capital Stocks")
     (description

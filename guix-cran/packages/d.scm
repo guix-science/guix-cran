@@ -1556,13 +1556,13 @@ assurance constraints for the DVH. Includes web-based graphical user interface."
 (define-public r-durga
   (package
     (name "r-durga")
-    (version "1.1.0")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Durga" version))
        (sha256
-        (base32 "06mgkm749x1dvh6wqdrjb9x4sbywawyqnr3cpml04l5qgqmlcxjy"))))
+        (base32 "0iq29ga1cn5fnnj1b90pprqcldygmy695si0vq4pr8d59q029ah9"))))
     (properties `((upstream-name . "Durga")))
     (build-system r-build-system)
     (propagated-inputs (list r-vipor r-rcolorbrewer r-boot))

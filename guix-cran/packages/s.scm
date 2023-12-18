@@ -7364,13 +7364,13 @@ character vectors.")
 (define-public r-string2path
   (package
     (name "r-string2path")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "string2path" version))
        (sha256
-        (base32 "13a315kp53psjjqxca2shrg8lcx3mx9k5bb9mbn034cx1z6zb6kg"))))
+        (base32 "1pv031684l198a96glgx65pp1ri9wvixk9zqmxbqdfb6d86ls9rp"))))
     (properties `((upstream-name . "string2path")))
     (build-system r-build-system)
     (inputs (list))
@@ -27617,6 +27617,39 @@ vicinity genomic region.  Linked SNPs in moderate to high linkage disequilibrium
 (e.g. r2>0.50) with the corresponding index SNPs will be selected for further
 analysis.")
     (license license:gpl3)))
+
+(define-public r-snpaimer
+  (package
+    (name "r-snpaimer")
+    (version "2.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "snpAIMeR" version))
+       (sha256
+        (base32 "1x4sp1kq54x6bms73qqmndzvhlsrs8r4f1dl5abac40a38xidhdg"))))
+    (properties `((upstream-name . "snpAIMeR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yaml
+                             r-withr
+                             r-tidyr
+                             r-readr
+                             r-magrittr
+                             r-ggplot2
+                             r-foreach
+                             r-forcats
+                             r-dplyr
+                             r-doparallel
+                             r-adegenet))
+    (home-page "https://github.com/OksanaVe/snpAIMeR")
+    (synopsis "Assess the Diagnostic Power of Genomic Marker Combinations")
+    (description
+     "Population genetics package for designing diagnostic panels.  Candidate markers,
+marker combinations, and different panel sizes are assessed for how well they
+can predict the source population of known samples.  Requires a genotype file of
+candidate markers in STRUCTURE format.  Methods for population cross-validation
+are described in Jombart (2008) <doi:10.1093/bioinformatics/btn129>.")
+    (license license:expat)))
 
 (define-public r-snowquery
   (package

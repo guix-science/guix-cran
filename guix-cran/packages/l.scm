@@ -3041,6 +3041,29 @@ items using an iterative hybrid of ordinal logistic regression and item response
 theory (IRT).")
     (license license:gpl2+)))
 
+(define-public r-lorad
+  (package
+    (name "r-lorad")
+    (version "0.0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lorad" version))
+       (sha256
+        (base32 "1pab66bngvcmk38id42ns6imdn014g14j6inrdkj39v6djy8xg0w"))))
+    (properties `((upstream-name . "lorad")))
+    (build-system r-build-system)
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://cran.r-project.org/package=lorad")
+    (synopsis
+     "Lowest Radial Distance Method of Marginal Likelihood Estimation")
+    (description
+     "Estimates marginal likelihood from a posterior sample using the method described
+in Wang et al. (2023) <doi:10.1093/sysbio/syad007>, which does not require
+evaluation of any additional points and requires only the log of the
+unnormalized posterior density for each sampled parameter vector.")
+    (license license:expat)))
+
 (define-public r-lopart
   (package
     (name "r-lopart")
