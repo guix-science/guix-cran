@@ -7597,13 +7597,13 @@ lost nor inappropriately cut.")
 (define-public r-hexfont
   (package
     (name "r-hexfont")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hexfont" version))
        (sha256
-        (base32 "05p279ygpwdlmx4c9vdjs25k7yrgb4xp9cc05drjwncwh97qgj6v"))))
+        (base32 "0pi64rzrzjrfpbjpgvj8fpf81550jfsy5sjsvgc4a0gv9b1dswr6"))))
     (properties `((upstream-name . "hexfont")))
     (build-system r-build-system)
     (propagated-inputs (list r-bittermelon))
@@ -7611,7 +7611,7 @@ lost nor inappropriately cut.")
     (home-page "https://github.com/trevorld/hexfont")
     (synopsis "'GNU Unifont' Hex Fonts")
     (description
-     "This package contains all the hex font files from the GNU Unifont Project
+     "This package contains most of the hex font files from the GNU Unifont Project
 <https://unifoundry.com/unifont/> compressed by xz'.  GNU Unifont is a duospaced
 bitmap font that attempts to cover all the official Unicode glyphs plus several
 of the artificial scripts in the (Under-)@code{ConScript} Unicode Registry
@@ -11319,26 +11319,6 @@ generalized central limit theorem.  For detailed examples type
 vignette(\"harmonicmeanp\") after installation.  Version 3.0 addresses errors in
 versions 1.0 and 2.0 that led function p.hmp to control the familywise error
 rate only in the weak sense, rather than the strong sense as intended.")
-    (license license:gpl3)))
-
-(define-public r-harmodel
-  (package
-    (name "r-harmodel")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "HARModel" version))
-       (sha256
-        (base32 "17sajqi2g5z69gvnfhkn850jkavi8syhm58xadd2khrm73nvwh2i"))))
-    (properties `((upstream-name . "HARModel")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo r-xts r-sandwich r-rcpparmadillo r-rcpp))
-    (home-page "https://github.com/emilsjoerup/HARModel")
-    (synopsis "Heterogeneous Autoregressive Models")
-    (description
-     "Estimation, simulation, and forecasting using the HAR model from Corsi(2009)
-<DOI:10.1093/jjfinec/nbp001> and extensions.")
     (license license:gpl3)))
 
 (define-public r-harbinger

@@ -7164,6 +7164,32 @@ barrier to use the API inside of your development environment.  For more on the
 API, see <https://platform.openai.com/docs/introduction>.")
     (license license:expat)))
 
+(define-public r-gptoolsstan
+  (package
+    (name "r-gptoolsstan")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gptoolsStan" version))
+       (sha256
+        (base32 "1f2aigkqpmbi8hxcivrbbfrpl3qs8fi2hcbvmcdc3k7j6znv4al3"))))
+    (properties `((upstream-name . "gptoolsStan")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=gptoolsStan")
+    (synopsis "Gaussian Processes on Graphs and Lattices in 'Stan'")
+    (description
+     "Gaussian processes are flexible distributions to model functional data.  Whilst
+theoretically appealing, they are computationally cumbersome except for small
+datasets.  This package implements two methods for scaling Gaussian process
+inference in Stan'.  First, a sparse approximation of the likelihood that is
+generally applicable and, second, an exact method for regularly spaced data
+modeled by stationary kernels using fast Fourier methods.  Utility functions are
+provided to compile and fit Stan models using the cmdstanr interface.
+References: Hoffmann and Onnela (2022) <@code{arXiv:2301.08836>}.")
+    (license license:expat)))
+
 (define-public r-gpseqclus
   (package
     (name "r-gpseqclus")
@@ -9788,23 +9814,32 @@ e.g. Kanzow and Facchinei (2010), <doi:10.1007/s10479-009-0653-x>.")
 (define-public r-gnar
   (package
     (name "r-gnar")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GNAR" version))
        (sha256
-        (base32 "0a9xpdg1g1r1l4mga85bkyxqfrpac48f5bvi60bin7s46y2c5jam"))))
+        (base32 "1kffr4yxfl7af5vc06nx3zw1zcwbj3mxcsn44zgdz9yfvw3ppcjq"))))
     (properties `((upstream-name . "GNAR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-wordcloud r-matrixcalc r-igraph))
+    (propagated-inputs (list r-wordcloud
+                             r-viridis
+                             r-rlang
+                             r-matrixcalc
+                             r-igraph
+                             r-ggpubr
+                             r-ggplot2
+                             r-ggforce))
     (home-page "https://cran.r-project.org/package=GNAR")
     (synopsis "Methods for Fitting Network Time Series Models")
     (description
      "Simulation of, and fitting models for, Generalised Network Autoregressive (GNAR)
 time series models which take account of network structure, potentially with
 exogenous variables.  Such models are described in Knight et al. (2020)
-<doi:10.18637/jss.v096.i05> and Nason and Wei (2021) <doi:10.1111/rssa.12875>.")
+<doi:10.18637/jss.v096.i05> and Nason and Wei (2021) <doi:10.1111/rssa.12875>.
+Diagnostic tools for GNAR(X) models can be found in Nason et al (2023)
+<@code{arXiv:2312.00530>}.")
     (license license:gpl2)))
 
 (define-public r-gmwt
@@ -12001,13 +12036,13 @@ Gaussian quadrature rule; Jose C. Pinheiro and Douglas M. Bates (1995)
 (define-public r-glmm-hp
   (package
     (name "r-glmm-hp")
-    (version "0.1-0")
+    (version "0.1-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmm.hp" version))
        (sha256
-        (base32 "1zs2aibvb4pykm80pi0rxbdf5qm05l8xhdz20rmx52101837lzjj"))))
+        (base32 "0cccqs6fiwkb5ma4if07ngl7489d37n319j29vcayhknf2jfvszi"))))
     (properties `((upstream-name . "glmm.hp")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan r-mumin r-lme4 r-ggplot2))
@@ -21419,6 +21454,40 @@ functional Kriging of this package is a modification of the method proposed by
 Giraldo (2011) <doi:10.1007/s10651-010-0143-y>.")
     (license license:expat)))
 
+(define-public r-geofi
+  (package
+    (name "r-geofi")
+    (version "1.0.11")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geofi" version))
+       (sha256
+        (base32 "1jfqwr2gw0h7i58lwsvpmxd0kacazn1sk0jp95f9srdisvkb4l67"))))
+    (properties `((upstream-name . "geofi")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yaml
+                             r-xml2
+                             r-sf
+                             r-rlang
+                             r-purrr
+                             r-httr
+                             r-httpcache
+                             r-dplyr
+                             r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/rOpenGov/geofi")
+    (synopsis "Access Finnish Geospatial Data")
+    (description
+     "Designed to simplify geospatial data access from the Statistics Finland Web
+Feature Service API <http://geo.stat.fi/geoserver/wfs>, the geofi package offers
+researchers and analysts a set of tools to obtain and harmonize administrative
+spatial data for a wide range of applications, from urban planning to
+environmental research.  The package contains annually updated time series of
+municipality key datasets that can be used for data aggregation and language
+translations.")
+    (license license:bsd-2)))
+
 (define-public r-geofd
   (package
     (name "r-geofd")
@@ -22567,13 +22636,13 @@ some of the stability issues in the previous version (0.1).")
 (define-public r-genmarkov
   (package
     (name "r-genmarkov")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GenMarkov" version))
        (sha256
-        (base32 "06bq43ry25g75qxlnrz02s393sv4r5v7m8gw0d96gpmldc76aax1"))))
+        (base32 "1dqs8wapdpmgqnrf4xgvdmaz74gck23sbnpjxzj2g03gl8k9lq5w"))))
     (properties `((upstream-name . "GenMarkov")))
     (build-system r-build-system)
     (propagated-inputs (list r-nnet
@@ -25274,6 +25343,29 @@ computational parts are implemented in C++, linking to the GDAL',
 <doi:10.3390/data4030092> for further details.")
     (license license:expat)))
 
+(define-public r-gdalbindings
+  (package
+    (name "r-gdalbindings")
+    (version "0.1.10")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gdalBindings" version))
+       (sha256
+        (base32 "10za6izh1a1sbysvplgqdsb30hgd7lqi148w78wxzyzj7nd13syq"))))
+    (properties `((upstream-name . "gdalBindings")))
+    (build-system r-build-system)
+    (inputs (list zlib pcre2 openssl openssh curl))
+    (propagated-inputs (list r-rcpp r-r6 r-data-table))
+    (home-page "https://github.com/caiohamamura/rgdalBindings")
+    (synopsis "GDAL Classes Wrapper for Reading and Writing Raster Blocks")
+    (description
+     "Wraps around Geospatial Data Abstraction Library (GDAL) raster and band classes
+for reading and writing directly from @code{RasterBlock} in R semantic `[[]]`
+and familiar syntax for accessing @code{RasterBand} and reading/writing to
+blocks (see <https://gdal.org/>).")
+    (license license:gpl3)))
+
 (define-public r-gdadata
   (package
     (name "r-gdadata")
@@ -27218,13 +27310,13 @@ Weidong Tian and Hongbin Ji (2012) <doi:10.1038/cr.2011.149>.")
 (define-public r-gangenerativedata
   (package
     (name "r-gangenerativedata")
-    (version "1.5.4")
+    (version "1.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ganGenerativeData" version))
        (sha256
-        (base32 "1jk9d62n757mswhh0kva5x2f0spnvy0w39l5bpgz22i4qzn4ak3f"))))
+        (base32 "17vzq23gvjfgfkb9lq8j7apyyvyr5j80gpjrqwpnvszf8hq027gf"))))
     (properties `((upstream-name . "ganGenerativeData")))
     (build-system r-build-system)
     (inputs (list tensorflow))

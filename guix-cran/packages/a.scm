@@ -3626,13 +3626,13 @@ measures are identical to the correlation measure (r) for bi-allelic data.")
 (define-public r-asylum
   (package
     (name "r-asylum")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "asylum" version))
        (sha256
-        (base32 "1cjmrvlhk34swrl44xxjqnka1xi2sf0ciszx1szrg7wz4c9kb6mp"))))
+        (base32 "1gvwnlq5xxy4iiba87wm6f5j7b1gzjz1fzfwj8s6m4z3764j8inb"))))
     (properties `((upstream-name . "asylum")))
     (build-system r-build-system)
     (home-page "https://github.com/humaniverse/asylum")
@@ -17469,13 +17469,13 @@ implemented in accordance with the \"Analysis Data Model Implementation Guide\"
 (define-public r-admiralophtha
   (package
     (name "r-admiralophtha")
-    (version "0.3.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admiralophtha" version))
        (sha256
-        (base32 "09hjnhfafsnh4dpyhzk09d8v1pliy6h3bdvk7bkaf5jizrna8dix"))))
+        (base32 "0ip69mishnx8yllfp2vm2qsa5917hwi974lr8qwil9xx6d2hgbkz"))))
     (properties `((upstream-name . "admiralophtha")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

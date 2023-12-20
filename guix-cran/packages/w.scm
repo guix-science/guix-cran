@@ -6292,13 +6292,13 @@ al., (2022) <doi:10.1007/978-3-031-22687-8_20>.  Amaratunga et al., (2009)
 (define-public r-wcep
   (package
     (name "r-wcep")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wcep" version))
        (sha256
-        (base32 "07x4yq51qsg152mxjavg5nfsim1v5g28py56mrzgwvxvaq3n4pz7"))))
+        (base32 "0ydlfd6ngmrccaf9zybyzp11x98kih40kj3i2dq81ixxsgk2pjnq"))))
     (properties `((upstream-name . "wcep")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-progress r-dplyr r-coin))
@@ -6306,7 +6306,9 @@ al., (2022) <doi:10.1007/978-3-031-22687-8_20>.  Amaratunga et al., (2009)
     (synopsis "Survival Analysis for Weighted Composite Endpoints")
     (description
      "Analyze given data frame with multiple endpoints and return Kaplan-Meier
-survival probabilities together with the specified confidence interval.")
+survival probabilities together with the specified confidence interval.  See
+Nabipoor M, Westerhout CM, Rathwell S, and Bakal JA (2023)
+<doi:10.1186/s12874-023-01857-0>.")
     (license license:expat)))
 
 (define-public r-wce
@@ -6337,19 +6339,19 @@ cubic regression splines.")
 (define-public r-wcde
   (package
     (name "r-wcde")
-    (version "0.0.5")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wcde" version))
        (sha256
-        (base32 "1nrzfcrkrq9vff4anj94wcy3jrmjgrm4py854dm4mcsykprxwgd1"))))
+        (base32 "18zvb21wi2ywvf413dnyrmnrrg0vmd5hjy0k9d6z91jcxgkvirp3"))))
     (properties `((upstream-name . "wcde")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
-                             r-readr
+                             r-rcurl
                              r-purrr
                              r-progress
                              r-magrittr

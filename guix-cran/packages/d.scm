@@ -19929,6 +19929,33 @@ debugr code can even remain in the debugged code for later use without any
 negative effects during normal runtime.")
     (license license:gpl3)))
 
+(define-public r-deboinr
+  (package
+    (name "r-deboinr")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DeBoinR" version))
+       (sha256
+        (base32 "0brwk24q2wgmn38y1w1rish8dfdbv10xdzmm2k1drdwgsn72hxis"))))
+    (properties `((upstream-name . "DeBoinR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-pracma r-kernsmooth r-gridextra r-ggplot2
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=DeBoinR")
+    (synopsis
+     "Box-Plots and Outlier Detection for Probability Density Functions")
+    (description
+     "Orders a data-set consisting of an ensemble of probability density functions on
+the same x-grid.  Visualizes a box-plot of these functions based on the notion
+of distance determined by the user.  Reports outliers based on the distance
+chosen and the scaling factor for an interquartile range rule.  For further
+details, see: Alexander C. Murph et al. (2023). \"Visualization and Outlier
+Detection for Probability Density Function Ensembles.\"
+<https://sirmurphalot.github.io/publications>.")
+    (license license:expat)))
+
 (define-public r-debkeepr
   (package
     (name "r-debkeepr")

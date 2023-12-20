@@ -560,13 +560,13 @@ format.  Visual acuity conversion is based on Schulze-Bonsel et al. (2006)
 (define-public r-exvatools
   (package
     (name "r-exvatools")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "exvatools" version))
        (sha256
-        (base32 "1j0r048cs4icj3m19w0b2x2hd1r32qyql0cwbbkf8al0ps4pddw1"))))
+        (base32 "0cv1ykpd9m9afd6gacp4cm8i5fc2djpgf4hrsh97wqv5nn272ncn"))))
     (properties `((upstream-name . "exvatools")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2 r-openxlsx r-data-table r-cli))
@@ -4779,19 +4779,21 @@ J. & Zhang, X. (2018) <doi:10.1214/17-AOAS1092>.")
 (define-public r-eurostat
   (package
     (name "r-eurostat")
-    (version "3.8.2")
+    (version "4.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eurostat" version))
        (sha256
-        (base32 "1djrika4mlwqqlcj9cwkpyc24k1i8vmnm1qh5ipqwp54nbwin964"))))
+        (base32 "13na6hdwz67f27vd3kvh6brxwxdf76sii0gf2r73ncs6db16q4pm"))))
     (properties `((upstream-name . "eurostat")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-xml2
+                             r-tidyr
                              r-tibble
                              r-stringr
                              r-stringi
+                             r-rlang
                              r-regions
                              r-refmanager
                              r-readr
@@ -4799,12 +4801,13 @@ J. & Zhang, X. (2018) <doi:10.1214/17-AOAS1092>.")
                              r-lubridate
                              r-jsonlite
                              r-isoweek
-                             r-httr
+                             r-httr2
                              r-dplyr
+                             r-digest
+                             r-data-table
                              r-curl
                              r-countrycode
-                             r-classint
-                             r-broom))
+                             r-classint))
     (native-inputs (list r-knitr))
     (home-page "https://ropengov.github.io/eurostat/")
     (synopsis "Tools for Eurostat Open Data")
@@ -7315,13 +7318,13 @@ networks whose edge weights are counts.  See Krivitsky (2012)
 (define-public r-ergm
   (package
     (name "r-ergm")
-    (version "4.5.0")
+    (version "4.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ergm" version))
        (sha256
-        (base32 "0lb3gdjnphgi8y478l98zrjjlr99f35ia9m6cn6m2h5n6nywfwik"))))
+        (base32 "1xx767l4z38wkxlxwq62y4khjjsz10fsy36x0s74fnzb746acwdl"))))
     (properties `((upstream-name . "ergm")))
     (build-system r-build-system)
     (inputs (list openmpi))
@@ -7422,40 +7425,6 @@ event analysis in finance can be conducted with several functions included.")
 extreme values and multiple threshold tests for a generalized Pareto
 distribution, together with an automatic threshold selection algorithm.  See del
 Castillo, J, Daoudi, J and Lockhart, R (2014) <doi:10.1111/sjos.12037>.")
-    (license license:gpl2+)))
-
-(define-public r-erah
-  (package
-    (name "r-erah")
-    (version "2.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "erah" version))
-       (sha256
-        (base32 "0n6444p3l0dsfpxy8w0xirqivssl3086h3z98lcmh3iq769z8lyw"))))
-    (properties `((upstream-name . "erah")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble
-                             r-signal
-                             r-quantreg
-                             r-progress
-                             r-osd
-                             r-igraph
-                             r-hiclimr
-                             r-future
-                             r-furrr))
-    (native-inputs (list r-knitr))
-    (home-page "http://metsyslab.com/")
-    (synopsis
-     "Automated Spectral Deconvolution, Alignment, and Metabolite Identification in GC/MS-Based Untargeted Metabolomics")
-    (description
-     "Automated compound deconvolution, alignment across samples, and identification
-of metabolites by spectral library matching in Gas Chromatography - Mass
-spectrometry (GC-MS) untargeted metabolomics.  Outputs a table with compound
-names, matching scores and the integrated area of the compound for each sample.
-Package implementation is described in Domingo-Almenara et al. (2016)
-<doi:10.1021/acs.analchem.6b02927>.")
     (license license:gpl2+)))
 
 (define-public r-era
@@ -8281,13 +8250,13 @@ two-step estimator.  For technical details, see Naghi, Varadi and Zhelonkin
 (define-public r-epm
   (package
     (name "r-epm")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epm" version))
        (sha256
-        (base32 "1n4q0gnwq4jrsy8gir1x5m0ijlk2nwinlavf05g947l1yx1kq06b"))))
+        (base32 "1zziy07ydrxma5qhnxha5g2zm02yi6bvw2vv3w6sanrj9p4kakav"))))
     (properties `((upstream-name . "epm")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
@@ -15664,13 +15633,13 @@ lower bound calculation.")
 (define-public r-efa-dimensions
   (package
     (name "r-efa-dimensions")
-    (version "0.1.7.9")
+    (version "0.1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EFA.dimensions" version))
        (sha256
-        (base32 "0smcgd6g61fb3fshxfh7q055h6h11rh3q37mrc8yzfyg72y3461i"))))
+        (base32 "0aprc5xzcl7p51qhkzcgh9yr0vb1270h5q9vdwmzlksx554cqcs9"))))
     (properties `((upstream-name . "EFA.dimensions")))
     (build-system r-build-system)
     (propagated-inputs (list r-psych r-polycor r-mirt r-gparotation r-efatools))
@@ -17127,13 +17096,13 @@ Collection and Processing\" course.")
 (define-public r-edcimport
   (package
     (name "r-edcimport")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EDCimport" version))
        (sha256
-        (base32 "1azds290gs413ws8g8kc4953pnxw2yb4zy95ijsk06bnhq1a9c98"))))
+        (base32 "1s1i7dxbr64487nwrwz65vvyb21fz1gbqa51jdqz8spbim328jvp"))))
     (properties `((upstream-name . "EDCimport")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

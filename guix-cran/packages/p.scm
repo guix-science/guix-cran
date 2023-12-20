@@ -1482,6 +1482,35 @@ more details please visit the official site (in Chinese)
 <http://www.pullword.com/>.")
     (license license:lgpl2.0+)))
 
+(define-public r-pulasso
+  (package
+    (name "r-pulasso")
+    (version "3.2.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PUlasso" version))
+       (sha256
+        (base32 "1lyf7x4sixpl74alns3kmr2iz10qmjz444gyqxgj5k4xqswgaz15"))))
+    (properties `((upstream-name . "PUlasso")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppeigen
+                             r-rcpp
+                             r-matrix
+                             r-ggplot2
+                             r-foreach
+                             r-doparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://arxiv.org/abs/1711.08129")
+    (synopsis "High-Dimensional Variable Selection with Presence-Only Data")
+    (description
+     "Efficient algorithm for solving PU (Positive and Unlabeled) problem in low or
+high dimensional setting with lasso or group lasso penalty.  The algorithm uses
+Maximization-Minorization and (block) coordinate descent.  Sparse calculation
+and parallel computing are supported for the computational speed-up.  See Hyebin
+Song, Garvesh Raskutti (2018) <@code{arXiv:1711.08129>}.")
+    (license license:gpl2)))
+
 (define-public r-pubtatordb
   (package
     (name "r-pubtatordb")
@@ -1545,13 +1574,13 @@ of the database.")
 (define-public r-pubmedtk
   (package
     (name "r-pubmedtk")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pubmedtk" version))
        (sha256
-        (base32 "0rq6p4ha30dy9x05l7pjhalc428r3hdq8kx40l0n0kiqrwzi7a09"))))
+        (base32 "01jxqki4gnigcssqqprjfsxr8bsb5c1ag7ivvr07x5i169kwqgvc"))))
     (properties `((upstream-name . "pubmedtk")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -1835,13 +1864,13 @@ is for educational purposes only.")
 (define-public r-pubchemr
   (package
     (name "r-pubchemr")
-    (version "1.0.1")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PubChemR" version))
        (sha256
-        (base32 "0c1j0v9bzh3gfzmhq8y6i0zdja8gfx8vgk71h4lwi00qw3prca0z"))))
+        (base32 "1bin09v18jlcdpq3jii4fk4pmh6wclrj8wr94lk1ajqnccpn304c"))))
     (properties `((upstream-name . "PubChemR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -1855,7 +1884,6 @@ is for educational purposes only.")
                              r-png
                              r-magrittr
                              r-magick
-                             r-jsonlite
                              r-httr
                              r-dplyr))
     (home-page "https://cran.r-project.org/package=PubChemR")
@@ -7965,13 +7993,13 @@ citation(\"PRIMME\") for details.")
 (define-public r-primes
   (package
     (name "r-primes")
-    (version "1.5.1")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "primes" version))
        (sha256
-        (base32 "0k1hbi6ziidb02p48y70wx450nzqgd7rghpg63hawlvq4il3jgn3"))))
+        (base32 "1s75mbjvljml5in0f4mndx7yz239zw9527g5m5nlpjn8ik0xmnf1"))))
     (properties `((upstream-name . "primes")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -16830,13 +16858,13 @@ supported by this package.")
 (define-public r-pmparser
   (package
     (name "r-pmparser")
-    (version "1.0.18")
+    (version "1.0.19")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pmparser" version))
        (sha256
-        (base32 "0ym0810n98hy10agz1qrngz2zxsww9cs2cmmjr29d92ah3mmx8m1"))))
+        (base32 "1aqcjl081b5v8gkd2i171vf69f549v2s91rhnyxn3lx1qlb4j8da"))))
     (properties `((upstream-name . "pmparser")))
     (build-system r-build-system)
     (inputs (list unzip sqlite))
@@ -17408,13 +17436,13 @@ datasets; an typical use case would be a linked brush.")
 (define-public r-plumbertableau
   (package
     (name "r-plumbertableau")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plumbertableau" version))
        (sha256
-        (base32 "1wkd15l5s7fs1nzyl83s41wbrx87yhklpw1fb6f3llrgbjn8rd77"))))
+        (base32 "1r4a7c5zagqm2qiyj2k8ywal0dg5kfx17ckkv1ks8wqzkpgr3c07"))))
     (properties `((upstream-name . "plumbertableau")))
     (build-system r-build-system)
     (propagated-inputs (list r-urltools
@@ -17430,7 +17458,6 @@ datasets; an typical use case would be a linked brush.")
                              r-httr
                              r-httpuv
                              r-htmltools
-                             r-glue
                              r-debugme
                              r-curl))
     (native-inputs (list r-knitr))
@@ -21690,13 +21717,13 @@ more.")
 (define-public r-piecepackr
   (package
     (name "r-piecepackr")
-    (version "1.13.8")
+    (version "1.13.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "piecepackr" version))
        (sha256
-        (base32 "1cj623bwagjpj2ih7g8b5aqibq803jn5nam54gfpyw9lccphgp35"))))
+        (base32 "1pplmwgi0wyp4qx6arlh96qiqxhlwb77g57bx70r10p99pfmjhyn"))))
     (properties `((upstream-name . "piecepackr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -22636,6 +22663,28 @@ generate a map of potential contact zones between groups with user-defined
 thresholds in the tree to account for old and recent divergence.  Additionally,
 it has functions for IDW interpolation using genetic data and midpoints.")
     (license license:gpl2+)))
+
+(define-public r-phyinsight
+  (package
+    (name "r-phyinsight")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PhyInsight" version))
+       (sha256
+        (base32 "1r7y10g2vriy360f7j8agmjw5sgzm2vr2dypj8v78ssklb6apd08"))))
+    (properties `((upstream-name . "PhyInsight")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-decipher r-bold r-biostrings r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://jamesc845.github.io/PhyInsight/")
+    (synopsis "DNA Sequence Analysis & Generation Tree Creation")
+    (description
+     "Provide insights using automated DNA sequence manipulation and tree creation.
+Currently, the package exclusively retrieves data from the BOLD System database
+(<http://v4.boldsystems.org/index.php/api_home>).")
+    (license license:gpl3)))
 
 (define-public r-phyext2
   (package
@@ -30145,13 +30194,13 @@ dataset to be considered for model fitting.")
 (define-public r-pcds-ugraph
   (package
     (name "r-pcds-ugraph")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pcds.ugraph" version))
        (sha256
-        (base32 "0yyqsxn3nfylcwbji9p0laqr9670ppa4widif2zj03w2ghdzanf4"))))
+        (base32 "1mfqrc25ppqa88yqymrzlncpw8rviqgsrq50isa2v79hncijlj5v"))))
     (properties `((upstream-name . "pcds.ugraph")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-pcds r-interp))
@@ -30176,13 +30225,13 @@ PCD-based graphs for one, two, and three dimensional data.")
 (define-public r-pcds
   (package
     (name "r-pcds")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pcds" version))
        (sha256
-        (base32 "0qwsb4gdbmz6dwq6635nqx4sssvfqcxwmn87sk2d4sdb2afvahx3"))))
+        (base32 "0cgi54lhgx0lc84nsj91qh8dy8a3f6r7zpkiqwwsx2vn4lm3lsp1"))))
     (properties `((upstream-name . "pcds")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack
@@ -30196,7 +30245,7 @@ PCD-based graphs for one, two, and three dimensional data.")
     (synopsis "Proximity Catch Digraphs and Their Applications")
     (description
      "This package contains the functions for construction and visualization of
-various families of the proximity catch digraphs (PCDs) (see (Ceyhan (2005)
+various families of the proximity catch digraphs (PCDs), see (Ceyhan (2005)
 ISBN:978-3-639-19063-2), for computing the graph invariants for testing the
 patterns of segregation and association against complete spatial randomness
 (CSR) or uniformity in one, two and three dimensional cases.  The package also
@@ -34001,6 +34050,36 @@ accelerated by use of data.table.  This package intends to provide an interface
 that is less general and abstract than data.table but rather geared towards
 survey researchers.")
     (license license:gpl2)))
+
+(define-public r-pandora
+  (package
+    (name "r-pandora")
+    (version "23.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Pandora" version))
+       (sha256
+        (base32 "1my5whx937l7717qsb0xqg8q7dswjc4ph1rdpf288lmqjblwgmsn"))))
+    (properties `((upstream-name . "Pandora")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yaml
+                             r-rlang
+                             r-readxl
+                             r-readr
+                             r-readods
+                             r-openxlsx
+                             r-magrittr
+                             r-jsonlite
+                             r-dplyr
+                             r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Pandora-IsoMemo/pandora-data")
+    (synopsis "Retrieve Data using the API of the 'Pandora' Data Platform")
+    (description
+     "API wrapper that contains functions to retrieve data from the Pandora databases.
+ Web services for API: <https://pandora.earth/>.")
+    (license license:gpl3+)))
 
 (define-public r-pandocfilters
   (package

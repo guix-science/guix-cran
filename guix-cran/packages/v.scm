@@ -1110,13 +1110,13 @@ check validity of ballots are also provided to ensure flexibility.")
 (define-public r-votesim
   (package
     (name "r-votesim")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "voteSim" version))
        (sha256
-        (base32 "00i6jkfvb7dk6mbhl9hv08mhwj6sjkakmv02ybwxw1hy9gqbsacs"))))
+        (base32 "0wqyckpmwwyfmwqhmml62nf781zakbiir727jac1bc1iawxm9y7k"))))
     (properties `((upstream-name . "voteSim")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm r-genord r-extradistr))

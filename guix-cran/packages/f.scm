@@ -6112,13 +6112,13 @@ al. (2018) <doi:10.1117/1.JRS.12.036006> using a moving window approach.")
 (define-public r-fossilsimshiny
   (package
     (name "r-fossilsimshiny")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FossilSimShiny" version))
        (sha256
-        (base32 "09qhydwcsvaiczgz61p0fxy0gl31cmfhidhbhaxxlf0ic3gaa2sv"))))
+        (base32 "05prhgzq1fqh21wp6k1saqm1cwapbs1b7ikn8jj2f7yjwry4nl31"))))
     (properties `((upstream-name . "FossilSimShiny")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-fossilsim))
@@ -7683,6 +7683,33 @@ load, plot and crop data, correct amplifier and baseline drifts, identify
 individual peak shapes (bites), rescale (normalize) peak curves, and find best
 polynomial fits to describe and analyze force curve shapes.")
     (license license:expat)))
+
+(define-public r-forceplate
+  (package
+    (name "r-forceplate")
+    (version "1.0-0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "forceplate" version))
+       (sha256
+        (base32 "01h8fmxnxzgc20jw3mb4kmf5ghrlj604in0kn6y97h84qwbyair4"))))
+    (properties `((upstream-name . "forceplate")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringi r-signal r-data-table))
+    (home-page "https://cran.r-project.org/package=forceplate")
+    (synopsis "Processing Force-Plate Data")
+    (description
+     "Process raw force-plate data (txt-files) by segmenting them into trials and, if
+needed, calculating (user-defined) descriptive statistics of variables for
+user-defined time bins (relative to trigger onsets) for each trial.  When
+segmenting the data a baseline correction, a filter, and a data imputation can
+be applied if needed.  Experimental data can also be processed and combined with
+the segmented force-plate data.  This procedure is suggested by Johannsen et al.
+(2023) <doi:10.6084/m9.figshare.22190155> and some of the options (e.g., choice
+of low-pass filter) are also suggested by Winter (2009)
+<doi:10.1002/9780470549148>.")
+    (license license:gpl2+)))
 
 (define-public r-forams
   (package

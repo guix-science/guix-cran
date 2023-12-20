@@ -7023,13 +7023,13 @@ sorting.")
 (define-public r-crandep
   (package
     (name "r-crandep")
-    (version "0.3.3")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crandep" version))
        (sha256
-        (base32 "1nphfpwc6xj9mh1gg0rfzkc366vxqrzywd7yj3nm7cbh1d7z6085"))))
+        (base32 "1nl6mdqfv2wvdmkld1aiysl16mx96l5mdmwhzh0ql9jly5j6a86v"))))
     (properties `((upstream-name . "crandep")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -14260,6 +14260,42 @@ implemented in the modeling language rstan') and visualizing and interpreting
 output.  See the paper for more details on the model and its utility.")
     (license license:gpl3)))
 
+(define-public r-constrainedkriging
+  (package
+    (name "r-constrainedkriging")
+    (version "0.2-7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "constrainedKriging" version))
+       (sha256
+        (base32 "06hx4kj9dfvw16fw3imxkiw1cc4k7a9pky34mrvdwhb205x91dii"))))
+    (properties `((upstream-name . "constrainedKriging")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-spatialcovariance r-sp r-sf))
+    (home-page "https://cran.r-project.org/package=constrainedKriging")
+    (synopsis
+     "Constrained, Covariance-Matching Constrained and Universal Point or Block Kriging")
+    (description
+     "This package provides functions for efficient computation of non-linear spatial
+predictions with local change of support (Hofer, C. and Papritz, A. (2011)
+\"@code{constrainedKriging}: An R-package for customary, constrained and
+covariance-matching constrained point or block kriging\"
+<doi:10.1016/j.cageo.2011.02.009>).  This package supplies functions for
+two-dimensional spatial interpolation by constrained (Cressie, N. (1993)
+\"Aggregation in geostatistical problems\" <doi:10.1007/978-94-011-1739-5_3>),
+covariance-matching constrained (Aldworth, J. and Cressie, N. (2003) \"Prediction
+of nonlinear spatial functionals\" <doi:10.1016/S0378-3758(02)00321-X>) and
+universal (external drift) Kriging for points or blocks of any shape from data
+with a non-stationary mean function and an isotropic weakly stationary
+covariance function.  The linear spatial interpolation methods, constrained and
+covariance-matching constrained Kriging, provide approximately unbiased
+prediction for non-linear target values under change of support.  This package
+extends the range of tools for spatial predictions available in R and provides
+an alternative to conditional simulation for non-linear spatial prediction
+problems with local change of support.")
+    (license license:gpl2+)))
+
 (define-public r-constellation
   (package
     (name "r-constellation")
@@ -14668,6 +14704,32 @@ the methods are general and useful for terrestrial systems as well.")
 publishers curate content collections on Posit Connect'.  The components, Card,
 Grid, Table, Search, and Filter can be used to produce a showcase page or
 gallery contained within a static or interactive R Markdown page.")
+    (license license:expat)))
+
+(define-public r-connections
+  (package
+    (name "r-connections")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "connections" version))
+       (sha256
+        (base32 "1hqsp5y32n0v5rij86clk3wmghc32zh9h3s6pjn0yjjsg3v1bvf6"))))
+    (properties `((upstream-name . "connections")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-uuid
+                             r-rscontract
+                             r-pins
+                             r-dplyr
+                             r-dbplyr
+                             r-dbi))
+    (home-page "https://github.com/rstudio/connections")
+    (synopsis "Integrates with the 'RStudio' Connections Pane and 'pins'")
+    (description
+     "Enables DBI compliant packages to integrate with the RStudio connections pane,
+and the pins package.  It automates the display of schemata, tables, views, as
+well as the preview of the table's top 1000 records.")
     (license license:expat)))
 
 (define-public r-connectednessapproach
@@ -17847,13 +17909,13 @@ for details under the FGM and general copulas, respectively.")
 (define-public r-common
   (package
     (name "r-common")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "common" version))
        (sha256
-        (base32 "0y4riskxpvqcrsg8g1374nxzy99yghbpj9mjy676pzr3g29myghq"))))
+        (base32 "0mr5qi5xkbxmaz6f96n5dm5pm7cn2lrhjw0mf7bcdscb9cpm5vi3"))))
     (properties `((upstream-name . "common")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -21266,13 +21328,13 @@ for differences in method agreement.")
 (define-public r-coastlinefd
   (package
     (name "r-coastlinefd")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CoastlineFD" version))
        (sha256
-        (base32 "006bl6gpjlmfayfl9116mx3qmvxgv1p811gbnk0rglpy0185lxlq"))))
+        (base32 "13503mzmfq2wwha49s4z91xiy9drbwlbbl0rg74zdlrgbqgfv7k4"))))
     (properties `((upstream-name . "CoastlineFD")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
@@ -21286,7 +21348,7 @@ for differences in method agreement.")
     (home-page "https://github.com/redworld123/CoastlineFD")
     (synopsis "Calculate the Coastline Fractal Dimension")
     (description
-     "This package provides a system is used to calculate the fractal dimension of
+     "This package provides a mothed is used to calculate the fractal dimension of
 coastline by boxes method and Dividers method.")
     (license license:expat)))
 
@@ -21920,13 +21982,13 @@ function as well as at
 (define-public r-cmsafvis
   (package
     (name "r-cmsafvis")
-    (version "1.2.0")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cmsafvis" version))
        (sha256
-        (base32 "1rx8g8ssprlspfkbb5x3hrahkl90mi58camqgicd39gy12dk0d7i"))))
+        (base32 "1p2sbm7k5d7yj0hphhq0f3s567wkf0p95qqabzl3dc7f9skm4rjv"))))
     (properties `((upstream-name . "cmsafvis")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra

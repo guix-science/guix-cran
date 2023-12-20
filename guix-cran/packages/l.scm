@@ -14214,13 +14214,13 @@ available from <https://github.com/MAnalytics/akmedoids>.  The
 (define-public r-latexpdf
   (package
     (name "r-latexpdf")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "latexpdf" version))
        (sha256
-        (base32 "0n0hzr9jkg13kn56jcghcg4a6y8x0c3jffcvxv621azd9ldljgfl"))))
+        (base32 "1drpb4mal389k7z3pcfkz68n3q5z1qjqdwp7q7k25awpvxjbrfbg"))))
     (properties `((upstream-name . "latexpdf")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=latexpdf")
@@ -16405,6 +16405,27 @@ aggregate Gaussian mixture model.  Upon the remove of outliers and the borrowing
 information among similar samples, l1kdeconv shows more stable and better
 performance than methods commonly used in LINCS L1000 data deconvolution.")
     (license license:gpl2+)))
+
+(define-public r-l1centrality
+  (package
+    (name "r-l1centrality")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "L1centrality" version))
+       (sha256
+        (base32 "03smpg2b4fcfzy70856hnrvpw58j6gqvianhi0wr05m1kysy61qy"))))
+    (properties `((upstream-name . "L1centrality")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-withr r-rcpp r-igraph))
+    (home-page "https://github.com/seungwoo-stat/L1centrality")
+    (synopsis "Graph/Network Analysis Based on L1 Centrality")
+    (description
+     "Analyze graph/network data using L1 centrality.  Functions for deriving global
+and local L1 centrality and L1 centrality-based neighborhoods of vertices are
+provided.  Routines for visual inspection of a graph/network are also provided.")
+    (license license:gpl3+)))
 
 (define-public r-l1ball
   (package

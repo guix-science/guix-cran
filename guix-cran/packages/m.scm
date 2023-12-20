@@ -9026,17 +9026,16 @@ Outcomes, Biometrics.")
 (define-public r-mrds
   (package
     (name "r-mrds")
-    (version "2.2.9")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mrds" version))
        (sha256
-        (base32 "003hcsg079acyc2jkp1s5q2ckyr1xhpfl8gv3na3vkl7s2yzdprg"))))
+        (base32 "1arp1nk393wbbvasvsp3mb08lbvl3y38bw06sxyk148za3lnhkhq"))))
     (properties `((upstream-name . "mrds")))
     (build-system r-build-system)
     (propagated-inputs (list r-rsolnp r-optimx r-numderiv r-mgcv))
-    (native-inputs (list r-knitr))
     (home-page "https://github.com/DistanceDevelopment/mrds/")
     (synopsis "Mark-Recapture Distance Sampling")
     (description
@@ -15442,13 +15441,13 @@ purposes).  Research project No.  1.1.1.2/VIAA/1/16/075.")
 (define-public r-mmirestriktor
   (package
     (name "r-mmirestriktor")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mmirestriktor" version))
        (sha256
-        (base32 "12ln63dzjljxq5fq34shl5d3h33rax8hpj8as0rbj2829a6nm95k"))))
+        (base32 "1qgj3rrri87dj3h3v6r7f5kjyy8b85qn0s7i62qll0lf8fnj334d"))))
     (properties `((upstream-name . "mmirestriktor")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinythemes
@@ -20329,13 +20328,13 @@ models sing the method proposed by Basford et al. (1997)
 (define-public r-mixar
   (package
     (name "r-mixar")
-    (version "0.22.7")
+    (version "0.22.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mixAR" version))
        (sha256
-        (base32 "1r8fbmwk75h41336vfc94qf5k1wy9hkyd2vjzasv8vxqdb66cwng"))))
+        (base32 "1fr3i54yvxqvh78pgn8y5hdwp1sf00gl9shg5bc7nnmmm84ki78q"))))
     (properties `((upstream-name . "mixAR")))
     (build-system r-build-system)
     (propagated-inputs (list r-timedate
@@ -27157,13 +27156,13 @@ Ecology (METE).")
 (define-public r-meteospain
   (package
     (name "r-meteospain")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "meteospain" version))
        (sha256
-        (base32 "0zfrbrij7mq44pj87frwfj0zi6bicr73nnrizyjqqbwf542lzvx4"))))
+        (base32 "16y3ay7bfjwf5f2nl63fhfs9j040zx5w9jfv45fbqksfcdhkcid1"))))
     (properties `((upstream-name . "meteospain")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -41676,13 +41675,13 @@ settings can be modified.")
 (define-public r-madshapr
   (package
     (name "r-madshapr")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "madshapR" version))
        (sha256
-        (base32 "04nigwlvx56fd22l6rs1jhyh270flj173w6wrspsq3gmnl9k468s"))))
+        (base32 "1dnw1mpby6kmfmya2vrsrk7lx9f1dh8sp7rwp29kjnm6j6inzm60"))))
     (properties `((upstream-name . "madshapR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidytext

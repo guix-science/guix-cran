@@ -2813,13 +2813,13 @@ assume no censoring is present in the data.  Please contact Lior Rennert
 (define-public r-survstan
   (package
     (name "r-survstan")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "survstan" version))
        (sha256
-        (base32 "0rwwz52s5ss9l5y7xikdf2d7r86lk0xmx190i6mg1aw8mhxplk2b"))))
+        (base32 "1i2h4f14w0i8lrjklv7csjamw1c3xm3pix8gq278ra68kwah634x"))))
     (properties `((upstream-name . "survstan")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -2849,8 +2849,8 @@ assume no censoring is present in the data.  Please contact Lior Rennert
 Stan'.  Implemented regression models include accelerated failure time models,
 proportional hazards models, proportional odds models, accelerated hazard
 models, and Yang and Prentice models.  Available baseline survival distributions
-include exponential, Weibull, log-normal, log-logistic, and fatigue
-(Birnbaum-Saunders) distributions.  References: Lawless (2002)
+include exponential, Weibull, log-normal, log-logistic, gamma, rayleigh and
+fatigue (Birnbaum-Saunders) distributions.  References: Lawless (2002)
 <ISBN:9780471372158>; Bennett (1982) <doi:10.1002/sim.4780020223>; Chen and
 Wang(2000) <doi:10.1080/01621459.2000.10474236>; Demarqui and Mayrink (2021)
 <doi:10.1214/20-BJPS471>.")
@@ -10411,13 +10411,13 @@ extensions are discussed in Li et al. (2020) <doi:10.1177/0962280220932962>.")
 (define-public r-stepp
   (package
     (name "r-stepp")
-    (version "3.2.5")
+    (version "3.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stepp" version))
        (sha256
-        (base32 "0srjx950hy7v1xmhhnimvndpyz2wm8l03z67z0zxjg2w7wnqrqvs"))))
+        (base32 "0b2jq9fdnakqrwcss4cw8nd5zq122w2ba607z71fmp1gx8rw4sf7"))))
     (properties `((upstream-name . "stepp")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-scales r-rstudioapi r-car))
@@ -21762,29 +21762,31 @@ straightforward, fast, and flexible.")
 (define-public r-spatialtime
   (package
     (name "r-spatialtime")
-    (version "1.3.3-3")
+    (version "1.3.4-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spatialTIME" version))
        (sha256
-        (base32 "06fwjifvgjb9xcxlgd32s8ik9dcjakc5z25lmhvp63lkyyazvqxs"))))
+        (base32 "1wvxnrglvrzmf471g0dwdr5m69vq8c38sp9hnrvjmrw74y4sdpp4"))))
     (properties `((upstream-name . "spatialTIME")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
                              r-tidyr
+                             r-tibble
+                             r-stringr
                              r-spatstat-geom
                              r-spatstat-explore
                              r-scales
-                             r-rlang
                              r-rcolorbrewer
                              r-purrr
-                             r-plyr
+                             r-pbmcapply
                              r-magrittr
                              r-ggplot2
                              r-future
                              r-furrr
                              r-dplyr
+                             r-dixon
                              r-crayon))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/FridleyLab/spatialTIME")
@@ -25381,13 +25383,13 @@ constraints\".  Biometrics, 75, 539-550. <doi:10.1111/biom.12997>.")
 (define-public r-sorcering
   (package
     (name "r-sorcering")
-    (version "1.0")
+    (version "1.0.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sorcering" version))
        (sha256
-        (base32 "0xginf1zd1hsxw57fk62jpvm458iqqm7ba5873jvl2yj73qgy0zw"))))
+        (base32 "1av5hi2qs1yrcxgfr7g1c1pv32ljza6jiapkxy10lvlbnkk3by15"))))
     (properties `((upstream-name . "sorcering")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-rcpparmadillo r-rcpp r-mathjaxr))
@@ -40182,13 +40184,13 @@ and Ulrich, 2023 <https://CRAN.R-project.org/package=quantmod>).")
 (define-public r-shinyhugeplot
   (package
     (name "r-shinyhugeplot")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyHugePlot" version))
        (sha256
-        (base32 "0dwx5r31rijnh8fvx74gd8q10glv700r1nf1l9c9c7bpxrmkxkxq"))))
+        (base32 "1sf26jz2jbyrs11a1gricnb3iq4106cpf10kbhqx0hy12q47lk1y"))))
     (properties `((upstream-name . "shinyHugePlot")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -44177,13 +44179,13 @@ images/containers.")
 (define-public r-sequoia
   (package
     (name "r-sequoia")
-    (version "2.7.2")
+    (version "2.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sequoia" version))
        (sha256
-        (base32 "0slh9k3blxpfj8rrln85rxq507fqygwmvclqhnp2dsrmp9z4pj74"))))
+        (base32 "0dd6haiimdf77mzx163simhn0dc57nmgagj914ypbynf2g19yv24"))))
     (properties `((upstream-name . "sequoia")))
     (build-system r-build-system)
     (propagated-inputs (list r-plyr))
@@ -44954,6 +44956,27 @@ variability (inter- and intra-observer variation).  The methods used in this
 package are referenced from Zoran B. @code{PopoviÄ} (2017)
 <doi:10.21037/cdt.2017.03.12>.")
     (license license:gpl3)))
+
+(define-public r-sentryr
+  (package
+    (name "r-sentryr")
+    (version "1.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sentryR" version))
+       (sha256
+        (base32 "08k4ws4jrd50ymkp7v0i5jjss5brqxyxr36x1jnyqw1nzmchas5x"))))
+    (properties `((upstream-name . "sentryR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-uuid r-tibble r-stringr r-jsonlite r-httr))
+    (home-page "https://github.com/jcpsantiago/sentryR")
+    (synopsis "Send Errors and Messages to Sentry")
+    (description
+     "Unofficial client for Sentry <https://sentry.io>, a self-hosted or cloud-based
+error-monitoring service.  It will inform about errors in real-time, and
+includes integration with the Plumber package.")
+    (license license:expat)))
 
 (define-public r-sentopics
   (package
@@ -50286,13 +50309,13 @@ cells.")
 (define-public r-scspatialsim
   (package
     (name "r-scspatialsim")
-    (version "0.1.3.2")
+    (version "0.1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scSpatialSIM" version))
        (sha256
-        (base32 "04pwzpp92w8fldyr11lycygpali4pa8v8xbssgsipn6fk991xkam"))))
+        (base32 "09pzdh8zygza3d5ld0j7xm7mks2x158iy1i3p3yrhdhrldx7llfy"))))
     (properties `((upstream-name . "scSpatialSIM")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

@@ -4941,13 +4941,13 @@ in RMSTs between the treatment and control groups up to a chosen time t.")
 (define-public r-nnspat
   (package
     (name "r-nnspat")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nnspat" version))
        (sha256
-        (base32 "0h17p87fzsqizldgxvmis4s8wyyhc0f95amdl8j7fw2kcmrivnay"))))
+        (base32 "1svqdb20x5d4wsbi97lhjwkhl623ksawf4w4w1f0hwsx0f3xjzvi"))))
     (properties `((upstream-name . "nnspat")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-pcds r-mass))
@@ -4956,19 +4956,19 @@ in RMSTs between the treatment and control groups up to a chosen time t.")
     (description
      "This package contains the functions for testing the spatial patterns (of
 segregation, spatial symmetry, association, disease clustering, species
-correspondence and reflexivity) based on nearest neighbor relations, especially
+correspondence, and reflexivity) based on nearest neighbor relations, especially
 using contingency tables such as nearest neighbor contingency tables (Ceyhan
 (2010) <doi:10.1007/s10651-008-0104-x> and Ceyhan (2017)
 <doi:10.1016/j.jkss.2016.10.002> and references therein), nearest neighbor
 symmetry contingency tables (Ceyhan (2014) <doi:10.1155/2014/698296>), species
 correspondence contingency tables and reflexivity contingency tables (Ceyhan
-(2018) <doi:10.2436/20.8080.02.72>) for two (or higher) dimensional data.  Also
-contains functions for generating patterns of segregation, association,
-uniformity in a multi-class setting (Ceyhan (2014)
+(2018) <doi:10.2436/20.8080.02.72> for two (or higher) dimensional data.  The
+package also contains functions for generating patterns of segregation,
+association, uniformity in a multi-class setting (Ceyhan (2014)
 <doi:10.1007/s00477-013-0824-9>), and various non-random labeling patterns for
 disease clustering in two dimensional cases (Ceyhan (2014)
 <doi:10.1002/sim.6053>), and for visualization of all these patterns for the two
-dimensional data.  The tests are usually (asymptotic) normal z-tests and
+dimensional data.  The tests are usually (asymptotic) normal z-tests or
 chi-square tests.")
     (license license:gpl2)))
 
@@ -6390,13 +6390,13 @@ with possibly non constant variance.")
 (define-public r-nlraa
   (package
     (name "r-nlraa")
-    (version "1.9.3")
+    (version "1.9.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlraa" version))
        (sha256
-        (base32 "0bwlx9hv8a2a6220lsvwlgn0jwq9r3mbn095gffk5s6g80lgmm8r"))))
+        (base32 "0xl2vinwj6pclmq1lcyibff0fwr3jnmi96ddgj42vvki19n9c84c"))))
     (properties `((upstream-name . "nlraa")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlme
@@ -10586,13 +10586,13 @@ methods, see Marrs, Fosdick, and @code{McCormick} (2017)
 (define-public r-netrankr
   (package
     (name "r-netrankr")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "netrankr" version))
        (sha256
-        (base32 "1sky7b356vlm7s28a6rw09qwci67a7vjjwkbc3r1v455w11idq6c"))))
+        (base32 "0amvdgj0n32c9f46k0yqkahq2dzicc0522ivh76740l9n1hzbm4v"))))
     (properties `((upstream-name . "netrankr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix r-igraph))

@@ -1881,13 +1881,13 @@ resistance surface.")
 (define-public r-quadrupen
   (package
     (name "r-quadrupen")
-    (version "0.2-10")
+    (version "0.2-11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quadrupen" version))
        (sha256
-        (base32 "1vlpx0yf7b4vka4lrdqsfyjnajbcv25kdp8y27di3ww6h0759h9l"))))
+        (base32 "1gmq6wqf4qaamz33qk1y7003lbbfg34rcr48a3jp7fd3aww0yp9c"))))
     (properties `((upstream-name . "quadrupen")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -1896,7 +1896,7 @@ resistance surface.")
                              r-rcpp
                              r-matrix
                              r-ggplot2))
-    (home-page "https://cran.r-project.org/package=quadrupen")
+    (home-page "https://github.com/jchiquet/quadrupenCRAN")
     (synopsis "Sparsity by Worst-Case Quadratic Penalties")
     (description
      "Fits classical sparse regression models with efficient active set algorithms by

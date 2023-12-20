@@ -6187,21 +6187,24 @@ version of the package is documented in Journal of Statistical Software
 (define-public r-rsleep
   (package
     (name "r-rsleep")
-    (version "1.0.10")
+    (version "1.0.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rsleep" version))
        (sha256
-        (base32 "14j28zrm0hag63s5i1asf6cpfziqy9z2zznh2qm26iqx44n165pw"))))
+        (base32 "005nqqavqji7ppwsznq5j0gs3ia6xxvqjvxwx7nv7xlr48q45ly9"))))
     (properties `((upstream-name . "rsleep")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xml2
+    (propagated-inputs (list r-xts
+                             r-xml2
                              r-signal
+                             r-readr
                              r-psd
                              r-jsonlite
                              r-ggplot2
                              r-edfreader
+                             r-dplyr
                              r-abind))
     (native-inputs (list r-knitr))
     (home-page "https://rsleep.org/")
@@ -21146,13 +21149,13 @@ models (Spiegelman and Hertzmark 2005, <doi:10.1093/aje/kwi188>), and others.")
 (define-public r-riskregression
   (package
     (name "r-riskregression")
-    (version "2023.09.08")
+    (version "2023.12.21")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "riskRegression" version))
        (sha256
-        (base32 "08azk0b45vqnnhnwb64lv9brnkykj4hsbn8w5kdnvkhrpi78vw74"))))
+        (base32 "07cvj86v2k1i34yrsqcgl2wqxlbbmslbbilvcnvkwfsk9l6ajk5c"))))
     (properties `((upstream-name . "riskRegression")))
     (build-system r-build-system)
     (propagated-inputs (list r-timereg
@@ -24527,13 +24530,13 @@ armadillo through a header file approach.")
 (define-public r-rgeedim
   (package
     (name "r-rgeedim")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rgeedim" version))
        (sha256
-        (base32 "0agi04bz9rbl2pwrrn0wgb359198sg3ia87rnarb4ckrrnj2n5gs"))))
+        (base32 "0ywv2azzfg6pjy4341949r2317mpicyb2mgkrvlhlxgn3apy0ah3"))))
     (properties `((upstream-name . "rgeedim")))
     (build-system r-build-system)
     (inputs (list python))
@@ -35793,13 +35796,13 @@ documentation, and examples.")
 (define-public r-rdflib
   (package
     (name "r-rdflib")
-    (version "0.2.7")
+    (version "0.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rdflib" version))
        (sha256
-        (base32 "10nnb3hqf1dbqxr9zn4d4jmwz4zkklw3vxfhc1vnn7ffhlm84d3f"))))
+        (base32 "0massic915hyw2752jkaa3rx9nf2v7a87gp3c5qpyn4fnqjai4dn"))))
     (properties `((upstream-name . "rdflib")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-stringi r-redland r-readr r-dplyr))
@@ -46754,13 +46757,13 @@ data structures.")
 (define-public r-r6causal
   (package
     (name "r-r6causal")
-    (version "0.8.1")
+    (version "0.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "R6causal" version))
        (sha256
-        (base32 "1d2sl5jpbyn485l42izal6zabjzzmm3p325264r3nxsv5ghiagim"))))
+        (base32 "1x03pasia34jh65wqzps5zrnag8r19ih0dh02vs1pv85zyi68x0p"))))
     (properties `((upstream-name . "R6causal")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6

@@ -6090,6 +6090,33 @@ using @code{treespaceServer}().  For further details see Jombart et al. (2017)
 <DOI:10.1111/1755-0998.12676>.")
     (license license:expat)))
 
+(define-public r-treeslicer
+  (package
+    (name "r-treeslicer")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "treesliceR" version))
+       (sha256
+        (base32 "1ncck3v6yx5gf92i0694znp6mi0v8skkb7pl0pa2iy8ih5nxxhvb"))))
+    (properties `((upstream-name . "treesliceR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sf r-ggplot2 r-foreach r-doparallel r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/AraujoMat/treesliceR")
+    (synopsis
+     "To Slice Phylogenetic Trees and Infer Evolutionary Patterns Over Time")
+    (description
+     "Provide a range of functions with multiple criteria for cutting phylogenetic
+trees at any evolutionary depth.  It enables users to cut trees in any
+orientation, such as rootwardly (from root to tips) and tipwardly (from tips to
+its root), or allows users to define a specific time interval of interest.  It
+can also be used to create multiple tree pieces of equal temporal width.
+Moreover, it allows the assessment of novel temporal rates for various
+phylogenetic indexes, which can be quickly displayed graphically.")
+    (license license:expat)))
+
 (define-public r-treesimgm
   (package
     (name "r-treesimgm")
@@ -7914,13 +7941,13 @@ in Kook et al. (2023, <doi:10.48550/@code{arXiv.2309.12833>}).")
 (define-public r-tram
   (package
     (name "r-tram")
-    (version "1.0-0")
+    (version "1.0-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tram" version))
        (sha256
-        (base32 "1bzrr6zmiaaq68mmah5wn0srivi2aprgchpkk2gfb3dmcbidmrvm"))))
+        (base32 "0d6k8zycsjv47wkvfqrqwp9a7qwzw9946wavljq8lg0ni22185qv"))))
     (properties `((upstream-name . "tram")))
     (build-system r-build-system)
     (propagated-inputs (list r-variables
@@ -12101,6 +12128,30 @@ downloads can be set up with a cache to avoid multiple downloads.  Data is
 available back to 2000 for most geographies.")
     (license license:expat)))
 
+(define-public r-tinythemes
+  (package
+    (name "r-tinythemes")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tinythemes" version))
+       (sha256
+        (base32 "19dsayqi762l1dj5valmlgsq1hjy4s2znrnln9h98w17wv629zhg"))))
+    (properties `((upstream-name . "tinythemes")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ggplot2))
+    (home-page "https://github.com/eddelbuettel/tinythemes")
+    (synopsis "Lightweight Repackaging of 'Themes' for 'ggplot2'")
+    (description
+     "Themes for ggplot2 are a convenient way to style plots.  The hrbrthemes package
+contains a particularly nice one, but brings along a significant tail of
+dependencies.  So this (currently experimental) package brings along just the
+theme_ipsum_rc theme using the Roboto Condensed font.  Should the font not be
+installed on your system, see the help in the package hrbrthemes on how on
+install Roboto Condensed'.")
+    (license license:expat)))
+
 (define-public r-tinytest2junit
   (package
     (name "r-tinytest2junit")
@@ -16051,13 +16102,13 @@ dplyr time-based groups.")
 (define-public r-thurstonianirt
   (package
     (name "r-thurstonianirt")
-    (version "0.12.3")
+    (version "0.12.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "thurstonianIRT" version))
        (sha256
-        (base32 "038d26hmhmyjwxssl4568ypjn8q28k08abz05ccddiw8ai992rw3"))))
+        (base32 "1gvijkxiy4zwg5hxg4qhy3dgcck2gm4nh6bjacxsz5yvai3fagsa"))))
     (properties `((upstream-name . "thurstonianIRT")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -16072,7 +16123,6 @@ dplyr time-based groups.")
                              r-mvtnorm
                              r-magrittr
                              r-lavaan
-                             r-knitr
                              r-dplyr
                              r-bh))
     (native-inputs (list r-knitr))
@@ -16543,6 +16593,32 @@ Poisson (Mielke and Munk (2009) <@code{arXiv:0912.4169>}), negative binomial
 Server (<https://www.unidata.ucar.edu/software/tds/>) catalogs, and access
 dataset metadata and resources.")
     (license license:expat)))
+
+(define-public r-threc
+  (package
+    (name "r-threc")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "THREC" version))
+       (sha256
+        (base32 "0pdwjjsfqqbkfl21qiikcgl9psb9x2fh5qg7wi6x1kq906zzify7"))))
+    (properties `((upstream-name . "THREC")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-matrix r-magic r-dplyr r-deriv))
+    (home-page "https://cran.r-project.org/package=THREC")
+    (synopsis "Tree Height Response Calibration for Swedish Forests")
+    (description
+     "This package provides a tool that allows users to estimate tree height in the
+long-term forest experiments in Sweden.  It utilizes the multilevel nonlinear
+mixed-effect height models developed for the forest experiments and consists of
+four functions for the main species, other conifer species, and other
+broadleaves.  Each function within the system returns a data frame that includes
+the input data and the estimated heights for any missing values.  Ogana et al.
+(2023) <doi:10.1016/j.foreco.2023.120843>\\n Arias-Rodil et al. (2015)
+<doi:10.1371/JOURNAL.PONE.0143521>.")
+    (license license:gpl3+)))
 
 (define-public r-thorn
   (package
@@ -19607,13 +19683,13 @@ about tesselle at <https://www.tesselle.org>.")
 (define-public r-tessellation
   (package
     (name "r-tessellation")
-    (version "2.2.0")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tessellation" version))
        (sha256
-        (base32 "02d8fq3w0myxw0dc4ih4rsw0w60r2qqy90n6id3j5cxfd1wj8qpx"))))
+        (base32 "0l8ffw7szmfd51lf9x8vh673zq0zg8rrx1527hgllddk82kyhmia"))))
     (properties `((upstream-name . "tessellation")))
     (build-system r-build-system)
     (propagated-inputs (list r-sets
@@ -21538,13 +21614,13 @@ sap flow rates at the tree and plot scale (For more information see : Granier
 (define-public r-tdlm
   (package
     (name "r-tdlm")
-    (version "0.1.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TDLM" version))
        (sha256
-        (base32 "16xjmg7k7zqvc56l12971wz66sdzpr4gys5xp0srvs5hp8pr8a2d"))))
+        (base32 "05gjbmhnamm94facg590sd1m7l3x51crd7x21ly6gmwyq5rjlffm"))))
     (properties `((upstream-name . "TDLM")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf
@@ -21794,40 +21870,6 @@ learn more about how TDAstats calculates persistent homology, you can visit the
 @code{GitHub} repository for Ripser, the software that works behind the scenes
 at <https://github.com/Ripser/ripser>.  This package has been published as
 Wadhwa et al. (2018) <doi:10.21105/joss.00860>.")
-    (license license:gpl3)))
-
-(define-public r-tdapplied
-  (package
-    (name "r-tdapplied")
-    (version "3.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "TDApplied" version))
-       (sha256
-        (base32 "0k9pnpg5k9jgqhgaajp57nl42hirv5v3a2q5jnqjcgdj5cnkfnwf"))))
-    (properties `((upstream-name . "TDApplied")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rdist
-                             r-rcpp
-                             r-parallelly
-                             r-kernlab
-                             r-iterators
-                             r-foreach
-                             r-doparallel
-                             r-clue))
-    (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://github.com/shaelebrown/TDApplied")
-    (synopsis "Machine Learning and Inference for Topological Data Analysis")
-    (description
-     "Topological data analysis is a powerful tool for finding non-linear global
-structure in whole datasets.  The main tool of topological data analysis is
-persistent homology, which computes a topological shape descriptor of a dataset
-called a persistence diagram.  TDApplied provides useful and efficient methods
-for analyzing groups of persistence diagrams with machine learning and
-statistical inference, and these functions can also interface with other data
-science packages to form flexible and integrated topological data analysis
-pipelines.")
     (license license:gpl3)))
 
 (define-public r-tdakit
@@ -23268,13 +23310,13 @@ implementation and the implementation available from IHME.")
 (define-public r-targeted
   (package
     (name "r-targeted")
-    (version "0.3")
+    (version "0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "targeted" version))
        (sha256
-        (base32 "0h05h8pgjjab5clv501m9b2fcycspj0dc7zs72lwp15al2rikmzg"))))
+        (base32 "08js8l51j03w2zy7fnm3wq9dcy9r2f0j6wcr9cxl2qh8sx8n9j78"))))
     (properties `((upstream-name . "targeted")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -23294,10 +23336,13 @@ implementation and the implementation available from IHME.")
     (synopsis "Targeted Inference")
     (description
      "Various methods for targeted and semiparametric inference including augmented
-inverse probability weighted estimators for missing data and causal inference
-(Bang and Robins (2005) <doi:10.1111/j.1541-0420.2005.00377.x>) and estimators
-for risk differences and relative risks (Richardson et al. (2017)
-<doi:10.1080/01621459.2016.1192546>).")
+inverse probability weighted (AIPW) estimators for missing data and causal
+inference (Bang and Robins (2005) <doi:10.1111/j.1541-0420.2005.00377.x>),
+variable importance and conditional average treatment effects (CATE) (van der
+Laan (2006) <doi:10.2202/1557-4679.1008>), estimators for risk differences and
+relative risks (Richardson et al. (2017) <doi:10.1080/01621459.2016.1192546>),
+assumption lean inference for generalized linear model parameters (Vansteelandt
+et al. (2022) <doi:10.1111/rssb.12504>).")
     (license license:asl2.0)))
 
 (define-public r-tardis

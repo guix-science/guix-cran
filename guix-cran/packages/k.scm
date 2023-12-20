@@ -2044,13 +2044,13 @@ analyses of the cumulative incidence functions (Allignol and Beyersmann, 2010
 (define-public r-kmedians
   (package
     (name "r-kmedians")
-    (version "1.2.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Kmedians" version))
        (sha256
-        (base32 "10akh0jbnk7hrgqp414p66ddlhs6rdgd1ifjx18wpnfn4c81xcnj"))))
+        (base32 "0bsbwxv0a9b6g89h7v876hm5p97viwbczz851ngjv5li5qzvlpxs"))))
     (properties `((upstream-name . "Kmedians")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2
@@ -3224,13 +3224,13 @@ regularisation and warping.")
 (define-public r-kgen
   (package
     (name "r-kgen")
-    (version "0.2.1")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kgen" version))
        (sha256
-        (base32 "02i3qki6qshq5sppn6mchfwyc6dbgchizylgkqj95jv63grja0wc"))))
+        (base32 "1rf7mic35jbaik9hw7j28sc98qjqjmzlv720lfpmgjsf6yhi2mlz"))))
     (properties `((upstream-name . "kgen")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjson

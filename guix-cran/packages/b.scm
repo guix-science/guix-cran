@@ -386,13 +386,13 @@ bounded-variable least squares")
 (define-public r-bvhar
   (package
     (name "r-bvhar")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bvhar" version))
        (sha256
-        (base32 "1flzfblrjbzwg5vv3c13pvf90yn5g47n2h1w6j5ny17ix192acdq"))))
+        (base32 "05r669kin2ddgfym1s0mmdhcj0hwkdjbsz98kqnlq3q204a4rdn8"))))
     (properties `((upstream-name . "bvhar")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -407,7 +407,6 @@ bounded-variable least squares")
                              r-lifecycle
                              r-ggplot2
                              r-foreach
-                             r-forcats
                              r-dplyr
                              r-dorng
                              r-bayesplot))
@@ -416,7 +415,7 @@ bounded-variable least squares")
     (synopsis "Bayesian Vector Heterogeneous Autoregressive Modeling")
     (description
      "This package provides tools to research Bayesian Vector heterogeneous
-autoregressive (VHAR) model, referring to Kim & Baek (2023+)
+autoregressive (VHAR) model, referring to Kim & Baek (2023)
 (<doi:10.1080/00949655.2023.2281644>).  bvhar can model Vector Autoregressive
 (VAR), VHAR, Bayesian VAR (BVAR), and Bayesian VHAR (BVHAR) models.")
     (license license:gpl3+)))
@@ -6411,13 +6410,13 @@ explanation of the Gaussian case.")
 (define-public r-boom
   (package
     (name "r-boom")
-    (version "0.9.13")
+    (version "0.9.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Boom" version))
        (sha256
-        (base32 "0giv4d9xa61xmi9glxsm50a8q839hhwj5ccdxhazqar9gpza6kxb"))))
+        (base32 "103x5hxmnb1zvq47hixmkk8070k6wyxswiyfmvyn0kd0nij1sb91"))))
     (properties `((upstream-name . "Boom")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -7581,6 +7580,49 @@ quantile goodness-of-fit.  Fit of univariate distributions for non-censored data
 using maximum product of spacing estimation and minimum quantile distance
 estimation is also included.")
     (license license:gpl2+)))
+
+(define-public r-bmstdr
+  (package
+    (name "r-bmstdr")
+    (version "0.7.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bmstdr" version))
+       (sha256
+        (base32 "0myv2mj5kp97dzvbf4sw63fzjxzpv2d82vxwiqxaqd1pllcgrzz1"))))
+    (properties `((upstream-name . "bmstdr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stanheaders
+                             r-sptimer
+                             r-sptdyn
+                             r-spbayes
+                             r-rstantools
+                             r-rstan
+                             r-rdpack
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-mnormt
+                             r-mcmcpack
+                             r-inlabru
+                             r-ggpubr
+                             r-ggplot2
+                             r-carbayesst
+                             r-carbayes
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://www.sujitsahu.com")
+    (synopsis "Bayesian Modeling of Spatio-Temporal Data with R")
+    (description
+     "Fits, validates and compares a number of Bayesian models for spatial and space
+time point referenced and areal unit data.  Model fitting is done using several
+packages: rstan', INLA', @code{spBayes}', @code{spTimer}', @code{spTDyn}',
+CARBayes and CAR@code{BayesST}'.  Model comparison is performed using the DIC
+and WAIC, and K-fold cross-validation where the user is free to select their own
+subset of data rows for validation.  Sahu (2022) <doi:10.1201/9780429318443>
+describes the methods in detail.")
+    (license license:gpl2)))
 
 (define-public r-bmscstan
   (package
@@ -9375,16 +9417,17 @@ format and checked for compatibility.  Supports dataframes, tibbles and
 (define-public r-blackmarbler
   (package
     (name "r-blackmarbler")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "blackmarbler" version))
        (sha256
-        (base32 "0z5x56p7g2ypv1zh9bmzxgbkacp26hrr1x8nfydkxyyd47g2c5hw"))))
+        (base32 "17n77yynvdj0gk6mv2swnygdam80ajhdj09479ib0axl0d6f80sr"))))
     (properties `((upstream-name . "blackmarbler")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringr
+    (propagated-inputs (list r-tidyr
+                             r-stringr
                              r-sf
                              r-readr
                              r-raster
@@ -20040,6 +20083,36 @@ considered confidence bands (under mild conditions) and thus offer reliable
 uncertainty quantification.")
     (license license:gpl3)))
 
+(define-public r-bayessurv
+  (package
+    (name "r-bayessurv")
+    (version "3.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bayesSurv" version))
+       (sha256
+        (base32 "1mqsnvqrivyl28d5fjh7alqsxr06wnhkjhhhrahmngmvgnmmnd1b"))))
+    (properties `((upstream-name . "bayesSurv")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival r-smoothsurv r-coda))
+    (home-page "https://msekce.karlin.mff.cuni.cz/~komarek/")
+    (synopsis
+     "Bayesian Survival Regression with Flexible Error and Random Effects Distributions")
+    (description
+     "This package contains Bayesian implementations of the Mixed-Effects Accelerated
+Failure Time (MEAFT) models for censored data.  Those can be not only
+right-censored but also interval-censored, doubly-interval-censored or
+misclassified interval-censored.  The methods implemented in the package have
+been published in @code{KomÃ¡rek} and Lesaffre (2006, Stat.  Modelling)
+<doi:10.1191/1471082X06st107oa>, @code{KomÃ¡rek}, Lesaffre and Legrand (2007,
+Stat.  in Medicine) <doi:10.1002/sim.3083>, @code{KomÃ¡rek} and Lesaffre (2007,
+Stat.  Sinica) <https://www3.stat.sinica.edu.tw/statistica/oldpdf/A17n27.pdf>,
+@code{KomÃ¡rek} and Lesaffre (2008, JASA) <doi:10.1198/016214507000000563>,
+@code{GarcÃ­a-Zattera}, Jara and @code{KomÃ¡rek} (2016, Biometrics)
+<doi:10.1111/biom.12424>.")
+    (license license:gpl2+)))
+
 (define-public r-bayessur
   (package
     (name "r-bayessur")
@@ -20463,13 +20536,13 @@ using the algorithms summarized in Makalic and Schmidt (2016)
 (define-public r-bayesrecon
   (package
     (name "r-bayesrecon")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesRecon" version))
        (sha256
-        (base32 "04grkz5b6vwp5brgd6vazfinl1ikrvj8kimns0b7rw0blb3z9fm3"))))
+        (base32 "0nnj97j6i2hp9rldrfz207wmyn8rsyvjc5c14507yl1paayf3l85"))))
     (properties `((upstream-name . "bayesRecon")))
     (build-system r-build-system)
     (propagated-inputs (list r-lpsolve))
@@ -22150,13 +22223,13 @@ factor and leave-one-out cross-validation methods.  References: Hyndman (2017)
 (define-public r-bayesfmri
   (package
     (name "r-bayesfmri")
-    (version "0.3.5")
+    (version "0.3.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesfMRI" version))
        (sha256
-        (base32 "1fcfg84i72m3hyccm4nws022jk3rjqzjjcr8b429gn2f46x793nm"))))
+        (base32 "19yn8d3jbh1fpxdmqvz3yflnml4fdxb966w44yqha4wjhzfp6hym"))))
     (properties `((upstream-name . "BayesfMRI")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp
@@ -24916,13 +24989,13 @@ Gelman's R.")
 (define-public r-bammtools
   (package
     (name "r-bammtools")
-    (version "2.1.10")
+    (version "2.1.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BAMMtools" version))
        (sha256
-        (base32 "1ng7pf08nk7y00146qvqr9099kpvbgn1swi3cawzr9zd55gv7qvr"))))
+        (base32 "0ymb1vwrzwg7gs4n3zjikg10ajk75r18j5rlgs25n4ab4fp6sibp"))))
     (properties `((upstream-name . "BAMMtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-gplots r-ape))

@@ -557,13 +557,13 @@ the Golden Section Search Method for Numerical Optimization\",
 (define-public r-jstreer
   (package
     (name "r-jstreer")
-    (version "2.4.0")
+    (version "2.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jsTreeR" version))
        (sha256
-        (base32 "1sskjpq484b7wlymfvlp5xv2q9j32qw72h22a47qg2qisqzk0h8d"))))
+        (base32 "0qkywv3var6ash1vsl684pjhwrn7hmw3nl6i5kcqvb7xijs20cwp"))))
     (properties `((upstream-name . "jsTreeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinyace
@@ -3004,13 +3004,13 @@ application which depends on your OS.")
 (define-public r-jgl
   (package
     (name "r-jgl")
-    (version "2.3.1")
+    (version "2.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JGL" version))
        (sha256
-        (base32 "02p9z32f8j60wnh1szkjr2zfa9zwyw0gqinpsvll4dymf8cjawpw"))))
+        (base32 "0zsvr20vaxhkac2mdlqzd12xqpgw4yvx4bkqwgsbvhpl34pz7dy2"))))
     (properties `((upstream-name . "JGL")))
     (build-system r-build-system)
     (propagated-inputs (list r-igraph))
@@ -3026,7 +3026,7 @@ covariance matrices to be similar across classes, and the Group Graphical Lasso
 (GGL), which encourages similar network structure between classes.  FGL is
 recommended over GGL for most applications.  Reference: Danaher P, Wang P,
 Witten DM. (2013) <doi:10.1111/rssb.12033>.")
-    (license license:gpl2)))
+    (license license:expat)))
 
 (define-public r-jfm
   (package
