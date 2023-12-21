@@ -15,8 +15,8 @@
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages maths)
   #:use-module (gnu packages bioinformatics)
+  #:use-module (gnu packages maths)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
@@ -33956,6 +33956,28 @@ procedure for ultrahigh dimensional data
 conducts conditional distance covariance test for conditional independence
 assumption of two multivariate variable.")
     (license license:gpl2+)))
+
+(define-public r-cdcplaces
+  (package
+    (name "r-cdcplaces")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CDCPLACES" version))
+       (sha256
+        (base32 "0rxyfac56y8jmr8bqmmslkqw2xmjxh9y8m3fm062yapha5c0bnm7"))))
+    (properties `((upstream-name . "CDCPLACES")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-jsonlite r-httr2 r-dplyr))
+    (home-page "\"https://github.com/brendensm/CDCPLACES\"")
+    (synopsis "Access the 'CDC PLACES' API")
+    (description
+     "Allows users to seamlessly query several CDC PLACES APIs
+(<https://data.cdc.gov/browse?q=PLACES%20&@code{sortBy=relevance>}) by
+geography, state, measure, and release year.  This package also contains a
+function to explore the available measures for each release year.")
+    (license license:expat)))
 
 (define-public r-cdcfluview
   (package

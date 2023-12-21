@@ -1039,13 +1039,13 @@ them in package tests and in Continuous Integration (CI) pipelines.")
 (define-public r-future-batchtools
   (package
     (name "r-future-batchtools")
-    (version "0.12.0")
+    (version "0.12.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "future.batchtools" version))
        (sha256
-        (base32 "1fr4w4czslx1cxlpj9xq5v7093xsrsgqlcgryy3vzgjgy0hyp40a"))))
+        (base32 "0cfr4y6d0x1vm0qdpj2b6i9jddd6065iwbv99nix7nls4dzylwfv"))))
     (properties `((upstream-name . "future.batchtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-parallelly r-future r-batchtools))
@@ -7915,18 +7915,19 @@ them in metaprogramming.")
 (define-public r-foodwebwrapper
   (package
     (name "r-foodwebwrapper")
-    (version "1.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "foodwebWrapper" version))
        (sha256
-        (base32 "1dwlzvxk80vl97b24i3gjcxsbir2kxvblbhsihf2wysxyfmw1abh"))))
+        (base32 "1gh1xs60bnm2g1d7dg67q683bzkh5ih1gz3psvv3dmygm5f1j1bc"))))
     (properties `((upstream-name . "foodwebWrapper")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyverse
                              r-tibble
                              r-textshaping
+                             r-stringr
                              r-r2html
                              r-mvbutils
                              r-magrittr
@@ -8550,13 +8551,13 @@ up the calculation of distances between observations.")
 (define-public r-fmesher
   (package
     (name "r-fmesher")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fmesher" version))
        (sha256
-        (base32 "16av562sj0rzflwbb9sbp8dw7cs8l1sqwzrvkxv8nyphwlg27ci7"))))
+        (base32 "0pzqj6br5cqzqmrdlmk3d0j025519hlabgmgh02inzg8i25azxzn"))))
     (properties `((upstream-name . "fmesher")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -12321,13 +12322,13 @@ formats (adjacency matrix, incidence matrix, edge list, igraph', network').")
 (define-public r-finity
   (package
     (name "r-finity")
-    (version "0.1.4.1")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "finity" version))
        (sha256
-        (base32 "0xs3vx0vj165hj4dq8ivrdf6fcvj23zhp2ai79rgpyb5rr5ndkvc"))))
+        (base32 "0jsga609p1ja727k4bq7ffrs2h7ll3cfq27y4w6nh0qlc0gl99al"))))
     (properties `((upstream-name . "finity")))
     (build-system r-build-system)
     (propagated-inputs (list r-stabledist r-rcpparmadillo r-rcpp r-bh))

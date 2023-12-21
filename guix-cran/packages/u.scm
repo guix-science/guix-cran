@@ -1027,6 +1027,27 @@ returns \"the meaning\" of that column (i.e., a \"SUMLEV\" value of 40 means
 itself.")
     (license license:bsd-2)))
 
+(define-public r-ursa
+  (package
+    (name "r-ursa")
+    (version "3.10.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ursa" version))
+       (sha256
+        (base32 "0j4r9kygzrng5syxsyyqmqxvh5f1xwwzqqb07mnb7skh2ry1qhmx"))))
+    (properties `((upstream-name . "ursa")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sf r-png))
+    (home-page "https://github.com/nplatonov/ursa")
+    (synopsis
+     "Non-Interactive Spatial Tools for Raster Processing and Visualization")
+    (description
+     "S3 classes and methods for manipulation with georeferenced raster data:
+reading/writing, processing, multi-panel visualization.")
+    (license license:gpl2+)))
+
 (define-public r-urootab
   (package
     (name "r-urootab")

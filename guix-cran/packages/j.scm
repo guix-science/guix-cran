@@ -3388,13 +3388,13 @@ during the period considered for the analysis.  See Otero et al., (2017)
 (define-public r-jbrowser
   (package
     (name "r-jbrowser")
-    (version "0.10.0")
+    (version "0.10.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JBrowseR" version))
        (sha256
-        (base32 "0siqg09lcjdkvqlywsp9fggn574f6yn207nda3q65n0p2xprl8ry"))))
+        (base32 "1v90lzp3md56r4mjskipq4kjvi3szv0qqcdya1hmbjklgmkygvvl"))))
     (properties `((upstream-name . "JBrowseR")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr

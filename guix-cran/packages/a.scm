@@ -1034,6 +1034,33 @@ computer programs (known as digital organisms) that mutate and evolve within a
 user-defined computational environment.")
     (license license:expat)))
 
+(define-public r-avgas
+  (package
+    (name "r-avgas")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AVGAS" version))
+       (sha256
+        (base32 "0s0h6rpsni73a0j679g22ngpaazdfifxpi7mwpa7ac3p0kdzvji0"))))
+    (properties `((upstream-name . "AVGAS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-variablescreening
+                             r-selectiveinference
+                             r-pracma
+                             r-matrix
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=AVGAS")
+    (synopsis "Variable Selection using Genetic Algorithms")
+    (description
+     "We provide a stage-wise selection method using genetic algorithm which can
+perform fast interaction selection in high-dimensional linear regression models
+with two-way interaction effects under strong, weak, or no heredity condition.
+Ye, C.,and Yang,Y. (2019) <doi:10.1109/TIT.2019.2913417>.")
+    (license license:gpl2)))
+
 (define-public r-avesperu
   (package
     (name "r-avesperu")
@@ -4407,13 +4434,13 @@ Galli, and Murray (2022)
 (define-public r-asremlplus
   (package
     (name "r-asremlplus")
-    (version "4.4.21")
+    (version "4.4.24")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "asremlPlus" version))
        (sha256
-        (base32 "096jdjq39ipj6v0x0jqpilbwj6gsaznvcmiidlrbnwx3y575hjp2"))))
+        (base32 "1yvy94g4pmzr9y2wq16zlw9bcyc0siz81qjgxy2yi5vcyr2li5bl"))))
     (properties `((upstream-name . "asremlPlus")))
     (build-system r-build-system)
     (inputs (list))
@@ -4423,6 +4450,7 @@ Galli, and Murray (2022)
                              r-reshape2
                              r-rcolorbrewer
                              r-qqplotr
+                             r-nloptr
                              r-ggplot2
                              r-foreach
                              r-dplyr
@@ -14538,13 +14566,13 @@ other people.")
 (define-public r-aides
   (package
     (name "r-aides")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aides" version))
        (sha256
-        (base32 "15lf1w808a6gb4fiwljj8yr6vy788jp97zxpi9chi3c0fd0nb19p"))))
+        (base32 "0yvvyj64hibd9710v1fg663mmib91r75qmvbshx5q2kznlji8q2c"))))
     (properties `((upstream-name . "aides")))
     (build-system r-build-system)
     (propagated-inputs (list r-meta r-boot))
@@ -16012,13 +16040,13 @@ reanalysis\"
 (define-public r-afttest
   (package
     (name "r-afttest")
-    (version "4.3.2")
+    (version "4.3.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "afttest" version))
        (sha256
-        (base32 "1ha4k14jrncacc4nksif85gpx2qkxp9flhi00c35ya4pgmy2md3v"))))
+        (base32 "0ndy0hclrahrjb1rizz2z3z0mp44kr4jb6rv3m3n6nj5zrp0vmy8"))))
     (properties `((upstream-name . "afttest")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -17506,13 +17534,13 @@ Implementation Guide\" (CDISC Analysis Data Model Team, 2021,
 (define-public r-admiralonco
   (package
     (name "r-admiralonco")
-    (version "0.5.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admiralonco" version))
        (sha256
-        (base32 "1gi9dirx004iy0vs7mms9y1vrs9zjiai7jh76nv0xm3cwgdf5l15"))))
+        (base32 "03q02l4abrcgpg17cyfq2vhzinlywm0ir6wqx2ch43d3agzyypzy"))))
     (properties `((upstream-name . "admiralonco")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -17533,8 +17561,8 @@ datasets are a mandatory part of any New Drug or Biologics License Application
 submitted to the United States Food and Drug Administration (FDA).  Analysis
 derivations are implemented in accordance with the \"Analysis Data Model
 Implementation Guide\" (CDISC Analysis Data Model Team (2021),
-<https://www.cdisc.org/standards/foundational/adam/adamig-v1-3-release-package>).
- The package is an extension package of the admiral package.")
+<https://www.cdisc.org/standards/foundational/adam>).  The package is an
+extension package of the admiral package.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-admiraldev

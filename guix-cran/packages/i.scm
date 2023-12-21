@@ -13,6 +13,7 @@
   #:use-module (gnu packages maths)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages haskell-xyz)
+  #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages java)
   #:use-module (gnu packages pdf)
   #:use-module (gnu packages compression)
@@ -4761,13 +4762,13 @@ can find the full API documentation at <https://ipbase.com/docs> .")
 (define-public r-ipanema
   (package
     (name "r-ipanema")
-    (version "0.4.1")
+    (version "0.6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ipanema" version))
        (sha256
-        (base32 "14yj6vj13897fc7axv5n6i68h002qglm0pgjy3rqayvlcclfsxh7"))))
+        (base32 "1bvsy5078qsv0jsyfdf6mpih2jibnqp2a8gsdi9z6gvk7vq7zpjk"))))
     (properties `((upstream-name . "ipanema")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmysql
@@ -6575,6 +6576,30 @@ interpolation, modified Akima interpolation, PCHIP (piecewise cubic Hermite
 interpolating polynomial) interpolation, and Catmull-Rom splines.")
     (license license:gpl3)))
 
+(define-public r-interpolation
+  (package
+    (name "r-interpolation")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "interpolation" version))
+       (sha256
+        (base32 "02g8iv0qm9bw22qfszln42jxkv4ybrq5gvfw04j2v1zj9z2k3mn9"))))
+    (properties `((upstream-name . "interpolation")))
+    (build-system r-build-system)
+    (inputs (list gmp))
+    (propagated-inputs (list r-rcppcgal r-rcpp r-bh))
+    (native-inputs (list pkg-config))
+    (home-page "https://github.com/stla/interpolation")
+    (synopsis "Interpolation of Bivariate Functions")
+    (description
+     "This package provides two different methods, linear and nonlinear, to
+interpolate a bivariate function, scalar-valued or vector-valued.  The
+interpolated data are not necessarily gridded.  The algorithms are performed by
+the C++ library CGAL (<https://www.cgal.org/>).")
+    (license license:gpl3)))
+
 (define-public r-interplot
   (package
     (name "r-interplot")
@@ -8147,13 +8172,13 @@ reliable inference technique implemented in the INLA package for joint modeling.
 (define-public r-inlabru
   (package
     (name "r-inlabru")
-    (version "2.10.0")
+    (version "2.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inlabru" version))
        (sha256
-        (base32 "1246nqnz8p9kknf99nqf9fm1nzq2knfif3icl1xddb23p4hafkmx"))))
+        (base32 "1sazv0jz458lvdslza1d4y53q6ws9rn2g6sfgv3hin30qk6jzizg"))))
     (properties `((upstream-name . "inlabru")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -15195,6 +15220,39 @@ Raji Balasubramanian (2015) <doi: 10.1214/15-AOAS810>, Xiangdong Gu and Raji
 Balasubramanian (2016) <doi: 10.1002/sim.6962>, Xiangdong Gu, Mahlet G Tadesse,
 Andrea S Foulkes, Yunsheng Ma, and Raji Balasubramanian (2020) <doi:
 10.1186/s12911-020-01223-w>.")
+    (license license:gpl2+)))
+
+(define-public r-icensbkl
+  (package
+    (name "r-icensbkl")
+    (version "1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "icensBKL" version))
+       (sha256
+        (base32 "1jfms9dih8r5zw9cw32qnvv5ffzqhzm9q6pvwn0nk95531xvbp0a"))))
+    (properties `((upstream-name . "icensBKL")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-teachingdemos
+                             r-survival
+                             r-smoothsurv
+                             r-mvtnorm
+                             r-mass
+                             r-icens
+                             r-gtools))
+    (home-page "https://ibiostat.be/online-resources/icbook/supplemental/")
+    (synopsis
+     "Accompanion to the Book on Interval Censoring by Bogaerts, Komarek, and Lesaffre")
+    (description
+     "This package contains datasets and several smaller functions suitable for
+analysis of interval-censored data.  The package complements the book Bogaerts,
+@code{KomÃ¡rek} and Lesaffre (2017, ISBN: 978-1-4200-7747-6) \"Survival Analysis
+with Interval-Censored Data: A Practical Approach\"
+<https://www.routledge.com/Survival-Analysis-with-Interval-Censored-Data-A-Practical-Approach-with/Bogaerts-Komarek-Lesaffre/p/book/9781420077476>.
+ Full R code related to the examples presented in the book can be found at
+<https://ibiostat.be/online-resources/icbook/supplemental>.  Packages mentioned
+in the \"Suggests\" section are used in those examples.")
     (license license:gpl2+)))
 
 (define-public r-icenreg

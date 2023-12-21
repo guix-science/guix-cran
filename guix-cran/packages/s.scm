@@ -11396,13 +11396,13 @@ designed to be suitable for use at the console, in Rmarkdown and @code{LaTeX}.")
 (define-public r-statpsych
   (package
     (name "r-statpsych")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statpsych" version))
        (sha256
-        (base32 "16wkwc9vfjrwmqaiijs2xwhfmj5if9h2ppziqvd3k70gzbz0l1mf"))))
+        (base32 "0sgdz97svj2krg6576pc74jiqpws4qjvvk351d88av3cc9s3g9y8"))))
     (properties `((upstream-name . "statpsych")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-mnonr r-mathjaxr))
@@ -18235,13 +18235,13 @@ thesis.")
 (define-public r-splm
   (package
     (name "r-splm")
-    (version "1.6-3")
+    (version "1.6-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "splm" version))
        (sha256
-        (base32 "0qi6kcsp8d6ijdca2rgdy0rr4myiii6qv4mlva4hc5r24w8v3ycm"))))
+        (base32 "0zwyl8pyx5ldr1rwqlkmzzbjc7r4dp261lsvw4b37ydm0sdhsizk"))))
     (properties `((upstream-name . "splm")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -18253,7 +18253,6 @@ thesis.")
                              r-maxlik
                              r-matrix
                              r-mass
-                             r-ibdreg
                              r-bdsmatrix))
     (home-page "https://cran.r-project.org/package=splm")
     (synopsis "Econometric Models for Spatial Panel Data")
@@ -24385,13 +24384,13 @@ the millions range.  Geocoding via Cadastral web site.")
 (define-public r-spamm
   (package
     (name "r-spamm")
-    (version "4.4.0")
+    (version "4.4.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spaMM" version))
        (sha256
-        (base32 "0c97fs457jcdqf4pncwg4k4nh91kh1s2l94jhwzvfq7s5mk9jwpz"))))
+        (base32 "11drqd7fxby8s6dk13v94aqbhi2sj40qcjsmr7r7g0c95m8fsxj4"))))
     (properties `((upstream-name . "spaMM")))
     (build-system r-build-system)
     (propagated-inputs (list r-roi
@@ -35654,13 +35653,13 @@ and copula models.")
 (define-public r-siminf
   (package
     (name "r-siminf")
-    (version "9.5.0")
+    (version "9.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SimInf" version))
        (sha256
-        (base32 "07yavv1qaahxgkni5rrnhpzspkb6g185njiyh3aay4pfiyn5945l"))))
+        (base32 "1k89yml8z8ckk62lgpvb9r227vn39l9jkzzbxw34fm0ws09n77b2"))))
     (properties `((upstream-name . "SimInf")))
     (build-system r-build-system)
     (inputs (list gsl))
@@ -54019,13 +54018,13 @@ and <http://foges.github.io/pogs/stp/r>.")
 (define-public r-sbtools
   (package
     (name "r-sbtools")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sbtools" version))
        (sha256
-        (base32 "1cbsn99sivqiwy2yd847y4aqk289kzrhdq49abnk68bzvx4nz9wa"))))
+        (base32 "0vzz7a43ydf56fdxnsqgzil2y5595hlbvyjk1h5z8q8j6b0bjxag"))))
     (properties `((upstream-name . "sbtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-mime
@@ -54034,6 +54033,7 @@ and <http://foges.github.io/pogs/stp/r>.")
                              r-httr
                              r-curl
                              r-cli))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/DOI-USGS/sbtools")
     (synopsis "USGS ScienceBase Tools")
     (description
@@ -54696,16 +54696,16 @@ compatibility is ensured for the Landsat Global Land Survey data set.")
 (define-public r-sate
   (package
     (name "r-sate")
-    (version "1.1.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sate" version))
        (sha256
-        (base32 "0d1b0gp5abh5g7a25ff40xdnncrl2afjnlcc56dbhqkk43gjah17"))))
+        (base32 "19jd8z1343ajx27b14grjnvxxf38b008fzclv7rcpqqp717ajpnv"))))
     (properties `((upstream-name . "sate")))
     (build-system r-build-system)
-    (propagated-inputs (list r-mass))
+    (propagated-inputs (list r-mass r-ellipse))
     (home-page "https://cran.r-project.org/package=sate")
     (synopsis "Scientific Analysis of Trial Errors (SATE)")
     (description

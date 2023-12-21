@@ -3202,13 +3202,13 @@ series data using nonlinear growth models.")
 (define-public r-tsfknn
   (package
     (name "r-tsfknn")
-    (version "0.5.2")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tsfknn" version))
        (sha256
-        (base32 "0r68azmcavrp3rx65nafn9nvj530x12y47sgzgkrjjbchfwm2jsw"))))
+        (base32 "1yw0k2ivx31b4170wf93vvha4jpkapg4sg5j59igiayf750x1j6h"))))
     (properties `((upstream-name . "tsfknn")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-ggplot2))
@@ -3216,7 +3216,7 @@ series data using nonlinear growth models.")
     (home-page "https://github.com/franciscomartinezdelrio/tsfknn")
     (synopsis "Time Series Forecasting Using Nearest Neighbors")
     (description
-     "Allows to forecast time series using nearest neighbors regression Francisco
+     "Allows forecasting time series using nearest neighbors regression Francisco
 Martinez, Maria P. Frias, Maria D. Perez-Godoy and Antonio J. Rivera (2019)
 <doi:10.1007/s10462-017-9593-z>.  When the forecasting horizon is higher than 1,
 two multi-step ahead forecasting strategies can be used.  The model built is

@@ -9890,13 +9890,13 @@ in @code{JavaScript} by Nicolas Kruchten.  Aligned to pivottable v2.19.0.")
 (define-public r-rphylopic
   (package
     (name "r-rphylopic")
-    (version "1.2.2")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rphylopic" version))
        (sha256
-        (base32 "1wjcw8llk84g3pkaswwzfni6rg4wkx9g2qn3mzfhnyx24gnpasbk"))))
+        (base32 "1v6fz6kl9y92g714mjlwc36jajd1fismjsbx8y95sfz6l065kvma"))))
     (properties `((upstream-name . "rphylopic")))
     (build-system r-build-system)
     (propagated-inputs (list r-rsvg
@@ -25616,6 +25616,37 @@ package is part of the @code{rOpenSci} suite (http://ropensci.org).")
 for dynamic generation of fish drawings.")
     (license license:artistic2.0)))
 
+(define-public r-rfishbc
+  (package
+    (name "r-rfishbc")
+    (version "0.2.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RFishBC" version))
+       (sha256
+        (base32 "15vdw8lg7g7v0ylh7x90lxmn37fyb31faaq1wnci2zdn177xgy70"))))
+    (properties `((upstream-name . "RFishBC")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-withr
+                             r-tidyr
+                             r-stringr
+                             r-settings
+                             r-rlang
+                             r-readbitmap
+                             r-crayon
+                             r-clisymbols
+                             r-cli))
+    (home-page "https://fishr-core-team.github.io/RFishBC/")
+    (synopsis "Back-Calculation of Fish Length")
+    (description
+     "Helps fisheries scientists collect measurements from calcified structures and
+back-calculate estimated lengths at previous ages using standard procedures and
+models.  This is intended to replace much of the functionality provided by the
+now out-dated @code{fishBC} software
+(<https://fisheries.org/bookstore/all-titles/software/70317/>).")
+    (license license:gpl3)))
+
 (define-public r-rfishbase
   (package
     (name "r-rfishbase")
@@ -29316,6 +29347,43 @@ Collier, W., & Ruis, A.R. (2016).")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-remstimate
+  (package
+    (name "r-remstimate")
+    (version "2.3.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "remstimate" version))
+       (sha256
+        (base32 "0i94w0wrdwcflay3a7lx85wi7mqkrl74zbsbf30sb3kr81iivjzh"))))
+    (properties `((upstream-name . "remstimate")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-trust
+                             r-remstats
+                             r-remify
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-mvnfast))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/TilburgNetworkGroup/remstimate")
+    (synopsis
+     "Optimization Frameworks for Tie-Oriented and Actor-Oriented Relational Event Models")
+    (description
+     "This package provides a comprehensive set of tools designed for optimizing
+likelihood within a tie-oriented (Butts, C., 2008,
+<doi:10.1111/j.1467-9531.2008.00203.x>) or an actor-oriented modelling framework
+(Stadtfeld, C., & Block, P., 2017, <doi:10.15195/v4.a14>) in relational event
+networks.  The package accommodates both frequentist and Bayesian approaches.
+The frequentist approaches that the package incorporates are the Maximum
+Likelihood Optimization (MLE) and the Gradient-based Optimization (GDADAMAX).
+The Bayesian methodologies included in the package are the Bayesian Sampling
+Importance Resampling (BSIR) and the Hamiltonian Monte Carlo (HMC).  The
+flexibility of choosing between frequentist and Bayesian optimization approaches
+allows researchers to select the estimation approach which aligns the most with
+their analytical preferences.")
+    (license license:expat)))
+
 (define-public r-remstats
   (package
     (name "r-remstats")
@@ -32418,33 +32486,38 @@ identified and it also facilitates the process of data management.")
 (define-public r-redcapcast
   (package
     (name "r-redcapcast")
-    (version "23.6.2")
+    (version "23.12.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "REDCapCAST" version))
        (sha256
-        (base32 "0gn1fyk1808qcd8cvzkxp86vyy3cq709c2lkjwaxl48zfafv1sim"))))
+        (base32 "11ggzhiq6svcvish84gxa9mnffcg21i46kz3vk5wv3hz6k58wlvf"))))
     (properties `((upstream-name . "REDCapCAST")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyselect r-tidyr r-redcapr r-dplyr))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-redcapr
+                             r-purrr
+                             r-keyring
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/agdamsbo/REDCapCAST")
     (synopsis "REDCap Castellated Data Handling")
     (description
-     "Forked from RED@code{CapRITS} by Paul Egeler and Spectrum Health.  See
-<https://github.com/@code{SpectrumHealthResearch/REDCapRITS>}.  Handles
-castellated datasets from REDCap projects with repeating instruments.  Assists
-in casting tidy tables from raw REDCap data exports for each repeated
-instrument.  Keeps a focused data export approach, by allowing to only export
-required data from the database.  REDCap (Research Electronic Data Capture) is a
-secure, web-based software platform designed to support data capture for
-research studies, providing 1) an intuitive interface for validated data
-capture; 2) audit trails for tracking data manipulation and export procedures;
-3) automated export procedures for seamless data downloads to common statistical
-packages; and 4) procedures for data integration and interoperability with
-external sources (Harris et al (2009) <doi:10.1016/j.jbi.2008.08.010>; Harris et
-al (2019) <doi:10.1016/j.jbi.2019.103208>).")
+     "Originally forked from the R part of RED@code{CapRITS} by Paul Egeler.  See
+<https://github.com/pegeler/RED@code{CapRITS>}.  Handles castellated datasets
+from REDCap projects with repeating instruments.  Assists in casting tidy tables
+from raw REDCap data exports for each repeated instrument.  Keeps a focused data
+export approach, by allowing to only export required data from the database.
+REDCap (Research Electronic Data Capture) is a secure, web-based software
+platform designed to support data capture for research studies, providing 1) an
+intuitive interface for validated data capture; 2) audit trails for tracking
+data manipulation and export procedures; 3) automated export procedures for
+seamless data downloads to common statistical packages; and 4) procedures for
+data integration and interoperability with external sources (Harris et al (2009)
+<doi:10.1016/j.jbi.2008.08.010>; Harris et al (2019)
+<doi:10.1016/j.jbi.2019.103208>).")
     (license license:gpl3+)))
 
 (define-public r-redcapapi
@@ -41246,13 +41319,13 @@ reported in Zhao et al. (2019) <doi:10.1016/j.rse.2019.04.034>.")
 (define-public r-rbe3
   (package
     (name "r-rbe3")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RBE3" version))
        (sha256
-        (base32 "1vkd06qzfbz3z3mq7sma05k81pz5xg2pw6s6z706b0g2jhqqnkh3"))))
+        (base32 "1spk6nxr9r5mim3lhps55zwdj22yqxmm01h19p87yravbnjq99wc"))))
     (properties `((upstream-name . "RBE3")))
     (build-system r-build-system)
     (propagated-inputs (list r-pracma r-gtools))
@@ -47560,13 +47633,13 @@ package.")
 (define-public r-r2mlm
   (package
     (name "r-r2mlm")
-    (version "0.3.5")
+    (version "0.3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r2mlm" version))
        (sha256
-        (base32 "1zr30jzls7yypf221m4w6g507j9f9s2hwb68a7qpmwxngibbc6d6"))))
+        (base32 "1gsmmwgm50cfmzqpm6khlfkgr65x9q7qnm821x46cw9yi64ip5an"))))
     (properties `((upstream-name . "r2mlm")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -47590,7 +47663,10 @@ framework subsumes 10 previously-developed R-squared measures for multilevel
 models as special cases of 5 measures from the framework, and it also includes
 several newly-developed measures.  Measures in the framework can be used to
 compute R-squared differences when comparing multilevel models (following
-procedures in Rights & Sterba (2020) <doi:10.1080/00273171.2019.1660605>).")
+procedures in Rights & Sterba (2020) <doi:10.1080/00273171.2019.1660605>).
+Bootstrapped confidence intervals can also be calculated.  To use the confidence
+interval functionality, download bootmlm from
+<https://github.com/marklhc/bootmlm>.")
     (license license:gpl3)))
 
 (define-public r-r2jags

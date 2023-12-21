@@ -967,13 +967,13 @@ provided, using the method from Nolan (2013) <doi:10.1007/s00180-013-0396-7>.")
 (define-public r-mvpbt
   (package
     (name "r-mvpbt")
-    (version "1.1-1")
+    (version "1.2-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MVPBT" version))
        (sha256
-        (base32 "15swmaabfrqah97qz1z971h43vi2c1klniqhc21k7by7bqwsf9sy"))))
+        (base32 "19i8sgmdndvxiars2za605f3lcxw7cy2ff22n2llkpl5196r3mzl"))))
     (properties `((upstream-name . "MVPBT")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvmeta r-metafor r-mass r-mada))

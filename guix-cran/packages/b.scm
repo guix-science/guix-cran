@@ -4227,6 +4227,30 @@ analysis more parsimonious.")
 dimensional linear regression models.")
     (license license:gpl3)))
 
+(define-public r-bratteli
+  (package
+    (name "r-bratteli")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bratteli" version))
+       (sha256
+        (base32 "07hl2s2vcjqx4db0gksfnwdarl59a9441d0ff13zf0vj0pbaqam2"))))
+    (properties `((upstream-name . "bratteli")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-kantorovich r-gmp r-diagram r-data-table))
+    (home-page "https://github.com/stla/bratteliR")
+    (synopsis "Deal with Bratteli Graphs")
+    (description
+     "Utilities for Bratteli graphs.  A tree is an example of a Bratteli graph.  The
+package provides a function which generates a @code{LaTeX} file that renders the
+given Bratteli graph.  It also provides functions to compute the dimensions of
+the vertices, the intrinsic kernels and the intrinsic distances.  Intrinsic
+kernels and distances were introduced by Vershik (2014)
+<doi:10.1007/s10958-014-1958-0>.")
+    (license license:gpl3)))
+
 (define-public r-brassica
   (package
     (name "r-brassica")
@@ -4762,6 +4786,42 @@ output.â Journal of the American Statistical Association, 90(432):1313â�
 of the American Statistical Association, 96(453):270â281, 2001. <doi:
 10.1198/016214501750332848>.")
     (license license:gpl2+)))
+
+(define-public r-bprinstrattte
+  (package
+    (name "r-bprinstrattte")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BPrinStratTTE" version))
+       (sha256
+        (base32 "1sddfxcbk9zg266gsvb6qs6c3mw4y1d88jj6zf9781jranpb1hng"))))
+    (properties `((upstream-name . "BPrinStratTTE")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-stanheaders
+                             r-rstan
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-purrr
+                             r-magrittr
+                             r-furrr
+                             r-dplyr
+                             r-bh))
+    (home-page "https://github.com/Boehringer-Ingelheim/BPrinStratTTE")
+    (synopsis
+     "Causal Effects in Principal Strata Defined by Antidrug Antibodies")
+    (description
+     "Bayesian models to estimate causal effects of biological treatments on
+time-to-event endpoints in clinical trials with principal strata defined by the
+occurrence of antidrug antibodies.  The methodology is based on Frangakis and
+Rubin (2002) <doi:10.1111/j.0006-341x.2002.00021.x> and Imbens and Rubin (1997)
+<doi:10.1214/aos/1034276631>, and intended to be applied to a specific
+time-to-event setting.")
+    (license license:gpl3+)))
 
 (define-public r-bpr
   (package
@@ -13805,13 +13865,13 @@ an ordinary laptop.")
 (define-public r-bigl
   (package
     (name "r-bigl")
-    (version "1.8.0")
+    (version "1.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BIGL" version))
        (sha256
-        (base32 "1wyzancryb8aab18qjb0c1pl780chk0kgk7asa430gnphz7fm8sj"))))
+        (base32 "14igfl863v4hgzpry8a4p2hribi2slsahl1bn3amsr8cj311km64"))))
     (properties `((upstream-name . "BIGL")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -13822,6 +13882,7 @@ an ordinary laptop.")
                              r-nleqslv
                              r-minpack-lm
                              r-mass
+                             r-lifecycle
                              r-ggplot2
                              r-data-table))
     (native-inputs (list r-rmarkdown r-knitr))
@@ -16309,13 +16370,13 @@ Watanabe-Akaike information criterion (WAIC).  See Zhou and Huang (2022)
 (define-public r-bet
   (package
     (name "r-bet")
-    (version "0.5.2")
+    (version "0.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BET" version))
        (sha256
-        (base32 "0zsbj8agw8x04n2adbdb8k85m51hkyl7hcc8gnlw6gxpng3i2gnm"))))
+        (base32 "1c2zz1nfjvaq6skk81hidimlbgajcl3zp5cnl3innh3yrl818wbl"))))
     (properties `((upstream-name . "BET")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -16326,9 +16387,9 @@ Watanabe-Akaike information criterion (WAIC).  See Zhou and Huang (2022)
 Testing (BET).  See Kai Zhang (2019) BET on Independence, Journal of the
 American Statistical Association, 114:528, 1620-1637,
 <DOI:10.1080/01621459.2018.1537921>, Kai Zhang, Zhigen Zhai, and Wen Zhou.
-(2021).  BEAUTY Powered BEAST, <@code{arXiv:2103.00674>} and Zhigen Zhao,
-Michael Baiocchi, Kai Zhang. @code{SorBET}: A Fast and Powerful Algorithm to
-Test Dependence of Variables.")
+(2021).  BEAUTY Powered BEAST, <@code{arXiv:2103.00674>} and Wan Zhang, Zhigen
+Zhao, Michael Baiocchi, Yao Li, Kai Zhang. @code{SorBET}: A Fast and Powerful
+Algorithm to Test Dependence of Variables, Techinical report, 2023.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-bestsdp
@@ -17272,13 +17333,13 @@ financial support.")
 (define-public r-beebdc
   (package
     (name "r-beebdc")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BeeBDC" version))
        (sha256
-        (base32 "1x96w5jm8a85pa27nip01rwcrlcw2skv8f66r7bqnd2bnddhrxhq"))))
+        (base32 "1v5wknw6d7dfcj3cqj1774v07838xpda75ai9mhrjd536c74rc1a"))))
     (properties `((upstream-name . "BeeBDC")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

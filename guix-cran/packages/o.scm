@@ -3481,13 +3481,13 @@ place, streamlining your workflow for optimal productivity.")
 (define-public r-oralopioids
   (package
     (name "r-oralopioids")
-    (version "1.2.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OralOpioids" version))
        (sha256
-        (base32 "1hy7wllsv72lf4jlbijq6yazp75nzml3aanby4rfp1gfmmx19sv6"))))
+        (base32 "02qbysywx2v86lhg2rx431mclzda7vrmmswdm8bd75lf4ac3wvgi"))))
     (properties `((upstream-name . "OralOpioids")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -3496,14 +3496,11 @@ place, streamlining your workflow for optimal productivity.")
                              r-rvest
                              r-rlang
                              r-reshape2
-                             r-readxl
                              r-readr
                              r-purrr
                              r-plyr
                              r-openxlsx
-                             r-magrittr
-                             r-ggplot2
-                             r-forcats
+                             r-jsonlite
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "\"https://github.com/ankonahouston/OralOpioids\"")
@@ -3511,12 +3508,14 @@ place, streamlining your workflow for optimal productivity.")
     (description
      "This package provides details such as Morphine Equivalent Dose (MED), brand name
 and opioid content which are calculated of all oral opioids authorized for sale
-by Health Canada based on their Drug Identification Number (DIN).  MEDs are
-calculated based on recommendations by Canadian Institute for Health Information
-(CIHI) and information obtained from Health Canada's Drug Product Database's
-monthly data dump.  Please note in no way should output from this package be a
-substitute for medical advise.  All medications should only be consumed on
-prescription from a licensed healthcare provider.")
+by Health Canada and the FDA based on their Drug Identification Number (DIN) or
+National Drug Code (NDC).  MEDs are calculated based on recommendations by
+Canadian Institute for Health Information (CIHI) and Von Korff et al (2008) and
+information obtained from Health Canada's Drug Product Database's monthly data
+dump or FDA Daily database for Canadian and US databases respectively.  Please
+note in no way should output from this package be a substitute for medical
+advise.  All medications should only be consumed on prescription from a licensed
+healthcare provider.")
     (license license:gpl3)))
 
 (define-public r-ora
@@ -6619,6 +6618,52 @@ that calculates the out-of-bag curve depending on the number of trees.  With the
 OOB@code{CurvePars}() function out-of-bag curves can also be calculated for
 mtry', sample.fraction and min.node.size for the ranger package.")
     (license license:gpl3)))
+
+(define-public r-ontophylo
+  (package
+    (name "r-ontophylo")
+    (version "1.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ontophylo" version))
+       (sha256
+        (base32 "0xdib7jfb6s2vkq58x7kywhw7pn8laddc6rrf83dmq0wv9pihdfx"))))
+    (properties `((upstream-name . "ontophylo")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-truncnorm
+                             r-tidyr
+                             r-tibble
+                             r-stringdist
+                             r-rcolorbrewer
+                             r-purrr
+                             r-phytools
+                             r-ontologyindex
+                             r-magrittr
+                             r-grimport
+                             r-ggplot2
+                             r-fancova
+                             r-dplyr
+                             r-ape))
+    (home-page "https://github.com/diegosasso/ontophylo")
+    (synopsis "Ontology-Informed Phylogenetic Comparative Analyses")
+    (description
+     "This package provides new tools for analyzing discrete trait data integrating
+bio-ontologies and phylogenetics.  It expands on the previous work of Tarasov et
+al. (2019) <doi:10.1093/isd/ixz009>.  The PARAMO pipeline allows to reconstruct
+ancestral phenomes treating groups of morphological traits as a single complex
+character.  The pipeline incorporates knowledge from ontologies during the
+amalgamation of individual character stochastic maps.  Here we expand the
+current PARAMO functionality by adding new statistical methods for inferring
+evolutionary phenome dynamics using non-homogeneous Poisson process (NHPP).  The
+new functionalities include: (1) reconstruction of evolutionary rate shifts of
+phenomes across lineages and time; (2) reconstruction of morphospace dynamics
+through time; and (3) estimation of rates of phenome evolution at different
+levels of anatomical hierarchy (e.g., entire body or specific regions only).
+The package also includes user-friendly tools for visualizing evolutionary rates
+of different anatomical regions using vector images of the organisms of
+interest.")
+    (license license:expat)))
 
 (define-public r-ontologysimilarity
   (package

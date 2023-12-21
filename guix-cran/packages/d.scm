@@ -10866,6 +10866,45 @@ location parameter structured as a linear combination of the component-specific
 gene expressions.")
     (license license:gpl2)))
 
+(define-public r-diseasystore
+  (package
+    (name "r-diseasystore")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "diseasystore" version))
+       (sha256
+        (base32 "1vnrrm1al3k6348qmd4znb7mfvfvdsjpz2fkr18q5vwh1cb7khbk"))))
+    (properties `((upstream-name . "diseasystore")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-tidyselect
+                             r-tidyr
+                             r-stringr
+                             r-scdb
+                             r-rlang
+                             r-readr
+                             r-r6
+                             r-purrr
+                             r-lubridate
+                             r-lintr
+                             r-glue
+                             r-dplyr
+                             r-dbplyr
+                             r-dbi
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ssi-dk/diseasystore")
+    (synopsis "Feature Stores for the 'diseasy' Framework")
+    (description
+     "Simple feature stores and tools for creating personalised feature stores.
+diseasystore powers feature stores which can automatically link and aggregate
+features to a given stratification level.  These feature stores are
+automatically time-versioned (powered by the SCDB package) and allows you to
+easily and dynamically compute features as part of your continuous integration.")
+    (license license:gpl3+)))
+
 (define-public r-diseasemapping
   (package
     (name "r-diseasemapping")

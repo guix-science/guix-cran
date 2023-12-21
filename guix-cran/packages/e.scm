@@ -7427,6 +7427,40 @@ distribution, together with an automatic threshold selection algorithm.  See del
 Castillo, J, Daoudi, J and Lockhart, R (2014) <doi:10.1111/sjos.12037>.")
     (license license:gpl2+)))
 
+(define-public r-erah
+  (package
+    (name "r-erah")
+    (version "2.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "erah" version))
+       (sha256
+        (base32 "136wh0gaygc7mkj507bjmgzv79jcap0whngd501gg47zf7b8jzxx"))))
+    (properties `((upstream-name . "erah")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-signal
+                             r-quantreg
+                             r-progress
+                             r-osd
+                             r-igraph
+                             r-hiclimr
+                             r-future
+                             r-furrr))
+    (native-inputs (list r-knitr))
+    (home-page "http://metsyslab.com/")
+    (synopsis
+     "Automated Spectral Deconvolution, Alignment, and Metabolite Identification in GC/MS-Based Untargeted Metabolomics")
+    (description
+     "Automated compound deconvolution, alignment across samples, and identification
+of metabolites by spectral library matching in Gas Chromatography - Mass
+spectrometry (GC-MS) untargeted metabolomics.  Outputs a table with compound
+names, matching scores and the integrated area of the compound for each sample.
+Package implementation is described in Domingo-Almenara et al. (2016)
+<doi:10.1021/acs.analchem.6b02927>.")
+    (license license:gpl2+)))
+
 (define-public r-era
   (package
     (name "r-era")

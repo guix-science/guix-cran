@@ -989,13 +989,13 @@ tabulated data.")
 (define-public r-lsx
   (package
     (name "r-lsx")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LSX" version))
        (sha256
-        (base32 "043w10fm0dbafckjbb08h9zp30fm2q45ifz0b4w7jzzv6a6ngxmp"))))
+        (base32 "149l9sbpphw89jg5sbk7szn6xrfscyql0qc5kmf91n2l18kz5w5z"))))
     (properties `((upstream-name . "LSX")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi
@@ -3875,22 +3875,24 @@ Includes a randomization procedure to obtain exact p-values.")
 (define-public r-lomar
   (package
     (name "r-lomar")
-    (version "0.2.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LOMAR" version))
        (sha256
-        (base32 "0i361yz5h1g9bb5xqq9fq2bb3ylwkshnmqrlhijz9fr9ypm2ywh5"))))
+        (base32 "148n4fmz3j0i042kc6jmf839ylsgxapfx9zx8999mlg77scwmdzi"))))
     (properties `((upstream-name . "LOMAR")))
     (build-system r-build-system)
     (inputs (list gmp fftw))
     (propagated-inputs (list r-transport
+                             r-rhdf5
                              r-reshape2
                              r-rcpp
                              r-rann
                              r-proxy
                              r-pracma
+                             r-mclust
                              r-foreach
                              r-fnn
                              r-ff
@@ -3899,7 +3901,8 @@ Includes a randomization procedure to obtain exact p-values.")
                              r-dbscan
                              r-data-table
                              r-bh
-                             r-aws))
+                             r-aws
+                             r-alphashape3d))
     (home-page "https://git.embl.de/heriche/lomar")
     (synopsis "Localization Microscopy Data Analysis")
     (description

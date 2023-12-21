@@ -2076,13 +2076,13 @@ logistic regression.  Can also be applied to proliferation analyses.")
 (define-public r-nplplot
   (package
     (name "r-nplplot")
-    (version "4.6")
+    (version "4.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nplplot" version))
        (sha256
-        (base32 "1sxmz0cl15fdc0s987nwjnl6ywxg4fqs8qnm5nkcbyj6b9jzcbwy"))))
+        (base32 "18959kvp68h3lp1zwv726rfsj509mcdmjx0qh41qrff76cdhvrb7"))))
     (properties `((upstream-name . "nplplot")))
     (build-system r-build-system)
     (home-page "https://watson.hgen.pitt.edu/register/")
@@ -12961,29 +12961,6 @@ Ethnography.  ISBN: 0578191687) is designed specifically for working with big
 data: large document collections, logfiles, and other text data.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
-
-(define-public r-ncmisc
-  (package
-    (name "r-ncmisc")
-    (version "1.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "NCmisc" version))
-       (sha256
-        (base32 "10wzznqa26fxyj6bl979qmq29p3dkr8yap4s70l3mwhhk33zpz16"))))
-    (properties `((upstream-name . "NCmisc")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=NCmisc")
-    (synopsis
-     "Miscellaneous Functions for Creating Adaptive Functions and Scripts")
-    (description
-     "This package provides a set of handy functions.  Includes a versatile one line
-progress bar, one line function timer with detailed output, time delay function,
-text histogram, object preview, CRAN package search, simpler package installer,
-Linux command install check, a flexible Mode function, top function, simulation
-of correlated data, and more.")
-    (license license:gpl2+)))
 
 (define-public r-ncmeta
   (package

@@ -5635,13 +5635,13 @@ about date input quality, performance, or the ABS catalogue.")
 (define-public r-grattan
   (package
     (name "r-grattan")
-    (version "2023.1.2")
+    (version "2024.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grattan" version))
        (sha256
-        (base32 "15865w1m1zdgnxwcyglgm8sqvz88v5ific56662x3nrf0vh7pycx"))))
+        (base32 "0wq7k7h4kgq7q5r53n53bddssywx6lb3jqi74jfd3gdgixx2sp6q"))))
     (properties `((upstream-name . "grattan")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr
@@ -5968,18 +5968,19 @@ graphical tools of an extension of PCA. Sun Makosso Kallyth (2016)
 (define-public r-graphpaf
   (package
     (name "r-graphpaf")
-    (version "1.0.2")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "graphPAF" version))
        (sha256
-        (base32 "144ymjvyqlwd8na8vn503f3bj9vwa9wcz226k5bnam11xz0cjza6"))))
+        (base32 "0m6v796hwxdv7nan3157x7b8xpph605ihj6gnmlh3v1p95dygsy7"))))
     (properties `((upstream-name . "graphPAF")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
                              r-reshape2
                              r-mass
+                             r-madness
                              r-gtools
                              r-gridextra
                              r-ggrepel

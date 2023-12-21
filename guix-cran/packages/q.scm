@@ -3012,13 +3012,13 @@ results.")
 (define-public r-qrlabelr
   (package
     (name "r-qrlabelr")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qrlabelr" version))
        (sha256
-        (base32 "0d16bq8gsb91hhz2h88p17zvl0n6wz89skmgwkh3mx47zhrii2i5"))))
+        (base32 "1bv76d3fkficcaqg4kzkkxjq1p24c6hxd25jyfia96nkmxyds44m"))))
     (properties `((upstream-name . "qrlabelr")))
     (build-system r-build-system)
     (propagated-inputs (list r-uuid
@@ -3031,6 +3031,7 @@ results.")
                              r-reactable
                              r-raster
                              r-qrencoder
+                             r-qbms
                              r-purrr
                              r-ggplot2
                              r-dplyr
@@ -3045,9 +3046,9 @@ results.")
      "Generate Machine- And Human-Readable Plot Labels for Experiments")
     (description
      "This package provides a no-frills open-source solution for designing plot labels
-affixed with QR codes.  It features @code{EasyQrlabelr}', a shiny app that
-simplifies the process of plot label design for non-R users.  This software
-builds on the methods described by Wu et al. (2020)
+affixed with QR codes.  It features @code{EasyQrlabelr}', a
+@code{BrAPI-compliant} shiny app that simplifies the process of plot label
+design for non-R users.  It builds on the methods described by Wu et al. (2020)
 <doi:10.1111/2041-210X.13405>.")
     (license license:gpl3+)))
 
@@ -4137,13 +4138,13 @@ ISBN:978-0972072427).")
 (define-public r-qgisprocess
   (package
     (name "r-qgisprocess")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qgisprocess" version))
        (sha256
-        (base32 "075fanz6s4qfinx1yc503xl9viap639ricp9mdm314hq2d94lfjr"))))
+        (base32 "0f3aidzvib91sisv483wgxk3zxk3zhw0gdybjf5y0a76cskifd0b"))))
     (properties `((upstream-name . "qgisprocess")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr

@@ -2650,13 +2650,13 @@ text').")
 (define-public r-psychtools
   (package
     (name "r-psychtools")
-    (version "2.3.9")
+    (version "2.3.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psychTools" version))
        (sha256
-        (base32 "06jw5nhb9vbdfb74y5fqnl9974p0bddymwgiyvm8mmfn2083vp1s"))))
+        (base32 "18yxmy3j2qipdynrbyc76r1q3nm9f15jvk5aakqkq79w6rflp8br"))))
     (properties `((upstream-name . "psychTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-psych r-foreign))
@@ -6735,25 +6735,25 @@ can be found in \"Elements of Statistical Learning (2nd Edition)\" in Section
 (define-public r-procs
   (package
     (name "r-procs")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "procs" version))
        (sha256
-        (base32 "0k2v2l843c92raa3d2gdv3ns7bxr5ja48vf7lzqkig5qdixxfafc"))))
+        (base32 "0pzp6mnh0b8h9n3mfqn5a9dqylfdxx0r5cxkrvmkw7f6iy92w4d2"))))
     (properties `((upstream-name . "procs")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tibble r-reporter r-fmtr r-common))
+    (propagated-inputs (list r-tibble r-saslm r-reporter r-fmtr r-common))
     (native-inputs (list r-knitr))
     (home-page "https://procs.r-sassy.org")
     (synopsis "Recreates Some 'SASÂ®' Procedures in 'R'")
     (description
      "This package contains functions to simulate the most commonly used SASÂ®
 procedures.  Specifically, the package aims to simulate the functionality of
-proc freq', proc means', proc transpose', proc sort', and proc print'.  The
-simulation will include recreating all statistics with the highest fidelity
-possible.")
+proc freq', proc means', proc ttest', proc transpose', proc sort', and proc
+print'.  The simulation will include recreating all statistics with the highest
+fidelity possible.")
     (license license:cc0)))
 
 (define-public r-procmod
@@ -16245,54 +16245,6 @@ regression models using spike and slab priors.")
 principal orthogonal complements.")
     (license license:gpl2)))
 
-(define-public r-poems
-  (package
-    (name "r-poems")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "poems" version))
-       (sha256
-        (base32 "123sq2ixm8qzj6jc95skwl6rr4hiy7dcf34x4mrhqv5sf7k41yzs"))))
-    (properties `((upstream-name . "poems")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-trend
-                             r-raster
-                             r-r6
-                             r-metrology
-                             r-lhs
-                             r-geosphere
-                             r-gdistance
-                             r-foreach
-                             r-doparallel
-                             r-abc))
-    (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://github.com/GlobalEcologyLab/poems")
-    (synopsis "Pattern-Oriented Ensemble Modeling System")
-    (description
-     "This package provides a framework of interoperable R6 classes (Chang, 2020,
-<https://CRAN.R-project.org/package=R6>) for building ensembles of viable models
-via the pattern-oriented modeling (POM) approach (Grimm et al., 2005,
-<doi:10.1126/science.1116681>).  The package includes classes for encapsulating
-and generating model parameters, and managing the POM workflow.  The workflow
-includes: model setup; generating model parameters via Latin hyper-cube sampling
-(Iman & Conover, 1980, <doi:10.1080/03610928008827996>); running multiple
-sampled model simulations; collating summary results; and validating and
-selecting an ensemble of models that best match known patterns.  By default,
-model validation and selection utilizes an approximate Bayesian computation
-(ABC) approach (Beaumont et al., 2002, <doi:10.1093/genetics/162.4.2025>),
-although alternative user-defined functionality could be employed.  The package
-includes a spatially explicit demographic population model simulation engine,
-which incorporates default functionality for density dependence, correlated
-environmental stochasticity, stage-based transitions, and distance-based
-dispersal.  The user may customize the simulator by defining functionality for
-translocations, harvesting, mortality, and other processes, as well as defining
-the sequence order for the simulator processes.  The framework could also be
-adapted for use with other model simulators by utilizing its extendable
-(inheritable) base classes.")
-    (license license:gpl3)))
-
 (define-public r-podcleaner
   (package
     (name "r-podcleaner")
@@ -22319,13 +22271,13 @@ detail in Callahan et al. (2016) <doi:10.12688/f1000research.8986.1>.")
 (define-public r-phylosem
   (package
     (name "r-phylosem")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phylosem" version))
        (sha256
-        (base32 "0hwlap8glz32a5a4pp268ni2lx338kki4n9nln3y6ninzrk2403p"))))
+        (base32 "1cpnq6jdf03ssb3yslb4jk29h0s0yi2wqzgrw9sinm9rr1n7x5zi"))))
     (properties `((upstream-name . "phylosem")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb
@@ -22335,7 +22287,7 @@ detail in Callahan et al. (2016) <doi:10.12688/f1000research.8986.1>.")
                              r-phylobase
                              r-ape))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=phylosem")
+    (home-page "https://james-thorson-noaa.github.io/phylosem/")
     (synopsis "Phylogenetic Structural Equation Model")
     (description
      "Applies phylogenetic comparative methods (PCM) and phylogenetic trait imputation
@@ -22345,7 +22297,7 @@ set of features, to allow users to easily read all of the documentation and
 source code.  PCM using SEM includes phylogenetic linear models and structural
 equation models as nested submodels, but also allows imputation of missing
 values.  Features and comparison with other packages are described in Thorson
-and van der Bijl (In press).")
+and van der Bijl (2023) <doi:10.1111/jeb.14234>.")
     (license license:gpl3)))
 
 (define-public r-phylosamp
@@ -34788,30 +34740,6 @@ translate simulated ancestor-descendant data from @code{simFossilRecord} into
 standard time-scaled phylogenies or unscaled cladograms that reflect the
 relationships among taxon units.")
     (license license:cc0)))
-
-(define-public r-paleopop
-  (package
-    (name "r-paleopop")
-    (version "2.1.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "paleopop" version))
-       (sha256
-        (base32 "1mq7skw5k3b9gc2jkjsdq96ih3qwywwdsq1948101cl0ryh3aadn"))))
-    (properties `((upstream-name . "paleopop")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-trend r-sf r-r6 r-poems))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/GlobalEcologyLab/paleopop/")
-    (synopsis
-     "Pattern-Oriented Modeling Framework for Coupled Niche-Population Paleo-Climatic Models")
-    (description
-     "This extension of the poems pattern-oriented modeling (POM) framework provides a
-collection of modules and functions customized for paleontological time-scales,
-and optimized for single-generation transitions and large populations, across
-multiple generations.")
-    (license license:gpl3+)))
 
 (define-public r-paleomorph
   (package
