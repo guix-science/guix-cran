@@ -3930,6 +3930,37 @@ calculation, estimation of expected precision for the estimates of totals, and
 calculation of optimal sample size allocation.")
     (license license:gpl2+)))
 
+(define-public r-surveyexplorer
+  (package
+    (name "r-surveyexplorer")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "surveyexplorer" version))
+       (sha256
+        (base32 "1kgnsz2lg0gf7fahby127i4pcav4cigq9qllmp8sk5x7zyrjgwmk"))))
+    (properties `((upstream-name . "surveyexplorer")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-stringr
+                             r-scales
+                             r-rlang
+                             r-purrr
+                             r-gt
+                             r-ggupset
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=surveyexplorer")
+    (synopsis "Quickly Explore Complex Survey Data")
+    (description
+     "Visualize and tabulate single-choice, multiple-choice, matrix-style questions
+from survey data.  Includes ability to group cross-tabulations, frequency
+distributions, and plots by categorical variables and to integrate survey
+weights.  Ideal for quickly uncovering descriptive patterns in survey data.")
+    (license license:expat)))
+
 (define-public r-surveydata
   (package
     (name "r-surveydata")
@@ -12512,13 +12543,13 @@ are also provided, see Luedtke, Robitzsch and Wagner (2018)
 (define-public r-startr
   (package
     (name "r-startr")
-    (version "2.3.0")
+    (version "2.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "startR" version))
        (sha256
-        (base32 "19mx63231wkxkh79k6fgpw3bs2hcq7kmli4cvrw17ka3jq2b9l56"))))
+        (base32 "03wdaqiyrjhihsnw33z87baplv854znh4l7ww4ywmp17hl6hr7l8"))))
     (properties `((upstream-name . "startR")))
     (build-system r-build-system)
     (propagated-inputs (list r-s2dv
@@ -30328,24 +30359,26 @@ likelihood.  Biometrics <doi:10.1111/biom.13366>.")
 (define-public r-slr
   (package
     (name "r-slr")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "slr" version))
        (sha256
-        (base32 "0wy6v5hh6w529i1q77l87cq48f3shcbwc36blymdf69v6nc3gs2n"))))
+        (base32 "0zn9zs0i07f8qf0sm4szcrh2y95syv9idmxm26ydnz998ljpjzdg"))))
     (properties `((upstream-name . "slr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-mass r-ibd))
+    (propagated-inputs (list r-mass r-ibd r-gmp))
     (home-page "https://cran.r-project.org/package=slr")
     (synopsis "Semi-Latin Rectangles")
     (description
-     "This package provides a facility to generate balanced and partially balanced
-semi-Latin rectangles with cell size two and three, see Uto, N.P. and Bailey,
-R.A. (2020). \"Balanced Semi-Latin rectangles: properties, existence and
-constructions for block size two\".  Journal of Statistical Theory and Practice,
-14(3), 1-11, <doi:10.1007/s42519-020-00118-3>.")
+     "This package provides a facility to generate balanced semi-Latin rectangles with
+any cell size (preferably up to ten) with given number of treatments, see Uto,
+N.P. and Bailey, R.A. (2020). \"Balanced Semi-Latin rectangles: properties,
+existence and constructions for block size two\".  Journal of Statistical Theory
+and Practice, 14(3), 1-11, <doi:10.1007/s42519-020-00118-3>.  It also provides
+facility to generate partially balanced semi-Latin rectangles for cell size 2,3
+and 4 for any number of treatments.")
     (license license:gpl2+)))
 
 (define-public r-slpreselection
@@ -40152,13 +40185,13 @@ models with a user friendly shiny interface.")
 (define-public r-shinyinvoice
   (package
     (name "r-shinyinvoice")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyInvoice" version))
        (sha256
-        (base32 "0lzjxpsrlvbbx10i5ahkr8ny109xzl4cc67h3hk4wjxdqdk8g0ny"))))
+        (base32 "1s1zmjp37px2wksa4acw3jng659k5zgm1a8pk23kb4f9kr7hjpfd"))))
     (properties `((upstream-name . "shinyInvoice")))
     (build-system r-build-system)
     (inputs (list pandoc))
@@ -40167,6 +40200,7 @@ models with a user friendly shiny interface.")
                              r-shiny
                              r-rlang
                              r-quantmod
+                             r-lubridate
                              r-dplyr))
     (home-page "https://github.com/fernandoroa/invoice-public")
     (synopsis "Shiny App - Generate a Pdf Invoice with 'Rmarkdown'")
@@ -42053,13 +42087,13 @@ Appl Ecol.  2020; 57; 1847â1860. <doi:10.1111/1365-2664.13659>.")
 (define-public r-shar
   (package
     (name "r-shar")
-    (version "2.1.1")
+    (version "2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shar" version))
        (sha256
-        (base32 "08bzx1vd86i5nl97i3rqdh0m62xr5zs2j6zvc4pqxg1b9ms1kklk"))))
+        (base32 "1kbsayxdvbxqwckr82fj3k4vyah20qd59q9ls2y43hk4ma39iiw2"))))
     (properties `((upstream-name . "shar")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra

@@ -15,8 +15,8 @@
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages maths)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
@@ -20962,22 +20962,25 @@ dependent variable.")
 (define-public r-coda4microbiome
   (package
     (name "r-coda4microbiome")
-    (version "0.1.4")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coda4microbiome" version))
        (sha256
-        (base32 "1z8bdhnslw13rmdw1jnj5ldr6jmn8grmzn5mhsy96r8x9xyzk5b5"))))
+        (base32 "0v7szj1hp5ld5b2yhvrir93dsd888vfr7w17lhslxrdny708q2fv"))))
     (properties `((upstream-name . "coda4microbiome")))
     (build-system r-build-system)
-    (propagated-inputs (list r-proc
+    (propagated-inputs (list r-survminer
+                             r-survival
+                             r-proc
                              r-plyr
                              r-glmnet
                              r-ggpubr
                              r-ggplot2
-                             r-corrplot))
-    (native-inputs (list r-knitr))
+                             r-corrplot
+                             r-complexheatmap
+                             r-circlize))
     (home-page "https://malucalle.github.io/coda4microbiome/")
     (synopsis "Compositional Data Analysis for Microbiome Studies")
     (description
@@ -21843,13 +21846,13 @@ and cables.  Results are visualized in an easy-to-understand risk matrix.")
 (define-public r-cna
   (package
     (name "r-cna")
-    (version "3.5.4")
+    (version "3.5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cna" version))
        (sha256
-        (base32 "1hx1jwdhhmx4f18vkhsjzzxkzqz5anyn6pq774q3yn2ca0vzshb5"))))
+        (base32 "1368152mlj2kv3py45bggm5dpi6hhi9rx5db7rfim6wy88qgqxz4"))))
     (properties `((upstream-name . "cna")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-matrixstats r-matrix r-car))
@@ -25376,13 +25379,13 @@ indices (6), Drought indices (8), Fire indices (5), Tourism indices (5).")
 (define-public r-climextremes
   (package
     (name "r-climextremes")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "climextRemes" version))
        (sha256
-        (base32 "0c3zh64pipdq5266g8p6c6h0qdwfmigfh6s63ljqvr1ysv32k57g"))))
+        (base32 "0dvkwdb37aqvl9qanaw4b7in6b4vjih3xjy0j16qdr5w76jcn804"))))
     (properties `((upstream-name . "climextRemes")))
     (build-system r-build-system)
     (propagated-inputs (list r-extremes r-boot))
@@ -34483,13 +34486,13 @@ for an overview.")
 (define-public r-ccmmr
   (package
     (name "r-ccmmr")
-    (version "0.1")
+    (version "0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CCMMR" version))
        (sha256
-        (base32 "0d8fbgnjvy4bh1msbvm125q2v9j3h7zdnijdhi222hcpkvax5z8b"))))
+        (base32 "0y1lfjicyw0gs2r5nrqhkzyzkdbs6brdrzgc98k5fam79nj7kcbv"))))
     (properties `((upstream-name . "CCMMR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-rann r-r2r))

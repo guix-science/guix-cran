@@ -11872,13 +11872,13 @@ hypotheses) based on two samples with possible censored data.")
 (define-public r-empiricalcalibration
   (package
     (name "r-empiricalcalibration")
-    (version "3.1.1")
+    (version "3.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EmpiricalCalibration" version))
        (sha256
-        (base32 "11kam8scb5hbp6bfk41xwjfmrwnvwaba2xksjsw1rdlrfbljs8p1"))))
+        (base32 "013k43mwsjr5sgrvcp9dqcpylls0qm3ppn7xbgw7l46w22yik5hi"))))
     (properties `((upstream-name . "EmpiricalCalibration")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-rcpp r-gridextra r-ggplot2))

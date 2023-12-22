@@ -8831,16 +8831,16 @@ package.")
 (define-public r-rpyants
   (package
     (name "r-rpyants")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rpyANTs" version))
        (sha256
-        (base32 "12m5vrvlrlwmxh26xqpzrs5ghl2rjqikvnjglr40ys9jyy9vxj24"))))
+        (base32 "1dmlpwx9x1gh2x0a4krp0v5a4km7pp65zalvbibb6r69iqmqr858"))))
     (properties `((upstream-name . "rpyANTs")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rpymat r-reticulate))
+    (propagated-inputs (list r-rpymat r-rnifti r-reticulate))
     (home-page "http://dipterix.org/rpyANTs/")
     (synopsis "An Alternative Advanced Normalization Tools ('ANTs')")
     (description
@@ -17418,6 +17418,46 @@ package was built as a fork of the GA package by Luca Scrucca(2017)
 <DOI:10.32614/RJ-2017-008> and implementing the Non-Dominated Sorting Genetic
 Algorithms proposed by K. Deb's.")
     (license license:gpl2+)))
+
+(define-public r-rmonize
+  (package
+    (name "r-rmonize")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Rmonize" version))
+       (sha256
+        (base32 "1xyk56lh6w1yiy33sga1shnf3q8zfl3qz4zycf13sddjgzkwmzby"))))
+    (properties `((upstream-name . "Rmonize")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-madshapr
+                             r-haven
+                             r-fs
+                             r-fabr
+                             r-dplyr
+                             r-crayon))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/maelstrom-research/Rmonize/")
+    (synopsis "Support Retrospective Harmonization of Data")
+    (description
+     "This package provides functions to support rigorous retrospective data
+harmonization processing, evaluation, and documentation across datasets from
+different studies based on Maelstrom Research guidelines.  The package includes
+the core functions to evaluate and format the main inputs that define the
+harmonization process, apply specified processing rules to generate harmonized
+data, diagnose processing errors, and summarize and evaluate harmonized outputs.
+ The main inputs that define the processing are a @code{DataSchema} (list and
+definitions of harmonized variables to be generated) and Data Processing
+Elements (processing rules to be applied to generate harmonized variables from
+study-specific variables).  The main outputs of processing are harmonized
+datasets, associated metadata, and tabular and visual summary reports.  As
+described in Maelstrom Research guidelines for rigorous retrospective data
+harmonization (Fortier I and al. (2017) <doi:10.1093/ije/dyw075>).")
+    (license license:gpl3)))
 
 (define-public r-rmonad
   (package
@@ -32446,13 +32486,13 @@ default reports are generated as vignettes in the resulting package.")
 (define-public r-redcapdm
   (package
     (name "r-redcapdm")
-    (version "0.9.0")
+    (version "0.9.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "REDCapDM" version))
        (sha256
-        (base32 "00wxlvlgfj91mp6lgls8pf906lsy3vpc3vhh4p3m2jr4drxz8isf"))))
+        (base32 "17acpzv4m09am2q0cckkbwspkfjh2f5487nyf6v2nzgdvgfilrrd"))))
     (properties `((upstream-name . "REDCapDM")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -32467,6 +32507,7 @@ default reports are generated as vignettes in the resulting package.")
                              r-magrittr
                              r-labelled
                              r-janitor
+                             r-forcats
                              r-dplyr
                              r-cli))
     (native-inputs (list r-knitr))
@@ -39451,13 +39492,13 @@ Clickhouse databases via DBI methods and using dplyr'/'dbplyr idioms.")
 (define-public r-rclabels
   (package
     (name "r-rclabels")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RCLabels" version))
        (sha256
-        (base32 "1kwdblp7zcplhlp2xzxh9rzfnc56f01b9j79clp5k6m5s43rkp94"))))
+        (base32 "0g8gfq9k5xskq87x5my928pmgz98629wg6pkzvl93sq5da7gdqmp"))))
     (properties `((upstream-name . "RCLabels")))
     (build-system r-build-system)
     (propagated-inputs (list r-purrr r-magrittr r-hmisc r-assertthat))

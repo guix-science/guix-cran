@@ -5885,13 +5885,13 @@ University of Bern.")
 (define-public r-nma
   (package
     (name "r-nma")
-    (version "1.3-2")
+    (version "1.4-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMA" version))
        (sha256
-        (base32 "037a6m7lg1k4pjcrad4p4vcjx82v1r1j5yh1kncx95wgf441jmr4"))))
+        (base32 "0n9i1ph4pikf7nwsybn7s33h9s20qhvzggrjgj3njzadam47rvgx"))))
     (properties `((upstream-name . "NMA")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-metafor r-mass r-ggplot2 r-forestplot))

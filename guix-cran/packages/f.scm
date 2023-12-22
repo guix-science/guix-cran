@@ -14513,13 +14513,13 @@ sampling is supported.")
 (define-public r-fextremes
   (package
     (name "r-fextremes")
-    (version "4021.83")
+    (version "4032.84")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fExtremes" version))
        (sha256
-        (base32 "0i0sabk5clk50r9qk69d0rqzkx95x3x9fnwqr8kx40d7v55s1blb"))))
+        (base32 "0cg2rbyx9704gii2mr6bwc64mjbzxh5n1i6x06yrg3gpixzl3gy0"))))
     (properties `((upstream-name . "fExtremes")))
     (build-system r-build-system)
     (propagated-inputs (list r-timeseries r-timedate r-fgarch r-fbasics))
@@ -15978,13 +15978,13 @@ the plot of the functional data.")
 (define-public r-fdasrvf
   (package
     (name "r-fdasrvf")
-    (version "2.1.1")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fdasrvf" version))
        (sha256
-        (base32 "12n2wwhks50i9a6rzb05zmiil52qnmis0080zw98bblz6pxxfzqj"))))
+        (base32 "1y078ynrby25k09wd4i6pghk7n69cmf3a184fzqp28s1xgv1vyfb"))))
     (properties `((upstream-name . "fdasrvf")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
@@ -16073,13 +16073,13 @@ Functional Data\".  Journal of Computational and Graphical Statistics.
 (define-public r-fdapde
   (package
     (name "r-fdapde")
-    (version "1.1-16")
+    (version "1.1-17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fdaPDE" version))
        (sha256
-        (base32 "0z5plkig2df8scvx07wmd4f0w0pp1ddfafg70shcic6lahg2xk27"))))
+        (base32 "1h3v36mmlycs34z4a19sfjkr5xm8lq44qgv6jb908fy66m1fcsfa"))))
     (properties `((upstream-name . "fdaPDE")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgl r-rcppeigen r-rcpp r-plot3d r-matrix))
@@ -17138,6 +17138,31 @@ queries against databases of missing individuals (Darwiche (2009)
      "Normalizes the data from a file containing the raw values of the SNP probes of
 microarray data by using the FISH probes and their corresponding copy number.")
     (license license:gpl2+)))
+
+(define-public r-fbms
+  (package
+    (name "r-fbms")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FBMS" version))
+       (sha256
+        (base32 "01zj6alrqis2kclghr4zyz04vgfip3fxxb54f26aczmjhpg71vyd"))))
+    (properties `((upstream-name . "FBMS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp r-gensa r-fastglm))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=FBMS")
+    (synopsis "Flexible Bayesian Model Selection and Model Averaging")
+    (description
+     "This package implements MJMCMC (mode jumping MCMC) described in Hubin and
+Storvik (2018) <doi:10.1016/j.csda.2018.05.020> and GMJMCMC (genetically
+modified MJMCMC) described in Hubin et al. (2021) <doi:10.1613/jair.1.13047>
+algorithms as well as the subsampling counterpart described in Lachmann et al.
+(2022) <doi:10.1016/j.ijar.2022.08.018> for flexible Bayesian model selection
+and model averaging.")
+    (license license:gpl2)))
 
 (define-public r-fbfsearch
   (package
@@ -18745,13 +18770,13 @@ and discussed in the preprint available from Researchgate by Simone R. (2020)
 (define-public r-fastcpd
   (package
     (name "r-fastcpd")
-    (version "0.9.9")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastcpd" version))
        (sha256
-        (base32 "0c1c26sfw84lr2z8yv2x1ycmsxd3723ncv6ysqd1xl9vd0assbgs"))))
+        (base32 "0shqfpwpfwcwywp55jcrrfmrkan19lna9ld7y2biamirqjsgfb1l"))))
     (properties `((upstream-name . "fastcpd")))
     (build-system r-build-system)
     (propagated-inputs (list r-tseries
@@ -18978,6 +19003,41 @@ included.  You provide the objective function and proximal mappings, and it
 takes care of the issues like stepsize selection, acceleration, and stopping
 conditions for you.")
     (license license:expat)))
+
+(define-public r-fast-r
+  (package
+    (name "r-fast-r")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FAST.R" version))
+       (sha256
+        (base32 "1nxvpq55nk9r7mf2dxpqzd6vhk2213dxrlgz2qsyrx4pd928mfg1"))))
+    (properties `((upstream-name . "FAST.R")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zip
+                             r-waiter
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-shinyjs
+                             r-shinyfeedback
+                             r-shiny
+                             r-scales
+                             r-readxl
+                             r-rcolorbrewer
+                             r-plater
+                             r-magrittr
+                             r-ggplot2
+                             r-dt
+                             r-dplyr))
+    (home-page "https://f-neri.github.io/FAST.R/")
+    (synopsis "Analyze and Visualize FAST-Generated Data")
+    (description
+     "R shiny app to perform data analysis and visualization for the Fully Automated
+Senescence Test (FAST) workflow.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-fasstr
   (package

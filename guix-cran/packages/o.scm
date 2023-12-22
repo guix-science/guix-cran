@@ -6804,13 +6804,13 @@ with new theme and colors.")
 (define-public r-onsr
   (package
     (name "r-onsr")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "onsr" version))
        (sha256
-        (base32 "0qazwqdbbinsrimn7rf7xcjz5l5zp372i5j54rp87xy098q7c0l3"))))
+        (base32 "07aa0rq41vw4xy76fwwjwcvl2bv15phh5bsk4xb3j7gahy6g9xxi"))))
     (properties `((upstream-name . "onsr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-readr r-jsonlite r-httr))
@@ -9921,13 +9921,13 @@ the data sets with variables \"harmonized\" across different years.")
 (define-public r-odbc
   (package
     (name "r-odbc")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "odbc" version))
        (sha256
-        (base32 "0wz23f9rzqvmj8qpa9wm4kbxhjz27rwq5w72538pxj1w0kmkfw3h"))))
+        (base32 "1brlf16klj4r2iz5c1d2hm5ipg6swhv41y65ys3yb9n4b035fzxd"))))
     (properties `((upstream-name . "odbc")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -9937,7 +9937,7 @@ the data sets with variables \"harmonized\" across different years.")
                              r-blob
                              r-bit64))
     (native-inputs (list r-knitr pkg-config))
-    (home-page "https://r-dbi.github.io/odbc/")
+    (home-page "https://odbc.r-dbi.org")
     (synopsis "Connect to ODBC Compatible Databases (using the DBI Interface)")
     (description
      "This package provides a DBI-compatible interface to ODBC databases.")

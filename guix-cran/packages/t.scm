@@ -13208,13 +13208,13 @@ is proportional to the certain characteristics of the dataset.")
 (define-public r-tiledb
   (package
     (name "r-tiledb")
-    (version "0.22.0")
+    (version "0.23.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tiledb" version))
        (sha256
-        (base32 "09jifc57nkyph14gc84cz8fjkflnn9dgl6i69bvv2a5l6x58ph3k"))))
+        (base32 "0bdl3p16ngqi127dz965i38lfdii0g8wmg3db328lzzrnf44lqfs"))))
     (properties `((upstream-name . "tiledb")))
     (build-system r-build-system)
     (inputs (list zlib pcre2))
@@ -13524,13 +13524,13 @@ analysis.")
 (define-public r-tidyxl
   (package
     (name "r-tidyxl")
-    (version "1.0.9")
+    (version "1.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyxl" version))
        (sha256
-        (base32 "1wj156qxgghd415yc27gq5adg3gdixb3kj9wc6v0lw0r91p58cjn"))))
+        (base32 "1y8bbll3mhxb2drdraymblzw8gjxym2lrj90fg2z75rn00lnwf8f"))))
     (properties `((upstream-name . "tidyxl")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-piton))

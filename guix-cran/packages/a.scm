@@ -6223,6 +6223,41 @@ indicated for telemetry studies of marine animals, where Argos locations are
 predominantly of low-quality.")
     (license license:gpl2+)))
 
+(define-public r-argos
+  (package
+    (name "r-argos")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ARGOS" version))
+       (sha256
+        (base32 "0bp0gqlcsi57zzqgcj337jdhqvpcn6kjk1q8axdcyz3g1lkpbyd1"))))
+    (properties `((upstream-name . "ARGOS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyverse
+                             r-tidyr
+                             r-signal
+                             r-metrics
+                             r-matrix
+                             r-magrittr
+                             r-glmnet
+                             r-desolve
+                             r-boot))
+    (home-page "<https://github.com/kevinegan31/ARGOS-Package>")
+    (synopsis "Automatic Regression for Governing Equations (ARGOS)")
+    (description
+     "Comprehensive set of tools for performing system identification of both linear
+and nonlinear dynamical systems directly from data.  The Automatic Regression
+for Governing Equations (ARGOS) simplifies the complex task of constructing
+mathematical models of dynamical systems from observed input and output data,
+supporting various types of systems, including those described by ordinary
+differential equations.  It employs optimal numerical derivatives for enhanced
+accuracy and employs formal variable selection techniques to help identify the
+most relevant variables, thereby enabling the development of predictive models
+for system behavior analysis.")
+    (license license:gpl3)))
+
 (define-public r-argonr
   (package
     (name "r-argonr")
@@ -6554,13 +6589,13 @@ variable.")
 (define-public r-area
   (package
     (name "r-area")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "area" version))
        (sha256
-        (base32 "1dyxrfs69x3dssb7ifs024m4l3b1fdap1x5lkbkpas5ngyg7ivcz"))))
+        (base32 "0bzl5jagnpd7s8n6dp8v83z282qgfqg3fz52d909dg0fxxrpq30y"))))
     (properties `((upstream-name . "area")))
     (build-system r-build-system)
     (propagated-inputs (list r-cpp11))
@@ -10306,19 +10341,20 @@ effects thanks to @code{jQuery} @code{AniView}'.")
 (define-public r-anisna
   (package
     (name "r-anisna")
-    (version "1.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aniSNA" version))
        (sha256
-        (base32 "1i5my4afh407a990crin11m9nbwjpry0ldpcb0r2bpk8sr13gcnb"))))
+        (base32 "0vmpdmqr3cwpk588y116bv2nv1xcaya0mg53zcl3yc223df134zp"))))
     (properties `((upstream-name . "aniSNA")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
                              r-rlang
                              r-reshape
                              r-rcpp
+                             r-plotrix
                              r-magrittr
                              r-lubridate
                              r-igraph
@@ -10330,8 +10366,8 @@ effects thanks to @code{jQuery} @code{AniView}'.")
      "Obtain network structures from animal GPS telemetry observations and
 statistically analyse them to assess their adequacy for social network analysis.
  Methods include pre-network data permutations, bootstrapping techniques to
-obtain confidence intervals for global network metrics, and correlation and
-regression analysis of the local network metrics.")
+obtain confidence intervals for global and node-level network metrics, and
+correlation and regression analysis of the local network metrics.")
     (license license:expat)))
 
 (define-public r-anipaths
@@ -12933,6 +12969,40 @@ equations, taper equations, biomass models, among many others.  Users are able
 to efficiently find and select allometric models suitable for their project area
 and use them in analysis.  Additionally, allometric provides a structured
 framework for adding new models to an open-source models repository.")
+    (license license:expat)))
+
+(define-public r-allofus
+  (package
+    (name "r-allofus")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "allofus" version))
+       (sha256
+        (base32 "03i9naibrcwyk7735q3khabbh7rrwm7gz0ffsmd9k50hfzkbs0a0"))))
+    (properties `((upstream-name . "allofus")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-sessioninfo
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-glue
+                             r-dplyr
+                             r-dbplyr
+                             r-cli
+                             r-bigrquery))
+    (native-inputs (list r-knitr))
+    (home-page "https://roux-ohdsi.github.io/allofus/")
+    (synopsis "Interface for 'All of Us' Researcher Workbench")
+    (description
+     "Streamline use of the All of Us Researcher Workbench
+(<https://www.researchallofus.org/data-tools/workbench/>)with tools to extract
+and manipulate data from the All of Us database.  Increase interoperability with
+the Observational Health Data Science and Informatics ('OHDSI') tool stack by
+decreasing reliance of All of Us tools and allowing for cohort creation via
+Atlas'.  Improve reproducible and transparent research using All of Us'.")
     (license license:expat)))
 
 (define-public r-allmt
@@ -18734,17 +18804,17 @@ algorithms are described and reviewed in Zhang and Ball (2017)
 (define-public r-adbi
   (package
     (name "r-adbi")
-    (version "0.0.2")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adbi" version))
        (sha256
-        (base32 "0da6r67s64khs9xvk5fbn368fqq56z5d6qw4arniv1x705m9mv0s"))))
+        (base32 "05cgkxjcgrcvmq7h5am5zxr32s7narar7f612by246fbhxlkv2s7"))))
     (properties `((upstream-name . "adbi")))
     (build-system r-build-system)
     (propagated-inputs (list r-nanoarrow r-dbi r-adbcdrivermanager))
-    (home-page "https://github.com/r-dbi/adbi")
+    (home-page "https://adbi.r-dbi.org")
     (synopsis "'DBI' Compliant Database Access Using 'ADBC'")
     (description
      "In order to make Arrow Database Connectivity ('ADBC

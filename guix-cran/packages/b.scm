@@ -14,6 +14,8 @@
   #:use-module (gnu packages algebra)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages julia)
+  #:use-module (gnu packages pkg-config)
+  #:use-module (gnu packages tls)
   #:use-module (gnu packages java)
   #:use-module (gnu packages python)
   #:use-module (gnu packages bioinformatics)
@@ -5330,6 +5332,32 @@ neighbor-points, may be supplied or can be calculated automatically.  Originally
 designed for the cleaning of heart rates, but suitable for filtering any
 slowly-changing physiological variable.For more information see Signer
 (2010)<doi:10.1111/j.2041-210X.2009.00010.x>.")
+    (license license:gpl3+)))
+
+(define-public r-boxcoxmix
+  (package
+    (name "r-boxcoxmix")
+    (version "0.42")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "boxcoxmix" version))
+       (sha256
+        (base32 "0z4iagli47i5jd9fi849wglwj2mbrn60wikb6n041k9yrfhgccma"))))
+    (properties `((upstream-name . "boxcoxmix")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-statmod r-qicharts r-npmlreg))
+    (native-inputs (list))
+    (home-page "https://gitlab.com/iagogv/boxcoxmix")
+    (synopsis
+     "Box-Cox-Type Transformations for Linear and Logistic Models with Random Effects")
+    (description
+     "Box-Cox-type transformations for linear and logistic models with random effects
+using non-parametric profile maximum likelihood estimation, as introduced in
+Almohaimeed (2018) <http://etheses.dur.ac.uk/12831/> and Almohaimeed and Einbeck
+(2022) <doi:10.1177/1471082X20966919>.  The main functions are optim.boxcox()
+for linear models with random effects and boxcoxtype() for logistic models with
+random effects.")
     (license license:gpl3+)))
 
 (define-public r-box
@@ -13531,6 +13559,36 @@ package for simulating high-dimensional multivariate data with a target
 correlation and arbitrary marginal distributions via Gaussian copula.  It
 utilizes a Julia package named Bigsimr.jl for its core routines.")
     (license license:gpl3)))
+
+(define-public r-bigrquerystorage
+  (package
+    (name "r-bigrquerystorage")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bigrquerystorage" version))
+       (sha256
+        (base32 "1lzam3vvc72ns1zr0n9nnmgjwvx4f9h000g7g74hkimh442rvpvn"))))
+    (properties `((upstream-name . "bigrquerystorage")))
+    (build-system r-build-system)
+    (inputs (list zlib openssl))
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-rcpp
+                             r-lifecycle
+                             r-dbi
+                             r-bit64
+                             r-bigrquery
+                             r-assertthat
+                             r-arrow))
+    (native-inputs (list pkg-config))
+    (home-page "https://github.com/meztez/bigrquerystorage")
+    (synopsis "An Interface to Google's 'BigQuery Storage' API")
+    (description
+     "Easily talk to Google's @code{BigQuery} Storage API from R
+(<https://cloud.google.com/bigquery/docs/reference/storage/rpc>).")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-bigreg
   (package
@@ -25543,6 +25601,49 @@ distribution. @code{bakR} performs multiple-test adjusted statistical inference
 with the output of these model implementations to help biologists separate
 signal from background.  Methods to automatically visualize key results and
 detect batch effects are also provided.")
+    (license license:expat)))
+
+(define-public r-baker
+  (package
+    (name "r-baker")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "baker" version))
+       (sha256
+        (base32 "07ah24n5j5xdppfmgcgn96h8f55zxzfmi9bj1n9yyhd3rh6p06s9"))))
+    (properties `((upstream-name . "baker")))
+    (build-system r-build-system)
+    (inputs (list jags))
+    (propagated-inputs (list r-shinyfiles
+                             r-shinydashboard
+                             r-robcompositions
+                             r-rjags
+                             r-reshape2
+                             r-r2jags
+                             r-mvbutils
+                             r-mgcv
+                             r-lubridate
+                             r-gridextra
+                             r-ggpubr
+                             r-ggplot2
+                             r-coda
+                             r-binom
+                             r-abind))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/zhenkewu/baker")
+    (synopsis "\"Nested Partially Latent Class Models\"")
+    (description
+     "This package provides functions to specify, fit and visualize nested
+partially-latent class models ( Wu, Deloria-Knoll, Hammitt, and Zeger (2016)
+<doi:10.1111/rssc.12101>; Wu, Deloria-Knoll, and Zeger (2017)
+<doi:10.1093/biostatistics/kxw037>; Wu and Chen (2021) <doi:10.1002/sim.8804>)
+for inference of population disease etiology and individual diagnosis.  In the
+motivating Pneumonia Etiology Research for Child Health (PERCH) study, because
+both quantities of interest sum to one hundred percent, the PERCH scientists
+frequently refer to them as population etiology pie and individual etiology pie,
+hence the name of the package.")
     (license license:expat)))
 
 (define-public r-bakeoff

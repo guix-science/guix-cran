@@ -6982,6 +6982,27 @@ modeling of longitudinal data under a multi-state framework using the msm
 package.")
     (license license:gpl3)))
 
+(define-public r-msml
+  (package
+    (name "r-msml")
+    (version "1.0.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MSML" version))
+       (sha256
+        (base32 "0ha0pzfcasyx5bgjcsz1gnkim6b5mh4wc874dc74q2czhcz1h44k"))))
+    (properties `((upstream-name . "MSML")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-r2roc r-r2redux))
+    (home-page "https://github.com/mommy003/MSML")
+    (synopsis "Model Selection Based on Machine Learning (ML)")
+    (description
+     "Models evaluation based on a modified version of the recursive feature
+elimination algorithm.  This package is designed to determine the optimal
+model(s) by leveraging all available features.")
+    (license license:gpl3+)))
+
 (define-public r-msme
   (package
     (name "r-msme")
@@ -14383,6 +14404,71 @@ substitute it for testing.  Designed as a drop-in replacement for the now
 deprecated testthat::with_mock() and testthat::local_mock()'.")
     (license license:gpl3)))
 
+(define-public r-mocha
+  (package
+    (name "r-mocha")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MOCHA" version))
+       (sha256
+        (base32 "1ncl1xvrb5gy9k3z54ymb55vxfnqyix0yq316h8wd5ppl1qq3fk0"))))
+    (properties `((upstream-name . "MOCHA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-wcorr
+                             r-tidyselect
+                             r-tidyr
+                             r-summarizedexperiment
+                             r-stringr
+                             r-scales
+                             r-s4vectors
+                             r-rlang
+                             r-raggedexperiment
+                             r-qvalue
+                             r-plyranges
+                             r-pbapply
+                             r-organismdbi
+                             r-multiassayexperiment
+                             r-matrixstats
+                             r-magrittr
+                             r-lifecycle
+                             r-iranges
+                             r-ggridges
+                             r-ggrepel
+                             r-ggplot2
+                             r-ggbio
+                             r-genomicranges
+                             r-genomicfeatures
+                             r-genomeinfodb
+                             r-ensembldb
+                             r-dplyr
+                             r-data-table
+                             r-bsgenome
+                             r-biovizbase
+                             r-biocgenerics
+                             r-assertthat
+                             r-annotationdbi))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=MOCHA")
+    (synopsis "Modeling for Single-Cell Open Chromatin Analysis")
+    (description
+     "This package provides a statistical framework and analysis tool for open
+chromatin analysis designed specifically for single cell ATAC-seq (Assay for
+Transposase-Accessible Chromatin) data, after cell type/cluster identification.
+These novel modules remove unwanted technical variation, identify open
+chromatin, robustly models repeated measures in single cell data, implement
+advanced statistical frameworks to model zero-inflation for differential and
+co-accessibility analyses, and integrate with existing databases and modules for
+downstream analyses to reveal biological insights.  MOCHA provides a statistical
+foundation for complex downstream analysis to help advance the potential of
+single cell ATAC-seq for applied studies.  Methods for zero-inflated statistics
+are as described in: Ghazanfar, S., Lin, Y., Su, X. et al. (2020)
+<doi:10.1038/s41592-020-0885-x>.  Pimentel, Ronald Silva, \"Kendall's Tau and
+Spearman's Rho for Zero-Inflated Data\" (2009)
+<https://scholarworks.wmich.edu/dissertations/721/>.")
+    (license license:gpl3+)))
+
 (define-public r-mocca
   (package
     (name "r-mocca")
@@ -16752,13 +16838,13 @@ composed to form preprocessing pipelines.")
 (define-public r-mlr3viz
   (package
     (name "r-mlr3viz")
-    (version "0.6.2")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3viz" version))
        (sha256
-        (base32 "0d8n1rq3qz2znk8222n25zk07vi1vmbyazzaahxnyca1igyx2wq6"))))
+        (base32 "08kgg6fxzvj5xfx316aj4dy1xcrsflns24sj40jj6g14dyjnh26f"))))
     (properties `((upstream-name . "mlr3viz")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -16935,6 +17021,45 @@ and prediction are supported for packages terra', raster and stars'.")
 steps of a machine learning workflow.  It uses the functionalities of the mlr3
 framework.")
     (license license:bsd-2)))
+
+(define-public r-mlr3resampling
+  (package
+    (name "r-mlr3resampling")
+    (version "2023.12.20")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mlr3resampling" version))
+       (sha256
+        (base32 "0xpdlb4l507ixz0hiz5vkgimpll13g36ysz4pp8x6z64hx2420jm"))))
+    (properties `((upstream-name . "mlr3resampling")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-r6
+                             r-paradox
+                             r-mlr3misc
+                             r-mlr3
+                             r-data-table
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/tdhock/mlr3resampling")
+    (synopsis "Resampling Algorithms for 'mlr3' Framework")
+    (description
+     "This package provides a supervised learning algorithm inputs a train set, and
+outputs a prediction function, which can be used on a test set.  If each data
+point belongs to a group (such as geographic region, year, etc), then how do we
+know if it is possible to train on one group, and predict accurately on another
+group? Cross-validation can be used to determine the extent to which this is
+possible, by first assigning fold IDs from 1 to K to all data (possibly using
+stratification, usually by group and label).  Then we loop over test sets
+(group/fold combinations), train sets (same group, other groups, all groups),
+and compute test/prediction accuracy for each combination.  Comparing
+test/prediction accuracy between same and other, we can determine the extent to
+which it is possible (perfect if same/other have similar test accuracy for each
+group; other is usually somewhat less accurate than same; other can be just as
+bad as featureless baseline when the groups have different patterns).  For more
+information, <https://tdhock.github.io/blog/2023/R-gen-new-subsets/> describes
+the method in depth.")
+    (license license:gpl3)))
 
 (define-public r-mlr3oml
   (package
@@ -17618,6 +17743,33 @@ effects, and predictors can correlate at either level and accommodate models
 with multiple interaction effects.")
     (license license:gpl3)))
 
+(define-public r-mlmoi
+  (package
+    (name "r-mlmoi")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MLMOI" version))
+       (sha256
+        (base32 "1j85syszcsv0v30dvsq5rsdkaz1yj71hsrk53cw5k3m89229wzk1"))))
+    (properties `((upstream-name . "MLMOI")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rmpfr r-rdpack r-openxlsx))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=MLMOI")
+    (synopsis
+     "Estimating Frequencies, Prevalence and Multiplicity of Infection")
+    (description
+     "The implemented methods reach out to scientists that seek to estimate
+multiplicity of infection (MOI) and lineage (allele) frequencies and prevalences
+at molecular markers using the maximum-likelihood method described in Schneider
+(2018) <doi:10.1371/journal.pone.0194148>, and Schneider and Escalante (2014)
+<doi:10.1371/journal.pone.0097899>.  Users can import data from Excel files in
+various formats, and perform maximum-likelihood estimation on the imported data
+by the package's moimle() function.")
+    (license license:gpl3)))
+
 (define-public r-mlmodelselection
   (package
     (name "r-mlmodelselection")
@@ -17976,13 +18128,13 @@ increments (BAI) was described by @code{JevÅ¡enak} and Skudnik (2021)
 (define-public r-mlflow
   (package
     (name "r-mlflow")
-    (version "2.8.1")
+    (version "2.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlflow" version))
        (sha256
-        (base32 "1c4lbn2acff009d2l28nyqdpqh2jjgx3v77l9v21c82cnq1hsw0x"))))
+        (base32 "181r5mrb6bz2krbh435yn1i79kq9ql73m37qcsv8mqq7m8dg6v1h"))))
     (properties `((upstream-name . "mlflow")))
     (build-system r-build-system)
     (propagated-inputs (list r-zeallot
@@ -30918,13 +31070,13 @@ P@code{LoS} Comput Biol 11(11): e1004574. <doi: 10.1371/journal.pcbi.1004574>.")
 (define-public r-mega2r
   (package
     (name "r-mega2r")
-    (version "1.0.9")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Mega2R" version))
        (sha256
-        (base32 "1wpn03csv88958ppg4idwidcdvr1gf3bps4c0sf5z3ri78awb28f"))))
+        (base32 "05g0r7z6kiy0pgl7cbcc3c0wbf4wbc7fxdbha8sc77m3hqya882l"))))
     (properties `((upstream-name . "Mega2R")))
     (build-system r-build-system)
     (propagated-inputs (list r-skat
@@ -36150,13 +36302,13 @@ with a total of 196 variations.")
 (define-public r-matsindf
   (package
     (name "r-matsindf")
-    (version "0.4.6")
+    (version "0.4.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "matsindf" version))
        (sha256
-        (base32 "1qsvhja4zhblmv1zayqddzif9l3kiwbw20yf0k5hp92pizpq4j3k"))))
+        (base32 "1l3gxrc9srwlxc2grvihv7zdc9vxg6rff08xmcszyzpapnwwrpy6"))))
     (properties `((upstream-name . "matsindf")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -36179,13 +36331,13 @@ data frame and expand a data frame of matrices into a tidy data frame.")
 (define-public r-matsbyname
   (package
     (name "r-matsbyname")
-    (version "0.6.7")
+    (version "0.6.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "matsbyname" version))
        (sha256
-        (base32 "05w1k9yxbgnscsi17gcwiah1fbgl8jqz373pxgwfdwrhsncj3gc5"))))
+        (base32 "0lkw6s4qpay45abawklp0hc3vwcyna0pmp98mi7l34b0ni0cmy46"))))
     (properties `((upstream-name . "matsbyname")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble

@@ -1748,13 +1748,13 @@ normal profiles.")
 (define-public r-isoplotrgui
   (package
     (name "r-isoplotrgui")
-    (version "5.6")
+    (version "6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IsoplotRgui" version))
        (sha256
-        (base32 "00zhg6c9gv9n9hgzpdqr3jdj4cd1rifcimjrcnkwgfff6d5cy1cp"))))
+        (base32 "0spjw26xv33qy7zpyk5yga690wr0ibsm8m7adm1709v8l4s9vbv4"))))
     (properties `((upstream-name . "IsoplotRgui")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinylight r-isoplotr))
@@ -1771,13 +1771,13 @@ either be used offline, or hosted on a server to provide online access to the
 (define-public r-isoplotr
   (package
     (name "r-isoplotr")
-    (version "5.6")
+    (version "6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IsoplotR" version))
        (sha256
-        (base32 "0w3jrvxqvnm6bc81r9n99ycj9xhfcc28a8r4qnhisv3crpmqzv7s"))))
+        (base32 "0mbsyifasl5x4rwfgjyxn58id25yvz5ryiannlv4drd1hjg03kz7"))))
     (properties `((upstream-name . "IsoplotR")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -8025,30 +8025,31 @@ vectors, matrices, and lists.")
 (define-public r-innsight
   (package
     (name "r-innsight")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "innsight" version))
        (sha256
-        (base32 "0ckhxicgvvrwzsm1x396xp2fj6g7v2m2ga4gzvqrw4my10w4y3di"))))
+        (base32 "17di0a7jff4rg944h247kjbd76vai2hsg9gif1q871c7lq04fw4s"))))
     (properties `((upstream-name . "innsight")))
     (build-system r-build-system)
     (propagated-inputs (list r-torch r-r6 r-ggplot2 r-cli r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://bips-hb.github.io/innsight/")
-    (synopsis "Get the Insights of your Neural Network")
+    (synopsis "Get the Insights of Your Neural Network")
     (description
-     "Interpretability methods to analyze the behavior and individual predictions of
-modern neural networks.  Implemented methods are: Connection Weights described
-by Olden et al. (2004) <doi:10.1016/j.ecolmodel.2004.03.013>, Layer-wise
-Relevance Propagation ('LRP') described by Bach et al. (2015)
-<doi:10.1371/journal.pone.0130140>, Deep Learning Important Features
-('@code{DeepLIFT}') described by Shrikumar et al. (2017)
-<@code{arXiv:1704.02685>} and gradient-based methods like @code{SmoothGrad}
-described by Smilkov et al. (2017) <@code{arXiv:1706.03825>}, Gradient x Input
-described by Baehrens et al. (2009) <@code{arXiv:0912.1128>} or Vanilla
-Gradient'.")
+     "Interpretation methods for analyzing the behavior and individual predictions of
+modern neural networks in a three-step procedure: Converting the model, running
+the interpretation method, and visualizing the results.  Implemented methods
+are, e.g., Connection Weights described by Olden et al. (2004)
+<doi:10.1016/j.ecolmodel.2004.03.013>, layer-wise relevance propagation ('LRP')
+described by Bach et al. (2015) <doi:10.1371/journal.pone.0130140>, deep
+learning important features ('@code{DeepLIFT}') described by Shrikumar et al.
+(2017) <@code{arXiv:1704.02685>} and gradient-based methods like
+@code{SmoothGrad} described by Smilkov et al. (2017) <@code{arXiv:1706.03825>},
+Gradient x Input described by Baehrens et al. (2009) <@code{arXiv:0912.1128>} or
+Vanilla Gradient'.")
     (license license:expat)))
 
 (define-public r-inlpubs

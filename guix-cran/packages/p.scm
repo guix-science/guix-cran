@@ -14351,13 +14351,13 @@ provided in the separate package pomdp.  Kaelbling, Littman and Cassandra (1998)
 (define-public r-pomdp
   (package
     (name "r-pomdp")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pomdp" version))
        (sha256
-        (base32 "0v4vj5xiivh1z1jc93zwijhdfjs7lnb81szlgsmn9byc31ydg3br"))))
+        (base32 "0fw8phi09c7i301v5dankplnhx0i099npsdc9b2hfqif5ykhh7f2"))))
     (properties `((upstream-name . "pomdp")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp
@@ -31549,13 +31549,13 @@ endpoints require the use of an API key which can be obtained at
 (define-public r-pathling
   (package
     (name "r-pathling")
-    (version "6.4.1")
+    (version "6.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pathling" version))
        (sha256
-        (base32 "0d8q8kd3crn2z33sv3r1xjfkdjz5645b17v8gxgdf7hjp16y7jaa"))))
+        (base32 "1i60b3caa1fn36gb04wwmr043pmxr234xhfy5m07z891andx90jj"))))
     (properties `((upstream-name . "pathling")))
     (build-system r-build-system)
     (propagated-inputs (list r-sparklyr r-rlang))

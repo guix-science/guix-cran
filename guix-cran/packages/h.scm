@@ -7445,13 +7445,13 @@ Research 15(Oct):3297-3331.")
 (define-public r-hfr
   (package
     (name "r-hfr")
-    (version "0.6.1")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hfr" version))
        (sha256
-        (base32 "1l0iy0gc4j3gqqz0h7cjzg0nmf45vklsfy4x04a7y8zvidn01glr"))))
+        (base32 "151pm2w7imkqgi3417pa6x67bsjw8lhn29r99f1saj96f43ig70a"))))
     (properties `((upstream-name . "hfr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcolorbrewer r-quadprog r-dendextend r-corpcor))

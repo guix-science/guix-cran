@@ -9903,13 +9903,13 @@ with the Maximum Likelihood Estimator (MLE) implemented in Hector.")
 (define-public r-gmvjoint
   (package
     (name "r-gmvjoint")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gmvjoint" version))
        (sha256
-        (base32 "0f2h59k16x6ajjmdq8m43zfjj93l5h0a992wqrb6z15705f252ww"))))
+        (base32 "1gycj6b51irzkv2rg6vvlanaiar8z54pqwd9qswlrw48wk2q074w"))))
     (properties `((upstream-name . "gmvjoint")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -10939,13 +10939,13 @@ Care, 2017 <doi:10.2337/dc17-1600>.")
 (define-public r-gluedown
   (package
     (name "r-gluedown")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gluedown" version))
        (sha256
-        (base32 "05l7cjlvfbx6vk82509ijcb3vf8biif30wplyv6d92k6cy6bvhcy"))))
+        (base32 "0ra7pmyxj7bvhn9rv1hhij8va79nissakaf9l1317rrcvdi4l7mw"))))
     (properties `((upstream-name . "gluedown")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-glue))

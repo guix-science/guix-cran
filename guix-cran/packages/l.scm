@@ -3754,13 +3754,13 @@ al. (2021) <doi:10.1098/rsos.202097> and Belzile et al. (2022)
 (define-public r-longclust
   (package
     (name "r-longclust")
-    (version "1.4")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "longclust" version))
        (sha256
-        (base32 "0n1p93z4r2df004iid5qhr733chvdd1gc2xchypfzia5m8nnncal"))))
+        (base32 "0x44arc5c3xnrby1c8f5q3lvbipjsm3gsair99ybrzs4j31sgcky"))))
     (properties `((upstream-name . "longclust")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=longclust")
@@ -5549,6 +5549,30 @@ Research.  Journal of Statistical Software.  2020.  p.  1â32.  Available fr
 <doi:10.18637/jss.v096.i04>.")
     (license (list license:asl2.0
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-localboot
+  (package
+    (name "r-localboot")
+    (version "0.9.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "localboot" version))
+       (sha256
+        (base32 "00xnkskk0mr075x908hl9cygdsqsa6wdwsg2gx01flz5dzw2xz5g"))))
+    (properties `((upstream-name . "localboot")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-viridis r-rcppeigen r-rcpp))
+    (home-page "https://cran.r-project.org/package=localboot")
+    (synopsis "Local Bootstrap Methods for Various Networks")
+    (description
+     "Network analysis usually requires estimating the uncertainty of graph
+statistics.  Through this package, we provide tools to bootstrap various
+networks via local bootstrap procedure.  Additionally, it includes functions for
+generating probability matrices, creating network adjacency matrices from
+probability matrices, and plotting network structures.  The reference will be
+updated soon.")
+    (license license:gpl3)))
 
 (define-public r-lobstercatch
   (package
@@ -12128,13 +12152,13 @@ general (not R specific) information on the algorithm Leabra see
 (define-public r-ldt
   (package
     (name "r-ldt")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ldt" version))
        (sha256
-        (base32 "01pswd6s0xq1jhvys5k7l4mphyvnly8iyn22wr9nl64ybsb2mmhy"))))
+        (base32 "0dl9fy83a00rrslg3lp9fa64ps0d3mgll31w1n2m7bn1sq4y75s0"))))
     (properties `((upstream-name . "ldt")))
     (build-system r-build-system)
     (propagated-inputs (list r-tdata r-rdpack r-rcpp r-mass r-bh))

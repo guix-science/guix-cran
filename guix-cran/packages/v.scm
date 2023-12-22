@@ -1717,17 +1717,17 @@ segmentation (Luz, 2012) <doi:10.1145/2328967.2328970> and classification (Luz,
 (define-public r-vntrs
   (package
     (name "r-vntrs")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vntrs" version))
        (sha256
-        (base32 "0ffjjzcs7i4zli7bn83gkgi0q7dmgyxrhv9l3gdambma9hsig45c"))))
+        (base32 "1068l5p7qqjp69yzp72zp975cr2zpnfbnik6h109lhw554m4ckll"))))
     (properties `((upstream-name . "vntrs")))
     (build-system r-build-system)
     (propagated-inputs (list r-trust))
-    (home-page "https://cran.r-project.org/package=vntrs")
+    (home-page "https://loelschlaeger.de/vntrs/")
     (synopsis "Variable Neighborhood Trust Region Search")
     (description
      "An implementation of the variable neighborhood trust region algorithm Bierlaire

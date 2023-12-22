@@ -4020,13 +4020,13 @@ Medical Outcomes Partnership (OMOP) common data model.")
 (define-public r-drugdemand
   (package
     (name "r-drugdemand")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "drugDemand" version))
        (sha256
-        (base32 "06x740yh6i0m83b9zafwbj60djpdsyya24ap9l15fmhhhfb6345i"))))
+        (base32 "161d0ix5sn00j4w8kg8s02yvk6gpjvailivjh873rifsiyx50r9d"))))
     (properties `((upstream-name . "drugDemand")))
     (build-system r-build-system)
     (propagated-inputs (list r-tictoc
@@ -4039,6 +4039,7 @@ Medical Outcomes Partnership (OMOP) common data model.")
                              r-nlme
                              r-mvtnorm
                              r-mass
+                             r-l1pack
                              r-icenreg
                              r-foreach
                              r-eventpred
@@ -4057,9 +4058,11 @@ log-normal distributions (Anderson-Bergman (2017) <doi:10.18637/jss.v081.i12>).
 The number of skipped visits is modeled using Poisson, zero-inflated Poisson, or
 negative binomial distributions (Zeileis, Kleiber & Jackman (2008)
 <doi:10.18637/jss.v027.i08>).  The gap time between two consecutive drug
-dispensing visits is modeled using linear regression given the number of skipped
-visits.  The number of dispensed doses is modeled using linear or linear
-mixed-effects models (@code{McCulloch} & Searle (2001, ISBN:0-471-19364-X)).")
+dispensing visits given the number of skipped visits is modeled using linear
+regression based on least squares or least absolute deviations (Birkes & Dodge
+(1993, ISBN:0-471-56881-3)).  The number of dispensed doses is modeled using
+linear or linear mixed-effects models (@code{McCulloch} & Searle (2001,
+ISBN:0-471-19364-X)).")
     (license license:gpl2+)))
 
 (define-public r-drquality
@@ -4571,16 +4574,16 @@ select the tuning parameters.")
 (define-public r-dreamerr
   (package
     (name "r-dreamerr")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dreamerr" version))
        (sha256
-        (base32 "1wpfc87vl8x2z1x1wr3lab0v9d0ddxhhjh8fk10baid77ypxq0gf"))))
+        (base32 "11va0bwi8r3qv7cw5zjci0i7876lh02bzf5rdfn6sfv223yllpiy"))))
     (properties `((upstream-name . "dreamerr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-formula))
+    (propagated-inputs (list r-stringmagic r-formula))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=dreamerr")
     (synopsis "Error Handling Made Easy")
@@ -10401,13 +10404,13 @@ metrics.")
 (define-public r-distance
   (package
     (name "r-distance")
-    (version "1.0.8")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Distance" version))
        (sha256
-        (base32 "122855bynivgk3p60sglq8ffyznaa379z2pkgpl44wq9i6w50s39"))))
+        (base32 "05krzbk1dzlsx00vaghz1ny0wf00giglwvdy29c3xa9353pfgyix"))))
     (properties `((upstream-name . "Distance")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-mrds r-dplyr))
@@ -11814,13 +11817,13 @@ NÂ°126, by Insee (2012, ISBN:978-2-11-068613-8,
 (define-public r-dirttee
   (package
     (name "r-dirttee")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dirttee" version))
        (sha256
-        (base32 "1cdl0jazj0inr1lca0ymqpr5m5ads154scnqfh1lbiaajamqr4xj"))))
+        (base32 "1kmchjvm5x3gsvq2dqxr4di2l607j1ivsm75zwggaiwi8yjz9s4c"))))
     (properties `((upstream-name . "dirttee")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -11839,10 +11842,10 @@ NÂ°126, by Insee (2012, ISBN:978-2-11-068613-8,
 regression) for time-to-event variables with right-censoring; uses inverse
 probability of censoring weights or accelerated failure time models with
 auxiliary likelihoods.  Expectile regression using inverse probability of
-censoring weights has been introduced in Seipp et al. (2021) \"Weighted Expectile
-Regression for Right-Censored Data\" <doi:10.1002/sim.9137>, mode regression for
-time-to-event variables has been introduced in Seipp et al. (2022) \"Flexible
-Semiparametric Mode Regression for Time-to-Event Data\"
+censoring weights has been introduced in Seipp et al. (2021) ``Weighted
+Expectile Regression for Right-Censored Data <doi:10.1002/sim.9137>, mode
+regression for time-to-event variables has been introduced in Seipp et al.
+(2022) ``Flexible Semiparametric Mode Regression for Time-to-Event Data
 <doi:10.1177/09622802221122406>.")
     (license license:gpl2+)))
 
@@ -22078,21 +22081,22 @@ be slow.")
 (define-public r-dbitest
   (package
     (name "r-dbitest")
-    (version "1.7.3")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DBItest" version))
        (sha256
-        (base32 "0749mg3yadbxyixpsicnyi10dmwdjr1f590gfdzfrnpyg1ih5drh"))))
+        (base32 "1k9ww5kcy2y3cxqi9pp00j0dfa82pfbph2gz5z42nykcam6w4dfx"))))
     (properties `((upstream-name . "DBItest")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
                              r-vctrs
                              r-testthat
                              r-rlang
-                             r-r6
                              r-palmerpenguins
+                             r-nanoarrow
+                             r-magrittr
                              r-lubridate
                              r-hms
                              r-desc
