@@ -2649,13 +2649,13 @@ GPH estimator proposed by Reisen et al. (2017) <doi:10.1016/j.jspi.2017.02.008>.
 (define-public r-tspredit
   (package
     (name "r-tspredit")
-    (version "1.0.737")
+    (version "1.0.747")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tspredit" version))
        (sha256
-        (base32 "0w9qlghrggc7gydq2ksgdjs6dg98bzlrcvir0fp5czbdafz288dl"))))
+        (base32 "0hsh3r2r4g63fjlsasw9iwddxfr5xbghi17kc3arn85jkwr6k9yz"))))
     (properties `((upstream-name . "tspredit")))
     (build-system r-build-system)
     (propagated-inputs (list r-smotefamily
@@ -2667,6 +2667,7 @@ GPH estimator proposed by Reisen et al. (2017) <doi:10.1016/j.jspi.2017.02.008>.
                              r-forecast
                              r-dplyr
                              r-doby
+                             r-desctools
                              r-daltoolbox))
     (home-page "https://github.com/cefet-rj-dal/daltoolbox")
     (synopsis "Time Series Prediction Integrated Tuning")

@@ -14,8 +14,6 @@
   #:use-module (gnu packages algebra)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages julia)
-  #:use-module (gnu packages pkg-config)
-  #:use-module (gnu packages tls)
   #:use-module (gnu packages java)
   #:use-module (gnu packages python)
   #:use-module (gnu packages bioinformatics)
@@ -13559,36 +13557,6 @@ package for simulating high-dimensional multivariate data with a target
 correlation and arbitrary marginal distributions via Gaussian copula.  It
 utilizes a Julia package named Bigsimr.jl for its core routines.")
     (license license:gpl3)))
-
-(define-public r-bigrquerystorage
-  (package
-    (name "r-bigrquerystorage")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bigrquerystorage" version))
-       (sha256
-        (base32 "1lzam3vvc72ns1zr0n9nnmgjwvx4f9h000g7g74hkimh442rvpvn"))))
-    (properties `((upstream-name . "bigrquerystorage")))
-    (build-system r-build-system)
-    (inputs (list zlib openssl))
-    (propagated-inputs (list r-tibble
-                             r-rlang
-                             r-rcpp
-                             r-lifecycle
-                             r-dbi
-                             r-bit64
-                             r-bigrquery
-                             r-assertthat
-                             r-arrow))
-    (native-inputs (list pkg-config))
-    (home-page "https://github.com/meztez/bigrquerystorage")
-    (synopsis "An Interface to Google's 'BigQuery Storage' API")
-    (description
-     "Easily talk to Google's @code{BigQuery} Storage API from R
-(<https://cloud.google.com/bigquery/docs/reference/storage/rpc>).")
-    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-bigreg
   (package

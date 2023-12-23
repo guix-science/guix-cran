@@ -26489,13 +26489,13 @@ decomposition experiments.")
 (define-public r-soildb
   (package
     (name "r-soildb")
-    (version "2.7.10")
+    (version "2.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "soilDB" version))
        (sha256
-        (base32 "1fzaf9naj0fgk85wwzrk0illbgnsa5x526bvch5v8li7w2knl479"))))
+        (base32 "1y2hqvw3gs5ams9xw0r1w8w4y1m4sqwdaaf0c4d1n5dcghhjn3pa"))))
     (properties `((upstream-name . "soilDB")))
     (build-system r-build-system)
     (propagated-inputs (list r-dbi r-data-table r-curl r-aqp))
@@ -52103,16 +52103,16 @@ S., Hannachi, A., Trendafilov, N. T., & Jolliffe, I. T. (2011)
 (define-public r-scitb
   (package
     (name "r-scitb")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scitb" version))
        (sha256
-        (base32 "0x2hrcdqlymvxp1plkc4062snqkz08my1gwh4d7p73mnhi9xfq3n"))))
+        (base32 "1j62axyd26i6mzyhvcqlfksm225f4zhhxf1spyb68vdzvh4zg1hr"))))
     (properties `((upstream-name . "scitb")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringi r-nortest))
+    (propagated-inputs (list r-stringi r-reshape2 r-nortest r-mass r-ggplot2))
     (home-page "https://cran.r-project.org/package=scitb")
     (synopsis "Provides Some Useful Functions for Making Statistical Tables")
     (description

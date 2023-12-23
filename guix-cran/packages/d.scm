@@ -5935,13 +5935,13 @@ visualization.")
 (define-public r-dowser
   (package
     (name "r-dowser")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dowser" version))
        (sha256
-        (base32 "1phgpfjiy10v9qd2r5qssiaqa1g4km7ii7dzpzq3rrgd1c2nac59"))))
+        (base32 "1wv3x2aiqdmkf2jsgnphg1nwh3643jv756qb2llaz0nd4dy0kws7"))))
     (properties `((upstream-name . "dowser")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

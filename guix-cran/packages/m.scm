@@ -34086,44 +34086,6 @@ more information on MCMC samples see Brooks et al. (2011)
 <isbn:978-1-4200-7941-8>.")
     (license license:expat)))
 
-(define-public r-mcmcabn
-  (package
-    (name "r-mcmcabn")
-    (version "0.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mcmcabn" version))
-       (sha256
-        (base32 "0vk5km8bk00pxi8qlcq9z3imhj1c9qys6wj8v6iimb1mkxy9ds7c"))))
-    (properties `((upstream-name . "mcmcabn")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-grbase
-                             r-ggpubr
-                             r-ggplot2
-                             r-cowplot
-                             r-coda
-                             r-abn))
-    (native-inputs (list r-knitr))
-    (home-page "https://www.math.uzh.ch/pages/mcmcabn/")
-    (synopsis "Flexible Implementation of a Structural MCMC Sampler for DAGs")
-    (description
-     "Flexible implementation of a structural MCMC sampler for Directed Acyclic Graphs
-(DAGs).  It supports the new edge reversal move from Grzegorczyk and Husmeier
-(2008) <doi:10.1007/s10994-008-5057-7> and the Markov blanket resampling from Su
-and Borsuk (2016) <https://jmlr.org/papers/v17/su16a.html>.  It supports three
-priors: a prior controlling for structure complexity from Koivisto and Sood
-(2004) <https://www.jmlr.org/papers/v5/koivisto04a.html>, an uninformative prior
-and a user-defined prior.  The three main problems that can be addressed by this
-R package are selecting the most probable structure based on a cache of
-pre-computed scores, controlling for overfitting, and sampling the landscape of
-high scoring structures.  It allows us to quantify the marginal impact of
-relationships of interest by marginalizing out over structures or nuisance
-dependencies.  Structural MCMC seems an elegant and natural way to estimate the
-true marginal impact, so one can determine if it's magnitude is big enough to
-consider as a worthwhile intervention.")
-    (license license:gpl3)))
-
 (define-public r-mcmc4extremes
   (package
     (name "r-mcmc4extremes")
