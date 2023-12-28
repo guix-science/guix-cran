@@ -19869,8 +19869,9 @@ arbitrary text input.")
 output that is safe to publish, output that requires further analysis, and
 output that cannot be published because of substantial disclosure risk.  A paper
 about the tool was presented at The United Nations Economic Commission for
-Europe Expert Meeting on Statistical Data Confidentiality
-<https://unece.org/statistics/events/SDC2023><https://uwe-repository.worktribe.com/output/11060964>.")
+Europe Expert Meeting on Statistical Data Confidentiality, see
+<https://unece.org/statistics/events/SDC2023> and
+<https://uwe-repository.worktribe.com/output/11060964>.")
     (license license:expat)))
 
 (define-public r-acne
