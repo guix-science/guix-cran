@@ -3520,37 +3520,6 @@ NORMA, an optimization method based on classical stochastic gradient descent
 suitable for computing SVR models in an online setting.")
     (license license:gpl2)))
 
-(define-public r-norgeo
-  (package
-    (name "r-norgeo")
-    (version "2.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "norgeo" version))
-       (sha256
-        (base32 "1437b49ig7j5c3ympb8mjn0qz43szpmwqd3s8rlqmlfhycnh9maw"))))
-    (properties `((upstream-name . "norgeo")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-writexl
-                             r-rsqlite
-                             r-odbc
-                             r-magrittr
-                             r-httr2
-                             r-dbi
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/helseprofil/norgeo")
-    (synopsis "Tracking Geo Code Change of Regional Granularity in Norway")
-    (description
-     "Regional granularity levels in Norway which are depicted by different codes,
-have undergone several changes over the years.  Identifying when codes have
-changed and how many changes have taken place can be troublesome.  This package
-will help to identify these changes and when the changes have taken place.  One
-of the limitation of this package is that it is heavily depending on the codes
-available from SSB website <https://data.ssb.no/api/klass/v1/api-guide.html>.")
-    (license license:expat)))
-
 (define-public r-nordklimdata1
   (package
     (name "r-nordklimdata1")
