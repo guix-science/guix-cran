@@ -45893,42 +45893,6 @@ Microscopic findings.  These database types are supported: SQLite and Oracle'.")
 <https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/authentication>.")
     (license license:expat)))
 
-(define-public r-sen2r
-  (package
-    (name "r-sen2r")
-    (version "1.6.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "sen2r" version))
-       (sha256
-        (base32 "1vs4bzf618h5iv3wbn802gdziy55d5p6z9v0cpm07368fhqskxvg"))))
-    (properties `((upstream-name . "sen2r")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml
-                             r-stars
-                             r-sf
-                             r-rcpptoml
-                             r-raster
-                             r-jsonlite
-                             r-httr
-                             r-geojsonio
-                             r-foreach
-                             r-doparallel
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://sen2r.ranghetti.info")
-    (synopsis "Find, Download and Process Sentinel-2 Data")
-    (description
-     "This package provides functions to download Sentinel-2 optical images and
-perform preliminary processing operations.  sen2r provides the instruments
-required to easily perform (and eventually automate) the steps necessary to
-build a complete Sentinel-2 processing chain.  A Graphical User Interface to
-facilitate data processing is also provided.  For additional documentation refer
-to the following article: Ranghetti et al. (2020)
-<doi:10.1016/j.cageo.2020.104473>.")
-    (license license:gpl3)))
-
 (define-public r-semverutils
   (package
     (name "r-semverutils")

@@ -13151,53 +13151,6 @@ calculate standard errors.  This is an R-based version of the margins command
 from Stata.")
     (license license:gpl3)))
 
-(define-public r-modistsp
-  (package
-    (name "r-modistsp")
-    (version "2.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MODIStsp" version))
-       (sha256
-        (base32 "1nlzfshxzbk848xj4cprb6pm4j4jqxmaa2zmb5qsxx7s68mby5ll"))))
-    (properties `((upstream-name . "MODIStsp")))
-    (build-system r-build-system)
-    (inputs (list))
-    (propagated-inputs (list r-xts
-                             r-xml2
-                             r-stringr
-                             r-sf
-                             r-raster
-                             r-jsonlite
-                             r-httr
-                             r-geojsonio
-                             r-gdalutilities
-                             r-data-table
-                             r-bitops
-                             r-assertthat))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ropensci/MODIStsp/")
-    (synopsis "Find, Download and Process MODIS Land Products Data")
-    (description
-     "Allows automating the creation of time series of rasters derived from MODIS
-satellite land products data.  It performs several typical preprocessing steps
-such as download, mosaicking, reprojecting and resizing data acquired on a
-specified time period.  All processing parameters can be set using a
-user-friendly GUI. Users can select which layers of the original MODIS HDF files
-they want to process, which additional quality indicators should be extracted
-from aggregated MODIS quality assurance layers and, in the case of surface
-reflectance products, which spectral indexes should be computed from the
-original reflectance bands.  For each output layer, outputs are saved as
-single-band raster files corresponding to each available acquisition date.
-Virtual files allowing access to the entire time series as a single file are
-also created.  Command-line execution exploiting a previously saved processing
-options file is also possible, allowing users to automatically update time
-series related to a MODIS product whenever a new image is available.  For
-additional documentation refer to the following article: Busetto and Ranghetti
-(2016) <doi:10.1016/j.cageo.2016.08.020>.")
-    (license license:gpl3)))
-
 (define-public r-modistools
   (package
     (name "r-modistools")
