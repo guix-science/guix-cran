@@ -8114,7 +8114,7 @@ quantitative treatments.")
                              r-htmltools
                              r-glue
                              r-and))
-    (native-inputs (list r-rmarkdown r-knitr r-cleanrmd esbuild))
+    (native-inputs (list r-rmarkdown r-knitr esbuild r-cleanrmd))
     (home-page "https://pkg.garrickadenbuie.com/epoxy/")
     (synopsis "String Interpolation for Documents, Reports and Apps")
     (description

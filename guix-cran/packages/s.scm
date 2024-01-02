@@ -3866,7 +3866,7 @@ for a Markov model, as often done by modellers and practitioners).
                              r-dplyr
                              r-doparallel
                              r-assertthat))
-    (native-inputs (list r-knitr pkg-config))
+    (native-inputs (list pkg-config r-knitr))
     (home-page "https://prioritizr.github.io/surveyvoi/")
     (synopsis "Survey Value of Information")
     (description
@@ -5373,7 +5373,7 @@ package) to the mice package.  Laqueur, H. S., Shev, A. B., Kagawa, R. M. C.
     (build-system r-build-system)
     (inputs (list fftw))
     (propagated-inputs (list r-rcppeigen r-rcpp r-r6 r-fftw))
-    (native-inputs (list r-knitr pkg-config))
+    (native-inputs (list pkg-config r-knitr))
     (home-page "https://cran.r-project.org/package=SuperGauss")
     (synopsis
      "Superfast Likelihood Inference for Stationary Gaussian Time Series")
@@ -14800,7 +14800,7 @@ analyzes the allele frequency data described by Solberg et al. (2008)
     (build-system r-build-system)
     (inputs (list zlib openssl openssh))
     (propagated-inputs (list r-credentials r-askpass))
-    (native-inputs (list r-knitr pkg-config))
+    (native-inputs (list pkg-config r-knitr))
     (home-page "https://cran.r-project.org/package=ssh")
     (synopsis "Secure Shell (SSH) Client for R")
     (description
@@ -57216,28 +57216,6 @@ Users can interactively explore their data using the included Shiny application.
 can be used as standalone output, but are also designed for use with the
 @code{safetyGraphics} package, which makes it easy to load data and customize
 the charts using an interactive web-based interface created with Shiny.")
-    (license license:expat)))
-
-(define-public r-safetensors
-  (package
-    (name "r-safetensors")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "safetensors" version))
-       (sha256
-        (base32 "0xvg5y2sd7gzcal0qqgxbx8vcvmy50jm0j2ajr8iw3wyy5qpyvkp"))))
-    (properties `((upstream-name . "safetensors")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rlang r-r6 r-jsonlite r-cli))
-    (home-page "https://github.com/mlverse/safetensors")
-    (synopsis "Safetensors File Format")
-    (description
-     "This package provides a file format for storing tensors that is secure (doesn't
-allow for code execution), fast and simple to implement.  safetensors also
-enables cross language and cross frameworks compatibility making it an ideal
-format for storing machine learning model weights.")
     (license license:expat)))
 
 (define-public r-safestats

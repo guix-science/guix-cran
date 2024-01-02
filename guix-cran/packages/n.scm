@@ -10,8 +10,8 @@
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages web)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages xml)
   #:use-module (gnu packages java)
+  #:use-module (gnu packages xml)
   #:use-module (gnu packages tls)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages c)
@@ -6255,8 +6255,8 @@ global minimum.")
                   proj.4
                   pandoc
                   openssl
-                  openjdk
                   libxml2
+                  openjdk
                   geos
                   gdal))
     (propagated-inputs (list r-xml
@@ -11995,7 +11995,7 @@ considered very experimental currently.")
     (properties `((upstream-name . "neojags")))
     (build-system r-build-system)
     (propagated-inputs (list r-runjags r-rjags r-coda))
-    (native-inputs (list r-knitr pkg-config))
+    (native-inputs (list pkg-config r-knitr))
     (home-page "https://github.com/madsyair/neojags")
     (synopsis
      "Neo-Normal Distributions Family for Markov Chain Monte Carlo (MCMC) Models in 'JAGS'")

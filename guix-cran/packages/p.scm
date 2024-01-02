@@ -6202,7 +6202,7 @@ translated from MATLAB ('SOM Toolbox 2.0) to R.")
     (properties `((upstream-name . "PROJ")))
     (build-system r-build-system)
     (inputs (list zlib proj openssl openssh curl))
-    (native-inputs (list r-knitr pkg-config))
+    (native-inputs (list pkg-config r-knitr))
     (home-page "https://github.com/hypertidy/PROJ")
     (synopsis "Generic Coordinate System Transformations Using 'PROJ'")
     (description

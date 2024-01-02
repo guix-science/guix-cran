@@ -9936,7 +9936,7 @@ the data sets with variables \"harmonized\" across different years.")
                              r-dbi
                              r-blob
                              r-bit64))
-    (native-inputs (list r-knitr pkg-config))
+    (native-inputs (list pkg-config r-knitr))
     (home-page "https://odbc.r-dbi.org")
     (synopsis "Connect to ODBC Compatible Databases (using the DBI Interface)")
     (description

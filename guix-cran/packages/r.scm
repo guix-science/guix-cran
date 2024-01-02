@@ -15,8 +15,8 @@
   #:use-module (gnu packages maths)
   #:use-module (gnu packages web)
   #:use-module (gnu packages cmake)
-  #:use-module (gnu packages xml)
   #:use-module (gnu packages backup)
+  #:use-module (gnu packages xml)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages algebra)
   #:use-module (gnu packages tls)
@@ -2285,7 +2285,7 @@ criteria in terms of convergence & effective sample size.")
     (properties `((upstream-name . "runjags")))
     (build-system r-build-system)
     (propagated-inputs (list r-lattice r-coda))
-    (native-inputs (list r-knitr pkg-config))
+    (native-inputs (list pkg-config r-knitr))
     (home-page "https://github.com/ku-awdc/runjags")
     (synopsis
      "Interface Utilities, Model Templates, Parallel Computing Methods and Additional Distributions for MCMC Models in JAGS")
@@ -4698,14 +4698,14 @@ summarizing model outputs.  rsyncrosim requires @code{SyncroSim} 2.3.5 or higher
         (base32 "01q3b8mlgy4qf56ql808yi18msq9c4qafmnzmvq1jc8lfqkqszqp"))))
     (properties `((upstream-name . "rswipl")))
     (build-system r-build-system)
-    (inputs (list zstd
-                  zlib
+    (inputs (list zlib
+                  pandoc
+                  zstd
                   zlib
                   xz
-                  pandoc
                   lz4
-                  libarchive
                   expat
+                  libarchive
                   cmake))
     (propagated-inputs (list r-rcpp))
     (native-inputs (list esbuild))
@@ -14952,7 +14952,7 @@ found in Alfons, Ates, and Groenen (2022b) <doi:10.18637/jss.v103.i13>.")
                              r-mvtnorm
                              r-ggplot2
                              r-bayestools))
-    (native-inputs (list r-knitr pkg-config))
+    (native-inputs (list pkg-config r-knitr))
     (home-page "https://fbartos.github.io/RoBMA/")
     (synopsis "Robust Bayesian Meta-Analyses")
     (description
@@ -31894,7 +31894,7 @@ data mining approach for longitudinal and clustered data
     (build-system r-build-system)
     (inputs (list hiredis))
     (propagated-inputs (list r-storr r-r6))
-    (native-inputs (list r-knitr pkg-config))
+    (native-inputs (list pkg-config r-knitr))
     (home-page "https://github.com/richfitz/redux")
     (synopsis "R Bindings to 'hiredis'")
     (description
@@ -32042,7 +32042,7 @@ criteria, publications and other information.")
     (build-system r-build-system)
     (inputs (list zlib pcre2))
     (propagated-inputs (list r-roxygen2))
-    (native-inputs (list r-knitr pkg-config))
+    (native-inputs (list pkg-config r-knitr))
     (home-page "https://cran.r-project.org/package=redland")
     (synopsis "RDF Library Bindings in R")
     (description
@@ -37601,7 +37601,7 @@ needed.")
     (build-system r-build-system)
     (inputs (list pcre2 pcre2))
     (propagated-inputs (list r-rcpp r-fs))
-    (native-inputs (list r-knitr pkg-config))
+    (native-inputs (list pkg-config r-knitr))
     (home-page "https://github.com/PolMine/RcppCWB")
     (synopsis "'Rcpp' Bindings for the 'Corpus Workbench' ('CWB')")
     (description

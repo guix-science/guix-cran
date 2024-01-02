@@ -4926,7 +4926,7 @@ IP2Location to install the module.")
     (properties `((upstream-name . "IP")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi))
-    (native-inputs (list r-knitr pkg-config))
+    (native-inputs (list pkg-config r-knitr))
     (home-page "https://cran.r-project.org/package=IP")
     (synopsis "Classes and Methods for 'IP' Addresses")
     (description
@@ -8936,31 +8936,6 @@ package is based on methods described in Sasieni (2003) <doi:
 network from single-cell sequencing data.")
     (license license:expat)))
 
-(define-public r-inext
-  (package
-    (name "r-inext")
-    (version "3.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "iNEXT" version))
-       (sha256
-        (base32 "1yfvadvdwgby047svj9sjwkm7hhrni2ifn6d2g5bv9djcvi22msh"))))
-    (properties `((upstream-name . "iNEXT")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-reshape2 r-rcpp r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "http://chao.stat.nthu.edu.tw/wordpress/software_download/")
-    (synopsis "Interpolation and Extrapolation for Species Diversity")
-    (description
-     "This package provides simple functions to compute and plot two types
-(sample-size- and coverage-based) rarefaction and extrapolation curves for
-species diversity (Hill numbers) based on individual-based abundance data or
-sampling-unit- based incidence data; see Chao and others (2014, Ecological
-Monographs) for pertinent theory and methodologies, and Hsieh, Ma and Chao
-(2016, Methods in Ecology and Evolution) for an introduction of the R package.")
-    (license license:gpl3+)))
-
 (define-public r-inet
   (package
     (name "r-inet")
@@ -9028,37 +9003,6 @@ the same time.  Decomposition of the Theil index is based on Giammatteo, M.
 squared coefficient of variation is based on Garcia-Penalosa, C., & Orgiazzi, E.
 (2013) <doi:10.1111/roiw.12054>.")
     (license license:gpl3+)))
-
-(define-public r-ineptr
-  (package
-    (name "r-ineptr")
-    (version "0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ineptR" version))
-       (sha256
-        (base32 "1rdw5idqaq9h2bys67lmks0dkrvr1a0272nr52ylf0cpglafs3n4"))))
-    (properties `((upstream-name . "ineptR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-readr
-                             r-purrr
-                             r-progressr
-                             r-magrittr
-                             r-lifecycle
-                             r-httr2
-                             r-httr
-                             r-dplyr))
-    (home-page "https://c-matos.github.io/ineptR/")
-    (synopsis "Wrapper for Statistics Portugal API")
-    (description
-     "Set of wrapper and helper functions to facilitate interaction with the
-Statistics Portugal (Instituto Nacional de Estatistica - INE) API
-(<https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_api&INST=322751522&xlang=en>).")
-    (license license:expat)))
 
 (define-public r-inegir
   (package
@@ -12151,12 +12095,12 @@ smoothing bootstrap resampling.")
         (base32 "1abidy6fvz0qzxicviggkpvcq434cpbz4rm8nbxbfmyj3ndbadv9"))))
     (properties `((upstream-name . "ijtiff")))
     (build-system r-build-system)
-    (inputs (list zstd
+    (inputs (list zlib
                   zlib
-                  zlib
-                  xz
+                  zstd
                   libwebp
                   libtiff
+                  xz
                   libjpeg-turbo
                   libdeflate
                   bzip2))
@@ -12172,7 +12116,7 @@ smoothing bootstrap resampling.")
                              r-dplyr
                              r-cli
                              r-checkmate))
-    (native-inputs (list r-knitr pkg-config))
+    (native-inputs (list pkg-config r-knitr))
     (home-page "https://docs.ropensci.org/ijtiff/")
     (synopsis
      "Comprehensive TIFF I/O with Full Support for 'ImageJ' TIFF Files")
@@ -13754,8 +13698,8 @@ simulations on composite scores.")
                          r-rcurl
                          r-knitr
                          r-kableextra
-                         r-badger
-                         esbuild))
+                         esbuild
+                         r-badger))
     (home-page "https://ferroao.gitlab.io/manualidiogramfish/")
     (synopsis "Shiny App. Idiograms with Marks and Karyotype Indices")
     (description

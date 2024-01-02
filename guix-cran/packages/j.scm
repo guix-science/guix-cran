@@ -2175,29 +2175,6 @@ regions for the mean and variance of a normal distribution are available as
 well.")
     (license license:gpl2)))
 
-(define-public r-job
-  (package
-    (name "r-job")
-    (version "0.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "job" version))
-       (sha256
-        (base32 "0d7pw3q5lqlgmav1vx63y8l6gdav96656bg378wj001rx5gx052h"))))
-    (properties `((upstream-name . "job")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rstudioapi r-digest))
-    (home-page "https://cran.r-project.org/package=job")
-    (synopsis "Run Code as an RStudio Job - Free Your Console")
-    (description
-     "Call job::job({<code here>}) to run R code as an RStudio job and keep your
-console free in the meantime.  This allows for a productive workflow while
-testing (multiple) long-running chunks of code.  It can also be used to organize
-results using the RStudio Jobs GUI or to test code in a clean environment.  Two
-RStudio Addins can be used to run selected code as a job.")
-    (license license:expat)))
-
 (define-public r-jnplots
   (package
     (name "r-jnplots")

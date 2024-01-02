@@ -7732,7 +7732,7 @@ Taillandier, A. Habbal (2020) <@code{arXiv:1902.06565v2>}.")
     (properties `((upstream-name . "gpg")))
     (build-system r-build-system)
     (propagated-inputs (list r-curl r-askpass))
-    (native-inputs (list r-knitr pkg-config))
+    (native-inputs (list pkg-config r-knitr))
     (home-page "https://github.com/jeroen/gpg")
     (synopsis "GNU Privacy Guard for R")
     (description
@@ -25279,7 +25279,7 @@ function arguments introduced in GDAL version 3.5.2 or earlier are supported.")
                   gdal
                   curl))
     (propagated-inputs (list r-xml2 r-rcpp))
-    (native-inputs (list r-knitr pkg-config))
+    (native-inputs (list pkg-config r-knitr))
     (home-page "https://usdaforestservice.github.io/gdalraster/")
     (synopsis
      "Bindings to the 'Geospatial Data Abstraction Library' Raster API")
@@ -25326,7 +25326,7 @@ have other utility.")
                   gdal
                   curl))
     (propagated-inputs (list r-rcpp r-ncdf4 r-jsonlite r-bh))
-    (native-inputs (list r-knitr pkg-config))
+    (native-inputs (list pkg-config r-knitr))
     (home-page "https://github.com/appelmar/gdalcubes")
     (synopsis "Earth Observation Data Cubes from Satellite Image Collections")
     (description

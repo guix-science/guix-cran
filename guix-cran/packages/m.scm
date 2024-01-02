@@ -5141,7 +5141,7 @@ p-values for trend in individual outcomes and power calculation is available.")
                              r-magrittr
                              r-coda
                              r-brobdingnag))
-    (native-inputs (list r-knitr pkg-config))
+    (native-inputs (list pkg-config r-knitr))
     (home-page "https://github.com/asarafoglou/multibridge/")
     (synopsis "Evaluating Multinomial Order Restrictions with Bridge Sampling")
     (description

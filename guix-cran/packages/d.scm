@@ -23575,7 +23575,7 @@ documentation see
         (base32 "1rjm6j1s229j1j9yb5y1sdi03x22qzrkmhc09k4xdmwmwmpi3s58"))))
     (properties `((upstream-name . "dataReporter")))
     (build-system r-build-system)
-    (inputs (list pandoc git coreutils))
+    (inputs (list coreutils pandoc git))
     (propagated-inputs (list r-whoami
                              r-stringi
                              r-robustbase
@@ -23995,7 +23995,7 @@ writing code or use alternate functions that will prompt the user to add these."
         (base32 "06jywq3llwafjnpklqimra456crdi752zxci6z1w0v7p8blf4vjw"))))
     (properties `((upstream-name . "dataMaid")))
     (build-system r-build-system)
-    (inputs (list pandoc git coreutils))
+    (inputs (list coreutils pandoc git))
     (propagated-inputs (list r-whoami
                              r-stringi
                              r-robustbase

@@ -1562,7 +1562,7 @@ Futures, and Other Derivatives (11th ed.)â, 2022, ISBN: 9780136939979).")
                              r-rcpp
                              r-pkgbuild
                              r-assertthat))
-    (native-inputs (list r-knitr pkg-config))
+    (native-inputs (list pkg-config r-knitr))
     (home-page "https://github.com/adokter/vol2birdR/")
     (synopsis "Vertical Profiles of Biological Signals in Weather Radar Data")
     (description
@@ -6873,7 +6873,7 @@ testing, prediction for stationary vector autoregressive models.")
                   gdal
                   curl))
     (propagated-inputs (list r-rcpp r-nanoarrow r-jsonlite))
-    (native-inputs (list r-knitr pkg-config))
+    (native-inputs (list pkg-config r-knitr))
     (home-page "https://github.com/hypertidy/vapour")
     (synopsis "Access to the 'Geospatial Data Abstraction Library' ('GDAL')")
     (description

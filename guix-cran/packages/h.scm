@@ -2050,7 +2050,7 @@ requests'.  Designed to work with httr'.")
     (build-system r-build-system)
     (inputs (list zlib libpng freetype fontconfig cairo))
     (propagated-inputs (list r-systemfonts r-later r-cpp11 r-bh))
-    (native-inputs (list r-knitr pkg-config))
+    (native-inputs (list pkg-config r-knitr))
     (home-page "https://github.com/nx10/httpgd")
     (synopsis "'HTTP' Server Graphics Device")
     (description
