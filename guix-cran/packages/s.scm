@@ -52676,52 +52676,6 @@ estimation in the multivariate context.  Covariates can also be grouped in
 themes.")
     (license (list (license:fsdg-compatible "CeCILL-2") license:gpl2))))
 
-(define-public r-scgate
-  (package
-    (name "r-scgate")
-    (version "1.6.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "scGate" version))
-       (sha256
-        (base32 "0h12d36zjc6fvxbhkxrzbpvw49z9fgyn1jc941q70ajw1yqi2hhh"))))
-    (properties `((upstream-name . "scGate")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-ucell
-                             r-seurat
-                             r-reshape2
-                             r-patchwork
-                             r-ggridges
-                             r-ggplot2
-                             r-dplyr
-                             r-biocparallel))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/carmonalab/scGate")
-    (synopsis
-     "Marker-Based Cell Type Purification for Single-Cell Sequencing Data")
-    (description
-     "This package provides a common bioinformatics task in single-cell data analysis
-is to purify a cell type or cell population of interest from heterogeneous
-datasets. @code{scGate} automatizes marker-based purification of specific cell
-populations, without requiring training data or reference gene expression
-profiles.  Briefly, @code{scGate} takes as input: i) a gene expression matrix
-stored in a Seurat object and ii) a âgating modelâ (GM), consisting of a set
-of marker genes that define the cell population of interest.  The GM can be as
-simple as a single marker gene, or a combination of positive and negative
-markers.  More complex GMs can be constructed in a hierarchical fashion, akin to
-gating strategies employed in flow cytometry. @code{scGate} evaluates the
-strength of signature marker expression in each cell using the rank-based method
-UCell', and then performs k-nearest neighbor (@code{kNN}) smoothing by
-calculating the mean UCell score across neighboring cells. @code{kNN-smoothing}
-aims at compensating for the large degree of sparsity in @code{scRNA-seq} data.
-Finally, a universal threshold over @code{kNN-smoothed} signature scores is
-applied in binary decision trees generated from the user-provided gating model,
-to annotate cells as either âpureâ or âimpureâ, with respect to the cell
-population of interest.  See the related publication Andreatta et al. (2022)
-<doi:10.1093/bioinformatics/btac141>.")
-    (license license:gpl3)))
-
 (define-public r-scfetch
   (package
     (name "r-scfetch")
