@@ -24,7 +24,6 @@
   #:use-module (gnu packages gettext)
   #:use-module (gnu packages sqlite)
   #:use-module (gnu packages haskell-xyz)
-  #:use-module (gnu packages code)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages pdf)
   #:use-module (gnu packages gtk)
@@ -20226,40 +20225,6 @@ supply a destination directory, an indicator of whether to keep the created
 package directory, and/or a vector of verbs implement via the usethis
 <http://usethis.r-lib.org/> package.")
     (license license:cc0)))
-
-(define-public r-pkgstats
-  (package
-    (name "r-pkgstats")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "pkgstats" version))
-       (sha256
-        (base32 "0cmpr27pfkykwp2dwflixwlz3pf16hajvf3ppwx73k2l492cp75c"))))
-    (properties `((upstream-name . "pkgstats")))
-    (build-system r-build-system)
-    (inputs (list global))
-    (propagated-inputs (list r-withr
-                             r-sys
-                             r-readr
-                             r-igraph
-                             r-fs
-                             r-dplyr
-                             r-cpp11
-                             r-checkmate
-                             r-brio))
-    (native-inputs (list r-knitr))
-    (home-page "https://docs.ropensci.org/pkgstats/")
-    (synopsis "Metrics of R Packages")
-    (description
-     "Static code analyses for R packages using the external code-tagging libraries
-\"ctags\" and \"gtags\".  Static analyses enable packages to be analysed very
-quickly, generally a couple of seconds at most.  The package also provides
-access to a database generating by applying the main function to the full CRAN
-archive, enabling the statistical properties of any package to be compared with
-all other CRAN packages.")
-    (license license:gpl3)))
 
 (define-public r-pkgsearch
   (package
