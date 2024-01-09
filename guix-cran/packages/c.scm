@@ -4293,32 +4293,38 @@ or industry analysis.")
 (define-public r-cryptoquotes
   (package
     (name "r-cryptoquotes")
-    (version "1.0.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cryptoQuotes" version))
        (sha256
-        (base32 "12xmlnzria533nvfpg9w26kr051d3cn08wdn2fza2jqn9maqaxjz"))))
+        (base32 "1150dy8qllm4qsficj9p1mzmqsgkw6m824yyykv784s8ikghlvj6"))))
     (properties `((upstream-name . "cryptoQuotes")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
                              r-xts
                              r-ttr
                              r-rlang
+                             r-rcolorbrewer
                              r-plotly
                              r-magrittr
                              r-lifecycle
-                             r-jsonlite
-                             r-httr
-                             r-curl))
+                             r-httr2
+                             r-curl
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://serkor1.github.io/cryptoQuotes/")
-    (synopsis "Access OHLC Market Data from Major Cryptocurrency Exchanges")
+    (synopsis
+     "Streamlined Access to OHLC-v Market Data and Sentiment Indicators")
     (description
-     "This package provides a high level library to extract cryptocurrency OHLC market
-data from major centralized exchanges.  The library supports all available
-intervals supported by the exchange API for spot and perpetual futures markets.")
+     "This high-level API client offers a streamlined access to comprehensive
+cryptocurrency market data from major exchanges.  It features robust OHLC-V
+(Open, High, Low, Close, Volume) candle data with flexible granularity, ranging
+from seconds to months, and includes insightful sentiment indicators.  By
+aggregating data directly from leading exchanges, this package ensures a
+reliable and stable flow of market information, eliminating the need for
+complex, low-level API interactions.")
     (license license:gpl2+)))
 
 (define-public r-cryptography
@@ -6369,16 +6375,22 @@ discrete data with pairwise and unary potentials.")
 (define-public r-crew-cluster
   (package
     (name "r-crew-cluster")
-    (version "0.1.4")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crew.cluster" version))
        (sha256
-        (base32 "0m4zddmfjbrm2mh5r0nar17x6k0p5j8m58fgbb888221xl13dn2q"))))
+        (base32 "0sv73n5zm94fypncnrnz53mc23qjbr20jxdri282q0jnaq2wchaz"))))
     (properties `((upstream-name . "crew.cluster")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlang r-r6 r-lifecycle r-crew))
+    (propagated-inputs (list r-xml2
+                             r-vctrs
+                             r-rlang
+                             r-r6
+                             r-ps
+                             r-lifecycle
+                             r-crew))
     (home-page "https://wlandau.github.io/crew.cluster/")
     (synopsis
      "Crew Launcher Plugins for Traditional High-Performance Computing Clusters")
@@ -9066,6 +9078,34 @@ data.  It additionally includes Wisconsin's Covid19 data.")
     (description
      "This package provides a wrapper around the COVID Tracking Project API
 <https://covidtracking.com/api/> providing data on cases of COVID-19 in the US.")
+    (license license:expat)))
+
+(define-public r-covid19tunisia
+  (package
+    (name "r-covid19tunisia")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "covid19tunisia" version))
+       (sha256
+        (base32 "1qx1rrv7ak77brg80bcj8k7vn26193njda7pg93lj1x3dpfh13dm"))))
+    (properties `((upstream-name . "covid19tunisia")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-readr
+                             r-magrittr
+                             r-lubridate
+                             r-knitr
+                             r-glue
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/MounaBelaid/covid19tunisia")
+    (synopsis "Cases of COVID-19 in Tunisia")
+    (description
+     "Data personally collected about the spread of COVID-19 (SARS-COV-2) in Tunisia
+<https://github.com/@code{MounaBelaid/covid19datatunisia>}.")
     (license license:expat)))
 
 (define-public r-covid19swiss
@@ -12828,24 +12868,25 @@ details see Manipur et al (2023) <doi:10.1101/2023.06.29.546856>.")
 (define-public r-copernicusmarine
   (package
     (name "r-copernicusmarine")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CopernicusMarine" version))
        (sha256
-        (base32 "1sw1yrprgzb8gjzga6p5jp5svgwych0sdlxzdjm002l5m0w2j4kr"))))
+        (base32 "0h8vr3kv5i17psnqaq9gs1r87fsji4z5d46lw0aln3hxrd40pc4r"))))
     (properties `((upstream-name . "CopernicusMarine")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
+                             r-tidyr
                              r-stringr
                              r-sf
                              r-rvest
+                             r-rlang
                              r-readr
                              r-purrr
                              r-leaflet
-                             r-jsonlite
-                             r-httr
+                             r-httr2
                              r-dplyr
                              r-crayon))
     (home-page "https://github.com/pepijn-devries/CopernicusMarine")
@@ -13458,13 +13499,13 @@ in the following text.  Richard G. Brereton (2003) <ISBN:9780471489771>.")
 (define-public r-convey
   (package
     (name "r-convey")
-    (version "0.2.5")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "convey" version))
        (sha256
-        (base32 "0vji97sip7p2xpbd3mhx2a6aw46zjky561rypa3hb8xpag16fna5"))))
+        (base32 "1v9rd5270cwr5dygh8xdyqc093qf743j8jvy3f3hds0q9ydx14jh"))))
     (properties `((upstream-name . "convey")))
     (build-system r-build-system)
     (propagated-inputs (list r-survey))
@@ -13598,13 +13639,13 @@ including B-S theory and Monte Carlo method.")
 (define-public r-convergeu
   (package
     (name "r-convergeu")
-    (version "0.5.4")
+    (version "0.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "convergEU" version))
        (sha256
-        (base32 "0sml8ill3jbf5rf8vi8m74w8q67wsdj1askfn0vmfwr4mvadxsim"))))
+        (base32 "1c74gmsx97rin057gimmsjjcszsaa40a0dmsbh04aygpfic4qc4l"))))
     (properties `((upstream-name . "convergEU")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -13622,7 +13663,7 @@ including B-S theory and Monte Carlo method.")
                              r-broom))
     (native-inputs (list r-knitr))
     (home-page
-     "https://www.eurofound.europa.eu/sites/default/files/ef_publication/field_ef_document/ef18003en.pdf")
+     "https://www.eurofound.europa.eu/system/files/2018-12/ef18003en.pdf")
     (synopsis "Monitoring Convergence of EU Countries")
     (description
      "Indicators and measures by country and time describe what happens at economic
@@ -14228,13 +14269,13 @@ constructors.")
 (define-public r-construct
   (package
     (name "r-construct")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "conStruct" version))
        (sha256
-        (base32 "0z4a5fj55n2wmhyynfgai4f2mnb53fmqjj2vcn8lldqzpmrk15ad"))))
+        (base32 "00mmlmqk3wixjycmn2wybq4vkq91jmvhjab6pyvfzk1nh3nq428i"))))
     (properties `((upstream-name . "conStruct")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -17178,16 +17219,17 @@ the analysed objects.")
 (define-public r-compind
   (package
     (name "r-compind")
-    (version "2.9.1")
+    (version "3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Compind" version))
        (sha256
-        (base32 "04qg0xrjc4kv215rk4p8mmn3mmxcmbrqmmymrp4vcjld6gx4g5hv"))))
+        (base32 "0g5m1dpnadgqszk079rxf6rm0d17qnvfzi7fwbs99sl2nimy3ni9"))))
     (properties `((upstream-name . "Compind")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdep
+                             r-sp
                              r-smaa
                              r-psych
                              r-np
@@ -17195,6 +17237,7 @@ the analysed objects.")
                              r-mass
                              r-lpsolve
                              r-hmisc
+                             r-gwmodel
                              r-gparotation
                              r-factominer
                              r-boot
@@ -23546,13 +23589,13 @@ system.  Remote schedulers are supported via SSH.")
 (define-public r-clustermole
   (package
     (name "r-clustermole")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clustermole" version))
        (sha256
-        (base32 "15v3fspp82z7vh5f1ym89mrmajl8b7qymwr1fqa6kfi982dzhrar"))))
+        (base32 "1wfnv93b5rrdpad64gc3sv919yis92xa03ja29lsvcmkiqpbjsq9"))))
     (properties `((upstream-name . "clustermole")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -29319,28 +29362,29 @@ posterior', cmdstanr', and bayesplot'.")
 (define-public r-chisquare
   (package
     (name "r-chisquare")
-    (version "0.8")
+    (version "0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chisquare" version))
        (sha256
-        (base32 "04jr8pfh29zgdj8krf16six71j901mbf38n0xvylg0hi2lkxnjwc"))))
+        (base32 "11pypv6nmqqwrjvrzakn8x4ap0jw23dk3ij4i2kxx340j0gqk8qh"))))
     (properties `((upstream-name . "chisquare")))
     (build-system r-build-system)
     (propagated-inputs (list r-gt))
     (home-page "https://cran.r-project.org/package=chisquare")
     (synopsis
-     "Chi-Square and G-Square Test of Independence, Residual Analysis, and Measures of Categorical Association")
+     "Chi-Square and G-Square Test of Independence, Power and Residual Analysis, Measures of Categorical Association")
     (description
      "This package provides the facility to perform the chi-square and G-square test
-of independence, calculates permutation-based p value, and provides measures of
-association such as Phi, odds ratio with 95 percent CI and p value, adjusted
+of independence, calculates the power of the traditional chi-square test,
+compute permutation and Monte Carlo p-value, and provides measures of
+association such as Phi, odds ratio with 95 percent CI and p-value, adjusted
 contingency coefficient, Cramer's V and 95 percent CI, bias-corrected Cramer's
-V, Cohen's w, Goodman-Kruskal's lambda, gamma and its p value, and tau, Cohen's
-k and its 95 percent CI. It also calculates standardized, moment-corrected
-standardized, and adjusted standardized residuals, and their significance.
-Different outputs are returned in nicely formatted tables.")
+V, W, Cohen's w, Goodman-Kruskal's lambda, gamma and its p-value, and tau,
+Cohen's k and its 95 percent CI. It also calculates standardized,
+moment-corrected standardized, and adjusted standardized residuals, and their
+significance.  Different outputs are returned in nicely formatted tables.")
     (license license:gpl2+)))
 
 (define-public r-chisq-posthoc-test
@@ -33484,13 +33528,13 @@ EM algorithms are used for modeling.")
 (define-public r-cec
   (package
     (name "r-cec")
-    (version "0.11.0")
+    (version "0.11.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CEC" version))
        (sha256
-        (base32 "0qa46iq3m510sjb3ap4m5lkaajk15vi3xjwqgnpdw0jh0m0vkabf"))))
+        (base32 "02jk68lxx1gszpi7awi6c1qvc4bsjz8bjxq4rdka9fxj7ql27raf"))))
     (properties `((upstream-name . "CEC")))
     (build-system r-build-system)
     (home-page "https://github.com/swarm-lab/cec")
@@ -33707,13 +33751,13 @@ adjustments.")
 (define-public r-cdmtools
   (package
     (name "r-cdmtools")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cdmTools" version))
        (sha256
-        (base32 "1fi2h6dd9h7if393rrxyf36b22h8l2lch0kx6byzgqr7x4cs453y"))))
+        (base32 "0nd15lr8hdin8qnxykway70irvfi239rm4jx3ck253l7igswiz7s"))))
     (properties `((upstream-name . "cdmTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-sirt
@@ -33833,13 +33877,13 @@ removed.  See Adamic, P. (2015)
 (define-public r-cdgd
   (package
     (name "r-cdgd")
-    (version "0.3.3")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cdgd" version))
        (sha256
-        (base32 "0bgn6qp56ks346v650lidcxwyrkfj651p32zv8fjn1pg7mf8wahf"))))
+        (base32 "1wyd3hmfgn9xkkrgl9iqqzybxmh0v7iyq2awi2w8ckz50glwd4sp"))))
     (properties `((upstream-name . "cdgd")))
     (build-system r-build-system)
     (propagated-inputs (list r-caret))
@@ -34945,13 +34989,13 @@ information, see Lee, Glaze, Bradlow, and Kable
 (define-public r-cbsodatar
   (package
     (name "r-cbsodatar")
-    (version "0.5.1")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cbsodataR" version))
        (sha256
-        (base32 "02dalankaa4lfv9r7bc9cphmwb0mq6an7bs44rihipj8dsjd0v9y"))))
+        (base32 "0p3bchkvib7jmr5qd3x36kcpajz6i2himk5s294z74hvc9vdkc7d"))))
     (properties `((upstream-name . "cbsodataR")))
     (build-system r-build-system)
     (propagated-inputs (list r-whisker r-jsonlite))
@@ -36951,13 +36995,13 @@ statistical matching methods.")
 (define-public r-casecohortcoxsurvival
   (package
     (name "r-casecohortcoxsurvival")
-    (version "0.0.32")
+    (version "0.0.34")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CaseCohortCoxSurvival" version))
        (sha256
-        (base32 "1r8c0d776vhxckcsf7jyiigxm1i8rlklxwnfkqvg73jqz1qhw2nw"))))
+        (base32 "0qb9sqqycdqk89qxm4cch0x62d004ybsxrrv6q0yzg6bc581jx0j"))))
     (properties `((upstream-name . "CaseCohortCoxSurvival")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-nnet))

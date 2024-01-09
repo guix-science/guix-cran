@@ -1800,13 +1800,13 @@ colors that are maximally distinct are chosen algorithmically.")
 (define-public r-qualmap
   (package
     (name "r-qualmap")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qualmap" version))
        (sha256
-        (base32 "0r8v7r2mh1dsvr9lvdcmddp5agbx5djg7850zf6ixlv8zak6cxz5"))))
+        (base32 "1ych61nb3jxvd23d13dlw5y47n94gs0k6ncq7i4rbk01594bk5al"))))
     (properties `((upstream-name . "qualmap")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf

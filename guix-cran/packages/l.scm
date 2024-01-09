@@ -4985,23 +4985,29 @@ package has no external dependencies.")
 (define-public r-locuszoomr
   (package
     (name "r-locuszoomr")
-    (version "0.1.3")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "locuszoomr" version))
        (sha256
-        (base32 "1hbhaqw6n1m5jhh71s3r2izsw6zjjplfy392ikw0k4bxq9cb6mmg"))))
+        (base32 "0ihm23z3a0nnrq9hhn4aqmv349y03lpa3xya9zdwg4xpsdbd8hr1"))))
     (properties `((upstream-name . "locuszoomr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlang
+    (propagated-inputs (list r-zoo
+                             r-rtracklayer
+                             r-rlang
                              r-plotly
                              r-memoise
                              r-ldlinkr
-                             r-gtable
+                             r-iranges
                              r-ggplot2
+                             r-gggrid
+                             r-genomicranges
                              r-genomeinfodb
                              r-ensembldb
+                             r-dplyr
+                             r-cowplot
                              r-biocgenerics
                              r-annotationfilter))
     (native-inputs (list r-knitr))
@@ -5011,11 +5017,11 @@ package has no external dependencies.")
      "Publication-ready regional gene locus plots similar to those produced by the web
 interface @code{LocusZoom} <https://my.locuszoom.org>, but running locally in R.
 Genetic or genomic data with gene annotation tracks are plotted via R base
-graphics system, ggplot2 or plotly', allowing flexibility and easy customisation
+graphics, ggplot2 or plotly', allowing flexibility and easy customisation
 including laying out multiple locus plots on the same page.  It uses the LDlink
 API <https://ldlink.nih.gov/?tab=apiaccess> to query linkage disequilibrium data
 from the 1000 Genomes Project and can overlay this on plots.")
-    (license license:artistic2.0)))
+    (license license:gpl3+)))
 
 (define-public r-locus
   (package

@@ -1078,13 +1078,13 @@ subscribe to the @code{koRpus-dev} mailing list (<http://korpusml.reaktanz.de>).
 (define-public r-syllogi
   (package
     (name "r-syllogi")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "syllogi" version))
        (sha256
-        (base32 "1d9h61xvx5gjafr2cjk92c3ggvrf4p3wrrfv0kcyrk3qn6xd9d0c"))))
+        (base32 "0f461qak9naglyfqisc6fbv076v5ncijrv5ja2p37h39dc8i3fxz"))))
     (properties `((upstream-name . "syllogi")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=syllogi")
@@ -8220,13 +8220,13 @@ optimisation technique called Biased Random Key Genetic Algorithms.")
 (define-public r-stratastats
   (package
     (name "r-stratastats")
-    (version "0.1")
+    (version "0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stratastats" version))
        (sha256
-        (base32 "0710km923wby6r1fbdgrcn6yxyk3gsqllnhrxbq7x92dynipxbqi"))))
+        (base32 "038gm0253kb980w1b9hzf11fjg76hlavihhyb0jsgrcfsxag93v7"))))
     (properties `((upstream-name . "stratastats")))
     (build-system r-build-system)
     (propagated-inputs (list r-gt r-abind))
@@ -8235,11 +8235,11 @@ optimisation technique called Biased Random Key Genetic Algorithms.")
     (description
      "Offers a comprehensive approach for analysing stratified 2x2 contingency tables.
  It facilitates the calculation of odds ratios, 95% confidence intervals, and
-conducts chi-squared tests, Cochran-Mantel-Haenszel tests, and
+conducts chi-squared, Cochran-Mantel-Haenszel, Mantel-Haenszel, and
 Breslow-Day-Tarone tests.  The package is particularly useful in fields like
 epidemiology and social sciences where stratified analysis is essential.  The
 package also provides interpretative insights into the results, aiding in the
-understanding of complex statistical outcomes.")
+understanding of statistical outcomes.")
     (license license:gpl2+)))
 
 (define-public r-stratamatch
@@ -12686,13 +12686,13 @@ Convergence Index, (5) calculating topographic aspect and topographic slope.")
 (define-public r-starschemar
   (package
     (name "r-starschemar")
-    (version "1.2.3")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "starschemar" version))
        (sha256
-        (base32 "03zvjlja2rr5h2awwv1xr7apqync2z6rq5nqffg0hp7pd0wz8rhd"))))
+        (base32 "0q2d4a7frg7ffcsgs0sgkq7a3aazpbg3fbcxf0ygiwg4v4djir57"))))
     (properties `((upstream-name . "starschemar")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -15096,18 +15096,19 @@ distribution.  The SSDM package also provides a user-friendly interface.")
 (define-public r-ssdforr
   (package
     (name "r-ssdforr")
-    (version "1.5.33")
+    (version "1.5.34")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SSDforR" version))
        (sha256
-        (base32 "041g55cx5d5yql3lsccq22gn8r27wdymlfngflijccj9rwm0nncc"))))
+        (base32 "12lrvh9231cix5lkc53cf4fk11sfa89011kj2qddk3lkmcyvcwfz"))))
     (properties `((upstream-name . "SSDforR")))
     (build-system r-build-system)
     (propagated-inputs (list r-ttr
                              r-singlecasees
                              r-psych
+                             r-modifiedmk
                              r-metafor
                              r-mass
                              r-mad
@@ -15197,13 +15198,13 @@ better than classical supervised classifiers.")
 (define-public r-ssbtools
   (package
     (name "r-ssbtools")
-    (version "1.4.8")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SSBtools" version))
        (sha256
-        (base32 "166799mvgpjzkfcjk205p6xaxh71lngby164n4dhzggsx4gzv3wi"))))
+        (base32 "1lsba4xilk9jdhbqp386kyg0y7p7vn97zb1v077aikkzs94qbyph"))))
     (properties `((upstream-name . "SSBtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-matrix r-mass))
@@ -17579,13 +17580,13 @@ Brodersen et al. (2015) <doi:10.1214/14-AOAS788>.")
 (define-public r-sport
   (package
     (name "r-sport")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sport" version))
        (sha256
-        (base32 "1wb28iaa35naf5aczijb5g0l41yf098f7c20mjmkcd5w04l1mmks"))))
+        (base32 "1vifh5x3rqnj0y7lzxhxa8jiiq9gza7r55kajcdib0hr65amwssk"))))
     (properties `((upstream-name . "sport")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-ggplot2 r-data-table))
@@ -17600,11 +17601,11 @@ based on Bayesian Approximation Method, and they don't involve any matrix
 inversions nor likelihood estimation.  Parameters are updated sequentially, and
 computation doesn't require any additional RAM to make estimation feasible.
 Additionally, base of the package is written in C++ what makes sport computation
-even faster.  Methods used in the package refers to Mark E. Glickman (1999)
+even faster.  Methods used in the package refer to Mark E. Glickman (1999)
 <http://www.glicko.net/research/glicko.pdf>; Mark E. Glickman (2001)
 <doi:10.1080/02664760120059219>; Ruby C. Weng, Chih-Jen Lin (2011)
-<http://jmlr.csail.mit.edu/papers/volume12/weng11a/weng11a.pdf>; W. Penny,
-Stephen J. Roberts (1999) <doi:10.1109/IJCNN.1999.832603>.")
+<https://www.jmlr.org/papers/volume12/weng11a/weng11a.pdf>; W. Penny, Stephen J.
+Roberts (1999) <doi:10.1109/IJCNN.1999.832603>.")
     (license license:gpl2)))
 
 (define-public r-spork
@@ -19376,6 +19377,35 @@ endogeneous variables using instrumental variables.")
 sphere and ball in n-dimensional Euclidean space.  Routines for converting
 to/from multivariate polar/spherical coordinates are also provided.")
     (license license:gpl2+)))
+
+(define-public r-spheretessellation
+  (package
+    (name "r-spheretessellation")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sphereTessellation" version))
+       (sha256
+        (base32 "1b8wxbh44qd0rznjln3icp9k4jy598rva9kwcgzscpjm5j86r97w"))))
+    (properties `((upstream-name . "sphereTessellation")))
+    (build-system r-build-system)
+    (inputs (list mpfr gmp))
+    (propagated-inputs (list r-rgl
+                             r-rcppeigen
+                             r-rcppcgal
+                             r-rcpp
+                             r-polychrome
+                             r-colorsgen
+                             r-bh))
+    (native-inputs (list pkg-config))
+    (home-page "https://github.com/stla/sphereTessellation")
+    (synopsis "Delaunay and VoronoÃ¯ Tessellations on the Sphere")
+    (description
+     "This package performs Delaunay and @code{VoronoÃ¯} tessellations on spheres and
+provides some functions to plot them.  The algorithms are mainly performed by
+the C++ library CGAL (<https://www.cgal.org/>).")
+    (license license:gpl3)))
 
 (define-public r-sphereplot
   (package
@@ -23847,13 +23877,13 @@ centers.")
 (define-public r-sparsechol
   (package
     (name "r-sparsechol")
-    (version "0.2.2")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SparseChol" version))
        (sha256
-        (base32 "1xfk9cn3lc62w9wpmv1vi10fb79wli3xsslshm75h6psr8szsb1b"))))
+        (base32 "1gva9665mlr8g14l7g6z591yhz2j6xpf56bhqhm6is3dbhl2ga24"))))
     (properties `((upstream-name . "SparseChol")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-matrix))
@@ -27295,13 +27325,13 @@ equating.")
 (define-public r-snseg
   (package
     (name "r-snseg")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SNSeg" version))
        (sha256
-        (base32 "00mdr1qzgy8ggdccwll1jgqh74k1ljg7r488a44yzy5069478cd3"))))
+        (base32 "1l6vi8ipl4jf1dmkv8mzqs79rn2qip6xf7g9sny7rnkk1i25axcy"))))
     (properties `((upstream-name . "SNSeg")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm r-rcpp r-mvtnorm r-evd))
@@ -31987,13 +32017,13 @@ using other hosted services for building and test automation.")
 (define-public r-skedastic
   (package
     (name "r-skedastic")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "skedastic" version))
        (sha256
-        (base32 "0faj5lv6axpg8ra5pa49j9ha41cmxynhf6fc7dn5ym2g0f497k9l"))))
+        (base32 "1ln0scwgvpif610jgwdl0rzlx41i8w2ri1vaq0kl11vg69xp5105"))))
     (properties `((upstream-name . "skedastic")))
     (build-system r-build-system)
     (propagated-inputs (list r-slam
@@ -34432,13 +34462,13 @@ single pipeline, without needing loops or custom functions.")
 (define-public r-simpop
   (package
     (name "r-simpop")
-    (version "2.1.2")
+    (version "2.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simPop" version))
        (sha256
-        (base32 "0x66i2k9s16lsjm79sjszkqa1j9nzwdnbb19lpgxbf1fcdwm5lrh"))))
+        (base32 "0rgaalkaxxh92yryzd39qnpahzi7d2bqnnsgx4i5rai2vrj1hqfi"))))
     (properties `((upstream-name . "simPop")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -34448,7 +34478,7 @@ single pipeline, without needing loops or custom functions.")
                              r-rcpparmadillo
                              r-rcpp
                              r-ranger
-                             r-party
+                             r-partykit
                              r-nnet
                              r-matrixstats
                              r-mass
@@ -35153,13 +35183,13 @@ parameter estimates for nonlinear least squares optimization.  Dattner & Yaari
 (define-public r-simnph
   (package
     (name "r-simnph")
-    (version "0.5.3")
+    (version "0.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SimNPH" version))
        (sha256
-        (base32 "1120qd7ckk5l84j0bdvarf2zahjsqr8vnfgn6k5k7253kmm30lba"))))
+        (base32 "14k5s0l1cq55mmbh4wdrg8q133qx66paqzj6vhyfdq9wl9kdwhl6"))))
     (properties `((upstream-name . "SimNPH")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -35562,16 +35592,16 @@ models.")
 (define-public r-simjoint
   (package
     (name "r-simjoint")
-    (version "0.3.9")
+    (version "0.3.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SimJoint" version))
        (sha256
-        (base32 "1bv7r9mgkcr24azblpfi3fiyay7kflxhq4am46qy32pa1vsfyadf"))))
+        (base32 "1qs319v947ck63bcjyl9bimsj9ld2n6b9gxwq4llgdvlib5w5ryx"))))
     (properties `((upstream-name . "SimJoint")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcppparallel r-rcpparmadillo r-rcpp))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=SimJoint")
     (synopsis "Simulate Joint Distribution")
@@ -35591,8 +35621,7 @@ in function examples.  A simple heuristic algorithm is additionally designed to
 optimize the joint distribution in the post-simulation stage.  The heuristic
 demonstrated good potential of achieving the same level of precision of
 approximation without the enhanced Iman-Conover-Ruscio-Kaczetow.  The package
-contains a copy of Permuted Congruential Generator from
-<https://www.pcg-random.org>.")
+contains a copy of Permuted Congruential Generator.")
     (license license:gpl3)))
 
 (define-public r-simits
@@ -37295,13 +37324,13 @@ properly by screen readers.")
 (define-public r-signnet
   (package
     (name "r-signnet")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "signnet" version))
        (sha256
-        (base32 "1s7v94jckaml6j8j2zvgjnar89d20k99vv5gq1bn7pwb2p734g1f"))))
+        (base32 "04w8wik8q15hi7yc9rp30bc31pvw15bkrvr3lnif46zrrhsq6cv8"))))
     (properties `((upstream-name . "signnet")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix r-igraph))
@@ -43529,13 +43558,13 @@ Technometrics, <doi:10.1080/00401706.2015.1108233>).")
 (define-public r-sfdct
   (package
     (name "r-sfdct")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sfdct" version))
        (sha256
-        (base32 "0nvrcaif83qlrhx15srv2yvsrvxz05arz6h03jj07j5i8iv1hpjd"))))
+        (base32 "1v86s8nb021swfq53jmj3vjcyjkzm8aqjlw55xjjxsk29rmq4694"))))
     (properties `((upstream-name . "sfdct")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-sp r-sf r-rtriangle r-dplyr))
@@ -43559,13 +43588,13 @@ Delaunay.")
 (define-public r-sfd
   (package
     (name "r-sfd")
-    (version "0.0.1")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sfd" version))
        (sha256
-        (base32 "0zx0ramfbcq9k21c5a6ynh2wvsa6zfpqd21i6dhawvfw98afplbi"))))
+        (base32 "0zffbjzdzgvz7vj1wn7j7sqmnsvskkn94w7lkjxmaahd62xdh6v3"))))
     (properties `((upstream-name . "sfd")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-rlang r-cli))
@@ -43574,8 +43603,9 @@ Delaunay.")
     (description
      "This package provides a collection of pre-optimized space-filling designs, for
 up to ten parameters, is contained here.  Functions are provided to access
-designs described by Husslage et al (2011) <doi:10.1007/s11081-010-9129-8>.  The
-design types included are Audze-Eglais and @code{MaxiMin}.")
+designs described by Husslage et al (2011) <doi:10.1007/s11081-010-9129-8> and
+Wang and Fang (2005) <doi:10.1142/9789812701190_0040>.  The design types
+included are Audze-Eglais, @code{MaxiMin}, and uniform.")
     (license license:expat)))
 
 (define-public r-sfcr
@@ -44417,16 +44447,16 @@ modifying the design and tracking the design update history.")
 (define-public r-seqmagick
   (package
     (name "r-seqmagick")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "seqmagick" version))
        (sha256
-        (base32 "1xdi18jsns1m4sxdy4iagrfwz7mkw0182ir0b0db5r9r7xxjr1sg"))))
+        (base32 "1rdq24192yl7w0jsnw1zhj7qzi8qb08dw95iyxyf0rm2q34q1kwm"))))
     (properties `((upstream-name . "seqmagick")))
     (build-system r-build-system)
-    (propagated-inputs (list r-magrittr r-biostrings))
+    (propagated-inputs (list r-yulab-utils r-magrittr r-biostrings))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/YuLab-SMU/seqmagick")
     (synopsis "Sequence Manipulation Utilities")
@@ -46816,15 +46846,16 @@ proximity values between pairs of observations.")
 (define-public r-semantic-assets
   (package
     (name "r-semantic-assets")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "semantic.assets" version))
        (sha256
-        (base32 "0jmrz73x4qqmr7vibqfx83d4r4snf5anm9gd3c5xg6wm170vq1qs"))))
+        (base32 "000kgsbrgw8dlc0zi3f85g87xhpkzi8qbkrj717a076hr3h1bms7"))))
     (properties `((upstream-name . "semantic.assets")))
     (build-system r-build-system)
+    (propagated-inputs (list r-htmlwidgets))
     (native-inputs (list esbuild))
     (home-page "https://github.com/Appsilon/semantic.assets")
     (synopsis "Assets for 'shiny.semantic'")
@@ -49876,13 +49907,13 @@ measures and the loglinear model approach.")
 (define-public r-sdcmicro
   (package
     (name "r-sdcmicro")
-    (version "5.7.6")
+    (version "5.7.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sdcMicro" version))
        (sha256
-        (base32 "050b8i0bl7lykglzw3iy16ind12ddi6jx74rwh3gxishzddgy11d"))))
+        (base32 "0q6278ppbip2j9c79x6vjchiygxjqwqj71n8x6rl9676821ivwp0"))))
     (properties `((upstream-name . "sdcMicro")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -50613,13 +50644,13 @@ S. (2007) <DOI:10.1080/10629360600678310>).")
 (define-public r-scrm
   (package
     (name "r-scrm")
-    (version "1.7.4-0")
+    (version "1.7.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scrm" version))
        (sha256
-        (base32 "1kn6f0ypkl50jvnxz9sc6nyb0cdcnaccgka984jfsniky16f6sn9"))))
+        (base32 "195ilhqfcag5zljw5h031vxisy69mn0jjl2n4r3bxirywim1d5vg"))))
     (properties `((upstream-name . "scrm")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -50628,11 +50659,12 @@ S. (2007) <DOI:10.1080/10629360600678310>).")
     (synopsis "Simulating the Evolution of Biological Sequences")
     (description
      "This package provides a coalescent simulator that allows the rapid simulation of
-biological sequences under neutral models of evolution.  Different to other
-coalescent based simulations, it has an optional approximation parameter that
-allows for high accuracy while maintaining a linear run time cost for long
-sequences.  It is optimized for simulating massive data sets as produced by
-Next- Generation Sequencing technologies for up to several thousand sequences.")
+biological sequences under neutral models of evolution, see Staab et al. (2015)
+<doi:10.1093/bioinformatics/btu861>.  Different to other coalescent based
+simulations, it has an optional approximation parameter that allows for high
+accuracy while maintaining a linear run time cost for long sequences.  It is
+optimized for simulating massive data sets as produced by Next- Generation
+Sequencing technologies for up to several thousand sequences.")
     (license license:gpl3+)))
 
 (define-public r-scripturs
@@ -54555,13 +54587,13 @@ Inference and learning in stochastic automata was by Karl-Heinz Zimmermann(2017)
 (define-public r-satres
   (package
     (name "r-satres")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "satres" version))
        (sha256
-        (base32 "0qflcpg5k1m1wps0grdfz9s61nl0gxcm0ybgqa08cachr5wy8cqw"))))
+        (base32 "0651vv381b5j8zn9gngkqz7asbz3bwrrln57448j2w0qa1lfpq87"))))
     (properties `((upstream-name . "satres")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-snakecase r-sf))

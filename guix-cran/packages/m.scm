@@ -16675,13 +16675,13 @@ such matrices (MLSBMs).")
 (define-public r-mlrv
   (package
     (name "r-mlrv")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlrv" version))
        (sha256
-        (base32 "1d4g99hafx6326fiz3mw7ngwl7gj963hy78gyzrhwimchh27icjl"))))
+        (base32 "1r6q8wakvyz0d1fjc0xpl66yxj0c9jr721yx3h3986x6gi6s0k81"))))
     (properties `((upstream-name . "mlrv")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -17672,13 +17672,13 @@ well-known data sets from the multilevel modelling literature.")
 (define-public r-mlmpower
   (package
     (name "r-mlmpower")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlmpower" version))
        (sha256
-        (base32 "1l46i98xv78dv05vmr09xx1lscdg3w2zw4x5f691wg69prri4j4z"))))
+        (base32 "1vh3cy8n3dlzb6wb2xkkjs3jd1gdxjbch09lhfq2sclk19h1ryy4"))))
     (properties `((upstream-name . "mlmpower")))
     (build-system r-build-system)
     (propagated-inputs (list r-vartestnlme r-lmertest r-lme4 r-cli))
@@ -30899,13 +30899,13 @@ geo-precision codes.")
 (define-public r-meltr
   (package
     (name "r-meltr")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "meltr" version))
        (sha256
-        (base32 "0rg6frch51ydigsas6ycfhkgd0jldi95paq6gmja6rcq6vlwnhgj"))))
+        (base32 "1h2a09n0az9s81m9n4a0h3dckxxgb9vpj03kal29ms0zwn525xpx"))))
     (properties `((upstream-name . "meltr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-rlang r-r6 r-cpp11 r-cli))
@@ -32703,13 +32703,13 @@ extended version of the Fortran code created by Genz and Bretz (2002)
 (define-public r-mdftracks
   (package
     (name "r-mdftracks")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mdftracks" version))
        (sha256
-        (base32 "0j1j3dbl5g8zv59ppyvnxp39vpd24ygxbdhnavjwnw1v1fpippbf"))))
+        (base32 "0v48ffs1dfbls4h0s6r9b7kklzc7v4xznprd8qczsazvw3jj3zgb"))))
     (properties `((upstream-name . "mdftracks")))
     (build-system r-build-system)
     (home-page "https://github.com/burgerga/mdftracks")
@@ -32750,18 +32750,18 @@ using NVIDIA GPGPUs.  R. Piliszek et al. (2019) <doi:10.32614/RJ-2019-019>.")
 (define-public r-mdendro
   (package
     (name "r-mdendro")
-    (version "2.2.0")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mdendro" version))
        (sha256
-        (base32 "19da8q31s8d8452bb3qcmrn81z663fy2wf4apbywq0dal9s63rrv"))))
+        (base32 "0am5kda7ydwiniqmypzmmqnaz4pkd9hp82vm0pdk3plak5b0dz6w"))))
     (properties `((upstream-name . "mdendro")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
     (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://deim.urv.cat/~sergio.gomez/mdendro.php")
+    (home-page "https://webs-deim.urv.cat/~sergio.gomez/mdendro.php")
     (synopsis "Extended Agglomerative Hierarchical Clustering")
     (description
      "This package provides a comprehensive collection of linkage methods for
@@ -39278,13 +39278,13 @@ looking maps in R, with support for map projections.  See Brown (2016)
 (define-public r-mapme-biodiversity
   (package
     (name "r-mapme-biodiversity")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapme.biodiversity" version))
        (sha256
-        (base32 "026q3sjsm1yzw3iixjx3cga00f239spbss33wlxhdc4dapd434hm"))))
+        (base32 "0md2glm5zqqsf0vqxj14ln2l7cxx5cfg3v7kkikdx1nn38l6ixaz"))))
     (properties `((upstream-name . "mapme.biodiversity")))
     (build-system r-build-system)
     (inputs (list proj gdal))

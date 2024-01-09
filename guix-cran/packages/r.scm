@@ -3390,13 +3390,13 @@ by @code{SkÃ¸ien} et al (2014) <doi:10.1016/j.cageo.2014.02.009>.")
 (define-public r-rtoot
   (package
     (name "r-rtoot")
-    (version "0.3.3")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtoot" version))
        (sha256
-        (base32 "1glx3ds5lg0y6z0z72jrr32fjvd0dip4qqbbzrnpk7skjxkwfis2"))))
+        (base32 "0zil9zkmgwmncw1q4nxrnz93bmjg0lfa34qbrf6a5yj63x4dmwar"))))
     (properties `((upstream-name . "rtoot")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -3625,13 +3625,13 @@ Xie, Y (2014) <ISBN: 978-1-482-20353-0>.")
 (define-public r-rtl
   (package
     (name "r-rtl")
-    (version "1.3.4")
+    (version "1.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RTL" version))
        (sha256
-        (base32 "08wk1zd4nrp9zvmqbf9dw5s8mv2ggz4gbxz24blpaphwr045annj"))))
+        (base32 "0ajdrwg8g68imwj21l9mh8q9n1xc00d8lxw60p6vnb39m730d8vg"))))
     (properties `((upstream-name . "RTL")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -11697,13 +11697,13 @@ authorized to a free, registered account.")
 (define-public r-ropencvlite
   (package
     (name "r-ropencvlite")
-    (version "4.80.1")
+    (version "4.90.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ROpenCVLite" version))
        (sha256
-        (base32 "0jk0p6ws8maip83k9bn0my8dmf7s1djdhkv85hln27jdl69hr7yy"))))
+        (base32 "0rfa0g6ywp0ykazckgk3axc23ip8f52abg4kpk7xy933yvdv3bcf"))))
     (properties `((upstream-name . "ROpenCVLite")))
     (build-system r-build-system)
     (inputs (list cmake))
@@ -22807,13 +22807,13 @@ of departure from the no unmeasured confounding assumption.")
 (define-public r-ria
   (package
     (name "r-ria")
-    (version "1.7.1")
+    (version "1.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RIA" version))
        (sha256
-        (base32 "0q36xaikj4c208hk48zdlpgx0hfvc5dpwckr0ksk217n0h5hfk1x"))))
+        (base32 "0ahz8kjp3rqm3cyh1mzqsfh4iqd6jw6pb7j7rdl2qyi5j0dzsv4c"))))
     (properties `((upstream-name . "RIA")))
     (build-system r-build-system)
     (propagated-inputs (list r-oro-nifti r-oro-dicom))
@@ -23635,17 +23635,17 @@ open-source parallel database.  This is an extension of the RPostgres package
 (define-public r-rgrass
   (package
     (name "r-rgrass")
-    (version "0.3-9")
+    (version "0.4-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rgrass" version))
        (sha256
-        (base32 "06zck7mwi2gv6qdxl2rj00kasyf5injb61hlmlcslr4scj5vdcq6"))))
+        (base32 "1w7avihvgcpidw4bp51c2p37azjqgsn6n7g49djnj5hypb0xm0gk"))))
     (properties `((upstream-name . "rgrass")))
     (build-system r-build-system)
     (inputs (list grass))
-    (propagated-inputs (list r-xml))
+    (propagated-inputs (list r-xml2))
     (native-inputs (list r-knitr))
     (home-page "https://rsbivand.github.io/rgrass/")
     (synopsis
@@ -27124,13 +27124,13 @@ large datasets.")
 (define-public r-restatapi
   (package
     (name "r-restatapi")
-    (version "0.22.1")
+    (version "0.22.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "restatapi" version))
        (sha256
-        (base32 "1bd9aggyps8352l01g9jpnvmqqw7inf3zy3mh4l99i3d8s9kdid4"))))
+        (base32 "1vaj20z45y3af1k38fqcxxkpn4fb8arwgm0q5jnf3shfq6ddnzyh"))))
     (properties `((upstream-name . "restatapi")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-rjson r-data-table))
@@ -34462,16 +34462,16 @@ software.")
 (define-public r-readbulk
   (package
     (name "r-readbulk")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "readbulk" version))
        (sha256
-        (base32 "0rqz0r5ygwgfqkzv2130sciz3j2p888c2005wsk1m5403syi78an"))))
+        (base32 "1i9wax1dkl6xn37zmmlg2g4cxfzj88fyynrn3gv60sbw6s1a4r30"))))
     (properties `((upstream-name . "readbulk")))
     (build-system r-build-system)
-    (propagated-inputs (list r-plyr r-jsonlite))
+    (propagated-inputs (list r-plyr))
     (home-page "https://github.com/pascalkieslich/readbulk")
     (synopsis "Read and Combine Multiple Data Files")
     (description
@@ -41227,16 +41227,16 @@ distribution and random vectors from the Dirichlet distribution.")
 (define-public r-rbest
   (package
     (name "r-rbest")
-    (version "1.7-2")
+    (version "1.7-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RBesT" version))
        (sha256
-        (base32 "16ws9bg9a646mh6lhyfzvhgczbi5fi5a3cw4vlxh5w68by5h1s5x"))))
+        (base32 "19bhn1j03qsmc20xndyls0ynhqbwb3kis6mxm7wh9k87zcm1lvla"))))
     (properties `((upstream-name . "RBesT")))
     (build-system r-build-system)
-    (inputs (list pandoc pandoc))
+    (inputs (list pngquant pandoc))
     (propagated-inputs (list r-stanheaders
                              r-rstantools
                              r-rstan
@@ -46526,13 +46526,13 @@ of landscapeâ used in the domain of landscape ecology.")
 (define-public r-raceid
   (package
     (name "r-raceid")
-    (version "0.3.3")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RaceID" version))
        (sha256
-        (base32 "0fxganfx4zw1hb5qy3hy7d55i11s9xi5nsa8c7mzmwacdsdhr0yv"))))
+        (base32 "10hbgnd7kvs6a3w6jxs78w7b6si3nghbrzfyv3ipflpv37zs8fay"))))
     (properties `((upstream-name . "RaceID")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan

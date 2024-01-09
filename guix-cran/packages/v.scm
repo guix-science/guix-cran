@@ -4753,21 +4753,21 @@ managing capitalisations in tidy data.")
 (define-public r-venn
   (package
     (name "r-venn")
-    (version "1.11")
+    (version "1.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "venn" version))
        (sha256
-        (base32 "054ky4sh47p5fw271ag79p84vdxm5bqa6gw0dvkz2y00r73ibn9k"))))
+        (base32 "07bjv0m21gljdr3sj1z9rp6xhgxspah9j1m3a8rskvlwv6dvd1pd"))))
     (properties `((upstream-name . "venn")))
     (build-system r-build-system)
     (propagated-inputs (list r-admisc))
     (home-page "https://github.com/dusadrian/venn")
     (synopsis "Draw Venn Diagrams")
     (description
-     "Draws and displays Venn diagrams up to 7 sets, and any Boolean union of set
-intersections.")
+     "This package provides a close to zero dependency package to draw and display
+Venn diagrams up to 7 sets, and any Boolean union of set intersections.")
     (license license:gpl3+)))
 
 (define-public r-vembedr
@@ -5116,6 +5116,26 @@ Needham, R., Naemi, R., & Chockalingam, N. (2015)
 <doi:10.1123/jab.17.3.259>.  Park, J.H., Lee, H., Cho, Js.  et al. (2021)
 <doi:10.1038/s41598-020-80237-w>.")
     (license license:gpl3)))
+
+(define-public r-vectorbitops
+  (package
+    (name "r-vectorbitops")
+    (version "1.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vectorbitops" version))
+       (sha256
+        (base32 "1hgygcmyfaib72j9ck88312f4nqk0s5m01jqyizsy1j3ss8jaqi6"))))
+    (properties `((upstream-name . "vectorbitops")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=vectorbitops")
+    (synopsis "Vector Bitwise Operations")
+    (description
+     "This package provides a tool for fast, efficient bitwise operations along the
+elements within a vector.  Provides such functionality for AND, OR and XOR, as
+well as infix operators for all of the binary bitwise operations.")
+    (license license:expat)))
 
 (define-public r-vecsets
   (package

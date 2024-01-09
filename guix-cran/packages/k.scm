@@ -2687,13 +2687,13 @@ be used in ranking results from other packs.")
 (define-public r-kinsimu
   (package
     (name "r-kinsimu")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "KINSIMU" version))
        (sha256
-        (base32 "09qmdf4x6irgzv6s8ib4fj5spakzag2cb3lpf9n346yildlfp59d"))))
+        (base32 "0chsjpg0irxk7m7hqb7fmv60cdc7fdjmii64pfadjbnmzzzbhbq1"))))
     (properties `((upstream-name . "KINSIMU")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=KINSIMU")
@@ -3057,13 +3057,13 @@ common ones with rio (C-h.  Chan and al. (2018))
 (define-public r-khroma
   (package
     (name "r-khroma")
-    (version "1.11.0")
+    (version "1.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "khroma" version))
        (sha256
-        (base32 "1d957wdf8z7vki3q3ciicls121p422ywpsayki82r2b79zl8swkp"))))
+        (base32 "1w3rd98m3qk21p8zh3b13x9jbms5zd51il917qxdnxcyc4166n5s"))))
     (properties `((upstream-name . "khroma")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

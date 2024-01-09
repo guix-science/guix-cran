@@ -7845,13 +7845,13 @@ mgcv'.")
 (define-public r-traminerextras
   (package
     (name "r-traminerextras")
-    (version "0.6.6")
+    (version "0.6.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TraMineRextras" version))
        (sha256
-        (base32 "172kp9pww79fjg1z5k3cfwknk0a0729nr43lb18l6cqzwmhy9bs4"))))
+        (base32 "06kl8xxszwdra3dyapnk76frnz416lbkqfvxc115pnwxlf8ad8v5"))))
     (properties `((upstream-name . "TraMineRextras")))
     (build-system r-build-system)
     (propagated-inputs (list r-traminer
@@ -7876,13 +7876,13 @@ polyadic data.")
 (define-public r-traminer
   (package
     (name "r-traminer")
-    (version "2.2-8")
+    (version "2.2-9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TraMineR" version))
        (sha256
-        (base32 "0qp7q8hbbr57ym9q2kcypi2b6ya5z7604kwaxmqzvcbz0rf90aq5"))))
+        (base32 "1gn4mpd3hkxxhdlqvpvxj2q4p03g4v1cib8048h8ar27rl5mqpvh"))))
     (properties `((upstream-name . "TraMineR")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan r-rcolorbrewer r-colorspace r-cluster
@@ -8701,13 +8701,13 @@ instead.")
 (define-public r-tracee
   (package
     (name "r-tracee")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tracee" version))
        (sha256
-        (base32 "1hv4ymi1p76k2b3x4s6qs53xwda3ybkwbdpnlhfgz7fryvy483r5"))))
+        (base32 "0ny6769zdl2i5y3fy3ysww91i5s0n86rcciaalryg6ms18989x0r"))))
     (properties `((upstream-name . "tracee")))
     (build-system r-build-system)
     (propagated-inputs (list r-nmdata r-gridextra r-ggplot2 r-flextable
@@ -9953,6 +9953,36 @@ sections (elevation profiles) for the paths.")
 model TOPMODEL, which is based on the 1995 FORTRAN version by Keith Beven.  From
 version 0.7.0, the package is put into maintenance mode.")
     (license license:gpl2+)))
+
+(define-public r-topksignal
+  (package
+    (name "r-topksignal")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TopKSignal" version))
+       (sha256
+        (base32 "1767v8njdi736im8fhf9yihrbxjrnyhs7xpmdzphsm55qm8rda1x"))))
+    (properties `((upstream-name . "TopKSignal")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-reshape2
+                             r-nloptr
+                             r-matrix
+                             r-ggplot2
+                             r-foreach
+                             r-doparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=TopKSignal")
+    (synopsis
+     "Convex Optimization Tool for Signal Reconstruction from Multiple Ranked Lists")
+    (description
+     "This package provides a mathematical optimization procedure in combination with
+statistical bootstrap for the estimation of the latent signals (sometimes called
+scores) informing the global consensus ranking (often named aggregation
+ranking).  To solve mid/large-scale problems, users should install the gurobi
+optimiser (available from <https://www.gurobi.com/>).")
+    (license license:gpl2)))
 
 (define-public r-topklists
   (package

@@ -4082,13 +4082,13 @@ information about vaccination$/immunization$ hazards, visit
 (define-public r-jaatha
   (package
     (name "r-jaatha")
-    (version "3.2.4")
+    (version "3.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jaatha" version))
        (sha256
-        (base32 "13vmmrbvr073mmhgh84dp2wwx3r71bnli90nycfliqfnmzwr8ynl"))))
+        (base32 "0npqpb6p4ap64mn5x2y424ayz1gy9s2b1ls4f4bs9l9mhr60z4jy"))))
     (properties `((upstream-name . "jaatha")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-assertthat))

@@ -4503,13 +4503,13 @@ run the tests in parallel.")
 (define-public r-prqlr
   (package
     (name "r-prqlr")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "prqlr" version))
        (sha256
-        (base32 "07jm4d2448r6bc8z8cqd86zxyr82a0h9dv78ypjiknv4nlkcv71i"))))
+        (base32 "17z0ax3vjyghsb0byd5hjcrbcn5irnqq2q9dc6l4nnm3hpk3b2j2"))))
     (properties `((upstream-name . "prqlr")))
     (build-system r-build-system)
     (inputs (list))
@@ -7992,13 +7992,13 @@ citation(\"PRIMME\") for details.")
 (define-public r-primes
   (package
     (name "r-primes")
-    (version "1.5.2")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "primes" version))
        (sha256
-        (base32 "1s75mbjvljml5in0f4mndx7yz239zw9527g5m5nlpjn8ik0xmnf1"))))
+        (base32 "1jpj7hq2hsv6x3qp409whim7480hswvmhd327b2yml8f734nv45d"))))
     (properties `((upstream-name . "primes")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -14645,13 +14645,13 @@ described by Clark et al. (2020, Version 1) <doi:10.1101/2020.01.11.902890>.")
 (define-public r-polyqtlr
   (package
     (name "r-polyqtlr")
-    (version "0.0.9")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "polyqtlR" version))
        (sha256
-        (base32 "0j879bvks6ldx53yfmac94p5n4p79pyq29ljdzbvajmxq5b57vf8"))))
+        (base32 "137ydsyjjmkrl07g7mc5710xzlm3ihb490s419zaw461gxxmcjbl"))))
     (properties `((upstream-name . "polyqtlR")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2
@@ -14815,13 +14815,13 @@ Pages 69-92) <doi:10.1016/0304-3975(95)00090-9>.")
 (define-public r-polymapr
   (package
     (name "r-polymapr")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "polymapR" version))
        (sha256
-        (base32 "0m6k54j0x1hjcjchiasvm69rsbj8x1g1f6ab10bmyl2d693v2bv1"))))
+        (base32 "0mc4gblzznd0md740bzrd3cpk5ikf3dms72iqq18g76yc2y8iy2r"))))
     (properties `((upstream-name . "polymapR")))
     (build-system r-build-system)
     (propagated-inputs (list r-mdsmap r-knitr r-igraph r-foreach r-doparallel))
@@ -18581,13 +18581,13 @@ graphs.")
 (define-public r-plnmodels
   (package
     (name "r-plnmodels")
-    (version "1.0.4")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PLNmodels" version))
        (sha256
-        (base32 "0ipx01zs3vh318hdqrvm4y59q0jdzkysr39amxmydv5ld8lx5cky"))))
+        (base32 "07ax6qhj9n55mrs2s4ddzzxy69xw8pvf0phvha1vncnal6314qwy"))))
     (properties `((upstream-name . "PLNmodels")))
     (build-system r-build-system)
     (propagated-inputs (list r-torch
@@ -22697,13 +22697,13 @@ distribution in hidden semi-Markov models. <@code{arXiv:2101.09197>}.")
 (define-public r-phsmethods
   (package
     (name "r-phsmethods")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phsmethods" version))
        (sha256
-        (base32 "11gsbsypsdca15sbdsifzf1z432gqg12ldzyd6kjy09mgmd5838v"))))
+        (base32 "05z1l7jppg5mfrwbgkx59ybjc4321cihrh5j6bsvx72waapswic9"))))
     (properties `((upstream-name . "phsmethods")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -24467,13 +24467,13 @@ CDISC Submission Data Standards Team (2021)
 (define-public r-pharmaverseadam
   (package
     (name "r-pharmaverseadam")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pharmaverseadam" version))
        (sha256
-        (base32 "1cz8jpn29krhnsx6gvp4kdaajr75kf4rskcg5y5q4ljarq892qzc"))))
+        (base32 "18pmbvjy4v7182kriffp733snb84inqjii6gj1g0l5ahh24k7xim"))))
     (properties `((upstream-name . "pharmaverseadam")))
     (build-system r-build-system)
     (home-page "https://pharmaverse.github.io/pharmaverseadam/main/")
@@ -26324,13 +26324,13 @@ Barden R. and Kasprzyk-Hordern B. (2022)
 (define-public r-periscope2
   (package
     (name "r-periscope2")
-    (version "0.1.4")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "periscope2" version))
        (sha256
-        (base32 "1k49h8m6ff0wapf7c9a0ncz38pg3qd92kz80yvkb1rg8na0kj8qw"))))
+        (base32 "0nxzz314gpm9z92y6ajf0fdfja923ay7f7866mp4ri5h78plf0yx"))))
     (properties `((upstream-name . "periscope2")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -26338,7 +26338,6 @@ Barden R. and Kasprzyk-Hordern B. (2022)
                              r-shinywidgets
                              r-shinyfeedback
                              r-shiny
-                             r-miniui
                              r-lubridate
                              r-fresh
                              r-dt
@@ -35709,13 +35708,13 @@ approximant of appropriate order (Baker, 1975) <ISBN:9780120748556>.")
 (define-public r-pacvr
   (package
     (name "r-pacvr")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PACVr" version))
        (sha256
-        (base32 "0xkn25qmj64yn9aclfvvpz8zgwc84fy9hcfz62gj4xzv29k5j2j2"))))
+        (base32 "1a31byfjjfqqz47s3mj52g20an42cy0s2rdjw697plpvx2hch9fl"))))
     (properties `((upstream-name . "PACVr")))
     (build-system r-build-system)
     (propagated-inputs (list r-read-gb

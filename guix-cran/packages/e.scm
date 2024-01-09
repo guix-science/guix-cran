@@ -5864,6 +5864,31 @@ estimates by interacting treatment with centered pre-treatment covariates
 introduced by Lin (2013) <doi:10.1214/12-AOAS583>.")
     (license license:expat)))
 
+(define-public r-estimators
+  (package
+    (name "r-estimators")
+    (version "0.7.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "estimators" version))
+       (sha256
+        (base32 "11aw3g85hivmid88fc13gh14jarmbpp717sqpsyisz4pvwv9zkqv"))))
+    (properties `((upstream-name . "estimators")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-progress r-matrix r-ggplot2 r-ggh4x r-distr))
+    (native-inputs (list r-knitr))
+    (home-page "https://thechibo.github.io/estimators/")
+    (synopsis "Parameter Estimation")
+    (description
+     "This package implements estimation methods for parameters of common distribution
+families.  The common d, p, q, r function family for each distribution is
+enriched with the ll, e, and v counterparts, computing the log-likelihood,
+performing estimation, and calculating the asymptotic variance - covariance
+matrix, respectively.  Parameter estimation is performed analytically whenever
+possible.")
+    (license license:gpl3+)))
+
 (define-public r-estimationtools
   (package
     (name "r-estimationtools")
@@ -17301,6 +17326,38 @@ regression and isotonic regression.  Besides, the package also supports
 comparison between two estimation results.")
     (license license:gpl3)))
 
+(define-public r-ecv
+  (package
+    (name "r-ecv")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "eCV" version))
+       (sha256
+        (base32 "03gns9gdy4r155lq3h97da12cclfcf13davbmxpy6h6k1yg280g8"))))
+    (properties `((upstream-name . "eCV")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mvtnorm r-matrixgenerics r-idr r-future-apply
+                             r-future))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/eclipsebio/eCV")
+    (synopsis
+     "Enhanced Coefficient of Variation and IDR Extensions for Reproducibility Assessment")
+    (description
+     "Reproducibility assessment is essential in extracting reliable scientific
+insights from high-throughput experiments.  While the Irreproducibility
+Discovery Rate (IDR) method has been instrumental in assessing reproducibility,
+its standard implementation is constrained to handling only two replicates.
+Package @code{eCV} introduces an enhanced Coefficient of Variation (@code{eCV})
+metric to assess the likelihood of omic features being reproducible.
+Additionally, it offers alternatives to the Irreproducible Discovery Rate (IDR)
+calculations for multi-replicate experiments.  These tools are valuable for
+analyzing high-throughput data in genomics and other omics fields.  The methods
+implemented in @code{eCV} are described in Gonzalez-Reymundez et al., (2023)
+<doi:10.1101/2023.12.18.572208>.")
+    (license license:gpl3+)))
+
 (define-public r-ecume
   (package
     (name "r-ecume")
@@ -17581,13 +17638,13 @@ respect to reference conditions [Sturbois et al. (2023) ].")
 (define-public r-ecotoxr
   (package
     (name "r-ecotoxr")
-    (version "1.0.5")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ECOTOXr" version))
        (sha256
-        (base32 "0xah3kw58sm6j8vnpfsmw0lmrqqwbri2yqm6hph92qzq0a6rfsxg"))))
+        (base32 "0n5vfzg2drffw7yrbvi1rkhkydsmyd8v0scqqrx0cdx84y21l5fl"))))
     (properties `((upstream-name . "ECOTOXr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -17603,7 +17660,7 @@ respect to reference conditions [Sturbois et al. (2023) ].")
                              r-purrr
                              r-lifecycle
                              r-jsonlite
-                             r-httr
+                             r-httr2
                              r-dplyr
                              r-dbplyr
                              r-crayon))

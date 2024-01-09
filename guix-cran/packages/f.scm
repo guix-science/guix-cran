@@ -10381,16 +10381,16 @@ dataframes to XML.")
 (define-public r-flattabler
   (package
     (name "r-flattabler")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flattabler" version))
        (sha256
-        (base32 "10jii2xl100fjawhz9qlwnj2b3fa9pfipc8jli4qa03f1w3n7xmp"))))
+        (base32 "1yls9md276fhz46mcfn676g24mk0rhyyfhkbysfs59fs58037s9j"))))
     (properties `((upstream-name . "flattabler")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tibble r-stringr r-readxl r-dplyr))
+    (propagated-inputs (list r-tibble r-stringr r-readxl r-readr r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://josesamos.github.io/flattabler/")
     (synopsis "Obtaining a Flat Table from Pivot Tables")
@@ -14211,13 +14211,13 @@ accepts fundamental items and digital elevation models.")
 (define-public r-fftw
   (package
     (name "r-fftw")
-    (version "1.0-7")
+    (version "1.0-8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fftw" version))
        (sha256
-        (base32 "07isxi72ppw7p3inn3pmwr2ha51p981iz3diw3rhgqc4gd3677zn"))))
+        (base32 "0846s0ix2qj4dg8r9gpydsymbh2qyqnadgsaaph7dvd0cqb02zlc"))))
     (properties `((upstream-name . "fftw")))
     (build-system r-build-system)
     (inputs (list fftw))

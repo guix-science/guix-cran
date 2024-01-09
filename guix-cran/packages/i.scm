@@ -1803,13 +1803,13 @@ as well as 230Th-U evolution plots.")
 (define-public r-isopleuros
   (package
     (name "r-isopleuros")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "isopleuros" version))
        (sha256
-        (base32 "1jwnbxfg9in2bgb2l5w179mi7aci9wyh026ggwnsjnfnqvibcdy2"))))
+        (base32 "1vqazdpg8whpx5nw8gq8bchh93dl04xmygs9as1k5yx1sijw164j"))))
     (properties `((upstream-name . "isopleuros")))
     (build-system r-build-system)
     (home-page "https://packages.tesselle.org/isopleuros/")
@@ -4408,13 +4408,13 @@ generated from the input data.")
 (define-public r-iperform
   (package
     (name "r-iperform")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iperform" version))
        (sha256
-        (base32 "12hwgk6nn2y0201ara9rcmln5bky81arphl6rfk3zzid9pqa9q1h"))))
+        (base32 "0h2kp652dmwbzpq7f0hpg7fkny5hh8f57hvjs2h4p5dlm338yh27"))))
     (properties `((upstream-name . "iperform")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrixstats r-lubridate))
@@ -4969,13 +4969,13 @@ and Berding and Pargmann (2022) <doi:10.30819/5581>.")
 (define-public r-iotables
   (package
     (name "r-iotables")
-    (version "0.9.1")
+    (version "0.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iotables" version))
        (sha256
-        (base32 "1xs6hfr1h8mpm2ksbrx7kjqi01rvgfczsnxmv70czwpsc3lbzrdf"))))
+        (base32 "15x7i2l298l1fxq2vy7p1naixmy39024y4sb542k8c3ashvp37gi"))))
     (properties `((upstream-name . "iotables")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -5873,13 +5873,13 @@ characteristics â A novel and practical method for estimating the
 (define-public r-intrinsicfrp
   (package
     (name "r-intrinsicfrp")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "intrinsicFRP" version))
        (sha256
-        (base32 "0nr6b6jgh10znpy9d1gal5h20fmrdj5in1rycj3d4pynvb847whx"))))
+        (base32 "1grcbqncx2j0y71r3l7qapj4d4sgzdgqfz4336lgbndpqvlc538x"))))
     (properties `((upstream-name . "intrinsicFRP")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -11886,13 +11886,13 @@ of digital images, in particular SURF and HOG descriptors.")
 (define-public r-image-cornerdetectionharris
   (package
     (name "r-image-cornerdetectionharris")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "image.CornerDetectionHarris" version))
        (sha256
-        (base32 "150qz9wfpa33914x1am2ifzm0k2bdkmgk1qypvgxy958ginlaxsg"))))
+        (base32 "02ffpabfln4fzv45fyhaq0n9w8yndlx302q8fvkh1q3zn7cbd8n0"))))
     (properties `((upstream-name . "image.CornerDetectionHarris")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))

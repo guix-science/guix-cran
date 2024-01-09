@@ -5356,19 +5356,21 @@ oceanographic data using image processing methods based on Gradient Recognition.
 (define-public r-greatr
   (package
     (name "r-greatr")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "greatR" version))
        (sha256
-        (base32 "03xzdx8ajngz6svjv47g0hslibm2xr1741gnqxnzs4lm1iwbhamv"))))
+        (base32 "0mibjbzyk7fvmma596vs9mlf43spzx8qk6aj0622ajxb6lszdqmm"))))
     (properties `((upstream-name . "greatR")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
                              r-optimization
                              r-neldermead
                              r-ggplot2
+                             r-future
+                             r-furrr
                              r-data-table
                              r-cli))
     (native-inputs (list r-knitr))
@@ -11646,13 +11648,13 @@ described in Friedman et al. (2010) <doi:10.18637/jss.v033.i01> and Simon et al.
 (define-public r-glmnetr
   (package
     (name "r-glmnetr")
-    (version "0.3-1")
+    (version "0.4-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmnetr" version))
        (sha256
-        (base32 "1wf40g55qmj7n6za29kysrr642kr1yriara381ws5v5pnik8dd6q"))))
+        (base32 "16ln0zpc92kmkmksyfi6ky4s8h0fdzfjbzwm00j968fx0hxlqv79"))))
     (properties `((upstream-name . "glmnetr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -11660,6 +11662,7 @@ described in Friedman et al. (2010) <doi:10.18637/jss.v033.i01> and Simon et al.
                              r-survival
                              r-smoof
                              r-rpart
+                             r-randomforestsrc
                              r-paramhelpers
                              r-mlrmbo
                              r-matrix
@@ -11670,29 +11673,34 @@ described in Friedman et al. (2010) <doi:10.18637/jss.v033.i01> and Simon et al.
      "Nested Cross Validation for the Relaxed Lasso and Other Machine Learning Models")
     (description
      "Cross validation informed Relaxed LASSO, Artificial Neural Network (ANN),
-gradient boosting machine ('xgboost'), Recursive Partitioning ('RPART') or step
-wise regression models are fit.  It fits all these model as extensions of
-linear, logistic and Cox regression models.  The package can fit all these
-models in a single call, and performs nested cross validation allowing the user
-to evaluate and compare the performances of these different models.  The package
-fits these models using other packages including glmnet', survival', xgboost',
-rpart and torch'.  For the relaxed lasso models glmnetr uses stat and survival
-to obtain stable model fits, and obtain these often more quickly.  This too
-might be achieved using the path=TRUE option in glmnet'.  While the package fits
-nested cross validation for the lasso and other models, it does not fit the
-general elastic net model.  If you are fitting not a relaxed lasso model but an
-elastic-net model, then the R-packages nestedcv
-<https://cran.r-project.org/package=nestedcv>, @code{glmnetSE}
+gradient boosting machine ('xgboost'), Random Forest ('@code{RandomForestSRC}'),
+Recursive Partitioning ('RPART') or step wise regression models are fit.  Nested
+cross validation to estimate and compare performances between these models is
+also performed.  For some datasets, for example when the design matrix is not of
+full rank, glmnet may have very long run times when fitting the relaxed lasso
+model, from our experience when fitting Cox models on data with many predictors
+and many patients, making it difficult to get solutions from either glmnet() or
+cv.glmnet().  This may be remedied with the path=TRUE options when calling
+cv.glmnet().  This option is not described in the glmnet Reference Manual but is
+described in the glmnet \"The Relaxed Lasso\" vignette.  In this package,
+glmnetr', we provide a similar workaround and solve for the non penalized
+relaxed model where gamma=0 for model structures analogue to R functions like
+glm() or coxph() of the survival package.  If you are not fitting relaxed lasso
+models, or if you are able to get convergence using glmnet', then the glmnetr()
+and cv.glmnetr() functions may not be of much benefit to you.  Note, while this
+package may allow one to fit relaxed lasso models that have difficulties
+converging using glmnet', and provides some different functionality beyond that
+of cv.glmnet(), it does not afford the some of the versatility of glmnet'.  When
+fitting not a relaxed lasso model but an elastic-net model, then the R-packages
+nestedcv <https://cran.r-project.org/package=nestedcv>, @code{glmnetSE}
 <https://cran.r-project.org/package=@code{glmnetSE>} or others may provide
 greater functionality when performing a nested CV. As with the glmnet package,
-this package passes most relevant information to the output object which can be
-evaluated using plot, summary() and predict() functions.  The glmnetr package
-has some features and functionality that we find useful, but omits some of the
-functionality of glmnet as well.  Use of the glmnetr package has many
-similarities to the glmnet package and it is recommended that the user of
-glmnetr first become familiar with the glmnet package
+this package passes most relevant output to the output object and tabular and
+graphical summaries can be generated using the summary and plot functions.  Use
+of the glmnetr has many similarities to the glmnet package and it is recommended
+that the user of glmnetr first become familiar with the glmnet package
 <https://cran.r-project.org/package=glmnet>, with the \"An Introduction to
-glmnet\" and \"The Relaxed Lasso\" being especially helpful in this regard.")
+glmnet'\" and \"The Relaxed Lasso\" being especially helpful in this regard.")
     (license license:gpl3)))
 
 (define-public r-glmnetcr
@@ -12037,13 +12045,13 @@ Gaussian quadrature rule; Jose C. Pinheiro and Douglas M. Bates (1995)
 (define-public r-glmm-hp
   (package
     (name "r-glmm-hp")
-    (version "0.1-1")
+    (version "0.1-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmm.hp" version))
        (sha256
-        (base32 "0cccqs6fiwkb5ma4if07ngl7489d37n319j29vcayhknf2jfvszi"))))
+        (base32 "14sp54h6lrn4bfi4n3ilp9asz442lcvy72yhcp5pjyynld2wm3c5"))))
     (properties `((upstream-name . "glmm.hp")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan r-mumin r-lme4 r-ggplot2))
@@ -13651,6 +13659,34 @@ Montoya-@code{BlandÃ³n} (2023)
 maximum inequality in the presence of weighted and negative attributes.")
     (license license:gpl3)))
 
+(define-public r-ginivarci
+  (package
+    (name "r-ginivarci")
+    (version "0.0.1-3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "giniVarCI" version))
+       (sha256
+        (base32 "1yv97q6l8imd7z8zqykymmsx6905wrygj5l3arwdz9irfgvw55lx"))))
+    (properties `((upstream-name . "giniVarCI")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=giniVarCI")
+    (synopsis
+     "Gini Indices, Variances and Confidence Intervals for Finite and Infinite Populations")
+    (description
+     "Estimates the Gini index and computes variances and confidence intervals for
+finite and infinite populations, using different methods; also computes Gini
+index for continuous probability distributions, draws samples from continuous
+probability distributions with Gini indices set by the user; uses Rcpp'.
+References: @code{MuÃ±oz} et al. (2023) <doi:10.1177/00491241231176847>.
+Ãlvarez et al. (2021) <doi:10.3390/math9243252>.  Giorgi and Gigliarano (2017)
+<doi:10.1111/joes.12185>.  Langel and @code{TillÃ©} (2013)
+<doi:10.1111/j.1467-985X.2012.01048.x>.")
+    (license (list license:gpl2+ license:gpl3+))))
+
 (define-public r-ginidistance
   (package
     (name "r-ginidistance")
@@ -13990,13 +14026,13 @@ imaging data.")
 (define-public r-gift
   (package
     (name "r-gift")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GIFT" version))
        (sha256
-        (base32 "01hv7ilc2fw9vhy34sblvw727rz7v4dw2ibafwr0xy53via9bfgv"))))
+        (base32 "0fwqf6xxb3nk3rfirkw4a4525xm7n5k4cjr90904zwr8mmnwpfj2"))))
     (properties `((upstream-name . "GIFT")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -16026,19 +16062,19 @@ ggplot2.")
 (define-public r-ggplot2-utils
   (package
     (name "r-ggplot2-utils")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggplot2.utils" version))
        (sha256
-        (base32 "1bs2pmnq7b57cs05rqvpaqjpn9k7m3zaz7nw3s2n7d9cq60w06gn"))))
+        (base32 "0fsardsv77rfm2idynqi5zb3wrqcjyckxxchvj894kgb1qfpa27v"))))
     (properties `((upstream-name . "ggplot2.utils")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
+                             r-ggstats
                              r-ggpp
                              r-ggplot2
-                             r-ggally
                              r-envstats
                              r-checkmate))
     (home-page "https://insightsengineering.github.io/ggplot2.utils/")
@@ -16046,12 +16082,13 @@ ggplot2.")
     (description
      "Selected utilities, in particular geoms and stats functions, extending the
 ggplot2 package.  This package imports functions from @code{EnvStats}
-<doi:10.1007/978-1-4614-8456-1>, GGally <doi:10.5281/zenodo.5009047> and ggpp
-<https://CRAN.R-project.org/package=ggpp> and then exports them.  This package
-also contains modified code from ggquickeda
-<https://CRAN.R-project.org/package=ggquickeda> for Kaplan-Meier lines and ticks
-additions to plots.  All functions are tested to make sure that they work
-reliably.")
+<doi:10.1007/978-1-4614-8456-1> by Millard (2013), ggpp
+<https://CRAN.R-project.org/package=ggpp> by Aphalo et al. (2023) and ggstats
+<doi:10.5281/zenodo.10183964> by Larmarange (2023), and then exports them.  This
+package also contains modified code from ggquickeda
+<https://CRAN.R-project.org/package=ggquickeda> by Mouksassi et al. (2023) for
+Kaplan-Meier lines and ticks additions to plots.  All functions are tested to
+make sure that they work reliably.")
     (license license:asl2.0)))
 
 (define-public r-ggplate
@@ -18305,13 +18342,13 @@ Kindlmann and Scheidegger (2014) <doi:10.1109/TVCG.2014.2346325>.")
 (define-public r-ggbiplot
   (package
     (name "r-ggbiplot")
-    (version "0.6.1")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggbiplot" version))
        (sha256
-        (base32 "1bbajxnvy5snc9bhknl7ybndz5mc1ags313yki5y2ipzr955ia79"))))
+        (base32 "0ys4l5fhy1p1ys3q7012vxafmfrzaqlvnzmkmv32zar32j3hvmkc"))))
     (properties `((upstream-name . "ggbiplot")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-ggplot2))
@@ -18324,8 +18361,8 @@ greatest variance, together with variable vectors showing how the data variables
 relate to this space.  It provides a replacement for stats::biplot(), but with
 many enhancements to control the analysis and graphical display.  It implements
 biplot and scree plot methods which can be used with the results of prcomp(),
-princomp(), @code{FactoMineR::PCA}() or MASS::lda() and can be customized using
-ggplot2 techniques.")
+princomp(), @code{FactoMineR::PCA}(), ade4::dudi.pca() or MASS::lda() and can be
+customized using ggplot2 techniques.")
     (license license:gpl2)))
 
 (define-public r-ggautomap
@@ -20190,13 +20227,13 @@ regression model is based on G. Roerink, M. Menenti and W. Verhoef (2000)
 (define-public r-geotopbricks
   (package
     (name "r-geotopbricks")
-    (version "1.5.6.0")
+    (version "1.5.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geotopbricks" version))
        (sha256
-        (base32 "0s0rdbnhj3vr4n7bp4vy87pvr1xghw62ymr5nmaypk4wv3jgxlcv"))))
+        (base32 "1s0grxmg9sfxlys9rl0qhddmxqc2i916pdynxbib9byswzshkp5r"))))
     (properties `((upstream-name . "geotopbricks")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-terra r-stringr r-sf r-raster))
@@ -20687,13 +20724,13 @@ exist.")
 (define-public r-geomultistar
   (package
     (name "r-geomultistar")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geomultistar" version))
        (sha256
-        (base32 "0sgz78b6ar1a9bb2jzi3rc3qvhisbaj98hhhl61mnfpmi2bnha3g"))))
+        (base32 "00fkrbsi4gw7jkvfwwxnxxq9fbbkl6i2n5wmpzglwiy21y74y6pn"))))
     (properties `((upstream-name . "geomultistar")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -21350,13 +21387,13 @@ existing geography.")
 (define-public r-geogenr
   (package
     (name "r-geogenr")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geogenr" version))
        (sha256
-        (base32 "068ww0mqly3gwgaynmm98v06ccw5rjzdxrrsnf52297i98vyvlsm"))))
+        (base32 "17jg4mvwfaayda4igx4qigk83xbvn5s05y82393abwjiakp14lvi"))))
     (properties `((upstream-name . "geogenr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -21367,6 +21404,7 @@ existing geography.")
                              r-rolap
                              r-readr
                              r-httr
+                             r-geomultistar
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://josesamos.github.io/geogenr/")
@@ -21377,7 +21415,8 @@ existing geography.")
 geographic information and associated data of interest to researchers in the
 area.  The goal of this package is to generate objects that allow us to access
 and consult the information available in various formats, such as in
-@code{GeoPackage} format or in multidimensional ROLAP star format.")
+@code{GeoPackage} format or in multidimensional ROLAP (Relational On-Line
+Analytical Processing) star format.")
     (license license:expat)))
 
 (define-public r-geogam
@@ -21678,22 +21717,16 @@ matrices of pairwise distances, or vectors of sequential distances.")
 (define-public r-geodimension
   (package
     (name "r-geodimension")
-    (version "1.0.2")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geodimension" version))
        (sha256
-        (base32 "1sxmsn4l81qsgjxkrnp3g28aaq8pg608909xmss81dprpfy0dfgs"))))
+        (base32 "1bx948hwy1c2src03vwvb29plzihqvsq92mbgg396xda560kxpfd"))))
     (properties `((upstream-name . "geodimension")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyselect
-                             r-tibble
-                             r-snakecase
-                             r-sf
-                             r-rlang
-                             r-generics
-                             r-dplyr))
+    (propagated-inputs (list r-tidyselect r-tibble r-snakecase r-sf r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://josesamos.github.io/geodimension/")
     (synopsis "Definition of Geographic Dimensions")
@@ -26832,13 +26865,13 @@ and the Hessian matrix.")
 (define-public r-gasfluxes
   (package
     (name "r-gasfluxes")
-    (version "0.6-1")
+    (version "0.6-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gasfluxes" version))
        (sha256
-        (base32 "08lngyxr39iycp1fnyvl27qks421rx6l8x1akysnixhxy9f53apx"))))
+        (base32 "18yr3331wriddxbnxag3ms6lmx709mhrngv8sxfg0zcm271pkl1r"))))
     (properties `((upstream-name . "gasfluxes")))
     (build-system r-build-system)
     (propagated-inputs (list r-sfsmisc r-mass r-data-table))
@@ -27311,13 +27344,13 @@ Weidong Tian and Hongbin Ji (2012) <doi:10.1038/cr.2011.149>.")
 (define-public r-gangenerativedata
   (package
     (name "r-gangenerativedata")
-    (version "1.5.5")
+    (version "1.5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ganGenerativeData" version))
        (sha256
-        (base32 "17vzq23gvjfgfkb9lq8j7apyyvyr5j80gpjrqwpnvszf8hq027gf"))))
+        (base32 "14q5mrj7jqn8jxy2rjd46ps89wfgqa6jrvn8k1hh2s1m0wsf3bra"))))
     (properties `((upstream-name . "ganGenerativeData")))
     (build-system r-build-system)
     (inputs (list tensorflow))

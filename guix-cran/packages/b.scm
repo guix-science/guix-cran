@@ -446,16 +446,16 @@ them on in a tidy format.")
 (define-public r-bvartools
   (package
     (name "r-bvartools")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bvartools" version))
        (sha256
-        (base32 "1i3jmp2pgpjwc92bkb4awfmhzrp5173nv9nkw1yn9n8n5p305w6i"))))
+        (base32 "0klbzxqypqm5v549k56fvl67yri7bwaazf02ypsg6xyriz2a9ck4"))))
     (properties `((upstream-name . "bvartools")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-coda))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix r-coda))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/franzmohr/bvartools")
     (synopsis
@@ -8006,6 +8006,28 @@ while the @code{pdBEKK} as well as the estimation approach for this package is
 described in Rast et al. (2020) <doi:10.31234/osf.io/j57pk>.  The fitted models
 contain rstan objects and can be examined with rstan functions.")
     (license license:gpl3+)))
+
+(define-public r-bmet
+  (package
+    (name "r-bmet")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bmet" version))
+       (sha256
+        (base32 "128mnyq4jkigirf9xkpfrk4l4d8pivrj43wbaj5hizhfd84q1qzj"))))
+    (properties `((upstream-name . "bmet")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mcmcpack r-mass))
+    (home-page "https://cran.r-project.org/package=bmet")
+    (synopsis "Bayesian Multigroup Equivalence Testing")
+    (description
+     "Calculates the necessary quantities to perform Bayesian multigroup equivalence
+testing.  Currently the package includes the Bayesian models and equivalence
+criteria outlined in Pourmohamad and Lee (2023) <doi:10.1002/sta4.645>, but more
+models and equivalence testing features may be added over time.")
+    (license license:expat)))
 
 (define-public r-bmemlavaan
   (package
@@ -15638,13 +15660,13 @@ the bfsl solution.")
 (define-public r-bfs
   (package
     (name "r-bfs")
-    (version "0.5.5")
+    (version "0.5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BFS" version))
        (sha256
-        (base32 "0q4w1r9zf7ki3y4pxxmf40f1rpx9gx55bdysgdq42axbjbij944l"))))
+        (base32 "0f09r3m10a55xriajpnwpjnahkh09s87jxrik9icwmc9d3wfj9q4"))))
     (properties `((upstream-name . "BFS")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -15657,6 +15679,7 @@ the bfsl solution.")
                              r-pxweb
                              r-purrr
                              r-magrittr
+                             r-lifecycle
                              r-janitor
                              r-httr2
                              r-fs
@@ -15667,7 +15690,7 @@ the bfsl solution.")
     (description
      "Search and download data from the Swiss Federal Statistical Office (BFS) APIs
 <https://www.bfs.admin.ch/>.")
-    (license license:expat)))
+    (license license:gpl3+)))
 
 (define-public r-bfpack
   (package
@@ -21868,6 +21891,40 @@ priors and predictive models.  The Bayesian estimates and credible sets of
 mediation effects are reported as analytic results.")
     (license license:gpl2+)))
 
+(define-public r-bayesianmcpmod
+  (package
+    (name "r-bayesianmcpmod")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BayesianMCPMod" version))
+       (sha256
+        (base32 "1fcdjkisxbs0z82bf28dyxj110gvv463zq7k28l2ylakpr4346wp"))))
+    (properties `((upstream-name . "BayesianMCPMod")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rbest r-nloptr r-ggplot2 r-dosefinding
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Boehringer-Ingelheim/BayesianMCPMod")
+    (synopsis
+     "Simulate, Evaluate, and Analyze Dose Finding Trials with Bayesian MCPMod")
+    (description
+     "Bayesian MCPMod (Fleischer et al. (2022) <doi:10.1002/pst.2193>) is an
+innovative method that improves the traditional MCPMod by systematically
+incorporating historical data, such as previous placebo group data.  This R
+package offers functions for simulating, analyzing, and evaluating Bayesian
+MCPMod trials with normally distributed endpoints.  It enables the assessment of
+trial designs incorporating historical data across various true dose-response
+relationships and sample sizes.  Robust mixture prior distributions, such as
+those derived with the Meta-Analytic-Predictive approach (Schmidli et al. (2014)
+<doi:10.1111/biom.12242>), can be specified for each dose group.  Resulting
+mixture posterior distributions are used in the Bayesian Multiple Comparison
+Procedure and modeling steps.  The modeling step also includes a weighted model
+averaging approach (Pinheiro et al. (2014) <doi:10.1002/sim.6052>).  Estimated
+dose-response relationships can be bootstrapped and visualized.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-bayesianlaterality
   (package
     (name "r-bayesianlaterality")
@@ -26152,18 +26209,18 @@ calibrator) in use.")
 (define-public r-babynamesil
   (package
     (name "r-babynamesil")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "babynamesIL" version))
        (sha256
-        (base32 "0drrxpyyvqs7n3j97idz0l13cw8mxpf7p9nv3bggwxdnffrdvn04"))))
+        (base32 "0g8p5afhsh0piip0i8jxd1s52bk4zb1z5bf3chdkcbxr8z0d42f6"))))
     (properties `((upstream-name . "babynamesIL")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble))
     (home-page "https://github.com/aviezerl/babynamesIL")
-    (synopsis "Israel Baby Names 1948-2021")
+    (synopsis "Israel Baby Names 1948-2022")
     (description
      "Israeli baby names provided by Israel's Central Bureau of Statistics.  The
 package contains only names used for at least 5 children in at least one gender

@@ -8341,13 +8341,13 @@ space when there are more than a few response variables.")
 (define-public r-hemispher
   (package
     (name "r-hemispher")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hemispheR" version))
        (sha256
-        (base32 "0zxcz6zhj40r46anq0hk6zqa5fah393v91cd1akl8nhp89sv9nwc"))))
+        (base32 "13h6x73dzz7azzw251qqnqnva7bpagq78xcv88fbys9fjfy6w7bd"))))
     (properties `((upstream-name . "hemispheR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -9107,13 +9107,13 @@ ISBN:9780078025792).")
 (define-public r-healthcare-antitrust
   (package
     (name "r-healthcare-antitrust")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "healthcare.antitrust" version))
        (sha256
-        (base32 "0m839fjklx2m52ilpbxpigjl7qphgk0hbi4rvjvx9y8gsp9xfnmd"))))
+        (base32 "1584j0ljvxp4b1ly0gxs9sdsnvvg96f91x94v5xngr4zrvsc21ga"))))
     (properties `((upstream-name . "healthcare.antitrust")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -10032,13 +10032,13 @@ forecast.  The methods are explained in detail in Adaemmer et al. (2023)
 (define-public r-hdf5r-extra
   (package
     (name "r-hdf5r-extra")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hdf5r.Extra" version))
        (sha256
-        (base32 "0dzh81l27i1vcx403l7rny9lrp9pbh47wv94hwvzh6k8gibzxml4"))))
+        (base32 "1p9r577k4fakn0j3bdamq8wswga4xpasj1d3f0iq73xpwydk6vk0"))))
     (properties `((upstream-name . "hdf5r.Extra")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -10877,13 +10877,13 @@ various computational models with a single line of coding (Ahn et al., 2017)
 (define-public r-hbamr
   (package
     (name "r-hbamr")
-    (version "1.2.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hbamr" version))
        (sha256
-        (base32 "0c70gizc5q4dg6by6smsh21v0am3hmskcx6lmb8mscid3q1gmbm5"))))
+        (base32 "1n4lz92mnk6wna7q3bln1w4lafsgfnqv03jkz0vj8kpv9d5gq03g"))))
     (properties `((upstream-name . "hbamr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

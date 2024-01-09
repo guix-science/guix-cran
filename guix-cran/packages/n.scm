@@ -4697,6 +4697,30 @@ connecting to Amazon Web Service ('AWS') Athena
 ('SDK') paws <https://github.com/paws-r/paws> is used as a driver.")
     (license license:expat)))
 
+(define-public r-nobbs
+  (package
+    (name "r-nobbs")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NobBS" version))
+       (sha256
+        (base32 "0dvl97v2nzaamlr327mdm51lpzm4z3451fwivvp0ijvbac3cc29r"))))
+    (properties `((upstream-name . "NobBS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-rjags r-magrittr r-dplyr r-coda))
+    (home-page "https://cran.r-project.org/package=NobBS")
+    (synopsis "Nowcasting by Bayesian Smoothing")
+    (description
+     "This package provides a Bayesian approach to estimate the number of
+occurred-but-not-yet-reported cases from incomplete, time-stamped reporting data
+for disease outbreaks. @code{NobBS} learns the reporting delay distribution and
+the time evolution of the epidemic curve to produce smoothed nowcasts in both
+stable and time-varying case reporting settings, as described in @code{McGough}
+et al. (2020) <doi:10.1371/journal.pcbi.1007735>.")
+    (license license:expat)))
+
 (define-public r-noah
   (package
     (name "r-noah")
@@ -5357,16 +5381,16 @@ functions based on the NMSLIB <https://github.com/nmslib/nmslib> Python Library.
 (define-public r-nmsim
   (package
     (name "r-nmsim")
-    (version "0.0.6")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMsim" version))
        (sha256
-        (base32 "0byq3yl5x20hnvbvzrkssck5zfb7bwldsaxabqg7pnjzxg7jg5ll"))))
+        (base32 "0ciypdpwr694sjkvl1hq7lg22zp39ifb5f0va9vdhyss7lvx32xi"))))
     (properties `((upstream-name . "NMsim")))
     (build-system r-build-system)
-    (propagated-inputs (list r-r-utils r-nmdata r-mass r-data-table))
+    (propagated-inputs (list r-r-utils r-nmdata r-mass r-fst r-data-table))
     (home-page "https://philipdelff.github.io/NMsim/")
     (synopsis "Seamless 'Nonmem' Simulation Platform")
     (description
@@ -5640,13 +5664,13 @@ but easily integrated with base and tidyverse'.")
 (define-public r-nmcalc
   (package
     (name "r-nmcalc")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMcalc" version))
        (sha256
-        (base32 "01lp1cldldx6nhpsqlanfzybswxpqisrc8zncx4za3q85rvbqnjl"))))
+        (base32 "199pd9wmakrk96vqb1gwwq6pwsk00r4vn6r3ff9awylwl6vbs7bq"))))
     (properties `((upstream-name . "NMcalc")))
     (build-system r-build-system)
     (propagated-inputs (list r-data-table))
@@ -10836,6 +10860,49 @@ features in an sf object as a network graph surmising a sf plot.  Fits into
 ggplot2 grammar.")
     (license license:gpl3+)))
 
+(define-public r-netlogor
+  (package
+    (name "r-netlogor")
+    (version "1.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NetLogoR" version))
+       (sha256
+        (base32 "003il26z4xs90772l66xh21ivkl031w81pvc5zqfr35r2xmmd4cn"))))
+    (properties `((upstream-name . "NetLogoR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra r-quickplot r-data-table))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://netlogor.predictiveecology.org")
+    (synopsis "Build and Run Spatially Explicit Agent-Based Models")
+    (description
+     "Build and run spatially explicit agent-based models using only the R platform.
+@code{NetLogoR} follows the same framework as the @code{NetLogo} software
+(Wilensky (1999) <http://ccl.northwestern.edu/netlogo/>) and is a translation in
+R of the structure and functions of @code{NetLogo}'. @code{NetLogoR} provides
+new R classes to define model agents and functions to implement spatially
+explicit agent-based models in the R environment.  This package allows
+benefiting of the fast and easy coding phase from the highly developed
+@code{NetLogo} framework, coupled with the versatility, power and massive
+resources of the R software.  Examples of two models from the @code{NetLogo}
+software repository (Ants <http://ccl.northwestern.edu/netlogo/models/Ants>) and
+Wolf-Sheep-Predation
+(<http://ccl.northwestern.edu/netlogo/models/@code{WolfSheepPredation>}), and a
+third, Butterfly, from Railsback and Grimm (2012)
+<https://www.railsback-grimm-abm-book.com/>, all written using @code{NetLogoR}
+are available.  The @code{NetLogo} code of the original version of these models
+is provided alongside.  A programming guide inspired from the @code{NetLogo}
+Programming Guide (<https://ccl.northwestern.edu/netlogo/docs/programming.html>)
+and a dictionary of @code{NetLogo} primitives
+(<https://ccl.northwestern.edu/netlogo/docs/dictionary.html>) equivalences are
+also available.  NOTE: To increment time', these functions can use a for loop or
+can be integrated with a discrete event simulator, such as @code{SpaDES}
+(<https://cran.r-project.org/package=@code{SpaDES>}).  The suggested package
+fastshp can be installed with install.packages(\"fastshp\", repos =
+(\"<https://rforge.net>\"), type = \"source\")'.")
+    (license license:gpl3)))
+
 (define-public r-netint
   (package
     (name "r-netint")
@@ -11884,13 +11951,13 @@ type, and converting formats.  For more information, see the readme file at
 (define-public r-neonstore
   (package
     (name "r-neonstore")
-    (version "0.4.4")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "neonstore" version))
        (sha256
-        (base32 "0fhjm6513kd4y3lry8dwcwk13ns92yk5h3san7ww2ahhdhy4hx9c"))))
+        (base32 "1hj45bfx4m8afnggrhq47wxhvc37pkr87ilizxx2xa1f0vrwp8i0"))))
     (properties `((upstream-name . "neonstore")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -11898,9 +11965,13 @@ type, and converting formats.  For more information, see the readme file at
                              r-thor
                              r-r-utils
                              r-progress
+                             r-memoise
                              r-httr
+                             r-glue
+                             r-duckdbfs
                              r-duckdb
-                             r-dbi))
+                             r-dbi
+                             r-cachem))
     (home-page "https://cran.r-project.org/package=neonstore")
     (synopsis "NEON Data Store")
     (description

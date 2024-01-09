@@ -1044,24 +1044,21 @@ the counterpart of the Shiny Application, <https://dynamicfit.app>.")
 (define-public r-dynamaedes
   (package
     (name "r-dynamaedes")
-    (version "2.1.2")
+    (version "2.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dynamAedes" version))
        (sha256
-        (base32 "04d161lvd1hbr9y9cawwj50psaql8gmnskggaxbq9c0wwdgxr311"))))
+        (base32 "1pmcxdac29lwy94l1k9fn4b7chp4c6vj27aajhyf6fhxa41dq921"))))
     (properties `((upstream-name . "dynamAedes")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp
-                             r-slam
-                             r-raster
+    (propagated-inputs (list r-terra
                              r-geosphere
                              r-foreach
-                             r-fields
                              r-drc
-                             r-dplyr
-                             r-doparallel))
+                             r-doparallel
+                             r-abind))
     (native-inputs (list r-knitr))
     (home-page "https://mattmar.github.io/dynamAedes/")
     (synopsis
@@ -8564,13 +8561,13 @@ as given in Barnett, W. A. (1980) (<DOI:10.1016/0304-4076(80)90070-6>).")
 (define-public r-dm
   (package
     (name "r-dm")
-    (version "1.0.8")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dm" version))
        (sha256
-        (base32 "0cwmmpw8w4wvxn44gfqk06rqhznigdcf24faiyqrh5k048xpf3sk"))))
+        (base32 "1xrsmdnkq52wp56f9j3506vy9xfqr8hcy6xabcdbj065kd3zpr13"))))
     (properties `((upstream-name . "dm")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -20586,13 +20583,13 @@ in <@code{arXiv:2004.03758>}.")
 (define-public r-ddiwr
   (package
     (name "r-ddiwr")
-    (version "0.17")
+    (version "0.18")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DDIwR" version))
        (sha256
-        (base32 "0ky8gpqb732wc089g4ww5mr3br728jq58kxd2vq79589m81ycq47"))))
+        (base32 "1gwyp4pwy6hs4hwpl5w106mrk0f9sfl8lgcqxr8f3l1hl9hc31sl"))))
     (properties `((upstream-name . "DDIwR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -23378,13 +23375,13 @@ Dataset JSON schema file, as described in CDISC (2023)
 (define-public r-dataset
   (package
     (name "r-dataset")
-    (version "0.2.7")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dataset" version))
        (sha256
-        (base32 "0c3cjwpdz6maklsrry6jsxy84dki289s58kc6vx1a68p4n22v5ws"))))
+        (base32 "0isk6c16sli3wb2x9kf09virrn31j2r9y8mim8s8x9kyglz3r7j3"))))
     (properties `((upstream-name . "dataset")))
     (build-system r-build-system)
     (propagated-inputs (list r-isocodes r-assertthat))

@@ -3481,13 +3481,13 @@ place, streamlining your workflow for optimal productivity.")
 (define-public r-oralopioids
   (package
     (name "r-oralopioids")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OralOpioids" version))
        (sha256
-        (base32 "02qbysywx2v86lhg2rx431mclzda7vrmmswdm8bd75lf4ac3wvgi"))))
+        (base32 "0rp15jdcd7k5150wq92fz3l4rgz5wqzn0fcadp5h6i8wwwxxj16b"))))
     (properties `((upstream-name . "OralOpioids")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -3500,6 +3500,7 @@ place, streamlining your workflow for optimal productivity.")
                              r-purrr
                              r-plyr
                              r-openxlsx
+                             r-magrittr
                              r-jsonlite
                              r-dplyr))
     (native-inputs (list r-knitr))
@@ -10642,13 +10643,13 @@ distributions are implemented as described in OâNeill (2019)
 (define-public r-occumb
   (package
     (name "r-occumb")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "occumb" version))
        (sha256
-        (base32 "1q4vfk9i3wk9hjm297rj3xw051ny6vqdx6zl32i7c9n7gyyk1dwm"))))
+        (base32 "1gvcfhj3lhqj9y9qm3fh0f66bckv4wslpy9ri1dan96lp4qlqx2f"))))
     (properties `((upstream-name . "occumb")))
     (build-system r-build-system)
     (inputs (list jags))

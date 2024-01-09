@@ -5990,13 +5990,13 @@ provides tools to check conditions and return informative error messages.")
 (define-public r-arkdb
   (package
     (name "r-arkdb")
-    (version "0.0.16")
+    (version "0.0.17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arkdb" version))
        (sha256
-        (base32 "1xzp0j20z8vbzaalmxxqdcipd5fr6syw2k96fv2i6cf54xdaa1p3"))))
+        (base32 "1kmbl12rz8zwbn0cxqfnzil9pnkni3z5jsyw0k3q00hhc54n0h59"))))
     (properties `((upstream-name . "arkdb")))
     (build-system r-build-system)
     (propagated-inputs (list r-dbi))
@@ -12810,17 +12810,17 @@ Stammann, and Wanner (2020) <@code{arXiv:2004.12655>}.")
 (define-public r-aloom
   (package
     (name "r-aloom")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aloom" version))
        (sha256
-        (base32 "184ki2l3zdn8k0dbmm7ywb75dlsvpmy4p96drn3ixrha97ra5x7p"))))
+        (base32 "0n5vqp9hhdhy092yg93ldm2ii1l5pz30r7m2iwpjck0s92jjrhda"))))
     (properties `((upstream-name . "aloom")))
     (build-system r-build-system)
     (propagated-inputs (list r-randomforest r-glmnet))
-    (home-page "https://cran.r-project.org/package=aloom")
+    (home-page "https://www.rcc.org.rs/aloom.html")
     (synopsis "All Leave-One-Out Models")
     (description
      "This package creates all leave-one-out models and produces predictions for test
@@ -17009,13 +17009,13 @@ book Basketball on Paper written by Dean Oliver.")
 (define-public r-adtsa
   (package
     (name "r-adtsa")
-    (version "1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ADTSA" version))
        (sha256
-        (base32 "0298rsjp8ppi5cxavh3f6d689k2zl2grlhz9a1fnkqvw27qnwivi"))))
+        (base32 "1qaxb7xja7zqdz5pwy5ad8jah3cvqpial2isjwqndhlmsvfysl5n"))))
     (properties `((upstream-name . "ADTSA")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=ADTSA")
@@ -17027,7 +17027,8 @@ block bootstrap provided by this package.  It generates percentile,
 bias-corrected, and accelerated intervals and estimates partial autocorrelations
 using Durbin-Levinson.  This package calculates the autocorrelation power
 spectrum, computes cross-correlations between two time series, computes
-bandwidth for any time series, and performs autocorrelation frequency analysis.")
+bandwidth for any time series, and performs autocorrelation frequency analysis.
+It also calculates the periodicity of a time series.")
     (license license:gpl3)))
 
 (define-public r-adsdatahubr
@@ -17525,13 +17526,13 @@ quantities of interest for the target density itself.")
 (define-public r-admiralvaccine
   (package
     (name "r-admiralvaccine")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admiralvaccine" version))
        (sha256
-        (base32 "0iwgglk0bz760898gpmw6wn745j5rk8b6zz4psdycik0vsamijp3"))))
+        (base32 "0asi4939k50y05f1klga4i8wyw4hxlczsz3sg3as39pdsp6zzn48"))))
     (properties `((upstream-name . "admiralvaccine")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -18172,19 +18173,19 @@ approaches are described in the review Dray et al (2012)
 (define-public r-ader
   (package
     (name "r-ader")
-    (version "1.4")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ADER" version))
        (sha256
-        (base32 "0ada3b0ykbg1pdqj8i3ir5ldzb2prf3bhwm2mpln14h19hxc6i35"))))
+        (base32 "1zby06fw171inlri2k0k4n5lggsr9zxzad2pv08882md1klqwkpw"))))
     (properties `((upstream-name . "ADER")))
     (build-system r-build-system)
-    (home-page "https://www.paraninfo.es/catalogo/9788484767053")
+    (home-page "https://www.paraninfo.es/catalogo/9788484768333/")
     (synopsis "Data Analysis in Ecology")
     (description
-     "Data sets used in Cayuela and De la Cruz (2022, ISBN:978-84-8476-705-3).")
+     "Data sets used in Cayuela and De la Cruz (2022, ISBN:978-84-8476-833-3).")
     (license license:gpl2+)))
 
 (define-public r-adequacymodel
@@ -19643,13 +19644,13 @@ plot the activity in a variety of ways.")
 (define-public r-activanalyzer
   (package
     (name "r-activanalyzer")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "activAnalyzer" version))
        (sha256
-        (base32 "0dz6r3z8zcsiiqirr1gd97m53afswf1qg6gya6km605my33xn56b"))))
+        (base32 "1kvpdhv8rcbxqrdh58ffh0bwwwi5w62r75chm5s7j6358lymiajh"))))
     (properties `((upstream-name . "activAnalyzer")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
