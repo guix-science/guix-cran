@@ -286,6 +286,33 @@ it assesses variance homogeneity and normality of data in each group via tests
 and plots.  All twowaytests functions are designed for two-way layout.")
     (license license:gpl2+)))
 
+(define-public r-twowayfeweights
+  (package
+    (name "r-twowayfeweights")
+    (version "2.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TwoWayFEWeights" version))
+       (sha256
+        (base32 "1k674q11wvmqa1rpnxzrqhjq73pjl2fbi858ifwvd90dlvp530vp"))))
+    (properties `((upstream-name . "TwoWayFEWeights")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang
+                             r-magrittr
+                             r-haven
+                             r-fixest
+                             r-dplyr
+                             r-cli))
+    (home-page "https://cran.r-project.org/package=TwoWayFEWeights")
+    (synopsis
+     "Estimation of the Weights Attached to the Two-Way Fixed Effects Regressions")
+    (description
+     "Estimates the weights and measure of robustness to treatment effect
+heterogeneity attached to two-way fixed effects regressions. @code{ClÃ©ment} de
+Chaisemartin, Xavier D'@code{HaultfÅuille} (2020) <DOI: 10.1257/aer.20181169>.")
+    (license license:expat)))
+
 (define-public r-twoway
   (package
     (name "r-twoway")
@@ -7656,37 +7683,36 @@ plots.")
 (define-public r-transforemotion
   (package
     (name "r-transforemotion")
-    (version "0.1.1")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "transforEmotion" version))
        (sha256
-        (base32 "0lnmgbsh26mazx0g1s0jxg3jk1a6vw3bsaw07viv9kx3rdf6wc46"))))
+        (base32 "0vm6jls2whqkr1x7gwa9h6x1phng908z9qyfmpjr6nrykkwmk5va"))))
     (properties `((upstream-name . "transforEmotion")))
     (build-system r-build-system)
     (propagated-inputs (list r-reticulate
                              r-remotes
                              r-pbapply
-                             r-osfr
+                             r-matrix
                              r-lsafun
+                             r-googledrive
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=transforEmotion")
-    (synopsis "Sentiment Analysis for Text and Qualitative Data")
+    (synopsis
+     "Sentiment Analysis for Text, Image and Video using Transformer Models")
     (description
      "This package implements sentiment analysis using huggingface
-<https://huggingface.co> transformer zero-shot classification model pipelines.
-The default pipeline is Cross-Encoder's @code{DistilRoBERTa}
-<https://huggingface.co/cross-encoder/nli-distilroberta-base> trained on the
-Stanford Natural Language Inference <https://nlp.stanford.edu/projects/snli/>
-and Multi-Genre Natural Language Inference
-<https://huggingface.co/datasets/multi_nli> datasets.  Using similar models,
-zero-shot classification transformers have demonstrated superior performance
-relative to other natural language processing models <@code{arXiv:1909.00161>}.
-All other zero-shot classification model pipelines can be implemented using
-their model name from
-<https://huggingface.co/models?pipeline_tag=zero-shot-classification>}.")
+<https://huggingface.co> transformer zero-shot classification model pipelines
+for text and image data.  The default text pipeline is Cross-Encoder's
+@code{DistilRoBERTa}
+<https://huggingface.co/cross-encoder/nli-distilroberta-base> and default
+image/video pipeline is Open AI's CLIP
+<https://huggingface.co/openai/clip-vit-base-patch32>.  All other zero-shot
+classification model pipelines can be implemented using their model name from
+<https://huggingface.co/models?pipeline_tag=zero-shot-classification>.")
     (license license:gpl3+)))
 
 (define-public r-tramvs
@@ -12977,6 +13003,27 @@ correlate two timelines of events.  A brief description is available at
 <https://barryzee.github.io/@code{timeLineGraphics_manuscript/golden_age.html>}.")
     (license license:gpl2+)))
 
+(define-public r-timedf
+  (package
+    (name "r-timedf")
+    (version "0.9.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "timeDF" version))
+       (sha256
+        (base32 "1civib75j61b5hw6jm0ga15y9q67mhd927a5jhk9wik7sfxrd7ll"))))
+    (properties `((upstream-name . "timeDF")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://github.com/niceume/timeDF")
+    (synopsis "Subset and Flag Data Frames with Times by the Use of Periods")
+    (description
+     "Data frames with time information are subset and flagged with period
+information.  Data frames with times are dealt as @code{timeDF} objects and
+periods are represented as @code{periodDF} objects.")
+    (license license:gpl3+)))
+
 (define-public r-timedeppar
   (package
     (name "r-timedeppar")
@@ -15327,13 +15374,13 @@ dice.  Experiments can be combined with the pipe-operator.")
 (define-public r-tidydensity
   (package
     (name "r-tidydensity")
-    (version "1.2.6")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TidyDensity" version))
        (sha256
-        (base32 "12lgx1ng76fhn7nx9a4j6msdn9srrd0fb2fw983wjlykk6imfki9"))))
+        (base32 "1pxl4x5d4vg0y7dq0b39f4kng0x3yqdh9la7cav7ic1hijyrv6w3"))))
     (properties `((upstream-name . "TidyDensity")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -15901,23 +15948,25 @@ uncertainty bands.")
 (define-public r-tidyaml
   (package
     (name "r-tidyaml")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyAML" version))
        (sha256
-        (base32 "129y8i2642fvgzf6j0jpiqkxzqsc3j66idnmqimd19rq6316glhb"))))
+        (base32 "0nifz4c1n7b1xbj3hp4kvsqcdmpsdrqv7zi6q58chsf9zhhlakni"))))
     (properties `((upstream-name . "tidyAML")))
     (build-system r-build-system)
     (propagated-inputs (list r-workflowsets
                              r-workflows
+                             r-tidyr
                              r-rsample
                              r-rlang
                              r-purrr
                              r-parsnip
                              r-forcats
-                             r-dplyr))
+                             r-dplyr
+                             r-broom))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/spsanderson/tidyAML")
     (synopsis "Automatic Machine Learning with 'tidymodels'")
@@ -17371,27 +17420,30 @@ Soto et al. (2011) <doi:10.1139/x11-045>.")
 (define-public r-tglkmeans
   (package
     (name "r-tglkmeans")
-    (version "0.3.11")
+    (version "0.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tglkmeans" version))
        (sha256
-        (base32 "036b4f3qns6av2pmldd7dkkcrlxbdfdmlc6mx2yvbcwfzg0qfhcn"))))
+        (base32 "1plg03k9r4sp8ck5qcj8shblr8378bynyyc7yqwcqv856vkl9icd"))))
     (properties `((upstream-name . "tglkmeans")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
                              r-tgstat
+                             r-rcppparallel
                              r-rcpp
                              r-purrr
                              r-plyr
+                             r-matrix
                              r-magrittr
                              r-ggplot2
                              r-future
                              r-dplyr
-                             r-dofuture))
+                             r-dofuture
+                             r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=tglkmeans")
+    (home-page "https://tanaylab.github.io/tglkmeans/")
     (synopsis "Efficient Implementation of K-Means++ Algorithm")
     (description
      "Efficient implementation of K-Means++ algorithm.  For more information see (1)
@@ -19172,13 +19224,13 @@ plenty of choices for the model types are available, which can be found in the
 (define-public r-testgardener
   (package
     (name "r-testgardener")
-    (version "3.3.0")
+    (version "3.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TestGardener" version))
        (sha256
-        (base32 "0rbfglfcjav32xl3mkr6pgvr3j3h8kxgp104blrncphym21ajmw8"))))
+        (base32 "1f7ackd1hmcrmb9w59xd8f8c1rpv6yn2z46yfmyk7ihlc0bkssi1"))))
     (properties `((upstream-name . "TestGardener")))
     (build-system r-build-system)
     (propagated-inputs (list r-utf8
@@ -19584,13 +19636,13 @@ finding the optimal argument combinations with respect to each diagnostic.")
 (define-public r-testanaapp
   (package
     (name "r-testanaapp")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TestAnaAPP" version))
        (sha256
-        (base32 "0cnmx0cj2dz5mrd869fnx5phm2pj7ynfkfwa4avwyin15vvhxhpi"))))
+        (base32 "0riiypwvskpx4mzc5md8mmarknghcy64lmq3fa0rybl28qhl2mp9"))))
     (properties `((upstream-name . "TestAnaAPP")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidysem
@@ -19878,13 +19930,13 @@ forecasts, as discussed in the paper by Jupp (2012)
 (define-public r-ternary
   (package
     (name "r-ternary")
-    (version "2.2.1")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Ternary" version))
        (sha256
-        (base32 "0cjivmnyp0dpsi9qnbr59mvc0g9ljp6liiwvx856ac86cihndf8y"))))
+        (base32 "0mspvqhbw76hxq6bcx1lspmwjar5a0fdk4ps572mq4jg7pa37c45"))))
     (properties `((upstream-name . "Ternary")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite r-sp r-shiny r-rcpphungarian

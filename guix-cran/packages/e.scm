@@ -3227,18 +3227,17 @@ C.J. (2022) Preprint <doi:10.13140/RG.2.2.11828.94085>.")
 (define-public r-ewsmethods
   (package
     (name "r-ewsmethods")
-    (version "1.2.1")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EWSmethods" version))
        (sha256
-        (base32 "0019n55534xcmkn78bsvdwjkk44qz8dmbljlswmmxnp685i9qir4"))))
+        (base32 "0al837hrzwxdwn9ls2v9y35vlv4irzsw6brsbzy22fndcg8zvhiz"))))
     (properties `((upstream-name . "EWSmethods")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
                              r-tidyr
-                             r-seasonal
                              r-scales
                              r-reticulate
                              r-redm
@@ -8837,13 +8836,13 @@ vignette.")
 (define-public r-epir
   (package
     (name "r-epir")
-    (version "2.0.66")
+    (version "2.0.67")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epiR" version))
        (sha256
-        (base32 "08zc8whnlhg4hpz161mijww2h2q45vpvhl5ghc5asnx04amh04z0"))))
+        (base32 "1386kn6b8xn8qr8ppr88i6cin49w1qs7a3ff1qprsblsmvicijd7"))))
     (properties `((upstream-name . "epiR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

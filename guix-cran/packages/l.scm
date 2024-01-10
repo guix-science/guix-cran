@@ -4679,13 +4679,13 @@ log-concave.  For further information see Duembgen, Rufibach and Schuhmacher
 (define-public r-logconcdead
   (package
     (name "r-logconcdead")
-    (version "1.6-8")
+    (version "1.6-9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LogConcDEAD" version))
        (sha256
-        (base32 "1d20shva9sqdcmij0da61f9vzaz6nnw4dylribc9lsnjm3qf2079"))))
+        (base32 "0m744byjlf5wrpg5pzi4229h3gdzv88bxfr60mgpg9qy4l6r1p2p"))))
     (properties `((upstream-name . "LogConcDEAD")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-mclust r-mass))
@@ -10769,13 +10769,13 @@ originals.")
 (define-public r-lesssem
   (package
     (name "r-lesssem")
-    (version "1.5.2")
+    (version "1.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lessSEM" version))
        (sha256
-        (base32 "0hnhr87pb8iia144br84sslbp2jp97iad9702wpv7430qfx740l0"))))
+        (base32 "1i15acfav9jx5l9ky75ir4r9axv746wgx18sppp6xsx2i8dcd67a"))))
     (properties `((upstream-name . "lessSEM")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -14971,13 +14971,13 @@ are raster dataset exportable to any common GIS format.")
 (define-public r-landscapemetrics
   (package
     (name "r-landscapemetrics")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "landscapemetrics" version))
        (sha256
-        (base32 "0z5hr4ysjydffg5zk41wxbnvz2s30skgacdgz42rs1b49hmpfa7f"))))
+        (base32 "0l5slwq0mgkchs1pn3ns4qzgsf994xn73waqsvrwl4vb99a3d2aj"))))
     (properties `((upstream-name . "landscapemetrics")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -16442,13 +16442,13 @@ performance than methods commonly used in LINCS L1000 data deconvolution.")
 (define-public r-l1centrality
   (package
     (name "r-l1centrality")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "L1centrality" version))
        (sha256
-        (base32 "03smpg2b4fcfzy70856hnrvpw58j6gqvianhi0wr05m1kysy61qy"))))
+        (base32 "1cg80g5s4hmjk6qrhf55mw33cr91agj5shr938jigp59nc3rcr7s"))))
     (properties `((upstream-name . "L1centrality")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr r-rcpp r-igraph))

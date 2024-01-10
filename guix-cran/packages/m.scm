@@ -9994,15 +9994,22 @@ Parameters.  Modified likelihood estimates are provided.")
 (define-public r-mpindex
   (package
     (name "r-mpindex")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mpindex" version))
        (sha256
-        (base32 "1xcv6rdj9r1yj1jh0672fq9w1q1bq580h0zkam31m871b44dvnsh"))))
+        (base32 "1csza6krcjclp98b9wj424vkmq5jfg2pglqrsp72pwagpas4dsg7"))))
     (properties `((upstream-name . "mpindex")))
     (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-purrr
+                             r-openxlsx
+                             r-jsonlite
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/yng-me/mpindex")
     (synopsis "Multidimensional Poverty Index (MPI)")
@@ -10234,13 +10241,13 @@ representations of multidimensional data sets.")
 (define-public r-movmf
   (package
     (name "r-movmf")
-    (version "0.2-7")
+    (version "0.2-8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "movMF" version))
        (sha256
-        (base32 "1n2s03h9ksn0sv7k8w93ddy5q1m35nw4jywa98yk0yiq3s4dvsnx"))))
+        (base32 "1rxi0qk5lg4nyhsbmpdkfj9ygnhx8zdkamb6s5hyjgw5z6lm6ni6"))))
     (properties `((upstream-name . "movMF")))
     (build-system r-build-system)
     (propagated-inputs (list r-slam r-skmeans r-clue))
@@ -16978,13 +16985,13 @@ framework.")
 (define-public r-mlr3resampling
   (package
     (name "r-mlr3resampling")
-    (version "2023.12.20")
+    (version "2024.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3resampling" version))
        (sha256
-        (base32 "0xpdlb4l507ixz0hiz5vkgimpll13g36ysz4pp8x6z64hx2420jm"))))
+        (base32 "0fzh0b3bpg2llqgl0bm7v72h0ffy3dgr310gw8lsgv28b9i7sc1g"))))
     (properties `((upstream-name . "mlr3resampling")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6
@@ -17011,7 +17018,9 @@ which it is possible (perfect if same/other have similar test accuracy for each
 group; other is usually somewhat less accurate than same; other can be just as
 bad as featureless baseline when the groups have different patterns).  For more
 information, <https://tdhock.github.io/blog/2023/R-gen-new-subsets/> describes
-the method in depth.")
+the method in depth.  How many train samples are required to get accurate
+predictions on a test set? Cross-validation can be used to answer this question,
+with variable size train sets.")
     (license license:gpl3)))
 
 (define-public r-mlr3oml
@@ -22906,6 +22915,29 @@ reproduce results in the related publication (John, D., Tang.  Q., Albinali, F.
 and Intille, S. (2019) <doi:10.1123/jmpb.2018-0068>).")
     (license license:expat)))
 
+(define-public r-mimisbm
+  (package
+    (name "r-mimisbm")
+    (version "0.0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mimiSBM" version))
+       (sha256
+        (base32 "1rnpk8wxgx4pncb9axkdwjzh8cp70ykw5zixrsqj60h7drv8snhq"))))
+    (properties `((upstream-name . "mimiSBM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-blockmodels))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=mimiSBM")
+    (synopsis "Mixture of Multilayer Integrator Stochastic Block Models")
+    (description
+     "Our approach uses a mixture of multilayer stochastic block models to group
+co-membership matrices with similar information into components and to partition
+observations into different clusters.  See De Santiago (2023, ISBN:
+978-2-87587-088-9).")
+    (license license:gpl3)))
+
 (define-public r-mimir
   (package
     (name "r-mimir")
@@ -24927,13 +24959,13 @@ Lott (2018) <doi:10.1080/00031305.2018.1473796>.  Grund (2021)
 (define-public r-miceadds
   (package
     (name "r-miceadds")
-    (version "3.16-18")
+    (version "3.17-44")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "miceadds" version))
        (sha256
-        (base32 "0xfgh3i6k9c15hwqxp60x4phg3flc7ymrh98x9lsmahanb96rifv"))))
+        (base32 "0r91rjl44sxdwfdb0z10hnjq7yfiqlcwfm6aa0a7lm1vmk8rvxkf"))))
     (properties `((upstream-name . "miceadds")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-mitools r-mice))

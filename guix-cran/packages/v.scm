@@ -129,13 +129,13 @@ for details.")
 (define-public r-vvtableau
   (package
     (name "r-vvtableau")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vvtableau" version))
        (sha256
-        (base32 "1pqw15wm5hmnclm2r0qgqy80a1i8w6p35qky2ccaxcbwci4grgk4"))))
+        (base32 "027fq4mh3ls9a8mb5lpr12dxncwmz1dl9p5ajv5ig2f18s9saq9z"))))
     (properties `((upstream-name . "vvtableau")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -5295,13 +5295,13 @@ publication DN Olivieri (2014) <doi:10.1007/s00251-014-0784-3>.")
 (define-public r-vdiver
   (package
     (name "r-vdiver")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vDiveR" version))
        (sha256
-        (base32 "1f2mvpnsm4kcjwc916258ll0cy9f53zfya42xbdi5x6wds08mi66"))))
+        (base32 "1rxygl5micg07p7la9wyvp4dmfwkjdbhqp660mrq6a3drr4x5bj2"))))
     (properties `((upstream-name . "vDiveR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -5324,10 +5324,10 @@ publication DN Olivieri (2014) <doi:10.1007/s00251-014-0784-3>.")
     (synopsis "Visualization of Viral Protein Sequence Diversity Dynamics")
     (description
      "To ease the visualization of outputs from Diversity Motif Analyser
-('@code{DiMA}'; <https://github.com/PU-SDS/@code{DiMA>}). @code{vDiveR} allows
-visualization of the diversity motifs (index and its variants â major, minor
-and unique) for elucidation of the underlying inherent dynamics.  Please refer
-<https://vdiver-manual.readthedocs.io/en/latest/> for more information.")
+('@code{DiMA}'; <https://github.com/BVU-BILSAB/@code{DiMA>}). @code{vDiveR}
+allows visualization of the diversity motifs (index and its variants â major,
+minor and unique) for elucidation of the underlying inherent dynamics.  Please
+refer <https://vdiver-manual.readthedocs.io/en/latest/> for more information.")
     (license license:expat)))
 
 (define-public r-vdgraph

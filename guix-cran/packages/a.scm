@@ -4675,13 +4675,13 @@ Multi-block Partial Least Square for classifying the categorical outcome.")
 (define-public r-asmap
   (package
     (name "r-asmap")
-    (version "1.0-6")
+    (version "1.0-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ASMap" version))
        (sha256
-        (base32 "0l48frd7qik70zw4qrs0kw9rz4gqb9lr1sa8kxzhfbsxjkildrxl"))))
+        (base32 "04byjdz3dzgf06bmmpvslihya23lanl8dmjbq22vvwlhi82f88im"))))
     (properties `((upstream-name . "ASMap")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcolorbrewer r-qtl r-lattice r-gtools r-fields))
@@ -8300,6 +8300,41 @@ a single function `apng'.  Call the apng function with a vector of file names
 (which should be png files) to convert them to a single animated png file.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-apmx
+  (package
+    (name "r-apmx")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "apmx" version))
+       (sha256
+        (base32 "0i9296dvlzmaxhkp3rj2irxyjmlaazl6abcbgkc2izfn29l2d8nm"))))
+    (properties `((upstream-name . "apmx")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-this-path
+                             r-purrr
+                             r-officer
+                             r-flextable
+                             r-dplyr
+                             r-arsenal))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/stephen-amori/apmx")
+    (synopsis "Automated Population Pharmacokinetic Dataset Assembly")
+    (description
+     "Automated methods to assemble population PK (pharmacokinetic) and PKPD
+(pharmacodynamic) datasets for analysis in NONMEM (non-linear mixed effects
+modeling) by Bauer (2019) <doi:10.1002/psp4.12404>.  The package includes
+functions to build datasets from SDTM (study data tabulation module)
+<https://www.cdisc.org/standards/foundational/sdtm>, A@code{DaM} (analysis
+dataset module) <https://www.cdisc.org/standards/foundational/adam>, or other
+dataset formats.  The package will combine population datasets, add covariates,
+and create documentation to support regulatory submission and internal
+communication.")
+    (license license:gpl3+)))
 
 (define-public r-apml0
   (package
@@ -18829,13 +18864,13 @@ for analytical applications.")
 (define-public r-adbcsqlite
   (package
     (name "r-adbcsqlite")
-    (version "0.8.0")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adbcsqlite" version))
        (sha256
-        (base32 "1a9mpdcyz9bihkv308vf1ramw4097jyabmwh26572bl0mwjq6a63"))))
+        (base32 "1h7gsf9pswdjdjgm3imjxm1c3kmzp0gxrkrsyv01f5wcing68am6"))))
     (properties `((upstream-name . "adbcsqlite")))
     (build-system r-build-system)
     (inputs (list sqlite))
@@ -18853,13 +18888,13 @@ parameters.")
 (define-public r-adbcpostgresql
   (package
     (name "r-adbcpostgresql")
-    (version "0.8.0.1")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adbcpostgresql" version))
        (sha256
-        (base32 "1hrd385fkjdbxkvzsrbp30llcrd1ny58ykv2m4y48bshi0753sx4"))))
+        (base32 "1wgsdlama9982mrq1cbxy0h94w1ln6ll8di1r78jp4hd51539xwr"))))
     (properties `((upstream-name . "adbcpostgresql")))
     (build-system r-build-system)
     (inputs (list zlib openssl))

@@ -1844,18 +1844,19 @@ chemical formula.")
 (define-public r-isopam
   (package
     (name "r-isopam")
-    (version "1.3.0")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "isopam" version))
        (sha256
-        (base32 "0mq4206v7bmcbms0bpijvfshi97zbsj3kjr0z88cpzhd1w4yv80p"))))
+        (base32 "1d05hcnz8pvgfsbj7hwf9jgcqnxf1rd3h1c0kw4450xhn63jbsbk"))))
     (properties `((upstream-name . "isopam")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
+                             r-tibble
                              r-proxy
-                             r-progressr
+                             r-ggplot2
                              r-future-apply
                              r-future
                              r-cluster))
@@ -1863,9 +1864,9 @@ chemical formula.")
     (synopsis "Clustering of Sites with Species Data")
     (description
      "Clustering algorithm developed for use with plot inventories of species.  It
-groups plots by subsets of species rather than overall species composition.
-There is an unsupervised and a supervised mode, the latter accepting suggestions
-for species with greater weight and cluster medoids.")
+groups plots by subsets of diagnostic species rather than overall species
+composition.  There is an unsupervised and a supervised mode, the latter
+accepting suggestions for species with greater weight and cluster medoids.")
     (license license:gpl2+)))
 
 (define-public r-isoorbi
@@ -5041,6 +5042,37 @@ flat-top kernels.")
     (description "Collection of functions for IO Psychologists.")
     (license license:bsd-3)))
 
+(define-public r-iopspackage
+  (package
+    (name "r-iopspackage")
+    (version "2.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iopspackage" version))
+       (sha256
+        (base32 "1l51h8ljcqdrbcn10d0x98ycnz8xd9da4r6y4wc8dbkvaafynm42"))))
+    (properties `((upstream-name . "iopspackage")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-usethis
+                             r-tidyr
+                             r-readxl
+                             r-openxlsx
+                             r-economiccomplexity
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=iopspackage")
+    (synopsis "IO-PS Framework Package")
+    (description
+     "This package provides a developmental R tool related to the input-output product
+space (IO-PS).  The package requires two compulsory user inputs (raw CEPPI BACI
+trade data, and any acceptable ISO country code) and has 4 optional user inputs
+(a value chain map, chosen complexity method, number of iterations to be
+performed, and a trade digit level).  Various metrics are calculated, such as
+Economic- and Product complexity, distance, opportunity gain, and inequality
+metrics, to facilitate better decision making regarding industrial policy
+making.")
+    (license license:gpl3)))
+
 (define-public r-ionr
   (package
     (name "r-ionr")
@@ -7515,17 +7547,16 @@ hashtag, popularity, user or location, and to access public users profile data."
 (define-public r-instantiate
   (package
     (name "r-instantiate")
-    (version "0.0.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "instantiate" version))
        (sha256
-        (base32 "1qnf2sjmkqrc8hcsmvf7c2yds7mixb4ypcqhilawv03iljy26qqz"))))
+        (base32 "08qqxwi3zasydlsqv4b103nhpk9jvfr96dhigsd4sa1fyh65316h"))))
     (properties `((upstream-name . "instantiate")))
     (build-system r-build-system)
-    (inputs (list))
-    (propagated-inputs (list r-rlang r-pkglite r-fs))
+    (propagated-inputs (list r-rlang r-fs))
     (home-page "https://wlandau.github.io/instantiate/")
     (synopsis "Pre-Compiled 'CmdStan' Models in R Packages")
     (description
@@ -7533,12 +7564,10 @@ hashtag, popularity, user or location, and to access public users profile data."
 @code{CmdStan} models into CRAN-ready statistical modeling R packages.  The
 models compile once during installation, the executables live inside the file
 systems of their respective packages, and users have the full power and
-convenience of cmdstanr without any additional compilation.  This approach saves
-time, allows R package developers to migrate from rstan to the more modern
-cmdstanr', and fits well with centrally maintained R installations where users
-have trouble installing their own packages, diagnosing compilation errors, and
-setting environment variables.  Packages rstantools', cmdstanr', stannis', and
-stanapi are similar Stan clients with different objectives.")
+convenience of cmdstanr without any additional compilation after package
+installation.  This approach saves time and helps R package developers migrate
+from rstan to the more modern cmdstanr'.  Packages rstantools', cmdstanr',
+stannis', and stanapi are similar Stan clients with different objectives.")
     (license license:expat)))
 
 (define-public r-installr
@@ -11518,13 +11547,13 @@ psychometric quality standards (see Blum & Holling, 2018)
 (define-public r-imagine
   (package
     (name "r-imagine")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "imagine" version))
        (sha256
-        (base32 "0dwq7gb068wd87fclca3hmdfr50bxf39va7dp1ky1i6qhk8w8g2l"))))
+        (base32 "0kf6fka9zplp8r9rdndd5n7hypf1lp8hbv2djswav1wp95knzqhg"))))
     (properties `((upstream-name . "imagine")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -13000,13 +13029,13 @@ actual Ultimate Reality}\" by Irucka Ajani Embry.")
 (define-public r-iemiscdata
   (package
     (name "r-iemiscdata")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iemiscdata" version))
        (sha256
-        (base32 "0kg9h91di5k2cdh2fwa5k7wbi28ian41zr5ksr8dnc3pb1lwv5n4"))))
+        (base32 "10cixkyx1x9m0vblxp0jrbxz3aqxf64v11ls630q55r4803dpfyz"))))
     (properties `((upstream-name . "iemiscdata")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

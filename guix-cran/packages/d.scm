@@ -8444,17 +8444,16 @@ summary ROC curve and some related AUC-based inference methods are available
 (define-public r-dmcfun
   (package
     (name "r-dmcfun")
-    (version "2.0.2")
+    (version "3.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DMCfun" version))
        (sha256
-        (base32 "1phzi3an03akf04q1j6s1dmqmfzg1r52ga7685wimcbxy4cbq323"))))
+        (base32 "19975m3bclj1gzwp86cv0bc36aknhzkd25bnvvdqk89s0sfkzbaq"))))
     (properties `((upstream-name . "DMCfun")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
-                             r-shiny
                              r-rcpp
                              r-pbapply
                              r-dplyr
@@ -8477,7 +8476,7 @@ controlled and automatic activation.  The DMC model is used to explain
 distributional reaction time (and error rate) patterns in common behavioural
 conflict-like tasks (e.g., Flanker task, Simon task).  This R-package implements
 the DMC model and provides functionality to fit the model to observed data.
-Further details are provided in the following paper: Mackenzie, I. G., &
+Further details are provided in the following paper: Mackenzie, I.G., &
 Dudschig, C. (2021).  DMCfun: An R package for fitting Diffusion Model of
 Conflict (DMC) to reaction time and error rate data.  Methods in Psychology,
 100074. <doi:10.1016/j.metip.2021.100074>.")
@@ -9047,13 +9046,13 @@ removed or further analyses as required.")
 (define-public r-dixon
   (package
     (name "r-dixon")
-    (version "0.0-8")
+    (version "0.0-9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dixon" version))
        (sha256
-        (base32 "1mflg9mpcidjq1ljgzqdwp6x0g930v9y5jgma1qxi5c5l3irkvg3"))))
+        (base32 "1lgmhg3d0f59x5mfa6j9cs009yqxyzfzv7jfz5d93jrbs0p7glnk"))))
     (properties `((upstream-name . "dixon")))
     (build-system r-build-system)
     (propagated-inputs (list r-splancs r-spatstat-geom r-spatstat))
@@ -11439,13 +11438,13 @@ knowledge into account, as described by @code{GrÃ¸nneberg} and Foldnes (2022)
 (define-public r-disclosur
   (package
     (name "r-disclosur")
-    (version "0.5.2")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "disclosuR" version))
        (sha256
-        (base32 "01fx42h6gkygyfqaryaszxmpvf8di9szwrg2lfz3a2qqx3xryia6"))))
+        (base32 "0s1j8j2jyvdr15wysi9y7yin5rz06hgd5rlqxpxz5zc8nyvar69r"))))
     (properties `((upstream-name . "disclosuR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -15679,23 +15678,26 @@ educational and psychological tests.")
 (define-public r-dexter
   (package
     (name "r-dexter")
-    (version "1.2.2")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dexter" version))
        (sha256
-        (base32 "1bvrxbg564y5wwndl92xhz628c7qpjz7vh44a0r0rc7lrc8h0hsx"))))
+        (base32 "11cn6ij402dqccjz6bv43c8b3xk25ljr8c0r6wwwxp2vd3c9fwlg"))))
     (properties `((upstream-name . "dexter")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
+                             r-sitmo
                              r-rsqlite
                              r-rlang
                              r-rcpparmadillo
                              r-rcpp
                              r-mass
+                             r-dqrng
                              r-dplyr
-                             r-dbi))
+                             r-dbi
+                             r-bh))
     (native-inputs (list r-knitr))
     (home-page "https://dexter-psychometrics.github.io/dexter/")
     (synopsis "Data Management and Analysis of Tests")
@@ -16325,13 +16327,13 @@ local projections by the desparsified lasso, as described in Adamek et al.
 (define-public r-desk
   (package
     (name "r-desk")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "desk" version))
        (sha256
-        (base32 "0n4csns2bd6larj2pxlp0hqxidlk8nxxdz9b33a61m0prly5d2z5"))))
+        (base32 "0pv54lxd326xlwscyngrfmvqf8inqqg587bi4n42wy6c76p4kbm5"))))
     (properties `((upstream-name . "desk")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstudioapi r-cli))
@@ -20509,13 +20511,13 @@ H.-P., @code{KrÃ¶ger}, P., Schubert, E., & Zimek, A. (2009)
 (define-public r-ddml
   (package
     (name "r-ddml")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ddml" version))
        (sha256
-        (base32 "1vqlqhkns0ghn1vz5xdln263f6jlpkv4sw3bdy2r0abbbjmg63w5"))))
+        (base32 "07nbdx2qd4f7yrgq00djwfxil2qgnrgd4r5rrzyqcwbv21xz0ayw"))))
     (properties `((upstream-name . "ddml")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -20532,8 +20534,9 @@ H.-P., @code{KrÃ¶ger}, P., Schubert, E., & Zimek, A. (2009)
     (description
      "Estimate common causal parameters using double/debiased machine learning as
 proposed by Chernozhukov et al. (2018) <doi:10.1111/ectj.12097>.  ddml
-simplifies estimation based on (short-)stacking, which leverages multiple base
-learners to increase robustness to the underlying data generating process.")
+simplifies estimation based on (short-)stacking as discussed in Ahrens et al.
+(2024) <@code{arXiv:2401.01645>}, which leverages multiple base learners to
+increase robustness to the underlying data generating process.")
     (license license:gpl3+)))
 
 (define-public r-ddm
@@ -23352,13 +23355,13 @@ in some case studies throughout the text.")
 (define-public r-datasetjson
   (package
     (name "r-datasetjson")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datasetjson" version))
        (sha256
-        (base32 "0srxp0layarikjz4nwc2hvgrjj9k019p1iaidarmrfgc9q96lxaa"))))
+        (base32 "145al87czagdvqwnxkqi53pj9knfvfrf9a41d8byv9pkz5mz28a4"))))
     (properties `((upstream-name . "datasetjson")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonvalidate r-jsonlite))
@@ -26139,13 +26142,13 @@ from Aitkin (1964) <doi:10.1007/BF02289723> and Liu & Wang (in prep).")
 (define-public r-dacc
   (package
     (name "r-dacc")
-    (version "0.0-2")
+    (version "0.0-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dacc" version))
        (sha256
-        (base32 "0yybgmpi171xym36c94qlxv2m9gc0ywgcbq0l6qv7w2na7axfq6b"))))
+        (base32 "1hd6n6411pb3r9s69b0b9b5a94cnbq6b098yj681bn737ldraj52"))))
     (properties `((upstream-name . "dacc")))
     (build-system r-build-system)
     (propagated-inputs (list r-pracma r-mass r-magrittr r-janitor r-iso))
@@ -26154,8 +26157,9 @@ from Aitkin (1964) <doi:10.1007/BF02289723> and Liu & Wang (in prep).")
     (description
      "Conduct detection and attribution of climate change using methods including
 optimal fingerprinting via generalized total least squares or estimating
-equation.  Provide shrinkage estimators for covariance matrix from Ledoit and
-Wolf (2004) <doi:10.1016/S0047-259X(03)00096-4>, and Ledoit and Wolf (2017)
+equation approach from Ma et al. (2023) <doi:10.1175/JCLI-D-22-0681.1>.  Provide
+shrinkage estimators for covariance matrix from Ledoit and Wolf (2004)
+<doi:10.1016/S0047-259X(03)00096-4>, and Ledoit and Wolf (2017)
 <doi:10.2139/ssrn.2383361>.")
     (license license:gpl3+)))
 

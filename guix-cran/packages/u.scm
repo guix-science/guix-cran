@@ -1030,13 +1030,13 @@ itself.")
 (define-public r-ursa
   (package
     (name "r-ursa")
-    (version "3.10.3")
+    (version "3.10.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ursa" version))
        (sha256
-        (base32 "0j4r9kygzrng5syxsyyqmqxvh5f1xwwzqqb07mnb7skh2ry1qhmx"))))
+        (base32 "0bjvssrxvlj83g3xkcykjk3k3nl1vhd0q1l3y1z8hrgxdpgh5p2h"))))
     (properties `((upstream-name . "ursa")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-png))
@@ -1267,13 +1267,13 @@ and @code{TillÃ©} (2005) and Haziza, Mecatti and Rao (2008) for details.")
 (define-public r-upstartr
   (package
     (name "r-upstartr")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "upstartr" version))
        (sha256
-        (base32 "09xzj423v0x4qvqfgyqpxyg63p8f1n5ppjc8swpyv1747ll5zmg8"))))
+        (base32 "08afvjk428r3hdhzpb5ah7iba1y8knxa0ziq9zik7fg984hr4hak"))))
     (properties `((upstream-name . "upstartr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidytext
@@ -1863,20 +1863,19 @@ unmeasured confounders using JAGS.")
 (define-public r-unmarked
   (package
     (name "r-unmarked")
-    (version "1.3.2")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "unmarked" version))
        (sha256
-        (base32 "10zq1hqrpr9js1sfdwnai64ymh2pjkh15k26jvh1jx32r0cidlm1"))))
+        (base32 "1ishwzqkkvin7vralpxnb2fdc75gvsxz1l5b9902y4h0mm4749qw"))))
     (properties `((upstream-name . "unmarked")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb
                              r-rcppeigen
                              r-rcpparmadillo
                              r-rcpp
-                             r-pbapply
                              r-matrix
                              r-mass
                              r-lme4

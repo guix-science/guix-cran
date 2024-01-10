@@ -3143,13 +3143,13 @@ for more information about TRIM.")
 (define-public r-rtriangle
   (package
     (name "r-rtriangle")
-    (version "1.6-0.12")
+    (version "1.6-0.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RTriangle" version))
        (sha256
-        (base32 "1nvbbmvakxwi6w5f46i75yd9r70z5h24lnvkn20cqsb5jbx13mxy"))))
+        (base32 "1rbilz34fm8i6krvbpzhv3d0s1ix1lcc3n82jmhdddkvdh465pc6"))))
     (properties `((upstream-name . "RTriangle")))
     (build-system r-build-system)
     (home-page "https://github.com/davidcsterratt/RTriangle")
@@ -16221,13 +16221,13 @@ to the @code{NetLogo} Mathematica Link
 (define-public r-rnetcdf
   (package
     (name "r-rnetcdf")
-    (version "2.8-1")
+    (version "2.9-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RNetCDF" version))
        (sha256
-        (base32 "0gjilz2nzwzb8izzcfl6sq5i2nf9gvsn9np4bla5ja17gv5lh0b6"))))
+        (base32 "0hn14g75i5j5qhcb8p5mrsdkjz7w35d44r08cl3w2clnfsc2nzjw"))))
     (properties `((upstream-name . "RNetCDF")))
     (build-system r-build-system)
     (inputs (list udunits netcdf))
@@ -19289,13 +19289,13 @@ used when displaying large datasets in that context.")
 (define-public r-rlinkedinads
   (package
     (name "r-rlinkedinads")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rlinkedinads" version))
        (sha256
-        (base32 "0s9ji49rr221vqw0w2hyzhymxfpmbkv3gm7fmlfza96g0xrr6lka"))))
+        (base32 "06c8xlllvcgy8kxpnwdzrsg4csabazm30hwkm73nr5jh849vgsi2"))))
     (properties `((upstream-name . "rlinkedinads")))
     (build-system r-build-system)
     (propagated-inputs (list r-urltools
@@ -19747,13 +19747,13 @@ thermocline depth, lake number, Wedderburn number, Schmidt stability and others.
 (define-public r-rlabkey
   (package
     (name "r-rlabkey")
-    (version "3.1.0")
+    (version "3.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rlabkey" version))
        (sha256
-        (base32 "1kkv7arnsxwrj8a0fv4ky1r8h9b8i5ycykrhz4cby87fsyhd776w"))))
+        (base32 "0knnfz9pp4licn0j771f9fyh1y689qw0yvjdfdnr6fii71x0in6l"))))
     (properties `((upstream-name . "Rlabkey")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-jsonlite r-httr))
@@ -20745,13 +20745,13 @@ BA (2015). \"Open-channel computation with R.\" The R Journal, 7(2), 249â26
 (define-public r-rivnet
   (package
     (name "r-rivnet")
-    (version "0.3.4")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rivnet" version))
        (sha256
-        (base32 "0xa55x18ij7k51lmd9f0m1yzddq6jf5bc39w859jhj617i91ma8l"))))
+        (base32 "0i55yb7v2vl8lks5ax3v8mkwy3hspdh1xsy6m2hyqf1azh10p324"))))
     (properties `((upstream-name . "rivnet")))
     (build-system r-build-system)
     (propagated-inputs (list r-traudem
@@ -21322,13 +21322,13 @@ F. Spinu (2013), An Algorithm for Computing Risk Parity Weights.
 (define-public r-riskmetric
   (package
     (name "r-riskmetric")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "riskmetric" version))
        (sha256
-        (base32 "0fsar4fklb7dy7np0dr5mzd42w3cqm80ag10zx1kk4pvm53653i6"))))
+        (base32 "00zc0jnnkx8z4mgr4h7w1xh8id4bai5l8jvh10xhylsvc1gy4ysg"))))
     (properties `((upstream-name . "riskmetric")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -31977,13 +31977,13 @@ of several Microsoft(r) products.  Forked from R@code{ColorBrewer} v1.1-2.")
 (define-public r-redm
   (package
     (name "r-redm")
-    (version "1.15.1")
+    (version "1.15.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rEDM" version))
        (sha256
-        (base32 "01j4pjxjj5g13hnnvfgkja68qy1cwdiaghziz5i963i8gvw19sil"))))
+        (base32 "04dmk5q6rm3rhihprpswkcwyimwq8i5q1c9fwj2wl83ldf6lvigf"))))
     (properties `((upstream-name . "rEDM")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppthread r-rcpp))
@@ -32332,23 +32332,23 @@ based and day-time based approaches (Lasslop et al. (2010)
 (define-public r-reddprec
   (package
     (name "r-reddprec")
-    (version "0.4.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reddPrec" version))
        (sha256
-        (base32 "0zmkaiivvjq8mcaz310zgjjc7y0wgsqv29bf8nhli5qawaczvb9a"))))
+        (base32 "0c1yxiqx98rns6g0nwr12s980az06f9rg75aszm913z2azwdqwk2"))))
     (properties `((upstream-name . "reddPrec")))
     (build-system r-build-system)
-    (propagated-inputs (list r-snowfall r-fields))
+    (propagated-inputs (list r-terra r-reshape r-qmap r-foreach r-doparallel))
     (home-page "https://cran.r-project.org/package=reddPrec")
     (synopsis "Reconstruction of Daily Data - Precipitation")
     (description
-     "Computes quality control for daily precipitation datasets, reconstructs the
-original series by estimating precipitation in missing values, creates new
-series in a specified pair of coordinates and creates grids.")
-    (license license:gpl3+)))
+     "Applies quality control to daily precipitation observations; reconstructs the
+original series by estimating precipitation in missing values; and creates
+gridded datasets of daily precipitation.")
+    (license license:gpl3)))
 
 (define-public r-redditextractor
   (package
@@ -32527,13 +32527,13 @@ identified and it also facilitates the process of data management.")
 (define-public r-redcapcast
   (package
     (name "r-redcapcast")
-    (version "23.12.1")
+    (version "24.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "REDCapCAST" version))
        (sha256
-        (base32 "11ggzhiq6svcvish84gxa9mnffcg21i46kz3vk5wv3hz6k58wlvf"))))
+        (base32 "1dvbwbnpzzrbvk2f765k2p1g9bzqmx0wrng8nkya100b0ipc196i"))))
     (properties `((upstream-name . "REDCapCAST")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -34122,13 +34122,13 @@ datasets from providers like the Roper Center <https://ropercenter.cornell.edu>.
 (define-public r-readrba
   (package
     (name "r-readrba")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "readrba" version))
        (sha256
-        (base32 "1aywzkcfkhfp913n5yihglj373i6fyvzi0mx293vm5rs8z2kzhdz"))))
+        (base32 "0m2bxnn3ac8qb7860268d2krxvdj4aw9v3ckd3ccqza0cspihhf1"))))
     (properties `((upstream-name . "readrba")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -36436,41 +36436,46 @@ graphing.")
 (define-public r-rcurvep
   (package
     (name "r-rcurvep")
-    (version "1.2.1")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rcurvep" version))
        (sha256
-        (base32 "1kad4zc0b95gd1h8kxdmqx74mmadcwzpl2vbrsqr620x2zg4lw4y"))))
+        (base32 "1l29z50ka9n2qma1pk8gw00xhxvzxkrd07dwrd8k5b36kiql2q3y"))))
     (properties `((upstream-name . "Rcurvep")))
     (build-system r-build-system)
+    (inputs (list openjdk))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
                              r-stringr
                              r-rlang
+                             r-rjava
                              r-rdpack
                              r-purrr
                              r-magrittr
                              r-ggplot2
+                             r-furrr
                              r-dplyr
                              r-boot))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=Rcurvep")
+    (home-page "https://github.com/moggces/Rcurvep")
     (synopsis "Concentration-Response Data Analysis using Curvep")
     (description
-     "Provide an R interface for processing concentration-response datasets using
-Curvep, a response noise filtering algorithm.  The algorithm was described in
-the publications (Sedykh A et al. (2011) <doi:10.1289/ehp.1002476> and Sedykh A
+     "An R interface for processing concentration-response datasets using Curvep, a
+response noise filtering algorithm.  The algorithm was described in the
+publications (Sedykh A et al. (2011) <doi:10.1289/ehp.1002476> and Sedykh A
 (2016) <doi:10.1007/978-1-4939-6346-1_14>).  Other parametric fitting approaches
-(e.g., Hill equation) are also adopted for ease of comparison.  Also, methods
-for calculating the confidence interval around the activity metrics are also
-provided.  The methods are based on the bootstrap approach to simulate the
-datasets (Hsieh J-H et al. <doi:10.1093/toxsci/kfy258>).  The simulated datasets
-can be used to derive the baseline noise threshold in an assay endpoint.  This
-threshold is critical in the toxicological studies to derive the
-point-of-departure (POD).")
+(e.g., Hill equation) are also adopted for ease of comparison.  3-parameter Hill
+equation from tcpl package (Filer D et al., <doi:10.1093/bioinformatics/btw680>)
+and 4-parameter Hill equation from Curve Class2 approach (Wang Y et al.,
+<doi:10.2174/1875397301004010057>) are available.  Also, methods for calculating
+the confidence interval around the activity metrics are also provided.  The
+methods are based on the bootstrap approach to simulate the datasets (Hsieh J-H
+et al. <doi:10.1093/toxsci/kfy258>).  The simulated datasets can be used to
+derive the baseline noise threshold in an assay endpoint.  This threshold is
+critical in the toxicological studies to derive the point-of-departure (POD).")
     (license license:expat)))
 
 (define-public r-rcube

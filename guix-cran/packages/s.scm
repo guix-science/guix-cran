@@ -3372,13 +3372,13 @@ of GSE1992, GSE3143 and GSE4335.")
 (define-public r-survivor
   (package
     (name "r-survivor")
-    (version "2.1.0")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "survivoR" version))
        (sha256
-        (base32 "0sr52ymfvjnijmg04xxf0gd64805nmqpzd1n2jg86ibi9hwhsznl"))))
+        (base32 "183g05zm1wlc3k038yzvw0p3ydbypr8qi47nmc49xdkzy836dw35"))))
     (properties `((upstream-name . "survivoR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -4023,13 +4023,13 @@ how we take folds based on survey design is useful.")
 (define-public r-surveycc
   (package
     (name "r-surveycc")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SurveyCC" version))
        (sha256
-        (base32 "0k6ac7c1x4ppwrsv9icx5fw8y0vaw264f0h9ni4m5i4dix90ss79"))))
+        (base32 "1jhgc6alrpib0qhnh2l9zp9nvy8vfgi2y4dy26vh92rqhdym19ss"))))
     (properties `((upstream-name . "SurveyCC")))
     (build-system r-build-system)
     (propagated-inputs (list r-survey r-candisc))
@@ -4040,20 +4040,9 @@ how we take folds based on survey design is useful.")
 tests of significance for secondary canonical correlations.  A key feature of
 this package is that it incorporates survey data structure directly in a novel
 test of significance via a sequence of simple linear regression models on the
-canonical variates.  See references - Cruz-Cano and Mead-Morse (2023) \"Canonical
-Correlation Analysis for Complex Survey data\" The Stata Journal under review.
-Gentzke AS, Wang TW, Cornelius M, Park-Lee E, Ren C, Sawdey MD, Cullen KA,
-Loretan C, Jamal A, Homa DM (2021) \"Tobacco Product Use and Associated Factors
-among Middle and High School Students - National Youth Tobacco Survey, United
-States\" <doi:10.15585/mmwr.ss7105a1>.  Gittins R (1986 ISBN:3642698786,
-9783642698781). @code{CaliÅski} T., @code{KrzyÅko} M. and WOÅ@code{yÅski} W.
-(2006) \"A Comparison of Some Tests for Determining the Number of Nonzero
-Canonical Correlations\" <doi:10.1080/03610910600716290>.  Hyland A, Ambrose BK,
-Conway KP, et al. (2017) \"Design and methods of the Population Assessment of
-Tobacco and Health\" <doi:10.1136/tobaccocontrol-2016-052934>.  Johnstone IM.
-(2009) \"Approximate Null Distribution of the largest root in a Multivariate
-Analysis\" <doi:10.1214/08-AOAS220>.  Valliant R. and Dever JA. (2018
-ISBN:978-1-59718-260-7).")
+canonical variates.  See reference - Cruz-Cano, Cohen, and Mead-Morse (2024)
+\"Canonical Correlation Analysis of Survey data: the @code{SurveyCC} R package\"
+The R Journal under review.")
     (license license:expat)))
 
 (define-public r-surveybootstrap
@@ -10466,13 +10455,13 @@ covariate values within each treatment group.")
 (define-public r-stepmixr
   (package
     (name "r-stepmixr")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stepmixr" version))
        (sha256
-        (base32 "015pn37bw4bdlgk9x6r20i84kfvk7vkp3gzsi1dzpa01z01wnblp"))))
+        (base32 "0yh0dbv14bdzwlz3fwl5ibmmg2nzb6prfdwribavfndx8zxbwgn7"))))
     (properties `((upstream-name . "stepmixr")))
     (build-system r-build-system)
     (propagated-inputs (list r-reticulate))
@@ -13162,13 +13151,13 @@ be expressed using lme4 syntax (Bates, Maechler, Bolker, and Walker (2015)
 (define-public r-stampr
   (package
     (name "r-stampr")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stampr" version))
        (sha256
-        (base32 "1vp9ks0fwnz7j1lwvjklys4ih0slhylzfm79kzvfbby9l3xq878j"))))
+        (base32 "15jzf67db9yx4rw1c849v50fcjch8f37h37ly57nxp057zj2b1d2"))))
     (properties `((upstream-name . "stampr")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdep
@@ -16576,13 +16565,13 @@ package is enough.")
 (define-public r-spsurvey
   (package
     (name "r-spsurvey")
-    (version "5.5.0")
+    (version "5.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spsurvey" version))
        (sha256
-        (base32 "19nfzw6ac394rn0w6zdn977mf4slxq0mpw2qj9r2ma7z0biwssxn"))))
+        (base32 "13h25mhb45s2k73a5709zlxfxylxqls0avan6d8pcp0iyrmpxjak"))))
     (properties `((upstream-name . "spsurvey")))
     (build-system r-build-system)
     (propagated-inputs (list r-units
@@ -17995,13 +17984,13 @@ coefficients.  For details see Murakami (2021) <@code{arXiv:1703.04467>}.")
 (define-public r-spmodel
   (package
     (name "r-spmodel")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spmodel" version))
        (sha256
-        (base32 "0v3hcdi7kx2kf7ngs587wmk3lnhj29n1hw11p2ggxla8wv9dassb"))))
+        (base32 "1mzayk0ncd7kwjc3bdv3kl9zisd93giawl060d1fj923pz0rzcpx"))))
     (properties `((upstream-name . "spmodel")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-sf r-matrix r-generics))
@@ -26519,13 +26508,13 @@ decomposition experiments.")
 (define-public r-soildb
   (package
     (name "r-soildb")
-    (version "2.8.0")
+    (version "2.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "soilDB" version))
        (sha256
-        (base32 "1y2hqvw3gs5ams9xw0r1w8w4y1m4sqwdaaf0c4d1n5dcghhjn3pa"))))
+        (base32 "1k5793ilp5ysb28w778jq51nxhn550dp8bx3zs48q5cm814ccwkf"))))
     (properties `((upstream-name . "soilDB")))
     (build-system r-build-system)
     (propagated-inputs (list r-dbi r-data-table r-curl r-aqp))
@@ -36430,13 +36419,13 @@ al. (2018) <doi:10.1002/sim.7689> for details.")
 (define-public r-simdesign
   (package
     (name "r-simdesign")
-    (version "2.13")
+    (version "2.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SimDesign" version))
        (sha256
-        (base32 "1wg6npbg1avgf948n2sw4q2q3022528rqfqzbjn67bayn7l8dfk6"))))
+        (base32 "0jf1a5lfm0jd6k76jxq3pp8ngx10z44h6cgv4dhi59n4f95z7a82"))))
     (properties `((upstream-name . "SimDesign")))
     (build-system r-build-system)
     (propagated-inputs (list r-sessioninfo
@@ -42116,13 +42105,13 @@ Appl Ecol.  2020; 57; 1847â1860. <doi:10.1111/1365-2664.13659>.")
 (define-public r-shar
   (package
     (name "r-shar")
-    (version "2.2")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shar" version))
        (sha256
-        (base32 "1kbsayxdvbxqwckr82fj3k4vyah20qd59q9ls2y43hk4ma39iiw2"))))
+        (base32 "0zhvbgg3db42bk7xzxg2m99q2nbrb4dckfqkcb1w3xffrbiiyz5v"))))
     (properties `((upstream-name . "shar")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -45357,13 +45346,13 @@ included.  Most methods are described in Brockhoff, P.B. and Christensen, R.H.B.
 (define-public r-senspe
   (package
     (name "r-senspe")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SenSpe" version))
        (sha256
-        (base32 "1h7c7nxpbybi6i9ngj9r1yga5f746vbrgyb425xwbyll1s6l2dk0"))))
+        (base32 "0mmf2pyh0nbf7jpb49bplh9gh3ijx0dybzsjdrprqz3gicm6qlly"))))
     (properties `((upstream-name . "SenSpe")))
     (build-system r-build-system)
     (native-inputs (list r-knitr gfortran))
@@ -54002,13 +53991,13 @@ and <http://foges.github.io/pogs/stp/r>.")
 (define-public r-sbtools
   (package
     (name "r-sbtools")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sbtools" version))
        (sha256
-        (base32 "0vzz7a43ydf56fdxnsqgzil2y5595hlbvyjk1h5z8q8j6b0bjxag"))))
+        (base32 "0z7pa9raz30khs1ljrbrv5kmy0q1g20d8g260jsq7zvzwxn4yar7"))))
     (properties `((upstream-name . "sbtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-mime

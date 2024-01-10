@@ -1193,19 +1193,19 @@ models and hysteresis.")
 (define-public r-pupmcr
   (package
     (name "r-pupmcr")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PUPMCR" version))
        (sha256
-        (base32 "0pbxqa1d5b5gjwqwan0rsigzv4dcgjqn8gnzgf3sjsvi0xwz956z"))))
+        (base32 "00dcvpy3ai613addgw45q8p3zmh6jf32wfnqg07kxlqamv8rw8ff"))))
     (properties `((upstream-name . "PUPMCR")))
     (build-system r-build-system)
     (propagated-inputs (list r-readxl r-colordistance))
     (home-page "https://cran.r-project.org/package=PUPMCR")
     (synopsis
-     "Color Identification of Fungi Based on Rayner (1970) and Known Fungal Pigment Association")
+     "Image-Based Identification of Color Based on Rayner (1970) Terminology and Known Fungal Pigments")
     (description
      "Image-based color matching using the \"Mycological Colour Chart\" by Rayner (1970,
 ISBN:9780851980263) and its associated fungal pigments.  This package will
@@ -2036,16 +2036,15 @@ stops, routes, disruptions, departures, and more.")
 (define-public r-pttstability
   (package
     (name "r-pttstability")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pttstability" version))
        (sha256
-        (base32 "1wx8j5pap6nr4h1a3dprvl9dm81kl0k8yz1lmnb43bd6irm3m0mi"))))
+        (base32 "0pyja52dz5d6nj5mq7a4ba6grvvkvag76fmy7d8qj9z14dfw7sln"))))
     (properties `((upstream-name . "pttstability")))
     (build-system r-build-system)
-    (propagated-inputs (list r-redm))
     (home-page "https://cran.r-project.org/package=pttstability")
     (synopsis "Particle-Takens Stability")
     (description
@@ -4187,13 +4186,13 @@ variables (Zucknick et al.  Biometrical J, 2015 <doi:10.1002/bimj.201400160>).")
 (define-public r-psbcgroup
   (package
     (name "r-psbcgroup")
-    (version "1.5")
+    (version "1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psbcGroup" version))
        (sha256
-        (base32 "01q02lsjjj14b8si9pj12a5cvyq74lb9444vpwpxkbnsznx10bsy"))))
+        (base32 "08gabhcpjsm92xrld3h14y092x05apz4b1znf10d6j3n1880fbl4"))))
     (properties `((upstream-name . "psbcGroup")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-suppdists r-mvtnorm r-learnbayes))
@@ -6336,13 +6335,13 @@ also time series of carbon fluxes, energy balances and soil water are available.
 (define-public r-profoc
   (package
     (name "r-profoc")
-    (version "1.2.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "profoc" version))
        (sha256
-        (base32 "0s1fyckmfdjr5madwzrmpxkr34z940r43qny8g5aljz4qsbzlcip"))))
+        (base32 "0q41xn22s8h84nr91yqwdrbzw98sydyfirnxz8bw523zwlzap977"))))
     (properties `((upstream-name . "profoc")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -7964,13 +7963,13 @@ prediction, and ranking of predictors in ensembles\" <@code{arXiv:2108.05129>}."
 (define-public r-primme
   (package
     (name "r-primme")
-    (version "3.2-5")
+    (version "3.2-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PRIMME" version))
        (sha256
-        (base32 "01wdj270a6j9j2mvmvxd8rc9m70qfjmvf2w9sm7fqmiyvz555r0w"))))
+        (base32 "0r3wxpi6prn8z8bb5jqbdba18qlnkvkasx0qp0b5r41jqznkg1m0"))))
     (properties `((upstream-name . "PRIMME")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-matrix))
@@ -9156,13 +9155,13 @@ Quebec between 1980 and 2020.")
 (define-public r-premium
   (package
     (name "r-premium")
-    (version "3.2.11")
+    (version "3.2.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PReMiuM" version))
        (sha256
-        (base32 "0jxx7wcn790jvmxq3f82c28pykqvxwa6wgmvdkn7c20mmjlgh93l"))))
+        (base32 "1qamq7glc0dag1ps0dr4f931ij9jk91lj5h1k2g0yd0h3kqamawn"))))
     (properties `((upstream-name . "PReMiuM")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdep
@@ -14645,13 +14644,13 @@ described by Clark et al. (2020, Version 1) <doi:10.1101/2020.01.11.902890>.")
 (define-public r-polyqtlr
   (package
     (name "r-polyqtlr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "polyqtlR" version))
        (sha256
-        (base32 "137ydsyjjmkrl07g7mc5710xzlm3ihb490s419zaw461gxxmcjbl"))))
+        (base32 "0yz27785cfw50sw6nniiqmdggji502wh84zcvqf31wzznjryy9v5"))))
     (properties `((upstream-name . "polyqtlR")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2
@@ -14894,13 +14893,13 @@ based on bi-allelic marker dosage data.  Submitted to BMC Bioinformatics (2021).
 (define-public r-polyglotr
   (package
     (name "r-polyglotr")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "polyglotr" version))
        (sha256
-        (base32 "1m311k771c7pcb6g40zzrl2qrr89ijc47qw84rg84xmcz9vzipdw"))))
+        (base32 "0nmkrb7hhldn35jmh12pikba9xjpz0afjh0irqdgck9z495pyhbp"))))
     (properties `((upstream-name . "polyglotr")))
     (build-system r-build-system)
     (propagated-inputs (list r-urltools
@@ -17326,13 +17325,13 @@ specialized needs.  Core functionality is based on a @code{JavaScript} library,
 (define-public r-plume
   (package
     (name "r-plume")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plume" version))
        (sha256
-        (base32 "1nrv5gmhwm5fxd81d0smwdi9x35y2l54jlkparmi5hwh87lq2ld9"))))
+        (base32 "1wgxsqn6bxraj6y4r5ff1lbcfvp6wmpafdrfpjxbyvpk2im834pd"))))
     (properties `((upstream-name . "plume")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -21889,13 +21888,13 @@ for bilateral price indexes.")
 (define-public r-phytools
   (package
     (name "r-phytools")
-    (version "2.0-3")
+    (version "2.1-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phytools" version))
        (sha256
-        (base32 "0bp84c5zfq4zh1kd5v0jwcp88y3q1k84q3mqw748spqxm3mmq3x1"))))
+        (base32 "05035zv9605hr4ig42k3krijaqkbbh9fvv4w5384fz1wlgqap0c6"))))
     (properties `((upstream-name . "phytools")))
     (build-system r-build-system)
     (propagated-inputs (list r-scatterplot3d
@@ -23303,13 +23302,13 @@ rankings.  For more information on phi delta diagrams, see also Giuliano Armano
 (define-public r-phia
   (package
     (name "r-phia")
-    (version "0.3-0")
+    (version "0.3-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phia" version))
        (sha256
-        (base32 "1dm9piyrnn2p775gyfdkyl3zqhw245j5ja5ggc20bwbh9x6q5z30"))))
+        (base32 "1lsprm49njwp0gfn4knvwdq7d5lpq4irhysl8f26glcz9x929sff"))))
     (properties `((upstream-name . "phia")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-car))
@@ -29151,13 +29150,13 @@ regression models.  S. Kucheryavskiy (2023) <doi:10.1016/j.aca.2023.341096>.")
 (define-public r-pcutils
   (package
     (name "r-pcutils")
-    (version "0.1.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pcutils" version))
        (sha256
-        (base32 "0g96a4ibfyl8r6955mqjnj94lk1bhdj9hzp3ccm84bynn2xihdz8"))))
+        (base32 "1vxni0ysih1v6w8mdk5s2ikpznzx36797zdsgfxj1mv2yhjyaymy"))))
     (properties `((upstream-name . "pcutils")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -29166,7 +29165,8 @@ regression models.  S. Kucheryavskiy (2023) <doi:10.1016/j.aca.2023.341096>.")
                              r-ggplot2
                              r-dplyr
                              r-agricolae))
-    (home-page "https://cran.r-project.org/package=pcutils")
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Asa12138/pcutils")
     (synopsis "Some Useful Functions for Statistics and Visualization")
     (description
      "Offers a range of utilities and functions for everyday programming tasks.
@@ -30655,13 +30655,13 @@ effectively.")
 (define-public r-pbsddesolve
   (package
     (name "r-pbsddesolve")
-    (version "1.13.3")
+    (version "1.13.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PBSddesolve" version))
        (sha256
-        (base32 "0cjnbmvyzzz659csjrv7fx3xbxb9070223qm7cg6ns3l6sn2adc4"))))
+        (base32 "0wa7h93449lr8shkrjy49h53vwzk2zy1h0c9ddkhh1axd978ms39"))))
     (properties `((upstream-name . "PBSddesolve")))
     (build-system r-build-system)
     (home-page "https://github.com/pbs-software/pbs-ddesolve")
@@ -32518,16 +32518,23 @@ run locally, see examples on <https://github.com/@code{SachaEpskamp/parSim>}.")
 (define-public r-parserpdr
   (package
     (name "r-parserpdr")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "parseRPDR" version))
        (sha256
-        (base32 "14h56y7x38ll63rq4x6grws5ddcbf3rgksfpv95dxgbh25bx5rqr"))))
+        (base32 "0jbph3sjhp0qa0gk9vixr2bswcmkjbwz142nplzlsym9x9j02626"))))
     (properties `((upstream-name . "parseRPDR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringr r-readr r-foreach r-doparallel
+    (propagated-inputs (list r-stringr
+                             r-readr
+                             r-progressr
+                             r-parallelly
+                             r-future
+                             r-foreach
+                             r-doparallel
+                             r-dofuture
                              r-data-table))
     (home-page "https://github.com/martonkolossvary/parseRPDR")
     (synopsis

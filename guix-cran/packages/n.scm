@@ -542,6 +542,41 @@ null plots using permutation and simulation.  Calculate distance metrics for a
 lineup, and examine the distributions of metrics.")
     (license license:gpl2+)))
 
+(define-public r-nuggets
+  (package
+    (name "r-nuggets")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nuggets" version))
+       (sha256
+        (base32 "1ijlzcp42bhb2qpnnv9gi3nm87pprgs54m8s6vl7lgqv2njdasdg"))))
+    (properties `((upstream-name . "nuggets")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-testthat
+                             r-rlang
+                             r-rcpp
+                             r-cli))
+    (home-page "https://cran.r-project.org/package=nuggets")
+    (synopsis "Extensible Data Pattern Searching Framework")
+    (description
+     "Extensible framework for subgroup discovery (Atzmueller (2015)
+<doi:10.1002/widm.1144>), contrast patterns (Chen (2022)
+<doi:10.48550/@code{arXiv.2209.13556>}), emerging patterns (Dong (1999)
+<doi:10.1145/312129.312191>) and association rules (Agrawal (1994)
+<https://www.vldb.org/conf/1994/P487.PDF>).  Both crisp (binary) and fuzzy data
+are supported.  It generates conditions in the form of elementary conjunctions,
+evaluates them on a dataset and checks the induced sub-data for interesting
+statistical properties.  Currently, the package searches for implicative
+association rules and conditional correlations (HÃ¡jek (1978)
+<doi:10.1007/978-3-642-66943-9>).  A user-defined function may be defined to
+evaluate on each generated condition to search for custom patterns.")
+    (license license:gpl3+)))
+
 (define-public r-nueton
   (package
     (name "r-nueton")
@@ -5640,13 +5675,13 @@ the updating process.  See e.g. @code{TomÃ©} et al (2015)
 (define-public r-nmdata
   (package
     (name "r-nmdata")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMdata" version))
        (sha256
-        (base32 "1xvc8cyl7jlmcp8xb54mw7jdfs3fi0amlv4y23d8g3xhnhr44wlx"))))
+        (base32 "088wbj4i6mfrdmd0rna182izdjjl4d73npzyqgmgn1v02nfrp67d"))))
     (properties `((upstream-name . "NMdata")))
     (build-system r-build-system)
     (propagated-inputs (list r-fst r-data-table))
@@ -6876,13 +6911,13 @@ Hallow, and James 2015 <doi:10.1002/psp4.12052>).")
 (define-public r-nlmixr2
   (package
     (name "r-nlmixr2")
-    (version "2.0.9")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmixr2" version))
        (sha256
-        (base32 "1mfbm053jkmqkg7hdvzczpfx35r9xc6113vxl20561pk2zxh9fq7"))))
+        (base32 "0hd2bqwc7p5wl1akpii86nsxz14kq8a358aqm8vm7k8a1isg3dq8"))))
     (properties `((upstream-name . "nlmixr2")))
     (build-system r-build-system)
     (propagated-inputs (list r-rxode2
@@ -8340,21 +8375,16 @@ Protection Agency <https://www.epa.gov/waterdata/basic-information>.")
 (define-public r-nhanesa
   (package
     (name "r-nhanesa")
-    (version "0.7.4")
+    (version "1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nhanesA" version))
        (sha256
-        (base32 "0f0qjjndd4nl9rzmapn98hlzv5fzvvg88ls97rim7vnr6l4c7mqq"))))
+        (base32 "18r4cps3z4jg15nxy15g23k044rzhqnxaf679imw6w8sij2a4drc"))))
     (properties `((upstream-name . "nhanesA")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-stringr
-                             r-rvest
-                             r-plyr
-                             r-magrittr
-                             r-foreign))
+    (propagated-inputs (list r-xml2 r-stringr r-rvest r-plyr r-foreign))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=nhanesA")
     (synopsis "NHANES Data Retrieval")
@@ -8753,13 +8783,13 @@ analysis in ggplot2'.")
 (define-public r-nflfastr
   (package
     (name "r-nflfastr")
-    (version "4.6.0")
+    (version "4.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nflfastR" version))
        (sha256
-        (base32 "1zbl8khwhf9g4bw5fbcr73wa17g8jia6w23ziqq5pvsc1ygabyga"))))
+        (base32 "0b9pn53kzgf0bni98j6f06piwp21wxkm15k9hvhbq0g3x9sj0zqg"))))
     (properties `((upstream-name . "nflfastR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -11916,13 +11946,13 @@ nephrology based on different biomechimal traits.")
 (define-public r-neonutilities
   (package
     (name "r-neonutilities")
-    (version "2.4.0")
+    (version "2.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "neonUtilities" version))
        (sha256
-        (base32 "00f7zqr0jh4g31v1c8zv5n3pwfxqrx9m93rl59fwi276ivgcx60h"))))
+        (base32 "1jrda57yi64lgr8c5z5lchbdin2fs47pb9q4rr6fwh5rzm6hf10x"))))
     (properties `((upstream-name . "neonUtilities")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -14976,13 +15006,13 @@ summarizing the most relevant patterns in time sequences.")
 (define-public r-nair
   (package
     (name "r-nair")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NAIR" version))
        (sha256
-        (base32 "0zcjv7siimxjc87qzq5948kifzkz6f1idmdr7625aa126k2kgk1s"))))
+        (base32 "1v1hs9mi02d2rnmn2pif4j6xyvcjixna7ihwn39y21dsbj5ivlfb"))))
     (properties `((upstream-name . "NAIR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang

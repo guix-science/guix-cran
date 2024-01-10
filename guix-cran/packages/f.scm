@@ -3670,13 +3670,13 @@ blog Lijun Wang (2017)
 (define-public r-frk
   (package
     (name "r-frk")
-    (version "2.2.0")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FRK" version))
        (sha256
-        (base32 "1jwsmrc4hqask0bls4rd8bssgddpy17l615w6p19iiayd3xlir55"))))
+        (base32 "0nh8lfx361n992ha203qc306wsjc6gk8y2323lvdf4wi4gb42csv"))))
     (properties `((upstream-name . "FRK")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb
@@ -8247,13 +8247,13 @@ multivariate data sets of financial returns.")
 (define-public r-fmtr
   (package
     (name "r-fmtr")
-    (version "1.6.2")
+    (version "1.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fmtr" version))
        (sha256
-        (base32 "1p543jpjpfw7r7g20jkyswnnv61ka2cjk5k8rgm1d7i9xnzhv0hg"))))
+        (base32 "0xgyg9kgak6w3p8lp0ccnkp90bnh516py0sn07nxh6pjbv2rkng0"))))
     (properties `((upstream-name . "fmtr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-rcpp r-crayon r-common))
@@ -18475,13 +18475,13 @@ computing to reduce overall processing time.")
 (define-public r-fastjm
   (package
     (name "r-fastjm")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FastJM" version))
        (sha256
-        (base32 "0k53hlwz00qp4242dy8wrk0xhq89dlrzh5a340aw2j134qrh42lk"))))
+        (base32 "0ckk8705d37mbym09nl2vckkgg9zc9x7izaw7zhh0dcb7fyqxr3w"))))
     (properties `((upstream-name . "FastJM")))
     (build-system r-build-system)
     (propagated-inputs (list r-timeroc
@@ -18770,13 +18770,13 @@ and discussed in the preprint available from Researchgate by Simone R. (2020)
 (define-public r-fastcpd
   (package
     (name "r-fastcpd")
-    (version "0.10.0")
+    (version "0.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastcpd" version))
        (sha256
-        (base32 "0shqfpwpfwcwywp55jcrrfmrkan19lna9ld7y2biamirqjsgfb1l"))))
+        (base32 "15s15ykqagx9ixmfh09hkqfgnx5wv75pijiw550kgrk05kx34d2x"))))
     (properties `((upstream-name . "fastcpd")))
     (build-system r-build-system)
     (propagated-inputs (list r-tseries
@@ -19510,24 +19510,35 @@ FAO Irrigation and drainage paper 56\".")
 (define-public r-fanyi
   (package
     (name "r-fanyi")
-    (version "0.0.5")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fanyi" version))
        (sha256
-        (base32 "01cx99vmrq9qmpsfnnpw4g4mqlfssrm95swb85m6z34xam3gm0n7"))))
+        (base32 "047ag47lnw5p54zp5zwpdmnmngvssv8n55h2h6ypvfdcflybfnid"))))
     (properties `((upstream-name . "fanyi")))
     (build-system r-build-system)
-    (propagated-inputs (list r-openssl r-jsonlite r-httr))
-    (home-page "https://cran.r-project.org/package=fanyi")
+    (propagated-inputs (list r-yulab-utils
+                             r-uuid
+                             r-sseparser
+                             r-rlang
+                             r-rentrez
+                             r-openssl
+                             r-jsonlite
+                             r-httr2
+                             r-ggfun
+                             r-digest))
+    (home-page "https://github.com/YuLab-SMU/fanyi")
     (synopsis "Translate Words or Sentences via Online Translators")
     (description
      "Useful functions to translate text for multiple languages using online
 translators.  For example, by translating error messages and descriptive
 analysis results into a language familiar to the user, it enables a better
 understanding of the information, thereby reducing the barriers caused by
-language.")
+language.  It offers several helper functions to query gene information to help
+interpretation of interested genes (e.g., marker genes, differential expression
+genes), and provides utilities to translate ggplot graphics.")
     (license license:artistic2.0)))
 
 (define-public r-fanplot
@@ -19799,6 +19810,28 @@ family-weighted scores across all families in which the feature appears.")
 double burden (presence of children and oldest old parents) in virtual
 population produced by @code{VirtualPop}'.")
     (license license:gpl2)))
+
+(define-public r-familias
+  (package
+    (name "r-familias")
+    (version "2.6.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Familias" version))
+       (sha256
+        (base32 "1hx35xj5yjpbkpf4hz8kx7i4q3s2m5dvwb0mcnz1svibim04hll0"))))
+    (properties `((upstream-name . "Familias")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rsolnp r-kinship2))
+    (home-page "https://www.familias.name/openfamilias.html")
+    (synopsis "Probabilities for Pedigrees Given DNA Data")
+    (description
+     "An interface to the core Familias functions which are programmed in C++.  The
+implementation is described in Egeland, Mostad and Olaisen (1997)
+<doi:10.1016/S1355-0306(97)72202-0> and Simonsson and Mostad (2016)
+<doi:10.1016/j.fsigen.2016.04.005>.")
+    (license license:gpl3)))
 
 (define-public r-familiar
   (package

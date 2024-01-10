@@ -878,13 +878,13 @@ curves.")
 (define-public r-hydroloom
   (package
     (name "r-hydroloom")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hydroloom" version))
        (sha256
-        (base32 "0yl1npcb52i64kihxl8nwsapkr80ix7wsxn1c66bbzmd3hwb2n34"))))
+        (base32 "0ygplrn9frjb7rs4yrlq2xrmpqx3ikp28fv7fy1sfh3kcfxihbmk"))))
     (properties `((upstream-name . "hydroloom")))
     (build-system r-build-system)
     (propagated-inputs (list r-units
@@ -2211,13 +2211,13 @@ probing (HR-SIP), multi-window high resolution stable isotope probing
 (define-public r-htsr
   (package
     (name "r-htsr")
-    (version "2.1.2")
+    (version "2.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "htsr" version))
        (sha256
-        (base32 "1pd9s54rxmgihxrrhbdz99rkpqq8hbswc96wy6kdzk400bmxrl36"))))
+        (base32 "09h14lrsm24k7ya1jxcrh3c2s6wf1cs7k0daj164ddmfsn7qdvmg"))))
     (properties `((upstream-name . "htsr")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexls
@@ -3911,13 +3911,13 @@ data for themselves.")
 (define-public r-homomorphicencryption
   (package
     (name "r-homomorphicencryption")
-    (version "0.3.0")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HomomorphicEncryption" version))
        (sha256
-        (base32 "16ls9ps67dxg7xa6zr83gcj5s2a981dpc295lyr6vz09y6m6jcl5"))))
+        (base32 "0ynxn1mcr76yvqjpmi8mxl35i9r1fy7rwshpv8qx68nabk67rh61"))))
     (properties `((upstream-name . "HomomorphicEncryption")))
     (build-system r-build-system)
     (propagated-inputs (list r-polynom r-hetools))
@@ -3928,8 +3928,8 @@ data for themselves.")
      "This package implements the Brakerski-Fan-Vercauteren (BFV, 2012)
 <https://eprint.iacr.org/2012/144>, Brakerski-Gentry-Vaikuntanathan (BGV, 2014)
 <doi:10.1145/2633600>, and Cheon-Kim-Kim-Song (CKKS, 2016)
-<https://eprint.iacr.org/2016/421.pdf> schema for Fully Homomorphic Encryption,
-as well as several helper functions.")
+<https://eprint.iacr.org/2016/421.pdf> schema for Fully Homomorphic Encryption.
+The included vignettes demonstrate the encryption procedures.")
     (license license:gpl3+)))
 
 (define-public r-homomorpher
@@ -4238,13 +4238,13 @@ the package to build on previous lab members code.")
 (define-public r-hockeystick
   (package
     (name "r-hockeystick")
-    (version "0.8.2")
+    (version "0.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hockeystick" version))
        (sha256
-        (base32 "0h332wcrkxgz0c0brxqj0yz9r9k8qgk52i4vq9x5w858sdkwm19b"))))
+        (base32 "1qli3293grlvih2i8120xsbkl6nfhdzs4ggzahbaqx5szdjinb95"))))
     (properties `((upstream-name . "hockeystick")))
     (build-system r-build-system)
     (propagated-inputs (list r-treemapify
@@ -7111,16 +7111,16 @@ the results from the paper, see demo(\"hhh4contacts\")'.")
 (define-public r-hhg
   (package
     (name "r-hhg")
-    (version "2.3.4")
+    (version "2.3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HHG" version))
        (sha256
-        (base32 "1ghw1rpf7n0dfclvxm3p02ym247p3rsncj9f9f97892lk9yin29c"))))
+        (base32 "037bq1b14332i5pdmxjfm6bcyz4pcq40rh2vd3wrxpkq224g80v4"))))
     (properties `((upstream-name . "HHG")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rmarkdown r-rcpp))
+    (propagated-inputs (list r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/barakbri/HHG")
     (synopsis

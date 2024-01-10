@@ -5730,13 +5730,13 @@ lines.")
 (define-public r-gratia
   (package
     (name "r-gratia")
-    (version "0.8.1")
+    (version "0.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gratia" version))
        (sha256
-        (base32 "0k4mkkkj3kbmfj8z1nsw80xh9jmrc59sxc1n7sp3ca2cfyfszgc1"))))
+        (base32 "0gfilxh697laf1y20kmrzjrgd1xypf529cw9xxzy64z7rn0jraih"))))
     (properties `((upstream-name . "gratia")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -21895,18 +21895,18 @@ other Geocaching-related tasks.")
 (define-public r-geobr
   (package
     (name "r-geobr")
-    (version "1.8.1")
+    (version "1.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geobr" version))
        (sha256
-        (base32 "16iw1p0qx57xylb7mp2qgx9fh7667hzfpw8dzakdzp8jpxmwgjwx"))))
+        (base32 "160mvxx4pcxiyzrwz24lqfvybb63rykwkhr4s7hsk4jvfskgdglj"))))
     (properties `((upstream-name . "geobr")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-httr r-data-table r-curl))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/ipeaGIT/geobr")
+    (home-page "https://ipeagit.github.io/geobr/")
     (synopsis "Download Official Spatial Data Sets of Brazil")
     (description
      "Easy access to official spatial data sets of Brazil as sf objects in R. The

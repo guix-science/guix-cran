@@ -886,13 +886,13 @@ biosphere please see Lynch and Neufeld (2015) <doi:10.1038/nrmicro3400>).")
 (define-public r-ottrpal
   (package
     (name "r-ottrpal")
-    (version "1.2")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ottrpal" version))
        (sha256
-        (base32 "03wg6qmkgw7sm8w5q0r1wy7rf8d0m11fmp5dycscnfpd5cipsdf2"))))
+        (base32 "0wjavfgn9cjk83bsrcj820nxairb5jxszryqzppwwbjf844vi17y"))))
     (properties `((upstream-name . "ottrpal")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -7985,13 +7985,13 @@ types of omics data or samples with two types.")
 (define-public r-omnibus
   (package
     (name "r-omnibus")
-    (version "1.2.8")
+    (version "1.2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "omnibus" version))
        (sha256
-        (base32 "1hhpy1m8xw0w1nkwr350kfxcdqg0hpcl7n36pl6ic5hwqxp4qf83"))))
+        (base32 "1shd5a519vac8m80869hssjfhl3i5k9ia0z2a0dgfbqsdd591nsv"))))
     (properties `((upstream-name . "omnibus")))
     (build-system r-build-system)
     (home-page "https://github.com/adamlilith/omnibus")
@@ -10049,13 +10049,13 @@ consumption data.")
 (define-public r-octopus
   (package
     (name "r-octopus")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "octopus" version))
        (sha256
-        (base32 "0b1cyn8pj8i5dxjdm5qz4r3zly6v6cqg7dljfynsn6f4sdcc619a"))))
+        (base32 "0a24czpsvq5xpr3g9m6d2bsd3dv5jcr2m724gz4z3c56f4xbxd8b"))))
     (properties `((upstream-name . "octopus")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinyjs

@@ -386,18 +386,17 @@ bounded-variable least squares")
 (define-public r-bvhar
   (package
     (name "r-bvhar")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bvhar" version))
        (sha256
-        (base32 "05r669kin2ddgfym1s0mmdhcj0hwkdjbsz98kqnlq3q204a4rdn8"))))
+        (base32 "1i4dfmb1w539fz4mgv2ldr9pwxzry5fdiz6ryx9f3af83y9z4xgg"))))
     (properties `((upstream-name . "bvhar")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-tibble
-                             r-rcppprogress
                              r-rcppeigen
                              r-rcpp
                              r-purrr
@@ -2444,13 +2443,13 @@ use this package, see An et al. (2022) <doi:10.18637/jss.v101.i11>.")
 (define-public r-bskyr
   (package
     (name "r-bskyr")
-    (version "0.1.0")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bskyr" version))
        (sha256
-        (base32 "0yf1r2379n1x4p4w498ny8pj0nbxlanvrrl7q1pbli8j8kda87qa"))))
+        (base32 "0qnw7mbsbg0w4afqnvrw69vzc7d1j5lpyk06zlpppkswp594bnbq"))))
     (properties `((upstream-name . "bskyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -4183,6 +4182,28 @@ every indicator available in the weather products (BR-DWGD and
 @code{TerraClimate} projects).  This package queries on-line the already
 calculated statistics on the Parquet files and returns easy-to-use data.frames.")
     (license license:expat)))
+
+(define-public r-brbvs
+  (package
+    (name "r-brbvs")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BRBVS" version))
+       (sha256
+        (base32 "0ibbnfgna80xdb7lzmc0jvlkgw4xrgva1s4bnm0cq93412r2lnay"))))
+    (properties `((upstream-name . "BRBVS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mvtnorm r-gjrm r-ggplot2 r-copent))
+    (home-page "https://cran.r-project.org/package=BRBVS")
+    (synopsis
+     "Variable Ranking in Copula Survival Models Affected by General Censoring Scheme")
+    (description
+     "This package performs variable ranking based on several measures for the class
+of copula survival model(s) in high dimensional domain.  The package is based on
+the class of copula survival model(s) implemented in the GJRM package.")
+    (license license:gpl3+)))
 
 (define-public r-brazilmet
   (package
@@ -7141,13 +7162,13 @@ the basic and static views offered by existing packages.")
 (define-public r-bnstruct
   (package
     (name "r-bnstruct")
-    (version "1.0.14")
+    (version "1.0.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bnstruct" version))
        (sha256
-        (base32 "1igdr538d2nfx3ap13y6p6wb6jfvb3hcg80fapjvnzc2304sk95p"))))
+        (base32 "0gy3msq6i20xbf6vwrxj5k4b6bav9pbdjpci47b7g01npbhbdzsz"))))
     (properties `((upstream-name . "bnstruct")))
     (build-system r-build-system)
     (propagated-inputs (list r-igraph r-bitops))
@@ -11681,13 +11702,13 @@ n-gram data.")
 (define-public r-biogeom
   (package
     (name "r-biogeom")
-    (version "1.3.7")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biogeom" version))
        (sha256
-        (base32 "1gg1ca7iwpyb2i5vyv725ai49ycgai1hr5960295xmx571pzh6mp"))))
+        (base32 "0mx5pwphzxzfgy6waarfwqar2s5hwrpwm0n4h3xvf61hb60k1l7z"))))
     (properties `((upstream-name . "biogeom")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-geom))
@@ -13754,31 +13775,30 @@ designed to work well with the tidyverse collection of R packages.")
 (define-public r-bigmds
   (package
     (name "r-bigmds")
-    (version "2.0.1")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bigmds" version))
        (sha256
-        (base32 "05sph85z4c4fiwd429hx9chgd7rsn48irr168yy1dj9daaqm49pl"))))
+        (base32 "1pkmzpibmch8zxlp08r460cvszwh4pshi9b8lafmkspj4pdkxlr9"))))
     (properties `((upstream-name . "bigmds")))
     (build-system r-build-system)
+    (propagated-inputs (list r-svd r-pracma r-corpcor))
     (home-page "https://github.com/pachoning/bigmds")
     (synopsis "Multidimensional Scaling for Big Data")
     (description
      "MDS is a statistic tool for reduction of dimensionality, using as input a
 distance matrix of dimensions n Ã n.  When n is large, classical algorithms
 suffer from computational problems and MDS configuration can not be obtained.
-With this package, we address these problems by means of three algorithms: -
-Divide-and-conquer MDS proposed by Delicado P. and C. @code{PachÃ³n-GarcÃ­a}
-(2021) <@code{arXiv:2007.11919>}. - Interpolation MDS, also proposed by Delicado
-P. and C. @code{PachÃ³n-GarcÃ­a} (2021) <@code{arXiv:2007.11919>}, which uses
-Gower's interpolation formula as described in Gower, J. C. and D. J. Hand
-(1995). - Fast MDS, which is an implementation of the algorithm proposed by
-Yang, T., J. Liu, L. @code{McMillan}, and W. Wang (2006).  The main idea of
-these algorithms is based on partitioning the data set into small pieces, where
-classical methods can work.  In order to align all the solutions, Procrustes
-formula is used as described in Borg, I. and P. Groenen (2005).")
+With this package, we address these problems by means of six algorithms, being
+two of them original proposals: - Landmark MDS proposed by De Silva V. and JB.
+Tenenbaum (2004). - Interpolation MDS proposed by Delicado P. and C.
+@code{PachÃ³n-GarcÃ­a} (2021) <@code{arXiv:2007.11919>} (original proposal). -
+Reduced MDS proposed by Paradis E (2018). - Pivot MDS proposed by Brandes U. and
+C. Pich (2007) - Divide-and-conquer MDS proposed by Delicado P. and C.
+@code{PachÃ³n-GarcÃ­a} (2021) <@code{arXiv:2007.11919>} (original proposal). -
+Fast MDS, proposed by Yang, T., J. Liu, L. @code{McMillan} and W. Wang (2006).")
     (license license:expat)))
 
 (define-public r-bigmatch
@@ -20226,13 +20246,13 @@ Stat.  Sinica) <https://www3.stat.sinica.edu.tw/statistica/oldpdf/A17n27.pdf>,
 (define-public r-bayessur
   (package
     (name "r-bayessur")
-    (version "2.1-5")
+    (version "2.1-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesSUR" version))
        (sha256
-        (base32 "05md6y25jsl4g2l5z4pq5cbrs7m91qcfz9i9ds6i2zrvwxcb7v0j"))))
+        (base32 "09iqd1zk9yvnbk07lkrvzb3sg54x8091862vj2vy1ran4pnaclf0"))))
     (properties `((upstream-name . "BayesSUR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -20241,7 +20261,7 @@ Stat.  Sinica) <https://www3.stat.sinica.edu.tw/statistica/oldpdf/A17n27.pdf>,
                              r-rcpp
                              r-matrix
                              r-igraph))
-    (native-inputs (list r-r-rsp))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://cran.r-project.org/package=BayesSUR")
     (synopsis "Bayesian Seemingly Unrelated Regression")
     (description
@@ -23388,13 +23408,13 @@ implemented in this package are described in Roman-Palacios et al. (2021)
 (define-public r-bawir
   (package
     (name "r-bawir")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BAwiR" version))
        (sha256
-        (base32 "151sybx7plfxhrs5gq6r6fn0mjvryw03g86bv08scn7wyv99mliw"))))
+        (base32 "138irq8f7yinjbz9ycsvvb42bh35a8a2jmncg9fcfc1gm9dlfmzb"))))
     (properties `((upstream-name . "BAwiR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -23407,6 +23427,7 @@ implemented in this package are described in Roman-Palacios et al. (2021)
                              r-rvest
                              r-reshape2
                              r-readr
+                             r-qdapregex
                              r-purrr
                              r-plyr
                              r-magrittr
@@ -24630,13 +24651,13 @@ high support from the data are saved to memory and used in the final model.")
 (define-public r-bart
   (package
     (name "r-bart")
-    (version "2.9.4")
+    (version "2.9.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BART" version))
        (sha256
-        (base32 "0m8vznp31sddg2cvm329f8dhd325q67q7f2wfg30l183w2n7b2gi"))))
+        (base32 "03rf13mwxxzqyvaciakarrhl583f8gl81ahfakkc1578fv2fl8vf"))))
     (properties `((upstream-name . "BART")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rcpp r-nnet r-nlme))
