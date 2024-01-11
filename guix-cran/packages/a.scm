@@ -2990,6 +2990,35 @@ such as identify, estimate and forecast, which are the same statements in PROC
 ARIMA in SAS.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-atrrr
+  (package
+    (name "r-atrrr")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "atrrr" version))
+       (sha256
+        (base32 "060kqlfwd1i709y10p3m9iql4c2vmnmwr2hasyl212rr8slib6fy"))))
+    (properties `((upstream-name . "atrrr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-snakecase
+                             r-rlang
+                             r-purrr
+                             r-httr2
+                             r-glue
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://jbgruber.github.io/atrrr/")
+    (synopsis "Wrapper for the 'AT' Protocol Behind 'Bluesky'")
+    (description
+     "Wraps the AT Protocol (Authenticated Transfer Protocol) behind Bluesky
+<https://blueskyweb.xyz>.  Functions can be used for, among others, retrieving
+posts and followers from the network or posting content.")
+    (license license:expat)))
+
 (define-public r-atrisk
   (package
     (name "r-atrisk")
@@ -19942,13 +19971,13 @@ factorization (NMF).")
 (define-public r-acled-api
   (package
     (name "r-acled-api")
-    (version "1.1.6")
+    (version "1.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "acled.api" version))
        (sha256
-        (base32 "0mri64ir386rn625i0x0kzlqng102dn338slh5cw6lcaa3hjywdq"))))
+        (base32 "1ysgrndcb4hdlhfr34dvhlnqark0k2pf42sq0wbj28p2031wjbms"))))
     (properties `((upstream-name . "acled.api")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-httr))

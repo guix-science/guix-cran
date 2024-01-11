@@ -8069,6 +8069,26 @@ differential equations, difference equations, and eigenanalysis and projection
 of demographic matrices; data are for examples.")
     (license license:gpl3)))
 
+(define-public r-primeplus
+  (package
+    (name "r-primeplus")
+    (version "1.0.16")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PRIMEplus" version))
+       (sha256
+        (base32 "14g3m759gyc41hm4rijvmfzky3g4xwmdjmyfi9s5rx096xnyhn7g"))))
+    (properties `((upstream-name . "PRIMEplus")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival r-msm))
+    (home-page "https://cran.r-project.org/package=PRIMEplus")
+    (synopsis "Study Design for Immunotherapy Clinical Trials")
+    (description
+     "Perform sample size, power calculation and subsequent analysis for
+Immuno-oncology (IO) trials composed of responders and non-responders.")
+    (license license:gpl2)))
+
 (define-public r-primepca
   (package
     (name "r-primepca")
@@ -27761,13 +27781,13 @@ appended pedigree to an existing pedigree with genotypes.  Mrode, R. A. (2005)
 (define-public r-pedquant
   (package
     (name "r-pedquant")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pedquant" version))
        (sha256
-        (base32 "1dqzc4w76xfmvis2qkv3s3si9hvrwz58xkn1pmm17hwi5r1jk9pl"))))
+        (base32 "07b2jd3fryv3jdhp5wrsycnzfwhbx55dw34lxll60zn73m4ii24w"))))
     (properties `((upstream-name . "pedquant")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

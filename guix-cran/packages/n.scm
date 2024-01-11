@@ -5003,13 +5003,13 @@ chi-square tests.")
 (define-public r-nns
   (package
     (name "r-nns")
-    (version "10.4")
+    (version "10.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NNS" version))
        (sha256
-        (base32 "14r2iyvrkmn69frkp9dmx7dznisbwn5ajspl32g8f7lb3dx7q98g"))))
+        (base32 "1nyml005mk8p8i3ahfn9iwdp430ibd4w35scl8m0kwv9sbd7vvmg"))))
     (properties `((upstream-name . "NNS")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -5034,10 +5034,10 @@ the elements of variance and asymptotically approximate the area of f(x).  These
 robust statistics provide the basis for nonlinear analysis while retaining
 linear equivalences.  NNS offers: Numerical integration, Numerical
 differentiation, Clustering, Correlation, Dependence, Causal analysis, ANOVA,
-Regression, Classification, Seasonality, Autoregressive modeling, Normalization
-and Stochastic dominance.  All routines based on: Viole, F. and Nawrocki, D.
-(2013), Nonlinear Nonparametric Statistics: Using Partial Moments (ISBN:
-1490523995).")
+Regression, Classification, Seasonality, Autoregressive modeling, Normalization,
+Stochastic dominance and Advanced Monte Carlo sampling.  All routines based on:
+Viole, F. and Nawrocki, D. (2013), Nonlinear Nonparametric Statistics: Using
+Partial Moments (ISBN: 1490523995).")
     (license license:gpl3)))
 
 (define-public r-nnmis
@@ -13361,13 +13361,13 @@ we refer the reader to the paper Gomtsyan (2023), <@code{arXiv:2307.00929>}.")
 (define-public r-nbtransmission
   (package
     (name "r-nbtransmission")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nbTransmission" version))
        (sha256
-        (base32 "0vaj2zfyvm2vm1ly1419ysxxrqkv73802n96ifajknh1pair31zk"))))
+        (base32 "1pyyaydjnk48qvjbdiw5zs5hzx58d33f01z7vafa6w9xjpx2z8cd"))))
     (properties `((upstream-name . "nbTransmission")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -14618,15 +14618,16 @@ form of Reporter Code Count (RCC) files.")
 (define-public r-nanonext
   (package
     (name "r-nanonext")
-    (version "0.11.0")
+    (version "0.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nanonext" version))
        (sha256
-        (base32 "0qwirm48ndmda678hk5vd9vkrkfd0f052qyxf943mzi32bsdvks7"))))
+        (base32 "04za4lb0r3607fwq7ssm87znk2pjh352vj79b0z2s7h0gs83w8mn"))))
     (properties `((upstream-name . "nanonext")))
     (build-system r-build-system)
+    (native-inputs (list r-knitr))
     (home-page "https://shikokuchuo.net/nanonext/")
     (synopsis "NNG (Nanomsg Next Gen) Lightweight Messaging Library")
     (description

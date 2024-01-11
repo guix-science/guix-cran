@@ -1185,13 +1185,13 @@ criteria.")
 (define-public r-extbatchmarking
   (package
     (name "r-extbatchmarking")
-    (version "1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "extBatchMarking" version))
        (sha256
-        (base32 "0nskc1l4s0yf6q1q4zg5a7pa2kygs85jx65avlmxlqx9lc7w7bca"))))
+        (base32 "0ls0h5zfnd5k4r90adzpq39l5lmb6k1nb90d58c4mfzfnms2zhji"))))
     (properties `((upstream-name . "extBatchMarking")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-optimbase r-foreach
@@ -4465,6 +4465,38 @@ neighbor rule, the evidential neural network, radial basis function neural
 networks, logistic regression, feed-forward neural networks.")
     (license license:gpl3)))
 
+(define-public r-evchargcost
+  (package
+    (name "r-evchargcost")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EVchargcost" version))
+       (sha256
+        (base32 "1xwyclfaq50805n3h052vxlyhmiayy9338gqmx6vgj77s8fw3ds1"))))
+    (properties `((upstream-name . "EVchargcost")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ggplot2 r-cowplot))
+    (home-page "https://cran.r-project.org/package=EVchargcost")
+    (synopsis
+     "Computes and Plot the Optimal Charging Strategy for Electric Vehicles")
+    (description
+     "The purpose of this library is to compute the optimal charging cost function for
+a electric vehicle (EV).  It is well known that the charging function of a EV is
+a concave function that can be approximated by a piece-wise linear function, so
+bigger the state of charge, slower the charging process is.  Moreover, the other
+important function is the one that gives the electricity price.  This function
+is usually step-wise, since depending on the time of the day, the price of the
+electricity is different.  Then, the problem of charging an EV to a certain
+state of charge is not trivial.  This library implements an algorithm to compute
+the optimal charging cost function, that is, it plots for a given state of
+charge r (between 0 and 1) the minimum cost we need to pay in order to charge
+the EV to that state of charge r.  The details of the algorithm are described in
+@code{GonzÃ¡lez-RodrÃ­guez} et at (2023)
+<https://inria.hal.science/hal-04362876v1>.")
+    (license license:gpl3)))
+
 (define-public r-evapotranspiration
   (package
     (name "r-evapotranspiration")
@@ -6213,16 +6245,17 @@ variable given a set of covariates, see Dimitriadis and Bayer (2019)
 (define-public r-esquisse
   (package
     (name "r-esquisse")
-    (version "1.1.2")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "esquisse" version))
        (sha256
-        (base32 "180kdcqf93rkfzmjlysi53646ypkqi1r383n8p9jmj6xh9aag8rl"))))
+        (base32 "05c8vvdji8rcmxxahhxxsddvv9qh2naym4r67rdgicam7w7km60s"))))
     (properties `((upstream-name . "esquisse")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinywidgets
+                             r-shinybusy
                              r-shiny
                              r-scales
                              r-rstudioapi
@@ -6231,7 +6264,8 @@ variable given a set of covariates, see Dimitriadis and Bayer (2019)
                              r-jsonlite
                              r-htmltools
                              r-ggplot2
-                             r-datamods))
+                             r-datamods
+                             r-bslib))
     (native-inputs (list r-knitr esbuild))
     (home-page "https://dreamrs.github.io/esquisse/")
     (synopsis "Explore and Visualize Your Data Interactively")
@@ -16659,13 +16693,13 @@ modules are intended for reuse across applications.")
 (define-public r-editbl
   (package
     (name "r-editbl")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "editbl" version))
        (sha256
-        (base32 "17wdp5n3y99ik7j7k6mhgx151khw1gg7jshagbyqm2cnkbz15l5v"))))
+        (base32 "1z9sz6k92n51519g0bywmxnrn4yfadvzib6dcqbrzar9qfjhyv2m"))))
     (properties `((upstream-name . "editbl")))
     (build-system r-build-system)
     (propagated-inputs (list r-uuid

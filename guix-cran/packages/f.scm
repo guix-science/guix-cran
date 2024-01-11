@@ -2882,13 +2882,13 @@ families and between roles.")
 (define-public r-fsr
   (package
     (name "r-fsr")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fsr" version))
        (sha256
-        (base32 "0lwg5r11bkcfh32v8zh50gxiyya4dcap0zmdaf7gsyz0kvxzp0lj"))))
+        (base32 "1lnwi6p773bjxhar8lydygwy07wvma9jqfp9mrfl378a4x5lj4z9"))))
     (properties `((upstream-name . "fsr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -2896,7 +2896,6 @@ families and between roles.")
                              r-sf
                              r-rlang
                              r-pso
-                             r-lwgeom
                              r-ggplot2
                              r-e1071
                              r-dplyr))
@@ -12029,6 +12028,28 @@ in Guignard et al. <doi:10.3389/feart.2020.00255>.  A python version of this
 work is available on github and @code{PyPi} ('@code{FiShPy}').")
     (license license:expat)))
 
+(define-public r-first
+  (package
+    (name "r-first")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "first" version))
+       (sha256
+        (base32 "0qrmmrc2g9194vvbzlh42lqh915h2sgxc8i04m2cy7pvwj3zrf40"))))
+    (properties `((upstream-name . "first")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-twinning r-pdist r-fnn))
+    (home-page "https://cran.r-project.org/package=first")
+    (synopsis "Factor Importance Ranking and Selection using Total Indices")
+    (description
+     "This package provides a model-independent factor importance ranking and
+selection procedure that is based on total Sobol indices.  Please see Huang and
+Joseph (2024) <@code{arXiv:2401.00800>}.  This research is supported by U.S.
+National Science Foundation grants DMS-2310637 and DMREF-1921873.")
+    (license license:gpl2+)))
+
 (define-public r-firebehavior
   (package
     (name "r-firebehavior")
@@ -15420,13 +15441,13 @@ importance in general can be found here:
 (define-public r-featurehashing
   (package
     (name "r-featurehashing")
-    (version "0.9.1.5")
+    (version "0.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FeatureHashing" version))
        (sha256
-        (base32 "1hfa2p78a7hhn5p0xhsha6pl2aisvkjd791j61s73w99vbysmmpl"))))
+        (base32 "05cap6251dk3x7802ii33zv41pahng68h7fvx5z8y6ii4vzlgd57"))))
     (properties `((upstream-name . "FeatureHashing")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-matrix r-magrittr r-digest r-bh))
@@ -19180,6 +19201,31 @@ test evaluates the null hypothesis that two i.i.d.  random samples were drawn
 from the same underlying probability distribution.  The data can be of any
 dimension, and can be of any type (continuous, discrete, or mixed).")
     (license license:expat)))
+
+(define-public r-fas
+  (package
+    (name "r-fas")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FAS" version))
+       (sha256
+        (base32 "16sqbykf14p0wch1xryrx4ikwa7mxfkprxgyxlwsidxf94ny17iq"))))
+    (properties `((upstream-name . "FAS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-pracma r-matrix))
+    (native-inputs (list gfortran))
+    (home-page "https://cran.r-project.org/package=FAS")
+    (synopsis "Factor-Augmented Sparse Regression Tuning-Free Testing")
+    (description
+     "The FAS package implements the bootstrap method for the tuning parameter
+selection and tuning-free inference on sparse regression coefficient vectors.
+Currently, the test could be applied to linear and factor-augmented sparse
+regressions, see Lederer & Vogt (2021, JMLR)
+<https://www.jmlr.org/papers/volume22/20-539/20-539.pdf> and Beyhum & Striaukas
+(2023) <@code{arXiv:2307.13364>}.")
+    (license license:gpl2+)))
 
 (define-public r-farrell
   (package

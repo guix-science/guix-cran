@@ -6228,13 +6228,13 @@ visualizations. @code{SubVis} requires the availability of a web browser.")
 (define-public r-subtypedrug
   (package
     (name "r-subtypedrug")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SubtypeDrug" version))
        (sha256
-        (base32 "1f1kx5lw2f1pch3805p58r89mkckcwna6vihagjrdcdc9xln48vb"))))
+        (base32 "1k0xgxi6syl084ra2sw5xwhcdbhiszh8g99d4xhmkwhmzhmnd9mi"))))
     (properties `((upstream-name . "SubtypeDrug")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -15866,13 +15866,13 @@ analyses.")
 (define-public r-squat
   (package
     (name "r-squat")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "squat" version))
        (sha256
-        (base32 "0imbbmvsspqy1ffmfm7idhhrrh4j7lsly7dl7jydqjqpzkmhnyb8"))))
+        (base32 "0a5vm1ldwysadf50jvq7p988gv9arszg2a1hppcfjvwq193ywy0g"))))
     (properties `((upstream-name . "squat")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -16322,17 +16322,16 @@ Simulation, Using R. 2nd Ed.  Chapman And Hall/CRC.")
 (define-public r-spup
   (package
     (name "r-spup")
-    (version "1.3-2")
+    (version "1.4-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spup" version))
        (sha256
-        (base32 "098zga5dm785v5k0s0ql6j17i6zbnka0yhfni4irlki3y1ndw78m"))))
+        (base32 "045bvl2nzr78yrzp07718m5929wxmj0g4rd535f4qdaj95m137dm"))))
     (properties `((upstream-name . "spup")))
     (build-system r-build-system)
     (propagated-inputs (list r-whisker
-                             r-sp
                              r-raster
                              r-purrr
                              r-mvtnorm
@@ -30038,13 +30037,13 @@ with R. It includes functions to search for, acquire, and extract SMAP data.")
 (define-public r-smam
   (package
     (name "r-smam")
-    (version "0.7.1")
+    (version "0.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smam" version))
        (sha256
-        (base32 "1p7rqrbqdqgar5ryij0mx5vxd0ls7rdfc6k73nbxqz8hlx95p0xa"))))
+        (base32 "0p7k4x27rbfmibifq9hn161v57zvlgw088inq2gnmm95sh6kqh1v"))))
     (properties `((upstream-name . "smam")))
     (build-system r-build-system)
     (inputs (list gsl))
@@ -38265,13 +38264,13 @@ testing, see the book by Lehmann and Romano (2005) <doi:10.1007/0-387-27605-X>."
 (define-public r-shroomdk
   (package
     (name "r-shroomdk")
-    (version "0.2.2")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shroomDK" version))
        (sha256
-        (base32 "0dig3zh4fbgxdaiaczbccja8fx2v29nskj6jm75vj40ml7zyyrad"))))
+        (base32 "19i06kwk1sj5x73w4ajxkn3wpiq6qxjvg3jgv7v048m0fp70i4dn"))))
     (properties `((upstream-name . "shroomDK")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-httr))
@@ -38723,13 +38722,13 @@ like a bivariate slider.  It allows to pick up a pair of numbers.")
 (define-public r-shinywidgets
   (package
     (name "r-shinywidgets")
-    (version "0.8.0")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyWidgets" version))
        (sha256
-        (base32 "1c5667ndrav8rfcd5cm2bwp21hy7msgnc3s5n4kzyijgdacfbs0s"))))
+        (base32 "09bj2z9gzkdhbpiwdzw0pkcw4zrj0nrvvppfqqi9hynwl64f4bim"))))
     (properties `((upstream-name . "shinyWidgets")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny
@@ -46491,6 +46490,32 @@ Sullivant (2011) <doi:10.1214/10-AOS859>, Foygel, Draisma, and Drton (2012)
 graphical representation of structural equation models.")
     (license license:gpl2+)))
 
+(define-public r-semicontmanova
+  (package
+    (name "r-semicontmanova")
+    (version "0.1-8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "semicontMANOVA" version))
+       (sha256
+        (base32 "08z4r8klp2drch89jd4j3ji0439p6dr93db51vnm3bzic0dbrm01"))))
+    (properties `((upstream-name . "semicontMANOVA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mvtnorm r-matrixcalc))
+    (home-page "https://cran.r-project.org/package=semicontMANOVA")
+    (synopsis
+     "Multivariate ANalysis of VAriance with Ridge Regularization for Semicontinuous High-Dimensional Data")
+    (description
+     "This package implements Multivariate ANalysis Of VAriance (MANOVA) parameters
+inference and test with regularization for semicontinuous high-dimensional data.
+ The method can be applied also in presence of low-dimensional data.  The
+p-value can be obtained through asymptotic distribution or using a permutation
+procedure.  The package gives also the possibility to simulate this type of
+data.  Method is described in Elena Sabbioni, Claudio Agostinelli and Alessio
+Farcomeni (2024) <@code{arXiv:2401.04036>}.")
+    (license license:gpl2)))
+
 (define-public r-semicomprisks
   (package
     (name "r-semicomprisks")
@@ -49971,13 +49996,13 @@ Bond, Brandt, and de Wolf (2015)
 (define-public r-sdchierarchies
   (package
     (name "r-sdchierarchies")
-    (version "0.20.0")
+    (version "0.21.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sdcHierarchies" version))
        (sha256
-        (base32 "0s4j1fy80ag03smxibxv6y924q1mvcdchilnjnx4xnyagxx24sl7"))))
+        (base32 "0ihfddjkqdmzpr62dackblwbjcvbkhzm4ap1xzbn4m8i3z1nlbi0"))))
     (properties `((upstream-name . "sdcHierarchies")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinytree

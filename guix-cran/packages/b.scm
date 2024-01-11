@@ -2853,49 +2853,6 @@ score variance and beta=error variance (Tanzer & Harlow, 2020)
 <doi:10.1080/00273171.2020.1854082>.")
     (license license:expat)))
 
-(define-public r-brvm
-  (package
-    (name "r-brvm")
-    (version "5.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "BRVM" version))
-       (sha256
-        (base32 "14bbl0b383ilj8zw8qw40gfyi6lpr0vqsb7hajzjycy5l0xnimjb"))))
-    (properties `((upstream-name . "BRVM")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xts
-                             r-xml2
-                             r-tseries
-                             r-timedate
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rvest
-                             r-rlang
-                             r-nortest
-                             r-magrittr
-                             r-lubridate
-                             r-httr2
-                             r-httr
-                             r-highcharter
-                             r-gsheet
-                             r-goftest
-                             r-formattable
-                             r-fbasics
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=BRVM")
-    (synopsis
-     "Retrieve Historical Data of Companies Listed on the 'BRVM' Stock Exchange")
-    (description
-     "Provide real-time access to data from the Regional Securities Exchange SA,
-commonly known as the BRVM stock exchange.  The goal is to facilitate data
-access for users of the R programming language.  The package includes a variety
-of data that can be accessed by calling functions.")
-    (license license:expat)))
-
 (define-public r-brunnermunzel
   (package
     (name "r-brunnermunzel")
@@ -9546,13 +9503,13 @@ format and checked for compatibility.  Supports dataframes, tibbles and
 (define-public r-blackmarbler
   (package
     (name "r-blackmarbler")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "blackmarbler" version))
        (sha256
-        (base32 "17n77yynvdj0gk6mv2swnygdam80ajhdj09479ib0axl0d6f80sr"))))
+        (base32 "0wjzan85jlyninvb72zk3iz0h5i4vpzxl27gj9ix9ggf94ylxljx"))))
     (properties `((upstream-name . "blackmarbler")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -11464,13 +11421,13 @@ under perturbation, and the other on higher criticism.")
 (define-public r-biom2
   (package
     (name "r-biom2")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BioM2" version))
        (sha256
-        (base32 "065k0z1wgg1yf0xvcp3n0zpbfnlpi9pd4g34k3sk63z3l2s54hym"))))
+        (base32 "05alizwf5l45klpsgc3gid87pkqpd4vv0jj4dlnq6v3vvnzb1fc1"))))
     (properties `((upstream-name . "BioM2")))
     (build-system r-build-system)
     (propagated-inputs (list r-wordcloud2
@@ -11479,7 +11436,6 @@ under perturbation, and the other on higher criticism.")
                              r-viridis
                              r-uwot
                              r-rocr
-                             r-rcolorbrewer
                              r-mlr3verse
                              r-mlr3
                              r-jiebar
@@ -11488,6 +11444,7 @@ under perturbation, and the other on higher criticism.")
                              r-htmlwidgets
                              r-ggthemes
                              r-ggstatsplot
+                             r-ggsci
                              r-ggpubr
                              r-ggplot2
                              r-ggnetwork
@@ -20738,6 +20695,31 @@ detection, as well as the sum-cusum and max-cusum methods, and a wild binary
 segmentation wrapper for all algorithms.")
     (license license:gpl2+)))
 
+(define-public r-bayesppdsurv
+  (package
+    (name "r-bayesppdsurv")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BayesPPDSurv" version))
+       (sha256
+        (base32 "19c9q9hnh08389rw63hqgyd7z32s731qm8lz75qjy227ybvjkg0s"))))
+    (properties `((upstream-name . "BayesPPDSurv")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-rcppdist r-rcpparmadillo r-rcpp r-dplyr))
+    (home-page "https://cran.r-project.org/package=BayesPPDSurv")
+    (synopsis "Bayesian Power Prior Design for Survival Data")
+    (description
+     "Bayesian power/type I error calculation and model fitting using the power prior
+and the normalized power prior for proportional hazards models with piecewise
+constant hazard.  The Bayesian clinical trial design methodology is described in
+Chen et al. (2011) <doi:10.1111/j.1541-0420.2011.01561.x>, and Psioda and
+Ibrahim (2019) <doi:10.1093/biostatistics/kxy009>.  The proportional hazards
+model with piecewise constant hazard is detailed in Ibrahim et al. (2001)
+<doi:10.1007/978-1-4757-3447-8>.")
+    (license license:gpl3+)))
+
 (define-public r-bayesppd
   (package
     (name "r-bayesppd")
@@ -23956,13 +23938,13 @@ Koopmeiners, J.S. and Hobbs, B.P. (2017) <doi:10.1093/biostatistics/kxx031>.")
 (define-public r-baskepro
   (package
     (name "r-baskepro")
-    (version "0.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BaSkePro" version))
        (sha256
-        (base32 "06wnl128anr0isq07qn2xr426c8iybmrbixz93hxx1pshcm64f37"))))
+        (base32 "1dvkn8sgrxnxi91635ic3crhz498v95i8clj7n4pq1k9fsany3jg"))))
     (properties `((upstream-name . "BaSkePro")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))

@@ -6403,6 +6403,40 @@ An overview of these models is given in Snijders (2017),
     (license (list license:gpl2 license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-rsi
+  (package
+    (name "r-rsi")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rsi" version))
+       (sha256
+        (base32 "0bfd8jbn5fphbbypcascdrr7krr9kn7sbi7ar3j7wvmdhcxka6n5"))))
+    (properties `((upstream-name . "rsi")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-terra
+                             r-sf
+                             r-rstac
+                             r-rlang
+                             r-proceduralnames
+                             r-jsonlite
+                             r-glue
+                             r-future-apply))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Permian-Global-Research/rsi")
+    (synopsis "Efficiently Retrieve and Process Satellite Imagery")
+    (description
+     "Downloads spatial data from spatiotemporal asset catalogs ('STAC'), computes
+standard spectral indices from the Awesome Spectral Indices project (Montero et
+al. (2023) <doi:10.1038/s41597-023-02096-0>) against raster data, and glues the
+outputs together into predictor bricks.  Methods focus on interoperability with
+the broader spatial ecosystem; function arguments and outputs use classes from
+sf and terra', and data downloading functions support complex CQL2 queries using
+rstac'.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-rshift
   (package
     (name "r-rshift")
@@ -10823,13 +10857,13 @@ demo.")
 (define-public r-round
   (package
     (name "r-round")
-    (version "0.21-0.1")
+    (version "0.21-0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "round" version))
        (sha256
-        (base32 "1k245bq0wkh2lwiq009nkr5j100xvx0700q82jf1lxsiyvgbip41"))))
+        (base32 "07cv24v9aciyxnpv71nmfjzn55xqlbkpc65zxlb4ly5fl53cb8rf"))))
     (properties `((upstream-name . "round")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -12271,19 +12305,21 @@ time-series data.")
 (define-public r-rolap
   (package
     (name "r-rolap")
-    (version "2.5.0")
+    (version "2.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rolap" version))
        (sha256
-        (base32 "1iciwf5yb8llga8l59spfzvir4akkw8a17vdmrsc1gjbkcchvnl1"))))
+        (base32 "1j538xnfilrhhh3rk8rr1941353kn96a469h810h0h6l1cn5z2vp"))))
     (properties `((upstream-name . "rolap")))
     (build-system r-build-system)
     (propagated-inputs (list r-xlsx
+                             r-when
                              r-tidyselect
                              r-tidyr
                              r-tibble
+                             r-starschemar
                              r-snakecase
                              r-sf
                              r-rlang
@@ -25072,13 +25108,13 @@ in: <http://forsys.sefs.uw.edu/fusion/fusionlatest.html>).")
 (define-public r-rfssa
   (package
     (name "r-rfssa")
-    (version "3.0.2")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rfssa" version))
        (sha256
-        (base32 "1fa9j7rcsf5pz8l4h88l9mz4qf8vlrzg53c99176wmj5a39n2abp"))))
+        (base32 "0knz199h29ph6qxbasrjqdyhgsqnrmp83syz3d3mblqnlz3ar1mi"))))
     (properties `((upstream-name . "Rfssa")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -31617,6 +31653,30 @@ data.  Full mathematical details can be found in <doi:10.1002/sim.9163> and
 <doi:10.1007/s00477-020-01901-1>.")
     (license license:gpl2)))
 
+(define-public r-reflimr
+  (package
+    (name "r-reflimr")
+    (version "1.0.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "reflimR" version))
+       (sha256
+        (base32 "02phm6jjhwdcc82vw292kcwwrprl7zcd8fyvb479rs3c1ippkrhc"))))
+    (properties `((upstream-name . "reflimR")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/reflim/reflimR")
+    (synopsis "Reference Limit Estimation Using Routine Laboratory Data")
+    (description
+     "Uses an indirect method based on truncated quantile-quantile plots to estimate
+reference limits from routine laboratory data.  The principle of the method was
+developed by Robert G Hoffmann (1963) <doi:10.1001/jama.1963.03060110068020> and
+modified by Georg Hoffmann and colleagues (2015) <doi:10.1515/labmed-2015-0104>,
+(2020) <doi:10.1515/labmed-2020-0005>, and (2022)
+<doi:10.1007/978-3-031-15509-3_31>.")
+    (license license:gpl2)))
+
 (define-public r-refitme
   (package
     (name "r-refitme")
@@ -35965,16 +36025,16 @@ sparse linear discriminant analysis (see Pun and Hadimaja (2019)
 (define-public r-rdecision
   (package
     (name "r-rdecision")
-    (version "1.1.3")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rdecision" version))
        (sha256
-        (base32 "134d3990zzym6jng33nfi6kp9b7pwyppn76vn3ms4lhpjw7dbcl3"))))
+        (base32 "0505xzmz8qsnchm51w2s39d9hs90cyzd8dzv0zgfh183n69lvmfz"))))
     (properties `((upstream-name . "rdecision")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlang r-r6))
+    (propagated-inputs (list r-withr r-rlang r-r6))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=rdecision")
     (synopsis "Decision Analytic Modelling in Health Economics")
@@ -47383,13 +47443,13 @@ regression, as well as box plots, histograms, scatter plots, and line plots
 (define-public r-r2social
   (package
     (name "r-r2social")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r2social" version))
        (sha256
-        (base32 "1jmhq2qfh3wn47ysl8lairhj7zibiq0dw5nfx0ki1d3vi6f7bv5r"))))
+        (base32 "1a75ck2h5f6nnjniwj1a1y31dfsda6gw1db2l2j8fd5nf10piwgk"))))
     (properties `((upstream-name . "r2social")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-htmltools))
@@ -47397,10 +47457,17 @@ regression, as well as box plots, histograms, scatter plots, and line plots
     (home-page "https://r2social.obi.obianom.com")
     (synopsis "App Inclusion of Social Sharing and Connect Buttons")
     (description
-     "Implementation of @code{JavaScript} and CSS styles to allow easy incorporation
-of various social media elements on a page.  The elements include addition of
-share buttons or connect with us buttons or hyperlink buttons to Shiny
-applications or dashboards and Rmardown documents.")
+     "Implementation of JQuery <https://jquery.com> and CSS styles to allow easy
+incorporation of various social media elements on a page.  The elements include
+addition of share buttons or connect with us buttons or hyperlink buttons to
+Shiny applications or dashboards and Rmarkdown documents.Sharing capability on
+social media platforms including Facebook <https://www.facebook.com>, Linkedin
+<https://www.linkedin.com>, X/Twitter <https://x.com>, Tumblr
+<https://www.tumblr.com>, Pinterest <https://www.pinterest.com>, Whatsapp
+<https://www.whatsapp.com>, Reddit <https://www.reddit.com>, Baidu
+<https://www.baidu.com>, Blogger <https://www.blogger.com>, Weibo
+<https://www.weibo.com>, Instagram <https://www.instagram.com>, Telegram
+<https://www.telegram.me>, Youtube <https://www.youtube.com>.")
     (license license:expat)))
 
 (define-public r-r2shortcode

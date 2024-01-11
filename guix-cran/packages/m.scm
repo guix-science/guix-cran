@@ -1045,37 +1045,6 @@ mvoutlier.@code{CoDa}, a method for compositional data.  References are provided
 in the corresponding help files.")
     (license license:gpl3+)))
 
-(define-public r-mvord
-  (package
-    (name "r-mvord")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mvord" version))
-       (sha256
-        (base32 "0flqdsjigv8c6ygiih17kp22yrbs2wqydadqi5ij145a6r8bpkml"))))
-    (properties `((upstream-name . "mvord")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-ucminf
-                             r-pbivnorm
-                             r-optimx
-                             r-numderiv
-                             r-mnormt
-                             r-minqa
-                             r-matrix
-                             r-mass
-                             r-dfoptim
-                             r-bb))
-    (native-inputs (list r-knitr gfortran))
-    (home-page "https://cran.r-project.org/package=mvord")
-    (synopsis "Multivariate Ordinal Regression Models")
-    (description
-     "This package provides a flexible framework for fitting multivariate ordinal
-regression models with composite likelihood methods.  Methodological details are
-given in Hirk, Hornik, Vana (2020) <doi:10.18637/jss.v093.i04>.")
-    (license license:gpl3)))
-
 (define-public r-mvntestchar
   (package
     (name "r-mvntestchar")
@@ -2234,6 +2203,35 @@ running computations can be stashed after the first run and then reloaded the
 next time.  Dependencies can be added to ensure that a computation is re-run if
 any of its dependencies or inputs have changed.")
     (license license:gpl3)))
+
+(define-public r-musicnmr
+  (package
+    (name "r-musicnmr")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "musicNMR" version))
+       (sha256
+        (base32 "14p382bcgpr7qbjpnpf8z173vbjq9svq8fifmffqrcxddvyfa6bx"))))
+    (properties `((upstream-name . "musicNMR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-seewave))
+    (home-page "https://cran.r-project.org/package=musicNMR")
+    (synopsis
+     "Conversion of Nuclear Magnetic Resonance Spectra in Audio Files")
+    (description
+     "This package provides a collection of functions for converting and visualization
+the free induction decay of mono dimensional nuclear magnetic resonance (NMR)
+spectra into an audio file.  It facilitates the conversion of Bruker datasets in
+files WAV. The sound of NMR signals could provide an alternative to the current
+representation of the individual metabolic fingerprint and supply equally
+significant information.  The package includes also NMR spectra of the urine
+samples provided by four healthy donors.  Based on Cacciatore S, Saccenti E,
+Piccioli M. Hypothesis: the sound of the individual metabolic phenotype?
+Acoustic detection of NMR experiments.  OMICS. 2015;19(3):147-56.
+<doi:10.1089/omi.2014.0131>.")
+    (license license:gpl2+)))
 
 (define-public r-musica
   (package
@@ -10445,45 +10443,6 @@ among others functions to calculate dynamic Brownian Bridge Movement Models.
 Move helps addressing movement ecology questions.")
     (license license:gpl3+)))
 
-(define-public r-mousetrap
-  (package
-    (name "r-mousetrap")
-    (version "3.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mousetrap" version))
-       (sha256
-        (base32 "13qggxq650blx21bbdy3ljmsbmv32039zhims8nh3lk3pzxckf5p"))))
-    (properties `((upstream-name . "mousetrap")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-scales
-                             r-rlang
-                             r-rcpp
-                             r-rcolorbrewer
-                             r-psych
-                             r-pracma
-                             r-magrittr
-                             r-lifecycle
-                             r-ggplot2
-                             r-fields
-                             r-fastcluster
-                             r-dplyr
-                             r-diptest
-                             r-cstab))
-    (home-page "https://github.com/pascalkieslich/mousetrap")
-    (synopsis "Process and Analyze Mouse-Tracking Data")
-    (description
-     "Mouse-tracking, the analysis of mouse movements in computerized experiments, is
-a method that is becoming increasingly popular in the cognitive sciences.  The
-mousetrap package offers functions for importing, preprocessing, analyzing,
-aggregating, and visualizing mouse-tracking data.  An introduction into
-mouse-tracking analyses using mousetrap can be found in Wulff, Kieslich,
-Henninger, Haslbeck, & Schulte-Mecklenbeck (2023) <doi:10.31234/osf.io/v685r>
-(preprint: <https://osf.io/preprints/psyarxiv/v685r>).")
-    (license license:gpl3)))
-
 (define-public r-mousetrajectory
   (package
     (name "r-mousetrajectory")
@@ -11896,6 +11855,39 @@ and student-t errors (from Geweke) is also provided.")
      "Various imputation methods are utilized in this package, where one can flag and
 impute non-monotonic data that is outside of a prespecified range.")
     (license license:gpl3)))
+
+(define-public r-monographar
+  (package
+    (name "r-monographar")
+    (version "1.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "monographaR" version))
+       (sha256
+        (base32 "0yjyyi8y5gdf3xxyi604vcjhv57xr10vgrvfsmbdrw6nmnnbgzzg"))))
+    (properties `((upstream-name . "monographaR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra
+                             r-sp
+                             r-sf
+                             r-rpart
+                             r-rnaturalearth
+                             r-rmarkdown
+                             r-raster
+                             r-png
+                             r-circular))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=monographaR")
+    (synopsis "Taxonomic Monographs Tools")
+    (description
+     "This package contains functions intended to facilitate the production of plant
+taxonomic monographs.  The package includes functions to convert tables into
+taxonomic descriptions, lists of collectors, examined specimens, dichotomous
+keys, and can generate a monograph skeleton.  Additionally, wrapper functions to
+batch the production of phenology charts and distributional and diversity maps
+are also available.")
+    (license license:gpl2+)))
 
 (define-public r-monoclust
   (package
@@ -24206,13 +24198,13 @@ incorporated and updated over a discrete time step.")
 (define-public r-micromapst
   (package
     (name "r-micromapst")
-    (version "3.0.1")
+    (version "3.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "micromapST" version))
        (sha256
-        (base32 "0ap8pk8gw3lkbv8xq6ghi68abm8gj8rsalxgcf6wan8vrg7d3iw7"))))
+        (base32 "1r7lkwhqmcby1wjva9fij7b62vk4aqrwn4maj1zfpcm9f9s90jvp"))))
     (properties `((upstream-name . "micromapST")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
@@ -24252,7 +24244,7 @@ Visualizing Data Patterns with Micromaps, CRC Press, 2010.  Pickle, Pearson, and
 Carr (2015), @code{micromapST}: Exploring and Communicating Geospatial Patterns
 in US State Data., Journal of Statistical Software, 63(3), 1-25.,
 <https://www.jstatsoft.org/v63/i03/>.  Copyrighted 2013, 2014, 2015, 2016, 2022,
-and 2023 by Carr, Pearson and Pickle.")
+2023, and 2024 by Carr, Pearson and Pickle.")
     (license license:gpl2+)))
 
 (define-public r-micromap
@@ -34814,16 +34806,16 @@ multiple ca and ordered multiple ca via orthogonal polynomials of Emerson.")
 (define-public r-mcauchyd
   (package
     (name "r-mcauchyd")
-    (version "1.0.2")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mcauchyd" version))
        (sha256
-        (base32 "0qlfmxcpaq8l5ix4b0mnbzgjrq47wchxvzjq6iqkbsjzz2h48bjm"))))
+        (base32 "18615ac3z8vgkqr0xslaama9sbvn7m4p116vv8l2wz65f623l0d4"))))
     (properties `((upstream-name . "mcauchyd")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rgl r-mass))
+    (propagated-inputs (list r-rgl r-mass r-lifecycle))
     (home-page "https://forgemia.inra.fr/imhorphen/mcauchyd")
     (synopsis "Multivariate Cauchy Distribution; Kullback-Leibler Divergence")
     (description

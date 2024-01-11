@@ -2073,13 +2073,13 @@ general factor.")
 (define-public r-unittest
   (package
     (name "r-unittest")
-    (version "1.6-0")
+    (version "1.6-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "unittest" version))
        (sha256
-        (base32 "10k1lx4pzl884m00mx191h5hxcgcsiz9486dbyjvsyhh0hv2xi0v"))))
+        (base32 "1y035zj23am2d6cmfz93nyflwwivfy5lq4m5d17yb6s1lir057pn"))))
     (properties `((upstream-name . "unittest")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

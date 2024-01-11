@@ -2166,13 +2166,13 @@ Functions in vivaldi primarily operate on vcf files.")
 (define-public r-vivainsights
   (package
     (name "r-vivainsights")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vivainsights" version))
        (sha256
-        (base32 "11b6289ikc12ncgh71ynmx242l43cqi0v8hn3r86pipxipd6q156"))))
+        (base32 "0q61vm1xliz3dsv9ybh6gsz3crv1k06gnkd391430w81kh7y09fy"))))
     (properties `((upstream-name . "vivainsights")))
     (build-system r-build-system)
     (propagated-inputs (list r-wpa

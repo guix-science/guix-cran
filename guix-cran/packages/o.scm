@@ -3481,13 +3481,13 @@ place, streamlining your workflow for optimal productivity.")
 (define-public r-oralopioids
   (package
     (name "r-oralopioids")
-    (version "2.0.1")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OralOpioids" version))
        (sha256
-        (base32 "0rp15jdcd7k5150wq92fz3l4rgz5wqzn0fcadp5h6i8wwwxxj16b"))))
+        (base32 "0r090bhdv221ng4acwwppzk907h3vb10nachy32zdx2nfs0dqid7"))))
     (properties `((upstream-name . "OralOpioids")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -3504,7 +3504,7 @@ place, streamlining your workflow for optimal productivity.")
                              r-jsonlite
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "\"https://github.com/ankonahouston/OralOpioids\"")
+    (home-page "https://github.com/ankonahouston/OralOpioids")
     (synopsis "Retrieving Oral Opioid Information")
     (description
      "This package provides details such as Morphine Equivalent Dose (MED), brand name
@@ -5517,37 +5517,6 @@ and visualize aviation data.  It includes a client interface to the
 information, as well as aircraft state vectors.")
     (license (license:fsdg-compatible "CC BY-NC 4.0"))))
 
-(define-public r-opensensmapr
-  (package
-    (name "r-opensensmapr")
-    (version "0.6.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "opensensmapr" version))
-       (sha256
-        (base32 "0inq86zrkax281wh5rj3pxjp3lgrhsqvma0p6kvizb5c7cwws5in"))))
-    (properties `((upstream-name . "opensensmapr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-readr
-                             r-purrr
-                             r-magrittr
-                             r-lazyeval
-                             r-httr
-                             r-dplyr
-                             r-digest))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/sensebox/opensensmapR")
-    (synopsis "Client for the Data API of 'openSenseMap.org'")
-    (description
-     "Download environmental measurements and sensor station metadata from the API of
-open data sensor web platform <https://opensensemap.org> for analysis in R. This
-platform provides real time data of more than 1500 low-cost sensor stations for
-PM10, PM2.5, temperature, humidity, UV-A intensity and more phenomena.  The
-package aims to be compatible with sf and the Tidyverse', and provides several
-helper functions for data exploration and transformation.")
-    (license license:gpl2+)))
-
 (define-public r-openrepgrid-ic
   (package
     (name "r-openrepgrid-ic")
@@ -6348,13 +6317,13 @@ philosophy of the package is described in Guo G. (2018)
 (define-public r-opalr
   (package
     (name "r-opalr")
-    (version "3.4.0")
+    (version "3.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "opalr" version))
        (sha256
-        (base32 "0gc677px1kwvwhkgqpwgg18nwi4hl76c98a2das404966x320dk3"))))
+        (base32 "14pv1rbmmhgcid2gcs1hxwr8a84jn6cyrqpfjlw10ia76qd63qkk"))))
     (properties `((upstream-name . "opalr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -6623,13 +6592,13 @@ mtry', sample.fraction and min.node.size for the ranger package.")
 (define-public r-ontophylo
   (package
     (name "r-ontophylo")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ontophylo" version))
        (sha256
-        (base32 "0xdib7jfb6s2vkq58x7kywhw7pn8laddc6rrf83dmq0wv9pihdfx"))))
+        (base32 "1pb8w39ckx2ffchrrxp1jqs555b5bfz7cv5kbwgyzpfshv9s0ca4"))))
     (properties `((upstream-name . "ontophylo")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm
@@ -6824,13 +6793,13 @@ with new theme and colors.")
 (define-public r-onpoint
   (package
     (name "r-onpoint")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "onpoint" version))
        (sha256
-        (base32 "06zdgxcizw66l9ll8g1wsbrj0c4zl8zp2z7l2cn4sz45kr3qkvfg"))))
+        (base32 "1ib7bj8y1ykrsl84bjz0y6ncc9rj5pazad9541vpn3xpr7c11xj1"))))
     (properties `((upstream-name . "onpoint")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-random r-spatstat-geom
@@ -9465,16 +9434,16 @@ data.")
 (define-public r-odmeans
   (package
     (name "r-odmeans")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ODMeans" version))
        (sha256
-        (base32 "1f8difw0npidsnn9sis8pf73i8p4p5cl63g4v02jaxmlmm184wvf"))))
+        (base32 "09zpgr7acc5dsbv8qz0r8vzxy64202f62ird6ynkng3s55z0pana"))))
     (properties `((upstream-name . "ODMeans")))
     (build-system r-build-system)
-    (propagated-inputs (list r-ggplot2 r-geosphere))
+    (propagated-inputs (list r-ggrepel r-ggplot2 r-ggmap r-geosphere))
     (home-page "https://cran.r-project.org/package=ODMeans")
     (synopsis "OD-Means: k-Means for Origin-Destination")
     (description

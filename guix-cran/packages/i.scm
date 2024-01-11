@@ -4917,13 +4917,13 @@ IP2Location to install the module.")
 (define-public r-ip
   (package
     (name "r-ip")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IP" version))
        (sha256
-        (base32 "1xvlv8mlahyhzvl0zbj0352iiqk2smqfy3vlawz8ldlcmwvwim7k"))))
+        (base32 "0i9518pk8y2ls2bx7d6jzxc647n5m576y88in4bbiwyzldy9gqqj"))))
     (properties `((upstream-name . "IP")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi))
@@ -8935,13 +8935,13 @@ package is based on methods described in Sasieni (2003) <doi:
 (define-public r-infercsn
   (package
     (name "r-infercsn")
-    (version "0.99.8")
+    (version "0.99.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inferCSN" version))
        (sha256
-        (base32 "0czi0sraxhdjwima1g4xyqv6gr8b6fhm0xjbzfzpqdghh01ss299"))))
+        (base32 "1lfawb31ljf3rfa1zavfqalkqy0rha1wsvi1x23jh1n8nj393jq2"))))
     (properties `((upstream-name . "inferCSN")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
@@ -8956,7 +8956,6 @@ package is based on methods described in Sasieni (2003) <doi:
                              r-foreach
                              r-dplyr
                              r-doparallel
-                             r-data-table
                              r-complexheatmap))
     (home-page "https://mengxu98.github.io/inferCSN/")
     (synopsis "Inferring Cell-Specific Gene Regulatory Network")
@@ -14353,13 +14352,13 @@ semiparametric regression models will be included in later versions.")
 (define-public r-icssmoothing
   (package
     (name "r-icssmoothing")
-    (version "1.2.7")
+    (version "1.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ICSsmoothing" version))
        (sha256
-        (base32 "141ly37ccj1ky9lr37baa3vkbbkr73z8nxfkyavjrzhzw8d5r2rr"))))
+        (base32 "14f7702smm1jjqdg8bjbi7hw5j4390xnfwzdyw7jnfri33xpabl2"))))
     (properties `((upstream-name . "ICSsmoothing")))
     (build-system r-build-system)
     (propagated-inputs (list r-polynom r-ggplot2))

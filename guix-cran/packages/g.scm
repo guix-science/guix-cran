@@ -5335,16 +5335,16 @@ combination of greedy local search and a genetic algorithm (see
 (define-public r-grec
   (package
     (name "r-grec")
-    (version "1.5.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grec" version))
        (sha256
-        (base32 "0k40j32l551qsnw7hry0slk0y89fiff7mgfwsk9fyz70kns64yk5"))))
+        (base32 "1zv71cb6kj4bm11ihygzxhmc5hcxn7m4pmyga4fpxmc2xz8pv1sz"))))
     (properties `((upstream-name . "grec")))
     (build-system r-build-system)
-    (propagated-inputs (list r-terra r-raster r-imagine r-abind))
+    (propagated-inputs (list r-terra r-raster r-lifecycle r-imagine r-abind))
     (home-page "https://github.com/LuisLauM/grec")
     (synopsis
      "Gradient-Based Recognition of Spatial Patterns in Environmental Data")
@@ -13466,6 +13466,36 @@ functions in R, created for use in Statistics Norway.  The functions are
 primarily related to network analysis on the Norwegian road network.")
     (license license:expat)))
 
+(define-public r-gisintegration
+  (package
+    (name "r-gisintegration")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GISINTEGRATION" version))
+       (sha256
+        (base32 "1nl1cbjcjkyd67i0qk0skbrk9ya9fydw9iiq4ip11bjg86661jjb"))))
+    (properties `((upstream-name . "GISINTEGRATION")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tm
+                             r-syn
+                             r-stringr
+                             r-shapefiles
+                             r-sf
+                             r-recordlinkage))
+    (home-page "https://cran.r-project.org/package=GISINTEGRATION")
+    (synopsis "GIS Integration")
+    (description
+     "Designed to facilitate the preprocessing and linking of GIS (Geographic
+Information System) databases
+<https://www.sciencedirect.com/topics/computer-science/gis-database>, the R
+package GISINTEGRATION offers a robust solution for efficiently preparing GIS
+data for advanced spatial analyses.  This package excels in simplifying intrica
+procedures like data cleaning, normalization, and format conversion, ensuring
+that the data are optimally primed for precise and thorough analysis.")
+    (license license:gpl3)))
+
 (define-public r-giscor
   (package
     (name "r-giscor")
@@ -19925,33 +19955,6 @@ Gene-based segregation method for identifying rare variants for family-based
 sequencing studies.  Genet Epidemiol 41(4):309-319.  More details can be found
 at <http://scholar.harvard.edu/dqiao/gese>.")
     (license license:gpl2)))
-
-(define-public r-gescilivis
-  (package
-    (name "r-gescilivis")
-    (version "1.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GeSciLiVis" version))
-       (sha256
-        (base32 "1zb2zy5gmb9zwpxcpam1b8bh0vjhzdg99xardr1vlm83383gxcjb"))))
-    (properties `((upstream-name . "GeSciLiVis")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rentrez r-biomartr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=GeSciLiVis")
-    (synopsis "Gene-Based Publication Activity Visualiser")
-    (description
-     "Visualising publication activity per gene based on a gene list and a
-user-defined set of keywords utilising R rentrez
-<https://cran.r-project.org/package=rentrez/> that provides NCBI
-<https://www.ncbi.nlm.nih.gov> database search like in @code{PubMed}
-<https://pubmed.ncbi.nlm.nih.gov>.  It summarises the retrieved number of
-publications for each gene in an overview bar plot (saved as png file) and by
-choice a summary table (as csv') that including the most recent 100
-@code{PubMed} IDs and publication titles.")
-    (license license:gpl3+)))
 
 (define-public r-germinationmetrics
   (package
@@ -26907,6 +26910,40 @@ use ordinary least squares (OLS) regression models or partial least squares
 By supporting different cross-validation schemes, the user can fine-tune the
 tradeoff between speed and quality of the solution.")
     (license license:gpl2+)))
+
+(define-public r-gasanalyzer
+  (package
+    (name "r-gasanalyzer")
+    (version "0.3.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gasanalyzer" version))
+       (sha256
+        (base32 "04h6iyxgvjz58lj090f70hjkizkabvi9zrghgw4ynlzbcckjwvg0"))))
+    (properties `((upstream-name . "gasanalyzer")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-vctrs
+                             r-units
+                             r-tidyxl
+                             r-tibble
+                             r-stringi
+                             r-jsonify))
+    (native-inputs (list r-knitr))
+    (home-page "https://gitlab.com/plantphys/gasanalyzer")
+    (synopsis "Import, Recompute and Analyze Data from Portable Gas Analyzers")
+    (description
+     "This package provides functions to import data from several instruments commonly
+used by plant physiologists to measure characteristics related to
+photosynthesis.  It provides a standardized list of variable names, and several
+sets of equations to calculate additional variables based on the measurements.
+These equations have been described by von Caemmerer and Farquhar (1981)
+<doi:10.1007/BF00384257>, Busch et al. (2020) <doi:10.1038/s41477-020-0606-6>
+and MÃ¡rquez et al. (2021) <doi:10.1038/s41477-021-00861-w>.  In addition, this
+package facilitates performing sensitivity analyses on variables or assumptions
+used in the calculations.")
+    (license license:gpl3)))
 
 (define-public r-gas
   (package

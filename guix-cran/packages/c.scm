@@ -15,8 +15,8 @@
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages maths)
   #:use-module (gnu packages bioinformatics)
+  #:use-module (gnu packages maths)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
@@ -3664,6 +3664,63 @@ distributions and their applications: a journey beyond normality, Chapman and
 Hall/CRC, Boca Raton, FL, pp.  25-42.")
     (license license:gpl2)))
 
+(define-public r-csmpv
+  (package
+    (name "r-csmpv")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "csmpv" version))
+       (sha256
+        (base32 "0w9h6780qrq3mnf89lzmdxyjd00j5g0plh8gfhpixjm9ja73w7q3"))))
+    (properties `((upstream-name . "csmpv")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xgboost
+                             r-survminer
+                             r-survival
+                             r-scales
+                             r-rms
+                             r-matrix
+                             r-hmisc
+                             r-glmnet
+                             r-ggpubr
+                             r-ggplot2
+                             r-forestmodel))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=csmpv")
+    (synopsis
+     "Biomarker Confirmation, Selection, Modelling, Prediction, and Validation")
+    (description
+     "There are diverse purposes such as biomarker confirmation, novel biomarker
+discovery, constructing predictive models, model-based prediction, and
+validation.  It handles binary, continuous, and time-to-event outcomes at the
+sample or patient level. - Biomarker confirmation utilizes established functions
+like glm() from stats', coxph() from survival', surv_fit(), and ggsurvplot()
+from survminer'. - Biomarker discovery and variable selection are facilitated by
+three LASSO-related functions LASSO2(), LASSO_plus(), and LASSO2plus(),
+leveraging the glmnet R package with additional steps. - Eight versatile
+modeling functions are offered, each designed for predictive models across
+various outcomes and data types.  1) LASSO2(), LASSO_plus(), LASSO2plus(), and
+LASSO2_reg() perform variable selection using LASSO methods and construct
+predictive models based on selected variables.  2) XGBtraining() employs XGBoost
+for model building and is the only function not involving variable selection.
+3) Functions like LASSO2_XGBtraining(), LASSOplus_XGBtraining(), and
+LASSO2plus_XGBtraining() combine LASSO-related variable selection with XGBoost
+for model construction. - All models support prediction and validation,
+requiring a testing dataset comparable to the training dataset.  Additionally,
+the package introduces XGpred() for risk prediction based on survival data, with
+the XGpred_predict() function available for predicting risk groups in new
+datasets.  The methodology is based on our new algorithms and various
+references: - Hastie et al. (1992, ISBN 0 534 16765-9), - Therneau et al. (2000,
+ISBN 0-387-98784-3), - Kassambara et al. (2021)
+<https://CRAN.R-project.org/package=survminer>, - Friedman et al. (2010)
+<doi:10.18637/jss.v033.i01>, - Simon et al. (2011) <doi:10.18637/jss.v039.i05>,
+- Harrell (2023) <https://CRAN.R-project.org/package=rms>, - Harrell (2023)
+<https://CRAN.R-project.org/package=Hmisc>, - Chen and Guestrin (2016)
+<@code{arXiv:1603.02754>}, - Aoki et al. (2023) <doi:10.1200/JCO.23.01115>.")
+    (license license:expat)))
+
 (define-public r-csmes
   (package
     (name "r-csmes")
@@ -6410,13 +6467,13 @@ Surmann (2017). <doi:10.21105/joss.00135>.")
 (define-public r-crew-aws-batch
   (package
     (name "r-crew-aws-batch")
-    (version "0.0.1")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crew.aws.batch" version))
        (sha256
-        (base32 "1wswky9wj59p1x3nzbnnfafkbp7b4aii4ycyy2z81gxah5l5kklv"))))
+        (base32 "1aky42l6imwnwcm3y9aylncynql2x4q4x1sv7xfai3a0pi3k93j8"))))
     (properties `((upstream-name . "crew.aws.batch")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -6425,7 +6482,8 @@ Surmann (2017). <doi:10.21105/joss.00135>.")
                              r-paws-management
                              r-paws-compute
                              r-paws-common
-                             r-crew))
+                             r-crew
+                             r-cli))
     (home-page "https://wlandau.github.io/crew.aws.batch/")
     (synopsis "Crew Launcher Plugin for AWS Batch")
     (description
@@ -9870,6 +9928,27 @@ used for training/testing or cross validation.  Assumes that the entries in the
 matrix are from a Poisson or a negative binomial distribution.")
     (license license:expat)))
 
+(define-public r-countseppm
+  (package
+    (name "r-countseppm")
+    (version "3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CountsEPPM" version))
+       (sha256
+        (base32 "19lb8m36s3ilvh9jia4b291a8wmfwvh2sb8jbpwxg7ksvj5bvcz6"))))
+    (properties `((upstream-name . "CountsEPPM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-numderiv r-lmtest r-formula r-expm))
+    (native-inputs (list r-r-rsp))
+    (home-page "https://cran.r-project.org/package=CountsEPPM")
+    (synopsis "Mean and Variance Modeling of Count Data")
+    (description
+     "Modeling under- and over-dispersed count data using extended Poisson process
+models as in the article Faddy and Smith (2011) <doi:10.18637/jss.v069.i06> .")
+    (license license:gpl2)))
+
 (define-public r-countrycode
   (package
     (name "r-countrycode")
@@ -9892,13 +9971,13 @@ convert between coding schemes, and assign region descriptors.")
 (define-public r-countries
   (package
     (name "r-countries")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "countries" version))
        (sha256
-        (base32 "0swmg7vp6ma1ih66rjb84i3p4l34jn0018ria3dwvjasd1i1jva4"))))
+        (base32 "1kv2agw33sgwnlwqkbhiaywkkln0gbvp00g3h5vdilpc4hf13dlf"))))
     (properties `((upstream-name . "countries")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -11739,6 +11818,37 @@ Cornerstone in their favorite R environment. .  Learn how to use R packages in
 Cornerstone 7.1.1 on @code{camLineTV} @code{YouTube} channel
 (<https://www.youtube.com/watch?v=HEQHwq_@code{laXU>}) (available in German).")
     (license license:gpl3)))
+
+(define-public r-corncob
+  (package
+    (name "r-corncob")
+    (version "0.4.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "corncob" version))
+       (sha256
+        (base32 "12ah9z9f68cw40c0hw7i53263qy0yzrpvrr4kqi7xva3d18ywn4n"))))
+    (properties `((upstream-name . "corncob")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vgam
+                             r-trust
+                             r-scales
+                             r-rlang
+                             r-numderiv
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr
+                             r-detectseparation))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/statdivlab/corncob")
+    (synopsis
+     "Count Regression for Correlated Observations with the Beta-Binomial")
+    (description
+     "Statistical modeling for correlated count data using the beta-binomial
+distribution, described in Martin et al. (2020) <doi:10.1214/19-AOAS1283>.  It
+allows for both mean and overdispersion covariates.")
+    (license license:gpl2+)))
 
 (define-public r-cormid
   (package
@@ -20134,13 +20244,13 @@ the Walloon Agricultural Research Centre (project MIMOSA, MOERMAN fund).")
 (define-public r-coga
   (package
     (name "r-coga")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coga" version))
        (sha256
-        (base32 "1ahpq69b46ahm3859pz5rq9r5p4778pvg4h693b7cm772giz58rf"))))
+        (base32 "0h4qps0k973ia2aw19smlh84p34nnwdrfgk9nm4pgcs3qx3pn102"))))
     (properties `((upstream-name . "coga")))
     (build-system r-build-system)
     (inputs (list gsl))
@@ -21079,6 +21189,36 @@ use this feature.  The respective R package rkward cannot be installed directly
 from a repository, as it is a part of RKWard.")
     (license license:gpl3+)))
 
+(define-public r-cocotest
+  (package
+    (name "r-cocotest")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cocotest" version))
+       (sha256
+        (base32 "0dvdbm4gi7mx0ayjdh75s1vh97fpwnz0qwh5yln6nzppc62qsflj"))))
+    (properties `((upstream-name . "cocotest")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-boot))
+    (home-page "https://cran.r-project.org/package=cocotest")
+    (synopsis
+     "Dependence Condition Test Using Ranked Correlation Coefficients")
+    (description
+     "This package provides a common misconception is that the Hochberg procedure
+comes up with adequate overall type I error control when test statistics are
+positively correlated.  However, unless the test statistics follow some standard
+distributions, the Hochberg procedure requires a more stringent positive
+dependence assumption, beyond mere positive correlation, to ensure valid overall
+type I error control.  To fill this gap, we formulate statistical tests grounded
+in rank correlation coefficients to validate fulfillment of the positive
+dependence through stochastic ordering (PDS) condition.  See Gou, J., Wu, K. and
+Chen, O. Y. (2024).  Rank correlation coefficient based tests on positive
+dependence through stochastic ordering with application in cancer studies,
+Technical Report.")
+    (license license:gpl3)))
+
 (define-public r-cocosor
   (package
     (name "r-cocosor")
@@ -21315,13 +21455,13 @@ implements two selection criteria in order to select the number of biclusters.")
 (define-public r-cobalt
   (package
     (name "r-cobalt")
-    (version "4.5.2")
+    (version "4.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cobalt" version))
        (sha256
-        (base32 "1jbff5ran26kc4w7k6b3bcqvj4g4zlda60qn06gxbv1pv09j2npi"))))
+        (base32 "0x8f3rpba1v3qd7drngi7161irhrly46rw81clr6zfhmlvdpid7i"))))
     (properties `((upstream-name . "cobalt")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -23158,13 +23298,13 @@ Theodoridis, and Schult (2006)<doi:10.1145/1150402.1150491> .")
 (define-public r-clustra
   (package
     (name "r-clustra")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clustra" version))
        (sha256
-        (base32 "1lgqy791l9bx7bx9jydpfsjych7yyw2sblw1qnspgmw0qs1pw5js"))))
+        (base32 "115rf9n5cc07yprminw3hh25zlmrv9v0jv63s29mx43iq28wvbnw"))))
     (properties `((upstream-name . "clustra")))
     (build-system r-build-system)
     (propagated-inputs (list r-mixsim r-mgcv r-data-table))
@@ -25542,6 +25682,37 @@ its support for building graphical models.  The computation uses linear
 programming.  The method was published in TT Cai, W Liu, X Luo (2011)
 <doi:10.1198/jasa.2011.tm10155>.")
     (license license:gpl2)))
+
+(define-public r-climd
+  (package
+    (name "r-climd")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CLimd" version))
+       (sha256
+        (base32 "0mcvxknzahz4v198ys6gnd7pg8ixcabaxlimj82z5wa1dbm81x9i"))))
+    (properties `((upstream-name . "CLimd")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-raster r-qpdf r-ncdf4))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=CLimd")
+    (synopsis "Generating Rainfall Rasters from IMD NetCDF Data")
+    (description
+     "The developed function is a comprehensive tool for the analysis of India
+Meteorological Department (IMD) @code{NetCDF} rainfall data.  Specifically
+designed to process high-resolution daily gridded rainfall datasets.  It
+provides four key functions to process IMD @code{NetCDF} rainfall data and
+create rasters for various temporal scales, including annual, seasonal, monthly,
+and weekly rainfall.  For method details see, Malik, A.
+(2019).<DOI:10.1007/s12517-019-4454-5>.  It supports different aggregation
+methods, such as sum, min, max, mean, and standard deviation.  These functions
+are designed for spatio-temporal analysis of rainfall patterns, trend
+analysis,geostatistical modeling of rainfall variability, identifying rainfall
+anomalies and extreme events and can be an input for hydrological and
+agricultural models.")
+    (license license:gpl2+)))
 
 (define-public r-climclass
   (package
@@ -34040,28 +34211,6 @@ procedure for ultrahigh dimensional data
 conducts conditional distance covariance test for conditional independence
 assumption of two multivariate variable.")
     (license license:gpl2+)))
-
-(define-public r-cdcplaces
-  (package
-    (name "r-cdcplaces")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CDCPLACES" version))
-       (sha256
-        (base32 "0rxyfac56y8jmr8bqmmslkqw2xmjxh9y8m3fm062yapha5c0bnm7"))))
-    (properties `((upstream-name . "CDCPLACES")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr r-jsonlite r-httr2 r-dplyr))
-    (home-page "\"https://github.com/brendensm/CDCPLACES\"")
-    (synopsis "Access the 'CDC PLACES' API")
-    (description
-     "Allows users to seamlessly query several CDC PLACES APIs
-(<https://data.cdc.gov/browse?q=PLACES%20&@code{sortBy=relevance>}) by
-geography, state, measure, and release year.  This package also contains a
-function to explore the available measures for each release year.")
-    (license license:expat)))
 
 (define-public r-cdcfluview
   (package

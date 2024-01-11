@@ -7714,6 +7714,28 @@ on many data sets and analyzed in: Gigerenzer, G., Todd, P. M., & the ABC Group
 (1999). <ISBN:978-0195143812>.")
     (license license:expat)))
 
+(define-public r-heumilkr
+  (package
+    (name "r-heumilkr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "heumilkr" version))
+       (sha256
+        (base32 "1m50lnvz2pljmbsc99z4q47nqd0k046zmf5r4vi6krfzyyx1g0lm"))))
+    (properties `((upstream-name . "heumilkr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-ggplot2 r-cpp11))
+    (home-page "https://github.com/lschneiderbauer/heumilkr")
+    (synopsis "Heuristic Capacitated Vehicle Routing Problem Solver")
+    (description
+     "This package implements the Clarke-Wright algorithm to find a quasi-optimal
+solution to the Capacitated Vehicle Routing Problem.  See Clarke, G. and Wright,
+J.R. (1964) <doi:10.1287/opre.12.4.568> for details.  The implementation is
+accompanied by helper functions to inspect its solution.")
+    (license license:gpl3+)))
+
 (define-public r-hetu
   (package
     (name "r-hetu")
@@ -10921,13 +10943,13 @@ The default model is described in BÃ¸lstad (2023) <doi:10.1017/pan.2023.18>.")
 (define-public r-hbal
   (package
     (name "r-hbal")
-    (version "1.2.8")
+    (version "1.2.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hbal" version))
        (sha256
-        (base32 "15id1r3h3h5pv0yahkcgzav8qhacha4wn688p7hmxpsq84d63xky"))))
+        (base32 "1r3wlgvjy33cr0vi0lpckim4cybz67lh44fi6d36hms8pirnl4rl"))))
     (properties `((upstream-name . "hbal")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -10938,6 +10960,7 @@ The default model is described in BÃ¸lstad (2023) <doi:10.1017/pan.2023.18>.")
                              r-gridextra
                              r-glmnet
                              r-ggplot2
+                             r-generics
                              r-estimatr))
     (home-page "https://yiqingxu.org/packages/hbal/")
     (synopsis "Hierarchically Regularized Entropy Balancing")

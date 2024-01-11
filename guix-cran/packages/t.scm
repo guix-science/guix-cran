@@ -4635,37 +4635,6 @@ permutations, combinations and subsets of objects taken from a vector.
 Simplifies working with structures commonly encountered in combinatorics.")
     (license license:gpl3)))
 
-(define-public r-tropfishr
-  (package
-    (name "r-tropfishr")
-    (version "1.6.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "TropFishR" version))
-       (sha256
-        (base32 "0nkw7dcb2kvgvvfla6ns60n460wsamwcp88281q6lyb6yb8k14bv"))))
-    (properties `((upstream-name . "TropFishR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-reshape2
-                             r-msm
-                             r-matrix
-                             r-mass
-                             r-gensa
-                             r-ga
-                             r-doparallel))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/tokami/TropFishR")
-    (synopsis "Tropical Fisheries Analysis")
-    (description
-     "This package provides a compilation of fish stock assessment methods for the
-analysis of length-frequency data in the context of data-poor fisheries.
-Includes methods and examples included in the FAO Manual by P. Sparre and S.C.
-Venema (1998), \"Introduction to tropical fish stock assessment\"
-(<http://www.fao.org/documents/card/en/c/9bb12a06-2f05-5dcb-a6ca-2d6dd3080f65/>),
-as well as other more recent methods.")
-    (license license:gpl3)))
-
 (define-public r-tropalgebra
   (package
     (name "r-tropalgebra")
@@ -14144,13 +14113,13 @@ the results in a tidy format.")
 (define-public r-tidyseurat
   (package
     (name "r-tidyseurat")
-    (version "0.7.9")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyseurat" version))
        (sha256
-        (base32 "0yyzi395lximy1rn06cph1awa31328wy8vmcjpn5fp6dczq00dms"))))
+        (base32 "0xm1vls01d6pcsh824w6li8wp9nf5xrxm9ranrx673vjkjrdwilf"))))
     (properties `((upstream-name . "tidyseurat")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs

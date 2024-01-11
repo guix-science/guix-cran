@@ -5559,13 +5559,13 @@ Research.  Journal of Statistical Software.  2020.  p.  1â32.  Available fr
 (define-public r-localboot
   (package
     (name "r-localboot")
-    (version "0.9.1")
+    (version "0.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "localboot" version))
        (sha256
-        (base32 "00xnkskk0mr075x908hl9cygdsqsa6wdwsg2gx01flz5dzw2xz5g"))))
+        (base32 "0pjbz87makg1lib4d346my58r42x40yh65lygfbalvmnrmchk1b8"))))
     (properties `((upstream-name . "localboot")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis r-rcppeigen r-rcpp))
@@ -6189,13 +6189,13 @@ values.")
 (define-public r-lmomco
   (package
     (name "r-lmomco")
-    (version "2.4.11")
+    (version "2.4.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lmomco" version))
        (sha256
-        (base32 "07ysvls3ydiman3f1a0c6f32xxk3fapa0wd0qq4pplx7bnl92al4"))))
+        (base32 "1i3d9dva1vijmrjpm5kv7dqzdizs0wgwm2a95y20zn8297wn1k8s"))))
     (properties `((upstream-name . "lmomco")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-lmoments r-goftest))
@@ -7559,13 +7559,13 @@ x[\"test\"] and x[\"test\",\"test\"].")
 (define-public r-list
   (package
     (name "r-list")
-    (version "9.2.4")
+    (version "9.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "list" version))
        (sha256
-        (base32 "0axb7nygvd19fqvp1871qzn95jnqs8snl1l79zfl51gycspaxjjx"))))
+        (base32 "1r1j4jk54mcvsgxm2gxpjh66h13frdiq9cszc0wxg1zfrpcisava"))))
     (properties `((upstream-name . "list")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam
@@ -9253,6 +9253,27 @@ developer api <https://api.developer.lifx.com/>.  Covers most LIFX api
 endpoints, including changing light color and brightness, selecting lights by
 id, group or location as well as activating effects.")
     (license license:gpl3)))
+
+(define-public r-lifttest
+  (package
+    (name "r-lifttest")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LiftTest" version))
+       (sha256
+        (base32 "097aj0b8gxly3gqvckcl9xcvv60yd06ydagdqzy80zhv4aqgxm5p"))))
+    (properties `((upstream-name . "LiftTest")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=LiftTest")
+    (synopsis "Bootstrap Proportion Test for Brand Lift Testing")
+    (description
+     "This package provides a bootstrap proportion test for Brand Lift Testing to
+quantify the effectiveness of online advertising.  Methods of the bootstrap
+proportion test are presented in Liu, Yu, Mao, Wu, Dyer (2023)
+<doi:10.1145/3583780.3615021>.")
+    (license license:gpl3+)))
 
 (define-public r-liftr
   (package
@@ -11983,13 +12004,13 @@ leaflet map.")
 (define-public r-leaflegend
   (package
     (name "r-leaflegend")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "leaflegend" version))
        (sha256
-        (base32 "1bh1b9gfh3fhnj648wqbs3a9k967fynznpqb65qgpjsjjjc67x5c"))))
+        (base32 "026ng3lvlpb313sck0wic2nvlh5kd9li83f8md88zi54wz4m7gl7"))))
     (properties `((upstream-name . "leaflegend")))
     (build-system r-build-system)
     (propagated-inputs (list r-leaflet r-htmlwidgets r-htmltools r-base64enc))

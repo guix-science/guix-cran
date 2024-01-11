@@ -10,8 +10,8 @@
   #:use-module (gnu packages xml)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages julia)
-  #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages java)
+  #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages web)
   #:use-module (gnu packages perl)
   #:use-module (guix-cran packages z)
@@ -481,46 +481,6 @@ evaluators and a combination of functions, classes and methods for
 communication.  Will be used through a specific language interface package.
 Described in the book \"Extending R\".")
     (license license:gpl2+)))
-
-(define-public r-xqtlbiolinks
-  (package
-    (name "r-xqtlbiolinks")
-    (version "1.6.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "xQTLbiolinks" version))
-       (sha256
-        (base32 "0hi3admcpraq25d7n1fjbz9pv3gj7pj6wcr5694qa2xqizp7vmv2"))))
-    (properties `((upstream-name . "xQTLbiolinks")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-viridis
-                             r-summarizedexperiment
-                             r-stringr
-                             r-rmysql
-                             r-jsonlite
-                             r-iranges
-                             r-ggrepel
-                             r-ggplot2
-                             r-genomicranges
-                             r-genomicfeatures
-                             r-genomeinfodb
-                             r-dbi
-                             r-data-table
-                             r-curl
-                             r-cowplot
-                             r-biocgenerics))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/dingruofan/xQTLbiolinks")
-    (synopsis
-     "An R Package for Integrative Analysis of Quantitative Trait Locus Data of 'xQTL'")
-    (description
-     "Enables users-customized data retrieval, processing, analysis, and data
-visualization of molecular quantitative trait locus and gene expression data
-from public resources through the application programming interface
-<https://gtexportal.org/home/api-docs/index.html> of GTEx and
-<http://www.ebi.ac.uk/eqtl/api> of @code{eQTL} cagalogue'.")
-    (license license:gpl3+)))
 
 (define-public r-xpose4
   (package

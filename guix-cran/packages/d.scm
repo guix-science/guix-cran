@@ -3595,45 +3595,6 @@ trials.  For details of the methodology, please refer to D.O. Dixon and R. Simon
 (1991), Biometrics, 47: 871-881.")
     (license license:gpl2+)))
 
-(define-public r-dsb
-  (package
-    (name "r-dsb")
-    (version "1.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dsb" version))
-       (sha256
-        (base32 "1xzhd4q04c1vql49r6m4zskpx7f5hkl5hmdgr3gsbxb73xfs51v2"))))
-    (properties `((upstream-name . "dsb")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-mclust r-magrittr r-limma))
-    (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://github.com/niaid/dsb")
-    (synopsis
-     "Normalize & Denoise Droplet Single Cell Protein Data (CITE-Seq)")
-    (description
-     "This lightweight R package provides a method for normalizing and denoising
-protein expression data from droplet based single cell experiments.  Raw protein
-Unique Molecular Index (UMI) counts from sequencing DNA-conjugated antibody
-derived tags (ADT) in droplets (e.g. CITE-seq') have substantial measurement
-noise.  Our experiments and computational modeling revealed two major components
-of this noise: 1) protein-specific noise originating from ambient, unbound
-antibody encapsulated in droplets that can be accurately inferred via the
-expected protein counts detected in empty droplets, and 2) droplet/cell-specific
-noise revealed via the shared variance component associated with isotype
-antibody controls and background protein counts in each cell.  This package
-normalizes and removes both of these sources of noise from raw protein data
-derived from methods such as CITE-seq', REAP-seq', ASAP-seq', TEA-seq',
-proteogenomic data from the Mission Bio platform, etc.  See the vignette for
-tutorials on how to integrate dsb with Seurat and Bioconductor and how to use
-dsb in Python'.  Please see our paper @code{MulÃ¨} M.P., Martins A.J., and Tsang
-J.S. Nature Communications 2022
-<https://www.nature.com/articles/s41467-022-29356-8> for more details on the
-method.")
-    (license (list license:cc0
-                   (license:fsdg-compatible "file://LICENSE")))))
-
 (define-public r-dsample
   (package
     (name "r-dsample")
@@ -4013,6 +3974,44 @@ prescriptions.  Based on Pye et al (2018) <doi:10.1002/pds.4440>.")
      "Ingredient specific diagnostics for drug exposure records in the Observational
 Medical Outcomes Partnership (OMOP) common data model.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
+(define-public r-drugdevelopr
+  (package
+    (name "r-drugdevelopr")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "drugdevelopR" version))
+       (sha256
+        (base32 "0mbr0s826wmknw4n50qbg5i9b5x969s9h7w21nni17i074iqjhpb"))))
+    (properties `((upstream-name . "drugdevelopR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-progressr
+                             r-mvtnorm
+                             r-msm
+                             r-mass
+                             r-iterators
+                             r-foreach
+                             r-doparallel
+                             r-cubature))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Sterniii3/drugdevelopR")
+    (synopsis "Utility-Based Optimal Phase II/III Drug Development Planning")
+    (description
+     "Plan optimal sample size allocation and go/no-go decision rules for phase II/III
+drug development programs with time-to-event, binary or normally distributed
+endpoints when assuming fixed treatment effects or a prior distribution for the
+treatment effect, using methods from Kirchner et al. (2016)
+<doi:10.1002/sim.6624> and Preussler (2020).  Optimal is in the sense of maximal
+expected utility, where the utility is a function taking into account the
+expected cost and benefit of the program.  It is possible to extend to more
+complex settings with bias correction (Preussler S et al. (2020)
+<doi:10.1186/s12874-020-01093-w>), multiple phase III trials (Preussler et al.
+(2019) <doi:10.1002/bimj.201700241>), multi-arm trials (Preussler et al. (2019)
+<doi:10.1080/19466315.2019.1702092>), and multiple endpoints (Kieser et al.
+(2018) <doi:10.1002/pst.1861>).")
+    (license license:expat)))
 
 (define-public r-drugdemand
   (package
@@ -9848,6 +9847,32 @@ published under: Lerch, F., Ultsch, A., Lotsch, J. (2020)
 Scrucca, L. (2013) <doi:10.18637/jss.v053.i04> while the Gaussian Mixture Logic
 stems from @code{AdaptGauss}': Ultsch, A, et al. (2015)
 <doi:10.3390/ijms161025897>.")
+    (license license:expat)))
+
+(define-public r-distributacalcul
+  (package
+    (name "r-distributacalcul")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Distributacalcul" version))
+       (sha256
+        (base32 "072km5alfd9ba2p4qvrysdfrqbm8dksjwn3hkcidh6sg5m0g7aiw"))))
+    (properties `((upstream-name . "Distributacalcul")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-statmod r-rlang r-dplyr))
+    (home-page "https://alec42.github.io/Distributacalcul_Package/")
+    (synopsis "Probability Distribution Functions")
+    (description
+     "Calculates expected values, variance, different moments (kth moment, truncated
+mean), stop-loss, mean excess loss, Value-at-Risk (@code{VaR}) and Tail
+Value-at-Risk (T@code{VaR}) as well as some density and cumulative (survival)
+functions of continuous, discrete and compound distributions.  This package also
+includes a visual Shiny component to enable students to visualize distributions
+and understand the impact of their parameters.  This package is intended to
+expand the stats package so as to enable students to develop an intuition for
+probability.")
     (license license:expat)))
 
 (define-public r-distrib
@@ -20122,6 +20147,34 @@ function with missing outcomes.  The reference paper is Zhang, Giessing, and
 Chen (2023) <@code{arXiv:2309.06429>}.")
     (license license:expat)))
 
+(define-public r-debest
+  (package
+    (name "r-debest")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "debest" version))
+       (sha256
+        (base32 "1kbz17q8xg8nbak0y4f6g9pj20q02a00ijvk1xmbsbgl4xmww0ip"))))
+    (properties `((upstream-name . "debest")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival r-flexsurv))
+    (home-page "https://cran.r-project.org/package=debest")
+    (synopsis
+     "Duration Estimation for Biomarker Enrichment Studies and Trials")
+    (description
+     "This package provides a general framework using mixture Weibull distributions to
+accurately predict biomarker-guided trial duration accounting for heterogeneous
+population.  Extensive simulations are performed to evaluate the impact of
+heterogeneous population and the dynamics of biomarker characteristics and
+disease on the study duration.  Several influential parameters including median
+survival time, enrollment rate, biomarker prevalence and effect size are
+identified.  Efficiency gains of biomarker-guided trials can be quantitatively
+compared to the traditional all-comers design.  For reference, see Zhang et al.
+(2024) <@code{arXiv:2401.00540>}.")
+    (license license:gpl2)))
+
 (define-public r-debbi
   (package
     (name "r-debbi")
@@ -23095,13 +23148,13 @@ versions <= 3.0, use the archived dvn package
 (define-public r-dataverifyr
   (package
     (name "r-dataverifyr")
-    (version "0.1.5")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dataverifyr" version))
        (sha256
-        (base32 "14jp4pzgj022b888df1s0p44v90ghr19bsdsa9hx3dx0i7ls8lzs"))))
+        (base32 "1jy8hdzld8yhz632rdk3j592szp7xn3qbs2h3g0gax3p33cpcasj"))))
     (properties `((upstream-name . "dataverifyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml))
@@ -23928,13 +23981,13 @@ data manipulation challenges.")
 (define-public r-datamods
   (package
     (name "r-datamods")
-    (version "1.4.2")
+    (version "1.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datamods" version))
        (sha256
-        (base32 "1qzzzv1hgyj1kgpjxfpblbw4yb3d3sxicmgrijnl90k6jdakg887"))))
+        (base32 "1v20k03ga19g3l4xb3ql7lk29qb6shk670z28n3vdandip20cvb9"))))
     (properties `((upstream-name . "datamods")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
@@ -23956,6 +24009,27 @@ data manipulation challenges.")
     (description
      "Shiny modules to import data into an application or addin from various sources,
 and to manipulate them after that.")
+    (license license:gpl3)))
+
+(define-public r-datametprocess
+  (package
+    (name "r-datametprocess")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DataMetProcess" version))
+       (sha256
+        (base32 "0ksi6bsx324sizhxi9w46v7pd4rvvwx1k5xxwgqdx3qqhd86s926"))))
+    (properties `((upstream-name . "DataMetProcess")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-rlang r-lubridate r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=DataMetProcess")
+    (synopsis "Meteorological Data Processing")
+    (description
+     "Set of tools aimed at processing meteorological data, converting hourly recorded
+data to daily, monthly and annual data.")
     (license license:gpl3)))
 
 (define-public r-datameta
