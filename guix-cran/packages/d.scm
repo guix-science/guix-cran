@@ -7349,13 +7349,13 @@ code file.")
 (define-public r-doctest
   (package
     (name "r-doctest")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "doctest" version))
        (sha256
-        (base32 "1sszyza5c0rj23k8rl1anlkwblq27qhhl2pgwmbv6nq03dk8p60g"))))
+        (base32 "04gicrh3fc3639ccwsg5c41axbsl7vkj5al6qcwlrf3jx8vaad64"))))
     (properties `((upstream-name . "doctest")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat
@@ -8615,32 +8615,6 @@ CRAN packages is from the RStudio CRAN mirror', see
 <https://bioconductor.org/packages/stats/>.")
     (license license:artistic2.0)))
 
-(define-public r-dlssm
-  (package
-    (name "r-dlssm")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DLSSM" version))
-       (sha256
-        (base32 "0ca9z48kfzximk6b49mqcfw50av9zh3jf9frjjsc8xwyyc6fq381"))))
-    (properties `((upstream-name . "DLSSM")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-matrix))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=DLSSM")
-    (synopsis "Dynamic Logistic State Space Prediction Model")
-    (description
-     "This package implements the dynamic logistic state space model for binary
-outcome data proposed by Jiang et al. (2021) <doi:10.1111/biom.13593>.  It
-provides a computationally efficient way to update the prediction whenever new
-data becomes available.  It allows for both time-varying and time-invariant
-coefficients, and use cubic smoothing splines to model varying coefficients.
-The smoothing parameters are objectively chosen by maximum likelihood.  The
-model is updated using batch data accumulated at pre-specified time intervals.")
-    (license license:gpl3)))
-
 (define-public r-dlsem
   (package
     (name "r-dlsem")
@@ -9496,6 +9470,34 @@ random team-data, etc.  White paper: Philippe J.S. De Brouwer (2021)
 Philippe J.S. De Brouwer (2020, ISBN:978-1-119-63272-6) and Philippe J.S. De
 Brouwer (2020) <doi:10.1002/9781119632757>.")
     (license license:agpl3+)))
+
+(define-public r-dittoviz
+  (package
+    (name "r-dittoviz")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dittoViz" version))
+       (sha256
+        (base32 "04xap95v15h8zvylbkdidpggyrsdii1m32zmmv40z61ad7xkvbaf"))))
+    (properties `((upstream-name . "dittoViz")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ggridges r-ggrepel r-ggplot2 r-cowplot))
+    (home-page "https://github.com/dtm2451/dittoViz")
+    (synopsis "User Friendly Data Visualization")
+    (description
+     "This package provides a comprehensive visualization toolkit built with coders of
+all skill levels and color-vision impaired audiences in mind.  It allows
+creation of finely-tuned, publication-quality figures from single function
+calls.  Visualizations include scatter plots, compositional bar plots, violin,
+box, and ridge plots, and more.  Customization ranges from size and title
+adjustments to discrete-group circling and labeling, hidden data overlay upon
+cursor hovering via ggplotly() conversion, and many more, all with simple,
+discrete inputs.  Color blindness friendliness is powered by legend adjustments
+(enlarged keys), and by allowing the use of shapes or letter-overlay in addition
+to the carefully selected @code{dittoColors}().")
+    (license (license:fsdg-compatible "MIT + file LICENCE"))))
 
 (define-public r-dittodb
   (package
@@ -14449,13 +14451,13 @@ such as very rough, rough, approximate, accurate, and highly accurate.")
 (define-public r-dhs-rates
   (package
     (name "r-dhs-rates")
-    (version "0.9.1")
+    (version "0.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DHS.rates" version))
        (sha256
-        (base32 "1mbp38kbs22wr1aq1gs2m7xcsk3gadik7yxlandhvhnrnacc4pd7"))))
+        (base32 "1j4jgwi5skjr4h8gyphkfjxhx80f0x6bhqb81711bhq5zp3bl59l"))))
     (properties `((upstream-name . "DHS.rates")))
     (build-system r-build-system)
     (propagated-inputs (list r-survey
@@ -18248,6 +18250,28 @@ decomposition proposed by Horiuchi, Wilmoth, and Pletcher (2008)
 <doi:10.1353/dem.0.0033> and stepwise replacement decomposition proposed by
 Andreev, Shkolnikov and Begun (2002) <doi:10.4054/@code{DemRes.2002.7.14>}.")
     (license license:gpl3)))
+
+(define-public r-demic
+  (package
+    (name "r-demic")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "demic" version))
+       (sha256
+        (base32 "1h97vbkq8wl0agy3l1727ilji5r22nd8m2451s3g0k8yk01vm3by"))))
+    (properties `((upstream-name . "demic")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-reshape2 r-matrix r-lme4))
+    (home-page "https://github.com/Ulthran/DEMIC")
+    (synopsis "Dynamic Estimator of Microbial Communities")
+    (description
+     "Multi-sample algorithm based on contigs and coverage values, to infer the
+relative distances of contigs from the replication origin and to accurately
+compare bacterial growth rates between samples.  Yuan Gao and Hongzhe Li (2018)
+<doi:10.1038/s41592-018-0182-0>.")
+    (license license:gpl3+)))
 
 (define-public r-dematel
   (package
@@ -22537,16 +22561,17 @@ your computer.  Routines for both single pixel data downloads and gridded
 (define-public r-dawai
   (package
     (name "r-dawai")
-    (version "1.2.5")
+    (version "1.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dawai" version))
        (sha256
-        (base32 "0g52bm66jnvga4sf5n5m18k5jx56vqpn886jk0k6lydj78nkq88q"))))
+        (base32 "1pfvbd3d182f5pfpc1pj00dd8bsrcaw7lb7k5i0br1i70xlali5w"))))
     (properties `((upstream-name . "dawai")))
     (build-system r-build-system)
-    (propagated-inputs (list r-mvtnorm r-ibdreg r-boot))
+    (propagated-inputs (list r-mvtnorm r-boot))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=dawai")
     (synopsis "Discriminant Analysis with Additional Information")
     (description
@@ -22555,7 +22580,7 @@ package dawai (an acronym for Discriminant Analysis With Additional Information)
 performs linear and quadratic discriminant analysis with additional information
 expressed as inequality restrictions among the populations means.  It also
 computes several estimations of the true error rate.")
-    (license (list license:gpl2 license:gpl3))))
+    (license license:gpl2+)))
 
 (define-public r-davies
   (package

@@ -8451,36 +8451,6 @@ goal of this package is to help users extract biological insights from proteomic
 data run on the Olink platform.")
     (license license:agpl3+)))
 
-(define-public r-oldbailey
-  (package
-    (name "r-oldbailey")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "oldbailey" version))
-       (sha256
-        (base32 "17wvnz23rhl0n50mq2b93523kxdvc3imvfii9b33viwcm4cq6zkn"))))
-    (properties `((upstream-name . "oldbailey")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-stringr
-                             r-rvest
-                             r-jsonlite
-                             r-httr
-                             r-dplyr))
-    (home-page "https://github.com/rOpenGov/oldbailey")
-    (synopsis "For Accessing the Old Bailey Open Data")
-    (description
-     "Fetch trial data from the Old Bailey Online API
-<https://www.oldbaileyonline.org/static/@code{DocAPI.jsp>}.  Data is returned in
-an analysis-ready data frame with fields for metadata including (but not limited
-to) the names of the first person speakers, defendants, victims, their recorded
-genders, verdicts, punishments, crime locations, and dates.  Optional parameters
-allow users to specify the number of results, whether these results contain key
-terms, and trial dates.")
-    (license license:expat)))
-
 (define-public r-olctools
   (package
     (name "r-olctools")
@@ -11357,33 +11327,4 @@ sets) (LÃ¶fstedt and Trygg, 2011 <doi:10.1002/cem.1388>; LÃ¶fstedt et al., 2
 <doi:10.1016/j.aca.2013.06.026>) from the systematic sources of variance being
 specific for each data set separately.")
     (license license:gpl3)))
-
-(define-public r-o2geosocial
-  (package
-    (name "r-o2geosocial")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "o2geosocial" version))
-       (sha256
-        (base32 "1vsp71c06vyryrbbm44ms57fqqprxidrnwbncqfgjfc1wrii4crw"))))
-    (properties `((upstream-name . "o2geosocial")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-visnetwork
-                             r-rcpp
-                             r-outbreaker2
-                             r-ggplot2
-                             r-geosphere
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/alxsrobert/o2geosocial")
-    (synopsis "Reconstruction of Transmission Chains from Surveillance Data")
-    (description
-     "Bayesian reconstruction of who infected whom during past outbreaks using
-routinely-collected surveillance data.  Inference of transmission trees using
-genotype, age specific social contacts, distance between cases and onset dates
-of the reported cases. (Robert A, Kucharski AJ, Gastanaduy PA, Paul P, Funk S.
-2020 <doi:10.1098/rsif.2020.0084>).")
-    (license license:expat)))
 

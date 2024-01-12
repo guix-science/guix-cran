@@ -5221,23 +5221,20 @@ setting of @code{TeX} file.")
 (define-public r-nncc
   (package
     (name "r-nncc")
-    (version "1.0.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nncc" version))
        (sha256
-        (base32 "131mka187q7367ba0ac0ad45hfwnbfmdlxikjdqkbi7ci234yj8l"))))
+        (base32 "0sm54rskw84g3gl04i0cs1vhg3na54lbcwn1gh0yibfk7ihwf91q"))))
     (properties `((upstream-name . "nncc")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-rlang
-                             r-mice
-                             r-mgcv
                              r-igraph
                              r-ggplot2
                              r-furrr
-                             r-formula-tools
                              r-dplyr
                              r-cluster))
     (native-inputs (list r-knitr))
@@ -10783,13 +10780,13 @@ call @code{NetMHCIIpan} from R.")
 (define-public r-netmeta
   (package
     (name "r-netmeta")
-    (version "2.8-2")
+    (version "2.9-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "netmeta" version))
        (sha256
-        (base32 "132qkvpkami568w276qc269844z0d1l3yjbj71if4r2w8ra3p5wy"))))
+        (base32 "1d7grw2dp4ghh5aapnd1j1w84nixm0vgaca0pchjwjjmg7rdgvad"))))
     (properties `((upstream-name . "netmeta")))
     (build-system r-build-system)
     (propagated-inputs (list r-metafor r-meta r-mass r-magic r-ggplot2))

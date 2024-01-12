@@ -12,6 +12,7 @@
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages multiprecision)
+  #:use-module (gnu packages cmake)
   #:use-module (gnu packages python)
   #:use-module (gnu packages tls)
   #:use-module (gnu packages compression)
@@ -10094,6 +10095,38 @@ Pasaniuc, WJ Gauderman, JS Witte (2020) <doi:10.1101/2020.07.06.190256>.")
      "Data sets and scripts for Modeling Psychophysical Data in R (Springer).")
     (license license:gpl2)))
 
+(define-public r-mpcr
+  (package
+    (name "r-mpcr")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MPCR" version))
+       (sha256
+        (base32 "1y93gxnr1ksr7wj7sm77jpkncxycvq90aafjksr6yjsa46qaxvbc"))))
+    (properties `((upstream-name . "MPCR")))
+    (build-system r-build-system)
+    (inputs (list cmake))
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://github.com/stsds/MPCR")
+    (synopsis "Multi Precision Computing")
+    (description
+     "This package provides new data-structure support for multi- and mixed-precision
+for R users.  The package supports 16-bit, 32-bit, and 64-bit operations with
+the ability to perform mixed-precision operations through a newly defined
+tile-based data structure.  To the best of our knowledge, MPCR differs from the
+currently available packages in the following: MPCR introduces a new data
+structure that supports three different precisions (16-bit, 32-bit, and 64-bit),
+allowing for optimized memory allocation based on the desired precision.  This
+feature offers significant advantages in-memory optimization.  MPCR extends
+support to all basic linear algebra methods across different precisions.  MPCR
+maintains a consistent interface with normal R functions, allowing for seamless
+code integration and a user-friendly experience.  MPCR also introduces support
+for the tile-based matrix data structure with mixed precision, enabling the
+utilization of a range of tile-based linear algebra algorithms.")
+    (license license:gpl3+)))
+
 (define-public r-mpci
   (package
     (name "r-mpci")
@@ -10978,37 +11011,6 @@ tables.  Additionally, several data sets from various countries are included to
 provide widely-used tables out of the box.")
     (license license:gpl2+)))
 
-(define-public r-mortalitylaws
-  (package
-    (name "r-mortalitylaws")
-    (version "2.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MortalityLaws" version))
-       (sha256
-        (base32 "1vd9jsrh35jk851j9ap2cm3r14isw1xp2vxq2j1h7px8v0gavw40"))))
-    (properties `((upstream-name . "MortalityLaws")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-rvest
-                             r-rcurl
-                             r-pbapply
-                             r-minpack-lm
-                             r-httr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/mpascariu/MortalityLaws")
-    (synopsis "Parametric Mortality Models, Life Tables and HMD")
-    (description
-     "Fit the most popular human mortality laws', and construct full and abridge life
-tables given various input indices.  A mortality law is a parametric function
-that describes the dying-out process of individuals in a population during a
-significant portion of their life spans.  For a comprehensive review of the most
-important mortality laws see Tabeau (2001) <doi:10.1007/0-306-47562-6_1>.
-Practical functions for downloading data from various human mortality databases
-are provided as well.")
-    (license license:expat)))
-
 (define-public r-mortalitygaps
   (package
     (name "r-mortalitygaps")
@@ -11806,13 +11808,13 @@ package to find and visualize monophyly issues.\" Schwery, O. & O'Meara, B.C.
 (define-public r-monomvn
   (package
     (name "r-monomvn")
-    (version "1.9-19")
+    (version "1.9-20")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "monomvn" version))
        (sha256
-        (base32 "1kfdczpja1z196pj3vf522ysd3k678bwsjmlr3045dm4didsyah2"))))
+        (base32 "0if2b13yak9x0sfcwghhih901hk8n762w59r53k0949vf5f336yd"))))
     (properties `((upstream-name . "monomvn")))
     (build-system r-build-system)
     (propagated-inputs (list r-quadprog r-pls r-mvtnorm r-mass r-lars))
@@ -23041,29 +23043,6 @@ Moreover, the LASSO penalty is attached to the likelihood function for
 simultaneous parameter estimation and variable selection.")
     (license license:expat)))
 
-(define-public r-milorgwas
-  (package
-    (name "r-milorgwas")
-    (version "0.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "milorGWAS" version))
-       (sha256
-        (base32 "1gl4lg3m11hkj47g7zqq0xavxzj5z1vjbb88pf03r7200qnb5ff8"))))
-    (properties `((upstream-name . "milorGWAS")))
-    (build-system r-build-system)
-    (inputs (list zlib))
-    (propagated-inputs (list r-rcppeigen r-rcpp r-gaston))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=milorGWAS")
-    (synopsis
-     "Mixed Logistic Regression for Genome-Wide Analysis Studies (GWAS)")
-    (description
-     "Fast approximate methods for mixed logistic regression in genome-wide analysis
-studies (GWAS).  Milet et al 2020 <doi:10.1101/2020.01.17.910109>.")
-    (license license:gpl3)))
-
 (define-public r-milineage
   (package
     (name "r-milineage")
@@ -23215,30 +23194,6 @@ examples.")
      "This package provides functions for estimating structural equation models using
 instrumental variables.")
     (license license:gpl2)))
-
-(define-public r-miivefa
-  (package
-    (name "r-miivefa")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MIIVefa" version))
-       (sha256
-        (base32 "1p1zh5zf1rwnncay0dj3fklbkl0nqak7wh0y4c4qylqd0453kd48"))))
-    (properties `((upstream-name . "MIIVefa")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-miivsem))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/lluo0/MIIVefa/")
-    (synopsis
-     "Exploratory Factor Analysis Using Model Implied Instrumental Variables")
-    (description
-     "Data-driven approach for Exploratory Factor Analysis (EFA) that uses Model
-Implied Instrumental Variables (MIIVs).  The method starts with a one factor
-model and arrives at a suggested model with enhanced interpretability that
-allows cross-loadings and correlated errors.")
-    (license license:expat)))
 
 (define-public r-miipw
   (package
@@ -33662,13 +33617,13 @@ competition (Makridakis and Hibon, 2000) <DOI:10.1016/S0169-2070(00)00057-1>.")
 (define-public r-mco
   (package
     (name "r-mco")
-    (version "1.15.6")
+    (version "1.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mco" version))
        (sha256
-        (base32 "10h5d2lw6ybyva44nn5wml6v3ljpnv9m1b2lh36vg2cwrdwy5sqp"))))
+        (base32 "1sz5gfhniv4rjd7kq8kx7604dybim06559l0wdrwkvixs0hm44ax"))))
     (properties `((upstream-name . "mco")))
     (build-system r-build-system)
     (home-page "https://github.com/olafmersmann/mco")
@@ -38919,21 +38874,26 @@ parallelization, uncomment the relevant flags in src/MAKEVARS before compiling."
 (define-public r-maptiles
   (package
     (name "r-maptiles")
-    (version "0.6.1")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maptiles" version))
        (sha256
-        (base32 "1pwmwibqazzwgn0lbljlsg29ib0zvhcf7yd8080a84gh08qwb8a3"))))
+        (base32 "064lxy2qzawbbdv69zpzkn2nbchvlcw4zjpxl5h44qrriivd60hh"))))
     (properties `((upstream-name . "maptiles")))
     (build-system r-build-system)
-    (propagated-inputs (list r-terra r-slippymath r-sf r-png r-curl))
+    (propagated-inputs (list r-terra
+                             r-slippymath
+                             r-sf
+                             r-png
+                             r-digest
+                             r-curl))
     (home-page "https://github.com/riatelab/maptiles/")
     (synopsis "Download and Display Map Tiles")
     (description
      "To create maps from tiles, maptiles downloads, composes and displays tiles from
-a large number of providers (e.g. @code{OpenStreetMap}', Stamen', Esri', CARTO',
+a large number of providers (e.g. @code{OpenStreetMap}', Stadia', Esri', CARTO',
 or Thunderforest').")
     (license license:gpl3)))
 
@@ -41926,13 +41886,13 @@ variables.  Automatic differentiation is via forward accumulation'.")
 (define-public r-maditr
   (package
     (name "r-maditr")
-    (version "0.8.3")
+    (version "0.8.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maditr" version))
        (sha256
-        (base32 "108y240b92z5nrjp9rq5baaxncfv1g114garfv87vnwnz7bsd8c7"))))
+        (base32 "15jhchxa5ckir6n2gz4vlsvlz64mxqlry11zqpma32wj901d18r4"))))
     (properties `((upstream-name . "maditr")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-data-table))

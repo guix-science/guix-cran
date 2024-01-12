@@ -2058,13 +2058,13 @@ based in Russia.")
 (define-public r-vizdraws
   (package
     (name "r-vizdraws")
-    (version "1.4.2")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vizdraws" version))
        (sha256
-        (base32 "03cchq086crwxmapjh35wna8i6ryxshq9736r1m0jgkzh7z23hfj"))))
+        (base32 "1swf1xk6l086my4gknb9q4gyc3a37vs9z2p2484zf5ba9inzwix1"))))
     (properties `((upstream-name . "vizdraws")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-magrittr r-htmlwidgets r-dplyr))
@@ -4519,13 +4519,13 @@ paper <DOI:10.1103/@code{PhysRevE.73.026120>}.")
 (define-public r-versus
   (package
     (name "r-versus")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "versus" version))
        (sha256
-        (base32 "13yqdacccf5wq0hmn8mm00n5knas1xjdhc0jqh1q0ga5bqps7jaz"))))
+        (base32 "1g382ig1lw1jn50ijw4nmcy5xbcdcci2f8h4vs53f8256arj0ky7"))))
     (properties `((upstream-name . "versus")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs

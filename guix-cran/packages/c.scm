@@ -15,8 +15,8 @@
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages maths)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
@@ -13746,45 +13746,6 @@ determine the most likely current Gene Symbol.")
 including B-S theory and Monte Carlo method.")
     (license license:gpl2)))
 
-(define-public r-convergeu
-  (package
-    (name "r-convergeu")
-    (version "0.5.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "convergEU" version))
-       (sha256
-        (base32 "1c74gmsx97rin057gimmsjjcszsaa40a0dmsbh04aygpfic4qc4l"))))
-    (properties `((upstream-name . "convergEU")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rmarkdown
-                             r-rlang
-                             r-purrr
-                             r-ggpubr
-                             r-ggplot2
-                             r-eurostat
-                             r-dplyr
-                             r-catools
-                             r-broom))
-    (native-inputs (list r-knitr))
-    (home-page
-     "https://www.eurofound.europa.eu/system/files/2018-12/ef18003en.pdf")
-    (synopsis "Monitoring Convergence of EU Countries")
-    (description
-     "Indicators and measures by country and time describe what happens at economic
-and social levels.  This package provides functions to calculate several
-measures of convergence after imputing missing values.  The automated
-downloading of Eurostat data, followed by the production of country fiches and
-indicator fiches, makes possible to produce automated reports.  The Eurofound
-report (<doi:10.2806/68012>) \"Upward convergence in the EU: Concepts,
-measurements and indicators\", 2018, is a detailed presentation of convergence.")
-    (license license:gpl3)))
-
 (define-public r-convergenceconcepts
   (package
     (name "r-convergenceconcepts")
@@ -14154,13 +14115,13 @@ non-regular canvas.")
 (define-public r-contingencytables
   (package
     (name "r-contingencytables")
-    (version "2.2.0")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "contingencytables" version))
        (sha256
-        (base32 "0001pmkdhccymk8i8igmxi09zxiy556qvwgw5b0x5fk7jg5bjlg4"))))
+        (base32 "0n89syig86iqvsmcg5b98v70pr2rlar5yz5yrpsfh73c9nj4cj4p"))))
     (properties `((upstream-name . "contingencytables")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-boot))
@@ -18715,13 +18676,13 @@ is assigned to each palette.")
 (define-public r-cols
   (package
     (name "r-cols")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cols" version))
        (sha256
-        (base32 "0ra1zi9bw8s6f1wr0alz7i972kjajlydjb22ws404nvx9g4l594l"))))
+        (base32 "1rf27b1xqxqyd99574hj1nv65r08z5ap8rai64baw1skzr5aznkk"))))
     (properties `((upstream-name . "cols")))
     (build-system r-build-system)
     (propagated-inputs (list r-rfast2 r-quadprog))
@@ -18730,8 +18691,8 @@ is assigned to each palette.")
     (description
      "Constrained ordinary least squares is performed.  One constraint is that all
 beta coefficients (including the constant) cannot be negative.  They can be
-either 0 or strictly positive.  Another constraint is that the sum ob the beta
-coefficients sum to a constant.  References: Hansen, B. E. (2022).
+either 0 or strictly positive.  Another constraint is that the sum of the beta
+coefficients equals a constant.  References: Hansen, B. E. (2022).
 Econometrics, Princeton University Press. <ISBN:9780691235899>.")
     (license license:gpl2+)))
 
@@ -19932,6 +19893,35 @@ Cap <https://coinmarketcap.com/api/>.")
      "Copula based imputation method.  A semiparametric imputation procedure for
 missing multivariate data based on conditional copula specifications.")
     (license license:gpl2+)))
+
+(define-public r-coil
+  (package
+    (name "r-coil")
+    (version "1.2.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "coil" version))
+       (sha256
+        (base32 "1jkhci42r3kx554dvpbdnyfzml0l9csxa5fm1ds13c6ny6z54c06"))))
+    (properties `((upstream-name . "coil")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-seqinr r-aphid r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=coil")
+    (synopsis "Contextualization and Evaluation of COI-5P Barcode Data")
+    (description
+     "Designed for the cleaning, contextualization and assessment of cytochrome c
+oxidase I DNA barcode data (COI-5P, or the five prime portion of COI).  It
+contains functions for placing COI-5P barcode sequences into a common reading
+frame, translating DNA sequences to amino acids and for assessing the likelihood
+that a given barcode sequence includes an insertion or deletion error.  The
+error assessment relies on the comparison of input sequences against nucleotide
+and amino acid profile hidden Markov models (PHMMs) (for details see Durbin et
+al.  1998, ISBN: 9780521629713) trained on a taxonomically diverse set of
+reference sequences.  The functions are provided as a complete pipeline and are
+also available individually for efficient and targeted analysis of barcode data.")
+    (license license:gpl3)))
 
 (define-public r-cohorttools
   (package
@@ -24435,18 +24425,18 @@ data with the artificial panel data generator.  See Sobisek, Stachova, Fojtik
 (define-public r-clugenr
   (package
     (name "r-clugenr")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clugenr" version))
        (sha256
-        (base32 "1xjznvd89cfr43ccnsrwnwv20qghsmrj4ag6l4dksm8212drd628"))))
+        (base32 "0wqhqy6ivhz0nhl0gr5gcxqdvi5ha4mhqgvgjmgaqibpi03dy3l8"))))
     (properties `((upstream-name . "clugenr")))
     (build-system r-build-system)
     (propagated-inputs (list r-mathjaxr))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/clugen/clugenr")
+    (home-page "https://clugen.github.io/clugenr/")
     (synopsis "Multidimensional Cluster Generation Using Support Lines")
     (description
      "An implementation of the clugen algorithm for generating multidimensional

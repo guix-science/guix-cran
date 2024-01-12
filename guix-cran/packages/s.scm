@@ -1146,6 +1146,56 @@ The main methods are vectorized by document, and scores for multiple documents
 are computed in parallel via @code{OpenMP}'.")
     (license (license:fsdg-compatible "BSD 2-clause License + file LICENSE"))))
 
+(define-public r-swmprextension
+  (package
+    (name "r-swmprextension")
+    (version "2.2.5.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SWMPrExtension" version))
+       (sha256
+        (base32 "107v5fh3h03dk9ma67hj8988hfmswrl9lfijhjv5b4ww73n2v6x7"))))
+    (properties `((upstream-name . "SWMPrExtension")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-swmpr
+                             r-sf
+                             r-scales
+                             r-rlang
+                             r-rcolorbrewer
+                             r-purrr
+                             r-officer
+                             r-magrittr
+                             r-lubridate
+                             r-ggthemes
+                             r-ggplot2
+                             r-ggimage
+                             r-flextable
+                             r-envstats
+                             r-dplyr
+                             r-curl
+                             r-broom))
+    (home-page "https://cran.r-project.org/package=SWMPrExtension")
+    (synopsis "Functions for Analyzing and Plotting Estuary Monitoring Data")
+    (description
+     "This package provides tools for performing routine analysis and plotting tasks
+with environmental data from the System Wide Monitoring Program of the National
+Estuarine Research Reserve System <https://cdmo.baruch.sc.edu/>.  This package
+builds on the functionality of the SWMPr package
+<https://cran.r-project.org/package=SWMPr>, which is used to retrieve and
+organize the data.  The combined set of tools address common challenges
+associated with continuous time series data for environmental decision making,
+and are intended for use in annual reporting activities.  References: Beck,
+Marcus W. (2016) <ISSN
+2073-4859><https://journal.r-project.org/archive/2016-1/beck.pdf> Rudis, Bob
+(2014)
+<https://rud.is/b/2014/11/16/moving-the-earth-well-alaska-hawaii-with-r/>.
+United States Environmental Protection Agency (2015)
+<https://cfpub.epa.gov/si/si_public_record_Report.cfm?Lab=OWOW&@code{dirEntryId=327030>}.")
+    (license license:cc0)))
+
 (define-public r-swmpr
   (package
     (name "r-swmpr")
@@ -3207,13 +3257,13 @@ results to an Excel sheet.")
 (define-public r-survobj
   (package
     (name "r-survobj")
-    (version "1.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "survobj" version))
        (sha256
-        (base32 "191wbkfwdmjlihnyxz66fljzvqsnc2c8jlkhynjn0l9vb4g56z79"))))
+        (base32 "0nli5w2hxddximwx87hjn29dww1sy9lnwcz5nfb0ka0rdga7qqvb"))))
     (properties `((upstream-name . "survobj")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-survival r-ggplot2 r-dplyr))
@@ -3223,7 +3273,8 @@ results to an Excel sheet.")
     (description
      "Generate objects that simulate survival times.  Random values for the
 distributions are generated using the method described by Bender (2003)
-<https://epub.ub.uni-muenchen.de/id/eprint/1716>.")
+<https://epub.ub.uni-muenchen.de/id/eprint/1716> and Leemis (1987) in Operations
+Research, 35(6), 892â894.")
     (license license:gpl3+)))
 
 (define-public r-survml
@@ -11690,43 +11741,6 @@ requested.  A relative humidity approximation is provided using the
 August-Roche-Magnus formula, which was adapted from Alduchov and Eskridge (1996)
 <doi:10.1175%2F1520-0450%281996%29035%3C0601%3AIMFAOS%3E2.0.CO%3B2>.")
     (license license:expat)))
-
-(define-public r-statgraph
-  (package
-    (name "r-statgraph")
-    (version "0.5.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "statGraph" version))
-       (sha256
-        (base32 "0fd7jsngd8gihivnir3y58961kvbdd5g1m5gm1da91984qs7r9q1"))))
-    (properties `((upstream-name . "statGraph")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rarpack
-                             r-mass
-                             r-igraph
-                             r-foreach
-                             r-doparallel
-                             r-cluster))
-    (home-page "https://www.ime.usp.br/~fujita/software.html")
-    (synopsis "Statistical Methods for Graphs")
-    (description
-     "This package contains statistical methods to analyze graphs, such as graph
-parameter estimation, model selection based on the GIC (Graph Information
-Criterion), statistical tests to discriminate two or more populations of graphs
-(ANOGVA - Analysis of Graph Variability), correlation between graphs, and
-clustering of graphs.  References: Takahashi et al. (2012)
-<doi:10.1371/journal.pone.0049949>, Futija et al. (2017)
-<doi:10.3389/fnins.2017.00066>, Fujita et al. (2017)
-<doi:10.1016/j.csda.2016.11.016>, Tang et al. (2017) <doi:10.3150/15-BEJ789>,
-Tang et al. (2017) <doi:10.1080/10618600.2016.1193505>, Ghoshdastidar et al.
-(2017) <@code{arXiv:1705.06168>}, Ghoshdastidar et al. (2017)
-<@code{arXiv:1707.00833>}, Cerqueira et al. (2017)
-<doi:10.1109/TNSE.2017.2674026>, Fraiman and Fraiman (2018)
-<doi:10.1038/s41598-018-23152-5>, Fujita et al. (2019)
-<doi:10.1093/comnet/cnz028>.")
-    (license license:gpl3+)))
 
 (define-public r-statgensta
   (package
@@ -32958,6 +32972,32 @@ Hildebrandt, Luedtke, Robitzsch, Sommer & Wilhelm, 2016,
 <doi:10.1080/00273171.2016.1142856>).")
     (license license:gpl2+)))
 
+(define-public r-sirmcmc
+  (package
+    (name "r-sirmcmc")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SIRmcmc" version))
+       (sha256
+        (base32 "0rn08h57gx458jrd9f5cahqsfp1gr3kb0kbxlxiv7khb6dns2lwm"))))
+    (properties `((upstream-name . "SIRmcmc")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://cran.r-project.org/package=SIRmcmc")
+    (synopsis
+     "Compartmental Susceptible-Infectious-Recovered (SIR) Model of Community and Household Infection")
+    (description
+     "We build an Susceptible-Infectious-Recovered (SIR) model where the rate of
+infection is the sum of the household rate and the community rate.  We estimate
+the posterior distribution of the parameters using the Metropolis algorithm.
+Further details may be found in: F Scott Dahlgren, Ivo M Foppa, Melissa S
+Stockwell, Celibell Y Vargas, Philip @code{LaRussa}, Carrie Reed (2021)
+\"Household transmission of influenza A and B within a prospective cohort during
+the 2013-2014 and 2014-2015 seasons\" <doi:10.1002/sim.9181>.")
+    (license license:gpl2+)))
+
 (define-public r-siren
   (package
     (name "r-siren")
@@ -33296,18 +33336,18 @@ the Social and Medical Sciences or BÃ¶hning and Friedl (2021)
 (define-public r-singlecellhaystack
   (package
     (name "r-singlecellhaystack")
-    (version "1.0.0")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "singleCellHaystack" version))
        (sha256
-        (base32 "05xvdxq4mhpxiq1l12brbqmh4cb79djjhh5ap2x3gvhrv0wd7mrd"))))
+        (base32 "1kfkbfabv9j87rsy3nb3dmk6ckncvimrwax1p74vnszbz91a1zg7"))))
     (properties `((upstream-name . "singleCellHaystack")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2 r-matrix r-ggplot2))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=singleCellHaystack")
+    (home-page "https://alexisvdb.github.io/singleCellHaystack/")
     (synopsis
      "Universal Differential Expression Prediction Tool for Single-Cell and Spatial Genomics Data")
     (description
@@ -33323,8 +33363,8 @@ that are active in subsets of cells that are non-randomly positioned inside an
 input space (such as 1D trajectories, 2D tissue sections, multi-dimensional
 embeddings, etc).  For the theoretical background of @code{singleCellHaystack}
 we refer to our original paper Vandenbon and Diez (Nature Communications, 2020)
-<doi:10.1038/s41467-020-17900-3> and our update Vandenbon and Diez
-(@code{bioRxiv}, 2022) <doi:10.1101/2022.11.13.516355>.")
+<doi:10.1038/s41467-020-17900-3> and our update Vandenbon and Diez (Scientific
+Reports, 2023) <doi:10.1038/s41598-023-38965-2>.")
     (license license:expat)))
 
 (define-public r-singlecasees

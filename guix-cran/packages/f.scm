@@ -5379,6 +5379,35 @@ tabular-data-resource by providing a data.frame and specifying metadata.  Write
 and read tabular-data-resources to and from disk.")
     (license license:expat)))
 
+(define-public r-fqar
+  (package
+    (name "r-fqar")
+    (version "0.5.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fqar" version))
+       (sha256
+        (base32 "1fdzx91n0k49zjggwiamln86d7j4ghqx6gbqp158g7plwbd8hmgz"))))
+    (properties `((upstream-name . "fqar")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-rlang
+                             r-memoise
+                             r-jsonlite
+                             r-httr
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/equitable-equations/fqar/")
+    (synopsis "Floristic Quality Assessment Tools for R")
+    (description
+     "This package provides tools for downloading and analyzing floristic quality
+assessment data.  See Freyman et al. (2015) <doi:10.1111/2041-210X.12491> for
+more information about floristic quality assessment and the associated database.")
+    (license license:expat)))
+
 (define-public r-fqadata
   (package
     (name "r-fqadata")
@@ -10196,13 +10225,13 @@ trait metric, as described by Feuerstahler (2019)
 (define-public r-flexiblas
   (package
     (name "r-flexiblas")
-    (version "3.3.0")
+    (version "3.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flexiblas" version))
        (sha256
-        (base32 "1gcj4679hy2pa76s3sx6q3x2zmf9xkb5hgk2y9nk3v6yf9l10w6h"))))
+        (base32 "1n0wvq0aijpyscrs6rawx3pbrb1d4ni9myifnwnhy642qyc2v41i"))))
     (properties `((upstream-name . "flexiblas")))
     (build-system r-build-system)
     (home-page "https://github.com/Enchufa2/r-flexiblas")
@@ -10212,7 +10241,7 @@ trait metric, as described by Feuerstahler (2019)
 and change the number of threads without leaving the R session, which needs to
 be linked against the @code{FlexiBLAS} wrapper library
 <https://www.mpi-magdeburg.mpg.de/projects/flexiblas>.")
-    (license license:gpl3+)))
+    (license license:lgpl3+)))
 
 (define-public r-flexgam
   (package
@@ -11256,13 +11285,13 @@ packages modeling fitness landscapes and fitness seascapes will depend.")
 (define-public r-fitps
   (package
     (name "r-fitps")
-    (version "0.2-6")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fitPS" version))
        (sha256
-        (base32 "1ga4c7hd9chspk6m0rd3vc6nlzdc36dq3dlmp86b0zn4dzzvikyy"))))
+        (base32 "1zfp1mxslbm0lrfy2pdzb7d3jfh272yxp78r6r9yrh8m1rayrnng"))))
     (properties `((upstream-name . "fitPS")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam
@@ -11493,13 +11522,13 @@ Sun, Babu, and Palomar (2014); Sun, Babu, and Palomar (2015); Liu and Rubin
 (define-public r-fitdynmix
   (package
     (name "r-fitdynmix")
-    (version "0.1.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FitDynMix" version))
        (sha256
-        (base32 "0l8rqab8520dm4kmizg4vmq4pr1sbh2zqayxlnnh0y3zid66b276"))))
+        (base32 "1miwqdlgvyqyql67mjclx1fiild59p37zani9hxa0lzs2bbhrz43"))))
     (properties `((upstream-name . "FitDynMix")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-pracma r-mass r-ks r-evir))

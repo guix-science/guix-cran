@@ -1538,26 +1538,30 @@ Lee 2005 <doi:10.1509/jmkr.2005.42.4.415>) models.")
 (define-public r-bttest
   (package
     (name "r-bttest")
-    (version "0.10")
+    (version "0.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BTtest" version))
        (sha256
-        (base32 "1sn49rf338n2ql7bj6x682f5nrskx94lj1isisqpfzwdiydaw5yi"))))
+        (base32 "0qx8brb6196jny10vh2licwv9c5w8mcs1ajx377xpyn6p9fryc46"))))
     (properties `((upstream-name . "BTtest")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (home-page "https://github.com/Paul-Haimerl/BTtest")
     (synopsis "Estimate the Number of Factors in Large Nonstationary Datasets")
     (description
-     "Implementation of the Barigozzi and Trapani (2022)
-<doi:10.1080/07350015.2021.1901719> test for the number of common factors in
-large nonstationary panel data sets.  The routine identifies the existence of
-(i) a factor subject to a linear trend, (ii) the number of zero-mean I(1) and
-(iii) zero-mean I(0) factors.  Furthermore, the package includes the Integrated
-Panel Criteria by Bai (2004) <doi:10.1016/j.jeconom.2003.10.022> that provide a
-complementary measure for the number of factors in nonstationary panels.")
+     "Large panel data sets are often subject to common trends.  However, it can be
+difficult to determine the exact number of these common factors and analyse
+their properties.  The package implements the Barigozzi and Trapani (2022)
+<doi:10.1080/07350015.2021.1901719> test, which not only provides an efficient
+way of estimating the number of common factors in large nonstationary panel data
+sets, but also gives further insights on factor classes.  The routine identifies
+the existence of (i) a factor subject to a linear trend, (ii) the number of
+zero-mean I(1) and (iii) zero-mean I(0) factors.  Furthermore, the package
+includes the Integrated Panel Criteria by Bai (2004)
+<doi:10.1016/j.jeconom.2003.10.022> that provide a complementary measure for the
+number of factors.")
     (license license:expat)))
 
 (define-public r-btsr
@@ -2675,6 +2679,31 @@ faster lookups on sorted vectors.")
      "Data sets for book \"Basic Statistics and Data Analysis\" by Larry J. Kitchens.")
     (license license:gpl3)))
 
+(define-public r-bscui
+  (package
+    (name "r-bscui")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bscui" version))
+       (sha256
+        (base32 "0ks8jnbdxbf6wbiwj3jc5iyx2qkxqk0icqhg4b0hvnd74h7zkagi"))))
+    (properties `((upstream-name . "bscui")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-webshot2 r-htmlwidgets))
+    (native-inputs (list r-knitr esbuild))
+    (home-page "https://patzaw.github.io/bscui/")
+    (synopsis "Build SVG Custom User Interface")
+    (description
+     "Render SVG as interactive figures to display contextual information, with
+selectable and clickable user interface elements.  These figures can be
+seamlessly integrated into rmarkdown and Quarto documents, as well as shiny
+applications, allowing manipulation of elements and reporting actions performed
+on them.  Additional features include pan, zoom in/out functionality, and the
+ability to export the figures in SVG or PNG formats.")
+    (license license:gpl3)))
+
 (define-public r-bsamgp
   (package
     (name "r-bsamgp")
@@ -3679,16 +3708,16 @@ Gaussian.")
 (define-public r-brickset
   (package
     (name "r-brickset")
-    (version "2022.0.0")
+    (version "2024.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "brickset" version))
        (sha256
-        (base32 "1ga79h40b8ckhm16894vyc7jixdm1g1hfhf7pribz59041ylj6rz"))))
+        (base32 "0jfjqrc2d75zhygfxpschn2mqgjc35wwgczqrh9d3f58amkg5m61"))))
     (properties `((upstream-name . "brickset")))
     (build-system r-build-system)
-    (propagated-inputs (list r-jsonlite r-httr r-dplyr))
+    (propagated-inputs (list r-piggyback r-jsonlite r-httr r-dplyr))
     (home-page "https://github.com/jbryer/brickset")
     (synopsis
      "Interface with the Brickset API for Getting Data About LEGO Sets")
@@ -3697,7 +3726,7 @@ Gaussian.")
 <https://brickset.com/article/52664/api-version-3-documentation> for getting
 data about LEGO sets.  Data sets that can be used for teaching and learning
 without the need of a Brickset account and API key are also included.  Includes
-all LEGO since through the end of 2022.")
+all LEGO since through the end of 2023.")
     (license license:gpl3+)))
 
 (define-public r-brglm2
@@ -4320,13 +4349,13 @@ and aggregate data for a specified query or query group.")
 (define-public r-branching
   (package
     (name "r-branching")
-    (version "0.9.6")
+    (version "0.9.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Branching" version))
        (sha256
-        (base32 "0kjinxyryaima4in1jawdp963sf10sxm3qq0jb0z95ycj4x2dls9"))))
+        (base32 "15znbxpv0kcl8qqihl9f5irvcsyanfhszcz0xq6r7g8gsay4s760"))))
     (properties `((upstream-name . "Branching")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=Branching")
@@ -16612,13 +16641,13 @@ arguments, experiments, etc.")
 (define-public r-bess
   (package
     (name "r-bess")
-    (version "2.0.3")
+    (version "2.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BeSS" version))
        (sha256
-        (base32 "09zxpzcaj13fn38cwd0xk0254aphb3jn1wdwn9hiq9vapfsgn0dx"))))
+        (base32 "1y45lqw6b0qzzg9j3cs18fvzd4q7l6njhjkzpcrik2lgwkzamc8a"))))
     (properties `((upstream-name . "BeSS")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rcppeigen r-rcpp r-matrix r-glmnet))
@@ -17426,13 +17455,13 @@ analysis toolset, without loading the entire file into memory.")
 (define-public r-bedassle
   (package
     (name "r-bedassle")
-    (version "1.6")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BEDASSLE" version))
        (sha256
-        (base32 "0zqqjyal9wjjl1aayp324wdrq3aaqr7s5j912yb3rrvq4gqcfy0d"))))
+        (base32 "1zjgcfpsvghxz62qsg4s1w6gwpd804s8hfnwy5hifg6sy4phw9d7"))))
     (properties `((upstream-name . "BEDASSLE")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrixcalc r-mass r-emdbook))
@@ -22449,6 +22478,35 @@ machine learning library to Bayesian Neural Networks.  The goal is not to have
 the fastest production ready library, but rather to allow more people to be able
 to use and research on Bayesian Neural Networks.")
     (license license:expat)))
+
+(define-public r-bayesfbhborrow
+  (package
+    (name "r-bayesfbhborrow")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BayesFBHborrow" version))
+       (sha256
+        (base32 "1ii3gvjpyglnvl88v3dh93cr47c9qgq12i65nx8a68fj21ljzb8h"))))
+    (properties `((upstream-name . "BayesFBHborrow")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival
+                             r-mvtnorm
+                             r-magrittr
+                             r-invgamma
+                             r-ggplot2
+                             r-dplyr
+                             r-checkmate))
+    (home-page "https://cran.r-project.org/package=BayesFBHborrow")
+    (synopsis
+     "Bayesian Dynamic Borrowing with Flexible Baseline Hazard Function")
+    (description
+     "Allows Bayesian borrowing from a historical dataset for time-to- event data.  A
+flexible baseline hazard function is achieved via a piecewise exponential
+likelihood with time varying split points and smoothing prior on the historic
+baseline hazards.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-bayesess
   (package

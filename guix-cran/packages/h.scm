@@ -12592,13 +12592,13 @@ solvers for machine learning algorithms.")
 (define-public r-h2o
   (package
     (name "r-h2o")
-    (version "3.42.0.2")
+    (version "3.44.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "h2o" version))
        (sha256
-        (base32 "16wjcaskwkjw5bn4mj73qsywd9qcp8q906p3sfsr1vdk9qgm7bls"))))
+        (base32 "10hczpb53s9nvnj21fqp0nlvr9pa8lxgv97q75lfks0m5xn5za31"))))
     (properties `((upstream-name . "h2o")))
     (build-system r-build-system)
     (inputs (list openjdk))

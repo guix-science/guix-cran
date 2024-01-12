@@ -6280,13 +6280,13 @@ dependence structures.")
 (define-public r-lmmstar
   (package
     (name "r-lmmstar")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LMMstar" version))
        (sha256
-        (base32 "0r33k7jyi39a13kwly1qyjai5q67vb6kj803f9yrcxw3g15nfbgd"))))
+        (base32 "1z02lx671k94gj5dh1qbk6sx1698wb2avgiagarnkjc4r1il2al5"))))
     (properties `((upstream-name . "LMMstar")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales

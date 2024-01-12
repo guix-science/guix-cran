@@ -1819,13 +1819,13 @@ CTN-0030 (<https://ctnlibrary.org/protocol/ctn0030/>), and CTN-0051
 (define-public r-pubh
   (package
     (name "r-pubh")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pubh" version))
        (sha256
-        (base32 "0gz34r77vbvc7jvp0q6i3b0i0apz2cm1wsklcx4m9rn0rn08j51s"))))
+        (base32 "1a4hmnzg2ghh5785yzw6bj0zr7mvx6kdyynv21pd2m16kx1jm8ia"))))
     (properties `((upstream-name . "pubh")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -6552,13 +6552,13 @@ for different versions of same question list.")
 (define-public r-profast
   (package
     (name "r-profast")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ProFAST" version))
        (sha256
-        (base32 "02a94qlxwa7499vx71vds8qlndnq6s52bmf9ac0ychdi86a0adfm"))))
+        (base32 "07k3p2khcwymcg2gw4npzpm47r1g03ah06rj2jf8gk95pbqk8p00"))))
     (properties `((upstream-name . "ProFAST")))
     (build-system r-build-system)
     (propagated-inputs (list r-seurat
@@ -6586,7 +6586,7 @@ for different versions of same question list.")
      "Probabilistic factor analysis for spatially-aware dimension reduction across
 multi-section spatial transcriptomics data with millions of spatial locations.
 More details can be referred to Wei Liu, et al. (2023)
-<doi:10.1038/s41467-023-35947-w>.")
+<doi:10.1101/2023.07.11.548486>.")
     (license license:gpl3)))
 
 (define-public r-productplots
@@ -33592,35 +33592,6 @@ that same node.  This package, named after the Greek aphorism Panta Rhei
 (everything flows), provides functions to create publication-quality diagrams,
 using data in tables (or spread sheets) and a simple syntax.")
     (license (license:fsdg-compatible "EUPL"))))
-
-(define-public r-panstarrs
-  (package
-    (name "r-panstarrs")
-    (version "0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "panstarrs" version))
-       (sha256
-        (base32 "07i7v8rjvzw3qxidvjdh73q8v8rfl8xs9zg1nzphz663flqhl6sd"))))
-    (properties `((upstream-name . "panstarrs")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-jsonlite
-                             r-httr
-                             r-data-table
-                             r-curl
-                             r-checkmate
-                             r-bit64))
-    (native-inputs (list r-knitr))
-    (home-page "https://uskovgs.github.io/PanSTARRS/")
-    (synopsis "Interface to the Pan-STARRS API")
-    (description
-     "An interface to the API for Pan-STARRS1', a data archive of the PS1 wide-field
-astronomical survey.  The package allows access to the PS1 catalog and to the
-PS1 images. (see <https://outerspace.stsci.edu/display/PANSTARRS/> for more
-information).  You can use it to plan astronomical observations, make guidance
-pictures, find magnitudes in five broadband filters (g, r, i, z, y) and more.")
-    (license license:expat)))
 
 (define-public r-panprsnext
   (package

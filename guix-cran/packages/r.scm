@@ -813,40 +813,6 @@ evaluation.")
 be plotted in rworldmap.")
     (license license:gpl2+)))
 
-(define-public r-rworkflows
-  (package
-    (name "r-rworkflows")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rworkflows" version))
-       (sha256
-        (base32 "1y7r8fyxqj8yfy86wj7h3axpyg59ina5hvbf8156vax11nv3pa4f"))))
-    (properties `((upstream-name . "rworkflows")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-yaml
-                             r-renv
-                             r-here
-                             r-desc
-                             r-data-table
-                             r-biocmanager
-                             r-badger))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/neurogenomics/rworkflows")
-    (synopsis "Test, Document, Containerise, and Deploy R Packages")
-    (description
-     "Reproducibility is essential to the progress of research, yet achieving it
-remains elusive even in computational fields.  Continuous Integration (CI)
-platforms offer a powerful way to launch automated workflows to check and
-document code, but often require considerable time, effort, and technical
-expertise to setup.  We therefore developed the rworkflows suite to make robust
-CI workflows easy and freely accessible to all R package developers.  rworkflows
-consists of 1) a CRAN/Bioconductor-compatible R package template, 2) an R
-package to quickly implement a standardised workflow, and 3) a centrally
-maintained @code{GitHub} Action.")
-    (license license:gpl3)))
-
 (define-public r-rwofost
   (package
     (name "r-rwofost")
@@ -3187,13 +3153,13 @@ result of parsed and anonymised raw log data from that CRAN mirror.")
 (define-public r-rtrend
   (package
     (name "r-rtrend")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtrend" version))
        (sha256
-        (base32 "1l5vlqjxsgin0pjr4gfdf1ba0zapzjs7c4j4mrjpb8p4hvk3wgzz"))))
+        (base32 "03spmnqbydwfv0nx0rmp6pj67y8vxaqwaj2c76jrrk5qmjvpjkc1"))))
     (properties `((upstream-name . "rtrend")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -8734,6 +8700,34 @@ that automatically generates lambdas and evaluates different models with cross
 validation or BIC, including a large p version of BIC. Below URL provides a link
 to a work in progress vignette.")
     (license license:expat)))
+
+(define-public r-rqlm
+  (package
+    (name "r-rqlm")
+    (version "1.1-1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rqlm" version))
+       (sha256
+        (base32 "0884zrmpwaap5iyfks7rdr0wh225j4anyn60ng46fp361ygjf3lq"))))
+    (properties `((upstream-name . "rqlm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sandwich r-mass))
+    (home-page "https://cran.r-project.org/package=rqlm")
+    (synopsis
+     "Modified Poisson and Least-Squares Regressions for Binary Outcome")
+    (description
+     "Modified Poisson and least-squares regression analyses for binary outcomes of
+Zou (2004) <doi:10.1093/aje/kwh090> and Cheung (2007) <doi:10.1093/aje/kwm223>
+have been standard multivariate analysis methods to estimate risk ratio and risk
+difference in clinical and epidemiological studies.  This R package involves an
+easy-to-handle function to implement these analyses by simple commands.  Also,
+recent studies have shown the ordinary robust variance estimator possibly has
+serious bias under small or moderate sample size situations for these methods.
+This package also provides computational tools to calculate alternative accurate
+confidence intervals (Noma et al. (2024) <Forthcoming>).")
+    (license license:gpl3)))
 
 (define-public r-rqentangle
   (package
@@ -20864,13 +20858,13 @@ network and associated properties.")
 (define-public r-riverdist
   (package
     (name "r-riverdist")
-    (version "0.16.2")
+    (version "0.16.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "riverdist" version))
        (sha256
-        (base32 "0ravdkj2b0fr4v441yvjhr6a46jimb2n7dxr1gv525lysjq2fi5a"))))
+        (base32 "0ai29wb3ah27v58xqzhip3kaj7zhkzrsi4300n9kf7yvb2y018gp"))))
     (properties `((upstream-name . "riverdist")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf))
@@ -21012,6 +21006,28 @@ experiments.")
 (<https://www.itis.gov>).  Includes functions to work with the ITIS REST API
 methods (<https://www.itis.gov/ws_description.html>), as well as the Solr web
 service (<https://www.itis.gov/solr_documentation.html>).")
+    (license license:expat)))
+
+(define-public r-ritch
+  (package
+    (name "r-ritch")
+    (version "0.1.24")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RITCH" version))
+       (sha256
+        (base32 "13vbbidk4vxfan8wga03q7g6dzj2rmgiic917sqdr11m43bck6jf"))))
+    (properties `((upstream-name . "RITCH")))
+    (build-system r-build-system)
+    (inputs (list zlib))
+    (propagated-inputs (list r-rcpp r-nanotime r-data-table r-bit64))
+    (home-page "https://davzim.github.io/RITCH/")
+    (synopsis "R Parser for the ITCH-Protocol")
+    (description
+     "Allows to efficiently parse, filter, and write binary ITCH Files (Version 5.0)
+containing detailed financial transactions as distributed by NASDAQ to an R
+data.table.")
     (license license:expat)))
 
 (define-public r-ritc
@@ -24836,13 +24852,13 @@ expression data (Microarray/RNA-seq etc).")
 (define-public r-rgbif
   (package
     (name "r-rgbif")
-    (version "3.7.8")
+    (version "3.7.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rgbif" version))
        (sha256
-        (base32 "18xihlvbaagmp6qdbknq6qblbbvz0g1r7shngh0dzfpvwr6bily0"))))
+        (base32 "1ni0pkxp2rmjbvxrn3r19hdig64f4jwrq8awd96x4grb8z45fw7d"))))
     (properties `((upstream-name . "rgbif")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -30727,13 +30743,13 @@ generate novel regression problems.")
 (define-public r-regressinator
   (package
     (name "r-regressinator")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "regressinator" version))
        (sha256
-        (base32 "0rdnaidbfs2s3qidfcilqrav84xs4v6g3xzwn27bn53s3nayw0r4"))))
+        (base32 "103f940cy4xy0zs2j1jsx1kwwa5vy5j7975zl5qxaj1fn3a3jqcq"))))
     (properties `((upstream-name . "regressinator")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

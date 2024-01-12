@@ -620,13 +620,13 @@ R for Introductory Statistics,\" second edition.")
 (define-public r-usincometaxes
   (package
     (name "r-usincometaxes")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "usincometaxes" version))
        (sha256
-        (base32 "018hc48l58p8ybdvdshh2kkl0pm6b8wsqgc0qjcq60z6v8s4sqx4"))))
+        (base32 "1ryml266c7zbzlh5rq2h6gy8flchrjbrlapsy2vvc9s5mwc58vaj"))))
     (properties `((upstream-name . "usincometaxes")))
     (build-system r-build-system)
     (propagated-inputs (list r-vroom r-v8 r-tibble))

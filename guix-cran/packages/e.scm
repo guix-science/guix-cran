@@ -2548,33 +2548,6 @@ inter-exceedance times.  Graphical diagnostics for the threshold level and the
 respective tuning parameters K and D are provided.")
     (license license:gpl2+)))
 
-(define-public r-exde
-  (package
-    (name "r-exde")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "exDE" version))
-       (sha256
-        (base32 "15z1gdbpnps9idlw8bw3n0wsayjpvv0f5mb8hihi0kvbys8q4sfa"))))
-    (properties `((upstream-name . "exDE")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-mass r-expm r-desolve))
-    (native-inputs (list r-knitr))
-    (home-page "https://dd-harp.github.io/exDE/")
-    (synopsis
-     "Extensible Differential Equations for Mosquito-Borne Pathogen Modeling")
-    (description
-     "This package provides tools to set up modular ordinary and delay differential
-equation models for mosquito-borne pathogens, focusing on malaria.  Modular
-design is achieved by S3 dispatch on parameter lists for each component which is
-used to compute the full set of differential equations which may be solved using
-any of the packages for numerical simulation of differential equations in R. The
-methods implemented by this package are described in Wu et al. (2022)
-<doi:10.1101/2022.11.07.22282044>.")
-    (license license:expat)))
-
 (define-public r-excursions
   (package
     (name "r-excursions")
@@ -3227,13 +3200,13 @@ C.J. (2022) Preprint <doi:10.13140/RG.2.2.11828.94085>.")
 (define-public r-ewsmethods
   (package
     (name "r-ewsmethods")
-    (version "1.2.4")
+    (version "1.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EWSmethods" version))
        (sha256
-        (base32 "0al837hrzwxdwn9ls2v9y35vlv4irzsw6brsbzy22fndcg8zvhiz"))))
+        (base32 "1ci968fnid8f1c17idsahmmwzzly28x1603prcgdy0fdfmk5srbs"))))
     (properties `((upstream-name . "EWSmethods")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -3249,7 +3222,8 @@ C.J. (2022) Preprint <doi:10.13140/RG.2.2.11828.94085>.")
                              r-forecast
                              r-foreach
                              r-egg
-                             r-dplyr))
+                             r-dplyr
+                             r-curl))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/duncanobrien/EWSmethods")
     (synopsis "Forecasting Tipping Points at the Community Level")
@@ -6280,13 +6254,13 @@ formats, and retrieve the code to reproduce the plot.")
 (define-public r-espadon
   (package
     (name "r-espadon")
-    (version "1.4.1")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "espadon" version))
        (sha256
-        (base32 "0r46wr3i8q66j4vyz9qsxkg7fimc6hdac1ja48wyd2rpmgimsvhv"))))
+        (base32 "1z59rqc9h1r1y8r2rvfzijmrg2a8xx403kkian8jvcv4aciz1mkp"))))
     (properties `((upstream-name . "espadon")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinywidgets
@@ -6313,6 +6287,48 @@ formats, and retrieve the code to reproduce the plot.")
 dosimetry, imagery) for medical physics and clinical research, in a
 patient-oriented perspective.")
     (license license:gpl3)))
+
+(define-public r-esmtools
+  (package
+    (name "r-esmtools")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "esmtools" version))
+       (sha256
+        (base32 "1yxak1zz1abx1g7dlizzcfv6fbbl6kikgs8z046bm4s7yfdijp0g"))))
+    (properties `((upstream-name . "esmtools")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-lubridate
+                             r-knitr
+                             r-kableextra
+                             r-jsonlite
+                             r-htmltools
+                             r-ggpubr
+                             r-ggplot2
+                             r-fs
+                             r-dt
+                             r-dplyr
+                             r-base64enc))
+    (home-page
+     "https://gitlab.kuleuven.be/ppw-okpiv/researchers/u0148925/esmtools/")
+    (synopsis "Preprocessing Experience Sampling Method (ESM) Data")
+    (description
+     "Tailored explicitly for Experience Sampling Method (ESM) data, it contains a
+suite of functions designed to simplify preprocessing steps and create
+subsequent reporting.  It empowers users with capabilities to extract critical
+insights during preprocessing, conducts thorough data quality assessments (e.g.,
+design and sampling scheme checks, compliance rate, careless responses), and
+generates visualizations and concise summary tables tailored specifically for
+ESM data.  Additionally, it streamlines the creation of informative and
+interactive preprocessing reports, enabling researchers to transparently share
+their dataset preprocessing methodologies.  Finally, it is part of a larger
+ecosystem which includes a framework and a web gallery
+(<https://preprocess.esmtools.com/>).")
+    (license license:gpl3+)))
 
 (define-public r-esmprep
   (package
@@ -13236,6 +13252,27 @@ Go', etc.).  This implementation is capable of evaluating a variety of matchups,
 Elo rating updates, and win probabilities, all based on the basic Elo rating
 system.  It also includes methods to benchmark performance, including logistic
 regression and Markov chain models.")
+    (license license:gpl2+)))
+
+(define-public r-elnnpairedcov
+  (package
+    (name "r-elnnpairedcov")
+    (version "0.3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "eLNNpairedCov" version))
+       (sha256
+        (base32 "1rr8zd8l71am7sx8glv73lvn0w1wyyzkgn0j7hybi7ibcwg4hz5l"))))
+    (properties `((upstream-name . "eLNNpairedCov")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mass r-limma r-biobase))
+    (home-page "https://cran.r-project.org/package=eLNNpairedCov")
+    (synopsis "Model-Based Gene Selection for Paired Data")
+    (description
+     "Model-based clustering for paired data based on the regression of a mixture of
+Bayesian hierarchical models on covariates.  Zhang et al. (2023)
+<doi:10.1186/s12859-023-05556-x>.")
     (license license:gpl2+)))
 
 (define-public r-elmso

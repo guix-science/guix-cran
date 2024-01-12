@@ -7268,6 +7268,37 @@ The output is the MCMC sample of the posterior distribution of the event date
 with or without radiocarbon calibration.")
     (license license:gpl3)))
 
+(define-public r-arcgisutils
+  (package
+    (name "r-arcgisutils")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "arcgisutils" version))
+       (sha256
+        (base32 "1vg8zadwfjibipahls96a8ya36khshmr5whgfyfg6jbdcprrlcjp"))))
+    (properties `((upstream-name . "arcgisutils")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sf
+                             r-rlang
+                             r-rcppsimdjson
+                             r-rcpp
+                             r-jsonify
+                             r-httr2
+                             r-dbplyr))
+    (home-page "https://github.com/R-ArcGIS/arcgisutils")
+    (synopsis "ArcGIS Utility Functions")
+    (description
+     "Developer oriented utility functions designed to be used as the building blocks
+of R packages that work with @code{ArcGIS} Location Services.  It provides
+functionality for authorization, Esri JSON construction and parsing, as well as
+other utilities pertaining to geometry and Esri type conversions.  To support
+@code{ArcGIS} Pro users, authorization can done via arcgisbinding'.
+Installation instructions for arcgisbinding can be found at
+<https://r.esri.com/r-bridge-site/arcgisbinding/installing-arcgisbinding.html>.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-arcensreg
   (package
     (name "r-arcensreg")
@@ -8307,6 +8338,31 @@ information on choice models see Train, K. (2009) <isbn:978-0-521-74738-7> and
 Hess, S. & Daly, A.J. (2014) <isbn:978-1-781-00314-5> for an overview of the
 field.")
     (license license:gpl2)))
+
+(define-public r-apoderoides
+  (package
+    (name "r-apoderoides")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Apoderoides" version))
+       (sha256
+        (base32 "0057pab1bbvacjk891yn5slz713a6bm959hsnx5wsnrkwsih7prj"))))
+    (properties `((upstream-name . "Apoderoides")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppprogress r-rcpp r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=Apoderoides")
+    (synopsis
+     "Prioritize and Delete Erroneous Taxa in a Large Phylogenetic Tree")
+    (description
+     "Finds, prioritizes and deletes erroneous taxa in a phylogenetic tree.  This
+package calculates scores for taxa in a tree.  Higher score means the taxon is
+more erroneous.  If the score is zero for a taxon, the taxon is not erroneous.
+This package also can remove all erroneous taxa automatically by iterating score
+calculation and pruning taxa with the highest score.")
+    (license license:expat)))
 
 (define-public r-apng
   (package
@@ -13492,19 +13548,24 @@ resolving a small number ob closed equations.")
 (define-public r-algaeclassify
   (package
     (name "r-algaeclassify")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "algaeClassify" version))
        (sha256
-        (base32 "0n5ssd77gqzs9316zqshzq2k03g9q83i2z8vswk8wiiifn21d0a4"))))
+        (base32 "08jg210aas3bxjqgsapba8fzc133nh9afl0lzy784ywdx96lfmm0"))))
     (properties `((upstream-name . "algaeClassify")))
     (build-system r-build-system)
-    (propagated-inputs (list r-taxize r-ritis r-lubridate r-jsonlite r-curl))
+    (propagated-inputs (list r-taxize
+                             r-ritis
+                             r-rcurl
+                             r-lubridate
+                             r-jsonlite
+                             r-curl))
     (home-page "https://doi.org/10.5066/F7S46Q3F")
     (synopsis
-     "Determine Phytoplankton Functional Groups Based on Functional Traits")
+     "Tools to Standardize Phytoplankton Taxonomic Data and Perform Functional Group Classifications")
     (description
      "This package provides functions that facilitate the use of accepted taxonomic
 nomenclature, collection of functional trait data, and assignment of functional

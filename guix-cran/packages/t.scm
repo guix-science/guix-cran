@@ -2948,16 +2948,16 @@ Pearson VII, Slash or Contaminated Normal).")
 (define-public r-tslstmplus
   (package
     (name "r-tslstmplus")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TSLSTMplus" version))
        (sha256
-        (base32 "1ap6k5zd1nh92s99k073jgmd9rxhz185m0cnz1wc2hrcpfgzqdg9"))))
+        (base32 "146vp6mhwbk5y2dk4392b7kz7nykmd797g11z6xc11l3c8wcg43v"))))
     (properties `((upstream-name . "TSLSTMplus")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tsutils r-tensorflow r-keras))
+    (propagated-inputs (list r-tsutils r-tensorflow r-keras r-abind))
     (home-page "https://cran.r-project.org/package=TSLSTMplus")
     (synopsis "Long-Short Term Memory for Time-Series Forecasting, Enhanced")
     (description
@@ -6195,30 +6195,6 @@ function sim.genespeciestree() simulates coalescent gene trees within
 birth-death species trees, and sim.genetree() simulates coalescent gene trees.")
     (license license:gpl2)))
 
-(define-public r-treeshap
-  (package
-    (name "r-treeshap")
-    (version "0.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "treeshap" version))
-       (sha256
-        (base32 "0d9c48ypsysgra2zn43x8c30g6njina0zva8kv4w8fjlgmidip9a"))))
-    (properties `((upstream-name . "treeshap")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-ggplot2 r-data-table))
-    (home-page "https://modeloriented.github.io/treeshap/")
-    (synopsis
-     "Compute SHAP Values for Your Tree-Based Models Using the 'TreeSHAP' Algorithm")
-    (description
-     "An efficient implementation of the @code{TreeSHAP} algorithm introduced by
-Lundberg et al., (2020) <doi:10.1038/s42256-019-0138-9>.  It is capable of
-calculating SHAP (SHapley Additive @code{exPlanations}) values for tree-based
-models in polynomial time.  Currently supported models include gbm',
-@code{randomForest}', ranger', xgboost', lightgbm'.")
-    (license license:gpl3)))
-
 (define-public r-treesearch
   (package
     (name "r-treesearch")
@@ -8467,13 +8443,13 @@ package.")
 (define-public r-tracker
   (package
     (name "r-tracker")
-    (version "1.5.2")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "trackeR" version))
        (sha256
-        (base32 "1f3giz6naxxyicgy9v0391ang43srwhy9zbiv4zmlc8i9v05b57i"))))
+        (base32 "06fyki3w73hdmwlsmp6k5g5x6vs60ysznji3bgi9kpphcbn85frg"))))
     (properties `((upstream-name . "trackeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -12316,16 +12292,16 @@ dependency-free.")
 (define-public r-tinycodet
   (package
     (name "r-tinycodet")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinycodet" version))
        (sha256
-        (base32 "0rrmml9mpzdbgy0vshxik33cjsf0hdlcbpjqvwf2nvn2rf9g1vnc"))))
+        (base32 "0kyp6j6hdspilbzlvdzgv2l004wcln0mgs21par1pxfm17mp4fda"))))
     (properties `((upstream-name . "tinycodet")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringi))
+    (propagated-inputs (list r-stringi r-rcpp))
     (home-page "https://github.com/tony-aw/tinycodet/")
     (synopsis "Functions to Help in your Coding Etiquette")
     (description
@@ -12333,9 +12309,10 @@ dependency-free.")
 focuses on 4 aspects.  1) Safer decimal (in)equality testing, safer atomic
 conversions, and other functions for safer coding.  2) A new package import
 system, that attempts to combine the benefits of using a package without
-attaching, with the benefits of attaching a package.  3) Extending the string
+attaching it, with the benefits of attaching a package.  3) Extending the string
 manipulation capabilities of the stringi R package.  4) Reducing repetitive
-code.  tinycodet has only one dependency, namely stringi'.")
+code.  Besides linking to Rcpp', tinycodet has only one other dependency, namely
+stringi'.")
     (license license:expat)))
 
 (define-public r-tinyarray
@@ -13630,39 +13607,6 @@ formulas.  Supports .xlsx and .xlsm via the embedded @code{RapidXML} C++ library
 get tidy data frames in response, and cache data in a local database.")
     (license license:expat)))
 
-(define-public r-tidyvpc
-  (package
-    (name "r-tidyvpc")
-    (version "1.5.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tidyvpc" version))
-       (sha256
-        (base32 "1rxac4zbv3ar3s1kv54zf61nnna32mahhml88yb1h6w3r3yyyzqz"))))
-    (properties `((upstream-name . "tidyvpc")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rlang
-                             r-quantreg
-                             r-mgcv
-                             r-magrittr
-                             r-ggplot2
-                             r-fastdummies
-                             r-egg
-                             r-data-table
-                             r-classint))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/certara/tidyvpc")
-    (synopsis "VPC Percentiles and Prediction Intervals")
-    (description
-     "Perform a Visual Predictive Check (VPC), while accounting for stratification,
-censoring, and prediction correction.  Using piping from magrittr', the
-intuitive syntax gives users a flexible and powerful method to generate VPCs
-using both traditional binning and a new binless approach Jamsen et al. (2018)
-<doi:10.1002/psp4.12319> with Additive Quantile Regression (AQR) and Locally
-Estimated Scatterplot Smoothing (LOESS) prediction correction.")
-    (license license:expat)))
-
 (define-public r-tidyusda
   (package
     (name "r-tidyusda")
@@ -14524,6 +14468,37 @@ functions that provide alternative behaviors such as if_else2() and
 str_detect2().")
     (license license:expat)))
 
+(define-public r-tidyplate
+  (package
+    (name "r-tidyplate")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidyplate" version))
+       (sha256
+        (base32 "1b7vfnk97fbrh6c7k0zjs6cw5jqlchkf2bhvsia4g4s5wndj1yj1"))))
+    (properties `((upstream-name . "tidyplate")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-readxl
+                             r-readr
+                             r-purrr
+                             r-janitor
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/shubhamdutta26/tidyplate")
+    (synopsis "Transform Microplate Data into Tidy Dataframes")
+    (description
+     "The goal of tidyplate is to help researchers convert different types of
+microplates into tidy dataframes which can be used in data analysis.  It accepts
+xlsx and csv files formatted in a specific way as input.  It supports all types
+of standard microplate formats such as 6-well, 12-well, 24-well, 48-well,
+96-well, 384-well, and, 1536-well plates.")
+    (license license:expat)))
+
 (define-public r-tidypaleo
   (package
     (name "r-tidypaleo")
@@ -14657,6 +14632,40 @@ in R. This analysis might involve cohort analysis, quality control
 visualisation, change-point detection, statistical process control, clustering,
 or any other type of quality analysis.")
     (license license:gpl3+)))
+
+(define-public r-tidymc
+  (package
+    (name "r-tidymc")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidyMC" version))
+       (sha256
+        (base32 "0mf2xxckxxvcgw1381yscmzppwgmmn44zpfyw6glkbw6963z542k"))))
+    (properties `((upstream-name . "tidyMC")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-kableextra
+                             r-hms
+                             r-ggplot2
+                             r-future
+                             r-furrr
+                             r-dplyr
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/stefanlinner/tidyMC")
+    (synopsis "Monte Carlo Simulations Made Easy and Tidy")
+    (description
+     "Framework to run Monte Carlo simulations over a parameter grid.  Allows to
+parallelize the simulations.  Generates plots and @code{LaTeX} tables
+summarizing the results from the simulation.")
+    (license license:expat)))
 
 (define-public r-tidylpa
   (package
@@ -14841,13 +14850,13 @@ describing the methodology can be found at
 (define-public r-tidyhydat
   (package
     (name "r-tidyhydat")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyhydat" version))
        (sha256
-        (base32 "15c54pbkm40n3i3kbmx38fkmjp9hjixdpw5ikvwjid9fzky36f1q"))))
+        (base32 "0rcb3q17ckp7l7xrjf3r32dlnxm6ykwlk20w5h7amnc2vimjnir9"))))
     (properties `((upstream-name . "tidyhydat")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -16084,13 +16093,13 @@ algorithm.")
 (define-public r-tibblify
   (package
     (name "r-tibblify")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tibblify" version))
        (sha256
-        (base32 "1hir7rb0zn9cz2yjfrg17is0ryzzxfxsan0sij0c0dh9v171cp0w"))))
+        (base32 "165ygq6wf35siiml6dsm4hxqg5lndqhwh82cdwyfwnl829nbz9a7"))))
     (properties `((upstream-name . "tibblify")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -16982,51 +16991,6 @@ and temp2raw functions.  Recommend update for use with long distance
 calculations.  v.4.1.3 changed to @code{frameLocates} to reflect change to
 as.character() to format().")
     (license license:gpl2+)))
-
-(define-public r-thermalsampler
-  (package
-    (name "r-thermalsampler")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ThermalSampleR" version))
-       (sha256
-        (base32 "089dp2f16dpk76yc5fv4yi7700qr19hbzrkrmm6y17rz6zlgk9p2"))))
-    (properties `((upstream-name . "ThermalSampleR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-testthat
-                             r-sn
-                             r-rlang
-                             r-purrr
-                             r-mass
-                             r-magrittr
-                             r-janitor
-                             r-ggplot2
-                             r-envstats
-                             r-dplyr
-                             r-cowplot))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ThermalSampleR")
-    (synopsis
-     "Calculate Sample Sizes Required for Critical Thermal Limits Experiments")
-    (description
-     "We present a range of simulations to aid researchers in determining appropriate
-sample sizes when performing critical thermal limits studies (e.g. CTmin/CTmin
-experiments).  A number of wrapper functions are provided for plotting and
-summarising outputs from these simulations.  These simulations are presented in
-van Steenderen, C.J.M., Sutton, G.F., Owen, C.A., Martin, G.D., and Coetzee,
-J.A. Sample size assessments for thermal physiology studies: An R package and R
-Shiny GUI. 2023.  Physiological Entomology.  Under review.  The GUI version of
-this package is available on the R Shiny online server at:
-<https://clarkevansteenderen.shinyapps.io/@code{ThermalSampleR_Shiny/>} , or it
-is accessible via @code{GitHub} at
-<https://github.com/clarkevansteenderen/@code{ThermalSampleR_Shiny/>}.  We would
-like to thank Grant Duffy (University of Otago, Dundedin, New Zealand) for
-granting us permission to use the source code for the Test of Total Equivalency
-function.")
-    (license license:gpl3)))
 
 (define-public r-theopenair
   (package
@@ -18667,52 +18631,6 @@ text-based data, such as scientific output or corporate publications.  For more
 information regarding the methodology see Meier, Mata & Wulff (2022)
 <@code{arXiv:2110.05856>}.")
     (license license:gpl3)))
-
-(define-public r-text2map
-  (package
-    (name "r-text2map")
-    (version "0.1.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "text2map" version))
-       (sha256
-        (base32 "1lr9bg1vbighpw2knh6bbj0f812frabzb513wc6gc209ig8yfpj3"))))
-    (properties `((upstream-name . "text2map")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble
-                             r-text2vec
-                             r-stringr
-                             r-stringi
-                             r-rsvd
-                             r-rlang
-                             r-qgraph
-                             r-permute
-                             r-matrix
-                             r-magrittr
-                             r-kit
-                             r-igraph
-                             r-foreach
-                             r-fastmatch
-                             r-dplyr
-                             r-doparallel
-                             r-clusterr))
-    (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://gitlab.com/culturalcartography/text2map")
-    (synopsis "R Tools for Text Matrices, Embeddings, and Networks")
-    (description
-     "This is a collection of functions optimized for working with with various kinds
-of text matrices.  Focusing on the text matrix as the primary object -
-represented either as a base R dense matrix or a Matrix package sparse matrix -
-allows for a consistent and intuitive interface that stays close to the
-underlying mathematical foundation of computational text analysis.  In
-particular, the package includes functions for working with word embeddings,
-text networks, and document-term matrices.  Methods developed in Stoltz and
-Taylor (2019) <doi:10.1007/s42001-019-00048-6>, Taylor and Stoltz (2020)
-<doi:10.1007/s42001-020-00075-8>, Taylor and Stoltz (2020)
-<doi:10.15195/v7.a23>, and Stoltz and Taylor (2021)
-<doi:10.1016/j.poetic.2021.101567>.")
-    (license license:expat)))
 
 (define-public r-text-alignment
   (package
@@ -20522,6 +20440,35 @@ significance and temporal aspects of adverse events in clinical trials\" - JAMIA
 2018; 25(8): 1069-1073 <doi:10.1093/jamia/ocy016>.")
     (license license:gpl2)))
 
+(define-public r-tempted
+  (package
+    (name "r-tempted")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tempted" version))
+       (sha256
+        (base32 "0s2yqb5fn9aihjhkwffgd010ziihg3xx6j5i5d3a4vy2ki2l2a0w"))))
+    (properties `((upstream-name . "tempted")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-np r-ggplot2))
+    (home-page "https://github.com/pixushi/tempted")
+    (synopsis
+     "Temporal Tensor Decomposition, a Dimensionality Reduction Tool for Longitudinal Multivariate Data")
+    (description
+     "TEMPoral TEnsor Decomposition (TEMPTED), is a dimension reduction method for
+multivariate longitudinal data with varying temporal sampling.  It formats the
+data into a temporal tensor and decomposes it into a summation of
+low-dimensional components, each consisting of a subject loading vector, a
+feature loading vector, and a continuous temporal loading function.  These
+loadings provide a low-dimensional representation of subjects or samples and can
+be used to identify features associated with clusters of subjects or samples.
+TEMPTED provides the flexibility of allowing subjects to have different temporal
+sampling, so time points do not need to be binned, and missing time points do
+not need to be imputed.")
+    (license license:gpl3)))
+
 (define-public r-tempstable
   (package
     (name "r-tempstable")
@@ -21370,18 +21317,18 @@ various log destinations, vectorization, and more.")
 (define-public r-teal-code
   (package
     (name "r-teal-code")
-    (version "0.4.1")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal.code" version))
        (sha256
-        (base32 "1drwxgiigx20db4blzixljknafr651qs0fk5cmcal1xsl1k7hcwp"))))
+        (base32 "0dhfvhdb61sp5i1za8lmp823y6la8dkisc8z9s9hvf4ypf63n05a"))))
     (properties `((upstream-name . "teal.code")))
     (build-system r-build-system)
-    (propagated-inputs (list r-styler r-shiny r-rlang r-lifecycle r-checkmate))
+    (propagated-inputs (list r-rlang r-lifecycle r-checkmate))
     (native-inputs (list r-knitr))
-    (home-page "https://insightsengineering.github.io/teal.code/latest-tag/")
+    (home-page "https://insightsengineering.github.io/teal.code/")
     (synopsis "Code Storage and Execution Class for 'teal' Applications")
     (description
      "Introduction of qenv S4 class, that facilitates code execution and

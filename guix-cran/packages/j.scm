@@ -3834,49 +3834,6 @@ functions, elliptic alpha function, Rogers-Ramanujan continued fractions, and
 Dixon elliptic functions.  Complex values of the variable are supported.")
     (license license:gpl3)))
 
-(define-public r-jackstraw
-  (package
-    (name "r-jackstraw")
-    (version "1.3.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "jackstraw" version))
-       (sha256
-        (base32 "04d0ribg8nbxazv92hmzzks2krsx024glfc90cm9dxz7if44cwc9"))))
-    (properties `((upstream-name . "jackstraw")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rsvd
-                             r-qvalue
-                             r-irlba
-                             r-corpcor
-                             r-clusterr
-                             r-cluster))
-    (home-page "https://cran.r-project.org/package=jackstraw")
-    (synopsis "Statistical Inference for Unsupervised Learning")
-    (description
-     "Test for association between the observed data and their estimated latent
-variables.  The jackstraw package provides a resampling strategy and testing
-scheme to estimate statistical significance of association between the observed
-data and their latent variables.  Depending on the data type and the analysis
-aim, the latent variables may be estimated by principal component analysis
-(PCA), factor analysis (FA), K-means clustering, and related algorithms.  The
-jackstraw methods learn over-fitting characteristics inherent in this circular
-analysis, where the observed data are used to estimate the latent variables and
-used again to test against that estimated latent variables.  When latent
-variables are estimated by PCA, the jackstraw enables statistical testing for
-association between observed variables and latent variables, as estimated by
-low-dimensional principal components (PCs).  This essentially leads to
-identifying variables that are significantly associated with PCs.  Similarly,
-unsupervised clustering, such as K-means clustering, partition around medoids
-(PAM), and others, finds coherent groups in high-dimensional data.  The
-jackstraw estimates statistical significance of cluster membership, by testing
-association between data and cluster centers.  Clustering membership can be
-improved by using the resulting jackstraw p-values and posterior inclusion
-probabilities (PIPs), with an application to unsupervised evaluation of cell
-identities in single cell RNA-seq.")
-    (license license:gpl2)))
-
 (define-public r-jackstrap
   (package
     (name "r-jackstrap")

@@ -10619,13 +10619,13 @@ easy interface for accessing it is provided in this package.")
 (define-public r-gmcplite
   (package
     (name "r-gmcplite")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gMCPLite" version))
        (sha256
-        (base32 "1y9pfvrxmp3gybn1cl3hhmdvp1v2cl1gqclg6lbz0ikzja9bfwjg"))))
+        (base32 "1qykizcq42hj6v9fb9hyi59zi1m4hpk10il7why9s9cwyii1m69z"))))
     (properties `((upstream-name . "gMCPLite")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-mass r-ggplot2))
@@ -11823,23 +11823,21 @@ Methodology. <doi:10.1027/1614-2241/a000153>.")
 (define-public r-glmmrbase
   (package
     (name "r-glmmrbase")
-    (version "0.5.3")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmmrBase" version))
        (sha256
-        (base32 "1q3pj76iac6dr3hlbjv84zd5nqcl9a8j1z2wvs0nd99bcvh6rhk5"))))
+        (base32 "0g731dbpmyncjhb7z65h8n7rnywvyvj2qawhrdkkfc8lclv7gdv4"))))
     (properties `((upstream-name . "glmmrBase")))
     (build-system r-build-system)
     (propagated-inputs (list r-sparsechol
-                             r-rminqa
                              r-rcppparallel
                              r-rcppeigen
                              r-rcpp
                              r-r6
                              r-matrix
-                             r-digest
                              r-bh))
     (home-page "https://github.com/samuel-watson/glmmrBase")
     (synopsis "Generalised Linear Mixed Models in R")
@@ -12017,6 +12015,38 @@ dimension.  However, only probit mixed models with one level of nesting are
 supported.  The methodology is described in Hall, Johnstone, Ormerod, Wand and
 Yu (2018) <@code{arXiv:1805.08423v1>}.")
     (license license:gpl2+)))
+
+(define-public r-glmmcosinor
+  (package
+    (name "r-glmmcosinor")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GLMMcosinor" version))
+       (sha256
+        (base32 "098r9l5m26ld8frxjzc6rr7ahw2z22njnskn06kqchxjqxv6amqw"))))
+    (properties `((upstream-name . "GLMMcosinor")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scales
+                             r-rlang
+                             r-lme4
+                             r-glmmtmb
+                             r-ggplot2
+                             r-ggforce
+                             r-cowplot
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ropensci/GLMMcosinor")
+    (synopsis
+     "Fit a Cosinor Model Using a Generalised Mixed Modelling Framework")
+    (description
+     "Allows users to fit a cosinor model using the @code{glmmTMB} framework.  This
+extends on existing cosinor modelling packages, including cosinor and
+circacompare', by including a wide range of available link functions and the
+capability to fit mixed models.  The cosinor model is described by Cornelissen
+(2014) <doi:10.1186/1742-4682-11-16>.")
+    (license license:gpl3+)))
 
 (define-public r-glmmadaptive
   (package
@@ -17090,13 +17120,13 @@ ggiraph'.")
 (define-public r-ggir
   (package
     (name "r-ggir")
-    (version "3.0-2")
+    (version "3.0-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GGIR" version))
        (sha256
-        (base32 "049fr8fnl7ad1i52i35bzl1lzqdd2rb67ph1w96gyib1dljhz5pf"))))
+        (base32 "1mdrmfnnn2nyzdx6ka63q3zw0ad6a517nsdivqval1qrqpx026xc"))))
     (properties `((upstream-name . "GGIR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
