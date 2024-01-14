@@ -8421,35 +8421,6 @@ and create documentation to support regulatory submission and internal
 communication.")
     (license license:gpl3+)))
 
-(define-public r-apml0
-  (package
-    (name "r-apml0")
-    (version "0.10")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "APML0" version))
-       (sha256
-        (base32 "1l6mw1mqb7qnsvfv9w6yydqjsrwrsrqx3bpifyp43cf2q71yx5gp"))))
-    (properties `((upstream-name . "APML0")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcppeigen r-rcpp r-matrix))
-    (home-page "https://cran.r-project.org/package=APML0")
-    (synopsis "Augmented and Penalized Minimization Method L0")
-    (description
-     "Fit linear, logistic and Cox models regularized with L0, lasso (L1), elastic-net
-(L1 and L2), or net (L1 and Laplacian) penalty, and their adaptive forms, such
-as adaptive lasso / elastic-net and net adjusting for signs of linked
-coefficients.  It solves L0 penalty problem by simultaneously selecting
-regularization parameters and performing hard-thresholding or selecting number
-of non-zeros.  This augmented and penalized minimization method provides an
-approximation solution to the L0 penalty problem, but runs as fast as L1
-regularization problem.  The package uses one-step coordinate descent algorithm
-and runs extremely fast by taking into account the sparsity structure of
-coefficients.  It could deal with very high dimensional data and has superior
-selection performance.")
-    (license license:gpl2+)))
-
 (define-public r-aplpack
   (package
     (name "r-aplpack")
@@ -9095,6 +9066,40 @@ errors.  This package creates Word files (.doc files) containing APA style
 tables for several types of analyses.  Using this package minimizes
 transcription errors and reduces the number commands needed by the user.")
     (license (license:fsdg-compatible "MIT License + file LICENSE"))))
+
+(define-public r-apackoftheclones
+  (package
+    (name "r-apackoftheclones")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "APackOfTheClones" version))
+       (sha256
+        (base32 "0wbkrnx8p06r75hk0gffasrykdnm4hdlbf45p5zzw0pnyzf2s49v"))))
+    (properties `((upstream-name . "APackOfTheClones")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-seurat
+                             r-rlang
+                             r-rcpp
+                             r-lifecycle
+                             r-hash
+                             r-ggplot2
+                             r-ggforce
+                             r-dplyr
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://qile0317.github.io/APackOfTheClones/")
+    (synopsis
+     "Visualization of Clonal Expansion for Single Cell Immune Profiles")
+    (description
+     "Visualize clonal expansion via circle-packing.  A@code{PackOfTheClones} extends
+@code{scRepertoire} to produce a publication-ready visualization of clonal
+expansion at a single cell resolution, by representing expanded clones as
+differently sized circles.  The method was originally implemented by Murray
+Christian and Ben Murrell in the following immunology study: Ma et al. (2021)
+<doi:10.1126/sciimmunol.abg6356>.")
+    (license license:expat)))
 
 (define-public r-apachelogprocessor
   (package
@@ -18008,13 +18013,13 @@ and specificity as well as AUC and AUCPR can be evaluated.")
 (define-public r-adjclust
   (package
     (name "r-adjclust")
-    (version "0.6.7")
+    (version "0.6.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adjclust" version))
        (sha256
-        (base32 "1pm22249y8pggvm2nnv0rznfh7qhrvbzlbmg4h0dm353b80sxczn"))))
+        (base32 "005d18vqr3kd492mcbcdc4jb176a9s5rxj4y8r8iy0s2hc4kyl3l"))))
     (properties `((upstream-name . "adjclust")))
     (build-system r-build-system)
     (propagated-inputs (list r-sparsematrixstats

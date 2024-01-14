@@ -5405,6 +5405,35 @@ social sciences.  The algorithm implemented is described in Fu et al., (2021)
 <doi:10.1111/rssa.12678>.")
     (license license:gpl3+)))
 
+(define-public r-grcdesigns
+  (package
+    (name "r-grcdesigns")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GRCdesigns" version))
+       (sha256
+        (base32 "0fa1c9sf2sb085izcimwg78s7a7zgflncx0wbzhh8i8vfmi5xvi9"))))
+    (properties `((upstream-name . "GRCdesigns")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=GRCdesigns")
+    (synopsis "Generalized Row-Column Designs")
+    (description
+     "When the number of treatments is large with limited experimental resources then
+Row-Column(RC) designs with multiple units per cell can be used.  These designs
+are called Generalized Row-Column (GRC) designs and are defined as designs with
+v treatments in p rows and q columns such that the intersection of each row and
+column (cell) consists of k experimental units.  For example (Bailey & Monod
+(2001)<doi:10.1111/1467-9469.00235>), to conduct an experiment for comparing 4
+treatments using 4 plants with leaves at 2 different heights row-column design
+with two units per cell can be used.  A GRC design is said to be structurally
+complete if corresponding to the intersection of each row and column, there
+appears at least two treatments.  A GRC design is said to be structurally
+incomplete if corresponding to the intersection of any row and column, there is
+at least one cell which does not contain any treatment.")
+    (license license:gpl2+)))
+
 (define-public r-grcdata
   (package
     (name "r-grcdata")
@@ -14163,13 +14192,13 @@ multiple correspondence analysis ('HOMALS'), monotone regression analysis
 (define-public r-gif
   (package
     (name "r-gif")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gif" version))
        (sha256
-        (base32 "119d7q9xs6xpncv1r2w008kld9z07ckyj1kja9b8n2lnlb8532pk"))))
+        (base32 "1gh6h3cxf27x6wa3g28fi8famb1vvf69qgq8qw3ypdamc58avmp9"))))
     (properties `((upstream-name . "gif")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-matrix r-mass))
@@ -14184,7 +14213,7 @@ selection problem of Gaussian graphical model, and the core concept of this
 method was proposed by Luo et al. (2014) <@code{arXiv:1407.7819>}.  Secondly, a
 closed form solution for graphical lasso under acyclic graph structure is
 implemented in our package (Fattahi and Sojoudi (2019)
-<http://jmlr.org/papers/v20/17-501.html>).  Furthermore, we implement block
+<https://jmlr.org/papers/v20/17-501.html>).  Furthermore, we implement block
 coordinate descent algorithm to efficiently solve the covariance selection
 problem (Dempster (1972) <doi:10.2307/2528966>).  Our package is computationally
 efficient and can solve ultra-high-dimensional problems, e.g. p > 10,000, in a
@@ -24888,13 +24917,13 @@ and Gotway (2004, <ISBN:9781584883227>) and Waller and Gotway (2004,
 (define-public r-ge
   (package
     (name "r-ge")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GE" version))
        (sha256
-        (base32 "1jwi3zb33f7f8i8rvy3gr7j5cix76h97mkcgsr5fmblzvwrwwhg5"))))
+        (base32 "0fba4l6497r9lxc5jdi6s9nsjgbqb2x5f9nphx7c9ar10rjqgqqy"))))
     (properties `((upstream-name . "GE")))
     (build-system r-build-system)
     (propagated-inputs (list r-diagrammer r-data-tree r-cge))
@@ -28140,6 +28169,45 @@ generate the gambin distribution and for calculating likelihood statistics.")
      "Data sets and scripts used in the book Generalized Additive Models: An
 Introduction with R', Wood (2006,2017) CRC.")
     (license license:gpl2+)))
+
+(define-public r-gamabiomd
+  (package
+    (name "r-gamabiomd")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GaMaBioMD" version))
+       (sha256
+        (base32 "15rx6xycnxldaxyjhcgysfz7zj6cjwlfkjjm6jyhxxvw4h2nw75m"))))
+    (properties `((upstream-name . "GaMaBioMD")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-traits
+                             r-reshape2
+                             r-magrittr
+                             r-heatmaply
+                             r-ggplot2
+                             r-dplyr
+                             r-dendextend
+                             r-biostrings
+                             r-ape))
+    (home-page "https://cran.r-project.org/package=GaMaBioMD")
+    (synopsis "Diversity Analysis for Sequence Data")
+    (description
+     "The full form is Garai and Mantri Biological Material Diversity.  It is an R
+package designed for the calculation of biological diversity using sequence
+data.  It simplifies the process by requiring only sample IDs and accession
+numbers.  Whether you're analyzing genetic or microbial diversity, It provides
+efficient tools for diversity analysis.  Serially one should go for the
+functions as presented here expand_accession_ranges(),
+get_sequence_information(), preprocess_for_alignment(), write_fasta(),
+@code{SampleID_vs_NumSequences}(), data_sampling(), alignment_info(),
+compute_average_similarity_matrix(), generate_heatmaps(),
+clustering_average_similarity(), clustering_percent_similarity(),
+bubble_plot_count(), bubble_plot_percentage(), tree_average_similarity(),
+tree_percent_similarity().  Till date there are total 15 functions.  More
+details can be found in Faith (1992) <doi:10.1016/0006-3207(92)91201-3>.")
+    (license license:gpl3)))
 
 (define-public r-galvanizer
   (package

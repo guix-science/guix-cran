@@ -2945,6 +2945,34 @@ created by CS-UCR <http://www.cs.ucr.edu/~eamonn/@code{MatrixProfile.html>}.")
 Pearson VII, Slash or Contaminated Normal).")
     (license license:gpl3+)))
 
+(define-public r-tslstmx
+  (package
+    (name "r-tslstmx")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tsLSTMx" version))
+       (sha256
+        (base32 "12ghcqb85adws6z3587z2pb0bavqf5xs1bvap6g74pw34kzgjyhi"))))
+    (properties `((upstream-name . "tsLSTMx")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tensorflow r-reticulate r-keras r-allmetrics))
+    (home-page "https://cran.r-project.org/package=tsLSTMx")
+    (synopsis
+     "Predict Time Series Using LSTM Model Including Exogenous Variable to Denote Zero Values")
+    (description
+     "It is a versatile tool for predicting time series data using Long Short-Term
+Memory (LSTM) models.  It is specifically designed to handle time series with an
+exogenous variable, allowing users to denote whether data was available for a
+particular period or not.  The package encompasses various functionalities,
+including hyperparameter tuning, custom loss function support, model evaluation,
+and one-step-ahead forecasting.  With an emphasis on ease of use and
+flexibility, it empowers users to explore, evaluate, and deploy LSTM models for
+accurate time series predictions and forecasting in diverse applications.  More
+details can be found in Garai and Paul (2023) <doi:10.1016/j.iswa.2023.200202>.")
+    (license license:gpl3)))
+
 (define-public r-tslstmplus
   (package
     (name "r-tslstmplus")
@@ -6027,6 +6055,32 @@ patterns.  The methods are described in Volz, E., Wiuf, C., Grad, Y., Frost, S.,
 Dennis, A., & Didelot, X. (2020) <doi:10.1093/sysbio/syaa009>.")
     (license license:gpl2+)))
 
+(define-public r-treestats
+  (package
+    (name "r-treestats")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "treestats" version))
+       (sha256
+        (base32 "0kj23wk44nzb5j2l00j2rp8l4jlkhl1m4dz0g5h6197prw43va3a"))))
+    (properties `((upstream-name . "treestats")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rspectra r-rcpp r-nloptr r-matrix r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/thijsjanzen/treestats")
+    (synopsis "Phylogenetic Tree Statistics")
+    (description
+     "Collection of phylogenetic tree statistics, collected throughout the literature.
+ All functions have been written to maximize computation speed.  The package
+includes umbrella functions to calculate all statistics, all balance associated
+statistics, or all branching time related statistics.  Furthermore, the
+treestats package supports summary statistic calculations on Ltables, provides
+speed-improved coding of branching times, Ltable conversion and includes
+algorithms to create intermediately balanced trees.")
+    (license license:gpl3)))
+
 (define-public r-treestartr
   (package
     (name "r-treestartr")
@@ -7973,34 +8027,6 @@ as multiple measures of straightness or tortuosity.  Some support is provided
 for 3-dimensional trajectories. @code{McLean} & Skowron Volponi (2018)
 <doi:10.1111/eth.12739>.")
     (license license:expat)))
-
-(define-public r-trajer
-  (package
-    (name "r-trajer")
-    (version "0.9.0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "trajeR" version))
-       (sha256
-        (base32 "1zy3hg1m1a5dpx494mlb72vfpng5892dcginv6rwxc2c1ggv6z86"))))
-    (properties `((upstream-name . "trajeR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-ucminf
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-numderiv
-                             r-minpack-lm
-                             r-mass
-                             r-capushe))
-    (home-page "https://github.com/gitedric/trajeR")
-    (synopsis "Group Based Modeling Trajectory")
-    (description
-     "Find the probability and the trajectory of longitudinal mixture model.  Methods
-used in the package refer to Nagin (2005), <doi:10.4159/9780674041318>, Nagin,
-D. (2005).  Group-Based Modeling of Development.  Cambridge, MA: Harvard
-University Press.  and Noel (2022), <https://orbilu.uni.lu/>, thesis.")
-    (license license:gpl2+)))
 
 (define-public r-trajectories
   (package
@@ -21721,29 +21747,6 @@ TDCMs with item parameters constrained to be equal across all items), and
 multi-threaded TDCMs.")
     (license license:gpl2+)))
 
-(define-public r-tdboost
-  (package
-    (name "r-tdboost")
-    (version "1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "TDboost" version))
-       (sha256
-        (base32 "0kbmn1bddsnmh20rnkw6gizpb23srb4id3dsqqrjgj15j4zkavas"))))
-    (properties `((upstream-name . "TDboost")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-lattice))
-    (home-page "https://cran.r-project.org/package=TDboost")
-    (synopsis "Boosted Tweedie Compound Poisson Model")
-    (description
-     "An implementation of a boosted Tweedie compound Poisson model proposed by Yang,
-Y., Qian, W. and Zou, H. (2018) <doi:10.1080/07350015.2016.1200981>.  It is
-capable of fitting a flexible nonlinear Tweedie compound Poisson model (or a
-gamma model) and capturing high-order interactions among predictors.  This
-package is based on the gbm package originally developed by Greg Ridgeway.")
-    (license license:gpl3)))
-
 (define-public r-tdbook
   (package
     (name "r-tdbook")
@@ -23040,32 +23043,6 @@ API of any specified server to get said data into R. The Tautulli API
 documentation is available at
 <https://github.com/Tautulli/Tautulli/blob/master/API.md>.")
     (license license:expat)))
-
-(define-public r-taustar
-  (package
-    (name "r-taustar")
-    (version "1.1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "TauStar" version))
-       (sha256
-        (base32 "06bb6570mqzfbjw2qp4bjl4a1bdpwsvcr0vw2y4l1x444m670ds1"))))
-    (properties `((upstream-name . "TauStar")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp))
-    (home-page "https://cran.r-project.org/package=TauStar")
-    (synopsis
-     "Efficient Computation and Testing of the Bergsma-Dassios Sign Covariance")
-    (description
-     "Computes the t* statistic corresponding to the tau* population coefficient
-introduced by Bergsma and Dassios (2014) <DOI:10.3150/13-BEJ514> and does so in
-O(n^2) time following the algorithm of Heller and Heller (2016)
-<@code{arXiv:1605.08732>} building off of the work of Weihs, Drton, and Leung
-(2016) <DOI:10.1007/s00180-015-0639-x>.  Also allows for independence testing
-using the asymptotic distribution of t* as described by Nandy, Weihs, and Drton
-(2016) <@code{arXiv:1602.04387>}.")
-    (license license:gpl3+)))
 
 (define-public r-tauprocess
   (package

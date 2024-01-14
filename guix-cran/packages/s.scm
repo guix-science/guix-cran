@@ -501,13 +501,13 @@ the R environment.")
 (define-public r-synr
   (package
     (name "r-synr")
-    (version "0.6.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "synr" version))
        (sha256
-        (base32 "128rgwmj2skcnjm8h1kkbqrm0sz67a515l2n16w5p1jybqvd9ps0"))))
+        (base32 "160lkj0jhazh717rm340aivbrq67wcdj1c19hs9vza43f65x78i3"))))
     (properties `((upstream-name . "synr")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2 r-dbscan r-data-table))
@@ -776,6 +776,30 @@ analyses.  Among its features is the ability to calculate the model-implied
 covariance (and correlation) matrix and the sampling covariance matrix of
 variable functions using the delta method.")
     (license license:gpl2+)))
+
+(define-public r-symptomcheckr
+  (package
+    (name "r-symptomcheckr")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "symptomcheckR" version))
+       (sha256
+        (base32 "1dh4j950ha9l6kp4y8ygfxp5lp42x6j3bjzdbdpsz9a6hdb3l9az"))))
+    (properties `((upstream-name . "symptomcheckR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-ggpubr r-ggplot2 r-dplyr))
+    (home-page "https://github.com/ma-kopka/symptomcheckR")
+    (synopsis "Analyzing and Visualizing Symptom Checker Performance")
+    (description
+     "Easily analyze and visualize the performance of symptom checkers.  This package
+can be used to gain comprehensive insights into the performance of single
+symptom checkers or the performance of multiple symptom checkers.  It can be
+used to easily compare these symptom checkers across several metrics to gain an
+understanding of their strengths and weaknesses.  The metrics are developed in
+Kopka et al. (2023) <doi:10.1177/20552076231194929>.")
+    (license license:gpl3)))
 
 (define-public r-symphony
   (package
@@ -1715,18 +1739,18 @@ type = \"source\")'.  The size of the @code{swephRdata} package is approximately
 (define-public r-sweidnumbr
   (package
     (name "r-sweidnumbr")
-    (version "1.4.2")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sweidnumbr" version))
        (sha256
-        (base32 "0zzjvwd60w9b5ybsb72aqa42sx6al4ymr591j3zryxgpl6rms5rh"))))
+        (base32 "0w7q69whpwwi1d75jyglgc2qxvgg9v7xgs7jxgmqzl23z87nsjqp"))))
     (properties `((upstream-name . "sweidnumbr")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-lubridate r-checkmate))
     (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://github.com/rOpenGov/sweidnumbr/")
+    (home-page "https://github.com/rOpenGov/sweidnumbr")
     (synopsis "Handling of Swedish Identity Numbers")
     (description
      "Structural handling of identity numbers used in the Swedish administration such
@@ -1933,33 +1957,6 @@ Palette ('GPL'), @code{OpenOffice} palette ('SOC') files and KDE Palette
 formats as well as other swatch file formats can be found at
 <http://www.selapa.net/swatches/colors/fileformats.php>.")
     (license license:expat)))
-
-(define-public r-swarmsvm
-  (package
-    (name "r-swarmsvm")
-    (version "0.1-7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SwarmSVM" version))
-       (sha256
-        (base32 "03q9sv51lvf64gdzmcb8sskghqib3afy5hx9nwxba1sk2cziinpb"))))
-    (properties `((upstream-name . "SwarmSVM")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sparsem
-                             r-matrix
-                             r-liblinear
-                             r-kernlab
-                             r-e1071
-                             r-checkmate
-                             r-bbmisc))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=SwarmSVM")
-    (synopsis "Ensemble Learning Algorithms Based on Support Vector Machines")
-    (description
-     "Three ensemble learning algorithms based on support vector machines.  They all
-train support vector machines on subset of data and combine the result.")
-    (license license:gpl2)))
 
 (define-public r-swarm
   (package
@@ -12666,13 +12663,13 @@ visualization location and to provide web services.")
 (define-public r-starsextra
   (package
     (name "r-starsextra")
-    (version "0.2.7")
+    (version "0.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "starsExtra" version))
        (sha256
-        (base32 "06l9rpgw1dmvvn3389zzqrq4y87192k4zzj7xgvwzrdlrcxsqdh7"))))
+        (base32 "0r3nqdgwx0nz1q9nm9nfc1awdbm3n52pqrc5hln6dw23wbpvzfd3"))))
     (properties `((upstream-name . "starsExtra")))
     (build-system r-build-system)
     (propagated-inputs (list r-units r-stars r-sf r-nngeo r-mgcv))
@@ -20073,6 +20070,32 @@ frequencies of any variable obtained in the cells where the species is present
 with the frequencies of the same variable in the cells of the extent.")
     (license license:gpl2+)))
 
+(define-public r-spedecon
+  (package
+    (name "r-spedecon")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spedecon" version))
+       (sha256
+        (base32 "06vyyznf5xlwqb662plvnm7pjjwwsb6h745yr9izjam1zyavvq1c"))))
+    (properties `((upstream-name . "spedecon")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-quadprog))
+    (home-page "https://www.davidjkent.org")
+    (synopsis
+     "Smoothness-Penalized Deconvolution for Density Estimation Under Measurement Error")
+    (description
+     "This package implements the Smoothness-Penalized Deconvolution method for
+estimating a probability density under measurement error of Kent and Ruppert
+(2023) <doi:10.1080/01621459.2023.2259028>.  The estimator is formed by
+computing a histogram of the error-contaminated data, and then finding an
+estimate that minimizes a reconstruction error plus a smoothness-inducing
+penalty term.  The primary function, sped(), takes the data and error
+distribution, and returns the estimator as a function.")
+    (license license:gpl3)))
+
 (define-public r-sped
   (package
     (name "r-sped")
@@ -23724,36 +23747,6 @@ misalignment (see Vitelli, 2019, <doi:10.48550/@code{arXiv.1912.00687>}).")
      "Estimation of functional linear mixed models for irregularly or sparsely sampled
 data based on functional principal component analysis.")
     (license license:gpl2)))
-
-(define-public r-sparsefactoranalysis
-  (package
-    (name "r-sparsefactoranalysis")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SparseFactorAnalysis" version))
-       (sha256
-        (base32 "0lgfvydxb86r5hks1mf0p0yhgpx8s8fbkc3q6dimc728rw26qcv5"))))
-    (properties `((upstream-name . "SparseFactorAnalysis")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vgam
-                             r-truncnorm
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-proto
-                             r-mass
-                             r-ggplot2
-                             r-directlabels))
-    (home-page "https://cran.r-project.org/package=SparseFactorAnalysis")
-    (synopsis "Scaling Count and Binary Data with Sparse Factor Analysis")
-    (description
-     "Multidimensional scaling provides a means of uncovering a latent structure
-underlying observed data, while estimating the number of latent dimensions.
-This package presents a means for scaling binary and count data, for example the
-votes and word counts for legislators.  Future work will include an EM
-implementation and extend this work to ordinal and continuous data.")
-    (license license:gpl2+)))
 
 (define-public r-sparseeigen
   (package
@@ -28360,13 +28353,13 @@ the correlation coefficient under sampling from a bivariate normal distribution.
 (define-public r-smotewb
   (package
     (name "r-smotewb")
-    (version "1.0.1")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SMOTEWB" version))
        (sha256
-        (base32 "0pgn4v08nf74v9p79901268sj97gl5ml0723hs948m9ajkdf1d2x"))))
+        (base32 "196arp5gfz066qw5n7q2w6hgx3p9q52hs7a9qva69yrm5qlrmr66"))))
     (properties `((upstream-name . "SMOTEWB")))
     (build-system r-build-system)
     (propagated-inputs (list r-rpart r-rfast r-rann r-fnn))
@@ -28376,10 +28369,10 @@ the correlation coefficient under sampling from a bivariate normal distribution.
      "This package provides the SMOTE with Boosting (SMOTEWB) algorithm.  See F.
 @code{SaÄlam}, M. A. Cengiz (2022) <doi:10.1016/j.eswa.2022.117023>.  Also
 SMOTEWB provides faster versions of several resampling methods for imbalanced
-datasets, including SMOTE with Boosting (SMOTEWB), ADASYN, Borderline SMOTE
-(BLSMOTE), Random Over-Sampling (ROS), Random Under-Sampling (RUS), Safe-Level
-SMOTE (SLSMOTE), Relocating Safe-Level SMOTE (RSLSMOTE), and Random
-Over-Sampling Examples (ROSE).")
+datasets, including SMOTE with Boosting (SMOTEWB), Random Walk Oversampling
+(RWO), ADASYN, Borderline SMOTE (BLSMOTE), Random Over-Sampling (ROS), Random
+Under-Sampling (RUS), Safe-Level SMOTE (SLSMOTE), Relocating Safe-Level SMOTE
+(RSLSMOTE), and Random Over-Sampling Examples (ROSE).")
     (license license:expat)))
 
 (define-public r-smotefamily
@@ -28860,42 +28853,6 @@ we organize the BLI experiment data and analysis methods into a S4 class with
 self-explaining structure.")
     (license (list license:gpl2 license:gpl3))))
 
-(define-public r-smog
-  (package
-    (name "r-smog")
-    (version "2.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "smog" version))
-       (sha256
-        (base32 "1mnnvp6crjwwiym16q4hmn9zwna1gblwqjlan4x9zyvgp1j70k26"))))
-    (properties `((upstream-name . "smog")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-rmarkdown
-                             r-rdpack
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-magrittr
-                             r-ggplot2
-                             r-foreach
-                             r-dplyr
-                             r-doparallel))
-    (home-page "https://github.com/chongma8903/smog")
-    (synopsis "Structural Modeling by using Overlapped Group Penalty")
-    (description
-     "Fits a linear non-penalized phenotype (demographic) variables and penalized
-groups of prognostic effect and predictive effect, by satisfying such hierarchy
-structures that if a predictive effect exists, its prognostic effect must also
-exist.  This package can deal with continuous, binomial or multinomial, and
-survival response variables, underlying the assumption of Gaussian, binomial
-(multinomial), and Cox proportional hazard models, respectively.  It is
-implemented by combining the iterative shrinkage-thresholding algorithm and the
-alternating direction method of multipliers algorithms.  The main method is
-built in C++, and the complementary methods are written in R.")
-    (license license:gpl2+)))
-
 (define-public r-smof
   (package
     (name "r-smof")
@@ -29321,6 +29278,28 @@ Co-operation and Development (OECD) weights can be included into the direct
 estimation (see, Walter, P. (2019) <doi:10.17169/refubium-1621>).")
     (license license:gpl2)))
 
+(define-public r-smfsb
+  (package
+    (name "r-smfsb")
+    (version "1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "smfsb" version))
+       (sha256
+        (base32 "092f9zcds183ya1j3qv2jjpi3rbpzzhb2wirlzpqk5bsfbyri93c"))))
+    (properties `((upstream-name . "smfsb")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-abind))
+    (home-page "https://cran.r-project.org/package=smfsb")
+    (synopsis "Stochastic Modelling for Systems Biology")
+    (description
+     "Code and data for modelling and simulation of stochastic kinetic biochemical
+network models.  It contains the code and data associated with the second and
+third editions of the book Stochastic Modelling for Systems Biology, published
+by Chapman & Hall/CRC Press.")
+    (license license:lgpl3)))
+
 (define-public r-smfishhmrf
   (package
     (name "r-smfishhmrf")
@@ -29447,13 +29426,13 @@ Amazon Web Service @code{CodeBuild} <https://aws.amazon.com/codebuild/>.")
 (define-public r-smdic
   (package
     (name "r-smdic")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SMDIC" version))
        (sha256
-        (base32 "1hjc9gxlhx2lhdn4hj6sgff827g34r17nl3i7mg9862s5l9xw516"))))
+        (base32 "1dx6k67cbk863l9vvp870syn23l7vwxylgs980mp418nfj3d1s23"))))
     (properties `((upstream-name . "SMDIC")))
     (build-system r-build-system)
     (propagated-inputs (list r-survminer
@@ -29645,13 +29624,13 @@ user specified substantive model.")
 (define-public r-smccnet
   (package
     (name "r-smccnet")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SmCCNet" version))
        (sha256
-        (base32 "0xwmhkipibc5pd1ipjnpjy5p9ijkvxrnz9mzi588d1s0vy6bgrc5"))))
+        (base32 "0kkwvvl8rqpdfn5avl5ash3svyfff1rrkmkafjslvqwpym69gsb0"))))
     (properties `((upstream-name . "SmCCNet")))
     (build-system r-build-system)
     (propagated-inputs (list r-spls
@@ -29659,7 +29638,6 @@ user specified substantive model.")
                              r-purrr
                              r-proc
                              r-pracma
-                             r-pma
                              r-pbapply
                              r-matrix
                              r-magrittr
@@ -38488,13 +38466,13 @@ Includes a set of web-based graphical user interfaces.")
 (define-public r-shorts
   (package
     (name "r-shorts")
-    (version "2.5.0")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shorts" version))
        (sha256
-        (base32 "16k5gl35gybzwaddmwcy6zr3gzqbkjs9brj55slpnip1yfi9qm9i"))))
+        (base32 "1ivpgfrhpxfv9vzidz2b0dvrwy7rrgp9mbrrg0qkb5ska56jzhgd"))))
     (properties `((upstream-name . "shorts")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-purrr r-minpack-lm r-lambertw r-ggplot2))
@@ -38506,13 +38484,15 @@ data.  Mono-exponential equation is used to estimate maximal sprinting speed
 (MSS), relative acceleration (TAU), and other parameters such us maximal
 acceleration (MAC) and maximal relative power (PMAX).  These parameters can be
 used to predict kinematic and kinetics variables and to compare individuals.
-The modeling method utilized in this package is based on the works of Chelly SM,
-Denis C. (2001) <doi: 10.1097/00005768-200102000-00024>, Clark KP, Rieger RH,
-Bruno RF, Stearne DJ. (2017) <doi: 10.1519/JSC.0000000000002081>, Furusawa K,
-Hill AV, Parkinson JL (1927) <doi: 10.1098/rspb.1927.0035>, Greene PR. (1986)
-<doi: 10.1016/0025-5564(86)90063-5>, Samozino P. and Peyrot N., et al (2022)
-<doi: 10.1111/sms.14097>, and Samozino P. (2018) <doi:
-10.1007/978-3-319-05633-3_11>.")
+The modeling method utilized in this package is based on the works of Furusawa
+K, Hill AV, Parkinson JL (1927) <doi: 10.1098/rspb.1927.0035>, Greene PR. (1986)
+<doi: 10.1016/0025-5564(86)90063-5>, Chelly SM, Denis C. (2001) <doi:
+10.1097/00005768-200102000-00024>, Clark KP, Rieger RH, Bruno RF, Stearne DJ.
+(2017) <doi: 10.1519/JSC.0000000000002081>, Samozino P. (2018) <doi:
+10.1007/978-3-319-05633-3_11>, Samozino P. and Peyrot N., et al (2022) <doi:
+10.1111/sms.14097>, Clavel, P., et al (2023) <doi:
+10.1016/j.jbiomech.2023.111602>, and Jovanovic M. (2023) <doi:
+10.1080/10255842.2023.2170713>.")
     (license license:expat)))
 
 (define-public r-shortirt
@@ -42174,13 +42154,13 @@ al. (2001) <doi:10.1111/j.1365-2745.2001.00615.x>.")
 (define-public r-shapviz
   (package
     (name "r-shapviz")
-    (version "0.9.2")
+    (version "0.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shapviz" version))
        (sha256
-        (base32 "1wb61zmwx9nzxgn8y71h1j66xd3q78l31x9qd395d4m6g4xiry0c"))))
+        (base32 "01zq6kr5na40xgypif6sv2pjynhva9v0npx779k7fxck1db68z80"))))
     (properties `((upstream-name . "shapviz")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -42198,12 +42178,12 @@ al. (2001) <doi:10.1111/j.1365-2745.2001.00615.x>.")
 waterfall plots, force plots, various types of importance plots, dependence
 plots, and interaction plots.  These plots act on a shapviz object created from
 a matrix of SHAP values and a corresponding feature dataset.  Wrappers for the R
-packages xgboost', lightgbm', fastshap', shapr', h2o', treeshap', DALEX',
-kernelshap', and permshap are added for convenience.  By separating
-visualization and computation, it is possible to display factor variables in
-graphs, even if the SHAP values are calculated by a model that requires
-numerical features.  The plots are inspired by those provided by the shap
-package in Python, but there is no dependency on it.")
+packages xgboost', lightgbm', fastshap', shapr', h2o', treeshap', DALEX', and
+kernelshap are added for convenience.  By separating visualization and
+computation, it is possible to display factor variables in graphs, even if the
+SHAP values are calculated by a model that requires numerical features.  The
+plots are inspired by those provided by the shap package in Python, but there is
+no dependency on it.")
     (license license:gpl2+)))
 
 (define-public r-shapr
@@ -43344,39 +43324,6 @@ Houpt, Blaha, @code{McIntire}, Havig, and Townsend (2013)
 <doi:10.3758/s13428-013-0377-3> provide a basic introduction to Systems
 Factorial Technology along with examples using the sft R package.")
     (license license:gpl2+)))
-
-(define-public r-sfsi
-  (package
-    (name "r-sfsi")
-    (version "1.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SFSI" version))
-       (sha256
-        (base32 "1h085bihjlbfa1ma63ngcshfw97fx0k879lpxjj82s1dbazagkdg"))))
-    (properties `((upstream-name . "SFSI")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-viridis
-                             r-tensorevd
-                             r-scales
-                             r-reshape2
-                             r-igraph
-                             r-ggplot2))
-    (native-inputs (list r-rmarkdown))
-    (home-page "https://cran.r-project.org/package=SFSI")
-    (synopsis "Sparse Family and Selection Index")
-    (description
-     "Here we provide tools for the estimation of coefficients in penalized
-regressions when the (co)variance matrix of predictors and the covariance vector
-between predictors and response, are provided.  These methods are extended to
-the context of a Selection Index (commonly used for breeding value prediction).
-The approaches offer opportunities such as the integration of high-throughput
-traits in genetic evaluations ('Lopez-Cruz et al., 2020')
-<doi:10.1038/s41598-020-65011-2> and solutions for training set optimization in
-Genomic Prediction ('Lopez-Cruz & de los Campos, 2021')
-<doi:10.1093/genetics/iyab030>.")
-    (license license:gpl3)))
 
 (define-public r-sfs
   (package
@@ -53136,13 +53083,13 @@ scdensity() help for for full citations.")
 (define-public r-scdb
   (package
     (name "r-scdb")
-    (version "0.2.1")
+    (version "0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SCDB" version))
        (sha256
-        (base32 "00fa3j22xr6c7jyrrb6g0yh1szkcxqpsk4wsk4s77h8vky52xr6f"))))
+        (base32 "1ic2f3h39j39lca33csfdrfkcnxqq0pw0fnf5g7qqgiqwin4mpy9"))))
     (properties `((upstream-name . "SCDB")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyverse
@@ -54305,34 +54252,6 @@ Bipartite SBM).  See LÃ©ger (2016) <arxiv:1602.07587>, Barbillon et al. (2020)
      "This package implements sparse Bayesian learning method for QTL mapping and
 genome-wide association studies.")
     (license license:gpl3)))
-
-(define-public r-sbiopn
-  (package
-    (name "r-sbiopn")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "sbioPN" version))
-       (sha256
-        (base32 "0yvg55xnkhm35hfl7rldy2grb26hm4a68jr4x9n45fs7hhdylxri"))))
-    (properties `((upstream-name . "sbioPN")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=sbioPN")
-    (synopsis
-     "sbioPN: Simulation of deterministic and stochastic spatial biochemical reaction networks using Petri Nets")
-    (description
-     "@code{sbioPN} is a package suited to perform simulation of deterministic and
-stochastic systems of biochemical reaction networks with spatial effects.
-Models are defined using a subset of Petri Nets, in a way that is close at how
-chemical reactions are defined.  For deterministic solutions, @code{sbioPN}
-creates the associated system of differential equations \"on the fly\", and solves
-it with a Runge Kutta Dormand Prince 45 explicit algorithm.  For stochastic
-solutions, @code{sbioPN} offers two variants of Gillespie algorithm, or SSA. For
-hybrid deterministic/stochastic, it employs the Haseltine and Rawlings
-algorithm, that partitions the system in fast and slow reactions. @code{sbioPN}
-algorithms are developed in C to achieve adequate performance.")
-    (license license:gpl2+)))
 
 (define-public r-sbicgraph
   (package

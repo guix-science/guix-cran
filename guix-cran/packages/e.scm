@@ -716,13 +716,13 @@ confidence bands for the extremograms.")
 (define-public r-extremestat
   (package
     (name "r-extremestat")
-    (version "1.5.8")
+    (version "1.5.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "extremeStat" version))
        (sha256
-        (base32 "1vnjirjiadc116if11caglgvkfkwgrqry8a16as6fzhmfh56wg5h"))))
+        (base32 "19ayk8nx6yb14mhgglhy3mq606mm17r3is0x6apxqic7vadvmiqg"))))
     (properties `((upstream-name . "extremeStat")))
     (build-system r-build-system)
     (propagated-inputs (list r-renext
@@ -2280,37 +2280,6 @@ multiple regression models are fitted and response surface graphs are plotted
 (Hair JF, 2016) <ISBN:13:978-0138132637>).")
     (license license:gpl3)))
 
-(define-public r-exomedepth
-  (package
-    (name "r-exomedepth")
-    (version "1.1.16")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ExomeDepth" version))
-       (sha256
-        (base32 "1r7b9h5i562fa67ghisyw6ciwawfyjwrpn95kdws4dd4gqgbb9kv"))))
-    (properties `((upstream-name . "ExomeDepth")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vgam
-                             r-rsamtools
-                             r-magrittr
-                             r-iranges
-                             r-genomicranges
-                             r-genomicalignments
-                             r-dplyr
-                             r-biostrings
-                             r-aod))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ExomeDepth")
-    (synopsis "Calls Copy Number Variants from Targeted Sequence Data")
-    (description
-     "Calls copy number variants (CNVs) from targeted sequence data, typically exome
-sequencing experiments designed to identify the genetic basis of Mendelian
-disorders.  The method is presented in details in Plagnol et al (2012)
-<https://pubmed.ncbi.nlm.nih.gov/22942019/>.")
-    (license license:gpl3)))
-
 (define-public r-exnruleensemble
   (package
     (name "r-exnruleensemble")
@@ -2632,13 +2601,13 @@ filter statements.")
 (define-public r-excluder
   (package
     (name "r-excluder")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "excluder" version))
        (sha256
-        (base32 "1in27qb5zv5cqscdca8nsdnz7jxglvnfi7is8ilc1791w5ld80m7"))))
+        (base32 "1amvxys6xg5djnfv4jxylv9m2z1vhvipq3d1k1ihv9m05prsvdv2"))))
     (properties `((upstream-name . "excluder")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -4174,6 +4143,45 @@ features computed.  The event features extracted from incomplete-events can be
 classified using a partial-observations-classifier (Kandanaarachchi et al.
 2018) <doi:10.1371/journal.pone.0236331>.")
     (license license:expat)))
+
+(define-public r-eventpredincure
+  (package
+    (name "r-eventpredincure")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EventPredInCure" version))
+       (sha256
+        (base32 "1i11v671l5x31nhx0vz2zmjv3g3xr2yszd9vkhg71xnxmr1156cy"))))
+    (properties `((upstream-name . "EventPredInCure")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tmvtnsim
+                             r-survival
+                             r-rstpm2
+                             r-rlang
+                             r-plotly
+                             r-perm
+                             r-numderiv
+                             r-mvtnorm
+                             r-msm
+                             r-mlecens
+                             r-matrix
+                             r-mass
+                             r-lubridate
+                             r-kmsurv
+                             r-flexsurv
+                             r-erify
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=EventPredInCure")
+    (synopsis "Event Prediction Including Cured Population")
+    (description
+     "Predicts enrollment and events assumed enrollment and treatment-specific
+time-to-event models, and calculates test statistics for time-to-event data with
+cured population based on the simulation.Methods for prediction event in the
+existence of cured population are as described in : Chen, Tai-Tsang(2016)
+<doi:10.1186/s12874-016-0117-3>.")
+    (license license:gpl2+)))
 
 (define-public r-eventpred
   (package
@@ -8463,35 +8471,6 @@ time-dependent exposures.  See Wang et al (2020)
 <doi:10.1186/s12940-020-00644-4> for an overview.")
     (license license:expat)))
 
-(define-public r-epiworldr
-  (package
-    (name "r-epiworldr")
-    (version "0.0-3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "epiworldR" version))
-       (sha256
-        (base32 "0x148iw1kf4jl75dm4ywdh5x8sy20pf2nm80fw5ha36vw14948a3"))))
-    (properties `((upstream-name . "epiworldR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-cpp11))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/UofUEpiBio/epiworldR")
-    (synopsis "Fast Agent-Based Epi Models")
-    (description
-     "This package provides a flexible framework for Agent-Based Models (ABM), the
-@code{epiworldR} package provides methods for prototyping disease outbreaks and
-transmission models using a C++ backend, making it very fast.  It supports
-multiple epidemiological models, including the Susceptible-Infected-Susceptible
-(SIS), Susceptible-Infected-Removed (SIR), Susceptible-Exposed-Infected-Removed
-(SEIR), and others, involving arbitrary mitigation policies and multiple-disease
-models.  Users can specify infectiousness/susceptibility rates as a function of
-agents features, providing great complexity for the model dynamics.
-Furthermore, @code{epiworldR} is ideal for simulation studies featuring large
-populations.")
-    (license license:expat)))
-
 (define-public r-epitweetr
   (package
     (name "r-epitweetr")
@@ -12402,30 +12381,6 @@ distribution of emissions such as satellite images (Gavidia Calderon et.  al,
 2018) <doi:10.1016/j.atmosenv.2018.09.026> or openstreetmap data (Andrade et al,
 2015) <doi:10.3389/fenvs.2015.00009>.")
     (license license:expat)))
-
-(define-public r-emirt
-  (package
-    (name "r-emirt")
-    (version "0.0.13")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "emIRT" version))
-       (sha256
-        (base32 "1z6yd9m6vggbp42qms2sg0rbxjpg15x9m8gkdz1p3q4aqrc2ncj0"))))
-    (properties `((upstream-name . "emIRT")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-pscl))
-    (home-page "https://cran.r-project.org/package=emIRT")
-    (synopsis "EM Algorithms for Estimating Item Response Theory Models")
-    (description
-     "Various Expectation-Maximization (EM) algorithms are implemented for item
-response theory (IRT) models.  The package includes IRT models for binary and
-ordinal responses, along with dynamic and hierarchical IRT models with binary
-responses.  The latter two models are fitted using variational EM. The package
-also includes variational network and text scaling models.  The algorithms are
-described in Imai, Lo, and Olmsted (2016) <DOI:10.1017/S000305541600037X>.")
-    (license license:gpl3+)))
 
 (define-public r-emir
   (package
@@ -19070,13 +19025,13 @@ clusters using echelon scan method proposed by Kurihara (2003)
 (define-public r-echarty
   (package
     (name "r-echarty")
-    (version "1.6.2")
+    (version "1.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "echarty" version))
        (sha256
-        (base32 "1q217d2h4a6s9vw9q4y9sd69ffh40wzad7cx7gb10ny4cg080n6x"))))
+        (base32 "0qw555xq4lig4ni0mb9lzqyvs5g5a7rzrplm4zk3xlx8xjlkixjb"))))
     (properties `((upstream-name . "echarty")))
     (build-system r-build-system)
     (propagated-inputs (list r-htmlwidgets r-dplyr r-data-tree))
@@ -19299,28 +19254,6 @@ and some multivariate extensions are given.")
     (synopsis "Data Sets for Econometrics")
     (description "Data sets for econometrics, including political science.")
     (license license:gpl2+)))
-
-(define-public r-ecctmc
-  (package
-    (name "r-ecctmc")
-    (version "0.2.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ECctmc" version))
-       (sha256
-        (base32 "0prryvc17bm1xrhzlqk2w9nj181bg99j1dph3d36h0n1vfq1d7if"))))
-    (properties `((upstream-name . "ECctmc")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/fintzij/ECctmc")
-    (synopsis
-     "Simulation from Endpoint-Conditioned Continuous Time Markov Chains")
-    (description
-     "Draw sample paths for endpoint-conditioned continuous time Markov chains via
-modified rejection sampling or uniformization.")
-    (license license:gpl3)))
 
 (define-public r-ecce
   (package

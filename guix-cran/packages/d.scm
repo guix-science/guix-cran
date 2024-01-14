@@ -3802,16 +3802,21 @@ correlations, graphics and tables.")
 (define-public r-drviaspcn
   (package
     (name "r-drviaspcn")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DRviaSPCN" version))
        (sha256
-        (base32 "1nid3psahz0r8jq0y2bg0p3kdpcf6flm6d0bfw08zjiz8gcpllj3"))))
+        (base32 "1m111n2ycr5z3dy3mhkyxfw0fq74lny0kajk91d0klcpixfv7y2g"))))
     (properties `((upstream-name . "DRviaSPCN")))
     (build-system r-build-system)
-    (propagated-inputs (list r-pheatmap r-igraph r-gsva r-clusterprofiler))
+    (propagated-inputs (list r-sp
+                             r-pheatmap
+                             r-igraph
+                             r-gsva
+                             r-clusterprofiler
+                             r-chemminer))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=DRviaSPCN")
     (synopsis "Drug Repurposing in Cancer via a Subpathway Crosstalk Network")
@@ -8185,29 +8190,6 @@ Jan Mielniczuk, 2022.  Improving Lasso for model selection and prediction.
 Scandinavian Journal of Statistics, 49(2): 831â863. <doi:10.1111/sjos.12546>.")
     (license license:gpl2)))
 
-(define-public r-dmrmark
-  (package
-    (name "r-dmrmark")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DMRMark" version))
-       (sha256
-        (base32 "15wr6j0v9kvbv8y6flkp4svfqy059ziv89nxv91vp0pjmavhpdlz"))))
-    (properties `((upstream-name . "DMRMark")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-mvtnorm r-mcmcpack r-ellipse))
-    (home-page "https://cran.r-project.org/package=DMRMark")
-    (synopsis
-     "DMR Detection by Non-Homogeneous Hidden Markov Model from Methylation Array Data")
-    (description
-     "Perform differential analysis for methylation array data.  Detect differentially
-methylated regions (DMRs) from array M-values.  The core is a Non-homogeneous
-Hidden Markov Model for estimating spatial correlation and a novel Constrained
-Gaussian Mixture Model for modeling the M-value pairs of each individual locus.")
-    (license (list license:gpl2+ license:gpl3+))))
-
 (define-public r-dmri-tracking
   (package
     (name "r-dmri-tracking")
@@ -9579,87 +9561,6 @@ build upon the paper by del Castillo, Joan & Daoudi, Jalila & Serra, Isabel.
 (2012) <doi:10.1017/asb.2017.9>.")
     (license license:gpl3)))
 
-(define-public r-distrtest
-  (package
-    (name "r-distrtest")
-    (version "2.8.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "distrTEst" version))
-       (sha256
-        (base32 "0s22g7sf2q0kj8qcl09vq8prnahmm3iqc0v66kzm6hmhc314k509"))))
-    (properties `((upstream-name . "distrTEst")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-startupmsg r-setrng r-distrsim))
-    (home-page "http://distr.r-forge.r-project.org/")
-    (synopsis "Estimation and Testing Classes Based on Package 'distr'")
-    (description
-     "Evaluation (S4-)classes based on package distr for evaluating procedures
-(estimators/tests) at data/simulation in a unified way.")
-    (license license:lgpl3)))
-
-(define-public r-distrteach
-  (package
-    (name "r-distrteach")
-    (version "2.9.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "distrTeach" version))
-       (sha256
-        (base32 "0jf1v4nb900z7jcy3d34z86ykrn52xnimir1l0iv78dkh1kvwsqn"))))
-    (properties `((upstream-name . "distrTeach")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-startupmsg r-distrex r-distr))
-    (home-page "http://distr.r-forge.r-project.org/")
-    (synopsis
-     "Extensions of Package 'distr' for Teaching Stochastics/Statistics in Secondary School")
-    (description
-     "This package provides flexible examples of LLN and CLT for teaching purposes in
-secondary school.")
-    (license license:lgpl3)))
-
-(define-public r-distrsim
-  (package
-    (name "r-distrsim")
-    (version "2.8.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "distrSim" version))
-       (sha256
-        (base32 "1z6x3bsxp9mrnnygx1048v4iadjs8kkqywjclsixmngb0nm69h61"))))
-    (properties `((upstream-name . "distrSim")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-startupmsg r-setrng r-distr))
-    (home-page "http://distr.r-forge.r-project.org/")
-    (synopsis "Simulation Classes Based on Package 'distr'")
-    (description
-     "S4-classes for setting up a coherent framework for simulation within the distr
-family of packages.")
-    (license license:lgpl3)))
-
-(define-public r-distrrmetrics
-  (package
-    (name "r-distrrmetrics")
-    (version "2.8.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "distrRmetrics" version))
-       (sha256
-        (base32 "12ig5yqn0k1f14zi96ladl3f491jrmlpii2zi49n17rp7214ny14"))))
-    (properties `((upstream-name . "distrRmetrics")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-startupmsg r-fgarch r-fbasics r-distr))
-    (home-page "http://distr.r-forge.r-project.org/")
-    (synopsis "Distribution Classes for Distributions from Rmetrics")
-    (description
-     "S4-distribution classes based on package distr for distributions from packages
-@code{fBasics} and @code{fGarch}'.")
-    (license license:lgpl3)))
-
 (define-public r-distrr
   (package
     (name "r-distrr")
@@ -9723,31 +9624,6 @@ package wraps the various files and commands that may exist on a system.  It is
 similar in spirit to the lsb_release command and the Python package of the same
 name.")
     (license license:asl2.0)))
-
-(define-public r-distrmod
-  (package
-    (name "r-distrmod")
-    (version "2.9.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "distrMod" version))
-       (sha256
-        (base32 "0y1fig29saf070phm8gh08vbjr3jl8gjbcwdi6sz4manpl8i81w7"))))
-    (properties `((upstream-name . "distrMod")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-startupmsg
-                             r-sfsmisc
-                             r-randvar
-                             r-mass
-                             r-distrex
-                             r-distr))
-    (home-page "http://distr.r-forge.r-project.org/")
-    (synopsis "Object Oriented Implementation of Probability Models")
-    (description
-     "This package implements S4 classes for probability models based on packages
-distr and @code{distrEx}'.")
-    (license license:lgpl3)))
 
 (define-public r-distributiontest
   (package
@@ -9921,31 +9797,6 @@ special computational programs.")
      "Extends package distr by functionals, distances, and conditional distributions.")
     (license license:lgpl3)))
 
-(define-public r-distrellipse
-  (package
-    (name "r-distrellipse")
-    (version "2.8.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "distrEllipse" version))
-       (sha256
-        (base32 "0nv87i05aa72x9pj26z37j9cwlyzyhgjbv8bphnhvzf7df1a40r2"))))
-    (properties `((upstream-name . "distrEllipse")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-startupmsg
-                             r-setrng
-                             r-mvtnorm
-                             r-distrsim
-                             r-distrex
-                             r-distr))
-    (home-page "http://distr.r-forge.r-project.org/")
-    (synopsis "S4 Classes for Elliptically Contoured Distributions")
-    (description
-     "Distribution (S4-)classes for elliptically contoured distributions (based on
-package distr').")
-    (license license:lgpl3)))
-
 (define-public r-distreg-vis
   (package
     (name "r-distreg-vis")
@@ -9977,36 +9828,6 @@ fitted using the gamlss', bamlss or betareg R package.  The core of the package
 consists of a shiny application, where the model results can be interactively
 explored and visualized.")
     (license license:gpl3)))
-
-(define-public r-distrdoc
-  (package
-    (name "r-distrdoc")
-    (version "2.8.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "distrDoc" version))
-       (sha256
-        (base32 "1lrh3ml47h3d3j59dfqlbza1vh11b5m16am8ilc2dfbm230xnmf9"))))
-    (properties `((upstream-name . "distrDoc")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-startupmsg
-                             r-randvar
-                             r-mass
-                             r-distrtest
-                             r-distrteach
-                             r-distrsim
-                             r-distrmod
-                             r-distrex
-                             r-distr))
-    (native-inputs (list r-knitr))
-    (home-page "http://distr.r-forge.r-project.org/")
-    (synopsis "Documentation for 'distr' Family of R Packages")
-    (description
-     "This package provides documentation in form of a common vignette to packages
-distr', @code{distrEx}', @code{distrMod}', @code{distrSim}', @code{distrTEst}',
-@code{distrTeach}', and @code{distrEllipse}'.")
-    (license license:lgpl3)))
 
 (define-public r-distr
   (package
@@ -10743,13 +10564,13 @@ implementation of the algorithm supports both directed and undirected networks."
 (define-public r-disordr
   (package
     (name "r-disordr")
-    (version "0.9-8.1")
+    (version "0.9-8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "disordR" version))
        (sha256
-        (base32 "1m7cc2wa5g1v0dnf3crm8djnj3c3mz289ngc7nh8c7cf7mj7819z"))))
+        (base32 "07ydnyifqdsan0kp74mlxaviwj4ccnsh77z36gsh2cpyhda2la8d"))))
     (properties `((upstream-name . "disordR")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-digest))
@@ -20220,6 +20041,39 @@ evolution\" (DE) algorithm.  Users can obtain posterior mode (MAP) estimates via
 DEMAP, posterior samples via DEMCMC, and variational approximations via DEVI.")
     (license license:expat)))
 
+(define-public r-debar
+  (package
+    (name "r-debar")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "debar" version))
+       (sha256
+        (base32 "0zx3rp0pnxbn57l6yafwzd66kvv6mfpr0alsp8mxhl2jl7c5f721"))))
+    (properties `((upstream-name . "debar")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-seqinr r-aphid r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=debar")
+    (synopsis "Post-Clustering Denoiser for COI-5P Barcode Data")
+    (description
+     "The debar sequence processing pipeline is designed for denoising high throughput
+sequencing data for the animal DNA barcode marker cytochrome c oxidase I (COI).
+The package is designed to detect and correct insertion and deletion errors
+within sequencer outputs.  This is accomplished through comparison of input
+sequences against a profile hidden Markov model (PHMM) using the Viterbi
+algorithm (for algorithm details see Durbin et al.  1998, ISBN: 9780521629713).
+Inserted base pairs are removed and deleted base pairs are accounted for through
+the introduction of a placeholder character.  Since the PHMM is a probabilistic
+representation of the COI barcode, corrections are not always perfect.  For this
+reason debar censors base pairs adjacent to reported indel sites, turning them
+into placeholder characters (default is 7 base pairs in either direction, this
+feature can be disabled).  Testing has shown that this censorship results in the
+correct sequence length being restored, and erroneous base pairs being masked
+the vast majority of the time (>95%).")
+    (license license:gpl3)))
+
 (define-public r-dear
   (package
     (name "r-dear")
@@ -20777,13 +20631,13 @@ transformations.  Contains @code{cDNA} and shipping credit flow data.")
 (define-public r-dde
   (package
     (name "r-dde")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dde" version))
        (sha256
-        (base32 "1qwa9vmsjq9d4z08ja687058bpx7zg16k0pwk2knkjya3clz774k"))))
+        (base32 "1288zbhmh383b8z01yzblgs0lvq18vz4hzw63hjsaiaynqaj4hiw"))))
     (properties `((upstream-name . "dde")))
     (build-system r-build-system)
     (propagated-inputs (list r-ring))

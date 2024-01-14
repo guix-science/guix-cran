@@ -298,13 +298,13 @@ Hediger & Michel & Naef (2020) <@code{arXiv:1903.06287>}.")
 (define-public r-hypetools
   (package
     (name "r-hypetools")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HYPEtools" version))
        (sha256
-        (base32 "0iyai28gqx6d92h59g314rsr5l6y9l7zywyxdlqpzf0plnh0w6hi"))))
+        (base32 "079v0ixs3i4w6d3vjgjff0csrxsih1ah62ax5x9q4g38gc0y9l9j"))))
     (properties `((upstream-name . "HYPEtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -323,6 +323,7 @@ Hediger & Michel & Naef (2020) <@code{arXiv:1903.06287>}.")
                              r-ggplot2
                              r-dplyr
                              r-data-table
+                             r-colorspace
                              r-clipr))
     (native-inputs (list r-knitr))
     (home-page "https://hypeweb.smhi.se/")
@@ -2533,13 +2534,13 @@ or individual conditional expectation plots.  DALEX explainers, meta learners
 (define-public r-hsstan
   (package
     (name "r-hsstan")
-    (version "0.8.1")
+    (version "0.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hsstan" version))
        (sha256
-        (base32 "0k7sqwx73zid68ji9l2hfihqdlk3rdpid81pp8g3fmi8dpvrzkms"))))
+        (base32 "0kfdx17vacy43bjg6si4d1nxbmsrzj61bgs6d5pbwny02fq9i9gc"))))
     (properties `((upstream-name . "hsstan")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -8265,35 +8266,6 @@ illustration the package contains several datasets for the model species
 Arabidopsis thaliana.")
     (license license:gpl3)))
 
-(define-public r-hergm
-  (package
-    (name "r-hergm")
-    (version "4.1-10")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "hergm" version))
-       (sha256
-        (base32 "04vr5mmsr39rpjnans8xwp1z304rd3hi5za7qhjv7dn5s8c8pw9h"))))
-    (properties `((upstream-name . "hergm")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr
-                             r-sna
-                             r-rcpp
-                             r-network
-                             r-mlergm
-                             r-matrix
-                             r-latentnet
-                             r-intergraph
-                             r-igraph
-                             r-ergm))
-    (home-page "https://cran.r-project.org/package=hergm")
-    (synopsis "Hierarchical Exponential-Family Random Graph Models")
-    (description
-     "Hierarchical exponential-family random graph models with local dependence.  See
-Schweinberger and Luna (2018) <doi:10.18637/jss.v085.i01>.")
-    (license license:gpl3)))
-
 (define-public r-herer
   (package
     (name "r-herer")
@@ -11023,13 +10995,13 @@ forms for the covariates.  Rava, D. and Xu, R. (2021) <@code{arXiv:2112.09535>}.
 (define-public r-hawkesbow
   (package
     (name "r-hawkesbow")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hawkesbow" version))
        (sha256
-        (base32 "0abbarpwlbasgmp0cr8144x2aqkmqf2i99pqd9g9sp9bxbg66056"))))
+        (base32 "1jbwvzw4j8l7ywrbm4bhxvwp1b3j4ahi6fchmmvfjnx0da1d8163"))))
     (properties `((upstream-name . "hawkesbow")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-nloptr r-bh))

@@ -13084,13 +13084,13 @@ Monkkonen, M. (2011) <doi:10.1007/s10980-011-9620-4>.")
 (define-public r-lcmsqa
   (package
     (name "r-lcmsqa")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LCMSQA" version))
        (sha256
-        (base32 "12h9gnw64q5y0b6a9n3184dj5rdmqv2qsskpazgj9pgb5v3kagsp"))))
+        (base32 "07lgqn8m2aqblm6539d5vrq9hklrjbpxi21zn93nf4akm57lvdxh"))))
     (properties `((upstream-name . "LCMSQA")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinywidgets
@@ -13101,8 +13101,7 @@ Monkkonen, M. (2011) <doi:10.1007/s10980-011-9620-4>.")
                              r-ggplot2
                              r-dt
                              r-data-table
-                             r-bsplus
-                             r-bslib))
+                             r-bsplus))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=LCMSQA")
     (synopsis

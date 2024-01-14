@@ -12,7 +12,6 @@
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages multiprecision)
-  #:use-module (gnu packages cmake)
   #:use-module (gnu packages python)
   #:use-module (gnu packages tls)
   #:use-module (gnu packages compression)
@@ -1045,6 +1044,38 @@ local neighborhood; pcout, a method for high-dimensional data;
 mvoutlier.@code{CoDa}, a method for compositional data.  References are provided
 in the corresponding help files.")
     (license license:gpl3+)))
+
+(define-public r-mvord
+  (package
+    (name "r-mvord")
+    (version "1.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mvord" version))
+       (sha256
+        (base32 "1fxm2yfribwxnpfwzf6rlg362pd6wphpnvmz709khinqc8b37ycq"))))
+    (properties `((upstream-name . "mvord")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ucminf
+                             r-pbivnorm
+                             r-optimx
+                             r-numderiv
+                             r-mvtnorm
+                             r-mnormt
+                             r-minqa
+                             r-matrix
+                             r-mass
+                             r-dfoptim
+                             r-bb))
+    (native-inputs (list r-knitr gfortran))
+    (home-page "https://cran.r-project.org/package=mvord")
+    (synopsis "Multivariate Ordinal Regression Models")
+    (description
+     "This package provides a flexible framework for fitting multivariate ordinal
+regression models with composite likelihood methods.  Methodological details are
+given in Hirk, Hornik, Vana (2020) <doi:10.18637/jss.v093.i04>.")
+    (license license:gpl3)))
 
 (define-public r-mvntestchar
   (package
@@ -6770,32 +6801,6 @@ Primary Cancer data, including functions to reshape data, to calculate patient
 states and analyze cancer incidence.")
     (license license:gpl3)))
 
-(define-public r-mssm
-  (package
-    (name "r-mssm")
-    (version "0.1.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mssm" version))
-       (sha256
-        (base32 "08bgfli7kvvsfpvlvlcdxp301gy6wggidlgllarxjwi06v9c8as5"))))
-    (properties `((upstream-name . "mssm")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-testthat r-rcpparmadillo r-rcpp r-nloptr))
-    (home-page "https://github.com/boennecd/mssm")
-    (synopsis "Multivariate State Space Models")
-    (description
-     "This package provides methods to perform parameter estimation and make analysis
-of multivariate observed outcomes through time which depends on a latent state
-variable.  All methods scale well in the dimension of the observed outcomes at
-each time point.  The package contains an implementation of a Laplace
-approximation, particle filters like suggested by Lin, Zhang, Cheng, & Chen
-(2005) <doi:10.1198/016214505000000349>, and the gradient and observed
-information matrix approximation suggested by Poyiadjis, Doucet, & Singh (2011)
-<doi:10.1093/biomet/asq062>.")
-    (license license:gpl2)))
-
 (define-public r-msrdt
   (package
     (name "r-msrdt")
@@ -7367,38 +7372,6 @@ bias-corrected AIC (AICc), generalized cross validation (GCV) and BIC.")
      "This is the library that can serialize or unserialize @code{MessagePack} format
 data.")
     (license license:bsd-2)))
-
-(define-public r-msgl
-  (package
-    (name "r-msgl")
-    (version "2.3.9")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "msgl" version))
-       (sha256
-        (base32 "0793d12cd1mcnr97byhfwpnvm329w78f56n7dcs4116hlizp8l9h"))))
-    (properties `((upstream-name . "msgl")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sgloptim
-                             r-rcppprogress
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-matrix
-                             r-bh))
-    (native-inputs (list r-knitr))
-    (home-page
-     "http://www.sciencedirect.com/science/article/pii/S0167947313002168")
-    (synopsis "Multinomial Sparse Group Lasso")
-    (description
-     "Multinomial logistic regression with sparse group lasso penalty.  Simultaneous
-feature selection and parameter estimation for classification.  Suitable for
-high dimensional multiclass classification with many classes.  The algorithm
-computes the sparse group lasso penalized maximum likelihood estimate.  Use of
-parallel computing for cross validation and subsampling is supported through the
-foreach and @code{doParallel} packages.  Development version is on
-@code{GitHub}, please report package issues on @code{GitHub}.")
-    (license license:gpl2+)))
 
 (define-public r-msgarchelm
   (package
@@ -10094,38 +10067,6 @@ Pasaniuc, WJ Gauderman, JS Witte (2020) <doi:10.1101/2020.07.06.190256>.")
     (description
      "Data sets and scripts for Modeling Psychophysical Data in R (Springer).")
     (license license:gpl2)))
-
-(define-public r-mpcr
-  (package
-    (name "r-mpcr")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MPCR" version))
-       (sha256
-        (base32 "1y93gxnr1ksr7wj7sm77jpkncxycvq90aafjksr6yjsa46qaxvbc"))))
-    (properties `((upstream-name . "MPCR")))
-    (build-system r-build-system)
-    (inputs (list cmake))
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://github.com/stsds/MPCR")
-    (synopsis "Multi Precision Computing")
-    (description
-     "This package provides new data-structure support for multi- and mixed-precision
-for R users.  The package supports 16-bit, 32-bit, and 64-bit operations with
-the ability to perform mixed-precision operations through a newly defined
-tile-based data structure.  To the best of our knowledge, MPCR differs from the
-currently available packages in the following: MPCR introduces a new data
-structure that supports three different precisions (16-bit, 32-bit, and 64-bit),
-allowing for optimized memory allocation based on the desired precision.  This
-feature offers significant advantages in-memory optimization.  MPCR extends
-support to all basic linear algebra methods across different precisions.  MPCR
-maintains a consistent interface with normal R functions, allowing for seamless
-code integration and a user-friendly experience.  MPCR also introduces support
-for the tile-based matrix data structure with mixed precision, enabling the
-utilization of a range of tile-based linear algebra algorithms.")
-    (license license:gpl3+)))
 
 (define-public r-mpci
   (package
@@ -20190,30 +20131,6 @@ between random variables appeared in Genest, @code{NeÅ¡lehovÃ}¡, RÃ©millar
 Murphy (2019).")
     (license license:gpl3)))
 
-(define-public r-mixedclust
-  (package
-    (name "r-mixedclust")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mixedClust" version))
-       (sha256
-        (base32 "10hysjsld58cv0xif01xw08r0alr8xsnbp931x59lb36yi9g6f0m"))))
-    (properties `((upstream-name . "mixedClust")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcppprogress r-rcpparmadillo r-rcpp r-fda))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=mixedClust")
-    (synopsis "Co-Clustering of Mixed Type Data")
-    (description
-     "Implementation of the co-clustering method for mixed type data proposed in M.
-Selosse, J. Jacques, C. Biernacki (2018)
-<https://hal.archives-ouvertes.fr/hal-01893457>.  It consists in clustering
-simultaneously the rows (observations) and the columns (features) of a
-heterogeneous data set.")
-    (license license:gpl2+)))
-
 (define-public r-mixedcca
   (package
     (name "r-mixedcca")
@@ -20675,13 +20592,13 @@ DNA Heteroplasmy calculated from single-cell datasets
 (define-public r-misty
   (package
     (name "r-misty")
-    (version "0.5.4")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "misty" version))
        (sha256
-        (base32 "0gv3ax0wj70had5q4wfh8przmv6pfzm8amlrbbaby7m6h7x8i42m"))))
+        (base32 "0l1w253w0hhfjavcjyc8xhbwzxvfrgac7gpnbwz208k79dhza13r"))))
     (properties `((upstream-name . "misty")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
@@ -20693,23 +20610,25 @@ DNA Heteroplasmy calculated from single-cell datasets
                              r-lavaan
                              r-haven
                              r-ggplot2))
+    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=misty")
     (synopsis "Miscellaneous Functions 'T. Yanagida'")
     (description
-     "Miscellaneous functions for descriptive statistics (e.g., frequency table, cross
-tabulation, multilevel descriptive statistics, multilevel R-squared measures,
-within-group and between-group correlation matrix, various effect size
-measures), data management (e.g., grand-mean and group-mean centering, coding
-variables and reverse coding items, scale and group scores, reading and writing
-SPSS and Excel files), missing data (e.g., descriptive statistics for missing
-data, missing data pattern, Little's test of Missing Completely at Random, and
-auxiliary variable analysis), item analysis (e.g., coefficient alpha and omega,
-multilevel confirmatory factor analysis, between-group and longitudinal
-measurement equivalence evaluation, cross-level measurement equivalence
-evaluation, and multilevel composite reliability), and statistical analysis
-(e.g., confidence intervals, collinearity and residual diagnostics, dominance
-analysis, between- and within-subject analysis of variance, latent class
-analysis, t-test, z-test, sample size determination).")
+     "Miscellaneous functions for (1) data management (e.g., grand-mean and group-mean
+centering, coding variables and reverse coding items, scale and cluster scores,
+reading and writing Excel and SPSS files), (2) descriptive statistics (e.g.,
+frequency table, cross tabulation, effect size measures), (3) missing data
+(e.g., descriptive statistics for missing data, missing data pattern, Little's
+test of Missing Completely at Random, and auxiliary variable analysis), (4)
+multilevel data (e.g., multilevel descriptive statistics, within-group and
+between-group correlation matrix, multilevel confirmatory factor analysis,
+level-specific fit indices, cross-level measurement equivalence evaluation,
+multilevel composite reliability, and multilevel R-squared measures), (5) item
+analysis (e.g., confirmatory factor analysis, coefficient alpha and omega,
+between-group and longitudinal measurement equivalence evaluation), and (6)
+statistical analysis (e.g., confidence intervals, collinearity and residual
+diagnostics, dominance analysis, between- and within-subject analysis of
+variance, latent class analysis, t-test, z-test, sample size determination).")
     (license license:expat)))
 
 (define-public r-mistral
@@ -22097,13 +22016,13 @@ Sievert, Schloerke, Xie, Allen, @code{McPherson}, Dipert and Borges (2022)
 (define-public r-mirai
   (package
     (name "r-mirai")
-    (version "0.11.3")
+    (version "0.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mirai" version))
        (sha256
-        (base32 "017z5crnbfzc51gz541d0i7dz435ps41qlir43x2yyfad2ah6c8y"))))
+        (base32 "0mk9nh9bi8d0cgsrvl6c8w79w73crhp1w95664mnfqf22917kd5l"))))
     (properties `((upstream-name . "mirai")))
     (build-system r-build-system)
     (propagated-inputs (list r-nanonext))
@@ -22425,49 +22344,6 @@ analyzing and sharing meta-analyses.  Provides output to quickly fill in GRADE
 (Grading of Recommendations, Assessment, Development and Evaluations)
 Summary-of-Findings tables.  Importantly, it allows further processing of the
 results inside R, in case more specific analyses are needed.")
-    (license license:gpl2+)))
-
-(define-public r-minimaxdesign
-  (package
-    (name "r-minimaxdesign")
-    (version "0.1.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "minimaxdesign" version))
-       (sha256
-        (base32 "0mraklk79w2r4rx450pkajgh5s9pk7wa3gcbd98xkd03ns11s9v8"))))
-    (properties `((upstream-name . "minimaxdesign")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo
-                             r-rcpp
-                             r-randtoolbox
-                             r-pdist
-                             r-nloptr
-                             r-maxpro
-                             r-jpeg
-                             r-gtools
-                             r-gmp
-                             r-geometry
-                             r-frf2
-                             r-foreach
-                             r-dosnow
-                             r-doparallel
-                             r-doe-base
-                             r-dicedesign
-                             r-conf-design))
-    (home-page "https://cran.r-project.org/package=minimaxdesign")
-    (synopsis "Minimax and Minimax Projection Designs")
-    (description
-     "This package provides two main functions, minimax() and @code{miniMaxPro}(), for
-computing minimax and minimax projection designs using the minimax clustering
-algorithm in Mak and Joseph (2018) <DOI:10.1080/10618600.2017.1302881>.  Current
-design region options include the unit hypercube (\"hypercube\"), the unit simplex
-(\"simplex\"), the unit ball (\"ball\"), as well as user-defined constraints on the
-unit hypercube (\"custom\").  Minimax designs can also be computed on
-user-provided images using the function minimax.map().  Design quality can be
-assessed using the function @code{mMdist}(), which computes the minimax (fill)
-distance of a design.")
     (license license:gpl2+)))
 
 (define-public r-minimaxapprox
@@ -28330,6 +28206,41 @@ on a diffusion graph kernel and trophic levels.  Importantly, this package
 provides a layout method applicable for large trophic networks.")
     (license license:gpl3)))
 
+(define-public r-metanet
+  (package
+    (name "r-metanet")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MetaNet" version))
+       (sha256
+        (base32 "1w9pkm63kb6wirarcq0yvn0qr9ci0qsa60q2ck6g28bylk0wgzg3"))))
+    (properties `((upstream-name . "MetaNet")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vegan
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-reshape2
+                             r-pcutils
+                             r-magrittr
+                             r-igraph
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Asa12138/MetaNet")
+    (synopsis "Network Analysis for Omics Data")
+    (description
+     "Comprehensive network analysis package.  Calculate correlation network fastly,
+accelerate lots of analysis by parallel computing.  Support for multi-omics
+data, search sub-nets fluently.  Handle bigger data, more than 10,000 nodes in
+each omics.  Offer various layout method for multi-omics network and some
+interfaces to other software ('Gephi', Cytoscape', ggplot2'), easy to visualize.
+ Provide comprehensive topology indexes calculation, including ecological
+network stability.")
+    (license license:gpl3)))
+
 (define-public r-metan
   (package
     (name "r-metan")
@@ -29891,16 +29802,26 @@ al. (2021) <doi:10.3390/axioms10040267>, Taketomi et al. (2022)
 (define-public r-meta
   (package
     (name "r-meta")
-    (version "6.5-0")
+    (version "7.0-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "meta" version))
        (sha256
-        (base32 "1pvs4anzmpcyrzqm77pfqhwh7zkzafcqqvy8hsiv0lkn9hrn8za2"))))
+        (base32 "0zfyjyaabwgzlnws8ny2r7f1qr6h827kba4fddv44aqd9z4xksnq"))))
     (properties `((upstream-name . "meta")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xml2 r-metafor r-lme4 r-compquadform))
+    (propagated-inputs (list r-xml2
+                             r-stringr
+                             r-readr
+                             r-purrr
+                             r-metafor
+                             r-metadat
+                             r-magrittr
+                             r-lme4
+                             r-dplyr
+                             r-compquadform))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=meta")
     (synopsis "General Package for Meta-Analysis")
     (description
@@ -36710,6 +36631,36 @@ function.")
 experiments.")
     (license license:bsd-3)))
 
+(define-public r-matrans
+  (package
+    (name "r-matrans")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "matrans" version))
+       (sha256
+        (base32 "0j9a82wccdrgd3jqhwqv8bjf2c5w55hk9cl74ylzqrgnv45xr1cd"))))
+    (properties `((upstream-name . "matrans")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-quadprog r-mass r-formatr r-caret))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=matrans")
+    (synopsis "Model Averaging-Assisted Optimal Transfer Learning")
+    (description
+     "Transfer learning, as a prevailing technique in computer sciences, aims to
+improve the performance of a target model by leveraging auxiliary information
+from heterogeneous source data.  We provide novel tools for multi-source
+transfer learning under statistical models based on model averaging strategies,
+including linear regression models, partially linear models.  Unlike existing
+transfer learning approaches, this method integrates the auxiliary information
+through data-driven weight assignments to avoid negative transfer.  This is the
+first package for transfer learning based on the optimal model averaging
+frameworks, providing efficient implementations for practitioners in
+multi-source data modeling.  The details are described in Hu and Zhang (2023)
+<https://jmlr.org/papers/v24/23-0030.html>.")
+    (license license:gpl3+)))
+
 (define-public r-matpow
   (package
     (name "r-matpow")
@@ -41657,13 +41608,13 @@ proposed in Wang et al. (2020) <DOI:10.1002/gepi.22351>.")
 (define-public r-magclass
   (package
     (name "r-magclass")
-    (version "6.10.0")
+    (version "6.13.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "magclass" version))
        (sha256
-        (base32 "050nbnwv9m8ya2sbccygj8k05ry8758rxnj1r988chjycc3c21wb"))))
+        (base32 "15l9vjgzs4xl51id6ifflci2rypgwrfi61j2n59mask6lifzjibf"))))
     (properties `((upstream-name . "magclass")))
     (build-system r-build-system)
     (propagated-inputs (list r-data-table r-abind))

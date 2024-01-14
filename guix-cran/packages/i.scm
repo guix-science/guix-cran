@@ -345,13 +345,13 @@ Least Squares estimators (Amemiya, Takeshi, (1978) <doi: 10.2307/1911443>).")
 (define-public r-ivo-table
   (package
     (name "r-ivo-table")
-    (version "0.2")
+    (version "0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ivo.table" version))
        (sha256
-        (base32 "00a4n48cm98c9a7fw4lbq4iirniynpdvfn8f9y2blrgnvq48nfrg"))))
+        (base32 "1xng1im5g8dadql0fmk7b3z1hy1zfl8kaqzj38vf5s9q42nimbi5"))))
     (properties `((upstream-name . "ivo.table")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -4491,13 +4491,13 @@ considering their options, and securing admission into their school of choice.")
 (define-public r-ipec
   (package
     (name "r-ipec")
-    (version "1.0.6")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IPEC" version))
        (sha256
-        (base32 "0574ya6w2i1h4bqz6r699biayy6hf72l3b3grp2dh4bcv52qd61b"))))
+        (base32 "1zmh2ck80xh7gzh6d23lw155bny1afkzv1jr3b6i2451c439ybdr"))))
     (properties `((upstream-name . "IPEC")))
     (build-system r-build-system)
     (propagated-inputs (list r-numderiv r-mass))
@@ -15231,13 +15231,13 @@ in the \"Suggests\" section are used in those examples.")
 (define-public r-icenreg
   (package
     (name "r-icenreg")
-    (version "2.0.15")
+    (version "2.0.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "icenReg" version))
        (sha256
-        (base32 "1cjlvj4i5bir5769a22w8bb9477h04d8rpxk9ks72jp6zjjkq5qa"))))
+        (base32 "1wnhxvqh3nc1r6aywbmqq9npbmayb7fx7fghsfspd1ny7mdrhqn1"))))
     (properties `((upstream-name . "icenReg")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival

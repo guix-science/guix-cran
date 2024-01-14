@@ -9946,40 +9946,6 @@ to fetch silhouette images of organisms.  Includes functions for adding
 silhouettes to both base R plots and ggplot2 plots.")
     (license license:gpl3+)))
 
-(define-public r-rphylopars
-  (package
-    (name "r-rphylopars")
-    (version "0.3.9")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Rphylopars" version))
-       (sha256
-        (base32 "05dzkpr5d7n5c3nng5flrgh0hgg16s19mx1940ilh3n4jgvz0rxq"))))
-    (properties `((upstream-name . "Rphylopars")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo
-                             r-rcpp
-                             r-phytools
-                             r-phylolm
-                             r-numderiv
-                             r-matrix
-                             r-mass
-                             r-doby
-                             r-ape))
-    (home-page "https://github.com/ericgoolsby/Rphylopars/wiki")
-    (synopsis
-     "Phylogenetic Comparative Tools for Missing Data and Within-Species Variation")
-    (description
-     "This package provides tools for performing phylogenetic comparative methods for
-datasets with with multiple observations per species (intraspecific variation or
-measurement error) and/or missing data (Goolsby et al.  2017).  Performs
-ancestral state reconstruction and missing data imputation on the estimated
-evolutionary model, which can be specified as Brownian Motion,
-Ornstein-Uhlenbeck, Early-Burst, Pagel's lambda, kappa, or delta, or a star
-phylogeny.")
-    (license license:gpl2+)))
-
 (define-public r-rphosfate
   (package
     (name "r-rphosfate")
@@ -11387,26 +11353,6 @@ Montanari, A. (2009) <doi:10.1109/ISIT.2009.5205567> for a case under low-rank
 assumption.")
     (license license:expat)))
 
-(define-public r-roptregts
-  (package
-    (name "r-roptregts")
-    (version "1.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ROptRegTS" version))
-       (sha256
-        (base32 "1wy54kjrpfvj2k9ndmq27zzgx6aygh85f7c83g7gn8d5b2y91qy4"))))
-    (properties `((upstream-name . "ROptRegTS")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-roptestold r-randvar r-distrex r-distr))
-    (home-page "http://robast.r-forge.r-project.org/")
-    (synopsis "Optimally Robust Estimation for Regression-Type Models")
-    (description
-     "Optimally robust estimation for regression-type models using S4 classes and
-methods.")
-    (license license:lgpl3)))
-
 (define-public r-roptions
   (package
     (name "r-roptions")
@@ -11456,52 +11402,6 @@ Exchange Monte Carlo Optimisation.  In each case, the system pseudo-temperature
 is dynamically adjusted such that the observed acceptance ratio is kept near to
 the desired (fixed or changing) acceptance ratio.")
     (license license:gpl3+)))
-
-(define-public r-roptestold
-  (package
-    (name "r-roptestold")
-    (version "1.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ROptEstOld" version))
-       (sha256
-        (base32 "08njyxb8bnjb9nas3szqvqkfv83lc0187b7biis2nl2rgq6rljzy"))))
-    (properties `((upstream-name . "ROptEstOld")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-randvar r-evd r-distrex r-distr))
-    (home-page "http://robast.r-forge.r-project.org/")
-    (synopsis "Optimally Robust Estimation - Old Version")
-    (description
-     "Optimally robust estimation using S4 classes and methods.  Old version still
-needed for current versions of R@code{OptRegTS} and @code{RobRex}.")
-    (license license:lgpl3)))
-
-(define-public r-roptest
-  (package
-    (name "r-roptest")
-    (version "1.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ROptEst" version))
-       (sha256
-        (base32 "1p0aapqyb22z48b44yh88wzrn36bq9djdajgrc0w5z1p0kj3vq0b"))))
-    (properties `((upstream-name . "ROptEst")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-startupmsg
-                             r-robastbase
-                             r-randvar
-                             r-mass
-                             r-distrmod
-                             r-distrex
-                             r-distr))
-    (home-page "http://robast.r-forge.r-project.org/")
-    (synopsis "Optimally Robust Estimation")
-    (description
-     "Optimally robust estimation in general smoothly parameterized models using S4
-classes and methods.")
-    (license license:lgpl3)))
 
 (define-public r-roprov
   (package
@@ -14580,27 +14480,6 @@ interest.  The package provides convenient functions for summary,
 visualizations, fit diagnostics, and prior distribution calibration.")
     (license license:gpl3)))
 
-(define-public r-robrex
-  (package
-    (name "r-robrex")
-    (version "1.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RobRex" version))
-       (sha256
-        (base32 "1npgbdvdzb0p0w77fsngrwg968y621p3lx8qw69ns8qgxjkismqp"))))
-    (properties `((upstream-name . "RobRex")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-roptregts r-robastbase r-randvar r-distr))
-    (home-page "http://robast.r-forge.r-project.org/")
-    (synopsis "Optimally Robust Influence Curves for Regression and Scale")
-    (description
-     "This package provides functions for the determination of optimally robust
-influence curves in case of linear regression with unknown scale and standard
-normal distributed errors where the regressor is random.")
-    (license license:lgpl3)))
-
 (define-public r-robregcc
   (package
     (name "r-robregcc")
@@ -15001,64 +14880,6 @@ package provides convenient functions for summary, visualizations, and fit
 diagnostics.")
     (license license:gpl3)))
 
-(define-public r-robloxbioc
-  (package
-    (name "r-robloxbioc")
-    (version "1.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RobLoxBioC" version))
-       (sha256
-        (base32 "0n7lsxdsn8amr1la8jqg4xpzgd529dd7mxz0ly3bc1j9lxip2xsn"))))
-    (properties `((upstream-name . "RobLoxBioC")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-roblox
-                             r-rcolorbrewer
-                             r-lattice
-                             r-distrmod
-                             r-distr
-                             r-biocgenerics
-                             r-biobase
-                             r-beadarray
-                             r-annotationdbi
-                             r-affy))
-    (home-page "https://r-forge.r-project.org/projects/robast/")
-    (synopsis
-     "Infinitesimally Robust Estimators for Preprocessing -Omics Data")
-    (description
-     "This package provides functions for the determination of optimally robust
-influence curves and estimators for preprocessing omics data, in particular gene
-expression data.")
-    (license license:lgpl3)))
-
-(define-public r-roblox
-  (package
-    (name "r-roblox")
-    (version "1.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RobLox" version))
-       (sha256
-        (base32 "1lcylkskfidg576lqfi84l14rvrpfbzmr53hcgzzmfipxhli4dr8"))))
-    (properties `((upstream-name . "RobLox")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-robastbase
-                             r-rcolorbrewer
-                             r-randvar
-                             r-lattice
-                             r-distrmod
-                             r-distr
-                             r-biobase))
-    (home-page "http://robast.r-forge.r-project.org/")
-    (synopsis
-     "Optimally Robust Influence Curves and Estimators for Location and Scale")
-    (description
-     "This package provides functions for the determination of optimally robust
-influence curves and estimators in case of normal location and/or scale.")
-    (license license:lgpl3)))
-
 (define-public r-robkf
   (package
     (name "r-robkf")
@@ -15279,37 +15100,6 @@ median.  Furthermore, a repeated-median based filter with automatic outlier
 replacement and shift detection is provided; see Fried (2004)
 <doi:10.1080/10485250410001656444>.")
     (license license:gpl2+)))
-
-(define-public r-robextremes
-  (package
-    (name "r-robextremes")
-    (version "1.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RobExtremes" version))
-       (sha256
-        (base32 "150p94f0g75g54qcaq4x45lk4sxiyvv1zs4hxkicf46raybvsv89"))))
-    (properties `((upstream-name . "RobExtremes")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-startupmsg
-                             r-roptest
-                             r-robustbase
-                             r-robastrda
-                             r-robastbase
-                             r-randvar
-                             r-evd
-                             r-distrmod
-                             r-distrex
-                             r-distr
-                             r-actuar))
-    (home-page "http://robast.r-forge.r-project.org/")
-    (synopsis "Optimally Robust Estimation for Extreme Value Distributions")
-    (description
-     "Optimally robust estimation for extreme value distributions using S4 classes and
-methods (based on packages distr', @code{distrEx}', @code{distrMod}',
-@code{RobAStBase}', and R@code{OptEst}').")
-    (license license:lgpl3)))
 
 (define-public r-robeth
   (package
@@ -15553,30 +15343,6 @@ are partially sampled and/or with missing values.")
     (description
      "Includes sysdata.rda file for packages of the @code{RobASt} - family of
 packages; is currently used by package @code{RobExtremes} only.")
-    (license license:lgpl3)))
-
-(define-public r-robastbase
-  (package
-    (name "r-robastbase")
-    (version "1.2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RobAStBase" version))
-       (sha256
-        (base32 "02gapmpwkqy0n65nfaa9rvpx6693j9h93hfhn6s41q7833gvcx3z"))))
-    (properties `((upstream-name . "RobAStBase")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-startupmsg
-                             r-rrcov
-                             r-randvar
-                             r-distrmod
-                             r-distrex
-                             r-distr))
-    (home-page "http://robast.r-forge.r-project.org/")
-    (synopsis "Robust Asymptotic Statistics")
-    (description
-     "Base S4-classes and functions for robust asymptotic statistics.")
     (license license:lgpl3)))
 
 (define-public r-roauth
@@ -21011,13 +20777,13 @@ service (<https://www.itis.gov/solr_documentation.html>).")
 (define-public r-ritch
   (package
     (name "r-ritch")
-    (version "0.1.24")
+    (version "0.1.25")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RITCH" version))
        (sha256
-        (base32 "13vbbidk4vxfan8wga03q7g6dzj2rmgiic917sqdr11m43bck6jf"))))
+        (base32 "0jq7h66l3m9g90z1zc31bd4bf9w8b59jln6wgjivc0pr8jh4626p"))))
     (properties `((upstream-name . "RITCH")))
     (build-system r-build-system)
     (inputs (list zlib))
@@ -22814,48 +22580,6 @@ user and wire formats.  Data structures and functionality closely mirror the
 official implementations.")
     (license license:gpl3)))
 
-(define-public r-riaftbart
-  (package
-    (name "r-riaftbart")
-    (version "0.3.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "riAFTBART" version))
-       (sha256
-        (base32 "0nj7xqvb711fi764dk7v60sr5s5955cglyf54zkdc6ax365xlnj0"))))
-    (properties `((upstream-name . "riAFTBART")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-twang
-                             r-tidyr
-                             r-survival
-                             r-stringr
-                             r-rrf
-                             r-randomforest
-                             r-nnet
-                             r-msm
-                             r-mcmcpack
-                             r-mass
-                             r-magrittr
-                             r-ggplot2
-                             r-foreach
-                             r-dplyr
-                             r-doparallel
-                             r-dbarts
-                             r-cowplot
-                             r-bart))
-    (home-page "https://cran.r-project.org/package=riAFTBART")
-    (synopsis
-     "Flexible Approach for Causal Inference with Multiple Treatments and Clustered Survival Outcomes")
-    (description
-     "Random-intercept accelerated failure time (AFT) model utilizing Bayesian
-additive regression trees (BART) for drawing causal inferences about multiple
-treatments while accounting for the multilevel survival data structure.  It also
-includes an interpretable sensitivity analysis approach to evaluate how the
-drawn causal conclusions might be altered in response to the potential magnitude
-of departure from the no unmeasured confounding assumption.")
-    (license license:expat)))
-
 (define-public r-ria
   (package
     (name "r-ria")
@@ -24077,6 +23801,41 @@ algorithm details please refer to Qin et.  al. (2018)
      "Algorithms for estimating robustly the parameters of a Gaussian, Student, or
 Laplace Mixture Model.")
     (license license:gpl2+)))
+
+(define-public r-rgm
+  (package
+    (name "r-rgm")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rgm" version))
+       (sha256
+        (base32 "08skg5hkmk9l7wrd3snnkjhwq766rm871kf494344q91l3d9qx66"))))
+    (properties `((upstream-name . "rgm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-truncnorm
+                             r-reshape2
+                             r-rcpp
+                             r-proc
+                             r-mvtnorm
+                             r-mass
+                             r-huge
+                             r-ggplot2
+                             r-bdgraph))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=rgm")
+    (synopsis "Advanced Inference with Random Graphical Models")
+    (description
+     "This package implements state-of-the-art Random Graphical Models (RGMs) for
+multivariate data analysis across multiple environments, offering tools for
+exploring network interactions and structural relationships.  Capabilities
+include joint inference across environments, integration of external covariates,
+and a Bayesian framework for uncertainty quantification.  Applicable in various
+fields, including microbiome analysis.  Methods based on Vinciotti, V., Wit, E.,
+& Richter, F. (2023). \"Random Graphical Model of Microbiome Interactions in
+Related Environments.\" <@code{arXiv:2304.01956>}.")
+    (license license:expat)))
 
 (define-public r-rglwidget
   (package
@@ -27956,13 +27715,13 @@ forms for both the recurrent event process and the terminal event.")
 (define-public r-rerddapxtracto
   (package
     (name "r-rerddapxtracto")
-    (version "1.1.7")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rerddapXtracto" version))
        (sha256
-        (base32 "0zyzzia8sxb2gxbr0ag8ipryn94pvdgpwsl5kmafmil42rv8y054"))))
+        (base32 "0vd2zm3zmcssfr5p392kqmp70dwa7dxsmgp5pwm9cg0hs66i975m"))))
     (properties `((upstream-name . "rerddapXtracto")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp
@@ -27994,18 +27753,19 @@ simplify the creation of maps of the data.")
 (define-public r-rerddap
   (package
     (name "r-rerddap")
-    (version "1.0.4")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rerddap" version))
        (sha256
-        (base32 "16341yvfnd4p56wbww39fyprb6ngk1f9ydvmg1chcgppsk28f6nz"))))
+        (base32 "0s3xgk7z2j6g5f67j899f6d49igx1si562mbfqywba830a3ixn40"))))
     (properties `((upstream-name . "rerddap")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
                              r-tibble
                              r-ncdf4
+                             r-lubridate
                              r-jsonlite
                              r-hoardr
                              r-dplyr
@@ -28627,6 +28387,42 @@ survival analysis with competing risks from function FGR of package
 reports, including automated curation and time-stamping of outputs,
 parameterisation and provision of helper functions to manage dependencies.")
     (license license:expat)))
+
+(define-public r-reporterscore
+  (package
+    (name "r-reporterscore")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ReporterScore" version))
+       (sha256
+        (base32 "0p0ywbc8ynw7fibw0xgd65whlk7bvvn08x3rayjhdrifaif7zxf5"))))
+    (properties `((upstream-name . "ReporterScore")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-scales
+                             r-reshape2
+                             r-pcutils
+                             r-magrittr
+                             r-ggplot2
+                             r-ggnewscale
+                             r-foreach
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Asa12138/ReporterScore")
+    (synopsis
+     "Generalized Reporter Score-Based Enrichment Analysis for Omics Data")
+    (description
+     "Inspired by the classic RSA', we developed the improved Generalized Reporter
+Score-based Analysis (GRSA) method, implemented in the R package
+@code{ReporterScore}', along with comprehensive visualization methods and
+pathway databases.  GRSA is a threshold-free method that works well with all
+types of biomedical features, such as genes, chemical compounds, and microbial
+species.  Importantly, the GRSA supports multi-group and longitudinal
+experimental designs, because of the included multi-group-compatible statistical
+methods.")
+    (license license:gpl3)))
 
 (define-public r-reporter-nih
   (package
@@ -29402,42 +29198,6 @@ more details: <doi:10.18637/jss.v107.i03>.  Note that with version 2.0.0
 sweeping changes were introduced which greatly improve functionality and
 usability but break backwards compatibility.")
     (license license:gpl3)))
-
-(define-public r-rena
-  (package
-    (name "r-rena")
-    (version "0.2.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rENA" version))
-       (sha256
-        (base32 "0yfmdfw45azyzcy7rf5xsannrlranbxpgfsb52rl6vvd681p4r4x"))))
-    (properties `((upstream-name . "rENA")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-scales
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-r6
-                             r-plotly
-                             r-magrittr
-                             r-foreach
-                             r-doparallel
-                             r-data-table
-                             r-concatenate))
-    (home-page "https://gitlab.com/epistemic-analytics/qe-packages/rENA")
-    (synopsis "Epistemic Network Analysis")
-    (description
-     "ENA (Shaffer, D. W. (2017) Quantitative Ethnography.  ISBN: 0578191687) is a
-method used to identify meaningful and quantifiable patterns in discourse or
-reasoning.  ENA moves beyond the traditional frequency-based assessments by
-examining the structure of the co-occurrence, or connections in coded data.
-Moreover, compared to other methodological approaches, ENA has the novelty of
-(1) modeling whole networks of connections and (2) affording both quantitative
-and qualitative comparisons between different network models.  Shaffer, D.W.,
-Collier, W., & Ruis, A.R. (2016).")
-    (license (list license:gpl3
-                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-remstimate
   (package
@@ -30975,13 +30735,13 @@ regularization, referencing Zucchini et al. (2017, ISBN:9781315372488).")
 (define-public r-regmedint
   (package
     (name "r-regmedint")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "regmedint" version))
        (sha256
-        (base32 "1rysxdci13r08y79fyd5h5idl2ip4i7b8v4x6n2rlc0vwi5wc61a"))))
+        (base32 "1f8p19a1m6qyypjfv8yr1gcqx6djjjkly3xxkp5fy5pldm7ik2sk"))))
     (properties `((upstream-name . "regmedint")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -30999,9 +30759,10 @@ regularization, referencing Zucchini et al. (2017, ISBN:9781315372488).")
 proposed by Valeri and @code{VanderWeele} (2013) <doi:10.1037/a0031034> and
 Valeri and @code{VanderWeele} (2015) <doi:10.1097/EDE.0000000000000253>).  It
 supports including effect measure modification by covariates(treatment-covariate
-and mediator-covariate product terms in mediator and outcome regression models).
- It also accommodates the original SAS macro and PROC CAUSALMED procedure in SAS
-when there is no effect measure modification.  Linear and logistic models are
+and mediator-covariate product terms in mediator and outcome regression models)
+as proposed by Li et al (2023) <doi:10.1097/EDE.0000000000001643>.  It also
+accommodates the original SAS macro and PROC CAUSALMED procedure in SAS when
+there is no effect measure modification.  Linear and logistic models are
 supported for the mediator model.  Linear, logistic, loglinear, Poisson,
 negative binomial, Cox, and accelerated failure time (exponential and Weibull)
 models are supported for the outcome model.")
@@ -32169,13 +31930,13 @@ package seamlessly.")
 (define-public r-redist
   (package
     (name "r-redist")
-    (version "4.1.1")
+    (version "4.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "redist" version))
        (sha256
-        (base32 "0gvcsbb169apkyg0h35y67js48q995n5dzr4krhv0ihp2qba91ky"))))
+        (base32 "1ibwldd24zj2fhpn18q4381mp82p7wbv61xmqm2lzybil92y800w"))))
     (properties `((upstream-name . "redist")))
     (build-system r-build-system)
     (inputs (list python))
@@ -32207,7 +31968,7 @@ algorithms.  The package allows for the implementation of various constraints in
 the redistricting process such as geographic compactness and population parity
 requirements.  Tools for analysis such as computation of various summary
 statistics and plotting functionality are also included.  The package implements
-the SMC algorithm of @code{McCartan} and Imai (2020) <@code{arXiv:2008.06131>},
+the SMC algorithm of @code{McCartan} and Imai (2023) <doi:10.1214/23-AOAS1763>,
 the enumeration algorithm of Fifield, Imai, Kawahara, and Kenny (2020)
 <doi:10.1080/2330443X.2020.1791773>, the Flip MCMC algorithm of Fifield,
 Higgins, Imai and Tarr (2020) <doi:10.1080/10618600.2020.1739532>, the
@@ -35788,13 +35549,13 @@ more details on the package, see the paper by You and Shung (2022)
 (define-public r-rdieharder
   (package
     (name "r-rdieharder")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RDieHarder" version))
        (sha256
-        (base32 "1djgy6al9f92i295bzc65lny7lz8gpk5js6hmfbflwfwcl9wg05b"))))
+        (base32 "1q0b98h1ksvk3v1m3kp1x7jnvhpzxrsiyriq2nfkybh72x1p23gl"))))
     (properties `((upstream-name . "RDieHarder")))
     (build-system r-build-system)
     (inputs (list gsl))
@@ -36911,28 +36672,6 @@ information about this platform
 Implements integrated system of random-coefficient hierarchical regression model
 to normalize data from @code{NanoString} @code{nCounter} platform so that noise
 from various sources can be removed.")
-    (license license:gpl2+)))
-
-(define-public r-rcrm
-  (package
-    (name "r-rcrm")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rCRM" version))
-       (sha256
-        (base32 "03p2v1wb7hsvfhdcgawaz8vd2i8kh30dj8mjydlaywxyks6i5caz"))))
-    (properties `((upstream-name . "rCRM")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcppeigen r-rcpp))
-    (home-page "https://cran.r-project.org/package=rCRM")
-    (synopsis "Regularized Continual Reassessment Method")
-    (description
-     "Fit a 2-parameter continual reassessment method (CRM) model (O'Quigley and Shen
-(1996), <doi: 10.2307/2532905>) regularized with L2 norm (Friedman et al.
-(2010), <doi: 10.18637/jss.v033.i01>) adjusted by the distance with the target
-dose limiting toxicity (DLT) rate.")
     (license license:gpl2+)))
 
 (define-public r-rcriticor
@@ -39543,33 +39282,6 @@ interface of the Climacell v4 API <https://www.climacell.co/weather-api/>.  This
 package requires a valid API key.  See vignettes for instructions on use.")
     (license license:expat)))
 
-(define-public r-rclickhouse
-  (package
-    (name "r-rclickhouse")
-    (version "0.6.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RClickhouse" version))
-       (sha256
-        (base32 "1n3h9q0xx64pq4k584hqpk802kjs6k68dhyd7bgy9w9m1ifcx8fg"))))
-    (properties `((upstream-name . "RClickhouse")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp
-                             r-dplyr
-                             r-dbplyr
-                             r-dbi
-                             r-cli
-                             r-bit64))
-    (home-page "https://github.com/IMSMWU/RClickhouse")
-    (synopsis "'Yandex Clickhouse' Interface for R with Basic 'dplyr' Support")
-    (description
-     "Yandex Clickhouse (<https://clickhouse.com/>) is a high-performance relational
-column-store database to enable big data exploration and analytics scaling to
-petabytes of data.  Methods are provided that enable working with Yandex
-Clickhouse databases via DBI methods and using dplyr'/'dbplyr idioms.")
-    (license license:gpl2)))
-
 (define-public r-rclabels
   (package
     (name "r-rclabels")
@@ -41614,34 +41326,6 @@ with Gaussian Processes.")
 client-implementation of the client/server protocol for @code{BaseX} and
 provides functionalities to create, manipulate and query on XML-data.")
     (license license:expat)))
-
-(define-public r-rbart
-  (package
-    (name "r-rbart")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rbart" version))
-       (sha256
-        (base32 "1byfm1ycw9nfhdblqklyn8pxn6b9q5fa3inbgfpynqpsid97ig35"))))
-    (properties `((upstream-name . "rbart")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://cran.r-project.org/package=rbart")
-    (synopsis "Bayesian Trees for Conditional Mean and Variance")
-    (description
-     "This package provides a model of the form Y = f(x) + s(x) Z is fit where
-functions f and s are modeled with ensembles of trees and Z is standard normal.
-This model is developed in the paper Heteroscedastic BART Via Multiplicative
-Regression Trees (Pratola, Chipman, George, and @code{McCulloch}, 2019,
-<@code{arXiv:1709.07542v2>}).  BART refers to Bayesian Additive Regression
-Trees.  See the R-package BART'.  The predictor vector x may be high
-dimensional.  A Markov Chain Monte Carlo (MCMC) algorithm provides Bayesian
-posterior uncertainty for both f and s.  The MCMC uses the recent innovations in
-Efficient Metropolis--Hastings proposal mechanisms for Bayesian regression tree
-models (Pratola, 2015, Bayesian Analysis, <doi:10.1214/16-BA999>).")
-    (license license:gpl2+)))
 
 (define-public r-rbahadur
   (package
@@ -44335,25 +44019,6 @@ information from various R-hub web services <https://blog.r-hub.io/>.  The
 dependency graph can then be used to reconstruct the R computational environment
 with Rocker <https://rocker-project.org>.")
     (license license:gpl3+)))
-
-(define-public r-randvar
-  (package
-    (name "r-randvar")
-    (version "1.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RandVar" version))
-       (sha256
-        (base32 "17c6bx644n604zpggmwx1z3krgd9v7c88il45cf5yhp7zf7cc718"))))
-    (properties `((upstream-name . "RandVar")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-startupmsg r-distrex r-distr))
-    (home-page "http://robast.r-forge.r-project.org/")
-    (synopsis "Implementation of Random Variables")
-    (description
-     "This package implements random variables by means of S4 classes and methods.")
-    (license license:lgpl3)))
 
 (define-public r-randtests
   (package

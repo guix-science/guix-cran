@@ -3827,13 +3827,13 @@ turbines.")
 (define-public r-breathteststan
   (package
     (name "r-breathteststan")
-    (version "0.8.4")
+    (version "0.8.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "breathteststan" version))
        (sha256
-        (base32 "1j6dqjdd1079pyvgclayl1la0qa88irr9wx31viisjjri93n7wm9"))))
+        (base32 "1b495qb0r8wdh4rnv3namnhrd1d6mba55ayj7h9s0076h8aw04hk"))))
     (properties `((upstream-name . "breathteststan")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -3841,11 +3841,11 @@ turbines.")
                              r-stanheaders
                              r-rstantools
                              r-rstan
-                             r-rcppparallel
                              r-rcppeigen
                              r-rcpp
                              r-purrr
                              r-dplyr
+                             r-breathtestcore
                              r-bh))
     (home-page "https://github.com/dmenne/breathteststan")
     (synopsis "Stan-Based Fit to Gastric Emptying Curves")
@@ -16688,13 +16688,13 @@ and arrays, fit multiple functions.")
 (define-public r-bernadette
   (package
     (name "r-bernadette")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Bernadette" version))
        (sha256
-        (base32 "11p0mn6m1h0h203wxsdgpnzjxh5r3ak5xfvy4s4axm2g449wnmia"))))
+        (base32 "08q0jarv737p4mis7kql1ny9hrm86w49kdn47r94id4895l052ck"))))
     (properties `((upstream-name . "Bernadette")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -17734,34 +17734,6 @@ models, and produce posterior inferences about HTE. See Wang et al. (2018)
 and Ozkan (2020) <doi:10.1016/j.compag.2020.105507>.")
     (license license:expat)))
 
-(define-public r-beam
-  (package
-    (name "r-beam")
-    (version "2.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "beam" version))
-       (sha256
-        (base32 "17c7zww1160jxm0q6vb5h59zipjjfyc3pls30y5v4vyk7kr9rdvx"))))
-    (properties `((upstream-name . "beam")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo
-                             r-rcpp
-                             r-matrix
-                             r-knitr
-                             r-igraph
-                             r-fdrtool
-                             r-bh
-                             r-assertthat))
-    (home-page "https://github.com/gleday/beam")
-    (synopsis "Fast Bayesian Inference in Large Gaussian Graphical Models")
-    (description
-     "Fast Bayesian inference of marginal and conditional independence structures from
-high-dimensional data.  Leday and Richardson (2019), Biometrics,
-<doi:10.1111/biom.13064>.")
-    (license license:gpl2+)))
-
 (define-public r-beakr
   (package
     (name "r-beakr")
@@ -18682,30 +18654,6 @@ writing on @code{GitHub} at <https://github.com/@code{EliGurarie/smoove>}.  An
 example of a univariate analysis is provided in the @code{UnivariateBCPA}
 vignette.")
     (license (license:fsdg-compatible "Unlimited"))))
-
-(define-public r-bcp
-  (package
-    (name "r-bcp")
-    (version "4.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bcp" version))
-       (sha256
-        (base32 "0vhs89lb2wpanqsljclpvwbjmgdsc3jicws8bzqiqh8mbs3nzpxy"))))
-    (properties `((upstream-name . "bcp")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp))
-    (home-page "https://cran.r-project.org/package=bcp")
-    (synopsis "Bayesian Analysis of Change Point Problems")
-    (description
-     "This package provides an implementation of the Barry and Hartigan (1993) product
-partition model for the normal errors change point problem using Markov Chain
-Monte Carlo.  It also extends the methodology to regression models on a
-connected graph (Wang and Emerson, 2015); this allows estimation of change point
-models with multivariate responses.  Parallel MCMC, previously available in bcp
-v.3.0.0, is currently not implemented.")
-    (license license:gpl2+)))
 
 (define-public r-bcmixed
   (package
@@ -20258,30 +20206,6 @@ is in Zhao et al. (2021) <doi:10.18637/jss.v100.i11>, and the model with random
 effects is described in Zhao et al. (2023) <doi:10.1093/jrsssc/qlad102>.")
     (license license:expat)))
 
-(define-public r-bayesspec
-  (package
-    (name "r-bayesspec")
-    (version "0.5.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "BayesSpec" version))
-       (sha256
-        (base32 "17gchdijcjhbr2y4glbq9szjh4qmgivzh6p4fllh589da18nzjcr"))))
-    (properties `((upstream-name . "BayesSpec")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-trust r-pscl r-mvtnorm))
-    (home-page "https://cran.r-project.org/package=BayesSpec")
-    (synopsis "Bayesian Spectral Analysis Techniques")
-    (description
-     "An implementation of methods for spectral analysis using the Bayesian framework.
- It includes functions for modelling spectrum as well as appropriate plotting
-and output estimates.  There is segmentation capability with RJ MCMC (Reversible
-Jump Markov Chain Monte Carlo).  The package takes these methods predominantly
-from the 2012 paper \"@code{AdaptSPEC}: Adaptive Spectral Estimation for
-Nonstationary Time Series\" <DOI:10.1080/01621459.2012.716340>.")
-    (license license:gpl3)))
-
 (define-public r-bayessenmc
   (package
     (name "r-bayessenmc")
@@ -21695,6 +21619,40 @@ of specific algorithms.")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-bayesianvars
+  (package
+    (name "r-bayesianvars")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bayesianVARs" version))
+       (sha256
+        (base32 "0cc9wxfdlywpf9gxzag5wwd81l428sla0br6626kpj9l1sr70psq"))))
+    (properties `((upstream-name . "bayesianVARs")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stochvol
+                             r-scales
+                             r-rcppprogress
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-mvtnorm
+                             r-mass
+                             r-gigrvg
+                             r-factorstochvol
+                             r-colorspace))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/luisgruber/bayesianVARs")
+    (synopsis "MCMC Estimation of Bayesian Vectorautoregressions")
+    (description
+     "Efficient Markov Chain Monte Carlo (MCMC) algorithms for the fully Bayesian
+estimation of vectorautoregressions (VARs) featuring stochastic volatility (SV).
+ Implements state-of-the-art shrinkage priors following Gruber & Kastner (2023)
+<@code{arXiv:2206.04902>}.  Efficient equation-per-equation estimation following
+Kastner & Huber (2020) <doi:10.1002/for.2680> and Carrerio et al. (2021)
+<doi:10.1016/j.jeconom.2021.11.010>.")
+    (license license:gpl3+)))
+
 (define-public r-bayesiantreg
   (package
     (name "r-bayesiantreg")
@@ -22681,13 +22639,13 @@ Sabo RT (2014) <doi:10.1080/10543406.2014.888441>.")
 (define-public r-bayesdfa
   (package
     (name "r-bayesdfa")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesdfa" version))
        (sha256
-        (base32 "1qdgq74ia0bs5jhv0fq4p3ihkjs74cp1hm6l4v4j59xy0jy1d0n8"))))
+        (base32 "0win6b3cwsr99va66jijpcvid6gyvk0x0gs5yafdsdkcghimfwgl"))))
     (properties `((upstream-name . "bayesdfa")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
@@ -24144,26 +24102,6 @@ controls most of the routines.")
 row-by-row, column-by-column or cell-by-cell.  Use common formatting/styling to
 output rich tables as HTML', HTML widgets or to Excel'.")
     (license license:gpl3)))
-
-(define-public r-basicspace
-  (package
-    (name "r-basicspace")
-    (version "0.24")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "basicspace" version))
-       (sha256
-        (base32 "1cy226njbax7dcgql89fns4l4w9fq328x3h0vb93l5jk883jgi8h"))))
-    (properties `((upstream-name . "basicspace")))
-    (build-system r-build-system)
-    (native-inputs (list gfortran))
-    (home-page "https://cran.r-project.org/package=basicspace")
-    (synopsis "Recovering a Basic Space from Issue Scales")
-    (description
-     "Conducts Aldrich-@code{McKelvey} and Blackbox Scaling (Poole et al 2016)
-<doi:10.18637/jss.v069.i07> to recover latent dimensions of judgment.")
-    (license license:gpl2)))
 
 (define-public r-basicmcmcplots
   (package
@@ -25643,13 +25581,13 @@ studies.")
 (define-public r-bakr
   (package
     (name "r-bakr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bakR" version))
        (sha256
-        (base32 "19c791aa7i13iha33aa0wg1q180q4isb6bnp2mhb0y6206pmvd0g"))))
+        (base32 "070gv5s78381cq8pagggicxx065hab99v2vgvii996b5svs6rjic"))))
     (properties `((upstream-name . "bakR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

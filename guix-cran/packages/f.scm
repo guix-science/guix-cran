@@ -976,42 +976,6 @@ ranking method in this package.")
 summarizing messages, warnings, errors, and returned values.")
     (license license:expat)))
 
-(define-public r-futureheatwaves
-  (package
-    (name "r-futureheatwaves")
-    (version "1.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "futureheatwaves" version))
-       (sha256
-        (base32 "122b2z86bzxfch67y6cpq8wj62mw0dgkzbmnpwi247kdx7w5mw1f"))))
-    (properties `((upstream-name . "futureheatwaves")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-stringr
-                             r-rcpp
-                             r-leaflet
-                             r-ggthemes
-                             r-ggplot2
-                             r-dplyr
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=futureheatwaves")
-    (synopsis
-     "Find, Characterize, and Explore Extreme Events in Climate Projections")
-    (description
-     "Inputs a directory of climate projection files and, for each, identifies and
-characterizes heat waves for specified study locations.  The definition used to
-identify heat waves can be customized.  Heat wave characterizations include
-several metrics of heat wave length, intensity, and timing in the year.  The
-heat waves that are identified can be explored using a function to apply
-user-created functions across all generated heat wave files.This work was
-supported in part by grants from the National Institute of Environmental Health
-Sciences (R00ES022631), the National Science Foundation (1331399), and the
-Colorado State University Vice President for Research.")
-    (license license:gpl2)))
-
 (define-public r-future-tests
   (package
     (name "r-future-tests")
@@ -4429,13 +4393,13 @@ approach).")
 (define-public r-freegroup
   (package
     (name "r-freegroup")
-    (version "1.1-6")
+    (version "1.1-8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "freegroup" version))
        (sha256
-        (base32 "17hrcgl3gy99j4mkg019556yk1nxbksmhwcwpkp8fa1lkpmnqr7x"))))
+        (base32 "1qrawy5zngiph1lg2bcczbq84vsfgpd74kbxy1nh7bp9ps1p5ga4"))))
     (properties `((upstream-name . "freegroup")))
     (build-system r-build-system)
     (propagated-inputs (list r-plyr r-magrittr r-magic r-freealg))
@@ -12860,16 +12824,16 @@ Systems\" (@code{NeurIPS}).")
 (define-public r-finbif
   (package
     (name "r-finbif")
-    (version "0.9.3")
+    (version "0.9.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "finbif" version))
        (sha256
-        (base32 "122jhz1xvf75y61nwjlvclcrkqb1ya8yfzb3qimi0ylz8c3xfw78"))))
+        (base32 "14ccsl394zg8nm1bsfpfm519b20cs90xi1mip51larb4jprfajz3"))))
     (properties `((upstream-name . "finbif")))
     (build-system r-build-system)
-    (propagated-inputs (list r-lutz r-lubridate r-httr r-digest))
+    (propagated-inputs (list r-lutz r-httr r-digest))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/luomus/finbif")
     (synopsis
@@ -14486,13 +14450,13 @@ scale changes and that common pitfalls are avoided.")
 (define-public r-fflr
   (package
     (name "r-fflr")
-    (version "2.2.0")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fflr" version))
        (sha256
-        (base32 "0bwifa7xmc9hnkjc3ddxq1hz4w46v7ii4c7vagzkdslp2k0877g9"))))
+        (base32 "0rynn1gia0cpab573yjmijafb6ywv5xjlg6wd2qjwnrr947qkf5r"))))
     (properties `((upstream-name . "fflr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-jsonlite r-httr))
@@ -19709,31 +19673,6 @@ and Andros (2022+) <doi:10.48550/@code{arXiv.2207.13824>}.")
 mix left open and right open intervals with point values, intervals that are
 closed on both ends and intervals that are open on both ends.")
     (license license:cc0)))
-
-(define-public r-fanc
-  (package
-    (name "r-fanc")
-    (version "2.3.9")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fanc" version))
-       (sha256
-        (base32 "02w10lm4nggab5q16ld9xgpa4x4bygfiigs8m12yiah5ah1n5vk8"))))
-    (properties `((upstream-name . "fanc")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-matrix r-ellipse))
-    (home-page "https://doi.org/10.1007/s11222-014-9458-0")
-    (synopsis "Penalized Likelihood Factor Analysis via Nonconvex Penalty")
-    (description
-     "Computes the penalized maximum likelihood estimates of factor loadings and
-unique variances for various tuning parameters.  The pathwise coordinate descent
-along with EM algorithm is used.  This package also includes a new graphical
-tool which outputs path diagram, goodness-of-fit indices and model selection
-criteria for each regularization parameter.  The user can change the
-regularization parameter by manipulating scrollbars, which is helpful to find a
-suitable value of regularization parameter.")
-    (license license:gpl2+)))
 
 (define-public r-famt
   (package

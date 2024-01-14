@@ -722,28 +722,6 @@ exponential, gamma, Weibull, Pareto, Fisher, Laplace and beta distributions; see
 Lequesne and Regnault (2020) <doi:10.18637/jss.v096.c01>.")
     (license license:gpl2+)))
 
-(define-public r-vsdecomp
-  (package
-    (name "r-vsdecomp")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "VSdecomp" version))
-       (sha256
-        (base32 "1vx68rhsxvi3kkrwr98hqhivhdmb9dm9rnmgspx74dskhkysjwbg"))))
-    (properties `((upstream-name . "VSdecomp")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rlang r-reshape r-lfe r-hmisc r-ggplot2))
-    (home-page "https://cran.r-project.org/package=VSdecomp")
-    (synopsis "Variance and Skewness Decomposition")
-    (description
-     "This package provides decomposition methods for the skewness or variance of a
-variable (e.g., wage).  By breaking distribution moments into independent
-components, users can analyze changes in distributions across time or between
-groups.")
-    (license license:gpl3)))
-
 (define-public r-vsd
   (package
     (name "r-vsd")
@@ -4955,13 +4933,13 @@ composition (De Caceres et al, 2013) <doi:10.1111/2041-210X.12116>.")
 (define-public r-vegawidget
   (package
     (name "r-vegawidget")
-    (version "0.4.3")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vegawidget" version))
        (sha256
-        (base32 "0p09nj45cxv35x84fmdk485v82wbjr724xi1f07p9zd9kn7vmpsf"))))
+        (base32 "1rar2a4rwzw3qvcazjvxqa0bmcrssqkxyqymdsyghl6kds8kx604"))))
     (properties `((upstream-name . "vegawidget")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -5727,6 +5705,32 @@ Economic and Financial Research - Theory, Methods and Practice, Festschrift in
 Honour of Prof. Siegfried Heiler.  Series: Advanced Studies in Theoretical and
 Applied Econometrics.  Springer 2014, p.  9-40.")
     (license license:gpl3+)))
+
+(define-public r-vbtree
+  (package
+    (name "r-vbtree")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VBTree" version))
+       (sha256
+        (base32 "052d4vykm87z3d9rmh8bfx7qkcyx6gkrnsyb79ag1z9lb0gpky17"))))
+    (properties `((upstream-name . "VBTree")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tensora))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/CubicZebra/VBTree")
+    (synopsis "Vector Binary Tree to Make Your Data Management More Efficient")
+    (description
+     "Vector binary tree provides a new data structure, to make your data visiting and
+management more efficient.  If the data has structured column names, it can read
+these names and factorize them through specific split pattern, then build the
+mappings within double list, vector binary tree, array and tensor mutually,
+through which the batched data processing is achievable easily.  The methods of
+array and tensor are also applicable.  Detailed methods are described in Chen
+Zhang et al. (2020) <doi:10.35566/isdsa2019c8>.")
+    (license license:gpl3)))
 
 (define-public r-vbsparsepca
   (package

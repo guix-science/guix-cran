@@ -4647,6 +4647,43 @@ sharp-crested, broad-crested, and embankments.  Initially, the package supports
 broad- and sharp-crested weirs.")
     (license license:gpl2)))
 
+(define-public r-weird
+  (package
+    (name "r-weird")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "weird" version))
+       (sha256
+        (base32 "0cjg3dci1ly63f3xi24802gzc31mmq4rpjhkmkb5xb4w26mqdlzz"))))
+    (properties `((upstream-name . "weird")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-stray
+                             r-rstudioapi
+                             r-robustbase
+                             r-rlang
+                             r-purrr
+                             r-ks
+                             r-interp
+                             r-ggplot2
+                             r-evd
+                             r-dplyr
+                             r-dbscan
+                             r-crayon
+                             r-cli
+                             r-broom
+                             r-aplpack))
+    (home-page "https://pkg.robjhyndman.com/weird-package/")
+    (synopsis
+     "Functions and Data Sets for \"That's Weird: Anomaly Detection Using R\" by Rob J Hyndman")
+    (description
+     "All functions and data sets required for the examples in the book Hyndman (2024)
+\"That's Weird: Anomaly Detection Using R\" <https://OTexts.com/weird/>.  All
+packages needed to run the examples are also loaded.")
+    (license license:gpl3)))
+
 (define-public r-weightsvm
   (package
     (name "r-weightsvm")
@@ -8133,13 +8170,13 @@ Vihola, Helske, Franks (2020, <doi:10.1111/sjos.12492>).")
 (define-public r-walkboutr
   (package
     (name "r-walkboutr")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "walkboutr" version))
        (sha256
-        (base32 "0w1fav70w9y44p9d32qfsyihzlprmcxwcrbjg0v9fdm31w498qgj"))))
+        (base32 "0mpblg13sqpnp7gw44m1wka8ciyrw5fwaz5vwkpn1mx9d0ax963f"))))
     (properties `((upstream-name . "walkboutr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

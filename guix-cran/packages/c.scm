@@ -15,8 +15,8 @@
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages maths)
   #:use-module (gnu packages bioinformatics)
+  #:use-module (gnu packages maths)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
@@ -2869,33 +2869,6 @@ described in Hanks et al. (2015) <DOI:10.1214/14-AOAS803> , this allows flexible
 modeling of movement in response to covariates (or covariate gradients) with
 model fitting possible within a Poisson GLM framework.")
     (license license:gpl2)))
-
-(define-public r-ctmcd
-  (package
-    (name "r-ctmcd")
-    (version "1.4.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ctmcd" version))
-       (sha256
-        (base32 "1xlhy816qcidkhpybkfmi2a59x5aajhh2407ninnnimlxk45kilh"))))
-    (properties `((upstream-name . "ctmcd")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-numderiv r-expm r-coda))
-    (native-inputs (list r-r-rsp r-knitr))
-    (home-page "https://cran.r-project.org/package=ctmcd")
-    (synopsis
-     "Estimating the Parameters of a Continuous-Time Markov Chain from Discrete-Time Data")
-    (description
-     "Estimation of Markov generator matrices from discrete-time observations.  The
-implemented approaches comprise diagonal and weighted adjustment of matrix
-logarithm based candidate solutions as in Israel (2001)
-<doi:10.1111/1467-9965.00114> as well as a quasi-optimization approach.
-Moreover, the expectation-maximization algorithm and the Gibbs sampling approach
-of Bladt and Sorensen (2005) <doi:10.1111/j.1467-9868.2005.00508.x> are
-included.")
-    (license license:gpl3)))
 
 (define-public r-ctm
   (package
@@ -9740,43 +9713,6 @@ imbalance measures.  See Baldi Antognini A, Frieri R, Zagoraiou M and Novelli M
 (2022) <doi:10.1007/s00362-022-01381-1> for details.")
     (license license:gpl3+)))
 
-(define-public r-coursekata
-  (package
-    (name "r-coursekata")
-    (version "0.15.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "coursekata" version))
-       (sha256
-        (base32 "06w8ql6frbbr41q0d1y3gpjwkhlfkhyv45mjlxpg5q0k8r0ydvwi"))))
-    (properties `((upstream-name . "coursekata")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-viridislite
-                             r-vctrs
-                             r-supernova
-                             r-rlang
-                             r-purrr
-                             r-palmerpenguins
-                             r-pak
-                             r-mosaic
-                             r-metrics
-                             r-lsr
-                             r-lock5withr
-                             r-glue
-                             r-ggplot2
-                             r-ggformula
-                             r-dslabs
-                             r-cli))
-    (home-page "https://github.com/coursekata/coursekata-r")
-    (synopsis "Packages and Functions for 'CourseKata' Courses")
-    (description
-     "Easily install and load all packages and functions used in @code{CourseKata}
-courses.  Aid teaching with helper functions and augment generic functions to
-provide cohesion between the network of packages.  Learn more about
-@code{CourseKata} at <https://coursekata.org>.")
-    (license license:agpl3+)))
-
 (define-public r-countts
   (package
     (name "r-countts")
@@ -13340,50 +13276,6 @@ resolved automatically based on the input data, handled by R's S3 methods.  Full
 descriptions of the algorithms and benchmarks are available in the package
 vignettes.")
     (license (license:fsdg-compatible "BSD 2-clause License + file LICENSE"))))
-
-(define-public r-cooltools
-  (package
-    (name "r-cooltools")
-    (version "2.1.27")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cooltools" version))
-       (sha256
-        (base32 "1f22qpwf9ynqf9n4hl0kz6cy8bsz47dcmvz0wawq2isw5wn3jcs5"))))
-    (properties `((upstream-name . "cooltools")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sp
-                             r-rcpp
-                             r-raster
-                             r-randtoolbox
-                             r-pracma
-                             r-png
-                             r-plotrix
-                             r-mass
-                             r-jpeg
-                             r-fnn
-                             r-data-table
-                             r-cubature
-                             r-celestial
-                             r-bit64))
-    (home-page "https://cran.r-project.org/package=cooltools")
-    (synopsis "Practical Tools for Scientific Computations and Visualizations")
-    (description
-     "Collection of routines for efficient scientific computations in physics and
-astrophysics.  These routines include utility functions, numerical computation
-tools, as well as visualisation tools.  They can be used, for example, for
-generating random numbers from spherical and custom distributions, information
-and entropy analysis, special Fourier transforms, two-point correlation
-estimation (e.g. as in Landy & Szalay (1993) <doi:10.1086/172900>), binning &
-gridding of point sets, 2D interpolation, Monte Carlo integration, vector
-arithmetic and coordinate transformations.  Also included is a non-exhaustive
-list of important constants and cosmological conversion functions.  The graphics
-routines can be used to produce and export publication-ready scientific plots
-and movies, e.g. as used in Obreschkow et al. (2020, MNRAS Vol 493, Issue 3,
-Pages 4551â4569).  These routines include special color scales, projection
-functions, and bitmap handling routines.")
-    (license license:gpl3)))
 
 (define-public r-cool
   (package
@@ -17815,35 +17707,6 @@ Monge-Elkan similarity for fuzzy comparison of token sets, and L-p distances for
 comparing numeric vectors.  Where possible, comparison functions are implemented
 in C/C++ to ensure good performance.")
     (license license:gpl2+)))
-
-(define-public r-compack
-  (package
-    (name "r-compack")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Compack" version))
-       (sha256
-        (base32 "1bl1drbkak7r7scfiij6sf8fjzq01y3p05mjlkknhi9k1l6jq0mi"))))
-    (properties `((upstream-name . "Compack")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo
-                             r-rcpp
-                             r-plyr
-                             r-orthogonalsplinebasis
-                             r-mass
-                             r-fda))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=Compack")
-    (synopsis "Regression with Compositional Covariates")
-    (description
-     "Regression methodologies with compositional covariates, including (1) sparse
-log-contrast regression with compositional covariates proposed by Lin et al.
-(2014) <doi:10.1093/biomet/asu031>, and (2) sparse log-contrast regression with
-functional compositional predictors proposed by Sun et al. (2020)
-<@code{arXiv:1808.02403>}.")
-    (license license:gpl3+)))
 
 (define-public r-comp2roc
   (package
@@ -34953,13 +34816,13 @@ and discriminant analysis (CCDA).  Environmental Modelling & Software.
 (define-public r-cccrm
   (package
     (name "r-cccrm")
-    (version "2.2.0")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cccrm" version))
        (sha256
-        (base32 "099rpcxvz2hj9x361w7dnjvbl39hckr3b60am29jyqfv57qcikck"))))
+        (base32 "1mvnidwwa5nq00ca6l64m0h7dkvm32r9ymrqpjqnyrimr0mfxgl6"))))
     (properties `((upstream-name . "cccrm")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect r-nlme r-dplyr r-deriv))

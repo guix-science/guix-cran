@@ -2973,28 +2973,6 @@ functions are currently implemented.  Such models are described in Manuguerra et
 al (2020) <doi:10.18637/jss.v096.i08>.")
     (license license:gpl2+)))
 
-(define-public r-ordinalclust
-  (package
-    (name "r-ordinalclust")
-    (version "1.3.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ordinalClust" version))
-       (sha256
-        (base32 "0hmqvhrmijgzanh08z5v82a07zl7xm69wl8zzj99fksahyrgxjdc"))))
-    (properties `((upstream-name . "ordinalClust")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcppprogress r-rcpparmadillo r-rcpp r-bh))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ordinalClust")
-    (synopsis "Ordinal Data Clustering, Co-Clustering and Classification")
-    (description
-     "Ordinal data classification, clustering and co-clustering using model-based
-approach with the BOS distribution for ordinal data (Christophe Biernacki and
-Julien Jacques (2016) <doi:10.1007/s11222-015-9585-2>).")
-    (license license:gpl2+)))
-
 (define-public r-ordinalbayes
   (package
     (name "r-ordinalbayes")
@@ -4066,37 +4044,6 @@ and European Options under Geometric Brownian Motion.")
 functional languages.")
     (license (license:fsdg-compatible "BSL"))))
 
-(define-public r-optinterv
-  (package
-    (name "r-optinterv")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "optinterv" version))
-       (sha256
-        (base32 "1yvjb9fyqj3pfglfdwdq4kpw9i5g5i3klgpqb05xdnacbnpdxvmp"))))
-    (properties `((upstream-name . "optinterv")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-weights
-                             r-rootsolve
-                             r-pbapply
-                             r-lattice
-                             r-hmisc
-                             r-distances
-                             r-boot))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=optinterv")
-    (synopsis "Optimal Intervention")
-    (description
-     "This package provides both parametric and non-parametric estimates of the
-correlates of some desired outcome (e.g. test scores, income) using a new method
-proposed by Danieli, Devi and Fryer (2019).  This method relaxes the assumption
-that one can alter individual characteristics in any way the data suggest is
-optimal, and so can be used anytime one wants to use observational data to
-better optimize social experiments designed to increase some desired outcome.")
-    (license license:gpl3)))
-
 (define-public r-optimus
   (package
     (name "r-optimus")
@@ -4505,13 +4452,13 @@ Krieger, Michael Sklar and David Azriel (2020) <@code{arXiv:1905.03337>}.")
 (define-public r-optimall
   (package
     (name "r-optimall")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "optimall" version))
        (sha256
-        (base32 "191y1q55wvg6f68siz6axpg056hww8bs4i4gxyj6fn1jkg0x2x7c"))))
+        (base32 "14pn0qqb34yisvjqi3p0a1blsp9v3bzz8gy2182g0vq8d1f9ildc"))))
     (properties `((upstream-name . "optimall")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-rlang r-magrittr r-glue r-dplyr))
@@ -5298,13 +5245,13 @@ Lugosi (2006) <doi:10.1017/CBO9780511546921> for an overview.")
 (define-public r-openxlsx2
   (package
     (name "r-openxlsx2")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openxlsx2" version))
        (sha256
-        (base32 "1hrrp4c2j3m6a5f97agfp4gv6675nd6mjrvxhj86hbw8jrqs4zb7"))))
+        (base32 "1f3s3siq0060kcdk7zr8200s3swbcc9ikpk835590q59v342asxn"))))
     (properties `((upstream-name . "openxlsx2")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip r-stringi r-rcpp r-r6 r-magrittr))
@@ -6540,29 +6487,6 @@ useful for validating dictionary-based methods.  The default settings of all
 generated tests match those suggested in Chang et al. (2009) and Song et al.
 (2020) <doi:10.1080/10584609.2020.1723752>.")
     (license license:lgpl2.1+)))
-
-(define-public r-ooi
-  (package
-    (name "r-ooi")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "OOI" version))
-       (sha256
-        (base32 "0ivxgq539v68kak3zzakywppba0grzh7qn1h404s4ag30cxv0g8p"))))
-    (properties `((upstream-name . "OOI")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-modi))
-    (home-page "https://cran.r-project.org/package=OOI")
-    (synopsis "Outside Option Index")
-    (description
-     "Calculates the Outside Option Index proposed by Caldwell and Danieli (2018)
-<https://drive.google.com/file/d/1j-@code{uwD19S4gqgXIXeYch9jGBCaDhWZlRQ/view>}.
- This index uses the cross- sectional concentration of similar workers across
-job types to quantify the availability of outside options as a function of
-workersâ characteristics (e.g. commuting costs, preferences, and skills.)")
-    (license license:gpl3)))
 
 (define-public r-oobcurve
   (package
@@ -8408,13 +8332,13 @@ different authors in the recent years.  See Alizadeh (2019)
 (define-public r-olinkanalyze
   (package
     (name "r-olinkanalyze")
-    (version "3.6.0")
+    (version "3.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OlinkAnalyze" version))
        (sha256
-        (base32 "0nf8ni1i3qdmvwz0qalm8qsjb31s361b573n45y3qjf4g5hssg87"))))
+        (base32 "1g21lg7iyblv4j7h3f8jwhndjay207bw57nph2fldzhdnq5md362"))))
     (properties `((upstream-name . "OlinkAnalyze")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -11253,6 +11177,27 @@ orbit-aware counts are computed respective each of the edges and nodes.")
     (synopsis "OpenAnalytics Plots Package")
     (description "Offers a suite of functions for enhancing R plots.")
     (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
+
+(define-public r-oaii
+  (package
+    (name "r-oaii")
+    (version "0.1.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oaii" version))
+       (sha256
+        (base32 "1r57f5sx58n18js2sl2gj7p8ylzfcs572ms8ya7lg8cd5mx5m793"))))
+    (properties `((upstream-name . "oaii")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-magrittr r-httr r-checkmate))
+    (home-page "https://github.com/cezarykuran/oaii")
+    (synopsis "'OpenAI' API R Interface")
+    (description
+     "This package provides a comprehensive set of helpers that streamline data
+transmission and processing, making it effortless to interact with the
+@code{OpenAI} API.")
+    (license license:expat)))
 
 (define-public r-oaiharvester
   (package

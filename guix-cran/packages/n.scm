@@ -410,34 +410,6 @@ named in a way that is consistent with usage, making their names easy to
 remember and easy to deploy.")
     (license license:gpl2)))
 
-(define-public r-numero
-  (package
-    (name "r-numero")
-    (version "1.9.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Numero" version))
-       (sha256
-        (base32 "0bii7d4hggdhid81a7scp1lwbw8pi0vh2j9cb3z8hfpp88j2g16j"))))
-    (properties `((upstream-name . "Numero")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
-    (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://cran.r-project.org/package=Numero")
-    (synopsis "Statistical Framework to Define Subgroups in Complex Datasets")
-    (description
-     "High-dimensional datasets that do not exhibit a clear intrinsic clustered
-structure pose a challenge to conventional clustering algorithms.  For this
-reason, we developed an unsupervised framework that helps scientists to better
-subgroup their datasets based on visual cues, please see Gao S, Mutter S, Casey
-A, Makinen V-P (2019) Numero: a statistical framework to define multivariable
-subgroups in complex population-based datasets, Int J Epidemiology, 48:369-37,
-<doi:10.1093/ije/dyy113>.  The framework includes the necessary functions to
-construct a self-organizing map of the data, to evaluate the statistical
-significance of the observed data patterns, and to visualize the results.")
-    (license license:gpl2+)))
-
 (define-public r-numbersbr
   (package
     (name "r-numbersbr")
@@ -2354,13 +2326,13 @@ multivariate normal approximation to the set of selected parameters.")
 (define-public r-npflow
   (package
     (name "r-npflow")
-    (version "0.13.3")
+    (version "0.13.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NPflow" version))
        (sha256
-        (base32 "1bgdkm82pmzjv46pkxpvh5ffffmc6q68x5jjl7k330w9vwgx2kf0"))))
+        (base32 "14i5pfvpjj25frvxrfvch5a8ja8y4mnsk9h2ikcwh949br6mjq52"))))
     (properties `((upstream-name . "NPflow")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm
@@ -2369,6 +2341,7 @@ multivariate normal approximation to the set of selected parameters.")
                              r-rcpp
                              r-pheatmap
                              r-ggplot2
+                             r-ggally
                              r-fastcluster
                              r-ellipse))
     (home-page "https://cran.r-project.org/package=NPflow")
@@ -9565,13 +9538,13 @@ reading/writing and also other manipulation functions.")
 (define-public r-neuralsens
   (package
     (name "r-neuralsens")
-    (version "1.0.3")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NeuralSens" version))
        (sha256
-        (base32 "0awghzv463xlawqs20z505yc9hz35h9bpnz0rq5k1720vdy9jq30"))))
+        (base32 "0xhxvava2q1j9giljz0ayl7ddjknzxfp5sww8kqkfqj3qr0a1a7l"))))
     (properties `((upstream-name . "NeuralSens")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -9585,7 +9558,9 @@ reading/writing and also other manipulation functions.")
                              r-ggplot2
                              r-ggnewscale
                              r-ggforce
+                             r-ggbreak
                              r-fastdummies
+                             r-dplyr
                              r-caret))
     (home-page "https://github.com/JaiPizGon/NeuralSens")
     (synopsis "Sensitivity Analysis of Neural Networks")
@@ -15216,13 +15191,13 @@ videos at <https://practicalstats.com>.  This package adds new functions to the
 (define-public r-nacho
   (package
     (name "r-nacho")
-    (version "2.0.5")
+    (version "2.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NACHO" version))
        (sha256
-        (base32 "1w32gnpi9hna2icrv5ig1qkpdrz6n3x79hkjz5fqschicg7fx4z4"))))
+        (base32 "1v1ypjsa5yzl6mrgmakngz7zf3ksmv7ac2nf6i30dshikln8mk9i"))))
     (properties `((upstream-name . "NACHO")))
     (build-system r-build-system)
     (inputs (list pandoc pandoc))

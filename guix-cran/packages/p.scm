@@ -76,13 +76,13 @@
 (define-public r-pysparklyr
   (package
     (name "r-pysparklyr")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pysparklyr" version))
        (sha256
-        (base32 "0bsng2m9sw2iicd35db82r8xlinr600d8s8rzkx83picmcbj02bi"))))
+        (base32 "13y0a9sxsfj5zn83k5583wsbpz12s583p3zxdm0q3jg8zr76yci2"))))
     (properties `((upstream-name . "pysparklyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -90,6 +90,7 @@
                              r-tidyr
                              r-sparklyr
                              r-rstudioapi
+                             r-rsconnect
                              r-rlang
                              r-reticulate
                              r-purrr
@@ -6335,13 +6336,13 @@ also time series of carbon fluxes, energy balances and soil water are available.
 (define-public r-profoc
   (package
     (name "r-profoc")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "profoc" version))
        (sha256
-        (base32 "0q41xn22s8h84nr91yqwdrbzw98sydyfirnxz8bw523zwlzap977"))))
+        (base32 "1clickjw8v43p6p35mkyw303adnnr0zrm5ppnvslz2gjlybfp94q"))))
     (properties `((upstream-name . "profoc")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -10247,13 +10248,13 @@ clusters across datasets.  More details can be referred to Wei Liu, et al.
 (define-public r-pre
   (package
     (name "r-pre")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pre" version))
        (sha256
-        (base32 "1b02d9178yphhxwla6a8a6brbw9ggvb9bpqa0yddj2klav5xcaa4"))))
+        (base32 "170kfyhnb6hqyknkf4h6cxcaif6z2m8n6gslyj88sfch2xbfx0b1"))))
     (properties `((upstream-name . "pre")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -13142,35 +13143,6 @@ models (Aflakparast et al., 2018).  On another note, the package also includes
 functionality for ridge-type estimation of the generalized linear model (as
 presented in van Wieringen, Binder, 2022, <doi:10.1080/10618600.2022.2035231>).")
     (license license:gpl2+)))
-
-(define-public r-popvar
-  (package
-    (name "r-popvar")
-    (version "1.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PopVar" version))
-       (sha256
-        (base32 "1yc2qz7g5jv752yrhjq1ymfdjbqwdcp0hv7pm93qsn51k8fc8i9i"))))
-    (properties `((upstream-name . "PopVar")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rrblup r-qtl r-bglr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=PopVar")
-    (synopsis
-     "Genomic Breeding Tools: Genetic Variance Prediction and Cross-Validation")
-    (description
-     "The main attribute of @code{PopVar} is the prediction of genetic variance in
-bi-parental populations, from which the package derives its name. @code{PopVar}
-contains a set of functions that use phenotypic and genotypic data from a set of
-candidate parents to 1) predict the mean, genetic variance, and superior progeny
-value of all, or a defined set of pairwise bi-parental crosses, and 2) perform
-cross-validation to estimate genome-wide prediction accuracy of multiple
-statistical models.  More details are available in Mohammadi, Tiede, and Smith
-(2015, <doi:10.2135/cropsci2015.01.0030>).  A dataset think_barley.rda is
-included for reference and examples.")
-    (license license:gpl3)))
 
 (define-public r-populr
   (package
@@ -16828,13 +16800,13 @@ supported by this package.")
 (define-public r-pmparser
   (package
     (name "r-pmparser")
-    (version "1.0.19")
+    (version "1.0.20")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pmparser" version))
        (sha256
-        (base32 "1aqcjl081b5v8gkd2i171vf69f549v2s91rhnyxn3lx1qlb4j8da"))))
+        (base32 "0csjvy730c0pd7b2rq732whv7wb3pahnrc1mvzh33ymlbhd6jng8"))))
     (properties `((upstream-name . "pmparser")))
     (build-system r-build-system)
     (inputs (list unzip sqlite))
@@ -23578,37 +23550,6 @@ denoising.  Background and details about the method can be found at Yu et al.
 (2018) <doi:10.1093/jamia/ocx111>.")
     (license license:gpl3)))
 
-(define-public r-phenopix
-  (package
-    (name "r-phenopix")
-    (version "2.4.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "phenopix" version))
-       (sha256
-        (base32 "1vhv2adv9k5gczcdqsbizdl58mzz47w60zwnv6hx650yirddgx3b"))))
-    (properties `((upstream-name . "phenopix")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-strucchange
-                             r-stringr
-                             r-sp
-                             r-raster
-                             r-plyr
-                             r-jpeg
-                             r-iterators
-                             r-gtools
-                             r-foreach
-                             r-doparallel
-                             r-bcp))
-    (home-page "https://cran.r-project.org/package=phenopix")
-    (synopsis "Process Digital Images of a Vegetation Cover")
-    (description
-     "This package provides a collection of functions to process digital images,
-depict greenness index trajectories and extract relevant phenological stages.")
-    (license license:gpl2)))
-
 (define-public r-phenomap
   (package
     (name "r-phenomap")
@@ -29382,48 +29323,6 @@ probability and offers three tuning parameters (G, d, L) to relax the
 definition.")
     (license license:gpl3)))
 
-(define-public r-pcredux
-  (package
-    (name "r-pcredux")
-    (version "1.1-2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PCRedux" version))
-       (sha256
-        (base32 "1x3a4pdv54ppar9fjshk0avgpxvqsar4x7fgy9w0i76fgndr7qs5"))))
-    (properties `((upstream-name . "PCRedux")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-shiny
-                             r-segmented
-                             r-robustbase
-                             r-qpcr
-                             r-pracma
-                             r-pbapply
-                             r-mbmca
-                             r-fda-usc
-                             r-ecp
-                             r-chippcr
-                             r-changepoint
-                             r-bcp))
-    (native-inputs (list r-knitr))
-    (home-page "https://CRAN.R-project.org/package=PCRedux")
-    (synopsis
-     "Quantitative Polymerase Chain Reaction (qPCR) Data Mining and Machine Learning Toolkit")
-    (description
-     "Extracts features from amplification curve data of quantitative Polymerase Chain
-Reactions (@code{qPCR}) (Pabinger S. et al. (2014)
-<doi:10.1016/j.bdq.2014.08.002>) for machine learning purposes.  Helper
-functions prepare the amplification curve data for processing as functional data
-(e.g., Hausdorff distance) or enable the plotting of amplification curve classes
-(negative, ambiguous, positive).  The hookreg() and @code{hookregNL}() functions
-(Burdukiewicz M. et al. (2018) <doi:10.1016/j.bdq.2018.08.001>) can be used to
-predict amplification curves with an hook effect-like curvature.  The
-pcrfit_single() function can be used to extract features from an amplification
-curve.")
-    (license license:expat)))
-
 (define-public r-pcra
   (package
     (name "r-pcra")
@@ -30931,17 +30830,17 @@ elimination of heterogeneity.  R. C. Bose and K. R. Nair (1939)
 (define-public r-pbdslap
   (package
     (name "r-pbdslap")
-    (version "0.3-4")
+    (version "0.3-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pbdSLAP" version))
        (sha256
-        (base32 "11rdsxkvrvm8rbfh5n3y48kzkilc9941hnwxk9a3fmgrbvnlzxfc"))))
+        (base32 "0l6w1kxn0clqi36lqg494d71dd3rv77v94nzqn0rp7zv33n63cnp"))))
     (properties `((upstream-name . "pbdSLAP")))
     (build-system r-build-system)
     (inputs (list))
-    (propagated-inputs (list r-rlecuyer r-pbdmpi))
+    (propagated-inputs (list r-pbdmpi))
     (native-inputs (list gfortran))
     (home-page "https://pbdr.org/")
     (synopsis "Programming with Big Data -- Scalable Linear Algebra Packages")
