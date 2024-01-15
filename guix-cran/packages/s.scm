@@ -31195,29 +31195,33 @@ Binary Data described by Chen, Y., Culpepper, S. A., and Liang, F. (2020)
 (define-public r-slcare
   (package
     (name "r-slcare")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SLCARE" version))
        (sha256
-        (base32 "0gvvfhdf1ihgwgwx4pqqpm8nb2b914qphf3mr26lk741r5rm4ylc"))))
+        (base32 "0l2r7rqyvrisjdl721n6jbbv8y579l3m3i1c3xsn4r2fnry125yx"))))
     (properties `((upstream-name . "SLCARE")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr r-rereg r-nnet r-ggplot2 r-dplyr))
-    (home-page "https://github.com/qyxxx/SLCARE")
-    (synopsis "Semiparametric Latent Class Analysis for Recurrent Event")
+    (propagated-inputs (list r-tidyr
+                             r-rlang
+                             r-rereg
+                             r-reda
+                             r-nnet
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=SLCARE")
+    (synopsis "Semiparametric Latent Class Analysis of Recurrent Events")
     (description
-     "An easy-to-use tool for latent class analysis for recurrent events.  The
-modeling framework is based on the semiparametric multiplicative modeling in
-Zhao et al. (2022) <doi:10.1111/rssb.12499>.  Our package provides an
-alternative method to define initial values in the estimation algorithm based on
-a joint frailty scale-change model described in Wang et al. (2001)
-<doi:10.1198/016214501753209031> and K-means.  Users are also allowed to specify
-different initial values by themselves.  Our package also provides an
-alternative algorithm to solving the estimating equation for unobservable latent
-class membership by fitting a \"pseudo\" weighted multinomial regression which
-speeds up the rate of convergence.")
+     "Efficient R package for latent class analysis of recurrent events, based on the
+semiparametric multiplicative intensity model by Zhao et al. (2022)
+<doi:10.1111/rssb.12499>.  SLCARE returns estimates for non-functional model
+parameters along with the associated variance estimates and p-values.
+Visualization tools are provided to depict the estimated functional model
+parameters and related functional quantities of interest.  SLCARE also delivers
+a model checking plot to help assess the adequacy of the fitted model.")
     (license license:gpl3+)))
 
 (define-public r-slbdd
@@ -35598,13 +35602,13 @@ models.")
 (define-public r-simjoint
   (package
     (name "r-simjoint")
-    (version "0.3.11")
+    (version "0.3.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SimJoint" version))
        (sha256
-        (base32 "1qs319v947ck63bcjyl9bimsj9ld2n6b9gxwq4llgdvlib5w5ryx"))))
+        (base32 "1vh0yj9d73mi2isw8wn2hgr7ycxadcifwzl57jgkqgnwc2vzlmsg"))))
     (properties `((upstream-name . "SimJoint")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))

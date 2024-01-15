@@ -15,8 +15,8 @@
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages maths)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
@@ -9940,13 +9940,13 @@ maps.")
 (define-public r-countr
   (package
     (name "r-countr")
-    (version "3.5.7")
+    (version "3.5.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Countr" version))
        (sha256
-        (base32 "04aszf0nsmg62hq7h5k0991pacwkcn667i8nk2wp35xbamlgcpqs"))))
+        (base32 "1bv19ni79f94lrn4656hsxi6nnhrn136mx5y757a4r39avsgbl06"))))
     (properties `((upstream-name . "Countr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -9956,7 +9956,6 @@ maps.")
                              r-rcpparmadillo
                              r-rcpp
                              r-rcolorbrewer
-                             r-pscl
                              r-optimx
                              r-numderiv
                              r-matrix
@@ -9975,7 +9974,10 @@ maps.")
      "Flexible univariate count models based on renewal processes.  The models may
 include covariates and can be specified with familiar formula syntax as in glm()
 and package flexsurv'.  The methodology is described by Kharrat et all (2019)
-<doi:10.18637/jss.v090.i13> (included as vignette Countr_guide in the package).")
+<doi:10.18637/jss.v090.i13> (included as vignette Countr_guide in the package).
+If the suggested package pscl is not available from CRAN, it can be installed
+with remotes::install_github(\"cran/pscl\")'.  It is no longer used by the
+functions in this package but is needed for some of the extended examples.")
     (license license:gpl2+)))
 
 (define-public r-countprop
@@ -17057,13 +17059,13 @@ which have inspired many methods in this package.")
 (define-public r-complexlm
   (package
     (name "r-complexlm")
-    (version "1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "complexlm" version))
        (sha256
-        (base32 "0s11yv589g41947x9x457dcbch3wwqhm0v7yczlj02g5c2y63ss2"))))
+        (base32 "0ykshrqia09pklkwhvjc8mfn005yq5wxfpjsbimg8gp38xch3wvn"))))
     (properties `((upstream-name . "complexlm")))
     (build-system r-build-system)
     (propagated-inputs (list r-pracma r-mathjaxr r-mass))
@@ -20656,42 +20658,6 @@ as detailed at <https://codemeta.github.io>.  This package provides core
 utilities to generate this metadata with a minimum of dependencies.")
     (license license:gpl3)))
 
-(define-public r-codelistgenerator
-  (package
-    (name "r-codelistgenerator")
-    (version "2.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CodelistGenerator" version))
-       (sha256
-        (base32 "0wrdg0nywpcl3gncyl5yrziqc3skwwv9li9m7hb0qj7bcdnsz0g2"))))
-    (properties `((upstream-name . "CodelistGenerator")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-stringr
-                             r-rlang
-                             r-rjsonio
-                             r-purrr
-                             r-patientprofiles
-                             r-magrittr
-                             r-lubridate
-                             r-glue
-                             r-dplyr
-                             r-dbi
-                             r-cli
-                             r-checkmate
-                             r-cdmconnector))
-    (native-inputs (list r-knitr))
-    (home-page "https://darwin-eu.github.io/CodelistGenerator/")
-    (synopsis "Generate Code Lists for the OMOP Common Data Model")
-    (description
-     "Generate a candidate code list for the Observational Medical Outcomes
-Partnership (OMOP) common data model based on string matching.  For a given
-search strategy, a candidate code list will be returned.")
-    (license (license:fsdg-compatible "Apache License (>= 2)"))))
-
 (define-public r-codecountr
   (package
     (name "r-codecountr")
@@ -21368,13 +21334,13 @@ for differences in method agreement.")
 (define-public r-coastlinefd
   (package
     (name "r-coastlinefd")
-    (version "1.1.0")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CoastlineFD" version))
        (sha256
-        (base32 "13503mzmfq2wwha49s4z91xiy9drbwlbbl0rg74zdlrgbqgfv7k4"))))
+        (base32 "1l6igxvp4sz09bbgqjn6kwddi4mciw5ihcmzlg87pqhr1zs2yjbi"))))
     (properties `((upstream-name . "CoastlineFD")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
@@ -21386,10 +21352,10 @@ for differences in method agreement.")
                              r-ggplot2
                              r-fields))
     (home-page "https://github.com/redworld123/CoastlineFD")
-    (synopsis "Calculate the Coastline Fractal Dimension")
+    (synopsis "Calculation of the Fractal Dimension of a Coastline")
     (description
-     "This package provides a mothed is used to calculate the fractal dimension of
-coastline by boxes method and Dividers method.")
+     "Calculating the fractal dimension of a coastline using the boxes and dividers
+methods.")
     (license license:expat)))
 
 (define-public r-coarsedatatools
@@ -28689,13 +28655,13 @@ from (paleo)environmental/ecological research.")
 (define-public r-chronochrt
   (package
     (name "r-chronochrt")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chronochrt" version))
        (sha256
-        (base32 "0r8aqx74c4rxacqf47hinpf5fy3lypxd5a1g7iqb1rbk1z4mkfj6"))))
+        (base32 "1qk380jqbddin0kxaf7dgzh658vikchx5snza1bgqbn11xx662wc"))))
     (properties `((upstream-name . "chronochrt")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

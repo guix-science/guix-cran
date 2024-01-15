@@ -6332,13 +6332,13 @@ packages such as dplyr and tidyr'.")
 (define-public r-forsearch
   (package
     (name "r-forsearch")
-    (version "4.2.0")
+    (version "5.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "forsearch" version))
        (sha256
-        (base32 "06pbizb69hrjk32ivlkkl95c54fc4gdyyacm96lkfq4nax79zfhy"))))
+        (base32 "0g7kf92vb9mmzhv1yzvbkfqjidv965nww7kw192s8swksh0d8l8f"))))
     (properties `((upstream-name . "forsearch")))
     (build-system r-build-system)
     (inputs (list gmp))
@@ -9096,13 +9096,13 @@ algorithms for solving optimization problems less relevant to Subset Sum.")
 (define-public r-flsa
   (package
     (name "r-flsa")
-    (version "1.5.3")
+    (version "1.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flsa" version))
        (sha256
-        (base32 "0m0zx0nizg4mrs2gg2sbxjlixx1rcmrj7xg869ia3gg36x1a28d9"))))
+        (base32 "1a5mdiy1dn2b2x9s5rbfcb8il4x7dxcz5py2x055m1mdar8ivcf4"))))
     (properties `((upstream-name . "flsa")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=flsa")
@@ -13208,36 +13208,6 @@ tags and proper file extensions.")
     (synopsis "Simple Key-Value Database Using SQLite")
     (description "Simple key-value database using SQLite as the back end.")
     (license license:gpl2+)))
-
-(define-public r-filecacher
-  (package
-    (name "r-filecacher")
-    (version "0.2.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "filecacher" version))
-       (sha256
-        (base32 "00rxbll8gmzcyfyf3dlbahwi4x037cwx3k3dxqg5l1zgapyhddnr"))))
-    (properties `((upstream-name . "filecacher")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vctrs
-                             r-rlang
-                             r-purrr
-                             r-here
-                             r-glue
-                             r-cachem))
-    (home-page "https://github.com/orgadish/filecacher")
-    (synopsis "File Cacher")
-    (description
-     "The main functions in this package are with_cache() and cached_read().  The
-former is a simple way to cache an R object into a file on disk, using cachem'.
-The latter is a wrapper around any standard read function, but caches both the
-output and the file list info.  If the input file list info hasn't changed, the
-cache is used; otherwise, the original files are re-read.  This can save time if
-the original operation requires reading from many files, and/or involves lots of
-processing.")
-    (license license:expat)))
 
 (define-public r-filebin
   (package
@@ -19673,6 +19643,31 @@ and Andros (2022+) <doi:10.48550/@code{arXiv.2207.13824>}.")
 mix left open and right open intervals with point values, intervals that are
 closed on both ends and intervals that are open on both ends.")
     (license license:cc0)))
+
+(define-public r-fanc
+  (package
+    (name "r-fanc")
+    (version "2.3.11")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fanc" version))
+       (sha256
+        (base32 "0lvzp18r5facwbbvjf00zgrlzhr4dp8f6f87fmy04dgqwj7pzwhh"))))
+    (properties `((upstream-name . "fanc")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-matrix r-ellipse))
+    (home-page "https://doi.org/10.1007/s11222-014-9458-0")
+    (synopsis "Penalized Likelihood Factor Analysis via Nonconvex Penalty")
+    (description
+     "Computes the penalized maximum likelihood estimates of factor loadings and
+unique variances for various tuning parameters.  The pathwise coordinate descent
+along with EM algorithm is used.  This package also includes a new graphical
+tool which outputs path diagram, goodness-of-fit indices and model selection
+criteria for each regularization parameter.  The user can change the
+regularization parameter by manipulating scrollbars, which is helpful to find a
+suitable value of regularization parameter.")
+    (license license:gpl2+)))
 
 (define-public r-famt
   (package

@@ -3954,13 +3954,13 @@ prescriptions.  Based on Pye et al (2018) <doi:10.1002/pds.4440>.")
 (define-public r-drugexposurediagnostics
   (package
     (name "r-drugexposurediagnostics")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DrugExposureDiagnostics" version))
        (sha256
-        (base32 "0jda2clyamj88q0882z8mzymxadrq73f5cp4bv6d1ng5c6w0majh"))))
+        (base32 "0lr2k7mbymwrbpyaj1k352hiljyhpif79fd3bwgy2lcdfvlh5w7y"))))
     (properties `((upstream-name . "DrugExposureDiagnostics")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -14519,21 +14519,23 @@ Eigen and bindings to R.")
 (define-public r-dgpsi
   (package
     (name "r-dgpsi")
-    (version "2.3.0")
+    (version "2.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dgpsi" version))
        (sha256
-        (base32 "1zp7my510ag3i0clqwqa5hr4ara9amq55cfyqbrnm837g9lwbnkv"))))
+        (base32 "004d15bql0by1j4gacrjfbnk95wyzd1m54gdh23y7n664xdn3fql"))))
     (properties `((upstream-name . "dgpsi")))
     (build-system r-build-system)
-    (propagated-inputs (list r-reticulate
+    (propagated-inputs (list r-uuid
+                             r-reticulate
                              r-reshape2
                              r-patchwork
                              r-lhs
                              r-ggplot2
                              r-ggforce
+                             r-dplyr
                              r-clhs
                              r-bitops
                              r-benchmarkme))

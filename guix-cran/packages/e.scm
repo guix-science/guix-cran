@@ -17130,13 +17130,13 @@ package @code{bupaR}'.")
 (define-public r-eddington
   (package
     (name "r-eddington")
-    (version "4.1.2")
+    (version "4.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eddington" version))
        (sha256
-        (base32 "0drra1rhq74r0xhd0fif9xbxaavadlnazmcph6m62yx6c1bghf9z"))))
+        (base32 "1i04ldq8p7a8wx3l4ln47q07djhcg60560d1j9xg0ridsdi5qjaf"))))
     (properties `((upstream-name . "eddington")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml r-rcpp r-r6))

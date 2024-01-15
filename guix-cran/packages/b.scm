@@ -48,13 +48,13 @@
 (define-public r-bzinb
   (package
     (name "r-bzinb")
-    (version "1.0.6")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bzinb" version))
        (sha256
-        (base32 "1sfc6sfnc2hrwwr7f3nrpy6cprpicrqf12k8d3h9i8846idybw16"))))
+        (base32 "06sn7j0i6znwdka8rww2xc4q6r4a0pmm77vsd6bjdjqmkpai7kj1"))))
     (properties `((upstream-name . "bzinb")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-bh))
@@ -9751,13 +9751,13 @@ support by NSF DMS-1925119 and DMS-212324.")
 (define-public r-bizdays
   (package
     (name "r-bizdays")
-    (version "1.0.13")
+    (version "1.0.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bizdays" version))
        (sha256
-        (base32 "0qbkcryvap7ilv7pwv56liz3cgdhhk0cc8mxhw5bs29qnnjrl38f"))))
+        (base32 "104ygyi3yx7l03wq0v9rvlw6s0j8ipqq10lf7psxyy1fjp5ifxl1"))))
     (properties `((upstream-name . "bizdays")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite))
@@ -17137,13 +17137,13 @@ www.belex.rs.")
 (define-public r-bekks
   (package
     (name "r-bekks")
-    (version "1.4.3")
+    (version "1.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BEKKs" version))
        (sha256
-        (base32 "039may5c788sdhjgbbcljwn71wpya8d9mcj8zqg3yqm8mxjcgzk0"))))
+        (base32 "1ai475d1ya8j8kl4w6qdpdmsarz74p1799fc9hl0if2r3gv211vn"))))
     (properties `((upstream-name . "BEKKs")))
     (build-system r-build-system)
     (propagated-inputs (list r-xts
@@ -17161,8 +17161,7 @@ www.belex.rs.")
                              r-ggfortify
                              r-gas
                              r-future-apply
-                             r-future
-                             r-forecast))
+                             r-future))
     (home-page "https://cran.r-project.org/package=BEKKs")
     (synopsis "Multivariate Conditional Volatility Modelling and Forecasting")
     (description

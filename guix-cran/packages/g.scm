@@ -11476,27 +11476,32 @@ relevant paper is available on @code{arXiv}: <@code{arXiv:2105.14328>}.")
 (define-public r-glmtoolbox
   (package
     (name "r-glmtoolbox")
-    (version "0.1.9")
+    (version "0.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmtoolbox" version))
        (sha256
-        (base32 "115ygmhcfzkks7dlph5c2w7ijpmvd6avvz9955jfqwfapwy1r358"))))
+        (base32 "0xkjz6y4dfnickcnb584xh3z3jrjclji6fsal2si70203n09p2gs"))))
     (properties `((upstream-name . "glmtoolbox")))
     (build-system r-build-system)
-    (propagated-inputs (list r-statmod r-rfast r-numderiv r-mass r-formula))
-    (home-page "https://cran.r-project.org/package=glmtoolbox")
+    (propagated-inputs (list r-suppdists
+                             r-statmod
+                             r-rfast
+                             r-numderiv
+                             r-mass
+                             r-formula))
+    (home-page "https://mlgs.netlify.app/")
     (synopsis "Set of Tools to Data Analysis using Generalized Linear Models")
     (description
-     "Set of tools to the statistical analysis of data using: (1) normal linear
+     "Set of tools for the statistical analysis of data using: (1) normal linear
 models; (2) generalized linear models; (3) negative binomial regression models
 as alternative to the Poisson regression models under the presence of
 overdispersion; (4) beta-binomial and random-clumped binomial regression models
 as alternative to the binomial regression models under the presence of
 overdispersion; (5) Zero-inflated and zero-altered regression models to deal
-with zero-excess in count data; (6) generalized estimating equations for cluster
-correlated data.")
+with zero-excess in count data; (6) generalized nonlinear models; (7)
+generalized estimating equations for cluster correlated data.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-glmtlp
@@ -16473,13 +16478,13 @@ large biological sample.")
 (define-public r-ggordiplots
   (package
     (name "r-ggordiplots")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggordiplots" version))
        (sha256
-        (base32 "0nnb1cfjyjhdrd9ahymfv64a6f5kr5ahg0x8l20gyxs0qmychng6"))))
+        (base32 "0ncwkahwdl6mg27a7cg6363d51jqr03cxsn5ww4ainq679lw8fmc"))))
     (properties `((upstream-name . "ggordiplots")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan r-glue r-ggplot2))

@@ -22314,13 +22314,13 @@ This package provides a flexible and high-performance alternative to aws.s3'.")
 (define-public r-minimeta
   (package
     (name "r-minimeta")
-    (version "0.2")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "miniMeta" version))
        (sha256
-        (base32 "03r6xwcgchw42irqr8jy5hsbv8brk6f77h4zi9qhhz3zmkryjbw2"))))
+        (base32 "0qd55a0a03a3q62hjpmi0815x4jff6zhrxavm1wb46c09y1hm62j"))))
     (properties `((upstream-name . "miniMeta")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexls
@@ -36202,13 +36202,13 @@ Segal, et al. (2019) <doi:10.1007/s11336-018-9647-4> for more information.")
 (define-public r-matrixset
   (package
     (name "r-matrixset")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "matrixset" version))
        (sha256
-        (base32 "06fnm8l9cqciximnj1q20841c8133zkjxap2gkid5mj4mnlnwv2r"))))
+        (base32 "0ijh8nlg86f31az7x82px1m0805mrfal5xdpwzlalgzbq0irg69v"))))
     (properties `((upstream-name . "matrixset")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs

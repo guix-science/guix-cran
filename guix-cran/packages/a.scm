@@ -8342,18 +8342,18 @@ field.")
 (define-public r-apoderoides
   (package
     (name "r-apoderoides")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Apoderoides" version))
        (sha256
-        (base32 "0057pab1bbvacjk891yn5slz713a6bm959hsnx5wsnrkwsih7prj"))))
+        (base32 "0jh1q18qinppwn2alrm0l1jjbks0n04mdb1q64bzqa3ba3qhmlmw"))))
     (properties `((upstream-name . "Apoderoides")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppprogress r-rcpp r-ape))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=Apoderoides")
+    (home-page "https://github.com/Sa-to-shi-A-o-ki/Apoderoides")
     (synopsis
      "Prioritize and Delete Erroneous Taxa in a Large Phylogenetic Tree")
     (description

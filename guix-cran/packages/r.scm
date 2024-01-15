@@ -14309,13 +14309,13 @@ convenient functions for summary, visualizations, and fit diagnostics.")
 (define-public r-robsurvey
   (package
     (name "r-robsurvey")
-    (version "0.5-2")
+    (version "0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "robsurvey" version))
        (sha256
-        (base32 "140n1liq9bniy782j85a7r5f492wiyl0qhf5shpks6fyipcjjx9r"))))
+        (base32 "0y1yw89ms0805iixv5xz9sq8zbdr7l89hb1nhwccdn7v62ydpxip"))))
     (properties `((upstream-name . "robsurvey")))
     (build-system r-build-system)
     (propagated-inputs (list r-survey r-kernsmooth))

@@ -4713,13 +4713,13 @@ managing capitalisations in tidy data.")
 (define-public r-venneuler
   (package
     (name "r-venneuler")
-    (version "1.1-3")
+    (version "1.1-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "venneuler" version))
        (sha256
-        (base32 "0znr5l41mpappv2agji4nxr42vydhd35jbmjwzwapgahff2arlr1"))))
+        (base32 "1ga9ckhpd6my0xjf6xarhn3b98d88075fa0zkad4sxca7k6v7hbd"))))
     (properties `((upstream-name . "venneuler")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjava))
@@ -5560,13 +5560,13 @@ Volume 5, <https://dgbonett.sites.ucsc.edu/>.")
 (define-public r-vcfppr
   (package
     (name "r-vcfppr")
-    (version "0.3.5")
+    (version "0.3.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vcfppR" version))
        (sha256
-        (base32 "1shk4xr1i3azbh5s13ngzny2gysa4mbkfv240ky22yqdcj3qxi37"))))
+        (base32 "08zkphqkjcdvxy69r3875d7ig4jr94sbv2b17rw14hnydy9ydfii"))))
     (properties `((upstream-name . "vcfppR")))
     (build-system r-build-system)
     (inputs (list zlib openssl openssh curl))

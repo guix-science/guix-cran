@@ -4196,13 +4196,13 @@ the portfolio performance as presented by Gosling et al. (2020)
 (define-public r-optimizer
   (package
     (name "r-optimizer")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "optimizeR" version))
        (sha256
-        (base32 "06ad7hcsmhhvv2w0yd8w1vqjg6ns95f81spixx2nw8gkwj6lfq1g"))))
+        (base32 "0cy53qbfq2xzxmds0mlvdjrqlfz5i5shxpqc84ikpn28r6mllfpj"))))
     (properties `((upstream-name . "optimizeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-testfunctions r-r6 r-oeli r-cli r-checkmate))
@@ -9088,13 +9088,13 @@ code interface is described in Huling and Chien (2022)
 (define-public r-oeli
   (package
     (name "r-oeli")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oeli" version))
        (sha256
-        (base32 "1wplzkmxpf5lzbmi3gdllrcb5khx16yji58jgbb42kf2v0zfz81k"))))
+        (base32 "04ijws6jc6xdnwvphlwvzh1pz6i2nq02kfinw9dl5k4ggi0vzs80"))))
     (properties `((upstream-name . "oeli")))
     (build-system r-build-system)
     (propagated-inputs (list r-usethis

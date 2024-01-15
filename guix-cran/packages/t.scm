@@ -9414,13 +9414,13 @@ bounds in raw scale units or in terms of effect sizes.  See: Lakens (2017)
 (define-public r-tosr
   (package
     (name "r-tosr")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tosr" version))
        (sha256
-        (base32 "0fy2y7rr80q7vapyxnhlqshskir5dmfkr1sm5r4rqilnlf0cqi21"))))
+        (base32 "1ab1jh60dp2b8vnd2vvva6w5rsidyavp8i9gsbwcqr5rmnmxg67q"))))
     (properties `((upstream-name . "tosr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
