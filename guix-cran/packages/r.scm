@@ -20777,13 +20777,13 @@ service (<https://www.itis.gov/solr_documentation.html>).")
 (define-public r-ritch
   (package
     (name "r-ritch")
-    (version "0.1.25")
+    (version "0.1.26")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RITCH" version))
        (sha256
-        (base32 "0jq7h66l3m9g90z1zc31bd4bf9w8b59jln6wgjivc0pr8jh4626p"))))
+        (base32 "0n8vd7jdw5hb4vx3nspg64m52j2n2pmjh649nr87444dkfnaf4wc"))))
     (properties `((upstream-name . "RITCH")))
     (build-system r-build-system)
     (inputs (list zlib))
@@ -25784,13 +25784,13 @@ reproducibility.  For more information on FACTS itself, please visit
 (define-public r-rfacebookstat
   (package
     (name "r-rfacebookstat")
-    (version "2.9.3")
+    (version "2.9.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rfacebookstat" version))
        (sha256
-        (base32 "0g4fgl7d77h3wdp2r7r3smlfsykcfr1gm6chha02z4qg2159ldnk"))))
+        (base32 "1k8qlqwjlbaq6xx18srrinz1cc0vwhs7cshq2km2asazv2qj54rp"))))
     (properties `((upstream-name . "rfacebookstat")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -28391,13 +28391,13 @@ parameterisation and provision of helper functions to manage dependencies.")
 (define-public r-reporterscore
   (package
     (name "r-reporterscore")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ReporterScore" version))
        (sha256
-        (base32 "0p0ywbc8ynw7fibw0xgd65whlk7bvvn08x3rayjhdrifaif7zxf5"))))
+        (base32 "0a7969q5cidlqix1cyg3xh4jjds8w1s1d69r97f0iy890mmdy42m"))))
     (properties `((upstream-name . "ReporterScore")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -37788,13 +37788,13 @@ objects from the Matrix package class hierarchy.")
 (define-public r-rcpa3
   (package
     (name "r-rcpa3")
-    (version "1.1.1")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RCPA3" version))
        (sha256
-        (base32 "0zq700g7gwnf3rw0zd4m4h0rhp10d4ar5fdxwzbkn708c2m4znxg"))))
+        (base32 "1xcrlnd41r9f7p4ql258hjh81alzah1p19pk9kady0ardp0xq1zz"))))
     (properties `((upstream-name . "RCPA3")))
     (build-system r-build-system)
     (propagated-inputs (list r-weights
@@ -37811,8 +37811,8 @@ objects from the Matrix package class hierarchy.")
      "Data and Functions for R Companion to Political Analysis 3rd Ed")
     (description
      "Bundles the datasets and functions featured in Philip H. Pollock and Barry C.
-Edwards (Forthcoming 2022)<https://edge.sagepub.com/pollock>, \"An R Companion to
-Political Analysis, 3rd Edition,\" Thousand Oaks, CA: Sage Publications.")
+Edwards<https://edge.sagepub.com/pollock>, \"An R Companion to Political
+Analysis, 3rd Edition,\" Thousand Oaks, CA: Sage Publications.")
     (license license:cc0)))
 
 (define-public r-rcpa
@@ -40470,13 +40470,13 @@ estimators, Wilcoxon sum rank test, and for data with multiple matched controls.
 (define-public r-rborist
   (package
     (name "r-rborist")
-    (version "0.3-5")
+    (version "0.3-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rborist" version))
        (sha256
-        (base32 "1g4apq4i104z8ahyn6kpkvncr0y7m7n29jg09dgfylvfcjp43krh"))))
+        (base32 "15i5aj7p3lwp7r84kv7i9jfhwbs8r1yn44shpm9gf17kwvwzw7h1"))))
     (properties `((upstream-name . "Rborist")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-digest r-data-table))

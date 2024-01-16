@@ -6019,13 +6019,13 @@ provides tools to check conditions and return informative error messages.")
 (define-public r-arkdb
   (package
     (name "r-arkdb")
-    (version "0.0.17")
+    (version "0.0.18")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arkdb" version))
        (sha256
-        (base32 "1kmbl12rz8zwbn0cxqfnzil9pnkni3z5jsyw0k3q00hhc54n0h59"))))
+        (base32 "1zq4nrxi7h265zs10ay95s95s56nkwxfzljvbglj03adsb1fxz6s"))))
     (properties `((upstream-name . "arkdb")))
     (build-system r-build-system)
     (propagated-inputs (list r-dbi))
@@ -6506,16 +6506,16 @@ interactively visualize Arena's results.")
 (define-public r-areaplot
   (package
     (name "r-areaplot")
-    (version "2.1.1")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "areaplot" version))
        (sha256
-        (base32 "11g8r5qccaynbism0imybkcyxs28sz6zm59d7xlkf7y3vppj2pcn"))))
+        (base32 "0xqrjihg3w6ri16yc1l8kb25pdmnspfhkgc48vxmm4h8l1b0plzs"))))
     (properties `((upstream-name . "areaplot")))
     (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=areaplot")
+    (home-page "https://github.com/arni-magnusson/areaplot")
     (synopsis "Plot Stacked Areas and Confidence Bands as Filled Polygons")
     (description
      "Plot stacked areas and confidence bands as filled polygons, or add polygons to
@@ -7298,6 +7298,30 @@ other utilities pertaining to geometry and Esri type conversions.  To support
 Installation instructions for arcgisbinding can be found at
 <https://r.esri.com/r-bridge-site/arcgisbinding/installing-arcgisbinding.html>.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
+(define-public r-arcgeocoder
+  (package
+    (name "r-arcgeocoder")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "arcgeocoder" version))
+       (sha256
+        (base32 "043nxarm7dc86ywzycp29j2qf3drgpnf0sxs4dmv9gw3p980g7k1"))))
+    (properties `((upstream-name . "arcgeocoder")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-jsonlite r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://dieghernan.github.io/arcgeocoder/")
+    (synopsis "Geocoding with the 'ArcGIS' REST API Service")
+    (description
+     "Lite interface for finding locations of addresses or businesses around the world
+using the @code{ArcGIS} REST API service
+<https://developers.arcgis.com/rest/geocode/api-reference/overview-world-geocoding-service.htm>.
+ Address text can be converted to location candidates and a location can be
+converted into an address.")
+    (license license:expat)))
 
 (define-public r-arcensreg
   (package
@@ -9273,26 +9297,30 @@ library.")
 (define-public r-aorsf
   (package
     (name "r-aorsf")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aorsf" version))
        (sha256
-        (base32 "1xrhd0p2m5bhm34kkm5v5j5fxflh7rdl2brap7j6qcg67s9fibls"))))
+        (base32 "0cr9rz6v5snabbjlvvb80gpyp007p4r7hdm71xf8dl2fdxprwbyn"))))
     (properties `((upstream-name . "aorsf")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-data-table r-collapse))
+    (propagated-inputs (list r-rcpparmadillo
+                             r-rcpp
+                             r-r6
+                             r-lifecycle
+                             r-data-table
+                             r-collapse))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ropensci/aorsf")
-    (synopsis "Accelerated Oblique Random Survival Forests")
+    (synopsis "Accelerated Oblique Random Forests")
     (description
-     "Fit, interpret, and make predictions with oblique random survival forests.
-Oblique decision trees are notoriously slow compared to their axis based
-counterparts, but aorsf runs as fast or faster than axis-based decision tree
-algorithms for right-censored time-to-event outcomes.  Methods to accelerate and
-interpret the oblique random survival forest are described in Jaeger et al.,
-(2023) <DOI:10.1080/10618600.2023.2231048>.")
+     "Fit, interpret, and compute predictions with oblique random forests.  Includes
+support for partial dependence, variable importance, passing customized
+functions for variable importance and identification of linear combinations of
+features.  Methods for the oblique random survival forest are described in
+Jaeger et al., (2023) <DOI:10.1080/10618600.2023.2231048>.")
     (license license:expat)))
 
 (define-public r-aoristic
@@ -16240,13 +16268,13 @@ reanalysis\"
 (define-public r-afttest
   (package
     (name "r-afttest")
-    (version "4.3.2.1")
+    (version "4.3.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "afttest" version))
        (sha256
-        (base32 "0ndy0hclrahrjb1rizz2z3z0mp44kr4jb6rv3m3n6nj5zrp0vmy8"))))
+        (base32 "03m8gxxc5m23hws3wsdcrvpq19zc1g6z8k9p0d40d5rqmbp9p4ir"))))
     (properties `((upstream-name . "afttest")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival

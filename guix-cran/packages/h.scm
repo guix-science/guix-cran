@@ -879,13 +879,13 @@ curves.")
 (define-public r-hydroloom
   (package
     (name "r-hydroloom")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hydroloom" version))
        (sha256
-        (base32 "0ygplrn9frjb7rs4yrlq2xrmpqx3ikp28fv7fy1sfh3kcfxihbmk"))))
+        (base32 "0hh8j9a3rkg81mp9als41rvvmwfclbwg92jx6rzy5fn2qvlxx36m"))))
     (properties `((upstream-name . "hydroloom")))
     (build-system r-build-system)
     (propagated-inputs (list r-units

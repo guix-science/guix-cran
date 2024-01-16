@@ -3989,13 +3989,13 @@ the model fit, test the model fit etc.).")
 (define-public r-csdata
   (package
     (name "r-csdata")
-    (version "2023.5.22")
+    (version "2023.12.22")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "csdata" version))
        (sha256
-        (base32 "0f0yc4kcfsbzssdlfhkk9n5v586f3jdgbyc1djf9nhlbn03nqbdq"))))
+        (base32 "13ddw1c0jsgq0dbpyql5n2sbmf253vc6r8niqi22v99d14y7x39x"))))
     (properties `((upstream-name . "csdata")))
     (build-system r-build-system)
     (propagated-inputs (list r-data-table))
@@ -4005,7 +4005,7 @@ the model fit, test the model fit etc.).")
     (description
      "Datasets relating to population in municipalities, municipality/county matching,
 and how different municipalities have merged/redistricted over time from 2006 to
-2020.")
+2024.")
     (license license:expat)))
 
 (define-public r-cscnet
@@ -13134,20 +13134,18 @@ goodness-of-fit.")
 (define-public r-coortweet
   (package
     (name "r-coortweet")
-    (version "1.5.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CooRTweet" version))
        (sha256
-        (base32 "0ws2fjvqnfx86776pbx23j8mbi02dvgm6fc4j7036h9qj6hqfbld"))))
+        (base32 "13ildn082x49d99rqc32l2bgp3x6g8lnx3r3vw279gmbk5i8svjj"))))
     (properties `((upstream-name . "CooRTweet")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidytable
-                             r-textreuse
                              r-stringi
                              r-rcppsimdjson
-                             r-matrix
                              r-lubridate
                              r-igraph
                              r-data-table))
@@ -13155,8 +13153,8 @@ goodness-of-fit.")
     (home-page "https://github.com/nicolarighetti/CooRTweet")
     (synopsis "Coordinated Networks Detection on Social Media")
     (description
-     "Detects a variety of coordinated actions on Twitter and outputs the network of
-coordinated users along with related information.")
+     "Detects a variety of coordinated actions on social media and outputs the network
+of coordinated users along with related information.")
     (license license:expat)))
 
 (define-public r-coordinatecleaner
@@ -16316,13 +16314,13 @@ incoming and outgoing ties to find positions.")
 (define-public r-concordancetest
   (package
     (name "r-concordancetest")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ConcordanceTest" version))
        (sha256
-        (base32 "1dmvfm3ng9hwalhhwc5qw215zcjd37vmxlf1gc88fhi0cmj2k9hg"))))
+        (base32 "09avmhmf286g64240l6anmnzyqfx8qa0p0m883hn0r43m63sc2rd"))))
     (properties `((upstream-name . "ConcordanceTest")))
     (build-system r-build-system)
     (propagated-inputs (list r-rglpk))
@@ -16332,8 +16330,10 @@ incoming and outgoing ties to find positions.")
     (description
      "The Concordance Test is a non-parametric method for testing whether two o more
 samples originate from the same distribution.  It extends the Kendall Tau
-correlation coefficient when there are only two groups.  For details, see Monge
-(2020) <@code{arXiv:1912.12880v2>}.")
+correlation coefficient when there are only two groups.  For details, see
+Alcaraz J., Anton-Sanchez L., Monge J.F. (2022) The Concordance Test, an
+Alternative to Kruskal-Wallis Based on the Kendall-tau Distance: An R Package.
+The R Journal 14, 26â53 <doi:10.32614/RJ-2022-039>.")
     (license license:gpl3)))
 
 (define-public r-concordancer
@@ -34031,41 +34031,6 @@ conducts conditional distance covariance test for conditional independence
 assumption of two multivariate variable.")
     (license license:gpl2+)))
 
-(define-public r-cdcfluview
-  (package
-    (name "r-cdcfluview")
-    (version "0.9.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cdcfluview" version))
-       (sha256
-        (base32 "1b8x66vf34hh8r1fdk16kwcmrzw34z64fvaax7ypiihc9xf1askp"))))
-    (properties `((upstream-name . "cdcfluview")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-units
-                             r-tibble
-                             r-sf
-                             r-readr
-                             r-purrr
-                             r-progress
-                             r-mmwrweek
-                             r-jsonlite
-                             r-httr
-                             r-dplyr))
-    (home-page "https://github.com/hrbrmstr/cdcfluview")
-    (synopsis
-     "Retrieve Flu Season Data from the United States Centers for Disease Control and Prevention ('CDC') 'FluView' Portal")
-    (description
-     "The U.S. Centers for Disease Control and Prevention (CDC) maintain a portal
-<https://gis.cdc.gov/grasp/fluview/fluportaldashboard.html> for accessing state,
-regional and national influenza statistics as well as mortality surveillance
-data.  The web interface makes it difficult and time-consuming to select and
-retrieve influenza data.  Tools are provided to access the data provided by the
-portal's underlying API'.")
-    (license license:expat)))
-
 (define-public r-cdcatr
   (package
     (name "r-cdcatr")
@@ -35492,13 +35457,13 @@ effects.")
 (define-public r-causalqueries
   (package
     (name "r-causalqueries")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CausalQueries" version))
        (sha256
-        (base32 "120247m3dfgwv71gg7hkrfw4yhdkk88c2qqvl2ri8hbp4w8k5gzg"))))
+        (base32 "07g5ij14a9h756wbzfmy4wyyk8k16kvjv7b1li2mbw14vcv0jd80"))))
     (properties `((upstream-name . "CausalQueries")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -35517,6 +35482,7 @@ effects.")
                              r-dirmult
                              r-dagitty
                              r-bh))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=CausalQueries")
     (synopsis "Make, Update, and Query Binary Causal Models")
     (description
@@ -35663,6 +35629,34 @@ each model are given with the standard error and a 95% Wald confidence interval
 (Hernan, Robins (2020)
 <https://www.hsph.harvard.edu/miguel-hernan/causal-inference-book/>).")
     (license license:gpl3)))
+
+(define-public r-causalmetar
+  (package
+    (name "r-causalmetar")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CausalMetaR" version))
+       (sha256
+        (base32 "0pkiprr64ixswm203jq483940j5p2aapbsmnzidb7hspr04adgnv"))))
+    (properties `((upstream-name . "CausalMetaR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-superlearner r-progress r-nnet r-metafor
+                             r-glmnet))
+    (home-page "https://github.com/ly129/CausalMetaR")
+    (synopsis "Causally Interpretable Meta-Analysis")
+    (description
+     "This package provides robust and efficient methods for estimating causal effects
+in a target population using a multi-source dataset, including those of Dahabreh
+et al. (2019) <doi:10.1111/biom.13716> and Robertson et al. (2021)
+<@code{arXiv:2104.05905>}.  The multi-source data can be a collection of trials,
+observational studies, or a combination of both, which have the same data
+structure (outcome, treatment, and covariates).  The target population can be
+based on an internal dataset or an external dataset where only covariate
+information is available.  The causal estimands available are average treatment
+effects and subgroup treatment effects.")
+    (license license:gpl3+)))
 
 (define-public r-causalmbsts
   (package

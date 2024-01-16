@@ -2390,24 +2390,24 @@ project homepage.")
 (define-public r-klassr
   (package
     (name "r-klassr")
-    (version "0.2.1")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "klassR" version))
        (sha256
-        (base32 "01d0gb5pascgv1h4fgcc0ndlrg7z4mv76bigmw0mixx92i9x61jk"))))
+        (base32 "0qq290c2n8diy3sgldw64bvsqsddfqpkb2cmqgdn9m6a0m3cg6s0"))))
     (properties `((upstream-name . "klassR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tm r-jsonlite r-httr))
-    (home-page "https://cran.r-project.org/package=klassR")
+    (home-page "https://statisticsnorway.github.io/klassR/")
     (synopsis "Classifications and Codelists for Statistics Norway")
     (description
      "This package provides functions to search, retrieve and apply classifications
 and codelists using Statistics Norway's API <https://www.ssb.no/klass> from the
 system KLASS'.  Retrieves classifications by date with options to choose
 language, hierarchical level and formatting.")
-    (license license:asl2.0)))
+    (license license:expat)))
 
 (define-public r-klar
   (package

@@ -18658,6 +18658,49 @@ information regarding the methodology see Meier, Mata & Wulff (2022)
 <@code{arXiv:2110.05856>}.")
     (license license:gpl3)))
 
+(define-public r-text2map
+  (package
+    (name "r-text2map")
+    (version "0.1.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "text2map" version))
+       (sha256
+        (base32 "1g3zb05qwhy5dax75cwb08jikd0fix119h60qhkgirc2qdkf10n7"))))
+    (properties `((upstream-name . "text2map")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-text2vec
+                             r-stringi
+                             r-rsvd
+                             r-rlang
+                             r-qgraph
+                             r-permute
+                             r-matrix
+                             r-kit
+                             r-igraph
+                             r-foreach
+                             r-fastmatch
+                             r-dplyr
+                             r-doparallel
+                             r-clusterr))
+    (home-page "https://gitlab.com/culturalcartography/text2map")
+    (synopsis "R Tools for Text Matrices, Embeddings, and Networks")
+    (description
+     "This is a collection of functions optimized for working with with various kinds
+of text matrices.  Focusing on the text matrix as the primary object -
+represented either as a base R dense matrix or a Matrix package sparse matrix -
+allows for a consistent and intuitive interface that stays close to the
+underlying mathematical foundation of computational text analysis.  In
+particular, the package includes functions for working with word embeddings,
+text networks, and document-term matrices.  Methods developed in Stoltz and
+Taylor (2019) <doi:10.1007/s42001-019-00048-6>, Taylor and Stoltz (2020)
+<doi:10.1007/s42001-020-00075-8>, Taylor and Stoltz (2020)
+<doi:10.15195/v7.a23>, and Stoltz and Taylor (2021)
+<doi:10.1016/j.poetic.2021.101567>.")
+    (license license:expat)))
+
 (define-public r-text-alignment
   (package
     (name "r-text-alignment")

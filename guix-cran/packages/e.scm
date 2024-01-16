@@ -10154,13 +10154,13 @@ Dalthorp and Huso (2015) <doi:10.3133/ofr20151227>.")
 (define-public r-envvar
   (package
     (name "r-envvar")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "envvar" version))
        (sha256
-        (base32 "0qj1aaxkvrjy6wyds38b956zfpp438pw0p4cw00h0i8ww9ljyrs4"))))
+        (base32 "161ncksw9l0fjf54i9yv8gfq5vggiv50sphfdc7ik7m3avdw1hqs"))))
     (properties `((upstream-name . "envvar")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-lubridate r-fs r-cli))

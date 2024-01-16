@@ -4032,13 +4032,13 @@ function with sample data sets.")
 (define-public r-ipsecr
   (package
     (name "r-ipsecr")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ipsecr" version))
        (sha256
-        (base32 "103qifpm0bgqqkx9r67h8bgd2i8nd05k90lflvxzcb8n6vfrzicv"))))
+        (base32 "10kliwx8rn4xrcrrmmmr0n2f01dynms5l9lk5xzbyr853x4am5bl"))))
     (properties `((upstream-name . "ipsecr")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -4409,13 +4409,13 @@ generated from the input data.")
 (define-public r-iperform
   (package
     (name "r-iperform")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iperform" version))
        (sha256
-        (base32 "0h2kp652dmwbzpq7f0hpg7fkny5hh8f57hvjs2h4p5dlm338yh27"))))
+        (base32 "0d54xd7aw5ipsgg4542k4b5gzysgsc76713jmq7kcd1djr56nk0v"))))
     (properties `((upstream-name . "iperform")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrixstats r-lubridate))
@@ -5972,13 +5972,13 @@ dimensions are provided.")
 (define-public r-intrinsic
   (package
     (name "r-intrinsic")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "intRinsic" version))
        (sha256
-        (base32 "0kx40w1228ppvvi3g54pw7552637azix809rpijqcfnps7p7kj1p"))))
+        (base32 "07hs1srvdzrqqqzzxkbrc10sns3i7nlp41b3ysaf1j03jgxwdyid"))))
     (properties `((upstream-name . "intRinsic")))
     (build-system r-build-system)
     (propagated-inputs (list r-salso
@@ -5986,7 +5986,6 @@ dimensions are provided.")
                              r-reshape2
                              r-rcpparmadillo
                              r-rcpp
-                             r-mcmcpack
                              r-latex2exp
                              r-knitr
                              r-ggplot2
@@ -14796,13 +14795,13 @@ financial-economic time series data.")
 (define-public r-ichimoku
   (package
     (name "r-ichimoku")
-    (version "1.4.12")
+    (version "1.4.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ichimoku" version))
        (sha256
-        (base32 "0nv0gfff38x254x1adlbwwfrjb6ws2f2yvinybc62gghaq947hry"))))
+        (base32 "1jk9pny05x6zpxnn735kiggljp0mgrjjj8m7xq2ng16bi52gdvpf"))))
     (properties `((upstream-name . "ichimoku")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

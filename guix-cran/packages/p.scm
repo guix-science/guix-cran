@@ -2649,13 +2649,13 @@ text').")
 (define-public r-psychtools
   (package
     (name "r-psychtools")
-    (version "2.3.12")
+    (version "2.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psychTools" version))
        (sha256
-        (base32 "18yxmy3j2qipdynrbyc76r1q3nm9f15jvk5aakqkq79w6rflp8br"))))
+        (base32 "0fh5h5srchr886inigjvn5hb7hv17h0jdn99mi2cs5bp8paislmn"))))
     (properties `((upstream-name . "psychTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-psych r-foreign))
@@ -3644,6 +3644,32 @@ minimum test.  For details on this method see: Sulewski (2017)
 <doi:10.2478/bile-2019-0003>, Sulewski (2021)
 <doi:10.1080/00949655.2021.1908286>.")
     (license license:gpl3)))
+
+(define-public r-psidread
+  (package
+    (name "r-psidread")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "psidread" version))
+       (sha256
+        (base32 "0y7kp0hw9pg7hq40a1xh053aw8s2x494vbv1vjicrp48fybasldz"))))
+    (properties `((upstream-name . "psidread")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-stringr r-dplyr r-asciisetupreader))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Qcrates/psidread")
+    (synopsis
+     "Streamline Building Panel Data from Panel Study of Income Dynamics ('PSID') Raw Files")
+    (description
+     "Streamline the management, creation, and formatting of panel data from the Panel
+Study of Income Dynamics ('PSID') <https://psidonline.isr.umich.edu> using this
+user-friendly tool.  Simply define variable names and input code book details
+directly from the PSID official website, and this toolbox will efficiently
+facilitate the data preparation process, transforming raw PSID files into a
+well-organized format ready for further analysis.")
+    (license license:gpl3+)))
 
 (define-public r-psidr
   (package
@@ -11615,13 +11641,13 @@ logistic regression for nested case-control study.")
 (define-public r-powersdi
   (package
     (name "r-powersdi")
-    (version "0.1.3")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PowerSDI" version))
        (sha256
-        (base32 "127pvjyflhyfpvchbwp4hcnk2grvk5xr2m588ysib07nhy37ka0p"))))
+        (base32 "01r91awxmjm69sr405s11gp16ajsmqc6jmd2ilhmdy3vcw1vc70p"))))
     (properties `((upstream-name . "PowerSDI")))
     (build-system r-build-system)
     (propagated-inputs (list r-nasapower r-lubridate r-lmom))
@@ -13081,13 +13107,13 @@ forecast package, Hyndman RJ, Khandakar Y (2008) <doi:10.18637/jss.v027.i03>.")
 (define-public r-port4me
   (package
     (name "r-port4me")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "port4me" version))
        (sha256
-        (base32 "10sg3r43jccxj4k1wfdbv3fr0080c65kmigsg3shch4pfwyhr1dz"))))
+        (base32 "1xrwp0vy4317nxinsy6x8xh6l8pri27dj9s503fysh5p67y78q8f"))))
     (properties `((upstream-name . "port4me")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -13353,13 +13379,13 @@ pyramids.")
 (define-public r-poppr
   (package
     (name "r-poppr")
-    (version "2.9.4")
+    (version "2.9.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "poppr" version))
        (sha256
-        (base32 "14a756dx82l19bswrjq8v64v9py4mqf039y9gw5xrkr13p9jiy56"))))
+        (base32 "0mn6ksvcvf213swxpx0b7zqb00pxqpawmlzzcdvq6fckfkbnn8x6"))))
     (properties `((upstream-name . "poppr")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan

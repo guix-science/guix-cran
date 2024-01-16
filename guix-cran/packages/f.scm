@@ -13765,13 +13765,13 @@ equations (Smalian, Newton and Huber) as well stacking factor and form")
 (define-public r-fhmm
   (package
     (name "r-fhmm")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fHMM" version))
        (sha256
-        (base32 "1i7vmsnvpi05hn9an8babhl2b06wyp24c1l1fr2zjymqwalhwqn3"))))
+        (base32 "0vh9p6kxgysnzq0181xj2c2yh6mrrpiml2r1x16b4aq81nl2nizs"))))
     (properties `((upstream-name . "fHMM")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
@@ -17557,13 +17557,13 @@ README file: <https://github.com/fastverse/fastverse#suggested-extensions>.")
 (define-public r-fasttopics
   (package
     (name "r-fasttopics")
-    (version "0.6-142")
+    (version "0.6-163")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastTopics" version))
        (sha256
-        (base32 "0fchwd54dn6abw5z8wk4wcysn9amjxmkayz8wzl3nwfr0ldjkc67"))))
+        (base32 "1nir53ich0xkpclrw34ry4mwih9s4vr7qv8xy6511ny43awznikm"))))
     (properties `((upstream-name . "fastTopics")))
     (build-system r-build-system)
     (propagated-inputs (list r-uwot
@@ -17575,10 +17575,10 @@ README file: <https://github.com/fastverse/fastverse#suggested-extensions>.")
                              r-progress
                              r-plotly
                              r-pbapply
-                             r-mcmcpack
                              r-matrix
                              r-irlba
                              r-htmlwidgets
+                             r-gtools
                              r-ggrepel
                              r-ggplot2
                              r-dplyr
@@ -17596,7 +17596,9 @@ multinomial topic model (also, \"probabilistic latent semantic indexing\") and
 Poisson non-negative matrix factorization.  The package provides tools to
 compare, annotate and visualize model fits, including functions to efficiently
 create \"structure plots\" and identify key features in topics.  The
-@code{fastTopics} package is a successor to the @code{CountClust} package.")
+@code{fastTopics} package is a successor to the @code{CountClust} package.  Note
+that the @code{fastTopicis} package on @code{GitHub} has more vignettes
+illustrating application to single-cell RNA-seq data.")
     (license license:bsd-2)))
 
 (define-public r-fasttime

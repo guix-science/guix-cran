@@ -9750,20 +9750,19 @@ Aerobic Plate Count (APC) for similar microbial enumeration experiments.")
 (define-public r-mpmsim
   (package
     (name "r-mpmsim")
-    (version "1.1.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mpmsim" version))
        (sha256
-        (base32 "1ya15dx58nnid2p56w6fk5syjg5v7hgnkjq50hazgi153iwzdr6c"))))
+        (base32 "040zbjp95yvl3zwiixjd93yzqgzny8qyy8dyrjfp8rqcr9i8g3q1"))))
     (properties `((upstream-name . "mpmsim")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape
                              r-rcompadre
                              r-popdemo
                              r-popbio
-                             r-mcmcpack
                              r-ggplot2
                              r-dplyr))
     (native-inputs (list r-knitr))
@@ -10093,13 +10092,13 @@ Perakis (2002) and Wang (2005).  Two datasets are included.")
 (define-public r-mpboost
   (package
     (name "r-mpboost")
-    (version "0.1-5")
+    (version "0.1-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MPBoost" version))
        (sha256
-        (base32 "13ijn48dg20kz0zwr0f0vp4162dv9hqnmnzzbdp30nhh0bqdbk4k"))))
+        (base32 "0fi8hx271893dak7whlcxyafqslnqj9kih3jk801s8lwg8g5zvp1"))))
     (properties `((upstream-name . "MPBoost")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-bh))
@@ -10951,6 +10950,37 @@ period life table, cohort life tables using an age shift, and merged life
 tables.  Additionally, several data sets from various countries are included to
 provide widely-used tables out of the box.")
     (license license:gpl2+)))
+
+(define-public r-mortalitylaws
+  (package
+    (name "r-mortalitylaws")
+    (version "2.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MortalityLaws" version))
+       (sha256
+        (base32 "1jczy0brmma71cn2xhhnl1g2k9nr6l3zf5zw6bvwn10l1gid4908"))))
+    (properties `((upstream-name . "MortalityLaws")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-rvest
+                             r-rcurl
+                             r-pbapply
+                             r-minpack-lm
+                             r-httr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mpascariu/MortalityLaws")
+    (synopsis "Parametric Mortality Models, Life Tables and HMD")
+    (description
+     "Fit the most popular human mortality laws', and construct full and abridge life
+tables given various input indices.  A mortality law is a parametric function
+that describes the dying-out process of individuals in a population during a
+significant portion of their life spans.  For a comprehensive review of the most
+important mortality laws see Tabeau (2001) <doi:10.1007/0-306-47562-6_1>.
+Practical functions for downloading data from various human mortality databases
+are provided as well.")
+    (license license:expat)))
 
 (define-public r-mortalitygaps
   (package

@@ -12382,16 +12382,17 @@ stability for models that may fail to converge using glm.")
 (define-public r-glm-predict
   (package
     (name "r-glm-predict")
-    (version "4.2-0")
+    (version "4.3-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glm.predict" version))
        (sha256
-        (base32 "1696zjn6mqxvvzvbg282p2rxy2r81v46gx1vv0hxkphcrarv4dxs"))))
+        (base32 "18cs6z6573vq8sdjb4kgz8kahizs9njdbip4cm1dk63ldjjrl0kf"))))
     (properties `((upstream-name . "glm.predict")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survival
+    (propagated-inputs (list r-vgam
+                             r-survival
                              r-survey
                              r-nnet
                              r-mlogit
@@ -12399,17 +12400,18 @@ stability for models that may fail to converge using glm.")
                              r-lme4
                              r-dfidx
                              r-aer))
-    (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://benjaminschlegel.ch/r/glm-predict/")
-    (synopsis "Predicted Values and Discrete Changes for GLM")
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/benjaminschlegel/glm.predict/")
+    (synopsis "Predicted Values and Discrete Changes for Regression Models")
     (description
      "This package provides functions to calculate predicted values and the difference
 between the two cases with confidence interval for lm() [linear model], glm()
-[generalised linear model], glm.nb() [negative binomial model], polr() [ordinal
-logistic model], multinom() [multinomial model] and tobit() [tobit model],
-svyglm() [survey-weighted generalised linear models], lmer() [linear multilevel
-models] using Monte Carlo simulations or bootstrap.  Reference: Bennet A. Zelner
-(2009) <doi:10.1002/smj.783>.")
+[generalized linear model], glm.nb() [negative binomial model], polr() [ordinal
+logistic model], vglm() [generalized ordinal logistic model],	multinom()
+[multinomial model], tobit() [tobit model], svyglm() [survey-weighted
+generalised linear models] and lmer() [linear multilevel models] using Monte
+Carlo simulations or bootstrap.  Reference: Bennet A. Zelner (2009)
+<doi:10.1002/smj.783>.")
     (license license:gpl2+)))
 
 (define-public r-glm-deploy
@@ -15786,17 +15788,18 @@ visualisation of mapped data.")
 (define-public r-ggquickeda
   (package
     (name "r-ggquickeda")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggquickeda" version))
        (sha256
-        (base32 "0kqsyfmfsgqlca3p4f64sd5d7v7yzz02qvba31z5lj0sr267npmx"))))
+        (base32 "00m4qf51q40aknb20mj08n8s2fpym3qfcbcb37mpm2pdbsqgrzan"))))
     (properties `((upstream-name . "ggquickeda")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
                              r-tidyr
+                             r-tibble
                              r-table1
                              r-survminer
                              r-survival
@@ -15807,21 +15810,29 @@ visualisation of mapped data.")
                              r-shiny
                              r-scales
                              r-rpostgres
+                             r-rms
                              r-rlang
                              r-quantreg
                              r-plotly
+                             r-patchwork
                              r-markdown
                              r-hmisc
                              r-gridextra
+                             r-glue
+                             r-ggstance
+                             r-ggridges
                              r-ggrepel
                              r-ggpubr
                              r-ggpmisc
                              r-ggplot2
+                             r-ggh4x
                              r-ggbeeswarm
                              r-ggally
                              r-formula
+                             r-forcats
                              r-dt
                              r-dplyr
+                             r-data-table
                              r-colourpicker))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/smouksassi/ggquickeda")
@@ -16523,13 +16534,13 @@ easily use the Okabe-Ito palette in your data visualizations.")
 (define-public r-ggoceanmaps
   (package
     (name "r-ggoceanmaps")
-    (version "2.1.1")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggOceanMaps" version))
        (sha256
-        (base32 "1sshlsb91x6j4iyhbvdpps8lp4p9kxfdb79v0incnh4l8p48hqzk"))))
+        (base32 "1wrr92srwrg7fx0iz4qnmn89mhhwfbrx5z2rk8vfy3clh8i65x23"))))
     (properties `((upstream-name . "ggOceanMaps")))
     (build-system r-build-system)
     (propagated-inputs (list r-units r-stars r-smoothr r-sf r-ggplot2))
@@ -20670,6 +20681,33 @@ Finally, facilities to import and export geometry vectors to other spatial
 formats are provided.")
     (license license:expat)))
 
+(define-public r-georefdatar
+  (package
+    (name "r-georefdatar")
+    (version "0.6.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "georefdatar" version))
+       (sha256
+        (base32 "1cqdl4zskgxjb1s29ka6q6wk7kpvrapjl40q5pfjwxh16b3bfdbh"))))
+    (properties `((upstream-name . "georefdatar")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rdpack))
+    (home-page "https://github.com/abuseki/georefdatar")
+    (synopsis "Geosciences Reference Datasets")
+    (description
+     "Reference datasets commonly used in the geosciences.  These include standard
+atomic weights of the elements, a periodic table, a list of minerals including
+their abbreviations and chemistry, geochemical data of reservoirs (primitive
+mantle, continental crust, mantle, basalts, etc.), decay constants and isotopic
+ratios frequently used in geochronology, color codes of the chronostratigraphic
+chart.  In addition, the package provides functions for basic queries of atomic
+weights, the list of minerals, and chronostratigraphic chart colors.  All
+datasets are fully referenced, and a @code{BibTeX} file containing the
+references is included.")
+    (license license:expat)))
+
 (define-public r-georange
   (package
     (name "r-georange")
@@ -21004,13 +21042,13 @@ Kriging technique.")
 (define-public r-geometries
   (package
     (name "r-geometries")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geometries" version))
        (sha256
-        (base32 "0xwyiaqxbf35myw0m017sfd8b4wzwnvmx35k2rv1kqwbp6sxfbv4"))))
+        (base32 "040ljxmzbjdr76p81ygnn5y0gzckz5k2arxkih5m5f3b6g62laf6"))))
     (properties `((upstream-name . "geometries")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))

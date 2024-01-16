@@ -14289,13 +14289,13 @@ autoregression methods.")
 (define-public r-ssn2
   (package
     (name "r-ssn2")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SSN2" version))
        (sha256
-        (base32 "1r9izkcib7a4l1sq611ily82zncl01r4yr43cr8blffldsyvpl1f"))))
+        (base32 "0j3523fc5ilh5z3dmml5fqxgnjykm7qqlfvzb0ay8p60l43aybss"))))
     (properties `((upstream-name . "SSN2")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -30906,13 +30906,13 @@ Course in Methods of Data Analysis (2nd ed)\", Duxbury.")
 (define-public r-slendr
   (package
     (name "r-slendr")
-    (version "0.8.0")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "slendr" version))
        (sha256
-        (base32 "03zr1s49m630rsw6klr85wk4pfxi72czlhr7plp7jzrf4x06mqq9"))))
+        (base32 "0k9rs5pwsh172kklzrhbrwxhhjrllsyg3sf0g3kgvd1i8m8nd2x7"))))
     (properties `((upstream-name . "slendr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -34019,13 +34019,13 @@ generated using various mechanisms (MCAR, MAR, NMAR).")
 (define-public r-simstatespace
   (package
     (name "r-simstatespace")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simStateSpace" version))
        (sha256
-        (base32 "1xxacb6r1zx15lybixbd8188kcyw4gzh677pn9sfhzsq6hkkd4g3"))))
+        (base32 "16vq6lbzwga5mj3xzdxfcvnhjc8dg92w08rvfg81yg09g8mg7b6b"))))
     (properties `((upstream-name . "simStateSpace")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -41533,6 +41533,28 @@ This @code{ShiftConvolvePoiBin} method is described in Peres, Lee and Keich
 the fastest implementations for exactly computing the entire Poisson-Binomial
 distribution.")
     (license license:gpl2+)))
+
+(define-public r-shide
+  (package
+    (name "r-shide")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "shide" version))
+       (sha256
+        (base32 "0iqx6g0a3a5spa6cg1m20xw2xqapw6jsbzjhc0q7lxywi8qvivwp"))))
+    (properties `((upstream-name . "shide")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs r-tzdb r-rlang r-cpp11))
+    (home-page "https://github.com/mmollayi/shide")
+    (synopsis "Date/Time Classes Based on Jalali Calendar")
+    (description
+     "This package implements S3 classes for storing dates and date-times based on the
+Jalali calendar.  The main design goal of shide is consistency with base R's
+Date and POSIXct'.  It provide features such as: date-time parsing, formatting
+and arithmetic.")
+    (license license:expat)))
 
 (define-public r-shidashi
   (package

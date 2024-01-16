@@ -3013,13 +3013,13 @@ for their interviews.")
 (define-public r-novelforestsg
   (package
     (name "r-novelforestsg")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "novelforestSG" version))
        (sha256
-        (base32 "0mpf645gimahn1sayminas2fam839s8v05g8qkxjywr4gdq5wflz"))))
+        (base32 "17xjcpb1chvclqwjc3948lf4n730s91hczdb73b5b620w276mdz2"))))
     (properties `((upstream-name . "novelforestSG")))
     (build-system r-build-system)
     (home-page "https://hrlai.github.io/novelforestSG/")
@@ -14382,13 +14382,13 @@ and the Earth Observatory Natural Event Tracker (EONET) webservice.")
 (define-public r-naryn
   (package
     (name "r-naryn")
-    (version "2.6.25")
+    (version "2.6.26")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "naryn" version))
        (sha256
-        (base32 "0ppjiill81j6x28f35apb6pgncfvjwnn4i183drcqqsjn4ys9ghr"))))
+        (base32 "0v41cmmg19w2rfyndxzsv3k9h1clfc0p2py3mq47zl79qv79vqbr"))))
     (properties `((upstream-name . "naryn")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml

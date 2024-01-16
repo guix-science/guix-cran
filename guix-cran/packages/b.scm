@@ -4879,13 +4879,13 @@ being the hazard ratio.")
 (define-public r-bpnreg
   (package
     (name "r-bpnreg")
-    (version "2.0.2")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bpnreg" version))
        (sha256
-        (base32 "1acf7smlcg8b29ga47wpb23zpfb90iz19fjc5v0zppc8q20lgggl"))))
+        (base32 "1yy1rbbnqjrz0dkpvwi49432ddpjbql0vrpwvhzv9qzpv8ydvlw4"))))
     (properties `((upstream-name . "bpnreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-haven r-bh))
@@ -5607,6 +5607,33 @@ Simonoff (2021), \"On the Use of Information Criteria for Subset Selection in
 Least Squares Regression\", <@code{arXiv:1911.10191>}.")
     (license license:gpl2+)))
 
+(define-public r-bossr
+  (package
+    (name "r-bossr")
+    (version "1.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bossR" version))
+       (sha256
+        (base32 "04m0pbs5ywmq5yf1xq5skay7fsvvh7mlc9ks0z6wl7pg9ibwrxkf"))))
+    (properties `((upstream-name . "bossR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival r-mvtnorm))
+    (home-page "https://cran.r-project.org/package=bossR")
+    (synopsis "Biomarker Optimal Segmentation System")
+    (description
+     "The Biomarker Optimal Segmentation System R package, @code{bossR}', is designed
+for precision medicine, helping to identify individual traits using biomarkers.
+It focuses on determining the most effective cutoff value for a continuous
+biomarker, which is crucial for categorizing patients into two groups with
+distinctly different clinical outcomes.  The package simultaneously finds the
+optimal cutoff from given candidate values and tests its significance.
+Simulation studies demonstrate that @code{bossR} offers statistical power and
+false positive control non-inferior to the permutation approach (considered the
+gold standard in this field), while being hundreds of times faster.")
+    (license license:gpl3)))
+
 (define-public r-bossa
   (package
     (name "r-bossa")
@@ -6236,13 +6263,13 @@ modelling and multivariate normal distribution.")
 (define-public r-bootct
   (package
     (name "r-bootct")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bootCT" version))
        (sha256
-        (base32 "0dpr5l7hpdm06qh02wjlffc2js0k7pk9bkypml0zac8wxxc2c6g6"))))
+        (base32 "1025n0rxvjsyqwba3y4frjhpfqila70p43pk4p4rf9fhxcs4xg6m"))))
     (properties `((upstream-name . "bootCT")))
     (build-system r-build-system)
     (propagated-inputs (list r-vars
@@ -6258,6 +6285,7 @@ modelling and multivariate normal distribution.")
                              r-dplyr
                              r-ardl
                              r-aod))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=bootCT")
     (synopsis "Bootstrapping the ARDL Tests for Cointegration")
     (description
@@ -21398,13 +21426,13 @@ selection.  Marginal likelihood is approximated by methods in Chib S (1995)
 (define-public r-bayesmallows
   (package
     (name "r-bayesmallows")
-    (version "1.5.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesMallows" version))
        (sha256
-        (base32 "07bwfz1ja3cqlpsxplv2xkm99z0xcpdaa4b3lifgds8sigi1kpfl"))))
+        (base32 "1jmn79a66z1d7a25g86awzdn0vspml2nkvbgv9k70m89jy5727z6"))))
     (properties `((upstream-name . "BayesMallows")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat
@@ -21415,10 +21443,8 @@ selection.  Marginal likelihood is approximated by methods in Chib S (1995)
                              r-rcpparmadillo
                              r-rcpp
                              r-igraph
-                             r-hdinterval
-                             r-ggplot2
-                             r-cowplot))
-    (native-inputs (list r-r-rsp r-knitr))
+                             r-ggplot2))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/ocbe-uio/BayesMallows")
     (synopsis "Bayesian Preference Learning with the Mallows Rank Model")
     (description
@@ -26355,4 +26381,29 @@ setting up command line usage.")
      "Included here are babel routines for identifying unusual ribosome protected
 fragment counts given @code{mRNA} counts.")
     (license license:lgpl2.1+)))
+
+(define-public r-b64
+  (package
+    (name "r-b64")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "b64" version))
+       (sha256
+        (base32 "1zj5zfd5dpzmzzkh2x51qpdfl1dzbimsd83fp8fsr6yh66c66xzq"))))
+    (properties `((upstream-name . "b64")))
+    (build-system r-build-system)
+    (inputs (list))
+    (propagated-inputs (list r-rlang r-cli r-blob))
+    (home-page "https://cran.r-project.org/package=b64")
+    (synopsis "Fast and Vectorized Base 64 Engine")
+    (description
+     "This package provides a fast, lightweight, and vectorized base 64 engine to
+encode and decode character and raw vectors as well as files stored on disk.
+Common base 64 alphabets are supported out of the box including the standard,
+URL-safe, bcrypt, crypt, @code{BinHex}', and IMAP-modified UTF-7 alphabets.
+Custom engines can be created to support unique base 64 encoding and decoding
+needs.")
+    (license license:expat)))
 

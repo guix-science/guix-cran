@@ -2744,13 +2744,13 @@ information on dtangle see Hunt et al. (2019)
 (define-public r-dswe
   (package
     (name "r-dswe")
-    (version "1.6.3")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DSWE" version))
        (sha256
-        (base32 "1ch5svipjbwly1l29kp1jd1g4y6jkxl25095f038pzs0gcjxjb1h"))))
+        (base32 "04vgfwlz4m1j3931p5lw48xhdwjlw9nk5w3ah9yznylzm8vpbxmi"))))
     (properties `((upstream-name . "DSWE")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
@@ -2761,8 +2761,7 @@ information on dtangle see Hunt et al. (2019)
                              r-gss
                              r-fnn
                              r-e1071
-                             r-dplyr
-                             r-bayestree))
+                             r-dplyr))
     (home-page "https://github.com/TAMU-AML/DSWE-Package")
     (synopsis "Data Science for Wind Energy")
     (description
@@ -13726,16 +13725,17 @@ processing for reading and saving DICOM images.")
 (define-public r-diceview
   (package
     (name "r-diceview")
-    (version "2.1-0")
+    (version "2.2-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DiceView" version))
        (sha256
-        (base32 "1b0sx9ww42211kg0ghja8l8iqxlyqv57nzwnvnww1d2hbwr77ybp"))))
+        (base32 "1a7jlj7nmj41zfmpb54iwi8c9g44d376cc353ybr8dq8vkyq0vss"))))
     (properties `((upstream-name . "DiceView")))
     (build-system r-build-system)
-    (propagated-inputs (list r-scatterplot3d r-r-cache r-geometry r-dicedesign))
+    (propagated-inputs (list r-scatterplot3d r-r-cache r-geometry r-foreach
+                             r-dicedesign))
     (home-page "https://github.com/IRSN/DiceView")
     (synopsis
      "Methods for Visualization of Computer Experiments Design and Surrogate")
@@ -23076,13 +23076,13 @@ articles.  Including, for example: - de Carvalho (2012)
 (define-public r-datastreamdsws2r
   (package
     (name "r-datastreamdsws2r")
-    (version "1.8.2")
+    (version "1.9.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DatastreamDSWS2R" version))
        (sha256
-        (base32 "018733gm5z90qhbci6khxx27pn074si176mwnlq53bd6r722jiwm"))))
+        (base32 "117ahby12i6w93rk41f4cg0v179nk3gr73729v1iclkagizi8hpp"))))
     (properties `((upstream-name . "DatastreamDSWS2R")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -23100,8 +23100,8 @@ articles.  Including, for example: - de Carvalho (2012)
      "This package provides a set of functions and a class to connect, extract and
 upload information from the Refinitiv Datastream database.  This package uses
 the DSWS API and server used by the Datastream DFO addin'.  Details of this API
-are available at <https://www.refinitiv.com/en>.  Please report issues at
-<https://github.com/@code{CharlesCara/DatastreamDSWS2R/issues>}.")
+are available at <https://www.lseg.com/en/data-analytics>.  Please report issues
+at <https://github.com/@code{CharlesCara/DatastreamDSWS2R/issues>}.")
     (license license:gpl3)))
 
 (define-public r-datastepr
