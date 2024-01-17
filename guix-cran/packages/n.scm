@@ -3201,13 +3201,13 @@ continuity correction and to identify the presence of Simpson's paradox.")
 (define-public r-nortstest
   (package
     (name "r-nortstest")
-    (version "1.0.3")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nortsTest" version))
        (sha256
-        (base32 "0wn4xljczy4z9j95mxisi7gyn2j262zzhp2skz4wj8c5kxj1pc6g"))))
+        (base32 "17z7wy0anvj14wxq03bnvswg75527xjn1xpzijs1wgymfjc50a7l"))))
     (properties `((upstream-name . "nortsTest")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -3223,12 +3223,15 @@ continuity correction and to identify the presence of Simpson's paradox.")
     (description
      "Despite that several tests for normality in stationary processes have been
 proposed in the literature, consistent implementations of these tests in
-programming languages are limited.  Four normality test are implemented.  The
-Lobato and Velasco's, Epps, Psaradakis and Vavra, and the random projections
-tests for stationary process.  Some other diagnostics such as, unit root test
-for stationarity, seasonal tests for seasonality, and arch effect test for
-volatility; are also performed.  The package also offers residual diagnostic for
-linear time series models developed in several packages.")
+programming languages are limited.  Seven normality test are implemented.  The
+asymptotic Lobato & Velasco's, asymptotic Epps, Psaradakis and VÃ¡vra, Lobato &
+Velasco's and Epps sieve bootstrap approximations, El bouch et al., and the
+random projections tests for univariate stationary process.  Some other
+diagnostics such as, unit root test for stationarity, seasonal tests for
+seasonality, and arch effect test for volatility; are also performed.
+Additionally, the El bouch test performs normality tests for bivariate time
+series.  The package also offers residual diagnostic for linear time series
+models developed in several packages.")
     (license license:gpl2)))
 
 (define-public r-nortestarma
@@ -8510,6 +8513,35 @@ and Shiny applications.  It includes a set of API functions to manipulate the
 viewer after creation in Shiny.")
     (license license:expat)))
 
+(define-public r-ngchm
+  (package
+    (name "r-ngchm")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NGCHM" version))
+       (sha256
+        (base32 "12n15ja1r1vj9znf8rlp1xmknh3ma36557vvp6mxcv5vf4fwpzd3"))))
+    (properties `((upstream-name . "NGCHM")))
+    (build-system r-build-system)
+    (inputs (list))
+    (propagated-inputs (list r-tsvio
+                             r-logger
+                             r-jsonlite
+                             r-httr
+                             r-htmltools
+                             r-digest))
+    (home-page "https://md-anderson-bioinformatics.github.io/NGCHM-R/")
+    (synopsis "Next Generation Clustered Heat Maps")
+    (description
+     "Next-Generation Clustered Heat Maps (NG-CHMs) allow for dynamic exploration of
+heat map data in a web browser.  NGCHM allows users to create both stand-alone
+HTML files containing a Next-Generation Clustered Heat Map, and .ngchm files to
+view in the NG-CHM viewer.  See Ryan MC, Stucky M, et al (2020)
+<doi:10.12688/f1000research.20590.2> for more details.")
+    (license license:gpl3)))
+
 (define-public r-ngbvs
   (package
     (name "r-ngbvs")
@@ -11985,6 +12017,37 @@ user interface for downloading and storing NEON data products.  Unlike
 persistent storage, and improves performance.  neonstore can also construct a
 local duckdb database of stacked tables, making it possible to work with tables
 that are far to big to fit into memory.")
+    (license license:expat)))
+
+(define-public r-neonplantecology
+  (package
+    (name "r-neonplantecology")
+    (version "1.3.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "neonPlantEcology" version))
+       (sha256
+        (base32 "1q8cc62vd08jhnsbbijmz369r3fp2chh8kjiim560rj6r0dgpqxv"))))
+    (properties `((upstream-name . "neonPlantEcology")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vegan
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-sf
+                             r-neonutilities
+                             r-ggpubr
+                             r-ggplot2
+                             r-dtplyr
+                             r-dplyr
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/admahood/neonPlantEcology")
+    (synopsis "Process NEON Plant Data for Ecological Analysis")
+    (description
+     "Downloading and organizing plant presence and percent cover data from the
+National Ecological Observatory Network <https://www.neonscience.org>.")
     (license license:expat)))
 
 (define-public r-neonos

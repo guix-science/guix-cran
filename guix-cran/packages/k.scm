@@ -247,16 +247,16 @@ sequences of matrices.")
 (define-public r-ktaucenters
   (package
     (name "r-ktaucenters")
-    (version "0.1.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ktaucenters" version))
        (sha256
-        (base32 "15ddjr4c90b5hc4977gk35zb2kswrcvai3xighy7qj6g9lgiszgf"))))
+        (base32 "0sk3chvwm9p2cph87qd9pcnllzrxdzbdfqgcdikkw9x8g0rix86j"))))
     (properties `((upstream-name . "ktaucenters")))
     (build-system r-build-system)
-    (propagated-inputs (list r-mass r-gse r-dplyr r-dbscan))
+    (propagated-inputs (list r-rcpp r-mass r-gse))
     (home-page "https://cran.r-project.org/package=ktaucenters")
     (synopsis "Robust Clustering Procedures")
     (description
@@ -264,7 +264,7 @@ sequences of matrices.")
 it has two main advantages, namely (a) The estimator is resistant to outliers,
 that means that results of estimator are still correct when there are atypical
 values in the sample and (b) The estimator is efficient, roughly speaking, if
-there are no outliers in the sample, results will be similar than those obtained
+there are no outliers in the sample, results will be similar to those obtained
 by a classic algorithm (K-Means).  Clustering procedure is carried out by
 minimizing the overall robust scale so-called tau scale. (see Gonzalez, Yohai
 and Zamar (2019) <arxiv:1906.08198>).")

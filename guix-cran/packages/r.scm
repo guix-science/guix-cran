@@ -12,6 +12,7 @@
   #:use-module (gnu packages java)
   #:use-module (gnu packages image)
   #:use-module (gnu packages bioconductor)
+  #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages web)
   #:use-module (gnu packages cmake)
@@ -26,6 +27,7 @@
   #:use-module (gnu packages c)
   #:use-module (gnu packages llvm)
   #:use-module (gnu packages geo)
+  #:use-module (gnu packages python-science)
   #:use-module (gnu packages databases)
   #:use-module (gnu packages pcre)
   #:use-module (gnu packages documentation)
@@ -3316,7 +3318,7 @@ rate and optimum temperature.  See Padfield et al. (2021)
         (base32 "03a9vls09mgd77xm1q1h1pqw4q026rdibbjr218706h4iqphrqm7"))))
     (properties `((upstream-name . "rTorch")))
     (build-system r-build-system)
-    (inputs (list))
+    (inputs (list python-pytorch))
     (propagated-inputs (list r-rstudioapi r-reticulate r-jsonlite))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/f0nzie/rTorch")
@@ -8568,13 +8570,13 @@ and Generalized Linear Mixed Models (GLMMs).  See details in Ives 2018
 (define-public r-rr
   (package
     (name "r-rr")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rr" version))
        (sha256
-        (base32 "0l5ndcpnd3ib83vwh5bs83nvjr4in3v2kbqq8q4y9x90nrxaz901"))))
+        (base32 "1xzyys6hjh01iy66a63sxda502pr4jr79pz0kcml9vgaqwf16bdp"))))
     (properties `((upstream-name . "rr")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-magic r-coda r-arm))
@@ -13732,6 +13734,28 @@ machine learning theory, and can effectively circumvent biases and misleading
 results caused by influential outliers.  The density power divergence is
 originally introduced by Basu et al. (1998) <doi:10.1093/biomet/85.3.549>, and
 the meta-analysis methods are developed by Noma et al. (2022) <forthcoming>.")
+    (license license:gpl3)))
+
+(define-public r-robustmatrix
+  (package
+    (name "r-robustmatrix")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "robustmatrix" version))
+       (sha256
+        (base32 "0x804m2pqjhqh7ld8zwdz3pk7c43wrw7d8avwagh2wc40s7gzmy8"))))
+    (properties `((upstream-name . "robustmatrix")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rdpack r-rcpparmadillo r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=robustmatrix")
+    (synopsis "Robust Matrix-Variate Parameter Estimation")
+    (description
+     "Robust covariance estimation for matrix-valued data and data with
+Kronecker-covariance structure using the Matrix Minimum Covariance Determinant
+(MMCD) estimators and outlier explanation using and Shapley values.")
     (license license:gpl3)))
 
 (define-public r-robustlmm
@@ -24045,7 +24069,7 @@ by the @code{BioinfoGP} core facility at CNB-CSIC.")
         (base32 "0dld7icq02mc5gdy8lpjwdfpk9l5cwmqc6f8zf083sjvp0b2rgb9"))))
     (properties `((upstream-name . "RGF")))
     (build-system r-build-system)
-    (inputs (list python))
+    (inputs (list python-scipy python-scikit-learn python))
     (propagated-inputs (list r-reticulate r-r6 r-matrix))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/RGF-team/rgf/tree/master/R-package")
@@ -27348,17 +27372,16 @@ Information Systems and Energy Efficient Systems at the University of Bamberg.")
 (define-public r-resi
   (package
     (name "r-resi")
-    (version "1.2.0")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RESI" version))
        (sha256
-        (base32 "1c578fxn8mpssckwxys3dssmiag69b0y51hd8y59spx2q0sc96cg"))))
+        (base32 "100w8a28bz2x9sihd9ghmiha9p5dxbwnzkrdgxg42211zmbil8cb"))))
     (properties `((upstream-name . "RESI")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich
-                             r-regtools
                              r-nlme
                              r-lmtest
                              r-ggplot2
@@ -27366,7 +27389,8 @@ Information Systems and Energy Efficient Systems at the University of Bamberg.")
                              r-car
                              r-boot
                              r-aod))
-    (home-page "https://cran.r-project.org/package=RESI")
+    (native-inputs (list r-knitr))
+    (home-page "https://statimagcoll.github.io/RESI/")
     (synopsis "Robust Effect Size Index (RESI) Estimation")
     (description
      "Summarize model output using a robust effect size index.  The index is
@@ -47485,6 +47509,29 @@ features include monitoring convergence of a MCMC model using Rubin and Gelman
 Rhat statistics, automatically running a MCMC model till it converges, and
 implementing parallel processing of a MCMC model for multiple chains.")
     (license license:gpl3+)))
+
+(define-public r-r2fireworks
+  (package
+    (name "r-r2fireworks")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "r2fireworks" version))
+       (sha256
+        (base32 "1kifyr4g92ca7n432jwi5x5qigikvka40k54xb6s8w5fjgfv7g9b"))))
+    (properties `((upstream-name . "r2fireworks")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shiny r-htmltools))
+    (native-inputs (list r-knitr))
+    (home-page "https://r2fireworks.obi.obianom.com/")
+    (synopsis
+     "Enhance Your 'Rmarkdown' and 'shiny' Apps with Dazzling Fireworks Celebrations")
+    (description
+     "Implementation of JQuery <https://jquery.com> and CSS styles to allow the
+display of fireworks on a document.  Toolkit to easily incorporate celebratory
+splashes in Rmarkdown and shiny apps.")
+    (license license:expat)))
 
 (define-public r-r2dt
   (package

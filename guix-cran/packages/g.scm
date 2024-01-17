@@ -16979,13 +16979,13 @@ curve (Shorrocks 1983) <doi:10.2307/2554117>.")
 (define-public r-gglm
   (package
     (name "r-gglm")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gglm" version))
        (sha256
-        (base32 "1wx1rmdms6rxhlb20623v3wr5l3w9xfk003sb1gi0418p3rhfx0v"))))
+        (base32 "1fybwxgsdwvl4d9ixicfgr1sgrzkwndmvp91zhhfhjlf0yy4qdaj"))))
     (properties `((upstream-name . "gglm")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs

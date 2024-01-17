@@ -3454,6 +3454,30 @@ wrangling, graph analytics and analysing how each season of Survivor played out.
  Includes ggplot2 scales and colour palettes for visualisation.")
     (license license:expat)))
 
+(define-public r-survivaltests
+  (package
+    (name "r-survivaltests")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SurvivalTests" version))
+       (sha256
+        (base32 "1yhl9pg5dbfkqrkl5i1da7c8zhianj2qgbs5arfk6lj6w3vqmnb9"))))
+    (properties `((upstream-name . "SurvivalTests")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-weibullness r-ggplot2))
+    (home-page "https://cran.r-project.org/package=SurvivalTests")
+    (synopsis "Survival Tests for One-Way Layout")
+    (description
+     "This package performs survival analysis for one-way layout.  The package
+includes the generalized test for survival ANOVA (Tsui and Weerahandi (1989)
+<doi:10.2307/2289949> and (Weerahandi, 2004; ISBN:978-0471470175)).  It also
+performs pairwise comparisons and graphical approaches.  Moreover, it assesses
+the weibullness of data in each group via test.  The package computes mean and
+confidence interval under Weibull distribution.")
+    (license license:gpl2+)))
+
 (define-public r-survivalsvm
   (package
     (name "r-survivalsvm")
@@ -20930,16 +20954,21 @@ in C++20 or later).")
 (define-public r-spdesign
   (package
     (name "r-spdesign")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spdesign" version))
        (sha256
-        (base32 "0nhz7b6xgc6ns0h2fr39vb6bb3l0x6q8km7d0q5x8n71qdk4lf7h"))))
+        (base32 "0gz7862pp18cliz8n6grjzjq0ldy5cxln16w1i18ifqpjdhss53s"))))
     (properties `((upstream-name . "spdesign")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringr r-randtoolbox r-matrixstats r-future
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-randtoolbox
+                             r-matrixstats
+                             r-future
+                             r-dplyr
                              r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://spdesign.edsandorf.me")
@@ -52347,6 +52376,32 @@ deals pattern analysis using the text part of bibliometric data.The bibliometric
 data are obtained from mainly Web of Science and Scopus.")
     (license license:gpl3)))
 
+(define-public r-scientific
+  (package
+    (name "r-scientific")
+    (version "2024.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "scientific" version))
+       (sha256
+        (base32 "02rp717pb0qfjlk4vm54v4zvyx6kxyjph056jzd2k2qkmdshqzv7"))))
+    (properties `((upstream-name . "scientific")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xfun r-rmarkdown r-knitr r-htmltools))
+    (native-inputs (list r-knitr esbuild))
+    (home-page "https://scientific.obi.obianom.com")
+    (synopsis "Elegant Scientific Themed Reporting for 'Markdown'")
+    (description
+     "Offers markdown output formats designed with various scientific styles, allowing
+users to generate PDF and HTML outputs.  The output has a contemporary
+appearance with vibrant visuals, providing numerous styles for effective
+highlighting.  The package also includes additional features specifically
+tailored for front-page slides, enhancing the overall presentation and
+customization options.  The package was created using the tufte R package code
+as a starting point.")
+    (license license:expat)))
+
 (define-public r-scidesignr
   (package
     (name "r-scidesignr")
@@ -57962,17 +58017,22 @@ approach proposed by Haris F and Ubaidillah A
 (define-public r-sads
   (package
     (name "r-sads")
-    (version "0.4.2")
+    (version "0.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sads" version))
        (sha256
-        (base32 "1j6vdjvpnbqp4kwbvhcl8p51ln29mmk9n150718wsqlifb8d1lw9"))))
+        (base32 "196kzsq3afzj8j69417i6xmbbjgbm5qyinrw6s6drs07yhvnzp0f"))))
     (properties `((upstream-name . "sads")))
     (build-system r-build-system)
-    (propagated-inputs (list r-vgam r-poilog r-mass r-guilds r-bbmle))
-    (home-page "http://piLaboratory.github.io/sads")
+    (propagated-inputs (list r-vgam
+                             r-powerlaw
+                             r-poilog
+                             r-mass
+                             r-guilds
+                             r-bbmle))
+    (home-page "https://github.com/piLaboratory/sads")
     (synopsis "Maximum Likelihood Models for Species Abundance Distributions")
     (description
      "Maximum likelihood tools to fit and compare models of species abundance

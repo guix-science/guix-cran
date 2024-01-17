@@ -12,7 +12,9 @@
   #:use-module (gnu packages maths)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages multiprecision)
+  #:use-module (gnu packages python-xyz)
   #:use-module (gnu packages image-processing)
+  #:use-module (gnu packages python-science)
   #:use-module (gnu packages web)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages version-control)
@@ -6639,7 +6641,7 @@ identification is now based on EPPO species codes (<https://data.eppo.int/>).")
         (base32 "1p8zfndvm7x7pnryphz944hgxcchvc6mwnr6ap15m0i6kwsh0nb4"))))
     (properties `((upstream-name . "forImage")))
     (build-system r-build-system)
-    (inputs (list opencv))
+    (inputs (list python-scipy python-pandas opencv python-numpy))
     (propagated-inputs (list r-tibble r-reticulate r-magrittr r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ThaiseRF/forImage")
@@ -18993,13 +18995,13 @@ conditions for you.")
 (define-public r-fast-r
   (package
     (name "r-fast-r")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FAST.R" version))
        (sha256
-        (base32 "1nxvpq55nk9r7mf2dxpqzd6vhk2213dxrlgz2qsyrx4pd928mfg1"))))
+        (base32 "0bvlzk0g57gbcrswm6ygma0ks67dzrghqrld7hjbbdq8vn21rf4h"))))
     (properties `((upstream-name . "FAST.R")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -21167,13 +21169,13 @@ package relies on the fabricjs @code{JavaScript} library.  See
 (define-public r-fabricatr
   (package
     (name "r-fabricatr")
-    (version "1.0.0")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fabricatr" version))
        (sha256
-        (base32 "1y5mzgqvv3hqsbggqiy5f4wj8k3820g2ckc2r60bphmwj70yik7v"))))
+        (base32 "1hyi0idhf88sg4lx0yyss17qp57v5j1p1bq22wdf2fgg11hnl68x"))))
     (properties `((upstream-name . "fabricatr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang))

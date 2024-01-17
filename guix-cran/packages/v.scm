@@ -2736,6 +2736,28 @@ principles as described in: \"Vandemeulebroecke et al. (2018)\"
 <doi:10.1136/bmjopen-2019-030215>.")
     (license license:expat)))
 
+(define-public r-vismeteor
+  (package
+    (name "r-vismeteor")
+    (version "1.8.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vismeteor" version))
+       (sha256
+        (base32 "059v7qxpkhir066rrw9kxnb8wnyjgwi2fj9mkb7wl0zrqbknhglb"))))
+    (properties `((upstream-name . "vismeteor")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-dbi))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jankorichter/vismeteor")
+    (synopsis "Analysis of Visual Meteor Data")
+    (description
+     "This package provides a suite of analytical functionalities to process and
+analyze visual meteor observations from the Visual Meteor Database of the
+International Meteor Organization <https://www.imo.net/>.")
+    (license license:expat)))
+
 (define-public r-visitorcounts
   (package
     (name "r-visitorcounts")
@@ -5679,6 +5701,29 @@ weighting schemes for factor variables.  See ?VCA for a more comprehensive
 description of the features.")
     (license license:gpl3+)))
 
+(define-public r-vc2copula
+  (package
+    (name "r-vc2copula")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VC2copula" version))
+       (sha256
+        (base32 "1r2y2j16dcx63aapp0hcbzx6l1ampna3disf6bfva41v2nfxnpg6"))))
+    (properties `((upstream-name . "VC2copula")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vinecopula r-copula))
+    (home-page "https://github.com/tnagler/VC2copula")
+    (synopsis
+     "Extend the 'copula' Package with Families and Models from 'VineCopula'")
+    (description
+     "This package provides new classes for (rotated) BB1, BB6, BB7, BB8, and Tawn
+copulas, extends the existing Gumbel and Clayton families with rotations, and
+allows to set up a vine copula model using the copula API. Corresponding objects
+from the @code{VineCopula} API can easily be converted.")
+    (license license:gpl3)))
+
 (define-public r-vbv
   (package
     (name "r-vbv")
@@ -6222,13 +6267,13 @@ ranking with respect to a set of features of interest.")
 (define-public r-varoc
   (package
     (name "r-varoc")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "varoc" version))
        (sha256
-        (base32 "1b8dfz56ly8hd36h9jf29irnckbc2v6s5whfmha3ah1bal7k2ajp"))))
+        (base32 "034bycqwlz23rm2hm4i1qpqs1s74mk5axv965h09xj7yzvy9qjkm"))))
     (properties `((upstream-name . "varoc")))
     (build-system r-build-system)
     (propagated-inputs (list r-proc r-corrplot))

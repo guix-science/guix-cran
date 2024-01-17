@@ -5710,6 +5710,39 @@ dimensionality of the data.")
 Foundation's Data Package Protocol.")
     (license license:gpl3)))
 
+(define-public r-dpm
+  (package
+    (name "r-dpm")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dpm" version))
+       (sha256
+        (base32 "1wg492r19rd1hplq6ccngwr0z615m4yx5jln0v01gbz4pm47dpmi"))))
+    (properties `((upstream-name . "dpm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-rlang
+                             r-panelr
+                             r-lavaan
+                             r-jtools
+                             r-formula
+                             r-dplyr
+                             r-crayon))
+    (home-page "https://github.com/jacob-long/dpm")
+    (synopsis "Dynamic Panel Models Fit with Maximum Likelihood")
+    (description
+     "This package implements the dynamic panel models described by Allison, Williams,
+and Moral-Benito (2017 <doi:10.1177/2378023117710578>) in R. This class of
+models uses structural equation modeling to specify dynamic (lagged dependent
+variable) models with fixed effects for panel data.  Additionally, models may
+have predictors that are only weakly exogenous, i.e., are affected by prior
+values of the dependent variable.  Options also allow for random effects,
+dropping the lagged dependent variable, and a number of other specification
+choices.")
+    (license license:expat)))
+
 (define-public r-dplyrassist
   (package
     (name "r-dplyrassist")
@@ -8465,13 +8498,13 @@ Conflict (DMC) to reaction time and error rate data.  Methods in Psychology,
 (define-public r-dmbc
   (package
     (name "r-dmbc")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dmbc" version))
        (sha256
-        (base32 "08kw193792v20qh9c8n16jx2q4rrj5lar3zbp6q8rw57mim962lb"))))
+        (base32 "0crwmprmn4k565zwvwwqkf70j6f166rvhssx0pwrmch935ascpsf"))))
     (properties `((upstream-name . "dmbc")))
     (build-system r-build-system)
     (propagated-inputs (list r-robustx
@@ -8480,7 +8513,6 @@ Conflict (DMC) to reaction time and error rate data.  Methods in Psychology,
                              r-rcpparmadillo
                              r-rcpp
                              r-modeltools
-                             r-mcmcpack
                              r-ggrepel
                              r-ggplot2
                              r-coda
@@ -12371,6 +12403,38 @@ and Regime Change Diachronic) is a diffusion model used to capture the dynamics
 of the competitive or collaborative transition.")
     (license license:gpl3+)))
 
+(define-public r-dimodelsmulti
+  (package
+    (name "r-dimodelsmulti")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DImodelsMulti" version))
+       (sha256
+        (base32 "19gyhgbl3z999nrzislkfc5y7vhwqv5ffchyfyfw0j7zw13lvjf9"))))
+    (properties `((upstream-name . "DImodelsMulti")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-reshape2
+                             r-plyr
+                             r-nlme
+                             r-matrix
+                             r-knitr
+                             r-dplyr
+                             r-dimodels))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://dimodels.com")
+    (synopsis
+     "Fit Multivariate Diversity-Interactions Models with Repeated Measures")
+    (description
+     "An add-on package to DImodels for the fitting of biodiversity and ecosystem
+function relationship study data with multiple ecosystem function responses
+and/or time points.  This package uses the multivariate and repeated measures
+Diversity-Interactions (DI) methods developed by Kirwan et al. (2009)
+<doi:10.1890/08-1684.1>, Finn et al. (2013) <doi:10.1111/1365-2664.12041>, and
+Dooley et al. (2015) <doi:10.1111/ele.12504>.")
+    (license (list license:gpl2 license:gpl3))))
+
 (define-public r-dimodels
   (package
     (name "r-dimodels")
@@ -15121,6 +15185,32 @@ set of methods supports interpretation and visualization of the model as well as
 forecasting.  Information criteria to choose the number of factors are also
 provided - following Bai and Ng (2002) <doi:10.1111/1468-0262.00273>.")
     (license license:gpl3)))
+
+(define-public r-dfmirror
+  (package
+    (name "r-dfmirror")
+    (version "2.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dfmirroR" version))
+       (sha256
+        (base32 "0s3hvvqv5rw7axpr62996qa1yqws5a9qy3y4hzqmhv4ka6pmv90c"))))
+    (properties `((upstream-name . "dfmirroR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-fitdistrplus))
+    (home-page "https://github.com/jacobpstein/dfmirroR")
+    (synopsis
+     "Simulate a Data Frame Mirroring an Input and Produce Shareable Simulation Code")
+    (description
+     "The @code{dfmirroR} package allows users to input a data frame, simulate some
+number of observations based on specified columns of that data frame, and then
+outputs a string that contains the code to re-create the simulation.  The goal
+is to both provide workable test data sets and provide users with the
+information they need to set up reproducible examples with team members.  This
+package was created out of a need to share examples in cases where data are
+private and where a full data frame is not needed for testing or coordinating.")
+    (license license:expat)))
 
 (define-public r-dfmeta
   (package

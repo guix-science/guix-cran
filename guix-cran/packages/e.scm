@@ -11088,6 +11088,46 @@ model applicability domain evaluation, and ensemble predictive modeling with
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-enmtools
+  (package
+    (name "r-enmtools")
+    (version "1.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ENMTools" version))
+       (sha256
+        (base32 "0xz0v378mfy36yc001zr8j8s2dv6jpq2w2da7n3lsxarr8slqp8m"))))
+    (properties `((upstream-name . "ENMTools")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra
+                             r-spatstat-random
+                             r-spatstat-geom
+                             r-raster
+                             r-magrittr
+                             r-lhs
+                             r-knitr
+                             r-gridextra
+                             r-ggpubr
+                             r-ggplot2
+                             r-forcats
+                             r-enmeval
+                             r-dismo))
+    (home-page "https://cran.r-project.org/package=ENMTools")
+    (synopsis
+     "Analysis of Niche Evolution using Niche and Distribution Models")
+    (description
+     "Constructing niche models and analyzing patterns of niche evolution.  Acts as an
+interface for many popular modeling algorithms, and allows users to conduct
+Monte Carlo tests to address basic questions in evolutionary ecology and
+biogeography.  Warren, D.L., R.E. Glor, and M. Turelli (2008)
+<doi:10.1111/j.1558-5646.2008.00482.x> Glor, R.E., and D.L. Warren (2011)
+<doi:10.1111/j.1558-5646.2010.01177.x> Warren, D.L., R.E. Glor, and M. Turelli
+(2010) <doi:10.1111/j.1600-0587.2009.06142.x> Cardillo, M., and D.L. Warren
+(2016) <doi:10.1111/geb.12455> D.L. Warren, L.J. Beaumont, R. Dinnage, and J.B.
+Baumgartner (2019) <doi:10.1111/ecog.03900>.")
+    (license license:gpl2)))
+
 (define-public r-enmsdmx
   (package
     (name "r-enmsdmx")
@@ -16616,13 +16656,13 @@ dependencies can be visualized with using the igraph package.")
 (define-public r-edith
   (package
     (name "r-edith")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eDITH" version))
        (sha256
-        (base32 "1kyhph768agzxii40p2fhknivhppy1cfclljid49vf3aphicj1v1"))))
+        (base32 "152kzwhbir37hjjjipqlvn63dwnhaq6wy0lgrks00byc9ahzh4m0"))))
     (properties `((upstream-name . "eDITH")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra

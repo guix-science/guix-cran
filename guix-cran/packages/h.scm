@@ -499,13 +499,13 @@ random matrix theory.  This is an implementation of Koev & Edelman's algorithm
 (define-public r-hypergate
   (package
     (name "r-hypergate")
-    (version "0.8.4")
+    (version "0.8.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hypergate" version))
        (sha256
-        (base32 "1ldymcb7b1bdhsacmvyqdxni2462kn1ssbab4rgh7lsqflfs0csb"))))
+        (base32 "10lhjj8sgjv9p6v0n93f1jgybvgb1yr92slrqjdphag4clqvygw0"))))
     (properties `((upstream-name . "hypergate")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -2212,13 +2212,13 @@ probing (HR-SIP), multi-window high resolution stable isotope probing
 (define-public r-htsr
   (package
     (name "r-htsr")
-    (version "2.1.3")
+    (version "2.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "htsr" version))
        (sha256
-        (base32 "09h14lrsm24k7ya1jxcrh3c2s6wf1cs7k0daj164ddmfsn7qdvmg"))))
+        (base32 "1z4s3xn82fq3gh2fp7ys0vifmpgxksi0hvjj9whlkjv2dmsnzqyz"))))
     (properties `((upstream-name . "htsr")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexls

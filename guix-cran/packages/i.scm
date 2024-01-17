@@ -5743,13 +5743,13 @@ costs of invasive alien species (<doi:10.1111/2041-210X.13929>).")
 (define-public r-intsvy
   (package
     (name "r-intsvy")
-    (version "2.8")
+    (version "2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "intsvy" version))
        (sha256
-        (base32 "1b1mwh9bc0gdqlffscr93amghaxclphzm2c453jjqy3pnrrivfg3"))))
+        (base32 "0bk8v9ds6jrp7pvw63k777wj4pvg5nx1df4w5jz1hhr0gsv0jw8v"))))
     (properties `((upstream-name . "intsvy")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape
@@ -10737,13 +10737,13 @@ as influenza.")
 (define-public r-impacteffectsize
   (package
     (name "r-impacteffectsize")
-    (version "0.6.2")
+    (version "0.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ImpactEffectsize" version))
        (sha256
-        (base32 "06dywikscwvigcw50h9yd3fjf3h25ymkxphwy8r6n3v2nl9iba3m"))))
+        (base32 "0kks5c8hksignlgdam3rwagwyz3aw5r5491gw17jy1gnhcixm3k8"))))
     (properties `((upstream-name . "ImpactEffectsize")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-paralleldist r-matrixstats r-catools))

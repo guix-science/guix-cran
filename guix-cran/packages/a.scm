@@ -1883,13 +1883,13 @@ package relies on the base graphics system, so graphics are rendered rapidly.")
 (define-public r-autohrf
   (package
     (name "r-autohrf")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "autohrf" version))
        (sha256
-        (base32 "0gbnhgz311hsyjs4dgi03w4370vkdpshb78ay0gl75wj39mnpz7r"))))
+        (base32 "1p65rl3bm5ka2pfjni3bil9linhvr50c99sg8d5240nj9nqdylj0"))))
     (properties `((upstream-name . "autohrf")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcolorbrewer
@@ -8003,6 +8003,26 @@ Draper and H. Smith (3rd Ed., 1998) including all the accompanying datasets.")
      "Collect your data on digital marketing campaigns from Appsflyer using the
 Windsor.ai API <https://windsor.ai/api-fields/>.")
     (license license:gpl3)))
+
+(define-public r-approxot
+  (package
+    (name "r-approxot")
+    (version "1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "approxOT" version))
+       (sha256
+        (base32 "06wvvxn37bk5cd4l93i8rvv81zzx4jv373mjgkzzsgvvhh3an6bw"))))
+    (properties `((upstream-name . "approxOT")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppeigen r-rcppcgal r-rcpp r-bh))
+    (home-page "https://github.com/ericdunipace/approxOT")
+    (synopsis "Approximate and Exact Optimal Transport Methods")
+    (description
+     "R and C++ functions to perform exact and approximate optimal transport.  All C++
+methods can be linked to other R packages via their header files.")
+    (license (license:fsdg-compatible "GPL (== 3.0)"))))
 
 (define-public r-approxmatch
   (package
@@ -15543,13 +15563,13 @@ Francis&Kannenberg's parameters of stability (1978) <doi:10.4141/cjps78-157>.")
 (define-public r-agroreg
   (package
     (name "r-agroreg")
-    (version "1.2.9")
+    (version "1.2.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AgroReg" version))
        (sha256
-        (base32 "16w1ayzr95w8frca3c3mnqdwgja2r54a1ywkynw9x29cdv47icnx"))))
+        (base32 "1rvlgir48lhypw7vj23rg2xxi237sgmprp9syfryhmfz59wy6dcv"))))
     (properties `((upstream-name . "AgroReg")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcompanion
@@ -16268,13 +16288,13 @@ reanalysis\"
 (define-public r-afttest
   (package
     (name "r-afttest")
-    (version "4.3.2.2")
+    (version "4.3.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "afttest" version))
        (sha256
-        (base32 "03m8gxxc5m23hws3wsdcrvpq19zc1g6z8k9p0d40d5rqmbp9p4ir"))))
+        (base32 "1jk8xs4mcayaij5rjl891mzg3dq9qs0lyi5gfzi6sjar6apmwsfb"))))
     (properties `((upstream-name . "afttest")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -19036,13 +19056,13 @@ and query parameters.")
 (define-public r-adbcdrivermanager
   (package
     (name "r-adbcdrivermanager")
-    (version "0.8.0")
+    (version "0.9.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adbcdrivermanager" version))
        (sha256
-        (base32 "0agi2wy00ssi6p1k0gb3b7gm7cbp6qx746sysnvyglkxwjpydmb2"))))
+        (base32 "1y9pnjq6c3a4r1gyjv8rm0bhwp16i9mi4p25fdclcyr29fzzhnv2"))))
     (properties `((upstream-name . "adbcdrivermanager")))
     (build-system r-build-system)
     (propagated-inputs (list r-nanoarrow))

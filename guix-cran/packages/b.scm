@@ -9118,30 +9118,29 @@ vignette.  LICENSE: GPL-3 + file license.")
 (define-public r-blindreview
   (package
     (name "r-blindreview")
-    (version "1.3.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "blindreview" version))
        (sha256
-        (base32 "16jyrsxdmf80vil35djdm8rl4q1k5a34fy5zxymmnmqw42kjc8db"))))
+        (base32 "0hfqcykk5yg3sccqf73lxikb39ryir8fsd7a0qshpdxvbdjm6l1p"))))
     (properties `((upstream-name . "blindreview")))
     (build-system r-build-system)
     (inputs (list gmp))
-    (propagated-inputs (list r-tibble r-hmisc r-ggplot2 r-forsearch r-cairo))
+    (propagated-inputs (list r-hmisc))
     (home-page "https://cran.r-project.org/package=blindreview")
-    (synopsis "Blind Review Using Forward Search Procedures")
+    (synopsis "Enables Blind Review of Database")
     (description
-     "Randomly assigns identification to one of the variables of the dataset, say
-Treatment, and assigns random numbers to all the observations of the dataset.
-Reorders the observations according to the random numbers, and then runs the
-appropriate forward search function on the blinded dataset.  A file is created
-from which the user can identify any outliers using the graphics function in
-this package.  Centers each fixed coefficient at the grand mean prior to
-graphing in order to further mask the treatment.  An unmasking function is
-provided so that the user can identify the potential outliers in terms of their
-original values when blinding is no longer needed.  Details of the forward
-search functions may be found in <https://CRAN.R-project.org/package=forsearch>.")
+     "Randomly reassigns the group identifications to one of the variables of the
+database, say Treatment, and randomly reassigns the observation numbers of the
+dataset.  Reorders the observations according to these new numbers.  Centers
+each group of Treatment at the grand mean in order to further mask the
+treatment.  An unmasking function is provided so that the user can identify the
+potential outliers in terms of their original values when blinding is no longer
+needed.  It is suggested that a forward search procedure be performed on the
+masked data.  Details of some forward search functions may be found in
+<https://CRAN.R-project.org/package=forsearch>.")
     (license license:gpl3+)))
 
 (define-public r-blindrecalc
@@ -17086,13 +17085,13 @@ Rozenholc/Mildenberger/Gather (2010) <doi:10.1016/j.csda.2010.04.021>.")
 (define-public r-bellreg
   (package
     (name "r-bellreg")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bellreg" version))
        (sha256
-        (base32 "17a0ac5ab9yblkl3cwv9vf1l6s027r34n4lqw9fs8bfs1inxbn9p"))))
+        (base32 "11h65f7g9amndx6z5qbws97nm4ng6bjazh29mj01qhqcfvgngvrr"))))
     (properties `((upstream-name . "bellreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -17101,12 +17100,17 @@ Rozenholc/Mildenberger/Gather (2010) <doi:10.1016/j.csda.2010.04.021>.")
                              r-rdpack
                              r-rcppeigen
                              r-rcpp
+                             r-purrr
                              r-numbers
                              r-mass
                              r-magic
+                             r-loo
+                             r-lambertw
                              r-formula
                              r-extradistr
+                             r-dplyr
                              r-bh))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/fndemarqui/bellreg")
     (synopsis "Count Regression Models Based on the Bell Distribution")
     (description
@@ -17116,7 +17120,7 @@ frequentist and Bayesian approaches.  Theoretical details regarding the models
 implemented in the package can be found in Castellares et al. (2018)
 <doi:10.1016/j.apm.2017.12.014> and Lemonte et al. (2020)
 <doi:10.1080/02664763.2019.1636940>.")
-    (license license:gpl2+)))
+    (license license:expat)))
 
 (define-public r-belg
   (package
@@ -24380,6 +24384,45 @@ sources such as @code{OpenStreetMap}', Carto', Mapbox and others in R.")
      "An R interface to the Base dos Dados API
 <https:basedosdados.github.io/mais/py_reference_api/>).  Authenticate your
 project, query our tables, save data to disk and memory, all from R.")
+    (license license:expat)))
+
+(define-public r-baseballr
+  (package
+    (name "r-baseballr")
+    (version "1.6.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "baseballr" version))
+       (sha256
+        (base32 "0qsr6di5y1a3z28rxpzk6k8b5rbnh08pdcjv65qa0fci3yx1i15y"))))
+    (properties `((upstream-name . "baseballr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rvest
+                             r-rlang
+                             r-rcppparallel
+                             r-rcpp
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-jsonlite
+                             r-janitor
+                             r-httr
+                             r-glue
+                             r-ggplot2
+                             r-dplyr
+                             r-data-table
+                             r-cli))
+    (home-page "https://billpetti.github.io/baseballr/")
+    (synopsis "Acquiring and Analyzing Baseball Data")
+    (description
+     "This package provides numerous utilities for acquiring and analyzing baseball
+data from online sources such as Baseball Reference
+<https://www.baseball-reference.com/>, @code{FanGraphs}
+<https://www.fangraphs.com/>, and the MLB Stats API <https://www.mlb.com/>.")
     (license license:expat)))
 
 (define-public r-base-rms

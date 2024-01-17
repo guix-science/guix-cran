@@ -2893,13 +2893,13 @@ Chinese document.")
 (define-public r-ctl
   (package
     (name "r-ctl")
-    (version "1.0.0-9")
+    (version "1.0.0-10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ctl" version))
        (sha256
-        (base32 "0czkdyf9d4nwkm23sq3kw4n1q07r6zlf6pd4vp09a64lw3kx8viz"))))
+        (base32 "0wzav2307w6vbj1ksrg8qqfk1l97fclfl4i9w3sj6a238s0am3dv"))))
     (properties `((upstream-name . "ctl")))
     (build-system r-build-system)
     (propagated-inputs (list r-qtl r-mass))
@@ -2965,13 +2965,13 @@ for v 1.0.0 is documented in Carlisle (2022) <DOI:10.1371/journal.pone.0270909>.
 (define-public r-ctgt
   (package
     (name "r-ctgt")
-    (version "2.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ctgt" version))
        (sha256
-        (base32 "0g2ibk9pxay0idj55q0yh4vbdb6l6460r997fnapimn7fgyz6f66"))))
+        (base32 "0yiclmpnpzzqv1d76bk97dwq9x44l5v7rlk2dknrx8j3zj4svais"))))
     (properties `((upstream-name . "ctgt")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-bh))

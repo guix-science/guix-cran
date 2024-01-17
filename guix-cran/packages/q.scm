@@ -1164,6 +1164,36 @@ fitted curves are allowed, see Muggeo and others (2013)
 <doi:10.13140/RG.2.2.29306.21445> some code examples.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-quantregglasso
+  (package
+    (name "r-quantregglasso")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QuantRegGLasso" version))
+       (sha256
+        (base32 "0jjjrkj45148s2rymvgzkqpbg2bw7nvf3851153qpl8kp13mxgr1"))))
+    (properties `((upstream-name . "QuantRegGLasso")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-ggplot2))
+    (home-page "https://github.com/egpivo/SpatPCA")
+    (synopsis
+     "Adaptively Weighted Group Lasso for Semiparametric Quantile Regression Models")
+    (description
+     "This package implements an adaptively weighted group Lasso procedure for
+simultaneous variable selection and structure identification in varying
+coefficient quantile regression models and additive quantile regression models
+with ultra-high dimensional covariates.  The methodology, grounded in a strong
+sparsity condition, establishes selection consistency under certain weight
+conditions.  To address the challenge of tuning parameter selection in practice,
+a BIC-type criterion named high-dimensional information criterion (HDIC) is
+proposed.  The Lasso procedure, guided by HDIC-determined tuning parameters,
+maintains selection consistency.  Theoretical findings are strongly supported by
+simulation studies. (Toshio Honda, Ching-Kang Ing, Wei-Ying Wu, 2019,
+<DOI:10.3150/18-BEJ1091>).")
+    (license license:gpl2+)))
+
 (define-public r-quantregforest
   (package
     (name "r-quantregforest")

@@ -1307,13 +1307,13 @@ Austrian catchments, Hydrological Processes, 21, 435-446.")
 (define-public r-tutorial-helpers
   (package
     (name "r-tutorial-helpers")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tutorial.helpers" version))
        (sha256
-        (base32 "0nbfd44pzhq41k3r78gm5fqsgb5smm126i27mmpl57kas94wzbs6"))))
+        (base32 "1pqw8gw29gjlsvpiv0n4a0gjcf1d0pdarv0kjxpb495cibl2m09y"))))
     (properties `((upstream-name . "tutorial.helpers")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -1334,7 +1334,7 @@ Austrian catchments, Hydrological Processes, 21, 435-446.")
      "Helper functions for creating, editing, and testing tutorials created with the
 learnr package.  Provides a simple method for allowing students to download
 their answers to tutorial questions.  For examples of its use, see the
-r4ds.tutorials and all.primer.tutorials packages.")
+r4ds.tutorials and primer.tutorials packages.")
     (license license:expat)))
 
 (define-public r-tushare
@@ -22249,6 +22249,41 @@ and Gregg (1993) <doi:10.1007/BF01070999>; Schnider et al. (1998)
 <doi:10.1016/j.vascn.2015.03.004>; Eleveld et al. (2018)
 <doi:10.1016/j.bja.2018.01.018>.")
     (license license:gpl2)))
+
+(define-public r-tchazards
+  (package
+    (name "r-tchazards")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TCHazaRds" version))
+       (sha256
+        (base32 "00x6iyf61igagcjyrl5623yymcrplm35k8j7326vx13g4lzsmnln"))))
+    (properties `((upstream-name . "TCHazaRds")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra
+                             r-sp
+                             r-rcpp
+                             r-rastervis
+                             r-raster
+                             r-ncdf4
+                             r-latticeextra
+                             r-geosphere))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/AusClimateService/TCHazaRds")
+    (synopsis "Tropical Cyclone (Hurricane, Typhoon) Spatial Hazard Modelling")
+    (description
+     "This package provides methods for generating modelled parametric Tropical
+Cyclone (TC) spatial hazard fields and time series output at point locations
+from TC tracks.  R's compatibility to simply use fast cpp code via the Rcpp
+package and the wide range spatial analysis tools via the terra package makes it
+an attractive open source environment to study TCs'.  This package estimates TC
+vortex wind and pressure fields using parametric equations originally coded up
+in python by TCRM <https://github.com/@code{GeoscienceAustralia/tcrm>} and then
+coded up in Cuda cpp by TCwindgen
+<https://github.com/@code{CyprienBosserelle/TCwindgen>}.")
+    (license license:gpl3+)))
 
 (define-public r-tcgsa
   (package

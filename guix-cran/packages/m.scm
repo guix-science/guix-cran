@@ -12,12 +12,15 @@
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages multiprecision)
+  #:use-module (gnu packages python-xyz)
+  #:use-module (gnu packages python-science)
   #:use-module (gnu packages python)
   #:use-module (gnu packages tls)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages web)
   #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages machine-learning)
+  #:use-module (gnu packages xml)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages tbb)
   #:use-module (gnu packages geo)
@@ -4939,17 +4942,18 @@ package, both methodological and graphical.")
 (define-public r-multid
   (package
     (name "r-multid")
-    (version "0.8.0")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multid" version))
        (sha256
-        (base32 "0kwbgnazg89542rjf764mn2bc50fnvcsx00pvighmdsanq5r4w5i"))))
+        (base32 "0bzihahlrlwgph48ckwb6z8vm20rhj0rqzhwc2q5crhz8n7wnksb"))))
     (properties `((upstream-name . "multid")))
     (build-system r-build-system)
     (propagated-inputs (list r-quantreg
                              r-proc
+                             r-lmertest
                              r-lme4
                              r-lavaan
                              r-glmnet
@@ -10554,7 +10558,7 @@ functions that allow for tests of variation in the rates of trait evolution.")
         (base32 "01synariq39mzhx12jbcpwn982piakakl97sgs33xa8xrbwzcxgm"))))
     (properties `((upstream-name . "motifr")))
     (build-system r-build-system)
-    (inputs (list python))
+    (inputs (list python python-pandas python-numpy))
     (propagated-inputs (list r-tidygraph
                              r-tibble
                              r-scales
@@ -22788,7 +22792,7 @@ setups.")
         (base32 "1i0sadm4gh8yynnihhyp0lm37dq7qm7dmkl28jzdb5knls8nhcpz"))))
     (properties `((upstream-name . "MIMSunit")))
     (build-system r-build-system)
-    (inputs (list))
+    (inputs (list libxml2 openssl))
     (propagated-inputs (list r-xts
                              r-tibble
                              r-stringr
@@ -23319,6 +23323,48 @@ one-mode, two-mode (bipartite), and sometimes three-mode networks.")
      "This package provides tools for estimating, measuring and working with migration
 data.")
     (license license:gpl3)))
+
+(define-public r-migconnectivity
+  (package
+    (name "r-migconnectivity")
+    (version "0.4.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MigConnectivity" version))
+       (sha256
+        (base32 "1a9jdxa53q61ww4r9avsi0llnp9cjpmwxa0whjyprf4flh4m1zaf"))))
+    (properties `((upstream-name . "MigConnectivity")))
+    (build-system r-build-system)
+    (inputs (list jags))
+    (propagated-inputs (list r-vgam
+                             r-terra
+                             r-shape
+                             r-sf
+                             r-rmark
+                             r-r2jags
+                             r-ncf
+                             r-mass
+                             r-gplots
+                             r-geodist
+                             r-coda))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/SMBC-NZP/MigConnectivity")
+    (synopsis "Estimate Migratory Connectivity for Migratory Animals")
+    (description
+     "Allows the user to estimate transition probabilities for migratory animals
+between any two phases of the annual cycle, using a variety of different data
+types.  Also quantifies the strength of migratory connectivity (MC), a
+standardized metric to quantify the extent to which populations co-occur between
+two phases of the annual cycle.  Includes functions to estimate MC and the more
+traditional metric of migratory connectivity strength (Mantel correlation)
+incorporating uncertainty from multiple sources of sampling error.  For
+cross-species comparisons, methods are provided to estimate differences in
+migratory connectivity strength, incorporating uncertainty.  See Cohen et al.
+(2018) <doi:10.1111/2041-210X.12916>, Cohen et al. (2019)
+<doi:10.1111/ecog.03974>, and Roberts et al. (2023) <doi:10.1002/eap.2788> for
+details on some of these methods.")
+    (license license:gpl3+)))
 
 (define-public r-mifa
   (package
@@ -39828,7 +39874,7 @@ ISBN:9781420095388).")
         (base32 "0s8jvp7821mb6xff8xwnh78mhz4qfrbk4g7sp4dfnm2ii7ah9c6b"))))
     (properties `((upstream-name . "MaOEA")))
     (build-system r-build-system)
-    (inputs (list))
+    (inputs (list python-numpy))
     (propagated-inputs (list r-stringr
                              r-reticulate
                              r-randtoolbox
@@ -42210,6 +42256,43 @@ advantage of these functions is that they directly download and harmonize the
 information in R's environment.  No need to import or download additional files.
  You only need an internet connection!")
     (license license:asl2.0)))
+
+(define-public r-macrobiome
+  (package
+    (name "r-macrobiome")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "macroBiome" version))
+       (sha256
+        (base32 "01yb1369g6ya1nkfpgkdzy9hy2vy4qxsz8lm1jkjqlgah1jx1d30"))))
+    (properties `((upstream-name . "macroBiome")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra
+                             r-strex
+                             r-sf
+                             r-rnaturalearthdata
+                             r-raster
+                             r-palinsol
+                             r-devtools))
+    (home-page "https://github.com/szelepcsenyi/macroBiome")
+    (synopsis "Tool for Mapping the Distribution of the Biomes and Bioclimate")
+    (description
+     "Procedures for simulating biomes by equilibrium vegetation models, with a
+special focus on paleoenvironmental applications.  Three widely used equilibrium
+biome models are currently implemented in the package: the Holdridge Life Zone
+(HLZ) system (Holdridge 1947, <doi:10.1126/science.105.2727.367>), the
+KÃ¶ppen-Geiger classification (KGC) system (KÃ¶ppen 1936,
+<https://koeppen-geiger.vu-wien.ac.at/pdf/Koppen_1936.pdf>) and the BIOME model
+(Prentice et al.  1992, <doi:10.2307/2845499>).  Three climatic forest-steppe
+models are also implemented.  An approach for estimating monthly time series of
+relative sunshine duration from temperature and precipitation data (Yin 1999,
+<doi:10.1007/s007040050111>) is also adapted, allowing process-based biome
+models to be combined with high-resolution paleoclimate simulation datasets
+(e.g., CHELSA-@code{TraCE21k} v1.0 dataset:
+<https://chelsa-climate.org/chelsa-trace21k/>).")
+    (license license:gpl3+)))
 
 (define-public r-macp
   (package
